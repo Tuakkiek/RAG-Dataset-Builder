@@ -1,16 +1,18 @@
 # ROADMAP — Xây dựng Dataset phục vụ hệ thống RAG cho tài liệu môn Trí tuệ nhân tạo
 
-> **Mục tiêu:** Xây dựng một pipeline có khả năng nhận tài liệu PDF/DOCX/PPTX, sử dụng Docling để trích xuất cấu trúc tài liệu, sau đó xây dựng RAG Dataset gồm nội dung đã chunk + metadata, đánh giá chất lượng retrieval và cuối cùng tích hợp thành hệ thống RAG hỏi đáp dựa trên tài liệu môn Trí tuệ nhân tạo.
+> **Mục tiêu:** Xây dựng một pipeline RAG dataset từ tài liệu học tập, trong đó bước trích xuất văn bản hiện đang dựa trên notebook [pdf_parsing_kaggle.ipynb] với MarkItDown + VLM OCR để xử lý trang PDF khó, rồi tiếp tục xây dựng dataset chunk + metadata, đánh giá retrieval và tích hợp hệ thống RAG hỏi đáp dựa trên tài liệu môn Trí tuệ nhân tạo.
+>
+> **Lưu ý chuyển đổi:** Roadmap cũ dùng Docling làm parser chính. Hiện tại, pipeline thực tế đã chuyển sang notebook PDF parsing với MarkItDown + Qwen2.5-VL, nên mọi phần liên quan tới parser phải theo hướng này.
 
 ---
 
 ## 1. Kiến trúc tổng thể
 
 ```text
-PDF / DOCX / PPTX
+PDF documents
         ↓
-  Document Parser
-      (Docling)
+  PDF Parsing Pipeline
+  (MarkItDown + VLM OCR)
         ↓
 Structured Representation
         ↓
@@ -38,7 +40,8 @@ Sau khi hoàn thành roadmap, project cần có:
 ```text
 Input Documents
     ↓
-Docling Parser
+PDF Parsing Pipeline
+(MarkItDown + VLM OCR)
     ↓
 Structured Documents
     ↓
@@ -194,34 +197,36 @@ chore: initialize project structure
 
 ---
 
-# PHASE 1 — Document Parser với Docling
+# PHASE 1 — Document Parser với PDF Parsing Pipeline
 
-## Ngày 4 — Làm quen với Docling
+## Ngày 4 — Làm quen với notebook PDF parsing
 
 ### Học
-- Docling là gì?
-- DocumentConverter.
-- Document object.
-- Export Markdown/JSON/text.
-- Document structure.
+- MarkItDown hoạt động như thế nào trong PDF parsing.
+- VLM OCR nên chọn những trang nào để xử lý lại.
+- Cách phân loại trang native vs VLM-only.
+- Cách tổng hợp văn bản từ nhiều trang và sửa format đầu ra.
+- Vì sao pipeline cần lưu `document_raw.json` rồi mới sinh `document.json`.
 
 ### Làm
-Cài Docling và chạy thử với một PDF.
+Dùng notebook [pdf_parsing_kaggle.ipynb] để chạy thử với một PDF, đánh giá các trang cần xử lý bằng VLM và kiểm tra output JSON/Markdown.
 
 ### Mục tiêu
 
 ```text
 PDF
  ↓
-Docling
+MarkItDown + page classifier
  ↓
-Document object
+VLM OCR for difficult pages
+ ↓
+Normalized document JSON
 ```
 
 ### Commit
 
 ```text
-feat: add Docling document parser prototype
+feat: add PDF parsing prototype based on notebook pipeline
 ```
 
 ---
@@ -241,9 +246,11 @@ Pipeline:
 ```text
 PDF
  ↓
-Docling
+MarkItDown + page classification
  ↓
-Document
+VLM page repair / OCR
+ ↓
+Document JSON
 ```
 
 Kiểm tra:
@@ -268,55 +275,65 @@ feat: parse PDF into structured representation
 
 ---
 
-## Ngày 6 — Parse DOCX
+## Ngày 6 — Chuẩn hóa đầu ra PDF
 
 ### Làm
 
-Xây parser DOCX sử dụng Docling.
+Xây cơ chế chuẩn hóa từ output của notebook parsing:
+- `document_raw.json`
+- `document.json`
+- Markdown đã làm sạch
+- metadata trang / heading / section
 
 ```text
-DOCX
+PDF
  ↓
-Docling
+MarkItDown + VLM
  ↓
-Structured Document
+Normalized document output
 ```
 
 ### Test
-So sánh kết quả DOCX với PDF.
+So sánh kết quả đầu ra giữa các PDF khó và PDF bình thường.
 
 ### Commit
 
 ```text
-feat: add DOCX document parsing
+feat: normalize parsed PDF output for RAG pipeline
 ```
 
 ---
 
-## Ngày 7 — Parse PPTX
+## Ngày 7 — Xử lý trang khó và repair pipeline
 
 ### Làm
 
-Xử lý:
+Xây chiến lược cho các trang PDF khó:
+- trang ảnh / scan
+- công thức quá phức tạp
+- layout lạ
+- tiêu đề và nội dung bị ngắt qua trang
 
 ```text
-PPTX
+PDF pages
  ↓
-Docling
+Native extraction
  ↓
-Structured Document
+VLM reprocessing for difficult pages
+ ↓
+Merged document structure
 ```
 
 Đặc biệt kiểm tra:
-- slide number
-- title
-- bullet list
-- text box
+- page number
+- title detection
+- paragraph merge across pages
+- header/footer filtering
 
 ### Commit
 
 ```text
-feat: add PPTX document parsing
+feat: add VLM repair logic for difficult PDF pages
 ```
 
 ---
@@ -533,9 +550,10 @@ test: add document parser test suite
 ### Kiểm tra
 
 ```text
-PDF / DOCX / PPTX
+PDF documents
         ↓
-      Docling
+PDF parsing pipeline
+(MarkItDown + VLM)
         ↓
 Structured Representation
         ↓
@@ -868,7 +886,7 @@ data: add RAG retrieval evaluation questions
 ```text
 Documents
  ↓
-Docling
+PDF parsing pipeline
  ↓
 Structured Representation
  ↓
@@ -1674,7 +1692,8 @@ Mô tả:
 ```text
 Document
  ↓
-Docling
+PDF parsing pipeline
+(MarkItDown + VLM)
  ↓
 Structured Representation
  ↓
@@ -1788,7 +1807,7 @@ Test toàn pipeline:
 ```text
 PDF
  ↓
-Docling
+PDF parsing pipeline
  ↓
 Dataset
  ↓
@@ -1883,8 +1902,8 @@ Chuẩn bị 5 câu hỏi:
 Phải trả lời được:
 
 - Tại sao dùng RAG thay vì fine-tuning?
-- Tại sao dùng Docling?
-- Tại sao không chuyển PDF sang Markdown?
+- Tại sao dùng MarkItDown + VLM thay vì chỉ parse PDF native?
+- Tại sao không chuyển PDF sang Markdown đơn thuần?
 - Chunking là gì?
 - Tại sao chọn chunk size này?
 - Embedding là gì?
@@ -1967,9 +1986,10 @@ Không bắt buộc đưa vào MVP.
 Tổng kết toàn bộ pipeline:
 
 ```text
-PDF / DOCX / PPTX
+PDF documents
         ↓
-      Docling
+PDF parsing pipeline
+(MarkItDown + VLM)
         ↓
 Structured Representation
         ↓
@@ -2093,7 +2113,9 @@ Markdown có thể được sử dụng để debug/visualize nếu cần, nhưn
 
 ```text
 Python
-Docling
+MarkItDown
+Qwen2.5-VL / VLM OCR
+PyMuPDF
 ```
 
 ## Dataset
@@ -2184,10 +2206,10 @@ rag-dataset-builder/
 
 ```text
 [✓] Nhận PDF
-[✓] Nhận DOCX
-[✓] Nhận PPTX
+[✓] Xử lý PDF khó bằng VLM
+[✓] Chuẩn hoá output JSON/Markdown
 
-[✓] Parse bằng Docling
+[✓] Parse bằng PDF Parsing Pipeline
 [✓] Tạo structured representation
 [✓] Cleaning
 [✓] Structure-aware chunking
@@ -2222,9 +2244,10 @@ Nó gồm **hai thành phần chính**:
 ### Dataset Builder
 
 ```text
-PDF / DOCX / PPTX
+PDF documents
         ↓
-      Docling
+PDF Parsing Pipeline
+(MarkItDown + VLM)
         ↓
 Structured Representation
         ↓
