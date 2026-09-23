@@ -538,9 +538,7 @@ Các khó khăn để đạt được trí tuệ nhân tạo tổng quát bao g�
 
 Những bài toán trí tuệ trong đó hệ thống máy tính thực hiện kém hơn người là những bài toán cần tiếp tục giải quyết. Dưới đây là một số bài toán và mức độ so sánh giữa máy tính và người.
 
--
-
-   - Rubik, cờ ca rô 3 ô: tối ưu.
+- Rubik, cờ ca rô 3 ô: tối ưu.
 
 - Cờ vua: gần đạt mức tốt hơn người. Hệ thống Deep Blue đã thắng đương kim vô địch cờ vua thế giới Gary Kasparov.
 
@@ -648,7 +646,7 @@ Yêu cầu của bài toán là thực hiện các di chuyển để chuyển t�
 
 Trạng thái xuất phát Trạng thái đích
 
-![Figure: fig-26-1]
+**Figure: fig-26-1**
 
 Hình 2.1. Trò đố 8 ô
 
@@ -696,7 +694,7 @@ Các hệ thống tìm đường sẽ trả về đường đi tức là chuỗi
 
 Để tiện cho việc tập trung vào các thành phần chính, khi phát biểu bài toán tìm đường đi, nhiều chi tiết thường được bỏ qua như quỹ đạo thực tế, điều kiện thời tiết, chất lượng đường v.v. Khi đó, bài toán tìm đường đi thường được biểu diễn dưới dạng tìm đường đi giữa hai nút trên đồi thị như minh họa trên hình 2.3. Tại mỗi nút, các chuyển động được phép là chuyển động sang nút liền kề. Giá thành đường đi giữa hai nút liền kề được thể hiện trên cung nối hai nút.
 
-![Figure: fig-28-1]
+**Figure: fig-28-1**
 
 Hình 2.3. Ví dụ bài toán tìm đường đi trên đồ thị. Các số trên cung thể hiện giá thành.
 
@@ -716,7 +714,7 @@ Search( _Q_ , _S_ , _G_ , _P_ ) ( _Q_ : không gian trạng thái, _S_ : trạng
 
 1. Chọn nút _n_ ∈ _O_ và xóa _n_ khỏi _O_ 2. If _n_ ∈ _G_ , return (đường đi tới _n_ ) 3. Thêm _P_ ( _n_ ) vào _O_ Return: Không có lời giải
 
-![Figure: fig-30-1]
+**Figure: fig-30-1**
 
 Hình 2.5. Thuật toán tìm kiếm tổng quát
 
@@ -750,7 +748,7 @@ While( _O_ ≠ _Ø_ ) do
 
 Return: Không có lời giải
 
-![Figure: fig-31-1]
+**Figure: fig-31-1**
 
 Hình 2.6. Thuật toán Graph_Search với danh sách các nút đóng cho phép tránh vòng lặp. Phần bôi đậm là phần khác so với thuật toán tìm kiếm không tránh vòng lặp.
 
@@ -810,7 +808,7 @@ BFS ( _Q_ , _S_ , _G_ , _P_ ) Đầu vào: bài toán tìm kiếm Đầu ra: tr�
 
 Return: Không có lời giải
 
-![Figure: fig-33-1]
+**Figure: fig-33-1**
 
 Hình 2.7. Thuật toán tìm kiếm theo chiều rộng
 
@@ -826,13 +824,13 @@ lưu trong nút biên cũng như số nút được mở rộng. Cụ thể về
 
 **Ví dụ** : Xét ví dụ tìm đường đi từ nút S tới nút G trên đồ thị ở hình 2.8. (để đơn giản, ví dụ này sử dụng đồ thị có hướng; quá trình tìm đường đi trên đồ thị vô hướng được thực hiện tương tự, trừ việc từ một nút có thể di chuyển sang nút cha của nút đó)
 
-![Figure: fig-34-1]
+**Figure: fig-34-1**
 
 Hình 2.8. Ví dụ đồ thị cho bài toán tìm đường đi
 
 Một số bước đầu tiên của thuật toán, có sử dụng việc lưu và kiểm tra tập nút đóng, được thể hiện dưới dạng các cây tìm kiếm như trên hình 2.9. _Lưu ý_ : để thống nhất trong việc trình bầy, trong số các nút có vai trò giống nhau, tức là có cùng độ sâu, nút đứng trước trong bảng chữ cái sẽ được mở rộng trước. Quy tắc này không được quy định trong thuật toán và chỉ để tiện cho trình bầy.
 
-![Figure: fig-34-2]
+**Figure: fig-34-2**
 
 Hình 2.9. Một số cây tìm kiếm sinh ra khi tìm kiếm theo chiều rộng. Các cây được thể hiện theo thứ tự từ trái sang phải, từ trên xuống dưới. Nút mở rộng tiếp theo được đánh dấu bằng mũi tên
 
@@ -938,7 +936,7 @@ DFS(Q, S, G, P) Đầu vào: bài toán tìm kiếm Đầu ra: (đường đi t�
 
 Return: Không có lời giải
 
-![Figure: fig-38-1]
+**Figure: fig-38-1**
 
 Hình 2.10. Thuật toán tìm kiếm theo chiều sâu
 
@@ -1087,11 +1085,11 @@ Như vậy, _tìm kiếm tham lam sử dụng hàm heuristic h(n) để ước l
 
 <!-- page: 46 -->
 
-![Figure: fig-46-1]
+**Figure: fig-46-1**
 
 Hình 2.14. Ví dụ tìm đường đi trên đồ thị từ S tới G. Khoảng cách thực được cho trên các cung. Khoảng cách tính theo đường chim bay từ mỗi nút tới nút đích G được cho bằng số in nghiêng bên cạnh các nút.
 
-![Figure: fig-46-2]
+**Figure: fig-46-2**
 
 Hình 2.15. Minh họa hoạt động của thuật toán tìm kiếm tham lam
 
@@ -1153,7 +1151,7 @@ While( _O_ không rỗng) do
 
 3. Với mọi _m_ ∈ _P_ ( _n_ ) i. _g_ ( _m_ ) = _g_ ( _n_ ) + _c_ ( _m_ , _n_ ) ii. _f_ ( _m_ ) = _g_ ( _m_ ) + _h_ ( _m_ ) iii. Thêm _m_ vào _O_ cùng giá trị _f_ ( _m_ ) Return:  không tìm được đường đi
 
-![Figure: fig-48-1]
+**Figure: fig-48-1**
 
 Hình 2.16. Thuật toán A*
 
@@ -1281,13 +1279,13 @@ a) Lấy nút _n_ từ đầu _O_ b) Nếu _n_ ∈ _G_ , then return(đường �
 
 2. _i_ ← _i_ + α, _O_ ← _S_
 
-![Figure: fig-52-1]
+**Figure: fig-52-1**
 
 Hình 2.15. Thuật toán A* sâu dần
 
 **Ví dụ** . Xét bài toán tìm đường đi từ nút S tới nút G trên hình 2.16 với hàm heuristic cho cạnh các nút và giá thành đường đi bên cạnh các cung.
 
-![Figure: fig-52-2]
+**Figure: fig-52-2**
 
 Hình 2.16. Ví dụ bài toán tìm đường đi
 
@@ -1368,7 +1366,9 @@ Thuật toán leo đồi còn được gọi là thuật toán tìm cục bộ t
 
 ### a) Di chuyển sang trạng thái tốt nhất
 
-Có nhiều phiên bản khác nhau của thuật toán leo đồi. Một trong những phiên bản thông dụng nhất có tên là leo đồi _di chuyển sang trạng thái tốt nhất_ (best-improvement hill climbing). Phiên bản này của leo đồi lựa chọn trong số hàng xóm hiện thời hàng xóm có hàm mục tiêu tốt nhất. Nếu hàng xóm đó tốt hơn trạng thái hiện thời thì di chuyển sang hàm xóm đó. Nếu ngược lại thì kết thúc và trả về trạng thái hiện thời. Thuật toán đầy đủ được thể hiện trên hình 2.18. Bước 1 là bước khởi tạo, trong đó ta chọn ngẫu nhiên trạng thái xuất phát. Bước 2 sinh ra các láng giềng của trạng thái hiện thời. Ở bước 3, thuật toán kiểm tra các láng giềng, nếu không có láng giềng nào tốt hơn trạng thái hiện thời (tất cả láng giềng có giá trị hàm mục tiêu Obj không lớn hơn Obj của trạng thái hiện thời) thì kết thúc và trả về trạng thái hiện thời là kết quả. Trong trường hợp ngược lại, ở bước 4, thuật toán chọn láng giềng có giá trị hàm mục tiêu Obj lớn nhất và chuyển sang trạng thái đó, sau đó lặp lại từ bước 2.
+Có nhiều phiên bản khác nhau của thuật toán leo đồi. Một trong những phiên bản thông dụng nhất có tên là leo đồi _di chuyển sang trạng thái tốt nhất_ (best-improvement hill climbing). Phiên bản này của leo đồi lựa chọn trong số hàng xóm hiện thời hàng xóm có hàm mục tiêu tốt nhất. Nếu hàng xóm đó tốt hơn trạng thái hiện thời thì di chuyển sang hàm xóm đó. Nếu ngược lại thì kết thúc và trả về trạng thái hiện thời. Thuật toán đầy đủ được thể hiện trên hình 2.18. Bước 1 là bước khởi tạo, trong đó ta chọn ngẫu nhiên trạng thái xuất phát. Bước 2 sinh ra các láng giềng của trạng thái hiện thời.
+
+Ở bước 3, thuật toán kiểm tra các láng giềng, nếu không có láng giềng nào tốt hơn trạng thái hiện thời (tất cả láng giềng có giá trị hàm mục tiêu Obj không lớn hơn Obj của trạng thái hiện thời) thì kết thúc và trả về trạng thái hiện thời là kết quả. Trong trường hợp ngược lại, ở bước 4, thuật toán chọn láng giềng có giá trị hàm mục tiêu Obj lớn nhất và chuyển sang trạng thái đó, sau đó lặp lại từ bước 2.
 
 Đầu vào: bài toán tối ưu tổ hợp Đầu ra: trạng thái với hàm mục tiêu lớn nhất (hoặc cực đại địa phương)
 
@@ -1386,7 +1386,7 @@ Kết thúc và trả lại _x_ là kết quả
 
 5. Go to 2
 
-![Figure: fig-55-1]
+**Figure: fig-55-1**
 
 Hình 2.18. Thuật toán leo đồi di chuyển sang trạng thái tốt nhất
 
@@ -1432,7 +1432,7 @@ Tương tự, hình 2.21 (dưới) minh họa một số trạng thái láng gi�
 
 <!-- page: 60 -->
 
-![Figure: fig-60-1]
+**Figure: fig-60-1**
 
 Hình 2.21. Ví dụ một trạng thái của bài toán người bán hàng (a), một số láng giềng sinh ra nhờ thay_đổi_2_cung (b), và một số láng giềng sinh ra nhờ thay_đổi_3_cung.
 
@@ -1476,7 +1476,7 @@ if Obj(x) < Obj(x*) then x* ← x
 
 return x*      //x* là trạng thái tốt nhất trong số những trạng thái đã xem xét
 
-![Figure: fig-62-1]
+**Figure: fig-62-1**
 
 Hình 2.22. Thuật toán tôi thép
 
@@ -1532,7 +1532,7 @@ Giải thuật di truyền sử dụng các quy tắc sau để tạo ra thế h
 
 <!-- page: 64 -->
 
-![Figure: fig-64-1]
+**Figure: fig-64-1**
 
 Hình 2.23. Ví dụ biểu diễn lời giải và quần thể trong giải thuật di truyền
 
@@ -1580,7 +1580,7 @@ While (chưa thoả mãn điều kiện dừng) do
 
    - Tính giá trị hàm thích nghi f(i) cho cá thể thứ i
 
-2. For i = 1 to ⎣N/2⎦ do
+2. For i = 1 to ⎣N/2⎦ do
 
    - i. Chọn lọc: chọn 2 cá thể bố mẹ x và y từ G tuỳ theo giá trị thích nghi
 
@@ -1592,7 +1592,7 @@ While (chưa thoả mãn điều kiện dừng) do
 
 Return: Lời giải thuộc G với giá trị thích nghi tốt nhất
 
-![Figure: fig-67-1]
+**Figure: fig-67-1**
 
 Hình 2.26. Giải thuật di truyền
 
@@ -1805,7 +1805,7 @@ Cần lưu ý rằng, với cách biểu diễn như vậy, việc một giáo v
 |`5`|`6B 6B 7A 7A`|`6A 6A 7B 7B`||
 |`…`|`…`|`…`||
 
-![Figure: fig-74-1]
+**Figure: fig-74-1**
 
 Hình 2.27. Một phần thời khoá biểu
 
@@ -1942,15 +1942,11 @@ Cú pháp của logic mệnh đề bao gồm tập các ký hiệu và tập cá
 
 Các ký hiệu được dùng trong logic mệnh đề bao gồm:
 
--
-
-   - Các ký hiệu chân lý hay các hằng logic: True (ký hiệu T) và False (ký hiệu F).
+- Các ký hiệu chân lý hay các hằng logic: True (ký hiệu T) và False (ký hiệu F).
 
 - Các ký hiệu mệnh đề (còn được gọi là các biến mệnh đề và thường được ký hiệu bằng các chữ cái): P, Q,...
 
--
-
-   - Các kết nối logic ∧, ∨, ¬, ⇒, ⇔.
+- Các kết nối logic ∧, ∨, ¬, ⇒, ⇔.
 
 - Các dấu ngoặc, chẳng hạn “(“ và “)”.
 
@@ -2620,13 +2616,13 @@ Thủ tục suy diễn tiến được mô tả như dưới đây.
 
 <!-- page: 98 -->
 
-n Khi câu _p_ mới được thêm vào KB:
+- Khi câu _p_ mới được thêm vào KB:
 
 – với mỗi quy tắc _q_ mà _p_ hợp nhất được với một phần vế trái:
 
 • Nếu các phần còn lại của vế trái đã có thì thêm vế phải vào KB và suy diễn tiếp
 
-![Figure: fig-98-1]
+**Figure: fig-98-1**
 
 Hình 3.2. Thủ tục suy diễn tiến
 
@@ -2688,11 +2684,11 @@ Quá trình suy diễn lùi được tiến hành như sau. Thủ tục suy di�
 
 Thủ tục suy diễn lùi được mô tả trên hình sau.
 
-n Với câu hỏi q, nếu tồn tại q’ hợp nhất với q thì trả về hợp tử
+- Với câu hỏi q, nếu tồn tại q’ hợp nhất với q thì trả về hợp tử
 
-- n Với mỗi quy tắc có vế phải q’ hợp nhất với q cố gắng chứng minh các phần tử vế trái bằng suy diễn lùi
+- - Với mỗi quy tắc có vế phải q’ hợp nhất với q cố gắng chứng minh các phần tử vế trái bằng suy diễn lùi
 
-![Figure: fig-99-1]
+**Figure: fig-99-1**
 
 Hình 3.3. Thủ tục suy diễn lùi
 
@@ -2712,7 +2708,7 @@ Quá trình chứng minh có thể minh họa một cách thuận tiện dưới
 
 <!-- page: 100 -->
 
-![Figure: fig-100-1]
+**Figure: fig-100-1**
 
 Hình 3.4. Cây suy diễn cho trường hợp suy diễn lùi
 
@@ -2774,7 +2770,7 @@ Return _Không chứng minh được_
 
 Thêm kết quả phép giải vào KB Return _Câu Q được chứng minh_
 
-![Figure: fig-102-1]
+**Figure: fig-102-1**
 
 Hình 3.5. Suy diễn bằng phép giải và phản chứng
 
@@ -3355,7 +3351,7 @@ Ví dụ 2. Ví dụ này minh họa cho việc kết hợp nhiều bằng chứ
 
 Trong trường hợp tổng quát, khi cho bảng xác suất đồng thời của n biến V1, …, Vn, ta có thể tính xác suất của một số biến này khi biết giá trị một số biến khác như sau:
 
-#### è Công thức tổng quát
+#### è Công thức tổng quát
 
 Một cách hình thức hơn, gọi các biến cần tính xác suất là Q, các biến đã biết là E, các biến còn lại (ngoài E và Q) là Y, ta có
 
@@ -3533,7 +3529,7 @@ Tiếp theo, ta xây dựng một đồ thị, trong đó mỗi biến ngẫu nh
 
 <!-- page: 123 -->
 
-![Figure: fig-123-1]
+**Figure: fig-123-1**
 
 Hình 4.1: Một ví dụ mạng Bayes
 
@@ -3652,7 +3648,7 @@ hướng từ nút đó tới Xi.
 
 _d._ _`Xác định bảng xác suất điều kiện cho Xi the các giá trị của bố mẹ hoặc bằng xác suất tiền nghiệm nếu Xi không có bố mẹ.`_
 
-![Figure: fig-126-1]
+**Figure: fig-126-1**
 
 Hình 4.2 : Phương pháp xây dựng mạng Bayes
 
@@ -3668,7 +3664,7 @@ B2: các biến được sắp xếp theo thứ tự T, Đ, B, N, V
 
 B3: thực hiện như các bước ở hình vẽ, ta xây dựng được mạng thể hiện trên hình sau (để đơn giản, trên hình vẽ chỉ thể hiện cấu trúc và không có bảng xác suất điều kiện).
 
-![Figure: fig-126-2]
+**Figure: fig-126-2**
 
 Hình 4.3.: Kết quả xây dựng mạng Bayes cho ví dụ chuông báo trộm
 
@@ -3692,7 +3688,7 @@ Các bước thêm nút sẽ thực hiện như sau:
 
 Kết quả của mạng Bayes xây dựng theo thứ tự mới được thể hiện trên hình dưới. So sánh với kết quả ở trên, mạng Bayes mới phức tạp hơn, theo nghĩa có nhiều cung hơn hay trung bình các nút có nhiều nút cha hơn. Ngoài ra, ý nghĩa một số quan hệ trên mạng rất không trực quan và khó giải thích, chẳng hạn việc xác suất động đất phục thuộc vào chuông báo động và có trộm. Như vậy, mặc dù cả hai mạng Bayes xây dựng ở trên đều đúng theo nghĩa đảm bảo các ràng buộc về xác suất và đều cho phép tính ra các xác suất đồng thời, việc lựa chọn không đúng thứ tự nút sẽ làm mạng khó hiểu và phức tạp hơn.
 
-![Figure: fig-127-1]
+**Figure: fig-127-1**
 
 Hình 4.4: Kết quả xây dựng mạng Bayes khi sử dụng thứ tự các nút khác
 
@@ -3748,7 +3744,7 @@ Trường hợp thứ hai ngược lại, tức là cho biết giá trị nút c
 
 Để tiện trình bày, các suy diễn sẽ được minh họa trên ví dụ đã sử dụng ở phần đầu bài. Như đã nói ở trên, ta chỉ xét trường hợp nút truy vấn và nút bằng chứng có liên kết trực tiếp với nhau.
 
-![Figure: fig-133-1]
+**Figure: fig-133-1**
 
 Hình 4.7: Mạng Bayes
 
@@ -3816,7 +3812,7 @@ Việc lấy mẫu được minh họa qua ví dụ mạng Bayes trên hình dư
 
 <!-- page: 135 -->
 
-![Figure: fig-135-1]
+**Figure: fig-135-1**
 
 Hình 4.8. Ví dụ mạng Bayes
 
@@ -3854,13 +3850,13 @@ Cách lấy mẫu tại mỗi bước là trước tiên lấy mẫu các nút k
 
 Kết quả x1, … xn là một mẫu sinh ra từ các biến X1, …, Xn
 
-![Figure: fig-136-1]
+**Figure: fig-136-1**
 
 Hình 4.9: Thuật toán lấy mẫu từ mạng Bayes
 
 #### Tính xác suất điều kiện
 
-Tiếp theo, giả sử cần tính _P_ ( _R_ = True ⏐ _T_ = True , _S_ = False ).
+Tiếp theo, giả sử cần tính _P_ ( _R_ = True ⏐ _T_ = True , _S_ = False ).
 
 Trước hết, ta thực hiện lấy mẫu nhiều lần theo cách ở trên, mỗi bộ giá trị sinh ra được gọi là một mẫu. Nếu số lượng mẫu đủ lớn thì tần suất xuất hiện mỗi bộ giá trị sẽ xấp xỉ xác suất đồng thời của các giá trị đó. Xác suất đồng thời này sẽ được sử dụng để tính xác suất điều kiện như dưới đây.
 
@@ -3884,7 +3880,7 @@ Từ ví dụ minh họa ở trên, có thể mô tả cách suy diễn xấp x�
 
 • Lấy mẫu số lượng đủ lớn • Tính số lượng: – _Nc_ : số mẫu có _E_ – _Ns_ : số mẫu có _Q_ và _E_ – _N_ : Tổng số mẫu • Nếu _N_ đủ lớn, ta có: _P_ ( _Q_ | _E_ ) = _Ns_ / _Nc_
 
-![Figure: fig-136-2]
+**Figure: fig-136-2**
 
 Hình 4.10: Thuật toán suy diễn bằng cách lấy mẫu trên mạng Bayes
 
@@ -3906,7 +3902,7 @@ Theo cách lấy mẫu đơn giản, ta sẽ sinh ra giá trị của _Xi_ một
 
 #### Lấy mẫu
 
-Phương pháp lấy mẫu này được minh họa với ví dụ mạng Bayes trên hình 4.10. Giả sử cần tính _P_ ( _R_ = true ⏐ _T_ = true , _S_ = false ), và các nút được sắp xếp theo thứ tự [ _S, M, L, R, T_ ]. Trước tiên ta đặt giá trị cho trọng số _w_ = 1. Quá trình lấy mẫu sau đó diễn ra như sau:
+Phương pháp lấy mẫu này được minh họa với ví dụ mạng Bayes trên hình 4.10. Giả sử cần tính _P_ ( _R_ = true ⏐ _T_ = true , _S_ = false ), và các nút được sắp xếp theo thứ tự [ _S, M, L, R, T_ ]. Trước tiên ta đặt giá trị cho trọng số _w_ = 1. Quá trình lấy mẫu sau đó diễn ra như sau:
 
 - _S_ là biến ngẫu nhiên thuộc _E_ với giá trị S = false, do vậy ta thay đổi trọng số
 
@@ -3946,7 +3942,7 @@ w←1; **x** ← bộ giá trị cho n biến với giá trị được khởi t
 
 _w_ ← _w_ * _P_ ( _Xi_ = **x** [ _i_ ] | Cha_mẹ( _Xi_ )) **Else x** [ _i_ ] ← chọn ngẫu nhiên giá trị từ phân bố _P_ ( _Xi_ | Cha_mẹ( _Xi_ )) **Endif Return** : **x** , w.
 
-![Figure: fig-138-1]
+**Figure: fig-138-1**
 
 Hình 4.11. Thuật toán lấy mẫu có trọng số
 
@@ -3964,7 +3960,7 @@ Sau khi thực hiện lấy mẫu với trọng số với số mẫu đủ lớ
 
 **------------------** _Khởi tạo_ : _Ns_ ← 0; _Nc_ ← 0 1. Sinh ra bộ giá trị **x** và trọng số _w_ sử dụng thuật toán “ **Lấy mẫu có trọng số** ” 2. _Nc_ ← _Nc_ + _w_ 3. **If** bộ giá trị **x** có chứa các giá trị của _Q_ **then** cập nhật _Ns_ ← _Ns_ + _w_ 4. **Goto 1 Return** : _P_ ( _Q_ | _E_ ) = _Ns_ / _Nc_
 
-![Figure: fig-138-2]
+**Figure: fig-138-2**
 
 Hình 4.12. Tính xác suất điều kiện bằng lấy mẫu có trọng số
 
@@ -4026,7 +4022,7 @@ Tiếp theo, thay thế _f2_ ( _C_ ) vào biểu thức, xoá nút _B_ khỏi m�
 
 <!-- page: 141 -->
 
-![Figure: fig-141-1]
+**Figure: fig-141-1**
 
 Hình 4.14. Ví dụ minh hoạ cách loại trừ biến cho trường hợp đơn giản.
 
@@ -4080,7 +4076,7 @@ Danh sách mới các thừa số, danh sách này không chứa _Xi_
 
 4. Thêm _h_ như một thừa số mới vào _F_ Return _F_ (bây giờ đã không còn thừa số nào chứa _Xi_ )
 
-![Figure: fig-142-1]
+**Figure: fig-142-1**
 
 Hình 4.15: Thủ tục Eliminate cho phép loại trừ một biến khỏi xác suất đồng thời
 
@@ -4122,7 +4118,7 @@ F: danh sách các thừa số ban đầu, chính là danh sách các bảng xá
 
 **Return** _P_ ( _Q_ | _E_ = _e_ )
 
-![Figure: fig-143-1]
+**Figure: fig-143-1**
 
 Hình 4.16. Thuật toán Loại trừ biến dùng cho suy diễn trên mạng Bayes
 
@@ -4140,7 +4136,7 @@ _F_ = { _P_ ( _T_ ), _P_ ( _X_ | _A_ ), _P_ ( _L_ ), _P_ ( _A_ | _T_ , _L_ ), _P
 
 _F_ = { _P_ ( _X_ | _A_ ), _P_ ( _L_ ), _P_ ( _B_ = _false_ | _L_ ), _P_ ( _D_ | _A_ , _B_ = _false_ ), _f_ 1( _A_ , _L_ )}
 
-![Figure: fig-144-1]
+**Figure: fig-144-1**
 
 Hình 4.17: Ví dụ các bước thực hiện thuật toán loại trừ biến
 
@@ -4285,9 +4281,7 @@ Sau đây là một số ví dụ ứng dụng cụ thể của học máy:
 
 Khi thiết kế và xây dựng hệ thống học máy cần quan tâm tới những yếu tố sau.
 
--
-
-   - Thứ nhất, kinh nghiệm hoặc dữ liệu cho học máy được cho dưới dạng nào?
+- Thứ nhất, kinh nghiệm hoặc dữ liệu cho học máy được cho dưới dạng nào?
 
 - Thứ hai, lựa chọn biểu diễn cho hàm đích ra sao? Hàm đích có thể biểu diễn dưới dạng hàm đại số thông thường nhưng cũng có thể biểu diễn dưới những dạng khác như dạng cây, dạng mạng nơ ron, công thức xác suất .v.v.
 
@@ -4332,7 +4326,7 @@ thể nhận giá trị từ một trong hai giá trị “cao cấp” hoặc �
 |3500|SUV|Cao cấp|
 |1800|Sedan|Trung bình|
 
-![Figure: fig-157-1]
+**Figure: fig-157-1**
 
 Hình 5.1. Dữ liệu huấn luyện cho bài toán phân loại
 
@@ -4347,7 +4341,7 @@ Hình 5.1. Dữ liệu huấn luyện cho bài toán phân loại
 |1800|1|915|
 |1800|3|725|
 
-![Figure: fig-157-2]
+**Figure: fig-157-2**
 
 Hình 5.2. Dữ liệu huấn luyện cho trường hợp hồi quy
 
@@ -4357,7 +4351,7 @@ Hình 5.2. Dữ liệu huấn luyện cho trường hợp hồi quy
 
 nhờ thuật toán học máy bao gồm các thuật toán phân loại hoặc hồi quy. Mô hình dự đoán sau đó được lưu lại. Trong giai đoạn dự đoán, hệ thống nhận các ví dụ mới chưa có giá trị đích và sử dụng mô hình dự đoán đã huấn luyện để xác định giá trị đích cho ví dụ mới.
 
-![Figure: fig-158-1]
+**Figure: fig-158-1**
 
 Hình 5.3. Một hệ thống học máy tiểu biểu cho trường hợp học có giám sát với hai giai đoạn: 1) Huấn luyện; 2) Dự đoán
 
@@ -4440,7 +4434,7 @@ Dữ liệu huấn luyện được cho dưới dạng _n_ mẫu hay _n_ ví d�
 |D13|u ám|Cao|bình thường|yếu|có|
 |D14|mưa|trung bình|cao|mạnh|không|
 
-![Figure: fig-162-1]
+**Figure: fig-162-1**
 
 Hình 5.5. Bộ dữ liệu huấn luyện cho bài toán phân loại “Chơi tennis”.
 
@@ -4486,7 +4480,7 @@ Khởi đầu: nút hiện thời là nút gốc chứa toàn bộ tập dữ li
 
    - Nhãn của nút được lấy theo đa số nhãn của ví dụ tại nút hiện thời
 
-![Figure: fig-163-1]
+**Figure: fig-163-1**
 
 Hình 5.6. Thuật toán xây dựng cây quyết định từ dữ liệu huấn luyện
 
@@ -4550,7 +4544,7 @@ Tính tương tự với hai thuộc tính còn lại, ta có:
 
 Thuộc tính Độ ẩm có IG lớn nhất và được chọn cho nút này. Kết quả học cây đầy đủ được thể hiện trên hình 5.4.
 
-![Figure: fig-166-1]
+**Figure: fig-166-1**
 
 Hình 5.8. Ví dụ xây dựng cây quyết định
 
@@ -4686,7 +4680,7 @@ trong đó, _P_ ( _xi_ |<sup>_c_</sup> _j_ ) được tính từ dữ liệu hu�
 
 Trên hình 5.9 là biểu diễn mô hình phân loại Bayes đơn giản dưới dạng mạng Bayes. Các thuộc tính không được nối với nhau bởi các cạnh và do vậy các thuộc tính độc lập xác suất với nhau nếu biết giá trị của nhãn phân loại.
 
-![Figure: fig-171-1]
+**Figure: fig-171-1**
 
 Hình 5.9: Mô hình Bayes đơn giản: các thuộc tính Xi độc lập xác suất với nhau nếu biết giá trị nhãn phân loại Y.
 
@@ -4852,7 +4846,7 @@ Với mẫu x cần phân loại:
 
 3. Xác định nhãn phân loại _f’(x)_ là nhãn chiếm đa số trong tập { _x_ 1, _x_ 2, …, _xk_ }
 
-![Figure: fig-177-1]
+**Figure: fig-177-1**
 
 Hình 5.10. Thuật toán k-NN cho bài toán phân loại
 
@@ -4926,7 +4920,7 @@ Giả sử ta có bộ dữ liệu về diện tích, số phòng tắm, và gi�
 |90|2|2300|
 |…|…|…|
 
-![Figure: fig-181-1]
+**Figure: fig-181-1**
 
 Hình 5.12. Dữ liệu huấn luyện cho bài toán hồi quy
 
@@ -4974,7 +4968,9 @@ For ( _i_ = 1 to _m_ ) {
 
 <!-- page: 185 -->
 
-Khác với học theo mẻ, thuật toán giảm gradient ngẫu nhiên lần lượt xét từng ví dụ huấn luyện. Với mỗi ví dụ, thuật toán tiến hành cập nhật ngay bộ tham số theo gradient tính được theo giá trị lỗi cho mình ví dụ đó. Như vậy, thay vì xét toàn bộ ví dụ huấn luyện trước khi tiến hành cập nhật tham số như trong phương pháp theo mẻ, thuật toán ngẫu nhiên bắt đầu cập nhật tham số ngay khi gặp mỗi ví dụ huấn luyện. Trên thực tế, phương pháp này cho phép đạt tới giá trị tham số gần tối ưu nhanh hơn nhiều so với giảm gradient theo mẻ. Trong nhiều trường hợp, thuật toán ngẫu nhiên không cho phép đạt được giá trị tham số tối ưu do giá trị này chỉ dao động ở gần mức tối ưu, đặc biệt nếu tham số tốc độ học lớn. Tuy nhiên, trên thực tế, giá trị xấp xỉ tối ưu là có thể chấp nhận được và do vậy phương pháp ngẫu nhiên thường được ưu tiên lựa chọn nếu bộ dữ liệu huấn luyện lớn. Một kỹ  thuật khác cũng có thể sử dụng để đạt được tham số tối ưu là giảm dần tốc độ học α theo thời gian. Khi đó, tham số sẽ đạt được cực tiểu thay vì dao động quanh đó.
+Khác với học theo mẻ, thuật toán giảm gradient ngẫu nhiên lần lượt xét từng ví dụ huấn luyện. Với mỗi ví dụ, thuật toán tiến hành cập nhật ngay bộ tham số theo gradient tính được theo giá trị lỗi cho mình ví dụ đó. Như vậy, thay vì xét toàn bộ ví dụ huấn luyện trước khi tiến hành cập nhật tham số như trong phương pháp theo mẻ, thuật toán ngẫu nhiên bắt đầu cập nhật tham số ngay khi gặp mỗi ví dụ huấn luyện. Trên thực tế, phương pháp này cho phép đạt tới giá trị tham số gần tối ưu nhanh hơn nhiều so với giảm gradient theo mẻ.
+
+Trong nhiều trường hợp, thuật toán ngẫu nhiên không cho phép đạt được giá trị tham số tối ưu do giá trị này chỉ dao động ở gần mức tối ưu, đặc biệt nếu tham số tốc độ học lớn. Tuy nhiên, trên thực tế, giá trị xấp xỉ tối ưu là có thể chấp nhận được và do vậy phương pháp ngẫu nhiên thường được ưu tiên lựa chọn nếu bộ dữ liệu huấn luyện lớn. Một kỹ  thuật khác cũng có thể sử dụng để đạt được tham số tối ưu là giảm dần tốc độ học α theo thời gian. Khi đó, tham số sẽ đạt được cực tiểu thay vì dao động quanh đó.
 
 ### 5.5.2. Hồi quy logistic
 
@@ -5050,7 +5046,7 @@ trong đó sgn() là hàm dấu, nhận giá trị +1 nếu _f_ ( **x** ) > 0 v�
 
 Cần lưu ý rằng, trong ví dụ trên hình 5.17, ta có thể tìm được siêu phẳng _f_ ( **x** ) sao cho các ví dụ dương nằm về một phía và ví dụ âm nằm về phía còn lại. Trong trường hợp như vậy, ta nói rằng dữ liệu _có thể phân chia tuyến tính_ . Trường hợp dữ liệu không phân chia tuyến tính, tức là không tồn tại siêu phẳng như vậy, sẽ được đề cập sau.
 
-![Figure: fig-191-1]
+**Figure: fig-191-1**
 
 Hình 5.17. Bộ phân loại tuyến tính
 
