@@ -1,0 +1,9416 @@
+<!-- page: 1 -->
+
+# Understanding Machine Learning: From Theory to Algorithms
+© 2014 by Shai Shalev-Shwartz and Shai Ben-David
+Published 2014 by Cambridge University Press.
+This copy is for personal use only. Not for distribution.
+Do not post. Please link to:
+http://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning
+Please note: This copy is almost, but not entirely, identical to the printed version of the book. In particular, page numbers are not identical (but section numbers are the same).
+
+<!-- page: 2 -->
+
+<!-- page: 3 -->
+
+# Understanding Machine Learning
+Machine learning is one of the fastest growing areas of computer science, with far-reaching applications. The aim of this textbook is to introduce machine learning, and the algorithmic paradigms it offers, in a principled way. The book provides an extensive theoretical account of the fundamental ideas underlying machine learning and the mathematical derivations that transform these principles into practical algorithms. Following a presentation of the basics of the field, the book covers a wide array of central topics that have not been addressed by previous textbooks. These include a discussion of the computational complexity of learning and the concepts of convexity and stability; important algorithmic paradigms including stochastic gradient descent, neural networks, and structured output learning; and emerging theoretical concepts such as the PAC-Bayes approach and compression-based bounds. Designed for an advanced undergraduate or beginning graduate course, the text makes the fundamentals and algorithms of machine learning accessible to students and nonexpert readers in statistics, computer science, mathematics, and engineering.
+Shai Shalev-Shwartz is an Associate Professor at the School of Computer Science and Engineering at The Hebrew University, Israel.
+Shai Ben-David is a Professor in the School of Computer Science at the University of Waterloo, Canada.
+
+<!-- page: 4 -->
+
+UNDERSTANDING MACHINE LEARNING
+From Theory to Algorithms
+Shai Shalev-Shwartz
+The Hebrew University, Jerusalem
+Shai Ben-David
+University of Waterloo, Canada
+
+<!-- page: 5 -->
+
+32 Avenue of the Americas, New York, NY 10013-2473, USA
+Cambridge University Press is part of the University of Cambridge. It furthers the University’s mission by disseminating knowledge in the pursuit of education, learning and research at the highest international levels of excellence.
+www.cambridge.org
+Information on this title: www.cambridge.org/9781107057135
+© Shai Shalev-Shwartz and Shai Ben-David 2014
+This publication is in copyright. Subject to statutory exception and to the provisions of relevant collective licensing agreements, no reproduction of any part may take place without the written permission of Cambridge University Press.
+First published 2014
+Printed in the United States of America
+A catalog record for this publication is available from the British Library
+Library of Congress Cataloging in Publication Data
+ISBN 978-1-107-05713-5 Hardback
+Cambridge University Press has no responsibility for the persistence or accuracy of URLs for external or third-party Internet Web sites referred to in this publication, and does not guarantee that any content on such Web sites will be accurate or appropriate.
+
+<!-- page: 6 -->
+
+Triple-S dedicates the book to triple-M
+
+<!-- page: 7 -->
+
+# Preface
+The term machine learning refers to the automated detection of meaningful patterns in data. In the past couple of decades it has become a common tool in almost any task that requires information extraction from large data sets. We are surrounded by a machine learning based technology: search engines learn how to bring us the best results (while placing profitable ads), anti-spam software learns to filter our email messages, and credit card transactions are secured by a software that learns how to detect frauds. Digital cameras learn to detect faces and intelligent personal assistance applications on smart-phones learn to recognize voice commands. Cars are equipped with accident prevention systems that are built using machine learning algorithms. Machine learning is also widely used in scientific applications such as bioinformatics, medicine, and astronomy.
+One common feature of all of these applications is that, in contrast to more traditional uses of computers, in these cases, due to the complexity of the patterns that need to be detected, a human programmer cannot provide an explicit, fine-detailed specification of how such tasks should be executed. Taking example from intelligent beings, many of our skills are acquired or refined through learning from our experience (rather than following explicit instructions given to us). Machine learning tools are concerned with endowing programs with the ability to “learn” and adapt. The first goal of this book is to provide a rigorous, yet easy to follow, introduction to the main concepts underlying machine learning: What is learning? How can a machine learn? How do we quantify the resources needed to learn a given concept? Is learning always possible? Can we know if the learning process succeeded or failed? The second goal of this book is to present several key machine learning algorithms. We chose to present algorithms that on one hand are successfully used in practice and on the other hand give a wide spectrum of different learning techniques. Additionally, we pay specific attention to algorithms appropriate for large scale learning (a.k.a. “Big Data”), since in recent years, our world has become increasingly “digitized” and the amount of data available for learning is dramatically increasing. As a result, in many applications data is plentiful and computation time is the main bottleneck. We therefore explicitly quantify both the amount of data and the amount of computation time needed to learn a given concept. The book is divided into four parts. The first part aims at giving an initial rigorous answer to the fundamental questions of learning. We describe a generalization of Valiant’s Probably Approximately Correct (PAC) learning model, which is a first solid answer to the question “what is learning?”. We describe the Empirical Risk Minimization (ERM), Structural Risk Minimization (SRM), and Minimum Description Length (MDL) learning rules, which shows “how can a machine learn”. We quantify the amount of data needed for learning using the ERM, SRM, and MDL rules and show how learning might fail by deriving
+
+<!-- page: 8 -->
+
+a “no-free-lunch” theorem. We also discuss how much computation time is required for learning. In the second part of the book we describe various learning algorithms. For some of the algorithms, we first present a more general learning principle, and then show how the algorithm follows the principle. While the first two parts of the book focus on the PAC model, the third part extends the scope by presenting a wider variety of learning models. Finally, the last part of the book is devoted to advanced theory. We made an attempt to keep the book as self-contained as possible. However, the reader is assumed to be comfortable with basic notions of probability, linear algebra, analysis, and algorithms. The first three parts of the book are intended for first year graduate students in computer science, engineering, mathematics, or statistics. It can also be accessible to undergraduate students with the adequate background. The more advanced chapters can be used by researchers intending to gather a deeper theoretical understanding.
+# Acknowledgements
+The book is based on Introduction to Machine Learning courses taught by Shai Shalev-Shwartz at the Hebrew University and by Shai Ben-David at the University of Waterloo. The first draft of the book grew out of the lecture notes for the course that was taught at the Hebrew University by Shai Shalev-Shwartz during 2010–2013. We greatly appreciate the help of Ohad Shamir, who served as a TA for the course in 2010, and of Alon Gonen, who served as a TA for the course in 2011–2013. Ohad and Alon prepared few lecture notes and many of the exercises. Alon, to whom we are indebted for his help throughout the entire making of the book, has also prepared a solution manual.
+We are deeply grateful for the most valuable work of Dana Rubinstein. Dana has scientifically proofread and edited the manuscript, transforming it from lecture-based chapters into fluent and coherent text. Special thanks to Amit Daniely, who helped us with a careful read of the advanced part of the book and also wrote the advanced chapter on multiclass learnability. We are also grateful for the members of a book reading club in Jerusalem that have carefully read and constructively criticized every line of the manuscript. The members of the reading club are: Maya Alroy, Yossi Arje-vani, Aharon Birnbaum, Alon Cohen, Alon Gonen, Roi Livni, Ofer Meshi, Dan Rosenbaum, Dana Rubinstein, Shahar Somin, Alon Vinnikov, and Yoav Wald. We would also like to thank Gal Elidan, Amir Globerson, Nika Haghtalab, Shie Mannor, Amnon Shashua, Nati Srebro, and Ruth Urner for helpful discussions.
+Shai Shalev-Shwartz, Jerusalem, Israel
+Shai Ben-David, Waterloo, Canada
+
+<!-- page: 9 -->
+
+# Contents
+Preface                                                                  page vii
+1         Introduction                                                                       19
+1.1   What Is Learning?                                                            19
+1.2   When Do We Need Machine Learning?                                            21
+1.3   Types of Learning                                                            22
+1.4   Relations to Other Fields                                                    24
+1.5   How to Read This Book                                                        25
+1.5.1 Possible Course Plans Based on This Book                               26
+1.6   Notation                                                                     27
+Part I   Foundations                                                                         31
+2         A Gentle Start                                                                     33
+2.1  A Formal Model – The Statistical Learning Framework                           33
+2.2  Empirical Risk Minimization                                                   35
+2.2.1 Something May Go Wrong – Overfitting                                    35
+2.3  Empirical Risk Minimization with Inductive Bias                               36
+2.3.1 Finite Hypothesis Classes                                               37
+2.4  Exercises                                                                     41
+3         A Formal Learning Model                                                            43
+3.1  PAC Learning                                                                  43
+3.2  A More General Learning Model                                                 44
+3.2.1 Releasing the Realizability Assumption – Agnostic PAC Learning 45
+3.2.2 The Scope of Learning Problems Modeled                                  47
+3.3  Summary                                                                       49
+3.4  Bibliographic Remarks                                                         50
+3.5  Exercises                                                                     50
+4         Learning via Uniform Convergence                                                   54
+4.1   Uniform Convergence Is Sufficient for Learnability                           54
+4.2   Finite Classes Are Agnostic PAC Learnable                                    55
+
+<!-- page: 10 -->
+
+4.3   Summary                                                        58
+4.4   Bibliographic Remarks                                          58
+4.5   Exercises                                                      58
+5   The Bias-Complexity Tradeoff                                         60
+5.1  The No-Free-Lunch Theorem                                       61
+5.1.1 No-Free-Lunch and Prior Knowledge                         63
+5.2  Error Decomposition                                             64
+5.3  Summary                                                         65
+5.4  Bibliographic Remarks                                           66
+5.5  Exercises                                                       66
+6   The VC-Dimension                                                     67
+6.1  Infinite-Size Classes Can Be Learnable                          67
+6.2  The VC-Dimension                                                68
+6.3  Examples                                                        70
+6.3.1 Threshold Functions                                       70
+6.3.2 Intervals                                                 71
+6.3.3 Axis Aligned Rectangles                                   71
+6.3.4 Finite Classes                                            72
+6.3.5 VC-Dimension and the Number of Parameters                 72
+6.4  The Fundamental Theorem of PAC learning                         72
+6.5  Proof of Theorem 6.7                                            73
+6.5.1 Sauer’s Lemma and the Growth Function                     73
+6.5.2 Uniform Convergence for Classes of Small Effective Size   75
+6.6  Summary                                                         78
+6.7  Bibliographic remarks                                           78
+6.8  Exercises                                                       78
+7   Nonuniform Learnability                                              83
+7.1  Nonuniform Learnability                                         83
+7.1.1 Characterizing Nonuniform Learnability                    84
+7.2  Structural Risk Minimization                                    85
+7.3  Minimum Description Length and Occam’s Razor                    89
+7.3.1 Occam’s Razor                                             91
+7.4  Other Notions of Learnability – Consistency                     92
+7.5  Discussing the Different Notions of Learnability                93
+7.5.1 The No-Free-Lunch Theorem Revisited                       95
+7.6  Summary                                                         96
+7.7  Bibliographic Remarks                                           97
+7.8  Exercises                                                       97
+8   The Runtime of Learning                                              100
+8.1  Computational Complexity of Learning                            101
+
+<!-- page: 11 -->
+
+8.1.1 Formal Definition*                                    102
+8.2   Implementing the ERM Rule                                   103
+8.2.1 Finite Classes                                        104
+8.2.2 Axis Aligned Rectangles                               105
+8.2.3 Boolean Conjunctions                                  106
+8.2.4 Learning 3-Term DNF                                   107
+8.3   Efficiently Learnable, but Not by a Proper ERM              107
+8.4   Hardness of Learning*                                       108
+8.5   Summary                                                     110
+8.6   Bibliographic Remarks                                       110
+8.7   Exercises                                                   110
+Part II   From Theory to Algorithms                                         115
+9         Linear Predictors                                                 117
+9.1   Halfspaces                                                  118
+9.1.1 Linear Programming for the Class of Halfspaces        119
+9.1.2 Perceptron for Halfspaces                             120
+9.1.3 The VC Dimension of Halfspaces                        122
+9.2   Linear Regression                                           123
+9.2.1 Least Squares                                         124
+9.2.2 Linear Regression for Polynomial Regression Tasks     125
+9.3   Logistic Regression                                         126
+9.4   Summary                                                     128
+9.5   Bibliographic Remarks                                       128
+9.6   Exercises                                                   128
+10        Boosting                                                          130
+10.1 Weak Learnability                                            131
+10.1.1 Efficient Implementation of ERM for Decision Stumps   133
+10.2 AdaBoost                                                     134
+10.3 Linear Combinations of Base Hypotheses                       137
+10.3.1 The VC-Dimension of L(B, T )                          139
+10.4 AdaBoost for Face Recognition                                140
+10.5 Summary                                                      141
+10.6 Bibliographic Remarks                                        141
+10.7 Exercises                                                    142
+11        Model Selection and Validation                                    144
+11.1 Model Selection Using SRM                                    145
+11.2 Validation                                                   146
+11.2.1 Hold Out Set                                          146
+11.2.2 Validation for Model Selection                        147
+11.2.3 The Model-Selection Curve                             148
+
+<!-- page: 12 -->
+
+11.2.4 k-Fold Cross Validation                                149
+11.2.5 Train-Validation-Test Split                            150
+11.3   What to Do If Learning Fails                                  151
+11.4   Summary                                                       154
+11.5   Exercises                                                     154
+12    Convex Learning Problems                                             156
+12.1 Convexity, Lipschitzness, and Smoothness                        156
+12.1.1 Convexity                                                156
+12.1.2 Lipschitzness                                            160
+12.1.3 Smoothness                                               162
+12.2 Convex Learning Problems                                        163
+12.2.1 Learnability of Convex Learning Problems                 164
+12.2.2 Convex-Lipschitz/Smooth-Bounded Learning Problems        166
+12.3 Surrogate Loss Functions                                        167
+12.4 Summary                                                         168
+12.5 Bibliographic Remarks                                           169
+12.6 Exercises                                                       169
+13    Regularization and Stability                                         171
+13.1 Regularized Loss Minimization                                   171
+13.1.1 Ridge Regression                                         172
+13.2 Stable Rules Do Not Overfit                                     173
+13.3 Tikhonov Regularization as a Stabilizer                         174
+13.3.1 Lipschitz Loss                                           176
+13.3.2 Smooth and Nonnegative Loss                              177
+13.4 Controlling the Fitting-Stability Tradeoff                      178
+13.5 Summary                                                         180
+13.6 Bibliographic Remarks                                           180
+13.7 Exercises                                                       181
+14    Stochastic Gradient Descent                                          184
+14.1 Gradient Descent                                                185
+14.1.1 Analysis of GD for Convex-Lipschitz Functions            186
+14.2 Subgradients                                                    188
+14.2.1 Calculating Subgradients                                 189
+14.2.2 Subgradients of Lipschitz Functions                      190
+14.2.3 Subgradient Descent                                      190
+14.3 Stochastic Gradient Descent (SGD)                               191
+14.3.1 Analysis of SGD for Convex-Lipschitz-Bounded Functions   191
+14.4 Variants                                                        193
+14.4.1 Adding a Projection Step                                 193
+14.4.2 Variable Step Size                                       194
+14.4.3 Other Averaging Techniques                               195
+
+<!-- page: 13 -->
+
+14.4.4 Strongly Convex Functions*                          195
+14.5   Learning with SGD                                          196
+14.5.1 SGD for Risk Minimization                           196
+14.5.2 Analyzing SGD for Convex-Smooth Learning Problems   198
+14.5.3 SGD for Regularized Loss Minimization               199
+14.6   Summary                                                    200
+14.7   Bibliographic Remarks                                      200
+14.8   Exercises                                                  201
+15   Support Vector Machines                                           202
+15.1 Margin and Hard-SVM                                          202
+15.1.1 The Homogenous Case                                   205
+15.1.2 The Sample Complexity of Hard-SVM                     205
+15.2 Soft-SVM and Norm Regularization                             206
+15.2.1 The Sample Complexity of Soft-SVM                     208
+15.2.2 Margin and Norm-Based Bounds versus Dimension         208
+15.2.3 The Ramp Loss*                                        209
+15.3 Optimality Conditions and “Support Vectors”*                 210
+15.4 Duality*                                                     211
+15.5 Implementing Soft-SVM Using SGD                              212
+15.6 Summary                                                      213
+15.7 Bibliographic Remarks                                        213
+15.8 Exercises                                                    214
+16   Kernel Methods                                                    215
+16.1 Embeddings into Feature Spaces                               215
+16.2 The Kernel Trick                                             217
+16.2.1 Kernels as a Way to Express Prior Knowledge           221
+16.2.2 Characterizing Kernel Functions*                      222
+16.3 Implementing Soft-SVM with Kernels                           222
+16.4 Summary                                                      224
+16.5 Bibliographic Remarks                                        225
+16.6 Exercises                                                    225
+17   Multiclass, Ranking, and Complex Prediction Problems              227
+17.1 One-versus-All and All-Pairs                                 227
+17.2 Linear Multiclass Predictors                                 230
+17.2.1 How to Construct Ψ                                   230
+17.2.2 Cost-Sensitive Classification                        232
+17.2.3 ERM                                                  232
+17.2.4 Generalized Hinge Loss                               233
+17.2.5 Multiclass SVM and SGD                               234
+17.3 Structured Output Prediction                                 236
+17.4 Ranking                                                      238
+
+<!-- page: 14 -->
+
+17.4.1 Linear Predictors for Ranking                             240
+17.5   Bipartite Ranking and Multivariate Performance Measures          243
+17.5.1 Linear Predictors for Bipartite Ranking                   245
+17.6   Summary                                                          247
+17.7   Bibliographic Remarks                                            247
+17.8   Exercises                                                        248
+18         Decision Trees                                                          250
+18.1 Sample Complexity                                                  251
+18.2 Decision Tree Algorithms                                           252
+18.2.1 Implementations of the Gain Measure                        253
+18.2.2 Pruning                                                    254
+18.2.3 Threshold-Based Splitting Rules for Real-Valued Features   255
+18.3 Random Forests                                                     255
+18.4 Summary                                                            256
+18.5 Bibliographic Remarks                                              256
+18.6 Exercises                                                          256
+19         Nearest Neighbor                                                        258
+19.1 k Nearest Neighbors                                                258
+19.2 Analysis                                                           259
+19.2.1 A Generalization Bound for the 1-NN Rule                    260
+19.2.2 The “Curse of Dimensionality”                               263
+19.3 Efficient Implementation*                                          264
+19.4 Summary                                                            264
+19.5 Bibliographic Remarks                                              264
+19.6 Exercises                                                          265
+20         Neural Networks                                                         268
+20.1 Feedforward Neural Networks                                        269
+20.2 Learning Neural Networks                                           270
+20.3 The Expressive Power of Neural Networks                            271
+20.3.1 Geometric Intuition                                         273
+20.4 The Sample Complexity of Neural Networks                           274
+20.5 The Runtime of Learning Neural Networks                            276
+20.6 SGD and Backpropagation                                            277
+20.7 Summary                                                            281
+20.8 Bibliographic Remarks                                              281
+20.9 Exercises                                                          282
+Part III   Additional Learning Models                                              285
+21         Online Learning                                                         287
+21.1 Online Classification in the Realizable Case                       288
+
+<!-- page: 15 -->
+
+21.1.1 Online Learnability                                  290
+21.2   Online Classification in the Unrealizable Case              294
+21.2.1 Weighted-Majority                                    295
+21.3   Online Convex Optimization                                  300
+21.4   The Online Perceptron Algorithm                             301
+21.5   Summary                                                     304
+21.6   Bibliographic Remarks                                       305
+21.7   Exercises                                                   305
+22   Clustering                                                         307
+22.1 Linkage-Based Clustering Algorithms                           310
+22.2 k-Means and Other Cost Minimization Clusterings               311
+22.2.1 The k-Means Algorithm                                 313
+22.3 Spectral Clustering                                           315
+22.3.1 Graph Cut                                             315
+22.3.2 Graph Laplacian and Relaxed Graph Cuts                315
+22.3.3 Unnormalized Spectral Clustering                      317
+22.4 Information Bottleneck*                                       317
+22.5 A High Level View of Clustering                               318
+22.6 Summary                                                       320
+22.7 Bibliographic Remarks                                         320
+22.8 Exercises                                                     320
+23   Dimensionality Reduction                                           323
+23.1 Principal Component Analysis (PCA)                            324
+23.1.1 A More Efficient Solution for the Case d m 326
+23.1.2 Implementation and Demonstration                       326
+23.2 Random Projections                                            329
+23.3 Compressed Sensing                                            330
+23.3.1 Proofs*                                                333
+23.4 PCA or Compressed Sensing?                                    338
+23.5 Summary                                                       338
+23.6 Bibliographic Remarks                                         339
+23.7 Exercises                                                     339
+24   Generative Models                                                  342
+24.1 Maximum Likelihood Estimator                                  343
+24.1.1 Maximum Likelihood Estimation for Continuous Ran- dom Variables 344
+24.1.2 Maximum Likelihood and Empirical Risk Minimization     345
+24.1.3 Generalization Analysis                                345
+24.2 Naive Bayes                                                   347
+24.3 Linear Discriminant Analysis                                  347
+24.4 Latent Variables and the EM Algorithm                         348
+
+<!-- page: 16 -->
+
+24.4.1 EM as an Alternate Maximization Algorithm      350
+24.4.2 EM for Mixture of Gaussians (Soft k-Means)     352
+24.5   Bayesian Reasoning                                    353
+24.6   Summary                                               355
+24.7   Bibliographic Remarks                                 355
+24.8   Exercises                                             356
+25        Feature Selection and Generation                             357
+25.1 Feature Selection                                       358
+25.1.1 Filters                                         359
+25.1.2 Greedy Selection Approaches                     360
+25.1.3 Sparsity-Inducing Norms                         363
+25.2 Feature Manipulation and Normalization                  365
+25.2.1 Examples of Feature Transformations             367
+25.3 Feature Learning                                        368
+25.3.1 Dictionary Learning Using Auto-Encoders         368
+25.4 Summary                                                 370
+25.5 Bibliographic Remarks                                   371
+25.6 Exercises                                               371
+Part IV   Advanced Theory                                              373
+26        Rademacher Complexities                                      375
+26.1 The Rademacher Complexity                               375
+26.1.1 Rademacher Calculus                              379
+26.2 Rademacher Complexity of Linear Classes                 382
+26.3 Generalization Bounds for SVM                           383
+26.4 Generalization Bounds for Predictors with Low \ell1 Norm   386
+26.5 Bibliographic Remarks                                   386
+27        Covering Numbers                                             388
+27.1 Covering                                                388
+27.1.1 Properties                                      388
+27.2 From Covering to Rademacher Complexity via Chaining     389
+27.3 Bibliographic Remarks                                   391
+28        Proof of the Fundamental Theorem of Learning Theory          392
+28.1 The Upper Bound for the Agnostic Case                   392
+28.2 The Lower Bound for the Agnostic Case                   393
+28.2.1 Showing That m(ε, δ) \geq  0.5 log(1/(4δ))/ε2       393
+28.2.2 Showing That m(ε, 1/8) \geq  8d/ε2                  395
+28.3 The Upper Bound for the Realizable Case                 398
+28.3.1 From ε-Nets to PAC Learnability                 401
+
+<!-- page: 17 -->
+
+29      Multiclass Learnability                                           402
+29.1 The Natarajan Dimension                                      402
+29.2 The Multiclass Fundamental Theorem                           403
+29.2.1 On the Proof of Theorem 29.3                         403
+29.3 Calculating the Natarajan Dimension                          404
+29.3.1 One-versus-All Based Classes                         404
+29.3.2 General Multiclass-to-Binary Reductions              405
+29.3.3 Linear Multiclass Predictors                         405
+29.4 On Good and Bad ERMs                                         406
+29.5 Bibliographic Remarks                                        408
+29.6 Exercises                                                    409
+30      Compression Bounds                                                410
+30.1 Compression Bounds                                           410
+30.2 Examples                                                     412
+30.2.1 Axis Aligned Rectangles                               412
+30.2.2 Halfspaces                                            412
+30.2.3 Separating Polynomials                                413
+30.2.4 Separation with Margin                                414
+30.3 Bibliographic Remarks                                        414
+31      PAC-Bayes                                                         415
+31.1 PAC-Bayes Bounds                                             415
+31.2 Bibliographic Remarks                                        417
+31.3 Exercises                                                    417 Appendix A   Technical Lemmas 419
+Appendix B   Measure Concentration                                        422
+Appendix C   Linear Algebra                                               430
+Notes                                                             435
+References                                                        437
+Index                                                             447
+
+<!-- page: 18 -->
+
+<!-- page: 19 -->
+
+## 1     Introduction
+The subject of this book is automated learning, or, as we will more often call it, Machine Learning (ML). That is, we wish to program computers so that they can “learn” from input available to them. Roughly speaking, learning is the process of converting experience into expertise or knowledge. The input to a learning algorithm is training data, representing experience, and the output is some expertise, which usually takes the form of another computer program that can perform some task. Seeking a formal-mathematical understanding of this concept, we’ll have to be more explicit about what we mean by each of the involved terms: What is the training data our programs will access? How can the process of learning be automated? How can we evaluate the success of such a process (namely, the quality of the output of a learning program)?
+### 1.1   What Is Learning?
+Let us begin by considering a couple of examples from naturally occurring animal learning. Some of the most fundamental issues in ML arise already in that context, which we are all familiar with.
+Bait Shyness – Rats Learning to Avoid Poisonous Baits: When rats encounter food items with novel look or smell, they will first eat very small amounts, and subsequent feeding will depend on the flavor of the food and its physiological effect. If the food produces an ill effect, the novel food will often be associated with the illness, and subsequently, the rats will not eat it. Clearly, there is a learning mechanism in play here – the animal used past experience with some food to acquire expertise in detecting the safety of this food. If past experience with the food was negatively labeled, the animal predicts that it will also have a negative effect when encountered in the future. Inspired by the preceding example of successful learning, let us demonstrate a typical machine learning task. Suppose we would like to program a machine that learns how to filter spam e-mails. A naive solution would be seemingly similar to the way rats learn how to avoid poisonous baits. The machine will simply memorize all previous e-mails that had been labeled as spam e-mails by the human user. When a new e-mail arrives, the machine will search for it in the set
+
+<!-- page: 20 -->
+
+of previous spam e-mails. If it matches one of them, it will be trashed. Otherwise, it will be moved to the user’s inbox folder.
+While the preceding “learning by memorization” approach is sometimes useful, it lacks an important aspect of learning systems – the ability to label unseen e-mail messages. A successful learner should be able to progress from individual examples to broader generalization. This is also referred to as inductive reasoning or inductive inference. In the bait shyness example presented previously, after the rats encounter an example of a certain type of food, they apply their attitude toward it on new, unseen examples of food of similar smell and taste. To achieve generalization in the spam filtering task, the learner can scan the previously seen e-mails, and extract a set of words whose appearance in an e-mail message is indicative of spam. Then, when a new e-mail arrives, the machine can check whether one of the suspicious words appears in it, and predict its label accordingly. Such a system would potentially be able correctly to predict the label of unseen e-mails. However, inductive reasoning might lead us to false conclusions. To illustrate this, let us consider again an example from animal learning. Pigeon Superstition: In an experiment performed by the psychologist B. F. Skinner, he placed a bunch of hungry pigeons in a cage. An automatic mechanism had been attached to the cage, delivering food to the pigeons at regular intervals with no reference whatsoever to the birds’ behavior. The hungry pigeons went around the cage, and when food was first delivered, it found each pigeon engaged in some activity (pecking, turning the head, etc.). The arrival of food reinforced each bird’s specific action, and consequently, each bird tended to spend some more time doing that very same action. That, in turn, increased the chance that the next random food delivery would find each bird engaged in that activity again. What results is a chain of events that reinforces the pigeons’ association of the delivery of the food with whatever chance actions they had been performing when it was first delivered. They subsequently continue to perform these same actions diligently.1 What distinguishes learning mechanisms that result in superstition from useful learning? This question is crucial to the development of automated learners. While human learners can rely on common sense to filter out random meaningless learning conclusions, once we export the task of learning to a machine, we must provide well defined crisp principles that will protect the program from reaching senseless or useless conclusions. The development of such principles is a central goal of the theory of machine learning. What, then, made the rats’ learning more successful than that of the pigeons? As a first step toward answering this question, let us have a closer look at the bait shyness phenomenon in rats. Bait Shyness revisited – rats fail to acquire conditioning between food and electric shock or between sound and nausea: The bait shyness mechanism in
+1   See: http://psychclassics.yorku.ca/Skinner/Pigeon
+
+<!-- page: 21 -->
+
+rats turns out to be more complex than what one may expect. In experiments carried out by Garcia (Garcia & Koelling 1996), it was demonstrated that if the unpleasant stimulus that follows food consumption is replaced by, say, electrical shock (rather than nausea), then no conditioning occurs. Even after repeated trials in which the consumption of some food is followed by the administration of unpleasant electrical shock, the rats do not tend to avoid that food. Similar failure of conditioning occurs when the characteristic of the food that implies nausea (such as taste or smell) is replaced by a vocal signal. The rats seem to have some “built in” prior knowledge telling them that, while temporal correlation between food and nausea can be causal, it is unlikely that there would be a causal relationship between food consumption and electrical shocks or between sounds and nausea.
+We conclude that one distinguishing feature between the bait shyness learning and the pigeon superstition is the incorporation of prior knowledge that biases the learning mechanism. This is also referred to as inductive bias. The pigeons in the experiment are willing to adopt any explanation for the occurrence of food. However, the rats “know” that food cannot cause an electric shock and that the co-occurrence of noise with some food is not likely to affect the nutritional value of that food. The rats’ learning process is biased toward detecting some kind of patterns while ignoring other temporal correlations between events. It turns out that the incorporation of prior knowledge, biasing the learning process, is inevitable for the success of learning algorithms (this is formally stated and proved as the “No-Free-Lunch theorem” in Chapter 5). The development of tools for expressing domain expertise, translating it into a learning bias, and quantifying the effect of such a bias on the success of learning is a central theme of the theory of machine learning. Roughly speaking, the stronger the prior knowledge (or prior assumptions) that one starts the learning process with, the easier it is to learn from further examples. However, the stronger these prior assumptions are, the less flexible the learning is – it is bound, a priori, by the commitment to these assumptions. We shall discuss these issues explicitly in Chapter 5.
+### 1.2   When Do We Need Machine Learning?
+When do we need machine learning rather than directly program our computers to carry out the task at hand? Two aspects of a given problem may call for the use of programs that learn and improve on the basis of their “experience”: the problem’s complexity and the need for adaptivity. Tasks That Are Too Complex to Program.
+- Tasks Performed by Animals/Humans: There are numerous tasks that
+we human beings perform routinely, yet our introspection concerning how we do them is not sufficiently elaborate to extract a well
+
+<!-- page: 22 -->
+
+defined program. Examples of such tasks include driving, speech recognition, and image understanding. In all of these tasks, state of the art machine learning programs, programs that “learn from their experience,” achieve quite satisfactory results, once exposed to sufficiently many training examples.
+- Tasks beyond Human Capabilities: Another wide family of tasks that
+benefit from machine learning techniques are related to the analysis of very large and complex data sets: astronomical data, turning medical archives into medical knowledge, weather prediction, analysis of genomic data, Web search engines, and electronic commerce. With more and more available digitally recorded data, it becomes obvious that there are treasures of meaningful information buried in data archives that are way too large and too complex for humans to make sense of. Learning to detect meaningful patterns in large and complex data sets is a promising domain in which the combination of programs that learn with the almost unlimited memory capacity and ever increasing processing speed of computers opens up new horizons. Adaptivity. One limiting feature of programmed tools is their rigidity – once the program has been written down and installed, it stays unchanged. However, many tasks change over time or from one user to another. Machine learning tools – programs whose behavior adapts to their input data – offer a solution to such issues; they are, by nature, adaptive to changes in the environment they interact with. Typical successful applications of machine learning to such problems include programs that decode handwritten text, where a fixed program can adapt to variations between the handwriting of different users; spam detection programs, adapting automatically to changes in the nature of spam e-mails; and speech recognition programs.
+### 1.3   Types of Learning
+Learning is, of course, a very wide domain. Consequently, the field of machine learning has branched into several subfields dealing with different types of learning tasks. We give a rough taxonomy of learning paradigms, aiming to provide some perspective of where the content of this book sits within the wide field of machine learning.
+We describe four parameters along which learning paradigms can be classified.
+Supervised versus Unsupervised Since learning involves an interaction be-
+tween the learner and the environment, one can divide learning tasks according to the nature of that interaction. The first distinction to note is the difference between supervised and unsupervised learning. As an
+
+<!-- page: 23 -->
+
+illustrative example, consider the task of learning to detect spam e-mail versus the task of anomaly detection. For the spam detection task, we consider a setting in which the learner receives training e-mails for which the label spam/not-spam is provided. On the basis of such training the learner should figure out a rule for labeling a newly arriving e-mail message. In contrast, for the task of anomaly detection, all the learner gets as training is a large body of e-mail messages (with no labels) and the learner’s task is to detect “unusual” messages.
+More abstractly, viewing learning as a process of “using experience to gain expertise,” supervised learning describes a scenario in which the “experience,” a training example, contains significant information (say, the spam/not-spam labels) that is missing in the unseen “test examples” to which the learned expertise is to be applied. In this setting, the acquired expertise is aimed to predict that missing information for the test data. In such cases, we can think of the environment as a teacher that “supervises” the learner by providing the extra information (labels). In unsupervised learning, however, there is no distinction between training and test data. The learner processes input data with the goal of coming up with some summary, or compressed version of that data. Clustering a data set into subsets of similar objets is a typical example of such a task. There is also an intermediate learning setting in which, while the training examples contain more information than the test examples, the learner is required to predict even more information for the test examples. For example, one may try to learn a value function that describes for each setting of a chess board the degree by which White’s position is better than the Black’s. Yet, the only information available to the learner at training time is positions that occurred throughout actual chess games, labeled by who eventually won that game. Such learning frameworks are mainly investigated under the title of reinforcement learning. Active versus Passive Learners Learning paradigms can vary by the role played by the learner. We distinguish between “active” and “passive” learners. An active learner interacts with the environment at training time, say, by posing queries or performing experiments, while a passive learner only observes the information provided by the environment (or the teacher) without influencing or directing it. Note that the learner of a spam filter is usually passive – waiting for users to mark the e-mails coming to them. In an active setting, one could imagine asking users to label specific e-mails chosen by the learner, or even composed by the learner, to enhance             its          understanding            of           what spam is. Helpfulness of the Teacher When one thinks about human learning, of a baby at home or a student at school, the process often involves a helpful teacher, who is trying to feed the learner with the information most use-
+
+<!-- page: 24 -->
+
+ful for achieving the learning goal. In contrast, when a scientist learns about nature, the environment, playing the role of the teacher, can be best thought of as passive – apples drop, stars shine, and the rain falls without regard to the needs of the learner. We model such learning scenarios by postulating that the training data (or the learner’s experience) is generated by some random process. This is the basic building block in the branch of “statistical learning.” Finally, learning also occurs when the learner’s input is generated by an adversarial “teacher.” This may be the case in the spam filtering example (if the spammer makes an effort to mislead the spam filtering designer) or in learning to detect fraud. One also uses an adversarial teacher model as a worst-case scenario, when no milder setup can be safely assumed. If you can learn against an adversarial teacher, you are guaranteed to succeed interacting any odd teacher. Online versus Batch Learning Protocol The last parameter we mention is the distinction between situations in which the learner has to respond online, throughout the learning process, and settings in which the learner has to engage the acquired expertise only after having a chance to process large amounts of data. For example, a stockbroker has to make daily decisions, based on the experience collected so far. He may become an expert over time, but might have made costly mistakes in the process. In contrast, in many data mining settings, the learner – the data miner – has large amounts of training data to play with before having to output conclusions.
+In this book we shall discuss only a subset of the possible learning paradigms. Our main focus is on supervised statistical batch learning with a passive learner (for example, trying to learn how to generate patients’ prognoses, based on large archives of records of patients that were independently collected and are already labeled by the fate of the recorded patients). We shall also briefly discuss online learning and batch unsupervised learning (in particular, clustering).
+### 1.4   Relations to Other Fields
+As an interdisciplinary field, machine learning shares common threads with the mathematical fields of statistics, information theory, game theory, and optimization. It is naturally a subfield of computer science, as our goal is to program machines so that they will learn. In a sense, machine learning can be viewed as a branch of AI (Artificial Intelligence), since, after all, the ability to turn experience into expertise or to detect meaningful patterns in complex sensory data is a cornerstone of human (and animal) intelligence. However, one should note that, in contrast with traditional AI, machine learning is not trying to build automated imitation of intelligent behavior, but rather to use the strengths and
+
+<!-- page: 25 -->
+
+special abilities of computers to complement human intelligence, often performing tasks that fall way beyond human capabilities. For example, the ability to scan and process huge databases allows machine learning programs to detect patterns that are outside the scope of human perception.
+The component of experience, or training, in machine learning often refers to data that is randomly generated. The task of the learner is to process such randomly generated examples toward drawing conclusions that hold for the environment from which these examples are picked. This description of machine learning highlights its close relationship with statistics. Indeed there is a lot in common between the two disciplines, in terms of both the goals and techniques used. There are, however, a few significant differences of emphasis; if a doctor comes up with the hypothesis that there is a correlation between smoking and heart disease, it is the statistician’s role to view samples of patients and check the validity of that hypothesis (this is the common statistical task of hypothesis testing). In contrast, machine learning aims to use the data gathered from samples of patients to come up with a description of the causes of heart disease. The hope is that automated techniques may be able to figure out meaningful patterns (or hypotheses) that may have been missed by the human observer. In contrast with traditional statistics, in machine learning in general, and in this book in particular, algorithmic considerations play a major role. Machine learning is about the execution of learning by computers; hence algorithmic issues are pivotal. We develop algorithms to perform the learning tasks and are concerned with their computational efficiency. Another difference is that while statistics is often interested in asymptotic behavior (like the convergence of sample-based statistical estimates as the sample sizes grow to infinity), the theory of machine learning focuses on finite sample bounds. Namely, given the size of available samples, machine learning theory aims to figure out the degree of accuracy that a learner can expect on the basis of such samples. There are further differences between these two disciplines, of which we shall mention only one more here. While in statistics it is common to work under the assumption of certain presubscribed data models (such as assuming the normality of data-generating distributions, or the linearity of functional dependencies), in machine learning the emphasis is on working under a “distribution-free” setting, where the learner assumes as little as possible about the nature of the data distribution and allows the learning algorithm to figure out which models best approximate the data-generating process. A precise discussion of this issue requires some technical preliminaries, and we will come back to it later in the book, and in particular in Chapter 5.
+### 1.5   How to Read This Book
+The first part of the book provides the basic theoretical principles that underlie machine learning (ML). In a sense, this is the foundation upon which the rest
+
+<!-- page: 26 -->
+
+of the book is built. This part could serve as a basis for a minicourse on the theoretical foundations of ML.
+The second part of the book introduces the most commonly used algorithmic approaches to supervised machine learning. A subset of these chapters may also be used for introducing machine learning in a general AI course to computer science, Math, or engineering students. The third part of the book extends the scope of discussion from statistical classification to other learning models. It covers online learning, unsupervised learning, dimensionality reduction, generative models, and feature learning. The fourth part of the book, Advanced Theory, is geared toward readers who have interest in research and provides the more technical mathematical techniques that serve to analyze and drive forward the field of theoretical machine learning. The Appendixes provide some technical tools used in the book. In particular, we list basic results from measure concentration and linear algebra. A few sections are marked by an asterisk, which means they are addressed to more advanced students. Each chapter is concluded with a list of exercises. A solution manual is provided in the course Web site.
+#### 1.5.1    Possible Course Plans Based on This Book
+A 14 Week Introduction Course for Graduate Students:
+1. Chapters 2–4.
+2. Chapter 9 (without the VC calculation).
+3. Chapters 5–6 (without proofs).
+4. Chapter 10.
+5. Chapters 7, 11 (without proofs).
+6. Chapters 12, 13 (with some of the easier proofs).
+7. Chapter 14 (with some of the easier proofs).
+8. Chapter 15.
+9. Chapter 16.
+10. Chapter 18.
+11. Chapter 22.
+12. Chapter 23 (without proofs for compressed sensing).
+13. Chapter 24.
+14. Chapter 25.
+A 14 Week Advanced Course for Graduate Students:
+1. Chapters 26, 27.
+2. (continued)
+3. Chapters 6, 28.
+4. Chapter 7.
+5. Chapter 31.
+
+<!-- page: 27 -->
+
+6. Chapter 30.
+7. Chapters 12, 13.
+8. Chapter 14.
+9. Chapter 8.
+10. Chapter 17.
+11. Chapter 29.
+12. Chapter 19.
+13. Chapter 20.
+14. Chapter 21.
+### 1.6    Notation
+Most of the notation we use throughout the book is either standard or defined on the spot. In this section we describe our main conventions and provide a table summarizing our notation (Table 1.1). The reader is encouraged to skip this section and return to it if during the reading of the book some notation is unclear.
+We denote scalars and abstract objects with lowercase letters (e.g. x and λ). Often, we would like to emphasize that some object is a vector and then we use boldface letters (e.g. x and λ). The ith element of a vector x is denoted by xi . We use uppercase letters to denote matrices, sets, and sequences. The meaning should be clear from the context. As we will see momentarily, the input of a learning algorithm is a sequence of training examples. We denote by z an abstract example and by S = z1 , . . . , zm a sequence of m examples. Historically, S is often referred to as a training set; however, we will always assume that S is a sequence rather than a set. A sequence of m vectors is denoted by x1 , . . . , xm . The ith element of xt is denoted by xt,i . Throughout the book, we make use of basic notions from probability. We denote by D a distribution over some set,2 for example, Z. We use the notation z ∼ D to denote that z is sampled according to D. Given a random variable f : Z → R, its expected value is denoted by Ez∼D [f (z)]. We sometimes use the shorthand E[f ] when the dependence on z is clear from the context. For f : Z → {true, false} we also use Pz∼D [f (z)] to denote D({z : f (z) = true}). In the next chapter we will also introduce the notation Dm to denote the probability over Z m induced by sampling (z1 , . . . , zm ) where each point zi is sampled from D independently of the other points. In general, we have made an effort to avoid asymptotic notation. However, we occasionally use it to clarify the main results. In particular, given f : R → R+ and g : R → R+ we write f = O(g) if there exist x0 , α ∈ R+ such that for all x > x0 we have f (x) \leq  αg(x). We write f = o(g) if for every α > 0 there exists
+## 2   To be mathematically precise, D should be defined over some σ-algebra of subsets of Z.
+The user who is not familiar with measure theory can skip the few footnotes and remarks regarding more formal measurability definitions and assumptions.
+
+<!-- page: 28 -->
+
+Table 1.1 Summary of notation
+| symbol | meaning |
+| --- | --- |
+| $\mathbb{R}$ | the set of real numbers |
+| $\mathbb{R}^d$ | the set of $d$-dimensional vectors over $\mathbb{R}$ |
+| $\mathbb{R}_+$ | the set of non-negative real numbers |
+| $\mathbb{N}$ | the set of natural numbers |
+| $O, o, \Theta, \omega, \Omega, \widetilde{O}$ | asymptotic notation (see text) |
+| $\mathbf{1}[\text{Boolean expression}]$ | indicator function (equals 1 if expression is true and 0 o.w.) |
+| $[a]_+$ | $= \max\{0, a\}$ |
+| $[n]$ | the set $\{1, \ldots, n\}$ (for $n \in \mathbb{N}$) |
+| $x, v, w$ | (column) vectors |
+| $x_i, v_i, w_i$ | the ith element of a vector |
+| $\langle x, v\rangle$ | $= \sum_{i=1}^{d} x_i v_i$ (inner product) |
+| $\|x\|_2$ or $\|x\|$ | $= \sqrt{\langle x, x\rangle}$ (the $\ell_2$ norm of $x$) |
+| $\|x\|_1$ | $= \sum_i \|x_i\|$ (the $\ell_1$ norm of $x$) |
+| $\|x\|_\infty$ | $= \max_i \|x_i\|$ (the $\ell_\infty$ norm of $x$) |
+| $\|x\|_0$ | the number of nonzero elements of $x$ |
+| $A \in \mathbb{R}^{d \times k}$ | a $d \times k$ matrix over $\mathbb{R}$ |
+| $A^\top$ | the transpose of $A$ |
+| $A_{i,j}$ | the $(i,j)$ element of $A$ |
+| $xx^\top$ | the $d \times d$ matrix $A$ s.t. $A_{i,j} = x_i x_j$ (where $x \in \mathbb{R}^d$) |
+| $x_1, \ldots, x_m$ | a sequence of $m$ vectors |
+| $x_{i,j}$ | the $j$th element of the $i$th vector in the sequence |
+| $w^{(1)}, \ldots, w^{(T)}$ | the values of a vector $w$ during an iterative algorithm |
+| $w_i^{(t)}$ | the ith element of the vector $w^{(t)}$ |
+| $X$ | instances domain (a set) |
+| $Y$ | labels domain (a set) |
+| $Z$ | examples domain (a set) |
+| $H$ | hypothesis class (a set) |
+| $\ell : H \times Z \to \mathbb{R}_+$ | loss function |
+| $D$ | a distribution over some set (usually over $Z$ or over $X$) |
+| $D(A)$ | the probability of a set $A \subseteq Z$ according to $D$ |
+| $z \sim D$ | sampling $z$ according to $D$ |
+| $S = z_1, \ldots, z_m$ | a sequence of $m$ examples |
+| $S \sim D^m$ | sampling $S = z_1, \ldots, z_m$ i.i.d. according to $D$ |
+| $P, E$ | probability and expectation of a random variable |
+| $P_{z\sim D}[f(z)]$ | $= D(\{z : f(z) = \text{true}\})$ for $f : Z \to \{\text{true}, \text{false}\}$ |
+| $E_{z\sim D}[f(z)]$ | expectation of the random variable $f : Z \to \mathbb{R}$ |
+| $N(\mu, C)$ | Gaussian distribution with expectation $\mu$ and covariance $C$ |
+| $f'(x)$ | the derivative of a function $f : \mathbb{R} \to \mathbb{R}$ at $x$ |
+| $f''(x)$ | the second derivative of a function $f : \mathbb{R} \to \mathbb{R}$ at $x$ |
+| $\frac{\partial f(w)}{\partial w_i}$ | the partial derivative of a function $f : \mathbb{R}^d \to \mathbb{R}$ at $w$ w.r.t. $w_i$ |
+| $\nabla f(w)$ | the gradient of a function $f : \mathbb{R}^d \to \mathbb{R}$ at $w$ |
+| $\partial f(w)$ | the differential set of a function $f : \mathbb{R}^d \to \mathbb{R}$ at $w$ |
+| $\min_{x\in C} f(x)$ | $= \min\{f(x) : x \in C\}$ (minimal value of $f$ over $C$) |
+| $\max_{x\in C} f(x)$ | $= \max\{f(x) : x \in C\}$ (maximal value of $f$ over $C$) |
+| $\operatorname*{arg\,min}_{x\in C} f(x)$ | the set $\{x \in C : f(x) = \min_{z\in C} f(z)\}$ |
+| $\operatorname*{arg\,max}_{x\in C} f(x)$ | the set $\{x \in C : f(x) = \max_{z\in C} f(z)\}$ |
+| $\log$ | the natural logarithm |
+
+<!-- page: 29 -->
+
+x0 such that for all x > x0 we have f (x) \leq  αg(x). We write f = \Omega(g) if there exist x0 , α ∈ R+ such that for all x > x0 we have f (x) \geq  αg(x). The notation f = ω(g) is defined analogously. The notation f = Θ(g) means that f = O(g) and g = O(f ). Finally, the notation f = Õ(g) means that there exists k ∈ N such that f (x) = O(g(x) logk (g(x))).
+The inner product between vectors x and w is denoted by hx, wi. Whenever we do not specify the vector space we assume that it is the d-dimensional Euclidean
+Pd space and pthen hx, wi = i=1 xi wi . The Euclidean (or \ell2 ) norm of a vector w is kwk2 = hw, wi. We omit the subscript from the \ell2 norm when it is clear from
+1/p the context. We also use other `p norms, kwkp = ( i |wi |p ) , and in particular P P kwk1 = i |wi | and kwk∞ = maxi |wi |. We use the notation minx∈C f (x) to denote the minimum value of the set {f (x) : x ∈ C}. To be mathematically more precise, we should use inf x∈C f (x) whenever the minimum is not achievable. However, in the context of this book the distinction between infimum and minimum is often of little interest. Hence, to simplify the presentation, we sometimes use the min notation even when inf is more adequate. An analogous remark applies to max versus sup.
+
+<!-- page: 30 -->
+
+<!-- page: 31 -->
+
+# Part I Foundations
+
+<!-- page: 32 -->
+
+<!-- page: 33 -->
+
+## 2     A Gentle Start
+Let us begin our mathematical analysis by showing how successful learning can be achieved in a relatively simplified setting. Imagine you have just arrived in some small Pacific island. You soon find out that papayas are a significant ingredient in the local diet. However, you have never before tasted papayas. You have to learn how to predict whether a papaya you see in the market is tasty or not. First, you need to decide which features of a papaya your prediction should be based on. On the basis of your previous experience with other fruits, you decide to use two features: the papaya’s color, ranging from dark green, through orange and red to dark brown, and the papaya’s softness, ranging from rock hard to mushy. Your input for figuring out your prediction rule is a sample of papayas that you have examined for color and softness and then tasted and found out whether they were tasty or not. Let us analyze this task as a demonstration of the considerations involved in learning problems.
+Our first step is to describe a formal model aimed to capture such learning tasks.
+### 2.1   A Formal Model – The Statistical Learning Framework
+- The learner’s input: In the basic statistical learning setting, the learner has
+access to the following:
+- Domain set: An arbitrary set, X . This is the set of objects that we
+may wish to label. For example, in the papaya learning problem mentioned before, the domain set will be the set of all papayas. Usually, these domain points will be represented by a vector of features (like the papaya’s color and softness). We also refer to domain points as instances and to X as instance space.
+- Label set: For our current discussion, we will restrict the label set to
+be a two-element set, usually {0, 1} or {-1, +1}. Let Y denote our set of possible labels. For our papayas example, let Y be {0, 1}, where
+## 1 represents being tasty and 0 stands for being not-tasty.
+- Training data: S = ((x1 , y1 ) . . . (xm , ym )) is a finite sequence of pairs in
+X × Y: that is, a sequence of labeled domain points. This is the input that the learner has access to (like a set of papayas that have been
+
+<!-- page: 34 -->
+
+tasted and their color, softness, and tastiness). Such labeled examples are often called training examples. We sometimes also refer to S as a training set.1
+- The learner’s output: The learner is requested to output a prediction rule,
+h : X → Y. This function is also called a predictor, a hypothesis, or a classifier. The predictor can be used to predict the label of new domain points. In our papayas example, it is a rule that our learner will employ to predict whether future papayas he examines in the farmers’ market are going to be tasty or not. We use the notation A(S) to denote the hypothesis that a learning algorithm, A, returns upon receiving the training sequence S.
+- A simple data-generation model We now explain how the training data is
+generated. First, we assume that the instances (the papayas we encounter) are generated by some probability distribution (in this case, representing the environment). Let us denote that probability distribution over X by D. It is important to note that we do not assume that the learner knows anything about this distribution. For the type of learning tasks we discuss, this could be any arbitrary probability distribution. As to the labels, in the current discussion we assume that there is some “correct” labeling function, f : X → Y, and that yi = f (xi ) for all i. This assumption will be relaxed in the next chapter. The labeling function is unknown to the learner. In fact, this is just what the learner is trying to figure out. In summary, each pair in the training data S is generated by first sampling a point xi according to D and then labeling it by f .
+- Measures of success: We define the error of a classifier to be the probability
+that it does not predict the correct label on a random data point generated by the aforementioned underlying distribution. That is, the error of h is the probability to draw a random instance x, according to the distribution D, such that h(x) does not equal f (x).
+Formally, given a domain subset,2 A ⊂ X , the probability distribution, D, assigns a number, D(A), which determines how likely it is to observe a point x ∈ A. In many cases, we refer to A as an event and express it using a function π : X → {0, 1}, namely, A = {x ∈ X : π(x) = 1}. In that case, we also use the notation Px∼D [π(x)] to express D(A). We define the error of a prediction rule, h : X → Y, to be
+$$
+LD,f (h) =       P [h(x) \neq f (x)] = D(\{x : h(x) \neq f (x)\}). \tag{2.1}
+$$
+x∼D
+That is, the error of such h is the probability of randomly choosing an example x for which h(x) \neq  f (x). The subscript (D, f ) indicates that the error is measured with respect to the probability distribution D and the 1 Despite the “set” notation, S is a sequence. In particular, the same example may appear twice in S and some algorithms can take into account the order of examples in S.
+## 2 Strictly speaking, we should be more careful and require that A is a member of some
+σ-algebra of subsets of X , over which D is defined. We will formally define our measurability assumptions in the next chapter.
+
+<!-- page: 35 -->
+
+correct labeling function f . We omit this subscript when it is clear from the context. L(D,f ) (h) has several synonymous names such as the generalization error, the risk, or the true error of h, and we will use these names interchangeably throughout the book. We use the letter L for the error, since we view this error as the loss of the learner. We will later also discuss other possible formulations of such loss.
+- A note about the information available to the learner The learner is
+blind to the underlying distribution D over the world and to the labeling function f. In our papayas example, we have just arrived in a new island and we have no clue as to how papayas are distributed and how to predict their tastiness. The only way the learner can interact with the environment is through observing the training set.
+In the next section we describe a simple learning paradigm for the preceding setup and analyze its performance.
+### 2.2     Empirical Risk Minimization
+As mentioned earlier, a learning algorithm receives as input a training set S, sampled from an unknown distribution D and labeled by some target function f , and should output a predictor hS : X → Y (the subscript S emphasizes the fact that the output predictor depends on S). The goal of the algorithm is to find hS that minimizes the error with respect to the unknown D and f .
+Since the learner does not know what D and f are, the true error is not directly available to the learner. A useful notion of error that can be calculated by the learner is the training error – the error the classifier incurs over the training sample:
+$$
+|\{i \in [m] : h(xi ) \neq yi \}| LS (h) =                               , \tag{2.2}
+$$
+m where [m] = {1, . . . , m}. The terms empirical error and empirical risk are often used interchangeably for this error. Since the training sample is the snapshot of the world that is available to the learner, it makes sense to search for a solution that works well on that data. This learning paradigm – coming up with a predictor h that minimizes LS (h) – is called Empirical Risk Minimization or ERM for short.
+#### 2.2.1   Something May Go Wrong – Overfitting
+Although the ERM rule seems very natural, without being careful, this approach may fail miserably. To demonstrate such a failure, let us go back to the problem of learning to
+
+<!-- page: 36 -->
+
+predict the taste of a papaya on the basis of its softness and color. Consider a sample as depicted in the following:
+Assume that the probability distribution D is such that instances are distributed uniformly within the gray square and the labeling function, f , determines the label to be 1 if the instance is within the inner blue square, and 0 otherwise. The area of the gray square in the picture is 2 and the area of the blue square is 1. Consider the following predictor:
+$$
+( yi if \exists i \in [m] s.t. xi = x h_S (x) = \tag{2.3}
+$$
+## 0 otherwise.
+While this predictor might seem rather artificial, in Exercise 1 we show a natural representation of it using polynomials. Clearly, no matter what the sample is, LS (hS ) = 0, and therefore this predictor may be chosen by an ERM algorithm (it is one of the empirical-minimum-cost hypotheses; no classifier can have smaller error). On the other hand, the true error of any classifier that predicts the label 1 only on a finite number of instances is, in this case, 1/2. Thus, LD (hS ) = 1/2. We have found a predictor whose performance on the training set is excellent, yet its performance on the true “world” is very poor. This phenomenon is called overfitting. Intuitively, overfitting occurs when our hypothesis fits the training data “too well” (perhaps like the everyday experience that a person who provides a perfect detailed explanation for each of his single actions may raise suspicion).
+### 2.3   Empirical Risk Minimization with Inductive Bias
+We have just demonstrated that the ERM rule might lead to overfitting. Rather than giving up on the ERM paradigm, we will look for ways to rectify it. We will search for conditions under which there is a guarantee that ERM does not overfit, namely, conditions under which when the ERM predictor has good performance with respect to the training data, it is also highly likely to perform well over the underlying data distribution. A common solution is to apply the ERM learning rule over a restricted search space. Formally, the learner should choose in advance (before seeing the data) a set of predictors. This set is called a hypothesis class and is denoted by H. Each h ∈ H is a function mapping from X to Y. For a given class H, and a training sample, S, the ERMH learner uses the ERM rule to choose a predictor h ∈ H,
+
+<!-- page: 37 -->
+
+$$
+with the lowest possible error over S. Formally, ERMH (S) \in argmin LS (h), h\in H
+$$
+where argmin stands for the set of hypotheses in H that achieve the minimum value of LS (h) over H. By restricting the learner to choosing a predictor from H, we bias it toward a particular set of predictors. Such restrictions are often called an inductive bias. Since the choice of such a restriction is determined before the learner sees the training data, it should ideally be based on some prior knowledge about the problem to be learned. For example, for the papaya taste prediction problem we may choose the class H to be the set of predictors that are determined by axis aligned rectangles (in the space determined by the color and softness coordinates). We will later show that ERMH over this class is guaranteed not to overfit. On the other hand, the example of overfitting that we have seen previously, demonstrates that choosing H to be a class of predictors that includes all functions that assign the value 1 to a finite set of domain points does not suffice to guarantee that ERMH will not overfit.
+A fundamental question in learning theory is, over which hypothesis classes ERMH learning will not result in overfitting. We will study this question later in the book. Intuitively, choosing a more restricted hypothesis class better protects us against overfitting but at the same time might cause us a stronger inductive bias. We will get back to this fundamental tradeoff later.
+#### 2.3.1   Finite Hypothesis Classes
+The simplest type of restriction on a class is imposing an upper bound on its size (that is, the number of predictors h in H). In this section, we show that if H is a finite class then ERMH will not overfit, provided it is based on a sufficiently large training sample (this size requirement will depend on the size of H).
+Limiting the learner to prediction rules within some finite hypothesis class may be considered as a reasonably mild restriction. For example, H can be the set of all predictors that can be implemented by a C++ program written in at most 109 bits of code. In our papayas example, we mentioned previously the class of axis aligned rectangles. While this is an infinite class, if we discretize the representation of real numbers, say, by using a 64 bits floating-point representation, the hypothesis class becomes a finite class. Let us now analyze the performance of the ERMH learning rule assuming that H is a finite class. For a training sample, S, labeled according to some f : X → Y, let hS denote a result of applying ERMH to S, namely,
+$$
+h_S \in argmin LS (h). \tag{2.4}
+$$
+h∈H
+In this chapter, we make the following simplifying assumption (which will be relaxed in the next chapter).
+
+<!-- page: 38 -->
+
+definition 2.1 (The Realizability Assumption) There exists h? ∈ H s.t. L(D,f ) (h? ) = 0. Note that this assumption implies that with probability 1 over random samples, S, where the instances of S are sampled according to D and are labeled by f , we have LS (h? ) = 0.
+The realizability assumption implies that for every ERM hypothesis we have that3 LS (hS ) = 0. However, we are interested in the true risk of hS , L(D,f ) (hS ), rather than its empirical risk. Clearly, any guarantee on the error with respect to the underlying distribution, D, for an algorithm that has access only to a sample S should depend on the relationship between D and S. The common assumption in statistical machine learning is that the training sample S is generated by sampling points from the distribution D independently of each other. Formally,
+- The i.i.d. assumption: The examples in the training set are independently
+and identically distributed (i.i.d.) according to the distribution D. That is, every xi in S is freshly sampled according to D and then labeled according to the labeling function, f . We denote this assumption by S ∼ Dm where m is the size of S, and Dm denotes the probability over m-tuples induced by applying D to pick each element of the tuple independently of the other members of the tuple.
+Intuitively, the training set S is a window through which the learner gets partial information about the distribution D over the world and the labeling function, f . The larger the sample gets, the more likely it is to reflect more accurately the distribution and labeling used to generate it.
+Since L(D,f ) (hS ) depends on the training set, S, and that training set is picked by a random process, there is randomness in the choice of the predictor hS and, consequently, in the risk L(D,f ) (hS ). Formally, we say that it is a random variable. It is not realistic to expect that with full certainty S will suffice to direct the learner toward a good classifier (from the point of view of D), as there is always some probability that the sampled training data happens to be very nonrepresentative of the underlying D. If we go back to the papaya tasting example, there is always some (small) chance that all the papayas we have happened to taste were not tasty, in spite of the fact that, say, 70% of the papayas in our island are tasty. In such a case, ERMH (S) may be the constant function that labels every papaya as “not tasty” (and has 70% error on the true distribution of papapyas in the island). We will therefore address the probability to sample a training set for which L(D,f ) (hS ) is not too large. Usually, we denote the probability of getting a nonrepresentative sample by δ, and call (1 - δ) the confidence parameter of our prediction. On top of that, since we cannot guarantee perfect label prediction, we introduce another parameter for the quality of prediction, the accuracy parameter, 3   Mathematically speaking, this holds with probability 1. To simplify the presentation, we sometimes omit the “with probability 1” specifier.
+
+<!-- page: 39 -->
+
+commonly denoted by ε. We interpret the event L(D,f ) (hS ) > ε as a failure of the learner, while if L(D,f ) (hS ) \leq  ε we view the output of the algorithm as an approximately correct predictor. Therefore (fixing some labeling function f : X → Y), we are interested in upper bounding the probability to sample m-tuple of instances that will lead to failure of the learner. Formally, let S|x = (x1 , . . . , xm ) be the instances of the training set. We would like to upper bound
+Dm ({S|x : L(D,f ) (hS ) > ε}).
+Let HB be the set of “bad” hypotheses, that is,
+$$
+HB = \{h \in H : L(D,f ) (h) > \epsilon\}.
+$$
+$$
+In addition, let M = \{S|x : \exists h \in HB , LS (h) = 0\}
+$$
+be the set of misleading samples: Namely, for every S|x ∈ M , there is a “bad” hypothesis, h ∈ HB , that looks like a “good” hypothesis on S|x . Now, recall that we would like to bound the probability of the event L(D,f ) (hS ) > ε. But, since the realizability assumption implies that LS (hS ) = 0, it follows that the event L(D,f ) (hS ) > ε can only happen if for some h ∈ HB we have LS (h) = 0. In other words, this event will only happen if our sample is in the set of misleading samples, M . Formally, we have shown that
+{S|x : L(D,f ) (hS ) > ε} ⊆ M .
+$$
+Note that we can rewrite M as [ M=            \{S|x : LS (h) = 0\}.                      (2.5) h\in HB
+$$
+Hence,
+$$
+Dm (\{S|x : L(D,f ) (h_S ) > \epsilon\}) \le Dm (M ) = Dm (\cup h\in HB \{S|x : LS (h) = 0\}).
+$$
+(2.6) Next, we upper bound the right-hand side of the preceding equation using the union bound – a basic property of probabilities.
+lemma 2.2 (Union Bound)           For any two sets A, B and a distribution D we have
+$$
+D(A \cup B) \le D(A) + D(B).
+$$
+$$
+Applying the union bound to the right-hand side of Equation (2.6) yields X Dm (\{S|x : L(D,f ) (h_S ) > \epsilon\}) \le     Dm (\{S|x : LS (h) = 0\}).       (2.7) h\in HB
+$$
+Next, let us bound each summand of the right-hand side of the preceding inequality. Fix some “bad” hypothesis h ∈ HB . The event LS (h) = 0 is equivalent
+
+<!-- page: 40 -->
+
+$$
+to the event \forall i, h(xi ) = f (xi ). Since the examples in the training set are sampled i.i.d. we get that
+$$
+$$
+Dm (\{S|x : LS (h) = 0\}) = Dm (\{S|x : \forall i, h(xi ) = f (xi )\}) m Y =   D(\{xi : h(xi ) = f (xi )\}).               (2.8) i=1
+$$
+For each individual sampling of an element of the training set we have
+$$
+D(\{xi : h(xi ) = yi \}) = 1 - L(D,f ) (h) \le 1 - \epsilon,
+$$
+where the last inequality follows from the fact that h ∈ HB . Combining the previous equation with Equation (2.8) and using the inequality 1 - ε \leq  e-ε we obtain that for every h ∈ HB ,
+$$
+Dm (\{S|x : LS (h) = 0\}) \le (1 - \epsilon)m \le e-\epsilon_m . \tag{2.9}
+$$
+Combining this equation with Equation (2.7) we conclude that
+$$
+Dm (\{S|x : L(D,f ) (h_S ) > \epsilon\}) \le |HB | e-\epsilon_m \le |H| e-\epsilon m .
+$$
+A graphical illustration which explains how we used the union bound is given in Figure 2.1.
+![Hinh: fig-40-1]
+Figure 2.1 Each point in the large circle represents a possible m-tuple of instances. Each colored oval represents the set of “misleading” m-tuple of instances for some “bad” predictor h ∈ HB . The ERM can potentially overfit whenever it gets a misleading training set S. That is, for some h ∈ HB we have LS (h) = 0. Equation (2.9) guarantees that for each individual bad hypothesis, h ∈ HB , at most (1 - ε)m -fraction of the training sets would be misleading. In particular, the larger m is, the smaller each of these colored ovals becomes. The union bound formalizes the fact that the area representing the training sets that are misleading with respect to some h ∈ HB (that is, the training sets in M ) is at most the sum of the areas of the colored ovals. Therefore, it is bounded by |HB | times the maximum size of a colored oval. Any sample S outside the colored ovals cannot cause the ERM rule to overfit.
+corollary 2.3        Let H be a finite hypothesis class. Let δ ∈ (0, 1) and ε > 0
+
+<!-- page: 41 -->
+
+and let m be an integer that satisfies
+$$
+log(|H|/\delta) m\ge             .
+$$
+ε Then, for any labeling function, f , and for any distribution, D, for which the realizability assumption holds (that is, for some h ∈ H, L(D,f ) (h) = 0), with probability of at least 1 - δ over the choice of an i.i.d. sample S of size m, we have that for every ERM hypothesis, hS , it holds that L(D,f ) (hS ) \leq  ε. The preceeding corollary tells us that for a sufficiently large m, the ERMH rule over a finite hypothesis class will be probably (with confidence 1-δ) approximately (up to an error of ε) correct. In the next chapter we formally define the model of Probably Approximately Correct (PAC) learning.
+### 2.4   Exercises
+1. Overfitting of polynomial matching: We have shown that the predictor
+defined in Equation (2.3) leads to overfitting. While this predictor seems to be very unnatural, the goal of this exercise is to show that it can be described as a thresholded polynomial. That is, show that given a training set S = {(xi , f (xi ))}m       d           m
+i=1 ⊆ (R × {0, 1}) , there exists a polynomial pS such that hS (x) = 1 if and only if pS (x) \geq  0, where hS is as defined in Equation (2.3). It follows that learning the class of all thresholded polynomials using the ERM rule may lead to overfitting.
+2. Let H be a class of binary classifiers over a domain X . Let D be an unknown
+distribution over X , and let f be the target hypothesis in H. Fix some h ∈ H. Show that the expected value of LS (h) over the choice of S|x equals L(D,f ) (h), namely,
+$$
+E       [LS (h)] = L(D,f ) (h). S|x \sim D m
+$$
+3. Axis aligned rectangles: An axis aligned rectangle classifier in the plane
+is a classifier that assigns the value 1 to a point if and only if it is inside a certain rectangle. Formally, given real numbers a1 \leq  b1 , a2 \leq  b2 , define the classifier h(a1 ,b1 ,a2 ,b2 ) by
+(
+$$
+1 if a_1 \le x_1 \le b_1 and a_2 \le x_2 \le b_2 h(a_1 ,b_1 ,a_2 ,b_2 ) (x_1 , x_2 ) =                                      . \tag{2.10}
+$$
+0 otherwise The class of all axis aligned rectangles in the plane is defined as 2 Hrec = {h(a1 ,b1 ,a2 ,b2 ) : a1 \leq  b1 , and a2 \leq  b2 }. Note that this is an infinite size hypothesis class. Throughout this exercise we rely on the realizability assumption.
+
+<!-- page: 42 -->
+
+1. Let A be the algorithm that returns the smallest rectangle enclosing all
+positive examples in the training set. Show that A is an ERM.
+2. Show that if A receives a training set of size \geq  4 log(4/δ)       ε     then, with proba-
+bility of at least 1 - δ it returns a hypothesis with error of at most ε. Hint: Fix some distribution D over X , let R∗ = R(a∗1 , b∗1 , a∗2 , b∗2 ) be the rectangle that generates the labels, and let f be the corresponding hypothesis. Let a1 \geq  a∗1 be a number such that the probability mass (with respect to D) of the rectangle R1 = R(a∗1 , a1 , a∗2 , b∗2 ) is exactly ε/4. Similarly, let b1 , a2 , b2 be numbers such that the probability masses of the rectangles R2 = R(b1 , b∗1 , a∗2 , b∗2 ), R3 = R(a∗1 , b∗1 , a∗2 , a2 ), R4 = R(a∗1 , b∗1 , b2 , b∗2 ) are all exactly ε/4. Let R(S) be the rectangle returned by A. See illustration in Figure 2.2.
+R∗
+-                                +
++                    R(S)
++                 -
++
++ R1
+![Hinh: fig-42-1]
+Figure 2.2 Axis aligned rectangles.
+- Show that R(S) ⊆ R∗ .
+- Show that if S contains (positive) examples in all of the rectangles
+R1 , R2 , R3 , R4 , then the hypothesis returned by A has error of at most ε.
+- For each i ∈ {1, . . . , 4}, upper bound the probability that S does not
+contain an example from Ri .
+- Use the union bound to conclude the argument.
+3. Repeat the previous question for the class of axis aligned rectangles in Rd .
+4. Show that the runtime of applying the algorithm A mentioned earlier is
+polynomial in d, 1/ε, and in log(1/δ).
+
+<!-- page: 43 -->
+
+## 3     A Formal Learning Model
+In this chapter we define our main formal learning model – the PAC learning model and its extensions. We will consider other notions of learnability in Chapter 7.
+### 3.1   PAC Learning
+In the previous chapter we have shown that for a finite hypothesis class, if the ERM rule with respect to that class is applied on a sufficiently large training sample (whose size is independent of the underlying distribution or labeling function) then the output hypothesis will be probably approximately correct. More generally, we now define Probably Approximately Correct (PAC) learning.
+definition 3.1 (PAC Learnability) A hypothesis class H is PAC learnable if there exist a function mH : (0, 1)2 → N and a learning algorithm with the following property: For every ε, δ ∈ (0, 1), for every distribution D over X , and for every labeling function f : X → {0, 1}, if the realizable assumption holds with respect to H, D, f , then when running the learning algorithm on m \geq  mH (ε, δ) i.i.d. examples generated by D and labeled by f , the algorithm returns a hypothesis h such that, with probability of at least 1 - δ (over the choice of the examples), L(D,f ) (h) \leq  ε.
+The definition of Probably Approximately Correct learnability contains two approximation parameters. The accuracy parameter ε determines how far the output classifier can be from the optimal one (this corresponds to the “approximately correct”), and a confidence parameter δ indicating how likely the classifier is to meet that accuracy requirement (corresponds to the “probably” part of “PAC”). Under the data access model that we are investigating, these approximations are inevitable. Since the training set is randomly generated, there may always be a small chance that it will happen to be noninformative (for example, there is always some chance that the training set will contain only one domain point, sampled over and over again). Furthermore, even when we are lucky enough to get a training sample that does faithfully represent D, because it is just a finite sample, there may always be some fine details of D that it fails
+
+<!-- page: 44 -->
+
+to reflect. Our accuracy parameter, ε, allows “forgiving” the learner’s classifier for making minor errors.
+Sample Complexity The function mH : (0, 1)2 → N determines the sample complexity of learning H: that is, how many examples are required to guarantee a probably approximately correct solution. The sample complexity is a function of the accuracy (ε) and confidence (δ) parameters. It also depends on properties of the hypothesis class H – for example, for a finite class we showed that the sample complexity depends on log the size of H.
+Note that if H is PAC learnable, there are many functions mH that satisfy the requirements given in the definition of PAC learnability. Therefore, to be precise, we will define the sample complexity of learning H to be the “minimal function,” in the sense that for any ε, δ, mH (ε, δ) is the minimal integer that satisfies the requirements of PAC learning with accuracy ε and confidence δ. Let us now recall the conclusion of the analysis of finite hypothesis classes from the previous chapter. It can be rephrased as stating:
+corollary 3.2       Every finite hypothesis class is PAC learnable with sample complexity
+⌈              ⌉
+$$
+log(|H|/\delta) mH (\epsilon, \delta) \le                     .
+$$
+ε
+There are infinite classes that are learnable as well (see, for example, Exercise 3). Later on we will show that what determines the PAC learnability of a class is not its finiteness but rather a combinatorial measure called the VC dimension.
+### 3.2   A More General Learning Model
+The model we have just described can be readily generalized, so that it can be made relevant to a wider scope of learning tasks. We consider generalizations in two aspects:
+Removing the Realizability Assumption We have required that the learning algorithm succeeds on a pair of data distribution D and labeling function f provided that the realizability assumption is met. For practical learning tasks, this assumption may be too strong (can we really guarantee that there is a rectangle in the color-hardness space that fully determines which papayas are tasty?). In the next subsection, we will describe the agnostic PAC model in which this realizability assumption is waived.
+
+<!-- page: 45 -->
+
+Learning Problems beyond Binary Classification The learning task that we have been discussing so far has to do with predicting a binary label to a given example (like being tasty or not). However, many learning tasks take a different form. For example, one may wish to predict a real valued number (say, the temperature at 9:00 p.m. tomorrow) or a label picked from a finite set of labels (like the topic of the main story in tomorrow’s paper). It turns out that our analysis of learning can be readily extended to such and many other scenarios by allowing a variety of loss functions. We shall discuss that in Section 3.2.2 later.
+#### 3.2.1   Releasing the Realizability Assumption – Agnostic PAC Learning
+A More Realistic Model for the Data-Generating Distribution Recall that the realizability assumption requires that there exists h? ∈ H such that Px∼D [h? (x) = f (x)] = 1. In many practical problems this assumption does not hold. Furthermore, it is maybe more realistic not to assume that the labels are fully determined by the features we measure on input elements (in the case of the papayas, it is plausible that two papayas of the same color and softness will have different taste). In the following, we relax the realizability assumption by replacing the “target labeling function” with a more flexible notion, a data-labels generating distribution. Formally, from now on, let D be a probability distribution over X × Y, where, as before, X is our domain set and Y is a set of labels (usually we will consider Y = {0, 1}). That is, D is a joint distribution over domain points and labels. One can view such a distribution as being composed of two parts: a distribution Dx over unlabeled domain points (sometimes called the marginal distribution) and a conditional probability over labels for each domain point, D((x, y)|x). In the papaya example, Dx determines the probability of encountering a papaya whose color and hardness fall in some color-hardness values domain, and the conditional probability is the probability that a papaya with color and hardness represented by x is tasty. Indeed, such modeling allows for two papayas that share the same color and hardness to belong to different taste categories.
+The empirical and the True Error Revised For a probability distribution, D, over X × Y, one can measure how likely h is to make an error when labeled points are randomly drawn according to D. We redefine the true error (or risk) of a prediction rule h to be
+$$
+LD (h) =        P       [h(x) \neq y] = D(\{(x, y) : h(x) \neq y\}). \tag{3.1}
+$$
+(x,y)∼D
+We would like to find a predictor, h, for which that error will be minimized. However, the learner does not know the data generating D. What the learner does have access to is the training data, S. The definition of the empirical risk
+
+<!-- page: 46 -->
+
+remains the same as before, namely,
+$$
+|\{i \in [m] : h(xi ) \neq yi \}| LS (h) =                                  .
+$$
+$$
+m Given S, a learner can compute LS (h) for any function h : X \to \{0, 1\}. Note that LS (h) = LD(uniform over S) (h).
+$$
+The Goal We wish to find some hypothesis, h : X → Y, that (probably approximately) minimizes the true risk, LD (h).
+The Bayes Optimal Predictor. Given any probability distribution D over X × {0, 1}, the best label predicting function from X to {0, 1} will be
+(
+$$
+1 if P[y = 1|x] \ge 1/2 fD (x) =
+$$
+## 0 otherwise
+It is easy to verify (see Exercise 7) that for every probability distribution D, the Bayes optimal predictor fD is optimal, in the sense that no other classifier, g : X → {0, 1} has a lower error. That is, for every classifier g, LD (fD ) \leq  LD (g). Unfortunately, since we do not know D, we cannot utilize this optimal predictor fD . What the learner does have access to is the training sample. We can now present the formal definition of agnostic PAC learnability, which is a natural extension of the definition of PAC learnability to the more realistic, nonrealizable, learning setup we have just discussed. Clearly, we cannot hope that the learning algorithm will find a hypothesis whose error is smaller than the minimal possible error, that of the Bayes predictor. Furthermore, as we shall prove later, once we make no prior assumptions about the data-generating distribution, no algorithm can be guaranteed to find a predictor that is as good as the Bayes optimal one. Instead, we require that the learning algorithm will find a predictor whose error is not much larger than the best possible error of a predictor in some given benchmark hypothesis class. Of course, the strength of such a requirement depends on the choice of that hypothesis class.
+definition 3.3 (Agnostic PAC Learnability) A hypothesis class H is agnostic PAC learnable if there exist a function mH : (0, 1)2 → N and a learning algorithm with the following property: For every ε, δ ∈ (0, 1) and for every distribution D over X ×Y, when running the learning algorithm on m \geq  mH (ε, δ) i.i.d. examples generated by D, the algorithm returns a hypothesis h such that, with probability of at least 1 - δ (over the choice of the m training examples),
+$$
+LD (h) \le min 0 LD (h_0 ) + \epsilon. h \in H
+$$
+
+<!-- page: 47 -->
+
+Clearly, if the realizability assumption holds, agnostic PAC learning provides the same guarantee as PAC learning. In that sense, agnostic PAC learning gener-alizes the definition of PAC learning. When the realizability assumption does not hold, no learner can guarantee an arbitrarily small error. Nevertheless, under the definition of agnostic PAC learning, a learner can still declare success if its error is not much larger than the best error achievable by a predictor from the class H. This is in contrast to PAC learning, in which the learner is required to achieve a small error in absolute terms and not relative to the best error achievable by the hypothesis class.
+#### 3.2.2   The Scope of Learning Problems Modeled
+We next extend our model so that it can be applied to a wide variety of learning tasks. Let us consider some examples of different learning tasks.
+- Multiclass Classification Our classification does not have to be binary.
+Take, for example, the task of document classification: We wish to design a program that will be able to classify given documents according to topics (e.g., news, sports, biology, medicine). A learning algorithm for such a task will have access to examples of correctly classified documents and, on the basis of these examples, should output a program that can take as input a new document and output a topic classification for that document. Here, the domain set is the set of all potential documents. Once again, we would usually represent documents by a set of features that could include counts of different key words in the document, as well as other possibly relevant features like the size of the document or its origin. The label set in this task will be the set of possible document topics (so Y will be some large finite set). Once we determine our domain and label sets, the other components of our framework look exactly the same as in the papaya tasting example; Our training sample will be a finite sequence of (feature vector, label) pairs, the learner’s output will be a function from the domain set to the label set, and, finally, for our measure of success, we can use the probability, over (document, topic) pairs, of the event that our predictor suggests a wrong label.
+- Regression In this task, one wishes to find some simple pattern in the data –
+a functional relationship between the X and Y components of the data. For example, one wishes to find a linear function that best predicts a baby’s birth weight on the basis of ultrasound measures of his head circumference, abdominal circumference, and femur length. Here, our domain set X is some subset of R3 (the three ultrasound measurements), and the set of “labels,” Y, is the the set of real numbers (the weight in grams). In this context, it is more adequate to call Y the target set. Our training data as well as the learner’s output are as before (a finite sequence of (x, y) pairs, and a function from X to Y respectively). However, our measure of success is
+
+<!-- page: 48 -->
+
+different. We may evaluate the quality of a hypothesis function, h : X → Y, by the expected square difference between the true labels and their predicted values, namely,
+$$
+LD (h) =          E      (h(x) - y)2 . \tag{3.2}
+$$
+(x,y)∼D
+To accommodate a wide range of learning tasks we generalize our formalism of the measure of success as follows:
+Generalized Loss Functions Given any set H (that plays the role of our hypotheses, or models) and some domain Z let ` be any function from H×Z to the set of nonnegative real numbers, ` : H × Z → R+ .
+We call such functions loss functions. Note that for prediction problems, we have that Z = X × Y. However, our notion of the loss function is generalized beyond prediction tasks, and therefore it allows Z to be any domain of examples (for instance, in unsupervised learning tasks such as the one described in Chapter 22, Z is not a product of an instance domain and a label domain). We now define the risk function to be the expected loss of a classifier, h ∈ H, with respect to a probability distribution D over Z, namely,
+$$
+LD (h) =        E [`(h, z)]. \tag{3.3}
+$$
+z∼D
+That is, we consider the expectation of the loss of h over objects z picked randomly according to D. Similarly, we define the empirical risk to be the expected loss over a given sample S = (z1 , . . . , zm ) ∈ Z m , namely,
+$$
+m 1 X LS (h) =             `(h, zi ).                   (3.4) m i=1
+$$
+The loss functions used in the preceding examples of classification and regression tasks are as follows:
+- 0–1 loss: Here, our random variable z ranges over the set of pairs X × Y and
+the loss function is
+$$
+( 0 if h(x) = y `0-1 (h, (x, y)) =
+$$
+1 if h(x) \neq  y This loss function is used in binary or multiclass classification problems. One should note that, for a random variable, α, taking the values {0, 1}, Eα∼D [α] = Pα∼D [α = 1]. Consequently, for this loss function, the definitions of LD (h) given in Equation (3.3) and Equation (3.1) coincide.
+- Square Loss: Here, our random variable z ranges over the set of pairs X × Y
+and the loss function is
+def `sq (h, (x, y)) = (h(x) - y)2 .
+
+<!-- page: 49 -->
+
+This loss function is used in regression problems. We will later see more examples of useful instantiations of loss functions.
+To summarize, we formally define agnostic PAC learnability for general loss functions. definition 3.4 (Agnostic PAC Learnability for General Loss Functions) A hypothesis class H is agnostic PAC learnable with respect to a set Z and a loss function ` : H × Z → R+ , if there exist a function mH : (0, 1)2 → N and a learning algorithm with the following property: For every ε, δ ∈ (0, 1) and for every distribution D over Z, when running the learning algorithm on m \geq  mH (ε, δ) i.i.d. examples generated by D, the algorithm returns h ∈ H such that, with probability of at least 1 - δ (over the choice of the m training examples),
+$$
+LD (h) \le min
+$$
+LD (h0 ) + ε, h ∈H
+where LD (h) = Ez∼D [`(h, z)]. Remark 3.1 (A Note About Measurability*) In the aforementioned definition, for every h ∈ H, we view the function `(h, ·) : Z → R+ as a random variable and define LD (h) to be the expected value of this random variable. For that, we need to require that the function `(h, ·) is measurable. Formally, we assume that there is a σ-algebra of subsets of Z, over which the probability D is defined, and that the preimage of every initial segment in R+ is in this σ-algebra. In the specific case of binary classification with the 0-1 loss, the σ-algebra is over X × {0, 1} and our assumption on ` is equivalent to the assumption that for every h, the set {(x, h(x)) : x ∈ X } is in the σ-algebra. Remark 3.2 (Proper versus Representation-Independent Learning*) In the preceding definition, we required that the algorithm will return a hypothesis from H. In some situations, H is a subset of a set H0 , and the loss function can be naturally extended to be a function from H0 × Z to the reals. In this case, we may allow the algorithm to return a hypothesis h0 ∈ H0 , as long as it satisfies the requirement LD (h0 ) \leq  minh∈H LD (h) + ε. Allowing the algorithm to output a hypothesis from H0 is called representation independent learning, while proper learning occurs when the algorithm must output a hypothesis from H. Representation independent learning is sometimes called “improper learning,” although there is nothing improper in representation independent learning.
+### 3.3   Summary
+In this chapter we defined our main formal learning model – PAC learning. The basic model relies on the realizability assumption, while the agnostic variant does
+
+<!-- page: 50 -->
+
+not impose any restrictions on the underlying distribution over the examples. We also generalized the PAC model to arbitrary loss functions. We will sometimes refer to the most general model simply as PAC learning, omitting the “agnostic” prefix and letting the reader infer what the underlying loss function is from the context. When we would like to emphasize that we are dealing with the original PAC setting we mention that the realizability assumption holds. In Chapter 7 we will discuss other notions of learnability.
+### 3.4   Bibliographic Remarks
+Our most general definition of agnostic PAC learning with general loss functions follows the works of Vladimir Vapnik and Alexey Chervonenkis (Vapnik & Chervonenkis 1971). In particular, we follow Vapnik’s general setting of learning (Vapnik 1982, Vapnik 1992, Vapnik 1995, Vapnik 1998).
+PAC learning was introduced by Valiant (1984). Valiant was named the winner of the 2010 Turing Award for the introduction of the PAC model. Valiant’s definition requires that the sample complexity will be polynomial in 1/ε and in 1/δ, as well as in the representation size of hypotheses in the class (see also Kearns & Vazirani (1994)). As we will see in Chapter 6, if a problem is at all PAC learnable then the sample complexity depends polynomially on 1/ε and log(1/δ). Valiant’s definition also requires that the runtime of the learning algorithm will be polynomial in these quantities. In contrast, we chose to distinguish between the statistical aspect of learning and the computational aspect of learning. We will elaborate on the computational aspect later on in Chapter 8, where we introduce the full PAC learning model of Valiant. For expository reasons, we use the term PAC learning even when we ignore the runtime aspect of learning. Finally, the formalization of agnostic PAC learning is due to Haussler (1992).
+### 3.5   Exercises
+1. Monotonicity of Sample Complexity: Let H be a hypothesis class for a
+binary classification task. Suppose that H is PAC learnable and its sample complexity is given by mH (·, ·). Show that mH is monotonically nonincreasing in each of its parameters. That is, show that given δ ∈ (0, 1), and given 0 < ε1 \leq  ε2 < 1, we have that mH (ε1 , δ) \geq  mH (ε2 , δ). Similarly, show that given ε ∈ (0, 1), and given 0 < δ1 \leq  δ2 < 1, we have that mH (ε, δ1 ) \geq  mH (ε, δ2 ).
+2. Let X be a discrete domain, and let HSingleton = {hz : z ∈ X } ∪ {h- }, where
+for each z ∈ X , hz is the function defined by hz (x) = 1 if x = z and hz (x) = 0 if x \neq  z. h- is simply the all-negative hypothesis, namely, \forall x ∈ X, h- (x) = 0. The realizability assumption here implies that the true hypothesis f labels negatively all examples in the domain, perhaps except one.
+
+<!-- page: 51 -->
+
+1. Describe an algorithm that implements the ERM rule for learning HSingleton
+in the realizable setup.
+2. Show that HSingleton is PAC learnable. Provide an upper bound on the
+sample complexity.
+3. Let X = R2 , Y = {0, 1}, and let H be the class of concentric circles in the
+plane, that is, H = {hr : r ∈ R+ }, where hr (x) = 1[kxk\leq r] . Prove that H is PAC learnable (assume realizability), and its sample complexity is bounded by
+$$
+⌈      ⌉ log(1/\delta) mH (\epsilon, \delta) \le            . \epsilon
+$$
+4. In this question, we study the hypothesis class of Boolean conjunctions defined
+as follows. The instance space is X = {0, 1}d and the label set is Y = {0, 1}. A literal over the variables x1 , . . . , xd is a simple Boolean function that takes the form f (x) = xi , for some i ∈ [d], or f (x) = 1 - xi for some i ∈ [d]. We use the notation x̄i as a shorthand for 1 - xi . A conjunction is any product of literals. In Boolean logic, the product is denoted using the ∧ sign. For example, the function h(x) = x1 · (1 - x2 ) is written as x1 ∧ x̄2 .
+We consider the hypothesis class of all conjunctions of literals over the d variables. The empty conjunction is interpreted as the all-positive hypothesis (namely, the function that returns h(x) = 1 for all x). The conjunction x1 ∧ x̄1 (and similarly any conjunction involving a literal and its negation) is allowed and interpreted as the all-negative hypothesis (namely, the conjunction that returns h(x) = 0 for all x). We assume realizability: Namely, we assume that there exists a Boolean conjunction that generates the labels. Thus, each example (x, y) ∈ X × Y consists of an assignment to the d Boolean variables x1 , . . . , xd , and its truth value (0 for false and 1 for true). For instance, let d = 3 and suppose that the true conjunction is x1 ∧ x̄2 . Then, the training set S might contain the following instances:
+((1, 1, 1), 0), ((1, 0, 1), 1), ((0, 1, 0), 0)((1, 0, 0), 1). Prove that the hypothesis class of all conjunctions over d variables is PAC learnable and bound its sample complexity. Propose an algorithm that implements the ERM rule, whose runtime is polynomial in d · m.
+5. Let X be a domain and let D1 , D2 , . . . , Dm be a sequence of distributions
+over X . Let H be a finite class of binary classifiers over X and let f ∈ H. Suppose we are getting a sample S of m examples, such that the instances are independent but are not identically distributed; the ith instance is sampled from Di and then yi is set to be f (xi ). Let D̄m denote the average, that is, D̄m = (D1 + · · · + Dm )/m.
+$$
+Fix an accuracy parameter \epsilon \in (0, 1). Show that P \exists h \in H s.t. L(D̄m ,f ) (h) > \epsilon and L(S,f ) (h) = 0 \le |H|e-\epsilon_m . [                                                 ]
+$$
+
+<!-- page: 52 -->
+
+Hint: Use the geometric-arithmetic mean inequality.
+6. Let H be a hypothesis class of binary classifiers. Show that if H is agnostic
+PAC learnable, then H is PAC learnable as well. Furthermore, if A is a successful agnostic PAC learner for H, then A is also a successful PAC learner for H.
+7. (*) The Bayes optimal predictor: Show that for every probability distri-
+bution D, the Bayes optimal predictor fD is optimal, in the sense that for every classifier g from X to {0, 1}, LD (fD ) \leq  LD (g).
+8. (*) We say that a learning algorithm A is better than B with respect to some
+probability distribution, D, if
+LD (A(S)) \leq  LD (B(S)) for all samples S ∈ (X ×{0, 1})m . We say that a learning algorithm A is better than B, if it is better than B with respect to all probability distributions D over X × {0, 1}.
+1. A probabilistic label predictor is a function that assigns to every domain
+point x a probability value, h(x) ∈ [0, 1], that determines the probability of predicting the label 1. That is, given such an h and an input, x, the label for x is predicted by tossing a coin with bias h(x) toward Heads and predicting 1 iff the coin comes up Heads. Formally, we define a probabilistic label predictor as a function, h : X → [0, 1]. The loss of such h on an example (x, y) is defined to be |h(x) - y|, which is exactly the probability that the prediction of h will not be equal to y. Note that if h is deterministic, that is, returns values in {0, 1}, then |h(x) - y| = 1[h(x)\neq y] . Prove that for every data-generating distribution D over X × {0, 1}, the Bayes optimal predictor has the smallest risk (w.r.t. the loss function `(h, (x, y)) = |h(x)-y|, among all possible label predictors, including probabilistic ones).
+2. Let X be a domain and {0, 1} be a set of labels. Prove that for every
+distribution D over X × {0, 1}, there exist a learning algorithm AD that is better than any other learning algorithm with respect to D.
+3. Prove that for every learning algorithm A there exist a probability distri-
+bution, D, and a learning algorithm B such that A is not better than B w.r.t. D.
+9. Consider a variant of the PAC model in which there are two example ora-
+cles: one that generates positive examples and one that generates negative examples, both according to the underlying distribution D on X . Formally, given a target function f : X → {0, 1}, let D+ be the distribution over X + = {x ∈ X : f (x) = 1} defined by D+ (A) = D(A)/D(X + ), for every A ⊂ X + . Similarly, D- is the distribution over X - induced by D.
+The definition of PAC learnability in the two-oracle model is the same as the standard definition of PAC learnability except that here the learner has access to m+                               +       -                               - H (ε, δ) i.i.d. examples from D and m (ε, δ) i.i.d. examples from D . The learner’s goal is to output h s.t. with probability at least 1 - δ (over the choice
+
+<!-- page: 53 -->
+
+of the two training sets, and possibly over the nondeterministic decisions made by the learning algorithm), both L(D+ ,f ) (h) \leq  ε and L(D-,f ) (h) \leq  ε.
+1. (*) Show that if H is PAC learnable (in the standard one-oracle model),
+then H is PAC learnable in the two-oracle model.
+2. (**) Define h+ to be the always-plus hypothesis and h- to be the always-
+minus hypothesis. Assume that h+ , h- ∈ H. Show that if H is PAC learnable in the two-oracle model, then H is PAC learnable in the standard one-oracle model.
+
+<!-- page: 54 -->
+
+## 4     Learning via Uniform Convergence
+The first formal learning model that we have discussed was the PAC model. In Chapter 2 we have shown that under the realizability assumption, any finite hypothesis class is PAC learnable. In this chapter we will develop a general tool, uniform convergence, and apply it to show that any finite class is learnable in the agnostic PAC model with general loss functions, as long as the range loss function is bounded.
+### 4.1   Uniform Convergence Is Sufficient for Learnability
+The idea behind the learning condition discussed in this chapter is very simple. Recall that, given a hypothesis class, H, the ERM learning paradigm works as follows: Upon receiving a training sample, S, the learner evaluates the risk (or error) of each h in H on the given sample and outputs a member of H that minimizes this empirical risk. The hope is that an h that minimizes the empirical risk with respect to S is a risk minimizer (or has risk close to the minimum) with respect to the true data probability distribution as well. For that, it suffices to ensure that the empirical risks of all members of H are good approximations of their true risk. Put another way, we need that uniformly over all hypotheses in the hypothesis class, the empirical risk will be close to the true risk, as formalized in the following.
+definition 4.1 (ε-representative sample) A training set S is called ε-representative (w.r.t. domain Z, hypothesis class H, loss function `, and distribution D) if
+$$
+\forall h \in H, |LS (h) - LD (h)| \le \epsilon.
+$$
+The next simple lemma states that whenever the sample is (ε/2)-representative, the ERM learning rule is guaranteed to return a good hypothesis.
+lemma 4.2 Assume that a training set S is 2ε -representative (w.r.t. domain Z, hypothesis class H, loss function `, and distribution D). Then, any output of ERMH (S), namely, any hS ∈ argminh∈H LS (h), satisfies
+$$
+LD (h_S ) \le min LD (h) + \epsilon. h\in H
+$$
+
+<!-- page: 55 -->
+
+Proof    For every h ∈ H,
+$$
+LD (h_S ) \le LS (h_S ) + 2\epsilon \le LS (h) + 2\epsilon \le LD (h) + 2\epsilon + 2\epsilon = LD (h) + \epsilon,
+$$
+where the first and third inequalities are due to the assumption that S is 2ε -representative (Definition 4.1) and the second inequality holds since hS is an ERM predictor.
+The preceding lemma implies that to ensure that the ERM rule is an agnostic PAC learner, it suffices to show that with probability of at least 1 - δ over the random choice of a training set, it will be an ε-representative training set. The uniform convergence condition formalizes this requirement.
+definition 4.3 (Uniform Convergence) We say that a hypothesis class H has the uniform convergence property (w.r.t. a domain Z and a loss function `) if
+2 H : (0, 1) → N such that for every ε, δ ∈ (0, 1) and there exists a function mUC for every probability distribution D over Z, if S is a sample of m \geq  mUC  H (ε, δ) examples drawn i.i.d. according to D, then, with probability of at least 1 - δ, S is ε-representative.
+Similar to the definition of sample complexity for PAC learning, the function UC mH measures the (minimal) sample complexity of obtaining the uniform convergence property, namely, how many examples we need to ensure that with probability of at least 1 - δ the sample would be ε-representative. The term uniform here refers to having a fixed sample size that works for all members of H and over all possible probability distributions over the domain. The following corollary follows directly from Lemma 4.2 and the definition of uniform convergence.
+corollary 4.4 If a class H has the uniform convergence property with a function mUCH then the class is agnostically PAC learnable with the sample complexity mH (ε, δ) \leq  mUC
+H (ε/2, δ). Furthermore, in that case, the ERMH paradigm is a successful agnostic PAC learner for H.
+### 4.2   Finite Classes Are Agnostic PAC Learnable
+In view of Corollary 4.4, the claim that every finite hypothesis class is agnostic PAC learnable will follow once we establish that uniform convergence holds for a finite hypothesis class.
+To show that uniform convergence holds we follow a two step argument, similar to the derivation in Chapter 2. The first step applies the union bound while the second step employs a measure concentration inequality. We now explain these two steps in detail. Fix some ε, δ. We need to find a sample size m that guarantees that for any D, with probability of at least 1 - δ of the choice of S = (z1 , . . . , zm ) sampled
+
+<!-- page: 56 -->
+
+$$
+i.i.d. from D we have that for all h \in H, |LS (h) - LD (h)| \le \epsilon. That is,
+$$
+$$
+Dm (\{S : \forall h \in H, |LS (h) - LD (h)| \le \epsilon\}) \ge 1 - \delta.
+$$
+Equivalently, we need to show that
+Dm ({S : ∃h ∈ H, |LS (h) - LD (h)| > ε}) < δ.
+Writing
+$$
+\{S : \exists h \in H, |LS (h) - LD (h)| > \epsilon\} = \cup h\in H \{S : |LS (h) - LD (h)| > \epsilon\},
+$$
+and applying the union bound (Lemma 2.2) we obtain
+$$
+X Dm (\{S : \exists h \in H, |LS (h) - LD (h)| > \epsilon\}) \le   Dm (\{S : |LS (h) - LD (h)| > \epsilon\}).
+$$
+h∈H
+(4.1) Our second step will be to argue that each summand of the right-hand side of this inequality is small enough (for a sufficiently large m). That is, we will show that for any fixed hypothesis, h, (which is chosen in advance prior to the sampling of the training set), the gap between the true and empirical risks, |LS (h) - LD (h)|, is likely to be small. 1 Pm Recall that LD (h) = Ez∼D [`(h, z)] and that LS (h) = m         i=1 `(h, zi ). Since each zi is sampled i.i.d. from D, the expected value of the random variable `(h, zi ) is LD (h). By the linearity of expectation, it follows that LD (h) is also the expected value of LS (h). Hence, the quantity |LD (h)-LS (h)| is the deviation of the random variable LS (h) from its expectation. We therefore need to show that the measure of LS (h) is concentrated around its expected value. A basic statistical fact, the law of large numbers, states that when m goes to infinity, empirical averages converge to their true expectation. This is true for LS (h), since it is the empirical average of m i.i.d random variables. However, since the law of large numbers is only an asymptotic result, it provides no information about the gap between the empirically estimated error and its true value for any given, finite, sample size. Instead, we will use a measure concentration inequality due to Hoeffding, which quantifies the gap between empirical averages and their expected value.
+lemma 4.5 (Hoeffding’s Inequality) Let θ1 , . . . , θm be a sequence of i.i.d. random variables and assume that for all i, E[θi ] = \mu and P[a \leq  θi \leq  b] = 1. Then, for any ε > 0
+"    m
+$$
+  X 1 \theta_i - \mu > \epsilon \le 2 exp -2 m \epsilon_2 /(b - a)2 .
+$$
+) P m i=1
+The proof can be found in Appendix B. Getting back to our problem, let θi be the random variable `(h, zi ). Since h is fixed and z1 , . . . , zm are sampled i.i.d., it follows that θ1 , . . . , θm are also i.i.d.
+$$
+1 Pm random variables. Furthermore, LS (h) = m                i=1 \theta_i and LD (h) = \mu. Let us
+$$
+
+<!-- page: 57 -->
+
+further assume that the range of ` is [0, 1] and therefore θi ∈ [0, 1]. We therefore obtain that
+"      m
+$$
+  X Dm (\{S : |LS (h) - LD (h)| > \epsilon\}) = P m   1 \theta_i - \mu > \epsilon \le 2 exp -2 m \epsilon_2 .
+$$
+$$
+) i=1 (4.2) Combining this with Equation (4.1) yields X Dm (\{S : \exists h \in H, |LS (h) - LD (h)| > \epsilon\}) \le           2 exp -2 m \epsilon_2 )
+$$
+h∈H
+= 2 |H| exp -2 m ε2 .
+)
+$$
+Finally, if we choose log(2|H|/\delta) m\ge 2\epsilon_2 then Dm (\{S : \exists h \in H, |LS (h) - LD (h)| > \epsilon\}) \le \delta.
+$$
+corollary 4.6 Let H be a finite hypothesis class, let Z be a domain, and let ` : H × Z → [0, 1] be a loss function. Then, H enjoys the uniform convergence property with sample complexity
+$$
+⌈             ⌉ UC log(2|H|/\delta) mH (\epsilon, \delta) \le                  .
+$$
+2ε2 Furthermore, the class is agnostically PAC learnable using the ERM algorithm with sample complexity ⌈               ⌉
+$$
+2 log(2|H|/\delta) mH (\epsilon, \delta) \le mUC H  (\epsilon/2, \delta) \le                   .
+$$
+ε2
+Remark 4.1 (The “Discretization Trick”) While the preceding corollary only applies to finite hypothesis classes, there is a simple trick that allows us to get a very good estimate of the practical sample complexity of infinite hypothesis classes. Consider a hypothesis class that is parameterized by d parameters. For example, let X = R, Y = {\pm 1}, and the hypothesis class, H, be all functions of the form hθ (x) = sign(x - θ). That is, each hypothesis is parameterized by one parameter, θ ∈ R, and the hypothesis outputs 1 for all instances larger than θ and outputs -1 for instances smaller than θ. This is a hypothesis class of an infinite size. However, if we are going to learn this hypothesis class in practice, using a computer, we will probably maintain real numbers using floating point representation, say, of 64 bits. It follows that in practice, our hypothesis class is parameterized by the set of scalars that can be represented using a 64 bits floating point number. There are at most 264 such numbers; hence the actual size of our hypothesis class is at most 264 . More generally, if our hypothesis class is parameterized by d numbers, in practice we learn a hypothesis class of size at most 264d . Applying Corollary 4.6 we obtain that the sample complexity of such
+
+<!-- page: 58 -->
+
+classes is bounded by 128d+2εlog(2/δ)
+2      . This upper bound on the sample complexity has the deficiency of being dependent on the specific representation of real numbers used by our machine. In Chapter 6 we will introduce a rigorous way to analyze the sample complexity of infinite size hypothesis classes. Nevertheless, the discretization trick can be used to get a rough estimate of the sample complexity in many practical situations.
+### 4.3   Summary
+If the uniform convergence property holds for a hypothesis class H then in most cases the empirical risks of hypotheses in H will faithfully represent their true risks. Uniform convergence suffices for agnostic PAC learnability using the ERM rule. We have shown that finite hypothesis classes enjoy the uniform convergence property and are hence agnostic PAC learnable.
+### 4.4   Bibliographic Remarks
+Classes of functions for which the uniform convergence property holds are also called Glivenko-Cantelli classes, named after Valery Ivanovich Glivenko and Francesco Paolo Cantelli, who proved the first uniform convergence result in the 1930s. See (Dudley, Gine & Zinn 1991). The relation between uniform convergence and learnability was thoroughly studied by Vapnik – see (Vapnik 1992, Vapnik 1995, Vapnik 1998). In fact, as we will see later in Chapter 6, the fundamental theorem of learning theory states that in binary classification problems, uniform convergence is not only a sufficient condition for learnability but is also a necessary condition. This is not the case for more general learning problems (see (Shalev-Shwartz, Shamir, Srebro & Sridharan 2010)).
+### 4.5   Exercises
+1. In this exercise, we show that the (ε, δ) requirement on the convergence of
+errors in our definitions of PAC learning, is, in fact, quite close to a simpler looking requirement about averages (or expectations). Prove that the following two statements are equivalent (for any learning algorithm A, any probability distribution D, and any loss function whose range is [0, 1]):
+1. For every ε, δ > 0, there exists m(ε, δ) such that \forall m \geq  m(ε, δ)
+P     [LD (A(S)) > ε] < δ S∼D m
+$$
+2. lim     E   [LD (A(S))] = 0 m\to\in fty S\sim D m
+$$
+
+<!-- page: 59 -->
+
+(where ES∼Dm denotes the expectation over samples S of size m).
+2. Bounded loss functions: In Corollary 4.6 we assumed that the range of the
+loss function is [0, 1]. Prove that if the range of the loss function is [a, b] then the sample complexity satisfies
+$$
+2 log(2|H|/\delta)(b - a)2 ⌈                       ⌉ UC mH (\epsilon, \delta) \le mH (\epsilon/2, \delta) \le                               .
+$$
+ε2
+
+<!-- page: 60 -->
+
+## 5   The Bias-Complexity Tradeoff
+In Chapter 2 we saw that unless one is careful, the training data can mislead the learner, and result in overfitting. To overcome this problem, we restricted the search space to some hypothesis class H. Such a hypothesis class can be viewed as reflecting some prior knowledge that the learner has about the task – a belief that one of the members of the class H is a low-error model for the task. For example, in our papayas taste problem, on the basis of our previous experience with other fruits, we may assume that some rectangle in the color-hardness plane predicts (at least approximately) the papaya’s tastiness.
+Is such prior knowledge really necessary for the success of learning? Maybe there exists some kind of universal learner, that is, a learner who has no prior knowledge about a certain task and is ready to be challenged by any task? Let us elaborate on this point. A specific learning task is defined by an unknown distribution D over X × Y, where the goal of the learner is to find a predictor h : X → Y, whose risk, LD (h), is small enough. The question is therefore whether there exist a learning algorithm A and a training set size m, such that for every distribution D, if A receives m i.i.d. examples from D, there is a high chance it outputs a predictor h that has a low risk. The first part of this chapter addresses this question formally. The No-Free-Lunch theorem states that no such universal learner exists. To be more precise, the theorem states that for binary classification prediction tasks, for every learner there exists a distribution on which it fails. We say that the learner fails if, upon receiving i.i.d. examples from that distribution, its output hypothesis is likely to have a large risk, say, \geq  0.3, whereas for the same distribution, there exists another learner that will output a hypothesis with a small risk. In other words, the theorem states that no learner can succeed on all learnable tasks – every learner has tasks on which it fails while other learners succeed. Therefore, when approaching a particular learning problem, defined by some distribution D, we should have some prior knowledge on D. One type of such prior knowledge is that D comes from some specific parametric family of distributions. We will study learning under such assumptions later on in Chapter 24. Another type of prior knowledge on D, which we assumed when defining the PAC learning model, is that there exists h in some predefined hypothesis class H, such that LD (h) = 0. A softer type of prior knowledge on D is assuming that minh∈H LD (h) is small. In a sense, this weaker assumption on D is a prerequisite for using the
+
+<!-- page: 61 -->
+
+agnostic PAC model, in which we require that the risk of the output hypothesis will not be much larger than minh∈H LD (h).
+In the second part of this chapter we study the benefits and pitfalls of using a hypothesis class as a means of formalizing prior knowledge. We decompose the error of an ERM algorithm over a class H into two components. The first component reflects the quality of our prior knowledge, measured by the minimal risk of a hypothesis in our hypothesis class, minh∈H LD (h). This component is also called the approximation error, or the bias of the algorithm toward choosing a hypothesis from H. The second component is the error due to overfitting, which depends on the size or the complexity of the class H and is called the estimation error. These two terms imply a tradeoff between choosing a more complex H (which can decrease the bias but increases the risk of overfitting) or a less complex H (which might increase the bias but decreases the potential overfitting).
+### 5.1   The No-Free-Lunch Theorem
+In this part we prove that there is no universal learner. We do this by showing that no learner can succeed on all learning tasks, as formalized in the following theorem:
+theorem 5.1 (No-Free-Lunch) Let A be any learning algorithm for the task of binary classification with respect to the 0 - 1 loss over a domain X . Let m be any number smaller than |X |/2, representing a training set size. Then, there exists a distribution D over X × {0, 1} such that:
+1. There exists a function f : X → {0, 1} with LD (f ) = 0.
+2. With probability of at least 1/7 over the choice of S ∼ Dm we have that
+$$
+LD (A(S)) \ge 1/8.
+$$
+This theorem states that for every learner, there exists a task on which it fails, even though that task can be successfully learned by another learner. Indeed, a trivial successful learner in this case would be an ERM learner with the hypothesis class H = {f }, or more generally, ERM with respect to any finite hypothesis class that contains f and whose size satisfies the equation m \geq  8 log(7|H|/6) (see Corollary 2.3).
+Proof Let C be a subset of X of size 2m. The intuition of the proof is that any learning algorithm that observes only half of the instances in C has no information on what should be the labels of the rest of the instances in C. Therefore, there exists a “reality,” that is, some target function f , that would contradict the labels that A(S) predicts on the unobserved instances in C.
+Note that there are T = 22m possible functions from C to {0, 1}. Denote these functions by f1 , . . . , fT . For each such function, let Di be a distribution over
+
+<!-- page: 62 -->
+
+$$
+C \times \{0, 1\} defined by ( 1/|C| if y = fi (x) Di (\{(x, y)\}) = 0          otherwise.
+$$
+That is, the probability to choose a pair (x, y) is 1/|C| if the label y is indeed the true label according to fi , and the probability is 0 if y \neq  fi (x). Clearly, LDi (fi ) = 0. We will show that for every algorithm, A, that receives a training set of m examples from C × {0, 1} and returns a function A(S) : C → {0, 1}, it holds that
+$$
+max     E [LDi (A(S))] \ge 1/4.                             (5.1) i\in[T ] S\sim Dim
+$$
+Clearly, this means that for every algorithm, A0 , that receives a training set of m examples from X ×{0, 1} there exist a function f : X → {0, 1} and a distribution D over X × {0, 1}, such that LD (f ) = 0 and
+$$
+E [LD (A_0 (S))] \ge 1/4.                              (5.2) S\sim D m
+$$
+It is easy to verify that the preceding suffices for showing that P[LD (A0 (S)) \geq  1/8] \geq  1/7, which is what we need to prove (see Exercise 1).
+We now turn to proving that Equation (5.1) holds. There are k = (2m)m possible sequences of m examples from C. Denote these sequences by S1 , . . . , Sk . Also, if Sj = (x1 , . . . , xm ) we denote by Sji the sequence containing the instances in Sj labeled by the function fi , namely, Sji = ((x1 , fi (x1 )), . . . , (xm , fi (xm ))). If the distribution is Di then the possible training sets A can receive are S1i , . . . , Ski , and all these training sets have the same probability of being sampled. Therefore,
+k
+$$
+1 X E m [LDi (A(S))] =                 LDi (A(Sji )).               (5.3) S\sim Di                           k j=1
+$$
+Using the facts that “maximum” is larger than “average” and that “average” is larger than “minimum,” we have
+k                             T           k
+$$
+1 X                   1X 1 X max          LDi (A(Sji )) \ge             LDi (A(Sji )) i\in[T ] k                     T     k j=1                   i=1   j=1 k       T 1X 1X =                   LDi (A(Sji )) k j=1 T i=1 T 1X \ge min               LDi (A(Sji )).         (5.4) j\in[k] T i=1
+$$
+Next, fix some j ∈ [k]. Denote Sj = (x1 , . . . , xm ) and let v1 , . . . , vp be the examples in C that do not appear in Sj . Clearly, p \geq  m. Therefore, for every
+
+<!-- page: 63 -->
+
+$$
+function h : C \to \{0, 1\} and every i we have 1 X LDi (h) =           1[h(x)\neq fi (x)] 2m x\in C p 1   X \ge           1[h(vr )\neq fi (vr )] 2m r=1 p 1 X \ge           1[h(vr )\neq fi (vr )] .                 (5.5) 2p r=1
+$$
+$$
+Hence, T                     T      p 1X                    1X 1 X LDi (A(Sji )) \ge             1    i T i=1                 T i=1 2p r=1 [A(Sj )(vr )\neq fi (vr )] p     T 1 X_1X =                1   i 2p r=1 T i=1 [A(Sj )(vr )\neq fi (vr )] T 1         1X \ge     · min         1[A(Sji )(vr )\neq fi (vr )] .   (5.6) 2   r\in[p] T i=1
+$$
+Next, fix some r ∈ [p]. We can partition all the functions in f1 , . . . , fT into T /2 disjoint pairs, where for a pair (fi , fi0 ) we have that for every c ∈ C, fi (c) \neq  fi0 (c)
+$$
+0 if and only if c = vr . Since for such a pair we must have Sji = Sji , it follows that
+$$
+$$
+1[A(Sji )(vr )\neq fi (vr )] + 1[A(S i_0 )(vr )\neq f 0 (vr )] = 1, j          i
+$$
+$$
+which yields T 1 X                              1 1[A(Sji )(vr )\neq fi (vr )] = . T i=1                            2
+$$
+Combining this with Equation (5.6), Equation (5.4), and Equation (5.3), we obtain that Equation (5.1) holds, which concludes our proof.
+#### 5.1.1   No-Free-Lunch and Prior Knowledge
+How does the No-Free-Lunch result relate to the need for prior knowledge? Let us consider an ERM predictor over the hypothesis class H of all the functions f from X to {0, 1}. This class represents lack of prior knowledge: Every possible function from the domain to the label set is considered a good candidate. According to the No-Free-Lunch theorem, any algorithm that chooses its output from hypotheses in H, and in particular the ERM predictor, will fail on some learning task. Therefore, this class is not PAC learnable, as formalized in the following corollary:
+corollary 5.2 Let X be an infinite domain set and let H be the set of all functions from X to {0, 1}. Then, H is not PAC learnable.
+
+<!-- page: 64 -->
+
+Proof Assume, by way of contradiction, that the class is learnable. Choose some ε < 1/8 and δ < 1/7. By the definition of PAC learnability, there must be some learning algorithm A and an integer m = m(ε, δ), such that for any data-generating distribution over X × {0, 1}, if for some function f : X → {0, 1}, LD (f ) = 0, then with probability greater than 1 - δ when A is applied to samples S of size m, generated i.i.d. by D, LD (A(S)) \leq  ε. However, applying the No-Free-Lunch theorem, since |X | > 2m, for every learning algorithm (and in particular for the algorithm A), there exists a distribution D such that with probability greater than 1/7 > δ, LD (A(S)) > 1/8 > ε, which leads to the desired contradiction.
+How can we prevent such failures? We can escape the hazards foreseen by the No-Free-Lunch theorem by using our prior knowledge about a specific learning task, to avoid the distributions that will cause us to fail when learning that task. Such prior knowledge can be expressed by restricting our hypothesis class. But how should we choose a good hypothesis class? On the one hand, we want to believe that this class includes the hypothesis that has no error at all (in the PAC setting), or at least that the smallest error achievable by a hypothesis from this class is indeed rather small (in the agnostic setting). On the other hand, we have just seen that we cannot simply choose the richest class – the class of all functions over the given domain. This tradeoff is discussed in the following section.
+### 5.2   Error Decomposition
+To answer this question we decompose the error of an ERMH predictor into two components as follows. Let hS be an ERMH hypothesis. Then, we can write
+$$
+LD (h_S ) = \epsilon app + \epsilon est where : \epsilon app = min LD (h),             \epsilon est = LD (h_S ) - \epsilon app . (5.7) h\in H
+$$
+- The Approximation Error – the minimum risk achievable by a predictor
+in the hypothesis class. This term measures how much risk we have because we restrict ourselves to a specific class, namely, how much inductive bias we have. The approximation error does not depend on the sample size and is determined by the hypothesis class chosen. Enlarging the hypothesis class can decrease the approximation error.
+Under the realizability assumption, the approximation error is zero. In the agnostic case, however, the approximation error can be large.1 1   In fact, it always includes the error of the Bayes optimal predictor (see Chapter 3), the minimal yet inevitable error, because of the possible nondeterminism of the world in this model. Sometimes in the literature the term approximation error refers not to minh∈H LD (h), but rather to the excess error over that of the Bayes optimal predictor, namely, minh∈H LD (h) - εBayes .
+
+<!-- page: 65 -->
+
+- The Estimation Error – the difference between the approximation error
+and the error achieved by the ERM predictor. The estimation error results because the empirical risk (i.e., training error) is only an estimate of the true risk, and so the predictor minimizing the empirical risk is only an estimate of the predictor minimizing the true risk.
+The quality of this estimation depends on the training set size and on the size, or complexity, of the hypothesis class. As we have shown, for a finite hypothesis class, εest increases (logarithmically) with |H| and decreases with m. We can think of the size of H as a measure of its complexity. In future chapters we will define other complexity measures of hypothesis classes.
+Since our goal is to minimize the total risk, we face a tradeoff, called the bias-complexity tradeoff. On one hand, choosing H to be a very rich class decreases the approximation error but at the same time might increase the estimation error, as a rich H might lead to overfitting. On the other hand, choosing H to be a very small set reduces the estimation error but might increase the approximation error or, in other words, might lead to underfitting. Of course, a great choice for H is the class that contains only one classifier – the Bayes optimal classifier. But the Bayes optimal classifier depends on the underlying distribution D, which we do not know (indeed, learning would have been unnecessary had we known D). Learning theory studies how rich we can make H while still maintaining reasonable estimation error. In many cases, empirical research focuses on designing good hypothesis classes for a certain domain. Here, “good” means classes for which the approximation error would not be excessively high. The idea is that although we are not experts and do not know how to construct the optimal classifier, we still have some prior knowledge of the specific problem at hand, which enables us to design hypothesis classes for which both the approximation error and the estimation error are not too large. Getting back to our papayas example, we do not know how exactly the color and hardness of a papaya predict its taste, but we do know that papaya is a fruit and on the basis of previous experience with other fruit we conjecture that a rectangle in the color-hardness space may be a good predictor.
+### 5.3   Summary
+The No-Free-Lunch theorem states that there is no universal learner. Every learner has to be specified to some task, and use some prior knowledge about that task, in order to succeed. So far we have modeled our prior knowledge by restricting our output hypothesis to be a member of a chosen hypothesis class. When choosing this hypothesis class, we face a tradeoff, between a larger, or more complex, class that is more likely to have a small approximation error, and a more restricted class that would guarantee that the estimation error will
+
+<!-- page: 66 -->
+
+be small. In the next chapter we will study in more detail the behavior of the estimation error. In Chapter 7 we will discuss alternative ways to express prior knowledge.
+### 5.4   Bibliographic Remarks
+(Wolpert & Macready 1997) proved several no-free-lunch theorems for optimization, but these are rather different from the theorem we prove here. The theorem we prove here is closely related to lower bounds in VC theory, as we will study in the next chapter.
+### 5.5   Exercises
+1. Prove that Equation (5.2) suffices for showing that P[LD (A(S)) \geq  1/8] \geq  1/7.
+Hint: Let θ be a random variable that receives values in [0, 1] and whose expectation satisfies E[θ] \geq  1/4. Use Lemma B.1 to show that P[θ \geq  1/8] \geq  1/7.
+2. Assume you are asked to design a learning algorithm to predict whether pa-
+tients are going to suffer a heart attack. Relevant patient features the algorithm may have access to include blood pressure (BP), body-mass index (BMI), age (A), level of physical activity (P), and income (I).
+You have to choose between two algorithms; the first picks an axis aligned rectangle in the two dimensional space spanned by the features BP and BMI and the other picks an axis aligned rectangle in the five dimensional space spanned by all the preceding features.
+1. Explain the pros and cons of each choice.
+2. Explain how the number of available labeled training samples will affect
+your choice.
+3. Prove that if |X | \geq  km for a positive integer k \geq  2, then we can replace
+the lower bound of 1/4 in the No-Free-Lunch theorem with k-1             1
+2k = 2 - 2k .
+Namely, let A be a learning algorithm for the task of binary classification. Let m be any number smaller than |X |/k, representing a training set size. Then, there exists a distribution D over X × {0, 1} such that:
+- There exists a function f : X → {0, 1} with LD (f ) = 0.
+- ES∼Dm [LD (A(S))] \geq  21 - 2k 1
+.
+
+<!-- page: 67 -->
+
+## 6     The VC-Dimension
+In the previous chapter, we decomposed the error of the ERMH rule into approximation error and estimation error. The approximation error depends on the fit of our prior knowledge (as reflected by the choice of the hypothesis class H) to the underlying unknown distribution. In contrast, the definition of PAC learnability requires that the estimation error would be bounded uniformly over all distributions.
+Our current goal is to figure out which classes H are PAC learnable, and to characterize exactly the sample complexity of learning a given hypothesis class. So far we have seen that finite classes are learnable, but that the class of all functions (over an infinite size domain) is not. What makes one class learnable and the other unlearnable? Can infinite-size classes be learnable, and, if so, what determines their sample complexity? We begin the chapter by showing that infinite classes can indeed be learnable, and thus, finiteness of the hypothesis class is not a necessary condition for learnability. We then present a remarkably crisp characterization of the family of learnable classes in the setup of binary valued classification with the zero-one loss. This characterization was first discovered by Vladimir Vapnik and Alexey Chervonenkis in 1970 and relies on a combinatorial notion called the Vapnik-Chervonenkis dimension (VC-dimension). We formally define the VC-dimension, provide several examples, and then state the fundamental theorem of statistical learning theory, which integrates the concepts of learnability, VC-dimension, the ERM rule, and uniform convergence.
+### 6.1   Infinite-Size Classes Can Be Learnable
+In Chapter 4 we saw that finite classes are learnable, and in fact the sample complexity of a hypothesis class is upper bounded by the log of its size. To show that the size of the hypothesis class is not the right characterization of its sample complexity, we first present a simple example of an infinite-size hypothesis class that is learnable. Example 6.1 Let H be the set of threshold functions over the real line, namely, H = {ha : a ∈ R}, where ha : R → {0, 1} is a function such that ha (x) = 1[x<a] . To remind the reader, 1[x<a] is 1 if x < a and 0 otherwise. Clearly, H is of infinite
+
+<!-- page: 68 -->
+
+size. Nevertheless, the following lemma shows that H is learnable in the PAC model using the ERM algorithm. Lemma 6.1 Let H be the class of thresholds as defined earlier. Then, H is PAC learnable, using the ERM rule, with sample complexity of mH (ε, δ) \leq  dlog(2/δ)/εe. Proof Let a? be a threshold such that the hypothesis h? (x) = 1[x<a? ] achieves LD (h? ) = 0. Let Dx be the marginal distribution over the domain X and let a0 < a? < a1 be such that
+$$
+P [x \in (a_0 , a? )] =    P [x \in (a? , a_1 )] = \epsilon. x\sim Dx                      x\sim Dx
+$$
+ε mass                  ε mass
+a0                    a?                       a1
+(If Dx (-∞, a? ) \leq  ε we set a0 = -∞ and similarly for a1 ). Given a training set S, let b0 = max{x : (x, 1) ∈ S} and b1 = min{x : (x, 0) ∈ S} (if no example in S is positive we set b0 = -∞ and if no example in S is negative we set b1 = ∞). Let bS be a threshold corresponding to an ERM hypothesis, hS , which implies that bS ∈ (b0 , b1 ). Therefore, a sufficient condition for LD (hS ) \leq  ε is that both b0 \geq  a0 and b1 \leq  a1 . In other words,
+$$
+P [LD (h_S ) > \epsilon] \le        P [b_0 < a_0 \lor b_1 > a_1 ], S\sim D m                   S\sim D m
+$$
+and using the union bound we can bound the preceding by
+$$
+P [LD (h_S ) > \epsilon] \le      P [b_0 < a_0 ] +       P [b_1 > a_1 ].         (6.1) S\sim D m                   S\sim D m               S\sim D m
+$$
+The event b0 < a0 happens if and only if all examples in S are not in the interval (a0 , a∗ ), whose probability mass is defined to be ε, namely,
+$$
+P [b_0 < a_0 ] =     P [\forall(x, y) \in S, x 6\in (a_0 , a? )] = (1 - \epsilon)m \le e-\epsilon m . S\sim D m               S\sim D m
+$$
+Since we assume m > log(2/δ)/ε it follows that the equation is at most δ/2. In the same way it is easy to see that PS∼Dm [b1 > a1 ] \leq  δ/2. Combining with Equation (6.1) we conclude our proof.
+### 6.2   The VC-Dimension
+We see, therefore, that while finiteness of H is a sufficient condition for learnability, it is not a necessary condition. As we will show, a property called the VC-dimension of a hypothesis class gives the correct characterization of its learnability. To motivate the definition of the VC-dimension, let us recall the No-Free-Lunch theorem (Theorem 5.1) and its proof. There, we have shown that without
+
+<!-- page: 69 -->
+
+restricting the hypothesis class, for any learning algorithm, an adversary can construct a distribution for which the learning algorithm will perform poorly, while there is another learning algorithm that will succeed on the same distribution. To do so, the adversary used a finite set C ⊂ X and considered a family of distributions that are concentrated on elements of C. Each distribution was derived from a “true” target function from C to {0, 1}. To make any algorithm fail, the adversary used the power of choosing a target function from the set of all possible functions from C to {0, 1}.
+When considering PAC learnability of a hypothesis class H, the adversary is restricted to constructing distributions for which some hypothesis h ∈ H achieves a zero risk. Since we are considering distributions that are concentrated on elements of C, we should study how H behaves on C, which leads to the following definition. definition 6.2 (Restriction of H to C) Let H be a class of functions from X to {0, 1} and let C = {c1 , . . . , cm } ⊂ X . The restriction of H to C is the set of functions from C to {0, 1} that can be derived from H. That is,
+HC = {(h(c1 ), . . . , h(cm )) : h ∈ H}, where we represent each function from C to {0, 1} as a vector in {0, 1}|C| . If the restriction of H to C is the set of all functions from C to {0, 1}, then we say that H shatters the set C. Formally: definition 6.3 (Shattering) A hypothesis class H shatters a finite set C ⊂ X if the restriction of H to C is the set of all functions from C to {0, 1}. That is, |HC | = 2|C| . Example 6.2 Let H be the class of threshold functions over R. Take a set C = {c1 }. Now, if we take a = c1 + 1, then we have ha (c1 ) = 1, and if we take a = c1 - 1, then we have ha (c1 ) = 0. Therefore, HC is the set of all functions from C to {0, 1}, and H shatters C. Now take a set C = {c1 , c2 }, where c1 \leq  c2 . No h ∈ H can account for the labeling (0, 1), because any threshold that assigns the label 0 to c1 must assign the label 0 to c2 as well. Therefore not all functions from C to {0, 1} are included in HC ; hence C is not shattered by H. Getting back to the construction of an adversarial distribution as in the proof of the No-Free-Lunch theorem (Theorem 5.1), we see that whenever some set C is shattered by H, the adversary is not restricted by H, as they can construct a distribution over C based on any target function from C to {0, 1}, while still maintaining the realizability assumption. This immediately yields: corollary 6.4 Let H be a hypothesis class of functions from X to {0, 1}. Let m be a training set size. Assume that there exists a set C ⊂ X of size 2m that is shattered by H. Then, for any learning algorithm, A, there exist a distribution D over X × {0, 1} and a predictor h ∈ H such that LD (h) = 0 but with probability of at least 1/7 over the choice of S ∼ Dm we have that LD (A(S)) \geq  1/8.
+
+<!-- page: 70 -->
+
+Corollary 6.4 tells us that if H shatters some set C of size 2m then we cannot learn H using m examples. Intuitively, if a set C is shattered by H, and we receive a sample containing half the instances of C, the labels of these instances give us no information about the labels of the rest of the instances in C – every possible labeling of the rest of the instances can be explained by some hypothesis in H. Philosophically,
+If someone can explain every phenomenon, his explanations are worthless.
+This leads us directly to the definition of the VC dimension.
+definition 6.5 (VC-dimension) The VC-dimension of a hypothesis class H, denoted VCdim(H), is the maximal size of a set C ⊂ X that can be shattered by H. If H can shatter sets of arbitrarily large size we say that H has infinite VC-dimension.
+A direct consequence of Corollary 6.4 is therefore:
+theorem 6.6      Let H be a class of infinite VC-dimension. Then, H is not PAC learnable.
+Proof Since H has an infinite VC-dimension, for any training set size m, there exists a shattered set of size 2m, and the claim follows by Corollary 6.4.
+We shall see later in this chapter that the converse is also true: A finite VC-dimension guarantees learnability. Hence, the VC-dimension characterizes PAC learnability. But before delving into more theory, we first show several examples.
+### 6.3     Examples
+In this section we calculate the VC-dimension of several hypothesis classes. To show that VCdim(H) = d we need to show that
+1. There exists a set C of size d that is shattered by H.
+2. Every set C of size d + 1 is not shattered by H.
+#### 6.3.1   Threshold Functions
+Let H be the class of threshold functions over R. Recall Example 6.2, where we have shown that for an arbitrary set C = {c1 }, H shatters C; therefore VCdim(H) \geq  1. We have also shown that for an arbitrary set C = {c1 , c2 } where c1 \leq  c2 , H does not shatter C. We therefore conclude that VCdim(H) = 1.
+
+<!-- page: 71 -->
+
+#### 6.3.2   Intervals
+Let H be the class of intervals over R, namely, H = {ha,b : a, b ∈ R, a < b}, where ha,b : R → {0, 1} is a function such that ha,b (x) = 1[x∈(a,b)] . Take the set C = {1, 2}. Then, H shatters C (make sure you understand why) and therefore VCdim(H) \geq  2. Now take an arbitrary set C = {c1 , c2 , c3 } and assume without loss of generality that c1 \leq  c2 \leq  c3 . Then, the labeling (1, 0, 1) cannot be obtained by an interval and therefore H does not shatter C. We therefore conclude that VCdim(H) = 2.
+#### 6.3.3   Axis Aligned Rectangles
+Let H be the class of axis aligned rectangles, formally:
+$$
+H = \{h(a_1 ,a_2 ,b_1 ,b_2 ) : a_1 \le a_2 and b_1 \le b_2 \}
+$$
+$$
+where ( 1   if a_1 \le x_1 \le a_2 and b_1 \le x_2 \le b_2 h(a_1 ,a_2 ,b_1 ,b_2 ) (x_1 , x_2 ) =                                              (6.2) 0   otherwise
+$$
+We shall show in the following that VCdim(H) = 4. To prove this we need to find a set of 4 points that are shattered by H, and show that no set of 5 points can be shattered by H. Finding a set of 4 points that are shattered is easy (see Figure 6.1). Now, consider any set C ⊂ R2 of 5 points. In C, take a leftmost point (whose first coordinate is the smallest in C), a rightmost point (first coordinate is the largest), a lowest point (second coordinate is the smallest), and a highest point (second coordinate is the largest). Without loss of generality, denote C = {c1 , . . . , c5 } and let c5 be the point that was not selected. Now, define the labeling (1, 1, 1, 1, 0). It is impossible to obtain this labeling by an axis aligned rectangle. Indeed, such a rectangle must contain c1 , . . . , c4 ; but in this case the rectangle contains c5 as well, because its coordinates are within the intervals defined by the selected points. So, C is not shattered by H, and therefore VCdim(H) = 4.
+c1
+c4   c5    c2
+c3
+![Hinh: fig-71-1]
+Figure 6.1 Left: 4 points that are shattered by axis aligned rectangles. Right: Any axis aligned rectangle cannot label c5 by 0 and the rest of the points by 1.
+
+<!-- page: 72 -->
+
+#### 6.3.4   Finite Classes
+Let H be a finite class. Then, clearly, for any set C we have |HC | \leq  |H| and thus C cannot be shattered if |H| < 2|C| . This implies that VCdim(H) \leq  log2 (|H|). This shows that the PAC learnability of finite classes follows from the more general statement of PAC learnability of classes with finite VC-dimension, which we shall see in the next section. Note, however, that the VC-dimension of a finite class H can be significantly smaller than log2 (|H|). For example, let X = {1, . . . , k}, for some integer k, and consider the class of threshold functions (as defined in Example 6.2). Then, |H| = k but VCdim(H) = 1. Since k can be arbitrarily large, the gap between log2 (|H|) and VCdim(H) can be arbitrarily large.
+#### 6.3.5   VC-Dimension and the Number of Parameters
+In the previous examples, the VC-dimension happened to equal the number of parameters defining the hypothesis class. While this is often the case, it is not always true. Consider, for example, the domain X = R, and the hypothesis class H = {hθ : θ ∈ R} where hθ : X → {0, 1} is defined by hθ (x) = d0.5 sin(θx)e. It is possible to prove that VCdim(H) = ∞, namely, for every d, one can find d points that are shattered by H (see Exercise 8).
+### 6.4     The Fundamental Theorem of PAC learning
+We have already shown that a class of infinite VC-dimension is not learnable. The converse statement is also true, leading to the fundamental theorem of statistical learning theory: theorem 6.7 (The Fundamental Theorem of Statistical Learning) Let H be a hypothesis class of functions from a domain X to {0, 1} and let the loss function be the 0 - 1 loss. Then, the following are equivalent:
+1. H has the uniform convergence property.
+2. Any ERM rule is a successful agnostic PAC learner for H.
+3. H is agnostic PAC learnable.
+4. H is PAC learnable.
+5. Any ERM rule is a successful PAC learner for H.
+6. H has a finite VC-dimension. The proof of the theorem is given in the next section. Not only does the VC-dimension characterize PAC learnability; it even determines the sample complexity. theorem 6.8 (The Fundamental Theorem of Statistical Learning – Quantitative Version) Let H be a hypothesis class of functions from a domain X to {0, 1} and let the loss function be the 0 - 1 loss. Assume that VCdim(H) = d < ∞. Then, there are absolute constants C1 , C2 such that:
+
+<!-- page: 73 -->
+
+1. H has the uniform convergence property with sample complexity
+$$
+d + log(1/\delta)                    d + log(1/\delta) C_1           \le mUCH (\epsilon, \delta) \le C_2
+$$
+ε2                              ε2
+2. H is agnostic PAC learnable with sample complexity
+d + log(1/δ)                  d + log(1/δ) C1     2
+$$
+\le mH (\epsilon, \delta) \le C_2 \epsilon                             \epsilon_2
+$$
+3. H is PAC learnable with sample complexity
+$$
+d + log(1/\delta)                  d log(1/\epsilon) + log(1/\delta) C_1             \le mH (\epsilon, \delta) \le C_2
+$$
+ε                                 ε The proof of this theorem is given in Chapter 28. Remark 6.3 We stated the fundamental theorem for binary classification tasks. A similar result holds for some other learning problems such as regression with the absolute loss or the squared loss. However, the theorem does not hold for all learning tasks. In particular, learnability is sometimes possible even though the uniform convergence property does not hold (we will see an example in Chapter 13, Exercise 2). Furthermore, in some situations, the ERM rule fails but learnability is possible with other learning rules.
+### 6.5     Proof of Theorem 6.7
+We have already seen that 1 → 2 in Chapter 4. The implications 2 → 3 and 3 → 4 are trivial and so is 2 → 5. The implications 4 → 6 and 5 → 6 follow from the No-Free-Lunch theorem. The difficult part is to show that 6 → 1. The proof is based on two main claims:
+- If VCdim(H) = d, then even though H might be infinite, when restricting it
+to a finite set C ⊂ X , its “effective” size, |HC |, is only O(|C|d ). That is, the size of HC grows polynomially rather than exponentially with |C|. This claim is often referred to as Sauer’s lemma, but it has also been stated and proved independently by Shelah and by Perles. The formal statement is given in Section 6.5.1 later.
+- In Section 4 we have shown that finite hypothesis classes enjoy the uniform
+convergence property. In Section 6.5.2 later we generalize this result and show that uniform convergence holds whenever the hypothesis class has a “small effective size.” By “small effective size” we mean classes for which |HC | grows polynomially with |C|.
+#### 6.5.1   Sauer’s Lemma and the Growth Function
+We defined the notion of shattering, by considering the restriction of H to a finite set of instances. The growth function measures the maximal “effective” size of H on a set of m examples. Formally:
+
+<!-- page: 74 -->
+
+definition 6.9 (Growth Function) Let H be a hypothesis class. Then the growth function of H, denoted τH : N → N, is defined as
+$$
+\tau H (m) =           max        HC . C\subset X :|C|=m
+$$
+In words, τH (m) is the number of different functions from a set C of size m to {0, 1} that can be obtained by restricting H to C.
+Obviously, if VCdim(H) = d then for any m \leq  d we have τH (m) = 2m . In such cases, H induces all possible functions from C to {0, 1}. The following beautiful lemma, proposed independently by Sauer, Shelah, and Perles, shows that when m becomes larger than the VC-dimension, the growth function increases polynomially rather than exponentially with m.
+lemma 6.10 (Sauer-Shelah-Perles) Let H be) a hypothesis class with VCdim(H) \leq 
+$$
+Pd d < \in fty. Then, for all m, \tau H (m) \le i=0 mi . In particular, if m > d + 1 then \tau H (m) \le (em/d)d .
+$$
+Proof of Sauer’s Lemma * To prove the lemma it suffices to prove the following stronger claim: For any C = {c1 , . . . , cm } we have
+$$
+\forall H,     |HC | \le |\{B \subset eq C : H shatters B\}|. \tag{6.3}
+$$
+The reason why Equation (6.3) is sufficient to prove the lemma is that if VCdim(H) \leq  d then no set whose size is larger than d is shattered by H and therefore
+$$
+d ( ) X      m |\{B \subset eq C : H shatters B\}| \le                . i=0
+$$
+i
+When m > d + 1 the right-hand side of the preceding is at most (em/d)d (see Lemma A.5 in Appendix A). We are left with proving Equation (6.3) and we do it using an inductive argument. For m = 1, no matter what H is, either both sides of Equation (6.3) equal
+1 or both sides equal 2 (the empty set is always considered to be shattered by H). Assume Equation (6.3) holds for sets of size k < m and let us prove it for sets of size m. Fix H and C = {c1 , . . . , cm }. Denote C 0 = {c2 , . . . , cm } and in addition, define the following two sets:
+$$
+Y_0 = \{(y_2 , . . . , ym ) : (0, y_2 , . . . , ym ) \in HC \lor (1, y_2 , . . . , ym ) \in HC \},
+$$
+and
+$$
+Y_1 = \{(y_2 , . . . , ym ) : (0, y_2 , . . . , ym ) \in HC \land (1, y_2 , . . . , ym ) \in HC \}.
+$$
+It is easy to verify that |HC | = |Y0 | + |Y1 |. Additionally, since Y0 = HC 0 , using the induction assumption (applied on H and C 0 ) we have that
+$$
+|Y_0 | = |HC 0 | \le |\{B \subset eq C 0 : H shatters B\}| = |\{B \subset eq C : c_1 6\in B \land H shatters B\}|.
+$$
+
+<!-- page: 75 -->
+
+Next, define $H' \subseteq H$ to be
+$$
+H' = \{h \in H : \exists h' \in H \;\mathrm{s.t.}\; (1-h'(c_1), h'(c_2), \ldots, h'(c_m)) = (h(c_1), h(c_2), \ldots, h(c_m))\}.
+$$
+namely, $H'$ contains pairs of hypotheses that agree on $C'$ and differ on $c_1$. Using this definition, it is clear that if $H'$ shatters a set $B \subseteq C'$ then it also shatters the set $B \cup \{c_1\}$ and vice versa. Combining this with the fact that $Y_1 = H'_{C'}$ and using the inductive assumption (now applied on $H'$ and $C'$) we obtain that
+$$
+|Y_1| = |H'_{C'}| \le |\{B \subseteq C' : H' \text{ shatters } B\}| = |\{B \subseteq C' : H' \text{ shatters } B \cup \{c_1\}\}| = |\{B \subseteq C : c_1 \in B \land H' \text{ shatters } B\}| \le |\{B \subseteq C : c_1 \in B \land H \text{ shatters } B\}|.
+$$
+Overall, we have shown that
+$$
+|H_C| = |Y_0| + |Y_1| \le |\{B \subseteq C : c_1 \notin B \land H \text{ shatters } B\}| + |\{B \subseteq C : c_1 \in B \land H \text{ shatters } B\}| = |\{B \subseteq C : H \text{ shatters } B\}|,
+$$
+which concludes our proof.
+
+#### 6.5.2 Uniform Convergence for Classes of Small Effective Size
+
+In this section we prove that if $H$ has small effective size then it enjoys the uniform convergence property. Formally,
+
+theorem 6.11 Let $H$ be a class and let $\tau_H$ be its growth function. Then, for every $D$ and every $\delta \in (0,1)$, with probability of at least $1-\delta$ over the choice of $S \sim D^m$ we have
+$$
+|L_D(h) - L_S(h)| \le \frac{4 + \sqrt{\log(\tau_H(2m))}}{\delta\sqrt{2m}}.
+$$
+Before proving the theorem, let us first conclude the proof of Theorem 6.7.
+
+Proof of Theorem 6.7. It suffices to prove that if the VC-dimension is finite then the uniform convergence property holds. We will prove that
+$$
+m_H^{UC}(\epsilon,\delta) \le 4\frac{16d}{(\delta\epsilon)^2}\log\left(\frac{16d}{(\delta\epsilon)^2}\right) + \frac{16d\log(2e/d)}{(\delta\epsilon)^2}.
+$$
+From Sauer’s lemma we have that for $m>d$, $\tau_H(2m) \le (2em/d)^d$. Combining this with Theorem 6.11 we obtain that with probability of at least $1-\delta$,
+$$
+|L_S(h) - L_D(h)| \le \frac{4 + \sqrt{d\log(2em/d)}}{\delta\sqrt{2m}}.
+$$
+For simplicity assume that $\sqrt{d\log(2em/d)} \ge 4$; hence,
+$$
+|L_S(h) - L_D(h)| \le \frac{1}{\delta}\sqrt{\frac{2d\log(2em/d)}{m}}.
+$$
+
+<!-- page: 76 -->
+
+To ensure that the preceding is at most ε we need that
+2d log(m) 2 d log(2e/d) m\geq             +              . (δε)2        (δε)2 Standard algebraic manipulations (see Lemma A.2 in Appendix A) show that a sufficient condition for the preceding to hold is that (       ) 2d          2d       4 d log(2e/d) m\geq 4           log           +               . (δε)2       (δε)2          (δε)2
+Remark 6.4 The upper bound on mUC       H we derived in the proof Theorem 6.7 is not the tightest possible. A tighter analysis that yields the bounds given in Theorem 6.8 can be found in Chapter 28.
+Proof of Theorem 6.11 * We will start by showing that
+[                      ]     p
+4 + log(τH (2m)) E     sup |LD (h) - LS (h)| \leq       \sqrt           .                          (6.4) S∼D m h∈H                              2m Since the random variable suph∈H |LD (h) - LS (h)| is nonnegative, the proof of the theorem follows directly from the preceding using Markov’s inequality (see Section B.1). To bound the left-hand side of Equation (6.4) we first note that for every h ∈ H, we can rewrite LD (h) = ES 0 ∼Dm [LS 0 (h)], where S 0 = z10 , . . . , zm
+$$
+0 is an additional i.i.d. sample. Therefore, [                     ]       [                                    ] E m sup |LD (h) - LS (h)| = E m sup 0 E m LS 0 (h) - LS (h) . S\sim D     h\in H                             S\sim D       h\in H S \sim D
+$$
+A generalization of the triangle inequality yields
+$$
+E     [LS 0 (h) - LS (h)] \le      E       |LS 0 (h) - LS (h)|, S 0 \sim D m                           S 0 \sim D m
+$$
+and the fact that supermum of expectation is smaller than expectation of supre-mum yields
+sup    0
+$$
+E m |LS 0 (h) - LS (h)| \le       E        sup |LS 0 (h) - LS (h)|. h\in H S \sim D                                 S 0 \sim D m h\in H
+$$
+$$
+Formally, the previous two inequalities follow from Jensen’s inequality. Combining all we obtain [                      ]             [                          ] E     sup |LD (h) - LS (h)| \le       E      sup |LS (h) - LS (h)| 0 S\sim D m h\in H                        S,S 0 \sim D m h\in H            m  1 X            0 =      E      sup          (`(h, zi ) - `(h, zi )) . S,S 0 \sim D m h\in H m i=1 \tag{6.5}
+$$
+
+<!-- page: 77 -->
+
+$$
+The expectation on the right-hand side is over a choice of two i.i.d. samples S = z_1 , . . . , zm and S 0 = z_10 , . . . , zm
+$$
+0 . Since all of these 2m vectors are chosen i.i.d., nothing will change if we replace the name of the random vector zi with the name of the random vector zi0 . If we do it, instead of the term (`(h, zi0 ) - `(h, zi )) in Equation (6.5) we will have the term -(`(h, zi0 ) - `(h, zi )). It follows that for every σ ∈ {\pm 1}m we have that Equation (6.5) equals "               m
+#
+1 X                0 E      sup              σi (`(h, zi ) - `(h, zi )) S,S 0 ∼D m h∈H m
+i=1
+Since this holds for every σ ∈ {\pm 1}m , it also holds if we sample each component of σ uniformly at random from the uniform distribution over {\pm 1}, denoted U\pm  . Hence, Equation (6.5) also equals
+"         m
+#
+$$
+1 X               0 E m 0E m sup              σi (`(h, zi ) - `(h, zi )) , σ\sim U\pm   S,S \sim D   h\in H m i=1
+$$
+$$
+and by the linearity of expectation it also equals          m  1 X               0 E       E m sup         σi (`(h, zi ) - `(h, zi )) . S,S 0 \sim D m σ\sim U\pm  h\in H m i=1
+$$
+Next, fix S and S 0 , and let C be the instances appearing in S and S 0 . Then, we can take the supremum only over h ∈ HC . Therefore,
+"          m
+#
+$$
+1 X               0 E m sup             σi (`(h, zi ) - `(h, zi )) σ\sim U\pm     h\in H m i=1              m
+$$
+#
+$$
+1 X               0 = E m max                  σi (`(h, zi ) - `(h, zi )) . σ\sim U\pm h\in HC m
+$$
+i=1 1 Pm                0 Fix some h ∈ HC and denote θh = m            i=1 σi (`(h, zi ) - `(h, zi )). Since E[θh ] = 0 and θh is an average of independent variables, each of which takes values in [-1, 1], we have by Hoeffding’s inequality that for every ρ > 0, P[|θh | > ρ] \leq  2 exp -2 m ρ2 .
+)
+Applying the union bound over h ∈ HC , we obtain that for any ρ > 0,
+$$
+[             ] P max |\theta_h | > \rho \le 2 |HC | exp -2 m \rho_2 .
+$$
+) h∈HC
+Finally, Lemma A.4 in Appendix A tells us that the preceding implies
+[         ]        p
+4 + log(|HC |) E max |θh | \leq         \sqrt          . h∈HC                 2m Combining all with the definition of τH , we have shown that [                       ]         p
+$$
+4 + log(\tau H (2m)) E     sup |LD (h) - LS (h)| \le           \sqrt          . S\sim D m h\in H                                    2m
+$$
+
+<!-- page: 78 -->
+
+### 6.6   Summary
+The fundamental theorem of learning theory characterizes PAC learnability of classes of binary classifiers using VC-dimension. The VC-dimension of a class is a combinatorial property that denotes the maximal sample size that can be shattered by the class. The fundamental theorem states that a class is PAC learnable if and only if its VC-dimension is finite and specifies the sample complexity required for PAC learning. The theorem also shows that if a problem is at all learnable, then uniform convergence holds and therefore the problem is learnable using the ERM rule.
+### 6.7   Bibliographic remarks
+The definition of VC-dimension and its relation to learnability and to uniform convergence is due to the seminal work of Vapnik & Chervonenkis (1971). The relation to the definition of PAC learnability is due to Blumer, Ehrenfeucht, Haussler & Warmuth (1989).
+Several generalizations of the VC-dimension have been proposed. For example, the fat-shattering dimension characterizes learnability of some regression problems (Kearns, Schapire & Sellie 1994, Alon, Ben-David, Cesa-Bianchi & Haussler 1997, Bartlett, Long & Williamson 1994, Anthony & Bartlet 1999), and the Natarajan dimension characterizes learnability of some multiclass learning problems (Natarajan 1989). However, in general, there is no equivalence between learnability and uniform convergence. See (Shalev-Shwartz, Shamir, Srebro & Sridharan 2010, Daniely, Sabato, Ben-David & Shalev-Shwartz 2011). Sauer’s lemma has been proved by Sauer in response to a problem of Erdos (Sauer 1972). Shelah (with Perles) proved it as a useful lemma for Shelah’s theory of stable models (Shelah 1972). Gil Kalai tells1 us that at some later time, Benjy Weiss asked Perles about such a result in the context of ergodic theory, and Perles, who forgot that he had proved it once, proved it again. Vapnik and Chervonenkis proved the lemma in the context of statistical learning theory.
+### 6.8   Exercises
+1. Show the following monotonicity property of VC-dimension: For every two
+$$
+hypothesis classes if H_0 \subset eq H then VCdim(H_0 ) \le VCdim(H).
+$$
+2. Given some finite domain set, X , and a number k \leq  |X |, figure out the VC-
+dimension of each of the following classes (and prove your claims):
+X
+1. H=k  = {h ∈ {0, 1}X : |{x : h(x) = 1}| = k}. That is, the set of all functions
+that assign the value 1 to exactly k elements of X .
+## 1   http://gilkalai.wordpress.com/2008/09/28/
+extremal-combinatorics-iii-some-basic-theorems
+
+<!-- page: 79 -->
+
+2. Hat-most-k = {h ∈ {0, 1}X : |{x : h(x) = 1}| \leq  k or |{x : h(x) = 0}| \leq  k}.
+3. Let X be the Boolean hypercube {0, 1}n . For a set I ⊆ {1, 2, . . . , n} we define
+$$
+a parity function hI as follows. On a binary vector x = (x_1 , x_2 , . . . , xn ) \in \{0, 1\}n ,
+$$
+$$
+! X hI (x) =      xi mod 2 . i\in I
+$$
+(That is, hI computes parity of bits in I.) What is the VC-dimension of the class of all such parity functions, Hn-parity = {hI : I ⊆ {1, 2, . . . , n}}?
+4. We proved Sauer’s lemma by proving that for every class H of finite VC-
+dimension d, and every subset A of the domain,
+$$
+d (     ) X   |A| |HA | \le |\{B \subset eq A : H shatters B\}| \le                   . i=0
+$$
+i
+Show that there are cases in which the previous two inequalities are strict (namely, the \leq  can be replaced by <) and cases in which they can be replaced by equalities. Demonstrate all four combinations of = and <.
+5. VC-dimension of axis aligned rectangles in Rd : Let Hrec         d
+be the class of d                                            2 axis aligned rectangles in R . We have already seen that VCdim(Hrec          ) = 4. d Prove that in general, VCdim(Hrec    ) = 2d. d
+6. VC-dimension of Boolean conjunctions: Let Hcon              be the class of Boolean
+conjunctions over the variables x1 , . . . , xd (d \geq  2). We already know that this class is finite and thus (agnostic) PAC learnable. In this question we calculate
+d VCdim(Hcon      ).
+d
+1. Show that |Hcon  | \leq  3d + 1.
+2. Conclude that VCdim(H) \leq  d log 3.
+d
+3. Show that Hcon   shatters the set of unit vectors {ei : i \leq  d}.
+d
+4. (**) Show that VCdim(Hcon      ) \leq  d.
+Hint: Assume by contradiction that there exists a set C = {c1 , . . . , cd+1 }
+d                                            d that is shattered by Hcon   . Let h1 , . . . , hd+1 be hypotheses in Hcon that satisfy
+(
+$$
+0 i=j \forall i, j \in [d + 1], hi (cj ) =
+$$
+## 1 otherwise
+For each i ∈ [d + 1], hi (or more accurately, the conjunction that corresponds to hi ) contains some literal `i which is false on ci and true on cj for each j \neq  i. Use the Pigeonhole principle to show that there must be a pair i < j \leq  d + 1 such that `i and `j use the same xk and use that fact to derive a contradiction to the requirements from the conjunctions hi , hj .
+d
+5. Consider the class Hmcon    of monotone Boolean conjunctions over {0, 1}d .
+Monotonicity here means that the conjunctions do not contain negations.
+
+<!-- page: 80 -->
+
+d As in Hcon   , the empty conjunction is interpreted as the all-positive hypothesis. We augment Hmcon  d
+with the all-negative hypothesis h- . Show d that VCdim(Hmcon ) = d.
+7. We have shown that for a finite hypothesis class H, VCdim(H) \leq  blog(|H|)c.
+However, this is just an upper bound. The VC-dimension of a class can be much lower than that:
+1. Find an example of a class H of functions over the real interval X = [0, 1]
+such that H is infinite while VCdim(H) = 1.
+2. Give an example of a finite hypothesis class H over the domain X = [0, 1],
+where VCdim(H) = blog2 (|H|)c.
+8. (*) It is often the case that the VC-dimension of a hypothesis class equals (or
+can be bounded above by) the number of parameters one needs to set in order to define each hypothesis in the class. For instance, if H is the class of axis aligned rectangles in Rd , then VCdim(H) = 2d, which is equal to the number of parameters used to define a rectangle in Rd . Here is an example that shows that this is not always the case. We will see that a hypothesis class might be very complex and even not learnable, although it has a small number of parameters.
+Consider the domain X = R, and the hypothesis class
+$$
+H = \{x 7\to dsin(\theta_x)e : \theta \in R\}
+$$
+(here, we take d-1e = 0). Prove that VCdim(H) = ∞. Hint: There is more than one way to prove the required result. One option is by applying the following lemma: If 0.x1 x2 x3 . . ., is the binary expansion of x ∈ (0, 1), then for any natural number m, dsin(2m πx)e = (1 - xm ), provided that ∃k \geq  m s.t. xk = 1.
+9. Let H be the class of signed intervals, that is,
+$$
+H = \{ha,b,s : a \le b, s \in \{-1, 1\}\} where
+$$
+$$
+( s   if x \in [a, b] ha,b,s (x) = -s if x \in / [a, b]
+$$
+Calculate VCdim(H).
+10. Let H be a class of functions from X to {0, 1}.
+1. Prove that if VCdim(H) \geq  d, for any d, then for some probability distri-
+bution D over X × {0, 1}, for every sample size, m,
+$$
+d-m E m [LD (A(S))] \ge min LD (h) + S\sim D                   h\in H            2d Hint: Use Exercise 3 in Chapter 5.
+$$
+2. Prove that for every H that is PAC learnable, VCdim(H) < ∞. (Note that
+this is the implication 3 → 6 in Theorem 6.7.)
+11. VC of union: Let H1 , . . . , Hr be hypothesis classes over some fixed domain
+$$
+set X . Let d = maxi VCdim(Hi ) and assume for simplicity that d \ge 3.
+$$
+
+<!-- page: 81 -->
+
+1. Prove that VCdim (∪ri=1 Hi ) \leq  4d log(2d) + 2 log(r) .
+Hint: Take a set of k examples and assume that they are shattered by the union class. Therefore, the union class can produce all 2k possible labelings on these examples. Use Sauer’s lemma to show that the union class cannot produce more than rk d labelings. Therefore, 2k < rk d . Now use Lemma A.2.
+2. (*) Prove that for r = 2 it holds that
+$$
+VCdim (H_1 \cup H_2 ) \le 2d + 1.
+$$
+12. Dudley classes: In this question we discuss an algebraic framework for
+defining concept classes over Rn and show a connection between the VC dimension of such classes and their algebraic properties. Given a function f : Rn → R we define the corresponding function, POS (f )(x) = 1[f (x)>0] . For a class F of real valued functions we define a corresponding class of functions POS (F) = {POS (f ) : f ∈ F}. We say that a family, F, of real valued functions is linearly closed if for all f, g ∈ F and r ∈ R, (f + rg) ∈ F (where addition and scalar multiplication of functions are defined point wise, namely, for all x ∈ Rn , (f + rg)(x) = f (x) + rg(x)). Note that if a family of functions is linearly closed then we can view it as a vector space over the reals. For a
+def function g : Rn → R and a family of functions F, let F +g = {f +g : f ∈ F}. Hypothesis classes that have a representation as POS (F + g) for some vector space of functions F and some function g are called Dudley classes.
+1. Show that for every g : Rn → R and every vector space of functions F as
+defined earlier, VCdim(POS (F + g)) = VCdim(POS (F)).
+2. (**) For every linearly closed family of real valued functions F, the VC-
+dimension of the corresponding class POS (F) equals the linear dimension of F (as a vector space). Hint: Let f1 , . . . , fd be a basis for the vector space F. Consider the mapping x 7→ (f1 (x), . . . , fd (x)) (from Rn to Rd ). Note that this mapping induces a matching between functions over Rn of the form POS (f ) and homogeneous linear halfspaces in Rd (the VC-dimension of the class of homogeneous linear halfspaces is analyzed in Chapter 9).
+3. Show that each of the following classes can be represented as a Dudley
+class:
+1. The class HSn of halfspaces over Rn (see Chapter 9).
+2. The class HHSn of all homogeneous halfspaces over Rn (see Chapter 9).
+3. The class Bd of all functions defined by (open) balls in Rd . Use the
+Dudley representation to figure out the VC-dimension of this class.
+4. Let Pnd denote the class of functions defined by polynomial inequalities
+$$
+of degree \le d, namely,
+$$
+$$
+Pnd = \{hp : p is a polynomial of degree \le d in the variables x_1 , . . . , xn \},
+$$
+
+<!-- page: 82 -->
+
+where, for x = (x1 . . . . , xn ), hp (x) = 1[p(x)\geq 0] (the degree of a multi-variable polynomial is the maximal sum of variable exponents over all of its terms. For example, the degree of p(x) = 3x31 x22 + 4x3 x27 is 5).
+1. Use the Dudley representation to figure out the VC-dimension of the
+class P1d – the class of all d-degree polynomials over R.
+2. Prove that the class of all polynomial classifiers over R has infinite
+VC-dimension.
+3. Use the Dudley representation to figure out the VC-dimension of the
+class Pnd (as a function of d and n).
+
+<!-- page: 83 -->
+
+## 7     Nonuniform Learnability
+The notions of PAC learnability discussed so far in the book allow the sample sizes to depend on the accuracy and confidence parameters, but they are uniform with respect to the labeling rule and the underlying data distribution. Consequently, classes that are learnable in that respect are limited (they must have a finite VC-dimension, as stated by Theorem 6.7). In this chapter we consider more relaxed, weaker notions of learnability. We discuss the usefulness of such notions and provide characterization of the concept classes that are learnable using these definitions.
+We begin this discussion by defining a notion of “nonuniform learnability” that allows the sample size to depend on the hypothesis to which the learner is compared. We then provide a characterization of nonuniform learnability and show that nonuniform learnability is a strict relaxation of agnostic PAC learnability. We also show that a sufficient condition for nonuniform learnability is that H is a countable union of hypothesis classes, each of which enjoys the uniform convergence property. These results will be proved in Section 7.2 by introducing a new learning paradigm, which is called Structural Risk Minimization (SRM). In Section 7.3 we specify the SRM paradigm for countable hypothesis classes, which yields the Minimum Description Length (MDL) paradigm. The MDL paradigm gives a formal justification to a philosophical principle of induction called Occam’s razor. Next, in Section 7.4 we introduce consistency as an even weaker notion of learnability. Finally, we discuss the significance and usefulness of the different notions of learnability.
+### 7.1   Nonuniform Learnability
+“Nonuniform learnability” allows the sample size to be nonuniform with respect to the different hypotheses with which the learner is competing. We say that a hypothesis h is (ε, δ)-competitive with another hypothesis h0 if, with probability higher than (1 - δ),
+$$
+LD (h) \le LD (h_0 ) + \epsilon.
+$$
+In PAC learnability, this notion of “competitiveness” is not very useful, as we are looking for a hypothesis with an absolute low risk (in the realizable case) or
+
+<!-- page: 84 -->
+
+with a low risk compared to the minimal risk achieved by hypotheses in our class (in the agnostic case). Therefore, the sample size depends only on the accuracy and confidence parameters. In nonuniform learnability, however, we allow the sample size to be of the form mH (ε, δ, h); namely, it depends also on the h with which we are competing. Formally, definition 7.1 A hypothesis class H is nonuniformly learnable if there exist a
+2 H : (0, 1) ×H → N such that, for every learning algorithm, A, and a function mNUL ε, δ ∈ (0, 1) and for every h ∈ H, if m \geq  mH (ε, δ, h) then for every distribution NUL
+D, with probability of at least 1 - δ over the choice of S ∼ Dm , it holds that
+LD (A(S)) \leq  LD (h) + ε. At this point it might be useful to recall the definition of agnostic PAC learnability (Definition 3.3): A hypothesis class H is agnostically PAC learnable if there exist a learning algorithm, A, and a function mH : (0, 1)2 → N such that, for every ε, δ ∈ (0, 1) and for every distribution D, if m \geq  mH (ε, δ), then with probability of at least 1 - δ over the choice of S ∼ Dm it holds that LD (A(S)) \leq  min
+LD (h0 ) + ε. h ∈H
+$$
+Note that this implies that for every h \in H LD (A(S)) \le LD (h) + \epsilon.
+$$
+In both types of learnability, we require that the output hypothesis will be (ε, δ)-competitive with every other hypothesis in the class. But the difference between these two notions of learnability is the question of whether the sample size m may depend on the hypothesis h to which the error of A(S) is compared. Note that that nonuniform learnability is a relaxation of agnostic PAC learnability. That is, if a class is agnostic PAC learnable then it is also nonuniformly learnable.
+#### 7.1.1   Characterizing Nonuniform Learnability
+Our goal now is to characterize nonuniform learnability. In the previous chapter we have found a crisp characterization of PAC learnable classes, by showing that a class of binary classifiers is agnostic PAC learnable if and only if its VC-dimension is finite. In the following theorem we find a different characterization for nonuniform learnable classes for the task of binary classification. theorem 7.2 A hypothesis class H of binary classifiers is nonuniformly learnable if and only if it is a countable union of agnostic PAC learnable hypothesis classes. The proof of Theorem 7.2 relies on the following result of independent interest:
+
+<!-- page: 85 -->
+
+theorem 7.3 Let H be a hypothesis class that can be written as a countable
+S union of hypothesis classes, H = n∈N Hn , where each Hn enjoys the uniform convergence property. Then, H is nonuniformly learnable. Recall that in Chapter 4 we have shown that uniform convergence is sufficient for agnostic PAC learnability. Theorem 7.3 generalizes this result to nonuniform learnability. The proof of this theorem will be given in the next section by introducing a new learning paradigm. We now turn to proving Theorem 7.2.
+S Proof of Theorem 7.2 First assume that H = n∈N Hn where each Hn is agnostic PAC learnable. Using the fundamental theorem of statistical learning, it follows that each Hn has the uniform convergence property. Therefore, using Theorem 7.3 we obtain that H is nonuniform learnable. For the other direction, assume that H is nonuniform learnable using some algorithm A. For every n ∈ N, let Hn = {h ∈ H : mNUL        H (1/8, 1/7, h) \leq  n}. Clearly, H = ∪n∈N Hn . In addition, using the definition of mNULH   we know that for any distribution D that satisfies the realizability assumption with respect to Hn , with probability of at least 6/7 over S ∼ Dn we have that LD (A(S)) \leq  1/8. Using the fundamental theorem of statistical learning, this implies that the VC-dimension of Hn must be finite, and therefore Hn is agnostic PAC learnable. The following example shows that nonuniform learnability is a strict relaxation of agnostic PAC learnability; namely, there are hypothesis classes that are nonuniform learnable but are not agnostic PAC learnable. Example 7.1 Consider a binary classification problem with the instance domain being X = R. For every n ∈ N let Hn be the class of polynomial classifiers of degree n; namely, Hn is the set of all classifiers of the form h(x) = sign(p(x))
+S where p : R → R is a polynomial of degree n. Let H = n∈N Hn . Therefore, H is the class of all polynomial classifiers over R. It is easy to verify that VCdim(H) = ∞ while VCdim(Hn ) = n + 1 (see Exercise 12). Hence, H is not PAC learnable, while on the basis of Theorem 7.3, H is nonuniformly learnable.
+### 7.2   Structural Risk Minimization
+So far, we have encoded our prior knowledge by specifying a hypothesis class H, which we believe includes a good predictor for the learning task at hand. Yet another way to express our prior knowledge is by specifying preferences over hypotheses within H. In the Structural Risk Minimization (SRM) paradigm,
+S we do so by first assuming that H can be written as H = n∈N Hn and then specifying a weight function, w : N → [0, 1], which assigns a weight to each hypothesis class, Hn , such that a higher weight reflects a stronger preference for the hypothesis class. In this section we discuss how to learn with such prior knowledge. In the next section we describe a couple of important weighting schemes, including Minimum Description Length.
+
+<!-- page: 86 -->
+
+S Concretely, let H be a hypothesis class that can be written as H = n∈N Hn . For example, H may be the class of all polynomial classifiers where each Hn is the class of polynomial classifiers of degree n (see Example 7.1). Assume that for each n, the class Hn enjoys the uniform convergence property (see Definition 4.3 in Chapter 4) with a sample complexity function mUC     Hn (ε, δ). Let us also define the function εn : N × (0, 1) → (0, 1) by
+$$
+\epsilon_n (m, \delta) = min\{\epsilon \in (0, 1) : mUC Hn (\epsilon, \delta) \le m\}. \tag{7.1}
+$$
+In words, we have a fixed sample size m, and we are interested in the lowest possible upper bound on the gap between empirical and true risks achievable by using a sample of m examples. From the definitions of uniform convergence and εn , it follows that for every m and δ, with probability of at least 1 - δ over the choice of S ∼ Dm we have that
+$$
+\forall h \in Hn , |LD (h) - LS (h)| \le \epsilon_n (m, \delta). \tag{7.2}
+$$
+P∞ Let w : N → [0, 1] be a function such that n=1 w(n) \leq  1. We refer to w as a weight function over the hypothesis classes H1 , H2 , . . .. Such a weight function can reflect the importance that the learner attributes to each hypothesis class, or some measure of the complexity of different hypothesis classes. If H is a finite union of N hypothesis classes, one can simply assign the same weight of 1/N to all hypothesis classes. This equal weighting corresponds to no a priori preference to any hypothesis class. Of course, if one believes (as prior knowledge) that a certain hypothesis class is more likely to contain the correct target function, then it should be assigned a larger weight, reflecting this prior knowledge. When H is a (countable) infinite union of hypothesis classes, a uniform weighting is not possible but many other weighting schemes may work. For example, one can choose w(n) = π26n2 or w(n) = 2-n . Later in this chapter we will provide another convenient way to define weighting functions using description languages. The SRM rule follows a “bound minimization” approach. This means that the goal of the paradigm is to find a hypothesis that minimizes a certain upper bound on the true risk. The bound that the SRM rule wishes to minimize is given in the following theorem.
+P∞ theorem 7.4 Let w : N → [0, 1] be a function such that n=1 w(n) \leq  1. Let S H be a hypothesis class that can be written as H = n∈N Hn , where for each n, Hn satisfies the uniform convergence property with a sample complexity function Hn . Let εn be as defined in Equation (7.1). Then, for every δ ∈ (0, 1) and mUC distribution D, with probability of at least 1 - δ over the choice of S ∼ Dm , the following bound holds (simultaneously) for every n ∈ N and h ∈ Hn .
+$$
+|LD (h) - LS (h)| \le \epsilon_n (m, w(n) · \delta).
+$$
+Therefore, for every δ ∈ (0, 1) and distribution D, with probability of at least
+
+<!-- page: 87 -->
+
+## 1 - δ it holds that
+$$
+\forall h \in H, LD (h) \le LS (h) + min \epsilon_n (m, w(n) · \delta).                 (7.3) n:h\in Hn
+$$
+Proof For each n define δn = w(n)δ. Applying the assumption that uniform convergence holds for all n with the rate given in Equation (7.2), we obtain that if we fix n in advance, then with probability of at least 1 - δn over the choice of S ∼ Dm ,
+$$
+\forall h \in Hn , |LD (h) - LS (h)| \le \epsilon_n (m, \delta_n ).
+$$
+Applying the union bound over n = 1, 2, . . ., we obtain that with probability of
+$$
+P            P at least 1 - n \delta_n = 1 - \delta n w(n) \ge 1 - \delta, the preceding holds for all n, which concludes our proof.
+$$
+$$
+Denote n(h) = min\{n : h \in Hn \}, \tag{7.4}
+$$
+and then Equation (7.3) implies that
+$$
+LD (h) \le LS (h) + \epsilon_n(h) (m, w(n(h)) · \delta).
+$$
+The SRM paradigm searches for h that minimizes this bound, as formalized in the following pseudocode:
+```
+Structural Risk Minimization (SRM)
+prior knowledge:
+S
+H = n Hn where Hn has uniform convergence with mUC    Hn
+P
+w : N → [0, 1] where n w(n) \leq  1
+define: εn as in Equation (7.1) ; n(h) as in Equation (7.4)
+m
+input: training set S ∼ D
+[ , confidence δ              ]
+output: h ∈ argminh∈H LS (h) + εn(h) (m, w(n(h)) · δ)
+```
+Unlike the ERM paradigm discussed in previous chapters, we no longer just care about the empirical risk, LS (h), but we are willing to trade some of our bias toward low empirical risk with a bias toward classes for which εn(h) (m, w(n(h))·δ) is smaller, for the sake of a smaller estimation error.
+Next we show that the SRM paradigm can be used for nonuniform learning of every class, which is a countable union of uniformly converging hypothesis classes.
+S theorem 7.5 Let H be a hypothesis class such that H = n∈N Hn , where each Hn has the uniform convergence property with sample complexity mUC     Hn . Let w : N → [0, 1] be such that w(n) = n26π2 . Then, H is nonuniformly learnable using the SRM rule with rate (             ) 6δ mNUL                UC H (ε, δ, h) \leq  mHn(h) ε/2 , (πn(h))2 .
+
+<!-- page: 88 -->
+
+Proof Let A be the SRM algorithm with respect to the weighting function w. For every h ∈ H, ε, and δ, let m \geq  mUC Hn(h) (ε, w(n(h))δ). Using the fact that P n w(n)  = 1, we can apply Theorem 7.4 to get that, with probability of at least
+## 1 - δ over the choice of S ∼ D , we have that for every h0 ∈ H,
+m
+$$
+LD (h_0 ) \le LS (h_0 ) + \epsilon_n(h_0 ) (m, w(n(h_0 ))\delta).
+$$
+The preceding holds in particular for the hypothesis A(S) returned by the SRM rule. By the definition of SRM we obtain that
+$$
+LS (h_0 ) + \epsilon_n(h_0 ) (m, w(n(h_0 ))\delta) \le LS (h) + \epsilon_n(h) (m, w(n(h))\delta). [                                   ] LD (A(S)) \le min0 h
+$$
+$$
+Finally, if m \ge mUC
+$$
+Hn(h) (ε/2, w(n(h))δ) then clearly εn(h) (m, w(n(h))δ) \leq  ε/2. In addition, from the uniform convergence property of each Hn we have that with probability of more than 1 - δ,
+$$
+LS (h) \le LD (h) + \epsilon/2.
+$$
+Combining all the preceding we obtain that LD (A(S)) \leq  LD (h) + ε, which concludes our proof.
+Note that the previous theorem also proves Theorem 7.3. Remark 7.2 (No-Free-Lunch for Nonuniform Learnability) We have shown that any countable union of classes of finite VC-dimension is nonuniformly learnable. It turns out that, for any infinite domain set, X , the class of all binary valued functions over X is not a countable union of classes of finite VC-dimension. We leave the proof of this claim as a (nontrivial) exercise (see Exercise 5). It follows that, in some sense, the no free lunch theorem holds for nonuniform learning as well: namely, whenever the domain is not finite, there exists no nonuniform learner with respect to the class of all deterministic binary classifiers (although for each such classifier there exists a trivial algorithm that learns it – ERM with respect to the hypothesis class that contains only this classifier). It is interesting to compare the nonuniform learnability result given in Theorem 7.5 to the task of agnostic PAC learning any specific Hn separately. The prior knowledge, or bias, of a nonuniform learner for H is weaker – it is searching for a model throughout the entire class H, rather than being focused on one specific Hn . The cost of this weakening of prior knowledge is the increase in sample complexity needed to compete with any specific h ∈ Hn . For a concrete evaluation of this gap, consider the task of binary classification with the zero-one loss.
+n+log(1/δ) Assume that for all n, VCdim(Hn ) = n. Since mUC     Hn (ε, δ) = C     ε2     (where C is the contant appearing in Theorem 6.8), a straightforward calculation shows that
+$$
+2 log(2n) mNUL             UC H (\epsilon, \delta, h) - mHn (\epsilon/2, \delta) \le 4C           .
+$$
+ε2 That is, the cost of relaxing the learner’s prior knowledge from a specific Hn that contains the target h to a countable union of classes depends on the log of
+
+<!-- page: 89 -->
+
+the index of the first class in which h resides. That cost increases with the index of the class, which can be interpreted as reflecting the value of knowing a good priority order on the hypotheses in H.
+### 7.3   Minimum Description Length and Occam’s Razor
+Let H be a countable hypothesis class. Then, we can write H as a countable
+S union of singleton classes, namely, H = n∈N {hn }. By Hoeffding’s inequality (Lemma 4.5), each singleton class has the uniform convergence property with rate mUC (ε, δ) = log(2/δ) 2ε2 . Therefore, the function εn given in Equation (7.1) q becomes εn (m, δ) = log(2/δ) 2m   and the SRM rule becomes "        r                         # - log(w(n)) + log(2/δ) argmin LS (h) +                              . hn ∈H                       2m
+Equivalently, we can think of w as a function from H to [0, 1], and then the SRM rule becomes
+"         r                          #
+$$
+- log(w(h)) + log(2/\delta) argmin LS (h) +                                . h\in H                          2m
+$$
+It follows that in this case, the prior knowledge is solely determined by the weight we assign to each hypothesis. We assign higher weights to hypotheses that we believe are more likely to be the correct one, and in the learning algorithm we prefer hypotheses that have higher weights.
+In this section we discuss a particular convenient way to define a weight function over H, which is derived from the length of descriptions given to hypotheses. Having a hypothesis class, one can wonder about how we describe, or represent, each hypothesis in the class. We naturally fix some description language. This can be English, or a programming language, or some set of mathematical formulas. In any of these languages, a description consists of finite strings of symbols (or characters) drawn from some fixed alphabet. We shall now formalize these notions. Let H be the hypothesis class we wish to describe. Fix some finite set Σ of symbols (or “characters”), which we call the alphabet. For concreteness, we let Σ = {0, 1}. A string is a finite sequence of symbols from Σ; for example, σ = (0, 1, 1, 1, 0) is a string of length 5. We denote by |σ| the length of a string. The set of all finite length strings is denoted Σ∗ . A description language for H is a function d : H → Σ∗ , mapping each member h of H to a string d(h). d(h) is called “the description of h,” and its length is denoted by |h|. We shall require that description languages be prefix-free; namely, for every distinct h, h0 , d(h) is not a prefix of d(h0 ). That is, we do not allow that any string d(h) is exactly the first |h| symbols of any longer string d(h0 ). Prefix-free collections of strings enjoy the following combinatorial property:
+
+<!-- page: 90 -->
+
+lemma 7.6 (Kraft Inequality)       If S ⊆ {0, 1}∗ is a prefix-free set of strings, then
+X 1
+$$
+\le 1. σ\in S 2|σ|
+$$
+Proof Define a probability distribution over the members of S as follows: Re-
+peatedly toss an unbiased coin, with faces labeled 0 and 1, until the sequence
+of outcomes is a member of S; at that point, stop. For each σ ∈ S, let P (σ)
+be the probability that this process generates the string σ. Note that since S is
+prefix-free, for every σ ∈ S, if the coin toss outcomes follow the bits of σ then
+we will stop only once the sequence of outcomes equals σ. We therefore get that,
+1
+for every σ ∈ S, P (σ) = 2|σ| . Since probabilities add up to at most 1, our proof
+is concluded.
+In light of Kraft’s inequality, any prefix-free description language of a hypoth-
+esis class, H, gives rise to a weighting function w over that hypothesis class – we
+1
+will simply set w(h) = 2|h|   . This observation immediately yields the following:
+theorem 7.7 Let H be a hypothesis class and let d : H → {0, 1}∗ be a prefix-
+free description language for H. Then, for every sample size, m, every confidence
+parameter, δ > 0, and every probability distribution, D, with probability greater
+than 1 - δ over the choice of S ∼ Dm we have that,
+r
+|h| + ln(2/δ)
+\forall h ∈ H, LD (h) \leq  LS (h) +                    ,
+2m
+where |h| is the length of d(h).
+q
+ln(2/δ)
+Proof   Choose w(h) = 1/2|h| , apply Theorem 7.4 with εn (m, δ) =             2m , and
+note that ln(2|h| ) = |h| ln(2) < |h|.
+As was the case with Theorem 7.4, this result suggests a learning paradigm
+for H – given a training
+q set, S, search for a hypothesis h ∈ H that minimizes
+the bound, LS (h) + |h|+ln(2/δ)
+2m    . In particular, it suggests trading off empirical
+risk for saving description length. This yields the Minimum Description Length
+learning paradigm.
+```
+Minimum Description Length (MDL)
+prior knowledge:
+H is a countable hypothesis class
+H is described by a prefix-free language over {0, 1}
+For every h ∈ H, |h| is the length of the representation of h
+m
+input: A training set S ∼[ D , confidence   δ ]
+q
+output: h ∈ argminh∈H LS (h) + |h|+ln(2/δ)2m
+```
+Example 7.3 Let H be the class of all predictors that can be implemented using some programming language, say, C++. Let us represent each program using the
+
+<!-- page: 91 -->
+
+binary string obtained by running the gzip command on the program (this yields a prefix-free description language over the alphabet {0, 1}). Then, |h| is simply the length (in bits) of the output of gzip when running on the C++ program corresponding to h.
+#### 7.3.1   Occam’s Razor
+Theorem 7.7 suggests that, having two hypotheses sharing the same empirical risk, the true risk of the one that has shorter description can be bounded by a lower value. Thus, this result can be viewed as conveying a philosophical message:
+A short explanation (that is, a hypothesis that has a short length) tends to be more valid than a long explanation.
+This is a well known principle, called Occam’s razor, after William of Ockham, a 14th-century English logician, who is believed to have been the first to phrase it explicitly. Here, we provide one possible justification to this principle. The inequality of Theorem 7.7 shows that the more complex a hypothesis h is (in the sense of having a longer description), the larger the sample size it has to fit to guarantee that it has a small true risk, LD (h).
+At a second glance, our Occam razor claim might seem somewhat problematic. In the context in which the Occam razor principle is usually invoked in science, the language according to which complexity is measured is a natural language, whereas here we may consider any arbitrary abstract description language. Assume that we have two hypotheses such that |h0 | is much smaller than |h|. By the preceding result, if both have the same error on a given training set, S, then the true error of h may be much higher than the true error of h0 , so one should prefer h0 over h. However, we could have chosen a different description language, say, one that assigns a string of length 3 to h and a string of length 100000 to h0 . Suddenly it looks as if one should prefer h over h0 . But these are the same h and h0 for which we argued two sentences ago that h0 should be preferable. Where is the catch here? Indeed, there is no inherent generalizability difference between hypotheses. The crucial aspect here is the dependency order between the initial choice of language (or, preference over hypotheses) and the training set. As we know from the basic Hoeffding’s bound (Equation (4.2)), if we commit to any hypothesis before seeing the data,
+$$
+qthen we are guaranteed a rather small estimation error term LD (h) \le LS (h) + ln(2/\delta)
+$$
+2m . Choosing a description language (or, equivalently, some weighting of hypotheses) is a weak form of committing to a hypothesis. Rather than committing to a single hypothesis, we spread out our commitment among many. As long as it is done independently of the training sample, our generalization bound holds. Just as the choice of a single hypothesis to be evaluated by a sample can be arbitrary, so is the choice of description language.
+
+<!-- page: 92 -->
+
+### 7.4   Other Notions of Learnability – Consistency
+The notion of learnability can be further relaxed by allowing the needed sample sizes to depend not only on ε, δ, and h but also on the underlying data-generating probability distribution D (that is used to generate the training sample and to determine the risk). This type of performance guarantee is captured by the notion of consistency 1 of a learning rule.
+definition 7.8 (Consistency) Let Z be a domain set, let P be a set of probability distributions over Z, and let H be a hypothesis class. A learning rule A is consistent with respect to H and P if there exists a function mCON H   : (0, 1)2 × H × P → N such that, for every ε, δ ∈ (0, 1), every h ∈ H, and every D ∈ P, if m \geq  mNUL
+H (ε, δ, h, D) then with probability of at least 1 - δ over m the choice of S ∼ D it holds that
+$$
+LD (A(S)) \le LD (h) + \epsilon.
+$$
+If P is the set of all distributions,2 we say that A is universally consistent with respect to H.
+The notion of consistency is, of course, a relaxation of our previous notion of nonuniform learnability. Clearly if an algorithm nonuniformly learns a class H it is also universally consistent for that class. The relaxation is strict in the sense that there are consistent learning rules that are not successful nonuniform learners. For example, the algorithm Memorize defined in Example 7.4 later is universally consistent for the class of all binary classifiers over N. However, as we have argued before, this class is not nonuniformly learnable. Example 7.4 Consider the classification prediction algorithm Memorize defined as follows. The algorithm memorizes the training examples, and, given a test point x, it predicts the majority label among all labeled instances of x that exist in the training sample (and some fixed default label if no instance of x appears in the training set). It is possible to show (see Exercise 6) that the Memorize algorithm is universally consistent for every countable domain X and a finite label set Y (w.r.t. the zero-one loss). Intuitively, it is not obvious that the Memorize algorithm should be viewed as a learner, since it lacks the aspect of generalization, namely, of using observed data to predict the labels of unseen examples. The fact that Memorize is a consistent algorithm for the class of all functions over any countable domain set therefore raises doubt about the usefulness of consistency guarantees. Furthermore, the sharp-eyed reader may notice that the “bad learner” we introduced in Chapter 2, 1 In the literature, consistency is often defined using the notion of either convergence in probability (corresponding to weak consistency) or almost sure convergence (corresponding to strong consistency).
+## 2 Formally, we assume that Z is endowed with some sigma algebra of subsets \Omega, and by “all
+distributions” we mean all probability distributions that have \Omega contained in their associated family of measurable subsets.
+
+<!-- page: 93 -->
+
+which led to overfitting, is in fact the Memorize algorithm. In the next section we discuss the significance of the different notions of learnability and revisit the No-Free-Lunch theorem in light of the different definitions of learnability.
+### 7.5   Discussing the Different Notions of Learnability
+We have given three definitions of learnability and we now discuss their usefulness. As is usually the case, the usefulness of a mathematical definition depends on what we need it for. We therefore list several possible goals that we aim to achieve by defining learnability and discuss the usefulness of the different definitions in light of these goals.
+What Is the Risk of the Learned Hypothesis? The first possible goal of deriving performance guarantees on a learning algorithm is bounding the risk of the output predictor. Here, both PAC learning and nonuniform learning give us an upper bound on the true risk of the learned hypothesis based on its empirical risk. Consistency guarantees do not provide such a bound. However, it is always possible to estimate the risk of the output predictor using a validation set (as will be described in Chapter 11).
+How Many Examples Are Required to Be as Good as the Best Hypothesis in H? When approaching a learning problem, a natural question is how many examples we need to collect in order to learn it. Here, PAC learning gives a crisp answer. However, for both nonuniform learning and consistency, we do not know in advance how many examples are required to learn H. In nonuniform learning this number depends on the best hypothesis in H, and in consistency it also depends on the underlying distribution. In this sense, PAC learning is the only useful definition of learnability. On the flip side, one should keep in mind that even if the estimation error of the predictor we learn is small, its risk may still be large if H has a large approximation error. So, for the question “How many examples are required to be as good as the Bayes optimal predictor?” even PAC guarantees do not provide us with a crisp answer. This reflects the fact that the usefulness of PAC learning relies on the quality of our prior knowledge.
+PAC guarantees also help us to understand what we should do next if our learning algorithm returns a hypothesis with a large risk, since we can bound the part of the error that stems from estimation error and therefore know how much of the error is attributed to approximation error. If the approximation error is large, we know that we should use a different hypothesis class. Similarly, if a nonuniform algorithm fails, we can consider a different weighting function over (subsets of) hypotheses. However, when a consistent algorithm fails, we have no idea whether this is because of the estimation error or the approximation error. Furthermore, even if we are sure we have a problem with the estimation
+
+<!-- page: 94 -->
+
+error term, we do not know how many more examples are needed to make the estimation error small.
+How to Learn? How to Express Prior Knowledge? Maybe the most useful aspect of the theory of learning is in providing an answer to the question of “how to learn.” The definition of PAC learning yields the limitation of learning (via the No-Free-Lunch theorem) and the necessity of prior knowledge. It gives us a crisp way to encode prior knowledge by choosing a hypothesis class, and once this choice is made, we have a generic learning rule – ERM. The definition of nonuniform learnability also yields a crisp way to encode prior knowledge by specifying weights over (subsets of) hypotheses of H. Once this choice is made, we again have a generic learning rule – SRM. The SRM rule is also advantageous in model selection tasks, where prior knowledge is partial. We elaborate on model selection in Chapter 11 and here we give a brief example.
+Consider the problem of fitting a one dimensional polynomial to data; namely, our goal is to learn a function, h : R → R, and as prior knowledge we consider the hypothesis class of polynomials. However, we might be uncertain regarding which degree d would give the best results for our data set: A small degree might not fit the data well (i.e., it will have a large approximation error), whereas a high degree might lead to overfitting (i.e., it will have a large estimation error). In the following we depict the result of fitting a polynomial of degrees 2, 3, and
+## 10 to the same training set.
+degree 2                     degree 3                     degree 10
+It is easy to see that the empirical risk decreases as we enlarge the degree. Therefore, if we choose H to be the class of all polynomials up to degree 10 then the ERM rule with respect to this class would output a 10 degree polynomial and would overfit. On the other hand, if we choose too small a hypothesis class, say, polynomials up to degree 2, then the ERM would suffer from underfitting (i.e., a large approximation error). In contrast, we can use the SRM rule on the set of all polynomials, while ordering subsets of H according to their degree, and this will yield a 3rd degree polynomial since the combination of its empirical risk and the bound on its estimation error is the smallest. In other words, the SRM rule enables us to select the right model on the basis of the data itself. The price we pay for this flexibility (besides a slight increase of the estimation error relative to PAC learning w.r.t. the optimal degree) is that we do not know in
+
+<!-- page: 95 -->
+
+advance how many examples are needed to compete with the best hypothesis in H.
+Unlike the notions of PAC learnability and nonuniform learnability, the definition of consistency does not yield a natural learning paradigm or a way to encode prior knowledge. In fact, in many cases there is no need for prior knowledge at all. For example, we saw that even the Memorize algorithm, which intuitively should not be called a learning algorithm, is a consistent algorithm for any class defined over a countable domain and a finite label set. This hints that consistency is a very weak requirement.
+Which Learning Algorithm Should We Prefer? One may argue that even though consistency is a weak requirement, it is desirable that a learning algorithm will be consistent with respect to the set of all functions from X to Y, which gives us a guarantee that for enough training examples, we will always be as good as the Bayes optimal predictor. Therefore, if we have two algorithms, where one is consistent and the other one is not consistent, we should prefer the consistent algorithm. However, this argument is problematic for two reasons. First, maybe it is the case that for most “natural” distributions we will observe in practice that the sample complexity of the consistent algorithm will be so large so that in every practical situation we will not obtain enough examples to enjoy this guarantee. Second, it is not very hard to make any PAC or nonuniform learner consistent with respect to the class of all functions from X to Y. Concretely, consider a countable domain, X , a finite label set Y, and a hypothesis class, H, of functions from X to Y. We can make any nonuniform learner for H be consistent with respect to the class of all classifiers from X to Y using the following simple trick: Upon receiving a training set, we will first run the nonuniform learner over the training set, and then we will obtain a bound on the true risk of the learned predictor. If this bound is small enough we are done. Otherwise, we revert to the Memorize algorithm. This simple modification makes the algorithm consistent with respect to all functions from X to Y. Since it is easy to make any algorithm consistent, it may not be wise to prefer one algorithm over the other just because of consistency considerations.
+#### 7.5.1   The No-Free-Lunch Theorem Revisited
+Recall that the No-Free-Lunch theorem (Theorem 5.1 from Chapter 5) implies that no algorithm can learn the class of all classifiers over an infinite domain. In contrast, in this chapter we saw that the Memorize algorithm is consistent with respect to the class of all classifiers over a countable infinite domain. To understand why these two statements do not contradict each other, let us first recall the formal statement of the No-Free-Lunch theorem. Let X be a countable infinite domain and let Y = {\pm 1}. The No-Free-Lunch theorem implies the following: For any algorithm, A, and a training set size, m, there exist a distribution over X and a function h? : X → Y, such that if A
+
+<!-- page: 96 -->
+
+will get a sample of m i.i.d. training examples, labeled by h? , then A is likely to return a classifier with a larger error. The consistency of Memorize implies the following: For every distribution over X and a labeling function h? : X → Y, there exists a training set size m (that depends on the distribution and on h? ) such that if Memorize receives at least m examples it is likely to return a classifier with a small error. We see that in the No-Free-Lunch theorem, we first fix the training set size, and then find a distribution and a labeling function that are bad for this training set size. In contrast, in consistency guarantees, we first fix the distribution and the labeling function, and only then do we find a training set size that suffices for learning this particular distribution and labeling function.
+### 7.6   Summary
+We introduced nonuniform learnability as a relaxation of PAC learnability and consistency as a relaxation of nonuniform learnability. This means that even classes of infinite VC-dimension can be learnable, in some weaker sense of learnability. We discussed the usefulness of the different definitions of learnability.
+For hypothesis classes that are countable, we can apply the Minimum Description Length scheme, where hypotheses with shorter descriptions are preferred, following the principle of Occam’s razor. An interesting example is the hypothesis class of all predictors we can implement in C++ (or any other programming language), which we can learn (nonuniformly) using the MDL scheme. Arguably, the class of all predictors we can implement in C++ is a powerful class of functions and probably contains all that we can hope to learn in practice. The ability to learn this class is impressive, and, seemingly, this chapter should have been the last chapter of this book. This is not the case, because of the computational aspect of learning: that is, the runtime needed to apply the learning rule. For example, to implement the MDL paradigm with respect to all C++ programs, we need to perform an exhaustive search over all C++ programs, which will take forever. Even the implementation of the ERM paradigm with respect to all C++ programs of description length at most 1000 bits requires an exhaustive search over 21000 hypotheses. While the sample complexity of learning this class is just 1000+log(2/δ)
+ε2       , the runtime is \geq  21000 . This is a huge number – much larger than the number of atoms in the visible universe. In the next chapter we formally define the computational complexity of learning. In the second part of this book we will study hypothesis classes for which the ERM or SRM schemes can be implemented efficiently.
+
+<!-- page: 97 -->
+
+### 7.7   Bibliographic Remarks
+Our definition of nonuniform learnability is related to the definition of an Occam-algorithm in Blumer, Ehrenfeucht, Haussler & Warmuth (1987). The concept of SRM is due to (Vapnik & Chervonenkis 1974, Vapnik 1995). The concept of MDL is due to (Rissanen 1978, Rissanen 1983). The relation between SRM and MDL is discussed in Vapnik (1995). These notions are also closely related to the notion of regularization (e.g. Tikhonov (1943)). We will elaborate on regularization in the second part of this book.
+The notion of consistency of estimators dates back to Fisher (1922). Our presentation of consistency follows Steinwart & Christmann (2008), who also derived several no-free-lunch theorems.
+### 7.8   Exercises
+1. Prove that for any finite class H, and any description language d : H →
+{0, 1}∗ , the VC-dimension of H is at most 2 sup{|d(h)| : h ∈ H} – the maximum description length of a predictor in H. Furthermore, if d is a prefix-free description then VCdim(H) \leq  sup{|d(h)| : h ∈ H}.
+2. Let H = {hn : n ∈ N} be an infinite countable hypothesis class for binary
+classification. Show that it is impossible to assign weights to the hypotheses in H such that
+- H could be learnt nonuniformly using these weights. That is, the weighting
+$$
+P function w : H \to [0, 1] should satisfy the condition h\in H w(h) \le 1.
+$$
+- The weights would be monotonically nondecreasing. That is, if i < j, then
+$$
+w(hi ) \le w(hj ).
+$$
+$$
+S\in fty
+$$
+3. \bullet  Consider a hypothesis class H = n=1 Hn , where for every n ∈ N, Hn is
+$$
+P finite. Find a weighting function w : H \to [0, 1] such that h\in H w(h) \le
+$$
+$$
+1 and so that for all h \in H, w(h) is determined by n(h) = min\{n : h \in Hn \} and by |Hn(h) |.
+$$
+- (*) Define such a function w when for all n Hn is countable (possibly
+infinite).
+4. Let H be some hypothesis class. For any h ∈ H, let |h| denote the description
+length of h, according to some fixed description language. Consider the MDL learning paradigm in which the algorithm returns:
+"         r                #
+|h| + ln(2/δ) hS ∈ arg min LS (h) +                      , h∈H                    2m
+$$
+where S is a sample of size m. For any B > 0, let HB = \{h \in H : |h| \le B\}, and define h∗B = arg min LD (h). h\in HB
+$$
+
+<!-- page: 98 -->
+
+Prove a bound on LD (hS )-LD (h∗B ) in terms of B, the confidence parameter δ, and the size of the training set m.
+- Note: Such bounds are known as oracle inequalities in the literature: We
+wish to estimate how good we are compared to a reference classifier (or “oracle”) h∗B .
+5. In this question we wish to show a No-Free-Lunch result for nonuniform learn-
+ability: namely, that, over any infinite domain, the class of all functions is not learnable even under the relaxed nonuniform variation of learning.
+Recall that an algorithm, A, nonuniformly learns a hypothesis class H if
+2 H : (0, 1) × H → N such that, for every ε, δ ∈ (0, 1) there exists a function mNUL and for every h ∈ H, if m \geq  mNUL H (ε, δ, h) then for every distribution D, with probability of at least 1 - δ over the choice of S ∼ Dm , it holds that LD (A(S)) \leq  LD (h) + ε.
+If such an algorithm exists then we say that H is nonuniformly learnable.
+1. Let A be a nonuniform learner for a class H. For each n ∈ N define HnA =
+$$
+\{h \in H : mNUL (0.1, 0.1, h) \le n\}. Prove that each such class Hn has a finite VC-dimension.
+$$
+2. Prove that if a class H is nonuniformly learnable then there are classes Hn
+$$
+S so that H = n\in N Hn and, for every n \in N, VCdim(Hn ) is finite.
+$$
+3. Let H be a class that shatters an infinite set. Then, for every sequence
+S of classes (Hn : n ∈ N) such that H = n∈N Hn , there exists some n for which VCdim(Hn ) = ∞. Hint: Given a class H that shatters some infinite set K, and a sequence of classes (Hn : n ∈ N), each having a finite VC-dimension, start by defining subsets Kn ⊆ K such that, for all n, |Kn | > VCdim(Hn ) and for any n \neq  m, Kn ∩ Km = ∅. Now, pick for each such Kn a function fn : Kn → {0, 1} so that no h ∈ Hn agrees with fn on the domain Kn . Finally, define )
+S f : X → {0, 1} by combining these fn ’s and prove that f ∈ H \ n∈N Hn .
+4. Construct a class H1 of functions from the unit interval [0, 1] to {0, 1} that
+is nonuniformly learnable but not PAC learnable.
+5. Construct a class H2 of functions from the unit interval [0, 1] to {0, 1} that
+is not nonuniformly learnable.
+6. In this question we wish to show that the algorithm Memorize is a consistent
+learner for every class of (binary-valued) functions over any countable domain. Let X be a countable domain and let D be a probability distribution over X .
+1. Let {xi : i ∈ N} be an enumeration of the elements of X so that for all
+$$
+i \le j, D(\{xi \}) \le D(\{xj \}). Prove that
+$$
+$$
+X lim    D(\{xi \}) = 0. n\to\in fty i\ge n
+$$
+2. Given any ε > 0 prove that there exists εD > 0 such that
+D({x ∈ X : D({x}) < εD }) < ε.
+
+<!-- page: 99 -->
+
+3. Prove that for every η > 0, if n is such that D({xi }) < η for all i > n, then
+for every m ∈ N,
+$$
+P                                / S)] \le ne-\eta_m .
+$$
+[∃xi : (D({xi }) > η and xi ∈ S∼D m
+4. Conclude that if X is countable then for every probability distribution D
+over X there exists a function mD : (0, 1) × (0, 1) → N such that for every ε, δ > 0 if m > mD (ε, δ) then
+P     [D({x : x ∈
+/ S}) > ε] < δ. S∼D m
+5. Prove that Memorize is a consistent learner for every class of (binary-
+valued) functions over any countable domain.
+
+<!-- page: 100 -->
+
+## 8   The Runtime of Learning
+So far in the book we have studied the statistical perspective of learning, namely, how many samples are needed for learning. In other words, we focused on the amount of information learning requires. However, when considering automated learning, computational resources also play a major role in determining the complexity of a task: that is, how much computation is involved in carrying out a learning task. Once a sufficient training sample is available to the learner, there is some computation to be done to extract a hypothesis or figure out the label of a given test instance. These computational resources are crucial in any practical application of machine learning. We refer to these two types of resources as the sample complexity and the computational complexity. In this chapter, we turn our attention to the computational complexity of learning. The computational complexity of learning should be viewed in the wider context of the computational complexity of general algorithmic tasks. This area has been extensively investigated; see, for example, (Sipser 2006). The introductory comments that follow summarize the basic ideas of that general theory that are most relevant to our discussion.
+The actual runtime (in seconds) of an algorithm depends on the specific machine the algorithm is being implemented on (e.g., what the clock rate of the machine’s CPU is). To avoid dependence on the specific machine, it is common to analyze the runtime of algorithms in an asymptotic sense. For example, we say that the computational complexity of the merge-sort algorithm, which sorts a list of n items, is O(n log(n)). This implies that we can implement the algorithm on any machine that satisfies the requirements of some accepted abstract model of computation, and the actual runtime in seconds will satisfy the following: there exist constants c and n0 , which can depend on the actual machine, such that, for any value of n > n0 , the runtime in seconds of sorting any n items will be at most c n log(n). It is common to use the term feasible or efficiently computable for tasks that can be performed by an algorithm whose running time is O(p(n)) for some polynomial function p. One should note that this type of analysis depends on defining what is the input size n of any instance to which the algorithm is expected to be applied. For “purely algorithmic” tasks, as discussed in the common computational complexity literature, this input size is clearly defined; the algorithm gets an input instance, say, a list to be sorted, or an arithmetic operation to be calculated, which has a well defined size (say, the
+
+<!-- page: 101 -->
+
+number of bits in its representation). For machine learning tasks, the notion of an input size is not so clear. An algorithm aims to detect some pattern in a data set and can only access random samples of that data.
+We start the chapter by discussing this issue and define the computational complexity of learning. For advanced students, we also provide a detailed formal definition. We then move on to consider the computational complexity of implementing the ERM rule. We first give several examples of hypothesis classes where the ERM rule can be efficiently implemented, and then consider some cases where, although the class is indeed efficiently learnable, ERM implementation is computationally hard. It follows that hardness of implementing ERM does not imply hardness of learning. Finally, we briefly discuss how one can show hardness of a given learning task, namely, that no learning algorithm can solve it efficiently.
+### 8.1   Computational Complexity of Learning
+Recall that a learning algorithm has access to a domain of examples, Z, a hypothesis class, H, a loss function, `, and a training set of examples from Z that are sampled i.i.d. according to an unknown distribution D. Given parameters ε, δ, the algorithm should output a hypothesis h such that with probability of at least 1 - δ,
+$$
+LD (h) \le min
+$$
+LD (h0 ) + ε. h ∈H
+As mentioned before, the actual runtime of an algorithm in seconds depends on the specific machine. To allow machine independent analysis, we use the standard approach in computational complexity theory. First, we rely on a notion of an abstract machine, such as a Turing machine (or a Turing machine over the reals (Blum, Shub & Smale 1989)). Second, we analyze the runtime in an asymptotic sense, while ignoring constant factors, thus the specific machine is not important as long as it implements the abstract machine. Usually, the asymptote is with respect to the size of the input to the algorithm. For example, for the merge-sort algorithm mentioned before, we analyze the runtime as a function of the number of items that need to be sorted. In the context of learning algorithms, there is no clear notion of “input size.” One might define the input size to be the size of the training set the algorithm receives, but that would be rather pointless. If we give the algorithm a very large number of examples, much larger than the sample complexity of the learning problem, the algorithm can simply ignore the extra examples. Therefore, a larger training set does not make the learning problem more difficult, and, consequently, the runtime available for a learning algorithm should not increase as we increase the size of the training set. Just the same, we can still analyze the runtime as a function of natural parameters of the problem such as the target accuracy, the confidence of achieving that accuracy, the dimensionality of the
+
+<!-- page: 102 -->
+
+domain set, or some measures of the complexity of the hypothesis class with which the algorithm’s output is compared.
+To illustrate this, consider a learning algorithm for the task of learning axis aligned rectangles. A specific problem of learning axis aligned rectangles is derived by specifying ε, δ, and the dimension of the instance space. We can define a sequence of problems of the type “rectangles learning” by fixing ε, δ and varying the dimension to be d = 2, 3, 4, . . .. We can also define another sequence of “rectangles learning” problems by fixing d, δ and varying the target accuracy to be ε = 21 , 13 , . . .. One can of course choose other sequences of such problems. Once a sequence of the problems is fixed, one can analyze the asymptotic runtime as a function of variables of that sequence. Before we introduce the formal definition, there is one more subtlety we need to tackle. On the basis of the preceding, a learning algorithm can “cheat,” by transferring the computational burden to the output hypothesis. For example, the algorithm can simply define the output hypothesis to be the function that stores the training set in its memory, and whenever it gets a test example x it calculates the ERM hypothesis on the training set and applies it on x. Note that in this case, our algorithm has a fixed output (namely, the function that we have just described) and can run in constant time. However, learning is still hard – the hardness is now in implementing the output classifier to obtain a label prediction. To prevent this “cheating,” we shall require that the output of a learning algorithm must be applied to predict the label of a new example in time that does not exceed the runtime of training (that is, computing the output classifier from the input training sample). In the next subsection the advanced reader may find a formal definition of the computational complexity of learning.
+#### 8.1.1   Formal Definition*
+The definition that follows relies on a notion of an underlying abstract machine, which is usually either a Turing machine or a Turing machine over the reals. We will measure the computational complexity of an algorithm using the number of “operations” it needs to perform, where we assume that for any machine that implements the underlying abstract machine there exists a constant c such that any such “operation” can be performed on the machine using c seconds. definition 8.1 (The Computational Complexity of a Learning Algorithm) We define the complexity of learning in two steps. First we consider the computational complexity of a fixed learning problem (determined by a triplet (Z, H, `)
+- a domain set, a benchmark hypothesis class, and a loss function). Then, in the second step we consider the rate of change of that complexity along a sequence of such tasks.
+1. Given a function f : (0, 1)2 → N, a learning task (Z, H, `), and a learning
+algorithm, A, we say that A solves the learning task in time O(f ) if there exists some constant number c, such that for every probability distribution D
+
+<!-- page: 103 -->
+
+over Z, and input ε, δ ∈ (0, 1), when A has access to samples generated i.i.d. by D,
+- A terminates after performing at most cf (ε, δ) operations
+- The output of A, denoted hA , can be applied to predict the label of a new
+example while performing at most cf (ε, δ) operations
+- The output of A is probably approximately correct; namely, with proba-
+bility of at least 1 - δ (over the random samples A receives), LD (hA ) \leq  minh0 ∈H LD (h0 ) + ε
+2. Consider a sequence of learning problems, (Zn , Hn , `n )∞
+n=1 , where problem n is defined by a domain Zn , a hypothesis class Hn , and a loss function `n . Let A be a learning algorithm designed for solving learning problems of this form. Given a function g : N × (0, 1)2 → N, we say that the runtime of A with respect to the preceding sequence is O(g), if for all n, A solves the problem (Zn , Hn , `n ) in time O(fn ), where fn : (0, 1)2 → N is defined by fn (ε, δ) = g(n, ε, δ).
+We say that A is an efficient algorithm with respect to a sequence (Zn , Hn , `n ) if its runtime is O(p(n, 1/ε, 1/δ)) for some polynomial p.
+From this definition we see that the question whether a general learning problem can be solved efficiently depends on how it can be broken into a sequence of specific learning problems. For example, consider the problem of learning a finite hypothesis class. As we showed in previous chapters, the ERM rule over H is guaranteed to (ε, δ)-learn H if the number of training examples is order of mH (ε, δ) = log(|H|/δ)/ε2 . Assuming that the evaluation of a hypothesis on an example takes a constant time, it is possible to implement the ERM rule in time O(|H| mH (ε, δ)) by performing an exhaustive search over H with a training set of size mH (ε, δ). For any fixed finite H, the exhaustive search algorithm runs in polynomial time. Furthermore, if we define a sequence of problems in which |Hn | = n, then the exhaustive search is still considered to be efficient. However, if we define a sequence of problems for which |Hn | = 2n , then the sample complexity is still polynomial in n but the computational complexity of the exhaustive search algorithm grows exponentially with n (thus, rendered inefficient).
+### 8.2   Implementing the ERM Rule
+Given a hypothesis class H, the ERMH rule is maybe the most natural learning paradigm. Furthermore, for binary classification problems we saw that if learning is at all possible, it is possible with the ERM rule. In this section we discuss the computational complexity of implementing the ERM rule for several hypothesis classes.
+Given a hypothesis class, H, a domain set Z, and a loss function `, the corresponding ERMH rule can be defined as follows:
+
+<!-- page: 104 -->
+
+$$
+m 1 P sample S \in Z output some h \in H that minimizes the empirical loss, On a finite input LS (h) = |S| z\in S `(h, z).
+$$
+This section studies the runtime of implementing the ERM rule for several examples of learning tasks.
+#### 8.2.1   Finite Classes
+Limiting the hypothesis class to be a finite class may be considered as a reasonably mild restriction. For example, H can be the set of all predictors that can be implemented by a C++ program written in at most 10000 bits of code. Other examples of useful finite classes are any hypothesis class that can be parameterized by a finite number of parameters, where we are satisfied with a representation of each of the parameters using a finite number of bits, for example, the class of axis aligned rectangles in the Euclidean space, Rd , when the parameters defining any given rectangle are specified up to some limited precision.
+As we have shown in previous chapters, the sample complexity of learning a finite class is upper bounded by mH (ε, δ) = c log(c|H|/δ)/εc , where c = 1 in the realizable case and c = 2 in the nonrealizable case. Therefore, the sample complexity has a mild dependence on the size of H. In the example of C++ programs mentioned before, the number of hypotheses is 210,000 but the sample complexity is only c(10, 000 + log(c/δ))/εc . A straightforward approach for implementing the ERM rule over a finite hypothesis class is to perform an exhaustive search. That is, for each h ∈ H we calculate the empirical risk, LS (h), and return a hypothesis that minimizes the empirical risk. Assuming that the evaluation of `(h, z) on a single example takes a constant amount of time, k, the runtime of this exhaustive search becomes k|H|m, where m is the size of the training set. If we let m to be the upper bound on the sample complexity mentioned, then the runtime becomes k|H|c log(c|H|/δ)/εc . The linear dependence of the runtime on the size of H makes this approach inefficient (and unrealistic) for large classes. Formally, if we define a sequence of problems (Zn , Hn , `n )∞
+n=1 such that log(|Hn |) = n, then the exhaustive search approach yields an exponential runtime. In the example of C++ programs, if Hn is the set of functions that can be implemented by a C++ program written in at most n bits of code, then the runtime grows exponentially with n, implying that the exhaustive search approach is unrealistic for practical use. In fact, this problem is one of the reasons we are dealing with other hypothesis classes, like classes of linear predictors, which we will encounter in the next chapter, and not just focusing on finite classes. It is important to realize that the inefficiency of one algorithmic approach (such as the exhaustive search) does not yet imply that no efficient ERM implementation exists. Indeed, we will show examples in which the ERM rule can be implemented efficiently.
+
+<!-- page: 105 -->
+
+#### 8.2.2   Axis Aligned Rectangles
+Let Hn be the class of axis aligned rectangles in Rn , namely,
+$$
+Hn = \{h(a_1 ,...,an ,b_1 ,...,bn ) : \forall i, ai \le bi \} where
+$$
+(
+$$
+1   if \forall i, xi \in [ai , bi ] h(a_1 ,...,an ,b_1 ,...,bn ) (x, y) = \tag{8.1}
+$$
+## 0   otherwise
+Efficiently Learnable in the Realizable Case Consider implementing the ERM rule in the realizable case. That is, we are given a training set S = (x1 , y1 ), . . . , (xm , ym ) of examples, such that there exists an axis aligned rectangle, h ∈ Hn , for which h(xi ) = yi for all i. Our goal is to find such an axis aligned rectangle with a zero training error, namely, a rectangle that is consistent with all the labels in S.
+We show later that this can be done in time O(nm). Indeed, for each i ∈ [n], set ai = min{xi : (x, 1) ∈ S} and bi = max{xi : (x, 1) ∈ S}. In words, we take ai to be the minimal value of the i’th coordinate of a positive example in S and bi to be the maximal value of the i’th coordinate of a positive example in S. It is easy to verify that the resulting rectangle has zero training error and that the runtime of finding each ai and bi is O(m). Hence, the total runtime of this procedure is O(nm).
+Not Efficiently Learnable in the Agnostic Case In the agnostic case, we do not assume that some hypothesis h perfectly predicts the labels of all the examples in the training set. Our goal is therefore to find h that minimizes the number of examples for which yi \neq  h(xi ). It turns out that for many common hypothesis classes, including the classes of axis aligned rectangles we consider here, solving the ERM problem in the agnostic setting is NP-hard (and, in most cases, it is even NP-hard to find some h ∈ H whose error is no more than some constant c > 1 times that of the empirical risk minimizer in H). That is, unless P = NP, there is no algorithm whose running time is polynomial in m and n that is guaranteed to find an ERM hypothesis for these problems (Ben-David, Eiron & Long 2003).
+On the other hand, it is worthwhile noticing that, if we fix one specific hypothesis class, say, axis aligned rectangles in some fixed dimension, n, then there exist efficient learning algorithms for this class. In other words, there are successful agnostic PAC learners that run in time polynomial in 1/ε and 1/δ (but their dependence on the dimension n is not polynomial). To see this, recall the implementation of the ERM rule we presented for the realizable case, from which it follows that an axis aligned rectangle is determined by at most 2n examples. Therefore, given a training set of size m, we can perform an exhaustive search over all subsets of the training set of size at most 2n examples and construct a rectangle from each such subset. Then, we can pick
+
+<!-- page: 106 -->
+
+the rectangle with the minimal training error. This procedure is guaranteed to find an ERM hypothesis, and the runtime of the procedure is mO(n) . It follows that if n is fixed, the runtime is polynomial in the sample size. This does not contradict the aforementioned hardness result, since there we argued that unless P=NP one cannot have an algorithm whose dependence on the dimension n is polynomial as well.
+#### 8.2.3   Boolean Conjunctions
+A Boolean conjunction is a mapping from X = {0, 1}n to Y = {0, 1} that can be expressed as a proposition formula of the form xi1 ∧ . . . ∧ xik ∧ ¬xj1 ∧ . . . ∧ ¬xjr , for some indices i1 , . . . , ik , j1 , . . . , jr ∈ [n]. The function that such a proposition formula defines is
+(
+$$
+1    if xi1 = · · · = xik = 1 and xj1 = · · · = xjr = 0 h(x) =
+$$
+## 0   otherwise
+n Let HC  be the class of all Boolean conjunctions over {0, 1}n . The size of HC
+n is n at most 3 + 1 (since in a conjunction formula, each element of x either appears, or appears with a negation sign, or does not appear at all, and we also have the n all negative formula). Hence, the sample complexity of learning HC        using the ERM rule is at most n log(3/δ)/ε.
+Efficiently Learnable in the Realizable Case
+n Next, we show that it is possible to solve the ERM problem for HC            in time polynomial in n and m. The idea is to define an ERM conjunction by including in the hypothesis conjunction all the literals that do not contradict any positively labeled example. Let v1 , . . . , vm+ be all the positively labeled instances in the input sample S. We define, by induction on i \leq  m+ , a sequence of hypotheses (or conjunctions). Let h0 be the conjunction of all possible literals. That is, h0 = x1 ∧ ¬x1 ∧ x2 ∧ . . . ∧ xn ∧ ¬xn . Note that h0 assigns the label 0 to all the elements of X . We obtain hi+1 by deleting from the conjunction hi all the literals that are not satisfied by vi+1 . The algorithm outputs the hypothesis hm+ . Note that hm+ labels positively all the positively labeled examples in S. Furthermore, for every i \leq  m+ , hi is the most restrictive conjunction that labels v1 , . . . , vi positively. Now, since we consider learning in the realizable setup, there exists n a conjunction hypothesis, f ∈ HC       , that is consistent with all the examples in S. Since hm+ is the most restrictive conjunction that labels positively all the positively labeled members of S, any instance labeled 0 by f is also labeled 0 by hm+ . It follows that hm+ has zero training error (w.r.t. S), and is therefore a legal ERM hypothesis. Note that the running time of this algorithm is O(mn).
+
+<!-- page: 107 -->
+
+Not Efficiently Learnable in the Agnostic Case As in the case of axis aligned rectangles, unless P = NP, there is no algorithm whose running time is polynomial in m and n that guaranteed to find an ERM hypothesis for the class of Boolean conjunctions in the unrealizable case.
+#### 8.2.4   Learning 3-Term DNF
+We next show that a slight generalization of the class of Boolean conjunctions leads to intractability of solving the ERM problem even in the realizable case. Consider the class of 3-term disjunctive normal form formulae (3-term DNF). The instance space is X = {0, 1}n and each hypothesis is represented by the Boolean formula of the form h(x) = A1 (x) ∨ A2 (x) ∨ A3 (x), where each Ai (x) is a Boolean conjunction (as defined in the previous section). The output of h(x) is 1 if either A1 (x) or A2 (x) or A3 (x) outputs the label 1. If all three conjunctions output the label 0 then h(x) = 0.
+n Let H3DNF    be the hypothesis class of all such 3-term DNF formulae. The size of H3DNF is at most 33n . Hence, the sample complexity of learning H3DNF n                                                                   n
+using the ERM rule is at most 3n log(3/δ)/ε. However, from the computational perspective, this learning problem is hard. It has been shown (see (Pitt & Valiant 1988, Kearns et al. 1994)) that unless RP = NP, there is no polynomial time algorithm that properly learns a sequence of 3-term DNF learning problems in which the dimension of the n’th problem is n. By “properly” we mean that the algorithm should output a hypothesis that is a 3-term DNF formula. In particular, since ERMHn3DN F outputs a 3-term DNF formula it is a proper learner and therefore it is hard to implement it. The proof uses a reduction of the graph 3-coloring problem to the problem of PAC learning 3-term DNF. The detailed technique is given in Exercise 3. See also (Kearns & Vazirani 1994, Section 1.4).
+### 8.3     Efficiently Learnable, but Not by a Proper ERM
+In the previous section we saw that it is impossible to implement the ERM rule
+n efficiently for the class H3DNF  of 3-DNF formulae. In this section we show that it is possible to learn this class efficiently, but using ERM with respect to a larger class.
+Representation Independent Learning Is Not Hard Next we show that it is possible to learn 3-term DNF formulae efficiently. There is no contradiction to the hardness result mentioned in the previous section as we now allow “representation independent” learning. That is, we allow the learning algorithm to output a hypothesis that is not a 3-term DNF formula. The basic idea is to replace the original hypothesis class of 3-term DNF formula with a larger hypothesis class so that the new class is easily learnable. The learning
+
+<!-- page: 108 -->
+
+algorithm might return a hypothesis that does not belong to the original hypothesis class; hence the name “representation independent” learning. We emphasize that in most situations, returning a hypothesis with good predictive ability is what we are really interested in doing.
+We start by noting that because ∨ distributes over ∧, each 3-term DNF formula can be rewritten as
+$$
+^ A_1 \lor A_2 \lor A_3 =                  (u \lor v \lor w) u\in A_1 ,v\in A_2 ,w\in A_3
+$$
+3 Next, let us define: ψ : {0, 1}n → {0, 1}(2n) such that for each triplet of literals u, v, w there is a variable in the range of ψ indicating if u ∨ v ∨ w is true or false.
+3 So, for each 3-DNF formula over {0, 1}n there is a conjunction over {0, 1}(2n) , with the same truth table. Since we assume that the data is realizable, we can 3 solve the ERM problem with respect to the class of conjunctions over {0, 1}(2n) . Furthermore, the sample complexity of learning the class of conjunctions in the higher dimensional space is at most n3 log(1/δ)/ε. Thus, the overall runtime of this approach is polynomial in n. Intuitively, the idea is as follows. We started with a hypothesis class for which learning is hard. We switched to another representation where the hypothesis class is larger than the original class but has more structure, which allows for a more efficient ERM search. In the new representation, solving the ERM problem is easy.
+3 (2 n ) 1} over {0, nctions conju
+3-term-DNF formulae over {0, 1}n
+### 8.4   Hardness of Learning*
+We have just demonstrated that the computational hardness of implementing ERMH does not imply that such a class H is not learnable. How can we prove that a learning problem is computationally hard? One approach is to rely on cryptographic assumptions. In some sense, cryptography is the opposite of learning. In learning we try to uncover some rule underlying the examples we see, whereas in cryptography, the goal is to make sure that nobody will be able to discover some secret, in spite of having access
+
+<!-- page: 109 -->
+
+to some partial information about it. On that high level intuitive sense, results about the cryptographic security of some system translate into results about the unlearnability of some corresponding task. Regrettably, currently one has no way of proving that a cryptographic protocol is not breakable. Even the common assumption of P \neq  NP does not suffice for that (although it can be shown to be necessary for most common cryptographic scenarios). The common approach for proving that cryptographic protocols are secure is to start with some cryptographic assumptions. The more these are used as a basis for cryptography, the stronger is our belief that they really hold (or, at least, that algorithms that will refute them are hard to come by).
+We now briefly describe the basic idea of how to deduce hardness of learnability from cryptographic assumptions. Many cryptographic systems rely on the assumption that there exists a one way function. Roughly speaking, a one way function is a function f : {0, 1}n → {0, 1}n (more formally, it is a sequence of functions, one for each dimension n) that is easy to compute but is hard to invert. More formally, f can be computed in time poly(n) but for any randomized polynomial time algorithm A, and for every polynomial p(·),
+1 P[f (A(f (x))) = f (x)] < p(n) ,
+where the probability is taken over a random choice of x according to the uniform distribution over {0, 1}n and the randomness of A.
+A one way function, f , is called trapdoor one way function if, for some polynomial function p, for every n there exists a bit-string sn (called a secret key) of length \leq  p(n), such that there is a polynomial time algorithm that, for every n and every x ∈ {0, 1}n , on input (f (x), sn ) outputs x. In other words, although f is hard to invert, once one has access to its secret key, inverting f becomes feasible. Such functions are parameterized by their secret key. Now, let Fn be a family of trapdoor functions over {0, 1}n that can be calculated by some polynomial time algorithm. That is, we fix an algorithm that given a secret key (representing one function in Fn ) and an input vector, it calculates the value of the function corresponding to the secret key on the input vector in polynomial time. Consider the task of learning the class of the corresponding inverses, HFn = {f -1 : f ∈ Fn }. Since each function in this class can be inverted by some secret key sn of size polynomial in n, the class HFn can be parameter-ized by these keys and its size is at most 2p(n) . Its sample complexity is therefore polynomial in n. We claim that there can be no efficient learner for this class. If there were such a learner, L, then by sampling uniformly at random a polynomial number of strings in {0, 1}n , and computing f over them, we could generate a labeled training sample of pairs (f (x), x), which should suffice for our learner to figure out an (ε, δ) approximation of f -1 (w.r.t. the uniform distribution over the range of f ), which would violate the one way property of f . A more detailed treatment, as well as a concrete example, can be found in (Kearns & Vazirani 1994, Chapter 6). Using reductions, they also show that
+
+<!-- page: 110 -->
+
+the class of functions that can be calculated by small Boolean circuits is not efficiently learnable, even in the realizable case.
+### 8.5   Summary
+The runtime of learning algorithms is asymptotically analyzed as a function of different parameters of the learning problem, such as the size of the hypothesis class, our measure of accuracy, our measure of confidence, or the size of the domain set. We have demonstrated cases in which the ERM rule can be implemented efficiently. For example, we derived efficient algorithms for solving the ERM problem for the class of Boolean conjunctions and the class of axis aligned rectangles, under the realizability assumption. However, implementing ERM for these classes in the agnostic case is NP-hard. Recall that from the statistical perspective, there is no difference between the realizable and agnostic cases (i.e., a class is learnable in both cases if and only if it has a finite VC-dimension). In contrast, as we saw, from the computational perspective the difference is immense. We have also shown another example, the class of 3-term DNF, where implementing ERM is hard even in the realizable case, yet the class is efficiently learnable by another algorithm.
+Hardness of implementing the ERM rule for several natural hypothesis classes has motivated the development of alternative learning methods, which we will discuss in the next part of this book.
+### 8.6   Bibliographic Remarks
+Valiant (1984) introduced the efficient PAC learning model in which the runtime of the algorithm is required to be polynomial in 1/ε, 1/δ, and the representation size of hypotheses in the class. A detailed discussion and thorough bibliographic notes are given in Kearns & Vazirani (1994).
+### 8.7   Exercises
+1. Let H be the class of intervals on the line (formally equivalent to axis aligned
+rectangles in dimension n = 1). Propose an implementation of the ERMH learning rule (in the agnostic case) that given a training set of size m, runs in time O(m2 ). Hint: Use dynamic programming.
+2. Let H1 , H2 , . . . be a sequence of hypothesis classes for binary classification.
+Assume that there is a learning algorithm that implements the ERM rule in the realizable case such that the output hypothesis of the algorithm for each class Hn only depends on O(n) examples out of the training set. Furthermore,
+
+<!-- page: 111 -->
+
+assume that such a hypothesis can be calculated given these O(n) examples in time O(n), and that the empirical risk of each such hypothesis can be evaluated in time O(mn). For example, if Hn is the class of axis aligned rectangles in Rn , we saw that it is possible to find an ERM hypothesis in the realizable case that is defined by at most 2n examples. Prove that in such cases, it is possible to find an ERM hypothesis for Hn in the unrealizable case in time O(mn mO(n) ).
+3. In this exercise, we present several classes for which finding an ERM classi-
+fier is computationally hard. First, we introduce the class of n-dimensional halfspaces, HSn , for a domain X = Rn . This is the class of all functions of the form hw,b (x) = sign(hw, xi + b) where w, x ∈ Rn , hw, xi is their inner product, and b ∈ R. See a detailed description in Chapter 9.
+1. Show that ERMH over the class H = HSn of linear predictors is compu-
+tationally hard. More precisely, we consider the sequence of problems in which the dimension n grows linearly and the number of examples m is set to be some constant times n. Hint: You can prove the hardness by a reduction from the following problem: Max FS: Given a system of linear inequalities, Ax > b with A ∈ Rm×n and b ∈ Rm (that is, a system of m linear inequalities in n variables, x = (x1 , . . . , xn )), find a subsystem containing as many inequalities as possible that has a solution (such a subsystem is called feasible). It has been shown (Sankaran 1993) that the problem Max FS is NP-hard. Show that any algorithm that finds an ERMHSn hypothesis for any training sample S ∈ (Rn × {+1, -1})m can be used to solve the Max FS problem of size m, n. Hint: Define a mapping that transforms linear inequalities in n variables into labeled points in Rn , and a mapping that transforms vectors in Rn to halfspaces, such that a vector w satisfies an inequality q if and only if the labeled point that corresponds to q is classified correctly by the halfspace corresponding to w. Conclude that the problem of empirical risk minimization for halfspaces in also NP-hard (that is, if it can be solved in time polynomial in the sample size, m, and the Euclidean dimension, n, then every problem in the class NP can be solved in polynomial time).
+2. Let X = Rn and let Hkn be the class of all intersections of k-many linear
+halfspaces in Rn . In this exercise, we wish to show that ERMHnk is com-putationally hard for every k \geq  3. Precisely, we consider a sequence of problems where k \geq  3 is a constant and n grows linearly. The training set size, m, also grows linearly with n. Towards this goal, consider the k-coloring problem for graphs, defined as follows: Given a graph G = (V, E), and a number k, determine whether there exists a function f : V → {1 . . . k} so that for every (u, v) ∈ E, f (u) \neq  f (v). The k-coloring problem is known to be NP-hard for every k \geq  3 (Karp 1972).
+
+<!-- page: 112 -->
+
+We wish to reduce the k-coloring problem to ERMHnk : that is, to prove that if there is an algorithm that solves the ERMHnk problem in time polynomial in k, n, and the sample size m, then there is a polynomial time algorithm for the graph k-coloring problem. Given a graph G = (V, E), let {v1 . . . vn } be the vertices in V . Construct a sample S(G) ∈ (Rn × {\pm 1})m , where m = |V | + |E|, as follows:
+- For every vi ∈ V , construct an instance ei with a negative label.
+- For every edge (vi , vj ) ∈ E, construct an instance (ei + ej )/2 with a
+positive label.
+1. Prove that if there exists some h ∈ Hkn that has zero error over S(G)
+then G is k-colorable.
+Tk Hint: Let h = j=1 hj be an ERM classifier in Hkn over S. Define a coloring of V by setting f (vi ) to be the minimal j such that hj (ei ) = -1. Use the fact that halfspaces are convex sets to show that it cannot be true that two vertices that are connected by an edge have the same color.
+2. Prove that if G is k-colorable then there exists some h ∈ Hkn that has
+zero error over S(G). Hint: Given a coloring f of the vertices of G, we should come up with k hyperplanes, h1 . . . hk whose intersection is a perfect classifier for S(G). Let b = 0.6 for all of these hyperplanes and, for t \leq  k let the i’th weight of the t’th hyperplane, wt,i , be -1 if f (vi ) = t and 0 otherwise.
+3. Based on the above, prove that for any k \geq  3, the ERMHnk problem is
+NP-hard.
+4. In this exercise we show that hardness of solving the ERM problem is equiv-
+alent to hardness of proper PAC learning. Recall that by “properness” of the algorithm we mean that it must output a hypothesis from the hypothesis class. To formalize this statement, we first need the following definition.
+definition 8.2 The complexity class Randomized Polynomial (RP) time is the class of all decision problems (that is, problems in which on any instance one has to find out whether the answer is YES or NO) for which there exists a probabilistic algorithm (namely, the algorithm is allowed to flip random coins while it is running) with these properties:
+- On any input instance the algorithm runs in polynomial time in the input
+size.
+- If the correct answer is NO, the algorithm must return NO.
+- If the correct answer is YES, the algorithm returns YES with probability
+$$
+a \ge 1/2 and returns NO with probability 1 - a.1
+$$
+Clearly the class RP contains the class P. It is also known that RP is contained in the class NP. It is not known whether any equality holds among these three complexity classes, but it is widely believed that NP is strictly
+## 1   The constant 1/2 in the definition can be replaced by any constant in (0, 1).
+
+<!-- page: 113 -->
+
+larger than RP. In particular, it is believed that NP-hard problems cannot be solved by a randomized polynomial time algorithm.
+- Show that if a class H is properly PAC learnable by a polynomial time
+algorithm, then the ERMH problem is in the class RP. In particular, this implies that whenever the ERMH problem is NP-hard (for example, the class of intersections of halfspaces discussed in the previous exercise), then, unless NP = RP, there exists no polynomial time proper PAC learning algorithm for H. Hint: Assume you have an algorithm A that properly PAC learns a class H in time polynomial in some class parameter n as well as in 1/ε and 1/δ. Your goal is to use that algorithm as a subroutine to contract an algorithm B for solving the ERMH problem in random polynomial time. Given a training set, S ∈ (X × {\pm 1}m ), and some h ∈ H whose error on S is zero, apply the PAC learning algorithm to the uniform distribution over S and run it so that with probability \geq  0.3 it finds a function h ∈ H that has error less than ε = 1/|S| (with respect to that uniform distribution). Show that the algorithm just described satisfies the requirements for being a RP solver for ERMH .
+
+<!-- page: 114 -->
+
+<!-- page: 115 -->
+
+# Part II
+From Theory to Algorithms
+
+<!-- page: 116 -->
+
+<!-- page: 117 -->
+
+## 9   Linear Predictors
+In this chapter we will study the family of linear predictors, one of the most useful families of hypothesis classes. Many learning algorithms that are being widely used in practice rely on linear predictors, first and foremost because of the ability to learn them efficiently in many cases. In addition, linear predictors are intuitive, are easy to interpret, and fit the data reasonably well in many natural learning problems.
+We will introduce several hypothesis classes belonging to this family – halfspaces, linear regression predictors, and logistic regression predictors – and present relevant learning algorithms: linear programming and the Perceptron algorithm for the class of halfspaces and the Least Squares algorithm for linear regression. This chapter is focused on learning linear predictors using the ERM approach; however, in later chapters we will see alternative paradigms for learning these hypothesis classes. First, we define the class of affine functions as
+$$
+Ld = \{hw,b : w \in Rd , b \in R\},
+$$
+$$
+where d ! X hw,b (x) = hw, xi + b =            wi xi       + b. i=1
+$$
+It will be convenient also to use the notation
+$$
+Ld = \{x 7\to hw, xi + b : w \in Rd , b \in R\},
+$$
+which reads as follows: Ld is a set of functions, where each function is parame-terized by w ∈ Rd and b ∈ R, and each such function takes as input a vector x and returns as output the scalar hw, xi + b.
+The different hypothesis classes of linear predictors are compositions of a function φ : R → Y on Ld . For example, in binary classification, we can choose φ to be the sign function, and for regression problems, where Y = R, φ is simply the identity function. It may be more convenient to incorporate b, called the bias, into w as an extra coordinate and add an extra coordinate with a value of 1 to all x ∈ X ; namely, let w0 = (b, w1 , w2 , . . . wd ) ∈ Rd+1 and let x0 = (1, x1 , x2 , . . . , xd ) ∈
+
+<!-- page: 118 -->
+
+Rd+1 . Therefore,
+hw,b (x) = hw, xi + b = hw0 , x0 i. It follows that each affine function in Rd can be rewritten as a homogenous linear function in Rd+1 applied over the transformation that appends the constant 1 to each input vector. Therefore, whenever it simplifies the presentation, we will omit the bias term and refer to Ld as the class of homogenous linear functions of the form hw (x) = hw, xi. Throughout the book we often use the general term “linear functions” for both affine functions and (homogenous) linear functions.
+### 9.1   Halfspaces
+The first hypothesis class we consider is the class of halfspaces, designed for binary classification problems, namely, X = Rd and Y = {-1, +1}. The class of halfspaces is defined as follows:
+HSd = sign \circ Ld = {x 7→ sign(hw,b (x)) : hw,b ∈ Ld }. In other words, each halfspace hypothesis in HSd is parameterized by w ∈ Rd and b ∈ R and upon receiving a vector x the hypothesis returns the label sign(hw, xi + b). To illustrate this hypothesis class geometrically, it is instructive to consider the case d = 2. Each hypothesis forms a hyperplane that is perpendicular to the vector w and intersects the vertical axis at the point (0, -b/w2 ). The instances that are “above” the hyperplane, that is, share an acute angle with w, are labeled positively. Instances that are “below” the hyperplane, that is, share an obtuse angle with w, are labeled negatively.
+w            +
+- +
+-
+In Section 9.1.3 we will show that VCdim(HSd ) = d + 1. It follows that we can ( learn halfspaces
+)        using the ERM paradigm, as long as the sample size is d+log(1/δ) \Omega        ε       . Therefore, we now discuss how to implement an ERM procedure for halfspaces. We introduce below two solutions to finding an ERM halfspace in the realizable case. In the context of halfspaces, the realizable case is often referred to as the “separable” case, since it is possible to separate with a hyperplane all the positive examples from all the negative examples. Implementing the ERM rule
+
+<!-- page: 119 -->
+
+in the nonseparable case (i.e., the agnostic case) is known to be computationally hard (Ben-David & Simon 2001). There are several approaches to learning non-separable data. The most popular one is to use surrogate loss functions, namely, to learn a halfspace that does not necessarily minimize the empirical risk with the 0 - 1 loss, but rather with respect to a diffferent loss function. For example, in Section 9.3 we will describe the logistic regression approach, which can be implemented efficiently even in the nonseparable case. We will study surrogate loss functions in more detail later on in Chapter 12.
+#### 9.1.1   Linear Programming for the Class of Halfspaces
+Linear programs (LP) are problems that can be expressed as maximizing a linear function subject to linear inequalities. That is,
+max         hu, wi w∈Rd
+$$
+subject to       Aw \ge v
+$$
+where w ∈ Rd is the vector of variables we wish to determine, A is an m × d matrix, and v ∈ Rm , u ∈ Rd are vectors. Linear programs can be solved efficiently,1 and furthermore, there are publicly available implementations of LP solvers.
+We will show that the ERM problem for halfspaces in the realizable case can be expressed as a linear program. For simplicity, we assume the homogenous case. Let S = {(xi , yi )}m
+i=1 be a training set of size m. Since we assume the realizable case, an ERM predictor should have zero errors on the training set. That is, we are looking for some vector w ∈ Rd for which
+$$
+sign(hw, xi i) = yi ,      \forall i = 1, . . . , m.
+$$
+Equivalently, we are looking for some vector w for which
+$$
+yi hw, xi i > 0,      \forall i = 1, . . . , m.
+$$
+Let w∗ be a vector that satisfies this condition (it must exist since we assume
+∗ realizability). Define γ = mini (yi hw∗ , xi i) and let w̄ = wγ . Therefore, for all i we have 1 yi hw̄, xi i = yi hw∗ , xi i \geq  1. γ We have thus shown that there exists a vector that satisfies
+$$
+yi hw, xi i \ge 1,      \forall i = 1, . . . , m. \tag{9.1}
+$$
+And clearly, such a vector is an ERM predictor.
+To find a vector that satisfies Equation (9.1) we can rely on an LP solver as follows. Set A to be the m × d matrix whose rows are the instances multiplied
+## 1   Namely, in time polynomial in m, d, and in the representation size of real numbers.
+
+<!-- page: 120 -->
+
+by yi . That is, Ai,j = yi xi,j , where xi,j is the j’th element of the vector xi . Let v be the vector (1, . . . , 1) ∈ Rm . Then, Equation (9.1) can be rewritten as
+Aw \geq  v. The LP form requires a maximization objective, yet all the w that satisfy the constraints are equal candidates as output hypotheses. Thus, we set a “dummy” objective, u = (0, . . . , 0) ∈ Rd .
+9.1.2   Perceptron for Halfspaces
+A different implementation of the ERM rule is the Perceptron algorithm of
+Rosenblatt (Rosenblatt 1958). The Perceptron is an iterative algorithm that
+constructs a sequence of vectors w(1) , w(2) , . . .. Initially, w(1) is set to be the
+all-zeros vector. At iteration t, the Perceptron finds an example i that is mis-
+labeled by w(t) , namely, an example for which sign(hw(t) , xi i) \neq  yi . Then, the
+Perceptron updates w(t) by adding to it the instance xi scaled by the label yi .
+That is, w(t+1) = w(t) + yi xi . Recall that our goal is to have yi hw, xi i > 0 for
+all i and note that
+yi hw(t+1) , xi i = yi hw(t) + yi xi , xi i = yi hw(t) , xi i + kxi k2 .
+Hence, the update of the Perceptron guides the solution to be “more correct” on
+the i’th example.
+```
+Batch Perceptron
+input: A training set (x1 , y1 ), . . . , (xm , ym )
+initialize: w(1) = (0, . . . , 0)
+for t = 1, 2, . . .
+if (∃ i s.t. yi hw(t) , xi i \leq  0) then
+w(t+1) = w(t) + yi xi
+else
+output w(t)
+```
+The following theorem guarantees that in the realizable case, the algorithm stops with all sample points correctly classified. theorem 9.1 Assume that (x1 , y1 ), . . . , (xm , ym ) is separable, let B = min{kwk : \forall i ∈ [m], yi hw, xi i \geq  1}, and let R = maxi kxi k. Then, the Perceptron algorithm stops after at most (RB)2 iterations, and when it stops it holds that \forall i ∈ [m], yi hw(t) , xi i > 0. Proof By the definition of the stopping condition, if the Perceptron stops it must have separated all the examples. We will show that if the Perceptron runs for T iterations, then we must have T \leq  (RB)2 , which implies the Perceptron must stop after at most (RB)2 iterations. Let w? be a vector that achieves the minimum in the definition of B. That is,
+
+<!-- page: 121 -->
+
+yi hw? , xi i \geq  1 for all i, and among all vectors that satisfy these constraints, w? is of minimal norm.
+The idea of the proof is to show that after performing
+\sqrt       T iterations, the cosine ?      (T +1)               T of the angle between w and w               is at least RB . That is, we will show that \sqrt hw? , w(T +1) i       T \geq        .                      (9.2) kw? k kw(T +1) k     RB By the Cauchy-Schwartz inequality, the left-hand side of Equation (9.2) is at most 1. Therefore, Equation (9.2) would imply that \sqrt T 1\geq          ⇒ T \leq  (RB)2 , RB which will conclude our proof. To show that Equation (9.2) holds, we first show that hw? , w(T +1) i \geq  T . Indeed, at the first iteration, w(1) = (0, . . . , 0) and therefore hw? , w(1) i = 0, while on iteration t, if we update using example (xi , yi ) we have that
+$$
+hw^\star , w(t+1) i - hw^\star , w(t) i = hw^\star , w(t+1) - w(t) i = hw^\star , yi xi i = yi hw^\star , xi i \ge 1.
+$$
+$$
+Therefore, after performing T iterations, we get: T ( X                                  ) hw^\star , w(T +1) i =         hw^\star , w(t+1) i - hw^\star , w(t) i \ge T,       (9.3) t=1
+$$
+as required. Next, we upper bound kw(T +1) k. For each iteration t we have that
+$$
+kw(t+1) k_2 = kw(t) + yi xi k_2 = kw(t) k_2 + 2yi hw(t) , xi i + yi2 kxi k_2 \le kw(t) k_2 + R_2 \tag{9.4}
+$$
+$$
+where the last inequality is due to the fact that example i is necessarily such that yi hw(t) , xi i \le 0, and the norm of xi is at most R. Now, since kw(1) k_2 = 0, if we use Equation (9.4) recursively for T iterations, we obtain that \sqrt kw(T +1) k_2 \le TR 2 ⇒ kw(T +1) k \le T R. \tag{9.5}
+$$
+Combining Equation (9.3) with Equation (9.5), and using the fact that kw? k = B, we obtain that
+$$
+\sqrt hw(T +1) , w^\star i     T          T ?     (T +1) \ge \sqrt      =       . kw k kw         k  B TR       BR We have thus shown that Equation (9.2) holds, and this concludes our proof.
+$$
+
+<!-- page: 122 -->
+
+Remark 9.1 The Perceptron is simple to implement and is guaranteed to converge. However, the convergence rate depends on the parameter B, which in some situations might be exponentially large in d. In such cases, it would be better to implement the ERM problem by solving a linear program, as described in the previous section. Nevertheless, for many natural data sets, the size of B is not too large, and the Perceptron converges quite fast.
+#### 9.1.3   The VC Dimension of Halfspaces
+To compute the VC dimension of halfspaces, we start with the homogenous case.
+theorem 9.2       The VC dimension of the class of homogenous halfspaces in Rd is d.
+Proof First, consider the set of vectors e1 , . . . , ed , where for every i the vector ei is the all zeros vector except 1 in the i’th coordinate. This set is shattered by the class of homogenous halfspaces. Indeed, for every labeling y1 , . . . , yd , set w = (y1 , . . . , yd ), and then hw, ei i = yi for all i.
+Next, let x1 , . . . , xd+1 be a set of d + 1 vectors in Rd . Then, there must exist
+Pd+1 real numbers a1 , . . . , ad+1 , not all of them are zero, such that i=1 ai xi = 0. Let I = {i : ai > 0} and J = {j : aj < 0}. Either I or J is nonempty. Let us first assume that both of them are nonempty. Then, X            X ai xi =     |aj |xj . i∈I        j∈J
+Now, suppose that x1 , . . . , xd+1 are shattered by the class of homogenous classes. Then, there must exist a vector w such that hw, xi i > 0 for all i ∈ I while hw, xj i < 0 for every j ∈ J. It follows that
+$$
+*               + *                + X                   X                  X                 X 0<       ai hxi , wi =        ai xi , w =      |aj |xj , w =      |aj |hxj , wi < 0, i\in I                i\in I                j\in J               j\in J
+$$
+which leads to a contradiction. Finally, if J (respectively, I) is empty then the right-most (respectively, left-most) inequality should be replaced by an equality, which still leads to a contradiction.
+theorem 9.3       The VC dimension of the class of nonhomogenous halfspaces in Rd is d + 1.
+Proof First, as in the proof of Theorem 9.2, it is easy to verify that the set of vectors 0, e1 , . . . , ed is shattered by the class of nonhomogenous halfspaces. Second, suppose that the vectors x1 , . . . , xd+2 are shattered by the class of non-homogenous halfspaces. But, using the reduction we have shown in the beginning of this chapter, it follows that there are d + 2 vectors in Rd+1 that are shattered by the class of homogenous halfspaces. But this contradicts Theorem 9.2.
+
+<!-- page: 123 -->
+
+r       r
+r       r r       r r r r r r
+![Hinh: fig-123-1]
+Figure 9.1 Linear regression for d = 1. For instance, the x-axis may denote the age of the baby, and the y-axis her weight.
+### 9.2   Linear Regression
+Linear regression is a common statistical tool for modeling the relationship between some “explanatory” variables and some real valued outcome. Cast as a learning problem, the domain set X is a subset of Rd , for some d, and the label set Y is the set of real numbers. We would like to learn a linear function h : Rd → R that best approximates the relationship between our variables (say, for example, predicting the weight of a baby as a function of her age and weight at birth). Figure 9.1 shows an example of a linear regression predictor for d = 1.
+The hypothesis class of linear regression predictors is simply the set of linear functions,
+$$
+Hreg = Ld = \{x 7\to hw, xi + b : w \in Rd , b \in R\}.
+$$
+Next we need to define a loss function for regression. While in classification the definition of the loss is straightforward, as `(h, (x, y)) simply indicates whether h(x) correctly predicts y or not, in regression, if the baby’s weight is 3 kg, both the predictions 3.00001 kg and 4 kg are “wrong,” but we would clearly prefer the former over the latter. We therefore need to define how much we shall be “penalized” for the discrepancy between h(x) and y. One common way is to use the squared-loss function, namely,
+`(h, (x, y)) = (h(x) - y)2 .
+$$
+For this loss function, the empirical risk function is called the Mean Squared Error, namely, m 1 X LS (h) =       (h(xi ) - yi )2 . m i=1
+$$
+
+<!-- page: 124 -->
+
+In the next subsection, we will see how to implement the ERM rule for linear regression with respect to the squared loss. Of course, there are a variety of other loss functions that one can use, for example, the absolute value loss function, `(h, (x, y)) = |h(x) - y|. The ERM rule for the absolute value loss function can be implemented using linear programming (see Exercise 1.) Note that since linear regression is not a binary prediction task, we cannot analyze its sample complexity using the VC-dimension. One possible analysis of the sample complexity of linear regression is by relying on the “discretization trick” (see Remark 4.1 in Chapter 4); namely, if we are happy with a representation of each element of the vector w and the bias b using a finite number of bits (say a 64 bits floating point representation), then the hypothesis class becomes finite and its size is at most 264(d+1) . We can now rely on sample complexity bounds for finite hypothesis classes as described in Chapter 4. Note, however, that to apply the sample complexity bounds from Chapter 4 we also need that the loss function will be bounded. Later in the book we will describe more rigorous means to analyze the sample complexity of regression problems.
+#### 9.2.1   Least Squares
+Least squares is the algorithm that solves the ERM problem for the hypothesis class of linear regression predictors with respect to the squared loss. The ERM problem with respect to this class, given a training set S, and using the homogenous version of Ld , is to find
+$$
+m 1 X argmin LS (hw ) = argmin            (hw, xi i - yi )2 . w                    w    m i=1
+$$
+To solve the problem we calculate the gradient of the objective function and compare it to zero. That is, we need to solve
+$$
+m 2 X (hw, xi i - yi )xi = 0. m i=1
+$$
+We can rewrite the problem as the problem Aw = b where
+$$
+m !              m X                            X A=           xi x> i       and   b=          yi xi .         (9.6) i=1                           i=1
+$$
+
+<!-- page: 125 -->
+
+Or, in matrix form:
+)> ..              ..         .        .. (                    )(  .                 .   ..            .  A= ( x1        ...   xm    ) ( x1 . . . xm ) ,                                             (9.7) ..              ..        ..        .. .               .         .         . ..             .. (                        )(      ) y1  .                   .   ..  b= ( x1        ...   xm ) ( . ) .                                                (9.8) ..               .. .                .     ym
+If A is invertible then the solution to the ERM problem is
+w = A-1 b.
+The case in which A is not invertible requires a few standard tools from linear algebra, which are available in Appendix C. It can be easily shown that if the training instances do not span the entire space of Rd then A is not invertible. Nevertheless, we can always find a solution to the system Aw = b because b is in the range of A. Indeed, since A is symmetric we can write it using its eigenvalue decomposition as A = V DV >, where D is a diagonal matrix and V is an orthonormal matrix (that is, V > V is the identity d × d matrix). Define
+$$
++ D+ to be the diagonal matrix such that Di,i     = 0 if Di,i = 0 and otherwise + Di,i = 1/Di,i . Now, define
+$$
+$$
+A+ = V D + V >      and    w{} = A+ b.
+$$
+$$
+Let vi denote the i’th column of V . Then, we have X Aw{} = AA+ b = V DV > V D+ V > b = V DD+ V > b =                         vi vi> b. i:Di,i \neq 0
+$$
+That is, Aw{} is the projection of b onto the span of those vectors vi for which Di,i \neq  0. Since the linear span of x1 , . . . , xm is the same as the linear span of those vi , and b is in the linear span of the xi , we obtain that Aw{} = b, which concludes our argument.
+#### 9.2.2   Linear Regression for Polynomial Regression Tasks
+Some learning tasks call for nonlinear predictors, such as polynomial predictors. Take, for instance, a one dimensional polynomial function of degree n, that is,
+p(x) = a0 + a1 x + a2 x2 + · · · + an xn
+where (a0 , . . . , an ) is a vector of coefficients of size n + 1. In the following we depict a training set that is better fitted using a 3rd degree polynomial predictor than using a linear predictor.
+
+<!-- page: 126 -->
+
+$$
+We will focus here on the class of one dimensional, n-degree, polynomial regression predictors, namely, n Hpoly = \{x 7\to p(x)\},
+$$
+where p is a one dimensional polynomial of degree n, parameterized by a vector of coefficients (a0 , . . . , an ). Note that X = R, since this is a one dimensional polynomial, and Y = R, as this is a regression problem. One way to learn this class is by reduction to the problem of linear regression, which we have already shown how to solve. To translate a polynomial regression problem to a linear regression problem, we define the mapping ψ : R → Rn+1 such that ψ(x) = (1, x, x2 , . . . , xn ). Then we have that
+$$
+p(\psi(x)) = a_0 + a_1 x + a_2 x_2 + · · · + an xn = ha, \psi(x)i
+$$
+and we can find the optimal vector of coefficients a by using the Least Squares algorithm as shown earlier.
+### 9.3   Logistic Regression
+In logistic regression we learn a family of functions h from Rd to the interval [0, 1]. However, logistic regression is used for classification tasks: We can interpret h(x) as the probability that the label of x is 1. The hypothesis class associated with logistic regression is the composition of a sigmoid function φ\operatorname{sig}: R → [0, 1] over the class of linear functions Ld . In particular, the sigmoid function used in logistic regression is the logistic function, defined as
+$$
+1 \phi \operatorname{sig}(z) =               . \tag{9.9}
+$$
+1 + exp(-z) The name “sigmoid” means “S-shaped,” referring to the plot of this function, shown in the figure:
+
+<!-- page: 127 -->
+
+The hypothesis class is therefore (where for simplicity we are using homogenous linear functions):
+$$
+H\operatorname{sig}= \phi \operatorname{sig}\circ Ld = \{x 7\to \phi \operatorname{sig}(hw, xi) : w \in Rd \}.
+$$
+Note that when hw, xi is very large then φ\operatorname{sig}(hw, xi) is close to 1, whereas if hw, xi is very small then φ\operatorname{sig}(hw, xi) is close to 0. Recall that the prediction of the halfspace corresponding to a vector w is sign(hw, xi). Therefore, the predictions of the halfspace hypothesis and the logistic hypothesis are very similar whenever |hw, xi| is large. However, when |hw, xi| is close to 0 we have that φ\operatorname{sig}(hw, xi) ≈ 1 2 . Intuitively, the logistic hypothesis is not sure about the value of the label so it guesses that the label is sign(hw, xi) with probability slightly larger than 50%. In contrast, the halfspace hypothesis always outputs a deterministic prediction of either 1 or -1, even if |hw, xi| is very close to 0.
+Next, we need to specify a loss function. That is, we should define how bad it is to predict some hw (x) ∈ [0, 1] given that the true label is y ∈ {\pm 1}. Clearly, we would like that hw (x) would be large if y = 1 and that 1 - hw (x) (i.e., the probability of predicting -1) would be large if y = -1. Note that
+$$
+1            exp(-hw, xi)            1 1 - hw (x) = 1 -                    =                  =                 . 1 + exp(-hw, xi)   1 + exp(-hw, xi)   1 + exp(hw, xi)
+$$
+1 Therefore, any reasonable loss function would increase monotonically with 1+exp(yhw,xi) , or equivalently, would increase monotonically with 1 + exp(-yhw, xi). The logistic loss function used in logistic regression penalizes hw based on the log of 1 + exp(-yhw, xi) (recall that log is a monotonic function). That is,
+`(hw , (x, y)) = log (1 + exp(-yhw, xi)) .
+Therefore, given a training set S = (x1 , y1 ), . . . , (xm , ym ), the ERM problem associated with logistic regression is
+m
+$$
+1 X argmin         log (1 + exp(-yi hw, xi i)) .               (9.10) w\in Rd    m i=1
+$$
+The advantage of the logistic loss function is that it is a convex function with respect to w; hence the ERM problem can be solved efficiently using standard methods. We will study how to learn with convex functions, and in particular specify a simple algorithm for minimizing convex functions, in later chapters.
+The ERM problem associated with logistic regression (Equation (9.10)) is identical to the problem of finding a Maximum Likelihood Estimator, a well-known statistical approach for finding the parameters that maximize the joint probability of a given data set assuming a specific parametric probability function. We will study the Maximum Likelihood approach in Chapter 24.
+
+<!-- page: 128 -->
+
+### 9.4   Summary
+The family of linear predictors is one of the most useful families of hypothesis classes, and many learning algorithms that are being widely used in practice rely on linear predictors. We have shown efficient algorithms for learning linear predictors with respect to the zero-one loss in the separable case and with respect to the squared and logistic losses in the unrealizable case. In later chapters we will present the properties of the loss function that enable efficient learning.
+Naturally, linear predictors are effective whenever we assume, as prior knowledge, that some linear predictor attains low risk with respect to the underlying distribution. In the next chapter we show how to construct nonlinear predictors by composing linear predictors on top of simple classes. This will enable us to employ linear predictors for a variety of prior knowledge assumptions.
+### 9.5   Bibliographic Remarks
+The Perceptron algorithm dates back to Rosenblatt (1958). The proof of its convergence rate is due to (Agmon 1954, Novikoff 1962). Least Squares regression goes back to Gauss (1795), Legendre (1805), and Adrain (1808).
+### 9.6   Exercises
+1. Show how to cast the ERM problem of linear regression with respect to the
+absolute value loss function, `(h, (x, y)) = |h(x) - y|, as a linear program; namely, show how to write the problem
+m X min         |hw, xi i - yi | w i=1
+$$
+as a linear program. Hint: Start with proving that for any c \in R, |c| = min a s.t. c \le a and c \ge -a. a\ge 0
+$$
+2. Show that the matrix A defined in Equation (9.6) is invertible if and only if
+x1 , . . . , xm span Rd .
+3. Show that Theorem 9.1 is tight in the following sense: For any positive integer
+m, there exist a vector w∗ ∈ Rd (for some appropriate d) and a sequence of examples {(x1 , y1 ), . . . , (xm , ym )} such that the following hold:
+- R = maxi kxi k \leq  1.
+- kw∗ k2 = m, and for all i \leq  m, yi hxi , w∗ i \geq  1. Note that, using the notation
+in Theorem 9.1, we therefore get
+$$
+\sqrt B = min\{kwk : \forall i \in [m], yi hw, xi i \ge 1\} \le m.
+$$
+
+<!-- page: 129 -->
+
+$$
+Thus, (BR)2 \le m.
+$$
+- When running the Perceptron on this sequence of examples it makes m
+$$
+updates before converging. Hint: Choose d = m and for every i choose xi = ei .
+$$
+4. (*) Given any number m, find an example of a sequence of labeled examples
+((x1 , y1 ), . . . , (xm , ym )) ∈ (R3 × {-1, +1})m on which the upper bound of Theorem 9.1 equals m and the perceptron algorithm is bound to make m mistakes. Hint: Set each xi to be a third dimensional vector of the form (a, b, yi ), where a2 + b2 = R2 - 1. Let w∗ be the vector (0, 0, 1). Now, go over the proof of the Perceptron’s upper bound (Theorem 9.1), see where we used inequalities (\leq ) rather than equalities (=), and figure out scenarios where the inequality actually holds with equality.
+5. Suppose we modify the Perceptron algorithm as follows: In the update step,
+instead of performing w(t+1) = w(t) + yi xi whenever we make a mistake, we perform w(t+1) = w(t) + ηyi xi for some η > 0. Prove that the modified Per-ceptron will perform the same number of iterations as the vanilla Perceptron and will converge to a vector that points to the same direction as the output of the vanilla Perceptron.
+6. In this problem, we will get bounds on the VC-dimension of the class of
+(closed) balls in Rd , that is,
+$$
+Bd = \{Bv,r : v \in Rd , r > 0\}, where
+$$
+{
+$$
+1   if kx - vk \le r Bv,r (x) =                          .
+$$
+## 0   otherwise
+1. Consider the mapping φ : Rd → Rd+1 defined by φ(x) = (x, kxk2 ). Show
+that if x1 , . . . , xm are shattered by Bd then φ(x1 ), . . . , φ(xm ) are shattered by the class of halfspaces in Rd+1 (in this question we assume that sign(0) = 1). What does this tell us about VCdim(Bd )?
+2. (*) Find a set of d + 1 points in Rd that is shattered by Bd . Conclude that
+$$
+d + 1 \le VCdim(Bd ) \le d + 2.
+$$
+
+<!-- page: 130 -->
+
+## 10 Boosting
+Boosting is an algorithmic paradigm that grew out of a theoretical question and became a very practical machine learning tool. The boosting approach uses a generalization of linear predictors to address two major issues that have been raised earlier in the book. The first is the bias-complexity tradeoff. We have seen (in Chapter 5) that the error of an ERM learner can be decomposed into a sum of approximation error and estimation error. The more expressive the hypothesis class the learner is searching over, the smaller the approximation error is, but the larger the estimation error becomes. A learner is thus faced with the problem of picking a good tradeoff between these two considerations. The boosting paradigm allows the learner to have smooth control over this tradeoff. The learning starts with a basic class (that might have a large approximation error), and as it progresses the class that the predictor may belong to grows richer.
+The second issue that boosting addresses is the computational complexity of learning. As seen in Chapter 8, for many interesting concept classes the task of finding an ERM hypothesis may be computationally infeasible. A boosting algorithm amplifies the accuracy of weak learners. Intuitively, one can think of a weak learner as an algorithm that uses a simple “rule of thumb” to output a hypothesis that comes from an easy-to-learn hypothesis class and performs just slightly better than a random guess. When a weak learner can be implemented efficiently, boosting provides a tool for aggregating such weak hypotheses to approximate gradually good predictors for larger, and harder to learn, classes. In this chapter we will describe and analyze a practically useful boosting algorithm, AdaBoost (a shorthand for Adaptive Boosting). The AdaBoost algorithm outputs a hypothesis that is a linear combination of simple hypotheses. In other words, AdaBoost relies on the family of hypothesis classes obtained by composing a linear predictor on top of simple classes. We will show that AdaBoost enables us to control the tradeoff between the approximation and estimation errors by varying a single parameter. AdaBoost demonstrates a general theme, that will recur later in the book, of expanding the expressiveness of linear predictors by composing them on top of other functions. This will be elaborated in Section 10.3. AdaBoost stemmed from the theoretical question of whether an efficient weak learner can be “boosted” into an efficient strong learner. This question was raised
+
+<!-- page: 131 -->
+
+by Kearns and Valiant in 1988 and solved in 1990 by Robert Schapire, then a graduate student at MIT. However, the proposed mechanism was not very practical. In 1995, Robert Schapire and Yoav Freund proposed the AdaBoost algorithm, which was the first truly practical implementation of boosting. This simple and elegant algorithm became hugely popular, and Freund and Schapire’s work has been recognized by numerous awards. Furthermore, boosting is a great example for the practical impact of learning theory. While boosting originated as a purely theoretical problem, it has led to popular and widely used algorithms. Indeed, as we shall demonstrate later in this chapter, AdaBoost has been successfully used for learning to detect faces in images.
+### 10.1   Weak Learnability
+Recall the definition of PAC learning given in Chapter 3: A hypothesis class, H, is PAC learnable if there exist mH : (0, 1)2 → N and a learning algorithm with the following property: For every ε, δ ∈ (0, 1), for every distribution D over X , and for every labeling function f : X → {\pm 1}, if the realizable assumption holds with respect to H, D, f , then when running the learning algorithm on m \geq  mH (ε, δ) i.i.d. examples generated by D and labeled by f , the algorithm returns a hypothesis h such that, with probability of at least 1-δ, L(D,f ) (h) \leq  ε.
+Furthermore, the fundamental theorem of learning theory (Theorem 6.8 in Chapter 6) characterizes the family of learnable classes and states that every PAC learnable class can be learned using any ERM algorithm. However, the definition of PAC learning and the fundamental theorem of learning theory ignores the computational aspect of learning. Indeed, as we have shown in Chapter 8, there are cases in which implementing the ERM rule is computationally hard (even in the realizable case). However, perhaps we can trade computational hardness with the requirement for accuracy. Given a distribution D and a target labeling function f , maybe there exists an efficiently computable learning algorithm whose error is just slightly better than a random guess? This motivates the following definition. definition 10.1 (γ-Weak-Learnability)
+- A learning algorithm, A, is a γ-weak-learner for a class H if there exists a func-
+tion mH : (0, 1) → N such that for every δ ∈ (0, 1), for every distribution D over X , and for every labeling function f : X → {\pm 1}, if the realizable assumption holds with respect to H, D, f , then when running the learning algorithm on m \geq  mH (δ) i.i.d. examples generated by D and labeled by f , the algorithm returns a hypothesis h such that, with probability of at least
+## 1 - δ, L(D,f ) (h) \leq  1/2 - γ.
+- A hypothesis class H is γ-weak-learnable if there exists a γ-weak-learner for
+that class.
+
+<!-- page: 132 -->
+
+This definition is almost identical to the definition of PAC learning, which here we will call strong learning, with one crucial difference: Strong learnability implies the ability to find an arbitrarily good classifier (with error rate at most ε for an arbitrarily small ε > 0). In weak learnability, however, we only need to output a hypothesis whose error rate is at most 1/2 - γ, namely, whose error rate is slightly better than what a random labeling would give us. The hope is that it may be easier to come up with efficient weak learners than with efficient (full) PAC learners. The fundamental theorem of learning (Theorem 6.8) states that if a hypothesis class H has a VC dimension d, then the sample complexity of PAC learning H satisfies mH (ε, δ) \geq  C1 d+log(1/δ)
+ε     , where C1 is a constant. Applying this with ε = 1/2-γ we immediately obtain that if d = ∞ then H is not γ-weak-learnable. This implies that from the statistical perspective (i.e., if we ignore computational complexity), weak learnability is also characterized by the VC dimension of H and therefore is just as hard as PAC (strong) learning. However, when we do consider computational complexity, the potential advantage of weak learning is that maybe there is an algorithm that satisfies the requirements of weak learning and can be implemented efficiently. One possible approach is to take a “simple” hypothesis class, denoted B, and to apply ERM with respect to B as the weak learning algorithm. For this to work, we need that B will satisfy two requirements:
+- ERMB is efficiently implementable.
+- For every sample that is labeled by some hypothesis from H, any ERMB
+hypothesis will have an error of at most 1/2 - γ.
+Then, the immediate question is whether we can boost an efficient weak learner into an efficient strong learner. In the next section we will show that this is indeed possible, but before that, let us show an example in which efficient weak learnability of a class H is possible using a base hypothesis class B. Example 10.1 (Weak Learning of 3-Piece Classifiers Using Decision Stumps) Let X = R and let H be the class of 3-piece classifiers, namely, H = {hθ1 ,θ2 ,b : θ1 , θ2 ∈ R, θ1 < θ2 , b ∈ {\pm 1}}, where for every x,
+$$
+( +b if x < \theta_1 or x > \theta_2 h\theta_1 ,\theta_2 ,b (x) = -b if \theta_1 \le x \le \theta_2
+$$
+An example hypothesis (for b = 1) is illustrated as follows:
++               -              +
+θ1                   θ2
+Let B be the class of Decision Stumps, that is, B = {x 7→ sign(x - θ) · b : θ ∈ R, b ∈ {\pm 1}}. In the following we show that ERMB is a γ-weak learner for H, for γ = 1/12.
+
+<!-- page: 133 -->
+
+To see that, we first show that for every distribution that is consistent with H, there exists a decision stump with LD (h) \leq  1/3. Indeed, just note that every classifier in H consists of three regions (two unbounded rays and a center interval) with alternate labels. For any pair of such regions, there exists a decision stump that agrees with the labeling of these two components. Note that for every distribution D over R and every partitioning of the line into three such regions, one of these regions must have D-weight of at most 1/3. Let h ∈ H be a zero error hypothesis. A decision stump that disagrees with h only on such a region has an error of at most 1/3. Finally, since the VC-dimension of decision stumps is 2, if the sample size is greater than \Omega(log(1/δ)/ε2 ), then with probability of at least 1 - δ, the ERMB rule returns a hypothesis with an error of at most 1/3 + ε. Setting ε = 1/12 we obtain that the error of ERMB is at most 1/3 + 1/12 = 1/2 - 1/12. We see that ERMB is a γ-weak learner for H. We next show how to implement the ERM rule efficiently for decision stumps.
+#### 10.1.1   Efficient Implementation of ERM for Decision Stumps
+Let X = Rd and consider the base hypothesis class of decision stumps over Rd , namely,
+HDS = {x 7→ sign(θ - xi ) · b : θ ∈ R, i ∈ [d], b ∈ {\pm 1}}. For simplicity, assume that b = 1; that is, we focus on all the hypotheses in HDS of the form sign(θ - xi ). Let S = ((x1 , y1 ), . . . , (xm , ym )) be a training set. We will show how to implement an ERM rule, namely, how to find a decision stump that minimizes LS (h). Furthermore, since in the next section we will show that AdaBoost requires finding a hypothesis with a small risk relative to some distribution over S, we will show here how to minimize such risk functions. Concretely, let D be a probability vector in Rm (that is, all elements of D are
+P nonnegative and i Di = 1). The weak learner we describe later receives D and S and outputs a decision stump h : X → Y that minimizes the risk w.r.t. D,
+$$
+m X LD (h) =         Di 1[h(xi )\neq yi ] . i=1
+$$
+Note that if D = (1/m, . . . , 1/m) then LD (h) = LS (h). Recall that each decision stump is parameterized by an index j ∈ [d] and a threshold θ. Therefore, minimizing LD (h) amounts to solving the problem
+(                                          )
+$$
+\sum_{X} min min (           Di 1[xi,j >\theta] +     Di 1[xi,j \le\theta] ) . (10.1) j\in[d]   \theta\in R i:yi =1                  i:yi =-1
+$$
+$$
+Fix j \in [d] and let us sort the examples so that x_1,j \le x_2,j \le . . . \le xm,j . Define
+$$
+$$
+x +x Θj = \{ i,j 2 i+1,j : i \in [m - 1]\} \cup \{(x_1,j - 1), (xm,j + 1)\}. Note that for any \theta \in R there exists \theta_0 \in Θj that yields the same predictions for the sample S as the
+$$
+
+<!-- page: 134 -->
+
+threshold θ. Therefore, instead of minimizing over θ ∈ R we can minimize over
+θ ∈ Θj .
+This already gives us an efficient procedure: Choose j ∈ [d] and θ ∈ Θj that
+minimize the objective value of Equation (10.1). For every j and θ ∈ Θj we
+have to calculate a sum over m examples; therefore the runtime of this approach
+would be O(dm2 ). We next show a simple trick that enables us to minimize the
+objective in time O(dm).
+The observation is as follows. Suppose we have calculated the objective for
+θ ∈ (xi-1,j , xi,j ). Let F (θ) be the value of the objective. Then, when we consider
+θ0 ∈ (xi,j , xi+1,j ) we have that
+F (θ0 ) = F (θ) - Di 1[yi =1] + Di 1[yi =-1] = F (θ) - yi Di .
+Therefore, we can calculate the objective at θ0 in a constant time, given the
+objective at the previous threshold, θ. It follows that after a preprocessing step
+in which we sort the examples with respect to each coordinate, the minimization
+problem can be performed in time O(dm). This yields the following pseudocode.
+```
+ERM for Decision Stumps
+input:
+training set S = (x1 , y1 ), . . . , (xm , ym )
+distribution vector D
+goal: Find j ? , θ? that solve Equation (10.1)
+initialize: F ? = ∞
+for j = 1, . . . , d
+sort S using the j’th coordinate, and denote
+def
+x1,j \leq  x2,j \leq  · · · \leq  xm,j \leq  xm+1,j = xm,j + 1
+P
+F = i:yi =1 Di
+if F < F ?
+F ? = F , θ? = x1,j - 1, j ? = j
+for i = 1, . . . , m
+F = F - yi Di
+if F < F ? and xi,j \neq  xi+1,j
+F ? = F , θ? = 21 (xi,j + xi+1,j ), j ? = j
+output j ? , θ?
+```
+### 10.2   AdaBoost
+AdaBoost (short for Adaptive Boosting) is an algorithm that has access to a
+weak learner and finds a hypothesis with a low empirical risk. The AdaBoost
+algorithm receives as input a training set of examples S = (x1 , y1 ), . . . , (xm , ym ),
+where for each i, yi = f (xi ) for some labeling function f . The boosting process
+proceeds in a sequence of consecutive rounds. At round t, the booster first defines
+
+<!-- page: 135 -->
+
+a distribution over the examples in S, denoted D(t) . That is, D(t) ∈ Rm+ and Pm      (t)                                               (t) i=1 Di = 1. Then, the booster passes the distribution D     and the sample S to the weak learner. (That way, the weak learner can construct i.i.d. examples according to D(t) and f .) The weak learner is assumed to return a “weak” hypothesis, ht , whose error,
+$$
+m (t) X \epsilon_t = LD(t) (ht ) =            Di 1[ht (xi )\neq yi ] , i=1
+$$
+is at most 12 -γ (of course, there is a probability of at most δ that the weak
+( learner
+) fails). Then, AdaBoost assigns a weight for ht as follows: wt = 12 log ε1t - 1 . That is, the weight of ht is inversely proportional to the error of ht . At the end of the round, AdaBoost updates the distribution so that examples on which ht errs will get a higher probability mass while examples on which ht is correct will get a lower probability mass. Intuitively, this will force the weak learner to focus on the problematic examples in the next round. The output of the AdaBoost algorithm is a “strong” classifier that is based on a weighted sum of all the weak hypotheses. The pseudocode of AdaBoost is presented in the following.
+```
+AdaBoost
+input:
+training set S = (x1 , y1 ), . . . , (xm , ym )
+weak learner WL
+number of rounds T
+1        1
+initialize D(1) = ( m    ,..., m  ).
+for t = 1, . . . , T :
+invoke weak learner ht = WL(D(t) , S)
+Pm     (t)
+compute εt = ( i=1 D)i 1[yi \neq ht (xi )]
+let wt = 12 log1
+εt - 1
+(t)
+(t+1)      D exp(-wt yi ht (xi ))
+update Di      = Pm i (t)                      for all i = 1, . . . , m
+j=1 Dj exp(-wt yj(ht (xj ))
+)
+PT
+output the hypothesis hs (x) = sign        t=1 wt ht (x) .
+```
+The following theorem shows that the training error of the output hypothesis decreases exponentially fast with the number of boosting rounds.
+theorem 10.2 Let S be a training set and assume that at each iteration of
+AdaBoost, the weak learner returns a hypothesis for which εt \leq  1/2 - γ. Then,
+the training error of the output hypothesis of AdaBoost is at most
+m
+1 X
+LS (hs ) =         1[h (x )\neq y ] \leq  exp(-2 γ 2 T ) .
+m i=1 s i i
+P
+Proof   For each t, denote ft =         p\leq t wp hp . Therefore, the output of AdaBoost
+
+<!-- page: 136 -->
+
+$$
+is fT . In addition, denote m 1 X -yi ft (xi ) Zt =          e          . m i=1
+$$
+$$
+Note that for any hypothesis we have that 1[h(x)\neq y] \le e-yh(x) . Therefore, LS (fT ) \le
+$$
+2 ZT , so it suffices to show that ZT \leq  e-2γ T . To upper bound ZT we rewrite it as ZT     ZT    ZT -1       Z2 Z1 ZT =      =      ·         ···   ·    ,                (10.2) Z0    ZT -1 ZT -2        Z1 Z0 where we used the fact that Z0 = 1 because f0 ≡ 0. Therefore, it suffices to show that for every round t, Zt+1         2 \leq  e-2γ .                              (10.3) Zt To do so, we first note that using a simple inductive argument, for all t and i,
+$$
+(t+1)       e-yi ft (xi ) Di          = Pm -y f (x ) . j=1 e j t  j
+$$
+Hence,
+$$
+Pm      -yi ft+1 (xi ) Zt+1        i=1 e =       m Zt
+$$
+$$
+e-yj ft (xj ) P j=1 Pm         -yi ft (xi ) -yi wt+1 ht+1 (xi ) i=1 e                e =                 m
+$$
+$$
+e-yj ft (xj ) P j=1 m (t+1) -yi wt+1 ht+1 (xi ) X =         Di       e i=1
+$$
+$$
+(t+1)                                   (t+1) X                                    X = e-wt+1                           Di       + ewt+1                        Di i:yi ht+1 (xi )=1                      i:yi ht+1 (xi )=-1 -wt+1                         wt+1 =e       (1 - \epsilon_t+1 ) + e    \epsilon_t+1
+$$
+1                     p =p              (1 - εt+1 ) + 1/εt+1 - 1 εt+1 1/εt+1 - 1
+s
+1 - εt+1 r εt+1 =            (1 - εt+1 ) +             εt+1
+1 - εt+1                    εt+1 p = 2 εt+1 (1 - εt+1 ).
+$$
+By our assumption, \epsilon_t+1 \le 21 - \gamma. Since the function g(a) = a(1 - a) is monotonically increasing in [0, 1/2], we obtain that s(        )(      ) p p                         1        1 2 \epsilon_t+1 (1 - \epsilon_t+1 ) \le 2       -\gamma       + \gamma = 1 - 4\gamma 2 . 2        2
+$$
+
+<!-- page: 137 -->
+
+$$
+p                2 Finally, using the inequality 1 - a \le e-a we have that 1 - 4\gamma 2 \le e-4\gamma /2 = 2 e-2\gamma . This shows that Equation (10.3) holds and thus concludes our proof.
+$$
+Each iteration of AdaBoost involves O(m) operations as well as a single call to the weak learner. Therefore, if the weak learner can be implemented efficiently (as happens in the case of ERM with respect to decision stumps) then the total training process will be efficient. Remark 10.2 Theorem 10.2 assumes that at each iteration of AdaBoost, the weak learner returns a hypothesis with weighted sample error of at most 1/2 - γ. According to the definition of a weak learner, it can fail with probability δ. Using the union bound, the probability that the weak learner will not fail at all of the iterations is at least 1 - δT . As we show in Exercise 1, the dependence of the sample complexity on δ can always be logarithmic in 1/δ, and therefore invoking the weak learner with a very small δ is not problematic. We can therefore assume that δT is also small. Furthermore, since the weak learner is only applied with distributions over the training set, in many cases we can implement the weak learner so that it will have a zero probability of failure (i.e., δ = 0). This is the case, for example, in the weak learner that finds the minimum value of LD (h) for decision stumps, as described in the previous section. Theorem 10.2 tells us that the empirical risk of the hypothesis constructed by AdaBoost goes to zero as T grows. However, what we really care about is the true risk of the output hypothesis. To argue about the true risk, we note that the output of AdaBoost is in fact a composition of a halfspace over the predictions of the T weak hypotheses constructed by the weak learner. In the next section we show that if the weak hypotheses come from a base hypothesis class of low VC-dimension, then the estimation error of AdaBoost will be small; namely, the true risk of the output of AdaBoost would not be very far from its empirical risk.
+### 10.3   Linear Combinations of Base Hypotheses
+As mentioned previously, a popular approach for constructing a weak learner is to apply the ERM rule with respect to a base hypothesis class (e.g., ERM over decision stumps). We have also seen that boosting outputs a composition of a halfspace over the predictions of the weak hypotheses. Therefore, given a base hypothesis class B (e.g., decision stumps), the output of AdaBoost will be a member of the following class:
+(              T
+!                      ) X
+$$
+T L(B, T ) = x 7\to sign       wt ht (x) : w \in R , \forall t, ht \in B .        (10.4) t=1
+$$
+That is, each h ∈ L(B, T ) is parameterized by T base hypotheses from B and by a vector w ∈ RT . The prediction of such an h on an instance x is obtained by first applying the T base hypotheses to construct the vector ψ(x) =
+
+<!-- page: 138 -->
+
+(h1 (x), . . . , hT (x)) ∈ RT , and then applying the (homogenous) halfspace defined by w on ψ(x). In this section we analyze the estimation error of L(B, T ) by bounding the VC-dimension of L(B, T ) in terms of the VC-dimension of B and T . We will show that, up to logarithmic factors, the VC-dimension of L(B, T ) is bounded by T times the VC-dimension of B. It follows that the estimation error of Ad-aBoost grows linearly with T . On the other hand, the empirical risk of AdaBoost decreases with T . In fact, as we demonstrate later, T can be used to decrease the approximation error of L(B, T ). Therefore, the parameter T of AdaBoost enables us to control the bias-complexity tradeoff. To demonstrate how the expressive power of L(B, T ) increases with T , consider the simple example, in which X = R and the base class is Decision Stumps,
+HDS1 = {x 7→ sign(x - θ) · b : θ ∈ R, b ∈ {\pm 1}}. Note that in this one dimensional case, HDS1 is in fact equivalent to (nonho-mogenous) halfspaces on R. Now, let H be the rather complex class (compared to halfspaces on the line) of piece-wise constant functions. Let gr be a piece-wise constant function with at most r pieces; that is, there exist thresholds -∞ = θ0 < θ1 < θ2 < · · · < θr = ∞ such that
+$$
+\sum_{r} gr (x) =     \alpha_i 1[x\in(\theta_i-1 ,\theta_i ]] \forall i, \alpha_i \in \{\pm 1\}. i=1
+$$
+Denote by Gr the class of all such piece-wise constant classifiers with at most r pieces. In the following we show that GT ⊆ L(HDS1 , T ); namely, the class of halfspaces over T decision stumps yields all the piece-wise constant classifiers with at most T pieces. Indeed, without loss of generality consider any g ∈ GT with αt = (-1)t . This implies that if x is in the interval (θt-1 , θt ], then g(x) = (-1)t . For example:
+$$
+Now, the function T ! X h(x) = sign         wt sign(x - \theta_t-1 ) ,               (10.5) t=1
+$$
+$$
+where w_1 = 0.5 and for t > 1, wt = (-1)t , is in L(HDS1 , T ) and is equal to g (see Exercise 2).
+$$
+
+<!-- page: 139 -->
+
+From this example we obtain that L(HDS1 , T ) can shatter any set of T + 1 instances in R; hence the VC-dimension of L(HDS1 , T ) is at least T +1. Therefore, T is a parameter that can control the bias-complexity tradeoff: Enlarging T yields a more expressive hypothesis class but on the other hand might increase the estimation error. In the next subsection we formally upper bound the VC-dimension of L(B, T ) for any base class B.
+#### 10.3.1   The VC-Dimension of L(B, T )
+The following lemma tells us that the VC-dimension of L(B, T ) is upper bounded by Õ(VCdim(B) T ) (the Õ notation ignores constants and logarithmic factors).
+lemma 10.3 Let B be a base class and let L(B, T ) be as defined in Equation (10.4). Assume that both T and VCdim(B) are at least 3. Then,
+$$
+VCdim(L(B, T )) \le T (VCdim(B) + 1) (3 log(T (VCdim(B) + 1)) + 2).
+$$
+Proof Denote d = VCdim(B). Let C = {x1 , . . . , xm } be a set that is shattered by L(B, T ). Each labeling of C by h ∈ L(B, T ) is obtained by first choosing h1 , . . . , hT ∈ B and then applying a halfspace hypothesis over the vector (h1 (x), . . . , hT (x)). By Sauer’s lemma, there are at most (em/d)d different di-chotomies (i.e., labelings) induced by B over C. Therefore, we need to choose T hypotheses, out of at most (em/d)d different hypotheses. There are at most (em/d)dT ways to do it. Next, for each such choice, we apply a linear predictor, which yields at most (em/T )T dichotomies. Therefore, the overall number of dichotomies we can construct is upper bounded by
+$$
+(em/d)dT (em/T )T \le m(d+1)T ,
+$$
+where we used the assumption that both d and T are at least 3. Since we assume that C is shattered, we must have that the preceding is at least 2m , which yields
+$$
+2m \le m(d+1)T .
+$$
+Therefore,
+(d + 1)T m \leq  log(m)            . log(2) Lemma A.1 in Chapter A tells us that a necessary condition for the above to hold is that (d + 1)T     (d + 1)T m\leq 2             log          \leq  (d + 1)T (3 log((d + 1)T ) + 2), log(2)       log(2) which concludes our proof.
+In Exercise 4 we show that for some base classes, B, it also holds that VCdim(L(B, T )) \geq  \Omega(VCdim(B) T ).
+
+<!-- page: 140 -->
+
+A                                         B
+C                                         D
+![Hinh: fig-140-1]
+Figure 10.1 The four types of functions, g, used by the base hypotheses for face recognition. The value of g for type A or B is the difference between the sum of the pixels within two rectangular regions. These regions have the same size and shape and are horizontally or vertically adjacent. For type C, the value of g is the sum within two outside rectangles subtracted from the sum in a center rectangle. For type D, we compute the difference between diagonal pairs of rectangles.
+### 10.4   AdaBoost for Face Recognition
+We now turn to a base hypothesis that has been proposed by Viola and Jones for the task of face recognition. In this task, the instance space is images, represented as matrices of gray level values of pixels. To be concrete, let us take images of size 24 × 24 pixels, and therefore our instance space is the set of real valued matrices of size 24 × 24. The goal is to learn a classifier, h : X → {\pm 1}, that given an image as input, should output whether the image is of a human face or not.
+Each hypothesis in the base class is of the form h(x) = f (g(x)), where f is a decision stump hypothesis and g : R24,24 → R is a function that maps an image to a scalar. Each function g is parameterized by
+- An axis aligned rectangle R. Since each image is of size 24 × 24, there are at
+most 244 axis aligned rectangles.
+- A type, t ∈ {A, B, C, D}. Each type corresponds to a mask, as depicted in
+
+Figure 10.1. To calculate g we stretch the mask t to fit the rectangle R and then calculate the sum of the pixels (that is, sum of their gray level values) that lie within the red rectangles and subtract it from the sum of pixels in the blue rectangles. Since the number of such functions g is at most 244 · 4, we can implement a weak learner for the base hypothesis class by first calculating all the possible outputs of g on each image, and then apply the weak learner of decision stumps described in the previous subsection. It is possible to perform the first step very
+
+<!-- page: 141 -->
+
+![Hinh: fig-141-1]
+Figure 10.2 The first and second features selected by AdaBoost, as implemented by Viola and Jones. The two features are shown in the top row and then overlaid on a typical training face in the bottom row. The first feature measures the difference in intensity between the region of the eyes and a region across the upper cheeks. The feature capitalizes on the observation that the eye region is often darker than the cheeks. The second feature compares the intensities in the eye regions to the intensity across the bridge of the nose.
+efficiently by a preprocessing step in which we calculate the integral image of each image in the training set. See Exercise 5 for details. In Figure 10.2 we depict the first two features selected by AdaBoost when running it with the base features proposed by Viola and Jones.
+## 10.5 Summary
+Boosting is a method for amplifying the accuracy of weak learners. In this chapter we described the AdaBoost algorithm. We have shown that after T iterations of AdaBoost, it returns a hypothesis from the class L ( B, T ), obtained by composing a linear classifier on T hypotheses from a base class B . We have demonstrated how the parameter T controls the tradeoff between approximation and estimation errors. In the next chapter we will study how to tune parameters such as T , based on the data.
+## 10.6 Bibliographic Remarks
+As mentioned before, boosting stemmed from the theoretical question of whether an efficient weak learner can be “boosted” into an efficient strong learner (Kearns & Valiant 1988) and solved by Schapire (1990). The AdaBoost algorithm has been proposed in Freund & Schapire (1995). Boosting can be viewed from many perspectives. In the purely theoretical context, AdaBoost can be interpreted as a negative result: If strong learning of a hypothesis class is computationally hard, so is weak learning of this class. This negative result can be useful for showing hardness of agnostic PAC learning of a class B based on hardness of PAC learning of some other class H , as long as
+
+<!-- page: 142 -->
+
+H is weakly learnable using B. For example, Klivans & Sherstov (2006) have shown that PAC learning of the class of intersection of halfspaces is hard (even in the realizable case). This hardness result can be used to show that agnostic PAC learning of a single halfspace is also computationally hard (Shalev-Shwartz, Shamir & Sridharan 2010). The idea is to show that an agnostic PAC learner for a single halfspace can yield a weak learner for the class of intersection of halfspaces, and since such a weak learner can be boosted, we will obtain a strong learner for the class of intersection of halfspaces.
+AdaBoost also shows an equivalence between the existence of a weak learner and separability of the data using a linear classifier over the predictions of base hypotheses. This result is closely related to von Neumann’s minimax theorem (von Neumann 1928), a fundamental result in game theory. AdaBoost is also related to the concept of margin, which we will study later on in Chapter 15. It can also be viewed as a forward greedy selection algorithm, a topic that will be presented in Chapter 25. A recent book by Schapire & Freund (2012) covers boosting from all points of view, and gives easy access to the wealth of research that this field has produced.
+### 10.7   Exercises
+1. Boosting the Confidence: Let A be an algorithm that guarantees the fol-
+lowing: There exist some constant δ0 ∈ (0, 1) and a function mH : (0, 1) → N such that for every ε ∈ (0, 1), if m \geq  mH (ε) then for every distribution D it holds that with probability of at least 1 - δ0 , LD (A(S)) \leq  minh∈H LD (h) + ε.
+Suggest a procedure that relies on A and learns H in the usual agnostic PAC learning model and has a sample complexity of
+⌈             ⌉
+$$
+2 log(4k/\delta) mH (\epsilon, \delta) \le k mH (\epsilon) +                  ,
+$$
+ε2 where k = dlog(δ)/ log(δ0 )e.
+Hint: Divide the data into k + 1 chunks, where each of the first k chunks
+is of size mH (ε) examples. Train the first k chunks using A. Argue that the
+probability that for all of these chunks we have LD (A(S)) > minh∈H LD (h)+ε
+is at most δ0k \leq  δ/2. Finally, use the last chunk to choose from the k hypotheses
+that A generated from the k chunks (by relying on Corollary 4.6).
+2. Prove that the function h given in Equation (10.5) equals the piece-wise con-
+stant function defined according to the same thresholds as h.
+3. We have informally argued that the AdaBoost algorithm uses the weighting
+mechanism to “force” the weak learner to focus on the problematic examples
+in the next iteration. In this question we will find some rigorous justification
+for this argument.
+
+<!-- page: 143 -->
+
+Show that the error of ht w.r.t. the distribution D(t+1) is exactly 1/2. That is, show that for every t ∈ [T ]
+$$
+m (t+1) X Di       1[yi \neq ht (xi )] = 1/2. i=1
+$$
+4. In this exercise we discuss the VC-dimension of classes of the form L(B, T ).
+We proved an upper bound of O(dT log(dT )), where d = VCdim(B). Here we wish to prove an almost matching lower bound. However, that will not be the case for all classes B.
+1. Note that for every class B and every number T \geq  1, VCdim(B) \leq 
+$$
+VCdim(L(B, T )). Find a class B for which VCdim(B) = VCdim(L(B, T )) for every T \ge 1. Hint: Take X to be a finite set.
+$$
+2. Let Bd be the class of decision stumps over Rd . Prove that log(d) \leq 
+$$
+VCdim(Bd ) \le 5 + 2 log(d). Hints:
+$$
+- For the upper bound, rely on Exercise 11.
+- For the lower bound, assume d = 2k . Let A be a k × d matrix whose
+columns are all the d binary vectors in {\pm 1}k . The rows of A form a set of k vectors in Rd . Show that this set is shattered by decision stumps over Rd .
+3. Let T \geq  1 be any integer. Prove that VCdim(L(Bd , T )) \geq  0.5 T log(d).
+Hint: Construct a set of T2 k instances by taking the rows of the matrix A from the previous question, and the rows of the matrices 2A, 3A, 4A, . . . , T2 A. Show that the resulting set is shattered by L(Bd , T ).
+5. Efficiently Calculating the Viola and Jones Features Using an Inte-
+gral Image: Let A be a 24 × 24 matrix representing an image. The integral
+$$
+P image of A, denoted by I(A), is the matrix B such that Bi,j = i_0 \le i,j 0 \le j Ai,j .
+$$
+- Show that I(A) can be calculated from A in time linear in the size of A.
+- Show how every Viola and Jones feature can be calculated from I(A) in a
+constant amount of time (that is, the runtime does not depend on the size of the rectangle defining the feature).
+
+<!-- page: 144 -->
+
+## 11 Model Selection and Validation
+In the previous chapter we have described the AdaBoost algorithm and have
+shown how the parameter T of AdaBoost controls the bias-complexity trade-
+off. But, how do we set T in practice? More generally, when approaching some
+practical problem, we usually can think of several algorithms that may yield a
+good solution, each of which might have several parameters. How can we choose
+the best algorithm for the particular problem at hand? And how do we set the
+algorithm’s parameters? This task is often called model selection.
+To illustrate the model selection task, consider the problem of learning a one
+dimensional regression function, h : R → R. Suppose that we obtain a training
+set as depicted in the figure.
+We can consider fitting a polynomial to the data, as described in Chapter 9. However, we might be uncertain regarding which degree d would give the best results for our data set: A small degree may not fit the data well (i.e., it will have a large approximation error), whereas a high degree may lead to overfitting (i.e., it will have a large estimation error). In the following we depict the result of fitting a polynomial of degrees 2, 3, and 10. It is easy to see that the empirical risk decreases as we enlarge the degree. However, looking at the graphs, our intuition tells us that setting the degree to 3 may be better than setting it to 10. It follows that the empirical risk alone is not enough for model selection.
+degree 2                      degree 3                      degree 10
+
+<!-- page: 145 -->
+
+In this chapter we will present two approaches for model selection. The first
+approach is based on the Structural Risk Minimization (SRM) paradigm we
+have described and analyzed in Chapter 7.2. SRM is particularly useful when
+a learning algorithm depends on a parameter that controls the bias-complexity
+tradeoff (such as the degree of the fitted polynomial in the preceding example
+or the parameter T in AdaBoost). The second approach relies on the concept
+of validation. The basic idea is to partition the training set into two sets. One
+is used for training each of the candidate models, and the second is used for
+deciding which of them yields the best results.
+In model selection tasks, we try to find the right balance between approxi-
+mation and estimation errors. More generally, if our learning algorithm fails to
+find a predictor with a small risk, it is important to understand whether we
+suffer from overfitting or underfitting. In Section 11.3 we discuss how this can
+be achieved.
+### 11.1   Model Selection Using SRM
+The SRM paradigm has been described and analyzed in Section 7.2. Here we
+show how SRM can be used for tuning the tradeoff between bias and complexity
+without deciding on a specific hypothesis class in advance. Consider a countable
+sequence of hypothesis classes H1 , H2 , H3 , . . .. For example, in the problem of
+polynomial regression mentioned, we can take Hd to be the set of polynomials
+of degree at most d. Another example is taking Hd to be the class L(B, d) used
+by AdaBoost, as described in the previous chapter.
+We assume that for every d, the class Hd enjoys the uniform convergence
+property (see Definition 4.3 in Chapter 4) with a sample complexity function of
+the form
+g(d) log(1/δ)
+mUCHd (ε, δ) \leq                 ,                    (11.1)
+ε2
+where g : N → R is some monotonically increasing function. For example, in the
+case of binary classification problems, we can take g(d) to be the VC-dimension
+of the class Hd multiplied by a universal constant (the one appearing in the
+fundamental theorem of learning; see Theorem 6.8). For the classes L(B, d) used
+by AdaBoost, the function g will simply grow with d.
+Recall that the SRM rule follows a “bound minimization” approach, where in
+our case the bound is as follows: With probability of at least 1 - δ, for every
+d ∈ N and h ∈ Hd ,
+r
+g(d)(log(1/δ) + 2 log(d) + log(π 2 /6))
+LD (h) \leq  LS (h) +                                             .  (11.2)
+m
+This bound, which follows directly from Theorem 7.4, shows that for every d and
+every h ∈ Hd , the true risk is bounded by two terms – the empirical risk, LS (h),
+
+<!-- page: 146 -->
+
+and a complexity term that depends on d. The SRM rule will search for d and h ∈ Hd that minimize the right-hand side of Equation (11.2).
+Getting back to the example of polynomial regression described earlier, even though the empirical risk of the 10th degree polynomial is smaller than that of the 3rd degree polynomial, we would still prefer the 3rd degree polynomial since its complexity (as reflected by the value of the function g(d)) is much smaller. While the SRM approach can be useful in some situations, in many practical cases the upper bound given in Equation (11.2) is pessimistic. In the next section we present a more practical approach.
+### 11.2     Validation
+We would often like to get a better estimation of the true risk of the output predictor of a learning algorithm. So far we have derived bounds on the estimation error of a hypothesis class, which tell us that for all hypotheses in the class, the true risk is not very far from the empirical risk. However, these bounds might be loose and pessimistic, as they hold for all hypotheses and all possible data distributions. A more accurate estimation of the true risk can be obtained by using some of the training data as a validation set, over which one can evalutate the success of the algorithm’s output predictor. This procedure is called validation.
+Naturally, a better estimation of the true risk is useful for model selection, as we will describe in Section 11.2.2.
+#### 11.2.1   Hold Out Set
+The simplest way to estimate the true error of a predictor h is by sampling an additional set of examples, independent of the training set, and using the empirical error on this validation set as our estimator. Formally, let V = (x1 , y1 ), . . . , (xmv , ymv ) be a set of fresh mv examples that are sampled according to D (independently of the m examples of the training set S). Using Hoeffding’s inequality ( Lemma 4.5) we have the following:
+theorem 11.1 Let h be some predictor and assume that the loss function is in [0, 1]. Then, for every δ ∈ (0, 1), with probability of at least 1 - δ over the choice of a validation set V of size mv we have
+s
+$$
+log(2/\delta) |LV (h) - LD (h)| \le                 .
+$$
+2 mv The bound in Theorem 11.1 does not depend on the algorithm or the training set used to construct h and is tighter than the usual bounds that we have seen so far. The reason for the tightness of this bound is that it is in terms of an estimate on a fresh validation set that is independent of the way h was generated. To illustrate this point, suppose that h was obtained by applying an ERM predictor
+
+<!-- page: 147 -->
+
+with respect to a hypothesis class of VC-dimension d, over a training set of m examples. Then, from the fundamental theorem of learning (Theorem 6.8) we obtain the bound
+r
+$$
+d + log(1/\delta) LD (h) \le LS (h) + C                 ,
+$$
+m where C is the constant appearing in Theorem 6.8. In contrast, from Theorem 11.1 we obtain the bound s log(2/δ) LD (h) \leq  LV (h) +            . 2mv Therefore, taking mv to be order of m, we obtain an estimate that is more accurate by a factor that depends on the VC-dimension. On the other hand, the price we pay for using such an estimate is that it requires an additional sample on top of the sample used for training the learner. Sampling a training set and then sampling an independent validation set is equivalent to randomly partitioning our random set of examples into two parts, using one part for training and the other one for validation. For this reason, the validation set is often referred to as a hold out set.
+#### 11.2.2   Validation for Model Selection
+Validation can be naturally used for model selection as follows. We first train different algorithms (or the same algorithm with different parameters) on the given training set. Let H = {h1 , . . . , hr } be the set of all output predictors of the different algorithms. For example, in the case of training polynomial regressors, we would have each hr be the output of polynomial regression of degree r. Now, to choose a single predictor from H we sample a fresh validation set and choose the predictor that minimizes the error over the validation set. In other words, we apply ERMH over the validation set.
+This process is very similar to learning a finite hypothesis class. The only difference is that H is not fixed ahead of time but rather depends on the training set. However, since the validation set is independent of the training set we get that it is also independent of H and therefore the same technique we used to derive bounds for finite hypothesis classes holds here as well. In particular, combining Theorem 11.1 with the union bound we obtain:
+theorem 11.2 Let H = {h1 , . . . , hr } be an arbitrary set of predictors and assume that the loss function is in [0, 1]. Assume that a validation set V of size mv is sampled independent of H. Then, with probability of at least 1 - δ over the choice of V we have
+s
+$$
+log(2|H|/\delta) \forall h \in H, |LD (h) - LV (h)| \le                    .
+$$
+## 2 mv
+
+<!-- page: 148 -->
+
+This theorem tells us that the error on the validation set approximates the true error as long as H is not too large. However, if we try too many methods (resulting in |H| that is large relative to the size of the validation set) then we’re in danger of overfitting. To illustrate how validation is useful for model selection, consider again the example of fitting a one dimensional polynomial as described in the beginning of this chapter. In the following we depict the same training set, with ERM polynomials of degree 2, 3, and 10, but this time we also depict an additional validation set (marked as red, unfilled circles). The polynomial of degree 10 has minimal training error, yet the polynomial of degree 3 has the minimal validation error, and hence it will be chosen as the best model.
+#### 11.2.3   The Model-Selection Curve
+The model selection curve shows the training error and validation error as a function of the complexity of the model considered. For example, for the polynomial fitting problem mentioned previously, the curve will look like:
+
+<!-- page: 149 -->
+
+### 0.4                                                          train
+validation
+0.3 error
+0.2
+0.1
+## 2       4          6      8       10
+d
+As can be shown, the training error is monotonically decreasing as we increase the polynomial degree (which is the complexity of the model in our case). On the other hand, the validation error first decreases but then starts to increase, which indicates that we are starting to suffer from overfitting.
+Plotting such curves can help us understand whether we are searching the correct regime of our parameter space. Often, there may be more than a single parameter to tune, and the possible number of values each parameter can take might be quite large. For example, in Chapter 13 we describe the concept of regularization, in which the parameter of the learning algorithm is a real number. In such cases, we start with a rough grid of values for the parameter(s) and plot the corresponding model-selection curve. On the basis of the curve we will zoom in to the correct regime and employ a finer grid to search over. It is important to verify that we are in the relevant regime. For example, in the polynomial fitting problem described, if we start searching degrees from the set of values {1, 10, 20} and do not employ a finer grid based on the resulting curve, we will end up with a rather poor model.
+#### 11.2.4   k-Fold Cross Validation
+The validation procedure described so far assumes that data is plentiful and that we have the ability to sample a fresh validation set. But in some applications, data is scarce and we do not want to “waste” data on validation. The k-fold cross validation technique is designed to give an accurate estimate of the true error without wasting too much data.
+In k-fold cross validation the original training set is partitioned into k subsets (folds) of size m/k (for simplicity, assume that m/k is an integer). For each fold, the algorithm is trained on the union of the other folds and then the error of its output is estimated using the fold. Finally, the average of all these errors is the
+
+<!-- page: 150 -->
+
+estimate of the true error. The special case k = m, where m is the number of examples, is called leave-one-out (LOO). k-Fold cross validation is often used for model selection (or parameter tuning), and once the best parameter is chosen, the algorithm is retrained using this parameter on the entire training set. A pseudocode of k-fold cross validation for model selection is given in the following. The procedure receives as input a training set, S, a set of possible parameter values, Θ, an integer, k, representing the number of folds, and a learning algorithm, A, which receives as input a training set as well as a parameter θ ∈ Θ. It outputs the best parameter as well as the hypothesis trained by this parameter on the entire training set.
+```
+k-Fold Cross Validation for Model Selection
+input:
+training set S = (x1 , y1 ), . . . , (xm , ym )
+set of parameter values Θ
+learning algorithm A
+integer k
+partition S into S1 , S2 , . . . , Sk
+foreach θ ∈ Θ
+for i = 1 . . . k
+hi,θ = A(S \ Si ; θ)
+Pk
+error(θ) = k1 i=1 LSi (hi,θ )
+output
+θ? = argminθ [error(θ)]
+hθ? = A(S; θ? )
+```
+The cross validation method often works very well in practice. However, it might sometime fail, as the artificial example given in Exercise 1 shows. Rigorously understanding the exact behavior of cross validation is still an open problem. Rogers and Wagner (Rogers & Wagner 1978) have shown that for k local rules (e.g., k Nearest Neighbor; see Chapter 19) the cross validation procedure gives a very good estimate of the true error. Other papers show that cross validation works for stable algorithms (we will study stability and its relation to learnability in Chapter 13).
+#### 11.2.5   Train-Validation-Test Split
+In most practical applications, we split the available examples into three sets. The first set is used for training our algorithm and the second is used as a validation set for model selection. After we select the best model, we test the performance of the output predictor on the third set, which is often called the “test set.” The number obtained is used as an estimator of the true error of the learned predictor.
+
+<!-- page: 151 -->
+
+### 11.3   What to Do If Learning Fails
+Consider the following scenario: You were given a learning task and have approached it with a choice of a hypothesis class, a learning algorithm, and parameters. You used a validation set to tune the parameters and tested the learned predictor on a test set. The test results, unfortunately, turn out to be unsatisfactory. What went wrong then, and what should you do next?
+There are many elements that can be “fixed.” The main approaches are listed in the following:
+- Get a larger sample
+- Change the hypothesis class by:
+- Enlarging it
+- Reducing it
+- Completely changing it
+- Changing the parameters you consider
+- Change the feature representation of the data
+- Change the optimization algorithm used to apply your learning rule
+In order to find the best remedy, it is essential first to understand the cause of the bad performance. Recall that in Chapter 5 we decomposed the true error of the learned predictor into approximation error and estimation error. The approximation error is defined to be LD (h? ) for some h? ∈ argminh∈H LD (h), while the estimation error is defined to be LD (hS ) - LD (h? ), where hS is the learned predictor (which is based on the training set S). The approximation error of the class does not depend on the sample size or on the algorithm being used. It only depends on the distribution D and on the hypothesis class H. Therefore, if the approximation error is large, it will not help us to enlarge the training set size, and it also does not make sense to reduce the hypothesis class. What can be beneficial in this case is to enlarge the hypothesis class or completely change it (if we have some alternative prior knowledge in the form of a different hypothesis class). We can also consider applying the same hypothesis class but on a different feature representation of the data (see Chapter 25). The estimation error of the class does depend on the sample size. Therefore, if we have a large estimation error we can make an effort to obtain more training examples. We can also consider reducing the hypothesis class. However, it doesn’t make sense to enlarge the hypothesis class in that case.
+Error Decomposition Using Validation We see that understanding whether our problem is due to approximation error or estimation error is very useful for finding the best remedy. In the previous section we saw how to estimate LD (hS ) using the empirical risk on a validation set. However, it is more difficult to estimate the approximation error of the class.
+
+<!-- page: 152 -->
+
+Instead, we give a different error decomposition, one that can be estimated from the train and validation sets.
+LD (hS ) = (LD (hS ) - LV (hS )) + (LV (hS ) - LS (hS )) + LS (hS ).
+The first term, (LD (hS ) - LV (hS )), can be bounded quite tightly using Theorem 11.1. Intuitively, when the second term, (LV (hS ) - LS (hS )), is large we say that our algorithm suffers from “overfitting” while when the empirical risk term, LS (hS ), is large we say that our algorithm suffers from “underfitting.” Note that these two terms are not necessarily good estimates of the estimation and approximation errors. To illustrate this, consider the case in which H is a class of VC-dimension d, and D is a distribution such that the approximation error of H with respect to D is 1/4. As long as the size of our training set is smaller than d we will have LS (hS ) = 0 for every ERM hypothesis. Therefore, the training risk, LS (hS ), and the approximation error, LD (h? ), can be significantly different. Nevertheless, as we show later, the values of LS (hS ) and (LV (hS ) - LS (hS )) still provide us useful information.
+Consider first the case in which LS (hS ) is large. We can write
+LS (hS ) = (LS (hS ) - LS (h? )) + (LS (h? ) - LD (h? )) + LD (h? ).
+When hS is an ERMH hypothesis we have that LS (hS )-LS (h? ) \leq  0. In addition, since h? does not depend on S, the term (LS (h? )-LD (h? )) can be bounded quite tightly (as in Theorem 11.1). The last term is the approximation error. It follows that if LS (hS ) is large then so is the approximation error, and the remedy to the failure of our algorithm should be tailored accordingly (as discussed previously). Remark 11.1 It is possible that the approximation error of our class is small, yet the value of LS (hS ) is large. For example, maybe we had a bug in our ERM implementation, and the algorithm returns a hypothesis hS that is not an ERM. It may also be the case that finding an ERM hypothesis is computationally hard, and our algorithm applies some heuristic trying to find an approximate ERM. In some cases, it is hard to know how good hS is relative to an ERM hypothesis. But, sometimes it is possible at least to know whether there are better hypotheses. For example, in the next chapter we will study convex learning problems in which there are optimality conditions that can be checked to verify whether our optimization algorithm converged to an ERM solution. In other cases, the solution may depend on randomness in initializing the algorithm, so we can try different randomly selected initial points to see whether better solutions pop out. Next consider the case in which LS (hS ) is small. As we argued before, this does not necessarily imply that the approximation error is small. Indeed, consider two scenarios, in both of which we are trying to learn a hypothesis class of VC-dimension d using the ERM learning rule. In the first scenario, we have a training set of m < d examples and the approximation error of the class is high. In the second scenario, we have a training set of m > 2d examples and the
+
+<!-- page: 153 -->
+
+error                                  error
+validation error                        vali
+da   tion
+erro
+r
+train error train error m                                                 m
+![Hinh: fig-153-1]
+Figure 11.1 Examples of learning curves. Left: This learning curve corresponds to the scenario in which the number of examples is always smaller than the VC dimension of the class. Right: This learning curve corresponds to the scenario in which the approximation error is zero and the number of examples is larger than the VC dimension of the class.
+approximation error of the class is zero. In both cases LS (hS ) = 0. How can we distinguish between the two cases?
+Learning Curves One possible way to distinguish between the two cases is by plotting learning curves. To produce a learning curve we train the algorithm on prefixes of the data of increasing sizes. For example, we can first train the algorithm on the first 10% of the examples, then on 20% of them, and so on. For each prefix we calculate the training error (on the prefix the algorithm is being trained on) and the validation error (on a predefined validation set). Such learning curves can help us distinguish between the two aforementioned scenarios. In the first scenario we expect the validation error to be approximately 1/2 for all prefixes, as we didn’t really learn anything. In the second scenario the validation error will start as a constant but then should start decreasing (it must start decreasing once the training set size is larger than the VC-dimension). An illustration of the two cases is given in Figure 11.1.
+In general, as long as the approximation error is greater than zero we expect the training error to grow with the sample size, as a larger amount of data points makes it harder to provide an explanation for all of them. On the other hand, the validation error tends to decrease with the increase in sample size. If the VC-dimension is finite, when the sample size goes to infinity, the validation and train errors converge to the approximation error. Therefore, by extrapolating the training and validation curves we can try to guess the value of the approximation error, or at least to get a rough estimate on an interval in which the approximation error resides. Getting back to the problem of finding the best remedy for the failure of our algorithm, if we observe that LS (hS ) is small while the validation error is large, then in any case we know that the size of our training set is not sufficient for learning the class H. We can then plot a learning curve. If we see that the
+
+<!-- page: 154 -->
+
+validation error is starting to decrease then the best solution is to increase the number of examples (if we can afford to enlarge the data). Another reasonable solution is to decrease the complexity of the hypothesis class. On the other hand, if we see that the validation error is kept around 1/2 then we have no evidence that the approximation error of H is good. It may be the case that increasing the training set size will not help us at all. Obtaining more data can still help us, as at some point we can see whether the validation error starts to decrease or whether the training error starts to increase. But, if more data is expensive, it may be better first to try to reduce the complexity of the hypothesis class.
+To summarize the discussion, the following steps should be applied:
+1. If learning involves parameter tuning, plot the model-selection curve to make
+sure that you tuned the parameters appropriately (see Section 11.2.3).
+2. If the training error is excessively large consider enlarging the hypothesis class,
+completely change it, or change the feature representation of the data.
+3. If the training error is small, plot learning curves and try to deduce from them
+whether the problem is estimation error or approximation error.
+4. If the approximation error seems to be small enough, try to obtain more data.
+If this is not possible, consider reducing the complexity of the hypothesis class.
+5. If the approximation error seems to be large as well, try to change the hy-
+pothesis class or the feature representation of the data completely.
+### 11.4   Summary
+Model selection is the task of selecting an appropriate model for the learning task based on the data itself. We have shown how this can be done using the SRM learning paradigm or using the more practical approach of validation. If our learning algorithm fails, a decomposition of the algorithm’s error should be performed using learning curves, so as to find the best remedy.
+### 11.5   Exercises
+1. Failure of k-fold cross validation Consider a case in that the label is
+chosen at random according to P[y = 1] = P[y = 0] = 1/2. Consider a learning algorithm that outputs the constant predictor h(x) = 1 if the parity of the labels on the training set is 1 and otherwise the algorithm outputs the constant predictor h(x) = 0. Prove that the difference between the leave-one-out estimate and the true error in such a case is always 1/2.
+2. Let H1 , . . . , Hk be k hypothesis classes. Suppose you are given m i.i.d. training
+$$
+examples and you would like to learn the class H = \cup ki=1 Hi . Consider two alternative approaches:
+$$
+- Learn H on the m examples using the ERM rule
+
+<!-- page: 155 -->
+
+- Divide the m examples into a training set of size (1 - α)m and a validation
+set of size αm, for some α ∈ (0, 1). Then, apply the approach of model selection using validation. That is, first train each class Hi on the (1 - α)m training examples using the ERM rule with respect to Hi , and let h{}1 , . . . , h{}k be the resulting hypotheses. Second, apply the ERM rule with respect to the finite class {h{}1 , . . . , h{}k } on the αm validation examples. Describe scenarios in which the first method is better than the second and vice versa.
+
+<!-- page: 156 -->
+
+## 12 Convex Learning Problems
+In this chapter we introduce convex learning problems. Convex learning comprises an important family of learning problems, mainly because most of what we can learn efficiently falls into it. We have already encountered linear regression with the squared loss and logistic regression, which are convex problems, and indeed they can be learned efficiently. We have also seen nonconvex problems, such as halfspaces with the 0-1 loss, which is known to be computationally hard to learn in the unrealizable case.
+In general, a convex learning problem is a problem whose hypothesis class is a convex set, and whose loss function is a convex function for each example. We begin the chapter with some required definitions of convexity. Besides convexity, we will define Lipschitzness and smoothness, which are additional properties of the loss function that facilitate successful learning. We next turn to defining convex learning problems and demonstrate the necessity for further constraints such as Boundedness and Lipschitzness or Smoothness. We define these more restricted families of learning problems and claim that Convex-Smooth/Lipschitz-Bounded problems are learnable. These claims will be proven in the next two chapters, in which we will present two learning paradigms that successfully learn all problems that are either convex-Lipschitz-bounded or convex-smooth-bounded. Finally, in Section 12.3, we show how one can handle some nonconvex problems by minimizing “surrogate” loss functions that are convex (instead of the original nonconvex loss function). Surrogate convex loss functions give rise to efficient solutions but might increase the risk of the learned predictor.
+### 12.1     Convexity, Lipschitzness, and Smoothness
+#### 12.1.1   Convexity
+definition 12.1 (Convex Set) A set C in a vector space is convex if for any two vectors u, v in C, the line segment between u and v is contained in C. That is, for any α ∈ [0, 1] we have that αu + (1 - α)v ∈ C.
+Examples of convex and nonconvex sets in R2 are given in the following. For the nonconvex sets, we depict two points in the set such that the line between the two points is not contained in the set.
+
+<!-- page: 157 -->
+
+non-convex                                              convex
+Given α ∈ [0, 1], the combination, αu + (1 - α)v of the points u, v is called a convex combination.
+definition 12.2 (Convex Function) Let C be a convex set. A function f : C → R is convex if for every u, v ∈ C and α ∈ [0, 1],
+$$
+f (\alpha_u + (1 - \alpha)v) \le \alpha_f (u) + (1 - \alpha)f (v) .
+$$
+In words, f is convex if for any u, v, the graph of f between u and v lies below the line segment joining f (u) and f (v). An illustration of a convex function, f : R → R, is depicted in the following.
+f (v)
+αf (u) + (1 - α)f (v)
+f (u)
+f (αu + (1 - α)v)
+u                           v
+αu + (1 - α)v
+The epigraph of a function f is the set
+$$
+epigraph(f) = \{(x, \beta) : f (x) \le \beta\}. \tag{12.1}
+$$
+It is easy to verify that a function f is convex if and only if its epigraph is a convex set. An illustration of a nonconvex function f : R → R, along with its epigraph, is given in the following.
+
+<!-- page: 158 -->
+
+f (x)
+x
+An important property of convex functions is that every local minimum of the function is also a global minimum. Formally, let B(u, r) = {v : kv - uk \leq  r} be a ball of radius r centered around u. We say that f (u) is a local minimum of f at u if there exists some r > 0 such that for all v ∈ B(u, r) we have f (v) \geq  f (u). It follows that for any v (not necessarily in B), there is a small enough α > 0 such that u + α(v - u) ∈ B(u, r) and therefore
+$$
+f (u) \le f (u + \alpha(v - u)) . \tag{12.2}
+$$
+If f is convex, we also have that
+$$
+f (u + \alpha(v - u)) = f (\alpha_v + (1 - \alpha)u) \le (1 - \alpha)f (u) + \alpha_f (v) . \tag{12.3}
+$$
+Combining these two equations and rearranging terms, we conclude that f (u) \leq  f (v). Since this holds for every v, it follows that f (u) is also a global minimum of f .
+Another important property of convex functions is that for every w we can construct a tangent to f at w that lies below f everywhere. If f is differentiable, this tangent is the linear function l(u) = f (w) + h∇f (w), u - wi, where ∇f (w) is the gradient of f) at w, namely, the vector of partial derivatives of f , ∇f (w) = ( \partial f (w)        \partial f (w) \partial w1 , . . . , \partial wd     . That is, for convex differentiable functions,
+$$
+\forall u, f (u) \ge f (w) + h∇f (w), u - wi. \tag{12.4}
+$$
+In Chapter 14 we will generalize this inequality to nondifferentiable functions. An illustration of Equation (12.4) is given in the following.
+
+<!-- page: 159 -->
+
+)i w f( f (u)
+,∇ w - hu )+ w f (w)
+f( w           u
+If f is a scalar differentiable function, there is an easy way to check if it is convex.
+lemma 12.3 Let f : R → R be a scalar twice differential function, and let f 0 , f 00 be its first and second derivatives, respectively. Then, the following are equivalent:
+1. f is convex
+2. f 0 is monotonically nondecreasing
+3. f 00 is nonnegative
+Example 12.1
+- The scalar function f (x) = x2 is convex. To see this, note that f 0 (x) = 2x
+and f 00 (x) = 2 > 0.
+- The scalar function f (x) = log(1 + exp(x)) is convex. To see this, observe that
+exp(x) f 0 (x) = 1+exp(x)       1
+= exp(-x)+1 . This is a monotonically increasing function since the exponent function is a monotonically increasing function.
+The following claim shows that the composition of a convex scalar function with a linear function yields a convex vector-valued function.
+claim 12.4 Assume that f : Rd → R can be written as f (w) = g(hw, xi + y), for some x ∈ Rd , y ∈ R, and g : R → R. Then, convexity of g implies the convexity of f .
+Proof   Let w1 , w2 ∈ Rd and α ∈ [0, 1]. We have
+$$
+f (\alpha w_1 + (1 - \alpha)w_2 ) = g(h\alpha w_1 + (1 - \alpha)w_2 , xi + y) = g(\alpha hw1 , xi + (1 - \alpha)hw2 , xi + y) = g(\alpha(hw1 , xi + y) + (1 - \alpha)(hw2 , xi + y)) \le \alpha_g(hw1 , xi + y) + (1 - \alpha)g(hw2 , xi + y),
+$$
+where the last inequality follows from the convexity of g.
+Example 12.2
+
+<!-- page: 160 -->
+
+- Given some x ∈ Rd and y ∈ R, let f : Rd → R be defined as f (w) =
+(hw, xi - y)2 . Then, f is a composition of the function g(a) = a2 onto a linear function, and hence f is a convex function.
+- Given some x ∈ Rd and y ∈ {\pm 1}, let f : Rd → R be defined as f (w) =
+log(1 + exp(-yhw, xi)). Then, f is a composition of the function g(a) = log(1 + exp(a)) onto a linear function, and hence f is a convex function. Finally, the following lemma shows that the maximum of convex functions is convex and that a weighted sum of convex functions, with nonnegative weights, is also convex. claim 12.5 For i = 1, . . . , r, let fi : Rd → R be a convex function. The following functions from Rd to R are also convex.
+- g(x) = maxi∈[r] fi (x)
+Pr
+- g(x) = i=1 wi fi (x), where for all i, wi \geq  0. Proof   The first claim follows by
+g(αu + (1 - α)v) = max fi (αu + (1 - α)v)
+i
+$$
+\le max [\alpha fi (u) + (1 - \alpha)fi (v)] i
+$$
+$$
+\le \alpha max fi (u) + (1 - \alpha) max fi (v) i                     i
+$$
+$$
+= \alpha_g(u) + (1 - \alpha)g(v). For the second claim X g(\alpha_u + (1 - \alpha)v) =          wi fi (\alpha_u + (1 - \alpha)v) i X \le         wi [\alpha fi (u) + (1 - \alpha)fi (v)] i X                             X =\alpha            wi fi (u) + (1 - \alpha)       wi fi (v) i                         i
+$$
+= αg(u) + (1 - α)g(v).
+Example 12.3 The function g(x) = |x| is convex. To see this, note that g(x) = max{x, -x} and that both the function f1 (x) = x and f2 (x) = -x are convex.
+#### 12.1.2   Lipschitzness
+The definition of Lipschitzness below is with respect to the Euclidean norm over Rd . However, it is possible to define Lipschitzness with respect to any norm. definition 12.6 (Lipschitzness) Let C ⊂ Rd . A function f : Rd → Rk is ρ-Lipschitz over C if for every w1 , w2 ∈ C we have that kf (w1 ) - f (w2 )k \leq  ρ kw1 - w2 k.
+
+<!-- page: 161 -->
+
+Intuitively, a Lipschitz function cannot change too fast. Note that if f : R → R is differentiable, then by the mean value theorem we have
+f (w1 ) - f (w2 ) = f 0 (u)(w1 - w2 ) ,
+where u is some point between w1 and w2 . It follows that if the derivative of f is everywhere bounded (in absolute value) by ρ, then the function is ρ-Lipschitz. Example 12.4
+- The function f (x) = |x| is 1-Lipschitz over R. This follows from the triangle
+inequality: For every x1 , x2 ,
+$$
+|x_1 | - |x_2 | = |x_1 - x_2 + x_2 | - |x_2 | \le |x_1 - x_2 | + |x_2 | - |x_2 | = |x_1 - x_2 |.
+$$
+$$
+Since this holds for both x_1 , x_2 and x_2 , x_1 , we obtain that ||x_1 | - |x_2 || \le |x_1 - x_2 |.
+$$
+- The function f (x) = log(1 + exp(x)) is 1-Lipschitz over R. To see this, observe
+that
+$$
+exp(x)              1 |f 0 (x)| =             =                 \le 1.
+$$
+## 1 + exp(x)     exp(-x) + 1
+- The function f (x) = x2 is not ρ-Lipschitz over R for any ρ. To see this, take
+$$
+x_1 = 0 and x_2 = 1 + \rho, then
+$$
+$$
+f (x_2 ) - f (x_1 ) = (1 + \rho)2 > \rho(1 + \rho) = \rho|x_2 - x_1 |.
+$$
+$$
+However, this function is \rho-Lipschitz over the set C = \{x : |x| \le \rho/2\}. Indeed, for any x_1 , x_2 \in C we have
+$$
+$$
+|x_21 - x_22 | = |x_1 + x_2 | |x_1 - x_2 | \le 2(\rho/2) |x_1 - x_2 | = \rho|x_1 - x_2 |.
+$$
+- The linear function f : Rd → R defined by f (w) = hv, wi + b where v ∈ Rd is kvk-Lipschitz. Indeed, using Cauchy-Schwartz inequality,
+$$
+|f (w_1 ) - f (w_2 )| = |hv, w_1 - w_2 i| \le kvk kw1 - w_2 k.
+$$
+The following claim shows that composition of Lipschitz functions preserves Lipschitzness.
+claim 12.7 Let f (x) = g1 (g2 (x)), where g1 is ρ1 -Lipschitz and g2 is ρ2 -Lipschitz. Then, f is (ρ1 ρ2 )-Lipschitz. In particular, if g2 is the linear function, g2 (x) = hv, xi + b, for some v ∈ Rd , b ∈ R, then f is (ρ1 kvk)-Lipschitz.
+Proof
+$$
+|f (w_1 ) - f (w_2 )| = |g_1 (g_2 (w_1 )) - g_1 (g_2 (w_2 ))| \le \rho_1 kg2 (w_1 ) - g_2 (w_2 )k \le \rho_1 \rho_2 kw1 - w_2 k.
+$$
+
+<!-- page: 162 -->
+
+#### 12.1.3   Smoothness
+The definition of a smooth function relies on the notion of gradient. Recall that the gradient of a differentiable function f : Rd → R at
+( w, denoted ∇f (w),
+) is the \partial f (w)        \partial f (w) vector of partial derivatives of f , namely, ∇f (w) =     \partial w1 , . . . , \partial wd     .
+definition 12.8 (Smoothness) A differentiable function f : Rd → R is β-smooth if its gradient is β-Lipschitz; namely, for all v, w we have k∇f (v) - ∇f (w)k \leq  βkv - wk.
+It is possible to show that smoothness implies that for all v, w we have
+β f (v) \leq  f (w) + h∇f (w), v - wi +      kv - wk2 .                  (12.5) 2 Recall that convexity of f implies that f (v) \geq  f (w)+h∇f (w), v-wi. Therefore, when a function is both convex and smooth, we have both upper and lower bounds on the difference between the function and its first order approximation. Setting v = w - β1 ∇f (w) in the right-hand side of Equation (12.5) and rearranging terms, we obtain 1 k∇f (w)k2 \leq  f (w) - f (v). 2β If we further assume that f (v) \geq  0 for all v we conclude that smoothness implies the following: k∇f (w)k2 \leq  2βf (w) .                               (12.6)
+A function that satisfies this property is also called a self-bounded function. Example 12.5
+- The function f (x) = x2 is 2-smooth. This follows directly from the fact that
+f 0 (x) = 2x. Note that for this particular function Equation (12.5) and Equation (12.6) hold with equality.
+- The function f (x) = log(1 + exp(x)) is (1/4)-smooth. Indeed, since f 0 (x) =
+1 1+exp(-x) we have that
+$$
+exp(-x)                  1 |f 00 (x)| =                  =                           \le 1/4. (1 + exp(-x))2   (1 + exp(-x))(1 + exp(x)) Hence, f 0 is (1/4)-Lipschitz. Since this function is nonnegative, Equation (12.6) holds as well.
+$$
+The following claim shows that a composition of a smooth scalar function over a linear function preserves smoothness.
+claim 12.9 Let f (w) = g(hw, xi + b), where g : R → R is a β-smooth function, x ∈ Rd , and b ∈ R. Then, f is (β kxk2 )-smooth.
+
+<!-- page: 163 -->
+
+Proof By the chain rule we have that ∇f (w) = g 0 (hw, xi + b)x, where g 0 is the derivative of g. Using the smoothness of g and the Cauchy-Schwartz inequality we therefore obtain
+f (v) = g(hv, xi + b)
+β \leq  g(hw, xi + b) + g 0 (hw, xi + b)hv - w, xi +   (hv - w, xi)2 2 β                2 \leq  g(hw, xi + b) + g 0 (hw, xi + b)hv - w, xi + (kv - wk kxk) 2 βkxk2 = f (w) + h∇f (w), v - wi +           kv - wk2 . 2
+Example 12.6
+- For any x ∈ Rd and y ∈ R, let f (w) = (hw, xi - y)2 . Then, f is (2kxk2 )-
+smooth.
+- For any x ∈ Rd and y ∈ {\pm 1}, let f (w) = log(1 + exp(-yhw, xi)). Then, f is
+(kxk2 /4)-smooth.
+### 12.2   Convex Learning Problems
+Recall that in our general definition of learning (Definition 3.4 in Chapter 3), we have a hypothesis class H, a set of examples Z, and a loss function ` : H × Z → R+ . So far in the book we have mainly thought of Z as being the product of an instance space and a target space, Z = X ×Y, and H being a set of functions from X to Y. However, H can be an arbitrary set. Indeed, throughout this chapter, we consider hypothesis classes H that are subsets of the Euclidean space Rd . That is, every hypothesis is some real-valued vector. We shall, therefore, denote a hypothesis in H by w. Now we can finally define convex learning problems: definition 12.10 (Convex Learning Problem) A learning problem, (H, Z, `), is called convex if the hypothesis class H is a convex set and for all z ∈ Z, the loss function, `(·, z), is a convex function (where, for any z, `(·, z) denotes the function f : H → R defined by f (w) = `(w, z)).
+Example 12.7 (Linear Regression with the Squared Loss) Recall that linear regression is a tool for modeling the relationship between some “explanatory” variables and some real valued outcome (see Chapter 9). The domain set X is a subset of Rd , for some d, and the label set Y is the set of real numbers. We would like to learn a linear function h : Rd → R that best approximates the relationship between our variables. In Chapter 9 we defined the hypothesis class as the set of homogenous linear functions, H = {x 7→ hw, xi : w ∈ Rd }, and used the squared loss function, `(h, (x, y)) = (h(x) - y)2 . However, we can equivalently model the learning problem as a convex learning problem as follows.
+
+<!-- page: 164 -->
+
+Each linear function is parameterized by a vector w ∈ Rd . Hence, we can define H to be the set of all such parameters, namely, H = Rd . The set of examples is Z = X ×Y = Rd ×R = Rd+1 , and the loss function is `(w, (x, y)) = (hw, xi-y)2 . Clearly, the set H is a convex set. The loss function is also convex with respect to its first argument (see Example 12.2).
+lemma 12.11 If ` is a convex loss function and the class H is convex, then the ERMH problem, of minimizing the empirical loss over H, is a convex optimization problem (that is, a problem of minimizing a convex function over a convex set).
+Proof   Recall that the ERMH problem is defined by
+$$
+ERMH (S) = argmin LS (w). w\in H
+$$
+1 Pm Since, for a sample S = z1 , . . . , zm , for every w, LS (w) = m  i=1 `(w, zi ), Claim 12.5 implies that LS (w) is a convex function. Therefore, the ERM rule is a problem of minimizing a convex function subject to the constraint that the solution should be in a convex set.
+Under mild conditions, such problems can be solved efficiently using generic optimization algorithms. In particular, in Chapter 14 we will present a very simple algorithm for minimizing convex functions.
+#### 12.2.1   Learnability of Convex Learning Problems
+We have argued that for many cases, implementing the ERM rule for convex learning problems can be done efficiently. But is convexity a sufficient condition for the learnability of a problem?
+To make the quesion more specific: In VC theory, we saw that halfspaces in d-dimension are learnable (perhaps inefficiently). We also argued in Chapter 9 using the “discretization trick” that if the problem is of d parameters, it is learnable with a sample complexity being a function of d. That is, for a constant d, the problem should be learnable. So, maybe all convex learning problems over Rd , are learnable? Example 12.8 later shows that the answer is negative, even when d is low. Not all convex learning problems over Rd are learnable. There is no contradiction to VC theory since VC theory only deals with binary classification while here we consider a wide family of problems. There is also no contradiction to the “discretization trick” as there we assumed that the loss function is bounded and also assumed that a representation of each parameter using a finite number of bits suffices. As we will show later, under some additional restricting conditions that hold in many practical scenarios, convex problems are learnable. Example 12.8 (Nonlearnability of Linear Regression Even If d = 1) Let H = R, and the loss be the squared loss: `(w, (x, y)) = (wx - y)2 (we’re referring to the
+
+<!-- page: 165 -->
+
+homogenous case). Let A be any deterministic algorithm.1 Assume, by way of contradiction, that A is a successful PAC learner for this problem. That is, there exists a function m(·, ·), such that for every distribution D and for every ε, δ if A receives a training set of size m \geq  m(ε, δ), it should output, with probability of at least 1 - δ, a hypothesis w{} = A(S), such that LD (w{}) - minw LD (w) \leq  ε.
+$$
+Choose \epsilon = 1/100, \delta = 1/2, let m \ge m(\epsilon, \delta), and set \mu = log(100/99)
+$$
+2m      . We will define two distributions, and will show that A is likely to fail on at least one of them. The first distribution, D1 , is supported on two examples, z1 = (1, 0) and z2 = (\mu, -1), where the probability mass of the first example is \mu while the probability mass of the second example is 1 - \mu. The second distribution, D2 , is supported entirely on z2 . Observe that for both distributions, the probability that all examples of the training set will be of the second type is at least 99%. This is trivially true for D2 , whereas for D1 , the probability of this event is (1 - \mu)m \geq  e-2\mum = 0.99. Since we assume that A is a deterministic algorithm, upon receiving a training set of m examples, each of which is (\mu, -1), the algorithm will output some w{}. Now, if w{} < -1/(2\mu), we will set the distribution to be D1 . Hence, LD1 (w{}) \geq  \mu(w{})2 \geq  1/(4\mu). However, min LD1 (w) \leq  LD1 (0) = (1 - \mu). w
+It follows that
+1 LD1 (w{}) - min LD1 (w) \geq          - (1 - \mu) > ε. w              4\mu Therefore, such algorithm A fails on D1 . On the other hand, if w{} \geq  -1/(2\mu) then we’ll set the distribution to be D2 . Then we have that LD2 (w{}) \geq  1/4 while minw LD2 (w) = 0, so A fails on D2 . In summary, we have shown that for every A there exists a distribution on which A fails, which implies that the problem is not PAC learnable. A possible solution to this problem is to add another constraint on the hypothesis class. In addition to the convexity requirement, we require that H will be bounded ; namely, we assume that for some predefined scalar B, every hypothesis w ∈ H satisfies kwk \leq  B. Boundedness and convexity alone are still not sufficient for ensuring that the problem is learnable, as the following example demonstrates. Example 12.9 As in Example 12.8, consider a regression problem with the squared loss. However, this time let H = {w : |w| \leq  1} ⊂ R be a bounded 1   Namely, given S the output of A is determined. This requirement is for the sake of simplicity. A slightly more involved argument will show that nondeterministic algorithms will also fail to learn the problem.
+
+<!-- page: 166 -->
+
+hypothesis class. It is easy to verify that H is convex. The argument will be the same as in Example 12.8, except that now the two distributions, D1 , D2 will be supported on z1 = (1/\mu, 0) and z2 = (1, -1). If the algorithm A returns w{} < -1/2 upon receiving m examples of the second type, then we will set the distribution to be D1 and have that
+$$
+LD1 (w{}) - min LD1 (w) \ge \mu(w{}/\mu)2 - LD1 (0) \ge 1/(4\mu) - (1 - \mu) > \epsilon. w
+$$
+$$
+Similarly, if w{} \ge -1/2 we will set the distribution to be D_2 and have that
+$$
+$$
+LD2 (w{}) - min LD2 (w) \ge (-1/2 + 1)2 - 0 > \epsilon. w
+$$
+This example shows that we need additional assumptions on the learning problem, and this time the solution is in Lipschitzness or smoothness of the loss function. This motivates a definition of two families of learning problems, convex-Lipschitz-bounded and convex-smooth-bounded, which are defined later.
+#### 12.2.2   Convex-Lipschitz/Smooth-Bounded Learning Problems
+definition 12.12 (Convex-Lipschitz-Bounded Learning Problem) A learning problem, (H, Z, `), is called Convex-Lipschitz-Bounded, with parameters ρ, B if the following holds:
+- The hypothesis class H is a convex set and for all w ∈ H we have kwk \leq  B.
+- For all z ∈ Z, the loss function, `(·, z), is a convex and ρ-Lipschitz function.
+Example 12.10 Let X = {x ∈ Rd : kxk \leq  ρ} and Y = R. Let H = {w ∈ Rd : kwk \leq  B} and let the loss function be `(w, (x, y)) = |hw, xi - y|. This corresponds to a regression problem with the absolute-value loss, where we assume that the instances are in a ball of radius ρ and we restrict the hypotheses to be homogenous linear functions defined by a vector w whose norm is bounded by B. Then, the resulting problem is Convex-Lipschitz-Bounded with parameters ρ, B.
+definition 12.13 (Convex-Smooth-Bounded Learning Problem) A learning problem, (H, Z, `), is called Convex-Smooth-Bounded, with parameters β, B if the following holds:
+- The hypothesis class H is a convex set and for all w ∈ H we have kwk \leq  B.
+- For all z ∈ Z, the loss function, `(·, z), is a convex, nonnegative, and β-smooth
+function.
+Note that we also required that the loss function is nonnegative. This is needed to ensure that the loss function is self-bounded, as described in the previous section.
+
+<!-- page: 167 -->
+
+Example 12.11 Let X = {x ∈ Rd : kxk \leq  β/2} and Y = R. Let H = {w ∈ Rd : kwk \leq  B} and let the loss function be `(w, (x, y)) = (hw, xi - y)2 . This corresponds to a regression problem with the squared loss, where we assume that the instances are in a ball of radius β/2 and we restrict the hypotheses to be homogenous linear functions defined by a vector w whose norm is bounded by B. Then, the resulting problem is Convex-Smooth-Bounded with parameters β, B.
+We claim that these two families of learning problems are learnable. That is, the properties of convexity, boundedness, and Lipschitzness or smoothness of the loss function are sufficient for learnability. We will prove this claim in the next chapters by introducing algorithms that learn these problems successfully.
+### 12.3   Surrogate Loss Functions
+As mentioned, and as we will see in the next chapters, convex problems can be learned effficiently. However, in many cases, the natural loss function is not convex and, in particular, implementing the ERM rule is hard. As an example, consider the problem of learning the hypothesis class of half-spaces with respect to the 0 - 1 loss. That is,
+$$
+`0-1 (w, (x, y)) = 1[y\neq sign(hw,xi)] = 1[yhw,xi\le 0] .
+$$
+This loss function is not convex with respect to w and indeed, when trying to minimize the empirical risk with respect to this loss function we might encounter local minima (see Exercise 1). Furthermore, as discussed in Chapter 8, solving the ERM problem with respect to the 0 - 1 loss in the unrealizable case is known to be NP-hard. To circumvent the hardness result, one popular approach is to upper bound the nonconvex loss function by a convex surrogate loss function. As its name indicates, the requirements from a convex surrogate loss are as follows:
+1. It should be convex.
+2. It should upper bound the original loss.
+For example, in the context of learning halfspaces, we can define the so-called hinge loss as a convex surrogate for the 0 - 1 loss, as follows:
+def `hinge (w, (x, y)) = max{0, 1 - yhw, xi}.
+Clearly, for all w and all (x, y), `0-1 (w, (x, y)) \leq  `hinge (w, (x, y)). In addition, the convexity of the hinge loss follows directly from Claim 12.5. Hence, the hinge loss satisfies the requirements of a convex surrogate loss function for the zero-one loss. An illustration of the functions `0-1 and `hinge is given in the following.
+
+<!-- page: 168 -->
+
+`hinge
+`0-1
+yhw, xi 1
+Once we have defined the surrogate convex loss, we can learn the problem with respect to it. The generalization requirement from a hinge loss learner will have the form
+$$
+Lhinge D     (A(S)) \le min Lhinge
+$$
+D     (w) + ε, w∈H
+where Lhinge
+$$
+D    (w) = E(x,y)\sim D [`hinge (w, (x, y))]. Using the surrogate property, we can lower bound the left-hand side by L_0-1D (A(S)), which yields
+$$
+$$
+hinge L_0-1 D (A(S)) \le min LD     (w) + \epsilon. w\in H
+$$
+We can further rewrite the upper bound as follows:
+$$
+(                   ) 0-1                   0-1             hinge   0-1 LD (A(S)) \le min LD (w) + min LD (w) - min LD (w) + \epsilon. w\in H              w\in H              w\in H
+$$
+That is, the 0-1 error of the learned predictor is upper bounded by three terms:
+- Approximation error : This is the term minw∈H L0-1  D (w), which measures how
+well the hypothesis class performs on the distribution. We already elaborated on this error term in Chapter 5.
+- Estimation error : This is the error that results from the fact that we only
+receive a training set and do not observe the distribution D. We already elaborated on this error term in Chapter
+(         5.                                )
+- Optimization error : This is the term minw∈H LhingeD  (w)  -  min w∈H D L 0-1
+(w) that measures the difference between the approximation error with respect to the surrogate loss and the approximation error with respect to the original loss. The optimization error is a result of our inability to minimize the training loss with respect to the original loss. The size of this error depends on the specific distribution of the data and on the specific surrogate loss we are using.
+### 12.4   Summary
+We introduced two families of learning problems: convex-Lipschitz-bounded and convex-smooth-bounded. In the next two chapters we will describe two generic
+
+<!-- page: 169 -->
+
+learning algorithms for these families. We also introduced the notion of convex surrogate loss function, which enables us also to utilize the convex machinery for nonconvex problems.
+### 12.5   Bibliographic Remarks
+There are several excellent books on convex analysis and optimization (Boyd & Vandenberghe 2004, Borwein & Lewis 2006, Bertsekas 1999, Hiriart-Urruty & Lemaréchal 1996). Regarding learning problems, the family of convex-Lipschitz-bounded problems was first studied by Zinkevich (2003) in the context of online learning and by Shalev-Shwartz, Shamir, Sridharan & Srebro (2009) in the context of PAC learning.
+### 12.6   Exercises
+1. Construct an example showing that the 0-1 loss function may suffer from
+$$
+local minima; namely, construct a training sample S \in (X \times \{\pm 1\})m (say, for X = R_2 ), for which there exist a vector w and some \epsilon > 0 such that
+$$
+1. For any w0 such that kw - w0 k \leq  ε we have LS (w) \leq  LS (w0 ) (where the
+loss here is the 0-1 loss). This means that w is a local minimum of LS .
+2. There exists some w∗ such that LS (w∗ ) < LS (w). This means that w is
+not a global minimum of LS .
+2. Consider the learning problem of logistic regression: Let H = X = {x ∈
+Rd : kxk \leq  B}, for some scalar B > 0, let Y = {\pm 1}, and let the loss function ` be defined as `(w, (x, y)) = log(1 + exp(-yhw, xi)). Show that the resulting learning problem is both convex-Lipschitz-bounded and convex-smooth-bounded. Specify the parameters of Lipschitzness and smoothness.
+3. Consider the problem of learning halfspaces with the hinge loss. We limit our
+domain to the Euclidean ball with radius R. That is, X = {x : kxk2 \leq  R}. The label set is Y = {\pm 1} and the loss function ` is defined by `(w, (x, y)) = max{0, 1 - yhw, xi}. We already know that the loss function is convex. Show that it is R-Lipschitz.
+4. (*) Convex-Lipschitz-Boundedness Is Not Sufficient for Computa-
+tional Efficiency: In the next chapter we show that from the statistical perspective, all convex-Lipschitz-bounded problems are learnable (in the agnostic PAC model). However, our main motivation to learn such problems resulted from the computational perspective – convex optimization is often efficiently solvable. Yet the goal of this exercise is to show that convexity alone is not sufficient for efficiency. We show that even for the case d = 1, there is a convex-Lipschitz-bounded problem which cannot be learned by any computable learner.
+Let the hypothesis class be H = [0, 1] and let the example domain, Z, be
+
+<!-- page: 170 -->
+
+the set of all Turing machines. Define the loss function as follows. For every Turing machine T ∈ Z, let `(0, T ) = 1 if T halts on the input 0 and `(0, T ) = 0 if T doesn’t halt on the input 0. Similarly, let `(1, T ) = 0 if T halts on the input 0 and `(1, T ) = 1 if T doesn’t halt on the input 0. Finally, for h ∈ (0, 1), let `(h, T ) = h`(0, T ) + (1 - h)`(1, T ).
+1. Show that the resulting learning problem is convex-Lipschitz-bounded.
+2. Show that no computable algorithm can learn the problem.
+
+<!-- page: 171 -->
+
+## 13 Regularization and Stability
+In the previous chapter we introduced the families of convex-Lipschitz-bounded and convex-smooth-bounded learning problems. In this section we show that all learning problems in these two families are learnable. For some learning problems of this type it is possible to show that uniform convergence holds; hence they are learnable using the ERM rule. However, this is not true for all learning problems of this type. Yet, we will introduce another learning rule and will show that it learns all convex-Lipschitz-bounded and convex-smooth-bounded learning problems.
+The new learning paradigm we introduce in this chapter is called Regularized Loss Minimization, or RLM for short. In RLM we minimize the sum of the empirical risk and a regularization function. Intuitively, the regularization function measures the complexity of hypotheses. Indeed, one interpretation of the regularization function is the structural risk minimization paradigm we discussed in Chapter 7. Another view of regularization is as a stabilizer of the learning algorithm. An algorithm is considered stable if a slight change of its input does not change its output much. We will formally define the notion of stability (what we mean by “slight change of input” and by “does not change much the output”) and prove its close relation to learnability. Finally, we will show that using the squared \ell2 norm as a regularization function stabilizes all convex-Lipschitz or convex-smooth learning problems. Hence, RLM can be used as a general learning rule for these families of learning problems.
+### 13.1   Regularized Loss Minimization
+Regularized Loss Minimization (RLM) is a learning rule in which we jointly minimize the empirical risk and a regularization function. Formally, a regularization function is a mapping R : Rd → R, and the regularized loss minimization rule outputs a hypothesis in
+$$
+argmin (LS (w) + R(w)) .                          (13.1) w
+$$
+Regularized loss minimization shares similarities with minimum description length algorithms and structural risk minimization (see Chapter 7). Intuitively, the “complexity” of hypotheses is measured by the value of the regularization func-
+
+<!-- page: 172 -->
+
+tion, and the algorithm balances between low empirical risk and “simpler,” or “less complex,” hypotheses.
+There are many possible regularization functions one can use, reflecting some prior belief about the problem (similarly to the description language in Minimum Description Length). Throughout this section we will focus on one of the most simple regularization functions:
+qP R(w) = λkwk2 , where λ > 0 is a scalar and the
+$$
+d    2 norm is the \ell2 norm, kwk =         i=1 wi . This yields the learning rule:
+$$
+$$
+A(S) = argmin LS (w) + \lambda \|w\|_2 . ) (13.2) w
+$$
+This type of regularization function is often called Tikhonov regularization.
+As mentioned before, one interpretation of Equation (13.2) is using structural risk minimization, where the norm of w is a measure of its “complexity.” Recall that in the previous chapter we introduced the notion of bounded hypothesis classes. Therefore, we can define a sequence of hypothesis classes, H1 ⊂ H2 ⊂ H3 . . ., where Hi = {w : kwk2 \leq  i}. If the sample complexity of each Hi depends on i then the RLM rule is similar to the SRM rule for this sequence of nested classes. A different interpretation of regularization is as a stabilizer. In the next section we define the notion of stability and prove that stable learning rules do not overfit. But first, let us demonstrate the RLM rule for linear regression with the squared loss.
+#### 13.1.1   Ridge Regression
+Applying the RLM rule with Tikhonov regularization to linear regression with the squared loss, we obtain the following learning rule:
+m
+!
+$$
+2   1 X_1                    2 argmin \lambda \|w\|_2 +              (hw, xi i - yi ) .       (13.3) w\in Rd               m i=1 2
+$$
+Performing linear regression using Equation (13.3) is called ridge regression. To solve Equation (13.3) we compare the gradient of the objective to zero and obtain the set of linear equations
+$$
+(2\lambda mI + A)w = b, where I is the identity matrix and A, b are as defined in Equation (9.6), namely, m !                m X                          X > A=        xi xi      and b =         yi xi .           (13.4) i=1                         i=1
+$$
+$$
+Since A is a positive semidefinite matrix, the matrix 2\lambda mI + A has all its eigenvalues bounded below by 2\lambda_m. Hence, this matrix is invertible and the solution to ridge regression becomes w = (2\lambda mI + A)-1 b. \tag{13.5}
+$$
+
+<!-- page: 173 -->
+
+In the next section we formally show how regularization stabilizes the algorithm and prevents overfitting. In particular, the analysis presented in the next sections (particularly, Corollary 13.11) will yield:
+theorem 13.1 Let D be a distribution over X × [-1, 1], where X = {x ∈ Rd : kxk \leq  1}. Let H = {w ∈ Rd : kwk \leq  B}. For any ε ∈ (0, 1), let m \geq  150 B 2 /ε2 . Then, applying the ridge regression algorithm with parameter λ = ε/(3B 2 ) satisfies
+$$
+E    [LD (A(S))] \le min LD (w) + \epsilon. S\sim D m                        w\in H
+$$
+Remark 13.1 The preceding theorem tells us how many examples are needed to guarantee that the expected value of the risk of the learned predictor will be bounded by the approximation error of the class plus ε. In the usual definition of agnostic PAC learning we require that the risk of the learned predictor will be bounded with probability of at least 1 - δ. In Exercise 1 we show how an algorithm with a bounded expected risk can be used to construct an agnostic PAC learner.
+### 13.2   Stable Rules Do Not Overfit
+Intuitively, a learning algorithm is stable if a small change of the input to the algorithm does not change the output of the algorithm much. Of course, there are many ways to define what we mean by “a small change of the input” and what we mean by “does not change the output much”. In this section we define a specific notion of stability and prove that under this definition, stable rules do not overfit.
+Let A be a learning algorithm, let S = (z1 , . . . , zm ) be a training set of m examples, and let A(S) denote the output of A. The algorithm A suffers from overfitting if the difference between the true risk of its output, LD (A(S)), and the empirical risk of its output, LS (A(S)), is large. As mentioned in Remark 13.1, throughout this chapter we focus on the expectation (with respect to the choice of S) of this quantity, namely, ES [LD (A(S)) - LS (A(S))]. We next define the notion of stability. Given the training set S and an additional example z 0 , let S (i) be the training set obtained by replacing the i’th example of S with z 0 ; namely, S (i) = (z1 , . . . , zi-1 , z 0 , zi+1 , . . . , zm ). In our definition of stability, “a small change of the input” means that we feed A with S (i) instead of with S. That is, we only replace one training example. We measure the effect of this small change of the input on the output of A, by comparing the loss of the hypothesis A(S) on zi to the loss of the hypothesis A(S (i) ) on zi . Intuitively, a good learning algorithm will have `(A(S (i) ), zi ) - `(A(S), zi ) \geq  0, since in the first term the learning algorithm does not observe the example zi while in the second term zi is indeed observed. If the preceding difference is very large we suspect that the learning algorithm might overfit. This is because the
+
+<!-- page: 174 -->
+
+learning algorithm drastically changes its prediction on zi if it observes it in the training set. This is formalized in the following theorem. theorem 13.2 Let D be a distribution. Let S = (z1 , . . . , zm ) be an i.i.d. sequence of examples and let z 0 be another i.i.d. example. Let U (m) be the uniform distribution over [m]. Then, for any learning algorithm, E [LD (A(S)) - LS (A(S))] =                     E             [`(A(S (i) , zi )) - `(A(S), zi )]. S∼D m                                   (S,z 0 )∼D m+1 ,i∼U (m)
+$$
+(13.6) 0 Proof   Since S and z are both drawn i.i.d. from D, we have that for every i, E[LD (A(S))] = E 0 [`(A(S), z 0 )] = E 0 [`(A(S (i) ), zi )]. S                   S,z                     S,z
+$$
+On the other hand, we can write
+E[LS (A(S))] = E [`(A(S), zi )]. S                   S,i
+Combining the two equations we conclude our proof.
+When the right-hand side of Equation (13.6) is small, we say that A is a stable algorithm – changing a single example in the training set does not lead to a significant change. Formally, definition 13.3 (On-Average-Replace-One-Stable) Let ε : N → R be a monotonically decreasing function. We say that a learning algorithm A is on-average-replace-one-stable with rate ε(m) if for every distribution D
+$$
+E           [`(A(S (i) , zi )) - `(A(S), zi )] \le \epsilon(m). (S,z 0 )\sim D m+1 ,i\sim U (m)
+$$
+Theorem 13.2 tells us that a learning algorithm does not overfit if and only if it is on-average-replace-one-stable. Of course, a learning algorithm that does not overfit is not necessarily a good learning algorithm – take, for example, an algorithm A that always outputs the same hypothesis. A useful algorithm should find a hypothesis that on one hand fits the training set (i.e., has a low empirical risk) and on the other hand does not overfit. Or, in light of Theorem 13.2, the algorithm should both fit the training set and at the same time be stable. As we shall see, the parameter λ of the RLM rule balances between fitting the training set and being stable.
+### 13.3   Tikhonov Regularization as a Stabilizer
+In the previous section we saw that stable rules do not overfit. In this section we show that applying the RLM rule with Tikhonov regularization, λkwk2 , leads to a stable algorithm. We will assume that the loss function is convex and that it is either Lipschitz or smooth.
+The main property of the Tikhonov regularization that we rely on is that it makes the objective of RLM strongly convex, as defined in the following.
+
+<!-- page: 175 -->
+
+definition 13.4 (Strongly Convex Functions) A function f is λ-strongly convex if for all w, u and α ∈ (0, 1) we have
+λ f (αw + (1 - α)u) \leq  αf (w) + (1 - α)f (u) -   α(1 - α)kw - uk2 . 2 Clearly, every convex function is 0-strongly convex. An illustration of strong convexity is given in the following figure.
+f (u)
+$$
+2 f (w)                                 \ge \lambda 2 \alpha(1 - \alpha)ku - wk
+$$
+w                           u αw + (1 - α)u
+The following lemma implies that the objective of RLM is (2λ)-strongly convex. In addition, it underscores an important property of strong convexity. lemma 13.5
+1. The function f (w) = λkwk2 is 2λ-strongly convex.
+2. If f is λ-strongly convex and g is convex, then f + g is λ-strongly convex.
+3. If f is λ-strongly convex and u is a minimizer of f , then, for any w,
+λ kw - uk2 . f (w) - f (u) \geq  2 Proof The first two points follow directly from the definition. To prove the last point, we divide the definition of strong convexity by α and rearrange terms to get that f (u + α(w - u)) - f (u)                  λ \leq  f (w) - f (u) - (1 - α)kw - uk2 . α                              2 Taking the limit α → 0 we obtain that the right-hand side converges to f (w) - f (u) - λ2 kw - uk2 . On the other hand, the left-hand side becomes the derivative of the function g(α) = f (u + α(w - u)) at α = 0. Since u is a minimizer of f , it follows that α = 0 is a minimizer of g, and therefore the left-hand side of the preceding goes to zero in the limit α → 0, which concludes our proof. We now turn to prove that RLM is stable. Let S = (z1 , . . . , zm ) be a training set, let z 0 be an additional example, and let S (i) = (z1 , . . . , zi-1 , z 0 , zi+1 , . . . , zm ). Let A be the RLM rule, namely, A(S) = argmin LS (w) + λkwk2 .
+) w
+
+<!-- page: 176 -->
+
+Denote fS (w) = LS (w) + λkwk2 , and based on Lemma 13.5 we know that fS is (2λ)-strongly convex. Relying on part 3 of the lemma, it follows that for any v,
+$$
+fS (v) - fS (A(S)) \ge \lambda kv - A(S)k_2 . \tag{13.7}
+$$
+On the other hand, for any v and u, and for all i, we have
+$$
+fS (v) - fS (u) = LS (v) + \lambda \|v\|_2 - (LS (u) + \lambda \|u\|_2 ) \tag{13.8}
+$$
+2                          2 = LS (i) (v) + λkvk - (LS (i) (u) + λkuk ) `(v, zi ) - `(u, zi ) `(u, z 0 ) - `(v, z 0 ) +                        +                        . m                      m In particular, choosing v = A(S (i) ), u = A(S), and using the fact that v minimizes LS (i) (w) + λkwk2 , we obtain that `(A(S (i) ), zi ) - `(A(S), zi ) `(A(S), z 0 ) - `(A(S (i) ), z 0 ) fS (A(S (i) ))-fS (A(S)) \leq                              +                                   . m                               m
+(13.9) Combining this with Equation (13.7) we obtain that `(A(S (i) ), zi ) - `(A(S), zi ) `(A(S), z 0 ) - `(A(S (i) ), z 0 ) λkA(S (i) ) - A(S)k2 \leq                                  +                                   . m                               m (13.10) The two subsections that follow continue the stability analysis for either Lipschitz or smooth loss functions. For both families of loss functions we show that RLM is stable and therefore it does not overfit.
+#### 13.3.1   Lipschitz Loss
+If the loss function, `(·, zi ), is ρ-Lipschitz, then by the definition of Lipschitzness,
+$$
+`(A(S (i) ), zi ) - `(A(S), zi ) \le \rho kA(S (i) ) - A(S)k. \tag{13.11}
+$$
+$$
+Similarly, `(A(S), z 0 ) - `(A(S (i) ), z 0 ) \le \rho kA(S (i) ) - A(S)k.
+$$
+Plugging these inequalities into Equation (13.10) we obtain
+$$
+2 \rho kA(S (i) ) - A(S)k \lambda kA(S (i) ) - A(S)k_2 \le                            ,
+$$
+$$
+m which yields 2\rho kA(S (i) ) - A(S)k \le        . \lambda_m Plugging the preceding back into Equation (13.11) we conclude that
+$$
+$$
+2 \rho_2 `(A(S (i) ), zi ) - `(A(S), zi ) \le        . \lambda_m Since this holds for any S, z 0 , i we immediately obtain:
+$$
+
+<!-- page: 177 -->
+
+corollary 13.6 Assume that the loss function is convex and ρ-Lipschitz. Then, the RLM rule with the regularizer λkwk2 is on-average-replace-one-stable
+2 with rate 2λ ρm . It follows (using Theorem 13.2) that
+$$
+2 \rho_2 E m [LD (A(S)) - LS (A(S))] \le            . S\sim D                                   \lambda_m
+$$
+#### 13.3.2   Smooth and Nonnegative Loss
+If the loss is β-smooth and nonnegative then it is also self-bounded (see Section 12.1):
+$$
+k∇f (w)k_2 \le 2\beta_f (w). \tag{13.12}
+$$
+$$
+We further assume that \lambda \ge 2\beta
+$$
+$$
+m , or, in other words, that \beta \le \lambda_m/2. By the smoothness assumption we have that
+$$
+$$
+\beta `(A(S (i) ), zi )-`(A(S), zi ) \le h∇`(A(S), zi ), A(S (i) )-A(S)i+ kA(S (i) )-A(S)k_2 . 2
+$$
+(13.13) Using the Cauchy-Schwartz inequality and Equation (12.6) we further obtain that
+$$
+`(A(S (i) ), zi ) - `(A(S), zi ) \beta \le k∇`(A(S), zi )k kA(S (i) ) - A(S)k + kA(S (i) ) - A(S)k_2 2 p                                    \beta \le 2\beta`(A(S), zi ) kA(S (i) ) - A(S)k + kA(S (i) ) - A(S)k_2 . 2 \tag{13.14}
+$$
+By a symmetric argument it holds that,
+$$
+`(A(S), z 0 ) - `(A(S (i) ), z 0 ) \beta q \le 2\beta`(A(S (i) ), z 0 ) kA(S (i) ) - A(S)k + kA(S (i) ) - A(S)k_2 . 2
+$$
+Plugging these inequalities into Equation (13.10) and rearranging terms we obtain that
+$$
+\sqrt      (                               ) 2\beta     p               q (i)                                                 (i)  0 kA(S ) - A(S)k \le                   `(A(S), zi ) + `(A(S ), z ) . (\lambda m - \beta)
+$$
+$$
+Combining the preceding with the assumption \beta \le \lambda_m/2 yields \sqrt   (                                          ) 8\beta     p                    q (i) kA(S         ) - A(S)k \le             `(A(S), zi ) +       `(A(S (i) ), z 0 )   . \lambda_m
+$$
+
+<!-- page: 178 -->
+
+$$
+Combining the preceding with Equation (13.14) and again using the assumption \beta \le \lambda_m/2 yield
+$$
+`(A(S (i) ), zi ) - `(A(S), zi )
+$$
+p                                            \beta \le 2\beta`(A(S), zi ) kA(S (i) ) - A(S)k + kA(S (i) ) - A(S)k_2
+$$
+2 (                 2 )(                                 )2 4β          8β        p                  q \leq           +                                       (i) 0 `(A(S), zi ) + `(A(S ), z ) λm (λm)2 (                                      )2 8β p q \leq               `(A(S), zi ) + `(A(S (i) ), z 0 ) λm 24β (                                     ) \leq           `(A(S), zi ) + `(A(S (i) ), z 0 ) , λm where in the last step we used the inequality (a+b)2 \leq  3(a2 +b2 ). Taking expectation with respect to S, z 0 , i and noting that E[`(A(S), zi )] = E[`(A(S (i) ), z 0 )] = E[LS (A(S))], we conclude that:
+corollary 13.7 Assume that the loss function is β-smooth and nonnegative. Then, the RLM rule with the regularizer λkwk2 , where λ \geq  2βm , satisfies
+$$
+h                               i 48\beta E `(A(S (i) ), zi ) - `(A(S), zi ) \le    E[LS (A(S))].
+$$
+λm Note that if for all z we have `(0, z) \leq  C, for some scalar C > 0, then for every S,
+$$
+LS (A(S)) \le LS (A(S)) + \lambda kA(S)k_2 \le LS (0) + \lambda k_0k_2 = LS (0) \le C.
+$$
+$$
+Hence, Corollary 13.7 also implies that h                               i 48 \beta C E `(A(S (i) ), zi ) - `(A(S), zi ) \le       . \lambda_m
+$$
+### 13.4   Controlling the Fitting-Stability Tradeoff
+We can rewrite the expected risk of a learning algorithm as
+E[LD (A(S))] = E[LS (A(S))] + E[LD (A(S)) - LS (A(S))].                  (13.15) S                S                S
+The first term reflects how well A(S) fits the training set while the second term reflects the difference between the true and empirical risks of A(S). As we have shown in Theorem 13.2, the second term is equivalent to the stability of A. Since our goal is to minimize the risk of the algorithm, we need that the sum of both terms will be small.
+In the previous section we have bounded the stability term. We have shown that the stability term decreases as the regularization parameter, λ, increases. On the other hand, the empirical risk increases with λ. We therefore face a
+
+<!-- page: 179 -->
+
+tradeoff between fitting and overfitting. This tradeoff is quite similar to the bias-complexity tradeoff we discussed previously in the book. We now derive bounds on the empirical risk term for the RLM )rule. Recall that the RLM rule is defined as A(S) = argminw LS (w) + λkwk2 . Fix some arbitrary vector w∗ . We have
+$$
+LS (A(S)) \le LS (A(S)) + \lambda kA(S)k_2 \le LS (w∗ ) + \lambda kw∗ k_2 .
+$$
+Taking expectation of both sides with respect to S and noting that ES [LS (w∗ )] = LD (w∗ ), we obtain that
+$$
+E[LS (A(S))] \le LD (w∗ ) + \lambda kw∗ k_2 .                        (13.16) S
+$$
+Plugging this into Equation (13.15) we obtain
+$$
+E[LD (A(S))] \le LD (w∗ ) + \lambda kw∗ k_2 + E[LD (A(S)) - LS (A(S))]. S                                            S
+$$
+Combining the preceding with Corollary 13.6 we conclude:
+corollary 13.8 Assume that the loss function is convex and ρ-Lipschitz. Then, the RLM rule with the regularization function λkwk2 satisfies
+2ρ2 \forall w∗ , E[LD (A(S))] \leq  LD (w∗ ) + λkw∗ k2 +              . S                                          λm This bound is often called an oracle inequality – if we think of w∗ as a hypothesis with low risk, the bound tells us how many examples are needed so that A(S) will be almost as good as w∗ , had we known the norm of w∗ . In practice, however, we usually do not know the norm of w∗ . We therefore usually tune λ on the basis of a validation set, as described in Chapter 11. We can also easily derive a PAC-like guarantee1 from Corollary 13.8 for convex-Lipschitz-bounded learning problems:
+corollary 13.9 Let (H, Z, `) be a convex-Lipschitz-bounded
+qlearning problem
+2ρ2 with parameters ρ, B. For any training set size m, let λ =                 B 2 m . Then, the RLM rule with the regularization function λkwk2 satisfies r 8 E[LD (A(S))] \leq  min LD (w) + ρ B       . S              w∈H                 m
+2   2 In particular, for every ε > 0, if m \geq  8ρε2B                then for every distribution D, ES [LD (A(S))] \leq  minw∈H LD (w) + ε.
+The preceding corollary holds for Lipschitz loss functions. If instead the loss function is smooth and nonnegative, then we can combine Equation (13.16) with Corollary 13.7 to get:
+## 1   Again, the bound below is on the expected risk, but using Exercise 1 it can be used to
+derive an agnostic PAC learning guarantee.
+
+<!-- page: 180 -->
+
+corollary 13.10 Assume that the loss function is convex, β-smooth, and nonnegative. Then, the RLM rule with the regularization function λkwk2 , for λ \geq  2β                                   ∗
+m , satisfies the following for all w :
+(          )               (        )
+48β                      48β
+LD (w∗ ) + λkw∗ k2 .
+$$
+) E[LD (A(S))] \le 1 +            E[LS (A(S))] \le 1 + S                       \lambda_m S                     \lambda_m
+$$
+For example, if we choose λ = 48β  m we obtain from the preceding that the expected true risk of A(S) is at most twice the expected empirical risk of A(S). Furthermore, for this value of λ, the expected empirical risk of A(S) is at most LD (w∗ ) + 48β   ∗ 2
+m kw k . We can also derive a learnability guarantee for convex-smooth-bounded learning problems based on Corollary 13.10.
+corollary 13.11 Let (H, Z, `) be a convex-smooth-bounded learning problem with parameters β, B. Assume in addition that `(0, z) \leq  1 for all z ∈ Z. For any
+$$
+2 \epsilon \in (0, 1) let m \ge 150\beta B \epsilon_2    and set \lambda = \epsilon/(3B 2 ). Then, for every distribution D,
+$$
+$$
+E[LD (A(S))] \le min LD (w) + \epsilon . S                w\in H
+$$
+### 13.5   Summary
+We introduced stability and showed that if an algorithm is stable then it does not overfit. Furthermore, for convex-Lipschitz-bounded or convex-smooth-bounded problems, the RLM rule with Tikhonov regularization leads to a stable learning algorithm. We discussed how the regularization parameter, λ, controls the tradeoff between fitting and overfitting. Finally, we have shown that all learning problems that are from the families of convex-Lipschitz-bounded and convex-smooth-bounded problems are learnable using the RLM rule. The RLM paradigm is the basis for many popular learning algorithms, including ridge regression (which we discussed in this chapter) and support vector machines (which will be discussed in Chapter 15).
+In the next chapter we will present Stochastic Gradient Descent, which gives us a very practical alternative way to learn convex-Lipschitz-bounded and convex-smooth-bounded problems and can also be used for efficiently implementing the RLM rule.
+### 13.6   Bibliographic Remarks
+Stability is widely used in many mathematical contexts. For example, the necessity of stability for so-called inverse problems to be well posed was first recognized by Hadamard (1902). The idea of regularization and its relation to stability became widely known through the works of Tikhonov (1943) and Phillips (1962).
+
+<!-- page: 181 -->
+
+In the context of modern learning theory, the use of stability can be traced back at least to the work of Rogers & Wagner (1978), which noted that the sensitivity of a learning algorithm with regard to small changes in the sample controls the variance of the leave-one-out estimate. The authors used this observation to obtain generalization bounds for the k-nearest neighbor algorithm (see Chapter 19). These results were later extended to other “local” learning algorithms (see Devroye, Györfi & Lugosi (1996) and references therein). In addition, practical methods have been developed to introduce stability into learning algorithms, in particular the Bagging technique introduced by (Breiman 1996).
+Over the last decade, stability was studied as a generic condition for learnability. See (Kearns & Ron 1999, Bousquet & Elisseeff 2002, Kutin & Niyogi 2002, Rakhlin, Mukherjee & Poggio 2005, Mukherjee, Niyogi, Poggio & Rifkin 2006). Our presentation follows the work of Shalev-Shwartz, Shamir, Srebro & Sridha-ran (2010), who showed that stability is sufficient and necessary for learning. They have also shown that all convex-Lipschitz-bounded learning problems are learnable using RLM, even though for some convex-Lipschitz-bounded learning problems uniform convergence does not hold in a strong sense.
+### 13.7   Exercises
+1. From Bounded Expected Risk to Agnostic PAC Learning: Let A be
+an algorithm that guarantees the following: If m \geq  mH (ε) then for every distribution D it holds that
+$$
+E [LD (A(S))] \le min LD (h) + \epsilon. S\sim D m                h\in H
+$$
+- Show that for every δ ∈ (0, 1), if m \geq  mH (ε δ) then with probability of at
+least 1 - δ it holds that LD (A(S)) \leq  minh∈H LD (h) + ε. Hint: Observe that the random variable LD (A(S)) - minh∈H LD (h) is nonnegative and rely on Markov’s inequality.
+- For every δ ∈ (0, 1) let
+⌈                              ⌉ log(4/δ) + log(dlog2 (1/δ)e) mH (ε, δ) = mH (ε/2)dlog2 (1/δ)e +                                  .
+ε2 Suggest a procedure that agnostic PAC learns the problem with sample complexity of mH (ε, δ), assuming that the loss function is bounded by 1. Hint: Let k = dlog2 (1/δ)e. Divide the data into k +1 chunks, where each of the first k chunks is of size mH (ε/2) examples. Train the first k chunks using A. On the basis of the previous question argue that the probability that for all of these chunks we have LD (A(S)) > minh∈H LD (h) + ε is at most 2-k \leq  δ/2. Finally, use the last chunk as a validation set.
+2. Learnability without Uniform Convergence: Let B be the unit ball of
+
+<!-- page: 182 -->
+
+$$
+Rd , let H = B, let Z = B \times \{0, 1\}d , and let ` : Z \times H \to R be defined as follows: d X `(w, (x, \alpha)) =         \alpha_i (xi - wi )2 . i=1
+$$
+This problem corresponds to an unsupervised learning task, meaning that we do not try to predict the label of x. Instead, what we try to do is to find the “center of mass” of the distribution over B. However, there is a twist, modeled by the vectors α. Each example is a pair (x, α), where x is the instance x and α indicates which features of x are “active” and which are “turned off.” A hypothesis is a vector w representing the center of mass of the distribution, and the loss function is the squared Euclidean distance between x and w, but only with respect to the “active” elements of x.
+- Show that this problem is learnable using the RLM rule with a sample
+complexity that does not depend on d.
+- Consider a distribution D over Z as follows: x is fixed to be some x0 , and
+each element of α is sampled to be either 1 or 0 with equal probability. Show that the rate of uniform convergence of this problem grows with d. Hint: Let m be a training set size. Show that if d 2m , then there is a high probability of sampling a set of examples such that there exists some j ∈ [d] for which αj = 1 for all the examples in the training set. Show that such a sample cannot be ε-representative. Conclude that the sample complexity of uniform convergence must grow with log(d).
+- Conclude that if we take d to infinity we obtain a problem that is learnable
+but for which the uniform convergence property does not hold. Compare to the fundamental theorem of statistical learning.
+3. Stability and Asymptotic ERM Are Sufficient for Learnability:
+We say that a learning rule A is an AERM (Asymptotic Empirical Risk Minimizer) with rate ε(m) if for every distribution D it holds that
+$$
+[                       ] E m LS (A(S)) - min LS (h) \le \epsilon(m). S\sim D                    h\in H
+$$
+We say that a learning rule A learns a class H with rate ε(m) if for every distribution D it holds that
+$$
+[                      ] E m LD (A(S)) - min LD (h) \le \epsilon(m). S\sim D                     h\in H
+$$
+Prove the following:
+theorem 13.12 If a learning algorithm A is on-average-replace-one-stable with rate ε1 (m) and is an AERM with rate ε2 (m), then it learns H with rate ε1 (m) + ε2 (m).
+
+<!-- page: 183 -->
+
+4. Strong Convexity with Respect to General Norms:
+Throughout the section we used the \ell2 norm. In this exercise we generalize some of the results to general norms. Let k·k be some arbitrary norm, and let f be a strongly convex function with respect to this norm (see Definition 13.4).
+1. Show that items 2–3 of Lemma 13.5 hold for every norm.
+2. (*) Give an example of a norm for which item 1 of Lemma 13.5 does not
+hold.
+3. Let R(w) be a function that is (2λ)-strongly convex with respect to some
+norm k · k. Let A be an RLM rule with respect to R, namely,
+$$
+A(S) = argmin (LS (w) + R(w)) .
+$$
+w
+Assume that for every z, the loss function `(·, z) is ρ-Lipschitz with respect to the same norm, namely,
+$$
+\forall z, \forall w, v,    `(w, z) - `(v, z) \le \rho kw - vk .
+$$
+2 Prove that A is on-average-replace-one-stable with rate 2ρ λm .
+4. (*) Let q ∈ (1, 2) and consider the `q -norm
+d
+$$
+!1/q X q kwkq =         |wi |       . i=1
+$$
+It can be shown (see, for example, Shalev-Shwartz (2007)) that the function
+1 R(w) =            kwk2q 2(q - 1)
+log(d) is 1-strongly convex with respect to kwkq . Show that if q = log(d)-1 then (       ) 1 R(w) is 3 log(d)   -strongly convex with respect to the \ell1 norm over Rd .
+
+<!-- page: 184 -->
+
+## 14 Stochastic Gradient Descent
+Recall that the goal of learning is to minimize the risk function, LD (h) = Ez∼D [`(h, z)]. We cannot directly minimize the risk function since it depends on the unknown distribution D. So far in the book, we have discussed learning methods that depend on the empirical risk. That is, we first sample a training set S and define the empirical risk function LS (h). Then, the learner picks a hypothesis based on the value of LS (h). For example, the ERM rule tells us to pick the hypothesis that minimizes LS (h) over the hypothesis class, H. Or, in the previous chapter, we discussed regularized risk minimization, in which we pick a hypothesis that jointly minimizes LS (h) and a regularization function over h.
+In this chapter we describe and analyze a rather different learning approach, which is called Stochastic Gradient Descent (SGD). As in Chapter 12 we will focus on the important family of convex learning problems, and following the notation in that chapter, we will refer to hypotheses as vectors w that come from a convex hypothesis class, H. In SGD, we try to minimize the risk function LD (w) directly using a gradient descent procedure. Gradient descent is an iterative optimization procedure in which at each step we improve the solution by taking a step along the negative of the gradient of the function to be minimized at the current point. Of course, in our case, we are minimizing the risk function, and since we do not know D we also do not know the gradient of LD (w). SGD circumvents this problem by allowing the optimization procedure to take a step along a random direction, as long as the expected value of the direction is the negative of the gradient. And, as we shall see, finding a random direction whose expected value corresponds to the gradient is rather simple even though we do not know the underlying distribution D. The advantage of SGD, in the context of convex learning problems, over the regularized risk minimization learning rule is that SGD is an efficient algorithm that can be implemented in a few lines of code, yet still enjoys the same sample complexity as the regularized risk minimization rule. The simplicity of SGD also allows us to use it in situations when it is not possible to apply methods that are based on the empirical risk, but this is beyond the scope of this book. We start this chapter with the basic gradient descent algorithm and analyze its convergence rate for convex-Lipschitz functions. Next, we introduce the notion of subgradient and show that gradient descent can be applied for nondifferentiable functions as well. The core of this chapter is Section 14.3, in which we describe
+
+<!-- page: 185 -->
+
+the Stochastic Gradient Descent algorithm, along with several useful variants. We show that SGD enjoys an expected convergence rate similar to the rate of gradient descent. Finally, we turn to the applicability of SGD to learning problems.
+### 14.1   Gradient Descent
+Before we describe the stochastic gradient descent method, we would like to describe the standard gradient descent approach for minimizing a differentiable convex function f (w). The gradient of a differentiable function f : Rd → R at w, ( denoted ∇f (w),  ) is the vector of partial derivatives of f , namely, ∇f (w) = \partial f  (w)           \partial f (w)
+\partial w[1] , . . . , \partial w[d] . Gradient descent is an iterative algorithm. We start with an initial value of w (say, w(1) = 0). Then, at each iteration, we take a step in the direction of the negative of the gradient at the current point. That is, the update step is
+$$
+w(t+1) = w(t) - \eta∇f (w(t) ), \tag{14.1}
+$$
+where η > 0 is a parameter to be discussed later. Intuitively, since the gradient points in the direction of the greatest rate of increase of f around w(t) , the algorithm makes a small step in the opposite direction, thus decreasing the value of the function. Eventually, after T iterations, the algorithm outputs the
+PT averaged vector, w̄ = T1 t=1 w(t) . The output could also be the last vector, w(T ) , or the best performing vector, argmint∈[T ] f (w(t) ), but taking the average turns out to be rather useful, especially when we generalize gradient descent to nondifferentiable functions and to the stochastic case. Another way to motivate gradient descent is by relying on Taylor approximation. The gradient of f at w yields the first order Taylor approximation of f around w by f (u) ≈ f (w) + hu - w, ∇f (w)i. When f is convex, this approximation lower bounds f , that is,
+$$
+f (u) \ge f (w) + hu - w, ∇f (w)i.
+$$
+Therefore, for w close to w(t) we have that f (w) ≈ f (w(t) )+hw-w(t) , ∇f (w(t) )i. Hence we can minimize the approximation of f (w). However, the approximation might become loose for w, which is far away from w(t) . Therefore, we would like to minimize jointly the distance between w and w(t) and the approximation of f around w(t) . If the parameter η controls the tradeoff between the two terms, we obtain the update rule
+1                  (                                ) w(t+1) = argmin kw - w(t) k2 + η f (w(t) ) + hw - w(t) , ∇f (w(t) )i . w    2 Solving the preceding by taking the derivative with respect to w and comparing it to zero yields the same update rule as in Equation (14.1).
+
+<!-- page: 186 -->
+
+![Hinh: fig-186-1]
+Figure 14.1 An illustration of the gradient descent algorithm. The function to be minimized is 1.25(x1 + 6)2 + (x2 - 8)2 .
+#### 14.1.1   Analysis of GD for Convex-Lipschitz Functions
+To analyze the convergence rate of the GD algorithm, we limit ourselves to the case of convex-Lipschitz functions (as we have seen, many problems lend themselves easily to this setting). Let w? be any vector and let B be an upper bound on kw? k. It is convenient to think of w? as the minimizer of f (w), but the analysis that follows holds for every w? . We would like to obtain an upper bound on the suboptimality of our solution PT with respect to w? , namely, f (w̄) - f (w? ), where w̄ = T1 t=1 w(t) . From the definition of w̄, and using Jensen’s inequality, we have that
+T
+$$
+! X f (w̄) - f (w^\star ) = f T_1    w(t) - f (w^\star ) t=1 T (
+$$
+$$
+1 X            ) \le            f (w(t) ) - f (w^\star ) T t=1 T
+$$
+$$
+1 X(                     ) =         f (w(t) ) - f (w^\star ) .             (14.2) T t=1
+$$
+For every t, because of the convexity of f , we have that
+$$
+f (w(t) ) - f (w^\star ) \le hw(t) - w^\star , ∇f (w(t) )i. \tag{14.3}
+$$
+$$
+Combining the preceding we obtain T 1 X (t) f (w̄) - f (w^\star ) \le          hw - w^\star , ∇f (w(t) )i. T t=1
+$$
+To bound the right-hand side we rely on the following lemma:
+
+<!-- page: 187 -->
+
+lemma 14.1 Let v1 , . . . , vT be an arbitrary sequence of vectors. Any algorithm with an initialization w(1) = 0 and an update rule of the form
+$$
+w(t+1) = w(t) - \eta vt \tag{14.4}
+$$
+$$
+satisfies T                                  T X                       kw^\star k_2   \eta X hw(t) - w^\star , vt i \le        +       kvt k_2 .          (14.5) t=1 2\eta      2 t=1
+$$
+In particular,
+q          for every B, ρ > 0, if for all t we have that kvt k \leq  ρ and if we set
+$$
+B_2                    ?       ? \eta=      \rho_2 T , then for every w with kw k \le B we have
+$$
+$$
+T 1 X (t)                B\rho hw - w^\star , vt i \le \sqrt . T t=1                   T
+$$
+Proof    Using algebraic manipulations (completing the square), we obtain:
+$$
+1 (t) hw(t) - w^\star , vt i =  hw - w^\star , \eta vt i \eta 1 =    (-kw(t) - w^\star - \eta vt k_2 + kw(t) - w^\star k_2 + \eta 2 kvt k_2 ) 2\eta
+$$
+1                                      η =    (-kw(t+1) - w? k2 + kw(t) - w? k2 ) + kvt k2 , 2η                                      2 where the last equality follows from the definition of the update rule. Summing the equality over t, we have T                          T                                            T X                      1 X(                                      ) ηX hw(t) -w? , vt i =       -kw(t+1) - w? k2 + kw(t) - w? k2 +           kvt k2 . t=1 2η  t=1
+## 2 t=1
+(14.6) The first sum on the right-hand side is a telescopic sum that collapses to
+kw(1) - w? k2 - kw(T +1) - w? k2 .
+Plugging this in Equation (14.6), we have
+T                                                                  T X                        1                                       ηX
+$$
+hw(t) - w^\star , vt i =    (kw(1) - w^\star k_2 - kw(T +1) - w^\star k_2 ) +       kvt k_2 t=1
+$$
+2η                                       2 t=1
+T
+$$
+1                 \eta X \le      kw(1) - w^\star k_2 +       kvt k_2 2\eta                 2 t=1
+$$
+T
+$$
+1          \eta X =      kw^\star k_2 +       kvt k_2 , 2\eta          2 t=1
+$$
+where the last equality is due to the definition w(1) = 0. This proves the first part of the lemma (Equation (14.5)). The second part follows by upper bounding kw? k by B, kvt k by ρ, dividing by T , and plugging in the value of η.
+
+<!-- page: 188 -->
+
+Lemma 14.1 applies to the GD algorithm with vt = ∇f (w(t) ). As we will show later in Lemma 14.7, if f is ρ-Lipschitz, then k∇f (w(t) )k \leq  ρ. We therefore satisfy the lemma’s conditions and achieve the following corollary:
+corollary 14.2 Let f be a convex, ρ-Lipschitz function, and let w? ∈ argmin{w:kwk\leq B} f (w).
+q
+2 If we run the GD algorithm on f for T steps with η = ρB2 T , then the output vector w̄ satisfies Bρ f (w̄) - f (w? ) \leq  \sqrt . T Furthermore, for every ε > 0, to achieve f (w̄) - f (w? ) \leq  ε, it suffices to run the GD algorithm for a number of iterations that satisfies B 2 ρ2 T \geq           . ε2
+### 14.2   Subgradients
+The GD algorithm requires that the function f be differentiable. We now generalize the discussion beyond differentiable functions. We will show that the GD algorithm can be applied to nondifferentiable functions by using a so-called sub-gradient of f (w) at w(t) , instead of the gradient.
+To motivate the definition of subgradients, recall that for a convex function f , the gradient at w defines the slope of a tangent that lies below f , that is,
+\forall u,   f (u) \geq  f (w) + hu - w, ∇f (w)i.                  (14.7) An illustration is given on the left-hand side of Figure 14.2. The existence of a tangent that lies below f is an important property of convex functions, which is in fact an alternative characterization of convexity.
+lemma 14.3 Let S be an open convex set. A function f : S → R is convex iff for every w ∈ S there exists v such that
+$$
+\forall u \in S,    f (u) \ge f (w) + hu - w, vi. \tag{14.8}
+$$
+The proof of this lemma can be found in many convex analysis textbooks (e.g., (Borwein & Lewis 2006)). The preceding inequality leads us to the definition of subgradients.
+definition 14.4 (Subgradients) A vector v that satisfies Equation (14.8) is called a subgradient of f at w. The set of subgradients of f at w is called the differential set and denoted \partial f (w).
+An illustration of subgradients is given on the right-hand side of Figure 14.2. For scalar functions, a subgradient of a convex function f at w is a slope of a line that touches f at w and is not above f elsewhere.
+
+<!-- page: 189 -->
+
+)i w f( f (u)
+,∇ w - hu )+ w
+f (w)
+f(
+w           u
+![Hinh: fig-189-1]
+Figure 14.2 Left: The right-hand side of Equation (14.7) is the tangent of f at w. For a convex function, the tangent lower bounds f . Right: Illustration of several subgradients of a nondifferentiable convex function.
+#### 14.2.1   Calculating Subgradients
+How do we construct subgradients of a given convex function? If a function is differentiable at a point w, then the differential set is trivial, as the following claim shows. claim 14.5 If f is differentiable at w then \partial f (w) contains a single element – the gradient of f at w, ∇f (w). Example 14.1 (The Differential Set of the Absolute Function) Consider the absolute value function f (x) = |x|. Using Claim 14.5, we can easily construct the differential set for the differentiable parts of f , and the only point that requires special attention is x0 = 0. At that point, it is easy to verify that the subdifferential is the set of all numbers between -1 and 1. Hence:
+$$
+\begin{cases} \{1\}      if x > 0   \partial f (x) = \{-1\} if x < 0   \end{cases}[-1, 1] if x = 0
+$$
+For many practical uses, we do not need to calculate the whole set of subgra-dients at a given point, as one member of this set would suffice. The following claim shows how to construct a sub-gradient for pointwise maximum functions. claim 14.6 Let g(w) = maxi∈[r] gi (w) for r convex differentiable functions g1 , . . . , gr . Given some w, let j ∈ argmaxi gi (w). Then ∇gj (w) ∈ \partial g(w). Proof   Since gj is convex we have that for all u
+$$
+gj (u) \ge gj (w) + hu - w, ∇gj (w)i. Since g(w) = gj (w) and g(u) \ge gj (u) we obtain that g(u) \ge g(w) + hu - w, ∇gj (w)i, which concludes our proof.
+$$
+
+<!-- page: 190 -->
+
+Example 14.2 (A Subgradient of the Hinge Loss) Recall the hinge loss function from Section 12.3, f (w) = max{0, 1 - yhw, xi} for some vector x and scalar y. To calculate a subgradient of the hinge loss at some w we rely on the preceding claim and obtain that the vector v defined in the following is a subgradient of the hinge loss at w:
+(
+$$
+0     if 1 - yhw, xi \le 0 v= -yx if 1 - yhw, xi > 0
+$$
+#### 14.2.2   Subgradients of Lipschitz Functions
+Recall that a function f : A → R is ρ-Lipschitz if for all u, v ∈ A
+|f (u) - f (v)| \leq  ρ ku - vk. The following lemma gives an equivalent definition using norms of subgradients. lemma 14.7 Let A be a convex open set and let f : A → R be a convex function. Then, f is ρ-Lipschitz over A iff for all w ∈ A and v ∈ \partial f (w) we have that kvk \leq  ρ. Proof Assume that for all v ∈ \partial f (w) we have that kvk \leq  ρ. Since v ∈ \partial f (w) we have f (w) - f (u) \leq  hv, w - ui. Bounding the right-hand side using Cauchy-Schwartz inequality we obtain f (w) - f (u) \leq  hv, w - ui \leq  kvk kw - uk \leq  ρ kw - uk. An analogous argument can show that f (u) - f (w) \leq  ρ kw - uk. Hence f is ρ-Lipschitz. Now assume that f is ρ-Lipschitz. Choose some w ∈ A, v ∈ \partial f (w). Since A is open, there exists ε > 0 such that u = w + εv/kvk belongs to A. Therefore, hu - w, vi = εkvk and ku - wk = ε. From the definition of the subgradient, f (u) - f (w) \geq  hv, u - wi = εkvk. On the other hand, from the Lipschitzness of f we have ρ ε = ρ ku - wk \geq  f (u) - f (w). Combining the two inequalities we conclude that kvk \leq  ρ.
+#### 14.2.3   Subgradient Descent
+The gradient descent algorithm can be generalized to nondifferentiable functions by using a subgradient of f (w) at w(t) , instead of the gradient. The analysis of the convergence rate remains unchanged: Simply note that Equation (14.3) is true for subgradients as well.
+
+<!-- page: 191 -->
+
+![Hinh: fig-191-1]
+Figure 14.3 An illustration of the gradient descent algorithm (left) and the stochastic gradient descent algorithm (right). The function to be minimized is 1.25(x + 6)2 + (y - 8)2 . For the stochastic case, the black line depicts the averaged value of w.
+### 14.3     Stochastic Gradient Descent (SGD)
+In stochastic gradient descent we do not require the update direction to be based exactly on the gradient. Instead, we allow the direction to be a random vector and only require that its expected value at each iteration will equal the gradient direction. Or, more generally, we require that the expected value of the random vector will be a subgradient of the function at the current vector.
+Stochastic Gradient Descent (SGD) for minimizing
+$$
+f (w) parameters: Scalar \eta > 0, integer T > 0 initialize: w(1) = 0 for t = 1, 2, . . . , T choose vt at random from a distribution such that E[vt | w(t) ] \in \partial f (w(t) ) update w(t+1) = w(t) - \eta vt PT output w̄ = T_1 t=1 w(t)
+$$
+An illustration of stochastic gradient descent versus gradient descent is given in Figure 14.3. As we will see in Section 14.5, in the context of learning problems, it is easy to find a random vector whose expectation is a subgradient of the risk function.
+#### 14.3.1   Analysis of SGD for Convex-Lipschitz-Bounded Functions
+Recall the bound we achieved for the GD algorithm in Corollary 14.2. For the stochastic case, in which only the expectation of vt is in \partial f (w(t) ), we cannot directly apply Equation (14.3). However, since the expected value of vt is a
+
+<!-- page: 192 -->
+
+subgradient of f at w(t) , we can still derive a similar bound on the expected output of stochastic gradient descent. This is formalized in the following theorem.
+theorem 14.8 Let B, ρ > 0. Let f be a convex function and let w? ∈ argminw:kwk\leq B f (w).
+q
+2 Assume that SGD is run for T iterations with η = ρB2 T . Assume also that for all t, kvt k \leq  ρ with probability 1. Then, Bρ E [f (w̄)] - f (w? ) \leq  \sqrt . T Therefore, for any ε > 0, to achieve E[f (w̄)] - f (w? ) \leq  ε, it suffices to run the SGD algorithm for a number of iterations that satisfies B 2 ρ2 T \geq            . ε2 Proof Let us introduce the notation v1:t to denote the sequence v1 , . . . , vt . Taking expectation of Equation (14.2), we obtain " T                     # X ?          1         (t)      ? E [f (w̄) - f (w )] \leq  E T       (f (w ) - f (w )) . v1:T                     v1:T t=1
+Since Lemma 14.1 holds for any sequence v1 , v2 , ...vT , it applies to SGD as well. By taking expectation of the bound in the lemma we have
+"    T
+$$
+  1 X (t)       ?             B\rho E           hw - w , vt i \le \sqrt .                        (14.9) v_1:T T                                T t=1
+$$
+$$
+It is left to show that  T                        T               X                         X 1         (t)     ?       1    (t) ? E T      (f (w ) - f (w )) \le E T  hw - w , vt i ,                             (14.10) v_1:T                                     v_1:T t=1                                          t=1
+$$
+$$
+which we will hereby prove. Using the linearity of the expectation we have     T       T 1 X (t)       ?         1X E           hw - w , vt i =          E [hw(t) - w^\star , vt i]. v_1:T T                         T     v_1:T t=1                     t=1
+$$
+Next, we recall the law of total expectation: For every two random variables α, β, and a function g, Eα [g(α)] = Eβ Eα [g(α)|β]. Setting α = v1:t and β = v1:t-1 we get that
+E [hw(t) - w? , vt i] = E [hw(t) - w? , vt i] v1:T                       v1:t
+=     E      E [hw(t) - w? , vt i | v1:t-1 ] .
+v1:t-1 v1:t
+Once we know v1:t-1 , the value of w(t) is not random any more and therefore
+E     E [hw(t) - w? , vt i | v1:t-1 ] =       E hw(t) - w? , E [vt | v1:t-1 ]i . v1:t-1 v1:t                                 v1:t-1               vt
+
+<!-- page: 193 -->
+
+Since w(t) only depends on v1:t-1 and SGD requires that Evt [vt | w(t) ] ∈ \partial f (w(t) ) we obtain that Evt [vt | v1:t-1 ] ∈ \partial f (w(t) ). Thus,
+$$
+E hw(t) - w^\star , E [vt | v_1: t-1 ]i \ge           E [f (w(t) ) - f (w^\star )]. v_1: t-1             vt                        v_1: t-1
+$$
+Overall, we have shown that
+$$
+E [hw(t) - w^\star , vt i] \ge     E [f (w(t) ) - f (w^\star )] v_1:T                       v_1:t-1
+$$
+= E [f (w(t) ) - f (w? )] .
+v1:T
+Summing over t, dividing by T , and using the linearity of expectation, we get that Equation (14.10) holds, which concludes our proof.
+### 14.4     Variants
+In this section we describe several variants of Stochastic Gradient Descent.
+#### 14.4.1   Adding a Projection Step
+In the previous analyses of the GD and SGD algorithms, we required that the norm of w? will be at most B, which is equivalent to requiring that w? is in the set H = {w : kwk \leq  B}. In terms of learning, this means restricting ourselves to a B-bounded hypothesis class. Yet any step we take in the opposite direction of the gradient (or its expected direction) might result in stepping out of this bound, and there is even no guarantee that w̄ satisfies it. We show in the following how to overcome this problem while maintaining the same convergence rate. The basic idea is to add a projection step; namely, we will now have a two-step update rule, where we first subtract a subgradient from the current value of w and then project the resulting vector onto H. Formally,
+1 1.. w(t+ 2 ) = w(t) - ηvt
+$$
+1 2.. w(t+1) = argminw\in H kw - w(t+ 2 ) k
+$$
+The projection step replaces the current value of w by the vector in H closest to it.
+Clearly, the projection step guarantees that w(t) ∈ H for all t. Since H is convex this also implies that w̄ ∈ H as required. We next show that the analysis of SGD with projections remains the same. This is based on the following lemma.
+lemma 14.9 (Projection Lemma)             Let H be a closed convex set and let v be the projection of w onto H, namely,
+$$
+v = argmin kx - wk2 . x\in H
+$$
+
+<!-- page: 194 -->
+
+Then, for every u ∈ H,
+$$
+kw - uk2 - kv - uk2 \ge 0.
+$$
+Proof By the convexity of H, for every α ∈ (0, 1) we have that v+α(u-v) ∈ H. Therefore, from the optimality of v we obtain
+$$
+kv - wk2 \le kv + \alpha(u - v) - wk2 = kv - wk2 + 2\alpha hv - w, u - vi + \alpha_2 ku - vk2 .
+$$
+Rearranging, we obtain
+$$
+2hv - w, u - vi \ge -\alpha ku - vk2 .
+$$
+Taking the limit α → 0 we get that
+$$
+hv - w, u - vi \ge 0.
+$$
+Therefore,
+$$
+kw - uk2 = kw - v + v - uk2 = kw - vk2 + kv - uk2 + 2hv - w, u - vi \ge kv - uk2 .
+$$
+Equipped with the preceding lemma, we can easily adapt the analysis of SGD to the case in which we add projection steps on a closed and convex set. Simply note that for every t,
+$$
+kw(t+1) - w^\star k_2 - kw(t) - w^\star k_2 1                   1 = kw(t+1) - w^\star k_2 - kw(t+ 2 ) - w^\star k_2 + kw(t+ 2 ) - w^\star k_2 - kw(t) - w^\star k_2 1 \le kw(t+ 2 ) - w^\star k_2 - kw(t) - w^\star k_2 .
+$$
+Therefore, Lemma 14.1 holds when we add projection steps and hence the rest of the analysis follows directly.
+#### 14.4.2   Variable Step Size
+Another variant of SGD is decreasing the step size as a function of t. That is, rather than updating with a constant η, we use ηt . For instance, we can set ηt = ρB\sqrt and achieve a bound similar to Theorem 14.8. The idea is that when
+t we are closer to the minimum of the function, we take our steps more carefully, so as not to “overshoot” the minimum.
+
+<!-- page: 195 -->
+
+#### 14.4.3   Other Averaging Techniques
+PT We have set the output vector to be w̄ = T1 t=1 w(t) . There are alternative approaches such as outputting w(t) for some random t ∈ [t], or outputting the average of w(t) over the last αT iterations, for some α ∈ (0, 1). One can also take a weighted average of the last few iterates. These more sophisticated averaging schemes can improve the convergence speed in some situations, such as in the case of strongly convex functions defined in the following.
+#### 14.4.4   Strongly Convex Functions*
+In this section we show a variant of SGD that enjoys a faster convergence rate for problems in which the objective function is strongly convex (see Definition 13.4 of strong convexity in the previous chapter). We rely on the following claim, which generalizes Lemma 13.5. claim 14.10     If f is λ-strongly convex then for every w, u and v ∈ \partial f (w) we have
+hw - u, vi \geq  f (w) - f (u) + λ2 kw - uk2 . The proof is similar to the proof of Lemma 13.5 and is left as an exercise.
+SGD for minimizing a λ-strongly convex function
+Goal: Solve minw∈H f (w)
+parameter: T
+initialize: w(1) = 0
+for t = 1, . . . , T
+Choose a random vector vt s.t. E[vt |w(t) ] ∈ \partial f (w(t) )
+Set ηt = 1/(λ t)
+1
+Set w(t+ 2 ) = w(t) - ηt vt
+1
+Set w(t+1) = arg minw∈H kw - w(t+ 2 ) k2
+T
+output: w̄ = T1 t=1 w(t)
+P
+theorem 14.11 Assume that f is λ-strongly convex and that E[kvt k2 ] \leq  ρ2 . Let w? ∈ argminw∈H f (w) be an optimal solution. Then,
+$$
+\rho_2 E[f (w̄)] - f (w^\star ) \le       (1 + log(T )). 2\lambda T Proof Let ∇(t) = E[vt |w(t) ]. Since f is strongly convex and ∇(t) is in the subgradient set of f at w(t) we have that hw(t) - w^\star , ∇(t) i \ge f (w(t) ) - f (w^\star ) + \lambda_2 kw(t) - w^\star k_2 .     (14.11) Next, we show that E[kw(t) - w^\star k_2 - kw(t+1) - w^\star k_2 ] \eta_t 2 hw(t) - w^\star , ∇(t) i \le                                      + \rho . \tag{14.12}
+$$
+## 2 ηt                 2
+
+<!-- page: 196 -->
+
+1 Since w(t+1) is the projection of w(t+ 2 ) onto H, and w? ∈ H we have that 1 kw(t+ 2 ) - w? k2 \geq  kw(t+1) - w? k2 . Therefore,
+$$
+1 kw(t) - w^\star k_2 - kw(t+1) - w^\star k_2 \ge kw(t) - w^\star k_2 - kw(t+ 2 ) - w^\star k_2 = 2\eta_t hw(t) - w^\star , vt i - \eta t_2 kvt k_2 .
+$$
+Taking expectation of both sides, rearranging, and using the assumption E[kvt k2 ] \leq  ρ2 yield Equation (14.12). Comparing Equation (14.11) and Equation (14.12) and summing over t we obtain T X (E[f (w(t) )] - f (w? )) t=1
+```text
+T (                                                          )#           T X kw(t) - w^\star k_2 - kw(t+1) - w^\star k_2                                      \rho_2 X \le E                                            - \lambda_2 kw(t) - w^\star k_2         +         \eta_t . t=1
+```
+## 2 ηt                                               2 t=1
+Next, we use the definition ηt = 1/(λ t) and note that the first sum on the right-hand side of the equation collapses to -λT kw(T +1) - w? k2 \leq  0. Thus,
+T                                  T X                              ρ2 X 1      ρ2
+$$
+(E[f (w(t) )] - f (w^\star )) \le           \le    (1 + log(T )). t=1
+$$
+## 2 λ t=1 t   2λ
+The theorem follows from the preceding by dividing by T and using Jensen’s inequality.
+Remark 14.3 Rakhlin, Shamir & Sridharan (2012) derived a convergence rate in which the log(T ) term is eliminated for a variant of the algorithm in which
+PT we output the average of the last T /2 iterates, w̄ = T2 t=T /2+1 w(t) . Shamir & Zhang (2013) have shown that Theorem 14.11 holds even if we output w̄ = w(T ) .
+### 14.5     Learning with SGD
+We have so far introduced and analyzed the SGD algorithm for general convex functions. Now we shall consider its applicability to learning tasks.
+#### 14.5.1   SGD for Risk Minimization
+Recall that in learning we face the problem of minimizing the risk function
+$$
+LD (w) = E [`(w, z)]. z\sim D
+$$
+We have seen the method of empirical risk minimization, where we minimize the empirical risk, LS (w), as an estimate to minimizing LD (w). SGD allows us to take a different approach and minimize LD (w) directly. Since we do not know D, we cannot simply calculate ∇LD (w(t) ) and minimize it with the GD method. With SGD, however, all we need is to find an unbiased estimate of the gradient of
+
+<!-- page: 197 -->
+
+LD (w), that is, a random vector whose conditional expected value is ∇LD (w(t) ). We shall now see how such an estimate can be easily constructed. For simplicity, let us first consider the case of differentiable loss functions. Hence the risk function LD is also differentiable. The construction of the random vector vt will be as follows: First, sample z ∼ D. Then, define vt to be the gradient of the function `(w, z) with respect to w, at the point w(t) . Then, by the linearity of the gradient we have
+$$
+E[vt |w(t) ] = E [∇`(w(t) , z)] = ∇ E [`(w(t) , z)] = ∇LD (w(t) ).      (14.13) z\sim D                      z\sim D
+$$
+The gradient of the loss function `(w, z) at w(t) is therefore an unbiased estimate of the gradient of the risk function LD (w(t) ) and is easily constructed by sampling a single fresh example z ∼ D at each iteration t.
+The same argument holds for nondifferentiable loss functions. We simply let vt be a subgradient of `(w, z) at w(t) . Then, for every u we have
+$$
+`(u, z) - `(w(t) , z) \ge hu - w(t) , vt i.
+$$
+Taking expectation on both sides with respect to z ∼ D and conditioned on the value of w(t) we obtain
+$$
+LD (u) - LD (w(t) ) = E[`(u, z) - `(w(t) , z)|w(t) ] \ge E[hu - w(t) , vt i|w(t) ] = hu - w(t) , E[vt |w(t) ]i.
+$$
+It follows that E[vt |w(t) ] is a subgradient of LD (w) at w(t) .
+To summarize, the stochastic gradient descent framework for minimizing the risk is as follows.
+Stochastic Gradient Descent (SGD) for minimizing
+$$
+LD (w) parameters: Scalar \eta > 0, integer T > 0 initialize: w(1) = 0 for t = 1, 2, . . . , T sample z \sim D pick vt \in \partial `(w(t) , z) update w(t+1) = w(t) - \eta vt PT output w̄ = T_1 t=1 w(t)
+$$
+We shall now use our analysis of SGD to obtain a sample complexity analysis for learning convex-Lipschitz-bounded problems. Theorem 14.8 yields the following:
+corollary 14.12 Consider a convex-Lipschitz-bounded learning problem with parameters ρ, B. Then, for every ε > 0, if we run the SGD method for minimizing
+
+<!-- page: 198 -->
+
+$$
+LD (w) with a number of iterations (i.e., number of examples) B 2 \rho_2 T \ge \epsilon_2 q B_2 and with \eta =       \rho_2 T , then the output of SGD satisfies
+$$
+$$
+E [LD (w̄)] \le min LD (w) + \epsilon. w\in H
+$$
+It is interesting to note that the required sample complexity is of the same order of magnitude as the sample complexity guarantee we derived for regularized loss minimization. In fact, the sample complexity of SGD is even better than what we have derived for regularized loss minimization by a factor of 8.
+#### 14.5.2   Analyzing SGD for Convex-Smooth Learning Problems
+In the previous chapter we saw that the regularized loss minimization rule also learns the class of convex-smooth-bounded learning problems. We now show that the SGD algorithm can be also used for such problems. theorem 14.13 Assume that for all z, the loss function `(·, z) is convex, β-smooth, and nonnegative. Then, if we run the SGD algorithm for minimizing LD (w) we have that for every w? ,
+$$
+kw^\star k_2 (                  ) 1 E[LD (w̄)] \le          LD (w^\star ) +          .
+$$
+1 - ηβ              2η T Proof Recall that if a function is β-smooth and nonnegative then it is self-bounded: k∇f (w)k2 \leq  2βf (w). To analyze SGD for convex-smooth problems, let us define z1 , . . . , zT the random samples of the SGD algorithm, let ft (·) = `(·, zt ), and note that vt = ∇ft (w(t) ). For all t, ft is a convex function and therefore ft (w(t) )-ft (w? ) \leq  hvt , w(t) -w? i. Summing over t and using Lemma 14.1 we obtain T                             T                                  T X                             X                       kw? k2   ηX (ft (w(t) ) - ft (w? )) \leq      hvt , w(t) - w? i \leq         +       kvt k2 . t=1                           t=1
+2η      2 t=1
+$$
+Combining the preceding with the self-boundedness of ft yields T                                         T X                             kw^\star k_2      X (ft (w(t) ) - ft (w^\star )) \le        + \eta\beta     ft (w(t) ). t=1 2\eta         t=1
+$$
+$$
+Dividing by T and rearranging, we obtain T                            T ! 1X                    1       1X               kw^\star k_2 ft (w(t) ) \le                  ft (w^\star ) +               . T t=1              1 - \eta\beta     T t=1             2\eta T
+$$
+Next, we take expectation of the two sides of the preceding equation with respect
+
+<!-- page: 199 -->
+
+to z1 , . . . , zT . Clearly, E[ft (w? )] = LD (w? ). In addition, using the same argument as in the proof of Theorem 14.8 we have that
+$$
+   T       T  1X         (t)      1X         (t) E       ft (w ) = E         LD (w ) \ge E[LD (w̄)]. T t=1               T t=1
+$$
+Combining all we conclude our proof.
+As a direct corollary we obtain:
+corollary 14.14 Consider a convex-smooth-bounded learning problem with parameters β, B. Assume in addition that `(0, z) \leq  1 for all z ∈ Z. For every
+$$
+1 \epsilon > 0, set \eta = \beta(1+3/\epsilon) . Then, running SGD with T \ge 12B 2 \beta/\epsilon_2 yields
+$$
+$$
+E[LD (w̄)] \le min LD (w) + \epsilon. w\in H
+$$
+#### 14.5.3   SGD for Regularized Loss Minimization
+We have shown that SGD enjoys the same worst-case sample complexity bound as regularized loss minimization. However, on some distributions, regularized loss minimization may yield a better solution. Therefore, in some cases we may want to solve the optimization problem associated with regularized loss minimization, namely,1
+(                 )
+λ    2 min            kwk + LS (w) .                     (14.14) w           2
+Since we are dealing with convex learning problems in which the loss function is convex, the preceding problem is also a convex optimization problem that can be solved using SGD as well, as we shall see in this section. Define f (w) = λ2 kwk2 + LS (w). Note that f is a λ-strongly convex function; therefore, we can apply the SGD variant given in Section 14.4.4 (with H = Rd ). To apply this algorithm, we only need to find a way to construct an unbiased estimate of a subgradient of f at w(t) . This is easily done by noting that if we pick z uniformly at random from S, and choose vt ∈ \partial `(w(t) , z) then the expected value of λw(t) + vt is a subgradient of f at w(t) . To analyze the resulting algorithm, we first rewrite the update rule (assuming
+## 1   We divided λ by 2 for convenience.
+
+<!-- page: 200 -->
+
+that H = Rd and therefore the projection step does not matter) as follows
+1 ( (t)          ) w(t+1) = w(t) -          λw + vt (        λ)t
+$$
+1              1 = 1-          w(t) -      vt t             \lambda_t t - 1 (t)        1 =       w -           vt t (           \lambda_t                      ) t - 1 t - 2 (t-1)              1            1 =                  w      -            vt-1 -    vt t      t-1              \lambda (t - 1)        \lambda_t t
+$$
+$$
+1 X =-           vi .                                     (14.15) \lambda t i=1
+$$
+If we assume that the loss function is ρ-Lipschitz, it follows that for all t we have kvt k \leq  ρ and therefore kλw(t) k \leq  ρ, which yields
+$$
+k\lambda_w(t) + vt k \le 2\rho.
+$$
+Theorem 14.11 therefore tells us that after performing T iterations we have that
+$$
+4\rho_2 E[f (w̄)] - f (w^\star ) \le       (1 + log(T )). \lambda T
+$$
+### 14.6   Summary
+We have introduced the Gradient Descent and Stochastic Gradient Descent algorithms, along with several of their variants. We have analyzed their convergence rate and calculated the number of iterations that would guarantee an expected objective of at most ε plus the optimal objective. Most importantly, we have shown that by using SGD we can directly minimize the risk function. We do so by sampling a point i.i.d from D and using a subgradient of the loss of the current hypothesis w(t) at this point as an unbiased estimate of the gradient (or a subgradient) of the risk function. This implies that a bound on the number of iterations also yields a sample complexity bound. Finally, we have also shown how to apply the SGD method to the problem of regularized risk minimization. In future chapters we show how this yields extremely simple solvers to some optimization problems associated with regularized risk minimization.
+### 14.7   Bibliographic Remarks
+SGD dates back to Robbins & Monro (1951). It is especially effective in large scale machine learning problems. See, for example, (Murata 1998, Le Cun 2004, Zhang 2004, Bottou & Bousquet 2008, Shalev-Shwartz, Singer & Srebro 2007, Shalev-Shwartz & Srebro 2008). In the optimization community it was studied
+
+<!-- page: 201 -->
+
+in the context of stochastic optimization. See, for example, (Nemirovski & Yudin 1978, Nesterov & Nesterov 2004, Nesterov 2005, Nemirovski, Juditsky, Lan & Shapiro 2009, Shapiro, Dentcheva & Ruszczyński 2009).
+The bound we have derived for strongly convex function is due to Hazan, Agarwal & Kale (2007). As mentioned previously, improved bounds have been obtained in Rakhlin et al. (2012).
+### 14.8   Exercises
+1. Prove Claim 14.10. Hint: Extend the proof of Lemma 13.5.
+2. Prove Corollary 14.14.
+3. Perceptron as a subgradient descent algorithm: Let S = ((x1 , y1 ), . . . , (xm , ym )) ∈
+(Rd × {\pm 1})m . Assume that there exists w ∈ Rd such that for every i ∈ [m] we have yi hw, xi i \geq  1, and let w? be a vector that has the minimal norm among all vectors that satisfy the preceding requirement. Let R = maxi kxi k. Define a function
+f (w) = max (1 - yi hw, xi i) .
+i∈[m]
+- Show that minw:kwk\leq kw? k f (w) = 0 and show that any w for which f (w) <
+## 1 separates the examples in S.
+- Show how to calculate a subgradient of f .
+- Describe and analyze the subgradient descent algorithm for this case. Com-
+pare the algorithm and the analysis to the Batch Perceptron algorithm given in Section 9.1.2.
+4. Variable step size (*): Prove an analog of Theorem 14.8 for SGD with a
+variable step size, ηt = ρB
+$$
+\sqrt . t
+$$
+
+<!-- page: 202 -->
+
+## 15 Support Vector Machines
+In this chapter and the next we discuss a very useful machine learning tool: the support vector machine paradigm (SVM) for learning linear predictors in high dimensional feature spaces. The high dimensionality of the feature space raises both sample complexity and computational complexity challenges.
+The SVM algorithmic paradigm tackles the sample complexity challenge by searching for “large margin” separators. Roughly speaking, a halfspace separates a training set with a large margin if all the examples are not only on the correct side of the separating hyperplane but also far away from it. Restricting the algorithm to output a large margin separator can yield a small sample complexity even if the dimensionality of the feature space is high (and even infinite). We introduce the concept of margin and relate it to the regularized loss minimization paradigm as well as to the convergence rate of the Perceptron algorithm. In the next chapter we will tackle the computational complexity challenge using the idea of kernels.
+### 15.1   Margin and Hard-SVM
+Let S = (x1 , y1 ), . . . , (xm , ym ) be a training set of examples, where each xi ∈ Rd and yi ∈ {\pm 1}. We say that this training set is linearly separable, if there exists a halfspace, (w, b), such that yi = sign(hw, xi i + b) for all i. Alternatively, this condition can be rewritten as
+\forall i ∈ [m], yi (hw, xi i + b) > 0.
+All halfspaces (w, b) that satisfy this condition are ERM hypotheses (their 0-1 error is zero, which is the minimum possible error). For any separable training sample, there are many ERM halfspaces. Which one of them should the learner pick? Consider, for example, the training set described in the picture that follows.
+
+<!-- page: 203 -->
+
+x
+x
+While both the dashed-black and solid-green hyperplanes separate the four examples, our intuition would probably lead us to prefer the black hyperplane over the green one. One way to formalize this intuition is using the concept of margin.
+The margin of a hyperplane with respect to a training set is defined to be the minimal distance between a point in the training set and the hyperplane. If a hyperplane has a large margin, then it will still separate the training set even if we slightly perturb each instance. We will see later on that the true error of a halfspace can be bounded in terms of the margin it has over the training sample (the larger the margin, the smaller the error), regardless of the Euclidean dimension in which this halfspace resides. Hard-SVM is the learning rule in which we return an ERM hyperplane that separates the training set with the largest possible margin. To define Hard-SVM formally, we first express the distance between a point x to a hyperplane using the parameters defining the halfspace.
+claim 15.1 The distance between a point x and the hyperplane defined by (w, b) where kwk = 1 is |hw, xi + b|.
+Proof   The distance between a point x and the hyperplane is defined as
+min{kx - vk : hw, vi + b = 0}.
+Taking v = x - (hw, xi + b)w we have that
+$$
+hw, vi + b = hw, xi - (hw, xi + b)\|w\|_2 + b = 0,
+$$
+$$
+and kx - vk = |hw, xi + b| kwk = |hw, xi + b|.
+$$
+Hence, the distance is at most |hw, xi + b|. Next, take any other point u on the hyperplane, thus hw, ui + b = 0. We have
+kx - uk2 = kx - v + v - uk2
+$$
+= kx - vk2 + kv - uk2 + 2hx - v, v - ui \ge kx - vk2 + 2hx - v, v - ui = kx - vk2 + 2(hw, xi + b)hw, v - ui = kx - vk2 ,
+$$
+$$
+where the last equality is because hw, vi = hw, ui = -b. Hence, the distance
+$$
+
+<!-- page: 204 -->
+
+between x and u is at least the distance between x and v, which concludes our proof.
+On the basis of the preceding claim, the closest point in the training set to the separating hyperplane is mini∈[m] |hw, xi i + b|. Therefore, the Hard-SVM rule is
+$$
+argmax       min |hw, xi i + b| s.t. \forall i, yi (hw, xi i + b) > 0. (w,b):kwk=1 i\in[m]
+$$
+Whenever there is a solution to the preceding problem (i.e., we are in the separable case), we can write an equivalent problem as follows (see Exercise 1):
+$$
+argmax         min yi (hw, xi i + b).                (15.1) (w,b):kwk=1 i\in[m]
+$$
+Next, we give another equivalent formulation of the Hard-SVM rule as a quadratic optimization problem.1
+```
+Hard-SVM
+input: (x1 , y1 ), . . . , (xm , ym )
+solve:
+```
+$$
+(w_0,b_0)=\arg\min_{(w,b)} \|w\|_2 \quad \mathrm{s.t.}\quad \forall i,\; y_i(\langle w,x_i\rangle+b)\ge1 \tag{15.2}
+$$
+```
+output: w{} = w0 / kw0k, b{} = b0 / kw0k
+```
+The lemma that follows shows that the output of hard-SVM is indeed the separating hyperplane with the largest margin. Intuitively, hard-SVM searches for w of minimal norm among all the vectors that separate the data and for which |hw, xi i + b| \geq  1 for all i. In other words, we enforce the margin to be 1, but now the units in which we measure the margin scale with the norm of w. Therefore, finding the largest margin halfspace boils down to finding w whose norm is minimal. Formally:
+lemma 15.2        The output of Hard-SVM is a solution of Equation (15.1).
+Proof Let (w? , b? ) be a solution of Equation (15.1) and define the margin achieved by (w? , b? ) to be γ ? = mini∈[m] yi (hw? , xi i + b? ). Therefore, for all i we have
+$$
+yi (hw^\star , xi i + b? ) \ge \gamma ?
+$$
+or equivalently
+$$
+?           ? yi (h w            b \gamma ? , xi i + \gamma ? ) \ge 1. ?    ? Hence, the pair ( w     b \gamma ? , \gamma ? ) satisfies the conditions of the quadratic optimization
+$$
+1   A quadratic optimization problem is an optimization problem in which the objective is a
+convex quadratic function and the constraints are linear inequalities.
+
+<!-- page: 205 -->
+
+$$
+? problem given in Equation (15.2). Therefore, kw0 k \le k w        1 \gamma ? k = \gamma ? . It follows that for all i,
+$$
+$$
+1                             1 yi (hw{}, xi i + b{}) =         yi (hw0 , xi i + b_0 ) \ge       \ge \gamma?. kw0 k                         kw0 k
+$$
+Since kw{}k = 1 we obtain that (w{}, b{}) is an optimal solution of Equation (15.1).
+#### 15.1.1   The Homogenous Case
+It is often more convenient to consider homogenous halfspaces, namely, halfspaces that pass through the origin and are thus defined by sign(hw, xi), where the bias term b is set to be zero. Hard-SVM for homogenous halfspaces amounts to solving
+$$
+min \|w\|_2         s.t. \forall i, yi hw, xi i \ge 1.                (15.3) w
+$$
+As we discussed in Chapter 9, we can reduce the problem of learning nonhomogenous halfspaces to the problem of learning homogenous halfspaces by adding one more feature to each instance of xi , thus increasing the dimension to d + 1. Note, however, that the optimization problem given in Equation (15.2) does not regularize the bias term b, while if we learn a homogenous halfspace in Rd+1 using Equation (15.3) then we regularize the bias term (i.e., the d + 1 component of the weight vector) as well. However, regularizing b usually does not make a significant difference to the sample complexity.
+#### 15.1.2   The Sample Complexity of Hard-SVM
+Recall that the VC-dimension of halfspaces in Rd is d + 1. It follows that the sample complexity of learning halfspaces grows with the dimensionality of the problem. Furthermore, the fundamental theorem of learning tells us that if the number of examples is significantly smaller than d/ε then no algorithm can learn an ε-accurate halfspace. This is problematic when d is very large.
+To overcome this problem, we will make an additional assumption on the underlying data distribution. In particular, we will define a “separability with margin γ” assumption and will show that if the data is separable with margin γ then the sample complexity is bounded from above by a function of 1/γ 2 . It follows that even if the dimensionality is very large (or even infinite), as long as the data adheres to the separability with margin assumption we can still have a small sample complexity. There is no contradiction to the lower bound given in the fundamental theorem of learning because we are now making an additional assumption on the underlying data distribution. Before we formally define the separability with margin assumption, there is a scaling issue we need to resolve. Suppose that a training set S = (x1 , y1 ), . . . , (xm , ym ) is separable with a margin γ, namely, the maximal objective value of Equation (15.1) is at least γ. Then, for any positive scalar α > 0, the training set
+
+<!-- page: 206 -->
+
+S 0 = (αx1 , y1 ), . . . , (αxm , ym ) is separable with a margin of αγ. That is, a simple scaling of the data can make it separable with an arbitrarily large margin. It follows that in order to give a meaningful definition of margin we must take into account the scale of the examples as well. One way to formalize this is using the definition that follows. definition 15.3 Let D be a distribution over Rd × {\pm 1}. We say that D is separable with a (γ, ρ)-margin if there exists (w? , b? ) such that kw? k = 1 and such that with probability 1 over the choice of (x, y) ∼ D we have that y(hw? , xi+ b? ) \geq  γ and kxk \leq  ρ. Similarly, we say that D is separable with a (γ, ρ)-margin using a homogenous halfspace if the preceding holds with a halfspace of the form (w? , 0).
+In the advanced part of the book (Chapter 26), we will prove that the sample complexity of Hard-SVM depends on (ρ/γ)2 and is independent of the dimension d. In particular, Theorem 26.13 in Section 26.3 states the following: theorem 15.4 Let D be a distribution over Rd × {\pm 1} that satisfies the (γ, ρ)-separability with margin assumption using a homogenous halfspace. Then, with probability of at least 1 - δ over the choice of a training set of size m, the 0-1 error of the output of Hard-SVM is at most
+r             r
+## 4 (ρ/γ)2     2 log(2/δ)
++              . m             m Remark 15.1 (Margin and the Perceptron) In Section 9.1.2 we have described and analyzed the Perceptron algorithm for finding an ERM hypothesis with respect to the class of halfspaces. In particular, in Theorem 9.1 we upper bounded the number of updates the Perceptron might make on a given training set. It can be shown (see Exercise 2) that the upper bound is exactly (ρ/γ)2 , where ρ is the radius of examples and γ is the margin.
+### 15.2   Soft-SVM and Norm Regularization
+The Hard-SVM formulation assumes that the training set is linearly separable,
+which is a rather strong assumption. Soft-SVM can be viewed as a relaxation of
+the Hard-SVM rule that can be applied even if the training set is not linearly
+separable.
+The optimization problem in Equation (15.2) enforces the hard constraints
+yi (hw, xi i + b) \geq  1 for all i. A natural relaxation is to allow the constraint to be
+violated for some of the examples in the training set. This can be modeled by
+introducing nonnegative slack variables, ξ1 , . . . , ξm , and replacing each constraint
+yi (hw, xi i + b) \geq  1 by the constraint yi (hw, xi i + b) \geq  1 - ξi . That is, ξi measures
+by how much the constraint yi (hw, xi i+b) \geq  1 is being violated. Soft-SVM jointly
+minimizes the norm of w (corresponding to the margin) and the average of ξi
+(corresponding to the violations of the constraints). The tradeoff between the two
+
+<!-- page: 207 -->
+
+terms is controlled by a parameter λ. This leads to the Soft-SVM optimization problem:
+```
+Soft-SVM
+input: (x1 , y1 ), . . . , (xm , ym )
+parameter: λ > 0
+solve:
+```
+$$
+\min_{w,b,\xi}\; \lambda\|w\|^2+\frac{1}{m}\sum_{i=1}^{m}\xi_i \tag{15.4}
+$$
+```
+s.t. \forall i, yi (hw, xi i + b) \geq  1 - ξi and ξi \geq  0
+output: w, b
+```
+We can rewrite Equation (15.4) as a regularized loss minimization problem. Recall the definition of the hinge loss:
+`hinge ((w, b), (x, y)) = max{0, 1 - y(hw, xi + b)}.
+Given (w, b) and a training set S, the averaged hinge loss on S is denoted by Lhinge S     ((w, b)). Now, consider the regularized loss minimization problem:
+(                         ) min λkwk2 + Lhinge S   ((w, b))   .              (15.5) w,b
+claim 15.5     Equation (15.4) and Equation (15.5) are equivalent.
+Proof Fix some w, b and consider the minimization over ξ in Equation (15.4). Fix some i. Since ξi must be nonnegative, the best assignment to ξi would be 0 if yi (hw, xi i + b) \geq  1 and would be 1 - yi (hw, xi i + b) otherwise. In other words, ξi = `hinge ((w, b), (xi , yi )) for all i, and the claim follows.
+We therefore see that Soft-SVM falls into the paradigm of regularized loss
+minimization that we studied in the previous chapter. A Soft-SVM algorithm,
+that is, a solution for Equation (15.5), has a bias toward low norm separators.
+The objective function that we aim to minimize in Equation (15.5) penalizes not
+only for training errors but also for large norm.
+It is often more convenient to consider Soft-SVM for learning a homogenous
+halfspace, where the bias term b is set to be zero, which yields the following
+optimization problem:
+(                   )
+min λkwk2 + Lhinge S   (w) ,                  (15.6)
+w
+$$
+where m 1 X Lhinge S     (w) =          max\{0, 1 - yhw, xi i\}. m i=1
+$$
+
+<!-- page: 208 -->
+
+15.2.1   The Sample Complexity of Soft-SVM
+We now analyze the sample complexity of Soft-SVM for the case of homogenous
+halfspaces (namely, the output of Equation (15.6)). In Corollary 13.8 we derived
+a generalization bound for the regularized loss minimization framework assuming
+that the loss function is convex and Lipschitz. We have already shown that the
+hinge loss is convex so it is only left to analyze the Lipschitzness of the hinge
+loss.
+claim 15.6    Let f (w) = max{0, 1 - yhw, xi}. Then, f is kxk-Lipschitz.
+Proof It is easy to verify that any subgradient of f at w is of the form αx where
+|α| \leq  1. The claim now follows from Lemma 14.7.
+Corollary 13.8 therefore yields the following:
+corollary 15.7 Let D be a distribution over X × {0, 1}, where X = {x :
+kxk \leq  ρ}. Consider running Soft-SVM (Equation (15.6)) on a training set S ∼
+Dm and let A(S) be the solution of Soft-SVM. Then, for every u,
+2ρ2
+E m [Lhinge
+D     (A(S))] \leq  Lhinge
+D     (u) + λkuk2 +             .
+S∼D                                                  λm
+Furthermore, since the hinge loss upper bounds the 0-1 loss we also have
+$$
+hinge                           2\rho_2 E m [L_0-1 D (A(S))] \le LD     (u) + \lambda \|u\|_2 +                 . S\sim D                                                  \lambda_m
+$$
+q
+2ρ2 Last, for every B > 0, if we set λ =       B 2 m then
+r
+8ρ2 B 2 E [L0-1 D (A(S))]      \leq      E [Lhinge D     (A(S))]     \leq        min      Lhinge D     (w) +               . S∼D m                    S∼D m                          w:kwk\leq B                        m We therefore see that we can control the sample complexity of learning a half-space as a function of the norm of that halfspace, independently of the Euclidean dimension of the space over which the halfspace is defined. This becomes highly significant when we learn via embeddings into high dimensional feature spaces, as we will consider in the next chapter. Remark 15.2 The condition that X will contain vectors with a bounded norm follows from the requirement that the loss function will be Lipschitz. This is not just a technicality. As we discussed before, separation with large margin is meaningless without imposing a restriction on the scale of the instances. Indeed, without a constraint on the scale, we can always enlarge the margin by multiplying all instances by a large scalar.
+#### 15.2.2   Margin and Norm-Based Bounds versus Dimension
+The bounds we have derived for Hard-SVM and Soft-SVM do not depend on the dimension of the instance space. Instead, the bounds depend on the norm of the
+
+<!-- page: 209 -->
+
+examples, ρ, the norm of the halfspace B (or equivalently the margin parameter γ) and, in the nonseparable case, the bounds also depend on the minimum hinge loss of all halfspaces of norm \leq  B. In contrast, the VC-dimension of the class of homogenous halfspaces
+p          is d, which implies that the error of an ERM hypothesis decreases as d/m does. We now give an example in which ρ2 B 2 d; hence the bound given in Corollary 15.7 is much better than the VC bound. Consider the problem of learning to classify a short text document according to its topic, say, whether the document is about sports or not. We first need to represent documents as vectors. One simple yet effective way is to use a bag-of-words representation. That is, we define a dictionary of words and set the dimension d to be the number of words in the dictionary. Given a document, we represent it as a vector x ∈ {0, 1}d , where xi = 1 if the i’th word in the dictionary appears in the document and xi = 0 otherwise. Therefore, for this problem, the value of ρ2 will be the maximal number of distinct words in a given document. A halfspace for this problem assigns weights to words. It is natural to assume that by assigning positive and negative weights to a few dozen words we will be able to determine whether a given document is about sports or not with reasonable accuracy. Therefore, for this problem, the value of B 2 can be set to be less than 100. Overall, it is reasonable to say that the value of B 2 ρ2 is smaller than 10,000. On the other hand, a typical size of a dictionary is much larger than 10,000. For example, there are more than 100,000 distinct words in English. We have therefore shown a problem in which there can be an order of magnitude difference between learning a halfspace with the SVM rule and learning a halfspace using the vanilla ERM rule. Of course, it is possible to construct problems in which the SVM bound will be worse than the VC bound. When we use SVM, we in fact introduce another form of inductive bias – we prefer large margin halfspaces. While this inductive bias can significantly decrease our estimation error, it can also enlarge the approximation error.
+#### 15.2.3   The Ramp Loss*
+The margin-based bounds we have derived in Corollary 15.7 rely on the fact that we minimize
+p         the hinge loss. As we have shown in the previous subsection, the term p   ρ2 B 2 /m can be much smaller than the corresponding term in the VC bound, d/m. However, the approximation error in Corollary 15.7 is measured with respect to the hinge loss while the approximation error in VC bounds is measured with respect to the 0-1 loss. Since the hinge loss upper bounds the 0-1 loss, the approximation error with respect to the 0-1 loss will never exceed that of the hinge loss. pIt is not possible to derive bounds that involve the estimation error term ρ2 B 2 /m for the 0-1 loss. This follows from the fact that the 0-1 loss is scale
+
+<!-- page: 210 -->
+
+insensitive, and therefore there is no meaning to the norm of w or its margin when we measure error with the 0-1 loss. However, it is possible to define a loss function
+p that on one hand it is scale sensitive and thus enjoys the estimation error ρ2 B 2 /m while on the other hand it is more similar to the 0-1 loss. One option is the ramp loss, defined as `ramp (w, (x, y)) = min{1, `hinge (w, (x, y))} = min{1 , max{0, 1 - yhw, xi}}. The ramp loss penalizes mistakes in the same way as the 0-1 loss and does not penalize examples that are separated with margin. The difference between the ramp loss and the 0-1 loss is only with respect to examples that are correctly classified but not with a significant margin. Generalization bounds for the ramp loss are given in the advanced part of this book (see Appendix 26.3).
+`hinge
+`ramp `0-1
+yhw, xi 1
+The reason SVM relies on the hinge loss and not on the ramp loss is that the hinge loss is convex and, therefore, from the computational point of view, minimizing the hinge loss can be performed efficiently. In contrast, the problem of minimizing the ramp loss is computationally intractable.
+### 15.3   Optimality Conditions and “Support Vectors”*
+The name “Support Vector Machine” stems from the fact that the solution of hard-SVM, w0 , is supported by (i.e., is in the linear span of) the examples that are exactly at distance 1/kw0 k from the separating hyperplane. These vectors are therefore called support vectors. To see this, we rely on Fritz John optimality conditions. theorem 15.8 Let w0 be as defined in Equation (15.3) and let I = {i : |hw0 , xi i| = 1}. Then, there exist coefficients α1 , . . . , αm such that
+$$
+X w_0 =       \alpha_i xi . i\in I
+$$
+The examples {xi : i ∈ I} are called support vectors. The proof of this theorem follows by applying the following lemma to Equation (15.3).
+
+<!-- page: 211 -->
+
+lemma 15.9 (Fritz John)      Suppose that
+$$
+w^\star \in argmin f (w)    s.t. \forall i \in [m], gi (w) \le 0, w
+$$
+$$
+where f, g_1 , . . . , gm are differentiable. Then, there exists \alpha \in Rm such that ∇f (w^\star ) + i\in I \alpha_i ∇gi (w^\star ) = 0, where I = \{i : gi (w^\star ) = 0\}. P
+$$
+### 15.4   Duality*
+Historically, many of the properties of SVM have been obtained by considering the dual of Equation (15.3). Our presentation of SVM does not rely on duality. For completeness, we present in the following how to derive the dual of Equation (15.3).
+We start by rewriting the problem in an equivalent form as follows. Consider the function
+m
+$$
+( X                            0  if \forall i, yi hw, xi i \ge 1 g(w) =      max         \alpha_i (1 - yi hw, xi i) =                             . m \alpha\in R :\alpha\ge 0 i=1                          \in fty otherwise
+$$
+We can therefore rewrite Equation (15.3) as
+min kwk2 + g(w) .
+)
+(15.7) w
+Rearranging the preceding we obtain that Equation (15.3) can be rewritten as the problem
+m
+!
+## 1    2
+$$
+\sum_{min} max           kwk +      \alpha_i (1 - yi hw, xi i) .     (15.8) w \alpha\in Rm :\alpha\ge 0    2        i=1
+$$
+Now suppose that we flip the order of min and max in the above equation. This can only decrease the objective value (see Exercise 4), and we have
+m
+!
+## 1     2
+$$
+\sum_{min} max           kwk +       \alpha_i (1 - yi hw, xi i) w \alpha\in Rm :\alpha\ge 0    2         i=1
+$$
+m
+!
+## 1     2
+$$
+\sum \ge max        min     kwk +        \alpha_i (1 - yi hw, xi i) . \alpha\in Rm :\alpha\ge 0 w     2         i=1
+$$
+The preceding inequality is called weak duality. It turns out that in our case, strong duality also holds; namely, the inequality holds with equality. Therefore, the dual problem is
+m
+!
+## 1     2
+$$
+\sum_{max} min        kwk +       \alpha_i (1 - yi hw, xi i) .       (15.9) \alpha\in Rm :\alpha\ge 0 w     2         i=1
+$$
+We can simplify the dual problem by noting that once α is fixed, the optimization
+
+<!-- page: 212 -->
+
+problem with respect to w is unconstrained and the objective is differentiable; thus, at the optimum, the gradient equals zero:
+m X                                   m
+$$
+\sum_{w-}         \alpha_i yi xi = 0   ⇒        w=          \alpha_i yi xi . i=1                                 i=1
+$$
+This shows us that the solution must be in the linear span of the examples, a fact we will use later to derive SVM with kernels. Plugging the preceding into Equation (15.9) we obtain that the dual problem can be rewritten as
+(                           (                        +))
+m          2   m
+*
+$$
+1   X              X                X max (            \alpha_i yi xi +     \alpha_i (1 - yi     \alpha_j yj xj , xi )) . (15.10) \alpha\in Rm :\alpha\ge 0   2 i=1              i=1              j
+$$
+$$
+Rearranging yields the dual problem (                                          ) m          m X m X        1 X max (         \alpha_i -           \alpha_i \alpha_j yi yj hxj , xi i) .        (15.11) \alpha\in Rm :\alpha\ge 0 i=1 2 i=1 j=1
+$$
+Note that the dual problem only involves inner products between instances and does not require direct access to specific elements within an instance. This property is important when implementing SVM with kernels, as we will discuss in the next chapter.
+### 15.5   Implementing Soft-SVM Using SGD
+In this section we describe a very simple algorithm for solving the optimization problem of Soft-SVM, namely,
+m
+! λ     2    1 X min       kwk +        max{0, 1 - yhw, xi i} .          (15.12) w      2        m i=1
+We rely on the SGD framework for solving regularized loss minimization problems, as described in Section 14.5.3.
+Recall that, on the basis of Equation (14.15), we can rewrite the update rule of SGD as
+t
+$$
+1 X w(t+1) = -           vj , \lambda t j=1
+$$
+where vj is a subgradient of the loss function at w(j) on the random example chosen at iteration j. For the hinge loss, given an example (x, y), we can choose vj to be 0 if yhw(j) , xi \geq  1 and vj = -y x otherwise (see Example 14.2). Denoting θ (t) = - j<t vj we obtain the following procedure.
+P
+
+<!-- page: 213 -->
+
+```
+SGD for Solving Soft-SVM
+goal: Solve Equation (15.12)
+parameter: T
+initialize: θ (1) = 0
+for t = 1, . . . , T
+Let w(t) = λ1t θ (t)
+Choose i uniformly at random from [m]
+If (yi hw(t) , xi i < 1)
+Set θ (t+1) = θ (t) + yi xi
+Else
+Set θ (t+1) = θ (t)
+PT
+output: w̄ = T1 t=1 w(t)
+```
+### 15.6   Summary
+SVM is an algorithm for learning halfspaces with a certain type of prior knowledge, namely, preference for large margin. Hard-SVM seeks the halfspace that separates the data perfectly with the largest margin, whereas soft-SVM does not assume separability of the data and allows the constraints to be violated to some extent. The sample complexity for both types of SVM is different from the sample complexity of straightforward halfspace learning, as it does not depend on the dimension of the domain but rather on parameters such as the maximal norms of x and w.
+The importance of dimension-independent sample complexity will be realized in the next chapter, where we will discuss the embedding of the given domain into some high dimensional feature space as means for enriching our hypothesis class. Such a procedure raises computational and sample complexity problems. The latter is solved by using SVM, whereas the former can be solved by using SVM with kernels, as we will see in the next chapter.
+### 15.7   Bibliographic Remarks
+SVMs have been introduced in (Cortes & Vapnik 1995, Boser, Guyon & Vapnik 1992). There are many good books on the theoretical and practical aspects of SVMs. For example, (Vapnik 1995, Cristianini & Shawe-Taylor 2000, Schölkopf & Smola 2002, Hsu, Chang & Lin 2003, Steinwart & Christmann 2008). Using SGD for solving soft-SVM has been proposed in Shalev-Shwartz et al. (2007).
+
+<!-- page: 214 -->
+
+### 15.8   Exercises
+1. Show that the hard-SVM rule, namely, argmax     min |hw, xi i + b| s.t. \forall i, yi (hw, xi i + b) > 0, (w,b):kwk=1 i∈[m]
+$$
+is equivalent to the following formulation: argmax      min yi (hw, xi i + b).                (15.13) (w,b):kwk=1 i\in[m]
+$$
+$$
+Hint: Define G = \{(w, b) : \forall i, yi (hw, xi i + b) > 0\}. 1. Show that argmax     min yi (hw, xi i + b) \in G (w,b):kwk=1 i\in[m]
+$$
+2. Show that \forall (w, b) ∈ G, min yi (hw, xi i + b) = min |hw, xi i + b| i∈[m]                    i∈[m]
+2. Margin and the Perceptron Consider a training set that is linearly sep-
+arable with a margin γ and such that all the instances are within a ball of radius ρ. Prove that the maximal number of updates the Batch Perceptron algorithm given in Section 9.1.2 will make when running on this training set is (ρ/γ)2 .
+3. Hard versus soft SVM: Prove or refute the following claim:
+There exists λ > 0 such that for every sample S of m > 1 examples, which is separable by the class of homogenous halfspaces, the hard-SVM and the soft-SVM (with parameter λ) learning rules return exactly the same weight vector.
+4. Weak duality: Prove that for any function f of two vector variables x ∈
+X , y ∈ Y, it holds that
+$$
+min max f (x, y) \ge max min f (x, y). x\in X y\in Y               y\in Y x\in X
+$$
+
+<!-- page: 215 -->
+
+## 16 Kernel Methods
+In the previous chapter we described the SVM paradigm for learning halfspaces
+in high dimensional feature spaces. This enables us to enrich the expressive
+power of halfspaces by first mapping the data into a high dimensional feature
+space, and then learning a linear predictor in that space. This is similar to the
+AdaBoost algorithm, which learns a composition of a halfspace over base hy-
+potheses. While this approach greatly extends the expressiveness of halfspace
+predictors, it raises both sample complexity and computational complexity chal-
+lenges. In the previous chapter we tackled the sample complexity issue using
+the concept of margin. In this chapter we tackle the computational complexity
+challenge using the method of kernels.
+We start the chapter by describing the idea of embedding the data into a high
+dimensional feature space. We then introduce the idea of kernels. A kernel is a
+type of a similarity measure between instances. The special property of kernel
+similarities is that they can be viewed as inner products in some Hilbert space
+(or Euclidean space of some high dimension) to which the instance space is vir-
+tually embedded. We introduce the “kernel trick” that enables computationally
+efficient implementation of learning, without explicitly handling the high dimen-
+sional representation of the domain instances. Kernel based learning algorithms,
+and in particular kernel-SVM, are very useful and popular machine learning
+tools. Their success may be attributed both to being flexible for accommodating
+domain specific prior knowledge and to having a well developed set of efficient
+implementation algorithms.
+### 16.1   Embeddings into Feature Spaces
+The expressive power of halfspaces is rather restricted – for example, the following training set is not separable by a halfspace.
+Let the domain be the real line; consider the domain points {-10, -9, -8, . . . , 0, 1, . . . , 9, 10} where the labels are +1 for all x such that |x| > 2 and -1 otherwise. To make the class of halfspaces more expressive, we can first map the original instance space into another space (possibly of a higher dimension) and then learn a halfspace in that space. For example, consider the example mentioned previously. Instead of learning a halfspace in the original representation let us
+
+<!-- page: 216 -->
+
+first define a mapping ψ : R → R2 as follows:
+ψ(x) = (x, x2 ). We use the term feature space to denote the range of ψ. After applying ψ the data can be easily explained using the halfspace h(x) = sign(hw, ψ(x)i - b), where w = (0, 1) and b = 5. The basic paradigm is as follows:
+1. Given some domain set X and a learning task, choose a mapping ψ : X → F,
+for some feature space F, that will usually be Rn for some n (however, the range of such a mapping can be any Hilbert space, including such spaces of infinite dimension, as we will show later).
+2. Given a sequence of labeled examples, S = (x1 , y1 ), . . . , (xm , ym ), create the
+image sequence S{} = (ψ(x1 ), y1 ), . . . , (ψ(xm ), ym ).
+3. Train a linear predictor h over S{}.
+4. Predict the label of a test point, x, to be h(ψ(x)).
+Note that, for every probability distribution D over X × Y, we can readily define its image probability distribution Dψ over F × Y by setting, for every subset A ⊆ F × Y, Dψ (A) = D(ψ -1 (A)).1 It follows that for every predictor h over the feature space, LDψ (h) = LD (h \circ ψ), where h \circ ψ is the composition of h onto ψ. The success of this learning paradigm depends on choosing a good ψ for a given learning task: that is, a ψ that will make the image of the data distribution (close to being) linearly separable in the feature space, thus making the resulting algorithm a good learner for a given task. Picking such an embedding requires prior knowledge about that task. However, often some generic mappings that enable us to enrich the class of halfspaces and extend its expressiveness are used. One notable example is polynomial mappings, which are a generalization of the ψ we have seen in the previous example. Recall that the prediction of a standard halfspace classifier on an instance x is based on the linear mapping x 7→ hw, xi. We can generalize linear mappings to a polynomial mapping, x 7→ p(x), where p is a multivariate polynomial of degree k. For simplicity, consider first the case in which x is 1 dimensional.
+Pk In that case, p(x) = j=0 wj xj , where w ∈ Rk+1 is the vector of coefficients of the polynomial we need to learn. We can rewrite p(x) = hw, ψ(x)i where ψ : R → Rk+1 is the mapping x 7→ (1, x, x2 , x3 , . . . , xk ). It follows that learning a k degree polynomial over R can be done by learning a linear mapping in the (k + 1) dimensional feature space. More generally, a degree k multivariate polynomial from Rn to R can be written as
+$$
+\sum_{Y} r p(x) =            wJ     xJ i .                  (16.1) J\in[n]r :r\le k     i=1
+$$
+## 1   This is defined for every A such that ψ -1 (A) is measurable with respect to D.
+
+<!-- page: 217 -->
+
+As before, we can rewrite p(x) = hw, ψ(x)i where now ψ : Rn → Rd is such that for every J ∈ [n]r , r \leq  k, the coordinate of ψ(x) associated with J is the
+Qr monomial i=1 xJi . Naturally, polynomial-based classifiers yield much richer hypothesis classes than halfspaces. We have seen at the beginning of this chapter an example in which the training set, in its original domain (X = R), cannot be separable by a halfspace, but after the embedding x 7→ (x, x2 ) it is perfectly separable. So, while the classifier is always linear in the feature space, it can have highly nonlinear behavior on the original space from which instances were sampled. In general, we can choose any feature mapping ψ that maps the original instances into some Hilbert space.2 The Euclidean space Rd is a Hilbert space for any finite d. But there are also infinite dimensional Hilbert spaces (as we shall see later on in this chapter). The bottom line of this discussion is that we can enrich the class of halfspaces by first applying a nonlinear mapping, ψ, that maps the instance space into some feature space, and then learning a halfspace in that feature space. However, if the range of ψ is a high dimensional space we face two problems. First, the VC-dimension of halfspaces in Rn is n + 1, and therefore, if the range of ψ is very large, we need many more samples in order to learn a halfspace in the range of ψ. Second, from the computational point of view, performing calculations in the high dimensional space might be too costly. In fact, even the representation of the vector w in the feature space can be unrealistic. The first issue can be tackled using the paradigm of large margin (or low norm predictors), as we already discussed in the previous chapter in the context of the SVM algorithm. In the following section we address the computational issue.
+### 16.2   The Kernel Trick
+We have seen that embedding the input space into some high dimensional feature space makes halfspace learning more expressive. However, the computational complexity of such learning may still pose a serious hurdle – computing linear separators over very high dimensional data may be computationally expensive. The common solution to this concern is kernel based learning. The term “kernels” is used in this context to describe inner products in the feature space. Given an embedding ψ of some domain space X into some Hilbert space, we define the kernel function K(x, x0 ) = hψ(x), ψ(x0 )i. One can think of K as specifying similarity between instances and of the embedding ψ as mapping the domain set 2   A Hilbert space is a vector space with an inner product, which is also complete. A space is
+complete if all Cauchy sequences in the space converge. p In our case, the norm kwk is defined by the inner product hw, wi. The reason we require the range of ψ to be in a Hilbert space is that projections in a Hilbert space are well defined. In particular, if M is a linear subspace of a Hilbert space, then every x in the Hilbert space can be written as a sum x = u + v where u ∈ M and hv, wi = 0 for all w ∈ M . We use this fact in the proof of the representer theorem given in the next section.
+
+<!-- page: 218 -->
+
+X into a space where these similarities are realized as inner products. It turns out that many learning algorithms for halfspaces can be carried out just on the basis of the values of the kernel function over pairs of domain points. The main advantage of such algorithms is that they implement linear separators in high dimensional feature spaces without having to specify points in that space or expressing the embedding ψ explicitly. The remainder of this section is devoted to constructing such algorithms.
+In the previous chapter we saw that regularizing the norm of w yields a small sample complexity even if the dimensionality of the feature space is high. Interestingly, as we show later, regularizing the norm of w is also helpful in overcoming the computational problem. To do so, first note that all versions of the SVM optimization problem we have derived in the previous chapter are instances of the following general problem:
+min (f (hw, ψ(x1 )i , . . . , hw, ψ(xm )i) + R(kwk)),                     (16.2) w
+where f : Rm → R is an arbitrary function and R : R+ → R is a monotonically nondecreasing function. For example, Soft-SVM for homogenous halfspaces (Equation (15.6)) can be derived from Equation (16.2) by letting R(a) = λa2 and
+1 P f (a1 , . . . , am ) = m    i max{0, 1-yi ai }. Similarly, Hard-SVM for nonhomogenous halfspaces (Equation (15.2)) can be derived from Equation (16.2) by letting R(a) = a2 and letting f (a1 , . . . , am ) be 0 if there exists b such that yi (ai +b) \geq  1 for all i, and f (a1 , . . . , am ) = ∞ otherwise. The following theorem shows that there exists an optimal solution of Equation (16.2) that lies in the span of {ψ(x1 ), . . . , ψ(xm )}. theorem 16.1 (Representer Theorem) Assume that ψ is a mapping from X to
+Pm a Hilbert space. Then, there exists a vector α ∈ Rm such that w = i=1 αi ψ(xi ) is an optimal solution of Equation (16.2). Proof Let w? be an optimal solution of Equation (16.2). Because w? is an element of a Hilbert space, we can rewrite w? as m X w? =          αi ψ(xi ) + u, i=1
+where hu, ψ(xi )i = 0 for all i. Set w = w? - u. Clearly, kw? k2 = kwk2 + kuk2 , thus kwk \leq  kw? k. Since R is nondecreasing we obtain that R(kwk) \leq  R(kw? k). Additionally, for all i we have that
+hw, ψ(xi )i = hw? - u, ψ(xi )i = hw? , ψ(xi )i, hence f (hw, ψ(x1 )i , . . . , hw, ψ(xm )i) = f (hw? , ψ(x1 )i , . . . , hw? , ψ(xm )i) . We have shown that the objective of Equation (16.2) at w cannot be larger than the objective at w? and therefore w is also an optimal solution. Since Pm w = i=1 αi ψ(xi ) we conclude our proof.
+
+<!-- page: 219 -->
+
+On the basis of the representer theorem we can optimize Equation (16.2) with respect to the coefficients $\alpha$ instead of the coefficients $w$ as follows. Writing
+$$
+w = \sum_{j=1}^{m} \alpha_j \psi(x_j)
+$$
+we have that for all $i$
+$$
+\langle w, \psi(x_i)\rangle = \left\langle \sum_{j=1}^{m} \alpha_j\psi(x_j), \psi(x_i)\right\rangle = \sum_{j=1}^{m} \alpha_j \langle \psi(x_j), \psi(x_i)\rangle.
+$$
+Similarly,
+$$
+\|w\|^2 = \left\langle \sum_j \alpha_j\psi(x_j), \sum_j \alpha_j\psi(x_j)\right\rangle = \sum_{i,j=1}^{m} \alpha_i\alpha_j\langle \psi(x_i), \psi(x_j)\rangle.
+$$
+Let $K(x,x') = \langle\psi(x),\psi(x')\rangle$ be a function that implements the kernel function with respect to the embedding $\psi$. Instead of solving Equation (16.2) we can solve the equivalent problem
+$$
+\min_{\alpha\in\mathbb{R}^m} f\left(\sum_{j=1}^{m}\alpha_j K(x_j,x_1),\ldots,\sum_{j=1}^{m}\alpha_j K(x_j,x_m)\right) + R\left(\sqrt{\sum_{i,j=1}^{m}\alpha_i\alpha_j K(x_j,x_i)}\right). \tag{16.3}
+$$
+To solve the optimization problem given in Equation (16.3), we do not need any direct access to elements in the feature space. The only thing we should know is how to calculate inner products in the feature space, or equivalently, to calculate the kernel function. In fact, to solve Equation (16.3) we solely need to know the value of the $m \times m$ matrix $G$ s.t. $G_{i,j} = K(x_i,x_j)$, which is often called the Gram matrix.
+
+In particular, specifying the preceding to the Soft-SVM problem given in Equation (15.6), we can rewrite the problem as
+$$
+\min_{\alpha\in\mathbb{R}^m} \left[\lambda \alpha^\top G\alpha + \frac{1}{m}\sum_{i=1}^{m}\max\{0,1-y_i(G\alpha)_i\}\right]. \tag{16.4}
+$$
+where $(G\alpha)_i$ is the i’th element of the vector obtained by multiplying the Gram matrix $G$ by the vector $\alpha$. Note that Equation (16.4) can be written as quadratic programming and hence can be solved efficiently. In the next section we describe an even simpler algorithm for solving Soft-SVM with kernels.
+
+Once we learn the coefficients $\alpha$ we can calculate the prediction on a new instance by
+$$
+\langle w,\psi(x)\rangle = \sum_{j=1}^{m}\alpha_j\langle\psi(x_j),\psi(x)\rangle = \sum_{j=1}^{m}\alpha_j K(x_j,x).
+$$
+The advantage of working with kernels rather than directly optimizing $w$ in the feature space is that in some situations the dimension of the feature space
+
+<!-- page: 220 -->
+
+is extremely large while implementing the kernel function is very simple. A few examples are given in the following. Example 16.1 (Polynomial Kernels) The k degree polynomial kernel is defined to be
+K(x, x0 ) = (1 + hx, x0 i)k . Now we will show that this is indeed a kernel function. That is, we will show that there exists a mapping ψ from the original space to some higher dimensional space for which K(x, x0 ) = hψ(x), ψ(x0 )i. For simplicity, denote x0 = x00 = 1. Then, we have K(x, x0 ) = (1 + hx, x0 i)k = (1 + hx, x0 i) · · · · · (1 + hx, x0 i) (            )           (          ) Xn                       n
+$$
+X =(      xj x_0j ) · · · · · (   xj x_0j ) j=0                        j=0
+$$
+$$
+\sum_{k} Y =                        xJi x_0Ji J\in\{0,1,...,n\}k i=1
+$$
+$$
+\sum_{k} Y             k Y =                        xJ i         x_0Ji . J\in\{0,1,...,n\}k i=1          i=1
+$$
+k Now, if we define ψ : Rn → R(n+1) such that for J ∈ {0, 1, . . . , n}k there is an Qk element of ψ(x) that equals i=1 xJi , we obtain that K(x, x0 ) = hψ(x), ψ(x0 )i. Since ψ contains all the monomials up to degree k, a halfspace over the range of ψ corresponds to a polynomial predictor of degree k over the original space. Hence, learning a halfspace with a k degree polynomial kernel enables us to learn polynomial predictors of degree k over the original space. Note that here the complexity of implementing K is O(n) while the dimension of the feature space is on the order of nk . Example 16.2 (Gaussian Kernel) Let the original instance space be R and consider the mapping ψ where for each nonnegative integer n \geq  0 there exists
+$$
+x_2 an element \psi(x)n that equals \sqrt1 e- 2 xn . Then, n! \in fty                               0 2
+$$
+$$
+1 - x_2 n (               )(                   ) 0 X                          1 - (x )  0 n h\psi(x), \psi(x )i =        \sqrt e 2 x           \sqrt e 2 (x ) n=0      n!                n!
+$$
+## 2     0 2 ∞ (
+(xx0 )n x +(x ) X
+$$
+) = e-     2 n=0 n! kx-x_0 k_2 = e-      2     . Here the feature space is of infinite dimension while evaluating the kernel is very
+$$
+
+<!-- page: 221 -->
+
+simple. More generally, given a scalar σ > 0, the Gaussian kernel is defined to be
+kx-x0 k2 K(x, x0 ) = e-     2σ     .
+Intuitively, the Gaussian kernel sets the inner product in the feature space between x, x0 to be close to zero if the instances are far away from each other (in the original domain) and close to 1 if they are close. σ is a parameter that controls the scale determining what we mean by “close.” It is easy to verify that K implements an inner product in a space in which for any n and any monomial
+kxk2 Q
+n of order k there exists an element of ψ(x) that equals \sqrt1 e- 2              i=1 xJi . n! Hence, we can learn any polynomial predictor over the original space by using a Gaussian kernel. Recall that the VC-dimension of the class of all polynomial predictors is infinite (see Exercise 12). There is no contradiction, because the sample complexity required to learn with Gaussian kernels depends on the margin in the feature space, which will be large if we are lucky, but can in general be arbitrarily small. The Gaussian kernel is also called the RBF kernel, for “Radial Basis Functions.”
+#### 16.2.1   Kernels as a Way to Express Prior Knowledge
+As we discussed previously, a feature mapping, ψ, may be viewed as expanding the class of linear classifiers to a richer class (corresponding to linear classifiers over the feature space). However, as discussed in the book so far, the suitability of any hypothesis class to a given learning task depends on the nature of that task. One can therefore think of an embedding ψ as a way to express and utilize prior knowledge about the problem at hand. For example, if we believe that positive examples can be distinguished by some ellipse, we can define ψ to be all the monomials up to order 2, or use a degree 2 polynomial kernel.
+As a more realistic example, consider the task of learning to find a sequence of characters (“signature”) in a file that indicates whether it contains a virus or not. Formally, let Xd be the set of all strings of length at most d over some alphabet set Σ. The hypothesis class that one wishes to learn is H = {hv : v ∈ Xd }, where, for a string x ∈ Xd , hv (x) is 1 iff v is a substring of x (and hv (x) = -1 otherwise). Let us show how using an appropriate embedding this class can be realized by linear classifiers over the resulting feature space. Consider a mapping ψ to a space Rs where s = |Xd |, so that each coordinate of ψ(x) corresponds to some string v and indicates whether v is a substring of x (that is, for every x ∈ Xd , ψ(x) is a vector in {0, 1}|Xd | ). Note that the dimension of this feature space is exponential in d. It is not hard to see that every member of the class H can be realized by composing a linear classifier over ψ(x), and, moreover, by such a halfspace whose norm is 1 and that attains a margin of 1 (see Exercise 1). Furthermore, for every x ∈ X , kψ(x)k = O(d). So, overall, it is learnable using SVM with a sample
+
+<!-- page: 222 -->
+
+complexity that is polynomial in d. However, the dimension of the feature space is exponential in d so a direct implementation of SVM over the feature space is problematic. Luckily, it is easy to calculate the inner product in the feature space (i.e., the kernel function) without explicitly mapping instances into the feature space. Indeed, K(x, x0 ) is simply the number of common substrings of x and x0 , which can be easily calculated in time polynomial in d.
+This example also demonstrates how feature mapping enables us to use halfspaces for nonvectorial domains.
+#### 16.2.2   Characterizing Kernel Functions*
+As we have discussed in the previous section, we can think of the specification of the kernel matrix as a way to express prior knowledge. Consider a given similarity function of the form K : X × X → R. Is it a valid kernel function? That is, does it represent an inner product between ψ(x) and ψ(x0 ) for some feature mapping ψ? The following lemma gives a sufficient and necessary condition.
+lemma 16.2 A symmetric function K : X × X → R implements an inner product in some Hilbert space if and only if it is positive semidefinite; namely, for all x1 , . . . , xm , the Gram matrix, Gi,j = K(xi , xj ), is a positive semidefinite matrix.
+Proof It is trivial to see that if K implements an inner product in some Hilbert space then the Gram matrix is positive semidefinite. For the other direction, define the space of functions over X as RX = {f : X → R}. For each x ∈ X let ψ(x) be the function x 7→ K(·, x). Define a vector space by taking all linear combinations of elements of the form K(·, x). Define an inner product on this vector space to be
+*                                   + X                  X                 X αi K(·, xi ),   βj K(·, x0j ) =   αi βj K(xi , x0j ). i                  j                   i,j
+This is a valid inner product since it is symmetric (because K is symmetric), it is linear (immediate), and it is positive definite (it is easy to see that K(x, x) \geq  0 with equality only for ψ(x) being the zero function). Clearly,
+$$
+h\psi(x), \psi(x_0 )i = hK(·, x), K(·, x_0 )i = K(x, x_0 ),
+$$
+which concludes our proof.
+### 16.3     Implementing Soft-SVM with Kernels
+Next, we turn to solving Soft-SVM with kernels. While we could have designed an algorithm for solving Equation (16.4), there is an even simpler approach that
+
+<!-- page: 223 -->
+
+directly tackles the Soft-SVM optimization problem in the feature space,
+m
+! λ    2   1 X min      kwk +       max{0, 1 - yhw, ψ(xi )i} ,          (16.5) w     2       m i=1
+while only using kernel evaluations. The basic observation is that the vector w(t) maintained by the SGD procedure we have described in Section 15.5 is always in the linear span of {ψ(x1 ), . . . , ψ(xm )}. Therefore, rather than maintaining w(t) we can maintain the corresponding coefficients α.
+Formally, let K be the kernel function, namely, for all x, x0 , K(x, x0 ) = hψ(x), ψ(x0 )i. We shall maintain two vectors in Rm , corresponding to two vectors θ (t) and w(t) defined in the SGD procedure of Section 15.5. That is, β (t) will be a vector such that
+m
+$$
+(t) X \theta (t) =    \beta_j \psi(xj )                       (16.6) j=1
+$$
+$$
+and \alpha(t) be such that m (t) X (t) w         =         \alpha_j \psi(xj ).                 (16.7) j=1
+$$
+The vectors β and α are updated according to the following procedure.
+SGD for Solving Soft-SVM with Kernels
+Goal: Solve Equation (16.5)
+parameter: T
+Initialize: β (1) = 0
+for t = 1, . . . , T
+Let α(t) = λ1t β (t)
+Choose i uniformly at random from [m]
+(t+1)    (t)
+For all j \neq  i set βj         = βj
+Pm          (t)
+If (yi j=1 αj K(xj , xi ) < 1)
+(t+1)         (t)
+Set βi        = βi + yi
+Else
+(t+1)         (t)
+Set βi        = βi
+Pm                   PT
+Output: w̄ = j=1 ᾱj ψ(xj ) where ᾱ = T1 t=1 α(t)
+The following lemma shows that the preceding implementation is equivalent to running the SGD procedure described in Section 15.5 on the feature space.
+lemma 16.3 Let w{} be the output of the SGD procedure described in Sec-
+Pm tion 15.5, when applied on the feature space, and let w̄ =  j=1 ᾱj ψ(xj ) be the output of applying SGD with kernels. Then w̄ = w{}.
+Proof We will show that for every t Equation (16.6) holds, where θ (t) is the result of running the SGD procedure described in Section 15.5 in the feature
+
+<!-- page: 224 -->
+
+space. By the definition of α(t) = λ1t β (t) and w(t) = λ1t θ (t) , this claim implies that Equation (16.7) also holds, and the proof of our lemma will follow. To prove that Equation (16.6) holds we use a simple inductive argument. For t = 1 the claim trivially holds. Assume it holds for t \geq  1. Then,
+*                           +          m D             E
+$$
+(t)                                 (t) X                                     X yi w(t) , \psi(xi ) = yi            \alpha_j \psi(xj ), \psi(xi )      = yi         \alpha_j K(xj , xi ). j                                  j=1
+$$
+Hence, the condition in the two algorithms is equivalent and if we update θ we have
+m                               m
+$$
+(t)                              (t+1) X                               X \theta (t+1) = \theta (t) + yi \psi(xi ) =         \beta_j \psi(xj ) + yi \psi(xi ) =          \beta_j       \psi(xj ), j=1                             j=1
+$$
+which concludes our proof.
+### 16.4   Summary
+Mappings from the given domain to some higher dimensional space, on which a halfspace predictor is used, can be highly powerful. We benefit from a rich and complex hypothesis class, yet need to solve the problems of high sample and computational complexities. In Chapter 10, we discussed the AdaBoost algorithm, which faces these challenges by using a weak learner: Even though we’re in a very high dimensional space, we have an “oracle” that bestows on us a single good coordinate to work with on each iteration. In this chapter we introduced a different approach, the kernel trick. The idea is that in order to find a halfspace predictor in the high dimensional space, we do not need to know the representation of instances in that space, but rather the values of inner products between the mapped instances. Calculating inner products between instances in the high dimensional space without using their representation in that space is done using kernel functions. We have also shown how the SGD algorithm can be implemented using kernels.
+The ideas of feature mapping and the kernel trick allow us to use the framework of halfspaces and linear predictors for nonvectorial data. We demonstrated how kernels can be used to learn predictors over the domain of strings. We presented the applicability of the kernel trick in SVM. However, the kernel trick can be applied in many other algorithms. A few examples are given as exercises. This chapter ends the series of chapters on linear predictors and convex problems. The next two chapters deal with completely different types of hypothesis classes.
+
+<!-- page: 225 -->
+
+### 16.5   Bibliographic Remarks
+In the context of SVM, the kernel-trick has been introduced in Boser et al. (1992). See also Aizerman, Braverman & Rozonoer (1964). The observation that the kernel-trick can be applied whenever an algorithm only relies on inner products was first stated by Schölkopf, Smola & Müller (1998). The proof of the representer theorem is given in (Schölkopf, Herbrich, Smola & Williamson 2000, Schölkopf, Herbrich & Smola 2001). The conditions stated in Lemma 16.2 are simplification of conditions due to Mercer. Many useful kernel functions have been introduced in the literature for various applications. We refer the reader to Schölkopf & Smola (2002).
+### 16.6   Exercises
+1. Consider the task of finding a sequence of characters in a file, as described
+in Section 16.2.1. Show that every member of the class H can be realized by composing a linear classifier over ψ(x), whose norm is 1 and that attains a margin of 1.
+2. Kernelized Perceptron: Show how to run the Perceptron algorithm while
+only accessing the instances via the kernel function. Hint: The derivation is similar to the derivation of implementing SGD with kernels.
+3. Kernel Ridge Regression: The ridge regression problem, with a feature
+mapping ψ, is the problem of finding a vector w that minimizes the function
+m
+$$
+1 X f (w) = \lambda \|w\|_2 +          (hw, \psi(xi )i - yi )2 ,         (16.8) 2m i=1
+$$
+and then returning the predictor
+h(x) = hw, xi. Show how to implement the ridge regression algorithm with kernels. Hint: The representer theorem tells us that there exists a vector α ∈ Rm Pm such that i=1 αi ψ(xi ) is a minimizer of Equation (16.8).
+1. Let G be the Gram matrix with regard to S and K. That is, Gij =
+K(xi , xj ). Define g : Rm → R by
+$$
+m T    1 X g(\alpha) = \lambda · \alpha G\alpha +        (h\alpha, G·,i i - yi )2 ,          (16.9) 2m i=1
+$$
+where G·,i is the i’th column of G. Show that if α∗ minimizes Equa-
+$$
+Pm tion (16.9) then w∗ = i=1 \alpha_i∗ \psi(xi ) is a minimizer of f .
+$$
+2. Find a closed form expression for α∗ .
+4. Let N be any positive integer. For every x, x0 ∈ {1, . . . , N } define
+K(x, x0 ) = min{x, x0 }.
+
+<!-- page: 226 -->
+
+Prove that K is a valid kernel; namely, find a mapping ψ : {1, . . . , N } → H where H is some Hilbert space, such that
+$$
+\forall x, x_0 \in \{1, . . . , N \}, K(x, x_0 ) = h\psi(x), \psi(x_0 )i.
+$$
+5. A supermarket manager would like to learn which of his customers have babies
+on the basis of their shopping carts. Specifically, he sampled i.i.d. customers, where for customer i, let xi ⊂ {1, . . . , d} denote the subset of items the customer bought, and let yi ∈ {\pm 1} be the label indicating whether this customer has a baby. As prior knowledge, the manager knows that there are k items such that the label is determined to be 1 iff the customer bought at least one of these k items. Of course, the identity of these k items is not known (otherwise, there was nothing to learn). In addition, according to the store regulation, each customer can buy at most s items. Help the manager to design a learning algorithm such that both its time complexity and its sample complexity are polynomial in s, k, and 1/ε.
+6. Let X be an instance set and let ψ be a feature mapping of X into some
+Hilbert feature space V . Let K : X × X → R be a kernel function that implements inner products in the feature space V .
+Consider the binary classification algorithm that predicts the label of an unseen instance according to the class with the closest average. Formally, given a training sequence S = (x1 , y1 ), . . . , (xm , ym ), for every y ∈ {\pm 1} we define
+$$
+1 X cy =               \psi(xi ). my i:y =y
+$$
+i
+$$
+where my = |\{i : yi = y\}|. We assume that m+ and m- are nonzero. Then, the algorithm outputs the following decision rule: ( 1 k\psi(x) - c+ k \le k\psi(x) - c- k h(x) = 0 otherwise.
+$$
+1. Let w = c+ - c- and let b = 21 (kc- k2 - kc+ k2 ). Show that
+h(x) = sign(hw, ψ(x)i + b).
+2. Show how to express h(x) on the basis of the kernel function, and without
+accessing individual entries of ψ(x) or w.
+
+<!-- page: 227 -->
+
+## 17 Multiclass, Ranking, and Complex
+Prediction Problems
+Multiclass categorization is the problem of classifying instances into one of several possible target classes. That is, we are aiming at learning a predictor h : X → Y, where Y is a finite set of categories. Applications include, for example, categorizing documents according to topic (X is the set of documents and Y is the set of possible topics) or determining which object appears in a given image (X is the set of images and Y is the set of possible objects).
+The centrality of the multiclass learning problem has spurred the development of various approaches for tackling the task. Perhaps the most straightforward approach is a reduction from multiclass classification to binary classification. In Section 17.1 we discuss the most common two reductions as well as the main drawback of the reduction approach. We then turn to describe a family of linear predictors for multiclass problems. Relying on the RLM and SGD frameworks from previous chapters, we describe several practical algorithms for multiclass prediction. In Section 17.3 we show how to use the multiclass machinery for complex prediction problems in which Y can be extremely large but has some structure on it. This task is often called structured output learning. In particular, we demonstrate this approach for the task of recognizing handwritten words, in which Y is the set of all possible strings of some bounded length (hence, the size of Y is exponential in the maximal length of a word). Finally, in Section 17.4 and Section 17.5 we discuss ranking problems in which the learner should order a set of instances according to their “relevance.” A typical application is ordering results of a search engine according to their relevance to the query. We describe several performance measures that are adequate for assessing the performance of ranking predictors and describe how to learn linear predictors for ranking problems efficiently.
+### 17.1   One-versus-All and All-Pairs
+The simplest approach to tackle multiclass prediction problems is by reduction to binary classification. Recall that in multiclass prediction we would like to learn a function h : X → Y. Without loss of generality let us denote Y = {1, . . . , k}.
+In the One-versus-All method (a.k.a. One-versus-Rest) we train k binary clas-
+
+<!-- page: 228 -->
+
+sifiers, each of which discriminates between one class and the rest of the classes. That is, given a training set S = (x1 , y1 ), . . . , (xm , ym ), where every yi is in Y, we construct k binary training sets, S1 , . . . , Sk , where Si = (x1 , (-1)1[y1 \neq i] ), . . . , (xm , (-1)1[ym \neq i] ). In words, Si is the set of instances labeled 1 if their label in S was i, and -1 otherwise. For every i ∈ [k] we train a binary predictor hi : X → {\pm 1} based on Si , hoping that hi (x) should equal 1 if and only if x belongs to class i. Then, given h1 , . . . , hk , we construct a multiclass predictor using the rule
+$$
+h(x) \in argmax hi (x).                                   (17.1) i\in[k]
+$$
+When more than one binary hypothesis predicts “1” we should somehow decide
+which class to predict (e.g., we can arbitrarily decide to break ties by taking the
+minimal index in argmaxi hi (x)). A better approach can be applied whenever
+each hi hides additional information, which can be interpreted as the confidence
+in the prediction y = i. For example, this is the case in halfspaces, where the
+actual prediction is sign(hw, xi), but we can interpret hw, xi as the confidence
+in the prediction. In such cases, we can apply the multiclass rule given in Equa-
+tion (17.1) on the real valued predictions. A pseudocode of the One-versus-All
+approach is given in the following.
+```
+One-versus-All
+input:
+training set S = (x1 , y1 ), . . . , (xm , ym )
+algorithm for binary classification A
+foreach i ∈ Y
+let Si = (x1 , (-1)1[y1 \neq i] ), . . . , (xm , (-1)1[ym \neq i] )
+let hi = A(Si )
+output:
+the multiclass hypothesis defined by h(x) ∈ argmaxi∈Y hi (x)
+```
+Another popular reduction is the All-Pairs approach, in which all pairs of
+classes are compared to each other. Formally, given a training set S = (x1 , y1 ), . . . , (xm , ym ),
+where every yi is in [k], for every 1 \leq  i < j \leq  k we construct a binary training
+sequence, Si,j , containing all examples from S whose label is either i or j. For
+each such an example, we set the binary label in Si,j to be +1 if the multiclass
+label in S is i and -1 if the multiclass label in S is j. Next, we train a binary
+classification algorithm based on every Si,j to get hi,j . Finally, we construct
+a multiclass classifier by predicting the class that had the highest number of
+“wins.” A pseudocode of the All-Pairs approach is given in the following.
+
+<!-- page: 229 -->
+
+```
+All-Pairs
+input:
+training set S = (x1 , y1 ), . . . , (xm , ym )
+algorithm for binary classification A
+foreach i, j ∈ Y s.t. i < j
+initialize Si,j to be the empty sequence
+for t = 1, . . . , m
+If yt = i add (xt , 1) to Si,j
+If yt = j add (xt , -1) to Si,j
+let hi,j = A(Si,j )
+output:
+the multiclass hypothesis
+(P       defined by               )
+h(x) ∈ argmaxi∈Y         j∈Y   sign(j   -   i) hi,j (x)
+```
+Although reduction methods such as the One-versus-All and All-Pairs are
+simple and easy to construct from existing algorithms, their simplicity has a
+price. The binary learner is not aware of the fact that we are going to use its
+output hypotheses for constructing a multiclass predictor, and this might lead
+to suboptimal results, as illustrated in the following example.
+Example 17.1 Consider a multiclass categorization problem in which the in-
+stance space is X = R2 and the label set is Y = {1, 2, 3}. Suppose that instances
+of the different classes are located in nonintersecting balls as depicted in the fol-
+lowing.
+## 1       2       3
+Suppose that the probability masses of classes 1, 2, 3 are 40%, 20%, and 40%, respectively. Consider the application of One-versus-All to this problem, and assume that the binary classification algorithm used by One-versus-All is ERM with respect to the hypothesis class of halfspaces. Observe that for the problem of discriminating between class 2 and the rest of the classes, the optimal halfspace would be the all negative classifier. Therefore, the multiclass predictor constructed by One-versus-All might err on all the examples from class 2 (this will be the case if the tie in the definition of h(x) is broken by the nu-
+$$
+) label). In contrast, if we( choose) hi (x) = hwi , xi, merical value (of the class where w_1 =      - \sqrt12 , \sqrt12 , w_2 = (0, 1), and w_3 =              \sqrt1 , \sqrt1
+$$
+## 2    2
+, then the classifier defined by h(x) = argmaxi hi (x) perfectly predicts all the examples. We see
+
+<!-- page: 230 -->
+
+that even though the approximation error of the class of predictors of the form h(x) = argmaxi hwi , xi is zero, the One-versus-All approach might fail to find a good predictor from this class.
+### 17.2     Linear Multiclass Predictors
+In light of the inadequacy of reduction methods, in this section we study a more direct approach for learning multiclass predictors. We describe the family of linear multiclass predictors. To motivate the construction of this family, recall that a linear predictor for binary classification (i.e., a halfspace) takes the form
+$$
+h(x) = sign(hw, xi). An equivalent way to express the prediction is as follows: h(x) = argmax hw, yxi,
+$$
+y∈{\pm 1}
+where yx is the vector obtained by multiplying each element of x by y. This representation leads to a natural generalization of halfspaces to multiclass problems as follows. Let Ψ : X × Y → Rd be a class-sensitive feature mapping. That is, Ψ takes as input a pair (x, y) and maps it into a d dimensional feature vector. Intuitively, we can think of the elements of Ψ(x, y) as score functions that assess how well the label y fits the instance x. We will elaborate on Ψ later on. Given Ψ and a vector w ∈ Rd , we can define a multiclass predictor, h : X → Y, as follows:
+$$
+h(x) = argmax hw, Ψ(x, y)i.
+$$
+y∈Y
+That is, the prediction of h for the input x is the label that achieves the highest weighted score, where weighting is according to the vector w. Let W be some set of vectors in Rd , for example, W = {w ∈ Rd : kwk \leq  B}, for some scalar B > 0. Each pair (Ψ, W ) defines a hypothesis class of multiclass predictors:
+$$
+HΨ,W = \{x 7\to argmax hw, Ψ(x, y)i : w \in W \}.
+$$
+y∈Y
+Of course, the immediate question, which we discuss in the sequel, is how to construct a good Ψ. Note that if Y = {\pm 1} and we set Ψ(x, y) = yx and W = Rd , then HΨ,W becomes the hypothesis class of homogeneous halfspace predictors for binary classification.
+#### 17.2.1   How to Construct Ψ
+As mentioned before, we can think of the elements of Ψ(x, y) as score functions that assess how well the label y fits the instance x. Naturally, designing a good Ψ is similar to the problem of designing a good feature mapping (as we discussed in
+
+<!-- page: 231 -->
+
+Chapter 16 and as we will discuss in more detail in Chapter 25). Two examples of useful constructions are given in the following.
+$$
+The Multivector Construction: Let Y = \{1, . . . , k\} and let X = Rn . We define Ψ : X \times Y \to Rd , where d = nk, as follows
+$$
+$$
+Ψ(x, y) = [ 0, . . . , 0 , x_1 , . . . , xn , 0, . . . , 0 ].   (17.2) | \{z \} | \{z \} | \{z \} \in R(y-1)n         \in Rn         \in R(k-y)n
+$$
+That is, Ψ(x, y) is composed of k vectors, each of which is of dimension n, where we set all the vectors to be the all zeros vector except the y’th vector, which is set to be x. It follows that we can think of w ∈ Rnk as being composed of k weight vectors in Rn , that is, w = [w1 ; . . . ; wk ], hence the name multivec-tor construction. By the construction we have that hw, Ψ(x, y)i = hwy , xi, and therefore the multiclass prediction becomes
+$$
+h(x) = argmax hwy , xi. y\in Y
+$$
+A geometric illustration of the multiclass prediction over X = R2 is given in the following.
+w2
+w1
+w3             w4
+TF-IDF: The previous definition of Ψ(x, y) does not incorporate any prior knowledge about the problem. We next describe an example of a feature function Ψ that does incorporate prior knowledge. Let X be a set of text documents and Y be a set of possible topics. Let d be a size of a dictionary of words. For each word in the dictionary, whose corresponding index is j, let T F (j, x) be the number of times the word corresponding to j appears in the document x. This quantity is called Term-Frequency. Additionally, let DF (j, y) be the number of times the word corresponding to j appears in documents in our training set that are not about topic y. This quantity is called Document-Frequency and measures whether word j is frequent in other topics. Now, define Ψ : X × Y → Rd to be such that
+(        ) Ψj (x, y) = T F (j, x) log DFm (j,y) ,
+where m is the total number of documents in our training set. The preceding quantity is called term-frequency-inverse-document-frequency or TF-IDF for
+
+<!-- page: 232 -->
+
+short. Intuitively, Ψj (x, y) should be large if the word corresponding to j appears a lot in the document x but does not appear at all in documents that are not on topic y. If this is the case, we tend to believe that the document x is on topic y. Note that unlike the multivector construction described previously, in the current construction the dimension of Ψ does not depend on the number of topics (i.e., the size of Y).
+#### 17.2.2   Cost-Sensitive Classification
+So far we used the zero-one loss as our performance measure of the quality of h(x). That is, the loss of a hypothesis h on an example (x, y) is 1 if h(x) \neq  y and 0 otherwise. In some situations it makes more sense to penalize different levels of loss for different mistakes. For example, in object recognition tasks, it is less severe to predict that an image of a tiger contains a cat than predicting that the image contains a whale. This can be modeled by specifying a loss function, \Delta : Y × Y → R+ , where for every pair of labels, y 0 , y, the loss of predicting the label y 0 when the correct label is y is defined to be \Delta(y 0 , y). We assume that \Delta(y, y) = 0. Note that the zero-one loss can be easily modeled by setting \Delta(y 0 , y) = 1[y0 \neq y] .
+#### 17.2.3   ERM
+We have defined the hypothesis class HΨ,W and specified a loss function \Delta. To learn the class with respect to the loss function, we can apply the ERM rule with respect to this class. That is, we search for a multiclass hypothesis h ∈ HΨ,W , parameterized by a vector w, that minimizes the empirical risk with respect to \Delta,
+m
+$$
+1 X LS (h) =         \Delta(h(xi ), yi ). m i=1
+$$
+We now show that when W = Rd and we are in the realizable case, then it is possible to solve the ERM problem efficiently using linear programming. Indeed, in the realizable case, we need to find a vector w ∈ Rd that satisfies
+$$
+\forall i \in [m],   yi = argmaxhw, Ψ(xi , y)i.
+$$
+y∈Y
+Equivalently, we need that w will satisfy the following set of linear inequalities
+\forall i ∈ [m], \forall y ∈ Y \ {yi }, hw, Ψ(xi , yi )i > hw, Ψ(xi , y)i. Finding w that satisfies the preceding set of linear equations amounts to solving a linear program. As in the case of binary classification, it is also possible to use a generalization of the Perceptron algorithm for solving the ERM problem. See Exercise 2. In the nonrealizable case, solving the ERM problem is in general computa-tionally hard. We tackle this difficulty using the method of convex surrogate
+
+<!-- page: 233 -->
+
+loss functions (see Section 12.3). In particular, we generalize the hinge loss to multiclass problems.
+#### 17.2.4   Generalized Hinge Loss
+Recall that in binary classification, the hinge loss is defined to be max{0, 1 - yhw, xi}. We now generalize the hinge loss to multiclass predictors of the form
+$$
+hw (x) = argmax hw, Ψ(x, y_0 )i. y 0 \in Y
+$$
+Recall that a surrogate convex loss should upper bound the original nonconvex loss, which in our case is \Delta(hw (x), y). To derive an upper bound on \Delta(hw (x), y) we first note that the definition of hw (x) implies that
+$$
+hw, Ψ(x, y)i \le hw, Ψ(x, hw (x))i.
+$$
+Therefore,
+$$
+\Delta(hw (x), y) \le \Delta(hw (x), y) + hw, Ψ(x, hw (x)) - Ψ(x, y)i.
+$$
+$$
+Since hw (x) \in Y we can upper bound the right-hand side of the preceding by max 0 (\Delta(y 0 , y) + hw, Ψ(x, y 0 ) - Ψ(x, y)i)     =    `(w, (x, y)).    (17.3) y \in Y
+$$
+We use the term “generalized hinge loss” to denote the preceding expression. As we have shown, `(w, (x, y)) \geq  \Delta(hw (x), y). Furthermore, equality holds whenever the score of the correct label is larger than the score of any other label, y 0 , by at least \Delta(y 0 , y), namely,
+$$
+\forall y 0 \in Y \ \{y\},   hw, Ψ(x, y)i \ge hw, Ψ(x, y_0 )i + \Delta(y 0 , y).
+$$
+It is also immediate to see that `(w, (x, y)) is a convex function with respect to w since it is a maximum over linear functions of w (see Claim 12.5 in Chapter 12), and that `(w, (x, y)) is ρ-Lipschitz with ρ = maxy0 ∈Y kΨ(x, y 0 ) - Ψ(x, y)k. Remark 17.2 We use the name “generalized hinge loss” since in the binary case, when Y = {\pm 1}, if we set Ψ(x, y) = yx   2 , then the generalized hinge loss becomes the vanilla hinge loss for binary classification,
+`(w, (x, y)) = max{0, 1 - yhw, xi}.
+Geometric Intuition: The feature function Ψ : X × Y → Rd maps each x into |Y| vectors in Rd . The value of `(w, (x, y)) will be zero if there exists a direction w such that when projecting the |Y| vectors onto this direction we obtain that each vector is represented by the scalar hw, Ψ(x, y)i, and we can rank the different points on the basis of these scalars so that
+- The point corresponding to the correct y is top-ranked
+
+<!-- page: 234 -->
+
+- For each y 0 \neq  y, the difference between hw, Ψ(x, y)i and hw, Ψ(x, y 0 )i is larger
+than the loss of predicting y 0 instead of y. The difference hw, Ψ(x, y)i - hw, Ψ(x, y 0 )i is also referred to as the “margin” (see Section 15.1). This is illustrated in the following figure:
+w Ψ(x, y)
+) ,y 00 Ψ(x, y 00 )
+(y
+$$
+\ge \Delta \ge \Delta (y ,   y_0 )
+$$
+Ψ(x, y 0 )
+17.2.5   Multiclass SVM and SGD
+Once we have defined the generalized hinge loss, we obtain a convex-Lipschitz
+learning problem and we can apply our general techniques for solving such prob-
+lems. In particular, the RLM technique we have studied in Chapter 13 yields the
+multiclass SVM rule:
+```
+Multiclass SVM
+input: (x1 , y1 ), . . . , (xm , ym )
+parameters:
+regularization parameter λ > 0
+loss function \Delta : Y × Y → R+
+class-sensitive feature mapping Ψ : X × Y → Rd
+solve:
+```
+$$
+\min_{w\in\mathbb{R}^d}\left(\lambda\|w\|^2+\frac{1}{m}\sum_{i=1}^{m}\max_{y'\in Y}\left(\Delta(y',y_i)+\langle w,\Psi(x_i,y')-\Psi(x_i,y_i)\rangle\right)\right)
+$$
+```
+output the predictor $h_w(x)=\argmax_{y\in Y}\langle w,\Psi(x,y)\rangle$
+```
+
+We can solve the optimization problem associated with multiclass SVM using generic convex optimization algorithms (or using the method described in Section 15.5). Let us analyze the risk of the resulting hypothesis. The analysis seamlessly follows from our general analysis for convex-Lipschitz problems given in Chapter 13. In particular, applying Corollary 13.8 and using the fact that the generalized hinge loss upper bounds the \Delta loss, we immediately obtain an analog of Corollary 15.7: corollary 17.1 Let D be a distribution over X × Y, let Ψ : X × Y → Rd , and assume that for all x ∈ X and y ∈ Y we have kΨ(x, y)k \leq  ρ/2. Let B > 0.
+
+<!-- page: 235 -->
+
+q
+2 Consider running Multiclass SVM with λ = B2ρ2 m on a training set S ∼ Dm and let hw be the output of Multiclass SVM. Then,
+r \Delta                  g-hinge                g-hinge         8ρ2 B 2 E m [LD (hw )] \leq    E m [LD       (w)] \leq    min LD        (u) +           , S∼D                S∼D                    u:kuk\leq B                   m g-hinge where L\Delta D (h) = E(x,y)∼D [\Delta(h(x), y)] and LD         (w) = E(x,y)∼D [`(w, (x, y))] with ` being the generalized hinge-loss as defined in Equation (17.3).
+g-hinge We can also apply the SGD learning framework for minimizing LD               (w) as described in Chapter 14. Recall Claim 14.6, which dealt with subgradients of max functions. In light of this claim, in order to find a subgradient of the generalized hinge loss all we need to do is to find y ∈ Y that achieves the maximum in the definition of the generalized hinge loss. This yields the following algorithm: SGD for Multiclass Learning parameters: Scalar η > 0, integer T > 0 loss function \Delta : Y × Y → R+ class-sensitive feature mapping Ψ : X × Y → Rd initialize: w(1) = 0 ∈ Rd for t = 1, 2, . . . , T sample (x, y) ∼ D find y{} ∈ argmaxy0 ∈Y \Delta(y 0 , y) + hw(t) , Ψ(x, y 0 ) - Ψ(x, y)i
+)
+$$
+set vt = Ψ(x, y{}) - Ψ(x, y) update w(t+1) = w(t) - \eta vt PT output w̄ = T_1 t=1 w(t)
+$$
+Our general analysis of SGD given in Corollary 14.12 immediately implies: corollary 17.2 Let D be a distribution over X × Y, let Ψ : X × Y → Rd , and assume that for all x ∈ X and y ∈ Y we have kΨ(x, y)k \leq  ρ/2. Let B > 0. Then, for every ε > 0, if we run SGD for multiclass learning with a number of iterations (i.e., number of examples)
+$$
+B 2 \rho_2 T \ge \epsilon_2 q B_2 and with \eta =       \rho_2 T , then the output of SGD satisfies
+$$
+$$
+g-hinge E [L\Delta D (hw̄ )] \le        E [LD       (w̄)] \le      min Lg-hinge D       (u) + \epsilon. S\sim D m                 S\sim D m                     u:kuk\le B
+$$
+Remark 17.3 It is interesting to note that the risk bounds given in Corollary 17.1 and Corollary 17.2 do not depend explicitly on the size of the label set Y, a fact we will rely on in the next section. However, the bounds may depend implicitly on the size of Y via the norm of Ψ(x, y) and the fact that the bounds are meaningful only when there exists some vector u, kuk \leq  B, for which Lg-hinge D      (u) is not excessively large.
+
+<!-- page: 236 -->
+
+### 17.3   Structured Output Prediction
+Structured output prediction problems are multiclass problems in which Y is very large but is endowed with a predefined structure. The structure plays a key role in constructing efficient algorithms. To motivate structured learning problems, consider the problem of optical character recognition (OCR). Suppose we receive an image of some handwritten word and would like to predict which word is written in the image. To simplify the setting, suppose we know how to segment the image into a sequence of images, each of which contains a patch of the image corresponding to a single letter. Therefore, X is the set of sequences of images and Y is the set of sequences of letters. Note that the size of Y grows exponentially with the maximal length of a word. An example of an image x corresponding to the label y = “workable” is given in the following.
+
+![Hinh: fig-236-1]
+To tackle structure prediction we can rely on the family of linear predictors described in the previous section. In particular, we need to define a reasonable loss function for the problem, \Delta, as well as a good class-sensitive feature mapping, Ψ. By “good” we mean a feature mapping that will lead to a low approximation error for the class of linear predictors with respect to Ψ and \Delta. Once we do this, we can rely, for example, on the SGD learning algorithm defined in the previous section. However, the huge size of Y poses several challenges:
+1. To apply the multiclass prediction we need to solve a maximization problem
+over Y. How can we predict efficiently when Y is so large?
+2. How do we train w efficiently? In particular, to apply the SGD rule we again
+need to solve a maximization problem over Y.
+3. How can we avoid overfitting?
+In the previous section we have already shown that the sample complexity of learning a linear multiclass predictor does not depend explicitly on the number of classes. We just need to make sure that the norm of the range of Ψ is not too large. This will take care of the overfitting problem. To tackle the computational challenges we rely on the structure of the problem, and define the functions Ψ and \Delta so that calculating the maximization problems in the definition of hw and in the SGD algorithm can be performed efficiently. In the following we demonstrate one way to achieve these goals for the OCR task mentioned previously. To simplify the presentation, let us assume that all the words in Y are of length r and that the number of different letters in our alphabet is q. Let y and y0 be two
+
+<!-- page: 237 -->
+
+words (i.e., sequences of letters) in Y. We define the function \Delta(y0 , y) to be the
+Pr average number of letters that are different in y 0 and y, namely, 1r i=1 1[yi \neq yi0 ] . Next, let us define a class-sensitive feature mapping Ψ(x, y). It will be convenient to think about x as a matrix of size n × r, where n is the number of pixels in each image, and r is the number of images in the sequence. The j’th column of x corresponds to the j’th image in the sequence (encoded as a vector of gray level values of pixels). The dimension of the range of Ψ is set to be d = n q + q 2 . The first nq feature functions are “type 1” features and take the form: r 1X Ψi,j,1 (x, y) =         xi,t 1[yt =j] . r t=1
+That is, we sum the value of the i’th pixel only over the images for which y assigns the letter j. The triple index (i, j, 1) indicates that we are dealing with feature (i, j) of type 1. Intuitively, such features can capture pixels in the image whose gray level values are indicative of a certain letter. The second type of features take the form
+$$
+r 1X Ψi,j,2 (x, y) =        1[y =i] 1[yt-1 =j] . r t=2 t
+$$
+That is, we sum the number of times the letter i follows the letter j. Intuitively, these features can capture rules like “It is likely to see the pair ‘qu’ in a word” or “It is unlikely to see the pair ‘rz’ in a word.” Of course, some of these features will not be very useful, so the goal of the learning process is to assign weights to features by learning the vector w, so that the weighted score will give us a good prediction via
+$$
+hw (x) = argmax hw, Ψ(x, y)i.
+$$
+y∈Y
+It is left to show how to solve the optimization problem in the definition of hw (x) efficiently, as well as how to solve the optimization problem in the definition of y{} in the SGD algorithm. We can do this by applying a dynamic programming procedure. We describe the procedure for solving the maximization in the definition of hw and leave as an exercise the maximization problem in the definition of y{} in the SGD algorithm. To derive the dynamic programming procedure, let us first observe that we can write
+Xr Ψ(x, y) =     φ(x, yt , yt-1 ),
+t=1
+for an appropriate φ : X × [q] × [q] ∪ {0} → Rd , and for simplicity we assume that y0 is always equal to 0. Indeed, each feature function Ψi,j,1 can be written in terms of
+$$
+\phi_i,j,1 (x, yt , yt-1 ) = xi,t 1[yt =j] ,
+$$
+
+<!-- page: 238 -->
+
+while the feature function Ψi,j,2 can be written in terms of
+$$
+\phi_i,j,2 (x, yt , yt-1 ) = 1[yt =i] 1[yt-1 =j] . Therefore, the prediction can be written as
+$$
+$$
+r X hw (x) = argmax            hw, \phi(x, yt , yt-1 )i.           (17.4) y\in Y        t=1
+$$
+In the following we derive a dynamic programming procedure that solves every problem of the form given in Equation (17.4). The procedure will maintain a matrix M ∈ Rq,r such that
+$$
+\tau X Ms,\tau =          max                  hw, \phi(x, yt , yt-1 )i. (y_1 ,...,y\tau ):y\tau =s t=1
+$$
+Clearly, the maximum of hw, Ψ(x, y)i equals maxs Ms,r . Furthermore, we can calculate M in a recursive manner:
+Ms,τ = max
+(Ms0 ,τ -1 + hw, φ(x, s, s0 )i) .                 (17.5) s
+This yields the following procedure:
+```
+Dynamic Programming for Calculating hw (x) as Given
+in Equation (17.4)
+input: a matrix x ∈ Rn,r and a vector w
+initialize:
+foreach s ∈ [q]
+Ms,1 = hw, φ(x, s, -1)i
+for τ = 2, . . . , r
+foreach s ∈ [q]
+set Ms,τ as in Equation (17.5)
+set Is,τ to be the s0 that maximizes Equation (17.5)
+set yt = argmaxs Ms,r
+for τ = r, r - 1, . . . , 2
+set yτ -1 = Iyτ ,τ
+output: y = (y1 , . . . , yr )
+```
+### 17.4   Ranking
+Ranking is the problem of ordering a set of instances according to their “relevance.” A typical application is ordering results of a search engine according to their relevance to the query. Another example is a system that monitors electronic transactions and should alert for possible fraudulent transactions. Such a system should order transactions according to how suspicious they are.
+$$
+S\in fty Formally, let X ∗ = n=1 X n be the set of all sequences of instances from
+$$
+
+<!-- page: 239 -->
+
+X of arbitrary length. A ranking hypothesis, h, is a function that receives a sequence of instances x̄ = (x1 , . . . , xr ) ∈ X ∗ , and returns a permutation of [r]. It is more convenient to let the output of h be a vector y ∈ Rr , where by sorting the elements of y we obtain the permutation over [r]. We denote by π(y) the permutation over [r] induced by y. For example, for r = 5, the vector y = (2, 1, 6, -1, 0.5) induces the permutation π(y) = (4, 3, 5, 1, 2). That is, if we sort y in an ascending order, then we obtain the vector (-1, 0.5, 1, 2, 6). Now, π(y)i is the position of yi in the sorted vector (-1, 0.5, 1, 2, 6). This notation reflects that the top-ranked instances are those that achieve the highest values in π(y).
+In the notation of our PAC learning model, the examples domain is Z = S∞       r     r r=1 (X × R ), and the hypothesis class, H, is some set of ranking hypotheses. We next turn to describe loss functions for ranking. There are many possible ways to define such loss functions, and here we list a few examples. In all the examples
+$$
+S\in fty we define `(h, (x̄, y)) = \Delta(h(x̄), y), for some function \Delta : r=1 (Rr \times Rr ) \to R+ .
+$$
+- 0–1 Ranking loss: \Delta(y0 , y) is zero if y and y0 induce exactly the same
+ranking and \Delta(y0 , y) = 1 otherwise. That is, \Delta(y0 , y) = 1[π(y0 )\neq π(y)] . Such a loss function is almost never used in practice as it does not distinguish between the case in which π(y0 ) is almost equal to π(y) and the case in which π(y0 ) is completely different from π(y).
+- Kendall-Tau Loss: We count the number of pairs (i, j) that are in different
+order in the two permutations. This can be written as
+r-1 X r
+$$
+2    X \Delta(y_0 , y) =                      1[sign(yi0 -yj0 )\neq sign(yi -yj )] . r(r - 1) i=1 j=i+1
+$$
+This loss function is more useful than the 0–1 loss as it reflects the level of similarity between the two rankings.
+- Normalized Discounted Cumulative Gain (NDCG): This measure em-
+phasizes the correctness at the top of the list by using a monotonically nondecreasing discount function D : N → R+ . We first define a discounted cumulative gain measure:
+$$
+r X G(y_0 , y) =          D(\pi(y_0 )i ) yi . i=1
+$$
+In words, if we interpret yi as a score of the “true relevance” of item i, then we take a weighted sum of the relevance of the elements, while the weight of yi is determined on the basis of the position of i in π(y0 ). Assuming that all elements of y are nonnegative, it is easy to verify that 0 \leq  G(y0 , y) \leq  G(y, y). We can therefore define a normalized discounted cumulative gain by the ratio G(y0 , y)/G(y, y), and the corresponding loss function would be
+$$
+r G(y_0 , y)       1     X \Delta(y_0 , y) = 1 -           =               (D(\pi(y)i ) - D(\pi(y_0 )i )) yi . G(y, y)      G(y, y) i=1
+$$
+
+<!-- page: 240 -->
+
+$$
+We can easily see that \Delta(y_0 , y) \in [0, 1] and that \Delta(y_0 , y) = 0 whenever \pi(y_0 ) = \pi(y).
+$$
+A typical way to define the discount function is by
+(
+$$
+if i \in \{r - k + 1, . . . , r\} D(i) = log2 (r-i+2)
+$$
+## 0             otherwise
+where k < r is a parameter. This means that we care more about elements that are ranked higher, and we completely ignore elements that are not at the top-k ranked elements. The NDCG measure is often used to evaluate the performance of search engines since in such applications it makes sense completely to ignore elements that are not at the top of the ranking.
+Once we have a hypothesis class and a ranking loss function, we can learn a ranking function using the ERM rule. However, from the computational point of view, the resulting optimization problem might be hard to solve. We next discuss how to learn linear predictors for ranking.
+#### 17.4.1   Linear Predictors for Ranking
+A natural way to define a ranking function is by projecting the instances onto some vector w and then outputting the resulting scalars as our representation of the ranking function. That is, assuming that X ⊂ Rd , for every w ∈ Rd we define a ranking function
+$$
+hw ((x_1 , . . . , xr )) = (hw, x_1 i, . . . , hw, xr i). \tag{17.6}
+$$
+As we discussed in Chapter 16, we can also apply a feature mapping that maps instances into some feature space and then takes the inner products with w in the feature space. For simplicity, we focus on the simpler form as in Equation (17.6).
+Given some W ⊂ Rd , we can now define the hypothesis class HW = {hw : w ∈ W }. Once we have defined this hypothesis class, and have chosen a ranking loss function, we can apply the ERM rule as follows: Given a training set, S = (x̄1 , y1 ), . . . , (x̄m , ym ), where each (x̄i , yi ) is in (X × R)ri , for some ri ∈ N, we
+Pm should search w ∈ W that minimizes the empirical loss, i=1 \Delta(hw (x̄i ), yi ). As in the case of binary classification, for many loss functions this problem is computationally hard, and we therefore turn to describe convex surrogate loss functions. We describe the surrogates for the Kendall tau loss and for the NDCG loss.
+A Hinge Loss for the Kendall Tau Loss Function: We can think of the Kendall tau loss as an average of 0-1 losses for each pair. In particular, for every (i, j) we can rewrite
+$$
+1[sign(yi0 -yj0 )\neq sign(yi -yj )] = 1[sign(yi -yj )(yi0 -yj0 )\le 0] .
+$$
+
+<!-- page: 241 -->
+
+In our case, yi0 - yj0 = hw, xi - xj i. It follows that we can use the hinge loss upper bound as follows:
+1[sign(yi -yj )(yi0 -yj0 )\leq 0] \leq  max {0, 1 - sign (yi - yj ) hw, xi - xj i} . Taking the average over the pairs we obtain the following surrogate convex loss for the Kendall tau loss function:
+r-1 X r
+$$
+2    X \Delta(hw (x̄), y) \le                        max \{0, 1 - sign(yi - yj ) hw, xi - xj i\} . r(r - 1) i=1 j=i+1
+$$
+The right-hand side is convex with respect to w and upper bounds the Kendall tau loss. It is also a ρ-Lipschitz function with parameter ρ \leq  maxi,j kxi - xj k.
+A Hinge Loss for the NDCG Loss Function: The NDCG loss function depends on the predicted ranking vector y0 ∈ Rr via the permutation it induces. To derive a surrogate loss function we first make the following observation. Let V be the set of all permutations of [r] encoded as vectors; namely, each v ∈ V is a vector in [r]r such that for all i \neq  j we have vi \neq  vj . Then (see Exercise 4),
+$$
+r X \pi(y_0 ) = argmax               vi yi0 .                   (17.7) v\in V       i=1 Pr Let us denote Ψ(x̄, v) =       i=1 vi xi ; it follows that r X \pi(hw (x̄)) = argmax            vi hw, xi i v\in V     i=1 *      r
+$$
+$$
++ X = argmax w,                vi x i v\in V            i=1
+$$
+$$
+= argmaxhw, Ψ(x̄, v)i. v\in V
+$$
+On the basis of this observation, we can use the generalized hinge loss for cost-sensitive multiclass classification as a surrogate loss function for the NDCG loss as follows:
+$$
+\Delta(hw (x̄), y) \le \Delta(hw (x̄), y) + hw, Ψ(x̄, \pi(hw (x̄)))i - hw, Ψ(x̄, \pi(y))i
+$$
+$$
+\le max [\Delta(v, y) + hw, Ψ(x̄, v)i - hw, Ψ(x̄, \pi(y))i] v\in V             r  X = max \Delta(v, y) +      (vi - \pi(y)i ) hw, xi i . \tag{17.8}
+$$
+v∈V
+i=1
+The right-hand side is a convex function with respect to w.
+We can now solve the learning problem using SGD as described in Section 17.2.5. The main computational bottleneck is calculating a subgradient of the loss function, which is equivalent to finding v that achieves the maximum in Equation (17.8) (see Claim 14.6). Using the definition of the NDCG loss, this is
+
+<!-- page: 242 -->
+
+$$
+equivalent to solving the problem r X argmin     (\alpha_i vi + \beta_i D(vi )), v\in V     i=1
+$$
+where αi = -hw, xi i and βi = yi /G(y, y). We can think of this problem a little bit differently by defining a matrix A ∈ Rr,r where
+Ai,j = jαi + D(j) βi .
+Now, let us think about each j as a “worker,” each i as a “task,” and Ai,j as the cost of assigning task i to worker j. With this view, the problem of finding v becomes the problem of finding an assignment of the tasks to workers of minimal cost. This problem is called “the assignment problem” and can be solved efficiently. One particular algorithm is the “Hungarian method” (Kuhn 1955). Another way to solve the assignment problem is using linear programming. To do so, let us first write the assignment problem as
+$$
+r X argmin          Ai,j Bi,j                          (17.9) B\in Rr,r +   i,j=1
+$$
+$$
+r X s.t. \forall i \in [r],           Bi,j = 1 j=1 Xr \forall j \in [r],           Bi,j = 1 i=1
+$$
+\forall i, j, Bi,j ∈ {0, 1}
+A matrix B that satisfies the constraints in the preceding optimization problem is called a permutation matrix. This is because the constraints guarantee that there is at most a single entry of each row that equals 1 and a single entry of each column that equals 1. Therefore, the matrix B corresponds to the permutation v ∈ V defined by vi = j for the single index j that satisfies Bi,j = 1.
+The preceding optimization is still not a linear program because of the combinatorial constraint Bi,j ∈ {0, 1}. However, as it turns out, this constraint is redundant – if we solve the optimization problem while simply omitting the combinatorial constraint, then we are still guaranteed that there is an optimal solution that will satisfy this constraint. This is formalized later.
+P Denote hA, Bi = i,j Ai,j Bi,j . Then, Equation (17.9) is the problem of minimizing hA, Bi such that B is a permutation matrix. A matrix B ∈ Rr,r is called doubly stochastic if all elements of B are nonnegative, the sum of each row of B is 1, and the sum of each column of B is 1. Therefore, solving Equation (17.9) without the constraints Bi,j ∈ {0, 1} is the problem
+$$
+argminhA, Bi s.t. B is a doubly stochastic matrix.                (17.10) B\in Rr,r
+$$
+
+<!-- page: 243 -->
+
+The following claim states that every doubly stochastic matrix is a convex combination of permutation matrices. claim 17.3 ((Birkhoff 1946, Von Neumann 1953)) The set of doubly stochastic matrices in Rr,r is the convex hull of the set of permutation matrices in Rr,r . On the basis of the claim, we easily obtain the following: lemma 17.4 There exists an optimal solution of Equation (17.10) that is also an optimal solution of Equation (17.9). Proof Let B be a solution of Equation (17.10). Then, by Claim 17.3, we can
+P write B = i γi Ci , where each Ci is a permutation matrix, each γi > 0, and P i γi = 1. Since all the Ci are also doubly stochastic, we clearly have that hA, Bi \leq  hA, Ci i for every i. We claim that there is some i for which hA, Bi = hA, Ci i. This must be true since otherwise, if for every i hA, Bi < hA, Ci i, we would have that
+*             +
+$$
+X             X                X hA, Bi = A,      \gamma_i C i =     \gamma_i hA, Ci i >     \gamma_i hA, Bi = hA, Bi,
+$$
+i             i                 i
+which cannot hold. We have thus shown that some permutation matrix, Ci , satisfies hA, Bi = hA, Ci i. But, since for every other permutation matrix C we have hA, Bi \leq  hA, Ci we conclude that Ci is an optimal solution of both Equation (17.9) and Equation (17.10).
+### 17.5   Bipartite Ranking and Multivariate Performance Measures
+In the previous section we described the problem of ranking. We used a vector y ∈ Rr for representing an order over the elements x1 , . . . , xr . If all elements in y are different from each other, then y specifies a full order over [r]. However, if two elements of y attain the same value, yi = yj for i \neq  j, then y can only specify a partial order over [r]. In such a case, we say that xi and xj are of equal relevance according to y. In the extreme case, y ∈ {\pm 1}r , which means that each xi is either relevant or nonrelevant. This setting is often called “bipartite ranking.” For example, in the fraud detection application mentioned in the previous section, each transaction is labeled as either fraudulent (yi = 1) or benign (yi = -1).
+Seemingly, we can solve the bipartite ranking problem by learning a binary classifier, applying it on each instance, and putting the positive ones at the top of the ranked list. However, this may lead to poor results as the goal of a binary learner is usually to minimize the zero-one loss (or some surrogate of it), while the goal of a ranker might be significantly different. To illustrate this, consider again the problem of fraud detection. Usually, most of the transactions are benign (say 99.9%). Therefore, a binary classifier that predicts “benign” on all transactions will have a zero-one error of 0.1%. While this is a very small number, the resulting predictor is meaningless for the fraud detection application. The crux of the
+
+<!-- page: 244 -->
+
+problem stems from the inadequacy of the zero-one loss for what we are really interested in. A more adequate performance measure should take into account the predictions over the entire set of instances. For example, in the previous section we have defined the NDCG loss, which emphasizes the correctness of the top-ranked items. In this section we describe additional loss functions that are specifically adequate for bipartite ranking problems.
+As in the previous section, we are given a sequence of instances, x̄ = (x1 , . . . , xr ), and we predict a ranking vector y0 ∈ Rr . The feedback vector is y ∈ {\pm 1}r . We define a loss that depends on y0 and y and depends on a threshold θ ∈ R. This threshold transforms the vector y0 ∈ Rr into the vector (sign(yi0 -θ), . . . , sign(yr0 - θ)) ∈ {\pm 1}r . Usually, the value of θ is set to be 0. However, as we will see, we sometimes set θ while taking into account additional constraints on the problem. The loss functions we define in the following depend on the following 4 numbers:
+$$
+True positives: a = |\{i : yi = +1 \land sign(yi0 - \theta) = +1\}| False positives: b = |\{i : yi = -1 \land sign(yi0 - \theta) = +1\}|
+$$
+$$
+(17.11) False negatives: c = |\{i : yi = +1 \land sign(yi0 - \theta) = -1\}| True negatives: d = |\{i : yi = -1 \land sign(yi0 - \theta) = -1\}|
+$$
+The recall (a.k.a. sensitivity) of a prediction vector is the fraction of true positives y0 “catches,” namely, a+c a
+. The precision is the fraction of correct
+a predictions among the positive labels we predict, namely, a+b   . The specificity
+d is the fraction of true negatives that our predictor “catches,” namely, d+b . Note that as we decrease θ the recall increases (attaining the value 1 when θ = -∞). On the other hand, the precision and the specificity usually decrease as we decrease θ. Therefore, there is a tradeoff between precision and recall, and we can control it by changing θ. The loss functions defined in the following use various techniques for combining both the precision and recall.
+- Averaging sensitivity and specificity:   ( This measure
+)     is the average of the
+1  a     d sensitivity and specificity, namely, 2 a+c + d+b . This is also the accuracy on positive examples averaged with the accuracy on negative examples. Here, (we set θ =) 0 and the corresponding loss function is \Delta(y0 , y) =
+## 1 - 21    a     d
+a+c + d+b   .
+- F1 -score: The F1 score is the harmonic mean of the precision and recall:
+2 1         1    . Its maximal value (of 1) is obtained when both precision Precision + Recall and recall are 1, and its minimal value (of 0) is obtained whenever one of them is 0 (even if the other one is 1). The F1 score can be written using
+$$
+2a the numbers a, b, c as follows; F_1 = 2a+b+c       . Again, we set \theta = 0, and the 0 loss function becomes \Delta(y , y) = 1 - F_1 .
+$$
+- Fβ -score: It is like F1 score, but we attach β 2 times more importance to
+1+β 2 recall than to precision, that is,       1 +β 2 1
+. It can also be written as Precision   Recall
+
+<!-- page: 245 -->
+
+$$
+2 F\beta = (1+\beta(1+\beta    )a 2 )a+b+\beta 2 c . Again, we set \theta = 0, and the loss function becomes
+$$
+\Delta(y0 , y) = 1 - Fβ .
+- Recall at k: We measure the recall while the prediction must contain at most
+k positive labels. That is, we should set θ so that a + b \leq  k. This is convenient, for example, in the application of a fraud detection system, where a bank employee can only handle a small number of suspicious transactions.
+- Precision at k: We measure the precision while the prediction must contain
+$$
+at least k positive labels. That is, we should set \theta so that a + b \ge k.
+$$
+The measures defined previously are often referred to as multivariate performance measures. Note that these measures are highly different from the average
+b+d zero-one loss, which in the preceding notation equals a+b+c+d    . In the aforementioned example of fraud detection, when 99.9% of the examples are negatively labeled, the zero-one loss of predicting that all the examples are negatives is 0.1%. In contrast, the recall of such prediction is 0 and hence the F1 score is also 0, which means that the corresponding loss will be 1.
+#### 17.5.1   Linear Predictors for Bipartite Ranking
+We next describe how to train linear predictors for bipartite ranking. As in the previous section, a linear predictor for ranking is defined to be
+hw (x̄) = (hw, x1 i, . . . , hw, xr i).
+The corresponding loss function is one of the multivariate performance measures described before. The loss function depends on y0 = hw (x̄) via the binary vector it induces, which we denote by
+$$
+b(y_0 ) = (sign(y_10 - \theta), . . . , sign(yr0 - \theta)) \in \{\pm 1\}r . \tag{17.12}
+$$
+As in the previous section, to facilitate an efficient algorithm we derive a convex surrogate loss function on \Delta. The derivation is similar to the derivation of the generalized hinge loss for the NDCG ranking loss, as described in the previous section. Our first observation is that for all the values of θ defined before, there is some V ⊆ {\pm 1}r such that b(y0 ) can be rewritten as
+$$
+r X b(y_0 ) = argmax             vi yi0 .            (17.13) v\in V      i=1
+$$
+This is clearly true for the case θ = 0 if we choose V = {\pm 1}r . The two measures for which θ is not taken to be 0 are precision at k and recall at k. For precision at k we can take V to be the set V\geq k , containing all vectors in {\pm 1}r whose number of ones is at least k. For recall at k, we can take V to be V\leq k , which is defined analogously. See Exercise 5.
+
+<!-- page: 246 -->
+
+Once we have defined b as in Equation (17.13), we can easily derive a convex surrogate loss as follows. Assuming that y ∈ V , we have that
+$$
+\Delta(hw (x̄), y) = \Delta(b(hw (x̄)), y) r X \le \Delta(b(hw (x̄)), y) +                (bi (hw (x̄)) - yi )hw, xi i i=1                   r  X \le max           \Delta(v, y) +           (vi - yi ) hw, xi i .          (17.14) v\in V i=1
+$$
+The right-hand side is a convex function with respect to w.
+We can now solve the learning problem using SGD as described in Section 17.2.5. The main computational bottleneck is calculating a subgradient of the loss function, which is equivalent to finding v that achieves the maximum in Equation (17.14) (see Claim 14.6). In the following we describe how to find this maximizer efficiently for any performance measure that can be written as a function of the numbers a, b, c, d given in Equation (17.11), and for which the set V contains all elements in {\pm 1}r for which the values of a, b satisfy some constraints. For example, for “recall at k” the set V is all vectors for which a + b \leq  k. The idea is as follows. For any a, b ∈ [r], let
+$$
+Ȳa,b = \{v : |\{i : vi = 1 \land yi = 1\}| = a \land |\{i : vi = 1 \land yi = -1\}| = b \} .
+$$
+Any vector v ∈ V falls into Ȳa,b for some a, b ∈ [r]. Furthermore, if Ȳa,b ∩ V is not empty for some a, b ∈ [r] then Ȳa,b ∩ V = Ȳa,b . Therefore, we can search within each Ȳa,b that has a nonempty intersection with V separately, and then take the optimal value. The key observation is that once we are searching only within Ȳa,b , the value of \Delta is fixed so we only need to maximize the expression
+$$
+r X max             vi hw, xi i. v\in Ȳa,b i=1
+$$
+Suppose the examples are sorted so that hw, x1 i \geq  · · · \geq  hw, xr i. Then, it is easy to verify that we would like to set vi to be positive for the smallest indices i. Doing this, with the constraint on a, b, amounts to setting vi = 1 for the a top ranked positive examples and for the b top-ranked negative examples. This yields the following procedure.
+
+<!-- page: 247 -->
+
+```
+Solving Equation (17.14)
+input:
+(x1 , . . . , xr ), (y1 , . . . , yr ), w, V, \Delta
+assumptions:
+\Delta is a function of a, b, c, d
+V contains all vectors for which f (a, b) = 1 for some function f
+initialize:
+P = |{i : yi = 1}|, N = |{i : yi = -1}|
+\mu = (hw, x1 i, . . . , hw, xr i), α? = -∞
+sort examples so that \mu1 \geq  \mu2 \geq  · · · \geq  \mur
+let i1 , . . . , iP be the (sorted) indices of the positive examples
+let j1 , . . . , jN be the (sorted) indices of the negative examples
+for a = 0, 1, . . . , P
+c=P -a
+for b = 0, 1, . . . , N such that f (a, b) = 1
+d=N -b
+calculate \Delta using a, b, c, d
+set v1 , . . . , vr s.t. vi1 = · · · = via = vj1 = · · · = vjb = 1
+and the rest of the elements of v equal -1
+Pr
+set α = \Delta + i=1 vi \mui
+if α \geq  α?
+α? = α, v? = v
+output v?
+```
+### 17.6   Summary
+Many real world supervised learning problems can be cast as learning a multiclass predictor. We started the chapter by introducing reductions of multiclass learning to binary learning. We then described and analyzed the family of linear predictors for multiclass learning. We have shown how this family can be used even if the number of classes is extremely large, as long as we have an adequate structure on the problem. Finally, we have described ranking problems. In Chapter 29 we study the sample complexity of multiclass learning in more detail.
+### 17.7   Bibliographic Remarks
+The One-versus-All and All-Pairs approach reductions have been unified under the framework of Error Correction Output Codes (ECOC) (Dietterich & Bakiri 1995, Allwein, Schapire & Singer 2000). There are also other types of reductions such as tree-based classifiers (see, for example, Beygelzimer, Langford & Ravikumar (2007)). The limitations of reduction techniques have been studied
+
+<!-- page: 248 -->
+
+in (Daniely et al. 2011, Daniely, Sabato & Shwartz 2012). See also Chapter 29, in which we analyze the sample complexity of multiclass learning.
+Direct approaches to multiclass learning with linear predictors have been studied in (Vapnik 1998, Weston & Watkins 1999, Crammer & Singer 2001). In particular, the multivector construction is due to Crammer & Singer (2001). Collins (2000) has shown how to apply the Perceptron algorithm for structured output problems. See also Collins (2002). A related approach is discriminative learning of conditional random fields; see Lafferty, McCallum & Pereira (2001). Structured output SVM has been studied in (Weston, Chapelle, Vapnik, Elisseeff & Schölkopf 2002, Taskar, Guestrin & Koller 2003, Tsochantaridis, Hofmann, Joachims & Altun 2004). The dynamic procedure we have presented for calculating the prediction hw (x) in the structured output section is similar to the forward-backward variables calculated by the Viterbi procedure in HMMs (see, for instance, (Rabiner & Juang 1986)). More generally, solving the maximization problem in structured output is closely related to the problem of inference in graphical models (see, for example, Koller & Friedman (2009)). Chapelle, Le & Smola (2007) proposed to learn a ranking function with respect to the NDCG loss using ideas from structured output learning. They also observed that the maximization problem in the definition of the generalized hinge loss is equivalent to the assignment problem. Agarwal & Roth (2005) analyzed the sample complexity of bipartite ranking. Joachims (2005) studied the applicability of structured output SVM to bipartite ranking with multivariate performance measures.
+### 17.8   Exercises
+1. Consider a set S of examples in Rn ×[k] for which there exist vectors \mu1 , . . . , \muk
+such that every example (x, y) ∈ S falls within a ball centered at \muy whose radius is r \geq  1. Assume also that for every i \neq  j, k\mui - \muj k \geq  4r. Consider concatenating each instance by the constant 1 and then applying the multivector construction, namely,
+$$
+Ψ(x, y) = [     0, . . . , 0 , x_1 , . . . , xn , 1 ,    0, . . . , 0   ]. | \{z \}         |       \{z        \}      | \{z \} \in R(y-1)(n+1)           \in Rn+1             \in R(k-y)(n+1)
+$$
+Show that there exists a vector w ∈ Rk(n+1) such that `(w, (x, y)) = 0 for every (x, y) ∈ S. Hint: Observe that for every example (x, y) ∈ S we can write x = \muy + v for some kvk \leq  r. Now, take w = [w1 , . . . , wk ], where wi = [\mui , -k\mui k2 /2].
+2. Multiclass Perceptron: Consider the following algorithm:
+
+<!-- page: 249 -->
+
+```
+Multiclass Batch Perceptron
+Input:
+A training set (x1 , y1 ), . . . , (xm , ym )
+A class-sensitive feature mapping Ψ : X × Y → Rd
+Initialize: w(1) = (0, . . . , 0) ∈ Rd
+For t = 1, 2, . . .
+If (∃ i and y \neq  yi s.t. hw(t) , Ψ(xi , yi )i \leq  hw(t) , Ψ(xi , y)i) then
+w(t+1) = w(t) + Ψ(xi , yi ) - Ψ(xi , y)
+else
+output w(t)
+```
+Prove the following: theorem 17.5 Assume that there exists w? such that for all i and for all y \neq  yi it holds that hw? , Ψ(xi , yi )i \geq  hw? , Ψ(xi , y)i+1. Let R = maxi,y kΨ(xi , yi )- Ψ(xi , y)k. Then, the multiclass Perceptron algorithm stops after at most (Rkw? k)2 iterations, and when it stops it holds that \forall i ∈ [m], yi = argmaxy hw(t) , Ψ(xi , y)i.
+3. Generalize the dynamic programming procedure given in Section 17.3 for solv-
+ing the maximization problem given in the definition of h{} in the SGD proce-
+$$
+Pr dure for multiclass prediction. You can assume that \Delta(y_0 , y) = t=1 \delta(yt0 , yt ) for some arbitrary function \delta.
+$$
+4. Prove that Equation (17.7) holds.
+5. Show that the two definitions of π as defined in Equation (17.12) and Equa-
+tion (17.13) are indeed equivalent for all the multivariate performance measures.
+
+<!-- page: 250 -->
+
+## 18 Decision Trees
+A decision tree is a predictor, h : X → Y, that predicts the label associated with an instance x by traveling from a root node of a tree to a leaf. For simplicity we focus on the binary classification setting, namely, Y = {0, 1}, but decision trees can be applied for other prediction problems as well. At each node on the root-to-leaf path, the successor child is chosen on the basis of a splitting of the input space. Usually, the splitting is based on one of the features of x or on a predefined set of splitting rules. A leaf contains a specific label. An example of a decision tree for the papayas example (described in Chapter 2) is given in the following:
+Color?
+pale green to pale yellow other
+not-tasty                          Softness?
+other                   gives slightly to palm pressure
+not-tasty                               tasty
+To check if a given papaya is tasty or not, the decision tree first examines the color of the Papaya. If this color is not in the range pale green to pale yellow, then the tree immediately predicts that the papaya is not tasty without additional tests. Otherwise, the tree turns to examine the softness of the papaya. If the softness level of the papaya is such that it gives slightly to palm pressure, the decision tree predicts that the papaya is tasty. Otherwise, the prediction is “not-tasty.” The preceding example underscores one of the main advantages of decision trees – the resulting classifier is very simple to understand and interpret.
+
+<!-- page: 251 -->
+
+### 18.1   Sample Complexity
+A popular splitting rule at internal nodes of the tree is based on thresholding the value of a single feature. That is, we move to the right or left child of the node on the basis of 1[xi <θ] , where i ∈ [d] is the index of the relevant feature and θ ∈ R is the threshold. In such cases, we can think of a decision tree as a splitting of the instance space, X = Rd , into cells, where each leaf of the tree corresponds to one cell. It follows that a tree with k leaves can shatter a set of k instances. Hence, if we allow decision trees of arbitrary size, we obtain a hypothesis class of infinite VC dimension. Such an approach can easily lead to overfitting.
+To avoid overfitting, we can rely on the minimum description length (MDL) principle described in Chapter 7, and aim at learning a decision tree that on one hand fits the data well while on the other hand is not too large. For simplicity, we will assume that X = {0, 1}d . In other words, each instance is a vector of d bits. In that case, thresholding the value of a single feature corresponds to a splitting rule of the form 1[xi =1] for some i = [d]. For instance, we can model the “papaya decision tree” earlier by assuming that a papaya is parameterized by a two-dimensional bit vector x ∈ {0, 1}2 , where the bit x1 represents whether the color is pale green to pale yellow or not, and the bit x2 represents whether the softness is gives slightly to palm pressure or not. With this representation, the node Color? can be replaced with 1[x1 =1] , and the node Softness? can be replaced with 1[x2 =1] . While this is a big simplification, the algorithms and analysis we provide in the following can be extended to more general cases. With the aforementioned simplifying assumption, the hypothesis class becomes finite, but is still very large. In particular, any classifier from {0, 1}d to {0, 1} can be represented by a decision tree with 2d leaves and depth of d + 1 (see Exercise 1). Therefore, the VC dimension of the class is 2d , which means that the number of examples we need to PAC learn the hypothesis class grows with 2d . Unless d is very small, this is a huge number of examples. To overcome this obstacle, we rely on the MDL scheme described in Chapter 7. The underlying prior knowledge is that we should prefer smaller trees over larger trees. To formalize this intuition, we first need to define a description language for decision trees, which is prefix free and requires fewer bits for smaller decision trees. Here is one possible way: A tree with n nodes will be described in n + 1 blocks, each of size log2 (d + 3) bits. The first n blocks encode the nodes of the tree, in a depth-first order (preorder), and the last block marks the end of the code. Each block indicates whether the current node is:
+- An internal node of the form 1[xi =1] for some i ∈ [d]
+- A leaf whose value is 1
+- A leaf whose value is 0
+- End of the code
+
+<!-- page: 252 -->
+
+Overall, there are d + 3 options, hence we need log2 (d + 3) bits to describe each block.
+Assuming each internal node has two children,1 it is not hard to show that this is a prefix-free encoding of the tree, and that the description length of a tree with n nodes is (n + 1) log2 (d + 3). By Theorem 7.7 we have that with probability of at least 1 - δ over a sample of size m, for every n and every decision tree h ∈ H with n nodes it holds that
+r
+$$
+(n + 1) log2 (d + 3) + log(2/\delta) LD (h) \le LS (h) +                                    . \tag{18.1}
+$$
+2m This bound performs a tradeoff: on the one hand, we expect larger, more complex decision trees to have a smaller training risk, LS (h), but the respective value of n will be larger. On the other hand, smaller decision trees will have a smaller value of n, but LS (h) might be larger. Our hope (or prior knowledge) is that we can find a decision tree with both low empirical risk, LS (h), and a number of nodes n not too high. Our bound indicates that such a tree will have low true risk, LD (h).
+### 18.2   Decision Tree Algorithms
+The bound on LD (h) given in Equation (18.1) suggests a learning rule for decision trees – search for a tree that minimizes the right-hand side of Equation (18.1). Unfortunately, it turns out that solving this problem is computationally hard.2 Consequently, practical decision tree learning algorithms are based on heuristics such as a greedy approach, where the tree is constructed gradually, and locally optimal decisions are made at the construction of each node. Such algorithms cannot guarantee to return the globally optimal decision tree but tend to work reasonably well in practice.
+A general framework for growing a decision tree is as follows. We start with a tree with a single leaf (the root) and assign this leaf a label according to a majority vote among all labels over the training set. We now perform a series of iterations. On each iteration, we examine the effect of splitting a single leaf. We define some “gain” measure that quantifies the improvement due to this split. Then, among all possible splits, we either choose the one that maximizes the gain and perform it, or choose not to split the leaf at all. In the following we provide a possible implementation. It is based on a popular decision tree algorithm known as “ID3” (short for “Iterative Dichotomizer 3”). We describe the algorithm for the case of binary features, namely, X = {0, 1}d ,
+1 We may assume this without loss of generality, because if a decision node has only one child, we can replace the node by its child without affecting the predictions of the decision tree.
+## 2 More precisely, if NP\neq P then no algorithm can solve Equation (18.1) in time polynomial
+in n, d, and m.
+
+<!-- page: 253 -->
+
+and therefore all splitting rules are of the form 1[xi =1] for some feature i ∈ [d]. We discuss the case of real valued features in Section 18.2.3. The algorithm works by recursive calls, with the initial call being ID3(S, [d]), and returns a decision tree. In the pseudocode that follows, we use a call to a procedure Gain(S, i), which receives a training set S and an index i and evaluates the gain of a split of the tree according to the ith feature. We describe several gain measures in Section 18.2.1.
+```
+ID3(S, A)
+Input: training set S, feature subset A ⊆ [d]
+if all examples in S are labeled by 1, return a leaf 1
+if all examples in S are labeled by 0, return a leaf 0
+if A = ∅, return a leaf whose value = majority of labels in S
+else :
+Let j = argmaxi∈A Gain(S, i)
+if all examples in S have the same label
+Return a leaf whose value = majority of labels in S
+else
+Let T1 be the tree returned by ID3({(x, y) ∈ S : xj = 1}, A \ {j}).
+Let T2 be the tree returned by ID3({(x, y) ∈ S : xj = 0}, A \ {j}).
+Return the tree:
+xj = 1?
+```
+T2                      T1
+#### 18.2.1   Implementations of the Gain Measure
+Different algorithms use different implementations of Gain(S, i). Here we present three. We use the notation PS [F ] to denote the probability that an event holds with respect to the uniform distribution over S. Train Error: The simplest definition of gain is the decrease in training error. Formally, let C(a) = min{a, 1-a}. Note that the training error before splitting on feature i is C(PS [y = 1]), since we took a majority vote among labels. Similarly, the error after splitting on feature i is
+$$
+P[xi = 1] C(P[y = 1|xi = 1]) + P[xi = 0]C(P[y = 1|xi = 0]). S           S                   S                S
+$$
+$$
+Therefore, we can define Gain to be the difference between the two, namely, Gain(S, i) := C(P[y = 1]) S (                                                         ) - P[xi = 1] C(P[y = 1|xi = 1]) + P[xi = 0]C(P[y = 1|xi = 0]) . S            S                   S            S
+$$
+
+<!-- page: 254 -->
+
+Information Gain: Another popular gain measure that is used in the ID3 and C4.5 algorithms of Quinlan (1993) is the information gain. The information gain is the difference between the entropy of the label before and after the split, and is achieved by replacing the function C in the previous expression by the entropy function,
+C(a) = -a log(a) - (1 - a) log(1 - a). Gini Index: Yet another definition of a gain, which is used by the CART algorithm of Breiman, Friedman, Olshen & Stone (1984), is the Gini index,
+C(a) = 2a(1 - a). Both the information gain and the Gini index are smooth and concave upper bounds of the train error. These properties can be advantageous in some situations (see, for example, Kearns & Mansour (1996)).
+18.2.2   Pruning
+The ID3 algorithm described previously still suffers from a big problem: The
+returned tree will usually be very large. Such trees may have low empirical risk,
+but their true risk will tend to be high – both according to our theoretical
+analysis, and in practice. One solution is to limit the number of iterations of ID3,
+leading to a tree with a bounded number of nodes. Another common solution is
+to prune the tree after it is built, hoping to reduce it to a much smaller tree,
+but still with a similar empirical error. Theoretically, according to the bound in
+Equation (18.1), if we can make n much smaller without increasing LS (h) by
+much, we are likely to get a decision tree with a smaller true risk.
+Usually, the pruning is performed by a bottom-up walk on the tree. Each node
+might be replaced with one of its subtrees or with a leaf, based on some bound
+or estimate of LD (h) (for example, the bound in Equation (18.1)). A pseudocode
+of a common template is given in the following.
+```
+Generic Tree Pruning Procedure
+input:
+function f (T, m) (bound/estimate for the generalization error
+of a decision tree T , based on a sample of size m),
+tree T .
+foreach node j in a bottom-up walk on T (from leaves to root):
+find T 0 which minimizes f (T 0 , m), where T 0 is any of the following:
+the current tree after replacing node j with a leaf 1.
+the current tree after replacing node j with a leaf 0.
+the current tree after replacing node j with its left subtree.
+the current tree after replacing node j with its right subtree.
+the current tree.
+let T := T 0 .
+```
+
+<!-- page: 255 -->
+
+#### 18.2.3   Threshold-Based Splitting Rules for Real-Valued Features
+In the previous section we have described an algorithm for growing a decision tree assuming that the features are binary and the splitting rules are of the form 1[xi =1] . We now extend this result to the case of real-valued features and threshold-based splitting rules, namely, 1[xi <θ] . Such splitting rules yield decision stumps, and we have studied them in Chapter 10.
+The basic idea is to reduce the problem to the case of binary features as follows. Let x1 , . . . , xm be the instances of the training set. For each real-valued feature i, sort the instances so that x1,i \leq  · · · \leq  xm,i . Define a set of thresholds θ0,i , . . . , θm+1,i such that θj,i ∈ (xj,i , xj+1,i ) (where we use the convention x0,i = -∞ and xm+1,i = ∞). Finally, for each i and j we define the binary feature 1[xi <θj,i ] . Once we have constructed these binary features, we can run the ID3 procedure described in the previous section. It is easy to verify that for any decision tree with threshold-based splitting rules over the original real-valued features there exists a decision tree over the constructed binary features with the same training error and the same number of nodes. If the original number of real-valued features is d and the number of examples is m, then the number of constructed binary features becomes dm. Calculating the Gain of each feature might therefore take O(dm2 ) operations. However, using a more clever implementation, the runtime can be reduced to O(dm log(m)). The idea is similar to the implementation of ERM for decision stumps as described in Section 10.1.1.
+### 18.3     Random Forests
+As mentioned before, the class of decision trees of arbitrary size has infinite VC dimension. We therefore restricted the size of the decision tree. Another way to reduce the danger of overfitting is by constructing an ensemble of trees. In particular, in the following we describe the method of random forests, introduced by Breiman (2001).
+A random forest is a classifier consisting of a collection of decision trees, where each tree is constructed by applying an algorithm A on the training set S and an additional random vector, θ, where θ is sampled i.i.d. from some distribution. The prediction of the random forest is obtained by a majority vote over the predictions of the individual trees. To specify a particular random forest, we need to define the algorithm A and the distribution over θ. There are many ways to do this and here we describe one particular option. We generate θ as follows. First, we take a random subsample from S with replacements; namely, we sample a new training set S 0 of size m0 using the uniform distribution over S. Second, we construct a sequence I1 , I2 , . . ., where each It is a subset of [d] of size k, which is generated by sampling uniformly at random elements from [d]. All these random variables form the vector θ. Then,
+
+<!-- page: 256 -->
+
+the algorithm A grows a decision tree (e.g., using the ID3 algorithm) based on the sample S 0 , where at each splitting stage of the algorithm, the algorithm is restricted to choosing a feature that maximizes Gain from the set It . Intuitively, if k is small, this restriction may prevent overfitting.
+### 18.4   Summary
+Decision trees are very intuitive predictors. Typically, if a human programmer creates a predictor it will look like a decision tree. We have shown that the VC dimension of decision trees with k leaves is k and proposed the MDL paradigm for learning decision trees. The main problem with decision trees is that they are computationally hard to learn; therefore we described several heuristic procedures for training them.
+### 18.5   Bibliographic Remarks
+Many algorithms for learning decision trees (such as ID3 and C4.5) have been derived by Quinlan (1986). The CART algorithm is due to Breiman et al. (1984). Random forests were introduced by Breiman (2001). For additional reading we refer the reader to (Hastie, Tibshirani & Friedman 2001, Rokach 2007).
+The proof of the hardness of training decision trees is given in Hyafil & Rivest (1976).
+### 18.6   Exercises
+1. 1. Show that any binary classifier h : {0, 1}d 7→ {0, 1} can be implemented
+$$
+as a decision tree of height at most d + 1, with internal nodes of the form (xi = 0?) for some i \in \{1, . . . , d\}.
+$$
+2. Conclude that the VC dimension of the class of decision trees over the
+domain {0, 1}d is 2d .
+2. (Suboptimality of ID3)
+$$
+Consider the following training set, where X = \{0, 1\}3 and Y = \{0, 1\}:
+$$
+((1, 1, 1), 1) ((1, 0, 0), 1) ((1, 1, 0), 0) ((0, 0, 1), 0) Suppose we wish to use this training set in order to build a decision tree of depth 2 (i.e., for each input we are allowed to ask two questions of the form (xi = 0?) before deciding on the label).
+
+<!-- page: 257 -->
+
+1. Suppose we run the ID3 algorithm up to depth 2 (namely, we pick the root
+node and its children according to the algorithm, but instead of keeping on with the recursion, we stop and pick leaves according to the majority label in each subtree). Assume that the subroutine used to measure the quality of each feature is based on the entropy function (so we measure the information gain), and that if two features get the same score, one of them is picked arbitrarily. Show that the training error of the resulting decision tree is at least 1/4.
+2. Find a decision tree of depth 2 that attains zero training error.
+
+<!-- page: 258 -->
+
+## 19 Nearest Neighbor
+Nearest Neighbor algorithms are among the simplest of all machine learning algorithms. The idea is to memorize the training set and then to predict the label of any new instance on the basis of the labels of its closest neighbors in the training set. The rationale behind such a method is based on the assumption that the features that are used to describe the domain points are relevant to their labelings in a way that makes close-by points likely to have the same label. Furthermore, in some situations, even when the training set is immense, finding a nearest neighbor can be done extremely fast (for example, when the training set is the entire Web and distances are based on links).
+Note that, in contrast with the algorithmic paradigms that we have discussed so far, like ERM, SRM, MDL, or RLM, that are determined by some hypothesis class, H, the Nearest Neighbor method figures out a label on any test point without searching for a predictor within some predefined class of functions. In this chapter we describe Nearest Neighbor methods for classification and regression problems. We analyze their performance for the simple case of binary classification and discuss the efficiency of implementing these methods.
+### 19.1   k Nearest Neighbors
+Throughout the entire chapter we assume that our instance domain, X , is endowed with a metric function ρ. That is, ρ : X ×X → R is a function that returns the distance between any two elements of X . For example,
+qP          if X = Rd then ρ can
+d be the Euclidean distance, ρ(x, x0 ) = kx - x0 k =                      0 2 i=1 (xi - xi ) . Let S = (x1 , y1 ), . . . , (xm , ym ) be a sequence of training examples. For each x ∈ X , let π1 (x), . . . , πm (x) be a reordering of {1, . . . , m} according to their distance to x, ρ(x, xi ). That is, for all i < m,
+$$
+\rho(x, x\pi_i (x) ) \le \rho(x, x\pi_i+1 (x) ).
+$$
+For a number k, the k-NN rule for binary classification is defined as follows:
+
+<!-- page: 259 -->
+
+![Hinh: fig-259-1]
+Figure 19.1 An illustration of the decision boundaries of the 1-NN rule. The points depicted are the sample points, and the predicted label of any new point will be the label of the sample point in the center of the cell it belongs to. These cells are called a Voronoi Tessellation of the space.
+```
+k-NN
+input: a training sample S = (x1 , y1 ), . . . , (xm , ym )
+output: for every point x ∈ X ,
+```
+return the majority label among {yπi (x) : i \leq  k}
+When k = 1, we have the 1-NN rule:
+hS (x) = yπ1 (x) .
+$$
+A geometric illustration of the 1-NN rule is given in Figure 19.1. For regression problems, namely, Y = R, one can define the prediction to be Pk the average target of the k nearest neighbors. That is, h_S (x) = k_1 i=1 y\pi_i (x) . More generally, for some function \phi : (X \times Y)k \to Y, the k-NN rule with respect to \phi is: ) h_S (x) = \phi (x\pi_1 (x) , y\pi_1 (x) ), . . . , (x\pi_k (x) , y\pi_k (x) ) . \tag{19.1}
+$$
+It is easy to verify that we can cast the prediction by majority of labels (for classification) or by the averaged target (for regression) as in Equation (19.1) by an appropriate choice of φ. The generality can lead to other rules; for example, if Y = R, we can take a weighted average of the targets according to the distance from x:
+$$
+k X      \rho(x, x\pi_i (x) ) h_S (x) =       Pk                   y\pi_i (x) . i=1   j=1 \rho(x, x\pi_j (x) )
+$$
+### 19.2   Analysis
+Since the NN rules are such natural learning methods, their generalization properties have been extensively studied. Most previous results are asymptotic consistency results, analyzing the performance of NN rules when the sample size, m,
+
+<!-- page: 260 -->
+
+goes to infinity, and the rate of convergence depends on the underlying distribution. As we have argued in Section 7.4, this type of analysis is not satisfactory. One would like to learn from finite training samples and to understand the generalization performance as a function of the size of such finite training sets and clear prior assumptions on the data distribution. We therefore provide a finite-sample analysis of the 1-NN rule, showing how the error decreases as a function of m and how it depends on properties of the distribution. We will also explain how the analysis can be generalized to k-NN rules for arbitrary values of k. In particular, the analysis specifies the number of examples required to achieve a true error of 2LD (h? ) + ε, where h? is the Bayes optimal hypothesis, assuming that the labeling rule is “well behaved” (in a sense we will define later).
+#### 19.2.1   A Generalization Bound for the 1-NN Rule
+We now analyze the true error of the 1-NN rule for binary classification with the 0-1 loss, namely, Y = {0, 1} and `(h, (x, y)) = 1[h(x)\neq y] . We also assume throughout the analysis that X = [0, 1]d and ρ is the Euclidean distance. We start by introducing some notation. Let D be a distribution over X × Y. Let DX denote the induced marginal distribution over X and let η : Rd → R be the conditional probability1 over the labels, that is,
+$$
+\eta(x) = P[y = 1|x].
+$$
+Recall that the Bayes optimal rule (that is, the hypothesis that minimizes LD (h) over all functions) is
+h? (x) = 1[η(x)>1/2] .
+We assume that the conditional probability function η is c-Lipschitz for some c > 0: Namely, for all x, x0 ∈ X , |η(x) - η(x0 )| \leq  c kx - x0 k. In other words, this assumption means that if two vectors are close to each other then their labels are likely to be the same. The following lemma applies the Lipschitzness of the conditional probability function to upper bound the true error of the 1-NN rule as a function of the expected distance between each test instance and its nearest neighbor in the training set.
+lemma 19.1 Let X = [0, 1]d , Y = {0, 1}, and D be a distribution over X × Y for which the conditional probability function, η, is a c-Lipschitz function. Let S = (x1 , y1 ), . . . , (xm , ym ) be an i.i.d. sample and let hS be its corresponding 1-NN hypothesis. Let h? be the Bayes optimal rule for η. Then,
+$$
+E [LD (h_S )] \le 2 LD (h^\star ) + c             E      [kx - x\pi_1 (x) k]. S\sim D m                                 S\sim D m ,x\sim D
+$$
+$$
+1                                     D(\{(x_0 ,1):x_0 \in B(x,\delta)\}) Formally, P[y = 1|x] = lim\delta\to 0 D(\{(x_0 ,y):x_0 \in B(x,\delta),y\in Y\}) , where B(x, \delta) is a ball of radius \delta centered around x.
+$$
+
+<!-- page: 261 -->
+
+Proof Since LD (hS ) = E(x,y)∼D [1[hS (x)\neq y] ], we obtain that ES [LD (hS )] is the probability to sample a training set S and an additional example (x, y), such that the label of π1 (x) is different from y. In other words, we can first sample m unlabeled examples, Sx = (x1 , . . . , xm ), according to DX , and an additional unlabeled example, x ∼ DX , then find π1 (x) to be the nearest neighbor of x in Sx , and finally sample y ∼ η(x) and yπ1 (x) ∼ η(π1 (x)). It follows that
+$$
+E[LD (h_S )] =                             E m ,x\sim D ,y\sim\eta(x),y 0 \sim\eta(\pi (x)) [1[y\neq y_0 ] ] S                 Sx \sim DX     X                1 [                              ] 0 =            E m ,x\sim D P                 6 y] . [y =        (19.2) Sx \sim DX     X        y\sim\eta(x),y 0 \sim\eta(\pi_1 (x))
+$$
+$$
+We next upper bound Py\sim\eta(x),y_0 \sim\eta(x_0 ) [y \neq y 0 ] for any two domain points x, x_0 :
+$$
+$$
+P          [y \neq y 0 ] = \eta(x_0 )(1 - \eta(x)) + (1 - \eta(x_0 ))\eta(x) y\sim\eta(x),y 0 \sim\eta(x_0 )
+$$
+$$
+= (\eta(x) - \eta(x) + \eta(x_0 ))(1 - \eta(x)) + (1 - \eta(x) + \eta(x) - \eta(x_0 ))\eta(x) = 2\eta(x)(1 - \eta(x)) + (\eta(x) - \eta(x_0 ))(2\eta(x) - 1).
+$$
+Using |2η(x) - 1| \leq  1 and the assumption that η is c-Lipschitz, we obtain that the probability is at most:
+$$
+P        [y \neq y 0 ] \le 2\eta(x)(1 - \eta(x)) + c kx - x_0 k. y\sim\eta(x),y 0 \sim\eta(x_0 )
+$$
+Plugging this into Equation (19.2) we conclude that
+$$
+E[LD (h_S )] \le E[2\eta(x)(1 - \eta(x))] + c E [kx - x\pi_1 (x) k]. S                        x                             S,x
+$$
+Finally, the error of the Bayes optimal classifier is
+$$
+LD (h^\star ) = E[min\{\eta(x), 1 - \eta(x)\}] \ge E[\eta(x)(1 - \eta(x))]. x                                    x
+$$
+Combining the preceding two inequalities concludes our proof.
+The next step is to bound the expected distance between a random x and its closest element in S. We first need the following general probability lemma. The lemma bounds the probability weight of subsets that are not hit by a random sample, as a function of the size of that sample.
+lemma 19.2 Let C1 , . . . , Cr be a collection of subsets of some domain set, X . Let S be a sequence of m points sampled i.i.d. according to some probability distribution, D over X . Then,
+[                ]
+$$
+X                   r E [            P[Ci ]] \le       . S\sim D m                        me
+$$
+$$
+i:Ci \cap S=∅
+$$
+
+<!-- page: 262 -->
+
+Proof       From the linearity of expectation, we can rewrite:
+[                ]
+X                  Xr
+$$
+[          ] E[           P[Ci ]] =      P[Ci ] E 1[Ci \cap S=∅] . S                                       S i:Ci \cap S=∅                i=1
+$$
+$$
+Next, for each i we have E 1[Ci \cap S=∅] = P[Ci \cap S = ∅] = (1 - P[Ci ])m \le e- P[Ci ] m . [         ] S                     S
+$$
+$$
+Combining the preceding two equations we get [               ] X                X r E[          P[Ci ]] \le      P[Ci ] e- P[Ci ] m \le r max P[Ci ] e- P[Ci ] m . S                                                          i i:Ci \cap S=∅                   i=1
+$$
+$$
+Finally, by a standard calculus, maxa ae-ma \le me
+$$
+and this concludes the proof.
+Equipped with the preceding lemmas we are now ready to state and prove the main result of this section – an upper bound on the expected error of the 1-NN learning rule. theorem 19.3 Let X = [0, 1]d , Y = {0, 1}, and D be a distribution over X × Y for which the conditional probability function, η, is a c-Lipschitz function. Let hS denote the result of applying the 1-NN rule to a sample S ∼ Dm . Then,
+$$
+\sqrt   -
+$$
+$$
+1 E m [LD (h_S )] \le 2 LD (h^\star ) + 4 c d m d+1 . S\sim D
+$$
+Proof Fix some ε = 1/T , for some integer T , let r = T d and let C1 , . . . , Cr be the cover of the set X using boxes of length ε: Namely, for every (α1 , . . . , αd ) ∈ [T ]d , there exists a set Ci of the form {x : \forall j, xj ∈ [(αj - 1)/T, αj /T ]}. An illustration for d = 2, T = 5 and the set corresponding to α = (2, 4) is given in the following.
+$$
+\sqrt For each x, x_0 in the same box we have kx-x_0 k \le d \epsilon. Otherwise, kx-x_0 k \le d. Therefore, [ [           ]       [            ]    ] [         \sqrt         [           \sqrt E [kx - x\pi_1 (x) k] \le E [P [       Ci ] d + P [         Ci ] \epsilon d] , x,S                       S i:Ci \cap S=∅             i:Ci \cap S\neq∅
+$$
+S and by combining Lemma 19.2 with the trivial bound P[ i:Ci ∩S\neq ∅ Ci ] \leq  1 we get that \sqrt r ) E [kx - xπ1 (x) k] \leq  d me  +ε . x,S
+
+<!-- page: 263 -->
+
+$$
+Since the number of boxes is r = (1/\epsilon)d we get that \sqrt ( d -d     ) E [kx - x\pi_1 (x) k] \le d 2 m\epsilon e + \epsilon . S,x
+$$
+$$
+Combining the preceding with Lemma 19.1 we obtain that \sqrt ( d -d     ) E[LD (h_S )] \le 2 LD (h^\star ) + c d 2 m\epsilon e + \epsilon . S
+$$
+Finally, setting ε = 2 m-1/(d+1) and noting that
+2d ε-d     2d 2-d md/(d+1)
++ε=                 + 2 m-1/(d+1) me              me = m-1/(d+1) (1/e + 2) \leq  4m-1/(d+1) we conclude our proof. The theorem implies that if we first fix the data-generating distribution and then let m go to infinity, then the error of the 1-NN rule converges to twice the Bayes error. The analysis can be generalized to larger pvalues of k, showing that the expected error of the k-NN rule converges to (1 + 8/k) times the error of the Bayes classifier. This is formalized in Theorem 19.5, whose proof is left as a guided exercise.
+#### 19.2.2   The “Curse of Dimensionality”
+The upper bound given in Theorem 19.3 grows with c (the Lipschitz coefficient of η) and with d, the Euclidean dimension of the domain set X . In fact, it is easy to see that a necessary condition
+\sqrt       for the last term in Theorem 19.3 to be smaller than ε is that m \geq  (4 c d/ε)d+1 . That is, the size of the training set should increase exponentially with the dimension. The following theorem tells us that this is not just an artifact of our upper bound, but, for some distributions, this amount of examples is indeed necessary for learning with the NN rule. theorem 19.4 For any c > 1, and every learning rule, L, there exists a distribution over [0, 1]d × {0, 1}, such that η(x) is c-Lipschitz, the Bayes error of the distribution is 0, but for sample sizes m \leq  (c + 1)d /2, the true error of the rule L is greater than 1/4. Proof Fix any values of c and d. Let Gdc be the grid on [0, 1]d with distance of 1/c between points on the grid. That is, each point on the grid is of the form (a1 /c, . . . , ad /c) where ai is in {0, . . . , c - 1, c}. Note that, since any two distinct points on this grid are at least 1/c apart, any function η : GD               C → [0, 1] is a c-Lipschitz function. It follows that the set of all c-Lipschitz functions over Gdc contains the set of all binary valued functions over that domain. We can therefore invoke the No-Free-Lunch result (Theorem 5.1) to obtain a lower bound on the needed sample sizes for learning that class. The number of points on the grid is (c + 1)d ; hence, if m < (c + 1)d /2, Theorem 5.1 implies the lower bound we are after.
+
+<!-- page: 264 -->
+
+The exponential dependence on the dimension is known as the curse of dimensionality. As we saw, the 1-NN rule might fail if the number of examples is smaller than \Omega((c+1)d ). Therefore, while the 1-NN rule does not restrict itself to a predefined set of hypotheses, it still relies on some prior knowledge – its success depends on the assumption that the dimension and the Lipschitz constant of the underlying distribution, η, are not too high.
+### 19.3   Efficient Implementation*
+Nearest Neighbor is a learning-by-memorization type of rule. It requires the entire training data set to be stored, and at test time, we need to scan the entire data set in order to find the neighbors. The time of applying the NN rule is therefore Θ(d m). This leads to expensive computation at test time.
+When d is small, several results from the field of computational geometry have proposed data structures that enable to apply the NN rule in time o(dO(1) log(m)). However, the space required by these data structures is roughly mO(d) , which makes these methods impractical for larger values of d. To overcome this problem, it was suggested to improve the search method by allowing an approximate search. Formally, an r-approximate search procedure is guaranteed to retrieve a point within distance of at most r times the distance to the nearest neighbor. Three popular approximate algorithms for NN are the kd-tree, balltrees, and locality-sensitive hashing (LSH). We refer the reader, for example, to (Shakhnarovich, Darrell & Indyk 2006).
+### 19.4   Summary
+The k-NN rule is a very simple learning algorithm that relies on the assumption that “things that look alike must be alike.” We formalized this intuition using the Lipschitzness of the conditional probability. We have shown that with a sufficiently large training set, the risk of the 1-NN is upper bounded by twice the risk of the Bayes optimal rule. We have also derived a lower bound that shows the “curse of dimensionality” – the required sample size might increase exponentially with the dimension. As a result, NN is usually performed in practice after a dimensionality reduction preprocessing step. We discuss dimensionality reduction techniques later on in Chapter 23.
+### 19.5   Bibliographic Remarks
+Cover & Hart (1967) gave the first analysis of 1-NN, showing that its risk con-verges to twice the Bayes optimal error under mild conditions. Following a lemma due to Stone (1977), Devroye & Györfi (1985) have shown that the k-NN rule
+
+<!-- page: 265 -->
+
+is consistent (with respect to the hypothesis class of all functions from Rd to {0, 1}). A good presentation of the analysis is given in the book of Devroye et al. (1996). Here, we give a finite sample guarantee that explicitly underscores the prior assumption on the distribution. See Section 7.4 for a discussion on consistency results. Finally, Gottlieb, Kontorovich & Krauthgamer (2010) derived another finite sample bound for NN that is more similar to VC bounds.
+### 19.6   Exercises
+In this exercise we will prove the following theorem for the k-NN rule. theorem 19.5 Let X = [0, 1]d , Y = {0, 1}, and D be a distribution over X × Y for which the conditional probability function, η, is a c-Lipschitz function. Let hS denote the result of applying the k-NN rule to a sample S ∼ Dm , where k \geq  10. Let h? be the Bayes optimal hypothesis. Then,
+```text
+r !               ( \sqrt
+```
+$$
+8                           ) E[LD (h_S )] \le 1 +          LD (h^\star ) + 6 c d + k m-1/(d+1) . S                     k
+$$
+1. Prove the following lemma.
+lemma 19.6 Let C1 , . . . , Cr be a collection of subsets of some domain set, X . Let S be a sequence of m points sampled i.i.d. according to some probability distribution, D over X . Then, for every k \geq  2,
+[                 ]
+$$
+X                   2rk E [            P[Ci ]] \le        . S\sim D m                           m
+$$
+i:|Ci ∩S|<k
+$$
+Hints: \bullet  Show that [                    ] X                       r X E[                 P[Ci ]] =           P[Ci ] P [|Ci \cap S| < k] . S                                            S i:|Ci \cap S|<k                 i=1
+$$
+- Fix some i and suppose that k < P[Ci ] m/2. Use Chernoff’s bound to show
+that
+$$
+P [|Ci \cap S| < k] \le P [|Ci \cap S| < P[Ci ]m/2] \le e- P[Ci ] m/8 . S                        S
+$$
+- Use the inequality maxa ae-ma \leq  me
+to show that for such i we have
+$$
+8 P[Ci ] P [|Ci \cap S| < k] \le P[Ci ]e- P[Ci ] m/8 \le         . S                                              me
+$$
+- Conclude the proof by using the fact that for the case k \geq  P[Ci ] m/2 we
+clearly have:
+$$
+2k P[Ci ] P [|Ci \cap S| < k] \le P[Ci ] \le    . S                           m
+$$
+
+<!-- page: 266 -->
+
+2. We use the notation y ∼ p as a shorthand for “y is a Bernoulli random variable
+with expected value p.” Prove the following lemma: lemma 19.7 Let k \geq  10 and let Z1 , . . . , Zk be independent Bernoulli random
+$$
+Pk variables with P[Zi = 1] = pi . Denote p = k_1 i pi and p_0 = k_1 i=1 Zi . Show P
+$$
+$$
+that r ! 8 E       P [y \neq 1[p_0 >1/2] ] \le 1 +     P [y \neq 1[p>1/2] ]. Z_1 ,...,Zk y\sim p                          k y\sim p Hints: W.l.o.g. assume that p \le 1/2. Then, Py\sim p [y \neq 1[p>1/2] ] = p. Let y 0 = 1[p_0 >1/2] . \bullet  Show that E         P [y \neq y 0 ] - p =       P        [p_0 > 1/2](1 - 2p). Z_1 ,...,Zk y\sim p                     Z_1 ,...,Zk
+$$
+- Use Chernoff’s bound (Lemma B.3) to show that
+$$
+P[p_0 > 1/2] \le e-k p h( 2p -1) , 1
+$$
+where
+h(a) = (1 + a) log(1 + a) - a.
+- To conclude the proof of the lemma, you can rely on the following inequality
+$$
+(without proving it): For every p \in [0, 1/2] and k \ge 10:
+$$
+$$
+r -k p + k (log(2p)+1)     8 (1 - 2p) e        2             \le     p. k
+$$
+3. Fix some p, p0 ∈ [0, 1] and y 0 ∈ {0, 1}. Show that
+$$
+P [y \neq y 0 ] \le P 0 [y \neq y 0 ] + |p - p_0 |. y\sim p                 y\sim p
+$$
+4. Conclude the proof of the theorem according to the following steps:
+- As in the proof of Theorem 19.3, six some ε > 0 and let C1 , . . . , Cr be the
+cover of the set X using\sqrtboxes of length ε. For each x,\sqrtx0 in the same box we have kx - x0 k \leq  d ε. Otherwise, kx - x0 k \leq  2 d. Show that
+[               ]
+$$
+X E[LD (h_S )] \le E [         P[Ci ]] S                     S
+$$
+$$
+i:|Ci \cap S|<k h                                             \sqrt i + max             P         h_S (x) \neq y | \forall j \in [k], kx - x\pi_j (x) k \le \epsilon d . (19.3) i      S,(x,y)
+$$
+- Bound the first summand using Lemma 19.6.
+- To bound the second summand, let us fix S|x and x \sqrt     such that all the k
+neighbors of x in S|x are at distance of at most ε d from x. W.l.o.g assume that the k NN are x1 , . . . , xk . Denote pi = η(xi ) and let p = 1
+P k   i pi . Use Exercise 3 to show that
+$$
+E           P [h_S (x) \neq y] \le            E      P [h_S (x) \neq y] + |p - \eta(x)|. y_1 ,...,yj y\sim\eta(x)                        y_1 ,...,yj y\sim p
+$$
+
+<!-- page: 267 -->
+
+$$
+W.l.o.g. assume that p \le 1/2. Now use Lemma 19.7 to show that r ! 8 P       P [h_S (x) \neq y] \le 1 +     P [1[p>1/2] \neq y]. y_1 ,...,yj y\sim p                     k y\sim p
+$$
+- Show that P [1[p>1/2] \neq  y] = p = min{p, 1 - p} \leq  min{η(x), 1 - η(x)} + |p - η(x)|. y∼p
+- Combine all the preceding to obtain that the second summand in Equa-
+tion (19.3) is bounded by
+r !
+$$
+8                   \sqrt 1+        LD (h^\star ) + 3 c \epsilon d. k
+$$
+- Use r = (2/ε)d to obtain that: r ! 8                 \sqrt    2(2/ε)d k E[LD (hS )] \leq  1 +      LD (h? ) + 3 c ε d +           . S                    k                         m
+$$
+Set \epsilon = 2m-1/(d+1) and use \sqrt    2k -1/(d+1) ( \sqrt      ) 6 c m-1/(d+1) d +    m       \le 6c d + k m-1/(d+1) e to conclude the proof.
+$$
+
+<!-- page: 268 -->
+
+## 20 Neural Networks
+An artificial neural network is a model of computation inspired by the structure of neural networks in the brain. In simplified models of the brain, it consists of a large number of basic computing devices (neurons) that are connected to each other in a complex communication network, through which the brain is able to carry out highly complex computations. Artificial neural networks are formal computation constructs that are modeled after this computation paradigm.
+Learning with neural networks was proposed in the mid-20th century. It yields an effective learning paradigm and has recently been shown to achieve cutting-edge performance on several learning tasks. A neural network can be described as a directed graph whose nodes correspond to neurons and edges correspond to links between them. Each neuron receives as input a weighted sum of the outputs of the neurons connected to its incoming edges. We focus on feedforward networks in which the underlying graph does not contain cycles. In the context of learning, we can define a hypothesis class consisting of neural network predictors, where all the hypotheses share the underlying graph structure of the network and differ in the weights over edges. As we will show in Section 20.3, every predictor over n variables that can be implemented in time T (n) can also be expressed as a neural network predictor of size O(T (n)2 ), where the size of the network is the number of nodes in it. It follows that the family of hypothesis classes of neural networks of polynomial size can suffice for all practical learning tasks, in which our goal is to learn predictors which can be implemented efficiently. Furthermore, in Section 20.4 we will show that the sample complexity of learning such hypothesis classes is also bounded in terms of the size of the network. Hence, it seems that this is the ultimate learning paradigm we would want to adapt, in the sense that it both has a polynomial sample complexity and has the minimal approximation error among all hypothesis classes consisting of efficiently implementable predictors. The caveat is that the problem of training such hypothesis classes of neural network predictors is computationally hard. This will be formalized in Section 20.5. A widely used heuristic for training neural networks relies on the SGD framework we studied in Chapter 14. There, we have shown that SGD is a successful learner if the loss function is convex. In neural networks, the loss function is highly nonconvex. Nevertheless, we can still implement the SGD algorithm and
+
+<!-- page: 269 -->
+
+hope it will find a reasonable solution (as happens to be the case in several practical tasks). In Section 20.6 we describe how to implement SGD for neural networks. In particular, the most complicated operation is the calculation of the gradient of the loss function with respect to the parameters of the network. We present the backpropagation algorithm that efficiently calculates the gradient.
+### 20.1   Feedforward Neural Networks
+The idea behind neural networks is that many neurons can be joined together by communication links to carry out complex computations. It is common to describe the structure of a neural network as a graph whose nodes are the neurons and each (directed) edge in the graph links the output of some neuron to the input of another neuron. We will restrict our attention to feedforward network structures in which the underlying graph does not contain cycles.
+A feedforward neural network is described by a directed acyclic graph, G = (V, E), and a weight function over the edges, w : E → R. Nodes of the graph correspond to neurons. Each single neuron is modeled as a simple scalar function, σ : R → R. We will focus on three possible functions for σ: the sign function, σ(a) = sign(a), the threshold function, σ(a) = 1[a>0] , and the sigmoid function, σ(a) = 1/(1 + exp(-a)), which is a smooth approximation to the threshold function. We call σ the “activation” function of the neuron. Each edge in the graph links the output of some neuron to the input of another neuron. The input of a neuron is obtained by taking a weighted sum of the outputs of all the neurons connected to it, where the weighting is according to w. To simplify the description of the calculation performed by the network, we further assume that the network is organized in layers. That is, the set of nodes can be decomposed into a union of (nonempty) disjoint subsets, V = ∪· Tt=0 Vt , such that every edge in E connects some node in Vt-1 to some node in Vt , for some t ∈ [T ]. The bottom layer, V0 , is called the input layer. It contains n + 1 neurons, where n is the dimensionality of the input space. For every i ∈ [n], the output of neuron i in V0 is simply xi . The last neuron in V0 is the “constant” neuron, which always outputs 1. We denote by vt,i the ith neuron of the tth layer and by ot,i (x) the output of vt,i when the network is fed with the input vector x. Therefore, for i ∈ [n] we have o0,i (x) = xi and for i = n + 1 we have o0,i (x) = 1. We now proceed with the calculation in a layer by layer manner. Suppose we have calculated the outputs of the neurons at layer t. Then, we can calculate the outputs of the neurons at layer t + 1 as follows. Fix some vt+1,j ∈ Vt+1 . Let at+1,j (x) denote the input to vt+1,j when the network is fed with the input vector x. Then,
+$$
+X at+1,j (x) =                          w((vt,r , vt+1,j )) ot,r (x), r: (vt,r ,vt+1,j )\in E
+$$
+
+<!-- page: 270 -->
+
+and
+ot+1,j (x) = σ (at+1,j (x)) .
+That is, the input to vt+1,j is a weighted sum of the outputs of the neurons in Vt that are connected to vt+1,j , where weighting is according to w, and the output of vt+1,j is simply the application of the activation function σ on its input.
+Layers V1 , . . . , VT -1 are often called hidden layers. The top layer, VT , is called the output layer. In simple prediction problems the output layer contains a single neuron whose output is the output of the network. We refer to T as the number of layers in the network (excluding V0 ), or the “depth” of the network. The size of the network is |V |. The “width” of the network is maxt |Vt |. An illustration of a layered feedforward neural network of depth 2, size 10, and width 5, is given in the following. Note that there is a neuron in the hidden layer that has no incoming edges. This neuron will output the constant σ(0).
+Input               Hidden               Output layer                layer                layer (V0 )               (V1 )                (V2 )
+v1,1 x1      v0,1 v1,2 x2      v0,2 v1,3                v2,1    Output x3      v0,3 v1,4 constant       v0,4 v1,5
+### 20.2   Learning Neural Networks
+Once we have specified a neural network by (V, E, σ, w), we obtain a function hV,E,σ,w : R|V0 |-1 → R|VT | . Any set of such functions can serve as a hypothesis class for learning. Usually, we define a hypothesis class of neural network predictors by fixing the graph (V, E) as well as the activation function σ and letting the hypothesis class be all functions of the form hV,E,σ,w for some w : E → R. The triplet (V, E, σ) is often called the architecture of the network. We denote the hypothesis class by
+$$
+HV,E,σ = \{hV,E,σ,w : w is a mapping from E to R\}. \tag{20.1}
+$$
+
+<!-- page: 271 -->
+
+That is, the parameters specifying a hypothesis in the hypothesis class are the weights over the edges of the network. We can now study the approximation error, estimation error, and optimization error of such hypothesis classes. In Section 20.3 we study the approximation error of HV,E,σ by studying what type of functions hypotheses in HV,E,σ can implement, in terms of the size of the underlying graph. In Section 20.4 we study the estimation error of HV,E,σ , for the case of binary classification (i.e., VT = 1 and σ is the sign function), by analyzing its VC dimension. Finally, in Section 20.5 we show that it is computationally hard to learn the class HV,E,σ , even if the underlying graph is small, and in Section 20.6 we present the most commonly used heuristic for training HV,E,σ .
+### 20.3   The Expressive Power of Neural Networks
+In this section we study the expressive power of neural networks, namely, what type of functions can be implemented using a neural network. More concretely, we will fix some architecture, V, E, σ, and will study what functions hypotheses in HV,E,σ can implement, as a function of the size of V . We start the discussion with studying which type of Boolean functions (i.e., functions from {\pm 1}n to {\pm 1}) can be implemented by HV,E,sign . Observe that for every computer in which real numbers are stored using b bits, whenever we calculate a function f : Rn → R on such a computer we in fact calculate a function g : {\pm 1}nb → {\pm 1}b . Therefore, studying which Boolean functions can be implemented by HV,E,sign can tell us which functions can be implemented on a computer that stores real numbers using b bits. We begin with a simple claim, showing that without restricting the size of the network, every Boolean function can be implemented using a neural network of depth 2.
+claim 20.1 For every n, there exists a graph (V, E) of depth 2, such that HV,E,sign contains all functions from {\pm 1}n to {\pm 1}.
+Proof We construct a graph with |V0 | = n + 1, |V1 | = 2n + 1, and |V2 | = 1. Let E be all possible edges between adjacent layers. Now, let f : {\pm 1}n → {\pm 1} be some Boolean function. We need to show that we can adjust the weights so that the network will implement f . Let u1 , . . . , uk be all vectors in {\pm 1}n on which f outputs 1. Observe that for every i and every x ∈ {\pm 1}n , if x \neq  ui then hx, ui i \leq  n - 2 and if x = ui then hx, ui i = n. It follows that the function gi (x) = sign(hx, ui i - n + 1) equals 1 if and only if x = ui . It follows that we can adapt the weights between V0 and V1 so that for every i ∈ [k], the neuron v1,i implements the function gi (x). Next, we observe that f (x) is the disjunction of
+
+<!-- page: 272 -->
+
+$$
+the functions gi (x), and therefore can be written as k ! X f (x) = sign          gi (x) + k - 1 , i=1
+$$
+which concludes our proof.
+The preceding claim shows that neural networks can implement any Boolean function. However, this is a very weak property, as the size of the resulting network might be exponentially large. In the construction given at the proof of Claim 20.1, the number of nodes in the hidden layer is exponentially large. This is not an artifact of our proof, as stated in the following theorem.
+theorem 20.2 For every n, let s(n) be the minimal integer such that there exists a graph (V, E) with |V | = s(n) such that the hypothesis class HV,E,sign contains all the functions from {0, 1}n to {0, 1}. Then, s(n) is exponential in n. Similar results hold for HV,E,σ where σ is the sigmoid function.
+Proof Suppose that for some (V, E) we have that HV,E,sign contains all functions from {0, 1}n to {0, 1}. It follows that it can shatter the set of m = 2n vectors in {0, 1}n and hence the VC dimension of HV,E,sign is 2n . On the other hand, the VC dimension of HV,E,sign is bounded by O(|E| log(|E|)) \leq  O(|V |3 ), as we will show in the next section. This implies that |V | \geq  \Omega(2n/3 ), which concludes our proof for the case of networks with the sign activation function. The proof for the sigmoid case is analogous.
+Remark 20.1 It is possible to derive a similar theorem for HV,E,σ for any σ, as long as we restrict the weights so that it is possible to express every weight using a number of bits which is bounded by a universal constant. We can even consider hypothesis classes where different neurons can employ different activation functions, as long as the number of allowed activation functions is also finite. Which functions can we express using a network of polynomial size? The preceding claim tells us that it is impossible to express all Boolean functions using a network of polynomial size. On the positive side, in the following we show that all Boolean functions that can be calculated in time O(T (n)) can also be expressed by a network of size O(T (n)2 ).
+theorem 20.3 Let T : N → N and for every n, let Fn be the set of functions that can be implemented using a Turing machine using runtime of at most T (n). Then, there exist constants b, c ∈ R+ such that for every n, there is a graph (Vn , En ) of size at most c T (n)2 + b such that HVn ,En ,sign contains Fn .
+The proof of this theorem relies on the relation between the time complexity of programs and their circuit complexity (see, for example, Sipser (2006)). In a nutshell, a Boolean circuit is a type of network in which the individual neurons
+
+<!-- page: 273 -->
+
+implement conjunctions, disjunctions, and negation of their inputs. Circuit complexity measures the size of Boolean circuits required to calculate functions. The relation between time complexity and circuit complexity can be seen intuitively as follows. We can model each step of the execution of a computer program as a simple operation on its memory state. Therefore, the neurons at each layer of the network will reflect the memory state of the computer at the corresponding time, and the translation to the next layer of the network involves a simple calculation that can be carried out by the network. To relate Boolean circuits to networks with the sign activation function, we need to show that we can implement the operations of conjunction, disjunction, and negation, using the sign activation function. Clearly, we can implement the negation operator using the sign activation function. The following lemma shows that the sign activation function can also implement conjunctions and disjunctions of its inputs.
+lemma 20.4 Suppose that a neuron v, that implements the sign activation function, has k incoming edges, connecting it to neurons whose outputs are in {\pm 1}. Then, by adding one more edge, linking a “constant” neuron to v, and by adjusting the weights on the edges to v, the output of v can implement the conjunction or the disjunction of its inputs.
+Proof    Simply observe that if f : {\pm 1}k → {\pm 1} is the( conjunction func- )
+Pk tion, f (x) = ∧i xi , then it can be written as f (x) = sign 1 - k + i=1 xi . Similarly, (      the disjunction )    function, f (x) = ∨i xi , can be written as f (x) = Pk sign k - 1 + i=1 xi .
+So far we have discussed Boolean functions. In Exercise 1 we show that neural networks are universal approximators. That is, for every fixed precision parameter, ε > 0, and every Lipschitz function f : [-1, 1]n → [-1, 1], it is possible to construct a network such that for every input x ∈ [-1, 1]n , the network outputs a number between f (x) - ε and f (x) + ε. However, as in the case of Boolean functions, the size of the network here again cannot be polynomial in n. This is formalized in the following theorem, whose proof is a direct corollary of Theorem 20.2 and is left as an exercise.
+theorem 20.5 Fix some ε ∈ (0, 1). For every n, let s(n) be the minimal integer such that there exists a graph (V, E) with |V | = s(n) such that the hypothesis class HV,E,σ , with σ being the sigmoid function, can approximate, to within precision of ε, every 1-Lipschitz function f : [-1, 1]n → [-1, 1]. Then s(n) is exponential in n.
+#### 20.3.1   Geometric Intuition
+We next provide several geometric illustrations of functions f : R2 → {\pm 1} and show how to express them using a neural network with the sign activation function.
+
+<!-- page: 274 -->
+
+Let us start with a depth 2 network, namely, a network with a single hidden layer. Each neuron in the hidden layer implements a halfspace predictor. Then, the single neuron at the output layer applies a halfspace on top of the binary outputs of the neurons in the hidden layer. As we have shown before, a halfspace can implement the conjunction function. Therefore, such networks contain all hypotheses which are an intersection of k - 1 halfspaces, where k is the number of neurons in the hidden layer; namely, they can express all convex polytopes with k - 1 faces. An example of an intersection of 5 halfspaces is given in the following.
+We have shown that a neuron in layer V2 can implement a function that indicates whether x is in some convex polytope. By adding one more layer, and letting the neuron in the output layer implement the disjunction of its inputs, we get a network that computes the union of polytopes. An illustration of such a function is given in the following.
+### 20.4   The Sample Complexity of Neural Networks
+Next we discuss the sample complexity of learning the class HV,E,σ . Recall that the fundamental theorem of learning tells us that the sample complexity of learning a hypothesis class of binary classifiers depends on its VC dimension. Therefore, we focus on calculating the VC dimension of hypothesis classes of the form HV,E,σ , where the output layer of the graph contains a single neuron. We start with the sign activation function, namely, with HV,E,sign . What is the VC dimension of this class? Intuitively, since we learn |E| parameters, the VC dimension should be order of |E|. This is indeed the case, as formalized by the following theorem.
+theorem 20.6      The VC dimension of HV,E,sign is O(|E| log(|E|)).
+
+<!-- page: 275 -->
+
+Proof To simplify the notation throughout the proof, let us denote the hypothesis class by H. Recall the definition of the growth function, τH (m), from Section 6.5.1. This function measures maxC⊂X :|C|=m |HC |, where HC is the restriction of H to functions from C to {0, 1}. We can naturally extend the definition for a set of functions from X to some finite set Y, by letting HC be the restriction of H to functions from C to Y, and keeping the definition of τH (m) intact.
+Our neural network is defined by a layered graph. Let V0 , . . . , VT be the layers of the graph. Fix some t ∈ [T ]. By assigning different weights on the edges between Vt-1 and Vt , we obtain different functions from R|Vt-1 | → {\pm 1}|Vt | . Let H(t) be the class of all possible such mappings from R|Vt-1 | → {\pm 1}|Vt | . Then, H can be written as a composition, H = H(T ) \circ . . . \circ H(1) . In Exercise 4 we show that the growth function of a composition of hypothesis classes is bounded by the products of the growth functions of the individual classes. Therefore,
+$$
+T Y \tau H (m) \le          \tau H(t) (m). t=1
+$$
+In addition, each H(t) can be written as a product of function classes, H(t) = H(t,1) × · · · × H(t,|Vt |) , where each H(t,j) is all functions from layer t - 1 to {\pm 1} that the jth neuron of layer t can implement. In Exercise 3 we bound product classes, and this yields
+$$
+|Vt | Y \tau H(t) (m) \le           \tau H(t,i) (m). i=1
+$$
+Let dt,i be the number of edges that are headed to the ith neuron of layer t. Since the neuron is a homogenous halfspace hypothesis and the VC dimension of homogenous halfspaces is the dimension of their input, we have by Sauer’s lemma that
+$$
+( )dt,i \tau H(t,i) (m) \le dem
+$$
+t,i
+$$
+\le (em)dt,i .
+$$
+Overall, we obtained that
+P τH (m) \leq  (em)        t,i dt,i   = (em)|E| . Now, assume that there are m shattered points. Then, we must have τH (m) = 2m , from which we obtain 2m \leq  (em)|E|       ⇒      m \leq  |E| log(em)/ log(2). The claim follows by Lemma A.2. Next, we consider HV,E,σ , where σ is the sigmoid function. Surprisingly, it turns out that the VC dimension of HV,E,σ is lower bounded by \Omega(|E|2 ) (see Exercise 5.) That is, the VC dimension is the number of tunable parameters squared. It is also possible to upper bound the VC dimension by O(|V |2 |E|2 ), but the proof is beyond the scope of this book. In any case, since in practice
+
+<!-- page: 276 -->
+
+we only consider networks in which the weights have a short representation as floating point numbers with O(1) bits, by using the discretization trick we easily obtain that such networks have a VC dimension of O(|E|), even if we use the sigmoid activation function.
+### 20.5   The Runtime of Learning Neural Networks
+In the previous sections we have shown that the class of neural networks with an underlying graph of polynomial size can express all functions that can be implemented efficiently, and that the sample complexity has a favorable dependence on the size of the network. In this section we turn to the analysis of the time complexity of training neural networks.
+We first show that it is NP hard to implement the ERM rule with respect to HV,E,sign even for networks with a single hidden layer that contain just 4 neurons in the hidden layer. theorem 20.7 Let k \geq  3. For every n, let (V, E) be a layered graph with n input nodes, k + 1 nodes at the (single) hidden layer, where one of them is the constant neuron, and a single output node. Then, it is NP hard to implement the ERM rule with respect to HV,E,sign . The proof relies on a reduction from the k-coloring problem and is left as Exercise 6. One way around the preceding hardness result could be that for the purpose of learning, it may suffice to find a predictor h ∈ H with low empirical error, not necessarily an exact ERM. However, it turns out that even the task of finding weights that result in close-to-minimal empirical error is computationally infeasible (see (Bartlett & Ben-David 2002)). One may also wonder whether it may be possible to change the architecture of the network so as to circumvent the hardness result. That is, maybe ERM with respect to the original network structure is computationally hard but ERM with respect to some other, larger, network may be implemented efficiently (see Chapter 8 for examples of such cases). Another possibility is to use other activation functions (such as sigmoids, or any other type of efficiently computable activation functions). There is a strong indication that all of such approaches are doomed to fail. Indeed, under some cryptographic assumption, the problem of learning intersections of halfspaces is known to be hard even in the representation independent model of learning (see Klivans & Sherstov (2006)). This implies that, under the same cryptographic assumption, any hypothesis class which contains intersections of halfspaces cannot be learned efficiently. A widely used heuristic for training neural networks relies on the SGD framework we studied in Chapter 14. There, we have shown that SGD is a successful learner if the loss function is convex. In neural networks, the loss function is highly nonconvex. Nevertheless, we can still implement the SGD algorithm and
+
+<!-- page: 277 -->
+
+hope it will find a reasonable solution (as happens to be the case in several practical tasks).
+### 20.6   SGD and Backpropagation
+The problem of finding a hypothesis in HV,E,σ with a low risk amounts to the problem of tuning the weights over the edges. In this section we show how to apply a heuristic search for good weights using the SGD algorithm. Throughout this section we assume that σ is the sigmoid function, σ(a) = 1/(1 + e-a ), but the derivation holds for any differentiable scalar function. Since E is a finite set, we can think of the weight function as a vector w ∈ R|E| . Suppose the network has n input neurons and k output neurons, and denote by hw : Rn → Rk the function calculated by the network if the weight function is defined by w. Let us denote by \Delta(hw (x), y) the loss of predicting hw (x) when the target is y ∈ Y. For concreteness, we will take \Delta to be the squared loss, \Delta(hw (x), y) = 21 khw (x) - yk2 ; however, similar derivation can be obtained for every differentiable function. Finally, given a distribution D over the examples domain, Rn × Rk , let LD (w) be the risk of the network, namely,
+$$
+LD (w) =      E      [\Delta(hw (x), y)] . (x,y)\sim D
+$$
+Recall the SGD algorithm for minimizing the risk function LD (w). We repeat the pseudocode from Chapter 14 with a few modifications, which are relevant to the neural network application because of the nonconvexity of the objective function. First, while in Chapter 14 we initialized w to be the zero vector, here we initialize w to be a randomly chosen vector with values close to zero. This is because an initialization with the zero vector will lead all hidden neurons to have the same weights (if the network is a full layered network). In addition, the hope is that if we repeat the SGD procedure several times, where each time we initialize the process with a new random vector, one of the runs will lead to a good local minimum. Second, while a fixed step size, η, is guaranteed to be good enough for convex problems, here we utilize a variable step size, ηt , as defined in Section 14.4.2. Because of the nonconvexity of the loss function, the choice of the sequence ηt is more significant, and it is tuned in practice by a trial and error manner. Third, we output the best performing vector on a validation set. In addition, it is sometimes helpful to add regularization on the weights, with parameter λ. That is, we try to minimize LD (w) + λ2 kwk2 . Finally, the gradient does not have a closed form solution. Instead, it is implemented using the backpropagation algorithm, which will be described in the sequel.
+
+<!-- page: 278 -->
+
+```
+SGD for Neural Networks
+parameters:
+number of iterations τ
+step size sequence η1 , η2 , . . . , ητ
+regularization parameter λ > 0
+input:
+layered graph (V, E)
+differentiable activation function σ : R → R
+initialize:
+choose w(1) ∈ R|E| at random
+(from a distribution s.t. w(1) is close enough to 0)
+for i = 1, 2, . . . , τ
+sample (x, y) ∼ D
+calculate gradient vi = backpropagation(x, y, w, (V, E), σ)
+update w(i+1) = w(i) - ηi (vi + λw(i) )
+output:
+w̄ is the best performing w(i) on a validation set
+```
+```
+Backpropagation
+input:
+example (x, y), weight vector w, layered graph (V, E),
+activation function σ : R → R
+initialize:
+denote layers of the graph V0 , . . . , VT where Vt = {vt,1 , . . . , vt,kt }
+define Wt,i,j as the weight of (vt,j , vt+1,i )
+(where we set Wt,i,j = 0 if (vt,j , vt+1,i ) ∈ / E)
+forward:
+set o0 = x
+for t = 1, . . . , T
+for i = 1, . . . , kt
+Pkt-1
+set at,i = j=1       Wt-1,i,j ot-1,j
+set ot,i = σ(at,i )
+backward:
+set δ T = oT - y
+for t = T - 1, T - 2, . . . , 1
+for i = 1, . . . , kt
+Pkt+1
+δt,i = j=1       Wt,j,i δt+1,j σ 0 (at+1,j )
+output:
+foreach edge (vt-1,j , vt,i ) ∈ E
+set the partial derivative to δt,i σ 0 (at,i ) ot-1,j
+```
+
+<!-- page: 279 -->
+
+Explaining How Backpropagation Calculates the Gradient: We next explain how the backpropagation algorithm calculates the gradient of the loss function on an example (x, y) with respect to the vector w. Let us first recall a few definitions from vector calculus. Each element of the gradient is the partial derivative with respect to the variable in w corresponding to one of the edges of the network. Recall the definition of a partial derivative. Given a function f : Rn → R, the partial derivative with respect to the ith variable at w is obtained by fixing the values of w1 , . . . , wi-1 , wi+1 , wn , which yields the scalar function g : R → R defined by g(a) = f ((w1 , . . . , wi-1 , wi + a, wi+1 , . . . , wn )), and then taking the derivative of g at 0. For a function with multiple outputs, f : Rn → Rm , the Jacobian of f at w ∈ Rn , denoted Jw (f ), is the m × n matrix whose i, j element is the partial derivative of fi : Rn → R w.r.t. its jth variable at w. Note that if m = 1 then the Jacobian matrix is the gradient of the function (represented as a row vector). Two examples of Jacobian calculations, which we will later use, are as follows.
+- Let f (w) = Aw for A ∈ Rm,n . Then Jw (f ) = A.
+- For every n, we use the notation σ to denote the function from Rn to Rn
+which applies the sigmoid function element-wise. That is, α = σ(θ) means
+$$
+1 that for every i we have \alpha_i = σ(\theta_i ) = 1+exp(-\theta          i)
+$$
+. It is easy to verify that Jθ (σ) is a diagonal matrix whose (i, i) entry is σ 0 (θi ), where σ 0 is the derivative function of the (scalar) sigmoid function, namely, σ 0 (θi ) =
+1                                                0 (1+exp(θi ))(1+exp(-θi )) . We also use the notation diag(σ (θ)) to denote this matrix.
+The chain rule for taking the derivative of a composition of functions can be written in terms of the Jacobian as follows. Given two functions f : Rn → Rm and g : Rk → Rn , we have that the Jacobian of the composition function, (f \circ g) : Rk → Rm , at w, is
+Jw (f \circ g) = Jg(w) (f )Jw (g).
+$$
+For example, for g(w) = Aw, where A \in Rn,k , we have that
+$$
+Jw (σ \circ g) = diag(σ 0 (Aw)) A.
+To describe the backpropagation algorithm, let us first decompose V into the layers of the graph, V = ∪· Tt=0 Vt . For every t, let us write Vt = {vt,1 , . . . , vt,kt }, where kt = |Vt |. In addition, for every t denote Wt ∈ Rkt+1 ,kt a matrix which gives a weight to every potential edge between Vt and Vt+1 . If the edge exists in E then we set Wt,i,j to be the weight, according to w, of the edge (vt,j , vt+1,i ). Otherwise, we add a “phantom” edge and set its weight to be zero, Wt,i,j = 0. Since when calculating the partial derivative with respect to the weight of some edge we fix all other weights, these additional “phantom” edges have no effect on the partial derivative with respect to existing edges. It follows that we can assume, without loss of generality, that all edges exist, that is, E = ∪t (Vt ×Vt+1 ).
+
+<!-- page: 280 -->
+
+Next, we discuss how to calculate the partial derivatives with respect to the edges from Vt-1 to Vt , namely, with respect to the elements in Wt-1 . Since we fix all other weights of the network, it follows that the outputs of all the neurons in Vt-1 are fixed numbers which do not depend on the weights in Wt-1 . Denote the corresponding vector by ot-1 . In addition, let us denote by `t : Rkt → R the loss function of the subnetwork defined by layers Vt , . . . , VT as a function of the outputs of the neurons in Vt . The input to the neurons of Vt can be written as at = Wt-1 ot-1 and the output of the neurons of Vt is ot = σ(at ). That is, for every j we have ot,j = σ(at,j ). We obtain that the loss, as a function of Wt-1 , can be written as
+$$
+gt (Wt-1 ) = `t (ot ) = `t (σ(at )) = `t (σ(Wt-1 ot-1 )).
+$$
+It would be convenient to rewrite this as follows. Let wt-1 ∈ Rkt-1 kt be the column vector obtained by concatenating the rows of Wt-1 and then taking the transpose of the resulting long vector. Define by Ot-1 the kt × (kt-1 kt ) matrix
+( >
+···
+) ot-1     0          0  0      o> t-1 · · ·   0                            Ot-1 =  .                            .                (20.2)                            .        ..    ..    ..  ( .         .       .   . ) 
+## 0       0     ···    o>
+t-1
+Then, Wt-1 ot-1 = Ot-1 wt-1 , so we can also write
+gt (wt-1 ) = `t (σ(Ot-1 wt-1 )).
+Therefore, applying the chain rule, we obtain that
+Jwt-1 (gt ) = Jσ(Ot-1 wt-1 ) (`t ) diag(σ 0 (Ot-1 wt-1 )) Ot-1 .
+$$
+Using our notation we have ot = σ(Ot-1 wt-1 ) and at = Ot-1 wt-1 , which yields
+$$
+Jwt-1 (gt ) = Jot (`t ) diag(σ 0 (at )) Ot-1 .
+Let us also denote δ t = Jot (`t ). Then, we can further rewrite the preceding as
+$$
+Jwt-1 (gt ) = \delta_t,1 σ 0 (at,1 ) o>                    0          > ) t-1 , . . . , \delta_t,kt σ (at,kt ) ot-1 . \tag{20.3}
+$$
+It is left to calculate the vector δ t = Jot (`t ) for every t. This is the gradient of `t at ot . We calculate this in a recursive manner. First observe that for the last layer we have that `T (u) = \Delta(u, y), where \Delta is the loss function. Since we assume that \Delta(u, y) = 12 ku-yk2 we obtain that Ju (`T ) = (u-y). In particular, δ T = JoT (`T ) = (oT - y). Next, note that
+`t (u) = `t+1 (σ(Wt u)).
+Therefore, by the chain rule,
+Ju (`t ) = Jσ(Wt u) (`t+1 )diag(σ 0 (Wt u))Wt .
+
+<!-- page: 281 -->
+
+In particular,
+$$
+\delta t = Jot (`t ) = Jσ(Wt ot ) (`t+1 )diag(σ 0 (Wt ot ))Wt
+$$
+= Jot+1 (`t+1 )diag(σ 0 (at+1 ))Wt = δ t+1 diag(σ 0 (at+1 ))Wt . In summary, we can first calculate the vectors {at , ot } from the bottom of the network to its top. Then, we calculate the vectors {δ t } from the top of the network back to its bottom. Once we have all of these vectors, the partial derivatives are easily obtained using Equation (20.3). We have thus shown that the pseudocode of backpropagation indeed calculates the gradient.
+### 20.7   Summary
+Neural networks over graphs of size s(n) can be used to describephypothesis classes of all predictors that can be implemented in runtime of O( s(n)). We have also shown that their sample complexity depends polynomially on s(n) (specifically, it depends on the number of edges in the network). Therefore, classes of neural network hypotheses seem to be an excellent choice. Regrettably, the problem of training the network on the basis of training data is computationally hard. We have presented the SGD framework as a heuristic approach for training neural networks and described the backpropagation algorithm which efficiently calculates the gradient of the loss function with respect to the weights over the edges.
+### 20.8   Bibliographic Remarks
+Neural networks were extensively studied in the 1980s and early 1990s, but with mixed empirical success. In recent years, a combination of algorithmic advancements, as well as increasing computational power and data size, has led to a breakthrough in the effectiveness of neural networks. In particular, “deep networks” (i.e., networks of more than 2 layers) have shown very impressive practical performance on a variety of domains. A few examples include convolutional networks (Lecun & Bengio 1995), restricted Boltzmann machines (Hinton, Osindero & Teh 2006), auto-encoders (Ranzato, Huang, Boureau & Lecun 2007, Bengio & LeCun 2007, Collobert & Weston 2008, Lee, Grosse, Ranganath & Ng 2009, Le, Ranzato, Monga, Devin, Corrado, Chen, Dean & Ng 2012), and sum-product networks (Livni, Shalev-Shwartz & Shamir 2013, Poon & Domingos 2011). See also (Bengio 2009) and the references therein.
+The expressive power of neural networks and the relation to circuit complexity have been extensively studied in (Parberry 1994). For the analysis of the sample complexity of neural networks we refer the reader to (Anthony & Bartlet 1999). Our proof technique of Theorem 20.6 is due to Kakade and Tewari lecture notes.
+
+<!-- page: 282 -->
+
+Klivans & Sherstov (2006) have shown that for any c > 0, intersections of nc halfspaces over {\pm 1}n are not efficiently PAC learnable, even if we allow representation independent learning. This hardness result relies on the cryptographic assumption that there is no polynomial time solution to the unique-shortest-vector problem. As we have argued, this implies that there cannot be an efficient algorithm for training neural networks, even if we allow larger networks or other activation functions that can be implemented efficiently. The backpropagation algorithm has been introduced in Rumelhart, Hinton & Williams (1986).
+### 20.9   Exercises
+1. Neural Networks are universal approximators: Let f : [-1, 1]n →
+[-1, 1] be a ρ-Lipschitz function. Fix some ε > 0. Construct a neural network N : [-1, 1]n → [-1, 1], with the sigmoid activation function, such that for every x ∈ [-1, 1]n it holds that |f (x) - N (x)| \leq  ε. Hint: Similarly to the proof of Theorem 19.3, partition [-1, 1]n into small boxes. Use the Lipschitzness of f to show that it is approximately constant at each box. Finally, show that a neural network can first decide which box the input vector belongs to, and then predict the averaged value of f at that box.
+2. Prove Theorem 20.5.
+Hint: For every f : {-1, 1}n → {-1, 1} construct a 1-Lipschitz function g : [-1, 1]n → [-1, 1] such that if you can approximate g then you can express f.
+3. Growth function of product: For i = 1, 2, let Fi be a set of functions from
+X to Yi . Define H = F1 × F2 to be the Cartesian product class. That is, for every f1 ∈ F1 and f2 ∈ F2 , there exists h ∈ H such that h(x) = (f1 (x), f2 (x)). Prove that τH (m) \leq  τF1 (m) τF2 (m).
+4. Growth function of composition: Let F1 be a set of functions from X
+to Z and let F2 be a set of functions from Z to Y. Let H = F2 \circ F1 be the composition class. That is, for every f1 ∈ F1 and f2 ∈ F2 , there exists h ∈ H such that h(x) = f2 (f1 (x)). Prove that τH (m) \leq  τF2 (m)τF1 (m).
+5. VC of sigmoidal networks: In this exercise we show that there is a graph
+(V, E) such that the VC dimension of the class of neural networks over these graphs with the sigmoid activation function is \Omega(|E|2 ). Note that for every ε > 0, the sigmoid activation function can approximate the threshold activation function, 1[Pi xi ] , up to accuracy ε. To simplify the presentation, throughout the exercise we assume that we can exactly implement the activation function 1[Pi xi >0] using a sigmoid activation function.
+Fix some n.
+1. Construct a network, N1 , with O(n) weights, which implements a function
+from R to {0, 1}n and satisfies the following property. For every x ∈ {0, 1}n ,
+
+<!-- page: 283 -->
+
+if we feed the network with the real number 0.x1 x2 . . . xn , then the output of the network will be x. Hint: Denote α = 0.x1 x2 . . . xn and observe that 10k α - 0.5 is at least 0.5 if xk = 1 and is at most -0.3 if xk = -1.
+2. Construct a network, N2 , with O(n) weights, which implements a function
+from [n] to {0, 1}n such that N2 (i) = ei for all i. That is, upon receiving the input i, the network outputs the vector of all zeros except 1 at the i’th neuron.
+(i) (i)     (i)
+3. Let α1 , . . . , αn be n real numbers such that every αi is of the form 0.a1 a2 . . . an ,
+$$
+(i) with aj \in \{0, 1\}. Construct a network, N_3 , with O(n) weights, which implements a function from [n] to R, and satisfies N_2 (i) = \alpha_i for every i \in [n].
+$$
+4. Combine N1 , N3 to obtain a network that receives i ∈ [n] and output a(i) .
+(i)
+5. Construct a network N4 that receives (i, j) ∈ [n] × [n] and outputs aj .
+2 Hint: Observe that the AND function over {0, 1} can be calculated using O(1) weights.
+6. Conclude that there is a graph with O(n) weights such that the VC di-
+mension of the resulting hypothesis class is n2 .
+6. Prove Theorem 20.7.
+Hint: The proof is similar to the hardness of learning intersections of halfs-paces – see Exercise 32 in Chapter 8.
+
+<!-- page: 284 -->
+
+<!-- page: 285 -->
+
+# Part III
+Additional Learning Models
+
+<!-- page: 286 -->
+
+<!-- page: 287 -->
+
+## 21 Online Learning
+In this chapter we describe a different model of learning, which is called online learning. Previously, we studied the PAC learning model, in which the learner first receives a batch of training examples, uses the training set to learn a hypothesis, and only when learning is completed uses the learned hypothesis for predicting the label of new examples. In our papayas learning problem, this means that we should first buy a bunch of papayas and taste them all. Then, we use all of this information to learn a prediction rule that determines the taste of new papayas. In contrast, in online learning there is no separation between a training phase and a prediction phase. Instead, each time we buy a papaya, it is first considered a test example since we should predict whether it is going to taste good. Then, after taking a bite from the papaya, we know the true label, and the same papaya can be used as a training example that can help us improve our prediction mechanism for future papayas.
+Concretely, online learning takes place in a sequence of consecutive rounds. On each online round, the learner first receives an instance (the learner buys a papaya and knows its shape and color, which form the instance). Then, the learner is required to predict a label (is the papaya tasty?). At the end of the round, the learner obtains the correct label (he tastes the papaya and then knows whether it is tasty or not). Finally, the learner uses this information to improve his future predictions.
+To analyze online learning, we follow a similar route to our study of PAC learning. We start with online binary classification problems. We consider both the realizable case, in which we assume, as prior knowledge, that all the labels are generated by some hypothesis from a given hypothesis class, and the unrealizable case, which corresponds to the agnostic PAC learning model. In particular, we present an important algorithm called Weighted-Majority. Next, we study online learning problems in which the loss function is convex. Finally, we present the Perceptron algorithm as an example of the use of surrogate convex loss functions in the online learning model.
+
+<!-- page: 288 -->
+
+### 21.1   Online Classification in the Realizable Case
+Online learning is performed in a sequence of consecutive rounds, where at round t the learner is given an instance, xt , taken from an instance domain X , and is required to provide its label. We denote the predicted label by pt . After predicting the label, the correct label, yt ∈ {0, 1}, is revealed to the learner. The learner’s goal is to make as few prediction mistakes as possible during this process. The learner tries to deduce information from previous rounds so as to improve its predictions on future rounds.
+Clearly, learning is hopeless if there is no correlation between past and present rounds. Previously in the book, we studied the PAC model in which we assume that past and present examples are sampled i.i.d. from the same distribution source. In the online learning model we make no statistical assumptions regarding the origin of the sequence of examples. The sequence is allowed to be deterministic, stochastic, or even adversarially adaptive to the learner’s own behavior (as in the case of spam e-mail filtering). Naturally, an adversary can make the number of prediction mistakes of our online learning algorithm arbitrarily large. For example, the adversary can present the same instance on each online round, wait for the learner’s prediction, and provide the opposite label as the correct label. To make nontrivial statements we must further restrict the problem. The real-izability assumption is one possible natural restriction. In the realizable case, we assume that all the labels are generated by some hypothesis, h? : X → Y. Furthermore, h? is taken from a hypothesis class H, which is known to the learner. This is analogous to the PAC learning model we studied in Chapter 3. With this restriction on the sequence, the learner should make as few mistakes as possible, assuming that both h? and the sequence of instances can be chosen by an adversary. For an online learning algorithm, A, we denote by MA (H) the maximal number of mistakes A might make on a sequence of examples which is labeled by some h? ∈ H. We emphasize again that both h? and the sequence of instances can be chosen by an adversary. A bound on MA (H) is called a mistake-bound and we will study how to design algorithms for which MA (H) is minimal. Formally:
+definition 21.1 (Mistake Bounds, Online Learnability) Let H be a hypothesis class and let A be an online learning algorithm. Given any sequence S = (x1 , h? (y1 )), . . . , (xT , h? (yT )), where T is any integer and h? ∈ H, let MA (S) be the number of mistakes A makes on the sequence S. We denote by MA (H) the supremum of MA (S) over all sequences of the above form. A bound of the form MA (H) \leq  B < ∞ is called a mistake bound. We say that a hypothesis class H is online learnable if there exists an algorithm A for which MA (H) \leq  B < ∞.
+Our goal is to study which hypothesis classes are learnable in the online model, and in particular to find good learning algorithms for a given hypothesis class. Remark 21.1      Throughout this section and the next, we ignore the computa-
+
+<!-- page: 289 -->
+
+tional aspect of learning, and do not restrict the algorithms to be efficient. In
+Section 21.3 and Section 21.4 we study efficient online learning algorithms.
+To simplify the presentation, we start with the case of a finite hypothesis class,
+namely, |H| < ∞.
+In PAC learning, we identified ERM as a good learning algorithm, in the sense
+that if H is learnable then it is learnable by the rule ERMH . A natural learning
+rule for online learning is to use (at any online round) any ERM hypothesis,
+namely, any hypothesis which is consistent with all past examples.
+```
+Consistent
+input: A finite hypothesis class H
+initialize: V1 = H
+for t = 1, 2, . . .
+receive xt
+choose any h ∈ Vt
+predict pt = h(xt )
+receive true label yt = h? (xt )
+update Vt+1 = {h ∈ Vt : h(xt ) = yt }
+```
+The Consistent algorithm maintains a set, Vt , of all the hypotheses which
+are consistent with (x1 , y1 ), . . . , (xt-1 , yt-1 ). This set is often called the version
+space. It then picks any hypothesis from Vt and predicts according to this hy-
+pothesis.
+Obviously, whenever Consistent makes a prediction mistake, at least one
+hypothesis is removed from Vt . Therefore, after making M mistakes we have
+|Vt | \leq  |H| - M . Since Vt is always nonempty (by the realizability assumption it
+contains h? ) we have 1 \leq  |Vt | \leq  |H| - M . Rearranging, we obtain the following:
+corollary 21.2 Let H be a finite hypothesis class. The Consistent algorithm
+enjoys the mistake bound MConsistent (H) \leq  |H| - 1.
+It is rather easy to construct a hypothesis class and a sequence of examples on
+which Consistent will indeed make |H| - 1 mistakes (see Exercise 1). Therefore,
+we present a better algorithm in which we choose h ∈ Vt in a smarter way. We
+shall see that this algorithm is guaranteed to make exponentially fewer mistakes.
+Halving
+input: A finite hypothesis class H
+initialize: V1 = H
+for t = 1, 2, . . .
+receive xt
+predict pt = argmaxr∈{0,1} |{h ∈ Vt : h(xt ) = r}|
+(in case of a tie predict pt = 1)
+receive true label yt = h? (xt )
+update Vt+1 = {h ∈ Vt : h(xt ) = yt }
+
+<!-- page: 290 -->
+
+theorem 21.3 Let H be a finite hypothesis class. The Halving algorithm enjoys the mistake bound MHalving (H) \leq  log2 (|H|).
+Proof We simply note that whenever the algorithm errs we have |Vt+1 | \leq  |Vt |/2, (hence the name Halving). Therefore, if M is the total number of mistakes, we have
+1 \leq  |VT +1 | \leq  |H| 2-M . Rearranging this inequality we conclude our proof. Of course, Halving’s mistake bound is much better than Consistent’s mistake bound. We already see that online learning is different from PAC learning—while in PAC, any ERM hypothesis is good, in online learning choosing an arbitrary ERM hypothesis is far from being optimal.
+#### 21.1.1   Online Learnability
+We next take a more general approach, and aim at characterizing online learnability. In particular, we target the following question: What is the optimal online learning algorithm for a given hypothesis class H?
+We present a dimension of hypothesis classes that characterizes the best achievable mistake bound. This measure was proposed by Nick Littlestone and we therefore refer to it as Ldim(H). To motivate the definition of Ldim it is convenient to view the online learning process as a game between two players: the learner versus the environment. On round t of the game, the environment picks an instance xt , the learner predicts a label pt ∈ {0, 1}, and finally the environment outputs the true label, yt ∈ {0, 1}. Suppose that the environment wants to make the learner err on the first T rounds of the game. Then, it must output yt = 1 - pt , and the only question is how it should choose the instances xt in such a way that ensures that for some h? ∈ H we have yt = h? (xt ) for all t ∈ [T ]. A strategy for an adversarial environment can be formally described as a binary tree, as follows. Each node of the tree is associated with an instance from X . Initially, the environment presents to the learner the instance associated with the root of the tree. Then, if the learner predicts pt = 1 the environment will declare that this is a wrong prediction (i.e., yt = 0) and will traverse to the right child of the current node. If the learner predicts pt = 0 then the environment will set yt = 1 and will traverse to the left child. This process will continue and at each round, the environment will present the instance associated with the current node. Formally, consider a complete binary tree of depth T (we define the depth of the tree as the number of edges in a path from the root to a leaf). We have 2T +1 - 1 nodes in such a tree, and we attach an instance to each node. Let v1 , . . . , v2T +1 -1 be these instances. We start from the root of the tree, and set x1 = v1 . At round t, we set xt = vit where it is the current node. At the end of
+
+<!-- page: 291 -->
+
+v1
+h1    h2    h3    h4
+v2             v3                       v1     0     0     1     1
+v2     0     1     ∗     ∗ v3     ∗     ∗     0     1
+![Hinh: fig-291-1]
+Figure 21.1 An illustration of a shattered tree of depth 2. The dashed path corresponds to the sequence of examples ((v1 , 1), (v3 , 0)). The tree is shattered by H = {h1 , h2 , h3 , h4 }, where the predictions of each hypothesis in H on the instances v1 , v2 , v3 is given in the table (the ’*’ mark means that hj (vi ) can be either 1 or 0).
+round t, we go to the left child of it if yt = 0 or to the right child if yt = 1. That
+Pt-1 is, it+1 = 2it +yt . Unraveling the recursion we obtain it = 2t-1 + j=1 yj 2t-1-j . The preceding strategy for the environment succeeds only if for every (y1 , . . . , yT ) there exists h ∈ H such that yt = h(xt ) for all t ∈ [T ]. This leads to the following definition.
+definition 21.4 (H Shattered Tree) A shattered tree of depth d is a sequence of instances v1 , . . . , v2d -1 in X such that for every labeling (y1 , . . . , yd ) ∈ {0, 1}d there exists h ∈ H such that for all t ∈ [d] we have h(vit ) = yt where it =
+Pt-1 2t-1 + j=1 yj 2t-1-j .
+An illustration of a shattered tree of depth 2 is given in Figure 21.1.
+definition 21.5 (Littlestone’s Dimension (Ldim)) Ldim(H) is the maximal integer T such that there exists a shattered tree of depth T , which is shattered by H.
+The definition of Ldim and the discussion above immediately imply the following:
+lemma 21.6 No algorithm can have a mistake bound strictly smaller than Ldim(H); namely, for every algorithm, A, we have MA (H) \geq  Ldim(H).
+Proof Let T = Ldim(H) and let v1 , . . . , v2T -1 be a sequence that satisfies the requirements in the definition of Ldim. If the environment sets xt = vit and yt = 1 - pt for all t ∈ [T ], then the learner makes T mistakes while the definition of Ldim implies that there exists a hypothesis h ∈ H such that yt = h(xt ) for all t.
+Let us now give several examples. Example 21.2 Let H be a finite hypothesis class. Clearly, any tree that is shattered by H has depth of at most log2 (|H|). Therefore, Ldim(H) \leq  log2 (|H|). Another way to conclude this inequality is by combining Lemma 21.6 with Theorem 21.3. Example 21.3        Let X = {1, . . . , d} and H = {h1 , . . . , hd } where hj (x) = 1 iff
+
+<!-- page: 292 -->
+
+x = j. Then, it is easy to show that Ldim(H) = 1 while |H| = d can be arbitrarily large. Therefore, this example shows that Ldim(H) can be significantly smaller than log2 (|H|). Example 21.4 Let X = [0, 1] and H = {x 7→ 1[x<a] : a ∈ [0, 1]}; namely, H is the class of thresholds on the interval [0, 1]. Then, Ldim(H) = ∞. To see this, consider the tree
+1/2
+1/4                     3/4
+1/8          3/8         5/8         7/8
+This tree is shattered by H. And, because of the density of the reals, this tree can be made arbitrarily deep.
+Lemma 21.6 states that Ldim(H) lower bounds the mistake bound of any algorithm. Interestingly, there is a standard algorithm whose mistake bound matches this lower bound. The algorithm is similar to the Halving algorithm. Recall that the prediction of Halving is made according to a majority vote of the hypotheses which are consistent with previous examples. We denoted this set by Vt . Put another way, Halving partitions Vt into two sets: Vt+ = {h ∈ Vt : h(xt ) = 1} and Vt- = {h ∈ Vt : h(xt ) = 0}. It then predicts according to the larger of the two groups. The rationale behind this prediction is that whenever Halving makes a mistake it ends up with |Vt+1 | \leq  0.5 |Vt |. The optimal algorithm we present in the following uses the same idea, but instead of predicting according to the larger class, it predicts according to the class with larger Ldim.
+```
+Standard Optimal Algorithm (SOA)
+input: A hypothesis class H
+initialize: V1 = H
+for t = 1, 2, . . .
+receive xt
+(r)
+for r ∈ {0, 1} let Vt = {h ∈ Vt : h(xt ) = r}
+(r)
+predict pt = argmaxr∈{0,1} Ldim(Vt )
+(in case of a tie predict pt = 1)
+receive true label yt
+update Vt+1 = {h ∈ Vt : h(xt ) = yt }
+```
+The following lemma formally establishes the optimality of the preceding algorithm.
+
+<!-- page: 293 -->
+
+lemma 21.7      SOA enjoys the mistake bound MSOA (H) \leq  Ldim(H).
+Proof It suffices to prove that whenever the algorithm makes a prediction mistake we have Ldim(Vt+1 ) \leq  Ldim(Vt ) - 1. We prove this claim by assuming the contrary, that is, Ldim(Vt+1 ) = Ldim(Vt ). If this holds true, then the definition
+(r) of pt implies that Ldim(Vt ) = Ldim(Vt ) for both r = 1 and r = 0. But, then we can construct a shaterred tree of depth Ldim(Vt ) + 1 for the class Vt , which leads to the desired contradiction.
+Combining Lemma 21.7 and Lemma 21.6 we obtain:
+corollary 21.8 Let H be any hypothesis class. Then, the standard optimal algorithm enjoys the mistake bound MSOA (H) = Ldim(H) and no other algorithm can have MA (H) < Ldim(H).
+Comparison to VC Dimension In the PAC learning model, learnability is characterized by the VC dimension of the class H. Recall that the VC dimension of a class H is the maximal number d such that there are instances x1 , . . . , xd that are shattered by H. That is, for any sequence of labels (y1 , . . . , yd ) ∈ {0, 1}d there exists a hypothesis h ∈ H that gives exactly this sequence of labels. The following theorem relates the VC dimension to the Littlestone dimension.
+theorem 21.9 For any class H, VCdim(H) \leq  Ldim(H), and there are classes for which strict inequality holds. Furthermore, the gap can be arbitrarily larger.
+Proof We first prove that VCdim(H) \leq  Ldim(H). Suppose VCdim(H) = d and let x1 , . . . , xd be a shattered set. We now construct a complete binary tree of instances v1 , . . . , v2d -1 , where all nodes at depth i are set to be xi – see the following illustration:
+x1
+x2                      x2
+x3           x3         x3            x3
+Now, the definition of a shattered set clearly implies that we got a valid shattered tree of depth d, and we conclude that VCdim(H) \leq  Ldim(H). To show that the gap can be arbitrarily large simply note that the class given in Example 21.4 has VC dimension of 1 whereas its Littlestone dimension is infinite.
+
+<!-- page: 294 -->
+
+### 21.2   Online Classification in the Unrealizable Case
+In the previous section we studied online learnability in the realizable case. We now consider the unrealizable case. Similarly to the agnostic PAC model, we no longer assume that all labels are generated by some h? ∈ H, but we require the learner to be competitive with the best fixed predictor from H. This is captured by the regret of the algorithm, which measures how “sorry” the learner is, in retrospect, not to have followed the predictions of some hypothesis h ∈ H. Formally, the regret of an algorithm A relative to h when running on a sequence of T examples is defined as
+" T               T
+$$
+  X                X RegretA (h, T ) =      sup            |pt - yt | -   |h(xt ) - yt | , (21.1) (x_1 ,y_1 ),...,(xT ,yT )   t=1      t=1
+$$
+and the regret of the algorithm relative to a hypothesis class H is
+$$
+RegretA (H, T ) = sup RegretA (h, T ).                    (21.2) h\in H
+$$
+We restate the learner’s goal as having the lowest possible regret relative to H. An interesting question is whether we can derive an algorithm with low regret, meaning that RegretA (H, T ) grows sublinearly with the number of rounds, T , which implies that the difference between the error rate of the learner and the best hypothesis in H tends to zero as T goes to infinity.
+We first show that this is an impossible mission—no algorithm can obtain a sublinear regret bound even if |H| = 2. Indeed, consider H = {h0 , h1 }, where h0 is the function that always returns 0 and h1 is the function that always returns
+1. An adversary can make the number of mistakes of any online algorithm be equal to T , by simply waiting for the learner’s prediction and then providing the opposite label as the true label. In contrast, for any sequence of true labels, y1 , . . . , yT , let b be the majority of labels in y1 , . . . , yT , then the number of mistakes of hb is at most T /2. Therefore, the regret of any online algorithm might be at least T - T /2 = T /2, which is not sublinear in T . This impossibility result is attributed to Cover (Cover 1965).
+To sidestep Cover’s impossibility result, we must further restrict the power of the adversarial environment. We do so by allowing the learner to randomize his predictions. Of course, this by itself does not circumvent Cover’s impossibility result, since in deriving this result we assumed nothing about the learner’s strategy. To make the randomization meaningful, we force the adversarial environment to decide on yt without knowing the random coins flipped by the learner on round t. The adversary can still know the learner’s forecasting strategy and even the random coin flips of previous rounds, but it does not know the actual value of the random coin flips used by the learner on round t. With this (mild) change of game, we analyze the expected number of mistakes of the algorithm, where the expectation is with respect to the learner’s own randomization. That is, if the learner outputs y{}t where P[y{}t = 1] = pt , then the expected loss he pays
+
+<!-- page: 295 -->
+
+on round t is
+$$
+P[y{}t \neq yt ] = |pt - yt |.
+$$
+Put another way, instead of having the predictions of the learner being in {0, 1} we allow them to be in [0, 1], and interpret pt ∈ [0, 1] as the probability to predict the label 1 on round t. With this assumption it is possible to derive a low regret algorithm. In particular, we will prove the following theorem.
+theorem 21.10 For every hypothesis class H, there exists an algorithm for online classification, whose predictions come from [0, 1], that enjoys the regret bound
+$$
+T X                  T X                      p \forall h \in H,         |pt -yt |-         |h(xt )-yt | \le       2 min\{log(|H|) , Ldim(H) log(eT )\} T . t=1                t=1
+$$
+Furthermore, (p         no )algorithm can achieve an expected regret bound smaller than \Omega    Ldim(H) T .
+We will provide a constructive proof of the upper bound part of the preceding theorem. The proof of the lower bound part can be found in (Ben-David, Pal, & Shalev-Shwartz 2009). The proof of Theorem 21.10 relies on the Weighted-Majority algorithm for learning with expert advice. This algorithm is important by itself and we dedicate the next subsection to it.
+#### 21.2.1   Weighted-Majority
+Weighted-majority is an algorithm for the problem of prediction with expert advice. In this online learning problem, on round t the learner has to choose the advice of d given experts. We also allow the learner to randomize his choice by defining a distribution over the d experts, that is, picking a vector w(t) ∈ [0, 1]d ,
+P (t)                                                          (t) with i wi = 1, and choosing the ith expert with probability wi . After the learner chooses an expert, it receives a vector of costs, vt ∈ [0, 1]d , where vt,i is the cost of following the advice of the ith expert. If the learner’s predictions are randomized, then its loss is defined to be the averaged cost, namely, P (t)             (t) i wi vt,i = hw , vt i. The algorithm assumes that the number of rounds T is given. In Exercise 4 we show how to get rid of this dependence using the doubling trick.
+
+<!-- page: 296 -->
+
+```
+Weighted-Majority
+input: number ofp   experts, d ; number of rounds, T
+parameter: η = 2 log(d)/T
+initialize: w̃(1) = (1, . . . , 1)
+for t = 1, 2, . . .
+P (t)
+set w(t) = w̃(t) /Zt where Zt = i w̃i
+(t)
+choose expert i at random according to P[i] = wi
+receive costs of all experts vt ∈ [0, 1]d
+pay cost hw(t) , vt i
+(t+1)        (t)
+update rule \forall i, w̃i            = w̃i e-ηvt,i
+```
+The following theorem is key for analyzing the regret bound of Weighted-Majority.
+theorem 21.11 Assuming that T > 2 log(d), the Weighted-Majority algorithm enjoys the bound
+T X                    T
+$$
+\sum_{p} hw(t) , vt i - min   vt,i \le  2 log(d) T . i\in[d] t=1                      t=1
+$$
+Proof   We have:
+$$
+(t) Zt+1       X w̃                  X (t) log        = log     i e-\eta vt,i = log   wi e-\eta vt,i . Zt        i Z  t               i
+$$
+$$
+Using the inequality e-a \le 1 - a + a_2 /2, which holds for all a \in (0, 1), and the P (t) fact that i wi = 1, we obtain
+$$
+$$
+Zt+1       X (t) wi 1 - \eta vt,i + \eta 2 vt,i 2 ) log        \le log                            /2 Zt         i X (t) wi \eta vt,i - \eta 2 vt,i 2 )) = log 1 -                         /2 . i |            \{z         \} =b
+$$
+Next, note that b ∈ (0, 1). Therefore, taking log of the two sides of the inequality
+$$
+1 - b \le e-b we obtain the inequality log(1 - b) \le -b, which holds for all b \le 1, and obtain
+$$
+Zt+1    X (t)
+wi ηvt,i - η 2 vt,i
+$$
+) log        \le-                         /2 Zt       i X (t) = -\eta hw(t) , vt i + \eta 2        2 wi vt,i /2 i
+$$
+$$
+\le -\eta hw(t) , vt i + \eta 2 /2.
+$$
+
+<!-- page: 297 -->
+
+$$
+Summing this inequality over t we get T                      T X           Zt+1      X                  T \eta_2 log(ZT +1 ) - log(Z_1 ) =                log        \le -\eta     hw(t) , vt i +      .              (21.3) t=1 Zt       t=1 2
+$$
+(T +1)
+P Next, we lower bound ZT +1 . For each i, we can rewrite w̃i = e-η t vt,i and we get that ! X      P               (        P      )       X -η t vt,i log ZT +1 = log    e             \geq  log max e-η t vt,i = -η min    vt,i . i                               i i                                                                        t
+Combining the preceding with Equation (21.3) and using the fact that log(Z1 ) = log(d) we get that
+$$
+T X                                        X                  T \eta_2 -\eta min             vt,i - log(d) \le - \eta                 hw(t) , vt i +      , i t                                    t=1
+$$
+$$
+which can be rearranged as follows: T X                      X        log(d) \eta T hw(t) , vt i - min   vt,i \le       +    . t=1 i t \eta     2
+$$
+Plugging the value of η into the equation concludes our proof.
+Proof of Theorem 21.10 Equipped with the Weighted-Majority algorithm and Theorem 21.11, we are ready to prove Theorem 21.10. We start with the simpler case, in which H is a finite class, and let us write H = {h1 , . . . , hd }. In this case, we can refer to each hypothesis, hi , as an expert, whose advice is to predict hi (xt ), and whose cost is vt,i = |hi (xt ) - yt |. The prediction of the algorithm will therefore be
+$$
+P (t) pt = i wi hi (xt ) \in [0, 1], and the loss is
+$$
+d                                d
+$$
+(t)                               (t) X                                X |pt - yt | =              wi hi (xt ) - yt =                wi (hi (xt ) - yt ) . i=1                               i=1
+$$
+Now, if y = 1, then for all i, hi (xt ) - yt \leq  0. Therefore, the above equals to P (t) t i wi |hi (xt ) - yt |. If yt = 0 then for all i, hi (xt ) - yt \geq  0, and the above also P (t) equals i wi |hi (xt ) - yt |. All in all, we have shown that
+d
+(t) X |pt - yt | =               wi |hi (xt ) - yt | = hw(t) , vt i. i=1 P Furthermore, for each i, t vt,i is exactly the number of mistakes hypothesis hi makes. Applying Theorem 21.11 we obtain
+
+<!-- page: 298 -->
+
+corollary 21.12 Let H be a finite hypothesis class. There exists an algorithm for online classification, whose predictions come from [0, 1], that enjoys the regret bound
+XT                    T
+$$
+\sum_{p} |pt - yt | - min   |h(xt ) - yt | \le   2 log(|H|) T . h\in H t=1                   t=1
+$$
+Next, we consider the case of a general hypothesis class. Previously, we constructed an expert for each individual hypothesis. However, if H is infinite this leads to a vacuous bound. The main idea is to construct a set of experts in a more sophisticated way. The challenge is how to define a set of experts that, on one hand, is not excessively large and, on the other hand, contains experts that give accurate predictions. We construct the set of experts so that for each hypothesis h ∈ H and every sequence of instances, x1 , x2 , . . . , xT , there exists at least one expert in the set which behaves exactly as h on these instances. For each L \leq  Ldim(H) and each sequence 1 \leq  i1 < i2 < · · · < iL \leq  T we define an expert. The expert simulates the game between SOA (presented in the previous section) and the environment on the sequence of instances x1 , x2 , . . . , xT assuming that SOA makes a mistake precisely in rounds i1 , i2 , . . . , iL . The expert is defined by the following algorithm.
+$$
+Expert(i_1 , i_2 , . . . , iL ) input A hypothesis class H ; Indices i_1 < i_2 < · · · < iL initialize: V_1 = H for t = 1, 2, . . . , T receive xt
+$$
+$$
+(r) for r \in \{0, 1\} let Vt = \{h( \in Vt): h(xt ) = r\}
+$$
+$$
+(r) define ỹt = argmaxr Ldim Vt (in case of a tie set ỹt = 0) if t \in \{i_1 , i_2 , . . . , iL \} predict y{}t = 1 - ỹt else predict y{}t = ỹt (y{} ) update Vt+1 = Vt t
+$$
+Note that each such expert can give us predictions at every round t while only observing the instances x1 , . . . , xt . Our generic online learning algorithm is now an application of the Weighted-Majority algorithm with these experts. To analyze the algorithm we first note that the number of experts is
+$$
+Ldim(H) (     ) X          T d=                     . \tag{21.4}
+$$
+L L=0
+It can be shown that when T \geq  Ldim(H) + 2, the right-hand side of the equation
+Ldim(H) is bounded by (eT /Ldim(H))         (the proof can be found in Lemma A.5).
+
+<!-- page: 299 -->
+
+Theorem 21.11 tells us that the expected number of mistakes
+p of Weighted-Majority is at most the number of mistakes of the best expert plus 2 log(d) T . We will next show that the number of mistakes of the best expert is at most the number of mistakes of the best hypothesis in H. The following key lemma shows that, on any sequence of instances, for each hypothesis h ∈ H there exists an expert with the same behavior.
+lemma 21.13 Let H be any hypothesis class with Ldim(H) < ∞. Let x1 , x2 , . . . , xT be any sequence of instances. For any h ∈ H, there exists L \leq  Ldim(H) and indices 1 \leq  i1 < i2 < · · · < iL \leq  T such that when running Expert(i1 , i2 , . . . , iL ) on the sequence x1 , x2 , . . . , xT , the expert predicts h(xt ) on each online round t = 1, 2, . . . , T .
+Proof Fix h ∈ H and the sequence x1 , x2 , . . . , xT . We must construct L and the indices i1 , i2 , . . . , iL . Consider running SOA on the input (x1 , h(x1 )), (x2 , h(x2 )), . . ., (xT , h(xT )). SOA makes at most Ldim(H) mistakes on such input. We define L to be the number of mistakes made by SOA and we define {i1 , i2 , . . . , iL } to be the set of rounds in which SOA made the mistakes.
+Now, consider the Expert(i1 , i2 , . . . , iL ) running on the sequence x1 , x2 , . . . , xT . By construction, the set Vt maintained by Expert(i1 , i2 , . . . , iL ) equals the set Vt maintained by SOA when running on the sequence (x1 , h(x1 )), . . . , (xT , h(xT )). The predictions of SOA differ from the predictions of h if and only if the round is in {i1 , i2 , . . . , iL }. Since Expert(i1 , i2 , . . . , iL ) predicts exactly like SOA if t is not in {i1 , i2 , . . . , iL } and the opposite of SOAs’ predictions if t is in {i1 , i2 , . . . , iL }, we conclude that the predictions of the expert are always the same as the predictions of h.
+The previous lemma holds in particular for the hypothesis in H that makes the least number of mistakes on the sequence of examples, and we therefore obtain the following:
+corollary 21.14 Let (x1 , y1 ), (x2 , y2 ), . . . , (xT , yT ) be a sequence of examples and let H be a hypothesis class with Ldim(H) < ∞. There exists L \leq  Ldim(H) and indices 1 \leq  i1 < i2 < · · · < iL \leq  T , such that Expert(i1 , i2 , . . . , iL ) makes at most as many mistakes as the best h ∈ H does, namely,
+$$
+T X min         |h(xt ) - yt | h\in H t=1
+$$
+mistakes on the sequence of examples.
+Together with Theorem 21.11, the upper bound part of Theorem 21.10 is proven.
+
+<!-- page: 300 -->
+
+### 21.3   Online Convex Optimization
+In Chapter 12 we studied convex learning problems and showed learnability results for these problems in the agnostic PAC learning framework. In this section we show that similar learnability results hold for convex problems in the online learning framework. In particular, we consider the following problem.
+Online Convex Optimization definitions: hypothesis class H ; domain Z ; loss function ` : H × Z → R assumptions: H is convex \forall z ∈ Z, `(·, z) is a convex function for t = 1, 2, . . . , T learner predicts a vector w(t) ∈ H environment responds with zt ∈ Z learner suffers loss `(w(t) , zt )
+As in the online classification problem, we analyze the regret of the algorithm. Recall that the regret of an online algorithm with respect to a competing hypothesis, which here will be some vector w? ∈ H, is defined as
+T X                    T
+$$
+\sum ?                  (t) RegretA (w , T ) =         `(w , zt ) -         `(w^\star , zt ).   (21.5) t=1                  t=1
+$$
+As before, the regret of the algorithm relative to a set of competing vectors, H, is defined as
+RegretA (H, T ) = sup RegretA (w? , T ).
+w? ∈H
+In Chapter 14 we have shown that Stochastic Gradient Descent solves convex learning problems in the agnostic PAC model. We now show that a very similar algorithm, Online Gradient Descent, solves online convex learning problems.
+```
+Online Gradient Descent
+parameter: η > 0
+initialize: w(1) = 0
+for t = 1, 2, . . . , T
+predict w(t)
+receive zt and let ft (·) = `(·, zt )
+choose vt ∈ \partial ft (w(t) )
+update:
+1
+1. w(t+ 2 ) = w(t) - ηvt
+1
+2. w(t+1) = argminw∈H kw - w(t+ 2 ) k
+```
+
+<!-- page: 301 -->
+
+theorem 21.15 The Online Gradient Descent algorithm enjoys the following
+regret bound for every w? ∈ H,
+T
+kw? k2   ηX
+RegretA (w? , T ) \leq           +       kvt k2 .
+2η      2 t=1
+\sqrt
+If we further assume that ft is ρ-Lipschitz for all t, then setting η = 1/ T yields
+1                \sqrt
+RegretA (w? , T ) \leq  (kw? k2 + ρ2 ) T .
+2
+B
+If we further assume that H is B-bounded and we set η = ρ\sqrt T
+then
+\sqrt
+RegretA (H, T ) \leq  B ρ T .
+Proof The analysis is similar to the analysis of Stochastic Gradient Descent
+1
+with projections. Using the projection lemma, the definition of w(t+ 2 ) , and the
+definition of subgradients, we have that for every t,
+kw(t+1) - w? k2 - kw(t) - w? k2
+1                      1
+= kw(t+1) - w? k2 - kw(t+ 2 ) - w? k2 + kw(t+ 2 ) - w? k2 - kw(t) - w? k2
+1
+\leq  kw(t+ 2 ) - w? k2 - kw(t) - w? k2
+= kw(t) - ηvt - w? k2 - kw(t) - w? k2
+= -2ηhw(t) - w? , vt i + η 2 kvt k2
+\leq  -2η(ft (w(t) ) - ft (w? )) + η 2 kvt k2 .
+Summing over t and observing that the left-hand side is a telescopic sum we
+obtain that
+T
+X                               T
+X
+kw(T +1) - w? k2 - kw(1) - w? k2 \leq  -2η          (ft (w(t) ) - ft (w? )) + η 2   kvt k2 .
+t=1                                t=1
+(1)
+Rearranging the inequality and using the fact that w                 = 0, we get that
+T                                                                  T
+X                             kw(1) - w? k2 - kw(T +1) - w? k2   ηX
+(ft (w(t) ) - ft (w? )) \leq                                   +       kvt k2
+t=1
+2η                  2 t=1
+T
+kw? k2   ηX
+\leq           +       kvt k2 .
+2η      2 t=1
+This proves the first bound in the theorem. The second bound follows from the assumption that ft is ρ-Lipschitz, which implies that kvt k \leq  ρ.
+### 21.4   The Online Perceptron Algorithm
+The Perceptron is a classic online learning algorithm for binary classification with the hypothesis class of homogenous halfspaces, namely, H = {x 7→ sign(hw, xi) :
+
+<!-- page: 302 -->
+
+w ∈ Rd }. In Section 9.1.2 we have presented the batch version of the Perceptron, which aims to solve the ERM problem with respect to H. We now present an online version of the Perceptron algorithm.
+Let X = Rd , Y = {-1, 1}. On round t, the learner receives a vector xt ∈ Rd . The learner maintains a weight vector w(t) ∈ Rd and predicts pt = sign(hw(t) , xt i). Then, it receives yt ∈ Y and pays 1 if pt \neq  yt and 0 otherwise. The goal of the learner is to make as few prediction mistakes as possible. In Section 21.1 we characterized the optimal algorithm and showed that the best achievable mistake bound depends on the Littlestone dimension of the class. We show later that if d \geq  2 then Ldim(H) = ∞, which implies that we have no hope of making few prediction mistakes. Indeed, consider the tree for which v1 = ( 12 , 1, 0, . . . , 0), v2 = ( 14 , 1, 0, . . . , 0), v3 = ( 43 , 1, 0, . . . , 0), etc. Because of the density of the reals, this tree is shattered by the subset of H which contains all hypotheses that are parametrized by w of the form w = (-1, a, 0, . . . , 0), for a ∈ [0, 1]. We conclude that indeed Ldim(H) = ∞. To sidestep this impossibility result, the Perceptron algorithm relies on the technique of surrogate convex losses (see Section 12.3). This is also closely related to the notion of margin we studied in Chapter 15. A weight vector w makes a mistake on an example (x, y) whenever the sign of hw, xi does not equal y. Therefore, we can write the 0-1 loss function as follows
+$$
+`(w, (x, y)) = 1[yhw,xi\le 0] .
+$$
+On rounds on which the algorithm makes a prediction mistake, we shall use the hinge-loss as a surrogate convex loss function
+ft (w) = max{0, 1 - yt hw, xt i}.
+The hinge-loss satisfies the two conditions:
+- ft is a convex function
+- For all w, ft (w) \geq  `(w, (xt , yt )). In particular, this holds for w(t) .
+On rounds on which the algorithm is correct, we shall define ft (w) = 0. Clearly,
+ft is convex in this case as well. Furthermore, ft (w(t) ) = `(w(t) , (xt , yt )) = 0.
+Remark 21.5 In Section 12.3 we used the same surrogate loss function for all the
+examples. In the online model, we allow the surrogate to depend on the specific
+round. It can even depend on w(t) . Our ability to use a round specific surrogate
+stems from the worst-case type of analysis we employ in online learning.
+Let us now run the Online Gradient Descent algorithm on the sequence of
+functions, f1 , . . . , fT , with the hypothesis class being all vectors in Rd (hence,
+the projection step is vacuous). Recall that the algorithm initializes w(1) = 0
+and its update rule is
+w(t+1) = w(t) - ηvt
+for some vt ∈ \partial ft (w(t) ). In our case, if yt hw(t) , xt i > 0 then ft is the zero
+
+<!-- page: 303 -->
+
+function and we can take vt = 0. Otherwise, it is easy to verify that vt = -yt xt is in \partial ft (w(t) ). We therefore obtain the update rule
+( (t+1)     w(t)           if yt hw(t) , xt i > 0 w       = w(t) + ηyt xt otherwise
+Denote by M the set of rounds in which sign(hw(t) , xt i) \neq  yt . Note that on round t, the prediction of the Perceptron can be rewritten as
+$$
+! X (t) pt = sign(hw , xt i) = sign \eta         yi hxi , xt i . i\in M:i<t
+$$
+This form implies that the predictions of the Perceptron algorithm and the set M do not depend on the actual value of η as long as η > 0. We have therefore obtained the Perceptron algorithm:
+$$
+Perceptron initialize: w_1 = 0 for t = 1, 2, . . . , T receive xt predict pt = sign(hw(t) , xt i) if yt hw(t) , xt i \le 0 w(t+1) = w(t) + yt xt else w(t+1) = w(t)
+$$
+To analyze the Perceptron, we rely on the analysis of Online Gradient Descent given in the previous section. In our case, the subgradient of ft we use in the Perceptron is vt = -1[yt hw(t) ,xt i\leq 0] yt xt . Indeed, the Perceptron’s update is w(t+1) = w(t) - vt , and as discussed before this is equivalent to w(t+1) = w(t) - ηvt for every η > 0. Therefore, Theorem 21.15 tells us that
+T                      T                                  T X                      X                   1           ηX
+$$
+ft (w(t) ) -         ft (w^\star ) \le      kw^\star k_22 +       kvt k_22 . t=1                    t=1
+$$
+2η           2 t=1
+PT Since ft (w(t) ) is a surrogate for the 0-1 loss we know that                    t=1 ft (w
+(t)
+$$
+) \ge |M|. Denote R = maxt kxt k; then we obtain T X                   1          \eta |M| -         ft (w^\star ) \le      kw^\star k_22 + |M| R_2 t=1 2\eta          2 ? kw k Setting \eta =       \sqrt         and rearranging, we obtain R       |M|
+$$
+$$
+p      T X |M| - Rkw^\star k         |M| -   ft (w^\star ) \le 0.                              (21.6) t=1
+$$
+This inequality implies
+
+<!-- page: 304 -->
+
+theorem 21.16 Suppose that the Perceptron algorithm runs on a sequence (x1 , y1 ), . . . , (xT , yT ) and let R = maxt kxt k. Let M be the rounds on which the Perceptron errs and let ft (w) = 1[t∈M] [1 - yt hw, xt i]+ . Then, for every w?
+$$
+s X                            X ?          ? |M| \le           ft (w ) + R kw k           ft (w^\star ) + R_2 kw^\star k_2 . t                          t
+$$
+In particular, if there exists w? such that yt hw? , xt i \geq  1 for all t then
+$$
+|M| \le R_2 kw^\star k_2 .
+$$
+Proof The theorem follows from Equation (21.6) and the following claim: Given
+\sqrt x, b, c ∈ R+ , the inequality x - b x - c \leq  0 implies that x \leq  c + b2 + b c. The last claim can be easily derived by analyzing the roots of the convex parabola Q(y) = y 2 - by - c.
+The last assumption of Theorem 21.16 is called separability with large margin (see Chapter 15). That is, there exists w? that not only satisfies that the point xt lies on the correct side of the halfspace, it also guarantees that xt is not too close to the decision boundary. More specifically, the distance from xt to the decision boundary is at least γ = 1/kw? k and the bound becomes (R/γ)2 . When the separability assumption does not hold, the bound involves the term [1 - yt hw? , xt i]+ which measures how much the separability with margin requirement is violated. As a last remark we note that there can be cases in which there exists some w? that makes zero errors on the sequence but the Perceptron will make many errors. Indeed, this is a direct consequence of the fact that Ldim(H) = ∞. The way we sidestep this impossibility result is by assuming more on the sequence of examples – the bound in Theorem 21.16 will be meaningful only if the cumulative surrogate loss, t ft (w? ) is not excessively large.
+P
+### 21.5   Summary
+In this chapter we have studied the online learning model. Many of the results we derived for the PAC learning model have an analog in the online model. First, we have shown that a combinatorial dimension, the Littlestone dimension, characterizes online learnability. To show this, we introduced the SOA algorithm (for the realizable case) and the Weighted-Majority algorithm (for the unrealizable case). We have also studied online convex optimization and have shown that online gradient descent is a successful online learner whenever the loss function is convex and Lipschitz. Finally, we presented the online Perceptron algorithm as a combination of online gradient descent and the concept of surrogate convex loss functions.
+
+<!-- page: 305 -->
+
+### 21.6   Bibliographic Remarks
+The Standard Optimal Algorithm was derived by the seminal work of Lit-tlestone (1988). A generalization to the nonrealizable case, as well as other variants like margin-based Littlestone’s dimension, were derived in (Ben-David et al. 2009). Characterizations of online learnability beyond classification have been obtained in (Abernethy, Bartlett, Rakhlin & Tewari 2008, Rakhlin, Srid-haran & Tewari 2010, Daniely et al. 2011). The Weighted-Majority algorithm is due to (Littlestone & Warmuth 1994) and (Vovk 1990).
+The term “online convex programming” was introduced by Zinkevich (2003) but this setting was introduced some years earlier by Gordon (1999). The Per-ceptron dates back to Rosenblatt (Rosenblatt 1958). An analysis for the realizable case (with margin assumptions) appears in (Agmon 1954, Minsky & Papert 1969). Freund and Schapire (Freund & Schapire 1999) presented an analysis for the unrealizable case with a squared-hinge-loss based on a reduction to the realizable case. A direct analysis for the unrealizable case with the hinge-loss was given by Gentile (Gentile 2003). For additional information we refer the reader to Cesa-Bianchi & Lugosi (2006) and Shalev-Shwartz (2011).
+### 21.7   Exercises
+1. Find a hypothesis class H and a sequence of examples on which Consistent
+makes |H| - 1 mistakes.
+2. Find a hypothesis class H and a sequence of examples on which the mistake
+bound of the Halving algorithm is tight.
+3. Let d \geq  2, X = {1, . . . , d} and let H = {hj : j ∈ [d]}, where hj (x) = 1[x=j] .
+Calculate MHalving (H) (i.e., derive lower and upper bounds on MHalving (H), and prove that they are equal).
+4. The Doubling Trick:
+In Theorem 21.15, the parameter η depends on the time horizon T . In this exercise we show how to get rid of this dependence by a simple trick.
+\sqrt Consider an algorithm that enjoys a regret bound of the form α T , but its parameters require the knowledge of T . The doubling trick, described in the following, enables us to convert such an algorithm into an algorithm that does not need to know the time horizon. The idea is to divide the time into periods of increasing size and run the original algorithm on each period.
+```
+The Doubling Trick
+input: algorithm A whose parameters depend on the time horizon
+for m = 0, 1, 2, . . .
+run A on the 2m rounds t = 2m , . . . , 2m+1 - 1
+```
+
+<!-- page: 306 -->
+
+\sqrt Show that if the regret of A on each period of 2m rounds is at most α 2m , then the total regret is at most \sqrt
+$$
+2   \sqrt     \alpha T. 2-1
+$$
+5. Online-to-batch Conversions: In this exercise we demonstrate how a suc-
+cessful online learning algorithm can be used to derive a successful PAC learner as well.
+Consider a PAC learning problem for binary classification parameterized by an instance domain, X , and a hypothesis class, H. Suppose that there exists an online learning algorithm, A, which enjoys a mistake bound MA (H) < ∞. Consider running this algorithm on a sequence of T examples which are sampled i.i.d. from a distribution D over the instance space X , and are labeled by some h? ∈ H. Suppose that for every round t, the prediction of the algorithm is based on a hypothesis ht : X → {0, 1}. Show that
+$$
+MA (H) E[LD (hr )] \le       ,
+$$
+T where the expectation is over the random choice of the instances as well as a random choice of r according to the uniform distribution over [T ]. Hint: Use similar arguments to the ones appearing in the proof of Theorem 14.8.
+
+<!-- page: 307 -->
+
+## 22 Clustering
+Clustering is one of the most widely used techniques for exploratory data analysis. Across all disciplines, from social sciences to biology to computer science, people try to get a first intuition about their data by identifying meaningful groups among the data points. For example, computational biologists cluster genes on the basis of similarities in their expression in different experiments; retailers cluster customers, on the basis of their customer profiles, for the purpose of targeted marketing; and astronomers cluster stars on the basis of their spacial proximity.
+The first point that one should clarify is, naturally, what is clustering? Intuitively, clustering is the task of grouping a set of objects such that similar objects end up in the same group and dissimilar objects are separated into different groups. Clearly, this description is quite imprecise and possibly ambiguous. Quite surprisingly, it is not at all clear how to come up with a more rigorous definition. There are several sources for this difficulty. One basic problem is that the two objectives mentioned in the earlier statement may in many cases contradict each other. Mathematically speaking, similarity (or proximity) is not a transitive relation, while cluster sharing is an equivalence relation and, in particular, it is a transitive relation. More concretely, it may be the case that there is a long sequence of objects, x1 , . . . , xm such that each xi is very similar to its two neighbors, xi-1 and xi+1 , but x1 and xm are very dissimilar. If we wish to make sure that whenever two elements are similar they share the same cluster, then we must put all of the elements of the sequence in the same cluster. However, in that case, we end up with dissimilar elements (x1 and xm ) sharing a cluster, thus violating the second requirement. To illustrate this point further, suppose that we would like to cluster the points in the following picture into two clusters.
+A clustering algorithm that emphasizes not separating close-by points (e.g., the Single Linkage algorithm that will be described in Section 22.1) will cluster this input by separating it horizontally according to the two lines:
+
+<!-- page: 308 -->
+
+In contrast, a clustering method that emphasizes not having far-away points share the same cluster (e.g., the 2-means algorithm that will be described in Section 22.1) will cluster the same input by dividing it vertically into the righthand half and the left-hand half:
+Another basic problem is the lack of “ground truth” for clustering, which is a common problem in unsupervised learning. So far in the book, we have mainly dealt with supervised learning (e.g., the problem of learning a classifier from labeled training data). The goal of supervised learning is clear – we wish to learn a classifier which will predict the labels of future examples as accurately as possible. Furthermore, a supervised learner can estimate the success, or the risk, of its hypotheses using the labeled training data by computing the empirical loss. In contrast, clustering is an unsupervised learning problem; namely, there are no labels that we try to predict. Instead, we wish to organize the data in some meaningful way. As a result, there is no clear success evaluation procedure for clustering. In fact, even on the basis of full knowledge of the underlying data distribution, it is not clear what is the “correct” clustering for that data or how to evaluate a proposed clustering. Consider, for example, the following set of points in R2 :
+and suppose we are required to cluster them into two clusters. We have two highly justifiable solutions:
+
+<!-- page: 309 -->
+
+This phenomenon is not just artificial but occurs in real applications. A given set of objects can be clustered in various different meaningful ways. This may be due to having different implicit notions of distance (or similarity) between objects, for example, clustering recordings of speech by the accent of the speaker versus clustering them by content, clustering movie reviews by movie topic versus clustering them by the review sentiment, clustering paintings by topic versus clustering them by style, and so on. To summarize, there may be several very different conceivable clustering solutions for a given data set. As a result, there is a wide variety of clustering algorithms that, on some input data, will output very different clusterings.
+A Clustering Model: Clustering tasks can vary in terms of both the type of input they have and the type of outcome they are expected to compute. For concreteness, we shall focus on the following common setup:
+Input — a set of elements, X , and a distance function over it. That is, a function
+d : X × X → R+ that is symmetric, satisfies d(x, x) = 0 for all x ∈ X and often also satisfies the triangle inequality. Alternatively, the function could be a similarity function s : X × X → [0, 1] that is symmetric and satisfies s(x, x) = 1 for all x ∈ X . Additionally, some clustering algorithms also require an input parameter k (determining the number of required clusters). Output — a partition of the domain set X into subsets. That is, C = (C1 , . . . Ck )
+Sk where i=1 Ci = X and for all i \neq  j, Ci ∩ Cj = ∅. In some situations the clustering is “soft,” namely, the partition of X into the different clusters is probabilistic where the output is a function assigning to each domain point, x ∈ X , a vector (p1 (x), . . . , pk (x)), where pi (x) = P[x ∈ Ci ] is the probability that x belongs to cluster Ci . Another possible output is a clustering dendrogram (from Greek dendron = tree, gramma = drawing), which is a hierarchical tree of domain subsets, having the singleton sets in its leaves, and the full domain as its root. We shall discuss this formulation in more detail in the following.
+
+<!-- page: 310 -->
+
+In the following we survey some of the most popular clustering methods. In the last section of this chapter we return to the high level discussion of what is clustering.
+### 22.1   Linkage-Based Clustering Algorithms
+Linkage-based clustering is probably the simplest and most straightforward paradigm of clustering. These algorithms proceed in a sequence of rounds. They start from the trivial clustering that has each data point as a single-point cluster. Then, repeatedly, these algorithms merge the “closest” clusters of the previous clustering. Consequently, the number of clusters decreases with each such round. If kept going, such algorithms would eventually result in the trivial clustering in which all of the domain points share one large cluster. Two parameters, then, need to be determined to define such an algorithm clearly. First, we have to decide how to measure (or define) the distance between clusters, and, second, we have to determine when to stop merging. Recall that the input to a clustering algorithm is a between-points distance function, d. There are many ways of extending d to a measure of distance between domain subsets (or clusters). The most common ways are
+1. Single Linkage clustering, in which the between-clusters distance is defined
+by the minimum distance between members of the two clusters, namely,
+$$
+D(A, B) = min\{d(x, y) : x \in A, y \in B\}
+$$
+2. Average Linkage clustering, in which the distance between two clusters is
+defined to be the average distance between a point in one of the clusters and a point in the other, namely,
+def   1     X D(A, B) =                   d(x, y)
+|A||B|
+x∈A, y∈B
+3. Max Linkage clustering, in which the distance between two clusters is defined
+as the maximum distance between their elements, namely,
+$$
+D(A, B) = max\{d(x, y) : x \in A, y \in B\}.
+$$
+The linkage-based clustering algorithms are agglomerative in the sense that they start from data that is completely fragmented and keep building larger and larger clusters as they proceed. Without employing a stopping rule, the outcome of such an algorithm can be described by a clustering dendrogram: that is, a tree of domain subsets, having the singleton sets in its leaves, and the full domain as its root. For example, if the input is the elements X = {a, b, c, d, e} ⊂ R2 with the Euclidean distance as depicted on the left, then the resulting dendrogram is the one depicted on the right:
+
+<!-- page: 311 -->
+
+{a, b, c, d, e}
+a                                                   {b, c, d, e}
+e d                          {b, c}            {d, e}
+c b                        {a}    {b}      {c}     {d}     {e}
+The single linkage algorithm is closely related to Kruskal’s algorithm for finding a minimal spanning tree on a weighted graph. Indeed, consider the full graph whose vertices are elements of X and the weight of an edge (x, y) is the distance d(x, y). Each merge of two clusters performed by the single linkage algorithm corresponds to a choice of an edge in the aforementioned graph. It is also possible to show that the set of edges the single linkage algorithm chooses along its run forms a minimal spanning tree. If one wishes to turn a dendrogram into a partition of the space (a clustering), one needs to employ a stopping criterion. Common stopping criteria include
+- Fixed number of clusters – fix some parameter, k, and stop merging clusters
+as soon as the number of clusters is k.
+- Distance upper bound – fix some r ∈ R+ . Stop merging as soon as all the
+between-clusters distances are larger than r. We can also set r to be α max{d(x, y) : x, y ∈ X } for some α < 1. In that case the stopping criterion is called “scaled distance upper bound.”
+### 22.2   k-Means and Other Cost Minimization Clusterings
+Another popular approach to clustering starts by defining a cost function over a parameterized set of possible clusterings and the goal of the clustering algorithm is to find a partitioning (clustering) of minimal cost. Under this paradigm, the clustering task is turned into an optimization problem. The objective function is a function from pairs of an input, (X , d), and a proposed clustering solution C = (C1 , . . . , Ck ), to positive real numbers. Given such an objective function, which we denote by G, the goal of a clustering algorithm is defined as finding, for a given input (X , d), a clustering C so that G((X , d), C) is minimized. In order to reach that goal, one has to apply some appropriate search algorithm.
+As it turns out, most of the resulting optimization problems are NP-hard, and some are even NP-hard to approximate. Consequently, when people talk about, say, k-means clustering, they often refer to some particular common approximation algorithm rather than the cost function or the corresponding exact solution of the minimization problem. Many common objective functions require the number of clusters, k, as a
+
+<!-- page: 312 -->
+
+parameter. In practice, it is often up to the user of the clustering algorithm to choose the parameter k that is most suitable for the given clustering problem. In the following we describe some of the most common objective functions.
+- The k-means objective function is one of the most popular clustering
+objectives. In k-means the data is partitioned into disjoint sets C1 , . . . , Ck where each Ci is represented by a centroid \mui . It is assumed that the input set X is embedded in some larger metric space (X 0 , d) (so that X ⊆ X 0 ) and centroids are members of X 0 . The k-means objective function measures the squared distance between each point in X to the centroid of its cluster. The centroid of Ci is defined to be
+$$
+X \mu_i (Ci ) = argmin     d(x, \mu)2 . \mu\in X 0
+$$
+x∈Ci
+$$
+Then, the k-means objective is k X X Gk-means ((X , d), (C_1 , . . . , Ck )) =                 d(x, \mu_i (Ci ))2 . i=1 x\in Ci
+$$
+$$
+This can also be rewritten as k X X Gk-means ((X , d), (C_1 , . . . , Ck )) =       min                     d(x, \mu_i )2 .       (22.1) \mu_1 ,...\mu_k \in X 0 i=1 x\in Ci
+$$
+The k-means objective function is relevant, for example, in digital communication tasks, where the members of X may be viewed as a collection of signals that have to be transmitted. While X may be a very large set of real valued vectors, digital transmission allows transmitting of only a finite number of bits for each signal. One way to achieve good transmission under such constraints is to represent each member of X by a “close” member of some finite set \mu1 , . . . \muk , and replace the transmission of any x ∈ X by transmitting the index of the closest \mui . The k-means objective can be viewed as a measure of the distortion created by such a transmission representation scheme.
+- The k-medoids objective function is similar to the k-means objective,
+except that it requires the cluster centroids to be members of the input set. The objective function is defined by
+$$
+k X X GK-medoid ((X , d), (C_1 , . . . , Ck )) =       min                    d(x, \mu_i )2 . \mu_1 ,...\mu_k \in X i=1 x\in Ci
+$$
+- The k-median objective function is quite similar to the k-medoids objec-
+tive, except that the “distortion” between a data point and the centroid of its cluster is measured by distance, rather than by the square of the distance:
+$$
+k X X GK-median ((X , d), (C_1 , . . . , Ck )) =        min                   d(x, \mu_i ). \mu_1 ,...\mu_k \in X i=1 x\in Ci
+$$
+
+<!-- page: 313 -->
+
+An example where such an objective makes sense is the facility location problem. Consider the task of locating k fire stations in a city. One can model houses as data points and aim to place the stations so as to minimize the average distance between a house and its closest fire station.
+The previous examples can all be viewed as center-based objectives. The solution to such a clustering problem is determined by a set of cluster centers, and the clustering assigns each instance to the center closest to it. More generally, center-based objective is determined by choosing some monotonic function f : R+ → R+ and then defining
+$$
+k X X Gf ((X , d), (C_1 , . . . Ck )) =       min                     f (d(x, \mu_i )), \mu_1 ,...\mu_k \in X 0 i=1 x\in Ci
+$$
+where X 0 is either X or some superset of X .
+Some objective functions are not center based. For example, the sum of in-cluster distances (SOD)
+$$
+k X X GSOD ((X , d), (C_1 , . . . Ck )) =                   d(x, y) i=1 x,y\in Ci
+$$
+and the MinCut objective that we shall discuss in Section 22.3 are not center-based objectives.
+#### 22.2.1   The k-Means Algorithm
+The k-means objective function is quite popular in practical applications of clustering. However, it turns out that finding the optimal k-means solution is often computationally infeasible (the problem is NP-hard, and even NP-hard to approximate to within some constant). As an alternative, the following simple iterative algorithm is often used, so often that, in many cases, the term k-means Clustering refers to the outcome of this algorithm rather than to the clustering that minimizes the k-means objective cost. We describe the algorithm with respect to the Euclidean distance function d(x, y) = kx - yk.
+```
+k-Means
+input: X ⊂ Rn ; Number of clusters k
+initialize: Randomly choose initial centroids \mu1 , . . . , \muk
+repeat until convergence
+\forall i ∈ [k] set Ci = {x ∈ X : i = argminj kx - \muj k}
+(break ties in some arbitrary manner)
+\forall i ∈ [k] update \mui = |C1i | x∈Ci x
+```
+P
+lemma 22.1 Each iteration of the k-means algorithm does not increase the k-means objective function (as given in Equation (22.1)).
+
+<!-- page: 314 -->
+
+Proof To simplify the notation, let us use the shorthand G(C1 , . . . , Ck ) for the k-means objective, namely,
+$$
+k X X G(C_1 , . . . , Ck ) =        min                    kx - \mu_i k_2 .              (22.2) \mu_1 ,...,\mu_k \in Rn i=1 x\in Ci
+$$
+$$
+It is convenient to define \mu(Ci ) = |C_1i | x\in Ci x and note that \mu(Ci ) = argmin\mu\in Rn x\in Ci kx- P                                        P
+$$
+\muk2 . Therefore, we can rewrite the k-means objective as
+$$
+k X X G(C_1 , . . . , Ck ) =                   kx - \mu(Ci )k_2 .                  (22.3) i=1 x\in Ci
+$$
+(t-1)     (t-1) Consider the update at iteration t of the k-means algorithm. Let C1          , . . . , Ck (t-1)        (t-1)             (t)            (t) be the previous partition, let \mui       = \mu(Ci      ), and let C1 , . . . , Ck be the new partition assigned at iteration t. Using the definition of the objective as given in Equation (22.2) we clearly have that
+$$
+k (t)        (t)                                 (t-1) 2 X X G(C_1 , . . . , Ck ) \le                       kx - \mu_i        k .              (22.4) i=1 x\in C (t) i
+$$
+(t)         (t) In addition, the definition of the new partition (C1 , . . . , Ck ) implies that it Pk P               (t-1) 2 minimizes the expression i=1 x∈Ci kx - \mui          k over all possible partitions (C1 , . . . , Ck ). Hence,
+$$
+k                                   k (t-1) 2                                    (t-1) 2 X X                                 X           X kx - \mu_i         k \le                     kx - \mu_i           k .      (22.5) i=1 x\in C (t)                         i=1 x\in C (t-1) i                                        i
+$$
+Using Equation (22.3) we have that the right-hand side of Equation (22.5) equals
+(t-1)            (t-1) G(C1      , . . . , Ck     ). Combining this with Equation (22.4) and Equation (22.5),
+$$
+(t)      (t)         (t-1)            (t-1) we obtain that G(C_1 , . . . , Ck ) \le G(C_1            , . . . , Ck     ), which concludes our proof.
+$$
+While the preceding lemma tells us that the k-means objective is monotonically nonincreasing, there is no guarantee on the number of iterations the k-means algorithm needs in order to reach convergence. Furthermore, there is no nontrivial lower bound on the gap between the value of the k-means objective of the algorithm’s output and the minimum possible value of that objective function. In fact, k-means might converge to a point which is not even a local minimum (see Exercise 2). To improve the results of k-means it is often recommended to repeat the procedure several times with different randomly chosen initial centroids (e.g., we can choose the initial centroids to be random points from the data).
+
+<!-- page: 315 -->
+
+### 22.3     Spectral Clustering
+Often, a convenient way to represent the relationships between points in a data set X = {x1 , . . . , xm } is by a similarity graph; each vertex represents a data point xi , and every two vertices are connected by an edge whose weight is their similarity, Wi,j = s(xi , xj ), where W ∈ Rm,m . For example, we can set Wi,j = exp(-d(xi , xj )2 /σ 2 ), where d(·, ·) is a distance function and σ is a parameter. The clustering problem can now be formulated as follows: We want to find a partition of the graph such that the edges between different groups have low weights and the edges within a group have high weights. In the clustering objectives described previously, the focus was on one side of our intuitive definition of clustering – making sure that points in the same cluster are similar. We now present objectives that focus on the other requirement
+- points separated into different clusters should be nonsimilar.
+#### 22.3.1   Graph Cut
+Given a graph represented by a similarity matrix W , the simplest and most direct way to construct a partition of the graph is to solve the mincut problem, which chooses a partition C1 , . . . , Ck that minimizes the objective
+$$
+k X      X cut(C_1 , . . . , Ck ) =                    Wr,s . i=1 r\in Ci ,s\in C
+$$
+/ i
+For k = 2, the mincut problem can be solved efficiently. However, in practice it often does not lead to satisfactory partitions. The problem is that in many cases, the solution of mincut simply separates one individual vertex from the rest of the graph. Of course, this is not what we want to achieve in clustering, as clusters should be reasonably large groups of points.
+Several solutions to this problem have been suggested. The simplest solution is to normalize the cut and define the normalized mincut objective as follows:
+$$
+k X    1         X RatioCut(C_1 , . . . , Ck ) =                              Wr,s . i=1
+$$
+|C i|
+r∈Ci ,s∈C
+/ i
+The preceding objective assumes smaller values if the clusters are not too small. Unfortunately, introducing this balancing makes the problem computationally hard to solve. Spectral clustering is a way to relax the problem of minimizing RatioCut.
+#### 22.3.2   Graph Laplacian and Relaxed Graph Cuts
+The main mathematical object for spectral clustering is the graph Laplacian matrix. There are several different definitions of graph Laplacian in the literature, and in the following we describe one particular definition.
+
+<!-- page: 316 -->
+
+definition 22.2 (Unnormalized Graph Laplacian) The unnormalized graph Laplacian is the m × m matrix L = D - W where D is a diagonal matrix with
+$$
+Pm Di,i = j=1 Wi,j . The matrix D is called the degree matrix.
+$$
+The following lemma underscores the relation between RatioCut and the Laplacian matrix.
+lemma 22.3     Let C1 , . . . , Ck be a clustering and let H ∈ Rm,k be the matrix such that
+$$
+Hi,j = \sqrt 1           1[i\in Cj ] . |Cj |
+$$
+Then, the columns of H are orthonormal to each other and
+RatioCut(C1 , . . . , Ck ) = trace(H > L H).
+Proof Let h1 , . . . , hk be the columns of H. The fact that these vectors are orthonormal is immediate from the definition. Next, by standard algebraic ma-
+$$
+Pk nipulations, it can be shown that trace(H > L H) = i=1 h>   i Lhi and that for any vector v we have
+$$
+$$
+! >    1     X                    X                     X                         1X v Lv =             Dr,r vr2 - 2         vr vs Wr,s +          Ds,s vs2        =         Wr,s (vr - vs )2 .
+$$
+## 2       r                  r,s                     s
+## 2 r,s
+$$
+Applying this with v = hi and noting that (hi,r - hi,s )2 is nonzero only if r \in Ci , s \in
+$$
+/ Ci or the other way around, we obtain that
+$$
+1          X h> i Lhi =                                  Wr,s . |Ci | r\in Ci ,s\in C / i
+$$
+Therefore, to minimize RatioCut we can search for a matrix
+p H whose columns
+are orthonormal and such that each Hi,j is either 0 or 1/ |Cj |. Unfortunately,
+this is an integer programming problem which we cannot solve efficiently. Instead,
+we relax the latter requirement and simply search an orthonormal matrix H ∈
+Rm,k that minimizes trace(H > L H). As we will see in the next chapter about
+PCA (particularly, the proof of Theorem 23.2), the solution to this problem is
+to set U to be the matrix whose columns are the eigenvectors corresponding to
+the k minimal eigenvalues of L. The resulting algorithm is called Unnormalized
+Spectral Clustering.
+
+<!-- page: 317 -->
+
+22.3.3   Unnormalized Spectral Clustering
+```
+Unnormalized Spectral Clustering
+Input: W ∈ Rm,m ; Number of clusters k
+Initialize: Compute the unnormalized graph Laplacian L
+Let U ∈ Rm,k be the matrix whose columns are the eigenvectors of L
+corresponding to the k smallest eigenvalues
+Let v1 , . . . , vm be the rows of U
+Cluster the points v1 , . . . , vm using k-means
+Output: Clusters C1 , . . . , CK of the k-means algorithm
+```
+The spectral clustering algorithm starts with finding the matrix H of the k eigenvectors corresponding to the smallest eigenvalues of the graph Laplacian matrix. It then represents points according to the rows of H. It is due to the properties of the graph Laplacians that this change of representation is useful. In many situations, this change of representation enables the simple k-means algorithm to detect the clusters seamlessly. Intuitively, if H is as defined in Lemma 22.3 then each point in the new representation is an indicator vector whose value is nonzero only on the element corresponding to the cluster it belongs to.
+### 22.4     Information Bottleneck*
+The information bottleneck method is a clustering technique introduced by Tishby, Pereira, and Bialek. It relies on notions from information theory. To illustrate the method, consider the problem of clustering text documents where each document is represented as a bag-of-words; namely, each document is a vector x = {0, 1}n , where n is the size of the dictionary and xi = 1 iff the word corresponding to index i appears in the document. Given a set of m documents, we can interpret the bag-of-words representation of the m documents as a joint probability over a random variable x, indicating the identity of a document (thus taking values in [m]), and a random variable y, indicating the identity of a word in the dictionary (thus taking values in [n]).
+With this interpretation, the information bottleneck refers to the identity of a clustering as another random variable, denoted C, that takes values in [k] (where k will be set by the method as well). Once we have formulated x, y, C as random variables, we can use tools from information theory to express a clustering objective. In particular, the information bottleneck objective is
+min I(x; C) - βI(C; y) , p(C|x)
+where I(·; ·) is the mutual information between two random variables,1 β is a
+## 1   That is, given a probability function, p over the pairs (x, C),
+
+<!-- page: 318 -->
+
+parameter, and the minimization is over all possible probabilistic assignments of points to clusters. Intuitively, we would like to achieve two contradictory goals. On one hand, we would like the mutual information between the identity of the document and the identity of the cluster to be as small as possible. This reflects the fact that we would like a strong compression of the original data. On the other hand, we would like high mutual information between the clustering variable and the identity of the words, which reflects the goal that the “relevant” information about the document (as reflected by the words that appear in the document) is retained. This generalizes the classical notion of minimal sufficient statistics2 used in parametric statistics to arbitrary distributions.
+Solving the optimization problem associated with the information bottleneck principle is hard in the general case. Some of the proposed methods are similar to the EM principle, which we will discuss in Chapter 24.
+### 22.5   A High Level View of Clustering
+So far, we have mainly listed various useful clustering tools. However, some fundamental questions remain unaddressed. First and foremost, what is clustering? What is it that distinguishes a clustering algorithm from any arbitrary function that takes an input space and outputs a partition of that space? Are there any basic properties of clustering that are independent of any specific algorithm or task? One method for addressing such questions is via an axiomatic approach. There have been several attempts to provide an axiomatic definition of clustering. Let us demonstrate this approach by presenting the attempt made by Kleinberg (2003). Consider a clustering function, F , that takes as input any finite domain X with a dissimilarity function d over its pairs and returns a partition of X . Consider the following three properties of such a function:
+Scale Invariance (SI) For any domain set X , dissimilarity function d, and
+any α > 0, the following should hold: F (X , d) = F (X , αd) (where
+def (αd)(x, y) = α d(x, y)). Richness (Ri) For any finite X and every partition C = (C1 , . . . Ck ) of X (into nonempty subsets) there exists some dissimilarity function d over X such that F (X , d) = C.
+(         ) P P                    p(a,b) I(x; C) = a b p(a, b) log p(a)p(b) , where the sum is over all values x can take and all values C can take. 2 A sufficient statistic is a function of the data which has the property of sufficiency with
+respect to a statistical model and its associated unknown parameter, meaning that “no other statistic which can be calculated from the same sample provides any additional information as to the value of the parameter.” For example, if we assume that a variable is distributed normally with a unit variance and an unknown expectation, then the average function is a sufficient statistic.
+
+<!-- page: 319 -->
+
+Consistency (Co) If d and d0 are dissimilarity functions over X , such that
+for every x, y ∈ X , if x, y belong to the same cluster in F (X , d) then d0 (x, y) \leq  d(x, y) and if x, y belong to different clusters in F (X , d) then d0 (x, y) \geq  d(x, y), then F (X , d) = F (X , d0 ). A moment of reflection reveals that the Scale Invariance is a very natural requirement – it would be odd to have the result of a clustering function depend on the units used to measure between-point distances. The Richness requirement basically states that the outcome of the clustering function is fully controlled by the function d, which is also a very intuitive feature. The third requirement, Consistency, is the only requirement that refers to the basic (informal) definition of clustering – we wish that similar points will be clustered together and that dissimilar points will be separated to different clusters, and therefore, if points that already share a cluster become more similar, and points that are already separated become even less similar to each other, the clustering function should have even stronger “support” of its previous clustering decisions. However, Kleinberg (2003) has shown the following “impossibility” result: theorem 22.4 There exists no function, F , that satisfies all the three properties: Scale Invariance, Richness, and Consistency. Proof Assume, by way of contradiction, that some F does satisfy all three properties. Pick some domain set X with at least three points. By Richness, there must be some d1 such that F (X , d1 ) = {{x} : x ∈ X } and there also exists some d2 such that F (X , d2 ) \neq  F (X , d1 ). Let α ∈ R+ be such that for every x, y ∈ X , αd2 (x, y) \geq  d1 (x, y). Let d3 = αd2 . Consider F (X , d3 ). By the Scale Invariance property of F , we should have F (X , d3 ) = F (X , d2 ). On the other hand, since all distinct x, y ∈ X reside in different clusters w.r.t. F (X , d1 ), and d3 (x, y) \geq  d1 (x, y), the Consistency of F implies that F (X , d3 ) = F (X , d1 ). This is a contradiction, since we chose d1 , d2 so that F (X , d2 ) \neq  F (X , d1 ). It is important to note that there is no single “bad property” among the three properties. For every pair of the the three axioms, there exist natural clustering functions that satisfy the two properties in that pair (one can even construct such examples just by varying the stopping criteria for the Single Linkage clustering function). On the other hand, Kleinberg shows that any clustering algorithm that minimizes any center-based objective function inevitably fails the consistency property (yet, the k-sum-of-in-cluster-distances minimization clustering does satisfy Consistency). The Kleinberg impossibility result can be easily circumvented by varying the properties. For example, if one wishes to discuss clustering functions that have a fixed number-of-clusters parameter, then it is natural to replace Richness by k-Richness (namely, the requirement that every partition of the domain into k subsets is attainable by the clustering function). k-Richness, Scale Invariance and Consistency all hold for the k-means clustering and are therefore consistent.
+
+<!-- page: 320 -->
+
+Alternatively, one can relax the Consistency property. For example, say that two clusterings C = (C1 , . . . Ck ) and C 0 = (C10 , . . . Cl0 ) are compatible if for every clusters Ci ∈ C and Cj0 ∈ C 0 , either Ci ⊆ Cj0 or Cj0 ⊆ Ci or Ci ∩ Cj0 = ∅ (it is worthwhile noting that for every dendrogram, every two clusterings that are obtained by trimming that dendrogram are compatible). “Refinement Consistency” is the requirement that, under the assumptions of the Consistency property, the new clustering F (X , d0 ) is compatible with the old clustering F (X , d). Many common clustering functions satisfy this requirement as well as Scale Invariance and Richness. Furthermore, one can come up with many other, different, properties of clustering functions that sound intuitive and desirable and are satisfied by some common clustering functions.
+There are many ways to interpret these results. We suggest to view it as indicating that there is no “ideal” clustering function. Every clustering function will inevitably have some “undesirable” properties. The choice of a clustering function for any given task must therefore take into account the specific properties of that task. There is no generic clustering solution, just as there is no classification algorithm that will learn every learnable task (as the No-Free-Lunch theorem shows). Clustering, just like classification prediction, must take into account some prior knowledge about the specific task at hand.
+### 22.6   Summary
+Clustering is an unsupervised learning problem, in which we wish to partition a set of points into “meaningful” subsets. We presented several clustering approaches including linkage-based algorithms, the k-means family, spectral clustering, and the information bottleneck. We discussed the difficulty of formalizing the intuitive meaning of clustering.
+### 22.7   Bibliographic Remarks
+The k-means algorithm is sometimes named Lloyd’s algorithm, after Stuart Lloyd, who proposed the method in 1957. For a more complete overview of spectral clustering we refer the reader to the excellent tutorial by Von Luxburg (2007). The information bottleneck method was introduced by Tishby, Pereira & Bialek (1999). For an additional discussion on the axiomatic approach see Ackerman & Ben-David (2008).
+### 22.8   Exercises
+1. Suboptimality of k-Means: For every parameter t > 1, show that there
+exists an instance of the k-means problem for which the k-means algorithm
+
+<!-- page: 321 -->
+
+(might) find a solution whose k-means objective is at least t · OPT, where
+OPT is the minimum k-means objective.
+2. k-Means Might Not Necessarily Converge to a Local Minimum:
+Show that the k-means algorithm might converge to a point which is not
+a local minimum. Hint: Suppose that k = 2 and the sample points are
+{1, 2, 3, 4} ⊂ R suppose we initialize the k-means with the centers {2, 4};
+and suppose we break ties in the definition of Ci by assigning i to be the
+smallest value in argminj kx - \muj k.
+3. Given a metric space (X , d), where |X | < ∞, and k ∈ N, we would like to find
+a partition of X into C1 , . . . , Ck which minimizes the expression
+$$
+Gk-diam ((X , d), (C_1 , . . . , Ck )) = max diam(Cj ), j\in[d]
+$$
+$$
+where diam(Cj ) = maxx,x_0 \in Cj d(x, x_0 ) (we use the convention diam(Cj ) = 0 if |Cj | < 2).
+$$
+Similarly to the k-means objective, it is NP-hard to minimize the k-diam objective. Fortunately, we have a very simple approximation algorithm: Initially, we pick some x ∈ X and set \mu1 = x. Then, the algorithm iteratively sets
+$$
+\forall j \in \{2, . . . , k\}, \mu_j = argmax min d(x, \mu_i ).
+$$
+x∈X      i∈[j-1]
+Finally, we set
+$$
+\forall i \in [k], Ci = \{x \in X : i = argmin d(x, \mu_j )\}. j\in[k]
+$$
+Prove that the algorithm described is a 2-approximation algorithm. That is, if we denote its output by C{}1 , . . . , C{}k , and denote the optimal solution by C1∗ , . . . , Ck∗ , then,
+$$
+Gk-diam ((X , d), (C{}1 , . . . , C{}k )) \le 2 · Gk-diam ((X , d), (C_1∗ , . . . , Ck∗ )).
+$$
+Hint: Consider the point \muk+1 (in other words, the next center we would have chosen, if we wanted k + 1 clusters). Let r = minj∈[k] d(\muj , \muk+1 ). Prove the following inequalities
+$$
+Gk-diam ((X , d), (C{}1 , . . . , C{}k )) \le 2r Gk-diam ((X, d), (C_1∗ , . . . , Ck∗ )) \ge r.
+$$
+4. Recall that a clustering function, F , is called Center-Based Clustering if, for
+some monotonic function f : R+ → R+ , on every given input (X , d), F (X , d) is a clustering that minimizes the objective
+$$
+k X X Gf ((X , d), (C_1 , . . . Ck )) =       min                     f (d(x, \mu_i )), \mu_1 ,...\mu_k \in X 0 i=1 x\in Ci
+$$
+where X 0 is either X or some superset of X .
+
+<!-- page: 322 -->
+
+Prove that for every k > 1 the k-diam clustering function defined in the previous exercise is not a center-based clustering function. Hint: Given a clustering input (X , d), with |X | > 2, consider the effect of adding many close-by points to some (but not all) of the members of X , on either the k-diam clustering or any given center-based clustering.
+5. Recall that we discussed three clustering “properties”: Scale Invariance, Rich-
+ness, and Consistency. Consider the Single Linkage clustering algorithm.
+1. Find which of the three properties is satisfied by Single Linkage with the
+Fixed Number of Clusters (any fixed nonzero number) stopping rule.
+2. Find which of the three properties is satisfied by Single Linkage with the
+Distance Upper Bound (any fixed nonzero upper bound) stopping rule.
+3. Show that for any pair of these properties there exists a stopping criterion
+for Single Linkage clustering, under which these two axioms are satisfied.
+6. Given some number k, let k-Richness be the following requirement:
+For any finite X and every partition C = (C1 , . . . Ck ) of X (into nonempty subsets) there exists some dissimilarity function d over X such that F (X , d) = C.
+Prove that, for every number k, there exists a clustering function that satisfies the three properties: Scale Invariance, k-Richness, and Consistency.
+
+<!-- page: 323 -->
+
+## 23 Dimensionality Reduction
+Dimensionality reduction is the process of taking data in a high dimensional space and mapping it into a new space whose dimensionality is much smaller. This process is closely related to the concept of (lossy) compression in information theory. There are several reasons to reduce the dimensionality of the data. First, high dimensional data impose computational challenges. Moreover, in some situations high dimensionality might lead to poor generalization abilities of the learning algorithm (for example, in Nearest Neighbor classifiers the sample complexity increases exponentially with the dimension—see Chapter 19). Finally, dimensionality reduction can be used for interpretability of the data, for finding meaningful structure of the data, and for illustration purposes.
+In this chapter we describe popular methods for dimensionality reduction. In those methods, the reduction is performed by applying a linear transformation to the original data. That is, if the original data is in Rd and we want to embed it into Rn (n < d) then we would like to find a matrix W ∈ Rn,d that induces the mapping x 7→ W x. A natural criterion for choosing W is in a way that will enable a reasonable recovery of the original x. It is not hard to show that in general, exact recovery of x from W x is impossible (see Exercise 1). The first method we describe is called Principal Component Analysis (PCA). In PCA, both the compression and the recovery are performed by linear transformations and the method finds the linear transformations for which the differences between the recovered vectors and the original vectors are minimal in the least squared sense. Next, we describe dimensionality reduction using random matrices W . We derive an important lemma, often called the “Johnson-Lindenstrauss lemma,” which analyzes the distortion caused by such a random dimensionality reduction technique. Last, we show how one can reduce the dimension of all sparse vectors using again a random matrix. This process is known as Compressed Sensing. In this case, the recovery process is nonlinear but can still be implemented efficiently using linear programming. We conclude by underscoring the underlying “prior assumptions” behind PCA and compressed sensing, which can help us understand the merits and pitfalls of the two methods.
+
+<!-- page: 324 -->
+
+### 23.1   Principal Component Analysis (PCA)
+Let x1 , . . . , xm be m vectors in Rd . We would like to reduce the dimensionality of these vectors using a linear transformation. A matrix W ∈ Rn,d , where n < d, induces a mapping x 7→ W x, where W x ∈ Rn is the lower dimensionality representation of x. Then, a second matrix U ∈ Rd,n can be used to (approximately) recover each original vector x from its compressed version. That is, for a compressed vector y = W x, where y is in the low dimensional space Rn , we can construct x̃ = U y, so that x̃ is the recovered version of x and resides in the original high dimensional space Rd .
+In PCA, we find the compression matrix W and the recovering matrix U so that the total squared distance between the original and recovered vectors is minimal; namely, we aim at solving the problem
+$$
+m X argmin              kxi - U W xi k_22 .            (23.1) W \in Rn,d ,U \in Rd,n i=1
+$$
+To solve this problem we first show that the optimal solution takes a specific form. lemma 23.1 Let (U, W ) be a solution to Equation (23.1). Then the columns of U are orthonormal (namely, U > U is the identity matrix of Rn ) and W = U > . Proof Fix any U, W and consider the mapping x 7→ U W x. The range of this mapping, R = {U W x : x ∈ Rd }, is an n dimensional linear subspace of Rd . Let V ∈ Rd,n be a matrix whose columns form an orthonormal basis of this subspace, namely, the range of V is R and V > V = I. Therefore, each vector in R can be written as V y where y ∈ Rn . For every x ∈ Rd and y ∈ Rn we have kx - V yk22 = kxk2 + y> V > V y - 2y> V > x = kxk2 + kyk2 - 2y> (V > x), where we used the fact that V > V is the identity matrix of Rn . Minimizing the preceding expression with respect to y by comparing the gradient with respect to y to zero gives that y = V > x. Therefore, for each x we have that
+$$
+V V > x = argmin kx - x̃k_22 .
+$$
+x̃∈R
+In particular this holds for x1 , . . . , xm and therefore we can replace U, W by V, V > and by that do not increase the objective
+m X                                m
+$$
+\sum_{kxi} - U W xi k_22 \ge              kxi - V V > xi k_22 . i=1                             i=1
+$$
+Since this holds for every U, W the proof of the lemma follows. On the basis of the preceding lemma, we can rewrite the optimization problem given in Equation (23.1) as follows:
+$$
+m X argmin               kxi - U U > xi k_22 .          (23.2) U \in Rd,n :U > U =I i=1
+$$
+
+<!-- page: 325 -->
+
+We further simplify the optimization problem by using the following elementary
+algebraic manipulations. For every x ∈ Rd and a matrix U ∈ Rd,n such that
+U > U = I we have
+kx - UU > xk2 = kxk2 - 2x> UU > x + x> U U > UU > x
+= kxk2 - x> UU > x
+= kxk2 - trace(U > xx> U ),                        (23.3)
+where the trace of a matrix is the sum of its diagonal entries. Since the trace is
+a linear operator, this allows us to rewrite Equation (23.2) as follows:
+m
+!
+X
+argmax trace U >          xi x>
+i U   .              (23.4)
+U ∈Rd,n :U > U =I                 i=1
+Pm         >
+Let A =      i=1 xi xi .    The matrix A is symmetric and therefore it can be
+written using its spectral decomposition as A = VDV > , where D is diagonal and
+V > V = VV > = I. Here, the elements on the diagonal of D are the eigenvalues of
+A and the columns of V are the corresponding eigenvectors. We assume without
+loss of generality that D1,1 \geq  D2,2 \geq  · · · \geq  Dd,d . Since A is positive semidefinite
+it also holds that Dd,d \geq  0. We claim that the solution to Equation (23.4) is
+the matrix U whose columns are the n eigenvectors of A corresponding to the
+largest n eigenvalues.
+Pm
+theorem 23.2 Let x1 , . . . , xm be arbitrary vectors in Rd , let A = i=1 xi x>    i ,
+and let u1 , . . . , un be n eigenvectors of the matrix A corresponding to the largest
+n eigenvalues of A. Then, the solution to the PCA optimization problem given
+in Equation (23.1) is to set U to be the matrix whose columns are u1 , . . . , un
+and to set W = U > .
+Proof Let VDV > be the spectral decomposition of A. Fix some matrix U ∈ Rd,n
+with orthonormal columns and let B = V > U . Then, VB = VV > U = U . It
+follows that
+U > AU = B > V > VDV > VB = B > DB,
+and therefore
+d
+X            n
+X
+trace(U > AU ) =              Dj,j          2
+Bj,i .
+j=1          i=1
+$$
+Note that B > B = U > VV > U = U > U = I. Therefore, the columns of B are
+$$
+Pd Pn      2 also orthonormal, which implies that j=1 i=1 Bj,i      = n. In addition, let B̃ ∈ d,d R     be a matrix such that its first n columns are the columns of B and in
+$$
+Pd addition B̃ > B̃ = I. Then, for every j we have i=1 B̃j,i
+$$
+$$
+= 1, which implies that Pn      2 B i=1 j,i \le  1. It follows that:
+$$
+$$
+d X trace(U > AU ) \le               max                   Dj,j \beta_j . \beta\in[0,1]d : k\beta k_1 \le n j=1
+$$
+
+<!-- page: 326 -->
+
+It is not hard to verify (see Exercise 2) that the right-hand side equals to Pn
+$$
+j=1 Dj,j . We have therefore shown that for every matrix U \in Rd,n with or-
+$$
+>
+Pn thonormal columns it holds that trace(U AU ) \leq  j=1 Dj,j . On the other hand, if we set U to be the matrix whose columns are the n leading eigenvectors of A Pn we obtain that trace(U > AU ) = j=1 Dj,j , and this concludes our proof.
+Remark 23.1 The proof of Theorem 23.2 also tells us that the value of the
+Pn objective of Equation (23.4) is i=1 Di,i . Combining this with Equation (23.3) Pm                        Pd and noting that i=1 kxi k2 = trace(A) = i=1 Di,i we obtain that the optimal
+Pd objective value of Equation (23.1) is i=n+1 Di,i .
+Remark 23.2 It is a common practice to “center” the examples before applying
+1 Pm PCA. That is, we first calculate \mu = m            i=1 xi and then apply PCA on the vectors (x1 - \mu), . . . , (xm - \mu). This is also related to the interpretation of PCA as variance maximization (see Exercise 4).
+23.1.1   A More Efficient Solution for the Case d m
+In some situations the original dimensionality of the data is much larger than the number of examples m. The computational complexity of calculating the PCA solution as described previously is O(d3 ) (for calculating eigenvalues of A) plus O(md2 ) (for constructing the matrix A). We now show a simple trick that enables us to calculate the PCA solution more efficiently when d m.
+Pm Recall that the matrix A is defined to be i=1 xi x>  i . It is convenient to rewrite A = X > X where X ∈ Rm,d is a matrix whose ith row is x>             i . Consider the matrix B = XX > . That is, B ∈ Rm,m is the matrix whose i, j element equals hxi , xj i. Suppose that u is an eigenvector of B: That is, Bu = λu for some λ ∈ R. Multiplying the equality by X > and using the definition of B we obtain X > XX > u = λX > u. But, using the definition of A, we get that A(X > u) = X>u λ(X > u). Thus, kX   > uk is an eigenvector of A with eigenvalue of λ.
+We can therefore calculate the PCA solution by calculating the eigenvalues of B instead of A. The complexity is O(m3 ) (for calculating eigenvalues of B) and m2 d (for constructing the matrix B).
+Remark 23.3 The previous discussion also implies that to calculate the PCA solution we only need to know how to calculate inner products between vectors. This enables us to calculate PCA implicitly even when d is very large (or even infinite) using kernels, which yields the kernel PCA algorithm.
+#### 23.1.2   Implementation and Demonstration
+A pseudocode of PCA is given in the following.
+
+<!-- page: 327 -->
+
+1.5
+0.5
+-0.5
+-1
+-1.5 -1.5    -1     -0.5         0   0.5   1       1.5
+![Hinh: fig-327-1]
+Figure 23.1 A set of vectors in R2 (blue x’s) and their reconstruction after dimensionality reduction to R1 using PCA (red circles).
+```
+PCA
+input
+A matrix of m examples X ∈ Rm,d
+number of components n
+if (m > d)
+A = X >X
+Let u1 , . . . , un be the eigenvectors of A with largest eigenvalues
+else
+B = XX >
+Let v1 , . . . , vn be the eigenvectors of B with largest eigenvalues
+for i = 1, . . . , n set ui = kX >1 vi k X > vi
+output: u1 , . . . , un
+```
+To illustrate how PCA works, let us generate vectors in R2 that approximately
+reside on a line, namely, on a one dimensional subspace of R2 . For example,
+suppose that each example is of the form (x, x + y) where x is chosen uniformly
+at random from [-1, 1] and y is sampled from a Gaussian distribution with mean
+0 and standard deviation of 0.1. Suppose we apply PCA on this data. Then, the
+eigenvector
+\sqrt corresponding to the largest eigenvalue will be close to the vector
+(1/ 2, 1/ 2). When projecting a point (x, x + y) on this principal component
+we will obtain the scalar 2x+y
+\sqrt . The reconstruction of the original vector will be
+2
+((x + y/2), (x + y/2)). In Figure 23.1 we depict the original versus reconstructed
+data.
+Next, we demonstrate the effectiveness of PCA on a data set of faces. We
+extracted images of faces from the Yale data set (Georghiades, Belhumeur &
+Kriegman 2001). Each image contains 50×50 = 2500 pixels; therefore the original
+dimensionality is very high.
+
+<!-- page: 328 -->
+
+o       o oo oo o
+x       xxx x xx + + +++ ++                          *
+* **       **
+![Hinh: fig-328-1]
+Figure 23.2 Images of faces extracted from the Yale data set. Top-Left: the original images in R50x50 . Top-Right: the images after dimensionality reduction to R10 and reconstruction. Middle row: an enlarged version of one of the images before and after PCA. Bottom: The images after dimensionality reduction to R2 . The different marks indicate different individuals.
+Some images of faces are depicted on the top-left side of Figure 23.2. Using PCA, we reduced the dimensionality to R10 and reconstructed back to the original dimension, which is 502 . The resulting reconstructed images are depicted on the top-right side of Figure 23.2. Finally, on the bottom of Figure 23.2 we depict a 2 dimensional representation of the images. As can be seen, even from a
+2 dimensional representation of the images we can still roughly separate different individuals.
+
+<!-- page: 329 -->
+
+### 23.2   Random Projections
+In this section we show that reducing the dimension by using a random linear transformation leads to a simple compression scheme with a surprisingly low distortion. The transformation x 7→ W x, when W is a random matrix, is often referred to as a random projection. In particular, we provide a variant of a famous lemma due to Johnson and Lindenstrauss, showing that random projections do not distort Euclidean distances too much.
+Let x1 , x2 be two vectors in Rd . A matrix W does not distort too much the distance between x1 and x2 if the ratio
+kW x1 - W x2 k kx1 - x2 k is close to 1. In other words, the distances between x1 and x2 before and after the transformation are almost the same. To show that kW x1 - W x2 k is not too far away from kx1 - x2 k it suffices to show that W does not distort the norm of the difference vector x = x1 - x2 . Therefore, from now on we focus on the ratio kW xk kxk . We start with analyzing the distortion caused by applying a random projection to a single vector.
+lemma 23.3 Fix some x ∈ Rd . Let W ∈ Rn,d be a random matrix such that each Wi,j is an independent normal random variable. Then, for every ε ∈ (0, 3) we have
+$$
+       \sqrt       2
+$$
+$$
+  k(1/ n)W xk                      2 P            2 -1 >\epsilon      \le 2 e-\epsilon n/6 . kxk
+$$
+Proof Without loss of generality we can assume that kxk2 = 1. Therefore, an equivalent inequality is
+$$
+2 P (1 - \epsilon)n \le kW xk2 \le (1 + \epsilon)n \ge 1 - 2e-\epsilon n/6 . [                           ]
+$$
+Let wi be the ith row of W . The random variable hwi , xi is a weighted sum of d independent normal random variables and therefore it is normally distributed with zero mean and variance j x2j = kxk2 = 1. Therefore, the random vari-
+P n able kW xk2 =                   2       2 P i=1 (hwi , xi) has a χn distribution. The claim now follows directly from a measure concentration property of χ2 random variables stated in Lemma B.12 given in Section B.7.
+The Johnson-Lindenstrauss lemma follows from this using a simple union bound argument.
+lemma 23.4 (Johnson-Lindenstrauss Lemma) Let Q be a finite set of vectors in Rd . Let δ ∈ (0, 1) and n be an integer such that
+r
+$$
+6 log(2|Q|/\delta) \epsilon=                   \le 3.
+$$
+n
+
+<!-- page: 330 -->
+
+Then, with probability of at least 1-δ over a choice of a random matrix W ∈ Rn,d such that each element of W is distributed normally with zero mean and variance of 1/n we have
+kW xk2 sup          - 1 < ε. x∈Q   kxk2 Proof Combining Lemma 23.3 and the union bound we have that for every ε ∈ (0, 3): kW xk2 [                  ]
+2 P sup      2 - 1 > ε \leq  2 |Q| e-ε n/6 . x∈Q  kxk Let δ denote the right-hand side of the inequality; thus we obtain that r
+6 log(2|Q|/δ) ε=                   .
+n
+Interestingly, the bound given in Lemma 23.4 does not depend on the original dimension of x. In fact, the bound holds even if x is in an infinite dimensional Hilbert space.
+### 23.3   Compressed Sensing
+Compressed sensing is a dimensionality reduction technique which utilizes a prior assumption that the original vector is sparse in some basis. To motivate compressed sensing, consider a vector x ∈ Rd that has at most s nonzero elements. That is,
+def kxk0 = |{i : xi \neq  0}| \leq  s. Clearly, we can compress x by representing it using s (index,value) pairs. Furthermore, this compression is lossless – we can reconstruct x exactly from the s (index,value) pairs. Now, lets take one step forward and assume that x = U α, where α is a sparse vector, kαk0 \leq  s, and U is a fixed orthonormal matrix. That is, x has a sparse representation in another basis. It turns out that many natural vectors are (at least approximately) sparse in some representation. In fact, this assumption underlies many modern compression schemes. For example, the JPEG-2000 format for image compression relies on the fact that natural images are approximately sparse in a wavelet basis. Can we still compress x into roughly s numbers? Well, one simple way to do this is to multiply x by U > , which yields the sparse vector α, and then represent α by its s (index,value) pairs. However, this requires us first to “sense” x, to store it, and then to multiply it by U > . This raises a very natural question: Why go to so much effort to acquire all the data when most of what we get will be thrown away? Cannot we just directly measure the part that will not end up being thrown away?
+
+<!-- page: 331 -->
+
+Compressed sensing is a technique that simultaneously acquires and compresses the data. The key result is that a random linear transformation can compress x without losing information. The number of measurements needed is order of s log(d). That is, we roughly acquire only the important information about the signal. As we will see later, the price we pay is a slower reconstruction phase. In some situations, it makes sense to save time in compression even at the price of a slower reconstruction. For example, a security camera should sense and compress a large amount of images while most of the time we do not need to decode the compressed data at all. Furthermore, in many practical applications, compression by a linear transformation is advantageous because it can be performed efficiently in hardware. For example, a team led by Baraniuk and Kelly has proposed a camera architecture that employs a digital micromirror array to perform optical calculations of a linear transformation of an image. In this case, obtaining each compressed measurement is as easy as obtaining a single raw measurement. Another important application of compressed sensing is medical imaging, in which requiring fewer measurements translates to less radiation for the patient. Informally, the main premise of compressed sensing is the following three “surprising” results:
+1. It is possible to reconstruct any sparse signal fully if it was compressed by
+x 7→ W x, where W is a matrix which satisfies a condition called the Restricted Isoperimetric Property (RIP). A matrix that satisfies this property is guaranteed to have a low distortion of the norm of any sparse representable vector.
+2. The reconstruction can be calculated in polynomial time by solving a linear
+program.
+3. A random n × d matrix is likely to satisfy the RIP condition provided that n
+is greater than an order of s log(d).
+Formally,
+definition 23.5 (RIP)       A matrix W ∈ Rn,d is (ε, s)-RIP if for all x \neq  0 s.t. kxk0 \leq  s we have
+kW xk22
+- 1 \leq  ε. kxk22 The first theorem establishes that RIP matrices yield a lossless compression scheme for sparse vectors. It also provides a (nonefficient) reconstruction scheme.
+theorem 23.6 Let ε < 1 and let W be a (ε, 2s)-RIP matrix. Let x be a vector s.t. kxk0 \leq  s, let y = W x be the compression of x, and let
+$$
+x̃ \in argmin kvk0 v:W v=y
+$$
+be a reconstructed vector. Then, x̃ = x.
+
+<!-- page: 332 -->
+
+Proof We assume, by way of contradiction, that x̃ \neq  x. Since x satisfies the constraints in the optimization problem that defines x̃ we clearly have that kx̃k0 \leq  kxk0 \leq  s. Therefore, kx - x̃k0 \leq  2s and we can apply the RIP inequality on the vector x - x̃. But, since W (x - x̃) = 0 we get that |0 - 1| \leq  ε, which leads to a contradiction.
+The reconstruction scheme given in Theorem 23.6 seems to be nonefficient because we need to minimize a combinatorial objective (the sparsity of v). Quite surprisingly, it turns out that we can replace the combinatorial objective, kvk0 , with a convex objective, kvk1 , which leads to a linear programming problem that can be solved efficiently. This is stated formally in the following theorem.
+theorem 23.7 Assume that the conditions of Theorem 23.6 holds and that ε < 1+1\sqrt2 . Then,
+$$
+x = argmin kvk0 = argmin kvk1 .
+$$
+$$
+v:W v=y              v:W v=y
+$$
+In fact, we will prove a stronger result, which holds even if x is not a sparse vector.
+theorem 23.8 Let ε < 1+1\sqrt2 and let W be a (ε, 2s)-RIP matrix. Let x be an arbitrary vector and denote
+$$
+xs \in argmin kx - vk1 . v:kvk0 \le s
+$$
+That is, xs is the vector which equals x on the s largest elements of x and equals 0 elsewhere. Let y = W x be the compression of x and let
+$$
+x? \in argmin kvk1 v:W v=y
+$$
+$$
+be the reconstructed vector. Then, 1 + \rho -1/2 kx? - xk2 \le 2        s     kx - xs k_1 , 1-\rho \sqrt where \rho =       2\epsilon/(1 - \epsilon).
+$$
+Note that in the special case that x = xs we get an exact recovery, x? = x, so Theorem 23.7 is a special case of Theorem 23.8. The proof of Theorem 23.8 is given in Section 23.3.1. Finally, the third result tells us that random matrices with n \geq  \Omega(s log(d)) are likely to be RIP. In fact, the theorem shows that multiplying a random matrix by an orthonormal matrix also provides an RIP matrix. This is important for compressing signals of the form x = U α where x is not sparse but α is sparse. In that case, if W is a random matrix and we compress using y = W x then this is the same as compressing α by y = (W U )α and since W U is also RIP we can reconstruct α (and thus also x) from y.
+
+<!-- page: 333 -->
+
+theorem 23.9 Let U be an arbitrary fixed d × d orthonormal matrix, let ε, δ be scalars in (0, 1), let s be an integer in [d], and let n be an integer that satisfies
+$$
+s log(40d/(\delta \epsilon)) n \ge 100                    .
+$$
+ε2 Let W ∈ Rn,d be a matrix s.t. each element of W is distributed normally with zero mean and variance of 1/n. Then, with proabability of at least 1 - δ over the choice of W , the matrix W U is (ε, s)-RIP.
+#### 23.3.1    Proofs*
+Proof of Theorem 23.8 We follow a proof due to Candès (2008).
+Let h = x? - x. Given a vector v and a set of indices I we denote by vI the vector whose ith element is vi if i ∈ I and 0 otherwise. The first trick we use is to partition the set of indices [d] = {1, . . . , d} into disjoint sets of size s. That is, we will write [d] = T0 ∪· T1 ∪· T2 . . . Td/s-1 where for all i, |Ti | = s, and we assume for simplicity that d/s is an integer. We define the partition as follows. In T0 we put the s indices corresponding to the s largest elements in absolute values of x (ties are broken arbitrarily). Let T0c = [d] \ T0 . Next, T1 will be the s indices corresponding to the s largest elements in absolute
+$$
+c value of hT0c . Let T_0,1 = T_0 \cup T_1 and T_0,1 = [d] \ T_0,1 . Next, T_2 will correspond to the s largest elements in absolute value of hT0,1
+$$
+c . And, we will construct T3 , T4 , . . .
+in the same way.
+To prove the theorem we first need the following lemma, which shows that RIP also implies approximate orthogonality.
+lemma 23.10 Let W be an (ε, 2s)-RIP matrix. Then, for any two disjoint sets I, J, both of size at most s, and for any vector u we have that hW uI , W uJ i \leq  εkuI k2 kuJ k2 .
+Proof   W.l.o.g. assume kuI k2 = kuJ k2 = 1.
+kW uI + W uJ k22 - kW uI - W uJ k22 hW uI , W uJ i =                                       .
+4 But, since |J ∪ I| \leq  2s we get from the RIP condition that kW uI + W uJ k22 \leq  (1 + ε)(kuI k22 + kuJ k22 ) = 2(1 + ε) and that -kW uI - W uJ k22 \leq  -(1 - ε)(kuI k22 + kuJ k22 ) = -2(1 - ε), which concludes our proof. We are now ready to prove the theorem. Clearly,
+khk2 = khT0,1 + hT0,1
+$$
+c k_2 \le khT
+$$
+0,1 k2 + khT0,1 k2 .
+c                       (23.5) To prove the theorem we will show the following two claims: -1/2 Claim 1:. khT0,1 c k2 \leq  khT k2 + 2s 0 kx - xs k1 . 2ρ -1/2 Claim 2:. khT0,1 k2 \leq  1-ρ s    kx - xs k1 .
+
+<!-- page: 334 -->
+
+Combining these two claims with Equation (23.5) we get that
+$$
+\|h\|_2 \le khT0,1 k_2 + khT0,1
+$$
+$$
+c k_2 \le 2khT    k + 2s-1/2 kx - xs k_1
+$$
+$$
+0,1 2 (         ) 2\rho \le 2 1-\rho   + 1 s-1/2 kx - xs k_1
+$$
+1 + ρ -1/2 =2        s     kx - xs k1 , 1-ρ and this will conclude our proof.
+Proving Claim 1: To prove this claim we do not use the RIP condition at all but only use the fact that x? minimizes the \ell1 norm. Take j > 1. For each i ∈ Tj and i0 ∈ Tj-1 we have that |hi | \leq  |hi0 |. Therefore, khTj k∞ \leq  khTj-1 k1 /s. Thus,
+$$
+khTj k_2 \le s_1/2 khTj k\in fty \le s-1/2 khTj-1 k_1 . Summing this over j = 2, 3, . . . and using the triangle inequality we obtain that
+$$
+$$
+X khT0,1 c k_2 \le        khTj k_2 \le s-1/2 khT0c k_1              (23.6) j\ge 2
+$$
+Next, we show that khT0c k1 cannot be large. Indeed, from the definition of x? we have that kxk1 \geq  kx? k1 = kx + hk1 . Thus, using the triangle inequality we obtain that
+$$
+X             X kxk1 \ge kx+hk1 =      |xi +hi |+    |xi +hi | \ge kxT0 k_1 -khT0 k_1 +khT0c k_1 -kxT0c k_1 i\in T_0             i\in T_0c
+$$
+(23.7) and since kxT0c k1 = kx - xs k1 = kxk1 - kxT0 k1 we get that khT0c k1 \leq  khT0 k1 + 2kxT0c k1 .               (23.8) Combining this with Equation (23.6) we get that -1/2 khT0 k1 + 2kxT0c k1 \leq  khT0 k2 + 2s-1/2 kxT0c k1 , ) khT0,1 c k2 \leq  s
+which concludes the proof of claim 1.
+Proving Claim 2: For the second claim we use the RIP condition to get that
+(1 - ε)khT0,1 k22 \leq  kW hT0,1 k22 .                (23.9) P                   P Since W hT0,1 = W h - j\geq 2 W hTj = - j\geq 2 W hTj we have that X                       X kW hT0,1 k22 = -  hW hT0,1 , W hTj i = -    hW hT0 + W hT1 , W hTj i. j\geq 2                          j\geq 2
+From the RIP condition on inner products we obtain that for all i ∈ {1, 2} and j \geq  2 we have
+$$
+|hW hTi , W hTj i| \le \epsilon khTi k_2 khTj k_2 .
+$$
+
+<!-- page: 335 -->
+
+$$
+\sqrt Since khT0 k_2 + khT1 k_2 \le    2khT0,1 k_2 we therefore get that \sqrt           X kW hT0,1 k_22 \le 2\epsilon khT0,1 k_2     khTj k_2 . j\ge 2
+$$
+$$
+Combining this with Equation (23.6) and Equation (23.9) we obtain \sqrt (1 - \epsilon)khT0,1 k_22 \le 2\epsilon khT0,1 k_2 s-1/2 khT0c k_1 .
+$$
+$$
+Rearranging the inequality gives \sqrt 2\epsilon -1/2 khT0,1 k_2 \le       s    khT0c k_1 . 1-\epsilon Finally, using Equation (23.8) we get that
+$$
+$$
+khT0,1 k_2 \le \rho_s-1/2 (khT0 k_1 + 2kxT0c k_1 ) \le \rho khT0 k_2 + 2\rho_s-1/2 kxT0c k_1 ,
+$$
+$$
+but since khT0 k_2 \le khT0,1 k_2 this implies
+$$
+$$
+2\rho -1/2 khT0,1 k_2 \le        s    kxT0c k_1 , 1-\rho which concludes the proof of the second claim.
+$$
+Proof of Theorem 23.9 To prove the theorem we follow an approach due to (Baraniuk, Davenport, DeVore & Wakin 2008). The idea is to combine the Johnson-Lindenstrauss (JL) lemma with a simple covering argument. We start with a covering property of the unit ball. )d lemma 23.11 Let ε ∈ (0, 1). There exists a finite set Q ⊂ Rd of size |Q| \leq  3ε such that
+$$
+sup   min kx - vk \le \epsilon. x:kxk\le 1 v\in Q
+$$
+Proof    Let k be an integer and let
+$$
+Q_0 = \{x \in Rd : \forall j \in [d], \exists i \in \{-k, -k + 1, . . . , k\} s.t. xj = ki \}.
+$$
+Clearly, |Q0 | = (2k + 1)d . We shall set Q = Q0 ∩ B2 (1), where B2 (1) is the unit \ell2 ball of Rd . Since the points in Q0 are distributed evenly on the unit \ell∞ ball, the size of Q is the size of Q0 times the ratio between the volumes of the unit \ell2 and \ell∞ balls. The volume of the \ell∞ ball is 2d and the volume of B2 (1) is
+$$
+\pi d/2 . Γ(1 + d/2) For simplicity, assume that d is even and therefore ( )d/2 Γ(1 + d/2) = (d/2)! \ge d/2    e   ,
+$$
+
+<!-- page: 336 -->
+
+where in the last inequality we used Stirling’s approximation. Overall we obtained that
+$$
+|Q| \le (2k + 1)d (\pi/e)d/2 (d/2)-d/2 2-d . \tag{23.10}
+$$
+Now lets specify k. For each x ∈ B2 (1) let v ∈ Q be the vector whose ith element is sign(xi ) b|xi | kc/k. Then, for each element we have that |xi - vi | \leq  1/k and thus
+$$
+\sqrt d kx - vk \le     . k
+$$
+\sqrt To ensure that the right-hand side will be at most ε we shall set k = d d/εe. Plugging this value into Equation (23.10) we conclude that \sqrt                             ( q )d         )d |Q| \leq  (3 d/(2ε))d (π/e)d/2 (d/2)-d/2 = 3ε 2e π \leq  3ε .
+Let x be a vector that can be written as x = U α with U being some orthonormal matrix and kαk0 \leq  s. Combining the earlier covering property and the JL lemma (Lemma 23.4) enables us to show that a random W will not distort any such x.
+lemma 23.12 Let U be an orthonormal d × d matrix and let I ⊂ [d] be a set of indices of size |I| = s. Let S be the span of {Ui : i ∈ I}, where Ui is the ith column of U . Let δ ∈ (0, 1), ε ∈ (0, 1), and n ∈ N such that
+$$
+log(2/\delta) + s log(12/\epsilon) n \ge 24                          .
+$$
+ε2 Then, with probability of at least 1-δ over a choice of a random matrix W ∈ Rn,d such that each element of W is independently distributed according to N (0, 1/n), we have kW xk sup        - 1 < ε. x∈S   kxk Proof It suffices to prove the lemma for all x ∈ S with kxk = 1. We can write x = UI α where α ∈ Rs , kαk2 = 1, and UI is the matrix whose columns are {Ui : i ∈ I}. Using Lemma 23.11 we know that there exists a set Q of size |Q| \leq  (12/ε)s such that
+$$
+sup     min k\alpha - vk \le (\epsilon/4). \alpha:k\alpha_k=1 v\in Q
+$$
+But since U is orthogonal we also have that
+$$
+sup     min kUI \alpha - UI vk \le (\epsilon/4). \alpha:k\alpha_k=1 v\in Q
+$$
+Applying Lemma 23.4 on the set {UI v : v ∈ Q} we obtain that for n satisfying
+
+<!-- page: 337 -->
+
+the condition given in the lemma, the following holds with probability of at least
+## 1 - δ:
+$$
+kW UI vk2 sup           - 1 \le \epsilon/2, v\in Q  kUI vk2
+$$
+$$
+This also implies that kW UI vk sup          - 1 \le \epsilon/2. v\in Q  kUI vk
+$$
+$$
+Let a be the smallest number such that kW xk \forall x \in S,         \le 1 + a. kxk
+$$
+Clearly a < ∞. Our goal is to show that a \leq  ε. This follows from the fact that for any x ∈ S of unit norm there exists v ∈ Q such that kx - UI vk \leq  ε/4 and therefore
+$$
+kW xk \le kW UI vk + kW (x - UI v)k \le 1 + \epsilon/2 + (1 + a)\epsilon/4.
+$$
+$$
+Thus, kW xk \forall x \in S,          \le 1 + (\epsilon/2 + (1 + a)\epsilon/4) . kxk
+$$
+But the definition of a implies that
+$$
+\epsilon/2 + \epsilon/4 a \le \epsilon/2 + (1 + a)\epsilon/4 ⇒ a \le                  \le \epsilon. 1 - \epsilon/4
+$$
+This proves that for all x ∈ S we have kW xk
+$$
+kxk - 1 \le \epsilon. The other side follows from this as well since
+$$
+$$
+kW xk \ge kW UI vk - kW (x - UI v)k \ge 1 - \epsilon/2 - (1 + \epsilon)\epsilon/4 \ge 1 - \epsilon.
+$$
+The preceding lemma tells us that for x ∈ S of unit norm we have
+$$
+(1 - \epsilon) \le kW xk \le (1 + \epsilon),
+$$
+which implies that
+$$
+(1 - 2 \epsilon) \le kW xk2 \le (1 + 3 \epsilon).
+$$
+The proof of Theorem 23.9 follows from this by a union bound over all choices of I.
+
+<!-- page: 338 -->
+
+### 23.4   PCA or Compressed Sensing?
+Suppose we would like to apply a dimensionality reduction technique to a given
+set of examples. Which method should we use, PCA or compressed sensing? In
+this section we tackle this question, by underscoring the underlying assumptions
+behind the two methods.
+It is helpful first to understand when each of the methods can guarantee per-
+fect recovery. PCA guarantees perfect recovery whenever the set of examples is
+contained in an n dimensional subspace of Rd . Compressed sensing guarantees
+perfect recovery whenever the set of examples is sparse (in some basis). On the
+basis of these observations, we can describe cases in which PCA will be better
+than compressed sensing and vice versa.
+As a first example, suppose that the examples are the vectors of the standard
+basis of Rd , namely, e1 , . . . , ed , where each ei is the all zeros vector except 1 in the
+ith coordinate. In this case, the examples are 1-sparse. Hence, compressed sensing
+will yield a perfect recovery whenever n \geq  \Omega(log(d)). On the other hand, PCA
+will lead to poor performance, since the data is far from being in an n dimensional
+subspace, as long as n < d. Indeed, it is easy ro verify that in such a case, the
+averaged recovery error of PCA (i.e., the objective of Equation (23.1) divided by
+m) will be (d - n)/d, which is larger than 1/2 whenever n \leq  d/2.
+We next show a case where PCA is better than compressed sensing. Consider
+m examples that are exactly on an n dimensional subspace. Clearly, in such a
+case, PCA will lead to perfect recovery. As to compressed sensing, note that
+the examples are n-sparse in any orthonormal basis whose first n vectors span
+the subspace. Therefore, compressed sensing would also work if we will reduce
+the dimension to \Omega(n log(d)). However, with exactly n dimensions, compressed
+sensing might fail. PCA has also better resilience to certain types of noise. See
+(Chang, Weiss & Freeman 2009) for a discussion.
+### 23.5   Summary
+We introduced two methods for dimensionality reduction using linear transformations: PCA and random projections. We have shown that PCA is optimal in the sense of averaged squared reconstruction error, if we restrict the reconstruction procedure to be linear as well. However, if we allow nonlinear reconstruction, PCA is not necessarily the optimal procedure. In particular, for sparse data, random projections can significantly outperform PCA. This fact is at the heart of the compressed sensing method.
+
+<!-- page: 339 -->
+
+### 23.6   Bibliographic Remarks
+PCA is equivalent to best subspace approximation using singular value decomposition (SVD). The SVD method is described in Appendix C. SVD dates back to Eugenio Beltrami (1873) and Camille Jordan (1874). It has been rediscovered many times. In the statistical literature, it was introduced by Pearson (1901). Besides PCA and SVD, there are additional names that refer to the same idea and are being used in different scientific communities. A few examples are the Eckart-Young theorem (after Carl Eckart and Gale Young who analyzed the method in 1936), the Schmidt-Mirsky theorem, factor analysis, and the Hotelling transform.
+Compressed sensing was introduced in Donoho (2006) and in (Candes & Tao 2005). See also Candes (2006).
+### 23.7   Exercises
+1. In this exercise we show that in the general case, exact recovery of a linear
+compression scheme is impossible.
+1. let A ∈ Rn,d be an arbitrary compression matrix where n \leq  d - 1. Show
+$$
+that there exists u, v \in Rn , u \neq v such that Au = Av.
+$$
+2. Conclude that exact recovery of a linear compression scheme is impossible.
+2. Let α ∈ Rd such that α1 \geq  α2 \geq  · · · \geq  αd \geq  0. Show that
+d X                 n
+$$
+\sum_{max}                  \alpha_j \beta_j   =         \alpha_j . \beta\in[0,1]d :k\beta k_1 \le n j=1               j=1
+$$
+Hint: Take every vector β ∈ [0, 1]d such that kβk1 \leq  n. Let i be the minimal
+index for which βi < 1. If i = n + 1 we are done. Otherwise, show that we can
+increase βi , while possibly decreasing βj for some j > i, and obtain a better
+solution. This will imply that the optimal solution is to set βi = 1 for i \leq  n
+and βi = 0 for i > n.
+3. Kernel PCA: In this exercise we show how PCA can be used for construct-
+ing nonlinear dimensionality reduction on the basis of the kernel trick (see
+Chapter 16).
+Let X be some instance space and let S = {x1 , . . . , xm } be a set of points
+in X . Consider a feature mapping ψ : X → V , where V is some Hilbert space
+(possibly of infinite dimension). Let K : X × X be a kernel function, that is,
+k(x, x0 ) = hψ(x), ψ(x0 )i. Kernel PCA is the process of mapping the elements
+in S into V using ψ, and then applying PCA over {ψ(x1 ), . . . , ψ(xm )} into
+Rn . The output of this process is the set of reduced elements.
+Show how this process can be done in polynomial time in terms of m
+and n, assuming that each evaluation of K(·, ·) can be calculated in a con-
+stant time. In particular, if your implementation requires multiplication of
+two matrices A and B, verify that their product can be computed. Similarly,
+
+<!-- page: 340 -->
+
+if an eigenvalue decomposition of some matrix C is required, verify that this decomposition can be computed.
+4. An Interpretation of PCA as Variance Maximization:
+Let x1 , . . . , xm be m vectors in Rd , and let x be a random vector distributed according to the uniform distribution over x1 , . . . , xm . Assume that E[x] = 0.
+1. Consider the problem of finding a unit vector, w ∈ Rd , such that the
+random variable hw, xi has maximal variance. That is, we would like to solve the problem
+m
+$$
+1 X argmax Var[hw, xi] = argmax           (hw, xi i)2 . w:kwk=1                 w:kwk=1 m i=1
+$$
+Show that the solution of the problem is to set w to be the first principle vector of x1 , . . . , xm .
+2. Let w1 be the first principal component as in the previous question. Now,
+suppose we would like to find a second unit vector, w2 ∈ Rd , that maximizes the variance of hw2 , xi, but is also uncorrelated to hw1 , xi. That is, we would like to solve:
+$$
+argmax                 Var[hw, xi]. w:kwk=1, E[(hw1 ,xi)(hw,xi)]=0
+$$
+Show that the solution to this problem is to set w to be the second principal component of x1 , . . . , xm . Hint: Note that
+$$
+E[(hw1 , xi)(hw, xi)] = w_1> E[xx> ]w = mw1> Aw,
+$$
+> P where A =      i xi xi . Since w is an eigenvector of A we have that the constraint E[(hw1 , xi)(hw, xi)] = 0 is equivalent to the constraint
+hw1 , wi = 0.
+5. The Relation between SVD and PCA: Use the SVD theorem (Corollary C.6) for providing an alternative proof of Theorem 23.2. 6. Random Projections Preserve Inner Products: The Johnson-Lindenstrauss lemma tells us that a random projection preserves distances between a finite set of vectors. In this exercise you need to prove that if the set of vectors are within the unit ball, then not only are the distances between any two vectors preserved, but the inner product is also preserved. Let Q be a finite set of vectors in Rd and assume that for every x ∈ Q we have kxk \leq  1. 1. Let δ ∈ (0, 1) and n be an integer such that r 6 log(|Q|2 /δ) ε=                    \leq  3. n Prove that with probability of at least 1 - δ over a choice of a random
+
+<!-- page: 341 -->
+
+matrix W ∈ Rn,d , where each element of W is independently distributed according to N (0, 1/n), we have
+|hW u, W vi - hu, vi| \leq  ε for every u, v ∈ Q. Hint: Use JL to bound both kWku+vk    (u+v)k
+and kWku-vk
+(u-v)k
+. d
+2. (*) Let x1 , . . . , xm be a set of vectors in R of norm at most 1, and assume
+that these vectors are linearly separable with margin of γ. Assume that d 1/γ 2 . Show that there exists a constant c > 0 such that if we randomly project these vectors into Rn , for n = c/γ 2 , then with probability of at least 99% it holds that the projected vectors are linearly separable with margin γ/2.
+
+<!-- page: 342 -->
+
+## 24 Generative Models
+We started this book with a distribution free learning framework; namely, we did not impose any assumptions on the underlying distribution over the data. Furthermore, we followed a discriminative approach in which our goal is not to learn the underlying distribution but rather to learn an accurate predictor. In this chapter we describe a generative approach, in which it is assumed that the underlying distribution over the data has a specific parametric form and our goal is to estimate the parameters of the model. This task is called parametric density estimation.
+The discriminative approach has the advantage of directly optimizing the quantity of interest (the prediction accuracy) instead of learning the underlying distribution. This was phrased as follows by Vladimir Vapnik in his principle for solving problems using a restricted amount of information:
+When solving a given problem, try to avoid a more general problem as an intermediate step.
+Of course, if we succeed in learning the underlying distribution accurately, we are considered to be “experts” in the sense that we can predict by using the Bayes optimal classifier. The problem is that it is usually more difficult to learn the underlying distribution than to learn an accurate predictor. However, in some situations, it is reasonable to adopt the generative learning approach. For example, sometimes it is easier (computationally) to estimate the parameters of the model than to learn a discriminative predictor. Additionally, in some cases we do not have a specific task at hand but rather would like to model the data either for making predictions at a later time without having to retrain a predictor or for the sake of interpretability of the data. We start with a popular statistical method for estimating the parameters of the data, which is called the maximum likelihood principle. Next, we describe two generative assumptions which greatly simplify the learning process. We also describe the EM algorithm for calculating the maximum likelihood in the presence of latent variables. We conclude with a brief description of Bayesian reasoning.
+
+<!-- page: 343 -->
+
+### 24.1   Maximum Likelihood Estimator
+Let us start with a simple example. A drug company developed a new drug to treat some deadly disease. We would like to estimate the probability of survival when using the drug. To do so, the drug company sampled a training set of m people and gave them the drug. Let S = (x1 , . . . , xm ) denote the training set, where for each i, xi = 1 if the ith person survived and xi = 0 otherwise. We can model the underlying distribution using a single parameter, θ ∈ [0, 1], indicating the probability of survival. We now would like to estimate the parameter θ on the basis of the training set S. A natural idea is to use the average number of 1’s in S as an estimator. That is,
+m
+$$
+1 X \theta{} =         xi .                                            (24.1) m i=1
+$$
+Clearly, ES [θ{}] = θ. That is, θ{} is an unbiased estimator of θ. Furthermore, since θ{} is the average of m i.i.d. binary random variables we can use Hoeffding’s inequality to get that with probability of at least 1 - δ over the choice of S we have that
+$$
+r log(2/\delta) |\theta{} - \theta| \le             . \tag{24.2}
+$$
+2m
+Another interpretation of θ{} is as the Maximum Likelihood Estimator, as we formally explain now. We first write the probability of generating the sample S:
+$$
+m Y                             P                P P[S = (x_1 , . . . , xm )] =         \theta xi (1 - \theta)1-xi = \theta         i xi   (1 - \theta)   i (1-xi )   . i=1
+$$
+We define the log likelihood of S, given the parameter θ, as the log of the preceding expression:
+$$
+X                 X L(S; \theta) = log (P[S = (x_1 , . . . , xm )]) = log(\theta)   xi + log(1 - \theta)    (1 - xi ).
+$$
+i                         i
+$$
+The maximum likelihood estimator is the parameter that maximizes the likelihood \theta{} \in argmax L(S; \theta).                                               (24.3) \theta
+$$
+Next, we show that in our case, Equation (24.1) is a maximum likelihood estimator. To see this, we take the derivative of L(S; θ) with respect to θ and equate it to zero:
+P        P
+i xi      (1 - xi )
+- i            = 0. θ          1-θ Solving the equation for θ we obtain the estimator given in Equation (24.1).
+
+<!-- page: 344 -->
+
+#### 24.1.1   Maximum Likelihood Estimation for Continuous Random Variables
+Let X be a continuous random variable. Then, for most x ∈ R we have P[X = x] = 0 and therefore the definition of likelihood as given before is trivialized. To overcome this technical problem we define the likelihood as log of the density of the probability of X at x. That is, given an i.i.d. training set S = (x1 , . . . , xm ) sampled according to a density distribution Pθ we define the likelihood of S given θ as
+m
+$$
+!    m Y              X L(S; \theta) = log       P\theta (xi ) =      log(P\theta (xi )). i=1             i=1
+$$
+As before, the maximum likelihood estimator is a maximizer of L(S; θ) with respect to θ. As an example, consider a Gaussian random variable, for which the density function of X is parameterized by θ = (\mu, σ) and is defined as follows:
+$$
+(x - \mu)2 (            ) 1 P\theta (x) =  \sqrt    exp -               . σ 2\pi            2σ 2 We can rewrite the likelihood as m
+$$
+$$
+1 X                      \sqrt L(S; \theta) = -     2
+$$
+(xi - \mu)2 - m log(σ 2 π). 2σ i=1
+To find a parameter θ = (\mu, σ) that optimizes this we take the derivative of the likelihood w.r.t. \mu and w.r.t. σ and compare it to 0. We obtain the following two equations:
+$$
+m d           1 X L(S; \theta) = 2    (xi - \mu) = 0 d\mu          σ i=1 m d           1 X              m L(S; \theta) = 3    (xi - \mu)2 -   =0 dσ          σ i=1             σ
+$$
+$$
+Solving the preceding equations we obtain the maximum likelihood estimates: v m                     u    m 1 X                      u_1 X \mu{} =       xi    and     σ{} = t       (xi - \mu{})2 m i=1                      m i=1
+$$
+Note that the maximum likelihood estimate is not always an unbiased estimator. For example, while \mu{} is unbiased, it is possible to show that the estimate σ{} of the variance is biased (Exercise 1).
+Simplifying Notation To simplify our notation, we use P[X = x] in this chapter to describe both the probability that X = x (for discrete random variables) and the density of the distribution at x (for continuous variables).
+
+<!-- page: 345 -->
+
+#### 24.1.2   Maximum Likelihood and Empirical Risk Minimization
+The maximum likelihood estimator shares some similarity with the Empirical Risk Minimization (ERM) principle, which we studied extensively in previous chapters. Recall that in the ERM principle we have a hypothesis class H and we use the training set for choosing a hypothesis h ∈ H that minimizes the empirical risk. We now show that the maximum likelihood estimator is an ERM for a particular loss function. Given a parameter θ and an observation x, we define the loss of θ on x as
+$$
+`(\theta, x) = - log(P\theta [x]). \tag{24.4}
+$$
+That is, `(θ, x) is the negation of the log-likelihood of the observation x, assuming the data is distributed according to Pθ . This loss function is often referred to as the log-loss. On the basis of this definition it is immediate that the maximum likelihood principle is equivalent to minimizing the empirical risk with respect to the loss function given in Equation (24.4). That is,
+m X                                                     m
+$$
+\sum_{argmin}           (- log(P\theta [xi ])) = argmax                          log(P\theta [xi ]). \theta      i=1                                       \theta           i=1
+$$
+Assuming that the data is distributed according to a distribution P (not necessarily of the parametric form we employ), the true risk of a parameter θ becomes
+X E[`(θ, x)] = -   P[x] log(Pθ [x]) x
+x
+(            )                            (        ) X                        P[x]             X                         1         (24.5) =           P[x] log                      +           P[x] log                , x
+Pθ [x]               x
+P[x] |               {z                }       |               {z            } DRE [P||Pθ ]                                 H(P)
+where DRE is called the relative entropy, and H is called the entropy function. The relative entropy is a divergence measure between two probabilities. For discrete variables, it is always nonnegative and is equal to 0 only if the two distributions are the same. It follows that the true risk is minimal when Pθ = P.
+The expression given in Equation (24.5) underscores how our generative assumption affects our density estimation, even in the limit of infinite data. It shows that if the underlying distribution is indeed of a parametric form, then by choosing the correct parameter we can make the risk be the entropy of the distribution. However, if the distribution is not of the assumed parametric form, even the best parameter leads to an inferior model and the suboptimality is measured by the relative entropy divergence.
+#### 24.1.3   Generalization Analysis
+How good is the maximum likelihood estimator when we learn from a finite training set?
+
+<!-- page: 346 -->
+
+To answer this question we need to define how we assess the quality of an approximated solution of the density estimation problem. Unlike discriminative learning, where there is a clear notion of “loss,” in generative learning there are various ways to define the loss of a model. On the basis of the previous subsection, one natural candidate is the expected log-loss as given in Equation (24.5). In some situations, it is easy to prove that the maximum likelihood principle guarantees low true risk as well. For example, consider the problem of estimating the mean of a Gaussian variable of unit variance. We saw previously that the
+## 1                   ?
+$$
+P maximum likelihood estimator is the average: \mu{} = m          i xi . Let \mu be the optimal parameter. Then, (           ) P\mu? [x] E ? [`(\mu{}, x) - `(\mu? , x)] =     E ? log x\sim N (\mu ,1)                       x\sim N (\mu ,1)        P\mu{} [x] (                                 )
+$$
+$$
+1                  1 =     E?       - (x - \mu? )2 + (x - \mu{})2 x\sim N (\mu ,1)     2                  2 2      ? 2 \mu{}    (\mu ) =     -         + (\mu? - \mu{})         E      [x] 2       2                    x\sim N (\mu? ,1)
+$$
+\mu{}2   (\mu? )2 =     -         + (\mu? - \mu{}) \mu?
+2       2 1 = (\mu{} - \mu? )2 .                                 (24.6) 2 Next, we note that \mu{} is the average of m Gaussian variables and therefore it is also distributed normally with mean \mu? and variance σ ? /m. From this fact we can derive bounds of the form: with probability of at least 1 - δ we have that |\mu{} - \mu? | \leq  ε where ε depends on σ ? /m and on δ. In some situations, the maximum likelihood estimator clearly overfits. For example, consider a Bernoulli random variable X and let P[X = 1] = θ? . As we saw previously, using Hoeffding’s inequality we can easily derive a guarantee on |θ? - θ{}| that holds with high probability (see Equation (24.2)). However, if our goal is to obtain a small value of the expected log-loss function as defined in Equation (24.5) we might fail. For example, assume that θ? is nonzero but very small. Then, the probability that no element of a sample of size m will be 1 is ? (1 - θ? )m , which is greater than e-2θ m . It follows that whenever m \leq  log(2)
+2θ ? , the probability that the sample is all zeros is at least 50%, and in that case, the maximum likelihood rule will set θ{} = 0. But the true risk of the estimate θ{} = 0 is
+$$
+E [`(\theta{}, x)] = \theta? `(\theta{}, 1) + (1 - \theta? )`(\theta{}, 0) x\sim\theta ?
+$$
+$$
+= \theta? log(1/\theta{}) + (1 - \theta? ) log(1/(1 - \theta{})) = \theta? log(1/0) = \in fty.
+$$
+This simple example shows that we should be careful in applying the maximum likelihood principle.
+To overcome overfitting, we can use the variety of tools we encountered pre-
+
+<!-- page: 347 -->
+
+viously in the book. A simple regularization technique is outlined in Exercise 2.
+### 24.2   Naive Bayes
+The Naive Bayes classifier is a classical demonstration of how generative assumptions and parameter estimations simplify the learning process. Consider the problem of predicting a label y ∈ {0, 1} on the basis of a vector of features x = (x1 , . . . , xd ), where we assume that each xi is in {0, 1}. Recall that the Bayes optimal classifier is
+$$
+hBayes (x) = argmax P[Y = y|X = x].
+$$
+y∈{0,1}
+To describe the probability function P[Y = y|X = x] we need 2d parameters, each of which corresponds to P[Y = 1|X = x] for a certain value of x ∈ {0, 1}d . This implies that the number of examples we need grows exponentially with the number of features. In the Naive Bayes approach we make the (rather naive) generative assumption that given the label, the features are independent of each other. That is,
+$$
+d Y P[X = x|Y = y] =           P[Xi = xi |Y = y]. i=1
+$$
+$$
+With this assumption and using Bayes’ rule, the Bayes optimal classifier can be further simplified: hBayes (x) = argmax P[Y = y|X = x] y\in\{0,1\}
+$$
+$$
+= argmax P[Y = y]P[X = x|Y = y] y\in\{0,1\} d Y = argmax P[Y = y]             P[Xi = xi |Y = y].       (24.7) y\in\{0,1\}             i=1
+$$
+That is, now the number of parameters we need to estimate is only 2d + 1. Here, the generative assumption we made reduced significantly the number of parameters we need to learn. When we also estimate the parameters using the maximum likelihood principle, the resulting classifier is called the Naive Bayes classifier.
+### 24.3   Linear Discriminant Analysis
+Linear discriminant analysis (LDA) is another demonstration of how generative assumptions simplify the learning process. As in the Naive Bayes classifier we consider again the problem of predicting a label y ∈ {0, 1} on the basis of a
+
+<!-- page: 348 -->
+
+vector of features x = (x1 , . . . , xd ). But now the generative assumption is as follows. First, we assume that P[Y = 1] = P[Y = 0] = 1/2. Second, we assume that the conditional probability of X given Y is a Gaussian distribution. Finally, the covariance matrix of the Gaussian distribution is the same for both values of the label. Formally, let \mu0 , \mu1 ∈ Rd and let Σ be a covariance matrix. Then, the density distribution is given by
+(                             )
+$$
+1                1          T -1 P[X = x|Y = y] =                      exp   -   (x - \mu_y ) \Sigma   (x - \mu_y )   . (2\pi)d/2 |\Sigma|1/2           2 As we have shown in the previous section, using Bayes’ rule we can write
+$$
+$$
+hBayes (x) = argmax P[Y = y]P[X = x|Y = y]. y\in\{0,1\}
+$$
+This means that we will predict hBayes (x) = 1 iff
+$$
+(                           ) P[Y = 1]P[X = x|Y = 1] log                               > 0. P[Y = 0]P[X = x|Y = 0] This ratio is often called the log-likelihood ratio. In our case, the log-likelihood ratio becomes
+$$
+T -1 1
+## 2 (x - \mu0 ) Σ   (x - \mu0 ) - 21 (x - \mu1 )T Σ-1 (x - \mu1 )
+We can rewrite this as hw, xi + b where
+$$
+w = (\mu_1 - \mu_0 )T \Sigma-1      and b = 21 \mu T_0 \Sigma-1 \mu_0 - \mu T_1 \Sigma-1 \mu_1 . ) \tag{24.8}
+$$
+As a result of the preceding derivation we obtain that under the aforementioned generative assumptions, the Bayes optimal classifier is a linear classifier. Additionally, one may train the classifier by estimating the parameter \mu0 , \mu1 and Σ from the data, using, for example, the maximum likelihood estimator. With those estimators at hand, the values of w and b can be calculated as in Equation (24.8).
+### 24.4   Latent Variables and the EM Algorithm
+In generative models we assume that the data is generated by sampling from a specific parametric distribution over our instance space X . Sometimes, it is convenient to express this distribution using latent random variables. A natural example is a mixture of k Gaussian distributions. That is, X = Rd and we assume that each x is generated as follows. First, we choose a random number in {1, . . . , k}. Let Y be a random variable corresponding to this choice, and denote P[Y = y] = cy . Second, we choose x on the basis of the value of Y according to a Gaussian distribution
+(                          )
+$$
+1               1         T -1 P[X = x|Y = y] =                         exp - (x - \mu_y ) \Sigma_y (x - \mu_y ) . (24.9) (2\pi)d/2 |\Sigma_y |1/2      2
+$$
+
+<!-- page: 349 -->
+
+$$
+Therefore, the density of X can be written as: k X P[X = x] =             P[Y = y]P[X = x|Y = y] y=1 k                        (                        ) X          1               1         T -1 =     cy                  exp - (x - \mu_y ) \Sigma_y (x - \mu_y ) . y=1 (2\pi)d/2 |\Sigma_y |1/2      2
+$$
+Note that Y is a hidden variable that we do not observe in our data. Nevertheless, we introduce Y since it helps us describe a simple parametric form of the probability of X.
+More generally, let θ be the parameters of the joint distribution of X and Y (e.g., in the preceding example, θ consists of cy , \muy , and Σy , for all y = 1, . . . , k). Then, the log-likelihood of an observation x can be written as
+k
+$$
+! X log (P\theta [X = x]) = log      P\theta [X = x, Y = y] . y=1
+$$
+Given an i.i.d. sample, S = (x1 , . . . , xm ), we would like to find θ that maximizes the log-likelihood of S,
+$$
+m Y L(\theta) = log             P\theta [X = xi ] i=1 m X =         log P\theta [X = xi ] i=1 m             k
+$$
+$$
+! X             X =         log            P\theta [X = xi , Y = y] . i=1           y=1
+$$
+$$
+The maximum-likelihood estimator is therefore the solution of the maximization problem m        k ! X        X argmax L(\theta) = argmax          log      P\theta [X = xi , Y = y] . \theta                        \theta        i=1         y=1
+$$
+In many situations, the summation inside the log makes the preceding optimization problem computationally hard. The Expectation-Maximization (EM) algorithm, due to Dempster, Laird, and Rubin, is an iterative procedure for searching a (local) maximum of L(θ). While EM is not guaranteed to find the global maximum, it often works reasonably well in practice. EM is designed for those cases in which, had we known the values of the latent variables Y , then the maximum likelihood optimization problem would have been tractable. More precisely, define the following function over m × k matrices and the set of parameters θ:
+$$
+m X X k F (Q, \theta) =                 Qi,y log (P\theta [X = xi , Y = y]) . i=1 y=1
+$$
+
+<!-- page: 350 -->
+
+If each row of Q defines a probability over the ith latent variable given X = xi , then we can interpret F (Q, θ) as the expected log-likelihood of a training set (x1 , y1 ), . . . , (xm , ym ), where the expectation is with respect to the choice of each yi on the basis of the ith row of Q. In the definition of F , the summation is outside the log, and we assume that this makes the optimization problem with respect to θ tractable: assumption 24.1 For any matrix Q ∈ [0, 1]m,k , such that each row of Q sums to 1, the optimization problem
+$$
+argmax F (Q, \theta)
+$$
+θ
+is tractable.
+The intuitive idea of EM is that we have a “chicken and egg” problem. On one hand, had we known Q, then by our assumption, the optimization problem of finding the best θ is tractable. On the other hand, had we known the parameters θ we could have set Qi,y to be the probability of Y = y given that X = xi . The EM algorithm therefore alternates between finding θ given Q and finding Q given θ. Formally, EM finds a sequence of solutions (Q(1) , θ (1) ), (Q(2) , θ (2) ), . . . where at iteration t, we construct (Q(t+1) , θ (t+1) ) by performing two steps.
+- Expectation Step: Set
+(t+1) Qi,y      = Pθ(t) [Y = y|X = xi ].                  (24.10) This step is called the Expectation step, because it yields a new probability over the latent variables, which defines a new expected log-likelihood function over θ.
+- Maximization Step: Set θ (t+1) to be the maximizer of the expected log-
+likelihood, where the expectation is according to Q(t+1) :
+$$
+\theta (t+1) = argmax F (Q(t+1) , \theta). \tag{24.11}
+$$
+θ
+By our assumption, it is possible to solve this optimization problem efficiently. The initial values of θ (1) and Q(1) are usually chosen at random and the procedure terminates after the improvement in the likelihood value stops being significant.
+#### 24.4.1   EM as an Alternate Maximization Algorithm
+To analyze the EM algorithm, we first view it as an alternate maximization algorithm. Define the following objective function
+$$
+m X X k G(Q, \theta) = F (Q, \theta) -               Qi,y log(Qi,y ). i=1 y=1
+$$
+
+<!-- page: 351 -->
+
+The second term is the sum of the entropies of the rows of Q. Let
+$$
+(                                   k ) X m,k Q=          Q \in [0, 1]            : \forall i,             Qi,y = 1 y=1
+$$
+be the set of matrices whose rows define probabilities over [k]. The following lemma shows that EM performs alternate maximization iterations for maximizing G.
+lemma 24.2       The EM procedure can be rewritten as:
+$$
+Q(t+1) = argmax G(Q, \theta (t) ) Q\in Q (t+1) \theta           = argmax G(Q(t+1) , \theta) . \theta
+$$
+Furthermore, G(Q(t+1) , θ (t) ) = L(θ (t) ).
+Proof   Given Q(t+1) we clearly have that
+$$
+argmax G(Q(t+1) , \theta) = argmax F (Q(t+1) , \theta). \theta                                        \theta
+$$
+Therefore, we only need to show that for any θ, the solution of argmaxQ∈Q G(Q, θ) is to set Qi,y = Pθ [Y = y|X = xi ]. Indeed, by Jensen’s inequality, for any Q ∈ Q we have that
+$$
+m k                        (                          )! X X                            P\theta [X = xi , Y = y] G(Q, \theta) =                      Qi,y log i=1     y=1 Qi,y m               k !! X               X P\theta [X = xi , Y = y] \le       log      Qi,y i=1        y=1 Qi,y m        k ! X         X =     log      P\theta [X = xi , Y = y] i=1            y=1 Xm =          log (P\theta [X = xi ]) = L(\theta), i=1
+$$
+
+<!-- page: 352 -->
+
+$$
+while for Qi,y = P\theta [Y = y|X = xi ] we have
+$$
+$$
+m k                                    (                         )! X X                                        P\theta [X = xi , Y = y] G(Q, \theta) =                 P\theta [Y = y|X = xi ] log i=1    y=1
+$$
+$$
+P\theta [Y = y|X = xi ] m X X k =             P\theta [Y = y|X = xi ] log (P\theta [X = xi ]) i=1 y=1 m X                          k X =         log (P\theta [X = xi ])         P\theta [Y = y|X = xi ] i=1                        y=1 Xm =         log (P\theta [X = xi ]) = L(\theta). i=1
+$$
+$$
+This shows that setting Qi,y = P\theta [Y = y|X = xi ] maximizes G(Q, \theta) over Q \in Q and shows that G(Q(t+1) , \theta (t) ) = L(\theta (t) ).
+$$
+The preceding lemma immediately implies:
+theorem 24.3         The EM procedure never decreases the log-likelihood; namely, for all t,
+$$
+L(\theta (t+1) ) \ge L(\theta (t) ).
+$$
+Proof   By the lemma we have
+$$
+L(\theta (t+1) ) = G(Q(t+2) , \theta (t+1) ) \ge G(Q(t+1) , \theta (t) ) = L(\theta (t) ).
+$$
+#### 24.4.2   EM for Mixture of Gaussians (Soft k-Means)
+Consider the case of a mixture of k Gaussians in which θ is a triplet (c, {\mu1 , . . . , \muk }, {Σ1 , . . . , Σk }) where Pθ [Y = y] = cy and Pθ [X = x|Y = y] is as given in Equation (24.9). For simplicity, we assume that Σ1 = Σ2 = · · · = Σk = I, where I is the identity matrix. Specifying the EM algorithm for this case we obtain the following:
+- Expectation step: For each i ∈ [m] and y ∈ [k] we have that
+$$
+1 P\theta(t) [Y = y|X = xi ] =   P (t) [Y = y] P\theta(t) [X = xi |Y = y] Zi \theta
+$$
+(                   )
+1 (t)           1 =        cy exp - kxi - \mu(t)    y k 2
+$$
+,    (24.12) Zi               2 P where Zi is a normalization factor which ensures that y P\theta(t) [Y = y|X = xi ] sums to 1.
+$$
+- Maximization step: We need to set θ t+1 to be a maximizer of Equation (24.11),
+
+<!-- page: 353 -->
+
+$$
+which in our case amounts to maximizing the following expression w.r.t. c and \mu: m X k                       (                       ) X                                       1          2 P\theta(t) [Y = y|X = xi ] log(cy ) - kxi - \mu_y k .      (24.13) i=1 y=1 2
+$$
+Comparing the derivative of Equation (24.13) w.r.t. \muy to zero and rearranging terms we obtain:
+$$
+Pm i=1 P\theta (t) [Y = y|X = xi ] xi \mu_y = P    m                           .
+$$
+$$
+i=1 P\theta (t) [Y = y|X = xi ] That is, \mu_y is a weighted average of the xi where the weights are according to the probabilities calculated in the E step. To find the optimal c we need to be more careful since we must ensure that c is a probability vector. In Exercise 3 we show that the solution is: Pm P\theta(t) [Y = y|X = xi ] cy = Pk i=1      Pm                           . \tag{24.14}
+$$
+$$
+0 y 0 =1  i=1 P\theta (t) [Y = y |X = xi ]
+$$
+It is interesting to compare the preceding algorithm to the k-means algorithm described in Chapter 22. In the k-means algorithm, we first assign each example to a cluster according to the distance kxi - \muy k. Then, we update each center \muy according to the average of the examples assigned to this cluster. In the EM approach, however, we determine the probability that each example belongs to each cluster. Then, we update the centers on the basis of a weighted sum over the entire sample. For this reason, the EM approach for k-means is sometimes called “soft k-means.”
+### 24.5   Bayesian Reasoning
+The maximum likelihood estimator follows a frequentist approach. This means that we refer to the parameter θ as a fixed parameter and the only problem is that we do not know its value. A different approach to parameter estimation is called Bayesian reasoning. In the Bayesian approach, our uncertainty about θ is also modeled using probability theory. That is, we think of θ as a random variable as well and refer to the distribution P[θ] as a prior distribution. As its name indicates, the prior distribution should be defined by the learner prior to observing the data.
+As an example, let us consider again the drug company which developed a new drug. On the basis of past experience, the statisticians at the drug company believe that whenever a drug has reached the level of clinic experiments on people, it is likely to be effective. They model this prior belief by defining a density distribution on θ such that
+(
+$$
+0.8 if \theta > 0.5 P[\theta] = \tag{24.15}
+$$
+### 0.2 if θ \leq  0.5
+
+<!-- page: 354 -->
+
+As before, given a specific value of θ, it is assumed that the conditional probability, P[X = x|θ], is known. In the drug company example, X takes values in {0, 1} and P[X = x|θ] = θx (1 - θ)1-x .
+Once the prior distribution over θ and the conditional distribution over X given θ are defined, we again have complete knowledge of the distribution over X. This is because we can write the probability over X as a marginal probability
+$$
+X                   X P[X = x] =       P[X = x, \theta] =      P[\theta]P[X = x|\theta], \theta                    \theta
+$$
+where the last equality follows from the definition of conditional probability. If θ is continuous we replace P[θ] with the density function and the sum becomes an integral:
+$$
+Z P[X = x] = P[\theta]P[X = x|\theta] d\theta. \theta
+$$
+Seemingly, once we know P[X = x], a training set S = (x1 , . . . , xm ) tells us nothing as we are already experts who know the distribution over a new point X. However, the Bayesian view introduces dependency between S and X. This is because we now refer to θ as a random variable. A new point X and the previous points in S are independent only conditioned on θ. This is different from the frequentist philosophy in which θ is a parameter that we might not know, but since it is just a parameter of the distribution, a new point X and previous points S are always independent. In the Bayesian framework, since X and S are not independent anymore, what we would like to calculate is the probability of X given S, which by the chain rule can be written as follows:
+$$
+X                             X P[X = x|S] =       P[X = x|\theta, S] P[\theta|S] =       P[X = x|\theta] P[\theta|S]. \theta                                 \theta
+$$
+The second inequality follows from the assumption that X and S are independent when we condition on θ. Using Bayes’ rule we have
+P[S|θ] P[θ] P[θ|S] =                , P[S] and together with the assumption that points are independent conditioned on θ, we can write m P[S|θ] P[θ]    1 Y P[θ|S] =              =          P[X = xi |θ] P[θ]. P[S]       P[S] i=1 We therefore obtain the following expression for Bayesian prediction: m
+$$
+1 X            Y P[X = x|S] =         P[X = x|\theta]     P[X = xi |\theta] P[\theta].             (24.16) P[S]            i=1
+$$
+θ
+$$
+Getting back to our drug company example, we can rewrite P[X = x|S] as Z 1        P                P P[X = x|S] =           \theta_x+ i xi (1 - \theta)1-x+ i (1-xi ) P[\theta] d\theta. P [S]
+$$
+
+<!-- page: 355 -->
+
+It is interesting to note that when P[θ] is uniform we obtain that
+Z    P               P P[X = x|S] \propto  θx+ i xi (1 - θ)1-x+ i (1-xi ) dθ.
+Solving the preceding integral (using integration by parts) we obtain
+P ( i xi ) + 1 P[X = 1|S] =                 . m+2 Recall that the prediction P     according to the maximum likelihood principle in this i xi case is P[X = 1|θ{}] = m . The Bayesian prediction with uniform prior is rather similar to the maximum likelihood prediction, except it adds “pseudoexamples” to the training set, thus biasing the prediction toward the uniform prior.
+Maximum A Posteriori In many situations, it is difficult to find a closed form solution to the integral given in Equation (24.16). Several numerical methods can be used to approximate this integral. Another popular solution is to find a single θ which maximizes P[θ|S]. The value of θ which maximizes P[θ|S] is called the Maximum A Poste-riori estimator. Once this value is found, we can calculate the probability that X = x given the maximum a posteriori estimator and independently on S.
+### 24.6   Summary
+In the generative approach to machine learning we aim at modeling the distribution over the data. In particular, in parametric density estimation we further assume that the underlying distribution over the data has a specific parametric form and our goal is to estimate the parameters of the model. We have described several principles for parameter estimation, including maximum likelihood, Bayesian estimation, and maximum a posteriori. We have also described several specific algorithms for implementing the maximum likelihood under different assumptions on the underlying data distribution, in particular, Naive Bayes, LDA, and EM.
+### 24.7   Bibliographic Remarks
+The maximum likelihood principle was studied by Ronald Fisher in the beginning of the 20th century. Bayesian statistics follow Bayes’ rule, which is named after the 18th century English mathematician Thomas Bayes.
+There are many excellent books on the generative and Bayesian approaches to machine learning. See, for example, (Bishop 2006, Koller & Friedman 2009, MacKay 2003, Murphy 2012, Barber 2012).
+
+<!-- page: 356 -->
+
+### 24.8   Exercises
+1. Prove that the maximum likelihood estimator of the variance of a Gaussian
+variable is biased.
+2. Regularization for Maximum Likelihood: Consider the following regularized
+loss minimization:
+m
+## 1 X                     1
+log(1/Pθ [xi ]) +   (log(1/θ) + log(1/(1 - θ))) . m i=1                    m
+- Show that the preceding objective is equivalent to the usual empirical error
+had we added two pseudoexamples to the training set. Conclude that the regularized maximum likelihood estimator would be
+m
+!
+$$
+1          X \theta{} =          1+      xi . m+2          i=1
+$$
+- Derive a high probability bound on |θ{} -θ? |. Hint: Rewrite this as |θ{} -E[θ{}]+
+E[θ{}] - θ? | and then use the triangle inequality and Hoeffding inequality.
+- Use this to bound the true risk. Hint: Use the fact that now θ{} \geq  m+2         to
+? relate |θ{} - θ | to the relative entropy.
+3. \bullet  Consider a general optimization problem of the form:
+$$
+k X                                    X max             νy log(cy )   s.t.   cy > 0,           cy = 1 , c y=1                                      y
+$$
+where ν ∈ Rk+ is a vector of nonnegative weights. Verify that the M step of soft k-means involves solving such an optimization problem.
+- Let c? = P 1 νy ν. Show that c? is a probability vector.
+y
+- Show that the optimization problem is equivalent to the problem:
+X min DRE (c? ||c) s.t. cy > 0,     cy = 1 . c
+y
+- Using properties of the relative entropy, conclude that c? is the solution to
+the optimization problem.
+
+<!-- page: 357 -->
+
+## 25 Feature Selection and Generation
+In the beginning of the book, we discussed the abstract model of learning, in which the prior knowledge utilized by the learner is fully encoded by the choice of the hypothesis class. However, there is another modeling choice, which we have so far ignored: How do we represent the instance space X ? For example, in the papayas learning problem, we proposed the hypothesis class of rectangles in the softness-color two dimensional plane. That is, our first modeling choice was to represent a papaya as a two dimensional point corresponding to its softness and color. Only after that did we choose the hypothesis class of rectangles as a class of mappings from the plane into the label set. The transformation from the real world object “papaya” into the scalar representing its softness or its color is called a feature function or a feature for short; namely, any measurement of the real world object can be regarded as a feature. If X is a subset of a vector space, each x ∈ X is sometimes referred to as a feature vector. It is important to understand that the way we encode real world objects as an instance space X is by itself prior knowledge about the problem.
+Furthermore, even when we already have an instance space X which is represented as a subset of a vector space, we might still want to change it into a different representation and apply a hypothesis class on top of it. That is, we may define a hypothesis class on X by composing some class H on top of a feature function which maps X into some other vector space X 0 . We have already encountered examples of such compositions – in Chapter 15 we saw that kernel-based SVM learns a composition of the class of halfspaces over a feature mapping ψ that maps each original instance in X into some Hilbert space. And, indeed, the choice of ψ is another form of prior knowledge we impose on the problem. In this chapter we study several methods for constructing a good feature set. We start with the problem of feature selection, in which we have a large pool of features and our goal is to select a small number of features that will be used by our predictor. Next, we discuss feature manipulations and normalization. These include simple transformations that we apply on our original features. Such transformations may decrease the sample complexity of our learning algorithm, its bias, or its computational complexity. Last, we discuss several approaches for feature learning. In these methods, we try to automate the process of feature construction.
+
+<!-- page: 358 -->
+
+We emphasize that while there are some common techniques for feature learning one may want to try, the No-Free-Lunch theorem implies that there is no ultimate feature learner. Any feature learning algorithm might fail on some problem. In other words, the success of each feature learner relies (sometimes implicitly) on some form of prior assumption on the data distribution. Furthermore, the relative quality of features highly depends on the learning algorithm we are later going to apply using these features. This is illustrated in the following example. Example 25.1 Consider a regression problem in which X = R2 , Y = R, and the loss function is the squared loss. Suppose that the underlying distribution is such that an example (x, y) is generated as follows: First, we sample x1 from the uniform distribution over [-1, 1]. Then, we deterministically set y = x1 2 . Finally, the second feature is set to be x2 = y + z, where z is sampled from the uniform distribution over [-0.01, 0.01]. Suppose we would like to choose a single feature. Intuitively, the first feature should be preferred over the second feature as the target can be perfectly predicted based on the first feature alone, while it cannot be perfectly predicted based on the second feature. Indeed, choosing the first feature would be the right choice if we are later going to apply polynomial regression of degree at least 2. However, if the learner is going to be a linear regressor, then we should prefer the second feature over the first one, since the optimal linear predictor based on the first feature will have a larger risk than the optimal linear predictor based on the second feature.
+### 25.1   Feature Selection
+Throughout this section we assume that X = Rd . That is, each instance is represented as a vector of d features. Our goal is to learn a predictor that only relies on k d features. Predictors that use only a small subset of features require a smaller memory footprint and can be applied faster. Furthermore, in applications such as medical diagnostics, obtaining each possible “feature” (e.g., test result) can be costly; therefore, a predictor that uses only a small number of features is desirable even at the cost of a small degradation in performance, relative to a predictor that uses more features. Finally, constraining the hypothesis class to use a small subset of features can reduce its estimation error and thus prevent overfitting.
+Ideally, we could have tried all subsets of k out of d features and choose the subset which leads to the best performing predictor. However, such an exhaustive search is usually computationally intractable. In the following we describe three computationally feasible approaches for feature selection. While these methods cannot guarantee finding the optimal subset, they often work reasonably well in practice. Some of the methods come with formal guarantees on the quality of the selected subsets under certain assumptions. We do not discuss these guarantees here.
+
+<!-- page: 359 -->
+
+#### 25.1.1   Filters
+Maybe the simplest approach for feature selection is the filter method, in which we assess individual features, independently of other features, according to some quality measure. We can then select the k features that achieve the highest score (alternatively, decide also on the number of features to select according to the value of their scores). Many quality measures for features have been proposed in the literature. Maybe the most straightforward approach is to set the score of a feature according to the error rate of a predictor that is trained solely by that feature. To illustrate this, consider a linear regression problem with the squared loss. Let v = (x1,j , . . . , xm,j ) ∈ Rm be a vector designating the values of the jth feature on a training set of m examples and let y = (y1 , . . . , ym ) ∈ Rm be the values of the target on the same m examples. The empirical squared loss of an ERM linear predictor that uses only the jth feature would be
+1 min       kav + b - yk2 , a,b∈R m
+where the meaning of adding a scalar b to a vector v is adding b to all coordinates
+1 Pm of v. To solve this problem, let v̄ = m      i=1 vi be the averaged value of the 1 Pm feature and let ȳ = m  i=1 yi be the  averaged   value of the target. Clearly (see Exercise 1),
+$$
+1                       1 min     kav + b - yk2 = min ka(v - v̄) + b - (y - ȳ)k_2 .           (25.1) a,b\in R m                 a,b\in R m
+$$
+Taking the derivative of the right-hand side objective with respect to b and comparing it to zero we obtain that b = 0. Similarly, solving for a (once we know that b = 0) yields a = hv - v̄, y - ȳi/kv - v̄k2 . Plugging this value back into the objective we obtain the value
+(hv - v̄, y - ȳi)2 ky - ȳk2 -                        .
+kv - v̄k2 Ranking the features according to the minimal loss they achieve is equivalent to ranking them according to the absolute value of the following score (where now a higher score yields a better feature): 1 hv - v̄, y - ȳi         hv - v̄, y - ȳi = q m          q              .            (25.2) kv - v̄k ky - ȳk    1         2    1         2 m kv - v̄k     m ky - ȳk
+The preceding expression is known as Pearson’s correlation coefficient. The numerator is the empirical estimate of the covariance of the jth feature and the target value, E[(v - E v)(y - E y)], while the denominator is the squared root of the empirical estimate for the variance of the jth feature, E[(v - E v)2 ], times the variance of the target. Pearson’s coefficient ranges from -1 to 1, where if the Pearson’s coefficient is either 1 or -1, there is a linear mapping from v to y with zero empirical risk.
+
+<!-- page: 360 -->
+
+If Pearson’s coefficient equals zero it means that the optimal linear function from v to y is the all-zeros function, which means that v alone is useless for predicting y. However, this does not mean that v is a bad feature, as it might be the case that together with other features v can perfectly predict y. Indeed, consider a simple example in which the target is generated by the function y = x1 + 2x2 . Assume also that x1 is generated from the uniform distribution over {\pm 1}, and x2 = - 21 x1 + 12 z, where z is also generated i.i.d. from the uniform distribution over {\pm 1}. Then, E[x1 ] = E[x2 ] = E[y] = 0, and we also have
+$$
+E[yx1 ] = E[x_21 ] + 2 E[x_2 x_1 ] = E[x_21 ] - E[x_21 ] + E[zx1 ] = 0.
+$$
+Therefore, for a large enough training set, the first feature is likely to have a Pearson’s correlation coefficient that is close to zero, and hence it will most probably not be selected. However, no function can predict the target value well without knowing the first feature. There are many other score functions that can be used by a filter method. Notable examples are estimators of the mutual information or the area under the receiver operating characteristic (ROC) curve. All of these score functions suffer from similar problems to the one illustrated previously. We refer the reader to Guyon & Elisseeff (2003).
+#### 25.1.2   Greedy Selection Approaches
+Greedy selection is another popular approach for feature selection. Unlike filter methods, greedy selection approaches are coupled with the underlying learning algorithm. The simplest instance of greedy selection is forward greedy selection. We start with an empty set of features, and then we gradually add one feature at a time to the set of selected features. Given that our current set of selected features is I, we go over all i ∈
+/ I, and apply the learning algorithm on the set of features I ∪ {i}. Each such application yields a different predictor, and we choose to add the feature that yields the predictor with the smallest risk (on the training set or on a validation set). This process continues until we either select k features, where k is a predefined budget of allowed features, or achieve an accurate enough predictor. Example 25.2 (Orthogonal Matching Pursuit) To illustrate the forward greedy selection approach, we specify it to the problem of linear regression with the squared loss. Let X ∈ Rm,d be a matrix whose rows are the m training instances. Let y ∈ Rm be the vector of the m labels. For every i ∈ [d], let Xi be the ith column of X. Given a set I ⊂ [d] we denote by XI the matrix whose columns are {Xi : i ∈ I}. The forward greedy selection method starts with I0 = ∅. At iteration t, we look for the feature index jt , which is in
+$$
+argmin mint kXIt-1 \cup\{j\} w - yk2 . j    w\in R
+$$
+
+<!-- page: 361 -->
+
+$$
+Then, we update It = It-1 \cup \{jt \}.
+$$
+We now describe a more efficient implementation of the forward greedy selection approach for linear regression which is called Orthogonal Matching Pursuit (OMP). The idea is to keep an orthogonal basis of the features aggregated so far. Let Vt be a matrix whose columns form an orthonormal basis of the columns of XIt . Clearly,
+$$
+min kXIt w - yk2 = mint kVt \theta - yk2 . w                              \theta\in R
+$$
+We will maintain a vector θ t which minimizes the right-hand side of the equation.
+$$
+Initially, we set I_0 = ∅, V_0 = ∅, and \theta 1 to be the empty vector. At round t, for
+$$
+> every j, we decompose Xj = vj + uj where vj = Vt-1 Vt-1        Xj is the projection of Xj onto the subspace spanned by Vt-1 and uj is the part of Xj orthogonal to Vt-1 (see Appendix C). Then,
+min kVt-1 θ + αuj - yk2 θ,α
+= min kVt-1 θ - yk2 + α2 kuj k2 + 2αhuj , Vt-1 θ - yi
+[                                             ] θ,α
+= min kVt-1 θ - yk2 + α2 kuj k2 + 2αhuj , -yi
+[                                     ] θ,α
+= min kVt-1 θ - yk2 + min α2 kuj k2 - 2αhuj , yi
+[              ]     [                      ] θ                   α
+$$
+= kVt-1 \theta t-1 - yk + min \alpha_2 kuj k_2 - 2\alpha huj , yi 2 [                 ]     [                      ] \alpha (huj , yi)2 = kVt-1 \theta t-1 - yk2 -             . kuj k_2
+$$
+It follows that we should select the feature
+$$
+(huj , yi)2 jt = argmax                          . j             kuj k_2
+$$
+$$
+The rest of the update is to set [                   ]                     [                  ] ujt                                     hujt , yi Vt = Vt-1 ,                     ,        \theta t = \theta t-1 ;             . kujt k_2                                   kujt k_2
+$$
+The OMP procedure maintains an orthonormal basis of the selected features, where in the preceding description, the orthonormalization property is obtained by a procedure similar to Gram-Schmidt orthonormalization. In practice, the Gram-Schmidt procedure is often numerically unstable. In the pseudocode that follows we use SVD (see Section C.4) at the end of each round to obtain an orthonormal basis in a numerically stable manner.
+
+<!-- page: 362 -->
+
+```
+Orthogonal Matching Pursuit (OMP)
+input:
+data matrix X ∈ Rm,d , labels vector y ∈ Rm ,
+budget of features T
+initialize: I1 = ∅
+for t = 1, . . . , T
+use SVD to find an orthonormal basis V ∈ Rm,t-1 of XIt
+(for t = 1 set V to be the all zeros matrix)
+foreach j ∈ [d] \ It let uj = Xj - V V > Xj
+(huj ,yi)2
+let jt = argmaxj ∈I
+/ t :kuj k>0     kuj k2
+update It+1 = It ∪ {jt }
+output IT +1
+```
+More Efficient Greedy Selection Criteria Let R(w) be the empirical risk of a vector w. At each round of the forward greedy selection method, and for every possible j, we should minimize R(w) over the vectors w whose support is It-1 ∪ {j}. This might be time consuming. A simpler approach is to choose jt that minimizes
+$$
+argmin min R(wt-1 + \eta ej ), j    \eta\in R
+$$
+where ej is the all zeros vector except 1 in the jth element. That is, we keep the weights of the previously chosen coordinates intact and only optimize over the new variable. Therefore, for each j we need to solve an optimization problem over a single variable, which is a much easier task than optimizing over t. An even simpler approach is to upper bound R(w) using a “simple” function and then choose the feature which leads to the largest decrease in this upper bound. For example, if R is a β-smooth function (see Equation (12.5) in Chapter 12), then
+$$
+\partial R(w) R(w + \eta ej ) \le R(w) + \eta             + \beta\eta 2 /2. \partial wj
+$$
+$$
+Minimizing the right-hand side over \eta yields \eta = - \partial R(w)   1 \partial wj · \beta and plugging this value into the above yields (       )2 1 \partial R(w) R(w + \eta ej ) \le R(w) -                 . 2\beta    \partial wj
+$$
+This value is minimized if the partial derivative of R(w) with respect to wj is
+maximal. We can therefore choose jt to be the index of the largest coordinate of
+the gradient of R(w) at w.
+Remark 25.3 (AdaBoost as a Forward Greedy Selection Procedure) It is pos-
+sible to interpret the AdaBoost algorithm from Chapter 10 as a forward greedy
+
+<!-- page: 363 -->
+
+$$
+selection procedure with respect to the function (         (                    )) Xm            Xd R(w) = log (      exp (-yi      wj hj (xi ))) .                        (25.3) i=1          j=1
+$$
+See Exercise 3.
+Backward Elimination Another popular greedy selection approach is backward elimination. Here, we start with the full set of features, and then we gradually remove one feature at a time from the set of features. Given that our current set of selected features is I, we go over all i ∈ I, and apply the learning algorithm on the set of features I \{i}. Each such application yields a different predictor, and we choose to remove the feature i for which the predictor obtained from I \ {i} has the smallest risk (on the training set or on a validation set).
+Naturally, there are many possible variants of the backward elimination idea. It is also possible to combine forward and backward greedy steps.
+#### 25.1.3   Sparsity-Inducing Norms
+The problem of minimizing the empirical risk subject to a budget of k features can be written as
+$$
+min LS (w)      s.t.   kwk0 \le k, w
+$$
+$$
+where1 kwk0 = |\{i : wi \neq 0\}|.
+$$
+In other words, we want w to be sparse, which implies that we only need to measure the features corresponding to nonzero elements of w. Solving this optimization problem is computationally hard (Natarajan 1995, Davis, Mallat & Avellaneda 1997). A possible relaxation is to replace the non-
+$$
+Pd convex function kwk0 with the \ell1 norm, kwk1 =       i=1 |wi |, and to solve the problem min LS (w)      s.t. kwk1 \le k_1 ,                         (25.4) w
+$$
+where k1 is a parameter. Since the \ell1 norm is a convex function, this problem can be solved efficiently as long as the loss function is convex. A related problem is minimizing the sum of LS (w) plus an \ell1 norm regularization term,
+min (LS (w) + λkwk1 ) ,                             (25.5) w
+where λ is a regularization parameter. Since for any k1 there exists a λ such that 1   The function k · k0 is often referred to as the `0 norm. Despite the use of the “norm”
+notation, k · k0 is not really a norm; for example, it does not satisfy the positive homogeneity property of norms, kawk0 \neq  |a| kwk0 .
+
+<!-- page: 364 -->
+
+Equation (25.4) and Equation (25.5) lead to the same solution, the two problems are in some sense equivalent. The \ell1 regularization often induces sparse solutions. To illustrate this, let us start with the simple optimization problem
+(                  )
+1 2 min    w - xw + λ|w| .                           (25.6) w∈R 2
+It is easy to verify (see Exercise 2) that the solution to this problem is the “soft thresholding” operator
+w = sign(x) [|x| - λ]+ ,                                        (25.7) def where [a]+ = max{a, 0}. That is, as long as the absolute value of x is smaller than λ, the optimal solution will be zero. Next, consider a one dimensional regression problem with respect to the squared loss:
+m
+!
+$$
+1 X                2 argmin           (xi w - yi ) + \lambda|w| . w\in Rm    2m i=1
+$$
+$$
+We can rewrite the problem as !                 m !          ! 1         X                           X argmin          1 m       x_2i         2 w -       1 m         xi yi       w + \lambda|w| . w\in Rm      2         i                           i=1
+$$
+P       2
+Pm For simplicity let us assume that m                 i xi = 1, and denote hx, yi =           i=1 xi yi ; then the optimal solution is
+w = sign(hx, yi) [|hx, yi|/m - λ]+ .
+That is, the solution will be zero unless the correlation between the feature x and the labels vector y is larger than λ. Remark 25.4 Unlike the \ell1 norm, the \ell2 norm does not induce sparse solutions. Indeed, consider the problem above with an \ell2 regularization, namely,
+m
+!
+$$
+1 X argmin          (xi w - yi )2 + \lambda w_2 . w\in Rm    2m i=1
+$$
+Then, the optimal solution is
+hx, yi/m w=                     . kxk2 /m + 2λ This solution will be nonzero even if the correlation between x and y is very small. In contrast, as we have shown before, when using \ell1 regularization, w will be nonzero only if the correlation between x and y is larger than the regularization parameter λ.
+
+<!-- page: 365 -->
+
+Adding \ell1 regularization to a linear regression problem with the squared loss yields the LASSO algorithm, defined as
+(                          )
+1            2 argmin        kXw - yk + λkwk1 .                    (25.8) w      2m Under some assumptions on the distribution and the regularization parameter λ, the LASSO will find sparse solutions (see, for example, (Zhao & Yu 2006) and the references therein). Another advantage of the \ell1 norm is that a vector with low \ell1 norm can be “sparsified” (see, for example, (Shalev-Shwartz, Zhang & Srebro 2010) and the references therein).
+### 25.2   Feature Manipulation and Normalization
+Feature manipulations or normalization include simple transformations that we apply on each of our original features. Such transformations may decrease the approximation or estimation errors of our hypothesis class or can yield a faster algorithm. Similarly to the problem of feature selection, here again there are no absolute “good” and “bad” transformations, but rather each transformation that we apply should be related to the learning algorithm we are going to apply on the resulting feature vector as well as to our prior assumptions on the problem. To motivate normalization, consider a linear regression problem with the squared loss. Let X ∈ Rm,d be a matrix whose rows are the instance vectors and let y ∈ Rm be a vector of target values. Recall that ridge regression returns the vector
+[                         ] 1 argmin      kXw - yk2 + λkwk2 = (2λmI + X > X)-1 X > y. w      m Suppose that d = 2 and the underlying data distribution is as follows. First we sample y uniformly at random from {\pm 1}. Then, we set x1 to be y + 0.5α, where α is sampled uniformly at random from {\pm 1}, and we set x2 to be 0.0001y. Note that the optimal weight vector is w? = [0; 10000], and LD (w? ) = 0. However, the objective of ridge regression at w? is λ108 . In contrast, the objective of ridge regression at w = [1; 0] is likely to be close to 0.25 + λ. It follows that whenever
+-8 λ > 100.25
+8 -1 ≈ 0.25 × 10      , the objective of ridge regression is smaller at the suboptimal solution w = [1; 0]. Since λ typically should be at least 1/m (see the analysis in Chapter 13), it follows that in the aforementioned example, if the number of examples is smaller than 108 then we are likely to output a suboptimal solution. The crux of the preceding example is that the two features have completely different scales. Feature normalization can overcome this problem. There are many ways to perform feature normalization, and one of the simplest approaches is simply to make sure that each feature receives values between -1 and 1. In the preceding example, if we divide each feature by the maximal value it attains
+
+<!-- page: 366 -->
+
+we will obtain that x1 = y+0.5α
+1.5   and x2 = y. Then, for λ \leq  10-3 the solution of ridge regression is quite close to w? . Moreover, the generalization bounds we have derived in Chapter 13 for reg-ularized loss minimization depend on the norm of the optimal vector w? and on the maximal norm of the instance vectors.2 Therefore, in the aforementioned example, before we normalize the features we have that kw? k2 = 108 , while after we normalize the features we have that kw? k2 = 1. The maximal norm of the instance vector remains roughly the same; hence the normalization greatly improves the estimation error. Feature normalization can also improve the runtime of the learning algorithm. For example, in Section 14.5.3 we have shown how to use the Stochastic Gradient Descent (SGD) optimization algorithm for solving the regularized loss minimization problem. The number of iterations required by SGD to converge also depends on the norm of w? and on the maximal norm of kxk. Therefore, as before, using normalization can greatly decrease the runtime of SGD. Next, we demonstrate in the following how a simple transformation on features, such as clipping, can sometime decrease the approximation error of our hypothesis class. Consider again linear regression with the squared loss. Let a > 1 be a large number, suppose that the target y is chosen uniformly at random from {\pm 1}, and then the single feature x is set to be y with probability (1 - 1/a) and set to be ay with probability 1/a. That is, most of the time our feature is bounded but with a very small probability it gets a very high value. Then, for any w, the expected squared loss of w is 1 LD (w) = E (wx - y)2 ( 2  )
+1 1              1 1 = 1-       (wy - y)2 +     (awy - y)2 . a 2              a 2 Solving for w we obtain that w? = a22a-1+a-1 , which goes to zero as a goes to infinity. Therefore, the objective at w? goes to 0.5 as a goes to infinity. For example, for a = 100 we will obtain LD (w? ) \geq  0.48. Next, suppose we apply a “clipping” transformation; that is, we use the transformation x 7→ sign(x) min{1, |x|}. Then, following this transformation, w? becomes 1 and LD (w? ) = 0. This simple example shows that a simple transformation can have a significant influence on the approximation error. Of course, it is not hard to think of examples in which the same feature transformation actually hurts performance and increases the approximation error. This is not surprising, as we have already argued that feature transformations
+## 2    More precisely, the bounds we derived in Chapter 13 for regularized loss minimization
+depend on kw? k2 and on either the Lipschitzness or the smoothness of the loss function. For linear predictors and loss functions of the form `(w, (x, y)) = φ(hw, xi, y), where φ is convex and either 1-Lipschitz or 1-smooth with respect to its first argument, we have that ` is either kxk-Lipschitz or kxk2 -smooth. For example, for the squared loss, φ(a, y) = 21 (a - y)2 , and `(w, (x, y)) = 21 (hw, xi - y)2 is kxk2 -smooth with respect to its first argument.
+
+<!-- page: 367 -->
+
+should rely on our prior assumptions on the problem. In the aforementioned example, a prior assumption that may lead us to use the “clipping” transformation is that features that get values larger than a predefined threshold value give us no additional useful information, and therefore we can clip them to the predefined threshold.
+#### 25.2.1   Examples of Feature Transformations
+We now list several common techniques for feature transformations. Usually, it is helpful to combine some of these transformations (e.g., centering + scaling). In the following, we denote by f = (f1 , . . . , fm ) ∈ Rm the value of the feature f
+Pm over the m training examples. Also, we denote by f = m      1 i=1 fi the empirical mean of the feature over all examples.
+Centering: This transformation makes the feature have zero mean, by setting fi ← fi - f.
+Unit Range: This transformation makes the range of each feature be [0, 1]. Formally, let
+fi -fmin fmax = maxi fi and fmin = mini fi . Then, we set fi ← fmax            -fmin . Similarly, we can make the range of each feature be [-1, 1] by the transformation fi ← fi -fmin 2 fmax -fmin - 1. Of course, it is easy to make the range [0, b] or [-b, b], where b is a user-specified parameter.
+Standardization: This transformation makes all features have a zero mean and unit variance.
+$$
+Pm          2 Formally, let ν = m     i=1 (fi - f ) be the empirical variance of the feature. f\sqrt   i -f Then, we set fi ← ν .
+$$
+Clipping: This transformation clips high or low values of the feature. For example, fi ← sign(fi ) max{b, |fi |}, where b is a user-specified parameter.
+Sigmoidal Transformation: As its name indicates, this transformation applies a sigmoid function on the
+1 feature. For example, fi ← 1+exp(b   fi ) , where b is a user-specified parameter. This transformation can be thought of as a “soft” version of clipping: It has a small effect on values close to zero and behaves similarly to clipping on values far away from zero.
+
+<!-- page: 368 -->
+
+Logarithmic Transformation: The transformation is fi ← log(b+fi ), where b is a user-specified parameter. This is widely used when the feature is a “counting” feature. For example, suppose that the feature represents the number of appearances of a certain word in a text document. Then, the difference between zero occurrences of the word and a single occurrence is much more important than the difference between 1000 occurrences and 1001 occurrences. Remark 25.5 In the aforementioned transformations, each feature is transformed on the basis of the values it obtains on the training set, independently of other features’ values. In some situations we would like to set the parameter of the transformation on the basis of other features as well. A notable example is a transformation in which one applies a scaling to the features so that the empirical average of some norm of the instances becomes 1.
+### 25.3     Feature Learning
+So far we have discussed feature selection and manipulations. In these cases, we start with a predefined vector space Rd , representing our features. Then, we select a subset of features (feature selection) or transform individual features (feature transformation). In this section we describe feature learning, in which we start with some instance space, X , and would like to learn a function, ψ : X → Rd , which maps instances in X into a representation as d-dimensional feature vectors.
+The idea of feature learning is to automate the process of finding a good representation of the input space. As mentioned before, the No-Free-Lunch theorem tells us that we must incorporate some prior knowledge on the data distribution in order to build a good feature representation. In this section we present a few feature learning approaches and demonstrate conditions on the underlying data distribution in which these methods can be useful. Throughout the book we have already seen several useful feature constructions. For example, in the context of polynomial regression, we have mapped the original instances into the vector space of all their monomials (see Section 9.2.2 in Chapter 9). After performing this mapping, we trained a linear predictor on top of the constructed features. Automation of this process would be to learn a transformation ψ : X → Rd , such that the composition of the class of linear predictors on top of ψ yields a good hypothesis class for the task at hand. In the following we describe a technique of feature construction called dictionary learning.
+#### 25.3.1   Dictionary Learning Using Auto-Encoders
+The motivation of dictionary learning stems from a commonly used representation of documents as a “bag-of-words”: Given a dictionary of words D = {w1 , . . . , wk }, where each wi is a string representing a word in the dictionary,
+
+<!-- page: 369 -->
+
+and given a document, (p1 , . . . , pd ), where each pi is a word in the document, we represent the document as a vector x ∈ {0, 1}k , where xi is 1 if wi = pj for some j ∈ [d], and xi = 0 otherwise. It was empirically observed in many text processing tasks that linear predictors are quite powerful when applied on this representation. Intuitively, we can think of each word as a feature that measures some aspect of the document. Given labeled examples (e.g., topics of the documents), a learning algorithm searches for a linear predictor that weights these features so that a right combination of appearances of words is indicative of the label.
+While in text processing there is a natural meaning to words and to the dictionary, in other applications we do not have such an intuitive representation of an instance. For example, consider the computer vision application of object recognition. Here, the instance is an image and the goal is to recognize which object appears in the image. Applying a linear predictor on the pixel-based representation of the image does not yield a good classifier. What we would like to have is a mapping ψ that would take the pixel-based representation of the image and would output a bag of “visual words,” representing the content of the image. For example, a “visual word” can be “there is an eye in the image.” If we had such representation, we could have applied a linear predictor on top of this representation to train a classifier for, say, face recognition. Our question is, therefore, how can we learn a dictionary of “visual words” such that a bag-of-words representation of an image would be helpful for predicting which object appears in the image? A first naive approach for dictionary learning relies on a clustering algorithm (see Chapter 22). Suppose that we learn a function c : X → {1, . . . , k}, where c(x) is the cluster to which x belongs. Then, we can think of the clusters as “words,” and of instances as “documents,” where a document x is mapped to the vector ψ(x) ∈ {0, 1}k , where ψ(x)i is 1 if and only if x belongs to the ith cluster. Now, it is straightforward to see that applying a linear predictor on ψ(x) is equivalent to assigning the same target value to all instances that belong to the same cluster. Furthermore, if the clustering is based on distances from a class center (e.g., k-means), then a linear predictor on ψ(x) yields a piece-wise constant predictor on x. Both the k-means and PCA approaches can be regarded as special cases of a more general approach for dictionary learning which is called auto-encoders. In an auto-encoder we learn a pair of functions: an “encoder” function, ψ : Rd → Rk , and a “decoder” function, φ : Rk → Rd . The goal of the learning process is to find a pair of functions such that the reconstruction error, i kxi - φ(ψ(xi ))k2 ,
+P
+is small. Of course, we can trivially set k = d and both ψ, φ to be the identity
+mapping, which yields a perfect reconstruction. We therefore must restrict ψ and
+φ in some way. In PCA, we constrain k < d and further restrict ψ and φ to be
+linear functions. In k-means, k is not restricted to be smaller than d, but now
+ψ and φ rely on k centroids, \mu1 , . . . , \muk , and ψ(x) returns an indicator vector
+
+<!-- page: 370 -->
+
+in {0, 1}k that indicates the closest centroid to x, while φ takes as input an indicator vector and returns the centroid representing this vector. An important property of the k-means construction, which is key in allowing k to be larger than d, is that ψ maps instances into sparse vectors. In fact, in k-means only a single coordinate of ψ(x) is nonzero. An immediate extension of the k-means construction is therefore to restrict the range of ψ to be vectors with at most s nonzero elements, where s is a small integer. In particular, let ψ and φ be functions that depend on \mu1 , . . . , \muk . The function ψ maps an instance vector x to a vector ψ(x) ∈ Rk , where ψ(x) should have at most s nonzero elements.
+Pk The function φ(v) is defined to be i=1 vi \mui . As before, our goal is to have a small reconstruction error, and therefore we can define
+$$
+\psi(x) = argmin kx - \phi(v)k_2 s.t. kvk0 \le s, v
+$$
+$$
+where kvk0 = |\{j : vj \neq 0\}|. Note that when s = 1 and we further restrict kvk1 =
+$$
+1 then we obtain the k-means encoding function; that is, ψ(x) is the indicator vector of the centroid closest to x. For larger values of s, the optimization problem in the preceding definition of ψ becomes computationally difficult. Therefore, in practice, we sometime use \ell1 regularization instead of the sparsity constraint and define ψ to be
+$$
+\psi(x) = argmin kx - \phi(v)k_2 + \lambda kvk1 , [                   ] v
+$$
+where λ > 0 is a regularization parameter. Anyway, the dictionary learning problem is now to find the vectors \mu1 , . . . , \muk such that the reconstruction er-
+Pm ror, i=1 kxi - φ(ψ(x))k2 , is as small as possible. Even if ψ is defined using the \ell1 regularization, this is still a computationally hard problem (similar to the k-means problem). However, several heuristic search algorithms may give reasonably good solutions. These algorithms are beyond the scope of this book.
+### 25.4   Summary
+Many machine learning algorithms take the feature representation of instances for granted. Yet the choice of representation requires careful attention. We discussed approaches for feature selection, introducing filters, greedy selection algorithms, and sparsity-inducing norms. Next we presented several examples for feature transformations and demonstrated their usefulness. Last, we discussed feature learning, and in particular dictionary learning. We have shown that feature selection, manipulation, and learning all depend on some prior knowledge on the data.
+
+<!-- page: 371 -->
+
+### 25.5   Bibliographic Remarks
+Guyon & Elisseeff (2003) surveyed several feature selection procedures, including many types of filters.
+Forward greedy selection procedures for minimizing a convex objective subject to a polyhedron constraint date back to the Frank-Wolfe algorithm (Frank & Wolfe 1956). The relation to boosting has been studied by several authors, including, (Warmuth, Liao & Ratsch 2006, Warmuth, Glocer & Vishwanathan 2008, Shalev-Shwartz & Singer 2008). Matching pursuit has been studied in the signal processing community (Mallat & Zhang 1993). Several papers analyzed greedy selection methods under various conditions. See, for example, Shalev-Shwartz, Zhang & Srebro (2010) and the references therein. The use of the \ell1 -norm as a surrogate for sparsity has a long history (e.g. Tib-shirani (1996) and the references therein), and much work has been done on understanding the relationship between the \ell1 -norm and sparsity. It is also closely related to compressed sensing (see Chapter 23). The ability to sparsify low \ell1 norm predictors dates back to Maurey (Pisier 1980-1981). In Section 26.4 we also show that low \ell1 norm can be used to bound the estimation error of our predictor. Feature learning and dictionary learning have been extensively studied recently in the context of deep neural networks. See, for example, (Lecun & Bengio 1995, Hinton et al. 2006, Ranzato et al. 2007, Collobert & Weston 2008, Lee et al. 2009, Le et al. 2012, Bengio 2009) and the references therein.
+### 25.6   Exercises
+1. Prove the equality given in Equation (25.1). Hint: Let a∗ , b∗ be minimizers of the left-hand side. Find a, b such that the objective value of the right-hand side is smaller than that of the left-hand side. Do the same for the other direction. 2. Show that Equation (25.7) is the solution of Equation (25.6). 3. AdaBoost as a Forward Greedy Selection Algorithm: Recall the Ad-aBoost algorithm from Chapter 10. In this section we give another interpretation of AdaBoost as a forward greedy selection algorithm. \bullet  Given a set of m instances x1 , . . . , xm , and a hypothesis class H of finite VC dimension, show that there exist d and h1 , . . . , hd such that for every h ∈ H there exists i ∈ [d] with hi (xj ) = h(xj ) for every j ∈ [m]. \bullet  Let R(w) be as defined in Equation (25.3). Given some w, define fw to be the function d X fw (·) =         wi hi (·). i=1
+
+<!-- page: 372 -->
+
+Let D be the distribution over [m] defined by
+exp(-yi fw (xi )) Di =                    ,
+Z where Z is a normalization factor that ensures that D is a probability vector. Show that m \partial R(w)       X =-       Di yi hj (xi ). wj         i=1 Pm Furthermore, denoting εj = i=1 Di 1[hj (xi )\neq yi ] , show that \partial R(w) = 2εj - 1. wj \partial R(w) Conclude that if εj \leq  1/2 - γ then    wj     \geq  γ/2.
+(t+1)
+- Show that
+$$
+p the update of AdaBoost guarantees R(w              ) - R(w(t) ) \le log( 1 - 4\gamma 2 ). Hint: Use the proof of Theorem 10.2.
+$$
+
+<!-- page: 373 -->
+
+# Part IV
+Advanced Theory
+
+<!-- page: 374 -->
+
+<!-- page: 375 -->
+
+## 26 Rademacher Complexities
+In Chapter 4 we have shown that uniform convergence is a sufficient condition for learnability. In this chapter we study the Rademacher complexity, which measures the rate of uniform convergence. We will provide generalization bounds based on this measure.
+### 26.1   The Rademacher Complexity
+Recall the definition of an ε-representative sample from Chapter 4, repeated here for convenience. definition 26.1 (ε-Representative Sample) A training set S is called ε-representative (w.r.t. domain Z, hypothesis class H, loss function `, and distribution D) if
+$$
+sup |LD (h) - LS (h)| \le \epsilon. h\in H
+$$
+We have shown that if S is an ε/2 representative sample then the ERM rule is ε-consistent, namely, LD (ERMH (S)) \leq  minh∈H LD (h) + ε. To simplify our notation, let us denote
+$$
+F = ` \circ H = \{z 7\to `(h, z) : h \in H\}, and given f \in F, we define
+$$
+m
+$$
+1 X LD (f ) = E [f (z)] ,             LS (f ) =       f (zi ). z\sim D                               m i=1
+$$
+We define the representativeness of S with respect to F as the largest gap between the true error of a function f and its empirical error, namely,
+$$
+) RepD (F, S) = sup LD (f ) - LS (f ) . \tag{26.1}
+$$
+f ∈F
+Now, suppose we would like to estimate the representativeness of S using the sample S only. One simple idea is to split S into two disjoint sets, S = S1 ∪ S2 ; refer to S1 as a validation set and to S2 as a training set. We can then estimate the representativeness of S by
+) sup LS1 (f ) - LS2 (f ) .                     (26.2) f ∈F
+
+<!-- page: 376 -->
+
+This can be written more compactly by defining σ = (σ1 , . . . , σm ) ∈ {\pm 1}m to be a vector such that S1 = {zi : σi = 1} and S2 = {zi : σi = -1}. Then, if we further assume that |S1 | = |S2 | then Equation (26.2) can be rewritten as
+m
+2      X sup      σi f (zi ).                                     (26.3) m f ∈F i=1 The Rademacher complexity measure captures this idea by considering the expectation of the above with respect to a random choice of σ. Formally, let F \circ S be the set of all possible evaluations a function f ∈ F can achieve on a sample S, namely, F \circ S = {(f (z1 ), . . . , f (zm )) : f ∈ F}. Let the variables in σ be distributed i.i.d. according to P[σi = 1] = P[σi = -1] = 1 2 . Then, the Rademacher complexity of F with respect to S is defined as follows:
+"       m
+# def 1 X R(F \circ S) =             E         sup      σi f (zi ) .       (26.4) m σ∼{\pm 1}m f ∈F i=1 More generally, given a set of vectors, A ⊂ Rm , we define "    m # def 1 X R(A) =         E sup      σi ai .                                       (26.5) m σ a∈A i=1 The following lemma bounds the expected value of the representativeness of S by twice the expected Rademacher complexity. lemma 26.2 E      [ RepD (F, S)] \leq  2                  E     R(F \circ S). S∼D m                                     S∼D m
+Proof Let S 0 = {z10 , . . . , zm
+0 } be another i.i.d. sample. Clearly, for all f ∈ F, LD (f ) = ES 0 [LS 0 (f )]. Therefore, for every f ∈ F we have LD (f ) - LS (f ) = E0 [LS 0 (f )] - LS (f ) = E0 [LS 0 (f ) - LS (f )]. S                                      S
+Taking supremum over f ∈ F of both sides, and using the fact that the supremum of expectation is smaller than expectation of the supremum we obtain
+$$
+) sup LD (f ) - LS (f ) = sup E_0 [LS 0 (f ) - LS (f )] f \in F                             f \in F        S
+$$
+"                                   #
+$$
+) \le E_0          sup LS 0 (f ) - LS (f )             . S       f \in F
+$$
+$$
+Taking expectation over S on both sides we obtain                                                    )                            ) E sup LD (f ) - LS (f ) \le E 0 sup LS 0 (f ) - LS (f ) S    f \in F                              S,S       f \in F            m       (26.6) 1                          X 0 =    E                   sup   (f (zi ) - f (zi )) . m S,S 0            f \in F      i=1
+$$
+
+<!-- page: 377 -->
+
+Next, we note that for each j, zj and zj0 are i.i.d. variables. Therefore, we can replace them without affecting the expectation:
+[     (                                            )]
+$$
+X E 0 [ sup ((f (zj0 ) - f (zj )) +  (f (zi0 ) - f (zi )))] = S,S             f \in F
+$$
+$$
+i\neq j [               (                               )]                                               (26.7) X E 0 [ sup ((f (zj ) - f (zj0 )) +  (f (zi0 ) - f (zi )))] . S,S             f \in F i\neq j
+$$
+$$
+Let σj be a random variable such that P[σj = 1] = P[σj = -1] = 1/2. From Equation (26.7) we obtain that
+$$
+[       (                                           )]
+X E [ sup (σj (f (zj0 ) - f (zj )) +  (f (zi0 ) - f (zi ))) ] S,S 0 ,σj           f ∈F
+$$
+i\neq j
+$$
+$$
+1                              1 =      (l.h.s. of Equation (26.7)) + (r.h.s. of Equation (26.7)) \tag{26.8}
+$$
+## 2 [           (                2                   )]
+$$
+X =        E 0 [ sup ((f (zj0 ) - f (zj )) +                         (f (zi0 ) - f (zi ))) ] . S,S             f \in F i\neq j
+$$
+$$
+Repeating this for all j we obtain that       m           m  X                                  X 0                                   0 E 0 sup      (f (zi ) - f (zi )) = E_0   sup   σi (f (zi ) - f (zi )) . (26.9) S,S       f \in F i=1                                 S,S ,σ              f \in F i=1
+$$
+$$
+Finally, X                                           X                              X sup              σi (f (zi0 ) - f (zi )) \le sup               σi f (zi0 ) + sup             -σi f (zi ) f \in F        i                             f \in F          i                   f \in F       i
+$$
+and since the probability of σ is the same as the probability of -σ, the right-hand side of Equation (26.9) can be bounded by
+"                                        #
+X                     X
+0 E0    sup      σi f (zi ) + sup   σi f (zi ) S,S ,σ            f ∈F                   f ∈F
+i                       i
+$$
+0 = m E_0 [R(F \circ S )] + m E[R(F \circ S)] = 2m E[R(F \circ S)]. S                       S                                  S
+$$
+The lemma immediately yields that, in expectation, the ERM rule finds a hypothesis which is close to the optimal hypothesis in H. theorem 26.3                   We have
+$$
+E      [LD (ERMH (S)) - LS (ERMH (S))] \le 2                                  E         R(` \circ H \circ S). S\sim D m                                                                    S\sim D m
+$$
+$$
+Furthermore, for any h^\star \in H E        [LD (ERMH (S)) - LD (h^\star )] \le 2                         E     R(` \circ H \circ S). S\sim D m                                                             S\sim D m
+$$
+
+<!-- page: 378 -->
+
+$$
+Furthermore, if h^\star = argminh LD (h) then for each \delta \in (0, 1) with probability of at least 1 - \delta over the choice of S we have
+$$
+$$
+2 ES 0 \sim Dm R(` \circ H \circ S 0 ) LD (ERMH (S)) - LD (h^\star ) \le                                            .
+$$
+δ Proof The first inequality follows directly from Lemma 26.2. The second inequality follows because for any fixed h? ,
+$$
+LD (h^\star ) = E[LS (h^\star )] \ge E[LS (ERMH (S))]. S                 S
+$$
+The third inequality follows from the previous inequality by relying on Markov’s inequality (note that the random variable LD (ERMH (S)) - LD (h? ) is nonnegative).
+Next, we derive bounds similar to the bounds in Theorem 26.3 with a better dependence on the confidence parameter δ. To do so, we first introduce the following bounded differences concentration inequality.
+lemma 26.4 (McDiarmid’s Inequality) Let V be some set and let f : V m → R be a function of m variables such that for some c > 0, for all i ∈ [m] and for all x1 , . . . , xm , x0i ∈ V we have
+$$
+|f (x_1 , . . . , xm ) - f (x_1 , . . . , xi-1 , x_0i , xi+1 , . . . , xm )| \le c.
+$$
+Let X1 , . . . , Xm be m independent random variables taking values in V . Then, with probability of at least 1 - δ we have
+$$
+q |f (X_1 , . . . , Xm ) - E[f (X_1 , . . . , Xm )]| \le c ln 2\delta m/2.
+$$
+)
+On the basis of the McDiarmid inequality we can derive generalization bounds with a better dependence on the confidence parameter.
+theorem 26.5        Assume that for all z and h ∈ H we have that |`(h, z)| \leq  c. Then,
+1. With probability of at least 1 - δ, for all h ∈ H,
+r
+$$
+0           2 ln(2/\delta) LD (h) - LS (h) \le 2               E      R(` \circ H \circ S ) + c                     . S 0 \sim D m                                   m In particular, this holds for h = ERMH (S).
+$$
+2. With probability of at least 1 - δ, for all h ∈ H,
+r
+$$
+2 ln(4/\delta) LD (h) - LS (h) \le 2 R(` \circ H \circ S) + 4 c                                 .
+$$
+m In particular, this holds for h = ERMH (S).
+3. For any h? , with probability of at least 1 - δ,
+$$
+r ?                                         2 ln (8/\delta) LD (ERMH (S)) - LD (h ) \le 2 R(` \circ H \circ S) + 5 c                                       .
+$$
+m
+
+<!-- page: 379 -->
+
+Proof First note that the random variable RepD (F, S) = suph∈H (LD (h) - LS (h)) satisfies the bounded differences condition of Lemma 26.4 with a constant 2c/m. Combining the bounds in Lemma 26.4 with Lemma 26.2 we obtain that with probability of at least 1 - δ,
+r                                     r
+$$
+2 ln(2/\delta)                    0        2 ln(2/\delta) RepD (F, S) \le E RepD (F, S) + c                \le 2 E_0 R(` \circ H \circ S ) + c             .
+$$
+m          S                          m The first inequality of the theorem follows from the definition of RepD (F, S). For the second inequality we note that the random variable R(` \circ H \circ S) also satisfies the bounded differences condition of Lemma 26.4 with a constant 2c/m. Therefore, the second inequality follows from the first inequality, Lemma 26.4, and the union bound. Finally, for the last inequality, denote hS = ERMH (S) and note that
+$$
+LD (h_S ) - LD (h^\star ) = LD (h_S ) - LS (h_S ) + LS (h_S ) - LS (h^\star ) + LS (h^\star ) - LD (h^\star ) \le (LD (h_S ) - LS (h_S )) + (LS (h^\star ) - LD (h^\star )) . \tag{26.10}
+$$
+The first summand on the right-hand side is bounded by the second inequality of the theorem. For the second summand, we use the fact that h? does not depend on S; hence by using Hoeffding’s inequality we obtain that with probaility of at least 1 - δ/2,
+$$
+r ?         ?         ln(4/\delta) LS (h ) - LD (h ) \le c            . \tag{26.11}
+$$
+2m Combining this with the union bound we conclude our proof.
+The preceding theorem tells us that if the quantity R(` \circ H \circ S) is small then it is possible to learn the class H using the ERM rule. It is important to emphasize that the last two bounds given in the theorem depend on the specific training set S. That is, we use S both for learning a hypothesis from H as well as for estimating the quality of it. This type of bound is called a data-dependent bound.
+#### 26.1.1   Rademacher Calculus
+Let us now discuss some properties of the Rademacher complexity measure. These properties will help us in deriving some simple bounds on R(` \circ H \circ S) for specific cases of interest. The following lemma is immediate from the definition.
+lemma 26.6      For any A ⊂ Rm , scalar c ∈ R, and vector a0 ∈ Rm , we have
+$$
+R(\{c a + a_0 : a \in A\}) \le |c| R(A).
+$$
+The following lemma tells us that the convex hull of A has the same complexity as A.
+
+<!-- page: 380 -->
+
+PN lemma 26.7 Let A be a subset of Rm and let A0 = { j=1 αj a(j) : N ∈ N, \forall j, a(j) ∈ A, αj \geq  0, kαk1 = 1}. Then, R(A0 ) = R(A). Proof   The main idea follows from the fact that for any vector v we have N X sup                 αj vj = max vj . α\geq 0:kαk1 =1 j=1                             j
+$$
+Therefore, m          N (j) X          X 0 m R(A ) = E                sup               sup                  σi          \alpha_j ai σ \alpha\ge 0:k\alpha_k =1 a(1) ,...,a(N ) 1                         i=1        j=1 N                    m (j) X                    X =E             sup                   \alpha_j sup           σi ai σ \alpha\ge 0:k\alpha_k =1                       a(j) 1    j=1                  i=1 m X = E sup               σi ai σ a\in A i=1
+$$
+= m R(A), and we conclude our proof. The next lemma, due to Massart, states that the Rademacher complexity of a finite set grows logarithmically with the size of the set. lemma 26.8 (Massart lemma) Let A = {a1 , . . . , aN } be a finite set of vectors PN in Rm . Define ā = N1 i=1 ai . Then,
+p
+2 log(N ) R(A) \leq  max ka - āk                      . a∈A                    m Proof Based on Lemma 26.6, we can assume without loss of generality that ā = 0. Let λ > 0 and let A0 = {λa1 , . . . , λaN }. We upper bound the Rademacher complexity as follows: [          ]            [ (             )] mR(A0 ) = E max0 hσ, ai = E log max0 ehσ,ai σ a∈A                    σ        a∈A "                    !# X \leq  E log         ehσ,ai σ a∈A0 "                   #! X \leq  log E                      ehσ,ai                // Jensen’s inequality σ a∈A0 m
+$$
+! XY σi ai = log                        E [e           ] , σi a\in A_0 i=1
+$$
+where the last equality occurs because the Rademacher variables are independent. Next, using Lemma A.6 we have that for all ai ∈ R,
+$$
+exp(ai ) + exp(-ai ) E eσi ai =                            \le exp(a_2i /2), σi                         2
+$$
+
+<!-- page: 381 -->
+
+$$
+and therefore m   ( 2 )!                           ! 0 XY    ai          X 2 ) mR(A ) \le log            exp        = log      exp kak /2 2 a\in A_0 i=1                  a\in A_0 (                       ) \le log |A_0 | max0 exp \|a\|_2 /2 = log(|A_0 |) + max0 (\|a\|_2 /2). ) a\in A                                  a\in A
+$$
+Since R(A) = λ1 R(A0 ) we obtain from the equation that
+$$
+log(|A|) + \lambda_2 maxa\in A (\|a\|_2 /2) R(A) \le                                  .
+$$
+λm p Setting λ =            2 log(|A|)/ maxa∈A kak2 and rearranging terms we conclude our proof. The following lemma shows that composing A with a Lipschitz function does not blow up the Rademacher complexity. The proof is due to Kakade and Tewari.
+lemma 26.9 (Contraction lemma) For each i ∈ [m], let φi : R → R be a ρ-Lipschitz function, namely for all α, β ∈ R we have |φi (α) - φi (β)| \leq  ρ |α - β|. For a ∈ Rm let φ(a) denote the vector (φ1 (a1 ), . . . , φm (ym )). Let φ \circ A = {φ(a) : a ∈ A}. Then,
+$$
+R(\phi \circ A) \le \rho R(A).
+$$
+Proof For simplicity, we prove the lemma for the case ρ = 1. The case ρ \neq  1 will follow by defining φ0 = ρ1 φ and then using Lemma 26.6. Let Ai = {(a1 , . . . , ai-1 , φi (ai ), ai+1 , . . . , am ) : a ∈ A}. Clearly, it suffices to prove that for any set A and all i we have R(Ai ) \leq  R(A). Without loss of generality we will prove the latter claim for i = 1 and to simplify notation we omit the subscript from φ1 . We have
+"         m
+$$
+  X mR(A_1 ) = E sup                   σi ai σ    a\in A_1 i=1                   m
+$$
+$$
+  X = E sup σ1 \phi(a_1 ) +                σi ai σ    a\in A               i=2                m !                           m
+$$
+!#
+1                          X                                   X =        E      sup φ(a1 ) +     σi ai + sup -φ(a1 ) +               σi ai
+## 2 σ2 ,...,σm a∈A           i=2           a∈A                   i=2
+"                           m            m
+!#
+## 1                                0
+X            X
+0 =        E       sup φ(a1 ) - φ(a1 ) +       σi ai +       σi ai
+## 2 σ2 ,...,σm a,a0 ∈A                  i=2          i=2
+"                      m          m
+!#
+## 1                           0
+X           X
+$$
+0 \le        E       sup |a_1 - a_1 | +      σi ai +      σi ai     , \tag{26.12}
+$$
+## 2 σ2 ,...,σm a,a0 ∈A             i=2         i=2
+where in the last inequality we used the assumption that φ is Lipschitz. Next, we note that the absolute value on |a1 - a01 | in the preceding expression can
+
+<!-- page: 382 -->
+
+be omitted since both a and a0 are from the same set A and the rest of the expression in the supremum is not affected by replacing a and a0 . Therefore,
+"                m           m
+!#
+## 1                       0
+X           X
+$$
+0 mR(A_1 ) \le            E      sup a_1 - a_1 +     σi ai +     σi ai    . \tag{26.13}
+$$
+## 2 σ2 ,...,σm a,a0 ∈A        i=2         i=2
+But, using the same equalities as in Equation (26.12), it is easy to see that the right-hand side of Equation (26.13) exactly equals m R(A), which concludes our proof.
+### 26.2   Rademacher Complexity of Linear Classes
+In this section we analyze the Rademacher complexity of linear classes. To simplify the derivation we first define the following two classes:
+$$
+H_1 = \{x 7\to hw, xi : kwk1 \le 1\}       ,         H_2 = \{x 7\to hw, xi : \|w\|_2 \le 1\}. \tag{26.14}
+$$
+The following lemma bounds the Rademacher complexity of H2 . We allow the xi to be vectors in any Hilbert space (even infinite dimensional), and the bound does not depend on the dimensionality of the Hilbert space. This property becomes useful when analyzing kernel methods.
+lemma 26.10 Let S = (x1 , . . . , xm ) be vectors in a Hilbert space. Define: H2 \circ S = {(hw, x1 i, . . . , hw, xm i) : kwk2 \leq  1}. Then,
+$$
+maxi kxi k_2 R(H_2 \circ S) \le              \sqrt         .
+$$
+m Proof Using Cauchy-Schwartz inequality we know that for any vectors w, v we have hw, vi \leq  kwk kvk. Therefore, "       m # X mR(H2 \circ S) = E sup        σi ai                   (26.15) σ       a∈H2 \circS i=1 "             m
+$$
+  X =E            sup         σi hw, xi i σ       w:kwk\le 1 i=1                  m  X =E            sup hw,           σi x i i σ       w:kwk\le 1       i=1     m  X \le E k               σi xi k_2 . σ i=1
+$$
+```text
+Next, using Jensen’s inequality we have that [(               ) ] ( [ 2 1/2 ])1/2  m                      m                    m       2 X                     X                     X σi x i   = E[        σi x i ) ] \le ( E [   σi xi ]) (26.16) . [(                     E σ                  σ                                        σ i=1       2           i=1             2                       i=1      2
+```
+
+<!-- page: 383 -->
+
+$$
+Finally, since the variables σ1 , . . . , σm are independent we have  m                   [                      ] X                      X E k      σi xi k_22 = E [        σi σj hxi , xj i] σ                     σ i=1                      i,j
+$$
+$$
+\sum_{m} X hxi , xi i E σi_2 [ ] =           hxi , xj i E [σi σj ] + σ                                 σ i\neq j                                  i=1 Xm =           kxi k_22 \le m max kxi k_22 . i i=1
+$$
+Combining this with Equation (26.15) and Equation (26.16) we conclude our proof. Next we bound the Rademacher complexity of H1 \circ S. lemma 26.11    Let S = (x1 , . . . , xm ) be vectors in Rn . Then,
+r
+2 log(2n) R(H1 \circ S) \leq  max kxi k∞                       . i                   m Proof Using Holder’s inequality we know that for any vectors w, v we have hw, vi \leq  kwk1 kvk∞ . Therefore, "          m
+```text
+X mR(H_1 \circ S) = E sup                  σi a i σ       a\in H_1 \circS i=1                m
+```
+# X =E            sup             σi hw, xi i σ       w:kwk1 \leq 1 i=1 "                     m # X =E            sup     hw,           σi xi i σ       w:kwk1 \leq 1         i=1 "    m # X \leq E k               σi xi k∞ .                          (26.17) σ i=1 \sqrt For each j ∈ [n], let vj = (x1,j , . . . , xm,j ) ∈ Rm . Note that kvj k2 \leq  m maxi kxi k∞ . Let V = {v1 , . . . , vn , -v1 , . . . , -vn }. The right-hand side of Equation (26.17) is m R(V ). Using Massart lemma (Lemma 26.8) we have that p R(V ) \leq  max kxi k∞ 2 log(2n)/m, i
+which concludes our proof.
+### 26.3   Generalization Bounds for SVM
+In this section we use Rademacher complexity to derive generalization bounds for generalized linear predictors with Euclidean norm constraint. We will show how this leads to generalization bounds for hard-SVM and soft-SVM.
+
+<!-- page: 384 -->
+
+We shall consider the following general constraint-based formulation. Let H = {w : kwk2 \leq  B} be our hypothesis class, and let Z = X × Y be the examples domain. Assume that the loss function ` : H × Z → R is of the form
+$$
+`(w, (x, y)) = \phi(hw, xi, y), \tag{26.18}
+$$
+where φ : R × Y → R is such that for all y ∈ Y, the scalar function a 7→ φ(a, y) is ρ-Lipschitz. For example, the hinge-loss function, `(w, (x, y)) = max{0, 1 - yhw, xi}, can be written as in Equation (26.18) using φ(a, y) = max{0, 1 - ya}, and note that φ is 1-Lipschitz for all y ∈ {\pm 1}. Another example is the absolute loss function, `(w, (x, y)) = |hw, xi - y|, which can be written as in Equation (26.18) using φ(a, y) = |a - y|, which is also 1-Lipschitz for all y ∈ R.
+The following theorem bounds the generalization error of all predictors in H using their empirical error.
+theorem 26.12 Suppose that D is a distribution over X × Y such that with probability 1 we have that kxk2 \leq  R. Let H = {w : kwk2 \leq  B} and let ` : H × Z → R be a loss function of the form given in Equation (26.18) such that for all y ∈ Y, a 7→ φ(a, y) is a ρ-Lipschitz function and such that maxa∈[-BR,BR] |φ(a, y)| \leq  c. Then, for any δ ∈ (0, 1), with probability of at least 1 - δ over the choice of an i.i.d. sample of size m,
+$$
+r 2\rho BR        2 ln(2/\delta) \forall w \in H, LD (w) \le LS (w) + \sqrt            +c             . m            m
+$$
+Proof Let F = {(x, y) 7→ φ(hw, xi, y) : w ∈ H}. We will show that with
+\sqrt probability 1, R(F \circ S) \leq  ρBR/ m and then the theorem will follow from Theorem 26.5. Indeed, the set F \circ S can be written as
+$$
+F \circ S = \{(\phi(hw, x_1 i, y_1 ), . . . , \phi(hw, xm i, ym )) : w \in H\},
+$$
+and the bound on R(F \circS) follows directly by combining Lemma 26.9, Lemma 26.10, and the assumption that kxk2 \leq  R with probability 1.
+We next derive a generalization bound for hard-SVM based on the previous theorem. For simplicity, we do not allow a bias term and consider the hard-SVM problem:
+$$
+argmin \|w\|_2      s.t.   \forall i, yi hw, xi i \ge 1 \tag{26.19}
+$$
+w
+theorem 26.13 Consider a distribution D over X ×{\pm 1} such that there exists some vector w? with P(x,y)∼D [yhw? , xi \geq  1] = 1 and such that kxk2 \leq  R with probability 1. Let wS be the output of Equation (26.19). Then, with probability of at least 1 - δ over the choice of S ∼ Dm , we have that
+$$
+r 2 R kw^\star k            ?     2 ln(2/\delta) P [y \neq sign(hwS , xi)] \le \sqrt          + (1 + R kw k)             . (x,y)\sim D                            m                         m
+$$
+
+<!-- page: 385 -->
+
+Proof Throughout the proof, let the loss function be the ramp loss (see Section 15.2.3). Note that the range of the ramp loss is [0, 1] and that it is a 1-Lipschitz function. Since the ramp loss upper bounds the zero-one loss, we have that
+$$
+P      [y \neq sign(hwS , xi)] \le LD (wS ). (x,y)\sim D
+$$
+Let B = kw? k2 and consider the set H = {w : kwk2 \leq  B}. By the definition of hard-SVM and our assumption on the distribution, we have that wS ∈ H with probability 1 and that LS (wS ) = 0. Therefore, using Theorem 26.12 we have that
+$$
+r 2BR       2 ln(2/\delta) LD (wS ) \le LS (wS ) + \sqrt +                 . m           m
+$$
+Remark 26.1 Theorem 26.13 implies that the sample complexity of hard-SVM
+2    ? 2 grows like R kw ε2 k . Using a more delicate analysis and the separability assump- 2    ? 2 tion, it is possible to improve the bound to an order of R kw
+ε k . The bound in the preceding theorem depends on kw? k, which is unknown. In the following we derive a bound that depends on the norm of the output of SVM; hence it can be calculated from the training set itself. The proof is similar to the derivation of bounds for structure risk minimization (SRM).
+theorem 26.14 Assume that the conditions of Theorem 26.13 hold. Then, with probability of at least 1 - δ over the choice of S ∼ Dm , we have that
+s
+$$
+S k) 4RkwS k       ln( 4 log2 (kw \delta        ) P [y \neq sign(hwS , xi)] \le \sqrt          +                          . (x,y)\sim D                             m                  m
+$$
+Proof For any integer i, let Bi = 2i , Hi = {w : kwk \leq  Bi }, and let δi = 2iδ2 . Fix i, then using Theorem 26.12 we have that with probability of at least 1 - δi
+r 2Bi R          2 ln(2/δi ) \forall w ∈ Hi , LD (w) \leq  LS (w) + \sqrt              + m               m P∞ Applying the union bound and using i=1 δi \leq  δ we obtain that with probability of at least 1 - δ this holds for all i. Therefore, for all w, if we let i = dlog2 (kwk)e
+$$
+2                  2 then w \in Hi , Bi \le 2kwk, and \delta 2i = (2i)   \delta   \le (4 log2 (kwk))
+$$
+δ       . Therefore, r 2Bi R        2 ln(2/δi ) LD (w) \leq  LS (w) + \sqrt           + m             m r 4kwkR          4(ln(4 log2 (kwk)) + ln(1/δ)) \leq  LS (w) + \sqrt          +                                    . m                         m In particular, it holds for wS , which concludes our proof.
+
+<!-- page: 386 -->
+
+Remark 26.2 Note that all the bounds we have derived do not depend on the dimension of w. This property is utilized when learning SVM with kernels, where the dimension of w can be extremely large.
+### 26.4   Generalization Bounds for Predictors with Low \ell1 Norm
+In the previous section we derived generalization bounds for linear predictors with an \ell2 -norm constraint. In this section we consider the following general \ell1 -norm constraint formulation. Let H = {w : kwk1 \leq  B} be our hypothesis class, and let Z = X × Y be the examples domain. Assume that the loss function, ` : H × Z → R, is of the same form as in Equation (26.18), with φ : R × Y → R being ρ-Lipschitz w.r.t. its first argument. The following theorem bounds the generalization error of all predictors in H using their empirical error. theorem 26.15 Suppose that D is a distribution over X × Y such that with probability 1 we have that kxk∞ \leq  R. Let H = {w ∈ Rd : kwk1 \leq  B} and let ` : H × Z → R be a loss function of the form given in Equation (26.18) such that for all y ∈ Y, a 7→ φ(a, y) is an ρ-Lipschitz function and such that maxa∈[-BR,BR] |φ(a, y)| \leq  c. Then, for any δ ∈ (0, 1), with probability of at least 1 - δ over the choice of an i.i.d. sample of size m,
+r              r
+$$
+2 log(2d)     2 ln(2/\delta) \forall w \in H, LD (w) \le LS (w) + 2\rho BR                     +c            .
+$$
+m             m Proof The proof is identical to the proof of Theorem 26.12, while relying on Lemma 26.11 instead of relying on Lemma 26.10. It is interesting to compare the two bounds given in Theorem 26.12 and Theorem 26.15. Apart from the extra log(d) factor that appears in Theorem 26.15, both bounds look similar. However, the parameters B, R have different meanings in the two bounds. In Theorem 26.12, the parameter B imposes an \ell2 constraint on w and the parameter R captures a low \ell2 -norm assumption on the instances. In contrast, in Theorem 26.15 the parameter B imposes an \ell1 constraint on w (which is stronger than an \ell2 constraint) while the parameter R captures a low \ell∞ -norm assumption on the instance (which is weaker than a low \ell2 -norm assumption). Therefore, the choice of the constraint should depend on our prior knowledge of the set of instances and on prior assumptions on good predictors.
+### 26.5   Bibliographic Remarks
+The use of Rademacher complexity for bounding the uniform convergence is due to (Koltchinskii & Panchenko 2000, Bartlett & Mendelson 2001, Bartlett & Mendelson 2002). For additional reading see, for example, (Bousquet 2002, Boucheron, Bousquet & Lugosi 2005, Bartlett, Bousquet & Mendelson 2005).
+
+<!-- page: 387 -->
+
+Our proof of the concentration lemma is due to Kakade and Tewari lecture notes. Kakade, Sridharan & Tewari (2008) gave a unified framework for deriving bounds on the Rademacher complexity of linear classes with respect to different assumptions on the norms.
+
+<!-- page: 388 -->
+
+## 27 Covering Numbers
+In this chapter we describe another way to measure the complexity of sets, which is called covering numbers.
+### 27.1     Covering
+definition 27.1 (Covering) Let A ⊂ Rm be a set of vectors. We say that A is r-covered by a set A0 , with respect to the Euclidean metric, if for all a ∈ A there exists a0 ∈ A0 with ka - a0 k \leq  r. We define by N (r, A) the cardinality of the smallest A0 that r-covers A.
+Example 27.1 (Subspace) Suppose that A ⊂ Rm , let c = maxa∈A kak, \sqrt              and assume that A lies in a d-dimensional subspace of Rm . Then, N (r, A) \leq  (2c d/r)d . To see this, let v1 , . . . , vd be an orthonormal basis of the subspace. Then, any
+$$
+Pd a \in A can be written as a = i=1 \alpha_i vi with k\alpha_k\in fty \le k\alpha k_2 = \|a\|_2 \le c. Let \epsilon \in R and consider the set ( d                                                         ) X
+$$
+$$
+0               0          0 A =              \alpha_i vi : \forall i, \alpha_i \in \{-c, -c + \epsilon, -c + 2\epsilon, . . . , c\} .
+$$
+$$
+i=1 Pd                                         0   0 Given a \in A s.t. a =       i=1 \alpha_i vi with k\alpha_k\in fty \le c, there exists a \in A such that
+$$
+$$
+X                      X ka - a_0 k_2 = k    (\alpha i_0 - \alpha_i )vi k_2 \le \epsilon_2   kvi k_2 \le \epsilon_2 d. i                       i \sqrt Choose \epsilon = r/ d; then ka - a_0 k \le r and therefore A_0 is an r-cover of A. Hence,
+$$
+$$
+( )d          \sqrt !d
+$$
+$$
+0     2c         2c d N (r, A) \le |A | =        =             .
+$$
+ε           r
+#### 27.1.1   Properties
+The following lemma is immediate from the definition.
+lemma 27.2      For any A ⊂ Rm , scalar c > 0, and vector a0 ∈ Rm , we have
+$$
+\forall r > 0, N (r, \{c a + a_0 : a \in A\}) \le N (cr, A).
+$$
+
+<!-- page: 389 -->
+
+Next, we derive a contraction principle.
+lemma 27.3 For each i ∈ [m], let φi : R → R be a ρ-Lipschitz function; namely, for all α, β ∈ R we have |φi (α) - φi (β)| \leq  ρ |α - β|. For a ∈ Rm let φ(a) denote the vector (φ1 (a1 ), . . . , φm (am )). Let φ \circ A = {φ(a) : a ∈ A}. Then,
+$$
+N (\rho r, \phi \circ A) \le N (r, A).
+$$
+Proof Define B = φ \circ A. Let A0 be an r-cover of A and define B 0 = φ \circ A0 . Then, for all a ∈ A there exists a0 ∈ A0 with ka - a0 k \leq  r. So,
+$$
+X                                    X k\phi(a) - \phi(a_0 )k_2 =          (\phi_i (ai ) - \phi_i (a_0i ))2 \le \rho_2    (ai - a_0i )2 \le (\rho_r)2 . i                                    i
+$$
+Hence, B 0 is an (ρ r)-cover of B.
+### 27.2   From Covering to Rademacher Complexity via Chaining
+The following lemma bounds the Rademacher complexity of A based on the covering numbers N (r, A). This technique is called Chaining and is attributed to Dudley.
+lemma 27.4      Let c = minā maxa∈A ka - āk. Then, for any integer M > 0,
+$$
+M c 2-M   6 c X -k q R(A) \le \sqrt    +      2                 log(N (c 2-k , A)). m    m k=1
+$$
+Proof Let ā be a minimizer of the objective function given in the definition of c. On the basis of Lemma 26.6, we can analyze the Rademacher complexity assuming that ā = 0.
+Consider the set B0 = {0} and note that it is a c-cover of A. Let B1 , . . . , BM be sets such that each Bk corresponds to a minimal (c 2-k )-cover of A. Let a∗ = argmaxa∈A hσ, ai (where if there is more than one maximizer, choose one in an arbitrary way, and if a maximizer does not exist, choose a∗ such that hσ, a∗ i is close enough to the supremum). Note that a∗ is a function of σ. For each k, let b(k) be the nearest neighbor of a∗ in Bk (hence b(k) is also a function of σ). Using the triangle inequality,
+$$
+kb(k) - b(k-1) k \le kb(k) - a∗ k + ka∗ - b(k-1) k \le c (2-k + 2-(k-1) ) = 3 c 2-k .
+$$
+For each k define the set
+$$
+B{}k = \{(a - a_0 ) : a \in Bk , a_0 \in Bk-1 , ka - a_0 k \le 3 c 2-k \}.
+$$
+
+<!-- page: 390 -->
+
+We can now write
+1 R(A) =    Ehσ, a∗ i m
+"                    M
+#
+## 1          ∗   (M )
+X
+$$
+(k)     (k-1) =   E hσ, a - b       i+     hσ, b - b           i m k=1 M
+$$
+"             #
+## 1 h          ∗  (M )
+$$
+i X      1 \le   E kσk ka - b       k +          E sup hσ, ai . m                              m       a\in B{}k
+$$
+$$
+k=1 \sqrt Since kσk = m and ka∗ - b(M ) k \le c 2-M , the first summand is at most \sqrt{c} 2-M . Additionally, by Massart lemma, m p                                p
+$$
+$$
+1                     -k   2 log(N (c 2-k , A)2 )      -k  log(N (c 2-k , A)) E sup hσ, ai \le 3 c 2                            = 6c_2                       . m a\in B{}k                           m                              m
+$$
+$$
+Therefore, M c 2-M   6c X -k q R(A) \le \sqrt    +     2               log(N (c_2-k , A)). m    m k=1
+$$
+As a corollary we obtain the following: lemma 27.5      Assume that there are α, β > 0 such that for any k \geq  1 we have
+$$
+q log(N (c_2-k , A)) \le \alpha + \beta_k. Then,
+$$
+$$
+6c R(A) \le
+$$
+(α + 2β) . m Proof The bound follows from Lemma 27.4 by taking M → ∞ and noting that P∞ -k           P∞ k=1 2 = 1 and k=1 k2-k = 2. Example 27.2     Consider a set A which lies in a d dimensional subspace of Rm
+( \sqrt )d and such that c = maxa∈A kak. We have shown that N (r, A) \leq  2cr d . Therefore, for any k, \sqrt ) q                   r        ( -k log(N (c2 , A)) \leq  d log 2k+1 d q          \sqrt \leq  d log(2 d) + k d q          \sqrt \leq  d log(2 d) + d k. Hence Lemma 27.5 yields
+$$
+! \sqrt (q                  )                       p 6c                                         c       d log(d) R(A) \le          d log(2 d) + 2 d  = O                                      . m                                                   m
+$$
+
+<!-- page: 391 -->
+
+### 27.3   Bibliographic Remarks
+The chaining technique is due to Dudley (1987). For an extensive study of covering numbers as well as other complexity measures that can be used to bound the rate of uniform convergence we refer the reader to (Anthony & Bartlet 1999).
+
+<!-- page: 392 -->
+
+## 28 Proof of the Fundamental Theorem
+of Learning Theory
+In this chapter we prove Theorem 6.8 from Chapter 6. We remind the reader the conditions of the theorem, which will hold throughout this chapter: H is a hypothesis class of functions from a domain X to {0, 1}, the loss function is the
+0 - 1 loss, and VCdim(H) = d < ∞. We shall prove the upper bound for both the realizable and agnostic cases and shall prove the lower bound for the agnostic case. The lower bound for the realizable case is left as an exercise.
+### 28.1   The Upper Bound for the Agnostic Case
+For the upper bound we need to prove that there exists C such that H is agnostic PAC learnable with sample complexity
+$$
+d + ln(1/\delta) mH (\epsilon, \delta) \le C               .
+$$
+ε2 We will prove the slightly looser bound: d log(d/ε) + ln(1/δ) mH (ε, δ) \leq  C                   .              (28.1) ε2 The tighter bound in the theorem statement requires a more involved proof, in which a more careful analysis of the Rademacher complexity using a technique called “chaining” should be used. This is beyond the scope of this book. To prove Equation (28.1), it suffices to show that applying the ERM with a sample size (      ) 32d       64d        8 m \geq  4 2 · log      2 + 2 · (8d log(e/d) + 2 log(4/δ)) ε         ε        ε yields an ε, δ-learner for H. We prove this result on the basis of Theorem 26.5. Let (x1 , y1 ), . . . , (xm , ym ) be a classification training set. Recall that the Sauer-Shelah lemma tells us that if VCdim(H) = d then
+$$
+( e m )d |\{(h(x_1 ), . . . , h(xm )) : h \in H\}| \le             .
+$$
+$$
+d Denote A = \{(1[h(x_1 )\neq y_1 ] , . . . , 1[h(xm )\neq ym ] ) : h \in H\}. This clearly implies that ( e m )d |A| \le             . d
+$$
+
+<!-- page: 393 -->
+
+Combining this with Lemma 26.8 we obtain the following bound on the Rademacher complexity:
+r
+$$
+2d log(em/d) R(A) \le                   .
+$$
+m Using Theorem 26.5 we obtain that with probability of at least 1 - δ, for every h ∈ H we have that r                 r 8d log(em/d)       2 log(2/δ) LD (h) - LS (h) \leq                 +                . m                m Repeating the previous argument for minus the zero-one loss and applying the union bound we obtain that with probability of at least 1 - δ, for every h ∈ H it holds that r                r 8d log(em/d)      2 log(4/δ) |LD (h) - LS (h)| \leq                 + m               m r 8d log(em/d) + 2 log(4/δ) \leq 2                             .
+m To ensure that this is smaller than ε we need 4 m\geq       · (8d log(m) + 8d log(e/d) + 2 log(4/δ)) . ε2 Using Lemma A.2, a sufficient condition for the inequality to hold is that (     ) 32d         64d      8 m \geq  4 2 · log           + 2 · (8d log(e/d) + 2 log(4/δ)) . ε           ε2      ε
+### 28.2     The Lower Bound for the Agnostic Case
+Here, we prove that there exists C such that H is agnostic PAC learnable with sample complexity
+$$
+d + ln(1/\delta) mH (\epsilon, \delta) \ge C               .
+$$
+ε2 We will prove the lower bound in two parts. First, we will show that m(ε, δ) \geq 
+0.5 log(1/(4δ))/ε2 , and second we will show that for every δ \leq  1/8 we have that m(ε, δ) \geq  8d/ε2 . These two bounds will conclude the proof.
+#### 28.2.1   Showing That m(ε, δ) \geq  0.5 log(1/(4δ))/ε2
+\sqrt We first show that for any ε < 1/ 2 and any δ ∈ (0, 1), we have that m(ε, δ) \geq  0.5 log(1/(4δ))/ε2 . To do so, we show that for m \leq  0.5 log(1/(4δ))/ε2 , H is not learnable. Choose one example that is shattered by H. That is, let c be an example such
+
+<!-- page: 394 -->
+
+$$
+that there are h+ , h- \in H for which h+ (c) = 1 and h- (c) = -1. Define two distributions, D+ and D- , such that for b \in \{\pm 1\} we have
+$$
+$$
+( 1+yb\epsilon 2     if x = c Db (\{(x, y)\}) = 0         otherwise.
+$$
+That is, all the distribution mass is concentrated on two examples (c, 1) and (c, -1), where the probability of (c, b) is 1+bε   2   and the probability of (c, -b) is 1-bε
+2  . Let A be an arbitrary algorithm. Any training set sampled from Db has the form S = (c, y1 ), . . . , (c, ym ). Therefore, it is fully characterized by the vector y = (y1 , . . . , ym ) ∈ {\pm 1}m . Upon receiving a training set S, the algorithm A returns a hypothesis h : X → {\pm 1}. Since the error of A w.r.t. Db only depends on h(c), we can think of A as a mapping from {\pm 1}m into {\pm 1}. Therefore, we denote by A(y) the value in {\pm 1} corresponding to the prediction of h(c), where h is the hypothesis that A outputs upon receiving the training set S = (c, y1 ), . . . , (c, ym ). Note that for any hypothesis h we have
+1 - h(c)bε LDb (h) =                .
+In particular, the Bayes optimal hypothesis is hb and
+$$
+( 1 - A(y)b\epsilon 1 - \epsilon                 \epsilon    if A(y) \neq b LDb (A(y)) - LDb (hb ) =           -      = 2       2                   0    otherwise.
+$$
+$$
+Fix A. For b \in \{\pm 1\}, let Y b = \{y \in \{0, 1\}m : A(y) \neq b\}. The distribution Db induces a probability Pb over \{\pm 1\}m . Hence,
+$$
+$$
+X P [LDb (A(y)) - LDb (hb ) = \epsilon] = Db (Y b ) =          Pb [y]1[A(y)\neq b] . y
+$$
+$$
+Denote N + = \{y : |\{i : yi = 1\}| \ge m/2\} and N - = \{\pm 1\}m \ N + . Note that for any y \in N + we have P+ [y] \ge P- [y] and for any y \in N - we have P- [y] \ge P+ [y].
+$$
+
+<!-- page: 395 -->
+
+$$
+Therefore, max P [LDb (A(y)) - LDb (hb ) = \epsilon] b\in\{\pm 1\}
+$$
+$$
+X = max      Pb [y]1[A(y)\neq b] b\in\{\pm 1\}
+$$
+$$
+y 1X                      1X \ge     P+ [y]1[A(y)\neq+] +       P- [y]1[A(y)\neq-]
+$$
+## 2 y                     2 y
+$$
+1 X                                            1 X =       (P+ [y]1[A(y)\neq+] + P- [y]1[A(y)\neq-] ) +      (P+ [y]1[A(y)\neq+] + P- [y]1[A(y)\neq-] )
+$$
+## 2   +
+2  - y∈N                                             y∈N
+$$
+1 X                                           1 X \ge      (P- [y]1[A(y)\neq+] + P- [y]1[A(y)\neq-] ) +      (P+ [y]1[A(y)\neq+] + P+ [y]1[A(y)\neq-] )
+$$
+## 2  +
+2  - y∈N                                             y∈N
+1 X           1 X =      P- [y] +      P+ [y] .
+## 2  +
+2  - y∈N               y∈N P               P Next note that y∈N + P- [y] = y∈N - P+ [y], and both values are the probability that a Binomial (m, (1 - ε)/2) random variable will have value greater than m/2. Using Lemma B.11, this probability is lower bounded by 1(     p                        )    1(     p                  )
+## 1 - 1 - exp(-mε2 /(1 - ε2 )) \geq        1 - 1 - exp(-2mε2 ) ,
+2                                    2 where we used the assumption that ε2 \leq  1/2. It follows that if m \leq  0.5 log(1/(4δ))/ε2 then there exists b such that
+P [LDb (A(y)) - LDb (hb ) = ε]
+\sqrt (    q          ) 1 \geq       1 - 1 - 4δ \geq  δ, 2 where the last inequality follows by standard algebraic manipulations. This concludes our proof.
+#### 28.2.2   Showing That m(ε, 1/8) \geq  8d/ε2
+\sqrt We shall now prove that for every ε <\sqrt    1/(8 2) we have that m(ε, δ) \geq  8d    ε2 . Let ρ = 8ε and note that ρ ∈ (0, 1/ 2). We will construct a family of distributions as follows. First, let C = {c1 , . . . , cd } be a set of d instances which are shattered by H. Second, for each vector (b1 , . . . , bd ) ∈ {\pm 1}d , define a distribution Db such that (
+## 1 1+ybi ρ
+$$
+· 2             if \exists i : x = ci Db (\{(x, y)\}) = d
+$$
+0                  otherwise. That is, to sample an example according to Db , we first sample an element ci ∈ C uniformly at random, and then set the label to be bi with probability (1 + ρ)/2 or -bi with probability (1 - ρ)/2. It is easy to verify that the Bayes optimal predictor for Db is the hypothesis
+
+<!-- page: 396 -->
+
+$$
+h \in H such that h(ci ) = bi for all i \in [d], and its error is 1-\rho
+$$
+2 . In addition, for any other function f : X → {\pm 1}, it is easy to verify that
+$$
+1 + \rho |\{i \in [d] : f (ci ) \neq bi \}| 1 - \rho |\{i \in [d] : f (ci ) = bi \}| LDb (f ) =        ·                            +     ·                            .
+$$
+2               d                  2               d Therefore,
+|{i ∈ [d] : f (ci ) \neq  bi }| LDb (f ) - min LDb (h) = ρ ·                                     .      (28.2) h∈H                              d Next, fix some learning algorithm A. As in the proof of the No-Free-Lunch theorem, we have that [                           ] max         E m LDb (A(S)) - min LDb (h)                     (28.3) Db :b∈{\pm 1}d S∼Db                   h∈H [                            ] \geq         E           E m LDb (A(S)) - min LDb (h)            (28.4) Db :b∼U ({\pm 1}d ) S∼Db                  h∈H [                                  ] |{i ∈ [d] : A(S)(ci ) \neq  bi | =        E           Em ρ ·                                  (28.5) Db :b∼U ({\pm 1}d ) S∼Db                   d d ρX =                E           E 1[A(S)(ci )\neq bi ] ,                     (28.6) d i=1 Db :b∼U ({\pm 1}d ) S∼Dbm
+where the first equality follows from Equation (28.2). In addition, using the definition of Db , to sample S ∼ Db we can first sample (j1 , . . . , jm ) ∼ U ([d])m , set xr = cji , and finally sample yr such that P[yr = bji ] = (1 + ρ)/2. Let us simplify the notation and use y ∼ b to denote sampling according to P[y = b] = (1 + ρ)/2. Therefore, the right-hand side of Equation (28.6) equals
+d ρX
+$$
+E            E           E      1[A(S)(ci )\neq bi ] .         (28.7) d i=1 j\sim U ([d])m b\sim U (\{\pm 1\}d ) \forall r,yr \sim bjr
+$$
+We now proceed in two steps. First, we show that among all learning algorithms, A, the one which minimizes Equation (28.7) (and hence also Equation (28.4)) is the Maximum-Likelihood learning rule, denoted AM L . Formally, for each i, AM L (S)(ci ) is the majority vote among the set {yr : r ∈ [m], xr = ci }. Second, we lower bound Equation (28.7) for AM L .
+lemma 28.1 Among all algorithms, Equation (28.4) is minimized for A being the Maximum-Likelihood algorithm, AM L , defined as
+$$
+! X \forall i, AM L (S)(ci ) = sign         yr .
+$$
+r:xr =ci
+Proof Fix some j ∈ [d]m . Note that given j and y ∈ {\pm 1}m , the training set S is fully determined. Therefore, we can write A(j, y) instead of A(S). Let us also fix i ∈ [d]. Denote b¬i the sequence (b1 , . . . , bi-1 , bi+1 , . . . , bm ). Also, for any
+
+<!-- page: 397 -->
+
+y ∈ {\pm 1}m , let y I denote the elements of y corresponding to indices for which jr = i and let y ¬I be the rest of the elements of y. We have
+$$
+E           E         1[A(S)(ci )\neq bi ] b\sim U (\{\pm 1\}d ) \forall r,yr \sim bjr
+$$
+$$
+1     X                                  X =                                E               P [y|b¬i , bi ]1[A(j,y)(ci )\neq bi ]
+$$
+## 2              b¬i ∼U ({\pm 1}d-1 )
+$$
+y bi \in\{\pm 1\} (                                   ) X           1 X   X =         E            P [y ¬I |b¬i ]     (   P [y I |bi ]1[A(j,y)(ci )\neq bi ] ) . b¬i \sim U (\{\pm 1\}d-1 ) ¬I                2 I y                        y       bi \in\{\pm 1\}
+$$
+The sum within the parentheses is minimized when A(j, y)(ci ) is the maximizer of P [y I |bi ] over bi ∈ {\pm 1}, which is exactly the Maximum-Likelihood rule. Repeating the same argument for all i we conclude our proof.
+Fix i. For every j, let ni (j) = {|t : jt = i|} be the number of instances in which the instance is ci . For the Maximum-Likelihood rule, we have that the quantity
+$$
+E           E        1[AM L (S)(ci )\neq bi ] b\sim U (\{\pm 1\}d ) \forall r,yr \sim bjr
+$$
+is exactly the probability that a binomial (ni (j), (1 - ρ)/2) random variable will be larger than ni (j)/2. Using Lemma B.11, and the assumption ρ2 \leq  1/2, we have that
+$$
+1(     p                 ) P [B \ge ni (j)/2] \ge    1 - 1 - e-2ni (j)\rho_2 . 2 We have thus shown that d \rho X E            E           E      1[A(S)(ci )\neq bi ] d i=1 j\sim U ([d])m b\sim U (\{\pm 1\}d ) \forall r,yr \sim bjr
+$$
+$$
+d \rho X             ( p               ) \ge              E m 1 - 1 - e-2\rho_2 ni (j) 2d i=1 j\sim U ([d]) d \rho X             ( p        ) \ge           E m 1 - 2\rho_2 ni (j) , 2d i=1 j\sim U ([d])
+$$
+where in the last inequality we used the inequality 1 - e-a \leq  a. Since the square root function is concave, we can apply Jensen’s inequality to obtain that the above is lower bounded by
+d
+$$
+! \rho X         r \ge          1 - 2\rho_2      E       ni (j) 2d i=1             j\sim U ([d])m
+$$
+$$
+d \rho X(     p        ) =        1 - 2\rho_2 m/d 2d i=1 \rho(     p      ) =    1 - 2\rho_2 m/d . 2
+$$
+
+<!-- page: 398 -->
+
+As long as m < 8ρd2 , this term would be larger than ρ/4. In summary, we have shown that if m < 8ρd2 then for any algorithm there exists a distribution such that
+$$
+[                      ] E m LD (A(S)) - min LD (h) \ge \rho/4. S\sim D                        h\in H
+$$
+$$
+Finally, Let \Delta = \rho_1 (LD (A(S)) - minh\in H LD (h)) and note that \Delta \in [0, 1] (see Equation (28.5)). Therefore, using Lemma B.1, we get that
+$$
+[      ]
+$$
+\epsilon            \epsilon P[LD (A(S)) - min LD (h) > \epsilon] = P \Delta >      \ge E[\Delta] - h\in H                     \rho             \rho
+$$
+$$
+1   \epsilon \ge - .
+$$
+$$
+4 \rho Choosing \rho = 8\epsilon we conclude that if m < 512d \epsilon_2 , then with probability of at least 1/8 we will have LD (A(S)) - minh\in H LD (h) \ge \epsilon.
+$$
+### 28.3   The Upper Bound for the Realizable Case
+Here we prove that there exists C such that H is PAC learnable with sample complexity
+$$
+d ln(1/\epsilon) + ln(1/\delta) mH (\epsilon, \delta) \le C                          .
+$$
+ε We do so by showing that for m \geq  C d ln(1/ε)+ln(1/δ) ε        , H is learnable using the ERM rule. We prove this claim based on the notion of ε-nets.
+definition 28.2 (ε-net) Let X be a domain. S ⊂ X is an ε-net for H ⊂ 2X with respect to a distribution D over X if
+$$
+\forall h \in H : D(h) \ge \epsilon ⇒ h \cap S \neq ∅.
+$$
+theorem 28.3       Let H ⊂ 2X with VCdim(H) = d. Fix ε ∈ (0, 1), δ ∈ (0, 1/4) and let
+(            (         )         ( ))
+8                     16e              2 m\geq           2d log                 + log      . ε                      ε               δ Then, with probability of at least 1 - δ over a choice of S ∼ Dm we have that S is an ε-net for H.
+Proof   Let
+$$
+B = \{S \subset X : |S| = m, \exists h \in H, D(h) \ge \epsilon, h \cap S = ∅\}
+$$
+be the set of sets which are not ε-nets. We need to bound P[S ∈ B]. Define
+$$
+B 0 = \{(S, T ) \subset X : |S| = |T | = m, \exists h \in H, D(h) \ge \epsilon, h \cap S = ∅, |T \cap h| > \epsilon_m 2 \}.
+$$
+
+<!-- page: 399 -->
+
+Claim 1 P[S ∈ B] \leq  2 P[(S, T ) ∈ B 0 ]. Proof of Claim 1 : Since S and T are chosen independently we can write
+$$
+h                   ]i P[(S, T ) \in B 0 ] = [              ]           [ E 2m 1[(S,T )\in B 0 ] = E m   E m 1[(S,T )\in B 0 ] . (S,T )\sim D                           S\sim D       T \sim D
+$$
+$$
+Note that (S, T ) \in B 0 implies S \in B and therefore 1[(S,T )\in B 0 ] = 1[(S,T )\in B 0 ] 1[S\in B] , which gives P[(S, T ) \in B 0 ] =        E       E      1[(S,T )\in B 0 ] 1[S\in B] S\sim D m T \sim D m
+$$
+$$
+=      E     1[S\in B]      E     1[(S,T )\in B 0 ] . S\sim D m            T \sim D m
+$$
+Fix some S. Then, either 1[S∈B] = 0 or S ∈ B and then ∃hS such that D(hS ) \geq  ε and |hS ∩ S| = 0. It follows that a sufficient condition for (S, T ) ∈ B 0 is that |T ∩ hS | > εm
+2 . Therefore, whenever S ∈ B we have
+$$
+E      1[(S,T )\in B 0 ] \ge        P [|T \cap h_S | > \epsilon_m 2 ]. T \sim D m                         T \sim D m
+$$
+But, since we now assume S ∈ B we know that D(hS ) = ρ \geq  ε. Therefore, |T ∩ hS | is a binomial random variable with parameters ρ (probability of success for a single try) and m (number of tries). Chernoff’s inequality implies
+$$
+2 - m\rho (m\rho-m\rho/2)2 P[|T \cap h_S | \le \rho_m
+$$
+$$
+2 ] \le e                          = e-m\rho/2 \le e-m\epsilon/2 \le e-d log(1/\delta)/2 = \delta d/2 \le 1/2. Thus,
+$$
+ρm P[|T ∩ hS | > εm                       εm
+## 2 ] = 1 - P[|T ∩ hS | \leq  2 ] \geq  1 - P[|T ∩ hS | \leq  2 ] \geq  1/2.
+Combining all the preceding we conclude the proof of Claim 1.
+Claim 2 (Symmetrization): P[(S, T ) ∈ B 0 ] \leq  e-εm/4 τH (2m). Proof of Claim 2 : To simplify notation, let α = mε/2 and for a sequence A = (x1 , . . . , x2m ) let A0 = (x1 , . . . , xm ). Using the definition of B 0 we get that
+$$
+P[A \in B 0 ] =      E      max 1[D(h)\ge\epsilon] 1[|h\cap A_0 |=0] 1[|h\cap A|\ge\alpha]
+$$
+A∼D 2m h∈H
+$$
+\le     E      max 1[|h\cap A_0 |=0] 1[|h\cap A|\ge\alpha] . A\sim D 2m h\in H
+$$
+$$
+Now, let us define by HA the effective number of different hypotheses on A, namely, HA = \{h \cap A : h \in H \}. It follows that
+$$
+$$
+P[A \in B 0 ] \le        E    max 1[|h\cap A_0 |=0] 1[|h\cap A|\ge\alpha]
+$$
+A∼D 2m h∈HA
+$$
+X \le      E 2m     1[|h\cap A_0 |=0] 1[|h\cap A|\ge\alpha] . A\sim D h\in HA
+$$
+Let J = {j ⊂ [2m] : |j| = m}. For any j ∈ J and A = (x1 , . . . , x2m ) define Aj = (xj1 , . . . , xjm ). Since the elements of A are chosen i.i.d., we have that for any j ∈ J and any function f (A, A0 ) it holds that EA∼D2m [f (A, A0 )] =
+
+<!-- page: 400 -->
+
+EA∼D2m [f (A, Aj )]. Since this holds for any j it also holds for the expectation of j chosen at random from J. In particular, it holds for the function f (A, A0 ) = P
+$$
+h\in HA 1[|h\cap A_0 |=0] 1[|h\cap A|\ge\alpha] . We therefore obtain that
+$$
+$$
+X P[A \in B 0 ] \le       E 2m E              1[|h\cap Aj |=0] 1[|h\cap A|\ge\alpha] A\sim D      j\sim J h\in HA X =     E 2m          1[|h\cap A|\ge\alpha] E 1[|h\cap Aj |=0] . A\sim D                          j\sim J h\in HA
+$$
+Now, fix some A s.t. |h ∩ A| \geq  α. Then, Ej 1[|h∩Aj |=0] is the probability that when choosing m balls from a bag with at least α red balls, we will never choose a red ball. This probability is at most
+$$
+(1 - \alpha/(2m))m = (1 - \epsilon/4)m \le e-\epsilon_m/4 .
+$$
+$$
+We therefore get that X P[A \in B 0 ] \le       E 2m          e-\epsilon_m/4 \le e-\epsilon_m/4        E      |HA |. A\sim D                                    A\sim D 2m h\in HA
+$$
+Using the definition of the growth function we conclude the proof of Claim 2. Completing the Proof: By Sauer’s lemma we know that τH (2m) \leq  (2em/d)d . Combining this with the two claims we obtain that
+$$
+P[S \in B] \le 2(2em/d)d e-\epsilon_m/4 .
+$$
+We would like the right-hand side of the inequality to be at most δ; that is,
+$$
+2(2em/d)d e-\epsilon_m/4 \le \delta.
+$$
+Rearranging, we obtain the requirement
+$$
+4                             4d         4 m\ge     (d log(2em/d) + log(2/\delta)) =    log(m) + (d log(2e/d) + log(2/\delta). \epsilon                              \epsilon         \epsilon Using Lemma A.2, a sufficient condition for the preceding to hold is that
+$$
+$$
+( ) 16d        8d      8 m\ge         log       + (d log(2e/d) + log(2/\delta). \epsilon         \epsilon      \epsilon A sufficient condition for this is that ( ) 16d        8d       16 m\ge        log         + (d log(2e/d) + 12 log(2/\delta) \epsilon         \epsilon        \epsilon ( (            )) 16d           8d 2e        8 =         log              + log(2/\delta) \epsilon            d\epsilon          \epsilon (       (      )        ( ))
+$$
+8             16e            2 =      2d log           + log      . ε              ε             δ and this concludes our proof.
+
+<!-- page: 401 -->
+
+#### 28.3.1   From ε-Nets to PAC Learnability
+theorem 28.4 Let H be a hypothesis class over X with VCdim(H) = d. Let D be a distribution over X and let c ∈ H be a target hypothesis. Fix ε, δ ∈ (0, 1) and let m be as defined in Theorem 28.3. Then, with probability of at least 1 - δ over a choice of m i.i.d. instances from X with labels according to c we have that any ERM hypothesis has a true error of at most ε.
+a                     a Proof Define the class Hc = {c h : h ∈ H}, where c h = (h \ c) ∪ (c \ h). It is easy to verify that if some A ⊂ X is shattered by H then it is also shattered by Hc and vice versa. Hence, VCdim(H) = VCdim(Hc ). Therefore, using Theorem 28.3 we know that with probability of at least 1 - δ, the sample S is an ε-net for Hc . a Note that LD (h) = D(h c). Therefore, for any h ∈ H with LD (h) \geq  ε we have a that |(h c) ∩ S| > 0, which implies that h cannot be an ERM hypothesis, which concludes our proof.
+
+<!-- page: 402 -->
+
+## 29 Multiclass Learnability
+In Chapter 17 we have introduced the problem of multiclass categorization, in which the goal is to learn a predictor h : X → [k]. In this chapter we address PAC learnability of multiclass predictors with respect to the 0-1 loss. As in Chapter 6, the main goal of this chapter is to:
+- Characterize which classes of multiclass hypotheses are learnable in the (mul-
+ticlass) PAC model.
+- Quantify the sample complexity of such hypothesis classes.
+In view of the fundamental theorem of learning theory (Theorem 6.8), it is natural to seek a generalization of the VC dimension to multiclass hypothesis classes. In Section 29.1 we show such a generalization, called the Natarajan dimension, and state a generalization of the fundamental theorem based on the Natarajan dimension. Then, we demonstrate how to calculate the Natarajan dimension of several important hypothesis classes.
+Recall that the main message of the fundamental theorem of learning theory is that a hypothesis class of binary classifiers is learnable (with respect to the 0-1 loss) if and only if it has the uniform convergence property, and then it is learnable by any ERM learner. In Chapter 13, Exercise 2, we have shown that this equivalence breaks down for a certain convex learning problem. The last section of this chapter is devoted to showing that the equivalence between learnability and uniform convergence breaks down even in multiclass problems with the 0-1 loss, which are very similar to binary classification. Indeed, we construct a hypothesis class which is learnable by a specific ERM learner, but for which other ERM learners might fail and the uniform convergence property does not hold.
+### 29.1   The Natarajan Dimension
+In this section we define the Natarajan dimension, which is a generalization of the VC dimension to classes of multiclass predictors. Throughout this section, let H be a hypothesis class of multiclass predictors; namely, each h ∈ H is a function from X to [k].
+
+<!-- page: 403 -->
+
+To define the Natarajan dimension, we first generalize the definition of shattering. definition 29.1 (Shattering (Multiclass Version)) We say that a set C ⊂ X is shattered by H if there exist two functions f0 , f1 : C → [k] such that
+- For every x ∈ C, f0 (x) \neq  f1 (x).
+- For every B ⊂ C, there exists a function h ∈ H such that
+\forall x ∈ B, h(x) = f0 (x) and \forall x ∈ C \ B, h(x) = f1 (x). definition 29.2 (Natarajan Dimension) The Natarajan dimension of H, denoted Ndim(H), is the maximal size of a shattered set C ⊂ X . It is not hard to see that in the case that there are exactly two classes, Ndim(H) = VCdim(H). Therefore, the Natarajan dimension generalizes the VC dimension. We next show that the Natarajan dimension allows us to generalize the fundamental theorem of statistical learning from binary classification to multiclass classification.
+### 29.2     The Multiclass Fundamental Theorem
+theorem 29.3 (The Multiclass Fundamental Theorem) There exist absolute constants C1 , C2 > 0 such that the following holds. For every hypothesis class H of functions from X to [k], such that the Natarajan dimension of H is d, we have
+1. H has the uniform convergence property with sample complexity
+$$
+d + log(1/\delta)                  d log (k) + log(1/\delta) C_1              \le mUC
+$$
+$$
+H (\epsilon, \delta) \le C_2                      . \epsilon_2                                 \epsilon_2
+$$
+2. H is agnostic PAC learnable with sample complexity
+$$
+d + log(1/\delta)                   d log (k) + log(1/\delta) C_1             \le mH (\epsilon, \delta) \le C_2                       .
+$$
+ε2                                  ε2
+3. H is PAC learnable (assuming realizability) with sample complexity
+d log kd
+$$
+) d + log(1/\delta)                           \epsilon   + log(1/\delta) C_1               \le mH (\epsilon, \delta) \le C_2                         . \epsilon                                    \epsilon
+$$
+#### 29.2.1   On the Proof of Theorem 29.3
+The lower bounds in Theorem 29.3 can be deduced by a reduction from the binary fundamental theorem (see Exercise 5). The upper bounds in Theorem 29.3 can be proved along the same lines of the proof of the fundamental theorem for binary classification, given in Chapter 28 (see Exercise 4). The sole ingredient of that proof that should be modified in a nonstraightforward manner is Sauer’s lemma. It applies only to binary classes and therefore must be replaced. An appropriate substitute is Natarajan’s lemma:
+
+<!-- page: 404 -->
+
+lemma 29.4 (Natarajan)        |H| \leq  |X |Ndim(H) · k 2Ndim(H) .
+The proof of Natarajan’s lemma shares the same spirit of the proof of Sauer’s lemma and is left as an exercise (see Exercise 3).
+### 29.3     Calculating the Natarajan Dimension
+In this section we show how to calculate (or estimate) the Natarajan dimension of several popular classes, some of which were studied in Chapter 17. As these calculations indicate, the Natarajan dimension is often proportional to the number of parameters required to define a hypothesis.
+#### 29.3.1   One-versus-All Based Classes
+In Chapter 17 we have seen two reductions of multiclass categorization to binary classification: One-versus-All and All-Pairs. In this section we calculate the Natarajan dimension of the One-versus-All method.
+Recall that in One-versus-All we train, for each label, a binary classifier that distinguishes between that label and the rest of the labels. This naturally suggests considering multiclass hypothesis classes of the following form. Let Hbin ⊂
+$$
+k \{0, 1\}X be a binary hypothesis class. For every h̄ = (h_1 , . . . , hk ) \in (Hbin ) define T (h̄) : X \to [k] by T (h̄)(x) = argmax hi (x). i\in[k]
+$$
+If there are two labels that maximize hi (x), we choose the smaller one. Also, let
+$$
+OvA,k                            k Hbin   = \{T (h̄) : h̄ \in (Hbin ) \}.
+$$
+OvA,k What “should” be the Natarajan dimension of Hbin          ? Intuitively, to specify a hypothesis in Hbin we need d = VCdim(Hbin ) parameters. To specify a hypothe-OvA,k sis in Hbin   , we need to specify k hypotheses in Hbin . Therefore, kd parameters should suffice. The following lemma establishes this intuition.
+lemma 29.5      If d = VCdim(Hbin ) then
+$$
+OvA,k Ndim(Hbin   ) \le 3kd log (kd) .
+$$
+Proof Let C ⊂ X be a shattered set. By the definition of shattering (for mul-ticlass hypotheses)
+(         )
+$$
+OvA,k Hbin         \ge 2|C| .
+$$
+C OvA,k On the other hand, each hypothesis in Hbin   is determined by using k hypotheses from Hbin . Therefore, (        ) OvA,k Hbin      \leq  | (Hbin )C |k . C
+
+<!-- page: 405 -->
+
+$$
+By Sauer’s lemma, | (Hbin )C | \le |C|d . We conclude that (        ) OvA,k 2|C| \le        Hbin        \le |C|dk . C
+$$
+The proof follows by taking the logarithm and applying Lemma A.1.
+OvA,k How tight is Lemma 29.5? It is not hard to see that for some classes, Ndim(Hbin   ) can be much smaller than dk (see Exercise 1). However there are several natural OvA,k binary classes, Hbin (e.g., halfspaces), for which Ndim(Hbin       ) = \Omega(dk) (see Exercise 6).
+29.3.2   General Multiclass-to-Binary Reductions
+The same reasoning used to establish Lemma 29.5 can be used to upper bound
+the Natarajan dimension of more general multiclass-to-binary reductions. These
+reductions train several binary classifiers on the data. Then, given a new in-
+stance, they predict its label by using some rule that takes into account the
+labels predicted by the binary classifiers. These reductions include One-versus-
+All and All-Pairs.
+Suppose that such a method trains l binary classifiers from a binary class Hbin ,
+and r : {0, 1}l → [k] is the rule that determines the (multiclass) label according
+to the predictions of the binary classifiers. The hypothesis class corresponding
+l
+to this method can be defined as follows. For every h̄ = (h1 , . . . , hl ) ∈ (Hbin )
+define R(h̄) : X → [k] by
+R(h̄)(x) = r(h1 (x), . . . , hl (x)).
+Finally, let
+r                               l
+Hbin = {R(h̄) : h̄ ∈ (Hbin ) }.
+Similarly to Lemma 29.5 it can be proven that:
+lemma 29.6      If d = VCdim(Hbin ) then
+r
+Ndim(Hbin ) \leq  3 l d log (l d) .
+The proof is left as Exercise 2.
+#### 29.3.3   Linear Multiclass Predictors
+Next, we consider the class of linear multiclass predictors (see Section 17.2). Let Ψ : X × [k] → Rd be some class-sensitive feature mapping and let
+$$
+(                                       ) HΨ =     x 7\to argmaxhw, Ψ(x, i)i : w \in Rd        . \tag{29.1}
+$$
+i∈[k]
+Each hypothesis in HΨ is determined by d parameters, namely, a vector w ∈ Rd . Therefore, we would expect that the Natarajan dimension would be upper bounded by d. Indeed:
+
+<!-- page: 406 -->
+
+theorem 29.7      Ndim(HΨ ) \leq  d . Proof Let C ⊂ X be a shattered set, and let f0 , f1 : C → [k] be the two functions that witness the shattering. We need to show that |C| \leq  d. For every
+def x ∈ C let ρ(x) = Ψ(x, f0 (x)) - Ψ(x, f1 (x)). We claim that the set ρ(C) = {ρ(x) : x ∈ C} consists of |C| elements (i.e., ρ is one to one) and is shattered by the binary hypothesis class of homogeneous linear separators on Rd , H = {x 7→ sign(hw, xi) : w ∈ Rd }. Since VCdim(H) = d, it will follow that |C| = |ρ(C)| \leq  d, as required. To establish our claim it is enough to show that |Hρ(C) | = 2|C| . Indeed, given a subset B ⊂ C, by the definition of shattering, there exists hB ∈ HΨ for which \forall x ∈ B, hB (x) = f0 (x)        and \forall x ∈ C \ B, hB (x) = f1 (x). Let wB ∈ Rd be a vector that defines hB . We have that, for every x ∈ B, hw, Ψ(x, f0 (x))i > hw, Ψ(x, f1 (x))i ⇒ hw, ρ(x)i > 0. Similarly, for every x ∈ C \ B, hw, ρ(x)i < 0. It follows that the hypothesis gB ∈ H defined by the same w ∈ Rd label the points in ρ(B) by 1 and the points in ρ(C \ B) by 0. Since this holds for every B ⊆ C we obtain that |C| = |ρ(C)| and |Hρ(C) | = 2|C| , which concludes our proof. The theorem is tight in the sense that there are mappings Ψ for which Ndim(HΨ ) = \Omega(d). For example, this is true for the multivector construction (see Section 17.2 and the Bibliographic Remarks at the end of this chapter). We therefore conclude: corollary 29.8 Let X = Rn and let Ψ : X × [k] → Rnk be the class sensitive feature mapping for the multi-vector construction: Ψ(x, y) = [ 0, . . . , 0 , x1 , . . . , xn , 0, . . . , 0 ]. | {z } | {z } | {z } ∈R(y-1)n          ∈Rn        ∈R(k-y)n
+Let HΨ be as defined in Equation (29.1). Then, the Natarajan dimension of HΨ satisfies
+$$
+(k - 1)(n - 1) \le Ndim(HΨ ) \le kn.
+$$
+### 29.4   On Good and Bad ERMs
+In this section we present an example of a hypothesis class with the property that not all ERMs for the class are equally successful. Furthermore, if we allow an infinite number of labels, we will also obtain an example of a class that is
+
+<!-- page: 407 -->
+
+learnable by some ERM, but other ERMs will fail to learn it. Clearly, this also implies that the class is learnable but it does not have the uniform convergence property. For simplicity, we consider only the realizable case.
+The class we consider is defined as follows. The instance space X will be any finite or countable set. Let Pf (X ) be the collection of all finite and cofinite subsets of X (that is, for each A ∈ Pf (X ), either A or X \ A must be finite). Instead of [k], the label set is Y = Pf (X ) ∪ {∗}, where ∗ is some special label. For every A ∈ Pf (X ) define hA : X → Y by
+$$
+( A x\in A hA (x) = ∗ x\in /A Finally, the hypothesis class we take is
+$$
+$$
+H = \{hA : A \in Pf (X )\}.
+$$
+Let A be some ERM algorithm for H. Assume that A operates on a sample labeled by hA ∈ H. Since hA is the only hypothesis in H that might return the label A, if A observes the label A, it “knows” that the learned hypothesis is hA , and, as an ERM, must return it (note that in this case the error of the returned hypothesis is 0). Therefore, to specify an ERM, we should only specify the hypothesis it returns upon receiving a sample of the form
+S = {(x1 , ∗), . . . , (xm , ∗)}.
+We consider two ERMs: The first, Agood , is defined by
+Agood (S) = h∅ ;
+that is, it outputs the hypothesis which predicts ‘*’ for every x ∈ X . The second ERM, Abad , is defined by
+Abad (S) = h{x1 ,...xm }c .
+The following claim shows that the sample complexity of Abad is about |X |-times larger than the sample complexity of Agood . This establishes a gap between different ERMs. If X is infinite, we even obtain a learnable class that is not learnable by every ERM.
+claim 29.9
+1. Let ε, δ > 0, D a distribution
+) over X and hA ∈ H. Let S be an i.i.d. sample consisting of m \geq  1ε log 1δ examples, sampled according to D and labeled by hA . Then, with probability of at least 1 - δ, the hypothesis returned by Agood will have an error of at most ε.
+2. There exists a constant a > 0 such that for every 0 < ε < a there exists a
+distribution D over X and hA ∈ H such that the following holds. The hypothesis returned by Abad upon receiving a sample of size m \leq  |X|-1    6ε , sampled
+$$
+1 according to D and labeled by hA , will have error \ge \epsilon with probability \ge e- 6 .
+$$
+
+<!-- page: 408 -->
+
+Proof Let D be a distribution over X and suppose that the correct labeling is hA . For any sample, Agood returns either h∅ or hA . If it returns hA then its true error is zero. Thus, it returns a hypothesis with error \geq  ε only if all the m examples in the sample are from X \ A while the error of h∅ , LD (h∅ ) = PD [A], is \geq  ε. Assume m \geq  1ε log( 1δ ); then the probability of the latter event is no more than (1 - ε)m \leq  e-εm \leq  δ. This establishes item 1.
+Next we prove item 2. We restrict the proof to the case that |X | = d < ∞. The proof for infinite X is similar. Suppose that X = {x0 , . . . , xd-1 }. Let a > 0 be small enough such that 1 - 2ε \geq  e-4ε for every ε < a and fix some ε < a. Define a distribution on X by setting P[x0 ] = 1 - 2ε and for all
+2ε 1 \leq  i \leq  d - 1, P[xi ] = d-1 . Suppose that the correct hypothesis is h∅ and let the sample size be m. Clearly, the hypothesis returned by Abad will err on all the examples from X which are not in the sample. By Chernoff’s bound, if m \leq  d-1     6ε ,
+1 then with probability \geq  e- 6 , the sample will include no more than d-1  2  examples from X . Thus the returned hypothesis will have error \geq  ε.
+The conclusion of the example presented is that in multiclass classification, the sample complexity of different ERMs may differ. Are there “good” ERMs for every hypothesis class? The following conjecture asserts that the answer is yes.
+$$
+conjecture 29.10        The realizable sample complexity of every hypothesis class X H \subset [k] is (             ) Ndim(H) mH (\epsilon, \delta) = Õ                     . \epsilon
+$$
+We emphasize that the Õ notation may hide only poly-log factors of ε, δ, and Ndim(H), but no factor of k.
+### 29.5   Bibliographic Remarks
+The Natarajan dimension is due to Natarajan (1989). That paper also established the Natarajan lemma and the generalization of the fundamental theorem. Generalizations and sharper versions of the Natarajan lemma are studied in Haussler & Long (1995). Ben-David, Cesa-Bianchi, Haussler & Long (1995) defined a large family of notions of dimensions, all of which generalize the VC dimension and may be used to estimate the sample complexity of multiclass classification. The calculation of the Natarajan dimension, presented here, together with calculation of other classes, can be found in Daniely et al. (2012). The example of good and bad ERMs, as well as conjecture 29.10, are from Daniely et al. (2011).
+
+<!-- page: 409 -->
+
+### 29.6   Exercises
+1. Let d, k > 0. Show that there exists a binary hypothesis Hbin of VC dimension
+OvA,k d such that Ndim(Hbin       ) = d.
+2. Prove Lemma 29.6.
+3. Prove Natarajan’s lemma.
+Hint: Fix some x0 ∈ X . For i, j ∈ [k], denote by Hij all the functions f : X \ {x0 } → [k] that can be extended to a function in H both by defining
+```text
+P f (x_0 ) = i and by defining f (x_0 ) = j. Show that |H| \le |HX \\{x_0 \} | + i\neq j |Hij | and use induction.
+```
+4. Adapt the proof of the binary fundamental theorem and Natarajan’s lemma
+to prove that, for some universal constant C > 0 and for every hypothesis class of Natarajan dimension d, the agnostic sample complexity of H is
+d log kd
+$$
+) \epsilon   + log(1/\delta) mH (\epsilon, \delta) \le C                        . \epsilon_2
+$$
+5. Prove that, for some universal constant C > 0 and for every hypothesis class
+of Natarajan dimension d, the agnostic sample complexity of H is
+$$
+d + log(1/\delta) mH (\epsilon, \delta) \ge C              .
+$$
+ε2 Hint: Deduce it from the binary fundamental theorem.
+6. Let H be the binary hypothesis class of (nonhomogenous) halfspaces in Rd .
+$$
+The goal of this exercise is to prove that Ndim(HOvA,k ) \ge (d - 1) · (k - 1).
+$$
+1. Let Hdiscrete be the class of all functions f : [k - 1] × [d - 1] → {0, 1} for
+which there exists some i0 such that, for every j ∈ [d - 1]
+$$
+\forall i < i_0 , f (i, j) = 1 while \forall i > i_0 , f (i, j) = 0.
+$$
+OvA,k Show that Ndim(Hdiscrete  ) = (d - 1) · (k - 1).
+2. Show that Hdiscrete can be realized by H. That is, show that there exists
+a mapping ψ : [k - 1] × [d - 1] → Rd such that
+Hdiscrete ⊂ {h \circ ψ : h ∈ H} . Hint: You can take ψ(i, j) to be the vector whose jth coordinate is 1, whose last coordinate is i and the rest are zeros.
+3. Conclude that Ndim(HOvA,k ) \geq  (d - 1) · (k - 1).
+
+<!-- page: 410 -->
+
+## 30 Compression Bounds
+Throughout the book, we have tried to characterize the notion of learnability using different approaches. At first we have shown that the uniform convergence property of a hypothesis class guarantees successful learning. Later on we introduced the notion of stability and have shown that stable algorithms are guaranteed to be good learners. Yet there are other properties which may be sufficient for learning, and in this chapter and its sequel we will introduce two approaches to this issue: compression bounds and the PAC-Bayes approach.
+In this chapter we study compression bounds. Roughly speaking, we shall see that if a learning algorithm can express the output hypothesis using a small subset of the training set, then the error of the hypothesis on the rest of the examples estimates its true error. In other words, an algorithm that can “compress” its output is a good learner.
+### 30.1   Compression Bounds
+To motivate the results, let us first consider the following learning protocol. First, we sample a sequence of k examples denoted T . On the basis of these examples, we construct a hypothesis denoted hT . Now we would like to estimate the performance of hT so we sample a fresh sequence of m - k examples, denoted V , and calculate the error of hT on V . Since V and T are independent, we immediately get the following from Bernstein’s inequality (see Lemma B.10). lemma 30.1    Assume that the range of the loss function is [0, 1]. Then,
+"                        s                                 #
+$$
+2LV (hT ) log(1/\delta) 4 log(1/\delta) P LD (hT ) - LV (hT ) \ge                     +               \le \delta.
+$$
+|V |             |V | To derive this bound, all we needed was independence between T and V . Therefore, we can redefine the protocol as follows. First, we agree on a sequence of k indices I = (i1 , . . . , ik ) ∈ [m]k . Then, we sample a sequence of m examples S = (z1 , . . . , zm ). Now, define T = SI = (zi1 , . . . , zik ) and define V to be the rest of the examples in S. Note that this protocol is equivalent to the protocol we defined before – hence Lemma 30.1 still holds. Applying a union bound over the choice of the sequence of indices we obtain the following theorem.
+
+<!-- page: 411 -->
+
+theorem 30.2 Let k be an integer and let B : Z k → H be a mapping from sequences of k examples to the hypothesis class. Let m \geq  2k be a training set size and let A : Z m → H be a learning rule that receives a training sequence S of size m and returns a hypothesis such that A(S) = B(zi1 , . . . , zik ) for some (i1 , . . . , ik ) ∈ [m]k . Let V = {zj : j ∈
+/ (i1 , . . . , ik )} be the set of examples which were not selected for defining A(S). Then, with probability of at least 1 - δ over the choice of S we have r
+$$
+4k log(m/\delta) 8k log(m/\delta) LD (A(S)) \le LV (A(S)) + LV (A(S))                               +             .
+$$
+m               m Proof For any I ∈ [m]k let hI = B(zi1 , . . . , zik ). Let n = m - k. Combining Lemma 30.1 with the union bound we have "                                   r                                # k                              2LV (hI ) log(1/δ) 4 log(1/δ) P ∃I ∈ [m] s.t. LD (hI ) - LV (hI ) \geq                         + n              n "                       r                                # X                               2LV (hI ) log(1/δ) 4 log(1/δ) \leq        P LD (hI ) - LV (hI ) \geq                          + k n             n I∈[m]
+$$
+\le mk \delta.
+$$
+Denote δ 0 = mk δ. Using the assumption k \leq  m/2, which implies that n = m - k \geq  m/2, the above implies that with probability of at least 1 - δ 0 we have that
+r
+$$
+4k log(m/\delta 0 ) 8k log(m/\delta 0 ) LD (A(S)) \le LV (A(S)) + LV (A(S))                   +                ,
+$$
+m                m which concludes our proof.
+As a direct corollary we obtain:
+corollary 30.3 Assuming the conditions of Theorem 30.2, and further assuming that LV (A(S)) = 0, then, with probability of at least 1 - δ over the choice of S we have
+$$
+8k log(m/\delta) LD (A(S)) \le                  .
+$$
+m These results motivate the following definition:
+definition 30.4 (Compression Scheme) Let H be a hypothesis class of functions from X to Y and let k be an integer. We say that H has a compression scheme of size k if the following holds: For all m there exists A : Z m → [m]k and B : Z k → H such that for all h ∈ H, if we feed any training set of the form (x1 , h(x1 )), . . . , (xm , h(xm )) into A and then feed (xi1 , h(xi1 )), . . . , (xik , h(xik )) into B, where (i1 , . . . , ik ) is the output of A, then the output of B, denoted h0 , satisfies LS (h0 ) = 0.
+It is possible to generalize the definition for unrealizable sequences as follows.
+
+<!-- page: 412 -->
+
+definition 30.5 (Compression Scheme for Unrealizable Sequences) Let H be a hypothesis class of functions from X to Y and let k be an integer. We say that H has a compression scheme of size k if the following holds: For all m there exists A : Z m → [m]k and B : Z k → H such that for all h ∈ H, if we feed any training set of the form (x1 , y1 ), . . . , (xm , ym ) into A and then feed (xi1 , yi1 ), . . . , (xik , yik ) into B, where (i1 , . . . , ik ) is the output of A, then the output of B, denoted h0 , satisfies LS (h0 ) \leq  LS (h).
+The following lemma shows that the existence of a compression scheme for the realizable case also implies the existence of a compression scheme for the unrealizable case.
+lemma 30.6 Let H be a hypothesis class for binary classification, and assume it has a compression scheme of size k in the realizable case. Then, it has a compression scheme of size k for the unrealizable case as well.
+Proof Consider the following scheme: First, find an ERM hypothesis and denote it by h. Then, discard all the examples on which h errs. Now, apply the realizable compression scheme on the examples that have not been removed. The output of the realizable compression scheme, denoted h0 , must be correct on the examples that have not been removed. Since h errs on the removed examples it follows that the error of h0 cannot be larger than the error of h; hence h0 is also an ERM hypothesis.
+### 30.2     Examples
+In the examples that follows, we present compression schemes for several hypothesis classes for binary classification. In light of Lemma 30.6 we focus on the realizable case. Therefore, to show that a certain hypothesis class has a compression scheme, it is necessary to show that there exist A, B, and k for which LS (h0 ) = 0.
+#### 30.2.1   Axis Aligned Rectangles
+Note that this is an uncountable infinite class. We show that there is a simple compression scheme. Consider the algorithm A that works as follows: For each dimension, choose the two positive examples with extremal values at this dimension. Define B to be the function that returns the minimal enclosing rectangle. Then, for k = 2d, we have that in the realizable case, LS (B(A(S))) = 0.
+$$
+30.2.2   Halfspaces Let X = Rd and consider the class of homogenous halfspaces, \{x 7\to sign(hw, xi) : w \in Rd \}.
+$$
+
+<!-- page: 413 -->
+
+A Compression Scheme: W.l.o.g. assume all labels are positive (otherwise, replace xi by yi xi ). The compression scheme we propose is as follows. First, A finds the vector w which is in the convex hull of {x1 , . . . , xm } and has minimal norm. Then, it represents it as a convex combination of d points in the sample (it will be shown later that this is always possible). The output of A are these d points. The algorithm B receives these d points and set w to be the point in their convex hull of minimal norm.
+Next we prove that this indeed is a compression sceme. Since the data is linearly separable, the convex hull of {x1 , . . . , xm } does not contain the origin. Consider the point w in this convex hull closest to the origin. (This is a unique point which is the Euclidean projection of the origin onto this convex hull.) We claim that w separates the data.1 To see this, assume by contradiction that
+$$
+2 hw, xi i \le 0 for some i. Take w_0 = (1 - \alpha)w + \alpha xi for \alpha = kxi kkwk    2 +\|w\|_2 \in (0, 1).
+$$
+Then w0 is also in the convex hull and
+kw0 k2 = (1 - α)2 kwk2 + α2 kxi k2 + 2α(1 - α)hw, xi i
+$$
+\le (1 - \alpha)2 \|w\|_2 + \alpha_2 kxi k_2 kxi k_4 \|w\|_2 + kxi k_2 kwk4 =
+$$
+(kwk2 + kxi k2 )2 kxi k2 kwk2 = kwk2 + kxi k2
+1 = kwk2 · kwk /kxi k2 + 1 2
+< kwk2 ,
+which leads to a contradiction.
+We have thus shown that w is also an ERM. Finally, since w is in the convex hull of the examples, we can apply Caratheodory’s theorem to obtain that w is also in the convex hull of a subset of d + 1 points of the polygon. Furthermore, the minimality of w implies that w must be on a face of the polygon and this implies it can be represented as a convex combination of d points. It remains to show that w is also the projection onto the polygon defined by the d points. But this must be true: On one hand, the smaller polygon is a subset of the larger one; hence the projection onto the smaller cannot be smaller in norm. On the other hand, w itself is a valid solution. The uniqueness of projection concludes our proof.
+#### 30.2.3   Separating Polynomials
+$$
+Let X = Rd and consider the class x 7\to sign(p(x)) where p is a degree r polynomial.
+$$
+## 1   It can be shown that w is the direction of the max-margin solution.
+
+<!-- page: 414 -->
+
+Note that p(x) can be rewritten as hw, ψ(x)i where the elements of ψ(x) are all the monomials of x up to degree r. Therefore, the problem of constructing a compression scheme for p(x) reduces to the problem of constructing a compression
+0 scheme for halfspaces in Rd where d0 = O(dr ).
+#### 30.2.4   Separation with Margin
+Suppose that a training set is separated with margin γ. The Perceptron algorithm guarantees to make at most 1/γ 2 updates before converging to a solution that makes no mistakes on the entire training set. Hence, we have a compression scheme of size k \leq  1/γ 2 .
+### 30.3     Bibliographic Remarks
+Compression schemes and their relation to learning were introduced by Little-stone & Warmuth (1986). As we have shown, if a class has a compression scheme then it is learnable. For binary classification problems, it follows from the fundamental theorem of learning that the class has a finite VC dimension. The other direction, namely, whether every hypothesis class of finite VC dimension has a compression scheme of finite size, is an open problem posed by Manfred Warmuth and is still open (see also (Floyd 1989, Floyd & Warmuth 1995, Ben-David & Litman 1998, Livni & Simon 2013).
+
+<!-- page: 415 -->
+
+## 31 PAC-Bayes
+The Minimum Description Length (MDL) and Occam’s razor principles allow a potentially very large hypothesis class but define a hierarchy over hypotheses and prefer to choose hypotheses that appear higher in the hierarchy. In this chapter we describe the PAC-Bayesian approach that further generalizes this idea. In the PAC-Bayesian approach, one expresses the prior knowledge by defining prior distribution over the hypothesis class.
+### 31.1   PAC-Bayes Bounds
+As in the MDL paradigm, we define a hierarchy over hypotheses in our class H. Now, the hierarchy takes the form of a prior distribution over H. That is, we assign a probability (or density if H is continuous) P (h) \geq  0 for each h ∈ H and refer to P (h) as the prior score of h. Following the Bayesian reasoning approach, the output of the learning algorithm is not necessarily a single hypothesis. Instead, the learning process defines a posterior probability over H, which we denote by Q. In the context of a supervised learning problem, where H contains functions from X to Y, one can think of Q as defining a randomized prediction rule as follows. Whenever we get a new instance x, we randomly pick a hypothesis h ∈ H according to Q and predict h(x). We define the loss of Q on an example z to be
+def `(Q, z) = E [`(h, z)].
+h∼Q
+By the linearity of expectation, the generalization loss and training loss of Q can be written as
+$$
+LD (Q) = E [LD (h)]          and LS (Q) = E [LS (h)].
+$$
+h∼Q                              h∼Q
+The following theorem tells us that the difference between the generalization loss and the empirical loss of a posterior Q is bounded by an expression that depends on the Kullback-Leibler divergence between Q and the prior distribution P . The Kullback-Leibler is a natural measure of the distance between two distributions. The theorem suggests that if we would like to minimize the generalization loss of Q, we should jointly minimize both the empirical loss of Q and the Kullback-Leibler distance between Q and the prior distribution. We will
+
+<!-- page: 416 -->
+
+later show how in some cases this idea leads to the regularized risk minimization principle.
+theorem 31.1 Let D be an arbitrary distribution over an example domain Z. Let H be a hypothesis class and let ` : H × Z → [0, 1] be a loss function. Let P be a prior distribution over H and let δ ∈ (0, 1). Then, with probability of at least 1 - δ over the choice of an i.i.d. training set S = {z1 , . . . , zm } sampled according to D, for all distributions Q over H (even such that depend on S), we have
+s
+$$
+D(Q||P ) + ln m/\delta LD (Q) \le LS (Q) +                              ,
+$$
+2(m - 1)
+$$
+where D(Q||P ) = E [ln(Q(h)/P (h))] h\sim Q
+$$
+is the Kullback-Leibler divergence.
+Proof    For any function f (S), using Markov’s inequality:
+$$
+ES [ef (S) ] P[f (S) \ge \epsilon] = P[ef (S) \ge e\epsilon ] \le                .          (31.1) S               S                      e\epsilon Let \Delta(h) = LD (h) - LS (h). We will apply Equation (31.1) with the function (                                ) 2 f (S) = sup 2(m - 1) E (\Delta(h)) - D(Q||P ) . Q                 h\sim Q
+$$
+We now turn to bound ES [ef (S) ]. The main trick is to upper bound f (S) by using an expression that does not depend on Q but rather depends on the prior probability P . To do so, fix some S and note that from the definition of D(Q||P ) we get that for all Q,
+$$
+2 2(m - 1) E (\Delta(h))2 - D(Q||P ) = E [ln(e_2(m-1)\Delta(h) P (h)/Q(h))] h\sim Q                               h\sim Q 2 \le ln E [e_2(m-1)\Delta(h) P (h)/Q(h)] h\sim Q 2 = ln E [e_2(m-1)\Delta(h) ],              (31.2) h\sim P
+$$
+where the inequality follows from Jensen’s inequality and the concavity of the log function. Therefore,
+$$
+2 E[ef (S) ] \le E E [e_2(m-1)\Delta(h) ].                      (31.3) S              S h\sim P
+$$
+The advantage of the expression on the right-hand side stems from the fact that we can switch the order of expectations (because P is a prior that does not depend on S), which yields
+$$
+2 E[ef (S) ] \le E E[e_2(m-1)\Delta(h) ].                       (31.4) S           h\sim P S
+$$
+
+<!-- page: 417 -->
+
+2 Next, we claim that for all h we have ES [e2(m-1)\Delta(h) ] \leq  m. To do so, recall that Hoeffding’s inequality tells us that 2 P[\Delta(h) \geq  ε] \leq  e-2mε . S 2 This implies that ES [e2(m-1)\Delta(h) ] \leq  m (see Exercise 1). Combining this with Equation (31.4) and plugging into Equation (31.1) we get m P[f (S) \geq  ε] \leq       .                   (31.5) S                eε Denote the right-hand side of the above δ, thus ε = ln(m/δ), and we therefore obtain that with probability of at least 1 - δ we have that for all Q
+$$
+2(m - 1) E (\Delta(h))2 - D(Q||P ) \le \epsilon = ln(m/\delta). h\sim Q
+$$
+Rearranging the inequality and using Jensen’s inequality again (the function x2 is convex) we conclude that
+(         )2
+$$
+ln(m/\delta) + D(Q||P ) E \Delta(h) \le E (\Delta(h))2 \le                             .       (31.6) h\sim Q            h\sim Q                 2(m - 1)
+$$
+Remark 31.1 (Regularization)           The PAC-Bayes bound leads to the following learning rule:
+Given a prior P , return a posterior Q that minimizes the function
+$$
+s D(Q||P ) + ln m/\delta LS (Q) +                      . \tag{31.7}
+$$
+2(m - 1)
+This rule is similar to the regularized risk minimization principle. That is, we jointly minimize the empirical loss of Q on the sample and the Kullback-Leibler “distance” between Q and P .
+### 31.2   Bibliographic Remarks
+PAC-Bayes bounds were first introduced by McAllester (1998). See also (McAllester 1999, McAllester 2003, Seeger 2003, Langford & Shawe-Taylor 2003, Langford 2006).
+$$
+31.3   Exercises 2 1. Let X be a random variable that satisfies P[X \ge \epsilon] \le e-2m\epsilon . Prove that 2 E[e_2(m-1)X ] \le m.
+$$
+
+<!-- page: 418 -->
+
+2. \bullet  Suppose that H is a finite hypothesis class, set the prior to be uniform over
+$$
+H, and set the posterior to be Q(h_S ) = 1 for some h_S and Q(h) = 0 for all other h \in H. Show that
+$$
+s
+$$
+ln(|H|) + ln(m/\delta) LD (h_S ) \le LS (h) +                         .
+$$
+2(m - 1) Compare to the bounds we derived using uniform convergence.
+- Derive a bound similar to the Occam bound given in Chapter 7 using the
+PAC-Bayes bound
+
+<!-- page: 419 -->
+
+# Appendix A Technical Lemmas
+lemma A.1 Let a > 0. Then: x \geq  2a log(a) ⇒ x \geq  a log(x). It follows that a necessary condition for the inequality x < a log(x) to hold is that x < 2a log(a).
+$$
+\sqrt Proof First note that for a \in (0, e ] the inequality x \ge a log(x) holds uncon-
+$$
+\sqrt ditionally and therefore the claim is trivial. From now on, assume that a > e. Consider the function f (x) = x - a log(x). The derivative is f 0 (x) = 1 - a/x. Thus, for x > a the derivative is positive and the function increases. In addition,
+$$
+f (2a log(a)) = 2a log(a) - a log(2a log(a)) = 2a log(a) - a log(a) - a log(2 log(a)) = a log(a) - a log(2 log(a)).
+$$
+Since a - 2 log(a) > 0 for all a > 0, the proof follows.
+lemma A.2 Let a \geq  1 and b > 0. Then: x \geq  4a log(2a)+2b ⇒ x \geq  a log(x)+b.
+Proof It suffices to prove that x \geq  4a log(2a) + 2b implies that both x \geq  2a log(x) and x \geq  2b. Since we assume a \geq  1 we clearly have that x \geq  2b. In addition, since b > 0 we have that x \geq  4a log(2a) which using Lemma A.1 implies that x \geq  2a log(x). This concludes our proof.
+lemma A.3 Let X be a random variable and x0 ∈ R be a scalar and assume
+$$
+2  2 that there exists a > 0 such that for all t \ge 0 we have P[|X - x_0 | > t] \le 2e-t /a . Then, E[|X - x_0 |] \le 4 a.
+$$
+Proof For all i = 0, 1, 2, . . . denote ti = a i. Since ti is monotonically increasing
+$$
+P\in fty we have that E[|X - x_0 |] is at most i=1 ti P[|X - x_0 | > ti-1 ]. Combining this
+$$
+P∞             2 with the assumption in the lemma we get that E[|X - x0 |] \leq  2 a i=1 ie-(i-1) . The proof now follows from the inequalities ∞                 5                 Z ∞ X          2    X              2                  2 ie-(i-1) \leq          ie-(i-1) +         xe-(x-1) dx < 1.8 + 10-7 < 2 . i=1               i=1               5
+lemma A.4 Let X be a random variable and x0 ∈ R be a scalar and assume
+$$
+for all t \ge 0 we have P[|X - x_0 | > that there exists a > 0 and b \ge e such that p -t_2 /a_2                 0 t] \le 2b e        . Then, E[|X - x |] \le a(2 + log(b)).
+$$
+
+<!-- page: 420 -->
+
+$$
+p Proof For all i = 0, 1, 2, . . . denote ti = a (i+                  log(b)). Since ti is monotonically increasing we have that
+$$
+$$
+p         \in fty X E[|X - x_0 |] \le a     log(b) +   ti P[|X - x_0 | > ti-1 ]. i=1
+$$
+Using the assumption in the lemma we have
+$$
+\in fty X                                            \in fty X     p              \sqrt       2 ti P[|X - x_0 | > ti-1 ] \le 2 a b         (i + log(b))e-(i-1+ log(b)) i=1                                         i=1 Z \in fty -(x-1)2 \le 2ab      \sqrt            xe             dx 1+ log(b) Z \in fty 2 = 2ab \sqrt        (y + 1)e-y dy log(b) Z \in fty 2 \le 4ab \sqrt        ye-y dy log(b) 2 \in fty h     i = 2 a b -e-y \sqrt log(b)
+$$
+$$
+= 2 a b/b = 2 a.
+$$
+Combining the preceding inequalities we conclude our proof.
+lemma A.5           Let m, d be two positive integers such that d \leq  m - 2. Then,
+$$
+d ( )                 ( e m )d X  m \le                . k              d k=0
+$$
+Proof We prove the claim by induction. For d = 1 the left-hand side equals 1 + m while the right-hand side equals em; hence the claim is true. Assume that the claim holds for d and let us prove it for d + 1. By the induction assumption we have
+$$
+d+1 ( )          ( e m )d        ( ) X    m                        m \le          + k          d        d+1 k=0 (    )d                               ! ( e m )d        d    m(m - 1)(m - 2) · · · (m - d) =           1+ d           em               (d + 1)d! ( )d           ! ( em )d       d    (m - d) \le           1+                  . d          e   (d + 1)d!
+$$
+
+<!-- page: 421 -->
+
+Using Stirling’s approximation we further have that
+$$
+( )d                     ! ( e m )d         d         (m - d) \le            1+               \sqrt d             e   (d + 1) 2\pi_d(d/e)d ( e m )d (         m-d
+$$
+) =            1+ \sqrt d             2πd(d + 1) ( e m )d d + 1 + (m - d)/\sqrt2πd =          · d               d+1 ( e m )d d + 1 + (m - d)/2 \leq           · d             d+1 ( e m )d d/2 + 1 + m/2 =          · d          d+1 ( e m )d    m \leq           ·     , d       d+1 where in the last inequality we used the assumption that d \leq  m - 2. On the other hand, (      )d+1 (                     (     )d em            e m )d em           d =          ·       · d+1             d       d+1       d+1 ( e m )d em            1 =          ·       · d       d + 1 (1 + 1/d)d ( e m )d em 1 \geq           ·       · d       d+1 e ( e m )d     m =          ·      , d       d+1 which proves our inductive argument. lemma A.6     For all a ∈ R we have ea + e-a     2 \leq  ea /2 . 2 Proof   Observe that ∞ X an ea =                  . n=0
+n!
+$$
+Therefore, \in fty ea + e-a   X    a_2n =           , 2      n=0 (2n)!
+$$
+$$
+and \in fty a_2 /2 X a_2n e           =                  . n=0 2n n!
+$$
+$$
+Observing that (2n)! \ge 2n n! for every n \ge 0 we conclude our proof.
+$$
+
+<!-- page: 422 -->
+
+# Appendix B Measure Concentration
+Let Z1 , . . . , Zm be an i.i.d. sequence of random variables and let \mu be their mean. The strong law of large numbers states that when m tends to infinity, the em-
+1 Pm pirical average, m       i=1 Zi , converges to the expected value \mu, with probability
+1. Measure concentration inequalities quantify the deviation of the empirical average from the expectation when m is finite.
+B.1   Markov’s Inequality
+We start with an inequality which is called Markov’s inequality. Let Z be a nonnegative random variable. The expectation of Z can be written as follows:
+$$
+Z \in fty E[Z] =      P[Z \ge x]dx.                        (B.1)
+$$
+x=0
+$$
+Since P[Z \ge x] is monotonically nonincreasing we obtain
+$$
+$$
+Z a                Z a \forall a \ge 0, E[Z] \ge       P[Z \ge x]dx \ge        P[Z \ge a]dx = a P[Z \ge a].            (B.2)
+$$
+$$
+x=0                    x=0 Rearranging the inequality yields Markov’s inequality:
+$$
+E[Z] \forall a \geq  0, P[Z \geq  a] \leq       .                  (B.3) a For random variables that take value in [0, 1], we can derive from Markov’s inequality the following. lemma B.1 Let Z be a random variable that takes values in [0, 1]. Assume that E[Z] = \mu. Then, for any a ∈ (0, 1), \mu - (1 - a) P[Z > 1 - a] \geq              . a This also implies that for every a ∈ (0, 1), \mu-a P[Z > a] \geq        \geq  \mu - a. 1-a Proof Let Y = 1 - Z. Then Y is a nonnegative random variable with E[Y ] = 1 - E[Z] = 1 - \mu. Applying Markov’s inequality on Y we obtain
+$$
+E[Y ]   1-\mu P[Z \le 1 - a] = P[1 - Z \ge a] = P[Y \ge a] \le               =     . a       a
+$$
+
+<!-- page: 423 -->
+
+$$
+Therefore, 1-\mu   a+\mu-1 P[Z > 1 - a] \ge 1 -        =       . a      a
+$$
+B.2   Chebyshev’s Inequality
+Applying Markov’s inequality on the random variable (Z - E[Z])2 we obtain Chebyshev’s inequality:
+Var[Z] \forall a > 0,   P[|Z - E[Z]| \geq  a] = P[(Z - E[Z])2 \geq  a2 ] \leq               ,        (B.4) a2 where Var[Z] = E[(Z - E[Z])2 ] is the variance of Z. 1 Pm Consider the random variable m     i=1 Zi . Since Z1 , . . . , Zm are i.i.d. it is easy to verify that "       m #
+$$
+1 X              Var[Z_1 ] Var           Zi =               . m i=1               m
+$$
+Applying Chebyshev’s inequality, we obtain the following:
+lemma B.2 Let Z1 , . . . , Zm be a sequence of i.i.d. random variables and assume that E[Z1 ] = \mu and Var[Z1 ] \leq  1. Then, for any δ ∈ (0, 1), with probability of at least 1 - δ we have
+m             r
+## 1 X                    1
+$$
+Zi - \mu \le           . m i=1                \delta_m
+$$
+Proof    Applying Chebyshev’s inequality we obtain that for all a > 0
+"    m
+#
+$$
+1 X                    Var[Z_1 ]     1 P         Zi - \mu > a \le          2
+$$
+$$
+\le      . m i=1                   ma        m a_2
+$$
+The proof follows by denoting the right-hand side δ and solving for a.
+The deviation between the empirical average and the mean given previously decreases polynomially with m. It is possible to obtain a significantly faster decrease. In the sections that follow we derive bounds that decrease exponentially fast.
+B.3   Chernoff’s Bounds
+$$
+Let Z_1 , . . . , Zm be independent Bernoulli variables where for every i, P[Zi = 1] =
+$$
+$$
+Pm                       Pm pi and P[Zi = 0] = 1 - pi . Let p = i=1 pi and let Z = i=1 Zi . Using the
+$$
+
+<!-- page: 424 -->
+
+monotonicity of the exponent function and Markov’s inequality, we have that for every t > 0
+$$
+E[etZ ] P[Z > (1 + \delta)p] = P[etZ > et(1+\delta)p ] \le                      .              (B.5) e(1+\delta)tp
+$$
+$$
+Next, P                Y E[etZ ] = E[et         i Zi     ] = E[ etZi ] i Y tZi =            E[e         ]                      by independence i Y pi et + (1 - pi )e_0 ) = i Y 1 + pi (et - 1) ) = i Y               t \le            epi (e -1)                         using 1 + x \le ex i P          t =e       i pi (e -1)
+$$
+t = e(e -1)p .
+Combining the above with Equation (B.5) and choosing t = log(1 + δ) we obtain
+lemma B.3 Let Z1 , . . . , Zm be independent Bernoulli variables where for every
+$$
+Pm                   Pm i, P[Zi = 1] = pi and P[Zi = 0] = 1 - pi . Let p = i=1 pi and let Z = i=1 Zi . Then, for any \delta > 0,
+$$
+$$
+P[Z > (1 + \delta)p] \le e-h(\delta) p ,
+$$
+where
+h(δ) = (1 + δ) log(1 + δ) - δ.
+$$
+Using the inequality h(a) \ge a_2 /(2 + 2a/3) we obtain
+$$
+lemma B.4     Using the notation of Lemma B.3 we also have
+$$
+\delta_2 P[Z > (1 + \delta)p] \le e-p 2+2\delta/3 .
+$$
+For the other direction, we apply similar calculations:
+$$
+E[e-tZ ] P[Z < (1-\delta)p] = P[-Z > -(1-\delta)p] = P[e-tZ > e-t(1-\delta)p ] \le                                 , (B.6) e-(1-\delta)tp
+$$
+
+<!-- page: 425 -->
+
+$$
+and, P                 Y E[e-tZ ] = E[e-t        i Zi    ] = E[ e-tZi ] i Y -tZi =        E[e            ]                                 by independence i Y 1 + pi (e-t - 1) ) = i Y             -t -1) \le        epi (e                                           using 1 + x \le ex i (e-t -1)p =e                 .
+$$
+Setting t = - log(1 - δ) yields
+$$
+e-\delta_p P[Z < (1 - \delta)p] \le                                        = e-ph(-\delta) . e(1-\delta) log(1-\delta) p It is easy to verify that h(-\delta) \ge h(\delta) and hence
+$$
+lemma B.5     Using the notation of Lemma B.3 we also have
+$$
+\delta_2 P[Z < (1 - \delta)p] \le e-ph(-\delta) \le e-ph(\delta) \le e-p 2+2\delta/3 .
+$$
+B.4   Hoeffding’s Inequality
+lemma B.6 (Hoeffding’s inequality) Let Z1 , . . . , Zm be a sequence of i.i.d.
+$$
+1 Pm random variables and let Z̄ = m      i=1 Zi . Assume that E[Z̄] = \mu and P[a \le Zi \le b] = 1 for every i. Then, for any \epsilon > 0      m  X 1 Zi - \mu > \epsilon \le 2 exp -2 m \epsilon_2 /(b - a)2 .
+$$
+) P m i=1
+1 P Proof Denote Xi = Zi - E[Zi ] and X̄ = m     i Xi . Using the monotonicity of the exponent function and Markov’s inequality, we have that for every λ > 0 and ε > 0, P[X̄ \geq  ε] = P[eλX̄ \geq  eλε ] \leq  e-λε E[eλX̄ ].
+$$
+Using the independence assumption we also have              Y               Y \lambda X̄          \lambda Xi /m E[e ] = E      e         =   E[e\lambda Xi /m ]. i                i
+$$
+$$
+By Hoeffding’s lemma (Lemma B.7 later), for every i we have \lambda_2 (b-a)2 E[e\lambda Xi /m ] \le e         8m_2      .
+$$
+
+<!-- page: 426 -->
+
+$$
+Therefore, Y       \lambda_2 (b-a)2               \lambda_2 (b-a)2 P[X̄ \ge \epsilon] \le e-\lambda\epsilon       e      8m_2      = e-\lambda\epsilon+         8m      . i
+$$
+$$
+Setting \lambda = 4m\epsilon/(b - a)2 we obtain 2m\epsilon 2 - (b-a) P[X̄ \ge \epsilon] \le e             2 .
+$$
+$$
+Applying the same arguments on the variable -X̄ we obtain that P[X̄ \le -\epsilon] \le
+$$
+2mε2 - (b-a)2 e           . The theorem follows by applying the union bound on the two cases.
+lemma B.7 (Hoeffding’s lemma) Let X be a random variable that takes values in the interval [a, b] and such that E[X] = 0. Then, for every λ > 0,
+$$
+\lambda_2 (b-a)2 E[e\lambda X ] \le e          8       .
+$$
+Proof Since f (x) = eλx is a convex function, we have that for every α ∈ (0, 1), and x ∈ [a, b],
+$$
+f (x) \le \alpha_f (a) + (1 - \alpha)f (b).
+$$
+$$
+Setting \alpha = b-x b-a \in [0, 1] yields
+$$
+$$
+b - x \lambda_a x - a \lambda_b e\lambda_x \le        e +      e . b-a      b-a Taking the expectation, we obtain that b - E[X] \lambda_a E[x] - a \lambda_b  b \lambda_a    a \lambda_b E[e\lambda X ] \le           e +         e =     e -     e , b-a        b-a        b-a     b-a
+$$
+-a where we used the fact that E[X] = 0. Denote h = λ(b - a), p = b-a          , and h L(h) = -hp + log(1 - p + pe ). Then, the expression on the right-hand side of the above can be rewritten as eL(h) . Therefore, to conclude our proof it suffices 2 to show that L(h) \leq  h8 . This follows from Taylor’s theorem using the facts: L(0) = L0 (0) = 0 and L00 (h) \leq  1/4 for all h.
+B.5   Bennet’s and Bernstein’s Inequalities
+Bennet’s and Bernsein’s inequalities are similar to Chernoff’s bounds, but they hold for any sequence of independent random variables. We state the inequalities without proof, which can be found, for example, in Cesa-Bianchi & Lugosi (2006).
+lemma B.8 (Bennet’s inequality) Let Z1 , . . . , Zm be independent random variables with zero mean, and assume that Zi \leq  1 with probability 1. Let
+m
+$$
+1 X σ2 \ge           E[Zi2 ]. m i=1
+$$
+
+<!-- page: 427 -->
+
+$$
+Then for all \epsilon > 0, "m           2    \epsilon Zi > \epsilon \le e-mσ h( mσ2 ) . X P i=1
+$$
+where
+h(a) = (1 + a) log(1 + a) - a. By using the inequality h(a) \geq  a2 /(2 + 2a/3) it is possible to derive the following: lemma B.9 (Bernstein’s inequality) Let Z1 , . . . , Zm be i.i.d. random variables with a zero mean. If for all i, P(|Zi | < M ) = 1, then for all t > 0 : "m            #                             ! X                     t2 /2 P     Zi > t \leq  exp - P                             . i=1
+E Zj2 + M t/3
+B.5.1   Application
+Bernstein’s inequality can be used to interpolate between the rate 1/ε we derived for PAC learning in the realizable case (in Chapter 2) and the rate 1/ε2 we derived for the unrealizable case (in Chapter 4). lemma B.10 Let ` : H × Z → [0, 1] be a loss function. Let D be an arbitrary distribution over Z. Fix some h. Then, for any δ ∈ (0, 1) we have
+"                  r                             #
+2LD (h) log(1/δ) 2 log(1/δ)
+1. P   LS (h) \geq  LD (h) +                    +            \leq δ
+S∼D m                            3m                m
+"                  r                             #
+2LS (h) log(1/δ) 4 log(1/δ)
+2. P   LD (h) \geq  LS (h) +                    +            \leq δ
+S∼D m                             m               m
+Proof Define random variables α1 , . . . , αm s.t. αi = `(h, zi ) - LD (h). Note that E[αi ] = 0 and that
+E[αi2 ] = E[`(h, zi )2 ] - 2LD (h) E[`(h, zi )] + LD (h)2
+= E[`(h, zi )2 ] - LD (h)2 \leq  E[`(h, zi )2 ] \leq  E[`(h, zi )] = LD (h), where in the last inequality we used the fact that `(h, zi ) ∈ [0, 1] and thus `(h, zi )2 \leq  `(h, zi ). Applying Bernsein’s inequality over the αi ’s yields "m         #                         ! X                        t2 /2 P        αi > t \leq  exp - P i=1 E αj2 + t/3 t2 /2 (                   ) def \leq  exp -                    = δ. m LD (h) + t/3
+
+<!-- page: 428 -->
+
+Solving for t yields
+t2 /2
+$$
+= log(1/\delta) m LD (h) + t/3 log(1/\delta) ⇒ t_2 /2 -            t - log(1/\delta) m LD (h) = 0
+$$
+3    s log(1/δ)    log2 (1/δ) ⇒ t=             +             + 2 log(1/δ) m LD (h)
+$$
+3           32 log(1/\delta) p \le 2           + 2 log(1/\delta) m LD (h) 3 1 P Since m    i \alpha_i = LS (h) - LD (h), it follows that with probability of at least 1 - \delta,
+$$
+r log(1/δ)     2 log(1/δ) LD (h) LS (h) - LD (h) \leq  2           +                     , 3m                m which proves the first inequality. The second part of the lemma follows in a similar way.
+B.6   Slud’s Inequality
+Pm Let X be a (m, p) binomial variable. That is, X = i=1 Zi , where each Zi is 1 with probability p and 0 with probability 1-p. Assume that p = (1-ε)/2. Slud’s inequality (Slud 1977) tells us that P[X \geq  m/2] is lower bounded
+p    by the probability that a normal variable will be greater than or equal to mε2 /(1 - ε2 ). The following lemma follows by standard tail bounds for the normal distribution. lemma B.11 Let X be a (m, p) binomial variable and assume that p = (1-ε)/2. Then, 1(      p                         ) P[X \geq  m/2] \geq       1 - 1 - exp(-mε2 /(1 - ε2 )) . 2
+B.7   Concentration of χ2 Variables
+Let X1 , . . . , Xk be k independent normally distributed random variables. That is, for all i, Xi ∼ N (0, 1). The distribution of the random variable Xi2 is called χ2 (chi square) and the distribution of the random variable Z = X12 + · · · + Xk2 is called χ2k (chi square with k degrees of freedom). Clearly, E[Xi2 ] = 1 and E[Z] = k. The following lemma states that Xk2 is concentrated around its mean. lemma B.12       Let Z ∼ χ2k . Then, for all ε > 0 we have
+$$
+2 P[Z \le (1 - \epsilon)k] \le e-\epsilon k/6 , and for all \epsilon \in (0, 3) we have 2 P[Z \ge (1 + \epsilon)k] \le e-\epsilon k/6 .
+$$
+
+<!-- page: 429 -->
+
+Finally, for all ε ∈ (0, 3),
+2 P [(1 - ε)k \leq  Z \leq  (1 + ε)k] \geq  1 - 2e-ε k/6 . Pk Proof Let us write Z = i=1 Xi2 where Xi ∼ N (0, 1). To prove both bounds we use Chernoff’s bounding method. For the first inequality, we first bound
+$$
+2                                                               2 E[e-\lambda X_1 ], where \lambda > 0 will be specified later. Since e-a \le 1 - a + a_2 for all a \ge 0 we have that
+$$
+$$
+2                     \lambda_2 E[e-\lambda X_1 ] \le 1 - \lambda E[X_12 ] +      E[X_14 ].
+$$
+$$
+2 Using the well known equalities, E[X_12 ] = 1 and E[X_14 ] = 3, and the fact that
+$$
+## 1 - a \leq  e-a we obtain that
+$$
+2                             3       2 E[e-\lambda X_1 ] \le 1 - \lambda + 32 \lambda_2 \le e-\lambda+ 2 \lambda . Now, applying Chernoff’s bounding method we get that
+$$
+$$
+h                  i P[-Z \ge -(1 - \epsilon)k] = P e-\lambda Z \ge e-(1-\epsilon)k\lambda \le e(1-\epsilon)k\lambda E e-\lambda Z
+$$
+[     ] ( h      2
+i)k = e(1-ε)kλ E e-λX1
+$$
+3       2 \le e(1-\epsilon)k\lambda e-\lambda_k+ 2 \lambda k
+$$
+3   2 = e-εkλ+ 2 kλ . Choose λ = ε/3 we obtain the first inequality stated in the lemma. For the second inequality, we use a known closed form expression for the moment generating function of a χ2k distributed random variable: h     2 i \forall λ < 21 , E eλZ       = (1 - 2λ)-k/2 .          (B.7)
+$$
+On the basis of the equation and using Chernoff’s bounding method we have h               i P[Z \ge (1 + \epsilon)k)] = P e\lambda Z \ge e(1+\epsilon)k\lambda \le e-(1+\epsilon)k\lambda E e\lambda Z [    ]
+$$
+-k/2 = e-(1+ε)kλ (1 - 2λ) \leq  e-(1+ε)kλ ekλ = e-εkλ , where the last inequality occurs because (1 - a) \leq  e-a . Setting λ = ε/6 (which is in (0, 1/2) by our assumption) we obtain the second inequality stated in the lemma. Finally, the last inequality follows from the first two inequalities and the union bound.
+
+<!-- page: 430 -->
+
+# Appendix C Linear Algebra
+C.1   Basic Definitions
+In this chapter we only deal with linear algebra over finite dimensional Euclidean spaces. We refer to vectors as column vectors. Given two d dimensional vectors u, v ∈ Rd , their inner product is
+$$
+d X hu, vi =         ui vi . i=1
+$$
+p The Euclidean norm (a.k.a. the \ell2 norm) is kuk = hu, ui. We also use the \ell1 Pd norm, kuk1 = i=1 |ui | and the \ell∞ norm kuk∞ = maxi |ui |. A subspace of Rd is a subset of Rd which is closed under addition and scalar multiplication. The span of a set of vectors u1 , . . . , uk is the subspace containing all vectors of the form
+k X
+αi ui i=1
+where for all i, αi ∈ R.
+A set of vectors U = {u1 , . . . , uk } is independent if for every i, ui is not in the span of u1 , . . . , ui-1 , ui+1 , . . . , uk . We say that U spans a subspace V if V is the span of the vectors in U . We say that U is a basis of V if it is both independent and spans V. The dimension of V is the size of a basis of V (and it can be verified that all bases of V have the same size). We say that U is an orthogonal set if for all i \neq  j, hui , uj i = 0. We say that U is an orthonormal set if it is orthogonal and if for every i, kui k = 1. Given a matrix A ∈ Rn,d , the range of A is the span of its columns and the null space of A is the subspace of all vectors that satisfy Au = 0. The rank of A is the dimension of its range. The transpose of a matrix A, denoted A> , is the matrix whose (i, j) entry equals the (j, i) entry of A. We say that A is symmetric if A = A> .
+
+<!-- page: 431 -->
+
+C.2   Eigenvalues and Eigenvectors
+$$
+Let A \in Rd,d be a matrix. A non-zero vector u is an eigenvector of A with a corresponding eigenvalue \lambda if Au = \lambda_u.
+$$
+theorem C.1 (Spectral Decomposition) If A ∈ Rd,d is a symmetric matrix of rank k, then there exists an orthonormal basis of Rd , u1 , . . . , ud , such that each
+Pd ui is an eigenvector of A. Furthermore, A can be written as A = i=1 λi ui u>         i , where each λi is the eigenvalue corresponding to the eigenvector ui . This can be written equivalently as A = U DU > , where the columns of U are the vectors u1 , . . . , ud , and D is a diagonal matrix with Di,i = λi and for i \neq  j, Di,j =
+0. Finally, the number of λi which are nonzero is the rank of the matrix, the eigenvectors which correspond to the nonzero eigenvalues span the range of A, and the eigenvectors which correspond to zero eigenvalues span the null space of A.
+C.3   Positive definite matrices
+A symmetric matrix A ∈ Rd,d is positive definite if all its eigenvalues are positive. A is positive semidefinite if all its eigenvalues are nonnegative.
+theorem C.2 Let A ∈ Rd,d be a symmetric matrix. Then, the following are equivalent definitions of positive semidefiniteness of A:
+- All the eigenvalues of A are nonnegative. \bullet  For every vector u, hu, Aui \geq  0. \bullet  There exists a matrix B such that A = BB > .
+C.4   Singular Value Decomposition (SVD)
+Let A ∈ Rm,n be a matrix of rank r. When m \neq  n, the eigenvalue decomposition given in Theorem C.1 cannot be applied. We will describe another decomposition of A, which is called Singular Value Decomposition, or SVD for short.
+Unit vectors v ∈ Rn and u ∈ Rm are called right and left singular vectors of A with corresponding singular value σ > 0 if
+$$
+Av = σu      and A> u = σv.
+$$
+We first show that if we can find r orthonormal singular vectors with positive singular values, then we can decompose A = U DV > , with the columns of U and V containing the left and right singular vectors, and D being a diagonal r × r matrix with the singular values on its diagonal.
+
+<!-- page: 432 -->
+
+lemma C.3 Let A ∈ Rm,n be a matrix of rank r. Assume that v1 , . . . , vr is an orthonormal set of right singular vectors of A, u1 , . . . , ur is an orthonormal set of corresponding left singular vectors of A, and σ1 , . . . , σr are the corresponding singular values. Then,
+Xr A=       σi ui vi> .
+i=1
+It follows that if U is a matrix whose columns are the ui ’s, V is a matrix whose columns are the vi ’s, and D is a diagonal matrix with Di,i = σi , then
+A = U DV > . Proof Any right singular vector of A must be in the range of A> (otherwise, the singular value will have to be zero). Therefore, v1 , . . . , vr is an orthonormal basis of the range of A. Let us complete it to an orthonormal basis of Rn by
+Pr adding the vectors vr+1 , . . . , vn . Define B = i=1 σi ui vi> . It suffices to prove that for all i, Avi = Bvi . Clearly, if i > r then Avi = 0 and Bvi = 0 as well. For i \leq  r we have r X Bvi =         σj uj vj> vi = σi ui = Avi , j=1
+where the last equality follows from the definition. The next lemma relates the singular values of A to the eigenvalues of A> A and AA> . lemma C.4 v, u are right and left singular vectors of A with singular value σ iff v is an eigenvector of A> A with corresponding eigenvalue σ 2 and u = σ -1 Av is an eigenvector of AA> with corresponding eigenvalue σ 2 . Proof Suppose that σ is a singular value of A with v ∈ Rn being the corresponding right singular vector. Then,
+A> Av = σA> u = σ 2 v. Similarly, AA> u = σAv = σ 2 u. For the other direction, if λ \neq  0 is an eigenvalue of A> A, with v being the corresponding \sqrt         eigenvector, then λ > 0 because A> A is positive semidefinite. Let -1 σ = λ, u = σ Av. Then,
+$$
+\sqrt Av σu = \lambda \sqrt = Av,
+$$
+λ and
+$$
+1 >     \lambda A> u =      A Av = v = σv. σ       σ
+$$
+
+<!-- page: 433 -->
+
+Finally, we show that if A has rank r then it has r orthonormal singular vectors.
+lemma C.5       Let A ∈ Rm,n with rank r. Define the following vectors:
+$$
+v_1 = argmax kAvk v\in Rn :kvk=1
+$$
+$$
+v_2 = argmax kAvk v\in Rn :kvk=1 hv,v_1 i=0 .. . vr =       argmax        kAvk v\in Rn :kvk=1 \forall i<r, hv,vi i=0
+$$
+Then, v1 , . . . , vr is an orthonormal set of right singular vectors of A.
+Proof First note that since the rank of A is r, the range of A is a subspace of dimension r, and therefore it is easy to verify that for all i = 1, . . . , r, kAvi k > 0. Let W ∈ Rn,n be an orthonormal matrix obtained by the eigenvalue decomposition of A> A, namely, A> A = W DW > , with D being a diagonal matrix with D1,1 \geq  D2,2 \geq  · · · \geq  0. We will show that v1 , . . . , vr are eigenvectors of A> A that correspond to nonzero eigenvalues, and, hence, using Lemma C.4 it follows that these are also right singular vectors of A. The proof is by induction. For the basis of the induction, note that any unit vector v can be written as v = W x, for x = W > v, and note that kxk = 1. Therefore,
+$$
+n X \|Av\|_2 = kAW xk2 = kW DW > W xk2 = kW Dxk2 = \|Dx\|_2 =                                      2
+$$
+Di,i xi 2 . i=1
+$$
+Therefore, n X max \|Av\|_2 = max                      2 Di,i xi 2 . v:kvk=1             x:kxk=1 i=1
+$$
+The solution of the right-hand side is to set x = (1, 0, . . . , 0), which implies that v1 is the first eigenvector of A> A. Since kAv1 k > 0 it follows that D1,1 > 0 as required. For the induction step, assume that the claim holds for some 1 \leq  t \leq  r - 1. Then, any v which is orthogonal to v1 , . . . , vt can be written as v = W x with all the first t elements of x being zero. It follows that
+n X max             kAvk2 = max                    2
+$$
+Di,i xi 2 . v:kvk=1,\forall i\le t,v> vi =0              x:kxk=1 i=t+1
+$$
+The solution of the right-hand side is the all zeros vector except xt+1 = 1. This implies that vt+1 is the (t + 1)th column of W . Finally, since kAvt+1 k > 0 it follows that Dt+1,t+1 > 0 as required. This concludes our proof.
+
+<!-- page: 434 -->
+
+corollary C.6 (The SVD theorem) Let A ∈ Rm,n with rank r. Then A = U DV > where D is an r × r matrix with nonzero singular values of A and the columns of U, V are orthonormal left and right singular vectors of A. Further-
+2 more, for all i, Di,i is an eigenvalue of A> A, the ith column of V is the corresponding eigenvector of A> A and the ith column of U is the corresponding eigenvector of AA> .
+
+<!-- page: 435 -->
+
+# Notes
+
+<!-- page: 436 -->
+
+<!-- page: 437 -->
+
+# References
+Abernethy, J., Bartlett, P. L., Rakhlin, A. & Tewari, A. (2008), Optimal strategies and
+minimax lower bounds for online convex games, in ‘Proceedings of the Nineteenth
+Annual Conference on Computational Learning Theory’.
+Ackerman, M. & Ben-David, S. (2008), Measures of clustering quality: A working set of axioms for clustering, in ‘Proceedings of Neural Information Processing Systems (NIPS)’, pp. 121–128.
+Agarwal, S. & Roth, D. (2005), Learnability of bipartite ranking functions, in ‘Proceedings of the 18th Annual Conference on Learning Theory’, pp. 16–31.
+Agmon, S. (1954), ‘The relaxation method for linear inequalities’, Canadian Journal of Mathematics 6(3), 382–392.
+Aizerman, M. A., Braverman, E. M. & Rozonoer, L. I. (1964), ‘Theoretical foundations of the potential function method in pattern recognition learning’, Automation and Remote Control 25, 821–837.
+Allwein, E. L., Schapire, R. & Singer, Y. (2000), ‘Reducing multiclass to binary: A unifying approach for margin classifiers’, Journal of Machine Learning Research 1, 113– 141.
+Alon, N., Ben-David, S., Cesa-Bianchi, N. & Haussler, D. (1997), ‘Scale-sensitive dimensions, uniform convergence, and learnability’, Journal of the ACM 44(4), 615–631.
+Anthony, M. & Bartlet, P. (1999), Neural Network Learning: Theoretical Foundations,
+Cambridge University Press.
+Baraniuk, R., Davenport, M., DeVore, R. & Wakin, M. (2008), ‘A simple proof of the restricted isometry property for random matrices’, Constructive Approximation 28(3), 253–263.
+Barber, D. (2012), Bayesian reasoning and machine learning, Cambridge University Press.
+Bartlett, P., Bousquet, O. & Mendelson, S. (2005), ‘Local rademacher complexities’, Annals of Statistics 33(4), 1497–1537.
+Bartlett, P. L. & Ben-David, S. (2002), ‘Hardness results for neural network approximation problems’, Theor. Comput. Sci. 284(1), 53–66.
+Bartlett, P. L., Long, P. M. & Williamson, R. C. (1994), Fat-shattering and the learnability of real-valued functions, in ‘Proceedings of the seventh annual conference on Computational learning theory’, ACM, pp. 299–310.
+Bartlett, P. L. & Mendelson, S. (2001), Rademacher and Gaussian complexities: Risk bounds and structural results, in ‘14th Annual Conference on Computational Learning Theory, COLT 2001’, Vol. 2111, Springer, Berlin, pp. 224–240.
+
+<!-- page: 438 -->
+
+Bartlett, P. L. & Mendelson, S. (2002), ‘Rademacher and Gaussian complexities: Risk bounds and structural results’, Journal of Machine Learning Research 3, 463–482.
+Ben-David, S., Cesa-Bianchi, N., Haussler, D. & Long, P. (1995), ‘Characterizations of learnability for classes of {0, . . . , n}-valued functions’, Journal of Computer and System Sciences 50, 74–86.
+Ben-David, S., Eiron, N. & Long, P. (2003), ‘On the difficulty of approximately maximizing agreements’, Journal of Computer and System Sciences 66(3), 496–514.
+Ben-David, S. & Litman, A. (1998), ‘Combinatorial variability of vapnik-chervonenkis classes with applications to sample compression schemes’, Discrete Applied Mathematics 86(1), 3–25.
+Ben-David, S., Pal, D., & Shalev-Shwartz, S. (2009), Agnostic online learning, in ‘Conference on Learning Theory (COLT)’.
+Ben-David, S. & Simon, H. (2001), ‘Efficient learning of linear perceptrons’, Advances in Neural Information Processing Systems pp. 189–195.
+Bengio, Y. (2009), ‘Learning deep architectures for AI’, Foundations and Trends in Machine Learning 2(1), 1–127.
+Bengio, Y. & LeCun, Y. (2007), ‘Scaling learning algorithms towards ai’, Large-Scale Kernel Machines 34.
+Bertsekas, D. (1999), Nonlinear Programming, Athena Scientific.
+Beygelzimer, A., Langford, J. & Ravikumar, P. (2007), ‘Multiclass classification with filter trees’, Preprint, June .
+Birkhoff, G. (1946), ‘Three observations on linear algebra’, Revi. Univ. Nac. Tucuman, ser A 5, 147–151.
+Bishop, C. M. (2006), Pattern recognition and machine learning, Vol. 1, springer New York.
+Blum, L., Shub, M. & Smale, S. (1989), ‘On a theory of computation and complexity over the real numbers: Np-completeness, recursive functions and universal machines’, Am. Math. Soc 21(1), 1–46.
+Blumer, A., Ehrenfeucht, A., Haussler, D. & Warmuth, M. K. (1987), ‘Occam’s razor’, Information Processing Letters 24(6), 377–380.
+Blumer, A., Ehrenfeucht, A., Haussler, D. & Warmuth, M. K. (1989), ‘Learnability and the Vapnik-Chervonenkis dimension’, Journal of the Association for Computing Machinery 36(4), 929–965.
+Borwein, J. & Lewis, A. (2006), Convex Analysis and Nonlinear Optimization, Springer.
+Boser, B. E., Guyon, I. M. & Vapnik, V. N. (1992), A training algorithm for optimal margin classifiers, in ‘Conference on Learning Theory (COLT)’, pp. 144–152.
+Bottou, L. & Bousquet, O. (2008), The tradeoffs of large scale learning, in ‘NIPS’, pp. 161–168.
+Boucheron, S., Bousquet, O. & Lugosi, G. (2005), ‘Theory of classification: a survey of recent advances’, ESAIM: Probability and Statistics 9, 323–375.
+Bousquet, O. (2002), Concentration Inequalities and Empirical Processes Theory Applied to the Analysis of Learning Algorithms, PhD thesis, Ecole Polytechnique.
+Bousquet, O. & Elisseeff, A. (2002), ‘Stability and generalization’, Journal of Machine Learning Research 2, 499–526.
+Boyd, S. & Vandenberghe, L. (2004), Convex Optimization, Cambridge University Press.
+
+<!-- page: 439 -->
+
+Breiman, L. (1996), Bias, variance, and arcing classifiers, Technical Report 460, Statistics Department, University of California at Berkeley.
+Breiman, L. (2001), ‘Random forests’, Machine learning 45(1), 5–32.
+Breiman, L., Friedman, J. H., Olshen, R. A. & Stone, C. J. (1984), Classification and Regression Trees, Wadsworth & Brooks.
+Candès, E. (2008), ‘The restricted isometry property and its implications for compressed sensing’, Comptes Rendus Mathematique 346(9), 589–592.
+Candes, E. J. (2006), Compressive sampling, in ‘Proc. of the Int. Congress of Math., Madrid, Spain’.
+Candes, E. & Tao, T. (2005), ‘Decoding by linear programming’, IEEE Trans. on Information Theory 51, 4203–4215.
+Cesa-Bianchi, N. & Lugosi, G. (2006), Prediction, learning, and games, Cambridge University Press.
+Chang, H. S., Weiss, Y. & Freeman, W. T. (2009), ‘Informative sensing’, arXiv preprint arXiv:0901.4275 .
+Chapelle, O., Le, Q. & Smola, A. (2007), Large margin optimization of ranking measures, in ‘NIPS Workshop: Machine Learning for Web Search’.
+Collins, M. (2000), Discriminative reranking for natural language parsing, in ‘Machine Learning’.
+Collins, M. (2002), Discriminative training methods for hidden Markov models: Theory and experiments with perceptron algorithms, in ‘Conference on Empirical Methods in Natural Language Processing’.
+Collobert, R. & Weston, J. (2008), A unified architecture for natural language processing: deep neural networks with multitask learning, in ‘International Conference on Machine Learning (ICML)’.
+Cortes, C. & Vapnik, V. (1995), ‘Support-vector networks’, Machine Learning 20(3), 273–297.
+Cover, T. (1965), ‘Behavior of sequential predictors of binary sequences’, Trans. 4th Prague Conf. Information Theory Statistical Decision Functions, Random Processes pp. 263–272.
+Cover, T. & Hart, P. (1967), ‘Nearest neighbor pattern classification’, Information Theory, IEEE Transactions on 13(1), 21–27.
+Crammer, K. & Singer, Y. (2001), ‘On the algorithmic implementation of multiclass kernel-based vector machines’, Journal of Machine Learning Research 2, 265–292.
+Cristianini, N. & Shawe-Taylor, J. (2000), An Introduction to Support Vector Machines, Cambridge University Press.
+Daniely, A., Sabato, S., Ben-David, S. & Shalev-Shwartz, S. (2011), Multiclass learnability and the erm principle, in ‘Conference on Learning Theory (COLT)’.
+Daniely, A., Sabato, S. & Shwartz, S. S. (2012), Multiclass learning approaches: A theoretical comparison with implications, in ‘NIPS’.
+Davis, G., Mallat, S. & Avellaneda, M. (1997), ‘Greedy adaptive approximation’, Journal of Constructive Approximation 13, 57–98.
+Devroye, L. & Györfi, L. (1985), Nonparametric Density Estimation: The L B1 S View, Wiley.
+Devroye, L., Györfi, L. & Lugosi, G. (1996), A Probabilistic Theory of Pattern Recognition, Springer.
+
+<!-- page: 440 -->
+
+Dietterich, T. G. & Bakiri, G. (1995), ‘Solving multiclass learning problems via error-correcting output codes’, Journal of Artificial Intelligence Research 2, 263–286.
+Donoho, D. L. (2006), ‘Compressed sensing’, Information Theory, IEEE Transactions on 52(4), 1289–1306.
+Dudley, R., Gine, E. & Zinn, J. (1991), ‘Uniform and universal glivenko-cantelli classes’, Journal of Theoretical Probability 4(3), 485–510.
+Dudley, R. M. (1987), ‘Universal Donsker classes and metric entropy’, Annals of Probability 15(4), 1306–1326.
+Fisher, R. A. (1922), ‘On the mathematical foundations of theoretical statistics’, Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character 222, 309–368.
+Floyd, S. (1989), Space-bounded learning and the Vapnik-Chervonenkis dimension, in ‘Conference on Learning Theory (COLT)’, pp. 349–364.
+Floyd, S. & Warmuth, M. (1995), ‘Sample compression, learnability, and the Vapnik-Chervonenkis dimension’, Machine Learning 21(3), 269–304.
+Frank, M. & Wolfe, P. (1956), ‘An algorithm for quadratic programming’, Naval Res. Logist. Quart. 3, 95–110.
+Freund, Y. & Schapire, R. (1995), A decision-theoretic generalization of on-line learning and an application to boosting, in ‘European Conference on Computational Learning Theory (EuroCOLT)’, Springer-Verlag, pp. 23–37.
+Freund, Y. & Schapire, R. E. (1999), ‘Large margin classification using the perceptron algorithm’, Machine Learning 37(3), 277–296.
+Garcia, J. & Koelling, R. (1996), ‘Relation of cue to consequence in avoidance learning’, Foundations of animal behavior: classic papers with commentaries 4, 374.
+Gentile, C. (2003), ‘The robustness of the p-norm algorithms’, Machine Learning 53(3), 265–299.
+Georghiades, A., Belhumeur, P. & Kriegman, D. (2001), ‘From few to many: Illumination cone models for face recognition under variable lighting and pose’, IEEE Trans. Pattern Anal. Mach. Intelligence 23(6), 643–660.
+Gordon, G. (1999), Regret bounds for prediction problems, in ‘Conference on Learning Theory (COLT)’.
+Gottlieb, L.-A., Kontorovich, L. & Krauthgamer, R. (2010), Efficient classification for metric data, in ‘23rd Conference on Learning Theory’, pp. 433–440.
+Guyon, I. & Elisseeff, A. (2003), ‘An introduction to variable and feature selection’, Journal of Machine Learning Research, Special Issue on Variable and Feature Selection 3, 1157–1182.
+Hadamard, J. (1902), ‘Sur les problèmes aux dérivées partielles et leur signification physique’, Princeton University Bulletin 13, 49–52.
+Hastie, T., Tibshirani, R. & Friedman, J. (2001), The Elements of Statistical Learning, Springer.
+Haussler, D. (1992), ‘Decision theoretic generalizations of the PAC model for neural net and other learning applications’, Information and Computation 100(1), 78–150.
+Haussler, D. & Long, P. M. (1995), ‘A generalization of sauer’s lemma’, Journal of Combinatorial Theory, Series A 71(2), 219–240.
+Hazan, E., Agarwal, A. & Kale, S. (2007), ‘Logarithmic regret algorithms for online convex optimization’, Machine Learning 69(2–3), 169–192.
+
+<!-- page: 441 -->
+
+Hinton, G. E., Osindero, S. & Teh, Y.-W. (2006), ‘A fast learning algorithm for deep belief nets’, Neural Computation 18(7), 1527–1554.
+Hiriart-Urruty, J.-B. & Lemaréchal, C. (1996), Convex Analysis and Minimization Algorithms: Part 1: Fundamentals, Vol. 1, Springer.
+Hsu, C.-W., Chang, C.-C. & Lin, C.-J. (2003), ‘A practical guide to support vector classification’.
+Hyafil, L. & Rivest, R. L. (1976), ‘Constructing optimal binary decision trees is NP-complete’, Information Processing Letters 5(1), 15–17.
+Joachims, T. (2005), A support vector method for multivariate performance measures, in ‘Proceedings of the International Conference on Machine Learning (ICML)’.
+Kakade, S., Sridharan, K. & Tewari, A. (2008), On the complexity of linear prediction: Risk bounds, margin bounds, and regularization, in ‘NIPS’.
+Karp, R. M. (1972), Reducibility among combinatorial problems, Springer.
+Kearns, M. J., Schapire, R. E. & Sellie, L. M. (1994), ‘Toward efficient agnostic learning’, Machine Learning 17, 115–141.
+Kearns, M. & Mansour, Y. (1996), On the boosting ability of top-down decision tree learning algorithms, in ‘ACM Symposium on the Theory of Computing (STOC)’.
+Kearns, M. & Ron, D. (1999), ‘Algorithmic stability and sanity-check bounds for leave-one-out cross-validation’, Neural Computation 11(6), 1427–1453.
+Kearns, M. & Valiant, L. G. (1988), Learning Boolean formulae or finite automata is as hard as factoring, Technical Report TR-14-88, Harvard University Aiken Computation Laboratory.
+Kearns, M. & Vazirani, U. (1994), An Introduction to Computational Learning Theory, MIT Press.
+Kleinberg, J. (2003), ‘An impossibility theorem for clustering’, Advances in Neural Information Processing Systems pp. 463–470.
+Klivans, A. R. & Sherstov, A. A. (2006), Cryptographic hardness for learning intersections of halfspaces, in ‘FOCS’.
+Koller, D. & Friedman, N. (2009), Probabilistic Graphical Models: Principles and Techniques, MIT Press.
+Koltchinskii, V. & Panchenko, D. (2000), Rademacher processes and bounding the risk of function learning, in ‘High Dimensional Probability II’, Springer, pp. 443–457.
+Kuhn, H. W. (1955), ‘The hungarian method for the assignment problem’, Naval research logistics quarterly 2(1-2), 83–97.
+Kutin, S. & Niyogi, P. (2002), Almost-everywhere algorithmic stability and generalization error, in ‘Proceedings of the 18th Conference in Uncertainty in Artificial Intelligence’, pp. 275–282.
+Lafferty, J., McCallum, A. & Pereira, F. (2001), Conditional random fields: Probabilistic models for segmenting and labeling sequence data, in ‘International Conference on Machine Learning’, pp. 282–289.
+Langford, J. (2006), ‘Tutorial on practical prediction theory for classification’, Journal of machine learning research 6(1), 273.
+Langford, J. & Shawe-Taylor, J. (2003), PAC-Bayes & margins, in ‘NIPS’, pp. 423–430.
+Le Cun, L. (2004), Large scale online learning., in ‘Advances in Neural Information Processing Systems 16: Proceedings of the 2003 Conference’, Vol. 16, MIT Press, p. 217.
+
+<!-- page: 442 -->
+
+Le, Q. V., Ranzato, M.-A., Monga, R., Devin, M., Corrado, G., Chen, K., Dean, J. & Ng, A. Y. (2012), Building high-level features using large scale unsupervised learning, in ‘International Conference on Machine Learning (ICML)’.
+Lecun, Y. & Bengio, Y. (1995), Convolutional Networks for Images, Speech and Time Series, The MIT Press, pp. 255–258.
+Lee, H., Grosse, R., Ranganath, R. & Ng, A. (2009), Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations, in ‘International Conference on Machine Learning (ICML)’.
+Littlestone, N. (1988), ‘Learning quickly when irrelevant attributes abound: A new linear-threshold algorithm’, Machine Learning 2, 285–318.
+Littlestone, N. & Warmuth, M. (1986), Relating data compression and learnability. Unpublished manuscript.
+Littlestone, N. & Warmuth, M. K. (1994), ‘The weighted majority algorithm’, Information and Computation 108, 212–261.
+Livni, R., Shalev-Shwartz, S. & Shamir, O. (2013), ‘A provably efficient algorithm for training deep networks’, arXiv preprint arXiv:1304.7045 .
+Livni, R. & Simon, P. (2013), Honest compressions and their application to compression schemes, in ‘Conference on Learning Theory (COLT)’.
+MacKay, D. J. (2003), Information theory, inference and learning algorithms, Cambridge university press.
+Mallat, S. & Zhang, Z. (1993), ‘Matching pursuits with time-frequency dictionaries’, IEEE Transactions on Signal Processing 41, 3397–3415.
+McAllester, D. A. (1998), Some PAC-Bayesian theorems, in ‘Conference on Learning Theory (COLT)’.
+McAllester, D. A. (1999), PAC-Bayesian model averaging, in ‘Conference on Learning Theory (COLT)’, pp. 164–170.
+McAllester, D. A. (2003), Simplified PAC-Bayesian margin bounds., in ‘Conference on Learning Theory (COLT)’, pp. 203–215.
+Minsky, M. & Papert, S. (1969), Perceptrons: An Introduction to Computational Geometry, The MIT Press.
+Mukherjee, S., Niyogi, P., Poggio, T. & Rifkin, R. (2006), ‘Learning theory: stability is sufficient for generalization and necessary and sufficient for consistency of empirical risk minimization’, Advances in Computational Mathematics 25(1-3), 161–193.
+Murata, N. (1998), ‘A statistical study of on-line learning’, Online Learning and Neural Networks. Cambridge University Press, Cambridge, UK .
+Murphy, K. P. (2012), Machine learning: a probabilistic perspective, The MIT Press.
+Natarajan, B. (1995), ‘Sparse approximate solutions to linear systems’, SIAM J. Computing 25(2), 227–234.
+Natarajan, B. K. (1989), ‘On learning sets and functions’, Mach. Learn. 4, 67–97.
+Nemirovski, A., Juditsky, A., Lan, G. & Shapiro, A. (2009), ‘Robust stochastic approximation approach to stochastic programming’, SIAM Journal on Optimization 19(4), 1574–1609.
+Nemirovski, A. & Yudin, D. (1978), Problem complexity and method efficiency in optimization, Nauka Publishers, Moscow.
+Nesterov, Y. (2005), Primal-dual subgradient methods for convex problems, Technical report, Center for Operations Research and Econometrics (CORE), Catholic University of Louvain (UCL).
+
+<!-- page: 443 -->
+
+Nesterov, Y. & Nesterov, I. (2004), Introductory lectures on convex optimization: A basic course, Vol. 87, Springer Netherlands.
+Novikoff, A. B. J. (1962), On convergence proofs on perceptrons, in ‘Proceedings of the Symposium on the Mathematical Theory of Automata’, Vol. XII, pp. 615–622.
+Parberry, I. (1994), Circuit complexity and neural networks, The MIT press.
+Pearson, K. (1901), ‘On lines and planes of closest fit to systems of points in space’, The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 2(11), 559–572.
+Phillips, D. L. (1962), ‘A technique for the numerical solution of certain integral equations of the first kind’, Journal of the ACM 9(1), 84–97.
+Pisier, G. (1980-1981), ‘Remarques sur un résultat non publié de B. maurey’.
+Pitt, L. & Valiant, L. (1988), ‘Computational limitations on learning from examples’, Journal of the Association for Computing Machinery 35(4), 965–984.
+Poon, H. & Domingos, P. (2011), Sum-product networks: A new deep architecture, in ‘Conference on Uncertainty in Artificial Intelligence (UAI)’.
+Quinlan, J. R. (1986), ‘Induction of decision trees’, Machine Learning 1, 81–106.
+Quinlan, J. R. (1993), C4.5: Programs for Machine Learning, Morgan Kaufmann.
+Rabiner, L. & Juang, B. (1986), ‘An introduction to hidden markov models’, IEEE ASSP Magazine 3(1), 4–16.
+Rakhlin, A., Shamir, O. & Sridharan, K. (2012), Making gradient descent optimal for strongly convex stochastic optimization, in ‘International Conference on Machine Learning (ICML)’.
+Rakhlin, A., Sridharan, K. & Tewari, A. (2010), Online learning: Random averages, combinatorial parameters, and learnability, in ‘NIPS’.
+Rakhlin, S., Mukherjee, S. & Poggio, T. (2005), ‘Stability results in learning theory’, Analysis and Applications 3(4), 397–419.
+Ranzato, M., Huang, F., Boureau, Y. & Lecun, Y. (2007), Unsupervised learning of invariant feature hierarchies with applications to object recognition, in ‘Computer Vision and Pattern Recognition, 2007. CVPR’07. IEEE Conference on’, IEEE, pp. 1– 8.
+Rissanen, J. (1978), ‘Modeling by shortest data description’, Automatica 14, 465–471.
+Rissanen, J. (1983), ‘A universal prior for integers and estimation by minimum description length’, The Annals of Statistics 11(2), 416–431.
+Robbins, H. & Monro, S. (1951), ‘A stochastic approximation method’, The Annals of Mathematical Statistics pp. 400–407.
+Rogers, W. & Wagner, T. (1978), ‘A finite sample distribution-free performance bound for local discrimination rules’, The Annals of Statistics 6(3), 506–514.
+Rokach, L. (2007), Data mining with decision trees: theory and applications, Vol. 69, World scientific.
+Rosenblatt, F. (1958), ‘The perceptron: A probabilistic model for information storage and organization in the brain’, Psychological Review 65, 386–407. (Reprinted in Neurocomputing (MIT Press, 1988).).
+Rumelhart, D. E., Hinton, G. E. & Williams, R. J. (1986), Learning internal representations by error propagation, in D. E. Rumelhart & J. L. McClelland, eds, ‘Parallel Distributed Processing – Explorations in the Microstructure of Cognition’, MIT Press, chapter 8, pp. 318–362.
+
+<!-- page: 444 -->
+
+Sankaran, J. K. (1993), ‘A note on resolving infeasibility in linear programs by constraint relaxation’, Operations Research Letters 13(1), 19–20.
+Sauer, N. (1972), ‘On the density of families of sets’, Journal of Combinatorial Theory Series A 13, 145–147.
+Schapire, R. (1990), ‘The strength of weak learnability’, Machine Learning 5(2), 197– 227.
+Schapire, R. E. & Freund, Y. (2012), Boosting: Foundations and Algorithms, MIT press.
+Schölkopf, B., Herbrich, R. & Smola, A. (2001), A generalized representer theorem, in ‘Computational learning theory’, pp. 416–426.
+Schölkopf, B., Herbrich, R., Smola, A. & Williamson, R. (2000), A generalized repre-senter theorem, in ‘NeuroCOLT’.
+Schölkopf, B. & Smola, A. J. (2002), Learning with Kernels: Support Vector Machines, Regularization, Optimization and Beyond, MIT Press.
+Schölkopf, B., Smola, A. & Müller, K.-R. (1998), ‘Nonlinear component analysis as a kernel eigenvalue problem’, Neural computation 10(5), 1299–1319.
+Seeger, M. (2003), ‘Pac-bayesian generalisation error bounds for gaussian process classification’, The Journal of Machine Learning Research 3, 233–269.
+Shakhnarovich, G., Darrell, T. & Indyk, P. (2006), Nearest-neighbor methods in learning and vision: theory and practice, MIT Press.
+Shalev-Shwartz, S. (2007), Online Learning: Theory, Algorithms, and Applications, PhD thesis, The Hebrew University.
+Shalev-Shwartz, S. (2011), ‘Online learning and online convex optimization’, Foundations and Trends R in Machine Learning 4(2), 107–194.
+Shalev-Shwartz, S., Shamir, O., Srebro, N. & Sridharan, K. (2010), ‘Learnability, stability and uniform convergence’, The Journal of Machine Learning Research 9999, 2635–2670.
+Shalev-Shwartz, S., Shamir, O. & Sridharan, K. (2010), Learning kernel-based halfs-paces with the zero-one loss, in ‘Conference on Learning Theory (COLT)’.
+Shalev-Shwartz, S., Shamir, O., Sridharan, K. & Srebro, N. (2009), Stochastic convex optimization, in ‘Conference on Learning Theory (COLT)’.
+Shalev-Shwartz, S. & Singer, Y. (2008), On the equivalence of weak learnability and linear separability: New relaxations and efficient boosting algorithms, in ‘Proceedings of the Nineteenth Annual Conference on Computational Learning Theory’.
+Shalev-Shwartz, S., Singer, Y. & Srebro, N. (2007), Pegasos: Primal Estimated sub-GrAdient SOlver for SVM, in ‘International Conference on Machine Learning’, pp. 807–814.
+Shalev-Shwartz, S. & Srebro, N. (2008), SVM optimization: Inverse dependence on training set size, in ‘International Conference on Machine Learning’, pp. 928–935.
+Shalev-Shwartz, S., Zhang, T. & Srebro, N. (2010), ‘Trading accuracy for sparsity in optimization problems with sparsity constraints’, Siam Journal on Optimization 20, 2807–2832.
+Shamir, O. & Zhang, T. (2013), Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes, in ‘International Conference on Machine Learning (ICML)’.
+Shapiro, A., Dentcheva, D. & Ruszczyński, A. (2009), Lectures on stochastic programming: modeling and theory, Vol. 9, Society for Industrial and Applied Mathematics.
+
+<!-- page: 445 -->
+
+Shelah, S. (1972), ‘A combinatorial problem; stability and order for models and theories in infinitary languages’, Pac. J. Math 4, 247–261.
+Sipser, M. (2006), Introduction to the Theory of Computation, Thomson Course Technology.
+Slud, E. V. (1977), ‘Distribution inequalities for the binomial law’, The Annals of Probability 5(3), 404–412.
+Steinwart, I. & Christmann, A. (2008), Support vector machines, Springerverlag New York.
+Stone, C. (1977), ‘Consistent nonparametric regression’, The annals of statistics 5(4), 595–620.
+Taskar, B., Guestrin, C. & Koller, D. (2003), Max-margin markov networks, in ‘NIPS’.
+Tibshirani, R. (1996), ‘Regression shrinkage and selection via the lasso’, J. Royal. Statist. Soc B. 58(1), 267–288.
+Tikhonov, A. N. (1943), ‘On the stability of inverse problems’, Dolk. Akad. Nauk SSSR 39(5), 195–198.
+Tishby, N., Pereira, F. & Bialek, W. (1999), The information bottleneck method, in ‘The 37’th Allerton Conference on Communication, Control, and Computing’.
+Tsochantaridis, I., Hofmann, T., Joachims, T. & Altun, Y. (2004), Support vector machine learning for interdependent and structured output spaces, in ‘Proceedings of the Twenty-First International Conference on Machine Learning’.
+Valiant, L. G. (1984), ‘A theory of the learnable’, Communications of the ACM 27(11), 1134–1142.
+Vapnik, V. (1992), Principles of risk minimization for learning theory, in J. E. Moody, S. J. Hanson & R. P. Lippmann, eds, ‘Advances in Neural Information Processing Systems 4’, Morgan Kaufmann, pp. 831–838.
+Vapnik, V. (1995), The Nature of Statistical Learning Theory, Springer.
+Vapnik, V. N. (1982), Estimation of Dependences Based on Empirical Data, Springer-Verlag.
+Vapnik, V. N. (1998), Statistical Learning Theory, Wiley.
+Vapnik, V. N. & Chervonenkis, A. Y. (1971), ‘On the uniform convergence of relative frequencies of events to their probabilities’, Theory of Probability and its applications XVI(2), 264–280.
+Vapnik, V. N. & Chervonenkis, A. Y. (1974), Theory of pattern recognition, Nauka, Moscow. (In Russian).
+Von Luxburg, U. (2007), ‘A tutorial on spectral clustering’, Statistics and computing 17(4), 395–416.
+von Neumann, J. (1928), ‘Zur theorie der gesellschaftsspiele (on the theory of parlor games)’, Math. Ann. 100, 295—320.
+Von Neumann, J. (1953), ‘A certain zero-sum two-person game equivalent to the optimal assignment problem’, Contributions to the Theory of Games 2, 5–12.
+Vovk, V. G. (1990), Aggregating strategies, in ‘Conference on Learning Theory (COLT)’, pp. 371–383.
+Warmuth, M., Glocer, K. & Vishwanathan, S. (2008), Entropy regularized lpboost, in ‘Algorithmic Learning Theory (ALT)’.
+Warmuth, M., Liao, J. & Ratsch, G. (2006), Totally corrective boosting algorithms that maximize the margin, in ‘Proceedings of the 23rd international conference on Machine learning’.
+
+<!-- page: 446 -->
+
+Weston, J., Chapelle, O., Vapnik, V., Elisseeff, A. & Schölkopf, B. (2002), Kernel dependency estimation, in ‘Advances in neural information processing systems’, pp. 873– 880.
+Weston, J. & Watkins, C. (1999), Support vector machines for multi-class pattern recognition, in ‘Proceedings of the Seventh European Symposium on Artificial Neural Networks’.
+Wolpert, D. H. & Macready, W. G. (1997), ‘No free lunch theorems for optimization’, Evolutionary Computation, IEEE Transactions on 1(1), 67–82.
+Zhang, T. (2004), Solving large scale linear prediction problems using stochastic gradient descent algorithms, in ‘Proceedings of the Twenty-First International Conference on Machine Learning’.
+Zhao, P. & Yu, B. (2006), ‘On model selection consistency of Lasso’, Journal of Machine Learning Research 7, 2541–2567.
+Zinkevich, M. (2003), Online convex programming and generalized infinitesimal gradient ascent, in ‘International Conference on Machine Learning’.
+
+<!-- page: 447 -->
+
+# Index
+
+3-term DNF, 107 F1-score, 244 \ell1 norm, 183, 332, 363, 386
+
+accuracy, 38, 43 activation function, 269 AdaBoost, 130, 134, 362 all-pairs, 228, 404 approximation error, 61, 64 auto-encoders, 368
+
+backpropagation, 278 backward elimination, 363 bag-of-words, 209 base hypothesis, 137 Bayes optimal, 46, 52, 260 Bayes rule, 354 Bayesian reasoning, 353 Bennet’s inequality, 426 Bernstein’s inequality, 426 bias, 37, 61, 64 bias-complexity tradeoff, 65 boolean conjunctions, 51, 79, 106 boosting, 130 boosting the confidence, 142 boundedness, 165
+
+C4.5, 254 CART, 254 chaining, 389 Chebyshev’s inequality, 423 Chernoffbounds, 423 class-sensitive feature mapping, 230 classifier, 34 clustering, 307
+
+spectral, 315 compressed sensing, 330 compression bounds, 410 compression scheme, 411 computational complexity, 100 confidence, 38, 43 consistency, 92 Consistent, 289 contraction lemma, 381 convex, 156
+
+function, 157
+
+set, 156 strongly convex, 174, 195 convex-Lipschitz-bounded learning, 166 convex-smooth-bounded learning, 166 covering numbers, 388 curse of dimensionality, 263
+
+decision stumps, 132, 133 decision trees, 250 dendrogram, 309, 310 dictionary learning, 368 differential set, 188 dimensionality reduction, 323 discretization trick, 57 discriminative, 342 distribution free, 342 domain, 33 domain of examples, 48 doubly stochastic matrix, 242 duality, 211
+
+strong duality, 211 weak duality, 211 Dudley classes, 81
+
+efficient computable, 100 EM, 348 empirical error, 35 empirical risk, 35, 48 Empirical Risk Minimization, see ERM entropy, 345
+
+relative entropy, 345 epigraph, 157 ERM, 35 error decomposition, 64, 168 estimation error, 61, 64 Expectation-Maximization, see EM
+
+face recognition, see Viola-Jones feasible, 100 feature, 33 feature learning, 368 feature normalization, 365 feature selection, 357, 358 feature space, 215 feature transformations, 367 filters, 359
+
+<!-- page: 448 -->
+
+forward greedy selection, 360 frequentist, 353
+
+gain, 253 GD, see gradient descent generalization error, 35 generative models, 342 Gini index, 254 Glivenko-Cantelli, 58 gradient, 158 gradient descent, 185 Gram matrix, 219 growth function, 73
+
+halfspace, 118
+
+homogenous, 118, 205 non-separable, 119 separable, 118 Halving, 289 hidden layers, 270 Hilbert space, 217 Hoeffding’s inequality, 56, 425 hold out, 146 hypothesis, 34 hypothesis class, 36
+
+i.i.d., 38 ID3, 252 improper, see representation independent inductive bias, see bias information bottleneck, 317 information gain, 254 instance, 33
+
+instance space, 33 integral image, 143
+
+Johnson-Lindenstrauss lemma, 329
+
+k-means, 311, 313
+
+soft k-means, 352 k-median, 312 k-medoids, 312 Kendall tau, 239 kernel PCA, 326 kernels, 215
+
+Gaussian kernel, 220 kernel trick, 217 polynomial kernel, 220 RBF kernel, 220
+
+label, 33 Lasso, 365, 386
+
+generalization bounds, 386 latent variables, 348 LDA, 347 Ldim, 290, 291 learning curves, 153 least squares, 124 likelihood ratio, 348 linear discriminant analysis, see LDA linear predictor, 117
+
+homogenous, 118 linear programming, 119 linear regression, 122 linkage, 310 Lipschitzness, 160, 176, 191
+
+sub-gradient, 190 Littlestone dimension, see Ldim local minimum, 158 logistic regression, 126 loss, 35 loss function, 48
+
+0-1 loss, 48, 167 absolute value loss, 124, 128, 166 convex loss, 163 generalized hinge-loss, 233 hinge loss, 167 Lipschitz loss, 166 log-loss, 345 logistic loss, 127 ramp loss, 209 smooth loss, 166 square loss, 48 surrogate loss, 167, 302
+
+margin, 203 Markov’s inequality, 422 Massart lemma, 380 max linkage, 310 maximum a-posteriori, 355 maximum likelihood, 343 McDiarmid’s inequality, 378 MDL, 89, 90, 251 measure concentration, 55, 422 Minimum Description Length, see MDL mistake bound, 288 mixture of Gaussians, 348 model selection, 144, 147 multiclass, 47, 227, 402
+
+cost-sensitive, 232 linear predictors, 230, 405 multi-vector, 231, 406 Perceptron, 248 reductions, 227, 405 SGD, 235 SVM, 234 multivariate performance measures, 243
+
+Naive Bayes, 347 Natarajan dimension, 402 NDCG, 239 Nearest Neighbor, 258
+
+k-NN, 258 neural networks, 268
+
+feedforward networks, 269 layered networks, 269 SGD, 277 no-free-lunch, 61 non-uniform learning, 84
+
+<!-- page: 449 -->
+
+Normalized Discounted Cumulative Gain, see NDCG
+
+Occam’s razor, 91 OMP, 360 one-vs-all, 227 one-vs-rest, see one-vs-all one-vs.-all, 404 online convex optimization, 300 online gradient descent, 300 online learning, 287 optimization error, 168 oracle inequality, 179 orthogonal matching pursuit, see OMP overfitting, 35, 65, 152
+
+PAC, 43
+
+agnostic PAC, 45, 46 agnostic PAC for general loss, 49 PAC-Bayes, 415 parametric density estimation, 342 PCA, 324 Pearson’s correlation coefficient, 359 Perceptron, 120
+
+kernelized Perceptron, 225 multiclass, 248 online, 301 permutation matrix, 242 polynomial regression, 125 precision, 244 predictor, 34 prefix free language, 89 Principal Component Analysis, see PCA prior knowledge, 63 Probably Approximately Correct, see PAC projection, 193
+
+projection lemma, 193 proper, 49 pruning, 254
+
+Rademacher complexity, 375 random forests, 255 random projections, 329 ranking, 238
+
+bipartite, 243 realizability, 37 recall, 244 regression, 47, 122, 172 regularization, 171
+
+Tikhonov, 172, 174 regularized loss minimization, see RLM representation independent, 49, 107 representative sample, 54, 375 representer theorem, 218 ridge regression, 172
+
+kernel ridge regression, 225 RIP, 331 risk, 35, 45, 48 RLM, 171, 199
+
+sample complexity, 44 Sauer’s lemma, 73 self-boundedness, 162 sensitivity, 244 SGD, 190 shattering, 69, 403 single linkage, 310 Singular Value Decomposition, see SVD Slud’s inequality, 428 smoothness, 162, 177, 198 SOA, 292 sparsity-inducing norms, 363 specificity, 244 spectral clustering, 315 SRM, 85, 145 stability, 173 Stochastic Gradient Descent, see SGD strong learning, 132 Structural Risk Minimization, see SRM structured output prediction, 236 sub-gradient, 188 Support Vector Machines, see SVM SVD, 431 SVM, 202, 383
+
+duality, 211 generalization bounds, 208, 383 hard-SVM, 203, 204 homogenous, 205 kernel trick, 217 soft-SVM, 206 support vectors, 210
+
+target set, 47 term-frequency, 231 TF-IDF, 231 training error, 35 training set, 33 true error, 35, 45
+
+underfitting, 65, 152 uniform convergence, 54, 55 union bound, 39 unsupervised learning, 308
+
+validation, 144, 146
+
+cross validation, 149 train-validation-test split, 150 Vapnik-Chervonenkis dimension, see VC dimension VC dimension, 67, 70 version space, 289 Viola-Jones, 139
+
+weak learning, 130, 131 Weighted-Majority, 295
+
