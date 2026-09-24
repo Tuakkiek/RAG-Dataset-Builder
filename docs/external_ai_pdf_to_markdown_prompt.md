@@ -1,16 +1,3 @@
-# Prompt: External AI PDF to Markdown for RAG Dataset Pipeline
-
-Copy the prompt below into an external AI chat and attach one PDF file.
-
-The required output is the same final Markdown style produced by
-`PDF-parsing-kaggle/pdf_parsing_kaggle.ipynb`: page markers, ATX headings,
-Markdown tables, LaTeX formulas, figure placeholders/captions, and plain text
-blocks that can be parsed by `src/parser/markdown.py`.
-
----
-
-## Prompt To Send
-
 You are a high-accuracy academic PDF digitization system.
 
 Convert the attached PDF into one faithful Markdown document for a RAG dataset.
@@ -213,9 +200,24 @@ Rules:
   `\prod`, `\sqrt`, `\left`, `\right`, `\mathbf`, and `\mathrm`;
 - do not output corrupted Unicode mathematical glyphs when LaTeX can represent
   the formula;
+- do not put OCR garbage, mojibake, replacement characters, or unreadable
+  fragments inside math delimiters;
 - do not add duplicate `$` or `$$` delimiters;
+- do not create empty math such as `$ $`, `$$ $$`, `$+$`, `$#`, `${`, or `$}`;
+- do not output raw parser errors such as `ParseError`, `KaTeX parse error`,
+  `Expected '}'`, or `got 'EOF'`;
+- do not leave unmatched commands such as `\frac{a`, `\sqrt{`, `\left(` without
+  a matching `\right)`, or any unclosed `{`;
 - ensure every `$$` display formula has both opening and closing delimiters;
-- ensure braces `{}` are balanced inside formulas.
+- ensure every inline `$...$` formula has both opening and closing delimiters;
+- ensure braces `{}` are balanced inside formulas;
+- if a formula cannot be converted to valid LaTeX with confidence, do not wrap
+  the damaged fragment in `$` or `$$`; instead, transcribe the readable text as
+  plain text and put `[unclear formula]` at the unreadable formula fragment.
+
+Before finalizing each formula, mentally parse it as KaTeX-compatible LaTeX.
+If it would trigger a KaTeX parse error, rewrite it into simpler valid LaTeX or
+mark the unreadable part with `[unclear formula]` outside math delimiters.
 
 Example:
 
@@ -294,6 +296,11 @@ If the PDF is scanned, low-resolution, or partially unreadable:
 - never silently invent missing words, numbers, page markers, citations,
   formulas, table cells, or references;
 - use `[unclear]` exactly where a small unreadable fragment appears;
+- use `[unclear formula]` outside math delimiters when a mathematical expression
+  is partly unreadable or cannot be made valid LaTeX;
+- remove isolated mojibake/control-character fragments that are clearly OCR
+  noise and not meaningful document content, especially if they would appear
+  next to `$`, `{`, `}`, `#`, `+`, or heading markers;
 - if a larger region is unreadable, add a short HTML comment such as
   `<!-- unreadable region on page N -->`;
 - keep the surrounding readable content in correct order.
@@ -308,6 +315,10 @@ Do not output:
 - explanations about your process;
 - confidence scores;
 - audit reports;
+- raw OCR/renderer error text such as `ParseError`, `KaTeX parse error`,
+  `Expected '}'`, or `got 'EOF'`;
+- malformed math delimiters, unmatched braces, or unreadable OCR fragments
+  inside `$...$` or `$$...$$`;
 - repeated running headers/footers as body text;
 - duplicated paragraphs caused by OCR overlap;
 - page markers inside headings, table rows, code fences, or formulas;
@@ -328,9 +339,16 @@ Before returning, verify:
    appendices remain structurally identifiable.
 9. Markdown tables have valid separator rows and equal column counts.
 10. Formula delimiters `$$` are balanced.
-11. Code fences are balanced.
-12. No content was intentionally summarized, translated, corrected, or omitted.
-13. The Markdown can be parsed by a simple line-based parser that reads
+11. Inline math delimiters `$...$` are balanced and are not empty.
+12. Braces `{}` inside every formula are balanced.
+13. No formula contains OCR garbage, mojibake, `[unclear]`, `[unclear formula]`,
+    `ParseError`, `KaTeX parse error`, `Expected '}'`, or `got 'EOF'` inside
+    math delimiters.
+14. Any uncertain formula is represented as plain text with `[unclear formula]`
+    outside math delimiters, not as broken LaTeX.
+15. Code fences are balanced.
+16. No content was intentionally summarized, translated, corrected, or omitted.
+17. The Markdown can be parsed by a simple line-based parser that reads
     headings, page markers, paragraphs, lists, and Markdown tables.
 
 Return only the final Markdown document.
