@@ -1,0 +1,1517 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.054,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.144,
+            0.104,
+            0.852,
+            0.129
+          ],
+          "level": 1,
+          "content": "PHÂN CỤM DỮ LIỆU DỰA TRÊN MẠNG NƠ RON HỌC SÂU"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.148,
+            0.821,
+            0.166
+          ],
+          "content": "**Phạm Thế Anh**<strong><sup>1</sup></strong>**, Nguyễn Hoàng Long**<strong><sup>1</sup></strong>**, Nguyễn Văn Cường**<strong><sup>1</sup></strong>**, Hoàng Anh Công**<strong><sup>2</sup></strong>"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.444,
+            0.182,
+            0.553,
+            0.201
+          ],
+          "level": 2,
+          "content": "TÓM TẮT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.22,
+            0.895,
+            0.362
+          ],
+          "content": "Phân cụm dữ liệu (clustering) là bài toán cơ bản của lĩnh vực khoa học máy tính và có nhiều ứng dụng trong thực tiễn, đặc biệt là phân tích dữ liệu lớn và khai phá dữ liệu. Các thuật toán phân cụm truyền thống như K-means, MeanShift đã được ứng dụng trong nhiều năm qua nhưng vẫn tồn tại nhiều hạn chế liên quan đến độ chính xác phân cụm. Bài báo này nghiên cứu các mô hình mạng nơ ron học sâu, cụ thể là mạng AutoEncoder để giải quyết bài toán phân cụm. Kết quả thực nghiệm trên cơ sở dữ liệu chuẩn cho hệ thống có độ chính xác phân cụm cao vượt trội so với các phương pháp truyền thống."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.371,
+            0.778,
+            0.389
+          ],
+          "content": "**Từ khoá:** Mạng AutoEncoder, phân cụm dữ liệu, mạng nơ ron học sâu."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.157,
+            0.404,
+            0.317,
+            0.424
+          ],
+          "level": 2,
+          "content": "1. ĐẶT VẤN ĐỀ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.436,
+            0.895,
+            0.677
+          ],
+          "content": "Cho trước một tập dữ liệu bất kỳ, bài toán phân cụm dữ liệu thực hiện chia tập dữ liệu cho trước thành các cụm sao cho các mẫu dữ liệu trong mỗi cụm sẽ có cùng các đặc trưng nào đó. Một cách lý tưởng, các mẫu dữ liệu trong mỗi cụm sẽ giống nhau nhất có thể về mặt các đặc trưng tiềm ẩn (latent features). Bài toán phân cụm dữ liệu có rất nhiều ứng dụng trong thực tiễn như phân tích dữ liệu lớn, khai phá dữ liệu, phân vùng ảnh, hỗ trợ ra quyết định. Đặc biệt, phân vùng ảnh là một ứng dụng cụ thể của phân cụm dữ liệu và được ứng dụng rất hiệu quả trong các bài toán như tra cứu ảnh dựa trên nội dung, phân tích nội dung ảnh, hiểu ảnh, mô tả đặc trưng, nhận dạng đối tượng. Phân vùng ảnh yêu cầu các điểm ảnh trong mỗi vùng phải có cùng tính chất đặc trưng (ví dụ dựa trên màu ảnh, kết cấu, hình dáng, hay chuyển động,…) và có tính liên thông với nhau. Tuy nhiên, bài toán phân cụm dữ liệu thì không yêu cầu tính chất liên thông đó. Các điểm dữ liệu trong mỗi cụm thường có chung các tính chất hoặc tương tự nhau."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.678,
+            0.894,
+            0.798
+          ],
+          "content": "Các thuật toán truyền thống cho bài toán phân cụm được đề xuất từ rất sớm và tiêu biểu là K-means [1], MeanShift [2]. Mỗi thuật toán có ưu điểm, thế mạnh và hạn chế riêng. Chẳng hạn, K-means yêu cầu tham số đầu vào là số lượng các cụm. Ngoài ra, K-means chỉ thích hợp với dữ liệu có phân bố dạng hình khối cầu do hàm mục tiêu sử dụng độ đo Euclidean. MeanShift không yêu cầu biết trước số lượng các cụm nhưng có hạn chế về độ chính xác và tốc độ xử lý cao."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.8,
+            0.894,
+            0.86
+          ],
+          "content": "Trong thời gian gần đây, với sự phát triển và tiến bộ mạnh mẽ của công nghệ mạng nơ ron nhân tạo học sâu, các giải pháp hiện đại cho bài toán phân cụm đã được nghiên cứu và phát triển dựa trên kiến trúc mô hình AutoEncoder. Kết quả thử nghiệm ban đầu cho"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.103,
+            0.888,
+            0.883,
+            0.906
+          ],
+          "content": "1 Khoa Công nghệ Thông tin và Truyền thông, Trường Đại học Hồng Đức, Email: phamtheanh@hdu.edu.vn"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.103,
+            0.906,
+            0.558,
+            0.924
+          ],
+          "content": "2 Trường Đại học Văn hóa, Thể thao và Du lịch Thanh Hóa"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.876,
+            0.947,
+            0.891,
+            0.961
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.371,
+            0.054,
+            0.892,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.106,
+            0.894,
+            0.168
+          ],
+          "continues_prev": true,
+          "content": "thấy tiềm năng của lĩnh vực nghiên cứu mới này là rất lớn và thuyết phục. Do vậy, trong bài báo chúng tôi nghiên cứu về mạng nơ ron học sâu, cụ thể là các mạng AutoEncoder, và ứng dụng để xây dựng kiến trúc mạng phù hợp cho bài toán phân cụm dữ liệu."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.182,
+            0.567,
+            0.203
+          ],
+          "level": 2,
+          "content": "2. TỔNG QUAN TÌNH HÌNH NGHIÊN CỨU"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.213,
+            0.547,
+            0.232
+          ],
+          "level": 2,
+          "content": "2.1. Phương pháp phân cụm truyền thống"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.24,
+            0.895,
+            0.57
+          ],
+          "content": "Thuật toán K-means [1] là một thuật toán phân cụm phổ biến nhất trong nhiều lĩnh vực khác nhau như xử lý tín hiệu, xử lý ảnh, thị giác máy và máy học. Trong nhiều năm qua, K-means vẫn là thuật toán phân cụm phổ biến và mặc định được sử dụng trong nhiều ứng dụng khác nhau. Tư tưởng chính của K-means đó là phân cụm các phần tử (sample points) thành K cụm khác nhau sao cho các phần tử trong mỗi cụm sẽ giống nhau nhất có thể. Về lý thuyết, các phần tử có thể là bất kỳ đối tượng gì miễn là tồn tại một độ đo khoảng cách trong không gian vector (vector space) giữa hai đối tượng. Trong thực tế, chúng ta thường làm việc với các phần tử thuộc không gian thực và thường được biểu diễn bởi một điểm (point) trong không gian này. Mỗi cụm trong thuật toán K-means sẽ đại diện cho một nhóm các phần tử và được đặc trưng bởi phần tử tâm của cụm. Tâm của cụm được tính bởi phần tử trung bình của các phần tử thuộc cụm đó. Các phần tử thuộc một cụm sẽ có cùng một tính chất nào đó và được cụ thể hóa bằng độ đo khoảng cách từ phần tử đó đến tâm cụm. Mỗi phần tử sẽ được gán vào cụm có tâm gần hơn bất kỳ cụm khác. Thuật toán K-means dựa trên tư tưởng tối ưu hóa kỳ vọng EM (Expectation-Maximization) là một thủ tục lặp gồm 2 pha chính: tính toán các tâm và cập nhật các cụm. K-means có ưu điểm hoạt động khá hiệu quả, nhưng có thể rơi vào điểm tối ưu hóa cục bộ và cho kết quả không tốt. Ngoài ra, thuật toán yêu cầu phải có một tham số đầu vào là số lượng tâm cụm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.571,
+            0.895,
+            0.765
+          ],
+          "content": "MeanShift là một thuật toán phân cụm cho kết quả khá tốt, được đề xuất từ năm 1975 bởi Fukunaga và Hostetler [2] nhưng không được sử dụng rộng rãi như K-means. MeanShift có nhiều ứng dụng thực tế trong lĩnh vực thị giác máy như phân vùng ảnh, theo vết đối tượng (object tracking), tách đối tượng... Mục đích ban đầu của thuật toán MeanShift là dò tìm các vùng có mật độ dày trong một tập dữ liệu. Nói một cách chính xác, MeanShift dò tìm các điểm có tần suất xuất hiện cao (còn gọi là các \"modes hay \"local maxima\") trong một hàm phân bố xác suất (PDF - probability density function). MeanShift không yêu cầu tham số truyền vào là số lượng tâm cụm, cho kết quả phân cụm khá tốt. Tuy nhiên thuật toán có hai nhược điểm liên quan đến việc chọn kích thước cửa sổ phân cụm và độ phức tạp tính toán cao."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.154,
+            0.771,
+            0.703,
+            0.791
+          ],
+          "level": 2,
+          "content": "2.2. Phương pháp phân cụm dựa trên mạng nơ ron học sâu"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.797,
+            0.592,
+            0.817
+          ],
+          "level": 2,
+          "content": "2.2.1. Kiến trúc tổng quát của hệ thống phân cụm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.823,
+            0.893,
+            0.864
+          ],
+          "content": "Theo các tác giả trong [3], kiến trúc tổng quan một hệ thống phân cụm dựa trên mạng nơ ron học sâu có thể được mô tả trên hình 1 gồm các thành phần như sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.865,
+            0.79,
+            0.884
+          ],
+          "content": "Thành phần mạng chính hay mạng cơ sở (main/baselinenetwork branch);"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.886,
+            0.429,
+            0.903
+          ],
+          "content": "Thành phần các hàm mục tiêu;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.905,
+            0.516,
+            0.924
+          ],
+          "content": "Thành phần huấn luyện và cập nhật cụm."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.947,
+            0.122,
+            0.961
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.055,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.105,
+            0.105,
+            0.882,
+            0.273
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.137,
+                0.299,
+                0.858,
+                0.319
+              ],
+              "content": "Hình 1. Kiến trúc tổng quát hệ thống phân cụm dựa trên mạng nơ ron học sâu [3]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_2_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.327,
+            0.607,
+            0.345
+          ],
+          "content": "Các thành phần trên được trình bày chi tiết như sau."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.348,
+            0.893,
+            0.428
+          ],
+          "content": "i) Mạng cơ sở: được tạo thành từ mạng nơ ron học sâu có tác dụng biến đổi dữ liệu đầu vào sang không gian mới (Embedded Feature Space) thường có số chiều nhỏ hơn nhiều so với số chiều trong không gian gốc. Đầu ra của mạng này sẽ là vector đặc trưng có khả năng biểu diễn, tóm tắt, mô tả cơ bản các thông tin quan trọng ẩn chứa trong dữ liệu đầu vào."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.429,
+            0.892,
+            0.507
+          ],
+          "content": "ii) Hàm mục tiêu: hàm mục tiêu đóng vai trò quan trọng của các hệ thống học sâu. Các hàm mục tiêu có nhiệm vụ điều khiển, định hướng quá trình học để giải quyết một bài toán cụ thể nào đó. Trong bài toán phân cụm, các hàm mục tiêu thường được chia làm hai loại sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.51,
+            0.892,
+            0.569
+          ],
+          "content": "Non-clustering Loss (NCL): Như tên gọi của nó, các hàm mục tiêu NCL không cần phải có mối liên hệ với mục tiêu phân cụm. Trong hầu hết trường hợp, hàm NCL phổ biến được sử dụng là hàm tái tạo (Reconstruction Loss) dùng trong các mô hình AutoEncoder."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.57,
+            0.892,
+            0.63
+          ],
+          "content": "Clustering Loss (CL): Hàm mục tiêu này được sử dụng để giúp định hướng mô hình trong quá trình học sẽ khai thác các đặc trưng có lợi cho bài toán phân cụm nhất có thể. Các hàm mục tiêu phổ biến thường được sử dụng bao gồm:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.631,
+            0.405,
+            0.649
+          ],
+          "content": "Hàm mục tiêu K-means [4]:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.362,
+            0.649,
+            0.633,
+            0.704
+          ],
+          "content": "L (\\theta) = \\sum_ {i = 1} ^ {N} \\sum_ {k = 1} ^ {K} s _ {i k} \\| z _ {i} - \\mu_ {k} \\| ^ {2}",
+          "image_source": "images/page_2_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.705,
+            0.893,
+            0.766
+          ],
+          "content": "Trong đó: 𝐾 là số cụm dữ liệu, 𝑁 là tổng số điểm dữ $\\mathrm { I i } \\hat { \\mathtt { c u } } ,   z _ { i }$ là vector đặc trưng trong không gian mới của điểm dữ liệu $x _ { i }$ , $\\mu _ { k }$ là tâm cụm thứ 𝑘, $s _ { i k }$ là biến logic nhận giá trị 0 hoặc 1 nhằm thể hiện điểm dữ liệu $z _ { i }$ có thuộc tâm $\\mu _ { k }$ hay không."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.767,
+            0.893,
+            0.828
+          ],
+          "content": "Hàm mục tiêu CAH (Cluster Assignment Hardening loss): Các tác giả trong [5] đề xuất việc dùng giá trị mềm để gán các điểm về tâm cụm (Soft Cluster Assignments). Nghĩa là $s _ { i k }$ sẽ không nhận giá trị 0 và 1 mà là một giá trị trong đoạn [0, 1]."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.836,
+            0.69,
+            0.855
+          ],
+          "level": 2,
+          "content": "2.2.2. Mô hình phân cụm DEC (Deep Embedded Clustering):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.863,
+            0.478,
+            0.882
+          ],
+          "content": "DEC [4] gồm hai giai đoạn như sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.884,
+            0.844,
+            0.902
+          ],
+          "content": "Giai đoạn 1: Khởi tạo các tham số bằng cách sử dụng mạng Deep Autoencoder."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.904,
+            0.548,
+            0.922
+          ],
+          "content": "Giai đoạn 2: Tối ưu các tham số (phân cụm)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.876,
+            0.946,
+            0.891,
+            0.96
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.371,
+            0.054,
+            0.892,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.107,
+            0.639,
+            0.125
+          ],
+          "content": "Mô hình mạng DEC được đề xuất có kiến trúc như sau:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.218,
+            0.128,
+            0.768,
+            0.324
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.351,
+                0.338,
+                0.645,
+                0.356
+              ],
+              "content": "Hình 2. Kiến trúc mạng DEC [5]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.365,
+            0.893,
+            0.445
+          ],
+          "content": "Mô hình Autoencoder trong kiến trúc mạng DEC sử dụng hàm mục tiêu có tên gọi là tái tạo (Reconstruction Loss) kí hiệu là $\\mathrm { L } _ { \\mathrm { r } }$ dùng để đo sự sai khác giữa dữ liệu gốc đầu vào và dữ liệu sau khi qua Decoder tái tạo lại. Công thức phổ biến của hàm mục tiêu này thường là dùng độ đo khoảng cách L2 như sau:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.325,
+            0.447,
+            0.671,
+            0.469
+          ],
+          "content": "L = d _ {\\mathrm{AE}} \\big (x _ {i}, f (x _ {i}) \\big) = \\sum_ {i} \\| x _ {i} - f (x _ {i}) \\| ^ {2}",
+          "image_source": "images/page_3_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.47,
+            0.892,
+            0.51
+          ],
+          "content": "Trong đó: $\\mathbf { X _ { i } }$ là một điểm dữ liệu đầu vào, f(x<sub>i</sub>) là điểm dữ liệu tái tạo từ thành phần Decoder của $\\mathbf { X _ { i } }$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.511,
+            0.894,
+            0.632
+          ],
+          "content": "Thông thường mô hình Autoencoder sử dụng hàm $\\mathrm { L } _ { \\mathrm { r } }$ chỉ có chức năng dùng để khử nhiễu cho dữ liệu. Để thực hiện phân cụm dữ liệu, các tác giả sử dụng thêm một hàm mục tiêu định hướng phân cụm dựa trên độ đo khoảng cách KL (Kullback-Leibler) để đo khoảng cách giữa phân bố xác suất phân cụm mềm với một phân bố xác suất đích để điều hướng quá trình học. Cụ thể, phân cụm mềm giữa các điểm dữ liệu $\\mathbf { Z _ { i } }$ và tâm cụm $\\mu _ { \\mathrm { j } } ,$ được tính theo công thức sau:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.344,
+            0.632,
+            0.653,
+            0.698
+          ],
+          "content": "q _ {i j} = \\frac {\\left(1 + \\left\\| z _ {i} - \\mu_ {j} \\right\\| ^ {2} / \\alpha\\right) ^ {- \\frac {\\alpha + 1}{2}}}{\\sum_ {j ^ {\\prime}} \\left(1 + \\left\\| z _ {i} - \\mu_ {j ^ {\\prime}} \\right\\| ^ {2} / \\alpha\\right) ^ {- \\frac {\\alpha + 1}{2}}}",
+          "image_source": "images/page_3_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.7,
+            0.892,
+            0.739
+          ],
+          "content": "Trong đó: $\\mathrm { q _ { i j } }$ được hiểu là xác suất để điểm dữ liệu $\\mathbf { Z _ { i } }$ thuộc tâm cụm $\\mu _ { \\mathrm { j } _ { 1 } }$ $\\mathrm { q _ { i j } }$ nhận giá trị trong đoạn [0,1]."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.739,
+            0.893,
+            0.799
+          ],
+          "content": "Nhóm tác giả đề xuất cần tinh chỉnh việc lặp đi lặp lại phân cụm bằng cách học từ một phân bố xác suất đích $\\mathbf { p } _ { \\mathbf { i j } }$ để điều hướng q<sub>ij</sub> tiến gần giống với p<sub>ij</sub>. Bản chất là cực tiểu hoá hàm L:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.345,
+            0.8,
+            0.651,
+            0.838
+          ],
+          "content": "L = \\mathrm{KL} (P \\parallel Q) = \\sum_ {i} \\sum_ {j} p _ {i j} \\log \\frac {p _ {i j}}{q _ {i j}}",
+          "image_source": "images/page_3_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.84,
+            0.892,
+            0.88
+          ],
+          "content": "Điều quan trọng là cần xác định được $\\mathrm { p } _ { \\mathrm { i j } }$ . Các tác giả mong muốn xác định $\\mathrm { p } _ { \\mathrm { i j } }$ để có những thuộc tính sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.881,
+            0.892,
+            0.922
+          ],
+          "content": "Tăng cường khả năng dự đoán (cải thiện độ tinh khiết của cụm): Xác suất của $\\mathrm { q _ { i j } }$ cao, giá trị $\\mathrm { q _ { i j } }$ gần 0 hoặc 1 để xác định rõ điểm $\\mathbf { Z _ { i } }$ có được gán $\\mathrm { v } \\dot { \\hat { \\mathrm { e } } }$ tâm $\\mu _ { \\mathrm { j } }$ hay không?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.947,
+            0.122,
+            0.96
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.054,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.107,
+            0.892,
+            0.144
+          ],
+          "content": "Ưu tiên học từ các điểm có độ tự tin cao (qij cao) để tăng khả năng phân lớp các điểm có độ tự tin thấp (các điểm khó)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.145,
+            0.858,
+            0.163
+          ],
+          "content": "Chuẩn hoá giá trị đóng góp của các điểm để giảm sự ảnh hưởng của các cụm lớn."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.163,
+            0.559,
+            0.182
+          ],
+          "content": "Các tác giả đề xuất công thức tính $\\mathfrak { p } _ { \\mathbf { i j } }$ như sau:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.415,
+            0.182,
+            0.579,
+            0.228
+          ],
+          "content": "p _ {i j} = \\frac {q _ {i j} ^ {2} / f _ {j}}{\\sum_ {j ^ {\\prime}} q _ {i j ^ {\\prime}} ^ {2} / f _ {j ^ {\\prime}}}",
+          "image_source": "images/page_4_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.228,
+            0.893,
+            0.286
+          ],
+          "content": "Mô hình DEC cho kết quả phân cụm khá tốt nhưng quá trình huấn luyện phức tạp do áp dụng phương pháp huấn luyện thủ công từng tầng. Ngoài ra, mạng AutoEncoder sử dụng các tầng kết nối đầy đủ nên độ phức tạp tính toán lớn."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.298,
+            0.668,
+            0.318
+          ],
+          "level": 2,
+          "content": "3. PHÂN CỤM DỰA TRÊN MẠNG NƠ RON HỌC SÂU"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.326,
+            0.894,
+            0.492
+          ],
+          "content": "Trong phần này chúng tôi nghiên cứu và đánh giá thực nghiệm một số mô hình học sâu tiên tiến cho bài toán phân cụm. Cụ thể, chúng tôi nghiên cứu hai mô hình DEC [5] và IDEC [6]. Khác với các nghiên cứu gốc [5][6], đóng góp chính trong phần này là thực hiện các nghiên cứu nhằm đánh giá hiệu năng của các mô hình trên bằng cách phân tích hiệu năng của từng thành phần mạng. Ngoài ra, chúng tôi cũng thay thế các mạng kết nối đầy đủ FC (Fully Connected) bằng các mạng nhân chập CNN (Convolutional Neural Network) nhằm giảm độ phức tạp mô hình và khai thác tính tương quan của các điểm ảnh. Dữ liệu thử nghiệm là các tập STL-10 [7] và Cifar-10 [8]. Cụ thể, chúng tôi thực hiện các nghiên cứu hiệu năng sau cho 2 mạng trên:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.492,
+            0.892,
+            0.53
+          ],
+          "content": "Đầu vào của DEC, IDEC là các vector đặc trưng (4096 chiều) được trích chọn từ mạng VGG16 (đã được tiền huấn luyện trên tập dữ liệu ImageNet [9])."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.529,
+            0.688,
+            0.547
+          ],
+          "content": "Đầu vào của DEC, IDEC là dữ liệu ảnh không qua tiền xử lý."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.547,
+            0.799,
+            0.566
+          ],
+          "content": "Thay thế các mạng kết nối đầy đủ trong DEC bằng mạng nhân chập CNN."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.567,
+            0.878,
+            0.586
+          ],
+          "content": "Dùng trực tiếp đầu ra của VGG16 và làm mịn bởi hàm mục tiêu định hướng phân cụm."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.592,
+            0.676,
+            0.611
+          ],
+          "level": 2,
+          "content": "3.1. DEC, IDEC với đầu vào được tiền xử lý bởi VGG16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.618,
+            0.894,
+            0.771
+          ],
+          "content": "Cả DEC và IDEC đều dựa trên mô hình AutoEncoder để biến đổi đầu vào sang không gian đặc trưng mới (embeded feature space). Về cơ bản, một mô hình AutoEncoder gồm 2 phần: Encoder và Decoder. Phần Encoder biến đổi dữ liệu đầu vào sang không gian mới (thường có số chiều nhỏ). Phần Decoder có tác dụng tái tạo dữ liệu ngược lại từ không gian mới về không gian gốc sao cho dữ liệu tái tạo giống nhất có thể với dữ liệu gốc. Do vậy, hệ thống sử dụng hàm mục tiêu có tên gọi là tái tạo (Reconstruction Loss), bản chất là đo sự sai khác giữa tín hiệu tái tạo và tín hiệu gốc. Công thức phổ biến của hàm mục tiêu này thường là dùng độ đo khoảng cách L2 như sau:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.324,
+            0.771,
+            0.671,
+            0.791
+          ],
+          "content": "L = d _ {A E} \\big (x _ {i}, f (x _ {i}) \\big) = \\sum_ {i} \\| x _ {i} - f (x _ {i}) \\| ^ {2}",
+          "image_source": "images/page_4_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.794,
+            0.892,
+            0.83
+          ],
+          "content": "Trong đó: $x _ { i }$ là một điểm dữ liệu đầu vào, f(xi) là điểm dữ liệu tái tạo từ thành phần Decoder của xi."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.83,
+            0.894,
+            0.925
+          ],
+          "content": "Các tầng mạng của DEC và IDEC đều dựa trên mạng kết nối đầy đủ. Để tăng độ chính xác và giảm độ phức tạp tính toán, các tác giả có thể tiền xử lý ảnh đầu vào bằng cách cho dữ liệu ảnh vào mạng VGG16 [10] (đã được huấn luyện trên tập dữ liệu lớn ImageNet) để trích chọn vector đặc trưng (4096) chiều. Hình 3 minh họa kiến trúc tổng quát của cách tiếp cận này."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.876,
+            0.946,
+            0.891,
+            0.96
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.054,
+            0.892,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.104,
+            0.123,
+            0.86,
+            0.273
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.272,
+                0.293,
+                0.724,
+                0.312
+              ],
+              "content": "Hình 3. Kiến trúc hệ thống DEC, IDEC và VGG16"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.316,
+            0.892,
+            0.358
+          ],
+          "content": "Cấu hình mạng và tham $s \\hat { 0 }$ mạng được giữ nguyên như trong các bài báo gốc của DEC, IDEC. Kết quả phân cụm được đo bằng độ chính xác ACC được tính như sau:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.287,
+            0.365,
+            0.702,
+            0.403
+          ],
+          "content": "A C C = \\max _ {m} \\frac {\\sum_ {i = 1} ^ {n} \\mathbf {1} \\{l _ {i} = m (c _ {i}) \\}}{n}",
+          "image_source": "images/page_5_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.411,
+            0.893,
+            0.47
+          ],
+          "content": "Trong đó $l _ { i }$ là nhãn đúng của điểm dữ liệu thứ i, $c _ { i }$ là nhãn được gán của điểm dữ liệu thứ i cho một cụm bởi thuật toán phân cụm, 𝑚 đại diện cho tất cả các phép gán giữa các cụm và các nhãn đúng của dữ liệu. Mỗi phép gán sẽ gán một nhãn đúng cho một cụm tương ứng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.47,
+            0.894,
+            0.546
+          ],
+          "content": "Độ chính xác ACC so sánh kết quả của thuật toán phân cụm không giám sát (unsupervised clustering) với kết quả của phân cụm đúng (ground truth) được xác định trước. ACC giúp đánh giá mức độ khớp giữa hai phân cụm và cho biết mức độ hiệu quả của thuật toán."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.546,
+            0.894,
+            0.683
+          ],
+          "content": "Kết quả thực nghiệm trên hai tập dữ liệu STL-10 và Cifar-10 được thể hiện trên hình 4 và hình 5. Trên cả hai tập dữ liệu IDEC kết hợp với VGG16 cho độ chính xác phân cụm tốt hơn DEC+VGG16. Khoảng cách khác biệt về độ chính xác khoảng 0.1-0.15. Điều này có thể được giải thích bởi IDEC đã tối ưu đồng thời cả hai hàm mục tiêu: hàm định hướng phân cụm và hàm huấn luyện mô hình AutoEncoder. Ngoài ra, cả hai hệ thống đều giảm hiệu năng (độ chính xác) khi làm việc trên tạp Cifar-10 khoảng 30%, nhiều khả năng là do tính đa dạng và phức tạp của nội dung tập dữ liệu Cifar-10 so với STL-10."
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.215,
+            0.685,
+            0.771,
+            0.887
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.138,
+                0.895,
+                0.858,
+                0.914
+              ],
+              "content": "Hình 4. Độ chính xác của DEC và IDEC khi kết hợp VGG16 trên tập dữ liệu STL"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_chart_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.108,
+            0.946,
+            0.133,
+            0.961
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.054,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.244,
+            0.108,
+            0.749,
+            0.331
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.121,
+                0.34,
+                0.876,
+                0.359
+              ],
+              "content": "Hình 5. Độ chính xác của DEC và IDEC khi kết hợp VGG16 trên tập dữ liệu Cifar-10"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_chart_1.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.154,
+            0.363,
+            0.526,
+            0.383
+          ],
+          "level": 2,
+          "content": "3.2. DEC với đầu vào là dữ liệu ảnh gốc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.388,
+            0.895,
+            0.68
+          ],
+          "content": "Trong phần này, chúng tôi đánh giá hiệu năng của DEC với đầu vào là ảnh không qua tiền xử lý. Nghĩa là, hệ thống không dùng thành phần VGG16 như mô tả trên hình 3. Đồng thời, chúng tôi cũng so sánh hiệu năng khi dùng DEC với tầng kết nối đầy đủ FC và tầng nhân chập CNN. Kết quả thực nghiệm trên hai tập dữ liệu STL-10 và Cifar-10 được thể hiện trên hình 6 và hình 7. Cụ thể, kết quả trên hai tập dữ liệu khá giống nhau và thể hiện độ chính xác tương đương giữa việc dùng FC hay CNN. Tuy nhiên, khi dùng tầng CNN, chẳng hạn xét trên tập dữ liệu STL-10, thì mô hình sẽ có số lượng tham số (0.4 triệu tham số) nhỏ hơn so với khi dùng tầng FC (15 triệu tham số). Kết quả trên hình 6,7 cũng cho thấy độ chính xác phân cụm giảm mạnh khi mô hình hoạt động trực tiếp trên dữ liệu là ảnh đầu vào. So với kết quả trên hình 4,5 chúng ta có thể thấy độ chính xác ACC giảm khoảng 40%-60%, nguyên nhân là do mạng VGG16 đã được tiền huấn luyện trên tập dữ liệu ImageNet có số lượng ảnh rất lớn (hàng triệu ảnh). Do vậy, mô hình đã được học đầy đủ các đặc trưng cơ sở của các lớp đối tượng trong ImageNet. Nếu không dùng VGG16 để trích chọn vector đặc trưng cơ sở, các mô hình FcDEC hay CNN-DEC sẽ được huấn luyện trực tiếp trên tập dữ liệu STL-10 và Cifar-10 vốn có số lượng ảnh khá nhỏ (khoảng 5000 ảnh). Do vậy, mô hình sẽ bị giới hạn về độ chính xác do chưa được huấn luyện một cách đầy đủ."
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.222,
+            0.687,
+            0.766,
+            0.896
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.466,
+                0.68,
+                0.572,
+                0.693
+              ],
+              "content": "STL Dataset"
+            },
+            {
+              "bbox": [
+                0.194,
+                0.907,
+                0.802,
+                0.925
+              ],
+              "content": "Hình 6. Độ chính xác của CNN-DEC và FcDEC trên tập dữ liệu STL"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_chart_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.866,
+            0.946,
+            0.89,
+            0.961
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.371,
+            0.054,
+            0.892,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.182,
+            0.112,
+            0.805,
+            0.343
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.176,
+                0.355,
+                0.82,
+                0.374
+              ],
+              "content": "Hình 7. Độ chính xác của CNN-DEC và FcDEC trên tập dữ liệu Cifar-10"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_chart_1.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.383,
+            0.58,
+            0.402
+          ],
+          "level": 2,
+          "content": "3.3. Dùng trực tiếp các đặc trưng của VGG16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.41,
+            0.893,
+            0.471
+          ],
+          "content": "Trong phần này, chúng tôi không sử dụng DEC và IDEC mà dùng trực tiếp đầu ra của VGG16 làm đầu vào của thuật toán phân cụm K-means. Kiến trúc của cách tiếp cận này được mô tả trên hình 8."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.295,
+            0.482,
+            0.694,
+            0.546
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.254,
+                0.566,
+                0.743,
+                0.585
+              ],
+              "content": "Hình 8. Kiến trúc hệ thống phân cụm chỉ dùng VGG16"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.593,
+            0.892,
+            0.633
+          ],
+          "content": "Kết quả thực nghiệm của VGG16 trên hai tập dữ liệu STL-10 và Cifar-10 được thể hiện trên bảng sau."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.174,
+            0.687,
+            0.822,
+            0.734
+          ],
+          "content": "| Hệ thống | STL-10 | Cifar-10 |\n| --- | --- | --- |\n| VGG16 | 0.77 | 0.58 |",
+          "captions": [
+            {
+              "bbox": [
+                0.104,
+                0.642,
+                0.891,
+                0.68
+              ],
+              "content": "Bảng 1. Độ chính xác phân cụm (ACC) khi sử dụng trực tiếp các đặc trưng trích chọn với mô hình tiền huấn luyện VGG16"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.741,
+            0.895,
+            0.925
+          ],
+          "content": "Kết quả này cho thấy mặc dùng sử dụng trực tiếp đầu ra của VGG16 nhưng độ chính xác phân cụm vẫn khá ấn tượng (ACC = 0.77 trên STL-10 và ACC = 0.58 trên Cifar-10). Điều này một lần nữa khẳng định vai trò của dữ liệu trong huấn luyện các mạng nơ ron học sâu là khá quan trọng. VGG16 là một mạng cơ bản nhưng đủ sâu và có số lượng tham số lớn. Để huấn luyện đầy đủ mạng VGG16, chúng ta cần những tập dữ liệu lớn và phong phú như ImageNet. Khi đó, VGG16 có khả năng học những đặc trưng nổi bật của mỗi lớp đối tượng và có khả năng tổng quát hóa cao. Vì vậy, các đặc trưng mà VGG16 trích chọn trên hai tập dữ liệu STL-10 và Cifar-10 vẫn rất hữu ích để phục vụ các bài toán thị giác máy khác, trong trường hợp này là bài toán phân cụm dữ liệu."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.107,
+            0.946,
+            0.132,
+            0.961
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.054,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.105,
+            0.293,
+            0.125
+          ],
+          "level": 2,
+          "content": "4. KẾT LUẬN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.133,
+            0.895,
+            0.469
+          ],
+          "content": "Trong bài báo này, chúng tôi nghiên cứu về các mô hình mạng AutoEncoder và ứng dụng trong bài toán phân cụm dữ liệu. Các mô hình tiên tiến hiện nay là DEC, IDEC đều hoạt động dựa trên việc xây dựng các mô hình AutoEncoder để biến đổi dữ liệu đầu vào sang không gian đặc trưng tiềm ẩn mới. Sau đó, các đặc trưng này tiếp tục được làm mịn cho bài toán phân cụm bằng cách sử dụng một hàm mục tiêu định hướng phân cụm. Các hàm mục tiêu phổ biến được thiết kế dựa trên hàm KL hoặc K-means. Bài báo này cũng chỉ ra một điểm mới đó là việc dùng đơn lẻ các mô hình DEC hay IDEC trực tiếp trên dữ liệu đầu vào thì độ chính xác phân cụm khá thấp. Nghiên cứu này cũng chỉ ra rằng vai trò của các tầng FC và CNN là tương đồng về độ chính xác, ngoại trừ có sự khác biệt về độ phức tạp tính toán (CNN có lợi thế hơn). Do vậy, để cải tiến hiệu năng, việc dùng kết hợp DEC hay IDEC với một mạng nơ ron học sâu (chẳng hạn VGG16) đã được tiền huấn luyện trên một tập dữ liệu đủ lớn sẽ mang lại những kết quả rất ấn tượng. Cuối cùng, nghiên cứu này chỉ ra rằng, chúng ta có thể sử dụng trực tiếp các đặc trưng được trích chọn từ mạng VGG16 (đã được tiền huấn luyện trên ImageNet) để làm đầu vào cho một thuật toán phân cụm truyền thống (chẳng hạn K-means) và cũng đạt được độ chính xác khá ấn tượng. Trong các nghiên cứu tiếp theo, chúng tôi sẽ tìm hiểu tích hợp các kiến trúc mạng mới để cải tiến độ chính xác của bài toán phân cụm."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.381,
+            0.483,
+            0.615,
+            0.502
+          ],
+          "level": 2,
+          "content": "TÀI LIỆU THAM KHẢO"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.514,
+            0.893,
+            0.587
+          ],
+          "content": "[1] J. B. MacQueen (1967), Some Methods for classification and Analysis of Multivariate Observations, Proceedings of 5th Berkeley Symposium on Mathematical Statistics and Probability, Berkeley, University of California Press, 1: 281-297."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.59,
+            0.891,
+            0.645
+          ],
+          "content": "[2] Fukunaga, K., Hostetler, L. (1975), The estimation of the gradient of a density function, with applications in pattern recognition, IEEE Transactions on Information Theory, 21(1) 32-40."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.647,
+            0.891,
+            0.702
+          ],
+          "content": "[3] Elie Aljalbout, Vladimir Golkov, Yawar Siddiqui, Maximilian Strobel, Daniel Cremers (2018), Clustering with Deep Learning: Taxonomy and New Methods, arXiv:1801.07648v2 [cs.LG]."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.704,
+            0.89,
+            0.758
+          ],
+          "content": "[4] Bo Yang, Xiao Fu, Nicholas D. Sidiropoulos, Mingyi Hong (2016), Towards Kmeans-friendly Spaces: Simultaneous Deep Learning and Clustering, arXiv:1610.04794v2 [cs.LG]."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.107,
+            0.761,
+            0.89,
+            0.797
+          ],
+          "content": "[5] J. Xie, R. Girshick, A. Farhad (2016), Unsupervised deep embedding for clustering analysis, in Proceedings of the 33rd International Conference on Machine Learning."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.111,
+            0.799,
+            0.892,
+            0.854
+          ],
+          "content": "[6] Xifeng Guo, Long Gao, Xinwang Liu, and Jianping Yin (2017), Improved deep embedded clustering with local structure preservation, In Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI), 1753-1759."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.856,
+            0.892,
+            0.915
+          ],
+          "content": "[7] Coates, Adam, Ng, Andrew Y, and Lee, Honglak (2011), An analysis of single-layer networks in unsupervised feature learning, In International Conference on Artificial Intelligence and Statistics, 215-223."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.866,
+            0.946,
+            0.891,
+            0.961
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.371,
+            0.055,
+            0.892,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.108,
+            0.89,
+            0.146
+          ],
+          "content": "[8] Alex Krizhevsky (2009), [Learning multiple layers of features from tiny images,](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf) Technical Report."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.15,
+            0.89,
+            0.224
+          ],
+          "content": "[9] Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg and Li Fei-Fei (2015), ImageNet Large Scale Visual Recognition Challenge, International Journal of Computer Vision (IJCV)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.107,
+            0.226,
+            0.891,
+            0.284
+          ],
+          "content": "[10] Simonyan, K., Zisserman, A. (2015), Very deep convolutional networks for largescale image recognition, 3rd International Conference on Learning Representations (ICLR 2015), 1-14."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.108,
+            0.289,
+            0.891,
+            0.325
+          ],
+          "content": "[11] Rafael C. Gonzalez, Richard E. Woods (2007), Digital Image Processing (3rd Edition), Pearson, ISBN-13: 978-0131687288."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.107,
+            0.328,
+            0.892,
+            0.366
+          ],
+          "content": "[12] LeCun, Yann, Bottou, Leon, Bengio, Yoshua, Haffner, Patrick (1998), Gradient-based learning applied to document recognition, Proceedings of the IEEE, 86(11) 2278-2324."
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.136,
+            0.386,
+            0.859,
+            0.405
+          ],
+          "level": 1,
+          "content": "DATA CLUSTERING BASED ON DEEP NEURAL NETWORKS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.424,
+            0.806,
+            0.441
+          ],
+          "content": "**Pham The Anh, Nguyen Hoang Long, Nguyen Van Cuong, Hoang Anh Cong**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.436,
+            0.457,
+            0.561,
+            0.476
+          ],
+          "level": 2,
+          "content": "ABSTRACT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.495,
+            0.893,
+            0.628
+          ],
+          "content": "Data clustering is a fundamental problem in the field of computer science and has many practical applications, especially in big data analysis and data mining. Traditional clustering algorithms such as K-means, MeanShift have been applied for many years but still have many limitations related to clustering accuracy. This paper investigates deep neural network models, specifically AutoEncoder networks, to address the clustering problem. Experimental results on standard datasets demonstrate that the system achieves significantly higher clustering accuracy compared to traditional methods."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.636,
+            0.711,
+            0.654
+          ],
+          "content": "**Keywords:** AutoEncoder, data clustering, deep neural network."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.68,
+            0.889,
+            0.699
+          ],
+          "content": "\\* Ngày nộp bài: 25/3/2023; Ngày gửi phản biện: 27/3/2023; Ngày duyệt đăng: 10/12/2023"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.108,
+            0.946,
+            0.132,
+            0.96
+          ],
+          "content": "14"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "authors": [
+        "Thanh Hang"
+      ],
+      "languages": [
+        "en"
+      ],
+      "created_at": "2024-04-15T10:25:48+07:00",
+      "modified_at": "2024-04-15T10:25:48+07:00",
+      "creator_application": "ABBYY FineReader PDF 15",
+      "producer_application": "ABBYY FineReader PDF 15",
+      "page_count": 10,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

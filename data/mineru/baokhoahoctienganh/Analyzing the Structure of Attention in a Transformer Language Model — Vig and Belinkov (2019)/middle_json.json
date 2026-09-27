@@ -1,0 +1,4541 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Analyzing the Structure of Attention in a Transformer Language Model",
+      "authors": [
+        "Jesse Vig ; Yonatan Belinkov"
+      ],
+      "subject": "W19-48 2019",
+      "created_at": "2019-06-18T13:36:22Z",
+      "modified_at": "2019-06-18T13:36:22Z",
+      "creator_application": "LaTeX with hyperref package",
+      "producer_application": "pdfTeX-1.40.18",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.128,
+            0.08,
+            0.874,
+            0.103
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Analyzing the Structure of Attention in a Transformer Language Model"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.215,
+            0.119,
+            0.46,
+            0.236
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jesse Vig",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " Palo Alto Research Center Machine Learning and Data Science Group Interaction and Analytics Lab Palo Alto, CA, USA jesse.vig@parc.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 2,
+          "bbox": [
+            0.264,
+            0.265,
+            0.345,
+            0.28
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Abstract"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.144,
+            0.292,
+            0.463,
+            0.551
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Transformer is a fully attention-based alternative to recurrent networks that has achieved state-of-the-art results across a range of NLP tasks. In this paper, we analyze the structure of attention in a Transformer language model, the GPT-2 small pretrained model. We visualize attention for individual instances and analyze the interaction between attention and syntax over a large corpus. We find that attention targets different parts of speech at different layer depths within the model, and that attention aligns with dependency relations most strongly in the middle layers. We also find that the deepest layers of the model capture the most distant relationships. Finally, we extract exemplar sentences that reveal highly specific patterns targeted by particular attention heads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.118,
+            0.562,
+            0.263,
+            0.578
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1 Introduction"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.588,
+            0.492,
+            0.83
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Contextual word representations have recently been used to achieve state-of-the-art performance across a range of language understanding tasks (Peters et al., 2018; Radford et al., 2018; Devlin et al., 2018). These representations are obtained by optimizing a language modeling (or similar) objective on large amounts of text. The underlying architecture may be recurrent, as in ELMo (Peters et al., 2018), or based on multi-head self-attention, as in OpenAI’s GPT (Radford et al., 2018) and BERT (Devlin et al., 2018), which are based on the Transformer (Vaswani et al., 2017). Recently, the GPT-2 model (Radford et al., 2019) outperformed other language models in a zeroshot setting, again based on self-attention."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.83,
+            0.492,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "An advantage of using attention is that it can help interpret the model by showing how the model attends to different parts of the input (Bahdanau et al., 2015; Belinkov and Glass, 2019). Various tools have been developed to visualize"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.589,
+            0.119,
+            0.749,
+            0.135
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Yonatan Belinkov",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.51,
+            0.135,
+            0.827,
+            0.235
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Harvard John A. Paulson School of Engineering and Applied Sciences and MIT Computer Science and Artificial Intelligence Laboratory Cambridge, MA, USA belinkov@seas.harvard.edu"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.51,
+            0.265,
+            0.887,
+            0.394
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "attention in NLP models, ranging from attention matrix heatmaps (Bahdanau et al., 2015; Rush et al., 2015; Rocktaschel et al. ¨ , 2016) to bipartite graph representations (Liu et al., 2018; Lee et al., 2017; Strobelt et al., 2018). A visualization tool designed specifically for multi-head self-attention in the Transformer (Jones, 2017; Vaswani et al., 2018) was introduced in Vaswani et al. (2017)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.51,
+            0.397,
+            0.887,
+            0.509
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We extend the work of Jones (2017), by visualizing attention in the Transformer at three levels of granularity: the attention-head level, the model level, and the neuron level. We also adapt the original encoder-decoder implementation to the decoder-only GPT-2 model, as well as the encoder-only BERT model."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.511,
+            0.511,
+            0.886,
+            0.577
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In addition to visualizing attention for individual inputs to the model, we also analyze attention in aggregate over a large corpus to answer the following research questions:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.531,
+            0.595,
+            0.885,
+            0.627
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Does attention align with syntactic dependency relations?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.531,
+            0.647,
+            0.886,
+            0.679
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Which attention heads attend to which partof-speech tags?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.531,
+            0.698,
+            0.886,
+            0.73
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• How does attention capture long-distance relationships versus short-distance ones?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.51,
+            0.749,
+            0.888,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We apply our analysis to the GPT-2 small pre-trained model. We find that attention follows dependency relations most strongly in the middle layers of the model, and that attention heads target particular parts of speech depending on layer depth. We also find that attention spans the greatest distance in the deepest layers, but varies significantly between heads. Finally, our method for extracting exemplar sentences yields many intuitive patterns."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "63"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 17,
+          "bbox": [
+            0.126,
+            0.942,
+            0.872,
+            0.969
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Proceedings of the Second BlackboxNLP Workshop on Analyzing and Interpreting Neural Networks for NLP, pages 63–76 Florence, Italy, August 1, 2019. c 2019 Association for Computational Linguistics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.075,
+            0.274,
+            0.091
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2 Related Work"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.115,
+            0.1,
+            0.491,
+            0.245
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recent work suggests that the Transformer implicitly encodes syntactic information such as dependency parse trees (Hewitt and Manning, 2019; Raganato and Tiedemann, 2018), anaphora (Voita et al., 2018), and subject-verb pairings (Goldberg, 2019; Wolf, 2019). Other work has shown that RNNs also capture syntax, and that deeper layers in the model capture increasingly high-level constructs (Blevins et al., 2018)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.245,
+            0.492,
+            0.39
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In contrast to past work that measure a model’s syntactic knowledge through linguistic probing tasks, we directly compare the model’s attention patterns to syntactic constructs such as dependency relations and part-of-speech tags. Raganato and Tiedemann (2018) also evaluated dependency trees induced from attention weights in a Transformer, but in the context of encoder-decoder translation models."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 3,
+          "bbox": [
+            0.116,
+            0.401,
+            0.378,
+            0.416
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3 Transformer Architecture"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.425,
+            0.492,
+            0.555
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Stacked Decoder:",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " GPT-2 is a stacked decoder Transformer, which inputs a sequence of tokens and applies position and token embeddings followed by several decoder layers. Each layer applies multi-head self-attention (see below) in combination with a feedforward network, layer normalization, and residual connections. The GPT-2 small model has 12 layers and 12 heads."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.562,
+            0.49,
+            0.611
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Self-Attention:",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " Given an input x, the self-attention mechanism assigns to each token "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " a set of attention weights over the tokens in the input:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 6,
+          "bbox": [
+            0.138,
+            0.622,
+            0.488,
+            0.64
+          ],
+          "image_path": "images/page_1_equation_6.jpg",
+          "content": "\\mathrm{Attn} (x _ {i}) = (\\alpha_ {i, 1} (x), \\alpha_ {i, 2} (x),..., \\alpha_ {i, i} (x))\\tag{1}"
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.651,
+            0.49,
+            0.73
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i , j } ( x )"
+            },
+            {
+              "type": "text",
+              "content": " is the attention that "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " pays to "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " The weights are positive and sum to one. Attention in GPT-2 is right-to-left, so "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i , j }"
+            },
+            {
+              "type": "text",
+              "content": " is defined only for "
+            },
+            {
+              "type": "equation_inline",
+              "content": "j \\leq i ."
+            },
+            {
+              "type": "text",
+              "content": " . In the multi-layer, multi-head setting, α is specific to a layer and head."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.115,
+            0.731,
+            0.492,
+            0.812
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The attention weights "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i , j } ( x )"
+            },
+            {
+              "type": "text",
+              "content": " are computed from the scaled dot-product of the query vector of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " and the key vector of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " , followed by a softmax operation. The attention weights are then used to produce a weighted sum of value vectors:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 9,
+          "bbox": [
+            0.137,
+            0.834,
+            0.488,
+            0.87
+          ],
+          "image_path": "images/page_1_equation_9.jpg",
+          "content": "\\text {Attention} (Q, K, V) = \\text {softmax} (\\frac {Q K ^ {T}}{\\sqrt {d _ {k}}}) V\\tag{2}"
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.115,
+            0.878,
+            0.491,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "using query matrix "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Q ,"
+            },
+            {
+              "type": "text",
+              "content": " key matrix "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ,"
+            },
+            {
+              "type": "text",
+              "content": " and value matrix "
+            },
+            {
+              "type": "equation_inline",
+              "content": "V ."
+            },
+            {
+              "type": "text",
+              "content": " , where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k }"
+            },
+            {
+              "type": "text",
+              "content": " is the dimension of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K"
+            },
+            {
+              "type": "text",
+              "content": " . In a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.51,
+            0.076,
+            0.887,
+            0.141
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "multi-head setting, the queries, keys, and values are linearly projected h times, and the attention operation is performed in parallel for each representation, with the results concatenated."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "paragraph_title",
+          "index": 12,
+          "bbox": [
+            0.511,
+            0.16,
+            0.8,
+            0.178
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4 Visualizing Individual Inputs"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.51,
+            0.193,
+            0.888,
+            0.339
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this section, we present three visualizations of attention in the Transformer model: the attentionhead view, the model view, and the neuron view. Source code and Jupyter notebooks are available at "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://github.com/jessevig/bertviz",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "https://github.com/jessevig/bertviz"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ", and a video demonstration can be found at "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://vimeo.com/339574955",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "https://vimeo.com/339574955"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ".A more detailed discussion of the tool is provided in Vig (2019)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 14,
+          "bbox": [
+            0.511,
+            0.357,
+            0.722,
+            0.373
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.1 Attention-head View"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.51,
+            0.383,
+            0.888,
+            0.53
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The attention-head view (Figure 1) visualizes attention for one or more heads in a model layer. Self-attention is depicted as lines connecting the attending tokens (left) with the tokens being attended to (right). Colors identify the head(s), and line weight reflects the attention weight. This view closely follows the design of Jones (2017), but has been adapted to the GPT-2 model (shown in the figure) and BERT model (not shown)."
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 16,
+          "bbox": [
+            0.517,
+            0.551,
+            0.88,
+            0.779
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 16,
+              "bbox": [
+                0.517,
+                0.551,
+                0.88,
+                0.779
+              ],
+              "image_path": "images/page_1_chart_16.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 17,
+              "bbox": [
+                0.511,
+                0.792,
+                0.885,
+                0.821
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 1: Attention-head view of GPT-2 for layer 4, head 11, which focuses attention on previous token."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.51,
+            0.846,
+            0.887,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This view helps focus on the role of specific attention heads. For instance, in the shown example, the chosen attention head attends primarily to the previous token position."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 19,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "64"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.122,
+            0.072,
+            0.451,
+            0.292
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.122,
+                0.072,
+                0.451,
+                0.292
+              ],
+              "image_path": "images/page_2_image_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 1,
+              "bbox": [
+                0.116,
+                0.304,
+                0.49,
+                0.334
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 2: Model view of GPT-2, for same input as in Figure 1 (excludes layers 6–11 and heads 6–11)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 2,
+          "bbox": [
+            0.117,
+            0.359,
+            0.258,
+            0.374
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.2 Model View"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.115,
+            0.38,
+            0.492,
+            0.524
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The model view (Figure 2) visualizes attention across all of the model’s layers and heads for a particular input. Attention heads are presented in tabular form, with rows representing layers and columns representing heads. Each head is shown in a thumbnail form that conveys the coarse shape of the attention pattern, following the small multi-ples design pattern (Tufte, 1990). Users may also click on any head to enlarge it and see the tokens."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.525,
+            0.492,
+            0.671
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This view facilitates the detection of coarsegrained differences between heads. For example, several heads in layer 0 share a horizontal-stripe pattern, indicating that tokens attend to the current position. Other heads have a triangular pattern, showing that they attend to the first token. In the deeper layers, some heads display a small number of highly defined lines, indicating that they are targeting specific relationships between tokens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 5,
+          "bbox": [
+            0.117,
+            0.681,
+            0.268,
+            0.696
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.3 Neuron View"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.701,
+            0.491,
+            0.814
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The neuron view (Figure 3) visualizes how individual neurons interact to produce attention. This view displays the queries and keys for each token, and demonstrates how attention is computed from the scaled dot product of these vectors. The element-wise product shows how specific neurons influence the dot product and hence attention."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.814,
+            0.492,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Whereas the attention-head view and the model view show what attention patterns the model learns, the neuron view shows how the model forms these patterns. For example, it can help identify neurons responsible for specific attention patterns, as illustrated in Figure 3."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 8,
+          "bbox": [
+            0.512,
+            0.075,
+            0.837,
+            0.092
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5 Analyzing Attention in Aggregate"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.51,
+            0.107,
+            0.886,
+            0.205
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this section we explore the aggregate properties of attention across an entire corpus. We examine how attention interacts with syntax, and we compare long-distance versus short-distance relationships. We also extract exemplar sentences that reveal patterns targeted by each attention head."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.512,
+            0.222,
+            0.629,
+            0.238
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.1 Methods"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.511,
+            0.248,
+            0.732,
+            0.264
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.1.1 Part-of-Speech Tags"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.51,
+            0.273,
+            0.888,
+            0.419
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Past work suggests that attention heads in the Transformer may specialize in particular linguistic phenomena (Vaswani et al., 2017; Raganato and Tiedemann, 2018; Vig, 2019). We explore whether individual attention heads in GPT-2 target particular parts of speech. Specifically, we measure the proportion of total attention from a given head that focuses on tokens with a given part-of-speech tag, aggregated over a corpus:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 13,
+          "bbox": [
+            0.523,
+            0.431,
+            0.883,
+            0.509
+          ],
+          "image_path": "images/page_2_equation_13.jpg",
+          "content": "\\mathrm{P} _ {\\alpha} (t a g) = \\frac {\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x) \\cdot \\mathbb {1} _ {\\mathrm{pos} (x _ {j}) = t a g}}{\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x)}\\tag{3}"
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.51,
+            0.528,
+            0.887,
+            0.625
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where tag is a part-of-speech tag, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { e . g . }"
+            },
+            {
+              "type": "text",
+              "content": " , NOUN, x is a sentence from the corpus "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X , \\alpha _ { i , j }"
+            },
+            {
+              "type": "text",
+              "content": " is the attention from "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " to "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " for the given head (see Section 3), and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\operatorname { p o s } ( x _ { j } )"
+            },
+            {
+              "type": "text",
+              "content": " is the part-of-speech tag of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " . We also compute the share of attention directed from each part of speech in a similar fashion."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 15,
+          "bbox": [
+            0.511,
+            0.642,
+            0.748,
+            0.658
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.1.2 Dependency Relations"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.51,
+            0.666,
+            0.888,
+            0.844
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recent work shows that Transformers and recurrent models encode dependency relations (Hewitt and Manning, 2019; Raganato and Tiedemann, 2018; Liu et al., 2019). However, different models capture dependency relations at different layer depths. In a Transformer model, the middle layers were most predictive of dependencies (Liu et al., 2019; Tenney et al., 2019). Recurrent models were found to encode dependencies in lower layers for language models (Liu et al., 2019) and in deeper layers for translation models (Belinkov, 2018)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.51,
+            0.847,
+            0.888,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We analyze how attention aligns with dependency relations in GPT-2 by computing the proportion of attention that connects tokens that are also in a dependency relation with one another. We"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 18,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.122,
+            0.078,
+            0.881,
+            0.265
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.122,
+                0.078,
+                0.881,
+                0.265
+              ],
+              "image_path": "images/page_3_image_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 1,
+              "bbox": [
+                0.115,
+                0.273,
+                0.886,
+                0.36
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 3: Neuron view for layer 8, head 6, which targets items in lists. Positive and negative values are colored blue and orange, respectively, and color saturation indicates magnitude. This view traces the computation of attention (Section 3) from the selected token on the left to each of the tokens on the right. Connecting lines are weighted based on attention between the respective tokens. The arrows (not in visualization) identify the neurons that most noticeably contribute to this attention pattern: the lower arrows point to neurons that contribute to attention towards list items, while the upper arrow identifies a neuron that helps focus attention on the first token in the sequence."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.382,
+            0.453,
+            0.398
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "refer to this metric as dependency alignment:"
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.133,
+            0.419,
+            0.488,
+            0.497
+          ],
+          "image_path": "images/page_3_equation_3.jpg",
+          "content": "\\mathrm{DepAl} _ {\\alpha} = \\frac {\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x) d e p (x _ {i} , x _ {j})}{\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x)}\\tag{4}"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.505,
+            0.49,
+            0.618
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d e p ( x _ { i } , x _ { j } )"
+            },
+            {
+              "type": "text",
+              "content": " is an indicator function that returns 1 if "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " are in a dependency relation and 0 otherwise. We run this analysis under three alternate formulations of dependency: (1) the attending token "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( x _ { i } )"
+            },
+            {
+              "type": "text",
+              "content": " is the parent in the dependency relation, (2) the token receiving attention "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( x _ { j } )"
+            },
+            {
+              "type": "text",
+              "content": " is the parent, and (3) either token is the parent."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.618,
+            0.491,
+            0.796
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We hypothesized that heads that focus attention based on position—for example, the head in Figure 1 that focuses on the previous token—would not align well with dependency relations, since they do not consider the content of the text. To distinguish between content-dependent and contentindependent (position-based) heads, we define attention variability, which measures how attention varies over different inputs; high variability would suggest a content-dependent head, while low variability would indicate a content-independent head:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 6,
+          "bbox": [
+            0.131,
+            0.808,
+            0.488,
+            0.886
+          ],
+          "image_path": "images/page_3_equation_6.jpg",
+          "content": "\\text {Variability} _ {\\alpha} = \\frac {\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\left| \\alpha_ {i , j} (x) - \\bar {\\alpha} _ {i , j} \\right|}{2 \\cdot \\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x)}\\tag{5}"
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.116,
+            0.894,
+            0.48,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\bar { \\alpha } _ { i , j }"
+            },
+            {
+              "type": "text",
+              "content": " is the mean of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i , j } ( x )"
+            },
+            {
+              "type": "text",
+              "content": " over all "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x \\in X"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.51,
+            0.382,
+            0.886,
+            0.446
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Variabili "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { U y } _ { \\alpha }"
+            },
+            {
+              "type": "text",
+              "content": " represents the mean absolute deviation"
+            },
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " of α over X, scaled to the [0, 1] interval."
+            },
+            {
+              "type": "text",
+              "content": "2,3",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " Variability scores for three example attention heads are shown in Figure 4."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 9,
+          "bbox": [
+            0.512,
+            0.454,
+            0.721,
+            0.469
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.1.3 Attention Distance"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.51,
+            0.473,
+            0.887,
+            0.619
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Past work suggests that deeper layers in NLP models capture longer-distance relationships than lower layers (Belinkov, 2018; Raganato and Tiedemann, 2018). We test this hypothesis on GPT-2 by measuring the mean distance (in number of tokens) spanned by attention for each head. Specifically, we compute the average distance between token pairs in all sentences in the corpus, weighted by the attention between the tokens:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 11,
+          "bbox": [
+            0.567,
+            0.641,
+            0.883,
+            0.718
+          ],
+          "image_path": "images/page_3_equation_11.jpg",
+          "content": "\\bar {D} _ {\\alpha} = \\frac {\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x) \\cdot (i - j)}{\\sum_ {x \\in X} \\sum_ {i = 1} ^ {| x |} \\sum_ {j = 1} ^ {i} \\alpha_ {i , j} (x)}\\tag{6}"
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.53,
+            0.729,
+            0.885,
+            0.743
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also explore whether heads with more dis-"
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 13,
+          "bbox": [
+            0.511,
+            0.751,
+            0.886,
+            0.837
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "We considered using variance to measure attention variability; however, attention is sparse for many attention heads after filtering first-token attention (see Section ) result- 5.2.3 , ing in a very low variance (due to α (x) and i,j  ≈ 0 ᾱi,j ≈ 0) for many content-sensitive attention heads. We did not use a probability distance measure, as attention values do not sum to one due to filtering first-token attention."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 14,
+          "bbox": [
+            0.72,
+            0.788,
+            0.796,
+            0.801
+          ],
+          "content": []
+        },
+        {
+          "type": "page_footnote",
+          "index": 15,
+          "bbox": [
+            0.799,
+            0.776,
+            0.836,
+            0.788
+          ],
+          "content": []
+        },
+        {
+          "type": "page_footnote",
+          "index": 16,
+          "bbox": [
+            0.822,
+            0.789,
+            0.883,
+            0.801
+          ],
+          "content": []
+        },
+        {
+          "type": "page_footnote",
+          "index": 17,
+          "bbox": [
+            0.657,
+            0.873,
+            0.703,
+            0.885
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "x ∈ X"
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 18,
+          "bbox": [
+            0.511,
+            0.836,
+            0.886,
+            0.861
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "The upper bound is 1 because the denominator is an upper bound on the numerator."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 19,
+          "bbox": [
+            0.51,
+            0.861,
+            0.886,
+            0.91
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "When computing variability, we only include the first N tokens (N=10) of each x ∈ to ensure a sufficient amount of data at each position i. The positional patterns appeared to be consistent across the entire sequence."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 20,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "66"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "chart",
+          "index": 0,
+          "bbox": [
+            0.124,
+            0.074,
+            0.369,
+            0.28
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 0,
+              "bbox": [
+                0.124,
+                0.074,
+                0.369,
+                0.28
+              ],
+              "image_path": "images/page_4_chart_0.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 1,
+          "bbox": [
+            0.38,
+            0.073,
+            0.631,
+            0.28
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 1,
+              "bbox": [
+                0.38,
+                0.073,
+                0.631,
+                0.28
+              ],
+              "image_path": "images/page_4_chart_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 2,
+          "bbox": [
+            0.641,
+            0.074,
+            0.879,
+            0.28
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 2,
+              "bbox": [
+                0.641,
+                0.074,
+                0.879,
+                0.28
+              ],
+              "image_path": "images/page_4_chart_2.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 3,
+              "bbox": [
+                0.115,
+                0.293,
+                0.886,
+                0.352
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 4: Attention heads in GPT-2 visualized for an example input sentence, along with aggregate metrics computed from all sentences in the corpus. Note that the average sentence length in the corpus is 27.7 tokens. Left: Focuses attention primarily on current token position. Center: Disperses attention roughly evenly across all pre-vious tokens. Right: Focuses on words in repeated phrases."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 4,
+          "bbox": [
+            0.147,
+            0.373,
+            0.463,
+            0.535
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 4,
+              "bbox": [
+                0.147,
+                0.373,
+                0.463,
+                0.535
+              ],
+              "image_path": "images/page_4_chart_4.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 5,
+              "bbox": [
+                0.115,
+                0.543,
+                0.489,
+                0.573
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 5: Proportion of attention focused on first token, broken out by layer and head."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.595,
+            0.492,
+            0.66
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "persed attention patterns (Figure 4, center) tend to capture more distant relationships. We measure attention dispersion based on the entropy"
+            },
+            {
+              "type": "text",
+              "content": "4",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " of the attention distribution (Ghader and Monz, 2017):"
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.131,
+            0.678,
+            0.488,
+            0.723
+          ],
+          "image_path": "images/page_4_equation_7.jpg",
+          "content": "\\mathrm{Entropy} _ {\\alpha} (x _ {i}) = - \\sum_ {j = 1} ^ {i} \\alpha_ {i, j} (x) \\mathrm{log} (\\alpha_ {i, j} (x))\\tag{7}"
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.117,
+            0.729,
+            0.49,
+            0.761
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure 4 shows the mean distance and entropy values for three example attention heads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 9,
+          "bbox": [
+            0.117,
+            0.77,
+            0.322,
+            0.787
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.2 Experimental Setup"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.117,
+            0.791,
+            0.241,
+            0.806
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.2.1 Dataset"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.115,
+            0.81,
+            0.491,
+            0.842
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We focused our analysis on text from English Wikipedia, which was not included in the training"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.51,
+            0.375,
+            0.887,
+            0.457
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "set for GPT-2. We first extracted 10,000 articles, and then sampled 100,000 sentences from these articles. For the qualitative analysis described later, we used the full dataset; for the quantitative analysis, we used a subset of 10,000 sentences."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "paragraph_title",
+          "index": 13,
+          "bbox": [
+            0.511,
+            0.469,
+            0.617,
+            0.485
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.2.2 Tools"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.51,
+            0.492,
+            0.888,
+            0.605
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We computed attention weights using the pytorch-pretrained-BERT"
+            },
+            {
+              "type": "text",
+              "content": "5",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "implementation of the GPT-2 small model. We extracted syntactic features using spaCy (Honnibal and Montani, 2017) and mapped the features from the spaCy-generated tokens to the corresponding tokens from the GPT-2 tokenizer."
+            },
+            {
+              "type": "text",
+              "content": "6",
+              "styles": [
+                "superscript"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 15,
+          "bbox": [
+            0.511,
+            0.617,
+            0.761,
+            0.633
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.2.3 Filtering Null Attention"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.51,
+            0.639,
+            0.888,
+            0.849
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We excluded attention focused on the first token of each sentence from the analysis because it was not informative; other tokens appeared to focus on this token by default when no relevant tokens were found elsewhere in the sequence. On average, 57% of attention was directed to the first token. Some heads focused over 97% of attention to this token on average (Figure 5), which is consistent with recent work showing that individual attention heads may have little impact on overall performance (Voita et al., 2019; Michel et al., 2019). We refer to the attention directed to the first token as null attention."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 17,
+          "bbox": [
+            0.115,
+            0.848,
+            0.492,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "When computing entropy, we exclude attention to the first (null) token (see Section 5.2.3) and renormalize the remaining weights. We exclude tokens that focus over 90% of attention to the first token, to avoid a disproportionate influence from the remaining attention from these tokens."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 18,
+          "bbox": [
+            0.511,
+            0.858,
+            0.834,
+            0.885
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://github.com/huggingface/pytorch-pretrained-BERT",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "https://github.com/huggingface/ pytorch-pretrained-BERT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 19,
+          "bbox": [
+            0.511,
+            0.884,
+            0.886,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "In cases where the GPT-2 tokenizer split a word into multiple pieces, we assigned the features to all word pieces."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 20,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "67"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.074,
+            0.305,
+            0.187
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.117,
+                0.074,
+                0.305,
+                0.187
+              ],
+              "image_path": "images/page_5_image_0.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.309,
+            0.073,
+            0.499,
+            0.187
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.309,
+                0.073,
+                0.499,
+                0.187
+              ],
+              "image_path": "images/page_5_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.503,
+            0.073,
+            0.693,
+            0.187
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.503,
+                0.073,
+                0.693,
+                0.187
+              ],
+              "image_path": "images/page_5_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.696,
+            0.074,
+            0.886,
+            0.188
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.696,
+                0.074,
+                0.886,
+                0.188
+              ],
+              "image_path": "images/page_5_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 5,
+          "bbox": [
+            0.119,
+            0.241,
+            0.307,
+            0.354
+          ],
+          "content": [
+            {
+              "type": "image_caption",
+              "index": 4,
+              "bbox": [
+                0.116,
+                0.2,
+                0.885,
+                0.23
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 6: Each heatmap shows the proportion of total attention directed to the given part of speech, broken out by layer (vertical axis) and head (horizontal axis). Scales vary by tag. Results for all tags available in appendix."
+                }
+              ]
+            },
+            {
+              "type": "image_body",
+              "index": 5,
+              "bbox": [
+                0.119,
+                0.241,
+                0.307,
+                0.354
+              ],
+              "image_path": "images/page_5_image_5.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 6,
+          "bbox": [
+            0.31,
+            0.241,
+            0.497,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 6,
+              "bbox": [
+                0.31,
+                0.241,
+                0.497,
+                0.355
+              ],
+              "image_path": "images/page_5_image_6.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 7,
+          "bbox": [
+            0.498,
+            0.242,
+            0.698,
+            0.354
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 7,
+              "bbox": [
+                0.498,
+                0.242,
+                0.698,
+                0.354
+              ],
+              "image_path": "images/page_5_image_7.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 8,
+          "bbox": [
+            0.698,
+            0.242,
+            0.885,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 8,
+              "bbox": [
+                0.698,
+                0.242,
+                0.885,
+                0.355
+              ],
+              "image_path": "images/page_5_image_8.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 9,
+              "bbox": [
+                0.115,
+                0.368,
+                0.886,
+                0.398
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 7: Each heatmap shows the proportion of total attention that originates from the given part of speech, broken out by layer (vertical axis) and head (horizontal axis). Scales vary by tag. Results for all tags available in appendix."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.117,
+            0.422,
+            0.222,
+            0.437
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.3 Results"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.116,
+            0.447,
+            0.336,
+            0.463
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.3.1 Part-of-Speech Tags"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.115,
+            0.472,
+            0.491,
+            0.6
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure 6 shows the share of attention directed to various part-of-speech tags (Eq. 3) broken out by layer and head. Most tags are disproportionately targeted by one or more attention heads. For example, nouns receive 43% of attention in layer 9, head 0, compared to a mean of 21% over all heads. For 13 of 16 tags, a head exists with an attention share more than double the mean for the tag."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.115,
+            0.602,
+            0.492,
+            0.812
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The attention heads that focus on a particular tag tend to cluster by layer depth. For example, the top five heads targeting proper nouns are all in the last three layers of the model. This may be due to several attention heads in the deeper layers focusing on named entities (see Section 5.4), which may require the broader context available in the deeper layers. In contrast, the top five heads targeting determiners—a lower-level construct—are all in the first four layers of the model. This is consistent with previous findings showing that deeper layers focus on higher-level properties (Blevins et al., 2018; Belinkov, 2018)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.115,
+            0.814,
+            0.492,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure 7 shows the proportion of attention directed from various parts of speech. The values appear to be roughly uniform in the initial layers of the model. The reason is that the heads in these layers pay little attention to the first (null) token (Figure 5), and therefore the remaining (non-"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.51,
+            0.422,
+            0.887,
+            0.503
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "null) attention weights sum to a value close to one. Thus, the net weight for each token in the weighted sum (Section 5.1.1) is close to one, and the proportion reduces to the frequency of the part of speech in the corpus."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.51,
+            0.504,
+            0.888,
+            0.665
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Beyond the initial layers, attention heads specialize in focusing attention from particular partof-speech tags. However, the effect is less pronounced compared to the tags receiving attention; for 7 out of 16 tags, there is a head that focuses attention from that tag with a frequency more than double the tag average. Many of these specialized heads also cluster by layer. For example, the top ten heads for focusing attention from punctuation are all in the last six layers."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 17,
+          "bbox": [
+            0.511,
+            0.678,
+            0.749,
+            0.694
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.3.2 Dependency Relations"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.51,
+            0.7,
+            0.887,
+            0.78
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure 8 shows the dependency alignment scores (Eq. 4) broken out by layer. Attention aligns with dependency relations most strongly in the middle layers, consistent with recent syntactic probing analyses (Liu et al., 2019; Tenney et al., 2019)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.51,
+            0.782,
+            0.888,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "One possible explanation for the low alignment in the initial layers is that many heads in these layers focus attention based on position rather than content, according to the attention variability (Eq. 5) results in Figure 10. Figure 4 (left and center) shows two examples of position-focused heads from layer 0 that have relatively low dependency alignment"
+            },
+            {
+              "type": "text",
+              "content": "7",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "(0.04 and 0.10, respectively); the first"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 20,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "chart",
+          "index": 0,
+          "bbox": [
+            0.119,
+            0.074,
+            0.363,
+            0.182
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 0,
+              "bbox": [
+                0.119,
+                0.074,
+                0.363,
+                0.182
+              ],
+              "image_path": "images/page_6_chart_0.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 1,
+          "bbox": [
+            0.377,
+            0.072,
+            0.622,
+            0.183
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 1,
+              "bbox": [
+                0.377,
+                0.072,
+                0.622,
+                0.183
+              ],
+              "image_path": "images/page_6_chart_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 2,
+          "bbox": [
+            0.635,
+            0.073,
+            0.882,
+            0.183
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 2,
+              "bbox": [
+                0.635,
+                0.073,
+                0.882,
+                0.183
+              ],
+              "image_path": "images/page_6_chart_2.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 3,
+              "bbox": [
+                0.115,
+                0.187,
+                0.886,
+                0.217
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 8: Proportion of attention that is aligned with dependency relations, aggregated by layer. The orange line shows the baseline proportion of token pairs that share a dependency relationship, independent of attention."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 4,
+          "bbox": [
+            0.12,
+            0.228,
+            0.884,
+            0.403
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 4,
+              "bbox": [
+                0.12,
+                0.228,
+                0.884,
+                0.403
+              ],
+              "image_path": "images/page_6_chart_4.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 5,
+              "bbox": [
+                0.192,
+                0.407,
+                0.81,
+                0.422
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 9: Proportion of attention directed to various dependency types, broken out by layer."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 6,
+          "bbox": [
+            0.141,
+            0.444,
+            0.469,
+            0.607
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 6,
+              "bbox": [
+                0.141,
+                0.444,
+                0.469,
+                0.607
+              ],
+              "image_path": "images/page_6_chart_6.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 7,
+              "bbox": [
+                0.115,
+                0.617,
+                0.49,
+                0.674
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 10: Attention variability by layer / head. High-values indicate content-dependent heads, and low values indicate content-independent (position-based) heads."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.115,
+            0.703,
+            0.491,
+            0.768
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "head focuses attention primarily on the current token position (which cannot be in a dependency relation with itself) and the second disperses attention roughly evenly, without regard to content."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.115,
+            0.769,
+            0.492,
+            0.882
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "An interesting counterexample is layer 4, head 11 (Figure 1), which has the highest dependency alignment out of all the heads "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { ( D e p A l _ { \\alpha } }"
+            },
+            {
+              "type": "text",
+              "content": " = "
+            },
+            {
+              "type": "equation_inline",
+              "content": "0 . 4 2 \\dot { ) } ^ { 7 }"
+            },
+            {
+              "type": "text",
+              "content": " but is also the most position-focused "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( \\mathrm { V a r i a b i l i t y } _ { \\alpha }   =   0 . 0 0 4 )"
+            },
+            {
+              "type": "text",
+              "content": " . This head focuses attention on the previous token, which in our corpus has a 42% chance of being in a dependency rela-"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.51,
+            0.447,
+            0.886,
+            0.495
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tion with the adjacent token. As we’ll discuss in the next section, token distance is highly predictive of dependency relations."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.51,
+            0.496,
+            0.888,
+            0.624
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "One hypothesis for why attention diverges from dependency relations in the deeper layers is that several attention heads in these layers target very specific constructs (Tables 1 and 2) as opposed to more general dependency relations. The deepest layers also target longer-range relationships (see next section), whereas dependency relations span relatively short distances (3.89 tokens on average)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.51,
+            0.625,
+            0.888,
+            0.77
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also analyzed the specific dependency types of tokens receiving attention (Figure 9). Subjects (csubj, csubjpass, nsubj, nsubjpass) were targeted more in deeper layers, while auxiliaries (aux), conjunctions (cc), determiners (det), expletives (expl), and negations (neg) were targeted more in lower layers, consistent with previous findings (Belinkov, 2018). For some other dependency types, the interpretations were less clear."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 13,
+          "bbox": [
+            0.511,
+            0.779,
+            0.721,
+            0.794
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.3.3 Attention Distance"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.509,
+            0.798,
+            0.888,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We found that attention distance (Eq. 6) is greatest in the deepest layers (Figure 11, right), confirming that these layers capture longer-distance relationships. Attention distance varies greatly across heads "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( S D = 3 . 6 )"
+            },
+            {
+              "type": "text",
+              "content": " , even when the heads are in the same layer, due to the wide variation in attention structures (e.g., Figure 4 left and center)."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 15,
+          "bbox": [
+            0.143,
+            0.895,
+            0.43,
+            0.91
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Assuming relation may be in either direction."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "69"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "chart",
+          "index": 0,
+          "bbox": [
+            0.136,
+            0.073,
+            0.463,
+            0.238
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 0,
+              "bbox": [
+                0.136,
+                0.073,
+                0.463,
+                0.238
+              ],
+              "image_path": "images/page_7_chart_0.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 1,
+          "bbox": [
+            0.52,
+            0.075,
+            0.854,
+            0.239
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 1,
+              "bbox": [
+                0.52,
+                0.075,
+                0.854,
+                0.239
+              ],
+              "image_path": "images/page_7_chart_1.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 2,
+              "bbox": [
+                0.238,
+                0.246,
+                0.763,
+                0.262
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 11: Mean attention distance by layer / head (left), and by layer (right)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "chart",
+          "index": 3,
+          "bbox": [
+            0.143,
+            0.276,
+            0.462,
+            0.438
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 3,
+              "bbox": [
+                0.143,
+                0.276,
+                0.462,
+                0.438
+              ],
+              "image_path": "images/page_7_chart_3.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 4,
+              "bbox": [
+                0.115,
+                0.447,
+                0.489,
+                0.477
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 12: Mean attention entropy by layer / head. Higher values indicate more diffuse attention."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.498,
+            0.492,
+            0.643
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also explored the relationship between attention distance and attention entropy (Eq. 7), which measures how diffuse an attention pattern is. Overall, we found a moderate correlation (r = 0.61, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "p < 0 . 0 0 1 )"
+            },
+            {
+              "type": "text",
+              "content": " between the two. As Figure 12 shows, many heads in layers 0 and 1 have high entropy (e.g., Figure 4, center), which may explain why these layers have a higher attention distance compared to layers 2–4."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.644,
+            0.491,
+            0.756
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "One counterexample is layer 5, head 1 (Figure 4, right), which has the highest mean attention distance of any head (14.2), and one of the lowest mean entropy scores (0.41). This head concentrates attention on individual words in repeated phrases, which often occur far apart from one another."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.758,
+            0.492,
+            0.872
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also explored how attention distance relates to dependency alignment. Across all heads, we found a negative correlation between the two quantities "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( r   =   - 0 . 7 3 , p   <   0 . 0 0 1 )"
+            },
+            {
+              "type": "text",
+              "content": " . This is consistent with the fact that the probability of two tokens sharing a dependency relation decreases as the distance between them increases"
+            },
+            {
+              "type": "text",
+              "content": "8",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "; for exam-"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.51,
+            0.28,
+            0.887,
+            0.378
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "ple, the probability of being in a dependency relation is 0.42 for adjacent tokens, 0.07 for tokens at a distance of 5, and 0.02 for tokens at a distance of 10. The layers (2–4) in which attention spanned the shortest distance also had the highest dependency alignment."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "paragraph_title",
+          "index": 9,
+          "bbox": [
+            0.511,
+            0.386,
+            0.719,
+            0.403
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.4 Qualitative Analysis"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.509,
+            0.407,
+            0.888,
+            0.601
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "To get a sense of the lexical patterns targeted by each attention head, we extracted exemplar sentences that most strongly induced attention in that head. Specifically, we ranked sentences by the maximum token-to-token attention weight within each sentence. Results for three attention heads are shown in Tables 1–3. We found other attention heads that detected entities (people, places, dates), passive verbs, acronyms, nicknames, paired punctuation, and other syntactic and semantic properties. Most heads captured multiple types of patterns."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.511,
+            0.611,
+            0.646,
+            0.628
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6 Conclusion"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.509,
+            0.637,
+            0.888,
+            0.782
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this paper, we analyzed the structure of attention in the GPT-2 Transformer language model. We found that many attention heads specialize in particular part-of-speech tags and that different tags are targeted at different layer depths. We also found that the deepest layers capture the most distant relationships, and that attention aligns most strongly with dependency relations in the middle layers where attention distance is lowest."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.509,
+            0.782,
+            0.888,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Our qualitative analysis revealed that the structure of attention is closely tied to the training objective; for GPT-2, which was trained using leftto-right language modeling, attention often focused on words most relevant to predicting the next token in the sequence. For future work, we would like to extend the analysis to other Transformer models such as BERT, which has a bidi-"
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 14,
+          "bbox": [
+            0.115,
+            0.884,
+            0.49,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "This is true up to a distance of 18 tokens; 99.8% of dependency relations occur within this distance."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 15,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "table",
+          "index": 0,
+          "bbox": [
+            0.122,
+            0.072,
+            0.88,
+            0.198
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 0,
+              "bbox": [
+                0.122,
+                0.072,
+                0.88,
+                0.198
+              ],
+              "image_path": "images/page_8_table_0.jpg",
+              "content": "<table><tbody><tr><td>Rank</td><td>Sentence</td></tr><tr><td>1</td><td>The Australian search and rescue service is provided by Aus S AR , which is part of the Australian Maritime Safety Authority ( AM SA ).</td></tr><tr><td>2</td><td>In 1925 , Bapt ists worldwide formed the Baptist World Alliance ( B WA ).</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">The Oak dale D ump is listed as an Environmental Protection Agency Super fund site due to the contamination of residential drinking water wells with volatile organic compounds (V OC s ) and heavy metals .</td></tr><tr></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.122,
+            0.264,
+            0.88,
+            0.356
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 1,
+              "bbox": [
+                0.116,
+                0.201,
+                0.885,
+                0.26
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Table 1: Exemplar sentences for layer 10, head 10, which focuses attention from acronyms to the associated phrase. The tokens with maximum attention are underlined; the attending token is bolded and the token receiving attention is italicized. It appears that attention is directed to the part of the phrase that would help the model choose the next word piece in the acronym (after the token paying attention), reflecting the language modeling objective."
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.122,
+                0.264,
+                0.88,
+                0.356
+              ],
+              "image_path": "images/page_8_table_2.jpg",
+              "content": "<table><tbody><tr><td>Rank</td><td>Sentence</td></tr><tr><td>1</td><td>After the two prototypes were completed , production began in Mar iet ta , Georgia , ...</td></tr><tr><td>3</td><td>The fictional character Sam Fisher of the Spl inter Cell video game series by Ubisoft was born in Tow son , as well as residing in a town house , as stated in the novel izations ...</td></tr><tr><td>4</td><td>Suicide bombers attack three hotels in Am man , Jordan , killing at least 60 people .</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 4,
+          "bbox": [
+            0.122,
+            0.409,
+            0.88,
+            0.582
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 3,
+              "bbox": [
+                0.116,
+                0.361,
+                0.885,
+                0.404
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Table 2: Exemplar sentences for layer 11, head 2, which focuses attention from commas to the preceding place name (or the last word piece thereof). The likely purpose of this attention head is to help the model choose the related place name that would follow the comma, e.g. the country or state in which the city is located."
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 4,
+              "bbox": [
+                0.122,
+                0.409,
+                0.88,
+                0.582
+              ],
+              "image_path": "images/page_8_table_4.jpg",
+              "content": "<table><tbody><tr><td>Rank</td><td>Sentence</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">With the United States isolation ist and Britain stout ly refusing to make the \" continental commitment \" to defend France on the same scale as in World War I , theprospects ofAnglo - American assistance in another war with Germany appeared to be doubtful ...</td></tr><tr></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">The show did receive a somewhat favorable review from noted critic Gilbert Se ld es in the December 15 , 1962 TV Guide : \" The whole notion on which The Beverly Hill bill ies is founded is an encouragement to ignorance ...</td></tr><tr></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">he Arch im edes won significant market share in the education markets of the UK , Ireland, Australia and New Zealand ; the success of the Arch im edes in British schools was due partly to its predecessor the BBC Micro and later to the Comput ers for Schools scheme ...</td></tr><tr></tr></tbody></table>"
+            },
+            {
+              "type": "table_caption",
+              "index": 5,
+              "bbox": [
+                0.115,
+                0.586,
+                0.886,
+                0.645
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Table 3: Exemplar sentences for layer 11, head 10 which focuses attention from the end of a noun phrase to the head noun. In the first sentence, for example, the head noun is prospects and the remainder of the noun phrase is of Anglo - American assistance in another war with Germany. The purpose of this attention pattern is likely to predict the word (typically a verb) that follows the noun phrase, as the head noun is a strong predictor of this."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.668,
+            0.49,
+            0.699
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "rectional architecture and is trained on both tokenlevel and sentence-level tasks."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.701,
+            0.492,
+            0.878
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Although the Wikipedia sentences used in our analysis cover a diverse range of topics, they all follow a similar encyclopedic format and style. Further study is needed to determine how attention patterns manifest in other types of content, such as dialog scripts or song lyrics. We would also like to analyze attention patterns in text much longer than a single sentence, especially for new Transformer variants such as the Transformer-XL (Dai et al., 2019) and Sparse Transformer (Child et al., 2019), which can handle very long contexts."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.115,
+            0.878,
+            0.491,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We believe that interpreting a model based on attention is complementary to linguistic probing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.51,
+            0.667,
+            0.888,
+            0.846
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "approaches (Section 2). While linguistic probing precisely quantifies the amount of information encoded in various components of the model, it requires training and evaluating a probing classifier. Analyzing attention is a simpler process that also produces human-interpretable descriptions of model behavior, though recent work casts doubt on its role in explaining individual predictions (Jain and Wallace, 2019). The results of our analyses were often consistent with those from probing approaches."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.511,
+            0.853,
+            0.716,
+            0.87
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7 Acknowledgements"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.511,
+            0.878,
+            0.885,
+            0.91
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Y.B. was supported by the Harvard Mind, Brain, and Behavior Initiative."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.49,
+            0.923,
+            0.511,
+            0.936
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "71"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.075,
+            0.218,
+            0.091
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "References"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "ref_text",
+          "index": 1,
+          "bbox": [
+            0.119,
+            0.101,
+            0.489,
+            0.155
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1409.0473",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Neural machine translation by jointly learning to align and translate"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In International Conference on Learning Representations (ICLR)."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 2,
+          "bbox": [
+            0.119,
+            0.166,
+            0.49,
+            0.22
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Yonatan Belinkov. 2018. On Internal Language Representations in Deep Learning: An Analysis of Machine Translation and Speech Recognition. Ph.D. thesis, Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 3,
+          "bbox": [
+            0.119,
+            0.231,
+            0.49,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Yonatan Belinkov and James Glass. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://doi.org/10.1162/tacl_a_00254",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Analysis methods in neural language processing: A survey"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". Transactions of the Association for Computational Linguistics, 7:49–72."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 4,
+          "bbox": [
+            0.119,
+            0.296,
+            0.489,
+            0.336
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Terra Blevins, Omer Levy, and Luke Zettlemoyer. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/abs/1805.04218",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Deep RNNs encode soft hierarchical syntax"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1805.04218."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 5,
+          "bbox": [
+            0.119,
+            0.348,
+            0.49,
+            0.401
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/abs/1904.10509",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Generating long sequences with sparse transformers"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1904.10509."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 6,
+          "bbox": [
+            0.118,
+            0.413,
+            0.49,
+            0.467
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Zihang Dai, Zhilin Yang, Yiming Yang, Jaime G. Carbonell, Quoc V. Le, and Ruslan Salakhutdinov. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1901.02860",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Transformer-XL: Attentive language models beyond a fixed-length context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 7,
+          "bbox": [
+            0.119,
+            0.478,
+            0.49,
+            0.533
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/pdf/1810.04805.pdf",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "BERT: Pre-training of deep bidirectional transformers for language understanding"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1810.04805."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 8,
+          "bbox": [
+            0.118,
+            0.543,
+            0.49,
+            0.611
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Hamidreza Ghader and Christof Monz. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://www.aclweb.org/anthology/I17-1004",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "What does attention in neural machine translation pay attention to?"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": " In Proceedings of the Eighth International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 30–39."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 9,
+          "bbox": [
+            0.119,
+            0.622,
+            0.489,
+            0.649
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Yoav Goldberg. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/abs/1901.05287",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Assessing BERT’s syntactic abilities"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1901.05287."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 10,
+          "bbox": [
+            0.119,
+            0.661,
+            0.492,
+            0.74
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "John Hewitt and Christopher D. Manning. 2019. A structural probe for finding syntax in word representations. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 11,
+          "bbox": [
+            0.118,
+            0.752,
+            0.49,
+            0.806
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Matthew Honnibal and Ines Montani. 2017. spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing. To appear."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 12,
+          "bbox": [
+            0.118,
+            0.817,
+            0.49,
+            0.845
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Sarthak Jain and Byron C. Wallace. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1902.10186",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Attention is not explanation"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1902.10186."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 13,
+          "bbox": [
+            0.119,
+            0.856,
+            0.49,
+            0.909
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Llion Jones. 2017. Tensor2tensor transformer visualization. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/visualization",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/visualization"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 14,
+          "bbox": [
+            0.513,
+            0.077,
+            0.886,
+            0.156
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jaesong Lee, Joong-Hwi Shin, and Jun-Seok Kim. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://doi.org/10.18653/v1/D17-2021",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Interactive visualization and manipulation of attention-based neural machine translation"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing: System Demonstrations."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 15,
+          "bbox": [
+            0.513,
+            0.166,
+            0.886,
+            0.259
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Nelson F. Liu, Matt Gardner, Yonatan Belinkov, Matthew Peters, and Noah A. Smith. 2019. Linguistic knowledge and transferability of contextual representations. In Proceedings of the 17th Annual Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT)."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 16,
+          "bbox": [
+            0.514,
+            0.268,
+            0.886,
+            0.36
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Shusen Liu, Tao Li, Zhimin Li, Vivek Srikumar, Valerio Pascucci, and Peer-Timo Bremer. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://www.aclweb.org/anthology/D18-2007",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Visual interrogation of attention-based models for natural language inference and machine comprehension"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 17,
+          "bbox": [
+            0.513,
+            0.371,
+            0.886,
+            0.412
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Paul Michel, Omer Levy, and Graham Neubig. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/abs/1905.10650",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Are sixteen heads really better than one?"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": " arXiv preprint arXiv:1905.10650."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 18,
+          "bbox": [
+            0.515,
+            0.422,
+            0.886,
+            0.528
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://doi.org/10.18653/v1/N18-1202",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Deep contextualized word representations"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2227–2237. Association for Computational Linguistics."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 19,
+          "bbox": [
+            0.514,
+            0.537,
+            0.886,
+            0.591
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Improving language understanding by generative pre-training"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". Technical report."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 20,
+          "bbox": [
+            0.515,
+            0.601,
+            0.886,
+            0.655
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Language models are unsupervised multitask learners"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". Technical report."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 21,
+          "bbox": [
+            0.515,
+            0.664,
+            0.886,
+            0.756
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alessandro Raganato and Jorg Tiedemann. 2018. ¨ "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://www.aclweb.org/anthology/W18-5431",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "An analysis of encoder representations in Transformerbased machine translation"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In Proceedings of the 2018 EMNLP Workshop BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP, pages 287–297. Association for Computational Linguistics."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 22,
+          "bbox": [
+            0.514,
+            0.767,
+            0.886,
+            0.833
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Tim Rocktaschel, Edward Grefenstette, Karl Moritz ¨ Hermann, Tomas Kocisky, and Phil Blunsom. 2016. Reasoning about entailment with neural attention. In International Conference on Learning Representations (ICLR)."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 23,
+          "bbox": [
+            0.515,
+            0.844,
+            0.886,
+            0.91
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alexander M. Rush, Sumit Chopra, and Jason Weston. 2015. A neural attention model for abstractive sentence summarization. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 24,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "ref_text",
+          "index": 0,
+          "bbox": [
+            0.119,
+            0.077,
+            0.49,
+            0.13
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "H. Strobelt, S. Gehrmann, M. Behrisch, A. Perer, H. Pfister, and A. M. Rush. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1804.09299v1",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". ArXiv e-prints."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 1,
+          "bbox": [
+            0.119,
+            0.139,
+            0.49,
+            0.193
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ian Tenney, Dipanjan Das, and Ellie Pavlick. 2019. BERT rediscovers the classical NLP pipeline. In Proceedings of the Association for Computational Linguistics."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 2,
+          "bbox": [
+            0.119,
+            0.202,
+            0.489,
+            0.23
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Edward Tufte. 1990. Envisioning Information. Graphics Press, Cheshire, CT, USA."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 3,
+          "bbox": [
+            0.119,
+            0.239,
+            0.49,
+            0.318
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ashish Vaswani, Samy Bengio, Eugene Brevdo, Francois Chollet, Aidan N. Gomez, Stephan Gouws, Llion Jones, Łukasz Kaiser, Nal Kalchbrenner, Niki Parmar, Ryan Sepassi, Noam Shazeer, and Jakob Uszkoreit. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1803.07416",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Tensor2tensor for neural machine translation"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1803.07416."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 4,
+          "bbox": [
+            0.119,
+            0.327,
+            0.49,
+            0.381
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Ł ukasz Kaiser, and Illia Polosukhin. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/pdf/1706.03762.pdf",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Attention is all you need"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1706.03762."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 5,
+          "bbox": [
+            0.119,
+            0.39,
+            0.492,
+            0.443
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jesse Vig. 2019. A multiscale visualization of attention in the Transformer model. In Proceedings of the Association for Computational Linguistics: System Demonstrations."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 6,
+          "bbox": [
+            0.12,
+            0.453,
+            0.49,
+            0.546
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Elena Voita, Pavel Serdyukov, Rico Sennrich, and Ivan Titov. 2018. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://www.aclweb.org/anthology/P18-1117",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Context-aware neural machine translation learns anaphora resolution"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1264–1274. Association for Computational Linguistics."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 7,
+          "bbox": [
+            0.119,
+            0.555,
+            0.49,
+            0.62
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Elena Voita, David Talbot, Fedor Moiseev, Rico Sennrich, and Ivan Titov. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://arxiv.org/abs/1905.09418",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Analyzing multi-head self-attention: Specialized heads do the heavy lifting, the rest can be pruned"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". arXiv preprint arXiv:1905.09418."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 8,
+          "bbox": [
+            0.119,
+            0.631,
+            0.489,
+            0.671
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Thomas Wolf. 2019. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://huggingface.co/bert-syntax/extending-bert-syntax.pdf",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Some additional experiments extending the tech report ”Assessing BERTs syntactic abilities” by Yoav Goldberg"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". Technical report."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "73"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.075,
+            0.242,
+            0.092
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A Appendix"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.115,
+            0.1,
+            0.491,
+            0.133
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figures A.1 and A.2 shows the results from Figures 6 and 7 for the full set of part-of-speech tags."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.936
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.136,
+            0.089,
+            0.865,
+            0.497
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.136,
+                0.089,
+                0.865,
+                0.497
+              ],
+              "image_path": "images/page_12_image_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 1,
+              "bbox": [
+                0.115,
+                0.502,
+                0.885,
+                0.531
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure A.1: Each heatmap shows the proportion of total attention directed to the given part of speech, broken out by layer (vertical axis) and head (horizontal axis)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.49,
+            0.922,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.118,
+            0.09,
+            0.844,
+            0.497
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.118,
+                0.09,
+                0.844,
+                0.497
+              ],
+              "image_path": "images/page_13_image_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 1,
+              "bbox": [
+                0.115,
+                0.501,
+                0.886,
+                0.529
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure A.2: Each heatmap shows the proportion of attention originating from the given part of speech, broken out by layer (vertical axis) and head (horizontal axis)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "76"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

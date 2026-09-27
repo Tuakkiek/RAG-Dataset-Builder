@@ -1,0 +1,1305 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.104,
+            0.104,
+            0.896,
+            0.153
+          ],
+          "level": 1,
+          "content": "ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG PHÁT HIỆN HÌNH THỨC TẤN CÔNG TỪ CHỐI DỊCH VỤ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.327,
+            0.17,
+            0.675,
+            0.19
+          ],
+          "content": "**Nguyễn Thế Cường**<strong><sup>1</sup></strong>**, Nguyễn Thu Hương**<strong><sup>2</sup></strong>"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.446,
+            0.205,
+            0.556,
+            0.226
+          ],
+          "level": 2,
+          "content": "TÓM TẮT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.242,
+            0.9,
+            0.427
+          ],
+          "content": "Các cuộc tấn công từ chối dịch vụ phân tán tạo ra các mối đe dọa lớn đối với mạng Internet và các thực thể trong mạng. Nhiều cơ chế phòng thủ đã được đề xuất để có thể chống lại hình thức tấn công này. Tuy nhiên, các công cụ hỗ trợ tấn công luôn được nâng cấp để có thể vượt qua các hệ thống bảo mật. Việc phát hiện sớm được dạng tấn công này có thể giúp các hệ thống giảm thiểu được rủi ro, đặc biệt là với các hệ thống cung cấp dịch vụ. Ứng dụng trí tuệ nhân tạo vào quá trình giám sát mạng nhằm phát hiện các nguy cơ xuất hiện của hình thức tấn công từ chối dịch vụ hiện đang thu hút được nhiều sự quan tâm. Trong bài báo này, chúng tôi đề xuất giải pháp ứng dụng trí tuệ nhân tạo trong việc phát hiện hình thức tấn công từ chối dịch vụ dựa trên các dữ liệu giám sát mạng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.434,
+            0.799,
+            0.454
+          ],
+          "content": "**Từ khóa:** Tấn công mạng, trí tuệ nhân tạo, từ chối dịch vụ, mạng dịch vụ."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.469,
+            0.645,
+            0.489
+          ],
+          "level": 2,
+          "content": "1. TỔNG QUAN VỀ TỪ CHỐI DỊCH VỤ PHÂN TÁN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.5,
+            0.9,
+            0.6
+          ],
+          "content": "Tấn công từ chối dịch vụ phân tán (Distributed Denial of Service - DDoS) là hành động làm cho máy cung cấp dịch vụ không thể phục vụ các yêu cầu sử dụng dịch vụ của người dùng hợp pháp. Kết quả, sau cuộc tấn công, hệ thống cung cấp dịch vụ ngừng hoạt động trong một khoảng thời gian đủ dài. Các tấn công DDoS có thể thực hiện từ các hệ thống máy tính với các địa chỉ IP khác nhau trên mạng Internet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.601,
+            0.9,
+            0.782
+          ],
+          "content": "Các cuộc tấn công DDoS gây ra mối đe dọa lớn đối với mạng Internet và có nhiều cơ chế phòng thủ đã được đề xuất để chống lại vấn đề này. Lĩnh vực nghiên cứu về tấn công DDoS ngày càng trở nên phức tạp hơn và trở nên khó khăn đến mức khó có thể xác định được mức độ tấn công. Những kẻ tấn công liên tục sửa đổi các công cụ của họ để vượt qua các hệ thống bảo mật được xây dựng, trong khi đó, các nhà nghiên cứu liên tục phải sửa đổi các phương pháp tiếp cận của họ để xử lý các cuộc tấn công mới. Một cuộc tấn công từ chối dịch vụ được đặc trưng bởi một nỗ lực rõ ràng nhằm ngăn chặn việc sử dụng hợp pháp một dịch vụ được triển khai trên mạng. Một cuộc tấn công DdoS có thể dùng nhiều đối tượng, phương thức để đạt được mục tiêu này."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.783,
+            0.764,
+            0.801
+          ],
+          "content": "Thông thường, có một số cách để thực hiện một cuộc tấn công DDoS:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.803,
+            0.899,
+            0.864
+          ],
+          "content": "Cách thứ nhất, kẻ tấn công có thể gửi một luồng gói tin đến nạn nhân; luồng này tiêu thụ một số tài nguyên quan trọng, do đó khiến tài nguyên không khả dụng cho các khách hàng hợp pháp của nạn nhân."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.102,
+            0.887,
+            0.885,
+            0.906
+          ],
+          "content": "1 Phòng Đảm bảo chất lượng và Khảo thí, Trường Đại học Hồng Đức; Email: nguyenthecuong@hdu.edu.vn"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.103,
+            0.906,
+            0.381,
+            0.924
+          ],
+          "content": "2 Trường Cao đẳng Y tế Thanh Hóa"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.87,
+            0.946,
+            0.896,
+            0.961
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.107,
+            0.898,
+            0.162
+          ],
+          "content": "Cách thứ hai, kẻ tấn công gửi một vài gói tin không đúng định dạng gây nhầm lẫn cho một ứng dụng hoặc một giao thức trên máy nạn nhân và buộc máy tính đó phải đóng băng hoặc khởi động lại."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.162,
+            0.898,
+            0.216
+          ],
+          "content": "Cách thứ ba, chiếm quyền sử dụng các máy trong mạng nạn nhân và tiêu thụ một số tài nguyên quan trọng để các máy khách hợp pháp từ cùng một mạng không thể nhận được một số dịch vụ bên trong hoặc bên ngoài."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.216,
+            0.898,
+            0.273
+          ],
+          "content": "Nhìn chung, có nhiều cách khác nhau để từ chối dịch vụ trên internet, một số cách mà chúng ta không thể đoán trước được và những cách này sẽ chỉ được phát hiện sau khi chúng đã bị khai thác trong một cuộc tấn công lớn."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.284,
+            0.894,
+            0.305
+          ],
+          "level": 2,
+          "content": "2. CÁC NGHIÊN CỨU LIÊN QUAN ĐẾN DỰ ĐOÁN TẤN CÔNG TỪ CHỐI DỊCH VỤ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.311,
+            0.898,
+            0.349
+          ],
+          "content": "Trong phần này, tác giả trình bày một số nghiên cứu có liên quan đến việc chống tấn công DDoS dựa trên các kỹ thuật học máy và học sâu."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.349,
+            0.9,
+            0.664
+          ],
+          "content": "Các giải pháp bảo mật như Hệ thống ngăn chặn xâm nhập (IPS) và Hệ thống phát hiện xâm nhập (IDS) được sử dụng để đảm bảo an ninh mạng. Với các thuật toán học máy, hệ thống IDS đã có được khả năng đưa ra các nhận xét và dự đoán tương đối chính xác về các tấn công. Pérez-Díaz và cộng sự [1] đề xuất một giải pháp kiến trúc mới để phát hiện các cuộc tấn công DDoS tỷ lệ thấp (LR-DDoS) và giảm thiểu độ thiệt hại của các cuộc tấn công trong các hệ thống SDN. Giải pháp kiến trúc bao gồm các mô-đun IPS và IDS được đặt trên bộ điều khiển. Việc phát hiện tấn công được thực hiện bằng cách sử dụng các phương pháp học máy và học sâu được đào tạo khác nhau thông qua giao diện lập trình ứng dụng nhận dạng (API) được đặt trong mô-đun IDS. Kết quả thử nghiệm cho thấy, thuật toán Multi-Layer Perceptron (MLP) cho kết quả tốt nhất với độ chính xác 95% trong số 6 thuật toán học máy khác nhau được sử dụng. Shoo và cộng sự [2] đã giới thiệu một mô hình tiến hóa mới để phân loại lưu lượng tấn công DDoS trong môi trường SDN. Mô hình sử dụng thuật toán SVM kết hợp để phân loại các lưu lượng độc hại với các lưu lượng bình thường. Các thuật toán di truyền (GA) đã được sử dụng để tối ưu hóa SVM khi xác định thành phần chính của nhân (KPCA) như một phương pháp lựa chọn thuộc tính để cải thiện hiệu suất phân loại của mô hình. Kết quả thực nghiệm cho thấy độ chính xác của phương pháp kết hợp đề xuất là 98,9%."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.664,
+            0.899,
+            0.774
+          ],
+          "content": "Kyaw, Aye Thandar và các cộng sự [3] đã sử dụng hai thuật toán học máy (polynomial SVM và linear SVM) để phát hiện các cuộc tấn công UDP Flood trong môi trường SDN. Các tác giả đã sử dụng công cụ Scapy để tạo gói lưu lượng. Hệ thống đã thu thập các dòng tĩnh thông qua bộ chuyển mạch OpenFlow. Sau giai đoạn trích xuất đặc trưng, các tác giả so sánh hiệu suất phân loại của các mô hình SVM tuyến tính và đa thức. Kết quả thử nghiệm cho thấy thuật toán Polynomial SVM có tỷ lệ báo động sai thấp hơn 34% với độ chính xác tốt hơn 3%."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.774,
+            0.9,
+            0.924
+          ],
+          "content": "Janarthanam, S và các cộng sự [4] đã đề xuất khung bảo mật phát hiện các cuộc tấn công DDoS trên môi trường SDN. Khung dựa trên mô hình học tập thích ứng sử dụng tập dữ liệu lịch sử để phân loại lưu lượng. Các tác giả đã sử dụng phương pháp xác nhận chéo để có kết quả phân loại hiệu quả. Tan, Liang và cộng sự [5] đề xuất một mô hình bảo mật mới cho các cuộc tấn công DDoS trong môi trường SDN. Mô hình gồm 2 mô-đun: Mô-đun xử lý dữ liệu sử dụng thuật toán K-Means để lựa chọn tính năng tốt nhất và mô-đun phát hiện sử dụng thuật toán k-láng giềng gần nhất (kNN) để phát hiện các luồng tấn công. Phương pháp có độ chính xác 98,85% với tỷ lệ đúng đắn lên đến 98,47%."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.946,
+            0.132,
+            0.961
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.107,
+            0.899,
+            0.28
+          ],
+          "content": "Deepa, V. và các cộng sự [7] đã đề xuất một kỹ thuật tổng hợp để phát hiện các cuộc tấn công từ chối dịch vụ (DDoS). Các tác giả đã sử dụng 4 mô hình học máy khác nhau để phát hiện lưu lượng truy cập đáng ngờ trong môi trường SDN. Thuật toán SVM-SOM cho kết quả tốt hơn so với các thuật toán ML khác với độ chính xác 98,12%. Các tác giả trong [8] đã giới thiệu một hệ thống phát hiện tấn công DDoS cho SDN. Hệ thống sử dụng 2 giai đoạn bảo mật. Thứ nhất, họ sử dụng Snort để phát hiện các cuộc tấn công dựa trên chữ ký. Sau đó, họ sử dụng trình phân loại SVM và mô hình học máy mạng nơ ron sâu (DNN) để phân loại tấn công. Kết quả thực nghiệm đã chứng minh DNN có tỷ lệ chính xác phân loại tốt hơn SVM là 92,30%."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.281,
+            0.898,
+            0.321
+          ],
+          "content": "Bài báo tập trung vào việc tiếp cận với các cơ sở dữ liệu mới nhất từ các mạng SDN và sử dụng một số giải thuật trí tuệ nhân tạo, học máy để xây dựng mô hình dự đoán."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.154,
+            0.334,
+            0.831,
+            0.355
+          ],
+          "level": 2,
+          "content": "3. CÁC KỸ THUẬT TRÍ TUỆ NHÂN TẠO SỬ DỤNG TRONG DỰ ĐOÁN"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.363,
+            0.344,
+            0.383
+          ],
+          "level": 2,
+          "content": "3.1. Cây quyết định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.389,
+            0.899,
+            0.466
+          ],
+          "content": "Cây quyết định [9] là một cấu trúc biễu diễn dưới dạng cây. Trong đó, mỗi node trong (internal node) biễu diễn một thuộc tính, mỗi nhánh (branch) biễu diễn giá trị có thể có của thuộc tính, mỗi lá (leaf node) biểu diễn các lớp quyết định và đỉnh trên cùng của cây gọi là gốc (root)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.466,
+            0.9,
+            0.601
+          ],
+          "content": "Trong lĩnh vực học máy, cây quyết định là một kiểu mô hình dự báo (predictive model), nghĩa là một ánh xạ từ các quan sát về một sự vật/hiện tượng tới các kết luận về giá trị mục tiêu của sự vật/hiện tượng. Mỗi nút trong (internal node) tương ứng với một biến; đường nối giữa nó với nút con của nó thể hiện giá trị cụ thể cho biến đó. Mỗi nút lá đại diện cho giá trị dự đoán của biến mục tiêu, cho trước các giá trị dự đoán của các biến được biểu diễn bởi đường đi từ nút gốc tới nút lá đó. Kỹ thuật học máy dùng trong cây quyết định được gọi là học bằng cây quyết định, hay chỉ gọi với cái tên ngắn gọn là cây quyết định."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.607,
+            0.464,
+            0.626
+          ],
+          "level": 2,
+          "content": "3.2. Mô hình Logistic Regression"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.634,
+            0.899,
+            0.712
+          ],
+          "content": "Các mô hình phân loại đều tìm cách chia dữ liệu thành các nhóm dữ liệu có tính chất phân biệt nhau. Hồi quy logistic cũng tìm kiếm một đường biên để phân chia tập dữ liệu trong bài toán nhị phân thành hai nhóm 0 và 1, tương đương với việc xác định tính có hay không một tính chất nào đó của đối tượng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.712,
+            0.9,
+            0.809
+          ],
+          "content": "Trong hồi quy logistic [3] cần một hàm số có tác dụng chiếu giá trị dự báo lên không gian xác suất nằm trong khoảng [0,1] và đồng thời tạo ra tính phi tuyến cho phương trình hồi quy nhằm giúp tạo ra đường biên phân chia giữa hai nhóm tốt hơn. Việc xác định được các phương trình hồi quy tốt sẽ tăng được hiệu quả của mô hình phân lớp, nhằm tăng tính hiệu quả trong quá trình dự đoán."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.817,
+            0.428,
+            0.835
+          ],
+          "level": 2,
+          "content": "3.3. Mô hình Random Forest"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.843,
+            0.9,
+            0.922
+          ],
+          "content": "Mô hình rừng cây (Random Forest) được huấn luyện dựa trên sự phối hợp giữa luật kết hợp (ensembling) và quá trình lấy mẫu tái lặp (boostrapping). Về cơ bản thuật toán này tạo ra nhiều cây quyết định mà mỗi cây quyết định được huấn luyện dựa trên nhiều mẫu con khác nhau và kết quả dự báo là bầu cử (voting) từ toàn bộ những cây quyết định. Kết quả dự báo là"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.87,
+            0.946,
+            0.896,
+            0.961
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.106,
+            0.898,
+            0.167
+          ],
+          "continues_prev": true,
+          "content": "kết quả được tổng kết từ các mô hình dự báo khác nhau nên kết quả của mô hình không bị lệch và phương sai của mô hình tổng hợp nhỏ hơn so với việc sử dụng một mô hình độc lập. Điều này giải quyết được vấn đề quá khớp (overfit) trong quá trình huấn luyện dữ liệu."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.173,
+            0.513,
+            0.192
+          ],
+          "level": 2,
+          "content": "3.4. Mô hình Support Vector Machine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.201,
+            0.9,
+            0.279
+          ],
+          "content": "Thuật toán Support Vector Machine [10] là thuật toán khá hiệu quả trong lớp các bài toán phân loại nhị phân và dự báo của học có giám sát. Thuật toán này có ưu điểm là hoạt động tốt đối với những mẫu dữ liệu có kích thước lớn và thường mang lại kết quả vượt trội so với lớp các thuật toán khác trong học có giám sát."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.154,
+            0.293,
+            0.88,
+            0.313
+          ],
+          "level": 2,
+          "content": "4. XÂY DỰNG CƠ SỞ DỮ LIỆU HUẤN LUYỆN VÀ THỬ NGHIỆM MÔ HÌNH"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.323,
+            0.898,
+            0.364
+          ],
+          "content": "Tác giả sử dụng các mô hình đã được xây dựng, sau đó thu thập, xây dựng bộ dữ liệu huấn luyện cho các mô hình nhằm tìm kiếm mô hình tốt nhất cho quá trình dự đoán."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.372,
+            0.326,
+            0.391
+          ],
+          "level": 2,
+          "content": "4.1. Mô tả dữ liệu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.4,
+            0.899,
+            0.461
+          ],
+          "content": "Dữ liệu huấn luyện là tập dữ liệu được tạo ra bằng cách sử dụng trình giả lập mạng con (mininet). Mô phỏng mạng được triển khai cho lưu lượng TCP, UDP và ICMP lành tính và lưu lượng độc hại, đây là kết quả của các tấn công TCP Syn, UDP Flood và ICMP."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.103,
+            0.492,
+            0.898,
+            0.847
+          ],
+          "content": "| TT | Tên | Mô tả | TT | Tên | Mô tả |\n| --- | --- | --- | --- | --- | --- |\n| 1 | dt | N đổgià tyhà gniờh đ sốược chuyển | 13 | byteperflow | Số byte trên mỗi luồng đơn |\n| 2 | switch | Mã số của bộ chuyển mạch | 14 | ptkrate | Số gói tin truyền đi trong mỗi giây |\n| 3 | src | Địa chỉ nguồn | 15 | Pairflow | Số cặp luồng |\n| 4 | dst | Địa chỉ đích | 16 | Protocol | Giao thức được thực hiện |\n| 5 | ptkcount | Số lượng gói tin | 17 | port_no | Số cổng truyền tin |\n| 6 | bytecount | Số lượng byte | 18 | tx_bytes | S cổốn lgượ bnộg ch guóyi ể tinn m truạcyhền đi từ các |\n| 7 | dur | Thời lượng được tính theo giây | 19 | rx_bytes | Số lượng gói tin nhận về ở cổng bộ chuyển mạch |\n| 8 | dur_nsec | Thời lượng được tính theo nano giây | 20 | tx_kbps | Thông lượng truyền đi qua cổng bộ chuyển mạch |\n| 9 | tot_dur | Tổng thời lượng của dur và dur_nsec | 21 | rx_kbps | Thông lượng nhận về qua cổng bộ chuyển mạch |\n| 10 | flows | Số luồng | 22 | tot_kbps | Tổng thông lượng |\n| 11 | packetins | Số tin nhắn | 23 | label | Nhãn (lành tính, độc hại) |\n| 12 | ptkperflow | Số gói trên mỗi luồng đơn |  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.302,
+                0.469,
+                0.699,
+                0.487
+              ],
+              "content": "Bảng 1. Danh sách các đặc trưng của dữ liệu"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_table_9.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.856,
+            0.526,
+            0.875
+          ],
+          "level": 2,
+          "content": "4.2. Phân tích các đặc trưng của dữ liệu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.884,
+            0.898,
+            0.924
+          ],
+          "content": "Tác giả đánh giá, phân tích các đặc trưng của dữ liệu để tìm ra các mối quan hệ giữa các đặc trưng của dữ liệu huấn luyện."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.946,
+            0.133,
+            0.961
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.055,
+            0.897,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.216,
+            0.105,
+            0.785,
+            0.327
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_chart_1.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.206,
+            0.363,
+            0.793,
+            0.596
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.226,
+                0.337,
+                0.776,
+                0.356
+              ],
+              "content": "Hình 1. Kết quả thống kê các yêu cầu theo các địa chỉ máy gửi"
+            },
+            {
+              "bbox": [
+                0.132,
+                0.607,
+                0.869,
+                0.626
+              ],
+              "content": "Hình 2. Kết quả thống kê các yêu cầu có mục đích tấn công theo các địa chỉ máy gửi"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_chart_3.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.194,
+            0.637,
+            0.807,
+            0.886
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.171,
+                0.898,
+                0.83,
+                0.918
+              ],
+              "content": "Hình 3. Kết quả thống kê, so sánh về tỉ lệ các yêu cầu có mục đích tấn công"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_chart_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.87,
+            0.946,
+            0.894,
+            0.961
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.108,
+            0.454,
+            0.127
+          ],
+          "level": 2,
+          "content": "4.3. Lựa chọn đặc trưng dữ liệu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.136,
+            0.899,
+            0.195
+          ],
+          "content": "Trong bài báo này, tác giả sử dụng giải thuật NCA (Neighbourhood Component Analysis) để tìm kiếm các đặc trưng phù hợp nhất cho việc xây dựng mô hình phân lớp của hơn 100.000 bản ghi, trong đó có 22 đặc trưng liên quan đến mạng SDN."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.196,
+            0.9,
+            0.277
+          ],
+          "content": "Sau khi phân tích 22 đặc trưng mạng bằng thuật toán NCA, quá trình phân loại đầu tiên được thực hiện với 8 đặc trưng có giá trị chỉ số lớn hơn 9. Trong nghiên cứu thử nghiệm thứ 2, 14 đặc trưng hiệu quả đã được chọn và đưa ra làm dữ liệu đầu vào cho các thuật toán học máy. Danh sách 14 đặc trưng và giá trị trọng số hiệu quả nhất được NCA lựa chọn."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.106,
+            0.308,
+            0.895,
+            0.475
+          ],
+          "content": "| TT | Đặc trưng | Trọng số được tính theo NCA | TT | Đặc trưng | Trọng số được tính theo NCA |\n| --- | --- | --- | --- | --- | --- |\n| 1 | src | 17,87 | 8 | rx_kbps | 9,66 |\n| 2 | pktcount | 15,16 | 9 | flows | 8,95 |\n| 3 | dst | 13,64 | 10 | bytecount | 4,92 |\n| 4 | byteperflow | 12,97 | 11 | dt | 2,33 |\n| 5 | pktperflow | 11,35 | 12 | protocol | 1,31 |\n| 6 | pktrate | 11,35 | 13 | dur | 1,11 |\n| 7 | tot_kbps | 9,68 | 14 | tot_dur | 1,11 |",
+          "captions": [
+            {
+              "bbox": [
+                0.224,
+                0.285,
+                0.778,
+                0.305
+              ],
+              "content": "Bảng 2. Danh sách các đặc trưng và giá trị trọng số tương ứng"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.102,
+                0.482,
+                0.898,
+                0.522
+              ],
+              "content": "Bởi vì các đặc trưng như src, dst, dt là không cần thiết để triển khai mô hình nên ta loại bỏ các đặc trưng này khỏi danh sách các đặc trưng lựa chọn."
+            },
+            {
+              "bbox": [
+                0.102,
+                0.523,
+                0.898,
+                0.564
+              ],
+              "content": "Sau đó, tác giả tính mức độ tương quan giữa các đặc trưng nhằm xác định mức độ phụ thuộc của các đặc trưng."
+            }
+          ],
+          "image_source": "images/page_5_table_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.181,
+            0.572,
+            0.821,
+            0.893
+          ],
+          "content": "| pktcount | 1 | 0.29 | 0.47 | 0.47 | 0.0031 | 0.0023 | 0.26 | 0.68 | 0.023 | 0.023 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| byteperflow | 0.29 | 1 | 0.81 | 0.81 | 0.15 | 0.11 | 0.25 | 0.53 | 0.26 | 0.26 |\n| pktperflow | 0.47 | 0.81 | 1 | 1 | 0.16 | 0.12 | 0.21 | 0.33 | 0.33 | 0.33 |\n| pktrate | 0.47 | 0.81 | 1 | 1 | 0.16 | 0.12 | 0.21 | 0.33 | 0.33 | 0.33 |\n| tot_kbps | 0.0031 | 0.15 | 0.16 | 0.16 | 1 | 0.64 | 0.24 | 0.077 | 0.22 | 0.22 |\n| rx_kbps | 0.0023 | 0.11 | 0.12 | 0.12 | 0.64 | 1 | 0.18 | 0.059 | 0.17 | 0.17 |\n| flows | 0.26 | 0.25 | 0.21 | 0.21 | 0.24 | 0.18 | 1 | 0.24 | 0.18 | 0.18 |\n| bytecount | 0.68 | 0.53 | 0.33 | 0.33 | 0.077 | 0.059 | 0.24 | 1 | 0.038 | 0.038 |\n| dur | 0.023 | 0.26 | 0.33 | 0.33 | 0.22 | 0.17 | 0.18 | 0.038 | 1 | 1 |\n| tot_dur | 0.023 | 0.26 | 0.33 | 0.33 | 0.22 | 0.17 | 0.18 | 0.038 | 1 | 1 |",
+          "captions": [
+            {
+              "bbox": [
+                0.255,
+                0.905,
+                0.747,
+                0.925
+              ],
+              "content": "Hình 4. Biểu đồ mức độ tương quan giữa các đặc trưng"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_table_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.946,
+            0.133,
+            0.961
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.055,
+            0.897,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.107,
+            0.898,
+            0.167
+          ],
+          "content": "Khi xem xét bảng tương quan, ta thấy có một số đặc trưng là trùng nhau hoặc có độ tương quan lớn như “dur” và “tot\\_dur”, “pktperflow” và “pktrate”, do vậy, ta loại bỏ 3 đặc trưng là “dur”, “pktrate”, “pktperflow” ra khỏi bảng dữ liệu. Khi đó ta có:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.168,
+            0.169,
+            0.832,
+            0.417
+          ],
+          "content": "| pktcount | 1 | 0.29 | 0.0031 | 0.0023 | 0.26 | 0.68 | 0.023 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| byteperflow | 0.29 | 1 | 0.15 | 0.11 | 0.25 | 0.53 | 0.26 |\n| tot_kbps | 0.0031 | 0.15 | 1 | 0.64 | 0.24 | 0.077 | 0.22 |\n| rx_kbps | 0.0023 | 0.11 | 0.64 | 1 | 0.18 | 0.059 | 0.17 |\n| flows | 0.26 | 0.25 | 0.24 | 0.18 | 1 | 0.24 | 0.18 |\n| bytecount | 0.68 | 0.53 | 0.077 | 0.059 | 0.24 | 1 | 0.038 |\n| tot_dur | 0.023 | 0.26 | 0.22 | 0.17 | 0.18 | 0.038 | 1 |",
+          "captions": [
+            {
+              "bbox": [
+                0.17,
+                0.429,
+                0.83,
+                0.448
+              ],
+              "content": "Hình 5. Biểu đồ tương quan giữa các đặc trưng sau khi lựa chọn đặc trưng"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_table_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.454,
+            0.44,
+            0.472
+          ],
+          "level": 2,
+          "content": "4.4. Lựa chọn mô hình dự báo"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.477,
+            0.898,
+            0.567
+          ],
+          "content": "Ứng dụng kỹ thuật lựa chọn đặc trưng vào cơ sở dữ liệu, khi đó, tác giả thực hiện việc xây dựng mô hình với 7 đặc trưng có ý nghĩa quan trọng với các thông tin về mạng SDN. Đó là các đặc trưng: pktcount, byteperflow, tot\\_kbps, rx\\_kbps, flows, bytecount, tot\\_dur. Kết quả triển khai cho thấy, độ chính xác cao nhất khi sử dụng mô hình Random Forest, với độ chính xác là 99,42%."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.191,
+            0.62,
+            0.56,
+            0.691
+          ],
+          "content": "|  | precision | recall | f1-score | support |\n| --- | --- | --- | --- | --- |\n| 0 | 0.85 | 0.77 | 0.81 | 20965 |\n| 1 | 0.60 | 0.72 | 0.65 | 10187 |\n| accuracy |  |  | 0.75 | 31152 |",
+          "captions": [
+            {
+              "bbox": [
+                0.155,
+                0.568,
+                0.484,
+                0.585
+              ],
+              "content": "Sử dụng kỹ thuật Logistic Regression"
+            },
+            {
+              "bbox": [
+                0.156,
+                0.586,
+                0.328,
+                0.602
+              ],
+              "content": "Accuracy: **75.20%**"
+            },
+            {
+              "bbox": [
+                0.157,
+                0.604,
+                0.331,
+                0.619
+              ],
+              "content": "Best solver is : sag"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.692,
+            0.524,
+            0.709
+          ],
+          "content": "Sử dụng kỹ thuật Support Vector Machine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.71,
+            0.444,
+            0.726
+          ],
+          "content": "Accuracy of SVM model **92.0%**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.727,
+            0.33,
+            0.743
+          ],
+          "content": "Best kernel is : rbf"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.19,
+            0.744,
+            0.56,
+            0.815
+          ],
+          "content": "|  | precision | recall | f1-score | support |\n| --- | --- | --- | --- | --- |\n| 0 | 0.90 | 0.96 | 0.93 | 17757 |\n| 1 | 0.95 | 0.86 | 0.90 | 13395 |\n| accuracy |  |  | 0.92 | 31152 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.817,
+            0.463,
+            0.834
+          ],
+          "content": "Sử dụng kỹ thuật Random Forest"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.834,
+            0.421,
+            0.85
+          ],
+          "content": "Accuracy of RF is : **99.42%**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.19,
+            0.852,
+            0.562,
+            0.922
+          ],
+          "content": "|  | precision | recall | f1-score | support |\n| --- | --- | --- | --- | --- |\n| 0 | 0.99 | 1.00 | 1.00 | 18922 |\n| 1 | 1.00 | 0.99 | 0.99 | 12230 |\n| accuracy |  |  | 0.99 | 31152 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_16.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.87,
+            0.946,
+            0.896,
+            0.961
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.054,
+            0.897,
+            0.071
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.108,
+            0.435,
+            0.126
+          ],
+          "content": "Sử dụng kỹ thuật Decision Tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.128,
+            0.391,
+            0.146
+          ],
+          "content": "The Accuracy is : **94.19%**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.176,
+            0.148,
+            0.561,
+            0.227
+          ],
+          "content": "|  | precision | recall | f1-score | support |\n| --- | --- | --- | --- | --- |\n| 0 | 0.91 | 1.00 | 0.95 | 17287 |\n| 1 | 1.00 | 0.87 | 0.93 | 13865 |\n| accuracy |  |  | 0.94 | 31152 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.156,
+            0.242,
+            0.293,
+            0.262
+          ],
+          "level": 2,
+          "content": "5. KẾT LUẬN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.274,
+            0.9,
+            0.396
+          ],
+          "content": "Trong bài báo, tác giả đã giới thiệu các kỹ thuật trí tuệ nhân tạo thường được sử dụng để xây dựng các mô hình phân lớp, dự đoán. Tác giả sử dụng 4 giải thuật bao gồm cây quyết định, Logistic Regression, Random Forest và Support Vector Machine cùng với giải thuật lựa chọn đặc trưng để xây dựng mô hình dự đoán khả năng xảy ra hiện tượng tấn công DDoS trong các mạng dịch vụ SDN. Kết quả cho thấy, mô hình Random Forest cho kết quả dự đoán tốt nhất, đặc biệt là có sự hỗ trợ của giải thuật lựa chọn đặc trưng NCA."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.383,
+            0.409,
+            0.618,
+            0.429
+          ],
+          "level": 2,
+          "content": "TÀI LIỆU THAM KHẢO"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.441,
+            0.896,
+            0.497
+          ],
+          "content": "[1] J. A. Perez-Diaz, I. A. Valdovinos, K. K. R. Choo, D. Zhu (2020), A Flexible SDN-Based Architecture for Identifying and Mitigating Low-Rate DDoS Attacks Using Machine Learning, IEEE Access, vol.8, p.155859-155872."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.498,
+            0.896,
+            0.535
+          ],
+          "content": "[2] K. S. Sahoo et al. (2020), An Evolutionary SVM Model for DDOS Attack Detection in Software Defined Networks, IEEE Access, vol.8, p.132502-132513."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.537,
+            0.897,
+            0.611
+          ],
+          "content": "[3] A. T. Kyaw, M. Z. Oo, C. S. Khin (2020), Machine-Learning Based DDOS Attack Classifier in Software Defined Network, in 2020 17th International Conference on Electrical Engineering/Electronics, Computer, Telecommunications and Information Technology (ECTI-CON), 431-434."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.614,
+            0.897,
+            0.67
+          ],
+          "content": "[4] S. Janarthanam, N. Prakash, M. Shanthakumar (2020), Adaptive Learning Method for DDoS Attacks on Software Defined Network Function Virtualization, EAI Endorsed Transactions on Cloud Systems, 6(18), p.166286."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.671,
+            0.898,
+            0.727
+          ],
+          "content": "[5] L. Tan, Y. Pan, J. Wu, J. Zhou, H. Jiang, Y. Deng (2020), A New Framework for DDoS Attack Detection and Defense in SDN Environment, IEEE Access, vol. 8, p.161908-161919."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.729,
+            0.896,
+            0.785
+          ],
+          "content": "[6] L. Wang, Y. Liu (2020), A DDoS Attack Detection Method Based on Information Entropy and Deep Learning in SDN, in 2020 IEEE 4th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC), p.1084-1088."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.786,
+            0.897,
+            0.861
+          ],
+          "content": "[7] V. Deepa, K. M. Sudar, P. Deepalakshmi (2019), Design of Ensemble Learning Methods for DDoS Detection in SDN Environment, in 2019 International Conference on Vision Towards Emerging Trends in Communication and Networking (ViTECoN), p.1-6."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.106,
+            0.864,
+            0.896,
+            0.92
+          ],
+          "content": "[8] K. B. V., N. D. G., P. S. Hiremath (2018), Detection of DDoS Attacks in Software Defined Networks, in 2018 3rd International Conference on Computational Systems and Information Technology for Sustainable Solutions (CSITSS), p.265-270."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.106,
+            0.946,
+            0.132,
+            0.961
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.055,
+            0.896,
+            0.07
+          ],
+          "content": "TẠP CHÍ KHOA HỌC TRƯỜNG ĐẠI HỌC HỒNG ĐỨC - SỐ 67.2023"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.107,
+            0.108,
+            0.896,
+            0.164
+          ],
+          "content": "[9] K. Adhikary, S. Bhushan, S. Kumar, K. Dutta (2020), Decision Tree and Neural Network Based Hybrid Algorithm for Detecting, International Journal of Innovative Technology and Exploring Engineering, 9(5)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.107,
+            0.167,
+            0.896,
+            0.241
+          ],
+          "content": "[10] Y. Zhao, B. Li, X. Li, W. Liu, S. Ren (2005), Customer Churn Prediction using improved one-class Support Vector Machine, in Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), p.300-306."
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.106,
+            0.26,
+            0.894,
+            0.303
+          ],
+          "level": 1,
+          "content": "APPLYING ARTIFICIAL INTELLIGENCE IN DETECTING DENIAL OF SERVICE ATTACKS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.337,
+            0.322,
+            0.665,
+            0.338
+          ],
+          "content": "**Nguyen The Cuong, Nguyen Thu Huong**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.439,
+            0.354,
+            0.564,
+            0.373
+          ],
+          "level": 2,
+          "content": "ABSTRACT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.391,
+            0.898,
+            0.543
+          ],
+          "content": "Distributed denial-of-service (DDoS) attacks pose significant threats to the Internet and entities within networks. Various defense mechanisms have been proposed to counteract this form of attack. However, attack support tools are constantly upgraded to bypass security systems. Early detection of these attacks can help systems minimize risks, especially for service-providing systems. The application of artificial intelligence in network monitoring to detect the emergence of DDoS attacks is gaining significant attention. In this paper, we propose a solution that applies artificial intelligence to detect DDoS attacks based on network monitoring data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.552,
+            0.886,
+            0.57
+          ],
+          "content": "**Keywords:** Cyber attacks, artificial intelligence, denial of service, service networks."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.595,
+            0.884,
+            0.614
+          ],
+          "content": "\\* Ngày nộp bài: 15/5/2023; Ngày gửi phản biện:20/5/2023; Ngày duyệt đăng: 10/12/2023"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.87,
+            0.947,
+            0.896,
+            0.961
+          ],
+          "content": "35"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "authors": [
+        "Thanh Hang"
+      ],
+      "languages": [
+        "en"
+      ],
+      "created_at": "2024-04-15T10:27:13+07:00",
+      "modified_at": "2024-04-15T10:27:13+07:00",
+      "creator_application": "ABBYY FineReader PDF 15",
+      "producer_application": "ABBYY FineReader PDF 15",
+      "page_count": 9,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 538.6799926757812,
+          "height_pt": 751.3200073242188
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
