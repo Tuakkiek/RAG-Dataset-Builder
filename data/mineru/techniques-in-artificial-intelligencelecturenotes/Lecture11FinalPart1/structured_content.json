@@ -1,0 +1,5636 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.084,
+            0.711,
+            0.107
+          ],
+          "content": "**6.825 Techniques in Artificial Intelligence**"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.211,
+            0.127,
+            0.743,
+            0.157
+          ],
+          "level": 1,
+          "content": "Partial-Order Planning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.88,
+            0.623
+          ],
+          "content": "Last time we talked about partial order planning, and we got through the basic idea and the formal description of what constituted a solution. So, our plan for today is to actually write the algorithm, and then go back and work through the example that we did, especially the last part of it and be sure we see how the algorithm would do the steps that are necessary to get the plan steps to come out in the right order, and to do another example just for practice. Then, next time, we’ll talk about a newer algorithm called GraphPlan."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.302,
+            0.072,
+            0.651,
+            0.103
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.251,
+            0.133
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.134,
+            0.3,
+            0.154
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.154,
+            0.444,
+            0.175
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.175,
+            0.515,
+            0.196
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.197,
+            0.361,
+            0.217
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 11 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.875,
+            0.623
+          ],
+          "content": "Let’s just briefly review the parts of a partially ordered plan. There are the steps, or actions we plan to take. There are ordering constraints that say which steps have to be before which other ones. They need to be consistent, but they don’t need to specify a total order on the steps. There are variable binding constraints that specify which variables are equal to which other variables or constants. And there are causal links to remind us which effects of actions we are using to satisfy which preconditions of other actions."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.3,
+            0.071,
+            0.653,
+            0.103
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.252,
+            0.133
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.133,
+            0.301,
+            0.155
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.154,
+            0.445,
+            0.175
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.175,
+            0.516,
+            0.197
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.196,
+            0.363,
+            0.216
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.216,
+            0.353,
+            0.239
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 11 • 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.67,
+            0.503
+          ],
+          "content": "Now we can specify the algorithm for partial-order planning."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.3,
+            0.071,
+            0.653,
+            0.103
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.252,
+            0.133
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.133,
+            0.301,
+            0.155
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.154,
+            0.445,
+            0.175
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.175,
+            0.517,
+            0.197
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.196,
+            0.363,
+            0.216
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.216,
+            0.354,
+            0.238
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.237,
+            0.405,
+            0.261
+          ],
+          "content": "• Make initial plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.616,
+            0.233,
+            0.679,
+            0.302
+          ],
+          "content": "start 1 finish finish"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.618,
+            0.281,
+            0.676,
+            0.301
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.853,
+            0.543
+          ],
+          "content": "First, we make the initial plan. Remember, it contains two “dummy” steps called start and finish. The start step has the initial conditions as its effects and the finish step has the goal conditions as its preconditions."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.3,
+            0.071,
+            0.653,
+            0.103
+          ],
+          "level": 2,
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.109,
+            0.253,
+            0.131
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.13,
+            0.302,
+            0.151
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.149,
+            0.445,
+            0.17
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.169,
+            0.517,
+            0.19
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.188,
+            0.363,
+            0.208
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.207,
+            0.354,
+            0.228
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.226,
+            0.405,
+            0.249
+          ],
+          "content": "• Make initial plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.281,
+            0.526,
+            0.309
+          ],
+          "content": "• Loop until plan is a complete"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.616,
+            0.233,
+            0.679,
+            0.302
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.618,
+            0.281,
+            0.676,
+            0.301
+          ],
+          "content": "finish"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.583
+          ],
+          "content": "Then, we iterate until the plan is complete. Remember that a plan is complete when every precondition of every step is satisfied by the effect of some other step; these are the relationships that we keep track of using causal links. So, until the plan is complete, we keep doing the following three steps. (We’ll go into the last two in much greater detail in following slides)."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.3,
+            0.071,
+            0.654,
+            0.104
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.109,
+            0.252,
+            0.131
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.13,
+            0.302,
+            0.151
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.149,
+            0.445,
+            0.17
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.169,
+            0.517,
+            0.19
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.188,
+            0.363,
+            0.208
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.206,
+            0.354,
+            0.228
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.226,
+            0.405,
+            0.249
+          ],
+          "content": "• Make initial plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.282,
+            0.527,
+            0.327
+          ],
+          "content": "• Loop until plan is a complete – Select a subgoal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.615,
+            0.233,
+            0.679,
+            0.302
+          ],
+          "content": "start finish finish"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.617,
+            0.28,
+            0.677,
+            0.301
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.522
+          ],
+          "content": "First, we choose a subgoal; that is, a precondition that is not yet satisfied. We’ll call that precondition c."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.571,
+            0.215,
+            0.719,
+            0.317
+          ],
+          "content": "start finish"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.298,
+            0.07,
+            0.655,
+            0.104
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.11,
+            0.253,
+            0.133
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.133,
+            0.303,
+            0.155
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.212,
+            0.154,
+            0.448,
+            0.176
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.174,
+            0.519,
+            0.197
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.196,
+            0.365,
+            0.217
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.216,
+            0.357,
+            0.238
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.237,
+            0.407,
+            0.262
+          ],
+          "content": "• Make initial plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.298,
+            0.528,
+            0.324
+          ],
+          "content": "• Loop until plan is a complete"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.248,
+            0.322,
+            0.445,
+            0.344
+          ],
+          "content": "– Select a subgoal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.247,
+            0.343,
+            0.476,
+            0.366
+          ],
+          "content": "– Choose an operator"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.598,
+            0.502
+          ],
+          "content": "Next, we choose an operator that can satisfy c for us."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.714,
+            0.419,
+            0.796,
+            0.436
+          ],
+          "content": "Lecture 11 • 8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.572,
+            0.215,
+            0.719,
+            0.316
+          ],
+          "content": "start finish"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.298,
+            0.07,
+            0.655,
+            0.104
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.11,
+            0.253,
+            0.133
+          ],
+          "content": "• Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.133,
+            0.303,
+            0.155
+          ],
+          "content": "• Steps"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.212,
+            0.153,
+            0.448,
+            0.176
+          ],
+          "content": "• Ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.212,
+            0.174,
+            0.519,
+            0.197
+          ],
+          "content": "• Variable binding constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.196,
+            0.365,
+            0.217
+          ],
+          "content": "• Causal links"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.216,
+            0.357,
+            0.238
+          ],
+          "content": "• POP Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.237,
+            0.407,
+            0.262
+          ],
+          "content": "• Make initial plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.298,
+            0.528,
+            0.324
+          ],
+          "content": "• Loop until plan is a complete"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.248,
+            0.322,
+            0.444,
+            0.344
+          ],
+          "content": "– Select a subgoal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.248,
+            0.343,
+            0.475,
+            0.365
+          ],
+          "content": "– Choose an operator"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.248,
+            0.363,
+            0.435,
+            0.387
+          ],
+          "content": "– Resolve threats"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.87,
+            0.542
+          ],
+          "content": "Finally, we check to be sure that the work we did in the previous step doesn’t cause any of our previous causal links to be “threatened”, or possibly violated. If we have a link that is threatened, we must resolve the threat."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.343,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "content": "Choose Operator"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.463,
+            0.136
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 11 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.864,
+            0.583
+          ],
+          "content": "Okay. In the previous step, we chose a condition c that was an unsatisfied precondition of some step. Let’s call the step that needs c to be true “S sub needs”. Now, we need to find a way to make c true. There are two basic ways to do it: either we find some step in the existing plan that has c as an effect, or we add a new step to the plan."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.341,
+            0.072,
+            0.611,
+            0.103
+          ],
+          "level": 1,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.11,
+            0.464,
+            0.138
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.3,
+            0.424,
+            0.324
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.88,
+            0.583
+          ],
+          "content": "We’re going to describe the algorithm for choosing operators using a special kind of programming language feature called “nondeterministic choice”. It’s a very convenient and effective way to describe search algorithms without getting into the details. A few real programming languages have been built that have this feature, but most don’t. We use it to make our pseudocode short."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.071,
+            0.612,
+            0.103
+          ],
+          "content": "Choose Operator"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.108,
+            0.464,
+            0.137
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.301,
+            0.426,
+            0.325
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.322,
+            0.669,
+            0.346
+          ],
+          "content": "• Choose – pick one of the options arbitrarily"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.873,
+            0.543
+          ],
+          "content": "The “choose” operator describes a set of possible things that the algorithm could do next. When the statement is encountered, one of these things is chosen for execution, and the choice of which one is essentially arbitrary."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.341,
+            0.071,
+            0.612,
+            0.103
+          ],
+          "level": 1,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.108,
+            0.465,
+            0.139
+          ],
+          "content": "• Choose operator(c, S<sub>needs</sub>)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.298,
+            0.428,
+            0.323
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.321,
+            0.67,
+            0.344
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.343,
+            0.818,
+            0.385
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.708,
+            0.419,
+            0.796,
+            0.437
+          ],
+          "content": "Lecture 11 • 12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.873,
+            0.582
+          ],
+          "content": "The “fail” operator says the algorithm should go back to the most recent non-deterministic choice point and choose a different option, from among those that have not yet been tried. If they’ve all been tried, then the whole “choose” operation fails, and we go back to the next most recent choose operation, and so on."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.342,
+            0.072,
+            0.612,
+            0.103
+          ],
+          "level": 1,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.11,
+            0.463,
+            0.135
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.133,
+            0.734,
+            0.174
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.295,
+            0.427,
+            0.319
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.318,
+            0.669,
+            0.341
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.339,
+            0.818,
+            0.381
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.419,
+            0.795,
+            0.437
+          ],
+          "content": "Lecture 11 • 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.867,
+            0.543
+          ],
+          "content": "Okay. Back to the question of how to choose an operator to establish the condition c for the step S\\_needs. We will nondeterministically choose a step S from the plan or a new step S that is created by instantiating one of the operators."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.342,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.11,
+            0.463,
+            0.135
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.133,
+            0.733,
+            0.173
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.171,
+            0.515,
+            0.195
+          ],
+          "content": "• If there’s no such step, Fail"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.295,
+            0.427,
+            0.319
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.318,
+            0.669,
+            0.341
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.339,
+            0.818,
+            0.381
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.419,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.857,
+            0.563
+          ],
+          "content": "If there is no such step, then there is no way to complete this plan, and we have to fail. By failing, we will go back to the last nondeterministic choice we made and try something else. If we fail all the way back out to the very top level of the program, then this planning problem is really impossible."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.343,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.18,
+            0.111,
+            0.463,
+            0.135
+          ],
+          "level": 2,
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.133,
+            0.733,
+            0.172
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.171,
+            0.513,
+            0.194
+          ],
+          "content": "• If there’s no such step, Fail"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.192,
+            0.497,
+            0.217
+          ],
+          "content": "• Add causal link ${ \\mathsf { S } } \\triangleleft _ { \\mathsf { c } } { \\mathsf { S } } _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.179,
+            0.295,
+            0.427,
+            0.319
+          ],
+          "level": 2,
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.318,
+            0.669,
+            0.341
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.339,
+            0.819,
+            0.38
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.419,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.878,
+            0.521
+          ],
+          "content": "But, if we did find a step S that can achieve c, then we add a causal link establishing c between S and S\\_needs."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.072,
+            0.612,
+            0.103
+          ],
+          "level": 2,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.11,
+            0.464,
+            0.135
+          ],
+          "content": "• Choose operator $\\mathsf { r } ( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.133,
+            0.735,
+            0.173
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.171,
+            0.515,
+            0.194
+          ],
+          "content": "• If there’s no such step, Fail"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.192,
+            0.497,
+            0.215
+          ],
+          "content": "• Add causal link ${ \\mathsf { S } } \\triangleleft _ { \\mathsf { c } } { \\mathsf { S } } _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.213,
+            0.578,
+            0.238
+          ],
+          "content": "• Add ordering constraint $S < S _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.294,
+            0.429,
+            0.32
+          ],
+          "level": 2,
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.317,
+            0.671,
+            0.341
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.339,
+            0.82,
+            0.381
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.708,
+            0.419,
+            0.796,
+            0.438
+          ],
+          "content": "Lecture 11 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.834,
+            0.503
+          ],
+          "content": "And we add an ordering constraint that says that S has to come before S\\_needs."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.343,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.463,
+            0.135
+          ],
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.134,
+            0.732,
+            0.172
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.172,
+            0.513,
+            0.193
+          ],
+          "content": "• If there’s no such step, Fail"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.193,
+            0.495,
+            0.215
+          ],
+          "content": "• Add causal link ${ \\mathsf { S } } \\triangleleft _ { \\mathsf { c } } { \\mathsf { S } } _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.213,
+            0.577,
+            0.236
+          ],
+          "content": "• Add ordering constraint $S < S _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.234,
+            0.683,
+            0.258
+          ],
+          "content": "• Add variable binding constraints if necessary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.296,
+            0.427,
+            0.319
+          ],
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.318,
+            0.668,
+            0.341
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.34,
+            0.817,
+            0.38
+          ],
+          "continues_prev": true,
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.681
+          ],
+          "content": "Now, it might be that in order to make the effect of S that we’re using match up with c, we had to bind a variable in S with one in c. If so, we need to add a new variable binding constraint. And it’s possible that the new constraint is inconsistent with the existing constraints. If so, then we have to fail. So, for example, if we already had the variable binding constraint X = home. And now we find that we can satisfy our condition c if we let X be the supermarket, we have to fail, because X can’t be both home and the supermarket at the same time. Note that this isn’t (necessarily) a global failure. It just means that we have to go back up to the place where we picked an operator and choose a different one."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.343,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Choose Operator"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.181,
+            0.111,
+            0.463,
+            0.135
+          ],
+          "level": 2,
+          "content": "• Choose operator $( \\mathsf { c } ,   \\mathsf { S } _ { \\mathsf { n e e d s } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.134,
+            0.733,
+            0.172
+          ],
+          "content": "• <u>Choose</u> a step S from the plan or a new step S by instantiating an operator that has c as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.172,
+            0.513,
+            0.193
+          ],
+          "content": "• If there’s no such step, Fail"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.193,
+            0.495,
+            0.214
+          ],
+          "content": "• Add causal link ${ \\mathsf { S } } \\triangleleft _ { \\mathsf { c } } { \\mathsf { S } } _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.213,
+            0.577,
+            0.235
+          ],
+          "content": "• Add ordering constraint $S < S _ { \\mathsf { n e e d s } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.234,
+            0.682,
+            0.256
+          ],
+          "content": "• Add variable binding constraints if necessary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.256,
+            0.512,
+            0.278
+          ],
+          "content": "• Add S to steps if necessary"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.18,
+            0.296,
+            0.427,
+            0.319
+          ],
+          "level": 2,
+          "content": "Nondeterministic choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.318,
+            0.669,
+            0.34
+          ],
+          "content": "• <u>Choose</u> – pick one of the options arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.34,
+            0.818,
+            0.38
+          ],
+          "content": "• Fail – go back to most recent non-deterministic choice and try a different one that has not been tried before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.676,
+            0.502
+          ],
+          "content": "Finally, if S was a new step, we add it to the steps of the plan."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.348,
+            0.073,
+            0.605,
+            0.101
+          ],
+          "content": "Resolve Threats"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.105,
+            0.767,
+            0.161
+          ],
+          "content": "• A step S threatens a causal link $\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ iff $\\neg c \\in$ effects(S) and it’s possible that $S _ { \\mathrm { i } } < S < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 11 • 19"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.118,
+            0.478,
+            0.88,
+            0.601
+          ],
+          "content": "The last thing we have to do is resolve any threats that the elements we just added to the plan may have caused. Remember that a step s threatens a causal link in which S\\_I achieves c for S\\_j, whenever not C is an effect of S and S might possibly occur between S\\_I and S\\_j. That is, S could possibly undo the work that Si did to establish c, and therefore make it impossible to execute Sj when we need to later on."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.149,
+            0.051,
+            0.851,
+            0.451
+          ],
+          "sub_type": "algorithm",
+          "content": "Resolve Threats\n• A step S threatens a causal link $S_i \\square_c S_j$ iff $\\neg c \\in$ effects(S) and it's possible that $S_i < S < S_j$\n• For each threat\n    • Choose\n        - Promote S :\n        - Demote S :",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.756,
+            0.502
+          ],
+          "content": "In general, the way to resolve a threat is to either promote or demote s."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.151,
+            0.052,
+            0.851,
+            0.45
+          ],
+          "sub_type": "algorithm",
+          "content": "Resolve Threats\n• A step S threatens a causal link $S_i \\square_c S_j$ iff $\\neg c \\in$ effects(S) and it's possible that $S_i < S < S_j$\n• For each threat\n    • Choose\n        - Promote S : $S < S_i < S_j$\n        - Demote S :\nLecture 11 • 21",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.843,
+            0.522
+          ],
+          "content": "Promoting s means requiring that it come before both Si and Sj. Then, even if it does make c false, it’s not a problem, because Si will make it true again."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.348,
+            0.073,
+            0.606,
+            0.101
+          ],
+          "content": "Resolve Threats"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.105,
+            0.768,
+            0.162
+          ],
+          "content": "• A step S threatens a causal link $\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ iff $\\neg c \\in$ effects(S) and it’s possible that $S _ { \\mathrm { i } } < S < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.182,
+            0.391,
+            0.208
+          ],
+          "content": "• For each threat"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.209,
+            0.332,
+            0.233
+          ],
+          "content": "• Choose"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.234,
+            0.558,
+            0.26
+          ],
+          "content": "–Promote S : $S < S _ { \\mathrm { i } } < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.259,
+            0.559,
+            0.286
+          ],
+          "content": "–Demote S : $S _ { \\mathrm { i } } < S _ { \\mathrm { j } } < S$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.855,
+            0.522
+          ],
+          "content": "Demoting means requiring that it come after both Si and Sj. Then, it’s okay to make C false because we already took advantage of c being true to execute Sj."
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.348,
+            0.073,
+            0.605,
+            0.101
+          ],
+          "content": "Resolve Threats"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.104,
+            0.768,
+            0.162
+          ],
+          "content": "• A step S threatens a causal link $\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ iff $\\neg c \\in$ effects(S) and it’s possible that $S _ { \\mathrm { i } } < S < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.182,
+            0.391,
+            0.208
+          ],
+          "content": "• For each threat"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.209,
+            0.332,
+            0.234
+          ],
+          "content": "• Choose"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.234,
+            0.558,
+            0.26
+          ],
+          "content": "–Promote S : $S < S _ { \\mathrm { i } } < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.259,
+            0.559,
+            0.284
+          ],
+          "content": "–Demote S : $S _ { \\mathrm { i } } < S _ { \\mathrm { j } } < S$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.283,
+            0.725,
+            0.311
+          ],
+          "content": "• If resulting plan is inconsistent, then Fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 11 • 23"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.869,
+            0.582
+          ],
+          "content": "Of course, it’s possible that we already have ordering constraints that make it impossible to promote or demote s and maintain consistency. So, if the resulting plan is inconsistent, we fail. If promotion fails, we’ll go back and try demotion. If that fails, then we’ll have to go back up and try a different way of satisfying c."
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.297,
+            0.073,
+            0.655,
+            0.102
+          ],
+          "content": "Threats with Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.791,
+            0.179
+          ],
+          "content": "If c has variables in it, things are kind of tricky. • S is a threat if there is any instantiation of the variables that makes ¬ c ∈ effects(S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.855,
+            0.56
+          ],
+          "content": "If the condition c has a variable in it, then things get a bit more tricky. Now we’ll say that S is a threat not just if not C is in the effects of S, but if there is any instantiations of the variables of C or S that would cause not C to be in the effects of S."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.297,
+            0.073,
+            0.655,
+            0.102
+          ],
+          "content": "Threats with Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.112,
+            0.791,
+            0.178
+          ],
+          "content": "If c has variables in it, things are kind of tricky. • S is a threat if there is any instantiation of the variables that makes ¬ c ∈ effects(S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.183,
+            0.817,
+            0.273
+          ],
+          "content": "• We could possibly resolve the threat by adding a negative variable binding constraint, saying that two variables or a variable and a constant cannot be bound to one another"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 11 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.881,
+            0.542
+          ],
+          "content": "If we have a threat with variables, then there is one more potential way to resolve the threat. We could constraint the variables not to be bound in a way that lets C match up with a negative effect in S."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.298,
+            0.074,
+            0.655,
+            0.102
+          ],
+          "content": "Threats with Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.79,
+            0.178
+          ],
+          "content": "If c has variables in it, things are kind of tricky. • S is a threat if there is any instantiation of the variables that makes ¬ c ∈ effects(S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.184,
+            0.816,
+            0.271
+          ],
+          "content": "• We could possibly resolve the threat by adding a negative variable binding constraint, saying that two variables or a variable and a constant cannot be bound to one another"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.273,
+            0.795,
+            0.359
+          ],
+          "content": "• Another strategy is to ignore such threats until the very end, hoping that the variables will become bound and make things easier to deal with"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 11 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.8,
+            0.521
+          ],
+          "content": "Another strategy is to ignore such threats until the very end, hoping that the variables will become bound and make things easier to deal with."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.335,
+            0.071,
+            0.618,
+            0.104
+          ],
+          "level": 2,
+          "content": "Shopping Domain"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.179,
+            0.107,
+            0.805,
+            0.354
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- Actions\n  - Buy(x, store)\n    - Pre: At(store), Sells(store, x)\n    - Eff: Have(x)\n  - Go(x, y)\n    - Pre: At(x)\n    - Eff: At(y), ¬At(x)\n- Goal\n  - Have(Milk) Æ Have(Banana) Æ Have(Drill)\n- Start\n  - At(Home) Æ Sells(SM, Milk) Æ Sells(SM, Banana) Æ Sells(HW, Drill)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.824,
+            0.502
+          ],
+          "content": "Here’s the STRIPS description of the shopping domain we looked at last time."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.149,
+            0.052,
+            0.852,
+            0.448
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_image_0.jpg"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.327,
+            0.071,
+            0.625,
+            0.104
+          ],
+          "level": 1,
+          "content": "Shop ‘til You Drop!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.334,
+            0.338,
+            0.393
+          ],
+          "content": "NB: Causal links imply ordering of steps"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.881,
+            0.663
+          ],
+          "content": "Now, let’s see what happens when we execute this algorithm in the shopping domain. We’re going to use blue for causal links, and we’re going assume that causal links imply ordering constraints, so we don’t have to draw too many extra arrows (note, however, that we may end up adding ordering constraints that aren’t associated with causal links. We’ll put those in red). Also, to keep the figure from getting incredibly cluttered up, we will sometimes just write the name of a condition once, when there’s a causal link. Technically, we’re supposed to write it at the bottom of the step that makes it true and write it at the top of the step that needs it. But we don’t always have room for that."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.868,
+            0.622
+          ],
+          "content": "Just so this doesn’t take forever, we'll assume the planning process has proceeded a fair amount. We have the start and finish steps. And we’ve decided that we're going to do the step \"buy drill\", which is going to achieve have(drill) for us. Buy milk is going to achieve have(milk). Buy(bananas) is going to achieve have(bananas). Sell (hardware store, drill), sell(supermarket, milk), and sell(supermarket, bananas) were all true in the start state. And start also produces at home."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.84,
+            0.549
+          ],
+          "content": "We're going to use go (hardware store) to achieve at(hardware store). And we're going to use go(supermarket) to achieve at(supermarket). Is this plan complete?"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.856,
+            0.562
+          ],
+          "content": "No, it’s not complete yet, because we haven’t satisfied the At preconditions of the Go steps. So, let’s start by addressing the At(x1) precondition of the Go-to-hardware-store step. We can satisfy it using the At(Home) effect of the start step."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.479,
+                0.779,
+                0.502
+              ],
+              "content": "We also have to add the variable binding constraint that x1 equals Home."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_31_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.879,
+                0.541
+              ],
+              "content": "Now, we can work on the At(x2) precondition of the Go-to-supermarket step. It looks like it might be easy to satisfy it with the At(Home) effect of the start step, as well."
+            }
+          ],
+          "image_source": "images/page_32_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.851,
+                0.521
+              ],
+              "content": "To do this, we’d have to add another variable binding constraint x2 equals Home. That’s consistent with our other constraints, so all seems well."
+            }
+          ],
+          "image_source": "images/page_33_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.832,
+                0.522
+              ],
+              "content": "Alright. Now all of our preconditions are satisfied, but we may still have some problems. We have a number of threats to resolve."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_34_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.583
+          ],
+          "content": "Let’s look at the link from At(Home) to At(x1). That is now threatened by the Go(SM) step. We can see the threat by noticing that Go(SM) has not At(Home) as an effect (because x1 is bound to Home), and that there are no ordering constraints to keep it from happening after start and before Go(HDW). We’ll show threats with big purple arrows."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_36_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.873,
+            0.561
+          ],
+          "content": "So, how can we resolve this threat? We’re not allowed to put anything before the start step (there are implicit temporal constraints requiring everything to happen after start and before finish). So, maybe we could require Go(SM) to happen after Go(HDW)."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.867,
+            0.542
+          ],
+          "content": "But we still have a symmetric problem. Look at the link from At(Home) to At(x2). It’s threatened by Go(HDW). And the only way to fix it would be to make Go(HDW) happen after GO(SM)."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.873,
+            0.543
+          ],
+          "content": "Being clever humans, we can step back for a minute and see that we can’t go from home to the hardware store and to the supermarket, without going back home in between. So, we need to do something else to make this plan work."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.847,
+                0.542
+              ],
+              "content": "We could add a step to go home in between those two steps, but we can be more economical if we instead decide to satisfy At(x2) with the at(HDW) result of Go(HDW)."
+            }
+          ],
+          "image_source": "images/page_39_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_40_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.85,
+            0.522
+          ],
+          "content": "Now we constrain the variable x2 to be HDW rather than home. And this part of the plan seems to be in reasonably good shape."
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_41_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.879,
+            0.623
+          ],
+          "content": "But we’re not done yet! We still have some threats to take care of. There is currently nothing to keep us from going straight to the supermarket after we go to the hardware store, without buying our drill. More formally, the step Go(SM) threatens the causal link establishing AT(HDW), between Go(HDW) and Buy(Drill). This is because Go(SM) has not At(HDW) as an effect, and because there are no ordering constraints to keep it from coming between Go(HDW) and Buy(Drill)."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.869,
+                0.542
+              ],
+              "content": "We could try to resolve the threat by putting Go(SM) before Go(HDW), but then we’d have an inconsistent set of temporal constraints (because there’s already a causal link from Go(HDW) to Go(SM))."
+            }
+          ],
+          "image_source": "images/page_42_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.117,
+                0.478,
+                0.873,
+                0.522
+              ],
+              "content": "So, we’re going to have to constrain Go(SM) to happen after Buy(Drill). We’ll add a temporal constraint (the red dashed line) to make sure this happens."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_43_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.054,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_44_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.865,
+            0.543
+          ],
+          "content": "So, now we have a plan. And I think its correct. The example in the book was more complicated because you have to be \"at home\" at the end, but it’s sort of more of the same so I'm not going to do that."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_45_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.881,
+            0.622
+          ],
+          "content": "Let’s look at this plan a little bit. It requires us to go to the hardware store first, and then to buy the drill. After that, we have to go to the supermarket. Once we’re at the supermarket, though, we can buy milk and bananas in either order. So, we finished with a partially ordered plan. But the correctness theorem of the algorithm implies that if we finish with a partially ordered plan, then any ordering of the steps that’s consistent with the ordering constraints of the plan will achieve the goal."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.879,
+            0.562
+          ],
+          "content": "Note that this is not the only possible plan we could have come up with for this domain. If we had made some of our choices differently, we might have ended up with a plan that had us go to the supermarket before the hardware store. That would have been fine, too."
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.874,
+            0.663
+          ],
+          "content": "The algorithm is correct and complete. So, if there's a plan, it will find one, and it will never find a plan that's just broken. But there's no sense in which it's efficient. You can't guarantee it that it’s going to find it quickly, and you can't guarantee that it's going to find the best plan. So, there's nothing to keep you from going home, going to the hardware store, going back home, going to the supermarket. When we had to pick something to satisfy preconditions, we were very conservative in our picking, and so we tried to reuse the steps and the variables that we had around already, but if we weren't so conservative, we could instantiate new actions all day long."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.85,
+            0.603
+          ],
+          "content": "So, that's a potential problem. All that talk about nondeterministic choice in the algorithm made it sound like it didn’t matter which choices you made first. Well, it may not matter to the correctness of the algorithm, but it certainly matters to the efficiency! Both in the sense of finding a plan quickly and finding a short plan. So, to make this algorithm be at all efficient, you really have to be smart about trying things out in a reasonable order."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_49_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.603
+          ],
+          "content": "If you can satisfy it with a step that you already have, that's a good start. Or try to satisfy it with a variable that you've already used once before. There are some general ideas like that. But sometimes for a real domain, you'll actually have to use domain knowledge to say--given these two ways of trying to satisfy something, always try this one first. For example, if you need a new object, always try to buy one before you try to build one."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.311,
+            0.072,
+            0.641,
+            0.102
+          ],
+          "level": 1,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.537,
+            0.106,
+            0.735,
+            0.165
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.799,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 11 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.866,
+            0.622
+          ],
+          "content": "Let's do another example. In a different domain. We have to do at least one example in a blocks world domain, because its kind of a canonical thing for an old-fashioned AI program to do. So, imagine that you're a completely disembodied two- dimensional robot. And you have these piles of blocks. And your goal is--you want to get A on B and B on C. Now, it turns out that this configuration of blocks is called the Sussman anomaly, named after our very own Prof. Gerry Sussman."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.311,
+            0.072,
+            0.641,
+            0.102
+          ],
+          "level": 1,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.537,
+            0.106,
+            0.735,
+            0.166
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.223,
+            0.799,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 11 • 52"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.855,
+            0.603
+          ],
+          "content": "Back when people were just starting to think about how you would solve these problems, and the strategy that they used was to treat subgoals independently So, given the goal of having A on B and B on C, they would plan for each of those subproblems independently, and then try to put those plans together, by finding an appropriate ordering for them. But this set-up presents a problem, because its goals are not independent."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.311,
+            0.072,
+            0.643,
+            0.102
+          ],
+          "level": 1,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.537,
+            0.106,
+            0.736,
+            0.166
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.223,
+            0.8,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.201,
+            0.333,
+            0.397,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.367,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_52_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 11 • 53"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.864,
+            0.542
+          ],
+          "content": "Let’s say we try to solve the problem of putting A on B first. The obvious solution is to put C on the table and then put A on B. But that leaves us in a very poor position for achieving B on C."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.309,
+            0.071,
+            0.644,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.536,
+            0.106,
+            0.737,
+            0.167
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.222,
+            0.801,
+            0.247
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.199,
+            0.332,
+            0.399,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.21,
+                0.397,
+                0.369,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_53_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.548,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.549,
+                0.397,
+                0.708,
+                0.417
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.419,
+                0.795,
+                0.436
+              ],
+              "content": "Lecture 11 • 54"
+            }
+          ],
+          "image_source": "images/page_53_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.863,
+            0.522
+          ],
+          "content": "So, we could try to do that first. If we start by solving the problem of putting B on C, we can do so directly. But now we can’t get A out to put it on B!"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.309,
+            0.071,
+            0.643,
+            0.103
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.107,
+            0.622,
+            0.164
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.658,
+            0.133,
+            0.697,
+            0.164
+          ],
+          "content": "B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.222,
+            0.801,
+            0.247
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.199,
+            0.332,
+            0.399,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.21,
+                0.396,
+                0.369,
+                0.418
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_54_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.548,
+            0.305,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.549,
+                0.396,
+                0.708,
+                0.417
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.419,
+                0.795,
+                0.436
+              ],
+              "content": "Lecture 11 • 55"
+            }
+          ],
+          "image_source": "images/page_54_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.853,
+            0.523
+          ],
+          "content": "So there’s no ordering of these subgoals such that we can solve them individually and then put the plans together. We really have to consider them jointly."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.31,
+            0.071,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.543,
+            0.106,
+            0.736,
+            0.164
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.547,
+                0.165,
+                0.781,
+                0.186
+              ],
+              "content": "Objects: A, B, C, Table"
+            }
+          ],
+          "image_source": "images/page_55_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.188,
+            0.63,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.206,
+            0.632,
+            0.225
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.799,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.199,
+            0.332,
+            0.399,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.21,
+                0.397,
+                0.369,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_55_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.549,
+                0.397,
+                0.708,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.436
+              ],
+              "content": "Lecture 11 • 56"
+            }
+          ],
+          "image_source": "images/page_55_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.479,
+            0.865,
+            0.543
+          ],
+          "content": "So, let ‘s write down one set of operator descriptions that you could have for this domain. The things in our world are going to be A, B, C, and the table. And we're going to have a predicate On and a predicate Clear"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.453,
+            0.206
+          ],
+          "content": "$\\begin{array} { r l } & { \\mathsf { E f f } \\colon \\mathsf { o n } ( \\mathsf { b } , \\mathsf { y } ) , \\mathsf { c l e a r } ( \\mathsf { x } ) , } \\\\ & { \\mathsf { \\neg o n } ( \\mathsf { b } , \\mathsf { x } ) , \\mathsf { \\neg c l e a r } ( \\mathsf { y } ) } \\end{array}$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.107,
+            0.699,
+            0.163
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.781,
+            0.186
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.188,
+            0.63,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.206,
+            0.633,
+            0.225
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.224,
+            0.8,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.368,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_56_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 11 • 57"
+            }
+          ],
+          "image_source": "images/page_56_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.875,
+            0.561
+          ],
+          "content": "Now we’ll do the operator descriptions. We have one operator called Move, which moves some block B from X to Y. So, the preconditions are that block B is on X, that B is clear, and that Y is clear. The effects are going to be that B is on Y, that X is clear, that X is not on B, and that Y is not clear."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.453,
+            0.206
+          ],
+          "content": "• Eff: on(b,y), clear(x), ¬on(b,x), ¬clear(y)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.579,
+            0.107,
+            0.735,
+            0.164
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_57_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.781,
+            0.187
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.188,
+            0.629,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.206,
+            0.633,
+            0.225
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.799,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.368,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_57_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.436
+              ],
+              "content": "Lecture 11 • 58"
+            }
+          ],
+          "image_source": "images/page_57_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.682
+          ],
+          "content": "Now, part of the reason that I like to show this example to you is because it illustrates the strengths and weaknesses of working in this kind of language, say, as opposed to full first-order logic. In full first-order logic, you could just define clear, right? X is clear if and only if there does not exist a thing that is on X. But then, you have to do work, maybe a lot of work, to figure out whether X is clear or not. Here we're just taking the approach of tracking, in some sense. whether everything is clear or not, and always asserting it into our database whenever its truth value changes, so that we just know as we go. And then we don't have to think too hard about whether something is actually clear, we just look it up."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.453,
+            0.206
+          ],
+          "content": "• Eff: on(b,y), clear(x), ¬on(b,x), ¬clear(y)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.579,
+            0.107,
+            0.734,
+            0.164
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.781,
+            0.186
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.188,
+            0.63,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.206,
+            0.633,
+            0.225
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.8,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.369,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_58_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.71,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 11 • 59"
+            }
+          ],
+          "image_source": "images/page_58_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.863,
+            0.662
+          ],
+          "content": "So now, there's a little, problem. This ought to be able to be our only operator. Basically, all we can do is move things around. It turns out that we end up in trouble with the table. So, let's talk about the table for a minute. And in particular about the table and the notion of being clear. So, if you take clear to mean that there's nothing on it, then the table's not clear here. But yet, we like to assume for the purpose of these planning problems that there's basically always room at the table for another block. So, the table's always clear. So, you could just say the table's clear. What's wrong with just putting clear table in the initial state and using the operator description that we have here?"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.107,
+            0.699,
+            0.163
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.452,
+            0.205
+          ],
+          "content": "$\\begin{array} { r l } & { \\mathsf { E f f } \\colon \\mathsf { o n } ( \\mathsf { b } , \\mathsf { y } ) , \\mathsf { c l e a r } ( \\mathsf { x } ) , } \\\\ & { \\mathsf { \\neg o n } ( \\mathsf { b } , \\mathsf { x } ) , \\mathsf { \\neg c l e a r } ( \\mathsf { y } ) } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.781,
+            0.186
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.208,
+            0.376,
+            0.232
+          ],
+          "content": "• Move\\_table(b, x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.188,
+            0.63,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.206,
+            0.633,
+            0.226
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.8,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.369,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_59_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.436
+              ],
+              "content": "Lecture 11 • 60"
+            }
+          ],
+          "image_source": "images/page_59_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.879,
+            0.542
+          ],
+          "content": "Well, the first time you put a block on the table, you’re going to assert that clear(table) is false. It’s a big pain, but to deal with this problem, we’re going to have to add a special new operator called move\\_table."
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.643,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y), block(y)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.107,
+            0.699,
+            0.163
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_60_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.452,
+            0.205
+          ],
+          "content": "$\\begin{array} { r l } & { \\mathsf { E f f } \\colon \\mathsf { o n } ( \\mathsf { b } , \\mathsf { y } ) , \\mathsf { c l e a r } ( \\mathsf { x } ) , } \\\\ & { \\mathsf { \\neg o n } ( \\mathsf { b } , \\mathsf { x } ) , \\mathsf { \\neg c l e a r } ( \\mathsf { y } ) } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.781,
+            0.186
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.208,
+            0.377,
+            0.232
+          ],
+          "content": "• Move\\_table(b, x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.188,
+            0.631,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.206,
+            0.633,
+            0.226
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.224,
+            0.8,
+            0.246
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.21,
+                0.397,
+                0.369,
+                0.417
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_60_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.749,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.794,
+                0.436
+              ],
+              "content": "Lecture 11 • 61"
+            }
+          ],
+          "image_source": "images/page_60_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.867,
+            0.54
+          ],
+          "content": "First, we’re going to add a precondition to our original move operator, requiring Y to be a block. This way, we’ll never try to use this operator to move something to the table."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.073,
+            0.642,
+            0.102
+          ],
+          "level": 2,
+          "content": "Subgoal Dependence"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.182,
+            0.112,
+            0.341,
+            0.134
+          ],
+          "level": 2,
+          "content": "• Move(b, x, y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.134,
+            0.459,
+            0.172
+          ],
+          "content": "• Pre: on(b,x), clear(b), clear(y), block(y)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.107,
+            0.735,
+            0.164
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_61_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.172,
+            0.452,
+            0.205
+          ],
+          "content": "• Eff: on(b,y), clear(x), ¬on(b,x), ¬clear(y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.165,
+            0.78,
+            0.186
+          ],
+          "content": "Objects: A, B, C, Table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.209,
+            0.376,
+            0.231
+          ],
+          "content": "• Move\\_table(b, x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.188,
+            0.629,
+            0.207
+          ],
+          "content": "on(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.206,
+            0.633,
+            0.225
+          ],
+          "content": "clear(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.231,
+            0.453,
+            0.252
+          ],
+          "content": "• Pre: on(b,x), clear(b)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.548,
+            0.224,
+            0.799,
+            0.245
+          ],
+          "content": "Goal: on(A,B) Æ on(B,C)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.252,
+            0.49,
+            0.285
+          ],
+          "content": "• Eff: on(b,table), clear(x), ¬on(b,x)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.201,
+            0.333,
+            0.398,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.211,
+                0.397,
+                0.367,
+                0.416
+              ],
+              "content": "Put A on B first"
+            }
+          ],
+          "image_source": "images/page_61_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.549,
+            0.306,
+            0.748,
+            0.393
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.55,
+                0.397,
+                0.707,
+                0.416
+              ],
+              "content": "Put B on C first"
+            },
+            {
+              "bbox": [
+                0.71,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 11 • 62"
+            }
+          ],
+          "image_source": "images/page_61_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.875,
+            0.541
+          ],
+          "content": "Then we’ll add the new operator just for moving a block B from X to the table. And the preconditions of that will be on (b,X), Clear(b) and that's all. And the effects will be on (b, table) and clear(X) and not on(B,X)."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "<table><tr><td colspan=\"6\">Sussman Anomaly</td></tr><tr><td colspan=\"6\">start</td></tr><tr><td>clear(T)</td><td>on(C,A)</td><td>on(A,T)</td><td>on(B,T)</td><td>clear(C)</td><td>clear(B)</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_62_table_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.851,
+            0.541
+          ],
+          "content": "All right, Let's do the problem. First we add the start step, which produces the following facts for us: clear(T), on (C, A), on (A, table), on (B, table), clear(C), and clear (B). That's what we know when we wake up."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.051,
+            0.851,
+            0.448
+          ],
+          "content": "<table><tr><td colspan=\"6\">Sussman Anomaly</td></tr><tr><td></td><td colspan=\"5\">start</td></tr><tr><td>clear(T)</td><td>on(C,A)</td><td>on(A,T)</td><td>on(B,T)</td><td>clear(C)</td><td>clear(B)</td></tr><tr><td></td><td>on(A,B)</td><td colspan=\"4\">on(B,C)</td></tr><tr><td></td><td colspan=\"5\">finish</td></tr></table>",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.577,
+                0.502
+              ],
+              "content": "And the finish step requires on (A,B) and on(B,C)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_63_table_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.148,
+            0.051,
+            0.851,
+            0.448
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.863,
+            0.583
+          ],
+          "content": "Here we go. What would you like to do? Where's a precondition that needs to be made true. Let’s work on making on(A,B) true. It doesn't look like we can just use some fact we already have to make it true, so we have to add another step. It looks like move would be good. And we want to be in sort of least commitment in our moving, so we're going to move A from somewhere to B."
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.857,
+            0.541
+          ],
+          "content": "Let's write out all the postconditions, just so that we're shown all the effects. So, we'll get on(A,B). We'll get not on(A,X1). We'll get clear(X1) and we’ll get not clear(B)."
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.869,
+            0.542
+          ],
+          "content": "Our preconditions are on (A,X1), clear(A), clear(B)--and I'm going to leave the block precondition out, just because it's trivial and tedious. We would have to assert block(A), block(B), and block(C) in the start state."
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.448
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_67_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.48,
+            0.881,
+            0.621
+          ],
+          "content": "Now let’s work on Clear (A); that's going to be a hard one. How can we make A clear? Well, the way we make things clear is by moving something off of them. Right? So, the thing that we're moving off of A, we can either move to some block or to the table. Let me just guide you to the choice of moving it to the table, so this doesn’t take too long (but a computer might very well try moving it somewhere inconvenient, like on to B). So, we can move-table something off of A."
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.873,
+            0.541
+          ],
+          "content": "That will produce On (Y,table), clear(A) and not on(Y,A). So we can add a causal link between this clear(A) and the clear(A) in the precondition of our other move."
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.811,
+                0.521
+              ],
+              "content": "The effects are on(y,T), clear(A) and not on(y,A). And the preconditions are on(y,A) and clear(y)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_69_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.825,
+            0.521
+          ],
+          "content": "We can satisfy on(y,A) by letting y be C, and adding a causal connection from on(C,A) in the effects of start."
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.479,
+                0.835,
+                0.519
+              ],
+              "content": "Since y is bound to C, we need clear C, which we can also find in the effects of start."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_71_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.479,
+                0.823,
+                0.521
+              ],
+              "content": "Good. Things are in pretty good shape. We can just tidy up a bit by satisfying clear(B) with one of the effects of start."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_72_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.854,
+                0.522
+              ],
+              "content": "Now, we have two preconditions left to work on: on(A,x1) and on(B,C). We can satisfy on(A,x1) by using the on(A,T) from start, and letting x1 be the table."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_73_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_74_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.856,
+            0.521
+          ],
+          "content": "Now, what's left is on(B,C). To get B to be on C, it means we're going to have to move it. So, we’ll add the step move(B, X2, C)."
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.841,
+                0.521
+              ],
+              "content": "That produces on(B,C), not $\\mathrm{on}(\\mathrm{B,} \\mathrm{x}2)$ , clear(x2) and not clear( C ). And it has as preconditions on(B,X2), clear(B), and clear(C)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_75_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_76_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.874,
+            0.582
+          ],
+          "content": "Now one thing we have to do is to be sure that we haven't introduced any threats. There don’t seem to be any right now, so then we have to just deal with the preconditions of this. So, how about the clears. Maybe they just come for free. It looks like maybe. We get clear B from start and clear C from start as well, And start makes on(B,X2) true if we let X2 be the table."
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_77_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.875,
+            0.561
+          ],
+          "content": "Now there are some threats that we have to deal with. First, notice the possibility that we move B onto C before we move C off of A. That is, the Move(B, x2, C) step threatens the causal link between clear(C ) in the start step and the MoveT(C,A) step."
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_78_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.873,
+            0.542
+          ],
+          "content": "How can we resolve this threat? We can’t require anything to happen before start, so we’ll have to add an ordering constraint that requires move(B,T,C) to happen after moveTable(C,A)."
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.852,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.875,
+                0.542
+              ],
+              "content": "There’s still another lurking threat. We’re currently allowed to move A onto B before we move B onto C. That is, the Move(A, x1, B) step threatens the causal link between clear(B) in the start step and the Move(B, x2, C) step."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_79_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_80_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.863,
+            0.521
+          ],
+          "content": "Again, we can resolve this one with an ordering constraint, requiring us to move A onto B after we move B onto C."
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.852,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_81_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.865,
+            0.522
+          ],
+          "content": "At this point, we have a complete and correct plan. We first move C from A to the table, Then we move B onto C. And finally, we move A onto B. Yay!"
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.317,
+            0.071,
+            0.637,
+            0.102
+          ],
+          "content": "Recitation Problems"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.403,
+            0.138
+          ],
+          "content": "• Russell & Norvig"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.138,
+            0.299,
+            0.162
+          ],
+          "content": "• 11.2"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.163,
+            0.365,
+            0.188
+          ],
+          "content": "• 11.7 a,b,c"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.188,
+            0.299,
+            0.213
+          ],
+          "content": "• 11.9"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 11 • 83"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.803,
+            0.543
+          ],
+          "content": "We can see the dependence of the subgoals quite clearly. We had to end up interleaving the steps required for each of the subgoals, in order to get a completely correct plan."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture11Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T05:49:45Z",
+      "modified_at": "2003-06-13T09:48:03+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 83,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
