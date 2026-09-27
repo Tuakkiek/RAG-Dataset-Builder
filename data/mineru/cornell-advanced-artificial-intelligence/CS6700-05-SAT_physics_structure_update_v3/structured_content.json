@@ -1,0 +1,6320 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.085,
+            0.295,
+            0.916,
+            0.446
+          ],
+          "level": 1,
+          "content": "The Next Generation of Automated Reasoning Methods"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.351,
+            0.513,
+            0.649,
+            0.636
+          ],
+          "content": "**Bart Selman Cornell University**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.841,
+            0.384,
+            0.879
+          ],
+          "content": "**Joint work with Carla Gomes.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.146,
+            0.069,
+            0.872,
+            0.135
+          ],
+          "level": 2,
+          "content": "The Quest for Machine Reasoning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.221,
+            0.275,
+            0.273
+          ],
+          "content": "**Objective:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.329,
+            0.92,
+            0.516
+          ],
+          "content": "**Develop foundations, technology, and tools to enable effective practical machine reasoning.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.596,
+            0.399,
+            0.639
+          ],
+          "content": "**Machine Reasoning (1960-90s)**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.446,
+            0.589,
+            0.596,
+            0.638
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.715,
+            0.467,
+            0.826
+          ],
+          "content": "**Computational complexity of reasoning appears to severly limit real-world applications.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.619,
+            0.597,
+            0.946,
+            0.641
+          ],
+          "content": "**Current reasoning technology**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.62,
+            0.707,
+            0.947,
+            0.927
+          ],
+          "content": "**Revisiting the challenge: Significant progress with new ideas / tools for dealing with complexity (scale-up), uncertainty, and multi-agent reasoning.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.051,
+            0.076,
+            0.922,
+            0.134
+          ],
+          "level": 2,
+          "content": "Fundamental challenge: Combinatorial Search Spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.179,
+            0.691,
+            0.231
+          ],
+          "content": "**Significant progress in the last decade.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.064,
+            0.295,
+            0.26,
+            0.344
+          ],
+          "level": 2,
+          "content": "How much?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.063,
+            0.411,
+            0.45,
+            0.454
+          ],
+          "level": 2,
+          "content": "For propositional reasoning:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.458,
+            0.783,
+            0.604
+          ],
+          "content": "**-- We went from 100 variables, 200 clauses (early 90’s) to 1,000,000 vars. and 5,000,000 constraints in 10 years. Search space: from 10^30 to 10^300,000.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.655,
+            0.792,
+            0.846
+          ],
+          "content": "**-- Applications: Hardware and Software Verification, Test pattern generation, Planning, Protocol Design, Routers, Timetabling, E-Commerce (combinatorial auctions), etc.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.207,
+            0.816,
+            0.299
+          ],
+          "content": "**How can deal with such large combinatorial spaces and still do a decent job?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.341,
+            0.694,
+            0.523
+          ],
+          "content": "**I’ll discuss recent formal insights into combinatorial search spaces and their practical implications that makes searching such ultra-large spaces possible.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.563,
+            0.86,
+            0.697
+          ],
+          "content": "**Brings together ideas from physics of disordered systems (spin glasses), combinatorics of random structures, and algorithms.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.346,
+            0.701,
+            0.655,
+            0.749
+          ],
+          "content": "**But first, what is BIG?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.404,
+            0.043,
+            0.619,
+            0.09
+          ],
+          "level": 1,
+          "content": "What is BIG?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.134,
+            0.92,
+            0.183
+          ],
+          "level": 2,
+          "content": "Consider a real-world Boolean Satisfiability (SAT) problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.298,
+            0.211,
+            0.742,
+            0.247
+          ],
+          "content": "The instance bmc-ibm-6.cnf, IBM LSU 1997:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.263,
+            0.287,
+            0.914,
+            0.909
+          ],
+          "content": "<table><tr><td>p cnf !</td><td></td></tr><tr><td>-1 7 0</td><td>I.e., ((not x_1) or x_7)</td></tr><tr><td>-1 6 0</td><td>((not x_1) or x_6)</td></tr><tr><td>-1 5 0</td><td>etc.</td></tr><tr><td>-1 -4 0</td><td></td></tr><tr><td>-1 3 0</td><td></td></tr><tr><td>-1 2 0</td><td rowspan=\"4\">x_1, x_2, x_3, etc. our Boolean variables (set to True or False)</td></tr><tr><td>-1 -8 0</td></tr><tr><td>-9 15 0</td></tr><tr><td>-9 14 0</td></tr><tr><td>-9 13 0</td><td rowspan=\"7\">Set x_1 to False ??</td></tr><tr><td>-9 -12 0</td></tr><tr><td>-9 11 0</td></tr><tr><td>-9 10 0</td></tr><tr><td>-9 -16 0</td></tr><tr><td>-17 23 0</td></tr><tr><td>-17 22 0</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.347,
+            0.069,
+            0.667,
+            0.139
+          ],
+          "level": 2,
+          "content": "10 pages later:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.286,
+            0.57,
+            0.642
+          ],
+          "content": "185-9 0 185-1 0 177 169 161 153 145 137 129 121 113 105 97 89 81 73 65 57 49 41 33 25 17 9 1 -185 0 186-187 0 186-188 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.224,
+            0.662,
+            0.888,
+            0.759
+          ],
+          "content": "**I.e., (x\\_177 or x\\_169 or x\\_161 or x\\_153 … x\\_33 or x\\_25 or x\\_17 or x\\_9 or x\\_1 or (not x\\_185))**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.795,
+            0.904,
+            0.845
+          ],
+          "content": "**clauses / constraints are getting more interesting…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.876,
+            0.336,
+            0.923
+          ],
+          "content": "**Note x\\_1 …**"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.355,
+            0.06,
+            0.721,
+            0.125
+          ],
+          "level": 2,
+          "content": "4000 pages later:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.256,
+            0.253,
+            0.757,
+            0.799
+          ],
+          "content": "| 10236 -10050 0 |\n| --- |\n| 10236 -10051 0 |\n| 10236 -10235 0 |\n| 10008 10009 10010 10011 10012 10013 10014 |\n| 10015 10016 10017 10018 10019 10020 10021 |\n| 10022 10023 10024 10025 10026 10027 10028 |\n| 10029 10030 10031 10032 10033 10034 10035 |\n| 10036 10037 10086 10087 10088 10089 10090 |\n| 10091 10092 10093 10094 10095 10096 10097 |\n| 10098 10099 10100 10101 10102 10103 10104 |\n| 10105 10106 10107 10108 -55 -54 53 -52 -51 50 |\n| 10047 10048 10049 10050 10051 10235 -10236 0 |\n| 10237 -10008 0 |\n| 10237 -10009 0 |\n| 10237 -10010 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.309,
+            0.889,
+            0.34,
+            0.903
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.227,
+            0.08,
+            0.793,
+            0.149
+          ],
+          "level": 2,
+          "content": "Finally, 15,000 pages later:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.314,
+            0.252,
+            0.619,
+            0.693
+          ],
+          "sub_type": "code",
+          "content": "```shell\n-7 260 0\n7 -260 0\n1072 1070 0\n-15 -14 -13 -12 -11 -10 0\n-15 -14 -13 -12 -11 10 0\n-15 -14 -13 -12 11 -10 0\n-15 -14 -13 -12 11 10 0\n-7 -6 -5 -4 -3 -2 0\n-7 -6 -5 -4 -3 2 0\n-7 -6 -5 -4 3 -2 0\n-7 -6 -5 -4 3 2 0\n185 0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.741,
+            0.607,
+            0.781
+          ],
+          "content": "**Combinatorial search space of truth assignments:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.809,
+            0.731,
+            0.922,
+            0.782
+          ],
+          "content": "**HOW?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.796,
+            0.552,
+            0.84
+          ],
+          "content": "250000 ≈ 3.160699437 · 1015051"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.874,
+            0.819,
+            0.966
+          ],
+          "content": "**Current SAT solvers solve this instance in approx. 1 minute!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.241,
+            0.086,
+            0.772,
+            0.163
+          ],
+          "level": 2,
+          "content": "Progress SAT Solvers"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.074,
+            0.257,
+            0.962,
+            0.928
+          ],
+          "content": "| Instance | Posit' 94 | Grasp' 96 | Sato' 98 | Chaff' 01 |\n| --- | --- | --- | --- | --- |\n| ssa2670-136 | 40,66s | 1,2s | 0,95s | 0,02s |\n| bf1355-638 | 1805,21s | 0,11s | 0,04s | 0,01s |\n| pret150_25 | >3000s | 0,21s | 0,09s | 0,01s |\n| dubois100 | >3000s | 11,85s | 0,08s | 0,01s |\n| aim200-2_0-no-1 | >3000s | 0,01s | 0s | 0s |\n| 2dlx_..._bug005 | >3000s | >3000s | >3000s | 2,9s |\n| c6288 | >3000s | >3000s | >3000s | >3000s |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.112,
+                0.943,
+                0.491,
+                0.987
+              ],
+              "content": "Source: Marques Silva 2002"
+            }
+          ],
+          "image_source": "images/page_8_table_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.918,
+            0.925,
+            0.936,
+            0.952
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.113,
+            0.211,
+            0.962,
+            0.265
+          ],
+          "level": 1,
+          "content": "From academically interesting to practically relevant."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.329,
+            0.917,
+            0.461
+          ],
+          "content": "**We now have regular SAT solver competitions. Germany ’89, Dimacs ’93, China ’96, SAT-02, SAT-03, SAT-04, SAT05.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.527,
+            0.633,
+            0.575
+          ],
+          "content": "**E.g. at SAT-2004 (Vancouver, May 04):**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.577,
+            0.515,
+            0.621
+          ],
+          "content": "**--- 35+ solvers submitted**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.625,
+            0.59,
+            0.669
+          ],
+          "content": "**--- 500+ industrial benchmarks**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.674,
+            0.763,
+            0.719
+          ],
+          "content": "**--- 50,000+ instances available on the WWW.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.245,
+            0.032,
+            0.785,
+            0.136
+          ],
+          "level": 2,
+          "content": "Real-World Reasoning Tackling inherent computational complexity"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.008,
+            0.993,
+            0.08
+          ],
+          "content": "DARPA Research Program"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.015,
+            0.183,
+            0.997,
+            0.95
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.022,
+                0.949,
+                0.627,
+                0.983
+              ],
+              "content": "Example domains cast in propositional reasoning system (variables, rules)."
+            }
+          ],
+          "image_source": "images/page_10_chart_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.117,
+            0.894,
+            0.247
+          ],
+          "level": 2,
+          "content": "A Journey from Random to Structured Instances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.332,
+            0.509,
+            0.379
+          ],
+          "content": "**I --- Random Instances**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.383,
+            0.686,
+            0.427
+          ],
+          "content": "**--- phase transitions and algorithms**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.429,
+            0.699,
+            0.472
+          ],
+          "content": "**--- from physics to computer science**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.098,
+            0.518,
+            0.67,
+            0.566
+          ],
+          "level": 2,
+          "content": "II --- Capturing Problem Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.57,
+            0.785,
+            0.613
+          ],
+          "content": "**--- problem mixtures (tractable / intractable)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.614,
+            0.833,
+            0.659
+          ],
+          "content": "**--- backdoor variables, restarts, and heavy tails**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.098,
+            0.705,
+            0.533,
+            0.752
+          ],
+          "level": 2,
+          "content": "III --- Beyond Satisfaction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.757,
+            0.74,
+            0.802
+          ],
+          "content": "**--- sampling, counting, and probabilities**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.803,
+            0.431,
+            0.845
+          ],
+          "content": "**--- quantification**"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.22,
+            0.059,
+            0.855,
+            0.123
+          ],
+          "level": 2,
+          "content": "Part I) ---- Random Instances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.23,
+            0.7,
+            0.323
+          ],
+          "content": "**Easy-Hard-Easy patterns (computational) and SAT/UNSAT phase transitions (“structural”).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.363,
+            0.7,
+            0.497
+          ],
+          "content": "**Their study provides an interplay of work from statistical physics, computer science, and combinatorics.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.541,
+            0.773,
+            0.587
+          ],
+          "content": "**We’ll briefly consider “The State of Random 3-SAT”.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.629,
+            0.663,
+            0.717
+          ],
+          "content": "**(“phase transitions in computational problems”; also CAM ’04 talk by Jennifer Chayes)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.091,
+            0.0,
+            0.891,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.028,
+                0.964,
+                0.415,
+                1.0
+              ],
+              "content": "Mitchell, Selman, and Levesque ’92"
+            }
+          ],
+          "image_source": "images/page_13_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.119,
+            0.071,
+            0.905,
+            0.135
+          ],
+          "level": 2,
+          "content": "Linear time results --- Random 3-SAT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.233,
+            0.841,
+            0.311
+          ],
+          "content": "**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.313,
+            0.897,
+            0.435
+          ],
+          "content": "**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.517,
+            0.691,
+            0.597
+          ],
+          "content": "**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.597,
+            0.706,
+            0.721
+          ],
+          "content": "**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.757,
+            0.949,
+            0.84
+          ],
+          "content": "**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.926,
+            0.934,
+            0.951
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.119,
+            0.071,
+            0.905,
+            0.135
+          ],
+          "level": 2,
+          "content": "Linear time results --- Random 3-SAT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.233,
+            0.841,
+            0.311
+          ],
+          "content": "**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.313,
+            0.897,
+            0.431
+          ],
+          "content": "**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.517,
+            0.691,
+            0.597
+          ],
+          "content": "**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.597,
+            0.706,
+            0.721
+          ],
+          "content": "**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.757,
+            0.949,
+            0.84
+          ],
+          "content": "**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.926,
+            0.935,
+            0.951
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.119,
+            0.071,
+            0.905,
+            0.135
+          ],
+          "level": 2,
+          "content": "Linear time results --- Random 3-SAT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.233,
+            0.841,
+            0.312
+          ],
+          "content": "**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.313,
+            0.897,
+            0.431
+          ],
+          "content": "**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.513,
+            0.691,
+            0.596
+          ],
+          "content": "**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.597,
+            0.707,
+            0.721
+          ],
+          "content": "**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.757,
+            0.949,
+            0.84
+          ],
+          "content": "**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.926,
+            0.934,
+            0.951
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.119,
+            0.071,
+            0.905,
+            0.135
+          ],
+          "level": 2,
+          "content": "Linear time results --- Random 3-SAT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.233,
+            0.841,
+            0.311
+          ],
+          "content": "**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.313,
+            0.897,
+            0.431
+          ],
+          "content": "**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.513,
+            0.692,
+            0.592
+          ],
+          "content": "**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.593,
+            0.719,
+            0.719
+          ],
+          "content": "**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.757,
+            0.949,
+            0.84
+          ],
+          "content": "**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.002,
+            1.0,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.015,
+            0.181,
+            0.501,
+            0.22
+          ],
+          "level": 2,
+          "content": "More details on how to derive 5.19 point"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.272,
+            0.932,
+            0.358
+          ],
+          "content": "Calculate the expected number of satisfying assignments given a set of M random clauses on N vars."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.015,
+            0.409,
+            0.46,
+            0.451
+          ],
+          "content": "Total num possible assignments is 2^N."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.501,
+            0.959,
+            0.591
+          ],
+          "content": "Let S\\_i be an indicator variable for truth assignment i. That is, a random 0/1 variable, s.t., S i = 1 iff i^th assignment satisfies the M random clauses (= 0 otherwise)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.639,
+            0.974,
+            0.729
+          ],
+          "content": "A random assignment satisfies 1 clause with with probability . A random assignment satisfies M random clauses (independently generated) with probability (/)^M."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.951
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.075,
+            0.995,
+            0.689
+          ],
+          "sub_type": "code",
+          "content": "```txt\nWe need to calculate\n\nE[#satisfying_assignments]\n= E[S_1 + S_2 + S_3 + ... + S_2^N]\n= E[\\sum_all_assigns S_i]\n= \\sum_all_assigns E[S_i])          % by linearity of expectation\n= \\sum_all_assigns (7/8)^M         % 7/8^M is prob. S_i = 1 for i^th assign after M clauses\n= 2^N . (7/8)^M                   % sum over 2^N assignments\n\nNote: \"Competition\" between 2^N and (7/8)^M.\n\nNow, we want to know, when N → \\inf, for what ratio of M/N does\nE[#satisfying assignments] go to 0?\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.909,
+            0.925,
+            0.933,
+            0.951
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.015,
+            0.656,
+            0.447,
+            0.755
+          ],
+          "sub_type": "code",
+          "content": "```txt\nQ 2 * (7/8)^5.19\nQ 2 * (7/8)^5.19 - Google Search\n= 1.00011926\n2 * ((7 / 8)^5.2) =\n0.99878467801\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.004,
+            0.097,
+            0.741,
+            0.186
+          ],
+          "content": "Now, we want to know, when N → \\inf, for what ratio of M/N does E[#satisfying assignments] go to 0?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.004,
+            0.235,
+            0.953,
+            0.326
+          ],
+          "content": "Consider what 2^N (/)^M looks like with M/N = 5.19 and N ---> \\inf. Let M = 5.19 N. We get 2^N (7s)^(5.19 N) = (2 . (7)^5.19)^N \\approx 1.00011926^N."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.004,
+            0.374,
+            0.903,
+            0.417
+          ],
+          "content": "Also, M = 5.0 N. We get 0.99878^N. Goes to 0.0! No solutions in expectation!!!!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.003,
+            0.468,
+            0.963,
+            0.603
+          ],
+          "content": "So, if we take slightly more clauses over 5.19 ratio, base tips below 1.0 and with N to \\infinity, total goes to 0. I.e., Prob(#assign = 0) → 1.0. Formulas become unsat at transition point when"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.003,
+            0.817,
+            0.918,
+            0.903
+          ],
+          "content": "Aside: Why is real threshold point lower? “Correlations.\"But better explanation is “solution clustering.\"Discuss details."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.909,
+            0.925,
+            0.935,
+            0.952
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.0,
+            0.25,
+            0.978,
+            0.706
+          ],
+          "content": "Aside: linearity of expectation (the key tool in most CS probabilistic arguments!) is surprisingly powerful but also remains quite counterintuitive. It applies to any sum of r.v.'s even is they are fully correlated. E.g., two dice that are connected by an invisible wire that forces them to always show both the same number. Of course, watching just one die, you will see ½ chance of each number but you will only see 1-1, 2-2, 3-3, 4-4, 5-5, 6-6 and never 1-2 etc. The expected value of the sum is still E[X + Y] = E[X] + E[Y] = 2 E[X] = 2 Expected\\_value\\_of\\_die $| \\mathrm{roll} | = \\% (1 + 2 + 3 + 4 + 5 + 6) = \\% \\times 21 = 3.5.5 \\mathrm{So}$ E[X + Y] = 7, no matter how the die rolls are correlated to each other! (Imagine both dice come up with same value always... 1,1 or 2,2, ... or 6,6. In expectation we still get 3.5. Still works!)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.909,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.167,
+            0.075,
+            0.843,
+            0.141
+          ],
+          "level": 2,
+          "content": "Exact Location of Threshold"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.098,
+            0.193,
+            0.911,
+            0.978
+          ],
+          "sub_type": "code",
+          "content": "```txt\nSurprisingly challenging problem ...\nCurrent rigorously proved results:\n3SAT threshold lies between 3.42 and 4.506.\nMotwani et al. 1994; Broder et al. 1992;\nFrieze and Suen 1996; Dubois 1990, 1997;\nKirousis et al. 1995; Friedgut 1997;\nArchlioptas et al. 1999;\nBeame, Karp, Pitassi, and Saks 1998;\nImpagliazzo and Paturi 1999; Bollobas,\nBorgs, Chayes, Han Kim, and\nWilson 1999; Achlioptas, Beame and\nMolloy 2001; Frieze 2001; Zecchina et al. 2002;\nKirousis et al. 2004; Gomes and Selman, Nature '05;\nAchlioptas et al. Nature '05; and ongoing...\nEmpirical: 4.25 --- Mitchell, Selman, and Levesque '92, Crawford '93.\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.159,
+            0.049,
+            0.918,
+            0.122
+          ],
+          "level": 2,
+          "content": "From Physics to Computer Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.171,
+            0.819,
+            0.26
+          ],
+          "content": "**Exploits correspondence between SAT and physical systems with many interacting particles.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.082,
+            0.296,
+            0.353,
+            0.675
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.417,
+            0.393,
+            0.968,
+            0.453
+          ],
+          "content": "e.g.spin xi and $x j$ want to align :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.489,
+            0.462,
+            0.918,
+            0.541
+          ],
+          "content": "(x _ {i} \\lor \\neg x _ {j}) \\land (\\neg x _ {i} \\lor x _ {j})",
+          "image_source": "images/page_24_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.344,
+            0.573,
+            0.993,
+            0.619
+          ],
+          "content": "**Satisfied iff [(x\\_i = 1 and x\\_j =1) OR (x\\_i =0 and x\\_j=0)]**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.73,
+            0.943,
+            0.867
+          ],
+          "content": "Basic model for magnetism: The Ising model (Ising ’24). Spins are “trying to align themselves”. But system can be “frustrated” some pairs want to align; some want to point in the opposite direction of each other."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.066,
+            0.898,
+            0.153
+          ],
+          "content": "**We can now assign a probability distribution over the assignments/ states --- the Boltzmann distribution:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.269,
+            0.2,
+            0.677,
+            0.247
+          ],
+          "content": "\\text {Prob} (\\mathrm{S}) = 1 / \\mathrm{Z} * \\exp (- \\mathrm{E} (\\mathrm{S}) / \\mathrm{kT})",
+          "image_source": "images/page_25_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.25,
+            0.175,
+            0.288
+          ],
+          "content": "**where,**"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.176,
+            0.335,
+            0.732,
+            0.513
+          ],
+          "sub_type": "code",
+          "content": "```txt\nE is the “energy” = # unsatisfied constraints, T is the “temperature” a control parameter, k is the Boltzmann constant, and Z is the “partition function” (normalizes).\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.555,
+            0.896,
+            0.645
+          ],
+          "content": "**Distribution has a physical interpretation (captures thermodynamic equilibrium) but, for us, key property:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.693,
+            0.902,
+            0.839
+          ],
+          "content": "**With T** à **0, only minimum energy states have non-zero probability. So, by taking T** à **0, we can find properties of the satisfying assignments of the SAT problem.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.121,
+            0.968,
+            0.175
+          ],
+          "content": "In fact, partition function Z, contains all necessary information."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.172,
+            0.257,
+            0.633,
+            0.331
+          ],
+          "content": "Z = \\sum \\exp (- E (S) / k T)",
+          "image_source": "images/page_26_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.403,
+            0.868,
+            0.46
+          ],
+          "content": "sum is over all $2 ^ { N }$ possible states / (truth) assignments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.507,
+            0.978,
+            0.604
+          ],
+          "content": "**Are we really making progress here?? Sum over an exponential number of terms,** $2 ^ { N }$ **.**.. in physics, $N \\sim 1 0 ^ { 2 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.028,
+            0.687,
+            0.779,
+            0.769
+          ],
+          "content": "**Fortunately, physicists have been studying “Z” for 100+ years. (Feynman Lectures: “Statistical physics = study of Z”.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.028,
+            0.805,
+            0.881,
+            0.969
+          ],
+          "content": "**They have developed a powerful set of analytical tools to calculate / approximate Z : e.g. mean field approximations, Monte Carlo methods, matrix transfer methods, renormalization techniques, replica methods and cavity methods.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.115,
+            0.04,
+            0.891,
+            0.107
+          ],
+          "level": 2,
+          "content": "Physics contributing to computation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.156,
+            0.945,
+            0.308
+          ],
+          "content": "**80’s --- Simulated annealing General combinatorial search technique, inspired by physics. (Kirkpatrick ’83)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.35,
+            0.924,
+            0.676
+          ],
+          "content": "**90’s --- Phase transitions in computational systems Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems. Cheeseman et al. ’91; Mitchell et al. ’92; Explicit connection to physics: Kirkpatrick and Selman ’94 (finite-size scaling); Monasson et al.’99. (order phase transition))**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.717,
+            0.493,
+            0.769
+          ],
+          "level": 2,
+          "content": "’02 --- Survey Propagation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.781,
+            0.884,
+            0.88
+          ],
+          "content": "**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al. ’02).**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.925,
+            0.29,
+            0.97
+          ],
+          "level": 2,
+          "content": "More expected!"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.115,
+            0.04,
+            0.891,
+            0.107
+          ],
+          "level": 2,
+          "content": "Physics contributing to computation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.156,
+            0.944,
+            0.308
+          ],
+          "content": "**80’s --- Simulated annealing General combinatorial search technique, inspired by physics. (Kirkpatrick et al., Science ’83)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.35,
+            0.924,
+            0.675
+          ],
+          "content": "**90’s --- Phase transitions in computational systems Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems. (Cheeseman et al. ’91; Selman et al. ’92; Explicit connection to physics: Kirkpatrick and Selman, Science ’94 (finite-size scaling); Monasson et al., Nature ’99. (order of phase transition))**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.717,
+            0.493,
+            0.769
+          ],
+          "level": 2,
+          "content": "’02 --- Survey Propagation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.781,
+            0.884,
+            0.88
+          ],
+          "content": "**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al., Science ’02).**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.925,
+            0.29,
+            0.97
+          ],
+          "level": 2,
+          "content": "More expected!"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.117,
+            0.894,
+            0.247
+          ],
+          "level": 2,
+          "content": "A Journey from Random to Structured Instances"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.087,
+            0.327,
+            0.433,
+            0.367
+          ],
+          "level": 2,
+          "content": "I --- Random Instances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.372,
+            0.622,
+            0.411
+          ],
+          "content": "**--- phase transitions and algorithms**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.413,
+            0.633,
+            0.452
+          ],
+          "content": "**--- from physics to computer science**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.088,
+            0.493,
+            0.568,
+            0.533
+          ],
+          "level": 2,
+          "content": "II --- Capturing Problem Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.536,
+            0.712,
+            0.575
+          ],
+          "content": "**--- problem mixtures (tractable / intractable)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.575,
+            0.754,
+            0.614
+          ],
+          "content": "**--- backdoor variables, restarts, and heavy-tails**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.089,
+            0.657,
+            0.454,
+            0.697
+          ],
+          "level": 2,
+          "content": "III --- Beyond Satisfaction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.701,
+            0.683,
+            0.741
+          ],
+          "content": "**--- sampling, counting, and probabilities**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.743,
+            0.406,
+            0.779
+          ],
+          "content": "**--- quantification**"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.08,
+            0.061,
+            0.903,
+            0.129
+          ],
+          "level": 2,
+          "content": "Part II) --- Capturing Problem Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.215,
+            0.79,
+            0.37
+          ],
+          "content": "**Results and algorithms for hard random k-SAT problems have had significant impact on development of practical SAT solvers. However…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.429,
+            0.771,
+            0.525
+          ],
+          "content": "**Next challenge: Dealing with SAT problems with more inherent structure.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.589,
+            0.743,
+            0.635
+          ],
+          "content": "**Topics (with lots of room for further analysis):**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.641,
+            0.727,
+            0.686
+          ],
+          "content": "**A) Mixtures of tractable/intractable stucture**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.695,
+            0.653,
+            0.74
+          ],
+          "content": "**B) Backdoor variables and heavy tails**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.933,
+            0.952
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.071,
+            0.068,
+            0.936,
+            0.145
+          ],
+          "level": 2,
+          "content": "II A) Mixtures: The 2+p-SAT problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.238,
+            0.802,
+            0.42
+          ],
+          "content": "**Motivation: Most real-world computational problems involve some mix of tractable and intractable sub-problems.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.505,
+            0.827,
+            0.557
+          ],
+          "content": "**Study: mixture of binary and ternary clauses**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.224,
+            0.577,
+            0.536,
+            0.628
+          ],
+          "content": "**p = fraction ternary**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.642,
+            0.779,
+            0.695
+          ],
+          "content": "\\mathrm{p} = 0. 0 \\dots 2 \\text {-SAT} / \\mathrm{p} = 1. 0 \\dots 3 \\text {-SAT}",
+          "image_source": "images/page_31_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.783,
+            0.562,
+            0.833
+          ],
+          "content": "**What happens in between?**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.951
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.303,
+            0.673,
+            0.355
+          ],
+          "content": "**Phase transitions (as expected…)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.43,
+            0.733,
+            0.484
+          ],
+          "content": "**Computational properties (surprise…)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.743,
+            0.759,
+            0.782
+          ],
+          "content": "**(Monasson, Zecchina, Kirkpatrick, Selman, Troyansky 1999.)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.183,
+            0.081,
+            0.812,
+            0.153
+          ],
+          "level": 2,
+          "content": "Phase Transition for 2+p-SAT"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.134,
+            0.219,
+            0.853,
+            0.923
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.073,
+                0.93,
+                0.759,
+                0.973
+              ],
+              "content": "We have good approximations for location of thresholds."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_33_chart_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.055,
+            0.843,
+            0.173
+          ],
+          "level": 2,
+          "content": "Computational Cost: 2+p-SAT Tractable substructure can dominate!"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.099,
+            0.227,
+            0.991,
+            0.934
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_34_chart_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.008,
+            0.957,
+            0.365,
+            0.997
+          ],
+          "content": "(Monasson et al. 99; Achlioptas ‘00)"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.268,
+            0.044,
+            0.752,
+            0.12
+          ],
+          "level": 2,
+          "content": "Results for 2+p-SAT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.315,
+            0.881,
+            0.461
+          ],
+          "content": "**p < = 0.4 --- model behaves as 2-SAT search proc. “sees” only binary constraints smooth, continuous phase transition (2**<strong><sup>nd</sup></strong> **order)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.512,
+            0.814,
+            0.607
+          ],
+          "content": "**p > 0.4 --- behaves as 3-SAT (exponential scaling) abrupt, discontinuous transition (1**<strong><sup>st</sup></strong> **order)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.707,
+            0.656,
+            0.752
+          ],
+          "content": "**Note: problem is NP-complete for any p > 0.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.952
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.322,
+            0.066,
+            0.697,
+            0.135
+          ],
+          "level": 2,
+          "content": "Lesson learned"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.215,
+            0.851,
+            0.525
+          ],
+          "content": "**In a worst-case intractable problem --- such as 2+p-SAT --- having a sufficient amount of tractable problem substructure (possibly hidden) can lead to provably poly-time average case behavior.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.097,
+            0.601,
+            0.188,
+            0.649
+          ],
+          "level": 2,
+          "content": "Next:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.664,
+            0.683,
+            0.762
+          ],
+          "content": "**Capturing hidden problem structure. (Gomes et al. 03, 04)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.124,
+            0.047,
+            0.875,
+            0.115
+          ],
+          "level": 2,
+          "content": "II B) --- Backdoors to the real-world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.299,
+            0.888,
+            0.457
+          ],
+          "content": "**Observation: Complete backtrack style search SAT solvers (e.g. DPLL) display a remarkably wide range of run times.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.511,
+            0.835,
+            0.603
+          ],
+          "content": "**Even when repeatedly solving the same problem instance; variable branching is choice randomized.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.655,
+            0.811,
+            0.707
+          ],
+          "content": "**Run time distributions are often “heavy-tailed”.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.762,
+            0.789,
+            0.865
+          ],
+          "content": "**Orders of magnitude difference in run time on different runs.**"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.023,
+            0.916,
+            0.33,
+            0.958
+          ],
+          "content": "(Gomes et al. 1998; 2000)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.952
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.061,
+            0.877,
+            0.125
+          ],
+          "level": 2,
+          "content": "Heavy-tails on structured problems"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.131,
+            0.179,
+            0.998,
+            0.869
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_chart_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.251,
+            0.067,
+            0.767,
+            0.134
+          ],
+          "level": 2,
+          "content": "Randomized Restarts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.211,
+            0.837,
+            0.424
+          ],
+          "content": "**Solution: randomize the backtrack strategy Add noise to the heuristic branching (variable choice) function Cutoff and restart search after a fixed number of backtracks**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.479,
+            0.534,
+            0.524
+          ],
+          "content": "**Provably Eliminates heavy tails**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.575,
+            0.881,
+            0.707
+          ],
+          "content": "**In practice: rapid restarts with low cutoff can dramatically improve performance (Gomes et al. 1998, 1999)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.751,
+            0.804,
+            0.883
+          ],
+          "content": "**Exploited in many current SAT solvers combined with clause learning and non-chronological backtracking. (Chaff etc.)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.149,
+            0.021,
+            0.872,
+            0.095
+          ],
+          "level": 2,
+          "content": "Restarts on Planning Problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.137,
+            0.662,
+            0.293
+          ],
+          "content": "**Consider simple fixed policy: Restart search if run-time is greater than x Order magnitude speedup.**"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.177,
+            0.329,
+            0.791,
+            0.806
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.3,
+                0.817,
+                0.699,
+                0.861
+              ],
+              "content": "Time expended before restart"
+            }
+          ],
+          "image_source": "images/page_40_chart_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.148,
+            0.053,
+            0.867,
+            0.12
+          ],
+          "level": 2,
+          "content": "Sample Results Random Restarts"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.131,
+            0.217,
+            0.908,
+            0.707
+          ],
+          "content": "| Deterministic <sub>R</sub><sup>3</sup> |\n| --- |\n| Logistics Planning 108 mins. 95 sec. Scheduling 14 411 sec 250 sec Scheduling 16 ---(*) 1.4 hours Scheduling 18 ---(*) ~18 hrs Circuit Synthesis 1 ---(*) 165sec. Circuit Synthesis 2 ---(*) 17min. |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.21,
+                0.729,
+                0.582,
+                0.785
+              ],
+              "content": "(\\*) not found after 2 days"
+            }
+          ],
+          "image_source": "images/page_41_table_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.296,
+            0.042,
+            0.722,
+            0.161
+          ],
+          "level": 2,
+          "content": "Formal Model Yielding Heavy-Tailed Behavior"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.182,
+            0.836,
+            0.268
+          ],
+          "content": "**T - the number of leaf nodes visited up to and including the successful node; b - branching factor**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.154,
+            0.343,
+            0.929,
+            0.833
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_42_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.654,
+            0.461,
+            0.935,
+            0.506
+          ],
+          "content": "**(heavy-tailed distribution)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.671,
+            0.585,
+            0.907,
+            0.661
+          ],
+          "content": "**p = probability wrong branching choice.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.753,
+            0.401,
+            0.828
+          ],
+          "content": "**2^k time to recover from k wrong choices.**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.1,
+            0.893,
+            0.184,
+            0.943
+          ],
+          "content": "b = 2",
+          "image_source": "images/page_42_equation_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.201,
+            0.38,
+            0.244
+          ],
+          "content": "**Expected Run Time**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.262,
+            0.469,
+            0.355
+          ],
+          "content": "p \\geq \\frac {1}{b} \\quad E [ T ] \\to \\infty",
+          "image_source": "images/page_43_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.249,
+            0.823,
+            0.295
+          ],
+          "content": "**(infinite expected time)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.348,
+            0.236,
+            0.388
+          ],
+          "content": "**Variance**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.144,
+            0.441,
+            0.482,
+            0.544
+          ],
+          "content": "p > \\frac {1}{b 2} V [ T ] \\to \\infty",
+          "image_source": "images/page_43_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.515,
+            0.444,
+            0.751,
+            0.493
+          ],
+          "content": "**(infinite variance)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.542,
+            0.168,
+            0.581
+          ],
+          "content": "**Tail**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.252,
+            0.607,
+            0.818,
+            0.728
+          ],
+          "content": "p \\geq \\frac {1}{b ^ {2}} P [ T > L ] > C L ^ {\\alpha} \\alpha <   2",
+          "image_source": "images/page_43_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.737,
+            0.701,
+            0.785
+          ],
+          "content": "**(heavy-tailed)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.835,
+            0.873,
+            0.975
+          ],
+          "content": "**Balancing exponential decay in making wrong branching decisions with exponential growth in cost of mistakes. (related to sequential de-coding, Berlekamp et al. 1972)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.924,
+            0.934,
+            0.952
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.177,
+            0.904,
+            0.337
+          ],
+          "content": "**Intuitively: Exponential penalties hidden in backtrack search, consisting of large inconsistent subtrees in the search space.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.391,
+            0.787,
+            0.495
+          ],
+          "content": "**But, for restarts to be effective, you also need short runs.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.611,
+            0.719,
+            0.669
+          ],
+          "content": "**Where do short runs come from?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.256,
+            0.057,
+            0.718,
+            0.169
+          ],
+          "level": 2,
+          "content": "Explaining short runs: Backdoors to tractability"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.116,
+            0.256,
+            0.252,
+            0.299
+          ],
+          "level": 2,
+          "content": "Informally:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.344,
+            0.888,
+            0.476
+          ],
+          "content": "**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.521,
+            0.852,
+            0.65
+          ],
+          "content": "**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.709,
+            0.851,
+            0.789
+          ],
+          "content": "**Backdoors correspond to “clever reasoning shortcuts” in the search space.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.11,
+            0.187,
+            0.59,
+            0.228
+          ],
+          "level": 2,
+          "content": "Backdoors (wrt subsolver A; SAT case):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.263,
+            0.924,
+            0.333
+          ],
+          "content": "Definition 2. [backdoor] A nonempty subset S of the variables is a backdoor for F w.r.t. A if for some as : S → {False, True}, A returns a satisfying assignment of $[ F [ a _ { S } ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.442,
+            0.717,
+            0.484
+          ],
+          "content": "**Strong backdoors (wrt subsolver A; UNSAT case):**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.535,
+            0.925,
+            0.635
+          ],
+          "content": "Definition 3. [strong backdoor] A nonempty subset S of the variables is a strong backdoor for C w.r.t. A if for all as : S → {False,True}, A returns a satisfying assignment or concludes unsatisfiability of $\\hat { F } [ a _ { S } ]$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.087,
+            0.819,
+            0.832,
+            0.894
+          ],
+          "content": "Note: Notion of backdoor is related to but different from constraint-graph based notions such as cutsets. (Dechter 1990; 2000)"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.225,
+            0.041,
+            0.75,
+            0.169
+          ],
+          "level": 2,
+          "content": "Explaining short runs: Backdoors to tractability"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.116,
+            0.256,
+            0.252,
+            0.298
+          ],
+          "level": 2,
+          "content": "Informally:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.344,
+            0.887,
+            0.475
+          ],
+          "content": "**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.521,
+            0.852,
+            0.65
+          ],
+          "content": "**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.709,
+            0.843,
+            0.789
+          ],
+          "content": "**Backdoors correspond to “clever reasoning shorcuts” in the search space.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.052,
+            0.043,
+            0.941,
+            0.112
+          ],
+          "level": 2,
+          "content": "Backdoors can be surprisingly small:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.082,
+            0.27,
+            0.918,
+            0.671
+          ],
+          "content": "| instance | # vars | # clauses | backdoor | fract. |\n| --- | --- | --- | --- | --- |\n| logistics.d | 6783 | 437431 | 12 | 0.0018 |\n| 3bitadd_32 | 8704 | 32316 | 53 | 0.0061 |\n| pipe_01 | 7736 | 26087 | 23 | 0.0030 |\n| qg_30_1 | 1235 | 8523 | 14 | 0.0113 |\n| qg_35_1 | 1597 | 10658 | 15 | 0.0094 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.753,
+            0.912,
+            0.876
+          ],
+          "content": "**Most recent: Other combinatorial domains. E.g. graphplan planning, near constant size backdoors (2 or 3 variables) and log(n) size in certain domains. (Hoffmann, Gomes, Selman ’04)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.913,
+            0.826,
+            0.955
+          ],
+          "content": "**Backdoors capture critical problem resources (bottlenecks).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.138,
+            0.067,
+            0.879,
+            0.137
+          ],
+          "level": 2,
+          "content": "Backdoors --- “seeing is believing”"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.229,
+            0.289,
+            0.725,
+            0.678
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_49_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.671,
+            0.175,
+            0.977,
+            0.355
+          ],
+          "content": "**Constraint graph of reasoning problem. One node per variable: edge between two variables if they share a constraint.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.187,
+            0.787,
+            0.839,
+            0.921
+          ],
+          "content": "**Logistics\\_b.cnf planning formula. 843 vars, 7,301 clauses, approx min backdoor 16 (backdoor set = reasoning shortcut)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.941,
+            0.364,
+            0.979
+          ],
+          "content": "**Visualization by Anand Kapur.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.286,
+            0.155,
+            0.736,
+            0.743
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.057,
+            0.875,
+            0.653,
+            0.919
+          ],
+          "content": "Logistics.b.cnf after setting 5 backdoor vars."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.238,
+            0.141,
+            0.77,
+            0.7
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.843,
+            0.945,
+            0.884
+          ],
+          "content": "**After setting just 12 (out of 800+) backdoor vars – problem almost solved.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.05,
+            0.076,
+            0.237,
+            0.111
+          ],
+          "content": "**Another example**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.335,
+            0.081,
+            0.622,
+            0.786
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.853,
+            0.897,
+            0.933
+          ],
+          "content": "**MAP-6-7.cnf infeasible planning instances. Strong backdoor of size 3. 392 vars, 2,578 clauses.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.339,
+            0.263,
+            0.704,
+            0.695
+          ],
+          "content": "|  |  |\n| --- | --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_table_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.184,
+            0.865,
+            0.773,
+            0.947
+          ],
+          "content": "After setting 2 (out of 392) backdoor vars. --- reducing problem complexity in just a few steps!"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.039,
+            0.077,
+            0.191,
+            0.111
+          ],
+          "content": "Last example."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.293,
+            0.189,
+            0.79,
+            0.697
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.861,
+            0.881,
+            0.938
+          ],
+          "content": "**Inductive inference problem --- ii16a1.cnf. 1650 vars, 19,368 clauses. Backdoor size 40.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.319,
+            0.287,
+            0.775,
+            0.677
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_55_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.852,
+            0.392,
+            0.889
+          ],
+          "content": "**After setting 6 backdoor vars.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.107,
+            0.075,
+            0.46,
+            0.112
+          ],
+          "content": "**Some other intermediate stages:**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.096,
+            0.16,
+            0.458,
+            0.486
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.104,
+                0.575,
+                0.464,
+                0.655
+              ],
+              "content": "After setting 38 (out of 1600+) backdoor vars:"
+            }
+          ],
+          "image_source": "images/page_56_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.71,
+            0.427,
+            0.977
+          ],
+          "content": "**So: Real-world structure hidden in the network. Can be exploited by automated reasoning engines.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.55,
+            0.157,
+            0.898,
+            0.463
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.492,
+            0.576,
+            0.886,
+            0.963
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.283,
+            0.82,
+            0.398
+          ],
+          "content": "**But… we also need to take into account the cost of finding the backdoor!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.458,
+            0.909,
+            0.751
+          ],
+          "content": "**We considered: Generalized Iterative Deepening Randomized Generalized Iterative Deepening Variable and value selection heuristics (as in current solvers)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.841,
+            0.573,
+            0.858,
+            0.713
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.142,
+            0.217,
+            0.229
+          ],
+          "level": 2,
+          "content": "Size backdoor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.635,
+            0.223,
+            0.71
+          ],
+          "content": "n = num. vars. k is a constant"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.068,
+            0.269,
+            0.935,
+            0.561
+          ],
+          "content": "| B(n) | deterministic | randomized | heuristic |\n| --- | --- | --- | --- |\n| n/k | small exp(n) | smaller exp(n) | tiny exp(n) |\n| O(log n) | $\\left( \\frac{n}{\\sqrt{\\log n}} \\right)^{O(\\log n)}$ | $\\left( \\frac{n}{\\log n} \\right)^{O(\\log n)}$ | poly(n) |\n| O(1) | poly(n) | poly(n) | poly(n) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.731,
+            0.902,
+            0.817
+          ],
+          "content": "**Current solvers**"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.108,
+            0.918,
+            0.481,
+            0.957
+          ],
+          "content": "(Williams, Gomes, and Selman ’04)"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.288,
+            0.045,
+            0.712,
+            0.121
+          ],
+          "level": 2,
+          "content": "Dynamic view: Running SAT solver (no backdoor detection)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.251,
+            0.167,
+            0.699,
+            0.766
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.283,
+            0.087,
+            0.718,
+            0.125
+          ],
+          "level": 2,
+          "content": "SAT solver detects backdoor set"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.278,
+            0.231,
+            0.714,
+            0.809
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_60_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.116,
+            0.894,
+            0.247
+          ],
+          "level": 2,
+          "content": "A Journey from Random to Structured Instances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.328,
+            0.685,
+            0.429
+          ],
+          "content": "--- Random Instances **--- phase transitions and algorithms**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.469,
+            0.785,
+            0.615
+          ],
+          "content": "**II --- Capturing Problem Structure --- problem mixtures (tractable / intractable) --- backdoor variables and heavy tails**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.66,
+            0.757,
+            0.801
+          ],
+          "content": "III Beyond Satisfaction sampling, counting, and probabilities quantifiers"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.141,
+            0.065,
+            0.876,
+            0.143
+          ],
+          "level": 2,
+          "content": "Part III) --- Beyond Satisfaction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.203,
+            0.813,
+            0.292
+          ],
+          "content": "**Can we extend SAT/CSP techniques to solve harder counting/sampling problems?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.35,
+            0.874,
+            0.437
+          ],
+          "content": "**Such an extension would lead us to a wide range of new applications.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.476,
+            0.381,
+            0.607
+          ],
+          "content": "**SAT testing**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.63,
+            0.433,
+            0.687
+          ],
+          "content": "**logic inference**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.729,
+            0.436,
+            0.774
+          ],
+          "content": "**NP / co-NP-complete**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.488,
+            0.788,
+            0.545
+          ],
+          "content": "**counting/sampling**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.628,
+            0.912,
+            0.686
+          ],
+          "content": "**probabilistic reasoning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.625,
+            0.719,
+            0.785,
+            0.763
+          ],
+          "content": "**#P-complete**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.798,
+            0.805,
+            0.88
+          ],
+          "content": "**Note: counting solutions and sampling solutions are computationally near equivalent.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.907,
+            0.88,
+            0.947
+          ],
+          "content": "**Related work: Kautz et al. ’04; Bacchus et al. ’03; Darwich ’04 & ’05; Littman ‘03.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.924,
+            0.934,
+            0.952
+          ],
+          "content": "63"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.131,
+            0.027,
+            0.887,
+            0.145
+          ],
+          "level": 2,
+          "content": "Standard Methods for Sampling: Markov Chain Monte Carlo (MCMC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.248,
+            0.84,
+            0.335
+          ],
+          "content": "**Based on setting up a Markov chain with a predefined stationary distribution.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.341,
+            0.463,
+            0.389
+          ],
+          "content": "**E.g. simulated annealing.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.448,
+            0.886,
+            0.536
+          ],
+          "content": "**Draw samples from the stationary distribution by running the Markov chain for a sufficiently long time.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.595,
+            0.848,
+            0.719
+          ],
+          "content": "**Problem: for interesting problems, Markov chain takes exponential time to converge to its stationary distribution.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.815,
+            0.808,
+            0.862
+          ],
+          "content": "**Bottom line: standard MCMC (e.g. SA) too slow.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.934,
+            0.952
+          ],
+          "content": "64"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.355,
+            0.068,
+            0.665,
+            0.139
+          ],
+          "level": 2,
+          "content": "First attempt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.226,
+            0.562,
+            0.269
+          ],
+          "content": "**Use local search style algorithm:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.331,
+            0.855,
+            0.375
+          ],
+          "content": "**Biased random walk = a random walk with greedy bias.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.439,
+            0.847,
+            0.482
+          ],
+          "content": "**Example: WalkSat** (Selman et al, 1993), **effective on SAT.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.546,
+            0.733,
+            0.589
+          ],
+          "content": "**Can we use it to sample from solution space?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.211,
+            0.633,
+            0.763,
+            0.68
+          ],
+          "content": "– Does WalkSat reach all solutions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.211,
+            0.733,
+            0.882,
+            0.783
+          ],
+          "content": "– How uniform/non-uniform is the sampling?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.423,
+            0.859,
+            0.73,
+            0.9
+          ],
+          "content": "**(Wei Wei and Selman ’04)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.926,
+            0.934,
+            0.951
+          ],
+          "content": "65"
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.004,
+            0.043,
+            0.895,
+            0.975
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.12,
+            0.93,
+            0.189
+          ],
+          "level": 2,
+          "content": "Probability Ranges for Different Domains"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.317,
+            0.883,
+            0.734
+          ],
+          "content": "<table><tbody><tr><td rowspan=\"2\">Instance</td><td rowspan=\"2\">Runs</td><td rowspan=\"2\">Hits Rarest</td><td rowspan=\"2\">Hits Common</td><td rowspan=\"2\">Common-to - Rare Ratio</td></tr><tr></tr><tr><td>Random</td><td>50 ´ 10<sup>6</sup></td><td>53</td><td>9 ´ 10<sup>5</sup></td><td>1.7 ´ 10<sup>4</sup></td></tr><tr><td>Logistics</td><td>1 ´ 10<sup>6</sup></td><td>84</td><td>4 ´ 10<sup>3</sup></td><td>50</td></tr><tr><td>Verif.</td><td>1 ´ 10<sup>6</sup></td><td>45</td><td>318</td><td>7</td></tr></tbody></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_table_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.144,
+            0.103,
+            0.947,
+            0.175
+          ],
+          "level": 2,
+          "content": "Improving the Uniformity of Sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.317,
+            0.294,
+            0.357
+          ],
+          "content": "Nonergodic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.372,
+            0.317,
+            0.451,
+            0.357
+          ],
+          "content": "Ergodic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.564,
+            0.317,
+            0.644,
+            0.357
+          ],
+          "content": "Ergodic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.37,
+            0.8,
+            0.409
+          ],
+          "content": "Quickly reach sinks Slow convergence But does not satisfy DBC"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.212,
+            0.408,
+            0.734,
+            0.529
+          ],
+          "content": "\\begin{array}{c c c c} \\Big \\downarrow & \\Big \\downarrow & \\Big \\downarrow \\\\ \\text {WalkSat} & + & \\text {SA} & = \\end{array} \\quad \\text {SampleSat}",
+          "image_source": "images/page_67_equation_5.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.572,
+            0.303,
+            0.621
+          ],
+          "level": 2,
+          "content": "SampleSat:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.631,
+            0.919,
+            0.716
+          ],
+          "content": "**With probability** $p ,$ **the algorithm makes a biased random walk move**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.726,
+            0.93,
+            0.81
+          ],
+          "content": "**With probability** $1 - p ,$ **, the algorithm makes a SA (simulated annealing) move**"
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.141,
+            0.035,
+            0.876,
+            0.165
+          ],
+          "level": 2,
+          "content": "Comparison Between WalkSat and SampleSat"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.102,
+            0.341,
+            0.54,
+            0.869
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_chart_1.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.541,
+            0.342,
+            0.993,
+            0.87
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_chart_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.934,
+            0.951
+          ],
+          "content": "69"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.171,
+            0.045,
+            0.866,
+            0.973
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_69_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.001,
+            0.239,
+            0.198,
+            0.348
+          ],
+          "content": "Note: Uniform sampling within clusters."
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.213,
+            0.057,
+            0.903,
+            0.933
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_chart_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.098,
+            0.169,
+            0.952,
+            0.676
+          ],
+          "content": "| Instance | Runs | Hits Rarest | Hits Common | Common-to - Rare Ratio WalkSat | Ratio SampleSat |\n| --- | --- | --- | --- | --- | --- |\n| Random | 50 ´ 10<sup>6</sup> | 53 | 9 ´ 10<sup>5</sup> | 1.7 ´ 10<sup>4</sup> | 10 |\n| Logistics | 1 ´ 10<sup>6</sup> | 84 | 4 ´ 10<sup>3</sup> | 50 | 17 |\n| Verif. | 1 ´ 10<sup>6</sup> | 45 | 318 | 7 | 4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_71_table_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.855,
+            0.601,
+            0.897
+          ],
+          "content": "Formal results, see Wei Wei and Selman (‘04)."
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.069,
+            0.858,
+            0.206
+          ],
+          "content": "**Verification on Larger formulas - ApproxCount**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.301,
+            0.763,
+            0.405
+          ],
+          "content": "**Small formulas** à **Use solution frequencies. How to verify on large formulas (e.g. 10^25 solns)?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.46,
+            0.741,
+            0.617
+          ],
+          "content": "**A solution sampling procedure can be used to (approximately) count the number of satisfying assignments. (Jerrum and Valiant ’86)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.098,
+            0.793,
+            0.142
+          ],
+          "content": "**Comparison to exact counting (DPLL-style**)."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.098,
+            0.173,
+            0.934,
+            0.431
+          ],
+          "content": "| instance | #variables | Exact count | ApproxCount | Average Error / var |\n| --- | --- | --- | --- | --- |\n| prob004-log-a | 1790 | 2.6 ´ 10<sup>16</sup> | 1.4 ´ 10<sup>16</sup> | 0.03% |\n| wff.3.200.810 | 200 | 3.6 ´ 10<sup>12</sup> | 3.0 ´ 10<sup>12</sup> | 0.09% |\n| dp02s02.shuffled | 319 | 1.5 ´ 10<sup>25</sup> | 1.2 ´ 10<sup>25</sup> | 0.07% |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_73_table_1.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.314,
+            0.533,
+            0.713,
+            0.573
+          ],
+          "level": 2,
+          "content": "Beyond exact model counters"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.106,
+            0.606,
+            0.867,
+            0.855
+          ],
+          "content": "| instance | #variables | #solutions | ApproxCount | Average Error / var |\n| --- | --- | --- | --- | --- |\n| P(30,20) | 600 | 7 ´ 10<sup>25</sup> | 7 ´ 10<sup>24</sup> | 0.4% |\n| P(20,10) | 200 | 7 ´ 10<sup>11</sup> | 2 ´ 10<sup>11</sup> | 0.6% |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_73_table_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.205,
+            0.107,
+            0.811,
+            0.173
+          ],
+          "level": 2,
+          "content": "Summary: Counting & Sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.269,
+            0.842,
+            0.361
+          ],
+          "content": "**Results show potential for modified SAT (CSP?) solvers (local search) for counting / sampling solutions.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.417,
+            0.754,
+            0.502
+          ],
+          "content": "**Can handle solution spaces with 10^25 and more solutions.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.563,
+            0.782,
+            0.653
+          ],
+          "content": "**Range of potential applications: e.g. many forms of probabilistic (Bayesian) reasoning.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.174,
+            0.068,
+            0.842,
+            0.135
+          ],
+          "level": 1,
+          "content": "Part III b) Quantified Reasoning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.168,
+            0.846,
+            0.263
+          ],
+          "content": "**Quantified Boolean Formulas (QBF) extend Boolean logic by allowing quantification over variables (exists and forall)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.297,
+            0.421,
+            0.339
+          ],
+          "content": "**Quantifiers prefix**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.299,
+            0.683,
+            0.337
+          ],
+          "content": "**the clauses**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.16,
+            0.37,
+            0.832,
+            0.436
+          ],
+          "content": "\\exists b _ {0} \\dots \\forall b _ {j + 1} \\dots \\forall b _ {h} \\exists b _ {h + 1} \\dots [ (b _ {0} \\lor \\neg b _ {h}) \\land (\\neg b _ {0} \\lor \\neg b _ {h}) ]",
+          "image_source": "images/page_75_equation_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.039,
+            0.474,
+            0.289,
+            0.512
+          ],
+          "level": 2,
+          "content": "QBF is satisfiable iff"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.519,
+            0.879,
+            0.604
+          ],
+          "content": "**there exists a way of setting the existential vars such that for every possible assigment to the universal vars the clauses are satisfied.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.65,
+            0.535,
+            0.692
+          ],
+          "content": "**Literally a “game played on the clauses”:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.737,
+            0.834,
+            0.779
+          ],
+          "content": "**Existential player tries hard to satisfy all clauses in the matrix.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.826,
+            0.903,
+            0.913
+          ],
+          "content": "**Universal player tries hard to “spoil” it for the existential player: i.e., break (“unsatisfy”) one or more clauses.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.221,
+            0.613,
+            0.268
+          ],
+          "content": "**Formally: Problem is PSPACE- complete.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.327,
+            0.92,
+            0.484
+          ],
+          "content": "**Range of new applications: Multi-agent reasoning, unbounded planning, unbounded model-checking (verification), and certain forms probabilistic reasoning and contingency planning.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.541,
+            0.765,
+            0.586
+          ],
+          "content": "**Can we transfer successful SAT techniques to QBF?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.651,
+            0.828,
+            0.743
+          ],
+          "content": "**Cautiously optimistic. But very sensitive to problem encodings. (Antsotegui, Gomes, and Selman ’05)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.907,
+            0.897,
+            0.981
+          ],
+          "content": "**Related work: Walsh ’03; Gent, Nightingale, and Stergiou ’05; Pan & Vardi 04; Giunchiglia et al. 04; Malik 04; and Williams ’05.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.235,
+            0.067,
+            0.781,
+            0.131
+          ],
+          "level": 2,
+          "content": "The Achilles’ Heel of QBF"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.163,
+            0.768,
+            0.211
+          ],
+          "content": "**QBF is much more sensitive to problem encoding.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.252,
+            0.899,
+            0.387
+          ],
+          "content": "**SAT/QBF encodings require auxiliary variables. These variables significantly increase the raw combinatorial search space.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.431,
+            0.838,
+            0.522
+          ],
+          "content": "**Not an issue for SAT: Propagation forces search to stay within combinatorial space of original task.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.563,
+            0.768,
+            0.745
+          ],
+          "content": "**Not so for QBF! Universal player pushes to violate domain constraints (trying to violate one or more clauses). Search leads quickly outside of search space of original problems.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.785,
+            0.685,
+            0.833
+          ],
+          "content": "**Unless, encodings are carefully engineered.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.047,
+            0.823,
+            0.107
+          ],
+          "level": 2,
+          "content": "Search Space for SAT Approaches"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.274,
+            0.251,
+            0.758,
+            0.962
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_78_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.604,
+            0.001,
+            0.998,
+            0.074
+          ],
+          "content": "Search Space of QBF"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.001,
+            1.0,
+            0.999
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_79_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.415,
+            0.053,
+            0.603,
+            0.115
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.156,
+            0.825,
+            0.251
+          ],
+          "content": "**We journeyed from random to structured combinatorial reasoning problems.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.295,
+            0.596,
+            0.384
+          ],
+          "content": "**Path from 100 var instances (early 90’s) to 1,000,000 var instances (current).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.427,
+            0.345,
+            0.47
+          ],
+          "content": "**Still moving forward!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.517,
+            0.82,
+            0.649
+          ],
+          "content": "**Random instances: --- linear time algs. approaching phase transition. --- physics methods for computer science**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.693,
+            0.785,
+            0.779
+          ],
+          "content": "**Structure: --- mixture tractable / intractable (2+P-SAT) --- backdoor sets, randomization, and restarts.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.823,
+            0.797,
+            0.911
+          ],
+          "content": "**Beyond satisfaction: Potential for sampling, counting, and quantification.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.096,
+            0.892,
+            0.14
+          ],
+          "content": "**Overall, significant progress in reasoning technology in last decade.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.179,
+            0.931,
+            0.299
+          ],
+          "content": "**Research provides an active interplay between algorithm design, analysis, and experimenation; between computer scientists, physicists, and mathematicians.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.367,
+            0.894,
+            0.449
+          ],
+          "content": "**Emerging Application Strategy: Automated reasoning tools as a true “cognitive assistant”.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.473,
+            0.94,
+            0.559
+          ],
+          "content": "**E.g., In hardware design (IBM), portfolio of reasoning engines running in parallel providing real-time feedback to hardware designers and testers**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.595,
+            0.902,
+            0.731
+          ],
+          "content": "**The human design creativity is complemented with automated validation and feedback, which enables the analysis of subtle interactions in large-scale complex artifacts.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.806,
+            0.884,
+            0.861
+          ],
+          "content": "**Realizing the dream of “automated reasoning”.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.939,
+            0.266,
+            0.977
+          ],
+          "content": "**Thanks to Carla!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.372,
+            0.417,
+            0.7,
+            0.498
+          ],
+          "level": 2,
+          "content": "The end. LJ"
+        }
+      ]
+    },
+    {
+      "page_idx": 83,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.283,
+            0.071,
+            0.768,
+            0.147
+          ],
+          "level": 2,
+          "content": "D) Lessons Learned"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.059,
+            0.279,
+            0.249,
+            0.315
+          ],
+          "level": 2,
+          "content": "General theme:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.323,
+            0.882,
+            0.452
+          ],
+          "content": "**2+p-SAT results & rapid restart strategies suggest that hidden tractable sub-structure in formulas can dramatically reduce overall complexity.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.059,
+            0.499,
+            0.315,
+            0.537
+          ],
+          "level": 2,
+          "content": "Current SAT solvers:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.585,
+            0.888,
+            0.674
+          ],
+          "content": "**Carefully balance cost of search for hidden special structure (e.g. 2-SAT, Horn etc.) and cost of unrestricted search.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.952
+          ],
+          "content": "84"
+        }
+      ]
+    },
+    {
+      "page_idx": 84,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.198,
+            0.899,
+            0.593
+          ],
+          "content": "**Strategies: 1) Discovering structure / Clause learning --- clauses are implied (“lemmas”) challenge: find the right ones. a) Chaff solver: store lots of them (millions) and use clever indexing. b) Random walk procedures: store only long range dependencies.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.637,
+            0.756,
+            0.735
+          ],
+          "content": "**2) Use randomization, restarts and heuristics to find “backdoor variables”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.785,
+            0.769,
+            0.932
+          ],
+          "content": "**3) Learn new concepts (new variables) --- very challenging in general domains. (for SATPlan, Huang, Kautz, and Selman 1999)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.934,
+            0.952
+          ],
+          "content": "85"
+        }
+      ]
+    },
+    {
+      "page_idx": 85,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.193,
+            0.038,
+            0.826,
+            0.169
+          ],
+          "level": 2,
+          "content": "1.) Example of adding derived dependencies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.257,
+            0.579,
+            0.311
+          ],
+          "content": "**Random walk (RW) procedure:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.322,
+            0.671,
+            0.377
+          ],
+          "content": "**1) Pick random truth assignment.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.387,
+            0.968,
+            0.491
+          ],
+          "content": "**2) Repeat until all clauses are satisfied: Flip random variable from unsatisfied clause.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.563,
+            0.817,
+            0.618
+          ],
+          "content": "**Solves 2SAT in O(n^2) flips. (Papadimitriou 1992)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.679,
+            0.56,
+            0.737
+          ],
+          "content": "**Why? Very elegant argument.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 86,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.068,
+            0.185,
+            0.891,
+            0.507
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_86_chart_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.531,
+            0.77,
+            0.655
+          ],
+          "content": "**We have an unbiased random walk with a reflecting (max Hamming distance) and an absorbing barrier (satisfying assignment) at distance 0.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.69,
+            0.646,
+            0.733
+          ],
+          "content": "**We start at a Hamming distance of approx. ½ N.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.771,
+            0.821,
+            0.857
+          ],
+          "content": "**Property of unbiased random walks: after n^2 flips, with high probability, we will hit the origin (the satisfying assignment).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.889,
+            0.759,
+            0.934
+          ],
+          "content": "**So, O(n^2) randomized algorithm (worst-case!) for 2-SAT.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.934,
+            0.952
+          ],
+          "content": "87"
+        }
+      ]
+    },
+    {
+      "page_idx": 87,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.259,
+            0.698,
+            0.349
+          ],
+          "content": "**Unfortunately, does not work for k-SAT with k>= 3.** L"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.404,
+            0.832,
+            0.625
+          ],
+          "content": "**Still, Schoening (1999) shows that for 3-SAT, Rapid Random Restarts of RW of 3N steps, gives an improved exponential time algorithm. O(1.334^N) vs. O(2^n) for the obvious search strategy. Best known worst-case bound for 3-SAT (some recent improvements).**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.925,
+            0.934,
+            0.952
+          ],
+          "content": "88"
+        }
+      ]
+    },
+    {
+      "page_idx": 88,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.174,
+            0.061,
+            0.845,
+            0.119
+          ],
+          "content": "Can we make RW practical for SAT?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.241,
+            0.677,
+            0.287
+          ],
+          "content": "**Yes. Use a biased random walk procedure**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.366,
+            0.869,
+            0.417
+          ],
+          "content": "**WalkSat Procedure (Selman, Kautz, and Cohen 1993)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.493,
+            0.653,
+            0.538
+          ],
+          "content": "**Repeatedly select an unsatisfied clause:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.552,
+            0.873,
+            0.646
+          ],
+          "content": "**1) With probability p, flip a randomly selected variable in clause (i.e. the “usual”).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.659,
+            0.915,
+            0.815
+          ],
+          "content": "**2) With probability 1-p, flip greedily, i.e. flip variable in clause that yields greatest number of satisfied clauses (I.e., we introduce greedy bias).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 89,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.22,
+            0.053,
+            0.848,
+            0.155
+          ],
+          "level": 2,
+          "content": "First, bringing out the worst in random walks… (2-SAT)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.174,
+            0.213,
+            0.542,
+            0.627
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_89_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.555,
+            0.249,
+            0.865,
+            0.627
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.113,
+                0.682,
+                0.907,
+                0.755
+              ],
+              "content": "Theorem 1. The RW procedure takes $\\mathcal { O } ( N ^ { 2 } )$ to ind a satisfying assignment of $F _ { 2 c h a i n }$"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_89_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.839,
+            0.808,
+            0.881
+          ],
+          "content": "Note: Only 2 satisfying assignments, all False and all True."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.951
+          ],
+          "content": "90"
+        }
+      ]
+    },
+    {
+      "page_idx": 90,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.25,
+            0.224,
+            0.752,
+            0.768
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_90_chart_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.809,
+            0.913,
+            0.901
+          ],
+          "content": "**Adding redundant clauses / constraints, reduces run time of Walksat from N^2 down to N^1.1 (empirical).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.919,
+            0.859,
+            0.965
+          ],
+          "content": "**Derived clauses capture long range dependencies.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.909,
+            0.923,
+            0.933,
+            0.953
+          ],
+          "content": "91"
+        }
+      ]
+    },
+    {
+      "page_idx": 91,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.138,
+            0.075,
+            0.857,
+            0.119
+          ],
+          "content": "What about 3-SAT? Again, consider “chain” formulas."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.061,
+            0.228,
+            0.947,
+            0.893
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_91_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.935,
+            0.951
+          ],
+          "content": "92"
+        }
+      ]
+    },
+    {
+      "page_idx": 92,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.243,
+            0.891,
+            0.341
+          ],
+          "content": "Theorem 2. Given a ternary chain formula $F _ { 3 c h a i n , i - 2 } ,$ starting at a random assignment s, the expected value of $f ( s )$ , the number of flips to reach a satisfying truth assignment, scales exponentially in n."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.359,
+            0.892,
+            0.455
+          ],
+          "content": "Theorem 3. Given a ternary chain formula $F _ { 3 c h a i n , l o w ( i ) }$ and let s be an arbitrary truth assignment, we have for the expected number of flips for the RW procedure:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.47,
+            0.593,
+            0.508
+          ],
+          "content": "0 $\\mathbf { E } ( f ( s ) ) = O ( n \\cdot n ^ { \\log n } ) , \\quad { \\it f o r ~ l o w ( i ) = \\lfloor \\frac { i } { 2 } \\rfloor }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.507,
+            0.651,
+            0.545
+          ],
+          "content": "$\\mathbf { E } ( f ( s ) ) = O ( n ^ { 2 } \\cdot ( \\operatorname { l o g } n ) ^ { 2 } )$ $\\mathit { l o w } ( i ) = \\lfloor \\log i \\rfloor$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.608,
+            0.866,
+            0.697
+          ],
+          "content": "**Note: Thm. 2. Exponential behavior of RW. Not surprising perhaps.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.741,
+            0.852,
+            0.832
+          ],
+          "content": "**But, Thm. 3, with longer range dependencies in formula, we get poly and quasi-poly behavior!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.875,
+            0.875,
+            0.919
+          ],
+          "content": "**First, tractable class of 3-SAT problems for Random Walk.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.925,
+            0.933,
+            0.951
+          ],
+          "content": "93"
+        }
+      ]
+    },
+    {
+      "page_idx": 93,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.221,
+            0.9,
+            0.313
+          ],
+          "content": "**Results suggest: Adding implied long range dependencies can significantly speed up RW and Walksat style procedures.**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.133,
+            0.411,
+            0.904,
+            0.67
+          ],
+          "content": "| Formulas | &lt; 40 sec | &lt; 400 sec | &lt; 4000 sec |\n| --- | --- | --- | --- |\n| $\\alpha = 0.0$ | 15 | 26 | 42 |\n| $\\alpha = 0.2$ | 85 | 98 | 100 |\n| $\\alpha = 1.0$ | 13 | 33 | 64 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_93_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.763,
+            0.75,
+            0.853
+          ],
+          "content": "**Formulas from hardware verification benchmark (Bryant and Velev 2001)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.897,
+            0.448,
+            0.942
+          ],
+          "content": "**\\alpha is redundancy rate**"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.526,
+            0.918,
+            0.8,
+            0.957
+          ],
+          "content": "(Wei Wei and Selman ’02)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.91,
+            0.924,
+            0.935,
+            0.952
+          ],
+          "content": "94"
+        }
+      ]
+    },
+    {
+      "page_idx": 94,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.384,
+            0.072,
+            0.592,
+            0.135
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.27,
+            0.85,
+            0.429
+          ],
+          "content": "**During the past few years, we have obtained a much better understanding of the nature of computationally hard problems (“phase transitions”)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.483,
+            0.882,
+            0.695
+          ],
+          "content": "**Rich interactions between statistical physics, computer science and mathematics, and between theory, experiments, and applications.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 95,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.319,
+            0.071,
+            0.655,
+            0.138
+          ],
+          "level": 2,
+          "content": "Summary, cont."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.095,
+            0.228,
+            0.949,
+            0.995
+          ],
+          "sub_type": "code",
+          "content": "```txt\nClear algorithmic progress (SAT solvers) ---\n1 million vars & 5 million clauses\nStill discovering new applications!\nStrategies for exploiting hidden structure:\nrestarts (“hunting for backdoors”)\nadding long range dependencies (speeds up random walks)\nclause learning\nadd new variables / concepts --- an open challenge\nOther directions:\nmodel counting / sampling\nQBF\nSurvey propagation / Belief propagation methods\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 96,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.144,
+            0.231,
+            0.894,
+            0.887
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_96_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 97,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.09,
+            0.001,
+            0.864,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_97_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 98,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.09,
+            0.0,
+            0.893,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_98_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 99,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.09,
+            0.0,
+            0.893,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_99_chart_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 100,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.223,
+            0.864,
+            0.317
+          ],
+          "content": "**Refines (completes?) our understanding of combinatorial search space in random k-SAT.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.324,
+            0.829,
+            0.461
+          ],
+          "content": "**In particular, p<= 0.4, solutions are clustered together at the bottom of the bowl-shaped energy landscape.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.467,
+            0.84,
+            0.562
+          ],
+          "content": "**GSAT / zero temperature annealing can reach solutions easily (poly time).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.569,
+            0.852,
+            0.749
+          ],
+          "content": "**Above p>0.4, critical (backbone) variables emerge. Solution space breaks up into small clusters (exponentially many) with diameter small compared to inter-cluster diameter.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.757,
+            0.889,
+            0.887
+          ],
+          "content": "**Solution: use cavity field method from statistical physics. (Mezard et al. Science, 2002. Achlioptas et. al.; Gomes & Selman, Nature ’05.)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.925,
+            0.933,
+            0.952
+          ],
+          "content": "101"
+        }
+      ]
+    },
+    {
+      "page_idx": 101,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.115,
+            0.04,
+            0.891,
+            0.107
+          ],
+          "level": 2,
+          "content": "Physics contributing to computation"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.16,
+            0.518,
+            0.21
+          ],
+          "level": 2,
+          "content": "80’s --- Simulated annealing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.221,
+            0.945,
+            0.267
+          ],
+          "content": "**General combinatorial search technique, inspired by physics.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.28,
+            0.386,
+            0.32
+          ],
+          "content": "**(Kirkpatric, Science ’83)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.071,
+            0.375,
+            0.901,
+            0.426
+          ],
+          "level": 2,
+          "content": "90’s --- Phase transitions in computational systems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.433,
+            0.921,
+            0.534
+          ],
+          "content": "**Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.545,
+            0.839,
+            0.587
+          ],
+          "content": "**(Kirkpatrick and Selman, Science ’94; Monasson et al. Nature ’99.)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.646,
+            0.493,
+            0.699
+          ],
+          "level": 2,
+          "content": "’02 --- Survey Propagation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.715,
+            0.884,
+            0.819
+          ],
+          "content": "**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al., Science ’02).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.873,
+            0.29,
+            0.918
+          ],
+          "content": "**More expected!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 102,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.225,
+            0.04,
+            0.75,
+            0.17
+          ],
+          "level": 2,
+          "content": "Explaining short runs: Backdoors to tractability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.255,
+            0.252,
+            0.299
+          ],
+          "content": "**Informally:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.344,
+            0.887,
+            0.476
+          ],
+          "content": "**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.52,
+            0.852,
+            0.65
+          ],
+          "content": "**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.709,
+            0.843,
+            0.789
+          ],
+          "content": "**Backdoors correspond to “clever reasoning shorcuts” in the search space.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.854,
+            0.677,
+            0.965
+          ],
+          "content": "**Note: Notion of backdoor is related to but different from constraint-graph based notions such as cutsets. (Dechter 1990; 2000)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 103,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.182,
+            0.057,
+            0.778,
+            0.141
+          ],
+          "level": 2,
+          "content": "Decay of Distributions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.228,
+            0.702,
+            0.286
+          ],
+          "content": "**Standard --- Exponential Decay**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.304,
+            0.413,
+            0.36
+          ],
+          "content": "**e.g. Normal:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.388,
+            0.883,
+            0.457
+          ],
+          "content": "\\Pr [ X > x ] \\approx C e ^ {- x ^ {2}}, \\text {for some} C > 0, x > 1",
+          "image_source": "images/page_103_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.579,
+            0.753,
+            0.64
+          ],
+          "content": "**Heavy-Tailed --- Power Law Decay**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.657,
+            0.506,
+            0.714
+          ],
+          "content": "**e.g. Pareto-Levy:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.212,
+            0.741,
+            0.632,
+            0.801
+          ],
+          "content": "\\Pr [ X > x ] = C x ^ {- \\alpha}, x > 0",
+          "image_source": "images/page_103_equation_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.925,
+            0.935,
+            0.952
+          ],
+          "content": "104"
+        }
+      ]
+    },
+    {
+      "page_idx": 104,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.245,
+            0.032,
+            0.784,
+            0.136
+          ],
+          "level": 2,
+          "content": "Real-World Reasoning Tackling inherent computational complexity"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.008,
+            0.993,
+            0.08
+          ],
+          "content": "DARPA Research Program"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.015,
+            0.183,
+            0.997,
+            0.945
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.022,
+                0.949,
+                0.627,
+                0.983
+              ],
+              "content": "Example domains cast in propositional reasoning system (variables, rules)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_104_chart_2.jpg"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "CS6700-05-SAT_physics_structure_update_v3",
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.13.1 Quartz PDFContext",
+      "page_count": 105,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 83,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 84,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 85,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 86,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 87,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 88,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 89,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 90,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 91,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 92,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 93,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 94,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 95,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 96,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 97,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 98,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 99,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 100,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 101,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 102,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 103,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 104,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

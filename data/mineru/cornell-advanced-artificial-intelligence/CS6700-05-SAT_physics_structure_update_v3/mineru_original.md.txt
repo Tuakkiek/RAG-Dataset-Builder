@@ -1,0 +1,1040 @@
+# The Next Generation of Automated Reasoning Methods
+
+**Bart Selman Cornell University**
+
+**Joint work with Carla Gomes.**
+
+## The Quest for Machine Reasoning
+
+**Objective:**
+
+**Develop foundations, technology, and tools to enable effective practical machine reasoning.**
+
+**Machine Reasoning (1960-90s)**
+
+![](images/page_1_image_4.jpg)
+
+**Computational complexity of reasoning appears to severly limit real-world applications.**
+
+**Current reasoning technology**
+
+**Revisiting the challenge: Significant progress with new ideas / tools for dealing with complexity (scale-up), uncertainty, and multi-agent reasoning.**
+
+## Fundamental challenge: Combinatorial Search Spaces
+
+**Significant progress in the last decade.**
+
+## How much?
+
+## For propositional reasoning:
+
+**-- We went from 100 variables, 200 clauses (early 90’s) to 1,000,000 vars. and 5,000,000 constraints in 10 years. Search space: from 10^30 to 10^300,000.**
+
+**-- Applications: Hardware and Software Verification, Test pattern generation, Planning, Protocol Design, Routers, Timetabling, E-Commerce (combinatorial auctions), etc.**
+
+**How can deal with such large combinatorial spaces and still do a decent job?**
+
+**I’ll discuss recent formal insights into combinatorial search spaces and their practical implications that makes searching such ultra-large spaces possible.**
+
+**Brings together ideas from physics of disordered systems (spin glasses), combinatorics of random structures, and algorithms.**
+
+**But first, what is BIG?**
+
+# What is BIG?
+
+## Consider a real-world Boolean Satisfiability (SAT) problem
+
+The instance bmc-ibm-6.cnf, IBM LSU 1997:
+
+<table><tr><td>p cnf !</td><td></td></tr><tr><td>-1 7 0</td><td>I.e., ((not x_1) or x_7)</td></tr><tr><td>-1 6 0</td><td>((not x_1) or x_6)</td></tr><tr><td>-1 5 0</td><td>etc.</td></tr><tr><td>-1 -4 0</td><td></td></tr><tr><td>-1 3 0</td><td></td></tr><tr><td>-1 2 0</td><td rowspan="4">x_1, x_2, x_3, etc. our Boolean variables (set to True or False)</td></tr><tr><td>-1 -8 0</td></tr><tr><td>-9 15 0</td></tr><tr><td>-9 14 0</td></tr><tr><td>-9 13 0</td><td rowspan="7">Set x_1 to False ??</td></tr><tr><td>-9 -12 0</td></tr><tr><td>-9 11 0</td></tr><tr><td>-9 10 0</td></tr><tr><td>-9 -16 0</td></tr><tr><td>-17 23 0</td></tr><tr><td>-17 22 0</td></tr></table>
+
+## 10 pages later:
+
+185-9 0 185-1 0 177 169 161 153 145 137 129 121 113 105 97 89 81 73 65 57 49 41 33 25 17 9 1 -185 0 186-187 0 186-188 0
+
+**I.e., (x\_177 or x\_169 or x\_161 or x\_153 … x\_33 or x\_25 or x\_17 or x\_9 or x\_1 or (not x\_185))**
+
+**clauses / constraints are getting more interesting…**
+
+**Note x\_1 …**
+
+## 4000 pages later:
+
+| 10236 -10050 0 |
+| --- |
+| 10236 -10051 0 |
+| 10236 -10235 0 |
+| 10008 10009 10010 10011 10012 10013 10014 |
+| 10015 10016 10017 10018 10019 10020 10021 |
+| 10022 10023 10024 10025 10026 10027 10028 |
+| 10029 10030 10031 10032 10033 10034 10035 |
+| 10036 10037 10086 10087 10088 10089 10090 |
+| 10091 10092 10093 10094 10095 10096 10097 |
+| 10098 10099 10100 10101 10102 10103 10104 |
+| 10105 10106 10107 10108 -55 -54 53 -52 -51 50 |
+| 10047 10048 10049 10050 10051 10235 -10236 0 |
+| 10237 -10008 0 |
+| 10237 -10009 0 |
+| 10237 -10010 0 |
+
+## Finally, 15,000 pages later:
+
+```shell
+-7 260 0
+7 -260 0
+1072 1070 0
+-15 -14 -13 -12 -11 -10 0
+-15 -14 -13 -12 -11 10 0
+-15 -14 -13 -12 11 -10 0
+-15 -14 -13 -12 11 10 0
+-7 -6 -5 -4 -3 -2 0
+-7 -6 -5 -4 -3 2 0
+-7 -6 -5 -4 3 -2 0
+-7 -6 -5 -4 3 2 0
+185 0
+```
+
+**Combinatorial search space of truth assignments:**
+
+**HOW?**
+
+250000 ≈ 3.160699437 · 1015051
+
+**Current SAT solvers solve this instance in approx. 1 minute!**
+
+## Progress SAT Solvers
+
+| Instance | Posit' 94 | Grasp' 96 | Sato' 98 | Chaff' 01 |
+| --- | --- | --- | --- | --- |
+| ssa2670-136 | 40,66s | 1,2s | 0,95s | 0,02s |
+| bf1355-638 | 1805,21s | 0,11s | 0,04s | 0,01s |
+| pret150_25 | >3000s | 0,21s | 0,09s | 0,01s |
+| dubois100 | >3000s | 11,85s | 0,08s | 0,01s |
+| aim200-2_0-no-1 | >3000s | 0,01s | 0s | 0s |
+| 2dlx_..._bug005 | >3000s | >3000s | >3000s | 2,9s |
+| c6288 | >3000s | >3000s | >3000s | >3000s |
+
+Source: Marques Silva 2002
+
+# From academically interesting to practically relevant.
+
+**We now have regular SAT solver competitions. Germany ’89, Dimacs ’93, China ’96, SAT-02, SAT-03, SAT-04, SAT05.**
+
+**E.g. at SAT-2004 (Vancouver, May 04):**
+
+**--- 35+ solvers submitted**
+
+**--- 500+ industrial benchmarks**
+
+**--- 50,000+ instances available on the WWW.**
+
+## Real-World Reasoning Tackling inherent computational complexity
+
+![](images/page_10_chart_2.jpg)
+
+Example domains cast in propositional reasoning system (variables, rules).
+
+## A Journey from Random to Structured Instances
+
+**I --- Random Instances**
+
+**--- phase transitions and algorithms**
+
+**--- from physics to computer science**
+
+## II --- Capturing Problem Structure
+
+**--- problem mixtures (tractable / intractable)**
+
+**--- backdoor variables, restarts, and heavy tails**
+
+## III --- Beyond Satisfaction
+
+**--- sampling, counting, and probabilities**
+
+**--- quantification**
+
+## Part I) ---- Random Instances
+
+**Easy-Hard-Easy patterns (computational) and SAT/UNSAT phase transitions (“structural”).**
+
+**Their study provides an interplay of work from statistical physics, computer science, and combinatorics.**
+
+**We’ll briefly consider “The State of Random 3-SAT”.**
+
+**(“phase transitions in computational problems”; also CAM ’04 talk by Jennifer Chayes)**
+
+![](images/page_13_chart_0.jpg)
+
+Mitchell, Selman, and Levesque ’92
+
+## Linear time results --- Random 3-SAT
+
+**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**
+
+**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**
+
+**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**
+
+**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**
+
+**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**
+
+## Linear time results --- Random 3-SAT
+
+**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**
+
+**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**
+
+**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**
+
+**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**
+
+**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**
+
+## Linear time results --- Random 3-SAT
+
+**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**
+
+**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**
+
+**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**
+
+**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**
+
+**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**
+
+## Linear time results --- Random 3-SAT
+
+**Random walk up to ratio 1.36 (Alekhnovich and Ben Sasson 03). empirically up to 2.5**
+
+**Davis Putnam (DP) up to 3.42 (Kaporis et al. ’02) empirically up to 3.6 exponential, ratio 4.0 and up (Achlioptas and Beame ’02) approx. 400 vars at phase transition**
+
+**Walksat up till ratio 4.1 (empirical, Selman et al. ’93) approx. 100,000 vars at phase transition**
+
+**Survey propagation (SP) up till 4.2 (empirical, Mezard, Parisi, Zecchina ’02) approx. 1,000,000 vars near phase transition**
+
+**Unsat phase: little algorithmic progress. Exponential resolution lower-bound (Chvatal and Szemeredi 1988)**
+
+![](images/page_18_image_0.jpg)
+
+## More details on how to derive 5.19 point
+
+Calculate the expected number of satisfying assignments given a set of M random clauses on N vars.
+
+Total num possible assignments is 2^N.
+
+Let S\_i be an indicator variable for truth assignment i. That is, a random 0/1 variable, s.t., S i = 1 iff i^th assignment satisfies the M random clauses (= 0 otherwise)
+
+A random assignment satisfies 1 clause with with probability . A random assignment satisfies M random clauses (independently generated) with probability (/)^M.
+
+```txt
+We need to calculate
+
+E[#satisfying_assignments]
+= E[S_1 + S_2 + S_3 + ... + S_2^N]
+= E[\sum_all_assigns S_i]
+= \sum_all_assigns E[S_i])          % by linearity of expectation
+= \sum_all_assigns (7/8)^M         % 7/8^M is prob. S_i = 1 for i^th assign after M clauses
+= 2^N . (7/8)^M                   % sum over 2^N assignments
+
+Note: "Competition" between 2^N and (7/8)^M.
+
+Now, we want to know, when N → \inf, for what ratio of M/N does
+E[#satisfying assignments] go to 0?
+```
+
+```txt
+Q 2 * (7/8)^5.19
+Q 2 * (7/8)^5.19 - Google Search
+= 1.00011926
+2 * ((7 / 8)^5.2) =
+0.99878467801
+```
+
+Now, we want to know, when N → \inf, for what ratio of M/N does E[#satisfying assignments] go to 0?
+
+Consider what 2^N (/)^M looks like with M/N = 5.19 and N ---> \inf. Let M = 5.19 N. We get 2^N (7s)^(5.19 N) = (2 . (7)^5.19)^N \approx 1.00011926^N.
+
+Also, M = 5.0 N. We get 0.99878^N. Goes to 0.0! No solutions in expectation!!!!
+
+So, if we take slightly more clauses over 5.19 ratio, base tips below 1.0 and with N to \infinity, total goes to 0. I.e., Prob(#assign = 0) → 1.0. Formulas become unsat at transition point when
+
+Aside: Why is real threshold point lower? “Correlations."But better explanation is “solution clustering."Discuss details.
+
+Aside: linearity of expectation (the key tool in most CS probabilistic arguments!) is surprisingly powerful but also remains quite counterintuitive. It applies to any sum of r.v.'s even is they are fully correlated. E.g., two dice that are connected by an invisible wire that forces them to always show both the same number. Of course, watching just one die, you will see ½ chance of each number but you will only see 1-1, 2-2, 3-3, 4-4, 5-5, 6-6 and never 1-2 etc. The expected value of the sum is still E[X + Y] = E[X] + E[Y] = 2 E[X] = 2 Expected\_value\_of\_die $| \mathrm{roll} | = \% (1 + 2 + 3 + 4 + 5 + 6) = \% \times 21 = 3.5.5 \mathrm{So}$ E[X + Y] = 7, no matter how the die rolls are correlated to each other! (Imagine both dice come up with same value always... 1,1 or 2,2, ... or 6,6. In expectation we still get 3.5. Still works!)
+
+## Exact Location of Threshold
+
+```txt
+Surprisingly challenging problem ...
+Current rigorously proved results:
+3SAT threshold lies between 3.42 and 4.506.
+Motwani et al. 1994; Broder et al. 1992;
+Frieze and Suen 1996; Dubois 1990, 1997;
+Kirousis et al. 1995; Friedgut 1997;
+Archlioptas et al. 1999;
+Beame, Karp, Pitassi, and Saks 1998;
+Impagliazzo and Paturi 1999; Bollobas,
+Borgs, Chayes, Han Kim, and
+Wilson 1999; Achlioptas, Beame and
+Molloy 2001; Frieze 2001; Zecchina et al. 2002;
+Kirousis et al. 2004; Gomes and Selman, Nature '05;
+Achlioptas et al. Nature '05; and ongoing...
+Empirical: 4.25 --- Mitchell, Selman, and Levesque '92, Crawford '93.
+```
+
+## From Physics to Computer Science
+
+**Exploits correspondence between SAT and physical systems with many interacting particles.**
+
+![](images/page_24_image_2.jpg)
+
+e.g.spin xi and $x j$ want to align :
+
+$$
+(x _ {i} \lor \neg x _ {j}) \land (\neg x _ {i} \lor x _ {j})
+$$
+
+**Satisfied iff [(x\_i = 1 and x\_j =1) OR (x\_i =0 and x\_j=0)]**
+
+Basic model for magnetism: The Ising model (Ising ’24). Spins are “trying to align themselves”. But system can be “frustrated” some pairs want to align; some want to point in the opposite direction of each other.
+
+**We can now assign a probability distribution over the assignments/ states --- the Boltzmann distribution:**
+
+$$
+\text {Prob} (\mathrm{S}) = 1 / \mathrm{Z} * \exp (- \mathrm{E} (\mathrm{S}) / \mathrm{kT})
+$$
+
+**where,**
+
+```txt
+E is the “energy” = # unsatisfied constraints, T is the “temperature” a control parameter, k is the Boltzmann constant, and Z is the “partition function” (normalizes).
+```
+
+**Distribution has a physical interpretation (captures thermodynamic equilibrium) but, for us, key property:**
+
+**With T** à **0, only minimum energy states have non-zero probability. So, by taking T** à **0, we can find properties of the satisfying assignments of the SAT problem.**
+
+In fact, partition function Z, contains all necessary information.
+
+$$
+Z = \sum \exp (- E (S) / k T)
+$$
+
+sum is over all $2 ^ { N }$ possible states / (truth) assignments.
+
+**Are we really making progress here?? Sum over an exponential number of terms,** $2 ^ { N }$ **.**.. in physics, $N \sim 1 0 ^ { 2 3 }$
+
+**Fortunately, physicists have been studying “Z” for 100+ years. (Feynman Lectures: “Statistical physics = study of Z”.)**
+
+**They have developed a powerful set of analytical tools to calculate / approximate Z : e.g. mean field approximations, Monte Carlo methods, matrix transfer methods, renormalization techniques, replica methods and cavity methods.**
+
+## Physics contributing to computation
+
+**80’s --- Simulated annealing General combinatorial search technique, inspired by physics. (Kirkpatrick ’83)**
+
+**90’s --- Phase transitions in computational systems Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems. Cheeseman et al. ’91; Mitchell et al. ’92; Explicit connection to physics: Kirkpatrick and Selman ’94 (finite-size scaling); Monasson et al.’99. (order phase transition))**
+
+## ’02 --- Survey Propagation
+
+**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al. ’02).**
+
+## More expected!
+
+## Physics contributing to computation
+
+**80’s --- Simulated annealing General combinatorial search technique, inspired by physics. (Kirkpatrick et al., Science ’83)**
+
+**90’s --- Phase transitions in computational systems Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems. (Cheeseman et al. ’91; Selman et al. ’92; Explicit connection to physics: Kirkpatrick and Selman, Science ’94 (finite-size scaling); Monasson et al., Nature ’99. (order of phase transition))**
+
+## ’02 --- Survey Propagation
+
+**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al., Science ’02).**
+
+## More expected!
+
+## A Journey from Random to Structured Instances
+
+## I --- Random Instances
+
+**--- phase transitions and algorithms**
+
+**--- from physics to computer science**
+
+## II --- Capturing Problem Structure
+
+**--- problem mixtures (tractable / intractable)**
+
+**--- backdoor variables, restarts, and heavy-tails**
+
+## III --- Beyond Satisfaction
+
+**--- sampling, counting, and probabilities**
+
+**--- quantification**
+
+## Part II) --- Capturing Problem Structure
+
+**Results and algorithms for hard random k-SAT problems have had significant impact on development of practical SAT solvers. However…**
+
+**Next challenge: Dealing with SAT problems with more inherent structure.**
+
+**Topics (with lots of room for further analysis):**
+
+**A) Mixtures of tractable/intractable stucture**
+
+**B) Backdoor variables and heavy tails**
+
+## II A) Mixtures: The 2+p-SAT problem
+
+**Motivation: Most real-world computational problems involve some mix of tractable and intractable sub-problems.**
+
+**Study: mixture of binary and ternary clauses**
+
+**p = fraction ternary**
+
+$$
+\mathrm{p} = 0. 0 \dots 2 \text {-SAT} / \mathrm{p} = 1. 0 \dots 3 \text {-SAT}
+$$
+
+**What happens in between?**
+
+**Phase transitions (as expected…)**
+
+**Computational properties (surprise…)**
+
+**(Monasson, Zecchina, Kirkpatrick, Selman, Troyansky 1999.)**
+
+## Phase Transition for 2+p-SAT
+
+![](images/page_33_chart_1.jpg)
+
+We have good approximations for location of thresholds.
+
+## Computational Cost: 2+p-SAT Tractable substructure can dominate!
+
+![](images/page_34_chart_1.jpg)
+
+## Results for 2+p-SAT
+
+**p < = 0.4 --- model behaves as 2-SAT search proc. “sees” only binary constraints smooth, continuous phase transition (2**<strong><sup>nd</sup></strong> **order)**
+
+**p > 0.4 --- behaves as 3-SAT (exponential scaling) abrupt, discontinuous transition (1**<strong><sup>st</sup></strong> **order)**
+
+**Note: problem is NP-complete for any p > 0.**
+
+## Lesson learned
+
+**In a worst-case intractable problem --- such as 2+p-SAT --- having a sufficient amount of tractable problem substructure (possibly hidden) can lead to provably poly-time average case behavior.**
+
+## Next:
+
+**Capturing hidden problem structure. (Gomes et al. 03, 04)**
+
+## II B) --- Backdoors to the real-world
+
+**Observation: Complete backtrack style search SAT solvers (e.g. DPLL) display a remarkably wide range of run times.**
+
+**Even when repeatedly solving the same problem instance; variable branching is choice randomized.**
+
+**Run time distributions are often “heavy-tailed”.**
+
+**Orders of magnitude difference in run time on different runs.**
+
+## Heavy-tails on structured problems
+
+![](images/page_38_chart_1.jpg)
+
+## Randomized Restarts
+
+**Solution: randomize the backtrack strategy Add noise to the heuristic branching (variable choice) function Cutoff and restart search after a fixed number of backtracks**
+
+**Provably Eliminates heavy tails**
+
+**In practice: rapid restarts with low cutoff can dramatically improve performance (Gomes et al. 1998, 1999)**
+
+**Exploited in many current SAT solvers combined with clause learning and non-chronological backtracking. (Chaff etc.)**
+
+## Restarts on Planning Problem
+
+**Consider simple fixed policy: Restart search if run-time is greater than x Order magnitude speedup.**
+
+![](images/page_40_chart_2.jpg)
+
+Time expended before restart
+
+## Sample Results Random Restarts
+
+| Deterministic <sub>R</sub><sup>3</sup> |
+| --- |
+| Logistics Planning 108 mins. 95 sec. Scheduling 14 411 sec 250 sec Scheduling 16 ---(*) 1.4 hours Scheduling 18 ---(*) ~18 hrs Circuit Synthesis 1 ---(*) 165sec. Circuit Synthesis 2 ---(*) 17min. |
+
+(\*) not found after 2 days
+
+## Formal Model Yielding Heavy-Tailed Behavior
+
+**T - the number of leaf nodes visited up to and including the successful node; b - branching factor**
+
+![](images/page_42_image_2.jpg)
+
+**(heavy-tailed distribution)**
+
+**p = probability wrong branching choice.**
+
+**2^k time to recover from k wrong choices.**
+
+$$
+b = 2
+$$
+
+**Expected Run Time**
+
+$$
+p \geq \frac {1}{b} \quad E [ T ] \to \infty
+$$
+
+**(infinite expected time)**
+
+**Variance**
+
+$$
+p > \frac {1}{b 2} V [ T ] \to \infty
+$$
+
+**(infinite variance)**
+
+**Tail**
+
+$$
+p \geq \frac {1}{b ^ {2}} P [ T > L ] > C L ^ {\alpha} \alpha <   2
+$$
+
+**(heavy-tailed)**
+
+**Balancing exponential decay in making wrong branching decisions with exponential growth in cost of mistakes. (related to sequential de-coding, Berlekamp et al. 1972)**
+
+**Intuitively: Exponential penalties hidden in backtrack search, consisting of large inconsistent subtrees in the search space.**
+
+**But, for restarts to be effective, you also need short runs.**
+
+**Where do short runs come from?**
+
+## Explaining short runs: Backdoors to tractability
+
+## Informally:
+
+**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**
+
+**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**
+
+**Backdoors correspond to “clever reasoning shortcuts” in the search space.**
+
+## Backdoors (wrt subsolver A; SAT case):
+
+Definition 2. [backdoor] A nonempty subset S of the variables is a backdoor for F w.r.t. A if for some as : S → {False, True}, A returns a satisfying assignment of $[ F [ a _ { S } ]$
+
+**Strong backdoors (wrt subsolver A; UNSAT case):**
+
+Definition 3. [strong backdoor] A nonempty subset S of the variables is a strong backdoor for C w.r.t. A if for all as : S → {False,True}, A returns a satisfying assignment or concludes unsatisfiability of $\hat { F } [ a _ { S } ]$
+
+## Explaining short runs: Backdoors to tractability
+
+## Informally:
+
+**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**
+
+**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**
+
+**Backdoors correspond to “clever reasoning shorcuts” in the search space.**
+
+## Backdoors can be surprisingly small:
+
+| instance | # vars | # clauses | backdoor | fract. |
+| --- | --- | --- | --- | --- |
+| logistics.d | 6783 | 437431 | 12 | 0.0018 |
+| 3bitadd_32 | 8704 | 32316 | 53 | 0.0061 |
+| pipe_01 | 7736 | 26087 | 23 | 0.0030 |
+| qg_30_1 | 1235 | 8523 | 14 | 0.0113 |
+| qg_35_1 | 1597 | 10658 | 15 | 0.0094 |
+
+**Most recent: Other combinatorial domains. E.g. graphplan planning, near constant size backdoors (2 or 3 variables) and log(n) size in certain domains. (Hoffmann, Gomes, Selman ’04)**
+
+**Backdoors capture critical problem resources (bottlenecks).**
+
+## Backdoors --- “seeing is believing”
+
+![](images/page_49_image_1.jpg)
+
+**Constraint graph of reasoning problem. One node per variable: edge between two variables if they share a constraint.**
+
+**Logistics\_b.cnf planning formula. 843 vars, 7,301 clauses, approx min backdoor 16 (backdoor set = reasoning shortcut)**
+
+**Visualization by Anand Kapur.**
+
+![](images/page_50_image_0.jpg)
+
+![](images/page_51_image_0.jpg)
+
+**After setting just 12 (out of 800+) backdoor vars – problem almost solved.**
+
+**Another example**
+
+![](images/page_52_image_1.jpg)
+
+**MAP-6-7.cnf infeasible planning instances. Strong backdoor of size 3. 392 vars, 2,578 clauses.**
+
+|  |  |
+| --- | --- |
+
+![](images/page_54_image_1.jpg)
+
+**Inductive inference problem --- ii16a1.cnf. 1650 vars, 19,368 clauses. Backdoor size 40.**
+
+![](images/page_55_image_0.jpg)
+
+**After setting 6 backdoor vars.**
+
+**Some other intermediate stages:**
+
+![](images/page_56_image_1.jpg)
+
+After setting 38 (out of 1600+) backdoor vars:
+
+**So: Real-world structure hidden in the network. Can be exploited by automated reasoning engines.**
+
+![](images/page_56_image_4.jpg)
+
+![](images/page_56_image_5.jpg)
+
+**But… we also need to take into account the cost of finding the backdoor!**
+
+**We considered: Generalized Iterative Deepening Randomized Generalized Iterative Deepening Variable and value selection heuristics (as in current solvers)**
+
+![](images/page_58_image_0.jpg)
+
+## Size backdoor
+
+n = num. vars. k is a constant
+
+| B(n) | deterministic | randomized | heuristic |
+| --- | --- | --- | --- |
+| n/k | small exp(n) | smaller exp(n) | tiny exp(n) |
+| O(log n) | $\left( \frac{n}{\sqrt{\log n}} \right)^{O(\log n)}$ | $\left( \frac{n}{\log n} \right)^{O(\log n)}$ | poly(n) |
+| O(1) | poly(n) | poly(n) | poly(n) |
+
+**Current solvers**
+
+## Dynamic view: Running SAT solver (no backdoor detection)
+
+![](images/page_59_image_1.jpg)
+
+## SAT solver detects backdoor set
+
+![](images/page_60_image_1.jpg)
+
+## A Journey from Random to Structured Instances
+
+--- Random Instances **--- phase transitions and algorithms**
+
+**II --- Capturing Problem Structure --- problem mixtures (tractable / intractable) --- backdoor variables and heavy tails**
+
+III Beyond Satisfaction sampling, counting, and probabilities quantifiers
+
+## Part III) --- Beyond Satisfaction
+
+**Can we extend SAT/CSP techniques to solve harder counting/sampling problems?**
+
+**Such an extension would lead us to a wide range of new applications.**
+
+**SAT testing**
+
+**logic inference**
+
+**NP / co-NP-complete**
+
+**counting/sampling**
+
+**probabilistic reasoning**
+
+**#P-complete**
+
+**Note: counting solutions and sampling solutions are computationally near equivalent.**
+
+**Related work: Kautz et al. ’04; Bacchus et al. ’03; Darwich ’04 & ’05; Littman ‘03.**
+
+## Standard Methods for Sampling: Markov Chain Monte Carlo (MCMC)
+
+**Based on setting up a Markov chain with a predefined stationary distribution.**
+
+**E.g. simulated annealing.**
+
+**Draw samples from the stationary distribution by running the Markov chain for a sufficiently long time.**
+
+**Problem: for interesting problems, Markov chain takes exponential time to converge to its stationary distribution.**
+
+**Bottom line: standard MCMC (e.g. SA) too slow.**
+
+## First attempt
+
+**Use local search style algorithm:**
+
+**Biased random walk = a random walk with greedy bias.**
+
+**Example: WalkSat** (Selman et al, 1993), **effective on SAT.**
+
+**Can we use it to sample from solution space?**
+
+– Does WalkSat reach all solutions?
+
+– How uniform/non-uniform is the sampling?
+
+**(Wei Wei and Selman ’04)**
+
+![](images/page_65_chart_0.jpg)
+
+## Probability Ranges for Different Domains
+
+<table><tbody><tr><td rowspan="2">Instance</td><td rowspan="2">Runs</td><td rowspan="2">Hits Rarest</td><td rowspan="2">Hits Common</td><td rowspan="2">Common-to - Rare Ratio</td></tr><tr></tr><tr><td>Random</td><td>50 ´ 10<sup>6</sup></td><td>53</td><td>9 ´ 10<sup>5</sup></td><td>1.7 ´ 10<sup>4</sup></td></tr><tr><td>Logistics</td><td>1 ´ 10<sup>6</sup></td><td>84</td><td>4 ´ 10<sup>3</sup></td><td>50</td></tr><tr><td>Verif.</td><td>1 ´ 10<sup>6</sup></td><td>45</td><td>318</td><td>7</td></tr></tbody></table>
+
+## Improving the Uniformity of Sampling
+
+Nonergodic
+
+Ergodic
+
+Ergodic
+
+Quickly reach sinks Slow convergence But does not satisfy DBC
+
+$$
+\begin{array}{c c c c} \Big \downarrow & \Big \downarrow & \Big \downarrow \\ \text {WalkSat} & + & \text {SA} & = \end{array} \quad \text {SampleSat}
+$$
+
+## SampleSat:
+
+**With probability** $p ,$ **the algorithm makes a biased random walk move**
+
+**With probability** $1 - p ,$ **, the algorithm makes a SA (simulated annealing) move**
+
+## Comparison Between WalkSat and SampleSat
+
+![](images/page_68_chart_1.jpg)
+
+![](images/page_68_chart_2.jpg)
+
+![](images/page_69_chart_0.jpg)
+
+Note: Uniform sampling within clusters.
+
+![](images/page_70_chart_1.jpg)
+
+| Instance | Runs | Hits Rarest | Hits Common | Common-to - Rare Ratio WalkSat | Ratio SampleSat |
+| --- | --- | --- | --- | --- | --- |
+| Random | 50 ´ 10<sup>6</sup> | 53 | 9 ´ 10<sup>5</sup> | 1.7 ´ 10<sup>4</sup> | 10 |
+| Logistics | 1 ´ 10<sup>6</sup> | 84 | 4 ´ 10<sup>3</sup> | 50 | 17 |
+| Verif. | 1 ´ 10<sup>6</sup> | 45 | 318 | 7 | 4 |
+
+**Verification on Larger formulas - ApproxCount**
+
+**Small formulas** à **Use solution frequencies. How to verify on large formulas (e.g. 10^25 solns)?**
+
+**A solution sampling procedure can be used to (approximately) count the number of satisfying assignments. (Jerrum and Valiant ’86)**
+
+**Comparison to exact counting (DPLL-style**).
+
+| instance | #variables | Exact count | ApproxCount | Average Error / var |
+| --- | --- | --- | --- | --- |
+| prob004-log-a | 1790 | 2.6 ´ 10<sup>16</sup> | 1.4 ´ 10<sup>16</sup> | 0.03% |
+| wff.3.200.810 | 200 | 3.6 ´ 10<sup>12</sup> | 3.0 ´ 10<sup>12</sup> | 0.09% |
+| dp02s02.shuffled | 319 | 1.5 ´ 10<sup>25</sup> | 1.2 ´ 10<sup>25</sup> | 0.07% |
+
+## Beyond exact model counters
+
+| instance | #variables | #solutions | ApproxCount | Average Error / var |
+| --- | --- | --- | --- | --- |
+| P(30,20) | 600 | 7 ´ 10<sup>25</sup> | 7 ´ 10<sup>24</sup> | 0.4% |
+| P(20,10) | 200 | 7 ´ 10<sup>11</sup> | 2 ´ 10<sup>11</sup> | 0.6% |
+
+## Summary: Counting & Sampling
+
+**Results show potential for modified SAT (CSP?) solvers (local search) for counting / sampling solutions.**
+
+**Can handle solution spaces with 10^25 and more solutions.**
+
+**Range of potential applications: e.g. many forms of probabilistic (Bayesian) reasoning.**
+
+# Part III b) Quantified Reasoning
+
+**Quantified Boolean Formulas (QBF) extend Boolean logic by allowing quantification over variables (exists and forall)**
+
+**Quantifiers prefix**
+
+**the clauses**
+
+$$
+\exists b _ {0} \dots \forall b _ {j + 1} \dots \forall b _ {h} \exists b _ {h + 1} \dots [ (b _ {0} \lor \neg b _ {h}) \land (\neg b _ {0} \lor \neg b _ {h}) ]
+$$
+
+## QBF is satisfiable iff
+
+**there exists a way of setting the existential vars such that for every possible assigment to the universal vars the clauses are satisfied.**
+
+**Literally a “game played on the clauses”:**
+
+**Existential player tries hard to satisfy all clauses in the matrix.**
+
+**Universal player tries hard to “spoil” it for the existential player: i.e., break (“unsatisfy”) one or more clauses.**
+
+**Formally: Problem is PSPACE- complete.**
+
+**Range of new applications: Multi-agent reasoning, unbounded planning, unbounded model-checking (verification), and certain forms probabilistic reasoning and contingency planning.**
+
+**Can we transfer successful SAT techniques to QBF?**
+
+**Cautiously optimistic. But very sensitive to problem encodings. (Antsotegui, Gomes, and Selman ’05)**
+
+**Related work: Walsh ’03; Gent, Nightingale, and Stergiou ’05; Pan & Vardi 04; Giunchiglia et al. 04; Malik 04; and Williams ’05.**
+
+## The Achilles’ Heel of QBF
+
+**QBF is much more sensitive to problem encoding.**
+
+**SAT/QBF encodings require auxiliary variables. These variables significantly increase the raw combinatorial search space.**
+
+**Not an issue for SAT: Propagation forces search to stay within combinatorial space of original task.**
+
+**Not so for QBF! Universal player pushes to violate domain constraints (trying to violate one or more clauses). Search leads quickly outside of search space of original problems.**
+
+**Unless, encodings are carefully engineered.**
+
+## Search Space for SAT Approaches
+
+![](images/page_78_image_1.jpg)
+
+Search Space of QBF
+
+![](images/page_79_image_1.jpg)
+
+## Summary
+
+**We journeyed from random to structured combinatorial reasoning problems.**
+
+**Path from 100 var instances (early 90’s) to 1,000,000 var instances (current).**
+
+**Still moving forward!**
+
+**Random instances: --- linear time algs. approaching phase transition. --- physics methods for computer science**
+
+**Structure: --- mixture tractable / intractable (2+P-SAT) --- backdoor sets, randomization, and restarts.**
+
+**Beyond satisfaction: Potential for sampling, counting, and quantification.**
+
+**Overall, significant progress in reasoning technology in last decade.**
+
+**Research provides an active interplay between algorithm design, analysis, and experimenation; between computer scientists, physicists, and mathematicians.**
+
+**Emerging Application Strategy: Automated reasoning tools as a true “cognitive assistant”.**
+
+**E.g., In hardware design (IBM), portfolio of reasoning engines running in parallel providing real-time feedback to hardware designers and testers**
+
+**The human design creativity is complemented with automated validation and feedback, which enables the analysis of subtle interactions in large-scale complex artifacts.**
+
+**Realizing the dream of “automated reasoning”.**
+
+**Thanks to Carla!**
+
+## The end. LJ
+
+## D) Lessons Learned
+
+## General theme:
+
+**2+p-SAT results & rapid restart strategies suggest that hidden tractable sub-structure in formulas can dramatically reduce overall complexity.**
+
+## Current SAT solvers:
+
+**Carefully balance cost of search for hidden special structure (e.g. 2-SAT, Horn etc.) and cost of unrestricted search.**
+
+**Strategies: 1) Discovering structure / Clause learning --- clauses are implied (“lemmas”) challenge: find the right ones. a) Chaff solver: store lots of them (millions) and use clever indexing. b) Random walk procedures: store only long range dependencies.**
+
+**2) Use randomization, restarts and heuristics to find “backdoor variables”**
+
+**3) Learn new concepts (new variables) --- very challenging in general domains. (for SATPlan, Huang, Kautz, and Selman 1999)**
+
+## 1.) Example of adding derived dependencies
+
+**Random walk (RW) procedure:**
+
+**1) Pick random truth assignment.**
+
+**2) Repeat until all clauses are satisfied: Flip random variable from unsatisfied clause.**
+
+**Solves 2SAT in O(n^2) flips. (Papadimitriou 1992)**
+
+**Why? Very elegant argument.**
+
+![](images/page_86_chart_0.jpg)
+
+**We have an unbiased random walk with a reflecting (max Hamming distance) and an absorbing barrier (satisfying assignment) at distance 0.**
+
+**We start at a Hamming distance of approx. ½ N.**
+
+**Property of unbiased random walks: after n^2 flips, with high probability, we will hit the origin (the satisfying assignment).**
+
+**So, O(n^2) randomized algorithm (worst-case!) for 2-SAT.**
+
+**Unfortunately, does not work for k-SAT with k>= 3.** L
+
+**Still, Schoening (1999) shows that for 3-SAT, Rapid Random Restarts of RW of 3N steps, gives an improved exponential time algorithm. O(1.334^N) vs. O(2^n) for the obvious search strategy. Best known worst-case bound for 3-SAT (some recent improvements).**
+
+**Yes. Use a biased random walk procedure**
+
+**WalkSat Procedure (Selman, Kautz, and Cohen 1993)**
+
+**Repeatedly select an unsatisfied clause:**
+
+**1) With probability p, flip a randomly selected variable in clause (i.e. the “usual”).**
+
+**2) With probability 1-p, flip greedily, i.e. flip variable in clause that yields greatest number of satisfied clauses (I.e., we introduce greedy bias).**
+
+## First, bringing out the worst in random walks… (2-SAT)
+
+![](images/page_89_image_1.jpg)
+
+![](images/page_89_image_2.jpg)
+
+Theorem 1. The RW procedure takes $\mathcal { O } ( N ^ { 2 } )$ to ind a satisfying assignment of $F _ { 2 c h a i n }$
+
+Note: Only 2 satisfying assignments, all False and all True.
+
+![](images/page_90_chart_0.jpg)
+
+**Adding redundant clauses / constraints, reduces run time of Walksat from N^2 down to N^1.1 (empirical).**
+
+**Derived clauses capture long range dependencies.**
+
+![](images/page_91_image_1.jpg)
+
+Theorem 2. Given a ternary chain formula $F _ { 3 c h a i n , i - 2 } ,$ starting at a random assignment s, the expected value of $f ( s )$ , the number of flips to reach a satisfying truth assignment, scales exponentially in n.
+
+Theorem 3. Given a ternary chain formula $F _ { 3 c h a i n , l o w ( i ) }$ and let s be an arbitrary truth assignment, we have for the expected number of flips for the RW procedure:
+
+0 $\mathbf { E } ( f ( s ) ) = O ( n \cdot n ^ { \log n } ) , \quad { \it f o r ~ l o w ( i ) = \lfloor \frac { i } { 2 } \rfloor }$
+
+$\mathbf { E } ( f ( s ) ) = O ( n ^ { 2 } \cdot ( \operatorname { l o g } n ) ^ { 2 } )$ $\mathit { l o w } ( i ) = \lfloor \log i \rfloor$
+
+**Note: Thm. 2. Exponential behavior of RW. Not surprising perhaps.**
+
+**But, Thm. 3, with longer range dependencies in formula, we get poly and quasi-poly behavior!**
+
+**First, tractable class of 3-SAT problems for Random Walk.**
+
+**Results suggest: Adding implied long range dependencies can significantly speed up RW and Walksat style procedures.**
+
+| Formulas | &lt; 40 sec | &lt; 400 sec | &lt; 4000 sec |
+| --- | --- | --- | --- |
+| $\alpha = 0.0$ | 15 | 26 | 42 |
+| $\alpha = 0.2$ | 85 | 98 | 100 |
+| $\alpha = 1.0$ | 13 | 33 | 64 |
+
+**Formulas from hardware verification benchmark (Bryant and Velev 2001)**
+
+**\alpha is redundancy rate**
+
+## Summary
+
+**During the past few years, we have obtained a much better understanding of the nature of computationally hard problems (“phase transitions”)**
+
+**Rich interactions between statistical physics, computer science and mathematics, and between theory, experiments, and applications.**
+
+## Summary, cont.
+
+```txt
+Clear algorithmic progress (SAT solvers) ---
+1 million vars & 5 million clauses
+Still discovering new applications!
+Strategies for exploiting hidden structure:
+restarts (“hunting for backdoors”)
+adding long range dependencies (speeds up random walks)
+clause learning
+add new variables / concepts --- an open challenge
+Other directions:
+model counting / sampling
+QBF
+Survey propagation / Belief propagation methods
+```
+
+![](images/page_96_chart_0.jpg)
+
+![](images/page_97_chart_0.jpg)
+
+![](images/page_98_chart_0.jpg)
+
+![](images/page_99_chart_0.jpg)
+
+**Refines (completes?) our understanding of combinatorial search space in random k-SAT.**
+
+**In particular, p<= 0.4, solutions are clustered together at the bottom of the bowl-shaped energy landscape.**
+
+**GSAT / zero temperature annealing can reach solutions easily (poly time).**
+
+**Above p>0.4, critical (backbone) variables emerge. Solution space breaks up into small clusters (exponentially many) with diameter small compared to inter-cluster diameter.**
+
+**Solution: use cavity field method from statistical physics. (Mezard et al. Science, 2002. Achlioptas et. al.; Gomes & Selman, Nature ’05.)**
+
+## Physics contributing to computation
+
+## 80’s --- Simulated annealing
+
+**General combinatorial search technique, inspired by physics.**
+
+**(Kirkpatric, Science ’83)**
+
+## 90’s --- Phase transitions in computational systems
+
+**Discovery of physical laws and phenomena (e.g. 1**<strong><sup>st</sup></strong> **and 2**<strong><sup>nd</sup></strong> **order transitions) in computational systems.**
+
+**(Kirkpatrick and Selman, Science ’94; Monasson et al. Nature ’99.)**
+
+## ’02 --- Survey Propagation
+
+**Analytical tool from statistical physics leads to powerful algorithmic method. (Mezard et al., Science ’02).**
+
+**More expected!**
+
+## Explaining short runs: Backdoors to tractability
+
+**Informally:**
+
+**A backdoor to a given problem is a subset of the variables such that once they are assigned values, the polynomial propagation mechanism of the SAT solver solves the remaining formula.**
+
+**Formal definition includes the notion of a “subsolver”: a polynomial simplification procedure with certain general characteristics found in current DPLL SAT solvers.**
+
+**Backdoors correspond to “clever reasoning shorcuts” in the search space.**
+
+**Note: Notion of backdoor is related to but different from constraint-graph based notions such as cutsets. (Dechter 1990; 2000)**
+
+## Decay of Distributions
+
+**Standard --- Exponential Decay**
+
+**e.g. Normal:**
+
+$$
+\Pr [ X > x ] \approx C e ^ {- x ^ {2}}, \text {for some} C > 0, x > 1
+$$
+
+**Heavy-Tailed --- Power Law Decay**
+
+**e.g. Pareto-Levy:**
+
+$$
+\Pr [ X > x ] = C x ^ {- \alpha}, x > 0
+$$
+
+## Real-World Reasoning Tackling inherent computational complexity
+
+![](images/page_104_chart_2.jpg)
+
+Example domains cast in propositional reasoning system (variables, rules).
