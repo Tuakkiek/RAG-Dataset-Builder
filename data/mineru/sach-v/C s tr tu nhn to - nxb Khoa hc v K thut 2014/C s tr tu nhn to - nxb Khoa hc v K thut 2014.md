@@ -1,0 +1,5835 @@
+<!-- page: 1 -->
+
+# CƠ SỞ TRÍ TUỆ NHÂN TẠO
+
+<!-- page: 2 -->
+
+<!-- page: 3 -->
+
+LÊ HOÀI BẮC - TÔ HOÀI VIỆT
+
+## Cơ sở Trí tuệ nhân tạo
+
+NHÀ XUẤT BẢN KHOA HỌC VÀ KỸ THUẬT
+2014
+
+<!-- page: 4 -->
+
+<!-- page: 5 -->
+
+## Lời nói đầu
+
+Với sự phát triển vượt bậc của công nghệ, máy tính cùng các thiết bị điện tử ngày càng đóng vai trò quan trọng trong mọi hoạt động của con người. Không chỉ hỗ trợ trong công việc, các máy tính ngày nay còn là một phương tiện hữu ích phục vụ cho các sinh hoạt hàng ngày của con người như hồ trợ trong đi lại, cập nhật tin tức, giải trí... Tuy nhiên, để máy tính thất sự trò thành một người bạn thân thiết của con người, một số trở ngại cơ bản cần phải được vượt qua. Các máy tính ngày nay có sức mạnh vượt trội so với trước, khả năng xử lý và lưu trữ không lồ, nhưng nó vẫn chưa giải quyết được nhiều bài toán trên thực tế như: làm sao đề có thể tự suy nghĩ và hành động trong những môi trường thế giới thực phức tạp, làm sao đề học và rút trích các thông tin, tri thức từ môi trường xung quanh phục vụ cho hoạt động của mình... Giải quyết các vấn đề trên không chi đời hỏi sức mạnh công nghệ mà còn cân đến những hướng tiếp cận, những thuật toán thông minh hơn.
+
+Giáo trình này cung cấp các ý tưởng, kiến thức cơ bản về hướng nghiên cứu trí tuệ nhân tạo, ngành học nhằm mục tiêu thiết kế ra các phương pháp tính toán thông minh. Nội dung của giáo trình sẽ tập trung giải quyết những vấn đề cơ bản của của một hệ thống thông minh bao gồm: các phương pháp tìm kiếm hiệu quả, biểu diễn tri thức và suy diễn, học máy. Các nội dung trình bày trong giáo trình được tham khảo từ những giáo trình, tài liệu về trí tuệ nhân tạo phổ biến trên thế giới. Do đó, các kiến thức trong giáo trình phần nào cập nhật với những bước phát triển gần đây trong lĩnh vực nghiên cứu.
+
+Với giáo trình này, chúng tôi hy vọng cung cấp cho người bạn một cái nhìn toàn cảnh và cơ bản về những nghiên cứu liên quan đến trí tuệ nhân tạo. Qua đó, có thể động viên, khuyến khích những ai có niềm dam mê nghiên cứu, sáng tạo tiếp tục tìm hiểu và phát triển các hướng chuyên sâu của ngành học. Nhóm biên soạn rất mong muốn bạn đọc tìm thấy những điều thú vị trong giáo trình này.
+
+Chúng tôi xin trân trọng gửi lời cảm ôn đến Ban giám hiệu Trường Đại học Khoa học Tự nhiên (Đại học Quốc gia Tp.HCM), các đồng nghiệp đang công tác tại Khoa Công nghệ thông tin và các trường bạn, Nhà xuất
+
+<!-- page: 6 -->
+
+bàn Khoa học và Kỹ thuật đã đóng góp ý kiến và giúp đỡ chúng tôi trong quá trình biên soạn.
+
+Do thời gian biên soạn có hạn, giáo trình không tránh khởi những sai sót nhất định. Vì thể chúng tôi mong nhận được những ý kiến đóng góp của bạn đọc, nhằm giúp hoàn thiện giáo trình trong những lần tái bàn tới. Chúng tôi rất mong nhận được những góp ý xây dựng từ quý độc giả đề nâng cao chất lượng giáo trình trong những lần tái bàn sau. Mọi góp ý xin gửi bằng thư hay email đến địa chỉ:
+
+Khoa Công Nghệ Thông Tin,
+
+Trường Đại học Khoa học tự nhiên, ĐHQG-TPHCM, 227 Nguyễn Văn Cử, Quận 5, Thành phố Hồ Chí Minh, Điện thoại: (08) 38354266
+
+Email: fitbooks@fit.hcmus.edu.vn
+
+Xin vui lòng ghi chủ đề "Góp ý cho Giáo trình Cơ sở Trí tuệ Nhân tạo".
+
+Tp. Hồ Chí Minh, ngày 01 tháng 12 năm 2013,
+Thay mặt nhóm biên soạn,
+PGS. TS. Lê Hoài Bắc.
+
+<!-- page: 7 -->
+
+## Mục lục
+
+- Lời nói đầu....1
+- Mục lực....3
+- Phần 1 GIẢI QUYẾT BÀI TOÁN TRÊN MÁY TÍNH BẰNG PHƯƠNG PHÁP TİM KIỂM....10
+- Chương 1 CÁC CHIỂN LƯỢC TİM KIỂM KHÔNG CÓ THÔNG TIN....11
+- I. BIỀU DIỀN BÀI TOÁN TİM KIỂM....11
+- I.1 Đồ thị....12
+- I.2 Trạng thái....14
+- I.3 Hàm trạng thái con....14
+- I.4 Chi phí đường đi....14
+- I.5 Những bài toán tìm kiếm....15
+- II. TÌM THEO CHIỀU RỘNG (Breadth-first search - BFS)....20
+- II.1 Ý tưởng: Tìm các đường đi trong một số bước nhất định....20
+- II.2 Con trò quay lui....26
+- II.3 Thuật toán tìm kiếm theo chiều rộng (BFS)....26
+- III. TÌM KIỂM CHI PHÍ ĐỒNG NHẤT (Uniform-cost Search - UCS)....27
+- III.1 Hàng đợi ưu tiên....28
+- III.2 Hàm chi phí....29
+- III.3 Thuật toán và điều kiện dùng....29
+- III.4 Đánh giá thuật toán tìm kiếm....30
+- IV. TÌM THEO CHIỀU SÂU (Depth-first search - DFS)....34
+- IV.1 Tìm kiểm theo chiều sâu – Một thuật toán thay thế....34
+
+<!-- page: 8 -->
+
+- IV.2 Tránh lập vô hạn – Các chiến lược kiểm tra ..... 36
+- V. TRÁNH TRÙNG LẬP TRẠNG THÁI ..... 41
+- VI. KẾT CHƯƠNG ..... 44
+- VII. THUẬT NGỮ TIÊNG ANH ..... 45
+- Chương 2 CÁC CHIỂN LƯỢC TİM KIỂM CÓ THÔNG TIN ..... 48
+- I. TİM KIỂM CÓ THÔNG TIN ..... 48
+- I.1 Hàm heuristic – Tìm kiểm tối ưu kiểu tham lam (Greedy Best-First search). ..... 49
+- I.2 Tìm kiểm A\* ..... 51
+- II. HÀM HEURISTIC ..... 53
+- II.1 Ảnh hưởng của hàm heuristic lên hiệu quả ..... 54
+- II.2 Phát minh ra các hàm heuristic chấp nhận được ..... 56
+- III. TÌM KIỂM CỤC BỘ VÀ BÀI TOÁN TỐI ÛU ..... 58
+- III.1 Tìm kiểm leo đổi ..... 60
+- III.2 Tìm kiểm nhóm cục bộ ..... 64
+- III.3 Tìm kiểm mô phòng luyện kim ..... 64
+- III.4 Thuật giải di truyền ..... 66
+- IV. KẾT CHƯƠNG ..... 69
+- V. THUẬT NGỮ TIÊNG ANH ..... 70
+- Chương 3 BÀI TOÁN THÒA MĂN RÀNG BUỘC ..... 72
+- I. BÀI TOÁN THÒA MĂN RÀNG BUỘC (CSP) ..... 72
+- II. TÌM KIỂM QUAY LUI CHO CSP ..... 76
+- III. TÌM KIỂM HEURISTIC CHO CSP ..... 78
+- IV. KẾT CHƯƠNG ..... 79
+- V. THUẬT NGỮ TIÊNG ANH ..... 80
+- Phần 2 BIỀU DIỂN TRI THỨC VÀ SUY DIỂN ..... 82
+
+<!-- page: 9 -->
+
+- Chương 4 LOGIC VÀ SUY DIỀN....83
+- I. LOGIC ....83
+- II. LOGIC MỆNH ĐỀ: LOẠI LOGIC ĐƠN GIẢN....84
+- II.1 Cú pháp ....84
+- II.2 Ngữ nghĩa ....85
+- II.3 Tính tương đương, hợp lệ và thỏa mãn được....87
+- II.4 Bài toán suy dẫn trong logic mệnh đề....88
+- III. CÁC CÁCH SUY DIỀN TRONG LOGIC MỆNH ĐỀ....89
+- III.1 Hợp giải....89
+- III.1.1 Dạng hội chuẩn....90
+- III.1.2 Thuật toán hợp giải, ....91
+- III.2 Suy diễn tiến....93
+- III.3 Suy diễn lùi....96
+- IV. KẾT CHƯƠNG ....96
+- V. THUẬT NGỮ TIÊNG ANH ....97
+- Chương 5 LOGIC BẮC NHẤT....100
+- I. CỨ PHÁP VÀ NGỮ NGΗĨA CỦA LOGIC BẮC NHẤT....100
+- I.1 Mô hình của logic bậc nhất....100
+- I.2 Ký hiệu và biểu diễn....101
+- I.3 Biểu thức....103
+- I.4 Câu nguyên tố....103
+- I.5 Câu phức....103
+- I.6 Lượng tử....104
+- I.7 Phép bằng....110
+- II. SỬ DỤNG LOGIC BẮC NHẤT....110
+- II.1 Vi dụ miền quan hệ “ho hàng”....110
+
+<!-- page: 10 -->
+
+- II.2 Số, tập hợp và danh sách....114
+- II.3 Một số ví dụ chuyển câu sang logic bậc nhất....118
+- III. KẾT CHƯƠNG....122
+- IV. THUẬT NGỮ TIỂNG ANH....122
+- Chương 6 SUY DIỂN VỚI LOGIC BẮC NHẤT....124
+- I. SUY DIỂN MỆNH ĐỀ SO VỚI BẮC NHẤT....124
+- I.1 Luật suy diễn với lượng từ....124
+- I.2 Rút gọn về suy diễn mệnh đề....126
+- II. PHÉP ĐỒNG NHẤT....127
+- II.1 Luật suy diễn bậc nhất....127
+- II.2 Đồng nhất....128
+- III. SUY DIỂN TIỂN....130
+- III.1 Các mệnh đề xác định bậc nhất....131
+- III.2 Thuật toán suy diễn tiến đơn giản....132
+- IV. SUY DIỂN LÙI....134
+- IV.1 Thuật toán suy diễn lùi....135
+- IV.2 Lập trình logic....137
+- IV.3 Suy diễn dư thừa và lập vô tận....139
+- V. HỢP GIẢI....140
+- V.1 Dạng hội chuẩn đối với logic bậc nhất....140
+- V.2 Luật suy diễn hợp giải....142
+- V.3 Các chiến lược hợp giải....147
+- VI. KẾT CHƯƠNG....148
+- VII. THUẬT NGỮ TIỂNG ANH....149
+- Chương 7 SUY DIỂN KHÔNG CHẮC CHẤN....151
+- I. GIỚI THIỆU VỀ SỰ KHÔNG CHẮC CHẤN....151
+
+<!-- page: 11 -->
+
+- I.1 Sự không chắc chắn là gì?.... 151
+- I.2 Các nguyên nhân gây nên 'sự không chắc chắn.... 152
+- I.3 Các mô hình biểu diễn không chắc chắn.... 153
+- II. LÝ THUYẾT XÁC SUẤT CÙA BAYES.... 154
+- II.1 Mệnh đề.... 154
+- II.2 Sự kiện nguyên tố.... 155
+- II.3 Xác suất tiên nghiệm.... 156
+- II.4 Xác suất hậu nghiệm.... 157
+- III. SUY DIỀN BAYES.... 158
+- III.1 Suy diễn với bảng phân phối kết hợp.... 159
+- III.2 Luật Bayes.... 160
+- III.3 Ví dụ đơn giản.... 161
+- III.4 Kết hợp các chứng cứ.... 162
+- IV. LÝ THUYẾT HỆ SỐ CHẮC CHẤN VÀ SUY DIỀN DỰA TRÊN CHỨNG CỨ.... 163
+- IV.1 Hệ số chắc chắn.... 163
+- IV.2 Các phép toán.... 165
+- IV.3 Suy diễn dựa trên chứng cứ.... 166
+- V. SO SÁNH SUY DIỀN BAYES VÀ HỆ SỐ CHẮC CHẤN.... 169
+- VI. KẾT CHƯƠNG.... 171
+- VII. THUẬT NGỮ TIỂNG ANH.... 172
+- Phần 3 HỌC MÁY.... 174
+- Chương 8 GIỚI THIỆU HỌC MÁY.... 175
+- I. HỌC MÁY LÀ GỊ?.... 175
+- I.1 Các động lực của học máy.... 175
+- I.2 Các loại học.... 175
+
+<!-- page: 12 -->
+
+- II. NAÏVE BAYES – MỘT MÔ HÌNH HỌC ĐƠN GIẢN ..... 177
+- II.1    Ví dụ học máy ..... 177
+- II.2    Mô hình xác suất ..... 178
+- II.3    Luật Bayes ..... 180
+- II.4    Phép sửa Laplace ..... 182
+- III. HỌC CÂY QUYẾT ĐỊNH ..... 183
+- III.1    Cây quyết định ..... 184
+- III.2    Tính biểu diễn của cây quyết định ..... 185
+- III.3    Rút cây quyết định từ ví dụ ..... 186
+- III.4    Chọn thuộc tính kiểm tra ..... 190
+- III.5    Đánh giá hiệu quả của thuật toán học ..... 193
+- III.6    Nhiễu và quá khớp ..... 193
+- III.7    Mở rộng tính ứng dụng của cây quyết định ..... 195
+- IV. KẾT CHƯƠNG ..... 196
+- V. THUẬT NGỮ TIÊNG ANH ..... 197
+- Chương 9 MẠNG NƠ-RON NHÂN TẠO ..... 198
+- I. GIỚI THIỆU – MẠNG NƠ-RON LÀ GİŞ? ..... 198
+- II. MẠNG NƠ-RON NHÂN TẠO ..... 200
+- II.1    Kiến trúc mạng nơ-ron nhân tạo ..... 200
+- II.2    Nơ-ron như là một thành phần tính toán đơn giản ..... 201
+- III. PERCEPTRON ..... 204
+- III.1    Các perceptron biểu diễn điều gì? ..... 204
+- III.2    Thuật toán huấn luyện perceptron ..... 206
+- III.3    Phân tích ..... 207
+- IV. MẠNG NƠ-RON TRUYỀN THẢNG ĐA LỚP ..... 210
+- IV.1    Kiến trúc mạng ..... 210
+
+<!-- page: 13 -->
+
+- IV.2 Thuật toán học lan truyền ngược....211
+- V. ỨNG DỤNG CỦA MẠNG NØ-RON....218
+- VI. KẾT CHƯƠNG....220
+- VII. THUẬT NGỮ TIỂNG ANH....222
+- TÀI LIỆU THAM KHẢO....224
+- CHỈ MỤC THUẬT NGỮ....225
+
+<!-- page: 14 -->
+
+<!-- page: 15 -->
+
+# Phân 1 GIẢI QUYẾT BÀI TOÁN TRÊN MÁY TÍNH BẰNG PHƯƠNG PHÁP TÌM KIỂM
+
+<!-- page: 16 -->
+
+<!-- page: 17 -->
+
+# Chương
+
+# CÁC CHIẾN LƯỢC TÌM KIỂM KHÔNG CỐ THÔNG TIN
+
+Nhiều bài toán đã được đưa vào máy tính để giải quyết, với mong muốn tận dụng được sức mạnh của máy tính để tìm lời giải nhanh và chính xác hơn. Đến nay, có nhiều phương pháp để giải một bài toán trên máy tính. Chương này và các chương sau của phần 1 giáo trình này sẽ trình bày về vấn đề giải quyết bài toán bằng các phương pháp tìm kiếm khác nhau. Điều kiện tiên quyết đề giải quyết một bài toán là phải biểu diễn được bài toán đó. Do đó, phân đầu của chương này sẽ định nghĩa đầy đủ các thành phần của một bài toán và một số ví dụ minh họa kèm theo. Sau đó các thuật toán tìm kiếm để giải quyết bài toán sẽ được trình bày và so sánh với nhau. Những thuật giải này thuộc nhóm phương pháp tìm kiếm mù (tức là không có thêm bất kì thông tin nào khác ngoài các điều kiện của bài toán). Chương 2 đề cập đến những giải thuật tìm kiếm có thông tin bổ sung giúp xác định phương hướng tìm kiếm tốt hơn.
+
+## I. BIỀU DIỂN BÀI TOÁN TÌM KIÉM
+
+Khi giải quyết một bài toán bằng phương pháp tìm kiếm (gọi tất là bài toán tìm kiếm) trước hết phải biểu diễn được bài toán đó. Một bài toán thường gồm có vấn đề (yêu cầu) và lời giải cho bài toán. Phương pháp tìm kiếm được sử dụng để tìm ra lời giải trong không gian tìm kiếm. Biểu diễn một bài toán tìm kiếm thường bao gồm năm thành phần:
+
+\- Không gian trạng thái: Cho biết tất cả các trạng thái có thể có của bài toán.
+
+<!-- page: 18 -->
+
+\- Trạng thái ban đầu.
+
+Nơi bắt đầu việc tìm kiếm. Ví dụ: Du khách sẽ xuất phát từ thành phố A.
+
+\- Hàm trạng thái con.
+
+Phát sinh trạng thái kế tiếp từ một trạng thái cụ thể x. Hàm trạng thái con, cùng với trạng thái ban đầu, tạo nên không gian trạng thái của bài toán. Không gian này bao gồm các trạng thái mà ta sẽ xem xét đến trong quá trình tìm kiếm.
+
+\- Một tập các trạng thái đích (kết thúc).
+
+Các trạng thái đích này đều thuộc không gian trạng thái. Tủy vào bài toán mà có một hay nhiều trạng thái đích khác nhau. Trong bài toán đi du lịch thì trạng thái đích chính là thành phố cần đến của du khách. Tuy nhiên, trong những bài toán khác thì trạng thái đích chỉ được mô tả bồi một vài điều kiện nào đó chú không phải là một tập các trạng thái xác định nữa. Như trong cờ vua, trạng thái đích là tình huống “chiểu bí” tức là tình huống đổi phương không thể ngăn cần được việc quân vua của mình bị tấn công.
+
+\- Hàm chi phí đường đi.
+
+Dùng để tính chi phí cho lời giải của bài toán.
+
+Với cách biểu diễn này ta có thể chuyển bài toán tìm lời giải về bài toán tìm đường đi từ trạng thái ban đầu đến trạng thái đích.
+
+## I.1 Đồ thị
+
+Đề giải quyết tốt một bài toán tìm kiếm cần phải xác định được không gian trạng thái phù hợp. Dựa vào trạng thái ban đầu và hàm trạng thái con chứng ta sẽ xác định được không gian trạng thái của bài toán tìm kiếm, trong đó không gian trạng thái được hiểu là tập các trạng thái có thể đến được từ trạng thái ban đầu. Không gian trạng thái này thường được biểu diễn dưới dạng một đồ thị (gọi là đồ thị không gian trạng thái hoặc đồ thị trạng thái). Đồ thị là một tập hợp các định được nổi với nhau bởi các cung, các cung nổi này có thể có hướng hoặc vô hướng, có trọng số hoặc không có trọng số (Hình 1.1). Mỗi định trong đồ thị sẽ tương ứng với một trạng thái và cung nổi giữa các đình thể
+
+<!-- page: 19 -->
+
+hiện có một hành động/phép đối từ một trạng thái (đinh) này sang một trạng thái (đinh) khác. Giả sử, xét bài toán một người đi du lịch tìm một lộ trình giữa các tỉnh-thành phố ở vùng Đông Bắc Bộ. Hình 1.2 thể hiện bản đồ các thành phố và cũng được xem là một đồ thị trạng thái với các định là các thành phố và các cung chính là đường đi hai chiều từ thành phố này sang thành phố khác.
+
+![](images/page_18_image_2.jpg)
+
+Hình 1.1 - Ví dụ về đồ thị: a. Đồ thị vô hướng. b. Đồ thị có hướng. c. Đồ thị vô hướng và có trọng số. d. Đồ thị có hướng và có trọng số.
+
+![](images/page_18_image_4.jpg)
+
+<!-- page: 20 -->
+
+## I.2 Trạng thái
+
+Trạng thái trong bài toán tìm kiếm chính là thể hiện của một giai đoạn trong quả trình giải bài toán này. Một trạng thái bao gồm những thông tin về thể giới trong bài toán tìm kiếm. Ví dụ: Bài toán 8-puzzle (Hình 1.3) thể giới của bài toán chỉ giới hạn trong một bàn cờ kích thước 3×3 với 8 quân cờ và một trạng thái chính là một cách sắp xếp 8 quân cờ trên bàn cờ 3×3. Đối với bài toán tìm đường, để di từ thành phố này đến thành phố khác có thể phải đi qua nhiều thành phố trung gian, trạng thái của bài toán này cho biết đang ở thành phố nào.
+
+## I.3 Hàm trạng thái con
+
+Hàm này thông thường được dùng để mô tả những biến đổi hay hành động có thể xảy ra cho một trạng thái nào đó. Cho trước trạng thái x cụ thể, hàm Con(x) sẽ trả về các cặp (hành động, trạng thái con), trong đó hành động là một trong những hành động hợp lệ trên trạng thái x và trạng thái con là trạng thái phát sinh được từ x bởi hành động tương ứng đó. Ví dụ: với trạng thái Ô(Hà Giang) hàm trạng thái con trong bài toán tìm đường đi trong các thành phố trong Hình 1.2 sẽ là:
+
+$\text{Con}(\dot{\boldsymbol{O}}(\text{Hà Giang})) = \{(\boldsymbol{Di}(Tuyên Quang), \dot{\boldsymbol{O}}(Tuyên Quang)), (\boldsymbol{Di}(Bắc Cạn), \dot{\boldsymbol{O}}(Bắc Cạn)), (\boldsymbol{Di}(Cao Bằng), \dot{\boldsymbol{O}}(Cao Bằng))\}.$
+
+## I.4 Chi phí đường đi
+
+Một lời giải (đường đi) là một chuỗi các trạng thái liên kết với nhau qua các thao tác biển đổi. Mỗi lời giải cho bài toán đều có chi phí xác định. Chỉ phí ở đây dùng để đánh giá hiệu quả của giải thuật tìm kiếm cũng như là độ tốt của chính lời giải đó. Chăng hạn với bài toán người người bán hàng (mô tả ở phần I.5 chương 1) thì chi phí được tính bằng chiều dài theo đơn vị ki-lô-mét. Một cách tổng quát thì chi phí cho một lời giải được tính bằng tổng chi phí của từng bước thực hiện của lời giải đó, với giả sử là chi phí của từng bước không âm. Chỉ phí cho bước biển đổi a chuyển từ trạng thái x sang trạng thái y được kí hiệu là: Chi\_phi\_Bước(a, x, y), có thể viết gọn thành: Chi\_phi\_Bước(x, y) nếu chi có duy nhất một thao tác biến đổi a.
+
+<!-- page: 21 -->
+
+## I.5 Những bài toán tìm kiếm
+
+Giải quyết bài toán bằng phương pháp tìm kiếm được áp dụng trên nhiều lĩnh vực khác nhau. Ô đây, giáo trình liệt kê một số bài toán tìm kiếm thông dụng, phân thành hai nhóm: bài toán trò chơi và bài toán thực tế. Bài toán trò chơi minh họa cho những phương pháp giải quyết vấn đề khác nhau. Thông thường loại bài toán này luôn có mô tả chính xác, cụ thể. Có điểm chung thống nhất như vậy giúp dễ dàng so sánh hiệu quả của các thuật toán khác nhau. Bài toán thực tế lại được người ta quan tâm nhiều hơn. Tuy nhiên, những bài toán loại này thường không có một mô tả thống nhất nào, mà chỉ có dạng phát biểu tổng quát ban đầu.
+
+## Bài toán trò chơi
+
+## 8-puzzle
+
+Bài toán 8-puzzle (còn gọi là Taci) thường được sử dụng để thứ nghiệm các thuật toán tìm kiếm. Trong bài toán này, chúng ta có một bàn cờ kích thước 3×3 trong đó 8 quân cờ được đánh số từ 1 đến 8 và đặt ở 8 ô vuông, ô còn lại để trống. Các quân cờ có thể được đầy vào ô trống kê cận nó. Mục tiêu của trò chơi này là đầy các quân cờ sao cho từ cách sắp xếp ban đầu (trạng thái đầu) đưa về được cách sắp xếp mong muốn (trạng thái đích) như trong Hinh 1.3. Bài toán được phát biểu/biểu diễn lại đầy đủ như sau:
+
+\- Trạng thái: Một cách đặt 8 quân cờ vào 9 ô vuông.
+
+\- Trạng thái ban đầu: Tất cả trạng thái đều có thể là trạng thái đầu, tuy nhiên không phải trạng thái nào cũng tới được trạng thái đích xác định trước.
+
+\- Hàm trạng thái con: Phát sinh một trạng thái mới bằng cách di chuyển các quân (hoặc ô trống). Có bốn thao tác di chuyển: trái, phải, lên và xuống.
+
+\- Chi phí đường đi: Môi bước đều có chi phí bằng 1 nên chi phí sẽ bằng số bước thực hiện.
+
+<!-- page: 22 -->
+
+![](images/page_21_image_1.jpg)
+
+Hình 1.3 - Một dạng của bài toán 8-puzzle.
+
+Bài toán 8-puzzle thuộc nhóm trò chơi khối trượt. Bài 8-puzzle có: 9!/2 = 181.440 trạng thái có thể và việc giải bài này là khá dễ. Với 15-puzzle (trên bàn cờ 4×4) có đến 1.3 nghìn ti trạng thái và thuật toán tìm kiếm tốt nhất giải ra chỉ trong vòng vài mili giây. Nhưng 24-puzzle (bàn cờ 5×5) với khoảng 10$^{25}$ trạng thái thì khó có thể giải quyết một cách hiệu quả với các thuật toán hiện nay.
+
+## Bài toán 8 quân hậu
+
+Mục đích của bài toán 8 quân hậu là đặt 8 quân hậu trên bàn cờ vua, sao cho không có con hậu nào tấn công được nhau. (Một quân hậu có thể tấn công theo: dòng, cột và đường chéo). Hinh 1.4 cho thấy một cách đặt không đúng khi hai quân hậu ở hai góc có thể ăn được nhau.
+
+![](images/page_21_image_6.jpg)
+
+Hình 1.4 - Một lời giải gần đúng của bài toán 8 hậu.
+
+<!-- page: 23 -->
+
+Mặc dù có một cách giải đặc biệt cho riêng bài toán này cũng như cho lớp bài toán n quân hậu, giải quyết bài toán bằng phương pháp tìm kiếm cũng có nhiều điều thú vị. Có hai cách biểu diễn bài toán này, một là theo dạng ta đặt từng quân hậu lên bàn cờ và khởi đầu bằng một bàn cờ trống, hai là bắt đầu với cả 8 quân hậu trên bàn cờ và di chuyển những quân hậu này. Trong cả hai cách đã nêu thì chi phí không được quan tâm, mà chỉ có trạng thái đích được quan tâm. Cách biểu diễn đầu tiên được biểu diễn như sau:
+
+\- Trạng thái: Một cách sắp xếp từ 0 đến 8 hậu trên bàn cò.
+
+\- Trạng thái ban đầu: Không có quân hậu nào trên bàn cờ
+
+\- Hàm trạng thái con: Phát sinh một trạng thái mới bằng cách thêm một quân hậu vào bàn cờ.
+
+\- Trạng thái đích: Tất cả 8 quân hậu trên bàn cờ đều không ăn được nhau.
+
+• Chi phí đường đi: Bằng 0 cho mỗi bước thực hiện.
+
+Số trường hợp phải xét sẽ rất lớn (64.64...57≈1.8 × 10$^{14}$) nếu không loại bỏ việc đặt vào những vị trí quân hậu đó có thể tân công. Với cách này ta có thể biểu diễn lại như sau:
+
+\- Trạng thái: Một cách sắp xếp n quân hậu (với 0 ≤ n ≤ 8) mỗi quân ở một cột tính từ bên trái qua, sao cho không có quân nào tấn công được nhau.
+
+\- Hàm trạng thái con: Phát sinh một trạng thái mới bằng cách thêm một quân hậu vào cột trồng đầu tiên tính từ bên trái, sao cho không có quân hậu nào tấn công được nhau.
+
+Cách biểu diễn mới này đã làm giảm không gian trạng thái từ: $3 \times 10^{14}$ xuống còn 2057 trạng thái, như vậy sẽ rất dễ cho việc tìm lời giải. Tuy nhiên, với 100 quân hậu thì mặc dù đã giảm số lượng trạng thái xuống khá nhiều, nhưng những thuật toán trong phạm vi chương này vẫn chưa时不ề giải quyết được.
+
+<!-- page: 24 -->
+
+## Bài toán thực tế
+
+## Bài toán tìm đường đi
+
+Bài toán tìm đường đi có thể sử dụng đồ thị để định nghĩa. Bài toán này thường được ứng dụng trong nhiều lĩnh vực khác như: định tuyến trong mạng máy tính, hệ thống lập kế hoạch các chuyển bay. Những vấn đề này thường khó mô tả. Một ví dụ đơn giản bài toán du lịch hàng không được mô tả như sau:
+
+\- Trạng thái: Thề hiện bởi địa điểm (sân bay) và thời điểm (giờ) hiện tại.
+
+\- Trạng thái ban đầu: Được mô tả bởi bài toán.
+
+\- Hàm trạng thái con: Trả về trạng thái kết quả của việc đi lên một chuyển bay theo lịch (gồm cả loại ghế và vị trí) bay từ sân bay này đến sân bay khác, thời điểm đến sẽ tính thêm khoảng thời gian cắt cánh trẻ (nếu có) và khoảng thời gian di chuyển lên máy bay.
+
+\- Trạng thái đích: Điểm đến tại một thời điểm xác định.
+
+\- Chi phí đường đi: Phụ thuộc vào tiền vé, thời gian chờ, thời gian bay, thủ tục nhập cảnh, loại ghế, loại máy bay v.v...
+
+Hệ thống tư vấn du lịch sử dụng phát biểu bài toán dạng như vậy, cùng với những điều kiện phức tạp khác. Những người thường xuyên đi máy bay đều biết không phải chuyển bay nào cũng đúng lịch trình đã định. Một hệ thống là thực sự tốt khi có thêm những kể hoạch đối phó với những sự cố như: đặt vé dự phòng trên những chuyển bay khác dựa trên chi phí và khả năng thất bại của kế hoạch ban đầu.
+
+## Bài toán người đi du lịch
+
+Cũng thuộc loại bài toán tìm đường đi nhưng lại khó hơn. Chẳng hạn, với yêu cầu là du khách sẽ xuất phát từ một thành phố đi thăm hết các thành phố khác ít nhất một lần, rời trở về nơi xuất phát. Cũng giống nhu bài toán tìm đường đi, hành động phát sinh trạng thái là di chuyển giữa hai thành phố liên kê nhau. Tuy nhiên, không gian trạng thái lại khác. Mỗi trạng thái bảy giờ có thêm tập các thành phố đã đi qua.
+
+<!-- page: 25 -->
+
+Trang thái đầu sẽ có dạng “Õ A; đi qua{A}”, một trạng thái trung gian có dạng là “Õ E; đi qua{A, B, C, D}”. Trang thái đích sẽ là đang ở tại thành phố ban đầu và tất cả thành phố đều đã được đi qua.
+
+## Bài toán người bán hàng
+
+Một trường hợp đặc biệt của bài toán người đi du lịch với yêu cầu cao hơn là mỗi thành phố chỉ được đi qua một lần. Mục đích là tìm đường đi ngắn nhất thỏa mãn điều kiện này. Bên cạnh ứng dụng lập kế hoạch cho người bán hàng bài toán này còn được ứng dụng cho các công việc như: lập kế hoạch cho mũi hàn mạch điện tử tự động và máy xếp hàng trong siêu thị.
+
+## Bài toán bố trí mạch điện tử
+
+Bài toán này yêu cầu bổ trí hàng triệu thành phần và mối nổi trên một con chip sao cho tối thiểu hóa diện tích, độ trẻ, mắt mát và tối đa hóa lợi nhuận cho nhà sản xuất. Vấn đề bổ trí này đi sau công việc thiết kế, thông thường gồm hai phần: bổ trí các ô và định tuyến kênh kết nối. Trong bổ trí ô, mỗi thành phần chính của mạch được gom lại thành các ô, mỗi ô thực hiện một chức năng khác nhau. Mỗi ô có một dạng nhất định và cần một số lượng đường kết nối nhất định. Mục đích ở phần này là đặt các ô trên con vi mạch sao cho nó không chồng lên nhau cũng như có chỗ trống cho đường nối giữa các ô. Phân thứ hai sẽ tìm đường đi cho các mạch nổi qua khoảng trống giữa các ô. Dạng bài toán tìm kiếm này cực kì khó nhưng lại rất cần trong thực tế.
+
+## Bài toán robot tìm đường
+
+Bài toán tổng quát của bài toán tìm đường đi. Trong đó, thay vì tập rời rạc các đường đi thì robot có thể di chuyển trong một không gian liên tục (trên lí thuyết) với một tập các hành động và trạng thái không giới hạn. Đối với robot có bánh di chuyển trên mặt phẳng thì không gian là hai chiều. Khi robot có thêm tay chân thì không gian sẽ trở thành nhiều chiều hơn. Bài toán này không chỉ đơn thuần là tìm kiếm, trên thực tế còn có những xử lý khác như: xử lý lỗi tín hiệu cảm biến.
+
+## Bài toán dây chuyên lắp ráp ráp tự động
+
+Những thiết bị phức tạp được lắp ráp bởi robot được trình diễn đầu tiên bởi Freddy năm 1972. Từ đó quá trình phát triển tuy chậm mà
+
+<!-- page: 26 -->
+
+chắc, lĩnh vực này đã đạt đến mức lắp ráp được những thiết bị phức tạp như: mô tô điện, rất có lợi về mặt kinh tế. Trong bài toán lắp ráp này, mục tiêu là tìm ra thứ tự lắp các phần của một vật. Nếu thứ tự lắp bị sai sẽ dẫn đến việc không thể gắn các phần khác vào hoặc phải tháo ra làm lại. Việc này khó khăn như việc tìm đường cho robot. Vi hàm trạng thái con có thể tổn nhiều chi phí. Bất kì thuật toán nào được ứng dụng cũng nên tránh việc xét hết toàn bộ không gian trạng thái. Ngoài ra thiết kế protein cũng là một bài toán thuộc loại này. Mục tiêu là tìm ra chuỗi amino axit ráp vào một protein 3 chiều với những tính chất phù hợp để chữa một số bệnh.
+
+## Tìm kiểm trên Internet
+
+Những năm gần đây Internet ngày càng phát triển, nhu cầu tìm kiếm thông tin trên mạng đề trả lời vô vàn câu hỏi, bổ sung thông tin ngày càng gia tăng. Từ đó cần có các robot tìm kiếm (phần mềm) trên mạng Internet để thực hiện công việc này. Đây là một ứng dụng hay của các kĩ thuật tìm kiếm, bởi ta có thể dễ dàng trừu tượng hóa Internet thành một đồ thị gồm các đỉnh (trang web) liên kết với nhau.
+
+## II. TİM THEO CHIỀU RỘNG (Breadth-first search - BFS)
+
+## II.1 Ý tưởng: Tìm các đường đi trong một số bước nhất định.
+
+Sau khi biểu diễn được bài toán, ta sẽ tiến hành giải quyết bài toán bằng cách tìm kiếm trong không gian trạng thái. Các phương pháp tìm kiếm thông thường dựa trên việc xây dựng cây tìm kiếm trong quá trình thực hiện. Cây tìm kiếm cũng được xây dựng từ trạng thái ban đầu và hàm trạng thái con của không gian trạng thái của bài toán tìm kiếm. Nút gốc của cây tìm kiếm sẽ là trạng thái ban đầu. Nút con của một nút trạng thái u là trạng thái được phát sinh từ u (nói cách khác là định kể định u trong đồ thị trạng thái). Trong trường hợp tổng quát chúng ta có một đồ thị tìm kiếm thay vì một cây tìm kiếm đơn thuần, vì có nhiều đường đi dẫn tới cùng một trạng thái. Ta sẽ xem xét đến trường hợp này trong phần IV.2.
+
+Mỗi phương pháp tìm kiếm sẽ có một cách xây dựng cây tìm kiếm khác nhau. Hình 1.5 cho thấy một số bước đầu xây dựng cây tìm kiếm
+
+<!-- page: 27 -->
+
+cho bài toán tìm đường đi du lịch từ Hà Giang đến Hà Nội. Xuất phát từ nút gốc là một nút tìm kiểm ứng với trạng thái ban đầu S. Bước đầu tiên là phải kiểm tra xem nút này có phải là đích không. Bước kiểm tra này rất quan trọng, mặc dù ta biết nút gốc là trạng thái ban đầu, nhưng nếu gặp phải yêu cầu tìm đường di từ Hà Giang đến Hà Giang ta vẫn có thể giải được. Nút này không phải là trạng thái đích, ta sẽ xem xét tiếp những trạng thái khác bằng cách mở rộng trạng thái hiện tại, áp dụng hàm trạng thái cho trạng thái hiện tại để phát sinh ra một tập các trạng thái mới. Trong ví dụ minh hoa có ba trạng thái mới được phát sinh từ nút gốc: Ô(Tuyên Quang), Ô(Bắc Cạn) và Ô(Cao Bằng). Tới bước này ta sẽ chọn một trong những trạng thái mới này để xem xét tiếp.
+
+Già sử chọn nút Tuyên Quang. Khi đó kiểm tra xem nút này có phải là trạng thái đích không (kết quả : không phải) và mở rộng nó thì thêm được các trạng thái mới Ô(Hà Giang), Ô(Phú Thọ), Ô(Bắc Cạn), Ô(Thái Nguyên) và Ô(Vĩnh Phúc). Ta có thể chọn một trong năm trạng thái mới này hoặc quay trở lại chọn Bắc Cạn hoặc Cao Bằng đều được. Tiếp tục công việc chọn, kiểm tra, mở rộng tới khi nào tìm thấy lời giải hoặc không thể mở rộng thêm trạng thái nào nữa thì dùng. Tủy thuộc vào chiến lược tìm kiếm mà sẽ có sự chọn lựa trạng thái khác nhau.
+
+<!-- page: 28 -->
+
+![](images/page_27_image_1.jpg)
+
+Hình 1.5 - Một phần cây tìm kiếm cho bài toán tìm đường đi từ Hà Giang đến Hà Nội. Những nút đã mở rộng được tố đen, những nút mới phát sinh nhưng chưa được mở rộng được viên đen đậm, những nút chưa được phát sinh thế hiện ở dạng nét dứt mờ (dưa trên đồ thị không gian trạng thái).
+
+Cần phân biệt rõ sự khác nhau giữa không gian trạng thái với cây tìm kiếm. Trong bài toán tìm đường đi, số trạng thái trong không gian trạng thái là xác định (chẳng hạn là 18 ứng với số thành phố) nhưng số đường đi trong không gian trạng thái này lại là vô hạn dẫn đến số nút trên cây tìm kiếm cũng vô hạn. Ví dụ, các đường đi như Hà Giang-Tuyên Quang, Hà Giang-Tuyên Quang-Hà Giang, Hà Giang-Tuyên Quang-Hà Giang-Tuyên Quang chi là ba trong số dãy vô hạn những đường đi có thể có (một thuật toán tìm kiếm tốt thường tránh những trường hợp lắp vô tận như vây). Hình 1.6 minh họa một không gian trạng thái và cây tìm kiếm tương ứng với không gian trạng thái này (đã loại bỏ những trường hợp lắp vô tận).
+
+<!-- page: 29 -->
+
+![](images/page_28_image_1.jpg)
+
+(b)
+
+![](images/page_28_image_3.jpg)
+
+Hình 1.6 - (a) Đồ thị không gian trạng thái của bài toán tìm đường đi trong đó START là trạng thái ban đầu, GOAL là trạng thái dịch. (b) Cấy tìm kiểm tương ứng với đồ thị không gian trạng thái.
+
+Có rất nhiều cách đề biểu diễn một nút, ở đây ta xem nút là một cấu trúc dữ liệu gồm 5 thành phần sau:
+
+\- Trạng thái: Trạng thái tương ứng của nút trong không gian trạng thái.
+
+\- Nút\_Cha: Nút cha đã phát sinh ra nút này trong cây tìm kiếm.
+
+\- Hành động: Hành động được thực hiện trên nút cha để phát sinh ra nút này.
+
+\- Chi phí đường đi: Chi phí của đường đi từ trạng thái ban đầu tới nút này được kí hiệu là g(n).
+
+• Độ sâu: Số bước đi tính từ trạng thái ban đầu.
+
+<!-- page: 30 -->
+
+Ngoài ra, cũng cần phân biệt rõ giữa nút và trạng thái. Một nút là cấu trúc dữ liệu cơ bản tạo nên một cây tìm kiếm. Một trạng thái tương ứng với một tình trạng của thể giới (thé giới của bài toán, không phải thể giới thực). Do đó, nút thuộc về những đường đi cụ thể, trong khi trạng thái không như vậy. Và lại, hai nút khác nhau có thể là của cùng một trạng thái, nếu trạng thái này được phát sinh bằng hai con đường khác nhau. Hình 1.7 minh họa cấu trúc dữ liệu của một nút trong cây tìm kiếm.
+
+![](images/page_29_image_2.jpg)
+
+Hình 1.7 - Nút là cấu trúc dữ liệu xây dựng nên cây tìm kiếm. Mỗi nút có một nút cha, một trạng thái và những thông tin khác. Chiều mũi tên đi từ nút con lên nút cha.
+
+Tập hợp những nút đã được phát sinh ra nhưng chưa được mở rộng gọi là nhánh non. Mỗi phần tử trong nhánh non là một nút lá tại thời điểm đang xét, được biểu diễn bởi những đường tròn trong hình 1.7.
+
+Lúc này phương pháp tìm kiếm chính là một hàm thực hiện việc chọn nút tiếp theo để mở rộng trong tập hợp này, hoặc có thể xem như là một cách duyệt các nút trên cây tìm kiếm theo một thứ tự nhất định. Trên thực tế tập hợp nút này được cải đặt bằng cấu trúc dữ liệu hàng đợi tổng quát. Với các thao tác trên hàng đợi như sau:
+
+<!-- page: 31 -->
+
+```txt
+function Tim_keiểm_Cây(bài_toán,ngăn_chứa) return lời giải hoặc thất bại
+ngăn_chứa←Thêm(Tạo_Nút(Trạng_thái_dầu[bài_toán]), ngăn_chứa)
+loop do
+    if Là Rỗng(ngăn_chứa) then return thất bại
+        nút←Lấy_phần từ_dầu(ngăn_chứa)
+    if Câu_hói_dích [bài_toán] trên Trạng_thái[nút] đúng
+        then return Lời_giai(nút)
+        ngăn_chứa←Thêm Tất cả(Mở rộng(nút, bài_toán),ngăn_chứa)
+
+function Mở rộng(nút, bài_toán) return một tập các nút
+trang_thái_con←khởi tạo tập rỗng
+for each (hành_dộng, kết_quả) in Con[bài_toán](Trạng_thái[nút]) do
+    s ← một nút mới
+        Trạng_thái[s] ←kết_quả
+        Nút_Cha[s] ←nút
+        Hành_dộng[s] ←hành_dộng
+        Chi_phi_dường_di[s] ←Chi_phi_dường_di[nút] + Chi_phi_bước
+        (hành_dộng, Trạng_thái[nút], kết_quả)
+        Độ_sâu[s] ←Độ_sâu [nút] + 1
+        Thêm s vào trạng_thái_con
+return trạng_thái_con
+```
+
+Hình 1.8 - Thuật toán tìm kiếm cây tổng quát. (Lưu y: đổi số ngăn\_chưa phải là một hàng đợi rỗng và kiểu hàng đợi sẽ ảnh hưởng đến thứ tự tìm kiếm. Hàm Lời\_giải trả về lời giải là một chuỗi các biển đổi có được từ con trở quay lui trở về một gốc).
+
+\- Tạo\_Hàng\_Dợi(phần\_từ,...): Khởi tạo hàng với các phần\_từ.
+
+\- Là\_Rỗng(hàng\_dợi): Trả về true nếu hàng dợi rỗng.
+
+\- Đầu(hàng\_dợi): Trà về phần từ đầu tiên trong hàng đợi.
+
+\- Lấy\_Phần\_từ\_Dầu(hàng\_dợi): Trả về phần tử đầu tiên trong hàng dợi và loại nó ra khởi hàng dợi.
+
+\- Thêm(phần\_từ, hàng\_dợi): Thêm một phần từ vào hàng đợi và trả về hàng đợi mới.
+
+\- Thêm\_Tất\_cả(các\_phần\_từ, hàng\_dợi): Thêm một loạt các phần tử vào hàng dợi và trả về hàng dợi mới.
+
+Tùy vào kiểu hàng đợi mà thao tác thêm vào và lấy ra có sự khác biệt. Trong giáo trình này đề cập đến ba kiểu hàng đợi:
+
+<!-- page: 32 -->
+
+\- Hàng đội First-In-First-Out (FIFO): Thường gọi tất là hàng đội.
+
+\- Hàng đợi Last-In-First-Out (LIFO): Còn gọi là ngăn xếp (Stack).
+
+\- Hàng đợi ưu tiên (Priority Queue).
+
+Với những khái niệm trên, ta có thể viết thuật toán tìm kiếm tổng quát dựa trên cây tìm kiếm như trong Hình 1.8.
+
+## II.2 Con trổ quay lui
+
+Trong quá trình xây dựng cây tìm kiếm, mỗi nút đều chứa thông tin về trạng thái tương ứng. bên cạnh đó còn ghi nhận cả trạng thái trước đó (nút cha của nó). Với mục tiêu là tìm đường đi từ trạng thái ban đầu tới trạng thái đích nên cần lưu vết lại, để từ đó có thể phát sinh lời giải (con đường đề di tới đích). Điều này rất quan trọng vi nếu chỉ quan tâm đến việc đã tới đích hay chưa, mà không ghi nhớ lại trước đó đã đi như thế nào để tới đích, thì như vào được trong mê cung mà không ra lại được. Việc ghi nhận lại trạng thái trước đó được gọi là con trò quay lui. Con trò quay lui được lưu trong một nút bởi Nút\_Cha, trong đó Nút\_Cha(v) = u, nghĩa là u là nút cha của v.
+
+## II.3 Thuật toán tìm kiếm theo chiều rộng (BFS)
+
+Tìm kiểm theo chiều rộng ứng với việc xây dựng cây tìm kiếm theo chiều rộng, nút gốc được mở rộng đầu tiên, sau đó tất cả những nút con có được từ nút gốc sẽ được mở rộng, tiếp theo và sau đó là nút con của chúng và cứ thế tiếp tục. Tổng quát, ta có thể thực hiện như sau: tất cả các nút ở độ sâu là $d$ trong cây tìm kiếm sẽ được mở rộng trước những nút ở độ sâu $d+1$. Cách làm này xuất phát từ ý tưởng là sẽ có một hoặc nhiều đường di tới đích qua $n$ bước. Do $n$ bước ta chưa xác định được nên sẽ phải xét hết các đường đi có thể lần lượt từ $n = 1$, 2, 3... tới khi nào gặp đích thì dùng. Với cách làm này chúng ta phủ toàn bộ các nhánh có thể của cây tìm kiếm với độ cao nhỏ hơn n, ... giống như việc ta loang rộng trên cây tìm kiếm nên chiến lược này được gọi là tìm kiếm theo chiều rộng.
+
+<!-- page: 33 -->
+
+Thuật toán tìm theo chiều rộng có thể cải đặt dựa trên thuật toán tìm kiếm tổng quát, sử dụng hàm Tîm kiểm\_Cây với tham số ngăn\_chứa truyền vào là một hàng đợi FIFO theo cách: nút xét đến trước sẽ được mở rộng trước. Nói cách khác, việc gọi hàm Tîm kiểm\_Cây(hài\_toán, Hàng\_dợi\_FIFO()) sẽ cho kết quả tìm kiếm theo chiều rộng. Hàng đợi FIFO đặt những nút mới phát sinh vào cuối hàng đợi, tương đương với việc mở rộng những nút ở gần trước khi mở rộng những nút sâu hơn. Hình 1.9 minh họa thứ tự duyệt của thuật toán trên cây nhị phân đơn giản.
+
+![](images/page_32_image_2.jpg)
+
+Hình 1.9 - Tùm kiểm theo chiều rộng trên cây nhi phân đơn giản. Tại mỗi bước, dấu mũi tên chỉ ngay vào nút sẽ được mở rộng tiếp theo.
+
+## III. TÍM KIỂM CHI PHÍ ĐỒNG NHẤT (Uniform-cost Search - UCS)
+
+Thuật toán BFS chỉ tìm ra đường đi có số bước biển đổi ít nhất. Nó không tìm thấy đường đi có chi phí nhỏ nhất. Đối với những bài toán tìm kiếm mà các bước biển đổi có chi phí, nghĩa là đồ thị trạng thái là đồ thị có trọng số, thì thuật toán BFS cho ra lời giải không phù hợp.
+
+Hình 1.10 là đồ thị biểu diễn cho bài toán tìm kiếm có chi phí. Đãy là mở rộng của bài toán biểu diễn bởi Hinh 1.6 (a) với sự bổ sung chi phí cho mỗi đường đi.
+
+Thuật toán tìm kiếm theo chiều rộng sẽ tốt trong trường hợp các bước biển đổi có chi phí như nhau, bởi vì nó luôn mở rộng nút gần nhất. Một mở rộng đơn giản cho thuật toán tìm kiếm theo chiều rộng đề tìm lời giải khi có hàm chi phí chuyển đổi bắt kì. Đó là thay vì mở rộng nút gần nhất, thuật toán tìm kiếm chi phí đồng nhất sẽ mở rộng nút n có chi phí đường đi tới nó thấp nhất. Thuật toán tìm kiếm chi phí đồng nhất tổng quát hơn thuật toán tìm kiếm theo chiều rộng, trong trường
+
+<!-- page: 34 -->
+
+hop đặc biệt (các bước biến đổi có chi phí như nhau) hai thuật toán này là như nhau.
+
+![](images/page_33_image_2.jpg)
+
+Hình 1.10 - Bài toán tìm kiếm có chi phí.
+
+Tương tự như tìm kiếm theo chiều rộng, thuật toán tìm kiếm chi phí đồng nhất thường được cải đặt dựa trên thuật toán tìm kiếm tổng quát, sử dụng hàm Tím kiểm\_Cây với tham số ngăn\_chưa truyền vào là một hàng đợi ưu tiên theo chi phí chuyển đổi. Nói cách khác, việc gọi hàm Tím kiểm\_Cây(bài\_toán, Hàng\_dợi\_Uu\_Tiên()) sẽ cho kết quả tìm kiếm chi phí đồng nhất. Hàng đợi uu tiên được trình bày trong phần sau.
+
+## III.1 Hàng đội ưu tiên
+
+Hàng đợi ưu tiên là một cấu trúc dữ liệu trong đó ta có thể thêm và lấy ra các phần tử dựa trên độ ưu tiên của mỗi phần tử. Mỗi phần tử trong hàng đợi thường có kèm theo một giá trị dùng để xác định độ uu tiên của phần tử đó trong hàng đợi.
+
+Hàng đợi ưu tiên có hai toán từ (hoặc thao tác) cơ bản:
+
+• Thêm: Đưa một phần từ vào hàng đợi.
+
+\- Lấy: Lấy ra một phần tử trong hàng đợi có độ ưu tiên cao nhất.
+
+Đối với thuật toán tìm kiếm chi phí đồng nhất, độ ưu tiên của một phần tử (trạng thái) chính là chi phí đường đi tới trạng thái đó, trạng thái nào có chi phí đường đi thấp hơn thì độ ưu tiên sẽ cao hơn và trạng thái đó sẽ được lấy ra khởi hàng đợi trước.
+
+<!-- page: 35 -->
+
+Ta có thể cải đặt hàng đợi ưu tiên theo nhiều phương pháp khác nhau chẳng hạn ta có thể dùng:
+
+\- Màng tĩnh.
+
+\- Danh sách liên kết: Thao tác thêm tại đầu (hoặc cuối) danh sách có chi phí là O(1), khi lấy ra tiến hành duyệt danh sách đề tìm phần từ có độ ưu tiên cao nhất cần thời gian O(N). Hoặc, giữ danh sách luôn được sắp xếp theo độ ưu tiên, như vậy thao tác thêm tổn chi phí O(N) nhưng thao tác lấy chi cần O(1).
+
+\- Cây nhị phân tìm kiếm: Cả hai thao tác thêm và lấy đều có độ phức tạp là O(logN). Đây là cách cải đặt tối ưu.
+
+Với N là số phần từ trong hàng đợi ưu tiên.
+
+## III.2 Hàm chi phí
+
+Tuy ở trên có đề cập hàm chi phí chuyển đổi bắt kì, nhưng thuật toán chi phí đồng nhất cần điều kiện ràng buộc đối với hàm chi phí để tránh trường hợp lắp vô hạn. Chi phí đường đi tại mỗi bước biến đổi phải lớn hơn hoặc bằng một hàng số c dương.
+
+## III.3 Thuật toán và điều kiện dùng.
+
+Thuật toán tìm kiếm chi phí đồng nhất có thể được viết lại chi tiết như sau:
+
+```txt
+function Tîm_kiểm_UCS (bài_toán, ngăn_chứa) return lời giải hoặc thất bại.
+ngăn_chứa ← Tạo_Hàng_Dợi_Rỗng()
+ngăn_chứa ← Thêm(TẠO_NUT(Trạng_Thái_Dầu[bài_toán]), ngăn_chứa)
+loop do
+    if Là_Rỗng(ngăn_chứa) then return thất bại.
+    nút ← Lấy_Chi_phi_Nhỏ_nhất(ngăn_chứa)
+    if Kiểm_tra_Câu_hòi_dích[bài_toán] trên Trạng_thái[nút] đúng.
+        then return Lời_giải(nút).
+    lg ← Mở(nút, bài_toán)          //lg tập các nút con mới.
+    ngăn_chứa ← Thêm_Tất cả(lg, ngăn_chứa)
+```
+
+Hình 1.11 - Thuật toán tìm kiếm UCS.
+
+Lưu ý với mô tả thuật toán tìm kiếm như trên, thuật toán sẽ dùng khi đích được lấy ra khởi hàng đợi ưu tiên. Dòng lệnh kiểm tra là đích được thực hiện ngay sau thao tác lấy một phần tử ra khởi hàng đợi.
+
+<!-- page: 36 -->
+
+Nếu ta thực hiện kiểm tra đích ngay sau thao tác mở rộng một nút thì có thể sẽ bỏ qua đường đi ngắn nhất.
+
+Trong thuật toán tìm kiếm UCS, thao tác chính trong mỗi vòng lặp bao gồm lấy phần từ có chi phí thấp nhất ra khởi hàng đợi ưu tiên và thêm các trạng thái con của phần từ vừa lấy. Quả trình thực hiện thuật toán này có thể được biểu diễn bằng các trạng thái của hàng đợi ưu tiên qua các vòng lặp. Phần dưới đây mô tả các bước thực hiện của tìm kiếm UCS đối với ví dụ trong Hình 1.10.
+
+```txt
+PQ = {(Start, 0)}.
+PQ = {(p, 1), (d, 3), (c, 9)}.
+PQ = {(d, 3), (e, 9), (q, 16)}.
+PQ = {(b, 4), (e, 5), (c, 11), (q, 16)}.
+PQ = {(e, 5), (a, 6), (c, 11), (q, 16)}.
+PQ = {(a, 6), (h, 6), (c, 11), (r, 14), (q, 16)}.
+PQ = {(h, 6), (c, 11), (r, 14), (q, 16)}.
+PQ = {(q, 10), (c, 11), (r, 14)}.
+PQ = {(c, 11), (r, 13)}.
+PQ = {(r, 13)}.
+PQ = {(f, 18)}.
+PQ = {Goal, 23}.
+Vay, đường đi ngắn nhất từ Start đến Goal là: Start → d → c → h → q → r → f → Goal với chi phí là 23.
+```
+
+## III.4 Đánh giá thuật toán tìm kiếm
+
+Một thuật toán tìm kiếm đề giải quyết bài toán có thể cho ra một lời giải hoặc thất bại (kết thúc nhưng không tìm thấy lời giải hoặc lập vô hạn không kết thúc). Ta sẽ đánh giá thuật toán tìm kiếm dựa trên bốn yếu tố sau:
+
+\- Tính đầy đủ: Thuật toán có bảo đảm tìm thấy lời giải nếu có hay không?
+
+\- Tính tối ưu: Thuật toán có bảo đảm tìm thấy lời giải tối ưu không? (Sẽ tìm thấy đường đi có chỉ phí nhỏ nhất?)
+
+\- Độ phức tạp về thời gian: Mất bao lâu để tìm ra lời giải.
+
+<!-- page: 37 -->
+
+\- Độ phức tạp về không gian: Cần sử dụng bao nhiêu bộ nhớ trong quá trình tìm kiếm.
+
+Độ phúc tạp về thời gian và không gian thường được xem như các khía cạnh của việc đo lường độ phức tạp của bài toán. Theo lý thuyết trong khoa học máy tính, thước đo thông thường là kích thước của đồ thị không gian trạng thái, bởi vì đồ thị này được xem là một cấu trúc dữ liệu tường minh làm đầu vào cho thuật toán tìm kiếm (Ví dụ như bản đồ du lịch). Trong trí tuệ nhân tạo, thì đồ thị này được thể hiện ngầm bởi trạng thái ban đầu và hàm trạng thái con. Độ phức tạp được thể hiện bằng ba đại lượng sau:
+
+\- b: Hệ số phân nhánh trung bình (số con trung bình hoặc tối đa) (b>1).
+
+\- D: Độ dài đường đi từ nút gốc đến nút đích với số bước (chỉ phí) ít nhất.
+
+\- m: Độ dài đường đi dài nhất từ nút gốc đến một nút bất kì.
+
+Độ phức tạp về thời gian được tính bằng số lượng trạng thái con được phát sinh trong quá trình tìm kiếm, về không gian được tính bằng số trạng thái lớn nhất được lưu trong bộ nhớ.
+
+Đề đánh giá hiệu quả của một thuật toán tìm kiếm, có thể chỉ cần xem xét đến chi phí tìm kiếm, thường liên quan tới độ phức tạp về thời gian. Ngoài ra, có thể tính chi phí tổng cộng trong đó xem xét thêm về việc sử dụng bộ nhớ bao gồm chi phí tìm kiếm và chi phí đường đi của lời giải tìm ra được. Ví dụ, trong bài toán tìm đường đi từ thành phố Hà Giang tới Hà Nội thì chi phí tìm kiếm là thời gian cần cho việc tìm kiếm (ms) và chi phí của lời giải là tổng chiều dài đường đi (km). Như vậy, để tính chi phí tổng cộng ta phải cộng hai đại lượng có đơn vị là km và mili giây với nhau. Không có công thức chuyển đổi giữa hai đơn vị này, nhưng ta có thể tạm chấp nhận chuyển km sang mili giây bằng cách xếp xỉ theo tốc độ xe chạy trung bình (bài toán này quan tâm về thời gian).
+
+Sự dụng bốn tiêu chuẩn được đề cập ở trên, ta sẽ lần lượt đánh giá thuật toán tìm kiếm theo chiều rộng và thuật toán tìm kiếm chi phí đồng nhất.
+
+<!-- page: 38 -->
+
+Đối với thuật toán tìm kiếm theo chiều rộng, dễ thấy rằng thuật toán thỏa tính đầy đủ. Nếu nút đích gần nhất nằm ở một độ sâu $d$ xác định (trên cây tìm kiếm), thuật toán chắc chắn sẽ tìm thấy nút này sau khi mở rộng hết tất cả những nút ở độ sâu gần hơn (với điều kiện $b$ hữu hạn). Nút đích gần nhất không nhất thiết là lựa chọn tối ưu, nhưng thuật toán tìm kiếm theo chiều rộng vẫn tối ưu nếu chi phí chuyển đổi là một hàm không giảm theo độ sâu của nút (chẳng hạn trong trường hợp tất cả các biển đổi đều có cùng chi phí). Đến đây, ta thấy thuật toán tìm kiếm theo chiều rộng khá tốt khi thỏa cả hai tiêu chuẩn đầu. Hai tiêu chuẩn sau sẽ cho thấy tại sao thuật toán tìm kiếm theo chiều rộng không là lựa chọn hàng đầu. Giả sử mọi trạng thái có thể mở rộng được tối đa $b$ nút. Gốc của cây tìm kiếm sẽ tạo ra $b$ nút ở mức đầu tiên, mỗi nút con mới đó sẽ tạo ra thêm b nút con nửa, tổng cộng sẽ có $b^{2}$ nút ở độ sâu thứ hai, cứ thế tiếp tục. Giả sử rằng đường đi tới đích có chiều dài là $d$. Trong trường hợp xấu nhất sẽ phải mở rộng các nút ở độ sau $d$ (trừ nút đích không mở rộng). Khi đó tổng số nút được phát sinh ra sẽ là:
+
+$$
+b ^ {1} + b ^ {2} + b ^ {3} + \dots + b ^ {d} + (b ^ {d + 1} - b ^ {1}) = O (b ^ {d + 1})
+$$
+
+Các nút được phát sinh ra đều được lưu trong bộ nhớ, do đó độ phức tạp về mặt không gian giống với độ phức tạp về mặt thời gian và bằng $O(b^{d})$.
+
+Độ phức tạp là một hàm mũ, như vậy thời gian cũng như không gian sử dụng sẽ tăng rất nhanh theo độ sâu. Điều này được thể hiện qua Bảng 1-1 cho thấy thời gian và dung lượng bộ nhớ cần cho thuật toán tìm kiếm theo chiều rộng với $b = 10$ và theo giá trị độ sâu $d$ tăng dần. Giả sử có thể phát sinh 10.000 nút trong vòng 1 giây và mỗi nút cần 1.000 byte để lưu trữ.
+
+<!-- page: 39 -->
+
+Bảng 1-1. Thể hiện thời gian chạy và bộ nhớ sử dụng của tìm kiếm theo chiều rộng. Với giả thiết là b = 10; 10.000 mút/giây, 1.000 byte/nút.
+
+| Độ sâu | Số nút | Thời gian | Bộ nhớ |
+| --- | --- | --- | --- |
+| 2 | 1100 | 11 giây | 1MB |
+| 4 | 111100 | 11 giây | 106 MB |
+| 6 | $10^7$ | 19 phút | 10 GB |
+| 8 | $10^9$ | 31 giờ | 1 TB |
+| 10 | $10^{11}$ | 129 ngày | 101 TB |
+| 12 | $10^{13}$ | 35 năm | 10 PB |
+| 14 | $10^{15}$ | 3523 năm | 1 EB |
+
+Từ bảng trên, sẽ thấy được hai điều. Đầu tiên là trong tìm kiếm theo chiều rộng, yêu cầu về bộ nhớ là vấn đề lớn hơn so với thời gian chạy. Người ta có thể ngồi chờ 31 giờ để tìm ra lời giải ở độ sâu là 8 được, nhưng không có máy tính nào bộ nhớ lên đến hàng Terabyte để sử dụng. Điều thứ hai là thời gian vẫn còn là một nhân tố ảnh hưởng khá lớn. Nếu bài toán cần giải có lời giải ở độ sâu là 12 thì sẽ cần đến 35 năm để tìm ra nó bằng thuật toán tìm kiếm theo chiều rộng.
+
+Thuật toán tìm kiếm chi phí đồng nhất không quan tâm đến số bước của đường đi, mà chỉ quan tâm đến chi phí tổng cộng. Do đó, thuật toán có thể bị lặp vô hạn, nếu gặp một nút có chi phí chuyển đổi tới cùng trạng thái đó bằng 0 (ví dụ ứng hành động không làm gì cả). Chúng ta có thể đảm bảo được tính đầy đủ với điều kiện chi phí tại mỗi bước biến đổi lớn hơn hoặc bằng một hàng số c dương đủ nhỏ. Điều kiện này cũng đảm bảo tính tối ưu. Điều này đồng nghĩa với hàm chi phí sẽ tăng theo đường đi, việc mở rộng thêm nút sẽ làm tăng chi phí của đường đi. Do đó, khi bắt gặp nút đích đầu tiên thì đó cũng chính là lời giải tối ưu.
+
+Thuật toán tìm kiếm chi phí đồng nhất chủ yếu dựa trên chi phí của đường đi nên độ phức tạp khó xác định bởi giá trị của b và d (độ sâu). Thay vào đó, gọi C\* là chi phí của lời giải tối ưu và giả sử ràng chi phí chuyển đổi ít nhất là e. Như vậy độ phức tạp về thời gian và không gian của thuật toán là $O(b^{1-[C^*/e]})$ và có thể lớn hơn $b^{d}$ nhiều. Bời vì,
+
+<!-- page: 40 -->
+
+tìm kiểm chi phí đồng nhất có thể và thông thường sẽ mở rộng hướng
+tìm kiểm theo những nhánh mà ban đầu có chi phí thấp trước khi đi
+vào con đường đúng mà ban đầu có chi phí cao (tổng chi phí vẫn thấp
+hơn). Khi chi phí chuyển đổi đều bằng nhau thì $b^{1-\lfloor C^{*} \rfloor}$ sẽ chi còn là
+$b^{d}$.
+
+Bảng 1-2. Đánh giá thuật toán BFS và UCS. Nếu chi phí chuyển đổi bằng nhau.
+
+| Thuật toán | Đủ | Tối ưu | Thời gian | Không gian |
+| --- | --- | --- | --- | --- |
+| BFS | Có | $Có^{*}$ | $O(b^{d+1})$ | $O(b^{d-1})$ |
+| UCS | Có | Có | $O(b^{1-\lfloor c^{*},e\rfloor})$ | $O(b^{1+\lfloor c^{*},e\rfloor})$ |
+
+## IV. TİM THEO CHIỀU SÂU (Depth-first search - DFS)
+
+## IV.1 Tìm kiểm theo chiều sâu – Một thuật toán thay thế.
+
+Tìm kiểm theo chiều sâu luôn mở rộng nút nằm sâu nhất trong nhánh hiện tại đang xét trên cây tìm kiếm. Quá trình được thể hiện trong Hình 1.12. Thuật toán tiến hành tìm kiếm ở mức sâu nhất của cây tìm kiếm, tại đó các nút không có nút con nào. Với những nút đã được mở rộng sẽ được loại khởi nhánh tìm kiếm, khi đó công việc tìm kiếm sẽ quay trở lại nút gần nhất có các nút con chưa được xét đến.
+
+| function Tîm_kiểm_Chiều_sâu(bài_toán) return lời giải hoặc thất bại. return DFS_Dệ_qui(TẠO_NUT(TThái Đầu[bài_toán]), bài_toán.) |
+| --- |
+| function DFS_Dệ_qui(nút, bài_toán) return lời giải hoặc thất bại. if Kiểm_tra_Câu_hôi_dích[bài_toán] trên Trạng_thái[nút] đúng. then return Lời_giải(nút). else for each con in Mở rộng(bài_toán) do kết_quả ← DFS_Dệ_qui(con, bài_toán). if kết_quả ≠ thất bại then return kết_quả. return thất bại. |
+
+Hình 1.12 - Thuật toán tìm kiểm Độ\_sâu-First-Search.
+
+Thuật toán tìm kiếm theo chiều sâu luôn mở rộng nút sâu mãi theo một hướng, chỉ khi nào không mở rộng được nửa thì chuyển sang hướng khác. Thuật toán có thể cải đặt dựa trên thuật toán tìm kiếm
+
+<!-- page: 41 -->
+
+tổng quát, sử dụng hàm Tím\_kiểm\_Chiều\_sâu với tham số ngăn\_chứa truyền vào là một hàng dợi LIFO còn gọi là ngăn xếp. Theo nguyên tắc này thì những nút được mở rộng sau (có độ sâu lớn hơn) sẽ được lấy ra trước. Một cách cải đặt khác, thường được sử dụng cho thuật toán tìm kiếm theo chiều sâu, đó là sử dụng một hàm để qui gọi lại chính no iàu lượt cho mỗi nút trên cây. Cách cải đặt này sẽ được minh họa sau đây.
+
+![](images/page_40_image_2.jpg)
+
+Hình 1.13 - Tím kiểm theo chiều sâu trên cây nhị phân. Những nút đã được mở rộng và không mở rộng thêm được nút con nào, có thể được xóa khởi bộ nhớ. Những nút này được tế màu đen đậm. Với giả thiết là nút ở độ sâu thứ 3 không có nút con nào và M là nút đích duy nhất.
+
+Thuật toán tìm kiếm theo chiều sâu sử dụng bộ nhớ khá tối ưu. Qua Hình 1.13 ta thấy thuật toán chi lưu trữ những nút (từ nút gốc đến nút
+
+<!-- page: 42 -->
+
+lá) trên nhánh đường đi đang được xem xét đến, cùng với những nút lân cận chưa được mở rộng trên đường đi. Một nút sẽ được xóa khởi bộ nhớ khi nó đã được mở rộng và các nút con cháu của nó đã được xét hết. Trong không gian trạng thái, với số nút con tối đa là b và độ sâu tối đa là m, DFS chỉ cần lưu tối đa $b \times m + 1$ nút. Ô mỗi độ sâu, mở rộng được tối đa là b nút, với độ sâu m thì trong bộ nhớ sẽ lưu $b \times m + 1$ nút (tính luôn nút gốc). Trong khi đó thì tìm kiếm theo chiều rộng cần đến $b^{d}$ nút trong trường hợp nút đích ở độ sâu là d.
+
+Độ phức tạp về mặt thời gian của thuật toán tìm kiếm theo chiều sâu là $O(b \times m)$. Đối với những vấn đề có nhiều lời giải, thì tìm kiếm theo chiều sâu thực sự nhanh hơn tìm kiếm theo chiều rộng, bởi vì nó có nhiều cơ hội tìm ra lời giải sau khi mở rộng một số lượng nhỏ các nút trong toàn không gian. Trong khi tìm kiếm theo chiều rộng sẽ phải xét hết tất cả đường đi có chiều dài $d-1$ có thể trước khi xét đến các đường đi có chiều dài là $d$. Với cùng một giả thiết, thuật toán tìm kiếm theo chiều sâu chỉ cần 118KB thay vì 10PB ($\sim 10^{10}$ byte) như trong tìm kiếm theo chiều rộng, khoảng chênh lệch về không gian bộ nhớ sử dụng lên đến 10 tỉ lần.
+
+Một biến thể của thuật toán tìm kiếm theo chiều sâu gọi là tìm kiếm quay lui, thuật toán này sử dụng ít bộ nhớ hơn. Trong tìm kiếm quay lui, tại một thời điểm chỉ có một nút con được sinh ra. Mỗi nút con này sẽ lưu giữ thông tin về nút cha của nó. Với cách này thì chỉ cần O(m) không gian bộ nhớ thay vì là O(bm). Ngoài ra, thuật toán này còn sử dụng một thủ thuật tiết kiệm bộ nhớ (có thể nói là tiết kiệm thời gian) khác nữa. Với ý tưởng khi phát sinh một nút con mới ta sẽ trực tiếp thay đổi thông tin về trạng thái hiện tại thay vì sao chép lại. Cách này làm giảm yêu cầu về bộ nhớ xuống còn lưu trữ thông tin một trạng thái và O(m) thao tác. Đề có thể làm được điều này. phải có khả năng phục hồi lại những thay đổi trước đó khi ta quay lại phát sinh tiếp trạng thái mới. Đối với những bài toán có các trạng thái phức tạp, chẳng hạn lắp ráp tự động, những kĩ thuật này rất quan trọng.
+
+## IV.2 Tránh lặp vô hạn – Các chiến lược kiểm tra
+
+Nhược điểm của tìm kiếm theo chiều sâu là nó có thể bị kẹt (xuống sâu mãi mà không thoát ra được) nếu đi không đúng đường, trong khi
+
+<!-- page: 43 -->
+
+nếu chọn đường khác thì lời giải lại nằm rất gần nút gốc của cây tìm kiếm. Ví dụ trong Hình 1.13 thuật toán sẽ mở rộng toàn bộ cây con bên trái trước ngay cả khi C là nút đích. Nếu J cũng là nút đích thì thuật toán sẽ tìm thấy và cho ra lời giải nhưng lại không phải lại lời giải tối ưu. Do đó, tìm kiếm theo chiều sâu không tối ưu. Nếu cây con bên trái có độ sâu không giới hạn và cũng không chứa nút đích, tìm kiếm theo chiều sâu sẽ lập vô hạn. Do đó, tìm kiếm theo chiều sâu không đầy đủ. Trong trường hợp xấu nhất, tìm kiếm theo chiều sâu sẽ phát sinh tất cả O($b^{m}$) nút trong cây tìm kiếm, với m là độ sâu lớn nhất của một nút bắt kì. Nên nhớ là $m$ lớn hơn $d$ rất nhiều và có thể vô hạn nếu cây không có giới hạn.
+
+Nhiều bài toán có lời giải nằm rất sâu hoặc độ sâu không xác định, nên tìm kiếm theo chiều sâu sẽ không bao giờ chuyển sang hướng khác được, nếu không may roi vào một hướng không có lời giải. Việc tìm kiếm sẽ cứ đi xuống sâu mãi một hướng, mặc dù ở hướng khác có lời giải.
+
+Nhiều trường hợp tìm kiếm theo chiều sâu sẽ bị lặp vô tận và không bao giờ tìm ra lời giải. Điều này có nghĩa là tìm kiếm theo chiều sâu có khả năng không tìm ra lời giải cũng như là lời giải tối ưu. Bởi vậy, tìm kiếm theo chiều sâu nên tránh sử dụng cho những vấn đề mà cây tìm kiếm lớn hoặc độ sâu tối đa không xác định.
+
+Ngoài ra, các trạng thái có thể bị lập lại trên cây tìm kiếm cũng khiển cho thuật toán tìm kiếm bị lập vô tận. Trên cây tìm kiếm, các trạng thái trùng lập lại tương ứng với những trạng thái có nhiều con đường cùng dẫn tới nó từ trạng thái ban đầu trong đồ thị không gian trạng thái. Nếu đồ thị này có chu trình thì cây tìm kiếm sẽ vô hạn, với các nhánh có một số nút được lập lại vô hạn lần. Đề tránh sự lập lại vô tận như vậy, ta có thể áp dụng một trong các chiến lược sau:
+
+\- Khi mở rộng nút $n$ sẽ không phát sinh các nút mới trùng với nút cha của $n$.
+
+\- Khi mở rộng nút $n$ sẽ không phát sinh các nút mới trùng với bắt kì một nút nào, nằm trên đường đi từ nút gốc tới $n$.
+
+\- Không mở rộng các nút đã được mở rộng trước đó.
+
+<!-- page: 44 -->
+
+Hai chiến lược đầu không tổn nhiều không gian bộ nhớ, tuy nhiên lại không tránh được hết các trường hợp lập. Chiến lược thứ ba đời hỏi phải lưu tất cả các trạng thái đã mở rộng trong bộ nhớ. Vấn đề này sẽ được đề cập chỉ tiết hơn trong phần V.
+
+## Tìm kiểm với độ sâu giới hạn
+
+Tìm kiểm với độ sâu giới hạn khắc phục được nhược điểm cây tìm kiếm không giới hạn của tìm kiếm theo chiều sâu, bằng cách giới hạn ở một độ sâu cho trước. Những nút nằm ở độ sâu lớn hơn sẽ không được xét đến. Tuy nhiên cải tiền này lại này sinh vấn đề đối với tính đầy đủ và tối ưu của thuật toán tìm kiếm. Nếu chọn độ sâu giới hạn $l < d$ đồng nghĩa với việc nút đích gần nhất nằm dưới độ sâu giới hạn (có thể xảy ra khi chưa biết $d$) thì thuật toán sẽ không tìm ra lời giải. Thuật toán cũng không tối ưu khi chọn $l > d$. Độ phức tạp về mặt thời gian và không gian là tương tự nhau đều là $O(b^{l})$.
+
+Phần khó nhất của tìm kiếm với độ sâu giới hạn là chọn độ sâu thích hợp. Hầu hết mọi vấn đề, ta sẽ không biết được độ sâu giới hạn tốt nhất cho tới khi vấn đề đã được giải quyết. Ngoài ra, ta cũng có thể dựa vào những hiểu biết về bài toán để giới hạn lại phạm vi tìm kiếm trong không gian trạng thái.
+
+Có thể cải đặt thuật toán tìm kiếm, dựa trên thuật toán tìm kiếm tổng quát trên cây với một vài điều chỉnh cho phù hợp hoặc dựa trên dạng dex qui của thuật toán tìm kiếm theo chiều sâu. Cho trước một độ sâu nào đó, rời tiền hành tìm kiếm chiều rộng ứng với mức sâu đó. Đoàn mã giả của thuật toán tìm kiếm với độ sâu giới hạn được trình bày trong Hình 1.14.
+
+<!-- page: 45 -->
+
+```txt
+function Tim_kiểm Độ_sâu_Giói hạn(bài_toán, giới_hạn) return lời giải hoặc thất bại
+return TĐG_Dệ_qui(Tạo_nút(Trạng_thái_dầu[bài_toán]), bài_toán, giới_hạn)
+function TĐG_Dệ_qui (nút, bài_toán, giới_hạn) return lời giải hoặc thất bại/dừng
+có_tia_nhánh ← false
+if Kiểm_tra_Câu_hôi_dích[bài_toán] trên Trạng_thái[nút] đúng
+then return Lời_giải(nút)
+else if Độ_sâu[nút] = giới_hạn then return dùng
+else for each nút_con in Mở rộng(bài_toán) do
+kết_quả ← TĐG_Dệ_qui(nút_con, bài_toán)
+if kết_quả = dùng then có_tia_nhánh ← true
+else if kết_quả ≠ thất bại then return kết_quả
+if có_tia_nhánh then return dùng return thất bại.
+```
+
+Hình 1.14 - Thuật toán Tím kiểm Độ sâu Giới hạn.
+
+Lưu ý, hàm dex qui của tìm kiếm với độ sâu giới hạn trong trường hợp không tìm ra lời giải sẽ trả về một trong hai dạng: thất bại khi không tìm thấy lời giải và giá trị dùng cho biết không có lời giải nào trong độ sâu giới hạn.
+
+## Tìm lời giải tối ưu – Tìm kiểm lặp sâu đàn (Iterative
+
+## Deepening Search – IDS)
+
+Tìm kiểm lặp sâu đần (hay còn gọi tìm kiếm với độ sâu tăng đần) là một phương pháp cải tiến vấn đề chọn độ sâu nào tốt nhất này, đơn giản bằng cách lần lượt thử hết các độ sâu có thể. Đầu tiên là 0, sau đó là 1 rời 2... Tìm kiểm với chiều sâu tăng đần đã kết hợp được những ưu điểm của tìm kiếm theo chiều rộng và chiều sâu. Nó vừa tối ưu (khi chi phí không giảm theo độ sâu), vừa đầy đủ (khi số nhánh con tối đa b hữu hạn), giống như tìm kiếm theo chiều rộng, nhưng lại có được sự tối ưu về bộ nhớ $O(bd)$ của tìm kiếm theo chiều sâu. Thứ tự
+
+<!-- page: 46 -->
+
+Chương 1. Các chiến lược tìm kiếm không có thông tin
+
+![](images/page_45_image_1.jpg)
+
+Hình 1.15 - Bồn bước lặp của thuật toán lặp sâu dân trên cây nhi phân.
+
+hạn. Hình 1.15 cho thấy bốn bước lặp đầu của hàm
+Tìm\_kiểm\_Lặp\_Sâu\_dần trên một cây tìm kiếm nhị phân và lời giải được tìm ra ở bước lặp thứ tư.
+
+![](images/page_45_image_4.jpg)
+
+Hình 1.16 -Thuật toán Tím kiểm lập sâu đàn.
+
+<!-- page: 47 -->
+
+Tìm kiểm với chiều sâu tăng dần có về lăng phí, do có nhiều trạng thái được phát sinh nhiều lần. Nhưng số lượng trạng thái thực sự không quá lớn. Bời vì, trong cây tìm kiếm với hệ số phân nhánh gần như thanhà ở mỗi mức sâu thì các nút ở các mức dưới chiếm đa số, cho nên việc phát sinh những nút ở trên nhiều lần cũng không có vấn đề gì.
+
+Trong tìm kiếm với chiều sâu tăng dần, những nút ở dưới cùng (ở độ sâu $d$) được phát sinh một lần và những nút cao hơn thì được phát sinh hai lần và cử thế di lên đến gốc, được phát sinh $d+1$ lần. Vậy tổng số nút được phát sinh là:
+
+$$
+N (\mathrm{IDS}) = (d) b ^ {l} + (d - 1) b ^ {2} + \dots + 3 b ^ {d - 2} + 2 b ^ {d - 1} + 1 b ^ {d}.
+$$
+
+So sánh với số lượng nút phát sinh bởi tìm kiếm theo chiều rộng là:
+
+$$
+N (\mathrm{BFS}) = b ^ {I} + b ^ {2} + \dots + b ^ {d} + (b ^ {d + 1} - b).
+$$
+
+Lưu ý rằng, tìm kiếm theo chiều rộng có phát sinh một số nút ở độ sâu d+1 trong khi tìm kiếm lắp sâu dân thì không. Kết quả là tìm kiếm lắp sâu đần thực sự nhanh hơn, mặc dù những trạng thái được phát sinh lắp lại nhiều lần. Ví dụ với b = 10 và d = 5 ta có:
+
+$$
+N (\mathrm{IDS}) = 5 0 + 4 0 0 + 3 0 0 0 + 2 0 0 0 0 + 1 0 0 0 0 0 = 1 2 3 4 5 0.
+$$
+
+$$
+\begin{array}{r l} N (\mathrm{BFS}) & = 1 0 + 1 0 0 + 1 0 0 0 + 1 0 0 0 0 + 1 0 0 0 0 0 + 9 9 9 9 9 0 = \\ & \quad 1 1 1 1 1 0 0. \end{array}
+$$
+
+Độ phức tạp về mặt thời gian của tìm kiếm lập sâu đàn vẫn là $O(b^{d})$ và về mặt không gian là $O(b \times d)$. Tóm lại, tìm kiếm với độ sâu tăng đàn được sử dụng nhiều khi không gian tìm kiếm lớn và độ sâu của lời giải không xác định.
+
+## V. TRÁNH TRÙNG LẬP TRẠNG THÁI
+
+Các phần trước đã đề cập qua một số thuật toán tìm kiếm nhưng lại bỏ qua trường hợp phức tạp trong quá trình tìm kiếm, đó là khả năng mở lại những trạng thái đã được xem xét và mở rộng trước đó. Với một số bài toán thì vấn đề này không xảy ra vì không gian trạng thái có dạng cây và chỉ có một đường đi duy nhất tới mỗi trạng thái. Chẳng hạn,
+
+<!-- page: 48 -->
+
+A
+
+với một phát biểu của bài toán 8 quân hậu, là mỗi quân hậu mới được đặt tại cột trồng đầu tiên tính từ bên trái thì mỗi trạng thái chỉ có thể đến được chỉ bằng một con đường duy nhất. Nếu phát biểu lại bài toán 8 quân hậu là một quân hậu có thể đặt vào bất kì cột nào thì mỗi trạng thái với n quân hậu có thể đến được bằng n! con đường khác nhau.
+
+Với một số bài toán, việc trùng lập trạng thái là không tránh khởi. Bao gồm những bài toán mà các hành động có thể đảo ngược được, như bài toán tìm đường đi hoặc bài toán 8-puzzle và dạng tổng quát của nó. Cây tìm kiếm của những bài toán này là vô hạn, nhưng nếu ta loại bỏ những trạng thái trùng lập thì có thể đưa cây tìm kiếm về kích thước hữu hạn. Dễ dàng tìm ra những ví dụ mà việc loại bỏ các trạng thái trùng làm giảm đáng kể chỉ phí tìm kiếm.
+
+Trong trường hợp xấu nhất, một không gian trạng thái kích thước $d+1$ (Hình 1.17(a)) có thể cho ra một cây tìm kiếm với $2^{d}$ nút lá (Hình 1.17(b)). Một ví dụ thực tế hơn là lưới ô vuông như trong Hình 1.17(c). Trên lưới mỗi trạng thái có bốn trạng thái con, như vậy cây tìm kiếm chứa những trạng thái trùng lập có $4^{d}$ nút lá, nhưng chỉ có $2d^{2}$ trạng thái khác nhau trong phạm vi $d$ bước từ một trạng thái bắt kì. Với $d = 20$ sẽ có một nghìn tỉ nút, nhưng chỉ có khoảng 800 trạng thái khác nhau.
+
+D
+
+![](images/page_47_image_6.jpg)
+
+(a)
+
+![](images/page_47_image_8.jpg)
+
+(b)
+
+![](images/page_47_image_10.jpg)
+
+(c)
+
+Hình 1.17 - Những không gian trạng thái tạo ra những cây tìm kiếm rất lớn. (a) Một không gian trạng thái trong đó có hai khả năng biển đổi từ A sang B, hai khả năng từ B sang C và cứ thế tiếp tục. Không gian trạng thái chưa d + I trạng thái, với d là độ sâu tối đa. (b) Cây tìm kiếm tương ứng có $2^{d}$ nhánh tương ứng với $2^{d}$ đường đi trong không gian. (c) Một không gian lưới ó vuông. Những trạng thái tới được từ trạng thái (A) trong 2 bước được tố màu xám.
+
+<!-- page: 49 -->
+
+ố vuông. Những trạng thái tới được từ trạng thái (A) trong 2 bước được tổ màu xám.
+
+Những ngang thái trùng lập có thể làm cho một bài toán giải được trở thành không giải được nếu thuật toán không phát hiện ra. Cách phát hiện thông thường là so sánh nút sắp được mở rộng với những nút đã được mở rộng, xem giống nhau không, nếu giống nhau thì xác định được có hai đường đi đến cùng một trạng thái và ta có thể loại bỏ một trong hai trạng thái này.
+
+Đối với tìm kiếm theo chiều sâu, chỉ những nút nằm trên đường đi từ nút gốc đến nút hiện tại là được lưu trong bộ nhớ. Việc so sánh nút hiện tại với những nút này cho phép thuật toán phát hiện chu trình trong đường đi và có thể loại bỏ ngay. Cách này sẽ bảo đảm không gian trạng thái hữu hạn, không tạo ra cây tìm kiếm vô hạn, tạo bởi các chu trình lập lại, thất không may nó lại không tránh được trường hợp bùng nổ theo hàm mũ các đường đi không chu trình như trong bài toán mô tả trong Hình 1.17. Cách duy nhất để tránh điều này là lưu tất cả nút vào bộ nhớ. Về cơ bản có một sự đánh đổi giữa không gian và thời gian. Những thuật toán không ghi nhớ lại những gì đã xảy ra, thì sẽ chắc chắn bị lập lại.
+
+Nếu một thuật toán ghi nhớ tất cả trạng thái mà nó đã xem xét, thì có thể xem như thuật toán đó đã thực hiện tìm kiếm trực tiếp trên đồ thị không gian trạng thái. Có thể thêm một cấu trúc dữ liệu gọi là tập đóng, chứa các trạng thái đã mở rộng vào thuật toán tìm kiếm tổng quát trên cây, lúc này tập các trạng thái chưa được mở rộng gọi là tập mở. Nếu nút hiện tại đang xét trùng với một nút có trong tập đóng, nó sẽ bị loại bỏ thay vì đã được mở rộng. Thuật toán mới gọi là tìm kiếm tổng quát trên đô thị (dựa trên bản chất của nó) như trong Hình 1.18.
+
+Đối với những bài toán có nhiều trạng thái lắp lại thì tìm kiếm trên đồ thị nhanh hơn nhiều so với tìm kiếm trên cây. Độ phức tạp về thời gian và không gian của thuật toán tỉ lệ với kích thước của không gian trạng thái và nhỏ hơn rất nhiều so với $O(b^{d})$.
+
+Vấn đề tối ưu trong tìm kiếm trên đồ thị khá phức tạp. Như đã đề cập ở trên là khi gặp một trạng thái trùng lắp lại, tức là có hai con đường dẫn tới cùng một trạng thái, thuật toán mô tả ở trên luôn loại bỏ con
+
+<!-- page: 50 -->
+
+đường thứ hai mới tìm ra. Rõ ràng nếu con đường mới tìm ra này ngắn hơn con đường cũ thì thuật toán sẽ bò qua một lời giải tối ưu. May mặn là ta có thể chứng tờ rằng điều này không thể xảy ra ngay cả đối với tìm kiếm chi phí đồng nhất hay tìm kiếm theo chiều rộng. Do hai thuật toán này cũng tối ưu khi sử dụng chiến lược tìm kiếm trên đồ thị. Mặt khác, tìm kiếm lập sâu dần dựa trên tìm kiếm theo chiều sâu có thể dễ dàng đi vào con đường tối ưu cục bộ trước khi tìm thấy con đường tối ưu thực sự. Do đó, tìm kiếm lập sâu dần trên đồ thị cần phải kiểm tra xem con đường mới tìm ra có tốt hơn con đường trước đó không, nếu có thì phải gán lại độ sâu và chi phí đường đi cho các nút con của trạng thái đó.
+
+```txt
+function Tim_kiểm Đồ_thị (bài_toán,ngăn_chứa) return lời giải hoặc thất bại
+tập_dống← khởi tạo rỗng
+ngăn_chứa← Thêm(Tạo_nút(Trạng_thái_dầu[bài_toán]), ngăn_chứa)
+loop do
+    if Là_Rỗng(ngăn_chứa) then return thất bại.
+    nút←Lấy_phẩn_từ_dầu(ngăn_chứa)
+    if Kiểm_tra_Câu_hôi_dích[bài_toán] trên Trạng_thái[nút] đúng
+        then return Lời_giải(nút)
+    if Trạng_thái[nút] không nằm trong tập_dống then
+    thêmTrạng_thái[nút] vào tập_dống
+    ngăn_chứa←Thêm_Tất cả(Mở(nút,bài_toán), ngăn_chứa).
+```
+
+Hình 1.18 - Thuật toán Tím kiểm trên đồ thị.
+
+Lưu ý rằng, việc sử dụng tập đóng đồng nghĩa với việc tìm kiếm theo chiều sâu và tìm kiếm lập sâu dẫn không còn tuyến tính nửa về mặt không gian sử dụng. Do thuật toán tìm kiếm tổng quát trên đồ thị lưu giữ tất cả các nút trong bộ nhớ chính, vì vậy mà một số tìm kiếm không thực hiện được bởi giới hạn về bộ nhớ.
+
+## VI. KẾT CHƯƠNG
+
+Chương này giới thiệu các phương pháp giải quyết các bài toán bằng cách xây dựng một chuỗi các. hành động đề đạt được đến đích, quá trình này được gọi là tìm kiếm.
+
+<!-- page: 51 -->
+
+\- Một thuật toán tìm kiếm trên cây tổng quát có thể được sử dụng đề giải bắt cứ bài toán nào; những biển thể của thuật toán chứa dụng những chiến lược tìm kiếm khác nhau.
+
+\- Các thuật toán tìm kiếm được đánh giá trên các tiêu chuẩn: tính đầy đủ, tính tối ưu, độ phức tạp về mặt thời gian và độ phức tạp về mặt không gian. Độ phức tạp phụ thuộc vào b, hệ số phân nhánh trong không gian trạng thái và d độ sâu của lời giải nông nhất.
+
+\- Tím kiểm theo chiều rộng lựa chọn nút nông nhất chưa được mở trên cây tìm kiếm để mở rộng nó. Thuật toán là đầy đủ, tối ưu với chỉ phí bước đơn vị, và có độ phức tạp thời gian và không gian là $O(b^{d+1})$. Độ phức tạp về mặt không gian làm cho thuật toán không thực tế trong hầu hết trường hợp. Tím kiểm chi phí đồng nhất tương tự tìm kiếm theo chiều rộng nhưng nó mở rộng nút có thi phí đường đi thấp nhất, ký hiệu $g(n)$. Thuật toán đầy đủ và tối ưu nếu chỉ phí của các bước lớn hơn 0.
+
+\- Tím kiểm theo chiều sâu chọn nút sâu nhất chưa mở trên cây tìm kiếm đề mở rộng nó. Thuật toán không đầy đủ lẫn tối ưu và có đội phức tạp thời gian là $O(b^{m})$ và độ phức tạp không gian là $O(bm)$, trong đó $m$ là độ sâu tối đa của bất kỳ đường đi nào trong không gian trạng thái.
+
+\- Tìm kiểm độ sâu giới hạn sử dụng một giới hạn độ sâu cố định với thuật toán tìm kiếm theo chiều sâu.
+
+\- Tìm kiểm lắp sâu đàn còn gọi là tìm kiếm có độ sâu giới hạn, với giới hạn được tăng dần cho đến khi tìm thấy đích. Thuật toán đầy đủ, tối ưu cho các chi phí bước đơn vị và có độ phức tạp thời gian $O(b^{d})$ và độ phức tạp không gian $O(bd)$.
+
+## VII.THUẬT NGỮ TIÉNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+action: hành động
+
+<!-- page: 52 -->
+
+backward pointer: con trò quay lui
+branching factor: hệ số phân nhánh
+breath first search (BFS): tìm kiếm theo chiều rộng
+completeness: tính đầy đủ
+depth first search (DFS): tìm kiếm theo chiều sâu
+depth limited search: tìm kiếm với độ sâu giới hạn
+fringe: nhánh non
+goal state: trạng thái đích
+initial state: trạng thái ban đầu
+iterative deepening search: tìm kiếm lặp sâu đàn
+leaf node: nút lá
+optimality: tính tối ưu
+path cost: chi phí đường đi
+priority queue: hàng đợi ưu tiên
+problem: bài toán hay vấn đề
+queue: hàng đợi
+real-world problem: bài toán thực tế
+search node: nút tìm kiếm
+search problem: bài toán tìm kiếm
+search tree: cây tìm kiếm
+space complexity: độ phức tạp về không gian
+stack: ngăn chứa
+state: trạng thái
+state space: không gian trạng thái
+successor: trạng thái con
+successor function: hàm trạng thái con
+
+<!-- page: 53 -->
+
+time complexity: độ phức tạp về thời gian
+
+toy problem: bài toán trò chơi
+
+uniform cost search (UCS): tìm kiểm chi phí đồng nhất
+
+uniformed search, blind search: tìm kiếm không có thông tin, tìm kiếm mủ
+
+<!-- page: 54 -->
+
+<!-- page: 55 -->
+
+# Chương
+
+# CÁC CHIẾN LƯỢC TİM KIÉM CÓ THÔNG TIN
+
+Chương 1 trình bày về các chiến lược tìm kiếm mù, có khả năng tìm ra lời giải cho bài toán bằng cách lần lượt phát sinh các trạng thái mới và kiểm tra xem có phải là trạng thái đích không. Tuy nhiên, những chiến lược này cực kì tổn kém trong hầu hết các trường hợp. Chương này trình bày về các chiến lược tìm kiếm có thông tin (dưa trên trị thức có được từ bài toán) có khả năng tìm ra lời giải hiệu quả hơn. Phẩn I mô tả các thuật toán tìm kiếm có thông tin và phần II đề cập đến cách để có được những trị thức cần thiết về bài toán. Cuối cùng, phần III bàn về các chiến lược tìm kiếm cục bộ trong không gian trạng thái, thay vì tìm kiếm trên từng con đường xuất phát từ trạng thái ban đầu, các chiến lược này sẽ thực hiện cùng lúc trên nhiều trạng thái hiện hành. Nhóm các thuật toán tìm kiếm cục bộ còn bao gồm những thuật toán lấy ý tưởng từ vật lý học (tìm kiểm mô phỏng luyện kim) và quá trình tiến hóa trong tự nhiên (thuật giải di truyền)
+
+## I.. TÌM KIỂM CÓ THÔNG TIN
+
+Các chiến lược tìm kiếm có thông tin dựa trên tri thức có được từ bài toán bên cạnh định nghĩa của bài toán để tìm ra lời giải hiệu quả hơn nhiều so với các chiến lược tìm kiếm mù. Cách tiếp cận tổng quát ta sẽ xem xét gọi là tìm kiếm tối ưu, nó dựa trên một hàm đánh giá đề chọn ra nút tốt nhất để mở rộng. Thông thường hàm đánh giá này sẽ tính toán khoảng cách tới đích (còn bao xa nữa sẽ tới đích) như vậy sẽ chọn nút có giá trị khoảng cách nhỏ nhất.
+
+Chữ “tối ưu” không có nghĩa là lúc nào cũng lấy được nút tốt nhất mà có nghĩa là lấy được nút được xem là tốt nhất theo tiêu chí của hàm
+
+<!-- page: 56 -->
+
+dánh giá. Nếu hàm đánh giá này phản ánh chính xác thì khi này nút được chọn sẽ thực sự tốt nhất, nếu không thì nó sẽ làm lệch hướng tìm kiếm. Có một họ rất nhiều thuật toán dạng này với những hàm đánh giá khác nhau. Điểm mẫu chốt của những thuật toán này là ở hàm heuristic (kí hiệu $h(n)$) với $h(n) = xấp$ xi chi phí của đường đi (chi phí thấp nhất) từ nút thứ $n$ đến nút dịch.
+
+Ví dụ: Có thể xấp xi bằng khoảng cách đường chim bay từ thành phố A đến thành phố B.
+
+Các hàm heuristic là dạng thông dụng nhất để đưa tri thức về bài toán vào trong thuật toán tìm kiếm. Hàm heuristic được tìm hiểu sâu hơn trong phần II. Trong phần này ta xem chúng là các hàm đặc trưng cho bài toán với một ràng buộc là $h(n) = 0$ với $n$ là nút đích. Phần còn lại sẽ đề cập đến hai cách để sử dụng thông tin từ hàm heuristic này.
+
+## I.1 Hàm heuristic – Tìm kiểm tối ưu kiểu tham lam (Greedy Best-First search).
+
+Tìm kiểm tối ưu kiểu tham lam mở rộng nút gần đích nhất với hi vọng cách làm này sẽ dẫn đến lời giải một cách nhanh nhất. Do đó thuật toán này đánh giá chi phí của các nút chi dựa trên hàm heuristic:
+
+$$
+f (n) = h (n).
+$$
+
+Xét bài toán tìm đường đi du lịch giữa các thành phố trong chương I, với hàm heuristic là khoảng cách đường chim bay đặt là $h_{CB}$. Giả sử đích là thành phố Hà Nội, ta cần xác định khoảng cách đường chim bay từ các thành phố khác tới Hà Nội (xem trong Bảng 2.1) Ví dụ $h_{CB}$ (Ổ(Hà Giang)) = 220. Lưu ý rằng giá trị $h_{CB}$ không thể tính toán được từ mô tả của bài toán, cần phải có kinh nghiệm mới biết được $h_{CB}$ có liên quan đến độ dài đường đi thực sự.
+
+Bảng 2-1. Giá trị $h_{CB}$ – khoảng cách đường chim bay đến Hà Nội.
+
+| Hà Giang | 220 | Cao Bằng | 187 |
+| --- | --- | --- | --- |
+| Bắc Can | 124 | Tuyên Quang | 109 |
+| Thái Nguyên | 60 | Lang Son | 130 |
+| Phú Thọ | 57 | Vĩnh Phúc | 40 |
+| Bắc Giang | 46 | Hà Nội | 0 |
+| Bắc Ninh | 27 | Hưng Yên | 48 |
+
+<!-- page: 57 -->
+
+| Hải Dương | 51 | Quảng Ninh | 141 |
+| --- | --- | --- | --- |
+| Hà Nam | 55 | Thái Bình | 83 |
+
+![](images/page_56_image_2.jpg)
+
+c) Sau khi mở Tuyên Quang
+
+![](images/page_56_image_4.jpg)
+
+![](images/page_56_image_5.jpg)
+
+Hình 2.1 - Các bước trong tìm kiếm tham lam sử dụng heuristic $h_{CB}$. Các nút được đánh kèm giả trị h này.
+
+Hình 2.1 trình bày các bước của thuật toán tìm kiếm kiểu tham lam sử dụng giá trị $h_{CB}$ để tìm ra đường đi từ Hà Giang đến thành phố Hà Nội. Nút được mở rộng đầu tiên từ Hà Giang là Tuyên Quang bởi vì
+
+<!-- page: 58 -->
+
+nó gần Hà Nội hơn Cao Bằng và Bắc Cạn. Nút được mở rộng tiếp theo là Vĩnh Phúc cũng vì nó gần đích hơn. Cuối cùng Vĩnh Phúc đi tới được đích là Hà Nội. Với ví dụ này, thuật toán tìm kiếm kiểu tham lam sử dụng $h_{CB}$ tìm ra được lời giải mà không cần mở rộng thêm nút nào khác không có trong lời giải. Do đó, chỉ phí tìm kiếm của thuật toán là nhỏ nhất, nhưng nó lại không tối ưu. Đường đi qua Tuyên Quang và Vĩnh Phúc để đến Hà Nội dài hơn đường đi qua Phú Thọ 18 km. Điều này cũng cho thấy tại sao thuật toán này có tên là “tham lam”, ở mỗi bước thuật toán chọn nút nào gần đích nhất mà không quan tâm đến điều gì khác.
+
+Tìm kiểm kiểu tham lam giống tìm kiếm theo chiều sâu ở cách tìm kiếm chỉ đi theo một con đường để lần tới đích, còn nếu gặp ngõ cụt thì sẽ quay lại đi sang hướng khác. Thuật toán này cũng có khuyết điểm như tìm kiếm theo chiều sâu đó là: không tối ưu và không đầy đủ (vì nó có thể đi vào con đường vô tận và không bao giờ quay trở lại được). Độ phức tạp về thời gian và không gian là O($b^{m}$) với $m$ là độ sâu tối đa của không gian tìm kiếm. Tuy nhiên với hàm heuristic tốt, độ phức tạp có thể giám đi đáng kể. Mức giảm tùy thuộc vào từng bài toán cụ thể và chất lượng của hàm heuristic.
+
+## I.2 Tîm kiểm A\*
+
+Một thuật toán tìm kiếm tối ưu được biết đến nhiều nhất đó chính là tìm kiếm A\*. Thuật toán này đánh giá một nút dựa trên chi phí đi từ nút gốc đến nút đó -g(n), cộng với chi phí từ nút đó đến đích -h(n).
+
+$$
+f (n) = g (n) + h (n).
+$$
+
+Do giá trị $g(n)$ cho biết chi phí đường đi từ nút gốc đến nút $n$ và $h(n)$ là ước lượng chi phí đường đi ngắn nhất từ nút $n$ đến đích nên ta có:
+
+$f(n) = \text{ước lượng chi phí của lời giải “tốt nhất” qua } n.$
+
+Do đó, nếu ta định tìm lời giải “tốt nhất” thì cách dễ thấy nhất là lấy nút có giá trị: $g(n) + h(n)$ nhỏ nhất. Hơn nữa nếu hàm heuristic $h(n)$ thỏa một số điều kiện nhất định thì tìm kiếm A\* sẽ đầy đủ và tối ưu.
+
+Đề bảo đảm A\* tìm được lời giải tối ưu thì hàm $h(n)$ phải là hàm heuristic chấp nhận được. Hàm heuristic chấp nhận được khi nó không bao giờ ước lượng quá chi phí để đến đích thực sự. Điều này sẽ
+
+<!-- page: 59 -->
+
+đảm bảo sự tối ưu vì luôn xem chi phí để giải bài toán nhỏ hơn chi phí thực sự. Do $g(n)$ là chi phí thực sự để đến nút $n$, từ đó suy ra $f(n)$ không bao giờ ước lượng quá chi phí thực sự của một lời giải qua $n$.
+
+![](images/page_58_image_2.jpg)
+
+c) Sau khi mở Tuyên Quang
+
+![](images/page_58_image_4.jpg)
+
+![](images/page_58_image_5.jpg)
+
+Hình 2.2 - Các bước trong thuật toán A\*. Các nút được đánh kèm giá trị $f = g + h$. Giá trị $h$ là khoảng cách đường chim bay tới Hà Nội từ Bảng 2-1
+
+<!-- page: 60 -->
+
+Một ví dụ cụ thể về một hàm heuristic chấp nhận được, chính là khoảng cách đường chim bay sử dụng trong bài toán tìm đường đi du lịch giữa các thành phố. Khoảng cách này chấp nhận được, vi đường đi ngắn nhất giữa hai điểm chính là đường thẳng nổi hai điểm này, do đó khoảng cách này không thể nào lớn hơn đường đi thực sự được.
+
+Hình 2.2 cho thấy quá trình xây dựng cây tìm kiếm của thuật toán A\* với dịch là Hà Nội. Qua ví dụ, có một chứng minh tổng quát rằng thuật toán A\* sẽ tối ưu nếu $h(n)$ chấp nhận được. Giả sử G2 là nút đích chưa tối ưu và chỉ phí của lời giải tối ưu là C\*. Do G2 chưa tối ưu và $h(G2) = 0$ (G2 là nút đích) nên:
+
+$f(G2) = g(G2) + h(G2) = g(G2) > C^{*}$. Gọi $n$ là một nút lá nằm trên đường di tối ưu, chẳng hạn như Phú Thọ. Nếu $h(n)$ không uốc lượng quá chỉ phí đường đi thực sự thi:
+
+$$
+f (n) = g (n) + h (n) \leq C ^ {*}.
+$$
+
+Từ dây ta suy ra được: $f(n) \leq C^{*} \leq g(G2)$, như vây G2 sẽ không được mở rộng và A\* luôn tìm ra lời giải tối ưu.
+
+![](images/page_59_image_6.jpg)
+
+Start State
+
+Trạng thái đầu
+
+![](images/page_59_image_9.jpg)
+
+Goal State
+
+Trạng thái đích
+
+Hình 2.3 - Một thể hiện của bài toán 8-puzzle. Lời giải gồm 26 bước.
+
+## II. HÀM HEURISTIC.
+
+Trong phần này, ta sẽ xem xét heuristic trong bài toán 8-puzzle, đề thấy được bản chất chung của heuristic.
+
+Bài toán 8-puzzle là một trong những bài toán đầu tiên sử dụng tìm kiếm heuristic. Như đã đề cập trong phần I chương 1, mục tiêu của trò
+
+<!-- page: 61 -->
+
+choi này là đầy các quân cờ theo chiều ngang và chiều dọc tới khi có được cách sắp xếp mong muốn (Hình 2.3).
+
+Chi phí trung bình của lời giải cho 8-puzzle phát sinh ngẫu nhiên là khoảng 22 bước. Hệ số phân nhánh trung bình là 3 (khi ô trống nằm ở giữa thì có bốn quân có thể đi được, khi ô trống ở góc thì có hai quân và khi nó σ aọc cạnh thì có ba quân). Điều này đồng nghĩa với việc tìm kiếm toàn diện với độ sâu 22, trên không gian có khoảng: $3^{22} \approx 3.1 \times 10^{10}$ trạng thái, nếu loại đi những trạng thái trùng lắp thì giảm xuống còn khoảng 170.000, vì chỉ có $9!/2 = 181.440$ trạng thái khác nhau có thể tới được từ một trạng thái ban đầu. Với bài toán 15-puzzle, số trạng thái sẽ lên tới $10^{13}$, như vậy công việc cần làm tiếp theo là tìm một hàm heuristic tốt. Nếu muốn tìm lời giải có số bước ngắn nhất bằng thuật toán A\*, cần một hàm heuristic không bao giờ ước lượng qua số bước đến dịch. Sau đây là hai hàm heuristic thường dùng:
+
+\- $h_{1} =$ số lượng quân đặt sai vị trí. Với Hinh 2.3, tất cả 8 quân cờ đều không ở đúng vị trí mong muốn, do đó trạng thái bắt đầu sẽ có $h_{1} = 8$. $h_{1}$ là một heuristic chấp nhận được vi bắt kì quân này bị sai vị trí sẽ phải di chuyển ít nhất một lần.
+
+\- $h_{2} =$ tổng khoảng cách từ quân cờ đến vị trí đích của nó. Bời vì, quân cờ không thể di chuyển theo đường chéo, khoảng cách được tính bằng tổng khoảng cách theo chiều ngang và chiều dọc. Khoảng cách này có khi được gọi là khoảng cách Manhattan. $h_{2}$ cũng chấp nhận được bắt kì bước đi có thể nào đều di chuyển một quân tiến một bước gần tới đích hơn. Khoảng cách Manhattan của trạng thái bắt đầu tính theo thứ tự từ quân số 1 đến số 8:
+
+$$
+h _ {2} = 3 + 1 \div 2 + 2 + 2 + 3 + 3 + 2 = 1 8.
+$$
+
+Cà hai hàm heuristic này đều không ước lượng quá chi phí thực sự, trong trường hợp của Hình 2.3 là 26.
+
+## ..1 Ann hưởng của hàm heuristic lên hiệu quả
+
+Một cách đề đánh giá chất lượng của hàm heuristic là dựa trên hệ số phân nhánh trung bình hiệu quả $b^{*}$. Nếu tổng số nút được phát sinh
+
+<!-- page: 62 -->
+
+bời thuật toán A\* với một bài toán cụ thể là N và độ sâu của lời giải là d thì b\* là hệ số phân nhánh trung bình mà một cây đồng nhất chiều cao d phải có đề chứa được N + 1 nút. Do đó :
+
+$$
+N + 1 = 1 + b ^ {\bullet} + \left(b ^ {\bullet}\right) ^ {2} + \dots + \left(b ^ {\bullet}\right) ^ {d}
+$$
+
+Ví dụ, nếu A\* tìm ra lời giải ở độ sâu 5 sử dụng 52 nút thì hệ số phân nhánh trung bình hiệu quả là 1.92. Giá trị này có thể thay đổi theo từng thể hiện của bài toán, nhưng thông thường sẽ không là hång số với bài toán đủ khó. Do đó thử nghiệm độ do b\* trên một tập nhỏ của bài toán có thể giúp ích cho đánh giá chung độ hữu ích của heuristic. Một heuristic được xây dựng tốt sẽ cho giá trị b\* gần bằng 1, cho phép giải những bài toán khá lớn.
+
+Đề kiểm tra hàm heuristic $h_1$ và $h_2$, phát sinh ngẫu nhiên 1.200 bài với lời giải có chiều dài từ 2 đến 24 (100 bài cho mỗi giá trị chẩn) và giải những bài này bằng tìm kiếm lập sâu đần và tìm kiếm A\* sử dụng $h_1$ và $h_2$. Bảng 2-2 cho thấy số lượng nút trung bình được phát sinh bởi mỗi thuật toán và hệ số phân nhánh trung bình hiệu quả. Kết quả cho thấy $h_2$ tốt hơn $h_1$ và tốt hơn nhiều so với tìm kiếm lập sâu đần. Trong lời giải chiều dài 14, A\* sử dụng $h_2$ hiệu quả gấp 30.000 lần so với tìm kiếm lập sâu đần.
+
+Người ta có thể hồi có phải $h_2$ luôn tốt hơn $h_1$ không ? Câu trả lời là có. Điều này rất dễ thấy ngay trong định nghĩa của hai hàm heuristic, với nút n bất kì $h_2(n) \geq h_1(n)$. Ta có thể nói rằng $h_2$ tốt hơn $h_1$. Sự tốt hơn thể hiện qua hiệu suất: A\* sử dụng $h_2$ sẽ không bao giờ mở rộng nhiều nút hơn A\* sử dụng $h_1$ (trừ trường hợp với các nút có $f(n) = C^*$). Điều này được chứng minh như sau: tất cả các nút có chi phí $f(n) < C^*$ sẽ chắc chắn được mở rộng và tương tự, mọi nút có $h(n) < C^* - g(n)$ sẽ chắc chắn được mở rộng. Nhưng bởi vì ít nhất $h_2$ cũng gần bằng $h_1$ với mọi nút, với bất cứ nút nào chắc chắn được mở rộng bởi tìm kiếm A\* với $h_2$ cũng sẽ được mở rộng với $h_1$ và $h_1$ cũng có thể làm cho một số nút khác được mở rộng luôn. Do đó, sẽ luôn tốt hơn khi sử dụng một hàm heuristic có giá trị cao hơn, nếu nó không ước lượng quá và thời gian tính toán heuristic không quá lớn.
+
+<!-- page: 63 -->
+
+Bảng 2-2. So sánh chỉ phí tìm kiếm và hệ số phản nhánh trung bình hiệu quả cho thuật toán tìm kiếm lập sâu đàn và $A^{*}$ với $h_{1}$ và $h_{2}$. Dữ liệu tính trung bình trên 100 thể hiện của bài toán 8-puzzle từng với mối độ sâu lời giải.
+
+<table><tr><td></td><td colspan="3">Chi phí tìm kiếm</td><td colspan="3">Số nhánh trung bình hiệu quả</td></tr><tr><td>d</td><td>ID</td><td>A*(h1)</td><td>A*(h2)</td><td>IDS</td><td>A*(h1)</td><td>A*(h2)</td></tr><tr><td>2</td><td>1</td><td>6</td><td>6</td><td>2.45</td><td>1.79</td><td>1.79</td></tr><tr><td>4</td><td>112</td><td>13</td><td>12</td><td>2.87</td><td>1.48</td><td>1.45</td></tr><tr><td>6</td><td>680</td><td>20</td><td>18</td><td>2.73</td><td>1.34</td><td>1.30</td></tr><tr><td>8</td><td>6384</td><td>39</td><td>25</td><td>2.80</td><td>1.33</td><td>1.24</td></tr><tr><td>10</td><td>47127</td><td>93</td><td>39</td><td>2.79</td><td>1.38</td><td>1.22</td></tr><tr><td>12</td><td>36440</td><td>227</td><td>73</td><td>2.78</td><td>1.42</td><td>1.24</td></tr><tr><td>14</td><td>-</td><td>539</td><td>113</td><td>-</td><td>1.44</td><td>1.23</td></tr><tr><td>16</td><td>-</td><td>1301</td><td>211</td><td>-</td><td>1.45</td><td>1.25</td></tr><tr><td>18</td><td>-</td><td>3056</td><td>363</td><td>-</td><td>1.46</td><td>1.26</td></tr><tr><td>20</td><td>-</td><td>7276</td><td>676</td><td>-</td><td>1.47</td><td>1.27</td></tr><tr><td>22</td><td>-</td><td>18094</td><td>1219</td><td>-</td><td>1.48</td><td>1.28</td></tr><tr><td>24</td><td>-</td><td>39135</td><td>1641</td><td>-</td><td>1.48</td><td>1.26</td></tr></table>
+
+## II.2 Phát minh ra các hàm heuristic chấp nhận được
+
+Ta đã thấy rằng cả $h_{1}$ (số lượng quân sai vị trí) và $h_{2}$ (khoảng cách Manhattan) là những heuristic khá tốt cho 8-puzzle và $h_{2}$ tốt hơn. Người ta nghĩ ra $h_{2}$ thể nào? Có thể nào để máy tính tự phát minh ra một hàm heuristic như vậy không?
+
+$h_{1}$ và $h_{2}$ ước lượng chiều dài còn lại của đường đi cho bài toán 8-puzzle, nhưng chúng cũng cũng hoàn toàn chính xác là chiều dài đường đi cho phiên bản đơn giản của bài toán này. Nếu luật được sửa lại là cho phép di chuyển quân di bất kì nơi nào mà không cần phải sang ô trồng kế cận, thì khi đó $h_{1}$ sẽ cho biết chính xác số bước đi của lời giải ngắn nhất. Tương tự như vậy nếu cho phép quân cờ được di chuyển theo hướng bất kì, thâm chí đi vào một ô đã có quân, thì $h_{2}$ sẽ cho biết chính xác số bước đi của lời giải ngắn nhất. Một bài toán có ít giới hạn hơn trên những hành động có thể được gọi là bài toán giản lược. Chi phí của lời giải tối ưu trong bài toán giản lược là một hàm heuristic chấp nhận được trong bài toán ban đầu. Hàm heuristic chấp nhận được vì lời giải tối ưu trong bài toán ban đầu cũng chính là lời giải trong bài toán giản lược (có được do định nghĩa) và do đó ít nhất phải bằng với lời giải tối ưu trong bài toán giản lược.
+
+<!-- page: 64 -->
+
+Nếu định nghĩa của của một bài toán được viết lại một cách hình thức thì có thể tự động xây dựng ra các bài toán giản lược. Ví dụ, nếu các hành động trong 8-puzzle được mô tả như sau:
+
+Một quân cờ có thể di chuyển từ ô A sang ô B nếu A là ô kế cận của B theo chiều ngang hoặc chiều đọc và B là một ô trống.
+
+Ta có thể phát sinh ra ba bài toán giản lược bằng cách bò đi một hoặc cả ba điều kiện trên:
+
+(a) Một quân cờ có thể di chuyển từ ô A sang ô B nếu A là ô kế cận của B.
+
+(b) Một quân cờ có thể di chuyển từ ô A sang ô B nếu B là một ô trống.
+
+(c) Một quân cờ có thể di chuyển từ ô A sang ô B.
+
+Từ (a) ta có được $h_2$ (khoảng cách Manhattan). Lý do có được là vi $h_2$ sẽ đúng khi ta di chuyển mỗi quân theo hàng ngang hay đọc để về tới vị trí của nó. Hàm heuristic có được từ (b) là heuristic Gaschnig. Từ (c) ta có được $h_1$ (số quân đặt sai), bởi vì sẽ phù hợp khi chỉ cần một bước là có thể di chuyển tới vị trí mong muốn. Lưu ý một điều quan trọng là bài toán giản lược được phát sinh bởi kĩ thuật này có thể giải một cách dễ dàng mà không cần tìm kiếm, vì những qui luật đã giản lược cho phép bài toán có thể được tách thành tám bài toán con độc lập. Nếu bài toán giản lược khó giải được, thì giá trị của heuristic tương ứng sẽ tổn kém chỉ phí để tính toán.
+
+Heuristic chấp nhận được cũng có thể có được từ chi phí lời giải của một bài toán con của một bài toán cho trước. Ví dụ, Hình 2.4 cho thấy một bài toán con của 8-puzzle thể hiện trong Hình 2.3. Bài toán con thực hiện việc đưa các quân 1, 2, 3, 4 về vị trí đúng của chúng.
+
+Rõ ràng chi phí cho lời giải tối ưu của bài toán con này là chăn dưới của chi phí của bài toán đầy đủ. Hàm heuristic này chính xác hơn khoảng cách Manhattan trong một số trường hợp.
+
+Việc lựa chọn 1-2-3-4 là tùy ý, ta có thể xây dựng cơ sở dữ liệu cho 5-6-7-8 và cho 2-4-6-8, v.v... Mỗi cơ sở dữ liệu cho một hàm heuristic chấp nhận được và những heuristic này có thể được kết hợp lại bằng cách lấy giá trị lớn nhất. Heuristic tổng hợp dạng này chính xác hơn
+
+<!-- page: 65 -->
+
+nhìều so với khoảng cách Manhattan, số lượng nút được phát sinh khi giải bài toán 15-puzzle có thể giảm xuống 1.000 lần.
+
+![](images/page_64_image_2.jpg)
+
+Hình 2.4 - Mốt bài toán con của 8-puzzle thể hiện trong Hình 2.3. Công việc cần làm là đầu quản 1, 2, 3, 4 về dùng vị trí của chứng. mà không cần quan tâm đến những quản khác.
+
+## III. TİM KIỂM CỤC BỘ VÀ BÀI TOÁN TỔI UU
+
+Những thuật toán tìm kiếm mà ta đã xem xét cho tới thời điểm này được thiết kế để duyệt trong không gian tìm kiếm một cách có hệ thống. Tính hệ thống đạt được bằng cách giữ trong bộ nhớ một hoặc nhiều đường đi và bằng cách ghi nhận cái nào đã được xem xét trên đường đi và cái nào chưa. Khi đích được tìm thấy, đường đi tới dịch này cũng chính là lời giải cho bài toán.
+
+Tuy nhiên, trong nhiều bài toán đường đi tới đích lại không có liên quan gì. Ví dụ trong bài toán 8 hậu, điều quan trọng là vị trí các quân hậu cuối cùng chữ không phải là thứ tự các quân này được thêm vào. Lớp bài toán này bao gồm nhiều ứng dụng quan trọng như thiết kế mạch, thiết kế qui trình sản xuất, lập lịch công việc, lập trình tự động, tối uu mạng truyền thông, phân luồng xe cô và quản lý danh mục đầu tư.
+
+Nếu đường đi tới đích không quan trọng, ta có thể xem xét một lớp thuật toán khác không quan tâm đến đường đi nào cả. Thuật toán tìm kiếm cục bộ sử dụng một trạng thái hiện tại đơn lẻ (thay vi nhiều đường đi khác nhau) và chỉ di chuyển sang trạng thái lân cận. Thông thường các đường đi trong quá trình tìm kiếm không được giữ lại.
+
+<!-- page: 66 -->
+
+Mặc dù thuật toán tìm kiếm cục bộ không hệ thống nhưng lại có hai uu điểm nổi bất: (1) sử dụng rất ít bộ nhớ thông thường là lượng cố định và (2) thường tìm thấy lời giải hợp lí trong không gian trạng thái lớn hoặc vô hạn (liên tục) mà thuật toán tìm kiếm có hệ thống không phù hợp.
+
+Bên cạnh việc tìm kiếm đích, thuật toán tìm kiếm cục bộ cũng hữu ích cho việc giải các bài toán tối ưu hóa thuần túy với mục tiêu là tìm trạng thái “tốt nhất” căn cứ vào hàm mục tiêu. Ví dụ, trong tự nhiên có một hàm mục tiêu - độ thích nghi - theo như thuyết tiến hóa Darwin có thể xem như một bài toán tối ưu hóa, nhưng lại không hè có “kiểm tra là đích” và “chi phí đường đi” cho bài toán này.
+
+![](images/page_65_image_3.jpg)
+
+Hình 2.5 - Địa hình một chiều của không gian trạng thái trong đó việc đánh giá tương ứng với hàm mục tiêu. Mục tiêu là tìm cực đại toàn cực. Tìm kiểm leo đổi thay đổi trạng thái hiện tại để cải thiện nó, như hình mũi tên thể hiện. Những đặc trưng khác của địa hình được mô tả ở trên.
+
+Đề hiểu được tìm kiếm cục bộ, ta sẽ xem xét địa hình của không gian trạng thái (như trong Hình 2.5) Một địa hình có cả “vị trí” (định nghĩa bởi trạng thái) và “cao độ” (định nghĩa bởi giá trị của hàm heuristic hoặc hàm mục tiêu). Nếu cao độ tương ứng với chi phí thì mục tiêu sẽ là tìm đổi thấp nhất - cục tiểu toàn cục. Nếu cao độ tương ứng với hàm mục tiêu là tìm định cao nhất - cục đại toàn cục. (có thể chuyển đổi giữa hai cái này bằng cách thêm dấu trừ) Thuật toán tìm kiếm cục bộ duyệt trong địa hình. Một thuật toán tìm kiếm cục bộ đầy
+
+<!-- page: 67 -->
+
+đủ luôn luôn tìm được dịch nếu nó tồn tại, thuật toán là tối ưu khi nó luôn tìm ra cực đại/cực tiểu toàn cực.
+
+## III.1 Tîm kiểm leo đôi
+
+Thuật toán tìm kiếm leo đôi như sau:
+
+```python
+function Leo_dôi (bài_toán) return trạng thái là cực đại cực bộ
+    input:bài_toán
+    biến cục bộ: nút hiện_tai
+        một nút láng_giềng
+    hiện_tai←Tạo_nút(Trạng_thái_dầu[bài_toán])
+    loop do
+        láng_giềng← nút con của hiện_tai có giá trị lớn nhất
+        if Giá_tri[láng_giềng] ≤ Giá trị [hiện_tai] then
+            return Trạng_thái[hiện_tai]
+    hiện_tai←nút lận cận
+```
+
+Hình 2.6 - Thuật toán tìm kiếm leo đổi.
+
+Thuật toán chỉ đơn giản là một vòng lập trong đó liên tục di chuyển theo hướng tăng dần giá trị tức là leo dồi. Thuật toán dùng khi tới được “đỉnh” nơi mà không có lân cận nào của nó có giá trị cao hơn. Thuật toán không duy trì một cây tìm kiếm, nên cấu trúc dữ liệu cho nút hiện tại chỉ cần lưu trạng thái và giá trị hàm mục tiêu của nó. Leo dồi không có xem xét xa hơn bên ngoài lân cận của trạng thái hiện tại.
+
+Đề minh họa cho thuật toán leo đổi, ta sử dụng bài toán 8 quân hậu đã giới thiệu ở chương 1. Thuật toán tìm kiếm cục bộ thông thường sử dụng một công thức cho trạng thái hoàn tất, trong đó mỗi trạng thái có 8 quân hậu trên bàn cờ, mỗi cột có một quân. Hàm trạng thái con trả về tất cả trạng thái có thể phát sinh được bằng cách di chuyển một quân hậu sang ô khác trong cùng một cột (mỗi trạng thái có $8 \times 7 = 56$ trạng thái con). Hàm heuristic h là số lượng các cặp quân hậu có thể tấn công lẫn nhau, trực tiếp hoặc gián tiếp. Cực tiểu toàn cục của hàm này là 0, chỉ xảy ra đối với lời giải đúng. Hình 2.7(a) cho thấy một trạng thái với h = 17. Hình này cũng cho thấy giá trị của các trạng thái con của nó, với trạng thái con tốt nhất có h = 12. Thuật toán leo đổi thông thường chọn ngẫu nhiên trong tập các trạng thái con một trạng thái tốt nhất, nếu có nhiều hơn một trạng thái.
+
+<!-- page: 68 -->
+
+![](images/page_67_image_1.jpg)
+
+(a)
+
+![](images/page_67_image_3.jpg)
+
+(b)
+
+Hình 2.7 - (a) Một trạng thái của 8 hậu với chi phí heuristic trước lượng $h = 17$, thể hiện các giả trị của $h$ cho mỗi trạng thái con có được bằng cách di chuyển một quản hậu trong cùng một cốt. Những bước tốt nhất được về khung viên. (b) Một cực tiểu cục bộ trong không gian trạng thái 8 hậu, trạng thái này có $h = 1$, trong khi các trạng thái con của nó có giả trị cao hơn.
+
+Thuật toán leo đổi đôi khi còn được gọi là tìm kiếm cục bộ tham lam vi nó lấy một trạng thái lân cận tốt mà không cần suy nghĩ thêm sau đó sẽ đi đầu tiếp. Thuật toán leo đổi thường tiền tới lời giải rất nhanh vi nó rất dễ cải thiện một trạng thái xấu. Ví dụ, từ trạng thái trong Hinh 2.7(a), chỉ cần 5 bước là có thể tới được trạng thái ở Hinh 2.7(b) với h = 1 và gần như là một lời giải. Thật không may thuật toán leo đổi thường bị kẹt do những lý do sau:
+
+Cực đại cục bộ là một đỉnh mà nó cao hơn những trạng thái lần cận của nó, nhưng lại thấp hơn cục đại toàn cục. Thuật toán leo đổi tới được vùng lân cận của cực đại cục bộ sẽ bị dẫn đần tới định, nhưng sau đó sẽ bị ket ở đó và không biết đi đầu nửa. Hình 2.8 thể hiện vấn đề này. Cụ thể hơn, trạng thái trong Hinh 2.7(b) thực chất là một cực đại cục bộ (cực tiểu cục bộ đối với chi phí h) khi di chuyển bất cứ quân hậu nào đều làm cho tỉnh huống xấu hơn.
+
+Chóp được thể hiện trong Hình 2.8. Chóp là kết quả của một loạt các cực đại cực bộ mà thuật toán tham làm khó biết được.
+
+<!-- page: 69 -->
+
+Mặt bằng phẳng là một vùng trong địa hình của không gian trạng thái nơi mà hàm đánh giá phẳng (giá trị bằng nhau). Nó có thể là cực đại cục bộ nơi không có đường di lớn nửa hoặc lá một bờ núi nơi có thể di lên tiếp được (xem Hinh 2.5) Quả trình tìm kiếm leo đổi có thể sẽ không tìm được lôi thoát khởi mặt bằng phẳng này.
+
+Trong mỗi trường hợp, thuật toán đều đi tới một điểm mà nó không thể tiếp tục nữa. Bắt đầu từ một trạng thái 8 hậu phát sinh ngẫu nhiên, thuật toán leo đổi bị kết tới 86%, chỉ giải được 14% thể hiện của bài toán. Thuật toán chạy nhanh, tính trung bình chỉ cần 4 bước khi thành công và 3 bước khi thất bại, kết quả không tối cho một không gian trạng thái có $8^{8} \approx 17$ triệu trạng thái.
+
+![](images/page_68_image_3.jpg)
+
+Hình 2.8 - Minh hoa tại sao định chóp lui gây khó khăn cho tìm kiếm leo đổi. Các trạng thái trên định chóp tăng dần từ trái sang phải, tạo ra một chuỗi các cực đại cục bộ không nổi trực tiếp với nhau. Với mỗi cực đại cực bộ, tất cả những hành động có thể đều đi xuống đổi.
+
+Thuật toán dùng lại nếu nó gặp mặt bằng phẳng khi mà trạng thái con tốt nhất có cùng giá trị với trạng thái hiện tại. Đề có thể tiếp tục việc tìm kiếm, ta có thể cho phép di chuyển ngang với hi vọng rằng mặt bằng phẳng thực sự là một bờ núi như trong Hình 2.5 tuy nhiên phải cân thận. Nếu ta luôn cho phép di chuyển ngang khi gặp trường hợp không có đời để leo lên, vòng lập vô tận sẽ xảy ra khi thuật toán gặp một mặt phẳng cực đại cục bộ không phải là bờ núi. Một giải pháp đơn giản là đặt ngưỡng giới hạn số lần di chuyển ngang liên tục. Ví dụ, ta có SME cho phép di chuyển ngang liên tục 100 lần trong bài toán
+
+<!-- page: 70 -->
+
+8 hậu. Việc này làm tăng tỉ lệ giải được bài toán của thuật toán leo đời từ 14% lên 94%. Thành công này đi kèm với một cái giá phải trả là thuật toán cần trung bình 21 bước cho các thể hiện giải thành công và 64 cho những thể hiện thất bại.
+
+Rất nhiều biến thể của thuật toán leo đổi đã được đưa ra. Thuật toán tìm kiếm leo đổi ngẫu nhiên chọn ngẫu nhiên các bước leo đổi, xác suất chọn có thể thay đổi theo độ độc của bước leo đổi. Điều này sẽ làm thuật toán hội tự chậm hơn so với thuật toán gốc, nhưng trong một số địa hình nó tìm ra lời giải tốt hơn. Thuật toán tìm kiếm leo đổi có lựa chọn cải đặt lại thuật toán leo đổi ngẫu nhiên bằng cách phát sinh trạng thái con ngẫu nhiên cho tới khi có một trạng thái con tốt hơn trạng thái hiện tại. Đây là một chiến lược tốt khi một trạng thái có nhiều (hàng ngân chẳng hạn) trạng thái con.
+
+Các thuật toán leo đổi mô tả tới lúc này vẫn không đầy đủ, thường thất bại trong việc tìm tới đích khi nó tồn tại bởi vì các thuật toán có thể bị kết ở cực đại cục bộ. Thuật toán leo đổi làm lại ngẫu nhiên tiến hành một loạt các quá trình tìm kiếm leo đổi từ trạng thái phát sinh ngẫu nhiên ban đầu, dùng khi đích được tìm thấy. Nó đầy đủ khi xác suất tiến gần 1, với lý do đơn giản là nó sẽ phát sinh ra được trạng thái ban đầu chính là trạng thái đích luôn. Nếu mỗi quá trình tìm kiếm leo đổi có xác suất thành công là $p$ thì số lần cần làm lại sẽ là $1/p$. Với bài toán 8 hậu không cho phép di chuyển ngang, $p \approx 0.14$, nên ta cần khoảng 7 lần lập để tìm ra đích (6 lần thất bại và 1 lần thành công). Số bước mong đợi chính là chi phí của một lần lập thành công cộng với $(1 - p)/p$ lần thất bại, vào khoảng 22 bước. Khi ta cho phép di chuyển ngang, cần trung bình $1/0.94 \approx 1.06$ lần lập và $(1 \times 21) + (0.06/0.94) \times 64 \approx 25$ bước. Với bài 8 hậu thì thuật toán này thực sự hiệu quả. Thẩm chí với ba triệu quân hậu, cách làm này có thể tìm ra lời giải trong thời gian dưới một phút.
+
+Sự thành công của thuật toán leo đổi phụ thuộc rất nhiều vào hình dạng địa hình của không gian trạng thái: nếu có rất ít cực đại cục bộ và mặt bằng phẳng, leo đổi làm lại ngẫu nhiên sẽ tìm ra một lời giải tốt rất nhanh. Nguộc lại, nhiều bài toán thực tế có vô số cực đại cục bộ. Ví dụ, các bài toán NP- khó thông thường có một số lượng cực đại cục
+
+<!-- page: 71 -->
+
+bộ theo hàm mũ. Dù vậy thì một cực đại cục bộ thường có thể được tìm thấy sau một số ít lần thực hiện lại.
+
+## III.2 Tîm kiểm nhóm cục bộ
+
+Thuật toán tìm kiếm nhóm cục bộ theo dõi $k$ trạng thái thay vì chi một. Nô bắt đầu với $k$ trạng thái được phát sinh ngẫu nhiên. Ô mỗi bước, tất cả trạng thái con của $k$ trạng thái này được phát sinh. Nếu bắt kì trạng thái nào là đích thì thuật toán dùng. Nguộc lại, nó chọn $k$ trạng thái con tốt nhất từ danh sách trạng thái con mới này và lập lại công việc này.
+
+Tìm kiểm nhóm cục bộ với $k$ trạng thái đường nhu không khác gì với việc chạy $k$ tìm kiếm làm lại ngẫu nhiên song thay vì chạy tuần tự. Trên thực tế, hai thuật toán khá khác nhau. Trong tìm kiếm khởi tạo ngẫu nhiên, mỗi quá trình tìm kiếm chạy một cách độc lập với nhau. Trong tìm kiếm nhóm cục bộ, thông tin hữu ích được truyền qua lại giữa $k$ luồng tìm kiếm song song. Ví dụ nếu một trạng thái phát sinh ra các trạng thái con tốt và $k - 1$ trạng thái còn lại phát sinh ra những trạng thái con không tốt, thì hiệu ứng ở đây là trạng thái đầu tiên sẽ thu hút các trạng thái khác về phía minh. Thuật toán nhanh chóng bỏ đi những hướng tìm kiếm không tốt và chuyển sang nơi có tiến triển tốt nhất.
+
+## III.3 Tîm kiểm mô phỏng luyện kim
+
+Thuật toán leo đổi không bao giờ thực hiện bước “xuống đồi” đến những trạng thái có giá trị thấp hơn (hoặc chi phí cao hơn) chắc chắn không đầy đủ, vì thế nó có thể bị kẹt ở cực đại cực bộ. Trái lại, cách đi hoàn toàn ngẫu nhiên (tức là chuyển tới trạng thái con được chọn ngẫu nhiên từ tập các trạng thái con) sẽ đầy đủ nhưng lại cực kì không hiệu quả. Do đó, sẽ là một điều hợp lí khi ta thử kết hợp leo đời với di chuyển ngẫu nhiên theo cách nào đó như vậy sẽ có được cả sự hiệu quả và tính đầy au. Tìm kiểm mô phỏng luyện kim là một thuật toán như vậy. Trong công nghiệp luyện kim, luyện kim là quá trình được sử dụng để tôi luyện kim loại và thủy tinh bằng cách nung nóng chúng ở nhiệt độ cao và sau đó làm lạnh từ từ, từ đó cho phép vật liệu kết dính lại ở trạng thái kết tinh năng lượng thấp. Thuật toán mô phỏng luyện kim có thể được hình dung như khi ta thả một quả bóng xuống
+
+<!-- page: 72 -->
+
+một bề mặt mắp mô. Nếu ta để quả bóng tự lăn thì nó sẽ dùng ở cực tiểu cục bộ. Nếu ta lắc bề mặt thì ta có thể tung quả bóng ra khởi cực tiểu cục bộ. Mẹo ở đầy là lắc đủ mạnh để tung trái bóng ra khởi cực tiểu cục bộ, nhưng không quá mạnh để đánh bất nó ra khởi cực tiểu toàn cục. Giải pháp mô phòng luyện kim là bắt đầu bằng việc lắc mạnh (ứng với nhiệt độ cao) và sau đó từ từ giảm cường độ lắc (giảm dần nhiệt độ).
+
+```txt
+function Mô_phông_Luyện_kim(bài_toán, lịch) return lời giải
+    input: bài_toán,
+        lịch, ánh xạ giữa thời gian và “nhiệt độ”
+    biến cục bộ: núthiện_tại,
+        nút kế_tiếp,
+        T, “nhiệt độ” điều khiển xác suất các bước xuống đốc
+    hiện_tại ← Tạo_Nút(Trạng_thái_dầu[bài_toán])
+    for t ← 1 to ∞ đo
+        T ← lịch[t]
+        if T = 0 then return hiện_tại
+            kế_tiếp ← nút con được chọn ngẫu nhiên của hiện_tại
+            ΔE ← Giá_tri[kế_tiếp] - Giá_tri [hiện_tại]
+            if ΔE > 0 then hiện_tại ← kế_tiếp
+                else hiện_tại ← kế_tiếp chỉ với xác suất e^ΔE/T
+```
+
+Hình 2.9 - Thuật toán Mỏ phòng Luyên kim.
+
+Vòng lặp trong cùng nhất của thuật toán mô phòng luyện kim (xem đoạn mã giả) khá giống với leo đổi. Thay vi chọn bước tốt nhất, nó chọn một bước ngẫu nhiên. Nếu bước di chuyển cải thiện tỉnh hình thì nó luôn được chấp nhận. Ngược lại, thuật toán chấp nhận bước di chuyển với xác suất nhỏ hơn 1. Xác suất giảm đàn theo hàm mũ trên “độ xấu” của bước di chuyển - sự lượng giá giảm một lượng $\Delta E$. Xác suất cũng giảm khi “nhiệt độ” T giảm: “bước đi thời” gần như được cho phép lúc đầu khi nhiệt độ còn cao và chúng khó còn như vậy khi T giảm. Ta có thể chứng minh ràng nếu lên lịch cho T giảm đủ chậm thì thuật toán sẽ tìm ra tối ưu toàn cục với xác suất tiến gần tới 1.
+
+Mô phòng luyện kim được sử dụng rộng rãi lần đầu để giải bài toán thiết kế vi mạch trong những năm đầu thập niên 80. Nó đã được áp dụng rộng rãi trong việc lập lịch sản xuất trong nhà máy và những công việc tối ưu qui mô lớn khác.
+
+<!-- page: 73 -->
+
+## III.4 Thuật giải di truyền
+
+Thuật giải di truyền (gọi tất CA) là một biến thể của tìm kiếm nhóm ngẫu nhiên với trạng thái con được sinh ra bởi sự kết hợp của hai trạng thái cha mẹ, thay vì chỉ biến đổi một trạng thái. Sự tương đồng với chọn lọc tự nhiên cũng giống như trong tìm kiếm nhóm ngẫu nhiên, trừ việc bảy giờ ta sẽ làm việc với sinh sản hữu tính thay vì sinh sản vô tính.
+
+Giống như tìm kiếm nhóm, GA bắt đầu với tập $k$ trạng thái phát sinh ngẫu nhiên, được gọi là quản thể. Mỗi trạng thái (hoặc cá thể) được thể hiện như một chuỗi kí tự hữu hạn, thông dụng nhất là chuỗi các số 0 và 1. Ví dụ, một trạng thái trong bài toán 8 hậu xác định vị trí của 8 quân hậu, mỗi cột 8 ô sẽ có một quân và như vậy cần $8 \times \log_2 8 = 24$ bit.
+
+Một cách khác, trạng thái có thể được thể hiện bằng 8 con số, mỗi con số có giá trị từ 1 đến 8. Hình 2.10(a) cho thấy một quản thể gồm bốn chuỗi 8 kí số thể hiện các trạng thái của 8 quân hậu.
+
+![](images/page_72_chart_5.jpg)
+
+Hình 2.10 - Thuật giải di truyền. Quản thế ban đầu ở (a) được xếp hàng theo hàm thích nghi ở (b), các cấp được chọn (c). Thế hệ con được tạo ra trong (d) và được đốt biến trong (e).
+
+Việc sản sinh các trạng thái trong thể hệ tiếp theo đề thể hiện trong Hình 2.10(b)-(e). Trong (b), mỗi trạng thái được đánh giá bởi hàm đánh giá hoặc (theo thuật ngữ của GA) hàm thích nghi. Hàm thích nghi trả về giá trị lớn hơn cho những trạng thái tốt hơn, nên với bài toán 8 hậu ta sử dụng số lượng các cặp hậu không tấn công nhau, khi đó lời giải sẽ có giá trị là 28. Giá trị cho bốn trạng thái trong hình là 24, 23, 20 và 11. Trong trường hợp cụ thể này, xác suất cá thể được
+
+<!-- page: 74 -->
+
+chọn để lai (sản sinh ra thế hệ sau) tỉ lệ trực tiếp với độ thích nghi của cá thể đó và con số phần trăm được ghi kế bên độ thích nghi.
+
+![](images/page_73_image_2.jpg)
+
+Hình 2.11 - Trạng thái tương ứng với hai cá thể cha mẹ đầu tiên trong Hình 2.9(c) và cá thể con trong Hình 2.9(d). Những cột bị tổ mờ sẽ bị mất đi khi thực hiện phép lai và những cột còn lại sẽ được giữ nguyên.
+
+Trong (c), hai cặp được chọn ngẫu nhiên đem lai ghép với nhau. Lưu ý rằng một cá thể có thể được chọn một hay hai lần hoặc không được chọn. Với mỗi cặp đem lai này, vị trí lai trên chuỗi được chọn ngẫu nhiên. Trong Hình 2.10 vị trí lai từ sau số thứ ba cho cặp đầu tiên và sau số thứ năm cho cặp thứ hai.
+
+Trong (d), các cá thể con được tạo ra bằng cách hoán đổi chuỗi của hai cha mẹ tại vị trí lai. Ví dụ, cá thể con đầu tiên của cặp đầu tiên sẽ lấy ba kí số đầu từ cá thể cha mẹ đầu tiên và những kí số còn lại lấy từ cá thể cha mẹ thứ hai, trong khi cá thể con thứ hai lấy ba kí số đầu từ cá thể cha mẹ thứ hai và phần còn lại từ cá thể cha mẹ đầu tiên. Trạng thái tham gia trong bước sản sinh thể hệ mới được thể hiện trong Hình 2.10. Ví dụ này thể hiện một điều rằng khi hai trạng thái cha mẹ rất khác nhau thì phép lai có thể tạo ra một trạng thái khác xa so với cả hai trạng thái cha mẹ. Thường thì trường hợp mà quản thể khá khác biệt trong giai đoạn đầu của quá trình, thì phép lai (giống như mô phỏng luyện kim) thường lúc đầu sẽ nhảy những bước lớn trong không gian trạng thái trong quá trình tìm kiếm và những bước nhỏ hơn trong giai đoạn về sau, khi hầu hết các cá thể đều khá giống nhau.
+
+Cuối cùng, trong (e) mỗi vị trí được chọn đề thực hiện đột biến ngẫu nhiên với một xác suất nhỏ độc lập. Một kí số được đột biến trong cá thể con đầu tiên, thứ ba và thứ tư. Trong bài toán 8 hậu, điều này tương đương với việc chọn ngẫu nhiên một quân hậu và di chuyển nó
+
+<!-- page: 75 -->
+
+![](images/page_74_image_1.jpg)
+
+Hình 2.12-Thuật giải di truyền.
+
+tói một ô ngẫu nhiên trong cùng một cột. Phần sau mô tả thuật toán cài đặt tất cả các bước trên.
+
+Giống như tìm kiếm nhóm ngẫu nhiên, thuật giải di truyền kết hợp việc leo đổi với việc duyệt ngẫu nhiên và trao đổi thông tin giữa các hướng tìm kiếm song song. Ưu điểm chính (nếu có) của thuật giải di truyền có được nhờ phép lai. Nhưng ta có thể chứng minh toán học rằng nếu vị trí trên mã gen ban đầu được hoán đổi theo thứ tự ngẫu nhiên thì phép lai không mang đến ưu điểm gì. Theo trực giác, ta thấy ưu điểm đến từ khả năng lai để kết hợp những nhóm kí tự lớn đang tiến hóa riêng !ề để tạo ra một hữu ích, do đó làm tăng mức độ mịn của công việc tìm kiếm. Ví dụ, có thể đặt ba quân hậu đầu ở vị trí 2, 4 và 6 (nơi mà chúng không tấn công lẫn nhau) tạo thành một nhóm hữu ích có thể kết hợp với những nhóm khác để cho ra lời giải.
+
+Lý thuyết về thuật giải di truyền giải thích cách thức hoạt động của điều này sử dụng ý tưởng của lược đồ. Lược đồ là một chuỗi con trong đó một vài vị trí bị bỏ trống. Ví dụ, sơ đồ 246\*\*\*\* mô tả tất cả
+
+<!-- page: 76 -->
+
+các trạng thái của 8 hậu mà trong đó ba quân hậu đầu tiên lần lượt ở các vị trí 2, 4 và 6. Những chuỗi khớp với sơ đồ (24613578 chẳng hạn) được gọi là các thể hiện của sơ đồ đó. Ta có thể chứng minh rằng, số lượng thể hiện của sơ đồ trong quản thể sẽ tăng theo thời gian. Thuật giải di truyền thực hiện tốt khi các sơ đồ tương ứng với các thành phần có nghĩa trong lời giải. Điều này cho thấy yếu tố thành công của giải thuật di truyền đời hỏi sự cần thận trong thiết kế thể hiện.
+
+Trong thực tế, thuật giải di truyền có sự ảnh hưởng rộng lớn đến các bài toán tối uu hóa, chẳng hạn thiết kế vi mạch và lập lịch công việc. Nhiều việc cần phải làm đề xác định điều kiện để giải thuật di truyền đạt hiệu quả cao.
+
+## IV. KÉT CHƯƠNG
+
+Chương này đã khảo sát việc ứng dụng của các heuristic đề giảm chỉ phí tìm kiếm.
+
+\- Tìm kiểm tối ưu chi là tìm kiểm trên đồ thị trong đó các nút chưa mở có chi phí tối thiểu (dựa trên một độ do nào đó) được lựa chọn đề mở rộng. Các thuật toán tối ưu thường dùng một hàm heuristic h(n) để ước lượng chi phí từ nút n.
+
+\- Tìm kiểm tối ưu kiểu tham lam mở các nút có $h(n)$ nhỏ nhất. Thuật toán không đạt được tối ưu nhưng thường hiệu quả.
+
+\- Tím kiểm A\* mở các nút có $f(n)=g(n)+h(n)$ nhỏ nhất. A\* đầy đủ và tối ưu nếu hàm $h(n)$ là chấp nhận được. Độ phức tạp về mặt không gian của A\* vẫn rất cao.
+
+\- Hiệu quả của các thuật toán tìm kiếm heuristic phụ thuộc vào chất lượng của các hàm heuristic. Các heuristic tốt có thể được xây dựng bằng cách giản lược định nghĩa bài toán, hoặc bằng cách tính toán trước các chi phí cho các bài toán con trong cơ sở dữ liệu mẫu.
+
+\- Các phương pháp tìm kiếm cục bộ như leo đổi hoạt động trên \~các công thức trạng thái đầy đủ, chỉ cần giữ một số lượng nhỏ các nút trong bộ nhớ. Một số thuật toán ngẫu nhiên cũng đã
+
+<!-- page: 77 -->
+
+được phát triển, bao gồm luyện thép, cho ra các lời giải tối ưu khi được cung cấp các tham số thích hợp. Nhiều phương pháp tìm kiếm cục bộ cũng có thể được dùng để giải các bài toán trong không gian liên tục.
+
+\- Thuật giải di truyền là một thuật giải tìm kiếm leo đổi ngẫu nhiên, trong đó một quản thể lớn các trạng thái được duy trì. Các trạng ini ai méi có thể được phát sinh bằng cách đột biến và lai ghép.
+
+## V. THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+admissible heurestic: chấp nhận được
+
+best-first search: tìm kiếm tối ưu
+
+crossover: lai ghép
+
+evaluation function: hàm đánh giá
+
+first-choice hill climbing: leo đôi có lựa chọn
+
+fitness function: hàm thích nghi
+
+genetic algorithm: thuật giải di truyền
+
+global maximum: cục đại toàn cục
+
+global minimum: cực tiêu toàn cục
+
+greedy best-first search: tìm kiếm tối ưu kiểu tham lam, tìm kiếm tham lam
+
+greedy local search: tìm kiếm cục bộ tham lam
+
+hill-climbing search: tìm kiếm leo đôi
+
+imformed search: tìm kiếm có thông tin
+
+instance: thể hiện
+
+local beam search: tìm kiếm nhóm cục bộ
+
+<!-- page: 78 -->
+
+local search: tìm kiếm cục bộ
+mutation: đột biến
+objective function: hàm mục tiêu
+optimization problem: bài toán tối ưu
+plateau: mặt bằng phẳng
+population: quản thể
+random-restart hill climbing: leo đổi làm lại ngẫu nhiên
+relaxed problem: bài toán giản lược
+ridge: chóp
+schema: lược đồ
+state space landscape: địa hình không gian trạng thái
+stimulated annealing: tìm kiếm mô phỏng luyện kim
+stochastic hill climbing: leo đổi ngẫu nhiên
+subproblem: bài toán con
+
+<!-- page: 79 -->
+
+# BÀI TOÁN THÒA MÃN RÀNG BUỘC
+
+Trong chương 1 và 2, chúng ta đã bước đầu làm quen với các ý tưởng tri tuệ nhân tạo với việc áp dụng các tri thức bổ sung vào các thuật toán tìm kiếm nhằm nâng cao hiệu quả. Chương này sẽ xem xét một trong những dạng đặc biệt của bài toán tìm kiếm là bài toán thỏa mãn ràng buộc. Phẩn I giới thiệu định nghĩa và một số ví dụ cụ thể của bài toán. Thuật toán quay lui tổng quát giải bài toán thỏa mãn ràng buộc được giới thiệu trong phần II. Một số heuristic đề giải bài toán nhằm tìm kiếm những lời giải hợp lý sẽ được đưa ra trong phần III.
+
+## I. BÀI TOÁN THÒA MĂN RÀNG BUỘC (CSP)
+
+Bài toán thỏa mãn ràng buộc (CSP) được định nghĩa bởi một tập các biến: $X_1$, $X_2$, ..., $X_n$ và một tập các ràng buộc: $C_1$, $C_2$, ..., $C_m$. Mỗi biến $X_i$ có miền xác định $D_i$ khác rộng. Mỗi ràng buộc $C_i$ bao gồm một số tập con các biến và các mối liên hệ giữa các tập con này. Một trạng thái của bài toán được định nghĩa bởi phép gán giá trị đến một số hay tất cả các biến, $\{X_i = v_i, X_j = v_j, \ldots\}$. Một phép gán không vị phạm bất kì ràng buộc nào được gọi là phép gán hợp lệ. Một phép gán đầy đủ là một phép gán trong đó mỗi biến đều được gán và lời giải của CSP là một phép gán đầy đủ thỏa mãn tất cả các ràng buộc. Một số CSP cũng đời hỏi một lời giải làm cực đại hóa hàm mục tiêu.
+
+Một ví dụ cụ thể của bài toán thỏa mãn ràng buộc là bài toán tô màu bản đồ nước Úc. Một bản đồ của nước Úc bao gồm các bang và vùng lãnh thổ được biểu diễn trong Hình 3.1 (a). Yêu cầu của bài toán cần tô màu cho mỗi miền hoặc màu đỏ, xanh lá cây, hay xanh dương trong đó không có miền nào kể nhau được tô chung một màu. Đề đưa bài
+
+<!-- page: 80 -->
+
+toán về dạng CSP, chúng ta định nghĩa các biến là các miền: WA, NT, Q, NSW, V, SA và T. Miền giá trị của mỗi biến là tập: {đò, xanh lá, xanh duong}. Ràng buộc đời hỏi các miền kể nhau có màu phân biệt, ví dụ quan hệ hợp lệ cho WA và NT là các cặp:
+
+$\{(dò, xanh lá), (dò, xanh dương), (xanh lá, dò), (xanh lá, xanh dương), (xanh dương, dò), (xanh dương, xanh lá)\}.$
+
+Chúng ta có rất nhiều lời giải như:
+
+$\{WA = \dot{d}\dot{o}, NT = xanh \text{ lá}, Q = \dot{d}\dot{o}, NSW = xanh \text{ lá}, V = \dot{d}\dot{o}, SA = xanh \text{ dương}, T = \dot{d}\dot{o}\}.$
+
+Ta có thể xem xét một bài toán thỏa mãn ràng buộc dưới dạng một đồ thị ràng buộc, như trong Hinh 3.1(b). Các nút của đồ thị tương ứng với các biển của bài toán và cung nổi tương ứng với ràng buộc.
+
+![](images/page_79_image_6.jpg)
+
+(a)
+
+![](images/page_79_image_8.jpg)
+
+(b)
+
+Hình 3.1 - (a). Những bang chính của Úc. Tố màu bản đồ này có thể được xem như bài toán thỏa mãn ràng buộc. Mục tiêu có thể gán màu cho mỗi miền để mà không có miền nào kê nhau được tổ cùng một màu. (b). Bài toán tố màu được thể hiện bằng một đồ thị ràng buộc.
+
+Một CSP có thể được tiến hành theo một công thức của bài toán tìm kiếm thông thường như sau:
+
+\- Trạng thái ban đầu: Tập gán rỗng {}, tất cả các biến đều chưa được gán.
+
+\- Hàm trạng thái con: Một giá trị có thể được gán đến bất kì biển nào, giả sử ràng không ảnh hưởng đến các biến đã được gán trước đó.
+
+<!-- page: 81 -->
+
+\- Trạng thái đích: Việc gán hiện tại được hoàn thành.
+
+\- Chi phí đường đi: Một chi phí hằng số cho mỗi bước.
+
+Mỗi lời giải phải là một phép gán đầy đủ và nó sẽ xuất hiện ở độ sâu $n$ nếu có $n$ biên. Cây tìm kiếm mở rộng chỉ đến độ sâu $n$. Vi vậy, thuật toán tìm kiếm theo chiều sau được áp dụng phổ biến cho CSP. Cùng có trường hợp đường đi cho ra lời giải không đúng. Từ đây về sau, chúng ta có thể sử dụng một công thức trạng thái đầy đủ trong đó mỗi trạng thái là một phép gán đầy đủ đủ có hay không thỏa mãn những ràng buộc. Phương pháp tìm kiếm cục bộ làm việc tốt với công thức này.
+
+Bài toán CSP đơn giản nhất bao gồm các biến rời rạc và có miền xác định hữu hạn. Bài toán tô màu bản đồ thuộc về dạng này. Bài toán 8 hậu cũng có thể được xem như là CSP miền xác định hữu hạn, ở đó các biến Q₁,..., Q₈ là vị trí của mỗi quân hậu trong các cột 1,...,8 và mỗi biến có miền xác định {1, 2, 3, 4, 5, 6, 7, 8}. Nếu miền kích thước lớn nhất của bất kì biến nào trong CSP là d, thì số lượng phép gán đầy đủ có thể là O(dⁿ) – số mũ là số lượng biến. CSP miền xác định hữu hạn cũng bao gồm CSP luận lý, giá trị các biến là đúng hoặc sai. CSP luận lý cũng là trường hợp đặc biệt của bài toán NP - đầy đủ như bài toán 3-SAT (Kiểm tra xem một biểu thức logic 3 biến có thỏa hay không). Do đó, trong trường hợp xấu, chúng ta không thể giải quyết CSP miền xác định hữu hạn trong thời gian ít hơn hàm mũ.
+
+Các biến rời rạc cũng có miền xác định vô hạn – ví dụ, tập những số tự nhiên hay tập những chuỗi kí tự. Một ví dụ khác, khi lập lịch công việc xây dựng, ngày bắt đầu của mỗi công việc là một biến và giá trị khả đã là số nguyên những ngày tính từ ngày hiện tại. Với miền xác định vô hạn, ta không còn mô tả các ràng buộc bằng cách liệt kê tất cả những liên hệ cho phép giữa những giá trị mà thay vào đó sử dụng ngôn ngữ ràng buộc. Ví dụ, nếu $CV_1$ mất 5 ngày, phải trước $CV_3$ thì chúng ta cần ngôn ngữ ràng buộc bắt đẳng thức đại số như $BấtĐầuCV_1 + 5 \leq BấtĐầuCV_3$.
+
+Bên canh việc kiểm tra loại biến có thể xuất hiện trong CSP, chúng ta cũng sẽ xem xét loại ràng buộc. Loại đơn giản nhất là ràng buộc bậc nhất, ở đó nó ràng buộc giá trị của từng biến đơn. Ví dụ, người miền
+
+<!-- page: 82 -->
+
+nam nước Úc không thích màu xanh lá. Mỗi ràng buộc đơn có thể bỏ đi đơn giản bằng cách tiền xử lý miền biến tương ứng để bỏ đi các giá trị mà vi phạm ràng buộc. Một ràng buộc bậc hai liên quan đến hai biến. Ví dụ, SA ≠ NSW là một ràng buộc kép. Một CSP kép là một bài toán với chỉ các ràng buộc kép, nó có thể biểu diễn bằng một đồ thị ràng buộc như hình 3.1(b).
+
+Ràng buộc bậc cao hơn bao gồm 3 hay nhiều biến trở lên. Một ví dụ quen thuộc đó là bài toán đổ (xem hình 3.2(a)). Thông thường chúng ta ràng buộc mỗi kí tự đại diện cho một chữ số phân biệt. Trường hợp ở hình 3.2(a), nó thể hiện ràng buộc 6 biến TấtCàKhácNhau(F, T, U, W, R, O). Tương tự, nó có thể được thể hiện bằng một tập các ràng buộc kép như F ≠ T. Những ràng buộc thêm trên 4 cột của bài toán cũng liên quan đến các biến và có thể được viết như sau:
+
+$$
+\begin{array}{l} O + O = R + 1 0 \times X _ {1}. \\ X _ {1} + W + W = U + 1 0 \times X _ {2}. \\ X _ {2} + T + T = O + 1 0 \times X _ {3}. \\ X _ {3} = F. \end{array}
+$$
+
+Trong đó: $X_1$, $X_2$, $X_3$ là các biến phụ thể hiện chữ số (0 hoặc 1) cần mang qua cột kế tiếp. Ràng buộc bậc cao có thể được biểu diễn trong một siêu đồ thị như hình 3.2(b). Trong trường hợp này, ràng buộc TấtCảKhácNhau có thể bị phân nhỏ thành các ràng buộc kép - F≠T, F≠U,... Thực tế, mỗi ràng buộc không gian hữu hạn bậc cao có thể được biến đổi thành một tập các ràng buộc kép nếu đủ các biển tạm như đã đề cập ở ví dụ trên. Vì vậy, chương này chi quan tâm đến các ràng buộc kép.
+
+Tất cả ràng buộc đã được mô tả đến bày giờ đều là các ràng buộc tuyệt đối, vi phạm những luật này sẽ không dẫn đến lời giải tiềm năng. Rất nhiều CSP thực tế bao gồm các ràng buộc sở thích chỉ ra lời giải nào sẽ tốt hơn. Ví dụ, trong bài toán lập thời gian biểu ở đại học, giáo sư X thích dạy buổi sáng, ngược lại giáo sư Y thích dạy buổi chiều. Một thời gian biểu sắp giáo sư X dạy lúc 2 giờ chiều sẽ là một lời giải nhưng không là một lời giải tối ưu. Ràng buộc sở thích có thể được xem như là chi phí gán cho một biến cá thể – chẳng hạn, gán một chỗ
+
+<!-- page: 83 -->
+
+buổi chiều cho giáo sư X làm mất 2 điểm của hàm mục tiêu toàn bộ, ngược lại vào chỗ buổi sáng chỉ mất 1. Với công thức này, CSP với sở thích có thể được giải quyết sử dụng phương pháp tìm kiếm tối ưu, hoặc dựa trên đường di hoặc cục bộ.
+
+![](images/page_82_image_2.jpg)
+
+(a)
+
+![](images/page_82_image_4.jpg)
+
+(b)
+
+Hình 3.2 - (a). Bài toán đồ tìm ăn số. Mỗi kí tự đại diện cho một chữ số phân biệt; mục tiêu là tìm ra một thay thể của những chữ số cho những kí tư để mà tổng kết quả là một con số đúng, với giới hạn cộng là không dẫn đến 0 được cho phép. (b). Siêu đồ thị ràng buộc cho bài toán đi tìm ăn số, cho thấy ràng buộc TấtCảKhácNhau bên cạnh các ràng buộc cộng từng cột. Mỗi ràng buộc là một kết nối hình ô vuông đến các biến mà nó ràng buộc.
+
+## II. TÍM KIÉM QUAY LUI CHO CSP
+
+Phần trước giới thiệu công thức của CSP dưới dạng bài toán tìm kiếm. Sử dụng công thức này, bất kì thuật toán tìm kiếm nào từ chương trước đều có thể giải quyết CSP. Giả sử chúng ta áp dụng tìm kiếm theo chiều sâu lên công thức của một họ các bài toán CSP. Một số vấn đề có thể được lưu ý là: hệ số phân nhánh ở mức đầu là nd, bởi vì bất kì những giá trị $d$ có thể được gán đến bất kì $n$ biến nào. Ô mức kế tiếp, hệ số phân nhánh là $(n-1)d$ và cứ thế cho đến mức $n$. Chúng ta sẽ tạo ra một cây với $n!dn$ nút lá, mặc dù chỉ có $dn$ phép gán đầy đủ.
+
+Lí do của vấn đề này là do chúng ta đã bỏ qua một thuộc tính quan trọng của tất cả các CSP: tính giao hoán. Một bài toán có tính giao hoán nếu thứ tự áp dụng bất kì tập hành động nào cho trước không
+
+<!-- page: 84 -->
+
+ảnh hưởng tới kết quả thu được. Đây là trường hợp xảy ra với CSP bởi vi khi gán giá trị cho các biến, chúng ta gán từng phần giống nhau mà không quan tâm đến thứ tự. Vi vậy, tất cả các thuật toán tìm kiếm CSP phát sinh trạng thái con bằng cách xem xét gán giá trị cho chỉ một biến đơn ở mỗi nút trong cây tìm kiếm. Ví dụ, tại nút gốc của một cây tìm kiếm cho bài toán tô màu nước Ức, chủng ta phải có một chọn lựa giữa: $SA = đỏ$, $SA = xanh lá$, và $SA = xanh dương$, nhưng chúng ta sẽ không bao giờ chọn lựa giữa: $SA = đỏ$ và $WA = xanh dương$. Với giới hạn này, số nút lá là $dn$.
+
+Tìm kiểm quay lui được sử dụng trong thuật toán tìm kiếm chiều chiều sâu bằng cách chọn các giá trị cho một biến cùng một lúc và quay lui khi một biến không có giá trị hợp lệ đề gần. Bời vì thể hiện của CSP đã được chuẩn hóa nên không cần thiết hỗ trợ tìm kiếm quay lui với một trạng thái khởi tạo xác định, hàm con cháu hay kiểm chứng lời giải. Một phần của cây tìm kiếm cho bài toán bản đồ Úc được minh họa trong Hinh 3.4, ở đó chúng ta có các biến được gán theo thứ tự WA, NT, Q, ...
+
+| function Tìm_kiểm_Quay_lui(csp) return lời giải hoặc thất bạireturn Quay_lui Độ_qui({},csp) |
+| --- |
+| functionQuay_lui Độ_qui(tập_gán,csp) return một lời giải hoặc thất bạiif tập_gán đầy đủ then return tập_gánbiến←Chọn_Biến_Chưa_Gán(các_biến[csp],tập_gán, csp)for each giá_trị in miền_gia_trị_có_thị_tr(tập_gán, csp)thêm{biến=giá_trị}vào tập_gánkết_quả ←Quay_lui Độ_qui(tập_gán,csp)if kết_quả ≠ thất bại then return kết_quàloại bỏ {biến=giá_trị} khởi tập_gánreturn thấtbại |
+
+Hình 3.3- Thuật toán Tîm kiểm Quay lui.
+
+<!-- page: 85 -->
+
+![](images/page_84_image_1.jpg)
+
+Hình 3.4 - Một phần của cây tìm kiếm được phát sinh bởi thuật toán quay lui đơn giản đối với bài toán tô màu bản đồ trong Hình 3.1.
+
+## III. TÌM KIỂM HEURISTIC CHO CSP
+
+Thuật toán quay lui truyền thống là một thuật toán không có thông tin, vi vậy rất kém hiệu quả cho các bài toán lớn. Trong những chương trước, chúng tả đã khác phục điểm yếu của thuật toán tìm kiếm không có thông tin bằng cách thêm những hàm heuristic trên miền xác định rút ra từ tri thức của bài toán. Trong bài toán CSP, ta có thể định nghĩa nhiều heuristic khác nhau. Thuật toán quay lui có dòng lệnh:
+
+## biến← Chọn\_Biến\_Chưa\_Gán(các\_biến[csp], tập\_gán, csp).
+
+Theo mặc định, Chọn\_Biến\_Chưa\_Gán đơn giản chọn những biến chưa được gán kế tiếp theo thử tự được định bởi danh sách các\_biến[csp]. Thứ tự biến tĩnh này hiểm khi mang lại kết quả tìm kiếm hiệu quả nhất. Ví dụ, sau khi gán cho WA = đỏ, NT = xanh lá, chỉ còn một giá trị có thể cho SA, vì vậy SA = xanh dương. Thực tế, sau khi SA được gán, chọn lựa Q, NSW và V là bắt buộc. Ý tưởng này – chọn biến với ít giá trị hợp lệ nhất – được gọi là heuristic giá trị còn lại tối tiểu (MRV). Biển này cũng được gọi là “biến được ràng buộc nhất” hay heuristic “theo thất bại”, bồi vì thuật giải chọn một biến mà gần trường hợp gây ra lôi sớm, do đó có thể giảm bớt nhánh cho cây tìm kiếm. Nếu có một biến X không còn giá trị hợp lệ, heuristic MRV
+
+<!-- page: 86 -->
+
+sẽ chọn X và thất bại sẽ được phát hiện ngay lập tức – tránh việc tìm kiếm điểm các biến khác và luôn luôn thất bại khi X cuối cùng cũng được chọn. Cách này thực thi tốt hơn từ 3 đến 3.000 lần sọ với quay lui đơn giản phụ thuộc vào từng bài toán cụ thể.
+
+Heuristic MRV không phải lúc nào cũng hữu ích trong việc chọn vùng đầu tiên nước Úc để tô màu, bởi vì khởi tạo mỗi vùng đều có 3 màu hợp lệ đề tô. Trong trường hợp này, heuristic theo bậc thường được chọn. Nó cổ gắng giảm hệ số phân nhánh trong chọn lựa ở tương lai bằng cách chọn biến liên quan đến số lượng các ràng buộc lớn nhất từ những biến chưa được gán trước đó. Trong Hình 3.1, S.A là biến có bậc cao nhất bằng 5, những biến khác có bậc 2 hoặc 3, ngoại trừ T, có bậc 0. Thực tế, một khi S.A được chọn, áp dụng heuristic bậc để giải quyết bài toán mà không cần bắt kì bước nào sai – có thể chọn bắt kì màu phù hợp ở mỗi điểm và vẫn đạt đến một lời giải mà không cần quay lui.
+
+Một khi một biến được chọn, thuật toán phải quyết định thứ tự để kiểm tra giá trị của nó. Đề làm được điều này, heuristic giá trị ràng buộc ít nhất có thể giúp ích trong một số trường hợp. Nó chọn giá trị ngăn cần ít nhất sự chọn lựa của các biến láng giềng trong đồ thị ràng buộc. Ví dụ, giả sử trong Hình 3.1, chúng ta đã gần giá trị từng phần với WA = đó và NT = xanh lá, bước chọn kế tiếp là Q. Màu xanh dương là chọn lựa không tốt bởi vì nó đã bỏ đi giá trị hợp lệ cuối cùng dành cho láng giềng của Q, SA. Vì vậy, heuristic giá trị ràng buộc ít nhất sẽ chọn màu đó thay vì xanh dương. Nhìn chung, heuristic cổ gắng đề càng nhiều lựa chọn cảng tốt cho các phép gần biến phía sau. Tất nhiên, nếu chúng ta muốn tìm tất cả các giải pháp có thể cho bài toán, thì thứ tự làm không còn quan trọng nửa bởi vì chúng ta phải xem xét từng giá trị một. Điều tương tự cũng xảy ra nếu bài toán không có lời giải.
+
+## IV. KẾT CHƯƠNG
+
+Chương này giới thiệu các định nghĩa cơ bản của một bài toán thỏa mãn ràng buộc. Các kiến thức chuyên sâu đối với bài toán này sẽ được giới thiệu trong các chương trình cao hơn. Một số điểm cơ bản có thể được rút ra như sau:
+
+<!-- page: 87 -->
+
+\- Các bài toán thỏa mãn ràng buộc (CSP) bao gồm các biến với các ràng buộc. Nhiểu bài toán thực tế quan trọng có thể được mô tả thành các bài toán thỏa mãn ràng buộc. Cấu trúc của một CSP có thể được biểu diễn thành một đồ thị ràng buộc.
+
+\- Tìm kiểm quay lui, là một dạng của tìm kiểm theo chiều sâu, thường được dùng đề giải quyết các CSP.
+
+\- Các heuristic giá trị còn lại tối tiêu và heuristic theo bậc là các phương pháp không phụ thuộc vào từng bài toán cụ thể và thường được sử dụng để làm giảm đáng kể hệ số phân nhánh của bài toán.
+
+## V. THUẬT NGỮ TIẾNG ANH
+
+Sau dây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+absolute constraint: ràng buộc tuyệt đối
+
+assignment: phép gán
+
+backtracking search: tìm kiểm quay lui
+
+binary constraint: ràng buộc bậc hai
+
+Boolean CSP: CSP luận lý
+
+commutativity: tính giao hoán
+
+complete-state formulation: công thức trạng thái đầy đủ
+
+consistent: hợp lệ
+
+constraint: ràng buộc
+
+constraint language: ngôn ngữ ràng buộc
+
+constraint satisfaction problem (CSP): bài toán thỏa mãn ràng buộc
+
+degree heuristic: heuristic theo bậc
+
+discrete: ròi rạc
+
+domain: miền xác định
+
+<!-- page: 88 -->
+
+Cơ sở Trí tuệ Nhân tạo
+Khoa Công nghệ thông tin, Trường DHKHTN Tp.HCM
+
+finite domain: miền xác định hữu hạn
+
+hypergraph: siêu đồ thị
+
+infinite domain: miền xác định vô hạn
+
+.least constraing value: giá trị còn lại ít nhất
+
+minimum remaining value (MRV): giá trị còn lại tối tiêu
+
+objective function: hàm mục tiêu
+
+preference constraint: ràng buộc sở thích
+
+solution: lời giải
+
+unary constraint: ràng buộc bậc nhất
+
+variable: biến
+
+<!-- page: 89 -->
+
+Phân 2
+BIỂU DIỄN TRI THỨC
+VÀ SUY DIỄN
+
+<!-- page: 90 -->
+
+<!-- page: 91 -->
+
+# Chương
+
+## LOGIC VÀ SUY DIÊN
+
+Phần 1 của giáo trình đã tập trung vào giải quyết những câu hỏi làm thế nào để xây dựng quá trình tìm kiếm và bỏ qua những câu hỏi về những phương pháp tổng quát nhằm mô tả các trạng thái và hành động trong bài toán. Tuy nhiên các hệ thống giao tiếp với con người đôi khi đôi hỏi cao hơn việc chi đưa ra lời giải cuối cùng. Người dùng còn muốn hiểu được lời giải một cách tường minh. Phần 2 của giáo trình bổ sung thêm cho hệ thống khả năng suy diễn logic. Một hệ thống dựa vào tri thức và logic thường khởi đầu bằng một số tri thức về thể giới xung quanh cũng như tri thức hành động của nó. Hệ thống sử dụng suy diễn logic nhằm duy trì mô tả về thể giới nhằm đạt tới những đối tượng tri giác mới và suy luận để nhằm đi đến mục đích mong muốn.
+
+Chương 4 sẽ giới thiệu một số phác họa cơ bản cách xây dựng một hệ thống dựa vào cơ sở tri thức. Chương này cũng trình bày một ngôn ngữ logic đơn giản giúp biểu diễn tri thức và sẽ hướng dẫn cách sử dụng những tri thức để đưa ra những kết luận về thế giới và quyết định nên làm gì. Chương 5 và 6 sẽ bổ sung thêm ngôn ngữ nhằm giúp hệ thống có khả năng biểu diễn những trạng thái mở rộng của tri thức trong thể giới phức tạp. Chương 7 giới thiệu một số kỹ thuật để giải quyết vấn đề không chắc chắn trong tri thức.
+
+## I.. LOGIC
+
+Về mặt hình thức, logic bao gồm những thành phần sau:
+
+1. Hệ thống hình thức đề mô tả trạng thái sự vật, bao gồm:
+
+a. Cú pháp ngôn ngữ, mô tả làm thể nào tạo nên các câu.
+
+b. Ngữ nghĩa ngôn ngữ, xác định các ràng buộc ngữ nghĩa về mối quan hệ giữa các trạng thái sự vật.
+
+<!-- page: 92 -->
+
+## 2. Lý thuyết chứng minh – tập các luật cho suy diễn những đặc tính kế thừa của các câu.
+
+Giáo trình sẽ giới thiệu hai loại logic: logic mệnh đề hay logic boolean và logic bậc nhất. Trong logic mệnh đề, các kí hiệu biểu diễn hầu hết các mệnh đề (các thành phần của suy luận); ví dụ, D có cách hiểu là “Aristotle chết” có thể là mệnh đề đúng hoặc không đúng. Các kí hiệu mệnh đề có thể được nổi với nhau sử dụng các phép toán logic đề tạo ra các câu có ý nghĩa phức tạp hơn. Như vậy logic mệnh đề tạo ra rất ít thông tin đề biết các vấn đề được biểu diễn thế nào.
+
+Logic bậc nhất tuân theo các biểu diễn của thế giới theo các thuật ngữ của đối tượng hoặc các biến vị từ trên đối tượng (ví dụ, các tính chất hoặc các mối quan hệ của đối tượng), cũng như sử dụng các phép kết hợp hoặc các phép lượng hóa, cho phép các câu có thể biểu diễn về mọi thứ trong thế giới và đã được nghiên cứu hàng trăm năm trước. Do đó, phần lớn nội dung của phần logic sẽ tập trung giới thiệu cách biểu diễn và sử dụng logic bậc nhất. Nhung trước tiên, chúng ta sẽ làm quen với các vấn đề của logic qua loại đơn giản hơn: logic mạnh đề.
+
+## II. LOGIC MÊNH ĐỀ: LOẠI LOGIC ĐƠN GIẢN.
+
+Mặc dù có những giới hạn trong việc biểu diễn, logic mệnh đề vẫn có vai trò minh họa nhiều định nghĩa logic giống như logic bậc nhất. Phần này sẽ mô tả cú pháp, ngữ nghĩa và các thủ tục suy luận liên quan của nó.
+
+## II.1 Cú pháp
+
+Cú pháp của logic mênh đề rất đơn giản. Các kí hiệu của logic mênh đề là các hằng số logic True hoặc False, các kí hiệu mênh đề như P và Q, liên kết logic ∧, ∨, ⇔, ⇒ và các dấu ngoặc ( ). Tất cả các câu được tạo ra bằng cách liên kết các kí hiệu với nhau sử dụng theo các luật sau:
+
+\- Các hàng số logic True hoặc False là các câu.
+
+\- Một kí hiệu ménh đề như $P$ hoặc $Q$ là các câu.
+
+\- Các dấu ngoặc bao quanh một câu tạo ra một câu, ví dụ, (P A Q).
+
+<!-- page: 93 -->
+
+Một câu phức có thể được hình thành bằng cách liên kết từ các câu đơn giản hơn với 1 trong 5 phép liên kết logic:
+
+\- ∧ ( và ): Một câu mà liên kết chính của nó là phép ∧, như $P \land (Q \lor R)$, được gọi là phép giao; các thành phần của nó giao với nhau (∧ giống kí tự ‘A’ viết tất của “And”).
+
+\- √ ( hoặc ): Một câu sử dụng phép hoặc là hội, hội của các mệnh đề với nhau. (Là kí tự bắt đầu của từ Latinh “Vel” có nghĩa là hoặc).
+
+\- $\Rightarrow$ (kéo theo): Một câu kiểu như $(P \land Q) \Rightarrow R$ được gọi là phép kéo theo (hay điều kiện). $P \land Q$ là tiền đề và $R$ là kết luận. Pháp kéo theo cũng được gọi là các luật hoặc câu nếu thì. Kí hiệu phép kéo theo thỉnh thoảng được viết $\supset$ hoặc $\rightarrow$.
+
+•  $\Leftrightarrow$  (tương đương): Câu  $(P \land Q) \Leftrightarrow (Q \land P)$  là tương đương.
+
+\- $\neg (\text{phù định})$: Một câu $\neg P$ được gọi là phù định của $P$. Tất cả các toán từ liên kết, kết hợp 2 câu thành 1 câu; $\neg$ là phép toán liên kết duy nhất thao tác trên một toán từ đơn.
+
+Ngữ pháp của logic là không rõ ràng – một câu như: $P \land Q \lor R$ có thể được phân tích là: $(P \land Q) \lor R$ hoặc $P \land (Q \lor R)$. Điều này tương đương với sự không rõ ràng của các phép toán số học như: $P + Q \times R$ và cách giải quyết sự tối nghĩa này cũng tương tự: sử dụng độ ưu tiên toán từ và sử dụng các dấu ngoại bất cứ khi nào có thể xảy ra nhằm lẫn. Độ ưu tiên toán từ trong logic mệnh đề (từ cao đến thấp): ¬, ∧, ∨, ⇒, ⇔. Do vậy câu:
+
+$$
+\neg \mathrm{P} \lor \mathrm{Q} \land \mathrm{R} \Rightarrow \mathrm{S}
+$$
+
+Tương đương với câu sau:
+
+$$
+((\neg \mathrm{P}) \lor (\mathrm{Q} \land \mathrm{R})) \Rightarrow \mathrm{S}
+$$
+
+## III.2 Ngũ nghĩa
+
+Ngữ nghĩa của logic ménh đề cũng không phức tạp. Chúng ta định nghĩa nó bằng cách xác định cách hiệu của các kí hiệu ménh đề, các hàng và many định y nghĩa của các phép nổi logic.
+
+Một kí hiệu mệnh đề có thể mang bất cứ nghĩa nào. Cách hiểu của nó có thể bất cứ nghĩa gì. Cách hiểu của P có thể kiểu như là “Paris là thủ
+
+<!-- page: 94 -->
+
+đô của Pháp” hoặc “Aristotle bị chết”. Một câu chứa chỉ một kí hiệu ménh đề là thỏa mãn được nhưng không hợp lệ: nó chỉ đúng khi sự việc xảy ra đúng như thế.
+
+Với các hằng số logic, một câu đúng luôn có một cách hiểu trong thế giới nó là sự kiện đúng và câu sai luôn luôn được hiểu là sai.
+
+Một câu phức có ý nghĩa từ sự kết hợp của ý nghĩa các câu thành phần của nó. Mỗi liên kết có thể coi như là một hàm. Tương tự như phép cộng là một hàm với 2 đối số đầu vào và trả về một số, phép “và” là một hàm với 2 đối số đầu vào và trả về giá trị tương ứng trong bảng chân trị. Dưới đây là bảng chân trị của các phép toán logic.
+
+Bảng 4-1. Bảng chân trị của 5 phép liên hợp logic.
+
+| P | Q | $\neg P$ | P ∧ Q | P ∨ Q | P ⇒ Q | P ⇔ Q |
+| --- | --- | --- | --- | --- | --- | --- |
+| False | False | True | False | False | True | True |
+| False | True | True | False | True | True | False |
+| True | False | False | False | True | False | False |
+| True | True | False | True | True | True | True |
+
+Bảng chân trị định nghĩa ngữ nghĩa của câu như True ∧ True. Câu phúc P ∨ Q ∧ ¬S, đề xác định nghĩa của câu này ta xác định P ∨ Q và ¬S trước, sau đó liên kết chúng bằng phép giao menses đề. Phương pháp tương tự như cách ta tính một biểu thức số học phức tạp.
+
+Trong một số trường hợp, phép kéo theo ⇒ là quan trọng nhất, bảng chân trị của nó có về như hơi khó hiểu, vì nó không giống với cách hiểu của chúng ta “P kéo theo Q” hoặc “Nếu P thì Q”. Một điều nửa, logic mệnh đề không yêu cầu bất kì mối quan hệ nhân quả nào hoặc sự hợp lí nào giữa P và Q. Câu “5 là số lẻ kéo theo Tokyo là thủ đổ của Nhật Bản” là câu đúng trong logic mệnh đề (theo cách hiểu thông thường), mặc đầu ta thấy câu này có về kì là. Một điểm khác cũng đề gây ra nhằm lẫn là phép kéo theo sẽ luôn đúng nếu mệnh đề phía trước là false. Ví dụ “Nếu 5 là số chăn thì Lâm thông minh” là true, cho dù Lâm có thông minh hay không.
+
+<!-- page: 95 -->
+
+## II.3 Tính tương đương, hợp lệ và thỏa mãn được.
+
+Một câu là hợp lệ nếu và chỉ nếu bất chấp cách hiểu trong thế giới như thế nào, nó mang ý nghĩa gì và trạng thái sự việc nó được đủ được mô tả thế nào, thì nó vẫn đúng. Ví dụ, câu sau:
+
+"Trời mưa hoặc trời không mưa"
+
+luôn đúng bởi vì một trong 2 câu chắc chắn sẽ đúng bất chấp câu kia có đúng hay không. Ngược lại:
+
+“Có một khoảng trống trong ô vuông trước mặt tối hoặc có một bức tường trong ô vuông ở trước mặt tối.”
+
+là không luôn đúng. Nó chỉ đúng nếu ta giả thiết rằng mỗi ô vuông hoặc chỉ có tường hoặc chỉ có khoảng trống trong nó. Vì vậy câu:
+
+“Nếu một ô vuông chỉ chứa tường hoặc khoảng trống, thì có một khoảng trống trong ô vuông trước mặt tối hoặc có một một bức tường trong ô vuông ở trước mặt tối.”
+
+là hợp lệ.
+
+Một câu là thỏa mãn được nếu và chỉ một số cách hiểu trong thế giới làm cho câu này đúng. Câu “Trời mưa” là thỏa mãn được vì trời có thể mưa, mặc đầu lúc này trời không mua. Các câu tự màu thuẫn luôn là không thỏa mãn nếu sự màu thuẫn không phụ thuộc lên nghĩa của những kí hiệu. Ví dụ, câu:
+
+"Có bức tường ở trước mặt tối và không có tường ở trước mặt tối".
+
+là một câu không thỏa mãn.
+
+Bảng chân trị có thể được sử dụng không chỉ để xác định các phép liên kết, mà còn sử dụng để kiểm chứng các câu hợp lệ. Cho một câu, chúng ta tạo ra một bảng chân trị với một dòng cho một liên kết có thể của các kí hiệu mệnh để trong câu. Mỗi dòng chứng ta có thể tính toán giá trị chân trị của toàn bộ câu. Nếu một câu là true ở mọi dòng, thì câu là hợp lệ. Ví dụ, cho câu sau:
+
+$$
+((\mathrm{P} \lor \mathrm{H}) \land \neg \mathrm{H}) \Rightarrow \mathrm{P}
+$$
+
+là hợp lệ, có thể xem trong Bàng 4-2. Bàng 4-2 có thêm các cột trung gian nhằm làm rõ hơn giá trị của cột cuối cùng. Giả sử menses đề P có
+
+<!-- page: 96 -->
+
+nghĩa “Ngày mai trời mưa” và H có nghĩa “Ngày mai trời nắng”. Nếu chúng ta biết (P ∨ H) và ¬H, thì chúng ta có thể sử dụng câu hợp lệ ở trên đề kết luận P là đúng ngày mai trời mưa.
+
+Bảng 4-2. Bảng chân trị cho thấy tính hợp lệ của câu phục
+
+| P | H | $\mathbf{P} \lor \mathbf{H}$ | $(\mathbf{P} \lor \mathbf{H}) \land \neg \mathbf{H}$ | $(\mathbf{P} \lor \mathbf{H}) \land \neg \mathbf{H} \Rightarrow \mathbf{P}$ |
+| --- | --- | --- | --- | --- |
+| False | False | False | False | True |
+| False | True | True | False | True |
+| True | False | True | True | True |
+| True | True | True | False | True |
+
+Dây là một vấn đề quan trọng của logic. Một hệ thống có một vải tiền đề và các kết luận có khả năng xây ra, hệ thống có thể xác định kết luận có đúng hay không. Có thể làm điều này bằng cách xây dựng một bảng chân trị cho câu Tiền đề ⇒ Kết luận và kiểm tra tất cả các dòng của nó. Nếu mọi dòng đều đúng, thì kết luận là suy ra được từ tiền đề. Mặc dù hệ thống chẳng biết kết luận nghĩa là gì, người dùng có thể đọc các kết luận và sử dụng cách hiểu các kí hiệu mệnh đề của mình để biết kết luận mang ý nghĩa gì.
+
+Trong một số trường hợp thì các câu thường được do người dùng đưa vào cơ sở tri thức đề mô tả về thế giới. Người dùng quan sát thể giới và nhập các câu vào máy tính. Yêu cầu của một hệ thống là có thể đưa ra những kết luận từ những tiền đề đã biết. Các câu có thể có ý nghĩa khác nhau nhưng tất cả đều có chung một nguyên lý hoạt động. Đó là hệ thống cần giải quyết bài toán suy dẫn logic.
+
+## II.4 Bài toán suy dẫn trong logic mệnh đề.
+
+Bài toán suy dẫn rong logic được phát biểu như sau: cho một cơ sở tri thức ký hiệu KB bao gồm các câu được viết trong logic mệnh đề. Một câu logic ɑ được gọi là suy dẫn dược từ KB, ký hiệu KBmodels α khi và chỉ khi mọi cách hiểu làm cho KB đúng cũng làm cho ɑ đúng, hay nói cách khác, mọi dòng trong bảng chân trị của câu KBmodels α đều đúng. Ví dụ một cơ sở tri thức biểu diễn cho các sự kiện sau:
+
+• Hôm nay trời nắng: S.
+
+\- Nếu trời nắng thì Tuấn vui về: $S \Rightarrow H$.
+
+<!-- page: 97 -->
+
+\- Nếu Tuấn vui về thì bài giảng tốt: H ⇒ G.
+
+Chứng minh ràng sự kiện Tuấn vui về (G) được suy dẫn từ cơ sở tri thức trên.
+
+$$
+\mathrm{KB} = \{\mathrm{S}, \mathrm{S} \Rightarrow \mathrm{H}, \mathrm{H} \Rightarrow \mathrm{G} \}.
+$$
+
+$$
+a = G.
+$$
+
+$$
+\mathrm{KB} \models a?.
+$$
+
+Việc chứng minh cho suy dẫn này có thể được thực hiện dễ dàng thông qua bảng chân trị. Thật vậy, bảng chân trị cho bài toán này có ba mệnh đề đơn nên có $2^{3} = 8$ dòng. Trong 8 dòng đó, chỉ có một dòng duy nhất là cho cả ba câu trong KB đúng ($S = \text{True}$, $H = \text{True}$ và $G = \text{true}$) trong đó $G$ cũng là True. Nên KB là suy dẫn được $\alpha$.
+
+Cách suy dẫn dựa vào bảng chân trị là đúng và đầy đủ nhưng không hiệu quả. Đề ý rằng số dòng trong bảng chân trị là 2$^{n}$ với n là số mệnh đề đơn được phát biểu trong cơ sở tri thức. Bài toán tìm các dòng đúng trong bảng 2$^{n}$ đồng rõ ràng là không khả thi khi n lớn. Do đó, những cách tiếp cận khác đã được đưa ra nhằm giải quyết vấn đề này. Các cách tiếp cận được xếp vào các hệ thống suy dẫn khác nhau dựa vào các quy tắc kiểm tra mà chúng thực hiện.
+
+## .III. CÁC CÁCH SUY DIÊN TRONG LOGIC MÊNH ĐỀ
+
+## III.1 Hợp giải
+
+Hệ thống hợp giải là một hệ thống chứng minh đúng và đủ đối với bài toán suy dẫn. Hệ thống này dựa trên một luật duy nhất được gọi là luật hợp giải được phát biểu như sau: cho các ménh đề $a$, $\beta$, $\gamma$, khi đó:
+
+$$
+\alpha \lor \neg \beta
+$$
+
+$$
+\beta \vee \neg \gamma
+$$
+
+$$
+\alpha \vee \gamma
+$$
+
+$$
+\text {hay} (\alpha \vee \neg \beta) \wedge (\beta \vee \neg \gamma) \Rightarrow (\alpha \vee \gamma)
+$$
+
+Lượt hợp giải trên là đúng. Ta dễ dàng kiểm chứng như: sau nếu α đúng thì rõ ràng kết luận là đúng và luật là đúng. Ngược lại nếu α sai thì β cũng phải sai (do câu α v ¬β) và do đó γ là đúng vì (β v γ) đúng.
+
+<!-- page: 98 -->
+
+Vậy suy ra kết luận đúng. Có thể thấy luật hợp giải là sự mở rộng tổng quát của luật tam đoạn luận (nếu $\alpha \Rightarrow \beta$ và $\alpha$ đúng thì $\beta$ đúng). Một hệ thống chỉ cần sử dụng một mình luật hợp giải cũng là đủ đề chứng minh cho một bài toán suy dẫn. Tuy nhiên, để áp dụng được phương pháp hợp giải, cơ sở tri thức cần được biến đổi đề đưa về dạng chuẩn hội.
+
+## III.1.1 Dạng hội chuẩn.
+
+Luật hợp giải chỉ áp dụng được lên các câu nổi rời của các từ, do đó nó chỉ thích hợp với các cơ sở tri thức và truy vấn chứa các phép hội như trên. Như vậy làm thể nào phương pháp này có thể thực hiện một phép suy diễn đầy đủ trên tất cả logic mệnh đề? Câu trả lời là mọi câu logic mệnh đề đều tương đương logic với một phép nổi liền các phép hội của từ. Một câu logic được biểu diễn là nổi liền các phép hội của từ được gọi là dạng hội chuẩn (Conjunctive Normal Form) hay CNF. Vidụ: câu sau đầy là dạng hội chuẩn:
+
+$$
+\mathrm{A} \land (\mathrm{B} \lor \neg \mathrm{D}) \land (\mathrm{B} \lor \mathrm{E} \lor \mathrm{F}) \land \neg \mathrm{C}.
+$$
+
+Trong câu trên, mỗi từ là một ký hiệu mệnh đề hay phù định của ký hiệu mệnh đề. Các phép hội được thực hiện trên các từ và cuối cùng được nổi với nhau bằng phép nổi liền.
+
+Thay vì chứng minh nhận định rằng: Các câu logic mệnh đề đều trong dương logic với một câu dạng hội chuẩn, ta sẽ mô tả một thủ tục biến đổi đơn giản. Thủ tục biến đổi gồm các bước như sau:
+
+1. Loại bỏ ⇔, thay α⇔β bằng (α ⇒ β) ∧ (β ⇒ α)
+
+2. Loại bỏ ⇒, thay α ⇒ β bằng ¬α ∨ β
+
+3. CNF đời hỏi dấu phù định → chi được xuất hiện trên các từ, do đó cần phân phối dấu phù định → vào bên trong:
+
+$$
+\begin{array}{l} \neg (\neg \alpha) \equiv \alpha \\ \neg (\alpha \land \beta) \equiv (\neg \alpha \lor \neg \beta) \text {(luật De Morgan)} \\ \neg (\alpha \lor \beta) \equiv (\neg \alpha \land \neg \beta) \text {(luật De Morgan)} \end{array}
+$$
+
+<!-- page: 99 -->
+
+4. Bây giờ ta có các câu bao gồm các phép toán ∧ và ∨ lồng nhau trên các tử. Áp dụng luật phân phối ∨ vào ∧ cho tất cả trường hợp có thể:
+
+$$
+\alpha \vee (\beta \wedge \gamma) \equiv (\alpha \vee \beta) \wedge (\alpha \vee \gamma)
+$$
+
+Ví dụ: với câu A ⇔ (B ∨ C), kết quả các bước biến đổi lần lượt là:
+
+1. $(\mathrm{A} \Rightarrow (\mathrm{B} \lor \mathrm{C})) \land ((\mathrm{B} \lor \mathrm{C}) \Rightarrow \mathrm{A})$
+
+2. $(\neg A \lor B \lor C) \land (\neg (B \lor C) \lor A)$
+
+3.  $(\neg A \lor B \lor C) \land ((\neg B \land \neg C) \lor A)$
+
+4. $(\neg A \lor B \lor C) \land (\neg B \lor A) \land (\neg C \lor A)$
+
+## III.1.2 Thuật toán hợp giải,
+
+Thù tục suy diễn dựa trên hợp giải hoạt động dựa trên nguyên tắc chứng minh phản chứng. Nghĩa là, để chứng minh câu KB $\models$ $\alpha$ (KB suy dẫn hay kéo theo $\alpha$), ta chứng minh phù định của nó (KB ∧¬α) không thỏa. Việc này được chứng minh bằng cách chi ra một màu thuẫn bên trong các mệnh đề.
+
+Giải thuật hợp giải được trình bày trong Hình 4.1. Đầu tiên (KB ∧¬α) được biến đổi về dạng CNF. Sau đó, luật hợp giải được áp dụng lên các menses đề kết quả. Mỗi cặp menses đề chứa các từ bù nhau được hợp giải để tạo ra menses đề mới và được thêm vào tập câu nếu nó chưa xuất hiện. Quá trình tiếp tục đến khi một trong hai điều sau xảy ra:
+
+\- Không có menses đề mới nào có thể được thêm vào, trong trường hợp đó KB không suy dẫn được α
+
+\- Hai menses đề hợp giải nhận được một menses đề rỗng, KB suy dẫn được α
+
+Xét ví dụ sau cho chứng minh hợp giải:
+
+$$
+\mathrm{KB} = \mathrm{A} \Leftrightarrow (\mathrm{B} \lor \mathrm{C})
+$$
+
+$$
+\alpha = (\mathrm{A} \Rightarrow \mathrm{B})
+$$
+
+Lấy phù định menses đề α và đưa vào tập hợp ta được:
+
+$$
+\mathrm{KB} = (\wedge \Leftrightarrow (\mathrm{B} \vee \mathrm{C})) \wedge \neg (\mathrm{A} \Rightarrow \mathrm{B})
+$$
+
+Biến đổi về CNF:
+
+<!-- page: 100 -->
+
+```txt
+function HợpGiải(KB,α) return true hay false
+input:KB, cơ sở tri thức, câu logic mệnh đề
+    α,câu truy vấn, câu logic mệnh đề
+mệnh_dề← tập các câu biểu diễn CNF của KB ∧¬α
+md_mới← {}
+loop
+    for eachC_i, C_jin tập mệnh_dề
+        kết_quả_hợp_giai←HợpGiảiCâu(C_i, C_j)
+        nếu kết_quả_hợp_giaichứa mệnh đề rỗng thì trả về true
+        md_mới←md_mới Ukết_quả_hợp_giai
+    nếu md_mới⊆ mệnh_dềthì trả về false
+    mệnh_dề←mệnh đề Umd_mới
+```
+
+Hình 4.1 - Thuật toán hợp giải
+
+$$
+\mathrm{KB} = (\neg \mathrm{A} \lor \mathrm{B} \lor \mathrm{C}) \land (\neg \mathrm{B} \lor \mathrm{A}) \land (\neg \mathrm{C} \lor \mathrm{A}) \land \neg \mathrm{A} \land \mathrm{B}
+$$
+
+với các câu hội:
+
+1. $\neg  \mathrm{A} \vee  \mathrm{B} \vee  \mathrm{C}$
+
+2. $\neg \mathrm{B} \lor \mathrm{A}$
+
+3. $\neg  \mathrm{C} \vee  \mathrm{A}$
+
+4. $\neg  \mathrm{A}$
+
+5. B
+
+Hợp giải các câu theo thức tự sau:
+
+6.  $\neg A \lor A \lor C$  (1,2)
+
+7.  $\neg B \lor B \lor C$  (1,2)
+
+8.  $\neg A \lor A \lor B$  (1,3)
+
+9.  $\neg C \lor B \lor C$  (1,3)
+
+10. $\neg \mathrm{B}$ (2,4)
+
+11.  $\neg C$  (3,4)
+
+12. {} (5,10) (câu rỗng, kết thúc chứng minh)
+
+## Có một số lưu ý trong ví dụ chứng minh trên:
+
+\- Một cặp mệnh đề hợp giải với nhau có thể ra nhiều kết quả,
+
+\- như câu 1 và 2 ra 6 và 7, hoặc 1 và 3 ra 8 và 9, khi có nhiều cặp từ bù giữa hai câu. Tuy nhiên, các câu kết quả không đóng
+
+<!-- page: 101 -->
+
+góp vào quá trình chứng minh đúng (do các câu trên luôn còn lại mựcch đề mỗi khi hợp giải) do đó ta có thể loại bỏ.
+
+\- Việc chứng minh kết thúc bất cứ khi nào có mệnh đề rỗng (câu 12) nên tuỷ thuộc vào thứ tự các bước thực hiện, việc chứng minh có thể kết thúc sớm hay muộn. Một hệ thống đôi hỏi vét cạn sẽ duyệt qua hết các trường hợp hợp giải. Tuy nhiên, chứng minh của ví dụ trên có thể được thực hiện một cách nhanh chóng bằng cách hợp giải các câu (2) và (4) rời đến câu (5), chỉ qua hai bước hợp giải.
+
+## III.2 Suy diễn tiến
+
+Tính đầy đủ của hợp giải khiển nó trở thành một phương pháp suy diễn rất quan trọng. Tuy nhiên, trong nhiều tình huống sức mạnh đầy đủ của hợp giải là không cần thiết. Các cơ sở tri thức trong thế giới thực thường chỉ chứa các mệnh đề ở dạng hạn chế gọi là các mệnh đề Horn. Một mệnh đề Horn là một nổi rời các từ mà trong đó chi có nhiều nhất một từ khẳng định. Ví dụ, mệnh đề (¬A ∨¬B ∨ C) là một mệnh đề Horn và (¬A ∨ B ∨ C) không phải là mệnh đề Horn.
+
+Điểm hạn chế chỉ có một từ khẳng định có về hơi bất thường và không thú vị, nhưng đây là điểm thật sự rất quan trọng vì ba lý do sau:
+
+1. Môi mdnh đề Horn có thể viết về dạng kéo theo mà trong đó tiền đề là một phép nối rời giữa các từ kháng định và kết luận là một từ kháng định duy nhất. Ví dụ, mdnh đề Horn (¬A ∨¬B ∨ C) có thể viết lại thành dạng kéo theo (A ∧ B ⇒ C). Câu ở dạng thứ hai dễ đọc và hiểu hơn đối với con người: nếu A đúng và B đúng thì C cũng đúng. Mệnh đề Horn dạng này với đúng một từ kháng định được gọi là mdnh đề xác định. Từ kháng định được gọi là phần đầu và các từ phù định hình thành nên phần thân của mdnh đề. Một mdnh đề xác định không có từ phù định đơn giản được xem là một mdnh đề cho trước - đôi khi được gọi là sự kiện. Một mdnh đề Horn không có từ kháng định có thể viết về dạng kéo theo với kết luận là từ False.
+
+2. Suy diễn với mệnh đề 'Horn có thể được thực hiện qua các thuật toán suy diễn tiến và suy diễn lùi. Cả hai thuật toán này
+
+<!-- page: 102 -->
+
+đều rất tự nhiên, theo nghĩa các bước suy diễn là rõ ràng và dễ hiểu đối với con người.
+
+3. Việc chứng minh bài toán suy dẫn với mệnh đề Horn có thể thực hiện trong thời gian tuyến tính với độ lớn của cơ sở tri thức.
+
+```python
+function Suy_diễn_tiên(KB,q) return true hay false
+input: KB, cơ sở tri thức, câu logic mệnh đề
+    q.câu truy vấn, câu logic mệnh đề
+biến cục bộ:count, một bảngkhởi tạo số của các tiền đề, đánh chỉ mục
+    bởi các mệnh đề
+        inferred, một bảng được đánh chỉ mục bằng các ký hiệu, mỗi
+    mục được khởi tạo false
+    agenda, danh sách các ký hiệu, khởi tạo là các ký hiệu đã
+    biết của KB
+while agenda khác rỗng do
+    p ← POP(agenda)
+    if p=q then return true
+    if inferred[p] là falsethen
+    for each mệnh đề Horn c mà tiền đề xuất hiện p
+        giảm count[c]
+        if count[c] = 0 then
+            PUSH(Phần_dầu[c], agenda)
+return false
+```
+
+Hình 4.2 - Thuật toán suy diễn tiến.
+
+Thuật toán suy diễn tiến Suy\_diễn\_tiến(KB,q) kiểm tra xem một ký hiệu truy vấn mệnh đề q - câu truy vấn - có được suy dẫn từ một cơ sở tri thức mệnh đề Horn hay không. Nó bắt đầu từ các sự kiện đã biết (từ khẳng định) trong cơ sở tri thức. Nếu tất cả tiền đề của một phép kéo theo là đã biết thì kết luận của nó được thêm vào tập các sự kiện đã biết. Ví dụ, nếu A và B đã biết và  $(A \land B) \Rightarrow M$  nằm trong cơ sở tri thức thì M được thêm vào. Quá trình này tiếp tục cho đến khi câu truy vấn q được thêm vào hoặc không còn suy diễn nào có thể được thực hiện tiếp. Chi tiết thuật toán trình bày trong Hình 4.2, điểm quan trọng cần nhớ là thuật toán chạy với thời gian tuyến tính.
+
+<!-- page: 103 -->
+
+Cách tốt nhất để hiểu thuật toán là xét một ví dụ. Hình 4.3(a) trình bày một cơ sở tri thức đơn giản của mệnh đề Horn với A và B là các sự kiện đã biết. Hình 4.3(b) trình bày cùng cơ sở tri thức đó bằng một đồ thị AND-OR. Trong đồ thị AND-OR, nhiều liên kết đến một định được nổi với nhau bằng cung tròn là một phép nổi liên - mọi liên kết đều phải được chứng minh, trong khi những liên kết đến một định không được nổi với nhau bằng cung tròn là một phép nổi rời - có thể chứng minh bất kỳ liên kết nào. Dễ dàng nhìn thấy cách suy diễn tiến hoạt động trên đồ thị này. Những nút là đã biết (A và B) được kích hoạt và suy diễn lan truyền theo hướng từ dưới lên trên trong đồ thị càng xa càng tốt. Tại những điểm có phép nổi rời, suy diễn chờ đến khi tất cả mệnh đề đều biết trước khi tiến hành lan truyền.
+
+![](images/page_102_image_2.jpg)
+
+Hình 4.3 - (a) Một cơ sở tri thức đơn giản các menses đề Horn.
+(b) Đồ thị AND-OR tương ứng.
+
+Suy diễn tiến là một ví dụ của khái niệm suy diễn hướng dữ liệu—suy diễn tập trung bắt đầu tại dữ liệu đã biết. Nó có thể dùng trong một hệ thống để suy dẫn ra kết luận từ những cảm nhận đầu vào. Đối với con người, một số lượng nhất định suy diễn hướng dữ liệu diễn ra khi tiếp nhận thông tin mới. Ví dụ, nếu tôi đang ở trong nhà và thấy trời bắt đầu mưa, một điều sẽ này sinh ra trong đầu là có thể buổi đi chơi sẽ bị huy bỏ. Nhưng có thể tôi sẽ không quan tâm rằng quản áo của người
+
+<!-- page: 104 -->
+
+hàng xóm bên cạnh sẽ bị ướt. Con người kiểm soát rất cần thận suy diễn tiến đề trí ốc ta không bị chim ngập trong những kết luận không liên quan.
+
+## III.3 Suy diễn lùi
+
+Suy diễn lùi, như tên gọi của nó, hoạt động quay lui từ câu truy vấn. Nếu truy vấn q đã được biết là đúng thì không cần làm gì thêm. Ngược lại, thuật toán tìm những phép suy dẫn trong cơ sở tri thức có kết luận là q. Nếu tất cả tiền đề của một trong số những phép suy dẫn có thể được chứng minh là đúng (bảng suy diễn lùi), thì q là đúng. Khi được áp dụng lên truy vấn Q trong Hình 4.3, thuật toán đi từ trên xuống dưới trên đồ thị cho đến khi gặp đến một tập các sự kiện đã biết hình thành nên cơ sở của việc chứng minh. Cũng như với suy diễn tiến, cải đặt hiệu quả của suy diễn lùi hoạt động với thời gian tuyến tính.
+
+Suy diễn lùi là một dạng của suy diễn hướng đích. Nó hữu ích để trả lời các câu hỏi cụ thể như “Tôi cần làm gì bảy giờ?” và “Thè xe của tôi đang ở đâu?” Thông thường chi phí của suy diễn lùi ít hơn nhiều so với tuyến tính độ lớn của cơ sở tri thức, bởi vì quá trình suy diễn chỉ dùng đến những sự kiện có liên quan. Nói chung, một hệ thống có thể chia sẻ công việc giữa suy diễn tiến và lùi, giới hạn suy diễn tiến trên những thể hệ sự kiện có thể có liên quan đến truy vấn sẽ được giải quyết bằng suy diễn lùi.
+
+## IV. KẾT CHƯƠNG
+
+Chương này giới thiệu các hệ thống dựa trên tri thức và trình bày cách định nghĩa logic giúp hệ thống có thể thực hiện các suy diễn trên cơ sở tri thức đó. Một số điểm chính của hệ thống logic như sau:
+
+\- Tri thức được chứa trong các hệ thống dưới dạng các câu trong một ngôn ngữ biểu diễn tri thức, được lưu trữ trong một cơ sở tri thức.
+
+\- Các hệ thống đưa trên tri thức được tạo thành bởi một cơ sở tri thức và một cơ chế suy diễn. Hệ thống hoạt động bằng cách lưu trữ các câu mô tả thế giới trong cơ sở tri thức, sử dụng cơ
+
+<!-- page: 105 -->
+
+chế suy diễn đề rút ra các câu mới và sử dụng những câu này đề quyết định hành động.
+
+\- Một ngôn ngữ biểu diễn được định nghĩa bởi cú pháp và ngữ nghĩa. Cư pháp xác định cấu trúc của các câu trong ngôn ngữ và ngữ nghĩa định nghĩa chân trị của từng câu trong mỗi mô hình.
+
+\- Mối quan hệ kéo theo giữa các câu là quan trọng nhất đối với bài toán suy dẫn. Một câu a kéo theo một câu b khác nếu b đúng trong tất cả các mô hình mà a đúng.
+
+\- Suy diễn là quá trình rút ra các câu mới từ câu cũ. Thuật toán suy diễn là đúng đắn nếu nó chỉ rút ra các câu được kéo theo và thuật toán là đầy đủ nếu nó rút ra tất cả các câu được kéo theo.
+
+\- Logic menses đề là một ngôn ngữ rất đơn giản bao gồm các ký hiệu menses đề và các phép liên kết logic.
+
+\- Các luật suy diễn là các phương thức suy diễn đúng đắn có thể dùng đề tìm các chứng minh. Luật hợp giải cung cấp một thuật toán suy diễn đầy đủ đối với các cơ sở tri thức biểu diễn dưới dạng hội chuẩn. Suy diễn tiến và suy diễn lùi là những thuật toán suy diễn rất tự nhiên cho các cơ sở tri thức ở dạng Horn.
+
+\- Logic mệnh đề có hiệu quả lý tưởng đối với một số nhiệm vụ nhất định trong một hệ thống, nhưng không đủ linh hoạt trong các môi trường thể giới thực, vì nó thiếu khả năng biểu diễn đề xử lý chính xác thời gian, không gian và các mẫu quan hệ giữa các đối tượng.
+
+## V. THUẬT NGỮ TIÊNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương nay:
+
+## atomic sentence: câu đơn
+
+backward reasoning/chaining: suy diễn lùi
+
+<!-- page: 106 -->
+
+biconditional: tương đương
+clause: mệnh đề
+complex sentence: câu phức
+conjunction: phép logic và
+Conjunctive Normal Form (CNF): dạng hội chuẩn
+data-driven inference: suy diễn hướng dữ liệu
+disjunction: phép logic hoặc
+entailment: phép kéo theo
+equivalence: tính tương đương
+forward reasoning/chaining: suy diễn lùi
+goal-driven reasoning: suy diễn hướng đích
+Horn clause: mệnh đề Horn
+implication: kéo theo
+inference: suy dẫn
+literal: từ (logic)
+logical connective: liên kết logic
+negation: phù định
+proof by contraction: chúng minh phản chúng
+proof theory: lý thuyết chúng minh
+propositional logic: logic mệnh đề
+propositional symbol: ký hiệu mệnh đề
+reasoning: suy diễn
+resolution: hợp giải
+satisfiability: tính thỏa mãn được
+semantics: ngữ nghĩa
+syntax: cú pháp
+
+<!-- page: 107 -->
+
+Cơ sở Trí tuệ Nhân tạo
+Khoa Công nghệ thông tin, Trường ĐHKHTN Tp.HCM
+
+truth table: bảng chân trị
+
+validity: tính hợp lệ
+
+<!-- page: 108 -->
+
+<!-- page: 109 -->
+
+# LOGIC BÂC NHẤT
+
+Chương 4 đã đề cập đến cách biểu diễn một thế giới và tri thức suy luận được từ biểu diễn đó. Phương pháp được sử dụng là logic mệnh đề, ngôn ngữ thể hiện này minh họa các khái niệm cơ bản của logic và các tác nhân cơ có tri thức. Tuy nhiên, logic mệnh đề quá yếu đề thể hiện tri thức của môi trường phức tạp theo một cách đơn giản hơn. Trong chương này, chúng ta sẽ cùng tìm hiểu về logic bậc nhất (first-order logic) và cách giải quyết vấn đề một cách hiệu quả.
+
+## I. CÚ PHÁP VÀ NGỮ NGHĨA CỦA LOGIC BẮC NHẤT
+
+## I.1 Mô hình của logic bậc nhất
+
+Trong chương trước, chúng ta có thể thấy mô hình của logic mệnh đề chỉ là tập hợp của các giá trị chân trị của những biến mệnh đề. Ngược lại mô hình của logic bậc nhất có nhiều điểm nổi trội hơn. Đầu tiên, mô hình này chứa các đối tượng. Miền xác định của mô hình là tập hợp của những đối tượng chứa trong đó, những đối tượng này được gọi là các phần từ miền xác định. Hình 5.1 là một mô hình gồm 5 đối tượng: Hoàng, vua của một nước; em trai của anh ấy, VuaVương, người thừa kế ngai vàng sau đó; chân trái của Hoàng và Vương; cuối cùng là cái vương mịn.
+
+Các đối tượng trong mô hình liên hệ với nhau theo nhiều cách khác nhau như Hoàng và Vương là anh em trai. Trong ngôn ngữ nói, một quan hệ chính là một bộ ba những đối tượng có liên quan với nhau. Mối quan hệ “anh em” trong mô hình này là tập hợp:
+
+{(Vua Hoàng, Vua Vương), (Vua Vương, Vua Hoàng)}
+
+<!-- page: 110 -->
+
+Vương miệng được đặt trên đầu của Vua Vương, vì vậy quan hệ “trên đầu” chi chứa một bộ, {(vương miệng, Vua Vương)}. Mối quan hệ “anh em” và “trên đầu” được gọi là mối quan hệ hai ngôi do nó có một cặp đối tượng. Mô hình có thể chứa quan hệ một ngôi, được gọi là quan hệ thuộc tính: thuộc tính “người” đúng cho cả Hoàng và Vương; thuộc tính “vương miệng” chi đúng cho chiếc vương miệng.
+
+Quan hệ được xem như một hàm khi những đối tượng cho trước liên quan đến một đối tượng khác. Ví dụ, mỗi người có một chân trái, do đó, chân trái của Hoàng phân biệt với chân trái của Vương. Một cách chặt chẽ, trong mô hình logic bậc nhất, hàm chỉ trả về duy nhất một giá trị từ các giá trị đầu vào. Giải pháp này gặp phải vấn đề là nó tính cả những trường hợp không thể xảy ra, chẳng hạn chúng ta không thể tìm thấy chân trái của những thứ không có chân trái. Tuy nhiên, một điều may mắn là chúng ta không phải truy vấn những câu không thể xảy ra như vậy.
+
+Vương miệng được đặt trên đầu của Vua Vương, vì vậy quan hệ “trên đầu” chỉ chứa một bộ, {(vương miệng, Vua Vương)}. Môi quan hệ “anh em” và “trên đầu” được gọi là mối quan hệ hai ngôi do nó có một cặp đối tượng. Mô hình có thể chứa quan hệ một ngôi, được gọi là quan hệ thuộc tính: thuộc tính “người” đúng cho cả Hoàng và Vương; thuộc tính “vương miệng” chỉ đúng cho chiếc vương miệng.
+
+Quan hệ được xem như một hàm khi những đối tượng cho trước liên quan đến một đối tượng khác. Ví dụ, mỗi người có một chân trái, do đó, chân trái của Hoàng phân biệt với chân trái của Vương. Một cách chặt chẽ, trong mô hình logic bậc nhất, hàm chỉ trả về duy nhất một giá trị từ các giá trị đầu vào. Giải pháp này gặp phải vấn đề là nó tính cả những trường hợp không thể xảy ra, chẳng hạn chúng ta không thể tìm thấy chân trái của những thứ không có chân trái. Tuy nhiên, một điều may mắn là chúng ta không phải truy vấn những câu không thể xảy ra như vậy.
+
+## I.2 Ký hiệu và biểu diễn
+
+Thành phần cú pháp cơ bản nhất của logic bậc nhất là các kí hiệu đại diện cho các đối tượng, mối quan hệ và hàm. Do đó có thể chia làm ba loại kí hiệu chính: kí hiệu hằng đại diện cho đối tượng; kí hiệu vị từ
+
+<!-- page: 111 -->
+
+đại diện cho quan hệ và kí hiệu hàm đại hiện cho hàm. Ta sẽ qui ước các kí hiệu này bắt đầu bằng kí tự viết hoa. Ví dụ chúng ta có các kí hiệu hằng là Hoàng, Vương; kí hiệu vị từ như AnhEmTrai, TrênĐầu, VịVua và VươngMiện; kí hiệu hàm như ChânTrái.
+
+![](images/page_110_image_2.jpg)
+
+Hình 5.1 - Một mô hình chứa năm đối tượng, hai quan hệ hai ngôi, ba quan hệ một ngôi (dược xác định bởi nhân của đối tượng) và một hàm một ngôi, chân trái
+
+Ngữ nghĩa phải liên hệ câu phát biểu với mô hình để xác định chân trị. Điều này có thể thực hiện được khi chúng ta sử dụng các suy diễn, từ đó biết được đối tượng, quan hệ hay hàm nào được chỉ đến bởi các kí hiệu hằng, kí hiệu vị từ và kí hiệu hàm.
+
+Mô hình có thể có số lượng các đối tượng vô hạn như mô hình số tự nhiên, số thực,... do đó các suy diễn cũng không có giới hạn.
+
+Tóm lai, các hằng số thể hiện những đối tượng thực sự của thế giới, các biến thể hiện những đối tượng chưa biết.
+
+Hàm thể hiện đối tượng dựa trên các đối tượng khác. Hàm được xem như là một dạng biểu thức.
+
+<!-- page: 112 -->
+
+```txt
+Câu → Câu Nguyên Tổ
+    | Câu nổi Câu sử dụng phép kết
+    | Biến Lượng Từ, ...Câu
+    | ¬Câu
+Câu Nguyên Tổ → Vị Từ (Biểu Thức, ...) | Biểu Thức = Biểu Thức
+Biểu Thức → Hàm(Biểu Thức, ...)
+    | Hằng
+    | Biến
+Phép Kết → ⇒ | ∧ |∨ | ⇔
+Lượng từ → ∀ | ∃
+Hằng → A | X_I | Vương | ...
+Biến → a | x | s | ...
+Vị Từ → Trước | CóMàu | ...
+Hàm → MẹCủa | ChânTráiCủa | ...
+```
+
+Hình 5.2 - Cú pháp của logic bậc nhất với toán từ tương đương
+
+Vị từ là một hàm đặc biệt (nhưng không phải là một biểu thức) thể hiện các mối quan hệ với hai trạng thái {true, false}, nếu tất cả các đối số của vị từ được gán giá trị xác định hay không còn biển xuất hiện ở đối số thì nó trở thành một mệnh đề vì lúc này chân trị đã được xác định. Một vị từ có duy nhất một biến thường được gọi là thuộc tính. Ví dụ: ConMèo(x) là true nếu và chi nếu x là một con mèo.
+
+## I.3 Biểu thức
+
+Một biểu thức. (term) được sử dụng đề chỉ đến các đối tượng trong miền đang xét. Vi vậy, kí hiệu hàng số chính là một biểu thức logic. Tuy nhiên, không phải lúc nào mỗi đối tượng cũng được đặt tên bởi một kí hiệu riêng biệt, ví dụ, “chân trái của Vương” sẽ chỉ đến tên của chân anh, thay vì phải sử dụng thêm một kí hiệu hàng số nữa, chúng ta
+
+<!-- page: 113 -->
+
+sử dụng kí hiệu hàm ChânTrái(Vương). Nhìn chung, một biểu thức phức tạp được sinh ra từ một kí hiệu hàm trong đó một danh sách các biểu thức logic đóng vai trò như tham số đầu vào.
+
+## I.4 Câu nguyên tố
+
+Câu nguyên tố được hình thành từ một kí hiệu vị từ theo sau bởi danh sách đối số là các biểu thức logic. Câu nguyên tố sẽ chi đến một sự kiện. Ví dụ:
+
+AnhEmTrai (Hoàng, Vương).
+
+Cây này chỉ ra sự kiện, Hoàng là anh em trai của Vương. Câu nguyên tố có thể chứa các biểu thức phức tạp làm đối số.
+
+KếtHôn(Cha(Hoàng),Mẹ(Vương)).
+
+Có nghĩa là cha của Hoàng kết hôn với mẹ của Vương.
+
+Một câu nguyên tố chỉ đúng trong mô hình và các suy diễn cho trước, khi và chỉ khi mối quan hệ được biểu diễn bởi vị từ thực sự xảy ra giữa các đối tượng làm đối số của vị từ.
+
+Câu nguyên tố cơ sở là câu mà tất cả các biểu thức làm đối số đều không chứa biến, như vậy cũng có nghĩa là chân trị của nó đã được xác định (mệnh đề).
+
+## I.5 Câu phúc
+
+Chúng ta có thể sử dụng các phép kết logic để xây dựng những câu phức giống như tính toán mệnh đề. Ngữ nghĩa của câu được hình thành với các phép liên kết logic tương tự như trong trường hợp mệnh đề. Ví dụ:
+
+$\neg AnhEmTrai(ChânTrái(Hoàng), Vương).$
+
+AnhEmTrai(Hoàng, Vương) ∧ AnhEmTrai(Vương, Hoàng).
+
+Vua(Hoàng) ∨ Vua(Vương).
+
+$\neg Vua(Hoàng)\Rightarrow Vua(Vương).$
+
+<!-- page: 114 -->
+
+## I.6 Lượng từ
+
+Đôi khi, ta muốn nhân mạnh thuộc tính không phải chỉ là một số đối tượng đã được định danh, mà là toàn bộ các đối tượng. Lượng từ sẽ giúp chúng ta điều này. Logic bậc nhất chứa hai lượng từ, được gọi là lượng từ phổ quát.hay “với mọi” và lượng từ “tồn tại”.
+
+Một câu viết đúng công thức là một câu chứa các biến bị giới hạn bởi các lượng từ phố quát (hay lượng từ với mọi) và tồn tại. Vi dụ: Đối với câu ∀x P(x, y) thì biến x được giới hạn bởi lượng từ phổ quát nhưng biến y thì tự do.
+
+## I.6.1 Lượng từ phổ quát
+
+Cho câu "Tất cả các vị vua đều là người", được viết trong logic bậc nhất như sau:
+
+$$
+\forall x V u a (x) \Rightarrow N g i r \dot {o} i (x).
+$$
+
+Kí hiệu: ∀ có nghĩa là “với mọi...”, do đó câu này được phát biểu “với mọi x, nếu x là vua, thì x là người”. Kí hiệu x gọi là biến và được viết thường. Một biến có thể là một biểu thức và như vậy có thể đóng vai trò như đối số của hàm. Một biểu thức không có biến gọi là biểu thức cơ sở.
+
+Câu ∀x P, trong đó P là biểu thức logic bất kì, nghĩa là P đúng cho mọi đối tượng x. Chặt chẽ hơn ta nói ∀x P chỉ đúng trong mô hình với những suy diễn cho trước nếu P đúng trong mọi suy diễn mở rộng hình thành từ những suy diễn. có trước đó, trong đó mỗi suy diễn mở rộng xác định một phần từ thuộc mô hình mà x chỉ đến. Xem xét ví dụ sau để hiểu hơn về phát biểu này. Quay lại mô hình 5.1, tiến hành mở rộng suy diễn theo 5 cách:
+
+$x \rightarrow$ Hoàng,
+
+$x \rightarrow$ VuaVuong,
+
+$x \rightarrow$ chân trái của Hoàng,
+
+<!-- page: 115 -->
+
+$x \rightarrow$ chân trái của Vương,
+
+$x \rightarrow$  vương miền.
+
+Câu ∀x Vua(x) → Người(x) chi đúng trong suy diễn gốc nếu câu
+Vua(x) ⇒ Người(x) đúng với习i suy diễn mở rộng trên.
+
+Hoàng là một vị vua  $\Rightarrow$  Hoàng là người.
+
+VuaVương là một vị vua ⇒ VuaVương là người.
+
+Chân trái của Hoàng là một vị vua  $\Rightarrow$  Chân trái của Hoàng là người.
+
+Chân trái của Vương là một vị vua  $\Rightarrow$  Chân trái của Vương là người.
+
+Vương miền là một vị vua  $\Rightarrow$  Vương miền là người.
+
+Trong mô hình 5.1, chỉ có VuaVương là vị vua, như vậy câu thứ hai kết luận anh ấy là người là điều chúng ta mong muốn. Nhưng 4 câu còn lại thì sao? Nó có phải là một phần ý nghĩa của câu “mọi vị vua là người” không? Thực ra, 4 câu này là đúng nhưng nó không cho biết liệu cái chân, vương miệng, Hoàng có thuộc nhóm người hay không bởi các đối tượng này không phải là một vị vua. Chúng ta sẽ thấy dễ dàng qua bảng chân trị của phép kéo theo (⇒), suy luận vẫn đúng trong trường hợp điều kiện bị sai (false) mà không cần quan tâm kết luận như thể nào.
+
+Một lỗi thường gặp trong khi sử dụng lượng từ phổ quát, đó là sử dụng phép nối liền thay vì phép kéo theo. Ví dụ:
+
+$$
+\forall x V u a (x) \land N g u \dot {o} i (x).
+$$
+
+sẽ có nghĩa là:
+
+Hoàng là một vị vua ∧ Hoàng là người.
+
+Vương là một vị vua ∧ Vương là người.
+
+Chân trái của Hoàng là một vị vua ∧ Chân trái của Hoàng là người.
+
+Chân trải của Vương là một vị vua ∧ Chân trái của Vương là người.
+
+Vương miệng là một vị vua ∧ Vương miệng là người.
+
+<!-- page: 116 -->
+
+Dựa vào bảng chân trị của phép ∧ (và) có thể thấy câu trên không thể đúng với mọi x.
+
+Ví dụ khác:
+
+$$
+\forall x \dot {O} (x, K H T N) \Rightarrow \text {ThôngMinh} (x).
+$$
+
+Mọi người ở KHTN thì thông minh.
+
+$\forall x\dot{O}(x,KHTN)\land ThôngMinh(x).$
+
+Mọi người ở KHTN và mọi người thông minh.
+
+## I.6.2 Lượng từ tồn tại
+
+Ví dụ, "VuaVương có một vương miệng trên đầu ông ta", được viết:
+
+∃ x VươngMiện(x) ∧ TrênĐầu(x, Vương).
+
+Kí hiệu: ∃ có nghĩa là “tồn tại một x sao cho…” hay “một số x …”.
+
+∃x P nghĩa là P đúng khi ít nhất một x thỏa. Chặt chẽ hơn ta nói ∃x P chỉ đúng trong mô hình, với những suy diễn cho trước nếu P đúng trong ít nhất một suy diễn mở rộng mà nó đã gán x đến một phần từ xác định của miền. Quay lại ví dụ trên, nghĩa của câu đúng khi ít nhất một trong các câu sau phải đúng:
+
+Hoàng là một vương miệng ∧ Hoàng nằm trên đầu của Vương;
+
+Vua Đế là một vương miệng ∧ Vua Đế nằm trên đầu của Vương;
+
+Chân của Hoàng là một vương miệng ∧ chân của Hoàng nằm trên đầu của Vương;
+
+Chân của Đế là một vương miệng ∧ chân của Đế nằm trên đầu của Vương;
+
+Vương miệng là một vương miệng ∧ vương miệng nằm trên đầu của Vương.
+
+<!-- page: 117 -->
+
+Câu cuối cùng đúng trong mô hình, vì vậy câu có lượng từ tồn tại đúng trong mô hình này.
+
+Thường người ta sử dụng phép “và” (ʌ) di cùng với lượng từ tồn tại. Nếu sử dụng ⇒ di cùng với lượng từ tồn tại sẽ dẫn đến câu không đúng, chẳng hạn:
+
+$$
+\exists x \text {VươngMiện} (x) \Rightarrow \text {TrênDầu} (x, \text {Vương}).
+$$
+
+Chì cần một trong số câu theo sau đúng, sẽ làm câu trên đúng:
+
+Hoàng là một vương miệng ⇒ Hoàng nằm trên đầu của Vương;
+
+VuaĐế là một vương miệng ⇒ VuaĐế nằm trên đầu của Vương:
+
+Theo tính chất của phép kéo theo, câu giả thiết sai sẽ dẫn đến việc suy diễn là đúng. Chính vì vậy, mới vào câu đầu, chúng ta đã thỏa mãn phép ∃ mà không cần xét thêm. Điều này làm cho câu chưa chắc đúng về mặt ngữ nghĩa.
+
+Ví dụ khác:
+
+$$
+\exists x \dot {O} (x, K H T N) \wedge \text {ThôngMinh} (x).
+$$
+
+Một số người ở KHTN thì thông minh.
+
+$$
+\exists x \dot {O} (x, K H T N) \Rightarrow \text {ThôngMinh} (x).
+$$
+
+Câu này đúng cả với trường hợp một ai đó không ở KHTN.
+
+## .I.6.3 Lượng từ lồng nhau
+
+Có thể sử dụng nhiều lượng từ lồng nhau để minh họa các câu phức tạp hơn. Trường hợp đơn giản nhất là các lượng từ cùng loại. Ví dụ, nói “anh em trai thì có cùng cha mẹ” được viết như sau:
+
+$$
+\forall x \forall y: \text {And} E m u r a i (x, y) \Rightarrow C u n g C h a M e (x, y).
+$$
+
+Chuyển đổi thứ tự của lượng từ cùng loại sẽ không làm thay đổi nghĩa của câu:
+
+$$
+\forall x \forall y P (x, y) \Leftrightarrow \forall y \forall x P (x, y)
+$$
+
+<!-- page: 118 -->
+
+$$
+\exists x \exists y P (x, y) \Leftrightarrow \exists y \exists x P (x, y)
+$$
+
+Đề sức tích hơn, đối với các câu có cùng lượng từ, người ta có thể viết một kí hiệu lượng từ duy nhất, theo sau là các biến:
+
+$$
+\forall x, y \text {AnhEmTrai} (x, y) \Rightarrow \text {CungChaMe} (x, y).
+$$
+
+Trong trường hợp có sự trộn lẫn của hai loại lượng từ, như “Mọi người đều yêu một ai đó”, viết theo logic bậc nhất:
+
+$$
+\forall x \exists y Y \hat {e} u (x, y).
+$$
+
+Ngược lại để nói “Có một ai đó yêu tất cả mọi người”:
+
+$$
+\exists y \forall x Y \hat {e} u (y, x).
+$$
+
+Do đó thứ tự của lượng từ rất quan trọng trong trường hợp có tồn tại cả hai loại lượng từ. Một nhập những xảy ra nếu hai loại lượng từ này sử dụng chung một biến:
+
+$$
+\forall x [ \text {VươngMiên} (x) \vee (\exists x \text {AnhEmTrai(Hoàng,} x)) ]
+$$
+
+Luật sẽ được áp dụng để phân xử trong trường hợp này, x sẽ mang ý nghĩa của lượng từ gần nó nhất về phía trái. Việc viết như vậy sẽ gây rối rẩm cho' các bước tìm lõi sau này. Tốt nhất, nếu các biến mang ý nghĩa khác nhau phải đặt tên khác nhau.
+
+## I.6.4 Môi tương quan giữa ∀và ∃
+
+Hai lượng từ này có mỗi tương quan với nhau thông qua phép phủ định. Phát biểu “mội người không thích ăn cải” cũng tương tự như “không có một ai mà người đó lại thích ăn cải cả”:
+
+$$
+\forall x \neg \text {Thích} \check {A} n (x, C \dot {a} i) \text {tương đương} \neg \exists x \text {Thích} \check {A} n (x, C \dot {a} i).
+$$
+
+Bảng cách áp dụng định luật đối ngẫu De Morgan, ta có thể liệt kê các mối tương quan giữa hai lượng từ:
+
+$$
+\forall x \neg P \equiv \neg \exists x P, \quad \neg \forall x P \equiv \exists x \neg P \quad \forall x P \equiv \neg \exists x \neg P
+$$
+
+$$
+\exists x P \equiv \neg \forall x \neg P
+$$
+
+<!-- page: 119 -->
+
+## I.7 Phép bằng
+
+Logic bậc nhất có thêm một cách nửa để tạo ra những câu nguyên tố bên cạnh sử dụng vị từ và biểu thức như mô tả phần trước. Đó là sử dụng kí hiệu “bằng” đề chi ra hai biểu thức cùng nói về một đối tượng. Vi dụ:
+
+$$
+\text {ChaCia(Vuong)} = \text {Thái}
+$$
+
+nghĩa là đối tượng mà hàm ChaCủa(Vương) chỉ đến và đối tượng Thái chỉ đến là giống nhau. Xác định chân trị của câu bằng nhau đơn giản là kiểm tra xem đối tượng của hai biểu thức có cùng tham chiếu đến có giống nhau hay không.
+
+Chúng ta có thể sử dụng phép phù định để chỉ ra hai biểu thức không cùng tham chiếu đến một đối tượng. Ví dụ, để nói Hoàng có ít nhất hai anh trai, chúng ta viết:
+
+$\exists x,y\ AnhEmTrai(x,Hoàng)\land AnhEmTrai(y,Hoàng)\land\neg(x=y).$
+
+Có thể viết tắt:  $\neg(x=y)$  bằng  $x \neq y$ .
+
+## II. SỬ DỤNG LOGIC BẮC NHẤT
+
+## II.1 Ví dụ miền quan hệ “họ hàng”
+
+Chúng ta sẽ xem xét các mối quan hệ họ hàng bao gồm các sự kiện như “Thái là cha của Vương”; “Mẫu là mẹ của Hoàng”;... và các luật như “Bà ngoại là mẹ của mẹ”.
+
+Rõ ràng những đối tượng trong miền xác định này là người. Chúng ta có hai vị từ một ngôi về giới tính GTNam và GTNữ. Các mối quan hệ gia đình bao gồm cha mẹ, anh em trai, đã kết hôn,... – sẽ được thể hiện bởi các vị từ hai ngôi: ChaMẹ, AnhChịEm, AnhEmTrai, ChịEmGái, ConCái, ConGái, ConTrai, VợChồng, Vợ, Chồng, ÔngBà,
+
+<!-- page: 120 -->
+
+Châu, AnhEmHọ, Cổ, Chú. Các hàm là Mẹ và Cha vì mỗi người chỉ có một mẹ và một cha (theo tự nhiên).
+
+Chúng ta tiến hành xem xét các vị từ và các hàm, viết ra những gì mà chúng tả biết sử dụng các biểu thức:
+
+Mẹ là một trong hai người có quan hệ mẹ cha và có giới tính là nữ:
+
+$$
+\forall m, c M \varrho (c) = m \Leftrightarrow G T N \tilde {u} (m) \wedge C h a M \varrho (m, c).
+$$
+
+Chồng là một trong hai người có quan hệ vợ chồng với nhau và có giới tính là nam:
+
+$$
+\forall w, h \text {Chông} (h, w) = m \Leftrightarrow G T N a m (h) \wedge V o C h o n g (h, w).
+$$
+
+Nam và nữ là hai giới tính khác nhau:
+
+$\forall x GTNam(x) \Leftrightarrow \neg GTN\tilde{u}(x)$.
+
+ChaMẹ, ConCái là 2 quan hệ có tính đào nhau:
+
+<!-- page: 121 -->
+
+Chương 5. Logic bậc nhất
+
+$\forall p,c\ ChaMe(p,c)\Leftrightarrow ConCái(c,p).$
+
+Ông bà là cha của cha một người:
+
+$\forall g,c\hat{O}ngBa(g,c)\Leftrightarrow\exists pChaMe(g,p)\land ChaMe(p,c).$
+
+Anh chỉ em là những đứa trẻ có cùng cha mẹ:
+
+$\forall x,y\ AnhChiEm(x,y)\Leftrightarrow x\neq y\land \exists p ChaMe(p,x)\land ChaMe(p,y).$
+
+Chú ý không phải tất cả các câu logic đều là tiền đề. Một số trong chúng là định lý (có thể suy luận từ tiền đề), ví dụ, nói quan hệ anh chỉ em là đối xứng:
+
+$\forall x,y\ AnhChiEm(x,y)\Leftrightarrow AnhChiEm(y,x).$
+
+<!-- page: 122 -->
+
+Câu trên là một định lý vì từ câu tiền đề “anh chỉ em là những đưa trẻ có cùng cha mẹ” chúng ta có thể suy ra điều trên. Nếu chúng ta hỏi cơ sở tri thức câu này, câu trả lời sẽ là true. Như vậy có thể thấy rằng cơ sở tri thức chỉ cần các tiền đề mà không cần các câu định lý vì nó không làm tăng tri thức hay nói chính xác là nó không làm tăng tập các câu kết luận. Tuy nhiên, các câu định lý lại giảm chỉ phí cho việc tính toán, suy luận. Nếu câu cần truy vấn có sẵn trong cơ sở tri thức thì chúng ta không mất thêm một số công đoạn suy luận qua hệ thống các tiền đề.
+
+Bên cạnh đó, cũng không phải tất cả các câu tiền đề đều cần định nghĩa. Một số chỉ cung cấp thông tin đề làm rõ hơn cho các vị từ chính. Ngược lại, một số vị từ lại không có định nghĩa một cách trọn vẹn. Nguyên nhân là chúng ta không có đủ đặc trưng về chúng một cách đầy đủ. Chẳng hạn, chúng ta không thể định nghĩa hoàn toàn câu:
+
+$$
+\forall x \text {ConNguròi} (x) \Leftrightarrow \dots
+$$
+
+Logic bậc nhất cho phép việc sử dụng các vị từ như ConNgười mà không cần định nghĩa rõ ràng về nó. Thay vào đó, chúng ta có thể đặc tả những điểm chính mà mỗi người có và những thuộc tính mà làm thành một con người:
+
+$$
+\forall x   C o n N g u r \dot {\partial} i (x) \Rightarrow ...
+$$
+
+<!-- page: 123 -->
+
+# $\forall x\ldots\Rightarrow ConNguòi(x).$
+
+## II.2 Số, tập hợp va đanh sách
+
+Số có lẽ là ví dụ hay nhất để minh họa cách xây dựng một cái không lò từ một tập rất nhỏ các tiền đề. Ô đây, chúng ta xét dãy số tự nhiên hay số nguyên không âm. Gọi vị từ SốTựNhiên để xác định một số có là số tự nhiên không, ngoài ra còn có hàng số 0, một kí hiệu hàm S để chỉ số kế tiếp. Các tiền đề Peano sẽ định nghĩa số tự nhiên và phép cộng. Số tự nhiên được định nghĩa để quy như sau:
+
+SốTựNhiên(0).
+
+$$
+\forall n \text {SóT} _ {\mathfrak {r}} N h i \hat {e} n (n) \Longrightarrow \text {SóT} _ {\mathfrak {r}} N h i \hat {e} n (S (n)).
+$$
+
+Nghĩa là 0 là số tự nhiên, với mỗi một n, nếu n là số tự nhiên thì S(n) là một số tự nhiên. Do đó dãy số tự nhiên sẽ là 0, S(0), S(S(0)), ... Ngoài ra, còn cần các tiền đề để giới hạn hàm S:
+
+$$
+\forall n \dot {0} \neq S (n).
+$$
+
+$$
+\forall m, n m \neq n \Longrightarrow S (m) \neq S (n).
+$$
+
+Kế tiếp chúng ta định nghĩa phép cộng trong biểu thức của hàm S:
+
+<!-- page: 124 -->
+
+$$
+\forall m \text {SốTựNhiên} (m) \Rightarrow + (0, m) = m.
+$$
+
+$$
+\forall m, n \text {SốTựNhiên} (m) \land \text {SốTựNhiên} (n) \Rightarrow + (S (m), n) = S (+ (m, n)).
+$$
+
+Câu đầu mang ý nghĩa, cộng 0 vào bất kì số tự nhiên nào cũng bằng chính số đó. Kí hiệu hàm “+” có thể được viết một cách dễ đọc hơn sử dụng cách viết trung tố, nên ta viết lại câu thứ hai như sau:
+
+$$
+\forall m, n \text {SốTựNhiên} (m) \land \text {SốTựNhiên} (n) \Rightarrow (m + 1) + n = (m + n) + 1.
+$$
+
+Từ phép cộng, chúng ta có thể định nghĩa thêm phép nhân bằng cách lập lại phép cộng, định nghĩa phép lũy thừa bằng cách lập lại phép nhân, phép chia, tập nguyên tố,...Như vậy, có thể nói toàn bộ lí thuyết số (bao gồm cả mã hóa) có thể được xây dựng từ một hằng số, một hàm, một vị từ và bốn tiền đề.
+
+Khái niệm tập hợp cũng là một khái niệm nền tảng của toán học. Chúng ta cần xây dựng tập hợp như tập rỗng, tập con, thêm một phần từ vào tập hợp, lấy hội và giao giữa các tập hợp. Ngoài ra, chứng ta cũng muốn biết một phần từ có là thành viên của một tập hợp không, có thể phân biệt một tập hợp với tập hợp khác dựa trên những đối tượng vắng mặt không,...
+
+<!-- page: 125 -->
+
+Tập hợp rỗng xem như là một hằng số, kí hiệu là { }. Vị từ một ngôi, TạpHợp, tissue trước nếu là tập hợp. Vị từ hai ngôi $x \in s$ (x là thành viên của tập s), và $s_1 \subset s_2$ (tập $s_1$ là tập con của tập $s_2$). Các hàm nhị phân $s_1 \cap s_2$ (giao của hai tập hợp), $s_1 \cup s_2$ (hợp của hai tập hợp), và $\{x|s\}$ (tập được hình thành từ thêm phần tử x đến s). Các tiền đề:
+
+Tiền đề 1. Tập hoặc rỗng hoặc được tạo bằng cách thêm phần từ nào đó đến tập hợp:
+
+$$
+\forall \circ T \hat {a} p H \varphi p (s) \Leftrightarrow (s = \{\}) V (\exists x, s _ {2} T \hat {a} p H \varphi p (s _ {2}) \land s = \{x | s _ {2} \}).
+$$
+
+Tiền đề 2. Tập hợp rỗng là tập hợp không có phần tử trong đó, hay không có cách nào để tách tập rỗng thành các tập nhỏ hơn:
+
+$$
+\neg \exists x, s \{x | s \} = \{\}.
+$$
+
+Tiền đề 3. Tập không ảnh hưởng nếu thêm một phần từ đã có vào tập hợp:
+
+$$
+\forall x, s \cdot x \in s \Leftrightarrow s = \{x | s \}.
+$$
+
+Tiền đề 4. Phần tử thuộc tập hợp khi nó đã được thêm vào tập đó. Nói cách khác, x là thành viên của s nếu và chi nếu s tạo bởi tập $s_2$ liên kết với phần tử y thì y phải là x hoặc x là phần tử thuộc $s_2$:
+
+<!-- page: 126 -->
+
+$$
+\forall x, s   x \in s \Leftrightarrow [ \exists y, s _ {2} (s = \{y | s _ {2} \} \land (x = y \lor x \in s _ {2})) ].
+$$
+
+Tiền đề 5. Một tập là tập hợp con của tập khác nếu và chỉ nếu tất cả phần tử của tập đầu đều là phần tử của tập thứ hai:
+
+$$
+\forall s _ {1}, s _ {2}   s _ {1} \subset s _ {2} \Leftrightarrow (\forall x   x \in s _ {1} \Rightarrow x \in s _ {2}).
+$$
+
+Tiền đề 6. Hai tập bằng nhau nếu và chi nếu tập này là tập con của tập kia và ngược lại:
+
+$$
+\forall s _ {1}, s _ {2} (s _ {1} = s _ {2}) \Leftrightarrow (s _ {1} \subset s _ {2} \land s _ {2} \subset s _ {1}).
+$$
+
+Tiền đề 7. Một phần từ nằm ở phần giao của hai tập hợp nếu và chỉ nếu nó là thành viên của cả hai tập hợp:
+
+$$
+\forall x, s _ {1}, s _ {2} x \in (s _ {1} \cap s _ {2}) \Leftrightarrow (x \in s _ {1} \land x \in s _ {2}).
+$$
+
+Tiền đề 8. Một phần từ nằm ở phần hợp của hai tập hợp nếu và chỉ nếu nó là thành viên của một trong hai tập hợp:
+
+<!-- page: 127 -->
+
+$$
+\forall x, s _ {1}, s _ {2}   x \in (s _ {1} \cup s _ {2}) \Leftrightarrow (x \in s _ {1}   V x \in s _ {2}).
+$$
+
+Danh sách cũng giống như tập hợp, điểm khác biệt là danh sách thì có thứ tự, phần từ giống nhau có thể xuất hiện nhiều hơn một lần. Chúng ta có thể sử dụng thư viện Lisp của danh sách: Nil là một hàng đề chỉ danh sách rỗng; DanhSách, ThêmVào, PhẩnĐầu, Phần Duôi là hàm và TîmKiểm là vị tử.
+
+## III.3 Một số ví dụ chuyển câu sang logic bậc nhất
+
+\- Không phải mọi người làm vườn đều thích trời nắng.
+
+$$
+\neg (\forall x) N g u \dot {o} i L \dot {a} m V u \dot {o} n (x) \Rightarrow T h i c h (x, T r o i N \dot {a} n g).
+$$
+
+\- Bạn có thể lùa đôi ai đó cả đòi.
+
+$$
+(\exists x) (\forall t) \text {Người} (x) \land \text {ThờiGian} (t) \Rightarrow \text {CóTheßBịLừaDói} (x, t).
+$$
+
+\- Bạn có thể lùa đối môi người trong một lúc.
+
+$(\forall x)(\exists t) \text{Người}(x) \land \text{ThờiGian}(t) \Rightarrow \text{CóThếBiLừaDói}(x,t).$
+
+(thời điểm người ta bị lùa đối có thể khác nhau)
+
+\- Bạn có thể lùa đối mọi người trong một lúc.
+
+<!-- page: 128 -->
+
+$$
+(\exists t) (\forall x) \text {Nguròi} (x) \land \text {ThòiGian} (t) \Rightarrow \text {CóTheBìLiraDói} (x, t).
+$$
+
+(tất cả mọi người đều bị lừa đối tại cùng một thời điểm)
+
+\- Bạn không thể lùa đối mọi người cả đời.
+
+$$
+\neg ((\forall x) (\forall t) N g u \dot {\sigma} i (x) \wedge T h \dot {\sigma} i G i a n (t) \Rightarrow C o T h \dot {e} B i L i r a D \acute {o} i (x, t)).
+$$
+
+\- Mọi người đều trẻ hơn bố mình
+
+$(\forall x)Ngur\dot{o}i(x)\Rightarrow Tr\dot{e}Hon(x,B\dot{o}(x)).$
+
+\- Mọi loài nấm tín đều độc.
+
+$$
+(\forall x) (N \acute {a} m (x) \land T i m (x)) \Rightarrow D \hat {o} c (x).
+$$
+
+\- Không có nấm tím nào độc.
+
+$\neg(\exists x) \text{ Tim}(x) \land \text{Nâm}(x) \land \text{Độc}(x).$
+
+<!-- page: 129 -->
+
+$$
+(\forall x) (N \dot {\hat {a}} m (x) \land T i m (x)) \Rightarrow \neg D \hat {o} c (x).
+$$
+
+• Có đúng 2 loại nấm tín độc.
+
+$$
+(\exists x) (\exists y) N \acute {a} m (x) \land T i m (x) \land N \acute {a} m (y) \land T i m (y) \land \neg (x = y) \land
+$$
+
+$$
+(\forall z) (N \acute {a} m (z) \land T i m (z)) \Rightarrow ((x = z) V (y = z)).
+$$
+
+\- Tuân không cao.
+
+$$
+\neg C a o (T u \acute {a} n).
+$$
+
+\- $x$ ở trên $y$, nếu $x$ nằm ngay trên $y$ hoặc có một chồng gồm một hay nhiều vật khác nằm trên lẫn nhau đầu tiên là $x$ và cuối cùng là $y$.
+
+$$
+(\forall x) (\forall y) \dot {O} T r e n (x, y) \Leftrightarrow (N \dot {a} m T r e n (x, y) V (\exists z) (N \dot {a} m T r e n (x, z) \land
+$$
+
+$$
+\dot {O} T r \hat {e} n (z, y))\left. \right).
+$$
+
+• Ai do dự đều thua thiết.
+
+$$
+\forall x D o D \mathfrak {u} (x) \Rightarrow T h u a T h i \hat {e} t (x).
+$$
+
+<!-- page: 130 -->
+
+Cơ sở Trị tuệ Nhân tạo
+
+Khoa Công nghệ thông tin, Trường ĐHKHTN Tp.HCM
+
+\- Không phải mọi thứ lấp lánh đều là vàng.
+
+$\neg\forall x \text{ LâpLân}h(x)\Rightarrow Vàng(x).$
+
+\- Mọi người thích Chô-cô-la
+
+∀x, Thích(x, Chô-cô-la).
+
+■ Vài người thích Chô-cô-la
+
+∃x, Thích(x, Chô-cô-la).
+
+■ Tất cả trẻ con đều thích Chô-cô-la
+
+$\forall x, \text{TréCon}(x) \Rightarrow \text{Thich}(x, \text{Chô-cô-la}).$
+
+\- Ai cũng thích Chô-cô-la trừ khi họ dị ứng với nó
+
+∀x, Thích(x, Chô-cô-la) VDiÛng(x, Chô-cô-la).
+
+$\forall x, \neg Di\acute{U}ng(x, Chô-cô-la) \Rightarrow Thich(x, Chô-cô-la).$
+
+\- Không phải ai cũng thích Chô-cô-la
+
+$\neg (\forall x, \text{Thich}(x, \text{Chô-cô-la})).$
+
+<!-- page: 131 -->
+
+$\exists x, \neg Thích(x, Chó-có-la).$
+
+\- Không ai thích Chô-cô-la
+
+$\neg (\exists x, \text{Thich}(x, \text{Chô-cô-la}))$.
+
+$\forall x, \neg \text{Thich}(x, \text{Ch} \acute{o}\text{-cl} \hat{o}\text{-l} x)$.
+
+## III. KẾT CHƯƠNG
+
+Chương này giới thiệu logic bậc nhất, một ngôn ngữ biểu diễn mạnh mê hơn nhiều so với logic mệnh đề. Một số điểm quan trọng cần lưu ý:
+
+\- Một mô hình của logic bậc nhất được định nghĩa bởi một tập hợp các đối tượng, mối liên hệ giữa chúng và các hàm có thể được áp dụng lên chúng.
+
+\- Các ký hiệu hång số đặt tên các đối tượng, các đối tượng vị từ đặt tên các quan hệ và các ký hiệu hàm đặt tên hàm. Một thể hiện xác định một ánh xạ từ các ký hiệu đến mô hình. Với một thể hiện và một mô hình, chân trị của một câu được xác định.
+
+\- Một câu nguyên tố bao gồm một vị từ được áp dụng cho một hoặc nhiều biểu thức; câu này đúng chỉ khi mối quan hệ được đặt tên bởi vị từ thỏa giữa các đối tượng được đặt tên bởi các biểu thức. Câu phức dùng các phép liên kết tương tự logic mdề và các câu được lượng hoá cho phép biểu diễn các luật tổng quát.
+
+\- Xây dựng một cơ sở trí thức trong logic bậc nhất đồi hỏi một quá trình kỹ lưỡng phân tích miền xác định, lựa chọn từ vùng và mã hoá các tiên đề theo yêu cầu để hỗ trợ các suy diễn mong muốn.
+
+## IV. THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+atomic sentence: câu nguyên tố
+
+binary relation: quan hệ hai ngôi
+
+complex sentence: câu phúc
+
+<!-- page: 132 -->
+
+constant symbol: ký hiệu hằng số
+
+domain: miền xác định
+
+equality: phép bằng
+
+existential quantifier: lượng từ tôn tại
+
+first order logic: logic bậc nhất
+
+function: hàm (logic)
+
+ground term: biểu thức cơ sở
+
+model: mô hình
+
+nested quantifier: lượng từ lồng nhau
+
+predicate: vị từ
+
+property: thuộc tính
+
+quantifier: lượng từ
+
+term: biểu thức
+
+, tuple: bộ ba
+
+unary relation: quan hệ một ngôi
+
+universal quantifier: lượng từ phổ quát
+
+<!-- page: 133 -->
+
+![](images/page_132_image_0.jpg)
+
+# SUY DIÊN VỚI LOGIC BẮC NHẤT
+
+Chương 6 trình bày các thủ tục để trả lời cho các câu hỏi được đặt ra trong logic bậc nhất. Chương 4 đã định nghĩa khái niệm suy diễn và chi ra cách làm thể nào đạt được suy diễn đúng đắn và đầy đủ trong logic miệng đề. Chương này sẽ mở rộng kết quả đó để rút ra các thuật toán có khả năng trả lời bất kì câu hỏi phát biểu bằng logic bậc nhất nào mà có thể trả lời được.
+
+## I. SUY DIỀN MỆNH ĐỀ SO VỚI BẶC NHẤT
+
+## I.1 Luật suy diễn với lượng từ
+
+Ta hãy bắt đầu với lượng từ phổ quát. Giả sử cơ sở tri thức có một tiền đề dân gian phát biểu rằng mọi vị vua tham lam đều xấu xa:
+
+$$
+\forall x V u a (x) \land T h a m L a m (x) \Rightarrow X \acute {a} u X a (x).
+$$
+
+Từ câu trên ta hoàn toàn được phép suy ra bất kì câu nào trong những câu sau:
+
+$$
+V u a (V u r o n g) \wedge T h a m L a m (V u r o n g) \Rightarrow X \acute {a} u X a (V u r o n g).
+$$
+
+$$
+V u a (H o \dot {a} n g) \wedge T h a m L a m (H o \dot {a} n g) \Rightarrow X \acute {a} u X a (H o \dot {a} n g).
+$$
+
+$$
+\begin{array}{c} V u a (C h a (V u r o n g)) \wedge T h a m L a m (C h a (V u r o n g)) \Rightarrow \\ X \acute {a} u X a (C h a (V u r o n g)) \end{array}
+$$
+
+Luật Thế hiện phổ quát (Universal Instantiation, gọi tất là UI) phát biểu ràng: có thể cuy điện ra bất kì câu nào bằng cách thay thế biến bằng biểu thức cơ sở (từ không chứa biến). Gọi SUBST(θ, a) là kết quả khi áp dụng phép thế θ vào câu a. Vậy luật sẽ được viết là:
+
+<!-- page: 134 -->
+
+với biến v bất kì và biểu thức cơ sở g. Ví dụ, ba câu suy diễn ban đầu thu được từ các phép thế {x/Vương}, {x/Hoàng} và {x/Cha(Vương)}.
+
+Luật Thế hiện tồn tại tương ứng với lượng từ tồn tại tương đối phức tạp hơn. Với câu α bất kì, biến ν và kí hiệu hằng $k$ chưa từng xuất hiện trong cơ sở tri thức:
+
+$$
+S U B S T (\{v / k \}, \alpha)
+$$
+
+Ví dụ từ câu:
+
+$$
+\exists x \text {VươngMiện} (x) \wedge \text {TrênĐầu} (x, \text {Vương})
+$$
+
+ta có thể suy ra câu:
+
+$$
+V u o n g M i e n (C _ {1}) \wedge T r ê n D \dot {a} u (C _ {1}, V u o n g)
+$$
+
+miễn sao $C_1$ chưa xuất hiện trong cơ sở tri thức. Về cơ bản, câu chứa lượng từ tồn tại nói rằng có một vài đối tượng thỏa mãn một điều kiện nào đó và quá trình tạo thể hiện chỉ đặt tên cho đối tượng. Dương nhiên tên này không được thuộc về đối tượng khác trước đó. Trong logic, tên mới được gọi là håằng Skolem. Thể hiện tồn tại là trường hợp đặc biệt của một quá trình tổng quát hơn gọi là Skolem hóa, sẽ được đề cập trong phần 6.V.
+
+Thể hiện tồn tại phức tạp hơn và đóng vai trò hơi khác so với thể hiện phổ quát trong suy diễn. Trong khi Thể hiện phổ quát có thể được áp dụng nhiều lần đề tạo ra nhiều hệ quả khác nhau, Thể hiện tồn tại chỉ áp dụng một lần và có thể bỏ đi câu chứa lượng từ tồn tại. Ví dụ, một khi đã thêm vào câu Giết(TộiPhạm, NạnNhân), ta không cần câu: ∃x Giết(x, NạnNhân). Phát biểu một cách nghiệm ngặt, cơ sở tri thức mới không tương đương logic với cơ sở tri thức cũ, nhưng nó có thể được chúng minh là tương đương về mặt suy diễn theo nghĩa nó thỏa mãn được khi cơ sở tri thức ban đầu là thỏa mãn được.
+
+<!-- page: 135 -->
+
+## I.2 Rút gọn về sury điển mệnh đề
+
+Khi đã có luật suy diễn cho câu không có lượng từ từ câu có lượng từ, ta có thể rút gọn suy diễn bậc nhất về suy diễn mệnh đề.
+
+Ý tưởng đầu tiên là, cũng như câu chứa lượng từ tồn tại có thể thay thế bằng một thể hiện, câu chứa lượng từ phổ quát có thể được thay bằng tập hợp tất cả các thể hiện có thể có. Ví dụ, giả sử cơ sở tri thức chứa các câu:
+
+$$
+\forall x V u a (x) \land T h a m L a m (x) \Rightarrow X \acute {a} u X a (x)
+$$
+
+Vua(Vương)
+
+ThamLam(Vuong)
+
+AnhEm(Hoàng, Vương)
+
+(6.1)
+
+Tiếp theo, áp dụng luật thể hiện phổ quát vào câu đầu tiên, sử dụng mọi phép thể biểu thức cơ sở có thể có từ tập từ vựng của cơ sở tri thức, trong trường hợp này là {x/Vương} và {x/Hoàng}. Ta được:
+
+$$
+V u a (V u o n g) \wedge T h a m L a m (V u o n g) \Rightarrow X \acute {a} u X a (V u o n g)
+$$
+
+$Vua(Hoàng) \land ThamLam(Hoàng) \Rightarrow XáuXa(Hoàng)$
+
+và loại bỏ câu chứa lương từ phổ quát. Bây giờ, cơ sở tri thức về mặt cơ bản chứa các mệnh đề nếu như ta xem những câu nguyên từ như Vua(Vương), ThamLam(Vương) như kí hiệu mệnh đề. Do đó có thể áp dụng bất kì thuật toán mệnh đề nào trong Chương 4 để rút ra kết luận, chẳng hạn như XấuXa(Vương).
+
+Người ta có thể làm cho kĩ thuật mệnh đề hóa trở nên hoàn toàn tổng quát tức là mọi cơ sở tri thức và truy vấn bậc nhất đều có thể được mệnh đề hóa sao cho trật tự suy diễn được bảo toàn. Như vậy, ta có một thủ tục quyết định hoàn chỉnh để suy diễn...hoặc có thể không. Vấn đề đặt ra là: khi cơ sở tri thức chứa kí hiệu hàm, tập phép thế biểu thức cơ sở sẽ trở nên vô hạn! Vi dụ, nếu cơ sở tri thức chứa kí hiệu Cha thì có vô số từ như Cha(Cha(Cha(Vuong))) được tạo ra. Thuật toán mệnh đề sẽ gặp khó khăn với tập câu lớn vô hạn như thể. Vi lý do trên, suy diễn trong logic bậc nhất là bán quyết định, tức là các thuật
+
+<!-- page: 136 -->
+
+toán trà lời có với mọi câu suy ra được nhưng không có thuật toán nào
+trả lời không với câu không suy rà được.
+
+## II. PHÉP ĐỒNG NHẤT
+
+Phần trước đã mô tả cách suy diễn bậc nhất tồn tại cho đến đầu những năm 1960, tuy nhiên việc mệnh đề hoá là không khả thi. Vi dụ, cho truy vấn XấuXa(x) và cơ sở tri thức như ở phần 6.I, thì việc phát sinh những câu như Vua(Hoàng) ∧ ThamLam(Hoàng) ⇒ XấuXa(Hoàng) là quá cứng nhắc và không cần thiết. Phần tiếp theo xử lý cho trường hợp này.
+
+## II.1 Luật suy diễn bậc nhất
+
+Suy diễn “Vương thì xấu xa” sẽ thực hiện như sau: tìm một vài x sao cho x là vua và x tham lam thì suy ra x xấu xa. Tổng quát hơn, nếu có một số phép thể θ làm cho tiền đề của câu kéo theo giống với các câu đã có trong cơ sở tri thức, thì ta có thể xác nhận phân kết luận, sau khi áp dụng θ. Trong trường hợp này, phép thể {x/Vương} đã đạt được mục đích đó. Ta còn có thể làm nhiều việc hơn trong bước suy diễn. Giả sử thay vì biết ThamLam(Vương), ta biết mọi người đều tham lam:
+
+## $\forall y$ ThamLam(y)
+
+(6.2)
+
+Như thế vẫn có thể kết luận XấuXa(Vương) vì ta đã biết Vương là vua (cho trước) và Vương tham lam (vì mọi người đều tham lam). Điều cần làm là tìm một phép thể sao cho biến trong câu kéo theo và các câu đơn khớp nhau. Trong trường hợp này, áp dụng phép thể {x/Vương, y/Vương} vào tiền đề Vua(x) và ThamLam(x) và câu trong cơ sở tri thức Vua(Vương) và ThamLam(y) sẽ làm cho chúng giống nhau. Do đó, ta có thể suy ra phần kết luận.
+
+Quá trình suy diễn có thể tóm gọn bằng một luật suy diễn, gọi là Tam đoạn luận tổng quát: Với mọi câu nguyên tử: $p_i, p_i'$, $q$ và phép thể $\theta$ sao cho SUBST($\theta, p_i'$) = SUBST($\theta, p_i$), thì với mọi $i$,
+
+$$
+\frac {p _ {1} ^ {\prime} , p _ {2} ^ {\prime} , \dots , p _ {n} ^ {\prime} , (p _ {1} \land p _ {2} \land \dots \land p _ {n} \Rightarrow q)}{S U B S T (\theta , q)}
+$$
+
+<!-- page: 137 -->
+
+Có $n+1$ tiền đề trong luật này: $n$ câu nguyên từ $p_i$' và một câu kéo theo. Kết luận là kết quả của việc áp dụng phép thể $\theta$ vào hệ quả $q$. Ví dụ:
+
+$$
+\begin{array}{l l} p _ {1} ^ {\prime} \text {là Vua(Vương)} & p _ {1} \text {là Vua(x)} \\ p _ {2} ^ {\prime} \text {là ThamLam(y)} & p _ {2} \text {là ThamLam(x)} \\ \theta \text {là \{x / Vương, y / Vương\}} & q \text {là XấuXa(x)} \\ \text {SUBST} (\theta , q) \text {là XấuXa(Vương)} \end{array}
+$$
+
+Dễ dàng chứng minh được Tam đoạn luận Tổng quát là luật suy diễn đúng đản. Đầu tiên, ta quan sát thấy với câu $p$ bất kì (có các biến được giả sử chứa lượng từ phổ quát) và với phép thế $\theta$ bất kì:
+
+$$
+p \models S U B S T (\theta , p)
+$$
+
+Phát biểu này tồn tại vì những lí do giống như của luật Thế hiện tổng quát. Nó tồn tại trong trường hợp cụ thể với một  $\theta$  thỏa các điều kiện của luật tam đoạn luận tổng quát. Do đó, từ  $p_{1}^{'}, \ldots, p_{n}^{'}$ , ta có thể suy ra:
+
+$$
+S U B S T (\theta , p _ {1} ^ {\prime}) \wedge \dots \wedge S U B S T (\theta , p _ {n} ^ {\prime})
+$$
+
+và tù:  $p_{1} \wedge \ldots \wedge p_{2} \Rightarrow q$ , ta có:
+
+$$
+S U B S T (\theta , p _ {1}) \land \dots \land S U B S T (\theta , p _ {n}) \Rightarrow S U B S T (\theta , q)
+$$
+
+Bây giờ, $\theta$ trong tam đoạn luận tổng quát được định nghĩa sao cho SUBST$(\theta, p_i)$ = SUBST$(\theta, p_i)$ với mọi $i$; do đó câu đầu tiên trong số hai câu trùng khớp hoàn toàn với tiền đề của câu thứ hai. Vậy, SUBST$(\theta, q)$ tuân theo tam đoạn luận.
+
+## II.2 Đồng nhất
+
+Luật suy diễn mở rộng đồi hỏi tìm các phép thế sao cho các biểu thức logic trở nên giống nhau. Quá trình này gọi là đồng nhất và là một bộ phận quan trọng trong mọi thuật toán: suy diễn bậc nhất. Thuật toán ĐồngNhất nhận và của cau và trả ra hàm đồng nhất nếu có:
+
+$$
+\text {ĐôngNhất} (p, q) = \theta \text {khi SUBST} (\theta , p) = \text {SUBST} (\theta , q)
+$$
+
+<!-- page: 138 -->
+
+Chúng ta hãy xem một vải ví dụ về cách vận hành của ĐồngNhất. Giả sử có truy vấn Biết(Vương, x): Vương biết ai? Ta có thể trả lời cho truy vấn này bằng cách tìm mọi câu trong cơ sở trí thức có thể đồng nhất với Biết(Vương, x). Duới đây là các kết quả đồng nhất với bốn câu khác nhau thuộc cơ sở trí thức:
+
+ĐồngNhất(Biết(Vương, x), Biết(Vương, Công)) = {x/Công}
+
+ĐồngNhất(Biết(Vương, x), Biết(y, Hoàng)) = {x/Hoàng, y/Vương}
+
+ĐồngNhất($Biết(Vương, x)$, $Biết(y, Mφ(y))) = \{y/Vương, x/Mφ(Vương)\}$
+
+ĐồngNhất(Biết(Vương, x), Biết(x, Công)) = Fail
+
+Phép đồng nhất cuối cùng thất bại vì x không thể nhận giá trị Vương và Công cùng một lúc. Lưu ý rằng Biết(x, Công) có nghĩa là “Mọi người biết Công”, do đó có thể suy ra Vương biết Công. Vấn đề xảy ra chỉ vì hai câu dùng cùng một tên biến x. Ta tránh điều này bằng cách phân chia chuẩn hóa một trong hai câu đang được đồng nhất, tức là đổi tên các biến đề tránh dụng độ. Ví dụ, ta có thể đổi x trong Biết(x, Công) thành z$_{17}$ (tên biến mới) mà không làm thay đổi ý nghĩa. Bảy giờ phép đồng nhất sẽ thực hiện được:
+
+## ĐôngNhất($Biết(Vương, x)$, $Biết(z_{17}, Công)$) = $\{x/Công, z_{17}/Vương\}$
+
+Ô đây có thêm một điều phức tạp: ĐồngNhất cần trả về một phép thế sao cho hai đổi số giống nhau. Nhưng có thể có hơn một hàm đồng nhất. Ví dụ, ĐồngNhất(Biết(Vương, x), Biết(y, z)) trả về {y/Vương, x/z} hoặc {y/Vương, x/Vương, z/Vương}. Hàm đồng nhất đầu tiên cho Biết(Vương, z) làm kết quả đồng nhất, trong khi hàm đồng nhất thứ hai cho ra Biết{Vương/Vương}. Kết quả thứ hai có thể rút ra từ cái thứ nhất bằng cách thể {z/Vương}. Ta nói hàm đồng nhất đầu tiên tổng quát hơn vì nó đặt ít ràng buộc hơn về giá trị biến. Như vậy, với mỗi cặp biểu thức có thể đồng nhất được, có một hàm đồng nhất tổng quát nhất (gọi tất là MGU) với cách thay tên biến duy nhất. Trong trường hợp này là {y/Vương, x/z}.
+
+Hình 6.1 trình bày thuật toán tính các MGU. Qui trình rất đơn giản: khảo sát để qui đồng thời hai biểu thức, trong lúc đó xây dựng hàm đồng nhất, nếu hai điểm tương ứng trong cấu trúc không khớp nhau thì thất bại. Ô đây có một bước tổn nhiều chi phí: khi so một biến với một từ phức hợp thì phải kiểm tra xem bản thân biến đó có xuất
+
+<!-- page: 139 -->
+
+hiện trong từ hay không, nếu có thì so khớp thất bại vi không thể xây dựng hàm đồng nhất nhất quán. Động tác này gọi là kiểm tra xuất hiện làm cho độ phức tạp của toàn bộ thuật toán là bậc hai của kích thước các biểu thức cần đồng nhất. Một vài hệ thống, bao gồm mọi hệ thống lập trình logic, bỏ qua kiểm tra xuất hiện và đôi khi cho ra kết quả lập luật không đúng đắn; những hệ thống khác sử dụng các thuật toán phức tạp hơn với độ phức tạp thời gian tuyến tính.
+
+![](images/page_138_image_2.jpg)
+
+## III. SUY DIỂN TIẾN
+
+Thuật toán suy diễn tiến đã được giới thiệu trong logic mệnh đề. Ý tương đơn giản như sau: bắt đầu bằng các câu nguyên từ trong cơ sở
+
+<!-- page: 140 -->
+
+tri thức và áp dụng tam đoạn luận theo hướng thẳng tiến, thêm câu nguyên từ mới, cho đến khi không đưa ra được suy diễn nào nửa.
+
+## III.1 Các mệnh đề xác định bậc nhất
+
+Mệnh đề xác định bậc nhất rất giống mệnh đề xác định dạng mệnh đề: chúng là tuyển của các từ trong đó chỉ có một từ dương. Mệnh đề xác định là nguyên từ hoặc là câu kéo theo có tiền đề là tuyển các từ dương và hệ quả là một từ dương đơn nhất. Đây là các mệnh đề xác định bậc nhất:
+
+$$
+V u a (x) \land T h a m L a m (x) \Rightarrow X \acute {a} u X a (x)
+$$
+
+Vua(Vuong)
+
+ThamLam(y)
+
+Không như từ menses đề, từ bậc nhất có thể chứa biến và các biến được giả sử là chứa lượng từ phổ quát. (Thông thường, ta bỏ lượng từ phổ quát khi viết menses đề xác định). Menses đề xác định là dạng chuẩn hóa phù hợp cho việc sử dụng Tám đoạn luận tổng quát.
+
+Không phải mọi cơ sở dữ liệu đều có thể chuyển thành tập menses đề xác định do ràng buộc về từ đơn dương. Hãy xét bài toán sau:
+
+Luật nói rằng: người Mỹ bán vũ khí cho nước thù dịch là có tôi. Nước Nono, kè thù của Mỹ, có một số tên lửa, và mọi tên lửa này đều do Đại tá West bán, ông này là người Mỹ.
+
+Ta sẽ chứng minh West là tôi phạm. Đầu tiên, biểu diễn các sự kiện này dưới dạng mệnh đề xác định bậc nhất. Phần tiếp theo sẽ chi ra cách mà thuật toán suy diễn tiến giải quyết vấn đề
+
+"...người Mỹ bán vũ khí cho nước thù dịch là có tôi":
+
+$$
+N g u \dot {o} i M \tilde {y} (x) \wedge V \tilde {u} K h i (y) \wedge B a n (x, y, z) \wedge T h \dot {u} D i c h (z) \Rightarrow T o i P h a m (x) \tag {6.3}
+$$
+
+“Nono....có một vai tên lửa.” Câu Có(Nono, x) ∧ TênLừa(x) được chuyển thành hai mệnh đề xác định bằng phép loại lượng từ tôn tại, đưa ra hằng số mới  $M_{1}$ :
+
+$$
+C \acute {o} (N o n o, M _ {1})\tag{6.4}
+$$
+
+<!-- page: 141 -->
+
+$$
+T \hat {e} n L i r a (M _ {1})\tag{6.5}
+$$
+
+"Mọi tên lửa này đều do Đại tả West bán cho":
+
+$$
+T \hat {e} n L i r a (x) \wedge C o (N o n o, x) \Rightarrow B a n (W e s t, x, N o n o)\tag{6.6}
+$$
+
+T a cũng cần biết tên lửa là vũ khí:
+
+$$
+T \hat {e} n L i r a (x) \Rightarrow V \tilde {u} K h i (x)\tag{6.7}
+$$
+
+và ta biết rằng kè thù của nước Mỹ cũng tính là “nước thù dịch”:
+
+$$
+K \dot {e} T h \dot {u} (x, N g u \dot {o} i M \tilde {y}) \Rightarrow T h \dot {u} D i c h (x)\tag{6.8}
+$$
+
+$$
+\text {West là người Mỹ...}:
+$$
+
+$$
+N g u r o i M \tilde {y} (W e s t)\tag{6.9}
+$$
+
+"Nước Nono, kè thù của Mỹ":
+
+$$
+\text {KéThù(Nono, NgườiMỹ)}\tag{6.10}
+$$
+
+Cơ sở tri thức không chứa kí hiệu hàm và do đó là một thể hiện của lớp các cơ sở tri thức Datalog – tức là, tập hợp các mệnh đề xác định bậc nhất không có kí hiệu hàm.
+
+## III.2 Thuật toán suy diễn tiến đơn giản
+
+Thuật toán suy diễn tiến đầu tiên mà ta xem xét là một thuật toán rất đơn giản, xem Hình 6.2. Khởi đầu từ những sự kiện đã biết, thuật toán kích hoạt mọi luật có tiền đề được thỏa và thêm kết luận của chúng vào nhóm sự kiện đã biết. Quá trình lắp đi lập lại cho đến khi trả lời được câu truy vấn (giả sử rằng chi cần một lời giải) hoặc không có sự kiện mới nào được thêm vào. Chú ý rằng sự kiện không phải là “mới” nếu nó thay đổi tên của một sự kiện đã biết. Một câu gọi là đổi tên của câu khác nếu chúng hoàn toàn giống nhau ngoại trừ tên biến. Ví dụ, Thích(x, Kem) và Thích(y, Kem) là đổi tên của nhau vì chúng chỉ khác x và y; ý nghĩa của chúng là như nhau: mọi người đều thích kcm.
+
+Dưới đây là với minh họa cách thuật toán suy diễn tiến FOL-FC-ASK hoạt động với bài toán tối phạm. Các câu kéo theo là (6.3), (6.6), (6.7) và (6.8). Ta cần hai vòng lặp:
+
+<!-- page: 142 -->
+
+```txt
+function FOL-FC-ASK(KB, a) return một phép thể hoặc false
+input: KB, cơ sở tri thức, một tập các mệnh đề hữu hạn bậc nhất.
+a, câu truy vấn, một câu nguyên tố
+local variable: new, câu mới được suy dẫn ra trong mỗi lần lặp
+repeat until new là rỗng
+    new← { }
+    for each câu r in KB do
+        (p₁ ∧ ... ∧ pₙ ⇒ q) ← STANDARDIZE-APART(r)
+        for each θ sao cho SUBST(θ, p₁ ∧ ... ∧ pₙ) = SUBST(θ, p'₁ ∧ ...
+                                    ∧ p'n) với p'₁,..., p'n trong KB
+        q' ← SUBST(θ, q)
+        if q' không là một câu được đổi tên từ các câu đã có trong KB
+                                    hay new then do
+            thêm q' vào new
+            φ←ĐồngNhất(q', a)
+            if φ không thất bai then return φ
+        thêm new vào KB
+return false.
+```
+
+Hình 6.2 - Thuật toán suy diễn tiền. Trong mỗi vòng lặp, thuật toán thêm vào KB mọi câu nguyên từ có thể suy ra được trong một bước từ câu suy dẫn và những câu nguyên từ đã có sẵn trong KB.
+
+\- Trong vòng lặp thứ nhất, luật (6.3) có tiền đề không thỏa.
+
+Luật (6.6) thỏa với $\{x/M_{1}\}$ và $Bán\{West, M_{1}, Nono\}$ được thêm vào.
+
+Luật (6.7) thỏa với  $\{x/M_{1}\}$  và  $V\tilde{u}Khi(M_{1})$  được thêm vào.
+
+Luật (6.8) thỏa với {x/Nono} và ThùĐích(Nono) được thêm vào.
+
+\- Trong vòng lặp thứ hai, luật (6.3) thỏa mãn với $\{x/West, y/M_1, z/Nono\}$ và $TộiPhạm(West)$ được thêm vào.
+
+Hình 6.3 trình bày cây chứng minh được phát sinh. Chủ ý rằng không có suy luận mới nào có thể có ở điểm này vì mọi câu có thể kết luận được bằng suy diễn tiến đã nằm sẵn trong KB. Một cơ sở tri thức như thế gọi là điểm cố định của quá trình suy diễn. Điểm cố định đạt được bằng suy diễn tiến với mệnh đề xác định bậc nhất tương tự như trong
+
+<!-- page: 143 -->
+
+suy diễn tiến mệnh đề; điểm khác biệt chủ yếu là điểm có định bậc nhất có thể bao gồm cả câu nguyên từ ngầm chứa lượng từ phổ quát.
+
+![](images/page_142_image_2.jpg)
+
+Hình 6.3 - Cây chứng minh được phát sinh bằng suy diễn trên với dự tập phạm. Các sự kiện ban đầu ở tầng dưới cùng, sự kiện suy ra trong vòng lặp đầu tiên ở tầng giữa, và các sự kiện suy ra từ vòng lặp thứ hai ở tầng trên cùng.
+
+Thuật toán suy diễn tiến đối với logic bậc nhất là đầy đủ với vì mỗi suy diễn đều là sự áp dụng của tam đoạn luận tổng quát. Thuật toán này cũng đầy đủ đối với các cơ sở tri thức mệnh đề xác định. Đối với các mệnh đề xác định tổng quát với các ký hiệu hàm, thuật toán có thể phát sinh vô hạn các sự kiện mới, do đó ta cần cần thận hơn. Đối với logic bậc nhất tổng quát, suy diễn với các mệnh đề xác định là bán quyết định.
+
+## IV. SUY DIỂN LÙI
+
+Một nhóm lớn các thuật toán suy diễn logic sử dụng hướng tiếp cận suy diễn lời. Những thuật toán này đi lùi từ câu hỏi đích, suy luận thông qua các luật để tìm sự kiện đã biết cùng cổ cho phép chứng minh. Phần này mô tả thuật toán cơ bản, sau đó trình bày cách sử dụng nó trong lập trình logic, đây là dạng suy diễn tư động được sử dụng rộng rãi nhất.
+
+<!-- page: 144 -->
+
+## IV.1 Thuật toán suy diễn lùi
+
+Hình 6.4 trình bày một thuật toán suy diễn lùi đơn giản, FOL-BC-ASK. Nó được gọi với một danh sách các câu hỏi đích chứa trong một phần từ đơn, là câu truy vấn ban đầu, và trả về tập các phép thể thỏa truy vấn. Có thể xem danh sách câu hỏi đích này như một “ngăn xếp” đang đợi để được xử lí; nếu tất cả đều được thỏa thi nhánh hiện tại của quá trình chứng minh thành công. Thuật toán lấy câu hỏi đích đầu tiên trong danh sách và tìm mọi mệnh đề trong cơ sở tri thức có từ dương, hay phần đầu, đồng nhất được với câu hỏi đích. Mỗi mệnh đề như thể tạo ra lời gọi để qui mới và phần tiền đề, hay phần thân, của mệnh đề được thêm vào ngăn xếp chứa câu hỏi đích. Lưu ý rằng sự kiện là mệnh đề có phần đầu nhưng không có phần thân, nên khi một câu hỏi đích đồng nhất được với sự kiện đã biết, không có câu hỏi đích mới được thêm vào ngăn xếp và câu hỏi đích được giải quyết. Hình 6.5 là cây chứng minh cho việc suy dẫn TộiPhạm(West) từ câu 6.3 đến 6.10.
+
+![](images/page_143_image_3.jpg)
+
+Hình 6.4 - Thuật toán suy diễn lùi đơn giản
+
+Thuật toán sử dụng tổng hợp các phép thế. Hàm TổngHợp($\theta_1$, $\theta_2$) là phép thế mà hiệu quả của nó giống như việc áp dụng lần lượt từng phép thế. Tức là:
+
+<!-- page: 145 -->
+
+$$
+\text {SUBST} (\text {TổngHợp} (\theta_ {1}, \theta_ {2}), p) = \text {SUBST} (\theta_ {2}, \text {SUBST} (\theta_ {1}, p)).
+$$
+
+Trong thuật toán, phép kết biến hiện tại, lưu trong θ, được tổng hợp với các phép kết có được từ việc đồng nhất câu hỏi đích với phần đầu của mệnh đề, cho ra tập các phép kết hiện thời mới cho lời gọi để qui.
+
+![](images/page_144_image_3.jpg)
+
+Hình 6.5 - Cây chứng minh được xây dựng bằng suy diễn lùi để chứng minh West là tới phạm. Cần đọc cây từ dưới lên, trái qua phải. Đế chứng minh TộiPhạm(West), ta phải chứng minh 4 thành phần bên dưới nó. Một số trong đó thuộc cơ sở trí thức và những cái khác đồi hỏi phải suy diễn lùi tiếp. Pháp kết cho mỗi lượt đồng nhất thành công được trình bày kể mỗi "câu hỏi đích phụ" tương ứng. Lưu ý rằng: khi một "câu hỏi đích phụ" trong một cấu hội thành công, phép thế của nó được áp dụng cho các "câu hỏi đích phụ" tiếp theo. Do đó, lúc FOL-BC-ASK đi đến phân hội cuối cùng, ThùĐích(z)ää kết với Nono.
+
+Suy diễn lùi là một thuật toán tìm kiếm theo chiều sâu. Điều này có nghĩa là nó cần không gian tuyến tính với kích thước của phép chứng minh (không gian cần đề tích lũy đáp án). Đồng thời suy diễn lùi cũng gặp vấn đề trạng thái lập lại và không đầy đủ (không giống như suy diễn tiến). Phần tiếp theo thảo luận vấn đề này và một số giải pháp, nhưng đầu tiên, hãy xem suy diễn lùi được sử dụng như thế nào trong các hệ thống lập trình logic.
+
+<!-- page: 146 -->
+
+## IV.2 Lập trình logic
+
+Lập trình logic là kỹ thuật hiện thực hoá ý tưởng: Các hệ thống nên được xây dựng bằng cách biểu diễn tri thức theo ngôn ngữ hình thức và các bài toán được giải bằng cách thực hiện các qui trình suy diễn trên tri thức này. Ý tưởng được tóm tất bằng công thức của Robert Kowalski:
+
+$$
+\text {Thuật toán} = \text {Logic} + \text {Điều khiển.}
+$$
+
+Prolog là ngôn ngữ lập trình logic được sử dụng rộng rãi nhất cho đến nay, có đến hàng trăm ngân người sử dụng. Nó được dùng chủ yếu như một ngôn ngữ viết nguyên mẫu nhanh và đề biểu diễn kí hiệu các tác vụ như viết trình biên dịch và dịch ngôn ngữ tự nhiên. Nhiều hệ chuyên gia được viết bằng Prolog cho các lĩnh vực như luật pháp, y khoa, tài chính và nhiều ngành khác.
+
+Chương trình Prolog là các tập mệnh đề xác định được viết theo kí hiệu có phần hơi khác với dạng bậc nhất chuẩn. Prolog sử dụng chữ cái viết hoa cho biến và chữ cái viết thường cho hàng. Các mệnh đề có phần đầu nằm trước thân, “:-” dùng để biểu diễn phép suy ra trái, dấu phấy chia cắt các từ trong thân và dấu chấm báo hiệu hết câu.
+
+toipham(X):-
+
+nguoimy(X), vukhi(Y), ban(X, Y, Z), thudich(Z).
+
+Prolog hỗ trợ kí hiệu danh sách và đại số. Ví dụ, chương trình Prolog append (X, Y, Z) sẽ thành công nếu danh sách Z là kết quả nổi danh sách X và Y:
+
+```txt
+append([],Y,Y).
+```
+
+$$
+\text {append} ([ \mathrm{A} | \mathrm{X} ], \mathrm{Y}; [ \mathrm{A} | \mathrm{Z} ]): - \text {append} (\mathrm{X}, \mathrm{Y}, \mathrm{Z}).
+$$
+
+Các mệnh đề này có ý nghĩa nhu sau: (1) là nổi một danh sách rỗng với danh sách Y tạo ra cùng một danh sách Y và (2) [A|Z] là kết quả của việc nối [A|X] lên trên Y, với Z là kết quả của việc nối X lên trên Y. Ta ta có thể truy vấn append (A,B,[1,2]): hai danh sách nào nổi với nhau cho ra [1,2]? Ta nhận được các giải pháp sau:
+
+$$
+\mathrm{A} = [ ] \quad \mathrm{B} = [ 1, 2 ]
+$$
+
+<!-- page: 147 -->
+
+$$
+\begin{array}{l l} \mathrm{A} = [ 1 ] & \mathrm{B} = [ 2 ] \\ \mathrm{A} = [ 1, 2 ] & \mathrm{B} = [ ] \end{array}
+$$
+
+Chương trình Prolog được thực thi thông qua suy diễn lùi theo chiều sâu, các mềm đề được thử theo thứ tự đã khai báo trong cơ sở tri thức. Một vài khóa cạnh của Prolog vượt ra khởi suy diễn logic chuẩn:
+
+Có một tập hợp các hàm xây dựng sẵn cho phép toán đại số. Từ chứa kí hiệu hàm được “chứng minh bằng chạy mã lệnh hơn là thực hiện suy diễn”. Ví dụ, “X bằng 4+3” thành công khi X kết với 7. Mặt khác “5 bằng X + Y” thất bại vì hàm xây dựng sẵn không giải phương trình tùy ý.
+
+Nhiều vị từ xây dựng sẵn có hiệu ứng phụ khi thực thi. Chúng bao gồm vị từ input-output và vị từ assert/retract để chỉnh cơ sở tri thức. Những vị từ này không tồn tại trong logic và có thể gây ra nhiều hiệu ứng khó hiểu, ví dụ như trường hợp các sự kiện được xác nhận tại một nhánh của cây chứng minh mà cuối cùng lại thất bại.
+
+Prolog cho phép dạng phù định gọi là phù định khi thất bại. Một câu hỏi đích phù dịch not P được xem là đã chứng minh nếu hệ thống không thể chứng minh P. Do đó, câu:
+
+$$
+\text {song} (X): - \text {not} \text {chet} (X).
+$$
+
+có thể đọc là “Mọi người đều sống nếu không chứng minh được là chết”.
+
+Prolog có toán từ bằng: “=”, nhưng nó không có đầy đủ năng lực như phép bằng logic. Một câu hỏi đích chứa toán từ bằng thành công nếu hai toán hạng đồng nhất được và ngược lại thì thất bại. Vậy X + Y = 2 + 3 thành công với X là 2 và Y là 3, nhưng sao\_hôm = sao\_mai thất bại. (Trong logic cổ điện, đẳng thức thứ hai có thể đúng hoặc có thể sai). Không có sự kiện hay luật nào về phép bằng có thể đảm bảo.
+
+Thuật toán đồng nhất của Prolog bò kiểm tra xuất hiện. Điều này có nghĩa là một vải suy diễn không đúng đắn có thể xảy ra, sẽ không có gì nghiêm trọng trừ khi dùng Prolog đề chứng minh định lý toán học.
+
+<!-- page: 148 -->
+
+## IV.3 Suy diễn dư thừa và lặp vô tận
+
+Phần này thảo luận đến điểm yếu của Prolog: Sự sai lệch giữa tìm kiếm theo chiều sâu và cây tìm kiếm khi có trạng thái lắp và đường đi vô tận. Xét chương trình logic sau có nhiệm vụ quyết định có đường đi giữa hai đình trên một đồ thị có hướng hay không:
+
+· path(X,Z) :- link(X,Z).
+
+$$
+\text {path} (X, Z): - \text {path} (X, Y), \text {link} (Y, Z).
+$$
+
+Hình 6.6(a) vẽ một đồ thị ba nút đơn giản được mô tả bằng các sự kiện link(a,b) và link(b,c). Với chương trình trên, truy vấn path(a,c) phát sinh cây tìm kiếm như trong Hình 6.7(a). Mặt khác, nếu ta đặt hai mệnh đề theo thứ tự:
+
+path(X,Z) :- path(X,Y),link(Y,Z).
+
+path(X,Z) :- link(X,Z).
+
+![](images/page_147_image_8.jpg)
+
+(a)
+
+![](images/page_147_image_10.jpg)
+
+Hình 6.6 - (a) Tím một đường đi từ A đến C có thể làm cho Prolog lặp vô hạn. (b) Đồ thị có mỗi nút được nối với hai con bất kì trong tầng kể tiếp. Tím đường đi từ $A_{1}$ đến $J_{4}$ cần 877 phép suy diễn.
+
+thì Prolog sẽ theo con đường vô tận như trong Hình 6.9(b). Như vậy, Prolog là bộ chứng minh định lí không đầy đủ cho các menses đề xác định - ngay cả với Datalog, như ví dụ đã cho thấy - vì đối với một số cơ sở tri thức, nó không thể chứng minh được các câu vốn có thể suy ra được. Lưu ý rằng suy diễn tiến không gặp vấn đề này: một khi suy ra được path (a, b), path (b, c) và path (a, c) thì suy diễn tiến dùng.
+
+Suy diễn lùi sâu dàn cũng gặp vấn đề tính toán dư thừa. Ví dụ, khi tìm đường đi từ $A_{1}$ đến $J_{4}$ trong Hình 6.6(b), Prolog thực hiện 877 suy
+
+<!-- page: 149 -->
+
+```txt
+∀x MguòiMỹ(x) ∧ VũKhi(y) ∧ Bán(x, y, z) ∧ ThùĐích(z) ⇒ TộiPhạm(x).
+```
+
+diễn, hầu hết trong số đó tìm đường đi đến các nút không đến được câu hỏi đích. Điều này tương tự như bài toán trạng thái lập trong Chương 1. Tổng số suy diễn có thể là hệ số mũ so với số sự kiện nền được phát sinh. Nếu ta áp dụng suy diễn tiến, tối đa $n^{2}$path (X, Y) được phát sinh, nổi $n$ nút với nhau. Với bài toán trong Hiúnh 6.6(b), chỉ cần 62 suy diễn là đủ.
+
+(a)
+
+![](images/page_148_image_4.jpg)
+
+(b)
+
+Hình 6.7 - (a) Chứng minh tồn tại đường đi từ A đến C. (b) Cây chứng minh vô hạn được phát sinh khi các mệnh đề năm “sai” thí tự.
+
+## V. HỢP GIẢI
+
+Nhóm cuối cùng trong ba nhóm hệ thống logic là dựa trên hợp giải. Chương 4 đã trình bày hợp giải mệnh đề là một thủ tục suy diễn bằng chứng minh phản chứng đầy đủ dành cho logic mệnh đề. Phần này sẽ mở rộng hợp giải cho logic bậc nhất.
+
+## V.1 Dạng hội chuẩn đối với logic bậc nhất
+
+Cũng như dạng menses đề, hợp giải bậc nhất đời hỏi các câu phải ở dạng hội chuẩn CNF – tức là hội các menses đề, mỗi menses đề gồm nhiều từ. Từ có thể chứa biến, giả sử đã được phổ quát hóa. Ví dụ, câu:
+
+chuyển sang CNF sẽ là:
+
+<!-- page: 150 -->
+
+$$
+\begin{array}{l} \neg \text {NguòiMỹ(x)} \vee \neg \text {VũKhí(y)} \vee \neg \text {Bán(x,y,z)} \vee \neg \text {ThùDịch(z)} \vee \\ \text {TôiPhạm(x).} \end{array}
+$$
+
+Mọi câu logic bậc nhất đều có thể chuyển về dạng câu CNF tương đương logic. Câu CNF sẽ không thỏa mãn chỉ khi câu ban đầu không thỏa mãn, do đó ta có cơ sở đề chứng minh phản chứng trên câu CNF.
+
+Thủ tục chuyển thành CNF rất giống với trường hợp menses đề. Điểm khác biệt chủ yếu là cần phải loại bỏ lượng từ tôn tại. Ví dụ với câu: "Những người yêu tất cả thú vật đều được yêu bởi ai đó" hay:
+
+$$
+\forall x [ \forall y T h u V \hat {a} t (y) \Rightarrow Y \hat {e} u (x, y) ] \Rightarrow [ \exists y Y \hat {e} u (y, x) ]
+$$
+
+Các bước nhu sau:
+
+Loại bỏ dấu suy ra:
+
+$$
+\forall x [ \neg \forall y \neg T h u V a t (y) \vee Y e u (x, y) ] \vee [ \exists y Y e u (y, x) ]
+$$
+
+Chuyển dấu $\neg$ vào trong: Ngoài các luật thông thường cho liên kết phù định, ta cần luật cho lượng từ phù định. Do đó, ta có:
+
+$\neg\forall x p$  trở thành:  $\exists x \neg p$
+
+$\neg\exists x p$  trở thành:  $\forall x \neg p$
+
+Câu đang xét trải qua các biến đổi sau:
+
+$$
+\forall x \left[ \exists y \neg (\neg T h u V a t (y) \vee Y e u (x, y)) \right] \vee \left[ \exists y Y e u (y, x) \right].
+$$
+
+$$
+\forall x \left[ \exists y \neg \neg T h u V a t (y) \land \neg Y e u (x, y) \right] \lor \left[ \exists y Y e u (y, x) \right].
+$$
+
+$$
+\forall x \left[ \exists y \text {ThúVât} (y) \land \neg Y \hat {\mathrm{e}} u (x, y) \right] \lor \left[ \exists y \text {Yêu} (y, x) \right].
+$$
+
+Lưu ý lượng từ phổ quát (∀y) trong tiền đề của câu kéo theo được chuyển thành lượng từ tồn tại. Bây giờ câu đọc thành “Hoặc là có một số thú vật mà x không yêu, hoặc (nếu không phải trường hợp này) ai đó yêu x”. Rõ ràng là ý nghĩa của câu ban đầu được bảo toàn.
+
+Chuẩn hóa biến: Với các câu như  $(\forall xP(x)) \lor (\exists xQ(x))$  dùng cùng một biến hai lần, đổi tên của một trong hai biến. Điều này tránh nhằm lẫn khi loại bỏ lượng từ. Do đó, ta có:
+
+$$
+\forall x \left[ \exists y T h i u V \hat {a} t (y) \wedge \neg Y \hat {e} u (x, y) \right] \vee \left[ \exists z Y \hat {e} u (z, x) \right].
+$$
+
+<!-- page: 151 -->
+
+Skolem hóa: Skolem hóa là quá trình loại bỏ lượng từ tồn tại. Trong trường.hợp đơn giản, nó giống như luật Thế hiện Tồn tại trong phần 6.I: chuyển ∃x P(x) thành P(A) với A là hàng mới. Tuy nhiên, nếu áp dụng luật này vào câu ví dụ, ta được:
+
+$$
+\forall x \left[ T h u V \hat {a} t (A) \wedge \neg Y \hat {e} u (x, A) \right] \vee Y \hat {e} u (B, x)
+$$
+
+có nghĩa sai hoàn toàn: mọi người hoặc là không yêu một động vật A cụ thể hoặc được yêu bởi một thực thể B nào đó. Trong thực tế, câu gốc cho phép mỗi người không yêu một động vật khác nhau hoặc được yêu bởi một người khác nhau. Như vậy, ta muốn các thực thể Skolem phụ thuộc vào x:
+
+$$
+\forall x \left[ T h i u V \hat {a} t (F (x)) \wedge \neg Y \hat {e} u (x, F (x)) \right] \vee Y \hat {e} u (G (x), x)
+$$
+
+F và G ở đây là các hàm Skolem. Qui tắc tổng quát là mọi đối số của hàm Skolem đều là biến lượng từ phổ quát có tầm vực nằm trong vùng mà lượng từ tồn tại xuất hiện. Cũng như với Thế hiện Tồn tại, câu Skolem hóa là thỏa mãn khi câu ban đầu là thỏa mãn.
+
+Loại bỏ lượng từ phổ quát: đến đây, mọi biến còn lại đều phải là biến lượng từ phổ quát. Hơn nữa, câu tương đương với câu có mọi lượng từ phổ quát đầy về bên trái. Do đó ta có thể bỏ các lượng từ phổ quát:
+
+$$
+[ T h i u V \hat {a} t (F (x)) \wedge \neg Y \hat {e} u (x, F (x)) ] \vee Y \hat {e} u (G (x), x).
+$$
+
+Phân phối ∨ trên ∧:
+
+$$
+[ T h \acute {u} V \hat {a} t (F (x)) \vee Y \hat {e} u (G (x), x) ] \wedge [ \neg Y \hat {e} u (x, F (x)) ] \vee Y \hat {e} u (G (x), x) ].
+$$
+
+Bước này có thể cần phải khai triển các phần hội và giao lồng nhau.
+
+Bây giờ câu đã ở dạng CNF và chứa hai mệnh đề. Câu còn có thêm phaun giải thích rằng hàm Skolem $F(x)$ ý chỉ động vật có thể không được yêu bởi $x$ và $G(x)$ chỉ ai đó có thể yêu $x$.
+
+## 'V.2 Luật suy diễn hợp giải
+
+Luật hợp giải cho các mệnh đề bậc nhất chỉ đơn giản là một phiên bản nâng cao của luật hợp giải mệnh đề. Hai mệnh đề, giả sử đã được chuẩn hóa sao cho không có biến nào chung, có thể hợp giải được nếu chúng chứa từ đối ngẫu. Hai từ mệnh đề là đối ngẫu nếu từ này là bù
+
+<!-- page: 152 -->
+
+của từ kia, hai từ bậc nhất là đối ngẫu khi từ này đồng nhất được với phù định của từ kia. Như vậy ta có:
+
+$$
+\frac {l _ {1} \vee \dots \vee l _ {k}, m _ {1} \vee \dots \vee m _ {n}}{S U B S T (\theta , l _ {1} \vee \dots \vee l _ {i - 1} \vee l _ {i + 1} \vee \dots \vee l _ {k} \vee m _ {1} \vee \dots \vee m _ {j - 1} \vee m _ {j + 1} \vee \dots \vee m _ {n}}
+$$
+
+với ĐồngNhất($l_i, \neg m_j$) = $\theta$. Ví dụ, ta có thể giải hai mệnh đề:
+
+$$
+[ T h \acute {u} V \hat {a} t (F (x)) \vee Y \hat {e} u (G (x), x) ] \text {va} [ \neg Y \hat {e} u (u, v) \vee \neg G i \acute {e} t (u, v) ]
+$$
+
+bằng cách loại đi hai từ:  $Yêu(G(x), x)$  và  $\neg Yêu(u, v)$  với hàm đồng nhất:  $\theta = \{u/G(x), v/x\}$ , tạo ra mệnh đề:
+
+$$
+[ T h i V \hat {a} t (F (x)) \vee \neg G i \acute {e} t (G (x), x) ]
+$$
+
+Luật vừa trình bày ở trên là luật hợp giải nhị phân vì nó chỉ hợp giải hai từ. Bản thân luật hợp giải nhị phân không thể đưa đến một thủ tục suy diễn đầy đủ. Luật hợp giải đầy đủ giải các tập con từ đồng nhất được trong từng mệnh đề. Một hướng tiếp cận khác là mở rộng phép phân tích phần tử - loại bỏ các từ dư thừa - đối với với trường hợp bậc nhất. Phân tích phần tử mệnh đề giảm hai từ thành một nếu chúng giống hết nhau; phân tích phần tử bậc nhất giảm hai từ thành một nếu chúng đồng nhất được. Hàm đồng nhất phải được áp dụng cho toàn bộ mệnh đề. Tổ hợp của hợp giải nhị phân và phân tích phần từ là đầy đủ.
+
+## Ví dụ chứng minh
+
+Hợp giải chứng minh rằng KB |= α bằng cách chứng minh KB ∧¬α không thỏa mãn, tức là: suy ra mệnh đề rỗng. Xét hai ví dụ chứng minh sau. Ví dụ đầu tiên là bài toán tối phạm ở phần 6.III. Các câu CNF là:
+
+$$
+\begin{array}{c} \neg N g u \dot {o} i M \tilde {y} (x) \vee \neg V \tilde {u} K h i (y) \vee \neg B a n (x, y, z) \vee \neg T h ù D i c h (z) \vee \\ T o i P h a m (x). \end{array}
+$$
+
+$$
+\neg \text {TênLira} (x) \vee \neg \text {Có} (\text {Nono}, x) \vee \text {Bán} (\text {West}, y, \text {Nono}).
+$$
+
+$$
+\neg K \dot {e} T h \dot {u} (x, N g u \dot {o} i M \tilde {y}) \vee T h \dot {u} D i c h (x)
+$$
+
+$\neg\text{TênLùa}(x) \vee \text{VūKhi}(x).$
+
+$$
+C \acute {o} (N o n o, M _ {1}). \quad T \hat {e} n L i r a (M _ {1}).
+$$
+
+<!-- page: 153 -->
+
+![](images/page_152_image_1.jpg)
+
+Hình 6.8 - Quá trình chứng minh hợp giải rằng West là tôi phạm.
+
+Phù định của câu hỏi đích $\neg$ TôiPhạm(West) cũng được thêm vào. Quá trình chứng minh hợp giải được thể hiện trong Hình 6.10. Hây chú ý đến cấu trúc: một trực duy nhất bắt đầu từ ménh đề câu hỏi đích, hợp giải với các ménh đề trong cơ sở tri thức cho đến khi phát sinh ménh đề rỗng. Đây là đặc điểm của hợp giải trên các cơ sở tri thức ménh đề Horn. Thực tế là các ménh đề đọc theo trực tương ứng hoàn toàn với các giá trị liên tiếp của biến câu hỏi đích của thuật toán suy diễn lủi trong Hình 6.5. Điều này là do chúng ta luôn chọn hợp giải ménh đề có từ dương với từ trái nhất của ménh đề hiện tại trên xương sống, giống y những gì xảy ra trong suy diễn lủi. Như vậy, suy diễn lủi thực chất là trường hợp đặc biệt của hợp giải với chiến thuật quản lý cụ thể đề quyết định thực hiện hợp giải nào kế tiếp.
+
+Ví dụ thứ hai sử dụng Skolem hóa và có liên quan đến các menses đề không xác định. Quá trình chứng minh tương đối phức tạp hơn. Bài toán này phát biểu như sau:
+
+Người nào yêu mọi con vật đều được yêu bởi ai đó.
+
+Người nào giết một con vật sẽ không được ai yêu.
+
+<!-- page: 154 -->
+
+Tuân yêu mọi con vật.
+
+Tuân hoặc Tỉnh giết con mèo có tên là Muóp.
+
+Có phải Tỉnh đã giết con mèo hay không?
+
+Đầu tiên, ta biểu diễn các câu gốc, một số tri thức nền tảng và phù định câu hỏi đích G bằng logic bậc nhất:
+
+A. ∀x [∀yThúVật(y)⇒Yêu(x, y)] ⇒ [∃yYêu(y, x)]
+B. ∀x [∃yThúVật(y) ∧ Giết(x, y)] ⇒ [∀z ¬Yêu(z, x)]
+C. ∀x ThúVật(x) ⇒ Yêu(Tuấn, x)
+D. Giết(Tuấn, Mướp) ∨ Giết(Tỉnh, Mướp)
+E. Mèo(Mướp)
+F. ∀x Mèo(x) ⇒ ThúVật(x)
+G. ¬Giết(Tỉnh, Mướp)
+
+Bây giờ chuyển từng câu trên sang CNF:
+
+A1. ThúVật(F(x)) ∨ Yêu(G(x), x)
+A2. ¬Yêu(x, F(x)) ∨ Yêu(G(x), x)
+B. ¬ThúVật(y) ∨ ¬Giết(x, y) ∨ ¬Yêu(z, x)
+C. ¬ThúVật(x) ∨ Yêu(Tuấn, x)
+D. Giết(Tuấn, Mướp) ∨ Giết(Tỉnh, Mướp)
+E. Mèo(Mướp)
+F. ¬Mèo(x) ∨ ThúVật(x)
+G. ¬Giết(Tỉnh, Mướp)
+
+Quá trình hợp giải chứng minh Tỉnh giết con mèo được thể hiện trong Hình 6.9. Nội dung được diễn giải như sau:
+
+Giả sử Tỉnh không giết Muớp. Ta biết Tuấn hoặc Tỉnh đã làm, nhu vậy nhất định là Tuấn giết. Muớp là con mèo và mèo là động vật, vậy Muớp là một con vật. Vì người nào giết một con vật sẽ không được ai yêu, ta biết được không ai yêu Tuấn. Mặt khác,
+
+<!-- page: 155 -->
+
+Tuấn yêu mọi con vật, vậy ai đó yêu anh ta; như thế ta có mẫu thuẫn. Vậy, Tỉnh đã giết con mèo:
+
+![](images/page_154_image_2.jpg)
+
+Hình 6.9 - Chứng minh hợp giải rằng Tỉnh giết con mèo.
+
+Phép chứng minh trả lời câu hỏi “Có phải Tỉnh đã giết con mèo hay không?”, nhưng thường thì ta cần đặt những câu hỏi tổng quát hơn, chẳng hạn như “Ai giết con mèo?” Hợp giải có thể làm điều đó, nhưng cần phải làm thêm một chút việc để đạt được lời giải. Câu hỏi đích là: ∃w Giết(w, Mướp), khi phù định trở thành: ¬Giết(w, Mướp) ở dạng CNF. Lặp lại quá trình chứng minh trong Hình 6.9 với câu hỏi đích phù định mới, ta có cây chứng minh tương tự như với phép thể: {::/Tình} tại một trong các bước. Vậy, trong trường hợp này, việc tìm ra kè giết con mèo chỉ là vấn đề theo dõi phép kết cho các biến truy vấn trong khi chứng minh.
+
+Thật không may là hợp giải có thể tạo ra những chứng minh không suy diễn được cho câu hỏi đích đến đã có. Ví dụ, ¬Giết(w,Muớp) hợp giải với Giết(Tuẩn, Muớp) ∨ Giết(Tỉnh, Muớp) cho ra: Giết(Tuẩn, Muớp), đem hợp giải một lần nửa với: ¬Giết(w, Muớp) cho ra mệnh đề rỗng. Ta thấy w có hai phép kết khác nhau trong chứng minh này, hợp giải cho ta biết rằng, đúng là có ai đó đã giết Muớp – hoặc là Tuẩn hoặc là Tinh. Một giải pháp là giới-hañ số bước hợp giải cho phép đề biến truy vấn chi được kết một lần trong một lượt chứng minh và ta cần có khả năng truy ngược các phép kết có thể có. Một giải pháp khác là them một từ trả lời vào phù định câu hỏi đích, ¬Giết(w, Muớp) ∨ TrảLời(w). Bảy giờ, quá trình hợp giải sẽ có câu trả lời khi mệnh đề được phát sinh chỉ chứa một từ trả lời đơn lẻ. Đối với chứng
+
+<!-- page: 156 -->
+
+minh trong Hình 6.9, đó là TrảLời(Tỉnh). Chứng minh không suy diễn được tạo ra mệnh đề TrảLời(Tỉnh) ∨ TrảLời(Tuẩn), không thiết lập câu trả lời.
+
+## V.3 Các chiến lược hợp giải
+
+Chúng ta biết rằng áp dụng nhiều lần luật suy diễn hợp giải cuối cùng sẽ tìm ra được phép chứng minh nếu như nó thất sự tôn tại. Trong phần này, chúng ta sẽ khảo sát các chiến lược giúp tìm ra chứng minh một cách hiệu quả.
+
+## Ưu tiên đơn vị
+
+Chiến lược này ưu tiên hợp giải khi một trong các câu là từ đơn (còn gọi là mệnh đề đơn vị). Ý tường của chiến lược này là cổ gắng tạo ra một mệnh đề rộng, nên nếu chọn những suy diễn tạo ra những mệnh đề ngắn hơn sẽ tốt hơn. Hợp giải câu đơn vị (chẳng hạn P) với câu khác bất kì (chẳng hạn như  $\neg P \lor \neg Q \lor R$ ) luôn tạo ra một mệnh đề ngắn hơn mệnh đề khác (trong trường hợp này,  $\neg Q \lor R$ ). Khi chiến thuật ưu tiên đơn vị được thực hiện lần đầu tiên trong suy diễn mệnh đề vào năm 1964, nó đã làm tăng tốc dáng kể. giúp chứng minh các định lý mà trước đây không có chiến thuật này thì không làm được. Bản thân ưu tiên đơn vị không làm chuyên đó nhưng nó làm giảm hệ số nhánh cho bài toán cỡ trung bình và giúp cho bãi toán giải được bằng hợp giải. Đây là một heuristic hữu dụng có thể kết hợp với các chiến thuật khác.
+
+Hợp giải đơn vị là một dạng giới hạn của hợp giải, tại mỗi bước hợp giải phải dùng một mệnh đề đơn vị. Hợp giải đơn vị về mặt tổng quát là không đầy đủ nhưng nó đầy đủ đối với cơ sở tri thức Horn. Chứng minh hợp giải đơn vị trên cơ sở tri thức Horn tương tự như suy diễn tiến.
+
+## Tập hỗ trợ
+
+Ưu tiên chọn những hợp giải rõ ràng là có ích nhưng về mặt tổng quát, sẽ hiệu quả hơn nếu ta cũng bỏ được một số hợp giải tiềm năng. Chiến thuật tập hỗ trợ làm được điều này. Nó bắt đầu bằng việc nhận diện một tập con gồm các câu, gọi là tập hỗ trợ. Mọi phép hợp giải sử dụng một câu từ tập hỗ trợ với một câu khác và thêm kết quả hợp giải vào
+
+<!-- page: 157 -->
+
+tập hỗ trợ. Nếu tập hỗ trợ nhỏ so với toàn bộ cơ sở tri thức, không gian tìm kiếm sẽ giảm dáng kê.
+
+Ta cần phải cần thận với phương pháp này, bởi vì lựa tập hỗ trợ không tất sẽ làm cho thuật toán không đầy đủ. Tuy nhiên, nếu chọn tập hỗ trợ S sao cho các câu còn lại cùng thỏa mãn được, thì hợp giải tập hỗ trợ sẽ đầy đủ. Một cách phổ biến là dùng phù định câu hỏi đích làm tập hỗ trợ, giả sử rằng cơ sở tri thức gốc là nhất quán (nếu nó không nhất quán thì việc truy vấn từ đầy trở nên vô ích). Chiến thuật tập hỗ trợ còn có thêm một lợi điểm về việc phát sinh cây chứng minh, con người dễ dàng hiểu cây này bởi vì nó hướng tới câu hỏi đích.
+
+## IHợp giải đầu vào
+
+Trong chiến thuật hợp giải đầu vào, mọi bước hợp giải kết hợp một trong những câu đầu vào (từ KB hoặc truy vấn) với một số câu khác. Chứng minh trong Hình 6.10 chỉ sử dụng hợp giải đầu vào, có hình dạng như một xương sống, các câu đơn kết hợp lên xương sống. Rỗ ràng là không gian tìm kiếm của cây chứng minh dạng này nhỏ hơn so với không gian của mọi đồ thị chứng minh. Trong cơ sở tri thức Horn, tam đoạn luận là một dạng chiến thuật hợp giải đầu vào vì nó kết hợp câu suy dẫn từ KB ban đầu với những câu khác. Như vậy, không có gì ngạc nhiên khi hợp giải đầu vào là đầy đủ với những cơ sở tri thức ở dạng Horn, nhưng không đầy đủ trong trường hợp tổng quát. Chiến thuật hợp giải tuyến tính là một sự tổng quát hóa tương đối cho phép P và Q hợp giải nếu P thuộc KB ban đầu hoặc P là tổ tiên của Q trong cây chứng minh. Hợp giải tuyến tính là đầy đủ.
+
+## lPhuong phán gộp
+
+Phương pháp gộp bò đi mọi câu mà được gộp lại (tức là cụ thể hơn) bởi câu đã có trong KB. Ví dụ, nếu $P(x)$ trong KB thì thêm $P(A)$ vào sẽ không có ý nghĩa gì, và ngay cả thêm $P(A) \lor Q(B)$ cũng ít ý nghĩa. Hợp giải phụ giữ KB nhỏ và vì thế giúp cho không gian tìm kiểm nhỏ.
+
+## 'VI. KẾT CHƯƠNG .
+
+Chương này đưa ra phân tích về suy diễn logic đối với logic bậc nhất và một số thuật toán thực hiện
+
+<!-- page: 158 -->
+
+\- Cách tiếp cận đầu tiên là sử dụng luật suy diễn với các lượng từ được cụ thể hoá đề mạnh đề hoá bài toán suy diễn. Thông thường cách tiếp cận này rất chậm.
+
+\- Việc sử dụng của đồng nhất đề xác định các phép thế thích hợp cho các biến loại bỏ bước cụ thể hoá trong chứng minh bậc nhất, làm cho quá trình trở nên hiệu quả hơn nhiều.
+
+\- Một phiên bản nâng cấp của tam đoạn luận sử dụng phép đồng nhất, để cung cấp một luật suy diễn tự nhiên mà mạnh mẽ tên là tam đoạn luận tổng quát. Các thuật toán suy diễn tiến và suy diễn lùi áp dụng luật này để xử lý các mệnh đề xác định.
+
+\- Tam đoạn luận tổng quát là đầy đủ đối với các mệnh đề xác định, mặc dù bài toán suy dẫn là bán quyết định. Đối với các chương trình Datalog bao gồm các mệnh đề xác định không có hàm, việc suy dẫn là quyết định được.
+
+\- Suy diễn tiến được dùng trong các cơ sở dữ liệu suy diễn trong đó nó có thể được kết hợp với các toán từ cơ sở dữ liệu quan hệ. Suy diễn tiến là đầy đủ đối với các chương trình Datalog và chạy trong thời gian tuyến tính.
+
+\- Suy diễn lùi được dùng trong các hệ thống lập trình logic như Prolog.
+
+\- Luật suy diễn hợp giải tổng quát cung cấp một hệ thống chứng minh đầy đủ cho logic bậc nhất, sử dụng cơ sở tri thức ở dạng hội chuẩn.
+
+## VII.THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+answer literal: từ trả lời
+
+existential instantiation: thể hiện tôn tại
+
+first-order definite clause: mệnh đề xác định bậc nhất
+
+<!-- page: 159 -->
+
+Chương 6. Logic và Lập luận
+
+first-order literal: từ bậc nhất
+
+fixed point: điểm cố định
+
+Generalized Modus Ponens: tam đoạn luận tổng quát
+
+ground term: biểu thức cơ sở
+
+input resoloution: hợp giải đầu vào
+
+logic programming: lập trình logic
+
+most general unifier (MGU): hàm đồng nhất tổng quát nhất
+
+negation as failure: phù định khi thất bại
+
+nonconstructive proof: chứng minh không suy diễn được
+
+occur check: kiểm tra xuất hiện
+
+propositionalization: mêngh dè hoá
+
+prototype: nguyên mẫu
+
+semidecidable: bán quyết định
+
+set of support: tập hỗ trợ
+
+Skolem constant, skolem function: hằng Skolem
+
+Skolemization: Skolem hoá
+
+standardizing apart: phân chia chuẩn hoá
+
+substitution: phép thé
+
+subsumption: phương pháp gộp
+
+unification: đồng nhất
+
+unifier: hàm đồng nhất
+
+unit clause: mêngh dè don vi
+
+unit preference: ưu tiên, đơn vị
+
+unit resolution: hop giải đơn vị
+
+Universal Instantiation: thể hiện phổ quát
+
+<!-- page: 160 -->
+
+<!-- page: 161 -->
+
+## SUY DIÊN KHÔNG CHẮC CHẤN
+
+## I. GIỚI THIỆU VỀ SỰ KHÔNG CHÁC CHÁN
+
+Một trong những đặc điểm chung của thông tin hiện có của các chuyên gia con người là tính không hoàn hảo. Thông tin có thể không đầy đủ, không nhất quán, không chắc chắn, hay tất cả ba thứ. Nói cách khác, thông tin thường không phù hợp đề giải quyết một vấn đề. Tuy nhiên, một chuyên gia có thể giải quyết những khuyết điểm này và có thể thường dùng đề đưa ra các phản đoán và quyết định đúng đản. Các hệ thống chuyên gia cũng phải có thể giải quyết sự không chắc chắn và rút ra các kết luận có giá trị.
+
+## I.1 Sự không chắc chắn là gì?
+
+Sự không chắc chắn có thể được định nghĩa là sự thiếu tri thức chắc chắn cho phép chúng ta đạt được kết luận dáng tin cây hoàn hảo. Logic truyền thống chỉ cho phép suy diễn chính xác. Nó giả định rằng tri thức hoàn hảo luôn tồn tại và luật bài trung có thể luôn luôn được áp dụng:
+
+IF A là true
+THEN A không là false
+
+và
+
+IF B là false
+THEN P không là true
+
+Thật không may hầu hết các bài toán trong thế giới thực mà các hệ chuyên gia có thể được sử dụng lại không cung cấp tri thức rõ gọn như thể. Ứng dụng chẩn đoán – cho y khoa, sửa chữa xe máy... – là một ứng dụng mà tri thức hầu như không chắc chắn. Hây thử viết các luật
+
+<!-- page: 162 -->
+
+cho chẩn đoán nha khoa bằng logic bậc nhất và ta có thể thấy rằng các tiếp cận logic bị thất bại. Xem xét luật sau:
+
+$\forall p\text{ Triệu\_chúng}(p, \text{Dau răng}) \Rightarrow \text{Bệnh}(p, \text{Sâu răng}).$
+
+Vấn đề là luật trên sai. Không phải tất cả bệnh nhân đau răng đều bị sâu răng; một số họ có bị bệnh về lợi, nhiễm trùng, hoặc một trong số những vấn đề khác:
+
+∀p Triệu\_chứng(p, Sâu răng) ⇒
+
+Bệnh(p, Đau răng) ∨ Bệnh(p, Viêm lợi) ∨ Bệnh(p, Nhiễm trùng)...
+
+Không may là để làm cho luật đúng, cần phải bổ sung một danh sách hầu như không giới hạn các nguyên nhân có thể. Ta có thể thử biến đổi luật trên thành một luật nguyên nhân như sau:
+
+$$
+\forall p \text {Bệnh} (p, \text {Sâu răng}) \Rightarrow \text {Triệu\_chứng} (p, \text {Dau răng})
+$$
+
+Nhung luật này cũng không chính xác vi không phải tất cả người bị sâu răng đều đau răng. Cách duy nhất để sửa luật là thực hiện vét cạn logic: bổ sung thêm về trái giá trị định lượng mà một người bị sâu bao nhiêu sẽ gây nên đau răng. Ngay cả khi đó, đối với mục đích chẩn đoán, ta cũng cần xem xét đến khả năng một bệnh nhân vừa bị đau vừa bị sâu răng nhưng hai cái này không liên quan gì đến nhau.
+
+## I.2 Các nguyên nhân gây nên sự không chắc chắn
+
+Sự không chắc chắn trong tri thức có thể có các nguồn gốc sau:
+
+\- Chúng ta có thể không biết hết mọi thứ do:
+
+\- Sự ngu đốt – chúng ta không biết tất cả mọi thứ hoặc sự lười biếnɡ – chúng ta không thể thực hiện tất cả các thí nghiệm để rút ra tri thức đầy đủ cần thiết.
+
+\- Trong nhiều trường hợp, chúng ta không thể đợi đề thực hiện các thử nghiệm cần thiết, ví dụ đối với những ca cấp cứu y tế, bệnh nhân có thể chết trước khi các xét nghiệm được hoàn thành.
+
+## - Sự nhập nhằng về biểu diễn:
+
+<!-- page: 163 -->
+
+\- Con người có thể biểu diễn một sự vật khác nhau bằng nhiều cách khác nhau.
+
+\- Thiếu một tiêu chuẩn cần thiết để đánh giá các sự vật. Ví dụ trong câu Người già cần đeo kính?, thì cần đánh giá như thế nào gọi là giả?.
+
+\- Sự không chính xác của thông tin: thông tin được ghi nhận và truyền đạt bởi con người hay các thiết bị máy móc. Do đó thông tin cũng chịu sự không chính xác do những sai lệch trong cảm nhận của con người và thiết bị.
+
+Các luật thường là các heuristic mà các chuyên gia sử dụng trong các tỉnh hướng cho trước. Chúng không nhất thiết phải hoàn hảo!.
+
+## i.3 Các mô hình biểu diễn không chắc chắn
+
+Như đã phân tích, thông tin không chắc xuất hiện rộng rãi trong đời sống hàng ngày. Việc rút ra các kết luận từ thông tin không hoàn hào và kém chính xác hay dùng các suy diễn không chính xác vẫn được thực hiện. Thực tế cho thấy con người rất thành công trong việc suy diễn này, ví dụ như trong lĩnh vực chắn đoán y khoa, phát hiện và xử lý sự cố...
+
+Một số mô hình suy diễn không chắc chắn đã được vận dụng xây dựng các hệ chuyên gia trên máy tính. Hình 7.1 cho biết một số mô hình và cách thức biểu diễn sự không chắc chắn của chúng.
+
+Trong các vấn đề không chắc chắn, mỗi tri thức được cung cấp một mức độ tin cây. Tùy thuộc vào việc biểu diễn mức độ tin cây này mà ta phân chia các cách tiếp cận. Lý thuyết xác suất với cách tiếp cận Bayes là công cụ chính được sử dụng đề giải quyết những bài toán không chắc chắn, sử dụng giá trị xác suất để biểu diễn độ tin cây. Đây là một giá trị số học nằm trong khoảng từ 0 đến 1 và được ước lượng khách quan từ dữ liệu của bài toán. Lý thuyết Dempster-Shafer là trường hợp tổng quát của lý thuyết xác suất, biểu diễn độ tin cây bằng một khoảng giá trị. Cách tiếp cần hệ số chắc chắn cũng biểu diễn mức độ tin cây bằng than giá trị cung cấp bởi các ước đoán chủ quan của chuyên gia. Sau đó phương pháp này kết hợp các giá trị tin cây vào một hệ số chắc chắn và sử dụng nó để suy diễn. Logic mở biểu diễn
+
+<!-- page: 164 -->
+
+mức độ tin cậy với những từ mô tả ngữ nghĩa theo cách nói tự nhiên của con người.
+
+![](images/page_163_image_2.jpg)
+
+Hình 7.1 - Lược đồ mô tả một số mô hình biểu diễn trị thức không chắc chắn. Các mô hình được phân loại theo cách ước lượng và biểu diễn giá trị không chắc chắn.
+
+Phần tiếp theo sẽ trình bày về hai hệ thống phổ biến: suy diễn dựa trên tiếp cận Bayes và suy diễn dựa trên hệ số chắc chắn. Hệ thống thứ nhất dựa trên lý thuyết xác suất thống kê, vốn được ứng dụng rất rộng rãi trong nhiều lĩnh vực của khoa học máy tính như: học máy, nhận dạng, khai thác dữ liệu, truy vấn thông tin... Hệ thống thứ hai là một cải biên từ cái đầu, trong đó đưa vào các tri thức do các chuyên gia cung cấp để cải thiện khả năng suy diễn.
+
+## II. LÝ THUYẾT XÁC SUẤT CỦA BAYES
+
+Suy luận Bayes dựa trên lý thuyết xác suất hình thức và được sử dụng rộng rãi trong một số lĩnh vực nghiên cứu hiện nay, bao gồm cả nhận dạng và phân loại. Trước khi đi vào lý thuyết về Bayes, ta hây cùng nhau xem lại một số khái niệm cơ bản của lý thuyết xác suất.
+
+## II.1 Mệnh đề
+
+Độ tin cây thường được áp dụng lên các mệnh đề hay sự kiện. Đến thời điểm này, ta đã được khảo sát hai loại logic – logic mệnh đề và
+
+<!-- page: 165 -->
+
+logic bậc nhất. Lý thuyết xác suất thường sử dụng một loại ngôn ngữ mang tính biểu cảm nhiều hơn một chút so với logic mệnh đề.
+
+Thành phần cơ bản của ngôn ngữ là các biến ngẫu nhiên. Các biến ngẫu nhiên có một miền giá trị mà nó có thể nhận. Ví dụ ta có biến ngẫu nhiên Sâu răng, cho biết tình trạng răng khôn ở hàm dưới bên trái của bệnh nhân có bị sâu răng hay không, có thể nhận một trong hai giá trị &lt;true, false&gt;. Khi đó, Sâu răng = false được dùng để biểu diễn một mệnh đề cho biết ràng răng khôn ở hàm dưới của bệnh nhân là không bị sâu. Một mệnh đề như thế còn được gọi là một sự kiện phản ánh một trạng thái của các đối tượng đang quan tâm.
+
+Tùy thuộc vào tính chất của miền trị, một biến ngẫu nhiên có thể được chia làm các loại như sau:
+
+\- Biến ngẫu nhiên logic: Nhận một trong hai giá trị true hay false. Đối với biến ngẫu nhiên logic, ta có thể sử dụng dạng viết tắt của mệnh đề, ví dụ Sâu răng=true được viết thành Sâu răng và Sâu răng=false được viết thành ¬Sâu răng.
+
+\- Biến ngẫu nhiên rời rạc: Nhận giá trị trong một miền đếm được. Ví dụ, miền giá trị của Mùa có thể là {xuân, hạ, thu, đông}. Các giá trị trong một miền phải vét can và loại trừ lẫn nhau. Biến ngẫu nhiên logic là một trường hợp đặc biệt của loại này. Nếu không gặp sự nhập những nào, ta có thể viết tắt xuân cho mệnh đề Mùa=xuân.
+
+\- Biến ngẫu nhiên liên tục: Nhân giá trị từ các số thực. Ví dụ, mệnh đề X=4.02 cho biết biến ngẫu nhiên X có giá trị chính xác là 0.42. Các mệnh đề liên quan đến biến ngẫu nhiên liên tục cũng có thể mang dấu bất đẳng thức.
+
+Các mệnh đề như Sâu răng = false và Dau răng = true có thể được kết hợp thành các mệnh đề phức với các phép nối logic chuẩn, ví dụ: Sâu răng = false ∧ Dau răng = true. Như đã giải thích ở trên, mệnh đề trên này cũng có thể biểu diễn dưới dạng: ¬Sâu răng ∧ Dau răng.
+
+## II.2 Sự kiện nguyên tố
+
+Một sự kiện nguyên tố là một mô tả đầy đủ về trạng thái của thế giới không chắc chắn đang xem xét. Ví dụ, nếu thế giới đang quan sát chỉ
+
+<!-- page: 166 -->
+
+bao gồm hai biến ngẫu nhiên logic Sâu răng và Đau răng, thì chỉ có bốn sự kiện nguyên tố khác nhau, ví dụ: một trong số các sự kiện là Sâu răng = false ∧ Đau răng = true.
+
+Các sự kiện nguyên tố có một số đặc điểm quan trọng:
+
+\- Chúng loại trừ lẫn nhau - chỉ có tối đa một sự kiện được điều ra. Ví dụ: ¬Sâu răng ∧ Đau răng và¬Sâu răng ∧ ¬Đau răng không thể xảy ra đồng thời.
+
+\- Tập tất cả sự kiện nguyên tố là vét cạn - có ít nhất một sự kiện phải xảy ra.
+
+\- Bất kỳ sự kiện nguyên tố nào cũng kéo theo tính đúng hay sai của mọi mệnh đề dù đơn giản hay phức tạp. Ví dụ, sự kiện nguyên tố Sâu răng ∧ ¬Dau răng kéo theo Sâu răng là đúng và Sâu răng ⇒ Dau răng là sai.
+
+\- Bất kỳ menses đề nào cũng tương đương logic với nổi rời của tất cả sự kiện nguyên tố suy dẫn được tính đúng của menses đề đó. Ví dụ, menses đề Sâu răng tương đương với nổi rời của các sự kiện nguyên tố Sâu rang ∧ Dau răng và Sâu răng ∧ ¬Dau răng.
+
+## II.3 Xác suất tiên nghiệm
+
+Xác suất của một sự kiện hay mệnh đề là tỷ lệ số lần sự kiện đó xảy ra trên tổng số trường hợp. Xác suất có thể được biểu diễn toán học bằng một chỉ số nằm trong khoảng từ không (chắc chắc không thể) đến một (chắc chắn có thể).
+
+Hãy cùng xem xét các vi dụ kinh điện về tung đồng xu và tung xúc xắc. Nếu tung một đồng xu, có hai sự kiện có thể xảy ra là đồng xu Ngira hay Xấp và hai sự kiện trên đều có xác suất xảy ra như nhau. Trong một lần tung, xác suất đồng xu: Ngira, P(Ngira) = 0.5.
+
+Xem xét việc tung một con xúc xác và xác định xác suất để nhận được mặt số 6 từ một lần tung. Nếu ta ký hiện sự kiện $A = xúc xác$ có mặt 6 thì xác suất của A là 1/6 vi trong một lần tung, chỉ có 1 khả năng nhận được mặt 6 và năm khả năng còn lại đều không nhận được mặt 6:
+
+<!-- page: 167 -->
+
+$$
+P (A) = \frac {1}{1 + 5} = \frac {1}{6}
+$$
+
+và xác suất không nhận được mặt 6:
+
+$$
+P (\neg A) = \frac {5}{1 + 5} = \frac {5}{6}
+$$
+
+Những xác suất trên được gọi là xác suất tiên nghiệm hay xác suất không điều kiện, vì nó cho biết độ tin cây của một sự kiện khi không có bất kỳ thông tin nào khác.
+
+Đối với ví dụ tung xúc xắc, ta có thể nhân được 1 trong 6 sự kiện ứng với các mặt khác nhau của xúc xắc. Trong trường hợp đó, ta có được một phân phối xác suất của việc tung xúc xắc như sau:
+
+$$
+P (X) = \left\langle \frac {1}{6}, \frac {1}{6}, \frac {1}{6}, \frac {1}{6}, \frac {1}{6}, \frac {1}{6} \right\rangle
+$$
+
+Goi A và B là hai sự kiện đang quan sát. Xác suất mà hai sự kiện đều
+
+xây ra được gọi là xác suất kết hợp của A và B, ký hiệu toán học là P(A ∧ B). Khi đó bảng phân phối xác suất của hai sự kiện A và B sẽ chứa xác suất xảy ra của tất cả các sự kiện nguyên tố chứa A và B. Ví dụ, một bảng phân phối xác suất của hai sự kiện Xúc xắc và Đồng xu sẽ chứa 6×2 giá trị. Bảng này được gọi là phân phối xác suất kết hợp của Xúc xắc và Đồng xu.
+
+## II.4 Xác suất hậu nghiệm
+
+Đến bảy giờ ta mới quan tâm đến các sự kiện độc lập và loại trừ lẫn nhau. Trong ví dụ tung xúc xắc, hai sự kiện thu được mặt 6 và thu được mặt : 1a loại trừ lẫn nhau, vì ta không thể đồng thời thu được Inặt 6 và 1 trong một lần tung. Tuy nhiên, các sự kiện không độc lập
+
+<!-- page: 168 -->
+
+nhau có thể ảnh hưởng đến khả năng của một hay những sự kiện khác. Ví dụ, xét xác suất thu được mặt 6 trong một lần tung biết rằng 1 đã không xuất hiện. Văn có năm khả năng không thu được mặt 6 nhưng một khả năng đã được loại trừ vì ta biết rằng 1 không xuất hiện do đó xác suất là:
+
+$$
+P = \frac {1}{1 + (5 - 1)}
+$$
+
+Gọi A là một sự kiện và B là sự kiện khác. Giả sử rằng sự kiện A và B không loại trừ lẫn nhau, những xuất hiện có điều kiện dựa trên sự xuất hiện của sự kiện kia. Xác suất sự kiện A xảy ra khi sự kiện B xảy ra được gọi là xác suất có điều kiện hay xác suất hậu nghiệm. Xác xuất hậu nghiệm được ký hiệu là P(A|B), dấu đọc được đọc là “trên” và toàn bộ biểu thức xác suất được diễn đạt là “Xác suất có điều kiện của sự kiện A khi sự kiện B đã xảy ra”. Công thức xác định của xác suất có điều kiện:
+
+$$
+P (A | B) = \frac {P (A \land B)}{P (B)}
+$$
+
+Tương tự, xác suất có điều kiện của sự kiện B xảy ra khi sự kiện A đã
+
+xày ra là:
+
+$$
+P (B \mid A) = \frac {P (A \land B)}{P (A)}
+$$
+
+Và do đó:
+
+$$
+P (A \land B) = P (B \mid A) \times P (A)
+$$
+
+## III. SUY DIÊN BAYES
+
+Với các khái niệm về xác suất vừa được trình bày ở trên, ta trở về với mục tiêu chính của mình đó là giải quyết việc suy diễn với tri thức không chắc chắn. Trong logic, việc suy diễn được thực hiện với các
+
+<!-- page: 169 -->
+
+mệnh đề E ⇒ H, trong đó E là được gọi là các sự kiện chứng cứ (tiền đề) và H là sự kiện giả thuyết (kết luận). Với sự không chắc chắn, ta biểu diễn mệnh để trên về dạng luật có dạng như sau:
+
+## IF $E$ là true
+
+## THEN H là true {với xac ειάτ P}
+
+Trong loại suy diễn này, ta không chỉ đơn thuần chỉ ra việc giả thuyết $H$ có xảy ra hay không khi cho trước các tiền đề $E$ mà còn xác định xác suất xảy ra các sự kiện đó là bao nhiêu. Do đó việc suy diễn trong mô hình xác suất tương ứng với việc đi tính các giá trị xác suất có điều kiện trong các luật suy diễn P($H|E$).
+
+## III.1 Suy diễn với bảng phân phối kết hợp
+
+Một trong những phương pháp đề tính xác suất là thu thập dữ liệu và xây dựng bảng phân phối xác suất cho các sự kiện nguyên tố. Từ bảng phân phối xác suất kết hợp, ta có thể tính được bất cứ giá trị nào.
+
+Với ví dụ chẩn đoán nha khoa, ta xây dựng được bảng phân phối xác suất cho ba sự kiện Đau, Trám và Sâu dựa vào số liệu thu thập được như trong Bảng 7-1.
+
+Bảng 7-1. Phân phối xác suất kết hợp với chẩn đoán nha khoa.
+
+<table><tr><td></td><td colspan="2">Đau</td><td colspan="2"> $\neg$  ,Dau</td></tr><tr><td></td><td>Trám</td><td> $\neg$  ,Trám</td><td>Trám</td><td> $\neg$  ,Trám</td></tr><tr><td>Sâu</td><td>0.108</td><td>0.012</td><td>0.072</td><td>0.008</td></tr><tr><td> $\neg$  ,Sâu</td><td>0.016</td><td>0.064</td><td>0.144</td><td>0.576</td></tr></table>
+
+Bảng phân phối xác xuất trên cho phép tính được bất kỳ giá trị xác suất nào của các sự kiện. Ví dụ, có thể tính được xác suất của một bệnh nhân bị sâu răng khi đến khám nha sĩ:
+
+$$
+\mathrm{P} (\mathrm{S} \hat {\mathrm{a}} \mathrm{u}) = 0. 1 0 8 + 0. 0 1 2 + 0. 0 7 2 + 0. 0 0 8 = 0. 2
+$$
+
+Giá trị xác suất trên được tính bằng cách cộng bốn giá trị ở dòng đầu tiên ứng với bốn sự kiện nguyên tố mà Sâu là đúng. Thao tác này được gọi là hiện hóa, hay tính tổng ngoài bởi vì các biến khác Sâu được cộng vào. Xác suất có điều kiện cũng có thể được tính từ bảng
+
+<!-- page: 170 -->
+
+phân phối kết hợp. Ví dụ ta muốn tính xác suất một bệnh nhân không bị sâu răng khi có triệu chứng đau răng như sau:
+
+$$
+\begin{array}{r l} \mathrm{P} (\neg \mathrm{S} \hat {\mathrm{au}} | \mathrm{Dau}) & = \frac {\mathrm{P} (\neg \mathrm{S} \hat {\mathrm{au}} \land \mathrm{Dau})}{\mathrm{P} (\mathrm{Dau})} \\ & = \frac {(0 . 0 1 6 + 0 . 0 6 4)}{(0 . 1 0 8 + 0 . 0 1 2 + 0 . 0 1 6 + 0 . 0 6 4)} = 0. 4 \end{array}
+$$
+
+Như trên đã thấy, bảng phân phối xác suất kết hợp cho phép ta tính được bất cứ xác suất hậu nghiệm, hay xác suất suy diễn nào. Tuy nhiên, việc lưu trữ các giá trị xác suất này gặp phải một số vấn đề như sau:
+
+\- Kích thước bộ nhớ dùng để lưu trữ bảng phân phối kết hợp, theo lý thuyết là O(d$^{n}$) với d là số giá trị trung bình của một thuộc tính và n là số thuộc tính.
+
+\- Khi tính xác suất: Tính tổng các giá trị xác suất của các sự kiện nguyên tố, độ phức tạp O(d$^{n}$).
+
+\- Việc tìm kiếm các mục trong bảng phân phối cũng là một vấn đề khi kích thước bảng lớn.
+
+Do các đặc điểm trên, việc suy diễn dựa trên bảng phân phối xác suất là không thể khi tập hợp sự kiện lớn. Ngay cả trong trường hợp bình thường ta cũng cần thu thập một lượng lớn dữ liệu để lập được bảng phân phối xác suất. Đề vượt qua trở ngại trên, ta vận dụng đến luật Bayes để tính các xác suất có điều kiện.
+
+## III.2 Luật Bayes
+
+Quay lại với các công thức xác suất ở phần trên, ta có xác suất kết hợp giữa hai sự kiện A và B là:
+
+$$
+P (A \land B) = P (B \mid A) \times P (A)
+$$
+
+Xác suất có điều kiện của A khi B xảy ra là:
+
+$$
+P (A \mid B) = \frac {P (A \land B)}{P (B)}
+$$
+
+<!-- page: 171 -->
+
+Từ đó ta có được:
+
+$$
+P (A \wedge B) = F (B | A) \vee P (A) = P (A | B) \times P (B)
+$$
+
+suy ra:
+
+$$
+P (B \mid A) = \frac {P (B \mid A) \times P (B)}{P (A)}
+$$
+
+Công thức trên được gọi là luật Bayes, được đặt theo tên nhà toán người Anh thế kỳ 18 Thomas Bayes. Công thức này nói rằng xác suất đúng của giả thuyết B khi quan sát được chứng cứ A, bằng với xác xuất cho rằng chúng ta sẽ quan sát được chứng cứ A nếu giả thuyết B là đúng, nhân với xác suất tiên nghiệm của B, tất cả chia cho xác suất tiên nghiệm của việc quan sát được chứng cứ A.
+
+Ví dụ, trong trường hợp chẩn đoán, cho trước một căn bệnh D và một triệu chứng S, thì xác suất một người có triệu chứng S bị bệnh D được tính theo công thức:
+
+$$
+P (D | S) = \frac {P (D \land S)}{P (S)}
+$$
+
+với $P(D \land S)$ là số người mắc bệnh D và có triệu chứng S và $P(S)$ là số người có triệu chứng S.
+
+Đề tính P(D|S) theo công thức trên, thì ta phải thực hiện các cuộc điều tra thống kê trên một phạm vi cộng đồng dân cư rộng lớn mới cho ta được một xác suất chính xác. Công thức Bayes đưa ra một cách tính khái cho phép ta tính được P(D|S) từ những kết quả thống kê đã có trước đó hoặc những kết quả thống kê dễ đạt được hơn.
+
+## III.3 Ví dụ đơn giản
+
+Xét một chuẩn đoán với bệnh viêm màng não, đặt các sự kiện S là bệnh nhân có triệu chứng cứng cổ và M là bệnh nhân bị bệnh viêm màng não.
+
+Các xác suất biết trước:
+
+$$
+\mathrm{F} (\mathrm{S} | \mathrm{M}) = 0. 5.
+$$
+
+<!-- page: 172 -->
+
+$$
+\mathrm{P(M)} = 1 / 5 0 0 0 0.
+$$
+
+$$
+\mathrm{P} (\mathrm{S}) = 1 / 2 0.
+$$
+
+Sử dụng luật Bayes suy ra: Khả năng bị bệnh viêm màng não khi thấy bệnh nhân có triệu chứng cứng cổ là:
+
+$$
+P (M \mid S) = \frac {P (S \mid M) P (M)}{P (S)} = \frac {0 . 5 \times 1 / 5 0 0 0 0}{1 / 2 0} = 0. 0 0 0 2
+$$
+
+Điểm quan trọng của lý thuyết Bayes là các con số ở về phải của công thức dễ dàng xác định, ít nhất là khi so sánh với về trái. Như trong ví dụ trên, do số lượng nhỏ hơn, nên việc xác định số bệnh nhân bị cùm kèm theo triệu chứng sốt dễ hơn là xác định số người có triệu chứng sốt bị cúm.
+
+P(S|M) chính là tri thức về nguyên nhân, tức là xác suất hậu nghiệm ở về phải, dễ dàng có được hơn là tri thức về chẩn đoán, P(M|S), tức là xác suất hậu nghiệm ở về trái. Vì vậy, ta nói luật Bayes cho phép chúng ta sử dụng tri thức về nguyên nhân đề suy ra tri thức về chẩn đoán.
+
+## III.4 Kết hợp các chứng cứ
+
+Khi một sự kiện xảy ra là kết quả của sự kết hợp hai hay nhiều chứng cứ khác nhau, công thức Bayes cũng đưa ra một phương pháp tính hiệu quả. Xét ví dụ chẩn đoán nha khoa, bệnh Sâu có thể gây ra bởi triệu chứng Dau và có vết Trám. Xác suất có điều kiện của chẩn đoán trên là:
+
+$$
+P (S \hat {a} u \mid \text {Dau} \wedge \text {Trám})
+$$
+
+Dựa vào bảng phân phối kết hợp đầy đủ ta có thể tính được giá trị xác
+
+suất trên. Tuy nhiên cách tiếp cận này sẽ dẫn đến một sự bùng nổ dữ liệu khi số biến sự kiện lớn. Cổng thức Bayes tổng quát giúp ta giải quyết được trường hợp này. Gọi $E_1, E_2, \ldots, E_n$ là n chứng cứ cho giả thuyết H. Luật Bayes tổng quát đối với trường hợp này là:
+
+<!-- page: 173 -->
+
+$$
+P (H | E _ {1} E _ {2} \dots E _ {n}) = \frac {P (E _ {1} E _ {2} \dots E _ {n} \mid H) \times P (H)}{P (E _ {1} E _ {2} \dots E _ {n})}
+$$
+
+Đến lượt mình, để tính được xác suất $P(E_1E_2\ldots E_n|H)$ cũng cần khai triển một số lớn các hệ số. Tuy nhiên, giả định độc lập có điều kiện cho phép ta tính được giá trị xác suất trên một cách dễ dàng hơn. Hai sự kiện A và B được gọi là độc lập có điều kiện khi xảy ra sự kiện D khi:
+
+$$
+P (A B | D) = P (A \mid D) \times P (B \mid D)
+$$
+
+Và do đó công thức tính xác suất giả thuyết H dựa trên các chứng cứ $E_{1}, E_{2}, \ldots, E_{n}$ được viết thành:
+
+$$
+P \left(H | E _ {1} E _ {2} \dots E _ {n}\right) = \frac {\prod_ {i = 1} ^ {n} P (E _ {i} \mid H) \times P (H)}{\prod_ {i = 1} ^ {n} P (E _ {i})}
+$$
+
+các giá trị P(E₁|H) và P(E₁) có thể được thống kê và tính dễ dàng trên các tập dữ liệu cho cơ sở tri thức.
+
+## IV. LÝ THUYẾT HỆ SỐ CHẮC CHẤN VÀ SUY DIỂN DỰA TRÊN CHỨNG CỨ
+
+## IV.1 Hệ số chắc chắn
+
+Hệ số chắc chắn là một thay thế phổ biến của suy diễn Bayes. Nguyên lý cơ bản của lý thuyết này được giới thiệu trong MYCIN, một hệ chuyên gia chắn đoán và điều trị nhiễm trùng máu và viêm màng não. Những nhà phát triển của MYCIN thấy rằng các chuyên gia y tế biểu diễn mức độ tin cậy của họ theo các từ ngữ không có tính logic hay toán học nào. Ngoài ra, dữ liệu thống kê tin cậy về lĩnh vực bài toán này cũng không có. Do đó, nhóm MYCIN không thể dùng cách tiếp cận xác suất. Thay vào đó họ giới thiệu một hệ số chắc chắn (cf), một số đo độ tin cậy của chuyên gia. Giá trị lớn nhất của hệ số chắc chắc const là +1.0 (hoàn toàn đúng) và phố nhất ta -1.0 (hoàn toàn sai). Một giá trị dương biển điền mức độ tin cậy và giá trị âm biểu diễn mức độ không tin cậy.
+
+<!-- page: 174 -->
+
+Trong các hệ chuyên gia dùng hệ số chắc chắn, cơ sở tri thức bao gồm một tập các luật có cú pháp sau:
+
+$$
+\text {   IF   } \quad <   \text {chúng cú} >
+$$
+
+$$
+\text {THEN} <   \text {già thuyết>} \{\text {cf} \}
+$$
+
+Trong đó cf biểu diễn mức độ tin cậy của giả thuyết H khi chứng cứ E xảy ra.
+
+Hệ số chắc chắn dựa trên hai hàm: độ đo tin cậy $MB(H,E)$ và độ đo không tin cậy $MD(H,E)$. Hai hàm này chỉ ra mức độ tin cậy của giả thuyết H sẽ tăng lên bao nhiêu nếu chứng cứ E được quan sát thấy và mức độ không tin cậy của giả thuyết H sẽ tăng lên bao nhiêu nếu chứng cứ E được quan sát thấy.
+
+Độ đo tin cây và không tin cây có thể được định nghĩa theo xác suất tiên nghiệm và xác suất có điều kiện như sau:
+
+$$
+M B (H, E) = \left\{ \begin{array}{l l} 1 & \text {khi} p (H) = 1 \\ \frac {\max [ p (H | E) , p (H) ] - p (H)}{\max [ 1 , 0 ] - p (H)} & \text {TH khác} \end{array} \right.
+$$
+
+$$
+M D (H, E) = \left\{ \begin{array}{l l} 1 & \text {khi} p (H) = 0 \\ \frac {\max [ p (H | E) , p (H) ] - p (H)}{\max [ 1 , 0 ] - p (H)} & \text {TH khác} \end{array} \right.
+$$
+
+trong đó:
+
+$p(H)$ là xác suất tiên nghiệm của giả thuyết H là đúng.
+
+$p(H|E)$ là xác suất giả thuyết H đúng khi chứng cứ E đúng.
+
+Hai giá trị $MB(H, E)$ và $MD(H, E)$ nằm trong khoảng 0 và 1. Độ lớn của độ tin cây hay không tin cây của giả thuyết $H$ phụ thuộc vào loại chứng cứ $E$ quan sát được. Một số sự kiện có thể làm tăng độ lớn của độ tin cây, nhưng một số khác lại làm tăng độ lớn của độ không tin cây.
+
+<!-- page: 175 -->
+
+## IV.2 Các phép toán
+
+Đề kết hợp độ lớn của độ tin cậy và độ không tin cậy trong một giả thuyết, công thức sau được sử dụng:
+
+$$
+c f = \frac {M B (H , E) - M D (H , E)}{1 - \min [ M B (H , E) , M D (H , E) ]}
+$$
+
+Và qua đó cf, cf thuộc đoạn -1 đến +1, sẽ chỉ ra độ tin cậy tổng cộng của một giả thuyết H.
+
+Cách tiếp cận MYCIN có thể được mô tả qua ví dụ sau. Xét một luật đơn giản:
+
+## IF A là X
+
+THEN B là Y
+
+Thông thường, một chuyên gia có thể không chắc chắn tuyệt đối luật trên sẽ thỏa. Cũng giả sử rằng sau một số lần quan sát, ngay cả khi mệnh đề IF của luật thỏa và đối tượng A nhận giá trị X, đối tượng B có thể nhận giá trị Z khác. Chuyên gia thường kết hợp một hệ số chắc chắn với từng giá trị có thể có của B khi A có giá trị X. Do đó, luật sẽ có dạng:
+
+## IF A là X
+
+THEN B là Y {cf0.7};
+
+## B là Z {cf0.2}
+
+Điều đó có nghĩa rằng, khi A nhận giá trị X, B sẽ là Y với 70 phần trăm và Z trong 20 phần trăm thời gian. Mười phần trăm thời gian còn lại có thể giá trị khác của vi chuyên gia vẫn còn bảo lưu khả năng đối tượng B có thể không chỉ nhận hai giá trị đã biết X và Y. mà còn có giá trị khác chưa quan sát được.
+
+Hệ số chắc chắc được. gán bởi một luật sau đó được lan truyền qua chuỗi suy diễn. Sự lan truyền của hệ số chắc chắn bao gồm việc thiết lập độ chắc chắn thực của kết quả luật khi chứng cứ trong tiền đề luật
+
+<!-- page: 176 -->
+
+là không chắc chắn. Độ chắc chắn thực đối với một luật có một tiền đề, $cf(H,E)$, có thể được tính dễ dàng bằng cách nhân hệ số chắc chắn của tiền đề, $cf(E)$, với hệ số chắc chắn luật, $cf$:
+
+$$
+c f (H, E) = c f (E) \times c f
+$$
+
+Ví dụ:
+
+IF trời trong
+
+THEN dự đoán là trời nắng {cf 0.8}
+
+và độ chắc chắn hiện tại của trời trong là 0.5, thì:
+
+$$
+c f (H, E) = 0. 5 \times 0. 8 = 0. 4
+$$
+
+## IV.3 Suy diễn dựa trên chứng cứ
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+V.3 Suy dien dura trei chung cu
+Đói với các luật nối liền như:
+    IF     &lt;chứng cú $E_1&gt;$
+        AND   &lt;chứng cú $E_2&gt;$
+            ...
+            AND &lt;chứng cú $E_n&gt;$
+                THEN &lt;già thuyếtH&gt;{cf}
+độ chắc chắn lưới của kết luận, giả thuyết H, được tính như sau:
+    cf(H,$E_1 \cap E_2 \cap \ldots \cap E_n$) = min[cf(E$_1$),cf(E$_2$),...,cf(E$_n$)]×cf
+Ví dụ:
+    IF     trời trong
+        AND  dư đoán là trời nắng
+            THEN hành động là ‘deo kính râm’{cf0.8}
+và độ chắc chắn của trời trong là 0.9 và độ chắc chắn của dư đoán là
+trời nắng là 0.7 thì:
+</div>
+
+$$
+cf\left(H,E_1\cap E_2\right) = \min \left[0.9,0.7\right]\times 0.8 = 0.7\times 0.8 = 0.56
+$$
+
+<!-- page: 177 -->
+
+Cơ sở Trí tuệ Nhân tạo
+Khoa Công nghệ thông tin, Trường ĐHKHTN Tp.HCM
+
+Đối với luật nổi rời như:
+
+IF <chúng cứ  $E_{1}$ >
+
+OR <chứng cứ  $E_{2}$ >
+
+OR <chứng cứ  $E_{n}$ >
+
+THEN &lt;già thuyếtH&gt; {cf}
+
+độ chắc chắn của giả thuyết H được tính như sau:
+
+$$
+c f \left(H, E _ {1} \cup E _ {2} \cup \dots \cup E _ {n}\right) = \max [ c f \left(E _ {1}\right), c f \left(E _ {2}\right), \dots , c f \left(E _ {n}\right) ] \times c f
+$$
+
+Vi dụ:
+
+IF  trời âm u
+
+OR dự đoán là trời mua
+
+THEN hành động là 'đeim theo dù' {cf 0.9}.
+
+và độ chắc chắn của trời âm u là 0.6 và độ chắc chắn của dự đoán là trời mưa là 0.8 thì:
+
+$cj(\bar{I}\bar{I},\bar{E}_{1}\cup E_{2}) = \max [0.6,0.8]\times 0.9 = 0.8\times 0.9 = 0.72$
+
+Khi việc thực thi hai luật trở lên có kết quả là cùng một kết luận, hệ số chắc chắn đơn lẻ của những luật này phải được trộn lại để đưa đến hệ số chắc chắn kết hợp cho một giả thuyết. Giả sử cơ sở tri thức bao gồm các luật sau:
+
+Luật 1: iF A là X
+
+THEN C là Z {cf0.8}
+
+Luật 2: IF B-là-Y
+
+## THEN C là 7. {cf0.5}
+
+Nếu cả Luật 1 và Luật 2 được thực thi thì độ chắc chắn của đối tượng C được gán là bao nhiêu?. Cảm giác chung của ta là: nếu có hai chứng cứ (A là X và B là Y) từ hai nguồn khác nhau (Luật 1 và Luật 2) cùng
+
+<!-- page: 178 -->
+
+hỗ trợ một giả thuyết (C là Z), thì độ tin cậy trong giả thuyết sẽ tăng lên và trở nên vững chắc hơn so với khi chi thu được một chứng cứ.
+
+Độ chắc chắn kết hợp được tính toán theo công thức:
+
+$$
+c f (c f _ {1}, c f _ {2}) = \left\{ \begin{array}{l l} c f _ {1} + c f _ {2} \times (1 - c f _ {1}) & k h i c f _ {1} > 0 v a c f _ {2} > 0 \\ \frac {c f _ {1} + c f _ {2}}{1 - \min [ | c f _ {1} | , | c f _ {2} | ]} & k h i c f _ {1} <   0 h a y c f _ {2} <   0 \\ c f _ {1} + c f _ {2} \times (1 + c f _ {1}) & k h i c f _ {1} <   0 v a c f _ {2} <   0 \end{array} \right.
+$$
+
+Trong đó:
+
+$cf_{1}$ là độ tin cậy của giả thuyết $H$ đạt được bởi Luật 1;
+
+$cf_{2}$ là độ tin cậy của giả thuyết $H$ đạt được bởi Luật 2;
+
+$|cf_{1}|$ và $|cf_{1}|$ là trị tuyệt đôi của $cf_{1}$ và $cf_{2}$.
+
+Do đó nếu ta giả sử rằng:
+
+$$
+c f (E _ {1}) = c f (E _ {2}) = 1. 0
+$$
+
+thì ta tính được:
+
+$$
+c f _ {1} (H, E _ {1}) = c f (E _ {1}) \times c f _ {1} = 1. 0 \times 0. 8 = 0. 8
+$$
+
+$$
+c f _ {2} (H, E _ {2}) = c f (E _ {2}) \times c f _ {2} = 1. 0 \times 0. 6 = 0. 6
+$$
+
+và
+
+$$
+\begin{array}{r l} c f (c f _ {1}, c f _ {2}) & = c f _ {1} (H, E _ {1}) \times c f _ {2} (H, E _ {2}) \times (1 - c f _ {1} (H, E _ {1}) \\ & = 0. 8 + 0. 6 \times (1 - 0. 8) = 0. 9 2 \end{array}
+$$
+
+Ví dụ trên trình bày một sự tăng cường của độ tin cây trong một giả thuyết. Bảy giờ hãy xét một trường hợp khi mà các hệ số chắc chắn có dấu trái nhau. Giả sử:
+
+<!-- page: 179 -->
+
+Khoa Công nghệ thông tin, Trường ĐHKHTN Tp.HCM
+
+$$
+c f (E _ {1}) = 1. 0 \text {và} c f (E _ {2}) = - 1. 0
+$$
+
+thi:
+
+$$
+c f _ {1} (H, E _ {1}) = c f (E _ {1}) \times c f _ {1} = 1. 0 \times 0. 8 = 0. 8
+$$
+
+$$
+c f _ {2} (H, E _ {2}) = c f (E _ {2}) \times c f _ {2} = - 1. 0 \times 0. 6 = - 0. 6
+$$
+
+va
+
+$$
+c f \left(c f _ {1}, c f _ {2}\right) = \frac {c f _ {1} \left(H , E _ {1}\right) + c f _ {2} \left(H , E _ {2}\right)}{1 - \min [ | c f _ {1} \left(H , E _ {1}\right) | , | c f _ {2} \left(H , E _ {2}\right) | ]} = \frac {0 . 8 - 0 . 6}{1 - \min [ 0 . 8 , 0 . 2 ]} = 0. 5
+$$
+
+Ví dụ trên trình bày trường hợp khi một luật xác nhận một giả thuyết và luật kia phù định giả thuyết thì hệ số chắc chắn kết hợp, hay độ tin cây thực là bao nhiều. Trong trường hợp cả hai chứng cứ đều bị bác bò, nghĩa là: $cf(E_1) = cf(E_2) = 1.0$, hệ số chắc chắn kết hợp được tính tương tự ví dụ đầu tiên nhưng có dấu âm.
+
+Lý thuyết hệ số chắc chắn cung cấp một phương pháp thay thế cho suy diễn Bayes. Phương thức heuristic kết hợp các hệ số chắc chắn khác biệt với phương thức được dùng để kết hợp các xác suất. Lý thuyết chắc chắn không “thuẩn tuý toán học” mà nó bất chuốc quá trình suy nghĩ của các chuyên gia con người.
+
+## V. SO SÁNH SUY DIỂN BAYES VÀ HỆ SỐ CHÁC CHÁN
+
+Các phần trước đã trình bày hai kỹ thuật thông dụng nhất để xử lý sự không chắc chắn trong các hệ chuyên gia. Phần này sẽ so sánh hai kỹ thuật trên và xác định loại bài toán nào có thể được sử dụng hiệu quả bằng suy diễn Bayes hay hệ số chắc chắn.
+
+Lý thuyết xác suất là kỹ thuật lâu đời nhất và có nền tảng vững chắc nhất để xử lý tri thức không chính xác và dữ liệu ngẫu nhiên. Nó hoạt động tốt trong những lĩnh vực như dự đoán và lập kế hoạch, trong đó dữ liệu thường có sản và các phát biểu xác suất chính xác có thể được thực hiện.
+
+<!-- page: 180 -->
+
+Một hệ chuyên gia áp dụng kỹ thuật Bayes, PROSPECTOR, được phát triển để giúp đỡ những nhà thảm dò địa chất tìm kiếm các mô tài nguyên. Hệ thống rất thành công, ví dụ với việc dùng các dữ liệu địa chất, địa lý và địa hóa học, PROSPECTOR dự đoán sự tồn tại của Molypdden gần ngọn núi Tolman bang Washington, Hoa Kỳ. Tuy nhiên, vấn đề ở đây là nhóm PROSPECTOR có thể dựa trên dữ liệu có giá trị về các mô tài nguyên đã biết và thông tin thống kê tin cậy. Các xác suất của từng sự kiện cũng được định nghĩa. Nhóm PROSPECTOR cũng có thể giả định sự độc lập có điều kiện của các chứng cứ, một ràng buộc phải thỏa mãn để áp dụng được tiếp cận Bayes.
+
+Tuy nhiên, trong nhiều lĩnh vực có thể áp dụng hệ chuyên gia, thông tin thống kê đáng tin cây không có sẵn hoặc ta không thể giả định sự độc lập có điều kiện giữa các chứng cứ. Kết quả là nhiều nhà nghiên cứu thấy ràng phương pháp Bayes không thích hợp. Ví dụ, Shortlife và Buchanan không thể dùng tiếp cận xác suất cổ điện trong hệ thống MYCIN vì lĩnh vực y tế thường không cung cấp đủ dữ liệu. Việc không thỏa các điều kiện này thúc đầy sự phát triển của lý thuyết hệ số chắc chắn.
+
+Dù cách tiếp cận hệ số chắc chắn thiếu nền tàng toán học như của lý thuyết xác suất, nó có về tốt hơn suy diễn Bayes chủ quan trong những lĩnh vực như chắn đoán, đặc biết trong y tế. Trong các hệ chắn đoán như MYCIN, các luật và hệ số chắc chắc hình thành do trì thức của chuyên gia và phản đoán chủ quan của họ. Hệ số chắc chắn được sử dụng trong những trường hợp không biết xác suất hoặc quá khó hoặc quá đất đề tính được xác suất. Cơ chế suy diễn chứng cứ có thể quản lý được chứng cứ được thu thập ngày càng nhiều lên, sự kết hợp và tách rời của các giả thuyết, cũng như các chứng cứ với mức độ tin cây khác nhau. Bên cạnh đó, tiếp cận hệ số chắc chắn cung cấp sự giải thích tốt hơn về các tình huống điều khiển thông qua một hệ chuyên gia dựa trên luật.
+
+Tiếp cận Bayes và hệ số chắc chắn là khác nhau, nhưng chúng cùng có một vấn đề chung: tìm được một chuyên gia có thể định lượng được thông tin cá r̄thân, chủ quan và có tính định lượng. Con người dễ mắc
+
+<!-- page: 181 -->
+
+sai làm và do đó việc chọn một kỹ thuật quản lý sự không chắc chắn phụ thuộc lớn vào chuyên gia hiện có của lĩnh vực.
+
+Phương pháp Bayes thích hợp nhất nếu dữ liệu thống kê đáng tin cây tồn tại, kỹ sư tri thức có thể nắm bắt được và chuyên gia sẵn sàng cho những tỉnh hướng phân tích-quyết định nghiệm trọng. Nếu thiếu một trong những điều kiện trên, tiếp cận Bayes có thể hơi sai lệch để cho ra những kết qua có ý nghĩa. Một điểm nửa đáng chú ý là việc lan truyền độ tin cây Bayes có độ phức tạp lũy thừa và do đó không thực tế đối với các cơ sở tri thức lớn.
+
+Kỹ thuật hệ số chắc chắn, dù thiếu nền tàng hình thức nhưng vẫn đưa ra tiếp cận đơn giản đề giải quyết các vấn đề không chắc chắn của các hệ chuyên gia và cho ra kết quả chấp nhận được trong nhiều ứng dụng.
+
+## VI. KẾT CHƯƠNG
+
+Chương này giới thiệu hai phương pháp quản lý sự không chắc chắn trong các hệ thống tri thức. Một số điểm quan trọng của chương bao gồm:
+
+\- Sự không chắc chắn là sự thiếu vắng các chứng cứ chính xác cho phép ta đạt được một kết luận hoàn hảo đáng tin cây. Nguồn gốc chính của tri thức không chắc chắn là do sự ngu đốt, nhập những về ngôn ngữ biểu diễn.
+
+\- Lý thuyết xác suất cung cấp một cách tiếp cận chính xác và đúng dẫn về mặt toán học đề quản lý sự không chắc chắn. Các biểu thức xác suất bao gồm xác xuất tiền nghiệm và xác xuất có điều kiện trên các menses đề đơn giản và phức tạp.
+
+\- Phân phối xác suất kết hợp xác định xác suất của mỗi phép gán hoàn chỉnh các giá trị vào các biến ngẫu nhiên. Bảng này thường qua lớn để xây dựng và sử dụng ở dạng rõ ràng. Khi đã có bảng phân phối kết hợp đầy đủ, bảng này có thể được sử dụng để trả lời các câu hỏi bằng cách đơn giản cộng đòn các mục cho các sự kiện nguyên tố ứng với các mệnh đề câu hỏi.
+
+<!-- page: 182 -->
+
+\- Luật Bayes cho phép tính các xác suất chưa biết từ các xác suất có điều kiện đã biết. Đề có thể sử dụng luật Bayes, điều kiện độc lập có điều kiện giữa các chứng cứ phải được thỏa mãn. Chứng ta cũng cần có những dữ liệu thống kê đáng tin cây và định nghĩa các xác suất tiên nghiệm cho mỗi giả thiết.
+
+\- Hệ số chắc chắn là một phương án thay thế phổ biến của suy diễn Bayes. Các nguyên tắc cơ bản của lý thuyết màu được giới thiệu trong MYCIN, một hệ chuyên gia chắn đoán y khoa.
+
+\- Các hệ số chắc chắn được sử dụng nếu xác suất là không biết hoặc không thể dễ dàng thu được. Lý thuyết chắc chắn có thể quản lý các chứng cứ được thu thập dầm dầm, sự kết hợp và tách rời của các giả thiết cũng như các chứng cứ với mức độ tin cậy khác nhau.
+
+\- Cà suy diễn Bayes và lý thuyết chắc chắn đều có một vấn đề chung: tìm được một chuyên gia có khả năng lượng hóa các thông tin chủ quan và định tính.
+
+## VII.THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+atomic event: sự kiện nguyên tố
+
+Bayesian reasoning: suy diễn Bayes
+
+Bayes's rule: luật Bayes
+
+certainty factor: hệ số chắc chắn
+
+conditional independence: độc lập có điều kiện
+
+conditional probability: xác suất có điều kiện
+
+degree of belief: mức độ tin cậy
+
+fuzzy logic: logic mò
+
+marginalization: biên hoá
+
+measure of belief: độ đo tin cậy
+
+<!-- page: 183 -->
+
+Cơ sở Trí tuệ Nhân tạo
+Khoa Công nghệ thông tin, Trường ĐHKHTN Tp.HCM
+
+measure of disbelief: độ đo không tin cậy
+
+probability: xác suất .
+
+prior probability: xác suất tiền nghiệm
+
+posterior probability: xác suất hậu nghiệm
+
+probability distribution: phân phối xác suất
+
+random variable: biến ngẫu nhiên
+
+summing out: tính tổng ngoài
+
+uncertainty: sự không chắc chắn
+
+unconditional probability: xác suất không điều kiện
+
+<!-- page: 184 -->
+
+<!-- page: 185 -->
+
+![](images/page_184_image_0.jpg)
+
+HỌC MÁY
+
+<!-- page: 186 -->
+
+<!-- page: 187 -->
+
+## Chương 8 GIỚI THIỆU HỌC MÁY
+
+![](images/page_186_image_2.jpg)
+
+## I. HỌC MÁY LÀ GÌ?
+
+## I.1 Các động lực của học máy
+
+Một trong những yếu tố làm cho con người khác với các loài động vật khác đó chính là khả năng học. Tầm quan trọng của học không có gì phải bàn cãi, đây chính là nhân tố tạo thành các hành vi thông minh của con người. Trong lĩnh vực tìm kiếm các thuật toán có được trí thông minh như con người, một trong những vấn đề quan trọng là dạy cho máy biết cách học. Mặc dù đây là một vấn đề khó khăn, nhưng những thành công cũng như tiến bộ gần đây trong thuật toán và lý thuyết học máy đã cho thấy khả năng xây dựng các chương trình có khả năng học trên nhiều lĩnh vực trong thực tế. Ý tưởng đẳng sau việc học đó chính là các giác quan không nên chỉ dùng để hành động, mà còn giúp nâng cao khả năng phản xạ trong tương lai. Việc học xây ra thông qua quá trình tương tác với thế giới và quá trình ra quyết định.
+
+Chương này giới thiệu về học máy, cụ thể đi vào một số phương pháp học cơ bản.
+
+## I.2 Các loại học
+
+Các nhà nghiên cứu học máy đưa ra rất nhiều cách học khác nhau. Việc thiết kế thành phần học ảnh hưởng bởi 3 vấn đề chính sau:
+
+\- Những thành phần nào cần được học.
+
+\- Pnan nào nào được cung cấp để học những thành phần này.
+
+<!-- page: 188 -->
+
+\- Những thành phần này được thể hiện như thể nào?
+
+Ta sẽ lần lượt phân tích từng vấn đề một. Đầu tiên, các thành phần của hệ thống gồm:
+
+1. Ảnh xạ trực tiếp từ điều kiện của trạng thái hiện tại sang hành động.
+
+2. Phương tiện để suy dẫn những tính chất liên quan của thể giới từ chuỗi quan sát.
+
+3. Thông tin về cách thể giới phát triển và về kết quả của những hành động mà hệ thống có thể thực hiện.
+
+4. Thông tin hữu ích về độ tốt của trạng thái.
+
+5. Thông tin về giá trị của hành động cho biết mức độ phù hợp của hành động.
+
+6. Dịch mô tả nhóm các trạng thái mà hệ thống đạt được kết quả lớn nhất.
+
+Mỗi thành phần có thể được học với phản hồi phù hợp. Xét ví dụ về việc huấn luyện hệ thống trở thành tài xế taxi. Mỗi lần người hướng dẫn kêu: "Thắng!" thì hệ thống có thể được phản xạ có điều kiện biết khi nào cần thẳng (thành phần 1). Bằng cách xem nhiều hình ảnh có xe buýt, hệ thống có thể học để nhận biết chúng (2). Bằng cách thử hành động và quan sát kết quả chẳng hạn như thắng gấp trên đường ướt, thì hệ thống có thể học được hệ quả của hành động này (3). Sau đó, khi nó không nhận được tiền thưởng từ hành khách ngồi trên xe sau chuyển đi bị thắng gấp thường xuyên, hệ thống có thể học được thành phần tính toán hiệu quả tổng thể (4).
+
+Loại phản hồi được cung cấp cho việc học thường là nhân tố quan trọng giúp xác định bản chất của thuật toán học. Trong lĩnh vực học máy thường phân biệt ba loại học: giám sát, không giám sát và tăng cường.
+
+## Học có giám sát
+
+Học có giám sát học ánh xạ từ các mãu đầu vào và đầu ra. Trường hợp (1), (2) và (3) đều là ví dụ của học có giám sát.
+
+## Học không giám sát
+
+<!-- page: 189 -->
+
+Học không giám sát liên quan tới việc học từ đầu vào trong khi không có giá trị đầu ra cụ thể nào được cung cấp. Ví dụ, hệ thống taxi hoàn toàn có thể hình thành khái niệm về “ngày giao thông tốt” và “ngày giao thông xấu”, mà không hè cần đến mẫu đã gán nhân cho những khái niệm này. Ihre thống học không giám sát thuần tủy không thể học cách làm, vì nó không có thông tin cũng như nhận biết được một hành động đúng hoặc trạng thái phù hợp.
+
+## Học tăng cường
+
+Học tăng cường tổng quát nhất trong cả ba loại học. Thay vi nghe theo những hướng dẫn từ trước, hệ thống học tăng cường sẽ tự học từ sự tăng cường. Học tăng cường thường chứa bài toán con, học cách hoạt động của môi trường.
+
+## II. NAÏVE BAYES - MỘT MÔ HÌNH HỌC ĐƠN GIẢN
+
+## II.1 Ví dụ học máy
+
+Xét một ví dụ đơn giản sau đây để minh họa cho mô hình học đơn giản Bayes. Ví dụ được trình bày trong Bảng 8-1:
+
+Bảng 8-1. Một ví dụ học máy đơn giản
+
+| $f_1$ | $f_2$ | $f_3$ | $f_4$ | y |
+| --- | --- | --- | --- | --- |
+| 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 1 |
+| 0 | 0 | 1 | 1 | 1 |
+| 0 | 0 | 0 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 0 |
+| 1 | 3 | 1 | 1 | 0 |
+
+Trong ví dụ này, các giá trị $f_i$ là các giá trị đầu vào và ta cần dự đoán giá trị kết xuất y theo các giá trị này. Mô hình Naïve Bayes thực hiện
+
+<!-- page: 190 -->
+
+huấn luyện bằng cách thống kê các điểm dữ liệu. Ta thống kê các giá trị:
+
+$$
+\mathrm{R} _ {\mathrm{i}} \left(\mathrm{f} _ {\mathrm{i}} = \mathrm{j}, \mathrm{y} = \mathrm{k}\right): \text {tý lê các mẫu lớp y = k có đặc trưng f} _ {\mathrm{i}} = \mathrm{j}.
+$$
+
+Ví dụ:
+
+\- $R_1(1,1) = 1/5$: tỷ lệ tất cả các mẫu dương(y=1) có đặc trung l = 1.
+
+\- $R_1(0,1) = 4/5$: tỷ lệ tất cả các mẫu dương có đặc trưng $1 = 0$.
+
+Với các thống kê như vậy, ta tính được toàn bộ các con số R cho tập dữ liệu:
+
+$$
+\mathrm{R} _ {1} (1, 1) = 1 / 5 \quad \mathrm{R} _ {1} (0, 1) = 4 / 5
+$$
+
+$$
+\mathrm{R} _ {1} (1, 0) = 5 / 5 \quad \mathrm{R} _ {1} (0, 0) = 0 / 5
+$$
+
+$$
+\mathrm{R} _ {2} (1, 1) = 1 / 5 \quad \mathrm{R} _ {2} (0, 1) = 4 / 5
+$$
+
+$$
+\mathrm{R} _ {2} (1, 0) = 2 / 5 \quad \mathrm{R} _ {2} (0, 0) = 3 / 5
+$$
+
+$$
+\mathrm{R} _ {3} (1, 1) = 4 / 5 \quad \mathrm{R} _ {3} (0, 1) = 1 / 5
+$$
+
+$$
+\mathrm{R} _ {3} (1, 0) = 1 / 5 \quad \mathrm{R} _ {3} (0, 0) = 4 / 5
+$$
+
+$$
+\mathrm{R} _ {4} (1, 1) = 2 / 5 \quad \mathrm{R} _ {4} (0, 1) = 3 / 5
+$$
+
+$$
+\mathrm{R} _ {4} (1, 0) = 4 / 5 \quad \mathrm{R} _ {4} (0, 0) = 1 / 5
+$$
+
+Với dữ liệu mới đưa vào, ví dụ x=<0, 0, 1, 1>, lớp của mẫu dữ liệu được quyết định bằng việc so sánh hai số:
+
+$$
+\mathrm{S} (1) = \mathrm{R} _ {1} (0, 1) \times \mathrm{R} _ {2} (0, 1) \times \mathrm{R} _ {3} (1, 1) \times \mathrm{R} _ {4} (1, 1) = 0. 2 0 5.
+$$
+
+$$
+\mathrm{S} (0) = \mathrm{R} _ {1} (0, 0) \times \mathrm{R} _ {2} (0, 0) \times \mathrm{R} _ {3} (1, 0) \times \mathrm{R} _ {4} (1, 0) = 0.
+$$
+
+Do: S(1) > S(0), mẫu mới được dự đoán rơi vào lớp 1. Ta có thể thấy phương pháp học Bayes khá đơn giản, chỉ bằng các thống kê tỷ lệ xuất hiện của các thuộc tính trên các lớp và sau đó dự đoán bằng cách so sánh tích những tỷ lệ này. Tuy nhiên, đẳng sau những bước đơn giản này là một nền tảng vững chắc vốn được thiết lập từ hàng thể kỳ trước: lý thuyết xác suất. Những phần tiếp theo sẽ trình bày chi tiết về việc áp dụng mô hình xác suất vào bài toán học máy.
+
+## II.2 Mô hình xác suất
+
+Ta xem xét mối quan hệ giữa việc học có giám sát và suy diễn theo Bayes. Xét ví dụ về cách thiết kế thuật toán học dựa trên luật Bayes.
+
+<!-- page: 191 -->
+
+Ô ví dụ học có giám sát, ta muốn xấp xi hàm mục tiêu chưa biết $f$: $X \to Y$ hoặc tương đương với $P(Y \mid X)$. Giả sử $Y$ là biến giá trị nhị phân ngẫu nhiên và $X$ là một vector chứa $n$ thuộc tính nhị phân. Nói cách khác, $X = \langle X_1, X_2, ..., X_n \rangle$ với $X_i$ là biến nhị phân ngẫu nhiên đại diện cho thuộc tính thứ $i$ của $X$.
+
+Áp dụng luật Bayes, ta thấy rằng P(Y = y\_i | X) có thể thể hiện như sau:
+
+$$
+P \left(Y = y _ {i} | X = x _ {k}\right) = \frac {P \left(X = x _ {k} | Y = y _ {i}\right) P (Y = y _ {i})}{\sum_ {j} P \left(X = x _ {k} | Y = y _ {i}\right) P (Y = y _ {i})}
+$$
+
+Với $y_m$ thể hiện giá trị thứ $m$ có thể của $Y$ và tổng trong mẫu số là trên toàn bộ giá trị hợp lệ của biến ngẫu nhiên $Y$.
+
+Một cách đề học P(Y|X) là dùng dữ liệu huấn luyện để ước lượng P(X|Y) và P(Y). Ta có thể dùng ước lượng trên cùng với luật Bayes để xác định P(Y | X = x\_k) cho bất kì thể hiện x\_k mới nào.
+
+Nếu muốn huấn luyện bộ phân lớp Bayes bằng cách ước lượng P(X|Y) và P(Y) thì câu hỏi đặt ra là cần bao nhiêu dữ liệu huấn luyện để có được ước lượng tin cây cho phân bổ đó, giả sử mẫu huấn luyện được phát sinh ngẫu nhiên từ phân bổ chưa biết P(X), sau đó gán nhân mẫu này với giá trị Y của nó.
+
+Hàng trăm mẫu huấn luyện phát sinh độc lập đủ đề có được ước lượng khả suất tối đại cho P(Y) trong vòng vài phần trăm sai số với Y là một biến nhị phân. Tuy nhiên, ước lượng một cách chính xác P(X|Y) thường cần nhiều mẫu hơn. Đề hiểu tại sao như vậy ta xem xét số lượng tham số mà ta phải ước lượng khi Y là giá trị nhị phân và X là một vector gồm n thuộc tính nhị phân. Trong trường hợp này, ta cần ước lượng tập tham số:
+
+$$
+\theta_ {i j} \equiv P (X = x _ {i} \mid Y = y _ {j})
+$$
+
+Với chỉ số $i$ nhận $2^{n}$ giá trị có thể (cho mỗi giá trị vector có thể của $X$) và $j$ nhận 2 giá trị có thể. Do đó ta cần ước lượng xấp xỉ $2^{n+1}$ tham số. Đế tính toán chính xác số lượng tham số cần tính thì tổng theo $i$ của $\theta_{ij}$ phải bằng một (với bất kì $j$ cổ định nào). Do đó, với bất kì giá trị $y_{j}$ nào và $2^{n}$ giá trị $x_{i}$ có thể, ta chỉ cần tính $2^{n}-1$ tham số độc lập. Với hai giá trị có thể của $Y$, ta phải ước lượng tổng cộng $2(2^{n}-1)$ tham số $\theta_{ij}$
+
+<!-- page: 192 -->
+
+như vậy. Hơn nữa, để có được ước lượng tin cậy cho mỗi tham số này, ta sẽ cần quan sát từng thể hiện khác nhau này nhiều lần. Điều này rõ ràng không khả thi trong hầu hết ứng dụng học trong thực tế.
+
+## II.3 Luật Bayes
+
+Yêu cầu ở đây là tìm cách giảm độ phức của thuật toán học phân lớp Bayes. Bộ phân lớp Naïve Bayes thực hiện điều này bằng cách đưa ra giả thuyết độc lập điều kiện làm giảm số lượng tham số sẽ ước lượng từ 2(2" - 1) xuống còn 2n khi mô hình hóa P(X|Y).
+
+## Độc lập có điều kiện
+
+$\text{Dịnh nghĩa: Cho các biến ngẫu nhiên X, Y và Z, ta nói X là độc lập có điều kiện của Y cho trước Z nếu và chỉ nếu phân bổ xác suất trên X độc lập so với giá trị của Y cho trước Z, đó là:}$
+
+$$
+\left(\forall i, j, k\right) P \Big (X = x _ {i} | Y = y _ {j}, Z = z _ {k} \Big) = P (X = x _ {i} \mid Z = z _ {k})
+$$
+
+Ví dụ, xét 3 biến nhị phân ngẫu nhiên mô tả thời tiết hiện tại: Mưa, Sẩm và Chớp. Ta có thể suy diễn ràng Sẩm độc lập với Mưa trong điều kiện có Chớp. Bời vì ta biết rằng Chớp tạo ra Sẩm, khi ta biết có Chớp thì không có thông tin gì thêm về Sẩm được cung cấp bởi Mưa. Dương nhiên là Sẩm có sự phụ thuộc vào giá trị của Mưa, nhưng sẽ không có sự phụ thuộc nào khi ta biết giá trị của Chớp
+
+Thuật toán Naïve Bayes là một thuật toán phân lớp dựa trên luật Bayes, trong đó giả sử rằng thuộc tính $X_{1},\ldots,X_{n}$ đều độc lập có điều kiện lẫn nhau đối với $Y$. Giá trị của giả sử này nằm ở chỗ nó đơn giản hóa thể hiện của $P(X|Y)$ và vấn đề ước lượng nó từ dữ liệu huấn luyện. Xem xét trường hợp mà: $X=\langle X_{1},X_{2}\rangle$.
+
+$$
+P (X | Y) = P (X _ {1}, X _ {2} | Y) = P (X _ {1} | X _ {2}, Y) P (X _ {2} | Y) = P (X _ {1} | Y) P (X _ {2} | Y)
+$$
+
+Trong đó, biểu thức thứ ba suy từ tính chất tổng quát của xác suất và biểu thức thứ tư suy trực tiếp từ định nghĩa độc lập có điều kiện ở trên. Tổng quát hơn, khi X chứa n thuộc tính đôi một độc lập có điều kiện cho trước Y thì ta có :
+
+<!-- page: 193 -->
+
+$$
+P \big (X _ {1} \dots X _ {2} | Y \big) = \prod_ {i = 1} ^ {n} P \big (X _ {i} | Y \big)\tag{1}
+$$
+
+Lưu ý rằng khi Y và X, là biến nhị phân, ta chỉ cần 2n tham số đề định nghĩa P(X\_i = x\_{ik} | Y = y\_j) cho các giá trị i, j, k. Đây là một sự giảm thiểu đáng kể so với 2(2^n - 1) tham số cần đề đặc trưng hóa P(X|Y) nếu ta không giả sử độc lập có điều kiện xảy ra.
+
+Bây giờ ta mở rộng thuật toán Naïve Bayes, giả sử rằng Y là biến giá trị rời rạc bất kì và các thuộc tính $X_{1},\ldots,X_{n}$ là các thuộc tính giá trị rời rạc hoặc giá trị thực bất kì. Mục đích là huấn luyện bộ phân lớp sao cho số cho ra phân bổ xác suất của các giá trị của Y, với mỗi thể hiện X mới ta yêu cầu nó phản lớp. Biểu thức xác suất trong đó Y sẽ nhận giá trị có thể thứ $k$ như sau (dựa trên luật Bayes):
+
+$$
+P \big (Y = y _ {k} | X _ {1} \dots X _ {n} \big) = \frac {P (Y = y _ {k}) P \big (X _ {1} \dots X _ {n} | Y = y _ {k} \big)}{\sum_ {j} P (Y = y _ {j}) P \big (X _ {1} \dots X _ {n} | Y = y _ {j} \big)}
+$$
+
+Trong đó tổng trên tất cả giá trị  $y_{i}$  có thể của Y. Bảy giờ, giả sử  $X_{i}$  độc lập có điều kiện với Y, ta có thể sử dụng công thức (1) viết lại như sau:
+
+$$
+P (Y = v _ {i} | X _ {1}, \dots X _ {n}) = \frac {P (Y = y _ {k}) \prod_ {i = 1} ^ {n} P (X _ {i} | Y _ {k})}{\sum_ {j} P (Y = y _ {j}) \prod_ {i = 1} ^ {n} P (X _ {i} | Y _ {j})}\tag{2}
+$$
+
+Công thức (2) là công thức cơ bản của bộ phân lớp Naïve Bayes. Với một thể hiện mới $X^{new} = \langle X_{i...}, X_{..} \rangle$ công thức này cho ta thấy cách tính xác suất mà $Y$ nhận bất kì giá trị nào cho trước, với giá trị thuộc tính $X^{new}$ và với phân bổ $P(Y)$ và $P(X|Y)$ được ước lượng từ dữ liệu huấn luyện. Nếu ta chỉ quan tâm đến giá trị nhiều khả năng nhất của $Y$ thì ta có luật phân lớp Naïve Bayes sau:
+
+<!-- page: 194 -->
+
+$$
+Y \leftarrow \operatorname{argmax} _ {y _ {i}} \frac {P (Y = y _ {k}) \prod_ {i = 1} ^ {n} P (X _ {i} | Y _ {k})}{\sum_ {j} P (Y = y _ {j}) \prod_ {i = 1} ^ {n} P (X _ {i} | Y _ {j})}
+$$
+
+Biểu thức đơn giản (vì mẫu số không phụ thuộc vào $y_{k}$):
+
+$$
+Y \leftarrow \operatorname{argmax} _ {y _ {k}} P \big (Y = y _ {k} \big) \prod_ {i = 1} ^ {n} P \big (X _ {i} | Y _ {k} \big)
+$$
+
+## II.4 Phép sửa Laplace
+
+Khi n thuộc tính đầu vào $X_{i}$, mỗi thuộc tính nhận $J$ giá trị rời rạc có thể, và $Y$ là biến rời rạc nhận $K$ giá trị có thể thì công việc học sẽ là ước lượng hai bộ tham số này. Bộ đầu tiên là:
+
+$$
+\theta_ {i j k} \equiv P (X = x _ {i j} \mid Y = y _ {k})
+$$
+
+Ứng với mỗi thuộc tính đầu vào $X_i$, mỗi giá trị $x_{ij}$ có thể và mỗi giá trị $y_k$ có thể của $Y$. Lưu ý ta có $nJK$ tham số như vậy và cũng lưu ý rằng chỉ có $n(J-1)K$ trong số đó là độc lập, với điều kiện là $1 = \Sigma_j \theta_{ijk}$ ứng với mỗi cặp giá trị $i, k$.
+
+Hon nửa, ta phải ước lượng tham số định nghĩa xác suất tiền điều kiện trên Y:
+
+$$
+\pi_ {k} \equiv P (Y = y _ {k})
+$$
+
+Lưu ý ta có K tham số như vậy, trong đó K - 1 là độc lập.
+
+Ta có thể ước lượng những tham số này sử dụng ước lượng khả suất tối đại (dựa trên việc tính toán tần suất của những sự kiện khác nhau trong dữ liệu).
+
+Ước lượng khả suất tối đại cho $\theta_{ijk}$ với tập mẫu huấn luyện D cho bởi:
+
+$$
+\hat {\theta} _ {i j k} = \hat {P} \Big (X = x _ {i j} | Y = y _ {k} \Big) = \frac {\# D \{X _ {i} = x _ {i j} \land Y = y _ {k} \}}{\# D \{Y = y _ {k} \}}
+$$
+
+Với toán từ #D{x} trả về số lượng phần tử trong tập D thỏa tính chất x.
+
+<!-- page: 195 -->
+
+Một điều nguy hiểm với ước lượng khả suất tối đại là nó có thể trả về kết quả ước lượng $\theta$ bằng 0, nếu dữ liệu không chứa bất kì mẫu huấn luyện nào thỏa mãn điều kiện. Đề tránh điều này, ta thường dùng một ước lượng “tron” trong đó thêm vào một số mẫu “ào” bổ sung và với giả sử rằng những mẫu này được phân phối đồng đều trên các giá trị của $X_{i}$. Ước lượng trơn này được cho bởi công thức:
+
+$$
+\hat {\theta} _ {i j k} = \hat {P} \Big (X = x _ {i j} | Y = y _ {k} \Big) = \frac {\# D \{X _ {i} = x _ {i j} \land Y = y _ {k} \} + l}{\# D \{Y = y _ {k} \} + l J}
+$$
+
+Với J là số lượng giá trị khác nhau mà $X_i$ có thể nhận và $l$ xác định trọng số của việc làm trơn (số lượng mẫu ảo là $lj$). Biểu thức này tương ứng với rốc lượng MAP cho $\theta_{ijk}$ nếu ta giả sử tồn tại phần bổ Dirichlet trên các tham số $\theta_{ijk}$ với những tham số có giá trị bằng nhau. Nếu l gắn bằng 1 thì phương pháp này được gọi là phép sửa Laplace.
+
+Ước lượng khả suất tối đại cho π là:
+
+$$
+\hat {\pi} _ {k} = \hat {P} (Y = y _ {k}) = \frac {\# D \{Y = y _ {k} \}}{| D |}
+$$
+
+Với |D| là số lượng phần tử trong tập huấn luyện D.
+
+$$
+\hat {\pi} _ {k} = \hat {P} (Y = y _ {k}) = \frac {\# D \{Y = y _ {k} \} + l}{| D | + l K}
+$$
+
+Với K là số lượng giá trị khác nhau mà Y có thể nhận và 1 xác định trọng số của việc làm trơn đối với các mẫu ào có liên quan trên dữ liệu quan sát D.
+
+## III. HỌC CÂY QUYẾT ĐỊNH
+
+Học cây quyết định là một trong những thuật toán học đơn giản nhất và cũng là dạng thành công nhất. Nó đóng vai trò khá tốt trong việc giới thiệu về thuật toán học và nó cũng dễ cải đặt. Đầu tiên ta tìm hiểu thành phần thực thi và sau đó xem cách nó học.
+
+<!-- page: 196 -->
+
+## III.1 Cây quyết định
+
+Cây quyết định nhận đầu vào là một đối tượng hoặc tỉnh hướng mô tả bởi tập các thuộc tính và trả về “quyết định” - dự đoán về giá trị đầu ra ứng với đầu vào. Các thuộc tính đầu vào có thể rời rạc hoặc liên tục. Từ đây ta giả sử đầu vào là rời rạc. Giá trị đầu ra cũng có thể là rời rạc hoặc liên tục, việc học một hàm giá trị rời rạc gọi là học để phân lớp, còn học một hàm có giá trị liên tục gọi là học hồi qui. Ta sẽ tập trung về bài toán phân lớp nhị phân, trong đó mỗi mẫu được phân loại là đúng hoặc sai.
+
+Cây quyết định cho ra quyết định qua một loạt các bước kiểm tra. Mỗi nút trong cây tương ứng với một bước kiểm tra giá trị của một trong các thuộc tính và các nhánh đi ra từ nút được gán nhân bằng giá trị có thể của thuộc tính được kiểm tra. Mỗi nút lá của cây xác định giá trị được trả về khi duyệt tới nút lá. Một ví dụ minh họa đơn giản, xét vấn đề có nên đợi để có bàn ở một nhà hàng không. Mục đích ở đây là học định nghĩa cho hàm mục tiêu Sẽ Đợi. Đề trở thành một bài toán học, ta phải xác định có những thuộc tính nào mô tả mẫu trong miền. Giả sử ta sẽ quyết định dựa trên những thuộc tính sau:
+
+1. Lựa chọn: Có nhà hàng nào khác gần đó phù hợp không?
+
+2. Quầy Bar: Nhà hàng có một quầy bar thời mái đề ngồi đợi không?
+
+3. Cuối tuần: Đúng (true) nếu vào thứ bày và chủ nhật.
+
+4. Đói: Ta có đói bụng không?
+
+5. Khách: Có bao nhiêu người trong nhà hàng (với giá trị là Không, Ít và Đầy).
+
+6. Giá: Giá cà ở nhà hàng.
+
+7. Trời mưa: Trời có đang mưa không?
+
+8. Đặt chỗ: Có đặt chỗ trước không?
+
+9. Loại: Loại nhà hàng (Pháp, Ý, Thái hoặc đồ ăn nhanh).
+
+10. Đợi bao lâu: Khoảng thời gian chờ ước lượng bởi nhà hàng (0 -10 phút, 10-30, 30-60, >60).
+
+Cây quyết định thường được dùng được thể hiện trong Hình 8.1.
+
+Lưu ý rằng cây này không dùng tới thuộc tính Giá và Loại, thực ra là xem·như chúng·không có gì liên quan. Các mẫu được xử lý bởi cây bắt đầu từ nút gốc và đi theo nhánh phù hợp cho tới khi đạt tới nút lá.
+
+<!-- page: 197 -->
+
+Ví dụ, một mẫu với Khách = Đầy và Đợi bao lâu = 0 -10 sẽ được
+phân vào lớp dương (= ta sẻ đợi).
+
+## III.2 Tính biểu diễn của cây quyết định
+
+Bất kì cây quyết định giả thuyết cho việc dự đoán Sẽ Đợi hay không có thể được xem Baltic một xác nhận với dạng:
+
+$$
+\forall s \text {S} \tilde {\mathrm{e}} \mathcal {D} \varphi i (s) \Leftrightarrow \left(P _ {1} (s) \vee P _ {2} (s) \vee \dots \vee P _ {n} (s)\right).
+$$
+
+Với mỗi điều kiện P₁(s) là liên kết của phép kiểm tra tương ứng với đường đi từ nút gốc của cây tới nút lá có kết quả đúng. Mặc dù, biểu thực này trong giống một câu bậc nhất, theo nghĩa nào đó thì nó là mệnh đề vì nó chứa một biến và tất cả vị từ đều đơn. Cây quyết định thực sự mô tả mối quan hệ giữa Sẽ Đợi và tổ hợp logic của các giá trị của thuộc tính. Ta không thể nào sử dụng cây quyết định đề thể hiện các kiểm tra liên quan tới hai hay nhiều đối tượng, ví dụ:
+
+$$
+\exists \mathrm{r} _ {2} \text {GânDây} (\mathrm{r} _ {2}, \mathrm{r}) \wedge \text {Giá} (\mathrm{r}, \mathrm{p}) \wedge \text {Giá} (\mathrm{r} _ {2}, \mathrm{p} _ {2}) \wedge \text {ReHon} (\mathrm{p} _ {2}, \mathrm{p})
+$$
+
+(Có nhà hàng nào gần đây rè hơn không?). Rō ràng, ta có thể thêm thuộc tính nhị phân khác với tên là NhàHàngRèHonÓGầnĐây, nhưng khó mà cộng tất cả thuộc tính như vậy được.
+
+<!-- page: 198 -->
+
+![](images/page_197_image_1.jpg)
+
+Hình 8.1 - Cây quyết định cho việc quyết định có đại để có bàn không.
+
+Cây quyết định được thể hiện đầy đủ bởi ngôn ngữ mạnh đề, tức là bất kì hàm Boolean nào đều có thể được viết như một cây quyết định. Điều này có thể được thực hiện đơn giản bằng cách tạo một dòng trong bảng chân trị của hàm cho mỗi đường đi trong cây. Nhưng nó cũng sẽ tạo ra thể hiện rất lớn vì bảng chân trị sẽ có rất nhiều dòng. Điều ta mong muốn là xây dựng cây quyết định có thể đại diện cho nhiều hàm bằng cấu trúc cây nhỏ hơn.
+
+## III.3 Rút cây quyết định từ ví dụ
+
+Một ví dụ về cây quyết định nhị phân gồm vector thuộc tính đầu vào X và một giá trị đầu ra nhị phân y. Tập các mẫu (X₁, y₁) ... (X₁₂, y₁₂) thể hiện trong Bảng 8-2.
+
+Mẫu đúng là mẫu mà đích Sẽ Đợi ra Có(X₁, X₃, ...); mẫu sai là mẫu mà nó ra Không(X₂, X₅,...). Tập mẫu đầy đủ được gọi tập huấn luyện.
+
+Bài toán tìm kiếm một cây quyết định mà đúng trên tập huấn luyện có về khó, nhưng trên thực tế có một lời giải đơn giản. Ta có thể đơn
+
+<!-- page: 199 -->
+
+giản xây dựng một cây quyết định mà nó có một đường đi đến nút lá cho mỗi mẫu, trong đó mỗi thuộc tính lần. Lượt được kiểm tra và dựa trên giá trị của mẫu và nút lá có mẫu phân lớp. Khi đưa vào lại mẫu đó, cây quyết định sẽ cho ra phân lớp đúng. Nhưng cây quyết định này sẽ không cho biết gì nhiều về những trường hợp khác chưa biết đến.
+
+Bảng 8-2. Các mẫu cho vị dụ nhà hàng. Các thuộc tính được ký hiệu theo thứ tự liệt kê trong phần III.1
+
+<table><tr><td rowspan="2">Mẫu</td><td colspan="10">Các thuộc tính</td><td>Mục tiêu Sẽ Đợi</td></tr><tr><td>A1</td><td>A2</td><td>A3</td><td>A4</td><td>A5</td><td>A6</td><td>A7</td><td>A8</td><td>A9</td><td>A10</td><td></td></tr><tr><td> $X_1$ </td><td>Có</td><td>K</td><td>K</td><td>Có</td><td>Ít</td><td> $\$\$\$$ </td><td>K</td><td>Có</td><td>Pháp</td><td>0-10</td><td>Có</td></tr><tr><td> $X_2$ </td><td>Có</td><td>K</td><td>K</td><td>Có</td><td>Đầy</td><td>$</td><td>K</td><td>K</td><td>Thái</td><td>30-40</td><td>K</td></tr><tr><td> $X_3$ </td><td>K</td><td>Có</td><td>K</td><td>K</td><td>Ít</td><td>$</td><td>K</td><td>K</td><td>Nhanh</td><td>0-10</td><td>Có</td></tr><tr><td> $X_4$ </td><td>Có</td><td>K</td><td>Có</td><td>Có</td><td>Đầy</td><td>$</td><td>Có</td><td>K</td><td>Thái</td><td>10-30</td><td>Có</td></tr><tr><td> $X_5$ </td><td>Có</td><td>K</td><td>Có</td><td>K</td><td>Đầy</td><td> $\$\$\$$ </td><td>K</td><td>Có</td><td>Pháp</td><td>&gt;60</td><td>K</td></tr><tr><td> $X_6$ </td><td>K</td><td>Có</td><td>K</td><td>Có</td><td>Ít</td><td>$$</td><td>Có</td><td>Có</td><td>Ý</td><td>0-10</td><td>Có</td></tr><tr><td> $X_7$ </td><td>K</td><td>Có</td><td>K</td><td>K</td><td>K</td><td>$</td><td>Có</td><td>K</td><td>Nhanh</td><td>0-10</td><td>K</td></tr><tr><td> $X_8$ </td><td>K</td><td>K</td><td>K</td><td>Có</td><td>Ít</td><td>$$</td><td>Có</td><td>Có</td><td>Thái</td><td>0-10</td><td>Có</td></tr><tr><td> $X_9$ </td><td>K</td><td>Có</td><td>Có</td><td>K</td><td>Đầy</td><td>$</td><td>Có</td><td>K</td><td>Nhanh</td><td>&gt;60</td><td>K</td></tr><tr><td> $X_{10}$ </td><td>Có</td><td>Có</td><td>Có</td><td>Có</td><td>Đầy</td><td> $\$\$\$$ </td><td>K</td><td>Có</td><td>Ý</td><td>10-30</td><td>K</td></tr><tr><td> $X_{11}$ </td><td>K</td><td>K</td><td>K</td><td>K</td><td>K</td><td>$</td><td>K</td><td>K</td><td>Thái</td><td>0-1Q</td><td>K</td></tr><tr><td> $X_{12}$ </td><td>Có</td><td>Có</td><td>Có</td><td>Có</td><td>Đầy</td><td>$</td><td>K</td><td>K</td><td>Nhanh</td><td>30-60</td><td>Có</td></tr></table>
+
+Vấn đề với cây này là nó chỉ ghi nhớ những gì quan sát được. Nó không rút trích bất kì dạng nào từ mẫu, do đó ta không thể mong nó có thể ngoại suy cho những mẫu mà nó chưa hè thấy qua. Áp dụng phương pháp cắt tĩa của Ockham, ta sẽ tìm ra cây quyết định nhỏ
+
+<!-- page: 200 -->
+
+nhất mà nó nhất quán với các mẫu. Việc tìm cây nhỏ nhất là một bài toán khó. Tuy nhiên, ta có thể dùng một vài heuristic đơn giản để thực hiện công việc tìm ra một cái “đủ nhỏ”. Ý tưởng chính của thuật toán là thực hiện kiểm tra thuộc tính quan trọng nhất trước. “Quan trọng nhất” có nghĩa là cái mà tạo nên sự khác biệt lớn nhất khi phân lớp mẫu. Bằng cách này, ta hi vọng sẽ đạt được sự phân lớp chính xác với một số lượng phép thử nhỏ, điều này đồng nghĩa với việc tất cả đường đi trên cây sẽ ngăn và như vậy nguyên cả cây sẽ nhỏ.
+
+Hình 8.2 cho thấy cách thuật toán chạy. Cho trước 12 mẫu huấn luyện, được phân thành tập đúng và sai. Sau đó ta quyết định thuộc tính nào sẽ được dùng cho phép thử đầu tiên trên cây. Hình 8.2 (a) cho thấy Loại là một thuộc tính xấu vì nó cho ta 4 đầu ra có thể cỏ, mỗi cái có cùng số lượng mẫu đúng và sai. Ngược lại, trong Hình 8.2 (b) ta thấy rằng Khách là một thuộc tính khá quan trọng bởi vì nếu giá trị của nó là Không hoặc Ít thì ta được các tập mẫu mà có thể trả lời chắc chắn (lần lượt là Không và Có). Nếu giá trị là Đầy, ta được tập mẫu lẫn lộn. Một cách tổng quát, sau khi thuộc tính thử đầu tiên tách các mẫu ra, mỗi đầu ra sẽ là một cây quyết định mới học với số mẫu và thuộc tính ít hơn. Có bốn trường hợp cần xem xét:
+
+1. Nếu ta có một số mẫu đúng và một số mẫu sai, thì ta chọn thuộc tính phân tách chúng tốt nhất. Hình 8.2 (b) cho thấy Đói được chọn để tách các mẫu.
+
+2. Nếu tất cả mẫu còn lại là đúng (hoặc sai) thì ta dùng ở đây. Ta có thể trả lời Có hoặc Không. Hình 8.2 (b) cho thấy một ví dụ trong trường hợp của Không và Ít.
+
+3. Nếu không còn mẫu nào thì điều này có nghĩa không có mẫu nào như vậy được quan sát và ta trả về giá trị mặc định được tính từ phân lớp đa số ở nút cha.
+
+4. Nếu không còn thuộc tính nào, nhưng vẫn còn cả mẫu đúng và sai thì có vấn đề ở đây. Nghĩa là xảy ra trường hợp các mẫu có cùng mô tả nhưng được phân lớp khác nhau. Điều này xảy ra khi dữ liệu nào đó bị sai, ta gọi đây là nhiều trong dữ liệu. Nó cũng xảy ra khi các thuộc tính không cung cấp đủ thông tin hoặc không xác định. Cách đơn giản để giải quyết vấn đề là bỏ phiếu theo số đông.
+
+<!-- page: 201 -->
+
+Cây được tạo bởi thuật toán áp dụng trên 12 mẫu dữ liệu được thể hiện trong Hiình 8.4. Cây này hoàn toàn khác với cây ban đầu trong Bảng 8-2, dù dữ liệu thực sự được phát sinh bằng cây gốc này. Một nhận xét có thể rút ra là thuật toán học chưa làm tốt công việc học. Tuy nhiên, dây có thể là một kết luận sai. Thuật toán học chỉ xem xét đến các mẫu, (xem Hình 8.4) nó không những đúng với tất cả các mẫu mà còn đơn giản hơn cây gốc. Thuật toán học không kiểm tra thuộc tính Mưa và Đặt chỗ vì nó có thể phân loại tất cả mẫu mà không cần đến hai thuộc tính này.
+
+![](images/page_200_image_2.jpg)
+
+Hình 8.2 - Tách các mẫu bằng việc kiểm tra thuộc tính. (a) Tách trên Loại không cho, ta sự phân biệt giữa mẫu đúng và mẫu sai. (b) Tách trên Khách lại làm tốt công việc phân biệt mẫu đúng và mẫu sai. Sau khi tách trên Khách, kiểm tra tiếp Đói sẽ cho kết quả khá tốt.
+
+<!-- page: 202 -->
+
+```python
+function Học_Cây_Quyết_Dịnh(tập_mẫu, thuộc_tính, mặc_dịnh) return cây quyết định t
+    if tập_mẫu rỗng then return mặc_dịnh
+    else if tất cả tập_mẫu đều thuộc cùng một lớp then return lớp
+    else if thuộc_tính rỗng then return Lớp_Da_Số(tập_mẫu)
+    else
+        b ← Chọn_Thuộc_Tính(thuộc_tính, tập_mẫu)
+        t ← cây quyết định mới với gốc là b
+        m ← Giá_Trị_Da_Số(tập_mẫu)
+        for each vi trong b do
+            tập_mẫu_i ← {phần tử trong tập_mẫu với b = vi}
+            st ← Học_Cây_Quyết_Dịnh (tập_mẫu_i, thuộc_tính_tốt_nhất, mặc_dịnh)
+            Thêm một nhánh vào t với nhân v_i và cây con là st
+        return t
+```
+
+Hình 8.3- Thuật toán xây dựng cây định danh.
+
+![](images/page_201_image_3.jpg)
+
+Hình 8.4 - Cây quyết định rút ra từ tập huấn luyện gồm 12 mẫu.
+
+## III.4 Chọn thuộc tính kiểm tra
+
+Phương pháp chọn thuộc tính sử dụng trong học cây quyết định được thiết kê để tối tiểu độ sâu của cây. Ý tưởng là chọn thuộc tính đạt được
+
+<!-- page: 203 -->
+
+sự phân lớp các mẫu cảng chính xác cảng tốt. Một thuộc tính hoàn hảo sẽ chia các mẫu thành các tập chỉ gồm mẫu đúng hoặc mẫu sai. Thuộc tính Khách không hoàn hảo nhưng lại khá tốt. Thuộc tính vô dụng để lại tập mẫu với tỉ lệ đúng và sai gần như ban đầu. Ta cần một cách tính hình thức cho khái niệm “khá tốt” và “vô dụng”, có thể cải đặt hàm chơn Chọn\_Thuộc\_Tính. Công thức tính phải đạt cực đại khi thuộc tính hoàn não và cục tiểu khi thuộc tính không có ích gì cả. Một đại lượng tính phù hợp đó là lượng thông tin được cung cấp bởi thuộc tính, một khái niệm mang tính toán học định nghĩa bởi Shannon và Weaver năm 1949. Đề hiểu khái niệm thông tin, xem nó như câu trả lời cho câu hỏi như khi nào đồng xu sẽ xuất hiện mặt ngừa. Lượng thông tin chứa trong câu trả lời phụ thuộc vào trì thức tiền định. Biết càng ít, thì thông tin được cung cấp sẽ cảng nhiều. Lý thuyết thông tin đo lường thông tin bằng số bit. Một bit thông tin đủ đề trả lời câu hỏi đúng/sai về điều mà ta không biết trước chăng hạn mặt của đồng xu được tung. Tổng quát, nếu những câu trả lời có thể vỉ có xác suất P(v\_i) thì lường thông tin I của câu trả lời thực sự được cho bởi:
+
+$$
+I \left(P (v _ {1}), \dots , P (v _ {n})\right) = \sum_ {i = 1} - P (v _ {i}) l o g _ {2} P (v _ {i})
+$$
+
+Đề kiểm tra công thức này, với việc tung đồng xu, ta có:
+
+$$
+I \left(\frac {1}{2}, \frac {1}{2}\right) = - \frac {1}{2} \log_ {2} \frac {1}{2} - \frac {1}{2} \log_ {2} \frac {1}{2} = 1 b i t
+$$
+
+Nếu biết đồng xu có 99% xấp, ta có I(1/100, 99/100) = 0.08 bit và với xác suất xấp đạt 1, thông tin về câu trả lời thực sự sẽ là 0.
+
+Với bài toán học cây quyết định, câu hỏi cần được trả lời là với một mẫu thì cái nào là phân lớp dụng của nó? Một cây quyết định đúng sẽ từ lời được câu hỏi này. Một uốc lượng xác suất của câu trả lời trước khi bắt kì thuộc tính nào được kiểm tra sẽ là tỉ lệ giữa mẫu đúng và sai trong tập huấn luyện. Giả sử tập huấn luyện chứa $p$ mẫu đúng và $n$ mẫu sai. Khi đó uốc lượng thông tin chứa trong câu trả lời đúng là:
+
+<!-- page: 204 -->
+
+$$
+I \left(\frac {p}{p + n}, \frac {n}{p + n}\right) = - \frac {p}{p + n} \log_ {2} \frac {p}{p + n} - \frac {n}{p + n} \log_ {2} \frac {n}{p + n}
+$$
+
+Tập huấn luyện trong Bảng 8-2 có $p = n = 6$ nên ta cần 1 bit thông tin.
+
+Phép thử trên một thuộc A sẽ không cho ta biết nhiều thông tin, nhưng nó sẽ cho ta một con số. Ta có thể đo chính xác bằng cách: xem ta còn cần bao nhiều thông tin khi kiểm tra thuộc tính. Thuộc tính A bất kì chia tập huấn luyện E thành các tập con $E_1, \ldots, E_v$ tương ứng với các giá trị của A, A có $v$ giá trị khác nhau. Mỗi tập con $E_i$ có $p_i$ mẫu đúng và $n_i$ mẫu sai, nên nếu ta đi theo nhánh này thì ta sẽ cần thêm I($p_i / (p_i + n_i)$, $n_i / (p_i + n_i)$) bit thông tin để trả lời câu hỏi. Một mẫu được chọn ngẫu nhiên từ tập huấn luyện với thuộc tính đó có giá trị thứ $I$ với xác suất chọn ($p_i + n_i$)/($p + n$), sau khi kiểm tra thuộc tính A, trung bình ta cần:
+
+$$
+R (A) = \sum_ {i = 1} ^ {\cdot} \frac {p _ {i} + n _ {i}}{p + n} I \left(\frac {p _ {i}}{p + n}, \frac {n _ {i}}{p + n}\right)
+$$
+
+Bit thông tin để phân lớp mẫu này. Độ lợi thông tin từ việc kiểm tra thuộc tính là sự khác biệt giữa yêu cầu thông tin ban đầu và yêu cầu mới:
+
+$$
+G a i n (A) = I \left(\frac {p}{p + n}, \frac {n}{p + n}\right) - R (A)
+$$
+
+Heuristic được sử dụng trong hàm Chọn\_Thuộc\_Tính chỉ đề chọn thuộc có độ lợi thông tin lớn nhất. Quay lại thuộc tính ta xem xét trong Hình 8.2, ta có:
+
+$$
+G a i n (K h á c h) = 1 - \left[ \frac {2}{1 2} I (0, 1) + \frac {4}{1 2} I (1, 0) + \frac {6}{1 2} I \left(\frac {2}{6}, \frac {4}{6}\right) \right] \quad \approx 0. 5 4 1 b i t
+$$
+
+$$
+G a i n (L o a i) = 1 - \left[ \frac {2}{1 2} I \left(\frac {1}{2}, \frac {1}{2}\right) + \frac {. 2}{1 2} I \left(\frac {1}{2}, \frac {1}{2}\right) + \frac {4}{1 2} I \left(\frac {2}{4}, \frac {2}{4}\right) + \frac {4}{1 2} I \left(\frac {2}{4}, \frac {2}{4}\right) \right] = 0
+$$
+
+<!-- page: 205 -->
+
+Khẳng định nhận xét rằng Khách là thuộc tính phân tách tốt hơn. Trên thực tế, Khách có độ lợi thông tin cao nhất trong số các thuộc tính và sẽ được chọn làm nút gốc bởi thuật toán học cây quyết định.
+
+## III.5 Đánh giá hiệu quả của thuật toán học
+
+Một thuật toán học tốt nếu nó tạo ra các giả thuyết làm tốt công việc dự đoán lớp của mẫu chưa được học. Ta sẽ xem xét phương pháp đánh giá chất lượng của việc dự đoán.
+
+Dự đoán sẽ tốt nếu nó cho kết quả đúng, nên ta có thể đánh giá chất lượng của giả thuyết bằng cách kiểm tra dự đoán của nó với phân lớp đúng khi ta biết nó. Ta làm điều này trên một tập mẫu được gọi là tập thử nghiệm. Nếu ta huấn luyện trên tất cả mẫu có sẵn thì ta sẽ phải lấy thêm những mẫu khác đề thử, thông thường đề tiện lợi thì người ta thực hiện phương pháp sau:
+
+1. Thu thập một tập mẫu lớn.
+
+2. Chia nó làm 2 tập phân biệt: tập huấn luyện và tập thử.
+
+3. Áp dụng thuật toán học trên tập huấn luyện tạo ra một giả thuyết h.
+
+4. Do ti lệ phần trăm mẫu trong tập thử được phân lớp đúng bởi h.
+
+5. Lặp lại bước 2 đến 4 cho những tập huấn luyện kích thước khác nhau và với mỗi kích thước tập huấn luyện được chọn ngẫu nhiên
+
+## III.6 Nhiễu và quá khớp
+
+Ta thấy trong phần trước nếu hai hay nhiều mẫu có cùng mô tả (tức là các thuộc tính) nhưng khác kết quả phân lớp thì thuật toán sẽ thất bại trong việc tìm ra một cây quyết định nhất quán cho tất cả các mẫu. Giải pháp đề cập trước đây là cho mỗi nút lá hoặc trả về phân lớp cho đa số mẫu hoặc trả về ước lượng xác suất của mỗi phân lớp. Không may, việc này không giải quyết hết vấn đề. Thuật toán học cây quyết định vẫn có thể tìm ra cây quyết định nhất quán cho tất cả các mẫu trong trường hợp thông tin quan trọng bị thiểu. Bời vì thuật toán có thể dùng lithiumung thuộc tính khác nếu có đề phân biệt giữa các mẫu. Xem xét việc dự đoán kết quả tung xúc sắc. Giả sử ràng thí nghiệm được tiến hành trong thời gian dài trên nhiều con xúc sắc và các thuộc tính mô tả mỗi mẫu huấn luyện như sau:
+
+1. Thứ: ngày thực hiện tung xúc sắc (Thứ 2, Thứ 3, Thứ 4, Thứ 5).
+
+<!-- page: 206 -->
+
+2. Tháng: tháng thực hiện tung xúc sắc (Tháng 1 hoặc Tháng 2).
+
+3. Màu: màu của xúc sắc (Xanh hoặc Đỏ).
+
+Miễn là không có hai mẫu nào giống nhau, thuật toán học cây quyết định sẽ tìm ra giả thuyết đúng. Cảng nhiều thuộc tính thì thuật toán sẽ cảng dễ tìm ra giả thuyết đúng. Bất kì giả thuyết nào như vậy sẽ hoàn toàn không chính xác. Điều ta mong muốn là thuật toán học trả về một nút lá với xác suất gần bằng 1/6 cho mỗi lần tung, một khi nó học đủ mẫu.
+
+Khi ta có một tập lớn những giả thuyết có thể thì nên cần thận không sử dụng kết quả để tìm ra những “dạng” vô nghĩa trong dữ liệu. Vấn đề này gọi là quá khớp. Một hiện tượng rất tổng quát, quá khớp xảy -ra ngay cả khi hàm mục tiêu không hè ngẫu nhiên. Nó ảnh hưởng tới mọi loại thuật toán học không chỉ có cây quyết định.
+
+Việc xử lý quá khớp thuần túy bằng toán học vượt quá phạm vi giáo trình này. Ô đây một kỹ thuật đơn giản dùng đề giải quyết vấn đề này được gọi là tia cây quyết định. Bằng cách tia cây, nhiều có thể được loại bò: phân lớp nhằm làm tăng tuyến tính việc dự đoán sai, khi lôi trong mô tả mẫu có tác động tiệm cận càng xấu đi khi cây thu nhỏ trên tập nhỏ hơn. Cây được xây dựng cùng với việc tia thực thi hiệu quả hơn nhiều so với cây xây dựng không qua thao tác tia và khi dữ liệu chứa một lượng lớn nhiều. Cây được tia thường nhỏ hơn nhiều và do đó dễ hiểu hơn nhiều.
+
+Kiểm tra chéo là một kĩ thuật khác giúp giảm thiểu quá khớp. Nó có thể được áp dụng cho bất kì thuật toán học nào không chỉ riêng học cây quyết định. Ý tường cơ bản là ước lượng mỗi giả thuyết dự đoán dữ liệu chưa học tốt cỡ nào. Việc này được thực hiện bằng cách lấy ra một số phần dữ liệu đã biết và sử dụng nó đề kiểm tra khả năng dự đoán của giả thuyết qui nạp từ dữ liệu còn lại. K-fold kiểm tra chéo nghĩa là ta chạy k lần thử, mỗi lần chạy lấy ra 1/k khác nhau của bộ dữ liệu để kiểm tra và tính kết quả trung bình. Giá trị k thường dùng là 5 và 10. Nhỏ nhất là $k = n$ được xem là kiểm tra chéo với một phần tử. Kiểm tra chéo có thể được sử dụng kết hợp với bất kì phương pháp xây dựng cây nào (bao gồm cả tia cây) đề chọn ra một cây có khả năng dự đoán tốt. Đề tránh bị việc quá trình học đã biết trước tập kiểm tra ta phải đo hiệu quả bằng một tập kiểm tra mới.
+
+<!-- page: 207 -->
+
+## III.7 Mở rộng tính ứng dụng của cây quyết định
+
+Đề mở rộng cây quyết định cho nhiều bài toán khác nhau, một số vấn đề cần được quan tâm sẽ đề cập sơ qua. Các vấn đề quan trọng là:
+
+\- Dữ liệu bị thiếu: Trong nhiều lĩnh vực, không phải tất cả giá trị thuộc tính của mỗi mẫu đều được biết trước. Những giá trị này có thể không được ghi nhận hoặc có thể rất tốn kém để có được. Việc này đặt ra hai vấn đề: một là với một cây quyết định đầy đủ, làm thế nào để phân lớp một đối tượng mà nó bị thiếu một trong những thuộc tính cần kiểm tra? Hay là nên thay đổi công thức lượng thông tin có được như thế nào khi một số mẫu có giá trị thuộc tính chưa biết? Những câu hỏi này xem như bài tập.
+
+\- Thuộc tính đa giá trị: Khi một thuộc tính có nhiều giá trị, độ đo thông tin không phù hợp để cho biết sự hữu dụng của thuộc tính. Trường hợp xấu nhất, ta có thể dùng một thuộc tính mà có giá trị khác nhau cho mỗi mẫu, chẳng hạn TênNhàHàng. Khi đó mỗi tập con sẻ là một đơn thể với một phân lớp duy nhất, nên độ đo thông tin sẽ có giá trị cao nhất cho thuộc tính này. Tuy nhiên, thuộc tính này có thể không liên quan gì hoặc vô dụng. Một giải pháp là sử dụng độ lợi thông tin.
+
+\- Thuộc tính đầu vào có giá trị nguyên và liên tục: Thuộc tính có giá trị nguyên hoặc liên tục như chiều cao và cân nặng có tập vô hạn các giá trị có thể có. Thay vì phát sinh vô hạn nhánh, thuật toán học cây quyết định thường tìm điểm phân chia sao cho đạt lượng thông tin cao nhất. Ví dụ, tại một nút trên cây, có thể trường hợp kiểm tra chiều cao>160cm cung cấp nhiều thông tin nhất. Phương pháp qui hoạch động sẽ giúp tìm ra điểm chia tốt, nhưng vẫn còn khá xa so với phần phức tạp nhất của học cây quyết định trong ứng dụng thực tế.
+
+\- Thuộc tính đầu ra có giá trị liên tục: Nếu ta định dự đoán một giá trị dạng số, như giá trị một tác phẩm nghệ thuật chẳng hạn, thì ta cần một cây hồi qui. Cây này có mỗi nút lá là một hàm tuyến tính của thuộc tính số thay vì chỉ một giá trị. Ví dụ, nhánh của tác phần điều knắc bằng tay có thể kết thúc với hàm tuyến tính theo diện tích, tuổi và số lượng màu sắc. Thuật toán học phải quyết
+
+<!-- page: 208 -->
+
+định khi nào dùng việc phân chia và bắt đầu áp dụng hồi qui tuyến tính sử dụng những thuộc tính còn lại.
+
+Hệ thống học cây quyết định cho các ứng dụng thực tế phải giải quyết tất cả vấn đề trên. Việc xử lý biến có giá trị liên tục đặc biệt quan trọng, vì các qui trình vật lý và tài chính sử dụng dữ liệu dạng số. Nhiều gói sản phẩm thương mại đã được xây dựng thỏa mãn những tiêu chí này và chúng được dùng để phát triển hàng trăm hệ thống chuyên biệt. Trong nhiều lĩnh vực công nghiệp và thương mại, cây quyết định thường là phương pháp đầu tiên được dùng khi cần một phương pháp phân lớp trên tập dữ liệu. Một tính chất quan trọng của cây quyết định là con người có thể hiểu đầu ra của thuật toán học. Tỉnh chất này không có trong mạng no-ron nhân tạo.
+
+## IV. KẾT CHƯƠNG
+
+Chương này giới thiệu một số ý tưởng và kỹ thuật cơ bản về học máy trong đó tập trung vào học có giám sát với một số điểm quan trọng như sau:
+
+\- Học máy có nhiều dạng khác nhau tùy thuộc vào bản chất của phương pháp và sự hiện diện của phản hồi trong quá trình học.
+
+\- Nếu có sự phản hồi trong quá trình học, từ người thấy hay từ môi trường, cho biết các giá trị đúng của các mẫu, bài toán học được gọi là học có giám sát. Nhiệm vụ của học máy lúc này là rút ra từ các mẫu một ánh xạ giữa đầu vào và đầu ra.
+
+\- Phương pháp Naïve Bayes là một mô hình học máy khá cơ bản có nền tảng toán học chắc chắn. Tuy nhiên, phương pháp này cũng dựa trên giả định độc lập có điều kiện của các thuộc tính nên hạn chế khả năng áp dụng trên nhiều lớp bài toán.
+
+\- Cây quyết định có thể biểu diễn tất cả ánh xạ logic. Độ lợi thông tin cung cấp một phương pháp hiệu quả để tìm một cây đơn giản và nhất quán với dữ liệu. Phương pháp cất tia của Ockham giúp ta rút gọn cây.
+
+\- Hiệu quả của một thuật toán học cho biết sự chính xác của dự đoán trên tập thử và phụ thuộc vào kích thước tập huấn luyện.
+
+<!-- page: 209 -->
+
+## V. THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+classification: phân lớp
+conditional independence: độc lập có điều kiện
+cross-validation: kiểm tra chéo
+decision tree: cây quyết định
+information gain: độ lợi thông tin
+Laplace correction: phép sửa Laplace
+maximum likelihood estimation: ước lượng khả suất tối đại
+naïve Bayesian classifier: bộ phân lớp naïve Bayes
+noise: nhiều
+Ockham's razor: phương pháp cắt tia của Ockham
+overfitting: quá khớp
+regression: hồi qui
+reinforcement learning: học tăng cường
+supervised learning: học có giám sát
+test set: tập thử
+training set: tập huấn luyện
+unsupervised learning: học không giám sát
+
+<!-- page: 210 -->
+
+<!-- page: 211 -->
+
+# MẠNG NO'-RON NHÂN TẠO
+
+## I. GIÓI THIỆU - MẠNG NO-RON LÀ GÌ?
+
+Một mạng nor-ron có thể được định nghĩa là một mô hình suy diễn mô phòng theo bộ não của con người. Bộ não chứa một tập hợp các tế bào thân kinh, hay là những đơn vị xử lý thông tin cơ bản gọi là nor-ron, kết nối lẫn nhau một cách dày đặc. Bộ não con người tích hợp gần 10 tỷ nor-ron và 60 ngân tỷ kết nối giữa chúng, gọi là các khớp thần kinh. Bằng cách sử dụng nhiều nor-ron đồng thời, bộ não có thể thực thi chức năng của mình nhanh hơn nhiều lần so với các máy tính nhanh nhất tồn tại ngày nay.
+
+![](images/page_210_image_5.jpg)
+
+Mia 9.1 - Các thành phần của một nơ-ron.
+
+Mặc dù mỗi nơ-ron có một cấu trúc rất đơn giản, một đội quân của các phần từ như thế cũng tạo thành một sức mạnh xử lý không lồ. Một nơ-ron bao gồm một nhân tế bào, một số rễ con và một sợi rễ dài. Trong
+
+<!-- page: 212 -->
+
+khi các rễ con phân bó trong một mạng xung quanh một nhân thần kinh, rễ dài kéo dài đến các rễ con và nhân của các nơ-ron khác. Hình 9.1 minh họa một số phần của một nơ-ron.
+
+Các tín hiệu được lan truyền từ một nơ-ron này đến nơ-ron khác bằng các phản ứng điện hóa phức tạp. Các tác nhân hóa học từ các khớp thần kinh gây ra một thay đổi trong thế điện năng của một tế bào. Khi thế điện năng này đạt ngưỡng, một tín hiệu điện được gửi xuống qua các nhân thần kinh. Tín hiệu lan rộng ra và dẫn đản đi đến các khớp thần kinh, làm tăng hay giảm điện thế của chúng. Tuy nhiên, phát hiện lý thú nhất là một mạng nơ-ron có khả năng thay đổi. Đề đáp ứng với một mẫu kích hoạt, các nơ-ron thực hiện các thay đổi dài hạn trong độ lớn của các liên kết giữa chúng. Các nơ-ron cũng có thể hình thành các kết nối mới với các nơ-ron khác. Ngay cả toàn bộ tập hợp các nơ-ron đổi khi cũng có thể được di chuyển từ một nơi này đến nơi khác. Các cơ chế này hình thành cơ sở cho việc học của bộ não.
+
+Bộ não của chúng ta có thể được xem như là một hệ thống xử lý thông tin song song, phi tuyến và có độ phức tạp cao. Thông tin được lưu trữ và xử lý trong một mạng thông tin đồng thời trên toàn bộ mạng thay vì tại một vị trí cụ thể. Nói cách khác, trong một mạng nơ-ron, cả dữ liệu và việc xử lý chúng là toàn cục thay vì cục bộ.
+
+Nhở vào khả năng thay đổi, các kết nối giữa các nơ-ron đưa đến “câu trả lời đúng” được tăng cường, trong khi những kết nối đưa đến “câu trả lời sai” bị làm yếu di. Kết quả là các mạng nơ-ron có khả năng học thông qua kinh nghiệm.
+
+Việc học là một đặc tính cơ bản và thiết yếu của các mạng no-ron sinh học. Chứng có thể thực hiện điều đó một cách dễ dàng và tự nhiên. Điều này dẫn đến những cổ gắng để mô phỏng một mạng no-ron sinh học trong máy tính.
+
+Mặc dù một mạng no-ron nhân tạo ngày nay bắt chức bộ não con người, cũng giống như việc một chiếc máy bay giấy bắt chức một phản lực siêu thanh, đây cũng có thể xem là một bước tiến. Các mạng no-ron nhân tạo có khả năng “học”, nghĩa là chúng có thể dùng kinh nghiệm để cải thiện hiệu quả của mình. Khi được cung cấp một số lượng mẫu đủ lớn, các mạng no-ron nhân tạo có thể tổng quát hóa đến
+
+<!-- page: 213 -->
+
+các mẫu chứng chưa hè gặp. Chứng có thể nhận dạng chữ viết tay, nhận diện từ trong lời nói của con người và phát hiện thuốc nổ tại sân bay...
+
+## II. MẠNG NO-RON NHÂN TẠO
+
+## II.1 Kiến trúc mạng no-ron nhân tạo
+
+Một mạng nơ-ron nhân tạo bao gồm một số các bộ xử lý rất đơn giản và kết nối dày đặc, gọi là các nơ-ron, tương tự như các nơ-ron sinh học trong não. Các nơ-ron được kết nối bởi các liên kết trọng số, truyền các tín hiệu từ một nơ-ron này đến một nơ-ron khác. Mỗi nơ-ron nhận một số tín hiệu nhập (đầu vào) qua các liên kết của nó; tuy nhiên nó không bao giờ tạo ra nhiều hơn một tín hiệu xuất (đầu ra). Tín hiệu đầu ra được chuyển qua các kết nối đi ra ngoài của nơ-ron (tương tự các axon sinh học). Kết nối đi ra ngoài đến lượt nó được chia thành một số nhánh chuyển cùng một tín hiệu (tín hiện không bị chia nhỏ trên các nhánh). Các nhánh đi ra kết thúc tại các kết nối đi vào của các nơ-ron khác trong mạng. Hình 9.2 biểu diễn các kết nối của một mạng nơ-ron nhân tạo tiêu biểu và Bảng 9-1 trình bày sự tương tự giữa các mạng nơ-ron sinh học và nhân tạo.
+
+Các nơ-ron được kết nối bởi các liên kết và mỗi liên kết có một trọng số số học liên kết với nó. Các trọng số là các trung bình cơ sở của bộ nhớ dài hạn trong các mạng nơ-ron nhân tạo. Chúng biểu diễn độ mạnh kết nối của mỗi đầu vào nơ-ron.
+
+![](images/page_212_image_6.jpg)
+
+Hình 9.2 - Kiến trúc của một mạng nơ-ron nhân tạo tiêu biểu.
+
+<!-- page: 214 -->
+
+Băng 9-1 Sự tương tự giữa các mạng nơ-ron sinh học và nhân tạo.
+
+| Mạng nơ-ron sinh học | Mạng nơ-ron nhân tạo |
+| --- | --- |
+| Soma | Nơ-ron |
+| Dendrite | Đầu vào |
+| Axon | Đầu ra |
+| Synapse | Trọng số |
+
+Một mạng no-ron “học” bằng cách lập lại quá trình điều chỉnh các trọng số này.
+
+Nhu trong Hình 9.2, một mạng nơ-ron nhân tạo được tạo thành theo dạng các lớp phân cấp và các nơ-ron trong mạng được sắp xếp đọc theo các lớp này. Các nơ-ron kết nối với môi trường bên ngoài hình thành nên lớp nhập và xuất. Các trọng số được điều chỉnh đề làm cho hành vi nhập/xuất của mạng phù hợp với môi trường. Mỗi nơ-ron là một đơn vị xử lý thông tin cơ sở. Nó có một phương tiện tính toán giá trị kích hoạt dựa trên đầu vào và các trọng số số học.
+
+Đề xây dựng một mạng no-ron nhân tạo, chúng ta phải quyết định trước tiên sử dụng bao nhiêu no-ron và các no-ron được kết nối như thể nào đề tạo thành mạng. Hay nói cách khác trước tiên chúng ta lựa chọn kiến trúc mạng. Sau đó, ta quyết định sẽ sử dụng thuật toán học nào. Cuối cùng chúng ta huấn luyện mạng no-ron, đầu tiên khởi tạo các trọng số của mạng và cập nhật các trọng số từ một tập các mẫu huấn luyện.
+
+## II.2 No-ron như là một thành phần tính toán đơn giản
+
+Một nơ-ron nhận một số tín hiệu từ các liên kết đầu vào, tính toán mức độ kích hoạt mới và gọi giá trị này như một tín hiệu đầu ra đến các liên kết đầu ra. Tín hiệu đầu vào có thể là dữ liệu thô hoặc kết xuất của các nơ-ron khác. Tín hiệu đầu ra có thể là lời giải của cuối của vấn đề hoặc một đầu vào cho các nơ-ron khác. Hình 9.3 trình bày một nơ-ron tiêu biểu.
+
+<!-- page: 215 -->
+
+![](images/page_214_image_1.jpg)
+
+Hình 9.3 - Sơ đồ của một nơ-ron.
+
+No-ron tính tổng có trọng số các tín hiệu đầu vào và so sánh kết quả với một giá trị ngưỡng θ. Nếu đầu vào của mạng nhỏ hơn ngưỡng, đầu ra no-ron là -1. Nhung nếu đầu vào mạng lớn hơn hoặc bằng ngưỡng, no-ron được kích hoạt và đầu ra của nó mang giá trị +1.
+
+Nói cách khác, nơ-ron dùng hàm chuyển hay hàm kích hoạt sau:
+
+$$
+X = \sum_ {i = 1} ^ {n} r _ {i} w _ {i}\tag{9.1}
+$$
+
+$$
+Y = \left\{ \begin{array}{l l} + 1 & \text { khi   } X \geq 0 \\ - 1 & \text { khi   } X <   0 \end{array} \right.
+$$
+
+trong đó X là đầu vào có trọng số của nơ-ron,  $x_{i}$  là giá trị của đầu vào i,  $w_{i}$  là trọng số của đầu vào i, n là số đầu vào nơ-ron và Y là giá trị đầu ra của nơ-ron.
+
+Loại hàm kích hoạt này được gọi là hàm dấu. Đầu ra thật sự của noron với một hàm kích hoạt dấu có thể được biểu diễn bằng:
+
+$$
+Y = \text {sign} \left[ \sum_ {i = 1} ^ {n} x _ {i} w _ {i} - \theta \right] _ {i, \dots}\tag{9.2}
+$$
+
+<!-- page: 216 -->
+
+Nhiều hàm kích hoạt đã được kiểm tra nhưng chỉ có một số có ứng dụng thực tế. Bốn lựa chọn phổ biến là hàm bước (step), dấu (sign), tuyến tính (linear) và sigmoid được mô tả trong Hinh 9.4.
+
+Hàm bước
+
+Hàm dấu
+
+Hàm sigmoid
+
+Hàm tuyến tính
+
+![](images/page_215_image_6.jpg)
+
+![](images/page_215_image_7.jpg)
+
+Hình 9.4 - Hàm kích hoạt của các nơ-ron.
+
+Các hàm kích hoạt bước và đầu, còn được gọi là các hàm giới hạn cứng, thường được sử dụng cho các nơ-ron ra quyết định cho các nhiệm vụ phân lớp và nhận dạng mẫu. Hàm sigmoid biến đổi đầu vào, vốn có thể có bất cứ giá trị hữu hạn nào, thành một giá trị tương ứng nằm trong khoảng 0 và 1. Các nơ-ron với hàm này có thể được dùng trong các mạng lan truyền ngược. Hàm kích hoạt tuyến tính cung cấp một đầu ra có giá trị bằng với đầu vào có trọng số của nơ-ron. Các nơ-ron với hàm tuyến tính thường dùng cho việc xấp xỉ tuyến tính.
+
+Năm 1985, Frank Rosenblatt giới thiệu một thuật toán cung cấp thủ tục đầu tiên để huấn luyện một mạng nơ-ron nhân tạo đơn giản: một perceptron. Perceptron là dạng đơn giản nhất của một nơ-ron nhân tạo. Nó bao gồm một nơ-ron duy nhất với các trọng số có thể điều chỉnh được và một ngưỡng cố định. Một perceptron một lớp hai đầu vào được trình bày trong Hình 9.5.
+
+<!-- page: 217 -->
+
+![](images/page_216_image_1.jpg)
+
+Hình 9.5 - Perceptron một lớp hai đầu vào.
+
+## III. PERCEPTRON
+
+## III.1 Các perceptron biểu diễn điều gì?
+
+Hoạt động của một perceptron dựa trên mô hình nơ-ron của McCulloch và Pitts. Mô hình gồm một hàm kết hợp tuyến tính và một ngưỡng cố định. Tổng theo trọng số của các đầu vào sẽ được trừ giá trị ngưỡng và sẽ cho ra kết quả đầu ra bằng +1 nếu đầu vào dương và -1 nếu đầu vào âm. Mục đích của pêrceptron là phân lớp đầu vào, hay nói cách khác ngoại suy các giá trị kích thích: $x_1$, $x_2$, ..., $x_n$ vào một trong hai lớp: $A_1$ và $A_2$. Do đó, trong trường hợp một perceptron cơ bản, không gian n-chiếu được chia tách bởi một siêu phẳng thành hai miền quyết định. Siêu phẳng này được định nghĩa bởi một hàm khả phân tuyến tính:
+
+$$
+\sum_ {i = 1} ^ {n} x _ {i} w _ {i} - \theta = 0.\tag{9.3}
+$$
+
+Đối với trường hợp hai đầu vào $x_{1}$ và $x_{2}$, biên quyết định có dạng một đường thẳng đậm trong Hình 9.6 (a). Với ba giá trị đầu vào, siêu phẳng vẫn có thể được vẽ ra như trong Hình 9.6 (b). Mặt phẳng phân biệt này được định nghĩa bởi phương trình:
+
+$$
+x _ {1} w _ {1} + x _ {2} w _ {2} + x _ {3} w _ {3} - \theta = 0.
+$$
+
+<!-- page: 218 -->
+
+![](images/page_217_image_1.jpg)
+
+(a)
+
+![](images/page_217_image_3.jpg)
+
+(b)
+
+Hình 9.6 - Tỉnh phân biệt tuyến tính trong các perceptron: (a) perceptron hai đầu vào; (b) perceptron ba đầu vào.
+
+Việc xây dựng các phương trình được thực hiện bằng cách áp dụng những thay đổi nhỏ trên các trọng số để làm giảm sự khác biệt giữa các giá trị đầu ra thực tế và đầu ra mong muốn của perceptron. Giá trị trọng số ban đầu được gán ngẫu nhiên, thường là trong khoảng [-0.5, 0.5] và sau đó được cập nhật để đạt được đầu ra nhất quán với các mẫu huấn luyện. Đối với một perceptron, quá trình cập nhật trọng số đặc biệt đơn giản. Nếu tại vòng lập thứ $p$, đầu ra thực tế là $Y(p)$ và đầu ra mong muốn là $Y_{d}(p)$, thì sai số được cho bởi:
+
+$$
+e (p) = Y _ {d} (p) - Y (p) \text {trong do} p = 1, 2, 3, \dots\tag{9.4}
+$$
+
+Vòng lặp $p$ ở đây dùng để chỉ mẫu h fractional luyện thứ $p$ được biểu diễn bởi perceptron.
+
+Nếu sai số $e(p)$ dương, ta cần tăng đầu ra perceptron $Y(p)$, nhưng nếu sai số âm, ta cần giảm $Y(p)$. Do mỗi đầu vào perceptron đóng góp giá trị $x_i(p) \times w_i(p)$ vào đầu vào tổng $X(p)$, ta thấy rằng nếu giá trị đầu vào $x_i(p)$ là dương, việc tăng trọng số $w_i(p)$ của nó sẽ làm tăng giá trị đầu ra perceptron $Y(p)$, trong khi nếu $x_i(p)$ âm, việc tăng $w_i(p)$ sẽ làm giảm $Y(p)$. Do đó quy tắc học perceptron sau đây có thể được thiết lập:
+
+<!-- page: 219 -->
+
+$$
+w _ {i} (p + 1) = w _ {i} (p) + \alpha \times x _ {i} (p) \times e (p)\tag{9.5}
+$$
+
+trong đó α là tốc độ học, một hằng số dương.
+
+## III.2 Thuật toán huấn luyện perceptron
+
+Quy tắc học perceptron được đề xuất đầu tiên bởi Rosenblatt năm 1960. Dùng quy tắc nay ia có thể rút ra thuật toán huấn luyện perceptron cho việc phân lớp.
+
+Bước 1: Khôi tạo
+
+Đặt giá trị ngẫu nhiên trong đoạn [-0.5, 0.5] cho các trọng số ban đầu $w_{1}, w_{2}, \ldots, w_{n}$ và ngưỡng $\theta$.
+
+## Bước 2: Kích hoạt
+
+Kích hoạt perceptron bằng cách dùng các đầu vào $x_{1}(p), x_{2}(p), \ldots, x_{n}(p)$ và đầu ra mong muốn $Y_{d}(p)$. Tính đầu ra thực tế tại vòng lặp $p = 1$
+
+$$
+Y = s t e p \left[ \sum_ {i = 1} ^ {n} x _ {i} (p) w _ {i} (p) - \theta \right]\tag{6.6}
+$$
+
+trong đó n là số đầu vào perceptron, và step là hàm kích hoạt bước.
+
+## Bước 3: Huấn luyện trọng số
+
+Cập nhật các trọng số của perceptron
+
+$$
+w _ {i} (p + 1) = w _ {i} (p) + \Delta w _ {i} (p)\tag{6.7}
+$$
+
+trong đó  $\Delta w_{i}(p)$  là sửa lôi tại vòng lặp p.
+
+Sửa lôi trọng số được tính bởi quy tắc delta:
+
+$$
+\Delta w _ {i} (p) = \alpha \times x _ {i} (p) \times e (p)\tag{6.8}
+$$
+
+## Bước 4: Lăp
+
+Tăng vòng lặp p lên một, quay lại Bước 2 và lặp lại quá trình cho đến khi hội tụ.
+
+<!-- page: 220 -->
+
+## III.3 Phân tích.
+
+Chúng ta sẽ xem xét một ví dụ đơn giản trong việc huấn luyện perceptron để biểu diễn các toán từ logic đơn giản. Bảng chân trị của các toán từ AND, OR và XOR được trình bày trong Bảng 9.2. Bảng biểu diễn tất cả tổ hợp có thể của các giá trị cho hai biến $x_{1}$ và $x_{2}$ và kết quả của các toán từ. Perceptron phải được huấn luyện để phân loại các mẫu đầu vào.
+
+Trước tiên hây xem xét toán từ AND. Sau khi hoàn tất bước đầu tiên, perceptron được kích hoạt bởi một chuỗi bốn mẫu đầu vào đại diện cho một thể hệ. Các trọng số perceptron được cập nhật sau mỗi lần kích hoạt. Quả trình này được lập lại cho đến khi các trọng số hội tự đến một tập giá trị. Kết quả được trình bày trong Bảng 9-3.
+
+Bảng 9-2. Bảng chân trị các phép toán logic cơ bản.
+
+<table><tr><td colspan="2">Biến đầu vào</td><td>AND $\mathbf{x}_{1} \cap \mathbf{x}_{2}$ </td><td>OR $\mathbf{x}_{1} \cup \mathbf{x}_{2}$ </td><td>XOR $\mathbf{x}_{1} \oplus \mathbf{x}_{2}$ </td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr></table>
+
+Theo cách tương tự, perceptron có thể học được toán từ OR. Tuy nhiên, một perceptron một lớp không thể được huấn luyện để phân biệt toán từ XOR. Một minh họa hình học đơn giản có thể giải thích được lý do tại sao. Hình 9.7 biểu diễn các hàm AND, OR và XOR theo các điểm trong không gian 2 chiều dựa trên giá trị của hai đầu vào. Các điểm trong không gian đầu vào mà hàm đầu ra là 1 được thể hiện bằng các điểm đen và các điểm mà hàm đầu ra là 0 được thể hiện bằng các điểm trắng.
+
+Trong các Hình 9.7(a) và (b), ta có thể vẽ một đường thẳng sao cho các điểm đen nằm một phía và các điểm trắng nằm bên phía còn lại nhưng các điểm trong Hình 9.7(c) không thể phân biệt được bởi một đường thẳng. Một perceptron có thể biểu diễn một hàm chỉ khi có một đường thẳng có thể phân biệt tất cả điểm đen và điểm trắng. Các hàm
+
+<!-- page: 221 -->
+
+như thể được gọi là khả phân tuyến tính. Do đó một perceptron có thể học được các toán từ AND và OR nhưng không học được XOR.
+
+Bảng 9-3. Vi dụ học perceptron: toán từ logic AND.
+
+<table><tr><td rowspan="2">Thế hệ</td><td colspan="2">Đầu vào</td><td rowspan="2">Đầu ra mong muốn $Y_d$ </td><td colspan="2">Trọng số ban đầu</td><td rowspan="2">Đầu ra thực tếY</td><td rowspan="2">Sai sốE</td><td colspan="2">Trọng số cuối</td></tr><tr><td> $x_1$ </td><td> $x_2$ </td><td> $w_1$ </td><td> $w_2$ </td><td> $w_1$ </td><td> $w_2$ </td></tr><tr><td rowspan="4">1</td><td>0</td><td>0</td><td>0</td><td>0.3</td><td>-0.1</td><td>0</td><td>0</td><td>0.3</td><td>-0.1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0.3</td><td>-0.1</td><td>0</td><td>0</td><td>0.3</td><td>-0.1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0.3</td><td>-0.1</td><td>1</td><td>-1</td><td>0.2</td><td>-0.1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.2</td><td>-0.1</td><td>0</td><td>1</td><td>0.3</td><td>0.0</td></tr><tr><td rowspan="4">2</td><td>0</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0.3</td><td>0.0</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td><td>1</td><td>-1</td><td>0.2</td><td>0.0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.2</td><td>0.0</td><td>1</td><td>0</td><td>0.3</td><td>0.0</td></tr><tr><td rowspan="4">3</td><td>0</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td><td>0</td><td>0</td><td>0.2</td><td>0.0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0.3</td><td>0.0</td><td>0</td><td>0</td><td>0.2</td><td>0.0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0.3</td><td>0.0</td><td>1</td><td>-1</td><td>0.1</td><td>0.0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.2</td><td>0.0</td><td>0</td><td>1</td><td>0.2</td><td>0.1</td></tr><tr><td rowspan="4">4</td><td>0</td><td>0</td><td>0</td><td>0.2</td><td>0.0</td><td>0</td><td>0</td><td>0.2</td><td>0.1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0.2</td><td>0.0</td><td>0</td><td>0</td><td>0.2</td><td>0.1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0.2</td><td>0.0</td><td>1</td><td>-1</td><td>0.1</td><td>0.1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.1</td><td>0.0</td><td>1</td><td>0</td><td>0.1</td><td>0.1</td></tr><tr><td rowspan="4">5</td><td>0</td><td>0</td><td>0</td><td>0.1</td><td>0.1</td><td>0</td><td>0</td><td>0.1</td><td>0.1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0.1</td><td>0.1</td><td>0</td><td>0</td><td>0.1</td><td>0.1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0.1</td><td>0.1</td><td>0</td><td>0</td><td>0.1</td><td>0.1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.1</td><td>0.1</td><td>1</td><td>0</td><td>0.1</td><td>0.1</td></tr></table>
+
+<!-- page: 222 -->
+
+![](images/page_221_image_1.jpg)
+
+(a) AND $(\mathbf{x}_1 \cap \mathbf{x}_2)$
+
+![](images/page_221_image_3.jpg)
+
+(b) OR $(\mathbf{x}_1 \cup \mathbf{x}_2)$
+
+![](images/page_221_image_5.jpg)
+
+(c) XOR $(\mathbf{x}_1 \oplus \mathbf{x}_2)$
+
+Hình 9.7 - Các điểm hai chiều của các toán từ logic cơ bản.
+
+Việc một perceptron chỉ có thể học được các hàm khả phân tuyến tính được suy trực tiếp từ công thức (9.1). Đầu ra perceptron Y là 1 chỉ khi tổng đầu vào có trọng số X lớn hơn hoặc bằng giá trị ngưỡng $\theta$. Điều này có nghĩa là toàn bộ không gian đầu vào được chia đọc theo một biên được định nghĩa bởi $X = \theta$. Ví dụ một đường thẳng phân biệt cho đường thẳng AND có thể được định nghĩa bởi phương trình:
+
+$$
+x _ {1} w _ {1} + x _ {2} w _ {2} = \theta .
+$$
+
+Nếu thay thế bằng các giá trị của các trọng số $w_{1}$ và $w_{2}$ và ngưỡng $\theta$ trong Bảng 6.3, ta thu được một trong số các đường thẳng phân biệt có thể là:
+
+$$
+0. 1 x _ {1} + 0. 1 x _ {2} = 0. 2
+$$
+
+hay:
+
+$$
+x _ {1} + x _ {2} = 2.
+$$
+
+Do đó vùng nằm bên dưới đường thẳng biên, với đầu ra là 0, cho bồi:
+
+$$
+x _ {1} + x _ {2} - 2 <   0.
+$$
+
+và vùng nằm trên đường thẳng này, với đầu ra là 1, là:
+
+$$
+x _ {1} + x _ {2} - 2 \geq 0.
+$$
+
+Việc một perceptron chỉ có thể học được các hàm khả phân tuyến tính là một tin khá xấu vì không có nhiều hàm như thế.
+
+<!-- page: 223 -->
+
+Các perceptron một lớp tạo quyết định theo cách tương tự, bất kể chúng sử dụng hàm kích hoạt nào. Điều đó có nghĩa là một perceptron một lớp chỉ có thể phân lớp được các mẫu khả phân tuyến tính, bất kể việc chúng ta dùng một hàm kích hoạt chăn cứng hay chăn mềm. Đề có thể xử lý các hàm phân biệt tổng quát hơn, ta cần sử dụng các mạng no-ron đa lớp. Một trong những mạng no-ron đa lớp được sử dụng phổ biến nhất là mạng no-ron truyền thẳng đa lớp được huấn luyện bằng thuật toán lan truyền ngược sẽ được giới thiệu trong phần sau.
+
+## IV. MẠNG NƠ-RON TRUYỀN THẢNG ĐA LỚP
+
+## IV.1 Kiến trúc mạng
+
+Một mạng nơ-ron đa lớp (hay perceptron đa lớp) là một mạng nơ-ron truyền thẳng với một hay nhiều lớp ẩn. Thông thường mạng bao gồm một lớp nhập các nơ-ron đầu vào, ít nhất một lớp giữa hay lớp ẩn các nơ-ron tính toán và một lớp xuất các nơ-ron tính toán. Các tín hiệu đầu vào được lan truyền theo một hướng theo từng lớp. Một perceptron đa lớp với hai lớp ẩn được trình bày trong Hình 9.8.
+
+Mỗi lớp trong một mạng nơ-ron đa lớp có chức năng cụ thể của mình. Lớp nhập nhận các tín hiệu đầu vào từ thế giới bên ngoài và tái phân phối các tín hiệu này đến tất cả các nơ-ron trong lớp ẩn. Lớp ẩn hiểm khi có các nơ-ron tính toán và do đó lớp này không xử lý các mẫu đầu vào mà thực hiện việc chuyển giao các tín hiệu giữa các lớp xuất và nhập. Lớp xuất nhận các tín hiệu xuất hay nói cách khác là một mẫu kích thích từ lớp ẩn và tạo ra mẫu kết xuất của toàn mạng.
+
+Các nơ-ron trong lớp ẩn xác định các đặc trưng, các trọng số của các nơ-ron biểu diễn các đặc trưng ẩn trong các mẫu đầu vào. Các đặc trưng này sau đó được dùng-bời lớp xuất để xác định mẫu đầu ra. Với một lớp ẩn, ta có thể biểu diễn bất kỳ hàm liên tục theo các tín hiệu đầu vào và với hai lớp ẩn có thể biểu diễn bất kỳ hàm không liên tục.
+
+Các nơ-ron ở lớp giữ “giấu” đầu ra mong muốn của nó nên được gọi là lớp àn. Các nơ-ron trong lớp ẩn không thể được quan sát dựa trên hành vi của đầu vào/đầu ra của mạng. Không có cách rõ ràng nào để
+
+<!-- page: 224 -->
+
+![](images/page_223_image_1.jpg)
+
+Hình 9.8 - Perceptron đa lớp với hai lớp ẩn.
+
+biết được đầu ra mong muốn của lớp ẩn là gì. Nói cách khác, đầu ra mong muốn của lớp ẩn được quyết định bởi chính bản thân lớp đẩy.
+
+Các mạng nơ-ron thương mại gồm ba hoặc bốn lớp, bao gồm một hoặc hai lớp ẩn. Mỗi lớp có thể chứa từ 10 đến 1000 nơ-ron. Các mạng nơ-ron thực nghiệm có thể có năm hoặc sáu lớp, bao gồm ba hay bốn lớp ẩn và sử dụng hàng triệu nơ-ron nhưng hầu hết các ứng dụng thực tế chi dùng ba lớp vì mỗi lớp thêm vào sẽ làm gia tăng dáng kể thời gian tính toán.
+
+## IV.2 Thuật toán học lan truyền ngược
+
+Hơn một trăm thuật toán học khác nhau đã được đưa ra nhưng phương pháp phổ biến nhất là lan truyền ngược: Học trong một mạng đa lớp diễn ra tương tự như đối với một perceptron. Một tập huấn luyện các mẫu đầu vào được đưa vào mạng. Mạng tính toán mẫu đầu ra và nếu có sai số - sai biệt giữa mẫu đầu ra thực tế và mong muốn - các trọng số được điều chỉnh để giảm sai số này.
+
+<!-- page: 225 -->
+
+Trong một perceptron, chỉ có một trọng số cho mỗi đầu vào và chỉ một đầu ra. Nhung trong mạng đa lớp, có nhiều trọng số, mỗi trọng số đều đóng góp cho nhiều hơn một đầu ra.
+
+Trong một mang nơ-ron lan truyền ngược, thuật toán học có hai pha. Đầu tiên, một mẫu đầu vào huấn luyện được đưa vào lớp nhập của mạng. Mạng lan truyền mẫu đầu vào này theo từng lớp cho đến khi mẫu đầu ra được phát sinh bởi lớp xuất. Nếu mẫu này khác với đầu ra mong muốn, một sai số được tính và sau đó lan truyền ngược lại qua mạng từ lớp xuất đến lớp nhập. Các trọng số được điều chỉnh khi sai số lan truyền.
+
+Thông thường một mạng lan truyền ngược là một mạng đa lớp có ba hay bồn lớp. Các lớp này kết nối đầy đủ với nhau, nghĩa là mọi nơ-ron mỗi lớp đều nổi với mọi nơ-ron khác trong lớp lân cận phía trước.
+
+Một nơ-ron xác định giá trị đầu ra của nó theo cách tương tự perceptron. Đầu tiên, nó tính đầu vào có trọng số tỉnh như cũ:
+
+$$
+X = \sum_ {i = 1} ^ {n} x _ {i} w _ {i} - \theta
+$$
+
+trong đó n là số đầu vào và  $\theta$  là ngưỡng của no-ron.
+
+Kế tiếp đầu vào này được truyền qua hàm kích hoạt. Tuy nhiên không như perceptron, nơ-ron là một mạng lan truyền ngược dùng hàm kích hoạt sigmoid:
+
+$$
+Y ^ {s i g m o i d} = \frac {1}{1 : c ^ {- x}}\tag{9.9}
+$$
+
+Hàm sigmoid có hai ưu điểm là có thể dễ dàng tính đạo hàm và giá trị đầu ra của no-ron sẽ nằm giữa 0 và 1.
+
+Đề xây dựng quy tắc học lan truyền ngược, hãy xem xét một mạng ba lớp như trong Hinh 9.9. Các chỉ số $i,j$ và $k$ dùng cho các nơ-ron tương ứng trong các lớp nhập, ẩn và xuất. Các tín hiệu đầu vào: $x_1$, $x_2$, ..., $x_n$ được lan truyền trong mạng từ trái sang phải và các tín hiệu sai số: $e_1$, $e_2$, ..., $e_l$ từ phải sang trái. Ký hiệu $w_{ij}$ biểu diễn cho trọng số kết nối giữa nơ-ron $i$ trong lớp nhập và nơ-ron $j$ trong lớp ẩn và ký hiệu $w_{jk}$ cho trọng số giữa nơ-ron $j$ trong lớp ẩn và nơ-ron $k$ trong lớp xuất.
+
+<!-- page: 226 -->
+
+Đề lan truyền sai số, chúng ta bắt đầu tại lớp xuất và truy ngược lại lớp ẩn. Sai số tại đầu ra của no-ron $k$ là:
+
+$$
+e _ {k} (p) = y _ {d, k} (p) - y _ {k} (p),\tag{9.10}
+$$
+
+trong đó  $y_{d,k}(p)$  là đầu ra mong muốn của no-ron k tại vòng lặp p.
+
+![](images/page_225_image_4.jpg)
+
+Hình 9.9 - Mạng nơ-ron lan truyền ngược ba lớp.
+
+Nơ-ron $k$, nằm trong lớp xuất, được tính với đầu ra mong muốn của chính nó. Do đó ta có thể dùng thủ tục trực tiếp đề cập nhật trọng số $w_{jk}$. Quy tắc cập nhật trọng số tại lớp xuất tương tự như quy tắc học perceptron như trong công thức (9.7):
+
+$$
+w _ {j k} (p + 1) = w _ {j k} (p) + \Delta w _ {j k} (p)\tag{9.11}
+$$
+
+trong đó  $\Delta w_{jk}(p)$  là sửa lõi trọng số.
+
+<!-- page: 227 -->
+
+Khi đã xác định được sửa lỗi trọng số cho perceptron, ta dùng tín hiệu đầu vào $x_i$. Nhung đối với mạng nhiều lớp, các đầu vào của các nơ-ron lớp xuất khác với đầu vào của nơ-ron lớp nhập.
+
+Khi đó, ta dùng đầu ra của no-ron $j$ trong lớp ẩn, $y_{j}$, thay cho đầu vào $x_{i}$. Sưa lôi trọng số trong mạng nhiều lớp được tính bởi:
+
+$$
+\Delta w _ {j k} (p) = \alpha \times y _ {j} (p) \times \delta_ {k} (p)\tag{9.12}
+$$
+
+trong đó  $\delta_{k}(p)$  là gradient sai số tại no-ron k trong lớp xuất tại vòng lặp p.
+
+Gradient sai số được xác định là đạo hàm của hàm kích hoạt nhân với sai số tại nơ-ron đầu ra. Với nơ-ron $k$ tại lớp xuất, ta có:
+
+$$
+\delta_ {k} (p) = \frac {\partial y _ {k} (p)}{\partial X _ {k} (p)} \times e _ {k} (p)\tag{9.13}
+$$
+
+trong đó $y_k(p)$ là giá trị đầu ra của no-ron $k$ tại vòng lặp $p$, và $X_k(p)$ là giá trị đầu vào có trọng số tỉnh đến no-ron $k$ trong cùng vòng lặp.
+
+Đối với một hàm kích hoạt sigmod, biểu thức trên có dạng:
+
+$$
+\delta_ {k} (p) = \frac {\partial \left\{\frac {1}{1 + \exp [ - X _ {k} (p) ]} \right\}}{\partial X _ {k} (p)} \times e _ {k} (p) = \frac {\exp [ - X _ {k} (p) ]}{\{1 + \exp [ - X _ {k} (p) ] \} ^ {2}} \times e _ {k} (p)
+$$
+
+hay:
+
+$$
+\delta_ {k} (p) = y _ {k} (p) \times [ 1 - y _ {k} (p) ] \times e _ {k} (\dot {p})\tag{9.14}
+$$
+
+trong đó:
+
+$$
+y _ {k} (p) = \frac {1}{1 + \exp [ - Y _ {z} (p) ]}
+$$
+
+Đề tính sửa lỗi trọng số đối với lớp ẩn, ta có thể áp dụng công thức tương tự như đối với lớp xuất:
+
+<!-- page: 228 -->
+
+$$
+\Delta w _ {i j} (p) = \alpha \times x _ {i} (p) \times \delta_ {j} (p)\tag{9.15}
+$$
+
+trong đó $\delta_{j}(p)$ biểu diễn gradient sai số tại nơ-ron $j$ trong lớp ẩn:
+
+$$
+\delta_ {j} (p) = y _ {j} (p) \times [ 1 - y _ {j} (p) ] \times \sum_ {k = 1} ^ {l} \delta_ {k} (p) w _ {j k} (p)
+$$
+
+với / là số nơ-ron trong lớp xuất:
+
+$$
+y _ {j} (p) = \frac {1}{1 + \exp [ - X _ {j} (p) ]}
+$$
+
+$$
+X _ {j} (p) = \sum_ {i = 1} ^ {n} x _ {i} (p) \times w _ {i j} (p) - \theta_ {j}
+$$
+
+và n là số nơ-ron trong lớp nhập.
+
+Tổng kết lại, thuật toán huấn luyện lan truyền ngược đối với mạng nơ-ron đa lớp như sau:
+
+## Bước 1: Khởi tạo
+
+Đặt giá trị ngẫu nhiên cho tất cả trọng số và ngưỡng của mạng. Một cách đặt giá trị được đề xuất bởi Haykin năm 1999 là chọn các giá trị ngẫu nhiên phân phối đều trong một khoảng giá trị nhỏ:
+
+$$
+\left(- \frac {2 . 4}{F _ {i}}, + \frac {2 . 4}{F _ {i}}\right)
+$$
+
+trong đó $F_{i}$ là tổng số đầu vào của neuron $i$ trong mạng. Việc khởi tạo trọng số được thực hiện cho từng no-ron một.
+
+## Buóc 2: Kích hoạt
+
+Kích hoạt mạng no-ron lan truyền ngược bằng cách đưa các giá trị đầu vào và đầu ra mong muốn vào mạng.
+
+(a) Tính đầu ra thực sự của các nơ-ron trong lớp ẩn:
+
+$$
+y _ {j} (p) = \text {sigmoid} \left[ \sum_ {i = 1} ^ {n} x _ {i} (p) \times w _ {i j} (p) - \theta_ {j} \right]
+$$
+
+<!-- page: 229 -->
+
+trong đó n là số đầu vào của no-ron j trong lớp ẩn và sigmoid là hành kích hoạt.
+
+(b) Tính đầu ra thực sự của các nα-ron trong lớp xuất:
+
+$$
+y _ {k} (p) = \text {sigmoid} \left[ \sum_ {j = 1} ^ {m} x _ {j k} (p) \times w _ {j k} (p) - \theta_ {k} \right]
+$$
+
+trong đó m là số đầu vào của nơ-ron j trong lớp xuất.
+
+## Bước 3: Huấn luyện trọng số
+
+Cập nhật trọng số trong mạng lan truyền ngược bằng cách lan truyền ngược sai số ứng với các nơ-ron đầu ra.
+
+(a) Tính gradient sai số cho nơ-ron trong lớp xuất:
+
+$$
+\delta_ {k} (p) = y _ {k} (p) \times [ 1 - y _ {k} (p) ] \times e _ {k} (p)
+$$
+
+trong đó:
+
+$$
+e _ {k} (p) = y _ {d, k} (p) - y _ {k} (p)
+$$
+
+Tính sửa lôi trọng số:
+
+$$
+\Delta w _ {j k} (p) = \alpha \times y _ {j} (p) \times \delta_ {k} (p)
+$$
+
+Cập nhật trọng số tại các nơ-ron đầu ra:
+
+$$
+w _ {j k} (p + 1) = w _ {j k} (p) + \Delta w _ {j k} (p)
+$$
+
+(b) Tính gradient sai số cho nơ-ron trong lớp ẩn:
+
+$$
+\delta_ {j} (p) = y _ {j} (p) \times [ 1 - y _ {j} (p) ] \times \sum_ {k = 1} ^ {l} \delta_ {k} (p) w _ {j k} (p)
+$$
+
+Tính sửa lỗi trọng số:
+
+$$
+\Delta w _ {i j} (p) = \alpha \times x _ {i} (p) \times \delta_ {j} (p)
+$$
+
+Cập nhật trọng số tại các nơ-ron ẩn:
+
+$$
+w _ {i j} (p + 1) = w _ {i j} (p) + \Delta w _ {i j} (p)
+$$
+
+<!-- page: 230 -->
+
+## Bước 4: Lặp
+
+Tăng vòng lặp $p$ lên một, quay lại Bước 2 và lập lại quá trình cho đến khi điều kiện sai số cho trước thỏa.
+
+Tổng bình phương sai số là một chỉ số hữu ích để đánh giá hiệu quả của mạng. Thuật toán huấn luyện lan truyền ngược cổ găng tối thiểu hoá chỉ số này. Khi giá trị tổng bình phương sai số trong toàn bộ một vòng lập trên tất cả tập huấn luyện hay một thể hệ đủ nhỏ, mạng xem như đã hội tụ.
+
+Hình 9.10 minh họa một mạng nơ-ron ba lớp với năm nơ-ron được huấn luyện đề biểu diễn toán từ XOR. Lưu ý là rất khó đề về biên quyết định được tạo ra bởi các nơ-ron với một hàm kích hoạt sigmoid. Thay vào đó chúng ta có thể biểu diễn mỗi nơ-ron trong lớp ẩn và xuất sử dụng một hàm dấu. Hình 9.11 minh họa biên quyết định cho được tạo ra từ mạng nơ-ron trên. Vị trí của biên quyết định được tạo ra bởi nơ-ron 3 và 4 trong lớp ẩn được biểu diễn trong các Hình 9.11(a) và (b). Nơ-ron 5 trong lớp xuất thực hiện một tổ hợp tuyến tính của các biên quyết định tạo thành bởi các nơ-ron ẩn. Mạng nơ-ron như trong Hình 9.10 thực sự có thể phân biệt được các điểm đen và trắng và do đó có thể giải quyết được bài toán XOR.
+
+![](images/page_229_image_5.jpg)
+
+Hình 9.10 - Mạng nơ-ron ba lớp giải toán từ XOR.
+
+<!-- page: 231 -->
+
+![](images/page_230_image_1.jpg)
+
+(a)
+
+![](images/page_230_image_3.jpg)
+
+(b)
+
+![](images/page_230_image_5.jpg)
+
+(c)
+
+Hình 9.11 - (a) Biên quyết định được tạo bởi no-ron ăn 3 của mạng trong
+Hình 9.10; (b) biên quyết định tạo bởi no-ron ăn 4; (c) các biên quyết định tạo bởi toàn bộ mạng ba lớp.
+
+## V. ÚNG DỤNG CỦA MẠNG NO-RON
+
+Phần này giới thiệu một vài ví dụ về nhiều ứng dụng đóng vai trò quan trọng của mạng nơ-ron. Trong mỗi trường hợp, thiết kế mạng là kết quả của một vài tháng thử nghiệm của các nhà nghiên cứu. Từ những ví dụ này, có thể thấy mạng nơ-ron có khả năng ứng dụng rộng rãi, nhưng điều đó không có nghĩa là chúng có thể giải quyết những vấn đề mà không có suy nghĩ của những người thiết kế mạng. Richard Denker nhận xét rằng “mạng nơ-ron là giải pháp tốt thứ hai trong việc giải quyết bất cứ thứ gì”. Điều này cũng phần nào đúng vì mạng nơ-ron cung cấp hiệu suất chấp nhận được trong nhiều tác vụ vốn tương đối khó để giải quyết triệt đề với những kỹ thuật lập trình khác.
+
+## Ứng dụng phát âm
+
+Phát âm một đoạn văn bản tiếng Anh bằng máy tính là một bài toán hấp đỗ treng ngon ngữ học, cũng như là một công việc có hiệu quả thương mại cao. Đây là ứng dụng tiêu biểu nhằm chuyển từ văn bản sang tiếng nói – yếu tố âm thanh cơ bản – và sau đó truyền tiếng nói đến một máy phát. Vấn đề chúng ta quan tâm ở đây là việc học ánh xạ từ văn bản đến tiếng nói. Đây là một công việc tốt của mạng nơ-ron bởi vì hầu như các quy tắc chỉ gần đúng. Chẳng hạn, mặc dù mẫu tự
+
+<!-- page: 232 -->
+
+“k” thường tương ứng với phát âm k, thì mẫu tự “c” vẫn được phát âm là [k] trong từ car và [s] trong từ cent.
+
+Chương trình NETtalk của Sejnowski và Rosenberg năm 1987 là một mạng nơ-ron học phát âm từ những văn bản. Đầu vào là một chuỗi các kí tự hiện diện trong một cửa số duyệt qua văn bản. Bất cứ lúc nào, đầu vào bao gồm những kí tự được phát âm cùng với 3 kí tự trước và sau. Mỗi kí tự thật ra là 29 đơn vị đầu vào – một cho mỗi một trong 26 chữ cái và cho mỗi khoảng trống, mỗi dấu chấm câu và các phép chấm câu khác. Có khoảng 80 đơn vị ăn. Lớp đầu ra được tổ chức theo từng lớp bao gồm đặc trưng của âm thanh được tạo ra: cao hay thấp, âm hay không âm,...
+
+Trên dữ liệu kiểm tra, độ chính xác của NETtalk khoảng 78%, kém hơn nhiều so với những chương trình được đưa vào thương mại. Dĩ nhiên, các hệ thống thương mại yêu cầu đã phát triển qua nhiều năm, trong khi đó, NETtalk chỉ yêu cầu vài giờ huấn luyện và vài tháng kiểm nghiệm với các thiết kế mạng khác nhau.
+
+## Nhận dạng chữ viết tay
+
+Dây là một trong những ứng dụng rộng rãi nhất của mạng nơ-ron đến ngày nay. Năm 1989, Le Cun và các đồng nghiệp đã thực hiện một mạng được thiết kế để đọc các mã bưu điện trên thư từ được gửi bằng tay. Hệ thống sử dụng một bộ tiền xử lý định vị và phân đoạn các con số riêng biệt trong mã bưu điện; mạng phải xác định các con số của chúng. Mạng được huấn luyện trên 7300 mẫu và được kiểm tra trên 2000 mẫu. Một tính chất thú vị của một mạng với sự mã hóa phân tán đầu ra là nó có thể biểu diễn sự nhập nhằng trong các dự đoán bằng việc xuất ra 2 hay nhiều đơn vị đầu ra lớn hơn một ngưỡng. Sau khi loại bỏ khoảng 12% tập kiểm tra nằm gần ngưỡng nhập nhằng này, hiệu suất cho những trường hợp còn lại đạt 99% và được cho rằng thích hợp với hệ thống sắp xếp mail tự động. Mạng cuối cùng được bổ sung trong VLSI truyền thống, có thể giúp các chữ cái được sắp xếp với một tốc độ cao.
+
+## Ứng dụng trong lái xe
+
+ALVINN (Autonomous Land Vehicle In a Neuron Network) của Pomerleau năm 1993 là một mạng no-ron biểu diễn khá tốt ở những
+
+<!-- page: 233 -->
+
+trường hợp mà các phương pháp khác đã thất bại. Mạng học để lái một chiếc xe đọc theo một lần đường trên đường cao tốc bằng cách quan sát thao tác của một người lái xe.
+
+ALVINN được sử dụng để điều khiển xe NavLab tại đại học Carnegie Mellon. NavLab 1 là một chiếc Chevy van và NavLab 2 là một chiếc U.S Army HMMWV. Cà hai loại xe đều được điều khiển bằng các máy tính. Các bộ cảm biến bao gồm truyền hình màu lập thể, bộ tìm kiếm quét các dài laser, radu, và cảm biến gia tốc. Các nhà nghiên cứu đã di kèm chiếc xe và quan sát quá trình chiếc xe tự động lái như thế nào.
+
+Tín hiệu từ chiếc camera quay chiếc xe được tiền xử lý tạo ra một màng các giá trị pixel được liên kết với lưới kích thước 30×32 các đơn vị đầu vào trong mạng no-ron. Giá trị đầu ra là một lớp gồm 30 đơn vị, mỗi đơn vị tương ứng với một hướng lái xe. Đơn vị đầu ra với giá trị kích hoạt cao nhất là hướng là chiếc xe sẽ lái. Mạng cũng có một lớp gồm 5 đơn vị ẩn mà được liên kết đầy đủ với các lớp đầu vào và đầu ra.
+
+Công việc của ALVINN là tính toán một hàm để tính từ một ảnh video đơn lẻ của con đường phía trước nó ra một hướng lái xe. Đề học hàm này, chúng ta cần một số dữ liệu huấn luyện – một số cặp hình ảnh/hướng với hướng chính xác. Dữ liệu này được thu bằng việc một người lái xe và ghi nhận lại những cặp hình ảnh/hướng. Sau khi thu khoảng năm phút các dữ liệu huấn luyện (và áp dụng thuật toán lan truyền ngược trong khoảng 10 phút), ALVINN đã sẵn sàng để lái.
+
+Các kết quả của việc huấn luyện là rất ẩn tượng. ALVINN đã được lái với tốc độ lên đến 120km/h cho một quãng đường lên đến 145km trên đường cao tốc gần Pittsburgh. Nó cũng được lái với tốc độ trung bình trên các lần đường đơn bùn nhão, đường lát gạch dành cho xe đạp, và hai con đường nhỏ ở ngoại ô.
+
+## VI. KET CHUONG
+
+Chương này giới thiệu mạng nơ-ron nhân tạo và thảo luận những ý tưởng cơ bản trong việc mô phòng hoạt động của con người trong học máy. Một số điểm quan trọng của chương bao gồm:
+
+<!-- page: 234 -->
+
+\- Các mạng nơ-ron nhân tạo bao gồm một số các đơn vị xử lý đơn giản và kết nối chặt chẽ với nhau gọi là các nơ-ron, tương tự các nơ-ron sinh học của não bộ. Các nơ-ron được kết nối bởi các liên kết có trọng số dùng để truyền các tín hiệu từ một nơ-ron này đến nơ-ron khác.
+
+\- Môi liên kết có một trọng số số học gắn với nó. Các trọng số là các phương tiện cơ sở của bộ nhớ dài hạn trong các mạng nơ-ron nhân tạo. Chúng biểu thị sức mạnh, hay độ quan trọng, của mỗi nơ-ron đầu vào. Một mạng nơ-ron học bằng cách lập lại việc điều chỉnh các trọng số này.
+
+\- Perceptron là mạng nơ-ron đơn giản nhất chỉ bao gồm một nơ-ron duy nhất với các trọng số có thể điều chỉnh và một ngưỡng cố định. Perceptron học bằng cách thực hiện những điều chỉnh nhỏ trong các trọng số đề làm giảm sai biệt giữa kết xuất mong muốn và thực tế. Các trọng số ban đầu được khởi tạo ngẫu nhiên và được cập nhật để đạt được kết xuất nhất quán với các mẫu huấn luyện.
+
+\- Một perceptron chỉ có thể học được các hàm khả phân tuyến tính.
+
+\- Một perceptron đa lớp là một mạng nơ-ron truyền thẳng với một lớp nhập các nơ-ron nguồn, ít nhất một lớp giữa hay lớp ẩn với các nơ-ron tính toán, một lớp xuất với các nơ-ron tính toán.
+
+\- Lớp nhập nhận các tín hiệu nhập từ thế giới bên ngoài và phân phối những tín hiệu này đến tất cả các nơ-ron trong lớp ẩn. Lớp ẩn phát hiện các đặc trưng. Các trọng số của nơ-ron trong lớp ẩn biểu diễn các đặc trưng trong mẫu nhập. Lớp xuất xây dựng mẫu xuất của toàn mạng.
+
+\- Học trong mạng đa lớp tương tự như trong perceptron. Thuật toán học có hai pha. Đầu tiên một mẫu nhập huấn luyện được đưa vào lớp nhập của mạng. Mạng lan truyền mẫu nhập qua các lớp cho đến khi mẫu xuất được phát sinh bởi lớp xuất. Nếu có khác biệt so với kết quả mong muốn, một sai số được tính
+
+<!-- page: 235 -->
+
+toán và lan truyền ngược qua mạng từ lớp xuất về lớp nhập. Các trọng số được điều chỉnh khi sai số được lan truyền.
+
+## VII.THUẬT NGỮ TIẾNG ANH
+
+Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
+
+activation function: hàm kích hoạt
+
+adjustable: có thể điều chỉnh được
+
+artificial neural network: mạng no-ron nhân tạo
+
+axon: rê dài
+
+back-propagation: lan truyền ngược
+
+delta rule: quy tắc delta
+
+dendrite: rê con
+
+epoch: thể hệ
+
+error gradient: gradient sai só
+
+feedforward: truyền thẳng
+
+hard limit function: hàm giới hạn cứng
+
+hidden layer: lóp ẩn
+
+hyperplane: siêu phẳng
+
+input layer: lóp nhập
+
+learning rate: tốc độ học
+
+linearly separable: khả phân tuyến tính
+
+link: liên kết
+
+multilayer perceptron: mang perceptron đa lớp
+
+neural network: mang no-ron.
+
+numerial weight: trọng số số học
+
+output layer: lóp xuất
+
+<!-- page: 236 -->
+
+perceptron: một mạng nơ-ron nhân tạo đơn giản
+
+sign function: hàm dấu
+
+soma: nhân'tế bào
+
+synapse: khớp thần kinh
+
+sum of the squared errors: tổng bình phương sai số
+
+<!-- page: 237 -->
+
+## TÀI LIỆU THAM KHẢO
+
+1. Stuart Jonathan Russell, Peter Norvig. Artificial Intelligence: A Modern Approach. (Third edition). 2010. Publisher Prentice Hall.
+
+2. David L. Poole, Alan K. Mackworth. Artificial Intelligence: Foundations of computational agents. Cambridge University press. 2010.
+
+3. Max Lungarella, Lungarella, Josh Bongard, Max Lungarella. 50 Years of Artificial Intelligence: Essays Dedicated to the 50th Anniversary of Artificial Intelligence. Published January 28th 2008 by Springer.
+
+4. Artificial Intelligence as taught in: Fall 2011.
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/
+
+5. Techniques in Artificial Intelligence (SMA 5504) as taught in: Fall 2002. http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/
+
+Tác giả:
+
+Lê Hoài Bắc
+
+PGS.TS – Trường Bộ môn KHMT.
+
+Hướng nghiên cứu: Trí tuệ nhân tạo, Tính toán mềm và Khám phá tri thức & Khai thác dữ liệu.
+
+## Tô Hoài Việt
+
+Tiêu sy - Phó trưởng Bộ môn KHMT. Hiện là NCS tại Viện Khoa học và Công nghệ Tiên tiến Nhật bản (JAIST).
+
+Hướng nghiên cứu: Trí tuệ nhân tạo, Học máy, Web ngữ nghĩa.
+
+<!-- page: 238 -->
+
+## CHỈ MỤC THUẬT NGỮ
+
+bài toán 8 puzzle, 53, 56
+bài toán 8 quân hậu, 16, 42, 60
+bài toán 8-puzzle, 14, 15, 16
+bài toán bố trí mạch điện tử, 19
+bài toán dây chuyển lắp ráp tự động, 19
+bài toán giản lược, 56, 57, 71
+bài toán người bán hàng, 19
+bài toán người đi du lịch, 18
+bài toán robot tìm đường, 19
+bài toán thỏa mãn ràng buộc, 72
+bài toán thực tế, 15, 18
+bài toán tìm đường đi, 18
+bài toán tìm kiểm, 11, 12, 14,
+15, 19, 20, 27, 46, 72, 73, 76
+bài toán tô màu, 72
+bài toán tối ưu hóa, 59
+bài toán trò chơi, 15
+bàng chân trị, 86, 87, 88, 89, 99,
+106, 107, 186
+biến, 72
+biên hóa, 159
+biểu thức, 103
+biểu thức cơ sở, 105, 123, 124,
+125, 126
+
+bộ phân lớp Naïve Báyes, 180
+câu nguyên tố, 104
+câu nguyên tố cơ sở, 104
+cây quyết định, 184, 185, 186, 190
+cây tìm kiếm, 20
+chi phí, 56
+chi phí đường đi, 12, 14, 15, 17, 18, 23, 28, 29, 74
+chứng minh phản chứng, 91
+con trò quay lui, 26
+công thức trạng thái đầy đủ, 74
+cú pháp, 83
+cực đại cục bộ, 61, 63
+cực đại toàn cục, 59
+cực tiểu toàn cục, 59, 60
+dạng hội chuẩn, 90, 140
+Datalog, 132
+độ đo không tin cây, 164
+độ đo tin cây, 164
+độ lợi thông tin, 192
+độ phức tạp về không gian, 31
+độ phức tạp về thời gian, 30, 31, 33, 47
+
+<!-- page: 239 -->
+
+đồ thị, 12, 13, 20, 22, 23, 44, 73,
+95, 96, 139, 148 .
+
+đồ thị không gian trạng thái, 31,
+37, 43, Xem đồ thị trạng thái
+
+đồ thị tìm kiếm, 20
+
+đồ thị trạng thái, 12
+
+độc lập có điều kiện, 163, 180,
+181
+
+đồng nhất, 128
+
+đột biến, 67
+
+giá trị ràng buộc ít nhất, 79
+
+gradient sai số, 214
+
+hàm đánh giá, 48
+
+hàm đồng nhất tổng quát nhất,
+129
+
+hàm heuristic, 49
+
+hàm heuristic chấp nhận được,
+51
+
+hàm kích hoạt, 202
+
+hàm mục tiêu, 59, 72
+
+hàm thích nghi, 66
+
+hàm trạng thái con, 15, 20, 47
+
+hàng đội, 24
+
+hàng đoi First-In-First-Out (FIFO), 26
+
+hàng dợi Last-In-First-Out (LIFO), 26
+
+hàng dợi ưu tiên, 26, 28
+
+hàng Skolem, 125
+
+hệ số chắc chắn, 153, 154, 163,
+164, 165, 167, 168, 169, 170,
+171
+
+hệ số phân nhánh, 31, 41, 54, 55,
+56, 76, 79
+
+heuristic chấp nhận được, 51,
+53, 54, 56, 57
+
+heuristic theo bậc, 79
+
+học có giám sát, 176, 178
+
+học không giám sát, 177
+
+học tăng cường, 177
+
+hôi qui, 184
+
+hop giải, 89, 90, 91, 92, 93, 98,
+140, 142, 143, 144, 145, 146,
+147, 148
+
+hop lê, 72
+
+khà phân tuyến tính, 204, 208
+
+khoảng cách Manhattan, 54
+
+không gian trạng thái, 11, 12,
+17, 18, 20, 22, 23, 36, 38, 41,
+42, 43, 46, 48, 59, 61, 62, 63,
+67
+
+kiểm tra xuất hiện, 130
+
+lai ghép, 67
+
+lan truyền ngược, 211
+
+lập trình logic, 130, 134, 136,
+137, 150
+
+leo đổi làm lại ngẫu nhiên, 63
+
+<!-- page: 240 -->
+
+liên kết logic, 85
+
+logic, 83
+
+logic bậc nhất, 84, 100
+
+logic mệnh đề, 84
+
+logic mò, 153
+
+lời giải, 14, 72
+
+luật Bayes, 161, 179
+
+luộc đồ, 68
+
+lượng từ, 105
+
+lượng từ phổ quát, 105, 106,
+123, 124, 126, 128, 131, 134,
+141, 142
+
+luọng từ tồn tại, 107, 108, 123,
+125, 126, 131, 141, 142
+
+lý thuyết chứng minh, 84
+
+mang no-ron, 196, 198, 199, 200, 201, 203, 210, 215, 218, 219, 220, 223
+
+mạng nơ-ron nhân tạo, 200
+
+mạng nơ-ron truyền thẳng đa
+lớp, 210
+
+mệnh đề hóa, 126
+
+mệnh đề Horn, 93
+
+mệnh đề xác định bậc nhất, 131
+
+miền xác định, 72
+
+mô hình, 100, 101, 102, 204
+
+một mạng nơ-ron nhân tạo, 201
+
+mức độ tin cậy, 153
+
+ngăn xếp, 26, 35
+
+ngữ nghĩa, 83, 85, 102, 104
+
+nhánh non, 24
+
+nhiễu, 193
+
+nút tìm kiểm, 21
+
+phân lóp, 184
+
+phân phối xác suất, 157
+
+phân phối xác suất kết hợp, 157
+
+phép gán, 72
+
+phép sùa Laplace, 183
+
+phúc tạp về mặt không gian, 32
+
+phương pháp cắt tia của
+Ockham, 187
+
+phương pháp tìm kiếm, 11
+
+quá khớp, 193, 194
+
+quan hệ hai ngôi, 101
+
+quan hệ một ngôi, 101
+
+ràng buộc, 72
+
+ràng buộc bậc hai, 75
+
+ràng buộc bậc nhất, 74
+
+ràng buộc sở thích, 75
+
+ràng buộc tuyệt đối, 75
+
+Skolem hóa, 125, 142
+
+sự không chắc chắn, 151
+
+<!-- page: 241 -->
+
+sự kiện nguyên tố, 155, 156,
+157, 159, 160, 172
+
+suy diễn hướng đích, 96
+
+suy diễn hướng dữ liệu, 95
+
+suy diên lùi, 93, 96, 97, 98, 134,
+135, 150, 138, 144
+
+suy diên tiến, 93, 94, 95, 96,
+130, 131, 132, 133, 134, 136,
+139, 140, 147
+
+tập huấn luyện, 193
+
+tập thử, 193
+
+thê hiện, 69
+
+thề hiện phổ quát, 124, 125
+
+thể hiện tồn tại, 125
+
+thuật giải di truyền, 48, 66, 68,
+69, 70
+
+thuộc tính, 103
+
+tìm kiểm A\*, 51
+
+tìm kiểm chi phí đồng nhất, 27,
+28, 29, 31, 33. 44. 47
+
+tìm kiểm có thông tin, 48
+
+tìm kiểm cục bộ, 48, 58, 59, 60,
+74
+
+tìm kiểm cục bộ tham lam. Xơn:
+tìm kiểm 100 đùi
+
+tìm kiểm không có thông tin, 11
+
+tìm kiểm kiểu tham lam, 50 tìm kiểm lặp sâu đần, 39, 41, 44,
+46, 55, 56
+
+tìm kiểm leo đôi, 60
+
+tìm kiểm leo đôi có lựa chọn, 63
+
+tìm kiểm leo đôi ngẫu nhiên, 63
+
+tìm kiểm mô phỏng luyện kim,
+48, 64, 71
+
+tìm kiểm mù. Xem tìm kiểm
+không cò thông tin
+
+tìm kiểm nhóm cục bộ, 64
+
+tìm kiểm quay lui, 36, 77
+
+tìm kiểm theo chiều rộng, 26,
+27, 28, 31, 32, 33, 36, 39, 41,
+44, 46
+
+tìm kiểm theo chiều sâu, 34, 35,
+36, 37, 38, 39, 43, 44, 46, 51,
+74, 76, 136, 139
+
+tìm kiểm tối ưu, 48
+
+tìm kiểm tối ưu kiểu tham lam,
+49
+
+tìm kiểm với độ sâu giới hạn, 38
+
+tìm kiểm với độ sâu tăng dần.
+Xem tìm kiểm lặp sâu dần
+
+tính đầy đủ, 30
+
+tính tối ưu, 30
+
+tính tổng ngoài, 159
+
+tổng bình phương sai số, 217
+
+trạng thái, 12, 14, 15, 17, 18, 23,
+67
+
+<!-- page: 242 -->
+
+trạng thái ban đầu, 12, 15, 17,
+18, 20, 21, 23, 26, 31, 37, 46,
+48, 54, 63, 73
+
+trạng thái con, 12, 14, 17, 18, 20,
+30, 31, 42, 46, 60, 61, 62, 63,
+64, 66, 73, 77
+
+trạng thái đích, 12, 15, 17, 18,
+21, 23, 26, 46, 48, 63, 74
+
+trạng thái hiện tại, 58
+ước lượng khả suất tối đại, 182 ước lượng khả suất tối đại, 179
+
+vị tù, 103
+
+xác suất, 156
+
+xác suất có điều kiện. Xem xác
+suất hậu nghiệm
+
+xác suất hậu nghiệm, 158
+
+xác suất không điều kiện. Xem
+xác suất tiên nghiệm
+
+xác suất tiên nghiệm, 157
+
+<!-- page: 243 -->
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">In 1000 cuốn, khô 16 x 24 cm, tại Xưởng in Trường ĐH Khoa học Tự nhiên ĐHQG Tp Hồ Chí Minh.<br>Số ŝăng KH xuất bản: 936 - 2013/CXB/19 - 62/KHKT. Quyết định xuất bản số 285/QĐXB-NXBKHKT, cấp ngày 26 tháng 12 năm 2013.<br>In xong và nộp lưu chiều tháng 02 năm 2014.</span></small>
+
+LÊ HOÀI BẮC - TÔ HOÀI VIỆT
+
+# CƠ SỞ TRÍ TUỆ NHÂN TẠO
+
+Chiu trách nhiệm xuất bản:
+
+Riên tập:
+
+Sùa bài:
+
+Vē bìa:
+
+PHẠM NGỌC KHÔI
+
+TRƯƠNG THANH SƠN
+
+PHẠM THỊ MAI
+
+PHẠM THỊ MAI
+
+VŨ QUỐC HOÀNG
+
+NHÀ XUẤT BẢN KHOA HỌC VÀ KỸ THUẬT
+70 Trần Hưng Đạo – Quận Hoàn Kiểm – Hà Nội
+CHI NHÁNH NHÀ XUẤT BẢN KHOA HỌC VÀ KỸ THUẬT
+28 Đồng Khởi, 12 Hồ Huấn Nghiệp – Quận 1 – Tp.HCM
+Điện thoại: (08) 3822 5062 – 3829 6628 – 3829 0228
+
+<!-- page: 244 -->
+
+## TÓM TẮT GIÁO TRÌNH
+
+Với sự phát triển vượt bậc của công nghệ, máy tính cùng các thiết bị điện tử ngày càng đóng vai trò quan trọng trong mọi hoạt động của con người. Không chỉ hỗ trợ trong công việc, các máy tính ngày nay còn là một phương tiện hữu ích phục vụ cho các sinh hoạt hàng ngày của con người như hỗ trợ trong đi lại, cấp nhật tin tức, giải trí.... Tuy nhiên, đề máy tính thật sự trò thành một người bạn thân thiết của con người, một số trò ngại cơ bản cần phải được vượt qua. Các máy tính ngày nay có sức mạnh vượt trội so với trước, khả năng xử lý và lưu trữ không lồ, nhưng nó vẫn chưa giải quyết được nhiều bài toán trên thực tế như làm sao đề có thể tự suy nghĩ và hành động trong những môi trường thế giới thực phức tạp, làm sao đề học và rút trích các thông tin, tri thức từ môi trường xung quanh phục vụ cho hoạt động của mình.... Giải quyết các vấn đề trên không chỉ đời hồi sức mạnh công nghệ mà còn cần đến những hướng tiếp cận những thuật toán thông minh hơn.
+
+Giáo trình này cung cấp các ý tưởng, kiến thức cơ bản về hướng nghiên cứu trí tuệ nhân tạo, ngành học nhằm mục tiêu thiết kế ra các phương pháp tỉnh toán thông minh. Nội dung của giáo trình sẽ tập trung giải quyết những vấn đề cơ bản của của một hệ thống thông minh bao gồm: Các phương pháp tìm kiếm hiệu quả, Biểu diễn tri thức và Lập luận, Học máy. Các nội dung trình bày trong giáo trình được tham khảo từ những giáo trình, tài liệu về trí tuệ nhân tạo phổ biến trên thế giới. Do đó các kiến thức trong giáo trình phần nào cập nhật với những bước phát triển gần đây trong lĩnh vực nghiên cứu. Với giáo trình này, chúng tôi hy vọng cung cấp cho người đọc một cải nhìn toàn cảnh và cơ bản về những nghiên cứu liên quan đến trí tuệ nhân tạo. Qua đó, có thể động viên, khuyến khích những ai có niềm đạm mê nghiên cứu, sáng tạo tiếp tục tìm hiểu và phát triển các hướng chuyên sâu của ngành học.
+
+213266-B00
+ISBN 9786046700790
