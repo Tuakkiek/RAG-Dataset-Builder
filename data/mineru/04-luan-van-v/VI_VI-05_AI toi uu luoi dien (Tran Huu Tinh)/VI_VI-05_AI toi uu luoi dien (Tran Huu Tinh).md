@@ -1,0 +1,4513 @@
+<!-- page: 1 -->
+
+BỘ GIÁO DỤC VÀ ĐÀO TẠO **TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT THÀNH PHỐ HỒ CHÍ MINH**
+
+**TRẦN HỮU TÍNH**
+
+# ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO TÍNH TOÁN QUY HOẠCH MỞ RỘNG TỐI ƯU LƯỚI ĐIỆN
+
+**LUẬN ÁN TIẾN SĨ**
+
+**NGÀNH: KỸ THUẬT ĐIỆN**
+
+Tp. Hồ Chí Minh, tháng 05/2024
+
+<!-- page: 2 -->
+
+BỘ GIÁO DỤC VÀ ĐÀO TẠO
+
+**TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT**
+
+**THÀNH PHỐ HỒ CHÍ MINH**
+
+**TRẦN HỮU TÍNH**
+
+# ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO TÍNH TOÁN QUY HOẠCH MỞ RỘNG TỐI ƯU LƯỚI ĐIỆN
+
+**NGÀNH: KỸ THUẬT ĐIỆN - 9520201**
+
+Người hướng dẫn khoa học 1: **PGS TS. VÕ NGỌC ĐIỀU**
+
+Người hướng dẫn khoa học 2: **PGS TS. QUYỀN HUY ÁNH**
+
+Phản biện 1:
+
+Phản biện 2:
+
+Phản biện 3:
+
+Tp. Hồ Chí Minh, tháng 05/2024
+
+<!-- page: 3 -->
+
+Tp. Hồ Chí Minh, ngày 05 tháng 6 năm 2018
+
+## QUYËT ĐINH
+
+V vic đi tên lun án cho nghiên cu sinh khóa 2016
+
+## HIU TRUNG TRU'NG ĐI HC SU PHM KÝ THUT TP. H CHÍ MINH
+
+Căn c Quyt đnh s 426/TTg ngày 27 tháng 10 năm 1976 ca Thù turóng Chính phù vě mt s vn đ cp bách trong mng lui các trưng đi hc và Quyt đnh s 118/2000/QĐ-TTg ngày 10 tháng 10 năm 2000 ca Th tưng Chính ph vë vic tő chc li Đi hc Quc gia Thành Ph Hồ Chí Minh, tách Truòng Đi hoc Su phm K thut Thành ph H Chí Minh trc thuc B Giáo dc và Đào to;
+
+Căn c Quyt đnh s 70/2014/QĐ-TTg ngày 10 tháng 12 năm 2014 ca Th tưróng Chính phù v vic ban hành Điu l trưng Đi hc;
+
+Căn c Quyt dinh s 937/QĐ-TTg ngày 30 tháng 6 năm 2017 vě vic phê duyt đë án thí dim đi mi co ch hot đng ca Trưng Đi hc Sư phm K thut Tp. Hồ Chí Minh;
+
+Căn c Thông tur s 10/2009/TT-BGDĐT ngày 07/5/2009 ca B Giáo dc và Đào to vě vic Ban hành Qui ch dào to trinh đ tin sī;
+
+Căn c Thông tư s 05/2012/TT-BGDĐT ngày 15/02/2012 ca B Giáo dc và Đào to v vic sa đi, b sung mt s điu ca Quy ch đào to trinh đ tin sī ban hành kèm theo Thông tưr s 10/2009/TT-BGDĐT ngày 07/5/2009 ca B trung Bô Giáo dc và Đào to;
+
+Xét nhu cu công tác và kh năng cán b;
+
+Xét đ ngh ca nghiên cu sinh và Trưng phòng Đào to,
+
+## QUYÉT ĐINH
+
+Điu 1: Đi tên lun án tin sī cho:
+
+Nghiên cu sinh : Trn Hu Tính
+
+Ngành : K thut đin
+
+Khoá: 2016 - 2019
+
+Tên lun án mi : Áp dng các phưong pháp thông minh nhân to tính toán quy hoch m rng ti ưu lưi đin
+
+Ngưòi HD th nht (HD chính): PGS.TS Võ Ngc Điêu
+
+Ngưri HD th hai : PGS.TS Quyn Huy Ánh
+
+Thi gian thc hin : 03/10/2016 dên 03/10/2019
+
+Điu 2: Giao cho Phòng Đào to qun lý, thrc hin theo đúng Qui ch đào tao trinh đ tin sĩ ca B Giáo dc & Đào to đã ban hành.
+
+Điu 3: Trưng các đơn v: phòng Đào to, khoa qun ngành, phòng KHTC và các ng (Bà) có tên  Điu 1 chu trách nhim thi hành quyt đnh này.
+
+Quyt đnh có hiu lc k tù ngày ký.
+
+Noi nhn:
+
+\- BGH (d chi đo);
+
+\- Như điu 3;
+
+\- Luu: VT, SĐH (3b).
+
+HIÊU TRUÓNG
+
+PGS. TS Le Hiéu Giang
+
+![](images/page_2_image_31.jpg)
+
+<details>
+<summary>seal</summary>
+
+11
+40
+TRUÒ
+DAI HOC SU PHA
+KY THUAT
+TP. HO CHI MIN
+è Hie
+F
+</details>
+
+<!-- page: 4 -->
+
+# LÝ LỊCH CÁ NHÂN
+
+## 1. Bản thân
+
+Họ và tên : Trần Hữu Tính
+
+Nam, Nữ : Nam
+
+Sinh ngày : 19/07/1986
+
+Nơi sinh : C à M a u
+
+Nơi công tác hiện nay: Trường Đại Học Kỹ thuật – Công Nghệ Cần Thơ.
+
+Chức vụ, nghề nghiệp: Phó trưởng bộ môn, giảng viên
+
+Thời gian bắt đầu công tác: 01/1/2018
+
+Hộ khẩu thường trú: 146/60/30, Hoàng Quốc Việt, KV4, P. An Bình, Q. Ninh Kiều, TP Cần Thơ
+
+Địa chỉ tạm trú hiện nay (nếu có): 146/60/30, Hoàng Quốc Việt, KV4, P. An Bình,
+
+Q. Ninh Kiều, TP Cần Thơ
+
+Địa chỉ liên lạc: 256, đường Nguyễn Văn Cừ, P. An Hòa, Q. Ninh Kiều, TP Cần Thơ
+
+Điện thoại: 0939505644
+
+Địa chỉ email (nếu có): [tinhtrancm@gmail.com](mailto:tinhtrancm@gmail.com) và [thtinh@ctuet.edu.vn.](mailto:thtinh@ctuet.edu.vn)
+
+Dân tộc: Kinh Tôn giáo: Kh ôn g
+
+## 2. Kết quả học tập & đào tạo:
+
+Loi Hình đào to đi hc: Chính qui; Chuyên tu ; Ti chc  ; M rng
+
+Thời gian đào tạo: Chính qui: ;Không chính qui: ; từ 2 0 0 4 đến 2008
+
+Trường cấp bằng đại học: Đại Học Cần Thơ Ngành: Kỹ Thuật Điện
+
+Xếp hạng tốt nghiệp (Xuất sắc, giỏi, khá, trung bình khá, trung bình): Khá Trường cấp bằng cao học: Đại Học Bách Khoa TP HCM Ngành: Thiết bị, mạng, và NMĐ Xếp hạng tốt nghiệp (Xuất sắc, giỏi, khá, trung bình khá, trung bình): Khá Trình độ Anh văn (TOEFL ITP, iBT, IELTS, TOEIC, B1): TOEFT iBT 68 Nơi cấp, thời gian cấp: IIG Việt Nam, thi ngày 20/06/2023.
+
+| Tên trường | Chuyên ngành đào tạo, bồi dưỡng | Từ tháng, năm Đến tháng, năm | Hình thức đào tạo | Văn bằng, chứng chỉ, trình độ gì |
+| --- | --- | --- | --- | --- |
+| ĐH Cần Thơ | Kỹ thuật điện | 2004 -2008 | Chính quy | Kỹ sư |
+
+<!-- page: 5 -->
+
+| ĐH Bách khoa TP.HCM, Đại học Quốc gia TP Hồ Chí Minh | Thiết bị, mạng và nhà máy điện | 2012 | Chính quy | Thạc sĩ |
+| --- | --- | --- | --- | --- |
+| Trường ĐH Sư Phạm Kỹ Thuật TP.HCM | Kỹ thuật điện | 10/2016 -nay | Chính quy | Nghiên cứu sinh |
+
+## 3.Tóm tắt quá trình công tác
+
+| Từ tháng, năm đến | Chức danh, chức vụ, đơn vị công tác (đảng, chính quyền, đoàn thể, tổ chức xã hội), kể cả thời gian được đào tạo, bồi |
+| --- | --- |
+| tháng, năm | dưỡng về chuyên môn, nghiệp vụ,… |
+| Từ 01/10/2009 - | Giảng viên, Khoa Kỹ thuật - Công nghệ Trường Cao đẳng |
+| 31/07/2014 | Cần Thơ |
+| Từ 01/08/2014 - | Tổ phó Khoa Kỹ thuật - Công nghệ Trường Cao đẳng Cần |
+| 31/08/2017 | Thơ |
+| Từ 01/09/2017 - | Phó Trưởng bộ môn Khoa Kỹ thuật công nghệ - Môi trường |
+| 31/12/2017 | Trường Cao đẳng Cần Thơ |
+| Từ 01/01/2018 | Giảng viên Khoa Điện - Điện tử - Viễn thông Trường Đại học Kỹ thuật - Công nghệ Cần Thơ |
+| Từ 15/10/2019 - | Phó Trưởng bộ môn Kỹ thuật điện - Năng lượng, Khoa Điện - Điện tử - Viễn thông Trường Đại học Kỹ thuật - Công nghệ |
+| nay | Cần Thơ |
+
+<!-- page: 6 -->
+
+## LỜI CAM ĐOAN
+
+Tôi xin cam đoan đây là luận án do tôi nghiên cứu trong thời gian học tập nghiên cứu sinh tại Trường.
+
+Nội dung luận án là công trình do Tôi đã cố gắng tìm hiểu và nghiên cứu được theo đúng yêu cầu và mục tiêu được đặt ra. Tôi xin cam đoan sẽ chịu trách nhiệm về bản quyền.
+
+Tp. Hồ Chí Minh, ngày … tháng … năm 2024
+
+(Ký tên và ghi rõ họ tên)
+
+Trần Hữu Tính
+
+<!-- page: 7 -->
+
+## LỜI CẢM ƠN
+
+Qua nhiều năm học tập nghiên cứu tại Trường, Tôi đã nhận được rất nhiều sự hỗ trợ, giúp đỡ cũng như là quan tâm, động viên từ các Thầy Cô, gia đình, đồng nghiệp và bạn bè. Đặc biệt, là sự hỗ trợ giúp đỡ, động viên của thầy hướng dẫn Thầy Võ Ngọc Điều và Thầy Quyền Huy Ánh.
+
+Tôi xin trân trọng cám ơn Ban giám hiệu Trường Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh, Ban chủ nhiệm Khoa Điện - Điện tử, Lãnh đạo Phòng Đào tạo, cùng toàn thể các Thầy/Cô thực hiện công tác tại các đơn vị trong Trường đã tận tình hỗ trợ, góp ý báu trong quá trình học tập và nghiên cứu.
+
+Tôi xin cảm ơn quý Thầy/Cô là thành viên hội đồng các chuyên đề nghiên cứu khoa học, luận án cơ sở đã góp ý rất nhiều để nội dung Luận án được hoàn thiện hơn.
+
+Tuy nhiên, Tôi đã có nhiều nổ lực cố gắng hoàn thiện, nhưng trong Luận án sẽ không tránh khỏi những thiếu sót. Kính mong quý Thầy/Cô, các chuyên gia, đồng nghiệp, gia đình và bạn bè tiếp tục có những ý kiến đóng góp, để giúp đỡ Tôi trong thời gian tới hoàn thiện được Luận án hơn.
+
+Tôi xin chân thành cảm ơn./.
+
+<!-- page: 8 -->
+
+## TÓM TẮT NỘI DUNG LUẬN ÁN
+
+Mục tiêu chính của quy hoạch mở rộng lưới điện là xác định vị trí và phạm vi cần mở rộng, quyết định công suất mở rộng cần thiết, ước lượng tổng chi phí của quy hoạch và nâng cao độ tin cậy của hệ thống điện. Đây là một bài toán quy mô lớn, phức tạp và bao gồm các yếu tố phi tuyến và tổ hợp số nguyên hỗn hợp. Việc tìm ra giải pháp chính xác cho bài toán quy hoạch mở rộng lưới điện là vấn đề rất quan trọng trong ngành điện. Các phương pháp tối ưu hóa được áp dụng đã đem lại nhiều kết quả tích cực cho vấn đề này. Luận án đã nghiên cứu và áp dụng cả các thuật toán cổ điển và mới trong trí tuệ nhân tạo để giải quyết bài toán quy hoạch mở rộng lưới điện và đã đạt được những kết quả học thuật khả thi như sau:
+
+Áp dụng thuật toán cận biên và nhánh để giải quyết bài toán quy hoạch và mở rộng hệ thống truyền tải điện với ràng buộc về độ tin cậy tại các khu vực thực của Đồng bằng sông Cửu Long (ĐBSCL), tỉnh Bến Tre và tỉnh Hậu Giang. Bài toán quy hoạch mở rộng này đặt ra điều kiện chuẩn về độ tin cậy để tối ưu hóa hệ thống điện và kiểm tra lại hệ thống sau khi mở rộng. Ngoài ra, luận án cũng đề cập đến việc phát triển bài toán đa mục tiêu với nhiều ràng buộc kết hợp để phản ánh tốt hơn sự phát triển của lưới điện trong tương lai. Điều này là cơ sở quan trọng để áp dụng các phương pháp thông minh nhân tạo vào việc giải quyết bài toán quy hoạch mở rộng lưới điện truyền tải, đặc biệt là khi có các yêu cầu về độ tin cậy. Phương pháp này được thử nghiệm trên các mạng điện chuẩn IEEE và mạng điện thực tế ở ĐBSCL.
+
+Các thuật toán Tìm kiến con quạ (CS) và Tìm kiếm chin tu hú (CSA) đã chứng minh được hiệu quả trong việc giải quyết bài toán quy hoạch hệ thống truyền tải điện hiện nay. Đây là những phương pháp giải quyết nhanh và chính xác trong tối ưu hóa quy hoạch và mở rộng hệ thống truyền tải, đã được kiểm chứng trên các mạng điện chuẩn IEEE với các bài báo công bố quốc tế.
+
+\- Sử dụng thuật toán Tối ưu hóa bầy đàn hiệu chỉnh (MPSO) để giải quyết bài toán quy hoạch lưới điện phân phối, một phương pháp đột biến mới nhằm cải thiện khả năng tìm kiếm toàn cục và hạn chế sự hội tụ sớm đến mức tối thiểu cục bộ đã
+
+<!-- page: 9 -->
+
+được đưa vào áp dụng. Kết quả đạt được đã được so sánh với kết quả của nhiều phương pháp khác đã được công bố.
+
+Nội dung của luận án đã phát triển một thuật toán thông minh nhân tạo dựa trên quá trình tìm kiếm của các loài động vật trong tự nhiên như chim tu hú, con quạ, và bầy đàn. Thuật toán này đã được áp dụng vào trong các bài toán quy hoạch mở rộng lưới điện. Các kết quả thu được đã chứng minh hiệu quả của các thuật toán này, khi chúng được áp dụng vào bài toán quy hoạch mở rộng lưới điện và đề xuất hướng phát triển cho việc sử dụng thuật toán thông minh nhân tạo trong các lưới điện thực tế tại Việt Nam.
+
+<!-- page: 10 -->
+
+## ASTRACT
+
+The main objective of power grid expansion planning is to determine the location and scope of necessary expansion, decide on the required capacity expansion, estimate the total cost of planning, and enhance the reliability of the electrical system. This is a large-scale, complex problem involving nonlinear and mixed-integer factors. Finding an accurate solution to the power grid expansion planning problem is crucial in the electrical industry. The application of optimization methods has yielded many positive results for this issue. The dissertation has researched and applied both classical and new artificial intelligence algorithms to address the power grid expansion planning problem, achieving feasible academic results as follows:
+
+\- Apply the boundary and branch algorithm to solve the planning and expansion problem of the power transmission system with reliability constraints in real areas of the Mekong Delta, Ben Tre province, and Hau Giang province. This expansion planning problem sets standard reliability conditions to optimize the electrical system and verify the system after expansion. In addition, the dissertation also addresses the development of multi-objective problems with multiple combined constraints to better reflect the development of the power grid in the future. This is an important basis for applying artificial intelligence methods to solve the power grid expansion planning problem, especially when there are reliability requirements. This method is tested on IEEE standard power systems and practical power grids in the Mekong Delta.
+
+\- The Crow Search (CS) and Cuckoo Search Algorithm (CSA) algorithms have demonstrated their effectiveness in solving current power transmission system planning problems. These are fast and accurate optimization methods for planning and expanding transmission systems, validated on IEEE standard power systems with published international papers.
+
+<!-- page: 11 -->
+
+\- Utilizing the Modified Particle Swarm Optimization (MPSO) algorithm to tackle the distribution system planning problem, a novel mutation method aimed at enhancing global search capability and mitigating premature convergence to local minima has been incorporated. The achieved results have been compared with those of various other methods in the literature.
+
+The dissertation content has implemented artificial intelligence algorithms based on the search process of natural species such as cuckoos, crows, and swarms. These algorithms have been applied to the transmission and distribution expansion planning problems. The results obtained have demonstrated the effectiveness of these algorithms when applied to the grid expansion planning problems and proposed directions for the development of using artificial intelligence algorithms in real power grids in Vietnam.
+
+<!-- page: 12 -->
+
+## MỤC LỤC
+
+- TÓM TẮT NỘI DUNG LUẬN ÁN.... vii
+- CÁC THUẬT NGỮ VIẾT TẮT.... xv
+- DANH MỤC CÁC HÌNH.... xvii
+- DANH MỤC CÁC BẢNG.... xix
+- MỞ ĐẦU.... 1
+- 1. Lý do chọn đề tài.... 1
+- 2. Các mục tiêu nghiên cứu.... 4
+- 3. Nhiệm vụ nghiên cứu.... 4
+- 4. Phạm vi và giới hạn.... 5
+- 5. Hướng tiếp cận và phương pháp nghiên cứu.... 5
+- 6. Ý nghĩa khoa họa và thực tiễn.... 5
+- 7. Cấu trúc của luận án.... 6
+- Chương 1. TỔNG QUAN.... 7
+- 1.1. Khái quát về bài toán quy hoạch tối ưu lưới điện truyền tải.... 7
+- 1.2. Độ tin cây trong quy hoạch mở rộng lưới điện truyền tải.... 9
+- 1.3. Quy hoạch lưới điện truyền tải DC.... 11
+- 1.4. Quy hoạch lưới điện phân phối.... 15
+- 1.5. Các phương pháp đã áp dụng cho bài toán quy hoạch mở rộng lưới điện.... 17
+- 1.6. Các nội dung nghiên cứu và đóng góp mới của luận án.... 18
+- Chương 2. QUY HOẠCH MỞ RỘNG LƯỚI ĐIỆN TRUYỀN TẢI CÓ XẾT ĐỘ TIN CÂY.... 20
+- 2.1. Giới thiệu bài toán.... 20
+- 2.2. Mô hình bài toán.... 20
+- 2.2.1. Hàm mục tiêu.... 20
+- 2.2.2. Điều kiện ràng buộc về tiêu chuẩn chỉ số độ tin cây của lưới điện.... 21
+- 2.3. Áp dụng phương pháp cận biên và nhánh.... 22
+- 2.3.1. Mô hình hóa lưới điện.... 22
+- 2.3.2. Lý thuyết dòng cực đại và mặt cắt tối thiểu.... 24
+- 2.3.3. Xây dựng lưu đồ thuật toán.... 28
+
+<!-- page: 13 -->
+
+- 2.4. Kết quả tính toán và thảo luận....30
+- 2.4.1. Kết quả tính toán cho lưới điện Đồng bằng sông Cửu Long....30
+- 2.4.2. Kết quả tính toán cho lưới điện tỉnh Bến Tre....42
+- 2.4.3. Kết quả tính toán cho lưới điện tỉnh Hậu Giang....50
+- 2.5. Kết luận chương 2....58
+- Chương 3. QUY HOẠCH MỞ RỘNG LUỐI ĐIỆN TRUYỀN TẢI DC....59
+- 3.1. Giới thiệu bài toán....59
+- 3.2. Mô hình bài toán....59
+- 3.2.1. Hàm mục tiêu....59
+- 3.2.2. Các ràng buộc cân bằng dòng điện nút....60
+- 3.2.3. Giới hạn phân bố công suất trên đường dây truyền tải....61
+- 3.2.4. Ràng buộc về quyền ưu tiên....61
+- 3.2.5. Giới hạn góc pha điện áp thanh cái....61
+- 3.3. Áp dụng các phương pháp thông minh nhân tạo....62
+- 3.3.1. Mô tả các thuật toán....62
+- 3.3.2. Mô hình toán của các thuật toán....63
+- 3.3.3. Áp dụng các thuật toán vào bài toán....68
+- 3.4. Kết quả tính toán và thảo luận....74
+- 3.4.1. Áp dụng thuật toán Tìm kiểm con qua....74
+- 3.4.2. Áp dụng thuật toán Tìm kiểm chim tu hú....78
+- 3.5. Kết luận chương 3....89
+- Chương 4. QUY HOẠCH LUỐI ĐIỆN PHÂN PHỐI....90
+- 4.1. Giới thiệu bài toán....90
+- 4.2. Mô hình bài toán....91
+- 4.2.1. Hàm mục tiêu....91
+- 4.2.2. Các ràng buộc....94
+- 4.3. Áp dụng phương pháp thông minh nhân tạo....95
+- 4.3.1. Thuật toán PSO....95
+- 4.3.2. Thuật toán PSO cải tiến và áp dụng....95
+- 4.4. Kết quả tính toán và thảo luận....101
+- 4.5. Kết luận chương 4....109
+
+<!-- page: 14 -->
+
+- Chương 5. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN ..... 110
+- 5.1. Kết luận..... 110
+- 5.2. Hướng phát triển..... 111
+- TÀI LIỆU THAM KHẢO ..... 113
+- DANH MỤC CÁC BÀI BÁO CÔNG BỐ ..... 121
+- PHỤ LỤC ..... 123
+- A. ĐÁNH GIÁ ĐỘ TIN CÂY HỆ THỐNG ĐIỆN ..... 123
+- A.1. Các chỉ tiêu độ tin cây của hệ thống điện ..... 123
+- A.2. Đánh giá độ tin cây hệ thống điện cơ bản ..... 125
+- A.2.1. Đánh giá độ tin cây ở cấp độ HLI ..... 125
+- A.2.2. Đánh giá độ tin cây ở cấp độ HLII ..... 127
+- A.2.3. Đánh giá độ tin cây của hệ thống truyền tải ..... 130
+- B. THÔNG SỐ CÁC MẠNG ĐIỆN CHUẬN ..... 130
+- B.1. Mạng điện chuẩn Garver 6 nút ..... 130
+- B.1.1. Thông số các nút ..... 130
+- B.1.2. Thông số các nguồn phát ..... 130
+- B.1.3. Thông số các nhánh ..... 131
+- B.2. Mạng điện chuẩn IEEE 25 nút ..... 131
+- B.2.1. Thông số các nút ..... 131
+- B.2.2. Thông số các nguồn phát ..... 132
+- B.2.3. Thông số các nhánh ..... 132
+- B.3. Mạng điện Brazil 46 nút ..... 134
+- B.3.1. Thông số các nút ..... 134
+- B.3.2. Thông số các nguồn phát ..... 135
+- B.3.3. Thông số các nhánh ..... 135
+- B.3.4. Thông số đầu vào nguồn phát ..... 137
+- B.3.5. Thông số đầu vào nhánh ..... 138
+- B.4. Mạng điện tỉnh Bến Tre cấp 110kV ..... 140
+- B.4.1. Thông số hệ thống nguồn cung cấp điện ..... 140
+- B.4.2. Thông số trạm biến áp 110kV ..... 140
+- B.4.3. Thông số dự báo hệ thống nguồn cung cấp tỉnh Bến Tre 2030 ..... 141
+
+<!-- page: 15 -->
+
+- B.4.4. Thông số đường dây tỉnh Bến Tre....141
+- B.4.5. Thông số dự báo nhu cầu phụ tải qua các năm đến năm 2045....141
+- B.5. Mạng điện tỉnh Hậu Giang cấp 110kV....142
+- B.5.1. Thông số các tuyến đường dây 110kV cấp điện cho tỉnh Hậu Giang....142
+- B.5.2. Thông số công suất lưới 110kV tỉnh Hậu Giang trao đổi với các tỉnh lân cận.
+- ....142
+- B.5.3. Thông số các trạm biến áp 220kV - 110kV cấp điện cho tỉnh Hậu Giang ..143
+- B.6. Mạng điện vùng Đồng Bằng Sông Cửu Long cấp 220kV và 500kV....143
+- B.6.1. Thông số hệ thống nguồn cung cấp điện....143
+- B.6.2. Thông số các trạm biến áp 220kV....144
+- B.6.3. Thông số đường dây 220kV....144
+- B.6.4. Thông số đường dây 110kV....144
+- B.6.5. Thông số trạm biến áp 110kV....146
+- B.6.6. Thông số dữ liệu đầu vào....148
+
+<!-- page: 16 -->
+
+## CÁC THUẬT NGỮ VIẾT TẮT
+
+| Từ viết tắt | Từ tiếng Anh | Từ tiếng Việt |
+| --- | --- | --- |
+| ABC | Artificial Bee Colony Algorithm | Thuật toán thuộc địa bầy ong nhân tạo |
+| ACO | Ant Colony Optimization | Tối ưu hóa đàn kiến |
+| ANN | Artificial Neural Networks | Mạng nơron nhân tạo |
+| BPSO | Binary Particle Swarm Optimization | Tối ưu phần tử nhị phân bầy đàn |
+| BRR | Bus Reserve Rate | Tỷ lệ dự trữ |
+| CC LM | Constant current load model | Mô hình dòng điện tải không đổi |
+| CP LM | Constant power load model | Mô hình công suất tải không đổi |
+| CS | Cuckoo Search | Thuật toán tìm kiếm chim tu hú |
+| CSA | Crow search algorithm | Thuật toán tìm kiếm con quạ |
+| CZ LM | Constant impedance load model | Mô hình tải trở kháng không đổi |
+| DE | Differential Evolution | Tiến hóa vi phân vi phân |
+| DEA | Differential Evolution Algorithm | Thuật toán tiến hóa vi phân vi phân |
+| DLA | Diffusion Limited Aggregation | Tập hợp giới hạn khuếch tán |
+| DM | Diversity metric | Đa dạng số liệu |
+| EB | End Busfes | Nút kết thúc |
+| EDNS | Expected demand not supplied | Chỉ tiêu nhu cầu không cung cấp |
+| EENS | Expected energy not served | Chỉ tiêu thiếu nguồn |
+| EIR | Energy Index of Reliability | Chỉ số năng lượng của độ tin cậy |
+| ELC | Expected load curtailment | Chỉ tiêu dự kiến cắt tải |
+| EP | Evolution Programming | Thuật toán tiến hóa vi phân |
+| EPC | The engineering, procurement, and construction cost | Chi phí kỹ thuật, mua sắm và xây dựng |
+| FFC | Flat Frequency control | Điều khiển tần số phẳng |
+| GA | Genetic Algorithm | Thuật toán di truyền |
+| GD | Generational distance | Khoảng cách nguồn phát |
+| GN | Generators | Máy phát điện |
+| HS | Harmony search | Tìm kiếm hài hòa |
+| I&amp;O | Investment and Operation costs | Chi phí đầu tư và vận hành |
+| INLP | Integer Non Linear Problem | Bài toán phi tuyến tính số nguyên |
+| LD | Loads | Phụ tải |
+| LDC | Local distribution company | Công ty phân phối điện địa phương |
+
+<!-- page: 17 -->
+
+| LM | Load model | Mô hình tải |
+| --- | --- | --- |
+| LOLE | Loss of Load Expectation | Xác suất về chỉ tiêu thiếu nguồn |
+| LP | Linear Programming | Lập trình tuyến tính |
+| MDEP | Multi-stage Distribution ExPansion Planning | Quy hoạch mở rộng lưới điện phân phối đa mục tiêu |
+| DEP | Distribution Expansion Planning | Quy hoạch mở rộng lưới điện phân phối |
+| DG | Distributed Generation | Nguồn phát phân tán |
+| END | Energy Not Distributed | Năng lượng phân phối thiếu |
+| MILP | Mixed Integer Linear Programming | Lập trình tuyến tính hỗn hợp số nguyên |
+| MPSO | Modified Particle Swarm Optimization | Thuật toán tối ưu bầy đàn cải tiến |
+| OPF | Optimal Power Flow | Tối ưu phân bố công suất |
+| PSO | Particle Swarm Optimization | Thuật toán tối ưu bầy đàn |
+| PSO - TVAC | Particle Swarm Optimizer with Time Varying Acceleration Coefficients | Thuật toán tối ưu bầy đàn với hệ số tăng tốc theo thời gian |
+| PSO-TVIW | Particle Swarm Optimization - Time Varying Inertial Weight | Thuật toán tối ưu bầy đàn -Thời gian thay đổi quán tính |
+| SA | Simulated annealing | Mô phỏng tuyến tính |
+| SB | Start Buses | Nút bắt đầu |
+| SCC | Short Circuit Capacity | Công suất ngắn mạch |
+| SFLA | Shuffled Frog Leaping Algorithm | Thuật toán bước nhảy con ếch |
+| SP | SPacing metric | Chỉ số không gian |
+| STEP | Static Transmission Expansion Planning | Quy hoạch tĩnh mở rộng lưới điện truyền tải |
+| TEP | Transmission Expansion Planning | Quy hoạch mở rộng lưới điện truyền tải |
+| TRF | Transformers | Máy biến áp |
+| TRL | Transmission Lines | Đường dây truyền tải |
+| TSA | Tabu Search Algorithm | Thuật toán tìm kiếm Tabu |
+| TSL | Total System Losses | Tổng tổn thất hệ thống |
+| TVD | Total Voltage Deviation | Tổng độ lệch điện áp |
+| VSI | Voltage stability index | Chỉ số ổn định điện áp |
+| HL, HLI, HLII | Hierarchical Level, Hierarchical Level I, Hierarchical Level II | Cấp độ, cấp độ I, cấp độ II |
+
+<!-- page: 18 -->
+
+## DANH MỤC CÁC HÌNH
+
+- Hình 2.1 Sơ đồ đơn tuyến hệ thống điện....23
+- Hình 2.2 Sơ đồ mạng tương đương....23
+- Hình 2.3 Sơ đồ mô phỏng hệ thống điện tổng quát....27
+- Hình 2.4 Mặt cắt tối thiểu....27
+- Hình 2.5 Lưu đồ thuật toán của thuật toán cận biên và nhánh....29
+- Hình 2.6 Sơ đồ đơn tuyến hệ thống điện vùng ĐBSCL....32
+- Hình 2.7 Mối quan hệ của chỉ tiêu độ tin cậy và tổng chi phí ở trường hợp 1....34
+- Hình 2.8 Mối quan hệ của chỉ tiêu độ tin cậy và tổng chi phí ở trường hợp 2....34
+- Hình 2.9 Kế hoạch mở rộng lưới điện cho trường hợp 1 – 1....35
+- Hình 2.10 Kế hoạch mở rộng lưới điện cho trường hợp 1 - 2....35
+- Hình 2.11 Kế hoạch mở rộng lưới điện cho trường hợp 1 – 3....36
+- Hình 2.12 Kế hoạch mở rộng lưới điện cho trường hợp 2 - 1....36
+- Hình 2.13 Kế hoạch mở rộng lưới điện cho trường hợp 2 - 2....37
+- Hình 2.14 Kế hoạch mở rộng lưới điện cho trường hợp 2 – 3....37
+- Hình 2.15 Hệ thống điện ĐBSCL trước khi quy hoạch....40
+- Hình 2.16 Hệ thống điện ĐBSCL sau mở rộng thêm 7 tuyến với LOLE$_{R}$ = 20,0 (giờ/năm)....41
+- Hình 2.17 Sơ đồ đơn tuyến mạng điện 110 kV tỉnh Bến Tre....43
+- Hình 2.18 Lưới điện sau quy hoạch ngắn hạn năm 2024 trường hợp N-1TL....45
+- Hình 2.19 Lưới điện sau quy hoạch trung hạn năm 2030 trường hợp N-1TL....45
+- Hình 2.20 Lưới điện sau quy hoạch dài hạn năm 2045 trường hợp N-1TL....46
+- Hình 2.21 Lưới điện sau quy hoạch ngắn hạn năm 2024 trường hợp N-2TL....46
+- Hình 2.22 Lưới điện sau quy hoạch trung hạn năm 2030 trường hợp N-2TL....47
+- Hình 2.23 Lưới điện sau quy hoạch dài hạn năm 2045 trường hợp N-2TL....47
+- Hình 2.24 Hệ thống điện trước khi quy hoạch năm 2045....49
+- Hình 2.25 Hệ thống điện sau mở rộng trường hợp N-2TL vào năm 2045....49
+- Hình 2.26 Sơ đồ đơn tuyến lưới điện toàn tỉnh Hậu Giang....53
+- Hình 2.27 Đường cong tổng chi phí đầu tư theo yêu cầu tỷ lệ dự trữ BRR(%)....54
+- Hình 2.28 Đường cong chi phí mất điện khách hàng (VNĐx10⁹)....55
+
+<!-- page: 19 -->
+
+- Hình 2.29 Đường cong tổng chi phí và điểm tối ưu độ tin cậy....56
+- Hình 2.30 Hệ thống trước khi kiểm tra quy hoạch tỉnh Hậu Giang....57
+- Hình 2.31 Hệ thống sau khi kiểm tra quy hoạch tỉnh Hậu Giang (BRR=5%)....57
+- Hình 3.1 Thuật toán Tìm kiểm chim tu hú....66
+- Hình 3.2 Sơ đồ trạng thái trong thuật toán CSA....68
+- Hình 3.3 Lưu đồ thuật toán CS - TEP....72
+- Hình 3.4 Lưu đồ thuật toán CSA – TEP....74
+- Hình 3.5 Hệ thống điện Garver 6 nút....76
+- Hình 3.6 Hệ thống điện Garver 6 nút sau khi quy hoạch....77
+- Hình 3. 7 Tổng chi phí đầu tư so với số vòng lập phương pháp CSA....78
+- Hình 3.8 Sơ đồ hệ thống điện chuẩn IEEE 25 nút....79
+- Hình 3.9 Hệ thống điện chuẩn IEEE 25 sau khi quy hoạch....82
+- Hình 3.10 Sơ đồ hệ thống điện miền nam Brazil 46 nút....84
+- Hình 3.11 Tổng chi phí đầu tư so với số vòng lập phương pháp CS....85
+- Hình 3.12 Hệ thống điện Brazil 46 nút sau khi quy hoạch....86
+- Hình 3.13 Đồ thị thể hiện chi phí mở rộng hệ thống điện của CS số cá thể là 50 ... 87
+- Hình 3.14 Đồ thị thể hiện đánh giá hàm thích nghi HTĐ của CS số cá thể là 50 .... 88
+- Hình 3.15 Đồ thị thể hiện chi phí mở rộng hệ thống điện của CS với $p_a$ là 0,98.....88
+- Hình 3.16 Đồ thị thể hiện đánh giá hàm thích nghi HTĐ của CS với $p_a$ là 0,98 ..... 89
+- Hình 4.1 Hệ thống Thevenin tương đương của nút j....93
+- Hình 4.2 Lưu đồ thuật toán MPSO áp dụng vào bài toán MDEP....100
+- Hình 4.3 Sơ đồ hệ thống phân phối hình tia....103
+- Hình 4.4 Đồ thị thể hiện END quan hệ với các giá trị U và U'....106
+- Hình 4.5 Đồ thị tổn thất công suất quan hệ với các giá trị U và U'....106
+- Hình 4.6 Giá trị GD của thuật toán MPSO so với PSO và GA....107
+- Hình 4.7 Giá trị SP của thuật toán MPSO so với PSO và GA....108
+- Hình 4.8 Giá trị DM của thuật toán MPSO so với PSO và GA....108
+
+<!-- page: 20 -->
+
+## DANH MỤC CÁC BẢNG
+
+- Bảng 2.1 Các trường hợp trong hệ thống điện …… 24
+- Bảng 2.2 Dự báo hệ thống nguồn cung cấp điện ĐBSCL đến 2020 …… 30
+- Bảng 2.3 Các giá trị đường dây truyền tải ĐBSCL …… 31
+- Bảng 2.4 Chỉ tiêu độ tin cậy của hệ thống …… 33
+- Bảng 2.5 Tối ưu hóa quy hoạch hệ thống truyền tải …… 33
+- Bảng 2.6 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 1 …… 38
+- Bảng 2.7 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 2 …… 39
+- Bảng 2.8 Công suất các trạm biến áp 110kV tỉnh Bến Tre …… 42
+- Bảng 2.9 Chỉ tiêu độ tin cậy của hệ thống …… 44
+- Bảng 2.10 Tối ưu quy hoạch hệ thống truyền tải …… 44
+- Bảng 2.11 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 1 …… 48
+- Bảng 2.12 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 2 …… 48
+- Bảng 2.13 Thông số đường dây truyền tải tỉnh Hậu Giang đến năm 2020 …… 52
+- Bảng 2.14 Dự báo nhu cầu phụ tải đến năm 2020 …… 53
+- Bảng 2.15 Kết quả quy hoạch và mở rộng lưới điện theo độ dự trữ …… 54
+- Bảng 2.16 Chỉ tiêu độ tin cậy và tổng chi phí …… 55
+- Bảng 3.1 Thông số nguồn phát và nhu cầu tải của hệ thống Garver 6 nút …… 75
+- Bảng 3.2 Thông số các nhánh liên kết của hệ thống điện Garver 6 nút …… 75
+- Bảng 3.3 Kết quả quy hoạch mở rộng hệ thống điện Garver 6 nút …… 77
+- Bảng 3.4 Kết quả tối ưu chi phí đầu tư …… 78
+- Bảng 3.5 Thể hiện thông số nguồn phát mạng điện chuẩn IEEE 25 nút …… 79
+- Bảng 3.6 Thể hiện thông số nhánh mạng điện chuẩn IEEE 25 nút …… 80
+- Bảng 3.7 Kết quả tối ưu chi phí đầu tư mạng điện chuẩn IEEE 25 nút …… 82
+- Bảng 3.8 So sánh kết quả các phương pháp được kiểm tra cùng mạng điện chuẩn IEEE 25 nút …… 83
+
+<!-- page: 21 -->
+
+- Bảng 3.9 Kết quả hệ thống quy hoạch mở rộng lưới điện Brazil 46 nút....85
+- Bảng 3.10 Kết quả tối ưu chi phí đầu tư mạng điện Brazil 46 nút....86
+- Bảng 3.11 So sánh các kết quả các phương pháp được kiểm tra cùng mạng điện Brazil 46 nút....87
+- Bảng 3.12 So sánh kết quả của phương pháp HS và CS số cá thể là 50....87
+- Bảng 3.13 So sánh kết quả của phương pháp HS và CS với $p_a$ là 0,98....88
+- Bảng 4.1 Thông số các nhánh liên kết mới....102
+- Bảng 4.2 Nhu cầu tải của các thanh cái mới....102
+- Bảng 4.3 Giá trị hàm mục tiêu trong các trường hợp....104
+- Bảng 4.4 Tối ưu hóa công suất của nguồn phân tán trong trường hợp $w_1 = w_2 = w_3 = 0,33$ và $w_4 = 0$....105
+- Bảng 4.5 Kết quả phân tích độ tin cây....105
+- Bảng 4.6 Giá trị GD, SP và DM cho các thuật toán tối ưu khác nhau trong 2 & 3 chiều Pareto....107
+- Bảng B.1 Thông số nút mạng điện chuẩn Garver 6 nút....130
+- Bảng B.2 Thông số nguồn phát mạng điện chuẩn Garver 6 nút....130
+- Bảng B.3 Thông số nhánh mạng điện chuẩn Garver 6 nút....131
+- Bảng B.4 Thông số nút mạng điện chuẩn IEEE 25 nút....131
+- Bảng B.5 Thông số nút mạng điện chuẩn IEEE 25 nút....132
+- Bảng B.6 Thông số nhánh mạng điện chuẩn IEEE 25 nút....132
+- Bảng B.7 Thông số nút mạng điện Brazil 46 nút....134
+- Bảng B.8 Thông số nguồn phát mạng điện Brazil 46 nút....135
+- Bảng B.9 Thông số nhánh mạng điện Brazil 46 nút....135
+- Bảng B.10 Thông số đầu vào nguồn phát mạng điện Brazil 46 nút....137
+- Bảng B.11 Thông số đầu vào nhánh mạng điện Brazil 46 nút....138
+- Bảng B.12 Thông số nguồn phát mạng điện tỉnh Bến Tre....140
+- Bảng B.13 Thông số trạm biến áp mạng điện tỉnh Bến Tre....140
+- Bảng B.14 Thông số nguồn phát mạng điện tỉnh Bến Tre đến năm 2030....141
+- Bảng B.15 Thông số liên kết đường dây mạng điện tỉnh Bến Tre....141
+- Bảng B.16 Thông số phụ tải mạng điện tỉnh Bến Tre đến năm 2045....141
+- Bảng B.17 Các tuyến đường dây 110kV cấp điện cho tỉnh Hậu Giang....142
+
+<!-- page: 22 -->
+
+- Bảng B.18 Công suất trao đổi trên lưới 110kV tỉnh Hậu Giang với các tỉnh ..... 142
+- Bảng B.19 Các trạm biến áp 220kV - 110kV cấp điện cho tỉnh Hậu Giang..... 143
+- Bảng B.20 Hệ thống nguồn cung cấp điện vùng ĐBSCL.... 143
+- Bảng B.21 Trạm biến áp 220kV vùng ĐBSCL.... 144
+- Bảng B.22 Đường dây 220kV vùng ĐBSCL.... 144
+- Bảng B.23 Đường dây 110kV vùng ĐBSCL.... 144
+- Bảng B.24 Trạm biến áp 110kV vùng ĐBSCL.... 146
+- Bảng B.25 Dữ liệu đầu vào của chương trình vùng ĐBSCL.... 149
+- Bảng B.26 Dữ liệu đầu vào của chương trình tỉnh Bến Tre.... 150
+- Bảng B.27 Dữ liệu đầu vào của chương trình tỉnh Hậu Giang.... 151
+
+<!-- page: 23 -->
+
+## MỞ ĐẦU
+
+## 1. Lý do chọn đề tài
+
+Trong hiện tại và cả tương lai, hệ thống điện đang đối mặt với nhiều thách thức đáng kể. Một trong những thực trạng quan trọng nhất là nhu cầu về năng lượng đang tăng lên một cách nhanh chóng, do sự gia tăng của dân số và phát triển kinh tế. Điều này đặt ra áp lực lớn đối với hệ thống điện, đòi hỏi mở rộng và nâng cấp lưới điện để đảm bảo cung cấp đủ điện cho mọi người.
+
+Tuy nhiên, việc mở rộng lưới điện không chỉ đơn giản là xây dựng thêm các cấu trúc và hệ thống. Nó cũng đối diện với những thách thức phức tạp như tính linh hoạt, độ bền và hiệu suất của hệ thống. Một số khu vực có thể gặp khó khăn trong việc kết nối với mạng lưới hiện có, hoặc việc chuyển đổi từ nguồn năng lượng truyền thống sang nguồn năng lượng tái tạo có thể gây ra những vấn đề về tính ổn định và an toàn của lưới.
+
+Trong tương lai, vấn đề của sự bền vững và phát triển xanh cũng đặt ra thách thức lớn đối với hệ thống điện. Cần phải xem xét cách thức tích hợp các nguồn năng lượng tái tạo vào lưới điện một cách hiệu quả và đồng thời đảm bảo tính ổn định và đáng tin cậy của hệ thống. Điều này đòi hỏi sự quản lý thông minh và tích hợp công nghệ mới như trí tuệ nhân tạo và học máy vào hệ thống điện.
+
+Để giải quyết những vấn đề này, quy hoạch mở rộng lưới điện và quy hoạch tối ưu mở rộng lưới điện là cần thiết. Điều này bao gồm việc đưa ra kế hoạch chi tiết cho việc mở rộng và nâng cấp hệ thống, cũng như sử dụng các phương pháp và công nghệ mới để tối ưu hóa hiệu suất và linh hoạt của lưới điện. Đồng thời, cần phải tạo ra các chính sách và quy định hỗ trợ để đảm bảo việc mở rộng lưới điện và tối ưu hóa được thực hiện một cách bền vững và đáp ứng được các yêu cầu của tương lai.
+
+Nhiệm vụ của hệ thống điện là sản xuất, truyền tải và phân phối điện năng đáp ứng yêu cầu của phụ tải một cách liên tục, chất lượng với giá thành hợp lý. Các nhà máy điện thường đặt ở xa các trung tâm phụ tải. Để có thể truyền tải điện năng từ nhà máy điện đến các hộ tiêu thụ và phân phối điện năng cho chúng ta cần thiết phải có lưới điện truyền tải và phân phối. Do đó, vấn đề cải tạo lưới điện là công việc cần thiết, không thể thiếu trong công tác phát triển hệ thống điện. Công tác quy hoạch mở rộng lưới điện là phần quan trọng của quy hoạch hệ thống điện. Vấn đề quy hoạch
+
+<!-- page: 24 -->
+
+mở rộng lưới điện có quan hệ chặt chẽ với quy hoạch nguồn điện nhằm đảm bảo giải tỏa công suất nguồn điện, góp phần nâng cao độ tin cậy cung cấp điện, tránh lãng phí cũng như đảm bảo khả năng thu hồi vốn. Nhiệm vụ của quy hoạch mở rộng lưới điện là xác định một cấu hình tối ưu theo sự tăng trưởng của phụ tải. Và một sơ đồ quy hoạch nguồn theo thời gian quy hoạch ứng với yêu cầu phân phối điện năng một cách tin cậy và kinh tế.
+
+Bài toán quy hoạch mở rộng lưới điện là trả lời những câu hỏi “nơi nào cần quy hoạch và mở rộng?”, “công suất cần mở rộng là bao nhiêu?”, “tổng chi phí cho quy hoạch là bao nhiêu?”, “độ tin cậy của hệ thống điện được cải thiện như thế nào sau khi tiến hành quy hoạch?”,… Trong 3 thập kỷ qua, đã có rất nhiều giải thuật và phương pháp chứng minh hiệu quả giải bài toán quy hoạch hệ thống điện cũng như lưới truyền tải như: tối ưu hóa đàn kiến, thuật toán di truyền, tối ưu hóa bầy đàn, tìm kiếm Tabu, liệt kê ẩn 0 - 1, tìm kiếm hài hòa, tìm kiếm phân tán,…Các phương pháp thông minh nhân tạo được áp dụng, nhằm rút ngắn thời gian tìm kiếm và tìm nghiệm tối ưu toàn cục hiệu quả. So với quy hoạch nguồn, công tác quy hoạch mở rộng lưới điện phức tạp hơn. Bài toán quy hoạch mở rộng lưới điện là vấn đề quy mô lớn, phức tạp và tổ hợp số nguyên của các vấn đề phi tuyến tính hỗn hợp. Giải pháp chính xác cho vấn đề quy hoạch mở rộng lưới điện là rất quan trọng trong HTĐ. Do đó, xây dựng được một mô hình toán của quy hoạch mở rộng hệ thống lưới điện trọn vẹn là công việc khó khăn và phức tạp. Các phương pháp đều dựa trên phương pháp mô hình hóa bài toán về dạng toán học rồi sử dụng các giải thuật toán học tìm ra lời giải tối ưu dựa trên các ràng buộc được đặt trước. Có nhiều phương pháp tối ưu được áp dụng trong quy hoạch mở rộng lưới và quy hoạch tối ưu mở rộng lưới điện. Dưới đây là một số phân loại cơ bản cùng với hạn chế của chúng:
+
+\- Phương pháp tối ưu hóa đơn biến (Univariate Optimization Methods): Các phương pháp này tập trung vào việc tối ưu hóa một biến duy nhất trong một hệ thống phức tạp. Ví dụ bao gồm phương pháp đánh giá địa lý (Geographical Evaluation Method) và phương pháp quy hoạch tuyến tính (Linear Programming Method). Tuy nhiên, chúng có thể bỏ qua sự tương tác giữa các biến và không hiệu quả khi áp dụng cho các vấn đề phức tạp.
+
+\- Phương pháp tối ưu hóa đa biến (Multivariate Optimization Methods): Các phương pháp này xem xét tất cả các biến cần tối ưu hóa đồng thời. Ví dụ bao gồm
+
+<!-- page: 25 -->
+
+thuật toán di truyền (Genetic Algorithms) và thuật toán tìm kiếm theo hướng (Directional Search Algorithms). Nhược điểm của chúng là cần nhiều thời gian tính toán và có thể gặp khó khăn khi cần tìm ra các giải pháp tối ưu trong không gian biến lớn.
+
+\- Phương pháp dựa trên mô phỏng (Simulation-based Methods): Các phương pháp này sử dụng mô phỏng để đánh giá hiệu suất của các kịch bản khác nhau. Ví dụ bao gồm mô phỏng Monte Carlo và mô phỏng hệ thống. Tuy nhiên, chúng có thể tốn kém về thời gian và tài nguyên tính toán.
+
+\- Phương pháp tối ưu hóa tiến hóa (Evolutionary Optimization Methods): Các phương pháp này mô phỏng quá trình tiến hóa trong tự nhiên để tìm kiếm giải pháp tối ưu. Ví dụ bao gồm thuật toán tiến hóa đa nhiệm (Multi-Objective Evolutionary Algorithms) và thuật toán di truyền đa nhiệm (Multi-Objective Genetic Algorithms). Tuy nhiên, chúng có thể đòi hỏi nhiều thời gian và tài nguyên tính toán.
+
+Phương pháp tối ưu hóa dựa trên học máy (Machine Learning-based Optimization Methods): Các phương pháp này sử dụng các thuật toán học máy để tìm kiếm các giải pháp tối ưu. Ví dụ bao gồm mạng nơ-ron nhân tạo (Artificial Neural Networks) và học tăng cường (Reinforcement Learning). Nhược điểm của chúng là cần có dữ liệu lớn và không chắc chắn về tính khả thi và hiệu quả của các giải pháp tìm được.
+
+Mỗi phương pháp tối ưu có ưu điểm và hạn chế riêng và việc lựa chọn phương pháp phù hợp phụ thuộc vào tính chất của vấn đề cụ thể cũng như tài nguyên và ràng buộc có sẵn. Hiện nay, các thuật toán đã được đề xuất để giải quyết các vấn đề liên quan đến quy hoạch mở rộng lưới điện và được phân thành ba loại như phương pháp toán học, phương pháp Heuristic, phương pháp Metaheuristic. Phương pháp toán học đã được áp dụng nhiều để giải quyết bài toán quy hoạch mở rộng lưới điện gặp nhiều hạn chế như cần phải mô hình hóa HTĐ cân bằng vào mô hình lập trình tối ưu rất phức tạp, tổ hợp lại các ràng buộc mới gặp nhiều khó khăn cần phải sắp xếp lại toàn bộ mô hình. Phương pháp heuristic được sử dụng nhiều trong thời gian gần đây do có ưu điểm là không cần phải chuyển đổi HTĐ thành mô hình lập trình tối ưu nhưng kết quả có thể rơi vào cực tiểu cục bộ thay vì cực tiểu toàn cục và cần nhiều thời gian mô phỏng. Phương pháp Metaheuristic là tập hợp các đặc điểm nổi bậc của phương pháp toán học và phương pháp heuristic luôn đạt được giải pháp tốt cho HTĐ lớn với
+
+<!-- page: 26 -->
+
+thời gian tính toán ngắn và không cần phải chuyển đổi HTĐ thành mô hình lập trình tối ưu.
+
+Luận án này, nội dung sẽ đề xuất các phương pháp Metaheuristic để giải bài toán quy hoạch mở rộng lưới điện có xét nhiều điều kiện ràng buộc và nghiệm tìm được sẽ tốt nhất. Khi áp dụng phương pháp này ưu điểm là luôn đạt được giải pháp tốt khi kết nối hệ thống lớn với thời gian tính toán ngắn. Chính vì vậy, các phương pháp Metaheuristic mới được đề xuất sẽ dựa vào sự tìm kiếm của các loài động vật trong tự nhiên áp dụng vào giải bài toán quy hoạch mở rộng lưới điện nhằm tìm giải pháp tối ưu.
+
+## 2. Các mục tiêu nghiên cứu
+
+## a. Mục tiêu chung
+
+Áp dụng các phương pháp thông minh nhân tạo để tính toán tối ưu bài toán quy hoạch mở rộng lưới điện.
+
+## b. Mục tiêu cụ thể
+
+Nghiên cứu bài toán quy hoạch mở rộng lưới điện truyền tải và quy hoạch lưới điện phân phối.
+
+Nghiên cứu áp dụng thuật toán cận biên và nhánh vào giải bài toán quy hoạch mở rộng lưới điện truyền tải và chứng minh hiệu quả thuật toán thông qua các lưới điện thực ở khu vực Đồng Bằng Sông Cửu Long (ĐBSCL) và các tỉnh trong khu vực ĐBSCL cụ thể tỉnh Bến Tre, Hậu Giang.
+
+Nghiên cứu xây dựng mới thuật toán tìm kiếm tối ưu dựa vào các hành vi tìm kiếm con quạ, tìm kiếm chim tu hú nhằm mục tiêu sẽ tìm được giải pháp tối ưu trong bài toán quy hoạch mở rộng lưới điện truyền tải.
+
+Nghiên cứu áp dụng thuật toán PSO cải tiến vào bài toán quy hoạch lưới điện phân phối và kiểm tra hiệu quả của phương pháp PSO cải tiến bằng cách so sánh với nhiều phương pháp khác cùng mạng điện.
+
+## 3. Nhiệm vụ nghiên cứu
+
+Quy hoạch mở rộng lưới điện nhằm đáp ứng nhu cầu phụ tải.
+
+Xây dựng các phương pháp tối ưu hóa thông minh nhân tạo giải bài toán quy hoạch mở rộng lưới điện truyền tải và phân phối.
+
+<!-- page: 27 -->
+
+Các phương pháp được áp dụng vào giải bài toán quy hoạch lưới điện có kết quả tối ưu hóa sẽ đáp ứng được yêu cầu của hàm mục tiêu đề ra là tối thiểu tổng chi phí đầu tư, chi phí vận hành.
+
+## 4. Phạm vi và giới hạn
+
+Các vấn đề được xem xét khi quy hoạch: chi phí đầu tư, chi phí vận hành và độ tin cậy hệ thống điện sau khi quy hoạch mở rộng lưới điện.
+
+Quy hoạch mở rộng lưới điện được dựa trên kết quả dự báo phụ tải đã có. Các vấn đề được giải quyết bài toán điều kiện xác lập.
+
+Áp dụng phương pháp cận biên và nhánh vào giải bài toán TEP được kiểm chứng qua mạng điện thực ở các tỉnh Bến Tre, Hậu Giang và vùng Đồng Bằng Sông Cửu Long; Kết quả làm cơ sở chứng minh khả năng hiệu quả các phương pháp thông minh nhân tạo CS, CSA và áp dụng vào giải bài toán quy hoạch lưới điện truyền tải chứng minh cùng mạng điện.
+
+Các phương pháp thông minh nhân tạo được chứng minh tính hiệu quả sẽ kiểm chứng qua các mạng điện chuẩn Garver 6 nút, IEEE 25 nút, mạng điện được công bố quốc tế miền nam Brazil 46 nút và mạng điện hình tia 32 nút.
+
+Bài toán TEP xem xét các điều kiện ràng buộc về cân bằng dòng điện nút, giới hạn phân bố công suất trên đường dây, quyền ưu tiên, giới hạn góc pha điện áp nút và chỉ số độ tin cậy.
+
+Bài toán quy hoạch lưới điện phân phối xem xét các điều kiện ràng buộc về giới hạn về điện áp nút, phân bố công suất truyền tải, công suất phát, cấu trúc mạng điện hình tia, cân bằng công suất các nút, dung lượng đường dây, công suất trạm, công suất nguồn phát phân tán, giới hạn ngân sách.
+
+## 5. Hướng tiếp cận và phương pháp nghiên cứu
+
+Áp dụng các phương pháp nghiên cứu tham khảo tài liệu, tính toán lý thuyết kết hợp mô phỏng.
+
+Xử lý thống kê với sự hỗ trợ của Microsoft Excel.
+
+Mô phỏng trên nền tảng Matlab, Powerworld, ngôn ngữ lập trình Fortran.
+
+## 6. Ý nghĩa khoa họa và thực tiễn
+
+Xây dựng được các phương pháp thông minh nhân tạo giải bài toán quy hoạch mở rộng tối ưu lưới điện.
+
+<!-- page: 28 -->
+
+Kết quả tối ưu sẽ đáp ứng được yêu cầu của hàm mục tiêu đề ra là tối thiểu tổng chi phí đầu tư, chi phí vận hành và đồng thời sẽ thỏa mãn điều kiện ràng buộc đánh giá được chỉ số độ tin cậy sau khi quy hoạch.
+
+Thuật toán đơn giản và có tính hiệu quả sẽ giải được nhiều bài toán quy hoạch lưới điện.
+
+Việc nghiên cứu phát triển các thuật toán thông minh nhân tạo để giải bài toán quy hoạch mở rộng tối ưu lưới điện hiện nay sẽ giải quyết nhanh và hiệu quả bài toán quy hoạch mở rộng tối ưu lưới điện.
+
+## 7. Cấu trúc của luận án
+
+Luận án được sắp xếp thành 5 chương
+
+Chương 1. Tổng quan.
+
+Chương 2. Quy hoạch mở rộng lưới điện truyền tải xét đến độ tin cậy.
+
+Chương 3. Quy hoạch lưới điện truyền tải DC.
+
+Chương 4. Quy hoạch lưới điện phân phối.
+
+Chương 5. Kết luận và hướng phát triển.
+
+<!-- page: 29 -->
+
+## Chương 1. TỔNG QUAN
+
+## 1.1. Khái quát về bài toán quy hoạch tối ưu lưới điện truyền tải
+
+Trên thế giới ngày nay nhu cầu năng lượng đang là vấn đề thời sự cho sự phát triển của nền kinh tế và sự gia tăng dân số toàn cầu, trong đó năng lượng điện đóng vai trò then chốt. Từ đó, hệ thống điện cũng liên tục mở rộng, phát triển cả về nguồn, các đường dây truyền tải. Do tính chất tiêu thụ điện ở các khu vực trong từng thời điểm khác nhau cho nên phân bố công suất trên các lưới điện liên tục điều chỉnh phù hợp thời gian. Kinh nghiệm nhà quản lý vận hành hệ thống điện cho thấy tại một thời điểm trên hệ thống có những đường dây bị quá tải trong khi các đường dây khác non tải và ngược lại. Việc sử dụng hiệu quả và tối ưu các nguồn cung cấp là một vấn đề mà các nhà nghiên cứu rất quan tâm.
+
+Thông thường công tác quy hoạch mở rộng lưới điện truyền tải (LĐTT) theo đồng nhất quy hoạch hệ thống nguồn điện. Nhiệm vụ của quy hoạch mở rộng LĐTT là xác định tối ưu hoá vị trí, mở rộng công suất truyền tải và vận chuyển điện năng từ nơi sản xuất đến nơi tiêu thụ với độ tin cậy cao trên hệ thống hiện hữu. Trong những năm gần đây, các nghiên cứu trong lĩnh vực tổng hợp các mô hình quy hoạch mở rộng LĐTT có nhiều yếu tố ảnh hưởng cần xem xét như chỉ tiêu định hướng, chính sách, các vấn đề về kinh tế kỹ thuật khi mở rộng LĐTT. Nhiều nghiên cứu và các mô hình mới được đăng trên nhiều tài liệu cải thiện tính sẵn có của máy tính, giải thuật tối ưu mới và mức độ không chắc chắn lớn hơn trong thị trường điện cạnh tranh [1]. Các nhà quy hoạch mở rộng LĐTT đã áp dụng nhiều phương pháp để giải quyết vấn đề mở rộng lưới điện. Các nhà quy hoạch đã sử dụng mô hình mở rộng tự động để xác định quy hoạch mở rộng tối ưu bằng cách giảm tối thiểu hàm mục tiêu toán học xét đến các điều kiện ràng buộc [2].
+
+Quy hoạch hệ thống điện là quá trình xác định và thiết kế các biện pháp để mở rộng hoặc nâng cấp hệ thống điện hiện tại để đáp ứng nhu cầu tăng của người tiêu dùng và đảm bảo tính ổn định của hệ thống. Quy hoạch này thường bao gồm việc xác định các vị trí mới cho các trạm biến áp, nhà máy phát điện và dây dẫn để cung cấp năng lượng cho các khu vực mới hoặc có nhu cầu tăng cường. Nó cũng bao gồm việc đánh giá nhu cầu điện, dự báo tải, định vị vị trí và công suất của các cơ sở sản xuất điện, đánh giá tính khả dụng và tiêu thụ năng lượng, cũng như đảm bảo tính phân
+
+<!-- page: 30 -->
+
+phối, an toàn và ổn định của hệ thống. Quy hoạch hệ thống điện thường được thực hiện dựa trên các tiêu chí kỹ thuật, kinh tế, môi trường và xã hội, và thường phải tuân thủ các quy định pháp lý và quy định ngành. Quy hoạch mở rộng hệ thống điện là một trong những nhiệm vụ hết sức quan trọng cho các nhà quản lý và vận hành hệ thống. Bởi vì, nhiệm vụ cơ bản của hệ thống điện là sản xuất, truyền tải và phân phối điện năng đáp ứng yêu cầu ngày càng tăng của phụ tải với giá thành và chất lượng điện hợp lý nhất. Tối ưu hoá quy hoạch mở rộng hệ thống điện là một nhiệm vụ hết sức phức tạp và khó khăn ngay cả có sự hỗ trợ của máy tính. Giải bài toán tối ưu này đòi hỏi thời gian tính toán lớn với rất nhiều dữ liệu đầu vào. Do đó, thông thường thì tiến hành quy hoạch hệ thống nguồn điện đáp ứng dự đoán phụ tải dài hạn trước. Công tác quy hoạch mở rộng lưới điện được thực hiện ngay sau đó [3].
+
+Quy hoạch mở rộng tối ưu lưới điện là quá trình lập kế hoạch và xác định cách tối ưu hóa việc mở rộng và phát triển hệ thống lưới điện để đáp ứng nhu cầu ngày càng tăng của người tiêu dùng một cách hiệu quả nhất. Quy hoạch mở rộng tối ưu lưới điện bao gồm việc mở rộng hoặc nâng cấp hệ thống điện, tập trung vào việc tối ưu hóa các quyết định liên quan đến mở rộng. Nó sử dụng các phương pháp toán học và các công cụ mô hình hóa để xác định các kịch bản phát triển tối ưu cho hệ thống, nhằm tối thiểu hóa chi phí đầu tư và vận hành trong khi vẫn đảm bảo đáp ứng nhu cầu năng lượng và yêu cầu về độ tin cậy. Mục tiêu chính của quy hoạch mở rộng tối ưu lưới điện là tối thiểu hóa chi phí và tối đa hóa hiệu suất của hệ thống, đồng thời đảm bảo tính tin cậy và an toàn của nguồn cung điện. Quá trình này bao gồm đánh giá và dự báo nhu cầu điện, xác định vị trí và công suất của các nhà máy phát điện mới, cũng như quyết định về việc mở rộng hoặc nâng cấp các dây dẫn, trạm biến áp và các cơ sở hạ tầng khác trong hệ thống. Các yếu tố như tính bền vững môi trường, hiệu quả kinh tế và yêu cầu pháp lý cũng được cân nhắc để đảm bảo rằng quá trình mở rộng được thực hiện một cách bền vững và hài hòa với môi trường xã hội và tự nhiên. Nghiên cứu này sẽ giúp cho nhà quy hoạch, nhà quản lý không những dễ dàng đưa ra quyết định về vị trí, công suất những đường dây cần mở rộng. Đặc biệt, phương pháp này còn cho biết chỉ số độ tin cậy xác xuất ngẫu nhiên sau khi quy hoạch. Đây là một trong những chỉ số rất quan trọng cho công tác quy hoạch, quản lý và vận hành hệ thống điện [4,5].
+
+<!-- page: 31 -->
+
+Như vậy, quy hoạch mở rộng hệ thống điện tập trung vào việc mở rộng cơ sở hạ tầng để đáp ứng nhu cầu, trong khi quy hoạch mở rộng tối ưu lưới điện tập trung vào việc tối ưu hóa các quyết định mở rộng để đảm bảo hiệu suất và hiệu quả cao nhất.
+
+## 1.2. Độ tin cậy trong quy hoạch mở rộng lưới điện truyền tải
+
+Trong nhiều năm qua, công tác quy hoạch hệ thống diện được rất nhiều nhà khoa học quan tâm nhằm đáp ứng được nhu cầu phụ tải trong tương lai. Bài toán đặt ra cho có nhà quản lý và vận hành hệ thống điện là quy hoạch làm sao để giảm được chi phí đầu tư thấp nhất và vận hành an toàn [6]. Chính vì vậy, quy hoạch hệ thống điện cần xét các điều kiện về chỉ tiêu độ tin cậy là cực kỳ quan trọng. Hiện nay có nhiều phương pháp giải bài toán quy hoạch mở rộng hệ thống truyền tải có xét đến độ tin cậy đã có nhiều kết quả hiệu quả như sau:
+
+Thuật toán cận biên và nhánh [7,8,9,10,11,12].
+
+\- Thuật toán tối ưu hóa bầy đàn (PSO) [13].
+
+\- Thuật toán di truyền (GA) [14].
+
+Thuật toán bước nhảy con ếch (SFLA) [15].
+
+Thuật toán tối ưu hóa đàn kiến (ACO) [16].
+
+\- Thuật toán tiến hóa vi phân (DE) [17].
+
+Công tác quy hoạch mở rộng hệ thống truyền tải sử dụng tiêu chí độ tin cậy được xây dựng như sau: quy trình đề xuất là bước đầu tiên trong việc chuẩn bị kế hoạch mở rộng hệ thống truyền tải sử dụng các phương pháp đánh giá xác suất các chỉ số độ tin cậy để đảm bảo độ tin cậy của lưới điện. Các vị trí và công suất tối ưu của đường dây truyền tải có thể được xác định bằng lý thuyết dòng cực đại và mặt cắt tối thiểu [7]. Quy hoạch mở rộng hệ thống truyền tải tối ưu có tính đến những yếu tố không chắc chắn liên quan đến cường độ cưỡng bức của các thành phần lưới điện (máy biến áp và đường dây)[8]. Vấn đề mô hình hóa lưới điện được xác định thành tập số nguyên và xem xét sự không chắc chắn của bài toán thông qua mô hình xác suất[9]. Thuật toán cận biên và nhánh bao gồm mô hình toán, dòng cực đại và mặt cắt tối thiểu, tối ưu hóa số nguyên được sử dụng để giải quyết bài toán quy hoạch hệ thống truyền tải[10,11]. Các nghiên cứu đã áp dụng phương pháp cận biên và nhánh vào bài toán quy hoạch lưới điện truyền tải chứng minh trên mạng điện chuẩn IEEE 21 nút [12], kết quả đã xác định được độ tin cậy của từng nút khác nhau và toàn bộ
+
+<!-- page: 32 -->
+
+hệ thống [13]. Do đó, phương pháp đề xuất có thể đáp ứng yêu cầu của khách hàng trong môi trường thị trường điện cạnh tranh.
+
+Thuật toán bước nhảy con ếch đã được áp dụng giải bài toán quy hoạch mở rộng truyền tải. Trọng tâm của là xác định vị trí, loại và số lượng các tuyến mới cần được thêm mới vào mạng lưới để đáp ứng nhu cầu dự báo phụ tải. Kết quả cho thấy, việc lắp đặt đường dây mới ở cấp điện áp cao hơn mạng hiện tại có thể giảm tổng chi phí đầu tư và chi phí vận hành [14]. So sánh các thuật toán tối ưu hóa metaheuristic trong việc giải bài toán quy hoạch hệ thống truyền tải nhận thấy được rằng, phương pháp SFLA và PSO rất phù hợp hơn để giải quyết bài toán quy hoạch hệ thống truyền tải có xét đến độ tin cậy so với phương pháp GA[15]. Tuy nhiên, khi áp dụng SFLA vào bài toán cần phải cẩn thận trong việc lựa chọn các tham số tối ưu hóa.
+
+Một phương pháp mới để giải quyết bài toán quy hoạch mở rộng truyền tải được đề xuất dựa trên tối ưu hóa đàn kiến [16]. Các thử nghiệm được phân tích là ảnh hưởng của độ tin cậy đến trình tự mở rộng là khá quan trọng để quyết định quy hoạch mở rộng lưới điện tốt nhất. Hơn nữa, hệ thống điện được đảm bảo độ tin cậy sẽ được cung cấp điện liên tục tốt hơn sau khi quy hoạch lưới với thời gian được xác định trước. Thuật toán ACO được so sánh với thuật toán tiến hóa vi phân và thuật toán tìm kiếm tabu đã cho thấy được nhược điểm chính liên quan đến việc điều chỉnh số lượng lớn tham số, mặc dù các tham số của nó có thể dễ dàng điều chỉnh cho các hệ thống khác nhau. Thuật toán ACO đã đạt được chỉ số hiệu suất chất lượng tốt hơn, tức là tập hợp các trình tự thời gian đầu tư tốt hơn khi so sánh với DE cùng hệ thống điện. Tuy nhiên, cần phải thực hiện một phân tích toàn diện hơn bao gồm các hệ thống và kích thước mạng khác nhau để đánh giá chính xác hiệu suất dữ liệu. Nhiệm vụ này cùng với việc bao gồm các tổn thất truyền tải (ví dụ: bằng cách sử dụng mô hình phi tuyến AC), sự không chắc chắn (về phát triển phụ tải, về vị trí và quy mô phát điện, khi ngừng hoạt động các tổ máy hiện hữu, về vận hành lưới $\mathrm { d i } \hat { \mathbf { \epsilon } } \mathbf { n } , \ldots )$ , các nguồn tái tạo và xem xét các dữ liệu khác như tối ưu hóa bầy đàn, hệ thống miễn dịch nhân tạo và tiến hóa vi phân [17], là một trong những vấn đề nghiên cứu trong tương lai. Chính vì vậy, việc sử dụng các tiêu chí dựa trên độ tin cậy trong các bài toán TEP cũng là một cuộc tranh luận các vấn đề liên quan cần được xem xét trong các công trình nghiên cứu trong tương lai [11]. Nhằm cải thiện các thuật toán cần xem xét những điều kiện liên quan không chắc chắn về dự báo nhu cầu phụ tải.
+
+<!-- page: 33 -->
+
+Quy hoạch HTĐ phù hợp được đánh giá ở hai giai đoạn: giai đoạn vĩ mô và giai đoạn vi mô. Nghiên cứu quy hoạch trong giai đoạn vĩ mô phải được xuất phát từ quan điểm chính sách chiến lược, nhưng đối với nghiên cứu quy hoạch trong giai đoạn vi mô chỉ cần xét đến lợi ích nguồn năng lượng. Phân tích thích hợp, chắc chắn và độ tin cậy thì liên quan đến giai đoạn vĩ mô và phân tích kỹ thuật về lỗi và ổn định thì liên quan đến giai đoạn vi mô. Trong quy hoạch mở rộng lưới điện truyền tải (LĐTT) thì sự mở rộng lưới điện luôn gặp theo cách thêm các đường dây mới vào mạng điện để tăng công suất lưới điện truyền tải. Mặt khác, có thể sử dụng thiết bị FACTS [17] để tăng thêm công suất cho hệ thống truyền tải và có thể được sử dụng thay vì lắp đặt đường dây mới. Chính vì thế, khi quy hoạch mở rộng LĐTT thì cần phải thực hiện phân tích độ tin cậy và thích hợp trước khi phân tích sự cố và ổn định. Do đó, quy hoạch mở rộng LĐTT dài hạn cần phải đánh giá độ tin cậy sau khi quy hoạch. Hiện tại, các vấn đề này đang được nghiên cứu tìm tính khả thi của thuật toán đề xuất chứng minh hiệu quả bằng cách áp dụng cho mạng truyền tải quy mô lớn.
+
+## 1.3. Quy hoạch lưới điện truyền tải DC
+
+Mục tiêu chính quy hoạch mở rộng LĐTT là đạt được tối thiểu tổng chi phí đầu tư nhưng phải đáp ứng nhu cầu phát triển phụ tải và độ tin cậy khi vận hành. Hiện nay, quy hoạch mở rộng LĐTT được xây dựng thành bài toán đa mục tiêu nên không thể giải bằng phương pháp cổ điển. Một số thuật toán đã được đề xuất để giải quyết các vấn đề liên quan đến quy hoạch mở rộng LĐTT sử dụng phương pháp meta-heuristic được phát triển mạnh mẽ bao gồm các thuật toán như sau:
+
+ Thuật toán tối ưu hóa đàn kiến (ACO) [18].
+
+ Thuật toán kết nối mạng nơron nhân tạo [19].
+
+Thuật toán thuộc địa bầy ong nhân tạo (ABC) [20].
+
+ Thuật toán tiến hóa vi phân (DE) [21].
+
+Thuật toán bước nhảy con ếch (SFLA) [22].
+
+Thuật toán di truyền (GA) [23,24,25,31,32,36].
+
+Thuật toán tìm kiếm tabu (TSA) [26].
+
+Thuật toán liệt kê ẩn 0-1 (Zero - One) [27].
+
+ Thuật toán tối ưu hóa bầy đàn (PSO) [28].
+
+Bài toán quy hoạch lập trình tuyến tính có thể được giải quyết hiệu quả bằng thuật toán kép phức tạp. Kết quả của giải pháp phức tạp hệ số Lagrange kết hợp với
+
+<!-- page: 34 -->
+
+mỗi ràng buộc đạt được hiệu quả. Hàm mục tiêu tìm kiếm được cung cấp có tính đến cả khía cạnh tài chính và kỹ thuật. Khía cạnh tài chính được thể hiện bằng chi phí đầu tư được kết hợp với tăng cường. Khía cạnh kỹ thuật được thể hiện bằng sự khác biệt góc độ và hệ số Lagrange. Các thử nghiệm được thực hiện trên thông tin tìm kiếm hoặc bằng cách xem xét khía cạnh tài chính (𝐶𝑖𝑛 $v _ { l } = 1 )$ hoặc chỉ xem xét khía cạnh kỹ thuật $( \pi _ { i j } ^ { d } = 1 )$ . Có thế kết luận rằng thuật toán đàn kiến có khả năng tìm ra giải pháp tối ưu với nỗ lực tính toán do có sự xem xét kết hợp hai khía cạnh tài chính và kỹ thuật [18]. Phương pháp này trình bày sự kết nối mạng nơron với thuật toán di truyền được đưa vào trong tạo ra trạng thái ban đầu để cải thiện tính chính xác mạng nơron khi áp dụng vào quy hoạch mở rộng lưới điện [19]. Phương pháp kết hợp này đã đưa vào bài toán quy hoạch lưới điện đã khả năng vượt trội rút ngắn được thời gian tính toán, độ chính xác, phân tích độ nhạy nhanh hơn chỉ cần mất vài giây và hệ thống sẽ xác định được nhiều giải pháp. Do đó, phương pháp kết hợp mạng nơ ron và giải thuật di truyền áp dụng quy hoạch lưới điện đã đưa kết quả hiệu quả, giúp cho các nhà quản lý và vận hành hệ thống điện có được phương án tốt khi xem xét bài toán quy hoạch lưới điện.
+
+Thuật toán thuộc địa bầy ong nhân tạo ứng dụng giải bài toán quy hoạch mở rộng lưới điện truyền tải đã đưa vào ít thông số đầu vào như kích thước quần thể, số lượng nguồn thức ăn, số lượng ong thợ và ong đứng xem. Giới hạn trên và dưới của giải pháp ứng viên được xác định [20]. Thuật toán phát ra được phân bố ngẫu nhiên số lượng ban đầu của kích thước đàn ong. Trong bài toán quy hoạch mở rộng lưới điện, mỗi giải pháp được đặt là giá trị số nguyên và số lượng có thể và $n _ { i j }$ thể hiện số đường dây có thể này giữa nhánh i và j. Trong thuật toán thuộc địa bầy ong nhân tạo, để tối ưu nguồn thức ăn cho ong chọn vị trí bằng hàm mục tiêu tối thiểu tổng chi phí đầu tư có kết hợp hệ số phạt được sử dụng để xử lý các ràng buộc. Giải pháp tìm kiếm trong giai đoạn tìm kiếm của ong thăm dò không được cải thiện thêm cho một số vòng lặp nhất định, thì con ong thăm dò tìm ngẫu nhiên nguồn thức ăn mới và được thay thế nguồn thức ăn bỏ rơi. Thuật toán sẽ kết thúc khi đạt đến số vòng lặp và đạt được giải pháp tối ưu. Phương pháp DE đã chứng minh được hiệu quả trong việc giải quyết bài toán tối ưu phi tuyến tính với nhiều ràng buộc[21]. DE có ưu điểm hơn các phương pháp tiến hóa vi phân khác đó là cấu trúc đơn giản, gọn, ít thông số điều khiển, điểm hội tụ cao. Các nghiên cứu cho thấy được tốc độ hội tụ của thuật toán
+
+<!-- page: 35 -->
+
+bước nhảy con ếch nhanh hơn so với các thuật toán meta-heuristic khác. Giống như các thuật toán meta-heuristic khác, thuật toán bước nhảy con ếch bắt đầu với số lượng ếch ban đầu được đặt vào ngẫu nhiên vào trong không gian tìm kiếm[22].
+
+Thuật toán di truyền được ra đời bởi cơ chế chọn lọc tự nhiên, quá trình sinh học thì cá thể nào mạnh mẽ hơn sẽ chiến thắng trong môi trường cạnh tranh. Thuật toán GA được giả định rằng giải pháp tiềm năng của vấn đề là cá thể và có thể diễn tả bởi tập hợp các thông số [23,31]. Tiêu chuẩn của giải thuật di truyền là phương pháp tìm kiếm ngẫu nhiên điều này có thể giải được hệ thống phương trình phi tuyến tính và bài toán tối ưu phức tạp. Điều cơ bản của thuật toán này là sự lựa chọn cá thể. Nó không cần ban đầu ước lượng tốt cho lợi ích của giải pháp. Nói một cách khác, giải pháp của vấn đề phức tạp có thể ước lượng ban đầu yếu và sau đó chính xác trong giải pháp phù hợp. Thuật toán GA có nhiều ưu điểm trong tính toán. Ngoài ra, nó còn tìm ra nhiều kết quả một cách đồng thời mà các phương pháp thông thường không làm được. Vì thế, khả năng tìm ra kết quả tối ưu toàn cục được nâng lên. Ưu điểm chính của thuật toán GA là tìm ra kết quả gần tối ưu trong thời gian ngắn so với các phương pháp dò tìm ngẫu nhiên khác như mô phỏng tuyến tính (SA) hay qui hoạch động (DP)... Tuy nhiên, thuật toán GA phụ thuộc nhiều vào hàm thích nghi, nhạy với tỷ lệ lai và đột biến, sơ đồ mã hóa các bit và độ dốc của đường cong không gian dò tìm dẫn đến lời giải tối ưu thuật toán [24].
+
+Thuật toán di truyền có mô hình toán học tổng quát hơn so với phương pháp tìm kiếm Tabu [25]. Trong đó hàm mục tiêu là chi phí sản xuất và truyền tải. Thuật toán tìm kiếm tabu đã cho thấy cải thiện hiệu suất trong thời ngan ngắn [26]. Thuật toán là thủ tục tìm kiếm tabu thế hệ thứ ba với một số tính năng nâng cao. Đây là kỹ thuật tối ưu toàn diện tổ hợp nhất để xử lý các vấn đề khó khăn như quy hoạch mở rộng lưới điện. Phương pháp bao gồm các tính năng của một loạt các phương pháp tiếp cận khác như tìm kiếm heuristic, giải thuật mô phỏng và thuật toán di truyền. Trong tất cả các trường hợp thử nghiệm đã được nghiên cứu, có nguồn phát mới, các vị trí đặt tải điều này có thể kết nối với mạng chính hiện hữu: các kết nối như vậy có thể yêu cầu nhiều hơn một đường dây, máy biến áp thêm vào, làm cho vấn đề trở nên khó hơn theo nghĩa kết hợp nhiều hơn phải được xem xét. Trong hàm mục tiêu thể hiện chi phí xây dựng đường dây mới, máy biến áp mới…cùng với thông số phạt khi phụ tải bị sa thải. Thông số phạt α được xác định từ việc nghiên cứu tĩnh với tác động lên
+
+<!-- page: 36 -->
+
+khách hàng khi mất điện. Thông số này thể hiện mức giá cao nhất mà khách hàng muốn trả để được cung cấp liên tục.
+
+Thuật toán liệt kê ẩn không chỉ được áp dụng cho một bài toán con số nguyên mà còn được giải quyết vấn đề tổng quát hơn để có được một giải pháp tối ưu cho một vấn đề quy hoạch mở rộng lưới điện bởi sự phân tích Benders theo thứ bậc. Thuật toán được đề xuất đã được thực hiện và thử nghiệm thành công trong một hệ thống điện thực tế. Việc đưa ra các ràng buộc tích hợp biến vấn đề mở rộng thành một vấn đề lập trình phi tuyến tính hỗn hợp số nguyên. Thuật toán đã được áp dụng để giải quyết bài toán con về đầu tư là kết quả của việc áp dụng phương pháp phân giải Benders tới vấn đề quy hoạch mở rộng lưới điện và thuật toán đã chứng minh được tính hiệu quả của việc giải quyết vấn đề đầu tư. Do tính chất tổ hợp của vấn đề quyết định đầu tư, phần trên với kích thước của cây quyết định của thuật toán là rất quan trọng đối với sự thành công của phương pháp [27].
+
+Sự phát triển của PSO dựa trên các khái niệm điều chỉnh các quần thể có tổ chức xã hội trong tự nhiên cụ thể xem xét quá trình tìm kiếm thức ăn của đàn chim. Không gian tìm kiếm thức ăn này là toàn bộ không gian ba chiều mà chúng đang sinh sống. Tại thời điểm bắt đầu tìm kiếm cả đàn bay theo một hướng nào đó, có thể là rất ngẫu nhiên. Tuy nhiên sau một thời gian tìm kiếm một số cá thể trong đàn bắt đầu tìm ra được nơi có chứa thức ăn. Tùy theo số lượng thức ăn vừa tìm kiếm mà cá thể gửi tín hiệu đến các cá thể đang tìm kiếm ở vùng lân cận, tín hiệu này nhanh chóng lan truyền toàn quần thể. Dựa vào thông tin nhận được mỗi cá thể sẽ điều chỉnh hướng bay và vận tốc theo hướng về nơi có nhiều thức ăn nhất. Cơ chế này giúp cả đàn chim tìm ra nơi nhiều thức ăn nhất trên không gian tìm kiếm vô cùng rộng lớn. Như vậy, đàn chim đã dùng trí tuệ, kiến thức kinh nghiệm của cả đàn để nhanh chóng tìm ra nơi có chứa thức ăn. Việc mô hình hóa lại quá trình của đàn chim gọi là quá trình phỏng sinh học, thuật toán được xây dựng dựa trên việc mô hình hóa các quá trình trong sinh học gọi là thuật toán phỏng sinh học [28].
+
+Giống như các phương pháp tối ưu khác dựa trên tìm kiếm của quần thể, thuật toán PSO cũng bắt đầu bằng một trường hợp ngẫu nhiên của các cá thể trong cộng đồng quần thể trong không gian tìm kiếm. Tuy nhiên, không giống với các phương pháp tiến hóa vi phân khác, thuật toán PSO không có sự kết nối giữa các phần tử di truyền trong quá trình tìm kiếm mà làm việc dựa trên ứng xử xã hội của các phần tử
+
+<!-- page: 37 -->
+
+trong nhóm. Vì vậy, kết quả tối ưu toàn cục do sự điều chỉnh quỹ đạo của các cá thể sẽ dẫn đến vị trí tốt nhất là phần tử tối ưu trong nhóm sau mỗi bước tính. Phương pháp PSO trở nên phổ biến vì tính đơn giản, dễ áp dụng và khả năng hội tụ nhanh chóng đạt kết quả tốt. Trong thuật toán PSO, mỗi cá thể trong bầy đàn sẽ thay đổi vị trí bằng cách di chuyển nhiều vị trí khác nhau trong không gian tìm kiếm cho đến khi tìm được vị trí tốt nhất. Quỹ đạo của mỗi cá thể trong không gian tìm kiếm được hiệu chỉnh bằng cách thay đổi vận tốc của từng cá thể, thông qua kinh nghiệm bay của nó và kinh nghiệm bay của những cá thể khác trong không gian tìm kiếm. Nó sử dụng một số lượng các điểm tìm kiếm mà di chuyển ngẫu nhiên trong không gian tìm kiếm. Kinh nghiệm hay nhất về vị trí của mỗi cá nhân được lưu lại và sau đó truyền đạt cho một phần hoặc toàn bộ tập thể đàn. Phương thức truyền tải được xác định bởi nhất định hoặc thích nghi kết nối xã hội đối với tính hội tụ của thuật toán. Thuật toán PSO đã được áp dụng vào quy hoạch mở rộng lưới điện ở mô hình nguồn điện một chiều đã thu được kết quả hội tựu và đạt hiệu quả tối ưu.
+
+## 1.4. Quy hoạch lưới điện phân phối
+
+Một lưới điện phân phối bao gồm các trạm biến áp (các nút cung cấp năng lượng), các bộ phận nạp (các dây dẫn điện nối các nút và công suất tải) và khách hàng (các nút yêu cầu công suất). Các nhà quy hoạch lưới điện phải đảm bảo rằng có đủ công suất trạm biến áp, công suất nạp và mức tin cậy chấp nhận được để đáp ứng các dự báo nhu cầu điện trong khu vực quy hoạch. Quy hoạch lưới điện phân phối liên quan đến nhiều nhiệm vụ khác nhau trong số đó là:
+
+• Tìm vị trí trạm biến áp và nguồn cung cấp.
+
+• Phân bổ trạm biến áp và công suất cung cấp.
+
+• Phân bổ công suất tải điện.
+
+Các nhiệm vụ này phải được thực hiện đồng thời tối ưu hóa các mục tiêu khác nhau như chi phí kinh tế và độ tin cậy của hệ thống. Chi phí của một lưới điện phân phối được chia thành hai phần: chi phí đầu tư và chi phí vận hành. Chi phí đầu tư không thay đổi theo chức năng của hệ thống tải trong khi chi phí vận hành thay đổi theo hàm phi tuyến tính của hệ thống tải do tổn thất điện năng [58-61].
+
+Quy hoạch lưới điện phân phối phù hợp không chỉ cung cấp chi phí thấp mà còn phải đáp ứng ba yêu cầu chính về kỹ thuật: giới hạn sụp áp, giới hạn công suất trạm biến áp và nguồn cung cấp và cấu hình hình tia.
+
+<!-- page: 38 -->
+
+Trong nhiều năm qua có rất nhiều phương pháp áp dụng vào bài toán quy hoạch lưới điện phân phối. Hiện nay phương pháp thông minh nhân tạo được áp dụng quy hoạch lưới điện phân phối điện đã được phát triển vì đạt được mức độ chính xác và cho ra lời giải tối ưu. Các phương pháp thông minh nhân tạo bao gồm như sau:
+
+ Thuật toán tối ưu hóa bầy đàn (PSO) [58,59,71].
+
+ Thuật toán di truyền (GA) [69].
+
+Thuật toán di truyền đã được áp dụng để đưa ra quy hoạch mở rộng trạm biến áp phù hợp bằng cách giảm thiểu chi phí đầu tư trạm biến áp mà không vi phạm ràng buộc vận hành. Các đường cong với các hằng số thời gian khác nhau được áp dụng để thể hiện mức tăng trưởng phụ tải cho từng nhóm khách hàng nhằm dự báo phụ tải hàng năm trong từng khu vực. Các nghiên cứu gần đây, bài toán xét đến hàm mục tiêu được xây dựng bằng cách xem xét tổn thất điện năng hàng năm và chi phí đầu tư của các máy biến áp. Sử dụng thuật toán GA đã được giải quyết hiệu quả chi phí tối ưu trong quy hoạch mở rộng các trạm biến áp.
+
+Thuật toán PSO là một trong những phương pháp được sử dụng phổ biến để giải quyết bài toán quy hoạch lưới điện phân phối. Thuật toán này có nhiều phương pháp nâng cao như tiệm cận, song song nhằm đạt được lời giải tối ưu trong thời gian ngắn. Thuật toán PSO đã đưa ra một ví dụ đơn giản về quá trình tìm kiếm thức ăn của một đàn chim. Không gian tìm kiếm thức ăn lúc này là toàn bộ không gian ba chiều mà chúng đang sinh sống. Tại thời điểm bắt đầu tìm kiếm cả đàn bay theo một hướng nào đó, có thể là rất ngẫu nhiên. Tuy nhiên, sau một thời gian tìm kiếm một số cá thể trong đàn bắt đầu tìm ra được nơi có chứa thức ăn. Tùy theo số lượng thức ăn vừa tìm kiếm, mà cá thể gửi tín hiệu đến các cá thể đang tìm kiếm ở vùng lân cận, tín hiệu này nhanh chóng lan truyền trên toàn quần thể. Dựa vào thông tin nhận được mỗi cá thể sẽ điều chỉnh hướng bay và vận tốc theo hướng về nơi có nhiều thức ăn nhất. Cơ chế này giúp cả đàn chim tìm ra nơi có nhiều thức ăn nhất trên không gian tìm kiếm vô cùng rộng lớn[58-59]. Thuật toán tối ưu hóa bầy đàn hạt nhị phân cho bài toán DSP phi tuyến tính và không lồi bao gồm DG trong trường hợp đơn mục tiêu và đa mục tiêu. Mục tiêu của bài toán DSP được đề xuất là tổng chi phí mở rộng, tổng độ lệch điện áp và tổng tổn thất công suất [60-63]. Khi giải bài toán quy hoạch mở rộng hệ thống phân phối các phương pháp cổ điển đã được tích hợp với bài toán phân bố DG tuy nhiên chưa xem xét các phép tính gần đúng [64-66]. Các thuật toán tiến hóa
+
+<!-- page: 39 -->
+
+vi phân (DE) không thể giải được bài toán số nguyên nên thuật toán tối ưu hóa được tích hợp thuật toán GA nhị phân và PSO đã thu được kết quả tốt hơn [67-71]. Ưu điểm nổi bật khác của quy hoạch mở rộng hệ thống phân phối bằng thuật toán tiến hóa vi phân là đưa ra một số giải pháp không bị chi phối, cho phép các nhà quản lý và vận hành hệ thống quyết định sử dụng giải pháp tốt nhất dựa trên sự quan trọng của các mục tiêu khác nhau và có xét đến điều kiện giới hạn ngân sách.
+
+## 1.5. Các phương pháp đã áp dụng cho bài toán quy hoạch mở rộng lưới điện
+
+Các nội dung ở trên đều giải quyết được bài toán quy hoạch mở rộng lưới điện nhưng vẫn chưa tìm ra được tối ưu để giải quyết tất cả các vấn đề trong quy hoạch mở rộng lưới điện. Vì thế, các phương pháp đã áp dụng trong quy hoạch mở rộng lưới điện có một số đã chỉ ra rất nhiểu điểm lưu ý như sau:
+
+\- Các nhà nghiên cứu đã không quan tâm đến vấn đề quy hoạch công suất phản kháng trong quy hoạch mở rộng LĐTT, mặc dù nó thông tin rất quan trọng.
+
+\- Điều kiện không chắc chắn khi thay đổi nguồn phát không được xét đến và luôn giả định rằng đáp ứng được. Vấn đề này nên được xét một cách linh hoạt ở bất kỳ tình huống nào khi quy hoạch mở rộng LĐTT.
+
+\- Các phương pháp quy hoạch mở rộng lưới điện truyền tải đều được mô phỏng trong mô hình HTĐ một chiều. Mặc dù, mô hình HTĐ xoay có rất nhiều ưu điểm nhưng không được xét đến.
+
+\- Các ràng buộc về độ tin cậy và chuẩn an toàn không được xét đến trong nhiều phương pháp trước.
+
+\- Các nghiên cứu trước đây thì vấn đề quy hoạch mở rộng lưới điện truyền tải chỉ xem xét nghiên cứu quy hoạch ngắn hạn và vấn đề quy hoạch dài hạn chưa được quan tâm đến. Trong lưới điện truyền tải điện nếu được quy hoạch dài hạn tốt sẽ tiết kiệm được thời gian và tối thiểu chi phí đầu tư.
+
+\- Thiết bị điều khiển linh hoạt hệ thống điện xoay chiều (FACTS) trong quy hoạch mở rộng lưới điện truyền tải không được xem xét phù hợp.
+
+\- Quy hoạch mở rộng lưới điện truyền tải kết hợp với quy hoạch nguồn phát điện cần quan tâm đến các ràng buộc.
+
+\- Quy hoạch lưới điện phân phối với quy hoạch nguồn phát phân tán được giải quyết hàm đa mục tiêu với nhiều ràng buộc nhưng chưa xem xét nhiều các nguồn
+
+<!-- page: 40 -->
+
+năng lượng tái tạo ảnh hưởng đến lưới điện phân phối chỉ tập trung vào các nguồn phát tuabin khí.
+
+Các công trình nghiên cứu trong thời gian gần đây được đánh giá từ nhiều quan điểm khác nhau nhằm mục đích chung là đáp ứng nhu cầu phát triển phụ tải trong tương lai. Bên cạnh đó, các nghiên cứu vấn đề quy hoạch mở rộng lưới điện được quy hoạch hiệu quả và linh hoạt được xét ở nhiều khía cạnh khác: mô hình toán, phương pháp giải, độ tin cậy, thị trường điện cạnh tranh, sự không chắc chắn, ràng buộc an toàn, đường dây tắc nghẽn và công suất phản kháng. Tuy nhiên, quy hoạch mở rộng lưới điện hiện nay vẫn chưa tổ hợp nhiều điều kiện ràng buộc vào cùng một phương pháp. Các phương pháp tìm kiếm theo quy luật tự nhiên thuật toán tìm kiếm chim tu hú, tìm kiếm con quạ, thuật toán tối ưu hóa bầy đàn cải tiến sẽ xét đầy đủ các chỉ tiêu ràng buộc trong phương pháp.
+
+## 1.6. Các nội dung nghiên cứu và đóng góp mới của luận án
+
+Phương pháp metaheuristic kết hợp các đặc điểm nổi bật của hai phương pháp tối ưu hóa toán học và phương pháp heuristic. Khi áp dụng phương pháp metaheuristic luôn đạt được giải pháp tốt khi kết nối hệ thống lớn với thời gian tính toán ngắn [30,31]. Phương pháp này đơn giản và dễ sử dụng, không cần phải chuyển đổi HTĐ thành mô hình lập trình tối ưu, sử dụng cho quy hoạch lưới điện tĩnh và động. Trong hướng nghiên cứu này, sẽ xây dựng mới các thuật toán tìm kiếm con quạ và thuật toán tìm kiếm chim tu hú, áp dụng giải bài toán quy hoạch lưới điện truyền tải, nhằm giải quyết nhanh và chính xác nhất bài toán quy hoạch mở rộng lưới điện có xét độ tin cậy, bài toán tối ưu quy hoạch mở rộng lưới điện truyền tải DC. Trong nội dung luận án này sẽ xem xét các nội dung sau đây:
+
+\- Nghiên cứu bài toán quy hoạch mở rộng lưới điện truyền tải xem xét các điều kiện ràng buộc về độ tin cậy, bài toán quy hoạch mở rộng lưới điện DC với xem xét các điều kiện ràng buộc về cân bằng dòng điện nút, giới hạn phân bố công suất trên đường dây, quyền ưu tiên, giới hạn góc pha điện áp nút và quy hoạch lưới điện phân phối giới hạn về điện áp nút, phân bố công suất truyền tải, công suất phát, cấu trúc mạng điện hình tia, cân bằng công suất các nút, dung lượng đường dây, công suất trạm, công suất nguồn phát phân tán, giới hạn ngân sách.
+
+<!-- page: 41 -->
+
+Nghiên cứu sẽ áp dụng thuật toán cận biên và nhánh để giải quyết bài toán quy hoạch và mở rộng lưới điện truyền tải có ràng buộc về độ tin cậy vào lưới điện thực ở tỉnh Bến Tre, Hậu Giang và vùng Đồng Bằng Sông Cửu Long.
+
+\- Nghiên cứu sẽ tìm ra các điểm mạnh của thuật toán CS, CSA nhằm tìm giải pháp tối ưu bài toán quy hoạch lưới điện truyền tải DC được chứng minh trên hệ thống điện chuẩn; Điều này sẽ giúp cho các nhà quản lý vận hành hệ thống điện dễ dàng quản lý khi các phụ tải tăng trưởng phức tạp.
+
+\- Nghiên cứu thuật toán PSO cải tiến áp dụng giải bài toán quy hoạch lưới điện phân phối vào hệ thống mạng điện chuẩn nhằm để cải thiện khả năng tìm kiếm toàn cục và hạn chế sự hội tụ sớm đến mức tối thiểu cục bộ.
+
+Mục đích là sẽ phát triển giải bài toán quy hoạch lưới điện truyền tải, lưới điện phân phối có kết hợp nhiều điều kiện ràng buộc để đạt được giải pháp tối ưu nhất.
+
+<!-- page: 42 -->
+
+# Chương 2. QUY HOẠCH MỞ RỘNG LƯỚI ĐIỆN TRUYỀN TẢI CÓ XÉT ĐỘ TIN CẬY
+
+## 2.1. Giới thiệu bài toán
+
+Một trong những chìa khóa chính của việc quy hoạch mở rộng lưới điện thành công xác định tiêu chí độ tin cậy, vấn đề rất cần thiết được đưa vào để ràng buộc trong bài toán quy hoạch mở rộng lưới điện. Tuy nhiên, rất khó để quyết định một cách hợp lý các tiêu chí về $\mathbf { \partial } \mathbf { \partial } \mathbf { \partial } \mathbf { \partial }$ tin cậy của quy hoạch lưới điện truyền tải cũng như quy hoạch mở rộng hệ thống nguồn phát điện. Xây dựng kế hoạch mở rộng lưới điện truyền tải có thể được xây dựng dưới dạng bài toán lập trình số nguyên có xét đến độ tin cậy. Chính vì vậy, áp dụng phương pháp cận biên và nhánh là phương pháp kỹ thuật cơ bản phù hợp để giải quyết vấn đề quy hoạch mở rộng lưới điện truyền tải sẽ đem đến các giải pháp khả thi.
+
+## 2.2. Mô hình bài toán
+
+## 2.2.1. Hàm mục tiêu
+
+Bài toán quy hoạch mở rộng lưới điện truyền tải phải đảm bảo được nguồn phát điện và đáp ứng nhu cầu phụ tải sử dụng điện trong tương lai, cần nâng cấp công suất các trạm biến áp và lắp đặt thêm các đường dây kết nối mới để tổng chi phí đầu tư tối thiểu nhất. Nhiệm vụ của quy hoạch hệ thống truyền tải là xác định tối ưu hoá vị trí và mở rộng công suất truyền tải trên hệ thống điện hiện hữu. Bài toán quy hoạch mở rộng lưới điện truyền tải được xét đến hàm mục tiêu tối thiểu tổng chi phí đầu tư bao gồm đầu tư mới đường dây truyền tải và các trạm biến áp [10] được thể hiện như sau:
+
+$$
+\text {minimize} C ^ {T} = \sum_ {(x, y) \in \rho} \left[ \sum_ {i = 1} ^ {m (x, y)} C _ {(x, y)} ^ {(i)} U _ {(x, y)} ^ {(i)} \right]\tag{2.1}
+$$
+
+Trong đó,
+
+$C ^ { T }$ : tổng chi phí lắp đặt mới đường dây/trạm biến áp (M\$).
+
+$\rho$ : tổng số đường dây truyền tải/trạm biến áp được lắp đặt mới.
+
+$m ( x ,   y ) ;$ số lượng đường dây truyền tải/trạm biến áp mới kết nối nút giữa x và y.
+
+$C _ { ( x , y ) } ^ { i }$ : tổng chi phí lắp đặt đường dây truyền tải/trạm biến áp mới nối nút giữa x và y (M\$).
+
+$$
+C _ {(x, y)} ^ {i} = \sum_ {j = 1} ^ {i} \Delta C _ {(x, y)} ^ {i}\tag{2.2}
+$$
+
+<!-- page: 43 -->
+
+$\Delta C _ { ( x , y ) } ^ { i }$ : chi phí lắp đặt đường dây/trạm biến áp thứ j nối từ x và y (M\$).
+
+$U _ { ( x , y ) } ^ { i }$ : biến thay đổi theo đường dây/trạm biến áp (1 nếu từ 1 đến thứ i được xây
+
+dựng, 0 cho các trường hợp khác).
+
+$$
+U _ {(x, y)} ^ {(i)} = \left[ \begin{array}{l l} 1 & P _ {(x, y)} = P _ {(x, y)} ^ {(0)} + P _ {(x, y)} ^ {(i)} \\ 0 & P _ {(x, y)} \neq P _ {(x, y)} ^ {(0)} + P _ {(x, y)} ^ {(i)} \end{array} \right.\tag{2.3}
+$$
+
+$$
+P _ {(x, y)} ^ {i} = \sum_ {j = 1} ^ {i} \Delta P _ {(x, y)} ^ {j}\tag{2.4}
+$$
+
+Trong đó,
+
+$P _ { \left( x , y \right) } ^ { i }$ : tổng công suất các đường dây/trạm biến áp mới giữa x và y (MW).
+
+$\Delta P _ { ( x , y ) } ^ { i }$ : công suất mỗi đường dây/trạm biến áp mới giữa x và y (MW).
+
+$P _ { \left( x , y \right) } ^ { 0 }$ : công suất hiện hữu đường dây/trạm biến áp nối giữa x và y (MW).
+
+## 2.2.2. Điều kiện ràng buộc về tiêu chuẩn chỉ số độ tin cậy của lưới điện
+
+Đánh giá độ tin cậy [11] bằng cách tiếp cận xác suất về chỉ tiêu thiếu nguồn LOLE có thể được xác định như sau:
+
+$$
+L O L E _ {S Y S} (P _ {(x, y)} ^ {(i)}, \Phi) \leq L O L E _ {R}\tag{2.5}
+$$
+
+Trong đó,
+
+LOLE<sub>R</sub>: tiêu chuẩn về chỉ tiêu thiếu nguồn của hệ thống điện mong muốn đạt được (giờ/năm).
+
+LOLE<sub>SYS</sub>: chỉ tiêu thiếu nguồn hệ thống điện sau khi quy hoạch (giờ/năm).
+
+Φ: hàm mục tiêu của đường cong phụ tải.
+
+Chỉ tiêu thiếu nguồn hệ thống điện sau khi quy hoạch được xác định như sau:
+
+$$
+L O L E _ {S Y S} = \sum_ {i = 1} ^ {n} K _ {i} P _ {i} (C _ {i} - L _ {i})\tag{2.6}
+$$
+
+Trong đó,
+
+$C _ { i }$ : công suất ngày thứ i (MW).
+
+$L _ { i }$ : đỉnh tải dự đoán ngày thứ i (MW).
+
+$P _ { i } ( C _ { i } - L _ { i } )$ : xác suất thiếu nguồn.
+
+$K _ { i }$ : số ngày có xác suất thiếu nguồn $P _ { i }$ .
+
+<!-- page: 44 -->
+
+Nếu công suất cắt $\mathcal { Q } _ { k }$ vượt quá công suất dự trữ hệ thống thì ta phải xác định thời gian $t _ { k }$ mà công suất khả dụng còn lại nhỏ hơn đỉnh tải $C _ { k } - L _ { k } < 0$ , có thể biểu diễn sự xuất hiện cắt công suất $Q _ { k }$ bằng xác suất $p _ { k }$ [12]. Khi đó, chỉ tiêu thiếu nguồn của hệ thống điện sẽ được xác định bằng công thức sau:
+
+$$
+L O L E _ {S Y S} = \sum_ {i = 1} ^ {n} p _ {k} t _ {k}\tag{2.7}
+$$
+
+Trong đó,
+
+$p _ { k }$ : xác suất riêng phần cắt công suất nguồn $Q _ { k }$ .
+
+$t _ { k }$ : thời gian tương ứng khi $C _ { k } - L _ { k } < 0$
+
+n : số khoảng tính toán.
+
+Nếu tính bằng xác suất tích lũy $P _ { k }$ thì được xác định theo công thức sau:
+
+$$
+L O L E _ {S Y S} = \sum_ {i = 1} ^ {n} (t _ {k} - t _ {k - 1}) P _ {k}\tag{2.8}
+$$
+
+## + Các bước thực hiện giải bài toán
+
+Bài toán quy hoạch được đặt ra nhằm giảm thiểu tổng chi phí lắp đặt đường dây/trạm biến áp phụ thuộc vào điều kiện ràng buộc chỉ số độ tin cậy [10]. Thực hiện theo các bước như sau:
+
+**Bước 1:** Kiểm tra sự cần thiết mở rộng hệ thống truyền tải từ hệ thống hiện hữu và các đường dây/trạm biến áp mới được thêm vào. Sự cần thiết và khả năng có thể được kiểm tra tương ứng với việc đánh giá độ tin cậy cho hệ thống xét khi không có đường dây/trạm biến áp mới được thêm vào và có tất cả các đường dây/trạm biến áp mới được thêm vào theo công thức (2.3).
+
+**Bước 2:** Kiểm tra điều kiện giới hạn về độ tin cậy của hệ thống sau khi quy hoạch theo công thức (2.5) so với độ tin cậy mong muốn được xác định trước.
+
+## 2.3. $\acute { \mathbf { A } } \mathbf { p }$ dụng phương pháp cận biên và nhánh
+
+## 2.3.1. Mô hình hóa lưới điện
+
+Hệ thống điện (HTĐ) bao gồm nhiều phần tử rời rạc. Để xác định tập hợp tối ưu quy hoạch hệ thống truyền tải bằng phương pháp toán, mô hình hóa HTĐ là nhiệm vụ cực kỳ quan trọng [10]. Điện năng được sản xuất từ nhà máy điện (đầu nguồn) và tiêu thụ tại thiết bị điện (đầu cuối), chỉ di chuyển một chiều từ nhà máy điện đến nơi
+
+<!-- page: 45 -->
+
+tiêu thụ. Trong việc mô hình hoá, nhà máy điện được tương đương với nhánh có chiều từ nguồn (S) về các điểm nút, công suất của nhánh là công suất của nhà máy điện tương ứng. Nút phụ tải là nơi tiêu thụ điện năng nên được tương đương nhánh từ nút phụ tải về nút cuối (T). Mỗi đường dây truyền tải được kết nối từ nút đầu đến nút cuối. Máy biến áp được xem tương tự như đường dây truyền tải. Như vậy, theo cách mô hình hóa này từ sơ đồ đơn tuyến hệ thống điện trình bày ở Hình 2.1 tương đương với “mạng” như trình bày ở Hình 2.2.
+
+![](images/page_44_image_1.jpg)
+
+Hình 2.1 Sơ đồ đơn tuyến hệ thống điện
+
+![](images/page_44_image_3.jpg)
+
+Hình 2.2 Sơ đồ mạng tương đương
+
+Một số định nghĩa cho sơ đồ hệ thống như sau:
+
+Khả năng phân bố công suất (flow capacity): là công suất giới hạn cho phép truyền trên nhánh.
+
+ Nguồn (source): là nơi cung cấp công suất cho hệ thống.
+
+ Đầu cuối (terminal): là nơi tiêu thụ công suất của hệ thống.
+
+Máy phát, máy biến áp và phụ tải đều có công suất giới hạn. Khó có thể kiểm tra lượng công suất thiếu của hệ thống bởi vì những phần tử này được thay thế như là nút trong mô hình lưới điện. Đặc điểm thuận lợi khi mô hình hoá hệ thống là kiểm tra lượng công suất thiếu tại nút thắt cổ chai của hệ thống được thể hiện Bảng 2.1
+
+<!-- page: 46 -->
+
+Bảng 2.1 Các trường hợp trong hệ thống điện
+
+| Trường hợp | Thắt cổ chai | Ghi chú |
+| --- | --- | --- |
+| 1 | F<sub>m</sub>= L ≤ G | Không thiếu nguồn, không cần mở rộng. |
+| 2 | G &lt; F<sub>m</sub> &lt; L | Thiếu nguồn phát, quá tải đường dây cần quy hoạch mở rộng nguồn. |
+| 3 | F<sub>m</sub> &lt; L ≤ G | Đường dây, trạm biến áp bị quá tải cần mở rộng hệ thống truyền tải, trạm biến áp. |
+| 4 | F<sub>m</sub> &lt; G &lt; L | Thiếu nguồn và quá tải, vì thế cần mở rộng cả hệ thống. |
+
+Trong đó,
+
+$F _ { m }$ : dòng cực đại trên hệ thống điện.
+
+G : tổng công suất phát.
+
+L : tổng công suất tải.
+
+## 2.3.2. Lý thuyết dòng cực đại và mặt cắt tối thiểu
+
+Câu hỏi thông thường đối với HTĐ là quá tải ở những nơi nào (nhà máy điện, tuyến dây, trạm biến áp). Người quản lý, vận hành hay quy hoạch muốn biết dòng công suất cực đại được vận chuyển từ nhà máy điện đến nơi tiêu thụ đầu cuối là bao nhiêu. Đây cũng là thông tin rất quan trọng trong việc đưa ra quyết định về vận hành hay quy hoạch HTĐ.
+
+Vì các phần tử cấu thành HTĐ có công suất giới hạn nên không thể có được dòng công suất vô hạn truyền từ nhà máy điện đến nơi tiêu thụ mà chỉ có giá trị cực đại nào đó. Để xác định dòng công suất cực đại này, công cụ sử dụng là lý thuyết dòng cực đại và mặt cắt tối thiểu (Maximum flow – minimum cut set). Dòng cực đại có nghĩa là dòng công suất cực đại truyền từ nút nguồn đến nút tiêu thụ. Mặt cắt tối thiểu có nghĩa là mặt cắt tách nút nguồn với nút cuối sao cho có tổng công suất mặt cắt là tối thiểu. Trong lý thuyết này, việc xác định dòng công suất cực đại bao gồm tìm tất cả các đường dẫn công suất từ nút nguồn đến nút cuối. Dùng một vết cắt giả tưởng cắt ngang qua mạng điện sao cho tách hoàn toàn giữa nút nguồn và nút cuối, tổng công suất trên tất cả các nhánh nằm trên mặt cắt được ghi nhận. Tương tự, thực hiện tất cả các vết cắt có thể có như thế đối với mạng và ghi nhận tổng công suất trên mỗi mặt cắt. So sánh các tổng công suất của từng mặt cắt ấy, mặt cắt nào có giá trị
+
+<!-- page: 47 -->
+
+nhỏ nhất thì vị trí tương ứng mặt cắt đó chính là nút thắt cổ chai của HTĐ. Công suất mặt cắt có giá trị nhỏ nhất đó chính là dòng công suất cực đại truyền từ nút nguồn đến nút cuối.
+
+Các bước xác định vết cắt tối thiểu như sau:
+
+**Bước 1**: Cho giá trị đầu với mặt cắt thứ $k = 1$ , công suất cực đại $F _ { 0 } { = } 0$
+
+**Bước 2**: Chia tất cả nút của hệ thống thành hai tập hợp.
+
+1. Tập hợp nguồn: $S _ { k } { = } \{ s \}$
+
+2. Tập hợp nút cuối: $T _ { k } = \{ \ldots \ldots t \}$
+
+Trong đó,
+
+s: nút nguồn.
+
+t: nút cuối.
+
+**Bước 3**: Chọn một nhánh có công suất non tải lớn nhất $( B _ { i j } )$ trong tất cả các nhánh $( b _ { i j } )$ nối giữa nút i thuộc tập hợp nguồn $\mathbf { S _ { k } }$ và nút j của tập hợp nút cuối $T _ { k } .$
+
+i, j : số thứ tự nút của $S _ { k } ,   T _ { k }$ tương ứng.
+
+$C _ { i j }$ : công suất non tải của nhánh giữa nút i và j.
+
+$$
+C _ {m a x} = \text { maximum } \{C _ {i j}, i \in S _ {k}, j \in T _ {k} \}
+$$
+
+Kiểm tra $C _ { m a x }   =   0$ hoặc $C _ { m a x } \neq 0$ . Nếu $C _ { m a x }   =   0$ dừng vòng lặp, nếu $C _ { m a x } \neq 0$ chuyển qua bước kế tiếp.
+
+**Bước 4**: Cộng nhánh $B _ { i j }$ vào đường dẫn tổ hợp nhánh Mk và di chuyển nút j từ tổ hợp $T _ { k }$ đến $S _ { k } .$
+
+**Bước 5**: Kiểm tra nút j có phải là nút t hay không. Nếu không phải là nút t, quay về Bước 3 và quá trình lập tiếp tục cho đến khi nút t được chọn. Nếu là nút t chuyển qua Bước 6.
+
+**Bước 6**: Tính công suất cực đại thứ $k \left( \Delta f _ { k } \right)$ từ $t \hat { \hat { 0 } }$ hợp nhánh $( B _ { k } )$ sử dụng công thức sau:
+
+$$
+\Delta f _ {k} = \text {minimum} \left\{C _ {b j}, j \in M _ {k} \right\}\tag{2.9}
+$$
+
+Trong đó,
+
+$C _ { b j } \cdot$ công suất non tải của nhánh thứ j trong $M _ { k }$
+
+**Bước 7**: Tính dòng công suất cực đại sử dụng công thức sau:
+
+<!-- page: 48 -->
+
+$$
+F _ {k} = F _ {k - 1} + \Delta f _ {k}\tag{2.10}
+$$
+
+và tính công suất non tải $C _ { b j }$ bằng công thức sau:
+
+$$
+C _ {b j} = C _ {i j} - \Delta f _ {k} \quad \text {v} ^ {\prime} \mathrm{i} \quad j \in M _ {k}\tag{2.11}
+$$
+
+**Bước 8**: Nếu $\Delta f _ { k }   \neq   0$ , nâng thứ tự k lên một đơn $\mathbf { v i }$ rồi quay $\mathbf { v } \dot { \hat { \mathbf { e } } }$ Bước 2 tìm đường dẫn kế $\mathbf { f i } \mathbf { \hat { e } } \mathbf { p }$ . Nếu $\Delta f _ { k } = 0$ thì dừng.
+
+Ở nút cuối, tổng công suất trong đường dẫn của Bước 1 đưa ra là tổng công suất cực đại giữa nguồn và nút cuối. Trong mô hình hệ thống điện thì bất kỳ một hệ thống điện nào đều có một nút nguồn và một nút cuối, dòng công suất cực đại truyền từ nút nguồn đến nút cuối bằng với giá trị tại mặt cắt tối thiểu (hay mặt cắt có công suất tối thiểu) trong tất cả các mặt cắt trên toàn bộ hệ thống điện. Dòng công suất cực đại có thể bị giới hạn tại nút thắt cổ chai. Dòng công suất cực đại có thể được thay thế hoàn toàn bằng giá trị tại mặt cắt tối thiểu. Một vết cắt có thể cắt bất kỳ một nhóm đường dẫn nào chứa ít nhất một đường dẫn từ nút nguồn đến nút cuối. Trong trường hợp khác nếu vết cắt bị di chuyển thì dòng công suất từ nút nguồn đến nút cuối được cố định. Giá trị công suất qua mặt cắt là tổng các dòng công suất từ nút nguồn đến nút cuối, cùng hướng trên toàn mặt cắt. Tổng công suất qua mặt cắt được xác định theo (2.12).
+
+$$
+P _ {C} (S, T) = \sum c _ {(x, y)}\tag{2.12}
+$$
+
+Trong $\mathbf { \dot { d } \dot { 0 } } ,$
+
+$C ( x ,   y )$ : công suất trên nhánh từ nút x đến nút y.
+
+Điều kiện (2.12) có thể được mô tả bởi (2.13) với k là $s \hat { 0 }$ mặt cắt, n là $\mathrm { s } \hat { 0 }$ lượng mặt cắt.
+
+$$
+\sum_ {(\mathrm{x}, \mathrm{y}) \in (\mathrm{S} _ {\mathrm{k}}, T _ {k})} \left[ P _ {(x, y)} ^ {(0)} + \sum_ {i = 1} ^ {m (x, y)} P _ {(x, y)} ^ {(i)} U _ {(x, y)} ^ {(i)} \right] \geq L _ {p} (1 + B R R / 1 0 0)\tag{2.13}
+$$
+
+Trong đó,
+
+$L _ { p } ;$ tổng công suất tải yêu cầu.
+
+$P ^ { ( i ) } ( x , y ) \cdotp$ tổng dung lượng các nhánh mới giữa x và $\mathrm { y }$ .
+
+$P ^ { ( \bar { O } ) } ( x , y ) ;$ công suất đường dây/máy biến áp giữa x và $y .$
+
+k: $s \hat { 0 }$ thứ tự mặt cắt $( k   =   I ,   2 ,   . . ,   n )$
+
+<!-- page: 49 -->
+
+m(x,y): tổng số đường dây/trạm biến áp mới giữa nút x và nút y.
+
+BRR: tỷ lệ dự trữ tại nút phụ tải $\scriptstyle { \big ( } = { \frac { \sum A P - L } { L } } { \big ) }$
+
+AP: công suất cực đại khi đến tải thanh cái.
+
+Thực tế là mặt cắt tối thiểu nằm ở đâu trong mạng, nơi ấy sẽ cần được mở rộng. Do đó, công tác quy hoạch cũng như vận hành cần phải xác định được nút thắt cổ chai như trình bày ở Hình 2.3.
+
+![](images/page_48_image_4.jpg)
+
+Hình 2.3 Sơ đồ mô phỏng hệ thống điện tổng quát
+
+Dòng công suất truyền tải trong hệ thống điện có thể được chia thành 4 trường hợp như trình bày ở Bảng 2.1. Trong quy hoạch và mở rộng hệ thống truyền tải khi hệ thống điện rơi vào trường hợp 3 của Bảng 2.1.
+
+Ví dụ về mắt cắt tối thiểu: thực hiện tất cả các vết cắt có thể có trên mạng trình bày ở Hình 2.4. Tổng số vết cắt là 4 và nút thắt cổ chai của mạng có tổng công suất nhỏ nhất là 150 (MW).
+
+![](images/page_48_image_8.jpg)
+
+Hình 2.4 Mặt cắt tối thiểu
+
+<!-- page: 50 -->
+
+## 2.3.3. Xây dựng lưu đồ thuật toán
+
+Mục tiêu trong phương pháp cận và nhánh nhằm giảm thiểu tổng chi phí lắp đặt đường dây/trạm biến áp với điều kiện ràng buộc là đảm bảo về độ tin cậy, cung cấp trong biên của định mức. Các bước được thực hiện như sau:
+
+Bước 1: Kiểm tra sự cần thiết và khả thi của quy hoạch mở rộng hệ thống truyền tải từ hệ thống hiện hữu và đường dây/trạm biến áp sẽ đầu tư.
+
+Bước 2: Đặt j=1, jopt =0, jmax =0, $C ^ { T } { } _ { o p t } { = } \infty$ và $\mathit { E N N O D } _ { j } { = } 0$ . Trong đó: hệ thống hiện hữu có nghĩa là hệ thống ban đầu và ENNOD<sub>j</sub> có nghĩa là hệ thống thứ j và nút cuối (bằng 1) hoặc (bằng 0). Nếu hệ thống thứ j là nút cuối (bằng 1) trong lưu đồ thuật toán được sử dụng để đạt được giải pháp tối ưu sử dụng phương pháp cận và nhánh.
+
+Bước 3: Tính công suất mặt cắt tối thiểu sử dụng phương pháp dòng cực đại cho hệ thống j.
+
+Bước 4: Chọn đường dây/trạm biến áp i của nhánh sẽ đầu tư, đặt (S<sub>j</sub>) bao gồm công suất mặt cắt tối thiểu i và cộng vào hệ thống j. Hệ thống mới được gọi là hệ thống ji.
+
+Bước 5: Kiểm tra hệ thống hiện tại ji đã được xem xét trong lưu đồ thuật toán? Nếu đã xét rồi thì chuyển sang Bước 10.
+
+Bước 6: Tính tổng chi phí cho hệ thống ji $( C _ { j i } ^ { T } )$ và xét chỉ số đánh giá độ tin cậy của hệ thống truyền tải, LOLE<sub>TSj</sub> của hệ thống.
+
+Bước 7: Nếu $C _ { \quad j i } ^ { T } < C _ { \quad j o p t } ^ { T } ,$ , hệ thống hiện tại (ji) với một chi phí $C _ { j i } ^ { T }$ có thể được tối ưu. Nếu không, quay lại Bước 10.
+
+Bước 8: Đặt $j _ { m a x } = j _ { m a x } + I .$
+
+Bước 9: Nếu LOLESYSji <LOLER, đặt $C ^ { T } { } _ { o p t } = \mathrel { { C ^ { T } { } _ { j i } } }$ , và $LOLE_{Ropt} = LOLE_{ji}, j_{opt} =$ jmax và chuyển đến Bước 11.
+
+Bước 10: Đặt $C ^ { T } { } _ { j m a x } { = } C ^ { T } { } _ { j i }$ $E N N O D _ { j m a x } = 1$ và chuyển đến Bước 12.
+
+Bước 11: Cộng jmax(ji) hệ thống vào thuật toán.
+
+Bước 12: Nếu tất cả các đường dây/trạm biến áp có thể mở rộng trong mặt cắt S<sub>j</sub> đã được xem xét, chuyển đến Bước 13. Nếu không, đặt i=i+1 và quay về bước 4.
+
+Bước 13: Nếu $j   =   j _ { m a x } ,$ tiếp tục bước tiếp theo. Nếu không, đặt $j   =   j   +   1$ và chuyển về Bước 4.
+
+<!-- page: 51 -->
+
+Bước 14: Đối với $j   =   j _ { m a x } ,$ lưu đồ thuật toán đã được xét tất cả các khả năng xảy ra và thuật toán đạt tối ưu $j _ { o p t }$ với $C _ { j o p t } ^ { T }$ là chi phí tối thiểu và đáp ứng các tiêu chuẩn độ tin cậy cần thiết thu được trong Bước 9 và kết thúc chương trình.
+
+![](images/page_50_image_1.jpg)
+
+Hình 2.5 Lưu $\mathbf { \dot { d } } \mathbf { \dot { \hat { 0 } } }$ thuật toán của thuật toán cận biên và nhánh
+
+<!-- page: 52 -->
+
+## 2.4. Kết quả tính toán và thảo luận
+
+## 2.4.1. Kết quả tính toán cho lưới điện Đồng bằng sông Cửu Long
+
+Vùng Đồng Bằng Sông Cửu Long (ĐBSCL) là một trong những vùng kinh tế trọng điểm của quốc gia đang có xu hướng phát triển các ngành công nghiệp về mặt hàng nông sản, hải sản từ đó các dây chuyền sản xuất ra đời nhu cầu sử dụng điện càng cao. Vì nếu không có điện thì các dây chuyền này không sản xuất được, chất lượng điện không đảm bảo sẽ ảnh hưởng rất lớn đến sản xuất. Để đáp ứng nhu cầu đó quy hoạch và mở rộng hệ thống điện ở ĐBSCL là phần rất quan trọng của sự phát triển kinh tế vùng, đặc biệt là khâu quy hoạch và mở rộng hệ thống truyền tải ở ĐBSCL. Trong quy mô của nghiên cứu này sẽ áp dụng lý thuyết cho lưới điện có mức điện áp từ 220kV trở lên trong vùng ĐBSCL trên cơ sở kế hoạch xây dựng và vận hành những đường dây 500kV được trình bày theo Bảng B.20 đến B.24 và kết quả dự báo phụ tải lưới điện được thể hiện theo Bảng 2.2.
+
+Bảng 2.2 Dự báo hệ thống nguồn cung cấp điện ĐBSCL đến 2020
+
+| TT | Phụ tải từ thanh cái các trạm biến áp | Công suất cực đại |
+| --- | --- | --- |
+| 1 | Rạch giá | 475MW |
+| 2 | Trà Nóc | 580MW |
+| 3 | Cao Lãnh | 350MW |
+| 4 | Vĩnh Long | 350MW |
+| 5 | Cai Lậy (Từ thanh cái 110kV) | 450MW |
+| 6 | Mỹ Tho (Từ thanh cái 110kV) | 407MW |
+| 7 | Phú Lâm (Từ thanh cái 220kV) | 350MW |
+| 8 | Cà Mau | 240MW |
+| 9 | Bạc Liêu | 120MW |
+| 10 | Kiên Lương | 200MW |
+| 11 | Thốt Nốt | 800MW |
+| 12 | Ô Môn (Từ thanh cái 220kV) | 125MW |
+| 13 | Đức Hòa | 200MW |
+| 14 | Trà Vinh | 200MW |
+| 15 | Sông Hậu | 300MW |
+| 16 | Sóc Trăng | 200MW |
+| 17 | Ô Môn (Từ thanh cái 500kV) - đi Nhà Bè | 2390MW |
+| 18 | Phú Lâm (Từ thanh cái 500kV) | 6000MW |
+| 19 | Cai Lậy (Từ thanh cái 220kV) | 343MW |
+| 20 | Mỹ Tho (Từ thanh cái 220kV) | 343MW |
+
+<!-- page: 53 -->
+
+Hệ thống truyền tải cao áp vùng ĐBSCL hiện tại vận hành với mức điện áp cao nhất là 220kV. Lưới điện này đang xây dựng và phát triển nhiều tuyến với mức điện áp 500kV tại Bảng 2.3.
+
+Bảng 2.3 Các giá trị đường dây truyền tải ĐBSCL
+
+| TT | Từ nút | Đến nút | Từ thanh cái | Đến thanh cái | Loại dây dẫn (ACSR) | L (km) | P<sub>max</sub> (MW) | Ro(Ω/Km) | Xo(Ω/km) | R(Ω) | X(Ω) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 8 | Ô Môn220 | Cà Mau | 2x795MCM | 140 | 686 | 0,0369 | 0,3960 | 5,17 | 55,44 |
+| 2 | 8 | 17 | Cà Mau | Bạc Liêu220 | 795MCM | 55,5 | 343 | 0,0738 | 0,3960 | 4,10 | 21,98 |
+| 3 | 8 | 19 | Cà Mau | Cà Mau2 | 795MCM | 5,4 | 343 | 0,0738 | 0,3960 | 0,40 | 2,14 |
+| 4 | 6 | 8 | Rạch Giá220 | Cà Mau | 3x400/51 | 58,2 | 942 | 0,0246 | 0,3960 | 1,43 | 23,05 |
+| 5 | 5 | 6 | Trà Nóc220 | Rạch Giá220 | 795MCM | 71 | 343 | 0,0738 | 0,3960 | 5,24 | 28,12 |
+| 6 | 6 | 9 | Rạch Giá220 | Cao Lãnh 220 | 795MCM | 142 | 343 | 0,0738 | 0,3960 | 10,48 | 56,23 |
+| 7 | 5 | 11 | Trà Nóc220 | Cai Lậy220 | 795MCM | 79 | 343 | 0,0738 | 0,3960 | 5,83 | 31,28 |
+| 8 | 11 | 32 | Cai Lậy220 | Mỹ Tho220 | 795MCM | 17 | 343 | 0,0738 | 0,3960 | 1,25 | 6,73 |
+| 9 | 9 | 11 | Cao Lãnh 220 | Cai Lậy220 | 795MCM | 50 | 343 | 0,0738 | 0,3960 | 3,69 | 19,80 |
+| 10 | 11 | 15 | Cai Lậy220 | Vĩnh Long220 | 795MCM | 34,3 | 343 | 0,0738 | 0,3960 | 2,53 | 13,58 |
+| 11 | 11 | 31 | Cai Lậy220 | Phú Lâm220 | 2x795MCM | 70,3 | 686 | 0,0369 | 0,3960 | 2,59 | 27,84 |
+| 12 | 2 | 11 | Ô Môn220 | Cai Lậy220 | 2x795MCM | 81 | 686 | 0,0369 | 0,3960 | 2,99 | 32,08 |
+| 13 | 21 | 29 | SócTrăng500 | Ô Môn500 | 2x(4x330) | 90 | 4780 | 0,0111 | 0,1980 | 1,00 | 17,82 |
+| 14 | 22 | 13 | Trà Vinh500 | Mỹ Tho500 | 2x(4x330) | 150 | 4780 | 0,0111 | 0,1980 | 1,67 | 29,70 |
+| 15 | 23 | 13 | Sông Hậu 500 | Mỹ Tho500 | 2x(4x500) | 130 | 6547 | 0,0075 | 0,1980 | 0,98 | 25,74 |
+| 16 | 24 | 25 | Kiên Lương500 | Đức Hoà500 | 2x(4x330) | 300 | 4780 | 0,0111 | 0,1980 | 3,33 | 59,40 |
+| 17 | 25 | 13 | Đức Hoà500 | Mỹ Tho500 | 2x(4x330) | 60 | 4780 | 0,0111 | 0,1980 | 0,67 | 11,88 |
+
+<!-- page: 54 -->
+
+| 18 | 24 | 26 | Kiên Lương500 | Thốt Nốt500 | 2x(4x330) | 100 | 4780 | 0,0111 | 0,1980 | 1,11 | 19,80 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 19 | 26 | 29 | Thốt Nốt500 | Ô Môn500 | 2x(4x330) | 25 | 4780 | 0,0111 | 0,1980 | 0,28 | 4,95 |
+| 20 | 13 | 3 | Mỹ Tho500 | Phú Lâm500 | 1x(4x330) | 58 | 2390 | 0,0222 | 0,3960 | 1,29 | 22,97 |
+| 21 | 13 | 29 | Mỹ Tho500 | Ô Môn500 | 2x(4x330) | 120 | 4780 | 0,0111 | 0,1980 | 1,33 | 23,76 |
+| 22 | 25 | 3 | Đức Hoà500 | Phú Lâm500 | 2x(4x330) | 25 | 4780 | 0,0111 | 0,1980 | 0,28 | 4,95 |
+
+Sơ đồ đơn tuyến hệ thống điện vùng ĐBSCL trình bày tại Hình 2.6. Nét đậm màu xanh thể hiện tuyến 500kV, nét màu đỏ thể hiện 220kV, nét màu đen thể hiện 110kV.
+
+![](images/page_53_image_2.jpg)
+
+Hình 2.6 Sơ đồ đơn tuyến hệ thống điện vùng ĐBSCL
+
+b. Tối ưu hoá quy hoạch hệ thống truyền tải khu vực Đồng Bằng Sông Cửu Long
+
+Hệ thống điện ĐBSCL có tổng công suất nguồn 22.901MW cung cấp cho tổng phụ tải 14.423MW thông qua tổng công suất truyền 47.177MW ở tuyến 500kV, 5.744MW tuyến 220kV, tổng công suất truyền 6.750MW trạm biến áp 500kV và
+
+<!-- page: 55 -->
+
+2.475MW trạm biến áp 110kV. Thông số đầu vào cho bài toán quy hoạch tại Bảng B.25. Công cụ giải bài toán quy hoạch sử dụng ngôn ngữ lập trình Fortran với chuẩn độ tin cậy trong nghiên cứu này được khảo sát với 2 trường hợp. Trường hợp 1 với chuẩn độ tin cậy là (N-1TL) tức là hệ thống điện sau khi quy hoạch chấp nhận 1 tuyến dây dư hỏng. Trường hợp 2 là (N-2TL) tức là hệ thống điện chấp nhận 2 tuyến dây hư hỏng.
+
+Kết quả đạt được cho thấy tất cả các chỉ số độ tin cậy của hệ thống điện sau khi quy hoạch $( \mathrm { L O L E _ { S Y S } } )$ đều nhỏ hơn chỉ số độ tin cậy chuẩn mong muốn (LOLER) theo công thức (2.5) ; Các chỉ tiêu thiếu nguồn (EENS) được xác định theo phụ lục A công thức (A.4), chỉ $\mathrm { s } \hat { \mathsf { O } }$ năng lượng của độ tin cậy (EIR) theo công thức (A.8), chỉ tiêu cắt tải (ELC) theo công thức (A.23), thu được kết quả theo Bảng 2.4 như sau:
+
+Bảng 2.4 Chỉ tiêu độ tin cậy của hệ thống
+
+<table><tbody><tr><td>Trường hợp</td><td>LOLER(giờ/năm)</td><td>EENS(MWh/năm)</td><td>ELC(MW/Cur.năm)</td><td>LOLESYS(giờ/năm)</td><td>EIR (pu)</td></tr><tr><td rowspan="3">1(N-1TL)</td><td>22,0</td><td>10.710.400</td><td>5.013</td><td>21,4</td><td>0,867</td></tr><tr><td>21,0</td><td>10.074.200</td><td>4.871</td><td>20,7</td><td>0,875</td></tr><tr><td>20,0</td><td>9.454.600</td><td>4.724</td><td>20,0</td><td>0,883</td></tr><tr><td rowspan="3">2(N-2TL)</td><td>50,0</td><td>24.498.900</td><td>4.954</td><td>49,5</td><td>0,696</td></tr><tr><td>46,0</td><td>19.943.700</td><td>4.383</td><td>45,5</td><td>0,753</td></tr><tr><td>45,0</td><td>19.119.200</td><td>4.268</td><td>44,8</td><td>0,763</td></tr></tbody></table>
+
+Kết quả đạt được cũng cho thấy khi giảm dần chỉ số độ tin cậy chuẩn mong muốn tức là nhà quy hoạch yêu cầu hệ thống tăng độ tin cậy của hệ thống thì tăng chi phí đầu tư. Đặc tính là rất phù hợp với thực tiễn như trình bày Bảng 2.5. với $\dot { \mathrm { T ^ { i } } } _ { \mathrm { X - Y } }$ hiện đường dây/trạm biến áp thứ i nối giữa 2 nút x và y (với i =1,2,3,4 và x là nút đầu, y là nút cuối).
+
+Bảng 2.5 Tối ưu hóa quy hoạch hệ thống truyền tải
+
+<table><tbody><tr><td>Trường hợp</td><td>LOLER(giờ/năm)</td><td>Yêu cầu mở rộng đường dây</td><td>Giá (M$)</td></tr><tr><td rowspan="3">1(N-1TL)</td><td>22,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>2</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2</td><td>40</td></tr><tr><td>21,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>2</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub></td><td>47</td></tr><tr><td>20,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>2</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>1-5</sub>,T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub> , T<sup>1</sup><sub>15-1</sub>6</td><td>64</td></tr><tr><td rowspan="3">2(N-2TL)</td><td>50,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0</td><td>20</td></tr><tr><td>46,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2</td><td>30</td></tr><tr><td>45,0</td><td>T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub></td><td>37</td></tr></tbody></table>
+
+<!-- page: 56 -->
+
+Quan hệ đường cong tổng chi phí đầu tư với yêu cầu chỉ số độ tin cậy của hệ thống sau khi quy hoạch theo chuẩn (N-1TL) và (N-2TL) như trình bày tại Hình 2.7. và Hình 2.8. tương ứng thể hệ quan hệ của chỉ tiêu độ tin cậy và tổng chi phí. Nếu yêu cầu chỉ số độ tin cậy sau khi quy hoạch càng lớn (LOLER) tức là độ tin cậy của hệ thống sau khi quy hoạch giảm thì tổng chi phí yêu cầu thực hiện quy hoạch giảm. Đặc tính này rất phù hợp với thực tiễn.
+
+![](images/page_55_chart_1.jpg)
+
+Hình 2.7 Mối quan hệ của chỉ tiêu độ tin cậy và tổng chi phí ở trường hợp 1 Giá(M\$)
+
+![](images/page_55_chart_3.jpg)
+
+Hình 2.8 Mối quan hệ của chỉ tiêu độ tin cậy và tổng chi phí ở trường hợp 2 Sơ đồ đơn tuyến hệ thống điện vùng ĐBSCL sau khi quy hoạch trình bày tại Hình 2.9 đến Hình 2.14. Các tuyến liên kết giữa các nút thể hiện đường nét liền màu xanh thể hiện cấp điện áp 500kV, màu đỏ thể hiện 220kV, nét đứt màu đỏ tức là cần thêm mới vào.
+
+<!-- page: 57 -->
+
+![](images/page_56_image_0.jpg)
+
+Hình 2.9 Kế hoạch mở rộng lưới điện cho trường hợp 1 – 1
+
+Trường hợp 1 – 2: LOLER = 21,0 (giờ/năm) (T<sup>1</sup><sub>32-1</sub>4 , T<sup>2</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub>)
+
+![](images/page_56_image_3.jpg)
+
+Hình 2.10 Kế hoạch mở rộng lưới điện cho trường hợp 1 - 2
+
+<!-- page: 58 -->
+
+Trường hợp $1 - 3 : \mathrm { L O L E } _ { \mathtt { R } } { = } 2 0 { , } 0 ( \mathtt { g i d / n i m } ) ( \mathtt { T } ^ { 1 } { } _ { 3 2 - 1 4 } { , } \mathtt { T } ^ { 2 } { } _ { 3 2 - 1 4 } { , } \mathtt { T } ^ { 1 } { } _ { 1 - 5 } { , } \mathtt { T } ^ { 1 } { } _ { 9 - 1 0 } { , } \mathtt { T } ^ { 1 } { } _ { 1 1 - 1 2 } { , } \mathtt { T } ^ { 1 } { } _ { 6 - 7 } { , }$ T<sup>1</sup><sub>15-1</sub>6)
+
+![](images/page_57_image_1.jpg)
+
+Hình 2.11 Kế hoạch mở rộng lưới điện cho trường hợp 1 – 3
+
+Trường hợp 2 – 1: LOLER = 50,0 (giờ/năm) (T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0)
+
+![](images/page_57_image_4.jpg)
+
+Hình 2.12 Kế hoạch mở rộng lưới điện cho trường hợp 2 - 1
+
+<!-- page: 59 -->
+
+Trường hợp 2 – 2: LOLER = 46,0 (giờ/năm) (T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2)
+
+![](images/page_58_image_1.jpg)
+
+Hình 2.13 Kế hoạch mở rộng lưới điện cho trường hợp 2 - 2
+
+Trường hợp 2 – 3: LOLER = 45,0 (giờ/năm) (T<sup>1</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub> )
+
+![](images/page_58_image_4.jpg)
+
+Hình 2.14 Kế hoạch mở rộng lưới điện cho trường hợp 2 – 3
+
+<!-- page: 60 -->
+
+Hình 2.9 đến Hình 2.14 thể hiện được các kế hoạch dự kiến mở rộng của toàn hệ thống nhằm đáp ứng được nhu cầu phụ tải tăng trong tương lai. Qua kết quả Hình 2.9 đến Hình 2.11 thể hiện hệ thống khi có 1 phần tử bị hỏng xét 3 trường hợp theo chỉ số độ tin cậy 20,0 (giờ/năm) yêu cầu lắp đặt 7 tuyến đường dây/trạm biến áp điều này rất phù hợp với thực tiễn đặt ra; Hình 2.12 đến Hình 2.14 thể hiện hệ thống khi có 2 phần tử bị hỏng xét 3 trường hợp nhằm xem xét thêm khả năng đáp ứng nhu cầu cung cấp điện liên tục của hệ thống khi xảy ra sự cố.
+
+Tỷ lệ dự trữ của các trạm biến áp sau khi quy hoạch của hệ thống khi có 1 phần tử bị hỏng (N-1TL) xét chỉ số độ tin cậy của hệ thống được thể hiện ở Bảng 2.6. Sự vận hành hệ thống với chỉ số độ tin cậy càng giảm thì trạm biến áp yêu cầu sử dụng càng tăng.
+
+Bảng 2.6 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 1
+
+<table><tbody><tr><td rowspan="2">TT</td><td rowspan="2">Từ nút</td><td rowspan="2">Đến nút</td><td rowspan="2">Tên nút</td><td colspan="3">Tỷ lệ dự trữ (%)</td></tr><tr><td>LOLER=20,0(giờ/năm)</td><td>LOLER=21,0(giờ/năm)</td><td>LOLER=22,0(giờ/năm)</td></tr><tr><td>1</td><td>1</td><td>5</td><td>T TN2</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>2</td><td>3</td><td>31</td><td>T PL5</td><td>36,50</td><td>41,67</td><td>41,67</td></tr><tr><td>3</td><td>6</td><td>7</td><td>T RG2</td><td>5,00</td><td>5,00</td><td>0,00</td></tr><tr><td>4</td><td>9</td><td>10</td><td>T CLH</td><td>6,67</td><td>6,67</td><td>6,67</td></tr><tr><td>5</td><td>11</td><td>12</td><td>T CLY</td><td>10,00</td><td>10,00</td><td>10,00</td></tr><tr><td>6</td><td>13</td><td>32</td><td>T MT5</td><td>58,33</td><td>58,33</td><td>58,33</td></tr><tr><td>7</td><td>15</td><td>16</td><td>T VL2</td><td>6,67</td><td>0,00</td><td>0,00</td></tr><tr><td>8</td><td>17</td><td>18</td><td>T BL2</td><td>4,00</td><td>4,00</td><td>4,00</td></tr><tr><td>9</td><td>19</td><td>20</td><td>T CM2</td><td>4,00</td><td>4,00</td><td>4,00</td></tr><tr><td>10</td><td>21</td><td>35</td><td>T ST5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>11</td><td>22</td><td>34</td><td>T TVI</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>12</td><td>23</td><td>33</td><td>T SH5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>13</td><td>24</td><td>27</td><td>T KL5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>14</td><td>25</td><td>30</td><td>T DH5</td><td>88,89</td><td>88,89</td><td>88,89</td></tr><tr><td>15</td><td>26</td><td>28</td><td>T TN5</td><td>55,56</td><td>55,56</td><td>55,56</td></tr><tr><td>16</td><td>29</td><td>2</td><td>T OM5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>17</td><td>31</td><td>4</td><td>T PL2</td><td>53,33</td><td>53,33</td><td>53,33</td></tr><tr><td>18</td><td>32</td><td>14</td><td>T MT2</td><td>34,88</td><td>34,88</td><td>34,88</td></tr></tbody></table>
+
+Tỷ lệ dự trữ của các trạm biến áp sau khi quy hoạch của hệ thống khi có 2 phần tử bị hỏng (N-2TL) xét chỉ số độ tin cậy của hệ thống được thể hiện ở Bảng 2.7. Sự vận hành hệ thống với chỉ số độ tin cậy càng giảm thì trạm biến áp yêu cầu sử dụng càng tăng.
+
+<!-- page: 61 -->
+
+Bảng 2.7 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 2
+
+<table><tbody><tr><td rowspan="2">STT</td><td rowspan="2">Từ nút</td><td rowspan="2">Đến nút</td><td rowspan="2">Tên nút</td><td colspan="3">Tỷ lệ dự trữ (%)</td></tr><tr><td>LOLER = 45,0 (giờ/năm)</td><td>LOLER = 46,0 (giờ/năm)</td><td>LOLER = 50,0 (giờ/năm)</td></tr><tr><td>1</td><td>1</td><td>5</td><td>T TN2</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>2</td><td>3</td><td>31</td><td>T PL5</td><td>41,67</td><td>41,67</td><td>47,22</td></tr><tr><td>3</td><td>6</td><td>7</td><td>T RG2</td><td>5,00</td><td>0,00</td><td>0,00</td></tr><tr><td>4</td><td>9</td><td>10</td><td>T CLH</td><td>6,67</td><td>6,67</td><td>6,67</td></tr><tr><td>5</td><td>11</td><td>12</td><td>T CLY</td><td>10,00</td><td>10,00</td><td>0,00</td></tr><tr><td>6</td><td>13</td><td>32</td><td>T MT5</td><td>60,11</td><td>60,11</td><td>60,11</td></tr><tr><td>7</td><td>15</td><td>16</td><td>T VL2</td><td>0,00</td><td>0,00</td><td>0,00</td></tr><tr><td>8</td><td>17</td><td>18</td><td>T BL2</td><td>4,00</td><td>4,00</td><td>4,00</td></tr><tr><td>9</td><td>19</td><td>20</td><td>T CM2</td><td>4,00</td><td>4,00</td><td>4,00</td></tr><tr><td>10</td><td>21</td><td>35</td><td>T ST5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>11</td><td>22</td><td>34</td><td>T TVI</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>12</td><td>23</td><td>33</td><td>T SH5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>13</td><td>24</td><td>27</td><td>T KL5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>14</td><td>25</td><td>30</td><td>T DH5</td><td>88,89</td><td>88,89</td><td>88,89</td></tr><tr><td>15</td><td>26</td><td>28</td><td>T TN5</td><td>55,56</td><td>55,56</td><td>55,56</td></tr><tr><td>16</td><td>29</td><td>2</td><td>T OM5</td><td>100,00</td><td>100,00</td><td>100,00</td></tr><tr><td>17</td><td>31</td><td>4</td><td>T PL2</td><td>53,33</td><td>53,33</td><td>53,33</td></tr><tr><td>18</td><td>32</td><td>14</td><td>T MT2</td><td>0,00</td><td>0,00</td><td>0,00</td></tr></tbody></table>
+
+## c. Kiểm tra khả năng quá tải của hệ thống truyền tải khu vực ĐBSCL
+
+Sử dụng phần mềm PowerWorld nhằm kiểm tra độ ổn định và khả năng tải của đường dây và máy biến áp sau khi cải tạo có bị quá tải như trước khi cải tạo hay không, thông số điện áp sau khi cải tạo. Hình 2.10. cho biết mức độ đáp ứng của đường dây và trạm biến áp. Các ký hiệu trên sơ đồ cho biết trạng thái.
+
+ Hình tròn màu xanh trên đường dây và trạm biến áp: Đường dây và trạm biến áp mang tải dưới 100%. Phần trăm mang tải cụ thể hiển thị trong vòng tròn. Hình tròn màu cam trên đường dây và trạm biến áp: Đường dây và trạm biến áp mang tải từ 90% đến 100%. Hình tròn màu đỏ trên đường dây và trạm biến áp: Cảnh báo đường dây và trạm biến áp bị quá tải.
+
+Ngoài ra, các thông số khác còn thể hiện trên hình như chiều truyền công suất tác dụng, công suất phản kháng và tải của từng nút. Sau khi vẽ sơ đồ hệ thống điện, nhập các thông số và cho chương trình hoạt động sẽ mô phỏng lại toàn bộ hoạt động hệ thống điện.
+
+<!-- page: 62 -->
+
+![](images/page_61_image_0.jpg)
+
+Hình 2.15 Hệ thống điện ĐBSCL trước khi quy hoạch
+
+<!-- page: 63 -->
+
+![](images/page_62_image_0.jpg)
+
+Hình 2.16 Hệ thống điện ĐBSCL sau mở rộng thêm 7 tuyến với LOLER = 20,0 (giờ/năm)
+
+<!-- page: 64 -->
+
+Sau khi sử dụng công cụ phần mềm PowerWorld để kiểm tra hệ thống trước và sau khi quy hoạch đầu tư mở rộng mới thể hiện theo Hình 2.15 thể hiện khi phụ tải tăng các vị trí kết nối RG220 – RG110, TNC220 – TNC110, CLH220 – CLH110, VL220 – VL110, CLY220 – CLY110, MT220 – MT110 vượt quá tải trên 100% và Hình 2.16, kết quả cho thấy hệ thống sau khi quy hoạch được đầu tư thêm 7 tuyến mới T<sup>1</sup><sub>32-1</sub>4 , T<sup>2</sup><sub>32-1</sub>4 , T<sup>1</sup><sub>9-1</sub>0 , T<sup>1</sup><sub>1-5</sub>, T<sup>1</sup><sub>11-1</sub>2 , T<sup>1</sup><sub>6-7</sub> , T<sup>1</sup><sub>15-1</sub>6 nên không có nơi vào bị quá tải đều này chứng minh rằng kết quả để xuất mở rộng đầu tư mới là phù hợp đáp ứng nhu cầu phụ tải. Giải thuật đã chứng minh tính khả thi trên quy hoạch dài hạn lưới điện 500kV và 220kV.
+
+## 2.4.2. Kết quả tính toán cho lưới điện tỉnh Bến Tre
+
+Lưới điện 220kV: Trên địa bàn tỉnh Bến Tre có 02 trạm biến áp 220kV Bến Tre và Mỏ Cày cấp điện cho lưới điện 110kV của tỉnh, ngoài ra tỉnh Bến Tre còn được cấp điện từ trạm 220kV Vĩnh Long 2 (125+250) MVA tỉnh Vĩnh Long và trạm 220kV Mỹ Tho 2 (125+250) MVA tỉnh Tiền Giang.
+
+Lưới điện 110kV: Hiện tại trên địa bàn tỉnh Bến Tre có số trạm biến áp 110kV là 8 trạm/9 máy biến áp 110kV với tổng công suất đặt là 597MVA. Tổng chiều dài đường dây 110kV tỉnh Bến Tre là 166,7km, bao gồm 08 tuyến đường dây 110kV. Phía thanh cái 110kV trạm 220kV Bến Tre có 3 ngăn lộ đường dây ra, phía thanh cái 110kV trạm 110kV Mỏ Cày có 02 ngăn lộ đường dây, phía thanh cái 110kV trạm 220kV Vĩnh Long 2 và Mỹ Tho 2 có 02 ngăn lộ đường dây ra và tuyến đường dây còn lại là nhánh rẽ Giồng Trôm - Bình Đại.
+
+Bảng 2.8 Công suất các trạm biến áp 110kV tỉnh Bến Tre
+
+| Trạm biến áp 110kV | Số lượng MBA | Công suất (MVA) |
+| --- | --- | --- |
+| Chợ Lách | 1 | 25 |
+| Mỏ Cày | 2 | 80 |
+| Bình Thạnh | 1 | 40 |
+| Bến Tre | 2 | 126 |
+| Giao Long | 2 | 80 |
+| Giồng Trôm | 1 | 40 |
+| Bình Đại | 2 | 126 |
+| Ba Tri | 2 | 80 |
+
+Theo kết quả tổng kết từ ngành điện lực tỉnh Bến Tre thì tổng sản lượng điện thương phẩm thực hiện năm 2021 là 1.757,27 triệu kWh tăng 2,42% so với cùng kỳ
+
+<!-- page: 65 -->
+
+năm 2020. Tổng số khách hàng đến hết năm 2021 là 469.515 khách hàng. Tỷ lệ hộ có điện là 400.210/400.353 hộ chiếm tỷ lệ 99,96%, sản lượng điện tiết kiệm năm 2021 là 28.009.258 kWh; Giá bán bình quân thực hiện 1.868,44đ/kWh thấp hơn 23,46đ/kWh so với kế hoạch năm 2021 (1.891,9 đ/kWh) do hỗ trợ giảm giá điện trong đại dịch Covid-19 và cao hơn 42,48 đ/kWh so với cùng kỳ năm 2020 (1.825,96 đ/kWh); Thanh toán không dùng tiền mặt đạt 99,88%, đạt vượt 0,88% so với kế hoạch năm 2021; Đầu tư xây dựng đã thực hiện với tổng số vốn là 231,734 tỷ đồng;
+
+Thông số dữ liệu của mạng điện cấp điện áp 110kV tỉnh Bến Tre được thống kê theo các Bảng B.12. đến Bảng B.16. ở phụ lục B.4. Sơ đồ đơn tuyến của hệ thống điện tỉnh Bến Tre được trình bày theo Hình 2.17.
+
+![](images/page_64_image_2.jpg)
+
+Hình 2.17 Sơ đồ đơn tuyến mạng điện 110 kV tỉnh Bến Tre.
+
+b. Tối ưu hoá quy hoạch hệ thống lưới điện tỉnh Bến Tre
+
+Hệ thống điện tỉnh Bến Tre có tổng công suất nguồn 790MW cung cấp cho tổng phụ tải 704MW thông qua tổng công suất truyền 740MW ở tuyến 110kV và 517MW trạm biến áp 110kV. Thông số đầu vào cho bài toán quy hoạch như trình bày tại Bảng B.26. Sử dụng thuật toán cận biên và nhánh áp dụng giải bài toán TEP. Công cụ giải bài toán quy hoạch này sử dụng ngôn ngữ lập trình Fortran. Độ tin cậy trong nghiên cứu này được khảo sát với 2 trường hợp. Trường hợp 1 với độ tin cậy là (N-1TL) tức là hệ thống điện sau khi quy hoạch chấp nhận 1 tuyến dây hư hỏng. Trường hợp 2 là (N-2TL) tức là hệ thống điện chấp nhận 2 tuyến dây hư hỏng.
+
+<!-- page: 66 -->
+
+Kết quả đạt được cho thấy tất cả các chỉ số độ tin cậy của hệ thống điện sau khi quy hoạch $( \mathrm { L O L E _ { S Y S } } )$ đều nhỏ hơn chỉ số độ tin cậy chuẩn mong muốn $\mathrm { ( L O L E _ { R } ) }$ Kết quả đạt được cho thấy tất cả các chỉ số độ tin cậy của hệ thống điện sau khi quy hoạch (LOLESYS) đều nhỏ hơn chỉ số độ tin cậy chuẩn mong muốn (LOLER) theo công thức (2.5) ; Các chỉ tiêu thiếu nguồn (EENS) được xác định theo phụ lục A công thức (A.4), chỉ $\mathrm { s } \hat { \mathsf { O } }$ năng lượng của độ tin cậy (EIR) theo công thức (A.8), chỉ tiêu cắt tải (ELC) theo công thức (A.23) thu được kết quả theo Bảng 2.9.
+
+Bảng 2.9 Chỉ tiêu độ tin cậy của hệ thống
+
+<table><tbody><tr><td>Trường hợp</td><td>Năm</td><td>LOLER(giờ/năm)</td><td>EENS(MWh/năm)</td><td>ELC(MW/Cur.năm)</td><td>LOLESYS(giờ/năm)</td><td>EIR (p.u)</td></tr><tr><td rowspan="3">N-1TL</td><td>2024</td><td>20,0</td><td>0</td><td>0</td><td>0,0</td><td>1,000</td></tr><tr><td>2030</td><td>20,0</td><td>60.284,800</td><td>100.000</td><td>6,028</td><td>0,988</td></tr><tr><td>2045</td><td>20,0</td><td>54.693,200</td><td>100.000</td><td>5,649</td><td>0,990</td></tr><tr><td rowspan="3">N-2TL</td><td>2024</td><td>20,0</td><td>0</td><td>0</td><td>0,0</td><td>1</td></tr><tr><td>2030</td><td>20,0</td><td>0</td><td>0</td><td>0,0</td><td>1</td></tr><tr><td>2045</td><td>20,0</td><td>0</td><td>0</td><td>0,0</td><td>1</td></tr></tbody></table>
+
+Kết quả đạt được cũng cho thấy khi giảm dần chỉ số độ tin cậy chuẩn mong muốn tức là nhà quy hoạch yêu cầu hệ thống tăng độ tin cậy của hệ thống thì tăng chi phí đầu tư. Bảng 2.10 trình bày với $\dot { \bf T _ { x - y } ^ { i } }$ thể hiện đường dây/trạm biến áp thứ i nối giữa 2 nút x và y (với i =1,2,3,4 và x là nút đầu, y là nút cuối).
+
+Bảng 2.10 Tối ưu quy hoạch hệ thống truyền tải
+
+<table><tbody><tr><td>Trường hợp</td><td>Năm</td><td>LOLER(giờ/năm)</td><td>Yêu cầu mở rộng đường dây</td><td>Chi phí (M$)</td></tr><tr><td rowspan="3">N - 1TL</td><td>2024</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub></td><td>1</td></tr><tr><td>2030</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub></td><td>1</td></tr><tr><td>2045</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub></td><td>1</td></tr><tr><td rowspan="3">N - 2TL</td><td>2024</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub></td><td>1</td></tr><tr><td>2030</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub>, T<sup>1</sup><sub>2-1</sub>0, T<sup>1</sup><sub>3-1</sub>2 ,T<sup>1</sup><sub>4-1</sub>1, T<sup>1</sup><sub>5-1</sub>4, T<sup>1</sup><sub>6</sub>-13, T<sup>1</sup><sub>7-1</sub>5, T<sup>1</sup><sub>8-1</sub>6, T<sup>1</sup><sub>6-2</sub>,</td><td>10</td></tr><tr><td>2045</td><td>20,0</td><td>T<sup>1</sup><sub>1-9</sub>, T<sup>1</sup><sub>2-1</sub>0, T<sup>1</sup><sub>3-1</sub>2 <sup>T1</sup>4-11, T<sup>1</sup><sub>5-1</sub>4, T<sup>1</sup><sub>6</sub>-13, T<sup>1</sup><sub>7-1</sub>5, T<sup>1</sup><sub>8-1</sub>6, T<sup>1</sup><sub>6-2</sub>,</td><td>10</td></tr></tbody></table>
+
+Sơ đồ lưới điện sau khi quy hoạch trường hợp hệ thống điện (N-1TL) ngẫu nhiên theo từng giai đoạn (ngắn hạn, trung hạn và dài hạn) thể hiện theo Hình 2.18 đến Hình 2.20; các đường vẽ nét liền thể hiện đường dây, trạm biến áp hiện hữu và
+
+<!-- page: 67 -->
+
+các đường nét đứt khúc màu đỏ thể hiện đường dây, trạm biến áp cần đầu tư mở rộng thêm đáp ứng nhu cầu trong tương lai.
+
+![](images/page_66_image_1.jpg)
+
+Hình 2.18 Lưới điện sau quy hoạch ngắn hạn năm 2024 trường hợp N-1TL
+
+![](images/page_66_image_3.jpg)
+
+Hình 2.19 Lưới điện sau quy hoạch trung hạn năm 2030 trường hợp N-1TL
+
+<!-- page: 68 -->
+
+![](images/page_67_image_0.jpg)
+
+Hình 2.20 Lưới điện sau quy hoạch dài hạn năm 2045 trường hợp N-1TL
+
+Sơ đồ lưới điện sau khi quy hoạch trường hợp hệ thống điện (N-2TL) đường dây ngẫu nhiên theo từng giai đoạn (ngắn hạn, trung hạn và dài hạn) thể hiện theo Hình 2.21 đến Hình 2.23; các đường vẽ nét liền thể hiện đường dây, trạm biến áp hiện hữu và các đường nét đứt khúc thể hiện đường dây, trạm biến áp cần đầu tư mở rộng.
+
+![](images/page_67_image_3.jpg)
+
+Hình 2.21 Lưới điện sau quy hoạch ngắn hạn năm 2024 trường hợp N-2TL
+
+<!-- page: 69 -->
+
+![](images/page_68_image_0.jpg)
+
+Hình 2.22 Lưới điện sau quy hoạch trung hạn năm 2030 trường hợp N-2TL
+
+![](images/page_68_image_2.jpg)
+
+Hình 2.23 Lưới điện sau quy hoạch dài hạn năm 2045 trường hợp N-2TL
+
+Hình 2.21 đến Hình 2.23 thể hiện được các kế hoạch dự kiến mở rộng của toàn hệ thống nhằm đáp ứng được nhu cầu phụ tải tăng trong tương lai. Qua kết quả cho thấy rằng, hệ thống khi có 2 phần tử bị hỏng xét chỉ số độ tin cậy 20,0(giờ/năm) yêu cầu lắp đặt 9 tuyến đường dây/trạm biến áp điều này rất phù hợp với thực tiễn đặt ra.
+
+<!-- page: 70 -->
+
+Tỷ lệ dự trữ của các trạm biến áp sau khi quy hoạch của hệ thống khi có 1 phần tử bị hỏng (N-1TL) và (N-2TL) xét chỉ số độ tin cậy của hệ thống bằng 20,0 giờ/năm thể hiện ở Bảng 2.11. Sự vận hành hệ thống với chỉ số độ tin cậy càng giảm thì trạm biến áp yêu cầu sử dụng càng tăng.
+
+Bảng 2.11 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 1
+
+<table><tbody><tr><td rowspan="2">TT</td><td rowspan="2">Từ nút</td><td rowspan="2">Đến nút</td><td rowspan="2">Tên nút</td><td colspan="3">Tỷ lệ dự trữ (%)</td></tr><tr><td>Năm 2024</td><td>Năm 2030</td><td>Năm 2045</td></tr><tr><td>1</td><td>1</td><td>9</td><td>T CLH</td><td>59,32</td><td>54,24</td><td>49,15</td></tr><tr><td>2</td><td>2</td><td>10</td><td>T MCY</td><td>0</td><td>0</td><td>0</td></tr><tr><td>3</td><td>3</td><td>12</td><td>T GLG</td><td>0</td><td>0</td><td>0</td></tr><tr><td>4</td><td>4</td><td>11</td><td>T BTH</td><td>0</td><td>0</td><td>0</td></tr><tr><td>5</td><td>5</td><td>14</td><td>T GTM</td><td>0</td><td>0</td><td>0</td></tr><tr><td>6</td><td>6</td><td>13</td><td>T BTE</td><td>0</td><td>0</td><td>0</td></tr><tr><td>7</td><td>7</td><td>15</td><td>T BĐI</td><td>0</td><td>0</td><td>0</td></tr><tr><td>8</td><td>8</td><td>16</td><td>T BAT</td><td>0</td><td>0</td><td>0</td></tr></tbody></table>
+
+Tỷ lệ dự trữ của các trạm biến áp sau khi quy hoạch của hệ thống khi có 2 phần tử bị hỏng (N-2TL) xét chỉ số độ tin cậy của hệ thống bằng 20,0giờ/năm thể hiện ở Bảng 2.12. Sự vận hành hệ thống với chỉ số độ tin cậy càng giảm thì trạm biến áp yêu cầu sử dụng càng tăng.
+
+Bảng 2.12 Tỷ lệ dự trữ nguồn cung cấp hệ thống điện sau quy hoạch ở trường hợp 2
+
+<table><tbody><tr><td rowspan="2">TT</td><td rowspan="2">Từ nút</td><td rowspan="2">Đến nút</td><td rowspan="2">Tên nút</td><td colspan="3">Tỷ lệ dự trữ (%)</td></tr><tr><td>Năm 2024</td><td>Năm 2030</td><td>Năm 2045</td></tr><tr><td>1</td><td>1</td><td>9</td><td>T CLH</td><td>59,32</td><td>54,24</td><td>49,15</td></tr><tr><td>2</td><td>2</td><td>10</td><td>T MCY</td><td>0</td><td>23,15</td><td>12,04</td></tr><tr><td>3</td><td>3</td><td>12</td><td>T GLG</td><td>0</td><td>23,15</td><td>25,93</td></tr><tr><td>4</td><td>4</td><td>11</td><td>T BTH</td><td>0</td><td>41,67</td><td>34,72</td></tr><tr><td>5</td><td>5</td><td>14</td><td>T GTM</td><td>0</td><td>41,67</td><td>54,17</td></tr><tr><td>6</td><td>6</td><td>13</td><td>T BTE</td><td>0</td><td>12,08</td><td>1,34</td></tr><tr><td>7</td><td>7</td><td>15</td><td>T BĐI</td><td>0</td><td>16,28</td><td>5,43</td></tr><tr><td>8</td><td>8</td><td>16</td><td>T BAT</td><td>0</td><td>23,15</td><td>12,04</td></tr></tbody></table>
+
+c.Kiểm tra khả năng quá tải của hệ thống lưới điện tỉnh Bến Tre
+
+Sử dụng phần mềm PowerWorld nhằm kiểm tra độ ổn định và khả năng tải của đường dây và máy biến áp sau khi cải tạo có bị quá tải như trước khi cải tạo hay không, thông số điện áp sau khi cải tạo.
+
+<!-- page: 71 -->
+
+ Hình 2.24 đến Hình 2.25 cho biết mức độ đáp ứng tải của đường dây và trạm biến áp. Các ký hiệu trên sơ đồ cho biết trạng thái sau:
+
+ Hình tròn màu xanh trên đường dây và trạm biến áp: Đường dây và trạm biến áp mang tải dưới 100%. Phần trăm mang tải cụ thể hiển thị trong vòng tròn.
+
+ Hình tròn màu đỏ trên đường dây và trạm biến áp: Cảnh báo đường dây và trạm biến áp bị quá tải.
+
+Ngoài ra, các thông số khác còn thể hiện trên hình như chiều truyền công suất tác dụng, công suất phản kháng và tải của từng nút.
+
+![](images/page_70_image_4.jpg)
+
+Hình 2.24 Hệ thống điện trước khi quy hoạch năm 2045
+
+![](images/page_70_image_6.jpg)
+
+Hình 2.25 Hệ thống điện sau mở rộng trường hợp N-2TL vào năm 2045
+
+Kết quả nghiên cứu không chỉ ứng dụng hiệu quả thuật toán tối ưu độ tin cậy, tỷ lệ dự trữ trong quy hoạch hệ thống truyền tải mà còn sử dụng công cụ phần mềm
+
+<!-- page: 72 -->
+
+PowerWorld để kiểm tra hệ thống trước và sau khi quy hoạch đầu tư mở rộng mới theo Hình 2.24 thể hiện khi phụ tải tăng lên theo kết quả dự báo các tuyến kết nối 1-9, 4-11, 2-10, 6-13, 3-12, 5-14, 7-15, 8-16 vượt quá tải trên 100% dung lượng và Hình 2.25, kết quả cho thấy hệ thống sau khi quy hoạch không có nơi vào bị quá tải đều này chứng minh rằng kết quả để xuất mở rộng đầu tư mới là phù hợp đáp ứng nhu cầu phụ tải. Giải thuật đã chứng minh tính khả thi trên quy hoạch dài hạn lưới điện cao áp 220kV và 110kV.
+
+## 2.4.3. Kết quả tính toán cho lưới điện tỉnh Hậu Giang
+
+## 2.4.3.1. Hiện trạng nguồn điện
+
+Tỉnh Hậu Giang được cấp điện từ hệ thống điện quốc gia, trong đó nguồn điện chính là các nhà máy sau:
+
+Nhà máy điện tua bin khí chu trình hỗn hợp Cà Mau, gồm 2 cụm, công suất mỗi cụm là 750MW.
+
+Nhà máy điện Cần Thơ 167MW gồm có 4 tổ tuabin khí, công suất khả dụng 134MW và 1 tổ tuabinhơi công suất 33MW.
+
+Tỉnh được cấp điện từ các trạm 220kV nằm trên địa bàn các tỉnh lân cận như trạm 220kV Trà Nóc, Rạch Giá, Sóc Trăng.
+
+## 2.4.3.2. Hiện trạng lưới truyền tải 220kV-110kV
+
+## - Lưới 220kV:
+
+Hiện tại tỉnh Hậu Giang được cấp điện từ các trạm biến áp 220kV sau:
+
+Trạm 220kV ở Rạch Gòi công suất 2x125MVA.
+
+Trạm biến áp Rạch Giá 2 công suất 220/110 – 250+125MVA, đặt tại huyện Châu Thành, tỉnh Kiên Giang, nhận điện từ các đường dây 220kV nhà máy điện Cà Mau – Rạch Giá 2. Trạm 220kV Rạch Giá 2, đường dây 110kV cấp điện cho các cho các trạm 110kV sau: Giồng Riềng (tỉnh Kiên Giang), Vị Thanh, Long Mỹ tỉnh Hậu Giang.
+
+Trạm biến áp Trà Nóc 220/110 – 125+100MVA, đặt tại nhà máy điện Cần Thơ, thành phố Cần Thơ. Giữa các trạm 220kV Trà Nóc và Sóc Trăng 2 là các trạm 110kV
+
+<!-- page: 73 -->
+
+sau: Long Hòa, Cần Thơ, KCN Hưng Phú (TP. Cần Thơ), Châu Thành, Phụng Hiệp (tỉnh Hậu Giang), Sóc Trăng, Mỹ Tú (tỉnh Sóc Trăng).
+
+Trạm biến áp 220kV Sóc Trăng 2 - 220/110kV – 125MVA, đặt tại thành phố Sóc Trăng, tỉnh Sóc Trăng, nhận điện từ đường dây 220kV Nhà máy điện Cà Mau – Sóc Trăng 2.
+
+## - Lưới 110kV:
+
+Trạm biến áp 110/22kV Vị Thanh công suất 40MVA đặt tại thành phố Vị Thanh, cấp điện cho thành phố Vị Thanh, các huyện Vị Thủy và một số xã của huyện Phụng Hiệp. Trạm có 5 lộ ra 22kV. Trạm 110kV Vị Thanh từ năm 2005 đã có quy mô 2 máy biến áp 40MVA nhưng chỉ đưa vào vận hành 1 máy, năm 2010 máy biến áp không hoạt động đã được tháo dỡ.
+
+Trạm 110/22kV Phụng Hiệp, công suất 25MVA đặt tại thị xã Ngã Bảy, cấp điện cho thị xã Ngã Bảy và huyện Phụng Hiệp, một phần của tỉnh Sóc Trăng. Trạm có 4 lộ ra nhưng mới đưa vào khai thác 2 xuất tuyến.
+
+Trạm 110/22kV Châu Thành, công suất 25MVA đặt tại huyện Châu Thành A, cấp điện cho 2 huyện Châu Thành và Châu Thành A. Trạm Châu Thành được thiết kế với quy mô máy 40MVA nhưng chỉ lắp đặt máy 25MVA. Trạm có 5 lộ ra nhưng mới đưa vào vận hành 2 xuất tuyến.
+
+Trạm 110kV/22kV Long Mỹ công suất 25MVA đặt tại Huyện Long Mỹ, cấp điện cho huyện Long Mỹ, thị trấn Ngã năm (tỉnh Bạc Liêu) và 3 xã thuộc huyện Gò Quao (tỉnh Kiên Giang). Trạm có quy mô 5 lộ ra 22kV nhưng mới đưa vào vận hành 2 xuất tuyến.
+
+## - Nguồn điện cấp cho tỉnh Hậu Giang là 3 đường dây 110kV sau:
+
+Đường dây 110kV Rạch Giá 2 – Giồng Riềng – Vị Thanh – Long Mỹ: Trong phương thức vận hành bình thường trạm 110kV Vị Thanh và Long Mỹ nhận điện hoàn toàn từ trạm 220kV Rạch Giá 2, đường dây 110kV từ trạm 110kV Long Mỹ đến trạm 220kV Cà Mau 2 chỉ là đường dây liên lạc.
+
+Đường dây 110kV Trà Nóc – KCN Hưng Phú – Châu Thành – Phụng Hiệp: Trong phương thức vận hành bình thường trạm 110kV Châu Thành nhận điện từ trạm
+
+<!-- page: 74 -->
+
+220kV Trà Nóc. Trạm 110kV Phụng Hiệp nhận điện phần lớn từ trạm 220kV Trà Nóc và 1 phần từ trạm 220kV Sóc Trăng 2.
+
+Các thông số lưới điện, trạm biến áp cấp điện áp 110kV được thể hiện theo Bảng B.17 đến B.19. Ngoài ra còn có các trạm biến áp 220kV cấp điện cho tỉnh Hậu Giang đều nằm tại các tỉnh lân cận và có mức mang tải tương đối cao. Bảng 2.13 đến Bảng 2.14 thể hiện thông số đường dây và dự báo phụ tải tỉnh Hậu Giang.
+
+Bảng 2.13 Thông số đường dây truyền tải tỉnh Hậu Giang đến năm 2020
+
+| TT | NTúừt | Đ Nếúnt | Từ thanh cái | Đến thanh cái | dẫLno(ạAiC dâSyR) | (kLm) | (MP<sub>m</sub>W<sub>ax</sub>) | (VCNhĐi x p1h0í<sup>9</sup>) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3 | 4 | Sóc Trăng 2 220 | Bạc Liêu 2 220 | 795MCM | 71,19 | 285 | 641 |
+| 2 | 6 | 17 | Cần Thơ 220 | KCN Tân Phú Thạnh | 240 | 2,2 | 93 | 20 |
+| 3 | 6 | 11 | Cần Thơ 220 | Châu Thành 2 | 2x300 | 24 | 208 | 216 |
+| 4 | 6 | 16 | Cần Thơ 220 | Cần Thơ 110 | 185 | 9,2 | 80 | 83 |
+| 5 | 17 | 18 | KCN Tân Phú Thạnh | Châu Thành | 240 | 19,3 | 93 | 174 |
+| 6 | 7 | 11 | Châu Thành 220 | Châu Thành 2 | 2x240 | 6 | 186 | 54 |
+| 7 | 7 | 13 | Châu Thành 220 | Nhà máy Thép 2 | 3x240 | 9 | 279 | 81 |
+| 8 | 13 | 14 | Nhà máy Thép 2 | Nhà máy Thép 1 | 2x240 | 1 | 186 | 9 |
+| 9 | 7 | 18 | Châu Thành 220 | Châu Thành | 240 | 32,8 | 93 | 295 |
+| 10 | 7 | 19 | Châu Thành 220 | Phụng Hiệp | 240 | 17,3 | 93 | 156 |
+| 11 | 19 | 20 | Phụng Hiệp | Kế Sách | 240 | 15 | 93 | 135 |
+| 12 | 12 | 19 | Sóc Trăng | Phụng Hiệp | 240 | 55 | 93 | 495 |
+| 13 | 20 | 21 | Kế Sách | KCN An Nghiệp | 240 | 27 | 93 | 243 |
+| 14 | 8 | 21 | Sóc Trăng 2 220 | KCN An Nghiệp | 240 | 1 | 93 | 9 |
+| 15 | 8 | 12 | Sóc Trăng 2 220 | Sóc Trăng | 240 | 2 | 93 | 18 |
+| 16 | 8 | 22 | Sóc Trăng 2 220 | Mỹ Tú | 185 | 18 | 80 | 162 |
+| 17 | 9 | 23 | Bạc Liêu 2 220 | Long Mỹ | 240 | 55 | 93 | 495 |
+| 18 | 22 | 23 | Mỹ Tú | Long Mỹ | 185 | 29 | 80 | 261 |
+| 19 | 10 | 15 | Rạch Giá 2 | Giồng Riềng | 185 | 24 | 80 | 216 |
+| 20 | 15 | 24 | Giồng Riềng | Vị Thanh | 185 | 31,2 | 80 | 281 |
+| 21 | 23 | 24 | Long Mỹ | Vị Thanh | 185 | 12 | 80 | 108 |
+
+Nghiên cứu này sẽ áp dụng cho lưới điện có mức điện áp từ 110kV đến 220kV trên cơ sở kế hoạch xây dựng và vận hành hệ thống điện cùng với phát triển hệ thống nguồn. Nghiên cứu này đã sử dụng kết quả dự báo nhu cầu phụ tải đến 2020.
+
+<!-- page: 75 -->
+
+Bảng 2.14 Dự báo nhu cầu phụ tải đến năm 2020
+
+| Nút phụ tải | Công suất cực đại (MW) | Nút phụ tải | Công suất cực đại (MW) |
+| --- | --- | --- | --- |
+| 1 | 119 | 14 | 85 |
+| 2 | 600 | 15 | 65 |
+| 3 | 200 | 16 | 48 |
+| 4 | 200 | 17 | 33 |
+| 5 | 183 | 18 | 31 |
+| 6 | 48 | 19 | 31 |
+| 9 | 275 | 20 | 24 |
+| 10 | 215 | 21 | 36 |
+| 11 | 64 | 22 | 25 |
+| 12 | 126 | 23 | 25 |
+| 13 | 80 | 24 | 49 |
+
+Sơ đồ hệ thống truyền tải tỉnh Hậu Giang theo Hình 2.26. sơ đồ đơn tuyến lưới điện tỉnh Hậu Giang đã được thông qua Quy hoạch phát triển điện lực tỉnh đến năm 2020.
+
+![](images/page_74_image_3.jpg)
+
+Hình 2.26 Sơ đồ đơn tuyến lưới điện toàn tỉnh Hậu Giang
+
+## b. Kết quả quy hoạch hệ thống truyền tải
+
+Để kiểm tra lại vị trí, công suất hệ thống điện quy hoạch của tỉnh Hậu Giang đáp ứng được độ tin cậy của hệ thống và đáp ứng điều kiện tối thiểu tổng chi phí. Thông số đầu vào cho bài toán quy hoạch như trình bày tại Bảng B.27. Kết quả đạt được tại Bảng 2.15. sử dụng ngôn ngữ lập trình Fortran theo thuật toán trình bày ở
+
+<!-- page: 76 -->
+
+trên; $\dot { \bf T } _ { \mathrm { X - Y } } ^ { \mathrm { i } }$ thể hiện đường dây/trạm biến áp thứ i nối giữa 2 nút x và y (với i =1,2,3,4 và x là nút đầu, y là nút cuối). Nếu tỷ lệ dự trữ nút càng tăng tức là hệ thống điện càng tin cậy thì sẽ tăng chi phí đầu tư. Do đó, nếu yêu cầu tỷ lệ dự trữ nút tăng thì chi phí đầu tư thực hiện quy hoạch mở rộng lưới điện sẽ tăng theo trình bày tại Hình 2.27.
+
+Bảng 2.15 Kết quả quy hoạch và mở rộng lưới điện theo độ dự trữ
+
+| TH | BRR(%) | ĐẦU TƯ MỚI | Chi phí (VNĐx10<sup>9</sup>) |
+| --- | --- | --- | --- |
+| 1 | 0 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T8-12<sup>1</sup>, T20-21<sup>1</sup>, T19-20<sup>1</sup>, T8-21<sup>1</sup>, T12-19<sup>1</sup>, T10-15<sup>1</sup> | 2.089 |
+| 2 | 5 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-8<sup>3</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T8-12<sup>1</sup>, T20-21<sup>1</sup>, T19-20<sup>1</sup>, T8-21<sup>1</sup>, T12-19<sup>1</sup>, T10-15<sup>1</sup> | 2.099 |
+| 3 | 10 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-8<sup>3</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T8-12<sup>1</sup>, T20-21<sup>1</sup>, T19-20<sup>1</sup>, T8-21<sup>1</sup>, T12-19<sup>1</sup>, T10-15<sup>1</sup> | 2.099 |
+| 4 | 15 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-8<sup>3</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T8-12<sup>1</sup>, T8-12<sup>2</sup>, T12-19<sup>1</sup>, T12-19<sup>2</sup>, T10-15<sup>1</sup> | 2.225 |
+| 5 | 20 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-8<sup>3</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T7-19<sup>3</sup>, T8-12<sup>1</sup>, T8-12<sup>2</sup>, T12-19<sup>1</sup>, T12-19<sup>2</sup>, T10-15<sup>1</sup> | 2.381 |
+| 6 | 25 | T3-8<sup>1</sup>, T3-8<sup>2</sup>, T3-8<sup>3</sup>, T3-4<sup>1</sup>, T7-19<sup>1</sup>, T7-19<sup>2</sup>, T7-19<sup>3</sup>, T8-12<sup>1</sup>, T8-12<sup>2</sup>, T12-19<sup>1</sup>, T12-19<sup>2</sup>, T10-15<sup>1</sup> | 2.381 |
+
+![](images/page_75_chart_3.jpg)
+
+Hình 2.27 Đường cong tổng chi phí đầu tư theo yêu cầu tỷ lệ dự trữ BRR(%) c. Đánh giá, đường cong chi phí mất điện và BRR tối ưu, IEAR = 3.000 (VNĐ/kWh)
+
+Bảng 2.16 đã đánh giá chi phí mất điện của khách hàng được giả định rằng đánh giá tỷ lệ mất điện (IEAR) là 3.000 (VNĐ/kWh). Đường cong chi phí khách hàng mất điện được hiển thị ở Hình 2.28. Đường cong chi phí của khách hàng cho biết giá trị độ tin cậy cho mỗi hệ thống mới với chi phí xây dựng tối thiểu, nhưng không thể cung cấp cho các mức độ tối ưu độ tin cậy. Hình 2.29. cho thấy tổng chi phí là tổng của
+
+<!-- page: 77 -->
+
+chi phí xây dựng và chi phí cúp điện, độ tin cậy tối ưu tại điểm (BRR\*) cho việc xây dựng kế hoạch mở rộng hệ thống truyền tải được cho điểm tối thiểu trên đường cong.
+
+Bảng 2.16 Chỉ tiêu độ tin cậy và tổng chi phí
+
+| TH | BRR | Chi phí xây dựng (VNĐx10<sup>9</sup>) | EENS(MWh/ngày) | EENS (MWh /năm) | Chi phí mất điện (VNĐx10<sup>9</sup>) | Tồng chi phí(VNĐx10<sup>9</sup>) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 2.089 | 218,878 | 79.890,47 | 2.396,71 | 4.485,71 |
+| 2 | 5 | 2.099 | 210,855 | 76.962,08 | 2.308,86 | 4.407,86 |
+| 3 | 10 | 2.099 | 210,855 | 76.962,08 | 2.308,86 | 4.407,86 |
+| 4 | 15 | 2.225 | 207,285 | 75.659,03 | 2.269,77 | 4.494,77 |
+| 5 | 20 | 2.381 | 205,524 | 75.016,26 | 2.250,49 | 4.631,49 |
+| 6 | 25 | 2.381 | 205,524 | 75.016,26 | 2.250,49 | 4.631,49 |
+
+![](images/page_76_chart_3.jpg)
+
+Hình 2.28 Đường cong chi phí mất điện khách hàng (VNĐx10<sup>9</sup>)
+
+<!-- page: 78 -->
+
+![](images/page_77_chart_0.jpg)
+
+Hình 2.29 Đường cong tổng chi phí và điểm tối ưu độ tin cậy
+
+Trường hợp trên hệ thống quy hoạch có xét đánh giá tối ưu độ tin cậy của hệ thống truyền tải được xác định bằng cách sử dụng ngôn ngữ lập trình Fortran xác định được các trường hợp có vốn đầu tư tối ưu . Như vậy, qua áp dụng thuật toán trên kiểm tra giá trị tối ưu trong quy hoạch hệ thống truyền tải của tỉnh Hậu Giang, giá trị tỷ lệ dự trữ tối ưu của hệ thống điện quy hoạch tại BRR= 5% và 10%.
+
+## d. Kiểm tra khả năng quá tải của hệ thống bằng phần mềm PowerWord
+
+Kiểm tra độ ổn định và khả năng tải của đường dây và máy biến áp sau khi quy hoạch sử dụng phần mền PowerWord. Hình 2.30. chỉ ra đường dây và trạm biến áp mang quá tải trên 90%. Hình 2.31. là hình thể hiện lưới điện đã được đầu tư mở rộng theo yêu cầu của tỷ lệ dự trữ BRR = 5%. Hình tròn màu xanh trên đường dây và trạm biến áp lưới điện tỉnh Hậu Giang thể hiện: Đường dây và trạm biến áp mang tải dưới 100%. Hình tròn màu cam trên đường dây và trạm biến áp: Đường dây và trạm biến áp mang tải từ 90% đến 100%. Hình tròn màu đỏ trên đường dây và trạm biến áp: Cảnh báo đường dây và trạm biến áp bị quá tải trong hệ thống điện yêu cầu cần lắp thêm để đáp ứng nhu cầu phụ tải.
+
+<!-- page: 79 -->
+
+![](images/page_78_image_0.jpg)
+
+Hình 2.30 Hệ thống trước khi kiểm tra quy hoạch tỉnh Hậu Giang
+
+![](images/page_78_image_2.jpg)
+
+Hình 2.31 Hệ thống sau khi kiểm tra quy hoạch tỉnh Hậu Giang (BRR=5%)
+
+<!-- page: 80 -->
+
+Qua kết quả nghiên cứu cho thấy rằng, đã áp dụng thành công phương pháp xem xét điều kiện tối ưu tỷ lệ dự trữ trong quy hoạch hệ thống truyền tải và tương tự như trên sử dụng công cụ phần mềm PowerWorld để kiểm tra hệ thống trước và sau khi quy hoạch đầu tư mở rộng mới theo Hình 2.30 thể hiện khi phụ tải tăng lên theo kết quả dự báo phụ tải các tuyến kết nối 6-17, 3-8, 8-12, 12-19, 20-21, 8-21, 10-15 vượt quá tải trên 100% dung lượng và Hình 2.31 kết quả cũng cho thấy hệ thống sau khi quy hoạch đã được cải thiện không có nơi vào bị quá tải, chính vì vậy kết quả để xuất mở rộng đầu tư mới là phù hợp đáp ứng nhu cầu phụ tải.
+
+## 2.5. Kết luận chương 2
+
+Nội dung trên đã tập trung giải quyết bài toán TEP xét đến độ tin cậy trong quy hoạch mở rộng lưới điện truyền tải bằng phương pháp cận biên và nhánh có được kết quả như sau:
+
+Khi giảm dần chỉ số độ tin cậy chuẩn mong muốn (LOLER) tức là nhà quy hoạch yêu cầu hệ thống tăng độ tin cậy của hệ thống thì tăng chi phí đầu tư được chứng minh trên hệ thống điện thực của ĐBSCL và xét cụ thể lưới điện cao áp ở tỉnh Bến Tre thuộc vùng ĐBSCL.
+
+Nghiên cứu này còn xét thêm tỷ lệ dự trữ (BRR) trong quy hoạch hệ thống truyền tải kết quả đã được chứng minh trên hệ thống điện thực tại tỉnh Hậu Giang thuộc ĐBSCL.
+
+Nghiên cứu đã sử dụng công cụ phần mềm PowerWorld để kiểm chứng lại hệ thống sau khi quy hoạch.
+
+Kết quả, đã tham khảo đề án quy hoạch phát triển lưới điện quốc gia từ đó làm cơ sở đề xuất phương án quy hoạch để đạt hiệu quả tối ưu. Phương pháp cận biên và nhánh áp dụng bài toán TEP đã được nghiên cứu, thực hiện và công bố trong công trình số [4-7] và công trình số [9]. Trong chương 3. trình bày các phương pháp thông minh nhân tạo CS, CSA vào giải bài toán TEP ở mô hình DC với hàm mục tiêu tối thiểu tổng chi phí đầu tư nhằm thỏa ràng buộc về kinh tế và vận hành.
+
+<!-- page: 81 -->
+
+# Chương 3. QUY HOẠCH MỞ RỘNG LƯỚI ĐIỆN TRUYỀN TẢI DC
+
+## 3.1. Giới thiệu bài toán
+
+Có rất nhiều mô hình toán học được sử dụng trong nhiều nguồn tài liệu khác nhau để mô hình hóa bài toán TEP như mô hình vận tải, mô hình DC, mô hình AC, mô hình lai và mô hình phân tách [40-41]. Các mô hình này khác nhau về mức độ phức tạp và độ chính xác. Mô hình DC là mô hình phổ biến nhất được sử dụng để mô hình hóa bài toán TEP vì nó ít phức tạp hơn và giải quyết dễ dàng hơn, không cần nhiều thời gian; đồng thời, mô hình DC có độ chính xác tương đối cao hơn các mô hình khác [42-43]. Phương pháp CS, CSA sẽ giải quyết giải bài toán TEP với nhiều điều kiện ràng buộc, kết quả sẽ được kiểm chứng hiệu quả các phương pháp trên các mạng điện chuẩn và so sánh với nhiều phương pháp khác.
+
+## 3.2. Mô hình bài toán
+
+## 3.2.1. Hàm mục tiêu
+
+Hàm mục tiêu của quy hoạch mở rộng lưới điện là tối thiểu tổng chi phí đầu tư nhằm thỏa ràng buộc về kinh tế và vận hành. Mô hình DC cổ điển được sử dụng cho TEP [5] được định dạng như sau:
+
+$$
+T C = \sum_ {i, j \in \Omega} \beta \times c l _ {i j} \times n _ {i j}\tag{3.1}
+$$
+
+$$
+c l _ {i j} = (c l f _ {i j} + c l v _ {i j}) \times l\tag{3.2}
+$$
+
+Trong đó,
+
+TC: tổng chi phí xây dựng các đường dây/trạm biến áp khi quy hoạch (\$).
+
+𝛺 : tập hợp các phần tử trong hệ thống điện.
+
+$c l _ { i j }$ : chi phí xây dựng mỗi đường dây/trạm biến áp kết nối từ nút i đến nút j (\$).
+
+$n _ { i j }$ : số lượng đường dây/trạm biến áp mới thêm vào kết nối từ nút i đến nút j.
+
+$c l f _ { i j }$ và 𝑐𝑙 $v _ { i j }$ : chi phí xây dựng cố định và thay đổi mỗi đường dây/trạm biến áp kết nối từ nút i đến nút j.
+
+𝑙 : chiều dài của mỗi tuyến đường dây (km).
+
+$\beta$ : hệ số quy đổi chi phí thành giá trị hiện tại.
+
+<!-- page: 82 -->
+
+## 3.2.2. Các ràng buộc cân bằng dòng điện nút
+
+Cân bằng tuyến tính đại diện cho sự bảo toàn năng lượng tại các nút và đạt được [5] như sau:
+
+$$
+\left\{ \begin{array}{c}P_{1} = \sum_{\substack{j = 1\\ j\neq 1}}^{NB}P_{1j} + d_{1}\\ P_{2} = \sum_{j = 1}^{NB}P_{2j} + d_{2}\\ \\ \dots \dots \\ P_{NB} = \sum_{\substack{j = 1\\ j\neq NB}}^{NB}P_{NBj} + d_{NB} \end{array} \right.\tag{3.3}
+$$
+
+$$
+\Rightarrow P _ {i} = \sum_ {j = 1} ^ {N B} P _ {i j} + d _ {i} \quad (i = 1, 2, \dots , N B), (\forall i, j \in \Omega)\tag{3.4}
+$$
+
+$$
+P _ {i} = \sum_ {y = 1} ^ {N u _ {i} + N c _ {i}} P _ {y i}\tag{3.5}
+$$
+
+Trong đó, NB : số nút.
+
+Ngoài ra, $P _ { i j }$ là phân bố công suất của các đường dây/trạm biến áp từ nút i đến nút j mà theo dòng điện DC được tính như sau:
+
+$$
+P _ {i j} = \gamma_ {i j} \times (n _ {i j} ^ {0} + n _ {i j}) \times (\theta_ {i} - \theta_ {j})\tag{3.6}
+$$
+
+$$
+\gamma_ {i j} = b _ {i j} \times l\tag{3.7}
+$$
+
+Trong đó,
+
+$\gamma _ { i j }$ : tổng các đường dây/trạm biến áp từ nút i đến nút j có thể được trong hệ thống điện.
+
+$b _ { i j }$ : tổng điện dẫn của lưới điện từ nút i đến nút j trên từng 1km.
+
+$n _ { i j } ^ { 0 }$ : các đường dây/trạm biến áp hiện hữu từ nút i đến nút j.
+
+Ngoài ra, $\theta _ { i }$ và $\theta _ { j }$ là góc pha điện áp của nút i và j. Bằng cách thay (3.6) và (3.7) vào (3.4) ta có:
+
+$$
+\sum_ {y = 1} ^ {N u _ {i} + N c _ {i}} P _ {y i} = d _ {i} + \sum_ {j = 1} ^ {N B} \gamma_ {i j} \times (n _ {i j} ^ {0} + n _ {i j}) \times (\theta_ {i} - \theta_ {j})\tag{3.8}
+$$
+
+Để thể hiện đơn giản thì vế bên tay trái tương ứng là g, vế bên tay phải thứ nhất và thứ hai tương ứng với d và Sf. Vì vậy, phương trình (3.9) được viết như sau:
+
+$$
+g = d + S f\tag{3.9}
+$$
+
+Trong đó,
+
+$P _ { y i }$ : công suất được tạo bởi đơn vị y trên nút i.
+
+g và d : vector nguồn phát và phụ tải.
+
+<!-- page: 83 -->
+
+S : ma trận nhánh – nút .
+
+f : ma trận công suất của mỗi đường dây/trạm biến áp.
+
+## 3.2.3. Giới hạn phân bố công suất trên đường dây truyền tải
+
+Các ràng buộc bất quy tắc được áp dụng quy hoạch mở rộng lưới điện truyền tải nhằm giới hạn phân bố công suất cho mỗi đường dây/trạm biến áp.
+
+$$
+\left| P _ {i j} \right| \leq N l _ {i j} \times P _ {i j} ^ {m a x} \quad (\forall i, j \in \Omega)\tag{3.10}
+$$
+
+$$
+N l _ {i j} = n _ {i j} ^ {0} + n _ {i j}\tag{3.11}
+$$
+
+Thay thế $P _ { i j }$ và $N l _ { i j }$ từ (3.6) và (3.11) vào (3.10), ta thu được công thức:
+
+$$
+\left| \gamma_ {i j} \times (n _ {i j} ^ {0} + n _ {i j}) \times (\theta_ {i} - \theta_ {j}) \right| \leq (n _ {i j} ^ {0} + n _ {i j}) \times P _ {i j} ^ {m a x}\tag{3.12}
+$$
+
+$$
+\Rightarrow (n _ {i j} ^ {0} + n _ {i j}) \times \left| (\theta_ {i} - \theta_ {j}) \right| \times \left| \gamma_ {i j} \right| \leq (n _ {i j} ^ {0} + n _ {i j}) \times P _ {i j} ^ {m a x}\tag{3.13}
+$$
+
+Bằng cách rút gọn $( n _ { i j } ^ { 0 } + n _ { i j } )$ từ hai vế của (3.14), ta có:
+
+$$
+\left| (\theta_ {i} - \theta_ {j}) \right| \times \left| \gamma_ {i j} \right| \leq P _ {i j} ^ {m a x}\tag{3.14}
+$$
+
+Ở công thức trên, $N l _ { i j }$ tổng số đường dây/trạm biến áp (mới và hiện hữu) kết nối nút từ i đến nút j và $P _ { i j } ^ { m a x }$ phân bố công suất cực đại kết nối nút từ i đến nút j.
+
+## 3.2.4. Ràng buộc về quyền ưu tiên
+
+Ràng buộc về quyền ưu tiên nhằm mục đích để xác định chính xác vị trí và công suất các đường dây/trạm biến áp mới quy hoạch mở rộng của lưới điện truyền tải. Về mặt toán học, ràng buộc này xác định số lượng tối đa của các đường dây/trạm biến áp có thể được thêm vào trong hệ thống điện. Phương trình (3.15) thể hiện số lượng của các đường dây/trạm biến áp mới xây dựng trong hệ thống điện bị giới hạn bởi $n _ { i j } ^ { m a x }$
+
+$$
+0 \leq n _ {i j} \leq n _ {i j} ^ {m a x}\tag{3.15}
+$$
+
+Trong đó,
+
+$n _ { i j } ^ { m a x }$ : số lượng tối đa các đường dây/trạm biến áp mới xây dựng trong hệ thống điện được kết nối từ nút i đến nút j.
+
+## 3.2.5. Giới hạn góc pha điện áp thanh cái
+
+Trong mô hình dòng điện DC, độ lớn điện áp thanh cái bị bỏ qua và chỉ xem xét góc pha điện áp thanh cái. Tham số này xét trong quy hoạch mở rộng lưới điện truyền tải và góc pha được tính nhỏ hơn hoặc bằng giá trị góc pha được xác định trước.
+
+<!-- page: 84 -->
+
+$$
+| \theta_ {i} | \leq | \theta_ {i} ^ {m a x} |\tag{3.16}
+$$
+
+Trong đó,
+
+$\theta _ { i } ^ { m a x }$ : giá trị cực đại góc pha điện áp của thanh cái i.
+
+Thật vậy, ràng buộc trong công thức (3.3-3.9) thể hiện sự bảo toàn năng lượng trong mỗi nút nếu xét mạng điện DC tương đương, ràng buộc này được xác định theo định luật nút của Kirchhoff trong đó công thức (3.3) là một biểu thức của định luật Ohm cho mạng điện DC. Bên cạnh đó, định luật điện áp Kirchhoff được xem xét đến, chính là các ràng buộc phi tuyến tính gồm trong công thức (3.10) thể hiện giới hạn công suất truyền trong đường dây truyền tải và máy biến áp. Các ràng buộc trong công thức (3.15) thể hiện giới hạn các mạch mới xây dựng trong mạng i-j và công thức (3.16) đề cập đến giới hạn góc pha điện áp của thanh cái i. Bài toán quy hoạch mở rộng lưới điện truyền tải được xây dựng ở trên là bài toán phi tuyến tính số nguyên.
+
+## 3.3. Áp dụng các phương pháp thông minh nhân tạo
+
+## 3.3.1. Mô tả các thuật toán
+
+Hiện nay, trong sự phát triển của thông minh nhân tạo, gần đây đã xuất hiện nhiều thuật toán tối ưu trong tương lai sẽ đem lại nhiều hiệu quả trong quy hoạch mở rộng lưới điện truyền tải [28].
+
+Thuật toán Tìm kiếm chim tu hú (CS) là một trong những thuật toán tự nhiên ra đời gần đây nhất được phát triển bởi Yang và Deb vào tháng 12/2009 [53]. $\dot { \boldsymbol { Y } }$ tưởng của thuật toán CS dựa trên tập tính ký sinh nuôi dưỡng của một số loài chim tu hú. Chim tu hú là loài chim không có khả năng nuôi con mà chúng duy trì nòi giống bằng cách đẻ trứng nhờ trong tổ của các loài chim khác có trứng tương tự về màu sắc và kích thước. Tuy nhiên, khi đẻ nhờ trứng vào tổ của loài chim khác, chim tu hú cũng có nguy cơ bị chim khác phát hiện ra trứng lạ và loại bỏ. Thuật toán CS được đề xuất đã được áp dụng thành công trong hệ thống điện như bài toán điều độ thủy nhiệt điện, bài toán tái cấu hình, bài toán đặt vị trí máy phát phân tán.
+
+Thuật toán Tìm kiếm con quạ (CSA) là một trong những thuật toán tìm kiếm trong tự nhiên được xây dựng thuật toán bởi Alireza Askarzadeh vào tháng 3/2016 [55]. CSA là thuật toán nghiên cứu về cách giấu thức ăn và có thể nhớ lại nơi cất giấu
+
+<!-- page: 85 -->
+
+thức ăn từ vài tháng trước; con quạ có khả năng đánh lừa kẻ khác để bảo vệ thức ăn bằng cách dẫn đến một nơi khác khi chúng phát hiện ra có sự theo dõi chúng.
+
+## 3.3.2. Mô hình toán của các thuật toán
+
+## 3.3.2.1. Thuật toán Tìm kiếm chim tu hú (CS)
+
+Chim tu hú thường sinh sản trứng trong tổ của những loài chim khác với khả năng tuyệt vời như chọn tổ chứa trứng vừa đặt và lấy ra những trứng đang tồn tại để tăng cường xác suất ấp trứng của mình. Một số loài chim khác có thể đấu tranh chống lại hành động này và ném những quả trứng không phải của nó ra ngoài hoặc xây dựng một tổ mới ở một vị trí khác. Sự sinh sản của chim tu hú này được phân tích phát triển thành thuật toán CS [54]. Hệ thống tự nhiên thì rất phức tạp, do đó không thể xây dựng được mô hình chính xác bởi thuật toán máy tính trong sự hình thành cơ bản. Đơn giản hóa hệ thống tự nhiên là việc cần thiết để xây dựng thành công trong thuật toán máy tính. Yang và Deb đã đơn giản hóa quá trình sinh sản chim tu hú dựa vào ba nguyên tắc lý tưởng hóa.
+
+i. Một quả trứng đại diện cho một giải pháp và được lưu trữ trong cùng một tổ. Một con chim tu hú chỉ có thể đẻ một trứng tại một thời điểm.
+
+ii. Chim tu hú tìm kiếm tổ cho phù hợp nhất để đẻ trứng để tối đa hóa tỷ lệ sống sót. Một chiến lược lựa chọn tốt nhất được áp dụng để có những quả trứng tốt nhất (giải pháp tốt nhất gần đạt kết quả tối ưu) để những quả trứng loài chim khác có cơ hội phát triển và trở thành (thế hệ kế tiếp) chim tu hú trưởng thành.
+
+iii. Số lượng của tổ loài chim khác được đặt vào. Các loài chim khác phát hiện ra những quả trứng không phải của chúng (giải pháp không tốt từ giá trị tối ưu) với xác suất của $p _ { a } \in [ 0 , 1 ]$ và những quả trứng này được ném ra ngoài hoặc tổ được bỏ lại và một tổ mới hoàn thiện được xây dựng ở vị trí mới. Mặt khác, quả trứng trưởng thành và sống ở thế hệ tiếp theo. Những quả trứng mới được đặt bởi chim tu hú lựa chọn tổ Lévy fights quanh tổ giải pháp tốt nhất hiện tại.
+
+Từ quan điểm trên, trong phép tính CS, tổng cộng nhân số, $E ^ { k } \left( \left\{ e _ { 1 } ^ { k } , e _ { 2 } ^ { k } , \ldots , e _ { N } ^ { k } \right\} \right)$ của N trứng (cá nhân) được phát triển từ các điểm ban đầu (k = 0) đến tổng số thông tin số lần lặp lại (k = 2). Mỗi quả trứng, $e _ { i } ^ { k } \left( i \in [ 1 , \ldots , N ] \right)$ được miêu tả một vectơ n
+
+<!-- page: 86 -->
+
+chiều, $e _ { i , 1 } ^ { k } { , } e _ { i , 2 } ^ { k } { , } . . . { , } e _ { i , n } ^ { k }$ , trong đó ở mỗi chiều đối nhau với một biến quyết định của vấn đề tối ưu được giải quyết. Chất lượng của mỗi quả trứng $e _ { i } ^ { k }$ (giải pháp thích hợp) được đánh giá bằng cách sử dụng hàm mục tiêu $f ( e _ { i } ^ { k } )$ , kết quả cuối cùng miêu tả giá trị phù hợp của $e _ { i } ^ { k }$ . Ba toán tử khác nhau xác định quá trình tiến hóa vi phân của CS: (A) Lévy flights, (B) thay thế một số tổ bằng cách xây dựng các giải pháp mới và (C) chiến lược lựa chọn tốt nhất.
+
+## a. Lévy fights(A)
+
+Một trong những tính năng mạnh mẽ nhất của tìm kiếm chim tu hú là sử dụng các Lévy fights để tạo ra các giải pháp mới. Theo cách tiếp cận này, một giải pháp vị trí mới, $e _ { i } \not \sim I ( i \in [ I , \ldots , N ] )$ , được tạo ra bằng cách làm dòng 𝑖 với thay đổi vị trí $c _ { \ell }$ Để có được $c _ { \ell }$ một bước ngẫu nhiên, $s _ { \ell }$ được tạo ra bởi sự phân bố đối xứng Lévy fights. $\mathrm { { \bf D } } \hat { \mathrm { e } }$ sản xuất $s _ { i , j }$ thuật toán của Mantegna được sử dụng như sau:
+
+$$
+S _ {i} = \frac {u}{| v | ^ {1 / \beta^ {\prime}}}\tag{3.17}
+$$
+
+Trong đó, $u ( ( u _ { 1 } , \ldots , u _ { n } ) )$ và $k \left( \left\langle \nu _ { I } , \ldots , \nu _ { \mathcal { R } } \right\rangle \right)$ là vectơ chiều và $\beta = 3 / 2$ . Mỗi phần tử của u và v được tính bằng cách xem xét các phân phối sau đây:
+
+$$
+u \sim N (0, \sigma_ {u} ^ {2}), v \sim N (0, \sigma_ {v} ^ {2}),
+$$
+
+$$
+\sigma_ {u} = \left(\frac {\Gamma (1 + \beta) . \sin (\pi . \frac {\beta}{2})}{\Gamma (\left(\frac {1 + \beta}{2}\right) . \beta . 2 ^ {(\beta - 1) / 2}}\right) ^ {1 / \beta}, \sigma_ {v} = 1\tag{3.18}
+$$
+
+Trong đó, $T ( \cdot )$ thể hiện cho phân bố gamma. Khi $s _ { \ell }$ đã được tính toán, thay đổi bắt buộc của $\dot { \mathbf { v i } }$ trí $c _ { \ell }$ được tính như sau:
+
+$$
+c _ {i} = 0, 0 1. s _ {i}. (e _ {i} ^ {k} - e ^ {b e s t})\tag{3.19}
+$$
+
+Trong đó, $e ^ { b e s t _ { \cdot } }$ giải pháp tốt nhất (hay trứng có chất lượng tốt nhất) trong dân số hiện tại được xác định dựa trên sự so sánh các giá trị hàm mục tiêu của các giải pháp.
+
+Cuối cùng, giải pháp mới, $e _ { i } ^ { \chi + I }$ , được xác định như sau:
+
+$$
+e _ {i} ^ {k + 1} = e _ {i} ^ {k} + c _ {i}\tag{3.20}
+$$
+
+b. Thay thế một số tổ bằng cách xây dựng các giải pháp mới (B)
+
+Trong hoạt động này, một tập hợp các trứng xác suất được chọn và thay thế bằng một giá trị mới. Mỗi cá thể, $e _ { i } \not \in ( i \in I I , . . . ,   M )$ , có thể được chọn với xác suất
+
+<!-- page: 87 -->
+
+$p _ { \alpha } \in [ 0 ,   I ]$ . Để thực hiện thao tác này, một số ngẫu nhiên đồng nhất, $e _ { I } ,$ được tạo trong phạm vi $[ \boldsymbol { O } ,   \boldsymbol { I } ]$ . Nếu $e _ { I }$ nhỏ hơn $p _ { a } ,$ , cá thể riêng $e _ { i } ^ { k }$ được chọn và sửa đổi theo (3.20). Nếu không, $e _ { i } ^ { \mathcal { M } }$ vẫn không thay đổi. Hoạt động này có thể được tiếp tục theo mô hình.
+
+$$
+e _ {i} ^ {k + 1} = \left\{ \begin{array}{l l} e _ {i} ^ {k} + r a n d \cdot (e _ {d 1} ^ {k} - e _ {d 2} ^ {k}), & v o i x a c s u \acute {a} t p _ {a}, \\ e _ {i} ^ {k} & v o i x a c s u \acute {a} t (1 - p _ {a}) \end{array} \right.\tag{3.21}
+$$
+
+Trong đó, rand : biến phân phối ngẫu nhiên, trong khi $d _ { I }$ và $d _ { 2 }$ là các số nguyên ngẫu nhiên từ 1 đến 𝑁.
+
+## c. Chiến lược lựa chọn tốt nhất (C)
+
+Sau khi tạo $e _ { i } ^ { \mathbf { \mathit { k } } + \mathbf { \mathit { 1 } } }$ hoặc bởi toán tử A hoặc toán tử B, nó phải được so sánh với giá trị trước đó của nó $e _ { i } ^ { \chi + I }$ . Nếu giá trị thích hợp của $e _ { i } ^ { \gamma _ { i } + I }$ tốt hơn $e ^ { \mathcal { M } }$ , thì $e _ { i } ^ { \chi + I }$ được chấp nhận làm giải pháp cuối cùng. Nếu không $e _ { i } \not { h }$ sẽ được giữ lại. Các bước này có thể được thực hiện lại bước tính như sau:
+
+$$
+e _ {i} ^ {k + 1} = \left\{ \begin{array}{c c} e _ {i} ^ {k + 1}, & i f f (e _ {i} ^ {k + 1}) <   f (e _ {i} ^ {k}), \\ e _ {i} ^ {k} & k h \acute {a} c \end{array} \right.\tag{3.22}
+$$
+
+Chiến lược chọn lọc tốt nhất này biểu thị rằng chỉ có trứng chất lượng, tương tự với trứng của chim Host có cơ hội phát triển và trở thành chim tu hú trưởng thành.
+
+## d. Thuật toán Tìm kiếm chim tu hú (CS)
+
+Thuật toán CS là một thuật toán tương đối đơn giản chỉ với ba tham số có thể điều chỉnh: $p _ { a } ,$ kích thước quần thể 𝑁 và số lượng gen . Theo Yang và Deb, tỷ lệ hội tụ của thuật toán không bị ảnh hưởng mạnh bởi giá trị của $p _ { a }$ và được đề xuất sử dụng $p _ { a } = 0 , 2 5$ . Phép tính của CS được chia thành hai phần: khởi tạo và quá trình tiến hóa. Trong khởi tạo (𝑘 = 0), quần thể đầu tiên, $E ^ { 0 } ( \{ e _ { 1 } ^ { 0 } , e _ { 2 } ^ { 0 } , \dots , e _ { N } ^ { 0 } \} )$ được tạo ra. Các giá trị $\left\{ e _ { i , 1 } ^ { 0 } , e _ { i , 2 } ^ { 0 } , \ldots , e _ { i , N } ^ { 0 } \right\}$ của từng cá thể, $e _ { i } ^ { k }$ , được phân bổ ngẫu nhiên và thống nhất giữa tham số ban đầu thấp hơn tham số ban đầu bị giới hạn $b _ { j } ^ { l o w }$ và tham số ban đầu trên bị giới hạn $b _ { j } ^ { h i g h }$
+
+$$
+\begin{array}{c} {e _ {i, j} ^ {0} = b _ {j} ^ {l o w} + r a n d (b _ {j} ^ {h i g h} - b _ {j} ^ {l o w})} \\ {\quad i = 1, 2, \dots , N; \quad j = 1, 2, \dots , n} \end{array}\tag{3.33}
+$$
+
+<!-- page: 88 -->
+
+Trong quá trình tiến hóa, các toán tử A (Lévy fights), B (thay thế một số tổ bằng cách xây dựng các giải pháp mới), và C (chiến lược lựa chọn tốt nhất) được áp dụng lặp lại cho đến khi số lần lặp lại 𝑘 = 2 ⋅ gen đạt được. Quá trình Tìm kiếm chim tu hú được minh hoạ theo Hình 3.1 như sau:
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+(1) Input: $p_a$, N và gen
+(2) Khởi tạo $E^0$ ($k = 0$)
+(3) Until ($k = 2 \cdot \text{gen}$)
+(4) $E^{k+1} \leftarrow \text{toán từ } A (E^k)$ $\quad$ phần $a$.
+(5) $E^{k+1} \leftarrow \text{toán từ } C (E^k, E^{k+1})$ $\quad$ phần $c$.
+(6) $E^{k+2} \leftarrow \text{toán từ } B (E^{k+1})$ $\quad$ phần $b$.
+(7) $E^{k+1} \leftarrow \text{toán từ } C (E^{k+1}, E^{k+2})$ $\quad$ phần $c$.
+(8) end until
+</div>
+
+Hình 3.1 Thuật toán Tìm kiếm chim tu hú
+
+Hình 3.1 thể hiện thuật toán CS, điểm cần lưu ý là chiến lược lựa chọn tốt nhất toán tử (C) được sử dụng hai lần, ngay sau khi toán tử (A) hoặc toán tử (B) thực hiện.
+
+## 3.3.2.2. Thuật toán Tìm kiếm con quạ (CSA)
+
+Con quạ được xem là loài chim thông minh nhất. Để chứng minh sự thông minh của loài quạ thì có rất nhiều bằng chứng. Chúng được chứng minh sự tự phòng bị và có khả năng tự làm công cụ. Chúng có thể nhớ mặt và cảnh báo cho nhau khi có một chim khác không thân thiện đến gần. Hơn thế nữa, chúng có thể sử dụng các công cụ, truyền sang trong cách ngụy tạo, nhớ lại nơi cất thức ăn từ vài tháng trước [55].
+
+Con quạ để mắt nhìn các loài chim khác, quan sát các loài chim khác giấu thức ăn của nó và ăn cắp nó khi loài chim khác rời khỏi. Nếu con quạ đã bị trộm thì nó rất thận trọng như sẽ di chuyển nơi ẩn giấu để tránh trở thành nạn nhân trong tương lai. Trong thực tế, thì chúng sử dụng kinh nghiệm có thể dự đoán được hành vi của các chim khác trộm thức ăn và có thể xác định được quá trình an toàn để bảo vệ nơi ẩn giấu khỏi sự trộm cắp của các chim khác.
+
+Dựa trên các hành vi thông minh trên thì thuật toán CSA được phát triển. Các nguyên tắc của CSA được liệt kê như sau:
+
+<!-- page: 89 -->
+
+\- Những con quạ sống trong sự hình thành của một đàn.
+
+\- Những con quạ nhớ nơi cất giấu thức ăn của chúng.
+
+\- Những con quạ đuổi theo các loài khác để trộm cắp thức ăn.
+
+\- Những con quạ sẽ bảo vệ chỗ giấu thức ăn của chúng khỏi bị trộm cắp.
+
+Điều này được giả sử rằng trong không gian tìm kiếm có d - một số quạ. Một số quạ (kích thước đàn) là N và vị trí của quạ i tại thời điểm iter (lặp lại) trong không gian tìm kiếm được cụ thể bởi vectơ $x ^ { i , i t e r } ( i = I , 2 , . . . , N ; i t e r = I , 2 , . . . , i t e r _ { m a x } )$ trong đó $x ^ { i , i t e r } = [ x _ { 1 } ^ { i , i t e r } , x _ { 2 } ^ { i , i t e r } , . . . , x _ { d } ^ { i , i t e r } ]$ và $i t e r _ { m a x }$ là số lượng tối đa của mỗi vòng lặp. Mỗi con quạ sẽ có một bộ nhớ thì vị trí của những nơi cất giấu được ghi nhớ. Tại vòng lặp lại iter, vị trí của nơi cất giấu con quạ được thể hiện $m ^ { i , i t r }$ . Điều này là vị trí tốt nhất để con quạ i kiếm được. Thật vậy, vị trí của tốt nhất của con quạ trong bộ nhớ của mỗi con quạ được ghi nhớ. Những con quạ di chuyển trong không gian và tìm nguồn thức ăn tốt hơn (nơi cất giấu).
+
+Giả sử rằng ở vòng lặp iter, quạ j muốn viếng thăm nơi cất giấu  . Tại vòng lặp này, quạ i quyết định đi theo quạ j tiếp cận nơi cất giấu của quạ j. Trong trường hợp này có 2 trạng thái xảy ra.
+
+Trạng thái 1: Quạ j không biết rằng quạ i đi theo nó. Kết quả, quạ i sẽ tiếp cận nơi cất giấu của quạ j. Trong trường hợp này vị trí mới của quạ i thể hiện như sau:
+
+$$
+x ^ {i, i t e r + 1} = x _ {1} ^ {i, i t e r} + r _ {i} f l ^ {i, i t e r} \left(m ^ {i, i t e r} - x ^ {i, i t e r}\right)\tag{3.24}
+$$
+
+Trong đó,
+
+$r _ { i }$ : số ngẫu nhiên được phân chia đều giữa 0 và 1.
+
+$f ^ { i , i t e r }$ : chiều dài bay của quạ i tại vòng lặp iter.
+
+![](images/page_88_image_11.jpg)
+
+a) fl < 1
+
+<!-- page: 90 -->
+
+![](images/page_89_image_0.jpg)
+
+Hình 3.2 Sơ đồ trạng thái trong thuật toán CSA
+
+a) $\mathcal { H } \leq I$ và (b) $\mathcal { H } \geq I$ (con quạ i có thể đi theo đường gạch)
+
+Giá trị nhỏ của chiều dài bay dẫn đến vị trí tìm kiếm (khu vực lân cận $x ^ { i , i t e r } )$ và các giá trị kết quả lớn trong tìm kiếm chung (lớn hơn ). Hình 3.2.a thể hiện nếu giá trị của chiều dài bay fl được chọn nhỏ hơn 1 thì vị trí tiếp theo của quạ i trên đường gạch giữa $x ^ { i , i t e r }$ và $m ^ { i , i t e r }$ . Hình 3.2.b thể hiện giá trị của chiều dài bay fl được chọn lớn hơn 1 thì vị trí tiếp theo của quạ i theo đường gạch có thể vượt qua $m ^ { i , i t e r }$
+
+Trạng thái 2: Quạ j biết rằng quạ i đi theo nó. Kết quả, để bảo vệ vị trí cất giấu của nó khỏi bị ăn cắp thì quạ j sẽ đánh lừa quạ i bằng cách đi đến vị trí khác trong không gian tìm kiếm.
+
+Toàn bộ trạng thái 1 và 2 được thể hiện như sau:
+
+$$
+x ^ {i, i t e r + 1} = \left\{ \begin{array}{c c} x ^ {i, i t e r} + r _ {i}. f l ^ {i, i t e r}. (m ^ {j, i t e r} - x ^ {i, i t e r}) & r _ {j} \geq A P ^ {j, i t e r} \\ \text {vị trí ngẫu nhiên} & \text {khác} \end{array} \right.\tag{3.25}
+$$
+
+Trong đó,
+
+ri : giá trị ngẫu nhiên được phân chia đều giữa 0 và 1.
+
+$A P ^ { i , i t e r }$ : xác suất dự phòng của quạ j tại vòng lặp iter.
+
+Trong thuật toán CSA được kiểm tra chủ yếu bởi thông số xác suất phòng bị (AP). Để giảm giá trị xác suất dự phòng, thuật toán CSA có xu hướng điều khiển sự tìm kiếm vị trí khu vực nơi giải pháp tốt nhất hiện tại được tìm thấy ở khu vực này.
+
+## 3.3.3. $\acute { \mathbf { A } } \mathbf { p }$ dụng các thuật toán vào bài toán
+
+## 3.3.3.1. Áp dụng thuật toán Tìm kiếm chim tu hú
+
+Thuật toán CS được đề xuất là một phương pháp dựa trên $s \hat { 0 }$ trứng tương tự như các phương pháp meta-heuristic khác. Cấu trúc của CS bao gồm hai hoạt động chính
+
+<!-- page: 91 -->
+
+bao gồm tìm kiếm trực tiếp dựa trên cơ chế Lévy fights và tìm kiếm ngẫu nhiên dựa trên xác suất để một con chim chủ phát hiện ra trứng lạ vào trong tổ của nó. Với hai hoạt động được kết hợp, thuật toán CS được đề xuất trở thành một phương pháp tìm kiếm mạnh mẽ hơn các phương pháp tìm kiếm metaheuristic khác giải quyết được các bài toán tối ưu quy mô lớn và phức tạp. Do đó, Thuật toán CS được đề xuất sẽ rất hiệu quả trong việc giải các bài toán TEP [54].
+
+Trong phương pháp CS được đề xuất, mỗi tổ đại diện cho một giải pháp và quần thể các tổ được sử dụng để tìm ra giải pháp tốt nhất cho bài toán TEP tương tự như nhiều phương pháp tìm kiếm meta-heuristic khác [56]. Các bước chính cho CS đề xuất được mô tả như sau:
+
+Khởi tạo: Một quần thể các tổ chim chủ $N _ { p }$ được biểu thị bằng $X = \left[ X _ { I } ,   X _ { 2 } , \ldots , \right.$ $X _ { N p } J ^ { T } ,$ trong đó mỗi tổ $X _ { d }   =   \int   X _ { d I } , \; X _ { d 2 } , . . . , \; X _ { d s - I } J ^ { T } \; ( d   =   I \; \; . . . , \; N _ { p } )$ đại diện số đường dây/trạm biến áp mới thêm vào được khởi tạo như sau:
+
+$$
+X _ {d i} = L b _ {i} + r a n d _ {1} * (U b _ {i} - L b _ {i})\tag{3.26}
+$$
+
+Trong đó,
+
+$L b _ { i }$ và $U b _ { i }$ : số đường dây/trạm biến áp tối thiểu và tối đa được thêm vào.
+
+rand1 : biến ngẫu nhiên trong khoảng [0, 1].
+
+Giải pháp ban đầu này được kiểm tra thêm về vi phạm TEP . Nếu vi phạm được tìm thấy, chiến lược cập nhật đến khu vực khả thi. Dựa trên quần thể tổ ban đầu, hàm mục tiêu được giảm thiểu tương ứng với mỗi tổ cho vấn đề xem xét được tính toán.
+
+$$
+F = \sum_ {i, j = 1} ^ {N} n _ {i j} c _ {i j}\tag{3.27}
+$$
+
+Trong đó,
+
+$n _ { i j }$ : số đường dây/trạm biến áp mới được thêm vào.
+
+$c _ { i j }$ : chi phí xây dựng đường dây/trạm biến áp liên kết giữa nút i và j tương ứng với tổ d trong quần thể (\$).
+
+Các giới hạn số lượng đường dây/trạm biến áp được thêm vào được tính toán.
+
+$$
+L b _ {i} \leq n _ {i j} \leq U b _ {i}\tag{3.28}
+$$
+
+Số trứng ban đầu của các tổ trứng được đặt thành giá trị tốt nhất của mỗi tổ $X _ { b e s t d }$ $( d = I , . . . ,   N _ { d } )$ và tổ tương ứng với tối thiểu hóa hàm mục tiêu trong (3.1) được đặt thành tổ tốt nhất Gbest trong số tất cả các tổ trong tổ trứng.
+
+<!-- page: 92 -->
+
+Tạo giải pháp mới theo cơ chế Lévy fights: Giải pháp mới được tính toán dựa trên các tổ tốt nhất trước đó theo cơ chế Lévy fights. Trong phương pháp đề xuất, đường đi $\mathbf { t } \mathbf { \hat { \hat { O } } } \mathbf { \dot { i } }$ ưu cho các Lévy fights được tính toán bằng thuật toán Mantegna [72]. Giải pháp mới của mỗi tổ được tính như sau:
+
+$$
+X _ {d} ^ {n e w} = X _ {b e s t d} + \alpha * r a n d * \Delta X _ {d} ^ {n e w}\tag{3.29}
+$$
+
+Trong đó,
+
+$\alpha > 0$ : thông số bước di chuyển; rand : giá trị ngẫu nhiên trong khoảng [0,1]; gia số $\Delta X _ { d } ^ { n e w }$ được xác định bởi:
+
+$$
+\Delta X _ {d} ^ {n e w} = v * \frac {\sigma_ {x} (\beta)}{\sigma_ {y} (\beta)} * (X _ {b e s t d} - G _ {b e s t})\tag{3.30}
+$$
+
+$$
+v = \frac {r a n d _ {x}}{| r a n d _ {y} | ^ {1 / \beta}}\tag{3.31}
+$$
+
+Trong đó,
+
+rand<sub>x</sub> và rand<sub>y</sub> : hai biến ngẫu nhiên có phân phối chuẩn với độ lệch chuẩn $\sigma _ { \boldsymbol { x } } ( \beta )$ và $\sigma _ { y } ( \beta )$ được cho bởi.
+
+$$
+\sigma_ {x} (\beta) = \left[ \frac {\Gamma (1 + \beta) * \sin (\frac {\pi \beta}{2})}{\Gamma \left(\frac {1 + \beta}{2}\right) * \beta * 2 ^ {\left(\frac {\beta - 1}{2}\right)}} \right] ^ {1 / \beta}\tag{3.32}
+$$
+
+$$
+\sigma_ {y} (\beta) = 1\tag{3.33}
+$$
+
+Trong đó,
+
+$\beta$ : hệ số phân bố $( 0 , 3 \leq \beta \leq I , 9 9 )$
+
+Γ(.) : hàm phân phối gamma.
+
+Đối với giải pháp mới thu được, giới hạn dưới và trên của nó phải được thỏa mãn theo giới hạn của hệ thống.
+
+$$
+X _ {d i} ^ {n e w} = \left\{ \begin{array}{l l} U b _ {i} & n \acute {\mathrm{e}} u X _ {d i} ^ {n e w} \geq U b _ {i} \\ 0 & n \acute {\mathrm{e}} u X _ {d i} ^ {n e w} <   L b _ {i} \end{array} \right.\tag{3.34}
+$$
+
+Ngoài ra, giải pháp mới được điều chỉnh cần được kiểm tra thêm về vi phạm TEP. Hàm mục tiêu (3.1) sẽ được đánh giá lại cho giải pháp mới để xác định giá trị mới tốt nhất của mỗi tổ $X _ { b e s t d }$ và tổ tốt nhất trong tất cả các tổ $G _ { b e s t }$ bằng cách so sánh các giá trị phù hợp được lưu trữ và các giá trị mới được tính toán.
+
+<!-- page: 93 -->
+
+Cơ chế phát hiện trứng lạ dựa trên phép di chuyển random: Hành động phát hiện trứng bên ngoài vào trong tổ của một con chim chủ với xác suất của $p _ { a }$ sẽ hình thành một nghiệm mới cho bài toán giống như cơ chế Lévy fights. Giải pháp mới của hành động này được xác định như sau:
+
+$$
+X _ {d} ^ {d i s} = X _ {b e s t d} + K * \Delta X _ {d} ^ {d i s}\tag{3.35}
+$$
+
+Trong đó,
+
+K : hệ số cập nhật được xác định vào xác suất chim chủ nhận biết trứng lạ trong tổ của nó.
+
+$$
+K = \left\{ \begin{array}{l l} 1 & \quad n \tilde {\mathrm{e}} u r a n d _ {3} <   p _ {a} \\ 0 & \quad k h \acute {a} c \end{array} \right.\tag{3.36}
+$$
+
+và giá trị gia tăng $\Delta X _ { d } ^ { d i s }$ được xác định như sau:
+
+$$
+\Delta X _ {d} ^ {d i s} = r a n d _ {4} * [ r a n d _ {p 1} (X b e s t _ {d}) - r a n d _ {p 2} (X b e s t _ {d}) ]\tag{3.37}
+$$
+
+Trong đó, rand3 và rand4 : các biến ngẫu nhiên trong khoảng [0, 1].
+
+$r a n d _ { p 1 } ( X b e s t _ { d } )$ và $r a n d _ { p 2 } ( X b e s t _ { d } )$ : nhiễu loạn ngẫu nhiên của vị trí các giải pháp trong quần thể Xbestd.
+
+Giống như giải pháp thu được theo cơ chế Lévy fights, giải pháp mới này cũng được xác định theo (3.34) nếu giới hạn trên hoặc dưới bị vi phạm. Giá trị mới tốt nhất cho mỗi tổ Xbestd và giá trị tốt nhất của tất cả các tổ Gbest cũng được xác định theo hàm mục tiêu được tính toán (3.27) của giải pháp mới này.
+
+Điều kiện dừng: Thuật toán được đề xuất sẽ kết thúc cho đến khi đạt đến số vòng lặp thiết lập cực đại.
+
+Lưu đồ thuật toán dùng thuật toán CS được đề xuất giải bài toán TEP thể hiện theo Hình 3.3.
+
+<!-- page: 94 -->
+
+![](images/page_93_image_0.jpg)
+
+Hình 3.3 Lưu đồ thuật toán CS - TEP
+
+## 3.3.3.2. Áp dụng thuật toán Tìm kiếm con quạ
+
+Thuật toán CSA áp dụng vào bài toán TEP [55].
+
+Bước 1: Khởi tạo và điều chỉnh các thông số.
+
+Vấn đề tối ưu hóa được xác định các biến quyết định và ràng buộc được xác định. Các thông số điều chỉnh của CSA (kích thước đàn (N), số lần lặp tối đa (iter<sub>max</sub>), Lévy fights (fl) và xác suất dự đoán (AP).
+
+Bước 2: Khởi tạo vị trí và bộ nhớ của các quạ.
+
+<!-- page: 95 -->
+
+Vị trí của các con quạ N được đặt ngẫu nhiên trong không gian tìm kiếm. Mỗi vị trí con quạ N là một giải pháp khả thi của bài toán và d là số biến quyết định
+
+$$
+C r o w s = \left[ \begin{array}{c c c c} x _ {1} ^ {1} & x _ {2} ^ {1} & \dots & x _ {d} ^ {1} \\ x _ {1} ^ {2} & x _ {2} ^ {2} & \dots & x _ {d} ^ {2} \\ \dots & \dots & \dots & \dots \\ x _ {1} ^ {N} & x _ {2} ^ {N} & \dots & x _ {d} ^ {N} \end{array} \right]\tag{3.38}
+$$
+
+Khởi tạo bộ nhớ của mỗi con quạ m.
+
+$$
+M e m o r y = \left[ \begin{array}{c c c c} m _ {1} ^ {1} & m _ {2} ^ {1} & \dots & m _ {d} ^ {1} \\ m _ {1} ^ {2} & m _ {2} ^ {2} & \dots & m _ {d} ^ {2} \\ \dots & \dots & \dots & \dots \\ m _ {1} ^ {N} & m _ {2} ^ {N} & \dots & m _ {d} ^ {N} \end{array} \right]\tag{3.39}
+$$
+
+Bước 3: Đánh giá hàm thích nghi.
+
+Thực hiện tính toán phân bố công suất DC và đối với mỗi đường dây/trạm biến áp được xác định bằng cách đưa các giá trị biến quyết định vào hàm mục tiêu.
+
+Bước 4: Tạo các các vị trí mới.
+
+Các con quạ tạo ra số đường dây/trạm biến áp mới trong không gian tìm kiếm như sau: giả sử quạ i muốn tạo ra một số đường dây/trạm biến áp mới. Với mục đích này chọn ngẫu nhiên một trong những vị trí thứ j và theo sau đó để xem xét số đường dây/trạm biến áp của các trong bộ lưu trữ này (m<sup>j</sup>). Số đường dây/trạm biến áp mới của thứ i thu được bằng phương trình (3.25). Quá trình này được lặp lại cho tất cả các đường dây/trạm biến áp.
+
+Bước 5: Kiểm tra các điều kiện ràng buộc.
+
+Tính khả thi của các đường dây/trạm biến áp mới được kiểm tra. Nếu các đường dây/trạm biến áp mới khả thi, vị trí sẽ cập nhật các đường dây/trạm biến áp trên hệ thống. Nếu không, các đường dây/trạm biến áp vẫn ở trạng thái hiện tại.
+
+Bước 6: Đánh giá hàm thích nghi của các vị trí mới.
+
+Giá trị hàm thích nghi cho các vị trí mới được tính toán.
+
+Bước 7: Cập nhật bộ nhớ. Các con quạ cập nhật bộ nhớ của nó như sau:
+
+$$
+m ^ {i, i t e r + 1} = \left\{ \begin{array}{l l} x ^ {i, i t e r + 1} & f (x ^ {i, i t e r + 1}) \text {tót hơn} f (m ^ {i, i t e r}) \\ m ^ {i, i t e r} & k h á c \end{array} \right. \tag {3.40}
+$$
+
+Trong đó, f (.) : giá trị hàm mục tiêu.
+
+<!-- page: 96 -->
+
+Nếu giá trị hàm thích nghi của các vị trí mới tốt hơn giá trị hàm thích nghi của các vị trí ghi nhớ, trạng thái sẽ cập nhật bộ nhớ của các đường dây/trạm biến áp theo các vị trí mới.
+
+Bước 8: Kiểm tra điều kiện dừng. Các bước 4–7 được vòng lặp lại cho đến khi $i t e r _ { m a x }$ đạt được.
+
+![](images/page_95_image_2.jpg)
+
+Hình 3.4 Lưu đồ thuật toán CSA – TEP
+
+## 3.4. Kết quả tính toán và thảo luận
+
+## 3.4.1. Áp dụng thuật toán Tìm kiếm con quạ
+
+a. Thông số hệ thống điện Garver 6 nút
+
+Áp dụng thuật toán CSA giải quyết bài toán TEP được kiểm tra trên hệ thống Garver 6 nút được thể hiện theo Hình 3.5. HTĐ chuẩn Garver có 6 nút và 15 nhánh liên kết [18]. Sử dụng thông số nút, nguồn phát, nhánh mạng điện chuẩn Garver 6 nút được trình bày theo phụ lục Bảng B.1 đến Bảng B.3. Tổng nhu cầu phụ tải là 760MW
+
+<!-- page: 97 -->
+
+và thông số được cho trong Bảng 3.1. thể hiện thông số nguồn phát ở vị trí nút 1, 3, 6 và các vị trí tải ở các nút 1, 2, 3, 4, 5; Bảng 3.2. thể hiện số nhánh liên kết giữa các nút, $n ^ { \boldsymbol { \theta } } i j$ số đường dây liên kết hiện trạng ban đầu được đặt 0 là không có nhánh liên kết, giá trị 1 là có nhánh liên kết nút, tương ứng các giá trị liên kết các nút được đặt ban đầu điện trở $r \left( p u \right)$ , điện kháng x $( p u )$ , công suất cực đại đường dây liên kết nút i đến j là $P _ { i j } ^ { \; m a x }$ (MW), chi phí đầu tư dự kiến khi xây dựng nút i và j được dự kiến tính nhân $1 0 ^ { 3 } \S .$ Số đường dây có thể thêm liên kết các nút với nhau tối đa là 4. Công suất cơ bản theo pu là 100MVA.
+
+Bảng 3.1 Thông số nguồn phát và nhu cầu tải của hệ thống Garver 6 nút.
+
+<table><tbody><tr><td rowspan="2">Nút</td><td colspan="2">Công suất nguồn phát (MW)</td><td rowspan="2">Công suất nhu cầu tải (MW)</td></tr><tr><td>Tối đa</td><td>Mức độ</td></tr><tr><td>1</td><td>150</td><td>50</td><td>80</td></tr><tr><td>2</td><td>-</td><td>-</td><td>240</td></tr><tr><td>3</td><td>360</td><td>165</td><td>40</td></tr><tr><td>4</td><td>-</td><td>-</td><td>160</td></tr><tr><td>5</td><td>-</td><td>-</td><td>240</td></tr><tr><td>6</td><td>600</td><td>545</td><td>-</td></tr></tbody></table>
+
+Bảng 3.2 Thông số các nhánh liên kết của hệ thống điện Garver 6 nút.
+
+| Nhánh | nij<sup>0</sup> | r (pu) | x (pu) | Pijmax (MW) | Chi phí đầu tư(x10<sup>3</sup>$) |
+| --- | --- | --- | --- | --- | --- |
+| 1-2 | 1 | 0,10 | 0,40 | 100 | 40 |
+| 1-3 | 0 | 0,09 | 0,38 | 100 | 38 |
+| 1-4 | 1 | 0,15 | 0,60 | 80 | 60 |
+| 1-5 | 1 | 0,17 | 0,20 | 100 | 20 |
+| 1-6 | 0 | 0,05 | 0,68 | 70 | 68 |
+| 2-3 | 1 | 0,10 | 0,20 | 100 | 20 |
+| 2-4 | 1 | 0,08 | 0,40 | 100 | 40 |
+| 2-5 | 0 | 0,01875 | 0,31 | 100 | 31 |
+| 2-6 | 0 | 0,15 | 0,30 | 100 | 30 |
+| 3-4 | 0 | 0,15 | 0,59 | 82 | 59 |
+| 3-5 | 1 | 0,25 | 0,20 | 100 | 20 |
+| 3-6 | 0 | 0,12 | 0,48 | 100 | 48 |
+| 4-5 | 0 | 0,16 | 0,63 | 75 | 63 |
+| 4-6 | 0 | 0,0375 | 0,30 | 100 | 30 |
+| 5-6 | 0 | 0,15 | 0,61 | 78 | 61 |
+
+<!-- page: 98 -->
+
+![](images/page_97_image_0.jpg)
+
+Hình 3.5 Hệ thống điện Garver 6 nút
+
+b. Các bước áp dụng thuật toán Tìm kiếm con quạ vào TEP và kết quả
+
+Các bước của thuật toán CSA có thể được mô tả như sau: biến x sẽ là vị trí cắt giấu thức ăn sẽ chọn một vị trí khả thi như một giải pháp. Trên thực tế, mỗi vị trí x xây dựng một giải pháp khả thi bằng cách áp dụng lặp đi lặp lại một tìm kiếm ngẫu nhiên, được gọi là, quy tắc chuyển đổi trạng thái. Con quạ này chọn ngẫu nhiên một trong những vị trí của đàn quạ (con quạ j) và theo sau nó để khám phá vị trí của các loại thực phẩm ẩn bởi con quạ này (m<sup>j</sup>). Vị trí mới của quạ i thu được bằng phương trình các quy tắc cập nhật vị trí của quạ i được thiết kế để chúng có xu hướng cung cấp nhiều vị trí hơn để đánh lừa quạ j sẽ ghé thăm. Số dân số không đổi là 15 cho các hệ thống, xác suất dự phòng được đặt 0,1 và Lévy fights fl là 2. Mặt khác, số lần lặp lại tối đa cho CSA cũng có thể dễ dàng cố định tùy thuộc vào mức độ phức tạp và quy mô của các vấn đề được xem xét. Số vòng lặp tối đa cho CSA là 500 đối với hệ thống. Vị trí mới của con quạ tốt hơn giá trị hàm mục tiêu thích hợp của vị trí ghi nhớ, con quạ sẽ cập nhật bộ nhớ của nó theo vị trí mới là giải pháp của vấn đề tối ưu hóa. Giải pháp tối ưu quy hoạch hệ thống Garver 6 nút thu được $n _ { 2 6 } = 4 ,   n _ { 3 5 } = I$ và $n _ { 4 6 } = 2$ theo Bảng 3.3.
+
+<!-- page: 99 -->
+
+Bảng 3.3 Kết quả quy hoạch mở rộng hệ thống điện Garver 6 nút
+
+<table><tr><td>Từ nút</td><td>Đến nút</td><td>Số đường dây thêm vào</td><td>Chi phí (x103$)</td><td>Chi phí đầu tư (x103$)</td></tr><tr><td>2</td><td>6</td><td>4</td><td>30</td><td>120</td></tr><tr><td>3</td><td>5</td><td>1</td><td>20</td><td>20</td></tr><tr><td>4</td><td>6</td><td>2</td><td>30</td><td>60</td></tr><tr><td colspan="4">Tổng chi phí đầu tư</td><td>200</td></tr></table>
+
+Hệ thống điện sau khi quy hoạch được mở rộng được thể hiện Hình 3.6.
+
+![](images/page_98_image_3.jpg)
+
+Hình 3.6 Hệ thống điện Garver 6 nút sau khi quy hoạch
+
+Kết quả tối ưu được so sánh với các thuật toán thông minh nhân tạo, Genetic Algorithm (GA) và Tabu Search (TS)[18]. Tất cả các phương pháp đã được thực hiện trong 30 lần chạy thực nghiệm, theo cùng một hàm mục tiêu, nhằm để so sánh chất lượng giải pháp, đặc tính hội tụ và hiệu quả tính toán của chúng. Kết quả thống kê, về chi phí đầu tư, độ lệch chuẩn, tính toán thời gian thể hiện trong Bảng 3.4.
+
+<!-- page: 100 -->
+
+![](images/page_99_chart_0.jpg)
+
+Hình 3. 7 Tổng chi phí đầu tư so với số vòng lặp phương pháp CSA
+
+Bảng 3.4 Kết quả tối ưu chi phí đầu tư
+
+<table><tbody><tr><td rowspan="2">Phương pháp</td><td rowspan="2">nij</td><td colspan="3">Chi phí đầu tư (x10<sup>3</sup>$)</td><td rowspan="2">Độ lệch chuẩn</td><td rowspan="2">Thời gian tính (s)</td></tr><tr><td>Xấu</td><td>Trung bình</td><td>Tốt</td></tr><tr><td>GA</td><td>7</td><td>368</td><td>227</td><td>200</td><td>41,27</td><td>46,686</td></tr><tr><td>TS</td><td>7</td><td>244</td><td>218</td><td>200</td><td>26,56</td><td>36,983</td></tr><tr><td>CSA</td><td>7</td><td>200</td><td>200</td><td>200</td><td>0</td><td>15,72</td></tr></tbody></table>
+
+Các kết quả thu được đều có các chi phí đầu tư thu được bằng phương pháp CSA đều thấp hơn, thời gian tính toán ngắn hơn. Điều này chứng minh rằng phương pháp CSA có tìm được giải pháp tối ưu hơn các phương pháp khác.
+
+## 3.4.2. Áp dụng thuật toán Tìm kiếm chim tu hú
+
+## a. Thông số hệ thống điện IEEE 25 nút
+
+Hệ thống điện chuẩn IEEE gồm 25 nút và 36 nhánh liên kết [20]. Tổng nhu cầu phụ tải là 2750MW và thông số được cho trong Bảng 3.5. thể hiện thông số nguồn phát ở vị trí nút 1, 7, 9, 10, 11, 14, 17, 19, 22, 24, 25 và các vị trí tải ở các nút 2, 3, 4, 5, 6, 7, 8, 9, 14, 17, 18, 19, 20, 21, 22, 23, 24; Bảng 3.6. thể hiện số nhánh liên kết giữa các nút, $n ^ { \boldsymbol { \theta } } i j$ số đường dây liên kết hiện trạng ban đầu được đặt 0 là không có nhánh liên kết, giá trị 1 là có nhánh liên kết nút, tương ứng các giá trị liên kết các nút được đặt ban đầu điện kháng x (p.u), công suất cực đại đường dây liên kết nút i đến j là $P _ { i j } ^ { \; m a x }$ (MW), chi phí đầu tư dự kiến khi xây dựng nút i và j được nhân 103\$ . Số đường dây có thể thêm liên kết các nút với nhau tối đa là 4. Sử dụng thông số nút, nguồn phát, nhánh mạng điện chuẩn IEEE 25 nút theo phụ lục Bảng B.4. đến Bảng
+
+<!-- page: 101 -->
+
+B.6. Sơ đồ hệ thống điện mạng điện chuẩn IEEE 25 nút được thể hiện theo Hình 3.8, với các đường nét liền là thể hiện đã kết nối, đường nét đứt khúc dự kiến sẽ thêm vào kết nối.
+
+![](images/page_100_image_1.jpg)
+
+Hình 3.8 Sơ đồ hệ thống điện chuẩn IEEE 25 nút
+
+Bảng 3.5 Thể hiện thông số nguồn phát mạng điện chuẩn IEEE 25 nút
+
+<table><tbody><tr><td rowspan="2">Nút</td><td colspan="2">Nguồn phát (MW)</td><td rowspan="2">Nhu cầu (MW)</td><td rowspan="2">Nút</td><td colspan="2">Nguồn phát (MW)</td><td rowspan="2">Nhu cầu (MW)</td></tr><tr><td>Cực đại</td><td>Cấp độ</td><td>Cực đại</td><td>Cấp độ</td></tr><tr><td>1</td><td>660</td><td>530</td><td>0</td><td>14</td><td>215</td><td>43</td><td>317</td></tr><tr><td>2</td><td>0</td><td>0</td><td>128</td><td>15</td><td>0</td><td>0</td><td>0</td></tr><tr><td>3</td><td>0</td><td>0</td><td>181</td><td>16</td><td>0</td><td>0</td><td>0</td></tr><tr><td>4</td><td>0</td><td>0</td><td>74</td><td>17</td><td>192</td><td>40</td><td>108</td></tr><tr><td>5</td><td>0</td><td>0</td><td>71</td><td>18</td><td>0</td><td>0</td><td>175</td></tr><tr><td>6</td><td>0</td><td>0</td><td>71</td><td>19</td><td>192</td><td>40</td><td>97</td></tr><tr><td>7</td><td>595</td><td>594</td><td>265</td><td>20</td><td>0</td><td>0</td><td>195</td></tr><tr><td>8</td><td>0</td><td>0</td><td>194</td><td>21</td><td>0</td><td>0</td><td>136</td></tr><tr><td>9</td><td>400</td><td>400</td><td>333</td><td>22</td><td>155</td><td>155</td><td>100</td></tr><tr><td>10</td><td>300</td><td>300</td><td>0</td><td>23</td><td>0</td><td>0</td><td>180</td></tr><tr><td>11</td><td>400</td><td>400</td><td>0</td><td>24</td><td>300</td><td>60</td><td>125</td></tr><tr><td>12</td><td>0</td><td>0</td><td>0</td><td>25</td><td>660</td><td>330</td><td>0</td></tr><tr><td>13</td><td>0</td><td>0</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></tbody></table>
+
+<!-- page: 102 -->
+
+Bảng 3.6 Thể hiện thông số nhánh mạng điện chuẩn IEEE 25 nút
+
+| Từ nút | Đến nút | n<sup>ij</sup><sub>0</sub> | x(p.u) | Pijmax(MW) | Chi phí (x10<sup>3</sup>$) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 1 | 0,0108 | 800 | 3760 |
+| 1 | 7 | 1 | 0,0865 | 65 | 27808 |
+| 1 | 13 | 1 | 0,0966 | 100 | 30968 |
+| 2 | 3 | 1 | 0,0198 | 500 | 7109 |
+| 3 | 22 | 1 | 0,0231 | 200 | 8187 |
+| 4 | 18 | 1 | 0,1037 | 1000 | 4907 |
+| 4 | 19 | 1 | 0,1267 | 250 | 5973 |
+| 5 | 17 | 1 | 0,0854 | 800 | 3987 |
+| 5 | 20 | 1 | 0,0883 | 940 | 4171 |
+| 5 | 25 | 0 | 0,0902 | 220 | 1731 |
+| 6 | 18 | 1 | 0,1651 | 440 | 7776 |
+| 6 | 20 | 1 | 0,1651 | 280 | 7776 |
+| 6 | 24 | 1 | 0,0614 | 1080 | 2944 |
+| 7 | 13 | 1 | 0,0476 | 250 | 16627 |
+| 7 | 16 | 1 | 0,0476 | 90 | 16627 |
+| 8 | 16 | 1 | 0,0418 | 490 | 14792 |
+| 8 | 22 | 1 | 0,0389 | 65 | 13760 |
+| 9 | 11 | 1 | 0,0129 | 260 | 4587 |
+| 9 | 15 | 1 | 0,0144 | 250 | 5112 |
+| 10 | 11 | 1 | 0,0678 | 800 | 21909 |
+| 10 | 15 | 1 | 0,1053 | 250 | 33920 |
+| 11 | 14 | 1 | 0,0245 | 700 | 8507 |
+| 12 | 14 | 1 | 0,0519 | 100 | 16915 |
+| 12 | 23 | 1 | 0,0839 | 70 | 675 |
+| 13 | 18 | 1 | 0,0839 | 100 | 675 |
+| 13 | 20 | 1 | 0,0839 | 250 | 675 |
+| 14 | 22 | 1 | 0,0173 | 200 | 5963 |
+| 15 | 22 | 1 | 0,0259 | 360 | 9243 |
+| 16 | 18 | 1 | 0,0839 | 250 | 675 |
+| 16 | 20 | 1 | 0,0839 | 564 | 675 |
+| 17 | 19 | 1 | 0,0139 | 400 | 493 |
+| 17 | 23 | 1 | 0,2112 | 350 | 8880 |
+| 18 | 23 | 1 | 0,119 | 150 | 5605 |
+| 19 | 21 | 1 | 0,192 | 110 | 9045 |
+| 20 | 21 | 1 | 0,0605 | 180 | 2245 |
+| 24 | 25 | 0 | 0,1805 | 220 | 3067 |
+
+b. Các bước áp dụng thuật toán Tìm kiếm chim tu hú vào TEP và kết quả hệ thống điện chuẩn IEEE 25 nút
+
+TEP được áp dụng bằng thuật toán CS đã được thực hiện mạng lưới truyền tải
+
+<!-- page: 103 -->
+
+điện tiêu chuẩn được xem xét cho quy hoạch mở rộng. Bài toán TEP đã được kiểm tra trong nghiên cứu các trường hợp trên. Các hàm mục tiêu gồm chi phí đầu tư tối thiểu được tính toán mô phỏng trong nghiên cứu này. Các giá trị $n _ { i j }$ là số nhánh mới thêm vào biến quyết định để tìm giải pháp tối ưu; $c _ { i j }$ là chi phí xây dựng đường dây liên kết giữa i và j tương ứng với tổ d trong quần thể. Giải pháp mới được điều chỉnh cần được kiểm tra thêm về đều kiện ràng buộc bài tóan TEP [20]. Hàm mục tiêu (3.1) sẽ được đánh giá lại cho giải pháp mới để xác định giá trị mới tốt nhất bằng cách so sánh các giá trị phù hợp được lưu trữ và các giá trị mới được tính toán cho đến khi đạt được giải pháp tối ưu .
+
+Trong các thông số điều khiển cho thuật toán CS để có được giải pháp tối ưu cho mạng điện chuẩn IEEE 25 nút, có bốn tham số chính phải được xác định trước là số lượng tổ $N _ { p } ,$ số lần lặp lại tối đa các nhánh liên kết N, hệ số phân phối β và xác suất trứng ngoại lai được phát hiện trong tổ là $p _ { a }$ . Trong số các tham số này, số lượng tổ có thể cố định. Vì phương pháp CS là một phương pháp tìm kiếm mạnh mẽ nên nó chỉ cần một số lượng nhỏ các tổ để xử lý các hệ thống khác nhau. Số dân số không đổi là 36 cho các hệ thống. Mặt khác, số lần lặp lại tối đa cho CS cũng có thể dễ dàng cố định tùy thuộc vào mức độ phức tạp và quy mô của các vấn đề được xem xét. Số vòng lặp tối đa cho CS là 5000 đối với hệ thống. Giá trị của hệ số phân phối β có thể cố định trong khoảng [0,3, 1,99] như trong thuật toán Mantegna. Tuy nhiên, các giá trị khác nhau của β không ảnh hưởng nhiều đến lời giải cuối cùng. Do đó, giá trị của β được cố định ở mức 1,5 như trong đối với các hệ thống thử nghiệm của nội dung nghiên cứu này. Giá trị của xác suất phát hiện trứng ngoại lai sẽ được chọn trong khoảng [0, 1]. Ngoài ra, các giá trị khác nhau của $p _ { a }$ có thể dẫn đến các giải pháp tối ưu khác nhau cho các hệ thống quy mô lớn. Nghiên cứu này chọn xác suất tối ưu, giá trị của nó thay đổi từ 0,1 đến 0,9 với kích thước mỗi lần chọn tăng lên 0,1 cho các bài toán quy hoạch mở rộng lưới điện truyền tải. Giải pháp tối ưu quy hoạch hệ thống điện chuẩn IEEE 25 nút thu được n5-25 = 2, n7-16 = 2, n8-22 = 4, n12-14 = 1, n12-23 = 2, n16-18 = 2 được thể hiện Hình 3.9. Tổng chi phí đầu tư 111.371.000\$
+
+Hệ thống điện sau khi quy hoạch mạng điện chuẩn IEEE 25 nút được thể hiện theo Hình 3.9 các đường nét màu đỏ cần đầu tư mở rộng để đáp ứng nhu cầu phụ tải.
+
+<!-- page: 104 -->
+
+![](images/page_103_image_0.jpg)
+
+Hình 3.9 Hệ thống điện chuẩn IEEE 25 sau khi quy hoạch
+
+Kết quả thống kê so sánh phương pháp CS và phương pháp ABC cùng mạng điện chuẩn IEEE 25 nút được quan tâm đến chi phí đầu tư, độ lệch chuẩn thể hiện ở Bảng 3.7. Bên cạnh đó, kết quả của phương pháp đã được so sánh với các phương pháp ANN, GA&TS, DEA, CGA về giá trị chi phí đầu tư trong Bảng 3.8.
+
+Bảng 3.7 Kết quả tối ưu chi phí đầu tư mạng điện chuẩn IEEE 25 nút
+
+<table><tbody><tr><td rowspan="2">TT</td><td rowspan="2">Kết quả quy hoạch</td><td>Phương pháp ABC</td><td>Phương pháp CS</td></tr><tr><td>Chi phí đầu tư ($)</td><td>Chi phí đầu tư ($)</td></tr><tr><td>1</td><td>Tốt ($)</td><td>112.046.000</td><td>111.371.000</td></tr><tr><td>2</td><td>Trung bình ($)</td><td>113.847.250</td><td>111.371.000</td></tr><tr><td>3</td><td>Xấu ($)</td><td>115.201.000</td><td>111.371.000</td></tr><tr><td>4</td><td>Độ lệch chuẩn</td><td>1.095.358</td><td>0</td></tr></tbody></table>
+
+<!-- page: 105 -->
+
+Bảng 3.8 So sánh kết quả các phương pháp được kiểm tra cùng mạng điện chuẩn IEEE 25 nút
+
+| TT | Phương pháp | Chi phí đầu tư tối ưu ($) |
+| --- | --- | --- |
+| 1 | ANN,GA&amp;TS | 114.560.000 |
+| 2 | DEA | 114.383.000 |
+| 3 | CGA | 114.526.000 |
+| 4 | ABC | 112.046.000 |
+| 5 | CS | 111.371.000 |
+
+Các kết quả thu được điều có các chi phí đầu tư thu được bằng phương pháp CS thấp 111.371. 10<sup>3</sup>(\$) so với các phương pháp ANN,GA&TS, DEA, CGA, ABC chạy thử nghiệm cùng mạng điện với các thông số điều khiển như nhau. Điều này chứng minh rằng, phương pháp CS có giá trị đạt được tối ưu tốt hơn so với các phương pháp khác.
+
+## c. Thông số hệ thống điện miền nam Brazil 46 nút
+
+Hệ thống điện miền nam Brazil gồm 46 nút, 79 nhánh liên kết và tổng nhu cầu phụ tải là 6.880MW [57]. Theo Bảng B.10. thể hiện thông số nguồn phát và các vị trí tải; Phụ lục Bảng B.11. thể hiện số nhánh liên kết giữa các nút, $n ^ { \boldsymbol { \theta } } { } _ { i j }$ số đường dây liên kết hiện trạng ban đầu được đặt 0 là không có nhánh liên kết, giá trị 1 là có nhánh liên kết nút, tương ứng các giá trị liên kết các nút được đặt ban đầu điện kháng x (p.u), công suất cực đại đường dây liên kết nút i đến j là $P _ { i j } ^ { \; m a x }$ (MW), chi phí đầu tư dự kiến khi xây dựng nút i và j được dự kiến tính nhân $1 0 ^ { 3 }$ \$ . Số đường dây có thể thêm liên kết các nút với nhau tối đa là 6. Sử dụng thông số nút, nguồn phát, nhánh mạng điện Brazil 46 nút theo phụ lục Bảng B.7. đến Bảng B.9. và thông số đầu vào nguôn phát và nhánh được trình bày theo phụ lục Bảng B.10 đến Bảng B.11. Sơ đồ hệ thống điện mạng điện miền nam Brazil 46 nút được thể hiện theo Hình 3.10, với các đường nét liền là thể hiện đã kết nối, đường nét đứt khúc dự kiến sẽ thêm vào kết nối.
+
+<!-- page: 106 -->
+
+![](images/page_105_image_0.jpg)
+
+Hình 3.10 Sơ đồ hệ thống điện miền nam Brazil 46 nút
+
+d. Các bước áp dụng thuật toán Tìm kiếm chim tu hú vào TEP và kết quả hệ thống điện miền nam Brazil 46 nút
+
+Trong các thông số điều khiển cho thuật toán CS để có được giải pháp tối ưu cho mạng điện Brazil 46 nút, có bốn tham số chính phải được xác định trước là số lượng tổ Np, số lần lặp lại tối đa các nhánh liên kết N, hệ số phân phối $\beta$ và xác suất trứng ngoại lai được phát hiện trong tổ là $p _ { a }$ . Trong số các tham số này, số lượng tổ 79 cố định. Vì phương pháp CS là một phương pháp tìm kiếm mạnh mẽ nên nó chỉ cần một số lượng nhỏ các tổ để xử lý các hệ thống khác nhau. Các lần chạy thử nghiệm thì số lượng tổ Host được xác định không đổi là 79 cho các hệ thống. Mặt khác, số lần lặp lại tối đa cho CS cũng có thể dễ dàng cố định tùy thuộc vào mức độ phức tạp và quy mô của các vấn đề được xem xét. Số vòng lặp tối đa cho CS nằm trong khoảng
+
+<!-- page: 107 -->
+
+từ 5000 đối với hệ thống. Chọn giá trị của β được chọn không đổi ở mức 1,5 đối với các hệ thống. Giá trị của xác suất phát hiện trứng ngoại lai có thể được chọn trong khoảng [0, 1]. Ngoài ra, các giá trị thay đổi của $p _ { a }$ có thể dẫn đến các giải pháp tối ưu khác nhau cho các hệ thống. Nghiên cứu này chọn xác suất tối ưu, giá trị thay đổi từ 0,7 đến 0,9 với kích thước thay đổi tăng lên là 0,1 cho các bài toán quy hoạch mở rộng lưới điện truyền tải. Giải pháp tối ưu quy hoạch hệ thống điện miền nam Brazil 46 nút thu được 21 đường dây liên kết được thêm vào với tổng chi phí đầu tư $\mathbf { 1 7 5 . 9 7 0 . 1 0 ^ { 3 } } \mathrm { ~ S ~ }$
+
+Bảng 3.9 Kết quả hệ thống quy hoạch mở rộng lưới điện Brazil 46 nút
+
+<table><tbody><tr><td>Từ nút</td><td>Đến nút</td><td>Đ tưhêờmng v dàâoy</td><td>C (xh1i0 p<sup>3</sup>$h)í</td><td>C thưi( px1h0í<sup>3</sup> đ$ầ)u</td></tr><tr><td>2</td><td>5</td><td>1</td><td>2.581</td><td>2.581</td></tr><tr><td>5</td><td>11</td><td>5</td><td>6.167</td><td>30.835</td></tr><tr><td>11</td><td>46</td><td>2</td><td>8.178</td><td>16.356</td></tr><tr><td>12</td><td>14</td><td>1</td><td>5.106</td><td>5.106</td></tr><tr><td>17</td><td>19</td><td>1</td><td>8.715</td><td>8.715</td></tr><tr><td>20</td><td>21</td><td>2</td><td>8.178</td><td>16.356</td></tr><tr><td>23</td><td>24</td><td>1</td><td>5.308</td><td>5.308</td></tr><tr><td>24</td><td>25</td><td>1</td><td>8.178</td><td>8.178</td></tr><tr><td>25</td><td>32</td><td>1</td><td>37.109</td><td>37.109</td></tr><tr><td>26</td><td>27</td><td>1</td><td>5.662</td><td>5.662</td></tr><tr><td>29</td><td>30</td><td>2</td><td>8.178</td><td>16.356</td></tr><tr><td>31</td><td>32</td><td>1</td><td>7.052</td><td>7.052</td></tr><tr><td>42</td><td>43</td><td>2</td><td>8.178</td><td>8.178</td></tr><tr><td colspan="4">Tổng chi phí đầu tư(x10<sup>3</sup>$)</td><td>175.970</td></tr></tbody></table>
+
+![](images/page_106_chart_3.jpg)
+
+Hình 3.11 Tổng chi phí đầu tư so với số vòng lặp phương pháp CS
+
+<!-- page: 108 -->
+
+Sơ đồ hệ thống điện sau khi quy hoạch mạng điện Brazil 46 nút theo Hình 3.12. với các đường nét liền màu đỏ là cần đầu tư mở rộng để đáp ứng nhu cầu phụ tải.
+
+![](images/page_107_image_1.jpg)
+
+Hình 3.12 Hệ thống điện Brazil 46 nút sau khi quy hoạch
+
+Kết quả thống kê thuật toán CS được áp dụng giải bài toán TEP về chi phí đầu tư, độ lệch chuẩn thể hiện trong Bảng 3.10. Bên cạnh đó, kết quả phương pháp còn được so sánh với các phương pháp BF-DEA, GA về chi phí đầu tư trong Bảng 3.11.
+
+Bảng 3.10 Kết quả tối ưu chi phí đầu tư mạng điện Brazil 46 nút
+
+<table><tbody><tr><td rowspan="2">TT</td><td rowspan="2">Kết quả quy hoạch</td><td>Phương pháp CS</td></tr><tr><td>Chi phí đầu tư (10<sup>3</sup>$)</td></tr><tr><td>1</td><td>Tốt ($)</td><td>175.970.000</td></tr><tr><td>2</td><td>Trung bình ($)</td><td>175.970.000</td></tr><tr><td>3</td><td>Xấu ($)</td><td>175.970.000</td></tr><tr><td>4</td><td>Độ lệch chuẩn</td><td>0</td></tr></tbody></table>
+
+<!-- page: 109 -->
+
+Bảng 3.11 So sánh các kết quả các phương pháp được kiểm tra cùng mạng điện Brazil 46 nút
+
+| TT | Phương pháp | Số lần đánh giá hàm thích nghi | Chi phí đầu tư tối ưu(10<sup>3</sup>$) |
+| --- | --- | --- | --- |
+| 1 | HS | 2,40.10<sup>5</sup> | 337.809.000 |
+| 2 | BF-DEA | 2,98.10<sup>5</sup> | 361.863.000 |
+| 3 | GA | 2,67.10<sup>6</sup> | 432.350.000 |
+| 5 | CS | 5,40.10<sup>4</sup> | 175.970.000 |
+
+Ngoài ra, nghiên cứu này chọn số lượng cá thể là 50, xác suất tối ưu có giá trị thay đổi từ 0,9, 0,95, 0,98 và 0,99 cho các bài toán quy hoạch mở rộng lưới điện truyền tải. Kết quả tính toán thuật toán CS so sánh giải thuật HS [57] theo Bảng 3.12.
+
+Bảng 3.12 So sánh kết quả của phương pháp HS và CS số cá thể là 50
+
+<table><tbody><tr><td>Phương pháp</td><td colspan="4">HS [57]</td><td colspan="4">CS</td></tr><tr><td>pa</td><td>0,99</td><td>0,98</td><td>0,95</td><td>0,9</td><td>0,99</td><td>0,98</td><td>0,95</td><td>0,9</td></tr><tr><td>Chi phí đầu tư mở rộng (x10<sup>6</sup> $)</td><td>337,809</td><td>337,809</td><td>337,809</td><td>340,679</td><td>323,443</td><td>324,687</td><td>322,755</td><td>323,847</td></tr><tr><td>Độ lệch chuẩn</td><td>21,39</td><td>18,00</td><td>15,55</td><td>48,00</td><td>19,2</td><td>18,70</td><td>13,40</td><td>36,67</td></tr><tr><td>Số lần đánh giá hàm thích nghi</td><td>239.550</td><td>96.800</td><td>172.600</td><td>230.700</td><td>21.380</td><td>62.242</td><td>45.966</td><td>72.416</td></tr></tbody></table>
+
+![](images/page_108_chart_5.jpg)
+
+Hình 3.13 Đồ thị thể hiện chi phí mở rộng hệ thống điện của CS số cá thể là 50
+
+<!-- page: 110 -->
+
+![](images/page_109_chart_0.jpg)
+
+Hình 3.14 Đồ thị thể hiện đánh giá hàm thích nghi HTĐ của CS số cá thể là 50
+
+Ngoài ra, nghiên cứu này chọn số lượng được thay đổi từ 25 đến 100 cá thể là 50, xác suất tối ưu có giá trị 0,98 cho các bài toán quy hoạch mở rộng lưới điện truyền tải. Kết quả tính toán thuật toán CS được so sánh giải thuật HS [57] theo Bảng 3.13.
+
+Bảng 3.13 So sánh kết quả của phương pháp HS và CS với $p a$ là 0,98
+
+<table><tbody><tr><td>Phương pháp</td><td colspan="4">HS</td><td colspan="4">CS</td></tr><tr><td>Số cá thể</td><td>25</td><td>50</td><td>75</td><td>100</td><td>25</td><td>50</td><td>75</td><td>100</td></tr><tr><td>Chi phí đầu tư mở rộng(10<sup>6</sup> $)</td><td>340,679</td><td>337,809</td><td>337,809</td><td>337,809</td><td>322,588</td><td>324,791</td><td>323,597</td><td>325,280</td></tr><tr><td>Độ lệch chuẩn</td><td>42,00</td><td>18,00</td><td>29,50</td><td>17,809</td><td>39,50</td><td>17,60</td><td>25,60</td><td>16,20</td></tr><tr><td>Số lần đánh giá hàm thích nghi</td><td>79.900</td><td>96.800</td><td>117.975</td><td>155.300</td><td>262.996</td><td>13.787</td><td>16.900</td><td>10.620</td></tr></tbody></table>
+
+![](images/page_109_chart_5.jpg)
+
+Hình 3.15 Đồ thị thể hiện chi phí mở rộng hệ thống điện của CS với $p _ { a }$ là 0,98
+
+<!-- page: 111 -->
+
+![](images/page_110_chart_0.jpg)
+
+Hình 3.16 Đồ thị thể hiện đánh giá hàm thích nghi HTĐ của CS với $p _ { a }$ là 0,98
+
+Theo Bảng 3.13 thể hiện so sánh kết quả bốn trường hợp số cá thể 25, 50, 75, 100 cho thấy rằng chi phí đầu tư, độ lệch chuẩn, giá trị hàm thích của phương pháp CS thấp hơn phương pháp HS. Hình 3.15 và Hình 3.16 lần lượt thể hiện số cá thể càng tăng thì chi phí càng tăng, đánh giá hàm thích được giảm khi được xét cùng giá trị xác suất bằng 0,98.
+
+## 3.5. Kết luận chương 3
+
+Kết quả cho thấy rằng thuật toán CSA và CS áp dụng cho bài toán TEP được đề xuất cung cấp giải pháp đạt tốt hơn trong tất cả các trường hợp với số lần đánh giá hàm mục tiêu. Phương pháp CSA đã áp dụng giải bài toán TEP chứng minh qua mạng điện chuẩn Garver 6 nút, các kết quả cho chứng minh tính hiệu quả phương pháp CSA tối ưu hơn các phương pháp khác giải cùng mạng điện. Bên cạnh đó, phương pháp Tìm kiếm CS cũng đã giải bài toán TEP được chứng minh trên các hệ thống mạng điện IEEE 25 nút và Brazil 46 nút các kết quả đạt được chi phí tối thiểu nhất.
+
+Hơn thế nữa, các kết quả tính toán được bằng phương pháp Tìm kiếm CS đã so sánh với nhiều phương pháp khác giải cùng mạng điện cho thấy hiệu quả tối ưu chi phí đầu tư thấp, thời gian tính toán ngắn hơn. Điều này chứng minh phương pháp CSA, CS có chất lượng giải pháp tốt hơn. Phương pháp CSA, CS áp dụng bài toán TEP đã được nghiên cứu, thực hiện và công bố trong công trình số [1], [8] và công trình số [10]. Trong chương 4 trình bày phương pháp MPSO giải bài toán quy hoạch lưới điện phân với hàm đa mục tiêu kế hoạch đầu tư, độ tin cậy và tổn thất hệ thống với nhiều điều kiện ràng buộc.
+
+<!-- page: 112 -->
+
+## Chương 4. QUY HOẠCH LƯỚI ĐIỆN PHÂN PHỐI
+
+## 4.1. Giới thiệu bài toán
+
+Quy hoạch mở rộng lưới điện phân phối là điều cần thiết để đảm bảo rằng nhu cầu điện năng ngày càng tăng có thể được đáp ứng bằng cách bổ sung lưới điện phân phối, phải đảm bảo về mặt kỹ thuật và tiết kiệm.Vì thế, mục tiêu của quy hoạch lưới điện phân phối là xác định việc mở rộng hệ thống để đáp ứng nhu cầu điện trong tương lai với mức độ tin cậy chấp nhận được với chi phí tối thiểu.
+
+Trong quá trình quy hoạch lưới điện phân phối có hai loại quy hoạch theo quy hoạch kinh nghiệm hiểu biết: quy hoạch ngắn hạn và dài hạn. Mục đích của quy hoạch ngắn hạn là đảm bảo rằng hệ thống có thể liên tục cung cấp điện cho khách hàng bằng cách bổ sung hệ thống phân phối để được thực hiện trong tương lai gần [59]. Mặt khác, mục đích của quy hoạch dài hạn là đảm bảo các quyết định dài hạn có giá trị lâu dài và góp phần vào một hệ thống tối thiểu; nói cách khác, mục đích là để đảm bảo rằng những quyết định được đưa ra trong quy hoạch ngắn hạn có giá trị hiện tại thấp và phù hợp với nhu cầu dài hạn.
+
+Quy hoạch lưới điện phân phối liên quan đến việc xác định chi tiết việc đường cung cấp điện và xác định thiết bị của nó gần với độ chính xác về kỹ thuật; ví dụ, chi tiết thiết bị kỹ thuật, địa điểm cực, bản đồ tuyến đường,…Nội dung luận án tập trung tìm hiểu các nguồn phát phân tán trên lưới điện phân phối do các nguồn phân tán là tuabin khí ổn định có thể vận hành cung cấp điện liên tục 24/24, chi phí vận hành còn thấp, dễ nén và có thể truyền tải đi xa được hàng km. Nguồn phân tán là Tuabin khí có thể huy động nguồn nhanh với thời gian khoảng 15 phút sẽ cấp đủ công suất được yêu cầu bởi bởi trung tâm điều độ, thân thiện môi trường, khí quá lỏng vận chuyển bằng tàu biển đang phát triển mạnh. Áp dụng phương pháp PSO cải tiến vào bài toán quy hoạch lưới điện phân phối đa mục tiêu kế hoạch đầu tư, độ tin cậy và tổn thất hệ thống với nhiều điều kiện ràng buộc nhằm tìm được giải pháp tối ưu nhất, giúp cho các nhà quản lý vận hành dễ dàng xác định được kế hoạch quy hoạch lưới điện phân phối phù hợp.
+
+<!-- page: 113 -->
+
+## 4.2. Mô hình bài toán
+
+## 4.2.1. Hàm mục tiêu
+
+Bài toán quy hoạch mở rộng lưới điện phân phối đa mục tiêu bao gồm 4 mục tiêu cạnh tranh, đó là chi phí đầu tư và vận hành, năng lượng không được phân phối, tổn thất điện năng và sự ổn định điện áp dựa trên công suất ngắn mạch.
+
+## a. Tối thiểu chi phí đầu tư và vận hành
+
+Chi phí đầu tư và vận hành được xây dựng [59] theo công thức (4.1) và (4.2)như sau:
+
+$$
+C o s t _ {I n v e s t m e n t} (X) = \sum_ {t = 1} ^ {N} C _ {N P V} ^ {t} \left(\sum_ {k = 1} ^ {N _ {B} ^ {t}} I C _ {k} + \sum_ {S = 1} ^ {N _ {S} ^ {t}} I C _ {S} + \sum_ {d g = 1} ^ {N _ {D} ^ {t}} I C _ {d g}\right)\tag{4.1}
+$$
+
+$$
+C o s t _ {O p e r a t i o n} (X) = \sum_ {t = 1} ^ {N} C _ {N P V} ^ {t} \left(\sum_ {k = 1} ^ {N _ {B} ^ {t}} O C _ {k} + \sum_ {S = 1} ^ {N _ {S} ^ {t}} O C _ {S} + \sum_ {d g = 1} ^ {N _ {D} ^ {t}} O C _ {d g}\right)\tag{4.2}
+$$
+
+Trong đó,
+
+$N _ { B } ^ { t } .$ , 𝑣à : số lượng tất cả các nhánh (hiện hữu và mới).
+
+$N _ { S } ^ { t }$ : số lượng trạm biến áp.
+
+$N _ { D } ^ { t }$ : số lượng nguồn phát phân phối.
+
+𝑁 : số lượng giai đoạn trong quy hoạch.
+
+X : tập hợp các biến quyết định được xác định bằng thuật toán tối ưu hóa. Hàm mục tiêu về tối ưu hóa chi phí [59] được định nghĩa như sau:
+
+$$
+F _ {1} (X) = C o s t _ {i n v e s t m e n t} + C o s t _ {O p e r a t i o n}\tag{4.3}
+$$
+
+Đặt các biến quyết định của bài toán tối ưu hóa MDEP xác định như sau:
+
+$$
+X = [ x _ {C} x _ {R} x _ {A} x _ {D} ]\tag{4.4}
+$$
+
+$$
+x _ {C} = \left[ x _ {b 1} x _ {b 2} \dots x _ {b N _ {E B}} \right]\tag{4.5}
+$$
+
+$$
+x _ {R} = \left[ \begin{array}{c c c c} x _ {r 1} & x _ {r 2} & \dots & x _ {r N _ {R B}} \end{array} \right]\tag{4.6}
+$$
+
+$$
+x _ {A} = \left[ \begin{array}{c c c c} x _ {a 1} & x _ {a 2} & \dots & x _ {a N _ {A B}} \end{array} \right]\tag{4.7}
+$$
+
+$$
+x _ {D} = \left[ \begin{array}{c c c c} x _ {d 1} & x _ {d 2} & \dots & x _ {d N _ {D}} \end{array} \right]\tag{4.8}
+$$
+
+$$
+N _ {B} = N _ {E B} + N _ {A B}\tag{4.9}
+$$
+
+$$
+\{x _ {R} \} \in \{x _ {C} \}
+$$
+
+Trong đó,
+
+$x _ { C }$ : lần lượt là các nhánh hiện hữu.
+
+<!-- page: 114 -->
+
+$x _ { R }$ : các nhánh cần kết nối lại.
+
+$x _ { A }$ : các nhánh được thêm vào để cung cấp điện cho các nút mới.
+
+$x _ { D }$ : các biến quyết định xác định kích thước và vị trí DG.
+
+Ngoài ra, $N _ { E B } , N _ { R B }$ 𝑣à $N _ { A B }$ là số lượng các nhánh hiện hữu, số lượng các nhánh thay thế và số lượng các nhánh thêm vào.
+
+## b. Tối thiểu năng lượng phân phối thiếu (END)
+
+Phần lớn mất điện là nguyên nhân do sự cố của lưới điện truyền tải và phân phối. Do đó, bài toán MDEP được giải quyết để tối ưu hóa chỉ số độ tin cậy cụ thể là tối thiểu END như sau:
+
+$$
+E N D _ {i} = P _ {i} \sum_ {i, j \in V, j \neq i} (U _ {j, i} + U _ {j, i} ^ {\prime})\tag{4.10}
+$$
+
+$$
+E N D (X) = \sum_ {t = 1} ^ {N} \sum_ {j = 1} ^ {N _ {n \acute {u} t} ^ {t}} E N D _ {j} ^ {t}\tag{4.11}
+$$
+
+$$
+F _ {2} (X) = E N D\tag{4.12}
+$$
+
+Trong đó,
+
+$U _ { j , i }$ : hệ số không sẳn sàng đến thời gian sửa chữa của tất cả các nhánh kết nối với nút i.
+
+$U _ { j , i } ^ { \prime }$ : hệ số không sẳn sàng đến thời gian phục hồi của tất cả các nhánh đi xuống được kết nối với nút i. Điều này được xây dựng trên mô hình toán học như sau:
+
+$$
+U _ {j, i} = \beta_ {j, i} \times t _ {j, i}\tag{4.13}
+$$
+
+$$
+U _ {j, i} ^ {\prime} = \beta_ {j, i} \times t _ {j, i} ^ {\prime}\tag{4.14}
+$$
+
+Trong đó,
+
+$\beta _ { j , i }$ : cường độ hỏng hóc của nhánh kết nối từ nút j đến i.
+
+$t _ { j , i }$ và $t _ { j , i } ^ { \prime }$ : thời gian trung bình sửa chữa và thời gian trung bình phục hồi (h).
+
+## c. Tối thiểu tổn thất công suất
+
+Tối thiểu tổng tổn thất công suất tác dụng trong thời gian quy hoạch mở rộng, được mô hình hóa như sau:
+
+$$
+P _ {L o s s} (X) = \sum_ {t = 1} ^ {N} \sum_ {k = 1} ^ {N _ {n h á n h} ^ {t}} (R _ {k} ^ {t} \times | I _ {k} ^ {t} | ^ {2})\tag{4.15}
+$$
+
+$$
+F _ {3} = P _ {L o s s}\tag{4.16}
+$$
+
+Trong đó, $R _ { k } ^ { t }$ và $I _ { k } ^ { t }$ : điện trở và cường độ dòng điện của nhánh k ở thời điểm t.
+
+<!-- page: 115 -->
+
+d. Tối thiểu chỉ số ổn định điện áp theo công suất ngắn mạch
+
+Dựa vào hệ thống tương đương Thevenin của nút j được minh họa theo Hình 4.1.
+
+![](images/page_114_image_2.jpg)
+
+Hình 4.1 Hệ thống Thevenin tương đương của nút j
+
+Khi đó dòng ngắn mạch (SCC) của nút j được tính như sau:
+
+$$
+S _ {s c, j} = \frac {E _ {t h , j}}{Z _ {t h , j}}\tag{4.17}
+$$
+
+Trong đó, $E _ { t h , j }$ và $Z _ { t h , j }$ : điện áp và tổng trở tương đương Thevenin của nút j. Tối thiểu dòng ngắn mạch nhằm đảm bảo sự ổn định điện áp của nút j được tính theo công thức sau:
+
+$$
+S _ {S C m i n, j} = \frac {2 S _ {L j} (1 + s i n \theta_ {j})}{E _ {t h j}}\tag{4.18}
+$$
+
+$$
+S _ {L j} = \sqrt {P _ {L j} ^ {2} + Q _ {L j} ^ {2}}\tag{4.19}
+$$
+
+Trong đó,
+
+$\theta _ { j }$ : góc pha công suất.
+
+$P _ { L j } , Q _ { L j }$ 𝑣à $S _ { L j }$ : công suất tác dụng, công suất phản kháng và công suất biểu kiến của nút j (MW).
+
+Mối quan hệ của sự ổn định điện áp và dòng ngắn mạch [73] theo công thức:
+
+Nếu $\frac { S _ { s c   m i n , j } { - } S _ { s c , j } } { S _ { s c , j } } < 0$ thì điện áp của nút j ổn định.
+
+Nếu $\frac { S _ { s c   m i n , j } { - } S _ { s c , j } } { S _ { s c , j } } > 0 .$ thì điện áp của nút j không ổn định.
+
+Chỉ $s \hat { 0 }$ ổn định điện áp $I _ { S C C }$ của nút j theo SCC được xác định như sau:
+
+$$
+I _ {S C C, j} = \frac {S _ {S C m i n , j}}{S _ {S C}}\tag{4.20}
+$$
+
+<!-- page: 116 -->
+
+$$
+F _ {4} = \sum_ {t = 1} ^ {N _ {S t a g e}} \frac {1}{N _ {b u s} ^ {t}} \sum_ {i = 1} ^ {N _ {b u s} ^ {t}} I _ {S C C, i} ^ {t}\tag{4.21}
+$$
+
+## 4.2.2. Các ràng buộc
+
+a. Giới hạn điện áp tại nút
+
+$$
+v _ {j} ^ {m i n} \leq v _ {j} \leq v _ {j} ^ {m a x}\tag{4.22}
+$$
+
+Trong đó,
+
+$v _ { j } ;$ giá trị điện áp tại nút j.
+
+$v _ { j } ^ { m i n }$ : giá trị điện áp cực tiểu tại nút $j .$
+
+$v _ { j } ^ { m a x }$ : giá trị điện áp cực đại tại nút j.
+
+b. Phân bố công suất truyền tải của các nhánh
+
+$$
+P F _ {k} \leq P F _ {k} ^ {m a x}\tag{4.23}
+$$
+
+Trong đó,
+
+$P F _ { k }$ : phân bố công suất trên nhánh k (MW).
+
+$P F _ { k } ^ { m a x }$ : phân bố công suất cực đại trên nhánh k (MW).
+
+c. Công suất phát của nguồn phát phân tán
+
+$$
+P _ {d g} \leq P _ {d g} ^ {m a x}\tag{4.24}
+$$
+
+Trong đó,
+
+$P _ { d g }$ : công suất phát của nguồn phát dg (MW).
+
+$P _ { d g } ^ { m a x }$ : công suất phát cực đại của nguồn phát $d g$ (MW).
+
+d. Cấu trúc hình tia của lưới điện phân phối
+
+Cấu trúc của lưới điện phân phối nên được bố trí hình tia do sơ $\mathbf { \dot { d } } \mathbf { \dot { \hat { 0 } } }$ bảo $\mathbf { v } \hat { \pmb { \xi } }$ của lưới điện phân phối đơn giản. Với mục đích này, ma trận nhánh – nút được sử dụng để kiểm tra cấu trúc của mạng. Ma trận nhánh – nút của A là ma trận $N _ { b r a n c h } \; x \; N _ { b u s }$ trong đó hàng thứ k tương ứng với nhánh k trong mạng và cột thứ j của ma trận tương ứng với thanh cái j trong hệ thống điều này có một nhánh rời khỏi nút. Ma trận nhánh – nút được tính như sau:
+
+\- Nếu nhánh k (tương ứng với hàng thứ k) rời khỏi nút thứ j (tương ứng với cột thứ j) thì phần tử ma trận $( a _ { k j } )$ bằng 1.
+
+<!-- page: 117 -->
+
+\- Nếu nhánh thứ k (tương ứng với hàng thứ k) liên kết tới nút thứ j (tương ứng với cột thứ j) thì phần tử ma trận $( a _ { k j } )$ sẽ là -1.
+
+\- Tất cả các trường hợp còn lại sẽ bằng 0.
+
+\- Khi $s \hat { 0 }$ nút nhiều hơn số nhánh trong lưới điện phân phối hình tia, cột đầu tiên của ma trận nhánh – nút nên được xóa để có một ma trận vuông A'.
+
+\- Nếu các yếu tố quyết định của ma trận nhánh – nút A' là 1 hoặc -1 , đồ thị của lưới điện sẽ được hình tia.
+
+## 4.3. $\acute { \mathbf { A } } \mathbf { p }$ dụng phương pháp thông minh nhân tạo
+
+## 4.3.1. Thuật toán PSO
+
+Thuật toán PSO là thuật toán được sử dụng rộng rãi trong hệ thống điện do việc thực hiện đơn giản, ít tham số điều khiển, dễ áp dụng, tốc độ tính toán nhanh, khả năng tìm kiếm tốt và đặc biệt là rất dễ cải tiến và lai tạo với các phương pháp khác để có các phương pháp hiệu quả hơn. Để nâng cao khả năng hội tụ của thuật toán PSO các chiến lược biến đổi khác nhau đã được đề xuất. Vì vậy, thuật toán PSO cải tiến là thuật toán phù hợp để giải bài toán quy hoạch mở rộng lưới điện phân phối.
+
+## 4.3.2. Thuật toán PSO cải tiến và áp dụng
+
+a. Thuật toán PSO cải tiến (MPSO)
+
+Mô hình toán PSO [59] được thể hiện như sau:
+
+$$
+v _ {i} ^ {\text {iter} + 1} = k. [ \omega . v _ {i} ^ {\text {iter}} + c _ {1}. \text {rand} (.) \cdot \left(x _ {i} ^ {\text {best}} - x _ {i} ^ {\text {iter}}\right) + c _ {2}. \text {rand} (.) \cdot \left(x ^ {\text {Gbest}} - x _ {i} ^ {\text {iter}}\right)\tag{4.25}
+$$
+
+$$
+x _ {i} ^ {i t e r + 1} = x _ {i} ^ {i t e r} + v _ {i} ^ {i t e r + 1}\tag{4.26}
+$$
+
+Trong đó,
+
+$x _ { i } ^ { b e s t }$ : giá trị cục bộ tốt nhất của các vị trí cá thể.
+
+$x ^ { G b e s t }$ : giá trị toàn cục tốt nhất của các vị trí cá thể.
+
+Tương ứng $x _ { i } ^ { i t e r }$ là vị trí cá thể của $i ^ { t h }$ trong vòng lặp $i t e r ^ { t h }$ và $v _ { i } ^ { i t e r }$ là vận tốc cá thể $i ^ { t h }$ trong vòng lặp $i t e r ^ { t h }$ . 𝜔 là trọng số quán tính, c1 và $c _ { 2 }$ là các hệ số gia tốc.
+
+Ngoài ra, rand (.) là số máy phát điện ngẫu nhiên giữa 0 và 1. Và k là hệ số giới hạn được xác định là:
+
+$$
+k = \frac {2}{\left| 2 - C - \sqrt {C ^ {2} - 4 . C} \right|}\tag{4.27}
+$$
+
+Trong đó, $C = c _ { 1 } + c _ { 2 }$ và $C > 4$
+
+<!-- page: 118 -->
+
+Để cải tiến thuật toán PSO nhằm tránh sự hội tụ cục bộ ban đầu, các chiến lược biến đổi khác nhau. Sự biến đổi cho phép thuật toán để tránh tối ưu cục bộ bằng cách ngăn không vị trí của mỗi bầy đàn giống nhau. Nếu không sử dụng biến đổi, việc đánh giá các vị trí có thể bị chậm lại hoặc thậm chí dừng lại. Các vị trí biến đổi được tạo ra như sau:
+
+$$
+x _ {b d} ^ {1} = x ^ {G b e s t} + \psi (x _ {r a n d 1} - x _ {r a n d 2}) + \psi (x _ {r a n d 3} - x _ {r a n d 4})\tag{4.28}
+$$
+
+$$
+x _ {b d} ^ {2} = x ^ {G b e s t} + \psi (x _ {r a n d 1} - x _ {r a n d 2})\tag{4.29}
+$$
+
+$$
+x _ {b d} ^ {3} = x _ {r a n d 3} ^ {i t e r} + \psi \big (x ^ {G b e s t} - x _ {r a n d 3} ^ {i t e r} \big) + \psi (x _ {r a n d 1} - x _ {r a n d 2})\tag{4.30}
+$$
+
+$$
+x _ {b d} ^ {4} = x _ {r a n d 1} + r a n d (.) (x _ {4} ^ {b e s t} - x _ {r a n d 2}) + r a n d (.) (x ^ {G b e s t} - x _ {r a n d 2})\tag{4.31}
+$$
+
+$$
+x _ {b d} ^ {5} = x _ {r a n d 1} + \psi (x _ {r a n d 2} - x _ {r a n d 3}) + \psi (x _ {r a n d 4} - x _ {r a n d 5})\tag{4.32}
+$$
+
+Trong đó,
+
+$x _ { r a n d 1 } \neq x _ { r a n d 2 } \neq x _ { r a n d 3 } \neq x _ { r a n d 4 } \neq x _ { r a n d 5 }$ là sự lựa chọn ngẫu nhiên của các vị trí biến đổi. 𝜓 là hằng số biến đổi giá trị bằng 2.
+
+Để sử dụng năm vị trí biến đổi $( x _ { c } ^ { 1 } , x _ { c } ^ { 2 } , x _ { c } ^ { 3 } , x _ { c } ^ { 4 } , x _ { c } ^ { 5 } )$ là sự lựa chọn ngẫu nhiên mỗi vòng lặp. Nếu chi phí nguồn phát $F ( x _ { b d } ^ { r } ) , r = 1 { , } 2 , \ldots { , } 5$ tốt hơn chi phí nguồn phát $F ( x _ { c } ^ { T } )$ thì vị trí lựa chọn 𝑥<sub>𝑐</sub><sup>𝑟</sup>được thay thế bởi vị trí biến đổi $x _ { b d } ^ { r }$ ở vòng lặp tiếp theo. Nếu không, $x _ { c } ^ { r }$ sẽ được giữ ở vòng lặp tiếp theo.
+
+## b. Áp dụng MPSO vào bài toán đa mục tiêu
+
+Trong tối ưu hóa đa mục tiêu thường quy mô của hàm mục tiêu không giống nhau. Do đó, sử dụng phương pháp Fuzzy và tối ưu Pareto được sử dụng để chuẩn hóa các hàm mục tiêu.
+
+## + Phương pháp Fuzzy
+
+Các hàm mục tiêu được đề cập trên không chính xác nên chúng được xây dựng dưới dạng phương pháp Fuzzy. Phương pháp Fuzzy thường được biểu diễn bằng hàm thành viên $\mu _ { F m } ( X )$ . Hàm quyết định của Fuzzy được mô tả bằng hàm thành viên để thay thế từng biến thành một giá trị chính xác. Các hàm quyết định này hoàn toàn đạt được với từng mục tiêu nếu $F _ { m } ( X ) = 1$ và không đạt đươc nếu $F _ { m } ( X ) = 0$ . Do đó, giá trị của từng hàm thành viên thể hiện khả năng phù hợp của mục tiêu liên quan. Tóm lại, do tính chất không chính xác trong dự đoán của người ra quyết định, hàm mục tiêu thứ m của lời giải trong tập $F _ { m }$ không bị tri phối được mô tả bằng hàm thành
+
+<!-- page: 119 -->
+
+viên $\mu _ { F m } ( X )$ được định nghĩa là:
+
+Trong phương pháp này mỗi hàm mục tiêu được mô hình hóa bằng hàm thành viên giảm dần và tính toán như sau:
+
+$$
+\mu_ {F m} (X) = \left\{ \begin{array}{l l} 1 & , \quad F _ {m} (X) \leq F _ {m} ^ {m i n} \\ 0 & , F _ {m} (X) \geq F _ {m} ^ {m a x} \quad m = 1, 2, \dots , N _ {O b j} \\ & \frac {F _ {m} ^ {m a x} - F _ {m} (X)}{F _ {m} ^ {m a x} - F _ {m} ^ {m i n}}, \quad F _ {m} ^ {m i n} \leq F _ {m} (X) \leq F _ {m} ^ {m a x} \end{array} \right.\tag{4.33}
+$$
+
+Trong đó,
+
+µFm (X) : hàm thành viên của hàm mục tiêu m;
+
+${ F _ { m } } ^ { m a x }$ và $F _ { m } ^ { \; m i n }$ là giá trị lớn nhất và nhỏ nhất của hàm mục tiêu m.
+
+## + Tối ưu Pareto
+
+Tối ưu hóa đa mục tiêu là quá trình tối ưu hóa tối đa hai hoặc nhiều hàm mục tiêu đối lập với những ràng buộc nhất định[59]. Trong những trường hợp này, quyết định tìm kiếm giải pháp "ưu tiên nhất". Giải pháp hiệu quả (Pareto tối ưu, không bị phụ thuộc, không kém) là giải pháp mà không thể cải thiện được bằng hàm mục tiêu mà không làm giảm hiệu suất của nó. Nói cách khác, giải pháp $X _ { 2 }$ được chi phối bởi $X _ { I } ,$ , khi đáp ứng các điều kiện như sau:
+
+$$
+\forall m \in \{1, 2, \dots , N _ {O b j} \}, F _ {m} (X _ {1}) \leq F _ {m} (X _ {2}),\tag{4.34}
+$$
+
+$$
+\exists n \in \{1, 2, \dots ., N _ {O b j} \}, F _ {n} (X _ {1}) <   F _ {n} (X _ {2}),\tag{4.35}
+$$
+
+Trong đó,
+
+$F _ { m } ( \mathbf { X } )$ : giá trị hàm mục tiêu m; $F _ { n } ( \mathbf { X } )$ : giá trị hàm mục tiêu n và $N _ { O b j } .$ số lượng biến điều khiển.
+
+Mục tiêu của một thuật toán tối ưu hóa đa mục tiêu không chỉ hướng dẫn tìm kiếm hướng tới tối ưu Pareto mà còn duy trì một tập hợp dân số không bị chi phối. Về vấn đề này, trong thuật toán được đề xuất này đã xác định một lưu trữ $\mathsf { \dot { d } \hat { e } }$ lưu các giải pháp không bị chi phối trong mỗi lần lặp lại của thuật toán.
+
+Các giải pháp được lưu trong lưu trữ này trong tất cả các lần lặp lại được sắp xếp theo dạng ra quyết định. Các giải pháp được sắp xếp là các tập tối ưu Pareto có thể được chọn giải pháp tốt nhất bằng cách chọn các giải pháp hàng đầu trong lưu trữ này. Trong thuật toán PSO đa mục tiêu các giải pháp không chiến ưu thế được lưu
+
+<!-- page: 120 -->
+
+trữ trong tất cả các lần lặp. Từng giải pháp trong lưu trữ có điều kiện đánh giá như sau:
+
+$$
+N _ {\mu} (i) = \frac {\sum_ {m = 1} ^ {N _ {O b j}} w _ {m} \times \mu_ {F m} (X _ {i})}{\sum_ {i = 1} ^ {N _ {r e p}} \sum_ {m = 1} ^ {N _ {O b j}} w _ {m} \times \mu_ {F m} (X _ {i})}\tag{4.36}
+$$
+
+Trong đó,
+
+$N _ { \mu } ( i )$ : số lượng giải pháp trong lưu trữ i.
+
+w<sub>m</sub> : trọng số m.
+
+Ngoài ra, $w _ { m }$ liên quan đến mức độ phù hợp của hàm mục tiêu thứ $m ^ { t h }$ theo quan điểm của người quyết định (Decision Maker - DM). Trong phương pháp này các hàm thành viên sẽ được chuẩn hóa. Bên cạnh đó, các giải pháp không ưu thế được sắp xếp trên cơ sở $N _ { \mu }$ sử dụng (4.36) và vấn đề quan trọng của hàm mục tiêu là được xác định theo DM.
+
+## c. Giải pháp thuật toán
+
+Trong phần này thể hiện sự áp dụng thuật toán đề xuất để giải quyết bài toán đa mục tiêu của quy hoạch mở rộng lưới điện phân phối.
+
+Bước 1: Xác định dữ liệu đầu vào.
+
+Bước 2: Tạo ra nguồn dữ liệu ban đầu; dân số ban đầu được tạo ngẫu nhiên dựa trên thông tin đã được xác định trong các bước như sau:
+
+$$
+D \hat {\mathrm{a}} n s \acute {0} = \left[ \begin{array}{c} X _ {1} \\ X _ {2} \\ \cdots \\ X _ {N p o p} \end{array} \right]\tag{4.37}
+$$
+
+$$
+\begin{array}{c} X = [ x _ {C} \quad x _ {R} \quad x _ {A} \quad x _ {D} ] \\ x _ {C} = [ x _ {b 1} \quad x _ {b 2} \quad ... \quad x _ {b N _ {R B}} ] \\ x _ {R} = [ x _ {r 1} \quad x _ {r 2} \quad ... \quad x _ {r N _ {R B}} ] \\ x _ {A} = [ x _ {a 1} \quad x _ {a 2} \quad ... \quad x _ {a N _ {A B}} ] \\ x _ {D} = [ x _ {d 1} \quad x _ {d 2} \quad ... \quad x _ {d N _ {D}} ] \end{array}
+$$
+
+Bước 3: Tính toán ma trận nhánh – nút và kiểm tra cấu trúc hình tia. Nếu cấu trúc lưới điện là hình tia thì tiến hành thực hiện bước tiếp theo, nếu không thì thêm vào giới hạn phạt. Trường hợp lưới điện có cấu trúc vòng thì hàm mục tiêu được thay vào giới hạn phạt là một số lớn.
+
+<!-- page: 121 -->
+
+Bước 4: Tính toán phân phối công suất tải dùng phương pháp được đề xuất dựa vào các biến quyết định của mỗi vị trí, phân phối công suất tải được giải quyết. Sau đó, các ràng buộc kiểm tra kết quả phân phối công suất tải. Nếu các ràng buộc được thỏa thì tiến hành bước tiếp theo, nếu không thêm vào giới hạn phạt trong bước 3.
+
+Bước 5: Tính toán và chuẩn hóa các hàm mục tiêu. Các hàm mục tiêu được tính toán từ công thức (4.1) đến (4.21) đã sử dụng kết quả của phân bố công suất tải. Sau đó, phương pháp Fuzzy được sử dụng công thức (4.33) được sử dụng để có được $\mu _ { 1 } , \mu _ { 2 }$ và $\mu _ { 3 }$ tương ứng với $F _ { I }$ , $F _ { 2 }$ và $F _ { 3 }$
+
+Bước 6: Công thức (4.36) được sử dụng để tính hàm thích nghi của mỗi vị trí riêng lẻ. Các bước từ 3 đến 6 được lặp lại cho tất cả vị trí của bầy đàn ban đầu..
+
+Bước 7: Sắp xếp các vị trí theo thứ tự giảm dần của giá trị phù hợp và xác định $X _ { b e s t i }$ và $X _ { G b e s t }$
+
+Bước 8: Cập nhật các vị trí bằng cách sử dụng công thức (4.25) và (4.26)
+
+Bước 9: Tính toán ma trận nhánh - nút và kiểm tra cấu trúc hình tia của tất cả các vị trí. Nếu cấu trúc mạng là hình tia thì tiến hành thực hiện bước tiếp theo, nếu không thì thêm vào giới hạn phạt.
+
+Bước 10: Tính toán dòng điện dựa vào các biến quyết định của mỗi vị trí, dòng điện phân được giải quyết. Kiểm tra các ràng buộc được xem xét kết quả dòng điện trong tất cả các vị trí. Nếu ràng buộc thỏa mãn thì đi bước tiếp theo, nếu không thì thêm giới hạn phạt.
+
+Bước 11: Tính toán, chuẩn hóa các hàm mục tiêu và tính toán hàm thích nghi.
+
+Bước 12: $\acute { \mathbf { A } } \mathbf { p }$ dụng quá trình biến đổi được thực hiện theo MPSO.
+
+Bước 13: Sắp xếp các vị trí theo thứ tự giảm dần của giá trị phù hợp và xác định $X _ { b e s t i }$ và $X _ { G b e s t }$ . Các bước từ 8 đến 13 được lặp lại cho đến khi số đạt được xác định trước.
+
+<!-- page: 122 -->
+
+![](images/page_121_image_0.jpg)
+
+Hình 4.2 Lưu đồ thuật toán MPSO áp dụng vào bài toán MDEP
+
+<!-- page: 123 -->
+
+## e. Đánh giá hiệu suất của tối ưu hóa đa mục tiêu
+
+Có nhiều phương pháp để mô tả hiệu suất Pareto. Các mục tiêu của Pareto tối ưu hóa đa mục tiêu có thể được xác định và đo như sau:
+
+• Khoảng cách tập không chiếm ưu thế thu được với Pareto trước thực sự phải được tối thiểu.
+
+• Phân phối tốt các giải pháp thu được.
+
+• Kích thước của mặt trước không chiếm ưu thế nên được tối đa hóa.
+
+Các chỉ số hiệu suất này được mô tả như sau:
+
+\- Chỉ số khoảng cách (SP): Mục đích của chỉ số này là để đánh giá mức độ phân bố đồng đều của các điểm trong tập xấp xỉ trong không gian mục tiêu. Số liệu này được cho bởi:
+
+$$
+S P = \sqrt {\frac {1}{N _ {r e p} - 1} \sum_ {i = 1} ^ {N _ {r e p}} \left(\bar {d} - d _ {i}\right) ^ {2}}\tag{4.38}
+$$
+
+$$
+d _ {i} = \min _ {{j = 1, 2,.., N _ {r e p i \neq j}}} \left\{\left| F _ {1} ^ {i} - F _ {1} ^ {j} \right| + \left| F _ {2} ^ {i} - F _ {2} ^ {j} \right| + \dots + \left| F _ {N _ {o b j}} ^ {i} - F _ {N _ {o b j}} ^ {j} \right| \right\}\tag{4.39}
+$$
+
+$$
+\bar {d} = \frac {1}{N _ {r e p}} \sum_ {i = 1} ^ {N _ {r e p}} d _ {i}\tag{4.40}
+$$
+
+\- Khoảng cách nguồn phát (GD): chỉ số này tìm khoảng cách trung bình các giải pháp từ Pareto trước. Số liệu này được giải thích như sau:
+
+$$
+G D = \frac {\sqrt {\sum_ {i = 1} ^ {N _ {r e p}} d _ {i} ^ {2}}}{N _ {r e p}}\tag{4.41}
+$$
+
+Trong đó:
+
+$d _ { i }$ là khoảng cách không gian giữa mỗi vectơ giải pháp không chiếm ưu thế và thành phần gần nhất của Pareto tối ưu.
+
+\- Chỉ số đa dạng (DM): là một chỉ số $D ,$ cho các giải pháp Pareto thu được. Giá trị cao hơn của chỉ $\mathrm { s } \hat { 0 }$ này thể hiện sự đa dạng cao hơn của các giải pháp tối ưu Pareto.
+
+$$
+D = \sum_ {m = 1} ^ {N _ {o b j}} \sum_ {i = 1} ^ {N _ {r e p}} (F _ {m} ^ {i} - C _ {i}) ^ {2}\tag{4.42}
+$$
+
+$$
+C_i = \frac{\sum_{i=1}^{N_{rep}} F_m^i}{N_{rep}}\tag{4.43}
+$$
+
+## 4.4. Kết quả tính toán và thảo luận
+
+Nghiên cứu vấn đề đa mục tiêu quy hoạch mở rộng lưới điện phân phối có xét đến nguồn phân tán được áp dụng cho hệ thống phân phối gồm 2 nguồn cung cấp, 32
+
+<!-- page: 124 -->
+
+thanh cái, 5 nhánh, 5 dây chuyển mạch, 32 thiết bị chuyển mạch [62]. Hệ thống này ban đầu có một trạm biến áp với công suất 2.600kW có thể nâng cấp lên tới 4.355kW. Ngoài ra, nó còn chứa 15 nhánh có thể nâng cấp và 12 tuyến để lắp đặt các nhánh mới đã được liệt kê trong Bảng 4.1. và Hình 4.2 thể hiện hệ thống phân phối hình tia với đường nét liền thể hiện nhánh hiện hữu, nét đứt thể hiện nhánh mới.
+
+Bảng 4.1 Thông số các nhánh liên kết mới
+
+| Số nhánh mới | Từ thanh cái | Đến thanh cái | 𝑹(𝛀) | 𝑿(𝛀) | U<sub>j</sub>,i(giờ/năm) | U' j,i (giờ/năm) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 19 | 34 | 0,1 | 0,2 | 0,5 | 0,08 |
+| 2 | 20 | 34 | 0,15 | 0,2 | 0,7 | 0,07 |
+| 3 | 21 | 34 | 0,1 | 0,3 | 0,9 | 0,05 |
+| 4 | 22 | 34 | 0,2 | 0,25 | 1 | 0,05 |
+| 5 | 23 | 35 | 0,1 | 0,2 | 0,6 | 0,02 |
+| 6 | 24 | 35 | 0,1 | 0,3 | 0,8 | 0,04 |
+| 7 | 25 | 35 | 0,15 | 0,2 | 0,7 | 0,01 |
+| 8 | 26 | 35 | 0,2 | 0,25 | 0,1 | 0,05 |
+| 9 | 21 | 36 | 0,2 | 0,25 | 1 | 0,07 |
+| 10 | 22 | 36 | 0,1 | 0,2 | 1 | 0,07 |
+| 11 | 23 | 36 | 0,1 | 0,3 | 1 | 0,04 |
+| 12 | 24 | 36 | 0,15 | 0,2 | 0,8 | 0,03 |
+
+Bảng 4.2 Nhu cầu tải của các thanh cái mới
+
+| Số thanh cái | Nhu cầu công suất | Nhu cầu công suất |
+| --- | --- | --- |
+| mới | tác dụng (kW) | phản kháng (kVAr) |
+| 34 | 300 | 250 |
+| 35 | 100 | 30 |
+| 36 | 200 | 80 |
+
+<!-- page: 125 -->
+
+![](images/page_124_image_0.jpg)
+
+Hình 4.3 Sơ đồ hệ thống phân phối hình tia
+
+Áp dụng thuật toán MPSO, các tham số điều khiển bao gồm số lượng dân số ban đầu, số lần lặp, hằng số đột biến (ψ) và hệ số (c1, c2 và w). Các tham số này là: số dân là 200, số lần lặp là 100, c1 = 2, c2 = 2, ψ = 2 và w = 0,1 \~ 0,9. Để chứng minh hiệu quả của thuật toán MPSO hơn sẽ so sánh các kết quả với PSO và GA. Tất cả các hàm mục tiêu được xác định và để đánh giá hiệu suất của thuật toán được đề xuất, vấn đề tối ưu hóa đã được giải quyết trong 10 thử nghiệm và giải pháp tốt nhất, giải pháp xấu nhất, trung bình của các giải pháp và độ lệch chuẩn thu được bằng cách tối ưu hóa các hàm mục tiêu bằng cách sử dụng PSO, GA và MPSO.
+
+Trong phương pháp Fuzzy, vấn đề quan trọng của mỗi hàm mục tiêu được xác định bởi các trọng số sao cho $\textstyle \sum _ { i = 1 } ^ { N _ { O b j } } w _ { i } = 1$ . Bảng 4.3 thể hiện kết quả thực hiện quyết định phương pháp Fuzzy so với tập tối ưu Pareto.
+
+<!-- page: 126 -->
+
+Bảng 4.3 Giá trị hàm mục tiêu trong các trường hợp
+
+<table><tbody><tr><td rowspan="2">Trường hợp</td><td rowspan="2">Số trường hợp phụ</td><td colspan="4">Trọng số</td><td rowspan="2">F1($)</td><td rowspan="2">F2(kWh/năm)</td><td rowspan="2">F3(kW)</td><td rowspan="2">F4(pu)</td></tr><tr><td>w1</td><td>w2</td><td>w3</td><td>w4</td></tr><tr><td>I</td><td></td><td>-</td><td>-</td><td>-</td><td>-</td><td>12254</td><td>48527</td><td>432,5161</td><td>0,009</td></tr><tr><td>II</td><td></td><td>-</td><td>-</td><td>-</td><td>-</td><td>149308</td><td>13290,3</td><td>151,3026</td><td>0,0088</td></tr><tr><td>III</td><td></td><td>-</td><td>-</td><td>-</td><td>-</td><td>155806</td><td>15846</td><td>95,49416</td><td>0,0088</td></tr><tr><td>IV</td><td></td><td>-</td><td>-</td><td>-</td><td>-</td><td>90576</td><td>30148</td><td>200,1479</td><td>0,008496</td></tr><tr><td rowspan="4">V</td><td>1</td><td>0,33</td><td>0,33</td><td>0,33</td><td>-</td><td>33879</td><td>46063,98</td><td>373,5442</td><td>-</td></tr><tr><td>2</td><td>0,2</td><td>0,4</td><td>0,4</td><td>-</td><td>30633</td><td>46093,13</td><td>362,3144</td><td>-</td></tr><tr><td>3</td><td>0,4</td><td>0,2</td><td>0,4</td><td>-</td><td>42360</td><td>41248,43</td><td>250,3062</td><td>-</td></tr><tr><td>4</td><td>0,4</td><td>0,4</td><td>0,2</td><td>-</td><td>37998</td><td>42670,78</td><td>322,403</td><td>-</td></tr><tr><td rowspan="4">VI</td><td>1</td><td>0,33</td><td>-</td><td>0,33</td><td>0,33</td><td>105364</td><td>-</td><td>174,8745</td><td>0,009013</td></tr><tr><td>2</td><td>0,2</td><td>-</td><td>0,4</td><td>0,4</td><td>105364</td><td>-</td><td>174,8745</td><td>0,009013</td></tr><tr><td>3</td><td>0,4</td><td>-</td><td>0,2</td><td>0,4</td><td>105364</td><td>-</td><td>174,8745</td><td>0,009013</td></tr><tr><td>4</td><td>0,4</td><td>-</td><td>0,4</td><td>0,2</td><td>105364</td><td>-</td><td>174,8745</td><td>0,009013</td></tr><tr><td rowspan="4">VII</td><td>1</td><td>-</td><td>0,33</td><td>0,33</td><td>0,33</td><td>-</td><td>31545,28</td><td>187,5481</td><td>0,00864</td></tr><tr><td>2</td><td>-</td><td>0,2</td><td>0,4</td><td>0,4</td><td>-</td><td>30746,8</td><td>186,3287</td><td>0,008646</td></tr><tr><td>3</td><td>-</td><td>0,4</td><td>0,2</td><td>0,4</td><td>-</td><td>27239,08</td><td>158,1417</td><td>0,008741</td></tr><tr><td>4</td><td>-</td><td>0,4</td><td>0,4</td><td>0,2</td><td>-</td><td>31545,28</td><td>187,5481</td><td>0,00864</td></tr><tr><td rowspan="4">VIII</td><td>1</td><td>0,33</td><td>0,33</td><td>-</td><td>0,33</td><td>46578</td><td>43919,7</td><td>-</td><td>0,009134</td></tr><tr><td>2</td><td>0,2</td><td>0,4</td><td>-</td><td>0,4</td><td>46578</td><td>43919,7</td><td>-</td><td>0,009134</td></tr><tr><td>3</td><td>0,4</td><td>0,2</td><td>-</td><td>0,4</td><td>83201</td><td>30970</td><td>-</td><td>0,009091</td></tr><tr><td>4</td><td>0,4</td><td>0,4</td><td>-</td><td>0,2</td><td>50325</td><td>48861,78</td><td>-</td><td>0,008934</td></tr><tr><td rowspan="5">IX</td><td>1</td><td>0,25</td><td>0,25</td><td>0,25</td><td>0,25</td><td>108885</td><td>47032,6</td><td>146,4991</td><td>0,008831</td></tr><tr><td>2</td><td>0,1</td><td>0,3</td><td>0,3</td><td>0,3</td><td>111264</td><td>41338,4</td><td>141,6119</td><td>0,008835</td></tr><tr><td>3</td><td>0,3</td><td>0,1</td><td>0,3</td><td>0,3</td><td>105984</td><td>30993,68</td><td>166,3473</td><td>0,008925</td></tr><tr><td>4</td><td>0,3</td><td>0,3</td><td>0,1</td><td>0,3</td><td>105984</td><td>30993,68</td><td>166,3473</td><td>0,008925</td></tr><tr><td>5</td><td>0,3</td><td>0,3</td><td>0,3</td><td>0,1</td><td>108885</td><td>47032,6</td><td>146,4991</td><td>0,008831</td></tr></tbody></table>
+
+\- Các mục tiêu F1 và F3 có cùng giá trị xấp xỉ. Do đó, nghiên cứu này có thể được xem xét từ kết quả của các trường hợp I, III và VII của Bảng 4.3. Trong trường hợp I và III khi mỗi $\mathrm { F } _ { 2 }$ hoặc $\mathrm { F } _ { 3 }$ được tối thiểu hóa từng vị trí; trường hợp còn lại cũng đang gần với giá trị tối thiểu. Trong trường hợp VII, các hệ số khác nhau cho $\mathrm { F } _ { 2 }$ và $\mathrm { F } _ { 3 }$ không làm thay đổi đáng kể các giải pháp thu được. Chính vì vậy, các giá trị hàm mục tiêu này là tương đương nhau.
+
+<!-- page: 127 -->
+
+\- Các giá trị hàm mục tiêu $\mathrm { F } _ { 1 }$ và $\mathrm { F } _ { 2 }$ là các hàm mục tiêu đối lập nhau. Thật vậy, trong khi sản lượng lưới điện của các DG giảm, chi phí I &O đã giảm nhưng END đã được tăng lên được chứng minh các trường hợp I, II, V-2, V-3, VIII-2 và VIII-3 theo Bảng 4.3
+
+\- Các giá trị hàm mục tiêu $\mathrm { F } _ { 1 }$ và $\mathrm { F } _ { 3 }$ là các hàm mục tiêu đối lập nhau. Thật vậy, trong khi sản lượng lưới điện của các DG được tăng lên, chi phí I &O đã tăng lên nhưng tổn thất công suất giảm được chứng minh các trường hợp I, III, V-2 và V-4 theo Bảng 4.3.
+
+\- Giá trị của hàm mục tiêu $\mathrm { F } _ { 2 }$ đối lập với giá trị của hàm mục tiêu $\operatorname { F } _ { 4 } .$ Để giảm thiểu END, các DG nên tạo ra công suất tác dụng nhiều hơn. Do đó, chỉ $\mathrm { s } \hat { \mathsf { O } }$ ổn định điện áp (VSI) sẽ được tăng lên được chứng minh trong các trường hợp II, IV, VIII-3 và VIII-4 theo Bảng 4.3.
+
+\- Chỉ $s \hat { 0 }$ ổn định điện áp có giá trị nhỏ trong mọi trường hợp. Do đó, trường hợp V-1 có sự trao đổi phù hợp giữa tất cả các hàm mục tiêu.
+
+**Bảng 4.4** Tối ưu hóa công suất của nguồn phân tán trong trường hợp $w_{I} = w_{2} = w_{3}$ = 0,33 và w4 = 0
+
+<table><tbody><tr><td colspan="4">Công suất nguồn phân tán (kW)</td></tr><tr><td>Giai đoạn</td><td>Thanh cái 18</td><td>Thanh cái 32</td><td>Thanh cái 33</td></tr><tr><td>1</td><td>210</td><td>180</td><td>120</td></tr><tr><td>2</td><td>210</td><td>180</td><td>80</td></tr><tr><td>3</td><td>210</td><td>180</td><td>30</td></tr></tbody></table>
+
+Bảng 4.5 Kết quả phân tích độ tin cậy
+
+| Hệ số U và | Số nút | Tổng dung | END | Tổn thất công suất |
+| --- | --- | --- | --- | --- |
+| U' | thêm vào | lượng DG | (kWh/năm) | (kW) |
+| 0,6 | 10 | 0 | 28077 | 342 |
+| 0,8 | 9 | 0 | 36875 | 362 |
+| 0,9 | 14 | 0 | 41613 | 316 |
+| 1 | 14 | 330 | 46064 | 374 |
+| 1,1 | 8 | 660 | 46963 | 308 |
+| 1,2 | 6 | 990 | 49411 | 374 |
+| 1,4 | 11 | 330 | 597391 | 322 |
+
+<!-- page: 128 -->
+
+![](images/page_127_chart_0.jpg)
+
+Hình 4.4 Đồ thị thể hiện END quan hệ với các giá trị U và U'
+
+![](images/page_127_chart_2.jpg)
+
+Hình 4.5 Đồ thị tổn thất công suất quan hệ với các giá trị U và U'
+
+Kết quả đánh giá ảnh hưởng của các thông số độ tin cậy đến kết quả MDEP, bài toán tối ưu hóa đã được nghiên cứu với các giá trị khác nhau của U và U'. Vì vậy, các giá trị của U và U' đã được nhân với các hệ $\mathrm { s } \acute { \mathrm { 0 } } \mathrm { ~ 0 , } 6 \mathrm { , ~ 0 , } 8 \mathrm { , ~ 0 , } 9 \mathrm { , ~ 1 , ~ 1 , } 1 \mathrm { , ~ 1 , } 2$ và 1,4 cho trường hợp bài toán tối ưu hóa đa mục tiêu với các giá trị trọng số bằng nhau cho các hàm mục tiêu $( w _ { I } = w _ { 2 } = w _ { 3 } = 0 , 3 3 )$ . Kết quả mô phỏng END và các giá trị chi phí có liên quan trực tiếp đến các yếu tố U và U'. Theo công thức (4.15), giá trị mất điện U và U' không liên quan đến nhau. Tuy nhiên, các hàm mục tiêu đã đạt được tối ưu
+
+<!-- page: 129 -->
+
+hóa với giá trị trọng số như nhau, chính vì thế sự thay đổi trong các hàm mục tiêu của chi phí và tổn thất điện năng là phù hợp. Bảng 4.5 đã thể hiện các giá trị hàm mục tiêu, dung lượng công suất lắp đặt DG và số lượng đường dây nối lại cho mỗi giá trị U và U '.
+
+Bảng 4.6 Giá trị GD, SP và DM cho các thuật toán tối ưu khác nhau trong 2 & 3 chiều Pareto
+
+<table><tbody><tr><td>Thuật toán</td><td colspan="3">MPSO</td><td colspan="3">PSO</td><td colspan="3">GA</td></tr><tr><td>Mục tiêu</td><td>GD</td><td>SP</td><td>DM</td><td>GD</td><td>SP</td><td>DM</td><td>GD</td><td>SP</td><td>DM</td></tr><tr><td>Cost-Loss</td><td>0,0022</td><td>0,0153</td><td>3,36.10<sup>14</sup></td><td>0,0037</td><td>0,0218</td><td>3,33.10<sup>14</sup></td><td>0,0082</td><td>0,0279</td><td>5,49.10<sup>13</sup></td></tr><tr><td>Cost-END</td><td>0,0168</td><td>0,0822</td><td>1,20.10<sup>14</sup></td><td>0,0109</td><td>0,0461</td><td>4,25.10<sup>13</sup></td><td>0,0129</td><td>0,053</td><td>3,61.10<sup>13</sup></td></tr><tr><td>Cost-VSI</td><td>0,0352</td><td>0,1152</td><td>1,95.10<sup>13</sup></td><td>0,0381</td><td>0,0992</td><td>1,05.10<sup>13</sup></td><td>0,2683</td><td>0,3678</td><td>5,10.10<sup>12</sup></td></tr><tr><td>Cost-END-Loss</td><td>4,75.10<sup>-4</sup></td><td>0,0064</td><td>6,50.10<sup>14</sup></td><td>0,0049</td><td>0,0241</td><td>1,97.10<sup>13</sup></td><td>0,0052</td><td>0,021</td><td>1,84.10<sup>13</sup></td></tr><tr><td>Cost-END-VSI</td><td>0,0039</td><td>0,0168</td><td>1,06.10<sup>14</sup></td><td>0,0068</td><td>0,0225</td><td>4,05.10<sup>13</sup></td><td>0,0121</td><td>0,0225</td><td>3,17.10<sup>13</sup></td></tr><tr><td>Cost-Loss-VSI</td><td>0,0027</td><td>0,0113</td><td>8,81.10<sup>13</sup></td><td>0,0036</td><td>0,0242</td><td>1,03.10<sup>14</sup></td><td>0,0039</td><td>0,0228</td><td>8,59.10<sup>13</sup></td></tr><tr><td>END-Loss-VSI</td><td>0,0382</td><td>0,0830</td><td>7,44.10<sup>7</sup></td><td>0,3057</td><td>0,5257</td><td>7,30.10<sup>7</sup></td><td>0,4005</td><td>0,5787</td><td>4,13.10<sup>6</sup></td></tr></tbody></table>
+
+![](images/page_128_chart_3.jpg)
+
+Hình 4.6 Giá trị GD của thuật toán MPSO so với PSO và GA
+
+<!-- page: 130 -->
+
+![](images/page_129_chart_0.jpg)
+
+Hình 4.7 Giá trị SP của thuật toán MPSO so với PSO và GA
+
+![](images/page_129_chart_2.jpg)
+
+Hình 4.8 Giá trị DM của thuật toán MPSO so với PSO và GA
+
+Trong Bảng 4.6. thể hiện thuật toán MPSO thu được hiệu suất Pareto tốt hơn so với các thuật toán PSO,GA. Hình 4.6 và 4.7 thể hiện do hầu hết các giá trị SP và GD của thuật toán MPSO thấp hơn các giá trị thu được từ các thuật toán PSO, GA. Ngoài ra, Hình 4.8 thể hiện các giá trị của số liệu DM của thuật toán MPSO lớn hơn các giá trị thu được bởi các thuật toán PSO, GA, chứng minh rằng hiệu suất Pareto thu được bởi thuật toán MPSO tối ưu hơn.
+
+<!-- page: 131 -->
+
+## 4.5. Kết luận chương 4
+
+Chương 4 nghiên cứu nâng cao độ tin cậy và mức độ ổn định điện áp của lưới điện phân phối, chỉ số độ tin cậy và chỉ số chỉ số ổn định điện áp dựa trên SCC đã được đưa vào bài toán MDEP. Theo đó, trong MDEP được đề xuất, END tổn thất điện năng tác dụng và VSI đã được chọn làm các hàm mục tiêu để tối ưu hóa. Phương pháp Fuzzy đã được sử dụng từ các giải pháp Pareto thu được.
+
+Hơn nữa, kỹ thuật tối ưu hóa MPSO đa mục tiêu được đề xuất để giải quyết bài toán MDEP. Phương pháp được đề xuất có thể phù hợp với các mục tiêu đối lập của bài toán MDEP theo cách giúp giải quyết các bài toán của quy hoạch hệ thống về độ tin cậy và an toàn của lưới phân phối.
+
+Ngoài ra, nghiên cứu này đã cho thấy tính hiệu quả của MPSO được đề xuất trong việc tạo ra các giải pháp Pareto tối ưu một cách hiệu quả. Trong chương 5 trình bày các kết quả đạt được các phương pháp đề xuất khi áp dụng vào giải bài toán quy hoạch lưới điện truyền tải và lưới điện phân phối, đề xuất hướng phát triển phương pháp mới trong quy hoạch mở rộng lưới điện thỏa điều kiện kinh tế - kỹ thuật.
+
+<!-- page: 132 -->
+
+# Chương 5. KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+
+## 5.1. Kết luận
+
+Trong nghiên cứu xây dựng mới các thuật toán giải bài toán quy hoạch mở rộng lưới điện truyền tải, lưới điện phân phối hiện nay đã giải quyết nhanh và chính xác. Luận án đã nghiên cứu thuật toán cận biên và nhánh, thuật toán thông minh nhân tạo; Các kết quả tính toán các phương pháp giải các bài toán quy hoạch mở rộng lưới điện như sau:
+
+\- Nghiên cứu áp dụng các thuật toán cận biên và nhánh để giải bài toán quy hoạch và mở rộng hệ thống truyền tải có ràng buộc về chuẩn độ tin cậy và tỷ lệ dự trữ vào lưới điện cao áp 220kV và siêu cao áp 500kV ở vùng ĐBSCL. Hơn thế nữa, nghiên cứu đã áp dụng thuật toán cận biên và nhánh để giải bài toán quy hoạch và mở rộng hệ thống truyền tải có ràng buộc về chuẩn độ tin cậy vào lưới điện cao áp 110kV, 220kV ở tỉnh Bến Tre thuộc khu vực ĐBSCL và đã giải bài toán quy hoạch mở rộng lưới điện có ràng buộc chuẩn độ tin cậy và tỷ lệ dự trữ vào lưới điện cao áp 110kV và 220kV tỉnh Hậu Giang thuộc khu vực ĐBSCL. Quy hoạch mở rộng lưới điện truyền tải để giải quyết vấn đề tối ưu với điều kiện ràng buộc chuẩn độ tin cậy trong quy hoạch tối ưu hệ thống điện và kiểm tra lại hệ thống điện sau khi quy hoạch mở rộng. Sử dụng thuật toán sẽ giúp cho nhà quy hoạch, dễ dàng xác định được nơi nào cần mở rộng, tổng chí phí thấp nhất với mức độ hài lòng cao nhất, trong khi sử dụng số liệu đầu vào cho quy hoạch rất ít nhưng có thể xem xét được tính không chắc chắn của chi phí đầu tư và sự ngẫu nhiên về độ tin cậy sau khi quy hoạch mở rộng. Đây cũng chính là cơ sở để định hướng xây dựng bài toán đa mục tiêu với nhiều điều kiện ràng buộc nhằm phát triển phù hợp với lưới điện trong tương lai. Hơn thế nữa, điều này rất quan trọng để áp dụng các phương pháp thông minh nhân tạo vào giải quyết bài toán quy hoạch lưới điện truyền tải sẽ được chứng minh trên mạng điện chuẩn IEEE và lưới điện thực ĐBSCL.
+
+\- Xây dựng mới phương pháp CSA áp dụng cho bài toán TEP các mạng điện chuẩn Garver 6 nút; Kết quả đã so sánh tổng số nhánh cần đầu tư mới là 7 nhánh, chi phí đầu tư tối thiểu là 200.10<sup>3</sup>\$, độ lệch chuẩn bằng 0, thời gian tính toán 15,72s thấp
+
+<!-- page: 133 -->
+
+hơn rất nhiều so với các phương pháp GA, TS cho thấy được hiệu quả của phương pháp đạt được giá trị tối ưu hơn.
+
+\- Xây dựng mới phương pháp CS áp dụng cho bài toán TEP được chứng minh trên mạng điện chuẩn IEEE 25 nút; Kết quả đã so sánh tổng số nhánh cần đầu tư mới là 12 nhánh, chi phí đầu tư thấp bằng 111371.10<sup>3</sup> \$, độ lệch chuẩn bằng 0 so với nhiều phương pháp thông minh nhân tạo ANN, GA&TS, DEA, CGA, ABC cho thấy được hiệu quả của phương pháp CS đạt được giá trị tối ưu hơn. Ngoài ra, thuật toán CS áp dụng cho bài toán TEP được chứng minh trên mạng điện miền nam Brazil 46 nút. Kết quả đã được so sánh tổng số nhánh cần đầu tư mới là 21 nhánh, chi phí đầu tư thấp bằng 175970.10<sup>3</sup>\$, độ lệch chuẩn bằng 0. Hơn thế nữa, thuật toán CS còn được so sánh số lần đánh giá hàm mục tiêu bằng 5,40.10<sup>4</sup> giá trị nhỏ hơn rất nhiều so với các thuật toán thông minh nhân tạo HS, BF-DEA, GA.
+
+\- Quy hoạch lưới điện phân phối bằng phương pháp tiếp cận heuristic đề xuất được so sánh với mô hình thu được bằng cách sử dụng mô hình tối ưu hóa cùng một lưới điện phân phối. Kết quả về kế hoạch đầu tư, tổng chi phí đầu tư và tổn thất hệ thống điện được so sánh giữa các phương pháp MPSO với các phương pháp PSO, GA thể hiện được sự hiệu quả vượt trội của phương pháp MPSO.
+
+Tóm lại, luận án nghiên cứu xây dựng mới được phương pháp thông minh nhân tạo được áp dụng giải bài toán quy hoạch lưới điện truyền tải DC và giải bài toán quy hoạch lưới điện phân phối. Điểm mạnh của phương pháp CS, CSA được áp dụng bài toán TEP là ít nguồn dữ liệu đầu vào, xét nhiều điều kiện ràng buộc, tìm được các vị trí cần đầu tư mở rộng và giải được bài toán quy hoạch hệ thống truyền tải trong hệ thống điện phức tạp; Trong thời gian tới sẽ áp dụng vào hệ thống điện thực tế. Các kết quả được so sánh nhiều phương pháp khác đã được áp dụng nhằm chứng minh các giải pháp tìm đạt được độ tin cậy cao thông qua các kết quả được tính toán.
+
+## 5.2. Hướng phát triển
+
+Nghiên cứu còn nhiều hạn chế, trong thời gian tới sẽ nghiên cứu tiếp tục phát triển như sau:
+
+\- Từ kết quả giải quyết bài toán quy hoạch lưới điện truyền tải thực tế sử dụng dụng phương pháp cận biên và nhánh. Nghiên cứu sẽ sử dụng thuật toán CS, CSA
+
+<!-- page: 134 -->
+
+giải quyết bài toán quy hoạch lưới điện truyền tải ở khu vực Đồng Bằng Sông Cửu Long kết quả tính sẽ được xem xét Đề án phát triển điện lực quốc gia thời kỳ 2021 - 2030 tầm nhìn đến 2050.
+
+\- Áp dụng thuật toán CS, CSA để giải quyết bài toán quy hoạch lưới điện trên cùng các hệ thống điện nhằm có thể so sánh được hiệu quả của hai thuật toán.
+
+\- Xây dựng mới thuật toán CS, CSA giải bài toán quy hoạch mở rộng lưới điện truyền tải, xem xét thêm điều kiện thêm vào nguồn phát từ năng lượng tái tạo.
+
+Quy hoạch tối ưu lưới điện phân phối dài hạn với nguồn phát phân tán sẽ được áp dụng cho hệ thống phân phối hình tia sử dụng thuật toán MPSO đề xuất và kết quả sẽ được so sánh với mô hình thu được bằng cách sử dụng mô hình tối ưu cùng một lưới điện phân phối.
+
+Từ các hướng phát nghiên cứu trên, các kết quả nghiên cứu được dự kiến sẽ công bố trên các tạp chí khoa học uy tín trong và ngoài nước.
+
+<!-- page: 135 -->
+
+## TÀI LIỆU THAM KHẢO
+
+[1]. Reza Hemmati, Rahmat-Allah Hooshmand and Amin Khodabakhshian, “Stateof-the-art of transmission exPansion planning: Comprehensive review” Renew Sustainable Energy Rev., vol 23, March 2013, pp.312–319.
+
+[2]. Hemmati, Reza, Rahmat-Allah Hooshmand, and Amin Khodabakhshian. "Comprehensive review of generation and transmission exPansion planning." IET Gener. Transm. Distrib., 7.9 (2013): 955-964.
+
+[3]. Verma, Sumit, and Vivekananda Mukherjee. "Transmission exPansion planning: A review." Energy Efficient Technologies for Sustainability (ICEETS), 2016 International Conference on. IEEE, 2016.
+
+[4]. Alhamrouni, Ibrahim, et al. "Review on Transmission ExPansion Planning Models." Applied Mechanics and Materials. Vol. 818. Trans Tech Publications, 2016.
+
+[5]. Mahdavi, Meisam, and Hassan Monsef. "Review of static transmission exPansion planning." J. Electr. Control Eng 1.1 (2011): 11-18.
+
+[6]. Silva, I. de J., et al. "Transmission network expansion planning with security constraints." IEE Proc.-Gener. Transm . Distrib., 152.6 (2005): 828-836.
+
+[7]. Rider, M. J., A. V. Garcia, and R. Romero. "Transmission system exPansion planning by a branch-and-bound algorithm." IET Gener. Transm. Distrib., 2.1 (2008): 90-99.
+
+[8]. Zoppei, Reinaldo T., et al. "A Branch and Bound Algorithm for Transmission Network Expansion Planning Using Nonconvex Mixed-Integer Nonlinear Programming Models." IEEE Access 10 (2022): 39875-39888.
+
+[9]. Sousa, Aldir S., and Eduardo N. Asada. "A Heuristic method based on the branch and cut algorithm to the transmission system exPansion planning problem." Power and Energy Society General Meeting, 2011 IEEE.
+
+[10]. Kang, S., Tran, T., Park, J., Cha, J., Park, D., & Billinton, R. (2004). “The best line choice for transmission system expansion planning on the side of the
+
+<!-- page: 136 -->
+
+highest reliability level.” KIEE International Transactions on Power Engineering, 4(2), 84-90.
+
+[11]. Trungtinh, T., Dong-Hoon, J., Jin-Boo, C., Robert, T., & Roy, B. (2005).”A study on optimal reliability criterion determination for transmission system expansion planning.” KIEE International transactions on power engineering, 5(1), 62-69.
+
+[12]. Choi, Jaeseok, et al. "A method for transmission system expansion planning considering probabilistic reliability criteria." IEEE Transactions on Power Systems 20.3 (2005): 1606-1615.
+
+[13]. Haryono, T. "Novel binary PSO algorithm based optimization of transmission exPansion planning considering power losses." IOP Conference Series: Materials Science and Engineering. Vol. 128. No. 1. IOP Publishing, 2016.
+
+[14]. Garcés, Lina, and Rubén Romero. "Specialized genetic algorithm for transmission network expansion planning considering reliability." Intelligent System Applications to Power Systems, 2009. ISAP'09. 15th International Conference on. IEEE, 2009.
+
+[15]. Alaee, S., et al (2016). “ Stochastic transmission exPansion planning incorporating reliability solved using SFLA meta-heuristic optimization technique.” CSEE Journal of Power and Energy Systems, 2(2), 79-86.
+
+[16]. da Silva, A. M. L., Rezende, L. S., da Fonseca Manso, L. A., & de Resende, L. C. (2010). Reliability worth applied to transmission expansion planning based on ant colony system. International Journal of Electrical Power & Energy Systems, 32(10), 1077-1084.
+
+[17]. Alhamrouni, Ibrahim, et al. "Transmission exPansion planning using AC-based differential evolution algorithm." IET Gener. Transm. Distrib., 8.10(2014):1637-1644.
+
+[18]. Leeprechanon, N., Limsakul, P., & Pothiya, S. (2010). “Optimal transmission exPansion planning using ant colony optimization.” Journal of Sustainable Energy & Environment, 1(2), 71-76.
+
+<!-- page: 137 -->
+
+[19]. Yoshimoto, Katsuhisa, Keiichiro Yasuda, and Ryuichi Yokoyama. "Transmission exPansion planning using neuro-computing hybridized with genetic algorithm." Evolutionary Computation, 1995., Vol. 1. IEEE, 1995.
+
+[20]. Rathore, Chandrakant, et al. "Artificial Bee Colony Algorithm based static transmission exPansion planning." Energy Efficient Technologies for Sustainability (ICEETS), 2013 International Conference on. IEEE, 2013.
+
+[21]. Georgilakis, Pavlos S. "Market-based transmission exPansion planning by improved differential evolution." Int. J. Electr. Power Energy Syst., 32.5 (2010): 450-456.
+
+[22]. Eghbal, Mehdi, TaPan Kumar Saha, and Kazi Nazmul Hasan. "Transmission expansion planning by meta-heuristic techniques: a comParison of shuffled frog leaping algorithm, PSO and GA." Power and energy society general meeting, 2011 IEEE.
+
+[23]. Abdelaziz, Ahmd R. "Genetic algorithm-based power transmission exPansion planning." Electronics, Circuits and Systems, 2000. ICECS 2000. The 7th IEEE International Conference on. Vol. 2. IEEE, 2000.
+
+[24]. Gallego, R. A., A. Monticelli, and R. Romero. "Transmision system exPansion planning by an extended genetic algorithm." IEE Proc.-Gener. Transm . Distrib., 145.3 (1998): 329-335.
+
+[25]. Sadegheih, A., and P. R. Drake. "System network planning exPansion using mathematical programming, genetic algorithms and tabu search." Energy Conv. Mana. 49.6(2008):1557-1566.
+
+[26]. Gallego, et al. "Tabu search algorithm for network synthesis." IEEE Trans. Power Syst 15.2 (2000): 490-495.
+
+[27]. Romero, R., and A. Monticelli. "A zero-one implicit enumeration method for optimizing investments in transmission exPansion planning." IEEE Trans. Power Syst 9.3 (1994): 1385-1391.
+
+[28]. Kavitha, D., and K. Shanti Swarup. "Transmission exPansion planning using LP-based Particle swarm optimization." Power India Conference, 2006 IEEE.
+
+<!-- page: 138 -->
+
+[29]. Chung, T. S., et al. "Multi-objective transmission network planning by a hybrid GA approach with fuzzy decision analysis." Int. J. Electr. Power Energy Syst., 25.3 (2003): 187-192.
+
+[30]. Sousa, Aldir Silva, and Eduardo N. Asada. "Combined heuristic with fuzzy system to transmission system exPansion planning." Electr Power Sys Res, 81.1 (2011): 123-128.
+
+[31]. Gallego, Luis A., et al. "High-performance hybrid genetic algorithm to solve transmission network exPansion planning." IET Generation, Transmission & Distribution 11.5 (2016): 1111-1118.
+
+[32]. López, Jaime Andrés López, Jesús María López-Lezama, and Nicolás Muñoz-Galeano. "A Hybrid Genetic Algorithm Applied to the Transmission Network ExPansion Planning Considering Non-conventional Solution Candidates." Journal of Applied Science and Engineering 22.3 (2019): 569г578.
+
+[33]. Mehrtash, Mahdi, Amin Kargarian, and Ali Mohammadi. "Distributed optimisation-based collaborative security-constrained transmission exPansion planning for multi-regional systems." IET Generation, Transmission & Distribution 13.13 (2019): 2819-2827.
+
+[34]. Mehrtash, Mahdi, Amin Kargarian, and Mohsen Rahmani. "Securityconstrained transmission exPansion planning using linear sensitivity factors." IET Generation, Transmission & Distribution 14.2 (2019): 200-210.
+
+[35]. da Silva, Armando M. Leite, et al. "Constructive metaheuristics applied to transmission exPansion planning with security constraints." 2017 19th international conference on intelligent system application to power systems (ISAP). IEEE, 2017.
+
+[36]. Poubel, R. P. B., et al. "Tree searching heuristic algorithm for multi-stage transmission planning considering security constraints via genetic algorithm." Electric Power Systems Research 142 (2017): 290-297.
+
+[37]. Abdelaziz, Ahmd R. "Genetic algorithm-based power transmission exPansion planning." Electronics, Circuits and Systems, 2000. ICECS 2000. The 7th IEEE International Conference on. Vol. 2. IEEE, 2000.
+
+<!-- page: 139 -->
+
+[38]. Miranda, Felipe L., et al. "Multi-objective transmission expansion planning based on Pareto dominance and neural networks." Electric Power Systems Research 214 (2023): 108864.
+
+[39]. Rider, M. J., A. V. Garcia, and R. Romero. "Power system transmission network exPansion planning using AC model." IET Gener. Transm. Distrib.,1.5(2007):731-742.
+
+[40]. Vilaça, Phillipe, Alexandre Street, and J. Manuel Colmenar. "A MILP-based heuristic algorithm for transmission expansion planning problems." Electric Power Systems Research 208 (2022): 107882.
+
+[41]. Al-Hamouz, Z. M., and A. S. Al-Faraj. "Transmission exPansion planning using nonlinear programming." Transmission and Distribution Conference and Exhibition 2002: Asia Pacific. IEEE/PES. Vol. 1. IEEE, 2002.
+
+[42]. Al-Hamouz, Zakariya Mahmoud, and Ali Sadiq Al-Faraj. "Transmissionexpansion planning based on a nonlinear programming algorithm." Applied energy 76.1(2003): 69-177.
+
+[43]. Romero, RubÉn, Marcos J. Rider, and Irênio de J. Silva. "A metaheuristic to solve the transmission exPansion planning." IEEE Trans. Power Syst 22.4 (2007): 2289-2291.
+
+[44]. Jalilzadeh, S., et al. "Technical and economic evaluation of voltage level in transmission network expansion planning using GA." Energy Conv. Mana. 49.5 (2008): 1119-1125.
+
+[45]. Romero, R., et al. "Constructive heuristic algorithm for the DC model in network transmission exPansion planning." IEE Proc.-Gener. Transm . Distrib., 152.2 (2005): 277-282.
+
+[46]. Al-Saba, et al. "The application of artificial intelligent tools to the transmission exPansion problem." Electr Power Syst Res, 62.2 (2002): 117-126.
+
+[47]. Liu, Jian, Rui Bo, and Siyuan Wang. "Multi-parametric Analysis for Mixed Integer Linear Programming: An Application to Transmission Planning and Congestion Control." arXiv preprint arXiv:2207.09325 (2022).
+
+<!-- page: 140 -->
+
+[48]. Gomes, Phillipe, Luiz Oliveira, and J. Saraiva. "A Congestion-Based Local Search for Transmission Expansion Planning Problems." Available at SSRN 4321354.
+
+[49]. Karmakar, Nihar, and Biplab Bhattacharyya. "A reactive power planning model for power transmission systems using meta-heuristics algorithms." Decision Analytics Journal 7 (2023): 100224.
+
+[50]. Wiwechpaisankul, Weeratep, et al. "Transmission System Expansion Planning Using Optimal Power Flow and Genetic Algorithm." 2022 International Conference on Power, Energy and Innovations (ICPEI). IEEE, 2022.
+
+[51]. Romero, RubÉn, Marcos J. Rider, and Irênio de J. Silva. "A metaheuristic to solve the transmission expansion planning." IEEE Trans. Power Syst 22.4 (2007): 2289-2291.
+
+[52]. Al-Saba, Tawfiq, and Ibrahim El-Amin. "The application of artificial intelligent tools to the transmission expansion problem." Electr Power Syst Res, 62.2 (2002): 117-126.
+
+[53]. Yang, X.-S., Deb, S.: “Cuckoo search via Lévy flights”. Proc. World Congress on Nature and Biologically Inspired Computing (NaBIC 2009), India, 2009, pp. 210–214.
+
+[54]. Cuevas, Erik, and Adolfo Reyna-Orta. "A cuckoo search algorithm for multimodal optimization." The Scientific World Journal 2014 (2014).
+
+[55]. Askarzadeh, Alireza. "A novel metaheuristic method for solving constrained engineering optimization problems: crow search algorithm." Computers & Structures 169 (2016): 1-12.
+
+[56]. Veeresham, K., K. Vaisakh, and M. Veerakumari. "Cuckoo search algorithm for optimal transmission expansion planning with various load models and FFC." Energy Procedia 117 (2017): 826-834.
+
+[57]. Verma, A., B. K. Panigrahi, and P. R. Bijwe. "Harmony search algorithm for transmission network expansion planning." IET Gener. Transm. Distrib., 4.6 (2010): 663-673.
+
+<!-- page: 141 -->
+
+[58]. Guo, C.X. , Cao, Y.J, “An improved particle swarm optimization algorithm for optimal reactive power dispatch”, Power Engineering Society General Meeting,(1), pp272 – 279, 2005.
+
+[59]. Aghaei, Jamshid, et al. "Distribution expansion planning considering reliability and security of energy using modified PSO (Particle Swarm Optimization) algorithm." Energy 65 (2014): 398-411.
+
+[60]. S. Wong, K. Bhattacharya and J. D. Fuller, "Electric power distribution system designand planning in a deregulated environment." IET Generation Transmission and Distribution, vol. 3, pp. 1061-1078, 2009.
+
+[61]. Soroudi, Alireza, and Mehdi Ehsan. "A distribution network expansion planning model considering distributed generation options and techo-economical issues." Energy 35.8 (2010): 3364-3374.
+
+[62]. Bin Humayd, Abdullah. “Distribution system planning with distributed generation: Optimal versus heuristic approach.” MS thesis. University of Waterloo, 2011.
+
+[63]. Huang, Yalin, Karin Alvehag, and Lennart Söder. "Distribution network expansion planning considering distributed generation using probabilistic voltage constraints." Probabilistic Methods Applied to Power Systems (PMAPS), 2014 International Conference on. IEEE, 2014.
+
+[64]. Muñoz-Delgado, Gregorio, Javier Contreras, and José M. Arroyo. "Optimal expansion planning in distribution networks with distributed generation." Power Systems Computation Conference (PSCC), 2014. IEEE, 2014.
+
+[65]. Nayeripour, Majid, Saeed Hasanvand, and Hossein Fallahzadeh-Abarghouei. Optimal expansion planning of distribution system capacity with respect to distributed generations." International Journal of Renewable Energy Research (IJRER) 6.3 (2016): 817-824.
+
+[66]. Wang, H. H., and L. B. Shi. "Optimal distribution network expansion planning incorporating distributed generation." Power and Energy Engineering Conference (PEEC), 2016 IEEE PES Asia-Pacific. IEEE, 2016
+
+<!-- page: 142 -->
+
+[67]. Gopiya, Naik S. “Planning of distribution system using distributed generation.” Diss. Indian institute of technology roorkee, 2016.
+
+[68]. Mirabbasi, Davar, S. S. Mortazavi, and Ali Saidian. "Comprehensive Distribution System Expansion Planning in a Deregulated Environment under System Uncertainties." International Journal of Basic Sciences & Applied Research. Vol., 3 (10), 705-713, 2014.
+
+[69]. Chuang, H. J., Tsai, et al. (2014). Optimal expansion planning of distribution substations using loading gravity with genetic algorithm. In Proceedings of the 2nd International Conference on Intelligent Technologies and Engineering Systems (ICITES2013) (pp. 11-18). Springer International Publishing.
+
+[70]. Xu, Zhengyang, et al. "Power supply capability evaluation of distribution systems with distributed generations under differentiated reliability constraints." International Journal of Electrical Power & Energy Systems 134 (2022): 107344.
+
+[71]. Nayeripour, M., Hasanvand, S., & Fallahzadeh-Abarghouei, H. (2016). “Optimal expansion planning of distribution system capacity with respect to distributed generations.” International Journal of Renewable Energy Research (IJRER), 6(3), 817-824.
+
+[72]. Mantegna, R. N. (1994). “Fast, accurate algorithm for numerical simulation of Levy stable stochastic processes.” Physical Review E, 49(5), 4677.
+
+[73]. Taylor C. W.: “Power System Voltage Stability”, 1994, New York, McGraw-HillEducation.
+
+<!-- page: 143 -->
+
+## DANH MỤC CÁC BÀI BÁO CÔNG BỐ
+
+| TT | Tác giả | Năm | Báo công bố | Tạp chí | Số/Trang |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Huu Tinh Tran, Ngoc Dieu Vo, and Huy Anh Quyen | 2017 | A Pseudo-Gradient Particle Swarm Optimization Approach Applied to Transmission Expansion Planning | The 12th GMSARN International Conference 2017 | E-76 |
+| 2 | Dieu Ngoc Vo, Tri Phuoc Nguyen, Tinh Huu Tran, and Hai Minh Nguyen | 2017 | A Hybrid Particle Swarm Optimization and Differential Evolution for Security-Constrained Optimal Power Flow | The 12th GMSARN International Conference 2017 | E-75 |
+| 3 | Quy Truong Xuan, Dieu Vo Ngoc, and Huu Tinh Tran | 2017 | Pseudo-Gradient Integrated in Particle Swarm Optimization for Solving Security Constrained Optimal Power Flow Problem | The 12th GMSARN International Conference 2017 | E-82 |
+| 4 | Trần Hữu $Tính^{1*}$, Trần Nhựt $Hiếu^{2}$, $Võ Minh Thiện^{3}$ | 2019 | Đánh giá độ tin cây hệ thống điện có xét đến cường độ cắt cưỡng bức | Tạp chí Khoa học công nghệ Đại học Thái Nguyên | ISSN: 1859-2171 195(02): 89 - 94 |
+| 5 | Trần Hữu $Tính^{1*}$, $Võ Ngọc Điều^{2}$, $Quyền Huy Ánh^{1}$ | 2020 | Tổng quan quy hoạch mở rộng lưới điện truyền tải | Tạp chí Khoa học công nghệ Đại học Thái Nguyên | ISSN: 1859-2171 225(06): 223 - 228 |
+| 6 | Trần Hữu $Tính(*)$, $Võ Ngọc Điều$, Quyền Huy Ánh | 2021 | Quy hoạch hệ thống điện có xét đến tối ưu hóa độ dự trữ | Tạp chí Khoa học Đại học Sài Gòn | ISSN 1859-3208 (75): 89-95 |
+
+<!-- page: 144 -->
+
+| 7 | Huutinh Tran, Ngocdieu Vo, Huyanh Quyen, and Thihue Pham | 2021 | Transmission System Expansion Planning in Consideration of Reliability Criteria and Optimal Reserve | In International Conference on Advanced Mechanical Engineering, Automation and Sustainable Development. Cham: Springer International Publishing. (Scopus – Q4) | ISSN 2195-4356 (918-923) |
+| --- | --- | --- | --- | --- | --- |
+| 8 | Huutinh Tran, Ngocdieu Vo, Huyanh Quyen | 2022 | Optimal Transmission Expansion Planning Using Crow Search Algorithm | The 4th International conference on engineering, technology, and innovative researches ICETIR 2022 | ISSN 1551-7616 |
+| 9 | Huutinh Tran, Ngocdieu Vo, Huyanh Quyen | 2022 | A Search Method for Power Transmission System Planning Problem in Ben Tre Province, Viet Nam | In International Conference on Advanced Engineering Theory and Applications. Singapore: Springer Nature Singapore. (Scopus – Q4) | ISSN 1876-1100 (333-344) |
+| 10 | Huutinh Tran, Ngocdieu Vo, Huyanh Quyen | 2023 | A Cuckoo Search Algorithm for Transmission Expansion Planning | Proceedings of 2023 International Conference on System Science and Engineering | pp. 55-60, doi: 10.1109/ICSSE 58758.2023.102 27232 |
+
+<!-- page: 145 -->
+
+## PHỤ LỤC
+
+## A. ĐÁNH GIÁ ĐỘ TIN CẬY HỆ THỐNG ĐIỆN
+
+## A.1. Các chỉ tiêu độ tin cậy của hệ thống điện
+
+a. Xác suất thiếu nguồn (LOLP)
+
+LOLP là xác suất của hệ thống khi công suất khả dụng nguồn phát không đáp ứng nhu cầu phụ tải [10].
+
+$$
+L O L P = P (X > R)\tag{A.1}
+$$
+
+Trong đó,
+
+X : công suất nguồn bị cắt của hệ thống (MW).
+
+: công suất dự trữ của hệ thống (MW).
+
+C : công suất của nguồn phát (MW).
+
+L : công suất tải cực đại (MW).
+
+b. Chỉ tiêu thiếu nguồn (LOLE)
+
+LOLE là số ngày kỳ vọng có thể xảy ra hay số giờ trong một khoảng thời gian khảo sát khi phụ tải lớn nhất vượt quá công suất.
+
+$$
+L O L E = L O L P. T\tag{A.2}
+$$
+
+Nếu mô hình tải là đường cong đỉnh tải liên tục trong năm thì T là 365 ngày và đơn vị của LOLE là ngày/năm. Nếu mô hình tải là đường cong tải ngày thì T là 8760giờ và đơn vị của LOLE là giờ/năm. Ngoài ra, khi đo lường số lượng ngày thiếu nguồn trong khoảng thời gian khảo sát thì chỉ tiêu thiếu nguồn (LOLE) được xác định.
+
+$$
+L O L E = \sum_ {i = 1} ^ {n} K _ {i} P _ {i} (C _ {i} - L _ {i})\tag{A.3}
+$$
+
+Trong đó,Ci : công suất ngày i.
+
+$L _ { i }$ : đỉnh tải dự đoán ngày i.
+
+$P _ { i } ( C _ { i } - L _ { i } )$ : xác suất thiếu nguồn.
+
+$K _ { i }$ : số ngày có xác suất thiếu nguồn $P _ { i }$
+
+<!-- page: 146 -->
+
+## c. Chỉ tiêu thiếu nguồn (EENS)
+
+EENS là tổn thất năng lượng của khách hàng khi công suất hệ thống không đủ cung cấp.
+
+$$
+\mathrm{EENS} = \sum_ {i \in S} T. C _ {i}. P _ {i} \quad (\mathrm{MWh/năm})\tag{A.4}
+$$
+
+Trong đó, Ci : tải bị cắt ở trạng thái thứ i (MW).
+
+## d. Xác suất cắt tải PLC
+
+PLC (Probability of load curtailments) là xác suất thiếu công suất khả dụng cung cấp cho nhu cầu phụ tải. PLC có thể được tính bằng cách tổng xác suất của tất cả các trạng thái của cắt tải.
+
+$$
+P L C = \sum_ {i \in S} p _ {i}\tag{A.5}
+$$
+
+Trong đó, pi : xác suất của hệ thống thứ i và S là tập hợp của tất cả trạng thái của hệ thống tương ứng với cắt tải.
+
+## e. Thời gian cắt tải (EDLC)
+
+EDLC (Expected duration of load curtailments) là một khoảng thời gian công suất khả dụng không đáp ứng nhu cầu phụ tải cực đại của hệ thống. Nếu sơ đồ phụ tải là ngày trong năm thì T = 365 ngày và đơn vị của EDLC là ngày/năm. Nếu sơ đồ phụ tải là giờ trong năm thì T = 8760 giờ và đơn vị của EDLC là giờ/năm.
+
+$$
+E D L C = P L C x T\tag{A.6}
+$$
+
+## f. Chỉ số (SI)
+
+SI (Severity Index) là tỉ số giữa thiếu hụt điện năng do ngừng cung cấp điện khi thiếu nguồn trên công suất tải lớn nhất hằng năm được tính theo đơn vị là phút/năm.
+
+$$
+S I = \frac {E E N S}{L _ {P}}\tag{A.7}
+$$
+
+Trong đó, $L _ { p }$ : là đại lượng phụ tải cực đại (MW).
+
+## g. Chỉ số năng lượng của độ tin cậy (EIR)
+
+Để thuận tiện trong việc so sánh chỉ số độ tin cậy giữa các hệ thống điện. Chỉ số năng lượng của độ tin cậy EIR (Energy Index of Reliability) là chỉ $\mathrm { s } \hat { \mathbf { 0 } }$ được sử dụng phổ biến
+
+<!-- page: 147 -->
+
+$$
+E I R = 1 - \frac {E E N S}{A n n u a l E n e r g y} \qquad (p. u)\tag{A.8}
+$$
+
+## A.2. Đánh giá độ tin cậy hệ thống điện cơ bản
+
+## A.2.1. Đánh giá độ tin cậy ở cấp độ HLI
+
+Cấp độ I của hệ thống điện là chỉ chú ý đến hệ thống nguồn điện. Do đó chỉ số độ tin cậy của hệ thống điện cấp độ I chính là của hệ thống nguồn điện. Có nhiều phương pháp để đánh giá độ tin cậy ở cấp độ I [11]. Hệ thống điện cấp độ I như trình bày ở Hình A.1.a có thể được mô phỏng thành hệ thống tương đương như trình bày ở Hình A.1.b . Công suất và tỷ lệ cắt cưỡng bức của tổ máy phát thứ i có công suất Ci (MW) và $q _ { i }$ tương ứng như trình bày ở Hình A.1.b . Hệ thống điện tương đương với việc tăng thêm công suất Ci (MW) vào phụ tải với cùng tỷ lệ cưỡng bức.
+
+![](images/page_146_image_4.jpg)
+
+Hình A.1. Hệ thống điện thực tế và mô phỏng tương đương với cấp độ I
+
+$$
+x _ {e} = x _ {L} + \sum_ {i = 1} ^ {N G} x _ {o i}\tag{A.9}
+$$
+
+Trong đó,
+
+$x _ { e }$ : biến ngẫu nhiên của phụ tải cộng thêm vào.
+
+$x _ { L }$ : biến ngẫu nhiên của phụ tải hiện tại.
+
+$x _ { o i }$ : biến ngẫu nhiên của xác suất phụ tải là nguyên nhân bởi bị cắt cưỡng bức (FOR) thứ i.
+
+NG : tổng số tổ máy có trong hệ thống điện.
+
+**Cường độ cưỡng bức phần tử nguồn điện:** Thông số cơ bản đánh giá công suất phát của tổ máy phát là xác suất cắt cưỡng bức tại một thời điểm trong tương lai.
+
+<!-- page: 148 -->
+
+Xác suất hỏng hóc trong thời gian dài là hệ $\mathrm { s } \hat { 0 }$ không sẳn sàng của phần tử, xác suất làm việc phần tử (A) là hệ số sẳn sàng của phần tử, U là hệ số hỏng hóc và cường độ sửa chữa như trình bày ở Hình A.2.
+
+Một phần tử trong HTĐ sẽ phải thực hiện chức năng của mình trong suốt thời gian hoạt động của nó. Nếu xét một phần tử (tổ máy phát, máy biến ${ \dot { \mathbf { a } } } \mathbf { p } , \ldots )$ trong một khoảng thời gian (1 năm) thì sẽ có hai trạng thái cơ bản là sau một khoảng thời gian hoạt động thì dừng một khoảng thời gian để bảo trì và sửa chữa. Quy luật này sẽ được lặp đi và lặp lại như trình bày tại Hình A.2. Ti là trạng thái hoạt động tốt (không hư hỏng) và $F _ { i }$ là trạng thái sự cố (hỏng hóc), MTBF là thời gian trung bình vận hành an toàn và MTTR là thời gian trung bình sữa chữa.
+
+![](images/page_147_image_2.jpg)
+
+![](images/page_147_image_3.jpg)
+
+Hình A.2. Chu kỳ hai trạng thái của phần tử
+
+$$
+F O R = U = \frac {\lambda}{\lambda + \mu} = \frac {r}{r + m} = \frac {r}{T} = \frac {f}{\mu} = r * f\tag{A.10}
+$$
+
+$$
+A = \frac {\mu}{\lambda + \mu} = \frac {m}{r + m} = \frac {m}{T} = \frac {1}{\lambda T} = \frac {f}{\lambda}\tag{A.11}
+$$
+
+Trong đó,
+
+: cường độ hỏng hóc.
+
+: cường độ sửa chữa.
+
+<!-- page: 149 -->
+
+m : thời gian vận hành an toàn.
+
+r : thời gian trung bình sửa chữa.
+
+T : chu kỳ.
+
+f =1/T : tầng suất.
+
+$$
+M T T F = 1 / \lambda , M T T R = 1 / \mu , f = \lambda^ {*} U\tag{A.12}
+$$
+
+Đường cong phụ tải tương đương của HLI có thể được tính
+
+$$
+\Phi_ {H L I, i} (x _ {e}) = \Phi_ {H L I, i - 1} (x _ {e}) \otimes f _ {H L I, o i} (x _ {o i}) = \int \Phi_ {H L I, i - 1} (x _ {e} - x _ {o i}). f _ {H L I, o i} (x _ {o i}) d x\tag{A.13}
+$$
+
+Trong đó, : toán tử tích phân toàn bộ đường cong phụ tải nối dài.
+
+$$
+\Phi_ {H L I, 0} (x _ {e} - x _ {0 i}) = \Phi_ {H L I} (x _ {L})\tag{A.14}
+$$
+
+$f _ { { \it H L I } , 0 i } ( x _ { _ { o i } } )$ : hàm phân phối xác suất của cường độ cắt cưỡng bức của máy phát
+
+Chỉ $s \hat { 0 }$ độ tin cậy cấp độ I là LOLEHLI và EENSHLI được tính như sau:
+
+$$
+L O L E _ {H L I} = \Phi_ {H L I} (x) \big | _ {x = I C} \quad \text {(gio / năm)}\tag{A.15}
+$$
+
+$$
+E E N S _ {H L I} = \int_ {I C} ^ {I C + L p} _ {H L I} \Phi (x) d x \quad \text {(MWh / năm)}\tag{A.16}
+$$
+
+Trong đó,
+
+IC: tổng công suất của các tổ máy phát (MW).
+
+## A.2.2. Đánh giá độ tin cậy ở cấp độ HLII
+
+Đánh giá độ tin cậy hệ thống điện cấp độ II tức là đánh giá cùng lúc hệ thống nguồn và hệ thống truyền tải. Các chỉ số của HLII có thể được phân loại theo điểm chỉ số điểm tải và các chỉ số hệ thống điện chính theo mục tiêu của đánh giá [11]. Các chỉ số tin cậy có thể được đánh giá từ hệ thống điện hợp nhất theo đường cong phụ tải tương ứng (CMELDC) của HLII bằng cách sử dụng Mô hình hệ thống tổ máy phát tương đương (SFEG) Mô hình A.3., $A P _ { k , i j }$ và $q _ { k , i j }$ là công suất đến và trạng thái xác suất ngẫu nhiên j tại thời điểm tải k tương ứng.
+
+<!-- page: 150 -->
+
+![](images/page_149_image_0.jpg)
+
+a. Hệ thống điện thực tế
+
+![](images/page_149_image_2.jpg)
+
+b. Tổng hợp mô hình các nguồn phát giả định tương đương
+
+![](images/page_149_image_4.jpg)
+
+Hình A.3. Tổng hợp Mô hình các nguồn phát giả định tương đương tại HLII
+
+<!-- page: 151 -->
+
+a. Các chỉ số độ tin cậy tại các điểm tải
+
+Các chỉ số độ tin cậy tại các điểm tải $L O L E _ { k }$ và $E E N S _ { k }$ có thể được tính bằng cách sử dụng (A.17) và (A.18) với CMELDC nút, $\varphi _ { \boldsymbol { k } , N _ { } { G } } ( \boldsymbol { x } )$ trong (A.19).
+
+$$
+{\cal L O L E} _ {k} = \Phi_ {k, N G} (x) \Big | _ {x = A P _ {k}}\tag{A.17}
+$$
+
+$$
+E E N S _ {k} = \int_ {A P _ {k}} ^ {A P _ {k} + L p _ {k}} \Phi_ {k, N G} (x) d x \quad (\mathrm{MWh/nam})\tag{A.18}
+$$
+
+Trong đó,
+
+$A P _ { k }$ : công suất đến cực đại tải tại nút k.
+
+$L _ { p k } : \mathbf { g } \mathbf { \dot { i } } \mathbf { \acute { o } \acute { i } }$ hạn cực đại tải tại nút k.
+
+$$
+\Phi_ {k, i} (x _ {e}) = \Phi_ {k, o} (x _ {e}) \otimes f _ {k, o s i} (x _ {o i}) = \int \Phi_ {k, o} (x _ {e} - x _ {o i}) f _ {k, o s i} (x _ {o i}) d x _ {o i}\tag{A.19}
+$$
+
+Trong đó,
+
+ : toán tử tích phân toàn bộ đường cong phụ tải nối dài.
+
+$\Phi _ { k , \mathcal { O } }$ : điểm bắt đầu đường cong phụ tải theo thời gian tại nút k.
+
+$f _ { k , o s i }$ : khả năng cắt phần tử của mô hình hoạt động hệ thống nguồn phát bởi các nguồn phát từ 1 đến i tại nút tải k.
+
+b. Các chỉ số độ tin cậy của hệ thống điện chính
+
+Các $E E N S _ { H L I I }$ của hệ thống điện chính bằng tổng của $E E N S _ { k }$ tại các phụ tải như trong (A.20). Các LOLE của hệ thống điện chính là khác nhau từ tổng kết $L O L E _ { k }$ tại các phụ tải. Các chỉ tiêu cắt tải ELC<sub>HLII</sub> của hệ thống điện chính bằng tổng của $E L C _ { k }$ tại các phụ tải và do đó $L O L E _ { H L I I }$ của hệ thống điện chính.
+
+$$
+E E N S _ {H L I I} = \sum_ {k = 1} ^ {N L} E E N S _ {k} \quad \text {(MWh / năm)}\tag{A.20}
+$$
+
+$$
+E L C _ {H L I I} = \sum_ {k = 1} ^ {N L} E L C _ {k} \quad (\mathrm{MW/Cur.năm})\tag{A.21}
+$$
+
+$$
+L O L E _ {H L I I} = E E N S _ {H L I I} / E L C _ {H L I I} \quad (\text {gio / năm})\tag{A.22}
+$$
+
+Trong đó, NL: số lượng phụ tải.
+
+$$
+E L C _ {k} = E E N S _ {k} / L O L E _ {k} (\mathrm{MW/Cur.năm})\tag{A.23}
+$$
+
+<!-- page: 152 -->
+
+## A.2.3. Đánh giá độ tin cậy của hệ thống truyền tải
+
+Trong nhiều thập niên qua đã có rất nhiều nhà khoa học đã phát triển nhiều giải thuật, phương pháp toán để đánh giá độ tin cậy hệ thống điện cấp độ I và II. Tuy nhiên, theo xu thế mới là chuyển thị trường điện từ độc quyền sang cạnh tranh đang phát triển mạnh mẽ trên thế giới cũng như ở Việt Nam. Do đó, công việc đánh giá độ tin cậy của hệ thống truyền tải là một vấn đề lớn cho các nhà quản lý. Hiện nay, công cụ phát triển mạnh mẽ dùng để đánh giá độ tin cậy xác suất ngẫu nhiên của hệ thống truyền tải là hiệu số giữa chỉ số độ tin cậy của hệ thống điện cấp độ II với chỉ số độ tin cậy của hệ thống điện cấp độ I.
+
+$$
+L O L E _ {T S} = L O L E _ {H L I I} - L O L E _ {H L I}\tag{A.24}
+$$
+
+$$
+E E N S _ {T S} = E E N S _ {H L I I} - E E N S _ {H L I}\tag{A.25}
+$$
+
+## B. THÔNG SỐ CÁC MẠNG ĐIỆN CHUẨN
+
+## B.1. Mạng điện chuẩn Garver 6 nút
+
+## B.1.1. Thông số các nút
+
+Bảng B.1 Thông số nút mạng điện chuẩn Garver 6 nút
+
+| Nút | Loại | Pd | Qd | G<sub>s</sub> | B<sub>s</sub> | Khu vực | V<sub>m</sub> | V<sub>a</sub> | Điện áp cơ bản KV | Trạng thái | V<sub>max</sub> | V<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3 | 80 | 0 | 0 | 0 | 1 | 1,05 | 0 | 230 | 1 | 1,05 | 1,05 |
+| 2 | 2 | 240 | 0 | 0 | 0 | 1 | 1,05 | 0 | 230 | 1 | 1,05 | 1,05 |
+| 3 | 2 | 40 | 0 | 0 | 0 | 1 | 1,07 | 0 | 230 | 1 | 1,07 | 1,07 |
+| 4 | 1 | 160 | 0 | 0 | 0 | 1 | 1 | 0 | 230 | 1 | 1,05 | 0,95 |
+| 5 | 1 | 240 | 0 | 0 | 0 | 1 | 1 | 0 | 230 | 1 | 1,05 | 0,95 |
+| 6 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 230 | 1 | 1,05 | 0,95 |
+
+## B.1.2. Thông số các nguồn phát
+
+Bảng B.2 Thông số nguồn phát mạng điện chuẩn Garver 6 nút
+
+| Nút | P<sub>g</sub> | Qg | Qmax | Qmin | V<sub>g</sub> | Công suất cơ bản | Trạng thái | P<sub>max</sub> | P<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 50 | 0 | 100 | -100 | 1,05 | 100 | 1 | 200 | 50 |
+| 3 | 165 | 0 | 100 | -100 | 1,05 | 100 | 1 | 150 | 37,5 |
+| 6 | 545 | 0 | 100 | -100 | 1,07 | 100 | 1 | 180 | 45 |
+
+<!-- page: 153 -->
+
+## B.1.3. Thông số các nhánh
+
+Bảng B.3 Thông số nhánh mạng điện chuẩn Garver 6 nút
+
+| Từ nút | Đến nút | r | x | b | c | Giá B | Giá C | Tỉ số | Góc | Trạng thái | Góc tciểựuc | Góc c đựạci |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 0,1 | 0,4 | 0,04 | 40 | 40 | 40 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 3 | 0,09 | 0,38 | 0,04 | 40 | 40 | 40 | 0 | 0 | 0 | -360 | 360 |
+| 1 | 4 | 0,15 | 0,6 | 0,04 | 60 | 60 | 60 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 5 | 0,05 | 0,2 | 0,06 | 40 | 40 | 40 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 6 | 0,17 | 0,68 | 0,04 | 40 | 40 | 40 | 0 | 0 | 0 | -360 | 360 |
+| 2 | 3 | 0,05 | 0,2 | 0,06 | 40 | 40 | 40 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 4 | 0,1 | 0,4 | 0,02 | 60 | 60 | 60 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 5 | 0,08 | 0,31 | 0,04 | 30 | 30 | 30 | 0 | 0 | 0 | -360 | 360 |
+| 2 | 6 | 0,0188 | 0,3 | 0,05 | 90 | 90 | 90 | 0 | 0 | 1 | -360 | 360 |
+| 3 | 4 | 0,15 | 0,59 | 0,05 | 70 | 70 | 70 | 0 | 0 | 0 | -360 | 360 |
+| 3 | 5 | 0,25 | 0,2 | 0,05 | 70 | 70 | 70 | 0 | 0 | 1 | -360 | 360 |
+| 3 | 6 | 0,12 | 0,48 | 0,02 | 80 | 80 | 80 | 0 | 0 | 0 | -360 | 360 |
+| 4 | 5 | 0,16 | 0,63 | 0,08 | 20 | 20 | 20 | 0 | 0 | 0 | -360 | 360 |
+| 4 | 6 | 0,0375 | 0,3 | 0,08 | 20 | 20 | 20 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 6 | 0,15 | 0,61 | 0,06 | 40 | 40 | 40 | 0 | 0 | 0 | -360 | 360 |
+
+## B.2. Mạng điện chuẩn IEEE 25 nút
+
+## B.2.1. Thông số các nút
+
+Bảng B.4 Thông số nút mạng điện chuẩn IEEE 25 nút
+
+| Nút | Loại | Pd | Qd | G<sub>s</sub> | B<sub>s</sub> | Khu vực | V<sub>m</sub> | V<sub>a</sub> | Điện áp cơ bản KV | Trạng thái | V<sub>max</sub> | V<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 2 | 1 | 128 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 3 | 1 | 181 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 4 | 1 | 74 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 5 | 1 | 71 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 6 | 1 | 71 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 7 | 2 | 265 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 8 | 1 | 194 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 9 | 2 | 333 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 10 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 11 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 12 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 13 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+
+<!-- page: 154 -->
+
+| 14 | 2 | 317 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 15 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 16 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 17 | 2 | 108 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 18 | 1 | 175 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 19 | 2 | 97 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 20 | 1 | 195 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 21 | 1 | 136 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 22 | 2 | 100 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 23 | 1 | 180 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 24 | 2 | 125 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+| 25 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1.1 | 0,9 |
+
+## B.2.2. Thông số các nguồn phát
+
+Bảng B.5 Thông số nút mạng điện chuẩn IEEE 25 nút
+
+| Nút | P<sub>g</sub> | Qg | Qmax | Qmin | V<sub>g</sub> | Công suất cơ bản (MVA) | Trạng thái | P<sub>max</sub> | P<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 660 | 0 | 9900 | -9900 | 1 | 100 | 1 | 660 | 0 |
+| 7 | 595 | 0 | 9900 | -9900 | 1 | 100 | 1 | 595 | 0 |
+| 9 | 400 | 0 | 9900 | -9900 | 1 | 100 | 1 | 400 | 0 |
+| 10 | 300 | 0 | 9900 | -9900 | 1 | 100 | 1 | 300 | 0 |
+| 11 | 400 | 0 | 9900 | -9900 | 1 | 100 | 1 | 400 | 0 |
+| 14 | 215 | 0 | 9900 | -9900 | 1 | 100 | 1 | 215 | 0 |
+| 17 | 192 | 0 | 9900 | -9900 | 1 | 100 | 1 | 192 | 0 |
+| 19 | 192 | 0 | 9900 | -9900 | 1 | 100 | 1 | 192 | 0 |
+| 22 | 155 | 0 | 9900 | -9900 | 1 | 100 | 1 | 155 | 0 |
+| 24 | 300 | 0 | 9900 | -9900 | 1 | 100 | 1 | 300 | 0 |
+| 25 | 660 | 0 | 9900 | -9900 | 1 | 100 | 1 | 660 | 0 |
+
+## B.2.3. Thông số các nhánh
+
+Bảng B.6 Thông số nhánh mạng điện chuẩn IEEE 25 nút
+
+| Từ nút | Đến nút | r | x | b | Giá A | Giá B | Giá C | Tỉ lệ | Góc | Trạng thái | Góc cực tiểu | Góc cực đại |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 0 | 0,0108 | 0 | 941 | 941 | 941 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 7 | 0 | 0,0865 | 0 | 76 | 76 | 76 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 13 | 0 | 0,0966 | 0 | 117 | 117 | 117 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 3 | 0 | 0,0198 | 0 | 588 | 588 | 588 | 0 | 0 | 1 | -360 | 360 |
+
+<!-- page: 155 -->
+
+| 3 | 22 | 0 | 0,0231 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 4 | 18 | 0 | 0,1037 | 0 | 1176 | 1176 | 1176 | 0 | 0 | 1 | -360 | 360 |
+| 4 | 19 | 0 | 0,1267 | 0 | 294 | 294 | 294 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 17 | 0 | 0,0854 | 0 | 941 | 941 | 941 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 20 | 0 | 0,0883 | 0 | 1105 | 1105 | 1105 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 25 | 0 | 0,0902 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+| 6 | 18 | 0 | 0,1651 | 0 | 517 | 517 | 517 | 0 | 0 | 1 | -360 | 360 |
+| 6 | 20 | 0 | 0,1651 | 0 | 329 | 329 | 329 | 0 | 0 | 1 | -360 | 360 |
+| 6 | 24 | 0 | 0,0614 | 0 | 1270 | 1270 | 1270 | 0 | 0 | 1 | -360 | 360 |
+| 7 | 13 | 0 | 0,0476 | 0 | 294 | 294 | 294 | 0 | 0 | 1 | -360 | 360 |
+| 7 | 16 | 0 | 0,0476 | 0 | 105 | 105 | 105 | 0 | 0 | 1 | -360 | 360 |
+| 8 | 16 | 0 | 0,0418 | 0 | 576 | 576 | 576 | 0 | 0 | 1 | -360 | 360 |
+| 8 | 22 | 0 | 0,0389 | 0 | 76 | 76 | 76 | 0 | 0 | 1 | -360 | 360 |
+| 9 | 11 | 0 | 0,0129 | 0 | 305 | 305 | 305 | 0 | 0 | 1 | -360 | 360 |
+| 9 | 15 | 0 | 0,0144 | 0 | 294 | 294 | 294 | 0 | 0 | 1 | -360 | 360 |
+| 10 | 11 | 0 | 0,0678 | 0 | 941 | 941 | 941 | 0 | 0 | 1 | -360 | 360 |
+| 10 | 15 | 0 | 0,1053 | 0 | 294 | 294 | 294 | 0 | 0 | 1 | -360 | 360 |
+| 11 | 14 | 0 | 0,0245 | 0 | 823 | 823 | 823 | 0 | 0 | 1 | -360 | 360 |
+| 12 | 14 | 0 | 0,0519 | 0 | 117 | 117 | 117 | 0 | 0 | 1 | -360 | 360 |
+| 12 | 23 | 0 | 0,0839 | 0 | 82 | 82 | 82 | 1 | 0 | 1 | -360 | 360 |
+| 13 | 18 | 0 | 0,0839 | 0 | 117 | 117 | 117 | 1 | 0 | 1 | -360 | 360 |
+| 13 | 20 | 0 | 0,0839 | 0 | 294 | 294 | 294 | 1 | 0 | 1 | -360 | 360 |
+| 14 | 22 | 0 | 0,0173 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 15 | 22 | 0 | 0,0259 | 0 | 423 | 423 | 423 | 0 | 0 | 1 | -360 | 360 |
+| 16 | 18 | 0 | 0,0839 | 0 | 294 | 294 | 294 | 1 | 0 | 1 | -360 | 360 |
+| 16 | 20 | 0 | 0,0839 | 0 | 663 | 663 | 663 | 1 | 0 | 1 | -360 | 360 |
+| 17 | 19 | 0 | 0,0139 | 0 | 470 | 470 | 470 | 0 | 0 | 1 | -360 | 360 |
+| 17 | 23 | 0 | 0,2112 | 0 | 411 | 411 | 411 | 0 | 0 | 1 | -360 | 360 |
+| 18 | 23 | 0 | 0,1190 | 0 | 176 | 176 | 176 | 0 | 0 | 1 | -360 | 360 |
+| 19 | 21 | 0 | 0,1920 | 0 | 129 | 129 | 129 | 0 | 0 | 1 | -360 | 360 |
+| 20 | 21 | 0 | 0,0605 | 0 | 211 | 211 | 211 | 0 | 0 | 1 | -360 | 360 |
+| 24 | 25 | 0 | 0,1805 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+
+<!-- page: 156 -->
+
+## B.3. Mạng điện Brazil 46 nút
+
+## B.3.1. Thông số các nút
+
+Bảng B.7 Thông số nút mạng điện Brazil 46 nút
+
+| Nút | Loại | Pd | Qd | G<sub>s</sub> | B<sub>s</sub> | Khu vực | V<sub>m</sub> | V<sub>a</sub> | Điện áp cơ bản KV | Trạng thái | V<sub>max</sub> | V<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 2 | 1 | 443,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 3 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 4 | 1 | 300,7 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 5 | 1 | 238 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 6 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 7 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 8 | 1 | 72,2 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 9 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 10 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 11 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 12 | 1 | 511,9 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 13 | 1 | 185,8 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 14 | 3 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 15 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 16 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 17 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 18 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 19 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 20 | 1 | 1091,2 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 21 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 22 | 1 | 81,9 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 23 | 1 | 458,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 24 | 1 | 478,2 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 25 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 26 | 1 | 231,9 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 27 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 28 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 29 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 30 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 31 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 32 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 33 | 1 | 229,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 34 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 35 | 1 | 216 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 36 | 1 | 90,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+
+<!-- page: 157 -->
+
+| 37 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 38 | 1 | 216 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 39 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 40 | 1 | 262,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 41 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 42 | 1 | 1607,9 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 43 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 44 | 1 | 79,1 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 45 | 1 | 86,7 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+| 46 | 2 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 220 | 1 | 1,1 | 0,9 |
+
+B.3.2. Thông số các nguồn phát
+
+Bảng B.8 Thông số nguồn phát mạng điện Brazil 46 nút
+
+| Nút | P<sub>g</sub> | Qg | Qmax | Qmin | V<sub>g</sub> | Công suất cơ bản MVA | Trạng thái | P<sub>max</sub> | P<sub>min</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 14 | 1257 | 0 | 9900 | -9900 | 1 | 100 | 1 | 1257 | 0 |
+| 16 | 2000 | 0 | 9900 | -9900 | 1 | 100 | 1 | 2000 | 0 |
+| 17 | 1050 | 0 | 9900 | -9900 | 1 | 100 | 1 | 1050 | 0 |
+| 19 | 1670 | 0 | 9900 | -9900 | 1 | 100 | 1 | 1670 | 0 |
+| 27 | 220 | 0 | 9900 | -9900 | 1 | 100 | 1 | 220 | 0 |
+| 28 | 800 | 0 | 9900 | -9900 | 1 | 100 | 1 | 800 | 0 |
+| 31 | 700 | 0 | 9900 | -9900 | 1 | 100 | 1 | 700 | 0 |
+| 32 | 500 | 0 | 9900 | -9900 | 1 | 100 | 1 | 500 | 0 |
+| 34 | 748 | 0 | 9900 | -9900 | 1 | 100 | 1 | 748 | 0 |
+| 37 | 300 | 0 | 9900 | -9900 | 1 | 100 | 1 | 300 | 0 |
+| 39 | 600 | 0 | 9900 | -9900 | 1 | 100 | 1 | 600 | 0 |
+| 46 | 700 | 0 | 9900 | -9900 | 1 | 100 | 1 | 700 | 0 |
+
+## B.3.3. Thông số các nhánh
+
+Bảng B.9 Thông số nhánh mạng điện Brazil 46 nút
+
+| Từ nút | Đến nút | r | x | b | rateA | rateB | rateC | Tỉ số | Góc | Trạng thái | Góc t ciựểuc | Góc c đựạci |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 0 | 0,1065 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 1 | 7 | 0 | 0,0616 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 3 | 0 | 0,1250 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 4 | 0 | 0,0882 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 2 | 5 | 0 | 0,0324 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 3 | 46 | 0 | 0,0203 | 0 | 2117 | 2117 | 2117 | 0 | 0 | 1 | -360 | 360 |
+| 4 | 5 | 0 | 0,0566 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+
+<!-- page: 158 -->
+
+| 4 | 9 | 0 | 0,0924 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 4 | 11 | 0 | 0,2246 | 0 | 282 | 282 | 282 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 6 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 8 | 0 | 0,1132 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 9 | 0 | 0,1173 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 5 | 11 | 0 | 0,0915 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 6 | 46 | 0 | 0,0128 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 7 | 8 | 0 | 0,1023 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 8 | 13 | 0 | 0,1348 | 0 | 282 | 282 | 282 | 0 | 0 | 1 | -360 | 360 |
+| 9 | 10 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 9 | 14 | 0 | 0,1756 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+| 10 | 46 | 0 | 0,0081 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 11 | 46 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 12 | 14 | 0 | 0,0740 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 13 | 18 | 0 | 0,1805 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+| 13 | 20 | 0 | 0,1073 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 14 | 15 | 0 | 0,0374 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 14 | 18 | 0 | 0,1514 | 0 | 282 | 282 | 282 | 0 | 0 | 1 | -360 | 360 |
+| 14 | 22 | 0 | 0,0840 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 14 | 26 | 0 | 0,1614 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+| 15 | 16 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 16 | 17 | 0 | 0,0078 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 16 | 28 | 0 | 0,0222 | 0 | 2117 | 2117 | 2117 | 0 | 0 | 1 | -360 | 360 |
+| 16 | 32 | 0 | 0,0311 | 0 | 1647 | 1647 | 1647 | 0 | 0 | 1 | -360 | 360 |
+| 16 | 46 | 0 | 0,0203 | 0 | 2117 | 2117 | 2117 | 0 | 0 | 1 | -360 | 360 |
+| 17 | 19 | 0 | 0,0061 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 17 | 32 | 0 | 0,0232 | 0 | 2000 | 2000 | 2000 | 0 | 0 | 1 | -360 | 360 |
+| 18 | 19 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 18 | 20 | 0 | 0,1997 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 19 | 21 | 0 | 0,0278 | 0 | 1764 | 1764 | 1764 | 0 | 0 | 1 | -360 | 360 |
+| 19 | 25 | 0 | 0,0325 | 0 | 1647 | 1647 | 1647 | 0 | 0 | 1 | -360 | 360 |
+| 19 | 32 | 0 | 0,0195 | 0 | 2117 | 2117 | 2117 | 0 | 0 | 1 | -360 | 360 |
+| 19 | 46 | 0 | 0,0222 | 0 | 2117 | 2117 | 2117 | 0 | 0 | 1 | -360 | 360 |
+| 20 | 21 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 20 | 23 | 0 | 0,0932 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 21 | 25 | 0 | 0,0174 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 22 | 26 | 0 | 0,0790 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 23 | 24 | 0 | 0,0774 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 24 | 25 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 24 | 33 | 0 | 0,1448 | 0 | 282 | 282 | 282 | 0 | 0 | 1 | -360 | 360 |
+| 24 | 34 | 0 | 0,1647 | 0 | 258 | 258 | 258 | 0 | 0 | 1 | -360 | 360 |
+
+<!-- page: 159 -->
+
+| 25 | 32 | 0 | 0,0319 | 0 | 1647 | 1647 | 1647 | 0 | 0 | 1 | -360 | 360 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 26 | 27 | 0 | 0,0832 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 26 | 29 | 0 | 0,0541 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 27 | 29 | 0 | 0,0998 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 27 | 36 | 0 | 0,0915 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 27 | 38 | 0 | 0,2080 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 28 | 30 | 0 | 0,0058 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 28 | 31 | 0 | 0,0053 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 28 | 41 | 0 | 0,0339 | 0 | 1529 | 1529 | 1529 | 0 | 0 | 1 | -360 | 360 |
+| 28 | 43 | 0 | 0,0406 | 0 | 1411 | 1411 | 1411 | 0 | 0 | 1 | -360 | 360 |
+| 29 | 30 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 31 | 32 | 0 | 0,0046 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 31 | 41 | 0 | 0,0278 | 0 | 1764 | 1764 | 1764 | 0 | 0 | 1 | -360 | 360 |
+| 32 | 41 | 0 | 0,0309 | 0 | 1647 | 1647 | 1647 | 0 | 0 | 1 | -360 | 360 |
+| 32 | 43 | 0 | 0,0309 | 0 | 1647 | 1647 | 1647 | 0 | 0 | 1 | -360 | 360 |
+| 33 | 34 | 0 | 0,1265 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 34 | 35 | 0 | 0,0491 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 35 | 38 | 0 | 0,1980 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 36 | 37 | 0 | 0,1057 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 37 | 39 | 0 | 0,0283 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 37 | 40 | 0 | 0,1281 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 37 | 42 | 0 | 0,2105 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 38 | 42 | 0 | 0,0907 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 39 | 42 | 0 | 0,2030 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+| 40 | 41 | 0 | 0,0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 40 | 42 | 0 | 0.0932 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 40 | 45 | 0 | 0.2205 | 0 | 211 | 211 | 211 | 0 | 0 | 1 | -360 | 360 |
+| 41 | 43 | 0 | 0.0139 | 0 | 2352 | 2352 | 2352 | 0 | 0 | 1 | -360 | 360 |
+| 42 | 43 | 0 | 0.0125 | 0 | 705 | 705 | 705 | 0 | 0 | 1 | -360 | 360 |
+| 42 | 44 | 0 | 0.1206 | 0 | 317 | 317 | 317 | 0 | 0 | 1 | -360 | 360 |
+| 44 | 45 | 0 | 0.1864 | 0 | 235 | 235 | 235 | 0 | 0 | 1 | -360 | 360 |
+
+## B.3.4. Thông số đầu vào nguồn phát
+
+Bảng B.10 Thông số đầu vào nguồn phát mạng điện Brazil 46 nút
+
+<table><tbody><tr><td rowspan="2">Nút</td><td colspan="2">Nguồn phát (MW)</td><td rowspan="2">Nhu cầu (MW)</td><td rowspan="2">Nút</td><td colspan="2">Nguồn phát (MW)</td><td rowspan="2">Nhu cầu (MW)</td></tr><tr><td>Cực đại</td><td>Cấp độ</td><td>Cực đại</td><td>Cấp độ</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>24</td><td>0</td><td>0</td><td>478,2</td></tr><tr><td>2</td><td>0</td><td>0</td><td>443,1</td><td>25</td><td>0</td><td>0</td><td>0</td></tr><tr><td>3</td><td>0</td><td>0</td><td>0</td><td>26</td><td>0</td><td>0</td><td>231,9</td></tr><tr><td>4</td><td>0</td><td>0</td><td>300,7</td><td>27</td><td>220</td><td>54</td><td>0</td></tr></tbody></table>
+
+<!-- page: 160 -->
+
+| 5 | 0 | 0 | 238 | 28 | 800 | 730 | 0 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 6 | 0 | 0 | 0 | 29 | 0 | 0 | 0 |
+| 7 | 0 | 0 | 0 | 30 | 0 | 0 | 0 |
+| 8 | 0 | 0 | 72,2 | 31 | 700 | 310 | 0 |
+| 9 | 0 | 0 | 0 | 32 | 500 | 450 | 0 |
+| 10 | 0 | 0 | 0 | 33 | 0 | 0 | 229,1 |
+| 11 | 0 | 0 | 0 | 34 | 748 | 221 | 0 |
+| 12 | 0 | 0 | 511,9 | 35 | 0 | 0 | 216 |
+| 13 | 0 | 0 | 185,8 | 36 | 0 | 0 | 90,1 |
+| 14 | 1257 | 994 | 0 | 37 | 300 | 212 | 0 |
+| 15 | 0 | 0 | 0 | 38 | 0 | 0 | 216 |
+| 16 | 2000 | 1366 | 0 | 39 | 600 | 221 | 0 |
+| 17 | 1050 | 1000 | 0 | 40 | 0 | 0 | 262,1 |
+| 18 | 0 | 0 | 0 | 41 | 0 | 0 | 0 |
+| 19 | 1670 | 773 | 0 | 42 | 0 | 0 | 1607,9 |
+| 20 | 0 | 0 | 1091,2 | 43 | 0 | 0 | 0 |
+| 21 | 0 | 0 | 0 | 44 | 0 | 0 | 79,1 |
+| 22 | 0 | 0 | 81,9 | 45 | 0 | 0 | 86,7 |
+| 23 | 0 | 0 | 458,1 | 46 | 700 | 599 | 0 |
+
+## B.3.5. Thông số đầu vào nhánh
+
+Bảng B.11 Thông số đầu vào nhánh mạng điện Brazil 46 nút
+
+| nTúừt | Đnúếnt | n<sup>ij</sup><sub>0</sub> | x(p.u) | (PMijmWax) | (Cxh1i0 p<sup>3</sup> h$)í |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 2 | 0,1065 | 270 | 7076 |
+| 1 | 7 | 1 | 0,0616 | 270 | 4349 |
+| 2 | 3 | 0 | 0,1250 | 600 | 8178 |
+| 2 | 4 | 0 | 0,0882 | 270 | 5965 |
+| 2 | 5 | 2 | 0,0324 | 270 | 2581 |
+| 3 | 46 | 0 | 0,0203 | 1800 | 24319 |
+| 4 | 5 | 2 | 0,0566 | 270 | 4046 |
+| 4 | 9 | 1 | 0,0924 | 270 | 6217 |
+| 4 | 11 | 0 | 0,2246 | 240 | 14247 |
+| 5 | 6 | 0 | 0,0125 | 600 | 8178 |
+| 5 | 8 | 1 | 0,1132 | 270 | 7480 |
+| 5 | 9 | 1 | 0,1173 | 270 | 7732 |
+| 5 | 11 | 0 | 0,0915 | 270 | 6167 |
+| 6 | 46 | 0 | 0,0128 | 2000 | 16005 |
+| 7 | 8 | 1 | 0,1023 | 270 | 6823 |
+| 8 | 13 | 1 | 0,1348 | 240 | 8739 |
+| 9 | 10 | 0 | 0,0125 | 600 | 8178 |
+| 9 | 14 | 2 | 0,1756 | 220 | 11267 |
+
+<!-- page: 161 -->
+
+| 10 | 46 | 0 | 0,0081 | 2000 | 10889 |
+| --- | --- | --- | --- | --- | --- |
+| 11 | 46 | 0 | 0,0125 | 600 | 8178 |
+| 12 | 14 | 2 | 0,0740 | 270 | 5106 |
+| 13 | 18 | 1 | 0,1805 | 220 | 11570 |
+| 13 | 20 | 1 | 0,1073 | 270 | 7126 |
+| 14 | 15 | 0 | 0,0374 | 270 | 2884 |
+| 14 | 18 | 2 | 0,1514 | 240 | 9803 |
+| 14 | 22 | 1 | 0,0840 | 270 | 5712 |
+| 14 | 26 | 1 | 0,1614 | 220 | 10409 |
+| 15 | 16 | 0 | 0,0125 | 600 | 8178 |
+| 16 | 17 | 1 | 0,0078 | 2000 | 10505 |
+| 16 | 28 | 0 | 0,0222 | 1800 | 26365 |
+| 16 | 32 | 0 | 0,0311 | 1400 | 36213 |
+| 16 | 46 | 1 | 0,0203 | 1800 | 24319 |
+| 17 | 19 | 1 | 0,0061 | 2000 | 8715 |
+| 17 | 32 | 0 | 0,0232 | 1700 | 27516 |
+| 18 | 19 | 1 | 0,0125 | 600 | 8178 |
+| 18 | 20 | 1 | 0,1997 | 200 | 12732 |
+| 19 | 21 | 1 | 0,0278 | 1500 | 32632 |
+| 19 | 25 | 0 | 0,0325 | 1400 | 37748 |
+| 19 | 32 | 1 | 0,0195 | 1800 | 23423 |
+| 19 | 46 | 1 | 0,0222 | 1800 | 26365 |
+| 20 | 21 | 1 | 0,0125 | 600 | 8178 |
+| 20 | 23 | 2 | 0,0932 | 270 | 6268 |
+| 21 | 25 | 0 | 0,0174 | 2000 | 21121 |
+| 22 | 26 | 1 | 0,0790 | 270 | 5409 |
+| 23 | 24 | 2 | 0,0774 | 270 | 5308 |
+| 24 | 25 | 0 | 0,0125 | 600 | 8178 |
+| 24 | 33 | 1 | 0,1448 | 240 | 9399 |
+| 24 | 34 | 1 | 0,1647 | 220 | 10611 |
+| 25 | 32 | 0 | 0,0319 | 1400 | 37109 |
+| 26 | 27 | 2 | 0,0832 | 270 | 5662 |
+| 26 | 29 | 0 | 0,0541 | 270 | 3894 |
+| 27 | 29 | 0 | 0,0998 | 270 | 6672 |
+| 27 | 36 | 1 | 0,0915 | 270 | 6167 |
+| 27 | 38 | 2 | 0,2080 | 200 | 13237 |
+| 28 | 30 | 0 | 0,0058 | 2000 | 8331 |
+| 28 | 31 | 0 | 0,0053 | 2000 | 7819 |
+| 28 | 41 | 0 | 0,0339 | 1300 | 39283 |
+| 28 | 43 | 0 | 0,0406 | 1200 | 46701 |
+| 29 | 30 | 0 | 0,0125 | 600 | 8178 |
+| 31 | 32 | 0 | 0,0046 | 2000 | 7052 |
+| 31 | 41 | 0 | 0,0278 | 1500 | 32632 |
+
+<!-- page: 162 -->
+
+| 32 | 41 | 0 | 0,0309 | 1400 | 35957 |
+| --- | --- | --- | --- | --- | --- |
+| 32 | 43 | 1 | 0,0309 | 1400 | 35957 |
+| 33 | 34 | 1 | 0,1265 | 270 | 8288 |
+| 34 | 35 | 2 | 0,0491 | 270 | 3591 |
+| 35 | 38 | 1 | 0,1980 | 200 | 12631 |
+| 36 | 37 | 1 | 0,1057 | 270 | 7025 |
+| 37 | 39 | 1 | 0,0283 | 270 | 2329 |
+| 37 | 40 | 1 | 0,1281 | 270 | 8389 |
+| 37 | 42 | 1 | 0,2105 | 200 | 13388 |
+| 38 | 42 | 3 | 0,0907 | 270 | 6116 |
+| 39 | 42 | 3 | 0,2030 | 200 | 12934 |
+| 40 | 41 | 0 | 0,0125 | 600 | 8178 |
+| 40 | 42 | 1 | 0,0932 | 270 | 6268 |
+| 40 | 45 | 0 | 0,2205 | 180 | 13994 |
+| 41 | 43 | 0 | 0,0139 | 2000 | 17284 |
+| 42 | 43 | 1 | 0,0125 | 600 | 8178 |
+| 42 | 44 | 1 | 0,1206 | 270 | 7934 |
+| 44 | 45 | 1 | 0,1864 | 200 | 11924 |
+
+B.4. Mạng điện tỉnh Bến Tre cấp 110kV
+
+## B.4.1. Thông số hệ thống nguồn cung cấp điện
+
+Bảng B.12 Thông số nguồn phát mạng điện tỉnh Bến Tre
+
+| STT | Tên nguồn cung cấp | Công suất cực đại (MW) |
+| --- | --- | --- |
+| 1 | NM điện gió Bình Đại | 330 |
+| 2 | NM điện gió số 5 Thanh Hải | 110 |
+| 3 | NM điện gió V1-3 Bến Tre | 30 |
+| 4 | Trạm 220kV Bến Tre | 80 |
+| 5 | Trạm 220KV Mỏ Cày | 240 |
+
+## B.4.2. Thông số trạm biến áp 110kV
+
+Bảng B.13 Thông số trạm biến áp mạng điện tỉnh Bến Tre
+
+| STT | Tên trạm biến áp | Công suất (MW) |
+| --- | --- | --- |
+| 1 | Chợ Lách | 23 |
+| 2 | Mỏ Cày | 72 |
+| 3 | Bình Thạnh | 36 |
+| 4 | Giao Long | 72 |
+| 5 | Bến Tre | 113 |
+| 6 | Giồng Trôm | 36 |
+
+<!-- page: 163 -->
+
+| 7 | Bình Đại | 93 |
+| --- | --- | --- |
+| 8 | Ba Tri | 72 |
+
+B.4.3. Thông số dự báo hệ thống nguồn cung cấp tỉnh Bến Tre 2030
+
+Bảng B.14 Thông số nguồn phát mạng điện tỉnh Bến Tre đến năm 2030
+
+| STT | Phụ tải từ thanh cái các trạm biến áp | Công suất cực đại (MW) |
+| --- | --- | --- |
+| 1 | Chợ Lách | 28 |
+| 2 | Mỏ Cày | 87 |
+| 3 | Bình Thạnh | 43 |
+| 4 | Giao Long | 87 |
+| 5 | Bến Tre | 136 |
+| 6 | Giồng Trôm | 43 |
+| 7 | Bình Đại | 112 |
+| 8 | Ba Tri | 87 |
+
+B.4.4. Thông số đường dây tỉnh Bến Tre
+
+Bảng B.15 Thông số liên kết đường dây mạng điện tỉnh Bến Tre
+
+| TT | Từ Nút | Đến Nút | thTaừnh cái | thĐaếnnh cái | Lo dạẫi n dây (ACSR) | L (km) | Pmax (MW) | Ro(Ω/km) | Xo(Ω/km) | R(Ω) | X(Ω) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 2 | 1 | Mỏ cày | Chợ Lách | 240 | 26,442 | 116 | 0,1182 | 0,0021 | 3,1254 | 0,0555 |
+| 2 | 2 | 4 | Mỏ Cày | Bình Thạnh | 240 | 33,594 | 116 | 0,1182 | 0,0027 | 3,9708 | 0,0907 |
+| 3 | 6 | 2 | Bến Tre | Mỏ Cày | 185 | 17,622 | 98 | 0,1591 | 0,0014 | 2,8037 | 0,0247 |
+| 4 | 6 | 3 | Bến Tre | Giao Long | 240 | 14,394 | 116 | 0,1182 | 0,0012 | 1,7014 | 0,0173 |
+| 5 | 6 | 5 | Bến Tre | Giồng Trôm | 185 | 24,002 | 98 | 0,1594 | 0,0019 | 3,8259 | 0,0456 |
+| 6 | 5 | 7 | Giồng Trôm | Bình Đại | 185 | 20,925 | 98 | 0,1594 | 0,0017 | 3,3354 | 0,0356 |
+| 7 | 5 | 8 | Giồng Trôm | Ba Tri | 185 | 16,682 | 98 | 0,1594 | 0,0013 | 2,5691 | 0,0217 |
+
+B.4.5. Thông số dự báo nhu cầu phụ tải qua các năm đến năm 2045
+
+Bảng B.16 Thông số phụ tải mạng điện tỉnh Bến Tre đến năm 2045
+
+<!-- page: 164 -->
+
+<table><tbody><tr><td rowspan="2">Năm Trạm</td><td colspan="7">Công suất (MW)</td></tr><tr><td>2022</td><td>2024</td><td>2025</td><td>2030</td><td>2035</td><td>2040</td><td>2045</td></tr><tr><td>Chợ Lách</td><td>23</td><td>24</td><td>24</td><td>26</td><td>28</td><td>30</td><td>31</td></tr><tr><td>Mỏ Cày</td><td>72</td><td>74</td><td>75</td><td>81</td><td>87</td><td>92</td><td>98</td></tr><tr><td>Bình Thạnh</td><td>36</td><td>37</td><td>38</td><td>41</td><td>43</td><td>46</td><td>49</td></tr><tr><td>Giao Long</td><td>72</td><td>74</td><td>75</td><td>81</td><td>87</td><td>92</td><td>98</td></tr><tr><td>Bến Tre</td><td>113</td><td>117</td><td>118</td><td>127</td><td>136</td><td>145</td><td>154</td></tr><tr><td>Giồng Trôm</td><td>36</td><td>37</td><td>38</td><td>41</td><td>43</td><td>46</td><td>49</td></tr><tr><td>Bình Đại</td><td>93</td><td>96</td><td>97</td><td>105</td><td>112</td><td>119</td><td>127</td></tr><tr><td>Ba Tri</td><td>72</td><td>74</td><td>75</td><td>81</td><td>87</td><td>92</td><td>98</td></tr></tbody></table>
+
+## B.5. Mạng điện tỉnh Hậu Giang cấp 110kV
+
+## B.5.1. Thông số các tuyến đường dây 110kV cấp điện cho tỉnh Hậu Giang
+
+Bảng B.17 Các tuyến đường dây 110kV cấp điện cho tỉnh Hậu Giang
+
+| TT | Tên đường dây | Số mạch/ chiều dài (km) | Dòng điện (A) | P<sub>max</sub>(A/MW) | Tỷ lệ mang tải (%) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Rạch Giá 2 - Giồng Riềng - Vị Thanh - Long Mỹ | 1x70,214 | 510 | 250/47 | 49 |
+| 2 | Trà Nóc - KCN Hưng Phú - Châu Thành - Phụng Hiệp | 1x87,764 | 610 | 185/36 | 31 |
+| 3 | Sóc Trăng 2 -Sóc Trăng - Phụng Hiệp | 1x27,582 | 610 | 438/88 | 72 |
+| 4 | Tổng chiều dài ĐZ 110kV (đầu - cuối) | 273,446 | - | - | - |
+| 5 | Tính trên địa bàn tỉnh (km) | 89,5 | - | - | - |
+
+## B.5.2. Thông số công suất lưới 110kV tỉnh Hậu Giang trao đổi với các tỉnh lân cận
+
+Bảng B.18 Công suất trao đổi trên lưới 110kV tỉnh Hậu Giang với các tỉnh
+
+| TT | Tên đường dây 110kV | Công suất cấp cực đại (MW) | Khu vực trao đổi công suất |
+| --- | --- | --- | --- |
+| 1 | Trà Nóc - Châu Thành | 27 | Nhận từ Cần Thơ |
+| 2 | Sóc Trăng 2 - Phụng Hiệp | 7 | Nhận từ Sóc Trăng |
+| 3 | Rạch Giá 2 - Vị Thanh | 31 | Nhận từ Rạch Giá |
+
+<!-- page: 165 -->
+
+B.5.3. Thông số các trạm biến áp 220kV - 110kV cấp điện cho tỉnh Hậu Giang Bảng B.19 Các trạm biến áp 220kV - 110kV cấp điện cho tỉnh Hậu Giang
+
+<table><tbody><tr><td>TT</td><td>Tên trạm</td><td>Điện áp (kV)</td><td>C suôấntg (MVA)</td><td>Pmax (MW)</td><td>Pmin (MW)</td><td>M mứacn đgộ tải (%)</td><td>Số lộ ra</td></tr><tr><td>A</td><td colspan="2">Trạm 220kV</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>Rạch Giá 2</td><td>220/110</td><td>375</td><td>283</td><td>204</td><td>80</td><td></td></tr><tr><td>2</td><td>Trà Nóc</td><td>220/110</td><td>225</td><td>158</td><td>87</td><td>79</td><td></td></tr><tr><td>3</td><td>Sóc Trăng 2</td><td>220/110</td><td>125</td><td>80</td><td>48</td><td>71</td><td></td></tr><tr><td>B</td><td colspan="2">Trạm 110kV</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>Vị Thanh</td><td>110/22</td><td>40</td><td>33,1</td><td>13,1</td><td>84/43</td><td>5</td></tr><tr><td>2</td><td>Phụng Hiệp</td><td>110/22</td><td>25</td><td>16,1</td><td>9,3</td><td>67</td><td>4</td></tr><tr><td>3</td><td>Châu Thành</td><td>110/22</td><td>25</td><td>15,4</td><td>9,0</td><td>62</td><td>5</td></tr><tr><td>4</td><td>Long Mỹ</td><td>110/22</td><td>40</td><td>14</td><td>8,6</td><td>39</td><td>5</td></tr><tr><td></td><td>Tổng 110kV</td><td></td><td>130</td><td>78,6</td><td>40</td><td></td><td>19</td></tr></tbody></table>
+
+B.6. Mạng điện vùng Đồng Bằng Sông Cửu Long cấp 220kV và 500kV
+
+B.6.1. Thông số hệ thống nguồn cung cấp điện
+
+Bảng B.20 Hệ thống nguồn cung cấp điện vùng ĐBSCL
+
+| TT | Tên nguồn cung cấp | Công suất cực đại |
+| --- | --- | --- |
+| 1 | NM nhiệt điện Ô Môn | 330 MW |
+| 2 | NM nhiệt điện Cần Thơ | 33 MW |
+| 3 | NM gasturbine Trà Nóc | 150 MW |
+| 4 | NM khí-điện-đạm Cà Mau | 2.800 MW |
+| 5 | Đ. Dây 220kV Phú Lâm-Mỹ Thuận | 2x342,9 MW |
+| 6 | Đ. Dây 220kV Cai Lậy-Phú Mỹ1 | 342,9 MW |
+| 7 | Đ. Dây 220kV Mỹ Tho2-Phú Mỹ1 | 342,9 MW |
+| 8 | Đ. Dây 110kV Mỹ Tho2-Phú Lâm | 71,5MW |
+| 9 | Đ. Dây 110kV Tân An-Phú Lâm | 115,3 MW |
+
+<!-- page: 166 -->
+
+## B.6.2. Thông số các trạm biến áp 220kV
+
+Bảng B.21 Trạm biến áp 220kV vùng ĐBSCL
+
+| TT | Tên trạm biến áp | Công suất |
+| --- | --- | --- |
+| 1 | Cai Lậy | 2 X 125 MVA |
+| 2 | Mỹ Tho 2 | 125 MVA |
+| 3 | Cao Lãnh 2 | 125 MVA |
+| 4 | Vĩnh Long 2 | 2 X 125 MVA |
+| 5 | Trà Nóc | 250 MVA |
+| 6 | Rạch Giá 2 | 250 MVA + 125 MVA |
+| 7 | Cà Mau 2 | 250 MVA |
+| 8 | Bạc Liêu 2 | 125 MVA |
+
+## B.6.3. Thông số đường dây 220kV
+
+Bảng B.22 Đường dây 220kV vùng ĐBSCL
+
+<table><tbody><tr><td>TT</td><td>Tên đường dây</td><td>Lọai dây dẫn</td></tr><tr><td rowspan="2">1</td><td rowspan="2">Phú Lâm 2 - Cai Lậy (2 mạch)</td><td>ACSR 795MCM</td></tr><tr><td>ACSR 411.66MM</td></tr><tr><td>2</td><td>Cai Lậy - NMĐ Ô Môn (2 mạch)</td><td>2xACSR 795MCM</td></tr><tr><td>3</td><td>Cai Lậy - Cao Lãnh 2</td><td>ACSR 795MCM</td></tr><tr><td>4</td><td>Cai Lậy - Vĩnh Long 2</td><td>ACSR 411.66MM +ACSR 795MCM</td></tr><tr><td>5</td><td>Cai Lậy - Mỹ Tho 2</td><td>ACSR 795MCM</td></tr><tr><td>6</td><td>Cai Lậy - Trà Nóc</td><td>ACSR 411.66MM</td></tr><tr><td>7</td><td>Cai Lậy - NMĐ Phú Mỹ</td><td>ACSR 795MCM</td></tr><tr><td>8</td><td>Mỹ Tho 2 - NMĐ Phú Mỹ</td><td>ACSR 795MCM</td></tr><tr><td>9</td><td>NMĐ Ô Môn - NMĐ Cà Mau</td><td>2 x ACSR 795MCM</td></tr><tr><td>10</td><td>Rạch Giá 2 - Trà Nóc</td><td>ACSR 795MCM</td></tr><tr><td>11</td><td>Rạch Giá 2 - Cao Lãnh</td><td>ACSR 795MCM</td></tr><tr><td>12</td><td>Rạch Giá 2-NMĐ Cà Mau (3mạch)</td><td>3 x ACSR 400</td></tr><tr><td>13</td><td>NMĐ Cà Mau - Bạc Liêu 2</td><td>ACSR 410</td></tr><tr><td>14</td><td>NMĐ Cà Mau - Cà Mau 2</td><td>ACSR 410</td></tr></tbody></table>
+
+## B.6.4. Thông số đường dây 110kV
+
+Bảng B.23 Đường dây 110kV vùng ĐBSCL
+
+| TT | Tên đường dây | Lọai dây dẫn |
+| --- | --- | --- |
+| 1 | Mỹ Tho 2 - Bình Đức | AC185 |
+| 2 | Bình Đức - Mỹ Tho | AC185 |
+| 3 | Mỹ Tho - Gò Công | AC185 |
+| 4 | Gò Công - Cần Đước | ACSR 185 |
+
+<!-- page: 167 -->
+
+| 5 | Cần Đước - TPHCM | ACSR 185 |
+| --- | --- | --- |
+| 6 | Mỹ Tho 2 - Tân An | ACSR 240 |
+| 7 | Tân An - Phú Lâm 2 | ACSR 240 |
+| 8 | Mỹ Tho 2 - Phú Lâm 2 | AC 120 |
+| 9 | Mỹ Tho 2 - Long An | AC 120 |
+| 10 | Long An - Ngã rẽ | AC 185 |
+| 11 | Ngã Rẽ - Chung Shing | AC 185 |
+| 12 | Ngã Rẽ - Formosa | AC 185 |
+| 13 | Formosa - Bến Lức | AC 185 |
+| 14 | Bến Lức - Ching Luh | AC 185 |
+| 15 | Ching Luh - Phú Lâm 2 | AC 185 |
+| 16 | Cao Lãnh 2 - Cao Lãnh | AC 185 |
+| 17 | Cao Lãnh - An Long | ACKP 150 |
+| 18 | An Long - Hồng Ngự | ACKP 185 |
+| 19 | Cao Lãnh - Mỹ Thuận | ACKP 150 |
+| 20 | Mỹ Thuận - Cai Lậy | ACKP 240 |
+| 21 | Cai Lậy - Ngã Rẽ | AC 185 |
+| 22 | Ngã Rẽ - Thạnh Hoá | AC 185 |
+| 23 | Ngã Rẽ - Mộc Hoá | AC 185 |
+| 24 | Cai Lậy - Mỹ Tho 2 | AC 185 |
+| 25 | Mỹ Tho 2 - Bến Tre | ACKP 150 |
+| 26 | Bến Tre - Mõ Cày | ACSR 185 |
+| 27 | Bến Tre -Ba Tri | AC 185 |
+| 28 | Phú Tân - Cái Dầu | ACSR 185 |
+| 29 | Cái Dầu - Châu Đốc | ACKP 150 |
+| 30 | Cái Dầu - Lộ Tẻ | ACKP 150 |
+| 31 | Lộ Tẻ - Rạch Giá 2 | ACSR 240 |
+| 32 | Lộ Tẻ - Long Xuyên | ACKP 150 |
+| 33 | Long Xuyên - Thới Thuận | ACSR 150 |
+| 34 | Thới Thuận - Thốt Nốt | ACSR 160 |
+| 35 | Thốt Nốt - Nam Bộ | AC185 + ACSR160 |
+| 36 | Nam Bộ - Trà Nóc | ACSR 160 |
+| 37 | Trà Nóc - Long Hoà | ACSR 160 |
+| 38 | Long Hoà - Cần Thơ | ACSR 160 |
+| 39 | Cần Thơ - Ngã 3 | AC 240 |
+| 40 | Ngã 3 - Hưng Phú | AC 240 |
+| 41 | Ngã 3 - Trà Nóc | AC 240 |
+| 42 | Hưng Phú - Phụng Hiệp | ALMEL 181.6 |
+| 43 | Phụng Hiệp - Sóc Trăng | AC 185 |
+
+<!-- page: 168 -->
+
+| 44 | Trà Nóc - KCN Cần Thơ | AC 240 |
+| --- | --- | --- |
+| 45 | KCN CT - Ngã Rẽ | AC 240 |
+| 46 | Ngã Rẽ - Bình Minh | AC 240 |
+| 47 | Ngã Rẽ - Sa Đéc | AC 240 |
+| 48 | Sa Đéc - An Hoà | AC 185 |
+| 49 | Sa Đéc - Vĩnh Long 2 | AC 240 |
+| 50 | An Hoà - Thạnh Hưng | AC 185 |
+| 51 | Thạnh Hưng - Cao Lãnh | AC 185 |
+| 52 | Sóc Trăng - Ngã Rẽ BL2 | AC2K 150 |
+| 53 | Sóc Trăng - Đại Ngãi | AC 185 |
+| 54 | Đại Ngãi - Trần Đề | ACSR 185 |
+| 55 | Ngã Rẽ BL2 - Bạc Liêu 2 | AC 410 |
+| 56 | Bạc Liêu - Giá Rai | AC2K 150 |
+| 57 | Giá Rai - Cà Mau | AC2K 150 |
+| 58 | Cà Mau - Cà Mau 2 | AC 240 |
+| 59 | Cà Mau 2 - Cái Nước | AC 240 |
+| 60 | Cà Mau 2 - An Xuyên | AC 240 |
+| 61 | An Xuyên - Hồng Dân | AC 185/29 |
+| 62 | Hồng Dân - Vị Thanh | AC 185/29 |
+| 63 | Vị Thanh - Giồng Riềng | AC 185/29 |
+| 64 | Giồng Riềng - Rạch Giá 2 | AC 185 + ACSR 185 |
+| 65 | Rạch Giá 2 - Chung Sư | AC 185 |
+| 66 | Rạch Giá 2 - An Biên | AC 185/29 |
+| 67 | Rạch Giá 2 - Rạch Giá | ACSR 160 |
+| 68 | Rạch Giá - Kiên Lương | ALMEL 181.6 |
+| 69 | Kiên Lương - Kiên Lương 2 | ACSR 397.5MCM |
+| 70 | Kiên Lương 2 - Ngã rẽ Holcim. | ACSR 795 |
+| 71 | Ngã rẽ Holcim - XM Holcim | AC 240 |
+| 72 | Ngã rẽ Holcim - Rạch Giá 2 | ACSR 795 |
+| 73 | Vĩnh Long 2 - Vĩnh Long | AC 240 |
+| 74 | Vĩnh Long - Vũng Liêm | ALMEL 181.6 |
+| 75 | Vũng Liêm - Trà Vinh | ACKP 185 + ALMEL 181.6 |
+| 76 | Trà Vinh - Duyên Hải | AC 185 |
+
+B.6.5. Thông số trạm biến áp 110kV
+
+Bảng B.24 Trạm biến áp 110kV vùng ĐBSCL
+
+| TT | Tên trạm biến áp | Công suất |
+| --- | --- | --- |
+| 1 | Cao Lãnh | 2 X 63MVA |
+| 2 | An Long | 25MVA |
+
+<!-- page: 169 -->
+
+| 3 | Hồng Ngự | 25MVA |
+| --- | --- | --- |
+| 4 | Mỹ Thuận | 25MVA |
+| 5 | Thạnh Hoá | 40MVA |
+| 6 | Mộc Hoá | 25MVA |
+| 7 | Cai Lậy | 2 x 40MVA |
+| 8 | Bến Tre | 40MVA+ 25MVA |
+| 9 | Mõ Cày | 2 x 25MVA |
+| 10 | Ba Tri | 40MVA |
+| 11 | Phú Tân | 40MVA |
+| 12 | Châu Đốc | 40MVA+ 25MVA |
+| 13 | Cái Dầu | 2 x 25MVA |
+| 14 | Long Xuyên | 2 x 40MVA |
+| 15 | Thới Thuận | 63MVA |
+| 16 | Thốt Nốt | 25MVA |
+| 17 | Nam Bộ | 2 x 16MVA |
+| 18 | Long Hoà | 40MVA |
+| 19 | Cần Thơ | 40MVA+ 25MVA |
+| 20 | Hưng Phú | 40MVA |
+| 21 | Phụng Hiệp | 25MVA |
+| 22 | KCN Cần Thơ | 63MVA |
+| 23 | Bình Minh | 25MVA |
+| 24 | Sa Đéc | 2 x 25MVA |
+| 25 | An Hoà | 40MVA |
+| 26 | Thạnh Hưng | 2 x 25MVA |
+| 27 | Sóc Trăng | 63MVA+ 40MVA |
+| 28 | Đại Ngãi | 25MVA |
+| 29 | Trần Đề | 25MVA |
+| 30 | Bạc Liêu | 2 x 25MVA |
+| 31 | Giá Rai | 13.8MVA+ 25MVA |
+| 32 | Cà Mau | 2 x 40MVA |
+| 33 | Cái Nước | 40MVA |
+| 34 | An Xuyên | 25MVA |
+| 35 | Hồng Dân | 25MVA |
+| 36 | Vị Thanh | 40MVA |
+| 37 | Giồng Riềng | 25MVA |
+| 38 | Chung Sư | 40MVA |
+| 39 | An Biên | 40MVA |
+| 40 | Rạch Giá | 2 x 25MVA |
+| 41 | Kiên Lương | 2 x 30MVA |
+
+<!-- page: 170 -->
+
+| 42 | Kiên Lương 2 | 2 x 25MVA |
+| --- | --- | --- |
+| 43 | XM Holcim | 2 x 40MVA |
+| 43 | Vĩnh Long | 2 x 25MVA |
+| 44 | Vũng Liêm | 2 x 25MVA |
+| 45 | Trà Vinh | 2 x 25MVA |
+| 46 | Duyên Hải | 25MVA |
+| 47 | Mỹ Tho 2 | 40MVA + 63MVA |
+| 48 | Bình Đức | 25MVA |
+| 49 | Mỹ Tho | 25MVA |
+| 50 | Gò Công | 16MVA+ 40MVA |
+| 51 | Cần Đước | 16MVA+ 40MVA |
+| 52 | Tân An | 40MVA |
+| 53 | Long An | 40MVA |
+| 54 | Chung Shing | 20MVA |
+| 55 | Formosa | 15MVA |
+| 56 | Bến Lức | 40MVA+ 25MVA |
+| 57 | Ching Luh | 30MVA |
+
+## B.6.6. Thông số dữ liệu đầu vào
+
+Chi phí được xác định theo Quyết định số 170/QĐ-EVN ngày 12/6/2018 về việc công bố suất vốn đầu tư xây dựng công trình trạm biến áp, đường dây tải điện cấp điện áp từ 110kV đến 500kV của Hội đồng thành viên Tập đoàn Điện lực Việt Nam. Nghiên cứu đã giả định lại giá trị LOLE theo Thông tư 28/2014/TT-BCT quy định xử lý sự cố hệ thống điện quốc gia ngày 15 tháng 9 năm 2014 và tham khảo bài báo đã được đăng trên tạp chí uy tín quốc tế ở tài liệu tham khảo [11].
+
+Các giá trị thông số ở các tỉnh ĐBSCL được xác định theo kế hoạch Quy hoạch phát triển điện lực quốc gia giai đoạn 2011 - 2020 có xét đến năm 2030 và kế hoạch quy hoạch phát triển điện lực quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050. Dữ liệu đầu vào để tính toán quy hoạch cho lưới điện vùng ĐBSCL trình bày tại Bảng B.25, lưới điện tỉnh Bến Tre trình bày Bảng B.26, lưới điện tỉnh Hậu Giang tại Bảng B.27 . Trong đó x và y là nút đầu và cuối của phần tử (đường dây, máy biến áp, nguồn phát). $\mathbf { T } _ { \mathbf { i } - \mathbf { j } } ^ { 0 }$ và $\mathbf { C ^ { 0 } } _ { \mathbf { i } - \mathbf { j } }$ là chi phí đầu tư và công suất tương ứng của các ứng viên sẽ đầu tư. $\mathrm { T ^ { k } } _ { \mathrm { i - j } }$ và $\mathbf { C } _ { \mathrm { ~ i - j } } ^ { \mathrm { k } _ { \mathrm { . } } } ,$ k = 1 - 4 là số đường dây sẽ đầu tư song song với đường dây hiện hữu. Trong chương trình này sử dụng số phần tử ứng viên nối giữa 2 nút x và y là $\mathbf{m}(\mathbf{x}, \mathbf{y}) = 4$
+
+<!-- page: 171 -->
+
+Bảng B.25 Dữ liệu đầu vào của chương trình vùng ĐBSCL
+
+| TT | x | y | Tên nút | T0x-y(MW) | T1x-y(MW) | T2x-y(MW) | T3x-y(MW) | T4x-y(MW) | C0x-y(M$) | C1x-y(M$) | C2x-y(M$) | C3x-y(M$) | C4x-y(M$) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 1 | S TNC | 183 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2 | 0 | 2 | S OMO | 2800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3 | 0 | 8 | S CAM | 1518 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | 0 | 21 | S ST5 | 3800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | 0 | 22 | S TV5 | 3800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 6 | 0 | 23 | S SH5 | 4000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 7 | 0 | 24 | S KL5 | 3800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 8 | 0 | 27 | S KL2 | 600 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 9 | 0 | 33 | S SH2 | 1200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 10 | 0 | 34 | S TV2 | 600 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 11 | 0 | 35 | S ST2 | 600 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 12 | 24 | 27 | T KL5 | 450 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 13 | 26 | 28 | T TN5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 14 | 29 | 2 | T OM5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 15 | 25 | 30 | T DH5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 16 | 3 | 31 | T PL5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 17 | 13 | 32 | T MT5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 18 | 23 | 33 | T SH5 | 900 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 19 | 22 | 34 | T TVI | 450 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 20 | 21 | 35 | T ST5 | 450 | 450 | 450 | 450 | 0 | 0 | 50 | 50 | 50 | 0 |
+| 21 | 1 | 5 | T TN2 | 250 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 22 | 6 | 7 | T RG2 | 375 | 125 | 125 | 125 | 0 | 0 | 7 | 7 | 7 | 0 |
+| 23 | 19 | 20 | T CM2 | 250 | 125 | 125 | 125 | 0 | 0 | 7 | 7 | 7 | 0 |
+| 24 | 17 | 18 | T BL2 | 125 | 125 | 125 | 125 | 0 | 0 | 7 | 7 | 7 | 0 |
+| 25 | 15 | 16 | T VL2 | 250 | 125 | 125 | 125 | 0 | 0 | 7 | 7 | 7 | 0 |
+| 26 | 32 | 14 | T MT2 | 125 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 27 | 9 | 10 | T CLH | 125 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 28 | 11 | 12 | T CLY | 250 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 29 | 31 | 4 | T PL2 | 750 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 30 | 25 | 3 | DH5-PL5 | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 13 | 7 | 13 | 7 |
+| 31 | 2 | 8 | OM2-CAM | 686 | 343 | 343 | 343 | 343 | 0 | 37 | 19 | 37 | 19 |
+| 32 | 8 | 17 | CAM-BL2 | 343 | 343 | 343 | 343 | 343 | 0 | 15 | 8 | 15 | 8 |
+| 33 | 8 | 19 | CAM-CM2 | 343 | 343 | 343 | 343 | 343 | 0 | 2 | 1 | 2 | 1 |
+| 34 | 6 | 8 | RG2-CAM | 942 | 314 | 314 | 314 | 314 | 0 | 15 | 8 | 15 | 8 |
+| 35 | 5 | 6 | TN2-RG2 | 343 | 343 | 343 | 343 | 343 | 0 | 19 | 10 | 19 | 10 |
+| 36 | 6 | 9 | RG2-CLH | 343 | 343 | 343 | 343 | 343 | 0 | 37 | 19 | 37 | 19 |
+| 37 | 5 | 11 | TN2-CLY | 343 | 343 | 343 | 343 | 343 | 0 | 21 | 11 | 21 | 11 |
+| 38 | 11 | 32 | CLY-MT2 | 343 | 343 | 343 | 343 | 343 | 0 | 5 | 3 | 5 | 3 |
+| 39 | 9 | 11 | CLH-CLY | 343 | 343 | 343 | 343 | 343 | 0 | 15 | 8 | 15 | 8 |
+
+<!-- page: 172 -->
+
+| 40 | 11 | 15 | CLY-VL2 | 343 | 343 | 343 | 343 | 343 | 0 | 9 | 5 | 9 | 5 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 41 | 11 | 31 | CLY-PL2 | 686 | 343 | 343 | 343 | 343 | 0 | 19 | 10 | 19 | 10 |
+| 42 | 21 | 29 | ST5-OMO | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 24 | 12 | 24 | 12 |
+| 43 | 22 | 13 | TV5-MT5 | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 40 | 20 | 40 | 20 |
+| 44 | 23 | 13 | SH5-MT5 | 6547 | 3273 | 3273 | 3273 | 3273 | 0 | 65 | 33 | 65 | 33 |
+| 45 | 2 | 11 | OM2-CLY | 686 | 343 | 343 | 343 | 343 | 0 | 21 | 11 | 21 | 11 |
+| 46 | 24 | 25 | KL5-DH5 | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 149 | 75 | 149 | 75 |
+| 47 | 25 | 13 | DH5-MT5 | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 30 | 15 | 30 | 15 |
+| 48 | 24 | 26 | KL5-TNT | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 50 | 25 | 50 | 25 |
+| 49 | 26 | 29 | TN5-OMO | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 13 | 7 | 13 | 7 |
+| 50 | 13 | 3 | MT5-PL5 | 2390 | 2390 | 2390 | 2390 | 2390 | 0 | 29 | 15 | 29 | 15 |
+| 51 | 13 | 29 | MT5-OMO | 4780 | 2390 | 2390 | 2390 | 2390 | 0 | 60 | 30 | 60 | 30 |
+| 52 | 1 | 36 | TN1-LOD | 580 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 53 | 2 | 36 | OM2-LOD | 125 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 54 | 4 | 36 | PL1-LOD | 350 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 55 | 7 | 36 | RG1-LOD | 475 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 56 | 10 | 36 | CLH-LOD | 350 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 57 | 12 | 36 | CLY-LOD | 450 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 58 | 14 | 36 | MT1-LOD | 407 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 59 | 16 | 36 | VL1-LOD | 350 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 60 | 18 | 36 | BL1-LOD | 120 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 61 | 20 | 36 | CM1-LOD | 240 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 62 | 34 | 36 | TV2-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 63 | 33 | 36 | SH2-LOD | 300 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 64 | 27 | 36 | KL2-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 65 | 28 | 36 | TNT-LOD | 800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 66 | 30 | 36 | DH2-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 67 | 3 | 36 | PL5-LOD | 6000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 68 | 35 | 36 | ST2-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 69 | 32 | 36 | MT2-LOD | 343 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 70 | 11 | 36 | CL2-LOD | 343 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 71 | 29 | 36 | OM5-LOD | 2390 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Bảng B.26 Dữ liệu đầu vào của chương trình tỉnh Bến Tre
+
+| TT | x | y | Tên nút | T0x-y(MW) | T1x-y(MW) | T2x-y(MW) | T3x-y(MW) | T4x-y(MW) | C0x-y(M$) | C1x-y(M$) | C2x-y(M$) | C3x-y(M$) | C4x-y(M$) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 7 | S BDI | 330 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2 | 0 | 8 | S BAT | 30 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3 | 0 | 4 | S BTH | 110 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | 0 | 2 | S MCY | 240 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | 0 | 6 | S BTE | 80 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 6 | 1 | 9 | T CLH | 23 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 7 | 2 | 10 | T MCY | 72 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 8 | 3 | 12 | T GLG | 72 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+
+<!-- page: 173 -->
+
+| 9 | 4 | 11 | T BTH | 36 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 10 | 5 | 14 | T GTM | 36 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 11 | 6 | 13 | T BTE | 113 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 12 | 7 | 15 | T BĐI | 93 | 36 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 13 | 8 | 16 | T BAT | 72 | 57 | 36 | 36 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 14 | 2 | 1 | MCY-CLH | 116 | 58 | 58 | 58 | 58 | 0 | 4 | 2 | 4 | 2 |
+| 15 | 2 | 4 | MCY-BTH | 116 | 58 | 58 | 58 | 58 | 0 | 5 | 3 | 5 | 3 |
+| 16 | 6 | 2 | MCY-BTE | 98 | 49 | 49 | 49 | 49 | 0 | 2 | 2 | 2 | 2 |
+| 17 | 6 | 3 | BTE-GLG | 116 | 58 | 58 | 58 | 58 | 0 | 3 | 1 | 2 | 1 |
+| 18 | 6 | 5 | BTE-GTM | 98 | 49 | 49 | 49 | 49 | 0 | 3 | 2 | 3 | 2 |
+| 19 | 5 | 7 | GTM-BĐI | 98 | 49 | 49 | 49 | 49 | 0 | 3 | 2 | 3 | 2 |
+| 20 | 5 | 8 | GTM-BAT | 98 | 49 | 49 | 49 | 49 | 0 | 3 | 2 | 3 | 2 |
+| 21 | 9 | 17 | CLH-LOD | 31 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 22 | 10 | 17 | MCY-LOD | 98 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 23 | 11 | 17 | BTH-LOD | 49 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 24 | 12 | 17 | GLG-LOD | 98 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 25 | 13 | 17 | BTE-LOD | 154 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 26 | 14 | 17 | GTM-LOD | 49 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 27 | 15 | 17 | BDI-LOD | 127 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 28 | 16 | 17 | BAT-LOD | 98 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Bảng B.27 Dữ liệu đầu vào của chương trình tỉnh Hậu Giang
+
+$T _ { \phantom { k } i - j \cdot } ^ { k } .$ (MW) và C(\*): $( V N D x I O ^ { 9 } )$
+
+| TT | x | y | Tên nút | T0x-y | T1x-y | T2x-y | T3x-y | T4x-y | C0x-y | C1x-y | C2x-y | C3x-y | C4x-y |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 1 | S CAT | 800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2 | 0 | 2 | S CHT | 1200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3 | 0 | 3 | S ST | 800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | 0 | 4 | S BL | 800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | 0 | 5 | S RG | 800 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 6 | 1 | 6 | T CAT | 250 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 7 | 2 | 7 | T CHT | 500 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 8 | 3 | 8 | T ST | 125 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 9 | 4 | 9 | T BL | 375 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 10 | 5 | 10 | T RG | 375 | 250 | 250 | 250 | 0 | 0 | 10 | 10 | 10 | 0 |
+| 11 | 3 | 4 | BL-RG | 285 | 285 | 285 | 285 | 0 | 0 | 641 | 641 | 641 | 0 |
+| 12 | 6 | 16 | CAT1-CAT2 | 80 | 80 | 80 | 80 | 0 | 0 | 83 | 83 | 83 | 0 |
+| 13 | 6 | 17 | CAT1-TPT | 93 | 93 | 93 | 93 | 0 | 0 | 20 | 20 | 20 | 0 |
+| 14 | 6 | 11 | CAT1-CHT2 | 208 | 208 | 208 | 208 | 0 | 0 | 216 | 216 | 216 | 0 |
+| 15 | 7 | 11 | CHT1-CHT1 | 186 | 186 | 186 | 186 | 0 | 0 | 54 | 54 | 54 | 0 |
+| 16 | 7 | 18 | CHT1-CHT2 | 93 | 93 | 93 | 93 | 0 | 0 | 295 | 295 | 295 | 0 |
+| 17 | 17 | 18 | TPT-CHT2 | 93 | 93 | 93 | 93 | 0 | 0 | 174 | 174 | 174 | 0 |
+| 18 | 7 | 19 | CHT1-PH | 93 | 500 | 500 | 500 | 500 | 0 | 156 | 156 | 156 | 156 |
+| 19 | 7 | 13 | CHT1-HG2 | 279 | 279 | 279 | 279 | 0 | 0 | 81 | 81 | 81 | 0 |
+| 20 | 13 | 14 | ST220-BL220 | 186 | 186 | 186 | 186 | 0 | 0 | 9 | 9 | 9 | 0 |
+| 21 | 8 | 12 | ST1-ST2 | 93 | 500 | 500 | 500 | 500 | 0 | 18 | 18 | 18 | 18 |
+| 22 | 20 | 21 | KS-ANM | 93 | 300 | 300 | 300 | 300 | 0 | 243 | 243 | 243 | 243 |
+
+<!-- page: 174 -->
+
+| 23 | 19 | 20 | PH-KS | 93 | 300 | 300 | 300 | 300 | 0 | 135 | 135 | 135 | 135 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 24 | 8 | 21 | ST1-ANM | 93 | 300 | 300 | 300 | 300 | 0 | 9 | 9 | 9 | 9 |
+| 25 | 12 | 19 | ST2-PH | 93 | 500 | 500 | 500 | 500 | 0 | 495 | 495 | 495 | 495 |
+| 26 | 8 | 22 | ST1-MT | 80 | 80 | 80 | 80 | 0 | 0 | 162 | 162 | 162 | 0 |
+| 27 | 9 | 23 | BL1-LM | 80 | 80 | 80 | 80 | 0 | 0 | 495 | 495 | 495 | 0 |
+| 28 | 22 | 23 | MT-LM | 80 | 80 | 80 | 80 | 0 | 0 | 261 | 261 | 261 | 0 |
+| 29 | 10 | 15 | RG-GR | 80 | 500 | 500 | 500 | 500 | 0 | 216 | 216 | 216 | 216 |
+| 30 | 15 | 24 | GR-VT | 80 | 80 | 80 | 80 | 0 | 0 | 281 | 281 | 281 | 0 |
+| 31 | 23 | 24 | LM-VT | 80 | 80 | 80 | 80 | 0 | 0 | 108 | 108 | 108 | 0 |
+| 32 | 1 | 25 | CAT220-LOD | 119 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 33 | 2 | 25 | CHT220-LOD | 600 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 34 | 3 | 25 | ST220-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 35 | 4 | 25 | BL220-LOD | 200 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 36 | 5 | 25 | RG220-LOD | 183 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 37 | 6 | 25 | CT110-LOD | 48 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 38 | 11 | 25 | CHT2-LOD | 64 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 39 | 13 | 25 | HG2-LOD | 80 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 40 | 14 | 25 | HG1-LOD | 85 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 41 | 12 | 25 | ST2-LOD | 126 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 42 | 9 | 25 | BL1-LOD | 275 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 43 | 10 | 25 | RG1-LOD | 215 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 44 | 15 | 25 | GR-LOD | 65 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 45 | 16 | 25 | CAT2-LOD | 48 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 46 | 17 | 25 | TPT-LOD | 33 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 47 | 18 | 25 | CHT2-LOD | 31 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 48 | 19 | 25 | PH-LOD | 31 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 49 | 20 | 25 | KS-LOD | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 50 | 21 | 25 | AN-LOD | 36 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 51 | 22 | 25 | MT-LOD | 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 52 | 23 | 25 | LM-LOD | 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 53 | 24 | 25 | VT-LOD | 49 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
