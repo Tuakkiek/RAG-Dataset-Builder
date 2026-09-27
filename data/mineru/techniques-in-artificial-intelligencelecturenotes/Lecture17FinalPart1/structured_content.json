@@ -1,0 +1,6965 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.243,
+            0.071,
+            0.711,
+            0.096
+          ],
+          "content": "**6.825 Techniques in Artificial Intelligence**"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.199,
+            0.115,
+            0.754,
+            0.167
+          ],
+          "level": 1,
+          "content": "Where do Bayesian Networks Come From?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.866,
+            0.542
+          ],
+          "content": "So now we know what to do with a network if we have one; that is, how to answer queries about the probability of some variables given observations of others. But where do we get the networks in the first place?"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.242,
+            0.071,
+            0.711,
+            0.096
+          ],
+          "level": 1,
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.114,
+            0.755,
+            0.168
+          ],
+          "level": 2,
+          "content": "Where do Bayesian Networks Come From?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.178,
+            0.402,
+            0.204
+          ],
+          "content": "• Human experts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.879,
+            0.604
+          ],
+          "content": "When Bayesian networks were first developed for applications, it was in the context of expert systems. The idea was that “knowledge engineers”, who were familiar with the technology, would go and interview experts and elicit from them their expert knowledge about the domain they worked in. So the knowledge engineer would go talk to a physician about diagnosing diseases, or an engineer about building bridges, and together they would build a Bayes net."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.242,
+            0.071,
+            0.711,
+            0.096
+          ],
+          "level": 1,
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.115,
+            0.755,
+            0.167
+          ],
+          "level": 2,
+          "content": "Where do Bayesian Networks Come From?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.178,
+            0.402,
+            0.204
+          ],
+          "content": "• Human experts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.867,
+            0.603
+          ],
+          "content": "It turned out that this was pretty hard. We’ve already seen that humans aren’t very good at probabilistic reasoning. It turns out that it’s also hard for them to come up with good probabilistic descriptions of what they know and do. One way to make the problem easier for humans is to give them some fixed structures for the kinds of relationships they can express among the variables. We’ll talk a little bit about that in this lecture."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.242,
+            0.07,
+            0.711,
+            0.096
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.114,
+            0.755,
+            0.168
+          ],
+          "content": "Where do Bayesian Networks Come From?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.178,
+            0.403,
+            0.203
+          ],
+          "content": "• Human experts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.203,
+            0.447,
+            0.229
+          ],
+          "content": "• Learning from data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.876,
+            0.562
+          ],
+          "content": "But the big thing that has happened recently in the Bayes net world is a move toward learning from data. Given example cases in a domain: patients or loan applications or bridge designs, we can use learning techniques to build Bayesian networks that are good models of the domain."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.242,
+            0.07,
+            0.711,
+            0.096
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.114,
+            0.755,
+            0.167
+          ],
+          "content": "Where do Bayesian Networks Come From?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.178,
+            0.404,
+            0.203
+          ],
+          "content": "• Human experts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.203,
+            0.447,
+            0.228
+          ],
+          "content": "• Learning from data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.229,
+            0.481,
+            0.253
+          ],
+          "content": "• A combination of both"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.872,
+            0.561
+          ],
+          "content": "Of course, there are other learning algorithms available. But one of the great strengths of Bayesian networks is that they give us a principled way to integrate human knowledge about the domain, when it’s present and easy to articulate, with knowledge extracted from data."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.073,
+            0.6,
+            0.102
+          ],
+          "content": "Human Experts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.709,
+            0.16
+          ],
+          "content": "• Encoding rules obtained from experts, e.g. physicians for PathFinder"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.872,
+            0.542
+          ],
+          "content": "Interviewing humans and trying to extract their expert knowledge is very difficult. Even though we may be experts at a variety of tasks, it’s often hard to articulate the knowledge we have."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.074,
+            0.6,
+            0.102
+          ],
+          "content": "Human Experts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.112,
+            0.709,
+            0.159
+          ],
+          "content": "• Encoding rules obtained from experts, e.g. physicians for PathFinder"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.159,
+            0.794,
+            0.206
+          ],
+          "content": "• Extracting these rules are very difficult, especially getting reliable probability estimates"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.857,
+            0.523
+          ],
+          "content": "Humans are reasonably good at specifying the dependency structure of a network, but they are particularly bad at specifying the probability distributions."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.074,
+            0.6,
+            0.102
+          ],
+          "content": "Human Experts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.113,
+            0.709,
+            0.158
+          ],
+          "content": "• Encoding rules obtained from experts, e.g. physicians for PathFinder"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.16,
+            0.795,
+            0.204
+          ],
+          "content": "• Extracting these rules are very difficult, especially getting reliable probability estimates"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.205,
+            0.743,
+            0.23
+          ],
+          "content": "• Some rules have a simple deterministic form:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.318,
+            0.24,
+            0.653,
+            0.286
+          ],
+          "content": "Age Legal Drinker"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.879,
+            0.561
+          ],
+          "content": "Sometimes the relationships between nodes are really easy to articulate. One example is a deterministic form. So, whether someone can drink alcohol legally is a deterministic function of the person’s age (and perhaps their country or state of residence)."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.353,
+            0.074,
+            0.599,
+            0.102
+          ],
+          "level": 2,
+          "content": "Human Experts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.113,
+            0.709,
+            0.158
+          ],
+          "content": "• Encoding rules obtained from experts, e.g. physicians for PathFinder"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.16,
+            0.795,
+            0.204
+          ],
+          "content": "• Extracting these rules are very difficult, especially getting reliable probability estimates"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.205,
+            0.743,
+            0.23
+          ],
+          "content": "• Some rules have a simple deterministic form:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.318,
+            0.24,
+            0.653,
+            0.285
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.297,
+            0.811,
+            0.364
+          ],
+          "content": "• But, more commonly, we have many potential causes for a symptom and any one of these causes are sufficient for a symptom to be true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.851,
+            0.542
+          ],
+          "content": "There are other structured relationships that are relatively easy to specify. One is when there are many possible causes for a symptom, and it is sufficient for at least one of the causes to be true in order for the symptom to be true."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.247,
+            0.07,
+            0.707,
+            0.104
+          ],
+          "content": "Multiple Independent Causes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.122,
+            0.478,
+            0.283
+          ],
+          "content": "Flu Cold Fever Malaria"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.863,
+            0.543
+          ],
+          "content": "Imagine that there are three possible causes for having a fever: flu, cold, and malaria. This network encodes the fact that flu, cold, and malaria are mutually independent of one another."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.843,
+            0.563
+          ],
+          "content": "In general, the conditional probability table for fever will have to specify the probability of fever for all possible combinations of values of flu, cold, and malaria. This is a big table, and it’s hard to assess. Physicians, for example, probably don’t think very well about combinations of diseases."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.246,
+            0.069,
+            0.709,
+            0.107
+          ],
+          "level": 2,
+          "content": "Multiple Independent Causes"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.052,
+            0.853,
+            0.452
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.381,
+            0.281,
+            0.777,
+            0.36
+          ],
+          "content": "In general, the table in the Fever node gives prob of fever given all combination of values of Flu, Cold and Malaria P(Fev | Flu, Col, Mal)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.857,
+            0.584
+          ],
+          "content": "It’s more natural to ask them individual conditional probabilities: what’s the probability that someone has a fever if they have the flu? We’re essentially ignoring the influence of Cold and Malaria while we think about the flu. The same goes for the other conditional probabilities. We can ask about P(fever | cold) and P(fever | malaria) separately."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.335,
+            0.072,
+            0.619,
+            0.103
+          ],
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.123,
+            0.479,
+            0.284
+          ],
+          "content": "Flu Cold Fever Malaria"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.529,
+            0.106,
+            0.739,
+            0.13
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Flu}) = 0. 6",
+          "image_source": "images/page_12_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.129,
+            0.753,
+            0.15
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Cold}) = 0. 4",
+          "image_source": "images/page_12_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.149,
+            0.78,
+            0.172
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Malaria}) = 0. 9",
+          "image_source": "images/page_12_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.877,
+            0.542
+          ],
+          "content": "Now, the question is, what can we do with those independently specified conditional probabilities? They don’t by themselves, specify the whole CPT for the fever node."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.335,
+            0.072,
+            0.619,
+            0.103
+          ],
+          "level": 2,
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.25,
+            0.124,
+            0.475,
+            0.284
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.53,
+                0.106,
+                0.739,
+                0.13
+              ],
+              "content": "P(Fever | Flu) = 0.6"
+            }
+          ],
+          "image_source": "images/page_13_image_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.149,
+            0.779,
+            0.172
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Malaria}) = 0. 9",
+          "image_source": "images/page_13_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.194,
+            0.75,
+            0.289
+          ],
+          "content": "We are assuming that the causes act independently, which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.643
+          ],
+          "content": "One way to think about this is that P(fever | flu) is a probability that describes an unreliable connection between flu and fever. If the patient has flu, and the connection is on, then he will certainly have fever. Thus it is sufficient for one connection to be made from a positive variable into fever, from any of its causes. If none of the causes are true, then the probability of fever is assumed to be zero (though it’s always possible to add an extra cause that’s always true, but which has a weak connection, to model the possibility of getting a fever “for no reason”)."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.335,
+            0.072,
+            0.62,
+            0.103
+          ],
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.529,
+            0.106,
+            0.74,
+            0.13
+          ],
+          "content": "P(Fever | Flu) = 0.6"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.123,
+            0.475,
+            0.284
+          ],
+          "content": "Flu Cold Fever Malaria"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.149,
+            0.78,
+            0.172
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Malaria}) = 0. 9",
+          "image_source": "images/page_14_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.483,
+            0.194,
+            0.75,
+            0.288
+          ],
+          "content": "We are assuming that the causes act independently, which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.167,
+            0.298,
+            0.551,
+            0.324
+          ],
+          "content": "Look only at the causes that are true:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.874,
+            0.543
+          ],
+          "content": "So, how can we compute the probability of fever given that a patient has the flu and malaria, but not a cold. First of all, we’ve assumed that false variables play no role in this probability, so we can ignore cold."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.335,
+            0.072,
+            0.619,
+            0.102
+          ],
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.106,
+            0.739,
+            0.13
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Flu}) = 0. 6",
+          "image_source": "images/page_15_equation_1.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.124,
+            0.475,
+            0.284
+          ],
+          "content": "Flu Cold Fever Malaria"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.531,
+            0.129,
+            0.753,
+            0.15
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Cold}) = 0. 4",
+          "image_source": "images/page_15_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.149,
+            0.779,
+            0.172
+          ],
+          "content": "\\mathrm{P} (\\text {Fever} \\mid \\text {Malaria}) = 0. 9",
+          "image_source": "images/page_15_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.483,
+            0.195,
+            0.749,
+            0.287
+          ],
+          "content": "We are assuming that the causes act independently, which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.168,
+            0.299,
+            0.551,
+            0.322
+          ],
+          "content": "Look only at the causes that are true:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.167,
+            0.321,
+            0.79,
+            0.351
+          ],
+          "content": "P (F e v \\mid F l u, \\neg C o l, M a l) = 1 - P (\\neg F e v \\mid F l u, M a l)",
+          "image_source": "images/page_15_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.521
+          ],
+          "content": "Now, we’re going to think about the probability of fever, given flu and malaria. It’s easier to think about it in the negative."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.336,
+            0.072,
+            0.618,
+            0.102
+          ],
+          "level": 2,
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.251,
+            0.125,
+            0.474,
+            0.283
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.529,
+            0.107,
+            0.779,
+            0.173
+          ],
+          "content": "\\begin{array}{l} \\mathrm{P(Fever|Flu)=0.6} \\\\ \\mathrm{P(Fever|Cold)=0.4} \\\\ \\mathrm{P(Fever|Malaria)=0.9} \\end{array}",
+          "image_source": "images/page_16_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.195,
+            0.748,
+            0.287
+          ],
+          "content": "We are assuming that the causes act independentl $\\vee ,$ which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.3,
+            0.55,
+            0.322
+          ],
+          "content": "Look only at the causes that are true:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.168,
+            0.321,
+            0.789,
+            0.35
+          ],
+          "content": "P (F e v \\mid F l u, \\neg C o l, M a l) = 1 - P (\\neg F e v \\mid F l u, M a l)",
+          "image_source": "images/page_16_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.167,
+            0.354,
+            0.785,
+            0.385
+          ],
+          "content": "P (\\neg F e v \\mid F l u, M a l) = P (\\neg F e v \\mid F l u) P (\\neg F e v, M a l)",
+          "image_source": "images/page_16_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.881,
+            0.561
+          ],
+          "content": "The probability that a patient won’t have a fever given that he has flu and malaria, is the probability that both of those connections are broken. In order to get this from the information we know, we’ll also have to assume that whether one connection is broken is independent of whether the others are broken."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.336,
+            0.072,
+            0.618,
+            0.102
+          ],
+          "level": 2,
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.251,
+            0.124,
+            0.474,
+            0.284
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.529,
+            0.106,
+            0.779,
+            0.173
+          ],
+          "content": "\\begin{array}{l} \\mathrm{P(Fever|Flu)=0.6} \\\\ \\mathrm{P(Fever|Cold)=0.4} \\\\ \\mathrm{P(Fever|Malaria)=0.9} \\end{array}",
+          "image_source": "images/page_17_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.195,
+            0.749,
+            0.287
+          ],
+          "content": "We are assuming that the causes act independentl $\\vee ,$ which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.3,
+            0.55,
+            0.322
+          ],
+          "content": "Look only at the causes that are true:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.167,
+            0.321,
+            0.789,
+            0.351
+          ],
+          "content": "P (F e v \\mid F l u, \\neg C o l, M a l) = 1 - P (\\neg F e v \\mid F l u, M a l)",
+          "image_source": "images/page_17_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.167,
+            0.354,
+            0.785,
+            0.386
+          ],
+          "content": "P (\\neg F e v \\mid F l u, M a l) = P (\\neg F e v \\mid F l u) P (\\neg F e v, M a l)",
+          "image_source": "images/page_17_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.477,
+            0.833,
+            0.54
+          ],
+          "content": "So, in this special case, the probability of not fever given flu and malaria, is the probability of not fever given flu times the probability of not fever given malaria."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.337,
+            0.073,
+            0.617,
+            0.102
+          ],
+          "level": 2,
+          "content": "Noisy Or Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.251,
+            0.126,
+            0.473,
+            0.283
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.107,
+            0.778,
+            0.172
+          ],
+          "content": "\\begin{array}{l} \\mathrm{P(Fever|Flu)=0.6} \\\\ \\mathrm{P(Fever|Cold)=0.4} \\\\ \\mathrm{P(Fever|Malaria)=0.9} \\end{array}",
+          "image_source": "images/page_18_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.484,
+            0.196,
+            0.747,
+            0.286
+          ],
+          "content": "We are assuming that the causes act independentl $\\vee ,$ which reduces the set of numbers that we need to acquire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.301,
+            0.549,
+            0.321
+          ],
+          "content": "Look only at the causes that are true:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.169,
+            0.322,
+            0.788,
+            0.35
+          ],
+          "content": "P (F e v \\mid F l u, \\neg C o l, M a l) = 1 - P (\\neg F e v \\mid F l u, M a l)",
+          "image_source": "images/page_18_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.169,
+            0.354,
+            0.784,
+            0.414
+          ],
+          "content": "\\begin{array}{c} P (\\neg F e v \\mid F l u, M a l) = P (\\neg F e v \\mid F l u) P (\\neg F e v, M a l) \\\\ = (0. 4) (0. 1) = 0. 0 4 \\end{array}",
+          "image_source": "images/page_18_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 19"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.866,
+            0.541
+          ],
+          "content": "The probability of not fever given flu is 1 minus the probability of fever given flu, which we know. The same thing applies for not fever given malaria, so we can compute that P not fever given flu and malaria is .96."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.073,
+            0.55,
+            0.102
+          ],
+          "content": "Noisy Or"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.091,
+            0.449,
+            0.251
+          ],
+          "content": "C<sub>1</sub> 1 Effect"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.484,
+            0.116,
+            0.728,
+            0.138
+          ],
+          "content": "• Store $\\mathsf { P } ( \\mathsf { E } | \\mathsf { C } _ { \\mathsf { i } } )$ for all $C _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.484,
+            0.138,
+            0.81,
+            0.16
+          ],
+          "content": "• Given a set, $\\mathsf { C } _ { \\mathsf { T } } ,$ of true causes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.876,
+            0.541
+          ],
+          "content": "Here’s the general formula for noisy or. Assume we know P(effect | cause) for each possible cause. And we’re given a set, CT, of causes that are true for a particular case."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 21"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.086,
+            0.451,
+            0.256
+          ],
+          "content": "No C<sub>1</sub> C Effect"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.072,
+            0.551,
+            0.102
+          ],
+          "content": "N isy Or"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.483,
+            0.114,
+            0.729,
+            0.139
+          ],
+          "content": "• Store $\\mathsf { P } ( \\mathsf { E } | \\mathsf { C } _ { \\mathsf { i } } )$ for all $C _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.483,
+            0.138,
+            0.811,
+            0.161
+          ],
+          "content": "• Given a set, $C _ { \\Gamma , }$ of true causes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.229,
+            0.618,
+            0.257
+          ],
+          "content": "\\Pr (E | C) = 1 - \\Pr (\\neg E | C)",
+          "image_source": "images/page_20_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.477,
+            0.874,
+            0.521
+          ],
+          "content": "Then to compute probability of E given C, we approach it by computing probability of not E given C."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.404,
+            0.072,
+            0.551,
+            0.102
+          ],
+          "level": 2,
+          "content": "Noisy Or"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.211,
+            0.086,
+            0.451,
+            0.255
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.114,
+            0.729,
+            0.139
+          ],
+          "content": "• Store $\\mathsf { P } ( \\mathsf { E } | \\mathsf { C } _ { \\mathsf { i } } )$ for all $C _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.482,
+            0.137,
+            0.811,
+            0.161
+          ],
+          "content": "• Given a set, $C _ { \\mathrm { { T r } } }$ of true causes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.229,
+            0.62,
+            0.256
+          ],
+          "content": "\\Pr (E | C) = 1 - \\Pr (\\neg E | C)",
+          "image_source": "images/page_21_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.471,
+            0.257,
+            0.628,
+            0.284
+          ],
+          "content": "= 1 - \\Pr (\\neg E | C _ {T})",
+          "image_source": "images/page_21_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.836,
+            0.52
+          ],
+          "content": "That’s equal to the probability of not E just given the causes that are true in this case, CT."
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.052,
+            0.853,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.405,
+            0.073,
+            0.55,
+            0.102
+          ],
+          "level": 2,
+          "content": "Noisy Or"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.116,
+            0.729,
+            0.139
+          ],
+          "content": "• Store P(E|Ci) for all $C _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.138,
+            0.81,
+            0.16
+          ],
+          "content": "• Given a set, $\\mathsf { C } _ { \\mathsf { T } } ,$ of true causes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.859,
+            0.561
+          ],
+          "content": "Now, because of the assumption that the causes operate independently (that, is, whether one is in effect is independent of whether another is in effect), we can take the product over the causes of the probability of the effect being absent given the cause."
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.073,
+            0.55,
+            0.102
+          ],
+          "content": "Noisy Or"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.091,
+            0.448,
+            0.252
+          ],
+          "content": "C<sub>1</sub> Effect C<sub>n</sub>"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.483,
+            0.116,
+            0.728,
+            0.139
+          ],
+          "content": "• Store P(E|Ci) for all $C _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.484,
+            0.138,
+            0.81,
+            0.16
+          ],
+          "content": "• Given a set, $\\mathsf { C } _ { \\mathsf { T } } ,$ of true causes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.229,
+            0.703,
+            0.378
+          ],
+          "content": "\\begin{array}{r l} \\operatorname * {P r} (E | C) & = 1 - \\operatorname * {P r} (\\neg E | C) \\\\ & = 1 - \\operatorname * {P r} (\\neg E | C _ {T}) \\\\ & = 1 - \\prod_ {C _ {i} \\in C _ {T}} \\operatorname * {P r} (\\neg E \\mid C _ {i}) \\\\ & = 1 - \\prod_ {C _ {i} \\in C _ {T}} (1 - \\operatorname * {P r} (E \\mid C _ {i})) \\end{array}",
+          "image_source": "images/page_23_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.52
+          ],
+          "content": "Finally, we can easily convert the probabilities of not E given C, into 1 – probability of E given C."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.325,
+            0.073,
+            0.628,
+            0.102
+          ],
+          "content": "Recitation Problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.812,
+            0.181
+          ],
+          "content": "• Compute the conditional probability table for P(Fever | Flu, Cold, Malaria), for all assignments to the variables Flu, Cold, and Malaria."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.876,
+            0.521
+          ],
+          "content": "Using the numbers from the previous example, fill in the whole CPT for fever given flu, malaria, and cold."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 26"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.252,
+            0.073,
+            0.702,
+            0.103
+          ],
+          "level": 2,
+          "content": "Learning Bayesian Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.116,
+            0.751,
+            0.162
+          ],
+          "content": "• Instance of the general problem of probability density estimation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.164,
+            0.413,
+            0.188
+          ],
+          "content": "• discrete space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.189,
+            0.484,
+            0.213
+          ],
+          "content": "• interesting structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.871,
+            0.623
+          ],
+          "content": "Another way to get a Bayesian network is to learn it from data. It’s an instance of the problem, known in the statistics literature as density estimation. We’re trying to estimate a probability density (that is, a joint probability distribution) from data. What makes the problem of learning bayes nets different from the ones that statisticians typically consider is that our problem is in a discrete space, and that we’re looking for models that encode the underlying conditional independences in the data."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.251,
+            0.072,
+            0.703,
+            0.103
+          ],
+          "level": 2,
+          "content": "Learning Bayesian Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.115,
+            0.753,
+            0.163
+          ],
+          "content": "• Instance of the general problem of probability density estimation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.164,
+            0.415,
+            0.188
+          ],
+          "content": "• discrete space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.189,
+            0.485,
+            0.213
+          ],
+          "content": "• interesting structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.214,
+            0.337,
+            0.236
+          ],
+          "content": "• Four cases"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.238,
+            0.583,
+            0.263
+          ],
+          "content": "• structure known or unknown"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.264,
+            0.789,
+            0.288
+          ],
+          "content": "• all variables observable or some unobservable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.871,
+            0.602
+          ],
+          "content": "There are really four different cases in which you could try to learn bayes nets. We’ll look at two today, and the other two next time. One question is whether you are trying to learn the structure of the domain, or just the values in the CPTs. The problem of learning values given structure is **much** easier. And often a human can provide a reasonable structure. But sometimes we’ll want to try to learn the structure as well."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.251,
+            0.071,
+            0.703,
+            0.104
+          ],
+          "level": 2,
+          "content": "Learning Bayesian Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.114,
+            0.753,
+            0.163
+          ],
+          "content": "• Instance of the general problem of probability density estimation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.163,
+            0.415,
+            0.188
+          ],
+          "content": "• discrete space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.189,
+            0.485,
+            0.213
+          ],
+          "content": "• interesting structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.214,
+            0.337,
+            0.237
+          ],
+          "content": "• Four cases"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.238,
+            0.583,
+            0.263
+          ],
+          "content": "• structure known or unknown"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.263,
+            0.789,
+            0.289
+          ],
+          "content": "• all variables observable or some unobservable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.31,
+            0.751,
+            0.353
+          ],
+          "content": "This lecture: all variables observable, structure known or unknown"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 28"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.582
+          ],
+          "content": "The other question is whether all the variables are observable or not. Today, we’ll focus on the case in which all of the variables in the network are observable. This makes sense in some domains, but not in all of them. So, we’ll assume that the data we are learning from contains samples of values from all the variables in the net."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.073,
+            0.612,
+            0.102
+          ],
+          "content": "Known Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.109,
+            0.823,
+            0.154
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.875,
+            0.54
+          ],
+          "content": "First, we’ll think about the case in which the structure of the network is given. That is, we know exactly what nodes it has, and we have a set of directed arcs between them."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.074,
+            0.611,
+            0.101
+          ],
+          "content": "Known Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.821,
+            0.152
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.195,
+            0.589,
+            0.232
+          ],
+          "content": "values of nodes in sample 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.153,
+            0.778,
+            0.178
+          ],
+          "content": "• Given a data set $\\mathsf { D }   =   \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { 1 } , \\dots , \\mathsf { v _ { m } } ^ { 1 } > , \\dots , \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { \\mathsf { k } } , \\dots , \\mathsf { v _ { m } } ^ { \\mathsf { k } } > \\} }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.633,
+            0.195,
+            0.781,
+            0.232
+          ],
+          "content": "values of nodes in sample k"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.871,
+            0.541
+          ],
+          "content": "We’re given a data set D. D is made up of a set of **cases** or **samples**, each of which is a vector of values, one for each variable. So v with a superscript k refers to data case k, and the subscript I indexes over variables."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.34,
+            0.073,
+            0.612,
+            0.102
+          ],
+          "content": "Known Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.11,
+            0.821,
+            0.152
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.153,
+            0.779,
+            0.179
+          ],
+          "content": "• Given a data set $\\mathsf { D }   =   \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { 1 } , \\dots , \\mathsf { v _ { m } } ^ { 1 } > , \\dots , \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { \\mathsf { k } } , \\dots , \\mathsf { v _ { m } } ^ { \\mathsf { k } } > \\} }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.195,
+            0.781,
+            0.215
+          ],
+          "content": "values of nodes values of nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.457,
+            0.212,
+            0.571,
+            0.232
+          ],
+          "content": "in sample 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.65,
+            0.213,
+            0.763,
+            0.232
+          ],
+          "content": "in sample k"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.243,
+            0.757,
+            0.288
+          ],
+          "content": "• Elements of D are assumed to be independent given M"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 31"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.562
+          ],
+          "content": "In a medical example, you might imagine that each case or sample is a description of a person that walked into the emergency room. The cases are assumed to be drawn independently from some distribution that is specified by M. That means, for instance, that there’s no information in the order in which they arrive."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Known Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.821,
+            0.152
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.153,
+            0.778,
+            0.179
+          ],
+          "content": "• Given a data set $\\mathsf { D }   =   \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { 1 } , \\dots , \\mathsf { v _ { m } } ^ { 1 } > , \\dots , \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { \\mathsf { k } } , \\dots , \\mathsf { v _ { m } } ^ { \\mathsf { k } } > \\} }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.195,
+            0.78,
+            0.232
+          ],
+          "content": "values of nodes values of nodes in sample 1 in sample k"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.244,
+            0.756,
+            0.287
+          ],
+          "content": "• Elements of D are assumed to be independent given M"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.286,
+            0.705,
+            0.331
+          ],
+          "content": "• Find the model M (in this case, CPTs) that maximizes Pr(D|M)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 32"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.561
+          ],
+          "content": "Our goal will be to find the model M that maximizes the probability of the data given the model. In this case, a model is just all the CPTs required by the specified network structure. We’d like to find the model that makes this data set as likely as possible."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Known Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.821,
+            0.152
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.153,
+            0.778,
+            0.179
+          ],
+          "content": "• Given a data set $\\mathsf { D }   =   \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { 1 } , \\dots , \\mathsf { v _ { m } } ^ { 1 } > , \\dots , \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { \\mathsf { k } } , \\dots , \\mathsf { v _ { m } } ^ { \\mathsf { k } } > \\} }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.195,
+            0.78,
+            0.232
+          ],
+          "content": "values of nodes values of nodes in sample 1 in sample k"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.244,
+            0.756,
+            0.287
+          ],
+          "content": "• Elements of D are assumed to be independent given M"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.286,
+            0.705,
+            0.33
+          ],
+          "content": "• Find the model M (in this case, CPTs) that maximizes Pr(D|M)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.33,
+            0.695,
+            0.354
+          ],
+          "content": "• Known as the maximum likelihood model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 33"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.859,
+            0.54
+          ],
+          "content": "There are other possible criteria for fitting models to data, but this is a simple, standard one. It is often said that we are looking for the **maximum likelihood** model."
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.342,
+            0.073,
+            0.611,
+            0.102
+          ],
+          "level": 2,
+          "content": "Known Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.821,
+            0.152
+          ],
+          "content": "• Given nodes and arcs of a Bayesian network with m nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.153,
+            0.777,
+            0.179
+          ],
+          "content": "• Given a data set $\\mathsf { D }   =   \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { 1 } , \\dots , \\mathsf { v _ { m } } ^ { 1 } > , \\dots , \\{ \\scriptstyle < \\mathsf { v _ { 1 } } ^ { \\mathsf { k } } , \\dots , \\mathsf { v _ { m } } ^ { \\mathsf { k } } > \\} }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.195,
+            0.779,
+            0.232
+          ],
+          "content": "values of nodes values of nodes in sample 1 in sample k"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.244,
+            0.755,
+            0.287
+          ],
+          "content": "• Elements of D are assumed to be independent given M"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.286,
+            0.704,
+            0.33
+          ],
+          "content": "• Find the model M (in this case, CPTs) that maximizes Pr(D|M)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.33,
+            0.695,
+            0.352
+          ],
+          "content": "• Known as the maximum likelihood model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.352,
+            0.775,
+            0.397
+          ],
+          "content": "• Humans are good at providing structure, data is good at providing numbers"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 34"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.851,
+            0.601
+          ],
+          "content": "This particular setting of the bayes net learning problem, is relatively easy from a technical perspective, but also very important from a practical one. Humans tend to be good at providing the network structure, but bad at specifying the conditional probabilities. Computers, on the other hand, have a much harder time figuring out the structure, but are great at estimating probabilities from data, as we’ll see."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.196,
+            0.071,
+            0.757,
+            0.104
+          ],
+          "level": 1,
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.056,
+            0.851,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_34_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.561
+          ],
+          "content": "So, given a data set, how can we estimate the probability values in our network? Let’s start with the easiest case, the probability that V1 is true. All we have to do is count how many times v1 was true in our data set and divide by k, the total number of cases in the data set."
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.196,
+            0.071,
+            0.757,
+            0.104
+          ],
+          "level": 1,
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.212,
+            0.231,
+            0.423,
+            0.351
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.391,
+            0.23,
+            0.604,
+            0.262
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e)}{k}",
+          "image_source": "images/page_35_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.431,
+            0.285,
+            0.76,
+            0.322
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e)}{\\# (V _ {1} = t r u e)}",
+          "image_source": "images/page_35_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.561
+          ],
+          "content": "That was easy! And the conditional probabilities are not much harder. To get an estimate of the probability that v3 is true given that v1 is true, we just count the number of cases in which v1 and v3 are both true, and divide by the number of cases in which v1 is true."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.072,
+            0.756,
+            0.103
+          ],
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.231,
+            0.374,
+            0.35
+          ],
+          "content": "1 V <sub>2</sub> 3 1"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.392,
+            0.23,
+            0.603,
+            0.261
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e)}{k}",
+          "image_source": "images/page_36_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.431,
+            0.286,
+            0.76,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e)}{\\# (V _ {1} = t r u e)}",
+          "image_source": "images/page_36_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.42,
+            0.322,
+            0.77,
+            0.355
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e)}{\\# (V _ {1} = f a l s e)}",
+          "image_source": "images/page_36_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.873,
+            0.519
+          ],
+          "content": "The probability of V3 given not v1 is similar, as are all the elements of all the CPTs in the network."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.196,
+            0.072,
+            0.757,
+            0.103
+          ],
+          "level": 1,
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.805,
+            0.138
+          ],
+          "content": "• Use counts and definition of conditional probability"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.213,
+            0.231,
+            0.375,
+            0.351
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.392,
+            0.23,
+            0.604,
+            0.261
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e)}{k}",
+          "image_source": "images/page_37_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.431,
+            0.286,
+            0.76,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e)}{\\# (V _ {1} = t r u e)}",
+          "image_source": "images/page_37_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.42,
+            0.322,
+            0.77,
+            0.356
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e)}{\\# (V _ {1} = f a l s e)}",
+          "image_source": "images/page_37_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 38"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.853,
+            0.582
+          ],
+          "content": "What’s interesting about this is that this very simple estimation procedure is guaranteed to give us the model that maximizes the probability of the data. Proving that is a little bit complicated, but as long as we trust the statisticians, then we can feel comfortable that by using these ratios to estimate our probabilities, we are getting the maximum likelihood model."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.195,
+            0.072,
+            0.757,
+            0.103
+          ],
+          "level": 1,
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.805,
+            0.139
+          ],
+          "content": "• Use counts and definition of conditional probability"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.212,
+            0.23,
+            0.377,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.391,
+            0.23,
+            0.604,
+            0.262
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e)}{k}",
+          "image_source": "images/page_38_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.43,
+            0.286,
+            0.761,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e)}{\\# (V _ {1} = t r u e)}",
+          "image_source": "images/page_38_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.42,
+            0.322,
+            0.771,
+            0.356
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e)}{\\# (V _ {1} = f a l s e)}",
+          "image_source": "images/page_38_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 39"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.876,
+            0.623
+          ],
+          "content": "There is still a bit of a problem with this approach though. What happens when we’re trying to estimate the probability of v3 given v1, but there are no cases of v3 and v1 being true? We’ll get an estimate of 0 for that probability. That may not be terrible, but if we haven’t seen a whole lot of data yet, it might seem a bit hasty to conclude that something is impossible, just because you haven’t yet seen an example of it. In general, putting 0s and 1s in a CPT is a very strong thing to do: it means you’re absolutely sure that something is impossible."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.073,
+            0.756,
+            0.102
+          ],
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.805,
+            0.137
+          ],
+          "content": "• Use counts and definition of conditional probability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.138,
+            0.791,
+            0.163
+          ],
+          "content": "• Initializing all counters to 1 avoids 0 probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.231,
+            0.37,
+            0.35
+          ],
+          "content": "1 1"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.378,
+            0.23,
+            0.617,
+            0.261
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e) + 1}{k + 2}",
+          "image_source": "images/page_39_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.419,
+            0.286,
+            0.775,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e) + 1}{\\# (V _ {1} = t r u e) + 2}",
+          "image_source": "images/page_39_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.407,
+            0.322,
+            0.784,
+            0.355
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e) + 1}{\\# (V _ {1} = f a l s e) + 2}",
+          "image_source": "images/page_39_equation_6.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.503,
+            0.38,
+            0.749,
+            0.424
+          ],
+          "content": "generally, the number of possible values of the variable on the left of the bar"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.434
+          ],
+          "content": "Lecture 17 • 40"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.869,
+            0.621
+          ],
+          "content": "To guard against this, and also to keep out of trouble when we haven’t seen any cases at all when v1 is true, we’ll apply a “Bayesian correction” to our estimates. This means, essentially, initializing our counts at 1 rather than at 0. So, we add a 1 to the count in the numerator, and a value m to the denominator, where m is the number of possible different values the variable whose probability we are estimating can take on. In this case, assuming binary variables, we add a 2 in the denominator."
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.196,
+            0.073,
+            0.757,
+            0.102
+          ],
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.805,
+            0.137
+          ],
+          "content": "• Use counts and definition of conditional probability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.138,
+            0.791,
+            0.163
+          ],
+          "content": "• Initializing all counters to 1 avoids 0 probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.213,
+            0.232,
+            0.37,
+            0.35
+          ],
+          "content": "1 2 V<sub>2</sub> V<sub>3</sub> V<sub>4</sub>"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.378,
+            0.23,
+            0.617,
+            0.261
+          ],
+          "content": "P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e) + 1}{k + 2}",
+          "image_source": "images/page_40_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.419,
+            0.286,
+            0.775,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e) + 1}{\\# (V _ {1} = t r u e) + 2}",
+          "image_source": "images/page_40_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.408,
+            0.322,
+            0.784,
+            0.355
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e) + 1}{\\# (V _ {1} = f a l s e) + 2}",
+          "image_source": "images/page_40_equation_6.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.503,
+            0.38,
+            0.749,
+            0.424
+          ],
+          "content": "generally, the number of possible values of the variable on the left of the bar"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.422,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 17 • 41"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.859,
+            0.541
+          ],
+          "content": "This correction has the effect that if we haven’t seen any examples at all of v1, for instance, we estimate the probability of v3 given v1 to be 0.5. That seems reasonable, and certainly better than 0 or undefined!"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.074,
+            0.756,
+            0.102
+          ],
+          "content": "Estimating Conditional Probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.113,
+            0.807,
+            0.137
+          ],
+          "content": "• Use counts and definition of conditional probability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.138,
+            0.818,
+            0.183
+          ],
+          "content": "• Initializing all counters to 1 avoids 0 probabilities and converges on the maximum likelihood estimate"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.232,
+            0.37,
+            0.35
+          ],
+          "content": "2 V V <sub>4</sub>"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.267,
+            0.23,
+            0.617,
+            0.264
+          ],
+          "content": "\\textcircled {V} _ {1} \\leftarrow P (V _ {1}) \\approx \\frac {\\# (V _ {1} = t r u e) + 1}{k + 2}",
+          "image_source": "images/page_41_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.419,
+            0.286,
+            0.774,
+            0.321
+          ],
+          "content": "P (V _ {3} | V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = t r u e) + 1}{\\# (V _ {1} = t r u e) + 2}",
+          "image_source": "images/page_41_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.408,
+            0.322,
+            0.784,
+            0.355
+          ],
+          "content": "P (V _ {3} | \\neg V _ {1}) \\approx \\frac {\\# (V _ {3} = t r u e \\land V _ {1} = f a l s e) + 1}{\\# (V _ {1} = f a l s e) + 2}",
+          "image_source": "images/page_41_equation_6.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.503,
+            0.38,
+            0.749,
+            0.424
+          ],
+          "content": "generally, the number of possible values of the variable on the left of the bar"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.422,
+            0.794,
+            0.434
+          ],
+          "content": "Lecture 17 • 42"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.48,
+            0.856,
+            0.581
+          ],
+          "content": "Of course, once we add this correction in, we will no longer be getting the maximum likelihood model. But we might be getting one that has slightly better generalization properties. And in the long run, as we get more data, the correction will have less and less effect. So, in the limit of large data, we will get the maximum likelihood model."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.352,
+            0.073,
+            0.602,
+            0.102
+          ],
+          "level": 2,
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.803,
+            0.16
+          ],
+          "content": "• Given data set D and model M, measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 43"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.883,
+            0.542
+          ],
+          "content": "One thing we can do with a model and a data set is to measure the **goodness of fit** of the model to the data. How well does this model account for the data? As our measure of goodness of fit, we will use the log likelihood."
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.074,
+            0.601,
+            0.101
+          ],
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.803,
+            0.158
+          ],
+          "content": "• Given data set D and model $M ,$ measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.816,
+            0.184
+          ],
+          "content": "• Assume each data sample generated independently"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.247,
+            0.19,
+            0.473,
+            0.234
+          ],
+          "content": "\\Pr (D | M) = \\prod_ {j} \\Pr (v ^ {j} | M)",
+          "image_source": "images/page_43_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 44"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.871,
+            0.581
+          ],
+          "content": "We’ll start by computing the probability that this data would have been generated by the model. Under the assumption that the cases within the data set are generated independently given the model, the probability of the whole data set given the model is the product of the probabilities of the individual cases, given the model."
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.074,
+            0.601,
+            0.1
+          ],
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.803,
+            0.157
+          ],
+          "content": "• Given data set D and model $M ,$ measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.816,
+            0.183
+          ],
+          "content": "• Assume each data sample generated independently"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.247,
+            0.19,
+            0.669,
+            0.279
+          ],
+          "content": "\\begin{array}{l} \\Pr (D | M) = \\prod_ {j} \\Pr (v ^ {j} | M) \\\\ \\qquad = \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_44_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 45"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.861,
+            0.542
+          ],
+          "content": "Then, using the chain rule of bayes nets, we can break the probability of a case down into a product of the probabilities of each node having the value it has in this case, given the model and the values of its parents in this case."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.353,
+            0.074,
+            0.601,
+            0.1
+          ],
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.803,
+            0.157
+          ],
+          "content": "• Given data set D and model $M ,$ measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.816,
+            0.184
+          ],
+          "content": "• Assume each data sample generated independently"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.247,
+            0.19,
+            0.669,
+            0.279
+          ],
+          "content": "\\begin{array}{l} \\Pr (D | M) = \\prod_ {j} \\Pr (v ^ {j} | M) \\\\ \\qquad = \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_45_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.285,
+            0.653,
+            0.31
+          ],
+          "content": "• Easier to compute the log; monotonic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 46"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.601
+          ],
+          "content": "Now, if we actually tried to compute this product in a computer, we’d run into trouble before very long. We’re multiplying together a bunch of small numbers and we’ll run into numeric underflow problems. So, rather than working directly with the likelihood, we’ll work with its log. Because the log function is monotonic, the same model that maximizes the likelihood will maximize the log likelihood."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.354,
+            0.074,
+            0.601,
+            0.1
+          ],
+          "level": 2,
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.803,
+            0.157
+          ],
+          "content": "• Given data set D and model $M ,$ measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.16,
+            0.815,
+            0.183
+          ],
+          "content": "• Assume each data sample generated independently"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.247,
+            0.19,
+            0.668,
+            0.278
+          ],
+          "content": "\\begin{array}{l} \\Pr (D | M) = \\prod_ {j} \\Pr (v ^ {j} | M) \\\\ \\qquad = \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_46_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.285,
+            0.653,
+            0.309
+          ],
+          "content": "• Easier to compute the log; monotonic"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.23,
+            0.321,
+            0.713,
+            0.411
+          ],
+          "content": "\\begin{array}{l} \\log \\Pr (D | M) = \\log \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\\\ \\qquad = \\sum_ {j} \\sum_ {i} \\log \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_46_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 47"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.802,
+            0.521
+          ],
+          "content": "The log also has the nice property that it turns all of our multiplications into additions, which are typically more efficient to compute."
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.354,
+            0.074,
+            0.6,
+            0.1
+          ],
+          "level": 2,
+          "content": "Goodness of Fit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.802,
+            0.157
+          ],
+          "content": "• Given data set D and model $M ,$ measure goodness of fit using log likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.16,
+            0.815,
+            0.183
+          ],
+          "content": "• Assume each data sample generated independently"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.247,
+            0.19,
+            0.668,
+            0.278
+          ],
+          "content": "\\begin{array}{l} \\Pr (D | M) = \\prod_ {j} \\Pr (v ^ {j} | M) \\\\ \\qquad = \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_47_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.285,
+            0.653,
+            0.309
+          ],
+          "content": "• Easier to compute the log; monotonic"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.23,
+            0.321,
+            0.713,
+            0.411
+          ],
+          "content": "\\begin{array}{l} \\log \\Pr (D | M) = \\log \\prod_ {j} \\prod_ {i} \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\\\ \\qquad = \\sum_ {j} \\sum_ {i} \\log \\Pr (N _ {i} = v _ {i} ^ {j} | P a r e n t s (N _ {i}), M) \\end{array}",
+          "image_source": "images/page_47_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 48"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.831,
+            0.52
+          ],
+          "content": "So, given a model and a dataset, we can measure the goodness of fit effectively using the log likelihood."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.296,
+            0.072,
+            0.657,
+            0.103
+          ],
+          "content": "Learning the Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.814,
+            0.16
+          ],
+          "content": "• For a fixed structure, our counting estimates of the CPT converge to the maximum likelihood model"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 49"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.856,
+            0.522
+          ],
+          "content": "Now we know how to find the parameter values to make the maximum likelihood model, if we’ve already been given the structure."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.296,
+            0.073,
+            0.657,
+            0.102
+          ],
+          "content": "Learning the Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.813,
+            0.159
+          ],
+          "content": "• For a fixed structure, our counting estimates of the CPT converge to the maximum likelihood model"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.159,
+            0.732,
+            0.185
+          ],
+          "content": "• What if we get to pick the structure as well?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 50"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.839,
+            0.541
+          ],
+          "content": "What if we get to pick the structure as well? It seems to make sense to keep the same criterion: we want to maximize the likelihood of the data given the model."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.297,
+            0.074,
+            0.655,
+            0.102
+          ],
+          "level": 2,
+          "content": "Learning the Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.113,
+            0.812,
+            0.158
+          ],
+          "content": "• For a fixed structure, our counting estimates of the CPT converge to the maximum likelihood model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.16,
+            0.731,
+            0.183
+          ],
+          "content": "• What if we get to pick the structure as well?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.184,
+            0.807,
+            0.23
+          ],
+          "content": "• In general, the best model will have no conditional independence relationships"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.881,
+            0.601
+          ],
+          "content": "Unfortunately, it will almost always be the case that the maximum likelihood structural model will have no conditional independence relationships. Even if we have two variables that are completely independent, when we examine a data set generated from those variables, they will look every-so-slightly dependent, and by making them dependent in our model, we’ll be able to increase the likelihood."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.297,
+            0.074,
+            0.655,
+            0.102
+          ],
+          "content": "Learning the Structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.113,
+            0.812,
+            0.158
+          ],
+          "content": "• For a fixed structure, our counting estimates of the CPT converge to the maximum likelihood model"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.731,
+            0.183
+          ],
+          "content": "• What if we get to pick the structure as well?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.184,
+            0.806,
+            0.229
+          ],
+          "content": "• In general, the best model will have no conditional independence relationships"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.23,
+            0.655,
+            0.256
+          ],
+          "content": "• Undesirable, for reasons of overfitting"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 52"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.875,
+            0.583
+          ],
+          "content": "Unfortunately, these aren’t really the models we want. We’d like to be able to find models that reveal the conditional independence relationships that are present in the world. We’d also like to be able to find models that are relatively small and easy to work with. Additionally, these models suffer from a problem called overfitting, which is easiest to illustrate first in a slightly different context."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.108,
+            0.518,
+            0.139
+          ],
+          "content": "• Given a set of data points"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.146,
+            0.05,
+            0.852,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.85,
+            0.523
+          ],
+          "content": "Imagine you were given the following set of points in the X-Y plane, and I asked you to make a model of them in the form of a function from x to y."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.071,
+            0.569,
+            0.103
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.108,
+            0.695,
+            0.163
+          ],
+          "content": "• Given a set of data points, you could • fit them with a line, with a lot of error"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.305,
+            0.272,
+            0.653,
+            0.425
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_chart_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.738,
+            0.503
+          ],
+          "content": "You might fit them with a straight line, with a large amount of error."
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 55"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.387,
+            0.072,
+            0.567,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.109,
+            0.693,
+            0.184
+          ],
+          "content": "• Given a set of data points, you could • fit them with a line, with a lot of error • fit with a parabola, with a little error"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.308,
+            0.274,
+            0.649,
+            0.422
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.864,
+            0.522
+          ],
+          "content": "You might get a better fit by moving to a parabola, a polynomial of degree two, by making your class of models more complex."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.388,
+            0.073,
+            0.566,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.11,
+            0.647,
+            0.135
+          ],
+          "content": "• Given a set of data points, you could"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.135,
+            0.693,
+            0.158
+          ],
+          "content": "• fit them with a line, with a lot of error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.158,
+            0.677,
+            0.181
+          ],
+          "content": "• fit with a parabola, with a little error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.18,
+            0.766,
+            0.205
+          ],
+          "content": "• fit with 10th order polynomial, with no error"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.34,
+            0.276,
+            0.649,
+            0.421
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 17 • 56"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_55_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.798,
+            0.502
+          ],
+          "content": "You could even fit them with a 10-th order polynomial, with no error at all."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.073,
+            0.565,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.646,
+            0.135
+          ],
+          "content": "• Given a set of data points, you could"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.135,
+            0.692,
+            0.158
+          ],
+          "content": "• fit them with a line, with a lot of error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.158,
+            0.677,
+            0.181
+          ],
+          "content": "• fit with a parabola, with a little error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.18,
+            0.765,
+            0.205
+          ],
+          "content": "• fit with 10th order polynomial, with no error"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.341,
+            0.277,
+            0.648,
+            0.42
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.71,
+                0.42,
+                0.794,
+                0.435
+              ],
+              "content": "Lecture 17 • 57"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_56_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.847,
+            0.543
+          ],
+          "content": "Which of these models, or explanations of the data, is best? It’s really hard to answer that question without knowing something about the world that you’re living in; something about the process that generated your data."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.074,
+            0.564,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.645,
+            0.135
+          ],
+          "content": "• Given a set of data points, you could"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.135,
+            0.691,
+            0.158
+          ],
+          "content": "• fit them with a line, with a lot of error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.158,
+            0.675,
+            0.18
+          ],
+          "content": "• fit with a parabola, with a little error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.18,
+            0.764,
+            0.203
+          ],
+          "content": "• fit with 10th order polynomial, with no error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.203,
+            0.577,
+            0.227
+          ],
+          "content": "• 10th order polynomial over fits"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.227,
+            0.617,
+            0.251
+          ],
+          "content": "• less robust to variations in data"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.342,
+            0.278,
+            0.648,
+            0.42
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.711,
+                0.421,
+                0.794,
+                0.435
+              ],
+              "content": "Lecture 17 • 58"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_57_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.603
+          ],
+          "content": "Intuitively, though, we all feel like the 10th order polynomial is not a very good model. A machine learning person would say that it **overfits** the data. That means that it is too sensitive to this particular data set. If you were to get slightly different data points, the linear model wouldn’t change much at all, the parabola might change a little bit, but the high-order model might change dramatically, with the loops moving way up and down."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.074,
+            0.565,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.645,
+            0.135
+          ],
+          "content": "• Given a set of data points, you could"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.135,
+            0.691,
+            0.158
+          ],
+          "content": "• fit them with a line, with a lot of error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.158,
+            0.675,
+            0.18
+          ],
+          "content": "• fit with a parabola, with a little error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.18,
+            0.765,
+            0.203
+          ],
+          "content": "• fit with 10th order polynomial, with no error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.203,
+            0.578,
+            0.227
+          ],
+          "content": "• 10th order polynomial over fits"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.227,
+            0.617,
+            0.249
+          ],
+          "content": "• less robust to variations in data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.25,
+            0.574,
+            0.274
+          ],
+          "content": "• less likely to generalize well"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.342,
+            0.279,
+            0.648,
+            0.42
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.876,
+            0.542
+          ],
+          "content": "Because of this lack of robustness to variations in the data, we expect that the model won’t do a very good job of predicting the y values for x values that we haven’t seen before, which is one of the goals of learning."
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.074,
+            0.565,
+            0.102
+          ],
+          "level": 2,
+          "content": "Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.645,
+            0.135
+          ],
+          "content": "• Given a set of data points, you could"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.135,
+            0.691,
+            0.158
+          ],
+          "content": "• fit them with a line, with a lot of error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.158,
+            0.675,
+            0.18
+          ],
+          "content": "• fit with a parabola, with a little error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.18,
+            0.764,
+            0.203
+          ],
+          "content": "• fit with 10th order polynomial, with no error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.203,
+            0.578,
+            0.227
+          ],
+          "content": "• 10th order polynomial over fits"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.227,
+            0.617,
+            0.249
+          ],
+          "content": "• less robust to variations in data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.25,
+            0.574,
+            0.274
+          ],
+          "content": "• less likely to generalize well"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.342,
+            0.279,
+            0.648,
+            0.42
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.71,
+                0.421,
+                0.793,
+                0.435
+              ],
+              "content": "Lecture 17 • 60"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_59_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.881,
+            0.582
+          ],
+          "content": "In general, the more data you have, the more complex a model you can use robustly. But there’s always a tradeoff between getting a model that’s simple versus a model that perfectly captures the particular data that you have at the moment. This tradeoff is pervasive in statistics and machine learning, and is the subject of much of the theoretical and foundational research."
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.359,
+            0.072,
+            0.594,
+            0.103
+          ],
+          "content": "Scoring Metric"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.668,
+            0.14
+          ],
+          "content": "• What if we want to vary the structure?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 61"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.863,
+            0.561
+          ],
+          "content": "So, to guard against overfitting, we are going to use something a bit more complex than maximum likelihood to select the model that we most want. It becomes crucial to address this point when we want to compare models with different structures."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.359,
+            0.072,
+            0.595,
+            0.103
+          ],
+          "content": "Scoring Metric"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.108,
+            0.669,
+            0.139
+          ],
+          "content": "• What if we want to vary the structure?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.154,
+            0.799,
+            0.207
+          ],
+          "content": "• We want a network that has conflicting properties • good fit to data: log likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 62"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.581,
+            0.502
+          ],
+          "content": "In particular, we want models that fit the data well."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.36,
+            0.073,
+            0.593,
+            0.102
+          ],
+          "level": 2,
+          "content": "Scoring Metric"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.11,
+            0.667,
+            0.137
+          ],
+          "content": "• What if we want to vary the structure?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.157,
+            0.796,
+            0.204
+          ],
+          "content": "• We want a network that has conflicting properties • good fit to data: log likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.204,
+            0.765,
+            0.229
+          ],
+          "content": "• low complexity: total number of parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 63"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.878,
+            0.624
+          ],
+          "content": "But we also want models with low complexity. We will characterize the complexity of a network structure by the total number of parameters in the conditional probability tables. For a binary node with no parents, one parameter is required (because the probability that the variable takes on the other value is 1 minus the specified probability). In general, for a binary node with k parents, 2^k parameters are required. For a node that can take on n values, with k parents, each of which can take on m values, (n-1) m^k parameters are required."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.361,
+            0.073,
+            0.593,
+            0.102
+          ],
+          "content": "Scoring Metric"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.11,
+            0.666,
+            0.137
+          ],
+          "content": "• What if we want to vary the structure?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.157,
+            0.796,
+            0.204
+          ],
+          "content": "• We want a network that has conflicting properties • good fit to data: log likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.203,
+            0.765,
+            0.229
+          ],
+          "content": "• low complexity: total number of parameters"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.249,
+            0.744,
+            0.294
+          ],
+          "content": "• Try to maximize scoring metric, by varying M (structure and parameters) given D"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.349,
+            0.304,
+            0.547,
+            0.33
+          ],
+          "content": "\\log \\Pr (D | M) - \\alpha \\# M",
+          "image_source": "images/page_63_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 64"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.843,
+            0.542
+          ],
+          "content": "So, we’ll use as our metric a function with two terms: the first will be the log likelihood of the data given the model, and the second will be a penalty term that is linear in the number of parameters in the model."
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.361,
+            0.073,
+            0.593,
+            0.102
+          ],
+          "level": 2,
+          "content": "Scoring Metric"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.665,
+            0.137
+          ],
+          "content": "• What if we want to vary the structure?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.156,
+            0.795,
+            0.23
+          ],
+          "content": "• We want a network that has conflicting properties • good fit to data: log likelihood • low complexity: total number of parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.249,
+            0.743,
+            0.294
+          ],
+          "content": "• Try to maximize scoring metric, by varying M (structure and parameters) given D"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.349,
+            0.304,
+            0.547,
+            0.33
+          ],
+          "content": "\\log \\Pr (D | M) - \\alpha \\# M",
+          "image_source": "images/page_64_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.337,
+            0.792,
+            0.382
+          ],
+          "content": "• Parameter α controls the tradeoff between fit and complexity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 65"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.869,
+            0.582
+          ],
+          "content": "The parameter alpha is a knob that we can adjust, which controls the tradeoff between how much we emphasize goodness of fit to the data and how much we emphasize complexity. There are theoretical analyses that might help us set alpha (particularly as a function of the amount of data we have), but we won’t go into them in this class."
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.071,
+            0.682,
+            0.103
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.109,
+            0.678,
+            0.138
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 66"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.881,
+            0.543
+          ],
+          "content": "Now we know what we’re looking for: the network structure and parameters that maximizes the scoring metric. But how do we find it? Unfortunately, there’s no way to find the best structure directly."
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.271,
+            0.073,
+            0.681,
+            0.103
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.11,
+            0.676,
+            0.136
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.135,
+            0.601,
+            0.16
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 67"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.855,
+            0.522
+          ],
+          "content": "And there are, in general, way too many possible structures to enumerate them all (except in some small problems)."
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.271,
+            0.073,
+            0.681,
+            0.103
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.11,
+            0.676,
+            0.136
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.135,
+            0.601,
+            0.16
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 68"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.873,
+            0.542
+          ],
+          "content": "So, we come back to a technique that we started with: local search in the space of structures. We really only need to search structure space, because for any given structure, we can find the best parameters."
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.268,
+            0.072,
+            0.683,
+            0.103
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.109,
+            0.677,
+            0.136
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.177,
+            0.135,
+            0.603,
+            0.161
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.177,
+            0.178,
+            0.589,
+            0.207
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 69"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.687,
+            0.502
+          ],
+          "content": "To do local search, we need to start with some initial structure."
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.072,
+            0.682,
+            0.103
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.109,
+            0.677,
+            0.136
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.135,
+            0.601,
+            0.161
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.178,
+            0.588,
+            0.204
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.203,
+            0.609,
+            0.229
+          ],
+          "content": "• Do local search in structure space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 70"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.855,
+            0.52
+          ],
+          "content": "Then, we move through the space of structures, trying to improve the score of our model."
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.271,
+            0.074,
+            0.679,
+            0.102
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.675,
+            0.135
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.136,
+            0.6,
+            0.159
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.18,
+            0.586,
+            0.203
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.204,
+            0.609,
+            0.227
+          ],
+          "content": "• Do local search in structure space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.227,
+            0.774,
+            0.251
+          ],
+          "content": "• neighborhood: add, delete, or reverse an arc"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 71"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.603
+          ],
+          "content": "There are lots of possible search strategies, but a typical one considers that the neighbors of a given structure are those structures that can be reached by adding a single arc, deleting an arc, or reversing an arc. Reversing an arc is not strictly necessary, since it can be accomplished by deleting an arc, and then adding it back in in the other direction. However, deleting the arc often causes a decrease in the score, making it an unappealing move."
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.27,
+            0.073,
+            0.681,
+            0.102
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.11,
+            0.676,
+            0.136
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.135,
+            0.601,
+            0.16
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.179,
+            0.587,
+            0.204
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.204,
+            0.609,
+            0.227
+          ],
+          "content": "• Do local search in structure space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.227,
+            0.775,
+            0.251
+          ],
+          "content": "• neighborhood: add, delete, or reverse an arc"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.25,
+            0.568,
+            0.275
+          ],
+          "content": "• maintain no directed cycles"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 17 • 72"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.87,
+            0.522
+          ],
+          "content": "Throughout the course of the search, including during the initialization process, it’s crucial to be sure that your network doesn’t have any directed cycles."
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.272,
+            0.074,
+            0.679,
+            0.102
+          ],
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.675,
+            0.135
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.135,
+            0.599,
+            0.16
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.18,
+            0.586,
+            0.203
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.204,
+            0.609,
+            0.227
+          ],
+          "content": "• Do local search in structure space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.227,
+            0.774,
+            0.251
+          ],
+          "content": "• neighborhood: add, delete, or reverse an arc"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.251,
+            0.567,
+            0.273
+          ],
+          "content": "• maintain no directed cycles"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.275,
+            0.794,
+            0.334
+          ],
+          "content": "• once you pick a structure, compute maximumlikelihood parameters, and then calculate the score of the model"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 17 • 73"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.827,
+            0.542
+          ],
+          "content": "Once you pick a structure, you can use the counting methods to compute the maximum-likelihood values for the parameters. Now you have a complete model that you can score using the scoring metric."
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.272,
+            0.074,
+            0.679,
+            0.102
+          ],
+          "level": 2,
+          "content": "Search in Structure Space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.674,
+            0.135
+          ],
+          "content": "• No direct way to find the best structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.136,
+            0.599,
+            0.16
+          ],
+          "content": "• Too many to enumerate them all"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.18,
+            0.585,
+            0.203
+          ],
+          "content": "• Start with some initial structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.204,
+            0.609,
+            0.227
+          ],
+          "content": "• Do local search in structure space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.227,
+            0.774,
+            0.251
+          ],
+          "content": "• neighborhood: add, delete, or reverse an arc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.251,
+            0.566,
+            0.273
+          ],
+          "content": "• maintain no directed cycles"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.275,
+            0.794,
+            0.333
+          ],
+          "content": "• once you pick a structure, compute maximumlikelihood parameters, and then calculate the score of the model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.334,
+            0.775,
+            0.378
+          ],
+          "content": "• increase score (or decrease sometimes, as in walkSAT or simulated annealing)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 74"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.879,
+            0.603
+          ],
+          "content": "There are also options about what moves to accept. In the most straightforward implementations, you propose moves at random, and take them if they improve the score. You might also consider all possible moves and take the best (though it might be pretty expensive computationally), or even do simulated annealing. There are often serious problems with local minima, which might also mean that you should restart multiple times with different initial structures."
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.37,
+            0.071,
+            0.582,
+            0.102
+          ],
+          "level": 1,
+          "content": "Initialization"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.111,
+            0.375,
+            0.139
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 75"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.597,
+            0.502
+          ],
+          "content": "There are lots of ways to generate an initial network."
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.371,
+            0.071,
+            0.582,
+            0.102
+          ],
+          "level": 1,
+          "content": "Initialization"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.112,
+            0.374,
+            0.138
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.14,
+            0.333,
+            0.163
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.533,
+            0.501
+          ],
+          "content": "One obvious one is to start with no arcs at all."
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.373,
+            0.073,
+            0.579,
+            0.101
+          ],
+          "content": "Initialization"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.373,
+            0.136
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.625,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.188,
+            0.692,
+            0.213
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.876,
+            0.541
+          ],
+          "content": "Another alternative is to choose a random ordering on the nodes, and then either make a completely connected network, in which each variable Vi has all parents V1 through Vi-1,"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 77"
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.374,
+            0.073,
+            0.579,
+            0.101
+          ],
+          "content": "Initialization"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.373,
+            0.136
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.625,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.189,
+            0.693,
+            0.212
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.252,
+            0.214,
+            0.754,
+            0.237
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has parents randomly chosen"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.235,
+            0.446,
+            0.259
+          ],
+          "content": "from $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.865,
+            0.54
+          ],
+          "content": "Or, if you want to start with a sparser network (which you **have** to do if you have a lot of variables), you can just select parents randomly from the preceding variables."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 78"
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.373,
+            0.073,
+            0.579,
+            0.101
+          ],
+          "content": "Initialization"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.374,
+            0.137
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.163,
+            0.626,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.188,
+            0.693,
+            0.212
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.213,
+            0.754,
+            0.259
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has parents randomly chosen from $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.26,
+            0.703,
+            0.306
+          ],
+          "content": "• best tree network (can be computed in polynomial time)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 79"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.56
+          ],
+          "content": "Another initialization method, which is very appealing, is to find the best treestructured network. It turns out that it’s possible to find the best tree-structured network in polynomial time in the number of nodes, using an algorithm due to Chow and Liu."
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.373,
+            0.073,
+            0.579,
+            0.101
+          ],
+          "content": "Initialization"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.373,
+            0.136
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.626,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.188,
+            0.693,
+            0.212
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.213,
+            0.754,
+            0.259
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has parents randomly chosen from $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.26,
+            0.703,
+            0.305
+          ],
+          "content": "• best tree network (can be computed in polynomial time)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.306,
+            0.718,
+            0.351
+          ],
+          "content": "– compute pairwise mutual information between every pair of variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 80"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.854,
+            0.541
+          ],
+          "content": "The rough idea is that you compute the mutual information between every pair of variables. Mutual information is a statistic that measures the degree to which two variables are dependent."
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.373,
+            0.073,
+            0.579,
+            0.101
+          ],
+          "content": "Initialization"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.373,
+            0.136
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.626,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.188,
+            0.693,
+            0.212
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.213,
+            0.755,
+            0.259
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has parents randomly chosen from $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.259,
+            0.703,
+            0.305
+          ],
+          "content": "• best tree network (can be computed in polynomial time)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.305,
+            0.717,
+            0.378
+          ],
+          "content": "– compute pairwise mutual information between every pair of variables – find maximum-weight spanning tree"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 17 • 81"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.836,
+            0.54
+          ],
+          "content": "Then, you find a spanning tree (that is, a tree that connects all the nodes) whose edges have maximum total weight, where the edge weights are the mutual information values."
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.373,
+            0.073,
+            0.579,
+            0.1
+          ],
+          "level": 2,
+          "content": "Initialization"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.112,
+            0.373,
+            0.136
+          ],
+          "content": "Lots of choices!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.14,
+            0.331,
+            0.162
+          ],
+          "content": "• no arcs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.164,
+            0.626,
+            0.187
+          ],
+          "content": "• choose random ordering $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.25,
+            0.188,
+            0.693,
+            0.212
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has all parents $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.213,
+            0.755,
+            0.259
+          ],
+          "content": "–variable $\\mathsf { V } _ { \\mathrm { i } }$ has parents randomly chosen from $\\mathsf { V } _ { 1 } \\dots \\mathsf { V } _ { \\mathsf { n } - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.26,
+            0.703,
+            0.305
+          ],
+          "content": "• best tree network (can be computed in polynomial time)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.306,
+            0.717,
+            0.378
+          ],
+          "content": "– compute pairwise mutual information between every pair of variables – find maximum-weight spanning tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 17 • 82"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.878,
+            0.56
+          ],
+          "content": "Now you have all the pieces you need to implement a basic Bayesian-network learning algorithm, even without being given the structure in advance. Next time, we’ll consider what to do when some of the variables are not observable in the data set."
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.326,
+            0.073,
+            0.626,
+            0.102
+          ],
+          "level": 2,
+          "content": "Recitation problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.11,
+            0.741,
+            0.132
+          ],
+          "content": "Consider a domain with three binary nodes: A, B, and C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.131,
+            0.801,
+            0.165
+          ],
+          "content": "1. How many possible network structures are there over three nodes?"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.182,
+            0.165,
+            0.604,
+            0.186
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nData set: {<0,1,1>, <0, 1, 1>, <1,0,0>}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.185,
+            0.774,
+            0.221
+          ],
+          "content": "2. What parameter estimates would you get for the CPTs in each of the network structures on the following slide?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.22,
+            0.755,
+            0.256
+          ],
+          "content": "3. What is the log likelihood of the data given each of the models (given the estimates from the previous part)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.255,
+            0.795,
+            0.291
+          ],
+          "content": "4. Do parts 2 and 3 again without the Bayesian correction (or with it, if you didn’t use it the first time)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.289,
+            0.763,
+            0.329
+          ],
+          "content": "5. How many parameters are there in each of the models? (Don’t count p and 1-p as separate parameters)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.343,
+            0.823,
+            0.393
+          ],
+          "content": "There are too many network structures for everyone to do every problem. So, if the day of your birthday is 0 mod 3, then do structures s1 and s2. If it’s 1 mod 3, then do structures s3 and s4. And if it’s 2 mod 3, then do structures s5 and s6."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 17 • 83"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.873,
+            0.561
+          ],
+          "content": "Here is a fairly complex recitation problem. There are too many network structures for everyone to do every problem. So, if the day of your birthday is 0 mod 3, then do structures s1 and s2. If it’s 1 mod 3, then do structures s3 and s4. And if it’s 2 mod 3, then do structures s5 and s6."
+        }
+      ]
+    },
+    {
+      "page_idx": 83,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.197,
+            0.341,
+            0.234
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.254,
+            0.145,
+            0.304,
+            0.179
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_1.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.323,
+            0.072,
+            0.63,
+            0.102
+          ],
+          "level": 2,
+          "content": "Recitation Problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.133,
+            0.219,
+            0.158
+          ],
+          "content": "S1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.409,
+            0.135,
+            0.442,
+            0.157
+          ],
+          "content": "S2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.405,
+            0.131,
+            0.551,
+            0.234
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.595,
+            0.136,
+            0.629,
+            0.157
+          ],
+          "content": "S5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.594,
+            0.132,
+            0.739,
+            0.23
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.19,
+            0.294,
+            0.341,
+            0.387
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.411,
+            0.294,
+            0.557,
+            0.387
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.605,
+            0.294,
+            0.743,
+            0.387
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_83_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.708,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 17 • 84"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture17Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T08:46:32Z",
+      "modified_at": "2003-06-13T11:24:46+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 84,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 83,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

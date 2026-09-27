@@ -1,0 +1,197 @@
+## CS6700:
+
+## The Emergence of Intelligent Machines
+
+![](images/page_0_image_5.jpg)
+
+**Prof. Carla Gomes**
+
+**Prof. Bart Selman**
+
+**Cornell University**
+
+## Artificial Intelligence
+
+**After a distinguished history of “overpromising,” AI is finally**
+
+**making real progress.** J
+
+**1959 --- 1995: “nothing worked”** L
+
+**Positive trajectory started in the late 90s:**
+
+**1997 IBM’s Deep Blue defeats Kasparov**
+
+**2005 Stanley --- self-driving car (controlled environment)**
+
+**2011 IBM’s Watson wins Jeopardy! (question answering)**
+
+**2012 Speech recognition via “deep learning” (Geoff Hinton)**
+
+**2014 Computer vision is starting to work (deep learning)**
+
+**2015 Microsoft demos real-time translation (speech to speech)**
+
+**2016 Google’s AlphaGo defeats Lee Sedol + AlphaGoZero !!**
+
+**2017 Watson technology automates 30 mid-level office insurance claim workers, Japan.**
+
+## The Emergence of Artificial Intelligence
+
+## I Emergence of (semi-)intelligent autonomous systems in society
+
+**--- Self-driving cars and trucks. Autonomous drones**
+
+**(surveillance and other). Fully autonomous trading systems.**
+
+**Household and service robots. Intelligent assistants.**
+
+## II Shift of AI research from academic to real-world
+
+**--- Enabled by qualitative change in the field, driven by “Deep Learning” / Big Data.**
+
+## Reasons for Dramatic Progress
+
+**--- series of events**
+
+**--- main on**<strong><u>e: machine perception is starting to work (f</u></strong>**inally!)** <strong><u>systems are starting to “hear” and “see”</u></strong> **after “only” 50+ yrs or research…**
+
+**--- dramatic change: lots of AI techniques (reasoning, search, reinforcement learning, planning, decision theoretic methods) were developed assuming perceptual inputs were “somehow” provided to the system. But, e.g., robots could not really see or hear anything…**
+
+**(e.g. 2005 Stanley car drove around “blind”, Thrun) Now, we can use output from a perceptual system and**
+
+**leverage a broad range of existing AI techniques.**
+
+**Our systems are finally becoming “grounded in (our) world.”**
+
+**Already: super-human face recognition (Facebook) super-human traffic sign recognition (Nvidia)**
+
+## Computer vision / Image Processing ca. 2005
+
+![](images/page_4_image_1.jpg)
+
+(a) Left image: 384x288, 15 labels
+
+![](images/page_4_image_3.jpg)
+
+(human labeled)
+
+(b) Ground truth
+
+![](images/page_4_image_6.jpg)
+
+![](images/page_4_image_7.jpg)
+
+Processed image
+
+## DEEP LEARNING FOR SELF-DRIVING CARS
+
+![](images/page_5_image_1.jpg)
+
+![](images/page_5_image_2.jpg)
+
+![](images/page_5_image_3.jpg)
+
+(Nvidia 2016; Mobileye)
+
+![](images/page_5_image_5.jpg)
+
+![](images/page_5_image_6.jpg)
+
+Statistical model (neural net) trained on >1M images;
+
+Models with > 500K parameters
+
+Requires GPU power
+
+![](images/page_6_image_0.jpg)
+
+Real-time tracking of environment (360 degrees/ 50+m) and decision making.
+
+Factors in accelerated progress, cont.
+
+deep learning / deep neural nets **success is evidence in support of the “hardware hypothesis” (Moravec) (\*) core neural net ideas from mid 1980s needed: several orders of magnitude increase in computational power and data (aside: this advance was not anticipated/predicted at all; many AI/ML researchers had moved away from neural nets…)**
+
+## + BIG DATA!
+
+## Computer vs. Brain
+
+All Thinks, Great and Small
+
+![](images/page_8_chart_2.jpg)
+
+crowd-sourced human data --- machines need to understand **our conceptualization of the world. E.g. vision for self driving cars trained on 100,000+ miles of labeled road data.**
+
+**--- engineering teams (e.g. IBM’s Watson) strong commercial interests at a scale never seen before in our field**
+
+**--- Investments in AI systems are being scaled-up by an order of magnitude (to billions). Google, Facebook, Baidu, IBM, Microsoft, Tesla etc. (\$1B+) + military (\$19B proposed)**
+
+**An AI arms race**
+
+# The emergence of intelligent autonomous machines among us is expected to have a major impact on society.
+
+**“Preparing for the Future of Artificial Intelligence”**
+
+**White House Report,**
+
+**Executive Office of the President, Oct. 2016**
+
+## Issues:
+
+**1) AI Safety & Ethics (Short course this Spring! CS4732)**
+
+**2) Who benefits?**
+
+**3) Employment**
+
+## Next Phase
+
+**Further integration of existing techniques --- perception, (deep) learning, inference, planning --- will be a game changer for AI systems.**
+
+![](images/page_11_image_2.jpg)
+
+**AlphaGo: Deep Learning** +
+
+**Reasoning (Google/Deepmind 2016)**
+
+# What We Can’t Do Yet
+
+## --- Need deeper semantics of natural language
+
+Commonsense knowledge and reasoning
+
+## Example:
+
+**“The large ball crashed right through the table because it was made of Styrofoam.”**
+
+**What was made of Styrofoam? The large ball or the table?**
+
+**(Oren Etzioni, Allen AI Institute)**
+
+**Commonsense is needed to deal with unforeseen cases. (i.e., cases not in training data)**
+
+![](images/page_12_image_8.jpg)
+
+China Tesla crash --- consider how human driver handles this! 13 **You Tube:** Tesla crashes into an orange streetsweeper on Autopilot –Chinese Media
+
+**See Non-Human Intelligence slides**
+
+## Comp. Compl. / Intelligence Hierarchy
+
+EXP-complete: games like Go, …
+
+**PSPACE-complete**: QBF, **planning**, chess (bounded), …
+
+**#P-complete/hard**: <strong><u>#SAT, sampling</u></strong>, **probabilistic inference**,
+
+**NP-complete**: **SAT**, **propositional reasoning**, scheduling, graph coloring, puzzles,
+
+P-complete: circuit-value, …
+
+![](images/page_14_chart_7.jpg)
+
+In P:
+
+**What are the consequences for human understanding**
+
+**of machine intelligence?**

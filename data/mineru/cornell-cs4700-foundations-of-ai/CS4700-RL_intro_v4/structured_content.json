@@ -1,0 +1,1044 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.736,
+            0.167,
+            0.918,
+            0.227
+          ],
+          "content": "**CS 4700:**"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.198,
+            0.235,
+            0.92,
+            0.305
+          ],
+          "level": 1,
+          "content": "Foundations of Artificial Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.412,
+            0.389,
+            0.603,
+            0.439
+          ],
+          "content": "**Bart Selman**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.327,
+            0.497,
+            0.69,
+            0.602
+          ],
+          "content": "**Reinforcement Learning R&N – Chapter 21**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.707,
+            0.844,
+            0.845
+          ],
+          "content": "**Note: in the next two parts of RL, some of the figure/section numbers refer to an earlier edition of R&N with a more basic description of the techniques.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.884,
+            0.721,
+            0.933
+          ],
+          "content": "**The slides provide a self-contained description.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.483,
+            0.057,
+            0.962,
+            0.123
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.155,
+            0.843,
+            0.404
+          ],
+          "content": "**In our discussion of Search methods (developed for problem solving), we assumed a given State Space and operators that lead from one State to one or more Successor states with a possible operator Cost.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.464,
+            0.958,
+            0.777
+          ],
+          "content": "**The State space can be exponentially large but is in principle known. The difficulty was finding the right path (sequence of moves). This problem solved by searching through the various alternative sequences of moves. In tough spaces, this leads to exponential searches.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.849,
+            0.877,
+            0.904
+          ],
+          "content": "**Can we do something totally different?? Avoid search…**"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.079,
+            0.906,
+            0.215
+          ],
+          "content": "**Why don’t we “just learn” how to make the right move in each possible state?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.303,
+            0.905,
+            0.59
+          ],
+          "content": "**In principle, need to know very little about environment at the start. Simply observe another agent / human / program make steps (go from state to state) and mimic!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.677,
+            0.945,
+            0.967
+          ],
+          "content": "**Reinforcement learning: Some of the earliest AI research (1960s). It works! Principles and ideas still applicable today… Led to AlphaGo by Google. (World’s best Go player, 2016.)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.455,
+            0.079,
+            0.531,
+            0.11
+          ],
+          "content": ":AlphaGo"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.05,
+            0.077,
+            0.531,
+            0.554
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.325,
+            0.494,
+            0.984,
+            0.993
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.068,
+            0.944,
+            0.202
+          ],
+          "content": "Environment we consider is a basic game (the simplest non-trivial game):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.291,
+            0.296,
+            0.349
+          ],
+          "content": "**Tic-Tac-Toe**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.522,
+            0.181,
+            0.817,
+            0.505
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.517,
+            0.936,
+            0.672
+          ],
+          "content": "**The question: Can you write a program that learns to play Tic-Tac-Toe? Ideas?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.741,
+            0.925,
+            0.922
+          ],
+          "content": "**Let’s try to re-discover what Donald Michie did in 1962. He did not even use a computer! He handsimulated one.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.939,
+            0.888,
+            0.999
+          ],
+          "content": "**The first non-trivial machine learning program!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.554,
+            0.022,
+            0.983,
+            0.085
+          ],
+          "content": "Now, we don’t want…"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.007,
+            0.011,
+            0.41,
+            0.116
+          ],
+          "content": "**Tic-tac-toe (or Noughts and crosses, Xs and Os)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.133,
+            0.684,
+            0.185
+          ],
+          "content": "**We start 3 moves per player in:**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.003,
+            0.214,
+            0.939,
+            0.999
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.919,
+            0.959,
+            0.955
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.443,
+            0.103,
+            0.959,
+            0.161
+          ],
+          "level": 2,
+          "content": "What else can we think of?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.269,
+            0.528,
+            0.326
+          ],
+          "content": "**Basic ingredients needed:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.343,
+            0.73,
+            0.401
+          ],
+          "content": "**1) We need to represent board states.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.42,
+            0.81,
+            0.477
+          ],
+          "content": "**2) What moves to make in different states**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.543,
+            0.913,
+            0.704
+          ],
+          "content": "**It may help to think a bit probabilistically … pick moves with some probability and adjust probabilities through a learning procedure …**"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.396,
+            0.035,
+            0.962,
+            0.101
+          ],
+          "level": 2,
+          "content": "Learn from human opponent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.169,
+            0.901,
+            0.301
+          ],
+          "content": "**We could try to learn directly from human what moves to make…**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.087,
+            0.371,
+            0.379,
+            0.427
+          ],
+          "level": 2,
+          "content": "But, some issues:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.446,
+            0.902,
+            0.564
+          ],
+          "content": "**1) Human may be a weak player.** J **We want to learn how to beat him/her!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.583,
+            0.871,
+            0.767
+          ],
+          "content": "**2) Human may play “nought” (second player) and computer wants to learn how to play “cross” (first player).**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.088,
+            0.785,
+            0.237,
+            0.836
+          ],
+          "level": 2,
+          "content": "Answer:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.857,
+            0.882,
+            0.98
+          ],
+          "content": "**Let’s try to “just play” human against machine and learn something from wins and losses.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.023,
+            0.96,
+            0.085
+          ],
+          "content": "**To start: some basics of the “machine”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.136,
+            0.809,
+            0.267
+          ],
+          "content": "**For each board state where cross is on-move, have a “match box” labeled with that state.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.36,
+            0.772,
+            0.417
+          ],
+          "content": "**Requires a few hundred matchboxes (304).**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.026,
+            0.429,
+            0.978,
+            0.897
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.907,
+                0.465,
+                0.941
+              ],
+              "content": "Fig. 2.—The matchbox machine—MENACE"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.078,
+            0.924,
+            0.195
+          ],
+          "content": "**Each match box has a number of colored “beads” in it, each color represents a valid move for cross on that board.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.235,
+            0.359,
+            0.393
+          ],
+          "content": "**E.g. start with ten beads of each color for each valid move.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.445,
+            0.452,
+            0.71
+          ],
+          "content": "**1) To make a move, pick up box with label of current state, shake it, Pick random bead. Check color and make that move.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.747,
+            0.482,
+            0.931
+          ],
+          "content": "**2) New state, wait for human counter-move. New state, repeat above.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.673,
+            0.241,
+            0.752,
+            0.278
+          ],
+          "content": "Table 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.457,
+            0.288,
+            0.972,
+            0.388
+          ],
+          "content": "The colour code used in the matchbox machine. The system of numbering the squares is that adopted for the subsequent computer simulation program"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.523,
+            0.409,
+            0.905,
+            0.939
+          ],
+          "content": "| 1WHITE | 2LILAC | 3SILVER |\n| --- | --- | --- |\n| 8BLACK | 0GOLD | 4GREEN |\n| 7AMBER | 6RED | 5PINK |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.069,
+            0.825,
+            0.205
+          ],
+          "content": "**Game ends when one of the parties has a win / loss or no more open spaces.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.271,
+            0.831,
+            0.409
+          ],
+          "content": "**This is how the machine plays. How well will it play? What is is doing initially?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.495,
+            0.864,
+            0.709
+          ],
+          "content": "**Machine needs to learn! How? Can you think of a strategy? The first successful machine learning program in history (not involving search)…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.795,
+            0.885,
+            0.926
+          ],
+          "content": "**Let’s try to come up with a strategy…What do we need to do?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.485,
+            0.103,
+            0.96,
+            0.164
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.202,
+            0.301,
+            0.848,
+            0.574
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.195,
+                0.601,
+                0.836,
+                0.782
+              ],
+              "content": "Fig. 1.—Schematic picture of the reinforcement process during trial-and-error learning of a game. The numbered boxes represent the players' successive choice-points, and the black boxes those of the opponent. Arrows drawn with broken lines indicate possible alternative choices open at the given stage"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.199,
+            0.226,
+            0.668,
+            0.269
+          ],
+          "level": 2,
+          "content": "The Computer Journal-1963-Michie-232-6-1.pdf"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.209,
+            0.303,
+            0.768,
+            0.383
+          ],
+          "level": 2,
+          "content": "Experiments on the mechanization of game-learning Part I. Characterization of the model and its parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.401,
+            0.359,
+            0.433
+          ],
+          "content": "By Donald Michie"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.374,
+            0.474,
+            0.851,
+            0.567
+          ],
+          "content": "This paper describes a trial-and-error device which learns to play the game of Noughts and Crosses. It was initially constructed from matchboxes and coloured beads and subsequently simulated in essentials by a program for a Pegasus 2 computer. The parameters governing the adaptive behaviour of this automaton are described and preliminary observations on its performance are briefly reported."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.484,
+            0.024,
+            0.96,
+            0.085
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.092,
+            0.917,
+            0.177
+          ],
+          "content": "and tiited thus seiectink macnines next move and so on to the end of the play"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.172,
+            0.925,
+            0.714
+          ],
+          "content": "At this stage reinforcements are applied. If the machine has done badly, it is \"punished\" by confiscation of the selected bead trom each of the three or four boxes wrich have been used during the play, so that it becomes less probable, when any of these positions recur in future play, that the unsuccessful move will be repeated. If the machine has done well. it is \"rewarded\" by add to each of the open boxes an extra bead of the same colour as the selected one. The moves in the successful sequence thus become more likely to be repeated if and when any of these positions recur in future."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.745,
+            0.944,
+            0.997
+          ],
+          "content": "**Works!!!** J **Don’t need that many games. Quite surprising! (approx. 220 against human player) How many against random? Against optimal?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.747,
+            0.069,
+            0.96,
+            0.126
+          ],
+          "content": "Comments"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.18,
+            0.816,
+            0.24
+          ],
+          "content": "**Learning in this case took “advantage of”:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.329,
+            0.946,
+            0.515
+          ],
+          "content": "**1) State space is manageable. Further reduced by using 1 state to represent all isomorphic states (through board rotations and symmetries).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.555,
+            0.978,
+            0.815
+          ],
+          "content": "MENACE is a machine that plays noughts and crosses, built out of 304 matchboxes. Each matchbox corresponds to one of the 304 board layouts that the opening player might face (there are actually 19,683 possible board layouts, but we only need to calculate the opening player's first four moves, and many are rotationally or reflectively identical). In turn, each matchbox"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.847,
+            0.84,
+            0.968
+          ],
+          "content": "**We “quietly” encoded some important knowledge about tic-tac-toe!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.046,
+            0.903,
+            0.168
+          ],
+          "level": 2,
+          "content": "2) What if state space is MUCH larger? As for any interesting game…"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.088,
+            0.181,
+            0.242,
+            0.236
+          ],
+          "level": 2,
+          "content": "Options:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.242,
+            0.928,
+            0.547
+          ],
+          "content": "**a) Represent board by “features.” I.e., number of various pieces on chess board but not their position.. It’s like having each matchbox represent a large collection of states. Notion of “valid moves” becomes a bit trickier.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.553,
+            0.899,
+            0.797
+          ],
+          "content": "**b) Don’t store “match boxes” / states explicitly, instead learn a function (e.g. neural net) that computes the right move directly when given some representation of the state as input.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.803,
+            0.584,
+            0.859
+          ],
+          "content": "**c) Combination of a) and b).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.865,
+            0.839,
+            0.981
+          ],
+          "content": "**d) Combine a), b), and c) with some form of “look-ahead” search.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.874,
+            0.321,
+            0.975,
+            0.362
+          ],
+          "content": "Googe Deopend"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.756,
+            0.365,
+            0.814,
+            0.39
+          ],
+          "level": 2,
+          "content": "MATCH 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.653,
+            0.415,
+            0.907,
+            0.463
+          ],
+          "content": "AlphaGo vs Lee Sedol"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.607,
+            0.579,
+            0.789,
+            0.595
+          ],
+          "content": "1267× z0?voluowolk oom"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "CS4700-RL_intro_v4",
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 17,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

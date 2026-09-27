@@ -1,0 +1,6410 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.242,
+            0.083,
+            0.711,
+            0.108
+          ],
+          "level": 2,
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.404,
+            0.128,
+            0.548,
+            0.157
+          ],
+          "level": 2,
+          "content": "Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.177,
+            0.55,
+            0.203
+          ],
+          "content": "• Planning vs problem solving"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.204,
+            0.43,
+            0.227
+          ],
+          "content": "• Situation calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.229,
+            0.457,
+            0.254
+          ],
+          "content": "• Plan-space planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.864,
+            0.582
+          ],
+          "content": "We are going to switch gears a little bit now. In the first section of the class, we talked about problem solving, and search in general, then we did logical representations. The motivation that I gave for doing the problem solving stuff was that you might have an agent that is trying to figure out what to do in the world, and problem solving would be a way to do that."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.585,
+            0.869,
+            0.666
+          ],
+          "content": "And then we motivated logic by trying to do problem solving in a little bit more general way, but then we kind of really digressed off into the logic stuff, and so now what I want to do is go back to a section on planning, which will be the next four lectures."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.67,
+            0.877,
+            0.794
+          ],
+          "content": "Now that we know something about search and something about logic, we can talk about how an agent really could figure out how to behave in the world. This will all be in the deterministic case. We're still going to assume that when you take an action in the world, there's only a single possible outcome. After this, we'll back off on that assumption and spend most of the rest of the term thinking about what happens when the deterministic assumption goes away."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.071,
+            0.701,
+            0.104
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.109,
+            0.32,
+            0.135
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.134,
+            0.413,
+            0.159
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.41,
+            0.181
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.18,
+            0.407,
+            0.204
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.861,
+            0.561
+          ],
+          "content": "In planning, the idea is that you're given some description of a starting state or states; a goal state or states; and some set of possible actions that the agent can take. And you want to find the sequence of actions that get you from the start state to the goal state."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.071,
+            0.701,
+            0.103
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.11,
+            0.32,
+            0.135
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.134,
+            0.413,
+            0.159
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.41,
+            0.181
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.18,
+            0.407,
+            0.203
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.203,
+            0.505,
+            0.248
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 3"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.117,
+            0.478,
+            0.85,
+            0.583
+          ],
+          "content": "It’s pretty clear that you can cast this as a problem solving problem. Remember when we talked about problem solving, we were given a start state, and we searched through a tree that was the sequences of actions that you could take, and we tried to find a nice short plan. So, planning problems can certainly be viewed as problem-solving problems, but it may not be the best view to take."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.253,
+            0.074,
+            0.698,
+            0.101
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.111,
+            0.319,
+            0.135
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.135,
+            0.412,
+            0.158
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.409,
+            0.18
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.181,
+            0.405,
+            0.203
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.632,
+            0.1,
+            0.799,
+            0.203
+          ],
+          "content": "A B C D E F G H I J K L"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.203,
+            0.506,
+            0.245
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.246,
+            0.517,
+            0.327
+          ],
+          "content": "• But, what if initial state is not known exactly? E.g. start in bottom row in 4x4 world, with goal being C."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.627,
+            0.209,
+            0.798,
+            0.229
+          ],
+          "content": "Actions: N,S,E,W"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.872,
+            0.541
+          ],
+          "content": "Just for fun, let's think about moving around on the squares of this grid. The goal is to get to state C, but all we know initially is that the agent is in the bottom row, one of states I, J, K, and L."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.253,
+            0.074,
+            0.697,
+            0.101
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.111,
+            0.319,
+            0.135
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.135,
+            0.412,
+            0.158
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.409,
+            0.181
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.181,
+            0.405,
+            0.203
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.632,
+            0.1,
+            0.799,
+            0.203
+          ],
+          "content": "A B C D E F G H I J K L"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.203,
+            0.506,
+            0.245
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.627,
+            0.209,
+            0.798,
+            0.229
+          ],
+          "content": "Actions: N,S,E,W"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.246,
+            0.517,
+            0.326
+          ],
+          "content": "• But, what if initial state is not known exactly? E.g. start in bottom row in 4x4 world, with goal being C."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.326,
+            0.541,
+            0.406
+          ],
+          "content": "• Do search over “sets” of underlying states to find a set of actions that will reach C for any starting state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.845,
+            0.541
+          ],
+          "content": "We could try to solve this using our usual problem solving search, but where our nodes would now represent sets of states, rather than single states. So, how would that go?"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.253,
+            0.074,
+            0.698,
+            0.101
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.111,
+            0.319,
+            0.135
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.135,
+            0.413,
+            0.158
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.409,
+            0.181
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.181,
+            0.406,
+            0.203
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.1,
+            0.799,
+            0.203
+          ],
+          "content": "A B C D E F G H I J K L"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.203,
+            0.506,
+            0.245
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.246,
+            0.517,
+            0.325
+          ],
+          "content": "• But, what if initial state is not known exactly? E.g. start in bottom row in 4x4 world, with goal being C."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.627,
+            0.209,
+            0.798,
+            0.229
+          ],
+          "content": "Actions: N,S,E,W"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.326,
+            0.541,
+            0.406
+          ],
+          "content": "• Do search over “sets” of underlying states to find a set of actions that will reach C for any starting state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.599,
+            0.25,
+            0.767,
+            0.309
+          ],
+          "content": "{I, J, K, L} N E"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.541,
+            0.31,
+            0.661,
+            0.331
+          ],
+          "content": "{G, J, K, H}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.31,
+            0.803,
+            0.33
+          ],
+          "content": "{J, K, L}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.875,
+            0.52
+          ],
+          "content": "The agent starts in the node corresponding to states I,J,K,L, because it doesn’t know exactly where it is."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.525,
+            0.842,
+            0.567
+          ],
+          "content": "Now, let’s say that it can move North, South, East, or West, but if it runs into an obstacle or the edge of the world, it just stays where it was."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.626,
+            0.209,
+            0.799,
+            0.229
+          ],
+          "content": "Actions: N,S,E,W"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.253,
+            0.073,
+            0.699,
+            0.101
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.319,
+            0.137
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.138,
+            0.413,
+            0.162
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.409,
+            0.187
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.1,
+            0.799,
+            0.203
+          ],
+          "content": "A B C D E F G H F F T 1 J"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.189,
+            0.405,
+            0.211
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.213,
+            0.506,
+            0.258
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.26,
+            0.517,
+            0.346
+          ],
+          "content": "• But, what if initial state is not known exactly? E.g. start in bottom row in 4x4 world, with goal being C."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.535,
+            0.252,
+            0.805,
+            0.332
+          ],
+          "content": "{I, J, K, L} N E {G, J, K, H} {J, K, L}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.347,
+            0.496,
+            0.393
+          ],
+          "content": "• Do search over “sets” of underlying states."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 7"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.835,
+            0.519
+          ],
+          "content": "So, if it moves north, it could end up in states G, J, K, or H, so that gives us this result node."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.252,
+            0.073,
+            0.699,
+            0.101
+          ],
+          "content": "Planning as Problem Solving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.321,
+            0.137
+          ],
+          "content": "• Planning:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.138,
+            0.413,
+            0.163
+          ],
+          "content": "• Start state (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.41,
+            0.188
+          ],
+          "content": "• Goal state (G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.189,
+            0.406,
+            0.211
+          ],
+          "content": "• Set of actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.1,
+            0.801,
+            0.204
+          ],
+          "content": "A B C D E F G H K 1 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.213,
+            0.507,
+            0.258
+          ],
+          "content": "• Can be cast as “problemsolving” problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.26,
+            0.518,
+            0.347
+          ],
+          "content": "• But, what if initial state is not known exactly? E.g. start in bottom row in 4x4 world, with goal being C."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.348,
+            0.527,
+            0.394
+          ],
+          "content": "• Do search over “sets” of underlying (atomic) states."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.626,
+            0.209,
+            0.799,
+            0.229
+          ],
+          "content": "Actions: N,S,E,W"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.537,
+            0.252,
+            0.815,
+            0.333
+          ],
+          "content": "{I, J, K, L} N E {G, K, H} {G, J, K, H} {J, K, L}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.54,
+            0.309,
+            0.663,
+            0.331
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.505,
+            0.86,
+            0.568
+          ],
+          "content": "You can see how this process would continue. And probably the shortest plan is going to be to go east three times (so we could only possibly be in state L) and then continue north until we get to the top, and then go west to the goal."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.572,
+            0.5
+          ],
+          "content": "And if it moves East, it could end up in J, K, or L."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.337,
+            0.073,
+            0.616,
+            0.103
+          ],
+          "content": "Planning as Logic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.818,
+            0.201
+          ],
+          "content": "• The problem solving formulation in terms of sets of atomic states is incredibly inefficient because of the exponential blowup in the number of sets of atomic states."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.869,
+            0.623
+          ],
+          "content": "So, we do have a way to think about planning in the case where you're not absolutely sure what your starting state is. But, it's really inefficient in any kind of a big domain because we're planning with sets of states at the nodes. Just to figure out how the state transition function works on sets of primitive states, we're having to go through each little atomic state in our set of states, and think about how it transitions to some other atomic state. And that could be really desperately inefficient."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.337,
+            0.074,
+            0.615,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning as Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.817,
+            0.199
+          ],
+          "content": "• The problem solving formulation in terms of sets of atomic states is incredibly inefficient because of the exponential blowup in the number of sets of atomic states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.201,
+            0.795,
+            0.245
+          ],
+          "content": "• Logic provides us with a way of describing sets of states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.875,
+            0.582
+          ],
+          "content": "One of our arguments for moving to logical representations was to be able to have a compact way of describing a set of states. You should be able to describe that set of states IJKL by saying, the proposition \"bottom row\" is true and you might be able to say, well, if \"bottom row\", and no obstacles above me, then when I move, then I'll be in \"next to bottom row\", or something like that."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.337,
+            0.074,
+            0.615,
+            0.102
+          ],
+          "level": 1,
+          "content": "Planning as Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.817,
+            0.199
+          ],
+          "content": "• The problem solving formulation in terms of sets of atomic states is incredibly inefficient because of the exponential blowup in the number of sets of atomic states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.201,
+            0.794,
+            0.244
+          ],
+          "content": "• Logic provides us with a way of describing sets of states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.247,
+            0.791,
+            0.292
+          ],
+          "content": "• Can we formulate the planning problem using logical descriptions of the relevant sets of states?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.869,
+            0.602
+          ],
+          "content": "That might mean that if you can set up the logical description of your world in the right way, you can talk about these sets of states, not by enumerating them, but by giving logical descriptions of those sets of states. And the idea is that a logical formula stands for all the interpretations, or world situations, in which it is true. It stands for all the locations that the agent could be in that would make the formula true."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.338,
+            0.074,
+            0.615,
+            0.102
+          ],
+          "level": 1,
+          "content": "Planning as Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.817,
+            0.199
+          ],
+          "content": "• The problem solving formulation in terms of sets of atomic states is incredibly inefficient because of the exponential blowup in the number of sets of atomic states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.202,
+            0.794,
+            0.244
+          ],
+          "content": "• Logic provides us with a way of describing sets of states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.248,
+            0.792,
+            0.291
+          ],
+          "content": "• Can we formulate the planning problem using logical descriptions of the relevant sets of states?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.294,
+            0.815,
+            0.34
+          ],
+          "content": "• This is a classic approach to planning: situation calculus, use the mechanism of FOL to do planning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.871,
+            0.562
+          ],
+          "content": "So, this leads us to the first approach to planning. It's going to turn out not to be particularly practical, but it's worth mentioning because it's a kind of a classical idea, and you can get somewhere with it. It’s called **situation calculus**, and the idea is to use first-order logic, exactly as you know about it, to do planning."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.339,
+            0.074,
+            0.615,
+            0.102
+          ],
+          "level": 1,
+          "content": "Planning as Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.817,
+            0.198
+          ],
+          "content": "• The problem solving formulation in terms of sets of atomic states is incredibly inefficient because of the exponential blowup in the number of sets of atomic states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.202,
+            0.793,
+            0.244
+          ],
+          "content": "• Logic provides us with a way of describing sets of states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.248,
+            0.791,
+            0.291
+          ],
+          "content": "• Can we formulate the planning problem using logical descriptions of the relevant sets of states?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.294,
+            0.815,
+            0.339
+          ],
+          "content": "• This is a classic approach to planning: situation calculus, use the mechanism of FOL to do planning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.34,
+            0.819,
+            0.385
+          ],
+          "content": "• Describe states and actions in FOL and use theorem proving to find a plan."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.875,
+            0.622
+          ],
+          "content": "We have to figure out a way to talk about states of the world, and start states and goal states and actions in the language of first order logic, and then somehow use the mechanism of theorem proving to find a plan. That's the idea. It's appealing, right? It's always appealing, given a very general solution mechanism, if you can take a particular problem, and see how it's an instance of that general solution; then you can apply your general solution to the particular problem and get an answer out without inventing any more solution methods."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.333,
+            0.073,
+            0.62,
+            0.102
+          ],
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.787,
+            0.152
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.876,
+            0.583
+          ],
+          "content": "In situation calculus, the main idea is that we're going to \"reify\" situations. To reify something is to treat it as if it’s an object. So, we’re going to have variables and constants in our logical language that will range over the possible situations, or states of the world. This will allow us to say that world states have certain properties, but to avoid enumerating them all."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.333,
+            0.074,
+            0.619,
+            0.101
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.785,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.149,
+            0.731,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.786,
+            0.205
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.205,
+            0.461,
+            0.224
+          ],
+          "content": "• Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.88,
+            0.58
+          ],
+          "content": "So we can say things like \"at robot Room Six\" in \"situations 9\". More ordinarily, we would have said at(robot,room6), implicitly saying something about the current state of the world. But in planning, we need to be thinking about a bunch of different situations at the same time, and so we have to be able to name them."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.585,
+            0.869,
+            0.688
+          ],
+          "content": "For any proposition that can change its truth value in different situations, we’ll add an extra argument, which is the situation in which we’re asserting that the proposition holds. Then we can talk about how the world changes over time, by having the predicate or function \"result\". We can say the result of doing action \"move north\" in situation one is situation six."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.334,
+            0.075,
+            0.619,
+            0.1
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.785,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.15,
+            0.73,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.212
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.205,
+            0.46,
+            0.223
+          ],
+          "content": "• Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.224,
+            0.779,
+            0.261
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.874,
+            0.582
+          ],
+          "content": "Now we need to write down what we know about S6 because of the fact that we got it by moving north from S1. So, what do we know about S6? In the textbook, Russell and Norvig use the wumpus world to illustrate situation calculus. We can describe the dynamics of the world using **effect axioms**. They say what the effects in the world are of taking particular actions."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.334,
+            0.075,
+            0.619,
+            0.1
+          ],
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.784,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.219,
+            0.15,
+            0.729,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.207
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.205,
+            0.459,
+            0.223
+          ],
+          "content": "• Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.224,
+            0.778,
+            0.258
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.258,
+            0.745,
+            0.276
+          ],
+          "content": "• ∀ x.s. Present(x,s) Æ Portable(x) → Holding(x, Result(Grab, s))"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 17"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.117,
+            0.479,
+            0.827,
+            0.541
+          ],
+          "content": "So, we might say that, for all objects x and situations s, if object x is present in situation s, and if object s is portable, then in the situation that results from executing the grab action in situation s, the agent is holding the object x."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.118,
+            0.545,
+            0.876,
+            0.626
+          ],
+          "content": "Just to be clear, Grab is an action. So Result(Grab, s) is a term that names the situation that results if the agent does a grab action in situation s. And what we’re saying in the consequent here is that the agent will be holding the object x in that resulting situation."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.334,
+            0.075,
+            0.619,
+            0.1
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.784,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.219,
+            0.15,
+            0.729,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.204
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.205,
+            0.459,
+            0.223
+          ],
+          "content": "• Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.224,
+            0.778,
+            0.258
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.258,
+            0.745,
+            0.276
+          ],
+          "content": "• ∀ x.s. Present(x,s) Æ Portable(x) → Holding(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.276,
+            0.525,
+            0.293
+          ],
+          "content": "• ∀ x.s. ¬ Holding(x, Result(Drop, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.871,
+            0.521
+          ],
+          "content": "Or, we might say that, for all objects x and situations s, that the agent is not holding object x in a situation that results from doing the drop action in situation s."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.525,
+            0.867,
+            0.587
+          ],
+          "content": "You can see the power of the logical representation in these axioms. We’re able to say things about a very large, or possibly infinite set of situations, without enumerating them."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.334,
+            0.074,
+            0.619,
+            0.1
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.785,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.15,
+            0.73,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.221
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation. • Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.224,
+            0.778,
+            0.258
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.258,
+            0.745,
+            0.276
+          ],
+          "content": "• ∀ x.s. Present(x,s) Æ Portable(x) → Holding(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.276,
+            0.525,
+            0.293
+          ],
+          "content": "• ∀ x.s. ¬ Holding(x, Result(Drop, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.298,
+            0.565,
+            0.318
+          ],
+          "content": "• Frame Axioms: what doesn’t change"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 19"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.581
+          ],
+          "content": "It's not enough to just specify these positive effects of taking actions. You also have to describe what doesn't change. The problem of having to specify all the things that don’t change is called the \"frame problem.\" I think the name comes from the frames in movies. Animators know that most of the time, from frame to frame, things don't change."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.585,
+            0.881,
+            0.708
+          ],
+          "content": "And when we write down a theory we're saying, well, if there's something here, and you do a grab, then you're going to be holding the thing. But, we haven’t said, for instance, what happens to the colors of the objects, or whether your shoes are tied, or the weather, as a result of doing the grab action. But, you have to actually say that. At least, in the situation calculus formulation, you have to say, \"and nothing else changes\" somehow."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.334,
+            0.074,
+            0.619,
+            0.101
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.785,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.219,
+            0.15,
+            0.729,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.223
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation. • Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.224,
+            0.778,
+            0.258
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.258,
+            0.745,
+            0.276
+          ],
+          "content": "• ∀ x.s. Present(x,s) Æ Portable(x) → Holding(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.276,
+            0.525,
+            0.293
+          ],
+          "content": "• ∀ x.s. ¬ Holding(x, Result(Drop, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.298,
+            0.566,
+            0.316
+          ],
+          "content": "• Frame Axioms: what doesn’t change"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.314,
+            0.586,
+            0.331
+          ],
+          "content": "• ∀ x.s. color(x,s) = color(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 20"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.582
+          ],
+          "content": "One way to do this, is to write frame axioms, where you say things like, \"for all objects and situations, the color of X in situation S is the same as the color of X in the situation that is the result of doing grab. That is to say, picking things up doesn't change their color. Picking up other things doesn't change their color. But it can be awfully tedious to have to write all these out."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.333,
+            0.074,
+            0.619,
+            0.101
+          ],
+          "level": 2,
+          "content": "Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.785,
+            0.15
+          ],
+          "content": "• Reify situations: [reify = name, treat them as objects] and use them as predicate arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.15,
+            0.73,
+            0.168
+          ],
+          "content": "• At(Robot, Room6, $S _ { 9 } )$ where $S _ { 9 }$ refers to a particular situation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.169,
+            0.785,
+            0.221
+          ],
+          "content": "• Result function: a function that describes the new situation resulting from taking an action in another situation. • Result(MoveNorth, ${ \\sf S } _ { 1 } ) = { \\sf S } _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.224,
+            0.779,
+            0.258
+          ],
+          "content": "• Effect Axioms: what is the effect of taking an action in the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.258,
+            0.746,
+            0.276
+          ],
+          "content": "• ∀ x.s. Present(x,s) Æ Portable(x) → Holding(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.276,
+            0.525,
+            0.293
+          ],
+          "content": "• ∀ x.s. ¬ Holding(x, Result(Drop, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.298,
+            0.566,
+            0.316
+          ],
+          "content": "• Frame Axioms: what doesn’t change"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.314,
+            0.587,
+            0.331
+          ],
+          "content": "• ∀ x.s. color(x,s) = color(x, Result(Grab, s))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.334,
+            0.499,
+            0.352
+          ],
+          "content": "• Can be included in Effect axioms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 21"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.582
+          ],
+          "content": "It turns out that there's a solution to the problem of having to talk about all the actions and what doesn’t change when you do them. You can read it in the book where they're talking about successor-state axioms. You can, in effect, say what the conditions are under which an object changes color, for example, and then say that these are the **only** conditions under which it changes color."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.071,
+            0.713,
+            0.104
+          ],
+          "content": "Planning in Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.111,
+            0.624,
+            0.14
+          ],
+          "content": "• Use theorem proving to find a plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.872,
+            0.542
+          ],
+          "content": "Assuming you write all of these axioms down that describe the dynamics of the world. They say how the world changes as you take actions. Then, how can you use theorem proving to find your answer?"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.242,
+            0.072,
+            0.711,
+            0.103
+          ],
+          "content": "Planning in Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.623,
+            0.136
+          ],
+          "content": "• Use theorem proving to find a plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.133,
+            0.781,
+            0.158
+          ],
+          "content": "• Goal state: ∃ s. At(Home, s) Æ Holding(Gold, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 23"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.854,
+            0.561
+          ],
+          "content": "You can write the goal down somehow as the logical statement. For instance, you could say, well, I want to find a situation in which the agent is at home and is holding gold. But I don’t want to just prove that such a situation exists; I actually want to find it."
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.073,
+            0.711,
+            0.102
+          ],
+          "content": "Planning in Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.622,
+            0.135
+          ],
+          "content": "• Use theorem proving to find a plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.133,
+            0.78,
+            0.155
+          ],
+          "content": "• Goal state: ∃ s. At(Home, s) Æ Holding(Gold, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.157,
+            0.812,
+            0.21
+          ],
+          "content": "• Initial state: At(Home, s<sub>0</sub>) Æ ¬ Holding(Gold, $s _ { 0 } )$ Æ Holding(Rope, s<sub>0</sub>) …"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.861,
+            0.561
+          ],
+          "content": "You would encode your knowledge about the initial situation as some logical statements about some particular situation. We’ll name it with the constant s0. We might say that the agent is at home in s0 and it’s not holding gold, but it is holding rope, and so on."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.074,
+            0.709,
+            0.101
+          ],
+          "content": "Planning in Situation Calculus"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.621,
+            0.135
+          ],
+          "content": "• Use theorem proving to find a plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.133,
+            0.779,
+            0.155
+          ],
+          "content": "• Goal state: ∃ s. At(Home, s) Æ Holding(Gold, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.157,
+            0.812,
+            0.207
+          ],
+          "content": "• Initial state: At(Home, s<sub>0</sub>) Æ ¬ Holding(Gold, s<sub>0</sub>) Æ Holding(Rope, s<sub>0</sub>) …"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.209,
+            0.819,
+            0.253
+          ],
+          "content": "• Plan: Result(North, Result(Grab, Result(South, s<sub>0</sub>))) • A situation that satisfies the requirements"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.255,
+            0.811,
+            0.291
+          ],
+          "content": "• We can read out of the construction of that situation what the actions should be."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.293,
+            0.757,
+            0.314
+          ],
+          "content": "• First, move South, then Grab and then move North."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.864,
+            0.601
+          ],
+          "content": "Then, we could invoke a theorem prover on the initial state description, the effects axioms, and the goal description. It turns out that if you use resolution refutation to prove an existential statement, it’s usually easy to extract a description of the particular s that the theorem prover constructed to prove the theorem (you can do it by keeping track of the substitutions that get made for s in the process of doing the proof)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.605,
+            0.877,
+            0.688
+          ],
+          "content": "So, for instance, in this example, we might find that the theorem prover found the goal conditions to be satisfied in the state that is the result of starting in situation s0, first going south, then doing a grab action, then going north. We can read the plan right out of the term that names the goal situation."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.243,
+            0.074,
+            0.71,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning in Situation Calculus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.113,
+            0.621,
+            0.135
+          ],
+          "content": "• Use theorem proving to find a plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.133,
+            0.779,
+            0.155
+          ],
+          "content": "• Goal state: ∃ s. At(Home, s) Æ Holding(Gold, s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.157,
+            0.812,
+            0.207
+          ],
+          "content": "• Initial state: At(Home, s<sub>0</sub>) Æ ¬ Holding(Gold, s<sub>0</sub>) Æ Holding(Rope, s<sub>0</sub>) …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.209,
+            0.82,
+            0.254
+          ],
+          "content": "• Plan: Result(North, Result(Grab, Result(South, s<sub>0</sub>))) • A situation that satisfies the requirements"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.255,
+            0.811,
+            0.291
+          ],
+          "content": "• We can read out of the construction of that situation what the actions should be."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.293,
+            0.757,
+            0.314
+          ],
+          "content": "• First, move South, then Grab and then move North."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.869,
+            0.561
+          ],
+          "content": "Note that we’re effectively planning for a potentially huge class of initial states at once. We’ve proved that, no matter what state we start in, as long as it satisfies the initial state conditions, then following this sequence of actions will result in a new state that satisfies the goal conditions."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.073,
+            0.712,
+            0.103
+          ],
+          "level": 2,
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.752,
+            0.16
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.622
+          ],
+          "content": "Way back when I was more naive than I am now, when I taught my first AI course, I tried to get my students to do this, to write down all these axioms for the Wumpus world, and to try to use a theorem prover to derive plans. It turned out that it was really good at deriving plans of Length 1, and sort of OK at deriving plans of Length 2, and, then, after that, forget it--it took absolutely forever. And it was not a problem with my students or the theorem prover, but rather with the whole enterprise of using the theorem prover to do this job."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.625,
+            0.873,
+            0.769
+          ],
+          "content": "So, there's sort of a general lesson, which is that even if you have a very general solution, applying it to a particular problem is often very inefficient, because you are not taking advantage of special properties of the particular problem that might make it easier to solve. Usually, the fact that you have a particular specific problem to start with gives you some leverage, some insight, some handle on solving that problem more directly and more efficiently. And that's going to be true for planning."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.239,
+            0.073,
+            0.713,
+            0.103
+          ],
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.755,
+            0.159
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.159,
+            0.794,
+            0.206
+          ],
+          "content": "• We will be build a more specialized approach that exploits special properties of planning problems."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 28"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.837,
+            0.563
+          ],
+          "content": "We're going to use a very restricted kind of logical representation in building a planner, and we're going to take advantage of some special properties of the planning problem to do it fairly efficiently. So, what special properties of planning can we take advantage of?"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.073,
+            0.712,
+            0.103
+          ],
+          "level": 2,
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.755,
+            0.159
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.159,
+            0.793,
+            0.205
+          ],
+          "content": "• We will be build a more specialized approach that exploits special properties of planning problems."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.205,
+            0.687,
+            0.252
+          ],
+          "content": "• Connect action descriptions and state descriptions [focus searching]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.875,
+            0.643
+          ],
+          "content": "One thing we can do is make explicit the connection between action descriptions and state descriptions. If I had an axiom that said \"As a result of doing the grab action, we can make holding true.\" and we were trying to satisfy a goal statement that had “holding” as part of it, then it would make sense to consider doing the “grab” action. So, rather than just trying all the actions and searching blindly through the search space, you could notice, \"Goodness, if I need holding to be true at the end, then let me try to find an action that would make it true.\" So, you can see these connections, and that can really focus your searching."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.074,
+            0.711,
+            0.103
+          ],
+          "level": 2,
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.753,
+            0.159
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.16,
+            0.793,
+            0.205
+          ],
+          "content": "• We will be build a more specialized approach that exploits special properties of planning problems."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.205,
+            0.687,
+            0.251
+          ],
+          "content": "• Connect action descriptions and state descriptions [focus searching]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.251,
+            0.645,
+            0.276
+          ],
+          "content": "• Add actions to a plan in any order"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 30"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.742
+          ],
+          "content": "Another thing to notice, that's going to be really important, is that you can add actions to your plan in any order. Maybe you're trying to think about how best to go to Tahiti for spring break; you might think about which airline flight to take first. That maybe seems like the most important thing. You might think about that and really nail it down before you figure out how you're going to get to the airport or what hotel you're going to stay in or a bunch of other things like that. You wouldn't want to have to make your plan for going to Tahiti actually in the order that you're going to execute it, necessarily. Right? If you did that, you might have to consider all the different taxis you could ride in, and that would take you a long time, and then for each taxi, you think about, \"Well, then how do I....\" You don't want to do that. So, it can be easier to work out a plan from the middle out sometimes, or in different directions, depending on the constraints."
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.073,
+            0.712,
+            0.103
+          ],
+          "level": 2,
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.753,
+            0.159
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.159,
+            0.793,
+            0.205
+          ],
+          "content": "• We will be build a more specialized approach that exploits special properties of planning problems."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.205,
+            0.687,
+            0.251
+          ],
+          "content": "• Connect action descriptions and state descriptions [focus searching]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.252,
+            0.645,
+            0.276
+          ],
+          "content": "• Add actions to a plan in any order"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.277,
+            0.568,
+            0.301
+          ],
+          "content": "• Sub-problem independence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 31"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.874,
+            0.642
+          ],
+          "content": "Another thing that we sometimes can take advantage of is sub-problem independence. If I have the goal to be at home this evening with a quart of milk and the dry cleaning, I can try to solve the quart of milk part and the dry cleaning part roughly independently and put those solutions together. So, to the extent that we can decompose a problem and solve the individual problems and stitch the solutions back together, we can often get a more efficient planning process. So, we're going to try take advantage of those things in the construction of a planning algorithm."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.239,
+            0.073,
+            0.713,
+            0.103
+          ],
+          "content": "Special Properties of Planning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.754,
+            0.159
+          ],
+          "content": "• Reducing specific planning problem to general problem of theorem proving is not efficient."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.159,
+            0.793,
+            0.205
+          ],
+          "content": "• We will be build a more specialized approach that exploits special properties of planning problems."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.205,
+            0.687,
+            0.251
+          ],
+          "content": "• Connect action descriptions and state descriptions [focus searching]"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.251,
+            0.645,
+            0.276
+          ],
+          "content": "• Add actions to a plan in any order"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.277,
+            0.569,
+            0.3
+          ],
+          "content": "• Sub-problem independence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.301,
+            0.774,
+            0.346
+          ],
+          "content": "• Restrict language for describing goals, states and actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 32"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.866,
+            0.581
+          ],
+          "content": "We're also going to scale back the kinds of things that we're able to say about the world. Especially for right now, just to get a very concrete planning algorithm. We'll be very restrictive in the language that we can use to talk about goals and states and actions and so on. We'll be able to relax some of those restrictions later on."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 33"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.289,
+            0.073,
+            0.664,
+            0.102
+          ],
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.874,
+            0.58
+          ],
+          "content": "Now we're going to talk about something called STRIPS representation. STRIPS is the name of the first real planning system that anybody built. It was made in a place called SRI, which used to stand for the Stanford Research Institute, so STRIPS stands for the Stanford Research Institute Problem Solver or something like that."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.585,
+            0.875,
+            0.708
+          ],
+          "content": "Anyway, they had a robot named Shakey, a real, actual robot that went around from room to room, and push boxes from here to there. I should say, it could do this in a very plain environment with nothing in the way. They built this planner, so that Shakey could figure out how to achieve goals by going from room to room, or pushing boxes around. It worked on a very old computer running in hardly any memory, so they had to make it as efficient as possible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.711,
+            0.852,
+            0.773
+          ],
+          "content": "So, we're going to look at a class of planners that has essentially grown out from STRIPS. The algorithms have changed, but the basic representational scheme has been found to be quite useful."
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 34"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.288,
+            0.074,
+            0.665,
+            0.102
+          ],
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.66,
+            0.151
+          ],
+          "content": "• States: conjunctions of ground literals • In(robot, r<sub>3</sub>) Æ Closed(door<sub>6</sub>) Æ …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.663
+          ],
+          "content": "So, we can represent a state of the world as a conjunction of ground literals. Remember, \"ground\" means there are no variables. And a \"literal\" can be either positive or negative. So, you could say, \"In robot Room3\" and \"closed door6\" and so on. That would be a description of the state of the world. Things that are not mentioned here are assumed to be unknown. You get some literals, and the conjunction of all those literals taken together describes the set of possible worlds; a set of possible configurations of the world. But we don't say whether Door 1 is open or closed, and so that means Door 1 could be either. And when we make a plan, it has to be a plan that would work in either case."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.288,
+            0.073,
+            0.665,
+            0.102
+          ],
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.66,
+            0.151
+          ],
+          "content": "• States: conjunctions of ground literals • In(robot, $\\vec { r } _ { 3 } )$ Æ Closed(door<sub>6</sub>) Æ …"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.154,
+            0.658,
+            0.194
+          ],
+          "content": "• Goals: conjunctions of literals • (implicit ∃ r) In(Robot, r) Æ In(Charger, r)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 35"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.871,
+            0.561
+          ],
+          "content": "The goal is also a conjunction of literals, but they're allowed to have variables. You could say something like \"I want to be in a room where the charger is.\" That could be your goal. You could say it logically by “In(Robot, r) and In(Charger, $\\mathbf { r } ) ^ { \\flat } { } ^ { \\flat }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.565,
+            0.854,
+            0.646
+          ],
+          "content": "And maybe you'd make that true by going to the room where the charger is or maybe you'd make that true by moving the charger into some other room. It's implicitly, existentially quantified; we just have to find some r that makes it true."
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.289,
+            0.074,
+            0.664,
+            0.102
+          ],
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.659,
+            0.15
+          ],
+          "content": "• States: conjunctions of ground literals • In(robot, $\\vec { r } _ { 3 } )$ Æ Closed(door<sub>6</sub>) Æ …"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.154,
+            0.658,
+            0.193
+          ],
+          "content": "• Goals: conjunctions of literals • (implicit ∃ r) In(Robot, r) Æ In(Charger, r)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.197,
+            0.595,
+            0.235
+          ],
+          "content": "• Actions (operators) • Name (implicit ∀): Go(here, there)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.877,
+            0.582
+          ],
+          "content": "Actions are also sometimes also called operators. They have a name, and sometimes it's parameterized with variables that are implicitly universally quantified. So, we might have the operator Go with parameters here and there. This operator will tell us how to go from here to there for any values of here and there that satisfy the preconditions."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.289,
+            0.074,
+            0.664,
+            0.102
+          ],
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.659,
+            0.15
+          ],
+          "content": "• States: conjunctions of ground literals • In(robot, $\\vec { r } _ { 3 } )$ Æ Closed(door<sub>6</sub>) Æ …"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.154,
+            0.658,
+            0.193
+          ],
+          "content": "• Goals: conjunctions of literals • (implicit ∃ r) In(Robot, r) Æ In(Charger, r)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.197,
+            0.595,
+            0.235
+          ],
+          "content": "• Actions (operators) • Name (implicit ∀): re)Go(here, the"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.237,
+            0.599,
+            0.273
+          ],
+          "content": "• Preconditions: conjunction of literals – At(here) Æ path(here, there)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.869,
+            0.56
+          ],
+          "content": "The preconditions are also a conjunction of literals. A precondition is something that has to be true in order for the operator to be successfully applicable. So, in order to go from here to there, you have to be at here, and there has to be a path from here to there."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.148,
+            0.053,
+            0.851,
+            0.451
+          ],
+          "sub_type": "code",
+          "content": "```txt\nSTRIPS representations\n• States: conjunctions of ground literals\n    • In(robot, r₃) Æ Closed(door₆) Æ ...\n• Goals: conjunctions of literals\n    • (implicit ∃ r) In(Robot, r) Æ In(Charger, r)\n• Actions (operators)\n    • Name (implicit ∀): Go(here, there)\n    • Preconditions: conjunction of literals\n        - At(here) Æ path(here, there)\n    • Effects: conjunctions of literals [also known as post-conditions, add-list, delete-list]\n        - At(there) Æ ¬ At(here)\n\nLecture 10 • 38\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.861,
+            0.602
+          ],
+          "content": "And then you have the \"effect\" which is a conjunction of literals. In our example, the effects would be that you’re at there and not at here. The effects say what's true now is a result of having done this action. The effects are sometimes known as “post-conditions”. In the original STRIPS, the positive effects were known as the add-list and the negative effects as the delete list (and the preconditions and goals could only be positive)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.605,
+            0.877,
+            0.729
+          ],
+          "content": "Now, since we're not working in a very general, logical framework, we’re using the logic in a very special way, we don't have to explicitly, have arguments that describe the situation, because, implicitly, an operator description says, \"If these things are true, and I do this action, then these things will be true in the resulting situation.\" But the idea of a situation as a changing thing is really built into the algorithm that we're going to use in the planner."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.288,
+            0.074,
+            0.664,
+            0.102
+          ],
+          "level": 2,
+          "content": "STRIPS representations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.66,
+            0.15
+          ],
+          "content": "• States: conjunctions of ground literals • In(robot, $\\vec { r } _ { 3 } )$ Æ Closed(door<sub>6</sub>) Æ …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.154,
+            0.658,
+            0.193
+          ],
+          "content": "• Goals: conjunctions of literals • (implicit ∃ r) In(Robot, r) Æ In(Charger, r)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.197,
+            0.596,
+            0.235
+          ],
+          "content": "• Actions (operators) • Name (implicit ∀): re)Go(here, the"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.237,
+            0.6,
+            0.273
+          ],
+          "content": "• Preconditions: conjunction of literals – At(here) Æ path(here, there)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.276,
+            0.755,
+            0.327
+          ],
+          "content": "• Effects: conjunctions of literals [also known as post-conditions, add-list, delete-list] – At(there) Æ ¬ At(here)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.329,
+            0.817,
+            0.352
+          ],
+          "content": "• Assumes no inference in relating predicates (only equality)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 39"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.782
+          ],
+          "content": "Now they built this system when, as I say, all they had was an incredibly small and slow computer, and so they absolutely had to just make it as easy as they could for the system. As time has progressed and computers have gotten fancier, people have added more richness back into the planners. Typically, you don't have to go to quite this extreme. They can do a little bit of inference about how predicates are related to each other. And then you might be allowed to have, say, \"not(open)\" here as the precondition, rather than \"closed.\" But, in the original version, there was no inference at all. All you had were these operator descriptions, and whatever they said to add or delete, you added and deleted, and that was it. And to test if the pre-conditions were satisfied, there was no theorem proving involved; you would just look the preconditions up in your database and see if they were there or not. STRIPS is at one extreme of simplicity in inference, and situation calculus is at the other, complex extreme. Now, people are building systems that live somewhere in the middle. But it's useful to see what the simple case is like."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.072,
+            0.597,
+            0.104
+          ],
+          "content": "Strips Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 40"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.522
+          ],
+          "content": "Let's talk about a particular planning problem in STRIPS representation. It involves doing some errands."
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.353,
+            0.072,
+            0.599,
+            0.103
+          ],
+          "level": 1,
+          "content": "Strips Example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.112,
+            0.285,
+            0.138
+          ],
+          "content": "• Action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.422,
+            0.794,
+            0.434
+          ],
+          "content": "Lecture 10 • 41"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.325,
+            0.5
+          ],
+          "content": "There are two actions."
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.356,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "content": "Strips Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.281,
+            0.135
+          ],
+          "content": "• Action"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.137,
+            0.371,
+            0.159
+          ],
+          "content": "• Buy(x, store)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.178,
+            0.399,
+            0.201
+          ],
+          "content": "– Eff: Have(x)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.158,
+            0.565,
+            0.179
+          ],
+          "content": "– Pre: At(store), Sells(store, x)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 42"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.581
+          ],
+          "content": "The “buy” action takes two arguments, the product, x, to be bought and the store. The preconditions are that we are at the store, and that the store sells the desired product. The effect is that we have x. Nothing else changes. We assume that we’re still at the store, and that, at least in this problem, we haven’t bought the last item, so that the store still sells x."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.585,
+            0.839,
+            0.688
+          ],
+          "content": "There's a nice problem in the book about extending this domain to deal with the case where you have money and how you would add money in as a pre-condition and a post- condition of the buy operator. It gets a little bit complicated because you have to have amounts of money and then money usually declines, and you go to the bank and so on."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.356,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "content": "Strips Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.187,
+            0.113,
+            0.567,
+            0.261
+          ],
+          "content": "• Action • Buy(x, store) – Pre: At(store), Sells(store, x) – Eff: Have(x) • Go(x, y) – Pre: At(x) – Eff: At(y), ¬At(x)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 43"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.881,
+            0.542
+          ],
+          "content": "The “go” action is just like the one we had before, except we’ll leave off the requirement that there be a path between x and y. We’ll assume that you can get from anywhere to anywhere else."
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.356,
+            0.072,
+            0.597,
+            0.103
+          ],
+          "content": "Strips Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.664,
+            0.309
+          ],
+          "content": "• Action • Buy(x, store) – Pre: At(store), Sells(store, x) – Eff: Have(x) • Go(x, y) – Pre: At(x) – Eff: At(y), ¬At(x) • Goal • Have(Milk) Æ Have(Banana) Æ Have(Drill)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 44"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.857,
+            0.521
+          ],
+          "content": "OK, now let's imagine that your goal is to have milk and have bananas and have a variable speed drill."
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.356,
+            0.072,
+            0.597,
+            0.103
+          ],
+          "level": 2,
+          "content": "Strips Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.16,
+            0.108,
+            0.807,
+            0.439
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- Action\n  - Buy(x, store)\n    - Pre: At(store), Sells(store, x)\n    - Eff: Have(x)\n  - Go(x, y)\n    - Pre: At(x)\n    - Eff: At(y), ¬At(x)\n- Goal\n  - Have(Milk) Æ Have(Banana) Æ Have(Drill)\n- Start\n  - At(Home) Æ Sells(SM, Milk) Æ Sells(SM, Banana) Æ Sells(HW, Drill)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.858,
+            0.522
+          ],
+          "content": "We’re going to start at home and knowing that the supermarket sells milk, and the supermarket sells bananas, and the hardware store sells drills."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.074,
+            0.638,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.758,
+            0.159
+          ],
+          "content": "• Progression planners: consider the effect of all possible actions in a given state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.421,
+            0.165,
+            0.529,
+            0.184
+          ],
+          "content": "At(Home)…"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.327,
+            0.164,
+            0.669,
+            0.221
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_45_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 46"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.723
+          ],
+          "content": "Now, if we go back to thinking of planning, as problem solving, then you might say, \"All right, I'm going to start in this state.\" You’d right down the logical description for the start state, which really stands for a set of states. Then, you could consider applying each possible operator. But remember that our operators are parameterized. So from Home, we could go to any possible location in our domain. There might be a lot of places you could go, which would generate a huge branching factor. And then you can buy stuff. Think of all the things you could buy -- right? – there’s potentially an incredible number of things you could buy. So, the branching factor, when you have these operators with variables in them is just huge, and if you try to search forward, you get into terrible trouble. Planners that search directly forward are called \"progression planners.\""
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.757,
+            0.159
+          ],
+          "content": "• Progression planners: consider the effect of all possible actions in a given state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.328,
+            0.165,
+            0.667,
+            0.22
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.229,
+            0.803,
+            0.274
+          ],
+          "content": "• Regression planners: to achieve a goal, what must have been true in previous state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.277,
+            0.555,
+            0.3
+          ],
+          "content": "Have(M) Æ Have(B) Æ Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.308,
+            0.371,
+            0.331
+          ],
+          "content": "Buy(M,store)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.33,
+            0.641,
+            0.352
+          ],
+          "content": "At(store) Æ Sells(store,M) Æ Have(B) Æ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.353,
+            0.325,
+            0.374
+          ],
+          "content": "Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 47"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.873,
+            0.782
+          ],
+          "content": "But, that doesn't work so well because you can’t take advantage of knowing where you're trying to go. They're not very directed. So, you say, \"OK, well, I need to make my planner more directed. Let me drive backwards from the goal state, rather than driving forward from the start state.\" So, let's think about that. Rather than progression, we can do regression. So, now we're going to start with the goal state. Our goal state is this: We have milk and we have bananas and we have a drill. OK. So now we can do goal regression, which is sort of an interesting idea. We're going to go backward. If we wanted to make this true in the world and the last action we took before doing this was a particular action -- let's say it was \"buy milk\" -- then you could say, \"All right, what would have to have been true in the previous situation in order that \"buy milk\" would make these things true in this situation?\" So, if I want this to be true in the last step, what had to have been true on the next to the last step, so that \"buy milk\" would put me in that circumstance? \"Well, we have to be at a store, and that store has to sell milk. And we also have to already have bananas and a drill.”"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.073,
+            0.637,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.757,
+            0.159
+          ],
+          "content": "• Progression planners: consider the effect of all possible actions in a given state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.329,
+            0.165,
+            0.667,
+            0.22
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.229,
+            0.803,
+            0.274
+          ],
+          "content": "• Regression planners: to achieve a goal, what must have been true in previous state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.277,
+            0.555,
+            0.299
+          ],
+          "content": "Have(M) Æ Have(B) Æ Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.308,
+            0.37,
+            0.33
+          ],
+          "content": "Buy(M,store)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.33,
+            0.64,
+            0.352
+          ],
+          "content": "At(store) Æ Sells(store,M) Æ Have(B) Æ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.223,
+            0.354,
+            0.325,
+            0.374
+          ],
+          "content": "Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 48"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.88,
+            0.662
+          ],
+          "content": "So, now you're left with this thing that you're trying to make true. And now it seems a little bit harder -- right? -- because, again, you could say, \"All right, well, what can I do? I could put in a step for buying bananas. So, then, that's going to be requiring me to be somewhere. Or, I could put in a step for buying the drill right now. You guys know that putting the drill-buying step here probably isn't so good because we can't buy it in the same place. But the planning algorithm doesn't really know that yet. You could also kind of go crazy. If you pick this \"at store,\" you could go nuts because \"store\" could be anything. So, you could just suddenly decide that you want to be anywhere in the world."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.317,
+            0.074,
+            0.637,
+            0.102
+          ],
+          "level": 2,
+          "content": "Planning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.756,
+            0.158
+          ],
+          "content": "• Progression planners: consider the effect of all possible actions in a given state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.329,
+            0.165,
+            0.666,
+            0.22
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.229,
+            0.803,
+            0.273
+          ],
+          "content": "• Regression planners: to achieve a goal, what must have been true in previous state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.277,
+            0.554,
+            0.299
+          ],
+          "content": "Have(M) Æ Have(B) Æ Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.309,
+            0.369,
+            0.33
+          ],
+          "content": "Buy(M,store)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.33,
+            0.639,
+            0.351
+          ],
+          "content": "At(store) Æ Sells(store,M) Æ Have(B) Æ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.354,
+            0.325,
+            0.373
+          ],
+          "content": "Have(D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.375,
+            0.747,
+            0.42
+          ],
+          "content": "• Both have problem of lack of direction – what action or goal to pursue next."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 49"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.873,
+            0.641
+          ],
+          "content": "But anyway, you're going to see that if you try to build the planner based on this principle, that, again, you're going to get into trouble because it's hard to see, of these things, what to do next -- how they ought to hook together. You can do it. And you can do search just like usual, and you would try a whole sequence of actions backwards until it didn't work, and then you'd go up and back-track and try again. And so the same search procedures that you know about would apply here. But again, it feels like they're going to have to do a lot of searching, and it's not very well directed."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.327,
+            0.072,
+            0.625,
+            0.103
+          ],
+          "level": 1,
+          "content": "Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.799,
+            0.161
+          ],
+          "content": "• Situation space – both progressive and regressive planners plan in space of situations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 50"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.865,
+            0.563
+          ],
+          "content": "Progression and regression search in what we’ll call “situation space”. It’s kind of like state space, but each node stands for a set of states. You're moving around in a space of sets of states. Your operations are doing things in the world, changing the set of states you’re in."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.329,
+            0.073,
+            0.624,
+            0.102
+          ],
+          "level": 2,
+          "content": "Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.798,
+            0.159
+          ],
+          "content": "• Situation space – both progressive and regressive planners plan in space of situations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.16,
+            0.792,
+            0.205
+          ],
+          "content": "• Plan space – start with null plan and add steps to plan until it achieves the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 10 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.879,
+            0.584
+          ],
+          "content": "A whole different way to think about planning is that you’re moving around in a space of plans. Your operations are adding steps to your plan, changing the plan. You don’t ever think explicitly about states or sets of states. The idea is you start out with an empty plan, and then there are operations that you can do to a plan, and you want to do operations to your plan until it's a satisfactory plan."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.328,
+            0.073,
+            0.625,
+            0.102
+          ],
+          "content": "Plan-Space Search"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.798,
+            0.159
+          ],
+          "content": "• Situation space – both progressive and regressive planners plan in space of situations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.16,
+            0.792,
+            0.204
+          ],
+          "content": "• Plan space – start with null plan and add steps to plan until it achieves the goal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.205,
+            0.799,
+            0.231
+          ],
+          "content": "• Decouples planning order from execution order"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 52"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.866,
+            0.543
+          ],
+          "content": "Now you can de- couple the order in which you do things to your plan from the order in which the plan steps will eventually be executed in the world. You can decouple planning order from execution order."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.329,
+            0.074,
+            0.623,
+            0.101
+          ],
+          "level": 2,
+          "content": "Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.797,
+            0.158
+          ],
+          "content": "• Situation space – both progressive and regressive planners plan in space of situations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.161,
+            0.792,
+            0.203
+          ],
+          "content": "• Plan space – start with null plan and add steps to plan until it achieves the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.206,
+            0.799,
+            0.229
+          ],
+          "content": "• Decouples planning order from execution order"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.232,
+            0.466,
+            0.253
+          ],
+          "content": "• Least-commitment"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.254,
+            0.804,
+            0.292
+          ],
+          "content": "– First think of what actions before thinking about what order to do the actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 53"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.879,
+            0.683
+          ],
+          "content": "Plan-space search also let us take what's typically called a \"least commitment approach.\" By \"least commitment,\" what we mean is that we don’t decide on particular details in our plan, like what store to go to for milk, until we are forced to. This keeps us from making premature, uninformed choices that we have to back out of later. You can say, \"Well, I'm going to have to go somewhere and get the drill. I'm going to have to go somewhere and get the bananas. Can I figure that out and then think about what order they have to go in? Maybe then I can think about which stores would be the right stores to go to in order to do that.\" And so the idea is that you want to keep working on your plan, but never commit to doing a particular thing unless you're forced to."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.329,
+            0.074,
+            0.623,
+            0.101
+          ],
+          "level": 2,
+          "content": "Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.797,
+            0.158
+          ],
+          "content": "• Situation space – both progressive and regressive planners plan in space of situations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.16,
+            0.792,
+            0.203
+          ],
+          "content": "• Plan space – start with null plan and add steps to plan until it achieves the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.206,
+            0.799,
+            0.229
+          ],
+          "content": "• Decouples planning order from execution order"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.232,
+            0.466,
+            0.253
+          ],
+          "content": "• Least-commitment"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.254,
+            0.803,
+            0.292
+          ],
+          "content": "– First think of what actions before thinking about what order to do the actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.294,
+            0.486,
+            0.317
+          ],
+          "content": "• Means-ends analysis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.318,
+            0.801,
+            0.34
+          ],
+          "content": "– Try to match the available means to the current ends"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 54"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.881,
+            0.723
+          ],
+          "content": "Plan-space search also lets us do means-end analysis. That is to say, that you can look at what the plan is trying to do, look at the means that you have available to you, and try to match them together. Simon built an early planner that tried to look at the goal state, and the current state, and find the biggest difference. So, trying to fly from one place to another, you would say, \"The operator that will reduce the difference most between where I know I am and where I know I want to be is the flying operator. So, let me put that one in first. And then, I still have some other differences on either end. Like, there's a difference between being at my house and being at the airport, and so I'll put in some operators to deal with that. And there's another difference at the other end. I'll put those in.\" So, maybe addressing the biggest difference first is a way to organize your planning in a way that'll make it more effective. That's another idea at the higher level."
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.302,
+            0.072,
+            0.651,
+            0.103
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 55"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.875,
+            0.521
+          ],
+          "content": "A partially ordered plan (or PO plan, for short), is kind of a complicated object. It’s made up of 4 parts."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.3,
+            0.07,
+            0.654,
+            0.105
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.135,
+            0.655,
+            0.167
+          ],
+          "content": "• Set of steps (instance of an operator)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 56"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.819,
+            0.521
+          ],
+          "content": "The first part is a set of steps. A step is an operator, perhaps with some of the variables filled in with constants."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.302,
+            0.072,
+            0.651,
+            0.103
+          ],
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.137,
+            0.651,
+            0.163
+          ],
+          "content": "• Set of steps (instance of an operator)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.163,
+            0.61,
+            0.19
+          ],
+          "content": "• Set of ordering constraints $S _ { \\mathrm { i } } < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 10 • 57"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.868,
+            0.583
+          ],
+          "content": "The second part is a set of ordering constraints between steps. They say that step I has to come before step j in the plan. This may just be a partial order (that is, it doesn’t have to specify whether j comes before k or k comes before j), but it does have to be consistent (so it can’t say that j comes before k and k comes before j)."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.302,
+            0.073,
+            0.651,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.138,
+            0.652,
+            0.163
+          ],
+          "content": "• Set of steps (instance of an operator)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.164,
+            0.61,
+            0.188
+          ],
+          "content": "• Set of ordering constraints $S _ { \\mathrm { i } } < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.189,
+            0.669,
+            0.212
+          ],
+          "content": "• Set of variable binding constraints v=x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.212,
+            0.823,
+            0.234
+          ],
+          "content": "• v is a variable in a step; x is a constant or another variable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 58"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.875,
+            0.683
+          ],
+          "content": "Then there is a set of variable binding constraints. They have the form \"Some variable equals some value.\" V is a variable in one of the steps, and the X is a constant or another variable. So, for example, if you're trying to make a cake, and you have to have the eggs and the flour in the same bowl. You’d have an operator that says, \"Put the eggs in [something]” and another that says “Put the flour in [something].\" Let's say, you don't want to commit to which bowl you’re going to use yet. Then, you might say, \"Well, whatever the bowl is that I put the eggs into, it has to be the same as the bowl that I put the flour into, but it's not yet Bowl32.\" So, that's the case where you would end up having a partial plan where you had a variable constraint, that this variable equal that variable."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.302,
+            0.072,
+            0.65,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partially Ordered Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.138,
+            0.651,
+            0.163
+          ],
+          "content": "• Set of steps (instance of an operator)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.164,
+            0.61,
+            0.188
+          ],
+          "content": "• Set of ordering constraints $S _ { \\mathrm { i } } < S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.189,
+            0.668,
+            0.211
+          ],
+          "content": "• Set of variable binding constraints v=x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.212,
+            0.823,
+            0.234
+          ],
+          "content": "• v is a variable in a step; x is a constant or another variable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.234,
+            0.525,
+            0.26
+          ],
+          "content": "• Set of causal links $\\mathsf { S } _ { \\mathrm { i } } \\boxdot \\mathsf { D } _ { \\mathrm { c } } \\mathsf { S } _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.259,
+            0.633,
+            0.281
+          ],
+          "content": "• Step i achieves precondition c for step j"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 59"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.879,
+            0.622
+          ],
+          "content": "And the last thing is really for internal bookkeeping, but it's pretty important. We also have a set of causal links. A causal link might be \"Step I achieved pre-condition C for Step J.\" So, if I have to have money in order to buy the bananas, then I might have a \"go to the bank\" action and a \"buy bananas\" action and I would put, during the bookkeeping and planning, I would put this link in there that says: The reason I have the go-to-the-bank action in here is because it achieves the \"have(money)\" pre-condition that allows me to buy bananas."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.625,
+            0.868,
+            0.708
+          ],
+          "content": "So, the way that we do planning is: we add actions that we hope will achieve either parts of our goal, or pre-conditions of our other actions. And to keep track of what preconditions we have already taken care of, we put these links in so that we can remember why we're doing things."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.711,
+            0.875,
+            0.75
+          ],
+          "content": "So, a plan is just this. It's the set of steps with these constraints and the bookkeeping stuff."
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.385,
+            0.071,
+            0.569,
+            0.103
+          ],
+          "level": 1,
+          "content": "Initial Plan"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.049,
+            0.852,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.874,
+                0.503
+              ],
+              "content": "The way we initialize the planning process is to start with a plan that looks like this."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_59_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.384,
+            0.07,
+            0.57,
+            0.103
+          ],
+          "content": "Initial Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.177,
+            0.134,
+            0.46,
+            0.168
+          ],
+          "content": "• Steps: {start, finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 61"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.423,
+            0.503
+          ],
+          "content": "It has two steps: Start and Finish."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.385,
+            0.071,
+            0.569,
+            0.103
+          ],
+          "content": "Initial Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.136,
+            0.46,
+            0.164
+          ],
+          "content": "• Steps: {start, finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.177,
+            0.162,
+            0.514,
+            0.191
+          ],
+          "content": "• Ordering: {start < finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 62"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.655,
+            0.503
+          ],
+          "content": "We constrain the start step to happen before the finish step."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.386,
+            0.071,
+            0.567,
+            0.102
+          ],
+          "content": "Initial Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.136,
+            0.459,
+            0.164
+          ],
+          "content": "• Steps: {start, finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.162,
+            0.513,
+            0.191
+          ],
+          "content": "• Ordering: {start < finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.212,
+            0.268,
+            0.237
+          ],
+          "content": "• start"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.238,
+            0.361,
+            0.263
+          ],
+          "content": "• Pre: none"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.263,
+            0.524,
+            0.289
+          ],
+          "content": "• Effects: start conditions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 10 • 63"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.877,
+            0.603
+          ],
+          "content": "Start is a special operator that has no pre-condition and it has as its effect the starting conditions of the problem. So, in our \"going to the supermarket\" example, the starting conditions of that problem were that we were at home and we didn't have any milk and we didn't have the drill, and so on. In order to make the planning process uniform, we just assume this starting step has happened, to set things up."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.386,
+            0.071,
+            0.567,
+            0.102
+          ],
+          "content": "Initial Plan"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.136,
+            0.459,
+            0.164
+          ],
+          "content": "• Steps: {start, finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.162,
+            0.513,
+            0.191
+          ],
+          "content": "• Ordering: {start < finish}"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.212,
+            0.267,
+            0.236
+          ],
+          "content": "• start"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.238,
+            0.361,
+            0.263
+          ],
+          "content": "• Pre: none"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.263,
+            0.523,
+            0.287
+          ],
+          "content": "• Effects: start conditions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.287,
+            0.274,
+            0.311
+          ],
+          "content": "• finish"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.313,
+            0.479,
+            0.339
+          ],
+          "content": "• Pre: goal conditions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.339,
+            0.403,
+            0.364
+          ],
+          "content": "• Effects: none"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 10 • 64"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.838,
+            0.522
+          ],
+          "content": "And there's a special final action, \"finish\", that has as its pre-conditions the goal condition, and it has no effect. So, this is our initial plan."
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 65"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.325,
+            0.073,
+            0.627,
+            0.102
+          ],
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.88,
+            0.583
+          ],
+          "content": "And now we're going to refine the plan by adding steps, ordering constraints, variable binding constraints, and causal links until it's a satisfactory plan. And so the question is, \"Well, what is it that makes a plan satisfactory?\" Here is a set of formal conditions on a plan that makes it a solution, that makes it a complete, correct plan. So, for a plan to be a solution, it has to be complete and consistent."
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.325,
+            0.073,
+            0.628,
+            0.102
+          ],
+          "level": 1,
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.11,
+            0.789,
+            0.156
+          ],
+          "content": "• A plan is complete iff every precondition of every step is achieved by some other step."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 66"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.806,
+            0.522
+          ],
+          "content": "So, let's talk about when a plan is complete. A plan is complete if every pre-condition of every step is achieved by some other step."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.525,
+            0.857,
+            0.609
+          ],
+          "content": "So basically, if you look at our starting plan there, we see that there's a big list of pre-conditions for the final step, and so what we're going to have to do is somehow add enough other steps to achieve all the pre-conditions of the final step, as well as any of the pre-conditions of those other steps that we've added."
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.325,
+            0.074,
+            0.629,
+            0.102
+          ],
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.11,
+            0.788,
+            0.153
+          ],
+          "content": "• A plan is complete iff every precondition of every step is achieved by some other step."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.152,
+            0.703,
+            0.18
+          ],
+          "content": "$\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ (“step I achieves c for step j”) iff"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 10 • 67"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.557,
+            0.501
+          ],
+          "content": "So, then, let's understand what \"achieve\" means."
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.327,
+            0.074,
+            0.627,
+            0.102
+          ],
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.111,
+            0.787,
+            0.153
+          ],
+          "content": "• A plan is complete iff every precondition of every step is achieved by some other step."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.152,
+            0.701,
+            0.178
+          ],
+          "content": "• $\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ (“step I achieves c for step $j ^ { \\prime \\prime } )$ iff"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.178,
+            0.321,
+            0.203
+          ],
+          "content": "$S _ { \\mathrm { i } } < ~ S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 68"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.842,
+            0.519
+          ],
+          "content": "For Step I to achieve C for step J, SI has to come before SJ, right? It's part of the notion of achievement,"
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.326,
+            0.074,
+            0.628,
+            0.102
+          ],
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.788,
+            0.154
+          ],
+          "content": "• A plan is complete iff every precondition of every step is achieved by some other step."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.152,
+            0.701,
+            0.179
+          ],
+          "content": "• $\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ (“step I achieves c for step $j ^ { \\prime \\prime } )$ iff"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.219,
+            0.178,
+            0.321,
+            0.199
+          ],
+          "content": "$S _ { \\mathrm { i } } < \\; S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.194,
+            0.405,
+            0.218
+          ],
+          "content": "$\\mathsf { \\tilde { c } } ^ { \\intercal } \\mathsf { \\in e f f e c t s } ( S _ { \\mathsf { i } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.539,
+            0.501
+          ],
+          "content": "And C has to be a member of the effects of SI."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 69"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.146,
+            0.049,
+            0.85,
+            0.452
+          ],
+          "sub_type": "algorithm",
+          "content": "Plan Completeness\n• A plan is complete iff every precondition of every step is achieved by some other step.\n• $S_i \\square_c S_j$ (“step I achieves c for step j”) iff\n    • $S_i < S_j$\n    • $c \\in \\text{effects}(S_i)$\n    • $\\neg \\exists S_k, \\neg c \\in \\text{effects}(S_k)$ and $S_i < S_k < S_j$ is consistent with the ordering constraints\nLecture 10 • 70",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.703
+          ],
+          "content": "What else? Is there anything else that you imagine we might need here? What if going to the bank step achieves \"have money\" for \"buy milk.\" If we go to the bank before we buy the milk, and going to the bank achieves having money – there’s still something that could go wrong. You could go to the bank. Between going to the bank and buying milk, all kinds of things could happen. Right? You could be robbed, or you could spend it all on something more fun or who knows what? So, you also have to say \"And there's no intervening event that messes things up.\" \"There's no Sk such that, not C is in the effects of Sk.\" \"And SI < SK < Sj is consistent with the ordering constraint.\" So, there’s no step that can mess up our effect that could possible intervene between when we achieve it with si and when we need it at sj."
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.326,
+            0.074,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.18,
+            0.109,
+            0.79,
+            0.269
+          ],
+          "sub_type": "algorithm",
+          "content": "- A plan is complete iff every precondition of every step is achieved by some other step.\n- $S_i \\square_c S_j$ (\"step I achieves c for step j\") iff\n  - $S_i < S_j$\n  - $c \\in \\text{effects}(S_i)$\n  - $\\neg \\exists S_k. \\neg c \\in \\text{effects}(S_k)$ and $S_i < S_k < S_j$ is consistent with the ordering constraints",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.878,
+            0.682
+          ],
+          "content": "The idea is that these ordering constraints don't necessarily specify a total order on the plan steps. So, it might be that the plan is very laissez-faire. It's says, \"Oh, go to the bank sometime. Buy a mink coat sometime. Buy milk sometime.\" And so it doesn't say that buying the mink coat is between the bank and the milk, but buying the mink coat could be between the bank and the milk. And that's enough for that to be a violation. So, if we have a way of achieving every condition so that the thing that's doing the achieving is constrained to happen before we need it -- we get the money before we buy the milk -- it does achieve the effect that we need and there's nothing that comes in between to clobber it, then our plan is good."
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.326,
+            0.074,
+            0.627,
+            0.102
+          ],
+          "content": "Plan Completeness"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.788,
+            0.153
+          ],
+          "content": "• A plan is complete iff every precondition of every step is achieved by some other step."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.152,
+            0.701,
+            0.178
+          ],
+          "content": "$\\mathsf { S } _ { \\mathsf { i } } \\sqsupset _ { \\mathsf { c } } \\mathsf { S } _ { \\mathsf { j } }$ (“step I achieves c for step j”) iff"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.178,
+            0.321,
+            0.198
+          ],
+          "content": "$S _ { \\mathrm { i } } < \\; S _ { \\mathrm { j } }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.194,
+            0.405,
+            0.217
+          ],
+          "content": "$\\mathsf { \\bar { c } } ^ { \\mathsf { T } } \\mathsf { \\in e f f e c t s } ( \\mathsf { S } _ { \\mathsf { i } } )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.215,
+            0.741,
+            0.242
+          ],
+          "content": "• $\\neg \\exists \\mathsf { S } _ { \\mathsf { k } } . \\neg \\mathsf { c } \\in \\mathsf { e f f e c t s } ( \\mathsf { S } _ { \\mathsf { k } } )$ and $S _ { \\mathrm { i } } < S _ { \\mathrm { k } } < S _ { \\mathrm { j } }$ is"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.233,
+            0.242,
+            0.713,
+            0.265
+          ],
+          "content": "consistent with the ordering constraints"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.264,
+            0.805,
+            0.326
+          ],
+          "content": "• A plan is consistent iff the ordering constraints are consistent and the variable binding constraints are consistent."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 72"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.859,
+            0.541
+          ],
+          "content": "For a plan to be consistent, it is enough for the temporal ordering constraints to be consistent (we can’t have I before j and j before I) and for the variable binding constraints to be consistent (we can’t require two constants to be equal)."
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.073,
+            0.611,
+            0.104
+          ],
+          "content": "PO Plan Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 10 • 73"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.857,
+            0.542
+          ],
+          "content": "Let us just spend a few minutes doing an example plan for the milk case, very informally, and next time we'll go through the algorithm and do it again, more formally."
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.853,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_73_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.876,
+            0.583
+          ],
+          "content": "Here’s our initial plan. With the start and finish steps. We’ll draw ordering constraints using dashed red lines. We put the effects of a step below it, and the preconditions of a step above it. We’ll do a simplified version of the whole problem, deleting the requirement for a drill, and just having as our goal that we have milk and bananas."
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.852,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_74_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.862,
+            0.562
+          ],
+          "content": "It doesn’t seem useful to add any further constraints at this point, so let’s buy milk. We’ll start by adding a step that says we’re going to by milk at some place called x1. It has preconditions at(x1) and sells(x1, milk); and it has the effect have(milk)."
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.146,
+            0.051,
+            0.852,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_75_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.825,
+            0.523
+          ],
+          "content": "Now, we can add a blue causal link that says we are going to use this effect of have(Milk) to satisfy the precondition have(Milk) in the finish step."
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.853,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_76_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.541
+          ],
+          "content": "Every causal link also implies an ordering link, so we’ll add an ordering link as well between this step and finish. And we should also require that this step happen after start."
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_77_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.856,
+            0.522
+          ],
+          "content": "Now, let's buy bananas. We add a step to buy bananas at location x2, including its preconditions and effects."
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.055,
+            0.809,
+            0.45
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.862,
+                0.522
+              ],
+              "content": "Now we add a causal link and temporal constraints, just as we did for the buy milk step."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_78_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.054,
+            0.8,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_79_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.851,
+            0.583
+          ],
+          "content": "Now, a relatively straightforward thing to do is satisfy sells(x1,Milk) by constraining x1 to be the supermarket. We add a variable binding constraint, saying that x1 is equal to the supermarket. And that allows us to put a causal link between Sells(SM,M) in the effects of start, and the precondition here on buy."
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.054,
+            0.849,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_80_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.864,
+            0.522
+          ],
+          "content": "Similarly, we can satisfy sells(x2,Bananas) by adding a variable binding constraint that $\\mathbf { x } 2$ must be the supermarket, and adding a causal link."
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_81_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.543
+          ],
+          "content": "Now, the only preconditions that remain unsatisfied are $\\mathbf { a } \\mathbf { t } ( \\mathbf { x } 1 )$ and $\\mathbf { a } \\mathbf { t } ( \\mathbf { x } 2 )$ . Since x1 and x2 are both constrained to be the supermarket, it seems like we should add a step to go to the supermarket."
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.054,
+            0.846,
+            0.45
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.839,
+                0.522
+              ],
+              "content": "The effect of at(SM) can be used to satisfy both preconditions, so we add causal links to the at preconditions and temporal links to the buy actions."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_82_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 83,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.839,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.479,
+                0.809,
+                0.501
+              ],
+              "content": "And we add another temporal constraint to force this step to come after start."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_83_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 84,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.146,
+            0.053,
+            0.85,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.795,
+                0.521
+              ],
+              "content": "Now, the At(x3) precondition can be satisfied by adding a variable binding constraint to force $\\mathbf { X } ^ { 3 }$ to be home."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_84_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 85,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.054,
+            0.849,
+            0.449
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.869,
+                0.52
+              ],
+              "content": "We can add a causal link from the At(home) effect of start to this precondition, and we’re done!"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_85_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 86,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.851,
+            0.448
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_86_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.875,
+            0.522
+          ],
+          "content": "If you look at this plan, you find that it has in fact followed the “least commitment” strategy and left open the question of what order to buy the milk and bananas in."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.525,
+            0.869,
+            0.588
+          ],
+          "content": "If the plan is complete, according to the definition we saw above, but the temporal constraints do not represent a partial order, then any total order of the steps that is consistent with the steps will be a correct plan that satisfies all the goals."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.591,
+            0.857,
+            0.634
+          ],
+          "content": "Next time, we’ll write down the algorithm for doing partial order planning and go through a couple of examples."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture10Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2003-06-12T05:17:06Z",
+      "modified_at": "2003-06-13T11:30:42+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 87,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 83,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 84,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 85,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 86,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
