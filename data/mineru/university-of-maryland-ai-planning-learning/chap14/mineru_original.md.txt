@@ -1,0 +1,708 @@
+## Chapter 14 Acting with Hierarchical Refinement
+
+Dana S. Nau
+
+University of Maryland
+
+![](images/page_0_image_4.jpg)
+
+## Acting, Planning, and Learning
+
+Malik Ghallab, Dana Nau, and Paolo Traverso
+
+## Planning and Acting
+
+## ● Planning: prediction + search
+
+▸ Search over predicted states, possible organizations of tasks and actions
+
+▸ Uses descriptive models (e.g., PDDL)
+
+• predict what the actions will do
+
+• don’t include instructions for performing it
+
+## Acting: performing
+
+Dynamic, unpredictable, partially observable environment
+
+• Adapt to context, react to events
+
+▸ Uses operational models
+
+• instructions telling how to perform the tasks
+
+• usually hierarchical
+
+![](images/page_1_image_12.jpg)
+
+⟵ We’ll use hierarchical refinement methods
+
+▸ Extended version of HTN methods
+
+Consider an actor that controls two robots
+
+● Environment is partially observable
+
+▸ Each robot can only see what’s at the current location
+
+● Objects
+
+## Example
+
+▸ Robots = {r1, r2}
+
+▸ Containers = {c1, c2}
+
+▸ Locations = {loc0, loc1, loc2, loc3, loc4}
+
+● Rigid relations (properties that won’t change)
+
+▸ adjacent(loc0,loc1), adjacent(loc1,loc0), adjacent(loc1,loc2), adjacent(loc2,loc1), adjacent(loc2,loc3), adjacent(loc3,loc2), adjacent(loc3,loc4), adjacent(loc4,loc3)
+
+![](images/page_2_image_10.jpg)
+
+● State variables (fluents)
+
+• where r ∈ Robots, c ∈ Containers, l ∈ Locations
+
+▸ loc(r) ∈ Locations
+
+▸ cargo(r) ∈ Containers ⋃ {empty}
+
+▸ pos(c) ∈ Locations ⋃ Robots ⋃ {unknown}
+
+▸ view(l) ∈ {T, F}
+
+• Whether a robot has looked at location l
+
+• If view(l) = T then pos(c) = l for every container c at l
+
+## Example (continued)
+
+![](images/page_3_image_1.jpg)
+
+Acting
+
+![](images/page_3_image_3.jpg)
+
+● Actions:
+
+▸ take(r,o,l): r takes object o at location l
+
+▸ put(r,o,l): r puts o at location l
+
+perceive(r,l): robot r perceives what objects are at l
+
+▸ move-to(r,l): robot r moves to location l
+
+● These are **not** classical actions
+
+▸ Commands to the execution platform
+
+```txt
+m-fetch1(r,c)
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+        else fail
+
+m-fetch2(r,c)
+    task: fetch(r,c)
+    pre: pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+
+action
+task
+```
+
+## Tasks and Refinement Methods
+
+Task: an activity for the actor to perform
+
+▸ taskname $( a r g _ { 1 } ,   . . . ,   a r g _ { k } )$
+
+For each task, one or more refinement methods
+
+▸ Operational models telling how to perform the task
+
+▸ Like extended versions of HTN methods
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+method-name($arg_1, ..., arg_k$)
+  task: task-identifier
+  pre: test
+  body: a program
+
+• assignment statements
+• control constructs:
+    ▶ if-then-else, while, ....
+• tasks
+    ▶ can extend to include events, goals
+• actions
+</div>
+
+![](images/page_4_image_8.jpg)
+
+## RAE (Refinement Acting Engine)
+
+● Performs multiple tasks in parallel
+
+Purely reactive, no lookahead
+
+● For each task τ, a refinement stack
+
+▸ execution stack
+
+● Agenda = {all current refinement stacks}
+
+$$
+\left\{\begin{array}{c} \tau_ {1}, \\ \tau_ {2}, \\ \tau_ {3} \end{array} \right\}
+$$
+
+Refinement stack for a task τ ó current path in the refinement tree
+
+![](images/page_5_image_8.jpg)
+
+loop:
+
+## procedure RAE:
+
+for every new external task or event τ do choose a method instance m for τ create a refinement stack for τ, m add the stack to Agenda for each stack σ in Agenda call Progress(σ) if σ is finished then remove it
+
+## Example (reminder)
+
+![](images/page_6_image_1.jpg)
+
+● Objects
+
+▸ Robots = {r1, r2}
+
+▸ Containers = {c1, c2}
+
+▸ Locations = {loc1, loc2, loc3, loc4}
+
+● Rigid relations (properties that won’t change)
+
+▸ adjacent(loc0,loc1), adjacent(loc1,loc0),
+
+adjacent(loc1,loc2), adjacent(loc2,loc1),
+
+adjacent(loc2,loc3), adjacent(loc3,loc2),
+
+adjacent(loc3,loc4), adjacent(loc4,loc3)
+
+State variables (fluents)
+
+• where r ∈ Robots, c ∈ Containers, l ∈ Locations
+
+▸ loc(r) ∈ Locations
+
+▸ cargo(r) ∈ Containers ⋃ {nil}
+
+▸ pos(c) ∈ Locations ⋃ Robots ⋃ {unknown}
+
+▸ view(l) ∈ {T, F}
+
+Whether a robot has looked at location l
+
+• If view(l) = T then pos(c) = l for every container c at l
+
+● Actions:
+
+▸ take(r,o,l): r takes object o at location l
+
+▸ put(r,o,l): r puts o at location l
+
+▸ perceive(r,l): robot r perceives what objects are at l
+
+move-to(r,l): robot r moves to location l
+
+```fortran
+m-fetch1(r,c)
+  task:  fetch(r,c)
+  pre:   pos(c) = unknown
+  body:
+    if ∃l (view(l) = F) then
+      move-to(r,l)
+      perceive(r,l)
+      if pos(c) = l then
+        take(r,c,l)
+      else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+Nau – Lecture slides for Acting, Planning, and Learning
+
+## Example
+
+## procedure RAE:
+
+• Container locations unknown
+
+Partially observable
+
+• Robot only sees current location
+
+![](images/page_7_image_8.jpg)
+
+![](images/page_8_image_0.jpg)
+
+Nau – Lecture slides for Acting, Planning, and Learning
+
+![](images/page_9_image_0.jpg)
+
+```python
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+Nau – Lecture slides for Acting, Planning, and Learning
+
+## Example
+
+## procedure RAE:
+
+loop:
+
+• Robot only sees current location for every new external task or event τ do <u>choose a method instance m for τ</u>
+
+create a refinement stack for τ, m add the stack to Agenda
+
+![](images/page_10_image_0.jpg)
+
+```python
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+## Example
+
+## procedure RAE:
+
+loop:
+
+• Container locations unknown
+
+Partially observable Robot only sees current location for every new external task or event τ do choose a method instance m for τ create a refinement stack for τ, m add the stack to Agenda
+
+for each stack σ in Agenda call Progress(σ) if σ is finished then remove it
+
+```python
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```txt
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:  pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+Nau – Lecture slides for Acting, Planning, and Learning
+
+![](images/page_11_image_3.jpg)
+
+```matlab
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```txt
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:  pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_12_image_2.jpg)
+
+```matlab
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```txt
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:  pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_13_image_2.jpg)
+
+```matlab
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+        else fail
+```
+
+```txt
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:  pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_14_image_2.jpg)
+
+```python
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l) ← ru
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+        else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_15_image_2.jpg)
+
+```python
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l) ← su
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+        else fail
+```
+
+![](images/page_16_image_1.jpg)
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_17_image_0.jpg)
+
+```matlab
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+        else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+```txt
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l) ← fail
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_18_image_2.jpg)
+
+```txt
+m-fetch1(r,c) r = r1, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body: l = loc1
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l) ← fail
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_19_image_2.jpg)
+
+Nau – Lecture slides for Acting, Planning, and Learning
+
+```python
+m-fetch1(r,c) r = r2, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_20_image_3.jpg)
+
+```python
+m-fetch1(r,c) r = r2, c = c2
+    task: fetch(r,c)
+    pre: pos(c) = unknown
+    body:
+        if ∃l (view(l) = F) then
+            move-to(r,l)
+            perceive(r,l)
+            if pos(c) = l then
+                take(r,c,l)
+            else fetch(r,c)
+    else fail
+```
+
+```python
+m-fetch2(r,c)
+    task:  fetch(r,c)
+    pre:   pos(c) ≠ unknown
+    body:
+        if loc(r) = pos(c) then
+            take(r,c,pos(c))
+        else do
+            move-to(r,pos(c))
+            take(r,c,pos(c))
+```
+
+![](images/page_21_image_2.jpg)
+
+## Extensions to RAE
+
+● Methods for events
+
+▸ e.g., an emergency
+
+Methods for goals
+
+▸ special kind of task: achieve(goal)
+
+sets up a monitor to see if the goal has been achieved
+
+● Concurrent subtasks
+
+## Summary
+
+● Section 14.1: Representation
+
+Tasks, events, actions
+
+▸ Refinement methods
+
+• Extended version of HTN methods
+
+• name, task/event, preconditions, body
+
+▸ Example: fetch a container
+
+● Sections 14.2-3: Refinement Acting Engine (RAE)
+
+▸ Purely reactive: select a method and apply it
+
+▸ Rae: input stream, Candidates, Instances, Agenda, refinement stacks
+
+Progress: • command status, nextstep, type of step
+
+▸ Retry: Candidates \ tried
+
+comparison to backtracking
+
+▸ Refinement trees

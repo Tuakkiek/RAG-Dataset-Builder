@@ -1,0 +1,2591 @@
+## Chapter 3 Planning with Deterministic Models
+
+3.1. Forward State-Space Search
+
+![](images/page_0_image_3.jpg)
+
+3.2. Heuristic Functions
+
+Dana S. Nau
+
+University of Maryland
+
+with contributions from
+
+[Mark “mak” Roberts](https://scholar.google.com/citations?user=vlbX4J8AAAAJ)
+
+## Acting, Planning, and Learning
+
+Malik Ghallab, Dana Nau, and Paolo Traverso
+
+## Planning as Search
+
+Most AI planning procedures are search procedures
+
+▸ Search tree: the data structure the procedure uses to keep track of which paths it has explored
+
+![](images/page_1_image_3.jpg)
+
+## Search-Tree Terminology
+
+![](images/page_2_image_1.jpg)
+
+● $N o d e \approx \mathrm { a ~ p a i r ~ } v = ( \pi , s )$ , where $s = \gamma ( s _ { 0 } , \pi )$
+
+▸ In practice, ν will contain other things too
+
+• depth(ν), cost(π), pointers to parent and children, …
+
+▸ π isn’t always stored explicitly, can be computed from the parent pointers
+
+● children of $y = \{ ( \pi . a , \gamma ( s , a ) ) \}$ a is applicable in s}
+
+● successors or descendants of ν:
+
+▸ children, children of children, etc.
+
+▸ sometimes called a subtree ● ancestors of ν = {nodes that have ν as a successor}
+
+● initial or starting or root node $\mathbf { v } _ { 0 } = ( \langle \rangle , s _ { 0 } )$ ▸ root of the search tree
+
+● path from the root node: sequence of nodes $\langle \mathbf { v } _ { 0 } , \ldots , \mathbf { v } _ { n } \rangle$ such that each $\nu _ { i }$ is a child of $\mathbf { v } _ { i - 1 }$
+
+● height of search space = length of longest acyclic path from $\nu _ { 0 }$
+
+● depth of ν $\operatorname { l e n g t h } ( \pi ) =$ length of path from $\nu _ { 0 }$ to ν
+
+● branching factor of ν = number of children of ν
+
+● branching factor of a search tree = max branching factor of the nodes
+
+● expand ν: generate all children
+
+## 3.1. Forward Search
+
+Forward-search $( \Sigma , s _ { 0 } , g )$
+
+$$
+S \leftarrow S _ {0}; \pi \leftarrow \langle \rangle
+$$
+
+**while** $s \neq g$ **do**
+
+![](images/page_3_image_4.jpg)
+
+**if** $A p p l i c a b l e ( s ) = \emptyset$ **then return** failure nondeterministically choose $a \in A p p l i c a b l e ( s )$ $s \leftarrow \gamma ( s , a ) ; \quad \pi \leftarrow \pi \cdot a$
+
+**return** π
+
+● Nondeterministic algorithm
+
+▸ Sound: if an execution trace returns a plan $\pi _ { \flat }$ it’s a solution
+
+▸ Complete: if the planning problem is solvable, at least one of the possible execution traces will return a solution
+
+● Represents a class of deterministic search algorithms
+
+Deterministic versions of the nondeterministic choice
+
+Which leaf node to expand next
+
+Which nodes to prune from the search space
+
+▸ They’ll all be sound, but not necessarily complete
+
+## Deterministic Version
+
+$$
+\neq \varnothing
+$$
+
+select a node(i) $\mathbf { v } = ( \mathbf { \pi } ,   \mathrm { s } ) \in$ Frontier remove ν from Frontier add ν to Expanded **if** s satisfies g **then return** π Children $\leftarrow \{ ( \pi \cdot a , \gamma ( s , a ) ) \mid a \in A p p l i c a b l e ( s ) \}$
+
+prune 0 or more nodes from(ii) Children, Frontier, Expanded Frontier ← Frontier ∪ Children **return** failure
+
+● Special cases:
+
+▸ depth-first, breath-first, $\mathrm { A ^ { * } }$ , many others
+
+● Classify by
+
+▸ how they select nodes (i)
+
+▸ how they prune nodes (ii)
+
+● Pruning often includes cycle-checking:
+
+Remove from Children every node $( \pi , s )$ that has an ancestor $( \pi ^ { \prime } ,   s ^ { \prime } )$ such that $s ^ { \prime } = s$
+
+In classical planning problems, S is finite ▸ Cycle-checking will guarantee termination
+
+## Breadth-First Search (BFS)
+
+add ν to Expanded
+
+**if** s satisfies g **then return** π
+
+prune 0 or more nodes from(ii) Children, Frontier, Expanded Frontier ← Frontier ∪ Children **return** failure
+
+![](images/page_5_image_4.jpg)
+
+(i): Select (π,s) ∈ Frontier that has the smallest length(π), i.e., smallest number of edges
+
+▸ Possible tie-breaking rules:
+
+left-to-right
+
+select smallest h(s) - will discuss later
+
+(ii): Remove every (π,s) ∈ Children ∪ Frontier such that s ∈ Expanded
+
+▸ Thus expand states at most once
+
+● Properties
+
+▸ Terminates
+
+Returns solution if one exists
+
+• shortest, but not least-cost
+
+▸ Worst-case complexity:
+
+• memory O(|S|), running time O(b|S|)
+
+▸ b = max branching factor
+
+▸ |S| = number of states in S
+
+## Depth-First Search (DFS)
+
+**return** failure
+
+![](images/page_6_image_2.jpg)
+
+(i): Select (π,s) ∈ Frontier that has largest length(π), i.e., largest number of edges
+
+▸ Possible tie-breaking rules:
+
+• left-to-right
+
+• select smallest h(s) - will discuss later
+
+(ii): Do cycle-checking, then prune all nodes that recursive depth-first search would discard
+
+▸ Repeatedly remove from Expanded any node that has no children in Children ∪ Frontier ∪ Expanded
+
+● Properties
+
+▸ Terminates
+
+Returns solution if there is one
+
+• No guarantees on quality
+
+▸ Worst-case running time O(b<sup>l</sup>)
+
+▸ Worst-case memory O(bl)
+
+• b = max branching factor
+
+• l = max depth of any node
+
+## Uniform-Cost Search
+
+Forward-Search-Det(Σ, s<sub>0</sub>, g)
+
+Frontier ← {(⟨⟩, s<sub>0</sub>)}
+
+Expanded ← ∅
+
+**while** Frontier ≠ ∅ **do**
+
+select a node ν = (π, s) ∈ Frontier(i)
+
+remove ν from Frontier
+
+add ν to Expanded
+
+**if** s satisfies g **then return** π
+
+Children $\leftarrow \{ ( \pi \cdot a , \gamma ( s , a ) ) \mid a \in A p p l i c a b l e ( s ) \}$
+
+prune 0 or more nodes from(ii) Children, Frontier, Expanded
+
+Frontier ← Frontier ∪ Children
+
+**return** failure
+
+![](images/page_7_image_13.jpg)
+
+(i): Select $( \pi ,   \mathrm { s } ) \in$ Frontier that has smallest cost(π)
+
+(ii): Prune every (π,s) ∈ Children ∪ Frontier such that Expanded already contains a node $( \pi ^ { \prime } ,   s )$
+
+● Properties
+
+▸ Terminates
+
+▸ Finds optimal (i.e., least-cost) solution if one exists
+
+▸ Worst-case time $O ( b | S | )$
+
+▸ Worst-case memory O(|S|)
+
+**Poll:** If node ν is expanded before node ν′, then how are cost(ν) and cost(ν′) related?
+
+A. $\cos ( v ) < \cos ( v ^ { \prime } )$
+
+B. $\cos ( v ) \leq \cos ( v ^ { \prime } )$
+
+C. cost(ν) > cost(ν′)
+
+D. $\cos ( v ) \geq \cos ( v ^ { \prime } )$
+
+E. none of the above
+
+## Heuristic Functions (more about this later)
+
+● Let h\*(s) = minimum cost of getting to a goal $\operatorname* { m i n } \{ \cos ( \pi )   |   \gamma ( s , \pi ) \in S _ { g } \}$
+
+▸ Note that $h ^ { * } ( s ) \geq 0$ for all s
+
+● heuristic function h(s):
+
+▸ Returns estimate of $h ^ { * } ( s )$
+
+▸ Require $h ( s ) \geq 0$ for all s
+
+Example:
+
+▸ s = the city you’re in
+
+▸ Action: follow road from s to a neighboring city
+
+▸ h<sup>\*</sup>(s) = smallest distance to Bucharest using roads
+
+![](images/page_8_image_10.jpg)
+
+▸ h(s) = straight-line distance from s to Bucharest
+
+<table><tr><td colspan="2">straight-line dist.</td></tr><tr><td colspan="2">from s to Bucharest</td></tr><tr><td>Arad</td><td>366</td></tr><tr><td>Bucharest</td><td>0</td></tr><tr><td>Craiova</td><td>160</td></tr><tr><td>Dobreta</td><td>242</td></tr><tr><td>Fagaras</td><td>176</td></tr><tr><td>Iasi</td><td>226</td></tr><tr><td>Lugoj</td><td>244</td></tr><tr><td>Mehadia</td><td>241</td></tr><tr><td>Neamt</td><td>234</td></tr><tr><td>Oradea</td><td>380</td></tr><tr><td>Pitesti</td><td>100</td></tr><tr><td>Rimnicu Vilcea</td><td>193</td></tr><tr><td>Sibiu</td><td>253</td></tr><tr><td>Timisoara</td><td>329</td></tr><tr><td>Urziceni</td><td>80</td></tr><tr><td>Vaslui</td><td>199</td></tr><tr><td>Zerind</td><td>374</td></tr></table>
+
+Credit: Stuart Russell, lecture slides for Artificial Intelligence: A Modern Approach
+
+| Poll: Have you seen GBFS before? |
+| --- |
+| A. yes |
+| B. no |
+| C. yes, but I don’t remember it very well |
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+## Greedy Best-First Search (GBFS)
+
+Expanded ← ∅
+
+remove ν from Frontier
+
+add ν to Expanded
+
+**if** s satisfies g **then return** π
+
+prune 0 or more nodes from(ii)
+
+Children, Frontier, Expanded
+
+**return** failure
+
+Idea: choose a node that’s likely to be close to a goal
+
+● Node selection:
+
+Select a node ν = (π, s) ∈ Frontier for which h(s) is smallest
+
+Possible tie-breaking rule: choose oldest
+
+Pruning: should at least include cycle checking.
+
+▸ For other cases where two nodes go to the same state s, several possibilities:
+
+• Prune one of the nodes arbitrarily
+
+Prune the higher-cost node
+
+Do no pruning (with a good heuristic function, GBFS is unlikely to expand both nodes)
+
+## ● Properties
+
+▸ Terminates; returns a solution if one exists
+
+▸ Solution is usually found quickly, often near-optimal
+
+![](images/page_10_image_0.jpg)
+
+## Forward-Search-Det(Σ, s<sub>0</sub>, g)
+
+remove ν from Frontier
+
+add ν to Expanded
+
+**if** s satisfies g **then return** π
+
+prune 0 or more nodes from(ii) Children, Frontier, Expanded Frontier ← Frontier ∪ Children
+
+**return** failure
+
+| Poll: Have you seen A* before? |
+| --- |
+| A. yes |
+| B. no |
+| C. yes, but I don’t remember it very well |
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+## A\*
+
+Idea: try to choose a node on an optimal path from $s _ { 0 }$ to goal
+
+Node selection
+
+Select a node $\mathbf { v } = ( \pi ,   s )$ in Frontier that has smallest value of $f ( v ) = \cos ( \pi ) + h ( s )$
+
+• Possible tie-breaking rule: select oldest
+
+## ● Pruning:
+
+▸ for every node ν = (π,s) in Children:
+
+If Children ∪ Frontier ∪ Expanded contains another node with the same state s, then we’ve found multiple paths to s
+
+• Keep only the one with the lowest cost
+
+• If more than one such node, keep the oldest
+
+● Properties (in classical planning problems):
+
+▸ Termination: Always terminates
+
+Complete: returns a solution if one exists
+
+Optimality: can guarantee this under certain conditions (I’ll discuss later)
+
+## A\* Example
+
+![](images/page_12_image_1.jpg)
+
+● generates 16 nodes
+
+vs 10 for GBFS
+
+● solution cost 418
+
+▸ vs 450 for GBFS
+
+## Admissibility
+
+## ● Notation:
+
+▸ $\mathbf { v } = ( \pi ,   s )$ , where π is the plan for going from $s _ { 0 }$ to s
+
+▸ $h ^ { * } ( s ) = \operatorname* { m i n } \{ \cos ( \pi ^ { \prime } ) \mid \gamma ( s , \pi ^ { \prime } )$ satisfies g}
+
+▸ $f ^ { * } ( v ) = \cos ( \pi ) + h ^ { * } ( s )$
+
+$$
+\triangleright f (v) = \mathrm{cost} (\pi) + h (s)
+$$
+
+● Definition: h is admissible if for every s, $h ( s )   \leq   h ^ { * } ( s )$
+
+● Optimality:
+
+▸ if h is admissible then every solution returned by $\mathbf { A } ^ { * }$ will be optimal (least cost)
+
+**Poll**: If h(s) = straight-line distance from s to Bucharest, is h admissible?
+
+A. Yes B. No C. Not sure straight-line dist. from s to Bucharest Arad 366 Bucharest 0 Craiova 160 Dobreta 242 Fagaras 176 Iasi 226 Lugoj 244 Mehadia 241 Neamt 234 Oradea 380 Pitesti 100 Rimnicu Vilcea 193 Sibiu 253 <sub>Timisoara</sub> 329 Urziceni 80 Vaslui 199 Zerind 374
+
+![](images/page_13_image_11.jpg)
+
+| Poll: If h is admissible, does it follow that for every expanded node v, f(v) ≤ f*(v)? |
+| --- |
+| Poll: If h is admissible, does it follow that for every node v, f(v) ≤ f*(v)? |
+| A. Yes B. No C. Not sure |
+
+## ● Notation:
+
+▸ $\mathbf { v } = ( \pi ,   s )$ , where π is the plan for going from $s _ { 0 }$ to s
+
+▸ $h ^ { * } ( s ) = \operatorname* { m i n } \{ \cos ( \pi ^ { \prime } ) \mid \gamma ( s , \pi ^ { \prime } )$ satisfies g}
+
+▸ $f ^ { * } ( v ) = \cos ( \pi ) + h ^ { * } ( s )$
+
+$$
+\triangleright f (v) = \mathrm{cost} (\pi) + h (s)
+$$
+
+Definition: h is admissible if for every s, $h ( s )   \leq   h ^ { * } ( s )$
+
+● Optimality:
+
+▸ if h is admissible then every solution returned by $\mathbf { A } ^ { * }$ will be optimal (least cost)
+
+![](images/page_14_image_9.jpg)
+
+## Admissibility
+
+```txt
+Forward-Search-Det(Σ, s₀, g)
+    Frontier ← {(⟨⟩, s₀)}
+    Expanded ← ∅
+    while Frontier ≠ ∅ do
+        select a node v = (π, s) ∈ Frontier
+        remove v from Frontier
+        add v to Expanded
+        if s satisfies g then return π
+            Children ← {(π·a, γ(s,a)) | a ∈ Applicable(s)}
+            prune 0 or more nodes from
+                Children, Frontier, Expanded
+            Frontier ← Frontier ∪ Children
+    return failure
+```
+
+## ● Definition:
+
+▸ Let $h _ { 1 } , h _ { 2 }$ be admissible heuristic functions
+
+▸ $h _ { 2 }$ dominates $h _ { 1 }$ if ∀s, $h _ { 1 } ( s ) \leq h _ { 2 } ( s ) \leq h ^ { * } ( s )$
+
+● Suppose $h _ { 2 }$ dominates $h _ { 1 } ,$ and $\mathbf { A } ^ { * }$ always resolves ties in favor of the same node. Then
+
+▸ $\mathbf { A } ^ { * }$ with $h _ { 2 }$ will never expand more nodes than $\mathbf { A } ^ { * }$ with $h _ { 1 }$
+
+▸ In most cases, $\mathbf { A } ^ { * }$ with $h _ { 2 }$ will expand fewer nodes than $\mathbf { A } ^ { * }$ with $h _ { 1 }$
+
+## Dominance
+
+**Poll**: Let $h _ { 1 } ( s ) = 0$ and $h _ { 2 } ( s ) =$ straight-line distance from s to Bucharest. Does $h _ { 2 }$ dominate $h _ { 1 }$ A. Yes B. No C. Not sure
+
+![](images/page_15_image_8.jpg)
+
+## Digression
+
+Straight-line distance to Bucharest is a domain-specific heuristic function
+
+▸ OK for planning a path to Bucharest
+
+▸ Not for other planning problems
+
+● Domain-independent heuristic function:
+
+▸ A heuristic function that can be used in any classical planning domain
+
+▸ Many such heuristics (see Section 3.2)
+
+![](images/page_16_image_7.jpg)
+
+## Properties of $\mathsf { A } ^ { * }$
+
+In classical planning problems:
+
+● Termination: $\mathrm { A } ^ { * }$ will always terminate
+
+Completeness: if the problem is solvable, $\mathbf { A } ^ { * }$ will return a solution
+
+Optimality: if h is admissible then the solution will be optimal (least cost)
+
+● Dominance: If $h _ { 2 }$ dominates $h _ { 1 }$ and if $\mathbf { A } ^ { * }$ always resolves ties the same way
+
+▸ $\mathbf { A } ^ { * }$ with $h _ { 2 }$ will never expand more nodes than $\mathrm { A } ^ { * }$ with $h _ { 1 }$
+
+▸ In most cases, $\mathrm { A ^ { * } }$ with $h _ { 2 }$ will expand fewer nodes than $\mathrm { A ^ { * } }$ with $h _ { 1 }$
+
+● $\mathbf { A } ^ { * }$ needs to store every node it visits
+
+▸ Running time $O ( b | S | )$ and memory $O ( | S | )$ in worst case
+
+With good heuristic function, usually much smaller
+
+● The book discusses additional properties
+
+## Comparison
+
+● If h is admissible, $\mathrm { A } ^ { * }$ will return optimal solutions
+
+▸ But running time and memory requirement grow exponentially in b and d
+
+● GBFS returns the first solution it finds
+
+▸ There are cases where GBFS takes more time and memory than $\mathbf { A } ^ { * }$
+
+• But with a good heuristic function, such cases are rare
+
+▸ On classical planning problems with a good heuristic function
+
+• GBFS usually near-optimal solutions
+
+• GBFS does very little backtracking
+
+• Running time and memory requirement usually much less than A\*
+
+▸ GBFS is used by most classical planners nowadays
+
+## Depth-First Branch and Bound (DFBB)
+
+## ● Basic idea:
+
+▸ depth-first search, but don’t stop at the first solution
+
+▸ $\pi ^ { * } =$ best solution so far
+
+▸ $c ^ { * } = \cos ( \pi ^ { * } )$
+
+prune ν $\operatorname* { i f } f ( v ) \geq c ^ { * }$
+
+▸ when frontier is empty, return $\pi ^ { * }$
+
+● Properties
+
+Termination, completeness, optimality same as $\mathbf { A } ^ { * }$
+
+▸ Usually less memory, more time than $\mathbf { A } ^ { * }$
+
+▸ Worst-case like DFS: O(bl) memory, O(b<sup>l</sup>) time
+
+Forward-Search-Det(Σ, s<sub>0</sub>, g) $F r o n t i e r \gets \{ ( \langle \rangle , s _ { 0 } ) \}$ Expanded ← ∅ $c ^ { * } \leftarrow \infty ;$ π<sup>\*</sup>← failure **while** Frontier $\neq \emptyset$ **do**
+
+select a node ν = (π, s) ∈ Frontier(i) remove ν from Frontier add ν to Expanded <s><strong>if</strong></s> ~~s satisfies g~~ <s><strong>then return</strong></s> ~~π~~ if s satisfies g and cost $\iota ( \pi ) \leq c ^ { * }$ then $c ^ { * } { \leftarrow } \operatorname { c o s t } ( \pi ) ; \pi ^ { * } { \leftarrow } \pi$
+
+else (ii) $\mathrm { i f }   f _ {   } ( \mathrm { v } ) \leq c ^ { * }$ then $C h i l d r e n \leftarrow$ $\{ ( \pi \cdot a , \gamma ( s , a ) ) \mid a \in A p p l i c a b l e ( s ) \}$
+
+(iii) prune 0 or more nodes from Children, Frontier, Expanded Frontier ← Frontier ∪ Children **return** ~~failure~~ $\pi ^ { * }$
+
+**Poll:** Have you seen DFBB before? A. yes B. no C. yes, but don’t remember it very well
+
+● Can write it as a modified version of Forward-Search-Det
+
+Node selection: (i) same as in DFS
+
+● Pruning: (ii) $\operatorname { I f } f ( \mathbf { v } ) \geq c ^ { * }$ then discard (iii) Otherwise prune the same nodes as in DFS
+
+Don’t stop until every node has been visited or pruned
+
+## Comparisons
+
+If h is admissible, both $\mathrm { A } ^ { * }$ and DFBB will return optimal solutions
+
+▸ Usually DFBB generates more nodes, but $\mathbf { A } ^ { * }$ takes more memory
+
+▸ Worst case for DFBB:
+
+• Highly connected graphs (many paths to each state)
+
+• Can have exponentially worse running time than $\mathbf { A } ^ { * }$ (generates nodes exponentially many times)
+
+▸ Best case for DFBB:
+
+• Search space is a tree of uniform height, all solutions at the bottom (e.g., constraint satisfaction)
+
+• DFBB and $\mathbf { A } ^ { * }$ have similar running time
+
+• $\mathrm { A ^ { * } }$ can take exponentially more memory than DFBB
+
+● DFS returns the first solution it finds
+
+▸ can take much less time than DFBB
+
+▸ but solution can be very far from optimal
+
+## Iterative Deepening (IDS)
+
+IDS $( \Sigma , s _ { 0 } , g )$
+
+**for** k = 1 to ∞ **do**
+
+do a depth-first search, backtracking at every node of depth k **if** the search found a solution **then** return it
+
+**if** the search generated no nodes of depth k **then** return failure
+
+● Nodes generated:
+
+$a , b , c$ $a , b , c , d , e , f , g$ $a , b , c , d , e , f , g , h , i , j , k , l , m , n , o$
+
+● Solution path $\langle a , c , g , o \rangle$
+
+● Total number of nodes generated:
+
+![](images/page_21_image_9.jpg)
+
+$$
+3 + 7 + 1 5 = 2 5
+$$
+
+If goal is at depth d and branching factor is 2:
+
+$$
+\sum_ {1} ^ {d} (2 ^ {i + 1} - 1) = \sum_ {1} ^ {d} 2 ^ {i + 1} - \sum_ {1} ^ {d} 1 = O (2 ^ {d})
+$$
+
+**Poll:** Have you seen Iterative Deepening before?
+
+A. yes
+
+B. no
+
+C. yes, but I don’t remember it very well
+
+**Poll**: How many nodes generated if branching factor is b instead of 2?
+
+A. $O ( b 2 ^ { d } )$
+
+B. $O ( ( b / 2 ) ^ { d } )$
+
+C. O(b<sup>d</sup>)
+
+D. $O ( b ^ { d + 1 } )$
+
+E. something else
+
+## Iterative Deepening (IDS)
+
+IDS(Σ, $s _ { 0 } , g )$
+
+**for** $k = 1$ to ∞ **do**
+
+do a depth-first search, backtracking at every node of depth k **if** the search found a solution **then** return it
+
+**if** the search generated no nodes of depth k **then** return failure
+
+● Nodes generated:
+
+$$
+a, b, c
+$$
+
+$$
+a, b, c, d, e, f, g
+$$
+
+$$
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o
+$$
+
+● Solution path $\langle a , c , g , o \rangle$
+
+● Total number of nodes generated:
+
+![](images/page_22_image_11.jpg)
+
+$$
+3 + 7 + 1 5 = 2 5
+$$
+
+● If goal is at depth d and branching factor is 2:
+
+$$
+\sum_ {1} ^ {d} (2 ^ {i + 1} - 1) = \sum_ {1} ^ {d} 2 ^ {i + 1} - \sum_ {1} ^ {d} 1 = O (2 ^ {d})
+$$
+
+Properties:
+
+● Termination, completeness, optimality
+
+▸ same as BFS
+
+● Memory (worst case): O(bd)
+
+▸ vs. $O ( b ^ { d } )$ for BFS
+
+● If the number of nodes grows exponentially with d:
+
+▸ worst-case running time $O ( b ^ { d } )$ , vs. $O ( b ^ { l } )$ for DFS
+
+▸ b = max branching factor
+
+▸ l = max depth of any node
+
+▸ d = min solution depth if there is one, otherwise l
+
+## 3.2. Heuristic Functions
+
+● Given: planning problem $P$ in domain Σ
+
+● One way to create a heuristic function:
+
+▸ Weaken some of the constraints, get additional solutions
+
+▸ Relaxed planning domain $\Sigma ^ { \prime }$ and relaxed problem
+
+$P ^ { \prime }   =   ( \Sigma ^ { \prime } ,   s _ { 0 } ,   g ^ { \prime } )$ such that
+
+every solution for P is also a solution for $P ^ { \prime }$
+
+• additional solutions with lower cost
+
+▸ Suppose we have an algorithm A for solving planning problems in $\Sigma ^ { \prime }$
+
+Heuristic function $h _ { A } ( s )$ for P:
+
+▸ Find a solution π′ for $( \Sigma ^ { \prime } ,   S ,   g ^ { \prime } ) ;$ ; return cost(π′)
+
+▸ Useful if A runs quickly
+
+• If A always finds optimal solutions, then $h _ { A }$ is admissible
+
+## Example
+
+● Relaxation: let vehicle travel in a straight line between any pair of cities
+
+▸ straight-line-distance ≤ distance by road
+
+⇒ additional solutions with lower cost
+
+![](images/page_24_image_4.jpg)
+
+<table><tr><td colspan="2">straight-line dist.</td></tr><tr><td colspan="2">from s to Bucharest</td></tr><tr><td>Arad</td><td>366</td></tr><tr><td>Bucharest</td><td>0</td></tr><tr><td>Craiova</td><td>160</td></tr><tr><td>Dobreta</td><td>242</td></tr><tr><td>Fagaras</td><td>176</td></tr><tr><td>Iasi</td><td>226</td></tr><tr><td>Lugoj</td><td>244</td></tr><tr><td>Mehadia</td><td>241</td></tr><tr><td>Neamt</td><td>234</td></tr><tr><td>Oradea</td><td>380</td></tr><tr><td>Pitesti</td><td>100</td></tr><tr><td>Rimnicu Vilcea</td><td>193</td></tr><tr><td>Sibiu</td><td>253</td></tr><tr><td>Timisoara</td><td>329</td></tr><tr><td>Urziceni</td><td>80</td></tr><tr><td>Vaslui</td><td>199</td></tr><tr><td>Zerind</td><td>374</td></tr></table>
+
+## Domain-independent Heuristics
+
+● Use relaxation to get heuristic functions that can be used in any classical planning problem
+
+▸ Delete-relaxation heuristics
+
+Optimal relaxed solution
+
+• Fast-Forward heuristic
+
+▸ Landmark heuristics
+
+▸ Max-cost and additive-cost heuristics (I’ll skip these)
+
+## 3.2.1. Delete-Relaxation
+
+Allow a state variable to have more than one value at the same time
+
+● When assigning a new value, keep the old one too
+
+● Relaxed state-transition function, $\gamma ^ { + }$
+
+▸ If action a is applicable to state s, then $\gamma ^ { + } ( s , a ) = s \cup \gamma ( s , a )$
+
+![](images/page_26_image_5.jpg)
+
+$$
+s _ {0} = \{\text {loc} (\mathbf {r 1}) = \mathrm{d3}, \text {cargo} (\mathbf {r 1}) = \text {nil}, \text {loc} (\mathrm{c1}) = \mathrm{d1} \}
+$$
+
+● If s includes an atom $x { = } \nu ,$ and a has an effect $x { \longleftarrow } w$
+
+▸ Then $\gamma ^ { + } ( s , a )$ includes both $x { = } \nu$ and $x { = } w$
+
+● Relaxed state (or r-state)
+
+▸ a set ŝ of ground atoms that includes $\geq 1$ value for each state variable
+
+▸ represents $\{ \mathrm { a l l }$ states that are subsets of ŝ}
+
+move(r1, d3, d1)
+
+$$
+\text {loc} (r 1) = d 3
+$$
+
+![](images/page_26_image_14.jpg)
+
+$$
+\begin{array}{r l} \hat {s} _ {1} & = \gamma^ {+} (s _ {0}, \text {move} (\mathrm{r1,d3,d1})) \\ & = \{\text {loc} (\mathrm{r1}) = \mathrm{d3}, \text {loc} (\mathrm{r1}) = \mathrm{d1}, \text {cargo} (\mathrm{r1}) = \text {nil}, \text {loc} (\mathrm{c1}) = \mathrm{d1} \} \end{array}
+$$
+
+**Poll**: would this definition be equivalent?
+
+Action a is r-applicable in ŝ if ŝ satisfies a’s preconditions
+
+A. Yes B. No C. don’t know
+
+Action a is r-applicable in a relaxed state ŝ if an r-subset of ŝ satisfies a’s preconditions
+
+▸ a subset with one value per state variable
+
+● If a is r-applicable then $\gamma ^ { + } ( \hat { s } , a ) = \hat { s } \cup \gamma ( s , a )$
+
+```txt
+load(r, c, l)
+    pre: cargo(r)=nil, loc(c)=l, loc(r)=l
+    eff: cargo(r)←c, loc(c)←r
+
+move(r, d, e)
+    pre: loc(r)=d
+    eff: loc(r)←e
+
+unload(r, c, l)
+    pre: loc(c)=r, loc(r)=l
+    eff: cargo(r)←nil, loc(c)←l
+```
+
+## Relaxed Applicability
+
+$$
+\begin{array}{c} s _ {0} = \{\text {loc} (r 1) = \mathrm{d} 3, \\ \text {cargo} (r 1) = \text {nil}, \\ \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\begin{array}{l} \hat {s} _ {1} = \gamma^ {+} (s _ {0}, \text {move} (\mathrm{r} 1, \mathrm{d} 3, \mathrm{d} 1)) \\ \quad = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 1, \\ \quad \quad \quad \text {loc} (\mathrm{r} 1) = \mathrm{d} 3, \\ \quad \quad \quad \text {cargo} (\mathrm{r} 1) = \text {nil}, \\ \quad \quad \quad \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\begin{array}{r l} \hat {s} _ {2} = \gamma^ {+} (\hat {s} _ {1}, \text {load} (r 1, c 1, d 1)) \\ & = \{\text {loc} (r 1) = d 1, \\ & \quad \text {loc} (r 1) = d 3, \\ & \quad \text {cargo} (r 1) = n i l, \\ & \quad \text {cargo} (r 1) = c 1, \\ & \quad \text {loc} (c 1) = r 1, \\ & \quad \text {loc} (c 1) = d 1 \} \end{array}
+$$
+
+![](images/page_27_image_11.jpg)
+
+![](images/page_27_image_12.jpg)
+
+![](images/page_27_image_13.jpg)
+
+## Relaxed Applicability (continued)
+
+● Let $\pi = \langle a _ { 1 } ,   \ldots ,   a _ { n } \rangle$ be a plan
+
+Suppose we can r-apply the actions of π in the order $a _ { 1 } , . . . , a _ { n }$
+
+▸ r-apply $a _ { 1 }$ in $\hat { S } _ { 0 } ,$ get $\hat { s _ { 1 } } = \gamma ^ { + } ( \hat { s _ { 0 } } , a _ { 1 } )$
+
+▸ r-apply $a _ { 2 }$ in ŝ1, get $\hat { s _ { 2 } } = \gamma ^ { + } ( \hat { s _ { 1 } } , a _ { 2 } )$
+
+▸ …
+
+▸ r-apply $a _ { n }$ in $\hat { S } _ { n - 1 } ,$ get $\hat { s } _ { n } = \gamma ^ { + } ( \hat { s } _ { n - 1 } , a _ { n } )$
+
+● Then π is r-applicable in $\hat { S } _ { 0 }$ and $\gamma ^ { + } ( \hat { s } _ { 0 } , \pi ) = \hat { s _ { n } }$
+
+● Example: if $s _ { 0 }$ and $\hat { S } _ { 2 }$ are as shown, then $\gamma ^ { + } ( s _ { 0 } ,   \langle \mathsf { m o v e ( r 1 ,   d 3 ,   d 1 ) } ,   \mathsf { l o a d ( r 1 ,   c 1 ,   d 1 ) } \rangle ) = \hat { s } _ { 2 }$
+
+$$
+\begin{array}{c} s _ {0} = \{\text {loc} (r 1) = d 3, \\ \text {cargo} (r 1) = \text {nil}, \\ \text {loc} (c 1) = d 1 \} \end{array}
+$$
+
+$$
+\begin{array}{l} \hat {s} _ {1} = \gamma^ {+} (s _ {0}, \text {move} (\mathrm{r} 1, \mathrm{d} 3, \mathrm{d} 1)) \\ \quad = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 1, \\ \quad \quad \quad \text {loc} (\mathrm{r} 1) = \mathrm{d} 3, \\ \quad \quad \quad \text {cargo} (\mathrm{r} 1) = \text {nil}, \\ \quad \quad \quad \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\begin{array}{r l} \hat {s} _ {2} & = \gamma^ {+} (\hat {s} _ {1}, \text {load} (r 1, c 1, d 1)) \\ & = \{\text {loc} (r 1) = d 1, \\ & \quad \text {loc} (r 1) = d 3, \\ & \quad \text {cargo} (r 1) = \text {nil}, \\ & \quad \text {cargo} (r 1) = c 1, \\ & \quad \text {loc} (c 1) = r 1, \\ & \quad \text {loc} (c 1) = d 1 \} \end{array}
+$$
+
+![](images/page_28_image_12.jpg)
+
+![](images/page_28_image_13.jpg)
+
+![](images/page_28_image_14.jpg)
+
+## Relaxed Solution
+
+● An r-state ŝ r-satisfies a formula g if an r-subset of ŝ satisfies $g$
+
+▸ a subset with one value per state variable
+
+● Relaxed solution for a planning problem $P = ( \Sigma ,   s _ { 0 } ,   g ) ;$
+
+▸ a plan π such that $\gamma ^ { + } ( s _ { 0 } , \pi )$ r-satisfies g
+
+● Example: let $P$ be as shown
+
+▸ $\hat { S } _ { 2 }$ r-satisfies g
+
+▸ So $\mathbf { \pi } = \langle \mathsf { m o v e } ( \mathsf { r 1 } , \mathsf { d 3 } , \mathsf { d 1 } ) , \mathsf { l o a d } ( \mathsf { r 1 } , \mathsf { c 1 } , \mathsf { d 1 } ) \rangle$ is a relaxed solution for $P$
+
+![](images/page_29_image_8.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+$$
+\begin{array}{c} s _ {0} = \{\text {loc} (r 1) = \mathrm{d} 3, \\ \text {cargo} (r 1) = \text {nil}, \\ \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\hat {s} _ {1} = \gamma^ {+} (s _ {0}, \text {move} (\mathrm{r} 1, \mathrm{d} 3, \mathrm{d} 1))
+$$
+
+$$
+= \{\text {loc} (r 1) = d 1,
+$$
+
+$$
+\text{loc} (r1) = d3,
+$$
+
+$$
+\text {cargo} (r 1) = \text {nil},
+$$
+
+$$
+\text {loc} (\mathrm{c1}) = \mathrm{d1}\}
+$$
+
+$$
+\hat {s} _ {2} = \gamma^ {+} (\hat {s} _ {1}, \text {load} (r 1, c 1, d 1))
+$$
+
+$$
+= \{\text {loc} (r 1) = d 1,
+$$
+
+$$
+\text{loc} (r1) = d3,
+$$
+
+$$
+\text {cargo} (r 1) = \text {nil},
+$$
+
+$$
+\text {cargo} (r 1) = c 1,
+$$
+
+$$
+\text{loc} (\mathrm{c1}) = \mathrm{r1},
+$$
+
+$$
+\text {loc} (\mathrm{c1}) = \mathrm{d1}\}
+$$
+
+![](images/page_29_image_23.jpg)
+
+![](images/page_29_image_24.jpg)
+
+![](images/page_29_image_25.jpg)
+
+## Relaxed Solution
+
+● Planning problem $P   =   ( \Sigma ,   s _ { 0 } ,   g )$
+
+● Optimal relaxed solution heuristic:
+
+▸ $h ^ { + } ( s ) =$ minimum cost of all relaxed solutions for $( \Sigma , s , g )$
+
+● Example: $s = s _ { 0 }$
+
+● π = ⟨move(r1,d3,d1), load(r1,c1,d1)⟩
+
+▸ $\cos ( \pi ) = 2$
+
+● No less-costly relaxed solution, so $h ^ { + } ( s _ { 0 } ) = 2$
+
+**Poll**: is $h ^ { + }$ admissible?
+
+A. Yes
+
+B. No
+
+![](images/page_30_image_11.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+$$
+\begin{array}{c} s _ {0} = \{\text {loc} (r 1) = \mathrm{d} 3, \\ \text {cargo} (r 1) = \text {nil}, \\ \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\begin{array}{l} \hat {s} _ {1} = \gamma^ {+} (s _ {0}, \text {move} (\mathrm{r} 1, \mathrm{d} 3, \mathrm{d} 1)) \\ \quad = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 1, \\ \quad \quad \quad \text {loc} (\mathrm{r} 1) = \mathrm{d} 3, \\ \quad \quad \quad \text {cargo} (\mathrm{r} 1) = \text {nil}, \\ \quad \quad \quad \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+$$
+\begin{array}{r l} \hat {s} _ {2} & = \gamma^ {+} (\hat {s} _ {1}, \text {load} (r 1, c 1, d 1)) \\ & = \{\text {loc} (r 1) = d 1, \\ & \quad \text {loc} (r 1) = d 3, \\ & \quad \text {cargo} (r 1) = \text {nil}, \\ & \quad \text {cargo} (r 1) = c 1, \\ & \quad \text {loc} (c 1) = r 1, \\ & \quad \text {loc} (c 1) = d 1 \} \end{array}
+$$
+
+![](images/page_30_image_16.jpg)
+
+![](images/page_30_image_17.jpg)
+
+![](images/page_30_image_18.jpg)
+
+![](images/page_31_image_0.jpg)
+
+C. 3
+
+B. 2 E. other
+
+**Poll 2**: What is $h ^ { + } ( s _ { 2 } ) ?$
+
+A. 1 D. 4
+
+A. 1 D. 4
+
+B. 2 E. other
+
+C. 3
+
+● GBFS with initial state $S _ { 0 } ,$ goal $g ,$ heuristic $h ^ { + }$
+
+**Poll 1**: What is $h ^ { + } ( s _ { 1 } ) ?$
+
+● Applicable actions $a _ { 1 } ,   a _ { 2 }$ produce states $s _ { 1 } , s _ { 2 }$
+
+● GBFS computes $h ^ { + } ( s _ { 1 } )$ and $h ^ { + } ( s _ { 2 } ) ,$ , chooses the state that has the lower $h ^ { + }$ value
+
+## Fast-Forward Heuristic
+
+● Every state is also a relaxed state
+
+● Every solution is also a relaxed solution
+
+● h+(s) = minimum cost of all relaxed solutions
+
+Thus h+ is admissible
+
+● Problem: computing $h ^ { + } ( s )$ is NP-hard
+
+● Fast-Forward Heuristic, $h ^ { \mathrm { F F } }$
+
+▸ An approximation of $h ^ { + }$ that’s easier to compute
+
+• Upper bound on $h ^ { + }$
+
+▸ Name comes from a planner called Fast-Forward
+
+## Preliminaries
+
+● Suppose $a _ { 1 }$ and $a _ { 2 }$ are r-applicable in $\hat { S } _ { 0 }$
+
+● Let $\hat { s } _ { 1 } = \gamma ^ { + } ( \hat { s } _ { 0 } , a _ { 1 } ) = \hat { s } _ { 0 } \cup \mathrm { e f f } ( a _ { 1 } )$
+
+● Then $a _ { 2 }$ is still applicable in $\hat { S } _ { 1 }$
+
+▸ ŝ<sub>2</sub> = γ+(ŝ<sub>1</sub>, a<sub>2</sub>) = ŝ<sub>0</sub> ∪ eff(a<sub>1</sub>) ∪ eff(a<sub>2</sub>)
+
+● Apply $a _ { 1 }$ and $a _ { 2 }$ in the opposite order ⇒ same state $\hat { S } _ { 2 }$
+
+● Let $A _ { 1 }$ be a set of actions that all are r-applicable in $\hat { S } _ { 0 }$
+
+▸ Can r-apply them in any order and get same result
+
+▸ $\hat { s } _ { 1 } = \gamma ^ { + } ( \hat { s } _ { 0 } , A _ { 1 } ) = \hat { s } _ { 0 } \cup \mathrm { e f f } ( A _ { 1 } )$
+
+• where $\operatorname { e f f } ( A _ { 1 } ) = \bigcup \left\{ \operatorname { e f f } ( a ) \mid a \in A _ { 1 } \right\}$
+
+● Suppose $A _ { 2 }$ is a set of actions that are r-applicable in $\hat { S } _ { 1 }$
+
+▸ $\hat { S } _ { 1 }$ satisfies $\mathrm{pre}(A_{2}) = \cup \left\{ \mathrm{pre}(a) \mid a \in A_{2} \right\}$
+
+▸ ŝ<sub>2</sub> = γ+(ŝ<sub>0</sub>, ⟨A<sub>1</sub>, A<sub>2</sub>⟩) = ŝ<sub>0</sub> ∪ eff(A<sub>1</sub>) ∪ eff(A<sub>2</sub>)
+
+Define $\gamma ^ { + } ( \hat { s } _ { 0 } , \langle A _ { 1 } , A _ { 2 } , \ldots , A _ { n } \rangle )$ in the obvious way
+
+![](images/page_33_image_14.jpg)
+
+$$
+s _ {0} = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 1, \text {cargo} (\mathrm{r} 1) = \text {nil}, \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \}
+$$
+
+$$
+a _ {1} = \text {load} (r 1, c 1, d 1)
+$$
+
+$$
+a _ {2} = \text {move} (\mathrm{r1,d1,d3})
+$$
+
+$$
+A _ {1} = \{a _ {1}, a _ {2} \}
+$$
+
+$$
+\gamma^ {+} (s _ {0}, A _ {1}) = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 1, \text {loc} (\mathrm{r} 1) = \mathrm{d} 3,
+$$
+
+$$
+\text {cargo} (r 1) = \text {nil}, \text {cargo} (r 1) = c 1,
+$$
+
+$$
+\text {loc} (\mathrm{c} 1) = \mathrm{d} 1, \text {loc} (\mathrm{c} 1) = \mathrm{r} 1 \}
+$$
+
+![](images/page_33_image_22.jpg)
+
+## Fast-Forward Heuristic
+
+```txt
+HFF(Σ, s, g): // find a minimal relaxed solution, return its cost
+1. At each iteration, include all r-applicable actions
+    // construct a relaxed solution ⟨A₁, A₂, ..., Aₖ⟩:
+    ŝ₀ ← s
+    for k = 1 by 1 until ŝₖ r-satisfies g
+        Aₖ ← {all actions r-applicable in ŝₖ₋₁}; ŝₖ ← γ⁺(sₖ₋₁, Aₖ)
+        if k > 1 and ŝₖ = ŝₖ₋₁ then return ∞ // there’s no solution
+2. At each iteration, choose a minimal set of actions that r-achieve ĝᵢ
+    // extract minimal relaxed solution ⟨â₁, â₂, ..., âₖ⟩:
+    ĝₖ ← g
+    for i = k, k-1, ..., 1:
+        âᵢ ← any minimal subset of Aᵢ such that γ⁺(ŝᵢ₋₁, âᵢ) r-satisfies ĝᵢ
+        ĝᵢ₋₁ ← (ĝᵢ \ eff(âᵢ)) ∪ pre(âᵢ)
+    return ∑ costs of the actions in â₁, ..., âₖ // upper bound on h⁺
+ambiguous → Define hFF(s) = the value returned by HFF(Σ, s, g)
+```
+
+## Example: GBFS Again
+
+● GBFS with initial state $S _ { 0 } ,$ goal g, heuristic $h ^ { \mathrm { F F } }$
+
+● Two applicable actions: $a _ { 1 } ,   a _ { 2 }$
+
+● Resulting states: $s _ { 1 } , s _ { 2 }$
+
+![](images/page_35_image_4.jpg)
+
+● GBFS computes $h ^ { \mathrm { F F } } ( s _ { 1 } )$ and $h ^ { \mathrm { F F } } ( s _ { 2 } )$
+
+$$
+a _ {1} = \text {move} (\mathrm{r1,d3,d1})
+$$
+
+Chooses the state that has the
+
+$$
+a _ {2} = \text {move} (\mathrm{r1,d3,d2})
+$$
+
+lower $h ^ { \mathrm { F F } }$ value
+
+● Next several slides:
+
+▸ $h ^ { \mathrm { F F } } ( s _ { 1 } )$
+
+![](images/page_35_image_12.jpg)
+
+▸ $h ^ { \mathrm { F F } } ( s _ { 2 } )$
+
+$$
+s _ {1} = \gamma (s _ {0}, a _ {1}) = \{\text {loc} (\mathrm{c} 1) = \mathrm{d} 1, \text {loc} (\mathrm{r} 1) = \mathrm{d} 1,
+$$
+
+$$
+\text{cargo} (r1) = \text{nil}
+$$
+
+![](images/page_35_image_16.jpg)
+
+$$
+\begin{array}{c} s _ {2} = \gamma (s _ {0}, a _ {2}) = \{\text {loc} (\mathrm{c1}) = \mathrm{d1}, \text {loc} (\mathrm{r1}) = \mathrm{d2}, \\ \text {cargo} (\mathrm{r1}) = \text {nil} \} \end{array}
+$$
+
+![](images/page_35_image_18.jpg)
+
+```matlab
+from $\hat{s}_0$: loc(c1) = d1
+loc(r1) = d1
+cargo(r1) = nil
+```
+
+## Example
+
+● Computing $h ^ { \mathrm { F F } } ( s _ { 1 } )$
+
+▸ 1. construct a relaxed solution
+
+at each step, include all r-applicable actions
+
+![](images/page_36_image_5.jpg)
+
+$$
+\begin{array}{c} S _ {1} = \{\text {loc} (r 1) = \mathrm{d} 1, \text {cargo} (r 1) = \text {nil}, \\ \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \} \end{array}
+$$
+
+![](images/page_36_image_7.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// construct a relaxed solution $\langle A_1, A_2, \dots, A_k \rangle$:
+$\hat{s}_0 \leftarrow s$
+for $k = 1$ by 1 until $\hat{s}_k$ r-satisfies $g$
+    $A_k \leftarrow \{\text{all actions r-applicable in } \hat{s}_{k-1}\}; \hat{s}_k \leftarrow \gamma^+(s_{k-1}, A_k)$
+    if $k &gt; 1$ and $\hat{s}_k = \hat{s}_{k-1}$ then return $\infty$
+</div>
+
+Relaxed Planning Graph (RPG) starting at $\hat { s _ { 0 } } = s _ { 1 }$
+
+$$
+\hat {s} _ {0} = s _ {1}:
+$$
+
+Actions in $A _ { 1 } ;$
+
+Atoms in $\hat { S } _ { 1 } !$ :
+
+lines for preconditions and effects $\hat { S } _ { 1 }$ r-satisfies g, so $\langle A _ { 1 } \rangle$ is a relaxed solution
+
+## Example
+
+● Computing $h ^ { \mathrm { F F } } ( s _ { 1 } )$
+
+2. extract a minimal relaxed solution
+
+▸ if you remove any actions from it, it’s no longer a relaxed solution
+
+![](images/page_37_image_4.jpg)
+
+$$
+\begin{array}{c} S _ {1} = \{\text {loc} (r 1) = d 1, \text {cargo} (r 1) = n i l, \\ \text {loc} (c 1) = d 1 \} \end{array}
+$$
+
+![](images/page_37_image_6.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// extract minimal relaxed solution ⟨â₁, â₂, ..., âₖ⟩:
+$\hat{g}_{k} \leftarrow g$
+for i = k, k-1, ..., 1:
+    $\hat{a}_{i} \leftarrow$ any minimal subset of Aᵢ such that $\gamma^{+}(\hat{s}_{i-1}, \hat{a}_{i})$ r-satisfies $\hat{g}_{i}$
+    $\hat{g}_{i-1} \leftarrow (\hat{g}_{i} \setminus \text{eff}(\hat{a}_{i})) \cup \text{pre}(\hat{a}_{i})$
+</div>
+
+Solution extraction starting at $\hat { g } _ { 1 } = g$
+
+Atoms in $\hat { s _ { 0 } } = s _ { 1 } \cdot$ Actions in $A _ { 1 } ;$ Atoms in ${ \hat { S } } _ { 1 } ;$
+
+$$
+\text{load} (\mathrm{r1}, \mathrm{c1}, \mathrm{d1})
+$$
+
+$$
+\begin{array}{c} \text {loc(c1) = d1} \\ \hat {s} _ {0}: \text {loc(r1) = d1} \end{array}
+$$
+
+$\hat { a } _ { 1 }$ is a minimal set of actions such that $\gamma ^ { + } ( \hat { s } _ { 0 } , \hat { a } _ { 1 } )$ r-satisfies $\hat { g } _ { 1 }$
+
+$\langle \hat { a } _ { 1 } \rangle$ is a minimal relaxed solution
+
+● Two actions, each with cost 1, so $h ^ { \mathrm { F F } } ( s _ { 1 } )   =   2$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG starting at $s_0 = s_2$
+Atoms in $\hat{s}_0 = s_2$:
+loc(r1) = d2
+loc(c1) = d1
+cargo(r1) = nil
+Actions in $A_1$:
+move(r1,d2,d3)—loc(r1) = d3
+move(r1,d2,d1)—loc(r1) = d1
+from $\hat{s}_0$:
+loc(r1) = d2
+loc(c1) = d1
+cargo(r1) = nil
+Actions in $A_2$:
+move(r1,d3,d2)
+move(r1,d1,d2)
+move(r1,d3,d1)
+move(r1,d1,d3)
+move(r1,d2,d1)
+move(r1,d2,d3)
+load(r1,c1,d1)
+from $\hat{s}_1$:
+loc(r1) = d2
+loc(c1) = d1
+cargo(r1) = nil
+loc(r1) = d3
+cargo(r1) = c1
+loc(c1) = r1
+$\hat{s}_2$ r-satisfies g, so $\langle A_1, A_2 \rangle$ is a relaxed solution
+</div>
+
+## Example
+
+● Computing $h ^ { \mathrm { F F } } ( s _ { 2 } )$
+
+▸ 1. construct a relaxed solution
+
+at each step, include all r-applicable actions
+
+![](images/page_38_image_5.jpg)
+
+$$
+\begin{array}{c} s _ {2} = \{\text {loc} (r 1) = d 2, \text {cargo} (r 1) = n i l, \\ \text {loc} (c 1) = d 2 \} \end{array}
+$$
+
+![](images/page_38_image_7.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+RPG starting at $\hat { s _ { 0 } } = s _ { 2 }$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// construct a relaxed solution $\langle A_1, A_2, \dots, A_k \rangle$:
+$\hat{s}_0 \leftarrow s$
+for $k = 1$ by 1 until $\hat{s}_k$ r-satisfies $g$
+    $A_k \leftarrow \{\text{all actions r-applicable in } \hat{s}_{k-1}\}; \hat{s}_k \leftarrow \gamma^+(s_{k-1}, A_k)$
+    if $k &gt; 1$ and $\hat{s}_k = \hat{s}_{k-1}$ then return $\infty$
+</div>
+
+Atoms in $\hat { S } _ { 2 } ;$
+
+## Example
+
+● ● Computing $h ^ { \mathrm { F F } } ( s _ { 1 } )$
+
+2. extract a minimal relaxed solution
+
+▸ if you remove any actions from it, it’s no longer a relaxed solution
+
+![](images/page_39_image_4.jpg)
+
+$$
+\begin{array}{c} s _ {2} = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 2, \text {cargo} (\mathrm{r} 1) = \text {nil}, \\ \text {loc} (\mathrm{c} 1) = \mathrm{d} 2 \} \end{array}
+$$
+
+![](images/page_39_image_6.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// extract minimal relaxed solution ⟨â₁, â₂, ..., âₖ⟩:
+$\hat{g}_{k} \leftarrow g$
+for i = k, k-1, ..., 1:
+$\hat{a}_{i} \leftarrow \text{any minimal subset of } A_{i} \text{ such that } \gamma^{+}(\hat{s}_{i-1}, \hat{a}_{i}) \text{ r-satisfies } \hat{g}_{i}$
+$\hat{g}_{i-1} \leftarrow (\hat{g}_{i} \setminus \text{eff}(\hat{a}_{i})) \cup \text{pre}(\hat{a}_{i})$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Solution extraction starting at $\hat{g}_2 = g$
+Atoms in $\hat{s}_0 = s_2$:
+loc(r1) = d2
+loc(c1) = d1
+cargo(r1) = nil
+$a_1$
+Actions in $A_1$:
+move(r1,d2,d3)
+move(r1,d2,d1)
+from $\hat{s}_0$:
+loc(r1) = d3
+loc(r1) = d1
+$a_2$
+actions in $A_2$:
+move(r1,d3,d2)
+move(r1,d1,d2)
+move(r1,d3,d1)
+move(r1,d1,d3)
+move(r1,d2,d1)
+move(r1,d2,d3)
+load(r1,c1,d1)
+from $\hat{s}_1$:
+loc(r1) = d2
+loc(c1) = d1
+cargo(r1) = nil
+cargo(r1) = c1
+loc(c1) = r1
+$a_2$
+</div>
+
+$\langle \hat { a } _ { 1 } ,   \hat { a } _ { 2 } \rangle$ is a minimal relaxed solution
+
+● each action’s cost is 1, so $h ^ { \mathrm { F F } } ( s _ { 2 } ) = 3$
+
+## Properties
+
+● Running time is polynomial in $\begin{array} { r } { | A | + \sum _ { x \in X } | \mathrm { R a n g e } ( x ) | } \end{array}$
+
+● $\bar { h } ^ { \mathrm { F F } } ( s ) = \mathbf { v }$ alue returned by $\mathsf { H F F } ( \Sigma ,   s ,   g )$
+
+$$
+= \sum_ {i} \mathbf {\mathrm{cost}} (\hat {a} _ {i})
+$$
+
+$$
+= \sum_ {i} \sum \left\{\mathrm{cost} (a) \mid a \in \hat {a} _ {i} \right\}
+$$
+
+▸ each $\hat { a } _ { i }$ is a minimal set of actions such that $\gamma ^ { + } ( \hat { s } _ { i - 1 } , \hat { a } _ { i } )$ r-satisfies $\hat { g _ { i } }$
+
+• minimal doesn’t mean smallest
+
+● $h ^ { \mathrm { F F } } ( s )$ is ambiguous
+
+▸ depends on which minimal sets we choose
+
+● $h ^ { \mathrm { F F } }$ not admissible
+
+● $h ^ { \mathrm { F F } } ( s ) \geq h ^ { + } ( s ) =$ smallest cost of any relaxed plan from s to goal
+
+## Example
+
+Atoms in ŝ<sub>0</sub>=s<sub>1</sub>:
+
+Actions in A1:
+
+Atoms in ŝ<sub>1</sub>:
+
+Actions in A2:
+
+Atoms in ŝ<sub>2</sub>:
+
+![](images/page_41_image_6.jpg)
+
+| Poll. Suppose the goal atoms are c7, c8, c9. How many minimal relaxed solutions are there? |
+| --- |
+| 1. 1 |
+| 2. 2 |
+| 3. 3 |
+| 4. 4 |
+| 5. 5 |
+| 6. 6 |
+| 7. 7 |
+| 8. ≥8 |
+
+## 3.2.2. Landmark Heuristics
+
+● $P   =   ( \Sigma _ { \mathrm { { } ^ { , } } } s _ { 0 } { , } g )$ be a planning problem
+
+● Let $\varphi = \varphi _ { 1 } \vee \ldots \vee \varphi _ { m }$ be a disjunction of ground atoms
+
+● φ is a disjunctive landmark for P if φ is true at some point in every solution for P
+
+![](images/page_42_image_4.jpg)
+
+![](images/page_42_image_5.jpg)
+
+$$
+s _ {0} = \{\text {loc} (\mathrm{r} 1) = \mathrm{d} 3, \text {cargo} (\mathrm{r} 1) = \text {nil}, \text {loc} (\mathrm{c} 1) = \mathrm{d} 1 \}
+$$
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+● Example disjunctive landmarks
+
+▸ $\log ( r _ { 1 } ) = d _ { 1 }$
+
+▸ $\log ( r 1 ) = d 3$
+
+▸ $\mathsf{loc}(\mathsf{r}1)=\mathsf{d}3\vee\mathsf{loc}(\mathsf{r}1)=\mathsf{d}2$
+
+From now on, I’ll abbreviate “disjunctive landmark” as “landmark”
+
+## Why are Landmarks Useful?
+
+● Can break a problem down into smaller subproblems
+
+![](images/page_43_image_2.jpg)
+
+● Suppose m is a landmark
+
+▸ Every solution to $P$ must achieve m
+
+● Possible strategy:
+
+▸ find a plan to go from $s _ { 0 }$ to any state $s _ { 1 }$ that satisfies m
+
+▸ find a plan to go from $s _ { 1 }$ to any state $s _ { 2 }$ that satisfies g
+
+![](images/page_43_image_8.jpg)
+
+● Suppose $m _ { 1 } ,   m _ { 2 } ,   m _ { 3 }$ are landmarks
+
+▸ Every solution to $P$ must achieve $m _ { 1 } ,$ then $m _ { 2 } ,$ then $m _ { 3 }$
+
+● Possible strategy:
+
+find a plan to go from $s _ { 0 }$ to any state $s _ { 1 }$ that satisfies $m _ { 1 }$
+
+▸ find a plan to go from $s _ { 1 }$ to any state $s _ { 2 }$ that satisfies $m _ { 2 }$
+
+▸ …
+
+## Computing Landmarks
+
+● Given a formula φ
+
+▸ PSPACE-hard (worst case) to decide whether φ is a landmark
+
+▸ As hard as solving the planning problem itself
+
+● Some landmarks are easier to find – polynomial time
+
+▸ Several procedures for finding them
+
+▸ I’ll show you one based on relaxed planning graphs
+
+● Why use RPGs?
+
+▸ Easier to solve relaxed planning problems
+
+▸ Easier to find landmarks for them
+
+▸ A landmark for a relaxed planning problem is also a landmark for the original planning problem
+
+● Key idea: if φ is a landmark, get new landmarks from the preconditions of the
+
+actions that achieve φ
+
+▸ goal g
+
+▸ {actions that achieve g}
+
+$$
+= \{a _ {1}, a _ {2} \}
+$$
+
+• $\operatorname { p r e } ( a _ { 1 } ) = \{ p _ { 1 } , q \}$
+
+• $\mathrm { p r e } ( a _ { 2 } ) = \{ p _ { 2 } , q \}$
+
+▸ To achieve g, must achieve $( p _ { 1 } \wedge q ) \vee ( p _ { 2 } \wedge q )$
+
+• same as $q \wedge ( p _ { 1 } \vee p _ { 2 } )$
+
+![](images/page_44_image_20.jpg)
+
+▸ Landmarks:
+
+• $q$
+
+• $p _ { 1 } \vee p _ { 2 }$
+
+## RPG-based Landmark Computation
+
+● Suppose goal is $g = \{ g _ { 1 } , g _ { 2 } , \ldots , g _ { k } \}$
+
+Trivially, every $g _ { i }$ is a landmark
+
+● Suppose $g _ { 1 } = \log ( r _ { 1 } ) = d _ { 1 }$
+
+▸ Two actions can achieve g<sub>1</sub>: move(r1,d3,d1) and move(r1,d2,d1)
+
+Preconditions loc(r1)=d3 and $\log ( r 1 ) = d 2$
+
+● New landmark:
+
+▸ $\varphi ^ { \prime } = \mathrm { l o c } ( \mathrm { r } 1 ) = \mathrm { d } 3 \lor \mathrm { l o c } ( \mathrm { r } 1 ) = \mathrm { d } 2$
+
+● In this example, $s _ { 0 }$ satisfies $\varphi ^ { \prime }$
+
+```txt
+move(r, d, e)
+    pre: loc(r)=d
+    eff: loc(r) ← e
+load(r, c, l)
+    pre: cargo(r)=nil, loc(c)=l, loc(r)=l
+    eff: cargo(r) ← c, loc(c) ← r
+unload(r, c, l)
+    pre: loc(c)=r, loc(r)=l
+    eff: cargo(r) ← nil, loc(c) ← l
+```
+
+![](images/page_45_image_10.jpg)
+
+$$
+s _ {0} = \{\text {loc} (r 1) = d 3, \text {cargo} (r 1) = \text {nil}, \text {loc} (c 1) = d 1 \}
+$$
+
+## RPG-based Landmark Computation
+
+```txt
+RPG-Landmarks(Σ, s₀, g)
+    Queue ← ⟨all literals in g⟩; Examined ← ∅
+    while Queue ≠ ⟨⟩ do
+        φ ← pop(Queue)
+        if φ ∉ Examined and s₀ ≠ φ then
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// Step 1: look for an “action landmark”
+R ← {actions whose effects include a literal in φ}
+generate RPG from s0 using A \ R, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+// $\hat{s}_k$ now includes every atom that’s achievable without R
+N ← {all actions in R that are r-applicable in $\hat{s}_k$}
+if N = ∅ then return failure
+
+// Step 2: get new landmarks from actions’ preconditions
+$\Phi \leftarrow \{p_1 \lor p_2 \lor \ldots \lor p_m \mid m \leq 4,$
+each $p_i$ is a precondition of at least one a ∈ N, and
+each a ∈ N has at least one $p_i$ as a precondition}
+append to Queue every φ ∈ Φ that isn’t subsumed by another φ' ∈ Φ
+add φ to Examined
+n Examined
+</div>
+
+return Examined
+
+![](images/page_46_image_4.jpg)
+
+## RPG-based Landmark Computation
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks($\Sigma$, $s_0$, $g$)
+    $Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+    while $Queue \neq \langle\rangle$ do
+        $\varphi \leftarrow \text{pop}(Queue)$
+        if $\varphi \notin \text{Examined}$ and $s_0 \not\models \varphi$ then
+            // Step 1: look for an “action landmark”
+            $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+            generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+            // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+            $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+            if $N = \emptyset$ then return failure
+            // Step 2: get new landmarks from actions’ preconditions
+            $\Phi \leftarrow \{p_1 \lor p_2 \lor \dots \lor p_m \mid m \leq 4,$
+                each $p_i$ is a precondition of at least one $a \in N$, and
+                each $a \in N$ has at least one $p_i$ as a precondition}
+            append to Queue every $\varphi \in \Phi$ that isn’t subsumed by another $\varphi' \in \Phi$
+            add $\varphi$ to Examined
+return Examined
+</div>
+
+![](images/page_47_image_2.jpg)
+
+## RPG-based Landmark Computation
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks($\Sigma$, $s_0$, $g$)
+    $Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+    while $Queue \neq \langle\rangle$ do
+        $\varphi \leftarrow \text{pop}(Queue)$
+        if $\varphi \notin \text{Examined}$ and $s_0 \not\equiv \varphi$ then
+            // Step 1: look for an “action landmark”
+            $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+            generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+            // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+            $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+            if $N = \emptyset$ then return failure
+        // Step 2: get new landmarks from actions’ preconditions
+        $\Phi \leftarrow \{p_1 \lor p_2 \lor \ldots \lor p_m \mid m \leq 4,$
+            each $p_i$ is a precondition of at least one $a \in N$, and
+            each $a \in N$ has at least one $p_i$ as a precondition}
+        append to $Queue$ every $\varphi \in \Phi$ that isn’t subsumed by another $\varphi' \in \Phi$
+        add $\varphi$ to Examined
+    return Examined
+</div>
+
+$$
+P r e c o n d s = \{p _ {1}, q _ {1}, p _ {3}, q _ {3} \}
+$$
+
+![](images/page_48_image_3.jpg)
+
+## RPG-based Landmark Computation
+
+```txt
+RPG-Landmarks(Σ, s₀, g)
+    Queue ← ⟨all literals in g⟩; Examined ← ∅
+    while Queue ≠ ⟨⟩ do
+        φ ← pop(Queue)
+        if φ ∉ Examined and s₀ ≠ φ then
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// Step 1: look for an “action landmark”
+R ← {actions whose effects include a literal in φ}
+generate RPG from s0 using A \ R, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+// $\hat{s}_k$ now includes every atom that’s achievable without R
+N ← {all actions in R that are r-applicable in $\hat{s}_k$}
+if N = ∅ then return failure
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+// Step 2: get new landmarks from actions' preconditions
+ $\Phi \leftarrow \{p_{1} \lor p_{2} \lor \ldots \lor p_{m} \mid m \leq 4,$ 
+each  $p_{i}$  is a precondition of at least one  $a \in N$ , and
+each  $a \in N$  has at least one  $p_{i}$  as a precondition}
+append to Queue every  $\varphi \in \Phi$  that isn't subsumed by another  $\varphi' \in \Phi$
+</div>
+
+add φ to Examined
+
+return Examined
+
+$$
+\begin{array}{c} \Phi = \{p _ {1} \lor p _ {3}, p _ {1} \lor q _ {3}, q _ {1} \lor p _ {3}, q _ {1} \lor q _ {3}, p _ {1} \lor q _ {1} \lor p _ {3}, \\ p _ {1} \lor q _ {1} \lor q _ {3}, p _ {1} \lor p _ {3} \lor q _ {3}, q _ {1} \lor p _ {3} \lor q _ {3}, p _ {1} \lor q _ {1} \lor p _ {3} \lor q _ {3} \} \end{array}
+$$
+
+$$
+Q u e u e = \left\langle p _ {1} \vee p _ {3}, p _ {1} \vee q _ {3}, q _ {1} \vee p _ {3}, q _ {1} \vee q _ {3} \right\rangle
+$$
+
+![](images/page_49_image_8.jpg)
+
+```javascript
+RPG-Landmarks(Σ, s₀, g)
+Queue ← {all literals in g}; Examined ← Ø
+while Queue ≠ {} do
+    φ ← pop(Queue)
+    if φ ∈ Examined and s₀ ≠ φ then
+        // Step 1: look for an “action landmark”
+        R ← {actions whose effects include a literal in φ}
+        generate RPG from s₀ using A \ R, stopping when ŝₖ = ŝₖ₋₁
+        // ŝₖ now includes every atom that’s achievable without R
+        N ← {all actions in R that are r-applicable in ŝₖ}
+        if N = Ø then return failure
+        // Step 2: get new landmarks from actions’ preconditions
+        Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+            each pᵢ is a precondition of at least one a ∈ N, and
+            each a ∈ N has at least one pᵢ as a precondition}
+        append to Queue every φ ∈ Φ that isn’t subsumed by another φ' ∈ Φ
+        add φ to Examined
+return Examined
+s₀ = {loc(r1)=d3,
+cargo(r1)=nil,
+loc(c1)=d1}
+Example
+Queue = {loc(r1)=d3, loc(c1)=r1}
+Examined = Ø
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+![](images/page_50_image_1.jpg)
+
+![](images/page_50_image_2.jpg)
+
+```txt
+RPG-Landmarks(Σ, s₀, g)
+    Queue ← ⟨all literals in g⟩; Examined ← Ø
+    while Queue ≠ ⟨⟩ do
+        φ ← pop(Queue)
+        if φ ∈ Examined and s₀ ≠ φ then
+            // Step 1: look for an “action landmark”
+            R ← {actions whose effects include a literal in φ}
+            generate RPG from s₀ using A \ R, stopping when ŝₖ = ŝₖ₋₁
+            // ŝₖ now includes every atom that’s achievable without R
+            N ← {all actions in R that are r-applicable in ŝₖ}
+            if N = Ø then return failure
+            // Step 2: get new landmarks from actions’ preconditions
+            Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+                each pᵢ is a precondition of at least one a ∈ N, and
+                each a ∈ N has at least one pᵢ as a precondition}
+            append to Queue every φ ∈ Φ that isn’t subsumed by another
+```
+
+add φ to Examined
+
+return Examined
+
+![](images/page_51_image_3.jpg)
+
+## Example
+
+```txt
+Example
+Queue = ⟨loc(c1)=r1⟩
+Examined = Ø
+φ = loc(r1)=d3 ← s0 ⊆ φ
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+$$
+\varphi^ {\prime} \in \Phi
+$$
+
+![](images/page_51_image_7.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+PG-Landmarks($\Sigma$, $s_0$, $g$)
+$Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+while $Queue \neq \langle\rangle$ do
+    $\varphi \leftarrow \text{pop}(Queue)$
+    if $\varphi \notin \text{Examined}$ and $s_0 \not\equiv \varphi$ then
+        // Step 1: look for an “action landmark”
+        $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+        generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+        // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+        $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+        if $N = \emptyset$ then return failure
+        // Step 2: get new landmarks from actions’ preconditions
+        $\Phi \leftarrow \{p_1 \vee p_2 \vee \ldots \vee p_m \mid m \leq 4,$
+            each $p_i$ is a precondition of at least one $a \in N$, and
+            each $a \in N$ has at least one $p_i$ as a precondition}
+        append to $Queue$ every $\varphi \in \Phi$ that isn’t subsumed by another $\varphi' \in \Phi$
+Example
+$Queue = \langle\rangle$
+Examined = $\emptyset$
+$\varphi = \text{loc}(c1)=r1 \leftarrow s_0 \not\equiv \varphi$
+$R = \{\text{load}(r1,c1,d1), \text{load}(r1,c1,d2),$
+    load(r1,c1,d3)\}
+$A \setminus R = \{\text{the move and}$
+    unload actions}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)$\leftarrow c$, loc(c)$\leftarrow r$
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)$\leftarrow e$
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)$\leftarrow$nil, loc(c)$\leftarrow l$
+$r \in Robots$
+$c \in Containers$
+$l,d,e \in Locs$
+</div>
+
+![](images/page_52_image_1.jpg)
+
+<table><tr><td rowspan="2"> $\hat{s}_0$ :loc(c1)=d1loc(r1)=d3cargo(r1)=nil</td><td> $A_1$ :move(r1,d3,d1)move(r1,d3,d2)</td><td>both  $\hat{s}_1$  and  $\hat{s}_2$ :loc(r1)=d1loc(r1)=d2</td></tr><tr><td>From  $\hat{s}_0$ </td><td> $\left\{ \begin{array}{l} loc(c1)=d1 \\ loc(r1)=d3 \\ cargo(r1)=nil \end{array} \right.$ </td></tr></table>
+
+![](images/page_52_image_3.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks(Σ, s₀, g)
+Queue ← {all literals in g}; Examined ← Ø
+while Queue ≠ ⟨⟩ do
+    φ ← pop(Queue)
+    if φ ∈ Examined and s₀ ≠ φ then
+        // Step 1: look for an “action landmark”
+        R ← {actions whose effects include a literal in φ}
+        generate RPG from s₀ using A \ R, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+        // $\hat{s}_k$ now includes every atom that’s achievable without R
+        N ← {all actions in R that are r-applicable in $\hat{s}_k$}
+        if N = Ø then return failure
+
+Example
+    Queue = ⟨⟩
+    Examined = Ø
+    φ = loc(c1)=r1
+    R = {load(r1,c1,d1), load(r1,c1,d2),
+        load(r1,c1,d3)}
+    N = {load(r1,c1,d1)}
+
+Load(r, c, l)
+    pre: cargo(r)=nil, loc(c)=l,
+    loc(r)=l
+    eff: cargo(r)←c, loc(c)←r
+    move(r, d, e)
+    pre: loc(r)=d
+    eff: loc(r)←e
+    unload(r, c, l)
+    pre: loc(c)=r, loc(r)=l
+    eff: cargo(r)←nil, loc(c)←r ∈ Robots
+    c ∈ Containers
+    l, d, e ∈ Locs
+
+// Step 2: get new landmarks from actions’ preconditions
+Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+    each pᵢ is a precondition of at least one a ∈ N, and
+    each a ∈ N has at least one pᵢ as a precondition}
+append to Queue every φ ∈ Φ that isn’t subsumed by another φ' ∈ Φ
+
+add φ to Examined
+return Examined
+
+$\hat{s}_0$:
+loc(c1)=d1
+loc(r1)=d3
+cargo(r1)=nil
+
+$A_1$:
+move(r1,d3,d1)
+move(r1,d3,d2)
+
+$both \hat{s}_1$ and $\hat{s}_2$:
+loc(r1)=d1
+loc(r1)=d2
+
+From $\hat{s}_0$:
+loc(c1)=d1
+loc(r1)=d3
+cargo(r1)=nil
+
+Relaxed planning graph using A \ R
+
+g = {loc(r1)=d3, loc(c1)=r1}
+</div>
+
+![](images/page_53_image_1.jpg)
+
+![](images/page_53_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks($\Sigma$, $s_0$, $g$)
+    $Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+    while $Queue \neq \langle\rangle$ do
+        $\varphi \leftarrow \text{pop}(Queue)$
+        if $\varphi \notin \text{Examined}$ and $s_0 \not\equiv \varphi$ then
+            // Step 1: look for an “action landmark”
+            $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+            generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+            // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+            $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+            if $N = \emptyset$ then return failure
+
+            // Step 2: get new landmarks from actions’ preconditions
+            $\Phi \leftarrow \{p_1 \lor p_2 \lor ... \lor p_m \mid m \le 4,$
+            each $p_i$ is a precondition of at least one $a \in N$, and
+            each $a \in N$ has at least one $p_i$ as a precondition\}
+            append to $Queue$ every $\varphi \in \Phi$ that isn’t subsumed by another $\varphi' \in \Phi$
+            add $\varphi$ to Examined
+
+return Examined
+
+Example
+    $Queue = \langle cargo(r1)=nil, loc(c1)=d1, loc(r1)=d1\rangle$
+    Examined = $\{loc(c1)=r1\}$
+    $\varphi = loc(c1)=r1$
+    $R = \{load(r1,c1,d1), load(r1,c1,d2), load(r1,c1,d3)\}$
+    $N = \{load(r1,c1,d1)\}$
+    $\Phi = \{cargo(r1)=nil, loc(c1)=d1, loc(r1)=d1, ...\}$
+
+    load (r1, c1, d1)
+    pre: cargo(r1) = nil,
+    loc(c1) = d1,
+    loc(r1) = d1
+
+    load(r, c, l)
+    pre: cargo(r) = nil, loc(c) = l,
+    loc(r) = l
+    eff: cargo(r) ← c, loc(c) ← r
+    move(r, d, e)
+    pre: loc(r) = d
+    eff: loc(r) ← e
+    unload(r, c, l)
+    pre: loc(c) = r, loc(r) = l
+    eff: cargo(r) ← nil, loc(c) ← l
+    r ∈ Robots
+    c ∈ Containers
+    l, d, e ∈ Locs
+
+    return Examined
+
+    s0 = $\{loc(r1)=d3, cargo(r1)=nil, loc(c1)=d1\}$
+
+    g = $\{loc(r1)=d3, loc(c1)=r1\}$
+</div>
+
+![](images/page_54_image_1.jpg)
+
+![](images/page_54_image_2.jpg)
+
+return Examined
+
+$$
+s _ {0}, g)
+$$
+
+$$
+\leftarrow \varnothing
+$$
+
+$$
+Q u e u e \neq \langle \rangle
+$$
+
+$$
+\varphi \leftarrow \mathsf {p o p} (\text {Queue})
+$$
+
+$$
+\varphi \notin
+$$
+
+$$
+S _ {0}
+$$
+
+$$
+\varphi
+$$
+
+$$
+R \leftarrow
+$$
+
+$$
+\parallel \hat {S} _ {k}
+$$
+
+$$
+S _ {0}
+$$
+
+$$
+A \setminus R,
+$$
+
+$$
+N \leftarrow \{\text {all}
+$$
+
+$$
+R
+$$
+
+$$
+\text {if} N = \emptyset
+$$
+
+$$
+\Phi \leftarrow \{p _ {1} \vee p _ {2} \vee \dots \vee p _ {m} \mid m \leq 4,
+$$
+
+$$
+\hat {s} _ {k} \}
+$$
+
+$$
+p _ {i}
+$$
+
+$$
+a \in N
+$$
+
+$$
+\varphi \}
+$$
+
+$$
+a \in N,
+$$
+
+$$
+p _ {i}
+$$
+
+$$
+\varphi \in \Phi
+$$
+
+![](images/page_55_image_23.jpg)
+
+## Example
+
+$$
+\hat {s} _ {k} = \hat {s} _ {k - 1}
+$$
+
+```lua
+Queue = { loc(c1)=d1, loc(r1)=d1}
+Examined = {loc(c1)=r1}
+φ = cargo(r1)=nil ← s0 = φ
+R = {load(r1,c1,d1), load(r1,c1,d2),
+    load(r1,c1,d3)}
+N = {load(r1,c1,d1)}
+Φ = {cargo(r1)=nil, loc(c1)=d1,
+loc(r1)=d1, ...}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+    loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+$$
+\varphi^ {\prime} \in \Phi
+$$
+
+![](images/page_55_image_28.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+return Examined
+
+```txt
+RPG-Landmarks(Σ, s₀, g)
+    Queue ← ⟨all literals in g⟩; Examined ← Ø
+    while Queue ≠ ⟨⟩ do
+        φ ← pop(Queue)
+        if φ ∉ Examined and s₀ ≠ φ then
+            // Step 1: look for an “action landmark”
+            R ← {actions whose effects include a literal in φ}
+            generate RPG from s₀ using A \ R, stopping when ŝₖ = ŝₖ₋₁
+            // ŝₖ now includes every atom that’s achievable without R
+            N ← {all actions in R that are r-applicable in ŝₖ}
+            if N = Ø then return failure
+            // Step 2: get new landmarks from actions’ preconditions
+            Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+                each pᵢ is a precondition of at least one a ∈ N, and
+                each a ∈ N has at least one pᵢ as a precondition}
+            append to Queue every φ ∈ Φ that isn’t subsumed by another
+```
+
+![](images/page_56_image_2.jpg)
+
+## Example
+
+```txt
+Queue = ⟨ loc(r1)=d1⟩
+Examined = {loc(c1)=r1}
+φ = loc(c1)=d1 ← s0 ⊨ φ
+R = {load(r1,c1,d1), load(r1,c1,d2),
+    load(r1,c1,d3)}
+N = {load(r1,c1,d1)}
+Φ = {cargo(r1)=nil, loc(c1)=d1,
+loc(r1)=d1, ...}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+    loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+$$
+\varphi^ {\prime} \in \Phi
+$$
+
+![](images/page_56_image_6.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+```javascript
+RPG-Landmarks(Σ, s₀, g)
+Queue ← {all literals in g}; Examined ← ∅
+while Queue ≠ ⟨⟩ do
+    φ ← pop(Queue)
+    if φ ∈ Examined and s₀ ≠ φ then
+        // Step 1: look for an “action landmark”
+        R ← {actions whose effects include a literal in φ}
+        generate RPG from s₀ using A \ R, stopping when ŝₖ = ŝₖ₋₁
+        // ŝₖ now includes every atom that’s achievable without R
+        N ← {all actions in R that are r-applicable in šₖ}
+        if N = ∅ then return failure
+        // Step 2: get new landmarks from actions’ preconditions
+        Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+            each pᵢ is a precondition of at least one a ∈ N, and
+            each a ∈ N has at least one pᵢ as a precondition}
+        append to Queue every φ ∈ Φ that isn’t subsumed by another φ' ∈ Φ
+        add φ to Examined
+return Examined
+Queue = ⟨⟩
+Examined = {loc(c1)=r1}
+φ = loc(r1)=d1 ← s₀ ≠ φ
+R = {move(r1,d2,d1),
+    move(r1,d3,d1)}
+N = {load(r1,c1,d1)}
+Φ = {cargo(r1)=nil, loc(c1)=d1,
+loc(r1)=d1, ...}
+A \ R = {load(r1,c1,l),
+    unload(r1,c1,l),
+    move(r1,d,d2),
+    move(r1,d,d3)}
+Load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+s₀ = {loc(r1)=d3,
+cargo(r1)=nil,
+loc(c1)=d1}
+šₖ = {loc(r1)=d2, loc(r1)=d3,
+loc(c1)=d1,
+cargo(r1)=nil}
+g = {loc(r1)=d3, loc(c1)=r1}
+```
+
+![](images/page_57_image_1.jpg)
+
+![](images/page_57_image_2.jpg)
+
+```txt
+Example
+Queue = <>
+Examined = {loc(c1)=r1}
+φ = loc(r1)=d1
+R = {move(r1,d2,d1),
+    move(r1,d3,d1)}
+N = {move(r1,d2,d1)
+    move(r1,d3,d1)}
+Φ = {cargo(r1)=nil, loc(c1)=d1,
+loc(r1)=d1, ...}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+her φ' ∈ Φ
+move(r1, d2, d1)
+pre: loc(r1)=d2
+eff: loc(r1) ← d1
+move(r1, d3, d1)
+pre: loc(r1)=d3
+eff: loc(r1) ← d1
+ˆk = {loc(r1)=d2, loc(r1)=d3,
+loc(c1)=d1,
+cargo(r1)=nil}
+g = {loc(r1)=d3, loc(c1)=r1}
+```
+
+$$
+\leftarrow \varnothing
+$$
+
+$$
+Q u e u e \neq \langle \rangle
+$$
+
+$$
+\varphi \leftarrow
+$$
+
+$$
+\varphi \notin
+$$
+
+$$
+s _ {0} \not \models \varphi
+$$
+
+$$
+R \leftarrow
+$$
+
+$$
+S _ {0}
+$$
+
+$$
+\varphi \}
+$$
+
+$$
+\parallel \hat {S} _ {k}
+$$
+
+$$
+A \setminus R,
+$$
+
+$$
+N \leftarrow \{\text {all}
+$$
+
+$$
+R
+$$
+
+$$
+\hat {s} _ {k} \}
+$$
+
+$$
+\text {if} N = \emptyset
+$$
+
+$$
+\Phi \leftarrow \{p _ {1} \vee p _ {2} \vee \dots \vee p _ {m} \mid m \leq 4,
+$$
+
+$$
+p _ {i}
+$$
+
+$$
+a \in N
+$$
+
+$$
+a \in N,
+$$
+
+$$
+p _ {i}
+$$
+
+$$
+\varphi \in \Phi
+$$
+
+![](images/page_58_image_21.jpg)
+
+$$
+\hat {S} _ {k} = \hat {S} _ {k - 1}
+$$
+
+![](images/page_58_image_24.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks($\Sigma$, $s_0$, $g$)
+    $Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+    while $Queue \neq \langle\rangle$ do
+        $\varphi \leftarrow \text{pop}(Queue)$
+        if $\varphi \notin \text{Examined}$ and $s_0 \nVdash \varphi$ then
+            // Step 1: look for an “action landmark”
+            $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+            generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+            // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+            $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+            if $N = \emptyset$ then return failure
+
+Example
+    $Queue = \langle loc(r1)=d2 \lor loc(r1)=d3\rangle$
+    Examined = $\{loc(c1)=r1, loc(r1)=d1\}$
+    $\varphi = loc(r1)=d1$
+    $R = \{move(r1,d2,d1), move(r1,d3,d1)\}$
+    $N = \{move(r1,d2,d1) move(r1,d3,d1)\}$
+    $\Phi = \{loc(r1)=d2 \lor loc(r1)=d3\}$
+
+load($r, c, l$)
+    pre: cargo($r$)=nil, loc($c$)=$l$, loc($r$)=$l$
+    eff: cargo($r$)←$c$, loc($c$)←$r$
+    move($r, d, e$)
+    pre: loc($r$)=$d$
+    eff: loc($r$)←$e$
+    unload($r, c, l$)
+    pre: loc($c$)=$r$, loc($r$)=$l$
+    eff: cargo($r$)←nil, loc($c$)←$l$
+
+// Step 2: get new landmarks from actions’ preconditions
+    $\Phi \leftarrow \{p_1 \lor p_2 \lor ... \lor p_m | m \le 4,$
+        each $p_i$ is a precondition of at least one $a \in N$, and
+        each $a \in N$ has at least one $p_i$ as a precondition}
+    append to Queue every $\varphi \in \Phi$ that isn’t subsumed by another $\varphi' \in \Phi$
+    add $\varphi$ to Examined
+
+move(r1, d2, d1)
+    pre: loc(r1) = d2
+    eff: loc(r1) ← d1
+    move(r1, d3, d1)
+    pre: loc(r1) = d3
+    eff: loc(r1) ← d1
+
+$r \in Robots$
+$c \in Containers$
+$l, d, e \in Locs$
+
+return Examined
+    s0 = {loc(r1)=d3, cargo(r1)=nil, loc(c1)=d1}
+
+g = {loc(r1)=d3, loc(c1)=r1}
+</div>
+
+![](images/page_59_image_1.jpg)
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+![](images/page_59_image_3.jpg)
+
+```txt
+RPG-Landmarks(Σ, s₀, g)
+    Queue ← {all literals in g}; Examined ← ∅
+    while Queue ≠ ⟨⟩ do
+        φ ← pop(Queue)
+        if φ ∈ Examined and s₀ ≠ φ then
+            // Step 1: look for an “action landmark”
+            R ← {actions whose effects include a literal in φ}
+            generate RPG from s₀ using A \ R, stopping when ŝₖ = ŝₖ₋₁
+            // ŝₖ now includes every atom that’s achievable without R
+            N ← {all actions in R that are r-applicable in ŝₖ}
+            if N = ∅ then return failure
+            // Step 2: get new landmarks from actions’ preconditions
+            Φ ← {p₁ ∨ p₂ ∨ ... ∨ pₘ | m ≤ 4,
+                each pᵢ is a precondition of at least one a ∈ N, and
+                each a ∈ N has at least one pᵢ as a precondition}
+            append to Queue every φ ∈ Φ that isn’t subsumed by another
+```
+
+return Examined
+
+![](images/page_60_image_2.jpg)
+
+```txt
+Example
+Queue = ⟨⟩
+Examined = {loc(c1)=r1, loc(r1)=d1}
+φ = loc(r1)=d2 ∨ loc(r1)=d3
+R = {move(r1,d2,d1), ↑ s0 ⊆ φ
+    move(r1,d3,d1)}
+N = {move(r1,d2,d1)
+    move(r1,d3,d1)}
+Φ = {loc(r1)=d2 ∨ loc(r1)=d3}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+$$
+\varphi^ {\prime} \in \Phi
+$$
+
+![](images/page_60_image_5.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+```lua
+Queue = ⟨⟩
+        Return 2
+Examined = {loc(c1)=r1, loc(r1)=d1}
+φ = loc(r1)=d2 ∨ loc(r1)=d3
+R = {move(r1,d2,d1),
+    move(r1,d3,d1)}
+N = {move(r1,d2,d1)}
+Φ = {loc(r1)=d2}
+load(r, c, l)
+pre: cargo(r)=nil, loc(c)=l,
+loc(r)=l
+eff: cargo(r)←c, loc(c)←r
+move(r, d, e)
+pre: loc(r)=d
+eff: loc(r)←e
+unload(r, c, l)
+pre: loc(c)=r, loc(r)=l
+eff: cargo(r)←nil, loc(c)←l
+r ∈ Robots
+c ∈ Containers
+l,d,e ∈ Locs
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+RPG-Landmarks($\Sigma$, $s_0$, $g$)
+    $Queue \leftarrow \langle$all literals in $g\rangle$; Examined $\leftarrow \emptyset$
+    while $Queue \neq \langle\rangle$ do
+        $\varphi \leftarrow \text{pop}(Queue)$
+        if $\varphi \notin \text{Examined}$ and $s_0 \neq \varphi$ then
+            // Step 1: look for an “action landmark”
+            $R \leftarrow \{\text{actions whose effects include a literal in } \varphi\}$
+            generate RPG from $s_0$ using $A \setminus R$, stopping when $\hat{s}_k = \hat{s}_{k-1}$
+            // $\hat{s}_k$ now includes every atom that’s achievable without $R$
+            $N \leftarrow \{\text{all actions in } R\text{ that are r-applicable in } \hat{s}_k\}$
+            if $N = \emptyset$ then return failure
+            // Step 2: get new landmarks from actions’ preconditions
+            $\Phi \leftarrow \{p_1 \vee p_2 \vee \ldots \vee p_m \mid m \leq 4,$
+                each $p_i$ is a precondition of at least one $a \in N$, and
+                each $a \in N$ has at least one $p_i$ as a precondition}
+            append to Queue every $\varphi \in \Phi$ that isn’t subsumed by another
+</div>
+
+add φ to Examined
+
+![](images/page_61_image_3.jpg)
+
+## Example
+
+$$
+\varphi^ {\prime} \in \Phi
+$$
+
+![](images/page_61_image_6.jpg)
+
+$$
+g = \{\text {loc} (r 1) = d 3, \text {loc} (c 1) = r 1 \}
+$$
+
+## Summary
+
+● Search-tree terminology
+
+● 3.1. Forward Search
+
+▸ Forward-search, Forward-Search-Det
+
+▸ cycle-checking
+
+▸ Search algorithms classified by
+
+(i) node selection
+
+• (ii) pruning
+
+Breadth-first, depth-first, uniform-cost search
+
+▸ $\mathsf { A } ^ { * } ,$ GBFS
+
+▸ DFBB, IDS
+
+● 3.2. Heuristic Functions
+
+▸ Straight-line distance example
+
+▸ Delete-relaxation heuristics
+
+• relaxed states, $\gamma ^ { + } ,$
+
+$h ^ { + }$ – minimal relaxed solution heuristic
+
+• $h ^ { \mathrm { F F } }$ – Fast-Forward heuristic
+
+• HFF algorithm – computes $h ^ { \mathrm { F F } }$
+
+▸ Disjunctive landmarks, RPG-Landmark, $h ^ { \mathrm { R L } }$
+
+Get necessary actions by making RPG for all non-relevant actions
