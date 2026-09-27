@@ -1,0 +1,980 @@
+# CS 4700: Foundations of Artificial Intelligence
+
+**Prof. Bart Selman**
+
+<u>selman@cs.cornell.edu</u>
+
+**Machine Learning:**
+
+**Decision Trees**
+
+**R&N 18.3**
+
+![](images/page_1_image_0.jpg)
+
+Cellphones
+
+## Big Data: Sensors Everywhere
+
+## Data collected and stored at enormous speeds (GB/hour)
+
+## Cars
+
+Remote Controls
+
+![](images/page_1_image_6.jpg)
+
+Traffic lights,
+
+ATM machines
+
+Appliances
+
+Motion sensors
+
+![](images/page_1_image_11.jpg)
+
+Surveillance cameras
+
+![](images/page_1_image_13.jpg)
+
+![](images/page_1_image_14.jpg)
+
+![](images/page_1_image_15.jpg)
+
+![](images/page_1_image_16.jpg)
+
+etc etc
+
+![](images/page_1_image_18.jpg)
+
+![](images/page_1_image_19.jpg)
+
+![](images/page_1_image_20.jpg)
+
+## Big Data: Scientific Domains
+
+Data collected and stored at enormous speeds (GB/hour)
+
+– remote sensors on a satellite
+
+– telescopes scanning the skies
+
+– microarrays generating gene expression data
+
+scientific simulations generating terabytes of data
+
+![](images/page_2_image_6.jpg)
+
+**Traditional statistical techniques infeasible to deal with the data TUSNAMI – they don’t scale up!!!** à **Machine Learning Techniques**
+
+![](images/page_2_image_8.jpg)
+
+(adapted from Vipin Kumar)
+
+## Prediction Methods
+
+– Use some variables to predict unknown or future values of other variables.
+
+## Description Methods
+
+– Find human-interpretable patterns that describe the data.
+
+## Supervised learning:
+
+We are given a set of examples with the correct answer - classification and regression
+
+Unsupervised learning: “just make sense of the data”
+
+![](images/page_5_image_1.jpg)
+
+f(x)giraffe Target Function
+
+![](images/page_5_image_3.jpg)
+
+giraffe
+
+![](images/page_5_image_5.jpg)
+
+giraffe
+
+![](images/page_5_image_7.jpg)
+
+llama
+
+![](images/page_5_image_9.jpg)
+
+llama
+
+![](images/page_5_image_11.jpg)
+
+llama
+
+## Example: Supervised Learning object recognition Classification
+
+![](images/page_6_image_1.jpg)
+
+giraffe
+
+![](images/page_6_image_3.jpg)
+
+giraffe
+
+![](images/page_6_image_5.jpg)
+
+giraffe
+
+Target Functio
+
+![](images/page_6_image_8.jpg)
+
+![](images/page_6_image_9.jpg)
+
+llama
+
+![](images/page_6_image_11.jpg)
+
+llama
+
+![](images/page_6_image_13.jpg)
+
+llama
+
+f(x)=?
+
+![](images/page_7_image_0.jpg)
+
+Data  Size:
+
+• 72  million  stars,  20  million  galaxies
+
+• Object  Catalog:  9  GB
+
+• Image  Database:  150  GB
+
+Class: • Stages  of  Formation
+
+## Classifying Galaxies
+
+![](images/page_7_image_7.jpg)
+
+Courtesy: http://aps.umn.edu
+
+Attributes:
+
+• Image  features,
+
+• Characteristics  of  light waves  received,  etc.
+
+![](images/page_7_image_12.jpg)
+
+## Supervised	  learning:	  curve	  fitting Regression
+
+![](images/page_8_image_1.jpg)
+
+## Supervised	  learning:	  curve	  fitting Regression
+
+![](images/page_9_image_1.jpg)
+
+## Supervised	  learning:	  curve	  fitting Regression
+
+![](images/page_10_image_1.jpg)
+
+## Supervised	  learning:	  curve	  fitting Regression
+
+![](images/page_11_image_1.jpg)
+
+## Supervised	  learning:	  curve	  fitting Regression
+
+![](images/page_12_image_1.jpg)
+
+## Unsupervised Learning: Clustering
+
+## 10 Alaska Ecoregions (2000–2009)
+
+![](images/page_13_image_2.jpg)
+
+Each ecoregion is a different random color. Blue filled circles mark locations most representative of mean conditions of each region.
+
+<u>Ecoregion Analysis of Alaska using clustering</u>
+
+## Machine Learning
+
+In classification – inputs belong two or more classes.
+
+Goal: the learner must produce a model that assigns unseen inputs to one (or multi-label classification) or more of these classes. Typically supervised learning.
+
+– Example –
+
+Spam filtering is an example of classification, where the inputs are email (or other) messages and the classes are "spam" and "not spam".
+
+In regression, also typically supervised, the outputs are continuous rather than discrete.
+
+In clustering, a set of inputs is to be divided into groups. Typically done in an unsupervised way (i.e., no labels, the groups are not known beforehand).
+
+## Supervised learning: Big Picture
+
+Goal: To learn an unknown target function f
+
+Input: a training set of labeled examples $( \mathrm { x } _ { \mathrm { j } } , \mathrm { y } _ { \mathrm { j } } )$ where $\mathrm { y _ { j } } ^ { = }$ $\mathrm { f ( x _ { j } ) }$
+
+• E. $\mathrm { . g . , X _ { j } }$ is an image, $\mathrm { f } ( \mathrm { X } _ { \mathrm { j } } )$ is the label “giraffe”
+
+• E.g., $\mathrm{X_{j}}$ is a seismic signal, $\mathrm { f } ( \mathrm { X } _ { \mathrm { j } } )$ is the label “explosion”
+
+Output: hypothesis h that is “close” to f, i.e., predicts well on unseen examples $( { { ` t e s t ~ s e t ' } ^ { \flat } } )$
+
+Many possible hypothesis families for h
+
+Linear models, logistic regression, neural networks, support vector machines, decision trees, examples (nearest-neighbor), grammars, kernelized separators, etc etc
+
+## Today: Decision Trees! Big Picture of Supervised Learning
+
+Learning can be seen as fitting a function to the data. We can consider different target functions and therefore different hypothesis spaces.
+
+Examples:
+
+Propositional if-then rules
+
+Decision Trees
+
+First-order if-then rules
+
+First-order logic theory
+
+Linear functions
+
+Polynomials of degree at most k
+
+Neural networks
+
+Java programs
+
+Turing machine
+
+Etc
+
+A learning problem is realizable if its hypothesis space contains the true function.
+
+Tradeoff between expressiveness of
+
+a hypothesis space and the
+
+complexity of finding simple, consistent hypotheses
+
+within the space.
+
+**Can we learn how counties vote?**
+
+**New York Times April 16, 2008**
+
+**Decision Trees: a sequence of tests. Representation very natural for humans. Style of many** “**How to**” **manuals and trouble-shooting procedures.**
+
+## Decision Tree: The Obama-Clinton Divide
+
+![](images/page_17_image_4.jpg)
+
+## Decision Tree: The Obama-Clinton Divide
+
+![](images/page_18_image_1.jpg)
+
+![](images/page_19_image_0.jpg)
+
+Decision Tree Learning
+
+## Decision Tree Learning
+
+## Task:
+
+– Given: collection of examples (x, f(x))
+
+– Return: a function h (hypothesis) that approximates f
+
+– h is a decision tree
+
+**Input:** an object or situation described by a set of attributes (or features)
+
+**Output:** a “decision” – the predicts output value for the input.
+
+The input attributes and the outputs can be discrete or continuous.
+
+We will focus on decision trees for Boolean classification:
+
+each example is classified as positive or negative.
+
+## Decision Tree
+
+**What is a decision tree?**
+
+**A tree with two types of nodes:**
+
+**Decision nodes Leaf nodes**
+
+**Decision node: Specifies a choice or test of some attribute with 2 or more alternatives;** à **every decision node is part of a path to a leaf node**
+
+**Leaf node: Indicates classification of an example**
+
+• Decision Tree example (is a customer going to buy a computer or not):
+
+![](images/page_22_image_7.jpg)
+
+## Big Tip Example
+
+| Food(3) | Chat(2) | Fast(2) | Price(3) | Bar(2) | BigTip |
+| --- | --- | --- | --- | --- | --- |
+| great | yes | yes | normal | no | yes |
+| great | no | yes | normal | no | yes |
+| mediocre | yes | no | high | no | no |
+| great | yes | yes | normal | yes | yes |
+
+**Etc.**
+
+**Instance Space X:** Set of all possible objects described by attributes (often called features).
+
+**Target Function f:** Mapping from Attributes to Target Feature (often called label) (f is unknown)
+
+**Hypothesis Space H:** Set of all classification rules $\mathrm { h _ { i } }$ we allow.
+
+**Training Data D:** Set of instances labeled with Target Feature
+
+## Decision Tree Example: “BigTip”
+
+**Is the decision tree we learned consistent?**
+
+**Yes, it agrees with all the examples!**
+
+Data: Not all $2x2x3 = 12$ tuples Also, some repeats! These are literally “observations.”
+
+| F S P | BigTip |
+| --- | --- |
+| $\vec{x}_{1} = ( \text{g, y, a})$ | $f(\vec{x}_{1}) = 1$ |
+| $\vec{x}_{2} = ( \text{g, n, h})$ | $f(\vec{x}_{2}) = 0$ |
+| $\vec{x}_{3} = ( \text{g, y, h})$ | $f(\vec{x}_{3}) = 1$ |
+| $\vec{x}_{4} = ( \text{g, n, a})$ | $f(\vec{x}_{4}) = 1$ |
+| $\vec{x}_{5} = ( \text{m, y, a})$ | $f(\vec{x}_{5}) = 0$ |
+| $\vec{x}_{6} = ( \text{y, y, a})$ | $f(\vec{x}_{6}) = 0$ |
+| $\vec{x}_{7} = ( \text{g, y, a})$ | $f(\vec{x}_{7}) = 1$ |
+| $\vec{x}_{8} = ( \text{g, y, h})$ | $f(\vec{x}_{8}) = 1$ |
+| $\vec{x}_{9} = ( \text{m, y, a})$ | $f(\vec{x}_{9}) = 0$ |
+| $\vec{x}_{10} = ( \text{g, y, a})$ | $f(\vec{x}_{10}) = 1$ |
+
+# Learning decision trees: Another example (waiting at a restaurant)
+
+**Problem: decide whether to wait for a table at a restaurant. What attributes would you use?**
+
+Attributes used by R&N
+
+1. Alternate: is there an alternative restaurant nearby?
+
+2. Bar: is there a comfortable bar area to wait in?
+
+3. Fri/Sat: is today Friday or Saturday?
+
+**What about**
+
+**restaurant name?**
+
+4. Hungry: are we hungry?
+
+5. Patrons: number of people in the restaurant (None, Some, Full)
+
+6. Price: price range (\$, \$\$, \$\$\$)
+
+7. Raining: is it raining outside?
+
+8. Reservation: have we made a reservation?
+
+**It could be great for generating a small tree but …**
+
+9. Type: kind of restaurant (French, Italian, Thai, Burger)
+
+10. WaitEstimate: estimated waiting time (0-10, 10-30, 30-60, >60)
+
+Goal predicate: WillWait?
+
+**It doesn’t generalize!**
+
+## Attribute-based representations
+
+Examples described by attribute values (Boolean, discrete, continuous)
+
+E.g.,
+
+<table><tr><td rowspan="2">Example</td><td colspan="10">Attributes</td><td rowspan="2">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td> $X_1$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>\$\$\$</td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td> $X_2$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td> $X_3$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td> $X_4$ </td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td> $X_5$ </td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td>\$\$\$</td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_6$ </td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td> $X_7$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td> $X_8$ </td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td> $X_9$ </td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_{10}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>\$\$\$</td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td> $X_{11}$ </td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td> $X_{12}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>
+
+Classification of examples is positive (T) or negative (F)
+
+## Decision trees
+
+One possible representation for hypotheses E.g., here is a tree for deciding whether to wait:
+
+![](images/page_27_image_2.jpg)
+
+## Decision tree learning Algorithm
+
+**Decision trees can express any Boolean function.**
+
+**Goal: Finding a decision tree that agrees with training set.**
+
+**We could construct a decision tree that has one path to a leaf for each example, where the path test s**ets each attribute value to the value of the example.
+
+**What is the problem with this from a learning point of view?**
+
+**Problem: This approach would just memorize example.**
+
+**How to deal with new examples? It doesn**’**t generalize!**
+
+**(But sometimes hard to avoid --- e.g. parity function, 1, if an even number of inputs, or majority function, 1, if more than half of the inputs are 1).**
+
+**We want a compact/smallest tree.**
+
+**But finding the smallest tree consistent with the examples is NP-hard!**
+
+**Overall Goal: get a good classification with a small number of tests.**
+
+## Basic DT Learning Algorithm
+
+**Goal: find a small tree consistent with the training examples**
+
+**Idea: (recursively) choose "most significant" attribute as root of (sub)tree; Use a top-down greedy search through the space of possible decision trees.**
+
+**Greedy because there is no backtracking. It picks highest values first.**
+
+**Variations of known algorithms ID3, C4.5 (Quinlan -86, -93)**
+
+**Top-down greedy construction**
+
+– **Which attribute should be tested?**
+
+**(ID3 Iterative Dichotomiser 3)**
+
+**Heuristics and Statistical testing with current data**
+
+– **Repeat for descendants**
+
+## Big Tip Example
+
+10 examples:
+
+![](images/page_30_image_2.jpg)
+
+Attributes:
+
+•Food with values g,m,y
+
+•Speedy? with values y,n
+
+•Price, with values a, h
+
+Let’s build our decision tree starting with the attribute Food, (3 possible values: g, m, y).
+
+$$
+\begin{array}{c c} \hline \text {F S P} & \text {BigTip} \\ \hline \vec {x} _ {1} = (\mathrm{g}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {1}) = 1 \\ \vec {x} _ {2} = (\mathrm{g}, \mathrm{n}, \mathrm{h}) & f (\vec {x} _ {2}) = 0 \\ \vec {x} _ {3} = (\mathrm{g}, \mathrm{y}, \mathrm{h}) & f (\vec {x} _ {3}) = 1 \\ \vec {x} _ {4} = (\mathrm{g}, \mathrm{n}, \mathrm{a}) & f (\vec {x} _ {4}) = 1 \\ \vec {x} _ {5} = (\mathrm{m}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {5}) = 0 \\ \vec {x} _ {6} = (\mathrm{y}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {6}) = 0 \\ \vec {x} _ {7} = (\mathrm{g}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {7}) = 1 \\ \vec {x} _ {8} = (\mathrm{g}, \mathrm{y}, \mathrm{h}) & f (\vec {x} _ {8}) = 1 \\ \vec {x} _ {9} = (\mathrm{m}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {9}) = 0 \\ \vec {x} _ {1 0} = (\mathrm{g}, \mathrm{y}, \mathrm{a}) & f (\vec {x} _ {1 0}) = 1 \\ \hline \end{array}
+$$
+
+# Top-Down Induction of Decision Tree: 1 3 4 7 8 10 Big Tip Example
+
+Node “done” when uniform label, “no further Uncertainty,” or no features left <u>Food</u>
+
+10 examples: 000000 6+ 000 4-
+
+![](images/page_31_image_3.jpg)
+
+How many + and - examples per subclass, starting with y?
+
+| F S P | BigTip |
+| --- | --- |
+| $\vec{x}_{1} = ( \text{g, y, a})$ | $f(\vec{x}_{1}) = 1$ |
+| $\vec{x}_{2} = ( \text{g, n, h})$ | $f(\vec{x}_{2}) = 0$ |
+| $\vec{x}_{3} = ( \text{g, y, h})$ | $f(\vec{x}_{3}) = 1$ |
+| $\vec{x}_{4} = ( \text{g, n, a})$ | $f(\vec{x}_{4}) = 1$ |
+| $\vec{x}_{5} = ( \text{m, y, a})$ | $f(\vec{x}_{5}) = 0$ |
+| $\vec{x}_{6} = ( \text{y, y, a})$ | $f(\vec{x}_{6}) = 0$ |
+| $\vec{x}_{7} = ( \text{g, y, a})$ | $f(\vec{x}_{7}) = 1$ |
+| $\vec{x}_{8} = ( \text{g, y, h})$ | $f(\vec{x}_{8}) = 1$ |
+| $\vec{x}_{9} = ( \text{m, y, a})$ | $f(\vec{x}_{9}) = 0$ |
+| $\vec{x}_{10} = ( \text{g, y, a})$ | $f(\vec{x}_{10}) = 1$ |
+
+# Top-Down Induction of DT (simplified)
+
+![](images/page_32_image_1.jpg)
+
+Training Data: $\mathrm{D} = \{ (\vec{\mathrm{x}}_1, \mathrm{y}_1), \ldots, (\vec{\mathrm{x}}_n, \mathrm{y}_n) \}$
+
+# Picking the Best Attribute to Split
+
+## Ockham’s Razor:
+
+– **All other things being equal, choose the simplest explanation Decision Tree Induction:**
+
+– **Find the smallest tree that classifies the training data correctly Problem**
+
+– **Finding the smallest tree is computationally hard** L!
+
+## Approach
+
+– **Use heuristic search (greedy search)**
+
+## Key Heuristics:
+
+**Pick attribute that maximizes information (Information Gain) i.e. “most informative”**
+
+– **Other statistical tests**
+
+## Attribute-based representations
+
+Examples described by attribute values (Boolean, discrete, continuous)
+
+E.g.,
+
+<table><tr><td rowspan="2">Example</td><td colspan="10">Attributes</td><td rowspan="2">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td> $X_1$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>\$\$\$</td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td> $X_2$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td> $X_3$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td> $X_4$ </td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td> $X_5$ </td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td>\$\$\$</td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_6$ </td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td> $X_7$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td> $X_8$ </td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td> $X_9$ </td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_{10}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>\$\$\$</td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td> $X_{11}$ </td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td> $X_{12}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>
+
+Classification of examples is positive (T) or negative (F)
+
+![](images/page_35_image_0.jpg)
+
+Is this a good attribute to split on?
+
+Which one should we pick?
+
+## Choosing an attribute: Information Gain
+
+## Goal: trees with short paths to leaf nodes
+
+A perfect attribute would ideally divide the examples into sub-sets that are all positive or all negative… i.e. maximum information gain.
+
+## Information Gain
+
+Most useful in classification
+
+– how to measure the ‘worth’ of an attribute **information gain**
+
+how well attribute separates examples according to their classification
+
+Next
+
+– precise definition for gain
+
+à measure from Information Theory
+
+Shannon and Weaver 49
+
+**One of the most successful and impactful mathematical theories known.**
+
+“Information”answers questions. Entropy is a measure of unpredictability of information content.
+
+The more clueless I am about a question, the more information the **answer** to the question contains.
+
+E  [-log<sub>2</sub>(P(x))]
+
+By definition Information of the prior (or entropy of the prior)
+
+$$
+\begin{array}{l} \mathrm {I(P1,P2) = -P1\log_ {2} (P1) - P2\log_ {2} (P2) =} \\ \mathrm {I(0.5,0.5) = -0.5\log_ {2} (0.5) - 0.5\log_ {2} (0.5) = 1} \end{array}
+$$
+
+![](images/page_37_image_6.jpg)
+
+**We need 1 bit to convey the outcome of the flip of a fair coin.**
+
+Scale: 1 bit = answer to Boolean question with prior $^ { < 0 . 5 ,   0 . 5 > }$
+
+**Why does a biased coin have less information?**
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\mathrm{I}(1 / 100,99 / 100) = -1 / 100\log_2(1 / 100) - 99 / 100\log_2(99 / 100)$ $= 0.08$ bits (so not much information gained from "answer.")
+</div>
+
+Information in an answer given possible answers $\mathrm { v _ { 1 } ,   v _ { 2 } ,   \dots   v _ { n } } \mathrm { : }$
+
+$$
+I (P (v _ {1}), \dots , P (v _ {n})) = \sum_ {i = 1} ^ {n} - P (v _ {i}) \log_ {2} (P (v _ {i}))
+$$
+
+(Also called entropy of the prior.)
+
+Example – biased coin à prior <1/100,99/100>
+
+Example – fully biased coin à prior <1,0>
+
+$$
+\mathrm{I} (1, 0) = - 1 \log_ {2} (1) - 0 \log_ {2} (0) = 0 \text {bits}
+$$
+
+$$
+0 \log_ {2} (0) = 0
+$$
+
+## Shape of Entropy Function
+
+![](images/page_39_chart_1.jpg)
+
+The more uniform the probability distribution, the greater is its entropy.
+
+## Information or Entropy
+
+Information or Entropy measures the “randomness” of an arbitrary collection of examples.
+
+We don’t have exact probabilities but our training data provides an estimate of the probabilities of positive vs. negative examples given a set of values for the attributes.
+
+For a collection S, entropy is given as:
+
+$$
+I (\frac {p}{p + n}, \frac {n}{p + n}) = - \frac {p}{p + n} \log_ {2} (\frac {p}{p + n}) - \frac {n}{p + n} \log_ {2} (\frac {n}{p + n})
+$$
+
+For a collection S having positive and negative examples
+
+p - # positive examples;
+
+n - # negative examples
+
+## Attribute-based representations
+
+Examples described by attribute values (Boolean, discrete, continuous) E.g., situations where I will/won't wait for a table:
+
+$$
+\begin{array}{l} 1 2 \text {examples} \\ 6 + \\ 6 - \end{array}
+$$
+
+<table><tr><td rowspan="2">Example</td><td colspan="10">Attributes</td><td rowspan="2">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td> $X_1$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td> $X_2$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td> $X_3$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>\$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td> $X_4$ </td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td> $X_5$ </td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_6$ </td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td> $\$$ </td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td> $X_7$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>\$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td> $X_8$ </td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td> $\$$ </td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td> $X_9$ </td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>\$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_{10}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td> $X_{11}$ </td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td> $X_{12}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>
+
+What’s the entropy of this collection of examples?
+
+Classification of examples is positive (T) or negative (F)
+
+$$
+\mathrm{p} = \mathrm{n} = 6; \mathrm{I} (0. 5, 0. 5) = - 0. 5 \log 2 (0. 5) - 0. 5 \log 2 (0. 5) = 1
+$$
+
+So, we need 1 bit of info to classify a randomly picked example, assuming no other information is given about the example.
+
+## Choosing an attribute: Information Gain
+
+Intuition: Pick the attribute that reduces the entropy (the uncertainty) the most.
+
+So we measure the information gain after testing a given attribute A:
+
+$$
+G a i n (A) = I (\frac {p}{p + n}, \frac {n}{p + n}) - R e m a i n d e r (A)
+$$
+
+Remainder(A) à gives us the remaining uncertainty after getting info on attribute A.
+
+# Choosing an attribute: Information Gain
+
+Remainder(A)
+
+$\rightarrow$ gives us the amount information we still need after testing on A.
+
+Assume A divides the training set E into $\mathrm { E } _ { 1 } ,   \mathrm { E } _ { 2 } ,   \dots   \mathrm { E } _ { \mathrm { v } } ,$ corresponding to the different v distinct values of A.
+
+Each subset $\mathrm { E _ { i } }$ has $\mathrm { p _ { i } }$ positive examples and $\mathbf { n _ { i } }$ negative examples.
+
+So for total information content, we need to weigh the contributions of the different subclasses induced by A
+
+Weight (relative size) of each subclass
+
+Remainder(A) = v pi+ni I( pi ni ∑i=1 p+n pi+ni'pi+ni
+
+## Choosing an attribute: Information Gain
+
+Measures the expected reduction in entropy. The higher the Information Gain (IG), or just Gain, with respect to an attribute A , the more is the expected reduction in entropy. Weight of each subclass
+
+$$
+\text {Gain} (S, A) = \text {Entropy} (S) - \sum_ {\nu \in \text {Values} (A)} \left(\frac {| S _ {\nu} |}{| S |}\right) \text {Entropy} (S _ {\nu})
+$$
+
+where Values(A) is the set of all possible values for attribute A, $\mathbb { S } _ { \mathrm { v } }$ is the subset of S for which attribute A has value v.
+
+## Interpretations of gain
+
+## Gain(S,A)
+
+– **expected reduction in entropy caused by knowing A**
+
+**information provided about the target function value given the value of A**
+
+**number of bits saved in the coding a member of S knowing the value of A**
+
+## Information gain
+
+For the training set, $p = n = 6,   I(6/I2,   6/I2) = I$ bit
+
+Consider the attributes Type and Patrons:
+
+![](images/page_46_image_3.jpg)
+
+Info gain?
+
+$$
+I G (T y p e) = 1 - [ \frac {2}{1 2} I (\frac {1}{2}, \frac {1}{2}) + \frac {2}{1 2} I (\frac {1}{2}, \frac {1}{2}) + \frac {4}{1 2} I (\frac {2}{4}, \frac {2}{4}) + \frac {4}{1 2} I (\frac {2}{4}, \frac {2}{4}) ] = 0 \mathrm{bits}
+$$
+
+$$
+I G (P a t r o n s) = 1 - [ \frac {2}{1 2} I (0, 1) + \frac {4}{1 2} I (1, 0) + \frac {6}{1 2} I (\frac {2}{6}, \frac {4}{6}) ] = 0. 5 4 1 \text {bits}
+$$
+
+![](images/page_46_image_7.jpg)
+
+**Patrons has the highest IG of all attributes and so is chosen by the DTL algorithm as the root.**
+
+## Example contd.
+
+## Decision tree learned from the 12 examples:
+
+![](images/page_47_image_2.jpg)
+
+## “personal  R&N Tree”
+
+![](images/page_47_image_4.jpg)
+
+Substantially simpler than “true” tree --- but a more complex hypothesis isn’t justified from just the data.
+
+## Expressiveness of Decision Trees
+
+**Any particular decision tree hypothesis for WillWait goal predicate can be seen as a disjunction of a conjunction of tests, i.e., an assertion of the form:**
+
+$$
+\forall \mathrm{s} \text {WillWait} (\mathrm{s}) \leftrightarrow (\mathrm{P1} (\mathrm{s}) \lor \mathrm{P2} (\mathrm{s}) \lor \dots \lor \mathrm{Pn} (\mathrm{s}))
+$$
+
+**Where each condition Pi(s) is a conjunction of tests corresponding to the path from the root of the tree to a leaf with a positive outcome.**
+
+## Expressiveness
+
+Decision trees can express any Boolean function of the input attributes. E.g., for Boolean functions, truth table row → path to leaf:
+
+| A | B | A xor B |
+| --- | --- | --- |
+| F | F | F |
+| F | T | T |
+| T | F | T |
+| T | T | F |
+
+![](images/page_49_image_3.jpg)
+
+![](images/page_50_image_0.jpg)
+
+## Expressiveness: Boolean Function with 2 attributes $\Rightarrow   2 ^ { 2 }$ DTs
+
+## Expressiveness: 2 attribute $\Rightarrow   2 ^ { 2 }$ DTs
+
+![](images/page_51_image_1.jpg)
+
+## Expressiveness: 2 attribute ${ \Rightarrow } 2 ^ { 2 ^ { 2 } }$ DTs
+
+![](images/page_52_image_1.jpg)
+
+## Expressiveness: 2 attribute ${ \Rightarrow } 2 ^ { 2 ^ { 2 } }$ DTs
+
+![](images/page_53_image_2.jpg)
+
+## Number of Distinct Decision Trees
+
+## How many distinct decision trees with 10 Boolean attributes? = number of Boolean functions with 10 propositional symbols
+
+| Input features | Output |
+| --- | --- |
+| 0 0 0 0 0 0 0 0 0 0 | 0/1 |
+| 0 0 0 0 0 0 0 0 0 1 | 0/1 |
+| 0 0 0 0 0 0 0 0 1 0 | 0/1 |
+| 0 0 0 0 0 0 0 1 0 0 | 0/1 |
+| ... |  |
+| 1 1 1 1 1 1 1 1 1 1 | 0/1 |
+
+$$
+= 2 ^ {2 ^ {1 0}}
+$$
+
+## Hypothesis spaces
+
+<u>How many distinct decision trees with n Boolean attributes?</u> = number of Boolean functions
+
+= number of distinct truth tables with 2n rows $= 2 ^ { 2 ^ { \mathrm { n } } }$
+
+E.g. how many Boolean functions on 6 attributes? A lot…
+
+**With 6 Boolean attributes, there are 18,446,744,073,709,551,616 possible trees!**
+
+Googles calculator could not handle 10 attributes J!
+
+**Evaluation Methodology General for Machine Learning**
+
+How to evaluate the quality of a learning algorithm, i.e.,: **How good are the hypotheses produce by the learning algorithm? How good are they at classifying unseen examples?**
+
+Standard methodology **(“Holdout Cross-Validation”)**:
+
+1. Collect a large set of examples.
+
+2. Randomly divide collection into two disjoint sets: **training set** and **test set**.
+
+3. Apply learning algorithm to training set generating hypothesis h
+
+4. Measure performance of h w.r.t. test set (a form of cross-validation)
+
+à measures generalization to unseen data
+
+**Important: keep the training and test sets disjoint! “No peeking”! Note: The first two questions about any learning result: Can you describe your training and your test set? What’s your error on the test set?**
+
+![](images/page_58_image_1.jpg)
+
+Also validation set for meta-parametres.
+
+## Measuring Prediction Performance
+
+Definition:The training error $E r r _ { D _ { t r a i n } } ( h )$ on training data $D _ { t r a i n }   =   ( ( \vec { x } _ { 1 } , y _ { 1 } ) , . . . , ( \vec { x } _ { n } , y _ { n } ) )$ of a hypothesis h is $\begin{array} { r } { E r r _ { D _ { \mathit { t r a i n } } } ( h ) = \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \triangle ( h ( \vec { x } _ { i } ) , y _ { i } ) } \end{array}$
+
+Definition: The test error $E r r _ { D _ { t e s t } } ( h )$ on test data $D _ { t e s t } = ( ( \vec { x } _ { 1 } , y _ { 1 } ) , . . . , ( \vec { x } _ { k } , y _ { k } ) )$ of a hypothesis h is $\begin{array} { r } { E r r _ { D _ { \mathit { t e s t } } } ( h ) = \frac { 1 } { k } \sum _ { i = 1 } ^ { k } \triangle ( h ( \vec { x } _ { i } ) , y _ { i } ) } \end{array}$
+
+Definition: The prediction/generalization/true error $E r r _ { P } ( h )$ of a hypothesis h for a learning task $P ( X , Y )$ is
+
+$$
+E r r _ {P} (h) = \sum_ {\vec {x} \in X, y \in Y} \Delta (h (\vec {x}), y) P (X = \vec {x}, Y = y).
+$$
+
+Definition: The zero/one-loss function $\triangle ( a , b )$ returns 1 if $a \neq b$ and 0 otherwise.
+
+## Performance Measures
+
+## Error Rate
+
+– Fraction (or percentage) of false predictions
+
+## Accuracy
+
+– Fraction (or percentage) of correct predictions
+
+## Precision/Recall
+
+Example: binary classification problems (classes pos/neg)
+
+Precision: Fraction (or percentage) of correct predictions among all examples predicted to be positive
+
+Recall: Fraction (or percentage) of correct predictions among all real positive examples
+
+(Can be generalized to multi-class case.)
+
+## Extensions of the Decision Tree Learning Algorithm
+
+**Noisy data**
+
+**Overfitting and Model Selection**
+
+**Cross Validation**
+
+**Missing Data (R&N, Section 18.3.6)**
+
+**Using gain ratios (R&N, Section 18.3.6)**
+
+**Real-valued data (R&N, Section 18.3.6)**
+
+**Generation of rules and pruning**
+
+**DT Ensembles**
+
+**Regression DT**
+
+## How well does it work?
+
+Many case studies have shown that decision trees are at least as accurate as human experts.
+
+A study for diagnosing breast cancer had humans correctly classifying the examples 65% of the time, and the decision tree classified 72% correct.
+
+British Petroleum designed a decision tree for gas-oil separation for offshore oil platforms that replaced an earlier rule-based expert system.
+
+– Cessna designed an airplane flight controller using 90,000 examples and 20 attributes per example.
+
+![](images/page_63_image_0.jpg)
+
+## eBird
+
+![](images/page_63_image_4.jpg)
+
+![](images/page_63_image_5.jpg)
+
+Environmental  Data
+
+![](images/page_63_image_7.jpg)
+
+![](images/page_63_image_8.jpg)
+
+300K+ volunteer birders
+
+300M+ bird observations
+
+**80,000+ CPU  Hours (\~  10    Years!!!)**
+
+![](images/page_63_image_12.jpg)
+
+**Adaptive	  Spatio-**­**‐Temporal Machine	  Learning Models	  and	  Algorithms (STEM	  Models)**
+
+**Boosted	  Regression	  DT	  Ensemble**
+
+Relate  environmental predictors  to observed  patterns  of  occurrences and  absences
+
+## State of the Birds Report (officially released by Secretary of Interior)
+
+22M+ **hours	  of	  field	  work** (2500+years)
+
+![](images/page_63_image_18.jpg)
+
+![](images/page_63_image_19.jpg)
+
+Novel  Approaches To  Conservation Based  on  eBird Models
+
+**Distribution Models  for 400+  species  with weekly    estimates at    fine  spatial resolution (3km**<strong><sup>2</sup></strong>**)**
+
+![](images/page_63_image_22.jpg)
+
+Patterns	  of	  occurrence	  of	  the	  Tree	  Swallow	  for	  different months	  of	  the	  year	  Source	  :	  Daniel	  Fink
+
+## Summary: When to use Decision Trees
+
+Instances presented as attribute-value pairs
+
+Method of approximating discrete-valued functions
+
+Target function has discrete values: classification problems
+
+Robust to noisy data:
+
+Training data may contain
+
+– errors
+
+– missing attribute values
+
+Typical bias: prefer smaller trees (Ockham's razor )
+
+Widely used, practical and easy to interpret results
+
+Inducing decision trees is one of the most widely used learning methods in practice
+
+## Can outperform human experts in many problems
+
+## Strengths include
+
+– Fast
+
+– simple to implement
+
+## Can be a legal requirement! Why?
+
+– human readable
+
+– can convert result to a set of easily interpretable rules
+
+– empirically valid in many commercial products
+
+– handles noisy data
+
+## Weaknesses include:
+
+"Univariate" splits/partitioning using only one attribute at a time so limits types of possible trees
+
+– large decision trees may be hard to understand
+
+– requires fixed-length feature vectors
+
+– non-incremental (i.e., batch method)

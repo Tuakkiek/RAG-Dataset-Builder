@@ -1,0 +1,827 @@
+# Foundations of Artificial Intelligence
+
+**CS 4700:**
+
+**Prof. Bart Selman**
+
+<u>selman@cs.cornell.edu</u>
+
+**Machine Learning:**
+
+**Neural Networks**
+
+**R&N 18.7**
+
+**Intro & perceptron learning**
+
+Rich history, starting in the early forties.
+
+(McCulloch and Pitts 1943)
+
+(including at least on suspicious death ...)
+
+Two views:
+
+• Modeling the brain.
+
+• “Just" representation of complex functions.
+
+(Continuous; contrast decision trees.)
+
+Much progress on both fronts.
+
+Drawn interests from:
+
+Neuro-science, Cognitive science, AI,
+
+Physics, Statistics, and CS / EE.
+
+![](images/page_2_image_0.jpg)
+
+## Neurons / nerve cells
+
+cell body or soma branches: dendrited single long fiber: axom
+
+(100 or more times the diameter of cell body) axon connects via synapsis to dendrites of other c signals propagated via complicated electrochemical reaction each cell has a certain electrical potential when above threshold, pulse is sent down axon
+
+Neuron: How the brain works # neurons \~ 100 Billion
+
+synapses can increase (excitatory) / decrease (inhibitory) potential (signal) but most importantly: have plasticity — can learn / remember! In fact, learning can happen to single cell! Note: current model gives neuron with little stucture. Complexity arises out of connectivity Not clear this is “final" model.
+
+Idea: collection of simple cells leads to complex behavior: thought, action, and consciousness .... Challenged by e.g. Penrose. Contrast with current computer design.
+
+## Massively Parallel
+
+Neurons: highly parallel computation.
+
+10 to 100 steps — given simple timing constraints, one can deduce that certain visual and other cognitive computations are carried out in about 10 to 100 layers of neurons.
+
+Interesting experiments about how visual features we can detect in parallel.
+
+Appears to need massive parallelism.
+
+\# neurons \~ 100 Billion
+
+Why not build a model like a network of neurons?
+
+|  | Computer | Human Brain |
+| --- | --- | --- |
+| Computational units | 1 CPU, $10^{5}$ gates | $10^{11}$ neurons |
+| Storage units | $10^{9}$ bits RAM, $10^{10}$ bits disk | $10^{11}$ neurons, $10^{14}$ synapses |
+| Cycle time | $10^{-8}$ sec | $10^{-3}$ sec |
+| Bandwidth | $10^{9}$ bits/sec | $10^{14}$ bits/sec |
+| Neuron updates/sec | $10^{5}$ | $10^{14}$ |
+
+Tempting enterprise:
+
+Design computer modeled after the brain.
+
+Good company: Von Neumann (1958)
+
+The Computer and the Brain
+
+But the connection machine was not successful (Hillis 1989 / Thinking Machines)
+
+64K processors.
+
+What was the problem?
+
+## R&N:
+
+The exact way in which the brain enables thought is one of the great mysteries of science.
+
+Much recent progress .. .. Still, there are skeptics. Especially in CS.
+
+## The Skeptic's Position
+
+Related to “levels of abstractions” common in CS. (less so in EE / Cogn. Sci.)
+
+Consider: Try to figure out how a computer program performing a heap sort works.
+
+Q. How far would you get with a voltmeter? Wiring diagram? Possibly the wrong level of abstraction!
+
+Could be similar problem in understanding higher cognition using FMRI scans!
+
+Still, let’s see what neural net research has achieved.
+
+**New York Times: “Scientists See Promise in Deep-Learning Programs,” Saturday, Nov. 24, front page. http://www.nytimes.com/2012/11/24/science/scientists-see-advances-**<strong><u>in-deep-learning-a-part-of-artificial-intelligence.html?hpw</u></strong>
+
+**Multi-layer neural networks, a resurgence!**
+
+**a) Winner one of the most recent learning competitions**
+
+**b) Automatic (unsupervised) learning of “cat” and “human face” from 10 million of Google images; 16,000 cores 3 days; multi-layer neural network (Stanford & Google). ImageNet** http://image-net.org
+
+**c) Speech recognition and real-time translation (Microsoft Research, China).**
+
+Aside: see web site for great survey article
+
+“A Few Useful Things to Know About
+
+Machine Learning” by Domingos, CACM, 2012.
+
+![](images/page_9_image_0.jpg)
+
+10 Start at min. 3:00. Deep Neural Nets in speech recognition.
+
+Artificial Neural Networks Mathematical abstraction!
+
+## Basic Concepts
+
+A Neural Network maps a set of inputs to a set of outputs Number of inputs/outputs is variable The Network itself is composed of an arbitrary number of nodes or units, connected by links, with an arbitrary topology. A link from unit i to unit j serves to propagate the activation $\mathrm { a _ { i } }$ to j, and it has a weight $\mathbb { W } _ { \mathrm { i j } }$
+
+![](images/page_11_image_2.jpg)
+
+What can a neural networks do? Compute a known function / Approximate an unknown function Pattern Recognition / Signal Processing Learn to do any of the above Carla P.
+
+![](images/page_12_image_0.jpg)
+
+Different types of nodes
+
+![](images/page_13_image_1.jpg)
+
+$\rightarrow$ a processing element producing an output based on a function of its inputs
+
+Note: the fixed input and bias weight are conventional; some authors instead, e.g., or $\mathbf { a } _ { 0 } \mathbf { = } 1$ and $- \mathbf { W } _ { 0 \mathrm { i } }$ Carla P. Gomes CS4700
+
+## Activation Functions
+
+![](images/page_14_image_1.jpg)
+
+![](images/page_14_image_2.jpg)
+
+![](images/page_14_image_3.jpg)
+
+(a) Threshold activation function $\rightarrow$ a step function or threshold function (outputs 1 when the input is positive; 0 otherwise).
+
+(b) Sigmoid (or logistics function) activation function (key advantage: differentiable) $1 / ( 1 + e ^ { - x } )$
+
+(c) Sign function, $+ 1$ if input is positive, otherwise -1.
+
+These functions have a threshold (either hard or soft) at zero.
+
+à Changing the bias weight $\mathrm { W _ { 0 , i } }$ moves the threshold location.
+
+## Threshold Activation Function g(ini)
+
+![](images/page_15_image_1.jpg)
+
+Input edges, each with weights (positive, negative, and change over time, learning)
+
+$\theta _ { \mathrm { i } }$ threshold value associated with unit i
+
+$$
+i n _ {i} = \sum_ {j = 0} ^ {n} W _ {j, i} a _ {j} > 0; \Leftrightarrow i n _ {i} = \sum_ {j = 1} ^ {n} w _ {j, i} a _ {j} + w _ {0, i} a _ {0} > 0;
+$$
+
+$$
+\text {defining} a _ {0} = - 1 \text {we get} \sum_ {j = 1} ^ {n} W _ {j, i} a _ {j} > w _ {0, i}, \theta_ {i} = w _ {0, i}
+$$
+
+defining $a_{0}=1 \; we \; get \; \sum_{j = 1}^{n} W_{j,i}a_{j} > -w_{0,i}, \; \theta_{i} = -w_{0,i}$
+
+![](images/page_15_image_7.jpg)
+
+$$
+\theta_\mathrm{i}=0
+$$
+
+![](images/page_15_image_9.jpg)
+
+## Implementing Boolean Functions
+
+Units with a threshold activation function can act as logic gates; we can use these units to compute Boolean function of its inputs.
+
+Activation of threshold units when:
+
+$$
+\sum_ {j = 1} ^ {n} W _ {j, i} a _ {j} > W _ {0, i}
+$$
+
+| input x1 | input x2 | ouput |
+| --- | --- | --- |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+Activation of threshold units when:
+
+$$
+\sum_ {j = 1} ^ {n} W _ {j, i} a _ {j} > W _ {0, i}
+$$
+
+![](images/page_17_image_4.jpg)
+
+What should $\mathbf { W } _ { 0 }$ be?
+
+| input x1 | input x2 | ouput |
+| --- | --- | --- |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+Activation of threshold units when:
+
+![](images/page_18_image_3.jpg)
+
+$$
+\sum_ {j = 1} ^ {n} W _ {j, i} a _ {j} > W _ {0, i}
+$$
+
+What should $\mathbf { W } _ { 0 }$ be?
+
+## Inverter
+
+| input x1 | output |
+| --- | --- |
+| 0 | 1 |
+| 1 | 0 |
+
+Activation of threshold units when:
+
+$$
+\sum_ {j = 1} ^ {n} W _ {j, i} a _ {j} > W _ {0, i}
+$$
+
+![](images/page_19_image_4.jpg)
+
+![](images/page_20_image_0.jpg)
+
+## Network Structures
+
+## Acyclic or Feed-forward networks
+
+## Our focus
+
+Activation flows from input layer to output layer
+
+– single-layer perceptrons
+
+– multi-layer perceptrons
+
+Feed-forward networks implement functions, have no internal state (only weights).
+
+## Recurrent networks
+
+– Feed the outputs back into own inputs
+
+àNetwork is a dynamical system
+
+(stable state, oscillations, chaotic behavior)
+
+àResponse of the network depends on initial state
+
+– Can support short-term memory
+
+– More difficult to understand
+
+![](images/page_21_image_14.jpg)
+
+![](images/page_21_image_15.jpg)
+
+Carla P. Gomes CS4700
+
+## Recurrent Networks
+
+Can capture internal state (activation keeps going around);
+
+à more complex agents.
+
+Brain cannot be a just a feed-forward network!
+
+Brain has many feed-back connections and cycles
+
+à brain is a recurrent network!
+
+Two key examples:
+
+Hopfield networks:
+
+Boltzmann Machines .
+
+# Feed-forward Network: Represents a function of Its Input
+
+**Two input units Two hidden units One Output**
+
+(Bias unit omitted for simplicity)
+
+![](images/page_23_image_3.jpg)
+
+Each unit receives input only from units in the immediately preceding layer.
+
+Given an input vector $\mathrm { _ X } = ( \mathrm { _ X _ { 1 } , } \mathrm { _ X _ { 2 } } )$ , the activations of the input units are set to values of the input vector, i.e., $(a_{1},a_{2}) = (x_{1},x_{2})$ and the network computes:
+
+$$
+\begin{array}{l} a _ {5} = g (W _ {3, 5} \cdot a _ {3} + W _ {4, 5} \cdot a _ {4}) \\ = g (W _ {3, 5} \cdot g (W _ {1, 3} \cdot a _ {1} + W _ {2, 3} \cdot a _ {2}) + W _ {4, 5} \cdot g (W _ {1, 4} \cdot a _ {1} + W _ {2, 4} \cdot a _ {2})) \end{array} \quad \text {Weights are the parameters of the}
+$$
+
+Feed-forward network computes a parameterized family of functions $\mathbf { h } _ { \mathbf { W } } ( \mathbf { x } )$ By adjusting the weights we get different functions: that is how learning is done in neural networks!
+
+Note: the input layer in general does not include computing units.
+
+## Perceptron
+
+## Cornell Aeronautical Laboratory
+
+![](images/page_25_image_2.jpg)
+
+**Rosenblatt &**
+
+**Mark I Perceptron**: the first machine that could "learn" to recognize and identify optical patterns.
+
+## Perceptron
+
+Invented by Frank Rosenblatt in 1957 in an attempt to understand human memory, learning, and cognitive processes.
+
+The first neural network model by computation, with a remarkable learning algorithm:
+
+If function can be represented by perceptron, the learning algorithm is guaranteed to quickly converge to the hidden function!
+
+– Became the foundation of pattern recognition research
+
+One of the earliest and most influential neural networks: An important milestone in AI.
+
+# Psychological Review
+
+THonoRE M. NewcomB, Editor Univerrity of Michigan
+
+## CONTENTS
+
+Herbert Sidney Langfeld: 1879-1958............Caot C. Paar 321 Psychologial Struure and Pycholgical Activity.... P 325 Basic Isses in Perceptual Thecry... . O'N 348
+
+A Concepe-Formation Appreach to Attitude AcquisitioRAmoN.R 362
+
+Symptos and Sympto Suaitutio.........uy J. Ya 371
+
+Tranader of Training and Its Relation to Perceptual Learning and Recgnition..............JAMEs M. VANDrLas 375
+
+The Perceptron: A Protalélistie Model for Information Storage and Organiation in the Brain............F. Roseat 386
+
+This is the last issue of Volume 65. Title page and index for the volame appear hercie.
+
+PUBLISNED BIMONTHLY BV THE AMERICAN PSYCHOLOGICAL ASSOCIATION, INC.
+
+ROSENBLATT, Frank. (Cornell Aeronautical Laboratory at Cornell University )
+
+The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain.
+
+In, Psychological Review, Vol. 65, No. 6, pp. 386-408, November, 1958.
+
+## Single Layer Feed-forward Neural Networks Perceptrons
+
+Single-layer neural network (perceptron network)
+
+A network with all the inputs connected directly to the outputs
+
+–Output units all operate separately: no shared weights
+
+![](images/page_27_image_4.jpg)
+
+Since each output unit is independent of the others, we can limit our study to single output perceptrons.
+
+Perceptron Network
+
+# Perceptron to Learn to Identify Digits (From Pat. Winston, MIT)
+
+![](images/page_28_image_1.jpg)
+
+Seven line segments are enough to produce all 10 digits
+
+![](images/page_28_image_3.jpg)
+
+| Digit | x<sub>0</sub> | x<sub>1</sub> | x<sub>2</sub> | x<sub>3</sub> | x<sub>4</sub> | x<sub>5</sub> | x<sub>6</sub> |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 9 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
+| 8 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 7 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
+| 6 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+| 5 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 4 | 1 | 1 | 0 | 1 | 1 | 0 | 0 |
+| 3 | 1 | 0 | 1 | 1 | 1 | 1 | 0 |
+| 2 | 1 | 0 | 1 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+
+# Perceptron to Learn to Identify Digits (From Pat. Winston, MIT)
+
+![](images/page_29_image_1.jpg)
+
+Seven line segments are enough to produce all 10 digits
+
+![](images/page_29_image_3.jpg)
+
+![](images/page_29_image_4.jpg)
+
+A vision system reports which of the seven segments in the display are on, therefore producing the inputs for the perceptron. Carla P. GomesCS4700
+
+## Perceptron to Learn to Identify Digit 0
+
+![](images/page_30_image_1.jpg)
+
+Seven line segments are enough to produce all 10 digits
+
+![](images/page_30_image_3.jpg)
+
+| Digit | x<sub>0</sub> | x<sub>1</sub> | x<sub>2</sub> | x<sub>3</sub> | x<sub>4</sub> | x<sub>5</sub> | x<sub>6</sub> | X<sub>7</sub>(fixed input) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+![](images/page_30_image_5.jpg)
+
+A vision system reports which of the seven segments in the display are on, therefore producing the inputs for the perceptron.
+
+## Perceptrons
+
+Remarkable learning algorithm: (Rosenblatt 1960) if function can be represented by perceptron, then learning algorithm is guaranteed to quickly converge to the hidden function!
+
+enormous popularity, early / mid 60's
+
+But analysis by Minsky and Papert (1969) showed certain simple functions cannot be represented (Boolean XOR)
+
+Killed the field! (and possibly Rosenblatt (rumored)).
+
+**But Minsky used a simplified model. Single layer.**
+
+## Linearly separable functions only
+
+![](images/page_32_image_1.jpg)
+
+![](images/page_32_image_2.jpg)
+
+Assume: 0/1 signals. Open circles: “off” or $^ { 6 6 } 0 ^ { 9 9 }$ . Closed “on” or “1”.
+
+![](images/page_33_image_0.jpg)
+
+(a) $I _ { 1 }$ and $I _ { 2 }$
+
+![](images/page_33_image_2.jpg)
+
+![](images/page_33_image_3.jpg)
+
+Possibly one of the most popular / widely used learning methods today.
+
+backprop and perceptron learning
+
+## Handwritten digit recognition
+
+## 0 1 234 5 6 > 8 9 0103456799
+
+3-nearest-neighbor = 2.4% error 400–300–10 unit MLP = 1.6% error LeNet: 768-192–30-10 unit MLP = 0.9% error
+
+(more specialized)
+
+## Representations
+
+How are concepts represented in the brain / neural net?
+
+## local representations / grandmother cell distributed representations
+
+Pros / Cons?
+
+distributed appeared to have won but
+
+UCLA researchers showed (1997)
+
+single cell can learn a concept! (concept: facial expressions / a cell responding to “angry face"!)
+
+**Note: can discover hidden features (“regularities”) unsupervised with multi-layer networks.**
+
+• Neural Net Learning
+
+## Perceptron Learning: Intuition
+
+```txt
+Weight Update
+→ Input I_j (j=1,2,...,n)
+→ Single output O: target output, T.
+Consider some initial weights
+Define example error: Err = T - O
+Now just move weights in right direction!
+If the error is positive, then we need to increase O.
+Err >0 → need to increase O;
+Err <0 → need to decrease O;
+Each input unit j, contributes W_j I_j to total input:
+if I_j is positive, increasing W_j tends to increase O;
+if I_j is negative, decreasing W_j tends to increase O;
+So, use:
+W_j ← W_j + α × I_j × Err
+Perceptron Learning Rule (Rosenblatt 1960)
+α is the learning rate
+(for now assume 1).
+```
+
+![](images/page_38_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Let's consider an example (adapted from Patrick Wintson book, MIT)
+Framework and notation:
+0/1 signals
+Input vector: $\vec{X} = &lt; x_0, x_1, x_2 \cdots, x_n&gt;$
+Weight vector: $\vec{W} = &lt; w_0, w_1, w_2 \cdots, w_n&gt;$
+$x_0 = 1$ and $\theta_0 = -w_0$, simulate the threshold.
+O is output (0 or 1) (single output).
+Learning rate = 1.
+Threshold function: $S = \sum_{k=0}^{k=n} w_k x_k \quad S &gt; 0$ then $O = 1 \quad else \quad O = 0$
+</div>
+
+# Perceptron Learning: Simple Example
+
+# Perceptron Learning: Simple Example
+
+$$
+E r r = T - O
+$$
+
+$$
+W _ {j} \leftarrow W _ {j} + \alpha \times I _ {j} \times E r r
+$$
+
+Set of examples, each example is a pair $\stackrel { \rightarrow } { ( x _ { i } , y _ { i } ) }$ i.e., an input vector and a label y (0 or 1).
+
+This procedure provably converges (polynomial number of steps) if the function is represented by a perceptron (i.e., linearly separable)
+
+Learning procedure, called the “error correcting method”
+
+• Start with all zero weight vector.
+
+• Cycle (repeatedly) through examples and for each example do:
+
+– If perceptron is 0 while it should be 1, add the input vector to the weight vector
+
+If perceptron is 1 while it should be 0, subtract the input vector to the weight vector
+
+– Otherwise do nothing.
+
+Intuitively correct, (e.g., if output is 0 but it should be 1, the weights are increased) !
+
+## Perceptron Learning: Simple Example
+
+Consider learning the logical OR function.
+
+Our examples are:
+
+| Sample | x0 | x1 | x2 | label |
+| --- | --- | --- | --- | --- |
+| 1 | 1 | 0 | 0 | 0 |
+| 2 | 1 | 0 | 1 | 1 |
+| 3 | 1 | 1 | 0 | 1 |
+| 4 | 1 | 1 | 1 | 1 |
+
+Activation Function
+
+$$
+S = \sum_ {k = 0} ^ {k = n} w _ {k} x _ {k} \quad S > 0 \text {then} O = 1 \quad e l s e \quad O = 0
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$S = \sum_{k=0}^{k=n} w_k x_k \quad S &gt; 0$ then $O = 1 \quad else \quad O = 0$
+
+Error correcting method
+    If perceptron is 0 while it should be 1,
+        add the input vector to the weight vector
+    If perceptron is 1 while it should be 0,
+        subtract the input vector to the weight vector
+    Otherwise do nothing.
+</div>
+
+## Perceptron Learning: Simple Example
+
+We’ll use a single perceptron with three inputs. We’ll start with all weights 0 $\mathrm{W}=<0,0,0>$
+
+```txt
+Example 1 I=<100> label=0 W=<0,0,0>
+Perceptron (1×0+ 0×0+ 0×0 =0, S=0) output → 0
+→ it classifies it as 0, so correct, do nothing
+```
+
+![](images/page_42_image_4.jpg)
+
+```txt
+Example 2 I=<1 0 1> label=1 W=<0,0,0>
+Perceptron (1×0+ 0×0+ 1×0 = 0) output →0
+→it classifies it as 0, while it should be 1, so we add input to weights
+W = <0,0,0> + <1,0,1>= <1,0,1>
+```
+
+```txt
+Example 3 I=<1 1 0> label=1 W=<1,0,1>
+Perceptron (1×0+ 1×0+ 0×0 > 0) output = 1
+→it classifies it as 1, correct, do nothing
+W = <1,0,1>
+```
+
+![](images/page_43_image_1.jpg)
+
+```txt
+Example 4 I=<1 1 1> label=1 W=<1,0,1>
+Perceptron (1×0+ 1×0+ 1×0 > 0) output = 1
+→it classifies it as 1, correct, do nothing
+W = <1,0,1>
+```
+
+```txt
+Error correcting method
+If perceptron is 0 while it should be 1,
+add the input vector to the weight vector
+If perceptron is 1 while it should be 0,
+subtract the input vector from the weight vector
+Otherwise do nothing.
+```
+
+## Perceptron Learning: or Simple Example
+
+Epoch 2, through the examples, $\mathrm{W}=<1,0,1>$
+
+$$
+\mathrm{I} = <   1, 0, 0 >
+$$
+
+$$
+\text {label} = 0 \mathrm{W} = <   1, 0, 1 >
+$$
+
+![](images/page_44_image_5.jpg)
+
+$$
+\mathrm{W} = <   1, 0, 1 > - <   1, 0, 0 > = <   0, 0, 1 >
+$$
+
+$$
+\mathrm{I} = <   1 0 1 > \text {label} = 1 \mathrm{W} = <   0, 0, 1 >
+$$
+
+$$
+(1 \times 0 + 0 \times 0 + 1 \times 1 > 0)
+$$
+
+$$
+\rightarrow 1
+$$
+
+```txt
+Example 3 I=<1 1 0> label=1 W=<0,0,1>
+Perceptron (1×0+ 1×0+ 0×1 > 0) output = 0
+→it classifies it as 0, while it should be 1, so add input to weights
+W = <0,0,1> + W = <1,1,0> = <1, 1, 1>
+
+Example 4 I=<1 1 1> label=1 W=<1,1,1>
+Perceptron (1×1+ 1×1+ 1×1 > 0) output = 1
+→it classifies it as 1, correct, do nothing
+W = <1,1,1>
+```
+
+## Perceptron Learning: Simple Example
+
+```txt
+Epoch 3, through the examples, W = <1,1,1> .
+
+Example 1    I=<1,0,0> label=0 W = <1,1,1>
+Perceptron (1×1+ 0×1+ 0×1 >0) output → 1
+    →it classifies it as 1, while it should be 0, so s
+    W = <1,1,1> - W = <1,0,0> = <0, 1, 1>
+
+Example 2    I=<1 0 1> label=1 W= <0, 1, 1>
+Perceptron (1×0+ 0×1+ 1×1 >0) output →1
+    →it classifies it as 1, so correct, do nothing
+```
+
+àit classifies it as 1, while it should be 0, so subtract input from weights
+
+![](images/page_46_image_3.jpg)
+
+```txt
+Example 3 I=<1 1 0> label=1 W=<0, 1, 1>
+Perceptron (1×0+ 1×1+ 0×1 > 0) output = 1
+    →it classifies it as 1, correct, do nothing
+
+Example 4 I=<1 1 1> label=1 W=<0, 1, 1>
+Perceptron (1×0+ 1×1+ 1×1 > 0) output = 1
+    →it classifies it as 1, correct, do nothing
+    W=<1,1,1>
+```
+
+Epoch 4, through the examples, $\mathrm{W}=<0,1,1>$
+
+Example 1
+
+$$
+\mathrm{I} = <   1, 0, 0 >
+$$
+
+$$
+\text {label} = 0 \mathrm{W} = <   0, 1, 1 >
+$$
+
+Perceptron $( 1 \times 0 + 0 \times 1 + 0 \times 1 = 0 )$ output $\Rightarrow 0$
+
+àit classifies it as 0, so correct, do nothing
+
+So the final weight vector $\mathrm{W}=<0,1,1>\text {classifies all }$
+
+examples correctly, and the perceptron has learned the function!
+
+1
+
+![](images/page_48_image_10.jpg)
+
+Also, in general, many more inputs (100 to 1000)
+
+Aside: in more realistic cases the bias (W0) will not be 0.
+
+(This was just a toy example!)
+
+<table><tr><td>Epoch</td><td>x0</td><td>x1</td><td>x2</td><td>Desired Target</td><td>w0</td><td>w1</td><td>w2</td><td>Output</td><td>Error</td><td>New w0</td><td>New w1</td><td>New w2</td></tr><tr><td>1 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td colspan="13"></td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>2 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 3</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>example 4</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>4 example 1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr></table>
+
+## Convergence of Perceptron Learning Algorithm
+
+**Perceptron converges to a consistent function, if…**
+
+… training data linearly separable
+
+… step size a sufficiently small
+
+… no “hidden” units
+
+![](images/page_63_chart_0.jpg)
+
+## Perceptron learns majority function easily, DTL is hopeless
+
+![](images/page_64_chart_0.jpg)
+
+DTL learns restaurant function easily, perceptron cannot represent it
+
+![](images/page_65_image_0.jpg)
+
+Minsky & Papert (1969)
+
+**Good news:** Adding hidden layer allows more target functions to be represented.
+
+## Multi-layer Perceptrons (MLPs)
+
+Single-layer perceptrons can only represent linear decision surfaces.
+
+Multi-layer perceptrons can represent non-linear decision surfaces.
+
+Hidden Layer
+
+![](images/page_66_image_4.jpg)
+
+![](images/page_66_chart_5.jpg)
+
+The choice of how to represent the output then determines the form of the cross-entropy function
+
+1. Linear output $\mathbf { z } = \mathbf { W } ^ { \mathrm { T } }   \mathbf { h } + \mathbf { b }$ . Often used as mean of Gaussian distribution.
+
+$$
+p (\boldsymbol {y} \mid \boldsymbol {x}) = \mathcal {N} (\boldsymbol {y}; \hat {\boldsymbol {y}}, \boldsymbol {I}).
+$$
+
+2. Sigmoid function for Bernoulli distribution. Output $\mathrm{P}(\mathrm{y}=1 \mid \mathrm{x})$
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">P y = i x</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">3. Softmax for Multinoulli output distributions. Predict a vector, each element being ( | )</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">A linear layer</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">z = WTh + b,</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">Softmax function</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">softmax(z)i = ∑j exp(zj) exp(zi)</span></small>
+
+![](images/page_69_image_0.jpg)
+
+Hidden Layer
+
+Output Layer
+
+![](images/page_70_image_0.jpg)
+
+**Bad news:** No algorithm for learning in multi-layered networks, and no convergence theorem was known in 1969!
+
+Minsky & Papert (1969) [The perceptron] has many features to attract attention: its linearity; its intriguing learning theorem; its clear paradigmatic simplicity as a kind of parallel computation. There is no reason to suppose that any of these virtues carry over to the many-layered version. Nevertheless, we consider it to be an important research problem to elucidate (or reject) our intuitive judgment that the extension is sterile.
+
+Minsky & Papert (1969) pricked the neural network balloon …they almost killed the field.
+
+Rumors say these results may have killed Rosenblatt….
+
+Winter of Neural Networks 69-86. Carla P. Gomes CS4700
+
+![](images/page_71_image_0.jpg)
+
+## Two major problems they saw were
+
+1. How can the learning algorithm apportion credit (or blame) to individual weights for incorrect classifications depending on a (sometimes) large number of weights?
+
+2. How can such a network learn useful higher-order features?
+
+## Back Propagation - Next
+
+**Good news:** Successful credit-apportionment learning algorithms developed soon afterwards (e.g., back-propagation). Still successful, in spite of lack of convergence theorem.
+
+![](images/page_72_image_2.jpg)
+
+![](images/page_72_image_3.jpg)
