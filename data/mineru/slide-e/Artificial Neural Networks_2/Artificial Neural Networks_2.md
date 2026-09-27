@@ -1,0 +1,423 @@
+<!-- page: 1 -->
+
+## Lecture 8  8
+
+**Artificial neural networks : Unsupervised learning**
+
+■ **Introduction**
+
+**Hebbian learning**
+
+■ **Generalised Hebbian learning algorithm**
+
+■ **Competitive learning**
+
+■ **Self-organising computational map : Kohonen network**
+
+■ **Summary**
+
+<!-- page: 2 -->
+
+## Introduction
+
+The main property of a neural network is an  an ability to learn from its environment, and to improve its performance through learning. So . So far we have considered  **supervised**  or **active learning**  − learning with an external “teacher”  an or a supervisor who presents a training set to the or a network. But another type of learning also . exists :  **unsupervised learning** .
+
+<!-- page: 3 -->
+
+■ In contrast to supervised learning , unsupervised or In  or **self-organised learning**  does not require an  an external teacher. During the training ses sion, the . neural network receives a number of different input patterns , discovers significant features in  in these patterns and learns how to clas sify input data  to into appropriate categories . Unsupervised . learning tends  to follow the to  neuro-biological - organisation of the brain.
+
+Unsupervised learning algorithms aim to learn rapidly and can be used in real-time . - .
+
+<!-- page: 4 -->
+
+## Hebbian  learning
+
+In 1 949, Donald Hebb proposed  one of the key ideas in biological learning, commonly known as  as **Hebb ’ s Law** . Hebb ’ s Law states that if  neuron i is near enough to excite  neuron j and repeatedly participates in its activation, the synaptic connection  in between these two  neurons  is strengthened and is neuron j becomes more sensitive to stimuli from  to neuron i .
+
+<!-- page: 5 -->
+
+Hebb ’ s Law can be represented in the form of two s rule s :
+
+**1. If two neurons on either side of a connection 1.  on are activated synchronously, then the weight of that connection is increased.**
+
+**2. If two neurons on either side of a connection 2.  on are activated asynchronously, then the weight of that connection is decreased.**
+
+Hebb ’ s Law provides the basis for learning without a teacher. Learning here is a .  is a **local phenomenon**  occurring without feedback from the environment.
+
+<!-- page: 6 -->
+
+## Hebbian  learning  in a neural network
+
+![](images/page_5_image_1.jpg)
+
+<!-- page: 7 -->
+
+■ Using Hebb ’ s Law we can express the adjustment  we applied to the weight $W _ { \mathrm { { \it W } } }$ at iteration  p in the following form:
+
+$$
+\Delta w _ {i j} (p) = F [ y _ {j} (p), x _ {i} (p) ]
+$$
+
+■ As a special case, we can represent Hebb ’ s Law as As a  we s  as follow s :
+
+$$
+\Delta w _ {i j} (p) = \alpha y _ {j} (p) x _ {i} (p)
+$$
+
+where α is the learning rate  parameter. . This equation is referred to as the  is  as  **activity product rule** .
+
+<!-- page: 8 -->
+
+Hebbian  learning implies that weights can only increase . . To resolve this problem, we might To  we impo se a limit on the growth of synaptic weights . It can be done by introducing a non-linear - **forgetting factor**  into Hebb ’ s Law :
+
+$$
+\Delta w _ {i j} (p) = \alpha y _ {j} (p) x _ {i} (p) - \varphi y _ {j} (p) w _ {i j} (p)
+$$
+
+where ϕ is the forgetting factor. is .
+
+Forgetting factor  usually falls in the interval  in between 0 and 1 , typically between  0 ,  0 . 0 1 and 0 . 1 , 0 . 0 1 . 1 to allow only a little “forgetting” while limiting to the weight growth . .
+
+<!-- page: 9 -->
+
+## Hebbian learning algorithm
+
+**Step 1 : Initialisation** . S et initial synaptic weights and thresholds to small  to random values , s ay in an interval [0 , 1  an  1 ] .
+
+**Step 2 : Activation.** : Compute the neuron output at iteration  p
+
+$$
+y _ {j} (p) = \sum_ {i = 1} ^ {n} x _ {i} (p) w _ {i j} (p) - \theta_ {j}
+$$
+
+where n is the number of neuron is  inputs , and  θ<sub>j</sub> is the threshold value of  of neuron j.
+
+<!-- page: 10 -->
+
+## Step 3 : Learning.
+
+Update the weights in the network:  in
+
+$$
+w _ {i j} (p + 1) = w _ {i j} (p) + \Delta w _ {i j} (p)
+$$
+
+where $\Delta D D \cong \textcircled { ( \rho ) }$ i s the weight correction at iteration  p .
+
+The weight correction is determined by the  is generalised activity product rule :
+
+$$
+\Delta w _ {i j} (p) = \boldsymbol {\varphi} y _ {j} (p) [ \lambda x _ {i} (p) - w _ {i j} (p) ]
+$$
+
+**Step 4 : Iteration.** :
+
+Increase  iteration  p by one, go back to Step by  go  2.
+
+<!-- page: 11 -->
+
+Hebbian learning e  example To illustrate To  Hebbian  learning, consider a fully connected  feedforward  network with a single layer  a of five computation  neurons . Each neuron is represented by a  a McCulloch  and Pitts model with the sign activation function. The network is trained on the following set of input vectors : on
+
+$$
+\mathbf {X} _ {1} = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{array} \right] \quad \mathbf {X} _ {2} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \\ 1 \end{array} \right] \quad \mathbf {X} _ {3} = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{array} \right] \quad \mathbf {X} _ {4} = \left[ \begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \\ 0 \end{array} \right] \quad \mathbf {X} _ {5} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \\ 1 \end{array} \right]
+$$
+
+<!-- page: 12 -->
+
+## Initial and final states of the network
+
+![](images/page_11_image_1.jpg)
+
+Inp ut layer
+
+O utput layer
+
+![](images/page_11_image_4.jpg)
+
+Inp ut layer
+
+O utput layer
+
+<!-- page: 13 -->
+
+## Initial and final weight matrices
+
+## O u t p u t l a y e r
+
+![](images/page_12_image_2.jpg)
+
+$$
+\textit {I n p u t l a y e r} \begin{array}{c} \framebox {1} \\ \framebox {2} \\ \framebox {3} \\ \framebox {4} \\ \framebox {5} \end{array} \left[ \begin{array}{c c c c c} 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \end{array} \right]
+$$
+
+![](images/page_12_image_4.jpg)
+
+## O u t p u t l a y e r
+
+![](images/page_12_image_6.jpg)
+
+![](images/page_12_image_7.jpg)
+
+![](images/page_12_image_8.jpg)
+
+![](images/page_12_image_9.jpg)
+
+$$
+\textit {I n p u t l a y e r} \begin{array}{c} \framebox {1} \\ \framebox {2} \\ \framebox {3} \\ \framebox {4} \\ \framebox {5} \end{array} \left[ \begin{array}{c c c c c} 0 & 0 & 0 & 0 & 0 \\ 0 & 2. 0 2 0 4 & 0 & 0 & 2. 0 2 0 4 \\ 0 & 0 & 1. 0 2 0 0 & 0 & 0 \\ 0 & 0 & 0 & 0. 9 9 9 6 & 0 \\ 0 & 2. 0 2 0 4 & 0 & 0 & 2. 0 2 0 4 \end{array} \right]
+$$
+
+<!-- page: 14 -->
+
+■ A test input vector, or probe ,  i s defined i s  as
+
+$$
+\mathbf {X} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array} \right]
+$$
+
+■ When this probe is presented to the network, we  is  we obtain :
+
+$$
+\mathbf {Y} = \text {sign} \left\{\left[ \begin{array}{c c c c c} 0 & 0 & 0 & 0 & 0 \\ 0 & 2. 0 2 0 4 & 0 & 0 & 2. 0 2 0 4 \\ 0 & 0 & 1. 0 2 0 0 & 0 & 0 \\ 0 & 0 & 0 & 0. 9 9 9 6 & 0 \\ 0 & 2. 0 2 0 4 & 0 & 0 & 2. 0 2 0 4 \end{array} \right] \left[ \begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array} \right] - \left[ \begin{array}{c} 0. 4 9 4 0 \\ 0. 2 6 6 1 \\ 0. 0 9 0 7 \\ 0. 9 4 7 8 \\ 0. 0 7 3 7 \end{array} \right] \right\} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \\ 1 \end{array} \right]
+$$
+
+<!-- page: 15 -->
+
+## Competitive  learning
+
+■ In competitive learning,  neurons  compete among themselves to be activated .  to be .
+
+While in Hebbian  learning, several output  neurons can be activated simultaneously, in competitive  in learning , only a single output  a  neuron i s active at i s  at any time . .
+
+■ The output neuron that wins the “competition” is  is called the  **winner-takes-all**  neuron.
+
+<!-- page: 16 -->
+
+The basic idea of competitive learning was introduced in the early 1 970s . .
+
+■ In the late 1 980s, Teuvo Kohonen introduced a In  a special clas s of artificial neural networks called **self-organising feature maps** . These maps are . based on competitive learning .  on .
+
+<!-- page: 17 -->
+
+## What is a self-organising  feature map?
+
+Our brain is dominated by the cerebral cortex, a  is  a very complex structure of billions of  of neurons  and hundreds of billions of synapses . The cortex . includes areas that are responsible for different human activities (motor, vi sual , auditory , somato sensory , etc . ) , and , . ) ,  as sociated  with different sensory inputs . We can say that each sensory . We input is mapped into a corresponding area of the cerebral  cortex . . **The cortex is a self-organising  is computational map in the human brain.**
+
+<!-- page: 18 -->
+
+## Feature-mapping  Kohonen  model
+
+Kohonen layer
+
+![](images/page_17_image_2.jpg)
+
+Kohonen layer
+
+![](images/page_17_image_4.jpg)
+
+Input layer
+
+<!-- page: 19 -->
+
+## The Kohonen  network
+
+The Kohonen  model provides a topological mapping . . It places  a fixed number of input patterns from the input layer into a higher- - dimensional output or  Kohonen  layer.
+
+■ Training in the Kohonen network begins with the winner’ s neighbourhood of a fairly large size . s . Then, as training proceeds, the neighbourhood size  as gradually decreases . .
+
+<!-- page: 20 -->
+
+## Architecture of the  Kohonen  Network
+
+![](images/page_19_image_1.jpg)
+
+Input layer
+
+Outp ut layer
+
+<!-- page: 21 -->
+
+■ The lateral connections are used to create a  a competition between  neurons . The neuron with the largest activation level among all  neurons  in the output layer becomes the  winner. This neuron . is the only neuron is  that produces an output signal .  an The activity of all other  neurons  is suppres sed in is the competition . .
+
+The lateral feedback connections produce excitatory or inhibitory effects, depending on the  on distance from the winning neuron . This is .  is achieved by the use of a  **Mexican hat function Mex** which describes synaptic weights between neurons in the Kohonen in  layer.
+
+<!-- page: 22 -->
+
+## The Mexican hat function of lateral connection
+
+Connectio n stre ngth
+
+![](images/page_21_image_2.jpg)
+
+Excitatory effect
+
+Inhibitory effect
+
+D is tance
+
+Inhibitory effect
+
+<!-- page: 23 -->
+
+In the Kohonen  network, a  a neuron learns by  by shifting its weights from inactive connections to  to active ones . Only the winning .  neuron and its neighbourhood are allowed to learn. If a .  neuron does not respond to a given input pattern, then learning cannot occur in that particular  neuron.
+
+The **competitive learning rule**  defines the change $\Delta V \sim V _ { \Delta }$ applied to synaptic weight $W _ { \theta }$ a s
+
+$\Delta w _ { i j } = \left\{ \begin{aligned} \alpha \; ( x _ { i } - w _ { i j } ) , \\ 0 , \end{aligned} \right.$ , if neuron wins the competitio n j if neuron loses the competitio n j
+
+where $b ^ { \prime } \frac { a } { a }$ i s the input signal and i s  α i s the i s  lea rn ing rate parameter. .
+
+<!-- page: 24 -->
+
+■ The overall effect of the competitive learning rule resides in moving the synaptic weight vector  in  W of the winning  neuron j towards the input pattern  X. The matching criterion is equivalent to the  is minimum  **Euclidean distance**  between vectors . .
+
+The Euclidean distance between a pair of  of n-by- 1 vectors  X and $\mathbb { W }$ i s defined by i s
+
+$$
+d = \left\| \mathbf {X} - \mathbf {W} _ {j} \right\| = \left[ \sum_ {i = 1} ^ {n} (x _ {i} - w _ {i j}) ^ {2} \right] ^ {1 / 2}
+$$
+
+where $\frac { 3 } { 2 } \frac { 4 } { 2 }$ and $\mathbb { W }$ are the  ith elements of the vectors X and $\mu y$ re spectively . .
+
+<!-- page: 25 -->
+
+■ To identify the winning To  neuron, jX, that best , matches the input vector  X, we may apply the , we following condition :
+
+$$
+j _ {\mathbf {X}} = \underset {j} {\min} \left\| \mathbf {X} - \mathbf {W} _ {j} \right\|, \quad j = 1, 2, \dots , m
+$$
+
+where m is the number of is  of neurons  in the Kohonen layer.
+
+<!-- page: 26 -->
+
+■ Suppose, for instance, that the 2-dimensional input  2- vector X is presented to the three-neuron Kohonen is - network
+
+$$
+\mathbf {X} = \left[ \begin{array}{c} 0. 5 2 \\ 0. 1 2 \end{array} \right]
+$$
+
+■ The initial weight vectors , $\overline { \mathbb { W } }$ are given by
+
+$$
+\mathbf {W} _ {1} = \left[ \begin{array}{c} 0. 2 7 \\ 0. 8 1 \end{array} \right]
+$$
+
+$$
+\mathbf {W} _ {2} = \left[ \begin{array}{c} 0. 4 2 \\ 0. 7 0 \end{array} \right]
+$$
+
+$$
+\mathbf {W} _ {3} = \left[ \begin{array}{c} 0. 4 3 \\ 0. 2 1 \end{array} \right]
+$$
+
+<!-- page: 27 -->
+
+■ We find the winning (best-matching) We - neuron $\overset { \circ } { y }$ using the minimum-distance Euclidean criterion - :
+
+$$
+d _ {1} = \sqrt {(x _ {1} - w _ {1 1}) ^ {2} + (x _ {2} - w _ {2 1}) ^ {2}} = \sqrt {(0 . 5 2 - 0 . 2 7) ^ {2} + (0 . 1 2 - 0 . 8 1) ^ {2}} = 0. 7 3
+$$
+
+$$
+d _ {2} = \sqrt {(x _ {1} - w _ {1 2}) ^ {2} + (x _ {2} - w _ {2 2}) ^ {2}} = \sqrt {(0 . 5 2 - 0 . 4 2) ^ {2} + (0 . 1 2 - 0 . 7 0) ^ {2}} = 0. 5 9
+$$
+
+$$
+d _ {3} = \sqrt {(x _ {1} - w _ {1 3}) ^ {2} + (x _ {2} - w _ {2 3}) ^ {2}} = \sqrt {(0 . 5 2 - 0 . 4 3) ^ {2} + (0 . 1 2 - 0 . 2 1) ^ {2}} = 0. 1 3
+$$
+
+■ Neuron 3 is the winner and its weight vector $\overline { \mathbb { W } }$ i s updated according to the competitive learning  rule.
+
+$$
+\Delta w_{13} = \alpha (x_1 - w_{13}) = 0.1(0.52 - 0.43) = 0.01
+$$
+
+$$
+\Delta w_{23} = \alpha (x_2 - w_{23}) = 0.1(0.12 - 0.21) = -0.01
+$$
+
+<!-- page: 28 -->
+
+The updated weight vector $\overline { \mathbb { W } } _ { \textcircled { > } }$ at iteration $( \rho = 1 )$ i s determined as : i s
+
+$$
+\mathbf {W} _ {3} (p + 1) = \mathbf {W} _ {3} (p) + \Delta \mathbf {W} _ {3} (p) = \left[ \begin{array}{c} 0. 4 3 \\ 0. 2 1 \end{array} \right] + \left[ \begin{array}{c} 0. 0 1 \\ - 0. 0 1 \end{array} \right] = \left[ \begin{array}{c} 0. 4 4 \\ 0. 2 0 \end{array} \right]
+$$
+
+■ The weight vector $\overline { \mathbb { W } }$ of the wining  neuron 3 becomes closer to the input vector $函$ with each iteration . .
+
+<!-- page: 29 -->
+
+## Competitive Learning Algorithm
+
+**Step 1 : Initialisation** .
+
+S et initial synaptic weights to small random  to values , say in an interval [0 , 1 ] , and as sign a small  an  a positive value to the learning rate parameter  to  α.
+
+<!-- page: 30 -->
+
+**Step 2 : Activation and Similarity Matching** .
+
+Activate the Kohonen network by applying the input vector  X , and find the winner-takes - all (best , - - matching) neuron $\overset { \circ } { \underset {} { \mathcal { Y } } { \cong } }$ at iteration  p , u sing the , minimum-distance Euclidean criterion -
+
+$$
+\begin{array}{l} j _ {\mathbf {X}} (p) = \underset {j} {m i n} \left\| \mathbf {X} - \mathbf {W} _ {j} (p) \right\| = \left\{\sum_ {i = 1} ^ {n} \left[ x _ {i} - w _ {i j} (p) \right] ^ {2} \right\} ^ {1 / 2}, \\ j = 1, 2, \dots , m \end{array}
+$$
+
+where n is the number of is  of neurons  in the input in layer, and  m is the number of is  of neurons  in the Kohonen layer. .
+
+<!-- page: 31 -->
+
+**Step 3 : Learning** .
+
+Update the synaptic weights
+
+$$
+w _ {i j} (p + 1) = w _ {i j} (p) + \Delta w _ {i j} (p)
+$$
+
+where $\Delta D D \cong \textcircled { ( \rho ) }$ is the weight correction at iteration $\widehat { p }$ . The weight correction is determined by the  is competitive learning rule :
+
+$$
+\Delta w _ {i j} (p) = \left\{ \begin{array}{c c} \alpha [ x _ {i} - w _ {i j} (p) ], & j \in \Lambda_ {j} (p) \\ 0, & j \notin \Lambda_ {j} (p) \end{array} \right.
+$$
+
+where α is the is  learning rate  parameter, and $\Delta ( \textcircled { > } )$ i s the neighbourhood function centred around the winner-takes-all - - neuron $\frac { 2 } { 1 0 }$ at iteration $1 0$
+
+<!-- page: 32 -->
+
+## Step 4 : Iteration .
+
+Increase iteration  p by one, go back to Step 2 and by  go continue until the minimum-distance Euclidean - criterion is satisfied, or no noticeable changes  is occur in the feature map . .
+
+<!-- page: 33 -->
+
+**Competitive learning in the  Kohonen  network**
+
+■ To illustrate competitive learning, consider the To Kohonen  network with 1 00  neurons  arranged in the form of a two-dimensional lattice with 1 0 rows and - 1 0 columns . The network is required to clas sify 1 0 . two-dimensional input - vectors  − each neuron in the  in network should respond only to the input vectors occurring in its region . .
+
+■ The network is trained with 1 000 two-dimensional - input vectors generated randomly in a square  a region in the interval between – 1 and + 1 .  in  – 1 . The learning rate parameter  α i s equal to 0 . 1 . i s  0 . 1 .
+
+<!-- page: 34 -->
+
+## Initial random weights
+
+![](images/page_33_image_1.jpg)
+
+<!-- page: 35 -->
+
+## Network after 100 iterations
+
+![](images/page_34_chart_1.jpg)
+
+<!-- page: 36 -->
+
+## Network after 1000 iterations
+
+![](images/page_35_chart_1.jpg)
+
+<!-- page: 37 -->
+
+## Network after 10,000 iterations
+
+![](images/page_36_chart_1.jpg)

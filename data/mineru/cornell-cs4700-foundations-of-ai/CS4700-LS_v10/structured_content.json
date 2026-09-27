@@ -1,0 +1,4476 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.199,
+            0.357,
+            0.919,
+            0.495
+          ],
+          "level": 1,
+          "content": "CS 4700: Foundations of Artificial Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.418,
+            0.571,
+            0.582,
+            0.612
+          ],
+          "content": "Bart Selman"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.358,
+            0.615,
+            0.641,
+            0.659
+          ],
+          "content": "selman@cs.cornell.edu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.416,
+            0.704,
+            0.584,
+            0.746
+          ],
+          "content": "Local Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.278,
+            0.793,
+            0.723,
+            0.837
+          ],
+          "content": "Readings R&N: Chapter 4:1 and 6:4"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.953,
+            0.954,
+            0.982
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.06,
+            0.857,
+            0.197
+          ],
+          "content": "So far:\nmethods that systematically explore the search space, possibly using principled pruning (e.g., A\\*)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.281,
+            0.888,
+            0.372
+          ],
+          "content": "Current best such algorithm can handle search spaces of up to  $10^{100}$  states / around 500 binary variables (“ballpark” number only!)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.415,
+            0.614,
+            0.459
+          ],
+          "content": "What if we have much larger search spaces?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.504,
+            0.892,
+            0.595
+          ],
+          "content": "Search spaces for some real-world problems may be much larger e.g.  $10^{30,000}$  states as in certain reasoning and planning tasks."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.638,
+            0.861,
+            0.683
+          ],
+          "content": "A completely different kind of method is called for --- non-systematic:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.727,
+            0.695,
+            0.815
+          ],
+          "content": "Local search\n(sometimes called: Iterative Improvement Methods)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.953,
+            0.955,
+            0.982
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.031,
+            0.463,
+            0.151
+          ],
+          "content": "Problem: Place N queens on an NxN chess board so that no queen attacks another."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.186,
+            0.353,
+            0.228
+          ],
+          "content": "Example solution for N = 8."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.54,
+            0.018,
+            0.96,
+            0.073
+          ],
+          "level": 2,
+          "content": "Intro example: N-queens"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.253,
+            0.469,
+            0.345
+          ],
+          "content": "How hard is it to find\nsuch solutions? What if N gets larger?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.009,
+            0.364,
+            0.491,
+            0.405
+          ],
+          "content": "Can be formulated as a search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.008,
+            0.411,
+            0.538,
+            0.455
+          ],
+          "content": "Start with empty board. [Ops? How many?]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.009,
+            0.461,
+            0.651,
+            0.505
+          ],
+          "content": "Operators: place queen on location (i,j). [N^2. Goal?]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.009,
+            0.51,
+            0.669,
+            0.552
+          ],
+          "content": "Goal state: N queens on board. No-one attacks another."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.664,
+            0.096,
+            0.981,
+            0.516
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.575,
+            0.74,
+            0.667
+          ],
+          "content": "N=8, branching 64. Solution at what depth?\nN. Search: (N^2)^N Informed search? Ideas for a heuristic?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.708,
+            0.581,
+            0.851
+          ],
+          "content": "Issues: (1) We don’t know much about the goal state. That’s what we are looking for!\n(2) Also, we don’t care about path to solution!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.664,
+            0.708,
+            0.866,
+            0.751
+          ],
+          "content": "N-Queens demo!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.885,
+            0.623,
+            0.929
+          ],
+          "content": "What algorithm would you write to solve this?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.954,
+            0.983
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.331,
+            0.015,
+            0.96,
+            0.077
+          ],
+          "level": 2,
+          "content": "Local Search: General Principle"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.113,
+            0.414,
+            0.163
+          ],
+          "content": "Key idea (surprisingly simple):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.2,
+            0.703,
+            0.296
+          ],
+          "content": "1) Select (random) initial state (initial guess at solution)\ne.g. guess random placement of N queens"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.333,
+            0.824,
+            0.429
+          ],
+          "content": "2) Make local modification to improve current state\ne.g. move queen under attack to “less attacked” square"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.467,
+            0.862,
+            0.566
+          ],
+          "content": "3) Repeat Step 2 until goal state found (or out of time) Unsolvable if cycle can be done billions of times out of time?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.029,
+            0.628,
+            0.214,
+            0.671
+          ],
+          "level": 2,
+          "content": "Requirements:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.673,
+            0.339,
+            0.716
+          ],
+          "content": "\\- generate an initial"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.717,
+            0.806,
+            0.763
+          ],
+          "content": "(often random; probably-not-optimal or even valid) guess"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.763,
+            0.415,
+            0.805
+          ],
+          "content": "– evaluate quality of guess"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.806,
+            0.797,
+            0.851
+          ],
+          "content": "\\- move to other state (well-defined neighborhood function)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.305,
+            0.873,
+            0.744,
+            0.968
+          ],
+          "content": "... and do these operations quickly\n... and don't save paths followed"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.949,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.955,
+            0.981
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.705,
+            0.105,
+            0.96,
+            0.16
+          ],
+          "content": "Local Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.3,
+            0.676,
+            0.345
+          ],
+          "content": "1) Hill-climbing search or greedy local search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.353,
+            0.414,
+            0.397
+          ],
+          "content": "2) Simulated annealing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.405,
+            0.393,
+            0.447
+          ],
+          "content": "3) Local beam search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.459,
+            0.774,
+            0.504
+          ],
+          "content": "4) Genetic algorithms (related: genetic programming)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.513,
+            0.479,
+            0.556
+          ],
+          "content": "5) Tabu search (not covered)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.955,
+            0.982
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.585,
+            0.016,
+            0.975,
+            0.077
+          ],
+          "level": 2,
+          "content": "Hill-climbing search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.187,
+            0.648,
+            0.341
+          ],
+          "content": "“Like climbing Everest in thick fog with amnesia”\nKeep trying to move to a better “neighbor”, using some quantity to optimize."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.683,
+            0.103,
+            0.72,
+            0.118
+          ],
+          "content": "evaluation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.686,
+            0.118,
+            0.933,
+            0.362
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_3.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.091,
+            0.363,
+            0.847,
+            0.754
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nfunction HILL-CLIMBING(problem) returns a state that is a local maximum\n  inputs: problem, a problem\n  local variables: current, a node\n    neighbor, a node\n\n  current←MAKE-NODE(INITIAL-STATE[problem])\n  loop do\n    neighbor←a highest-valued successor of current\n    if VALUE[neighbor] ≤ VALUE[current] then return STATE[current]\n    current←neighbor\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.785,
+            0.672,
+            0.833
+          ],
+          "content": "Note: (1) “successor” normally called neighbor."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.835,
+            0.539,
+            0.876
+          ],
+          "content": "(2) minimization, isomorphic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.879,
+            0.834,
+            0.967
+          ],
+          "content": "(3) stops when no improvement but often better to just “keep going”, especially if improvement = 0"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.954,
+            0.955,
+            0.983
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.792,
+            0.029,
+            0.968,
+            0.087
+          ],
+          "content": "4-Queens"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.123,
+            0.581,
+            0.165
+          ],
+          "content": "States: 4 queens in 4 columns (256 states)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.177,
+            0.675,
+            0.219
+          ],
+          "content": "Neighborhood Operators: move queen in column"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.227,
+            0.968,
+            0.27
+          ],
+          "content": "Evaluation / Optimization function: h(n) = number of attacks / “conflicts”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.282,
+            0.499,
+            0.323
+          ],
+          "content": "Goal test: no attacks, i.e., h(G) = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.388,
+            0.389,
+            0.436
+          ],
+          "content": "Initial state (guess)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.174,
+            0.451,
+            0.34,
+            0.673
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.226,
+                0.688,
+                0.281,
+                0.719
+              ],
+              "content": "h = 5"
+            }
+          ],
+          "image_source": "images/page_6_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.346,
+            0.517,
+            0.417,
+            0.602
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.428,
+            0.451,
+            0.596,
+            0.674
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.491,
+                0.688,
+                0.546,
+                0.72
+              ],
+              "content": "h = 2"
+            }
+          ],
+          "image_source": "images/page_6_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.604,
+            0.517,
+            0.674,
+            0.602
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.685,
+            0.451,
+            0.852,
+            0.673
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.757,
+                0.688,
+                0.81,
+                0.719
+              ],
+              "content": "h = 0"
+            }
+          ],
+          "image_source": "images/page_6_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.765,
+            0.861,
+            0.905
+          ],
+          "content": "Local search: Because we only consider local changes to the state at each step. We generally make sure that series of local changes can reach all possible states."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.953,
+            0.955,
+            0.983
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.806,
+            0.009,
+            0.969,
+            0.061
+          ],
+          "content": "8-Queens"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.064,
+            0.097,
+            0.336,
+            0.459
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.363,
+            0.097,
+            0.636,
+            0.459
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.664,
+            0.097,
+            0.935,
+            0.459
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.047,
+                0.485,
+                0.89,
+                0.577
+              ],
+              "content": "Representation: 8 integer variables giving positions of 8 queens in columns (e.g. <2, 5, 7, 4, 3, 8, 6, 1>)"
+            },
+            {
+              "bbox": [
+                0.036,
+                0.596,
+                0.811,
+                0.715
+              ],
+              "content": "Section 6.4 R&N (\"hill-climbing with min-conflict heuristics\")\nPick initial complete assignment (at random)\nRepeat"
+            }
+          ],
+          "image_source": "images/page_7_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.716,
+            0.666,
+            0.756
+          ],
+          "content": "• Pick a conflicted variable var (at random)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.76,
+            0.914,
+            0.799
+          ],
+          "content": "\\- Set the new value of var to minimize the number of conflicts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.802,
+            0.824,
+            0.842
+          ],
+          "content": "• If the new assignment is not conflicting then return it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.897,
+            0.94,
+            0.944
+          ],
+          "content": "(Min-conflicts heuristics) → Inspired GSAT and Walksat"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.95,
+            0.908,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.955,
+            0.983
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.024,
+            0.996,
+            0.173
+          ],
+          "content": "Local search with min-conflict heuristic works extremely well for Remarks\nN-queen problems. Can do millions and up in seconds. Similarly,\nfor many other problems (planning, scheduling, circuit layout etc.)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.024,
+            0.183,
+            0.099,
+            0.224
+          ],
+          "level": 2,
+          "content": "Why?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.028,
+            0.235,
+            0.919,
+            0.387
+          ],
+          "content": "Commonly given: Solns. are densely distributed in the O(n$^{n}$) space; on average a solution is a few steps away from a randomly picked assignment. But, solutions still exponentially rare!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.395,
+            0.905,
+            0.481
+          ],
+          "content": "In fact, density of solutions not very relevant. Even problems with a single solution can be “easy” for local search!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.493,
+            0.804,
+            0.591
+          ],
+          "content": "It all depends on the structure of the search space and the guidance for the local moves provided by the optimization criterion."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.631,
+            0.782,
+            0.721
+          ],
+          "content": "For N-queens, consider  $h(n) = k$ , if k queens are attacked.\nDoes this still give a valid solution? Does it work as well?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.76,
+            0.974,
+            0.85
+          ],
+          "content": "What happens if $h(n) = 0$ if no queen under attack; $h(n) = 1$ otherwise? Does this still give a valid solution? Does it work as well? What does search do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.886,
+            0.777,
+            0.927
+          ],
+          "content": "“Blind” search! No gradient in optimization criterion!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.953,
+            0.955,
+            0.981
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.374,
+            0.06,
+            0.951,
+            0.122
+          ],
+          "level": 2,
+          "content": "Issues for hill-climbing search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.189,
+            0.88,
+            0.277
+          ],
+          "content": "Problem: depending on initial state, can get stuck in local optimum (here maximum)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.303,
+            0.946,
+            0.391
+          ],
+          "content": "How to overcome\nlocal optima and plateaus ?"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.077,
+            0.299,
+            0.838,
+            0.86
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_chart_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.423,
+            0.97,
+            0.476
+          ],
+          "content": "→ Random-restart hill climbing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.874,
+            0.839,
+            0.969
+          ],
+          "content": "But, 1D figure is deceptive. True local optima are surprisingly rare in high-dimensional spaces! There often is an escape to a better state."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.949,
+            0.907,
+            0.989
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.952,
+            0.967,
+            0.983
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.237,
+            0.031,
+            0.977,
+            0.142
+          ],
+          "level": 1,
+          "content": "Potential Issues with Hill Climbing / Greedy Local Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.243,
+            0.85,
+            0.283
+          ],
+          "content": "Local Optima: No neighbor is better, but not at global optimum."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.288,
+            0.777,
+            0.327
+          ],
+          "content": "\\- May have to move away from goal to find (best) solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.333,
+            0.925,
+            0.373
+          ],
+          "content": "\\- But again, true local optima are rare in many high-dimensional spaces."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.42,
+            0.496,
+            0.457
+          ],
+          "content": "Plateaus: All neighbors look the same."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.464,
+            0.821,
+            0.503
+          ],
+          "content": "\\- 8-puzzle: perhaps no action will change # of tiles out of place."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.509,
+            0.846,
+            0.592
+          ],
+          "content": "\\- Soln. just keep moving around! (will often find some improving move eventually)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.639,
+            0.454,
+            0.68
+          ],
+          "content": "Ridges: sequence of local maxima"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.771,
+            0.556,
+            0.811
+          ],
+          "content": "May not know global optimum: Am I done?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.679,
+            0.586,
+            0.866,
+            0.831
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.953,
+            0.964,
+            0.983
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.454,
+            0.047,
+            0.962,
+            0.179
+          ],
+          "level": 1,
+          "content": "Improvements to Greedy / Hill-climbing Search"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.038,
+            0.22,
+            0.116,
+            0.258
+          ],
+          "level": 2,
+          "content": "Issue:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.267,
+            0.822,
+            0.309
+          ],
+          "content": "\\- How to move more quickly to successively better plateaus?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.315,
+            0.58,
+            0.359
+          ],
+          "content": "\\- Avoid \"getting stuck\" / local maxima?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.038,
+            0.413,
+            0.338,
+            0.453
+          ],
+          "level": 2,
+          "content": "Idea: Introduce “noise:”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.465,
+            0.645,
+            0.506
+          ],
+          "content": "downhill (uphill) moves to escape from"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.513,
+            0.608,
+            0.553
+          ],
+          "content": "plateaus or local maxima (mimima)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.562,
+            0.938,
+            0.606
+          ],
+          "content": "E.g., make a move that increases the number of attacking pairs."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.665,
+            0.317,
+            0.719
+          ],
+          "level": 2,
+          "content": "Noise strategies:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.73,
+            0.431,
+            0.777
+          ],
+          "content": "1. Simulated Annealing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.785,
+            0.715,
+            0.827
+          ],
+          "content": "• Kirkpatrick et al. 1982; Metropolis et al. 1953"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.837,
+            0.647,
+            0.885
+          ],
+          "content": "2. Mixed Random Walk (Satisfiability)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.893,
+            0.553,
+            0.934
+          ],
+          "content": "• Selman, Kautz, and Cohen 1993"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.942,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.503,
+            0.098,
+            0.911,
+            0.163
+          ],
+          "level": 2,
+          "content": "Simulated Annealing"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.063,
+            0.303,
+            0.146,
+            0.348
+          ],
+          "level": 2,
+          "content": "Idea:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.352,
+            0.897,
+            0.517
+          ],
+          "content": "Use conventional hill-climbing style techniques, but occasionally take a step in a direction other than that in which there is improvement (downhill moves; away from solution)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.568,
+            0.905,
+            0.723
+          ],
+          "content": "As time passes, the probability that a down-hill step is taken is gradually reduced and the size of any down-hill step taken is decreased."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.942,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.005,
+            0.015,
+            0.424,
+            0.061
+          ],
+          "content": "What's the probability when: $\\mathrm{T} \\rightarrow \\inf$?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.006,
+            0.093,
+            0.41,
+            0.137
+          ],
+          "content": "What's the probability when: $\\mathrm{T} \\rightarrow 0$?"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.47,
+            0.0,
+            0.998,
+            0.207
+          ],
+          "level": 1,
+          "content": "Simulated annealing search (one of the most widely used optimization methods) (sideways / plateau move)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.007,
+            0.163,
+            0.759,
+            0.209
+          ],
+          "content": "What's the probability when: delta E = 0? (sideways / plateau move)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.253,
+            0.782,
+            0.344
+          ],
+          "content": "Idea: escape local maxima by allowing some \"bad\" moves but gradually decrease frequency of such moves."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.129,
+            0.352,
+            0.977,
+            0.987
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction SIMULATED-ANNEALING( problem, schedule) returns a solution state\n  inputs: problem, a problem\n      schedule, a mapping from time to \"temperature\"\n  local variables: current, a node\n      next, a node\n      T, a \"temperature\" controlling prob. of downward steps\n  current← MAKE-NODE(INITIAL-STATE[problem])\n  for t← 1 to ∞ do\n    T← schedule[t]\n    if T = 0 then return current\n      next← a randomly selected successor of current\n      ΔE← VALUE[next] - VALUE[current]\n    if ΔE > 0 then current ← next\n      else current ← next only with probability e^Δ E/T\n\nSimilar to hill climbing,\n  but a random move instead\n  of best move\n\ncase of improvement, make the move\n\nOtherwise, choose the move with probability\n  that decreases exponentially with the\n  \"badness\" of the move.\n\nBart Selman\nCS4700\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.861,
+            0.054,
+            0.96,
+            0.099
+          ],
+          "content": "Notes"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.142,
+            0.553,
+            0.181
+          ],
+          "level": 2,
+          "content": "Noise model based on statistical mechanics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.189,
+            0.906,
+            0.234
+          ],
+          "content": "\\- ... introduced as analogue to physical process of growing crystals"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.038,
+            0.289,
+            0.21,
+            0.329
+          ],
+          "level": 2,
+          "content": "Convergence:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.335,
+            0.946,
+            0.453
+          ],
+          "content": "1. With exponential schedule, will provably converge to global optimum\nOne can prove: If T decreases slowly enough, then simulated annealing search will find a global optimum with probability approaching 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.501,
+            0.736,
+            0.644
+          ],
+          "content": "2. Few more precise convergence rate.\n(Recent work on rapidly mixing Markov chains.\nSurprisingly deep foundations.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.697,
+            0.538,
+            0.739
+          ],
+          "content": "Key aspect: downwards / sideways moves"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.745,
+            0.7,
+            0.788
+          ],
+          "content": "\\- Expensive, but (if have enough time) can be best"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.843,
+            0.967,
+            0.937
+          ],
+          "content": "Hundreds of papers / year; original paper one of most cited papers in CS!\n– Many applications: VLSI layout, factory scheduling, protein folding..."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.942,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.286,
+            0.041,
+            0.993,
+            0.093
+          ],
+          "level": 2,
+          "content": "Simulated Annealing (SA) --- Foundations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.167,
+            0.908,
+            0.255
+          ],
+          "content": "Superficially: SA is local search with some noise added. Noise starts high and is slowly decreased."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.317,
+            0.519,
+            0.361
+          ],
+          "content": "True story is much more principled:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.424,
+            0.873,
+            0.515
+          ],
+          "content": "SA is a general sampling strategy to sample from a combinatorial space according to a well-defined probability distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.577,
+            0.905,
+            0.709
+          ],
+          "content": "Sampling strategy models the way physical systems, such as gases, sample from their statistical equilibrium distributions. Order 10^23 particles. Studied in the field of statistical physics."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.771,
+            0.611,
+            0.815
+          ],
+          "content": "We will give the core idea using an example."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.942,
+            0.953,
+            0.967,
+            0.983
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.347,
+            0.031,
+            0.72,
+            0.075
+          ],
+          "level": 2,
+          "content": "Example: 3D Hypercube space"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.068,
+            0.116,
+            0.526,
+            0.645
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.543,
+            0.105,
+            0.844,
+            0.542
+          ],
+          "content": "<table><tr><td colspan=\"2\">States</td><td>Value f(s)</td></tr><tr><td>s1</td><td>000</td><td>2</td></tr><tr><td>s2</td><td>001</td><td>4.25</td></tr><tr><td>s3</td><td>010</td><td>4</td></tr><tr><td>s4</td><td>011</td><td>3</td></tr><tr><td>s5</td><td>100</td><td>2.5</td></tr><tr><td>s6</td><td>101</td><td>4.5</td></tr><tr><td>s7</td><td>110</td><td>3</td></tr><tr><td>s8</td><td>111</td><td>3.5</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.546,
+            0.563,
+            0.994,
+            0.653
+          ],
+          "content": "Problem for greedy and hill climbing but not for SA!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.685,
+            0.811,
+            0.73
+          ],
+          "content": "N dimensional “hypercube” space. N =3. 2^3 = 8 states total."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.783,
+            0.87,
+            0.828
+          ],
+          "content": "Goal: Optimize f(s), the value function. Maximum value 4.5 in s6."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.88,
+            0.964,
+            0.975
+          ],
+          "content": "Use local search: Each state / node has N = 3 neighbors (out of 2^N total). \"Hop around to find 101 quickly.\""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.949,
+            0.908,
+            0.989
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.368,
+            0.057,
+            0.967,
+            0.111
+          ],
+          "level": 2,
+          "content": "Of course, real interest in large N..."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.189,
+            0.714,
+            0.233
+          ],
+          "content": "Spaces with  $2^{N}$  states and each state with N neighbors."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.086,
+            0.261,
+            0.414,
+            0.689
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.718,
+            0.476,
+            0.861
+          ],
+          "content": "7D hypercube; 128 states.\nEvery node, connected to 7 others.\nMax distance between two nodes: 7."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.547,
+            0.239,
+            0.866,
+            0.661
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.562,
+                0.708,
+                0.929,
+                0.851
+              ],
+              "content": "9D hypercube; 512 states.\nHow many steps to go from any state to any state?"
+            }
+          ],
+          "image_source": "images/page_17_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.884,
+            0.819,
+            0.929
+          ],
+          "content": "Practical reasoning problem: N = 1,000,000. 2^N = 10^300,000"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.949,
+            0.907,
+            0.989
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.941,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.52,
+            0.035,
+            0.952,
+            0.091
+          ],
+          "content": "SA node sampling strategy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.167,
+            0.818,
+            0.212
+          ],
+          "content": "Consider the following “random walker” in hypercube space:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.28,
+            0.7,
+            0.382
+          ],
+          "content": "1) Start at a random node S (the “current node”). (How do we generate such a node?)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.442,
+            0.792,
+            0.487
+          ],
+          "content": "2) Select, at random, one of the N neighbors of S, call it S'"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.079,
+            0.549,
+            0.893,
+            0.705
+          ],
+          "sub_type": "algorithm",
+          "content": "3) If  $(f(S') - f(S)) > 0$ , move to  $S'$ , i.e. set  $S := S'$ \n(i.e., jump to node with better value)\nelse with probability  $e^{(f(S')-f(S))/T}$  move to  $S'$ , i.e., set  $S := S'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.763,
+            0.292,
+            0.807
+          ],
+          "content": "4) Go back to 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.886,
+            0.944,
+            0.93
+          ],
+          "content": "Note: Walker keeps going and going. Does not get stuck in any one node."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.942,
+            0.953,
+            0.966,
+            0.982
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.079,
+            0.608,
+            0.121
+          ],
+          "content": "Central Claim --- Equilibrium Distribution:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.184,
+            0.903,
+            0.227
+          ],
+          "content": "After “a while,” we will find the walker in state S with probability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.291,
+            0.403,
+            0.333
+          ],
+          "content": "$\\mathrm{Prob}(\\mathrm{S}) = \\mathrm{e}^{\\wedge}(\\mathrm{f}(\\mathrm{S}) / \\mathrm{T}) / \\mathrm{Z}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.345,
+            0.903,
+            0.521
+          ],
+          "content": "where Z is a normalization constant (function of T) to make sure the probabilities over all states add up to 1. I.e., we will be in a state with a probability “proportional” to f(S) --- most likely in state with highest f(S)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.531,
+            0.861,
+            0.574
+          ],
+          "content": "Why? Deep result in Markov Chain processes. Not obvious at all."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.637,
+            0.682,
+            0.681
+          ],
+          "content": "Z is called the “partition function” and is given by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.113,
+            0.729,
+            0.34,
+            0.803
+          ],
+          "content": "\\mathbf {Z} = \\sum \\mathrm{e} ^ {\\wedge} (\\mathbf {f} (\\mathbf {s}) / \\mathbf {T})",
+          "image_source": "images/page_19_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.851,
+            0.877,
+            0.892
+          ],
+          "content": "where the sum is over all  $2^{N}$  states x. So, an exponential sum!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.905,
+            0.761,
+            0.947
+          ],
+          "content": "Very hard to compute but we generally don’t have to!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.063,
+            0.064,
+            0.45,
+            0.123
+          ],
+          "content": "\\text {Prob} (\\mathrm{s}) = \\mathrm{e} ^ {\\wedge} (\\mathrm{f} (\\mathrm{s}) / \\mathrm{T}) / \\mathrm{Z}",
+          "image_source": "images/page_20_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.593,
+            0.061,
+            0.978,
+            0.119
+          ],
+          "content": "For our example space"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.034,
+            0.209,
+            0.866,
+            0.702
+          ],
+          "content": "<table><tr><td colspan=\"2\">States</td><td>Value f(s)</td><td>T=1.0</td><td>Prob(s)</td><td>T=0.25 Prob(s)Prob(s)</td></tr><tr><td>s1</td><td>000</td><td>2</td><td>7.4</td><td>0.02</td><td>55 29810.0030.000</td></tr><tr><td>s2</td><td>001</td><td>4.25</td><td>70.1</td><td>0.23</td><td>240,154,9520.27 0.24</td></tr><tr><td>s3</td><td>010</td><td>4</td><td>54.6</td><td>0.18</td><td>28,886,111 0.17 0.09</td></tr><tr><td>s4</td><td>011</td><td>3</td><td>20.1</td><td>0.07</td><td>4062,755 0.02 0.001</td></tr><tr><td>s5</td><td>100</td><td>2.5</td><td>12.2</td><td>0.04</td><td>1482,026 0.0080.008</td></tr><tr><td>s6</td><td>101</td><td>4.5</td><td>90.0</td><td>0.29</td><td>68,1059,969 0.45 0.65</td></tr><tr><td>s7</td><td>110</td><td>3</td><td>20.1</td><td>0.07</td><td>4062,755 0.02 0.001</td></tr><tr><td>s8</td><td>111</td><td>3.5</td><td>33.1</td><td>0.11</td><td>102972,604 0.06 0.06</td></tr><tr><td></td><td></td><td></td><td colspan=\"2\">sum Z = 307.9</td><td>sum Z = 180,1054,153</td></tr></table>",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.036,
+                0.74,
+                0.907,
+                0.786
+              ],
+              "content": "So, at T = 1.0, walker will spend roughly 29% of its time in the best state."
+            },
+            {
+              "bbox": [
+                0.037,
+                0.795,
+                0.622,
+                0.841
+              ],
+              "content": "T = 0.5, roughly 45% of its time in the best state."
+            },
+            {
+              "bbox": [
+                0.037,
+                0.851,
+                0.634,
+                0.895
+              ],
+              "content": "T = 0.25, roughly 65% of its time in the best state."
+            },
+            {
+              "bbox": [
+                0.084,
+                0.899,
+                0.613,
+                0.945
+              ],
+              "content": "And, remaining time mostly in s2 ( $2^{nd}$ best)!"
+            }
+          ],
+          "image_source": "images/page_20_table_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.949,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.953,
+            0.964,
+            0.983
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.034,
+            0.926,
+            0.131
+          ],
+          "content": "So, when T gets lowered, the probability distribution starts to concentrate on the maximum (and close to maximum) value states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.192,
+            0.515,
+            0.236
+          ],
+          "content": "The lower T, the stronger the effect!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.298,
+            0.579,
+            0.345
+          ],
+          "content": "What about T high? What is Z and Prob(S)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.613,
+            0.269,
+            0.93,
+            0.361
+          ],
+          "content": "$2^{\\wedge}\\mathrm{N}$ and $1 / (2^{\\wedge}\\mathrm{N})$ because $\\mathrm{e}^{\\wedge}0 = 1$ in each row"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.405,
+            0.936,
+            0.557
+          ],
+          "content": "At low T, we can just output the current state. It will quite likely be a maximum value (or close to it) state. In practice: Keep track of best state seen during the SA search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.619,
+            0.773,
+            0.717
+          ],
+          "content": "SA is an example of so-called Markov Chain Monte Carlo or MCMC sampling."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.779,
+            0.926,
+            0.986
+          ],
+          "content": "It's very general technique to sample from complex probability distributions by making local moves only. For optimization, we chose a clever probability distribution that concentrates on the optimum states for low T. (Kirkpatrick et al. 1984) Bart Selman CS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.088,
+            0.093,
+            0.434,
+            0.137
+          ],
+          "level": 2,
+          "content": "Some final notes on SA:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.203,
+            0.944,
+            0.335
+          ],
+          "content": "1) “Claim Equilibrium Distribution” needs proof. Not too difficult but takes a bit of background about Markov Chains. It’s beautiful and useful theory."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.347,
+            0.892,
+            0.521
+          ],
+          "content": "2) How long should we run at each T? Technically, till the process reaches the stationary distribution. Here's the catch: may take exponential time in the worst case. 😊 But in practice can be remarkably effective."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.533,
+            0.964,
+            0.577
+          ],
+          "content": "3) How quickly should we “cool down”? Various schedules in literature."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.589,
+            0.914,
+            0.672
+          ],
+          "content": "4) To get (near-)optimum, you generally can run much shorter than needed for full stationary distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.684,
+            0.601,
+            0.726
+          ],
+          "content": "5) Keep track of best solution seen so far."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.738,
+            0.967,
+            0.825
+          ],
+          "content": "6) A few formal convergence rate results exist, including some polytime results (“rapidly mixing Markov chains”)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.835,
+            0.94,
+            0.879
+          ],
+          "content": "7) Many variations on basic SA exist, useful for different applications."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.965,
+            0.983
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.54,
+            0.059,
+            0.96,
+            0.121
+          ],
+          "level": 2,
+          "content": "What I didn't tell you"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.131,
+            0.86,
+            0.183
+          ],
+          "content": "Q. Why not just run at a low temperature right away?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.203,
+            0.897,
+            0.299
+          ],
+          "content": "SA is guaranteed to converge to the equilibrium distribution $\\mathbf{Prob}(\\mathbf{s}) = \\mathbf{e}^{\\wedge}(\\mathbf{f}(\\mathbf{s}) / \\mathbf{T}) / \\mathbf{Z}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.305,
+            0.898,
+            0.443
+          ],
+          "content": "However, this can take some time. “Burn-in time of Markov chain.” Idea of annealing: can reach equilibrium distribution more quickly by first starting at a higher T and going down slowly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.492,
+            0.925,
+            0.579
+          ],
+          "content": "Practical example: T = 100, take 100,000 flips. Then, T = .9 \\* 100 = 90, take 100,000 flips. Then, T = .9 \\* 90 = 81, take 100,000 flips. Etc."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.62,
+            0.861,
+            0.72
+          ],
+          "content": "Q. How can you sample properly from an exponential space without the chain first visiting each state?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.753,
+            0.99,
+            0.863
+          ],
+          "content": "Best answered with an example. Consider N binary variables, and starting from the all 0 state (“origin of hypercube”)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.87,
+            0.909,
+            0.989
+          ],
+          "content": "How many flips are needed to reach a purely random point uniformly at random in the N dimensional hypercube? Bart Selman CS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.951,
+            0.967,
+            0.983
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.623,
+            0.028,
+            0.984,
+            0.081
+          ],
+          "content": "Local beam search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.131,
+            0.553,
+            0.173
+          ],
+          "continues_prev": true,
+          "content": "\\- Start with $k$ randomly generated states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.224,
+            0.594,
+            0.265
+          ],
+          "content": "\\- Keep track of $k$ states rather than just one"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.316,
+            0.838,
+            0.358
+          ],
+          "content": "• At each iteration, all the successors of all k states are generated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.41,
+            0.884,
+            0.493
+          ],
+          "content": "• If any one is a goal state, stop; else select the k best successors from the complete list and repeat."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.281,
+            0.575,
+            0.832,
+            0.619
+          ],
+          "content": "Equivalent to k random-restart hill-climbing?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.679,
+            0.854,
+            0.721
+          ],
+          "content": "No: Different since information is shared between k search points:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.768,
+            0.909,
+            0.901
+          ],
+          "content": "Some search points may contribute none to best successors: one search point may contribute all k successors “Come over here, the grass is greener” (R&N)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.603,
+            0.216,
+            0.935,
+            0.273
+          ],
+          "content": "Genetic Algorithms"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.541,
+            0.064,
+            0.917,
+            0.125
+          ],
+          "level": 2,
+          "content": "Genetic Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.225,
+            0.77,
+            0.275
+          ],
+          "content": "Another class of iterative improvement algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.352,
+            0.934,
+            0.511
+          ],
+          "content": "\\- A genetic algorithm maintains a population of candidate solutions for the problem at hand, and makes it evolve by iteratively applying a set of stochastic operators"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.587,
+            0.673,
+            0.639
+          ],
+          "content": "Inspired by the biological evolution process"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.648,
+            0.773,
+            0.755
+          ],
+          "content": "Uses concepts of “Natural Selection” and “Genetic Inheritance” (Darwin 1859)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.766,
+            0.697,
+            0.819
+          ],
+          "content": "Originally developed by John Holland (1975)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.79,
+            0.541,
+            0.94,
+            0.836
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_6.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.537,
+            0.143,
+            0.96,
+            0.207
+          ],
+          "level": 2,
+          "content": "High-level Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.287,
+            0.712,
+            0.337
+          ],
+          "content": "1. Randomly generate an initial population"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.344,
+            0.788,
+            0.393
+          ],
+          "content": "2. Evaluate the fitness of members of population"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.403,
+            0.898,
+            0.502
+          ],
+          "content": "3. Select parents based on fitness, and “reproduce” to get the next generation (using “crossover” and mutations)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.511,
+            0.86,
+            0.561
+          ],
+          "content": "4. Replace the old generation with the new generation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.567,
+            0.677,
+            0.618
+          ],
+          "content": "5. Repeat step 2 though 4 till iteration N"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.553,
+            0.104,
+            0.961,
+            0.167
+          ],
+          "level": 2,
+          "content": "Stochastic Operators"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.306,
+            0.305,
+            0.357
+          ],
+          "level": 2,
+          "content": "Cross-over"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.378,
+            0.879,
+            0.435
+          ],
+          "content": "\\- decomposes two distinct solutions and then"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.451,
+            0.849,
+            0.571
+          ],
+          "content": "\\- randomly mixes their parts to form novel solutions"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.59,
+            0.279,
+            0.642
+          ],
+          "level": 2,
+          "content": "Mutation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.665,
+            0.811,
+            0.723
+          ],
+          "content": "\\- randomly perturbs a candidate solution"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.149,
+            0.8,
+            0.193
+          ],
+          "content": "A successor state is generated by combining two parent states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.281,
+            0.683,
+            0.327
+          ],
+          "content": "Start with k randomly generated states (population)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.413,
+            0.715,
+            0.505
+          ],
+          "content": "A state is represented as a string over a finite alphabet (often a string of 0s and 1s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.547,
+            0.884,
+            0.593
+          ],
+          "content": "Evaluation function (fitness function). Higher values for better states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.681,
+            0.944,
+            0.726
+          ],
+          "content": "Produce the next generation of states by selection, crossover, and mutation"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.967,
+            0.983
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.636,
+            0.027,
+            0.961,
+            0.086
+          ],
+          "level": 2,
+          "content": "Genetic algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.412,
+            0.139,
+            0.774,
+            0.189
+          ],
+          "content": "Operate on state representation."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.006,
+            0.009,
+            0.949,
+            0.996
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.755,
+            0.498,
+            0.893
+          ],
+          "content": "Fitness function: number of non-attacking pairs of queens (min = 0, max = 8 × 7/2 = 28 → the higher the better)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.929,
+            0.412,
+            0.977
+          ],
+          "content": "$24 / (24 + 23 + 20 + 11) = 31\\%$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.773,
+            0.951,
+            0.823
+          ],
+          "content": "crossover point randomly generated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.874,
+            0.91,
+            0.991
+          ],
+          "content": "probability of a given pair selection proportional to the fitness (b)\nBart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.939,
+            0.951,
+            0.965,
+            0.985
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.591,
+            0.104,
+            0.96,
+            0.167
+          ],
+          "level": 2,
+          "content": "Genetic algorithms"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.129,
+            0.352,
+            0.367,
+            0.642
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.39,
+            0.353,
+            0.61,
+            0.643
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.213,
+                0.755,
+                0.82,
+                0.861
+              ],
+              "content": "Any reason pieces from different solutions fit together?"
+            }
+          ],
+          "image_source": "images/page_31_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.653,
+            0.353,
+            0.871,
+            0.641
+          ],
+          "content": "\\begin{array}{c} \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\\\ \\hline \\end{array}",
+          "image_source": "images/page_31_equation_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.3,
+            0.931,
+            0.388
+          ],
+          "content": "Lots of variants of genetic algorithms with different selection, crossover, and mutation rules."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.433,
+            0.936,
+            0.524
+          ],
+          "content": "GAs have a wide application in optimization – e.g., circuit layout and job shop scheduling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.566,
+            0.863,
+            0.657
+          ],
+          "content": "Much work remains to be done to formally understand GAs and to identify the conditions under which they perform well."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.965,
+            0.983
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.234,
+            0.084,
+            0.953,
+            0.218
+          ],
+          "level": 2,
+          "content": "Demo of Genetic Programming (GP): The Evolutionary Walker"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.077,
+            0.234,
+            0.44,
+            0.571
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.064,
+                0.605,
+                0.443,
+                0.653
+              ],
+              "content": "Figure 1.1: The walker model."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_33_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.687,
+            0.311,
+            0.727
+          ],
+          "content": "Actions to control:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.48,
+            0.318,
+            0.557,
+            0.36
+          ],
+          "content": "Goal:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.479,
+            0.366,
+            0.585,
+            0.408
+          ],
+          "content": "Make it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.479,
+            0.417,
+            0.648,
+            0.459
+          ],
+          "content": "run as fast as"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.48,
+            0.465,
+            0.595,
+            0.509
+          ],
+          "content": "possible!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.48,
+            0.513,
+            0.705,
+            0.558
+          ],
+          "content": "Evolve population"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.481,
+            0.564,
+            0.608,
+            0.604
+          ],
+          "content": "of control"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.479,
+            0.615,
+            0.612,
+            0.656
+          ],
+          "content": "programs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.738,
+            0.343,
+            0.934,
+            0.393
+          ],
+          "content": "Three nodes:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.737,
+            0.286,
+            0.956,
+            0.338
+          ],
+          "content": "Stick figure ---"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.729,
+            0.326,
+            0.779
+          ],
+          "content": "1) angle  $\\alpha$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.74,
+            0.402,
+            0.846,
+            0.455
+          ],
+          "content": "1 body"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.739,
+            0.461,
+            0.828,
+            0.511
+          ],
+          "content": "2 feet"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.739,
+            0.578,
+            0.936,
+            0.631
+          ],
+          "content": "Basic physics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.783,
+            0.569,
+            0.829
+          ],
+          "content": "2) push off ground for each foot."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.739,
+            0.639,
+            0.847,
+            0.686
+          ],
+          "content": "model:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.738,
+            0.699,
+            0.852,
+            0.751
+          ],
+          "content": "gravity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.738,
+            0.759,
+            0.967,
+            0.803
+          ],
+          "content": "momentum etc."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.863,
+            0.672,
+            0.956
+          ],
+          "content": "Input for control program (from physics module): Position and velocity for the three nodes."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.738,
+            0.873,
+            0.934,
+            0.919
+          ],
+          "level": 2,
+          "content": "Discrete time"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.949,
+            0.908,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.045,
+            0.294,
+            0.09
+          ],
+          "level": 2,
+          "content": "Control language:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.057,
+            0.163,
+            0.996,
+            0.989
+          ],
+          "sub_type": "code",
+          "content": "```txt\nreal ::= real + real\n    | real - real\n    | real * real\n    | real / real\n    | getX(index)\n    | getY(index)\n    | getX_velocity(index)\n    | getY_velocity(index)\n    | if (bool) then real else real\n    | (constants between -1 and 1);\nbool ::= real < real\n    | real > real\n    | closeTo(real, real)\n    | true\n    | false;\nindex ::= 0\n    | 1\n    | 2;\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.233,
+            0.818,
+            0.279
+          ],
+          "content": "Population of control programs is maintained and evolved."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.338,
+            0.916,
+            0.437
+          ],
+          "content": "Fitness determined by measuring how far the walker gets in T time units (T fixed)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.499,
+            0.736,
+            0.545
+          ],
+          "content": "Evolution through parent selection based on fitness."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.553,
+            0.941,
+            0.704
+          ],
+          "content": "Followed by\ncrossover (swap parts of control programs, i.e., arithmetic expression trees) and"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.713,
+            0.855,
+            0.759
+          ],
+          "content": "mutations (randomly generate new parts of control program)."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.967,
+            0.983
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.3,
+            0.435,
+            0.343
+          ],
+          "content": "Can this work? How well?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.405,
+            0.784,
+            0.451
+          ],
+          "content": "Would it be hard to program directly? Think about it..."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.485,
+            0.572,
+            0.58,
+            0.617
+          ],
+          "content": "Demo"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.84,
+            0.951,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "37"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.601,
+            0.039,
+            0.961,
+            0.074
+          ],
+          "level": 2,
+          "content": "Leaner.txt --- most basic walker"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.149,
+            0.114,
+            0.961,
+            0.181
+          ],
+          "sub_type": "code",
+          "content": "```lisp\n(/(-/(R -1.8554944551635097)(U(N 0))))(+(-(R 0.26696974973371823)(Y(N 1)))(-(-(X(N 0))(V(N 0))))(U(N 0)))))-(*(R 0.6906081172421406)(Y(N 0)))(-(V(N 1))(V(N 0))))))\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.147,
+            0.207,
+            0.961,
+            0.366
+          ],
+          "content": "\\begin{array}{c} \\text {(I(<   (-(*(R -0.4749818581316987)(Y(N 1)))(-(V(N 2))(-(V(N 1))(V(N 1)))))/((+(Y(N 1))(R}\\\\ 1.8836665782029058))(X(N 1))))(+(+(*(Y(N 2))(+(R 0.26073435346772067)(+(X(N 1))(X(N 1)))))(+\\\\ (X(N 1))(+(-(Y(N 2))(I(B false)(Y(N 1))(Y(N 2)))))(V(N 1)))))/((V(N 1))(X(N 1)))))(-(I< (U(N 1))(I(B\\\\ false)(I(B true)(X(N 1))(X(N 0)))U(N 1))))(+(+I(B false)(X(N 1))(Y(N 1)))I(B false)(Y(N 0))*(*(U(N\\\\ 1))(U(N 2)))))(X(N 1))) (R 0.5940420353545179))) \\end{array}",
+          "image_source": "images/page_37_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.133,
+            0.393,
+            0.961,
+            0.553
+          ],
+          "content": "\\begin{array}{l} (+ (\\mathrm{I} (> (\\mathrm{R} 0. 5 7 9 4 4 4 3 4 1 0 9 0 7 3 9 7) (\\mathrm{X(N} 2))) (+ (\\mathrm{Y(N} 0)) (\\mathrm{I} (= (\\mathrm{X(N} 1)) (\\mathrm{R} 0. 8 9 7 0 0 1 7 7 2 7 9 0 8 3 0 4)) (\\mathrm{I} (> (\\mathrm{X(N} 2)) \\\\ (\\mathrm{U(N} 2))) (+ (\\mathrm{R} - 1. 7 9 3 6 3 8 8 4 3 3 3 0 4 8 4 2) (\\mathrm{X(N} 2))) (\\mathrm{R} - 1. 5 6 2 8 5 9 0 2 8 6 5 3 7 5 4 5)) (+ (\\mathrm{R} - 0. 8 0 7 0 0 2 9 3 8 1 4 2 6 3 5 8) \\\\ (\\mathrm{Y(N} 0)))) (\\mathrm{Y(N} 2))) (- (- (\\mathrm{I(Bfalse)} (\\mathrm{X(N} 2)) (- (\\mathrm{Y(N} 2)) (\\mathrm{I(Btrue)} (\\mathrm{V(N} 1)) (\\mathrm{Y(N} 2)))))) (\\mathrm{I} (= (\\mathrm{X(N} 2)) (\\mathrm{V(N} 2))) \\\\ (\\mathrm{Y(N} 2)) (\\mathrm{U(N} 2)))) (\\mathrm{I} (<   (- (\\mathrm{X(N} 2)) (\\mathrm{X(N} 2))) (+ (\\mathrm{R} 0. 9 1 2 1 1 6 2 1 3 5 4 9 7 1 8 5) (\\mathrm{R} - 1. 2 8 5 1 3 0 4 6 1 0 3 8 8 1 4 3))) (\\mathrm{X(N} \\\\ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\end{array}",
+          "image_source": "images/page_37_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.752,
+            0.613,
+            0.961,
+            0.791
+          ],
+          "content": "Pop size: 50\nMax gen: 100\nMutate prob: 0.0\nCross prob: 0.0"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.983
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.458,
+            0.057,
+            0.952,
+            0.093
+          ],
+          "level": 2,
+          "content": "Sprinter7661.txt --- one of the fastest walkers"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.135,
+            0.155,
+            0.953,
+            0.232
+          ],
+          "sub_type": "code",
+          "content": "```lisp\n\\((-(--(U(N 0))(+(Y(N 0)))/(++(R 0.7499415628721899)(+(Y(N 0))(Y(N 0)))))(X(N 0)))*(R 0.20363512445479204)(-(U(N 2))(X(N 0)))))))))-(--(Y(N 0))(X(N 0)))I(</(+(X(N 0))(Y(N 0)))+(U(N 0))(Y(N 0)))))(X(N 0)))X(N 0))(Y(N 0)))))-(-(U(N 0))(X(N 0)))\n    (*-(-(Y(N 0))(R 0.90287443905547))(Y(N 0)))I(B false)(R 1.6373642908344364)(*(V(N 0))(-(Y(N 0))(X(N 1))))))))))\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.262,
+            0.953,
+            0.437
+          ],
+          "content": "\\begin{array}{l} (+ (\\mathrm{I} (= (\\mathrm{X(N0)}) (\\mathrm{X(N0)})) (\\mathrm{I(Btrue)} / (\\mathrm{I} (<   / (+ (\\mathrm{V(N0)}) (\\mathrm{X(N1)})) (\\mathrm{Y(N1)})) (- (- (- (\\mathrm{X(N1)})) (\\mathrm{Y(N1)})) (\\mathrm{Y(N0)})) + (\\mathrm{V(N1)}) (\\mathrm{I(Btrue)} (\\mathrm{I(Bfalse)}) \\\\ \\quad (\\mathrm{V(N1)})) (\\mathrm{Y(N1)})) (\\mathrm{Y(N1)})))) (X (N 0)) (X (N 1))) (Y (N 1))) (R 1. 7 3 2 2 6 6 7 9 2 5 0 1 2 3 7 6)) (X (N 1))) (+ (\\mathrm{I} (= (\\mathrm{X(N0)}) (\\mathrm{X(N0)})) (\\mathrm{I(Btrue)} \\\\ \\quad (\\mathrm{I} (= (\\mathrm{X(N0)}) (\\mathrm{X(N0)})) (\\mathrm{I(Btrue)} / ((\\mathrm{I} (<   / (+ (\\mathrm{V(N0)}) (\\mathrm{X(N1)})) (\\mathrm{Y(N1)})) (- (- (- (\\mathrm{X(N1)}) (\\mathrm{Y(N1)})) (\\mathrm{Y(N0)})) + (\\mathrm{V(N1)}) (\\mathrm{I(Btrue)} (\\mathrm{I(Bfalse)} (\\mathrm{V(N1)})) (\\mathrm{Y(N1)}))) (+ (\\mathrm{X(N0)}) (\\mathrm{V(N1)})) (X (N 1))) (R 1. 7 3 2 2 6 6 7 9 2 5 0 1 2 3 7 6)) (X (N 1))) (R \\\\ \\quad 1. 7 3 2 2 6 6 7 9 2 5 0 1 2 3 7 6)) (X (N 1))) (- (+ (\\mathrm{Y(N1)})) (- (\\mathrm{I} (> (\\mathrm{X(N2)})) (\\mathrm{I} (= (\\mathrm{X(N2)}) (\\mathrm{X(N1)})) (\\mathrm{X(N1)}) (+ / (\\mathrm{V(N1)}) (\\mathrm{X(N1)})) (* (\\mathrm{Y(N1)}) (\\mathrm{R} \\\\ \\quad - 0. 2 5 2 7 3 3 9 9 0 0 1 4 7 0 6 3)))) (* (* (\\mathrm{I} (> (\\mathrm{U(N1)})) (\\mathrm{I(Bfalse)} (\\mathrm{V(N1)})) (\\mathrm{X(N1)}))) (\\mathrm{V(N1)}) (* (\\mathrm{R0.5789447390820031}) (\\mathrm{V(N1)}))) (\\mathrm{Y(N}\\\\ \\\\ \\quad \\text {)(Y(N1)})) (U (N2))) (I (Btrue) (X (N1)) (R-1.3674019962815391)))) (I (Btrue) (X (N1)) (R-1.3674019962815391)))) \\end{array}",
+          "image_source": "images/page_38_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.14,
+            0.468,
+            0.953,
+            0.887
+          ],
+          "content": "\\begin{array} { r l } & ( I ( <   ( - ( R ~ 1 . 0 8 3 4 7 9 5 5 7 4 6 3 8 0 0 3 ) ( / ( V ( N ~ 2 ) ) ( X ( N ~ 2 ) ) ) ) ) ( I ( <   ( - ( / + ( * ( + ( - ( Y ( N ~ 0 ) ) ( I ( B ~ f a l s e ) ( X ( N ~ 2 ) ) ( Y ( N ~ 1 ) ) ) ) ) ( I ( B ~ t r u e ) ( * / ( X ( N ~ 0 ) ) ( I ( B ~ t r u e ) ( Y ( N ~ 1 ) ) ) ) ) ( I ( Y ( N ~ 2 ) ) ( R ~ - 0 . 7 4 5 9 0 4 6 8 8 7 4 9 3 8 6 8 ) ) ) ) ) ( X ( N ~ 0 ) ) ) ) ( I = ( R ~ 0 . 0 6 5 1 3 6 0 9 7 3 7 1 0 8 7 0 5 ) ( / ( U ( N ~ 2 ) ) ( Y ( N ~ 0 ) ) ) ) ) ( I ( B ~ f a l s e ) ( R ~ 0 . 5 8 6 8 9 2 4 0 3 3 9 2 5 5 2 ) + ( R ~ - 0 . 9 4 4 4 6 1 9 6 2 1 7 2 2 1 8 4 ) ( R ~ - 0 . 3 5 3 9 8 7 9 5 5 7 8 1 3 7 7 2 ) ) ) ( Y ( N ~ 0 ) ) ) ) ) ( X ( N ~ 1 ) ) ) ) ( X ( N ~ 1 ) ) ) ) ( U ( N ~ 2 ) ) ) ) / ( V ( N ~ 2 ) ) \\\\ & \\quad ( X ( N ~ 0 ) ) ) ) ( X ( N ~ 2 ) ) ) ( * + ( - ( Y ( N ~ 0 ) ) ( I ( B ~ f a l s e ) ( X ( N ~ 2 ) ) ( Y ( N ~ 1 ) ) ) ) ) ( I ( B ~ t r u e ) ( * / ( X ( N ~ 0 ) ) ( I ( B ~ t r u e ) ( Y ( N ~ 1 ) ) ) - ( Y ( N ~ 2 ) ) ( R ~ - 0 . 7 4 5 9 0 4 6 8 8 7 4 9 3 8 6 8 ) ) ) ) ( X ( N ~ 0 ) ) ) ) ( X ( N ~ 2 ) ) ) ) ( I = ( R ~ 0 . 0 6 5 1 3 6 0 9 7 3 7 1 0 8 7 0 5 ) ( I <   ( - ( R ~ 1 . 0 8 3 4 7 9 5 5 7 4 6 3 8 0 0 3 ) / ( V ( N ~ 2 ) ) \\\\ & \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\text {~(X(N~2))})  \\\\ & \\quad \\text {~(X(N~2))})  \\\\ & \\text {~*+(-(Y(N~0))~(I(B~false)(X(N~2))~(Y(N~1) ))}) \\\\ & \\text {~(I(B~true)(*/(X(N~0))~(I(B~true)(Y(N~1) ))}) \\\\ & \\text {~(I(B~true)(*/(X(N~0))~(I(B~true)(Y(N~1) ))}) \\\\ & \\text {~(I(B~true)(*/(X(N~0))~(I(B~true)(Y(N~1) ))}) \\\\ & \\text {~(I(B~true)(R~0.586892403392552)+(R ~ -0.9444619621722184)~(R ~ -0.3539879557813772) } \\\\ & \\text {~(I(B~true)(*/(X(N~0))~(I(B~true)(Y(N~1))-(Y(N~2))~(R ~ -0.7459046887493868) }))  \\\\ & \\text {~*(X(N~2))*) } \\\\ & \\text {~*(Y(N~0)))(I(B~false)(X(N~2)))(Y(N~1) )))(I(B~true)(*/(X(N~0)))(I(B~true)(Y(N~1) ))-((Y(N~2)))(I(B~false)(X(N~2))} \\\\ & \\text {~(X(N~2))))} \\\\ & \\text {~(I=(R ~0.06513609737108705)/(U(N~2))Y(N~0) )))(I(B~false)(I<  (-((+(*+(-(Y(N~0)))(I(B~false)(X(N\n(YN~1))))))(I(B~true)(*/(X(N~0)))(I(B~true)(Y(N~1)))-((Y(N~2)))(R ~ -0.7459046887493868))))} \\\\ & \\text {~(X(N~0))})(I=(R ~0.06513609737108705)/(U(N~2))Y(N~0) )))(I(B~false)(R~0.586892403392552)+(R ~ -0.9444619621722184)~(R ~ -0.3539879557813772)  \\\\ & \\text {~(Y(N~1))))} \\\\ & \\text ~(X(N~1) )))(U(N~2))>(X(N~1) )))(U(N~2)) ((V(N~2))X(N~0)))))(X(N~2))*)+(-(Y(N~0)))(I(B~false)(X(N\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN\n(YN< nl>",
+          "image_source": "images/page_38_equation_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.954,
+            0.966,
+            0.981
+          ],
+          "content": "39"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.145,
+            0.085,
+            0.954,
+            0.847
+          ],
+          "sub_type": "code",
+          "content": "```txt\n0.06513609737108705)/((U(N 2))(Y(N 0)))))(I(B false)(*(I=(Y(N 1))(V(N 2)))(*(R -1.785981479518025)(-(Y(N 2)))/(-/((Y(N 1))(V(N 2)))(-V(N 2))(X(N 2)))))(Y(N 2)))))/(-/((R 0.6169974948994237)(X(N 2)))(X(N 2))))(I(B false)(Y(N 2))(V(N 2)))))(-(X(N 2))(I=(Y(N 2))(-Y(N 2))(U(N 2)))))(X(N 2))(Y(N 2)))))(X(N 2)))))(X(N 2)))))(X(N 0)))))(I=(R 0.06513609737108705)/(U(N 2))(Y(N 0)))))(I(B false)(*(I=(Y(N 1))(V(N 2)))(*(R -1.785981479518025)(-(Y(N 2)))/(-/((Y(N 1))(V(N 2)))(-V(N 2))(X(N 2)))))(Y(N 2)))))/(-/((R 0.6160974948994237)(X(N 2))))(X(N 2))))(I(B false)(Y(N 2))(V(N 2)))))(-(X(N 2))(I=(Y(N 2)))(-(Y(N 2))(U(N 2)))))(X(N 2))(Y(N 2)))))(X(N 2))))(X(N 0)))))*(+-(Y(N 0))(I(B false)(X(N 2))(Y(N 1)))))(I(B true)(*/(X(N 0))(I(B true)(Y(N 1)))(-Y(N 2))(R -0.7459046887493868)))))(X(N 0))))(I=(R 0.06513609737108705)/(U(N 2))(Y(N 0)))))(I(B false)(R 0.586892403392552)+(R -0.9444619621722184)(R -0.3539879557813772))))(Y(N 0)))))(I(<-(R 1.0834795574638003)/(V(N 2))(X(N 2)))))(I<(-/((+(*+(-(Y(N 0))(I(B false)(X(N 2))(Y(N 1)))))(I(B true)(*/(X(N 0))(I(B true)(Y(N 1)))(-Y(N 2))(R -0.7459046887493868)))))(X(N 0))))(I=(R 0.06513609737108705)/(UN (2))(Y(N 0)))))(I(B false)(R 0.586892403392552)+(R -0.9444619621722184)(R -0.3539879557813772))))(Y(N 0)))))(X(N 0)))*(I=(R 0.6513609737108705)/(UN (2))(Y(N 0)))))(I(B false)(R -0.7459046887493868)))))(X(N 0)))*(+-(Y(N 0))(I(B false)(X(N 2))(Y(N 1)))))(I(B true)(*/(X(N 0))(I(B true)(Y(N 1)))(-Y(N 2))(R -0.7459046887493868)))))(X(N 0))))(I=(R 0.6513609737108705)/(UN (2))(Y(N 0)))))(I(B false)(R -0.9444619621722184)(R -0.3539879557813772))))(Y(N 0)))))(X(N 0))))(X(N 2))))(I=(R 0.6513609737108705)/(UN (2))(Y(N 2))))(I(B false)(R -0.7459046887493868)))))(X(N 2)))*(+-(Y(N 1))(V(N 2)))*(*(-R -1.785981479518025)-*(R -1.785981479518025)-((-Y(N 1))(V(N 2)))-(-V(N 2))(X(N 2)))))(Y(N 2)))))/(-/((R -0.6169974948994237)(X(N 2))))(X(N 2))))(I(B false)(Y(N 2))(V(N 2)))))-(-(X(N 2))(I=(Y(N 2))-(-Y(N 2))(UN (2)))))(X(N 2))(Y(N 2)))))(X(N 2)))*(+-(Y(N (O)))(I(B false)(X(N 2))(Y(N 1)))))(I(B true)(*/(X(N 0))(I(B true)(YN (1)))/(-UN (2))(Y(N 0)))))(I(B false)(R -0.7459046887493868)))))(X(N 0)))*(+-(Y( N (O)))(I(B false)(X(N 2))(Y(N (1)))))(I(B true)*/(X(N (O)))(R -0.7459046887493868)))))(X(N (O))))*(+-(Y( N (O)))(I=(R -0.6513609737108705)/(UN (2))(Y(N (O)))))(I(B false)(R -0.9444619621722184)(R -0.3539879557813772)))*(+-(Y( N (O)))(I(B false)*/(X(N (O)))(V(N (N (O))))*(+-(Y( N (O)))(I(B false)(X(N (N (O))))*(+-(Y( N (O)))(X(N (N (O))))*(+-(Y( N (O)))(I(B false)(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))**(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( O ((R -0.9444619621722184))((UN (2))((Y/N (N (O))))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y( N (O)))(X( N (N (O))))*(+-(Y, Y ((R -0.9444619621722184))((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444619621722184))((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444619621722184))((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444), Y ((R -0.9444), Y ((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444), Y ((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444), Y ((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.9444), Y ((UN (2))((Y/N (N (O))))))*(+-(Y, Y ((R -0.<nl>\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.954,
+            0.966,
+            0.981
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.1,
+            0.073,
+            0.937,
+            0.86
+          ],
+          "content": "\\begin{array} { r l } & \\text true)(*/(X(N 0))(I(B true)(Y(N 1))(-Y(N 2))(R -0.7459046887493868)))) (X(N 0))(X(N 2)))) (X(N 2))) (I (= R 0 . 06513609737108705) \\\\ & \\quad / ( U ( N 2 ) ) ( Y ( N 0 ) ) ) ) ( I ( B f a l s e ) ( * ( I = ( Y ( N 1 ) ) ( V ( N 2 ) ) ) ( * ( R - 1 . 7 8 5 9 8 1 4 7 9 5 1 8 0 2 5 ) ( - ( Y ( N 2 ) ) / ( - / ( ( Y ( N 1 ) ) ( V ( N 2 ) ) ) ) ( - V ( N 2 ) ) \\\\ & \\quad ( X ( N 2 ) ) ) ) ( Y ( N 2 ) ) ) ) ) / ( - ( R 0 . 6 1 6 9 9 7 4 9 4 8 9 9 4 2 3 7 ) ( X ( N 2 ) ) ) ( X ( N 2 )) ( I ( B f a l s e ) ( Y ( N 2 ) ) ( V ( N 2 ) ) ) ) ) / ( - ( X ( N 2 ) ) ( I = ( Y ( N 2 ) ) ( - \\\\ & \\quad ( Y ( N 2 ) ) ( U ( N 2 ) ) ) ) ( X ( N 2 ) ) ( Y ( N 2 ) ) ) ) ) ( I = ( R 0 . 0 6 5 1 3 6 0 9 7 3 7 1 0 8 7 0 5 ) / ( U ( N 2 ) ) ( Y ( N 0 ) ) ) ) ) ( I ( B f a l s e ) ( * ( I = ( Y ( N 1 ) ) ( V ( N 2 ) ) ) \\\\ & \\quad (* ( R - 1 . 7 8 5 9 8 1 4 7 9 5 1 8 0 2 5 ) ( - ( Y ( N 2 ) ) / ( - / ( ( Y ( N 1 ) ) ( V ( N 2 ) ) ) (- V ( N 2 ) ) ( X ( N 2 ) ) ) ) ( Y ( N 2 ) ) ) ) ) / ( - ( - R 0 . 6 1 6 9 9 7 4 9 4 8 9 9 4 2 3 7 ) ( X ( N \\\\ & \\quad ( X ( N 2 )) ( I ( B f a l s e ) ( Y ( N 2 ) ) ( V ( N 2 ) ) ) ) ) / ( - X ( N 2 )( I = ( Y ( N 2 )( - Y( N 2 )( UN 2 )) )( X ( N 2 )( Y( N 2 )) )( X( N2 )) )( V( N2 )) )( X( N0 )) )( I = R \\\\ & \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\end{array}",
+          "image_source": "images/page_40_equation_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.954,
+            0.964,
+            0.981
+          ],
+          "content": "41"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.139,
+            0.953,
+            0.218
+          ],
+          "content": "2)))))(+(Y(N 2))(R -1.6972810613722311)))(-(Y(N 2))(+(X(N 2))-(U(N 0))-(Y(N 2))(U(N 2))))))))(I=(/(Y(N 2))/(Y(N 1))(+(I(B false)(X(N 2))(X(N 2)))+(Y(N 2))(I>(V(N 2))-(Y(N 0))(X(N 2)))))(R 1.442859722538481)(X(N 1)))))))(-R -0.8609985653714518)(Y(N 1)))))(V(N 2))(+(\\*(V(N 2))(Y(N 2)))X(N 0))))))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.786,
+            0.282,
+            0.953,
+            0.323
+          ],
+          "content": "Pop size: 100"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.75,
+            0.33,
+            0.953,
+            0.371
+          ],
+          "content": "Max gen: 50000"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.761,
+            0.379,
+            0.953,
+            0.42
+          ],
+          "content": "Mutate prob: 0.9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.771,
+            0.427,
+            0.953,
+            0.469
+          ],
+          "content": "Cross prob: 0.9"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.981
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.765,
+            0.106,
+            0.96,
+            0.167
+          ],
+          "content": "Summary"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.086,
+            0.265,
+            0.442,
+            0.314
+          ],
+          "level": 2,
+          "content": "Local search algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.321,
+            0.469,
+            0.371
+          ],
+          "content": "\\- Hill-climbing search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.381,
+            0.448,
+            0.428
+          ],
+          "content": "\\- Local beam search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.439,
+            0.792,
+            0.549
+          ],
+          "content": "\\- Simulated annealing search Equilibrium distribution. Markov chain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.557,
+            0.752,
+            0.608
+          ],
+          "content": "\\- Genetic algorithms (Genetic algorithms)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.616,
+            0.553,
+            0.667
+          ],
+          "content": "\\- Tabu search (not covered)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.95,
+            0.907,
+            0.988
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.982
+          ],
+          "content": "43"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.278,
+            0.595,
+            0.323
+          ],
+          "content": "1) Surprisingly efficient search technique"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.331,
+            0.524,
+            0.375
+          ],
+          "content": "2) Often the only feasible approach"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.383,
+            0.457,
+            0.427
+          ],
+          "content": "3) Wide range of applications"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.437,
+            0.766,
+            0.481
+          ],
+          "content": "4) Formal properties / guarantees still difficult to obtain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.491,
+            0.394,
+            0.533
+          ],
+          "content": "5) Intuitive explanation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.545,
+            0.897,
+            0.589
+          ],
+          "content": "\\- Search spaces are too large for systematic search anyway..."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.598,
+            0.6,
+            0.641
+          ],
+          "content": "6) Area will most likely continue to thrive"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.841,
+            0.951,
+            0.907,
+            0.987
+          ],
+          "content": "Bart Selman\nCS4700"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.94,
+            0.953,
+            0.966,
+            0.981
+          ],
+          "content": "44"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 44,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
