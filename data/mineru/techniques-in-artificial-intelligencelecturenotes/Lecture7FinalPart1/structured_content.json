@@ -1,0 +1,5759 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.071,
+            0.711,
+            0.096
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.115,
+            0.703,
+            0.169
+          ],
+          "content": "Resolution Theorem Proving: Propositional Logic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.178,
+            0.497,
+            0.203
+          ],
+          "content": "• Propositional resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.204,
+            0.575,
+            0.229
+          ],
+          "content": "• Propositional theorem proving"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.229,
+            0.347,
+            0.253
+          ],
+          "content": "• Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 7 • 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.876,
+            0.582
+          ],
+          "content": "Today we’re going to talk about resolution, which is a proof strategy. First, we’ll look at it in the propositional case, then in the first-order case. It will actually take two lectures to get all the way through this. Then, we’ll have you do problem set 2, which involves using the resolution proof technique on a moderately big problem in first-order inference."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.722,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 2"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.284,
+            0.073,
+            0.669,
+            0.102
+          ],
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.876,
+            0.623
+          ],
+          "content": "At the end of propositional logic, we talked a little bit about proof, what it was, with the idea that you write down some axioms, statements that you’re given, and then you try to derive something from them. And we've all had practice doing that in high school geometry and we've talked a little bit about natural deduction. So what we're going to talk about today is resolution. Which is the way that pretty much every modern automated theorem-prover is implemented. It's apparently the best way for computers to think about proving things."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.284,
+            0.073,
+            0.669,
+            0.102
+          ],
+          "level": 1,
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.111,
+            0.361,
+            0.131
+          ],
+          "content": "• Resolution rule:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.172,
+            0.279,
+            0.19
+          ],
+          "content": "\\alpha \\lor \\gamma",
+          "image_source": "images/page_2_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.479,
+            0.872,
+            0.623
+          ],
+          "content": "So here's the Resolution Inference Rule, in the propositional case. It says that if you know “alpha or beta”, and you know “not beta or gamma”, then you're allowed to conclude “alpha or gamma”. OK. Remember from when we looked at inference rules before that these greek letters are meta-variables. They can stand for big chunks of propositional logic, as long as the parts match up in the right way. So if you know something of the form “alpha or beta”, and you also know that “not beta or gamma”, then you can conclude “alpha or gamma”."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.283,
+            0.073,
+            0.67,
+            0.102
+          ],
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.362,
+            0.132
+          ],
+          "content": "• Resolution rule:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.147,
+            0.291,
+            0.166
+          ],
+          "content": "\\neg \\beta \\dot {\\textbf {v}} \\gamma",
+          "image_source": "images/page_3_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.222,
+            0.172,
+            0.28,
+            0.189
+          ],
+          "content": "\\alpha \\lor \\gamma",
+          "image_source": "images/page_3_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.188,
+            0.421,
+            0.209
+          ],
+          "content": "• Resolution refutation:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.879,
+            0.56
+          ],
+          "content": "It turns out that that one rule is all you need to prove things. At least, to prove that a set of sentences is not satisfiable. So, let's see how this is going to work. There's a proof strategy called Resolution Refutation, with three steps. And it goes like this."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.283,
+            0.073,
+            0.67,
+            0.102
+          ],
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.362,
+            0.131
+          ],
+          "content": "• Resolution rule:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.132,
+            0.282,
+            0.149
+          ],
+          "content": "\\alpha \\lor \\beta",
+          "image_source": "images/page_4_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.147,
+            0.291,
+            0.166
+          ],
+          "content": "\\neg \\beta \\dot {\\textbf {v}} \\gamma",
+          "image_source": "images/page_4_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.222,
+            0.172,
+            0.28,
+            0.189
+          ],
+          "content": "\\alpha \\lor \\gamma",
+          "image_source": "images/page_4_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.188,
+            0.421,
+            0.207
+          ],
+          "content": "• Resolution refutation:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.206,
+            0.499,
+            0.227
+          ],
+          "content": "• Convert all sentences to CNF"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.542
+          ],
+          "content": "First, you convert all of your sentences to conjunctive normal form. You already know how to do this! Then, you write each clause down as a premise or given in your proof."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.283,
+            0.073,
+            0.669,
+            0.102
+          ],
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.363,
+            0.188
+          ],
+          "content": "• Resolution rule: α v β ¬β v γ α v γ"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.188,
+            0.421,
+            0.207
+          ],
+          "content": "• Resolution refutation:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.207,
+            0.499,
+            0.225
+          ],
+          "content": "• Convert all sentences to CNF"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.224,
+            0.683,
+            0.244
+          ],
+          "content": "• Negate the desired conclusion (converted to CNF)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.875,
+            0.623
+          ],
+          "content": "Then, you negate the desired conclusion -- so you have to say what you're trying to prove, but what we're going to do is essentially a proof by contradiction. You've all seen the strategy of proof by contradiction (or, if we’re being fancy and Latin, reductio ad absurdum). You assert that the thing that you're trying to prove is false, and then you try to derive a contradiction. That's what we're going to do. So you negate the desired conclusion and convert that to CNF. And you add each of these clauses as a premise of your proof, as well."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.284,
+            0.073,
+            0.669,
+            0.102
+          ],
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.362,
+            0.131
+          ],
+          "content": "• Resolution rule:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.223,
+            0.132,
+            0.282,
+            0.149
+          ],
+          "content": "α v β"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.223,
+            0.147,
+            0.291,
+            0.166
+          ],
+          "content": "¬β v γ"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.223,
+            0.172,
+            0.28,
+            0.189
+          ],
+          "content": "α v γ"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.188,
+            0.421,
+            0.207
+          ],
+          "content": "• Resolution refutation:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.207,
+            0.499,
+            0.225
+          ],
+          "content": "• Convert all sentences to CNF"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.224,
+            0.681,
+            0.243
+          ],
+          "content": "• Negate the desired conclusion (converted to CNF)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.242,
+            0.531,
+            0.26
+          ],
+          "content": "• Apply resolution rule until either"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.26,
+            0.534,
+            0.278
+          ],
+          "content": "– Derive false (a contradiction)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.252,
+            0.277,
+            0.469,
+            0.296
+          ],
+          "content": "– Can’t apply any more"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.722,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.623
+          ],
+          "content": "And then we apply the Resolution Rule until either you can derive \"false\" -- which means that the conclusion did, in fact, follow from the things that you had assumed, right? If you assert that the negation of the thing that you're interested in is true, and then you prove for a while and you manage to prove false, then you've succeeded in a proof by contradiction of the thing that you were trying to prove in the first place. So you run the resolution rule until you derive false or until you can't apply it anymore."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.284,
+            0.073,
+            0.669,
+            0.102
+          ],
+          "level": 2,
+          "content": "Propositional Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.111,
+            0.362,
+            0.131
+          ],
+          "content": "• Resolution rule:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.223,
+            0.132,
+            0.282,
+            0.149
+          ],
+          "content": "α v β"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.223,
+            0.172,
+            0.279,
+            0.189
+          ],
+          "content": "α v γ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.188,
+            0.421,
+            0.207
+          ],
+          "content": "• Resolution refutation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.206,
+            0.499,
+            0.225
+          ],
+          "content": "• Convert all sentences to CNF"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.224,
+            0.681,
+            0.243
+          ],
+          "content": "• Negate the desired conclusion (converted to CNF)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.242,
+            0.531,
+            0.26
+          ],
+          "content": "• Apply resolution rule until either"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.259,
+            0.534,
+            0.278
+          ],
+          "content": "– Derive false (a contradiction)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.252,
+            0.277,
+            0.469,
+            0.295
+          ],
+          "content": "– Can’t apply any more"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.294,
+            0.64,
+            0.314
+          ],
+          "content": "• Resolution refutation is sound and complete"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.313,
+            0.818,
+            0.345
+          ],
+          "continues_prev": true,
+          "content": "• If we derive a contradiction, then the conclusion follows from the axioms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.344,
+            0.823,
+            0.378
+          ],
+          "content": "• If we can’t apply any more, then the conclusion cannot be proved from the axioms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.721,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.877,
+            0.661
+          ],
+          "content": "What if you can't apply the Resolution Rule anymore? Is there anything in particular that you can conclude? In fact, you can conclude that the thing that you were trying to prove can't be proved. So resolution refutation for propositional logic is a complete proof procedure. So if the thing that you're trying to prove is, in fact, entailed by the things that you've assumed, then you can prove it using resolution refutation. In the propositional case. It’s more complicated in the first-order case, as we’ll see. But in the propositional case, it means that if you've applied the Resolution Rule and you can't apply it anymore, then your desired conclusion can’t be proved."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.664,
+            0.869,
+            0.727
+          ],
+          "content": "It’s guaranteed that you’ll always either prove false, or run out of possible steps. It’s complete, because it always generates an answer. Furthermore, the process is sound: the answer is always correct."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.406,
+            0.101,
+            0.797,
+            0.435
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.073,
+                0.739,
+                0.102
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_chart_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.148,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.861,
+                0.542
+              ],
+              "content": "So let's just do a proof. Let's say I'm given “P or Q”, “P implies $\\mathbb { R } ^ { \\mathfrak { s } }$ and “Q implies $\\mathbb { R } ^ { \\flat }$ . I would like to conclude R from these three axioms. I'll use the word \"axiom\" just to mean things that are given to me right at the moment."
+            }
+          ],
+          "image_source": "images/page_8_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.407,
+            0.1,
+            0.797,
+            0.438
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.073,
+                0.739,
+                0.102
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_table_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.148,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.86,
+                0.522
+              ],
+              "content": "We start by converting this first sentence into conjunctive normal form. We don’t actually have to do anything. It’s already in the right form."
+            }
+          ],
+          "image_source": "images/page_9_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.189,
+            0.148,
+            0.309,
+            0.256
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.407,
+            0.102,
+            0.749,
+            0.429
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given Lectur |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.074,
+                0.739,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.513,
+                0.5
+              ],
+              "content": "Now, “P implies R” turns into “not P or R”."
+            }
+          ],
+          "image_source": "images/page_10_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.189,
+            0.148,
+            0.309,
+            0.256
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.748,
+            0.419
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.074,
+                0.738,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.548,
+                0.501
+              ],
+              "content": "Similarly, “Q implies R” turns into “not Q or R"
+            }
+          ],
+          "image_source": "images/page_11_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.074,
+            0.737,
+            0.101
+          ],
+          "level": 2,
+          "content": "Propositional Resolution Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.129,
+            0.309,
+            0.256
+          ],
+          "content": "<table><tr><td colspan=\"2\">Prove R</td></tr><tr><td>1</td><td>P v Q</td></tr><tr><td>2</td><td>P → R</td></tr><tr><td>3</td><td>Q → R</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.408,
+            0.103,
+            0.796,
+            0.437
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion Lecture 7 • 13 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.872,
+            0.519
+          ],
+          "content": "Now we want to add one more thing to our list of given statements. What's it going to be?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.525,
+            0.867,
+            0.607
+          ],
+          "content": "Not R. Right? We're going to assert the negation of the thing we're trying to prove. We'd like to prove that R follows from these things. But what we're going to do instead is say not R, and now we're trying to prove false. And if we manage to prove false, then we will have a proof that R is entailed by the assumptions."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.074,
+            0.738,
+            0.101
+          ],
+          "level": 2,
+          "content": "Propositional Resolution Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.128,
+            0.309,
+            0.256
+          ],
+          "content": "<table><tr><td colspan=\"2\">Prove R</td></tr><tr><td>1</td><td>P v Q</td></tr><tr><td>2</td><td>P → R</td></tr><tr><td>3</td><td>Q → R</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.102,
+            0.748,
+            0.425
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.505,
+                0.851,
+                0.567
+              ],
+              "content": "And now, we look for opportunities to apply the resolution rule. You can do it in any order you like (though some orders of application will result in much shorter proofs than others)."
+            },
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.836,
+                0.501
+              ],
+              "content": "Now, we’ll draw a blue line just to divide the assumptions from the proof steps."
+            }
+          ],
+          "image_source": "images/page_13_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.074,
+                0.738,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_14_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.102,
+            0.748,
+            0.407
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.478,
+                0.837,
+                0.501
+              ],
+              "content": "We can apply resolution to lines 1 and 2, and get $^ { * } \\mathbf { Q }$ or $\\mathbb { R } ^ { \\flat }$ by resolving away P."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_14_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 16"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.074,
+            0.738,
+            0.101
+          ],
+          "level": 2,
+          "content": "Propositional Resolution Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.406
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n| 6 | ¬ P | 2,4 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.696,
+                0.5
+              ],
+              "content": "And we can take lines 2 and 4, resolve away R, and get “not P.”"
+            }
+          ],
+          "image_source": "images/page_15_table_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 17"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.074,
+            0.738,
+            0.101
+          ],
+          "level": 2,
+          "content": "Propositional Resolution Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [
+            {
+              "bbox": [
+                0.199,
+                0.129,
+                0.294,
+                0.148
+              ],
+              "content": "Prove R"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_16_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.405
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n| 6 | ¬ P | 2,4 |\n| 7 | ¬ Q | 3,4 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.747,
+                0.501
+              ],
+              "content": "Similarly, we can take lines 3 and 4, resolve away R, and get “not Q”."
+            }
+          ],
+          "image_source": "images/page_16_table_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.074,
+            0.738,
+            0.101
+          ],
+          "level": 2,
+          "content": "Propositional Resolution Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.405
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n| 6 | ¬ P | 2,4 |\n| 7 | ¬ Q | 3,4 |\n| 8 | R | 5,7 |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.716,
+                0.421,
+                0.793,
+                0.435
+              ],
+              "content": "Lecture 7 • 18"
+            },
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.551,
+                0.501
+              ],
+              "content": "By resolving away Q in lines 5 and 7, we get R."
+            }
+          ],
+          "image_source": "images/page_17_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.074,
+                0.737,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_18_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.415
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n| 6 | ¬ P | 2,4 |\n| 7 | ¬ Q | 3,4 |\n| 8 | R | 5,7 |\n| 9 | • | 4,8 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.716,
+                0.421,
+                0.793,
+                0.435
+              ],
+              "content": "Lecture 7 • 19"
+            }
+          ],
+          "image_source": "images/page_18_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.853,
+            0.54
+          ],
+          "content": "And finally, resolving away R in lines 4 and 8, we get the empty clause, which is false. We’ll often draw this little black box to indicate that we’ve reached the desired contradiction."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 20"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.188,
+            0.128,
+            0.309,
+            0.257
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.074,
+                0.738,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_19_image_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.417
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n| 6 | ¬ P | 2,4 |\n| 7 | ¬ Q | 3,4 |\n| 8 | R | 5,7 |\n| 9 | • | 4,8 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.878,
+            0.581
+          ],
+          "content": "How did I do this last resolution? Let’s see how the resolution rule is applied to lines 4 and 8. The way to look at it is that R is really “false or R”, and that “not R” is really “not R or false”. (Of course, the order of the disjuncts is irrelevant, because disjunction is commutative). So, now we resolve away R, getting “false or false”, which is false."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.256
+          ],
+          "content": "| 1 | P v Q |\n| --- | --- |\n| 2 | P → R |\n| 3 | Q → R |",
+          "captions": [
+            {
+              "bbox": [
+                0.215,
+                0.073,
+                0.738,
+                0.101
+              ],
+              "content": "Propositional Resolution Example"
+            },
+            {
+              "bbox": [
+                0.199,
+                0.129,
+                0.295,
+                0.148
+              ],
+              "content": "<u>Prove R</u>"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.188,
+                0.3,
+                0.281,
+                0.321
+              ],
+              "content": "false v R"
+            },
+            {
+              "bbox": [
+                0.188,
+                0.322,
+                0.3,
+                0.342
+              ],
+              "content": "¬ R v false"
+            }
+          ],
+          "image_source": "images/page_20_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.17,
+            0.352,
+            0.313,
+            0.374
+          ],
+          "content": "false v false"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.409,
+            0.103,
+            0.746,
+            0.416
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P v Q | Given |\n| 2 | ¬ P v R | Given |\n| 3 | ¬ Q v R | Given |\n| 4 | ¬ R | Negated conclusion |\n| 5 | Q v R | 1,2 |\n|  | P |  |\n| 7 | ¬ Q | 3,4 |\n| 8 | R | 5,7 |\n| 9 | • | 4,8 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.716,
+                0.421,
+                0.793,
+                0.435
+              ],
+              "content": "Lecture 7 • 21"
+            },
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.873,
+                0.539
+              ],
+              "content": "One of these steps is unnecessary. Which one? Line 6. It’s a perfectly good proof step, but it doesn’t contribute to the final conclusion, so we could have omitted it."
+            }
+          ],
+          "image_source": "images/page_20_table_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.434
+          ],
+          "content": "Lecture 7 • 22"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.628,
+            0.102
+          ],
+          "level": 1,
+          "content": "The Power of False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.556,
+            0.5
+          ],
+          "content": "Here’s a question. Does $^ { \\circ } \\mathrm { P }$ and not $\\mathrm { P } ^ { \\flat }$ entail Z?"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.628,
+            0.102
+          ],
+          "level": 2,
+          "content": "The Power of False"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.149,
+            0.309,
+            0.22
+          ],
+          "content": "| 1 | P |\n| --- | --- |\n| 2 | ¬ P |",
+          "captions": [
+            {
+              "bbox": [
+                0.199,
+                0.129,
+                0.295,
+                0.148
+              ],
+              "content": "Prove Z"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.427,
+            0.131,
+            0.764,
+            0.29
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.715,
+                0.421,
+                0.793,
+                0.435
+              ],
+              "content": "Lecture 7 • 23"
+            },
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.633,
+                0.502
+              ],
+              "content": "It does, and it’s easy to prove using resolution refutation."
+            }
+          ],
+          "image_source": "images/page_22_table_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 24"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "The Power of False"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.149,
+            0.309,
+            0.22
+          ],
+          "content": "| 1 | P |\n| --- | --- |\n| 2 | ¬ P |",
+          "captions": [
+            {
+              "bbox": [
+                0.199,
+                0.129,
+                0.295,
+                0.148
+              ],
+              "content": "Prove Z"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_23_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.427,
+            0.131,
+            0.763,
+            0.283
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P | Given |\n| 2 | ¬ P | Given |\n| 3 | ¬ Z | Negated conclusion |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.824,
+            0.502
+          ],
+          "content": "We start by writing down the assumptions and the negation of the conclusion."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 25"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "The Power of False"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.149,
+            0.309,
+            0.22
+          ],
+          "content": "| 1 | P |\n| --- | --- |\n| 2 | ¬ P |",
+          "captions": [
+            {
+              "bbox": [
+                0.199,
+                0.129,
+                0.294,
+                0.148
+              ],
+              "content": "Prove Z"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_24_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.427,
+            0.131,
+            0.763,
+            0.288
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P | Given |\n| 2 | ¬ P | Given |\n| 3 | ¬ Z | Negated conclusion |\n| 4 | • | 1,2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.843,
+            0.502
+          ],
+          "content": "Then, we can resolve away P in lines 1 and 2, getting a contradiction right away."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.129,
+            0.295,
+            0.148
+          ],
+          "content": "Prove Z"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "The Power of False"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.14,
+            0.311,
+            0.221
+          ],
+          "content": "| 1 | P |\n| --- | --- |\n| 2 | ¬ P |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.427,
+            0.131,
+            0.763,
+            0.288
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P | Given |\n| 2 | ¬ P | Given |\n| 3 | ¬ Z | Negated conclusion |\n| 4 | • | 1,2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.311,
+            0.515,
+            0.335
+          ],
+          "content": "Note that (P Æ ¬ P) → Z is valid"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.874,
+            0.541
+          ],
+          "content": "Because we can prove Z from “P and not $\\mathrm { P } ^ { \\flat }$ using a sound proof procedure, then $^ { \\circ } \\mathrm { P }$ and not $\\mathrm { P } ^ { \\flat }$ entails Z. And, by the theorem relating entailment and validity, we have that the sentence $^ { \\circ } \\mathrm { P }$ and not P implies $Z ^ { \\flat }$ is valid."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.072,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "The Power of False"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.148,
+            0.309,
+            0.221
+          ],
+          "content": "| 1 | P |\n| --- | --- |\n| 2 | ¬ P |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.427,
+            0.131,
+            0.763,
+            0.288
+          ],
+          "content": "| Step | Formula | Derivation |\n| --- | --- | --- |\n| 1 | P | Given |\n| 2 | ¬ P | Given |\n| 3 | ¬ Z | Negated conclusion |\n| 4 | • | 1,2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.311,
+            0.516,
+            0.334
+          ],
+          "content": "Note that (P Æ ¬ P) → Z is valid"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.344,
+            0.717,
+            0.384
+          ],
+          "content": "Any conclusion follows from a contradiction – and so strict logic systems are very brittle."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.849,
+            0.559
+          ],
+          "content": "So, we see, again, that any conclusion follows from a contradiction. This is the property that can make logical systems quite brittle; they’re not robust in the face of noise. We’ll address this problem when we move to probabilistic inference."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.339,
+            0.072,
+            0.616,
+            0.102
+          ],
+          "content": "Example Problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.509,
+            0.106,
+            0.666,
+            0.13
+          ],
+          "content": "Convert to CNF"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.128,
+            0.256,
+            0.148
+          ],
+          "content": "Prove R"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.159,
+            0.155,
+            0.403,
+            0.257
+          ],
+          "content": "1 (P → Q) → Q 2 (P → P) → R 3 $( \\mathsf { R } \\to \\mathsf { S } ) \\to \\neg ( \\mathsf { S } \\to \\mathsf { Q } )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 28"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.873,
+            0.52
+          ],
+          "content": "Here’s an example problem. Stop and do the conversion into CNF before you go to the next slide."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.148,
+            0.054,
+            0.853,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.483,
+                0.501
+              ],
+              "content": "So, the first formula turns into $^ { \\circ } \\mathrm { P }$ or $\\mathbf { Q } ^ { \\flat }$ ."
+            }
+          ],
+          "image_source": "images/page_28_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.491,
+            0.131,
+            0.722,
+            0.332
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.337,
+                0.072,
+                0.617,
+                0.102
+              ],
+              "content": "Example Problem"
+            },
+            {
+              "bbox": [
+                0.507,
+                0.107,
+                0.667,
+                0.129
+              ],
+              "content": "Convert to CNF"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_29_image_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.159,
+            0.154,
+            0.405,
+            0.257
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.172,
+                0.128,
+                0.257,
+                0.148
+              ],
+              "content": "Prove R"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_29_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.857,
+            0.541
+          ],
+          "content": "The second turns into $( ^ { \\mathrm { c } } \\mathrm { P }$ or $\\mathbb { R } ^ { \\flat }$ and “not P or $\\mathrm { R } ^ { \\circ } )$ . We probably should have simplified it into “False or $\\mathbb { R } ^ { \\mathfrak { s } }$ at the second step, which reduces just to R. But $\\mathbf { w e } ^ { \\flat } \\Pi$ leave it as is, for now."
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.158,
+            0.154,
+            0.405,
+            0.257
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.337,
+                0.072,
+                0.617,
+                0.102
+              ],
+              "content": "Example Problem"
+            },
+            {
+              "bbox": [
+                0.172,
+                0.128,
+                0.257,
+                0.148
+              ],
+              "content": "Prove R"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_30_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.491,
+            0.132,
+            0.723,
+            0.296
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.507,
+                0.106,
+                0.668,
+                0.129
+              ],
+              "content": "Convert to CNF"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_30_image_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.343,
+            0.612,
+            0.361
+          ],
+          "content": "\\bullet \\quad (\\mathrm{R} \\not \\in \\mathrm{S}) \\vee (\\mathrm{S} \\not \\in \\mathrm{Q})",
+          "image_source": "images/page_30_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.37,
+            0.358,
+            0.821,
+            0.378
+          ],
+          "content": "\\cdot \\quad (R \\lor S) A E \\square (\\neg S \\lor S) A E (R \\lor \\neg Q) A E (\\neg S \\lor \\neg Q)",
+          "image_source": "images/page_30_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.369,
+            0.374,
+            0.72,
+            0.396
+          ],
+          "content": "\\bullet \\quad (R \\lor S) A E \\square (R \\lor \\neg Q) A E (\\neg S \\lor \\neg Q)",
+          "image_source": "images/page_30_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.876,
+            0.541
+          ],
+          "content": "Finally, the last formula requires us to do a big expansion, but one of the terms is true and can be left out. So, we get “(R or S) and (R or not Q) and (not S or not Q)”."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.062,
+            0.85,
+            0.449
+          ],
+          "content": "<table><tr><td rowspan=\"12\" colspan=\"2\">Prove R</td><td>1</td><td>P v Q</td><td></td></tr><tr><td>2</td><td>P v R</td><td></td></tr><tr><td>3</td><td> $\\neg P v R$ </td><td></td></tr><tr><td>4</td><td>R v S</td><td></td></tr><tr><td>5</td><td>R v  $\\neg Q$ </td><td></td></tr><tr><td>6</td><td> $\\neg S v \\neg Q$ </td><td></td></tr><tr><td>7</td><td> $\\neg R$ </td><td>Neg</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table>",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.479,
+                0.867,
+                0.521
+              ],
+              "content": "Now we can almost start the proof. We copy each of the clauses over here, and we add the negation of the query."
+            }
+          ],
+          "image_source": "images/page_31_table_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.525,
+            0.613,
+            0.548
+          ],
+          "content": "Please stop and do this proof yourself before going on."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.062,
+            0.849,
+            0.449
+          ],
+          "content": "<table><tr><td rowspan=\"12\">Prove R<img src=\"images/page_32_table_image_0_1.jpg\"/></td><td>P v Q</td><td></td></tr><tr><td>P v R</td><td></td></tr><tr><td> $\\neg P v R$ </td><td></td></tr><tr><td>R v S</td><td></td></tr><tr><td>R v  $\\neg Q$ </td><td></td></tr><tr><td> $\\neg S v \\neg Q$ </td><td></td></tr><tr><td> $\\neg R$ </td><td>Neg</td></tr><tr><td>S</td><td>4,7</td></tr><tr><td> $\\neg Q$ </td><td>6,8</td></tr><tr><td>P</td><td>1,9</td></tr><tr><td>R</td><td>3,10</td></tr><tr><td>•</td><td>7,11</td></tr></table>",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.119,
+                0.479,
+                0.711,
+                0.501
+              ],
+              "content": "Here’s a sample proof. It’s one of a whole lot of possible proofs."
+            }
+          ],
+          "image_source": "images/page_32_table_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.072,
+            0.607,
+            0.103
+          ],
+          "content": "Proof Strategies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 34"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.849,
+            0.522
+          ],
+          "content": "In choosing among all the possible proof steps that you can do at any point, there are two rules of thumb that are really important."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.102
+          ],
+          "content": "Proof Strategies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.797,
+            0.158
+          ],
+          "content": "• Unit preference: prefer a resolution step involving an unit clause (clause with one literal)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.159,
+            0.783,
+            0.213
+          ],
+          "content": "• Produces a shorter clause – which is good since we are trying to produce a zero-length clause, that is, a contradiction."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 35"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.864,
+            0.542
+          ],
+          "content": "The unit preference rule says that if you can involve a clause that has only one literal in it, that's usually a good idea. It’s good because you get back a shorter clause. And the shorter a clause is, the closer it is to false."
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.349,
+            0.075,
+            0.605,
+            0.101
+          ],
+          "level": 2,
+          "content": "Proof Strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.797,
+            0.157
+          ],
+          "content": "• Unit preference: prefer a resolution step involving an unit clause (clause with one literal)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.159,
+            0.782,
+            0.212
+          ],
+          "content": "• Produces a shorter clause – which is good since we are trying to produce a zero-length clause, that is, a contradiction."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.216,
+            0.787,
+            0.28
+          ],
+          "content": "• Set of support: Choose a resolution involving the negated goal or any clause derived from the negated goal."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.281,
+            0.799,
+            0.319
+          ],
+          "content": "• We’re trying to produce a contradiction that follows from the negated goal, so these are “relevant” clauses."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.32,
+            0.816,
+            0.358
+          ],
+          "content": "• If a contradiction exists, one can find one using the set-of-support strategy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.878,
+            0.642
+          ],
+          "content": "The set-of-support rule says you should involve the thing that you're trying to prove. It might be that you can derive conclusions all day long about the solutions to chess games and stuff from the axioms, but once you're trying to prove something about what way to run, it doesn't matter. So, to direct your “thought” processes toward deriving a contradiction, you should always involve a clause that came from the negated goal, or that was produced by the set of support rule. Adhering to the set-of-support rule will still make the resolution refutation process sound and complete."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.317,
+            0.073,
+            0.637,
+            0.101
+          ],
+          "content": "Recitation Problems"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.811,
+            0.179
+          ],
+          "content": "Using resolution refutation, prove the last sentence in each group from the rest of the sentences in the group."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.188,
+            0.194,
+            0.264,
+            0.217
+          ],
+          "content": "P \\to Q",
+          "image_source": "images/page_36_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.35,
+            0.194,
+            0.535,
+            0.218
+          ],
+          "content": "(P \\to Q) \\lor (R \\to S)",
+          "image_source": "images/page_36_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.589,
+            0.185,
+            0.817,
+            0.209
+          ],
+          "content": "\\neg (P \\land \\neg Q) \\lor \\neg (\\neg S \\land \\neg T)",
+          "image_source": "images/page_36_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.185,
+            0.22,
+            0.274,
+            0.242
+          ],
+          "content": "\\neg P \\to R",
+          "image_source": "images/page_36_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.351,
+            0.22,
+            0.535,
+            0.244
+          ],
+          "content": "(P \\to S) \\lor (R \\to Q)",
+          "image_source": "images/page_36_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.589,
+            0.212,
+            0.679,
+            0.235
+          ],
+          "content": "- (T \\lor Q)",
+          "image_source": "images/page_36_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.185,
+            0.246,
+            0.289,
+            0.27
+          ],
+          "content": "\\neg Q \\to \\neg R",
+          "image_source": "images/page_36_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.589,
+            0.237,
+            0.804,
+            0.262
+          ],
+          "content": "U \\to (\\neg T \\to (\\neg S \\land P))",
+          "image_source": "images/page_36_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.589,
+            0.265,
+            0.632,
+            0.285
+          ],
+          "content": "\\neg U",
+          "image_source": "images/page_36_equation_10.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.169,
+            0.322,
+            0.819,
+            0.347
+          ],
+          "content": "Use resolution refutation to do problem 6.5 from R&N."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.865,
+            0.519
+          ],
+          "content": "Please do at least two of these problems before going on, and do the rest before the next recitation."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.3,
+            0.072,
+            0.653,
+            0.102
+          ],
+          "level": 1,
+          "content": "First-Order Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.875,
+            0.583
+          ],
+          "content": "OK, now what if we have variables? We're going to move to the first-order case. And there's going to be a resolution rule in the first-order case, and it's essentially the same inference rule, but the trick is what to do with the variables. And what to do with the variables is pretty hard and pretty complicated. We’ll spend the rest of this lecture understanding what to do with the variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.301,
+            0.073,
+            0.652,
+            0.101
+          ],
+          "level": 1,
+          "content": "First-Order Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.111,
+            0.383,
+            0.134
+          ],
+          "content": "∀ x. P(x) → Q(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.273,
+            0.142,
+            0.323,
+            0.164
+          ],
+          "content": "P(A)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.11,
+            0.798,
+            0.141
+          ],
+          "content": "uppercase letters: constants"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.272,
+            0.17,
+            0.325,
+            0.191
+          ],
+          "content": "Q(A)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.632,
+            0.143,
+            0.801,
+            0.174
+          ],
+          "content": "lowercase letters: variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.871,
+            0.54
+          ],
+          "content": "Let’s try to get some intuition through an example. Imagine you knew “for all X, P of X implies Q of X.” And let's say you also knew P of A. What would you be able to conclude?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 39"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.544,
+            0.625,
+            0.567
+          ],
+          "content": "Q of A, right? You ought to be able to conclude Q of A."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.3,
+            0.073,
+            0.653,
+            0.102
+          ],
+          "content": "First-Order Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.211,
+            0.111,
+            0.384,
+            0.134
+          ],
+          "content": "∀ x. P(x) → Q(x)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.188,
+            0.107,
+            0.404,
+            0.208
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_39_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.273,
+            0.143,
+            0.324,
+            0.164
+          ],
+          "content": "P(A)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.17,
+            0.326,
+            0.191
+          ],
+          "content": "Q(A)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.431,
+            0.116,
+            0.544,
+            0.138
+          ],
+          "content": "Syllogism:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.137,
+            0.589,
+            0.154
+          ],
+          "content": "All men are mortal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.153,
+            0.584,
+            0.17
+          ],
+          "content": "Socrates is a man"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.169,
+            0.584,
+            0.185
+          ],
+          "content": "Socrates is mortal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.63,
+            0.11,
+            0.799,
+            0.128
+          ],
+          "content": "uppercase letters:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.126,
+            0.725,
+            0.141
+          ],
+          "content": "constants"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.159,
+            0.721,
+            0.174
+          ],
+          "content": "variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.635,
+            0.143,
+            0.801,
+            0.161
+          ],
+          "content": "lowercase letters:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.827,
+            0.519
+          ],
+          "content": "This is actually Aristotle’s original syllogism: From “All men are mortal” and “Socrates is a man”, conclude “Socrates is a mortal”."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.299,
+            0.073,
+            0.653,
+            0.102
+          ],
+          "content": "First-Order Resolution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.196,
+            0.108,
+            0.399,
+            0.198
+          ],
+          "content": "$\\overline { { \\forall \\mathsf { x } . \\mathsf { P } ( \\mathsf { x } ) \\to \\mathsf { Q } ( \\mathsf { x } ) } }$ P(A) Q(A)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.431,
+            0.115,
+            0.545,
+            0.139
+          ],
+          "content": "Syllogism:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.432,
+            0.136,
+            0.589,
+            0.154
+          ],
+          "content": "All men are mortal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.433,
+            0.152,
+            0.584,
+            0.17
+          ],
+          "content": "Socrates is a man"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.629,
+            0.109,
+            0.8,
+            0.141
+          ],
+          "content": "uppercase letters: constants"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.433,
+            0.169,
+            0.584,
+            0.185
+          ],
+          "content": "Socrates is mortal"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.142,
+            0.802,
+            0.174
+          ],
+          "content": "lowercase letters: variables"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.193,
+            0.218,
+            0.39,
+            0.308
+          ],
+          "content": "\\begin{array}{c} \\forall x. \\neg P (x) \\lor Q (x) \\\\ \\frac {P (A)}{Q (A)} \\end{array}",
+          "image_source": "images/page_40_equation_8.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.425,
+            0.238,
+            0.57,
+            0.297
+          ],
+          "content": "Equivalent by definition of implication"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 7 • 41"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.878,
+            0.521
+          ],
+          "content": "So, how can we justify this conclusion formally. Well, the first step would be to get rid of the implication."
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.298,
+            0.072,
+            0.655,
+            0.102
+          ],
+          "content": "First-Order Resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.43,
+            0.114,
+            0.591,
+            0.186
+          ],
+          "content": "Syllogism: All men are mortal Socrates is a man Socrates is mortal"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.141,
+            0.09,
+            0.853,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_41_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.425,
+            0.238,
+            0.571,
+            0.298
+          ],
+          "content": "Equivalent by definition of implication"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.83,
+            0.543
+          ],
+          "content": "Next, we could substitute the constant A in for the variable x in the universally quantified sentence. By the semantics of universal quantification, that’s allowed. And now, we can apply the propositional resolution rule."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.142,
+            0.058,
+            0.854,
+            0.453
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_42_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.877,
+            0.543
+          ],
+          "content": "The hard part is figuring out how to instantiate the variables in the universal statements. In this problem, it was clear that A was the relevant individual. But it not necessarily clear at all how to do that automatically."
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.071,
+            0.584,
+            0.102
+          ],
+          "content": "Substitutions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 44"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.823,
+            0.522
+          ],
+          "content": "In order to derive an algorithmic way of finding the right instantiations for the universal variables, we need something called substitutions."
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.369,
+            0.072,
+            0.585,
+            0.102
+          ],
+          "level": 1,
+          "content": "Substitutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.107,
+            0.593,
+            0.135
+          ],
+          "content": "P(x, F(y), B) : an atomic sentence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 45"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.561
+          ],
+          "content": "Here’s an example of what we called an atomic sentence before, a predicate applied to some terms. There are two variables in here: x, and y. We can think about different ways that we can substitute terms into this expression, right? Those are called substitution instances of that expression."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.37,
+            0.074,
+            0.583,
+            0.101
+          ],
+          "level": 2,
+          "content": "Substitutions"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.218,
+            0.135,
+            0.805,
+            0.325
+          ],
+          "content": "| Substitution instances | Substitution$\\{v_1/t_1,..., v_n/t_n\\}$ | Comment |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.217,
+                0.109,
+                0.591,
+                0.133
+              ],
+              "content": "P(x, F(y), B) : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_45_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.876,
+            0.541
+          ],
+          "content": "A substitution is a set of variable-term pairs, written this way. It says that whenever you see variable I, you should substitute in term I. There should not be more than one entry for a single variable."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.218,
+            0.135,
+            0.804,
+            0.328
+          ],
+          "content": "| Substitution instances | Substitution {v1 /t1,…, vn /tn} | Comment |\n| --- | --- | --- |\n| P(z, F(w), B) | {x/z, y/w} | Alphabetic variant |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.37,
+                0.074,
+                0.583,
+                0.1
+              ],
+              "content": "Substitutions"
+            },
+            {
+              "bbox": [
+                0.218,
+                0.11,
+                0.591,
+                0.132
+              ],
+              "content": "P(x, F(y), B) : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_46_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.861,
+            0.56
+          ],
+          "content": "So here's one substitution instance. P(z,F(w),B). It’s not particularly interesting. It’s called an alphabetic variant, because we’ve just substituted some different variables in for x and y. In particular, we’ve put z in for x and w in for y, as shown in the substitution."
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.371,
+            0.074,
+            0.583,
+            0.1
+          ],
+          "level": 2,
+          "content": "Substitutions"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.218,
+            0.135,
+            0.805,
+            0.328
+          ],
+          "content": "| Substitution instances | Substitution {v1 /t1,…, vn /tn} | Comment |\n| --- | --- | --- |\n| P(z, F(w), B) | {x/z, y/w} | Alphabetic variant |\n| P(x, F(A), B) | {y/A} |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.218,
+                0.11,
+                0.591,
+                0.132
+              ],
+              "content": "P(x, F(y), B) : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_47_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.861,
+            0.52
+          ],
+          "content": "Here’s another substitution instance of our sentence: P(x, F(A), B), We’ve put the constant A in for the variable y."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.371,
+            0.074,
+            0.583,
+            0.1
+          ],
+          "level": 2,
+          "content": "Substitutions"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.218,
+            0.135,
+            0.805,
+            0.328
+          ],
+          "content": "| Substitution instances | Substitution {v1 /t1,…, vn /tn} | Comment |\n| --- | --- | --- |\n| P(z, F(w), B) | {x/z, y/w} | Alphabetic variant |\n| P(x, F(A), B) | {y/A} |  |\n| P(G(z), F(A), B) | {x/G(z), y/A} |  |\n|  |  |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.218,
+                0.11,
+                0.591,
+                0.132
+              ],
+              "content": "$\\mathsf { P } ( \\mathsf { x } ,   \\mathsf { F } ( \\mathsf { y } ) ,   \\mathsf { B } )$ : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_48_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.865,
+            0.52
+          ],
+          "content": "To get $\\mathrm { P } ( \\mathrm { G } ( \\mathrm { z } ) , \\mathrm { F } ( \\mathrm { A } ) , \\mathrm { B } )$ , we substitute the term G(z) in for x and the constant A for y."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.371,
+            0.074,
+            0.582,
+            0.1
+          ],
+          "content": "Substitutions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.11,
+            0.591,
+            0.132
+          ],
+          "content": "P(x, F(y), B) : an atomic sentence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.135,
+            0.805,
+            0.329
+          ],
+          "content": "Substitution Substitution Comment instances $\\{ \\mathsf { v _ { 1 } } / \\mathsf { t _ { 1 } } , \\dots ,   \\mathsf { v _ { n } } / \\mathsf { t _ { n } } \\}$ $\\mathsf { P } ( z ,   \\mathsf { F } ( \\mathsf { w } ) ,   \\mathsf { B } )$ $\\{ x / z ,   y / w \\}$ Alphabetic variant $\\mathsf { P } ( \\mathsf { x } ,   \\mathsf { F } ( \\mathsf { A } ) ,   \\mathsf { B } )$ $\\{ \\mathsf { y } / \\mathsf { A } \\}$ $\\mathsf { P } ( \\mathsf { G } ( \\mathsf { z } ) ,   \\mathsf { F } ( \\mathsf { A } ) ,   \\mathsf { B } )$ {x/G(z), y/A} $\\mathsf { P } ( \\mathsf { C } ,   \\mathsf { F } ( \\mathsf { A } ) ,   \\mathsf { B } )$ $\\{ \\mathsf { x } / \\mathsf { C } ,   \\mathsf { y } / \\mathsf { A } \\}$ Ground instance"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 50"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.845,
+            0.541
+          ],
+          "content": "Here’s one more -- P(C, F(A), B). It’s sort of interesting, because it doesn't have any variables in it. We'll call an atomic sentence with no variables a ground instance. Ground means it doesn't have any variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.371,
+            0.075,
+            0.582,
+            0.099
+          ],
+          "level": 2,
+          "content": "Substitutions"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.218,
+            0.135,
+            0.805,
+            0.329
+          ],
+          "content": "| Substitution instances | Substitution {v1 /t1,…, vn /tn} | Comment |\n| --- | --- | --- |\n| P(z, F(w), B) | {x/z, y/w} | Alphabetic variant |\n| P(x, F(A), B) | {y/A} |  |\n| P(G(z), F(A), B) | {x/G(z), y/A} |  |\n| P(C, F(A), B) | {x/C, y/A} | Ground instance |",
+          "captions": [
+            {
+              "bbox": [
+                0.218,
+                0.11,
+                0.591,
+                0.132
+              ],
+              "content": "P(x, F(y), B) : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_50_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.864,
+            0.561
+          ],
+          "content": "You can think about substitution instances, in general, as being more specific than the original sentence. A constant is more specific than a variable. There are fewer interpretations under which a sentence with a constant is true. And even F(x) is more specific than y, because the range of F might be smaller than U."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.566,
+            0.869,
+            0.646
+          ],
+          "content": "You’re not allowed to substitute anything in for a constant, or for a compound term (the application of a function symbol to some terms). You **are** allowed to substitute for a variable inside a compound term, though, as we have done with F in this example."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.371,
+            0.074,
+            0.582,
+            0.1
+          ],
+          "level": 2,
+          "content": "Substitutions"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.216,
+            0.134,
+            0.805,
+            0.44
+          ],
+          "content": "| Substitution instances | Substitution$\\{v_1/t_1,..., v_n/t_n\\}$ | Comment |\n| --- | --- | --- |\n| P(z, F(w), B) | {x/z, y/w} | Alphabetic variant |\n| P(x, F(A), B) | {y/A} |  |\n| P(G(z), F(A), B) | {x/G(z), y/A} |  |\n| P(C, F(A), B) | {x/C, y/A} | Ground instance |",
+          "captions": [
+            {
+              "bbox": [
+                0.218,
+                0.11,
+                0.591,
+                0.132
+              ],
+              "content": "P(x, F(y), B) : an atomic sentence"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_51_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.857,
+            0.56
+          ],
+          "content": "We’ll use the notation of an expression followed by a substitution to mean the expression that we get by applying the substitution to the expression. And the book uses a function subst, with two arguments, the substitution and the expression."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.565,
+            0.876,
+            0.647
+          ],
+          "content": "To apply a substitution to an expression, we look to see if any of the variables in the expression have entries in the substitution. If they do, we substitute in the appropriate new expression for the variable, and continue to look for possible substitutions until no more opportunities exist."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.389,
+            0.071,
+            0.565,
+            0.102
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 7 • 53"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.839,
+            0.522
+          ],
+          "content": "Now we’ll look at the process of unification, which is finding a substitution that makes two expressions match each other exactly."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.39,
+            0.073,
+            0.563,
+            0.101
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.821,
+            0.159
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 54"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.867,
+            0.541
+          ],
+          "content": "So, expressions Omega 1 and Omega 2 are unifiable if there exists a substitution S such that (Omega-1 S) will be equal to (Omega-2 S). And that substitution S is called a unifier of omega1 and omega2."
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.389,
+            0.074,
+            0.564,
+            0.1
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.82,
+            0.157
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.772,
+            0.183
+          ],
+          "content": "• Let $\\mathbf { \\omega } _ { 1 } = \\mathbf { \\nabla } \\mathbf { X }$ and $\\mathbf { \\omega } _ { 2 } = \\mathbf { \\gamma } ,$ , the following are unifiers"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.217,
+            0.711,
+            0.354
+          ],
+          "content": "s $\\omega _ { 1 } ~ S$ $\\omega _ { 2 } ~ S$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 55"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.844,
+            0.521
+          ],
+          "content": "So, let’s look at some unifiers of the expressions x and y. Since x and y are both variables, there are lots of things you can do to make them match."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.389,
+            0.074,
+            0.564,
+            0.101
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.82,
+            0.157
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.772,
+            0.184
+          ],
+          "content": "• Let $\\mathbf { \\omega } _ { 1 } = \\mathbf { \\nabla } \\mathbf { X }$ and $\\begin{array} { r } { \\boldsymbol { \\omega } _ { 2 } = \\boldsymbol { \\gamma } , } \\end{array}$ the following are unifiers"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.217,
+            0.711,
+            0.354
+          ],
+          "content": "s $\\omega _ { 1 } ~ S$ $\\omega _ { 2 } ~ S$ $\\{ y / x \\}$ x x"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 56"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.72,
+            0.501
+          ],
+          "content": "If you substitute x in for y, then both expressions come out to be x."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.389,
+            0.074,
+            0.564,
+            0.101
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.82,
+            0.157
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.772,
+            0.184
+          ],
+          "content": "• Let $\\mathbf { \\omega } _ { 1 } = \\mathbf { \\nabla } \\mathbf { X }$ and $\\begin{array} { r } { \\boldsymbol { \\omega } _ { 2 } = \\boldsymbol { \\gamma } , } \\end{array}$ the following are unifiers"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.242,
+            0.217,
+            0.711,
+            0.354
+          ],
+          "content": "s $\\omega _ { 1 } ~ S$ $\\omega _ { 2 } ~ S$ $\\{ y / x \\}$ x x $\\{ x / y \\}$ y y"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 57"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.598,
+            0.501
+          ],
+          "content": "If you put in y for x, then they both come out to be y."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.39,
+            0.074,
+            0.563,
+            0.1
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.114,
+            0.819,
+            0.157
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.16,
+            0.771,
+            0.183
+          ],
+          "content": "• Let $\\mathbf { \\omega } _ { 1 } = \\mathbf { \\nabla } \\mathbf { X }$ and $\\mathbf { \\omega } _ { 2 } = \\mathbf { \\gamma } ,$ , the following are unifiers"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.217,
+            0.711,
+            0.354
+          ],
+          "content": "s $\\omega _ { 1 } ~ S$ $\\omega _ { 2 } ~ S$ $\\{ y / x \\}$ $\\mathbf { x }$ $\\mathbf { x }$ $\\{ x / y \\}$ y y $\\{ \\mathsf { x } / \\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) ) ,   \\mathsf { y } / \\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) ) \\}$ $\\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) )$ $\\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 58"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.879,
+            0.521
+          ],
+          "content": "But you could also substitute something else, like F(F(A)) for x and for y, and you’d get matching expressions."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.39,
+            0.074,
+            0.563,
+            0.1
+          ],
+          "content": "Unification"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.82,
+            0.157
+          ],
+          "content": "• Expressions $\\mathfrak { O } _ { 1 }$ and $\\omega _ { 2 }$ are unifiable iff there exists a substitution s such that $\\omega _ { 1 } \\; \\mathsf { S } = \\omega _ { 2 }$ s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.772,
+            0.183
+          ],
+          "content": "• Let $\\mathbf { \\omega } _ { 1 } = \\mathbf { \\nabla } \\mathbf { X }$ and $\\begin{array} { r } { \\boldsymbol { \\omega } _ { 2 } = \\boldsymbol { \\gamma } , } \\end{array}$ the following are unifiers"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.217,
+            0.711,
+            0.354
+          ],
+          "content": "s $\\omega _ { 1 } ~ S$ $\\omega _ { 2 } ~ S$ $\\{ y / x \\}$ $\\mathbf { x }$ $\\mathbf { x }$ $\\{ x / y \\}$ y y $\\{ \\mathsf { x } / \\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) ) ,   \\mathsf { y } / \\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) ) \\}$ $\\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) )$ $\\mathsf { F } ( \\mathsf { F } ( \\mathsf { A } ) )$ $\\{ \\mathsf { x } / \\mathsf { A } ,   \\mathsf { y } / \\mathsf { A } \\}$ $\\mathsf { A }$ $\\mathsf { A }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.717,
+            0.501
+          ],
+          "content": "Or, you could substitute some constant, like A, in for both x and y."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 7 • 59"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 59"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.315,
+            0.073,
+            0.639,
+            0.102
+          ],
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.809,
+            0.54
+          ],
+          "content": "Of the unifiers we considered on the previous slide, some of them seem a bit arbitrary. Binding both x and y to A, or to F(F(A)) is a kind of overcommitment."
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.101
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.11,
+            0.798,
+            0.171
+          ],
+          "content": "g is a most general unifier of ω and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega _ { 1 } \\hat { \\mathsf { S } } = ( \\omega _ { 1 } \\hat { \\mathsf { g } } ) \\mathsf { S } ^ { \\prime }$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 7 • 60"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.853,
+            0.521
+          ],
+          "content": "So, in fact, what we’re really going to be looking for is not just any unifier of two expressions, but a **most general unifier**, or MGU."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.524,
+            0.87,
+            0.589
+          ],
+          "content": "G is a most general unifier of omega1 and omega2 if and only if for all unifiers S, there exists an S-prime such that (omega-1 S) equals (omega-1 G S-prime), and (omega-2 S) equals (omega-2 G S-prime)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.591,
+            0.857,
+            0.633
+          ],
+          "content": "A unifier is most general if every single one of the other unifiers can be expressed as an extra-substitution added onto the most general one."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.636,
+            0.855,
+            0.679
+          ],
+          "content": "It’s a substitution that you can make that makes the fewest commitments, and can still make these two expressions equal."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.074,
+            0.638,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.111,
+            0.798,
+            0.171
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.212,
+            0.203,
+            0.799,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_61_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.854,
+            0.522
+          ],
+          "content": "So, let's do a few more examples together, and then you can do some as recitation problems. So, what’s a most general unifier of $\\mathbf { P } ( \\mathbf { x } )$ and $\\mathrm { P ( A ) ? }$ A for x."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.074,
+            0.638,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.111,
+            0.797,
+            0.171
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.213,
+            0.203,
+            0.798,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_62_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.876,
+            0.54
+          ],
+          "content": "What about these two expressions? We can make them match up either by substituting x for y, or y for x. It doesn’t matter which one we do. They’re both “most general”."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.074,
+            0.638,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.111,
+            0.797,
+            0.17
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.212,
+            0.203,
+            0.799,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n| P(F(x), y, G(y)) | P(F(x), z, G(x)) | {y/x, z/x} |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_63_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.874,
+            0.582
+          ],
+          "content": "Okay. What about this one? It’s a bit tricky. You can kind of see that, ultimately, all of the variables are going to have to be the same. Matching the arguments to G forces y and x to be the same, And since z and y have to be the same as well (to make the middle argument match), they all have to be the same variable. Might as well make it x (though it could be any other variable)."
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.074,
+            0.637,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.111,
+            0.797,
+            0.17
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.213,
+            0.203,
+            0.798,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n| P(F(x), y, G(y)) | P(F(x), z, G(x)) | {y/x, z/x} |\n| P(x, B, B) | P(A, y, z) | {x/A, y/B, z/B} |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.877,
+            0.52
+          ],
+          "content": "What about P(x, B, B) and $\\mathrm{P}(\\mathrm{A}, \\mathrm{y}, \\mathrm{z})?$ It seems pretty clear that we’re going to have to substitute A for x, B for $\\mathrm { y } ,$ and B for Z."
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.074,
+            0.637,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.111,
+            0.797,
+            0.17
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.213,
+            0.203,
+            0.798,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n| P(F(x), y, G(y)) | P(F(x), z, G(x)) | {y/x, z/x} |\n| P(x, B, B) | P(A, y, z) | {x/A, y/B, z/B} |\n| P(G(F(v)), G(u)) | P(x, x) | {x/G(F(v)), u/F(v)} |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.848,
+            0.521
+          ],
+          "content": "Here’s a tricky one. It looks like x is going to have to simultaneously be $\\mathbf { G } ( \\mathrm { F } ( \\mathbf { v } ) )$ and G(u). How can we make that work? By substituting F(v) in for u."
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 66"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.074,
+            0.637,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.111,
+            0.797,
+            0.17
+          ],
+          "content": "g is a most general unifier of $\\mathfrak { O } _ { 1 }$ and ω iff for all unifiers $\\mathbb { S } _ { r }$ there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.212,
+            0.203,
+            0.798,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n| P(F(x), y, G(y)) | P(F(x), z, G(x)) | {y/x, z/x} |\n| P(x, B, B) | P(A, y, z) | {x/A, y/B, z/B} |\n| P(G(F(v)), G(u)) | P(x, x) | {x/G(F(v)), u/F(v)} |\n| P(x, F(x)) | P(x, x) | No MGU! |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.869,
+            0.539
+          ],
+          "content": "Now, let’s try unifying P(x, F(x)) with $\\mathrm { P ( x , } \\mathrm { x ) }$ . The temptation is to say x has to be F(x), but then that x has to be F(x), etc. The answer is that these expressions are not unifiable."
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.074,
+            0.637,
+            0.1
+          ],
+          "level": 2,
+          "content": "Most General Unifier"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.112,
+            0.797,
+            0.17
+          ],
+          "content": "g is a most general unifier of ω and ω iff for all unifiers s, there exists s0 such that $\\omega_{1} \\hat{s} = (\\omega_{1} \\hat{g}) s'$ and $\\omega _ { 2 } \\; s = ( \\omega _ { 2 } \\; g ) \\; s ^ { \\prime }$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.212,
+            0.203,
+            0.798,
+            0.376
+          ],
+          "content": "| ω<sub>1</sub> | ω<sub>2</sub> | MGU |\n| --- | --- | --- |\n| P(x) | P(A) | {x/A} |\n| P(F(x), y, G(x)) | P(F(x), x, G(x)) | {y/x} or {x/y} |\n| P(F(x), y, G(y)) | P(F(x), z, G(x)) | {y/x, z/x} |\n| P(x, B, B) | P(A, y, z) | {x/A, y/B, z/B} |\n| P(G(F(v)), G(u)) | P(x, x) | {x/G(F(v)), u/F(v)} |\n| P(x, F(x)) | P(x, x) | No MGU! |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_67_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 7 • 67"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.873,
+            0.641
+          ],
+          "content": "The last time I explained this to a class, someone asked me what would happen if F were the identity function. Then, couldn’t we unify these two expressions? That’s a great question, and it illustrates a point I should have made before. In unification, we are interested in ways of making expressions equivalent, in every interpretation of the constant and function symbols. So, although it might be possible for the constants A and B to be equal because they both denote the same object in some interpretation, we can’t unify them, because they are not required to be the same in every interpretation."
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.071,
+            0.646,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.448,
+            0.136
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 68"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.873,
+            0.543
+          ],
+          "content": "An MGU can be computed recursively, given two expressions x, and y, to be unified, and a substitution that contains substitutions that must already be made. The argument s will be empty in a top-level call to unify two expressions."
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.071,
+            0.646,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.448,
+            0.135
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.134,
+            0.379,
+            0.155
+          ],
+          "content": "if s = fail, return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 69"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.863,
+            0.522
+          ],
+          "content": "The algorithm returns a substitution if x and y are unifiable in the context of s, and fail otherwise. If s is already a failure, we return s."
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 70"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.072,
+            0.647,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.449,
+            0.135
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.134,
+            0.379,
+            0.155
+          ],
+          "content": "if s = fail, return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.155,
+            0.38,
+            0.177
+          ],
+          "content": "else if x = y, return s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.76,
+            0.502
+          ],
+          "content": "If x is equal to $\\mathrm { y } ,$ then we don’t have to do any work and we return fail."
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.071,
+            0.646,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.449,
+            0.135
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.134,
+            0.38,
+            0.155
+          ],
+          "content": "if s = fail, return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.155,
+            0.381,
+            0.176
+          ],
+          "content": "else if x = y, return s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.175,
+            0.581,
+            0.197
+          ],
+          "content": "else if x is a variable, return unify-var(x, y, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.196,
+            0.582,
+            0.219
+          ],
+          "content": "else if y is a variable, return unify-var(y, x, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 71"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.862,
+            0.52
+          ],
+          "content": "If either x or y is a variable, then we go to a special subroutine that’s shown on the next slide."
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.071,
+            0.647,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.449,
+            0.135
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.134,
+            0.38,
+            0.155
+          ],
+          "content": "if s = fail, return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.155,
+            0.381,
+            0.176
+          ],
+          "content": "else if x = y, return s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.175,
+            0.583,
+            0.197
+          ],
+          "content": "else if x is a variable, return unify-var(x, y, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.196,
+            0.583,
+            0.218
+          ],
+          "content": "else if y is a variable, return unify-var(y, x, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.217,
+            0.587,
+            0.24
+          ],
+          "content": "else if x is a predicate or function application,"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 72"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.861,
+            0.522
+          ],
+          "content": "If x is a predicate or a function application, then y must be one also, with the same predicate or function."
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.307,
+            0.071,
+            0.647,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.111,
+            0.591,
+            0.284
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){if s = fail, return fail else if x = y, return s else if x is a variable, return unify-var(x, y, s) else if y is a variable, return unify-var(y, x, s) else if x is a predicate or function application, if y has the same operator, return unify(args(x), args(y), s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 73"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.763,
+            0.502
+          ],
+          "content": "If so, we’ll unify the lists of arguments from x and y in the context of s."
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.308,
+            0.072,
+            0.645,
+            0.103
+          ],
+          "content": "Unification Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.11,
+            0.593,
+            0.303
+          ],
+          "content": "unify(Expr x, Expr y, Subst s){if s = fail, return fail else if x = y, return s else if x is a variable, return unify-var(x, y, s) else if y is a variable, return unify-var(y, x, s) else if x is a predicate or function application, if y has the same operator, return unify(args(x), args(y), s) else return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 74"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.84,
+            0.519
+          ],
+          "content": "If not, that is, if x and y have different predicate or function symbols, we simply fail."
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.16,
+            0.064,
+            0.835,
+            0.448
+          ],
+          "sub_type": "code",
+          "content": "```awk\nUnification Algorithm\nunify(Expr x, Expr y, Subst s){\n    if s = fail, return fail\n    else if x = y, return s\n    else if x is a variable, return unify-var(x, y, s)\n    else if y is a variable, return unify-var(y, x, s)\n    else if x is a predicate or function application,\n        if y has the same operator,\n            return unify(args(x), args(y), s)\n        else     return fail\n    else             ; x and y have to be lists\n        return unify(rest(x), rest(y),\n                unify(first(x), first(y), s))\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.873,
+            0.603
+          ],
+          "content": "Finally, (if we get to this case, then x and y have to be lists, or something malformed), we go down the lists, unifying the first elements, then the second elements, and so on. Each time we unify a pair of elements, we get a new substitution that records the commitments we had to make to get that pair of expressions to unify. Each further unification must take place in the context of the commitments generated by the previous elements of the lists."
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.312,
+            0.073,
+            0.641,
+            0.103
+          ],
+          "level": 2,
+          "content": "Unify-var subroutine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.787,
+            0.151
+          ],
+          "content": "Substitute in for var and x as long as possible, then add new binding"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.15,
+            0.531,
+            0.173
+          ],
+          "content": "**unify-var(Variable var, Expr x, Subst s){**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 7 • 76"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.878,
+            0.562
+          ],
+          "content": "Given a variable var, an expression x, and a substitution s, we need to return a substitution that unifies var and x in the context of s. What makes this tricky is that we have to first keep applying the existing substitutions in s to var, and to x, if it is a variable, before we’re down to a new concrete problem to solve."
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.313,
+            0.073,
+            0.641,
+            0.103
+          ],
+          "content": "Unify-var subroutine"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.787,
+            0.151
+          ],
+          "content": "Substitute in for var and x as long as possible, then add new binding"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.15,
+            0.53,
+            0.172
+          ],
+          "content": "unify-var(Variable var, Expr x, Subst s){"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.198,
+            0.172,
+            0.421,
+            0.193
+          ],
+          "content": "if var is bound to val in s,"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.194,
+            0.439,
+            0.215
+          ],
+          "content": "return unify(val, x, s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 77"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.843,
+            0.522
+          ],
+          "content": "So, if var is bound to val in s, then we unify that value with x, in the context of s (because $\\mathbf { w e } ^ { \\flat }$ re already committed that val has to be substituted for var)."
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.313,
+            0.072,
+            0.641,
+            0.103
+          ],
+          "level": 2,
+          "content": "Unify-var subroutine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.787,
+            0.151
+          ],
+          "content": "Substitute in for var and x as long as possible, then add new binding"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.15,
+            0.53,
+            0.172
+          ],
+          "content": "**unify-var(Variable var, Expr x, Subst s){**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.172,
+            0.421,
+            0.193
+          ],
+          "content": "**if var is bound to val in s,**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.249,
+            0.194,
+            0.439,
+            0.214
+          ],
+          "content": "**return unify(val, x, s)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.213,
+            0.439,
+            0.235
+          ],
+          "content": "**else if x is bound to val in s,**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.248,
+            0.235,
+            0.491,
+            0.257
+          ],
+          "content": "**return unify-var(var, val, s)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 78"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.841,
+            0.541
+          ],
+          "content": "Similarly, if x is a variable, and it is bound to val in s, then we have to unify var with val in s. (We call unify-var directly, because we know that var is still a var)."
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.313,
+            0.072,
+            0.641,
+            0.103
+          ],
+          "content": "Unify-var subroutine"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.11,
+            0.787,
+            0.28
+          ],
+          "content": "Substitute in for var and x as long as possible, then add new binding unify-var(Variable var, Expr x, Subst s){if var is bound to val in s, return unify(val, x, s) else if x is bound to val in s, return unify-var(var, val, s) else if var occurs anywhere in x, return fail"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 7 • 79"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.853,
+            0.521
+          ],
+          "content": "If var occurs anywhere in x, then fail. This is the “occurs” check, which keeps us from circularities, like binding x to F(x)."
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.059,
+            0.829,
+            0.448
+          ],
+          "sub_type": "code",
+          "content": "```txt\nUnify-var subroutine\n    Substitute in for var and x as long as possible, then add new binding\n    unify-var(Variable var, Expr x, Subst s){\n        if var is bound to val in s,\n            return unify(val, x, s)\n        else if x is bound to val in s,\n            return unify-var(var, val, s)\n        else if var occurs anywhere in x, return fail\n        else   return add({var/x}, s)\n    }\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.845,
+            0.521
+          ],
+          "content": "Finally, we know var is a variable that doesn’t already have a substitution, so we add the substitution of x for var to s, and return it."
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.058,
+            0.803,
+            0.448
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nUnify-var subroutine\n    Substitute in for var and x as long as possible, then add new binding\n    unify-var(Variable var, Expr x, Subst s){\n        if var is bound to val in s,\n            return unify(val, x, s)\n        else if x is bound to val in s,\n            return unify-var(var, val, s)\n        else if var occurs anywhere in x, return fail\n        else   return add({var/x}, s)\n    }\n\n    Note: last line incorrect in book!\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.715,
+            0.502
+          ],
+          "content": "Be careful. The last line of this algorithm in the book is incorrect."
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 7 • 82"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.175,
+            0.107,
+            0.835,
+            0.425
+          ],
+          "content": "For each pair of sentences, give an MGU. $\\mathsf { C o l o r } ( \\mathsf { T w e e t y } , \\mathsf { Y e l l o w } )$ $\\mathsf { C o l o r } ( \\mathsf { x } , \\mathsf { y } )$ $\\mathsf { C o l o r } ( \\mathsf { T w e e t y } , \\mathsf { Y e l l o w } )$ $\\mathsf { C o l o r } ( \\mathsf { x , } \\mathsf { x } )$ $\\mathsf { C o l o r } ( \\mathsf { H a t } ( \\mathsf { J o h n } ) ,   \\mathsf { B l u e } )$ $\\mathsf { C o l o r } ( \\mathsf { H a t } ( \\mathsf { y } ) ,   \\mathsf { x } )$ R(F(x), B) R(y,z) R(F(y), x) $\\mathsf { R } ( \\mathsf { x } ,   \\mathsf { F } ( \\mathsf { B } ) )$ $\\mathsf { R } ( \\mathsf { F } ( \\mathsf { y } ) , \\mathsf { y } , \\mathsf { x } )$ $\\mathsf { R } ( \\mathsf { x } ,   \\mathsf { F } ( \\mathsf { A } ) ,   \\mathsf { F } ( \\mathsf { v } ) )$ $\\mathsf { L o v e s } ( \\mathsf { x } , \\mathsf { y } )$ $\\mathsf { L o v e s } ( \\mathsf { y } ,   \\mathsf { x } )$ $\\mathsf { F } ( \\mathsf { G } ( \\mathsf { w } ) ,   \\mathsf { H } ( \\mathsf { w } ,   \\mathsf { J } ( \\mathsf { x } ,   \\mathsf { y } ) ) )$ $\\mathsf { F } ( \\mathsf { G } ( \\mathsf { v } ) ,   \\mathsf { H } ( \\mathsf { u } ,   \\mathsf { v } ) )$ $\\mathsf { F } ( \\mathsf { G } ( \\mathsf { w } ) ,   \\mathsf { H } ( \\mathsf { w } ,   \\mathsf { J } ( \\mathsf { x } ,   \\mathsf { u } ) ) )$ $\\mathsf { F } ( \\mathsf { G } ( \\mathsf { v } ) ,   \\mathsf { H } ( \\mathsf { u } ,   \\mathsf { v } ) )$ $\\mathsf { F } ( \\mathsf { x } ,   \\mathsf { F } ( \\mathsf { u } ,   \\mathsf { x } ) )$ $\\mathsf { F } ( \\mathsf { F } ( \\mathsf { y } ,   \\mathsf { A } ) ,   \\mathsf { F } ( \\mathsf { z } ,   \\mathsf { F } ( \\mathsf { B } ,   \\mathsf { z } ) ) )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.313,
+            0.073,
+            0.64,
+            0.101
+          ],
+          "content": "Unification Problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.877,
+            0.52
+          ],
+          "content": "Please do at least half of these problems before you go on to the next lecture, and all of them before the next recitation."
+        }
+      ]
+    },
+    {
+      "page_idx": 83,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.261,
+            0.071,
+            0.691,
+            0.103
+          ],
+          "level": 2,
+          "content": "Inference using Unification"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.201,
+            0.108,
+            0.391,
+            0.193
+          ],
+          "content": "\\begin{array}{c} \\forall x. \\neg P (x) \\lor Q (x) \\\\ \\frac {P (A)}{Q (A)} \\end{array}",
+          "image_source": "images/page_83_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.209,
+            0.224,
+            0.773,
+            0.268
+          ],
+          "content": "For universally quantified variables, find MGU {x/A} and proceed as in propositional resolution."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.118,
+            0.478,
+            0.873,
+            0.541
+          ],
+          "content": "We’ll spend next time talking about the first-order resolution inference rule in great detail. But just so you can see what unification is good for, here’s an example inference rule."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.117,
+            0.543,
+            0.849,
+            0.628
+          ],
+          "content": "In propositional resolution, we looked for a variable and its negation to resolve. They had to match exactly. In first-order unification, we’ll look for two expressions to resolve. But now they don’t have to match exactly. They just have to unify. The details are to come."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture7Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2003-06-12T11:18:47Z",
+      "modified_at": "2003-06-13T12:06:09+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 84,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 83,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
