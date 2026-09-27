@@ -1,0 +1,6059 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.247,
+            0.319,
+            0.752,
+            0.453
+          ],
+          "level": 2,
+          "content": "Chapter 3 Planning with Deterministic Models"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.457,
+            0.614,
+            0.505
+          ],
+          "content": "3.3. Backward Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.386,
+            0.51,
+            0.624,
+            0.561
+          ],
+          "content": "3.4. Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.64,
+            0.567,
+            0.689
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.701,
+            0.613,
+            0.754
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.795,
+            0.613,
+            0.843
+          ],
+          "content": "with contributions from"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.399,
+            0.856,
+            0.6,
+            0.902
+          ],
+          "content": "[Mark “mak” Roberts](https://scholar.google.com/citations?user=vlbX4J8AAAAJ)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.3
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_8.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.847,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "level": 2,
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.868,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.065,
+            0.658,
+            0.119
+          ],
+          "level": 2,
+          "content": "3.3. Backward Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.178,
+            0.432,
+            0.218
+          ],
+          "content": "● Forward search: forward from initial state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.234,
+            0.418,
+            0.275
+          ],
+          "content": "▸ In state s, choose applicable action a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.289,
+            0.402,
+            0.331
+          ],
+          "content": "▸ Compute state transition $s ^ { \\prime }   =   \\gamma ( s , a )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.344,
+            0.436,
+            0.387
+          ],
+          "content": "Backward search: backward from the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.401,
+            0.413,
+            0.443
+          ],
+          "content": "▸ For goal g, choose relevant action a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.456,
+            0.468,
+            0.498
+          ],
+          "content": "• A possible “last action” before the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.511,
+            0.51,
+            0.554
+          ],
+          "content": "• Sometimes this has a lower branching factor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.597,
+            0.46,
+            0.639
+          ],
+          "content": "● Compute inverse state transition $g ^ { \\prime }   =   \\gamma ^ { - 1 } ( g ,   a )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.652,
+            0.499,
+            0.741
+          ],
+          "content": "▸ $g ^ { \\prime }   =$ properties a state s′ should satisfy in order for $\\gamma ( s ^ { \\prime } , a )$ to satisfy g"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.751,
+            0.504,
+            0.855
+          ],
+          "content": "● Equivalently, if $\\mathrm { ^ { \\circ } S _ { g } } = \\mathrm { \\{ a l l } }$ states that satisfy g} then ▸ $S _ { g ^ { \\prime } } = \\{ a \\mathrm { l } \\}$ states s such that $\\gamma ( s , a ) \\in S _ { g } \\}$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.551,
+            0.107,
+            0.928,
+            0.36
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.575,
+            0.376,
+            0.949,
+            0.587
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.554,
+            0.683,
+            0.828,
+            0.725
+          ],
+          "content": "▸ Forward: 7 applicable actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.739,
+            0.905,
+            0.779
+          ],
+          "content": "• five load actions, two move actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.555,
+            0.794,
+            0.813,
+            0.836
+          ],
+          "content": "▸ Backward: $g = \\{ \\mathsf { l o c } ( \\mathsf { r } 1 ) \\mathsf { = } \\mathsf { d } 3 \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.852,
+            0.88,
+            0.937
+          ],
+          "content": "two relevant actions: move(r1,d1,d3), move(r1,d2,d3)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.627,
+            0.046,
+            0.975,
+            0.307
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.427,
+            0.066,
+            0.573,
+            0.119
+          ],
+          "level": 2,
+          "content": "Relevance"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.024,
+            0.177,
+            0.519,
+            0.265
+          ],
+          "content": "● Idea: when can a be useful as the last action of a plan to achieve $g ^ { \\theta }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.278,
+            0.571,
+            0.321
+          ],
+          "content": "▸ a makes at least one atom in g true that wasn’t true already"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.334,
+            0.366,
+            0.377
+          ],
+          "content": "▸ a doesn’t make any part of g false"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.024,
+            0.429,
+            0.447,
+            0.473
+          ],
+          "content": "● a is relevant for $g = \\{ x _ { 1 } = c _ { 1 } , x _ { 2 } = c _ { 2 } , \\ldots , x _ { k } = c _ { k } \\}$ if"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.485,
+            0.391,
+            0.527
+          ],
+          "content": "▸ at least one atom in g is also in eff(a)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.541,
+            0.355,
+            0.585
+          ],
+          "content": "• e.g., if eff(a) contains $x _ { 1 } \\leftarrow c _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.596,
+            0.411,
+            0.639
+          ],
+          "content": "eff(a) doesn’t make any atom in g false"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.653,
+            0.555,
+            0.696
+          ],
+          "content": "• e.g., eff(a) must not contain $x _ { 2 }   \\leftarrow   { c _ { 2 } } ^ { \\prime }$ (where ${ c _ { 2 } } ^ { \\prime } \\neq c _ { 2 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.707,
+            0.496,
+            0.805
+          ],
+          "content": "▸ whenever pre(a) requires an atom of g to be false, eff(a) makes the atom true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.818,
+            0.5,
+            0.919
+          ],
+          "content": "• e.g., if pre(a) contains $x _ { 3 } = { c _ { 3 } } ^ { \\prime }$ (where ${ c _ { 3 } } ^ { \\prime } \\neq c _ { 3 } )$ then eff(a) must contain $x _ { 3 } \\leftarrow c _ { 3 }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.61,
+            0.322,
+            0.947,
+            0.363
+          ],
+          "content": "s = \\{\\text {loc} (\\mathrm{c} 1) = \\mathrm{d} 1, \\text {loc} (\\mathrm{c} 2) = \\mathrm{d} 1, \\text {loc} (\\mathrm{c} 3) = \\mathrm{d} 1,",
+          "image_source": "images/page_2_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.652,
+            0.367,
+            0.869,
+            0.408
+          ],
+          "content": "\\operatorname{loc} (r 1) = d 2, \\text {cargo} (r 1) = \\text {nil},",
+          "image_source": "images/page_2_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.653,
+            0.411,
+            0.871,
+            0.453
+          ],
+          "content": "\\text {loc} (r 2) = d 2, \\text {cargo} (r 2) = \\text {nil}\\}",
+          "image_source": "images/page_2_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.612,
+            0.518,
+            0.701,
+            0.559
+          ],
+          "content": "load $( r , c , l )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.63,
+            0.562,
+            0.927,
+            0.605
+          ],
+          "content": "pre: $\\mathsf { c a r g o } ( r ) { = } \\mathsf { n i l } , \\mathsf { l o c } ( r ) { = } l , \\mathsf { l o c } ( c ) { = } l$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.607,
+            0.885,
+            0.65
+          ],
+          "content": "eff: c ${ \\mathsf { i a r g o } } ( r ) \\leftarrow c ,   { \\mathsf { I o c } } ( c ) \\leftarrow r$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.654,
+            0.697,
+            0.881,
+            0.876
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.646,
+            0.885,
+            0.902,
+            0.928
+          ],
+          "content": "g = \\{\\text {cargo} (r 1) = c 1, \\text {loc} (r 1) = d 3 \\}",
+          "image_source": "images/page_2_equation_19.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.124,
+            0.111,
+            0.877,
+            0.985
+          ],
+          "sub_type": "code",
+          "content": "```lua\nmove(r,l,m)\npre: loc(r)=l, adjacent(l,m)\neff: loc(r) ← m\n\nload(r,c,l)\npre: cargo(r)=nil, loc(r)=l, loc(c)=l\neff: cargo(r) ← c, loc(c) ← r\n\nput(r,l,c)\npre: loc(r)=l, loc(c)=r\neff: cargo(r) ← nil, loc(c) ← l\n\nRange(r) = Robots = {r1,r2}\nRange(l) = Range(m) = Locs = {d1,d2,d3}\nRange(c) = Containers = {c1,c2,c3}\n\ng = {cargo(r1)=c1, loc(r1)=d3}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.427,
+            0.024,
+            0.573,
+            0.081
+          ],
+          "level": 2,
+          "content": "Relevance"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.138,
+            0.133,
+            0.483,
+            0.394
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.136,
+            0.698,
+            0.362,
+            0.881
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.973,
+            0.355,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.993
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.326,
+            0.045,
+            0.673,
+            0.098
+          ],
+          "level": 2,
+          "content": "Inverse State Transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.187,
+            0.597,
+            0.233
+          ],
+          "content": "● If a is relevant for g, then $\\gamma ^ { - 1 } ( g , a ) = \\operatorname { p r e } ( a ) \\cup ( g - \\operatorname { e f f } ( a ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.288,
+            0.537,
+            0.332
+          ],
+          "content": "If a isn’t relevant for g, then $\\gamma ^ { - 1 } ( g , a )$ is undefined"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.389,
+            0.207,
+            0.431
+          ],
+          "content": "● Example:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.13,
+            0.443,
+            0.29,
+            0.488
+          ],
+          "sub_type": "algorithm",
+          "content": "$g = \\{\\mathrm{loc}(\\mathrm{c}1) = \\mathrm{r}1\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.499,
+            0.413,
+            0.543
+          ],
+          "content": "▸ What is $\\gamma ^ { - 1 } ( g ,$ load(r1,c1,d3))?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.553,
+            0.412,
+            0.599
+          ],
+          "content": "▸ What is $\\gamma ^ { - 1 } ( g ,$ load(r2,c1,d1))?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.025,
+            0.71,
+            0.37,
+            0.965
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.006,
+                0.974,
+                0.355,
+                0.997
+              ],
+              "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+            }
+          ],
+          "image_source": "images/page_4_image_7.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.667,
+            0.147,
+            0.998,
+            0.837
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r,l,m)\n    pre: loc(r)=l, adjacent(l,m)\n    eff: loc(r) ← m\n\nload(r,c,l)\n    pre: cargo(r)=nil, loc(r)=l, loc(c)=l\n    eff: cargo(r) ← c, loc(c) ← r\n\nput(r,l,c)\n    pre: loc(r)=l, loc(c)=r\n    eff: cargo(r) ← nil, loc(c) ← l\n\nRange(r) = Robots\nRange(l) = Range(m) = Locs\nRange(c) = Containers\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.379,
+            0.038,
+            0.62,
+            0.094
+          ],
+          "level": 2,
+          "content": "Backward Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.176,
+            0.319,
+            0.22
+          ],
+          "content": "Backward-search $( \\Sigma , s _ { 0 } , g )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.22,
+            0.196,
+            0.263
+          ],
+          "content": "$\\pi \\leftarrow \\langle \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.265,
+            0.266,
+            0.307
+          ],
+          "content": "**while** $s \\neq g$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.307,
+            0.464,
+            0.44
+          ],
+          "content": "(ii) ${ \\mathcal { A } } ^ { \\prime }   \\leftarrow   \\{ a \\in { \\mathcal { A } } \\mid a$ is relevant for g} **if** $A ^ { \\prime }   = \\emptyset$ **then return** failure nondeterministically choose $a \\in A ^ { \\prime }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.441,
+            0.272,
+            0.489
+          ],
+          "content": "(iii) $g \\gets \\gamma ^ { - 1 } ( g , a )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.495,
+            0.235,
+            0.527
+          ],
+          "content": "\\pi \\leftarrow a \\cdot \\pi",
+          "image_source": "images/page_5_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.535,
+            0.213,
+            0.572
+          ],
+          "content": "**return** π"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.151,
+            0.627,
+            0.47,
+            0.857
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.526,
+            0.136,
+            0.668,
+            0.181
+          ],
+          "content": "Cycle checking:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.526,
+            0.191,
+            0.827,
+            0.237
+          ],
+          "content": "● After line (i), put Visited $\\leftarrow \\{ g _ { 0 } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.526,
+            0.247,
+            0.752,
+            0.291
+          ],
+          "content": "● After line (iii), put this:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.301,
+            0.751,
+            0.348
+          ],
+          "content": "if $g \\in$ Visited then"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.624,
+            0.358,
+            0.744,
+            0.401
+          ],
+          "content": "return failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.592,
+            0.411,
+            0.798,
+            0.461
+          ],
+          "content": "Visited ← Visited ∪ {g}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.469,
+            0.626,
+            0.511
+          ],
+          "content": "or this:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.523,
+            0.856,
+            0.572
+          ],
+          "content": "if ∃ $g ^ { \\prime } \\in$ Visited s.t. $g \\Rightarrow g ^ { \\prime }$ then"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.599,
+            0.58,
+            0.72,
+            0.624
+          ],
+          "content": "return failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.594,
+            0.634,
+            0.796,
+            0.682
+          ],
+          "content": "Visited ← Visited ∪ {g}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.527,
+            0.729,
+            0.907,
+            0.774
+          ],
+          "content": "With cycle checking, sound and complete"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.558,
+            0.78,
+            0.918,
+            0.863
+          ],
+          "content": "▸ If $( \\Sigma , s _ { 0 } , g _ { 0 } )$ is solvable, then at least one execution trace will find a solution"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.381,
+            0.066,
+            0.619,
+            0.124
+          ],
+          "level": 2,
+          "content": "Branching Factor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.176,
+            0.767,
+            0.218
+          ],
+          "content": "● Motivation for Backward-search was to reduce the branching factor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.204,
+            0.231,
+            0.527,
+            0.271
+          ],
+          "content": "▸ As written, doesn’t accomplish that"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.28,
+            0.371,
+            0.323
+          ],
+          "content": "● Solve this by lifting:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.332,
+            0.429,
+            0.411
+          ],
+          "content": "▸ When possible, leave variables uninstantiated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.423,
+            0.441,
+            0.503
+          ],
+          "content": "▸ Most implementations of Backward-search do this"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.186,
+            0.56,
+            0.518,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.463,
+            0.229,
+            0.856,
+            0.681
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.519,
+            0.795,
+            0.82,
+            0.875
+          ],
+          "content": "\\boxed {\\text {move} (\\mathrm{r} 1, \\mathrm{y}, \\mathrm{d} 3) \\xleftarrow {\\gamma^ {- 1}} g = \\{\\text {loc} (\\mathrm{r} 1) = \\mathrm{d} 3 \\}}",
+          "image_source": "images/page_6_equation_8.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.144,
+            0.042,
+            0.473,
+            0.102
+          ],
+          "level": 2,
+          "content": "Lifted Backward Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.129,
+            0.455,
+            0.221
+          ],
+          "content": "Like Backward-search but much smaller branching factor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.229,
+            0.423,
+            0.322
+          ],
+          "content": "Must keep track of what values were substituted for which parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.329,
+            0.361,
+            0.376
+          ],
+          "content": "▸ I won’t discuss the details"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.384,
+            0.43,
+            0.433
+          ],
+          "content": "PSP (later) does something similar"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.684,
+            0.041,
+            0.75,
+            0.081
+          ],
+          "content": "(\\Sigma , s _ {0}, g)",
+          "image_source": "images/page_7_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.081,
+            0.643,
+            0.12
+          ],
+          "content": "\\pi \\leftarrow \\langle \\rangle",
+          "image_source": "images/page_7_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.631,
+            0.122,
+            0.679,
+            0.16
+          ],
+          "content": "s \\not \\models g",
+          "image_source": "images/page_7_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.623,
+            0.161,
+            0.727,
+            0.199
+          ],
+          "content": "A ^ {\\prime} \\leftarrow \\{a \\in A",
+          "image_source": "images/page_7_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.854,
+            0.163,
+            0.875,
+            0.203
+          ],
+          "content": "g \\}",
+          "image_source": "images/page_7_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.64,
+            0.199,
+            0.692,
+            0.236
+          ],
+          "content": "A ^ {\\prime} = \\emptyset",
+          "image_source": "images/page_7_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.834,
+            0.24,
+            0.887,
+            0.277
+          ],
+          "content": "a \\in A'",
+          "image_source": "images/page_7_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.612,
+            0.28,
+            0.714,
+            0.323
+          ],
+          "content": "g \\gets \\gamma^ {- 1} (g, a)",
+          "image_source": "images/page_7_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.612,
+            0.327,
+            0.683,
+            0.359
+          ],
+          "content": "\\pi \\gets a \\cdot \\pi",
+          "image_source": "images/page_7_equation_13.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.133,
+            0.464,
+            1.0,
+            0.964
+          ],
+          "sub_type": "algorithm",
+          "content": "For classical planning, this can be simplified: Lifted-backward-search ($\\Sigma$, $s_0$, $g$) $\\pi \\leftarrow$ the empty plan while(True) do if $s_0$ satisfies $g$ then return $\\pi$\nRelevant $\\leftarrow \\{(a, \\sigma_1 \\cdot \\sigma_2) \\mid a$ is an action in $\\Sigma$ that is relevant for $g$,\n$\\sigma_1$ is a substitution that standardizes $a$'s variables, and\n$\\sigma_2$ is an mgu for $\\sigma_1(a)$ and the atom of $g$ that $a$ is relevant for} if Relevant = $\\emptyset$ then return failure\nnondeterministically choose a pair $(a, \\sigma) \\in \\text{Relevant}$\n$\\pi \\leftarrow \\sigma(a) \\cdot \\sigma(\\pi)$\n$g \\leftarrow \\gamma^{-1}(\\sigma(g), \\sigma(a))$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.319,
+            0.065,
+            0.68,
+            0.124
+          ],
+          "level": 2,
+          "content": "3.4. Plan-Space Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.179,
+            0.547,
+            0.22
+          ],
+          "content": "● Formulate planning as a constraint satisfaction problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.234,
+            0.909,
+            0.276
+          ],
+          "content": "▸ Use constraint-satisfaction techniques to get solutions that are more flexible than ordinary plans"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.29,
+            0.576,
+            0.331
+          ],
+          "content": "• E.g., plans in which the actions are partially ordered"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.345,
+            0.64,
+            0.387
+          ],
+          "content": "• Postpone ordering decisions until the plan is being executed"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.401,
+            0.675,
+            0.442
+          ],
+          "content": "▸ the actor may have a better idea about which ordering is best"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.457,
+            0.492,
+            0.499
+          ],
+          "content": "First step toward temporal planning (Chapter 18)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.567,
+            0.175,
+            0.605
+          ],
+          "content": "● Basic idea:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.619,
+            0.373,
+            0.66
+          ],
+          "content": "▸ Backward search from the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.671,
+            0.66,
+            0.713
+          ],
+          "content": "▸ Each node of the search space is a partial plan that contains flaws"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.722,
+            0.488,
+            0.762
+          ],
+          "content": "• Remove the flaws by making refinements"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.773,
+            0.535,
+            0.814
+          ],
+          "content": "▸ If successful, we’ll get a partially ordered solution"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.654,
+            0.371,
+            0.969,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.196,
+            0.065,
+            0.354,
+            0.12
+          ],
+          "level": 2,
+          "content": "Definitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.183,
+            0.26,
+            0.227
+          ],
+          "content": "● Partially ordered plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.236,
+            0.343,
+            0.279
+          ],
+          "content": "▸ partially ordered set of nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.287,
+            0.34,
+            0.325
+          ],
+          "content": "▸ each node contains an action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.337,
+            0.505,
+            0.38
+          ],
+          "content": "● Partially ordered solution for a planning problem P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.387,
+            0.544,
+            0.469
+          ],
+          "content": "partially ordered plan π such that every total ordering of π is a solution for P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.523,
+            0.444,
+            0.66
+          ],
+          "content": "**Poll**. Let P be the planning problem at right, and π be the partially ordered plan below. Is π a partially ordered solution for P?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.751,
+            0.163,
+            0.824
+          ],
+          "content": "precedence constraints:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.829,
+            0.146,
+            0.898
+          ],
+          "content": "\\begin{array}{c} a _ {1} \\prec a _ {3} \\\\ a _ {2} \\prec a _ {4} \\end{array}",
+          "image_source": "images/page_9_equation_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.703,
+            0.543,
+            0.929
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_10.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.562,
+            0.022,
+            0.991,
+            0.288
+          ],
+          "sub_type": "code",
+          "content": "```python\nmove(r, d, d')\n    pre: loc(r) = d, occupied(d') = nil\n    eff: loc(r) ← d', occupied(d') ← r, occupied(d) ← nil\n        r ∈ Robots\n        d, d' ∈ Docks\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.196,
+            0.065,
+            0.354,
+            0.12
+          ],
+          "level": 2,
+          "content": "Definitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.183,
+            0.26,
+            0.226
+          ],
+          "content": "● Partially ordered plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.236,
+            0.343,
+            0.278
+          ],
+          "content": "▸ partially ordered set of nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.287,
+            0.34,
+            0.325
+          ],
+          "content": "▸ each node contains an action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.337,
+            0.505,
+            0.38
+          ],
+          "content": "● Partially ordered solution for a planning problem P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.387,
+            0.544,
+            0.469
+          ],
+          "content": "partially ordered plan π such that every total ordering of π is a solution for P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.525,
+            0.443,
+            0.659
+          ],
+          "content": "**Poll**. Let P be the planning problem at right, and π be the partially ordered plan below. Is π a partially ordered solution for P?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.747,
+            0.132,
+            0.819
+          ],
+          "content": "precedence constraints:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.052,
+            0.824,
+            0.186,
+            0.895
+          ],
+          "content": "\\begin{array}{l} a _ {1} \\prec a _ {3}, a _ {1} \\prec a _ {4}, \\\\ a _ {2} \\prec a _ {3}, a _ {2} \\prec a _ {4} \\end{array}",
+          "image_source": "images/page_10_equation_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.217,
+            0.704,
+            0.543,
+            0.927
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_9.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.562,
+            0.023,
+            0.991,
+            0.288
+          ],
+          "sub_type": "code",
+          "content": "```python\nmove(r, d, d')\n    pre: loc(r) = d, occupied(d') = nil\n    eff: loc(r) ← d', occupied(d') ← r, occupied(d) ← nil\n        r ∈ Robots\n        d, d' ∈ Docks\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.652,
+            0.371,
+            0.97,
+            0.68
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.664,
+            0.742,
+            0.963,
+            0.925
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_12.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.196,
+            0.065,
+            0.354,
+            0.119
+          ],
+          "level": 2,
+          "content": "Definitions"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.026,
+            0.184,
+            0.157,
+            0.225
+          ],
+          "level": 2,
+          "content": "● Partial plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.236,
+            0.39,
+            0.317
+          ],
+          "content": "▸ partially ordered set of nodes that contain partially instantiated actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.327,
+            0.433,
+            0.367
+          ],
+          "content": "▸ inequality constraints, $\\mathrm { e . g . } \\; z \\neq x \\; \\mathrm { o r } \\; w \\neq \\mathsf { p 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.377,
+            0.298,
+            0.417
+          ],
+          "content": "▸ causal links (dashed arcs)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.429,
+            0.472,
+            0.513
+          ],
+          "content": "constraint: action a must be the action that establishes action b’s precondition p"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.103,
+            0.645,
+            0.564,
+            0.879
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_6.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.563,
+            0.022,
+            0.991,
+            0.289
+          ],
+          "sub_type": "code",
+          "content": "```python\nmove(r, d, d')\n    pre: loc(r) = d, occupied(d') = nil\n    eff: loc(r) ← d', occupied(d') ← r, occupied(d) ← nil\n        r ∈ Robots\n        d, d' ∈ Docks\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.654,
+            0.372,
+            0.969,
+            0.925
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_8.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.124,
+            0.057,
+            0.426,
+            0.115
+          ],
+          "level": 2,
+          "content": "Flaws: 1. Open Goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.143,
+            0.26,
+            0.187
+          ],
+          "content": "● Action b, precondition p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.476,
+            0.243
+          ],
+          "content": "▸ p is an open goal if there is no causal link for p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.255,
+            0.404,
+            0.297
+          ],
+          "content": "● Resolve the flaw by creating a causal link"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.309,
+            0.541,
+            0.397
+          ],
+          "content": "Find an action a (either already in π, or add it to π) that can establish p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.411,
+            0.231,
+            0.453
+          ],
+          "content": "• can precede b"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.467,
+            0.306,
+            0.508
+          ],
+          "content": "• can have p as an effect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.521,
+            0.481,
+            0.564
+          ],
+          "content": "▸ Do substitutions on variables to make a assert p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.577,
+            0.36,
+            0.619
+          ],
+          "content": "▸ Add an ordering constraint a ≺ b"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.633,
+            0.346,
+            0.675
+          ],
+          "content": "▸ Create a causal link from a to p"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.015,
+            0.709,
+            0.477,
+            0.967
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.006,
+                0.973,
+                0.356,
+                0.998
+              ],
+              "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+            }
+          ],
+          "image_source": "images/page_12_image_10.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.563,
+            0.023,
+            0.991,
+            0.289
+          ],
+          "sub_type": "code",
+          "content": "```python\nmove(r, d, d')\n    pre: loc(r) = d, occupied(d') = nil\n    eff: loc(r) ← d', occupied(d') ← r, occupied(d) ← nil\n        r ∈ Robots\n        d, d' ∈ Docks\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.617,
+            0.371,
+            0.958,
+            0.594
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_13.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.607,
+            0.703,
+            0.99,
+            0.961
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_14.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.241,
+            0.044,
+            0.487,
+            0.099
+          ],
+          "level": 2,
+          "content": "Flaws: 2. Threats"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.137,
+            0.443,
+            0.225
+          ],
+          "content": "● Let l be a causal link from an effect of action a to a precondition p of action b"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.266,
+            0.482,
+            0.353
+          ],
+          "content": "● Action c threatens l if c may come between a and b and c may affect p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.366,
+            0.485,
+            0.454
+          ],
+          "content": "▸ “c may come between a and b” means the plan’s current ordering constraints don’t prevent it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.467,
+            0.446,
+            0.509
+          ],
+          "content": "• plan doesn’t already have c ≺ a or $b \\prec c$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.523,
+            0.276,
+            0.565
+          ],
+          "content": "▸ “c may affect $p ^ { \\flat }$ means"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.577,
+            0.499,
+            0.665
+          ],
+          "content": "can substitute values for variables such that c’s effects either make p true or make p false"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.06,
+            0.78,
+            0.392,
+            0.869
+          ],
+          "level": 2,
+          "content": "Poll. In each of the cases at right, does action c threaten the causal link?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.574,
+            0.009,
+            0.997,
+            0.982
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_8.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.977,
+            0.994,
+            0.995
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.238,
+            0.044,
+            0.489,
+            0.104
+          ],
+          "level": 2,
+          "content": "Resolving Threats"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.138,
+            0.426,
+            0.272
+          ],
+          "content": "Suppose action c threatens a causal link l from an effect of action a to a precondition p of action b"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.312,
+            0.291,
+            0.354
+          ],
+          "content": "● Three possible resolvers:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.368,
+            0.425,
+            0.41
+          ],
+          "content": "1. Add a precedence constraint $c \\leq a$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.423,
+            0.426,
+            0.465
+          ],
+          "content": "2. Add a precedence constraint $b \\prec c$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.479,
+            0.476,
+            0.567
+          ],
+          "content": "3. Add inequality constraints that prevent c from affecting p"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.578,
+            0.534,
+            0.664
+          ],
+          "content": "Each of these is applicable iff it doesn’t make the plan inconsistent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.679,
+            0.534,
+            0.724
+          ],
+          "content": "▸ e.g., 2 isn’t applicable if the plan already has $c \\prec b$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.606,
+            0.029,
+            0.984,
+            0.279
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.594,
+            0.353,
+            0.984,
+            0.609
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.606,
+            0.684,
+            0.986,
+            0.933
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_10.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.022,
+            0.031,
+            0.602,
+            0.403
+          ],
+          "sub_type": "algorithm",
+          "content": "PSP $(\\Sigma, \\pi)$ while $Flaws(\\pi) \\neq \\emptyset$ do\n(i) arbitrarily select $f \\in Flaws(\\pi)$\n$R \\leftarrow \\{\\text{all feasible resolvers for } f\\}$\nif $R = \\emptyset$ then return failure\n(ii) nondeterministically choose $\\rho \\in R$\nmodify $\\pi$ by applying $\\rho$ to it\nreturn $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.66,
+            0.017,
+            1.0,
+            0.237
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_1.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.049,
+            0.403,
+            0.959,
+            0.769
+          ],
+          "sub_type": "code",
+          "content": "```matlab\n- 2 open goals\n- no threats\n\n    a₀\n    loc(r1) = d1\n    loc(r2) = d2\n    occupied(d3) = nil\n    occupied(d1) = r1\n    occupied(d2) = r2\n\nselect → loc(r1) = d2\nloc(r2) = d1\n\n    a_g\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.829,
+            0.403,
+            0.998
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.023,
+            0.045,
+            0.378,
+            0.267
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.401
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.488,
+            0.191,
+            0.535
+          ],
+          "content": "● 3 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.587
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.831,
+            0.402,
+            0.995
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.03,
+            0.602,
+            0.094
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.277,
+            0.261,
+            0.96,
+            0.767
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.486,
+            0.861,
+            0.948,
+            0.906
+          ],
+          "content": "**Poll**. Above, I said “the only resolver”. Is that correct?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.276,
+            0.255,
+            0.963,
+            0.925
+          ],
+          "sub_type": "algorithm",
+          "content": "where $\\rho \\in R$\n$\\rho$ to it\nselect → loc(r1) = a\noccupied(d2) = nil\nloc(r1) = d2\noccupied(d) = nil\noccupied(d2) = r1\nonly resolver:\ncausal link from\na new action\nloc(r1) = d2\nloc(r2) = d1\nloc(r1) = d1\nloc(r2) = d2\noccupied(d1) = nil\nloc(r2) = d'\na0\na2 = move(r2,d',d1)\nloc(r2) = d1\noccupied(d') = nil\noccupied(d1) = r2",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.03,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.024,
+            0.044,
+            0.376,
+            0.267
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.401
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.489,
+            0.191,
+            0.535
+          ],
+          "content": "● 4 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.586
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.831,
+            0.403,
+            0.969
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_7.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.973,
+            0.356,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.834,
+            0.403,
+            0.971
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.114,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.09,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.135,
+            0.371,
+            0.266
+          ],
+          "content": "(i) arbitrarily select $f   \\in F l a w s ( \\pi )$ $R \\leftarrow$ {all feasible resolvers for f} **if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.384,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.488,
+            0.19,
+            0.535
+          ],
+          "content": "● $5$ open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.546,
+            0.148,
+            0.586
+          ],
+          "content": "● 1 threat"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.281,
+            0.541,
+            0.379,
+            0.582
+          ],
+          "content": "\\overline{\\text{loc}} (r1) = d1",
+          "image_source": "images/page_18_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.28,
+            0.583,
+            0.383,
+            0.627
+          ],
+          "content": "\\text{loc}(\\text{r2}) = \\text{d2}",
+          "image_source": "images/page_18_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.28,
+            0.629,
+            0.436,
+            0.672
+          ],
+          "content": "\\text {occupied(d3)} = \\text {nil}",
+          "image_source": "images/page_18_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.28,
+            0.673,
+            0.431,
+            0.717
+          ],
+          "content": "\\text{occupied(d1)} = r1",
+          "image_source": "images/page_18_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.279,
+            0.718,
+            0.435,
+            0.761
+          ],
+          "content": "\\text{occupied(d2) = r2}",
+          "image_source": "images/page_18_equation_12.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.03,
+            0.602,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.655,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.526,
+            0.272,
+            0.687,
+            0.315
+          ],
+          "content": "\\text {occupied(d2)} = \\text {nil}",
+          "image_source": "images/page_18_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.555,
+            0.316,
+            0.714,
+            0.36
+          ],
+          "content": "a _ {1} = \\text {move} (\\mathrm{r1}, d, \\mathrm{d2})",
+          "image_source": "images/page_18_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.58,
+            0.363,
+            0.693,
+            0.405
+          ],
+          "content": "\\overline {{\\operatorname{loc} (r 1) = d 2}}",
+          "image_source": "images/page_18_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.847,
+            0.405,
+            0.958,
+            0.449
+          ],
+          "content": "\\blacktriangleright \\mathrm{loc} (\\mathrm{r1}) = \\mathrm{d2}",
+          "image_source": "images/page_18_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.838,
+            0.451,
+            0.955,
+            0.492
+          ],
+          "content": "\\blacktriangleright \\operatorname{loc} (\\mathrm{r} 2) = \\mathrm{d} 1",
+          "image_source": "images/page_18_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.454,
+            0.627,
+            0.607,
+            0.671
+          ],
+          "content": "\\text {occupied} (d ^ {\\prime \\prime}) = \\text {nil}",
+          "image_source": "images/page_18_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.703,
+            0.583,
+            0.861,
+            0.629
+          ],
+          "content": "\\text {occupied(d1)} = \\text {nil}",
+          "image_source": "images/page_18_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.671,
+            0.636,
+            0.717
+          ],
+          "content": "a _ {3} = \\text {move} (r, \\mathrm{d} 2, d ^ {\\prime \\prime})",
+          "image_source": "images/page_18_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.506,
+            0.718,
+            0.604,
+            0.761
+          ],
+          "content": "\\overline {{\\mathrm{loc} (r) = d ^ {\\prime \\prime}}}",
+          "image_source": "images/page_18_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.728,
+            0.671,
+            0.893,
+            0.717
+          ],
+          "content": "\\left| a _ {2} = \\text {move} (\\mathrm{r} 2, d ^ {\\prime}, \\mathrm{d} 1) \\right|",
+          "image_source": "images/page_18_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.755,
+            0.718,
+            0.892,
+            0.761
+          ],
+          "content": "\\overline {{\\operatorname{loc} (r 2) = d 1}}",
+          "image_source": "images/page_18_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.505,
+            0.759,
+            0.67,
+            0.807
+          ],
+          "content": "\\text{occupied(d2)} = \\text{nil}^{\\prime}",
+          "image_source": "images/page_18_equation_26.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.504,
+            0.807,
+            0.648,
+            0.852
+          ],
+          "content": "\\text{occupied}(d'') = r",
+          "image_source": "images/page_18_equation_27.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.494,
+            0.899,
+            0.92,
+            0.949
+          ],
+          "content": "<strong><u>Poll</u></strong>: does $a _ { 3 }$ threaten ${ a _ { 1 } } ^ { \\flat } \\mathbf { S }$ precondition loc $( r 1 ) = d ?$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.113,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.091,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.135,
+            0.368,
+            0.265
+          ],
+          "content": "(i) arbitrarily select $f   \\in F l a w s ( \\pi )$ $R \\leftarrow$ {all feasible resolvers for f} **if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.489,
+            0.19,
+            0.535
+          ],
+          "content": "● 4 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.545,
+            0.156,
+            0.586
+          ],
+          "content": "● 2 threats"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.282,
+            0.541,
+            0.379,
+            0.581
+          ],
+          "content": "\\overline {{\\operatorname{loc}}} (r 1) = d 1",
+          "image_source": "images/page_19_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.281,
+            0.583,
+            0.382,
+            0.627
+          ],
+          "content": "\\text{loc}(\\text{r2}) = \\text{d2}",
+          "image_source": "images/page_19_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.28,
+            0.629,
+            0.436,
+            0.672
+          ],
+          "content": "\\text {occupied(d3)} = \\text {nil}",
+          "image_source": "images/page_19_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.279,
+            0.673,
+            0.431,
+            0.716
+          ],
+          "content": "\\text{occupied(d1)} = r1",
+          "image_source": "images/page_19_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.279,
+            0.718,
+            0.434,
+            0.761
+          ],
+          "content": "\\text{occupied(d2) = r2}",
+          "image_source": "images/page_19_equation_10.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.008,
+            0.839,
+            0.117,
+            0.879
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.009,
+            0.883,
+            0.263,
+            0.923
+          ],
+          "content": "\\text {pre:} \\operatorname{loc} (r) = d, \\text {occupied} (d ^ {\\prime}) = \\text {nil}",
+          "image_source": "images/page_19_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.04,
+            0.927,
+            0.128,
+            0.965
+          ],
+          "content": "\\operatorname{loc} (r) \\leftarrow d ^ {\\prime}.",
+          "image_source": "images/page_19_equation_13.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.03,
+            0.601,
+            0.093
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.375,
+            0.135,
+            0.57,
+            0.211
+          ],
+          "sub_type": "algorithm",
+          "content": "causal link from  $a_{0}$ , with substitution  $d \\leftarrow d1$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.53,
+            0.226,
+            0.63,
+            0.271
+          ],
+          "content": "\\text {loc} (r 1) = d 1",
+          "image_source": "images/page_19_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.522,
+            0.272,
+            0.687,
+            0.315
+          ],
+          "content": "\\blacktriangleleft \\text {occupied(d2)} = \\text {nil}",
+          "image_source": "images/page_19_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.554,
+            0.316,
+            0.724,
+            0.359
+          ],
+          "content": "a _ {1} = \\text {move} (r 1, d 1, d 2)",
+          "image_source": "images/page_19_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.58,
+            0.363,
+            0.692,
+            0.405
+          ],
+          "content": "\\overline {{\\operatorname{loc} (r 1) = d 2 - -}}",
+          "image_source": "images/page_19_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.406,
+            0.735,
+            0.45
+          ],
+          "content": "\\text {occupied(d1) = nil}",
+          "image_source": "images/page_19_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.451,
+            0.732,
+            0.494
+          ],
+          "content": "\\text {occupied(d2)} = r 1",
+          "image_source": "images/page_19_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.855,
+            0.405,
+            0.958,
+            0.449
+          ],
+          "content": "\\operatorname{loc} (r 1) = d 2",
+          "image_source": "images/page_19_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.838,
+            0.451,
+            0.954,
+            0.492
+          ],
+          "content": "\\blacktriangleright \\operatorname{loc} (\\mathrm{r} 2) = \\mathrm{d} 1",
+          "image_source": "images/page_19_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.456,
+            0.579,
+            0.549,
+            0.627
+          ],
+          "content": "\\text{loc} (r) = \\mathrm{d}2",
+          "image_source": "images/page_19_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.455,
+            0.627,
+            0.607,
+            0.671
+          ],
+          "content": "\\text {occupied} (d ^ {\\prime \\prime}) = \\text {nil}",
+          "image_source": "images/page_19_equation_26.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.703,
+            0.583,
+            0.861,
+            0.628
+          ],
+          "content": "\\text {occupied(d1)} = \\text {nil}",
+          "image_source": "images/page_19_equation_27.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.478,
+            0.67,
+            0.636,
+            0.717
+          ],
+          "content": "a _ {3} = \\text {move} (r, \\mathrm{d} 2, d ^ {\\prime \\prime})",
+          "image_source": "images/page_19_equation_28.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.703,
+            0.628,
+            0.804,
+            0.67
+          ],
+          "content": "\\operatorname{loc} (\\mathrm{r} 2) = d ^ {\\prime}",
+          "image_source": "images/page_19_equation_29.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.501,
+            0.718,
+            0.604,
+            0.761
+          ],
+          "content": "\\operatorname{loc} (r) = d ^ {\\prime \\prime}",
+          "image_source": "images/page_19_equation_30.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.729,
+            0.671,
+            0.892,
+            0.717
+          ],
+          "content": "a _ {2} = \\text {move} (\\mathrm{r} 2, d ^ {\\prime}, \\mathrm{d} 1)",
+          "image_source": "images/page_19_equation_31.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.756,
+            0.718,
+            0.894,
+            0.76
+          ],
+          "content": "\\overline {{\\operatorname{loc} (\\mathrm{r} 2) = \\mathrm{d} 1}}",
+          "image_source": "images/page_19_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.504,
+            0.759,
+            0.67,
+            0.806
+          ],
+          "content": "\\text{occupied(d2)} = \\text{nil}^{\\prime}",
+          "image_source": "images/page_19_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.754,
+            0.761,
+            0.903,
+            0.805
+          ],
+          "content": "\\text{occupied} (d') = \\text{nil}",
+          "image_source": "images/page_19_equation_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.504,
+            0.807,
+            0.646,
+            0.851
+          ],
+          "content": "\\text{occupied}(d'') = r",
+          "image_source": "images/page_19_equation_35.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.754,
+            0.807,
+            0.909,
+            0.85
+          ],
+          "content": "\\text{occupied(d1) = r2}",
+          "image_source": "images/page_19_equation_36.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.876,
+            0.846,
+            0.971
+          ],
+          "content": "**Poll**: does $a _ { 3 }$ threaten the causal link for ${ a _ { g } } ^ { \\flat } \\mathrm { {  ~ s ~ } }$ precondition loc(r1)=d2?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.277,
+            0.233,
+            0.962,
+            0.857
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.029,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.024,
+            0.044,
+            0.379,
+            0.266
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.489,
+            0.19,
+            0.535
+          ],
+          "content": "● 4 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.546,
+            0.148,
+            0.586
+          ],
+          "content": "● 1 threat"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.629,
+            0.234,
+            0.673
+          ],
+          "content": "Constraint: $r \\neq \\uparrow 1$"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.832,
+            0.402,
+            0.97
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.277,
+            0.249,
+            0.962,
+            0.898
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_0.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.008,
+            0.839,
+            0.117,
+            0.879
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.046,
+            0.114,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.09,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.229,
+            0.135,
+            0.338,
+            0.179
+          ],
+          "content": "f \\in F l a w s (\\pi)",
+          "image_source": "images/page_21_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.181,
+            0.133,
+            0.219
+          ],
+          "content": "R \\leftarrow",
+          "image_source": "images/page_21_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.107,
+            0.225,
+            0.158,
+            0.263
+          ],
+          "content": "R = \\emptyset",
+          "image_source": "images/page_21_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.488,
+            0.19,
+            0.535
+          ],
+          "content": "● 3 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.546,
+            0.149,
+            0.586
+          ],
+          "content": "● 1 threat"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.63,
+            0.235,
+            0.672
+          ],
+          "content": "~~Constraint: r ≠ r1~~"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.008,
+            0.883,
+            0.264,
+            0.924
+          ],
+          "content": "\\text {pre:} \\operatorname{loc} (r) = d, \\text {occupied} (d ^ {\\prime}) = \\text {nil}",
+          "image_source": "images/page_21_equation_11.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.029,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_13.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.414,
+            0.876,
+            0.594,
+            0.953
+          ],
+          "sub_type": "algorithm",
+          "content": "causal link from  $a_{0}$  with substitution  $r \\leftarrow r2$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.024,
+            0.044,
+            0.377,
+            0.266
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.489,
+            0.19,
+            0.535
+          ],
+          "content": "● 3 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.586
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.833,
+            0.402,
+            0.969
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.029,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.786,
+            0.917,
+            0.844,
+            0.952
+          ],
+          "content": "a _ {3} \\prec a _ {2}",
+          "image_source": "images/page_22_equation_7.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.114,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.09,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.025,
+            0.135,
+            0.37,
+            0.266
+          ],
+          "sub_type": "algorithm",
+          "content": "(i) arbitrarily select $f \\in Flaws(\\pi)$\n$R \\leftarrow \\{\\text{all feasible resolvers for } f\\}$\nif $R = \\emptyset$ then return failure",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.488,
+            0.19,
+            0.535
+          ],
+          "content": "● 2 open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.586
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.281,
+            0.541,
+            0.38,
+            0.582
+          ],
+          "content": "\\overline{\\text{loc}} (r1) = d1",
+          "image_source": "images/page_23_equation_6.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.833,
+            0.403,
+            0.97
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.029,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.841,
+            0.405,
+            0.958,
+            0.449
+          ],
+          "content": "\\blacktriangleright \\text {loc} (\\mathrm{r1}) = \\mathrm{d2}",
+          "image_source": "images/page_23_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.704,
+            0.583,
+            0.861,
+            0.627
+          ],
+          "content": "\\text {occupied(d1)} = \\text {nil}",
+          "image_source": "images/page_23_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.671,
+            0.643,
+            0.717
+          ],
+          "content": "\\left| a _ {3} = \\text {move} (\\mathrm{r} 2, \\mathrm{d} 2, d ^ {\\prime}) \\right|",
+          "image_source": "images/page_23_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.73,
+            0.671,
+            0.893,
+            0.717
+          ],
+          "content": "\\left| a _ {2} = \\text {move} (\\mathrm{r} 2, d ^ {\\prime}, \\mathrm{d} 1) \\right|",
+          "image_source": "images/page_23_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.505,
+            0.759,
+            0.669,
+            0.806
+          ],
+          "content": "\\text {occupied(d2)} = \\mathrm{nil} ^ {\\prime}",
+          "image_source": "images/page_23_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.762,
+            0.891,
+            0.782,
+            0.921
+          ],
+          "content": "a _ {3}",
+          "image_source": "images/page_23_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.765,
+            0.921,
+            0.826,
+            0.955
+          ],
+          "content": "d ^ {\\prime \\prime} \\leftarrow d ^ {\\prime}",
+          "image_source": "images/page_23_equation_16.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.114,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.091,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.135,
+            0.369,
+            0.266
+          ],
+          "content": "(i) arbitrarily select $f   \\in F l a w s ( \\pi )$ $R \\leftarrow$ {all feasible resolvers for f} **if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.399
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.489,
+            0.182,
+            0.535
+          ],
+          "content": "● 1 open goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.585
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.833,
+            0.402,
+            0.969
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.03,
+            0.602,
+            0.094
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.658,
+            0.017,
+            0.999,
+            0.238
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.277,
+            0.26,
+            0.958,
+            0.857
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_9.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.973,
+            0.356,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.114,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.091,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.135,
+            0.341,
+            0.179
+          ],
+          "content": "arbitrarily select(i) $f   \\in F l a w s ( \\pi )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.181,
+            0.133,
+            0.219
+          ],
+          "content": "R \\leftarrow",
+          "image_source": "images/page_25_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.225,
+            0.33,
+            0.266
+          ],
+          "content": "**if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.269,
+            0.385,
+            0.4
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.49,
+            0.2,
+            0.535
+          ],
+          "content": "● no open goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.547,
+            0.166,
+            0.587
+          ],
+          "content": "● no threats"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.282,
+            0.543,
+            0.379,
+            0.583
+          ],
+          "content": "\\overline{\\text{loc}} (r1) = d1",
+          "image_source": "images/page_25_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.281,
+            0.585,
+            0.383,
+            0.627
+          ],
+          "content": "\\mathrm{loc} (\\mathrm{r} 2) = \\mathrm{d} 2",
+          "image_source": "images/page_25_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.631,
+            0.178,
+            0.671
+          ],
+          "content": "● we’re done"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.28,
+            0.675,
+            0.432,
+            0.717
+          ],
+          "content": "\\text{occupied(d1)} = r1",
+          "image_source": "images/page_25_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.008,
+            0.839,
+            0.117,
+            0.879
+          ],
+          "content": "move $( r ,   d ,   d ^ { \\prime } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.008,
+            0.883,
+            0.264,
+            0.923
+          ],
+          "content": "\\text {pre:} \\operatorname{loc} (r) = d, \\text {occupied} (d ^ {\\prime}) = \\text {nil}",
+          "image_source": "images/page_25_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.008,
+            0.926,
+            0.399,
+            0.967
+          ],
+          "content": "\\text {eff:} \\operatorname{loc} (r) \\leftarrow d ^ {\\prime}, \\text {occupied} (d ^ {\\prime}) = r, \\text {occupied} (d) = \\text {nil}",
+          "image_source": "images/page_25_equation_15.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.397,
+            0.029,
+            0.603,
+            0.095
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.52,
+            0.273,
+            0.687,
+            0.316
+          ],
+          "content": "\\blacktriangleleft \\text {occupied(d2)} = \\text {nil}",
+          "image_source": "images/page_25_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.555,
+            0.317,
+            0.724,
+            0.361
+          ],
+          "content": "a _ {1} = \\text {move} (r 1, d 1, d 2)",
+          "image_source": "images/page_25_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.364,
+            0.693,
+            0.405
+          ],
+          "content": "\\operatorname{loc} (r 1) = d 2 -",
+          "image_source": "images/page_25_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.841,
+            0.406,
+            0.958,
+            0.45
+          ],
+          "content": "\\blacktriangleright \\operatorname{loc} (r 1) = d 2",
+          "image_source": "images/page_25_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.838,
+            0.452,
+            0.955,
+            0.493
+          ],
+          "content": "\\blacktriangleright \\operatorname{loc} (\\mathrm{r} 2) = \\mathrm{d} 1",
+          "image_source": "images/page_25_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.44,
+            0.585,
+            0.559,
+            0.627
+          ],
+          "content": "- \\blacktriangleright \\operatorname{loc} (\\mathrm{r} 2) = \\mathrm{d} 2",
+          "image_source": "images/page_25_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.454,
+            0.629,
+            0.612,
+            0.671
+          ],
+          "content": "\\text {occupied(d3)} = \\text {nil}",
+          "image_source": "images/page_25_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.689,
+            0.583,
+            0.861,
+            0.629
+          ],
+          "content": "\\blacklozenge \\text {occupied(d1)} = \\text {nil}",
+          "image_source": "images/page_25_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.692,
+            0.629,
+            0.809,
+            0.673
+          ],
+          "content": "\\blacktriangleright \\text {loc} (\\mathrm{r2}) = \\mathrm{d3}",
+          "image_source": "images/page_25_equation_26.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.672,
+            0.652,
+            0.718
+          ],
+          "content": "\\left| a _ {3} = \\text {move} (\\mathrm{r} 2, \\mathrm{d} 2, \\mathrm{d} 3) \\right|",
+          "image_source": "images/page_25_equation_27.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.73,
+            0.673,
+            0.901,
+            0.717
+          ],
+          "content": "a _ {2} = \\text {move} (\\mathrm{r} 2, \\mathrm{d} 3, \\mathrm{d} 1)",
+          "image_source": "images/page_25_equation_28.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.755,
+            0.719,
+            0.898,
+            0.761
+          ],
+          "content": "\\overline {{\\operatorname{loc} (\\mathrm{r2}) = \\mathrm{d1}}} -",
+          "image_source": "images/page_25_equation_29.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.505,
+            0.761,
+            0.671,
+            0.807
+          ],
+          "content": "\\text{occupied(d2)} = \\text{nil}^{\\prime}",
+          "image_source": "images/page_25_equation_30.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.754,
+            0.763,
+            0.911,
+            0.807
+          ],
+          "content": "\\text{occupied(d3) = nil}",
+          "image_source": "images/page_25_equation_31.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.504,
+            0.808,
+            0.66,
+            0.851
+          ],
+          "content": "\\text{occupied(d3)} = r2",
+          "image_source": "images/page_25_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.754,
+            0.808,
+            0.91,
+            0.851
+          ],
+          "content": "\\text{occupied(d1) = r2}",
+          "image_source": "images/page_25_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.538,
+            0.871,
+            0.558,
+            0.901
+          ],
+          "content": "a _ {0}",
+          "image_source": "images/page_25_equation_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.541,
+            0.899,
+            0.597,
+            0.933
+          ],
+          "content": "d' \\leftarrow \\text{d3}",
+          "image_source": "images/page_25_equation_35.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.023,
+            0.041,
+            0.384,
+            0.403
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n(ii)      nondeterministically choose ρ ∈ R\n        modify π by applying ρ to it\n    return π\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.457,
+            0.276,
+            0.507
+          ],
+          "content": "= The solution we found:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.572,
+            0.157,
+            0.613
+          ],
+          "content": "= Another:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.738,
+            0.267,
+            0.783
+          ],
+          "content": "= Infinitely many others"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.83,
+            0.403,
+            0.999
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.399,
+            0.031,
+            0.601,
+            0.093
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.66,
+            0.017,
+            0.999,
+            0.238
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.279,
+            0.451,
+            0.955,
+            0.778
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_7.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.047,
+            0.113,
+            0.089
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.031,
+            0.601,
+            0.093
+          ],
+          "level": 2,
+          "content": "PSP Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.091,
+            0.264,
+            0.133
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.136,
+            0.34,
+            0.179
+          ],
+          "content": "arbitrarily select(i) $f   \\in F l a w s ( \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.18,
+            0.367,
+            0.223
+          ],
+          "content": "$R \\leftarrow$ {all feasible resolvers for f}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.225,
+            0.329,
+            0.265
+          ],
+          "content": "**if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.269,
+            0.385,
+            0.399
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.421,
+            0.592,
+            0.465
+          ],
+          "content": "= Add another location to the planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.477,
+            0.634,
+            0.521
+          ],
+          "content": "= Still have all of the solutions on the previous page"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.532,
+            0.562,
+            0.576
+          ],
+          "content": "= There also are partially-ordered solutions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.198,
+            0.593,
+            0.661,
+            0.782
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.669,
+            0.328,
+            0.984,
+            0.637
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_image_11.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.831,
+            0.402,
+            0.997
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.001,
+            0.02,
+            0.361,
+            0.24
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.005,
+            0.242,
+            0.362,
+            0.375
+          ],
+          "continues_prev": true,
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify π by applying ρ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.017,
+            0.444,
+            0.364,
+            0.527
+          ],
+          "content": "Selecting a flaw to resolve in PSP ≈ selecting a variable to instantiate in a CSP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.048,
+            0.538,
+            0.276,
+            0.577
+          ],
+          "content": "▸ AND-branch in both cases"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.017,
+            0.588,
+            0.294,
+            0.627
+          ],
+          "content": "● Fewest Alternatives First (FAF):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.048,
+            0.639,
+            0.321,
+            0.679
+          ],
+          "content": "▸ select flaw with fewest resolvers"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.689,
+            0.314,
+            0.772
+          ],
+          "content": "≈ Minimum Remaining Values (MRV) heuristic for CSPs"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.831,
+            0.4,
+            0.999
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.032,
+            0.615,
+            0.098
+          ],
+          "level": 2,
+          "content": "Selecting a Flaw"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.393,
+            0.153,
+            0.591,
+            0.475
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPoll: which flaw would FAF select first?\nA. loc(r1)=d\nB. occupied(d2) = nil\nC. occupied(d1) = nil\nD. loc(r2)=d'\nE. no preference\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.657,
+            0.017,
+            0.999,
+            0.239
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.402,
+            0.436,
+            0.999,
+            0.993
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.017,
+            0.606,
+            0.379
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n(ii)      nondeterministically choose ρ ∈ R\n        modify π by applying ρ to it\n    return π\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.43,
+            0.355,
+            0.514
+          ],
+          "content": "Choosing a resolver for a flaw ≈ assigning a value to a variable in a CSP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.523,
+            0.299,
+            0.563
+          ],
+          "content": "▸ In both cases, an OR-branch"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.573,
+            0.328,
+            0.614
+          ],
+          "content": "● Least Constraining Resolver (LCR):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.625,
+            0.35,
+            0.705
+          ],
+          "content": "▸ prefer resolver that rules out the fewest resolvers for the other flaws"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.715,
+            0.351,
+            0.797
+          ],
+          "content": "≈ Least Constraining Value (LCV) heuristic for CSPs"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.832,
+            0.4,
+            0.999
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.656,
+            0.064,
+            0.988,
+            0.345
+          ],
+          "sub_type": "algorithm",
+          "content": "Poll: for loc(r1)=d, which resolver would LCR choose first?\nA. causal link from a new action\nB. causal link from  $a_{0}$ , with  $d \\leftarrow d1$ \nC. causal link from  $a_{3}$ , with  $r \\leftarrow r1$ ,  $d'' \\leftarrow d$ \nD. no preference",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.372,
+            0.039,
+            1.0,
+            1.0
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_image_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.002,
+            0.017,
+            0.607,
+            0.379
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n(ii)      nondeterministically choose ρ ∈ R\n        modify π by applying ρ to it\n    return π\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.015,
+            0.408,
+            0.343,
+            0.635
+          ],
+          "sub_type": "algorithm",
+          "content": "- Least Constraining Resolver (LCR):\n  - prefer resolver that rules out the fewest resolvers for the other flaws\n    $\\approx$ Least Constraining Value (LCV) heuristic for CSPs",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.016,
+            0.642,
+            0.304,
+            0.682
+          ],
+          "content": "● Problem (in PSP but not in CSPs):"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.831,
+            0.4,
+            0.999
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.693,
+            0.391,
+            0.737
+          ],
+          "content": "▸ LCR can keep adding new actions forever"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.656,
+            0.065,
+            0.988,
+            0.344
+          ],
+          "sub_type": "algorithm",
+          "content": "Poll: for loc(r1)=d, which resolver would LCR choose first?\nA. causal link from a new action\nB. causal link from  $a_{0}$ , with  $d \\leftarrow d1$ \nC. causal link from  $a_{3}$ , with  $r \\leftarrow r1$ ,  $d'' \\leftarrow d$ \nD. no preference",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.402,
+            0.366,
+            0.999,
+            0.994
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.017,
+            0.608,
+            0.379
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPSP (Σ, π)\n    while Flaws(π) ≠ ∅ do\n(i)      arbitrarily select f ∈ Flaws(π)\n        R ← {all feasible resolvers for f}\n        if R = ∅ then return failure\n(ii)      nondeterministically choose ρ ∈ R\n        modify π by applying ρ to it\n    return π\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.024,
+            0.441,
+            0.22,
+            0.483
+          ],
+          "content": "Perhaps this might work:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.494,
+            0.326,
+            0.534
+          ],
+          "content": "● Avoid New Actions (ANA) heuristic:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.546,
+            0.404,
+            0.587
+          ],
+          "content": "▸ prefer resolvers that don’t add new actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.597,
+            0.258,
+            0.635
+          ],
+          "content": "▸ use LCR as tie-breaker"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.831,
+            0.4,
+            0.998
+          ],
+          "sub_type": "code",
+          "content": "```txt\nmove(r, d, d')\npre: loc(r) = d, occupied(d') = nil\neff: loc(r) ← d', occupied(d') = r, occupied(d) = nil\nLecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.405,
+            0.427,
+            0.998,
+            0.994
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.003,
+            0.021,
+            0.091,
+            0.062
+          ],
+          "content": "PSP $( \\Sigma , \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.065,
+            0.241,
+            0.107
+          ],
+          "content": "**while** $F l a w s ( \\pi ) \\neq \\emptyset$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.003,
+            0.109,
+            0.318,
+            0.153
+          ],
+          "content": "arbitrarily select(i) $f   \\in   F l a w s ( \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.154,
+            0.344,
+            0.196
+          ],
+          "content": "R ← {all feasible resolvers for f}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.199,
+            0.306,
+            0.239
+          ],
+          "content": "**if** $R = \\emptyset$ **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.005,
+            0.243,
+            0.363,
+            0.373
+          ],
+          "content": "nondeterministically choose(ii) $\\rho \\in R$ modify $\\pi$ by applying $\\rho$ to it **return** π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.024,
+            0.442,
+            0.22,
+            0.483
+          ],
+          "content": "Perhaps this might work:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.495,
+            0.326,
+            0.533
+          ],
+          "content": "● Avoid New Actions (ANA) heuristic:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.546,
+            0.404,
+            0.587
+          ],
+          "content": "▸ prefer resolvers that don’t add new actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.597,
+            0.258,
+            0.634
+          ],
+          "content": "▸ use LCR as tie-breaker"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.008,
+            0.839,
+            0.117,
+            0.878
+          ],
+          "content": "move(r, d, d′)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.008,
+            0.926,
+            0.399,
+            0.967
+          ],
+          "content": "\\text {eff:} \\operatorname{loc} (r) \\leftarrow d ^ {\\prime}, \\text {occupied} (d ^ {\\prime}) = r, \\text {occupied} (d) = \\text {nil}",
+          "image_source": "images/page_32_equation_11.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.324,
+            0.042,
+            0.609,
+            0.102
+          ],
+          "level": 2,
+          "content": "Choosing a Resolver"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.488,
+            0.132,
+            0.859,
+            0.171
+          ],
+          "content": "● Problem: ANA will prefer these two choices:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.519,
+            0.181,
+            0.973,
+            0.22
+          ],
+          "content": "▸ For loc $( r _ { 1 } ) = d$ )=d in $a _ { 1 } ,$ use action $a _ { 0 }$ with substitution $d { \\leftarrow } { \\mathsf { d } } 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.519,
+            0.227,
+            0.981,
+            0.266
+          ],
+          "content": "▸ For loc $( r 2 ) = d ^ { r }$ in $a _ { 2 } ,$ use action $a _ { 0 }$ with substitution $d ^ { \\prime } { \\leftarrow } d 2$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.52,
+            0.276,
+            0.869,
+            0.315
+          ],
+          "content": "▸ $a_{1} = \\mathsf{move}(\\mathsf{r1},\\mathsf{d1},\\mathsf{d2}); a_{2} = \\mathsf{move}(\\mathsf{r2},\\mathsf{d2},\\mathsf{d1})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.321,
+            0.964,
+            0.36
+          ],
+          "content": "• Makes the problem unsolvable ⇒ need to backtrack"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.488,
+            0.37,
+            0.725,
+            0.41
+          ],
+          "content": "● Perhaps use ANA anyway?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.405,
+            0.428,
+            0.997,
+            0.99
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_19.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.425,
+            0.066,
+            0.574,
+            0.119
+          ],
+          "level": 2,
+          "content": "Discussion"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.165,
+            0.633,
+            0.208
+          ],
+          "content": "● Problem: how to prune infinitely long paths in the search space?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.217,
+            0.504,
+            0.299
+          ],
+          "content": "▸ Loop detection is based on recognizing states or goals we’ve seen before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.308,
+            0.495,
+            0.351
+          ],
+          "content": "▸ Partially ordered plan: don’t know the states"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.539,
+            0.27,
+            0.784,
+            0.305
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.397,
+            0.532,
+            0.489
+          ],
+          "content": "● Prune if π contains the same action more than once? ⟨a1, a2, …, a1, …⟩"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.498,
+            0.614,
+            0.596
+          ],
+          "content": "▸ No. Sometimes need the same action again in another state • e.g., Towers of Hanoi: move disk1 from peg1 to peg2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.643,
+            0.466,
+            0.956,
+            0.711
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.661,
+            0.304,
+            0.705
+          ],
+          "content": "● Weak pruning technique"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.717,
+            0.587,
+            0.761
+          ],
+          "content": "▸ Prune all partial plans that contain more than |S| actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.808,
+            0.721,
+            0.945,
+            0.748
+          ],
+          "content": "Credit: [Evanherk](https://en.wikipedia.org/wiki/User:Evanherk), [GFDL](https://commons.wikimedia.org/wiki/File:Tower_of_Hanoi.jpeg)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.773,
+            0.264,
+            0.815
+          ],
+          "content": "▸ Not very helpful"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.828,
+            0.562,
+            0.871
+          ],
+          "content": "I don’t know whether there’s a better pruning technique"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.057,
+            0.57,
+            0.115
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.161,
+            0.46,
+            0.201
+          ],
+          "content": "● 3.3. Backward State-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.213,
+            0.335,
+            0.255
+          ],
+          "content": "▸ Relevance, $\\gamma ^ { - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.265,
+            0.477,
+            0.307
+          ],
+          "content": "▸ Backward search, cycle checking"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.314,
+            0.469,
+            0.356
+          ],
+          "content": "Lifted backward search (briefly)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.166,
+            0.365,
+            0.371,
+            0.407
+          ],
+          "level": 2,
+          "content": "● 3.4 Plan-Space Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.415,
+            0.311,
+            0.456
+          ],
+          "content": "▸ Definitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.467,
+            0.528,
+            0.511
+          ],
+          "content": "Partially ordered plans and solutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.223,
+            0.519,
+            0.347,
+            0.564
+          ],
+          "content": "• partial plans"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.569,
+            0.343,
+            0.611
+          ],
+          "content": "• causal links"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.621,
+            0.272,
+            0.662
+          ],
+          "content": "▸ flaws:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.671,
+            0.394,
+            0.715
+          ],
+          "content": "• open goals, threats"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.725,
+            0.295,
+            0.765
+          ],
+          "content": "▸ resolvers"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.773,
+            0.333,
+            0.817
+          ],
+          "content": "▸ PSP algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.825,
+            0.356,
+            0.869
+          ],
+          "content": "• long example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.877,
+            0.736,
+            0.919
+          ],
+          "content": "• brief discussion of node-selection heuristics, pruning techniques"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "35"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 35,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
