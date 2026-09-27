@@ -1,0 +1,477 @@
+<!-- page: 1 -->
+
+## Lecture 2
+
+**Rule-based expert systems**
+
+■ **Introduction, or what is knowledge?**
+
+■ **Rules as a knowledge representation technique  as**
+
+■ **The main players in the development team**
+
+■ **Structure of a rule-based expert system**
+
+■ **Characteristics of an expert system**
+
+■ **Forward chaining and backward chaining**
+
+■ **Conflict resolution**
+
+■ **Summary**
+
+<!-- page: 2 -->
+
+**Introduction, or what is knowledge?**
+
+■ **Knowledge**  is a theoretical or practical is understanding of a subj ect or a domain. . Knowledge i s also the sum of what i s currently  i s known, and apparently knowledge is power. Those  is . who possess knowledge are called experts . .
+
+■ Anyone can be considered a  a **domain expert**  if he or  or she has deep knowledge (of both facts and rules) and strong practical experience in a particular  in domain. The area of the domain may be limited. In . . In general, an expert is a skilful person who can do  an  a  do things other people cannot. .
+
+<!-- page: 3 -->
+
+■ The human mental proces s i s internal , and it i s too  i s complex to be represented as an algorithm.  to  as an . However, most experts are capable of expressing their knowledge in the form of  in  of **rules** for problem s olving . .
+
+IF the ‘ traffic light ’ i s green  i s
+
+THEN the action i s go  i s go
+
+IF the ‘ traffic light ’ i s red  i s
+
+THEN the action i s stop  i s
+
+<!-- page: 4 -->
+
+## Rules as a knowledge representation technique  as
+
+■ The term  **rule** in AI, which is the most commonly in used type of knowledge representation, can be defined as an IF-THEN structure that relates given  as an IF-information or facts in the IF part to some action in  in  in the THEN part. A rule provides some description . of how to solve a problem. Rules are relatively  to . easy to create and understand.
+
+■ Any rule consi sts of two parts : the IF part, called the **antecedent**  (**premise**  or **condition** ) and the ) THEN part called the  **consequent**  (**conclusion**  or **action** ) .
+
+<!-- page: 5 -->
+
+IF THE THEN &lt;antecedent &gt;
+
+&lt;consequent &gt;
+
+■ A rule can have multiple antecedents j oined by the keywords  **AND** (**conjunction** ) , **OR** (**disjunction** ) or a combination of both. .
+
+IF &lt;antecedent 1  1&gt;
+
+AND &lt;antecedent 2 &gt;
+
+AND &lt;antecedent  n&gt;
+
+THEN &lt;consequent &gt;
+
+IF IF &lt;antecedent 1  1 &gt;
+
+OR
+
+&lt;antecedent 2 &gt;
+
+OR OR &lt;antecedent  n&gt;
+
+THEN &lt;consequent &gt;
+
+<!-- page: 6 -->
+
+■ The antecedent of a rule incorporates two parts : an  an **object** (linguistic object ) and its )  **value** . The obj ect and . its value are linked by an  an **operator** .
+
+■ The operator identifies the obj ect and assigns the value . Operators such as .  as is, are , is not, are not  are used to as sign a  a **symbolic value**  to a lingui stic obj ect. to .
+
+■ Expert systems can also use mathematical operators to define an obj ect as numerical and as sign it to the to  an  as **numerical value** .
+
+‘ age of the customer’ < 1 8  < 1 8
+
+AND ‘ cash withdrawal’ > 1 000  >
+
+THEN ‘ signature of the parent’ is required  is
+
+<!-- page: 7 -->
+
+**Rules can represent relations, recommendations, directives, strategies and heuristics :**
+
+## ■ Relation
+
+IF the ‘ fuel tank ’ i s empty  i s
+
+THEN the car is dead
+
+## ■ Recommendation
+
+IF the season i s autumn  i s
+
+AND the sky i s cloudy
+
+AND the forecast is drizzle
+
+THEN the advice is ‘ take an umbrella ’  is
+
+## ■ Directive
+
+IF the car is dead
+
+AND the ‘ fuel tank ’ i s empty  i s
+
+THEN the action is ‘ refuel the car’  is
+
+<!-- page: 8 -->
+
+## ■ Strategy
+
+IF the car is dead THEN the action i s ‘ check the fuel tank’  i s step 1 i s complete
+
+IF step 1 i s complete AND the ‘ fuel tank ’ i s full  i s THEN the action i s ‘ check the b attery ’ ;  i s ; step2 i s complete
+
+## ■ Heuristic
+
+IF the spill i s liquid
+
+AND the ‘ spill pH ’ < 6  < 6
+
+AND the ‘ spill smell ’ i s vineg ar  i s
+
+THEN the ‘ spill material ’ i s ‘ acetic acid ’  i s
+
+<!-- page: 9 -->
+
+## The main players in the development team  in
+
+There are five members of the expert system development team: the  **domain expert** , the **knowledge engineer** , the **programmer** , the **project manager**  and the  **end-user** .
+
+The success of their expert system entirely depends on how well the members work together. .
+
+<!-- page: 10 -->
+
+## The main players in the development team  in
+
+**Expert System Development Team**
+
+![](images/page_9_image_2.jpg)
+
+<!-- page: 11 -->
+
+■ The **domain expert**  is a knowledgeable and skilled is person capable of solving problems in a specific  in a area or  **domain** . This person has the greatest . experti se in a given domain . Thi s experti se i s to be  in .  i s to be captured in the expert system. Therefore, the expert must be able to communicate his or her  to knowledge, be willing to participate in the expert  be  in system development and commit a substantial  a amount of time to the proj ect. The domain expert  to . i s the mo st important player in the expert sy stem i s development team. .
+
+<!-- page: 12 -->
+
+■ The **knowledge engineer**  is someone who is capable is  is of designing, building and testing an expert system.  an . He or she interviews the domain expert to find out He or how a particular problem is solved. The knowledge . engineer establishes what reasoning methods the expert uses to handle facts and rules and decides  to how to represent them in the expert system. The  to knowledge engineer then chooses some development software or an expert system shell, or  or an  or looks at programming languages for encoding the knowledge. And finally, the knowledge engineer is . responsible for testing , revising and integrating the expert system into the workplace. .
+
+<!-- page: 13 -->
+
+The **programmer**  is the person responsible for the is actual programming, describing the domain knowledge in terms that a computer can  in understand. The programmer needs to have skills .  to in symbolic programming in such AI languages as in  as LISP, Prolog and OPS5 and also some experience in the application of different types of expert in sy stem shells . In addition, the programmer should . In know conventional programming languages like C,  C Pascal, FORTRAN and B asic . .
+
+<!-- page: 14 -->
+
+The **project manager**  is the leader of the expert is system development team, responsible for keeping the proj ect on track. He or she makes sure that all . He or deliverables and milestones are met, interacts with the expert, knowledge engineer, programmer and end-user. - .
+
+■ The **end-user** , often called j ust the ,  use r, is a person , is who uses the expert system when it is developed. . The user must not only be confident in the expert system performance but also feel comfortable using it. Therefore, the design of the user interface of the it expert sy stem i s also vital for the proj ect ’ s succes s ; s the end-user’ s contribution here can be crucial . - s .
+
+<!-- page: 15 -->
+
+## Structure of a rule-based expert system
+
+■ In the early seventies, Newell and Simon from In Carnegie-Mellon University proposed a production - system model, the foundation of the modern rule- - based expert sy stems . .
+
+■ The production model is based on the idea that  on humans solve problems by applying their knowledge  by (expres sed as production rules) to a given problem  as represented by problem- specific information. - .
+
+■ The production rules are stored in the long-term - memory and the problem- specific information or - or facts in the short-term memory .  in - .
+
+<!-- page: 16 -->
+
+## Production system model
+
+Long-term Memory
+
+Short-term Memory
+
+~~Production Rul~~e
+
+Fact
+
+REASONING
+
+Conclusion
+
+<!-- page: 17 -->
+
+## Basic structure of a rule-based expert system
+
+Knowledge B ase
+
+Database
+
+~~Rule: IF-THEN~~
+
+Fact
+
+Inference Engine
+
+Explanation Facilities
+
+User Interface
+
+User
+
+<!-- page: 18 -->
+
+■ The **knowledge base**  contains the domain knowledge useful for problem solving . In a rule- . In - based expert system, the knowledge is represented  is as a set of rules . Each rule specifies a relation, as a . recommendation, directive, strategy or heuristic and has the IF (condition) THEN (action) structure. When the condition part of a rule i s s ati sfied, the  i s rule i s s aid to  i s  fire and the action part i s executed . .
+
+■ The **database**  includes a set of facts used to match  a against the IF (condition) parts of rules stored in the knowledge base. .
+
+<!-- page: 19 -->
+
+■ The **inference engine**  carries out the reasoning whereby the expert system reaches a solution . It  a . It links the rules given in the knowledge base with the  in facts provided in the database. .
+
+■ The **explanation facilities** enable the user to ask the expert system **how** a particular conclusion is reached and **why** a specific fact is needed. An expert system must be able to explain its reasoning and j ustify its advice , analy si s or conclusion .
+
+■ The **user interface** is the means of communication between a user seeking a solution to the problem and an expert system.
+
+<!-- page: 20 -->
+
+## Complete structure of a rule-based expert system
+
+<u>External Program</u>
+
+![](images/page_19_image_2.jpg)
+
+<!-- page: 21 -->
+
+**Characteristics of an expert system**
+
+■ An expert system is built to perform at a human An  at expert level in a  a **narrow, specialised domain** . Thus , the most important characteristic of an expert system is its high-quality performance . No matter - . No how fast the system can solve a problem, the user will not be s ati sfied if the re sult i s wrong . .
+
+■ On the other hand, the speed of reaching a solution On  a is very important. Even the most accurate decision is . or diagno si s may not be useful if it i s too late to  to apply, for instance, in an emergency, when a  in an  a patient dies or a nuclear power plant explodes .  or .
+
+<!-- page: 22 -->
+
+■ Expert systems apply  **heuristics**  to guide the to reasoning and thus reduce the search area for a  a s olution . .
+
+■ A unique feature of an expert system is its A **explanation capability** . It enables the expert . system to review its own reasoning and explain its deci sions . .
+
+■ Expert systems employ  **symbolic reasoning**  when solving a problem. Symbols are used to represent . different types of knowledge such as facts ,  as concepts and rules . .
+
+<!-- page: 23 -->
+
+## Can expert systems make mistakes?
+
+■ Even a brilliant expert is only a human and thus can make mistakes . This suggests that an expert system .  an built to perform at a human expert level also should  at be allowed to make mi stakes . B ut we still trust be . experts, even we recognise that their judgements are  we sometimes wrong . Likewi se , at least in mo st cases , . we can rely on solutions provided by expert systems we  on but mistakes are possible and we should be aware of  we  of thi s .
+
+<!-- page: 24 -->
+
+■ In expert systems , In  **knowledge is separated from its processing**  (the knowledge base and the inference engine are split up) . A conventional program is a . A  a mixture of knowledge and the control structure to  to proces s this knowledge . This mixing leads to .  to difficulties in understanding and reviewing the program code, as any change to the code affects both  as  to the knowledge and its processing . .
+
+■ When an expert system shell is used, a knowledge  an engineer or an expert simply enters rules in the  or an  in knowledge base. Each new rule adds some new . knowledge and makes the expert system smarter. .
+
+<!-- page: 25 -->
+
+## Comparison of expert systems with conventional systems and human experts
+
+| gpvodriin e oealinf r pCaabe ol te detahi gso anin p eafxlin.sl dn gin a | pcoedmil gwoedknl auaIn hm.o frm e estsxi i , banrin <sub>a</sub>n | .doamin pobesrlm eustcshrii o oufrmf r Uwseo kn aa in nrr v to soel es o tlfh gedel in wo um teh b o r | <sub>um</sub>H paxen E <sub>st</sub>r |
+| --- | --- | --- | --- |
+| w.dataaseeded n py wheaced ad seccrhnifi p watcua cocusoasrilrnlin pw exlaion hsesso ad ainn gg pvdu aobesorinrlmlin- fsdace teuleiehTr rr | fg pssso itoceimn.rr fgpwsdeaatio o koleennr cleavode arPri | doaimn. pwao nobes arrrlm in gveaso to soerninl yues ad use sbocrlnmli peessed teo oxr inh frmf gwocessoedePr knl | yp SssxettemEr |
+| w.dataaseeded n yp wobtaed adutinnh in p watcuaesutasrilr rl pwoot eao aD nxlin h | gpwocess tsoederhi knl coto stuctue tonrlrr gwoedeo teknl frmh poot seaateD nr. | p.obesrlm gvto soeeeauelnrl nmri pwedeed oeatosllfinrin- g,aots a sees olrihmrif ocess data ad usePrn c , a l | <sub>g</sub>C<sub>voetioaloannn</sub> <sub>Prr</sub> m s |
+
+<!-- page: 26 -->
+
+## Comparison of expert systems with conventional systems and human experts (  (Continued )
+
+| pv.eesexni ,wsoecet adl inffiinn g p.tasocessrinin Thir i g poea adactcaf lrninnri g ypv vobe soaearlmlini y qace teuat oEnhnhlif <sup>s</sup> <sup>l</sup> <sub>s</sub>r | y.our fzz poatoscoeinfrmin i inml C waaestaesen mk mikh <sup>t</sup><sub>e</sub> n | .oatoinfrmin yuceta adunrinn fzz p wca deatcoetnlih inml gUseeacteaso a inx rnin,<sub>e</sub> <sub>d</sub>n | <sub>psuaxetmn</sub>H <sub>Er</sub> |
+| --- | --- | --- | --- |
+| pysea. to accosmlih qg,s cae aehnacuedrir gwweoedesn knl i gw. Woede baseeknlhn jgadust od oes teinln inh gwaddeues oin n rlr gypvobe so brlmlin y qace teuat oEnhnhlif | y.ufzz pdatascoete o i inmlr Cssaakeitake wn m mehn | y.u datafzz p,coete uceta ainmlnrinn wad ca deatnnlih gs iexacteaoinnnet rPrmi d | yp SssxettemEr |
+| gcaes dhn pocessrin wteoh knl , wcodehi ggcahnin pobe srlm ace tEnhn.cutiffil gg,a mkin gede adtsn i c aects bothff g p teoahrrm gyvo blin y qeuat ohlif h | pscoi inm wo aorrn vodePri n y.ete oulr fzz g, w oee dnhn o souto at alin <sup>a</sup><sub>t</sub> l<sub>l</sub> a , | .ad eactnx wee dathr Wo orknl pas coete iml y p oobesnrlm | C<sub>voetinn</sub> goaloan Prr m s |
+
+<!-- page: 27 -->
+
+**Forward chaining and backward chaining**
+
+■ In a rule-based expert system, the domain In - knowledge is represented by a set of IF-THEN  is  a - production rules and data is represented by a set of  a facts about the current situation. The inference engine compares each rule stored in the knowledge base with facts contained in the database. When the IF (condition) part of the rule matches a fact, the rule i s  i s fired and its THEN (action) part i s executed . .
+
+The matching of the rule IF parts to the facts  to produces  **inference chains** . The inference chain indicates how an expert system applies the rules to  an  to reach a conclusion. .
+
+<!-- page: 28 -->
+
+## Inference engine cycles via a match-fire procedure
+
+Database
+
+Fact: A is x
+
+Fact : B i s y
+
+Match
+
+Fire
+
+Knowledge Base
+
+<u>Rule : IF A is x THEN B is y</u>
+
+<!-- page: 29 -->
+
+## An example of an inference chain An
+
+Rule 1 : IF Y i s true AND D is true THEN Z is true
+
+Rule 2 : IF X i s true AND B i s true AND E is true THEN Y is true
+
+Rule 3 : IF A i s true THEN X is true
+
+![](images/page_28_image_4.jpg)
+
+<!-- page: 30 -->
+
+## Forward chaining
+
+Forward chaining is the  **data-driven reasoning** . The reasoning starts from the known data and proceeds forward with that data. Each time only . the topmost rule is executed. When fired, the rule  is . adds a new fact in the database. Any rule can be . executed only once. The match-fire cycle stops . - when no further rules can be fired.  no .
+
+<!-- page: 31 -->
+
+## Forward chaining
+
+![](images/page_30_image_1.jpg)
+
+![](images/page_30_image_2.jpg)
+
+Cycle 1
+
+![](images/page_30_image_4.jpg)
+
+Cycle 2
+
+![](images/page_30_image_6.jpg)
+
+Cycle 3
+
+<!-- page: 32 -->
+
+■ Forward chaining is a technique for gathering information and then inferring from it whatever can be inferred. be .
+
+■ However, in forward chaining, many rules may be  in executed that have nothing to do with the  do establi shed goal . .
+
+■ Therefore, if our goal is to infer only one particular  to fact, the forward chaining inference technique would not be efficient. .
+
+<!-- page: 33 -->
+
+## Backward chaining
+
+■ B ackward chaining is the  **goal-driven reasoning** . In backward chaining, an expert system has the goal  an (a hypothetical solution ) and the inference engine ) attempts to find the evidence to prove it . First, the  to  to  it . knowledge base is searched to find rules that might  is have the desired solution. Such rules must have the goal in their THEN (action) parts . If such a rule i s .  i s found and its IF (condition) part matches data in the database, then the rule is fired and the goal is  is proved . However, thi s i s rarely the case . .  i s .
+
+<!-- page: 34 -->
+
+## Backward chaining
+
+■ Thus the inference engine puts aside the rule it is working with (the rule i s s aid to  i s  **stack**) and sets up a )  up a new goal, a subgoal, to prove the IF part of this  a  to rule. Then the knowledge base is searched again .  is for rules that can prove the subgoal. The inference engine repeats the process of stacking the rules until no rules are found in the knowledge base to prove no  to the current subgoal . .
+
+<!-- page: 35 -->
+
+## Backward chaining
+
+![](images/page_34_image_1.jpg)
+
+Sub-Goal: X
+
+Sub-Goal: Y
+
+Knowledge Base Y & D Z **X & B & E** Y A X C L **L & M** N
+
+Goal: Z
+
+<!-- page: 36 -->
+
+**How do we choose between forward and  do we backward chaining?**
+
+■ If an expert first needs to gather some information  to and then tries to infer from it whatever can be  to inferred, choose the forward chaining inference engine . .
+
+■ However, if your expert begins with a hypothetical s olution and then attempts to find facts to prove it,  to  to choose the backward chaining inference engine. .
+
+<!-- page: 37 -->
+
+## Conflict resolution
+
+## Earlier we considered two simple rules for cros sing a road. Let us now add third rule : .
+
+IF the ‘ traffic light ’ i s green  i s
+
+THEN the action i s go  i s go
+
+IF the ‘ traffic light ’ i s red  i s
+
+THEN the action i s stop  i s
+
+■ R u le 3 :
+
+IF the ‘ traffic light ’ i s red  i s
+
+THEN the action i s go  i s go
+
+<!-- page: 38 -->
+
+■ We have two rules ,  Rule 2 and Rule 3 , with the 3 same IF part. Thus both of them can be set to fire when the condition part is satisfied. These rules represent a conflict set. The inference engine must . determine which rule to fire from such a set. A  to  a . A method for choosing a rule to fire when more than  to one rule can be fired in a given cycle is called  is **conflict resolution** .
+
+<!-- page: 39 -->
+
+■ In forward chaining, In  BOTH rules would be fired. Rule 2 i s fired first as the topmo st one , and as a  as  as a result, its THEN part is executed and linguistic obj ect action obtains value  stop . However, .  Rule 3 is also fired because the condition part of this rule is matche s the fact  ‘traffic light ’ is red  is , which i s still in the database. As a consequence, obj ect in . As  action takes new value  go .
+
+<!-- page: 40 -->
+
+## Methods used for conflict resolution
+
+■ Fire the rule with the  **highest priority** . In simple . In applications, the priority can be established by placing the rules in an appropriate order in the  in an knowledge base. Usually this strategy works well . for expert systems with around 1 00 rules . .
+
+■ Fire the  **most specific rule** . This method is also . known as the  as  **longest matching strategy** . It i s . based on the assumption that a specific rule  on  a processes more information than a general one. .
+
+<!-- page: 41 -->
+
+Fire the rule that uses the  **data most recently entered**  in the database. This method relies on time in .  on tags attached to each fact in the database. In the . In conflict set, the expert sy stem first fires the rule whose antecedent uses the data most recently added to the database. to
+
+<!-- page: 42 -->
+
+## Metaknowledge
+
+■ Metaknowledge can be simply defined as  as **knowledge about knowledge** . Metaknowledge is .  is knowledge about the use and control of domain knowledge in an expert system.  in an .
+
+■ In rule-based expert systems , metaknowledge is - is represented by  **metarules** . A metarule determines . A a strategy for the use of task- specific rules in the a - in expert system. .
+
+<!-- page: 43 -->
+
+## Metarules
+
+## ■ Metarule  1 :
+
+Rules supplied by experts have higher priorities than rules supplied by novices . .
+
+## ■ Metarule  2 :
+
+Rules governing the rescue of human lives have higher priorities than rules concerned with clearing overloads on power system equipment. .
+
+<!-- page: 44 -->
+
+**Advantages of rule-based expert systems**
+
+■ **Natural knowledge representation** . An expert An usually explains the problem-solving procedure - with such expres sions as thi s : “In such- and- such  as - - situation, I do so- and- so” . These expres sions can  so- - . be represented quite naturally as IF-THEN  as IF-production rules . .
+
+■ **Uniform structure** . Production rules have the uniform IF-THEN structure . Each rule is an - .  is an independent piece of knowledge. The very syntax . of production rules enables them to be self-  be - documented. .
+
+<!-- page: 45 -->
+
+**Advantages of rule-based expert systems**
+
+**Separation of knowledge from its processing** . The structure of a rule-based expert system - provides an effective separation of the knowledge  an base from the inference engine. This makes it .  it pos sible to develop different applications using the  to s ame expert sy stem shell . .
+
+■ **Dealing with incomplete and uncertain knowledge** . Most rule-based expert systems are - capable of representing and reasoning with incomplete and uncertain knowledge. .
+
+<!-- page: 46 -->
+
+**Disadvantages of rule-based expert systems**
+
+■ **Opaque relations between rules** . Although the individual production rules are relatively simple and self-documented, their logical interactions within the - large set of rules may be opaque. Rule-based . - systems make it difficult to observe how individual rules serve the overall strategy . .
+
+■ **Ineffective search strategy** . The inference engine applies an exhaustive search through all the  an production rules during each cycle. Expert systems . with a large set of rules (over 1 00 rules) can be slow and thus large rule-based systems can be unsuitable - for real-time applications . - .
+
+<!-- page: 47 -->
+
+## Disadvantages of rule-based expert systems
+
+■ **Inability to learn** . In general, rule-based expert In - systems do not have an ability to learn from the  do  an experience. Unlike a human expert, who knows . when to “break the rules” , an expert system cannot  to  an automatically modify its knowledge base, or adjust  or existing rules or add new ones . The knowledge  or . engineer is still responsible for revising and maintaining the sy stem. .

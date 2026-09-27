@@ -1,0 +1,3407 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.1,
+            0.325,
+            0.166
+          ],
+          "level": 2,
+          "content": "Lecture 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.204,
+            0.686,
+            0.279
+          ],
+          "content": "**Rule-based expert systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.295,
+            0.704,
+            0.353
+          ],
+          "content": "■ **Introduction, or what is knowledge?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.368,
+            0.866,
+            0.426
+          ],
+          "content": "■ **Rules as a knowledge representation technique  as**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.44,
+            0.802,
+            0.499
+          ],
+          "content": "■ **The main players in the development team**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.514,
+            0.754,
+            0.57
+          ],
+          "content": "■ **Structure of a rule-based expert system**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.587,
+            0.69,
+            0.644
+          ],
+          "content": "■ **Characteristics of an expert system**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.658,
+            0.796,
+            0.717
+          ],
+          "content": "■ **Forward chaining and backward chaining**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.731,
+            0.439,
+            0.786
+          ],
+          "content": "■ **Conflict resolution**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.806,
+            0.304,
+            0.861
+          ],
+          "content": "■ **Summary**"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.084,
+            0.872,
+            0.156
+          ],
+          "content": "**Introduction, or what is knowledge?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.212,
+            0.884,
+            0.512
+          ],
+          "content": "■ **Knowledge**  is a theoretical or practical is understanding of a subj ect or a domain. . Knowledge i s also the sum of what i s currently  i s known, and apparently knowledge is power. Those  is . who possess knowledge are called experts . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.527,
+            0.894,
+            0.887
+          ],
+          "content": "■ Anyone can be considered a  a **domain expert**  if he or  or she has deep knowledge (of both facts and rules) and strong practical experience in a particular  in domain. The area of the domain may be limited. In . . In general, an expert is a skilful person who can do  an  a  do things other people cannot. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.089,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.131,
+            0.863,
+            0.431
+          ],
+          "content": "■ The human mental proces s i s internal , and it i s too  i s complex to be represented as an algorithm.  to  as an . However, most experts are capable of expressing their knowledge in the form of  in  of **rules** for problem s olving . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.482,
+            0.644,
+            0.538
+          ],
+          "content": "IF the ‘ traffic light ’ i s green  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.543,
+            0.503,
+            0.598
+          ],
+          "content": "THEN the action i s go  i s go"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.663,
+            0.611,
+            0.717
+          ],
+          "content": "IF the ‘ traffic light ’ i s red  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.724,
+            0.528,
+            0.779
+          ],
+          "content": "THEN the action i s stop  i s"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.093,
+            0.094,
+            0.909,
+            0.157
+          ],
+          "level": 2,
+          "content": "Rules as a knowledge representation technique  as"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.221,
+            0.88,
+            0.642
+          ],
+          "content": "■ The term  **rule** in AI, which is the most commonly in used type of knowledge representation, can be defined as an IF-THEN structure that relates given  as an IF-information or facts in the IF part to some action in  in  in the THEN part. A rule provides some description . of how to solve a problem. Rules are relatively  to . easy to create and understand."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.658,
+            0.851,
+            0.893
+          ],
+          "content": "■ Any rule consi sts of two parts : the IF part, called the **antecedent**  (**premise**  or **condition** ) and the ) THEN part called the  **consequent**  (**conclusion**  or **action** ) ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.089,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.943
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.135,
+            0.242,
+            0.247
+          ],
+          "content": "IF THE THEN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.279,
+            0.137,
+            0.477,
+            0.187
+          ],
+          "continues_prev": true,
+          "content": "&lt;antecedent &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.195,
+            0.485,
+            0.25
+          ],
+          "content": "&lt;consequent &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.286,
+            0.898,
+            0.474
+          ],
+          "content": "■ A rule can have multiple antecedents j oined by the keywords  **AND** (**conjunction** ) , **OR** (**disjunction** ) or a combination of both. ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.529,
+            0.467,
+            0.581
+          ],
+          "content": "IF &lt;antecedent 1  1&gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.59,
+            0.464,
+            0.694
+          ],
+          "content": "AND &lt;antecedent 2 &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.702,
+            0.469,
+            0.754
+          ],
+          "content": "AND &lt;antecedent  n&gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.764,
+            0.451,
+            0.817
+          ],
+          "content": "THEN &lt;consequent &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.529,
+            0.9,
+            0.582
+          ],
+          "content": "IF IF &lt;antecedent 1  1 &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.59,
+            0.635,
+            0.641
+          ],
+          "content": "OR"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.674,
+            0.591,
+            0.899,
+            0.696
+          ],
+          "content": "&lt;antecedent 2 &gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.702,
+            0.907,
+            0.755
+          ],
+          "content": "OR OR &lt;antecedent  n&gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.764,
+            0.891,
+            0.817
+          ],
+          "content": "THEN &lt;consequent &gt;"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.104,
+            0.889,
+            0.275
+          ],
+          "content": "■ The antecedent of a rule incorporates two parts : an  an **object** (linguistic object ) and its )  **value** . The obj ect and . its value are linked by an  an **operator** ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.29,
+            0.885,
+            0.463
+          ],
+          "content": "■ The operator identifies the obj ect and assigns the value . Operators such as .  as is, are , is not, are not  are used to as sign a  a **symbolic value**  to a lingui stic obj ect. to ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.479,
+            0.859,
+            0.644
+          ],
+          "content": "■ Expert systems can also use mathematical operators to define an obj ect as numerical and as sign it to the to  an  as **numerical value** ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.279,
+            0.676,
+            0.664,
+            0.731
+          ],
+          "content": "‘ age of the customer’ < 1 8  < 1 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.736,
+            0.652,
+            0.789
+          ],
+          "content": "AND ‘ cash withdrawal’ > 1 000  >"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.797,
+            0.789,
+            0.854
+          ],
+          "content": "THEN ‘ signature of the parent’ is required  is"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.921,
+            0.911,
+            0.944
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.09,
+            0.888,
+            0.206
+          ],
+          "content": "**Rules can represent relations, recommendations, directives, strategies and heuristics :**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.219,
+            0.265,
+            0.267
+          ],
+          "level": 2,
+          "content": "■ Relation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.274,
+            0.586,
+            0.327
+          ],
+          "content": "IF the ‘ fuel tank ’ i s empty  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.329,
+            0.472,
+            0.379
+          ],
+          "content": "THEN the car is dead"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.394,
+            0.39,
+            0.442
+          ],
+          "level": 2,
+          "content": "■ Recommendation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.449,
+            0.552,
+            0.498
+          ],
+          "content": "IF the season i s autumn  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.503,
+            0.504,
+            0.555
+          ],
+          "content": "AND the sky i s cloudy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.558,
+            0.562,
+            0.607
+          ],
+          "content": "AND the forecast is drizzle"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.611,
+            0.688,
+            0.663
+          ],
+          "content": "THEN the advice is ‘ take an umbrella ’  is"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.676,
+            0.274,
+            0.724
+          ],
+          "level": 2,
+          "content": "■ Directive"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.731,
+            0.472,
+            0.78
+          ],
+          "content": "IF the car is dead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.786,
+            0.586,
+            0.838
+          ],
+          "content": "AND the ‘ fuel tank ’ i s empty  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.84,
+            0.638,
+            0.889
+          ],
+          "content": "THEN the action is ‘ refuel the car’  is"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.088,
+            0.916,
+            0.445,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.104,
+            0.264,
+            0.155
+          ],
+          "level": 2,
+          "content": "■ Strategy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.157,
+            0.724,
+            0.322
+          ],
+          "content": "IF the car is dead THEN the action i s ‘ check the fuel tank’  i s step 1 i s complete"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.353,
+            0.701,
+            0.569
+          ],
+          "content": "IF step 1 i s complete AND the ‘ fuel tank ’ i s full  i s THEN the action i s ‘ check the b attery ’ ;  i s ; step2 i s complete"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.58,
+            0.274,
+            0.629
+          ],
+          "level": 2,
+          "content": "■ Heuristic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.636,
+            0.502,
+            0.688
+          ],
+          "content": "IF the spill i s liquid"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.69,
+            0.51,
+            0.742
+          ],
+          "content": "AND the ‘ spill pH ’ < 6  < 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.745,
+            0.623,
+            0.797
+          ],
+          "content": "AND the ‘ spill smell ’ i s vineg ar  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.799,
+            0.716,
+            0.851
+          ],
+          "content": "THEN the ‘ spill material ’ i s ‘ acetic acid ’  i s"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.921,
+            0.91,
+            0.943
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.109,
+            0.105,
+            0.893,
+            0.169
+          ],
+          "level": 2,
+          "content": "The main players in the development team  in"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.236,
+            0.783,
+            0.472
+          ],
+          "content": "There are five members of the expert system development team: the  **domain expert** , the **knowledge engineer** , the **programmer** , the **project manager**  and the  **end-user** ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.49,
+            0.88,
+            0.604
+          ],
+          "content": "The success of their expert system entirely depends on how well the members work together. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.897,
+            0.921,
+            0.91,
+            0.943
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.153,
+            0.096,
+            0.849,
+            0.151
+          ],
+          "level": 2,
+          "content": "The main players in the development team  in"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.22,
+            0.366,
+            0.288
+          ],
+          "content": "**Expert System Development Team**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.166,
+            0.198,
+            0.844,
+            0.876
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 0"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.15,
+            0.875,
+            0.815
+          ],
+          "content": "■ The **domain expert**  is a knowledgeable and skilled is person capable of solving problems in a specific  in a area or  **domain** . This person has the greatest . experti se in a given domain . Thi s experti se i s to be  in .  i s to be captured in the expert system. Therefore, the expert must be able to communicate his or her  to knowledge, be willing to participate in the expert  be  in system development and commit a substantial  a amount of time to the proj ect. The domain expert  to . i s the mo st important player in the expert sy stem i s development team. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "1 1"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.09,
+            0.892,
+            0.878
+          ],
+          "content": "■ The **knowledge engineer**  is someone who is capable is  is of designing, building and testing an expert system.  an . He or she interviews the domain expert to find out He or how a particular problem is solved. The knowledge . engineer establishes what reasoning methods the expert uses to handle facts and rules and decides  to how to represent them in the expert system. The  to knowledge engineer then chooses some development software or an expert system shell, or  or an  or looks at programming languages for encoding the knowledge. And finally, the knowledge engineer is . responsible for testing , revising and integrating the expert system into the workplace. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 2"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.138,
+            0.871,
+            0.739
+          ],
+          "content": "The **programmer**  is the person responsible for the is actual programming, describing the domain knowledge in terms that a computer can  in understand. The programmer needs to have skills .  to in symbolic programming in such AI languages as in  as LISP, Prolog and OPS5 and also some experience in the application of different types of expert in sy stem shells . In addition, the programmer should . In know conventional programming languages like C,  C Pascal, FORTRAN and B asic . ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 3"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.101,
+            0.87,
+            0.457
+          ],
+          "content": "The **project manager**  is the leader of the expert is system development team, responsible for keeping the proj ect on track. He or she makes sure that all . He or deliverables and milestones are met, interacts with the expert, knowledge engineer, programmer and end-user. - ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.477,
+            0.885,
+            0.894
+          ],
+          "content": "■ The **end-user** , often called j ust the ,  use r, is a person , is who uses the expert system when it is developed. . The user must not only be confident in the expert system performance but also feel comfortable using it. Therefore, the design of the user interface of the it expert sy stem i s also vital for the proj ect ’ s succes s ; s the end-user’ s contribution here can be crucial . - s ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.943
+          ],
+          "content": "1 4"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.117,
+            0.103,
+            0.885,
+            0.171
+          ],
+          "level": 2,
+          "content": "Structure of a rule-based expert system"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.206,
+            0.852,
+            0.437
+          ],
+          "content": "■ In the early seventies, Newell and Simon from In Carnegie-Mellon University proposed a production - system model, the foundation of the modern rule- - based expert sy stems . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.451,
+            0.875,
+            0.684
+          ],
+          "content": "■ The production model is based on the idea that  on humans solve problems by applying their knowledge  by (expres sed as production rules) to a given problem  as represented by problem- specific information. - ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.698,
+            0.822,
+            0.869
+          ],
+          "content": "■ The production rules are stored in the long-term - memory and the problem- specific information or - or facts in the short-term memory .  in - ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 5"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.241,
+            0.104,
+            0.76,
+            0.17
+          ],
+          "level": 2,
+          "content": "Production system model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.246,
+            0.379,
+            0.293
+          ],
+          "content": "Long-term Memory"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.614,
+            0.245,
+            0.85,
+            0.292
+          ],
+          "content": "Short-term Memory"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.358,
+            0.373,
+            0.403
+          ],
+          "content": "~~Production Rul~~e"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.716,
+            0.359,
+            0.777,
+            0.401
+          ],
+          "content": "Fact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.416,
+            0.504,
+            0.581,
+            0.552
+          ],
+          "content": "REASONING"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.43,
+            0.694,
+            0.569,
+            0.742
+          ],
+          "content": "Conclusion"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 6"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.109,
+            0.108,
+            0.89,
+            0.166
+          ],
+          "level": 2,
+          "content": "Basic structure of a rule-based expert system"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.203,
+            0.391,
+            0.241
+          ],
+          "content": "Knowledge B ase"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.625,
+            0.204,
+            0.712,
+            0.239
+          ],
+          "content": "Database"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.287,
+            0.396,
+            0.323
+          ],
+          "content": "~~Rule: IF-THEN~~"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.656,
+            0.29,
+            0.703,
+            0.322
+          ],
+          "content": "Fact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.415,
+            0.4,
+            0.569,
+            0.439
+          ],
+          "content": "Inference Engine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.394,
+            0.543,
+            0.589,
+            0.583
+          ],
+          "content": "Explanation Facilities"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.428,
+            0.689,
+            0.557,
+            0.726
+          ],
+          "content": "User Interface"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.466,
+            0.83,
+            0.515,
+            0.863
+          ],
+          "content": "User"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "1 7"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.125,
+            0.877,
+            0.609
+          ],
+          "content": "■ The **knowledge base**  contains the domain knowledge useful for problem solving . In a rule- . In - based expert system, the knowledge is represented  is as a set of rules . Each rule specifies a relation, as a . recommendation, directive, strategy or heuristic and has the IF (condition) THEN (action) structure. When the condition part of a rule i s s ati sfied, the  i s rule i s s aid to  i s  fire and the action part i s executed . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.622,
+            0.888,
+            0.799
+          ],
+          "content": "■ The **database**  includes a set of facts used to match  a against the IF (condition) parts of rules stored in the knowledge base. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 8"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.126,
+            0.888,
+            0.364
+          ],
+          "content": "■ The **inference engine**  carries out the reasoning whereby the expert system reaches a solution . It  a . It links the rules given in the knowledge base with the  in facts provided in the database. ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.38,
+            0.874,
+            0.681
+          ],
+          "content": "■ The **explanation facilities** enable the user to ask the expert system **how** a particular conclusion is reached and **why** a specific fact is needed. An expert system must be able to explain its reasoning and j ustify its advice , analy si s or conclusion ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.694,
+            0.873,
+            0.872
+          ],
+          "content": "■ The **user interface** is the means of communication between a user seeking a solution to the problem and an expert system."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "1 9"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.112,
+            0.065,
+            0.89,
+            0.118
+          ],
+          "level": 2,
+          "content": "Complete structure of a rule-based expert system"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.214,
+            0.658,
+            0.242
+          ],
+          "content": "<u>External Program</u>"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.265,
+            0.126,
+            0.748,
+            0.9
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.102,
+            0.862,
+            0.173
+          ],
+          "content": "**Characteristics of an expert system**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.208,
+            0.883,
+            0.567
+          ],
+          "content": "■ An expert system is built to perform at a human An  at expert level in a  a **narrow, specialised domain** . Thus , the most important characteristic of an expert system is its high-quality performance . No matter - . No how fast the system can solve a problem, the user will not be s ati sfied if the re sult i s wrong . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.581,
+            0.876,
+            0.883
+          ],
+          "content": "■ On the other hand, the speed of reaching a solution On  a is very important. Even the most accurate decision is . or diagno si s may not be useful if it i s too late to  to apply, for instance, in an emergency, when a  in an  a patient dies or a nuclear power plant explodes .  or ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "2 1"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.142,
+            0.814,
+            0.314
+          ],
+          "content": "■ Expert systems apply  **heuristics**  to guide the to reasoning and thus reduce the search area for a  a s olution . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.336,
+            0.866,
+            0.569
+          ],
+          "content": "■ A unique feature of an expert system is its A **explanation capability** . It enables the expert . system to review its own reasoning and explain its deci sions . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.59,
+            0.864,
+            0.827
+          ],
+          "content": "■ Expert systems employ  **symbolic reasoning**  when solving a problem. Symbols are used to represent . different types of knowledge such as facts ,  as concepts and rules . ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.14,
+            0.101,
+            0.871,
+            0.169
+          ],
+          "level": 2,
+          "content": "Can expert systems make mistakes?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.221,
+            0.89,
+            0.758
+          ],
+          "content": "■ Even a brilliant expert is only a human and thus can make mistakes . This suggests that an expert system .  an built to perform at a human expert level also should  at be allowed to make mi stakes . B ut we still trust be . experts, even we recognise that their judgements are  we sometimes wrong . Likewi se , at least in mo st cases , . we can rely on solutions provided by expert systems we  on but mistakes are possible and we should be aware of  we  of thi s ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "2 3"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.109,
+            0.894,
+            0.591
+          ],
+          "content": "■ In expert systems , In  **knowledge is separated from its processing**  (the knowledge base and the inference engine are split up) . A conventional program is a . A  a mixture of knowledge and the control structure to  to proces s this knowledge . This mixing leads to .  to difficulties in understanding and reviewing the program code, as any change to the code affects both  as  to the knowledge and its processing . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.606,
+            0.855,
+            0.845
+          ],
+          "content": "■ When an expert system shell is used, a knowledge  an engineer or an expert simply enters rules in the  or an  in knowledge base. Each new rule adds some new . knowledge and makes the expert system smarter. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.133,
+            0.071,
+            0.872,
+            0.185
+          ],
+          "level": 2,
+          "content": "Comparison of expert systems with conventional systems and human experts"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.107,
+            0.201,
+            0.892,
+            0.841
+          ],
+          "content": "| gpvodriin e oealinf r pCaabe ol te detahi gso anin p eafxlin.sl dn gin a | pcoedmil gwoedknl auaIn hm.o frm e estsxi i , banrin <sub>a</sub>n | .doamin pobesrlm eustcshrii o oufrmf r Uwseo kn aa in nrr v to soel es o tlfh gedel in wo um teh b o r | <sub>um</sub>H paxen E <sub>st</sub>r |\n| --- | --- | --- | --- |\n| w.dataaseeded n py wheaced ad seccrhnifi p watcua cocusoasrilrnlin pw exlaion hsesso ad ainn gg pvdu aobesorinrlmlin- fsdace teuleiehTr rr | fg pssso itoceimn.rr fgpwsdeaatio o koleennr cleavode arPri | doaimn. pwao nobes arrrlm in gveaso to soerninl yues ad use sbocrlnmli peessed teo oxr inh frmf gwocessoedePr knl | yp SssxettemEr |\n| w.dataaseeded n yp wobtaed adutinnh in p watcuaesutasrilr rl pwoot eao aD nxlin h | gpwocess tsoederhi knl coto stuctue tonrlrr gwoedeo teknl frmh poot seaateD nr. | p.obesrlm gvto soeeeauelnrl nmri pwedeed oeatosllfinrin- g,aots a sees olrihmrif ocess data ad usePrn c , a l | <sub>g</sub>C<sub>voetioaloannn</sub> <sub>Prr</sub> m s |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_table_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.917,
+            0.442,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "2 5"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.127,
+            0.083,
+            0.865,
+            0.199
+          ],
+          "level": 2,
+          "content": "Comparison of expert systems with conventional systems and human experts (  (Continued )"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.116,
+            0.232,
+            0.885,
+            0.826
+          ],
+          "content": "| pv.eesexni ,wsoecet adl inffiinn g p.tasocessrinin Thir i g poea adactcaf lrninnri g ypv vobe soaearlmlini y qace teuat oEnhnhlif <sup>s</sup> <sup>l</sup> <sub>s</sub>r | y.our fzz poatoscoeinfrmin i inml C waaestaesen mk mikh <sup>t</sup><sub>e</sub> n | .oatoinfrmin yuceta adunrinn fzz p wca deatcoetnlih inml gUseeacteaso a inx rnin,<sub>e</sub> <sub>d</sub>n | <sub>psuaxetmn</sub>H <sub>Er</sub> |\n| --- | --- | --- | --- |\n| pysea. to accosmlih qg,s cae aehnacuedrir gwweoedesn knl i gw. Woede baseeknlhn jgadust od oes teinln inh gwaddeues oin n rlr gypvobe so brlmlin y qace teuat oEnhnhlif | y.ufzz pdatascoete o i inmlr Cssaakeitake wn m mehn | y.u datafzz p,coete uceta ainmlnrinn wad ca deatnnlih gs iexacteaoinnnet rPrmi d | yp SssxettemEr |\n| gcaes dhn pocessrin wteoh knl , wcodehi ggcahnin pobe srlm ace tEnhn.cutiffil gg,a mkin gede adtsn i c aects bothff g p teoahrrm gyvo blin y qeuat ohlif h | pscoi inm wo aorrn vodePri n y.ete oulr fzz g, w oee dnhn o souto at alin <sup>a</sup><sub>t</sub> l<sub>l</sub> a , | .ad eactnx wee dathr Wo orknl pas coete iml y p oobesnrlm | C<sub>voetinn</sub> goaloan Prr m s |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.442,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "2 6"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.083,
+            0.893,
+            0.152
+          ],
+          "content": "**Forward chaining and backward chaining**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.165,
+            0.893,
+            0.649
+          ],
+          "content": "■ In a rule-based expert system, the domain In - knowledge is represented by a set of IF-THEN  is  a - production rules and data is represented by a set of  a facts about the current situation. The inference engine compares each rule stored in the knowledge base with facts contained in the database. When the IF (condition) part of the rule matches a fact, the rule i s  i s fired and its THEN (action) part i s executed . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.661,
+            0.872,
+            0.898
+          ],
+          "content": "The matching of the rule IF parts to the facts  to produces  **inference chains** . The inference chain indicates how an expert system applies the rules to  an  to reach a conclusion. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.089,
+            0.916,
+            0.444,
+            0.95
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.117,
+            0.097,
+            0.891,
+            0.15
+          ],
+          "level": 2,
+          "content": "Inference engine cycles via a match-fire procedure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.451,
+            0.209,
+            0.559,
+            0.253
+          ],
+          "content": "Database"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.316,
+            0.287,
+            0.445,
+            0.33
+          ],
+          "content": "Fact: A is x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.553,
+            0.326,
+            0.681,
+            0.372
+          ],
+          "content": "Fact : B i s y"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.5,
+            0.304,
+            0.547
+          ],
+          "content": "Match"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.722,
+            0.503,
+            0.775,
+            0.544
+          ],
+          "content": "Fire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.413,
+            0.619,
+            0.602,
+            0.666
+          ],
+          "content": "Knowledge Base"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.336,
+            0.732,
+            0.696,
+            0.78
+          ],
+          "content": "<u>Rule : IF A is x THEN B is y</u>"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "2 8"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.162,
+            0.092,
+            0.845,
+            0.158
+          ],
+          "level": 2,
+          "content": "An example of an inference chain An"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.221,
+            0.479,
+            0.382
+          ],
+          "content": "Rule 1 : IF Y i s true AND D is true THEN Z is true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.411,
+            0.477,
+            0.629
+          ],
+          "content": "Rule 2 : IF X i s true AND B i s true AND E is true THEN Y is true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.659,
+            0.478,
+            0.764
+          ],
+          "content": "Rule 3 : IF A i s true THEN X is true"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.487,
+            0.381,
+            0.893,
+            0.658
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_4.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.332,
+            0.096,
+            0.67,
+            0.16
+          ],
+          "level": 2,
+          "content": "Forward chaining"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.197,
+            0.859,
+            0.615
+          ],
+          "content": "Forward chaining is the  **data-driven reasoning** . The reasoning starts from the known data and proceeds forward with that data. Each time only . the topmost rule is executed. When fired, the rule  is . adds a new fact in the database. Any rule can be . executed only once. The match-fire cycle stops . - when no further rules can be fired.  no ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 0"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.335,
+            0.102,
+            0.672,
+            0.166
+          ],
+          "level": 2,
+          "content": "Forward chaining"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.11,
+            0.249,
+            0.311,
+            0.725
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.314,
+            0.249,
+            0.498,
+            0.727
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.271,
+                0.796,
+                0.328,
+                0.827
+              ],
+              "content": "Cycle 1"
+            }
+          ],
+          "image_source": "images/page_30_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.513,
+            0.25,
+            0.699,
+            0.732
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.573,
+                0.795,
+                0.631,
+                0.827
+              ],
+              "content": "Cycle 2"
+            }
+          ],
+          "image_source": "images/page_30_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.728,
+            0.508,
+            0.884,
+            0.721
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.772,
+                0.795,
+                0.832,
+                0.828
+              ],
+              "content": "Cycle 3"
+            }
+          ],
+          "image_source": "images/page_30_image_6.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "3 1"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.131,
+            0.877,
+            0.304
+          ],
+          "content": "■ Forward chaining is a technique for gathering information and then inferring from it whatever can be inferred. be ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.325,
+            0.858,
+            0.5
+          ],
+          "content": "■ However, in forward chaining, many rules may be  in executed that have nothing to do with the  do establi shed goal . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.519,
+            0.87,
+            0.691
+          ],
+          "content": "■ Therefore, if our goal is to infer only one particular  to fact, the forward chaining inference technique would not be efficient. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 2"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.319,
+            0.096,
+            0.683,
+            0.16
+          ],
+          "level": 2,
+          "content": "Backward chaining"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.196,
+            0.891,
+            0.801
+          ],
+          "content": "■ B ackward chaining is the  **goal-driven reasoning** . In backward chaining, an expert system has the goal  an (a hypothetical solution ) and the inference engine ) attempts to find the evidence to prove it . First, the  to  to  it . knowledge base is searched to find rules that might  is have the desired solution. Such rules must have the goal in their THEN (action) parts . If such a rule i s .  i s found and its IF (condition) part matches data in the database, then the rule is fired and the goal is  is proved . However, thi s i s rarely the case . .  i s ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "3 3"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.319,
+            0.096,
+            0.683,
+            0.16
+          ],
+          "level": 2,
+          "content": "Backward chaining"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.196,
+            0.891,
+            0.676
+          ],
+          "content": "■ Thus the inference engine puts aside the rule it is working with (the rule i s s aid to  i s  **stack**) and sets up a )  up a new goal, a subgoal, to prove the IF part of this  a  to rule. Then the knowledge base is searched again .  is for rules that can prove the subgoal. The inference engine repeats the process of stacking the rules until no rules are found in the knowledge base to prove no  to the current subgoal . ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "3 4"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.312,
+            0.054,
+            0.675,
+            0.113
+          ],
+          "level": 2,
+          "content": "Backward chaining"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.243,
+            0.117,
+            0.746,
+            0.904
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.298,
+                0.889,
+                0.371,
+                0.911
+              ],
+              "content": "Sub-Goal: X"
+            },
+            {
+              "bbox": [
+                0.469,
+                0.889,
+                0.541,
+                0.911
+              ],
+              "content": "Sub-Goal: Y"
+            }
+          ],
+          "image_source": "images/page_34_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.61,
+            0.733,
+            0.714,
+            0.881
+          ],
+          "content": "Knowledge Base Y & D Z **X & B & E** Y A X C L **L & M** N"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.64,
+            0.889,
+            0.688,
+            0.911
+          ],
+          "content": "Goal: Z"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "3 5"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.097,
+            0.876,
+            0.234
+          ],
+          "content": "**How do we choose between forward and  do we backward chaining?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.288,
+            0.863,
+            0.525
+          ],
+          "content": "■ If an expert first needs to gather some information  to and then tries to infer from it whatever can be  to inferred, choose the forward chaining inference engine . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.542,
+            0.871,
+            0.72
+          ],
+          "content": "■ However, if your expert begins with a hypothetical s olution and then attempts to find facts to prove it,  to  to choose the backward chaining inference engine. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 6"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.313,
+            0.088,
+            0.698,
+            0.156
+          ],
+          "level": 2,
+          "content": "Conflict resolution"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.172,
+            0.881,
+            0.289
+          ],
+          "level": 2,
+          "content": "Earlier we considered two simple rules for cros sing a road. Let us now add third rule : ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.365,
+            0.645,
+            0.424
+          ],
+          "content": "IF the ‘ traffic light ’ i s green  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.427,
+            0.504,
+            0.485
+          ],
+          "content": "THEN the action i s go  i s go"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.559,
+            0.611,
+            0.616
+          ],
+          "content": "IF the ‘ traffic light ’ i s red  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.621,
+            0.528,
+            0.678
+          ],
+          "content": "THEN the action i s stop  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.694,
+            0.249,
+            0.745
+          ],
+          "content": "■ R u le 3 :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.753,
+            0.611,
+            0.809
+          ],
+          "content": "IF the ‘ traffic light ’ i s red  i s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.815,
+            0.504,
+            0.871
+          ],
+          "content": "THEN the action i s go  i s go"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 7"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.126,
+            0.865,
+            0.602
+          ],
+          "content": "■ We have two rules ,  Rule 2 and Rule 3 , with the 3 same IF part. Thus both of them can be set to fire when the condition part is satisfied. These rules represent a conflict set. The inference engine must . determine which rule to fire from such a set. A  to  a . A method for choosing a rule to fire when more than  to one rule can be fired in a given cycle is called  is **conflict resolution** ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 8"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.123,
+            0.862,
+            0.603
+          ],
+          "content": "■ In forward chaining, In  BOTH rules would be fired. Rule 2 i s fired first as the topmo st one , and as a  as  as a result, its THEN part is executed and linguistic obj ect action obtains value  stop . However, .  Rule 3 is also fired because the condition part of this rule is matche s the fact  ‘traffic light ’ is red  is , which i s still in the database. As a consequence, obj ect in . As  action takes new value  go ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "3 9"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.162,
+            0.094,
+            0.83,
+            0.157
+          ],
+          "level": 2,
+          "content": "Methods used for conflict resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.204,
+            0.861,
+            0.504
+          ],
+          "content": "■ Fire the rule with the  **highest priority** . In simple . In applications, the priority can be established by placing the rules in an appropriate order in the  in an knowledge base. Usually this strategy works well . for expert systems with around 1 00 rules . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.52,
+            0.828,
+            0.759
+          ],
+          "content": "■ Fire the  **most specific rule** . This method is also . known as the  as  **longest matching strategy** . It i s . based on the assumption that a specific rule  on  a processes more information than a general one. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.175,
+            0.887,
+            0.53
+          ],
+          "content": "Fire the rule that uses the  **data most recently entered**  in the database. This method relies on time in .  on tags attached to each fact in the database. In the . In conflict set, the expert sy stem first fires the rule whose antecedent uses the data most recently added to the database. to"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "4 1"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.33,
+            0.1,
+            0.661,
+            0.169
+          ],
+          "level": 2,
+          "content": "Metaknowledge"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.229,
+            0.85,
+            0.468
+          ],
+          "content": "■ Metaknowledge can be simply defined as  as **knowledge about knowledge** . Metaknowledge is .  is knowledge about the use and control of domain knowledge in an expert system.  in an ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.485,
+            0.864,
+            0.722
+          ],
+          "content": "■ In rule-based expert systems , metaknowledge is - is represented by  **metarules** . A metarule determines . A a strategy for the use of task- specific rules in the a - in expert system. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.102,
+            0.603,
+            0.163
+          ],
+          "level": 2,
+          "content": "Metarules"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.106,
+            0.238,
+            0.319,
+            0.289
+          ],
+          "level": 2,
+          "content": "■ Metarule  1 :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.309,
+            0.898,
+            0.426
+          ],
+          "content": "Rules supplied by experts have higher priorities than rules supplied by novices . ."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.106,
+            0.504,
+            0.319,
+            0.554
+          ],
+          "level": 2,
+          "content": "■ Metarule  2 :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.575,
+            0.875,
+            0.755
+          ],
+          "content": "Rules governing the rescue of human lives have higher priorities than rules concerned with clearing overloads on power system equipment. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.918,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "4 3"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.095,
+            0.893,
+            0.163
+          ],
+          "content": "**Advantages of rule-based expert systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.197,
+            0.853,
+            0.555
+          ],
+          "content": "■ **Natural knowledge representation** . An expert An usually explains the problem-solving procedure - with such expres sions as thi s : “In such- and- such  as - - situation, I do so- and- so” . These expres sions can  so- - . be represented quite naturally as IF-THEN  as IF-production rules . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.572,
+            0.865,
+            0.868
+          ],
+          "content": "■ **Uniform structure** . Production rules have the uniform IF-THEN structure . Each rule is an - .  is an independent piece of knowledge. The very syntax . of production rules enables them to be self-  be - documented. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002 ,"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.096,
+            0.872,
+            0.161
+          ],
+          "content": "**Advantages of rule-based expert systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.197,
+            0.876,
+            0.556
+          ],
+          "content": "**Separation of knowledge from its processing** . The structure of a rule-based expert system - provides an effective separation of the knowledge  an base from the inference engine. This makes it .  it pos sible to develop different applications using the  to s ame expert sy stem shell . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.572,
+            0.833,
+            0.812
+          ],
+          "content": "■ **Dealing with incomplete and uncertain knowledge** . Most rule-based expert systems are - capable of representing and reasoning with incomplete and uncertain knowledge. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.91,
+            0.944
+          ],
+          "content": "4 5"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.087,
+            0.897,
+            0.153
+          ],
+          "content": "**Disadvantages of rule-based expert systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.181,
+            0.873,
+            0.529
+          ],
+          "content": "■ **Opaque relations between rules** . Although the individual production rules are relatively simple and self-documented, their logical interactions within the - large set of rules may be opaque. Rule-based . - systems make it difficult to observe how individual rules serve the overall strategy . ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.543,
+            0.878,
+            0.891
+          ],
+          "content": "■ **Ineffective search strategy** . The inference engine applies an exhaustive search through all the  an production rules during each cycle. Expert systems . with a large set of rules (over 1 00 rules) can be slow and thus large rule-based systems can be unsuitable - for real-time applications . - ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.444,
+            0.949
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.911,
+            0.944
+          ],
+          "content": "4 6"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.095,
+            0.094,
+            0.897,
+            0.158
+          ],
+          "level": 2,
+          "content": "Disadvantages of rule-based expert systems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.208,
+            0.876,
+            0.688
+          ],
+          "content": "■ **Inability to learn** . In general, rule-based expert In - systems do not have an ability to learn from the  do  an experience. Unlike a human expert, who knows . when to “break the rules” , an expert system cannot  to  an automatically modify its knowledge base, or adjust  or existing rules or add new ones . The knowledge  or . engineer is still responsible for revising and maintaining the sy stem. ."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.09,
+            0.917,
+            0.443,
+            0.948
+          ],
+          "content": " N eg nevitsky, Pearson E d ucation , 2002"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.909,
+            0.944
+          ],
+          "content": "47"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2001-11-16T12:00:09+12:00",
+      "modified_at": "2001-11-16T12:01:15+12:00",
+      "producer_application": "Acrobat Distiller 4.0 for Windows",
+      "page_count": 47,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 842.0,
+          "height_pt": 595.0,
+          "image_rotations": {
+            "1": 270
+          }
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 842.0,
+          "height_pt": 595.0,
+          "image_rotations": {
+            "1": 270
+          }
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 842.0,
+          "height_pt": 595.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

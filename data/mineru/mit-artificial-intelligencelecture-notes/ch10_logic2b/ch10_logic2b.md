@@ -1,0 +1,1470 @@
+<!-- page: 1 -->
+
+## Slide 10.5.1
+
+Now we know how to convert to clausal form and how to do unification. So now it's time to put it all together into first-order resolution.
+
+## Resolution with Variables
+
+![](images/page_0_image_5.jpg)
+
+Slide 10.5.3
+
+## Resolution with Variables
+
+![](images/page_0_image_7.jpg)
+
+Slide 10.5.2
+
+Here's the rule for first-order resolution. It says if you have a formula **alpha or phi** and another formula **not psi or beta**, and you can unify phi and psi with unifier theta, then you're allowed to conclude **alpha or beta** with the substitution theta applied to it.
+
+Let's look at an example. Let's say we have **P(x) or Q(x,y)** and we also have **not P(A) or R(B,z)**. What are we going to be able to resolve here? We look for two literals that are negations of one another, and try to resolve them. It looks like we can resolve **P(x)** and **not P(A)**, so **P(x)** will be **phi**, Q **(x,y)** will be **alpha**, **P(A)** will be **psi** and **R(B,z)** will be **beta**. The unifier will be {x/A}.
+
+## Resolution with Variables
+
+$$
+\alpha \vee \varphi_ {\mathrm{MGU}} (\varphi , \psi) = \theta
+$$
+
+$$
+\neg \varphi \lor \beta
+$$
+
+$$
+(\alpha \vee \beta) \theta
+$$
+
+$$
+\mathrm{P} (x) \vee \mathrm{Q} (x, y)
+$$
+
+$$
+\neg P (A) \lor R (B, z)
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+<!-- page: 2 -->
+
+$$
+\alpha \vee \varphi_ {\mathrm{MGU}} (\varphi , \psi) = \theta
+$$
+
+$$
+\neg \varphi \lor \beta
+$$
+
+$$
+(\alpha \vee \beta) \theta
+$$
+
+$$
+\mathrm{P} (x) \vee \mathrm{Q} (x, y)
+$$
+
+$$
+\neg \mathrm{P} (A) \lor \mathrm{R} (B, z)
+$$
+
+$$
+(Q (x, y) \vee R (B, z)) \theta
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+$$
+\alpha \vee \varphi_ {\mathrm{MGU}} (\varphi , \psi) = \theta
+$$
+
+$$
+\neg \varphi \lor \beta
+$$
+
+$$
+(\alpha \vee \beta) \theta
+$$
+
+$$
+\mathrm{P} (x) \vee \mathrm{Q} (x, y)
+$$
+
+$$
+\neg P (A) \lor R (B, z)
+$$
+
+$$
+(Q (x, y) \vee R (B, z)) \theta
+$$
+
+$$
+Q (A, y) \lor R (B, z)
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+## Resolution with Variables
+
+$$
+\alpha \vee \varphi_ {\mathrm{MGU}} (\varphi , \psi) = \theta
+$$
+
+## Slide 10.5.6
+
+$$
+\neg \varphi \lor \beta
+$$
+
+$$
+\mathrm{P} (x) \vee \mathrm{Q} (x, y)
+$$
+
+Now let's explore what happens if we have x's in the other formula. What if we replaced the z in the second sentence by an x?
+
+$$
+(\alpha \vee \beta) \theta
+$$
+
+$$
+\neg P (A) \lor R (B, x)
+$$
+
+$$
+\mathrm{P} (x) \vee \mathrm{Q} (x, y)
+$$
+
+$$
+\neg \mathrm{P} (A) \lor \mathrm{R} (B, z)
+$$
+
+$$
+(Q (x, y) \vee R (B, z)) \theta
+$$
+
+$$
+Q (A, y) \lor R (B, z)
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+## Slide 10.5.7
+
+## Resolution with Variables
+
+$$
+\neg \varphi \lor \beta
+$$
+
+$$
+(\alpha \vee \beta) \theta
+$$
+
+$$
+\forall x, y. \quad P (x) \vee Q (x, y)
+$$
+
+$$
+\forall x. \neg P (A) \lor R (B, x)
+$$
+
+$$
+\forall x, y. \quad P (x) \vee Q (x, y)
+$$
+
+$$
+Q (A, y) \lor R (B, z)
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+<!-- page: 3 -->
+
+![](images/page_2_image_0.jpg)
+
+Slide 10.5.9
+
+## Resolution with Variables
+
+Okay. Now that we know how to do resolution, let's practice it on the example that we started in the section on clausal form. We want to prove that curiosity killed the cat.
+
+So that means that before you try to do a resolution step, you're really supposed to rename the variables in the two sentences so that they don't share any variables in common. You won't usually need to do this that explicitly on your paper as you work through a proof, but if you were going to implement resolution in a computer program, or if you find yourself with the same variable in both sentences and it's getting confusing, then you should rename the sentences apart.
+
+The easiest thing to do is to just go through and give every variable a new name. It's OK to do that. You just have to do it consistently for each clause. So you could rename to $\mathbf { P ( x _ { 1 } ) }$ **or** $\mathbf { Q } ( \mathbf { x _ { 1 } } , \mathbf { y _ { 1 } } ) ,$ and you can name this one **not P(A) or** $\begin{array} { r } { \mathbf { R } ( \mathbf { B } , \mathbf { x } _ { 2 } ) . } \end{array}$ And then you could apply the resolution rule and you don't get into any trouble.
+
+## Slide 10.5.8
+
+![](images/page_2_image_8.jpg)
+
+![](images/page_2_image_9.jpg)
+
+Slide 10.5.11
+
+Now we assert the negation of the thing we're trying to prove, so we have not K(C,T).
+
+## Slide 10.5.10
+
+Here are the clauses that we got from the original axioms.
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg \mathrm{D}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{O}\left( {\mathrm{x},\mathrm{y}}\right) \mathrm{v}\mathrm{L}\left( \mathrm{x}\right)$ | b |
+| 4 | $\neg \mathrm{L}\left( \mathrm{x}\right) \mathrm{v} \neg \mathrm{A}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{K}\left( {\mathrm{x},\mathrm{y}}\right)$ | C |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg \mathrm{C}\left( \mathrm{x}\right) \mathrm{v}\mathrm{A}\left( \mathrm{x}\right)$ | f |
+| 8 | $\neg \mathrm{K}\left( {\mathrm{C},\mathrm{T}}\right)$ | Neg |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+<!-- page: 4 -->
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+| 4 | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg C(x) v A(x)$ | f |
+| 8 | $\neg K(C,T)$ | Neg |
+| 9 | K(J,T) | 5,8 |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Slide 10.5.12
+
+We can apply the resolution rule to any pair of lines that contain unifiable literals. Here's one way to do the proof. We'll use the "set-of-support" heuristic (which says we should involve the negation of the conclusion in the proof), and resolve away K(C,T) from lines 5 and 8, yielding K(J,T).
+
+Slide 10.5.13
+
+Then, we can resolve C(T) and not C(x) in lines 6 and 7 by substituting T for x, and getting A(T).
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+| 4 | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg C(x) v A(x)$ | f |
+| 8 | $\neg K(C,T)$ | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+| 4 | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg C(x) v A(x)$ | f |
+| 8 | $\neg K(C,T)$ | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+| 11 | $\neg L(J) v \neg A(T)$ | 4,9 {x/J, y/T} |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+## Slide 10.5.14
+
+From lines 10 and 11, we get not L(J).
+
+Slide 10.5.15
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg \mathrm{D}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{O}\left( {\mathrm{x},\mathrm{y}}\right) \vee \mathrm{L}\left( \mathrm{x}\right)$ | b |
+| 4 | $\neg \mathrm{L}\left( \mathrm{x}\right) \mathrm{v} \neg \mathrm{A}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{K}\left( {\mathrm{x},\mathrm{y}}\right)$ | C |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg \mathrm{C}\left( \mathrm{x}\right) \vee \mathrm{A}\left( \mathrm{x}\right)$ | f |
+| 8 | $\neg \mathrm{K}\left( {\mathrm{C},\mathrm{T}}\right)$ | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 $\{ \mathrm{x}/\mathrm{T}\}$ |
+| 11 | $\neg \mathrm{L}\left( \mathrm{J}\right) \vee \neg \mathrm{A}\left( \mathrm{T}\right)$ | 4,9 $\{ \mathrm{x}/\mathrm{J},\mathrm{y}/\mathrm{T}\}$ |
+| 12 | $\neg \mathrm{L}\left( \mathrm{J}\right)$ | 10,11 |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+<!-- page: 5 -->
+
+6.034 - Spring 03 \* 18
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | $\neg \mathrm{D}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{O}\left( {\mathrm{x},\mathrm{y}}\right) \mathrm{v}\mathrm{L}\left( \mathrm{x}\right)$ | b |
+| 4 | $\neg \mathrm{L}\left( \mathrm{x}\right) \mathrm{v} \neg \mathrm{A}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{K}\left( {\mathrm{x},\mathrm{y}}\right)$ | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | $\neg \mathrm{C}\left( \mathrm{x}\right) \mathrm{v}\mathrm{A}\left( \mathrm{x}\right)$ | f |
+| 8 | $\neg \mathrm{K}\left( {\mathrm{C},\mathrm{T}}\right)$ | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 $\{ \mathrm{x}/\mathrm{T}\}$ |
+| 11 | $\neg \mathrm{L}\left( \mathrm{J}\right) \mathrm{v} \neg \mathrm{A}\left( \mathrm{T}\right)$ | 4,9 $\{ \mathrm{x}/\mathrm{J},\mathrm{y}/\mathrm{T}\}$ |
+| 12 | $\neg \mathrm{L}\left( \mathrm{J}\right)$ | 10,11 |
+| 13 | $\neg \mathrm{D}\left( \mathrm{y}\right) \mathrm{v} \neg \mathrm{O}\left( {\mathrm{J},\mathrm{y}}\right)$ | 3,12 $\{ \mathrm{x}/\mathrm{J}\}$ |
+| 14 | $\neg \mathrm{D}\left( \text{Fido}\right)$ | 13,2 $\{ \mathrm{y}/\text{Fido}\}$ |
+| 15 | - | 14,1 |
+
+Slide 10.5.19
+
+## Slide 10.5.18
+
+And finally, from lines 14 and 1, we derive a contradiction. Yay! Curiosity did kill the cat.
+
+So, if we want to use resolution refutation to prove that something is valid, what would we do? What do we normally do when we do a proof using resolution refutation?
+
+## Proving validity
+
+• How do we use resolution refutation to prove something is valid?
+
+<!-- page: 6 -->
+
+Slide 10.5.21
+
+What does it mean for a sentence to be valid, in the language of entailment? That it's true in all interpretations. What that means really is that it should be derivable from nothing. A valid sentence is entailed by the empty set of sentences. The valid sentence is true no matter what. So we're going to prove something with no assumptions.
+
+## Proving validity
+
+• How do we use resolution refutation to prove something is valid?
+
+• Normally, we prove a sentence is entailed by the set of axioms
+
+• Valid sentences are entailed by the empty set of sentences
+
+## Proving validity
+
+## Slide 10.5.22
+
+• How do we use resolution refutation to prove something is valid?
+
+We can prove it by resolution refutation by negating the sentence and trying to derive a contradiction.
+
+• Normally, we prove a sentence is entailed by the set of axioms
+
+• Valid sentences are entailed by the empty set of sentences
+
+• To prove validity by refutation, negate the sentence and try to derive contradiction.
+
+Slide 10.5.23
+
+So, let's do an example. Imagine that we would like to show the validity of this sentence, which is a classical Aristotelian syllogism.
+
+## • Syllogism
+
+## Proving validity: example
+
+$$
+\left(\forall x. P (x) \to Q (x)\right) \land P (A) \to Q (A)
+$$
+
+<!-- page: 7 -->
+
+$$
+\left(\forall x. P (x) \to Q (x)\right) \land P (A) \to Q (A)
+$$
+
+$$
+\left. - \left(\left(\forall x. P (x) \rightarrow Q (x)\right) \land P (A) \rightarrow Q (A)\right)\right.
+$$
+
+$$
+\left(\left(\forall x. \neg P (x) \vee Q (x)\right) \vee \neg P (A) \vee Q (A)\right)
+$$
+
+$$
+\left(\forall x. \neg P (x) \lor Q (x)\right) \land P (A) \land \neg Q (A)
+$$
+
+$$
+\left(\neg P (x) \vee Q (x)\right) \wedge P (A) \wedge \neg Q (A)
+$$
+
+## Proving validity: example
+
+## • Do proof
+
+| 1. | $\neg P(x) \lor Q(x)$ |  |
+| --- | --- | --- |
+| 2. | P(A) |  |
+| 3. | $\neg Q(A)$ |  |
+| 4. | Q(A) | 1,2 |
+| 5. | ■ | 3,4 |
+
+## Slide 10.5.26
+
+Now, we can resolve lines 1 and 2, substituting A for X, and get Q(A).
+
+And we can resolve 3 and 4, to get a contradiction.
+
+<!-- page: 8 -->
+
+## Slide 10.6.1
+
+In this section, we're going to look at three techniques for making logical proof more useful, and then conclude by talking about the limits of first-order logic.
+
+## Miscellaneous Logic Topics
+
+• Factoring
+
+• Green's trick
+
+• Equality
+
+• Completeness and decidability
+
+## Binary Resolution
+
+## Slide 10.6.2
+
+• Binary resolution matches one literal from each clause
+
+• Binary resolution isn't complete
+
+The version of the first-order resolution rule that we have shown you is called binary resolution because it involves two literals, one from each clause being resolved. It turns out that this form of resolution is not complete for first-order logic. There are sets of unsatisfiable clauses that will not generate a contradiction by successive applications of binary resolution.
+
+Slide 10.6.3
+
+Here's a pair of clauses. **P(x) or P(y)** and **not P(v) or not P(w)**. Can we get a contradiction from them using binary resolution?
+
+## Binary Resolution
+
+• Binary resolution matches one literal from each clause
+
+• Binary resolution isn't complete • Can we get a contradiction from these clauses? P(x)√P(y)
+
+$$
+\neg P (v) \lor \neg P (w)
+$$
+
+## Binary Resolution
+
+## Slide 10.6.4
+
+• Binary resolution matches one literal from each clause
+
+• Binary resolution isn't complete
+
+• Can we get a contradiction from these clauses?
+
+$$
+\mathrm{P} (x) \lor \mathrm{P} (y)
+$$
+
+$$
+\neg P (v) \lor \neg P (w)
+$$
+
+• We should!
+
+<!-- page: 9 -->
+
+$$
+\mathrm{P} (x) \lor \mathrm{P} (y)
+$$
+
+$$
+\neg P (v) \lor \neg P (w)
+$$
+
+$$
+\mathrm{P} (x) \lor \mathrm{P} (y)
+$$
+
+$$
+\neg P (v) \lor \neg P (w)
+$$
+
+## Slide 10.6.7
+
+It turns out that there is a simple extension of binary resolution that is complete. In that version, known as generalized resolution, we look for subsets of literals in one clause that can be unified with the negation of a subset of literals in the other clause. In our example from before, each P literal in one clause can be unified with its negation in the other clause.
+
+## Factoring
+
+• Generalized resolution lets you resolve away multiple literals at once
+
+$$
+(\alpha \vee \gamma) \theta
+$$
+
+• Generalized resolution lets you resolve away multiple literals at once
+
+## Factoring
+
+$$
+\underline {{\alpha \vee \beta \vee \gamma}} \quad \theta = \mathsf {M G U} (\alpha , \beta)
+$$
+
+• It's simpler to introduce a new inference rule, called factoring
+
+## Slide 10.6.8
+
+<!-- page: 10 -->
+
+$$
+\underline {{\alpha \vee \beta \vee \gamma}} \quad \theta = \mathsf {M G U} (\alpha , \beta)
+$$
+
+$$
+(\alpha \vee \gamma) \theta
+$$
+
+$$
+\underline {{Q (y) \lor P (x , y) \lor P (v , A)}}
+$$
+
+$$
+\underline {{\alpha \vee \beta \vee \gamma}} \quad \theta = \mathsf {M G U} (\alpha , \beta)
+$$
+
+$$
+(\alpha \vee \gamma) \theta
+$$
+
+$$
+\mathrm{Q} (y) \lor \mathrm{P} (x, y) \lor \mathrm{P} (v, A)
+$$
+
+$$
+(Q (y) \lor P (x, y)) \{x / v, y / A \}
+$$
+
+$$
+Q (A) \lor P (v, A)
+$$
+
+## Slide 10.6.11
+
+And binary resolution, combined with factoring, is complete in a sense that we'll study more carefully later in this section.
+
+## Factoring
+
+• Generalized resolution lets you resolve away multiple literals at once
+
+• It's simpler to introduce a new inference rule, called factoring
+
+$$
+\underline {{\alpha \vee \beta \vee \gamma}} \quad \theta = \mathsf {M G U} (\alpha , \beta)
+$$
+
+$$
+(\alpha \vee \gamma) \theta
+$$
+
+• Example
+
+$$
+\mathrm{Q} (y) \vee \mathrm{P} (x, y) \vee \mathrm{P} (v, A)
+$$
+
+$$
+(Q (y) \lor P (x, y)) \{x / v, y / A \}
+$$
+
+$$
+\mathrm{Q} (A) \lor \mathrm{P} (v, A)
+$$
+
+• Binary resolution plus factoring is complete
+
+## Green's Trick
+
+## Slide 10.6.12
+
+• Use resolution to get answers to existential queries
+
+<!-- page: 11 -->
+
+## Slide 10.6.15
+
+When we defined the language of first-order logic, we defined a special equality predicate. And we also defined special semantics for it (the sentence term1 equals term2 holds in an interpretation if and only if term1 and term2 both denote the same object in that interpretation). In order to do proofs that contain equality statements in them, we have to add a bit more mechanism.
+
+## Equality
+
+• Special predicate in syntax and semantics; need to add something to our proof system
+
+## Equality
+
+• Special predicate in syntax and semantics; need to add something to our proof system
+
+• Could add another special inference rule called paramodulation
+
+## Slide 10.6.16
+
+<!-- page: 12 -->
+
+$$
+\forall x. \text {Eq} (x, x)
+$$
+
+## Slide 10.6.19
+
+Second, it's reflexive. If x is equal to y then y is equal to x.
+
+• Instead, we will axiomatize equality as an equivalence relation
+
+• Could add another special inference rule called paramodulation
+
+$$
+\forall x. \text {Eq} (x, x)
+$$
+
+$$
+\forall x, y. \operatorname{Eq} (x, y) \rightarrow \operatorname{Eq} (y, x)
+$$
+
+• Special predicate in syntax and semantics; need to add something to our proof system
+
+$$
+\forall x, y, z. \operatorname{Eq} (x, y) \land \operatorname{Eq} (y, z) \to \operatorname{Eq} (x, z)
+$$
+
+• Special predicate in syntax and semantics; need to add something to our proof system
+
+## Equality
+
+## Equality
+
+• Could add another special inference rule called paramodulation
+
+• Instead, we will axiomatize equality as an equivalence relation
+
+$$
+\forall x. \text {Eq} (x, x)
+$$
+
+$$
+\forall x, y. \mathsf {E q} (x, y) \to \mathsf {E q} (y, x)
+$$
+
+## Slide 10.6.20
+
+Third, it's transitive. That means that if x equals y and y equals z, then x equals z.
+
+<!-- page: 13 -->
+
+$$
+\forall x. \text {Eq} (x, x)
+$$
+
+$$
+\forall x, y. \operatorname{Eq} (x, y) \rightarrow \operatorname{Eq} (y, x)
+$$
+
+$$
+\forall x, y, z. \operatorname{Eq} (x, y) \land \operatorname{Eq} (y, z) \rightarrow \operatorname{Eq} (x, z)
+$$
+
+$$
+\forall x, y. \operatorname{Eq} (x, y) \to (\mathrm{P} (x) \to \mathrm{P} (y))
+$$
+
+## Slide 10.6.23
+
+We know that these axioms (our old KB4) entail that hat(A) = A. We'll have to add in the equality axioms, as well.
+
+## Proof Example
+
+• Let's go back to our old geometry domain and try to prove what the hat of A is
+
+• Axioms in FOL (plus equality axioms)
+
+Above(A,C)
+
+Abo $\mathsf{ve}(B, D)$
+
+¬∃x. Above(x, A)
+
+![](images/page_12_image_28.jpg)
+
+¬∃x. Above(x,B)
+
+![](images/page_12_image_30.jpg)
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+## Proof Example
+
+• Let's go back to our old geometry domain and try to prove what the hat of A is
+
+• Axioms in FOL (plus equality axioms)
+
+Above(A,C)
+
+Above(B,D)
+
+¬∃x. Above(x, A)
+
+## Slide 10.6.24
+
+¬∃x. Above $(x,B)$
+
+![](images/page_12_image_42.jpg)
+
+$\forall x , y .$ Above(x,y)→ hat(y) = x
+
+Let's see if we can derive that, using resolution refutation and Green's trick.
+
+∀x. (¬∃y. Above(y, x)) → hat(x) = x
+
+![](images/page_12_image_46.jpg)
+
+• Desired conclusion: ∃x. hat(A) = x
+
+• Use Green's trick to get the binding of x
+
+<!-- page: 14 -->
+
+6.034 - Spring 03 • 27
+
+## Slide 10.6.25
+
+Here's the result of my clausal-form converter run on those axioms.
+
+| 1. | Above(A, C) |  |
+| --- | --- | --- |
+| 2. | Above(B, D) |  |
+| 3. | ~Above(x, A) |  |
+| 4. | ~Above(x, B) |  |
+| 5. | ~Above(x, y) v Eq(hat(y), x) |  |
+| 6. | Above(sk(x), x) v Eq(hat(x), x) |  |
+| 7. | Eq(x, x) |  |
+| 8. | ~Eq(x, y) v ~Eq(y, z) v Eq(x, z) |  |
+| 9. | ~Eq(x, y) v Eq(y, x) |  |
+| 10. |  |  |
+| 11. |  |  |
+| 12. |  |  |
+
+| 1. | Above(A, C) |  |
+| --- | --- | --- |
+| 2. | Above(B, D) |  |
+| 3. | ~Above(x, A) |  |
+| 4. | ~Above(x, B) |  |
+| 5. | ~Above(x, y) v Eq(hat(y), x) |  |
+| 6. | Above(sk(x), x) v Eq(hat(x), x) |  |
+| 7. | Eq(x, x) |  |
+| 8. | ~Eq(x, y) v ~Eq(y, z) v Eq(x, z) |  |
+| 9. | ~Eq(x, y) v Eq(y, x) |  |
+| 10. | ~Eq(hat(A), x) v Answer(x) |  |
+|  |  |  |
+|  |  |  |
+
+Slide 10.6.26
+
+Now, our goal is to prove exists x such that Eq(hat(A),x). That is negated and turned into clausal form, yielding not Eq(hat(A),x). And we add in the answer literal, so we can keep track of what the answer is.
+
+Slide 10.6.27
+
+Here's the proof. The answer is A! And we figured this out without any kind of enumeration of interpretations.
+
+| 1. | Above(A, C) |  |
+| --- | --- | --- |
+| 2. | Above(B, D) |  |
+| 3. | ~Above(x, A) |  |
+| 4. | ~Above(x, B) |  |
+| 5. | ~Above(x, y) v Eq(hat(y), x) |  |
+| 6. | Above(sk(x), x) v Eq(hat(x), x) |  |
+| 7. | Eq(x, x) |  |
+| 8. | ~Eq(x, y) v ~Eq(y, z) v Eq(x, z) |  |
+| 9. | ~Eq(x, y) v Eq(y, x) |  |
+| 10. | ~Eq(hat(A), x) v Answer(x) | conclusion |
+| 11. | Above(sk(A), A) v Answer(A) | 6, 10 {x/A} |
+| 12. | Answer(A) | 11, 3 {x/sk(A)} |
+
+| 1. | Above(A, C) |  |
+| --- | --- | --- |
+| 2. | Above(B, D) |  |
+| 3. | ~Above(x, A) |  |
+| 4. | ~Above(x, B) |  |
+| 5. | ~Above(x, y) v Eq(hat(y), x) |  |
+| 6. | Above(sk(x), x) v Eq(hat(x), x) |  |
+| 7. | Eq(x, x) |  |
+| 8. | ~Eq(x, y) v ~Eq(y, z) v Eq(x, z) |  |
+| 9. | ~Eq(x, y) v Eq(y, x) |  |
+| 10. | ~Eq(hat(D), x) v Answer(x) | conclusion |
+| 11. | ~Above(x,D) v Answer(x) | 5, 10 {x1/x} |
+| 12. | Answer(B) | 11, 2 {x/B} |
+
+Slide 10.6.28
+
+What if we wanted to use the same axioms to figure out what the hat of D is? We just change our query and do the proof. Here it is.
+
+<!-- page: 15 -->
+
+## Slide 10.6.31
+
+In 1929, Godel proved a completeness theorem for first-order logic: There exists a complete proof system for FOL. But, living up to his nature as a very abstract logician, he didn't come up with such a proof system; he just proved one existed.
+
+## Completeness and Decidability
+
+• Complete: If KB entails S, then we can prove S from KB
+
+• Gödel's Completeness Theorem: There exists a complete proof system for FOL
+
+• Robinson's Completeness Theorem: Resolution refutation is a complete proof system for FOL
+
+## Completeness and Decidability
+
+• Complete: If KB entails S, then we can prove S from KB
+
+• Gödel's Completeness Theorem: There exists a complete proof system for FOL
+
+## Slide 10.6.32
+
+<!-- page: 16 -->
+
+![](images/page_15_image_1.jpg)
+
+## Adding Arithmetic
+
+## Slide 10.6.34
+
+So, things are relatively good with regular first-order logic. And they're still fine if you add addition to the language, allowing statements like **P(x) and (x + 2 = 3)**. But if you add addition and multiplication, it starts to get weird!
+
+## Slide 10.6.35
+
+In 1931, Godel proved an incompleteness theorem, which says that there is no consistent, complete proof system for FOL plus arithmetic. (Consistent is the same as sound.) Either there are sentences that are true, but not provable, or there are sentences that are provable, but not true. It's not so good either way.
+
+## Adding Arithmetic
+
+• Gödel's Incompleteness Theorem: There is no consistent, complete proof system for FOL + Arithmetic.
+
+• Either there are sentences that are true, but not provable or there are sentences that are provable, but not true.
+
+## Adding Arithmetic
+
+• Gödel's Incompleteness Theorem: There is no consistent, complete proof system for FOL + Arithmetic.
+
+## Slide 10.6.36
+
+• Either there are sentences that are true, but not provable or there are sentences that are provable, but not true.
+
+• Arithmetic gives you the ability to construct codenames for sentences within the logic.
+
+P = "P is not provable."
+
+<!-- page: 17 -->
+
+## 6.034 Notes: Section 10.7
+
+## Slide 10.7.1
+
+Now that we've studied the syntax and semantics of logic, and know something about how to do inference in it, we're going to talk about how logic has been applied in real domains, and look at an extended example.
+
+## Logic in the Real World
+
+![](images/page_16_image_18.jpg)
+
+## Logic in the Real World
+
+## Slide 10.7.2
+
+• Encode information formally in web pages
+
+There is currently a big resurgence of logical representations and inference in the context of the web. As it stands now, web pages were written in natural language (English or French, etc), by the people and for the people. But there is an increasing desire to have computer programs (web agents or 'bots) crawl the web and figure things out by "reading" web pages. As we'll see in the next module of this course, it can be quite hard to extract the meaning from text written in natural language. So the World-Wide Web Consortium, in conjunction with people in universities and industry, are defining a standard language, which is essentially first-order logic, for formally encoding information in web pages. Information that is written in this formal language will be much easier to extract automatically.
+
+<!-- page: 18 -->
+
+![](images/page_17_image_0.jpg)
+
+## Slide 10.7.3
+
+It is becoming more appealing, in business, to have computers talk directly to one another, and to leave humans out of the loop. One place this can happen is in negotiating simple contracts between companies to deliver goods at some price. Benjamin Grosof, who is a professor in the Sloan School, works on using non-monotonic logic (a version of first-order logic, in which you're allowed to have conflicting rules, and have a system for deciding which ones have priority) to specify a company's business rules.
+
+## Logic in the Real World
+
+• Encode information formally in web pages
+
+## Logic in the Real World
+
+• Business rules
+
+• Encode information formally in web pages
+
+• Business rules
+
+• Airfare pricing
+
+## Slide 10.7.4
+
+Another example, which we'll pursue in detail, is the language the airlines use to specify the rules on their airfares. It turns out that every day, many times a day, airlines revise and publish (electronically) their fare structures. And, as many of you know, the rules governing the pricing of airplane tickets are pretty complicated, and certainly unintuitive. In fact, they're so complicated that the airlines had to develop a formal language that is similar to logic, in order to describe their different kinds of fares and the restrictions on them.
+
+Amazingly, there are on the order of 20 million different fares! To generate a price for a particular proposed itinerary, it requires piecing together a set of fares to cover the parts of the itinerary. Typically, the goal is to find the cheapest such set of fares, subject to some constraints.
+
+## Slide 10.7.5
+
+We're not going to worry about how to do the search to find the cheapest itinerary and fare structure (that's a really hard and interesting search problem!). Instead, we'll just think about pricing a particular itinerary.
+
+Pricing an airline ticket is not as simple as adding up the prices for the individual flight legs. There are many different pricing schemes, each depending on particular attributes of the combination of flights that the passenger proposes to take. For instance, at some point in 1998, American Airlines had 29 different fares for going from Boston to San Francisco, ranging in price from \$1943 to \$231, each with a different constraint on its use.
+
+In this discussion, we won't get into the actual ticket prices; instead we'll work on writing down the logical expressions that describe when a particular fare applies to a proposed itinerary.
+
+## Airfare Pricing
+
+• Ignore, for now, finding the best itinerary
+
+• Given an itinerary, what's the least amount we can pay for it?
+
+Image removed due to copyright restrictions.
+
+• Can't just add up prices for the flight legs; different prices for different flights in various combinations and circumstances
+
+## Fare Restrictions
+
+• Passenger under 2 or over 65
+
+• Passenger accompanying someone paying full fare
+
+• Doesn't go through an expensive city
+
+• No flights during rush hour
+
+• Stay over Saturday night
+
+• Layovers are legal
+
+• Round-the-world itinerary that doesn't backtrack
+
+• Regular two phase round-trip
+
+• No flights on another airline • This fare would not be cheaper than the standard price
+
+## Slide 10.7.6
+
+Here are some examples of airfare restrictions that we might want to encode logically:
+
+● The passenger is under 2 or over 65
+
+● The passenger is accompanying another passenger who is paying full fare
+
+● It doesn't go through an expensive city
+
+● There are no flights during rush hour (defined in local time)
+
+● The itinerary stays over a Saturday night
+
+● Layovers are legal: not too short; not too long
+
+● Round-the-world itinerary that doesn't backtrack
+
+● The itinerary is a regular two-trip round-trip
+
+<!-- page: 19 -->
+
+## Slide 10.7.7
+
+The first step in making a logical formalization of a domain is coming up with an ontology. According to Leibniz (a philosopher from the 17th century), ontology is "the science of something and of nothing, of being and not-being, of the thing and the mode of the thing, of substance and accident." Whoa! I wish our lecture notes sounded that deep.
+
+![](images/page_18_image_3.jpg)
+
+![](images/page_18_image_4.jpg)
+
+## Slide 10.7.8
+
+Now there are web sites with paper titles like "The Role of Ontological Engineering in B2B Net Markets". That's just as scary.
+
+## Slide 10.7.9
+
+For us, more prosaically, an ontology will be a description of the kinds of objects that you have in your world and their possible properties and relations. Making up an ontology is a lot like deciding what classes and methods you'll need when you design an object-oriented program.
+
+## Ontology
+
+• What kinds of things are there in the world?
+
+• What are their properties and relations?
+
+![](images/page_18_image_12.jpg)
+
+## Airfare Domain Ontology
+
+## Slide 10.7.10
+
+Okay. So what are the kinds of things we have in the airfare domain? That's a hard question, because it depends on the level of abstraction at which we want to make our model. Probably we don't want to talk about particular people or airplanes; but we might need to talk about people in general, in terms of various properties (their ages, for example, but not their marital status), or airplane types. We will need a certain amount of detail though, so, for instance, it might matter which airport within a city you're using, or which terminal within an airport. Often you have to adjust the level of abstraction that you use as you go along.
+
+<!-- page: 20 -->
+
+## Airfare Domain Ontology
+
+• passenger
+
+## Slide 10.7.12
+
+We'll also need some non-concrete object types, including
+
+• flight
+
+• city
+
+● list
+
+• airport
+
+● number
+
+• terminal
+
+• flight segment (list of flights, to be flown all in one "day")
+
+• itinerary (a passenger and list of flight segments)
+
+• list
+
+• number
+
+## Slide 10.7.13
+
+Once we know what kinds of things we have in our world, we need to come up with a vocabulary of constant names, predicate symbols, and function symbols that we'll use to talk about their properties and relations.
+
+There are two parts to this problem. We have to decide what properties and relations we want to be able to represent, and then we have to decide how to represent them.
+
+## Representing Properties
+
+## Representing Properties
+
+• Object P is red
+
+• Red(P)
+
+• Color(P, Red)
+
+• color(P) = Red
+
+• Property(P, Color, Red)
+
+![](images/page_19_image_43.jpg)
+
+## Slide 10.7.14
+
+● Red(P)
+
+● Color(P, Red)
+
+● color(P) = Red
+
+● Property(P, Color, Red)
+
+<!-- page: 21 -->
+
+## Slide 10.7.17
+
+The particular relations we'll use come from two sources. Some relations will be used to specify the basic facts in our knowledge-base.
+
+## Basic Relations
+
+• Age(passenger, number)
+
+• Nationality(passenger, country)
+
+## Slide 10.7.18
+
+· Wheelchair(passenger)
+
+• Origin(flight, airport)
+
+• Destination(flight, airport)
+
+• Departure\_Time(flight, number)
+
+• Arrival\_Time(flight, number)
+
+• Latitude(city, number)
+
+• Longitude(city, number)
+
+• In\_Country(city, country)
+
+• In\_City(airport, city)
+
+• Passenger(itinerary, passenger)
+
+• Flight\_Segments(itinerary, passenger, segments)
+
+· Nil
+
+## Basic Relations
+
+• cons(object,list) => list
+
+<!-- page: 22 -->
+
+## Slide 10.7.21
+
+We will often define relations using implications rather than equivalence. It makes it easier to add additional pieces of the definition (circumstances in which the relation would be true).
+
+## Slide 10.7.22
+
+• Like using subroutines
+
+∀i. P(i) ^ Q(i) → Qualifies 37(i)
+
+## Defined Relations
+
+• easier to specify definitions in pieces
+
+• Define complex relations in terms of basic ones
+
+∀i. R(i) ^ S(i) → Qualifies 37(i)
+
+• Implication rather than equivalence
+
+## Defined Relations
+
+∀i. R(i) ^S(i) → Qualifies 37(i)
+
+• can't use the other direction
+
+• Define complex relations in terms of basic ones
+
+Qualifies 37(i) →?
+
+• if you need it, write the equivalence
+
+∀i. (P(i) ^ Q(i)) √(R(i) ^S(i)) ↔ Qualifies 37(i)
+
+• easier to specify definitions in pieces
+
+• Implication rather than equivalence
+
+∀i. P(i) ^ Q(i) → Qualifies 37(i)
+
+• Like using subroutines
+
+<!-- page: 23 -->
+
+$$
+\forall i, a, p. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2 \rightarrow \text {InfantFare} (i)
+$$
+
+$$
+\forall i, a, p. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2 \rightarrow \text {InfantFare} (i)
+$$
+
+$$
+\forall i (\exists p, a. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2) \rightarrow \text {InfantFare} (i)
+$$
+
+$$
+\begin{array}{r l} \text {all i. (exists a, p.Passenger(i,p) ^ {Age(p,a) ^ {a <   2})}} \\ & \quad \text {- > Infant\_Fare(i)} \end{array}
+$$
+
+## Slide 10.7.25
+
+This second form is clearer (though the first form is closer to what we'll use next, when we talk about rule-based systems). Note, also, that changing the implication to equivalence in these two statements makes them no longer be equivalent.
+
+## Infant Fare
+
+$$
+\forall i, a, p. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2 \rightarrow \text {InfantFare} (i)
+$$
+
+$$
+\forall i (\exists p, a. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2) \rightarrow \text {InfantFare} (i)
+$$
+
+• First form is typical of rule-based systems • Second form (only!) can be made into an equivalence
+
+## Infant Fare
+
+## Slide 10.7.26
+
+∀i, a, p. Passenger(i, p) ^ Age(p, a) ^ a < 2 → InfantFare(i)
+
+$$
+\forall i (\exists p, a. \text {Passenger} (i, p) \land \text {Age} (p, a) \land a <   2) \to \text {InfantFare} (i)
+$$
+
+• First form is typical of rule-based systems • Second form (only!) can be made into an equivalence
+
+• What about a < 2 ?
+
+<!-- page: 24 -->
+
+$$
+P (a) \vee (3 > 2) \vee (a > 1 + 2) \Rightarrow P (a) \vee (a > 3)
+$$
+
+![](images/page_23_image_18.jpg)
+
+Slide 10.7.29
+
+## Slide 10.7.28
+
+Okay. Now, let's go to a significantly harder one. This isn't exactly a fare restriction; it's more of a correctness criterion on the flights within the itinerary. The idea is that an itinerary can be made up of multiple flight segments; each flight segment might, itself, be made up of multiple flights. In order for the itinerary to be well-formed, the flight segments are not required to have any particular relation to each other. However, there are considerable restrictions on a flight segment. One way to think about a flight segment is as a sequence of flights that you would do in one day (though it might actually last for more than one day if you're going for a long time).
+
+For a flight segment to be well-formed, it has to satisfy the following properties:
+
+●	 The departure and arrival airports match up correctly ●	 The layovers (gaps between arriving in an airport and departing from it) aren't too short (so that there's a reasonable probability that the passenger will not miss the connection)
+
+●	 The layovers aren't too long (so that the passenger can't spend a week enjoying him or herself in the city; we need to be sure to charge extra for that!)
+
+So, let's work toward developing a logical specification of the well-formedness of a flight segment. A flight segment is a list of flights. So, we'll make a short detour to talk about lists in logic, then come back to well-formed flight-segments.
+
+## Well-Formed Segment
+
+• Departure and arrival airports match up correctly
+
+• Layovers aren't too short
+
+• Layovers aren't too long
+
+![](images/page_23_image_31.jpg)
+
+## Lists in Logic
+
+• Nil : constant
+
+• cons : function
+
+## Slide 10.7.30
+
+<!-- page: 25 -->
+
+![](images/page_24_image_0.jpg)
+
+6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology.
+
+## Slide 10.7.31
+
+We can make and use lists in logic, much as we might do in Scheme. We have a constant that stands for the empty list. Then, we have a function cons that, given any object and a list, denotes the list that has the object argument as its head (car) and the list argument as its tail (cdr).
+
+So cons(A,cons(B,Nil)) is a list with two elements, A and B.
+
+## Lists in Logic
+
+• Nil : constant
+
+• cons : function
+
+• cons(A, cons(B, Nil)) : list with two elements
+
+## Lists in Logic
+
+## Slide 10.7.32
+
+• Nil : constant
+
+• cons : function
+
+• cons(A, cons(B, Nil)) : list with two elements
+
+We can also use the power of unification to specify conditions to assertions. So we can write **for all x lengthOne(cons(x,Nil))**, which is a more compact way of saying that every list that is equal to the cons of an element onto Nil has the property of being lengthOne.
+
+• ∀x. LengthOne(cons(x, Nil))
+
+∀I, x. / = cons(x, Nil) → LengthOne(1)
+
+∀I. (∃x. I = cons(x, Nil)) → LengthOne(1)
+
+## Slide 10.7.33
+
+Now that we know how to do some things with lists, we'll go back to the problem of ensuring that a flight segment is well-formed. This is basically a condition on all the layovers in the segment, so we'll have to run down the list making sure it's all okay.
+
+## Well-Formed Segment: Base Case
+
+Define recursively, going down the list of flights
+
+## Well-Formed Segment: Base Case
+
+Define recursively, going down the list of flights
+
+## Slide 10.7.34
+
+Any segment with 1 flight is well-formed
+
+∀f. WellFormed(cons(f, Nil))
+
+![](images/page_24_image_27.jpg)
+
+<!-- page: 26 -->
+
+![](images/page_25_image_0.jpg)
+
+## Slide 10.7.35
+
+Now, let's do the hard case. We can say that a flight segment with more than one flight is well-formed if the first two flights are contiguous (end and start in the same airport), the layover time between the first two flights is legal, and the rest of the flight segment is well-formed.
+
+## Well-Formed Segment: Recursion
+
+A flight segment with at least two flights is wellformed if
+
+• first two flights are contiguous
+
+• layover time between first two flights is legal
+
+• rest of the flight segment is well-formed
+
+## Well-Formed Segment: Recursion
+
+A flight segment with at least two flights is wellformed if
+
+• first two flights are contiguous
+
+• layover time between first two flights is legal
+
+• rest of the flight segment is well-formed
+
+∀f,f,r. Contiguous(f,f)^ LegalLayover(f, f)^ WellFormed(cons(f₂,r))
+
+→ WellFormed(cons(f₁, cons(f2,r))
+
+![](images/page_25_image_16.jpg)
+
+## Slide 10.7.36
+
+all f1, f2, r. Contiguous(f1, f2) ^ LegalLayover(f1, f2) ^ WellFormed(cons(f2, r)) -> WellFormed(cons(f1, cons(f2,r)))
+
+In logic, that becomes
+
+## Slide 10.7.37
+
+Note that we've invented some vocabulary here. Contiguous and LegalLayover are neither given to us as basic relations, nor the relation we are trying to define. We made them up, just as you make up function names, in order divide our problem into conquerable sub-parts.
+
+$$
+\begin{array}{c} \forall f _ {1}, f _ {2}. (\exists c. \text {Destination} (f _ {1}, c) \land \text {Origin} (f _ {2}, c)) \to \\ \text {Contiguous} (f _ {1}, f _ {2}) \end{array}
+$$
+
+## Helper Relations
+
+• Flights are contiguous if the arrival airport of the first is the same as the departure airport of the second
+
+## Helper Relations
+
+## Slide 10.7.38
+
+What makes two flights contiguous? The arrival airport of the first has to be the same as the departure airport of the second. We can write this as
+
+all f1, f2. (exists c. Destination(f1, c) ^ Origin(f2, c)) -> Contiguous(f1, f2)
+
+<!-- page: 27 -->
+
+```erlang
+all f1, f2. (exists t1, t2.
+    Arrival_Time(f1, t1) ^ Departure_Time(f2, t2) ^ (t2 - t1 > 30)) ->
+        Layover_Not_Too_Short(f1, f2)
+```
+
+(t2 - t1 < 180)) -> LayoverNotTooLong(f1, f2)
+
+![](images/page_26_image_2.jpg)
+
+## Not Too Short
+
+• A layover is not too short if it's more than 30 minutes long
+
+Af1,f2. (3t,t2. ArrivalTime(f,t1)^DepartureTime(f2,t2) $(t_{2}-t_{1}>30)$ → LayoverNotTooShortf,f{})
+
+## Slide 10.7.40
+
+Let's say that passengers need at least 30 minutes to change planes.
+
+That comes out fairly straightforwardly as
+
+6.034 - Spring 03 • 40
+
+## Slide 10.7.41
+
+This is a very simple version of the problem. You could imagine making this incredibly complex and nuanced. How long does it take someone to change planes? It might depend on: whether they're in a wheelchair, whether they have to change terminals, how busy the terminals are, how effective the inter-terminal transportation is, whether they have small children, whether the airport has signs in their native language, whether there's bad weather, how long the lines are at security, whether they're from a country whose citizens take a long time to clear immigration.
+
+You probably wouldn't want to add each of these things as a condition in the rule about layovers. Rather, you would want this system, ultimately, to be connected to a knowledge base of common sense facts and relationships, which could be used to deduce an expected time to make the connection. Common-sense reasoning is a fascinating area of AI with a long history. It seems to be (like many things!) both very important and very hard.
+
+## Not Too Long
+
+• A layover is not too long if it's less than three hours
+
+## Not Too Short
+
+• A layover is not too short if it's more than 30 minutes long
+
+• These are like the rules the airlines use, but it could involve all of common sense to know how long to allow someone to change planes
+
+## Slide 10.7.42
+
+all f1, f2. (exists t1, t2.
+
+ArrivalTime(f1, t1) ^ DepartureTime(f2, t2) ^
+
+<!-- page: 28 -->
+
+$$
+\begin{array}{l} \text {all f1, f2 (exists o, d, t2.} \\ \quad \text {Origin(f2, o) ^ Destination(f2, d) ^ DepartureTime(f2,t2) ^} \\ \quad \sim \text {exists f3, t3. (Origin(f3, o) ^ Destination(f3, d)} \end{array}
+$$
+
+$$
+\begin{array}{c} \text {DepartureTime(f3,t3) ^ {(t3 <   t2)}} \\ \text {^ LayoverNotTooShort(f1, f3))) ->} \\ \text {LayoverNotTooLong(f1, f2)} \end{array}
+$$
+
+Of course, you can imagine all sorts of common-sense information that might influence this definition of LayoverNotTooLong, just as in the previous case.
+
+$$
+\forall f _ {1}, f _ {2}. (\exists t _ {1}, t _ {2}. \text {ArrivalTime} (f _ {1}, t _ {1}) \land \text {DepartureTime} (f _ {2}, t _ {2})
+$$
+
+$$
+(t _ {2} - t _ {1} <   1 8 0)) \rightarrow \text {LayoverNotTooLong} (f _ {1}, f _ {2})
+$$
+
+$$
+\forall f _ {1}, f _ {2}. (\exists o, d, t _ {2}. \text {Origin} (f _ {2}, o) \land \text {Destination} (f _ {2}, d) \land
+$$
+
+$$
+\neg \exists f _ {3}, t _ {3}. (\text {Origin} (f _ {3}, o) \land \text {Destination} (f _ {3}, d) \land
+$$
+
+$$
+\text {DepartureTime} (f _ {3}, t _ {3}) \land (t _ {3} <   t _ {2}) \land
+$$
+
+$$
+\text {LayoverNotTooShort} (f _ {1}, f _ {3}))
+$$
+
+$$
+\rightarrow \text {LayoverNotTooLong} (f _ {1}, f _ {2})
+$$
+
+We haven't been writing these definitions with efficiency in mind. In all likelihood, if we tried to put them into a regular theorem prover, we would never get an answer out. In the next segment of material, we'll see how to use a restricted version of first-order logic to get fairly efficient logical programs. And we'll continue this example there.

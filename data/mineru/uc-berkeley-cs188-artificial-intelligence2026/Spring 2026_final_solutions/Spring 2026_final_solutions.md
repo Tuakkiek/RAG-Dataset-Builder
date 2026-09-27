@@ -1,0 +1,1034 @@
+<!-- page: 1 -->
+
+Intro to Artificial Intelligence
+
+Spring 2026
+
+Final Exam
+
+**Solutions last updated: Thu, May 21, 2026**
+
+Print Your Name:
+
+Print Your Student ID:
+
+Print Student name to your left:
+
+Print Student name to your right:
+
+You have 170 minutes. There are 7 questions of varying credit. (100 points total)
+
+| Question: | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Points: | 17 | 16 | 9 | 14 | 16 | 18 | 10 | 100 |
+
+We reserve the right to deduct points for failing to follow the marking directions below:
+
+For questions with **circular bubbles**, you may select only one choice.
+
+For questions with **square checkboxes**, you may select one or more choices.
+
+A Unselected option (Completely unfilled)
+
+You can select
+
+B Don’t do this (it will be graded as incorrect!)
+
+multiple squares
+
+C Only one selected option (completely filled)
+
+C Don’t do this (it will be graded as incorrect!)
+
+Anything you write outside the answer boxes or you ~~cross out~~ will not be graded. If you write multiple answers, your answer is ambiguous, or the bubble/checkbox is not entirely filled in, we will count the lowest-scoring interpretation.
+
+Read the honor code below and sign your name.
+
+By signing below, I affirm that all work on this exam is my own work. I have not referenced any disallowed materials, nor collaborated with anyone else on this exam. I understand that if I cheat on the exam, I may face the penalty of an “F” grade and a referral to the Center for Student Conduct.
+
+Sign your name:
+
+<!-- page: 2 -->
+
+Q1.1 (1 point) Fill in the blank with the best option: Running BFS (breadth-first) tree search and running BFS graph search on the same graph will return paths of different length.
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** BFS tree search and BFS graph search are guaranteed to find the shortest path to the goal state, where shortest is defined in terms of the length of the path (not cost).
+
+For Q1.2 to Q1.3, let $h _ { 1 }$ and $h _ { 2 }$ be admissible heuristics.
+
+Q1.2 (1 point) True or false: A\* tree search using $h _ { 1 }$ may find a lower-cost solution than A\* tree search using $h _ { 2 }$
+
+A True
+
+B False
+
+**Solution:** A\* tree search with admissible heuristics is guaranteed to find the lowest cost solution.
+
+Q1.3 (1 point) Let $h _ { 3 }$ be a heuristic such that $h _ { 3 } ( s ) = \operatorname* { m i n } ( h _ { 1 } ( s ) , h _ { 2 } ( s ) )$ for all states 𝑠. True or false: $h _ { 3 }$ is admissible.
+
+A True
+
+B False
+
+**Solution:** If $h _ { 1 }$ and $h _ { 2 }$ are admissible, then for any given state we know $0 \leq h _ { 1 } ( s ) \leq h ^ { * } ( s )$ and $0 \leq h _ { 2 } ( s ) \leq h ^ { * } ( s )$ where $h ^ { * }$ is the true cost. Then, $0 \leq \operatorname* { m i n } ( h _ { 1 } ( s ) , h _ { 2 } ( s ) ) \leq h ^ { * } ( s )$
+
+Q1.4 (1 point) Fill in the blank with the best option: Minimax with alpha-beta pruning will return a different best action than minimax without alpha-beta pruning if the tree is unbalanced.
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** Intended answer was “Never”. Alpha-beta pruning is strictly an optimization technique. It is guaranteed to return the exact same minimax value and root action as unpruned Minimax. We also accepted “Sometimes” if using a modified version of the algorithm.
+
+Q1.5 (1 point) Fill in the blank with the best option: If we change all the minimizer nodes in a minimax tree to chance nodes that pick actions uniformly at random, the value at the root will increase.
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** The minimum of a set of values is always lower than the average, unless all the values are the same.
+
+<!-- page: 3 -->
+
+For Q1.6 to Q1.7, consider the Gridworld below. In states 𝐴 and 𝐸, the only action available is “Exit”, which earns the +100 or +1 reward, respectively. In states $B , C ,$ , and 𝐷, the actions are “Left” and “Right” which are successful 100% of the time. There is no reward other than the $+ 1 0 0 ~ \mathrm { o r } + 1$
+
+| +100 |  |  |  | +1 |
+| --- | --- | --- | --- | --- |
+| A | B | C | D | E |
+
+Q1.6 (2 points) When running value iteration on this Gridworld, what is the smallest 𝑘 for which $V _ { k } ( s ) =$ $V _ { k + 1 } ( s )$ for all states $s \in \{ A , B , C , D , E \} ?$
+
+Assume that the discount factor is $\gamma = 1$ and that $V _ { 0 } ( s ) = 0$ for all states $s \in \{ A , B , C , D , E \}$ A 0 B 1 C 2 D 3 E 4 F 5
+
+**Solution:** At $V _ { 0 } ,$ all states have a value of 0. At 𝑉<sub>1</sub>, $V _ { 1 } ( A ) = 1 0 0$ and $V _ { 1 } ( E ) = 1$ . For the next iteration, $V _ { 2 } ( B ) = 1 0 0$ and $V _ { 2 } ( D ) = 1$ . Then, $V _ { 3 } ( C ) = 1 0 0 .   \mathrm { A t }   V _ { 4 }$ , state 𝐷 sees that it has a higher reward if the agent goes left, so $V _ { 4 } ( D ) = 1 0 0$ . No values change at $V _ { 5 } ,$ so $k = 4 .$
+
+Q1.7 (2 points) For what discount factor are the actions “Left” and “Right” equally good when in state 𝐷? Your answer should be a number.
+
+0.1
+
+**Solution:** We solve for $\gamma ^ { 3 } \cdot 1 0 0 = \gamma \cdot 1$ to get $\gamma = 0 . 1$
+
+Q1.8 (1 point) The general Bellman update $\begin{array} { r } { V ^ { \prime } ( s ) = \operatorname* { m a x } _ { a } \sum _ { s ^ { \prime } } T ( s , a , s ^ { \prime } ) [ R ( s , a , s ^ { \prime } ) + \gamma V ( s ) ] } \end{array}$ requires $O ( S A )$ time to compute for one state.
+
+Now, suppose the MDP is deterministic, with the probabilistic model $T ( s , a , s ^ { \prime } )$ replaced by the function Result $( s , a )$ . What is the big-O runtime now to compute the Bellman update for one state? Answer in big-O notation.
+
+𝑂(𝐴)
+
+**Solution:** We no longer need to sum over all states as there is only one $s ^ { \prime }$ with non-zero probability, and we can access it using the Result function.
+
+<!-- page: 4 -->
+
+(Question 1 continued…)
+
+Q1.9 (1 point) Andrew is running Gibbs sampling on the following Bayes Net where each variable can take on the value 0 or 1. The probability table for 𝑍 is provided below (note that the table is equivalent to saying that 𝑍 = 𝑋 XOR 𝑌 ):
+
+![](images/page_3_image_2.jpg)
+
+| 𝑋 | 𝑌 | 𝑍 | 𝑃(𝑍 \| 𝑋,𝑌) |
+| --- | --- | --- | --- |
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+
+The current state of the Gibbs sampling process is $X = 0 , Y = 1 , Z = 1$
+
+We choose to re-sample 𝑋. What is the probability that 𝑋 will be re-sampled as 0?
+
+A 0
+
+C 1
+
+B 0.5
+
+D None of the above
+
+**Solution:** X = 1, Y = 1, Z = 1 is impossible, so X must be re-sampled as 0.
+
+Q1.10 (1 point) True or false: In a Hidden Markov Model (HMM), particle filtering generally gives more accurate values for $P ( X _ { t } \mid e _ { 1 : t } )$ than the forward algorithm.
+
+A True
+
+B False
+
+**Solution:** Particle filtering is an approximate algorithm while the forward algorithm is exact inference.
+
+Q1.11 (2 points) Which of the following represent advantages of transformer models covered in class over trigram models?
+
+A Allow adjacent-word correlations to be captured
+
+B Allow distant-word correlations to be captured
+
+C Allow words that are more freqent in the training data to be given higher probabilities
+
+D Can assign nonzero probabilities to sentences never seen in the training data
+
+E None of the above
+
+**Solution:** Attention mechanisms allow for distant-word correlations.
+
+<!-- page: 5 -->
+
+(Question 1 continued…)
+
+Q1.12 (1 point) Isabella wants to create an AI assistant for students in CS188. She first pre-trains a language model on transcripts of CS188 lectures. When she evaluates it on a test set of CS188 lectures, she finds that the model achieves high accuracy on predicting the next token.
+
+Which of the following is the best next step for Isabella to take?
+
+A Use a tokenizer that is trained on lectures from more courses, not just CS188
+
+B Fine-tune the model on helpful human conversations
+
+C Train the model on CS188 lectures using self-supervised learning for additional epochs
+
+D Increase the size of the weight matrices used in the attention layers
+
+**Solution:** Isabella has done a good job pre-training, but needs to fine-tune the model to be helpful in order to be an AI assistant. Lectures typically contain few extended Q/A pairs and conversations, and lecturers often say things like “Happy to take that one offline”.
+
+Q1.13 (1 point) Kanav is using a word bigram model. Select the operator to fill in the blanks that makes the following equation true under this model:
+
+$$
+\begin{array}{c c c c} P \left(" \text {Pac - Man wins}"\right) = \\ P \left(" \text {Pac - Man}" \mid \text {START}\right) & \_ & P \left(" \text {wins}" \mid " \text {Pac - Man}"\right) & \_ & P \left(\text {STOP} \mid " \text {wins}"\right) \\ \textcircled {A} + & \textcircled {B} - & \textcircled {C} \times & \textcircled {D} \div \end{array}
+$$
+
+**Solution:** We can apply the chain rule of probabilities here (simplifying with the bigram assumption). This means we need to multiply the probabilities above together.
+
+Q1.14 (1 point) Which of the following is the most suitable method to prevent overfitting in a decision tree?
+
+A Minimizing the information gain at the root node
+
+B Maximizing the average entropy of the label distributions at the leaves of the tree
+
+C Removing a random subset of data points from the training data
+
+D Limiting the depth of the decision tree
+
+**Solution:** Making the decision tree more compact means it is less likely to fit the training data exactly and simply memorize it.
+
+<!-- page: 6 -->
+
+## Q2 Bayes Nets: Printer Problems
+
+**(16 points)**
+
+It’s the night before the CS188 final exam, and Niklas and Aly are printing copies of the exam. We use the Bayes Net to the right to model whether the printer will print a single exam correctly.
+
+The variables in our Bayes Net are
+
+• 𝐸: is the toner empty?
+
+• 𝐿: is the empty toner light on?
+
+• 𝑂: is the printer out of paper?
+
+![](images/page_5_image_7.jpg)
+
+• 𝐼: is the paper indicator on?
+
+• 𝐶: does the printer print the exam correctly?
+
+Assume each variable is binary (e.g., 𝐸 can take on values 𝑒 or ¬𝑒).
+
+Q2.1 (2 points) Select all of the following variables that are guaranteed to be **independent** of 𝐿 given 𝐸. A 𝐶 C 𝐼 B 𝑂 D None of the above
+
+**Solution:** In a Bayes Net, a variable is independent of all its non-descendants given its parents. 𝐶, 𝑂, and 𝐼 are non-descendants of 𝐿, and we are given the parents of 𝐿 (i.e. 𝐸).
+
+Q2.2 (2 points) Select all of the following variables that are guaranteed to be **dependent** on 𝐼 given 𝐶. A 𝑂 C 𝐿 B 𝐸 D None of the above
+
+**Solution:** None of the above. Arrows in the Bayes Net don’t necessarily encode dependence.
+
+Q2.3 (2 points) How many entries are there in total across all probability tables in the Bayes Net? Ignore entries whose values are determined by the sum-to-1 constraint. E.g., 𝑃(𝑋) for a three-valued variable 𝑋 is just two entries because the third is determined by the first two.
+
+**Solution:** The number of entries in a CPT is the product of the parent domain sizes and the child domain size minus 1. The CPTs we have are 𝑃(𝐸), 𝑃(𝐿 | 𝐸), 𝑃(𝐶 | 𝐸, 𝑂), 𝑃(𝑂), and 𝑃(𝐼 | 𝑂). The total number of entries across all CPTs is $(2 - 1) + 2^{2 - 1} + 2^2(2 - 1) + (2 - 1) +$ 2(2 − 1) = 10.
+
+<!-- page: 7 -->
+
+(Question 2 continued…)
+
+| A f(O) | D f(O,C) | G f(E,C,i) | J f(L,E,C,i) |
+| --- | --- | --- | --- |
+| B f(C) | E f(C,i) | H f(O,E,C) | K f(L,O,E,C,i) |
+| C f(E,C) | F f(O,C,i) | I f(O,E,C,i) | L None of the above |
+
+**Solution:** Join the factors with 𝑂: $P ( C \mid E , O ) , P ( O )$ , and $P ( i \mid O )$ to get a factor with $C , E , O ,$ , and 𝑖. If we sum out 𝑂, we get $f ( E , C , i )$
+
+Q2.5 (1 point) Which of the following orders is a valid visitation order for applying prior sampling to this Bayes net?
+
+A $L , E , C , O , I$
+
+B 𝐶, 𝐸, 𝐼, 𝐿, 𝑂
+
+C 𝐸, 𝐿, 𝑂, 𝐶, 𝐼
+
+None of the D above
+
+**Solution:** Must be in topological order.
+
+Q2.6 (1 point) Fill in the blank with the best option: In the limit as the number of samples tends to infinity, if we run rejection sampling to estimate $P ( E \mid l )$ , we will reject more samples than if we run rejection sampling to estimate $P ( E \mid l , \lnot c )$
+
+A Always
+
+C Never
+
+B Sometimes
+
+D Cannot tell with the provided information
+
+**Solution:** While estimating $P ( E \mid l , \lnot c )$ , you will reject samples that have $\textbf { a } { \lnot } l$ or a $c ,$ and in the limit, this will be more samples than have a ¬𝑙 only.
+
+<!-- page: 8 -->
+
+Q2.7 (2 points) For this part only, we find that there’s an app that can tell us when there is a problem with the toner and/or paper. We want to include this in our Bayes Net.
+
+Let the app variable be represented by 𝐴. 𝐴 can take on one of two values:
+
+• 𝑎: signals that there is a problem (toner is empty and/or paper is out)
+
+• ¬𝑎: signals that there is not a problem (toner is not empty and paper is not out)
+
+Add the appropriate nodes and edges to the Bayes Net below.
+
+![](images/page_7_image_6.jpg)
+
+**Solution:**
+
+![](images/page_7_image_8.jpg)
+
+Because 𝐴 is a signal for 𝐸 and 𝑂, we draw arrows from 𝐸 and 𝑂 to 𝐴.
+
+<!-- page: 9 -->
+
+For Q2.8 to Q2.9, we use the following dynamic Bayes Net to model printing out multiple different copies of the exam, where each time step represents printing out one copy. We show the first two time steps, and the pattern repeats after that:
+
+![](images/page_8_image_2.jpg)
+
+Q2.8 (2 points) For this part only, we use likelihood weighting to compute $P ( E _ { 2 } | L _ { 2 } = l , I _ { 2 } = \neg i )$
+
+We generate the sample:
+
+$$
+(E _ {1} = \neg e, L _ {1} = \neg l, O _ {1} = o, I _ {1} = i, C _ {1} = c, E _ {2} = e, L _ {2} = l, O _ {2} = \neg o, I _ {2} = \neg i, C _ {2} = \neg c)
+$$
+
+Select the set of probability distributions that we need to compute the weight of this sample (not the sample itself).
+
+$$
+\boxed {\mathrm{A}} P (L _ {t} = l)
+$$
+
+$$
+\boxed {\mathrm{D}} P (I _ {t} = i)
+$$
+
+G 𝑃(𝐸<sub>1</sub>)
+
+$$
+\boxed {\mathrm{B}} P (L _ {t} = l \mid E _ {t} = e)
+$$
+
+$$
+\boxed {\mathrm{E}} P (I _ {t} = i \mid O _ {t} = o)
+$$
+
+H 𝑃(𝐸<sub>𝑡+1</sub> | 𝐸<sub>𝑡</sub> = ¬𝑒)
+
+$$
+\boxed {\mathrm{C}} P (L _ {t} = l \mid E _ {t} = \neg e)
+$$
+
+$$
+\boxed {\mathrm{F}} P (I _ {t} = i \mid O _ {t} = \neg o)
+$$
+
+I None of the above
+
+**Solution:** We need to compute the likelihood of the evidence, and we can multiply together the likelihoods of the individual evidence 𝑙 and ¬𝑖 given the structure of the Bayes Net.
+
+Q2.9 (2 points) Consider the following probability table for $P ( E _ { t + 1 } \mid E _ { t } )$
+
+| 𝐸<sub>𝑡</sub> | 𝐸<sub>𝑡+1</sub> | 𝑃(𝐸<sub>𝑡+1</sub> \| 𝐸<sub>𝑡</sub>) |
+| --- | --- | --- |
+| 𝑒 | 𝑒 | 1 |
+| 𝑒 | ¬𝑒 | 0 |
+| ¬𝑒 | 𝑒 | 0.01 |
+| ¬𝑒 | ¬𝑒 | 0.99 |
+
+As the time step 𝑡 approaches ∞, what does $P ( E _ { t } = e )$ approach?
+
+A 0
+
+C 0.5
+
+E 1
+
+B 0.01
+
+D 0.99
+
+F None of the above
+
+**Solution:** We look at the stationary distribution which would be solved by ${ \binom { 1 \quad 0 . 0 1 } { 0 \quad 0 . 9 9 } } { \binom { P ( E _ { t } = e ) } { 1 - P ( E _ { t } = e ) } } = { \binom { P ( E _ { t } = e ) } { 1 - P ( E _ { t } = e ) } }$ which will give us that $P ( E _ { t } = e ) = 1$ . If we apply the transition to this distribution, we will get the same distribution, so it is the stationary distribution.
+
+<!-- page: 10 -->
+
+Advika is playing a game on the following 3 x 3 board:
+
+| 2 | 𝑥<sub>2</sub> | 𝑥<sub>3</sub> |
+| --- | --- | --- |
+| 2 | 𝑥<sub>5</sub> | 𝑥<sub>6</sub> |
+| 𝑥<sub>7</sub> | 𝑥<sub>8</sub> | 1 |
+
+Some squares contain mines, and Advika has to avoid clicking on them. The squares labeled $x _ { 2 } , x _ { 3 } , x _ { 5 } , x _ { 6 } , x _ { 7 }$ and $x _ { 8 }$ have not yet been clicked on, and their contents are unknown.
+
+Advika has already clicked on the squares marked 2, 2, and 1. (Thank goodness she is still alive!) Clicking on a square results in either death (if there is a mine) or reveals the number of mines in horizontally, vertically, and diagonally adjacent squares. For example, the 1 in the lower-right corner of the board means that there is 1 mine total under the three adjacent squares labeled $x _ { 5 } , x _ { 6 } ,$ and $x _ { 8 } .$
+
+To help her decide where it is safe to click next, Advika formulates a CSP. The variables $x _ { i }$ can take on values in {0, 1} where $x _ { i } = 1$ means there is a mine in that square, and $x _ { i } = 0$ means there is not. (Note that the CSP applies only to this turn; after she clicks, Advika will need to update the CSP accordingly.) The constraints in the CSP arise from the mine-count information revealed by previous clicks.
+
+Q3.1 (1 point) Which of the following constraints correctly reflect the current situation? Select all that apply.
+
+$$
+\boxed {\mathrm{A}} x _ {2} + x _ {5} = 2
+$$
+
+$$
+\boxed {\mathrm{C}} x _ {6} + x _ {8} = 1
+$$
+
+$$
+\boxed {\mathrm{B}} x _ {2} + x _ {5} + x _ {7} + x _ {8} = 1
+$$
+
+D None of the above
+
+**Solution:** The 2 in the upper-right corner is answer choice A. B has the wrong number of mines. C is missing $x _ { 5 } .$
+
+<!-- page: 11 -->
+
+(Question 3 continued…)
+
+Q3.2 (2 points) Advika is running backtracking search with forward checking. Her search assigns variables in the order $x _ { 2 } , x _ { 5 } , x _ { 3 } , x _ { 6 } , x _ { 7 } , x _ { 8 }$ . Values are assigned in lexicographic order (0 then 1).
+
+She assigns $x _ { 2 } = 0$ . What happens next?
+
+A Advika assigns $x _ { 5 } = 0$ because $x _ { 5 }$ is the next variable and 0 is the first value to try.
+
+B Advika assigns $x _ { 5 } = 0$ because the arc from $x _ { 5 } \rightarrow x _ { 2 }$ is consistent if $x _ { 5 } = 0 .$
+
+C Advika backtracks because there are no valid assignments for $x _ { 5 }$
+
+D Advika backtracks because the depth-first search will run into a cycle.
+
+E None of the above
+
+**Solution:** Advika backtracks because forward checking shows no valid values for $x _ { 5 }$
+
+Q3.3 (2 points) For this subpart only, let us consider general instances of this family of CSPs and suppose we add a new constraint: $\textstyle \sum _ { i } x _ { i } \leq N$ where 𝑁 is the maximum number of mines allowed on the grid. Which of the following are true?
+
+A The number of satisfying solutions to the CSP may increase.
+
+B The number of satisfying solutions to the CSP may stay the same.
+
+C The number of satisfying solutions to the CSP may decrease.
+
+D None of the above
+
+**Solution:** Adding more constraints will never increase the number of satisfying solutions.
+
+Q3.4 (2 points) Backtracking search yields a solution to the CSP where $x _ { 3 } = 0$ . Can Advika be certain that the corresponding square is safe?
+
+A Yes, because backtracking yields correct solutions to CSP problems.
+
+B Yes, because backtracking search works with higher-order constraints.
+
+C Yes, because of another reason not listed above
+
+D No, because backtracking does not always yield correct solutions to CSP problems.
+
+E No, because backtracking only works with binary constraints.
+
+F No, because of another reason not listed above.
+
+**Solution:** No, because backtracking will return some solution to the CSP; but for a square to be safe it has to be mine-free in all solutions to the CSP. If there is any solution with a mine, that means it’s possible the square has a mine given all the information so far.
+
+<!-- page: 12 -->
+
+![](images/page_11_image_0.jpg)
+
+Q3.5 (2 points) Advika notices that she can split this CSP into two disjoint CSPs that can be solved independently: CSP A and CSP B. She combines the solutions to CSP A and CSP B to generate a solution to the original CSP.
+
+CSP A contains the $x _ { 5 }$ variable. What are the other variables in CSP A?
+
+A $x _ { 2 }$
+
+B $x _ { 3 }$
+
+C $x _ { 6 }$
+
+F None of the above
+
+**Solution:** The constraints of the graph are: $x_{2}+x_{5}=2,x_{2}+x_{5}+x_{7}+x_{8}=2,$ and $x _ { 5 } + x _ { 6 } +$ $x _ { 8 } = 1$ . All variables that are involved in constraints with $x _ { 5 }$ must be in the same CSP as $x _ { 5 } , x _ { 3 }$ is not in any constraints, so it can be in its own CSP. Note that the set of all solutions to the CSP is the Cartesian product of the sets of solutions to the sub-CSPs.
+
+<!-- page: 13 -->
+
+A dynamic decision network is dynamic Bayes net extended with action and reward nodes. In the example below, $X _ { t }$ is the state of the environment at time 𝑡, $A _ { t }$ is the action, $R _ { t }$ is the reward, and $O _ { t }$ is the observation. Note the indexing of variables: the edge goes from $A _ { t - 1 }$ to $X _ { t }$ . By convention, $O _ { t }$ is observed before $A _ { t }$ is chosen.
+
+![](images/page_12_image_3.jpg)
+
+Suppose we want to maximize the sum of rewards $\textstyle \sum _ { t ^ { \prime } = 0 } ^ { T } R _ { t ^ { \prime } }$ and we’re currently at time step 𝑡 (we’ve taken actions $A _ { 1 : t - 1 }$ and observed $O _ { 1 : t } )$ . Select the conditions under which each equation holds.
+
+Q4.1 (1 point) $\mathrm { V P I } ( O _ { t + 1 } | X _ { t + 1 } ) = 0$
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** The VPI of a future observation comes from added information about the associated state, but if we are given the value of that state, the observation adds nothing.
+
+Q4.2 (1 point) $\mathrm { V P I } ( X _ { t } , O _ { t + 1 } ) < \mathrm { V P I } ( X _ { t } )$
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** Since the expected value of information is nonnegative, adding an observation cannot have negative value.
+
+Q4.3 (1 point) $\mathrm { V P I } ( X _ { t } , X _ { t + 1 } ) > \mathrm { V P I } ( X _ { t } )$
+
+A Always
+
+B Sometimes
+
+C Never
+
+**Solution:** Adding the future state can have positive value, but it can also have zero value if (say) the transition model is deterministic and identical for all actions.
+
+<!-- page: 14 -->
+
+(Question 4 continued…)
+
+Let the belief state $\pmb { f } _ { t } = P ( X _ { t } | o _ { 1 : t } , a _ { 1 : t - 1 } )$ be a distribution representing the agent’s belief over the hidden state at timestep 𝑡 given the observations up to this point as well as all previous actions.
+
+Q4.4 (2 points) Which of the following elements are required for us to compute a belief update: computing $f _ { t } ( X _ { t } )$ from $\pmb { f } _ { t - 1 } ( X _ { t - 1 } ) ?$ A $P ( X _ { t } | X _ { t - 1 } , a _ { t - 1 } )$ D $P ( o _ { t } | X _ { t } )$ B $P ( X _ { t } | X _ { t - 1 } , a _ { t } )$ E $P ( X _ { t } | o _ { t } )$ C $P ( X _ { t } | X _ { t - 1 } )$ F None of the above
+
+| Solution:$\boldsymbol{f}_{t}(x_{t}) = \alpha P(o_{t} \mid x_{t}) \sum_{x_{t-1}} P(x_{t} \mid x_{t-1}, a_{t-1}) \boldsymbol{f}_{t-1}(x_{t-1})$ |
+| --- |
+
+Q4.5 (2 points) An optimal action $a _ { t }$ at timestep 𝑡 is an action that maximizes the expected sum $\begin{array} { r } { \mathbb { E } \Bigl [ \sum _ { t ^ { \prime } = t } ^ { T } r _ { t ^ { \prime } } | o _ { 1 : t } , a _ { 1 : t - 1 } \Bigr ] } \end{array}$ of future rewards given previous observations and actions. In our dynamic decision network, knowing just $f _ { t }$ is sufficient to take an optimal action at timestep 𝑡. Why is this?
+
+A It stores the most likely hidden state
+
+B The future observations are conditionally independent of future actions, given $f _ { t }$
+
+The distribution over future trajectories is conditionally independent of previous actions and C observations, given $f _ { t }$
+
+The belief state $f _ { t }$ is computed recursively in a way that allows you to reconstruct all previous D observations $o _ { 1 : t }$ and actions $a _ { 1 : t - 1 }$
+
+E The current observation $o _ { t }$ contains all information relevant to future rewards
+
+F None of the above
+
+**Solution:** Because of the Markov property, the belief state $f _ { t }$ summarizes all information from the action-observation history that is relevant for predicting future states (and thus rewards). Therefore, conditioned on $f _ { t }$ , the distribution over future trajectories does not depend on the earlier observations $o _ { 1 : t }$ or actions $a _ { 1 : t - 1 }$
+
+Q4.6 (2 points) Suppose we want to use our dynamic decision network to model a gridworld environment in which we receive a reward of +1 every time we take the 𝐴=**MoveNorth** action. How do we have to change the graphical model to model this? A Add an edge from $O _ { t }$ to $X _ { t + 1 }$ D Add an edge from $A _ { t - 1 }$ to $O _ { t }$ B Add an edge from $O _ { t }$ to $R _ { t }$ E Add an edge from $R _ { t + 1 }$ to $X _ { t }$ C Add an edge from $R _ { t }$ to $A _ { t - 1 }$ F None of the above
+
+**Solution:** None of the above is correct. Action now needs to influence the reward, so $A _ { t - 1 }$ to $R _ { t } .$
+
+<!-- page: 15 -->
+
+(Question 4 continued…)
+
+Q4.7 (2 points) Suppose we want to use our dynamic decision network to model a gridworld environment where the 𝐴= **TakeMeasurement** action reveals our current state. How do we have to change the graphical model to model this? A Add an edge from $O _ { t }$ to $X _ { t + 1 }$ D Add an edge from $A _ { t - 1 }$ to $O _ { t }$ B Add an edge from $A _ { t }$ to $X _ { t }$ E Add an edge from $A _ { t - 1 }$ to $R _ { t }$ C Add an edge from $X _ { t }$ to $A _ { t }$ F None of the above
+
+**Solution:** Previous action now needs to influence the observation (revealing the current state), so $A _ { t - 1 }$ to $O _ { t } . \mathrm { ~ I f ~ } A _ { t - 1 } =$ **TakeMeasurement**, the conditional distribution for $O _ { t }$ is deterministic with all mass on the true value of $X _ { t }$ . Connecting to $X _ { t }$ doesn’t work because that means the action sets the value of the state rather than observes it.
+
+Q4.8 (2 points) In which of the following cases are our observations $o _ { 1 : T }$ guaranteed to not affect the optimal actions $a _ { 1 : T ^ { 2 } }$
+
+A Observations are independent of the state
+
+B Observations are a deterministic function of the states
+
+C States are fully observable
+
+D State transitions are deterministic and known and $x _ { 0 }$ is known
+
+E None of the above
+
+## Solution:
+
+• If observations are independent of the state, they provide no information → no effect on policy.
+
+• Observations being deterministic function of state makes observations maximally informative; fully observable even more so!
+
+• Known initial state $x _ { 0 } ,$ deterministic transitions, and actions (implicit in policy) are enough to determine state.
+
+Q4.9 (1 point) To estimate the belief state $f _ { t } ( X _ { t } )$ , we decide to use a particle filter. When is the observation $o _ { t }$ used in the particle filter update?
+
+A When propagating particles using the transition model
+
+B When weighting particles by likelihood
+
+C When sampling initial particles
+
+D Observations are not relevant to the particle filter update
+
+E None of the above
+
+**Solution:** Observations are used to weight particles before resampling the hidden state.
+
+<!-- page: 16 -->
+
+You want to classify what species 𝑆 a fish is. You recently learned that fish with upturned mouths can feed better at the water surface, and downturned mouths are adapted to feed at the bottom. You go to the aquarium and observe four fish, noting their mouth shape 𝑀 (upturned or downturned), feeding location 𝐿 (at the top or at the bottom of the tank) and species 𝑆 (flatfish or bass), shown below. You build a Naive Bayes classifier using 𝑀 and 𝐿, using the four fish as the training dataset 𝐷. Initially you use maximum likelihood estimation with no smoothing.
+
+| Fish ID | Mouth (𝑀) | Feeding Location (𝐿) | Species (𝑆) |
+| --- | --- | --- | --- |
+| 1 | upturned | top | bass |
+| 2 | downturned | bottom | flatfish |
+| 3 | upturned | bottom | bass |
+| 4 | downturned | top | bass |
+
+Q5.1 (1 point) Which of these Bayes nets corresponds to the Naive Bayes model of this classification problem?
+
+![](images/page_15_image_5.jpg)
+
+A
+
+![](images/page_15_image_7.jpg)
+
+B
+
+![](images/page_15_image_9.jpg)
+
+C
+
+![](images/page_15_image_11.jpg)
+
+D
+
+**Solution:** Naive Bayes assumes all features are conditionally independent given the class variable S, as in B. The extra edge between M and L in C is superfluous. Network A asserts that M and L are absolutely independent, which need not be true. Network D asserts that L is independent of S given M, which need not be true.
+
+Q5.2 (2 points) You spot a fish feeding at the bottom of its tank with an upturned mouth. According to your model, what is the probability that it is a bass?
+
+<table><tbody><tr><td>A <sub>0</sub></td><td>C 13</td><td>E 23</td><td colspan="3">G <sub>1</sub></td></tr><tr><td>B 14</td><td>D 12</td><td>F 34</td><td>H <sup>None</sup> above</td><td>of</td><td>the</td></tr></tbody></table>
+
+| Solution: |
+| --- |
+| $P(S\|b,u) = \alpha P(b,u\|S)P(S) = \alpha P(b\|S)P(u\|S)P(S) = \alpha \begin{pmatrix} \frac{1}{3} \\ 1 \end{pmatrix} \begin{pmatrix} \frac{2}{3} \\ 0 \end{pmatrix} \begin{pmatrix} \frac{3}{4} \\ \frac{1}{4} \end{pmatrix} = \alpha \begin{pmatrix} \frac{1}{6} \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ |
+
+<!-- page: 17 -->
+
+(Question 5 continued…)
+
+| A 0 | C $\frac{1}{9}$ | E $\frac{1}{4}$ | G $\frac{1}{2}$ | I $\frac{3}{4}$ |
+| --- | --- | --- | --- | --- |
+| B $\frac{1}{10}$ | D $\frac{1}{12}$ | F $\frac{1}{3}$ | H $\frac{2}{3}$ | J None of the above |
+
+| Solution: |
+| --- |
+| Here we just need to replace P(u\|S) with P(d\|S). |
+| P(S\|b,d) = αP(b,d\|S)P(S) = αP(b\|S)P(d\|S)P(S) = α(1/3/1)(1/3/1)(3/4/1/4) = α(1/12/1/4) = (1/4/3/4) |
+
+Q5.4 (3 points) Let 𝑃 be the model created from the original training data $D$ using maximum likelihood learning without smoothing. Denote the likelihood of data 𝐷 under model 𝑃 by $P ( D )$ . We now consider various ways to make a new Naive Bayes model $P ^ { \prime } ,$ , which is also unsmoothed unless otherwise specified. Select all of the following statements that are true, paying very careful attention to the exact statement of the inequality.
+
+Collect data from more fish and combine them with the data in 𝐷 to create dataset $D ^ { \prime }$ . Then A train $P ^ { \prime }$ on $D ^ { \prime }$ to predict 𝑆 from 𝑀 and 𝐿. It is possible that $P^{\prime}(D) < P(D)$
+
+Pick a new feature 𝐹 and measure its value for each fish in $D ,$ to create dataset $D ^ { \prime }$ with B features $L , M$ , and $F .$ Then train $P ^ { \prime }$ on $D ^ { \prime }$ to predict $S$ from $L , M$ , and $F .$ It is possible that $P^{\prime}(D^{\prime}) < P(D)$
+
+Define dataset $D ^ { \prime }$ as a copy of $D$ with one of the features removed, then train $P ^ { \prime }$ on $D ^ { \prime }$ to C predict 𝑆 from the remaining feature alone. It is possible that $P ^ { \prime } ( D ^ { \prime } ) < P ( D )$
+
+$P ^ { \prime }$ has the same features as 𝑃 and is trained on the same data 𝐷, but $P ^ { \prime }$ uses Laplace D smoothing. It is possible that $P^{\prime}(D) < P(D)$
+
+E None of the above
+
+| Solution: A is true because P maximizes the likelihood of D, but after refitting P' now maximizes the likelihood of D' instead. Because P is the maximum likelihood model, P' can only be the same or worse. |
+| --- |
+| B is true and C is false because Naive Bayes models P(y, f1:i) as P(y) Πi P(fi\|y). Adding an additional feature adds an additional P(fi\|y) term into the product, while all the other terms are unchanged due to the independence assumption. Thus, this will decrease the likelihood when P(fi\|y) &lt; 1. Removing a feature corresponds to removing a factor of P(fi\|y), which cannot decrease the likelihood because P(fi\|y) ≤ 1. |
+| D is true because the model without smoothing maximizes the likelihood of D, so adding smoothing can decrease the likelihood of D. |
+
+<!-- page: 18 -->
+
+## (Question 5 continued…)
+
+For the rest of the problem, your model uses data 𝐷 and Laplace smoothing with strength 𝑘.
+
+Q5.5 (1 point) What happens to your estimate of the probability that the next fish you spot is a flatfish, if you increase 𝑘 from 0 to a positive value 𝑋? A Increases C Stays the same E None of the above B Decreases D Depends on 𝑋
+
+**Solution:** If the true counts for bass and flatfish are 𝑠 and $f ,$ the smoothed estimate for the flatfish probability is $\scriptstyle { \frac { f + k } { s + k + f + k } }$ . With $k = 0$ , the model predicts $\mathrm{P}(\mathrm{fitsh})=\frac{1}{4}$ , while increasing 𝑘 will move the prediction closer to ${ \frac { 1 } { 2 } } .$
+
+Q5.6 (2 points) Which of the following are always true as 𝑘 goes to infinity? Use 𝑃 to denote the estimated probabilities under the Naive Bayes model.
+
+A 𝑃(flatfish | downturned, bottom) approaches 1.
+
+B $P ( s , m , l )$ approaches $\frac { 1 } { 2 }$ for all values of 𝑠, 𝑚 and 𝑙.
+
+C $P ( l | s )$ approaches $\frac { 1 } { 2 }$ for all values of 𝑙 and 𝑠.
+
+D The likelihood of the data in D under the model approaches 0.
+
+E None of the above
+
+**Solution:** A is false and C is true because as 𝑘 goes to infinity, $P ( s ) \to { \textstyle { \frac { 1 } { 2 } } } \forall s$ and $\textstyle P ( f | s ) \to { \frac { 1 } { 2 } } \forall f , s , { \mathfrak { s o } }$ the model will estimate the same probability for each class no matter the feature values.
+
+B and D are false because all 8 feature and class combinations will be estimated as having equal likelihood of $\frac { 1 } { 8 }$
+
+<!-- page: 19 -->
+
+Q5.7 (3 points) Laplace smoothing with strength $k > 0$ assigns a value $\begin{array} { r } { P _ { L } \big ( S = s _ { j } \big ) = \frac { N _ { j } + k } { \sum _ { i } [ N _ { i } + k ] } } \end{array}$ for the probability of the 𝑗th species after seeing $N _ { j }$ members of that species, where the sum is over all possible species. Before seeing any data, $P _ { L }$ assigns equal probability $\begin{array} { r } { \frac { k } { M k } = \frac { 1 } { M } } \end{array}$ to each of 𝑀 possible species.
+
+Assume (as before) that the only species are bass and flatfish, and that you have not personally seen any fish yet. But you feel very confident, based on chatting with local fishing crews, that bass are about twice as common as flatfish. We can implement this idea by creating weights 𝜂 for each species. Which one of the following formulae for $P _ { L } ( s _ { j } )$ properly expresses your prior knowledge?
+
+A $\frac { N _ { j } + \boldsymbol { \eta } _ { j } \cdot \boldsymbol { k } } { \sum _ { i } [ N _ { i } + \boldsymbol { \eta } _ { i } \cdot \boldsymbol { k } ] }$ , with $\eta _ { \mathrm { b a s s } } = 1 , \eta _ { \mathrm { f l a t f i s h } } = \frac { 1 } { 3 }$ , small 𝑘
+
+$$
+\textcircled {B} \frac {\eta_ {j} \cdot N _ {j} + k}{\sum_ {i} [ \eta_ {i} \cdot N _ {i} + k ]} \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{3}, \text {small} k
+$$
+
+$$
+\textcircled {C} \frac {N _ {j} + \eta_ {j} \cdot k}{\sum_ {i} [ N _ {i} + \eta_ {i} \cdot k ]}, \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{2}, \text {small} k
+$$
+
+$$
+\textcircled {D} \frac {\eta_ {j} \cdot N _ {j} + k}{\sum_ {i} [ \eta_ {i} \cdot N _ {i} + k ]} \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{2}, \text {small} k
+$$
+
+$$
+\textcircled {E} \frac {N _ {j} + \eta_ {j} \cdot k}{\sum_ {i} [ N _ {i} + \eta_ {i} \cdot k ]}, \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{3}, \text {large} k
+$$
+
+$$
+{\textcircled {F}} \frac {\eta_ {j} \cdot N _ {j} + k}{\sum_ {i} [ \eta_ {i} \cdot N _ {i} + k ]} \text {with} \eta_ {\mathrm{bass}} = 1, \eta_ {\mathrm{flatfish}} = \frac {1}{3}, \text {large} k
+$$
+
+$$
+\textcircled {G} \frac {N _ {j} + \eta_ {j} \cdot k}{\sum_ {i} [ N _ {i} + \eta_ {i} \cdot k ]}, \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{2}, \text {large} k
+$$
+
+$$
+{\textcircled {H}} \frac {\eta_ {j} \cdot N _ {j} + k}{\sum_ {i} [ \eta_ {i} \cdot N _ {i} + k ]} \text {with} \eta_ {\text {bass}} = 1, \eta_ {\text {flatfish}} = \frac {1}{2}, \text {large} k
+$$
+
+**Solution:** Believing a priori that there are twice as many bass as flatfish means that when the counts are zero, we want $\begin{array} { r } { P ( \mathrm { b a s s } ) = \frac { 2 } { 3 } . } \end{array}$ . So we need 𝜂 for flatfish to be half of the 𝜂 for bass. The 𝜂 should multiply 𝑘 in the formula. (If it multiplies the counts, then it has no effect when the counts are zero.) And we want large 𝑘 to express high confidence, so that it takes a lot of contrary evidence to shift the prior belief.
+
+<!-- page: 20 -->
+
+θ
+
+Q5.8 (2 points) Bayesian statisticians think of Laplace smoothing as a cheap heuristic approximation to real Bayesian learning! In lecture, we studied Bayesian learning in the context of a finite set of hypotheses (different kinds of bags of candy). But we can also apply it to a continuous family of hypotheses, such as the possible relative frequencies of bass and flatfish. That is, suppose $P ( { \mathrm { f l a t f i s h } } ) = \theta$ and $P ( \mathrm { b a s s } ) = 1 - \theta$ . Then Bayesian learning can start with a prior probability $P ( \theta )$ and can update that distribution to $P ( \theta | D )$ as actual data 𝐷 on bass and flatfish are observed.
+
+Suppose that you start with a uniform prior $P ( \theta )$ over the range [0,1] and then you observe one flatfish and three bass, as shown in the original dataset 𝐷. Which of the following best represents $P ( \theta | D ) ?$
+
+![](images/page_19_chart_4.jpg)
+
+θ
+
+![](images/page_19_chart_6.jpg)
+
+![](images/page_19_image_7.jpg)
+
+![](images/page_19_image_8.jpg)
+
+θ
+
+A
+
+![](images/page_19_chart_11.jpg)
+
+E
+
+B
+
+![](images/page_19_chart_14.jpg)
+
+F
+
+D
+
+C
+
+![](images/page_19_chart_18.jpg)
+
+G
+
+**Solution:** A uniform prior suggests you have no idea about the relative frequencies. After 1 flatfish and 3 bass, you should still be quite uncertain about $\theta ,$ but your estimate should have most of its probability mass close to $1 / 4 ,$ which leaves B and C. It is not possible for 𝜃 to be 1 or 0 because we observed both flatfish and bass, thus C is incorrect.
+
+<!-- page: 21 -->
+
+Oski is training a Reinforcement Learning agent to play the classic paper-and-pencil game Racetrack. The game is played on a 2D discrete grid. At any time step, the car’s state is fully defined by its exact coordinates and velocity vector: $s = \left( x , y , v _ { x } , v _ { y } \right)$
+
+The possible actions are accelerations $\boldsymbol { a } = \left( a _ { x } , a _ { y } \right)$ , where both $a _ { x }$ and $a _ { y }$ can independently be −1, 0, or +1. The acceleration action updates the velocity $( v _ { x } ^ { \prime } = v _ { x } + a _ { x } ,   v _ { y } ^ { \prime } = v _ { y } + a _ { y } )$ and then updates the location based on the new velocity $( x ^ { \prime } = x + v _ { x } ^ { \prime } , y ^ { \prime } = y + v _ { y } ^ { \prime } )$
+
+The rewards are as follows:
+
+• +100 for crossing the finish line in the correct direction.
+
+• −100 for going off the track or crossing the finish line in the wrong direction. Both cases also lead to terminal states in which all actions have zero reward.
+
+• −1 otherwise.
+
+The discount factor is $\gamma = 0 . 5$ and the learning rate is 𝛼 = 0.1 unless otherwise specified.
+
+The image below shows part of a racetrack and the first four timesteps of three different trajectories A, B, and C. Each starts on the finish line with velocity (0,0) at time zero (the three black dots). The numbered circles show the positions at times 1, 2, 3, 4 for each trajectory.
+
+![](images/page_20_image_10.jpg)
+
+Q6.1 (1 point) To make sure you have understood the rules, mark the trajectory that violates the rules, if any: A A C C B B D None of the above
+
+**Solution:** Trajectory A has velocity (2) after timestep 2 and then (2 ) , which is impossible.
+
+<!-- page: 22 -->
+
+Q6.2 (1 point) Which trajectory, if any, is guaranteed to go off the track? A A C C B B D None of the above
+
+**Solution:** The next velocity for C must be at least $\overline{\begin{pmatrix} 2 \\ 2 \end{pmatrix}}$ , which takes it off the track.
+
+Q6.3 (2 points) Consider the “Stanford policy” that stops in the middle of the track and then circumnavigates a unit square forever. What is the utility (sum of discounted rewards) of this policy? A −1.0 C −2.0 E -∞ B −1.5 D −10.0 F None of the above
+
+**Solution:** The total discounted return of an infinite sequence of −1 rewards is evaluated using an infinite geometric series: $\begin{array} { r } { U = \sum _ { t = 0 } ^ { \infty } \gamma ^ { t } r = \frac { r } { 1 - \gamma } = \frac { - 1 } { 1 - 0 . 5 } = - 2 } \end{array}$
+
+Q6.4 (3 points) Suppose the track fits inside an NxN square. Which of the following is the tightest upper bound on the size of the state space? [Hint: consider the maximum achievable 𝑥 and 𝑦 velocities.] A $O ( N ^ { 2 } )$ C $O ( N ^ { 3 } )$ E None of the above B $O ( N ^ { 2 . 5 } )$ D $O ( N ^ { 4 } )$
+
+**Solution:** With maximum acceleration in the 𝑥 or 𝑦 direction, the distance travelled in 𝑇 steps $( 1 + 2 + 3 + 4 + \ldots + T )$ is $O ( T ^ { 2 } )$ , but cannot exceed $N ,$ so the maximum reachable velocity is $T = O { \left( { \sqrt { N } } \right) }$ ; hence the state space is bounded by $O { \left( N \cdot N \cdot { \sqrt { N } } \cdot { \sqrt { N } } \right) } = O { \left( N ^ { 3 } \right) }$
+
+<!-- page: 23 -->
+
+(Question 6 continued…)
+
+Q6.5 (3 points) Oski decides to solve the racetrack problem using Approximate Q-Learning with a linear value function $Q ( s , a ) = w _ { 1 } f _ { 1 } ( s , a ) + w _ { 2 } f _ { 2 } ( s , a )$ , where $w _ { 1 } = 5 \; \mathrm { a n d } \; w _ { 2 } = - 3 0$ , and
+
+$f_{1}(s,a)=$ anticipated magnitude of speed after taking the action.
+
+$f _ { 2 } ( s , a ) = 1$ if the proposed action goes outside the track and 0 otherwise.
+
+Suppose that in the present state $s ,$ a proposed action 𝑎 has $f _ { 1 } ( s , a ) = 4 \; \mathrm { a n d } \; f _ { 2 } ( s , a ) = 1$
+
+The agent takes action $a ,$ receives a reward $r = - 1 0 0$ , and transitions to a terminal state $s _ { 0 }$ where all actions have zero reward.
+
+With a learning rate $\alpha = 0 . 1$ and discount factor $\gamma = 0 . 5 ,$ , find the newly updated weight $w _ { 2 }$ after the agent does 𝑎 in 𝑠. (Hint: you may need to calculate the temporal difference error.)
+
+$$
+Ⓐ - 2 1
+$$
+
+$$
+Ⓒ - 4 0\tag{E -120}
+$$
+
+$$
+Ⓑ - 3 9
+$$
+
+$$
+Ⓓ - 4 1
+$$
+
+F None of the above
+
+**Solution:** First, calculate the current Q-value estimate:
+
+$$
+Q (s, a) = w _ {1} f _ {1} (s, a) + w _ {2} f _ {2} (s, a) = (5) (4) + (- 3 0) (1) = 2 0 - 3 0 = - 1 0.
+$$
+
+Next, calculate the temporal difference (target - prediction); note that the MDP is deterministic so there are no summations or probabilities:
+
+$$
+\text {difference} = [ r + \gamma \max _ {a ^ {\prime}} Q (s ^ {\prime}, a ^ {\prime}) ] - Q (s, a) = [ - 1 0 0 + (0. 5) (0) ] - (- 1 0) = - 9 0.
+$$
+
+Finally, update the active weight $w _ { 2 } \colon$
+
+$$
+w _ {2} \leftarrow w _ {2} + \alpha [ \text {difference} ] f _ {2} (s, a) = - 3 0 + (0. 1) (- 9 0) (1) = - 3 0 - 9 = - 3 9.
+$$
+
+<!-- page: 24 -->
+
+(Question 6 continued…)
+
+Q6.6 (2 points) Frustrated that the agent is driving too cautiously, Oski alters the reward function **for this subpart only**. He replaces the $r = - 1$ step penalty with a positive reward equal to the updated speed: $R ( s , a , s ^ { \prime } ) = | v _ { x } ^ { \prime } | + | v _ { y } ^ { \prime } |$ . Other rewards are unchanged.
+
+Also, hoping to make winning more important, he sets 𝛾 to 0.99 **for this subpart only**.
+
+Which of the following pathological behaviors is the agent most likely to learn?
+
+A The agent will safely drive to the finish line at the absolute maximum speed possible.
+
+B The agent will avoid the finish line and instead drive in a safe, high-speed loop forever.
+
+The agent will immediately intentionally crash into a wall to terminate the episode and C maximize expected utility.
+
+The agent will learn to remain perfectly still $( v _ { x } = 0 , v _ { y } = 0 )$ to accumulate infinite zero-D penalties.
+
+E None of the above
+
+**Solution:** This is a classic example of so-called **reward hacking** (probably better known as **reward mis-specification**, as the agent is doing just what we told it). It avoids crossing the finish line because that cuts off its supply of positive rewards and is worth only 100, whereas the loop policy has a value of roughly $\textstyle { \frac { v } { 1 - \gamma } } = 1 0 0 v$ 𝑣 where v is the average velocity on the loop.
+
+Q6.7 (2 points) Reverting to the standard reward setup and discount factor, Oski notices that his Qlearning agent has found a safe but very slow policy to get to the finish line. It sticks with the policy and never tries anything else. What might work to fix this?
+
+A Decreasing the learning rate 𝛼 over time
+
+B Using an 𝜀-greedy action selection strategy
+
+C Increasing the discount factor 𝛾 closer to 1
+
+D Giving a bonus reward proportional to $N ( s , a )$ , the number of times 𝑎 has been tried in 𝑠
+
+E None of the above
+
+## Solution:
+
+• Decreasing 𝛼 merely stops learning/updates; it does not force action exploration.
+
+• 𝜀-greedy forces the agent to take random actions with probability 𝜀, ensuring the agent occasionally breaks out of its safe routine to explore higher velocities.
+
+• Increasing 𝛾 changes the time horizon of rewards, but does not explicitly force the agent to try unvisited state-action pairs.
+
+• This bonus reward has the opposite effect!
+
+<!-- page: 25 -->
+
+Q6.8 (4 points) Unhappy with the performance of his simple feature-based Q-learning agent, Oski trains a very large and deep neural network to represent the Q-function, with the inputs being the state $( x , y , v _ { x } , v _ { y } )$ and the action $( a _ { x } , a _ { y } )$ . After a few million trials, the Q-function is driving really well!
+
+Then he tries out the trained Q-function on a new track; much to his disappointment, it’s a total failure. It soon veers across the track and crashes. Which of the following hypotheses and potential fixes are reasonable if Oski wants an agent that can drive well enough on any new track that comes along?
+
+The network is too big and is memorizing rather than generalizing; a smaller network will A work better.
+
+Oski should train the Q-function on many different tracks and not just one; that will force it B to generalize properly and work well for a new track.
+
+The Q-function doesn’t represent “how to drive well”; instead, it just approximates the Q C values for this particular track, which tell it what to do in each state. On a different track, it can be in the same state but a completely different action is needed.
+
+The problem is with the input representation. The network needs an additional input indicat-
+
+D ing the identity number of the track; then multi-track training will work and the Q-function will generalize to new tracks.
+
+The problem is with the input representation. The network will work better with an image of E the track as an additional input; then multi-track training will work and the Q-function will generalize to new tracks.
+
+F None of the above
+
+| Solution: A sounds sensible but fails: the optimal action simply isn’t a function of the given state if the track can change. |
+| --- |
+| B fails for the same reason. The input doesn’t tell the agent which track it is on and hence it cannot act accordingly. |
+| C is a correct diagnosis. |
+| D seems to fix the problem with B, but it still fails. With each new track it has to start from scratch because the identity input doesn’t “describe” the track, it just indexes it. |
+| E is a plausible solution: the neural network should learn to extract driving relevant features from the current state and the track image, such as “distance to next bend” and so on. |
+
+<!-- page: 26 -->
+
+You are a security guard working the night shift at a local pizzeria. Each location $( x _ { 1 } , x _ { 2 } )$ at the pizzeria has one animatronic (robot animal) present. Each animatronic is either a big bear (B) or a little rabbit (r). For Q7.1 to Q7.3, you visit some locations and record the type of animatronic at each location. You graph the data in the following plot.
+
+![](images/page_25_chart_3.jpg)
+
+Q7.1 (1 point) It may be possible to use machine learning to predict what animal appears in each unexamined location. We can try training a single-layer perceptron, with input $x _ { 1 } , x _ { 2 }$ and output labels +1 for a bear and −1 for a rabbit. What happens on this data set, assuming a constant learning rate? A The weights will always converge to a perfect classifier B The weights will converge but with some misclassifications C The weights will only converge if the learning rate is 0.5 D The weights are not guaranteed to converge
+
+E None of the above
+
+**Solution:** Perceptrons converge on linearly separable data, or they require an adaptive learning rate. There may be an initialization edge case that could lead to convergence.
+
+Q7.2 (1 point) While training, your perceptron incorrectly classifies location (3, 2) as a rabbit. What happens to $w _ { 1 }$ , the weight corresponding to feature 1? Assume that your learning rate is positive. A Increases B Decreases C Stays the same
+
+**Solution:** We update the weight by the product of learning rate 𝛼 (positive), the error (+1 − (−1) = 2), and the feature value (3). This is positive.
+
+<!-- page: 27 -->
+
+Q7.3 (2 points) You want to add a third feature, $x _ { 3 }$ to help us better classify the data using a perceptron. Which of the following definitions for $x _ { 3 }$ would allow a perceptron to classify the data perfectly?
+
+$$
+Ⓐ x _ {3} = x _ {1} + x _ {2} + 2. 5
+$$
+
+$$
+Ⓓ x _ {3} = (x _ {1} + x _ {2}) ^ {2} - 2. 5
+$$
+
+$$
+Ⓑ x _ {3} = x _ {1} - x _ {2}
+$$
+
+E $x _ { 3 } = 2 . 5$
+
+$$
+Ⓒ x _ {3} = (x _ {1} - 2. 5) ^ {2} + (x _ {2} - 2. 5) ^ {2}
+$$
+
+F None of the above
+
+**Solution:** The feature in C is the squared distance from (2.5, 2.5). A threshold of 1 on this feature value separates bears and rabbits with a circular boundary centered at (2.5,2.5). D only allows circles centered on (0,0), which doesn’t help.
+
+<!-- page: 28 -->
+
+For Q7.4 to Q7.6, you collect the heights of the animatronics at each location. You decide to build a neural network to predict the height of the animatronic at a location.
+
+The neural network takes in two inputs, $x _ { 1 }$ and $x _ { 2 } ,$ representing the location. The network outputs $\hat { y } ,$ which is the predicted height. The computation graph is shown below.
+
+![](images/page_27_image_3.jpg)
+
+Note that $\hat { y } = \operatorname { R e L U } ( z )$ . We use the loss function $\begin{array} { r } { L ( y , \hat { y } ) = \frac { 1 } { 2 } ( y - \hat { y } ) ^ { 2 } } \end{array}$
+
+Q7.4 (2 points) Let the weights be $w _ { 1 } = 1$ and $w _ { 2 } = - 2 .$ Calculate $\hat { y }$ for the input $( x _ { 1 } , x _ { 2 } ) = ( 1 , 1 )$
+
+**Solution:** ReL $\mathrm{U}(1 \cdot 1 + - 2 \cdot 1) = 0$
+
+Q7.5 (3 points) Now, we want to calculate $\frac { \partial L } { \partial w _ { 1 } }$ during the backward pass. What partial derivatives are needed?
+
+A $\frac { \partial L } { \partial x _ { 1 } }$
+
+F 𝜕𝑦̂ 𝜕𝐿
+
+K $\frac { \partial x _ { 1 } } { \partial z }$
+
+B $\frac { \partial L } { \partial x _ { 2 } }$
+
+G $\frac { \partial \hat { y } } { \partial z }$
+
+L $\frac { \partial x _ { 2 } } { \partial z }$
+
+C $\frac { \partial L } { \partial \hat { y } }$
+
+H $\frac { \partial z } { \partial \hat { y } }$
+
+M $\frac { \partial z } { \partial w _ { 1 } }$
+
+D $\frac { \partial x _ { 1 } } { \partial L }$
+
+I $\frac { \partial z } { \partial x _ { 1 } }$
+
+N $\frac { \partial w _ { 1 } } { \partial z }$
+
+E $\frac { \partial x _ { 2 } } { \partial L }$
+
+J $\frac { \partial z } { \partial x _ { 2 } }$
+
+O None of the above
+
+**Solution:** Chain rule: $\begin{array} { r } { \frac { \partial L } { \partial w _ { 1 } } = \frac { \partial L } { \partial \hat { y } } \cdot \frac { \partial \hat { y } } { \partial z } \cdot \frac { \partial z } { \partial w _ { 1 } } } \end{array}$
+
+<!-- page: 29 -->
+
+(Question 7 continued…)
+
+Q7.6 (1 point) Now, we want to use the partial derivative $\frac { \partial L } { \partial w _ { 1 } }$ to update the value of $w _ { 1 }$ to help our neural network predict better. Fill in the operator that best completes the update rule. 𝛼 is the learning rate.
+
+$$
+w _ {1} \leftarrow w _ {1} \quad \_ \quad \alpha \frac {\partial L}{\partial w _ {1}}
+$$
+
+C ×
+
+**Solution:** We want to minimize loss, so we do gradient **descent**, and we subtract.
