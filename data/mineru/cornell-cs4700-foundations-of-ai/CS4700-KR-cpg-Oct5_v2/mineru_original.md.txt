@@ -1,0 +1,500 @@
+**CS 4700:**
+
+# Foundations of Artificial Intelligence
+
+**Bart Selman**
+
+<strong><u>selman@cs.cornell.edu</u></strong>
+
+**Logical Agents ---**
+
+**Intro Knowledge Representation**
+
+**& SAT encodings**
+
+**R&N: Chapter 7**
+
+## A Model-Based Agent
+
+![](images/page_1_image_1.jpg)
+
+## Knowledge and Reasoning
+
+## Knowledge and Reasoning:
+
+**humans are very good at acquiring new information by combining raw knowledge, experience with reasoning. AI-slogan: “Knowledge is power” (or “Data is power”?)**
+
+## Examples:
+
+**Medical diagnosis --- physician diagnosing a patient infers what disease, based on the knowledge he/she acquired as a student, textbooks, prior cases Common sense knowledge / reasoning --- common everyday assumptions / inferences. e.g., (1) “lecture starts at four” infer pm not am; (2) when traveling, I assume there is some way to get from the airport to the hotel.**
+
+## Logical agents:
+
+**Agents with some representation of the complex knowledge about the world / its environment, and uses inference to derive new information from that knowledge combined with new inputs (e.g. via perception).**
+
+## Key issues:
+
+**1- Representation of knowledge What form? Meaning / semantics? 2- Reasoning and inference processes Efficiency.**
+
+## Knowledge-base Agents
+
+Key issues:
+
+– Representation of knowledge à knowledge base
+
+– Reasoning processes à inference/reasoning
+
+Knowledge base = set of sentences in a formal language representing facts about the world (\*)
+
+**(\*) called Knowledge Representation (KR) language**
+
+**Knowledge Representation language candidate: logical language (propositional / first-order) combined with a logical inference mechanism**
+
+**Why not use natural language (e.g. English)?**
+
+**We want clear syntax & semantics (well-defined meaning), and, mechanism to infer new information. Soln.: Use a formal language**.
+
+## More Concrete: Propositional Logic
+
+Syntax: build sentences from atomic propositions, using connectives $\wedge , \vee , \neg , \Rightarrow , \Leftrightarrow$
+
+(and / or / not / implies / equivalence (biconditional))
+
+E.g.: $( ( \neg P ) \lor ( Q \land R ) ) \Rightarrow S$
+
+## Semantics
+
+| P | Q | $\neg P$ | $P \land Q$ | $P \lor Q$ | $P \Rightarrow Q$ | $P \Leftrightarrow Q$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| False | False | True | False | False | True | True |
+| False | True | True | False | True | True | False |
+| True | False | False | False | True | False | False |
+| True | True | False | True | True | True | True |
+
+Note: ⇒ somewhat counterintuitive.
+
+What's the truth value of “5 is even implies Sam is smart"?
+
+## True!
+
+## Satisfiability
+
+## Propositional Satisfiability problem
+
+Satifiability (SAT): Given a formula in propositional calculus, is there a model (i.e., a satisfying interpretation, an assignment to its variables) making it true?
+
+We consider clausal form, e.g.:
+
+$$
+(a \vee \neg b \vee \neg c) \text {AND} (b \vee \neg c) \text {AND} (a \vee c)
+$$
+
+$2 ^ { n }$ possible  assignments
+
+SAT: prototypical hard combinatorial search and reasoning problem. Problem is NP-Complete. (Cook 1971) Surprising “power” of SAT for encoding computational problems Modern SAT Solvers use this langauge.
+
+Modern Satisfiability (SAT) solvers operating on the clausal form are surprisingly \*much\* more efficient than other logic-based approaches (e.g., pure resolution that will be discussed later)
+
+The SAT solvers treat the set of clauses as a set of constraints (disjunctions) on Boolean variables, i.e., a CSP problem! Current solvers are very powerful. Can handle 1 Million+ variables and several millions of clauses.
+
+Systematic: Davis Putnam (DPLL) + series of improvements Stochastic local search: WalkSAT (issue?)
+
+**See R&N 7.6. “Ironically,” we are back to semantic model checking, but way more clever than basic truth assignment enumeration (exponentially faster)!**
+
+**Satisfiability as an Encoding Language**
+
+Variables NxK vars $\mathrm { C _ { i , k } ^ { \circ } }$ **node i has color k Total # colors: K. Total # nodes: N.**
+
+At	  least	  one	  of	  K	  colors	  per	  node	  i :
+
+$$
+(C _ {i, 1} \lor C _ {i, 2} \lor C _ {i, 3} \lor \ldots \lor C _ {i, K})
+$$
+
+At	  most	  one	  color	  per	  node	  i :
+
+$$
+(\mathsf {\sim C} _ {i, k} \lor \mathsf {\sim C} _ {i, k ^ {\prime}}) \quad \text {for all} k = / = k ^ {\prime}
+$$
+
+If	  node	  i and	  node	  j $( = / = \mathrm { i } )$ share	  an	  edge, need	  to	  have	  different	  colors:
+
+$$
+(\mathsf {\sim C} _ {i, l} \lor \mathsf {\sim C} _ {j, l}) \quad \text {for all 1 < = l < = K}
+$$
+
+## SAT	  Translation	  of Graph	  Coloring
+
+![](images/page_12_image_8.jpg)
+
+T
+
+**Note: Translation from “problem” into SAT. Reverse of usual translation to show NP-completeness.**
+
+**Works also for (easy) polytime problems!**
+
+n x n square
+
+## Encoding Latin Square Problems in Propositional Logic
+
+Variables: $n ^ { 3 }$
+
+$x _ { i j k }$ cell $i , j$ has color $k ; i , j , k = 1 , 2 , . . . , n .$
+
+Each variables represents a color assigned to a cell.
+
+$$
+x _ {i j k} \in \{0, 1 \}
+$$
+
+Clauses: $O ( n ^ { 4 } )$
+
+• Some color must be assigned to each cell (clause of length n); ${ \tt n } ^ { 2 }$
+
+![](images/page_13_image_8.jpg)
+
+$$
+\forall_ {i j _ {1}, i j 1, i j 2 \dots x _ {i j n}}
+$$
+
+• No color is repeated in the same row     (sets of negative binary clauses); $\mathbf { n } ( \mathbf { n } - 1 ) / 2$ n n
+
+(example Row i Color k)
+
+$$
+\begin{array}{l} \forall_ {i k} (\neg x _ {i 1 k} \lor \neg x _ {i 2 k}) \land (\neg x _ {i 1 k} \lor \neg x _ {i 3 k}) \dots (\neg x _ {i 1 k} \lor \neg x _ {i n k}) \\ \dots (\neg x _ {i (n - 1) k} \lor \neg x _ {i n k}) \end{array}
+$$
+
+• No color is repeated in the same column (sets of negative binary clauses);
+
+$$
+\mathrm{n(n-1)/2nn}
+$$
+
+$$
+\begin{array}{l l} & \forall_ {j k} (\neg x _ {1 j k} \lor \neg x _ {2 j k}) \land (\neg x _ {1 j k} \lor \neg x _ {3 j k}) \dots (\neg x _ {1 j k} \lor \neg x _ {n j k}) \\ \text {(example} & \\ \text {(Colum j} & \\ \text {(Color k)} & \end{array}
+$$
+
+## 3D Encoding or Full Encoding
+
+This encoding is based on the cubic representation of the quasigroup: each line of the cube contains exactly one true variable;
+
+Variables: $O ( n ^ { 4 } )$
+
+Clauses:
+
+Same as 2D encoding.
+
+![](images/page_14_image_5.jpg)
+
+•Same as the 2 D encoding plus:
+
+– Each color must appear at least once in each row;
+
+$$
+\forall_ {i k} (x _ {i 1 k} \lor x _ {i 2 k} \dots x _ {i n k})
+$$
+
+– Each color must appear at least once in each column;
+
+$$
+\forall_ {j k} (x _ {1 j k} \lor x _ {2 j k} \dots x _ {n j k})
+$$
+
+– No two colors are assigned to the same cell;
+
+$$
+\begin{array}{l} \forall_ {i j} (\neg x _ {i j 1} \lor \neg x _ {i j 2}) \land (\neg x _ {i j 1} \lor \neg x _ {i j 3}) \dots (\neg x _ {i j 1} \lor \neg x _ {i j n}) \\ \dots (\neg x _ {i j n} \lor \neg x _ {i j (n - 1)}) \end{array}
+$$
+
+## Dimacs format
+
+At the top of the file is a simple header.
+
+p cnf &lt;variables&gt; &lt;clauses&gt;
+
+Each variable should be assigned an integer index. Start at 1, as 0 is used to indicate the end of a clause. The positive integer a positive literal, whereas a negative interger represents a negative literal.
+
+Example
+
+$$
+- 1 7 0 \rightarrow (\neg \mathrm{x} 1 \lor \mathrm{x} 7)
+$$
+
+## Extended Latin Square 2x2
+
+| p | cnf 8 | 24 |
+| --- | --- | --- |
+| -1 | -2 | 0 |
+| -3 | -4 | 0 |
+| -5 | -6 | 0 |
+| -7 | -8 | 0 |
+| -1 | -5 | 0 |
+| -2 | -6 | 0 |
+| -3 | -7 | 0 |
+| -4 | -8 | 0 |
+| -1 | -3 | 0 |
+| -2 | -4 | 0 |
+| -5 | -7 | 0 |
+| -6 | -8 | 0 |
+| 1 | 2 | 0 |
+| 3 | 4 | 0 |
+| 5 | 6 | 0 |
+| 7 | 8 | 0 |
+| 1 | 5 | 0 |
+| 2 | 6 | 0 |
+| 3 | 7 | 0 |
+| 4 | 8 | 0 |
+| 1 | 3 | 0 |
+| 2 | 4 | 0 |
+| 5 | 7 | 0 |
+| 6 | 8 | 0 |
+
+|  | order 2 |
+| --- | --- |
+| A cell gets at most a color No repetition of color in a column No repetition of color in a row | -1 -1-1 -11/2 3/45/6 7/8 |
+| A cell gets a color A given color goes in each column | 1 -cell 11 is red 2 3 - -cceellll 1 112 i iss g rerdeen 4 -cell 12 is green |
+| A given color goes in each row | 5 -cell 21 is red 6 -cell 21 is green 7 -cell 22 is red 8 -cell 22 is green |
+
+## Underlying Latin Square structure characterizes many real world applications
+
+<table><tbody><tr><td></td><td colspan="6">•1 2 3 4 5</td></tr><tr><td rowspan="6">•1•2•3•4•5•6</td><td>6•<sub>X</sub></td><td>•R1</td><td>•R4</td><td>•R2</td><td>•R5</td><td>•R3</td></tr><tr><td>•R1</td><td>X</td><td>•R2</td><td>•R5</td><td>•R3</td><td>•R4</td></tr><tr><td>•R4</td><td>•R2</td><td>X</td><td>•R3</td><td>•R1</td><td>•R5</td></tr><tr><td>•R2</td><td>•R5</td><td>•R3</td><td>X</td><td>•R4</td><td>•R1</td></tr><tr><td>•R5</td><td>•R3</td><td>•R1</td><td>•R4</td><td>X</td><td>•R2</td></tr><tr><td>•R3</td><td>•R4</td><td>•R5</td><td>•R1</td><td>•R2</td><td>X</td></tr></tbody></table>
+
+Scheduling and timetabling
+
+| A | D | E | B | C |
+| --- | --- | --- | --- | --- |
+| C | B | A | E | D |
+| D | C | B | A | E |
+| E | A | C | D | B |
+| B | E | D | C | A |
+
+## Design of Scientific Experiments
+
+![](images/page_17_image_6.jpg)
+
+Input  ports
+
+![](images/page_17_image_8.jpg)
+
+![](images/page_17_image_9.jpg)
+
+![](images/page_17_image_10.jpg)
+
+Sudoku
+
+Output  ports
+
+![](images/page_17_image_13.jpg)
+
+![](images/page_17_image_14.jpg)
+
+![](images/page_17_image_15.jpg)
+
+![](images/page_17_image_16.jpg)
+
+CONFLICT  FREE LATIN  ROUTER
+
+Routing in Fiber Optic Networks
+
+Many more applications…
+
+165
+
+1820
+
+![](images/page_18_image_2.jpg)
+
+![](images/page_18_image_3.jpg)
+
+![](images/page_18_image_4.jpg)
+
+![](images/page_18_image_5.jpg)
+
+NP-Complete
+
+Better characterization beyond worst case
+
+![](images/page_18_image_8.jpg)
+
+Time: 150
+
+Percentage of unsolvable instances
+
+![](images/page_18_image_11.jpg)
+
+![](images/page_18_image_12.jpg)
+
+35%
+
+![](images/page_18_image_14.jpg)
+
+![](images/page_18_image_15.jpg)
+
+42%
+
+![](images/page_18_image_17.jpg)
+
+50%
+
+## Latin  Square  Completion
+
+![](images/page_18_chart_20.jpg)
+
+![](images/page_18_chart_21.jpg)
+
+![](images/page_18_image_22.jpg)
+
+![](images/page_18_image_23.jpg)
+
+![](images/page_18_image_24.jpg)
+
+20%
+
+42%
+
+50%
+
+## SAT	  Solvers	  in	  the	  Real	  World
+
+# NASA	  Deep	  Space	  One	  Spacecraft: Remote	  Agent
+
+![](images/page_20_image_1.jpg)
+
+Remote	  Agent	  (remote	  intelligent	  self-­‐ repair	  software)	  (RAX),	  developed	  at NASA	   and	  JPL,	  was	  the	  first	  artificial-­‐ intelligence control	  system	  to	  control a	  spacecraft	  without	  human supervision.
+
+Remote	  Agent	  successfully demonstrated	  the	  ability	  to	  plan onboard	  activities and	  correctly diagnose	  and	  respond	  to	   faults	  in spacecraft	  components	  through	  its built-­‐in	  REPL	  environment
+
+## NASA	  Deep	  Space	  One:	  Remote Agent
+
+• Autonomous	  diagnosis	  &	  repair	  “Remote Agent”
+
+• Compiled	  systems	  schematic	  to	  7,000	  var SAT	  problem
+
+![](images/page_21_image_3.jpg)
+
+![](images/page_21_image_4.jpg)
+
+## Deep	  Space	  One
+
+## • a	  failed	  electronics	  unit
+
+– Remote	  Agent	  fixed	  by	  reactivating	  the	  unit.
+
+## • a	  failed	  sensor	  providing	  false	  information
+
+– Remote	  Agent	  recognized	  as	  unreliable	  and	  therefore	  correctly	  ignored.
+
+an	  altitude	  control	  thruster	  (a	  small	  engine	  for	  controlling	  the spacecraft's	  orientation)	  stuck	  in	  the	  "off"	  position
+
+– Remote	  Agent	  detected	  and	  compensated	  for	  by	  switching	  to	  a	  mode	  that did	  not	  rely	  on	  that	  thruster.
+
+## Significant progress in Satisfiability Methods
+
+Software  and  hardware  verification  – complete  methods  are  critical    -­ e.g.  for verifying  the  correctness  of  chip  design,  using SAT  encodings
+
+Going  from  50  variable  in,  200  constraints to  1,000,000+  variables    and  5,000,000+  constraints in  the  last  20  years
+
+**Applications:**
+
+**Hardware and**
+
+**Software Verification**
+
+**Planning,**
+
+**Protocol Design, etc.**
+
+![](images/page_23_image_8.jpg)
+
+## Progress	  in	  Last	  20	  years
+
+Significant	  progress	  since	  the	  1990’s.	  How	  much?
+
+Problem	  size:	  **We	  went	  from	  100	  variables,	  200	  constraints	  (early	  90’s) to	  1,000,000+	  variables	  and	  5,000,000+	  constraints	  in	  20	  years**
+
+**Search	  space:	  from	  10^30	  to	  10^300,000.**
+
+**[Aside:	  “one	  can	  encode	  quite	  a	  bit	  in	  1M	  variables.”]**
+
+**Is	  this	  just	  Moore’s	  Law?	  It	  helped,	  but	  not	  much…**
+
+**– 2x	  faster	  computers	  does	  not	  mean	  can	  solve	  2x	  larger	  instances**
+
+**– search	  difficulty	  does	  \*not\*	  scale	  linearly	  with	  problem	  size!**
+
+**In	  fact,	  for	  O(2^n),	  2x	  faster,	  how	  many	  more	  vars?**
+
+**handles	  1	  more	  variable!!**
+
+**Mainly	  algorithmic	  progress.	  Memory	  growth	  also	  key.**
+
+**Tools:	  50+	  competitive	  SAT	  solvers	  available	  (e.g.	  Minisat solver)**
+
+• **See	  http://www.satcompetition.org/**
+
+## Model Checking
+
+## 2008 Turing Award Winners Announced
+
+## Posted by ScuttleMonkey on Monday February 04, @05:30PM from the nobel-of-computing-awards dept.
+
+The Association for Computing Machinery has announced the 2008 Turing Award Winners. Edmund M. Clarke, Allen Emerson, and Joseph Sifakis received the award for their work on an automated method for finding design errors in computer hardware and software.
+
+"Model Checking is a type of "formal verification" that analyzes the logic underlying a design, much as a mathematician uses a proof to determine that
+
+![](images/page_26_image_5.jpg)
+
+a theorem is correct. Far from hit or miss, Model Checking considers every possible state of a hardware or software design and determines if it is consistent with the designer's specifications. Clarke and Emerson originated the idea of Model Checking at Harvard in 1981. They developed a theoretical technique for determining whether an abstract model of a hardware or software design satisfies a formal specification, given as a formula in Temporal Logic, a notation for describing possible sequences of events. Moreover, when the system fails the specification, it could identify a counterexample to show the source of the problem. Numerous model checking systems have been implemented, such as Spin at Bell Labs."
+
+## Source:  Slashdot
+
+# A “real world” example
+
+From "SATLIB" :
+
+http://www.satlib.org/benchm.html
+
+SAT-encoded bounded model checking instances (contributed by Ofer Shtrichman)
+
+In Bounded Model Chedking (BMC) [BCCZ99]. a rather newly introduced problem in formal methods, the task is to check whether a given model M (typically a hardware design) satisfies a temporal property P in all paths with length less or equal to some bound k. The BMC problem can be efficiently reduced to a propositional satisfiability problem, and in fact if the property is in the form of an invariant (Invariants are the most common type of properties, and many other temporal properties can be reduced to their form. It has the form of 'it is always true that .. '), it has a structure which is similar to many Al planning problemns.
+
+# Bounded Model Checking instance:
+
+The instance bmc-ibm-6.cnf, IBM LSU 1997:
+
+```csv
+p cnf 51639 368352
+-1 7 0
+-1 6 0
+-1 5 0
+-1 -4 0
+-1 3 0
+-1 2 0
+-1 -8 0
+-9 15 0
+-9 14 0
+-9 13 0
+-9 -12 0
+-9 11 0
+-9 10 0
+-9 -16 0
+-17 23 0
+-17 22 0
+```
+
+**10 pages later:**
+
+![](images/page_29_image_1.jpg)
+
+**clauses  /  constraints  are  getting  more  interesting…**
+
+**4000 pages later:**
+
+![](images/page_30_image_1.jpg)
+
+**Finally, 15,000 pages later:**
+
+**Note  that: …  !!!**
+
+**MiniSAT  solver  solves this  instance  in  less  than  one  minute.**

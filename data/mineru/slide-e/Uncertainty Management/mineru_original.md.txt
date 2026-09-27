@@ -1,0 +1,481 @@
+## Lecture 3
+
+**Uncertainty management in rule-** - **based expert systems**
+
+■ **Introduction, or what is uncertainty?**
+
+■ **Basic probability theory**
+
+■ **Bayesian reasoning**
+
+■ **Bias of the Bayesian method**
+
+■ **Certainty factors theory and evidential reasoning**
+
+■ **Summary**
+
+## Introduction, or what is uncertainty?
+
+■ Information can be incomplete, inconsistent, uncertain, or all three . In other words , information  or . In i s often unsuitable for solving a problem. i s .
+
+**Uncertainty**  is defined as the lack of the exact is  as knowledge that would enable us to reach a perfectly  us to reliable conclusion . Clas sical logic permits only . exact reasoning . It assumes that perfect knowledge . It always exists and the  **law of the excluded middle** can always be applied:  be
+
+**IF A is true is**
+
+**THEN A is not false is**
+
+**IF A is false**
+
+**THEN  A is not true is**
+
+## Sources of uncertain knowledge
+
+■ **Weak implications** . Domain experts and knowledge engineers have the painful task of establishing concrete correlations between IF  IF (condition) and THEN (action) parts of the rules . . Therefore, expert systems need to have the ability to handle vague associations, for example by to accepting the degree of correlations as numerical  as certainty factors . .
+
+**Imprecise language** . Our natural language is  is ambiguous and imprecise. We describe facts with . We such terms as  as often and sometimes , frequently  and hardly eve r . As a result, it can be difficult to . As express knowledge in the precise IF-THEN form of  in  IF- of production rules . However, if the meaning of the . facts i s quantified, it can be used in expert sy stems .  i s . In 1 944, Ray Simpson asked 3 55 high school and In college students to place 20 terms like  to  often on a scale between 1 and 1 00 . In 1 9 6 8 , Milton Hakel  1 . In repeated this experiment. .
+
+## Quantification of ambiguous and imprecise terms on a time-frequency scale  on
+
+| vNeer vosteeAlm nr yaeRrl yVe sedorlm yvad eeHrlr Sedolm yUsuaotll n Not otefn O wce an inhi yOccasoainll Soetesmim wNo ad tenhn bout as oteAf ate oteRhrfn yqeuetFrnl yGeeanrll Otefn yUsuall yVe oterfn ywasAl l n e a s n o t1 1 1 1 2 2 2 5 6 7 7 7 8 8 90 3 5 6 7 0 0 3 5 0 0 0 0 5 3 8 8 5 8 9 | <sup>e</sup><sub>m</sub>T<sup>r</sup> M e a n v a l u e | yp SaimR s o n(1944) |
+| --- | --- | --- |
+| vNeer vosteeAlm nr yaeRrl yVe sedorlm yvad eeHrlr Sedolm yUsuaotll n Not otefn O wce an inhi yOccasoainll Soetesmim wNo ad tenhn bout as oteAf yGeeanrll yqeuetFrnl ate oteRhrfn Otefn yUsuall yVe oterfn ywasAl l n e a s n o t11 1 2 2 2 3 5 7 7 7 7 7 8 00 2 5 7 8 9 6 6 2 8 9 4 0 2 2 4 4 9 7 0 | <sup>e</sup><sub>m</sub>T<sup>r</sup> M e a n v a l u e | <sub>ilton</sub>M <sub>H</sub> a k<sub>e</sub> l(1968) |
+
+■ **Unknown data** . When the data is incomplete or  or mi s sing , the only solution i s to accept the value  i s to “unknown” and proceed to an approximate  an reasoning with this value . .
+
+■ **Combining the views of different experts** . Large expert systems usually combine the knowledge and expertise of a number of experts . Unfortunately, . experts often have contradictory opinions and produce conflicting rules . To resolve the conflict, . To the knowledge engineer has to attach a weight to  to each expert and then calculate the composite conclusion . B ut no sy stematic method exi sts to .  to obtain these weights . .
+
+## Basic probability theory
+
+■ The concept of probability has a long history that goes back thousands of years when words like “probably” , “likely” , “maybe” , “perhaps” and “possibly” were introduced into spoken languages . . However, the mathematical theory of probability was formulated only in the 1 7th century . .
+
+■ The **probability**  of an event is the proportion of  of cases in which the event occurs . Probability can  in . also be defined as a  be  as a **scientific measure of chance** .
+
+■ Probability can be expressed mathematically as a  as a numerical index with a range between zero (an ab solute impo s sibility) to unity (an ab solute certainty) . .
+
+■ Most events have a probability index strictly between 0 and 1 , which means that each event has  0 at least  two possible outcomes : favourable outcome or success , and unfavourable outcome or failure. or .
+
+the number of successes ( ) P success = the number of possible outcomes
+
+the number of failures ( ) P failure = the number of possible outcomes
+
+If s is the number of times succes s can occur, and is  f is the number of times failure can occur, then is
+
+$$
+P \big (s u c c e s s \big) = p = \frac {s}{s + f}
+$$
+
+$$
+P \big (f a i l u r e \big) = q = \frac {f}{s + f}
+$$
+
+and
+
+$$
+p + q = 1
+$$
+
+If we throw a coin, the probability of getting a head will be equal to the prob ability of getting a tail . In a . In a single throw $6 = 6 = 1$ and therefore the probability of getting a head (or a tail) i s 0 . 5 .  0 . 5 .
+
+## Conditional probability
+
+Let A be an event in the world and be an  B be another event. be . Suppose that events  A and B are not mutually exclusive, but occur conditionally on the occurrence of  on  of the other. The probability that event .  A will occur if event B occurs is called the  is  **conditional probability** . Conditional probability is denoted mathematically as  as p(A |B) in which the vertical bar represents in  GIVEN and the complete probability expres sion is interpreted as  is  as “ Conditional probability of event A occurring given that event B has occurred ” .
+
+$p { \big ( } A | B { \big ) }$ the number of times A and B can occur the number of times B can occur
+
+The number of times  A and B can occur, or the probability that both  A and B will occur, i s called  i s the **j oint probability**  of A and B . It is represented . mathematically as  as p(A∩B) . The number of ways .  B can occur i s the probability of  of B , p (B) , and thus ) ,
+
+$$
+p (A | B) = \frac {p (A \cap B)}{p (B)}
+$$
+
+■ Similarly, the conditional probability of event  B occurring given that event  A has occurred equals
+
+$$
+p (A | B) = \frac {p (A \cap B)}{p (B)}
+$$
+
+Hence,
+
+$$
+p \big (B \cap A \big) = p \big (B | A \big) \times p \big (A \big)
+$$
+
+and
+
+$$
+p (A \cap B) = p (B | A) \times p (A)
+$$
+
+## S ub stituting the last equation  into the equation
+
+$$
+p (A | B) = \frac {p (A \cap B)}{p (B)}
+$$
+
+yields the  **Bayesian rule** :
+
+## Bayesian rule
+
+$$
+p (A | B) = \frac {p (B | A) \times p (A)}{p (B)}
+$$
+
+where :
+
+p(A |B) is the conditional probability that event A occurs given that event B has occurred; p(B|A) is the conditional probability of event B occurring given that event A has occurred; p(A) is the probability of event A occurring ; p(B) is the probability of event B occurring .
+
+## The j oint probability
+
+$$
+\sum_ {i = 1} ^ {n} p \bigl (A \cap B _ {i} \bigr) = \sum_ {i = 1} ^ {n} p \bigl (A | B _ {i} \bigr) \times p \bigl (B _ {i} \bigr)
+$$
+
+![](images/page_13_chart_2.jpg)
+
+If the occurrence of event  A depends on only two  on mutually exclusive events,  B and NOT  B, we obtain: , we
+
+$$
+p (A) = p (A | B) \times p (B) + p (A | \neg B) \times p (\neg B)
+$$
+
+where ¬ is the logical function NOT . is . S imilarly ,
+
+$$
+p (B) = p (B | A) \times p (A) + p (B | \neg A) \times p (\neg A)
+$$
+
+S ub stituting thi s equation into the B ayesian rule yields :
+
+$$
+p (A | B) = \frac {p (B | A) \times p (A)}{p (B | A) \times p (A) + p (B | \neg A) \times p (\neg A)}
+$$
+
+**Bayesian reasoning**
+
+Suppose all rules in the knowledge base are  in represented in the following form:
+
+IF H i s true i s
+
+THEN E i s true { with prob ability i s  p }
+
+This rule implies that if event  H occurs , then the prob ability that event  E will occur i s  p .
+
+In expert sy stems , In  H usually represents a hypothesi s and E denotes evidence to support this hypothesis .  to .
+
+The B ayesian rule expressed in terms of hypotheses and evidence looks like this :
+
+$$
+p \big (H | E \big) = \frac {p \big (E | H \big) \times p \big (H \big)}{p \big (E | H \big) \times p \big (H \big) + p \big (E | \neg H \big) \times p \big (\neg H \big)}
+$$
+
+## where :
+
+p(H) is the prior probability of hypothesis  H being true ; p (E|H) is the probability that hypothesi s  H being true will result in evidence  E;
+
+p (¬H) i s the prior probability of hypothesis ) i s  of  H being fal se ;
+
+p(E|¬H) is the probability of finding evidence  E even when hypothesi s  H i s false . i s .
+
+■ In expert systems , the probabilities required to solve In a problem are provided by experts . An expert . An determines the  **prior probabilities**  for possible hypotheses  p(H) and p(¬H) , and also the ) conditional probabilities  for observing evidence  E if hypothe si s  H i s true , i s  p (E|H) , and if hypothe si s ) ,  H i s fal s e , i s  p (E| ¬H) .
+
+■ Users provide information about the evidence observed and the expert system computes  p(H|E) for hypothesis  H in light of the user- supplied evidence in - E. Probability .  p (H|E) i s called the  **posterior probability**  of hypothesis  H upon observing evidence  E.
+
+We can take into account both multiple hypotheses We $\frac { 1 0 } { 1 0 } ( \frac { 1 0 } { 1 0 } \textcircled { 1 } \textcircled { 2 } ) \cdots \frac { 1 0 } { 1 0 }$ and multiple evidences $E ^ { \prime } ( E _ { 2 } , \cdots , E _ { n } )$ The hypotheses as well as the evidences must be  as  as mutually exclusive and exhaustive. .
+
+■ Single evidence  E and multiple hypotheses  follow :
+
+$$
+p\big(H_{i}|E\big) = \frac{p\big(E|H_{i}\big)\times p\big(H_{i}\big)}{\sum\limits_{k = 1}^{m}p\big(E|H_{k}\big)\times p\big(H_{k}\big)}
+$$
+
+■ Multiple evidences and multiple hypotheses  follow :
+
+$$
+p\big(H_{i}|E_{1}E_{2}\dots E_{n}\big) = \frac{p\big(E_{1}E_{2}\dots E_{n}|H_{i}\big)\times p(H_{i})}{\sum\limits_{k = 1}^{m}p\big(E_{1}E_{2}\dots E_{n}|H_{k}\big)\times p(H_{k})}
+$$
+
+This requires to obtain the conditional probabilities  to of all pos sible combinations of evidences for all hypotheses, and thus places an enormous burden  an on the expert. on .
+
+■ Therefore, in expert systems , conditional  in independence among different evidences assumed. . Thus, instead of the unworkable  equation , we attain :
+
+$$
+p \big (H _ {i} | E _ {1} E _ {2} \dots E _ {n} \big) = \frac {p \big (E _ {1} | H _ {i} \big) \times p \big (E _ {2} | H _ {i} \big) \times \ldots \times p \big (E _ {n} | H _ {i} \big) \times p (H _ {i})}{\sum_ {k = 1} ^ {m} p \big (E _ {1} | H _ {k} \big) \times p \big (E _ {2} | H _ {k} \big) \times \ldots \times p \big (E _ {n} | H _ {k} \big) \times p (H _ {k})}
+$$
+
+**Ranking potentially true hypotheses**
+
+Let us consider a simple example .  a .
+
+Suppose an expert, given three conditionally  an independent evidences $\textcircled { 1 } E ^ { \prime } _ { 1 } \textcircled { 2 } E ^ { \prime } _ { 2 }$ and $\frac { D E ^ { \prime } } { D O }$ creates three mutually exclusive and exhaustive hypotheses $\vert \overrightarrow { b } \vert \vert \overrightarrow { b } \vert \vert \overrightarrow { b } \vert$ and $\frac { 1 6 } { 1 0 } \textcircled { = }$ and provides prior probabilities for these hypotheses –  – p(H<sub>1</sub> ) , p(H<sub>2</sub>) and $D ( O \bot 1 , 2 )$ re spectively .  . The expert also determines the conditional probabilities of observing each evidence for all pos sible hypotheses . .
+
+## The prior and conditional probabilities
+
+<table><tr><td rowspan="2">Probability</td><td colspan="3">Hypothesis</td></tr><tr><td>i=1</td><td>i=2</td><td>i=3</td></tr><tr><td>p(Hi)</td><td>0.40</td><td>0.35</td><td>0.25</td></tr><tr><td>p(E1|Hi)</td><td>0.3</td><td>0.8</td><td>0.5</td></tr><tr><td>p(E2|Hi)</td><td>0.9</td><td>0.0</td><td>0.7</td></tr><tr><td>p(E3|Hi)</td><td>0.6</td><td>0.7</td><td>0.9</td></tr></table>
+
+Assume that we first observe evidence $\underline { { \mathcal { B } } } _ { \underline { { \mathcal { S } } } }$ The expert . system computes the posterior probabilities for all hypotheses as  as
+
+$$
+p\big(H_{i}|E_{3}\big) = \frac{p\big(E_{3}|H_{i}\big)\times p\big(H_{i}\big)}{\sum\limits_{k = 1}^{3}p\big(E_{3}|H_{k}\big)\times p\big(H_{k}\big)},\tag{\(i = 1,2,3\}
+$$
+
+Thus ,
+
+$$
+p \big (H _ {1} | E _ {3} \big) = \frac {0 . 6 \cdot 0 . 4 0}{0 . 6 \cdot 0 . 4 0 + 0 . 7 \cdot 0 . 3 5 + 0 . 9 \cdot 0 . 2 5} = 0. 3 4
+$$
+
+$$
+p \big (H _ {2} \big | E _ {3} \big) = \frac {0 . 7 \cdot 0 . 3 5}{0 . 6 \cdot 0 . 4 0 + 0 . 7 \cdot 0 . 3 5 + 0 . 9 \cdot 0 . 2 5} = 0. 3 4
+$$
+
+$$
+p \big (H _ {3} | E _ {3} \big) = \frac {0 . 9 \cdot 0 . 2 5}{0 . 6 \cdot 0 . 4 0 + 0 . 7 \cdot 0 . 3 5 + 0 . 9 \cdot 0 . 2 5} = 0. 3 2
+$$
+
+After evidence $\frac { D B ^ { \prime } } { D O }$ i s ob served, belief in hypothesi s i s $\frac { 1 0 } { 1 0 } = \frac { 1 0 } { 1 0 }$ increases and becomes equal to belief in hypothesis $厉$ B elief in hypothesis $\frac { 1 0 } { 1 0 } = \frac { 1 0 } { 1 0 }$ also increases and even nearly reaches beliefs in hypotheses $\frac { 1 0 } { 1 0 }$ and $\frac { 1 0 } { 1 0 } = \frac { 1 0 } { 1 0 }$
+
+ N eg nevitsky, Pearson E d ucation , 2002 ,
+
+Suppose now that we observe evidence $\underline { { \underline { { \mathcal { B } } } _ { \parallel } } }$ The posterior probabilities are calculated as  as
+
+$$
+p \big (H _ {i} | E _ {1} E _ {3} \big) = \frac {p \big (E _ {1} | H _ {i} \big) \times p \big (E _ {3} | H _ {i} \big) \times p \big (H _ {i} \big)}{\sum_ {k = 1} ^ {3} p \big (E _ {1} | H _ {k} \big) \times p \big (E _ {3} | H _ {k} \big) \times p \big (H _ {k} \big)}, \qquad i = 1, 2, 3
+$$
+
+## Hence,
+
+$$
+p \big (H _ {1} | E _ {1} E _ {3} \big) = \frac {0 . 3 \cdot 0 . 6 \cdot 0 . 4 0}{0 . 3 \cdot 0 . 6 \cdot 0 . 4 0 + 0 . 8 \cdot 0 . 7 \cdot 0 . 3 5 + 0 . 5 \cdot 0 . 9 \cdot 0 . 2 5} = 0. 1 9
+$$
+
+$$
+p \big (H _ {2} | E _ {1} E _ {3} \big) = \frac {0 . 8 \cdot 0 . 7 \cdot 0 . 3 5}{0 . 3 \cdot 0 . 6 \cdot 0 . 4 0 + 0 . 8 \cdot 0 . 7 \cdot 0 . 3 5 + 0 . 5 \cdot 0 . 9 \cdot 0 . 2 5} = 0. 5 2
+$$
+
+$$
+p \big (H _ {3} | E _ {1} E _ {3} \big) = \frac {0 . 5 \cdot 0 . 9 \cdot 0 . 2 5}{0 . 3 \cdot 0 . 6 \cdot 0 . 4 0 + 0 . 8 \cdot 0 . 7 \cdot 0 . 3 5 + 0 . 5 \cdot 0 . 9 \cdot 0 . 2 5} = 0. 2 9
+$$
+
+Hypothesis $原 ($ has now become the most likely one. .
+
+After observing evidence $\underline { { \mathcal { D } } } _ { \underline { { \mathcal { D } } } }$ the final po sterior probabilities for all hypotheses are calculated :
+
+$$
+p \big (H _ {i} | E _ {1} E _ {2} E _ {3} \big) = \frac {p \big (E _ {1} | H _ {i} \big) \times p \big (E _ {2} | H _ {i} \big) \times p \big (E _ {3} | H _ {i} \big) \times p \big (H _ {i} \big)}{\sum_ {k = 1} ^ {3} p \big (E _ {1} | H _ {k} \big) \times p \big (E _ {2} | H _ {k} \big) \times p \big (E _ {3} | H _ {k} \big) \times p \big (H _ {k} \big)},\tag{\(i = 1,2,3\}
+$$
+
+$$
+p \big (H _ {1} | E _ {1} E _ {2} E _ {3} \big) = \frac {0 . 3 \cdot 0 . 9 \cdot 0 . 6 \cdot 0 . 4 0}{0 . 3 \cdot 0 . 9 \cdot 0 . 6 \cdot 0 . 4 0 + 0 . 8 \cdot 0 . 0 \cdot 0 . 7 \cdot 0 . 3 5 + 0 . 5 \cdot 0 . 7 \cdot 0 . 9 \cdot 0 . 2 5} = 0. 4 5
+$$
+
+$$
+p\big(H_{2}|E_{1}E_{2}E_{3}\big) = \frac{0.8\cdot 0.0\cdot 0.7\cdot 0.35}{0.3\cdot 0.9\cdot 0.6\cdot 0.40 + 0.8\cdot 0.0\cdot 0.7\cdot 0.35 + 0.5\cdot 0.7\cdot 0.9\cdot 0.25} = 0
+$$
+
+$$
+p \big (H _ {3} | E _ {1} E _ {2} E _ {3} \big) = \frac {0 . 5 \cdot 0 . 7 \cdot 0 . 9 \cdot 0 . 2 5}{0 . 3 \cdot 0 . 9 \cdot 0 . 6 \cdot 0 . 4 0 + 0 . 8 \cdot 0 . 0 \cdot 0 . 7 \cdot 0 . 3 5 + 0 . 5 \cdot 0 . 7 \cdot 0 . 9 \cdot 0 . 2 5} = 0. 5 5
+$$
+
+Although the initial ranking was $\vert \vert \vert \vert \vert \vert \vert \vert \vert \vert \vert$ and $即 (\%)$ only hypotheses $\frac { 1 0 } { 1 0 }$ and $\frac { 1 0 } { 1 0 } = \frac { 1 0 } { 1 0 }$ remain under consideration after all evidences $( 1 0 \% ) = 1 0 \%$ and $\frac { D B } { D B }$ were ob served.  .
+
+ N eg nevitsky, Pearson E d ucation , 2002
+
+## Bias of the Bayesian method
+
+The framework for B ayesian reasoning requires probability values as primary inputs . The  as . assessment of these values usually involves human judgement. However, psychological research . shows that humans either cannot elicit probability values consistent with the B ayesian rules . .
+
+■ Thi s suggests that the conditional probabilities may be inconsistent with the prior probabilities given by be the expert . .
+
+■ Consider, for example, a car that does not start and makes odd noises when you press the starter. The . conditional probability of the starter being faulty if the car makes odd noises may be expressed as :
+
+IF the symptom is “odd noises” THEN the starter i s bad { with probability 0 . 7 } . 7 }
+
+Consider, for example, a car that does not start and makes odd noises when you pres s the starter. The . conditional probability of the starter being faulty if the car makes odd noises may be expressed as :
+
+p ( starter i s not bad | odd noi ses) =  =
+
+= p ( starter i s good | odd noi ses) = 1  = 1 −0 . 7 = 0 . 3 0 . 7 = 0 . 3 ■ Therefore, we can obtain a companion rule that states  we IF the symptom is “odd noises” THEN the starter i s good { with probability 0 . 3 } . 3 }
+
+■ Domain experts do not deal with conditional  do probabilities and often deny the very existence of the **hidden implicit probability**  (0 . 3 in our example) . (0 . .
+
+We would also use available statistical information We and empirical studies to derive the following rules :  to
+
+IF the starter is bad THEN the symptom is “odd noises” { probability 0 . 85 } .
+
+IF the starter is bad THEN the symptom is not “odd noises” { probability 0 . 1 5 } .
+
+To use the B ayesian rule, we still need the To  we  **prior probability** , the probability that the starter is bad if the car does not start. Suppo se , the expert supplies us .  us the value of 5 per cent. Now we can apply the .  we B ayesian rule to obtain :  to
+
+0 . 8 5 0 . 05 ⋅ ( ) p starter is bad odd noises = 0.23= 0 . 85 0 . 05 + 0 . 1 5 0 . 95⋅ ⋅
+
+■ **The number obtained is significantly lower than the expert’s estimate of 0.7 given at the beginning of this section.**
+
+■ The reason for the inconsistency is that the expert made different assumptions when assessing the conditional and prior probabilities . .
+
+ N eg nevitsky, Pearson E d ucation , 2002 ,
+
+## Certainty factors theory and evidential reasoning
+
+■ Certainty factors theory is a popular alternative to  to B ayesian reasoning . .
+
+■ A **certainty factor**  (cf ) , a number to measure the ) expert’ s belief. The maximum value of the s certainty factor is , s ay , + 1 . 0 (definitely true) and  + 1 the minimum  − 1 . 0 (definitely false) . For example 1 . . if the expert states that some evidence i s almo st  i s certainly true, a  a cf value of 0. 8 would be assigned . 8 to this evidence . to
+
+## Uncertain terms and their interpretation in MYCIN
+
+| Term | Certainty Factor |
+| --- | --- |
+| Definitely not | -1.0 |
+| Almost certainly not | -0.8 |
+| Probably not | -0.6 |
+| Maybe not | -0.4 |
+| Unknown | -0.2 to +0.2 |
+| Maybe | +0.4 |
+| Probably | +0.6 |
+| Almost certainly | +0.8 |
+| Definitely | +1.0 |
+
+■ In expert systems with certainty factors , the In knowledge base consists of a set of rules that have the following syntax :
+
+IF &lt;evidence &gt;
+
+THEN &lt;hypothesis &gt; { cf }
+
+where cf represents belief in hypothesis  H given that evidence  E has occurred. .
+
+The certainty factors theory is based on two functions :  on measure of belief  MB(H,E) , and measure of disbelief ) MD(H, E) .
+
+$$
+\begin{array}{r l} & M B (H, E) = \left\{ \begin{array}{c} 1 \\ \frac {\max \left[ p (H | E) , p (H) \right] - p (H)}{\max \left[ 1 , 0 \right] - p (H)} \\ 1 \\ M D (H, E) = \left\{ \begin{array}{c} \min \left[ p (H | E), p (H) \right] - p (H) \\ \hline \min \left[ 1, 0 \right] - p (H) \end{array} \right. \end{array} \right. \end{array}
+$$
+
+$$
+\text {if} p (H) = 1
+$$
+
+otherwise
+
+$$
+\text {if} p (H) = 0
+$$
+
+otherwise
+
+p(H) i s the prior probability of hypothesis  H being true ; p(H|E) i s the prob ability that hypothe si s  H i s true given i s evidence E.
+
+The values of  of MB(H, E) and MD(H, E) range ) between 0 and 1 . The strength of belief or  0 . disbelief in hypothesis  H depends on the kind of  on  of evidence  E observed. Some facts may increase the . strength of belief, but some increase the strength of  of di sbelief. .
+
+**The total strength of belief or disbelief in a**  a **hypothesis :**
+
+$$
+c f = \frac {M B (H , E) - M D (H , E)}{1 - \min [ M B (H , E) , M D (H , E) ]}
+$$
+
+## ■ Example:
+
+Consider a simple rule :  a
+
+IF A i s X THEN B is Y
+
+An expert may not be absolutely certain that this rule An holds . Also suppose it has been observed that in some . cases , even when the IF part of the rule is satisfied and  is object A  takes on  on value X , obj ect ,  B can acquire some different value  Z.
+
+IF A i s X THEN B i s Y { cf 0 . 7 } ; B i s Z { cf 0 . 2 }
+
+The certainty factor assigned by a rule is propagated  is through the reasoning chain. This involves . establishing the net certainty of the rule consequent when the evidence in the rule antecedent is uncertain:  in
+
+For example,
+
+IF sky is clear
+
+THEN the forecast is sunny { cf 0 . 8 }
+
+and the current certainty factor of  sky is clear  is 0 . 5 , then
+
+$$
+c f (H, E) = 0. 5 \cdot 0. 8 = 0. 4
+$$
+
+This result can be interpreted as  as “It may be sunny ” ”.
+
+## ■ For conjunctive rules such as  as
+
+IF <evidence $E _ { 1 } \textgreater$.
+
+AND <evidence $E _ { n } >$
+
+THEN <hypothesis $H   > \{ c f \}$
+
+the certainty of hypothesi s  H, i s establi shed as follow s : , i s  as
+
+$( \mathrm{off} ( \theta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta \Delta$ For example,
+
+IF sky i s clear
+
+AND the forecast is sunny
+
+THEN the action i s ‘ wear sunglas ses ’ {  i s  { cf 0 . 8 }
+
+and the certainty of  of sky is clear  is 0 . 9 and the certainty of the forecast of sunny  is 0 .7 , then
+
+cf (H,E<sub>1</sub> ∩E<sub>2</sub>) = m in [0 . 9 , 0 . 7 ] [0 . 9 , 0 . 7 ] ⋅ 0 . 8 = 0 . 7 0 . 8 = 0 . 7 ⋅ 0 . 8 = 0 . 5 6 0 . 8 = 0 . 5 6
+
+## ■ For disj unctive rules such as  as
+
+IF <evidence $E _ { 1 } >$.
+
+OR <evidence $E _ { n } >$
+
+THEN <hypothesis $H   > \{ c f \}$
+
+the certainty of hypothesi s  H, i s establi shed as follow s : , i s  as
+
+**cf (H,E**<strong><sub>1</sub></strong> ∪**E**<strong><sub>2</sub></strong>∪**. . .** ∪E<sub>n</sub> ) = max [**cf** (E<sub>1</sub>) , cf (E2) , . . . , cf $( \overline { a } , \overline { b } ) \cup \times \overline { c } \cup$ For example,
+
+IF sky i s overcast
+
+OR the forecast is rain
+
+THEN the action i s ‘ take an umbrella ’ {  i s  { cf 0 . 9 }
+
+and the certainty of  of sky is overcast  is 0 . 6 and the certainty of  of the forecast of rain  is 0 . 8 , then
+
+cf (H,E<sub>1</sub> ∪E<sub>2</sub>) = max [0 . 6 , 0 . 8 ] [0 . 6 , 0 . 8 ] ⋅ 0 . 9 = 0 . 8 0 . 9 = 0 . 8 ⋅ 0 . 9 = 0 . 7 2 0 . 9 = 0 . 7 2 ■ When the same consequent is obtained as a result of  as the execution of two or more rules, the individual certainty factors of these rules must be merged to give a combined certainty factor for a hypothesis . .
+
+Suppose the knowledge base consists of the following rule s :
+
+Rule 1 : IF A i s X THEN C i s Z { cf 0 . 8 }
+
+Rule 2 : IF B i s Y THEN C i s Z { cf 0 . 6 }
+
+**What certainty should be assigned to object  C having value  Z if both  Rule 1 and Rule 2 are fired?** 2
+
+Common sense suggests that, if we have two pieces of evidence (  (A is X and B is Y) from different sources (  (Rule 1 and Rule 2) supporting 2) the same hypothesis (  (C is Z) , then the confidence ) in this hypothesis should increase and become in stronger than if only one piece of evidence had been obtained.
+
+To calculate a combined certainty factor we can To use the following equation :
+
+$$
+c f (c f _ {1}, c f _ {2}) = \left\{ \begin{array}{l l} c f _ {1} + c f _ {2} \times (1 - c f _ {1}) & \text {if} c f _ {1} > 0 \text {and} c f _ {2} > 0 \\ \frac {c f _ {1} + c f _ {2}}{1 - \min \left[ | c f _ {1} | , | c f _ {1} | \right]} & \text {if} c f _ {1} <   0 \text {or} c f _ {2} <   0 \\ c f _ {1} + c f _ {2} \times (1 + c f _ {1}) & \text {if} c f _ {1} <   0 \text {and} c f _ {2} <   0 \end{array} \right.
+$$
+
+where :
+
+cf<sub>1</sub> i s the confidence in hypothesi s i s  H establi shed by  Rule 1 ; cf<sub>2</sub> i s the confidence in hypothesi s i s  H establi shed by  Rule 2 ; | cf1 | and | cf2| are absolute magnitudes of  of cf1 and cf2, respectively . .
+
+The certainty factors theory provides a  a **practical** alternative to B ayesian reasoning . The heuristic  to . manner of combining certainty factors is different  is from the manner in which they would be combined if they were probabilities . The certainty theory is . not “mathematically pure” but does mimic the thinking process of a human expert. .
+
+## Comparison of Bayesian reasoning and certainty factors
+
+■ Probability theory is the oldest and best-established - technique to deal with inexact knowledge and  to random data. It works well in such areas as .  as forecasting and planning , where statistical data is usually available and accurate probability statements can be made
+
+■ However, in many areas of possible applications of  in  of expert sy stems , reliable stati stical information i s not  i s available or we cannot assume the conditional independence of evidence. As a result, many . As researchers have found the B ayesian method unsuitable for their work. This dis satisfaction motivated the development of the certainty factors theory . .
+
+■ Although the certainty factors approach lacks the mathematical correctness of the probability theory, it outperforms subj ective B ayesian reasoning in such areas as diagno stic s .  as .
+
+■ Certainty factors are used in cases where the probabilities are not known or are too difficult or  or expensive to obtain. The evidential reasoning  to . mechanism can manage incrementally acquired evidence, the conjunction and disjunction of  of hypotheses , as well as evidences with different  as  as degrees of belief. .
+
+■ The certainty factors approach also provides better explanations of the control flow through a rule- - based expert system. .
+
+■ The B ayesian method is likely to be the most  be appropriate if reliable stati stical data exi sts , the knowledge engineer is able to lead, and the expert is  to available for serious decision-analytical - conversations . .
+
+■ In the absence of any of the specified conditions , In the B ayesian approach might be too arbitrary and even biased to produce meaningful results . .
+
+■ The B ayesian belief propagation is of exponential  is complexity , and thus is impractical for large  is knowledge bases . .

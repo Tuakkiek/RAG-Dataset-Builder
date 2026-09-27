@@ -1,0 +1,1222 @@
+<!-- page: 1 -->
+
+**6.825 Techniques in Artificial Intelligence**
+
+# Resolution Theorem Proving: First Order Logic
+
+Resolution with variables
+
+Clausal form
+
+Lecture 8 • 1
+
+We’ve been doing first-order logic and thinking about how to do proofs. Last time we looked at how to do resolution in the propositional case, and we looked at how to do unification -- that is, essentially matching of terms, figuring out which variables you have to match up with which other variables or functions or constants in order to get two terms to match up and look the same. And so why do unification? Because it gives us a tool for doing resolution in the firstorder case.
+
+<!-- page: 2 -->
+
+$$
+(\alpha \lor \beta) \theta
+$$
+
+$$
+\mathsf {M G U} (\phi , \psi) = \theta
+$$
+
+It says if you have a formula alpha or phi and another formula not psi or beta, and you can unify phi and psi with unifier theta, then you're allowed to conclude alpha or beta with the substitution theta applied to it.
+
+Here’s the rule for first-order resolution.
+
+<!-- page: 3 -->
+
+```txt
+Resolution with Variables
+α v φ [rename]
+¬ψ v β [rename]    MGU(φ,ψ) = θ
+(α v β)θ
+
+P(x) v Q(x,y)
+¬ P(A) v R(B,z)
+
+θ = {x/A}
+Lecture 8 • 3
+```
+
+Let’s look at an example. Let's say we have $\mathbf { P } ( \mathbf { x } )$ or $\mathrm { Q ( x , } \mathrm { y ) }$ and we also have not P(A) or $R(B,x)$ . What are we going to be able to resolve here? $\mathbf { P } ( \mathbf { x } )$ will be phi, $\mathrm { Q ( x , } \mathrm { y ) }$ will be alpha, $\mathrm { P } ( \mathrm { A } )$ will be psi and $R(B,x)$ will be beta. The unifier will be $\{ \mathbf { x } / \mathbf { A } \}$
+
+<!-- page: 4 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Resolution with Variables
+α v φ [rename]
+¬ψ v β [rename]    MGU(φ,ψ) = θ
+$\overline{(\alpha \lor \beta)\theta}$
+
+P(x) v Q(x,y)
+¬ P(A) v R(B,z)
+$\overline{(Q(x,y) \lor R(B,z))\theta}$
+
+θ = {x/A}
+Lecture 8 • 4
+</div>
+
+So, we get rid of the P literals, and end up with $\mathrm { Q ( x , } y ) \mathrm { ~ v ~ R ( B , } z )$ , but then we have to apply our substitution to the result.
+
+<!-- page: 5 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Resolution with Variables
+$\begin{array}{l}\alpha \lor \phi [rename]\\ \neg \psi \lor \beta [rename] \quad MGU(\phi ,\psi) = \theta \\ \hline (\alpha \lor \beta)\theta \end{array}$
+$\begin{array}{c}P(x)\lor Q(x,y)\\ \neg P(A)\lor R(B,z)\\ \hline (Q(x,y)\lor R(B,z))\theta \\ Q(A,y)\lor R(B,z) \end{array}$
+$\theta = \{x / A\}$
+Lecture 8 • 5
+</div>
+
+Finally, we end up with $Q ( A,y )$ or $\mathrm { R ( B , } \mathrm { z ) }$
+
+<!-- page: 6 -->
+
+$$
+(\alpha \lor \beta) \theta
+$$
+
+$$
+\mathrm{P} (\mathrm{x}) \lor \mathrm{Q} (\mathrm{x}, \mathrm{y})
+$$
+
+$$
+\neg \mathrm{P(A)} \lor \mathrm{R(B,z)}
+$$
+
+$$
+(Q (x, y) \lor R (B, z)) \theta
+$$
+
+$$
+Q (A, y) \lor R (B, z)
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+Now let's explore what happens if we have X's in the other formula. So what if we replaced the z in the second sentence by an x.
+
+<!-- page: 7 -->
+
+## Resolution with Variables
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\frac{\alpha \lor \phi$ [rename] $\neg \psi \lor \beta$ [rename] $MGU(\phi, \psi) = \theta$ $\begin{array}{c}\forall xy. P(x) \lor Q(x,y) \\ \forall x. \neg P(A) \lor R(B,x) \\\hline\end{array}$
+$(\alpha \lor \beta)\theta$ Scope of var is local to a clause.
+All vars implicitly
+univ. quantified
+$\begin{bmatrix} \forall xy. P(x) \lor Q(x,y) \\ \forall z.P(A) \lor R(B,z) \\ \hline (Q(x,y) \lor R(B,z))\theta \\ Q(A,y) \lor R(B,z) \end{bmatrix}$
+$\theta = \{x/A\}$
+Lecture 8 • 7
+</div>
+
+The x’s in the two sentences are actually different. There is an implicit universal quantifier on the outside of each of these sentences (we’ll see exactly how we get sentences ready for resolution in the next few slides). So, in order to avoid being confused by the fact that these two variables named x need not refer to the same thing, we will “rename them apart”.
+
+<!-- page: 8 -->
+
+## Resolution with Variables
+
+α v φ [rename]
+
+$$
+\forall x y. \quad P (x) \lor Q (x, y)
+$$
+
+$$
+\neg \psi \lor \beta_ {[ \text {rename} ]} \quad \mathrm{MGU} (\phi , \psi) = \theta
+$$
+
+$$
+\forall \mathrm{x}. \neg \mathrm{P} (\mathrm{A}) \vee \mathrm{R} (\mathrm{B}, \mathrm{x})
+$$
+
+$$
+(\alpha \lor \beta) \theta
+$$
+
+All vars implicitly univ. quantified
+
+Scope of var is local to a clause. Use renaming to keep vars distinct
+
+$$
+\forall x y. P (x) \vee Q (x, y)
+$$
+
+$$
+\forall \mathrm{x} _ {1} \mathrm{y}. \quad \mathrm{P} (\mathrm{x} _ {1}) \vee \mathrm{Q} (\mathrm{x} _ {1}, \mathrm{y})
+$$
+
+$$
+\forall - z. P (A) \lor R (B, z)
+$$
+
+$$
+\forall \mathrm{x} _ {2}. \neg \mathrm{P} (\mathrm{A}) \lor \mathrm{R} (\mathrm{B}, \mathrm{x} _ {2})
+$$
+
+$$
+(Q (x, y) \lor R (B, z)) \theta
+$$
+
+$$
+\mathrm{Q} (\mathrm{A}, \mathrm{y}) \lor \mathrm{R} (\mathrm{B}, \mathrm{z})
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+Lecture 8 • 8
+
+So that means that before you try to do a resolution step, you’re really supposed to rename the variables in the two sentences so that they don’t share any variables in common.
+
+You won't usually do this that explicitly on your paper, but if you were going to implement this, or if you find yourself with the same variable in both sentences and it's getting confusing, then you should rename the sentences apart.
+
+<!-- page: 9 -->
+
+## Resolution with Variables
+
+α v φ [rename]
+
+$$
+\forall x y. \quad P (x) \lor Q (x, y)
+$$
+
+$$
+\neg \psi \lor \beta_ {[ \text {rename} ]} \quad \mathsf {M G U} (\phi , \psi) = \theta
+$$
+
+$$
+\forall x. \neg P (A) \lor R (B, x)
+$$
+
+$$
+(\alpha \lor \beta) \theta
+$$
+
+All vars implicitly univ. quantified
+
+Scope of var is local to a clause. Use renaming to keep vars distinct
+
+$$
+\forall x y. P (x) \vee Q (x, y)
+$$
+
+$$
+\forall \mathrm{x} _ {1} \mathrm{y}. \quad \mathrm{P} (\mathrm{x} _ {1}) \vee \mathrm{Q} (\mathrm{x} _ {1}, \mathrm{y})
+$$
+
+$$
+\forall - z. P (A) \lor R (B, z)
+$$
+
+$$
+\forall \mathrm{x} _ {2}. \neg \mathrm{P} (\mathrm{A}) \lor \mathrm{R} (\mathrm{B}, \mathrm{x} _ {2})
+$$
+
+$$
+(Q (x, y) \lor R (B, z)) \theta
+$$
+
+$$
+(\overline {{Q (x _ {1} , y) \lor R (B , x _ {2})}}) \theta
+$$
+
+$$
+\mathrm{Q} (\mathrm{A}, \mathrm{y}) \lor \mathrm{R} (\mathrm{B}, \mathrm{z})
+$$
+
+$$
+Q (A, y) \lor R (B, x _ {2})
+$$
+
+$$
+\theta = \{\mathrm{x/A} \}
+$$
+
+$$
+\theta = \{\mathrm{x}_{1 / }A\}
+$$
+
+Lecture 8 • 9
+
+The easiest thing to do is to just go through and give every variable a new name. It's OK to do that. You just have to do it consistently for each clause. So you could rename to P of X1 or Q of X1Y1, and you can name this one not P of A or R of BX2. And then you could apply the resolution rule and you don't get into any trouble.
+
+<!-- page: 10 -->
+
+## Resolution
+
+Input are sentences in conjunctive normal form with no apparent quantifiers (implicit universal quantifiers).
+
+I introduced the resolution rule in detail so that we can see what we're trying to do, The resolution rule takes sentences in conjunctive normal form with apparently no quantifiers, right? The rule doesn't say anything about quantifiers. I told you that clauses have kind of an implicit quantifier in them. But now we've been looking at languages that have quantifiers.
+
+<!-- page: 11 -->
+
+| Resolution |
+| --- |
+| Input are sentences in conjunctive normal form with no apparent quantifiers (implicit universal quantifiers). |
+| How do we go from the full range of sentences in FOL, with the full range of quantifiers, to sentences that enable us to use resolution as our single inference rule? |
+
+So the question is: how do we go from sentences with the whole rich set of quantifiers into a form that lets us use resolution? Because it's going to turn out that even in first-order logic, resolution is a complete proof procedure all by itself. We're not going to need any more inference rules.
+
+<!-- page: 12 -->
+
+So what we're going to do is introduce a normal form that's kind of like conjunctive normal form, only it deals with quantifiers, too. It's called clausal form. Or, sometimes, prenex normal form.
+
+<!-- page: 13 -->
+
+Rather than give you a definition, I'm going to teach you a procedure to convert any sentence in first-order logic into clausal form. And we'll do a bunch of examples as we go through the procedure, just so that you know how it goes.
+
+<!-- page: 14 -->
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\neg \alpha \lor \beta
+$$
+
+The first step you guys know very well is to eliminate implications. So you know how to do that. Anywhere you see a A right arrow B, you just change it into not A or B.
+
+<!-- page: 15 -->
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\neg \alpha \lor \beta
+$$
+
+$$
+\begin{array}{c} \neg (\alpha \lor \beta) \\ \neg (\alpha \not \in \beta) \end{array}
+$$
+
+$$
+\neg \alpha \not {A} E \neg \beta
+$$
+
+$$
+\neg \alpha \lor \neg \beta
+$$
+
+$$
+\neg \neg \alpha
+$$
+
+$$
+\neg \exists x. P (x)
+$$
+
+$$
+\alpha
+$$
+
+$$
+\forall \mathbf {x}. \neg \mathrm{P} (\mathbf {x})
+$$
+
+$$
+\neg \forall x. P (x)
+$$
+
+$$
+\exists x. \neg P (x)
+$$
+
+The next thing you do is to drive in negation. And you already basically know how to do that. We have deMorgan’s laws to deal with conjunction and disjunction, and we can eliminate double negations.
+
+As a kind of extension of deMorgan’s laws, we also have that not exists x P(x) turns into forall x not P(x). And that not forall x P(x) turns into exists x such that not P(x).
+
+<!-- page: 16 -->
+
+## Converting to Clausal Form
+
+## 1. Eliminate →, ↔
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\neg \alpha \lor \beta
+$$
+
+2. Drive in ¬
+
+$$
+\neg (\alpha \lor \beta)
+$$
+
+$$
+\neg (\alpha \not\in \beta)
+$$
+
+$$
+\neg \alpha \not\in \mathcal{E} \neg \beta
+$$
+
+$$
+\neg \alpha \lor \neg \beta
+$$
+
+$$
+\neg \exists x. P (x)
+$$
+
+$$
+\forall \mathbf {x}. \neg \mathrm{P} (\mathbf {x})
+$$
+
+¬∀x. P(x)
+
+$$
+\exists x. \neg P (x)
+$$
+
+3. Rename variables apart
+
+$$
+\forall \mathrm{x}. \exists \mathrm{y}. (\mathrm{P} (\mathrm{x}) \rightarrow \forall \mathrm{x}. \mathrm{Q} (\mathrm{x}, \mathrm{y}))
+$$
+
+$$
+\forall \mathrm{x} _ {1}. \exists \mathrm{y} _ {2}. (\mathrm{P} (\mathrm{x} _ {1}) \rightarrow \forall \mathrm{x} _ {3}. \mathrm{Q} (\mathrm{x} _ {3}, \mathrm{y} _ {2}))
+$$
+
+Lecture 8 • 16
+
+The next step is to rename variables apart. The idea here is that if every quantifier in your sentence should be over a different variable. So, if you had two different quantifications over x, you should rename one of them to use a different variable (which doesn’t change the semantics at all).
+
+In this example, we have two quantifications involving the variable x. It’s especially confusing in this case, because they’re nested. The rules are like those for a programming language: a variable is captured by the enclosing quantifier. So the x in Q(x,y) is really a different variable from the x in P(x). To make this distinction clear, and to automate the downstream processing into clausal form, we’ll just rename each of the variables.
+
+<!-- page: 17 -->
+
+Now, here's the step that some people find confusing. The name is already a good one. Step four is to skolemize, named after some logician named Skolem. Imagine that you have a sentence that looks like: there exists an X such that P of X. The goal here is to somehow arrive at a representation that doesn't have any quantifiers in it. Now, if we only had one kind of quantifier, it would be easy because we could just mention variables and all the variables would be implicitly quantified by the kind of quantifier that we have. But because we have two quantifiers, if we dropped all the quantifiers off, there's a mess, because you don't know which kind of quantification is supposed to apply to which variable.
+
+<!-- page: 18 -->
+
+## Converting to Clausal Form, II
+
+## 4. Skolemize
+
+Substitute brand new name for each existentially quantified variable
+
+$$
+\exists \mathrm{x}. \mathrm{P} (\mathrm{x}) \Rightarrow \mathrm{P} (\text {Fred})
+$$
+
+So, the Skolem insight is that when you have an existential quantification like this, you're saying there is such a thing as a unicorn, let's say that P is a unicorn. There exists a thing such that it's a unicorn. You can just say, all right, well, if there is one, let's call it Fred. That's it. That's what Skolemization is. So instead of writing exists an X such that P of X, you say P of Fred. The trick is that it absolutely must be a new name. It can't be any other name of any other thing that you know about. If you're in the process of inferring things about John and Mary, then it's not good to say, oh, there's a unicorn and it's John -- because that's kind of adding some information to the picture.
+
+So to skolemize, in the simple case, means substitute brand-new name for each existentially quantified variable.
+
+<!-- page: 19 -->
+
+$$
+\exists \mathrm{x}. \mathrm{P} (\mathrm{x}, \mathrm{y}) \Rightarrow \mathrm{P} (\mathrm{X} _ {1 1}, \mathrm{Y} _ {1 3})
+$$
+
+For example, if I have exists XY such that P of XY, then it's going to have to turn into P of X11, Y13. So if you have two different variables here, they have to be given different names.
+
+<!-- page: 20 -->
+
+But the names also have to persist so that if you have exists an X such that P of X and Q of X, then if you skolemize that expression you should get P of Blue and Q of Blue. You make up a name and you put it in there, but every occurrence of this variable has to get mapped into that same unique name.
+
+<!-- page: 21 -->
+
+All right. If that's all we had to do it wouldn't be too bad. But there's one more case.
+
+We can illustrate it by looking at these two interpretations of “Everyone loves someone”.
+
+<!-- page: 22 -->
+
+## Converting to Clausal Form, II
+
+## 4. Skolemize
+
+Substitute brand new name for each existentially quantified variable
+
+• Substitute a new function of all universally quantified variables in enclosing scopes for each existentially quantified variable. $\exists \mathsf { x } . \mathsf { P } ( \vec { \mathsf { x } } ) \Rightarrow \vec { \mathsf { P } } ( \mathsf { F r e d } )$
+
+$\exists \mathsf{x}. \mathsf{P}(\mathsf{x}, \mathsf{y}) \Rightarrow \mathsf{P}(\mathsf{X}_{11}, \mathsf{Y}_{13})$
+
+$\exists \mathsf { x } . \mathsf { P } ( \mathsf { x } ) \; \mathsf { \in } \; \mathsf { Q } ( \mathsf { x } ) \Rightarrow \mathsf { P } ( \mathsf { B l u e } ) \; \mathsf { \in } \; \mathsf { Q } ( \mathsf { B l u e } )$
+
+$\exists \; \mathsf { y } . \; \forall \; \mathsf { x } . \; \mathsf { L o v e s } ( \mathsf { x } , \mathsf { y } ) \Rightarrow \forall \; \mathsf { x } .$ Loves(x, Englebert)
+
+$\forall \mathsf { { x } } . \exists \mathsf { { y } } . \mathsf { { L o v e s } } ( \mathsf { { x } } , \mathsf { { y } } )$
+
+Lecture 8 • 22
+
+In the first case, there is a single y that everyone loves. So we do ordinary skolemization and decide to call that person Englebert.
+
+In the second case, there is a different y, potentially, for each x. So, if we were just to substitute in a single constant name for y, we’d lose that information. We’d get the same result as above, which would be wrong.
+
+So, when you are skolemizing an existential variable, you have to look at the other quantifiers that contain the one you’re skolemizing, and instead of substituting in a new constant, you substitute in a brand new function symbol, applied to any variables that are universally quantified in an outer scope.
+
+<!-- page: 23 -->
+
+In this case, what that means is that you substitute in some function of x, for y. Let’s call it Beloved of x. Now it’s clear that the person who is loved by x depends on the particular x you’re talking about.
+
+<!-- page: 24 -->
+
+Now we can drop the universal quantifiers because we just replaced all the existential quantifiers with these skolem constants or functions and so now there's only one kind of quantifier left, so we can just drop them.
+
+<!-- page: 25 -->
+
+And then we convert to conjunctive normal form. At this point, converting to conjunctive normal form just means multiplying out the and's and the $\mathbf { o r } ^ { \dagger } \mathbf { S } ,$ because we already eliminated the arrows and pushed in the negations.
+
+<!-- page: 26 -->
+
+```txt
+Converting to Clausal Form, II
+Skolemize
+  Substitute brand new name for each existentially quantified variable
+  Substitute a new function of all universally quantified variables in enclosing scopes for each existentially quantified variable.
+    ∃ x. P(x) ⇒ P(Fred)
+    ∃ x. P(x,y) ⇒ P(X11, Y13)
+    ∃ x. P(x) AE Q(x) ⇒ P(Blue) AE Q(Blue)
+    ∃ y. ∀ x. Loves(x,y) ⇒ ∀ x. Loves(x, Englebert)
+    ∀ x. ∃ y. Loves(x,y) ⇒ ∀ x. Loves(x, Beloved(x))
+Drop universal quantifiers
+Convert to CNF
+Rename the variables in each clause
+- ∀ x. P(x) AEQ(x) ⇒ ∀ y. P(y) AE∀ z. Q(z)
+```
+
+Finally, we can rename the variables in each clause. It’s okay to do that because forall $\mathrm { ~ x ~ P ( x ) ~ }$ and Q(x) is equivalent to forall y P(y) and forall z P(z). In fact, you don’t really need to do this step, because we’re assuming that you’re always going to rename the variables before you do a resolution step.
+
+<!-- page: 27 -->
+
+So, let’s do an example from the book, starting with English sentences, writing them down in first-order logic, converting to clausal form, and then finally doing a resolution proof.
+
+<!-- page: 28 -->
+
+John owns a dog. We can write that in first-order logic as “there exists an x such that D(x) and $\mathrm { O ( J , x ) ^ { 5 } }$ . So, we’re letting D stand for is-a-dog and O stand for owns and J stand for John.
+
+<!-- page: 29 -->
+
+## Example: Converting to clausal form
+
+a. John owns a dog
+
+∃ x. D(x) Æ O(J,x)
+
+D(Fido) Æ O(J, Fido)
+
+Lecture 8 • 29
+
+Okay. To convert this to clausal form, we can start at step 4, skolemization, because the previous three steps are unnecessary for this sentence. Since we just have an existential quantifier over x, without any enclosing universal quantifiers, we can simply pick a new name and substitute it in for x. Let’s call x “fido”. This will give us two clauses with no variables, and we’re done.
+
+<!-- page: 30 -->
+
+a. John owns a dog
+
+∃ x. D(x) Æ O(J,x)
+
+D(Fido) Æ O(J, Fido)
+
+![](images/page_29_image_3.jpg)
+
+b. Anyone who owns a dog is a lover-of-animals
+
+Anyone who owns a dog is a lover of animals. We can write that in FOL as “For all x, if there exists a y such that D(y) and O(x,y), then L(x).” We’ve added a new predicate symbol L to stand for “is a lover of animals”.
+
+<!-- page: 31 -->
+
+$$
+\forall \mathrm{x}. (\exists \mathrm{y}. \mathrm{D} (\mathrm{y}) \mathcal {A E O} (\mathrm{x}, \mathrm{y})) \rightarrow \mathrm{L} (\mathrm{x})
+$$
+
+$$
+\forall \mathrm{x}. (\neg \exists \mathrm{y}. (\mathrm{D} (\mathrm{y}) \not \in \mathrm{O} (\mathrm{x}, \mathrm{y})) \vee \mathrm{L} (\mathrm{x})
+$$
+
+First, we get rid of the arrow. Note that the parentheses are such that the existential quantifier is part of the antecedent, but the universal quantifier is not.
+
+<!-- page: 32 -->
+
+# Example: Converting to clausal form
+
+$$
+\text {a. John owns a dog}
+$$
+
+$$
+\exists x. D (x) \not \in O (J, x)
+$$
+
+$$
+\overline {{D (F i d o) \not {A} E \square O (J , F i d o)}}
+$$
+
+$$
+\forall x. (\exists y. D (y) \not \in O (x, y)) \rightarrow L (x)
+$$
+
+$$
+\forall \mathrm{x}. (\neg \exists \mathrm{y}. (\mathrm{D} (\mathrm{y}) \notin \mathrm{O} (\mathrm{x}, \mathrm{y})) \vee \mathrm{L} (\mathrm{x})
+$$
+
+$$
+\forall \mathrm{x}. \forall \mathrm{y}. \neg (\mathrm{D} (\mathrm{y}) \mathbb {E} \square \mathrm{O} (\mathrm{x}, \mathrm{y})) \vee \mathrm{L} (\mathrm{x})
+$$
+
+$$
+\forall \mathrm{x}. \forall \mathrm{y}. \neg \mathrm{D} (\mathrm{y}) \mathrm{v} \neg \mathrm{O} (\mathrm{x}, \mathrm{y}) \mathrm{v} \mathrm{L} (\mathrm{x})
+$$
+
+Lecture 8 • 32
+
+Next, we drive in the negations. We’ll do it in two steps.
+
+<!-- page: 33 -->
+
+$$
+\exists x. D (x) \not \in O (J, x)
+$$
+
+$$
+\overline {{D (F i d o) A E \square O (J , F i d o)}}
+$$
+
+$$
+\forall x. (\neg \exists y. (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall x. \forall y. \neg (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall x. \forall y. \neg D (y) v \neg O (x, y) v L (x)
+$$
+
+$$
+\neg D (y) v \neg O (x, y) v L (x)
+$$
+
+Lecture 8 • 33
+
+There’s no skolemization to do, since there aren’t any existential quantifiers. So, we can just drop the universal quantifiers, and we’re left with a single clause.
+
+<!-- page: 34 -->
+
+## Example: Converting to clausal form
+
+$$
+\exists x. D (x) \not \in O (J, x)
+$$
+
+$$
+\overline {{D (F i d o) \not {A} E \square O (J , F i d o)}}
+$$
+
+$$
+\forall x. (\neg \exists y. (D (y) A E O (x, y)) v L (x)
+$$
+
+Lecture 8 • 34
+
+![](images/page_33_image_5.jpg)
+
+$$
+\forall x. \forall y. \neg (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall x. \forall y. \neg D (y) v \neg O (x, y) v L (x)
+$$
+
+$$
+\neg D (y) v \neg O (x, y) v L (x)
+$$
+
+Lovers of animals do not kill animals. We can write that in FOL as “For all x, if L(x) then for all $\mathrm { y ,   A ( y ) }$ implies not $\mathrm { K ( x , } \mathrm { y ) ^ { 3 } }$ We’ve added the predicate symbol A to stand for “is an animal” and the predicate symbol K to stand for x kills y.
+
+<!-- page: 35 -->
+
+# Example: Converting to clausal form
+
+$$
+\begin{array}{l} \text {a. John owns a dog} \\ \hline \exists x. D (x) A E O (J, x) \\ \hline D (\text {Fido}) A E O (J, \text {Fido}) \end{array}
+$$
+
+$$
+\begin{array}{l} \text {c. Lovers - of - animals do not kill animals} \end{array}
+$$
+
+$$
+\forall \mathrm{x}. \mathrm{L} (\mathrm{x}) \rightarrow (\forall \mathrm{y}. \mathrm{A} (\mathrm{y}) \rightarrow \neg \mathrm{K} (\mathrm{x}, \mathrm{y}))
+$$
+
+$$
+\forall \mathrm{x}. \neg \mathrm{L} (\mathrm{x}) \vee (\forall \mathrm{y}. \mathrm{A} (\mathrm{y}) \rightarrow \neg \mathrm{K} (\mathrm{x}, \mathrm{y}))
+$$
+
+$$
+\forall \mathrm{x}. (\exists \mathrm{y}. \mathrm{D} (\mathrm{y}) \mathcal {A E} \square \mathrm{O} (\mathrm{x}, \mathrm{y})) \rightarrow \mathrm{L} (\mathrm{x})
+$$
+
+$$
+\forall \mathrm{x}. \neg \mathrm{L} (\mathrm{x}) \vee (\forall \mathrm{y}. \neg \mathrm{A} (\mathrm{y}) \vee \neg \mathrm{K} (\mathrm{x}, \mathrm{y}))
+$$
+
+$$
+\forall x. (\neg \exists y. (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall x. \forall y. \neg (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall x. \forall y. \neg D (y) v \neg O (x, y) v L (x)
+$$
+
+$$
+\neg D (y) v \neg O (x, y) v L (x)
+$$
+
+First, we get rid of the arrows, in two steps.
+
+<!-- page: 36 -->
+
+![](images/page_35_image_0.jpg)
+
+Lecture 8 • 36
+
+## Example: Converting to clausal form
+
+$$
+\overline {{\text {x.} (\exists \mathrm{y.D(y)} \mathbb {A E O} (\mathrm{x,y})) \rightarrow \mathrm{L(x)}}}
+$$
+
+$$
+\forall x. (\neg \exists y. (D (y) A E O (x, y)) v L (x)
+$$
+
+$$
+\forall \mathrm{x}. \forall \mathrm{y}. \neg (\mathrm{D} (\mathrm{y}) \notin \mathrm{O} (\mathrm{x}, \mathrm{y})) \vee \mathrm{L} (\mathrm{x})
+$$
+
+Then $\mathbf { w e } ^ { \flat } \mathbf { r e }$ left with only universal quantifiers, which we drop, yielding one clause.
+
+<!-- page: 37 -->
+
+We just have three more easy ones. “Either Jack killed Tuna or curiosity killed Tuna.” Everything here is a constant, so we get K(J,T) or K(C,T).
+
+<!-- page: 38 -->
+
+“Tuna is a cat” just turns into C(T).
+
+<!-- page: 39 -->
+
+And “All cats are animals” is not C(x) or A(x). I left out the steps here, but I’m sure you can fill them in.
+
+<!-- page: 40 -->
+
+Curiosity Killed the Cat
+
+|  | D(Fido) | a |
+| --- | --- | --- |
+|  | O(J,Fido) | a |
+|  | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+|  | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+|  | K(J,T) v K(C,T) | d |
+|  | C(T) | e |
+|  | $\neg C(x) v A(x)$ | f |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Given all these premises, we’re interested in proving that curiosity killed the cat. So, first, we start our proof by entering all of the clauses from the premises on lines 1 – 7.
+
+<!-- page: 41 -->
+
+Curiosity Killed the Cat
+
+|  | D(Fido) | a |
+| --- | --- | --- |
+|  | O(J,Fido) | a |
+|  | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+|  | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+|  | K(J,T) v K(C,T) | d |
+|  | C(T) | e |
+|  | $\neg C(x) v A(x)$ | f |
+|  | $\neg K(C,T)$ | Neg |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Now, we add the negation of the conclusion, which is not K(C,T), and start doing the proof.
+
+<!-- page: 42 -->
+
+Curiosity Killed the Cat
+
+|  | D(Fido) | a |
+| --- | --- | --- |
+|  | O(J,Fido) | a |
+|  | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+|  | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+|  | K(J,T) v K(C,T) | d |
+|  | C(T) | e |
+|  | $\neg C(x) v A(x)$ | f |
+|  | $\neg K(C,T)$ | Neg |
+|  | K(J,T) | 5,8 |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+We can apply the resolution rule to any pair of lines that contain unifiable literals. Here’s one way to do the proof. We’ll use the “set-of-support” heuristic (which says we should involve the negation of the conclusion in the proof), and resolve away K(C,T) from lines 5 and 8, yielding K(J,T).
+
+<!-- page: 43 -->
+
+Curiosity Killed the Cat
+
+|  | D(Fido) | a |
+| --- | --- | --- |
+|  | O(J,Fido) | a |
+|  | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+|  | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+|  | K(J,T) v K(C,T) | d |
+|  | C(T) | e |
+|  | $\neg C(x) v A(x)$ | f |
+|  | $\neg K(C,T)$ | Neg |
+|  | K(J,T) | 5,8 |
+|  | A(T) | 6,7 {x/T} |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Then, we can resolve C(T) and C(x) in lines 6 and 7 by substituting T for x, and getting A(T).
+
+<!-- page: 44 -->
+
+Curiosity Killed the Cat
+
+|  | D(Fido) | a |
+| --- | --- | --- |
+|  | O(J,Fido) | a |
+|  | $\neg D(y) v \neg O(x,y) v L(x)$ | b |
+|  | $\neg L(x) v \neg A(y) v \neg K(x,y)$ | c |
+|  | K(J,T) v K(C,T) | d |
+|  | C(T) | e |
+|  | $\neg C(x) v A(x)$ | f |
+|  | $\neg K(C,T)$ | Neg |
+|  | K(J,T) | 5,8 |
+|  | A(T) | 6,7 {x/T} |
+|  | $\neg L(J) v \neg A(T)$ | 4,9 {x/J, y/T} |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Using lines 4 and 9, and substituting J for x and T for Y, we get not L(J) or not A(T).
+
+<!-- page: 45 -->
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | ¬ D(y) v ¬ O(x,y) v L(x) | b |
+| 4 | ¬ L(x) v ¬ A(y) v ¬ K(x,y) | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | ¬ C(x) v A(x) | f |
+| 8 | ¬ K(C,T) | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+| 11 | ¬ L(J) v ¬ A(T) | 4,9 {x/J, y/T} |
+| 12 | ¬ L(J) | 10,11 |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Lecture 8 • 45
+
+From lines 10 and 11, we get not L(J).
+
+<!-- page: 46 -->
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | ¬ D(y) v ¬ O(x,y) v L(x) | b |
+| 4 | ¬ L(x) v ¬ A(y) v ¬ K(x,y) | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | ¬ C(x) v A(x) | f |
+| 8 | ¬ K(C,T) | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+| 11 | ¬ L(J) v ¬ A(T) | 4,9 {x/J, y/T} |
+| 12 | ¬ L(J) | 10,11 |
+| 13 | ¬ D(y) v ¬ O(J,y) | 3,12 {x/J} |
+|  |  |  |
+|  |  |  |
+
+From 3 and 12, substituting J for X, we get not D(y) or not O(J,y).
+
+<!-- page: 47 -->
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | ¬ D(y) v ¬ O(x,y) v L(x) | b |
+| 4 | ¬ L(x) v ¬ A(y) v ¬ K(x,y) | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | ¬ C(x) v A(x) | f |
+| 8 | ¬ K(C,T) | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+| 11 | ¬ L(J) v ¬ A(T) | 4,9 {x/J, y/T} |
+| 12 | ¬ L(J) | 10,11 |
+| 13 | ¬ D(y) v ¬ O(J,y) | 3,12 {x/J} |
+| 14 | ¬ D(Fido) | 13,2 {x/Fido} |
+|  |  |  |
+
+From 13 and 2, substituting Fido for x, we get not D(Fido).
+
+<!-- page: 48 -->
+
+Curiosity Killed the Cat
+
+| 1 | D(Fido) | a |
+| --- | --- | --- |
+| 2 | O(J,Fido) | a |
+| 3 | ¬ D(y) v ¬ O(x,y) v L(x) | b |
+| 4 | ¬ L(x) v ¬ A(y) v ¬ K(x,y) | c |
+| 5 | K(J,T) v K(C,T) | d |
+| 6 | C(T) | e |
+| 7 | ¬ C(x) v A(x) | f |
+| 8 | ¬ K(C,T) | Neg |
+| 9 | K(J,T) | 5,8 |
+| 10 | A(T) | 6,7 {x/T} |
+| 11 | ¬ L(J) v ¬ A(T) | 4,9 {x/J, y/T} |
+| 12 | ¬ L(J) | 10,11 |
+| 13 | ¬ D(y) v ¬ O(J,y) | 3,12 {x/J} |
+| 14 | ¬ D(Fido) | 13,2 {x/Fido} |
+| 15 | • | 14,1 |
+
+Lecture 8 • 48
+
+And finally, from lines 13 and 2, we derive a contradiction. Yay! Curiosity **did** kill the cat.
+
+<!-- page: 49 -->
+
+So, if we want to use resolution refutation to prove that something is valid, what would we do? What do we normally do when we do a proof using resolution refutation?
+
+<!-- page: 50 -->
+
+We say, well, if I know all these things, I can prove this other thing I want to prove. We prove that the premises entail the conclusion.
+
+<!-- page: 51 -->
+
+```txt
+Proving validity
+How do we use resolution refutation to prove something is valid?
+Normally, we prove a sentence is entailed by the set of axioms
+Valid sentences are entailed by the empty set of sentences
+• φ is valid
+• { } ⊢ φ [empty set of sentences entails φ]
+• { } ⊢ φ [empty set of sentences proves φ]
+Lecture 8 • 51
+```
+
+What does it mean for a sentence to be valid, in the language of entailment? That it's true in all interpretations. What that means really is that it should be derivable from nothing. A valid sentence is entailed by the empty set of sentences. The valid sentence is true no matter what. So we're going to prove something with no assumptions.
+
+<!-- page: 52 -->
+
+![](images/page_51_image_0.jpg)
+
+We can prove it by resolution refutation by negating the sentence and trying to derive a contradiction.
+
+<!-- page: 53 -->
+
+$$
+\exists \mathrm{x.} (\mathrm{P} (\mathrm{x}) \rightarrow \mathrm{P} (\mathrm{A})) \notin (\mathrm{P} (\mathrm{x}) \rightarrow \mathrm{P} (\mathrm{B}))
+$$
+
+So, let’s do an example. Imagine that we would like to show the validity of this sentence.
+
+<!-- page: 54 -->
+
+$$
+\neg \exists x. (P (x) \rightarrow P (A)) \not \in (P (x) \rightarrow P (B))
+$$
+
+$$
+\neg \exists x. ((\neg P (x) \lor P (A)) \not {A} E (\neg P (x) \lor P (B))
+$$
+
+$$
+\forall x. \neg ((\neg P (x) \vee P (A)) A E (\neg P (x) \vee P (B))
+$$
+
+$$
+\forall x. \neg (\neg P (x) \vee P (A)) \vee \neg (\neg P (x) \vee P (B))
+$$
+
+$$
+\forall x. (P (x) \not E \neg P (A)) v (P (x) \not E \neg P (B))
+$$
+
+We start by negating it and converting to clausal form. It takes quite a few steps to drive in all the negations, but eventually we end up with this universally quantified statement.
+
+<!-- page: 55 -->
+
+$$
+\exists x. (P (x) \to P (A)) \not \in (P (x) \to P (B))
+$$
+
+$$
+\neg \exists x. (P (x) \rightarrow P (A)) \not \in (P (x) \rightarrow P (B))
+$$
+
+$$
+\neg \exists x. ((\neg P (x) \lor P (A)) \not {A} E (\neg P (x) \lor P (B))
+$$
+
+$$
+\forall x. \neg ((\neg P (x) \vee P (A)) A E (\neg P (x) \vee P (B))
+$$
+
+$$
+\forall x. \neg (\neg P (x) \vee P (A)) \vee \neg (\neg P (x) \vee P (B))
+$$
+
+$$
+\forall x. (P (x) \not E \neg P (A)) v (P (x) \not E \neg P (B))
+$$
+
+$$
+(P (x) \not \in P (A)) \lor (P (x) \not \in P (B))
+$$
+
+Since there are no other quantifiers, we can just drop the universals.
+
+<!-- page: 56 -->
+
+$$
+\begin{array}{l}\neg \exists x. (P (x) \rightarrow P (A)) \not {A} E (P (x) \rightarrow P (B))\\\hline \neg \exists x. ((\neg P (x) v P (A)) \not {A} E (\neg P (x) v P (B))\\\hline \forall x. \neg ((\neg P (x) v P (A)) \not {A} E (\neg P (x) v P (B))\\\hline \forall x. \neg (\neg P (x) v P (A)) v \neg (\neg P (x) v P (B))\\\hline \forall x. (P (x) \not {A} E \neg P (A)) v (P (x) \not {A} E \neg P (B))\\\hline (P (x) \not {A} E \neg P (A)) v (P (x) \not {A} E \neg P (B))\\\hline (P (x) v P (x)) \not {A} E (P (x) v \neg P (B))\\\not {A} E (\neg P (A) v P (x)) \not {A} E (\neg P (A) v \neg P (B))\end{array}
+$$
+
+And now all we have to do is distribute, to get these four clauses.
+
+<!-- page: 57 -->
+
+## Proving validity: example
+
+Prove validity of: ∃ x. (P(x) → P(A)) Æ (P(x) → P(B))
+
+| $\neg \exists x. (P(x) \rightarrow P(A)) \not\in (P(x) \rightarrow P(B))$ |
+| --- |
+| $\neg \exists x. ((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg(\neg P(x) \lor P(A)) \lor \neg(\neg P(x) \lor P(B))$ |
+| $\forall x. (P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \lor P(x)) \not\in (P(x) \lor \neg P(B))$$\not\in (\neg P(A) \lor P(x)) \not\in (\neg P(A) \lor \neg P(B))$ |
+
+We enter the clauses into our proof.
+
+| 1 | P(x) |  |
+| --- | --- | --- |
+| 2 | P(x) v ¬ P(B) |  |
+| 3 | ¬ P(A) v P(x) |  |
+| 4 | ¬ P(A) v ¬ P(B) |  |
+| 5 |  |  |
+| 6 |  |  |
+
+Lecture 8 • 57
+
+<!-- page: 58 -->
+
+## Proving validity: example
+
+Prove validity of: ∃ x. (P(x) → P(A)) Æ (P(x) → P(B))
+
+| $\neg \exists x. (P(x) \rightarrow P(A)) \not\in (P(x) \rightarrow P(B))$ |
+| --- |
+| $\neg \exists x. ((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg(\neg P(x) \lor P(A)) \lor \neg(\neg P(x) \lor P(B))$ |
+| $\forall x. (P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \lor P(x)) \not\in (P(x) \lor \neg P(B))$$\not\in (\neg P(A) \lor P(x)) \not\in (\neg P(A) \lor \neg P(B))$ |
+
+| 1 | P(x) |  |
+| --- | --- | --- |
+| 2 | P(x) v ¬ P(B) |  |
+| 3 | ¬ P(A) v P(x) |  |
+| 4 | ¬ P(A) v ¬ P(B) |  |
+| 5 | ¬ P(B) | 1,4{x/A} |
+|  |  |  |
+
+Lecture 8 • 58
+
+Now, we can resolve lines 1 and 4, substituting A for x, to get not P(B).
+
+<!-- page: 59 -->
+
+## Proving validity: example
+
+Prove validity of: ∃ x. (P(x) → P(A)) Æ (P(x) → P(B))
+
+| $\neg \exists x. (P(x) \rightarrow P(A)) \not\in (P(x) \rightarrow P(B))$ |
+| --- |
+| $\neg \exists x. ((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg((\neg P(x) \lor P(A)) \not\in (\neg P(x) \lor P(B))$ |
+| $\forall x. \neg(\neg P(x) \lor P(A)) \lor \neg(\neg P(x) \lor P(B))$ |
+| $\forall x. (P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \not\in P(A)) \lor (P(x) \not\in P(B))$ |
+| $(P(x) \lor P(x)) \not\in (P(x) \lor \neg P(B))$$\not\in (\neg P(A) \lor P(x)) \not\in (\neg P(A) \lor \neg P(B))$ |
+
+| 1 | P(x) |  |
+| --- | --- | --- |
+| 2 | P(x) v ¬ P(B) |  |
+| 3 | ¬ P(A) v P(x) |  |
+| 4 | ¬ P(A) v ¬ P(B) |  |
+| 5 | ¬ P(B) | 1 {,x4/A} |
+| 6 | • | 1,5{x/B} |
+
+Lecture 8 • 59
+
+And we can resolve 1 and 5, substituting B for x, to get a contradiction.
+
+<!-- page: 60 -->
+
+## Recitation Problems
+
+In each group, derive the last sentence from the others using resolution refutation.
+
+$$
+\overline {{\forall x y . F (x , y)}}
+$$
+
+$$
+\forall \mathrm{x.F(x)} \rightarrow (\mathrm{G(x)} \subsetneq \mathrm{H(x)})
+$$
+
+$$
+\forall x. F (x) \subset G (x)
+$$
+
+$$
+\forall \mathsf {x y}. \mathsf {F} (\mathsf {y}, \mathsf {x})
+$$
+
+$$
+\mathrm{G(A)} \leftrightarrow (\mathrm{H(A)} \mathbf {\boldsymbol {A}} \boldsymbol {\mathsf {E}} \neg \mathrm{G(A)})
+$$
+
+$$
+\exists x. \neg G (x)
+$$
+
+$$
+\neg \mathrm{F} (\mathrm{A})
+$$
+
+$$
+\forall x. H (x) \rightarrow \neg F (x)
+$$
+
+$$
+\exists x. F (x)
+$$
+
+$$
+\exists \mathrm{y.F(y)}
+$$
+
+$$
+\boxed {\forall x y z. F (x, y) \mathbf {A} E F (y, z) \rightarrow F (x, z)}
+$$
+
+$$
+\neg \mathsf {F} (\mathsf {x}, \mathsf {x})
+$$
+
+$$
+\exists x. \neg H (x)
+$$
+
+$$
+\forall x y. F (x, y) \to \neg F (y, x)
+$$
+
+$$
+\overline {{\forall x . \exists y . L (x , y)}}
+$$
+
+$$
+\forall x y. L (x, y) \rightarrow H (x)
+$$
+
+$$
+\forall \mathsf {x}. \mathsf {H} (\mathsf {x})
+$$
+
+Lecture 8 • 60
+
+<!-- page: 61 -->
+
+<!-- page: 62 -->
+
+## Another, Sillier Problem
+
+You don’t have to do this one. It’s just for fun. Same type as the previous one. Also from Lewis Carroll.
+
+• The only animals in this house are cates
+
+• Every animal that loves to gaze at the moon is suitable for a pet
+
+• When I detest an animal, I avoid it
+
+• No animals are carnivorous unless they prowl at night
+
+• No cat fails to kill mice
+
+• No animals ever like me, except those that are in this house
+
+• Kangaroos are not suitable for pets
+
+• None but carnivorous animals kill mice
+
+• I detest animals that do not like me
+
+• Animals that prowl at night always love to gaze at the moon
+
+• Therefore, I always avoid a kangaroo
+
+Lecture 8 • 62
