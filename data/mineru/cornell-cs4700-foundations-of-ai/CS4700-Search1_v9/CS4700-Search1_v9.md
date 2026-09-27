@@ -1,0 +1,909 @@
+<!-- page: 1 -->
+
+**CS 4700:**
+
+**Foundations of Artificial Intelligence**
+
+**Bart Selman**
+
+**Problem Solving by Search R&N: Chapter 3**
+
+<!-- page: 2 -->
+
+## Introduction
+
+**“Search” is one of earliest areas studied in AI. Well-developed and understood.**
+
+**Originated with Newell and Simon**’**s work on problem solving;**
+
+**Human Problem Solving (1972).**
+
+**Automated reasoning is a natural search task.**
+
+**More recently: Given that almost all AI formalisms (planning, learning, etc) are NP-Complete or worse, some form of search (or optimization) is generally unavoidable (i.e., no smarter algorithm available).**
+
+![](images/page_1_image_6.jpg)
+
+**Note: search and combinatorial optimization are closely related.**
+
+<!-- page: 3 -->
+
+```txt
+Problem-solving agents
+Problem types
+Problem formulation
+Example problems
+Basic search algorithms (quick; most you already know!)
+```
+
+<!-- page: 4 -->
+
+**More details on “states” soon.**
+
+**Problem solving agents are goal-directed agents:**
+
+**1. Goal Formulation: Set of one or more (desirable) world states (e.g. “checkmate opponent in chess” or “reach vacation destination”).**
+
+**2. Problem formulation: What actions and states to consider given a goal and an initial state.**
+
+**3. Search for solution: Given the problem, search for a solution --- a sequence of actions to achieve the goal starting from the initial state.**
+
+**4. Execution of the solution**
+
+**Note: Formulation may feel somewhat “contrived,” but is meant to model very general (human/computer) problem solving process.**
+
+<!-- page: 5 -->
+
+## Formulate goal :
+
+**be in Bucharest (Romania)**
+
+## Formulate problem:
+
+**action: drive between pair of connected cities (direct road)**
+
+**state: traveler in a certain city (20 world states)**
+
+## Find solution:
+
+**sequence of cities leading from start to goal state, e.g., Arad, Sibiu, Fagaras, Bucharest**
+
+## Execution
+
+**drive from Arad to Bucharest according to the solution**
+
+## Example: Path Finding problem
+
+![](images/page_4_image_10.jpg)
+
+**Environment: fully observable (map), deterministic, and the agent knows effects of each action.**
+
+**Note: Map is somewhat of a “toy” example. Our real interest: Exponentially large spaces, with e.g. 10^100 or more states. Far beyond full search. Humans can often still handle those! (We need to define a distance measure.) One of the mysteries of cognition.**
+
+<!-- page: 6 -->
+
+## Micro-world: The Blocks World
+
+**gripper**
+
+![](images/page_5_image_2.jpg)
+
+(a) "Pick up a big red block."
+
+![](images/page_5_image_4.jpg)
+
+(b) "Find a block which is taller than the one you are holding and put it into the box.
+
+How many different possible world states?
+
+![](images/page_5_image_7.jpg)
+
+(c) "Will you please stack up both of the red blocks and either a green cube or a pyramid?"
+
+a) Tens?
+
+b) Hundreds?
+
+c) Thousands?
+
+d) Millions?
+
+e) Billions?
+
+f) Trillions?
+
+<!-- page: 7 -->
+
+**Size state space of blocks world example n = 8 objects, k = 9 locations to build towers, one gripper. (One location in box.) All objects distinguishable, order matter in towers. (Assume stackable in any order.)**
+
+Blocks: Use r-combinations approach from Rosen (section 5.5; CS-2800).
+
+```txt
+consider 16 = (n + k - 1) "spots"
+Select k - 1 = 8 "dividers" to create locations,
+(16 choose 8) ways to do this, e.g.,
+| | --- | - | | --- | | - | Allocate n = 8 objs to remaining spots, 8! ways, e.g.,
+| | 4 1 8 | 5 | | 6 3 7 | | 2 |
+a b c d e f g h i assigns 8 objects to the 9 locations
+based on dividers
+```
+
+**So, total number of states (ignoring gripper): (16 choose 8) \* 8! = 518,918,400**
+
+**\* 9 for location gripper: > 4.5 billion states even in this toy domain!**
+
+**Search spaces grow exponentially with domain. Still need to search them, e.g., to**
+
+**find a sequence of states (via gripper moves) leading to a desired goal state.**
+
+**How do we represent states?**
+
+**[predicates / features]**
+
+<!-- page: 8 -->
+
+## 1) Deterministic, fully observable
+
+**Agent knows exactly which state it will be in; solution is a sequence of actions.**
+
+## 2) Non-observable --- sensorless problem
+
+**Agent may have no idea where it is (no sensors); it reasons in terms of** <strong><u>belief states</u></strong>**; solution is a sequence actions (effects of actions certain).**
+
+**Cars: drive by “dead reckoning” instead of GPS. Increasing uncertainty in location.**
+
+## 3) Nondeterministic and/or partially observable: contingency problem
+
+**Actions uncertain, percepts provide new information about current state (adversarial problem if uncertainty comes from other agents).**
+
+– **Solution is a “strategy” to reach the goal.**
+
+**4) Unknown state space and uncertain action effects: exploration problem**
+
+**Solution is a “strategy” to reach the goal (end explore environment).**
+
+<!-- page: 9 -->
+
+## Example: Vacuum world state space graph (Russell & Norvig)
+
+![](images/page_8_image_1.jpg)
+
+**Goal (reach one in this set of states)**
+
+<strong><u>states?</u></strong> **The agent is in one of 8 possible world states.**
+
+<strong><u>actions?</u></strong> **Left, Right, Suck [simplified: left out No-op]**
+
+<strong><u>goal test?</u></strong> **No dirt at all locations (i.e., in one of bottom two states).**
+
+<strong><u>path cost?</u></strong> **1 per action: counts # of actions**
+
+**Minimum path from Start to Goal state:** 3 actions **Alternative, longer plan: 4 actions**
+
+**Note: path with thousands of steps before reaching goal also exists.**
+
+<!-- page: 10 -->
+
+Start State
+
+## Example: The 8-puzzle “sliding tile puzzle”
+
+![](images/page_9_image_2.jpg)
+
+![](images/page_9_image_3.jpg)
+
+Goal State
+
+Aside: variations on goal state. eg empty square bottom right or in middle.
+
+**states? the boards, i.e., locations of tiles actions? move blank left, right, up, down** <strong><u>goal test?</u></strong> **goal state (given on right; tiles in order)** <strong><u>path cost?</u></strong> **1 per move**
+
+**Note: finding optimal solution of n-puzzle family is NP-hard! Also, from certain states you can’t reach the goal. Total number of states 9! = 362,880 (more interesting space; not all connected… only half can reach goal state)**
+
+<!-- page: 11 -->
+
+**Goal state**
+
+**15-puzzle**
+
+1 2 3 4 5 6 8 9 10 11 12 13 14 15
+
+**Korf (UCLA): Disk errors become a problem. (cosmic rays)**
+
+**Longest minimum path: 80 moves. Just 17 boards, e.g,**
+
+12 13 15 1110 14 3 7 2 5 4 8 6 1
+
+**Average minimum soln. length: 53.**
+
+**People can find solns. But not necessarily minimum length. See** <strong><u>solve it!</u></strong> **(Gives strategy.)**
+
+**Korf, R., and Schultze, P. 2005. Large-scale parallel breadth-first search. In Proceedings of the 20th National Conference on Artificial Intelligence (AAAI-05). See** <strong><u>Fifteen Puzzle Optimal Solver</u></strong>**. With effective search: opt. solutions in seconds! Average: milliseconds.**
+
+<!-- page: 12 -->
+
+Where are the 10 trillion states?
+
+![](images/page_11_chart_1.jpg)
+
+minimum distance from goal state (# moves)
+
+| dist. | # states |
+| --- | --- |
+| 0 | 1 |
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 10 |
+| 4 | 24 |
+| 5 | 54 |
+
+etc.
+
+![](images/page_11_chart_5.jpg)
+
+![](images/page_11_image_6.jpg)
+
+<!-- page: 13 -->
+
+![](images/page_12_image_0.jpg)
+
+Intriguing similarities. Each number has its own few locations.
+
+![](images/page_12_image_2.jpg)
+
+## 17 boards farthest away from goal state (80 moves)
+
+![](images/page_12_image_4.jpg)
+
+Each require 80 moves to reach:
+
+![](images/page_12_image_6.jpg)
+
+![](images/page_12_image_7.jpg)
+
+**(Extremal Combinatorics, e.g. LeBras, Gomes, and Selman AAAI-12)**
+
+<!-- page: 14 -->
+
+![](images/page_13_image_0.jpg)
+
+**17 boards farthest away from goal state (80 moves)**
+
+<table><tr><td rowspan="4"></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>11</td><td>9</td><td>13</td><td></td><td>15</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>14</td><td>13</td><td></td></tr><tr><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>14</td><td>9</td><td>12</td><td>15</td><td>10</td><td>14</td><td>11</td><td>12</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>9</td><td>10</td></tr><tr><td>3</td><td>7</td><td>2</td><td>5</td><td>3</td><td>7</td><td>2</td><td>5</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td></tr><tr><td>4</td><td>8</td><td>6</td><td>1</td><td>4</td><td>8</td><td>6</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td></tr><tr><td rowspan="4"></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>11</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>14</td><td>13</td><td></td></tr><tr><td>15</td><td>11</td><td>14</td><td>9</td><td>15</td><td>14</td><td>10</td><td>9</td><td>15</td><td>11</td><td>9</td><td>14</td><td>15</td><td>11</td><td>14</td><td>10</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>9</td><td>10</td></tr><tr><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>7</td><td>3</td><td>6</td><td>2</td><td>3</td><td>8</td><td>6</td><td>2</td><td>8</td><td>3</td><td>6</td><td>2</td><td>8</td><td>3</td><td>6</td><td>2</td></tr><tr><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td></tr><tr><td rowspan="4"></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>14</td><td>9</td><td>15</td><td>8</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>8</td><td>6</td><td>2</td><td>7</td><td>8</td><td>6</td><td>2</td><td>11</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>5</td><td>6</td><td>7</td><td>8</td><td>5</td><td>6</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>8</td><td>2</td><td>1</td><td>4</td><td>3</td><td>2</td><td>1</td><td></td><td></td><td></td><td></td></tr></table>
+
+There is one very special case: Most “regular” extreme case: Goal state
+
+**Each quadrant reflected along diagonal. “move tiles furthest away**
+
+![](images/page_13_image_5.jpg)
+
+Thanks to Jonathan GS
+
+<!-- page: 15 -->
+
+A few urls:
+
+<u>Play the eight puzzle on-line</u>
+
+<u>Play the fifteen puzzle on-line</u>
+
+**Let’s consider the search for a solution.**
+
+<!-- page: 16 -->
+
+![](images/page_15_image_1.jpg)
+
+<!-- page: 17 -->
+
+![](images/page_16_image_0.jpg)
+
+**For 15-puzzle, hard initial states: 80 levels deep, requires exploring approx.** $2 ^ { \wedge } 8 0 \approx 1 0 ^ { \wedge } 2 4$ **states.**
+
+**If we block all duplicates, we get closer to 10 trillion (the number of distinct states: still a lot!).**
+
+**Really only barely feasible on compute cluster with lots of memory and compute time. (Raw numbers for 24 puzzle: truly infeasible.)**
+
+**Can we avoid generating all these boards? Do with much less search? (Key: bring average branching factor down.)**
+
+<!-- page: 18 -->
+
+**Gedanken experiment: Assume that you knew for each state, the minimum number of moves to the final goal state. (Table too big, but assume there is some formula/algorithm based on the board pattern that gives this number for each board and quickly.)**
+
+**Using the minimum distance information, is there a clever way to find a minimum length sequence of moves leading from the start state to the goal state? What is the algorithmic strategy?**
+
+<!-- page: 19 -->
+
+![](images/page_18_image_1.jpg)
+
+<!-- page: 20 -->
+
+**For 15-puzzle, hard initial states: 80 levels deep, requires exploring approx.** $2 ^ { \wedge } 8 0 \approx 1 0 ^ { \wedge } 2 4$ **states.**
+
+But, with distance oracle, we would only need to explore roughly $80 \div 2 =$ **160 states! (only linear in size of solution length)**
+
+**We may not have the exact distance function (“perfect heuristics”), but we can still “guide” the search using an approximate distance function.**
+
+**This is the key idea behind “heuristic search” or “knowledge-based search.” We use knowledge / heuristic information about the distance to the goal to guide our search process. We can go from exponential to polynomial or even linear complexity. More common: brings exponent down significantly. E.g. from 2^L to 2^(L/100).**
+
+The measure we considered would be the “perfect” heuristic. Eliminates tree search! Find the right “path” to goal state immediately.
+
+<!-- page: 21 -->
+
+**Basic idea: State evaluation function can effectively guide search.**
+
+**Also in multi-agent settings. (Chess: board eval.)**
+
+![](images/page_20_image_2.jpg)
+
+**Reinforcement learning: Learn the state eval function.**
+
+General question: Given a state space, how good a heuristics can we find?
+
+<!-- page: 22 -->
+
+## State evaluation functions or “heuristics”
+
+**Provide guidance in terms of what action to take next.**
+
+**General principle: Consider all neighboring states, reachable via some action. Then select the action that leads to the state with the highest utility (evaluation value). This is a fully greedy approach.**
+
+**Aside: “Highest utility” was “shortest distance to the goal” in previous example.**
+
+**Because eval function is often only an estimate of the true state value, greedy search may not find the optimum path to the goal.**
+
+**By adding some search with certain guarantees on the approximation, we can still get optimal behavior (A\* search) (i.e. finding the optimal path to the solution). Overall result: generally exponentially less search required.**
+
+<!-- page: 23 -->
+
+**N-puzzle heuristics (“State evaluation function” wrt the goal to be reached):**
+
+**1) Manhattan Distance: For each tile the number of grid units between its current location and its goal location are counted and the values for all tiles are summed up. (underestimate; too “loose”; not very powerful)**
+
+**2) Felner, Ariel, Korf, Richard E., Hanan, Sarit, Additive Pattern Database Heuristics, Journal of Artificial Intelligence Research 22 (2004) 279-318. The 78 Pattern Database heuristic takes a lot of memory but solves a random instance of the 15-puzzle within a few milliseconds on average. Finding an optimal solution (80 moves cases) takes a few seconds each. So, thousands of nodes considered instead of many billions.**
+
+**Note: many approx. heuristics (“conservative” / underestimates to goal) combined with search can still find optimal solutions.**
+
+<!-- page: 24 -->
+
+```txt
+In practice, we only know (so far) of an approximation of f.
+f(board) → [-1,+1] (interval from -1 to +1)
+based on “values” of chess pieces, e.g., pawn 1 point, rook 5 points.
+Informally, board value gives “probability (?) of winning.”
+```
+
+**State evaluation function (or utility value) is a very general and useful idea.**
+
+**Example:**
+
+![](images/page_23_image_3.jpg)
+
+**In chess, given a board, what would be the perfect evaluation value that you would want to know? (Assume the perspective of White player.**)
+
+**A: f(board)** à **{+1, 0, -1}, with +1 for guaranteed win for White, 0 draw under perfect play, and -1 loss under perfect play.**
+
+**Perfect play: all powerful opponent.**
+
+**Given f, how would you play then?**
+
+<!-- page: 25 -->
+
+## State evaluation function (or utility
+
+**value) is a very general and useful idea.**
+
+## Examples:
+
+**TD-Gammon backgammon player. Neural net was trained to find approximately optimal state (board) evaluation values (range [-1,+1]). (Tesauro 1995)**
+
+• **“Robocopter” --- automated helicopter control;**
+
+**trained state evaluation function. State given by features, such as, position, orientation, speed, and rotors position and speed. Possible actions: change rotors speed and angle. Evaluation: assigns value in [-1,+1] to capture stability.**
+
+![](images/page_24_image_6.jpg)
+
+(Abbeel, Coates, and Ng 2008)
+
+<!-- page: 26 -->
+
+## Example: Robotic assembly
+
+![](images/page_25_image_1.jpg)
+
+<strong><u>states?</u></strong>**: real-valued coordinates of robot joint angles parts of the object to be assembled**
+
+**actions?: continuous motions of robot joints**
+
+<strong><u>goal test?</u></strong>**: complete assembly**
+
+<strong><u>path cost?</u></strong>**: time to execute**
+
+<!-- page: 27 -->
+
+## Other example search tasks
+
+**VLSI layout: positioning millions of components and connections on a chip to minimize area, circuit delays, etc.**
+
+**Robot navigation / planning**
+
+**Automatic assembly of complex objects**
+
+**Protein design: sequence of amino acids that will fold into the 3- dimensional protein with the right properties.**
+
+**Literally thousands of combinatorial search / reasoning / parsing / matching problems can be formulated as search problems in exponential size state spaces.**
+
+**Any type of task where the solution is “hiding” in an exponential / combinatorial space of possibilities.**
+
+**Key aspect of intelligence: Our ability to deal with such spaces.**
+
+<!-- page: 28 -->
+
+## Search Techniques
+
+<!-- page: 29 -->
+
+## Searching for a (shortest / least cost) path to goal state(s).
+
+**Search through the state space.**
+
+**We will consider search techniques that use an explicit search tree that is generated by the initial state + successor function.**
+
+**Loop**
+
+![](images/page_28_image_4.jpg)
+
+**goal node?** à **done**
+
+**expand node with successor function**
+
+<!-- page: 30 -->
+
+## Basic idea:
+
+**simulated exploration of state space by generating successors of already-explored states (a.k.a. \~ expanding states)**
+
+```txt
+function TREE-SEARCH(problem, strategy) returns a solution, or failure
+initialize the search tree using the initial state of problem
+loop do
+    if there are no candidates for expansion then return failure
+    choose a leaf node for expansion according to strategy
+    if the node contains a goal state then return the corresponding solution
+    else expand the node and add the resulting nodes to the search tree
+```
+
+## Fig. 3.7 R&N, p. 77
+
+**Note: 1) Here we only check a node for possibly being a goal state, after we select the node for expansion.**
+
+**2) A “node” is a data structure containing state + additional info (parent node, etc.**
+
+<!-- page: 31 -->
+
+## Tree search example
+
+Node selected for expansion.
+
+![](images/page_30_image_2.jpg)
+
+![](images/page_30_image_3.jpg)
+
+<!-- page: 32 -->
+
+**Nodes added to tree.**
+
+![](images/page_31_image_1.jpg)
+
+![](images/page_31_image_2.jpg)
+
+<!-- page: 33 -->
+
+**Selected for expansion.**
+
+![](images/page_32_image_1.jpg)
+
+**Added to tree.**
+
+**Note: Arad added (again) to tree! (reachable from Sibiu)**
+
+**Not necessarily a problem, but in Graph-Search, we will avoid this by maintaining an “explored” list.**
+
+![](images/page_32_image_5.jpg)
+
+<!-- page: 34 -->
+
+## Graph-search
+
+| function GRAPH-SEARCH(problem) returns a solution, or failure |
+| --- |
+| initialize the frontier using the initial state of problem |
+| initialize the explored set to be empty |
+| loop do |
+| if the frontier is empty then return failure |
+| choose a leaf node and remove it from the frontier |
+| if the node contains a goal state then return the corresponding solution |
+| add the node to the explored set |
+| expand the chosen node, adding the resulting nodes to the frontier |
+| only if not in the frontier or explored set |
+
+Fig. 3.7 R&N, p. 77. See also exercise 3.13.
+
+**Note:**
+
+**1) Uses “explored” set to avoid visiting already explored states.**
+
+2) Uses “frontier” set to store states that remain to be explored and expanded.
+
+**3) However, with eg uniform cost search, we need to make a special check when node (i.e. state) is on frontier. Details later.**
+
+<!-- page: 35 -->
+
+**A search strategy is defined by picking the order of node expansion.**
+
+**Strategies are evaluated along the following dimensions:**
+
+– **completeness: does it always find a solution if one exists?**
+
+– **time complexity: number of nodes generated**
+
+– **space complexity: maximum number of nodes in memory**
+
+– **optimality: does it always find a least-cost solution?**
+
+**Time and space complexity are measured in terms of**
+
+– **b: maximum branching factor of the search tree**
+
+– **d: depth of the least-cost solution**
+
+– **m: maximum depth of the state space (may be ∞)**
+
+<!-- page: 36 -->
+
+**Uninformed search strategies**
+
+**Uninformed (blind) search strategies use only the information available in the problem definition:**
+
+– **Breadth-first search**
+
+– **Uniform-cost search**
+
+– **Depth-first search**
+
+– **Depth-limited search**
+
+– **Iterative deepening search**
+
+– **Bidirectional search**
+
+**Key issue: type of queue used for the fringe of the search tree (collection of tree nodes that have been generated but not yet expanded)**
+
+<!-- page: 37 -->
+
+**Expand shallowest unexpanded node.**
+
+**Implementation:**
+
+**fringe is a FIFO queue, i.e., new nodes go at end** Fringe queue: &lt;A&gt; **(First In First Out queue.)**
+
+![](images/page_36_image_4.jpg)
+
+**Select A from queue and expand.**
+
+Gives&lt;B, C&gt;
+
+<!-- page: 38 -->
+
+![](images/page_37_image_1.jpg)
+
+Select B from front, and expand.
+
+Put children at the end.
+
+**Gives &lt;C, D, E&gt;**
+
+<!-- page: 39 -->
+
+![](images/page_38_image_1.jpg)
+
+<!-- page: 40 -->
+
+![](images/page_39_image_1.jpg)
+
+**Assuming no further children, queue becomes** $< E , F , G > , < F , G > , < G > , < >$ **. Each time node checked for goal state.**
+
+<!-- page: 41 -->
+
+## Properties of breadth-first search
+
+<u>Complete?</u> Yes (if b is finite)
+
+**Note: check for goal only when node is expanded.**
+
+<u>Time?</u> $I + b + b ^ { 2 } + b ^ { 3 } + \cdots + b ^ { d } + b ( b ^ { d } - I ) = \mathrm { O } ( b ^ { d + 1 } )$ Depth d, goal Why? may be last
+
+<u>Space?</u> $O ( b ^ { d + I } )$ (keeps every node in memory;
+
+needed also to reconstruct soln. path) expanded.).
+
+<u>Optimal soln. found?</u>
+
+Yes (if all step costs are identical)
+
+## Space is the bigger problem (more than time)
+
+b: maximum branching factor of the search tree
+
+d: depth of the least-cost solution
+
+<!-- page: 42 -->
+
+**Expand least-cost (of path to) unexpanded node**
+
+**(e.g. useful for finding shortest path on map)**
+
+**Implementation:**
+
+– **fringe = queue ordered by path cost**
+
+**g – cost of reaching a node**
+
+<u>Complete?</u> Yes, if step cost $\geq \varepsilon ( > 0 )$
+
+<u>Time?</u> # of nodes with $g \leq$ cost of optimal solution (C\*), $O ( b ^ { ( I + / C ^ { * } / \varepsilon / ) }$
+
+<u>Space?</u> # of nodes with $g \leq$ cost of optimal solution, $\overline { { O ( b ^ { ( I + \left\langle C ^ { * } / \varepsilon \right\rangle ) } ) } }$
+
+<u>Optimal?</u> Yes – nodes expanded in increasing order of $g ( n )$
+
+Note: Some subtleties (e.g. checking for goal state).
+
+See p 84 R&N. Also, next slide.
+
+<!-- page: 43 -->
+
+## Uniform-cost search
+
+**Two subtleties: (bottom p. 83 Norvig)**
+
+**1) Do goal state test, only when a node is selected for expansion. (Reason: Bucharest may occur on frontier with a longer than optimal path. It won’t be selected for expansion yet. Other nodes will be expanded first, leading us to uncover a shorter path to Bucharest. See also point 2).**
+
+**2) Graph-search alg. says “don’t add child node to frontier if already on explored list or already on frontier.” BUT, child may give a shorter path to a state already on frontier. Then, we need to modify the existing node on frontier with the shorter path. See fig. 3.14 (else-if part).**
+
+<!-- page: 44 -->
+
+## “Expand deepest unexpanded node”
+
+**Implementation:**
+
+– **fringe = LIFO queue, i.e., put successors at front (“push on stack”)**
+
+**Last In First Out**
+
+![](images/page_43_image_5.jpg)
+
+**Fringe stack:** A
+
+**Expanding A, gives stack:**
+
+**So, B next.**
+
+<!-- page: 45 -->
+
+![](images/page_44_image_0.jpg)
+
+**So, D next.**
+
+<!-- page: 46 -->
+
+**Expanding D, gives stack:**
+
+![](images/page_45_image_1.jpg)
+
+**So, H next. etc.**
+
+<!-- page: 47 -->
+
+![](images/page_46_image_0.jpg)
+
+<!-- page: 48 -->
+
+![](images/page_47_image_0.jpg)
+
+<!-- page: 49 -->
+
+![](images/page_48_image_0.jpg)
+
+<!-- page: 50 -->
+
+![](images/page_49_image_0.jpg)
+
+<!-- page: 51 -->
+
+![](images/page_50_image_0.jpg)
+
+<!-- page: 52 -->
+
+![](images/page_51_image_0.jpg)
+
+<!-- page: 53 -->
+
+![](images/page_52_image_0.jpg)
+
+<!-- page: 54 -->
+
+![](images/page_53_image_0.jpg)
+
+<!-- page: 55 -->
+
+![](images/page_54_image_0.jpg)
+
+<!-- page: 56 -->
+
+**What is main advantage over breadth first search?**
+
+What information is stored? How much storage required?
+
+The stack. O(depth x branching).
+
+<!-- page: 57 -->
+
+## Properties of depth-first search
+
+<strong><u>Complete?</u></strong>No: fails in infinite-depth spaces, spaces with loops Modify to avoid repeated states along path à complete in finite spaces
+
+## Time? O(b<sup>m</sup>): bad if m is much larger than d
+
+– but if solutions are dense, may be much faster than breadth-first
+
+## Space?
+
+**O(bm), i.e., linear space!**
+
+<strong><u>Guarantee that opt. soln. is found?</u></strong>
+
+**Note: Can also reconstruct soln. path from single stored branch.**
+
+**b: max. branching factor of the search tree d: depth of the shallowest (least-cost) soln. m: maximum depth of state space**
+
+Note: In “backtrack search” only one successor is generated à only O(m) memory is needed; also successor is modification of the current state, but we have to be able to undo each modification. More when we talk about Constraint Satisfaction Problems (CSP).
+
+<!-- page: 58 -->
+
+```txt
+function ITERATIVE-DEEPENING-SEARCH( problem) returns a solution, or failure
+    inputs: problem, a problem
+    for depth ← 0 to ∞ do
+        result ← DEPTH-LIMITED-SEARCH( problem, depth)
+        if result ≠ cutoff then return result
+```
+
+<!-- page: 59 -->
+
+**Iterative deepening search l =0**
+
+<!-- page: 60 -->
+
+**Iterative deepening search l =1**
+
+![](images/page_59_image_1.jpg)
+
+<!-- page: 61 -->
+
+## Iterative deepening search l =2
+
+![](images/page_60_image_1.jpg)
+
+<!-- page: 62 -->
+
+## Iterative deepening search l =3
+
+![](images/page_61_image_1.jpg)
+
+<!-- page: 63 -->
+
+## Why would one do that?
+
+## Combine good memory requirements of depth-first with the completeness of breadth-first when branching factor is finite and is optimal when the path cost is a non-decreasing function of the depth of the node.
+
+**Idea was a breakthrough in game playing. All game tree search uses iterative deepening nowadays. What’s the added advantage in games?**
+
+**“Anytime” nature.**
+
+<!-- page: 64 -->
+
+## Iterative deepening search
+
+**Number of nodes generated in an iterative deepening search to depth d with branching factor b:** One search “One search
+
+**Looks quite wasteful, is it?**
+
+**depth d”**
+
+$$
+\mathbf {N} _ {\mathrm{IDS}} = \mathbf {d b ^ {1}} + (\mathbf {d - 1}) \mathbf {b ^ {2}} + \dots + 3 \mathbf {b ^ {d - 2}} + 2 \mathbf {b ^ {d - 1}} + 1 \mathbf {b ^ {d}}
+$$
+
+**Nodes generated in a breadth-first search with branching factor b:**
+
+$$
+\mathbf {N} _ {\mathrm{BFS}} = \boldsymbol {b} ^ {1} + \boldsymbol {b} ^ {2} + \ldots + \boldsymbol {b} ^ {d - 2} + \boldsymbol {b} ^ {d - 1} + \boldsymbol {b} ^ {d}
+$$
+
+For $b = I \theta ,   d = 5 ,$
+
+$$
+- \mathrm{N} _ {\mathrm{BFS}} = 1 0 + 1 0 0 + 1, 0 0 0 + 1 0, 0 0 0 + 1 0 0, 0 0 0 = 1 1 1, 1 1 0
+$$
+
+$$
+- \mathrm{N} _ {\mathrm{IDS}} = 5 0 + 4 0 0 + 3, 0 0 0 + 2 0, 0 0 0 + 1 0 0, 0 0 0 = 1 2 3, 4 5 6
+$$
+
+![](images/page_63_image_10.jpg)
+
+**Iterative deepening is the preferred uninformed search method when there is a large search space and the depth of the solution is not known.**
+
+<!-- page: 65 -->
+
+## Properties of iterative deepening search
+
+<strong><u>Complete?</u></strong> **Yes**
+
+**(b finite)**
+
+<strong><u>Time?</u></strong> $d b ^ { I } + ( d - I ) b ^ { 2 } + \cdots + b ^ { d } = O ( b ^ { d } )$
+
+<strong><u>Space?</u></strong> **O(bd)**
+
+<strong><u>Optimal?</u></strong> **Yes, if step costs identical**
+
+<!-- page: 66 -->
+
+## Bidirectional Search
+
+**Simultaneously:**
+
+– **Search forward from start**
+
+– **Search backward from the goal Stop when the two searches meet.**
+
+**If branching factor = b in each direction, with solution at depth d** è only $\mathrm{O}(2\mathrm{~b}^{\mathrm{d} / 2})=\mathrm{O}(2\mathrm{~b}^{\mathrm{d} / 2})$
+
+![](images/page_65_image_5.jpg)
+
+**Checking a node for membership in the other search tree can be done in constant time (hash table)**
+
+**Key limitations:**
+
+Space $\mathrm { O } (  { \mathbb { b } } ^ {  { \mathrm { d } } / 2 } )$
+
+**Also, how to search backwards can be an issue (e.g., in Chess)? What’s tricky?**
+
+**Problem: lots of states satisfy the goal; don’t know which one is relevant.**
+
+**Aside: The predecessor of a node should be easily computable (i.e., actions are easily reversible).**
+
+<!-- page: 67 -->
+
+![](images/page_66_image_2.jpg)
+
+![](images/page_66_image_3.jpg)
+
+**Problems in which actions are reversible (e.g., routing problems or sliding-blocks puzzle). Also, in eg Chess; uses hash tables to check for repeated states. Huge tables 100M+ size but very useful.**
+
+**See Tree-Search vs. Graph-Search in Fig. 3.7 R&N. But need to be careful to maintain (path) optimality and completeness.**
+
+<!-- page: 68 -->
+
+## Summary: General, uninformed search
+
+**Original search ideas in AI where inspired by studies of human problem solving in, eg, puzzles, math, and games, but a great many AI tasks now require some form of search (e.g. find optimal agent strategy; active learning; constraint reasoning; NP-complete problems require search).**
+
+**Problem formulation usually requires abstracting away real-world details to define a state space that can feasibly be explored.**
+
+**Variety of uninformed search strategies**
+
+**Iterative deepening search uses only linear space and not much more time than other uninformed algorithms.**
+
+**Avoid repeating states / cycles.**

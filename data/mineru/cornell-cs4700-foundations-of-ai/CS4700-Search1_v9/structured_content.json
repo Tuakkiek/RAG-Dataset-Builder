@@ -1,0 +1,4699 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.738,
+            0.356,
+            0.918,
+            0.417
+          ],
+          "content": "**CS 4700:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.425,
+            0.921,
+            0.495
+          ],
+          "content": "**Foundations of Artificial Intelligence**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.379,
+            0.571,
+            0.628,
+            0.635
+          ],
+          "content": "**Bart Selman**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.241,
+            0.712,
+            0.766,
+            0.851
+          ],
+          "content": "**Problem Solving by Search R&N: Chapter 3**"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.711,
+            0.105,
+            0.96,
+            0.159
+          ],
+          "level": 2,
+          "content": "Introduction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.201,
+            0.853,
+            0.286
+          ],
+          "content": "**“Search” is one of earliest areas studied in AI. Well-developed and understood.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.35,
+            0.81,
+            0.393
+          ],
+          "content": "**Originated with Newell and Simon**’**s work on problem solving;**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.405,
+            0.446,
+            0.447
+          ],
+          "content": "**Human Problem Solving (1972).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.513,
+            0.608,
+            0.554
+          ],
+          "content": "**Automated reasoning is a natural search task.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.617,
+            0.658,
+            0.823
+          ],
+          "content": "**More recently: Given that almost all AI formalisms (planning, learning, etc) are NP-Complete or worse, some form of search (or optimization) is generally unavoidable (i.e., no smarter algorithm available).**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.699,
+            0.405,
+            0.988,
+            0.758
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.884,
+            0.796,
+            0.927
+          ],
+          "content": "**Note: search and combinatorial optimization are closely related.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.809,
+            0.104,
+            0.962,
+            0.161
+          ],
+          "content": "Outline"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.11,
+            0.299,
+            0.894,
+            0.725
+          ],
+          "sub_type": "code",
+          "content": "```txt\nProblem-solving agents\nProblem types\nProblem formulation\nExample problems\nBasic search algorithms (quick; most you already know!)\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.047,
+            0.48,
+            0.096
+          ],
+          "content": "**More details on “states” soon.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.125,
+            0.787,
+            0.177
+          ],
+          "content": "**Problem solving agents are goal-directed agents:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.251,
+            0.873,
+            0.407
+          ],
+          "content": "**1. Goal Formulation: Set of one or more (desirable) world states (e.g. “checkmate opponent in chess” or “reach vacation destination”).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.422,
+            0.838,
+            0.527
+          ],
+          "content": "**2. Problem formulation: What actions and states to consider given a goal and an initial state.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.539,
+            0.885,
+            0.698
+          ],
+          "content": "**3. Search for solution: Given the problem, search for a solution --- a sequence of actions to achieve the goal starting from the initial state.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.711,
+            0.501,
+            0.76
+          ],
+          "content": "**4. Execution of the solution**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.794,
+            0.896,
+            0.953
+          ],
+          "content": "**Note: Formulation may feel somewhat “contrived,” but is meant to model very general (human/computer) problem solving process.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.006,
+            0.038,
+            0.184,
+            0.075
+          ],
+          "level": 2,
+          "content": "Formulate goal :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.078,
+            0.263,
+            0.149
+          ],
+          "content": "**be in Bucharest (Romania)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.005,
+            0.189,
+            0.231,
+            0.226
+          ],
+          "level": 2,
+          "content": "Formulate problem:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.23,
+            0.34,
+            0.333
+          ],
+          "content": "**action: drive between pair of connected cities (direct road)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.375,
+            0.284,
+            0.487
+          ],
+          "content": "**state: traveler in a certain city (20 world states)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.006,
+            0.525,
+            0.162,
+            0.561
+          ],
+          "level": 2,
+          "content": "Find solution:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.566,
+            0.318,
+            0.731
+          ],
+          "content": "**sequence of cities leading from start to goal state, e.g., Arad, Sibiu, Fagaras, Bucharest**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.006,
+            0.774,
+            0.12,
+            0.809
+          ],
+          "level": 2,
+          "content": "Execution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.813,
+            0.34,
+            0.915
+          ],
+          "content": "**drive from Arad to Bucharest according to the solution**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.416,
+            0.018,
+            0.959,
+            0.074
+          ],
+          "level": 2,
+          "content": "Example: Path Finding problem"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.388,
+            0.132,
+            0.953,
+            0.556
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.471,
+            0.586,
+            0.932,
+            0.709
+          ],
+          "content": "**Environment: fully observable (map), deterministic, and the agent knows effects of each action.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.345,
+            0.733,
+            0.981,
+            0.958
+          ],
+          "content": "**Note: Map is somewhat of a “toy” example. Our real interest: Exponentially large spaces, with e.g. 10^100 or more states. Far beyond full search. Humans can often still handle those! (We need to define a distance measure.) One of the mysteries of cognition.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.424,
+            0.025,
+            0.969,
+            0.077
+          ],
+          "level": 2,
+          "content": "Micro-world: The Blocks World"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.071,
+            0.139,
+            0.123
+          ],
+          "content": "**gripper**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.024,
+            0.079,
+            0.467,
+            0.401
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.133,
+                0.406,
+                0.347,
+                0.441
+              ],
+              "content": "(a) \"Pick up a big red block.\""
+            }
+          ],
+          "image_source": "images/page_5_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.537,
+            0.087,
+            0.977,
+            0.397
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.542,
+                0.407,
+                0.976,
+                0.463
+              ],
+              "content": "(b) \"Find a block which is taller than the one you are holding and put it into the box."
+            }
+          ],
+          "image_source": "images/page_5_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.525,
+            0.29,
+            0.681
+          ],
+          "content": "How many different possible world states?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.037,
+            0.469,
+            0.775,
+            0.915
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.314,
+                0.918,
+                0.683,
+                0.975
+              ],
+              "content": "(c) \"Will you please stack up both of the red blocks and either a green cube or a pyramid?\""
+            }
+          ],
+          "image_source": "images/page_5_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.512,
+            0.909,
+            0.562
+          ],
+          "content": "a) Tens?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.787,
+            0.564,
+            0.978,
+            0.615
+          ],
+          "content": "b) Hundreds?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.618,
+            0.989,
+            0.668
+          ],
+          "content": "c) Thousands?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.671,
+            0.961,
+            0.721
+          ],
+          "content": "d) Millions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.725,
+            0.953,
+            0.775
+          ],
+          "content": "e) Billions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.779,
+            0.956,
+            0.831
+          ],
+          "content": "f) Trillions?"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.033,
+            0.973,
+            0.24
+          ],
+          "content": "**Size state space of blocks world example n = 8 objects, k = 9 locations to build towers, one gripper. (One location in box.) All objects distinguishable, order matter in towers. (Assume stackable in any order.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.298,
+            0.852,
+            0.344
+          ],
+          "content": "Blocks: Use r-combinations approach from Rosen (section 5.5; CS-2800)."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.05,
+            0.353,
+            0.989,
+            0.669
+          ],
+          "sub_type": "code",
+          "content": "```txt\nconsider 16 = (n + k - 1) \"spots\"\nSelect k - 1 = 8 \"dividers\" to create locations,\n(16 choose 8) ways to do this, e.g.,\n| | --- | - | | --- | | - | Allocate n = 8 objs to remaining spots, 8! ways, e.g.,\n| | 4 1 8 | 5 | | 6 3 7 | | 2 |\na b c d e f g h i assigns 8 objects to the 9 locations\nbased on dividers\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.725,
+            0.943,
+            0.77
+          ],
+          "content": "**So, total number of states (ignoring gripper): (16 choose 8) \\* 8! = 518,918,400**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.779,
+            0.827,
+            0.823
+          ],
+          "content": "**\\* 9 for location gripper: > 4.5 billion states even in this toy domain!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.834,
+            0.97,
+            0.878
+          ],
+          "content": "**Search spaces grow exponentially with domain. Still need to search them, e.g., to**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.017,
+            0.885,
+            0.896,
+            0.93
+          ],
+          "content": "**find a sequence of states (via gripper moves) leading to a desired goal state.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.939,
+            0.356,
+            0.983
+          ],
+          "content": "**How do we represent states?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.42,
+            0.945,
+            0.731,
+            0.999
+          ],
+          "content": "**[predicates / features]**"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "aside_text",
+          "bbox": [
+            0.019,
+            0.205,
+            0.058,
+            0.606
+          ],
+          "content": "Increasing complexity"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.68,
+            0.05,
+            0.96,
+            0.113
+          ],
+          "content": "Problem types"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.155,
+            0.477,
+            0.194
+          ],
+          "level": 2,
+          "content": "1) Deterministic, fully observable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.202,
+            0.95,
+            0.244
+          ],
+          "content": "**Agent knows exactly which state it will be in; solution is a sequence of actions.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.291,
+            0.556,
+            0.329
+          ],
+          "level": 2,
+          "content": "2) Non-observable --- sensorless problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.163,
+            0.34,
+            0.947,
+            0.419
+          ],
+          "content": "**Agent may have no idea where it is (no sensors); it reasons in terms of** <strong><u>belief states</u></strong>**; solution is a sequence actions (effects of actions certain).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.163,
+            0.425,
+            0.845,
+            0.506
+          ],
+          "content": "**Cars: drive by “dead reckoning” instead of GPS. Increasing uncertainty in location.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.563,
+            0.869,
+            0.603
+          ],
+          "level": 2,
+          "content": "3) Nondeterministic and/or partially observable: contingency problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.61,
+            0.922,
+            0.69
+          ],
+          "content": "**Actions uncertain, percepts provide new information about current state (adversarial problem if uncertainty comes from other agents).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.699,
+            0.635,
+            0.739
+          ],
+          "content": "– **Solution is a “strategy” to reach the goal.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.795,
+            0.91,
+            0.835
+          ],
+          "content": "**4) Unknown state space and uncertain action effects: exploration problem**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.843,
+            0.932,
+            0.883
+          ],
+          "content": "**Solution is a “strategy” to reach the goal (end explore environment).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.342,
+            0.032,
+            0.961,
+            0.133
+          ],
+          "level": 2,
+          "content": "Example: Vacuum world state space graph (Russell & Norvig)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.142,
+            0.13,
+            0.816,
+            0.588
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.73,
+            0.436,
+            0.972,
+            0.591
+          ],
+          "content": "**Goal (reach one in this set of states)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.621,
+            0.745,
+            0.664
+          ],
+          "content": "<strong><u>states?</u></strong> **The agent is in one of 8 possible world states.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.667,
+            0.734,
+            0.711
+          ],
+          "content": "<strong><u>actions?</u></strong> **Left, Right, Suck [simplified: left out No-op]**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.719,
+            0.882,
+            0.765
+          ],
+          "content": "<strong><u>goal test?</u></strong> **No dirt at all locations (i.e., in one of bottom two states).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.768,
+            0.599,
+            0.817
+          ],
+          "content": "<strong><u>path cost?</u></strong> **1 per action: counts # of actions**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.829,
+            0.896,
+            0.923
+          ],
+          "content": "**Minimum path from Start to Goal state:** 3 actions **Alternative, longer plan: 4 actions**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.942,
+            0.852,
+            0.987
+          ],
+          "content": "**Note: path with thousands of steps before reaching goal also exists.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.417,
+            0.318,
+            0.445
+          ],
+          "content": "Start State"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.57,
+            0.0,
+            0.961,
+            0.115
+          ],
+          "level": 2,
+          "content": "Example: The 8-puzzle “sliding tile puzzle”"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.18,
+            0.13,
+            0.388,
+            0.409
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.443,
+            0.13,
+            0.649,
+            0.408
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.507,
+                0.417,
+                0.586,
+                0.445
+              ],
+              "content": "Goal State"
+            },
+            {
+              "bbox": [
+                0.738,
+                0.155,
+                0.944,
+                0.423
+              ],
+              "content": "Aside: variations on goal state. eg empty square bottom right or in middle."
+            }
+          ],
+          "image_source": "images/page_9_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.493,
+            0.829,
+            0.705
+          ],
+          "content": "**states? the boards, i.e., locations of tiles actions? move blank left, right, up, down** <strong><u>goal test?</u></strong> **goal state (given on right; tiles in order)** <strong><u>path cost?</u></strong> **1 per move**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.743,
+            0.814,
+            0.925
+          ],
+          "content": "**Note: finding optimal solution of n-puzzle family is NP-hard! Also, from certain states you can’t reach the goal. Total number of states 9! = 362,880 (more interesting space; not all connected… only half can reach goal state)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.025,
+            0.284,
+            0.072
+          ],
+          "content": "**Goal state**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.008,
+            0.621,
+            0.074
+          ],
+          "content": "**15-puzzle**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.107,
+            0.109,
+            0.318,
+            0.389
+          ],
+          "content": "1 2 3 4 5 6 8 9 10 11 12 13 14 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.001,
+            0.996,
+            0.223
+          ],
+          "content": "**Korf (UCLA): Disk errors become a problem. (cosmic rays)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.479,
+            0.855,
+            0.533
+          ],
+          "content": "**Longest minimum path: 80 moves. Just 17 boards, e.g,**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.075,
+            0.546,
+            0.262,
+            0.794
+          ],
+          "content": "12 13 15 1110 14 3 7 2 5 4 8 6 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.363,
+            0.579,
+            0.868,
+            0.632
+          ],
+          "content": "**Average minimum soln. length: 53.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.33,
+            0.669,
+            1.0,
+            0.775
+          ],
+          "content": "**People can find solns. But not necessarily minimum length. See** <strong><u>solve it!</u></strong> **(Gives strategy.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.811,
+            1.0,
+            0.989
+          ],
+          "content": "**Korf, R., and Schultze, P. 2005. Large-scale parallel breadth-first search. In Proceedings of the 20th National Conference on Artificial Intelligence (AAAI-05). See** <strong><u>Fifteen Puzzle Optimal Solver</u></strong>**. With effective search: opt. solutions in seconds! Average: milliseconds.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.021,
+            0.078,
+            0.984,
+            0.555
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.281,
+                0.024,
+                0.743,
+                0.072
+              ],
+              "content": "Where are the 10 trillion states?"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.272,
+                0.56,
+                0.908,
+                0.607
+              ],
+              "content": "minimum distance from goal state (# moves)"
+            }
+          ],
+          "image_source": "images/page_11_chart_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.025,
+            0.623,
+            0.312,
+            0.951
+          ],
+          "content": "| dist. | # states |\n| --- | --- |\n| 0 | 1 |\n| 1 | 2 |\n| 2 | 4 |\n| 3 | 10 |\n| 4 | 24 |\n| 5 | 54 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.155,
+                0.964,
+                0.209,
+                1.0
+              ],
+              "content": "etc."
+            }
+          ],
+          "image_source": "images/page_11_table_3.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.379,
+            0.631,
+            0.74,
+            0.932
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_chart_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.831,
+            0.63,
+            0.952,
+            0.79
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.02,
+            0.237,
+            0.118,
+            0.341
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.172,
+                0.739,
+                0.698,
+                0.842
+              ],
+              "content": "Intriguing similarities. Each number has its own few locations."
+            }
+          ],
+          "image_source": "images/page_12_image_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.025,
+            0.027,
+            0.163,
+            0.22
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.223,
+            0.067,
+            0.953,
+            0.121
+          ],
+          "level": 2,
+          "content": "17 boards farthest away from goal state (80 moves)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.179,
+            0.143,
+            0.901,
+            0.639
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.198,
+                0.669,
+                0.663,
+                0.719
+              ],
+              "content": "Each require 80 moves to reach:"
+            }
+          ],
+          "image_source": "images/page_12_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.74,
+            0.653,
+            0.86,
+            0.811
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.87,
+            0.827,
+            0.971,
+            0.916
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.953,
+            0.92,
+            0.996
+          ],
+          "content": "**(Extremal Combinatorics, e.g. LeBras, Gomes, and Selman AAAI-12)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.371,
+            0.685,
+            0.536,
+            0.904
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.222,
+            0.024,
+            0.953,
+            0.074
+          ],
+          "content": "**17 boards farthest away from goal state (80 moves)**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.18,
+            0.076,
+            0.904,
+            0.571
+          ],
+          "content": "<table><tr><td rowspan=\"4\"></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>11</td><td>9</td><td>13</td><td></td><td>15</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>14</td><td>13</td><td></td></tr><tr><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>14</td><td>9</td><td>12</td><td>15</td><td>10</td><td>14</td><td>11</td><td>12</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>9</td><td>10</td></tr><tr><td>3</td><td>7</td><td>2</td><td>5</td><td>3</td><td>7</td><td>2</td><td>5</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td></tr><tr><td>4</td><td>8</td><td>6</td><td>1</td><td>4</td><td>8</td><td>6</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td></tr><tr><td rowspan=\"4\"></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>11</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>14</td><td>13</td><td></td></tr><tr><td>15</td><td>11</td><td>14</td><td>9</td><td>15</td><td>14</td><td>10</td><td>9</td><td>15</td><td>11</td><td>9</td><td>14</td><td>15</td><td>11</td><td>14</td><td>10</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>9</td><td>10</td></tr><tr><td>3</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>6</td><td>2</td><td>7</td><td>3</td><td>6</td><td>2</td><td>3</td><td>8</td><td>6</td><td>2</td><td>8</td><td>3</td><td>6</td><td>2</td><td>8</td><td>3</td><td>6</td><td>2</td></tr><tr><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>8</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td><td>4</td><td>7</td><td>5</td><td>1</td></tr><tr><td rowspan=\"4\"></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>10</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td>12</td><td>9</td><td>13</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>14</td><td>9</td><td>15</td><td>8</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td>15</td><td>11</td><td>10</td><td>14</td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>8</td><td>6</td><td>2</td><td>7</td><td>8</td><td>6</td><td>2</td><td>11</td><td>7</td><td>6</td><td>2</td><td>3</td><td>7</td><td>5</td><td>6</td><td>7</td><td>8</td><td>5</td><td>6</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>3</td><td>5</td><td>1</td><td>4</td><td>8</td><td>2</td><td>1</td><td>4</td><td>3</td><td>2</td><td>1</td><td></td><td></td><td></td><td></td></tr></table>",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.047,
+                0.601,
+                0.951,
+                0.673
+              ],
+              "content": "There is one very special case: Most “regular” extreme case: Goal state"
+            }
+          ],
+          "image_source": "images/page_13_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.687,
+            0.291,
+            0.875
+          ],
+          "content": "**Each quadrant reflected along diagonal. “move tiles furthest away**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.798,
+            0.678,
+            0.977,
+            0.914
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.717,
+                0.944,
+                0.982,
+                0.986
+              ],
+              "content": "Thanks to Jonathan GS"
+            }
+          ],
+          "image_source": "images/page_13_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.134,
+            0.198,
+            0.175
+          ],
+          "content": "A few urls:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.238,
+            0.393,
+            0.283
+          ],
+          "content": "<u>Play the eight puzzle on-line</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.291,
+            0.408,
+            0.336
+          ],
+          "content": "<u>Play the fifteen puzzle on-line</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.401,
+            0.538,
+            0.443
+          ],
+          "content": "**Let’s consider the search for a solution.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.019,
+            0.747,
+            0.036,
+            0.775
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.014,
+            0.021,
+            0.989,
+            0.75
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.045,
+            0.816,
+            0.879,
+            0.897
+          ],
+          "content": "Branching factor 1, 2, or 3 (max). So, approx. 2 --- # nodes roughly doubles at each level. Number states of explored nodes grows exponentially with depth."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.721,
+            0.008,
+            0.998,
+            0.245
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.29,
+            0.739,
+            0.387
+          ],
+          "content": "**For 15-puzzle, hard initial states: 80 levels deep, requires exploring approx.** $2 ^ { \\wedge } 8 0 \\approx 1 0 ^ { \\wedge } 2 4$ **states.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.449,
+            0.864,
+            0.545
+          ],
+          "content": "**If we block all duplicates, we get closer to 10 trillion (the number of distinct states: still a lot!).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.61,
+            0.903,
+            0.707
+          ],
+          "content": "**Really only barely feasible on compute cluster with lots of memory and compute time. (Raw numbers for 24 puzzle: truly infeasible.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.769,
+            0.883,
+            0.868
+          ],
+          "content": "**Can we avoid generating all these boards? Do with much less search? (Key: bring average branching factor down.)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.157,
+            0.918,
+            0.362
+          ],
+          "content": "**Gedanken experiment: Assume that you knew for each state, the minimum number of moves to the final goal state. (Table too big, but assume there is some formula/algorithm based on the board pattern that gives this number for each board and quickly.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.423,
+            0.884,
+            0.574
+          ],
+          "content": "**Using the minimum distance information, is there a clever way to find a minimum length sequence of moves leading from the start state to the goal state? What is the algorithmic strategy?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.018,
+            0.747,
+            0.035,
+            0.774
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.016,
+            0.009,
+            0.985,
+            0.751
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.045,
+            0.775,
+            0.784,
+            0.859
+          ],
+          "content": "Branching factor approx. 2. So, with “distance oracle” we only need to explore approx. 2 \\* (min. solution length). (Why 2 times?)"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.045,
+            0.867,
+            0.143
+          ],
+          "content": "**For 15-puzzle, hard initial states: 80 levels deep, requires exploring approx.** $2 ^ { \\wedge } 8 0 \\approx 1 0 ^ { \\wedge } 2 4$ **states.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.203,
+            0.935,
+            0.294
+          ],
+          "content": "But, with distance oracle, we would only need to explore roughly $80 \\div 2 =$ **160 states! (only linear in size of solution length)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.355,
+            0.914,
+            0.455
+          ],
+          "content": "**We may not have the exact distance function (“perfect heuristics”), but we can still “guide” the search using an approximate distance function.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.515,
+            0.971,
+            0.775
+          ],
+          "content": "**This is the key idea behind “heuristic search” or “knowledge-based search.” We use knowledge / heuristic information about the distance to the goal to guide our search process. We can go from exponential to polynomial or even linear complexity. More common: brings exponent down significantly. E.g. from 2^L to 2^(L/100).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.835,
+            0.925,
+            0.935
+          ],
+          "content": "The measure we considered would be the “perfect” heuristic. Eliminates tree search! Find the right “path” to goal state immediately."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.01,
+            0.044,
+            0.436,
+            0.202
+          ],
+          "content": "**Basic idea: State evaluation function can effectively guide search.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.259,
+            0.416,
+            0.365
+          ],
+          "content": "**Also in multi-agent settings. (Chess: board eval.)**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.002,
+            0.013,
+            1.0,
+            0.743
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.417,
+            0.423,
+            0.525
+          ],
+          "content": "**Reinforcement learning: Learn the state eval function.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.011,
+            0.881,
+            0.529,
+            0.983
+          ],
+          "content": "General question: Given a state space, how good a heuristics can we find?"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.523,
+            0.053,
+            0.961,
+            0.166
+          ],
+          "level": 2,
+          "content": "State evaluation functions or “heuristics”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.201,
+            0.745,
+            0.245
+          ],
+          "content": "**Provide guidance in terms of what action to take next.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.305,
+            0.941,
+            0.441
+          ],
+          "content": "**General principle: Consider all neighboring states, reachable via some action. Then select the action that leads to the state with the highest utility (evaluation value). This is a fully greedy approach.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.448,
+            0.94,
+            0.538
+          ],
+          "content": "**Aside: “Highest utility” was “shortest distance to the goal” in previous example.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.6,
+            0.924,
+            0.692
+          ],
+          "content": "**Because eval function is often only an estimate of the true state value, greedy search may not find the optimum path to the goal.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.75,
+            0.976,
+            0.927
+          ],
+          "content": "**By adding some search with certain guarantees on the approximation, we can still get optimal behavior (A\\* search) (i.e. finding the optimal path to the solution). Overall result: generally exponentially less search required.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.131,
+            0.963,
+            0.176
+          ],
+          "content": "**N-puzzle heuristics (“State evaluation function” wrt the goal to be reached):**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.237,
+            0.953,
+            0.373
+          ],
+          "content": "**1) Manhattan Distance: For each tile the number of grid units between its current location and its goal location are counted and the values for all tiles are summed up. (underestimate; too “loose”; not very powerful)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.432,
+            0.97,
+            0.743
+          ],
+          "content": "**2) Felner, Ariel, Korf, Richard E., Hanan, Sarit, Additive Pattern Database Heuristics, Journal of Artificial Intelligence Research 22 (2004) 279-318. The 78 Pattern Database heuristic takes a lot of memory but solves a random instance of the 15-puzzle within a few milliseconds on average. Finding an optimal solution (80 moves cases) takes a few seconds each. So, thousands of nodes considered instead of many billions.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.805,
+            0.911,
+            0.895
+          ],
+          "content": "**Note: many approx. heuristics (“conservative” / underestimates to goal) combined with search can still find optimal solutions.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.021,
+            0.735,
+            0.855,
+            0.943
+          ],
+          "sub_type": "code",
+          "content": "```txt\nIn practice, we only know (so far) of an approximation of f.\nf(board) → [-1,+1] (interval from -1 to +1)\nbased on “values” of chess pieces, e.g., pawn 1 point, rook 5 points.\nInformally, board value gives “probability (?) of winning.”\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.025,
+            0.575,
+            0.14
+          ],
+          "content": "**State evaluation function (or utility value) is a very general and useful idea.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.149,
+            0.144,
+            0.191
+          ],
+          "content": "**Example:**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.662,
+            0.0,
+            0.995,
+            0.266
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.202,
+            0.728,
+            0.353
+          ],
+          "content": "**In chess, given a board, what would be the perfect evaluation value that you would want to know? (Assume the perspective of White player.**)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.414,
+            0.789,
+            0.565
+          ],
+          "content": "**A: f(board)** à **{+1, 0, -1}, with +1 for guaranteed win for White, 0 draw under perfect play, and -1 loss under perfect play.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.574,
+            0.458,
+            0.619
+          ],
+          "content": "**Perfect play: all powerful opponent.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.627,
+            0.443,
+            0.671
+          ],
+          "content": "**Given f, how would you play then?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.02,
+            0.025,
+            0.515,
+            0.075
+          ],
+          "level": 2,
+          "content": "State evaluation function (or utility"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.089,
+            0.574,
+            0.138
+          ],
+          "content": "**value) is a very general and useful idea.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.022,
+            0.15,
+            0.155,
+            0.191
+          ],
+          "level": 2,
+          "content": "Examples:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.202,
+            0.739,
+            0.353
+          ],
+          "content": "**TD-Gammon backgammon player. Neural net was trained to find approximately optimal state (board) evaluation values (range [-1,+1]). (Tesauro 1995)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.415,
+            0.629,
+            0.458
+          ],
+          "content": "• **“Robocopter” --- automated helicopter control;**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.469,
+            0.471,
+            0.834
+          ],
+          "content": "**trained state evaluation function. State given by features, such as, position, orientation, speed, and rotors position and speed. Possible actions: change rotors speed and angle. Evaluation: assigns value in [-1,+1] to capture stability.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.482,
+            0.476,
+            0.974,
+            0.875
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.539,
+                0.911,
+                0.891,
+                0.955
+              ],
+              "content": "(Abbeel, Coates, and Ng 2008)"
+            }
+          ],
+          "image_source": "images/page_24_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.526,
+            0.029,
+            0.994,
+            0.085
+          ],
+          "level": 2,
+          "content": "Example: Robotic assembly"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.164,
+            0.129,
+            0.804,
+            0.473
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.572,
+            0.908,
+            0.677
+          ],
+          "content": "<strong><u>states?</u></strong>**: real-valued coordinates of robot joint angles parts of the object to be assembled**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.681,
+            0.772,
+            0.731
+          ],
+          "content": "**actions?: continuous motions of robot joints**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.735,
+            0.552,
+            0.785
+          ],
+          "content": "<strong><u>goal test?</u></strong>**: complete assembly**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.787,
+            0.503,
+            0.835
+          ],
+          "content": "<strong><u>path cost?</u></strong>**: time to execute**"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.502,
+            0.045,
+            0.969,
+            0.1
+          ],
+          "level": 2,
+          "content": "Other example search tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.145,
+            0.983,
+            0.233
+          ],
+          "content": "**VLSI layout: positioning millions of components and connections on a chip to minimize area, circuit delays, etc.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.295,
+            0.431,
+            0.339
+          ],
+          "content": "**Robot navigation / planning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.349,
+            0.563,
+            0.393
+          ],
+          "content": "**Automatic assembly of complex objects**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.455,
+            0.855,
+            0.546
+          ],
+          "content": "**Protein design: sequence of amino acids that will fold into the 3- dimensional protein with the right properties.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.605,
+            0.959,
+            0.759
+          ],
+          "content": "**Literally thousands of combinatorial search / reasoning / parsing / matching problems can be formulated as search problems in exponential size state spaces.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.819,
+            0.86,
+            0.907
+          ],
+          "content": "**Any type of task where the solution is “hiding” in an exponential / combinatorial space of possibilities.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.917,
+            0.816,
+            0.963
+          ],
+          "content": "**Key aspect of intelligence: Our ability to deal with such spaces.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.342,
+            0.752,
+            0.407
+          ],
+          "level": 2,
+          "content": "Search Techniques"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.159,
+            0.924,
+            0.21
+          ],
+          "level": 2,
+          "content": "Searching for a (shortest / least cost) path to goal state(s)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.257,
+            0.516,
+            0.302
+          ],
+          "content": "**Search through the state space.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.345,
+            0.697,
+            0.478
+          ],
+          "content": "**We will consider search techniques that use an explicit search tree that is generated by the initial state + successor function.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.323,
+            0.595,
+            0.389,
+            0.635
+          ],
+          "content": "**Loop**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.316,
+            0.542,
+            0.842,
+            0.894
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.42,
+            0.723,
+            0.637,
+            0.767
+          ],
+          "content": "**goal node?** à **done**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.42,
+            0.767,
+            0.821,
+            0.811
+          ],
+          "content": "**expand node with successor function**"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.566,
+            0.073,
+            0.96,
+            0.128
+          ],
+          "content": "Tree-search algorithms"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.097,
+            0.212,
+            0.234,
+            0.252
+          ],
+          "level": 2,
+          "content": "Basic idea:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.145,
+            0.263,
+            0.865,
+            0.345
+          ],
+          "content": "**simulated exploration of state space by generating successors of already-explored states (a.k.a. \\~ expanding states)**"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.072,
+            0.385,
+            0.894,
+            0.708
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction TREE-SEARCH(problem, strategy) returns a solution, or failure\ninitialize the search tree using the initial state of problem\nloop do\n    if there are no candidates for expansion then return failure\n    choose a leaf node for expansion according to strategy\n    if the node contains a goal state then return the corresponding solution\n    else expand the node and add the resulting nodes to the search tree\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.081,
+            0.733,
+            0.317,
+            0.779
+          ],
+          "level": 2,
+          "content": "Fig. 3.7 R&N, p. 77"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.798,
+            0.938,
+            0.878
+          ],
+          "content": "**Note: 1) Here we only check a node for possibly being a goal state, after we select the node for expansion.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.878,
+            0.915,
+            0.957
+          ],
+          "content": "**2) A “node” is a data structure containing state + additional info (parent node, etc.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.61,
+            0.04,
+            0.961,
+            0.094
+          ],
+          "level": 2,
+          "content": "Tree search example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.089,
+            0.346,
+            0.179
+          ],
+          "content": "Node selected for expansion."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.025,
+            0.091,
+            0.995,
+            0.498
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.377,
+            0.532,
+            0.939,
+            0.976
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.091,
+            0.322,
+            0.129
+          ],
+          "content": "**Nodes added to tree.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.039,
+            0.131,
+            0.972,
+            0.513
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.404,
+            0.553,
+            0.939,
+            0.977
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.068,
+            0.409,
+            0.111
+          ],
+          "content": "**Selected for expansion.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.009,
+            0.12,
+            0.986,
+            0.409
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.006,
+            0.243,
+            0.182,
+            0.283
+          ],
+          "content": "**Added to tree.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.478,
+            0.424,
+            0.568
+          ],
+          "content": "**Note: Arad added (again) to tree! (reachable from Sibiu)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.611,
+            0.4,
+            0.79
+          ],
+          "content": "**Not necessarily a problem, but in Graph-Search, we will avoid this by maintaining an “explored” list.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.47,
+            0.475,
+            1.0,
+            0.897
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.722,
+            0.084,
+            0.96,
+            0.141
+          ],
+          "level": 2,
+          "content": "Graph-search"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.003,
+            0.174,
+            1.0,
+            0.665
+          ],
+          "content": "| function GRAPH-SEARCH(problem) returns a solution, or failure |\n| --- |\n| initialize the frontier using the initial state of problem |\n| initialize the explored set to be empty |\n| loop do |\n| if the frontier is empty then return failure |\n| choose a leaf node and remove it from the frontier |\n| if the node contains a goal state then return the corresponding solution |\n| add the node to the explored set |\n| expand the chosen node, adding the resulting nodes to the frontier |\n| only if not in the frontier or explored set |",
+          "captions": [
+            {
+              "bbox": [
+                0.038,
+                0.7,
+                0.545,
+                0.745
+              ],
+              "content": "Fig. 3.7 R&N, p. 77. See also exercise 3.13."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_33_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.777,
+            0.121,
+            0.813
+          ],
+          "content": "**Note:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.815,
+            0.732,
+            0.856
+          ],
+          "content": "**1) Uses “explored” set to avoid visiting already explored states.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.857,
+            0.89,
+            0.896
+          ],
+          "content": "2) Uses “frontier” set to store states that remain to be explored and expanded."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.896,
+            0.885,
+            0.977
+          ],
+          "content": "**3) However, with eg uniform cost search, we need to make a special check when node (i.e. state) is on frontier. Details later.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.671,
+            0.074,
+            0.96,
+            0.129
+          ],
+          "content": "Search strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.209,
+            0.909,
+            0.253
+          ],
+          "content": "**A search strategy is defined by picking the order of node expansion.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.306,
+            0.779,
+            0.349
+          ],
+          "content": "**Strategies are evaluated along the following dimensions:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.355,
+            0.865,
+            0.396
+          ],
+          "content": "– **completeness: does it always find a solution if one exists?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.404,
+            0.726,
+            0.444
+          ],
+          "content": "– **time complexity: number of nodes generated**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.454,
+            0.875,
+            0.495
+          ],
+          "content": "– **space complexity: maximum number of nodes in memory**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.501,
+            0.804,
+            0.544
+          ],
+          "content": "– **optimality: does it always find a least-cost solution?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.595,
+            0.743,
+            0.637
+          ],
+          "content": "**Time and space complexity are measured in terms of**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.644,
+            0.764,
+            0.683
+          ],
+          "content": "– **b: maximum branching factor of the search tree**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.693,
+            0.587,
+            0.732
+          ],
+          "content": "– **d: depth of the least-cost solution**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.743,
+            0.774,
+            0.785
+          ],
+          "content": "– **m: maximum depth of the state space (may be ∞)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.5,
+            0.015,
+            1.0,
+            0.076
+          ],
+          "content": "**Uninformed search strategies**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.134,
+            0.784,
+            0.243
+          ],
+          "content": "**Uninformed (blind) search strategies use only the information available in the problem definition:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.302,
+            0.438,
+            0.357
+          ],
+          "content": "– **Breadth-first search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.365,
+            0.441,
+            0.421
+          ],
+          "content": "– **Uniform-cost search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.429,
+            0.412,
+            0.487
+          ],
+          "content": "– **Depth-first search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.494,
+            0.451,
+            0.551
+          ],
+          "content": "– **Depth-limited search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.557,
+            0.524,
+            0.615
+          ],
+          "content": "– **Iterative deepening search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.622,
+            0.437,
+            0.678
+          ],
+          "content": "– **Bidirectional search**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.767,
+            0.924,
+            0.93
+          ],
+          "content": "**Key issue: type of queue used for the fringe of the search tree (collection of tree nodes that have been generated but not yet expanded)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.617,
+            0.024,
+            0.961,
+            0.074
+          ],
+          "content": "Breadth-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.133,
+            0.567,
+            0.179
+          ],
+          "content": "**Expand shallowest unexpanded node.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.232,
+            0.323,
+            0.274
+          ],
+          "content": "**Implementation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.283,
+            0.834,
+            0.383
+          ],
+          "content": "**fringe is a FIFO queue, i.e., new nodes go at end** Fringe queue: &lt;A&gt; **(First In First Out queue.)**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.259,
+            0.427,
+            0.742,
+            0.849
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_36_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.694,
+            0.445,
+            0.973,
+            0.554
+          ],
+          "content": "**Select A from queue and expand.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.802,
+            0.656,
+            0.917,
+            0.761
+          ],
+          "content": "Gives&lt;B, C&gt;"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.604,
+            0.08,
+            0.845,
+            0.13
+          ],
+          "content": "Queue: &lt;B, C&gt;"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.197,
+            0.22,
+            0.683,
+            0.657
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.704,
+                0.211,
+                0.933,
+                0.304
+              ],
+              "content": "Select B from front, and expand."
+            },
+            {
+              "bbox": [
+                0.704,
+                0.342,
+                0.937,
+                0.433
+              ],
+              "content": "Put children at the end."
+            }
+          ],
+          "image_source": "images/page_37_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.535,
+            0.949,
+            0.639
+          ],
+          "content": "**Gives &lt;C, D, E&gt;**"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.554,
+            0.081,
+            0.93,
+            0.131
+          ],
+          "content": "Fringe queue: &lt;C, D, E&gt;"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.24,
+            0.192,
+            0.722,
+            0.619
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.546,
+            0.069,
+            0.957,
+            0.12
+          ],
+          "content": "Fringe queue: &lt;D, E, F, G&gt;"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.195,
+            0.193,
+            0.715,
+            0.609
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_39_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.767,
+            0.761,
+            0.9
+          ],
+          "content": "**Assuming no further children, queue becomes** $< E , F , G > , < F , G > , < G > , < >$ **. Each time node checked for goal state.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.425,
+            0.015,
+            0.991,
+            0.074
+          ],
+          "level": 2,
+          "content": "Properties of breadth-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.129,
+            0.535,
+            0.191
+          ],
+          "content": "<u>Complete?</u> Yes (if b is finite)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.098,
+            0.952,
+            0.235
+          ],
+          "content": "**Note: check for goal only when node is expanded.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.254,
+            1.0,
+            0.375
+          ],
+          "content": "<u>Time?</u> $I + b + b ^ { 2 } + b ^ { 3 } + \\cdots + b ^ { d } + b ( b ^ { d } - I ) = \\mathrm { O } ( b ^ { d + 1 } )$ Depth d, goal Why? may be last"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.388,
+            0.735,
+            0.454
+          ],
+          "content": "<u>Space?</u> $O ( b ^ { d + I } )$ (keeps every node in memory;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.323,
+            0.465,
+            0.966,
+            0.533
+          ],
+          "content": "needed also to reconstruct soln. path) expanded.)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.528,
+            0.411,
+            0.585
+          ],
+          "content": "<u>Optimal soln. found?</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.597,
+            0.687,
+            0.657
+          ],
+          "content": "Yes (if all step costs are identical)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.07,
+            0.727,
+            0.831,
+            0.788
+          ],
+          "level": 2,
+          "content": "Space is the bigger problem (more than time)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.845,
+            0.767,
+            0.897
+          ],
+          "content": "b: maximum branching factor of the search tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.898,
+            0.58,
+            0.949
+          ],
+          "content": "d: depth of the least-cost solution"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.597,
+            0.026,
+            0.991,
+            0.084
+          ],
+          "content": "Uniform-cost search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.163,
+            0.711,
+            0.215
+          ],
+          "content": "**Expand least-cost (of path to) unexpanded node**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.221,
+            0.723,
+            0.273
+          ],
+          "content": "**(e.g. useful for finding shortest path on map)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.281,
+            0.27,
+            0.329
+          ],
+          "content": "**Implementation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.339,
+            0.605,
+            0.393
+          ],
+          "content": "– **fringe = queue ordered by path cost**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.594,
+            0.391,
+            0.98,
+            0.443
+          ],
+          "content": "**g – cost of reaching a node**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.441,
+            0.593,
+            0.499
+          ],
+          "content": "<u>Complete?</u> Yes, if step cost $\\geq \\varepsilon ( > 0 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.507,
+            0.887,
+            0.619
+          ],
+          "content": "<u>Time?</u> # of nodes with $g \\leq$ cost of optimal solution (C\\*), $O ( b ^ { ( I + / C ^ { * } / \\varepsilon / ) }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.631,
+            0.84,
+            0.761
+          ],
+          "content": "<u>Space?</u> # of nodes with $g \\leq$ cost of optimal solution, $\\overline { { O ( b ^ { ( I + \\left\\langle C ^ { * } / \\varepsilon \\right\\rangle ) } ) } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.769,
+            0.949,
+            0.83
+          ],
+          "content": "<u>Optimal?</u> Yes – nodes expanded in increasing order of $g ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.838,
+            0.831,
+            0.898
+          ],
+          "content": "Note: Some subtleties (e.g. checking for goal state)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.906,
+            0.612,
+            0.964
+          ],
+          "content": "See p 84 R&N. Also, next slide."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.583,
+            0.041,
+            0.926,
+            0.09
+          ],
+          "level": 2,
+          "content": "Uniform-cost search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.123,
+            0.49,
+            0.166
+          ],
+          "content": "**Two subtleties: (bottom p. 83 Norvig)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.177,
+            0.846,
+            0.435
+          ],
+          "content": "**1) Do goal state test, only when a node is selected for expansion. (Reason: Bucharest may occur on frontier with a longer than optimal path. It won’t be selected for expansion yet. Other nodes will be expanded first, leading us to uncover a shorter path to Bucharest. See also point 2).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.495,
+            0.939,
+            0.703
+          ],
+          "content": "**2) Graph-search alg. says “don’t add child node to frontier if already on explored list or already on frontier.” BUT, child may give a shorter path to a state already on frontier. Then, we need to modify the existing node on frontier with the shorter path. See fig. 3.14 (else-if part).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.669,
+            0.047,
+            0.994,
+            0.103
+          ],
+          "content": "Depth-first search"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.038,
+            0.147,
+            0.565,
+            0.197
+          ],
+          "level": 2,
+          "content": "“Expand deepest unexpanded node”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.247,
+            0.246,
+            0.289
+          ],
+          "content": "**Implementation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.3,
+            0.916,
+            0.345
+          ],
+          "content": "– **fringe = LIFO queue, i.e., put successors at front (“push on stack”)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.352,
+            0.306,
+            0.391
+          ],
+          "content": "**Last In First Out**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.214,
+            0.418,
+            0.782,
+            0.891
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.764,
+            0.411,
+            0.959,
+            0.511
+          ],
+          "content": "**Fringe stack:** A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.568,
+            0.993,
+            0.672
+          ],
+          "content": "**Expanding A, gives stack:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.788,
+            0.835,
+            0.949,
+            0.886
+          ],
+          "content": "**So, B next.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.099,
+            0.171,
+            0.673,
+            0.627
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_44_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.722,
+            0.452,
+            0.884,
+            0.505
+          ],
+          "content": "**So, D next.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.761,
+            0.056,
+            0.97,
+            0.161
+          ],
+          "content": "**Expanding D, gives stack:**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.154,
+            0.149,
+            0.733,
+            0.598
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_45_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.429,
+            0.928,
+            0.533
+          ],
+          "content": "**So, H next. etc.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.195,
+            0.171,
+            0.77,
+            0.612
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.195,
+            0.788,
+            0.648
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.229,
+            0.228,
+            0.806,
+            0.684
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.213,
+            0.13,
+            0.787,
+            0.584
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_49_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.214,
+            0.201,
+            0.788,
+            0.656
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.211,
+            0.223,
+            0.791,
+            0.684
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.212,
+            0.198,
+            0.788,
+            0.653
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.206,
+            0.187,
+            0.779,
+            0.641
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.229,
+            0.199,
+            0.805,
+            0.654
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.299,
+            0.725,
+            0.347
+          ],
+          "content": "**What is main advantage over breadth first search?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.455,
+            0.889,
+            0.511
+          ],
+          "content": "What information is stored? How much storage required?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.6,
+            0.573,
+            0.656
+          ],
+          "content": "The stack. O(depth x branching)."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.449,
+            0.017,
+            0.978,
+            0.074
+          ],
+          "level": 2,
+          "content": "Properties of depth-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.089,
+            0.934,
+            0.249
+          ],
+          "content": "<strong><u>Complete?</u></strong>No: fails in infinite-depth spaces, spaces with loops Modify to avoid repeated states along path à complete in finite spaces"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.275,
+            0.679,
+            0.327
+          ],
+          "level": 2,
+          "content": "Time? O(b<sup>m</sup>): bad if m is much larger than d"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.338,
+            0.99,
+            0.389
+          ],
+          "content": "– but if solutions are dense, may be much faster than breadth-first"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.464,
+            0.146,
+            0.518
+          ],
+          "level": 2,
+          "content": "Space?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.466,
+            0.564,
+            0.522
+          ],
+          "content": "**O(bm), i.e., linear space!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.593,
+            0.318,
+            0.709
+          ],
+          "content": "<strong><u>Guarantee that opt. soln. is found?</u></strong>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.661,
+            0.395,
+            0.93,
+            0.569
+          ],
+          "content": "**Note: Can also reconstruct soln. path from single stored branch.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.378,
+            0.568,
+            0.994,
+            0.727
+          ],
+          "content": "**b: max. branching factor of the search tree d: depth of the shallowest (least-cost) soln. m: maximum depth of state space**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.756,
+            0.941,
+            0.971
+          ],
+          "content": "Note: In “backtrack search” only one successor is generated à only O(m) memory is needed; also successor is modification of the current state, but we have to be able to undo each modification. More when we talk about Constraint Satisfaction Problems (CSP)."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.515,
+            0.107,
+            0.96,
+            0.163
+          ],
+          "content": "Iterative deepening search"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.319,
+            0.922,
+            0.611
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction ITERATIVE-DEEPENING-SEARCH( problem) returns a solution, or failure\n    inputs: problem, a problem\n    for depth ← 0 to ∞ do\n        result ← DEPTH-LIMITED-SEARCH( problem, depth)\n        if result ≠ cutoff then return result\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.105,
+            0.963,
+            0.165
+          ],
+          "content": "**Iterative deepening search l =0**"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.106,
+            0.961,
+            0.163
+          ],
+          "content": "**Iterative deepening search l =1**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.081,
+            0.332,
+            0.89,
+            0.417
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.105,
+            0.961,
+            0.163
+          ],
+          "level": 2,
+          "content": "Iterative deepening search l =2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.081,
+            0.303,
+            0.905,
+            0.575
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_60_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.106,
+            0.961,
+            0.163
+          ],
+          "level": 2,
+          "content": "Iterative deepening search l =3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.085,
+            0.32,
+            0.914,
+            0.827
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_61_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.321,
+            0.268,
+            0.736,
+            0.33
+          ],
+          "level": 2,
+          "content": "Why would one do that?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.423,
+            0.931,
+            0.638
+          ],
+          "level": 2,
+          "content": "Combine good memory requirements of depth-first with the completeness of breadth-first when branching factor is finite and is optimal when the path cost is a non-decreasing function of the depth of the node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.713,
+            0.885,
+            0.873
+          ],
+          "content": "**Idea was a breakthrough in game playing. All game tree search uses iterative deepening nowadays. What’s the added advantage in games?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.913,
+            0.855,
+            0.965
+          ],
+          "content": "**“Anytime” nature.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.483,
+            0.037,
+            0.992,
+            0.101
+          ],
+          "level": 2,
+          "content": "Iterative deepening search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.152,
+            0.904,
+            0.24
+          ],
+          "content": "**Number of nodes generated in an iterative deepening search to depth d with branching factor b:** One search “One search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.256,
+            0.405,
+            0.3
+          ],
+          "content": "**Looks quite wasteful, is it?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.721,
+            0.219,
+            0.878,
+            0.307
+          ],
+          "content": "**depth d”**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.258,
+            0.321,
+            0.799,
+            0.369
+          ],
+          "content": "\\mathbf {N} _ {\\mathrm{IDS}} = \\mathbf {d b ^ {1}} + (\\mathbf {d - 1}) \\mathbf {b ^ {2}} + \\dots + 3 \\mathbf {b ^ {d - 2}} + 2 \\mathbf {b ^ {d - 1}} + 1 \\mathbf {b ^ {d}}",
+          "image_source": "images/page_63_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.409,
+            0.876,
+            0.454
+          ],
+          "content": "**Nodes generated in a breadth-first search with branching factor b:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.277,
+            0.493,
+            0.79,
+            0.55
+          ],
+          "content": "\\mathbf {N} _ {\\mathrm{BFS}} = \\boldsymbol {b} ^ {1} + \\boldsymbol {b} ^ {2} + \\ldots + \\boldsymbol {b} ^ {d - 2} + \\boldsymbol {b} ^ {d - 1} + \\boldsymbol {b} ^ {d}",
+          "image_source": "images/page_63_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.587,
+            0.288,
+            0.628
+          ],
+          "content": "For $b = I \\theta ,   d = 5 ,$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.674,
+            0.785,
+            0.721
+          ],
+          "content": "- \\mathrm{N} _ {\\mathrm{BFS}} = 1 0 + 1 0 0 + 1, 0 0 0 + 1 0, 0 0 0 + 1 0 0, 0 0 0 = 1 1 1, 1 1 0",
+          "image_source": "images/page_63_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.759,
+            0.789,
+            0.807
+          ],
+          "content": "- \\mathrm{N} _ {\\mathrm{IDS}} = 5 0 + 4 0 0 + 3, 0 0 0 + 2 0, 0 0 0 + 1 0 0, 0 0 0 = 1 2 3, 4 5 6",
+          "image_source": "images/page_63_equation_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.852,
+            0.754,
+            0.893,
+            0.809
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_63_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.075,
+            0.833,
+            0.81,
+            0.965
+          ],
+          "content": "**Iterative deepening is the preferred uninformed search method when there is a large search space and the depth of the solution is not known.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.293,
+            0.073,
+            0.96,
+            0.13
+          ],
+          "level": 2,
+          "content": "Properties of iterative deepening search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.299,
+            0.302,
+            0.344
+          ],
+          "content": "<strong><u>Complete?</u></strong> **Yes**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.353,
+            0.224,
+            0.398
+          ],
+          "content": "**(b finite)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.456,
+            0.565,
+            0.502
+          ],
+          "content": "<strong><u>Time?</u></strong> $d b ^ { I } + ( d - I ) b ^ { 2 } + \\cdots + b ^ { d } = O ( b ^ { d } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.557,
+            0.278,
+            0.603
+          ],
+          "content": "<strong><u>Space?</u></strong> **O(bd)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.655,
+            0.544,
+            0.701
+          ],
+          "content": "<strong><u>Optimal?</u></strong> **Yes, if step costs identical**"
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.614,
+            0.063,
+            0.959,
+            0.112
+          ],
+          "level": 2,
+          "content": "Bidirectional Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.13,
+            0.273,
+            0.167
+          ],
+          "content": "**Simultaneously:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.173,
+            0.429,
+            0.21
+          ],
+          "content": "– **Search forward from start**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.217,
+            0.481,
+            0.301
+          ],
+          "content": "– **Search backward from the goal Stop when the two searches meet.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.347,
+            0.535,
+            0.479
+          ],
+          "content": "**If branching factor = b in each direction, with solution at depth d** è only $\\mathrm{O}(2\\mathrm{~b}^{\\mathrm{d} / 2})=\\mathrm{O}(2\\mathrm{~b}^{\\mathrm{d} / 2})$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.567,
+            0.188,
+            0.961,
+            0.454
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.524,
+            0.967,
+            0.601
+          ],
+          "content": "**Checking a node for membership in the other search tree can be done in constant time (hash table)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.649,
+            0.272,
+            0.687
+          ],
+          "content": "**Key limitations:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.693,
+            0.241,
+            0.733
+          ],
+          "content": "Space $\\mathrm { O } (  { \\mathbb { b } } ^ {  { \\mathrm { d } } / 2 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.735,
+            0.935,
+            0.776
+          ],
+          "content": "**Also, how to search backwards can be an issue (e.g., in Chess)? What’s tricky?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.779,
+            0.875,
+            0.821
+          ],
+          "content": "**Problem: lots of states satisfy the goal; don’t know which one is relevant.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.888,
+            0.845,
+            0.969
+          ],
+          "content": "**Aside: The predecessor of a node should be easily computable (i.e., actions are easily reversible).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.037,
+            0.045,
+            0.533,
+            0.143
+          ],
+          "content": "Failure to detect repeated states can turn linear problem into an exponential one!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.729,
+            0.063,
+            0.994,
+            0.117
+          ],
+          "content": "Repeated states"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.259,
+            0.206,
+            0.402,
+            0.657
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.496,
+            0.205,
+            0.757,
+            0.605
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.7,
+            0.824,
+            0.837
+          ],
+          "content": "**Problems in which actions are reversible (e.g., routing problems or sliding-blocks puzzle). Also, in eg Chess; uses hash tables to check for repeated states. Huge tables 100M+ size but very useful.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.878,
+            0.805,
+            0.968
+          ],
+          "content": "**See Tree-Search vs. Graph-Search in Fig. 3.7 R&N. But need to be careful to maintain (path) optimality and completeness.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.204,
+            0.06,
+            0.96,
+            0.122
+          ],
+          "level": 2,
+          "content": "Summary: General, uninformed search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.167,
+            0.956,
+            0.348
+          ],
+          "content": "**Original search ideas in AI where inspired by studies of human problem solving in, eg, puzzles, math, and games, but a great many AI tasks now require some form of search (e.g. find optimal agent strategy; active learning; constraint reasoning; NP-complete problems require search).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.405,
+            0.946,
+            0.495
+          ],
+          "content": "**Problem formulation usually requires abstracting away real-world details to define a state space that can feasibly be explored.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.547,
+            0.543,
+            0.591
+          ],
+          "content": "**Variety of uninformed search strategies**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.643,
+            0.938,
+            0.731
+          ],
+          "content": "**Iterative deepening search uses only linear space and not much more time than other uninformed algorithms.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.795,
+            0.434,
+            0.84
+          ],
+          "content": "**Avoid repeating states / cycles.**"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 68,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
