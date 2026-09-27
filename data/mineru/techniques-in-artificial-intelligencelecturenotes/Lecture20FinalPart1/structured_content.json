@@ -1,0 +1,5275 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.242,
+            0.083,
+            0.711,
+            0.108
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.265,
+            0.127,
+            0.689,
+            0.156
+          ],
+          "content": "Markov Decision Processes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.178,
+            0.355,
+            0.202
+          ],
+          "content": "• Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.203,
+            0.39,
+            0.228
+          ],
+          "content": "• Markov chains"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.229,
+            0.287,
+            0.252
+          ],
+          "content": "• MDPs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.253,
+            0.393,
+            0.278
+          ],
+          "content": "• Value iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.28,
+            0.35,
+            0.303
+          ],
+          "content": "• Extensions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.877,
+            0.623
+          ],
+          "content": "Now we’re going to think about how to do planning in uncertain domains. It’s an extension of decision theory, but focused on making long-term plans of action. We’ll start by laying out the basic framework, then look at Markov chains, which are a simple case. Then we’ll explore what it means to have an optimal plan for an MDP, and look at an algorithm, called value iteration, for finding optimal plans. We’ll finish by looking at some of the major weaknesses of this approach and seeing how they can be addressed."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.072,
+            0.608,
+            0.102
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.827,
+            0.522
+          ],
+          "content": "A Markov decision process (known as an MDP) is a discrete-time statetransition system. It can be described formally with 4 components."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.346,
+            0.073,
+            0.608,
+            0.101
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.304,
+            0.132
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.875,
+            0.623
+          ],
+          "content": "First, it has a set of states. These states will play the role of outcomes in the decision theoretic approach we saw last time, as well as providing whatever information is necessary for choosing actions. For a robot navigating through a building, the state might be the room it’s in, or the x,y coordinates. For a factory controller, it might be the temperature and pressure in the boiler. In most of our discussion, we’ll assume that the set of states is finite and not too big to enumerate in our computer."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.345,
+            0.072,
+            0.61,
+            0.102
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.307,
+            0.132
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.131,
+            0.315,
+            0.151
+          ],
+          "content": "• A : actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.865,
+            0.521
+          ],
+          "content": "Next, we have a set of actions. These are chosen, in the simple case, from a small finite set."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.101
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.304,
+            0.131
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.132,
+            0.313,
+            0.149
+          ],
+          "content": "• A : actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.15,
+            0.588,
+            0.172
+          ],
+          "content": "$\\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { t } } )$ : transition probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 20 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.868,
+            0.661
+          ],
+          "content": "The transition probabilities describe the dynamics of the world. They play the role of the next-state function in a problem-solving search, except that every state is thought to be a possible consequence of taking an action in a state. So, we specify, for each state s\\_t and action a\\_t, the probability that the next state will be s\\_t+1. You can think of this as being represented as a set of matrices, one for each action. Each matrix is square, indexed in both dimensions by states. If you sum over all states s\\_I, then the sum of the probabilities that S\\_I is the next state, given a particular previous state and action is 1."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.1
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.304,
+            0.131
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.132,
+            0.313,
+            0.149
+          ],
+          "content": "• A : actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.15,
+            0.652,
+            0.191
+          ],
+          "content": "$\\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { t } } )$ : transition probabilities $= \\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { 0 } } \\dots \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { 0 } } \\dots \\mathsf { a } _ { \\mathsf { t } } )$ Markov property"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 20 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.479,
+            0.877,
+            0.581
+          ],
+          "content": "These processes are called Markov, because they have what is known as the Markov property. that is, that given the current state and action, the next state is independent of all the previous states and actions. The current state captures all that is relevant about the world in order to predict what the next state will be."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.101
+          ],
+          "content": "MDP Framework"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.305,
+            0.131
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.132,
+            0.314,
+            0.149
+          ],
+          "content": "• A : actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.149,
+            0.589,
+            0.171
+          ],
+          "content": "$\\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { t } } )$ : transition probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.17,
+            0.651,
+            0.19
+          ],
+          "content": "$= \\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { 0 } } \\dots \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { 0 } } \\dots \\mathsf { a } _ { \\mathsf { t } } )$ Markov property"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.189,
+            0.458,
+            0.209
+          ],
+          "content": "• R(s) : real-valued reward"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 20 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.841,
+            0.542
+          ],
+          "content": "Finally, there is a real-valued reward function on states. You can think of this is as a short-term utility function. How good is it, from the agent’s perspective to be in state s? That’s R(s)."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.101
+          ],
+          "level": 2,
+          "content": "MDP Framework"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.111,
+            0.305,
+            0.131
+          ],
+          "content": "• S : states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.131,
+            0.314,
+            0.149
+          ],
+          "content": "• A : actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.149,
+            0.589,
+            0.171
+          ],
+          "content": "$\\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { t } } )$ : transition probabilities"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.17,
+            0.652,
+            0.191
+          ],
+          "content": "$= \\mathsf { P r } ( \\mathsf { s } _ { \\mathsf { t } + 1 } \\mid \\mathsf { s } _ { \\mathsf { 0 } } \\dots \\mathsf { s } _ { \\mathsf { t } } ,   \\mathsf { a } _ { \\mathsf { 0 } } \\dots \\mathsf { a } _ { \\mathsf { t } } )$ Markov property"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.189,
+            0.458,
+            0.209
+          ],
+          "content": "• R(s) : real-valued reward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.228,
+            0.418,
+            0.252
+          ],
+          "content": "Find a policy: ∏: S → A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.877,
+            0.743
+          ],
+          "content": "The result of classical planning was a plan. A plan was either an ordered list of actions, or a partially ordered set of actions, meant to be executed without reference to the state of the environment. When we looked at conditional planning, we considered building plans with branches in them, that observed something about the state of the world and acted differently depending on the observation. In an MDP, the assumption is that you could potentially go from any state to any other state in one step. And so, to be prepared, it is typical to compute a whole **policy**, rather than a simple plan. A policy is a mapping from states to actions. It says, no matter what state you happen to find yourself in, here is the action that it’s best to take now. Because of the Markov property, we’ll find that the choice of action only needs to depend on the current state (and possibly the current time), but not on any of the previous states."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.149,
+            0.053,
+            0.851,
+            0.449
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr(s\\_{t+1} | s\\_t, a\\_t) : transition probabilities\n    = Pr(s\\_{t+1} | s\\_0 ... s\\_t, a\\_0 ... a\\_t) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S $\\to$ A\nMaximize\n• Myopic: E[r\\_t | $\\Pi$, s\\_t] for all s\n\nLecture 20 • 9",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.877,
+            0.603
+          ],
+          "content": "So, what is our criterion for finding a good policy? In the simplest case, we’ll try to find the policy that maximizes, for each state, the expected reward of executing that policy in the state. This is a particularly easy problem, because it completely decomposes into a set of decision problems: for each state, find the single action that maximizes expected reward. This is exactly the single-action decision theory problem that we discussed before."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.15,
+            0.053,
+            0.85,
+            0.448
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr(s\\_{t+1} | s\\_t, a\\_t) : transition probabilities\n    = Pr(s\\_{t+1} | s\\_0 ... s\\_t, a\\_0 ... a\\_t) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S → A\nMaximize\n• Myopic: E[r\\_t | $\\Pi$, s\\_t] for all s\n• Finite horizon: E[$\\sum_{t=0}^{k} r_t$ | $\\Pi$, s\\_0]\n\nLecture 20 • 10",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.862,
+            0.582
+          ],
+          "content": "It’s not usually good to be so short sighted, though! Let’s think a little bit farther ahead. We can consider policies that are “finite-horizon optimal” for a particular horizon k. That means, that we should find a policy that, for every initial state s0, results in the maximal expected sum of rewards from times 0 to k."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.148,
+            0.053,
+            0.851,
+            0.448
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr($s_{t+1}$ | $s_t$, $a_t$) : transition probabilities\n    = Pr($s_{t+1}$ | $s_0$ ... $s_t$, $a_0$ ... $a_t$) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S → A\nMaximize\n• Myopic: E[$r_t$ | $\\Pi$, $s_t$] for all s\n• Finite horizon: E[$\\sum_{t=0}^{k} r_t$ | $\\Pi$, $s_0$]\n    – Non-stationary policy: depends on time\n\nLecture 20 • 11",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.871,
+            0.702
+          ],
+          "content": "So, if the horizon is 2, we’re maximizing over our reward today and tomorrow. If it’s 300, then we’re looking a lot farther ahead. We might start out by doing some actions that have very low rewards initially, because by doing them we are likely to be taken to states that will ultimately result in high reward. (Students are often familiar with the necessity of passing through low-reward states in order to get to states with higher reward!). Because we will, in general, want to choose actions differently at the very end of our lives (when the horizon is short) than early in our lives, it will be necessary to have a non-stationary policy in the finite-horizon case. That is, we’ll need a different policy for each number of time steps remaining in our life."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.059,
+            0.849,
+            0.449
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr(s\\_{t+1} | s\\_t, a\\_t) : transition probabilities\n    = Pr(s\\_{t+1} | s\\_0 ... s\\_t, a\\_0 ... a\\_t) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S $\\rightarrow$ A\nMaximize\n• Myopic: E[r\\_t | $\\Pi$, s\\_t] for all s\n• Finite horizon: E[$\\sum_{t=0}^{k} r_t$ | $\\Pi$, s\\_0]\n    – Non-stationary policy: depends on time\n• Infinite horizon: E[$\\sum_{t=0}^{\\infty} r_t$ | $\\Pi$, s\\_0]\n\nLecture 20 • 12",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.845,
+            0.542
+          ],
+          "content": "Because in many cases it’s not clear how long the process is going to run (consider designing a robot sentry, or a factory controller), it’s popular to consider infinite horizon models of optimality."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.148,
+            0.052,
+            0.851,
+            0.449
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr($s_{t+1}$ | $s_t$, $a_t$) : transition probabilities\n    = Pr($s_{t+1}$ | $s_0$ ... $s_t$, $a_0$ ... $a_t$) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S → A\nMaximize\n• Myopic: E[$r_t$ | $\\Pi$, $s_t$] for all s\n• Finite horizon: E[$\\sum_{t=0}^{k} r_t$ | $\\Pi$, $s_0$]\n    - Non-stationary policy: depends on time\n• Infinite horizon: E[$\\sum_{t=0}^{\\infty} \\gamma^t r_t$ | $\\Pi$, $s_0$]\n    - 0 < $\\gamma$ < 1 is discount factor\n\nLecture 20 • 13",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.88,
+            0.663
+          ],
+          "content": "But if we add up all the rewards out into infinity, then the sums will be infinite in general. To keep the math nice, and to put some pressure on the agent to get rewards sooner rather than later, we use a discount factor. The discount factor gamma is a number between 0 and 1, which has to be strictly less than 1. Usually it’s somewhere near 0.9 or 0.99 . So, we want to maximize our sum of rewards, but rewards that happen tomorrow are only worth .9 of what they would be worth today. You can think of this as a model of the present value of money, as in economics. Or, that your life is going to end with probability 1-gamma on each step, but you don’t when."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.15,
+            0.053,
+            0.85,
+            0.449
+          ],
+          "sub_type": "algorithm",
+          "content": "MDP Framework\n• S : states\n• A : actions\n• Pr(s\\_{t+1} | s\\_t, a\\_t) : transition probabilities\n    = Pr(s\\_{t+1} | s\\_0 ... s\\_t, a\\_0 ... a\\_t) Markov property\n• R(s) : real-valued reward\n\nFind a policy: $\\Pi$: S $\\to$ A\nMaximize\n• Myopic: E[r\\_t | $\\Pi$, s\\_t] for all s\n• Finite horizon: E[Σ^{k}\\_{t=0} r\\_t | $\\Pi$, s\\_0]\n    - Non-stationary policy: depends on time\n• Infinite horizon: E[Σ^{∞}\\_{t=0} γ^t r\\_t | $\\Pi$, s\\_0]\n    - 0 < γ < 1 is discount factor\n    - Optimal policy is stationary\n\nLecture 20 • 14",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.863,
+            0.583
+          ],
+          "content": "This model has the very convenient property that the optimal policy is stationary. It’s independent of how long the agent has run or will run in the future (since nobody knows that exactly). Once you’ve survived to live another day, in this model, the expected length of your life is the same as it was on the previous step, and so your behavior is the same, as well."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.367,
+            0.072,
+            0.587,
+            0.102
+          ],
+          "content": "Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.134,
+            0.298,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.197,
+            0.337,
+            0.217
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.837,
+            0.542
+          ],
+          "content": "To build up some intuitions about how MDPs work, let’s look at a simpler structure called a Markov chain. A Markov chain is like an MDP with no actions, and a fixed, probabilistic transition function from state to state."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.367,
+            0.072,
+            0.588,
+            0.102
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.111,
+            0.344,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.134,
+            0.299,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.175,
+            0.318,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.197,
+            0.337,
+            0.217
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.526,
+            0.106,
+            0.807,
+            0.28
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.722,
+            0.502
+          ],
+          "content": "Here’s a tiny example of a Markov chain. It has three states."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 17"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.367,
+            0.072,
+            0.587,
+            0.102
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.134,
+            0.299,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.197,
+            0.337,
+            0.217
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.513,
+            0.105,
+            0.814,
+            0.294
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.868,
+            0.523
+          ],
+          "content": "The transition probabilities are shown on the arcs between states. Note that the probabilities on all the outgoing arcs of each state sum to 1."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 18"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.368,
+            0.072,
+            0.586,
+            0.102
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.134,
+            0.298,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.197,
+            0.337,
+            0.217
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.105,
+            0.814,
+            0.293
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.851,
+            0.542
+          ],
+          "content": "Markov chains don’t always have reward values associated with them, but we’re going to add rewards to ours. We’ll make states 1 and 3 have an immediate reward of 0, and state 2 have immediate reward of 10."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.368,
+            0.073,
+            0.586,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.134,
+            0.299,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.197,
+            0.337,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.217,
+            0.502,
+            0.256
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.256,
+            0.259,
+            0.277
+          ],
+          "content": "V(s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.849,
+            0.522
+          ],
+          "content": "Now, we can define the infinite horizon expected discounted reward as a function of the starting state. We’ll abbreviate this as the **value** of a state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.105,
+            0.815,
+            0.293
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 20 • 19"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_18_image_10.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.368,
+            0.073,
+            0.586,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.134,
+            0.298,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.197,
+            0.337,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.217,
+            0.501,
+            0.255
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.256,
+            0.315,
+            0.278
+          ],
+          "content": "V (s) = R (s)",
+          "image_source": "images/page_19_equation_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.105,
+            0.816,
+            0.293
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.709,
+                0.42,
+                0.795,
+                0.435
+              ],
+              "content": "Lecture 20 • 20"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_19_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.857,
+            0.522
+          ],
+          "content": "So, how much total reward do we expect to get if we start in state s? Well, we know that we’ll immediately get a reward of R(s)."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.368,
+            0.073,
+            0.586,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.133
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.135,
+            0.298,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.207,
+            0.155,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.197,
+            0.336,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.217,
+            0.501,
+            0.255
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.256,
+            0.357,
+            0.278
+          ],
+          "content": "V (s) = R (s) + \\gamma ()",
+          "image_source": "images/page_20_equation_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.105,
+            0.815,
+            0.293
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.873,
+            0.542
+          ],
+          "content": "But then, we’ll get some reward in the future. The reward we get in the future is not worth as much to us as reward in the present, so we multiply by discount factor gamma."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.073,
+            0.585,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.113,
+            0.343,
+            0.133
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.135,
+            0.297,
+            0.153
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.155,
+            0.338,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.209,
+            0.176,
+            0.316,
+            0.195
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.197,
+            0.335,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.217,
+            0.501,
+            0.253
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.207,
+            0.252,
+            0.468,
+            0.274
+          ],
+          "content": "\\mathrm{V} (s) = \\mathrm{R} (s) + \\gamma \\sum_ {s ^ {\\prime}} \\mathrm{P} (s ^ {\\prime} | s) \\mathrm{V} (s ^ {\\prime})",
+          "image_source": "images/page_21_equation_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.515,
+            0.105,
+            0.815,
+            0.292
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.71,
+                0.42,
+                0.794,
+                0.435
+              ],
+              "content": "Lecture 20 • 22"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_21_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.88,
+            0.561
+          ],
+          "content": "Now, we consider what the future might be like. We’ll compute the expected long-term value of the next state by summing over all possible next states, $\\mathbf { s } ^ { \\prime }$ , the product of the probability of making a transition from s to $\\mathbf { s } ^ { \\prime }$ and the infinite horizon expected discounted reward, or **value** of $\\mathbf { s } ^ { \\prime }$"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.073,
+            0.585,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.113,
+            0.343,
+            0.133
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.135,
+            0.297,
+            0.153
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.155,
+            0.338,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.209,
+            0.176,
+            0.316,
+            0.195
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.197,
+            0.335,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.217,
+            0.501,
+            0.253
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.207,
+            0.252,
+            0.468,
+            0.274
+          ],
+          "content": "\\mathrm{V} (s) = \\mathrm{R} (s) + \\gamma \\sum_ {s ^ {\\prime}} \\mathrm{P} (s ^ {\\prime} | s) \\mathrm{V} (s ^ {\\prime})",
+          "image_source": "images/page_22_equation_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.515,
+            0.105,
+            0.815,
+            0.292
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.71,
+                0.42,
+                0.794,
+                0.435
+              ],
+              "content": "Lecture 20 • 23"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.863,
+            0.562
+          ],
+          "content": "Since we know R and P (those are given in the specification of the Markov chain), we’d like to compute V. If n is the number of states in the domain, then we have a set of n equations in n unknowns (the values of each state). Luckily, they’re easy to solve."
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.073,
+            0.585,
+            0.101
+          ],
+          "content": "Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.134,
+            0.297,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.154,
+            0.338,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.197,
+            0.336,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.217,
+            0.501,
+            0.253
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.252,
+            0.469,
+            0.274
+          ],
+          "content": "V (s) = R (s) + \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} | s) V (s ^ {\\prime})",
+          "image_source": "images/page_23_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.514,
+            0.105,
+            0.813,
+            0.293
+          ],
+          "content": "0.1 0.5 10 2 0.5 0 0.2 0.7 0.9 3 0 0.1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.295,
+            0.349,
+            0.317
+          ],
+          "content": "• Assume γ=0.9"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.316,
+            0.496,
+            0.337
+          ],
+          "content": "V (1) = 0 +. 9 (. 5 V (1) +. 5 V (2))",
+          "image_source": "images/page_23_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.335,
+            0.571,
+            0.355
+          ],
+          "content": "\\mathrm{V} (2) = 1 0 +. 9 (. 2 \\mathrm{V} (1) +. 1 \\mathrm{V} (2) +. 7 \\mathrm{V} (3))",
+          "image_source": "images/page_23_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.354,
+            0.571,
+            0.376
+          ],
+          "content": "\\mathrm{V} (3) = 0 +. 9 (\\quad . 9 \\mathrm{V} (2) +. 1 \\mathrm{V} (3))",
+          "image_source": "images/page_23_equation_12.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.811,
+            0.521
+          ],
+          "content": "So, here are the equations for the values of the states in our example, assuming a discount factor of 0.9."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.073,
+            0.584,
+            0.101
+          ],
+          "level": 2,
+          "content": "Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.134,
+            0.297,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.154,
+            0.338,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.209,
+            0.176,
+            0.316,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.208,
+            0.197,
+            0.336,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.515,
+            0.106,
+            0.813,
+            0.22
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.217,
+            0.501,
+            0.254
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.252,
+            0.469,
+            0.274
+          ],
+          "content": "V (s) = R (s) + \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} | s) V (s ^ {\\prime})",
+          "image_source": "images/page_24_equation_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.653,
+            0.214,
+            0.775,
+            0.292
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.295,
+            0.349,
+            0.317
+          ],
+          "content": "• Assume γ=0.9"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.215,
+            0.316,
+            0.496,
+            0.337
+          ],
+          "content": "\\mathrm{V(1)} = 0 +. 9 (. 5 \\mathrm{V(1)} +. 5 \\mathrm{V(2)})",
+          "image_source": "images/page_24_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.215,
+            0.335,
+            0.571,
+            0.355
+          ],
+          "content": "\\mathrm{V} (2) = 1 0 +. 9 (. 2 \\mathrm{V} (1) +. 1 \\mathrm{V} (2) +. 7 \\mathrm{V} (3))",
+          "image_source": "images/page_24_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.215,
+            0.354,
+            0.57,
+            0.376
+          ],
+          "content": "V (3) = 0 +. 9 (\\quad . 9 V (2) +. 1 V (3))",
+          "image_source": "images/page_24_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.871,
+            0.622
+          ],
+          "content": "Now, if we solve for the values of the states, we get that V(1) is 40.5, V(2) is 49.5, and V(3) is 49.1. This seems at least intuitively plausible. State 1 is worth the least, because it’s kind of hard to get from there to state 2, where the reward is. State 2 is worth the most; it has a large reward and it usually goes to state 3, which usually comes right back again for another large reward. State 3 is close to state 2 in value, because it usually takes only one step to get from 3 back to 2."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.073,
+            0.585,
+            0.101
+          ],
+          "content": "Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.343,
+            0.134
+          ],
+          "content": "• Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.134,
+            0.297,
+            0.154
+          ],
+          "content": "• states"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.207,
+            0.154,
+            0.339,
+            0.175
+          ],
+          "content": "• transitions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.176,
+            0.317,
+            0.196
+          ],
+          "content": "• rewards"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.208,
+            0.197,
+            0.336,
+            0.216
+          ],
+          "content": "• no actions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.515,
+            0.106,
+            0.813,
+            0.22
+          ],
+          "content": "V=49.5 0.1 10 0.5 2 0.5 0 0.2 0.7 0.9 V=40.5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.217,
+            0.501,
+            0.253
+          ],
+          "content": "• Value of a state, using infinite discounted horizon"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.252,
+            0.469,
+            0.274
+          ],
+          "content": "V (s) = R (s) + \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} | s) V (s ^ {\\prime})",
+          "image_source": "images/page_25_equation_8.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.653,
+            0.214,
+            0.777,
+            0.292
+          ],
+          "content": "3V=49.1 0 0.1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.295,
+            0.349,
+            0.317
+          ],
+          "content": "• Assume γ=0.9"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.316,
+            0.496,
+            0.337
+          ],
+          "content": "V (1) = 0 +. 9 (. 5 V (1) +. 5 V (2))",
+          "image_source": "images/page_25_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.335,
+            0.571,
+            0.355
+          ],
+          "content": "\\mathrm{V} (2) = 1 0 +. 9 (. 2 \\mathrm{V} (1) +. 1 \\mathrm{V} (2) +. 7 \\mathrm{V} (3))",
+          "image_source": "images/page_25_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.214,
+            0.354,
+            0.571,
+            0.376
+          ],
+          "content": "\\mathrm{V} (3) = 0 +. 9 (\\quad . 9 \\mathrm{V} (2) +. 1 \\mathrm{V} (3))",
+          "image_source": "images/page_25_equation_13.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.479,
+            0.866,
+            0.542
+          ],
+          "content": "If we set gamma to 0, then the values of the nodes would be the same as their rewards. If gamma were small but non-zero, then the values would be smaller than in this case and their differences more pronounced."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.072,
+            0.658,
+            0.103
+          ],
+          "content": "Finding the Best Policy"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.563,
+            0.137
+          ],
+          "content": "• MDP + Policy = Markov Chain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.138,
+            0.623,
+            0.163
+          ],
+          "content": "• MDP = the way the world works"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.163,
+            0.639,
+            0.19
+          ],
+          "content": "• Policy = the way the agent works"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.877,
+            0.583
+          ],
+          "content": "Now, we’ll go back to thinking about Markov Decision Processes. If you take an MDP and fix the policy, then all of the actions are chosen and what you have left is a Markov chain. So, given a policy, it’s easy to evaluate it, in the sense that you can compute what value the agent can expect to get from each possible starting state, if it executes that policy."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.295,
+            0.072,
+            0.657,
+            0.103
+          ],
+          "level": 2,
+          "content": "Finding the Best Policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.563,
+            0.137
+          ],
+          "content": "• MDP + Policy = Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.138,
+            0.623,
+            0.163
+          ],
+          "content": "• MDP = the way the world works"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.163,
+            0.639,
+            0.19
+          ],
+          "content": "• Policy = the way the agent works"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.18,
+            0.206,
+            0.699,
+            0.236
+          ],
+          "content": "\\bullet \\mathrm{V} ^ {*} (s) = \\mathrm{R} (s) + \\max _ {a} [ \\gamma \\sum_ {s ^ {\\prime}} \\mathrm{P} (s ^ {\\prime} \\mid s, a) \\mathrm{V} ^ {*} (s ^ {\\prime}) ]",
+          "image_source": "images/page_27_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.877,
+            0.622
+          ],
+          "content": "We want to find the best possible policy. We’ll approach this problem by thinking about $V ^ { \\star }$ , the optimal value function. $V ^ { \\star }$ is defined using the following set of recursive equations. The optimal value of a state s is the reward that we get in s, plus the maximum over all actions we could take in s, of the discounted expected optimal value of the next state. The idea is that in every state, we want to choose the action that maximizes the value of the future."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.072,
+            0.658,
+            0.103
+          ],
+          "level": 2,
+          "content": "Finding the Best Policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.111,
+            0.563,
+            0.138
+          ],
+          "content": "• MDP + Policy = Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.137,
+            0.624,
+            0.163
+          ],
+          "content": "• MDP = the way the world works"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.163,
+            0.64,
+            0.191
+          ],
+          "content": "• Policy = the way the agent works"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.179,
+            0.206,
+            0.7,
+            0.236
+          ],
+          "content": "\\bullet \\mathrm{V} ^ {*} (s) = \\mathrm{R} (s) + \\max _ {a} [ \\gamma \\sum_ {s ^ {\\prime}} \\mathrm{P} (s ^ {\\prime} \\mid s, a) \\mathrm{V} ^ {*} (s ^ {\\prime}) ]",
+          "image_source": "images/page_28_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.262,
+            0.763,
+            0.31
+          ],
+          "content": "• Theorem: There is a unique V\\* satisfying these equations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 20 • 29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.878,
+            0.583
+          ],
+          "content": "This is sort of like the set of equations we had for the Markov chain. We have n equations in n unknowns. The problem is that now we have these annoying “max” operators in our equations, which makes them non-linear, and therefore non-trivial to solve. Nonetheless, there is a theorem that says, given R and P, there is a unique function V\\* that satisfies these equations."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.164,
+            0.08,
+            0.817,
+            0.449
+          ],
+          "sub_type": "code",
+          "content": "```python\nFinding the Best Policy\n• MDP + Policy = Markov Chain\n    • MDP = the way the world works\n    • Policy = the way the agent works\n• V*(s)=R(s) + max_a[γ Σ_s, P(s' | s, a) V*(s')]\n• Theorem: There is a unique V* satisfying these equations\n• Π*(s)=argmax_a Σ_s, P(s' | s, a) V*(s')]\nLecture 20 • 30\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.869,
+            0.623
+          ],
+          "content": "If we know V\\*, then it’s easy to find the optimal policy. The optimal policy, pi\\*, guarantees that we’ll get the biggest possible infinite-horizon expected discounted reward in every state. So, if we find ourselves in a state s, we can pick the best action by considering, for each action, the average the V\\* value of the next state according to how likely it is to occur given the current state s and the action under consideration. Then, we pick the action that maximizes the expected V\\* on the next step."
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.072,
+            0.585,
+            0.102
+          ],
+          "content": "Computing V\\*"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.348,
+            0.137
+          ],
+          "content": "• Approaches"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.138,
+            0.416,
+            0.162
+          ],
+          "content": "• Value iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.163,
+            0.419,
+            0.187
+          ],
+          "content": "• Policy iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.189,
+            0.482,
+            0.214
+          ],
+          "content": "• Linear programming"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 31"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.881,
+            0.561
+          ],
+          "content": "So, we’ve seen that if we know V\\*, then we know how to act optimally. So, can we compute V\\*? It turns out that it’s not too hard to compute V\\*. There are three fairly standard approaches to it. We’ll just cover the first one, value iteraton."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.11,
+            0.533,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 32"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.875,
+            0.581
+          ],
+          "content": "Here’s the value iteration algorithm. We are going to compute $\\nabla ^ { \\star } ( \\mathbf { s } )$ for all s, by doing an iterative procedure, in which our current estimate for V\\* gets closer to the true value over time. We start by initializing $\\nabla ( \\mathbf { s } )$ to 0, for all states. We could actually initialize to any values we wanted to, but it’s easiest to just start at 0."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.072,
+            0.598,
+            0.102
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.11,
+            0.533,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.135,
+            0.417,
+            0.159
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 33"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.817,
+            0.502
+          ],
+          "content": "Now, we loop for a while (we’ll come back to the question of how long)."
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.101
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.11,
+            0.533,
+            0.135
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.135,
+            0.415,
+            0.158
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.158,
+            0.415,
+            0.179
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.285,
+            0.176,
+            0.753,
+            0.202
+          ],
+          "content": "\\dot {V} ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_33_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 34"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.877,
+            0.56
+          ],
+          "content": "Now, for every s, we compute a new value, V\\_t+1 (s) using the equation that defines $V ^ { \\star }$ as an assignment, based on the previous values $\\nabla _ { \\perp } \\mathbf { t }$ of V. So, on each iteration, we compute a whole new value function given the previous one."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "level": 2,
+          "content": "Value Iteration"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.11,
+            0.534,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.135,
+            0.418,
+            0.158
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.25,
+            0.158,
+            0.416,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.283,
+            0.175,
+            0.754,
+            0.203
+          ],
+          "content": "V ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_34_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.224,
+            0.399,
+            0.253
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 20 • 35"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.881,
+            0.583
+          ],
+          "content": "This algorithm is guaranteed to converge to V\\*. It might seem sort of surprising. We’re starting with completely bogus estimates of V, and using them to make new estimates of V. So why does this work? It’s possible to show that the influence of R and P, which we know, drives the successive Vs to get closer and closer to V\\*."
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.11,
+            0.535,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.135,
+            0.417,
+            0.159
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.25,
+            0.158,
+            0.415,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.283,
+            0.175,
+            0.754,
+            0.203
+          ],
+          "content": "V ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_35_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.225,
+            0.4,
+            0.251
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.249,
+            0.52,
+            0.275
+          ],
+          "content": "• No need to keep Vt vs $\\mathsf { V } ^ { \\mathsf { t } + 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 20 • 36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.874,
+            0.561
+          ],
+          "content": "Not only does this algorithm converge to $V ^ { \\star }$ , we can simplify it a lot and still retain convergence. First of all, we can get rid of the different Vt functions in the algorithm and just use a single V, in both the left and right hand sides of the update statement."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.102
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.109,
+            0.535,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.135,
+            0.418,
+            0.159
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.249,
+            0.158,
+            0.416,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.283,
+            0.175,
+            0.755,
+            0.203
+          ],
+          "content": "V ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_36_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.225,
+            0.4,
+            0.25
+          ],
+          "content": "• Converges to V\\*"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.249,
+            0.521,
+            0.273
+          ],
+          "content": "• No need to keep V<sup>t</sup> vs V<sup>t+1</sup>"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.273,
+            0.747,
+            0.298
+          ],
+          "content": "• Asynchronous (can do random state updates)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 20 • 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.479,
+            0.875,
+            0.562
+          ],
+          "content": "In addition, we can execute this algorithm asynchronously. That is, we can do these state-update assignments to the states in any order we want to. In fact, we can even do them by picking states at random to update, as long as we update all the states sufficiently often."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.101
+          ],
+          "level": 2,
+          "content": "Value Iteration"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.11,
+            0.534,
+            0.136
+          ],
+          "content": "Initialize $\\mathsf { V } ^ { 0 } ( \\mathsf { s } ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.135,
+            0.417,
+            0.158
+          ],
+          "content": "Loop for a while"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.158,
+            0.415,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.283,
+            0.175,
+            0.753,
+            0.203
+          ],
+          "content": "V ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_37_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.226,
+            0.399,
+            0.25
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.249,
+            0.519,
+            0.273
+          ],
+          "content": "• No need to keep Vt vs $\\mathsf { V } ^ { \\mathsf { t } + 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.273,
+            0.745,
+            0.296
+          ],
+          "content": "• Asynchronous (can do random state updates)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.294,
+            0.722,
+            0.323
+          ],
+          "content": "• Assume we want $\\left\\| V^{t} - V^{*} \\right\\| = \\max_{s} \\left| V^{t}(s) - V^{*}(s) \\right| < \\varepsilon$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 38"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.864,
+            0.582
+          ],
+          "content": "Now, let’s go back to the “loop for a while” statement, and make it a little bit more precise. Let’s say we want to guarantee that when we terminate, the current value function differs from $V ^ { \\star }$ by at most epsilon (the double bars indicate the max norm, which is just the biggest difference between the two functions, at any argument s)."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.101
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.11,
+            0.533,
+            0.133
+          ],
+          "content": "Initialize $V ^ { 0 } ( s ) { = } 0 ,$ for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.129,
+            0.745,
+            0.153
+          ],
+          "content": "Loop for a while [until $\\| V ^ { \\mathrm { t } } - V ^ { \\mathrm { t } + 1 } \\| < \\varepsilon ( 1 - \\gamma ) / \\gamma ]$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.157,
+            0.415,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.284,
+            0.176,
+            0.753,
+            0.202
+          ],
+          "content": "\\dot {V} ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_38_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.226,
+            0.399,
+            0.249
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.249,
+            0.519,
+            0.272
+          ],
+          "content": "• No need to keep Vt vs $\\mathsf { V } ^ { \\mathsf { t } + 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.273,
+            0.745,
+            0.295
+          ],
+          "content": "• Asynchronous (can do random state updates)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.294,
+            0.722,
+            0.323
+          ],
+          "content": "• Assume we want $\\left\\| V^{t} - V^{*} \\right\\| = \\max_{s} \\left| V^{t}(s) - V^{*}(s) \\right| < \\varepsilon$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 39"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.863,
+            0.542
+          ],
+          "content": "In order to guarantee this condition, it is sufficient to examine the maximum difference between Vt and Vt+1. As soon as it is below epsilon times (1 – gamma) / gamma, we know that Vt is within epsilon of V\\*."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.356,
+            0.073,
+            0.597,
+            0.101
+          ],
+          "level": 2,
+          "content": "Value Iteration"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.11,
+            0.533,
+            0.133
+          ],
+          "content": "Initialize $V ^ { 0 } ( s ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.129,
+            0.744,
+            0.153
+          ],
+          "content": "Loop for a while [until $\\| V ^ { \\mathrm { t } } - V ^ { \\mathrm { t } + 1 } \\| < \\varepsilon ( 1 - \\gamma ) / \\gamma ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.251,
+            0.157,
+            0.415,
+            0.18
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.284,
+            0.176,
+            0.753,
+            0.202
+          ],
+          "content": "\\dot {V} ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_39_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.226,
+            0.399,
+            0.249
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.249,
+            0.519,
+            0.273
+          ],
+          "content": "• No need to keep Vt vs $\\mathsf { V } ^ { \\mathsf { t } + 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.273,
+            0.745,
+            0.295
+          ],
+          "content": "• Asynchronous (can do random state updates)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.294,
+            0.722,
+            0.32
+          ],
+          "content": "• Assume we want $\\left\\| V^{t} - V^{*} \\right\\| = \\max_{s} \\left| V^{t}(s) - V^{*}(s) \\right| < \\varepsilon$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.32,
+            0.773,
+            0.362
+          ],
+          "content": "• Gets to optimal policy in time polynomial in $| A | .$ , |S|, $1 / ( 1 { \\dot { - } } \\gamma )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 40"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.874,
+            0.603
+          ],
+          "content": "Now, although we may never converge to the exact, analytically correct $V ^ { \\star }$ in a finite number of iterations, it’s guaranteed that we can get close enough to $V ^ { \\star }$ so that using V to choose our actions will yield the optimal policy within a finite number of iterations. In fact, using value iteration, we can find the optimal policy in time that is polynomial in the size of the state and action spaces, the magnitude of the largest reward, and in 1/1-gamma."
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.355,
+            0.073,
+            0.597,
+            0.101
+          ],
+          "content": "Value Iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.11,
+            0.533,
+            0.133
+          ],
+          "content": "Initialize $V ^ { 0 } ( s ) { = } 0 ,$ , for all s"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.129,
+            0.745,
+            0.153
+          ],
+          "content": "Loop for a while [until $\\| \\nabla ^ { t } - V ^ { t + 1 } \\| < \\varepsilon ( 1 - \\gamma ) / \\gamma ]$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.251,
+            0.157,
+            0.415,
+            0.179
+          ],
+          "content": "Loop for all s"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.284,
+            0.176,
+            0.753,
+            0.202
+          ],
+          "content": "\\dot {V} ^ {t + 1} (s) = R (s) + \\max _ {a} \\gamma \\sum_ {s ^ {\\prime}} P (s ^ {\\prime} \\mid s, a) V ^ {t} (s)",
+          "image_source": "images/page_40_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.226,
+            0.399,
+            0.249
+          ],
+          "content": "• Converges to $V ^ { * }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.249,
+            0.519,
+            0.272
+          ],
+          "content": "• No need to keep Vt vs $\\mathsf { V } ^ { \\mathsf { t } + 1 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.273,
+            0.745,
+            0.295
+          ],
+          "content": "• Asynchronous (can do random state updates)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.294,
+            0.722,
+            0.319
+          ],
+          "content": "• Assume we want $\\left\\| V^{t} - V^{*} \\right\\| = \\max_{s} \\left| V^{t}(s) - V^{*}(s) \\right| < \\varepsilon$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.32,
+            0.773,
+            0.362
+          ],
+          "content": "• Gets to optimal policy in time polynomial in $| A | .$ , |S|, $1 / ( 1 { \\dot { - } } \\gamma )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 20 • 41"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.853,
+            0.541
+          ],
+          "content": "MDPs and value iteration are great as far as they go. But to model real problems, we have to make a number of extensions and compromises, as we’ll see in the next few slides."
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.347,
+            0.073,
+            0.607,
+            0.103
+          ],
+          "level": 1,
+          "content": "Big state spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 42"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.866,
+            0.542
+          ],
+          "content": "Of course, the theorems only hold when we can store V in a table of values, one for each state. And in large state spaces, even running in polynomial time in the size of the state spaces is nowhere efficient enough."
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.073,
+            0.607,
+            0.103
+          ],
+          "content": "Big state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.553,
+            0.139
+          ],
+          "content": "• Function approximation for V"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 43"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.877,
+            0.603
+          ],
+          "content": "The usual approach to dealing with big state spaces is to use value iteration, but to store the value function only approximately, using some kind of function-approximation method. Then, the value iteration uses the previous approximation of the value function to compute a new, better, approximation, still stored in some sort of a compact way. The convergence theorems only apply to very limited types of function approximation."
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.345,
+            0.073,
+            0.609,
+            0.103
+          ],
+          "content": "Big state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.11,
+            0.555,
+            0.14
+          ],
+          "content": "• Function approximation for V"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 44"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.873,
+            0.542
+          ],
+          "content": "Function approximation can be done in a variety of ways. It’s very much a topic of current research to understand which methods are most appropriate in which circumstances."
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.347,
+            0.074,
+            0.607,
+            0.103
+          ],
+          "content": "Big state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.553,
+            0.138
+          ],
+          "content": "• Function approximation for V"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.139,
+            0.379,
+            0.162
+          ],
+          "content": "• neural nets"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.434,
+            0.189
+          ],
+          "content": "• regression trees"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 45"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.876,
+            0.542
+          ],
+          "content": "Basic techniques from machine learning, such as neural nets and regression trees, can be used to compute and store approximations to V from example points."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.348,
+            0.074,
+            0.606,
+            0.102
+          ],
+          "content": "Big state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.553,
+            0.137
+          ],
+          "content": "• Function approximation for V"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.139,
+            0.379,
+            0.162
+          ],
+          "content": "• neural nets"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.164,
+            0.434,
+            0.187
+          ],
+          "content": "• regression trees"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.188,
+            0.779,
+            0.234
+          ],
+          "content": "• factored representations (represent Pr(s’|s,a) using Bayes net)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 46"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.865,
+            0.561
+          ],
+          "content": "An interesting new method uses Bayesian networks to compactly represent the state transition probability distributions. Then the value function is approximated using factors that are related to groups of highly connected variables in the bayes net."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.315,
+            0.072,
+            0.638,
+            0.102
+          ],
+          "content": "Partial Observability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.111,
+            0.793,
+            0.16
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 47"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.876,
+            0.583
+          ],
+          "content": "Another big issue is partial observability. MDPs assume that any crazy thing can happen to you, but when it does, you’ll know exactly what state you’re in. This is an incredibly strong assumption that only very rarely holds. Generally, you can just see a small part of the whole state of the world, and you don’t necessarily even observe that reliably."
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.314,
+            0.072,
+            0.639,
+            0.102
+          ],
+          "content": "Partial Observability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.793,
+            0.159
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.158,
+            0.653,
+            0.185
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 48"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.847,
+            0.523
+          ],
+          "content": "There’s a much richer class of models, called partially observable Markov decision processes, or POMDPs, that account for partial observability."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.315,
+            0.073,
+            0.639,
+            0.102
+          ],
+          "content": "Partial Observability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.159,
+            0.651,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 20 • 49"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.873,
+            0.522
+          ],
+          "content": "We augment the MDP model with a set of observations, O, and a probability distribution over observations given state and action."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.102
+          ],
+          "content": "Partial Observability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.159,
+            0.651,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.211,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 50"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.869,
+            0.541
+          ],
+          "content": "Now, the agent’s interaction with the world is that it makes an observation o, chooses an action a, makes another observation o, chooses another action a, and so on."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.102
+          ],
+          "content": "Partial Observability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.159,
+            0.651,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.211,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 20 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.477,
+            0.86,
+            0.562
+          ],
+          "content": "In general, for optimal behavior, the agent’s choice of actions will now have to depend on the complete history of previous actions and observations. One way of knowing more about the current state of the world is remembering what you knew about it previously."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.639,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.793,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.159,
+            0.653,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.211,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.294,
+            0.707,
+            0.39
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 52"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.845,
+            0.521
+          ],
+          "content": "Here’s a block diagram for an optimal POMDP controller. It’s divided into two parts."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.639,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.793,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.159,
+            0.652,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.211,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.294,
+            0.708,
+            0.391
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 20 • 53"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.875,
+            0.541
+          ],
+          "content": "The first box is in charge of memory updates. It takes in as input the current observation, the last action, and the last “mental state” and generates a new mental state."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.639,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.112,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.159,
+            0.652,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.183,
+            0.741,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.211,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.294,
+            0.707,
+            0.391
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 20 • 54"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.845,
+            0.561
+          ],
+          "content": "The second box is a policy, as in an MDP. Except in this case, the policy takes the mental state as input, rather than the true state of the world (or simply the current observation). The policy still has the job of generating actions."
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.159,
+            0.651,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.184,
+            0.74,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.212,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.259,
+            0.795,
+            0.439
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.479,
+            0.876,
+            0.662
+          ],
+          "content": "So, what are we supposed to remember? This is really a hard question. Given all the things you’ve ever seen and done, what should you remember? It’s especially difficult if you have a fixed-sized memory. The theory of POMDPs tells us that the best thing to “remember” is a probability distribution over the current, true, hidden state s of the world. It’s actually relatively easy to build the memory update box so that it takes an old distribution over world states, a new action, and a new observation, and generates a new distribution over world states, taking into account the state transition probabilities and the observation probabilities."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.316,
+            0.074,
+            0.637,
+            0.101
+          ],
+          "level": 1,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.791,
+            0.157
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.159,
+            0.65,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.184,
+            0.739,
+            0.208
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.212,
+            0.412,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.322,
+            0.251,
+            0.805,
+            0.389
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_55_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.479,
+            0.877,
+            0.682
+          ],
+          "content": "Now, the job of the policy is interesting. It gets to map probability distributions over the current state into actions. This is an interesting job, because it allows the agent to take different actions depending on its degree of uncertainty. So, a robot that is trying to deliver a package to some office might drive directly toward that office if it knows where it is; but if the robot is lost (expressed as having a very spread-out distribution over possible states), the optimal action might be to ask someone for directions or to go and buy a map. The POMDP framework very elegantly combines taking actions because of their effects on the world with taking actions because of their effects on the agent’s mental state."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.073,
+            0.638,
+            0.102
+          ],
+          "level": 2,
+          "content": "Partial Observability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.113,
+            0.792,
+            0.158
+          ],
+          "content": "• MDPs assume complete observability (can always tell what state you’re in)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.159,
+            0.651,
+            0.183
+          ],
+          "content": "• POMDP (Partially Observable MDP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.184,
+            0.74,
+            0.209
+          ],
+          "content": "• Observation: Pr(O|s,a) [O is observation]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.212,
+            0.413,
+            0.234
+          ],
+          "content": "• o, a, o, a, o, a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.25,
+            0.805,
+            0.438
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.86,
+            0.562
+          ],
+          "content": "Unfortunately, although it’s beautiful mathematically, it’s completely, hopelessly, intractable computationally. So, a major current research topic is how to approximately solve POMDPs, or to discover special cases in which they can be solved relatively efficiently."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.323,
+            0.073,
+            0.629,
+            0.103
+          ],
+          "level": 2,
+          "content": "Worrying too much"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.802,
+            0.159
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 58"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.84,
+            0.542
+          ],
+          "content": "Finally, the MDP view that every possible state has a non-zero chance of happening as a result of taking an action in a particular state is really too paranoid in most domains."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.323,
+            0.073,
+            0.63,
+            0.103
+          ],
+          "content": "Worrying too much"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.802,
+            0.159
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 59"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.86,
+            0.522
+          ],
+          "content": "So, what can we do when the state-transition function is sparse (contains a lot of zeros) or approximately sparse (contains a lot of small numbers)?"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.073,
+            0.629,
+            0.102
+          ],
+          "level": 2,
+          "content": "Worrying too much"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.112,
+            0.801,
+            0.158
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.874,
+            0.584
+          ],
+          "content": "When the horizon, or the effective horizon (1/1-gamma) is large with respect to the size of the state space, then it makes sense to compute a whole policy, since your search through the space for a good course of action is likely to keep hitting the same states over and over (this is, essentially, the principle of dynamic programming)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 60"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.324,
+            0.073,
+            0.629,
+            0.103
+          ],
+          "content": "Worrying too much"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.801,
+            0.159
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 61"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.878,
+            0.563
+          ],
+          "content": "In many domains, though, the state space is truly enormous, but the agent is trying to achieve a goal that is not too far removed from the current state. In such situations, it makes sense to do something that looks a lot more like regular planning, searching forward from the current state."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.324,
+            0.073,
+            0.629,
+            0.103
+          ],
+          "content": "Worrying too much"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.801,
+            0.158
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 62"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.879,
+            0.561
+          ],
+          "content": "If the transition function is truly sparse, then each state will have only a small number of successor states under each action, and it’s possible to build up a huge decision tree, and then evaluate it from leaf to root to decide which action to take next."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.325,
+            0.074,
+            0.629,
+            0.102
+          ],
+          "content": "Worrying too much"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.113,
+            0.803,
+            0.158
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.16,
+            0.818,
+            0.226
+          ],
+          "content": "• sample-based planning: with short horizon in large state space, planning should be independent of state-space size"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 63"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.843,
+            0.543
+          ],
+          "content": "If the transition function isn’t too sparse, it may be possible to get an approximately optimal action by just drawing samples from the next-state distribution and acting as if those are the only possible resulting states."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.325,
+            0.074,
+            0.627,
+            0.102
+          ],
+          "level": 2,
+          "content": "Worrying too much"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.113,
+            0.802,
+            0.157
+          ],
+          "content": "• Assumption that every possible eventuality should be taken into account"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.16,
+            0.817,
+            0.225
+          ],
+          "content": "• sample-based planning: with short horizon in large state space, planning should be independent of state-space size"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 20 • 64"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.871,
+            0.622
+          ],
+          "content": "Once the search out to a finite horizon is done, the agent chooses the first action, executes it, and looks to see what state it’s in. Then, it searches again. Thus, most of the computational work is done on-line rather than offline, but it’s much more sensitive to the actual states, and doesn’t worry about every possible thing that could happen. Thus, these methods are usually exponential in the horizon, but completely independent of the size of the state space."
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.318,
+            0.072,
+            0.635,
+            0.104
+          ],
+          "content": "Leading to Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.111,
+            0.817,
+            0.18
+          ],
+          "content": "MDPs and value iteration are an important foundation of reinforcement learning, or learning to behave"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 20 • 65"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.863,
+            0.522
+          ],
+          "content": "Markov Decision Processes and value iteration are an important foundation of reinforcement learning, which we’ll talk about next time."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture20Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T09:40:01Z",
+      "modified_at": "2003-06-13T11:16:12+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 65,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

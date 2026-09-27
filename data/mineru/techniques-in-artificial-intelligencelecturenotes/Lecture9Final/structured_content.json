@@ -1,0 +1,1696 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.082,
+            0.711,
+            0.109
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.337,
+            0.127,
+            0.617,
+            0.157
+          ],
+          "content": "Logic Miscellanea"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.177,
+            0.665,
+            0.203
+          ],
+          "content": "• Completeness and Incompleteness"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.228,
+            0.203,
+            0.351,
+            0.228
+          ],
+          "content": "• Equality"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.229,
+            0.439,
+            0.254
+          ],
+          "content": "• Paramodulation"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 9 • 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.581
+          ],
+          "content": "Logic is a huge subject. It includes esoteric mathematical and philosophical arguments as well as hard-core engineering of knowledge representations and efficient inference algorithms. I’m going to use this lecture to cover a set of random topics in logic that, even if you don’t understand them exactly, it’s good to know a little bit about."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.585,
+            0.693,
+            0.608
+          ],
+          "content": "The paramodulation rule will also be important to homework 2."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.234,
+            0.071,
+            0.719,
+            0.103
+          ],
+          "content": "Completeness and Decidability"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.104,
+            0.512,
+            0.13
+          ],
+          "content": "Complete: If KB ² α then KB \\` α"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.131,
+            0.545,
+            0.157
+          ],
+          "content": "• If it’s entailed, there is a proof"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.172,
+            0.351,
+            0.196
+          ],
+          "content": "Semi-decidable:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.195,
+            0.547,
+            0.216
+          ],
+          "content": "• If there’s a proof, we’ll halt with it"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.214,
+            0.513,
+            0.236
+          ],
+          "content": "• If not, maybe halt, maybe not"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 9 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.477,
+            0.851,
+            0.543
+          ],
+          "content": "We found that resolution for propositional logic was sound and complete. Recall that a proof system is complete if whenever a conclusion is entailed by some premises, it can be proved from those premises."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.233,
+            0.071,
+            0.719,
+            0.103
+          ],
+          "level": 2,
+          "content": "Completeness and Decidability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.104,
+            0.513,
+            0.13
+          ],
+          "content": "Complete: If KB ² α then KB \\` α"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.131,
+            0.547,
+            0.158
+          ],
+          "content": "• If it’s entailed, there is a proof"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.172,
+            0.351,
+            0.196
+          ],
+          "content": "Semi-decidable:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.195,
+            0.548,
+            0.216
+          ],
+          "content": "• If there’s a proof, we’ll halt with it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.214,
+            0.513,
+            0.236
+          ],
+          "content": "• If not, maybe halt, maybe not"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.253,
+            0.81,
+            0.295
+          ],
+          "content": "Gödel’s Completeness Theorem: There exists a complete proof system for FOL"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.543
+          ],
+          "content": "Godel proved a completeness theorem for first-order logic: There exists a complete proof system for FOL. But, living up to his nature as a very abstract logician, he didn’t come up with such a proof system; he just proved one existed."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.149,
+            0.051,
+            0.853,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.214,
+            0.514,
+            0.237
+          ],
+          "content": "• If not, maybe halt, maybe not"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.252,
+            0.81,
+            0.294
+          ],
+          "content": "Gödel’s Completeness Theorem: There exists a complete proof system for FOL"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 9 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.477,
+            0.831,
+            0.522
+          ],
+          "content": "Then, Robinson came along and showed that resolution refutation is sound and complete for FOL."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.149,
+            0.052,
+            0.852,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.867,
+            0.564
+          ],
+          "content": "This makes first-order logic semi-decidable. If the answer is “yes”, that is, if there is a proof, then the theorem prover will eventually halt and say so. But if there isn’t a proof, it might run forever! (unlike in the propositional case, in which it is guaranteed that if there isn’t a proof, resolution will eventually stop)."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.331,
+            0.071,
+            0.621,
+            0.104
+          ],
+          "content": "Adding Arithmetic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.722,
+            0.421,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 9 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.871,
+            0.542
+          ],
+          "content": "So, things are relatively good with regular first-order logic. And they’re still fine if you add addition to the language. But if you add addition and multiplication, it starts to get weird!"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.332,
+            0.073,
+            0.621,
+            0.102
+          ],
+          "content": "Adding Arithmetic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.11,
+            0.734,
+            0.172
+          ],
+          "content": "Gödel’s Incompleteness Theorem: There is no consistent, complete proof system for FOL + Arithmetic."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.172,
+            0.803,
+            0.234
+          ],
+          "content": "Either there are sentences that are true, but not provable or there are sentences that are provable, but not true."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 9 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.855,
+            0.562
+          ],
+          "content": "Godel also had an **in**completeness theorem, which says that there is no consistent, complete proof system for FOL plus arithmetic. (Consistent is the same as sound). Either there are sentences that are true, but not provable, or there are sentences that are provable, but not true. It’s not so good either way."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.331,
+            0.072,
+            0.621,
+            0.102
+          ],
+          "level": 2,
+          "content": "Adding Arithmetic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.11,
+            0.735,
+            0.172
+          ],
+          "content": "Gödel’s Incompleteness Theorem: There is no consistent, complete proof system for FOL + Arithmetic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.172,
+            0.803,
+            0.234
+          ],
+          "content": "Either there are sentences that are true, but not provable or there are sentences that are provable, but not true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.254,
+            0.779,
+            0.324
+          ],
+          "content": "Arithmetic gives you the ability to construct codenames for sentences within the logic. P = “P is not provable.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.721,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 9 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.873,
+            0.562
+          ],
+          "content": "Here’s the roughest cartoon of how the proof goes. Arithmetic gives you the ability to construct code names for sentences within the logic, and therefore to construct sentences that are self-referential. This sentence, P, is sometimes called the Godel-sentence. P is “P is not provable”."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.331,
+            0.072,
+            0.621,
+            0.102
+          ],
+          "content": "Adding Arithmetic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.11,
+            0.735,
+            0.172
+          ],
+          "content": "Gödel’s Incompleteness Theorem: There is no consistent, complete proof system for FOL + Arithmetic."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.172,
+            0.803,
+            0.234
+          ],
+          "content": "Either there are sentences that are true, but not provable or there are sentences that are provable, but not true."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.255,
+            0.779,
+            0.298
+          ],
+          "content": "Arithmetic gives you the ability to construct codenames for sentences within the logic."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.297,
+            0.505,
+            0.321
+          ],
+          "content": "P = “P is not provable.”"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.321,
+            0.733,
+            0.344
+          ],
+          "content": "• If P is true: it’s not provable (incomplete)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.344,
+            0.705,
+            0.369
+          ],
+          "content": "• If P is false: it’s provable (inconsistent)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.721,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 9 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.875,
+            0.521
+          ],
+          "content": "If P is true, then P is not provable (so the system is incomplete). If P is false, then P is provable (so the system is inconsistent). Too bad!"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.409,
+            0.072,
+            0.544,
+            0.104
+          ],
+          "level": 1,
+          "content": "Equality"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.88,
+            0.584
+          ],
+          "content": "We need to talk a bit about equality. So far we've been doing proofs in a language with predicates and functions, but no equality statements. When we talked about the definition of first-order logic we put equality in our language, so the question is what do you do in resolution, if you have equality, if you want to talk about things being equal to each other."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.41,
+            0.073,
+            0.545,
+            0.102
+          ],
+          "content": "Equality"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.193,
+            0.12,
+            0.322,
+            0.142
+          ],
+          "content": "\\forall \\mathbf {x}. \\mathbf {x} = \\mathbf {x}",
+          "image_source": "images/page_10_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.192,
+            0.145,
+            0.423,
+            0.169
+          ],
+          "content": "\\forall \\mathsf {x y .} \\mathsf {x = y} \\rightarrow \\mathsf {y} = \\mathsf {x}",
+          "image_source": "images/page_10_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.17,
+            0.535,
+            0.195
+          ],
+          "content": "\\forall x y z. x = y \\notin y = z \\rightarrow x = z",
+          "image_source": "images/page_10_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 9 • 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.872,
+            0.56
+          ],
+          "content": "One solution is to just treat equality like any other relation and give axioms that specify how it has to work. So, for instance, equality is an equivalence relation, which means it’s symmetric, reflexive, and transitive. We can say that in logic like this."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.409,
+            0.073,
+            0.545,
+            0.102
+          ],
+          "level": 2,
+          "content": "Equality"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.193,
+            0.12,
+            0.323,
+            0.143
+          ],
+          "content": "\\forall \\texttt {X .} \\texttt {X} = \\texttt {X}",
+          "image_source": "images/page_11_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.192,
+            0.145,
+            0.424,
+            0.17
+          ],
+          "content": "\\forall \\mathsf {x y .} \\mathsf {x = y} \\rightarrow \\mathsf {y} = \\mathsf {x}",
+          "image_source": "images/page_11_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.192,
+            0.17,
+            0.535,
+            0.194
+          ],
+          "content": "\\forall x y z. x = y \\not \\in E y = z \\rightarrow x = z",
+          "image_source": "images/page_11_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.192,
+            0.195,
+            0.517,
+            0.221
+          ],
+          "content": "\\forall \\mathsf {x y}. \\mathsf {x} = \\mathsf {y} \\rightarrow (\\mathsf {P} (\\mathsf {x}) \\leftrightarrow \\mathsf {P} (\\mathsf {y}))",
+          "image_source": "images/page_11_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.253,
+            0.228,
+            0.47,
+            0.253
+          ],
+          "content": "\\text {etc., etc., etc., ...}",
+          "image_source": "images/page_11_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.479,
+            0.874,
+            0.602
+          ],
+          "content": "But then, very sadly, you need more than that. You need to say, for every predicate P, for all X and Y if X = Y then (P(X) if and only if P(Y)). The idea is that you should be able to substitute equals for equals into any context. That doesn’t follow from our equality axioms, and so $\\mathbf { w e } ^ { \\flat } \\mathbf { d }$ have add a new axiom for every predicate in our language that says it’s okay to substitute equals into it. That could get to be pretty tedious."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.349,
+            0.073,
+            0.603,
+            0.102
+          ],
+          "content": "Paramodulation"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.106,
+            0.701,
+            0.13
+          ],
+          "content": "Need one more rule to deal with resolution and equality."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 9 • 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.858,
+            0.583
+          ],
+          "content": "So what typically happens is that people build special inference procedures for equality into the proof procedure, so in resolution there's a rule called paramodulation. I'll show it to you by example. You'll get the idea. The book talks about demodulation. This is a slightly more complicated version, but it's not too much more complicated."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.35,
+            0.073,
+            0.603,
+            0.101
+          ],
+          "content": "Paramodulation"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.107,
+            0.699,
+            0.129
+          ],
+          "content": "Need one more rule to deal with resolution and equality."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.218,
+            0.251,
+            0.309,
+            0.274
+          ],
+          "content": "F (x) = B",
+          "image_source": "images/page_13_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.278,
+            0.393,
+            0.301
+          ],
+          "content": "Q (y) \\lor W (y, F (y))",
+          "image_source": "images/page_13_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.304,
+            0.363,
+            0.328
+          ],
+          "content": "Q (y) \\lor W (y, B)",
+          "image_source": "images/page_13_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 9 • 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.86,
+            0.561
+          ],
+          "content": "We’ll start by looking at a simple example. What if you know that F(x) = B, and that either Q(y) or $\\mathbf { W } ( \\mathbf { y } , \\mathbf { F } ( \\mathbf { y } ) )$ . It seems like you should be able to substitute B in for F(y), because F(x) unifies with F(y). And you can! You can conclude Q(y) or W(y,B)."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 9 • 15"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.351,
+            0.074,
+            0.602,
+            0.1
+          ],
+          "level": 1,
+          "content": "Paramodulation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.193,
+            0.107,
+            0.699,
+            0.128
+          ],
+          "content": "Need one more rule to deal with resolution and equality."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.235,
+            0.147,
+            0.331,
+            0.169
+          ],
+          "content": "\\alpha \\lor (s = t)",
+          "image_source": "images/page_14_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.235,
+            0.173,
+            0.313,
+            0.196
+          ],
+          "content": "\\beta \\lor \\gamma [ r ]",
+          "image_source": "images/page_14_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.154,
+            0.767,
+            0.179
+          ],
+          "content": "[r] is a literal containing term r"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.235,
+            0.199,
+            0.375,
+            0.223
+          ],
+          "content": "(\\alpha \\lor \\beta \\lor \\gamma [ t ]) \\theta",
+          "image_source": "images/page_14_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.439,
+            0.181,
+            0.571,
+            0.205
+          ],
+          "content": "\\theta = \\text {unify} (s, r)",
+          "image_source": "images/page_14_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.251,
+            0.308,
+            0.274
+          ],
+          "content": "F (x) = B",
+          "image_source": "images/page_14_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.218,
+            0.278,
+            0.393,
+            0.301
+          ],
+          "content": "Q (y) \\lor W (y, F (y))",
+          "image_source": "images/page_14_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.304,
+            0.363,
+            0.328
+          ],
+          "content": "Q (y) \\lor W (y, B)",
+          "image_source": "images/page_14_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.879,
+            0.703
+          ],
+          "content": "Here’s the general paramodulation rule. Like resolution, it lets you take two clauses and make a third with elements from the first two. The first clause has to have an equality (we’ll call it s = t) in it. The second clause has to have some literal, which we’ll call gamma that contains a term r, such that r unifies with s. Then, the basic idea is that, since r matches with s, and since s equals t, then we should be able to substitute r in for t. And we’re allowed to do that, but with some additional work. First of all, it might have required application of a substitution theta to make r unify with s, and we’ll have to apply that substitution to the whole resulting clause. Secondly, we might not have known, unconditionally, that s = t. If s = t actually occurs in a clause with other literals, then we need to disjoin those literals into our resulting sentence."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.35,
+            0.073,
+            0.603,
+            0.101
+          ],
+          "level": 2,
+          "content": "Paramodulation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.192,
+            0.106,
+            0.7,
+            0.129
+          ],
+          "content": "Need one more rule to deal with resolution and equality."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.234,
+            0.146,
+            0.332,
+            0.17
+          ],
+          "content": "\\alpha \\lor (s = t)",
+          "image_source": "images/page_15_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.172,
+            0.314,
+            0.197
+          ],
+          "content": "\\beta \\lor \\gamma [ r ]",
+          "image_source": "images/page_15_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.154,
+            0.767,
+            0.179
+          ],
+          "content": "$\\mathcal { n } [ r ]$ is a literal containing term r"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.199,
+            0.376,
+            0.223
+          ],
+          "content": "(\\alpha \\lor \\beta \\lor \\gamma [ t ]) \\theta",
+          "image_source": "images/page_15_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.18,
+            0.573,
+            0.205
+          ],
+          "content": "\\theta = \\text {unify} (s, r)",
+          "image_source": "images/page_15_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.25,
+            0.309,
+            0.274
+          ],
+          "content": "F (x) = B",
+          "image_source": "images/page_15_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.539,
+            0.252,
+            0.609,
+            0.275
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.277,
+            0.394,
+            0.301
+          ],
+          "content": "Q (y) \\lor W (y, F (y))",
+          "image_source": "images/page_15_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.548,
+            0.278,
+            0.636,
+            0.301
+          ],
+          "content": "s = F (x)",
+          "image_source": "images/page_15_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.216,
+            0.304,
+            0.364,
+            0.328
+          ],
+          "content": "Q (y) \\lor W (y, B)",
+          "image_source": "images/page_15_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.304,
+            0.604,
+            0.326
+          ],
+          "content": "t = B",
+          "image_source": "images/page_15_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.329,
+            0.673,
+            0.355
+          ],
+          "content": "\\gamma [ \\cdot ] = W (y, \\cdot)",
+          "image_source": "images/page_15_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.356,
+            0.637,
+            0.38
+          ],
+          "content": "r = F (y)",
+          "image_source": "images/page_15_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.382,
+            0.648,
+            0.407
+          ],
+          "content": "\\theta = \\{x / y \\}",
+          "image_source": "images/page_15_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 9 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.862,
+            0.541
+          ],
+          "content": "So, to see how we can do our simple example with paramodulation, here is the mapping from the abstract variables in the rule to the actual components of the example."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.35,
+            0.073,
+            0.603,
+            0.101
+          ],
+          "level": 2,
+          "content": "Paramodulation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.192,
+            0.106,
+            0.7,
+            0.129
+          ],
+          "content": "Need one more rule to deal with resolution and equality."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.234,
+            0.146,
+            0.332,
+            0.169
+          ],
+          "content": "\\alpha \\lor (s = t)",
+          "image_source": "images/page_16_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.173,
+            0.313,
+            0.197
+          ],
+          "content": "\\beta \\lor \\gamma [ r ]",
+          "image_source": "images/page_16_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.154,
+            0.768,
+            0.179
+          ],
+          "content": "$\\mathcal { n } [ r ]$ is a literal containing term r"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.199,
+            0.375,
+            0.223
+          ],
+          "content": "(\\alpha \\lor \\beta \\lor \\gamma [ t ]) \\theta",
+          "image_source": "images/page_16_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.181,
+            0.573,
+            0.205
+          ],
+          "content": "\\theta = \\text {unify} (s, r)",
+          "image_source": "images/page_16_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.25,
+            0.309,
+            0.274
+          ],
+          "content": "F (x) = B",
+          "image_source": "images/page_16_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.539,
+            0.252,
+            0.61,
+            0.275
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.216,
+            0.277,
+            0.393,
+            0.301
+          ],
+          "content": "Q (y) \\lor W (y, F (y))",
+          "image_source": "images/page_16_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.548,
+            0.278,
+            0.635,
+            0.3
+          ],
+          "content": "s = F (x)",
+          "image_source": "images/page_16_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.216,
+            0.304,
+            0.363,
+            0.328
+          ],
+          "content": "Q (y) \\lor W (y, B)",
+          "image_source": "images/page_16_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.304,
+            0.605,
+            0.326
+          ],
+          "content": "t = B",
+          "image_source": "images/page_16_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.199,
+            0.346,
+            0.357,
+            0.371
+          ],
+          "content": "P (x) \\lor F (x) = B",
+          "image_source": "images/page_16_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.329,
+            0.673,
+            0.354
+          ],
+          "content": "\\gamma [ \\cdot ] = W (y, \\cdot)",
+          "image_source": "images/page_16_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.198,
+            0.373,
+            0.377,
+            0.398
+          ],
+          "content": "Q (y) \\lor W (y, F (y))",
+          "image_source": "images/page_16_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.356,
+            0.637,
+            0.38
+          ],
+          "content": "r = F (y)",
+          "image_source": "images/page_16_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.198,
+            0.4,
+            0.411,
+            0.425
+          ],
+          "content": "P (y) \\lor Q (y) \\lor W (y, B)",
+          "image_source": "images/page_16_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.549,
+            0.382,
+            0.648,
+            0.407
+          ],
+          "content": "\\theta = \\{x / y \\}",
+          "image_source": "images/page_16_equation_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 9 • 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.873,
+            0.541
+          ],
+          "content": "Now we can make our example a bit more complicated, adding an additional literal to the first sentence. Now we’re required to include it in the result, and to apply the substitution theta to it, as well."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.149,
+            0.051,
+            0.852,
+            0.451
+          ],
+          "sub_type": "code",
+          "content": "```txt\nRecitation Problems\nFormalize each group of sentences (using the given function and predicate symbols), then prove the last from the others using resolution and paramodulation.\nJane's lover drives a red car.\nFred is the only person who drives a red car.\nTherefore, Fred is Jane's lover.\n(L(x) = the lover of x; D(x) = x drives a red car)\nMrs. Abbot only teaches good students.\nJohn and Mary have the same teacher.\nMrs. Abbot is Mary's teacher.\nTherefore, John is a good student.\n(T(x) = the teacher of x; G(x) = x is a good student)\nLecture 9 • 18\n```",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.676,
+                0.502
+              ],
+              "content": "Please do these recitation problems before the next recitation."
+            }
+          ],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.276,
+            0.075,
+            0.678,
+            0.1
+          ],
+          "content": "More Recitation Problems"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.114,
+            0.729,
+            0.133
+          ],
+          "content": "• Every part is either made by FooCorp or BarCorp."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.135,
+            0.75,
+            0.171
+          ],
+          "content": "• All fragile parts are stored in the warehouse of their manufacturer."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.173,
+            0.656,
+            0.192
+          ],
+          "content": "• BarCorp can’t manufacture titanium parts."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.194,
+            0.708,
+            0.212
+          ],
+          "content": "• The part I need is fragile and made of titanium."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.214,
+            0.777,
+            0.234
+          ],
+          "content": "• Therefore, the part I need is the FooCorp’s warehouse."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.256,
+            0.819,
+            0.329
+          ],
+          "content": "(M(x) = the manufacturer of part x; W(x,y) = part x is stored in the warehouse of company y; T(x) = part x is made of titanium; F(x) part x is fragile; use a constant for “the part I need”.)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.422,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 9 • 19"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture9Final",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T17:01:11+05:30",
+      "modified_at": "2003-06-12T17:01:11+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 19,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

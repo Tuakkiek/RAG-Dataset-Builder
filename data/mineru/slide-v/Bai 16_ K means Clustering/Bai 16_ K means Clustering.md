@@ -1,0 +1,112 @@
+<!-- page: 1 -->
+
+## BACH KHOA
+
+## TRÍ TUỆ NHÂN TẠO
+
+![](images/page_0_image_3.jpg)
+
+Khoa Công Nghệ Thông Tin
+TS. Nguyễn Văn Hiệu
+
+<!-- page: 2 -->
+
+## TRÍ TƯỆ NHÂN TẠO
+
+K Means Clustering
+
+## BACH KHOA
+
+<!-- page: 3 -->
+
+## Nội dung
+
+\- Giới thiệu
+
+\- K Means Clustering
+
+• Demo
+
+<!-- page: 4 -->
+
+## Giới thiệu
+
+\- Học có giám sát
+
+Học tự giám sát:
+
+○ Giảm chiều dữ liệu
+
+![](images/page_3_image_8.jpg)
+
+## BACH KHOA
+
+○ Phân cụm dữ liệu: K means clustering
+
+\- Ý tương của K means clustering:
+
+\- Nhóm các dữ liệu tương tự vào các cụm khác nhau
+
+Dữ liệu mô tả bởi các điểm trong không gian, thì 2 khoảng cách giữa 2 điểm có thể xem là mức độ tương tự
+
+<!-- page: 5 -->
+
+## Giới thiệu
+
+![](images/page_4_image_5.jpg)
+
+<!-- page: 6 -->
+
+## Giới thiệu
+
+\- Bài toán:
+
+○ Dữ liệu:
+
+$$
+X \in R ^ {n \times d}
+$$
+
+\- Nhiệm vụ:
+
+○ Phân tập dữ liệu ra k cụm, với  $k \leqslant n$
+
+<!-- page: 7 -->
+
+## K means clustering
+
+\- Khôi tạo
+
+$\bigcirc C^{(0)} = \left\{m_1^{(0)},m_2^{(0)},\dots ,m_k^{(0)}\right\}$
+
+\- Nhóm dữ liệu
+
+## BACH KHOA
+
+○ Dữ liệu đưa vào cụm
+
+$\bigcirc \quad S_{i}^{(t)} = \left\{x_{p}:||x_{p} - m_{i}^{(t)}||^{2} < ||x_{p} - m_{j}^{(t)}||^{2},\forall j:1\leq j\leqslant k\right\}$
+
+○ Kết thúc nếu không thay đổi
+
+\- Cập nhật tâm
+
+$\circ \quad m_{i}^{(t)} = \frac{1}{|S_{i}^{(t)}|}\sum_{x_{j}\in S_{i}^{(t)}}x_{j}$
+
+○ Chuyển sang nhóm dữ liệu
+
+<!-- page: 8 -->
+
+## K means clustering
+
+\- Minh hoạ http://tech.nitoyon.com/ja/blog/2013/11/07/k-means/
+
+![](images/page_7_image_6.jpg)
+
+![](images/page_7_image_7.jpg)
+
+<!-- page: 9 -->
+
+## Demo
+
+## D BACH KHOA

@@ -1,0 +1,7083 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2023-12-14T23:39:53Z",
+      "modified_at": "2023-12-14T23:39:53Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.25",
+      "page_count": 16,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.081,
+            0.062,
+            0.195,
+            0.113
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "CS 188 Fall 2023"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.261,
+            0.063,
+            0.524,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Introduction to Artificial Intelligence"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": []
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.103,
+            0.151,
+            0.274,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• You have 170 minutes."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.103,
+            0.173,
+            0.908,
+            0.19
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• The exam is closed book, no calculator, and closed notes, other than four double-sided cheat sheets that you may reference."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.104,
+            0.195,
+            0.322,
+            0.21
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• For multiple choice questions,"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.124,
+            0.212,
+            0.381,
+            0.231
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "means mark "
+            },
+            {
+              "type": "text",
+              "content": "all options",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " that apply"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.124,
+            0.234,
+            0.342,
+            0.25
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "means mark a single choice"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 8,
+          "bbox": [
+            0.182,
+            0.261,
+            0.805,
+            0.477
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 8,
+              "bbox": [
+                0.182,
+                0.261,
+                0.805,
+                0.477
+              ],
+              "image_path": "images/page_0_table_8.jpg",
+              "content": "<table><tbody><tr><td>First name</td><td></td></tr><tr><td>Last name</td><td></td></tr><tr><td>SID</td><td></td></tr><tr><td>Name of person to the right</td><td></td></tr><tr><td>Name of person to the left</td><td></td></tr><tr><td>Discussion TAs (or None)</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.102,
+            0.505,
+            0.846,
+            0.522
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Honor code",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ": “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.102,
+            0.527,
+            0.885,
+            0.59
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than my cheat sheets), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic \"F\" grade in this class and a referral to the Center for Student Conduct."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.103,
+            0.6,
+            0.499,
+            0.617
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Signature:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 13,
+          "bbox": [
+            0.149,
+            0.673,
+            0.509,
+            0.816
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 12,
+              "bbox": [
+                0.268,
+                0.65,
+                0.389,
+                0.665
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Point Distribution"
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 13,
+              "bbox": [
+                0.149,
+                0.673,
+                0.509,
+                0.816
+              ],
+              "image_path": "images/page_0_table_13.jpg",
+              "content": "<table><tbody><tr><td>Q1. Search: Squirrel Shenanigans</td><td>11</td></tr><tr><td>Q2. CSPs and BNs: Bayes for Days</td><td>11</td></tr><tr><td>Q3. MDPs and BNs: Coin Blackjack</td><td>10</td></tr><tr><td>Q4. RL: Rest and ReLaxation</td><td>14</td></tr><tr><td>Q5. Bayes' Nets: Pac Pong Performance</td><td>16</td></tr><tr><td>Q6. HMMs and VPI: Markov Menagerie</td><td>13</td></tr><tr><td>Q7. Games and ML: BeatBlue</td><td>12</td></tr><tr><td>Q8. Potpourri</td><td>13</td></tr><tr><td>Total</td><td>100</td></tr></tbody></table>"
+            },
+            {
+              "type": "table_footnote",
+              "index": 14,
+              "bbox": [
+                0.575,
+                0.65,
+                0.828,
+                0.696
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "It’s testing time for our CS188 robots! Circle your favorite robot below. (ungraded, just for fun)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 15,
+          "bbox": [
+            0.58,
+            0.699,
+            0.907,
+            0.835
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 15,
+              "bbox": [
+                0.58,
+                0.699,
+                0.907,
+                0.835
+              ],
+              "image_path": "images/page_0_image_15.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.488,
+            0.936,
+            0.499,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.655,
+            0.07
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q1. [11 pts] Search: Squirrel Shenanigans"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.077,
+            0.08,
+            0.908,
+            0.112
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A squirrel is moving around on a grid representing the UC Berkeley campus, picking up and dropping off nuts, in order to store nuts in its nest for the upcoming winter."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.124,
+            0.908,
+            0.156
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "At the start of the problem, each square on the 𝑀 × 𝑁 grid contains between 0 and 𝐴 nuts, inclusive. (𝐴 is some constant that is fixed for the entire problem.) There cannot be more than 𝐴 nuts on any square at any time."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.076,
+            0.168,
+            0.908,
+            0.199
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "At the start of the problem, the squirrel is carrying 0 nuts. The squirrel can only carry between 0 and 𝐴 nuts, inclusive, at any time."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.211,
+            0.562,
+            0.228
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The squirrel has the following actions available, and every action costs 1:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.102,
+            0.238,
+            0.875,
+            0.254
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Pick up any number of nuts from the current square (as long as the total number of nuts carried does not exceed 𝐴)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.102,
+            0.263,
+            0.909,
+            0.294
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Drop off any number of carried nuts onto the current square (as long as the total number of nuts on the square does not exceed 𝐴)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.102,
+            0.303,
+            0.909,
+            0.335
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• When the squirrel is carrying 𝐶 nuts, the squirrel can move 1 to 𝐴 − 𝐶 + 1 squares in any of the four cardinal directions (up, down, left, right)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.077,
+            0.357,
+            0.909,
+            0.389
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The squirrel’s goal is to reach a state where the nest square contains 𝐴 nuts. The nest square is always fixed to be the top-left corner of the grid."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.077,
+            0.407,
+            0.538,
+            0.439
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Here is an example, though your answers should work for any arbitrary problem, not just the example shown."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.077,
+            0.452,
+            0.538,
+            0.498
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this example only, assume 𝐴 = 4, the squirrel is currently carrying 𝐶 = 2 nuts, and there are 3 additional nuts on the square the squirrel is on."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.078,
+            0.513,
+            0.399,
+            0.529
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Possible actions from this state (each costing 1):"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.102,
+            0.538,
+            0.538,
+            0.57
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Pick up 1 or 2 nuts from the current square. (The squirrel can’t pick up 3 nuts, because it can’t hold more than 4 nuts.)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.102,
+            0.578,
+            0.539,
+            0.61
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Drop off 1 nut on the current square. (The squirrel can’t drop off 2 nuts, because the square can’t hold more than 4 nuts.)"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 14,
+          "bbox": [
+            0.548,
+            0.407,
+            0.858,
+            0.648
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 14,
+              "bbox": [
+                0.548,
+                0.407,
+                0.858,
+                0.648
+              ],
+              "image_path": "images/page_1_image_14.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.102,
+            0.618,
+            0.538,
+            0.649
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Move to any of the shaded squares (𝐴 − 𝐶 + 1 = 2 squares in each of the cardinal directions)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.091,
+            0.667,
+            0.862,
+            0.755
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] For this subpart only, assume 𝑁 > 𝐴 and 𝑀 > 𝐴 (the board is very large). What is the maximum branching factor for this search problem? # 1 # 𝐴 + 4 # 5𝐴 + 4 # 𝑀𝑁 + 𝐴 # 4 # 4𝐴 + 4 # 𝑀𝑁 # 𝐴𝑀𝑁"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.09,
+            0.773,
+            0.632,
+            0.876
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] True or false: The squirrel’s location needs to be part of the state space. True, because it’s needed for the successor function. True, because it’s needed for the goal test. False, because it’s not needed for the successor function. False, because it’s not needed for the goal test."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 18,
+          "bbox": [
+            0.487,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.047,
+            0.539,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The actions available (each costing 1), repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.102,
+            0.073,
+            0.875,
+            0.089
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Pick up any number of nuts from the current square (as long as the total number of nuts carried does not exceed 𝐴)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.102,
+            0.099,
+            0.908,
+            0.128
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Drop off any number of carried nuts onto the current square (as long as the total number of nuts on the square does not exceed 𝐴)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.102,
+            0.138,
+            0.909,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• When the squirrel is carrying 𝐶 nuts, the squirrel can move 1 to 𝐴 − 𝐶 + 1 squares in any of the four cardinal directions (up, down, left, right)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.092,
+            0.182,
+            0.662,
+            0.198
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Give a reasonably tight upper-bound on the size of the minimal state space."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.112,
+            0.202,
+            0.91,
+            0.233
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Your answer should be in the form 𝑝 ⋅ 𝑞"
+            },
+            {
+              "type": "text",
+              "content": "𝑟",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ", where 𝑝, 𝑞, 𝑟 are expressions that possibly include 𝑀, 𝑁, 𝐴, constants, and arithmetic operators (add, subtract, multiply, divide)."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 6,
+          "bbox": [
+            0.119,
+            0.235,
+            0.348,
+            0.291
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 6,
+              "bbox": [
+                0.119,
+                0.235,
+                0.348,
+                0.291
+              ],
+              "image_path": "images/page_2_image_6.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 7,
+          "bbox": [
+            0.395,
+            0.235,
+            0.624,
+            0.291
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 7,
+              "bbox": [
+                0.395,
+                0.235,
+                0.624,
+                0.291
+              ],
+              "image_path": "images/page_2_image_7.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 8,
+          "bbox": [
+            0.671,
+            0.235,
+            0.896,
+            0.29
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 8,
+              "bbox": [
+                0.671,
+                0.235,
+                0.896,
+                0.29
+              ],
+              "image_path": "images/page_2_image_8.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.091,
+            0.305,
+            0.417,
+            0.32
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Select all of the admissible heuristics."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.159,
+            0.329,
+            0.508,
+            0.346
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 𝐴, minus the number of nuts on the nest square."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.158,
+            0.35,
+            0.862,
+            0.366
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 0 if the nest has 𝐴 nuts. Otherwise, Manhattan distance to the closest non-nest square containing nuts."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.159,
+            0.37,
+            0.867,
+            0.387
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 0 if the nest has 𝐴 nuts. Otherwise, Manhattan distance to the furthest non-nest square containing nuts."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.159,
+            0.39,
+            0.319,
+            0.405
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.092,
+            0.42,
+            0.908,
+            0.45
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] For this subpart only, suppose we change the search problem: The squirrel is now only able to drop off or pick up a single nut in one time step."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.118,
+            0.455,
+            0.714,
+            0.47
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Select all algorithms that can be used to find an optimal solution to this modified problem."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.158,
+            0.478,
+            0.729,
+            0.495
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Leave the successor function unchanged from the original problem, and run UCS."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.156,
+            0.499,
+            0.908,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Modify the successor function so that the squirrel can only pick up or drop off one nut at a time (costing 1 each time). Then, run BFS with the modified successor function."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.156,
+            0.534,
+            0.908,
+            0.551
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Modify the costs in the successor function so that picking up or dropping off 𝑘 nuts costs 𝑘, instead of 1. Then,"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.159,
+            0.57,
+            0.319,
+            0.585
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.155,
+            0.551,
+            0.468,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "run UCS with the modified successor function."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 21,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.041,
+            0.68,
+            0.07
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q2. [11 pts] CSPs and BNs: Bayes for Days"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.077,
+            0.08,
+            0.874,
+            0.097
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the following incomplete Bayes’ net, with four random variables, and four edges that do not have directions yet:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.399,
+            0.119,
+            0.588,
+            0.228
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.399,
+                0.119,
+                0.588,
+                0.228
+              ],
+              "image_path": "images/page_3_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.09,
+            0.243,
+            0.865,
+            0.29
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] How many undirected paths are there between A and D? # 1 # 2 # 3 # 4 # > 4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.091,
+            0.307,
+            0.858,
+            0.38
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] How many possible ways are there to assign directions to the arrows, such that A and D are independent?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.078,
+            0.396,
+            0.566,
+            0.413
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For the rest of the question, consider the following incomplete Bayes’ net:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 6,
+          "bbox": [
+            0.399,
+            0.435,
+            0.588,
+            0.545
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 6,
+              "bbox": [
+                0.399,
+                0.435,
+                0.588,
+                0.545
+              ],
+              "image_path": "images/page_3_image_6.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.076,
+            0.572,
+            0.908,
+            0.604
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "To complete this Bayes’ net, each pair of variables connected by a dashed line can be filled in with an edge (in either direction), or no edge. Here are some examples of completed Bayes’ nets:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 8,
+          "bbox": [
+            0.148,
+            0.625,
+            0.339,
+            0.737
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 8,
+              "bbox": [
+                0.148,
+                0.625,
+                0.339,
+                0.737
+              ],
+              "image_path": "images/page_3_image_8.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.396,
+            0.624,
+            0.589,
+            0.737
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.396,
+                0.624,
+                0.589,
+                0.737
+              ],
+              "image_path": "images/page_3_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 10,
+          "bbox": [
+            0.648,
+            0.624,
+            0.84,
+            0.737
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 10,
+              "bbox": [
+                0.648,
+                0.624,
+                0.84,
+                0.737
+              ],
+              "image_path": "images/page_3_image_10.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.078,
+            0.757,
+            0.539,
+            0.774
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Our goal is to complete this Bayes’ net, such that 𝐴 ⟂⟂ 𝐵 and 𝐴 ⟂⟂ 𝐷."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.948
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.047,
+            0.39,
+            0.063
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Bayes’ net, repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.4,
+            0.085,
+            0.586,
+            0.194
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.4,
+                0.085,
+                0.586,
+                0.194
+              ],
+              "image_path": "images/page_4_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.078,
+            0.222,
+            0.536,
+            0.238
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We would like to use a CSP to find a way to complete this Bayes’ net."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.092,
+            0.25,
+            0.481,
+            0.332
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] What are the variables in this CSP? The 4 dashed edges The 4 random variables (A, B, C, D) The conditional independence assumptions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.09,
+            0.345,
+            0.865,
+            0.392
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] How many possible values can each variable take on in this CSP? # 1 # 2 # 3 # 4 # > 4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.077,
+            0.41,
+            0.908,
+            0.441
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For each of the following statements, select all type(s) of constraints that are needed to represent that statement in the CSP. Each statement is independent."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.092,
+            0.454,
+            0.346,
+            0.47
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] The graph must be acyclic."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.159,
+            0.481,
+            0.31,
+            0.519
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Unary constraint Binary constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.426,
+            0.481,
+            0.601,
+            0.519
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Three-way constraint Four-way constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.692,
+            0.482,
+            0.851,
+            0.5
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.095,
+            0.537,
+            0.336,
+            0.553
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] A and B are independent."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.159,
+            0.565,
+            0.31,
+            0.601
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Unary constraint Binary constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.426,
+            0.564,
+            0.6,
+            0.601
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Three-way constraint Four-way constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.692,
+            0.566,
+            0.851,
+            0.583
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.092,
+            0.62,
+            0.338,
+            0.636
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(g)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] A and D are independent."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.159,
+            0.647,
+            0.311,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Unary constraint Binary constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.426,
+            0.647,
+            0.601,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Three-way constraint Four-way constraint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.692,
+            0.648,
+            0.851,
+            0.666
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 18,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.041,
+            0.696,
+            0.07
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q3. [10 pts] MDPs and BNs: Coin Blackjack"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.08,
+            0.421,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the following game (similar to blackjack):"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.101,
+            0.107,
+            0.417,
+            0.123
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• You begin the game with a score of 0 points."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.101,
+            0.132,
+            0.815,
+            0.148
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• At every time step, you can choose to flip a coin, or end the game with reward equal to your current score."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.102,
+            0.157,
+            0.909,
+            0.188
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• When you choose to flip: if the coin comes up heads, then 1 point is added to your score. If the coin comes up tails, then 2 points are added to your score."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.101,
+            0.197,
+            0.684,
+            0.213
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If your score ever reaches 4 or more points, you bust and end the game with 0 reward."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.076,
+            0.236,
+            0.909,
+            0.266
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "There are two coins: a fair coin that comes up heads exactly half of the time, and a biased coin that comes up heads more than half of the time."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.076,
+            0.28,
+            0.91,
+            0.326
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Each time you choose to flip a coin, the dealer will first randomly select one of the two coins, and then flip the chosen coin for you. The probability that the dealer selects the fair or biased coin depends on two things: the coin used on the previous flip, and your current score (before flipping)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.078,
+            0.338,
+            0.586,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The randomness of the coin flip can be modeled by the following Bayes’ net:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.135,
+            0.365,
+            0.276,
+            0.508
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.135,
+                0.365,
+                0.276,
+                0.508
+              ],
+              "image_path": "images/page_5_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.352,
+            0.391,
+            0.808,
+            0.407
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝐿: The coin that was last used on the previous flip (fair or biased)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.353,
+            0.417,
+            0.607,
+            0.432
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝑆: The current score (0, 1, 2, or 3)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.353,
+            0.442,
+            0.618,
+            0.457
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝐶: The selected coin (fair or biased)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.353,
+            0.467,
+            0.688,
+            0.483
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝑂: The outcome of the coin flip (heads or tails)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.091,
+            0.52,
+            0.896,
+            0.555
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] From the Bayes’ net, what is the most efficient way to learn the probability that the biased coin comes up heads? (CPT = conditional probability table)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.157,
+            0.564,
+            0.487,
+            0.58
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Read the value from the CPT in the 𝐶 node."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.157,
+            0.584,
+            0.487,
+            0.6
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Read the value from the CPT in the 𝑂 node."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.158,
+            0.605,
+            0.521,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Perform variable elimination with 𝐶 unobserved."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.158,
+            0.625,
+            0.583,
+            0.641
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Perform variable elimination with 𝐶 observed as evidence."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.158,
+            0.645,
+            0.461,
+            0.661
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This probability is not in the Bayes’ net."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.078,
+            0.674,
+            0.799,
+            0.69
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We choose to model this game as an MDP. For each transition, select the corresponding transition probability."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.09,
+            0.703,
+            0.561,
+            0.719
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] State: The biased coin was last used. The current score is 1."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.118,
+            0.724,
+            0.21,
+            0.739
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Action: Flip."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.118,
+            0.743,
+            0.562,
+            0.759
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Successor state: The fair coin was last used. The current score is 3."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 24,
+          "bbox": [
+            0.158,
+            0.767,
+            0.21,
+            0.783
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.158,
+            0.787,
+            0.558,
+            0.804
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "P ( C = \\mathrm { f a i r } | L = \\mathrm { b i a s e d } , S = 1 ) \\cdot P ( O = \\mathrm { t a i l s } | C = \\mathrm { f a i r } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.158,
+            0.807,
+            0.553,
+            0.825
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "#∑𝑃 (𝐶 = 𝑐|𝐿 = biased, 𝑆 = 1) ⋅ 𝑃 (𝑂 = tails|𝐶 = 𝑐)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.158,
+            0.827,
+            0.545,
+            0.845
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r } { \\sum _ { l } P ( C = \\mathrm { f a i r } | L = l , S = 1 ) \\cdot P ( O = \\mathrm { t a i l s } | C = \\mathrm { f a i r } ) } \\end{array}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.159,
+            0.848,
+            0.208,
+            0.864
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "## 1"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 29,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "table",
+          "index": 0,
+          "bbox": [
+            0.127,
+            0.776,
+            0.616,
+            0.859
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 0,
+              "bbox": [
+                0.127,
+                0.776,
+                0.616,
+                0.859
+              ],
+              "image_path": "images/page_6_table_0.jpg",
+              "content": "<table><tr><td>(i)</td><td>○ 1</td><td>○ Σa</td><td>○ arg maxa</td><td>○ arg mina</td></tr><tr><td>(ii)</td><td>○ 1</td><td>○ Σs</td><td>○ maxs</td><td>○ mins</td></tr><tr><td>(iii)</td><td>○ 1</td><td>○ P(s)</td><td>○ T(s,a,s&#x27;)</td><td>○ R(s,a,s&#x27;)</td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.046,
+            0.391,
+            0.063
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Bayes’ net, repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.134,
+            0.072,
+            0.279,
+            0.217
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.134,
+                0.072,
+                0.279,
+                0.217
+              ],
+              "image_path": "images/page_6_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.351,
+            0.099,
+            0.808,
+            0.116
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝐿: The coin that was last used on the previous flip (fair or biased)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.352,
+            0.123,
+            0.609,
+            0.141
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝑆: The current score (0, 1, 2, or 3)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.352,
+            0.148,
+            0.619,
+            0.166
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝐶: The selected coin (fair or biased)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.353,
+            0.174,
+            0.689,
+            0.191
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 𝑂: The outcome of the coin flip (heads or tails)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.09,
+            0.226,
+            0.545,
+            0.39
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] State: The fair coin was last used. The current score is 2. Action: Flip. Successor state: Bust. 0 "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( C = \\mathrm { f a i r } | L = \\mathrm { f a i r } , S = 2 ) \\cdot P ( O = \\mathrm { t a i l s } | C = \\mathrm { f a i r } )"
+            },
+            {
+              "type": "text",
+              "content": " ∑𝑐 𝑃 (𝐶 = 𝑐|𝐿 = fair, 𝑆 = 2) ⋅ 𝑃 (𝑂 = tails|𝐶 = 𝑐) "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r } { \\sum _ { l } P ( C = \\mathrm { f a i r } | L = l , S = 2 ) \\cdot P ( O = \\mathrm { t a i l s } | C = \\mathrm { f a i r } ) } \\end{array}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.088,
+            0.401,
+            0.545,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] State: The fair coin was last used. The current score is 3. Action: Flip. Successor state: Bust. 0 𝑃 (𝐶 = fair|𝐿 = fair, 𝑆 = 3) ⋅ 𝑃 (𝑂 = tails|𝐶 = fair) ∑𝑐 𝑃 (𝐶 = 𝑐|𝐿 = fair, 𝑆 = 3) ⋅ 𝑃 (𝑂 = tails|𝐶 = 𝑐) ∑𝑙 𝑃 (𝐶 = fair|𝐿 = 𝑙, 𝑆 = 3) ⋅ 𝑃 (𝑂 = tails|𝐶 = fair) # 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.076,
+            0.577,
+            0.909,
+            0.623
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Lastly, we need to deal with the first coin flip at the start of the game, when we don’t know what coin was used on the previous flip. We will represent this as being uncertain about the state of the MDP: we could either be in a state where the fair coin was last used, or the biased coin was last used."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.077,
+            0.635,
+            0.608,
+            0.652
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(Hint: The next subpart can be solved independently of the rest of the question.)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.091,
+            0.664,
+            0.907,
+            0.7
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Consider an MDP where you are uncertain about your current state. The probability that you are in state 𝑠 is 𝑃 (𝑠). The actions available from every state are the same."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.118,
+            0.704,
+            0.649,
+            0.721
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Write the Bellman expression that represents the optimal action in this situation."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 13,
+          "bbox": [
+            0.355,
+            0.735,
+            0.67,
+            0.767
+          ],
+          "image_path": "images/page_6_equation_13.jpg",
+          "content": "(\\mathbf {i}) \\text {(ii)} (\\mathbf {i i i}) \\sum_ {s ^ {\\prime}} T (s, a, s ^ {\\prime}) \\left[ R (s, a, s ^ {\\prime}) + \\gamma V (s ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "page_number",
+          "index": 14,
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.041,
+            0.598,
+            0.069
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q4. [14 pts] RL: Rest and ReLaxation"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.08,
+            0.359,
+            0.11
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the grid world MDP below, with unknown transition and reward functions."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.166,
+            0.119,
+            0.327,
+            0.19
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.166,
+                0.119,
+                0.327,
+                0.19
+              ],
+              "image_path": "images/page_7_table_2.jpg",
+              "content": "<table><tbody><tr><td>A</td><td>B</td><td>C</td></tr><tr><td>D</td><td>E</td><td>F</td></tr><tr><td>G</td><td>H</td><td>I</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.476,
+            0.08,
+            0.877,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The agent observes the following samples in this grid world:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 4,
+          "bbox": [
+            0.582,
+            0.106,
+            0.79,
+            0.201
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 4,
+              "bbox": [
+                0.582,
+                0.106,
+                0.79,
+                0.201
+              ],
+              "image_path": "images/page_7_table_4.jpg",
+              "content": "<table><tbody><tr><td>𝑠</td><td>𝑎</td><td>𝑠'</td><td>𝑅(𝑠,𝑎,𝑠')</td></tr><tr><td>E</td><td>East</td><td>F</td><td>-1</td></tr><tr><td>E</td><td>East</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>D</td><td>-1</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.077,
+            0.215,
+            0.909,
+            0.261
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Reminder: In grid world, each non-exit action succeeds with some probability. If an action (e.g. North) fails, the agent moves in one of the cardinally adjacent directions (e.g. East or West) with equal probability, but will not move in the opposite direction (e.g. South)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.077,
+            0.273,
+            0.424,
+            0.289
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let 𝑝 denote the probability that an action succeeds."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.077,
+            0.301,
+            0.707,
+            0.318
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this question, we will consider 3 strategies for estimating the transition function in this MDP."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.077,
+            0.33,
+            0.908,
+            0.361
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Strategy 1",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ": The agent does not know the rules of grid world, and runs model-based learning to directly estimate the transition function."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.091,
+            0.373,
+            0.508,
+            0.39
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] From the samples provided, what is 𝑇̂ (E, South, H)?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 10,
+          "bbox": [
+            0.158,
+            0.4,
+            0.875,
+            0.456
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 10,
+              "bbox": [
+                0.158,
+                0.4,
+                0.875,
+                0.456
+              ],
+              "image_path": "images/page_7_table_10.jpg",
+              "content": "<table><tr><td>○ 0</td><td>○ 3/5</td><td>○ 2/3</td><td rowspan=\"3\">○ Not enough information</td></tr><tr><td>○ 1/5</td><td>○ 4/5</td><td>○ 1/2</td></tr><tr><td>○ 2/5</td><td>○ 1/3</td><td>○ 1</td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.091,
+            0.472,
+            0.502,
+            0.49
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] From the samples provided, what is 𝑇̂ (E, West, D)?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.159,
+            0.5,
+            0.225,
+            0.555
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 0 # 1∕5 # 2∕5"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.755,
+            0.5,
+            0.874,
+            0.534
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Not enough information"
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.077,
+            0.572,
+            0.908,
+            0.603
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Strategy 2",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ": The agent knows the rules of grid world, and runs model-based learning to estimate 𝑝. Then, the agent uses the estimated ̂𝑝 to estimate the transition function."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.092,
+            0.615,
+            0.745,
+            0.632
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] From the samples provided, what is ̂𝑝, the estimated probability of an action succeeding?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 16,
+          "bbox": [
+            0.158,
+            0.641,
+            0.875,
+            0.698
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 16,
+              "bbox": [
+                0.158,
+                0.641,
+                0.875,
+                0.698
+              ],
+              "image_path": "images/page_7_table_16.jpg",
+              "content": "<table><tr><td>○ 0</td><td>○ 3/5</td><td>○ 2/3</td><td rowspan=\"3\">○ Not enough information</td></tr><tr><td>○ 1/5</td><td>○ 4/5</td><td>○ 1/2</td></tr><tr><td>○ 2/5</td><td>○ 1/3</td><td>○ 1</td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.091,
+            0.715,
+            0.875,
+            0.797
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Based on ̂𝑝, what is 𝑇̂ (E, West, D)? # 0 # 3∕5 # 2∕3 # Not enough # 1∕5 # 4∕5 # 1∕2 information # 2∕5 # 1∕3 # 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.092,
+            0.813,
+            0.621,
+            0.83
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Select all true statements about comparing Strategy 1 and Strategy 2."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.157,
+            0.836,
+            0.907,
+            0.855
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Strategy 1 will usually require fewer samples to estimate the transition function to the same accuracy threshold."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.159,
+            0.857,
+            0.583,
+            0.875
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ There are fewer unknown parameters to learn in Strategy 1."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.159,
+            0.876,
+            0.525,
+            0.895
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Strategy 1 is more prone to overfitting on samples."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.159,
+            0.896,
+            0.319,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# None of the above"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 23,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.047,
+            0.475,
+            0.063
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The grid world and samples, repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 1,
+          "bbox": [
+            0.166,
+            0.085,
+            0.327,
+            0.157
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 1,
+              "bbox": [
+                0.166,
+                0.085,
+                0.327,
+                0.157
+              ],
+              "image_path": "images/page_8_table_1.jpg",
+              "content": "<table><tbody><tr><td>A</td><td>B</td><td>C</td></tr><tr><td>D</td><td>E</td><td>F</td></tr><tr><td>G</td><td>H</td><td>I</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.582,
+            0.073,
+            0.79,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.582,
+                0.073,
+                0.79,
+                0.169
+              ],
+              "image_path": "images/page_8_table_2.jpg",
+              "content": "<table><tbody><tr><td>𝑠</td><td>𝑎</td><td>𝑠'</td><td>𝑅(𝑠,𝑎,𝑠')</td></tr><tr><td>E</td><td>East</td><td>F</td><td>-1</td></tr><tr><td>E</td><td>East</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>H</td><td>-1</td></tr><tr><td>E</td><td>South</td><td>D</td><td>-1</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.077,
+            0.182,
+            0.909,
+            0.213
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Strategy 3",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ": The agent knows the rules of grid world, and uses an exponential moving average to estimate 𝑝. Then, the agent uses the estimated ̂𝑝 to estimate the transition function."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.094,
+            0.225,
+            0.51,
+            0.241
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Consider this update equation: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\hat { p } \\gets ( 1 - \\alpha ) \\hat { p } + ( \\alpha ) x"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.118,
+            0.245,
+            0.687,
+            0.261
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Given a sample "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( s , a , s ^ { \\prime } )"
+            },
+            {
+              "type": "text",
+              "content": " , what value of 𝑥 should be used in the corresponding update?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.158,
+            0.269,
+            0.265,
+            0.286
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "R ( s , a , s ^ { \\prime } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.158,
+            0.29,
+            0.498,
+            0.306
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1.0 if the action succeeded, and 0.0 otherwise"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.158,
+            0.31,
+            0.468,
+            0.326
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 1.0 if the action failed, and 0.0 otherwise"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.159,
+            0.329,
+            0.233,
+            0.346
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "V ( s )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.159,
+            0.35,
+            0.237,
+            0.367
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "V ( s ^ { \\prime } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.091,
+            0.38,
+            0.621,
+            0.396
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(g)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Select all true statements about comparing Strategy 2 and Strategy 3."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.158,
+            0.404,
+            0.781,
+            0.421
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Strategy 2 gives a more accurate estimate, because it is the maximum likelihood estimate."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.158,
+            0.424,
+            0.821,
+            0.441
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Strategy 3 gives a more accurate estimate, because it gives more weight to more recent samples."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.158,
+            0.445,
+            0.602,
+            0.461
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Strategy 3 can be run with samples streaming in one at a time."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.159,
+            0.465,
+            0.32,
+            0.48
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.078,
+            0.494,
+            0.519,
+            0.51
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The rest of the question is independent from the previous subparts."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.078,
+            0.523,
+            0.796,
+            0.54
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Suppose the agent runs Q-learning in this grid world, with learning rate "
+            },
+            {
+              "type": "equation_inline",
+              "content": "0 < \\alpha < 1"
+            },
+            {
+              "type": "text",
+              "content": " , and discount factor 𝛾 = 1."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.09,
+            0.551,
+            0.891,
+            0.599
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(h)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] After iterating through the samples once, how many learned Q-values will be nonzero? # 0 # 1 # 2 # 3 # 4 # > 4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.094,
+            0.616,
+            0.891,
+            0.665
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] After iterating through the samples repeatedly until convergence, how many learned Q-values will be nonzero? # 0 # 1 # 2 # 3 # 4 # > 4"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 20,
+          "bbox": [
+            0.487,
+            0.935,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.744,
+            0.07
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q5. [16 pts] Bayes’ Nets: Pac Pong Performance"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.08,
+            0.908,
+            0.097
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman is going out to play a Pong tournament, and he wants to model all the uncertainty in the game in order to ensure victory."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.077,
+            0.109,
+            0.501,
+            0.124
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the Bayes’ net below. All random variables are binary."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.376,
+            0.131,
+            0.61,
+            0.311
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.376,
+                0.131,
+                0.61,
+                0.311
+              ],
+              "image_path": "images/page_9_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.34,
+            0.37,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman is trying to compute 𝑃 (C| + w, −t)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.078,
+            0.368,
+            0.764,
+            0.384
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "First, Pacman uses the standard variable elimination algorithm (as seen in lecture) to eliminate L and M."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.091,
+            0.397,
+            0.489,
+            0.412
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Select the factor(s) needed to eliminate L and M."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.159,
+            0.425,
+            0.242,
+            0.464
+          ],
+          "image_path": "images/page_9_equation_7.jpg",
+          "content": "\\begin{array}{c c} \\square & P (+ \\mathrm{w}) \\\\ \\square & P (- \\mathrm{t}) \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 8,
+          "bbox": [
+            0.359,
+            0.425,
+            0.469,
+            0.464
+          ],
+          "image_path": "images/page_9_equation_8.jpg",
+          "content": "\\begin{array}{c c} \\square & P (\\mathrm{M} | + \\mathrm{w}) \\\\ \\square & P (\\mathrm{C} | + \\mathrm{w}) \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 9,
+          "bbox": [
+            0.559,
+            0.425,
+            0.694,
+            0.464
+          ],
+          "image_path": "images/page_9_equation_9.jpg",
+          "content": "\\begin{array}{l l} \\square & P (\\mathrm{C|R, +w,V}) \\\\ \\square & P (\\mathrm{L|-t}) \\end{array}"
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.759,
+            0.424,
+            0.885,
+            0.464
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 𝑃 (C|R, M, V) □ 𝑃 (R)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.09,
+            0.482,
+            0.548,
+            0.498
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Select the factor(s) that remain after eliminating L and M."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 12,
+          "bbox": [
+            0.159,
+            0.51,
+            0.296,
+            0.529
+          ],
+          "image_path": "images/page_9_equation_12.jpg",
+          "content": "\\square f (\\mathrm{R}, + \\mathrm{w}, \\mathrm{V}, \\mathrm{C})"
+        },
+        {
+          "type": "equation",
+          "index": 13,
+          "bbox": [
+            0.159,
+            0.53,
+            0.318,
+            0.549
+          ],
+          "image_path": "images/page_9_equation_13.jpg",
+          "content": "\\square f (\\mathrm{R}, + \\mathrm{w}, - \\mathrm{t}, \\mathrm{V}, \\mathrm{C})"
+        },
+        {
+          "type": "equation",
+          "index": 14,
+          "bbox": [
+            0.559,
+            0.51,
+            0.678,
+            0.529
+          ],
+          "image_path": "images/page_9_equation_14.jpg",
+          "content": "\\square f (+ \\mathrm{w}, \\mathrm{V}, \\mathrm{C})"
+        },
+        {
+          "type": "equation",
+          "index": 15,
+          "bbox": [
+            0.159,
+            0.551,
+            0.235,
+            0.569
+          ],
+          "image_path": "images/page_9_equation_15.jpg",
+          "content": "\\square f (- t)"
+        },
+        {
+          "type": "equation",
+          "index": 16,
+          "bbox": [
+            0.559,
+            0.531,
+            0.682,
+            0.549
+          ],
+          "image_path": "images/page_9_equation_16.jpg",
+          "content": "\\square f (\\mathrm{V}, + \\mathrm{w}, - \\mathrm{t})"
+        },
+        {
+          "type": "equation",
+          "index": 17,
+          "bbox": [
+            0.559,
+            0.551,
+            0.642,
+            0.569
+          ],
+          "image_path": "images/page_9_equation_17.jpg",
+          "content": "\\square f (+ \\mathrm{w})"
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.092,
+            0.588,
+            0.879,
+            0.604
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Which statement best explains why variable elimination (VE) is better than inference by enumeration (IBE)?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.157,
+            0.612,
+            0.744,
+            0.629
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# VE can use larger factors, so we can read off more values and use less computation."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.158,
+            0.633,
+            0.591,
+            0.649
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "VE can use smaller factors, so we can use less computation."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.158,
+            0.653,
+            0.634,
+            0.669
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "While VE is usually better, sometimes IBE creates smaller factors."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.158,
+            0.673,
+            0.837,
+            0.69
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# VE is always strictly better, because it always uses strictly smaller factors, using less computation."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.09,
+            0.702,
+            0.909,
+            0.734
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Pac-Man claims that he could have skipped eliminating L and just removed it from the graph for his query of 𝑃 (C| + w, −t). This is:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 24,
+          "bbox": [
+            0.157,
+            0.742,
+            0.538,
+            0.758
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Correct, because L is not directly connected with C."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.157,
+            0.762,
+            0.582,
+            0.778
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Correct, because there is no downstream path from C to L."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.157,
+            0.782,
+            0.644,
+            0.798
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Correct, because L is conditionally independent of C, given w and t."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.158,
+            0.803,
+            0.712,
+            0.819
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Incorrect, because every variable can have relevant information to every query."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.158,
+            0.823,
+            0.525,
+            0.839
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Incorrect, because there exists a path from L to C."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 29,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.047,
+            0.444,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Reminder: Pacman is trying to compute 𝑃 (C| + w, −t)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.075,
+            0.391,
+            0.091
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Bayes’ net, repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.377,
+            0.098,
+            0.609,
+            0.277
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.377,
+                0.098,
+                0.609,
+                0.277
+              ],
+              "image_path": "images/page_10_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.078,
+            0.293,
+            0.908,
+            0.323
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pac-Man is tired of variable elimination, so he takes a short break. He decides to approximate the query using various sampling methods."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.337,
+            0.89,
+            0.353
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In each of the next subparts, select all sampling algorithm(s) that could have generated the two "
+            },
+            {
+              "type": "text",
+              "content": "consecutive",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " samples shown."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.078,
+            0.366,
+            0.702,
+            0.382
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: If Pacman rejects a sample while generating it, the rest of the sample will say “rejected.”"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.094,
+            0.395,
+            0.52,
+            0.425
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Sample 1: +r +w +t −v +m +l +c Sample 2: −r −w −t +v −m +l +c"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.162,
+            0.431,
+            0.298,
+            0.449
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prior Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.428,
+            0.431,
+            0.605,
+            0.449
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Likelihood Weighting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.162,
+            0.45,
+            0.326,
+            0.466
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Rejection Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.427,
+            0.45,
+            0.569,
+            0.466
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Gibbs Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.694,
+            0.432,
+            0.851,
+            0.448
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.096,
+            0.49,
+            0.159,
+            0.506
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f) [1 pt]"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.164,
+            0.483,
+            0.52,
+            0.514
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Sample 1: −r +w −t −v +m +l −c Sample 2: −r +w −t +v +m +l −c"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.162,
+            0.537,
+            0.325,
+            0.554
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Rejection Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.428,
+            0.519,
+            0.605,
+            0.537
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Likelihood Weighting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.428,
+            0.537,
+            0.568,
+            0.555
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Gibbs Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.693,
+            0.52,
+            0.851,
+            0.536
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.092,
+            0.571,
+            0.644,
+            0.601
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Sample 1: −r +w +t rejected rejected rejected rejected "
+            },
+            {
+              "type": "text",
+              "content": "(g)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Sample 2: −r +w −t rejected rejected rejected rejected"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.161,
+            0.607,
+            0.298,
+            0.625
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prior Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.162,
+            0.625,
+            0.325,
+            0.643
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Rejection Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.427,
+            0.607,
+            0.606,
+            0.625
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Likelihood Weighting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.694,
+            0.608,
+            0.851,
+            0.624
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.428,
+            0.625,
+            0.569,
+            0.643
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Gibbs Sampling"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 24,
+          "bbox": [
+            0.092,
+            0.667,
+            0.159,
+            0.683
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(h) [1 pt]"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.164,
+            0.659,
+            0.519,
+            0.69
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Sample 1: +r +w −t +v −m +l −c Sample 2: −r +w −t −v −m +l −c"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.161,
+            0.695,
+            0.298,
+            0.712
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prior Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.161,
+            0.713,
+            0.325,
+            0.73
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Rejection Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.428,
+            0.695,
+            0.605,
+            0.713
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Likelihood Weighting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 29,
+          "bbox": [
+            0.427,
+            0.713,
+            0.568,
+            0.73
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Gibbs Sampling"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 30,
+          "bbox": [
+            0.694,
+            0.696,
+            0.851,
+            0.712
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 31,
+          "bbox": [
+            0.095,
+            0.749,
+            0.602,
+            0.765
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [4 pts] Pacman finishes his variable elimination, in the order: L, M, R, V."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 32,
+          "bbox": [
+            0.118,
+            0.77,
+            0.682,
+            0.785
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman discovers that the evidence he used was wrong! The evidence was +t, not −t."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 33,
+          "bbox": [
+            0.117,
+            0.79,
+            0.908,
+            0.821
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Select all steps that Pacman would need to redo. Note that the step of collecting samples does "
+            },
+            {
+              "type": "text",
+              "content": "not",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " involve computing the probability from those samples."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 34,
+          "bbox": [
+            0.159,
+            0.833,
+            0.372,
+            0.851
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Joining and eliminating M."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 35,
+          "bbox": [
+            0.559,
+            0.833,
+            0.872,
+            0.852
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Collecting samples for rejection sampling."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 36,
+          "bbox": [
+            0.159,
+            0.854,
+            0.368,
+            0.871
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Joining and eliminating R."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 37,
+          "bbox": [
+            0.559,
+            0.854,
+            0.885,
+            0.872
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Collecting samples for likelihood weighting."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 38,
+          "bbox": [
+            0.159,
+            0.874,
+            0.369,
+            0.891
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Joining and eliminating V."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 39,
+          "bbox": [
+            0.559,
+            0.874,
+            0.854,
+            0.892
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Collecting samples for Gibbs sampling."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 40,
+          "bbox": [
+            0.159,
+            0.894,
+            0.447,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Collecting samples for prior sampling."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 41,
+          "bbox": [
+            0.56,
+            0.895,
+            0.779,
+            0.911
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No steps need to be redone."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 42,
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.041,
+            0.749,
+            0.069
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q6. [13 pts] HMMs and VPI: Markov Menagerie"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.08,
+            0.656,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the following hidden Markov model (HMM). All random variables are binary."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.238,
+            0.12,
+            0.746,
+            0.229
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.238,
+                0.12,
+                0.746,
+                0.229
+              ],
+              "image_path": "images/page_11_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.078,
+            0.257,
+            0.489,
+            0.273
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We would like to compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { V P I } ( E _ { N } ) = \\mathrm { M E U } ( E _ { N } ) - \\mathrm { M E U } ( \\emptyset )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.091,
+            0.286,
+            0.876,
+            0.334
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Which of these distributions is needed to compute MEU(∅)? # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | X _ { N - 1 } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | E _ { 1 } , \\ldots , E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | E _ { N } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.09,
+            0.352,
+            0.685,
+            0.367
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Which of these computations can be used to derive the distribution in part "
+            },
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.158,
+            0.376,
+            0.525,
+            0.392
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Run the forward algorithm with no modifications."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.158,
+            0.396,
+            0.594,
+            0.412
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Run the forward algorithm, skipping all time elapse updates."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.158,
+            0.416,
+            0.596,
+            0.432
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Run the forward algorithm, skipping all observation updates."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.158,
+            0.436,
+            0.518,
+            0.453
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Read the conditional probability table under "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { N }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.092,
+            0.465,
+            0.565,
+            0.481
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Write an expression that can be used to compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { M E U } ( E _ { N } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.126,
+            0.496,
+            0.837,
+            0.629
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { M E U } ( E _ { N } ) = \\sum _ { e _ { N } } \\left( \\mathbf { i } \\right) \\left[ \\operatorname* { m a x } _ { a } \\sum _ { x _ { N } } \\left( \\mathrm { i i } \\right) \\mathrm { ~ ( i i i ) } \\right]"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "text",
+              "content": "(i)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { N } | E _ { N - 1 } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { N } | X _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { N } | X _ { 1 } , \\ldots , X _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "text",
+              "content": "(ii)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r l } { \\bigcirc } & { { } P ( X _ { N } | X _ { N - 1 } ) } \\end{array}"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | X _ { 1 } , \\ldots , X _ { N - 1 } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { N } | E _ { 1 } , \\ldots , E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "text",
+              "content": "(iii)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " # 1 # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "U ( x _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "U ( a )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "U ( x _ { N } , a )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.09,
+            0.64,
+            0.876,
+            0.675
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Consider the distribution in part "
+            },
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ", which you computed in part "
+            },
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". From the distribution in "
+            },
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ", which of the following additional computations results in the distribution in blank "
+            },
+            {
+              "type": "text",
+              "content": "(ii)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.157,
+            0.685,
+            0.461,
+            0.701
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Apply an additional observation update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.157,
+            0.705,
+            0.458,
+            0.721
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Apply an additional time elapse update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.158,
+            0.725,
+            0.565,
+            0.741
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Apply an additional time elapse and observation update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.158,
+            0.745,
+            0.675,
+            0.761
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Re-run the forward algorithm from the beginning, with no modifications."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.092,
+            0.775,
+            0.744,
+            0.79
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Which of the following computations can be used to derive the distribution in blank "
+            },
+            {
+              "type": "text",
+              "content": "(i)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.159,
+            0.803,
+            0.318,
+            0.82
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "P ( x _ { N } ) P ( E _ { N } | x _ { N } )"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 19,
+          "bbox": [
+            0.594,
+            0.804,
+            0.745,
+            0.822
+          ],
+          "image_path": "images/page_11_equation_19.jpg",
+          "content": "\\sum_ {e _ {N}} P (x _ {N}) P (e _ {N} | x _ {N})"
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.159,
+            0.826,
+            0.353,
+            0.847
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle \\sum _ { x _ { N } } P ( x _ { N } ) P ( E _ { N } | x _ { N } )"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 21,
+          "bbox": [
+            0.594,
+            0.827,
+            0.752,
+            0.846
+          ],
+          "image_path": "images/page_11_equation_21.jpg",
+          "content": "\\sum_ {x _ {N}} P (E _ {N}) P (x _ {N} | E _ {N})"
+        },
+        {
+          "type": "page_number",
+          "index": 22,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.047,
+            0.376,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The diagram, repeated for your convenience:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.238,
+            0.086,
+            0.746,
+            0.195
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.238,
+                0.086,
+                0.746,
+                0.195
+              ],
+              "image_path": "images/page_12_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.079,
+            0.223,
+            0.827,
+            0.239
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For the rest of the question, suppose we would like to compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\operatorname { V P I } ( E _ { 1 } , \\ldots , E _ { N } ) = \\operatorname { M E U } ( E _ { 1 } , \\ldots , E _ { N } ) - \\operatorname { M E U } ( { \\varnothing } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.094,
+            0.252,
+            0.693,
+            0.268
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] To compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { M E U } ( E _ { 1 } , \\ldots , E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " , we’ll need one or more distribution(s) over "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { N }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.118,
+            0.273,
+            0.662,
+            0.288
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Which of these computations will generate the necessary distribution(s) over "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { N } ?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.158,
+            0.297,
+            0.562,
+            0.312
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Run the forward algorithm once, with no modifications."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.158,
+            0.317,
+            0.592,
+            0.332
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Run the forward algorithm "
+            },
+            {
+              "type": "equation_inline",
+              "content": "2 ^ { N }"
+            },
+            {
+              "type": "text",
+              "content": " times, with no modifications."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.158,
+            0.338,
+            0.63,
+            0.354
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Run the forward algorithm once, skipping all observation updates."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.158,
+            0.357,
+            0.659,
+            0.374
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Run the forward algorithm "
+            },
+            {
+              "type": "equation_inline",
+              "content": "2 ^ { N }"
+            },
+            {
+              "type": "text",
+              "content": " times, skipping all observation updates."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.092,
+            0.387,
+            0.62,
+            0.402
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(g)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] To compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { M E U } ( E _ { 1 } , \\ldots , E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " , which other distribution do we need?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.156,
+            0.415,
+            0.921,
+            0.433
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { 1 } )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { 1 } , \\ldots , E _ { N } )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( E _ { 1 } , \\dots , E _ { N } | X _ { N } )"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.041,
+            0.61,
+            0.069
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q7. [12 pts] Games and ML: BeatBlue"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.077,
+            0.08,
+            0.793,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman wants to design an agent that can play chess and beat his older (more successful) brother, DeepBlue."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.109,
+            0.909,
+            0.14
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "First, Pacman would like to design a machine learning algorithm that takes in a board state and outputs a real number between 0.00 (for states where Pacman is losing) and 1.00 (for states where Pacman is winning)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.09,
+            0.153,
+            0.825,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Pacman starts by asking experts to manually assign values to board states. Select all true statements."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.157,
+            0.176,
+            0.618,
+            0.194
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ We can use the manually-assigned values as our training dataset."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.158,
+            0.197,
+            0.612,
+            0.214
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ We can use the manually-assigned values as our testing dataset."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.158,
+            0.217,
+            0.881,
+            0.235
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Since we have values assigned by experts, the machine learning algorithm provides no additional benefit."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.158,
+            0.237,
+            0.321,
+            0.254
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.089,
+            0.266,
+            0.861,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Pacman suggests using a perceptron for this problem. Is it reasonable to use a perceptron for this problem?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.157,
+            0.291,
+            0.49,
+            0.308
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Yes, because this is a classification problem."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.157,
+            0.311,
+            0.532,
+            0.328
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# Yes, because the training data is linearly separable."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.157,
+            0.332,
+            0.891,
+            0.349
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# No, because this is a regression problem, and perceptrons output discrete classes, not continuous numbers."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.158,
+            0.351,
+            0.758,
+            0.369
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# No, because perceptrons should never be used when the data is not linearly separable."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.076,
+            0.38,
+            0.909,
+            0.413
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman decides to represent the chess board state as a 64-dimensional vector. Pacman designs a fully-connected, feed-forward neural network with the following architecture:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 14,
+          "bbox": [
+            0.41,
+            0.437,
+            0.576,
+            0.473
+          ],
+          "image_path": "images/page_13_equation_14.jpg",
+          "content": "\\begin{array}{l} h = \\mathrm{ReLU} (x \\cdot W _ {1} + b _ {1}) \\\\ \\hat {y} = \\mathrm{ReLU} (h \\cdot W _ {2} + b _ {2}) \\end{array}"
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.077,
+            0.498,
+            0.582,
+            0.514
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This network takes in a 1 × 64 vector, 𝑥, and outputs a scalar real number, ̂𝑦."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.078,
+            0.526,
+            0.65,
+            0.542
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman sets the hidden layer size to be 128. In other words, ℎ has dimensions 1 × 128."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.092,
+            0.555,
+            0.379,
+            0.571
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] What are the dimensions of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { 1 } ?"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 18,
+          "bbox": [
+            0.158,
+            0.583,
+            0.241,
+            0.621
+          ],
+          "image_path": "images/page_13_equation_18.jpg",
+          "content": "\\begin{array}{c c} \\bigcirc & 1 \\times 1 \\\\ \\bigcirc & 6 4 \\times 1 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 19,
+          "bbox": [
+            0.359,
+            0.583,
+            0.449,
+            0.621
+          ],
+          "image_path": "images/page_13_equation_19.jpg",
+          "content": "\\begin{array}{c c} \\bigcirc & 1 2 8 \\times 1 \\\\ \\bigcirc & 1 9 2 \\times 1 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 20,
+          "bbox": [
+            0.558,
+            0.583,
+            0.656,
+            0.621
+          ],
+          "image_path": "images/page_13_equation_20.jpg",
+          "content": "\\begin{array}{l l} \\bigcirc & 8 1 9 2 \\times 1 \\\\ \\bigcirc & 6 4 \\times 6 4 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 21,
+          "bbox": [
+            0.758,
+            0.583,
+            0.865,
+            0.621
+          ],
+          "image_path": "images/page_13_equation_21.jpg",
+          "content": "\\begin{array}{l l} \\bigcirc & 1 2 8 \\times 1 2 8 \\\\ \\bigcirc & 6 4 \\times 1 2 8 \\end{array}"
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.09,
+            0.64,
+            0.379,
+            0.656
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] What are the dimensions of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { 2 } ?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.158,
+            0.669,
+            0.241,
+            0.707
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 1 × 1 # 64 × 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 24,
+          "bbox": [
+            0.359,
+            0.669,
+            0.45,
+            0.706
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 128 × 1 # 192 × 1"
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.558,
+            0.668,
+            0.656,
+            0.707
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "8 1 9 2 \\times 1"
+            },
+            {
+              "type": "text",
+              "content": " # 64 × 64"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.759,
+            0.669,
+            0.866,
+            0.686
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "1 2 8 \\times 1 2 8"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.759,
+            0.689,
+            0.86,
+            0.707
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 64 × 128"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.091,
+            0.726,
+            0.909,
+            0.758
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Pacman considers changing the second layer of the neural network. Which of these proposed changes is best for this problem?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 29,
+          "bbox": [
+            0.219,
+            0.792,
+            0.302,
+            0.809
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Reminders:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 30,
+          "bbox": [
+            0.336,
+            0.792,
+            0.486,
+            0.809
+          ],
+          "image_path": "images/page_13_equation_30.jpg",
+          "content": "\\mathrm{ReLU} (x) = \\max (x, 0)"
+        },
+        {
+          "type": "equation",
+          "index": 31,
+          "bbox": [
+            0.518,
+            0.789,
+            0.609,
+            0.813
+          ],
+          "image_path": "images/page_13_equation_31.jpg",
+          "content": "\\sigma (x) = \\frac {1}{1 + e ^ {- x}}"
+        },
+        {
+          "type": "equation",
+          "index": 32,
+          "bbox": [
+            0.643,
+            0.769,
+            0.798,
+            0.831
+          ],
+          "image_path": "images/page_13_equation_32.jpg",
+          "content": "\\operatorname{sgn} (x) = \\left\\{ \\begin{array}{l l} 1 & x > 0 \\\\ 0 & x = 0 \\\\ - 1 & x <   0 \\end{array} \\right."
+        },
+        {
+          "type": "equation",
+          "index": 33,
+          "bbox": [
+            0.158,
+            0.836,
+            0.354,
+            0.854
+          ],
+          "image_path": "images/page_13_equation_33.jpg",
+          "content": "\\bigcirc \\quad \\hat {y} = \\mathrm{ReLU} (h \\cdot W _ {2} + b _ {2})"
+        },
+        {
+          "type": "equation",
+          "index": 34,
+          "bbox": [
+            0.559,
+            0.836,
+            0.737,
+            0.855
+          ],
+          "image_path": "images/page_13_equation_34.jpg",
+          "content": "\\bigcirc \\quad \\hat {y} = \\mathrm{sgn} (h \\cdot W _ {2} + b _ {2})"
+        },
+        {
+          "type": "text",
+          "index": 35,
+          "bbox": [
+            0.159,
+            0.857,
+            0.326,
+            0.875
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\hat { y } = \\sigma ( h \\cdot W _ { 2 } + b _ { 2 } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 36,
+          "bbox": [
+            0.559,
+            0.856,
+            0.704,
+            0.875
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\hat { y } = h \\cdot W _ { 2 } + b _ { 2 }"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 37,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.077,
+            0.047,
+            0.908,
+            0.078
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman now has a neural network "
+            },
+            {
+              "type": "equation_inline",
+              "content": "{ \\hat { y } }   =   f ( x )"
+            },
+            {
+              "type": "text",
+              "content": " that takes in board states (𝑥) and outputs values ( ̂𝑦), and would like to use the network to select actions in the chess game."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.092,
+            0.09,
+            0.909,
+            0.195
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Let "
+            },
+            {
+              "type": "equation_inline",
+              "content": "s ^ { \\prime } = g ( s , a )"
+            },
+            {
+              "type": "text",
+              "content": " represent the successor function that takes in a state 𝑠 and action "
+            },
+            {
+              "type": "equation_inline",
+              "content": "a ,"
+            },
+            {
+              "type": "text",
+              "content": " and outputs a successor state "
+            },
+            {
+              "type": "equation_inline",
+              "content": "s ^ { \\prime } ,"
+            },
+            {
+              "type": "text",
+              "content": " Which of the following expressions represents a reflex agent’s optimal action from state 𝑠, based on the values outputted by the neural network? # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\arg \\operatorname* { m a x } _ { s } f ( s )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\operatorname { a r g   m a x } _ { a } f ( g ( s , a ) )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\operatorname* { m a x } _ { a } g ( s , a )"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle \\sum _ { a } f ( g ( s , a ) )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.078,
+            0.211,
+            0.834,
+            0.227
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Finally, Pacman decides to run depth-limited minimax search and use the neural network as an evaluation function."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.09,
+            0.24,
+            0.902,
+            0.342
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(g)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Is it reasonable to use the neural network as an evaluation function? # Yes, because the neural network maps states to real-numbered values. # Yes, because the network is guaranteed to correctly identify terminal states where the game is over. # No, because it would be more efficient and accurate to expand the entire minimax tree to the terminal states. # No, because evaluation functions should map states to actions."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.089,
+            0.354,
+            0.775,
+            0.457
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(h)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Is it possible to use alpha-beta pruning in this problem? # Yes, pruning works even if the neural network output was unbounded. # Yes, but only because the neural network only outputs numbers between 0 and 1. # No, because pruning requires you to know the values at all leaf nodes in advance. # No, because the values outputted by the neural network are not guaranteed to be correct."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.094,
+            0.468,
+            0.851,
+            0.55
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [1 pt] Is it better to spend more time on training the neural network, or expanding more layers of the game tree? # Training the neural network # Expanding the game tree # Not enough information"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.092,
+            0.562,
+            0.911,
+            0.716
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(j)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] Recall that in Monte Carlo tree search, we allocate more rollouts to game states that are more promising (i.e. better utility for Pacman). Inspired by this idea, Pacman considers running gradient descent for a longer time when using the neural network to evaluate game states that are more promising. Would this idea work? # Yes, because this causes the neural network to focus its training on promising game states. # Yes, because training for a longer time leads to better evaluations. # No, because running gradient descent for too long always leads to overfitting. # No, because gradient descent runs during training, not evaluation."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.041,
+            0.384,
+            0.07
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q8. [13 pts] Potpourri"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.091,
+            0.08,
+            0.517,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [4 pts] Select all true statements about the game tree shown."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.117,
+            0.105,
+            0.701,
+            0.135
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Suppose that the values in the terminal nodes have the property that "
+            },
+            {
+              "type": "equation_inline",
+              "content": "D < E < F < G ,"
+            },
+            {
+              "type": "text",
+              "content": " and the agents do not know this."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.118,
+            0.15,
+            0.532,
+            0.166
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Assume that alpha-beta pruning visits nodes from left to right."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.164,
+            0.173,
+            0.592,
+            0.191
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ Two actions are needed to transition from state 𝐴 to state 𝐸."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.164,
+            0.198,
+            0.489,
+            0.216
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The value at the root node will always be 𝐸."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.164,
+            0.224,
+            0.626,
+            0.242
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ When running alpha-beta pruning, node 𝐺 can always be pruned."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 7,
+          "bbox": [
+            0.721,
+            0.097,
+            0.928,
+            0.255
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 7,
+              "bbox": [
+                0.721,
+                0.097,
+                0.928,
+                0.255
+              ],
+              "image_path": "images/page_15_image_7.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.164,
+            0.248,
+            0.652,
+            0.267
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ When running alpha-beta pruning, node 𝐹 can sometimes be pruned."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.164,
+            0.275,
+            0.325,
+            0.291
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.091,
+            0.3,
+            0.909,
+            0.352
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [4 pts] Consider a standard HMM (from lecture) with states "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { 1 } , \\ldots , X _ { N }"
+            },
+            {
+              "type": "text",
+              "content": " and evidence "
+            },
+            {
+              "type": "equation_inline",
+              "content": "E _ { 1 } , \\ldots , E _ { N }"
+            },
+            {
+              "type": "text",
+              "content": " Suppose we’re running particle filtering with a large number of particles. At time step 𝑡, we have a particle at state "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { t } = x _ { t } ,"
+            },
+            {
+              "type": "text",
+              "content": " with weight 0.7. Select all true statements about this particle."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.158,
+            0.36,
+            0.863,
+            0.378
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ We’ve just finished a time elapse update, and have not performed the observation update for time 𝑡 yet."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.158,
+            0.38,
+            0.773,
+            0.398
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 0.7 is the probability of the particle visiting all the states it’s visited so far: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( x _ { 1 } , \\ldots , x _ { t } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.158,
+            0.401,
+            0.792,
+            0.419
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ If this particle is drawn during resampling, the resulting new particle will still be at state "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { t }"
+            },
+            {
+              "type": "text",
+              "content": " ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.158,
+            0.423,
+            0.641,
+            0.441
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "□ 0.3 is the probability that this particle disappears during resampling."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.159,
+            0.444,
+            0.319,
+            0.46
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.078,
+            0.473,
+            0.772,
+            0.489
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the following Naive Bayes’ model and training data. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Y , F _ { 1 }"
+            },
+            {
+              "type": "text",
+              "content": " , and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F _ { 2 }"
+            },
+            {
+              "type": "text",
+              "content": " are binary random variables."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 17,
+          "bbox": [
+            0.153,
+            0.501,
+            0.339,
+            0.608
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 17,
+              "bbox": [
+                0.153,
+                0.501,
+                0.339,
+                0.608
+              ],
+              "image_path": "images/page_15_image_17.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 18,
+          "bbox": [
+            0.413,
+            0.521,
+            0.552,
+            0.588
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 18,
+              "bbox": [
+                0.413,
+                0.521,
+                0.552,
+                0.588
+              ],
+              "image_path": "images/page_15_table_18.jpg",
+              "content": "<table><tbody><tr><td>𝐹<sub>1</sub></td><td>𝐹<sub>2</sub></td><td>𝑌</td></tr><tr><td>+𝑓<sub>1</sub></td><td>+𝑓<sub>2</sub></td><td>+𝑦</td></tr><tr><td>+𝑓<sub>1</sub></td><td>-𝑓<sub>2</sub></td><td>+𝑦</td></tr><tr><td>-𝑓<sub>1</sub></td><td>+𝑓<sub>2</sub></td><td>-𝑦</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.092,
+            0.619,
+            0.35,
+            0.635
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [2 pts] What is "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( + y \\mid + f _ { 1 } , + f _ { 2 } ) ?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.159,
+            0.647,
+            0.224,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# 0 "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 3"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.426,
+            0.647,
+            0.491,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "2 / 3"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 2"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.692,
+            0.647,
+            0.888,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1 Not enough information"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.09,
+            0.704,
+            0.728,
+            0.72
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d)",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " [3 pts] Select all equations that are true about the model, regardless of the training data used."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 24,
+          "bbox": [
+            0.159,
+            0.731,
+            0.318,
+            0.751
+          ],
+          "image_path": "images/page_15_equation_24.jpg",
+          "content": "\\square P (F _ {1}) = P (F _ {1} | F _ {2})"
+        },
+        {
+          "type": "equation",
+          "index": 25,
+          "bbox": [
+            0.16,
+            0.753,
+            0.309,
+            0.771
+          ],
+          "image_path": "images/page_15_equation_25.jpg",
+          "content": "\\square P (Y) = P (Y | F _ {1})"
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.559,
+            0.732,
+            0.754,
+            0.751
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "𝑃 (𝐹1|𝑌 ) = 𝑃 (𝐹1|𝑌 , 𝐹"
+            },
+            {
+              "type": "text",
+              "content": "2",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ")"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.56,
+            0.754,
+            0.719,
+            0.77
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of the above"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 28,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

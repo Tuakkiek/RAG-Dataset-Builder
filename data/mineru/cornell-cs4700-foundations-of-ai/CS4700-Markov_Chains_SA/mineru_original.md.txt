@@ -1,0 +1,94 @@
+## Prob(S) = e^(f(S)/T) / Z (\*), exponential distribution $\frac{e^{f(S)/T}}{Z}$ So, focuses probability mass on global maxima of f(S), by lowering T. But, why does SA converge to sampling from (\*)?
+
+## DETAILS OM MARKOV CHAIM UMBERLYING SIMULATED ANMEALING.
+
+Consider the following “random walker” in hypercube space:
+
+1) Start at a random node S (the “current node”). (How do we generate such a node?)
+
+2) Select, at random, one of the N neighbors of S, call it S'
+
+3) If $(\mathrm{f}(\mathrm{S}') - \mathrm{f}(\mathrm{S})) > 0$, move to $\mathrm{S}'$, i.e. set $\mathrm{S} := \mathrm{S}'$ (i.e., jump to node with better value) else with probability $\mathrm{e}^{\wedge}(\mathrm{f}(\mathrm{S}') - \mathrm{f}(\mathrm{S})) / \mathrm{T}$ move to $\mathrm{S}'$, i.e., set $\mathrm{S} := \mathrm{S}'$
+
+$$
+\begin{array}{r l} {\mathrm{Prob(S)} = \mathrm{e} ^ {\wedge} (\mathrm{f(S)/T}) / \mathrm{Z}} & {= \frac {\mathrm{e} ^ {\mathrm{f(S')/T}}}{\mathrm{e} ^ {\mathrm{f(S)/T}}}} \\ & {= \frac {\mathrm{e} ^ {\mathrm{f(S')/T}}}{\mathrm{e} ^ {\mathrm{f(S)/T}}} \quad \textcircled {2}} \\ & {= \frac {\mathrm{prob(S')}}{\mathrm{prob(S)}} \quad \textcircled {*} *} \end{array}
+$$
+
+## So, we 'jump' based on ratio of decay probability.
+
+## Why does this process converge to desired global probability distibullim ?
+
+$\mathrm{Prob}(\mathrm{S}) = \mathrm{e}^{\wedge}(\mathrm{f}(\mathrm{S}) / \mathrm{T}) / \mathrm{Z}$
+
+Demonstration by example.
+(Nethopoliis - Harvesting sampling. (been strategy for sampling from complex distribution units local information only).
+NCHC: Marshou Choir Nancho Carlo
+Convide particle jumpers around between 3 stars.
+We want it
+What problem is in?
+#1
+#
+#2
+#
+#3
+in
+Scale | Prob.
+#1 | α₁
+#2 | α₂
+#3 | α₃
+Assume: 0 ≤ α₁ ≤ α₂ ≤ α₃ ≤ 1
+α₁ + α₂ + α₃ = 1
+
+$$
+0 \leq \alpha_ {1} \leq \alpha_ {2} \leq \alpha_ {3} \leq 1
+$$
+
+Sample :
+
+1) Start and don style
+current = i
+
+4) Bach to 2)
+
+$[ \text{Compe} \sim SA / * * ]$
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">1) Start at a random node S (the "current node"). (How do we generate such a node?)</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">2) Select, at random, one of the N neighbors of S, call it S'</span></small>
+
+$\begin{array}{c|c|c} \text{1} & p_{10b}(0) & \\ \hline 1 & \alpha_1 & \text{derived} \\ 2 & \alpha_2 & \\ 3 & \alpha_3 & \\ \hline p_{11} & p_{31} & \\ p_{12} & p_{21} & p_{13} & \\ \hline p_{22} & p_{23} & p_{32} & \\ \hline p_{33} & p_{32} & p_{33} & \\ \hline 0 \leq \alpha_1 \leq \alpha_2 \leq \alpha_3 \leq 1 & \end{array}$
+
+1) Start random style i
+current = i
+2) Pich random weight j of current
+3) If  $\text{Prob}(j) > \text{Prob}(i)$
+    current = j
+else with probability  $\frac{\text{Prob}(j)}{\text{Prob}(i)}$
+    current = j
+4) Bach to 2)
+
+Sample defois Mahoo Choi
+Transition Matrix —
+(cloth at how $\nabla$) : why!
+
+$$
+\begin{array}{l} A = \quad \begin{array}{c} \text {Why?} \\ p _ {1 1} \\ i \\ \# 1 \\ \# 2 \\ \# 3 \end{array} \left( \begin{array}{c c c} 0 & \frac {j}{j _ {2}} & \frac {p _ {1 2}}{p _ {3}} \\ \frac {\alpha_ {1}}{\alpha_ {2}} & - \frac {1}{2} - \frac {1}{2} \frac {\alpha_ {1}}{\alpha_ {2}} & \frac {1}{2} \\ \frac {\alpha_ {1}}{\alpha_ {3}} & \frac {1}{2} \frac {\alpha_ {2}}{\alpha_ {3}} & - \frac {1}{2} \frac {\alpha_ {1}}{\alpha_ {3}} - \frac {1}{2} \frac {\alpha_ {2}}{\alpha_ {3}} \end{array} \right) \\ \text {What is special about transition mixing A?} \\ \text {Claim:} \end{array}
+$$
+
+$$
+\begin{array}{l} (a, a _ {2}, a _ {3}) \cdot A = (a, a _ {2}, a _ {3}) \\ \text {i.e. distribution (stations)} \\ \text {we went to} \\ \underline {{\text {fixed point of NaHou Chain.}}} \end{array}
+$$
+
+let's verify $\alpha_{2}$ case.  
+$(\alpha_{1}, \alpha_{2}, \alpha_{3}) \cdot A = (\alpha_{1}, \alpha_{2}, \alpha_{3})$  
+$\begin{array}{c}0 \\ \frac{1}{2} \frac{\alpha_{1}}{\alpha_{2}} \\ \frac{1}{2} \frac{\alpha_{1}}{\alpha_{3}} \end{array} \quad \begin{array}{c}1/2 \\ 1 - 1/2 - 1/2 \frac{\alpha_{1}}{\alpha_{2}} \\ \frac{1}{2} \frac{\alpha_{2}}{\alpha_{3}} \end{array} \quad \begin{array}{c}1/2 \\ 1 - 1/2 \frac{\alpha_{1}}{\alpha_{3}} - 1/2 \frac{\alpha_{2}}{\alpha_{3}} \end{array}$  
+$\frac{1}{2} \cdot \alpha_{1} + \alpha_{2} \cdot (1/2 - 1/2 \frac{\alpha_{1}}{\alpha_{2}})^{+} + \alpha_{3} \cdot 1/2 \cdot \frac{\alpha_{2}}{\alpha_{3}} = \frac{1}{2} \alpha_{2} + 1/2 \alpha_{3}$  
+$= \alpha_{2} \sqrt{-1}$
+
+So, clearly constructed sample
+has desired stationary distance.
+butlim $(\alpha_1, \alpha_2, \alpha_3)$.
+
+SA i, oimilan choin with stationary di, hi sation: $P_{iob}(j) = \frac{e^{f(j)/T}}{2}$
+
+$\mathrm{Prob}(\mathrm{S}) = \mathrm{e}^{\wedge}(\mathrm{f}(\mathrm{S}) / \mathrm{T}) / \mathrm{Z}$

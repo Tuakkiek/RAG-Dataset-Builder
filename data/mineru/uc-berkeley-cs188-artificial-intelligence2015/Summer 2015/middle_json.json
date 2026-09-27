@@ -1,0 +1,2665 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2018-06-21T21:26:24-07:00",
+      "modified_at": "2018-06-21T21:26:24-07:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.16",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.08,
+            0.062,
+            0.523,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "CS 188 Introduction to Summer 2015Artificial Intelligence"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": []
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.103,
+            0.152,
+            0.444,
+            0.168
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " You have approximately 2 hours 50 minutes."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.103,
+            0.177,
+            0.789,
+            0.194
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " The exam is closed book, closed calculator, and closed notes except your one-page crib sheet."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.104,
+            0.202,
+            0.908,
+            0.235
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " Mark your answers ON THE EXAM ITSELF. If you are not sure of your answer you may wish to provide a brief explanation. All short answer sections can be successfully answered in a few sentences AT MOST."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.165,
+            0.269,
+            0.821,
+            0.504
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.165,
+                0.269,
+                0.821,
+                0.504
+              ],
+              "image_path": "images/page_0_table_5.jpg",
+              "content": "<table><tr><td>First name</td><td></td></tr><tr><td>Last name</td><td></td></tr><tr><td>SID</td><td></td></tr><tr><td>edX username</td><td></td></tr><tr><td>Name of person on your left</td><td></td></tr><tr><td>Name of person on your right</td><td></td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 7,
+          "bbox": [
+            0.348,
+            0.753,
+            0.64,
+            0.896
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 6,
+              "bbox": [
+                0.418,
+                0.74,
+                0.569,
+                0.755
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "For staff use only:"
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 7,
+              "bbox": [
+                0.348,
+                0.753,
+                0.64,
+                0.896
+              ],
+              "image_path": "images/page_0_table_7.jpg",
+              "content": "<table><tbody><tr><td>Q1. Search and Probability</td><td>/10</td></tr><tr><td>Q2. Games</td><td>/8</td></tr><tr><td>Q3. Utilities</td><td>/10</td></tr><tr><td>Q4. Farmland CSP</td><td>/8</td></tr><tr><td>Q5. MDP</td><td>/16</td></tr><tr><td>Q6. Bayes Nets</td><td>/8</td></tr><tr><td>Q7. Chameleon</td><td>/10</td></tr><tr><td>Q8. Perceptron</td><td>/10</td></tr><tr><td>Total</td><td>/80</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.488,
+            0.937,
+            0.499,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.306,
+            0.046,
+            0.681,
+            0.061
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.564,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q1. [10 pts] Search and Probability"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.084,
+            0.908,
+            0.116
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Each True/False question is worth 1 points. Leaving a question blank is worth 0 points. Answering incorrectly is worth −1 points."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.086,
+            0.128,
+            0.908,
+            0.158
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) Consider a graph search problem where for every action, the cost is at least \u000f, with "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\epsilon > 0 ."
+            },
+            {
+              "type": "text",
+              "content": " . Assume the heuristic is admissible."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.125,
+            0.163,
+            0.819,
+            0.18
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [1 pt] [true or false] Uniform-cost graph search is guaranteed to return an optimal solution."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.121,
+            0.197,
+            0.909,
+            0.229
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [1 pt] [true or false] The path returned by uniform-cost graph search may change if we add a positive constant C to every step cost."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.118,
+            0.248,
+            0.749,
+            0.266
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [1 pt] [true or false] A* graph search is guaranteed to return an optimal solution."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.118,
+            0.283,
+            0.906,
+            0.301
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iv) [1 pt] [true or false] A* graph search is guaranteed to expand no more nodes than depth-first graph search."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.121,
+            0.318,
+            0.907,
+            0.351
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(v) [1 pt] [true or false] If "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { 1 } ( s )"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { 2 } ( s )"
+            },
+            {
+              "type": "text",
+              "content": " are two admissible A∗ heuristics, then their average "
+            },
+            {
+              "type": "equation_inline",
+              "content": "f ( s )   ="
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle \\frac { 1 } { 2 } h _ { 1 } ( s ) + \\frac { 1 } { 2 } h _ { 2 } ( s )"
+            },
+            {
+              "type": "text",
+              "content": " must also be admissible."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.086,
+            0.377,
+            0.909,
+            0.424
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [3 pts] A, B, C, and D are random variables with binary domains. How many entries are in the following probability tables and what is the sum of the values in each table? Write a “?” in the box if there is not enough information given."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 9,
+          "bbox": [
+            0.395,
+            0.437,
+            0.634,
+            0.532
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 9,
+              "bbox": [
+                0.395,
+                0.437,
+                0.634,
+                0.532
+              ],
+              "image_path": "images/page_2_table_9.jpg",
+              "content": "<table><tbody><tr><td>Table</td><td>Size</td><td>Sum</td></tr><tr><td>P(A|C)</td><td></td><td></td></tr><tr><td>P(A,D| + b,+c)</td><td></td><td></td></tr><tr><td>P(B| + a,C,D)</td><td></td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.088,
+            0.545,
+            0.906,
+            0.577
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) "
+            },
+            {
+              "type": "equation_inline",
+              "content": "[ 2 ~ \\mathrm { p t s } ]"
+            },
+            {
+              "type": "text",
+              "content": " Write all the possible chain rule expansions of the joint probability "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( a , b , c )"
+            },
+            {
+              "type": "text",
+              "content": " . No conditional independence assumptions are made."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.042,
+            0.33,
+            0.073
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q2. [8 pts] Games"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.083,
+            0.908,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For the following game tree, each player maximizes their respective utility. Let x, y respectively denote the top and bottom values in a node. Player 1 uses the utility function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "U _ { 1 } ( x , y ) = x ."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.299,
+            0.125,
+            0.687,
+            0.409
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.299,
+                0.125,
+                0.687,
+                0.409
+              ],
+              "image_path": "images/page_3_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.088,
+            0.433,
+            0.656,
+            0.45
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) Both players know that Player 2 uses the utility function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "U _ { 2 } ( x , y ) = x - y"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.126,
+            0.453,
+            0.838,
+            0.47
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [2 pts] Fill in the rectangles in the figure above with pair of values returned by each max node."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.122,
+            0.488,
+            0.908,
+            0.535
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts] You want to save computation time by using pruning in your game tree search. On the game tree above, put an "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { { ^ { \\circ } X ^ { \\prime } } }"
+            },
+            {
+              "type": "text",
+              "content": " on branches that do not need to be explored or simply write ‘None’. Assume that branches are explored from left to right."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.047,
+            0.311,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure repeated for convenience"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.298,
+            0.076,
+            0.688,
+            0.356
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.298,
+                0.076,
+                0.688,
+                0.356
+              ],
+              "image_path": "images/page_4_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.087,
+            0.38,
+            0.909,
+            0.426
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) Now assume Player 2 changes their utility function based on their mood. The probabilities of Player 2’s utilities and mood are described in the following table. Let M, U respectively denote the mood and utility function of Player 2."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 3,
+          "bbox": [
+            0.185,
+            0.44,
+            0.841,
+            0.504
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 3,
+              "bbox": [
+                0.185,
+                0.44,
+                0.841,
+                0.504
+              ],
+              "image_path": "images/page_4_table_3.jpg",
+              "content": "<table><tbody><tr><td colspan=\"2\"></td><td></td><td>M = happy</td><td>M = mad</td></tr><tr><td>P(M = happy)</td><td>P(M = mad)</td><td>P(U<sub>2</sub>(x,y) = -x | M)</td><td>c</td><td>f</td></tr><tr><td>a</td><td>b</td><td>P(U<sub>2</sub>(x,y) = x - y | M)</td><td>d</td><td>g</td></tr><tr><td colspan=\"2\"></td><td>P(U<sub>2</sub>(x,y) = x<sup>2</sup> + y<sup>2</sup> | M)</td><td>e</td><td>h</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.128,
+            0.513,
+            0.908,
+            0.56
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [4 pts] Calculate the maximum expected utility of the game for Player 1 in terms of the values in the game tree and the tables. It may be useful to record and label your intermediate calculations. You may write your answer in terms of a max function."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.361,
+            0.073
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q3. [10 pts] Utilities"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.084,
+            0.908,
+            0.116
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Davis is on his way to a final exam planning meeting. He is already running late (the meeting is starting now) and he’s trying to determine whether he should wait for the bus or just walk."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.128,
+            0.908,
+            0.16
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "It takes 20 minutes to get to Cory Hall by walking, and only 5 minutes to get to there by bus. The bus will either come in 10, 20, or 30 minutes, each with probability 1/3."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.086,
+            0.171,
+            0.903,
+            0.189
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [3 pts] Davis hates being late; his utility for being late as a function of t, the number of minutes late he is, is"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.406,
+            0.199,
+            0.611,
+            0.232
+          ],
+          "image_path": "images/page_5_equation_4.jpg",
+          "content": "U _ {D} (t) = \\left\\{ \\begin{array}{c c} 0 & : t \\leq 0 \\\\ - 2 ^ {t / 5} & : t > 0 \\end{array} \\right."
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.118,
+            0.241,
+            0.701,
+            0.258
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "What is the expected utility of each action? Should he wait for the bus or walk?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.085,
+            0.375,
+            0.908,
+            0.406
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [3 pts] Pat is running late too. However, Pat reasons that once he’s late, it doesn’t matter how late he is. Therefore, his utility function is"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.413,
+            0.405,
+            0.604,
+            0.437
+          ],
+          "image_path": "images/page_5_equation_7.jpg",
+          "content": "U _ {P} (t) = \\left\\{ \\begin{array}{r l} 0 & : t \\leq 0 \\\\ - 1 0 & : t > 0 \\end{array} \\right."
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.116,
+            0.442,
+            0.909,
+            0.474
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Moreover, Pat prefers riding the bus because it is more comfortable, so riding the bus incurs a utility bonus of 5."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.117,
+            0.477,
+            0.908,
+            0.509
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "If Pat is deciding whether to take the bus or walk when the meeting is just starting, what are his expected utilities for each action? Should he take the bus or walk?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.088,
+            0.625,
+            0.906,
+            0.659
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) [2 pts] Give an example of a decreasing utility function in terms of time such that it will favor decisions that always minimize expected time to get to the meeting."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.085,
+            0.774,
+            0.908,
+            0.807
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d) [2 pts] Give an example of a decreasing utility function in terms of time such that it will be risk-seeking; that is, a lottery with expected time of arrival t will be preferred to a guarantee of arrival time t."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.437,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q4. [8 pts] Farmland CSP"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.13
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The animals in Farmland aren’t getting along and the farmers have to assign them to different pens. To avoid fighting, animals of the same type cannot be in connected pens. Fortunately, the Farmland pens are connected in a tree structure."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.086,
+            0.142,
+            0.907,
+            0.174
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [2 pts] Consider the following constraint diagram that shows six pens with lines indicating connected pens. The remaining domains for each pen are listed below each node."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.248,
+            0.18,
+            0.752,
+            0.288
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.248,
+                0.18,
+                0.752,
+                0.288
+              ],
+              "image_path": "images/page_6_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.118,
+            0.303,
+            0.908,
+            0.335
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "After assigning a bull to pen 5, enforce arc consistency on this CSP considering only the directed arcs shown in the figure. What are the remaining values for each pen?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.386,
+            0.346,
+            0.642,
+            0.496
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.386,
+                0.346,
+                0.642,
+                0.496
+              ],
+              "image_path": "images/page_6_table_5.jpg",
+              "content": "<table><tbody><tr><td>Pen</td><td>Values</td></tr><tr><td>1</td><td></td></tr><tr><td>2</td><td></td></tr><tr><td>3</td><td></td></tr><tr><td>4</td><td></td></tr><tr><td>5</td><td>Bull</td></tr><tr><td>6</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.085,
+            0.51,
+            0.908,
+            0.542
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [2 pts] What is the computational complexity of solving general tree structured CSPs with n nodes and d values in the domain? Give an answer of the form O(·)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.088,
+            0.589,
+            0.908,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) This True/False question is worth 1 points. Leaving a question blank is worth 0 points. Answering incorrectly is worth −1 points."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.125,
+            0.625,
+            0.909,
+            0.656
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [1 pt] [true or false] If root to leaf arcs are consistent on a general tree structured CSP, assigning values to nodes from root to leaves will not back-track if a solution exists."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.683,
+            0.91,
+            0.73
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d) [3 pts] Given 3 animal types, what is the most number of pens a tree structure could have, such that the computational complexity to solve the tree CSP is no greater than the computational complexity to solve a fully connected CSP with 10 pens?"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.042,
+            0.326,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q5. [16 pts] MDP"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.083,
+            0.645,
+            0.099
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman is using MDPs to maximize his expected utility. In each environment:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.102,
+            0.122,
+            0.794,
+            0.138
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " Pacman has the standard actions {North, East, South, West} unless blocked by an outer wall"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.102,
+            0.147,
+            0.853,
+            0.164
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " There is a reward of 1 point when eating the dot (for example, in the grid below, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "R ( C , S o u t h , F ) = 1 )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.103,
+            0.172,
+            0.394,
+            0.188
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " The game ends when the dot is eaten"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.088,
+            0.201,
+            0.908,
+            0.232
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) Consider a the following grid where there is a single food pellet in the bottom right corner (F). The discount factor is 0.5. There is no living reward. The states are simply the grid locations."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 6,
+          "bbox": [
+            0.435,
+            0.24,
+            0.551,
+            0.3
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 6,
+              "bbox": [
+                0.435,
+                0.24,
+                0.551,
+                0.3
+              ],
+              "image_path": "images/page_7_table_6.jpg",
+              "content": "<table><tbody><tr><td>A</td><td>B</td><td>C</td></tr><tr><td>D</td><td>E</td><td>F</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.128,
+            0.313,
+            0.512,
+            0.33
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [2 pts] What is the optimal policy for each state?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 8,
+          "bbox": [
+            0.158,
+            0.348,
+            0.306,
+            0.475
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 8,
+              "bbox": [
+                0.158,
+                0.348,
+                0.306,
+                0.475
+              ],
+              "image_path": "images/page_7_table_8.jpg",
+              "content": "<table><tbody><tr><td>State</td><td>π(state)</td></tr><tr><td>A</td><td></td></tr><tr><td>B</td><td></td></tr><tr><td>C</td><td></td></tr><tr><td>D</td><td></td></tr><tr><td>E</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.122,
+            0.498,
+            0.908,
+            0.529
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts] What is the optimal value for the state of being in the upper left corner (A)? Reminder: the discount factor is 0.5."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.155,
+            0.548,
+            0.224,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "V∗( A ) ="
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.119,
+            0.586,
+            0.908,
+            0.618
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [2 pts] Using value iteration with the value of all states equal to zero at k=0, for which iteration k will "
+            },
+            {
+              "type": "equation_inline",
+              "content": "V_{k}(A)=V^{*}(A)?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.155,
+            0.637,
+            0.188,
+            0.652
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "k ="
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 13,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.086,
+            0.046,
+            0.908,
+            0.093
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) Consider a new Pacman level that begins with cherries in locations D and F. Landing on a grid position withD E F cherries is worth 5 points and then the cherries at that position disappear. There is still one dot, worth 1 point. The game still only ends when the dot is eaten."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.415,
+            0.1,
+            0.569,
+            0.162
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.415,
+                0.1,
+                0.569,
+                0.162
+              ],
+              "image_path": "images/page_8_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.126,
+            0.175,
+            0.908,
+            0.205
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [2 pts] With no discount "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( \\gamma = 1 )"
+            },
+            {
+              "type": "text",
+              "content": " and a living reward of -1, what is the optimal policy for the states in this level’s state space?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.122,
+            0.389,
+            0.908,
+            0.42
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts] With no discount "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( \\gamma = 1 )"
+            },
+            {
+              "type": "text",
+              "content": " , what is the range of living reward values such that Pacman eats exactly one cherry when starting at position A?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.088,
+            0.49,
+            0.632,
+            0.506
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) Quick reinforcement learning questions [PLEASE WRITE CLEARLY]:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.127,
+            0.51,
+            0.664,
+            0.527
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [1 pt] What is the difference between value-iteration and TD-learning?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.121,
+            0.588,
+            0.636,
+            0.605
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [1 pt] What is the difference between TD-learning and Q-learning?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.119,
+            0.666,
+            0.692,
+            0.683
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [1 pt] What is the purpose of using a learning rate (α) during Q-learning?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.119,
+            0.744,
+            0.909,
+            0.76
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iv) [1 pt] In value iteration, we store the value of each state. What do we store during approximate Q-learning?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.122,
+            0.821,
+            0.908,
+            0.854
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(v) [2 pts] Give one advantage and one disadvantage of using approximate Q-learning rather than standard Q-learning."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.389,
+            0.073
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q6. [8 pts] Bayes Nets"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.086,
+            0.084,
+            0.909,
+            0.116
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) For the following graphs, explicitly state the minimum size set of edges that must be removed such that the corresponding independence relations are guaranteed to be true."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.118,
+            0.119,
+            0.511,
+            0.135
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Marked the removed edges with an ‘X’ on the graphs."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.127,
+            0.138,
+            0.207,
+            0.157
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [2 pts]"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 4,
+          "bbox": [
+            0.279,
+            0.146,
+            0.514,
+            0.308
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 4,
+              "bbox": [
+                0.279,
+                0.146,
+                0.514,
+                0.308
+              ],
+              "image_path": "images/page_9_image_4.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 5,
+          "bbox": [
+            0.561,
+            0.214,
+            0.644,
+            0.236
+          ],
+          "image_path": "images/page_9_equation_5.jpg",
+          "content": "\\perp F | D"
+        },
+        {
+          "type": "equation",
+          "index": 6,
+          "bbox": [
+            0.536,
+            0.242,
+            0.621,
+            0.265
+          ],
+          "image_path": "images/page_9_equation_6.jpg",
+          "content": "B \\perp \\perp C"
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.122,
+            0.317,
+            0.206,
+            0.338
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts]"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 8,
+          "bbox": [
+            0.278,
+            0.328,
+            0.515,
+            0.43
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 8,
+              "bbox": [
+                0.278,
+                0.328,
+                0.515,
+                0.43
+              ],
+              "image_path": "images/page_9_image_8.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 9,
+          "bbox": [
+            0.562,
+            0.382,
+            0.671,
+            0.405
+          ],
+          "image_path": "images/page_9_equation_9.jpg",
+          "content": "C \\perp D | B"
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.085,
+            0.453,
+            0.909,
+            0.521
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) You’re performing variable elimination over a Bayes Net with variables A, B, C, D, E. So far, you’ve finished joining over (but not summing out) C, when you realize you’ve lost the original Bayes Net! Your current factors are f(A), f(B), f(B, D), f(A, B, C, D, E). Note: these are factors, NOT joint distributions. You don’t know which variables are conditioned or unconditioned."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.125,
+            0.523,
+            0.909,
+            0.574
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [2 pts] What’s the smallest number of edges that could have been in the original Bayes Net? Draw out one such Bayes Net below. Number of edges ="
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 12,
+          "bbox": [
+            0.397,
+            0.563,
+            0.581,
+            0.696
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 12,
+              "bbox": [
+                0.397,
+                0.563,
+                0.581,
+                0.696
+              ],
+              "image_path": "images/page_9_image_12.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.121,
+            0.708,
+            0.909,
+            0.759
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts] What’s the largest number of edges that could have been in the original Bayes Net? Draw out one such Bayes Net below. Number of edges ="
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 14,
+          "bbox": [
+            0.396,
+            0.748,
+            0.582,
+            0.881
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 14,
+              "bbox": [
+                0.396,
+                0.748,
+                0.582,
+                0.881
+              ],
+              "image_path": "images/page_9_image_14.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 15,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.079,
+            0.042,
+            0.402,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q7. [10 pts] Chameleon"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.077,
+            0.083,
+            0.908,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A team of scientists from Berkeley discover a rare species of chameleons. Each one can change its color to be blue or gold, once a day. The probability of colors on a certain day are determined solely by its color on the previous day."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.127,
+            0.909,
+            0.158
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The team spends 5 days observing 10 chameleons changing color from day to day. The recorded counts for the chameleons’ color transitions are below."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 3,
+          "bbox": [
+            0.272,
+            0.18,
+            0.715,
+            0.298
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 3,
+              "bbox": [
+                0.272,
+                0.18,
+                0.715,
+                0.298
+              ],
+              "image_path": "images/page_10_table_3.jpg",
+              "content": "<table><tbody><tr><td># of C<sub>t+1</sub>|C<sub>t</sub></td><td>t = 0</td><td>t = 1</td><td>t = 2</td><td>t = 3</td></tr><tr><td># of C<sub>t+1</sub> = gold|C<sub>t</sub> = gold</td><td>0</td><td>0</td><td>8</td><td>2</td></tr><tr><td># of C<sub>t+1</sub> = blue|C<sub>t</sub> = gold</td><td>7</td><td>0</td><td>0</td><td>8</td></tr><tr><td># of C<sub>t+1</sub> = gold|C<sub>t</sub> = blue</td><td>0</td><td>8</td><td>2</td><td>0</td></tr><tr><td># of C<sub>t+1</sub> = blue|C<sub>t</sub> = blue</td><td>3</td><td>2</td><td>0</td><td>0</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.088,
+            0.31,
+            0.908,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [3 pts] They suspect that this phenomenon obeys the stationarity assumption – that is, the transition probabilites are actually the same between all the days. Estimate the transition probabilites "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( C _ { t + 1 } | C _ { t } )"
+            },
+            {
+              "type": "text",
+              "content": " from the above simulation."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.121,
+            0.357,
+            0.43,
+            0.474
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.121,
+                0.357,
+                0.43,
+                0.474
+              ],
+              "image_path": "images/page_10_table_5.jpg",
+              "content": "<table><tbody><tr><td></td><td>P(C<sub>t+1</sub>|C<sub>t</sub>)</td></tr><tr><td>P(C<sub>t+1</sub> = gold|C<sub>t</sub> = gold)</td><td></td></tr><tr><td>P(C<sub>t+1</sub> = blue|C<sub>t</sub> = gold)</td><td></td></tr><tr><td>P(C<sub>t+1</sub> = gold|C<sub>t</sub> = blue)</td><td></td></tr><tr><td>P(C<sub>t+1</sub> = blue|C<sub>t</sub> = blue)</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.086,
+            0.487,
+            0.906,
+            0.518
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [2 pts] Further scientific tests determine that these chameleons are, in fact, immortal. As a result, they want to determine the distribution of a chameleon’s colors over an infinite amount of time."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.119,
+            0.523,
+            0.795,
+            0.539
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Given the estimated transition probabilities, what is the steady state distribution for "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( C _ { \\infty } ) ?"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 8,
+          "bbox": [
+            0.122,
+            0.543,
+            0.317,
+            0.613
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 8,
+              "bbox": [
+                0.122,
+                0.543,
+                0.317,
+                0.613
+              ],
+              "image_path": "images/page_10_table_8.jpg",
+              "content": "<table><tbody><tr><td></td><td>P(C∞)</td></tr><tr><td>P(C∞ = gold)</td><td></td></tr><tr><td>P(C∞ = blue)</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.076,
+            0.047,
+            0.91,
+            0.124
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The chameleons, realizing that these tests are being performed, decide to hide. The scientists can no longer observe them directly, but they can observe the bugs that one particular chameleon likes to eat. They know that the chameleon’s color influences the probability that it will eat some fraction of a nest. The scientists will observe the size of the nests twice per day: once in the morning, before the chameleon eats, and once in the evening, after the chameleon eats. Every day, the chameleon moves on to a new nest."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.087,
+            0.135,
+            0.908,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) [1 pt] Draw a DBN using the variables "
+            },
+            {
+              "type": "equation_inline",
+              "content": "C _ { t } , \\mathit { C } _ { t + 1 } , \\mathit { M } _ { t } , \\mathit { M } _ { t + 1 } , \\mathit { E } _ { t }"
+            },
+            {
+              "type": "text",
+              "content": " , and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "E _ { t + 1 }"
+            },
+            {
+              "type": "text",
+              "content": " . C refers to the color of the chameleon, M is the size of a nest in the morning, and E is the size of that nest in the evening."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.077,
+            0.358,
+            0.908,
+            0.39
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "When the chameleon is blue, it eats half of the bugs in the chosen nest with probability "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 2 ,"
+            },
+            {
+              "type": "text",
+              "content": " one-third of the bugs with probability "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 4"
+            },
+            {
+              "type": "text",
+              "content": " , and two-thirds of the bugs with probability "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 4 ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.078,
+            0.402,
+            0.828,
+            0.419
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "When the chameleon is gold, it eats one-third, half, or two-thirds of the bugs, each with probability "
+            },
+            {
+              "type": "equation_inline",
+              "content": "1 / 3 ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.085,
+            0.43,
+            0.909,
+            0.477
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d) [4 pts] You would like to use particle filtering to guess the chameleon’s color based on the observations of M and E. You observe the following population sizes: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "M_{1} = 24, \\quad E_{1} = 12, \\quad M_{2} = 36"
+            },
+            {
+              "type": "text",
+              "content": " , and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "E _ { 2 } = 2 4"
+            },
+            {
+              "type": "text",
+              "content": " . Fill in the following tables with the weights you would assign to particles in each state at each time step."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.296,
+            0.491,
+            0.732,
+            0.559
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.296,
+                0.491,
+                0.732,
+                0.559
+              ],
+              "image_path": "images/page_11_table_5.jpg",
+              "content": "<table><tbody><tr><td>State at t = 1 Weight</td><td>State at t = 2 Weight</td></tr><tr><td>Blue</td><td>Blue</td></tr><tr><td>Gold</td><td>Gold</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.4,
+            0.073
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q8. [10 pts] Perceptron"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.077,
+            0.083,
+            0.885,
+            0.129
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We would like to use a perceptron to train a classifier for datasets with 2 features per point and labels +1 or -1. Consider the following labeled training data:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.422,
+            0.152,
+            0.565,
+            0.245
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.422,
+                0.152,
+                0.565,
+                0.245
+              ],
+              "image_path": "images/page_12_table_2.jpg",
+              "content": "<table><tbody><tr><td>Features</td><td>Label</td></tr><tr><td>(x<sub>1</sub>,x<sub>2</sub>)</td><td>y<sup>∗</sup></td></tr><tr><td>(-1,2)</td><td>1</td></tr><tr><td>(3,-1)</td><td>-1</td></tr><tr><td>(1,2)</td><td>-1</td></tr><tr><td>(3,1)</td><td>1</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.088,
+            0.257,
+            0.908,
+            0.289
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) "
+            },
+            {
+              "type": "equation_inline",
+              "content": "[ 2 ~ \\mathrm { p t s } ]"
+            },
+            {
+              "type": "text",
+              "content": " Our two perceptron weights have been initialized to "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 1 } = 2"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 2 } = - 2"
+            },
+            {
+              "type": "text",
+              "content": " After processing the first point with the perceptron algorithm, what will be the updated values for these weights?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.086,
+            0.353,
+            0.906,
+            0.391
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [2 pts] After how many steps will the perceptron algorithm converge? Write “never” if it will never converge. Note: one steps means processing one point. Points are processed in order and then repeated, until convergence."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.089,
+            0.454,
+            0.908,
+            0.522
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) Instead of the standard perceptron algorithm, we decide to treat the perceptron as a single node neural network and update the weights using gradient descent on the loss function. The loss function for one data point is Loss "
+            },
+            {
+              "type": "equation_inline",
+              "content": "s ( y , y ^ { * } ) = ( y - y ^ { * } ) ^ { 2 }"
+            },
+            {
+              "type": "text",
+              "content": " , where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "y ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " is the training label for a given point and y is the output of our single node network for that point."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.125,
+            0.525,
+            0.909,
+            0.557
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [3 pts] Given a general activation function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "g ( z )"
+            },
+            {
+              "type": "text",
+              "content": " and its derivative "
+            },
+            {
+              "type": "equation_inline",
+              "content": "g ^ { \\prime } ( z )"
+            },
+            {
+              "type": "text",
+              "content": " , what is the derivative of the loss function with respect to "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 1 }"
+            },
+            {
+              "type": "text",
+              "content": " in terms of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "g ,   g ^ { \\prime } ,   y ^ { * } ,   x _ { 1 } ,   x _ { 2 } ,   w _ { 1 }"
+            },
+            {
+              "type": "text",
+              "content": " , and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 2 } ?"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.156,
+            0.566,
+            0.217,
+            0.588
+          ],
+          "image_path": "images/page_12_equation_7.jpg",
+          "content": "\\frac {\\partial L o s s}{\\partial w _ {1}} ="
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.122,
+            0.66,
+            0.699,
+            0.676
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [2 pts] For this question, the specific activation function that we will use is:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 9,
+          "bbox": [
+            0.402,
+            0.683,
+            0.662,
+            0.699
+          ],
+          "image_path": "images/page_12_equation_9.jpg",
+          "content": "g (z) = 1 \\text {if} z \\geq 0 \\text {and} = - 1 \\text {if} z <   0"
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.153,
+            0.705,
+            0.907,
+            0.756
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Given the following gradient descent equation to update the weights given a single data point. With initial weights of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 1 } = 2"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { 2 } = - 2"
+            },
+            {
+              "type": "text",
+              "content": " , what are the updated weights after processing the first point? Gradient descent update equation: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r } { w _ { i } = w _ { i } - \\alpha \\frac { \\partial L o s s } { \\partial w _ { 1 } } } \\end{array}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.119,
+            0.829,
+            0.908,
+            0.86
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [1 pt] What is the most critical problem with this gradient descent training process with that activation function?"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.306,
+            0.046,
+            0.681,
+            0.061
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

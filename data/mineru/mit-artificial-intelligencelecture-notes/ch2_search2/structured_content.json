@@ -1,0 +1,5073 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.395,
+            0.085,
+            0.605,
+            0.102
+          ],
+          "content": "6.034 Notes: Section 2.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.192,
+            0.116,
+            0.204
+          ],
+          "content": "Slide 2.4.1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.214,
+            0.509,
+            0.24
+          ],
+          "content": "So far, we have looked at three any-path algorithms, depth-first and breadth-first, which are uninformed, and best-first, which is heuristically guided."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.568,
+            0.183,
+            0.912,
+            0.28
+          ],
+          "content": "Classes of Search Class Name Operation Any Path Depth-First Systematic exploration of whole tree Uninformed Breadth-First until a goal node is found. Any Path Best-First Uses heuristic measure of goodness Informed of a node, e.g. estimated distance to goal"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.088,
+            0.476,
+            0.418,
+            0.544
+          ],
+          "content": "| Class | Name | Operation |\n| --- | --- | --- |\n| Any PathUninformed | Depth-FirstBreadth-First | Systematic exploration of whole tree until a goal node is found. |\n| Any PathInformed | Best-First | Uses heuristic measure of goodness of a node, e.g. estimated distance to goal. |",
+          "captions": [
+            {
+              "bbox": [
+                0.196,
+                0.458,
+                0.303,
+                0.473
+              ],
+              "content": "Classes of Search"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_6.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.088,
+            0.564,
+            0.418,
+            0.589
+          ],
+          "content": "| OptimalUninformed | Uniform-Cost | Uses path \"length\" measure.Finds \"shortest\" path. |\n| --- | --- | --- |",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.45,
+                0.501,
+                0.463
+              ],
+              "content": "Slide 2.4.2"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.472,
+            0.924,
+            0.509
+          ],
+          "content": "Now, we will look at the first algorithm that searches for optimal paths, as defined by a \"path length\" measure. This uniform cost algorithm is uninformed about the goal, that is, it does not use any heuristic guidance."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.854,
+            0.38,
+            0.892,
+            0.39
+          ],
+          "content": "up · Spring 02 · 1"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.904,
+            0.381,
+            0.915,
+            0.392
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.369,
+            0.645,
+            0.408,
+            0.655
+          ],
+          "content": "p · Spting 02 · 2"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.646,
+            0.43,
+            0.657
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.118,
+            0.067
+          ],
+          "content": "Slide 2.4.3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.076,
+            0.555,
+            0.103
+          ],
+          "content": "This is the simple algorithm we have been using to illustrate the various searches. As before, we will see that the key issues are picking paths from Q and adding extended paths back in."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.661,
+            0.063,
+            0.808,
+            0.078
+          ],
+          "content": "Simple Search Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.076,
+            0.868,
+            0.116
+          ],
+          "content": "A search node is a path from some state X to the start state, e.g., (X B A S) The state of a search node is the most recent state of the path, e. g. X Let Q be a list of search nodes, e.g. (X B A S) (C B A S) ..). Let S be the start state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.117,
+            0.862,
+            0.131
+          ],
+          "content": "1. Initialize Q with search node (S) as only entry; set Visited = (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.13,
+            0.834,
+            0.145
+          ],
+          "content": "2. If Q is empty, fail. Else, pick some partial path N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.144,
+            0.814,
+            0.158
+          ],
+          "content": "3. If state(N) is a goal, return N (we've reached a goal)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.157,
+            0.731,
+            0.17
+          ],
+          "content": "4. (Otherwise) Remove N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.17,
+            0.894,
+            0.191
+          ],
+          "content": "5. Find all the children of state(N) not in Visited and create all the one-step extensions of N to each descendant."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.191,
+            0.875,
+            0.206
+          ],
+          "content": "6. Add all the extended paths to Q; add children of state(N) to Visited"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.205,
+            0.661,
+            0.219
+          ],
+          "content": "7. Go to step 2."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.583,
+            0.219,
+            0.658,
+            0.232
+          ],
+          "content": "Critical decisions:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.619,
+            0.232,
+            0.718,
+            0.245
+          ],
+          "content": "Step 2: picking N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.167,
+            0.29,
+            0.314,
+            0.304
+          ],
+          "content": "Simple Search Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.301,
+            0.375,
+            0.315
+          ],
+          "content": "A search node is a path from some state X to the start state, e.g., (X B A S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.502,
+            0.295
+          ],
+          "content": "Slide 2.4.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.33,
+            0.184,
+            0.342
+          ],
+          "content": "Let S be the start state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.321,
+            0.322,
+            0.333
+          ],
+          "content": "Let Q be a list of search nodes, e.g. (X B A S) (C B A S) .)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.862,
+            0.249,
+            0.901,
+            0.259
+          ],
+          "content": "p · Spring 02 · \\$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.343,
+            0.368,
+            0.358
+          ],
+          "content": "1. Initialize Q with search node (S) as only entry, set Visited - (S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.62,
+            0.245,
+            0.755,
+            0.258
+          ],
+          "content": "Step 6: adding extensions of N to Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.357,
+            0.343,
+            0.37
+          ],
+          "content": "2. If Q is empty, fail. Else, pick some search node N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.37,
+            0.32,
+            0.384
+          ],
+          "content": "3. If state(N) is a goal, return N (we've reached a goal)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.383,
+            0.236,
+            0.396
+          ],
+          "content": "4. (Otherwise) Remove N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.344,
+            0.373,
+            0.428,
+            0.395
+          ],
+          "content": "Don't use Visited for Optimal Search"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.396,
+            0.402,
+            0.418
+          ],
+          "content": "5. Find all the children of state(N) not in Vicited and create all the one-step extensions of N to each descendant."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.302,
+            0.924,
+            0.33
+          ],
+          "content": "We will continue to use the algorithm but (as we will see) the use of the Visited list conflicts with optimal searching, so we will leave it out for now and replace it with something else later."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.368,
+            0.475,
+            0.409,
+            0.486
+          ],
+          "content": "up · Spring 02 · 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.418,
+            0.401,
+            0.432
+          ],
+          "content": "6. Add all the extended paths to Q; add children of state(N) to Visited"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.431,
+            0.168,
+            0.445
+          ],
+          "content": "7. Go to step 2."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.446,
+            0.164,
+            0.458
+          ],
+          "content": "Critical decisions:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.126,
+            0.458,
+            0.224,
+            0.472
+          ],
+          "content": "Step 2: picking N from Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.126,
+            0.471,
+            0.262,
+            0.485
+          ],
+          "content": "Step 6: adding extensions of N to Q"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.508,
+            0.118,
+            0.52
+          ],
+          "content": "Slide 2.4.5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.53,
+            0.553,
+            0.568
+          ],
+          "content": "Why can't we use a Visited list in connection with optimal searching? In the earlier searches, the use of the Visited list guaranteed that we would not do extra work by re-visiting or re-expanding states. It did not cause any failures then (except possibly of intuition)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.666,
+            0.515,
+            0.8,
+            0.533
+          ],
+          "level": 2,
+          "content": "Why not a Visited list?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.551,
+            0.904,
+            0.577
+          ],
+          "content": "For the any-path algorithms, the Visited list would not cause us to fail to find a path when one existed, since the path to a state did not matter."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.095,
+            0.779,
+            0.412,
+            0.802
+          ],
+          "content": "For the any-path algorithms, the Visited list would not cause us to fail to find a path when one existed, since the path to a state did not matter."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.174,
+            0.742,
+            0.306,
+            0.759
+          ],
+          "content": "Why not a Visited list?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.095,
+            0.803,
+            0.42,
+            0.825
+          ],
+          "content": "However, the Visited list in connection with optimal searches can cause us to miss the best path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.733,
+            0.502,
+            0.748
+          ],
+          "content": "Slide 2.4.6"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.439,
+            0.756,
+            0.929,
+            0.782
+          ],
+          "content": "But, using the Visited list can cause an optimal search to overlook the best path. A simple example will illustrate this."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.861,
+            0.702,
+            0.902,
+            0.713
+          ],
+          "content": "lp · Sping 02 · S"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.369,
+            0.929,
+            0.408,
+            0.939
+          ],
+          "content": "p · Spring 02 • 6"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.862,
+            0.249,
+            0.902,
+            0.26
+          ],
+          "content": "p · Spring 02 · 7"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.057,
+            0.054,
+            0.118,
+            0.067
+          ],
+          "content": "Slide 2.4.7"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.076,
+            0.532,
+            0.102
+          ],
+          "content": "Clearly, the shortest path (as determined by sum of link costs) to G is (S A D G) and an optimal search had better find it."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.666,
+            0.062,
+            0.8,
+            0.08
+          ],
+          "content": "Why not a Visited list?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.099,
+            0.904,
+            0.123
+          ],
+          "content": "For the any-path algorithms, the Visited list would not cause us to fail to find a path when one existed, since the path to a state did not matter."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.123,
+            0.904,
+            0.146
+          ],
+          "content": "However, the Visited list in connection with UC can cause us to miss the best path."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.606,
+            0.166,
+            0.733,
+            0.204
+          ],
+          "content": "D G S 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.751,
+            0.158,
+            0.908,
+            0.182
+          ],
+          "content": "The shortest path from S to G is (S A D G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.289,
+            0.307,
+            0.306
+          ],
+          "content": "Why not a Visited list?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.502,
+            0.295
+          ],
+          "content": "Slide 2.4.8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.094,
+            0.325,
+            0.411,
+            0.35
+          ],
+          "content": "For the any-path algorithms, the Visited list would not cause us to fail to find a path when one existed, since the path to a state did not matter."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.095,
+            0.35,
+            0.411,
+            0.373
+          ],
+          "content": "However, the Visited list in connection with UC can cause us to miss the best path."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.113,
+            0.393,
+            0.239,
+            0.431
+          ],
+          "content": "A 2 G S 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.256,
+            0.385,
+            0.415,
+            0.407
+          ],
+          "content": "The shortest path from S to G is (S A D G)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.257,
+            0.405,
+            0.421,
+            0.447
+          ],
+          "content": "But, on extending (S), A and D would be added to Visited list and so (S A) would not be extended to (S A D)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.438,
+            0.302,
+            0.936,
+            0.364
+          ],
+          "content": "However, on expanding S, A and D are Visited, which means that the extension from A to D would never be generated and we would miss the best path. So, we can't use a Visited list; nevertheless, we still have the problem of multiple paths to a state leading to wasted work. We will deal with that issue later, since it can get a bit complicated. So, first, we will focus on the basic operation of optimal searches."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.368,
+            0.475,
+            0.409,
+            0.486
+          ],
+          "content": "up · Spring 02 · 8"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.417,
+            0.476,
+            0.431,
+            0.488
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.507,
+            0.118,
+            0.52
+          ],
+          "content": "Slide 2.4.9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.529,
+            0.555,
+            0.59
+          ],
+          "content": "The first, and most basic, algorithm for optimal searching is called uniform-cost search. Uniformcost is almost identical in implementation to best-first search. That is, we always pick the best node on Q to expand. The only, but crucial, difference is that instead of assigning the node value based on the heuristic value of the node's state, we will assign the node value as the \"path length\" or \"path cost\", a measure obtained by adding the \"length\" or \"cost\" of the links making up the path."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.617,
+            0.515,
+            0.851,
+            0.534
+          ],
+          "level": 2,
+          "content": "Implementing Optimal Search Strategies"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.583,
+            0.536,
+            0.648,
+            0.549
+          ],
+          "level": 2,
+          "content": "Uniform Cost:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.619,
+            0.55,
+            0.812,
+            0.565
+          ],
+          "content": "Pick best (measured by path length) element of Q"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.619,
+            0.565,
+            0.76,
+            0.579
+          ],
+          "content": "Add path extensions anywhere in Q."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.199,
+            0.742,
+            0.282,
+            0.759
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.093,
+            0.814,
+            0.281,
+            0.829
+          ],
+          "content": "We want \"shortest\" or \"least cost” path"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.092,
+            0.776,
+            0.415,
+            0.799
+          ],
+          "content": "Like best-first except that it uses the \"total length (cost)\" of a path instead of a heuristic value for the state."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.733,
+            0.508,
+            0.748
+          ],
+          "content": "Slide 2.4.10"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.092,
+            0.8,
+            0.386,
+            0.815
+          ],
+          "content": "Each link has a “length” or \"cost” (which is always greater than 0)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.116,
+            0.841,
+            0.235,
+            0.917
+          ],
+          "content": "5日"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.438,
+            0.756,
+            0.939,
+            0.817
+          ],
+          "content": "To reiterate, uniform-cost search uses the total length (or cost) of a path to decide which one to expand. Since we generally want the least-cost path, we will pick the node with the smallest path cost/length. By the way, we will often use the word \"length\" when talking about these types of searches, which makes intuitive sense when we talk about the pictures of graphs. However, we mean any cost measure (like length) that is positive and greater than 0 for the link between any two states."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.861,
+            0.702,
+            0.902,
+            0.713
+          ],
+          "content": "p · Spring 02 · 9"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.715
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.929,
+            0.408,
+            0.939
+          ],
+          "content": "p · Spring 02 · 10"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.249,
+            0.901,
+            0.26
+          ],
+          "content": "p ·Spring 02 ·11"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.122,
+            0.067
+          ],
+          "content": "Slide 2.4.11"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.076,
+            0.553,
+            0.102
+          ],
+          "content": "The path length is the SUM of the length associated with the links in the path. For example, the path from S to A to C has total length 4, since it includes two links, each with edge 2."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.12,
+            0.879,
+            0.135
+          ],
+          "content": "Each link has a “length” or “cost” (which is always greater than 0)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.097,
+            0.909,
+            0.12
+          ],
+          "content": "Like best-first except that it uses the \"total length (cost)\" of a path instead of a heuristic value for the state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.093,
+            0.361,
+            0.281,
+            0.375
+          ],
+          "content": "We want \"shortest\" or \"least cost” path"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.61,
+            0.161,
+            0.729,
+            0.237
+          ],
+          "content": "2 5 B"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.092,
+            0.323,
+            0.415,
+            0.346
+          ],
+          "content": "Like best-first except that it uses the \"total length (cost)\" of a path instead of a heuristic value for the state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.135,
+            0.775,
+            0.148
+          ],
+          "content": "We want \"shortest\" or \"least cost\" path"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.093,
+            0.347,
+            0.386,
+            0.361
+          ],
+          "content": "Each link has a \"length” or “cost” (which is always greater than 0)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.289,
+            0.282,
+            0.305
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.692,
+            0.062,
+            0.776,
+            0.079
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.508,
+            0.295
+          ],
+          "content": "Slide 2.4.12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.761,
+            0.166,
+            0.832,
+            0.18
+          ],
+          "content": "Total path cost:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.761,
+            0.179,
+            0.848,
+            0.192
+          ],
+          "content": "(SA C)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.116,
+            0.388,
+            0.235,
+            0.464
+          ],
+          "content": "5日"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.267,
+            0.392,
+            0.339,
+            0.406
+          ],
+          "content": "Total path cost:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.268,
+            0.405,
+            0.355,
+            0.418
+          ],
+          "content": "(S A C)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.267,
+            0.418,
+            0.355,
+            0.431
+          ],
+          "content": "(S B D G) 8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.302,
+            0.93,
+            0.328
+          ],
+          "content": "The path from S to B to D to G has length 8 since it includes links of length 5 (S-B), 1 (B-D) and 2 (D-G)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.507,
+            0.124,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 2.4.13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.476,
+            0.408,
+            0.486
+          ],
+          "content": "p · Spring 02 · 12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.529,
+            0.177,
+            0.544
+          ],
+          "content": "Similarly for S-A-D-C."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.477,
+            0.431,
+            0.488
+          ],
+          "content": ""
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.693,
+            0.516,
+            0.775,
+            0.532
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.55,
+            0.908,
+            0.572
+          ],
+          "content": "Like best-first except that it uses the \"total length (cost)\" of a path instead of a heuristic value for the state."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.096,
+            0.901,
+            0.387,
+            0.925
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.574,
+            0.879,
+            0.588
+          ],
+          "content": "Each link has a “length” or “cost\" (which is always greater than 0)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.587,
+            0.588,
+            0.774,
+            0.602
+          ],
+          "content": "We want \"shortest\" or \"least cost\" path"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.609,
+            0.614,
+            0.729,
+            0.691
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_32.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.761,
+            0.62,
+            0.832,
+            0.633
+          ],
+          "content": "Total path cost:"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.199,
+            0.742,
+            0.282,
+            0.758
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.632,
+            0.848,
+            0.645
+          ],
+          "content": "(SA C) 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.644,
+            0.847,
+            0.657
+          ],
+          "content": "(S B D G) 8"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.109,
+            0.762,
+            0.397,
+            0.776
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.734,
+            0.508,
+            0.748
+          ],
+          "content": "Slide 2.4.14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.657,
+            0.847,
+            0.67
+          ],
+          "content": "(S A D C)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.302,
+            0.78,
+            0.418,
+            0.855
+          ],
+          "content": "5日"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.702,
+            0.902,
+            0.712
+          ],
+          "content": "p · Spring 02 · 13"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.756,
+            0.936,
+            0.794
+          ],
+          "content": "Given this, let's simulate the behavior of uniform-cost search on this simple directed graph. As usual we start with a single node containing just the start state S. This path has zero length. Of course, we choose this path for expansion."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.93,
+            0.408,
+            0.939
+          ],
+          "content": "p ·Spring 02 · 14"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.591,
+            0.222,
+            0.878,
+            0.245
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.249,
+            0.901,
+            0.26
+          ],
+          "content": "p ·Spring 02 · 15"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.124,
+            0.067
+          ],
+          "content": "Slide 2.4.15"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.076,
+            0.538,
+            0.102
+          ],
+          "content": "This generates two new entries on Q; the path to A has length 2 and the one to B has length 5. So, we pick the path to A to expand."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.692,
+            0.062,
+            0.776,
+            0.079
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.602,
+            0.083,
+            0.89,
+            0.097
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.099,
+            0.912,
+            0.214
+          ],
+          "content": "Q 1 (0 S) 2 2 (2 A S) (5 B S) 2 5 5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.289,
+            0.282,
+            0.305
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.109,
+            0.309,
+            0.396,
+            0.323
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.443,
+            0.28,
+            0.507,
+            0.295
+          ],
+          "content": "Slide 2.4.16"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.325,
+            0.419,
+            0.441
+          ],
+          "content": "3 Q 4 1 (0 S) 2 2 2 (2 A S) (5 B S) A 2 2 1 3 (4 C A S) (6 D A S) (5 B S) S 5 5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.096,
+            0.448,
+            0.386,
+            0.472
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.303,
+            0.914,
+            0.329
+          ],
+          "content": "This generates two new entries on the queue. The new path to C is the shortest path on Q, so we pick it to expand."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.476,
+            0.408,
+            0.486
+          ],
+          "content": "p · Spring 02 · 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.508,
+            0.122,
+            0.52
+          ],
+          "content": "Slide 2.4.17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.53,
+            0.547,
+            0.555
+          ],
+          "content": "Since C has no descendants, we add no new paths to Q and we pick the best of the remaining paths, which is now the path to B."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.693,
+            0.516,
+            0.775,
+            0.531
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.602,
+            0.536,
+            0.89,
+            0.55
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.582,
+            0.55,
+            0.911,
+            0.667
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.902,
+            0.386,
+            0.925
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.675,
+            0.878,
+            0.698
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.199,
+            0.742,
+            0.281,
+            0.758
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.702,
+            0.901,
+            0.712
+          ],
+          "content": "p ·Spring 02 · 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.763,
+            0.396,
+            0.776
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.089,
+            0.778,
+            0.418,
+            0.893
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_26.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.734,
+            0.507,
+            0.748
+          ],
+          "level": 2,
+          "content": "Slide 2.4.18"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.756,
+            0.916,
+            0.793
+          ],
+          "content": "The path to B is extended to D and G and the path to D from B is tied with the path to D from A. We are using order in Q to settle ties and so we pick the path from B to expand. Note that at this point G has been visited but not expanded."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.929,
+            0.408,
+            0.939
+          ],
+          "content": "p · Spring 02 · 18"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.325,
+            0.418,
+            0.44
+          ],
+          "content": "3 Q Q c 7 1 1 (0 S) (0 S) 2 2 G 2 2 (2 A S) (5 B S) (2 A S) (5 B S) A 5,6 2 3 3 (4 C A S) (6 D A S) (5 B S) (4 C A S) (6 D A S) (5 B S) 1 s 2 4 D 5 4 4 (6 D A S) (5 B S) (6 D A S) (5 B S) 5 5 5 (6 D B S) (10 G B S) (6 D A S) (6 D B S) (10 G B S) (6 D A S) 日4 6 6 (8 G D B S) (9 C D B S) (10 G B S) (6 D A S) (8 G D B S) (9 C D B S) (10 G B S) (6 D A S) 7 7 (8 G D AS) (9 C D AS) (8 G D B S) (9 C D B S) (8 G D AS) (9 C D A S) (8 G D B S) (9 C D B S) (10 G B S) (10 G B S)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.557,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.123,
+            0.067
+          ],
+          "content": "Slide 2.4.19"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.057,
+            0.076,
+            0.545,
+            0.101
+          ],
+          "content": "Expanding D adds paths to C and G. Now the earlier path to D from A is the best pending path and we choose it to expand."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.25,
+            0.901,
+            0.26
+          ],
+          "content": "p · Spring 02 · 19"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.201,
+            0.29,
+            0.281,
+            0.305
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.109,
+            0.31,
+            0.396,
+            0.323
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.09,
+            0.329,
+            0.302,
+            0.439
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.097,
+            0.449,
+            0.385,
+            0.472
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.476,
+            0.408,
+            0.486
+          ],
+          "content": "p · Spring 02 · 20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.693,
+            0.063,
+            0.775,
+            0.078
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.443,
+            0.28,
+            0.507,
+            0.295
+          ],
+          "content": "Slide 2.4.20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.603,
+            0.083,
+            0.889,
+            0.096
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.147,
+            0.745,
+            0.358,
+            0.761
+          ],
+          "content": "Why not stop on first visiting a goal?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.508,
+            0.122,
+            0.52
+          ],
+          "content": "Slide 2.4.21"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.584,
+            0.099,
+            0.91,
+            0.213
+          ],
+          "content": "3 Q c 1 (0 S) 2 2 3 2 (2 A S) (5 B S) A 5.6 1 2 4 3 (4 C A S) (6 D A S) (5 B S) C 5 4 (6 D A S) (5 B S) 5 5 (6 D B S) (10 G B S) (6 D AS) B 4 6 (8 G D B S) (9 C D B S) (10 G B S) (6 D A S)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.091,
+            0.775,
+            0.414,
+            0.806
+          ],
+          "content": "When doing Uniform Cost, it is not correct to stop the search when the first path to a goal is generated, that is, when a node whose state is a goal is added to Q."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.53,
+            0.386,
+            0.544
+          ],
+          "content": "And we have found our shortest path (S A D G) whose length is 8."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.591,
+            0.222,
+            0.878,
+            0.245
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.477,
+            0.43,
+            0.487
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.303,
+            0.929,
+            0.329
+          ],
+          "content": "This adds a new path to G and a new path to C. The new path to G is the best on the Q (at least tied for best) so we pull it off Q."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.694,
+            0.516,
+            0.774,
+            0.531
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.603,
+            0.536,
+            0.889,
+            0.55
+          ],
+          "content": "Pick best (by path length) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.584,
+            0.556,
+            0.796,
+            0.665
+          ],
+          "content": "|  | Q |\n| --- | --- |\n| 1 | (0 S) |\n| 2 | (2 A S) (5 B S) |\n| 3 | (4 C A S) (6 D A S) (5 B S) |\n| 4 | (6 D A S) (5 B S) |\n| 5 | (6 D B S) (10 G B S) (6 D A S) |\n| 6 | (8 G D B S) (9 C D B S) (10 G B S) (6 D A S) |\n| 7 | (8 G D A S) (9 C D A S) (8 G D B S) (9 C D B S)(10 G B S) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_table_24.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.798,
+            0.549,
+            0.909,
+            0.633
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_25.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.675,
+            0.878,
+            0.698
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.443,
+            0.734,
+            0.507,
+            0.747
+          ],
+          "content": "Slide 2.4.22"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.756,
+            0.932,
+            0.782
+          ],
+          "content": "Note that once again we are not stopping on first visiting (placing on Q) the goal. We stop when the goal gets expanded (pulled off Q)."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.703,
+            0.9,
+            0.712
+          ],
+          "content": "p ·Spring 02 · 21"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.912,
+            0.704,
+            0.924,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.929,
+            0.408,
+            0.939
+          ],
+          "content": "p · Spring 02 · 22"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.859,
+            0.249,
+            0.901,
+            0.26
+          ],
+          "content": "p ·Spring 02 · 23"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.124,
+            0.067
+          ],
+          "content": "Slide 2.4.23"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.076,
+            0.555,
+            0.114
+          ],
+          "content": "In uniform-cost search, it is imperative that we only stop when G is expanded and not just when it is visited. Until a path is first expanded, we do not know for a fact that we have found the shortest path to the state."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.638,
+            0.065,
+            0.853,
+            0.083
+          ],
+          "content": "Why not stop on first visiting a goal?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.581,
+            0.094,
+            0.91,
+            0.128
+          ],
+          "content": "When doing Uniform Cost, it is not correct to stop the search when the first path to a goal is generated, that is, when a node whose state is a goal is added to Q."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.581,
+            0.132,
+            0.906,
+            0.167
+          ],
+          "content": "We must wait until such a path is pulled off the Q and tested in step 3. It is only at this point that we are sure it is the shortest path to a goal since there are no other shorter paths that remain unexpanded."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.145,
+            0.29,
+            0.36,
+            0.309
+          ],
+          "content": "Why not stop on first visiting a goal?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.32,
+            0.416,
+            0.354
+          ],
+          "content": "When doing Uniform Cost, it is not correct to stop the search when the first path to a goal is generated, that is, when a node whose state is a goal is added to Q."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.509,
+            0.295
+          ],
+          "content": "Slide 2.4.24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.358,
+            0.414,
+            0.393
+          ],
+          "content": "We must wait until such a path is pulled off the Q and tested in step 3. It is only at this point that we are sure it is the shortest path to a goal since there are no other shorter paths that remain unexpanded."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.396,
+            0.415,
+            0.421
+          ],
+          "content": "This contrasts with the non-optimal searches where the choice of where to test for a goal was a matter of convenience and efficiency, not correctness."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.302,
+            0.922,
+            0.341
+          ],
+          "content": "In the any-path searches we chose to do the same thing, but that choice was motivated at the time simply by consistency with what we HAVE to do now. In the earlier searches, we could have chosen to stop when visiting a goal state and everything would still work fine (actually better)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.476,
+            0.409,
+            0.486
+          ],
+          "content": "p · Spring 02 · 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.507,
+            0.124,
+            0.52
+          ],
+          "content": "Slide 2.4.25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.529,
+            0.552,
+            0.556
+          ],
+          "content": "Note that the first path that visited G was not the eventually chosen optimal path to G. This explains our unwillingness to stop on first visiting G in the example we just did."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.638,
+            0.518,
+            0.853,
+            0.535
+          ],
+          "level": 2,
+          "content": "Why not stop on first visiting a goal?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.548,
+            0.91,
+            0.58
+          ],
+          "content": "When doing Uniform Cost, it is not correct to stop the search when the first path to a goal is generated, that is, when a node whose state is a goal is added to Q."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.585,
+            0.906,
+            0.619
+          ],
+          "content": "We must wait until such a path is pulled off the Q and tested in step 3. It is only at this point that we are sure it is the shortest path to a goal since there are no other shorter paths that remain unexpanded."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.623,
+            0.909,
+            0.648
+          ],
+          "content": "This contrasts with the Any Path searches where the choice of where to test for a goal was a matter of convenience and efficiency, not correctness."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.651,
+            0.901,
+            0.675
+          ],
+          "content": "In the previous example, a path to G was generated at step 5, but it was a different, shorter, path at step 7 that we accepted."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.198,
+            0.741,
+            0.283,
+            0.759
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.19,
+            0.762,
+            0.316,
+            0.778
+          ],
+          "content": "Another (easier?) way to see it"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.088,
+            0.779,
+            0.422,
+            0.862
+          ],
+          "content": "C 2 2 G A 2 日 2 2 4 6 D C 4 6 D G 10 S 5 5 9 C G 0 9 C G 日"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.702,
+            0.902,
+            0.712
+          ],
+          "content": "p · Spring 02 · 25"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.15,
+            0.861,
+            0.221,
+            0.876
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.116,
+            0.884,
+            0.319,
+            0.9
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.733,
+            0.509,
+            0.748
+          ],
+          "content": "Slide 2.4.26"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.439,
+            0.756,
+            0.935,
+            0.818
+          ],
+          "content": "It is very important to drive home the fact that what uniform-cost search is doing (if we focus on the sequence of expanded paths) is enumerating the paths in the search tree in order of their path cost. The green numbers next to the tree on the left are the total path cost of the path to that state. Since, in a tree, there is a unique path from the root to any node, we can simply label each node by the length of that path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.365,
+            0.929,
+            0.409,
+            0.94
+          ],
+          "content": "p · Spring 02 · 26"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.124,
+            0.067
+          ],
+          "content": "Slide 2.4.27"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.076,
+            0.375,
+            0.091
+          ],
+          "content": "So, for example, the trivial path from S to S is the shortest path."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.691,
+            0.062,
+            0.777,
+            0.079
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.685,
+            0.083,
+            0.809,
+            0.097
+          ],
+          "content": "Another (easier?) way to see it"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.1,
+            0.912,
+            0.181
+          ],
+          "content": "1 2 3 G 2 A 2 B 5 2 4 D 6 D 4 6 D G 10 S 5 5 9 C G 9 C GB 日"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.611,
+            0.205,
+            0.812,
+            0.22
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.859,
+            0.249,
+            0.902,
+            0.26
+          ],
+          "content": "p ·Spring 02 · 27"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.198,
+            0.289,
+            0.284,
+            0.305
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.19,
+            0.309,
+            0.315,
+            0.324
+          ],
+          "content": "Another (easier?) way to see it"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.326,
+            0.42,
+            0.407
+          ],
+          "content": "4 2 2 G 2 A 2 日 5 1 2 6 D O₄ 6 D G 10 S 5 5 9 c G 0 9 G B"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.149,
+            0.409,
+            0.289,
+            0.43
+          ],
+          "content": "Total path cost Order pulled off of Q (expanded)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.116,
+            0.432,
+            0.318,
+            0.447
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.476,
+            0.408,
+            0.486
+          ],
+          "content": "p · Spring 02 · 28"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.198,
+            0.741,
+            0.283,
+            0.759
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.507,
+            0.124,
+            0.521
+          ],
+          "content": "Slide 2.4.29"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.191,
+            0.762,
+            0.315,
+            0.777
+          ],
+          "content": "Another (easier?) way to see it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.529,
+            0.41,
+            0.545
+          ],
+          "content": "Then the path from S to A to C, with length 4, is the next shortest path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.088,
+            0.773,
+            0.421,
+            0.861
+          ],
+          "content": "3 C 2 2 2 4 A 2 2 日2 3 D 6 D 4 6 D G 10 s 5 9 C G 0 c G B 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.508,
+            0.295
+          ],
+          "content": "Slide 2.4.28"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.149,
+            0.862,
+            0.289,
+            0.884
+          ],
+          "content": "Total path cost Order pulled off of Q (expanded)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.302,
+            0.77,
+            0.319
+          ],
+          "content": "Then the path from S to A, with length 2, is the next shortest path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.116,
+            0.885,
+            0.318,
+            0.9
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.417,
+            0.477,
+            0.431,
+            0.488
+          ],
+          "content": ""
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.691,
+            0.515,
+            0.777,
+            0.533
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.684,
+            0.535,
+            0.81,
+            0.551
+          ],
+          "content": "Another (easier?) way to see it"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.578,
+            0.545,
+            0.913,
+            0.634
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_27.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.644,
+            0.635,
+            0.782,
+            0.657
+          ],
+          "content": "Total path cost Order pulled off of Q (expanded)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.611,
+            0.658,
+            0.812,
+            0.674
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.734,
+            0.508,
+            0.748
+          ],
+          "content": "Slide 2.4.30"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.756,
+            0.682,
+            0.771
+          ],
+          "content": "Then comes the path from S to B, with length 5."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.702,
+            0.902,
+            0.712
+          ],
+          "content": "p · Spring 02 · 29"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.929,
+            0.408,
+            0.94
+          ],
+          "content": "p ·Spring 02 · 30"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.123,
+            0.067
+          ],
+          "content": "Slide 2.4.31"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.057,
+            0.076,
+            0.325,
+            0.091
+          ],
+          "content": "Followed by the path from S to A to D, with length 6."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.691,
+            0.062,
+            0.776,
+            0.079
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.558,
+            0.05,
+            0.932,
+            0.267
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.289,
+            0.283,
+            0.305
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.276,
+            0.439,
+            0.494
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.507,
+                0.124,
+                0.521
+              ],
+              "content": "Slide 2.4.33"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_6.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.28,
+            0.508,
+            0.295
+          ],
+          "level": 2,
+          "content": "Slide 2.4.32"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.25,
+            0.924,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.302,
+            0.691,
+            0.319
+          ],
+          "content": "And the path from S to B to D, also with length 6."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.198,
+            0.741,
+            0.283,
+            0.759
+          ],
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.529,
+            0.547,
+            0.555
+          ],
+          "content": "And, finally the path from S to A to D to G with length 8. The other path (S B D G) also has length 8."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.088,
+            0.772,
+            0.421,
+            0.862
+          ],
+          "content": "3 C 2 2 2 4 2 A 2 日 5 5,6 2 5 3 6 D 6 D c 4 6 D G 10 5 7 5 9 C G 0 9 c G 日4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.859,
+            0.249,
+            0.901,
+            0.26
+          ],
+          "content": "p ·Spring 02 · \\$1"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.117,
+            0.885,
+            0.318,
+            0.9
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.691,
+            0.515,
+            0.776,
+            0.533
+          ],
+          "level": 2,
+          "content": "Uniform Cost"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.558,
+            0.503,
+            0.931,
+            0.721
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.611,
+            0.658,
+            0.812,
+            0.674
+          ],
+          "content": "UC enumerates paths in order of total path cost!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.733,
+            0.508,
+            0.748
+          ],
+          "content": "Slide 2.4.34"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.702,
+            0.902,
+            0.713
+          ],
+          "content": "p · Spring 02 · \\$3"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.756,
+            0.934,
+            0.783
+          ],
+          "content": "This gives us the path we found. Note that the sequence of expansion corresponds precisely to pathlength order, so it is not surprising we find the shortest path."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.703,
+            0.925,
+            0.714
+          ],
+          "content": ""
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.941
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.929,
+            0.408,
+            0.94
+          ],
+          "content": "p · Spring 02 · \\$4"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.369,
+            0.545,
+            0.408,
+            0.555
+          ],
+          "content": "lp · Spring 02 · 2"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.394,
+            0.073,
+            0.605,
+            0.091
+          ],
+          "content": "6.034 Notes: Section 2.5"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.129,
+            0.117,
+            0.142
+          ],
+          "level": 2,
+          "content": "Slide 2.5.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.151,
+            0.532,
+            0.189
+          ],
+          "content": "Now, we will turn our attention to what is probably the most popular search algorithm in AI, the A\\* algorithm. A\\* is an informed, optimal search algorithm. We will spend quite a bit of time going over A\\*; we will start by contrasting it with uniform-cost search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.576,
+            0.195,
+            0.618,
+            0.215
+          ],
+          "content": "Any Path Informed"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.576,
+            0.239,
+            0.629,
+            0.261
+          ],
+          "content": "Optimal Uninformed"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.576,
+            0.27,
+            0.617,
+            0.292
+          ],
+          "content": "Optimal Informed"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.651,
+            0.195,
+            0.697,
+            0.207
+          ],
+          "content": "Best-First"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.681,
+            0.131,
+            0.789,
+            0.147
+          ],
+          "level": 2,
+          "content": "Classes of Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.649,
+            0.27,
+            0.664,
+            0.281
+          ],
+          "content": "A\\*"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.556,
+            0.117,
+            0.923,
+            0.335
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.733,
+            0.15,
+            0.78,
+            0.162
+          ],
+          "content": "Operation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.649,
+            0.239,
+            0.709,
+            0.252
+          ],
+          "content": "Uniform-Cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.731,
+            0.165,
+            0.871,
+            0.186
+          ],
+          "content": "Systematic exploration of whole tree until a goal node is found."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.731,
+            0.195,
+            0.888,
+            0.217
+          ],
+          "content": "Uses heuristic measure of goodness of a node, e.g. estimated distance to goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.731,
+            0.239,
+            0.84,
+            0.261
+          ],
+          "content": "Uses path \"length\" measure Finds \"shortest\" path."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.73,
+            0.269,
+            0.891,
+            0.292
+          ],
+          "content": "Uses path \"length\" measure and heuristic Finds \"shortest” path"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.854,
+            0.317,
+            0.893,
+            0.328
+          ],
+          "content": "tlp ·Spring 02 ·1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.197,
+            0.358,
+            0.284,
+            0.373
+          ],
+          "level": 2,
+          "content": "Goal Direction"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.349,
+            0.501,
+            0.362
+          ],
+          "level": 2,
+          "content": "Slide 2.5.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.387,
+            0.42,
+            0.411
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.371,
+            0.931,
+            0.42
+          ],
+          "content": "Uniform-cost search as described so far is concerned only with expanding short paths; it pays no particular attention to the goal (since it has no way of knowing where it is). UC is really an algorithm for finding the shortest paths to all states in a graph rather than being focused in reaching a particular goal."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.576,
+            0.117,
+            0.589
+          ],
+          "level": 2,
+          "content": "Slide 2.5.3"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.598,
+            0.544,
+            0.647
+          ],
+          "content": "We can bias UC to find the shortest path to the goal that we are interested in by using a heuristic estimate of remaining distance to the goal. This, of course, cannot be the exact path distance (if we knew that we would not need much of a search); instead, it is a stand-in for the actual distance that can give us some guidance."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.691,
+            0.585,
+            0.776,
+            0.6
+          ],
+          "level": 2,
+          "content": "Goal Direction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.584,
+            0.614,
+            0.912,
+            0.637
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.584,
+            0.638,
+            0.91,
+            0.66
+          ],
+          "content": "We can introduce such a bias by means of heuristic function h(N), which is an estimate (h) of the distance from a state to the goal."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.904,
+            0.318,
+            0.916,
+            0.329
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.863,
+            0.771,
+            0.901,
+            0.78
+          ],
+          "content": "p · Spring 02 · \\$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.772,
+            0.925,
+            0.782
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.063,
+            0.284,
+            0.079
+          ],
+          "content": "Goal Direction"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.502,
+            0.068
+          ],
+          "content": "Slide 2.5.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.092,
+            0.42,
+            0.115
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.116,
+            0.418,
+            0.139
+          ],
+          "content": "We can introduce such a bias by means of heuristic function h(N), which is an estimate (h) of the distance from a state to the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.14,
+            0.419,
+            0.163
+          ],
+          "content": "Instead of enumerating paths in order of just length (g), enumerate paths in terms of f = estimated total path length = g + h."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.076,
+            0.931,
+            0.125
+          ],
+          "content": "What we can do is to enumerate the paths by order of the SUM of the actual path length and the estimate of the remaining distance. Think of this as our best estimate of the TOTAL distance to the goal. This makes more sense if we want to generate a path to the goal preferentially to short paths away from the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.249,
+            0.409,
+            0.26
+          ],
+          "content": "lp · Spring 02 · 4"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.25,
+            0.431,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.117,
+            0.294
+          ],
+          "content": "Slide 2.5.5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.5,
+            0.328
+          ],
+          "content": "We call an estimate that always underestimates the remaining distance from any node an admissible (heuristic) estimate."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.691,
+            0.29,
+            0.777,
+            0.305
+          ],
+          "content": "Goal Direction"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.583,
+            0.319,
+            0.913,
+            0.342
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.583,
+            0.343,
+            0.911,
+            0.365
+          ],
+          "content": "We can introduce such a bias by means of heuristic function h(N), which is an estimate (h) of the distance from a state to the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.584,
+            0.367,
+            0.911,
+            0.389
+          ],
+          "content": "Instead of enumerating paths in order of just length (g), enumerate paths in terms of f = estimated total path length = g + h."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.583,
+            0.39,
+            0.913,
+            0.432
+          ],
+          "content": "An estimate that always underestimates the real path length to the goal is called admissible. For example, an estimate of 0 is admissible (but useless). Straight line distance is admissible estimate for path length in Euclidean space."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.477,
+            0.924,
+            0.488
+          ],
+          "content": ""
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.197,
+            0.516,
+            0.284,
+            0.531
+          ],
+          "level": 2,
+          "content": "Goal Direction"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.502,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 2.5.6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.545,
+            0.42,
+            0.569
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.57,
+            0.418,
+            0.592
+          ],
+          "content": "We can introduce such a bias by means of heuristic function h(N), which is an estimate (h) of the distance from a state to the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.862,
+            0.476,
+            0.901,
+            0.486
+          ],
+          "content": "lp · Spring 02 · \\$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.593,
+            0.418,
+            0.615
+          ],
+          "content": "Instead of enumerating paths in order of just length (g), enumerate paths in terms of f = estimated total path length = g + h."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.616,
+            0.419,
+            0.657
+          ],
+          "content": "An estimate that always underestimates the real path length to the goal is called admissible. For example, an estimate of 0 is admissible (but useless). Straight line distance is admissible estimate for path length in Euclidean space."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.529,
+            0.928,
+            0.59
+          ],
+          "content": "In order to preserve the guarantee that we will find the shortest path by expanding the partial paths based on the estimated **total** path length to the goal (like in UC without an expanded list), we must ensure that our heuristic estimate is admissible. Note that straight-line distance is always an underestimate of path-length in Euclidean space. Of course, by our constraint on distances, the constant function 0 is always admissible (but useless)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.658,
+            0.419,
+            0.681
+          ],
+          "content": "Use of an admissible estimate guarantees that UC will still find the shortest path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.734,
+            0.117,
+            0.747
+          ],
+          "content": "Slide 2.5.7"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.756,
+            0.545,
+            0.77
+          ],
+          "content": "UC using an admissible heuristic is known as A\\* (A star). It is a very popular search method in AI."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.691,
+            0.743,
+            0.776,
+            0.758
+          ],
+          "content": "Goal Direction"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.772,
+            0.914,
+            0.795
+          ],
+          "content": "UC is really trying to identify the shortest path to every state in the graph in order. It has no particular bias to finding a path to a goal early in the search."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.796,
+            0.911,
+            0.818
+          ],
+          "content": "We can introduce such a bias by means of heuristic function h(N), which is an estimate (h) of the distance from a state n to a goal."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.82,
+            0.911,
+            0.842
+          ],
+          "content": "Instead of enumerating paths in order of just length (g), enumerate paths in terms of f = estimated total path length = g + h."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.843,
+            0.912,
+            0.885
+          ],
+          "content": "An estimate that always underestimates the real path length to the goal is called admissible. For example, an estimate of 0 is admissible (but useless). Straight line distance is admissible estimate for path length in Euclidean space."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.885,
+            0.912,
+            0.908
+          ],
+          "content": "Use of an admissible estimate guarantees that UC will still find the shortest path."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.909,
+            0.89,
+            0.931
+          ],
+          "content": "UC with an admissible estimate is known as A\\* (pronounced “A star\") search."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.368,
+            0.702,
+            0.408,
+            0.712
+          ],
+          "content": "Up · Spring 02 · 6"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.704,
+            0.43,
+            0.713
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.863,
+            0.93,
+            0.901,
+            0.939
+          ],
+          "content": "up · Spring 02 · 7"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.931,
+            0.924,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.862,
+            0.476,
+            0.902,
+            0.486
+          ],
+          "content": "lp · Spring 02 · 9"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.56,
+            0.277,
+            0.931,
+            0.492
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_1.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.174,
+            0.062,
+            0.308,
+            0.08
+          ],
+          "content": "Straight-Line Estimate Straight-Line Estimate"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.067,
+            0.05,
+            0.438,
+            0.267
+          ],
+          "content": "A C B OD S C C ÖE p · Spring 02 · 8 中"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.501,
+            0.068
+          ],
+          "content": "Slide 2.5.8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.076,
+            0.928,
+            0.125
+          ],
+          "content": "Let's look at a quick example of the straight-line distance underestimate for path length in a graph. Consider the following simple graph, which we are assuming is embedded in Euclidean space, that is, think of the states as city locations and the length of the links are proportional to the driving distance between the cities along the best roads."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.117,
+            0.294
+          ],
+          "content": "Slide 2.5.9"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.554,
+            0.34
+          ],
+          "content": "Then, we can use the straight-line (airline) distances (shown in red) as an underestimate of the actual driving distance between any city and the goal. The best possible driving distance between two cities cannot be better than the straight-line distance. But, it can be much worse."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.668,
+            0.288,
+            0.801,
+            0.307
+          ],
+          "content": "Straight-Line Estimate"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.503,
+            0.438,
+            0.72
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.507,
+                0.507,
+                0.521
+              ],
+              "content": "Slide 2.5.10"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.122,
+                0.747
+              ],
+              "content": "Slide 2.5.11"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.53,
+            0.933,
+            0.567
+          ],
+          "content": "Here we see that the straight-line estimate between B and G is very bad. The actual driving distance is much longer than the straight-line underestimate. Imagine that B and G are on different sides of the Grand Canyon, for example."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.757,
+            0.525,
+            0.782
+          ],
+          "content": "It may help to understand why an underestimate of remaining distance may help reach the goal faster to visualize the behavior of UC in a simple example."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.79,
+            0.555,
+            0.85
+          ],
+          "content": "Imagine that the states in a graph represent points in a plane and the connectivity is to nearest neighbors. In this case, UC will expand nodes in order of distance from the start point. That is, as time goes by, the expanded points will be located within expanding circular contours centered on the start point. Note, however, that points heading away from the goal will be treated just the same as points that are heading towards the goal."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.566,
+            0.759,
+            0.901,
+            0.924
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.648,
+                0.743,
+                0.855,
+                0.76
+              ],
+              "content": "Why use estimate of goal distance?"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_17.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.86,
+            0.929,
+            0.9,
+            0.94
+          ],
+          "content": "p ·Spring 02 · 11"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.93,
+            0.925,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.08,
+            0.541,
+            0.433,
+            0.719
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_1.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.476,
+            0.901,
+            0.486
+          ],
+          "content": "p · Spring 02 · 13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.155,
+            0.064,
+            0.361,
+            0.081
+          ],
+          "content": "Why use estimate of goal distance? Why use estimate of goal distance?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.054,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 2.5.12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.068,
+            0.053,
+            0.434,
+            0.267
+          ],
+          "content": "Order in which UC looks at states. A and B are same distance from start, so will be looked at before any longer paths. No \"bias\" towards goal. A B goal start Order of examination using dist. from start + estimate of dist. to goal. Note \"bias\" Assume states are points toward the goal; points away in the Euclidean plane. from goal look worse. p · Spring 02 ·12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.123,
+            0.294
+          ],
+          "content": "Slide 2.5.13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.552,
+            0.351
+          ],
+          "content": "Let's walk through an example of A\\*, that is, uniform-cost search using a heuristic which is an underestimate of remaining cost to the goal. In this example we are focusing on the use of the underestimate. The heuristic we will be using is similar to the earlier one but slightly modified to be admissible."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.359,
+            0.169,
+            0.372
+          ],
+          "content": "We start at S as usual."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.076,
+            0.934,
+            0.125
+          ],
+          "content": "If we add in an estimate of the straight-line distance to the goal, the points expanded will be bounded contours that keep constant the sum of the distance from the start and the distance to the goal, as suggested in the figure. What the underestimate has done is to \"bias\" the search towards the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.736,
+            0.29,
+            0.757,
+            0.304
+          ],
+          "content": "A\\*"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.585,
+            0.309,
+            0.908,
+            0.323
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.562,
+            0.276,
+            0.931,
+            0.493
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_12.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.243,
+            0.516,
+            0.263,
+            0.53
+          ],
+          "level": 2,
+          "content": "A\\*"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.536,
+            0.415,
+            0.55
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.507,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 2.5.14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.675,
+            0.385,
+            0.698
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.734,
+            0.123,
+            0.747
+          ],
+          "content": "Slide 2.5.15"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.756,
+            0.377,
+            0.77
+          ],
+          "content": "Expand to C and D and pick the path with shorter estimate, to C."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.53,
+            0.933,
+            0.556
+          ],
+          "content": "And expand to A and B. Note that we are using the path length + underestimate and so the S-A path has a value of 4 (length 2, estimate 2). The S-B path has a value of 8 (5 + 3). We pick the path to A."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.585,
+            0.763,
+            0.907,
+            0.776
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.736,
+            0.743,
+            0.756,
+            0.757
+          ],
+          "content": "A\\*"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.584,
+            0.779,
+            0.909,
+            0.858
+          ],
+          "content": "3 Q 1 (0 S) 2 2 (4 A S) (8 B S) 3 (5 C A S) (7 D A S) (8 B S) S 5 5"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.704,
+            0.43,
+            0.713
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.591,
+            0.903,
+            0.878,
+            0.925
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.86,
+            0.93,
+            0.901,
+            0.939
+          ],
+          "content": "p ·Spring 02 · 15"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.93,
+            0.924,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.275,
+            0.929,
+            0.494
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.063,
+            0.263,
+            0.077
+          ],
+          "content": "A\\*"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.092,
+            0.083,
+            0.414,
+            0.096
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.09,
+            0.099,
+            0.415,
+            0.178
+          ],
+          "content": "3 Q C 1 (0 S) 2 G 2 (4 A S) (8 B S) 1 2 3 (5 C A S) (7 D A S) (8 B S) S 5 4 (7 D A S) (8 B S) 5 B"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.443,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 2.5.16"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.314,
+            0.18,
+            0.41,
+            0.215
+          ],
+          "content": "Heuristic Values A=2 C=1 S=0 B=3 D=1 G=0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.098,
+            0.222,
+            0.385,
+            0.245
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.076,
+            0.724,
+            0.091
+          ],
+          "content": "C has no descendants, so we pick the shorter path (to D)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.122,
+            0.294
+          ],
+          "content": "Slide 2.5.17"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.544,
+            0.352
+          ],
+          "content": "Then a path to the goal has the best value. However, there is another path that is tied, the S-B path. It is possible that this path could be extended to the goal with a total length of 8 and we may prefer that path (since it has fewer states). We have assumed here that we will ignore that possibility, in some other circumstances that may not be appropriate."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.736,
+            0.29,
+            0.756,
+            0.304
+          ],
+          "content": "A\\*"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.585,
+            0.309,
+            0.907,
+            0.323
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.808,
+            0.407,
+            0.902,
+            0.442
+          ],
+          "content": "Heuristic Values A=2 C=1 S=0 B=3 D=1 G=0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.591,
+            0.449,
+            0.878,
+            0.471
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.244,
+            0.517,
+            0.262,
+            0.53
+          ],
+          "level": 2,
+          "content": "A\\*"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.536,
+            0.414,
+            0.55
+          ],
+          "content": "Pick best (by path length+heuristic) element of Q; Add path extensions anywhere in Q"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.089,
+            0.552,
+            0.415,
+            0.631
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.315,
+            0.633,
+            0.409,
+            0.668
+          ],
+          "content": "Heuristic Values A=2 C=1 S=0 B=3 D=1 G=0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.675,
+            0.384,
+            0.698
+          ],
+          "content": "Added paths in blue; underlined paths are chosen for extension. We show the paths in reversed order; the node's state is the first entry."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.366,
+            0.702,
+            0.408,
+            0.712
+          ],
+          "content": "p · Spring 02 ·18"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.735,
+            0.122,
+            0.747
+          ],
+          "content": "Slide 2.5.19"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.704,
+            0.429,
+            0.713
+          ],
+          "content": ""
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.443,
+            0.507,
+            0.506,
+            0.52
+          ],
+          "level": 2,
+          "content": "Slide 2.5.18"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.757,
+            0.552,
+            0.827
+          ],
+          "content": "It is important to realize that not all heuristics are admissible. In fact, the rather arbitrary heuristic values we used in our best-first example are not admissible given the path lengths we later assigned. In particular, the value for D is bigger than its distance to the goal and so this set of distances is not everywhere an underestimate of distance to the goal from every node. Note that the (arbitrary) value assigned for S is also an overestimate but this value would have no ill effect since at the time S is expanded there are no alternatives."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.53,
+            0.674,
+            0.544
+          ],
+          "content": "So, we stop with a path to the goal of length 8."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.641,
+            0.742,
+            0.825,
+            0.759
+          ],
+          "content": "Not all heuristics are admissible"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.585,
+            0.784,
+            0.776,
+            0.817
+          ],
+          "content": "Given the link lengths in the figure, is the table of heuristic values that we used in our earlier best-first example an admissible heuristic?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.586,
+            0.828,
+            0.606,
+            0.84
+          ],
+          "content": "No!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.623,
+            0.839,
+            0.656,
+            0.85
+          ],
+          "content": "A is ok"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.623,
+            0.85,
+            0.656,
+            0.861
+          ],
+          "content": "B is ok"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.624,
+            0.86,
+            0.656,
+            0.871
+          ],
+          "content": "C is ok"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.623,
+            0.87,
+            0.744,
+            0.882
+          ],
+          "content": "D is too big, needs to be <= 2"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.795,
+            0.78,
+            0.909,
+            0.854
+          ],
+          "content": "2 2 S 5 5"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.622,
+            0.881,
+            0.78,
+            0.893
+          ],
+          "content": "S is too big, can always use 0 for start"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.808,
+            0.86,
+            0.906,
+            0.894
+          ],
+          "content": "Heuristic Values A=2 C=1 S=10 B=3 D=4 G=0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.476,
+            0.901,
+            0.486
+          ],
+          "content": "p · Spring 02 · 17"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.861,
+            0.93,
+            0.901,
+            0.939
+          ],
+          "content": "p ·Spring 02 ·19"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.93,
+            0.924,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.366,
+            0.25,
+            0.408,
+            0.259
+          ],
+          "content": "p ·Spring 02 · 20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.175,
+            0.063,
+            0.305,
+            0.078
+          ],
+          "content": "Admissible Heuristics"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.1,
+            0.083,
+            0.404,
+            0.096
+          ],
+          "content": "8 Puzzle: Move tiles to reach goal. Think of a move as moving \"e mpty\" tile."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.148,
+            0.099,
+            0.348,
+            0.15
+          ],
+          "content": "6 2 8 1 2 3 3 5 8 4 4 7 1 7 6 5 S G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.097,
+            0.165,
+            0.375,
+            0.179
+          ],
+          "content": "Alternative underestimates of \"distance\" (number of moves) to goal:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.115,
+            0.18,
+            0.332,
+            0.193
+          ],
+          "content": "1. Number of misplaced tiles (7 in example above)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.054,
+            0.508,
+            0.067
+          ],
+          "content": "Slide 2.5.20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.077,
+            0.939,
+            0.114
+          ],
+          "content": "Although it is easy and intuitive to illustrate the concept of a heuristic by using the notion of straightline distance to the goal in Euclidean space, it is important to remember that this is by no means the only example."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.122,
+            0.934,
+            0.17
+          ],
+          "content": "Take solving the so-called 8-puzzle, in which the goal is to arrange the pieces as in the goal state on the right. We can think of a move in this game as sliding the \"empty\" space to one of its nearest vertical or horizontal neighbors. We can help steer a search to find a short sequence of moves by using a heuristic estimate of the moves remaining to the goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.177,
+            0.923,
+            0.203
+          ],
+          "content": "One admissible estimate is simply the number of misplaced tiles. No move can get more than one misplaced tile into place, so this measure is a guaranteed underestimate and hence admissible."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.122,
+            0.294
+          ],
+          "content": "Slide 2.5.21"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.304,
+            0.468,
+            0.328
+          ],
+          "content": "We can do better if we note that, in fact, each move can at best decrease by one the \"Manhattan\" (aka Taxicab, aka rectilinear) distance of a tile from its goal."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.337,
+            0.551,
+            0.384
+          ],
+          "content": "So, the sum of these distances for each misplaced tile is also an underestimate. Note that it is always a better (larger) underestimate than the number of misplaced tiles. In this example, there are 7 misplaced tiles (all except tile 2), but the Manhattan distance estimate is 17 (4 for tile 1, 0 for tile 2, 2 for tile 3, 3 for tile 4, 1 for tile 5, 3 for tile 6, 1 for tile 7 and 3 for tile 8)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.669,
+            0.29,
+            0.798,
+            0.304
+          ],
+          "content": "Admissible Heuristics"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.594,
+            0.31,
+            0.897,
+            0.322
+          ],
+          "content": "8 Puzzle: Move tiles to reach goal. Think of a move as moving “empty” tile."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.642,
+            0.325,
+            0.841,
+            0.378
+          ],
+          "content": "6 2 8 1 2 3 3 5 8 4 4 7 1 7 6 5 S G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.591,
+            0.393,
+            0.868,
+            0.405
+          ],
+          "content": "Alternative underestimates of \"distance\" (number of moves) to goal:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.608,
+            0.407,
+            0.824,
+            0.42
+          ],
+          "content": "1. Number of misplaced tiles (7 in example above)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.608,
+            0.421,
+            0.91,
+            0.452
+          ],
+          "content": "2. Sum of Manhattan distance of tile to its goal location (17 in example above). Manhattan distance between (x1,y1) and (x2,y2) is |x1-x2+|y1-y2 Each move can only decrease the distance of exactly one tile."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.592,
+            0.454,
+            0.889,
+            0.466
+          ],
+          "content": "The second of these is much better at predicting actual number of moves."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.86,
+            0.477,
+            0.9,
+            0.485
+          ],
+          "content": "p · Spring 02 · 21"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.912,
+            0.478,
+            0.924,
+            0.487
+          ],
+          "content": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "created_at": "2005-08-16T12:15:15+05:30",
+      "modified_at": "2005-08-16T12:18:55+05:30",
+      "producer_application": "Acrobat Web Capture 6.0",
+      "page_count": 15,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
