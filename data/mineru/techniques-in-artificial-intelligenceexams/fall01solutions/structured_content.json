@@ -1,0 +1,1010 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.158,
+            0.424,
+            0.174
+          ],
+          "content": "1. 10 = 2, 2, 2, 2, 2 = 10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.183,
+            0.445,
+            0.2
+          ],
+          "content": "2. 6 (FOL semantics 1 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.208,
+            0.437,
+            0.225
+          ],
+          "content": "3. 6 (interpretation 2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.233,
+            0.414,
+            0.25
+          ],
+          "content": "4. 6 (unification 2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.259,
+            0.425,
+            0.275
+          ],
+          "content": "5. 6 (clausal form 2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.284,
+            0.487,
+            0.3
+          ],
+          "content": "6. 6 (operator descriptions 3 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.309,
+            0.373,
+            0.325
+          ],
+          "content": "7. 13 (graph plan)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.334,
+            0.462,
+            0.351
+          ],
+          "content": "8. 8 (conditional prob: 2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.359,
+            0.501,
+            0.376
+          ],
+          "content": "9. 12 (network structures: 1/2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.228,
+            0.385,
+            0.49,
+            0.401
+          ],
+          "content": "10. 4 (counting parameters: 1 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.41,
+            0.461,
+            0.426
+          ],
+          "content": "11. 5 = 2, 3 = 5 (variable elim)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.435,
+            0.422,
+            0.452
+          ],
+          "content": "12. 2 (1 each) (param est)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.46,
+            0.538,
+            0.477
+          ],
+          "content": "13. 13 = 2, 2, 4, 4, 1 = 13 (Decision trees)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.227,
+            0.485,
+            0.39,
+            0.502
+          ],
+          "content": "14. 10 (MDP: 2 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.51,
+            0.421,
+            0.527
+          ],
+          "content": "15. 9 (Neural net: 1 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.226,
+            0.535,
+            0.429,
+            0.553
+          ],
+          "content": "16. 14 (True/False: 1 each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.563,
+            0.315,
+            0.579
+          ],
+          "content": "Total 130"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.601,
+            0.337,
+            0.62
+          ],
+          "level": 2,
+          "content": "1 Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.633,
+            0.662,
+            0.649
+          ],
+          "content": "a. Your current location and number of passengers in the car."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.658,
+            0.415,
+            0.673
+          ],
+          "content": "b. Distance traveled so far."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.683,
+            0.783,
+            0.715
+          ],
+          "content": "c. Current location, the number of passengers in the car, and the fares of the passengers you have in the car."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.724,
+            0.784,
+            0.755
+          ],
+          "content": "d. Some constant $c _ { 1 }$ times the distance traveled so far minus some other constant $c _ { 2 }$ times the fares of the passengers we’ve picked up so far."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.763,
+            0.784,
+            0.795
+          ],
+          "content": "e. UCS will work in the first case, because there are no negative costs, but it’s not guaranteed to find the shortest path in the second version of the problem."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.213,
+            0.154,
+            0.438,
+            0.174
+          ],
+          "level": 2,
+          "content": "2 FOL Semantics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.185,
+            0.255,
+            0.201
+          ],
+          "content": "a. T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.209,
+            0.254,
+            0.226
+          ],
+          "content": "b. F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.234,
+            0.254,
+            0.25
+          ],
+          "content": "c. F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.258,
+            0.255,
+            0.275
+          ],
+          "content": "d. T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.284,
+            0.254,
+            0.3
+          ],
+          "content": "e. F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.307,
+            0.255,
+            0.324
+          ],
+          "content": "f. T"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.346,
+            0.435,
+            0.366
+          ],
+          "level": 2,
+          "content": "3 Interpretations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.376,
+            0.36,
+            0.395
+          ],
+          "content": "a. $I ( p ) = \\{ \\mathbf { A } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.396,
+            0.359,
+            0.414
+          ],
+          "content": "$I ( q ) = \\{ \\mathbf { C } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.253,
+            0.415,
+            0.393,
+            0.434
+          ],
+          "content": "$I ( r ) = \\{ \\langle \\mathbf { A } , \\mathbf { B } \\rangle \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.44,
+            0.38,
+            0.458
+          ],
+          "content": "b. $I ( p ) = \\{ \\mathbf { B } , \\mathbf { C } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.46,
+            0.499,
+            0.478
+          ],
+          "content": "$I ( r ) = \\{ \\langle \\mathbf { A } , \\mathbf { B } \\rangle , \\langle \\mathbf { B } , \\mathbf { B } \\rangle , \\langle \\mathbf { C } , \\mathbf { C } \\rangle \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.484,
+            0.361,
+            0.502
+          ],
+          "content": "c. $I ( p ) = \\{ \\mathbf { A } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.504,
+            0.501,
+            0.522
+          ],
+          "content": "$I ( r ) = \\{ \\langle \\mathbf { A } , \\mathbf { A } \\rangle , \\langle \\mathbf { B } , \\mathbf { A } \\rangle , \\langle \\mathbf { C } , \\mathbf { A } \\rangle \\}$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.542,
+            0.388,
+            0.562
+          ],
+          "level": 2,
+          "content": "4 Unification"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.573,
+            0.363,
+            0.591
+          ],
+          "content": "a. $\\{ z / f ( x ) , y / g ( w ) \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.598,
+            0.334,
+            0.614
+          ],
+          "content": "b. not unifiable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.622,
+            0.399,
+            0.64
+          ],
+          "content": "c. $\\{ a / f ( x ) , x / C , y / f ( x ) \\}$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.66,
+            0.415,
+            0.68
+          ],
+          "level": 2,
+          "content": "5 Clausal Form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.69,
+            0.394,
+            0.709
+          ],
+          "content": "a. $r(f(y),y) \\lor s(f(y),y)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.716,
+            0.346,
+            0.733
+          ],
+          "content": "b. $\\neg r ( x , y ) \\lor p ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.74,
+            0.39,
+            0.758
+          ],
+          "content": "c. $\\neg r(f(y),y) \\lor p(f(y))$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.778,
+            0.519,
+            0.799
+          ],
+          "level": 2,
+          "content": "6 Operator Descriptions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.81,
+            0.731,
+            0.827
+          ],
+          "content": "a. ∀s.on(s) → off (result(push(s))) and ∀s.off (s) → on(result(push(s)))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.834,
+            0.621,
+            0.851
+          ],
+          "content": "b. (Pre: on, Eff: off, ¬ on) and (Pre: off, Eff: on, ¬ off)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.155,
+            0.518,
+            0.175
+          ],
+          "level": 2,
+          "content": "7 Operator Descriptions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.186,
+            0.59,
+            0.202
+          ],
+          "content": "• Level 0: not have-keys, not open, not painted."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.211,
+            0.425,
+            0.227
+          ],
+          "content": "• Level 1: getkeys, paint"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.237,
+            0.723,
+            0.253
+          ],
+          "content": "• Level 2: not have-keys not open, not painted, have-keys, painted"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.262,
+            0.469,
+            0.278
+          ],
+          "content": "• Level 3: getkeys, paint, open"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.287,
+            0.771,
+            0.303
+          ],
+          "content": "• Level 4: not have-keys, not open, not painted, have-keys, painted, open"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.325,
+            0.533,
+            0.344
+          ],
+          "level": 2,
+          "content": "8 Conditional Probability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.355,
+            0.382,
+            0.371
+          ],
+          "content": "a. $\\operatorname* { P r } ( a | c , d ) ,   \\operatorname* { P r } ( b | c , d )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.38,
+            0.508,
+            0.397
+          ],
+          "content": "b. $\\operatorname* { P r } ( c | a , b ) ,   \\operatorname* { P r } ( d | a , b ) ,   \\operatorname* { P r } ( a , b ) ,   \\operatorname* { P r } ( c , d )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.408,
+            0.277,
+            0.421
+          ],
+          "content": "c. none"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.431,
+            0.354,
+            0.448
+          ],
+          "content": "d. $\\operatorname* { P r } ( a | d ) ,   \\operatorname* { P r } ( b | d )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.469,
+            0.488,
+            0.488
+          ],
+          "level": 2,
+          "content": "9 Network Structures"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.5,
+            0.265,
+            0.516
+          ],
+          "content": "a. G2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.526,
+            0.278,
+            0.541
+          ],
+          "content": "b. none"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.55,
+            0.295,
+            0.566
+          ],
+          "content": "c. G3, G4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.576,
+            0.278,
+            0.591
+          ],
+          "content": "d. none"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.6,
+            0.295,
+            0.616
+          ],
+          "content": "e. G2, G3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.625,
+            0.325,
+            0.641
+          ],
+          "content": "f. G1, G2, G4"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.664,
+            0.52,
+            0.684
+          ],
+          "level": 2,
+          "content": "10 Counting Parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.695,
+            0.285,
+            0.71
+          ],
+          "content": "a. G1. 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.72,
+            0.291,
+            0.735
+          ],
+          "content": "b. G2. 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.745,
+            0.285,
+            0.76
+          ],
+          "content": "c. G3. 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.77,
+            0.285,
+            0.786
+          ],
+          "content": "d. G4. 7"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.154,
+            0.512,
+            0.174
+          ],
+          "level": 2,
+          "content": "11 Variable Elimination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.21,
+            0.385,
+            0.227
+          ],
+          "content": "b. B, C, D, E, F, A, G"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.248,
+            0.529,
+            0.267
+          ],
+          "level": 2,
+          "content": "12 Parameter Estimation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.279,
+            0.267,
+            0.296
+          ],
+          "content": "a. 2/3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.304,
+            0.266,
+            0.32
+          ],
+          "content": "b. 3/5"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.342,
+            0.462,
+            0.362
+          ],
+          "level": 2,
+          "content": "13 Decision Theory"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.373,
+            0.782,
+            0.405
+          ],
+          "content": "a. ((ski (.08 win not-broken 100) (.02 win broken 50) (.72 not-win not-broken 0) (.18 not-win broken -50)) (not-ski (.2 broken -10) (.8 not-broken 0))"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.213,
+            0.412,
+            0.649,
+            0.428
+          ],
+          "sub_type": "algorithm",
+          "content": "b. $\\mathrm{U}(\\mathrm{ski}) = 8 + 1 + 0 + -9 = 0$; $\\mathrm{U}(\\mathrm{not~ski}) = -2$; so we ski!",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.437,
+            0.784,
+            0.53
+          ],
+          "content": "c. Given perfect info about my leg, we have the tree ((0.2 broken ((ski (.1 win 50) (.9 not-win -50)) (not-ski -10))) (0.8 not-broken ((ski (.1 win 100) (.9 not-win 0)) (not-ski 0)))) which evaluates to ((0.2 broken ((ski -40) (not-ski -10))) (0.8 not-broken ((ski 10) (not-ski 0))) ((0.2 broken -10) (0.8 not-broken 10)) With perfect information I have expected utility -2 + 8 = 6. So expected value of perfect info is 6 - 0 = 6."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.537,
+            0.784,
+            0.643
+          ],
+          "content": "d. Given perfect info about winning the race, we have the tree ((0.1 win ((ski (.2 broken 50) (.8 not-broken 100)) (not-ski (.2 broken -10) (.8 not-broken 0)))) (0.9 not-win ((ski (.2 broken -50) (.8 not-broken 0)) (not-ski (.2 broken -10) (.8 not-broken 0))))) which evaluates to ((0.1 win ((ski 90) (not-ski -2)) (0.9 not-win ((ski -10) (not-ski -2)))) which evaluates to ((0.1 win 90) (0.9 not-win -2)) = 9 - 1.8 = 7.2. So expected value of perfect info is 7.2 - 0 = 7.2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.652,
+            0.784,
+            0.684
+          ],
+          "content": "e. Yes. You just put the win branch after the broken branch, and use the conditional probabilities for win given broken."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.705,
+            0.586,
+            0.724
+          ],
+          "level": 2,
+          "content": "14 Markov Decision Processes"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.213,
+            0.735,
+            0.458,
+            0.852
+          ],
+          "sub_type": "algorithm",
+          "content": "a. $\\mathrm{V(s1)} = .9^{*}.9^{*}5.5 = 4.455$  \nb. $\\mathrm{V(s2)} = 5.5$  \nc. $\\mathrm{V(s3)} = 4.5$  \nd. $\\mathrm{V(s4)} = 0$  \ne. $\\mathrm{V(s5)} = 10$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "index",
+          "bbox": [
+            0.216,
+            0.152,
+            0.999,
+            0.804
+          ],
+          "content": "- 15 Neural Networks\n- a. F\n- b. T\n- c. F\n- d. T\n- e. F\n- f. F\n- g. F\n- h. F\n- i. F\n- 16 True or False\n- 1. T\n- 2. F\n- 3. T\n- 4. F\n- 5. T\n- 6. F\n- 7. T\n- 8. F\n- 9. F\n- 10. F\n- 11. T\n- 12. F\n- 13. T\n- 14. F"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "5"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2002-12-03T16:08:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.10a",
+      "page_count": 5,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

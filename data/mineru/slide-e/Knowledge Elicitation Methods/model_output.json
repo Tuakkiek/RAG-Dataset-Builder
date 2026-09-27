@@ -1,0 +1,1161 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "KNOWLEDGE ELICITATION METHODS",
+      "authors": [
+        "Prabhat"
+      ],
+      "subject": null,
+      "keywords": [],
+      "description": null,
+      "languages": [
+        "en-AU"
+      ],
+      "identifiers": [],
+      "publisher": null,
+      "created_at": "2011-11-04T20:46:28+05:45",
+      "modified_at": "2011-11-04T20:46:28+05:45",
+      "creator_application": "Microsoft® Word 2010",
+      "producer_application": "Microsoft® Word 2010",
+      "page_count": 2,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 595.4400024414062,
+          "height_pt": 841.6799926757812
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 595.4400024414062,
+          "height_pt": 841.6799926757812
+        }
+      ]
+    }
+  },
+  "schema_version": "2.0",
+  "schema": "docvortex.model",
+  "pages": [
+    [
+      {
+        "type": "doc_title",
+        "bbox": [
+          0.279,
+          0.086,
+          0.72,
+          0.104
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "KNOWLEDGE ELICITATION METHODS"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.282,
+              0.088,
+              0.716,
+              0.103
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.121,
+          0.883,
+          0.258
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Knowledge Elicitation involves extracting expert knowledge from the domain expert about the problem at hand. Many Knowledge Elicitation (KE) methods have been used to obtain the information required to solve problems. These methods can be classified in many ways. One common way is by how directly they obtain information from the domain expert. Direct methods involve directly questioning a domain expert on how they do their job. In order for these methods to be successful, the domain expert has to be reasonably articulate and willing to share information. The information has to be easily expressed by the expert, which is often difficult when tasks frequently performed often become 'automatic.' Indirect methods are used in order to obtain information that can not be easily expressed directly."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.121,
+              0.88,
+              0.136
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.136,
+              0.88,
+              0.151
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.152,
+              0.88,
+              0.165
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.167,
+              0.879,
+              0.18
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.182,
+              0.879,
+              0.195
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.198,
+              0.879,
+              0.21
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.21,
+              0.879,
+              0.226
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.227,
+              0.881,
+              0.241
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.243,
+              0.357,
+              0.257
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.272,
+          0.883,
+          0.32
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "One other way of classifying methods are by how they interact with the domain expert. Other factors that influence the choice of KE method are the amount of domain knowledge required by the knowledge engineer and the effort required to analyze the data."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.274,
+              0.879,
+              0.287
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.29,
+              0.878,
+              0.302
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.305,
+              0.587,
+              0.317
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.335,
+          0.445,
+          0.354
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "KE Methods by Interaction Type"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.335,
+              0.443,
+              0.352
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.369,
+          0.291,
+          0.386
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Interviewing (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.371,
+              0.287,
+              0.385
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.401,
+          0.884,
+          0.539
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Interviewing consists of asking the domain expert questions about the domain of interest and how they perform their tasks. The success of an interview session is dependent on the questions asked (it is difficult to know which questions should be asked, particularly if the interviewer is not familiar with the domain) and the ability of the expert to articulate their knowledge. The expert may not remember exactly how they perform a task, especially if it is one that they perform automatically\". Some interview methods are used to build a particular type of model of the task. The model is built by the knowledge engineer based on information obtained during the interview and then reviewed with the domain expert. In some cases, the models can be built interactively with the expert, especially if there are software tools available for model creation."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.402,
+              0.878,
+              0.414
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.418,
+              0.878,
+              0.429
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.432,
+              0.879,
+              0.445
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.448,
+              0.879,
+              0.46
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.463,
+              0.878,
+              0.476
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.478,
+              0.878,
+              0.491
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.493,
+              0.878,
+              0.506
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.508,
+              0.878,
+              0.521
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.524,
+              0.468,
+              0.535
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.553,
+          0.279,
+          0.569
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Case Study (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.553,
+              0.276,
+              0.568
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.584,
+          0.883,
+          0.631
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Case Study methods different examples of problems/tasks within a domain are discussed. The problems consist of specific cases that can be typical, difficult, or memorable. These cases are used as a context within which directed questions are asked."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.587,
+              0.877,
+              0.598
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.602,
+              0.88,
+              0.615
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.616,
+              0.507,
+              0.629
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.647,
+          0.264,
+          0.663
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Protocols (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.648,
+              0.261,
+              0.662
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.678,
+          0.884,
+          0.801
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Protocol analysis involves asking the expert to perform a task while \"thinking aloud.\" The intent is to capture both the actions performed and the mental process used to determine these actions. As with all the direct methods, the success of the protocol analysis depends on the ability of the expert to describe why they are making their decision. In some cases, the expert may not remember why they do things a certain way. In many cases, the verbalized thoughts will only be a subset of the actual knowledge used to perform the task. One method used to augment this information is Interruption analysis. For this method, the knowledge engineer interrupts the expert at critical points in the task to ask questions about why they performed a particular action."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.679,
+              0.879,
+              0.692
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.694,
+              0.879,
+              0.707
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.71,
+              0.88,
+              0.722
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.726,
+              0.88,
+              0.737
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.741,
+              0.879,
+              0.751
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.756,
+              0.878,
+              0.767
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.77,
+              0.879,
+              0.783
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.787,
+              0.458,
+              0.798
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.815,
+          0.884,
+          0.893
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "For design, protocol analysis would involve asking the expert to perform the design task. This may or not be possible depending on what is being designed or the length of time normally required to perform a design task. Interruption analysis would be useful in determining why subtasks are performed in a particular order. One disadvantage, however, is that the questions could distract the expert enough that they may make mistakes or start \"second guessing\" their own decisions."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.817,
+              0.879,
+              0.829
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.832,
+              0.879,
+              0.844
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.847,
+              0.88,
+              0.859
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.862,
+              0.878,
+              0.874
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.877,
+              0.795,
+              0.89
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.086,
+          0.883,
+          0.133
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "If time and resources were available, it would be interesting to perform protocol analysis of the same task using multiple experts noting any differences in ordering. This could obtain both alternative orderings and, after questioning the expert, the rationale for their decisions."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.086,
+              0.879,
+              0.101
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.103,
+              0.878,
+              0.115
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.118,
+              0.678,
+              0.13
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.147,
+          0.274,
+          0.165
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Critiquing (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.121,
+              0.148,
+              0.27,
+              0.163
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.179,
+          0.882,
+          0.211
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Critiquing, an approach to the problem/task is evaluated by the expert. This is used to determine the validity of results of previous KE sessions."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.18,
+              0.88,
+              0.194
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.197,
+              0.437,
+              0.208
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.225,
+          0.305,
+          0.243
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Role Playing (Indirect)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.227,
+              0.302,
+              0.241
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.257,
+          0.883,
+          0.304
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Role Playing, the expert adapts a role and acts out a scenario where their knowledge is used. The intent is that by viewing a situation from a different perspective, information will be revealed that was not discussed when the expert was asked directly."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.259,
+              0.879,
+              0.272
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.274,
+              0.88,
+              0.286
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.289,
+              0.488,
+              0.302
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.319,
+          0.276,
+          0.335
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Simulation (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.321,
+              0.273,
+              0.333
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.35,
+          0.883,
+          0.383
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Simulation methods, the task is simulated using a computer system or other means. This is used when it is not possible to actually perform the task."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.352,
+              0.879,
+              0.364
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.368,
+              0.498,
+              0.38
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.397,
+          0.284,
+          0.414
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Prototyping (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.398,
+              0.281,
+              0.413
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.429,
+          0.881,
+          0.461
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Prototyping, the expert is asked to evaluate a prototype of the proposed system being developed. This is usually done iteratively as the system is refined."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.431,
+              0.878,
+              0.444
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.445,
+              0.533,
+              0.458
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.476,
+          0.276,
+          0.492
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Teachback (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.121,
+              0.478,
+              0.272,
+              0.49
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.507,
+          0.882,
+          0.54
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Teachback, the knowledge engineer attempts to teach the information back to the expert, who then provides corrections and fills in gaps."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.509,
+              0.88,
+              0.522
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.524,
+              0.4,
+              0.538
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.554,
+          0.287,
+          0.571
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Observation (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.555,
+              0.285,
+              0.569
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.586,
+          0.883,
+          0.633
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Observation methods, the knowledge engineer observes the expert performing a task. This prevents the knowledge engineer from inadvertently interfering in the process, but does not provide any insight into why decisions are made."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.587,
+              0.879,
+              0.601
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.603,
+              0.88,
+              0.616
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.619,
+              0.334,
+              0.63
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.648,
+          0.294,
+          0.664
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Goal Related (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.648,
+              0.29,
+              0.662
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.679,
+          0.883,
+          0.711
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In Goal Related methods, focused discussion techniques are used to elicit information about goals and subgoals."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.681,
+              0.88,
+              0.693
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.695,
+              0.192,
+              0.71
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.726,
+          0.286,
+          0.743
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "List Related (Direct)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.728,
+              0.283,
+              0.741
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.757,
+          0.882,
+          0.789
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In List Related methods, the expert is asked to provide lists of information, usually possible decisions for a task."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.76,
+              0.878,
+              0.772
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.775,
+              0.194,
+              0.786
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.805,
+          0.357,
+          0.821
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Document Analysis (Indirect)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.805,
+              0.353,
+              0.819
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.835,
+          0.883,
+          0.868
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Document analysis involves gathering information from existing documentation. May or may not involve interaction with a human expert to confirm or add to this information."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.838,
+              0.881,
+              0.85
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.853,
+              0.695,
+              0.865
+            ]
+          }
+        ]
+      }
+    ]
+  ],
+  "page_index_map": []
+}
