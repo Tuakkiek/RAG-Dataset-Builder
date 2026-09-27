@@ -1,0 +1,409 @@
+## BACH KHOA
+
+## TRÍ TUỆ NHÂN TẠO
+
+![](images/page_0_image_3.jpg)
+
+Khoa Công Nghệ Thông Tin
+TS. Nguyễn Văn Hiệu
+
+## TRÍ TƯỆ NHÂN TẠO
+
+## BACH KHOA
+
+## Bài 12-13:
+
+Logistic Regression
+
+## Nội dung
+
+\- Giới thiệu
+
+• Logistic Regression Model
+
+\- Hàm giả thuyết
+
+\- Bài toán phân lớp
+
+\- Hàm mất mát
+
+• Tối ưu hàm mất mát
+
+• Demo
+
+\- Bài tập
+
+## Giới thiệu
+
+![](images/page_3_image_4.jpg)
+
+## Giới thiệu(tiếp)
+
+• Ví dụ bài toán phân lớp
+
+\- Email Spam/Not Spam: Thư nào nên bổ vào thùng rác?
+
+\- Tumor benign/malignant: Ung thư lành tính hay ác tính?
+
+\- Online Transactions: Giao dịch lùa đảo hay không ?
+
+\- $y \in \{0, 1\}$
+
+\- 0: “lớp âm”( negative class) [có nghĩa: ung thư lành tính]
+
+\- 1: "lớp dưỡng"(positive class) [ có nghĩa : ung thư ác tính]
+
+\- Bài toán phân lớp:
+
+\- 0|1 - Phân lớp nhị phân
+
+$$
+y \in \{0, 1, 2, 3, 4, \dots \}
+$$
+
+## Giói thiệu(tiếp)
+
+\- Làm thế nào để phát triển thuật toán phân lớp ?
+
+• Ví dụ:
+
+![](images/page_5_chart_7.jpg)
+
+![](images/page_5_chart_8.jpg)
+
+![](images/page_5_chart_9.jpg)
+
+• Dự đoán cần đặt ngưỡng $h_{\theta}(x) = \theta^{T}x = \begin{cases} \geqslant 0.5 & y = 1 \\ < 0.5 & y = 0 \end{cases}$
+
+\- Hàm giả thuyết của LR không sử dụng cho bài toán phân lớp.
+
+## Giới thiệu(tiếp)
+
+• Tác vụ:
+
+Y = 0 hoặc Y = 1
+
+## BACH KHOA
+
+• Linear Regression: $h_{\theta}(x) < 0 || h_{\theta}(x) > 1$
+
+• Logistic Regression:
+
+$$
+0 \leqslant h _ {\theta} (x) \leqslant 1
+$$
+
+## Logistic Regression Model
+
+• Linear Regression: $h_{\theta}(x) = \theta^{T}x$
+
+• Logistic regression:  $h_{\theta}(x) = g(\theta^{T}x)$ ,  $g(z) = \frac{1}{1 + e^{-z}}$
+
+\- g(z) hàm sigmoid hay hàm logistic
+
+\- Trực quan:
+
+![](images/page_7_chart_9.jpg)
+
+• Dự đoán:
+
+\- $y = 1$, nếu $h_{\theta}(x) \geqslant 0.5$, hay $y = 1$, nếu $\theta^T x \geqslant 0$:
+
+\- $y = 0$, nếu $h_{\theta}(x) < 0.5$, hay $y = 0$, nếu $\theta^{T}x < 0$.
+
+$$
+h _ {\theta} (x) = 0. 5 | | \theta^ {T} x = 0
+$$
+
+Ranh giới quyết định (decision boundary)
+
+## Hàm giả thuyết( hypothesis )
+
+\- Diễn giải hàm giả thuyết: $h_{\theta}(x) = g(\theta^T x) = \frac{1}{1 + e^{-\theta^T x}}$
+- $h_{\theta}(x) = \text{xác suất đề } y = 1 \text{ với dữ liệu input } x$
+
+• Ví dụ (muốn phân loại khối u)
+
+$$
+x = \left[ \begin{array}{c} x _ {0} \\ x _ {1} \end{array} \right] = \left[ \begin{array}{c} 1 \\ s i z e \end{array} \right], h _ {\theta} (x) = 0. 7
+$$
+
+\- Xác suất đề y = 1 là 0.7
+
+\- Nói cách khác: 70% là ác tính, 30 % là lành tính.
+
+\- $h_{\theta}(x) = g(\theta^T x) = P(y = 1 / x; \theta)$
+
+$$
+\begin{array}{l} P (y = 1 / x; \theta) + P (y = 0 / x; \theta) = 1 \\ P (y = 0 / x; \theta) = 1 - h _ {\theta} (x) \end{array}
+$$
+
+## Hàm giả thuyết(tiếp)
+
+\- Giả sử tập huấn luyện
+
+![](images/page_9_image_6.jpg)
+
+$$
+h _ {\theta} (x) = g (\theta_ {0} + \theta_ {1} x _ {1} + \theta_ {2} x _ {2})
+$$
+
+$$
+\theta_ {0} = - 3, \theta_ {1} = 1; \theta_ {2} = 1
+$$
+
+\- Áp dụng công thức
+
+\- Dự đoán y = 1 nếu  $-3 + x_{1} + x_{2} \geqslant 0$
+
+\- Dự đoán y = 0 nếu  $-3 + x_{1} + x_{2} < 0$
+
+• Decision Boundary:  $x_{1} + x_{2} = 3$
+
+\- Đường phân vùng giữa y = 0 và y = 1
+
+\- Tính chất của hàm giả thuyết
+
+## Hàm giả thuyết(tiếp)
+
+\- Giả sử tập huấn luyện
+
+![](images/page_10_image_6.jpg)
+
+$$
+h _ {\theta} (x) = g \big (\theta_ {0} + \theta_ {1} x _ {1} + \theta_ {2} x _ {2} + \theta_ {3} x _ {1} ^ {2} + \theta_ {4} x _ {2} ^ {2} \big)
+$$
+
+$$
+\theta_ {0} = - 1; \theta_ {1} = 0; \theta_ {2} = 0; \theta_ {3} = 1; \theta_ {4} = 1
+$$
+
+\- Áp dụng công thức
+
+\- Dự đoán y = 1 nếu  $-1 + x_{1}^{2} + x_{2}^{2} \geqslant 0$
+
+\- Dự đoán y = 0 nếu  $-1 + x_{1}^{2} + x_{2}^{2} < 0$
+
+• Decision Boundary: $x_{1}^{2} + x_{2}^{2} = 1$
+
+\- Tính chất của hàm giả thuyết
+
+## Bài toán phân lớp
+
+\- Cho m dữ liệu để huấn luyện, toàn bộ dữ liệu thứ i chứa input $x^{(i)}$ và output $y^{(i)}$ với $y^{(i)} \in \{0,1\}$
+
+| $x^{(1)} \rightarrow$ | $x_{1}^{(1)}$ | ... | $x_{n}^{(1)}$ | $y^{(1)}$ |
+| --- | --- | --- | --- | --- |
+| $x^{(2)} \rightarrow$ | $x_{1}^{(2)}$ | ... | $x_{n}^{(2)}$ | $y^{(2)}$ |
+| $\vdots$ | $\vdots$ |  | $\vdots$ | $\vdots$ |
+| $x^{(m)} \rightarrow$ | $x_{1}^{(m)}$ | ... | $x_{n}^{(m)}$ | $y^{(m)}$ |
+| $x^{(new)} \rightarrow$ |  |  |  | ????? |
+
+\- Tác vụ: $h_{\theta}: R^{n+1} \to Y$ $h_{\theta}(\bar{x}) = g(\theta^T \bar{x}) = \frac{1}{1 + e^{-\theta^T \bar{x}}}$
+$\Rightarrow$ tìm vectơ $\theta = (\theta_0, \theta_1, \ldots, \theta_n)^T$
+
+## Hàm mất mát (Loss function)
+
+\- Hồi quy tuyến tính:
+
+$$
+J (\theta) = \frac {1}{m} \sum_ {i = 1} ^ {m} \frac {1}{2} \left(h _ {\theta} \left(x ^ {(i)}\right) - y ^ {(i)}\right) ^ {2} = \frac {1}{m} \sum_ {i = 1} ^ {m} C o s t \left(h _ {\theta} \left(x ^ {(i)}\right) - y ^ {(i)}\right)
+$$
+
+$$
+\begin{array}{c} C o s t \Big (h _ {\theta} \Big (x ^ {(i)} \Big) - y ^ {(i)} \Big) = \frac {1}{2} \Big (h _ {\theta} \Big (x ^ {(i)} \Big) - y ^ {(i)} \Big) ^ {2} \\ H a y \\ C o s t (h _ {\theta} (x) - y) = \frac {1}{2} (h _ {\theta} (x) - y) ^ {2} \end{array}
+$$
+
+\- Hàm Cost không tốt cho bài toán Logistic regression
+
+## Hàm mất mát (tiếp)
+
+\- Logistic Regression
+
+$$
+C o s t (h _ {\theta} (x) - y) = \left\{ \begin{array}{l l} - \log \left(h _ {\theta} (x)\right) & i f y = 1 \\ - \log \left(1 - h _ {\theta} (x)\right) & i f y = 0 \end{array} \right.
+$$
+
+Cost
+
+![](images/page_13_chart_8.jpg)
+
+$$
+\begin{array}{r l} & i f y = 1, h _ {\theta} (x) = 1, t h e n \quad C o s t (h _ {\theta} (x), y) = 0 \\ & i f y = 1, h _ {\theta} (x) = 0, t h e n \quad C o s t (h _ {\theta} (x), y) = \infty \end{array}
+$$
+
+Cost
+
+## Hàm mất mát (tiếp)
+
+\- Logistic Regression
+
+$$
+C o s t (h _ {\theta} (x) - y) = \left\{ \begin{array}{l l} - \log \left(h _ {\theta} (x)\right) & i f y = 1 \\ - \log \left(1 - h _ {\theta} (x)\right) & i f y = 0 \end{array} \right.
+$$
+
+![](images/page_14_chart_8.jpg)
+
+$$
+\begin{array}{l l} i f y = 0, h _ {\theta} (x) = 0, t h e n & C o s t (h _ {\theta} (x), y) = 0 \\ i f y = 0, h _ {\theta} (x) = 1, t h e n & C o s t (h _ {\theta} (x), y) = \infty \end{array}
+$$
+
+## Hàm mất mát (tiếp)
+
+\- Logistic Regression
+
+$$
+J (\theta) = \frac {1}{m} \sum_ {i = 1} ^ {m} C o s t \left(h _ {\theta} \left(x ^ {(i)}\right) - y ^ {(i)}\right)
+$$
+
+\- $Cost(h_{\theta}(x) - y) = \left\{ \begin{array}{ll} - \log (h_{\theta}(x)) & if  y = 1\\ -\log (1 - h_{\theta}(x)) & if  y = 0 \end{array} \right.$
+
+$$
+\text {Cost} (h _ {\theta} (x) - y) = - y \log \left(h _ {\theta} (x)\right) - (1 - y) \log \left(1 - h _ {\theta} (x)\right)
+$$
+
+$$
+\begin{array}{l l} 1. i f y = 1, & C o s t (h _ {\theta} (x), y) = - \log (h _ {\theta} (x)) \\ 2. i f y = 0, & C o s t (h _ {\theta} (x), y) = - \log (1 - h _ {\theta} (x)) \end{array}
+$$
+
+$$
+J (\theta) = - \frac {1}{m} \sum_ {i = 1} ^ {m} \Big [ y ^ {(i)}. \log \left(h _ {\theta} \Big (x ^ {(i)}\right)\left. \right) + \Big (1 - y ^ {(i)} \Big). \log \left(1 - h _ {\theta} \Big (x ^ {(i)}\right) \Big) \Big ]
+$$
+
+## Hàm mất mát (tiếp)
+
+• Logistic Regression
+
+$$
+J (\theta) = - \frac {1}{m} \sum_ {i = 1} ^ {m} \Big [ y ^ {(i)}. \log \left(h _ {\theta} \Big (x ^ {(i)}\right)\left. \right) + \Big (1 - y ^ {(i)} \Big). \log \left(1 - h _ {\theta} \Big (x ^ {(i)}\right) \Big) \Big ]
+$$
+
+\- Tîm θ
+
+$$
+\min _ {\theta} (J (\theta))
+$$
+
+• Dự đoán một dữ liệu mới x:
+
+\- Kết quả
+
+$$
+h _ {\theta} (x) = \frac {1}{1 + e ^ {- \theta^ {T} x}}
+$$
+
+## Tói ưu hàm mất mát
+
+\- Phương pháp tối ưu
+
+$$
+J (\theta) = - \frac {1}{m} \sum_ {i = 1} ^ {m} \Big [ y ^ {(i)}. \log \left(h _ {\theta} \Big (x ^ {(i)} \Big)\right) + \Big (1 - y ^ {(i)} \Big). \log \left(1 - h _ {\theta} \Big (x ^ {(i)} \Big)\right) \Big ]
+$$
+
+## Muôn min( $J(\theta)$ )
+
+\- Thuật toán
+
+\- Chọn một điểm bất kỳ $\theta = (\theta_0, \theta_1, \ldots, \theta_n)^T$
+
+\- Thực hiện liên tiếp các phép biến đổi
+
+$$
+\theta_ {j} := \theta_ {j} - \alpha \cdot \frac {\mathrm{d} J \left(\theta , x ^ {(i)} , y ^ {(i)}\right)}{\mathrm{d} \theta_ {j}}
+$$
+
+\- Thuật toán dùng khi $J(\theta)$ thay đổi rất nhỏ
+
+## Tối ưu hàm mất mát (tiếp)
+
+\- $J\left(\theta, x^{(i)}, y^{(i)}\right) = -\left[y^{(i)} \cdot \log \left(h_{\theta}\left(x^{(i)}\right)\right) + \left(1 - y^{(i)}\right) \cdot \log \left(1 - h_{\theta}\left(x^{(i)}\right)\right)\right]$
+- $\frac{\mathrm{d}J\left(\theta, x^{(i)}, y^{(i)}\right)}{\mathrm{d}\theta_j} = ?$
+
+$$
+\begin{array}{l} \cdot \frac {\mathrm{d} J \big (\theta , x ^ {(i)} , y ^ {(i)} \big)}{\mathrm{d} \theta_ {j}} = \frac {\mathrm{d} J \big (\theta , x ^ {(i)} , y ^ {(i)} \big)}{\mathrm{d} h _ {\theta}} \cdot \frac {\mathrm{d} h _ {\theta}}{\mathrm{d} x ^ {(i)}} \cdot \frac {\mathrm{d} x ^ {(i)}}{\mathrm{d} \theta_ {j}} \\ \cdot \frac {\mathrm{d} J \big (\theta , x ^ {(i)} , y ^ {(i)} \big)}{\mathrm{d} h _ {\theta}} = - \left(\frac {y ^ {(i)}}{h _ {\theta} \big (x ^ {(i)} \big)} - \frac {1 - y ^ {(i)}}{1 - h _ {\theta} \big (x ^ {(i)} \big)}\right) = \frac {h _ {\theta} \big (x ^ {(i)} \big) - y ^ {(i)}}{h _ {\theta} \big (x ^ {(i)} \big) \big (1 - h _ {\theta} \big (x ^ {(i)} \big) \big)} \\ \cdot \frac {\mathrm{d} h _ {\theta}}{\mathrm{d} x ^ {(i)}} = h _ {\theta} \Big (x ^ {(i)} \Big) \Big (1 - h _ {\theta} \Big (x ^ {(i)} \Big) \Big) \\ \cdot \frac {\mathrm{d} x ^ {(i)}}{\mathrm{d} \theta_ {j}} = x _ {j} ^ {(i)} \\ = = > & \frac {\mathrm{d} J \big (\theta , x ^ {(i)} , y ^ {(i)} \big)}{\mathrm{d} \theta_ {j}} = \Big (h _ {\theta} \Big (x ^ {(i)} \Big) - y ^ {(i)} \Big) \cdot x _ {j} ^ {(i)} \end{array}
+$$
+
+## Demo
+
+def logistic\_sigmoid\_regression(X, y, w\_init, alpha, tol = 1e-4, loop = 10000):
+
+```python
+er logistic_sigmoid_regression(X, y, w_init, alpha, tol = re-
+w = [w_init]
+N = X.shape[1]
+d = X.shape[0]
+count = 0
+check_w = 20
+while count < loop:
+    # mix data
+    mix_id = np.random.permutation(N)
+    for i in mix_id:
+        xi = X[:, i].reshape(d, 1)
+        yi = y[i]
+        zi = sigmoid(np.dot(w[-1].T, xi))
+        w_new = w[-1] + alpha*(yi - zi)*xi
+        count += 1
+        # stopping criteria
+        if count%check_w == 0:
+            if np.linalg.norm(w_new - w[-check_w]) < tol:
+                return w
+        w.append(w_new)
+return w
+```
+
+## BACH KHOA
+
+## Bài tập 1
+
+\- Cài đặt
+
+\- Chọn một điểm bắt kỳ $\theta = (\theta_0, \theta_1, \ldots, \theta_n)^T$
+
+\- Thực hiện liên tiếp các phép biến đổi
+
+$$
+\theta_ {j} := \theta_ {j} - \alpha \cdot \frac {\mathrm{d} J (\theta)}{\mathrm{d} \theta_ {i}}
+$$
+
+KHOA
+
+\- Thuật toán dùng khi $J(\theta)$ thay đổi rất nhỏ
+
+$$
+\begin{array}{l l} \cdot \frac {\mathrm{d} J (\theta)}{\mathrm{d} \theta_ {j}} = \frac {\mathrm{d} J}{\mathrm{d} h _ {\theta}}. \frac {\mathrm{d} h _ {\theta}}{\mathrm{d} x ^ {(i)}}. \frac {\mathrm{d} x ^ {(i)}}{\mathrm{d} \theta_ {j}} \\ \cdot \frac {\mathrm{d} J}{\mathrm{d} h _ {\theta}} = - \frac {1}{m} \sum_ {i = 1} ^ {m} \left(\frac {y ^ {(i)}}{h _ {\theta} (x ^ {(i)})} - \frac {1 - y ^ {(i)}}{1 - h _ {\theta} (x ^ {(i)})}\right) = \frac {1}{m} \sum_ {i = 1} ^ {m} \frac {h _ {\theta} (x ^ {(i)}) - y ^ {(i)}}{h _ {\theta} (x ^ {(i)}) (1 - h _ {\theta} (x ^ {(i)}))} \\ \cdot \frac {\mathrm{d} h _ {\theta}}{\mathrm{d} x ^ {(i)}} = h _ {\theta} (x ^ {(i)}) (1 - h _ {\theta} (x ^ {(i)})) \\ \cdot \frac {\mathrm{d} x ^ {(i)}}{\mathrm{d} \theta_ {j}} = x _ {j} ^ {(i)} & \frac {\mathrm{d} J (\theta)}{\mathrm{d} \theta_ {j}} = \frac {1}{m} \sum_ {i = 1} ^ {m} (h _ {\theta} (x ^ {(i)}) - y ^ {(i)}). x _ {j} ^ {(i)} \end{array}
+$$
+
+## Bài tập 2
+
+\- Thực nghiệm phân loại hoa Iris setosa và Iris virginica
+
+• Dữ liệu mẫu
+
+| Độ dài đài hoa | Độ rộng đài hoa | Độ dài cánh hoa | Độ rộng cánh hoa | Tên loài |
+| --- | --- | --- | --- | --- |
+| 5.1 | 3.5 | 1.4 | 0.2 | Iris setosa |
+| 4.9 | 3 | 1.4 | 0.2 | Iris setosa |
+| 4.7 | 3.2 | 1.3 | 0.2 | Iris setosa |
+| 4.6 | 3.1 | 1.5 | 0.2 | Iris setosa |
+| 5 | 3.6 | 1.4 | 0.2 | Iris setosa |
+| 5.4 | 3.9 | 1.7 | 0.4 | Iris setosa |
+| 4.6 | 3.4 | 1.4 | 0.3 | Iris setosa |
+| 5 | 3.4 | 1.5 | 0.2 | Iris setosa |
+| 4.4 | 2.9 | 1.4 | 0.2 | Iris setosa |
+| 4.9 | 3.1 | 1.5 | 0.1 | Iris setosa |
+| 6.3 | 3.3 | 6 | 2.5 | Iris virginica |
+| 5.8 | 2.7 | 5.1 | 1.9 | Iris virginica |
+| 7.1 | 3 | 5.9 | 2.1 | Iris virginica |
+| 6.3 | 2.9 | 5.6 | 1.8 | Iris virginica |
+| 6.5 | 3 | 5.8 | 2.2 | Iris virginica |
+| 7.6 | 3 | 6.6 | 2.1 | Iris virginica |
+| 4.9 | 2.5 | 4.5 | 1.7 | Iris virginica |
+| 7.3 | 2.9 | 6.3 | 1.8 | Iris virginica |
+| 6.7 | 2.5 | 5.8 | 1.8 | Iris virginica |
+| 7.2 | 3.6 | 6.1 | 2.5 | Iris virginica |
+
+## Tài liệu tham khảo
+
+1. https://realpython.com/logistic-regression-python/#single-variate-logistic-regression
+
+2. Andrew Ng + Logistic Regression: https://www.youtube.com/watch?v=-la3q9d7AKQ

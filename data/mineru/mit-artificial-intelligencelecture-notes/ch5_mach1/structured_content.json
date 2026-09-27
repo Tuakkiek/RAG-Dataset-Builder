@@ -1,0 +1,7418 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.352,
+            0.501,
+            0.365
+          ],
+          "content": "Slide 5.1.2"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.837,
+            0.773,
+            0.903,
+            0.785
+          ],
+          "content": "6.034 - Spring 03 • 3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.394,
+            0.076,
+            0.604,
+            0.094
+          ],
+          "content": "6.034 Notes: Section 5.1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.133,
+            0.118,
+            0.145
+          ],
+          "level": 2,
+          "content": "Slide 5.1.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.144,
+            0.535,
+            0.18
+          ],
+          "content": "The learning algorithm for DNF that we saw last time is a bit complicated and can be inefficient. It's also not clear that we're making good decisions about which attributes to add to a rule, especially when there's noise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.188,
+            0.54,
+            0.237
+          ],
+          "content": "So now we're going to look at an algorithm for learning decision trees. We'll be changing our hypothesis class (sort of), our bias, and our algorithm. We'll continue to assume, for now, that the input features and the output class are boolean. We'll see later that this algorithm can be applied much more broadly."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.662,
+            0.134,
+            0.79,
+            0.151
+          ],
+          "level": 2,
+          "content": "Decision Trees"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.57,
+            0.168,
+            0.903,
+            0.205
+          ],
+          "content": "• DNF learning algorithm is a bit cumbersome and inefficient. Also, the exact effect of the heuristic is unclear."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.551,
+            0.121,
+            0.924,
+            0.34
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.205,
+            0.887,
+            0.232
+          ],
+          "content": "• Still assume binary inputs and output, but much more broadly applicable."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.348,
+            0.435,
+            0.565
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.364,
+            0.933,
+            0.401
+          ],
+          "content": "Our hypothesis class is going to be decision trees. A decision tree is a tree (big surprise!). At each internal (non-leaf) node, there is the name of a feature. There are two arcs coming out of each node, labeled 0 and 1, standing for the two possible values that the feature can take on."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.408,
+            0.927,
+            0.434
+          ],
+          "content": "Leaf nodes are labeled with decisions, or outputs. Since our y's are Boolean, the leaves are labeled with 0 or 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.489,
+            0.287,
+            0.504
+          ],
+          "content": "• Internal nodes: feature name"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.503,
+            0.342,
+            0.518
+          ],
+          "content": "• One child for each value of the feature"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.517,
+            0.221,
+            0.532
+          ],
+          "content": "• Leaf nodes: output"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.58,
+            0.118,
+            0.591
+          ],
+          "content": "Slide 5.1.3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.591,
+            0.549,
+            0.665
+          ],
+          "content": "Trees represent Boolean functions from x's (vectors of feature values) to Booleans. To compute the output for a given input vector x<sup>i</sup>, we start at the root of the tree. We look at the feature there, let's say it's feature j, and then look to see what the value of x<sup>i</sup><sub>j</sub> is. Then we go down the arc corresponding to that value. If we arrive at another internal node, we look up that feature value, follow the correct arc, and so on. When we arrive at a leaf node, we take the label we find there and generate that as an output."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.673,
+            0.544,
+            0.699
+          ],
+          "content": "So, in this example, input [0 1 1 0] would generate an output of 0 (because the third element of the input has value 1 and the first has value 0, which takes to a leaf labeled 0)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.662,
+            0.586,
+            0.808,
+            0.605
+          ],
+          "level": 2,
+          "content": "Hypothesis Class"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.56,
+            0.575,
+            0.931,
+            0.791
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_21.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.167,
+            0.048,
+            0.314,
+            0.068
+          ],
+          "content": "Hypothesis Class Hypothesis Class"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.066,
+            0.04,
+            0.436,
+            0.252
+          ],
+          "content": "f{3 0 f{2 f1 0 0 0 1 0 f2 0 1 0 h=(f^)ν(传3^f^-f2) o 6.034 - Spring 03 • 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.041,
+            0.502,
+            0.055
+          ],
+          "content": "Slide 5.1.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.268,
+            0.118,
+            0.28
+          ],
+          "content": "Slide 5.1.5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.053,
+            0.934,
+            0.102
+          ],
+          "content": "Decision trees are a way of writing down Boolean expressions. To convert a tree into an expression, you can make each branch of the tree with a 1 at the leaf node into a conjunction, describing the condition that had to hold of the input in order for you to have gotten to that leaf of the tree. Then, you take this collection of expressions (one for each leaf) and disjoin them."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.279,
+            0.552,
+            0.329
+          ],
+          "content": "If we allow negations of primitive features in DNF, then both DNF and decision trees are capable of representing any boolean function. Why, then, should we bother to change representations in this way? The answer is that we're going to define our bias in a way that is natural for trees, and use an algorithm that is tailored to learning functions in the tree representation."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.108,
+            0.885,
+            0.125
+          ],
+          "content": "So, our example tree describes the boolean function not $\\mathbf { f _ { 3 } }$ and $\\mathbf { f } _ { 2 }$ or $\\mathbf { f _ { 3 } }$ and $\\mathbf { f _ { 1 } }$ and not $\\mathbf { f _ { 2 } } .$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.692,
+            0.277,
+            0.777,
+            0.293
+          ],
+          "content": "Tree Bias"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.297,
+            0.894,
+            0.334
+          ],
+          "content": "• Both decision trees and DNF with negation can represent any Boolean function. So why bother with trees?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.577,
+            0.334,
+            0.917,
+            0.372
+          ],
+          "content": "• Because we have a nice algorithm for growing trees that is consistent with a bias for simple trees (few nodes)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.199,
+            0.503,
+            0.283,
+            0.52
+          ],
+          "level": 2,
+          "content": "Tree Bias"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.494,
+            0.502,
+            0.508
+          ],
+          "level": 2,
+          "content": "Slide 5.1.6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.524,
+            0.399,
+            0.561
+          ],
+          "content": "• Both decision trees and DNF with negation can represent any Boolean function. So why bother with trees?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.56,
+            0.422,
+            0.597
+          ],
+          "content": "• Because we have a nice algorithm for growing trees that is consistent with a bias for simple trees (few nodes)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.596,
+            0.418,
+            0.622
+          ],
+          "content": "• Too hard to find the smallest good tree, so we'll be greedy again"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.621,
+            0.306,
+            0.637
+          ],
+          "content": "• Have to watch out for overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.506,
+            0.936,
+            0.555
+          ],
+          "content": "Application of Ockham's razor will lead us to prefer trees that are small, measured by the number of nodes. As before, it will be computationally intractable to find the minimum-sized tree that satisfies our error criteria. So, as before, we will be greedy, growing the tree in a way that seems like it will make it best on each step."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.838,
+            0.462,
+            0.903,
+            0.474
+          ],
+          "content": "6.034 - Spring 03 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.562,
+            0.929,
+            0.59
+          ],
+          "content": "We'll consider a couple of methods for making sure that our resulting trees are not too large, so we can guard against overfitting."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.344,
+            0.689,
+            0.409,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.722,
+            0.118,
+            0.734
+          ],
+          "content": "Slide 5.1.7"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.733,
+            0.538,
+            0.759
+          ],
+          "content": "It's interesting to see that a bias for small trees is different from a bias for small DNF expressions. Consider this tree. It corresponds to a very complex function in DNF."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.676,
+            0.729,
+            0.792,
+            0.746
+          ],
+          "level": 2,
+          "content": "Trees vs DNF"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.63,
+            0.745,
+            0.871,
+            0.884
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.609,
+            0.89,
+            0.889,
+            0.907
+          ],
+          "content": "(\\neg F \\land \\neg H) \\lor (\\neg F \\land H \\land J) \\lor (F \\land \\neg G \\land K) \\lor (F \\land G)",
+          "image_source": "images/page_1_equation_25.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.565,
+            0.918,
+            0.581,
+            0.931
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.838,
+            0.915,
+            0.902,
+            0.927
+          ],
+          "content": "6.034 - Spring 03  7"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.463,
+            0.583,
+            0.481
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.182,
+            0.049,
+            0.299,
+            0.066
+          ],
+          "level": 2,
+          "content": "Trees vs DNF"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.041,
+            0.502,
+            0.055
+          ],
+          "level": 2,
+          "content": "Slide 5.1.8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.038,
+            0.437,
+            0.255
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.118,
+                0.28
+              ],
+              "content": "Slide 5.1.9"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_2_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.28,
+            0.551,
+            0.307
+          ],
+          "content": "The idea of learning decision trees and the algorithm for doing so was, interestingly, developed independently by researchers in statistics and researchers in AI at about the same time around 1980."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.053,
+            0.936,
+            0.092
+          ],
+          "content": "But here's a case with a very simple DNF expression that requires a large tree to represent it. There's no particular reason to prefer trees over DNF or DNF over trees as a hypothesis class. But the treegrowing algorithm is simple and elegant, so we'll study it."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.689,
+            0.276,
+            0.779,
+            0.294
+          ],
+          "level": 2,
+          "content": "Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.577,
+            0.296,
+            0.903,
+            0.326
+          ],
+          "content": "• Developed in parallel in AI by Quinlan and in statistics by Breiman, Friedman, Olsen and Stone"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.195,
+            0.502,
+            0.286,
+            0.52
+          ],
+          "level": 2,
+          "content": "Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.523,
+            0.409,
+            0.552
+          ],
+          "content": "• Developed in parallel in AI by Quinlan and in statistics by Breiman, Friedman, Olsen and Stone"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.494,
+            0.509,
+            0.508
+          ],
+          "level": 2,
+          "content": "Slide 5.1.10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.556,
+            0.181,
+            0.572
+          ],
+          "content": "BuildTree (Data)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.506,
+            0.935,
+            0.532
+          ],
+          "content": "We will build the tree from the top down. Here is pseudocode for the algorithm. It will take as input a data set, and return a tree."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.069,
+            0.69,
+            0.089,
+            0.706
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.057,
+                0.721,
+                0.124,
+                0.734
+              ],
+              "content": "Slide 5.1.11"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_2_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.732,
+            0.549,
+            0.759
+          ],
+          "content": "We first test to see if all the data elements have the same y value. If so, we simply make a leaf node with that y value and we're done. This is the base case of our recursive algorithm."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.69,
+            0.73,
+            0.778,
+            0.747
+          ],
+          "level": 2,
+          "content": "Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.75,
+            0.902,
+            0.778
+          ],
+          "content": "• Developed in parallel in AI by Quinlan and in statistics by Breiman, Friedman, Olsen and Stone"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.578,
+            0.784,
+            0.674,
+            0.797
+          ],
+          "level": 2,
+          "content": "BuildTree (Data)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.794,
+            0.887,
+            0.818
+          ],
+          "content": "if all elements of Data have the same y value, then MakeLeafNode(y)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.564,
+            0.917,
+            0.582,
+            0.931
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.916,
+            0.902,
+            0.927
+          ],
+          "content": "6.034 - Spring 03  11"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.025,
+            0.004,
+            0.559,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.196,
+            0.049,
+            0.286,
+            0.067
+          ],
+          "level": 2,
+          "content": "Algorithm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.041,
+            0.509,
+            0.055
+          ],
+          "level": 2,
+          "content": "Slide 5.1.12"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.062,
+            0.043,
+            0.438,
+            0.255
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.124,
+                0.281
+              ],
+              "content": "Slide 5.1.13"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.28,
+            0.555,
+            0.352
+          ],
+          "content": "So, how should we choose a feature to split the data? Our goal, in building this tree, is to separate the negative instances from the positive instances with the fewest possible tests. So, for instance, if there's a feature we could pick that has value 0 for all the positive instances and 1 for all the negative instances, then we'd be delighted, because that would be the last split we'd have to make. On the other hand, a feature that divides the data into two groups that have the same proportion of positive and negative instances as we started with wouldn't seem to have helped much."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.491,
+            0.437,
+            0.708
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.441,
+                0.495,
+                0.509,
+                0.508
+              ],
+              "content": "Slide 5.1.14"
+            },
+            {
+              "bbox": [
+                0.057,
+                0.721,
+                0.125,
+                0.734
+              ],
+              "content": "Slide 5.1.15"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.732,
+            0.55,
+            0.782
+          ],
+          "content": "We'll start by looking at a standard measure of disorder, used in physics and information theory, called **entropy**. We'll just consider it in the binary case, for now. Let p be the proportion of positive examples in a data set (that is, the number of positive examples divided by the total number of examples). Then the entropy of that data set is"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.796,
+            0.332,
+            0.81
+          ],
+          "content": "- p \\log_ {2} p - (1 - p) \\log_ {2} (1 - p)",
+          "image_source": "images/page_3_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.053,
+            0.939,
+            0.102
+          ],
+          "content": "If we have a mixture of different y values, we choose a feature to use to make a new internal node. Then we divide the data into two sets, those for which the value of the feature is 0 and those for which the value is 1. Finally, we call the algorithm recursively on each of these data sets. We use the selected feature and the two recursively created subtrees to build our new internal node."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.558,
+            0.263,
+            0.931,
+            0.482
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.506,
+            0.926,
+            0.547
+          ],
+          "content": "In this example, it looks like the split based on $\\mathbf { f } _ { 7 }$ will be more helpful. To formalize that intuition, we need to develop a measure of the degree of uniformity of the subsets of the data we'd get by splitting on a feature."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.699,
+            0.73,
+            0.769,
+            0.747
+          ],
+          "level": 2,
+          "content": "Entropy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.75,
+            0.885,
+            0.766
+          ],
+          "content": "p : proportion of positive examples in a data set"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.634,
+            0.775,
+            0.829,
+            0.792
+          ],
+          "content": "H = - p \\log_ {2} p - (1 - p) \\log_ {2} (1 - p)",
+          "image_source": "images/page_3_equation_16.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.564,
+            0.917,
+            0.582,
+            0.931
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.916,
+            0.902,
+            0.927
+          ],
+          "content": "6.034 - Spring 03  15"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.073,
+            0.037,
+            0.441,
+            0.254
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.45,
+                0.048,
+                0.516,
+                0.061
+              ],
+              "content": "Slide 5.1.16"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.124,
+                0.28
+              ],
+              "content": "Slide 5.1.17"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.28,
+            0.537,
+            0.307
+          ],
+          "content": "When we split the data on feature j, we get two data sets. We'll call the set of examples for which feature j has value 1 <sup>D</sup>+j and those for which j has value 0 <sup>D</sup>-j."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.491,
+            0.436,
+            0.707
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.495,
+                0.507,
+                0.508
+              ],
+              "content": "Slide 5.1.18"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.06,
+            0.931,
+            0.097
+          ],
+          "content": "Here's a plot of the entropy as a function of p. When p is 0 or 1, then the entropy is 0. We have to be a little bit careful here. When p is 1, then 1 log 1 is clearly 0. But what about when p is 0? Log 0 is negative infinity. But 0 wins the battle, so 0 log 0 is also 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.104,
+            0.934,
+            0.13
+          ],
+          "content": "So, when all the elements of the set have the same value, either 0 or 1, then the entropy is 0. There is no disorder (unlike in my office!)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.264,
+            0.931,
+            0.48
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.441,
+                0.507,
+                0.921,
+                0.532
+              ],
+              "content": "We can compute the entropy for each of these subsets. For some crazy reason, people usually use the letter H to stand for entropy. We'll follow suit."
+            },
+            {
+              "bbox": [
+                0.058,
+                0.721,
+                0.124,
+                0.734
+              ],
+              "content": "Slide 5.1.19"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.137,
+            0.931,
+            0.164
+          ],
+          "content": "The entropy function is maximized when p = 0.5. When p is one half, the set is as disordered as it can be. There's no basis for guessing what the answer might be."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.733,
+            0.555,
+            0.793
+          ],
+          "content": "Now, we have to figure out how to combine these two entropy values into a measure of how good splitting on feature j is. We could just add them together, or average them. But what if have this situation, in which there's one positive example in one data set and 100 each of positive and negative examples in the other? It doesn't really seem like we've done much good with this split, but if we averaged the entropies, we'd get a value of 1/4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.8,
+            0.548,
+            0.841
+          ],
+          "content": "So, to keep things fair, we'll use a weighted average to combine the entropies of the two sets. Let p<sub>j</sub> be the proportion of examples in the data set D for which feature j has value 1. We'll compute a weighted **average entropy** for splitting on feature j as $\\mathrm { A E ( j ) = p _ { j } \\Delta H ( D _ { \\Delta j } ^ { + } ) + ( 1 - p _ { j } ) H ( D _ { \\Delta j } ^ { - } ) }$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.718,
+            0.93,
+            0.932
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_15.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.066,
+            0.038,
+            0.437,
+            0.253
+          ],
+          "content": "Let's Split D: 9 positive 10 negative f{3 f7 0 0 5 positive 4 positive 6 positive 3 positive 4 negative 6 negative 0 negative 10 negative H=.99 H=.97 H=.00 H=.78 AE = (9/19)\\*.99+(10/19)\\*.97 AE = (6/19)\\*0+(13/19)\\*.78 = .98 = .53 O 6.034 - Spring 03 • 20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.268,
+            0.124,
+            0.28
+          ],
+          "content": "Slide 5.1.21"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.041,
+            0.508,
+            0.055
+          ],
+          "content": "Slide 5.1.20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.28,
+            0.544,
+            0.306
+          ],
+          "content": "Going back to our algorithm, then, we'll pick the feature at every step that minimizes the weighted average entropy of the children."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.053,
+            0.926,
+            0.081
+          ],
+          "content": "So, in this example, we can see that the split on f<sub>7</sub> is much more useful, as reflected in the average entropy of its children."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.69,
+            0.277,
+            0.778,
+            0.294
+          ],
+          "content": "Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.297,
+            0.909,
+            0.325
+          ],
+          "content": "• Developed in parallel in AI by Quinlan and in statistics by Breiman, Friedman, Olshen and Stone"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.331,
+            0.674,
+            0.343
+          ],
+          "content": "BuildTree (Data)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.593,
+            0.341,
+            0.885,
+            0.365
+          ],
+          "content": "if all elements of Data have the same y value, then MakeLeafNode(y)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.596,
+            0.363,
+            0.627,
+            0.373
+          ],
+          "content": "else"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.615,
+            0.372,
+            0.798,
+            0.385
+          ],
+          "content": "feature := PickBestFeature(Data)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.614,
+            0.383,
+            0.759,
+            0.394
+          ],
+          "content": "MakeInternalNode(feature,"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.392,
+            0.849,
+            0.405
+          ],
+          "content": "BuildTree(SelectFalse(Data, feature)),"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.631,
+            0.403,
+            0.844,
+            0.415
+          ],
+          "content": "BuildTree(SelectTrue(Data, feature)))"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.414,
+            0.906,
+            0.44
+          ],
+          "content": "• Best feature minimizes average entropy of data in the children"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.834,
+            0.462,
+            0.902,
+            0.474
+          ],
+          "content": "6.034 - Spring 03 • 21"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.5,
+            0.407,
+            0.528
+          ],
+          "level": 2,
+          "content": "Stopping Image removed due to copyright restrictions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.549,
+            0.391,
+            0.577
+          ],
+          "content": "• Stop recursion if data contains only multiple instances of the same x with different y values"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.495,
+            0.509,
+            0.508
+          ],
+          "level": 2,
+          "content": "Slide 5.1.22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.438,
+            0.506,
+            0.932,
+            0.578
+          ],
+          "content": "As usual, when there is noise in the data, it's easy to overfit. We could conceivably grow the tree down to the point where there's a single data point in each leaf node. (Or maybe not: in fact, if have two data points with the same x values but different y values, our current algorithm will never terminate, which is certainly a problem). So, at the very least, we have to include a test to be sure that there's a split that makes both of the data subsets non-empty. If there is not, we have no choice but to stop and make a leaf node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.721,
+            0.125,
+            0.734
+          ],
+          "content": "Slide 5.1.23"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.733,
+            0.546,
+            0.77
+          ],
+          "content": "What should we do if we have to stop and make a leaf node when the data points at that node have different y values? Choosing the majority y value is the best strategy. If there are equal numbers of positive and negative points here, then you can just pick a y arbitrarily."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.697,
+            0.692,
+            0.908,
+            0.718
+          ],
+          "level": 2,
+          "content": "Stopping Image removed due to copyright restrictions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.742,
+            0.89,
+            0.769
+          ],
+          "content": "• Stop recursion if data contains only multiple instances of the same x with different y values"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.594,
+            0.768,
+            0.909,
+            0.805
+          ],
+          "continues_prev": true,
+          "content": "• Make leaf node with output equal to the y value that occurs in the majority of the cases in the data"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.839,
+            0.881,
+            0.906,
+            0.891
+          ],
+          "content": "6.034 - Spring 03 • 23"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.559,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.048,
+            0.388,
+            0.065
+          ],
+          "content": "Image removed due to"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.041,
+            0.509,
+            0.055
+          ],
+          "content": "Slide 5.1.24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.053,
+            0.811,
+            0.069
+          ],
+          "content": "But growing the tree as far down as we can will often result in overfitting."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.262,
+            0.064,
+            0.399,
+            0.079
+          ],
+          "content": "copyright restrictions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.066,
+            0.097,
+            0.395,
+            0.159
+          ],
+          "content": "• Stop recursion if data contains only multiple instances of the same x with different y values • Make leaf node with output equal to the y value that occurs in the majority of the cases in the data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.065,
+            0.158,
+            0.361,
+            0.175
+          ],
+          "content": "• Consider stopping to avoid overfitting when:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.321,
+            0.235,
+            0.391,
+            0.247
+          ],
+          "content": "6.034 - Spring 03 • 24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.268,
+            0.124,
+            0.281
+          ],
+          "content": "Slide 5.1.25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.28,
+            0.541,
+            0.306
+          ],
+          "content": "The simplest solution is to change the test on the base case to be a threshold on the entropy. If the entropy is below some value epsilon, we decide that this leaf is close enough to pure."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.708,
+            0.277,
+            0.914,
+            0.307
+          ],
+          "content": "Image removed due to copyright restrictions."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.594,
+            0.325,
+            0.89,
+            0.34
+          ],
+          "content": "• Stop recursion if data contains only multiple"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.604,
+            0.35,
+            0.92,
+            0.386
+          ],
+          "content": "• Make leaf node with output equal to the y value that occurs in the majority of the cases in the data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.594,
+            0.386,
+            0.91,
+            0.416
+          ],
+          "content": "• Consider stopping to avoid overfitting when: • entropy of a data set is below some threshold"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.189,
+            0.5,
+            0.406,
+            0.531
+          ],
+          "level": 2,
+          "content": "Stopping Image removed due to copyright restrictions."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.85,
+            0.463,
+            0.917,
+            0.474
+          ],
+          "content": "6.034 - Spring 03 • 25"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.495,
+            0.509,
+            0.508
+          ],
+          "level": 2,
+          "content": "Slide 5.1.26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.506,
+            0.934,
+            0.532
+          ],
+          "content": "Another simple solution is to have a threshold on the size of your leaves; if the data set at some leaf has fewer than that number of elements, then don't split it further."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.547,
+            0.382,
+            0.574
+          ],
+          "content": "• Stop recursion if data contains only multiple instances of the same x with different y values"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.573,
+            0.401,
+            0.608
+          ],
+          "continues_prev": true,
+          "content": "• Make leaf node with output equal to the y value that occurs in the majority of the cases in the data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.075,
+            0.608,
+            0.368,
+            0.623
+          ],
+          "content": "• Consider stopping to avoid overfitting when:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.622,
+            0.389,
+            0.636
+          ],
+          "content": "• entropy of a data set is below some threshold"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.635,
+            0.41,
+            0.651
+          ],
+          "content": "• number elements in a data set is below threshold"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.721,
+            0.124,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.1.27"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.733,
+            0.549,
+            0.77
+          ],
+          "content": "Another possible method is to only split if the split represents a real improvement. We can compare the entropy at the current node to the average entropy for the best attribute. If the entropy is not significantly decreased, then we could just give up."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.33,
+            0.685,
+            0.398,
+            0.696
+          ],
+          "content": "6.034 - Spring 03  26"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.708,
+            0.736,
+            0.788,
+            0.754
+          ],
+          "level": 2,
+          "content": "Stopping"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.592,
+            0.784,
+            0.884,
+            0.798
+          ],
+          "content": "• Stop recursion if data contains only multiple"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.598,
+            0.796,
+            0.899,
+            0.811
+          ],
+          "content": "instances of the same x with different y values"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.599,
+            0.808,
+            0.918,
+            0.845
+          ],
+          "continues_prev": true,
+          "content": "• Make leaf node with output equal to the y value that occurs in the majority of the cases in the data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.593,
+            0.845,
+            0.885,
+            0.86
+          ],
+          "content": "• Consider stopping to avoid overfitting when:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.604,
+            0.858,
+            0.906,
+            0.873
+          ],
+          "content": "• entropy of a data set is below some threshold"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.605,
+            0.872,
+            0.928,
+            0.887
+          ],
+          "content": "• number elements in a data set is below threshold"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.886,
+            0.925,
+            0.912
+          ],
+          "continues_prev": true,
+          "content": "• best next split doesn't decrease average entropy (but this can get us into trouble)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.808,
+            0.739,
+            0.929,
+            0.764
+          ],
+          "content": "Image removed due to copyright restrictions."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.848,
+            0.923,
+            0.916,
+            0.933
+          ],
+          "content": "6.034 - Spring 03 • 27"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.559,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.194,
+            0.049,
+            0.289,
+            0.067
+          ],
+          "level": 2,
+          "content": "Simulation"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.095,
+            0.103,
+            0.18,
+            0.197
+          ],
+          "content": "| $f_1$ | $f_2$ | $f_3$ | $f_4$ | y |\n| --- | --- | --- | --- | --- |\n| 0 | 1 | 1 | 0 | 0 |\n| 1 | 0 | 1 | 1 | 1 |\n| 1 | 1 | 1 | 0 | 1 |\n| 0 | 0 | 1 | 1 | 1 |\n| 1 | 0 | 0 | 1 | 0 |\n| 0 | 1 | 1 | 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.037,
+            0.437,
+            0.254
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.124,
+                0.281
+              ],
+              "content": "Slide 5.1.29"
+            },
+            {
+              "bbox": [
+                0.056,
+                0.28,
+                0.54,
+                0.305
+              ],
+              "content": "So, if we make that split, we have these two data sets. The one on the left has only a single output (in fact, only a single point)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.053,
+            0.934,
+            0.091
+          ],
+          "content": "Let's see how our tree-learning algorithm behaves on the example we used to demonstrate the DNF-learning algorithm. Our data set has a starting entropy of .92. Then, we can compute, for each feature, what the average entropy of the children would be if we were to split on that feature."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.096,
+            0.662,
+            0.113
+          ],
+          "content": "In this case, the best feature to split on is f<sub>3</sub>."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.686,
+            0.276,
+            0.782,
+            0.294
+          ],
+          "level": 2,
+          "content": "Simulation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.264,
+            0.93,
+            0.48
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.49,
+            0.437,
+            0.707
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.495,
+                0.508,
+                0.508
+              ],
+              "content": "Slide 5.1.30"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.721,
+                0.123,
+                0.734
+              ],
+              "content": "Slide 5.1.31"
+            },
+            {
+              "bbox": [
+                0.056,
+                0.732,
+                0.55,
+                0.758
+              ],
+              "content": "The average entropies of the possible splits are shown here. Features 1 and 2 are equally useful, and feature 4 is basically no help at all."
+            },
+            {
+              "bbox": [
+                0.441,
+                0.506,
+                0.888,
+                0.521
+              ],
+              "content": "So we make it into a leaf with output 0 and consider splitting the data set in the right child."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_10.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.687,
+            0.729,
+            0.781,
+            0.747
+          ],
+          "level": 2,
+          "content": "Simulation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.716,
+            0.927,
+            0.902
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_16.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.564,
+            0.918,
+            0.582,
+            0.931
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.916,
+            0.902,
+            0.926
+          ],
+          "content": "6.034 - Spring 03  31"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.038,
+            0.436,
+            0.253
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.057,
+                0.268,
+                0.304,
+                0.318
+              ],
+              "content": "Slide 5.1.33 So we can turn it into a leaf with output 1. In the left child, feature 2 will be the most useful."
+            },
+            {
+              "bbox": [
+                0.442,
+                0.041,
+                0.508,
+                0.055
+              ],
+              "content": "Slide 5.1.32"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.053,
+            0.929,
+            0.079
+          ],
+          "content": "So, we decide, arbitrarily, to split on feature 1, yielding these sub-problems. All of the examples in the right-hand child have the same output."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.264,
+            0.931,
+            0.48
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.491,
+            0.436,
+            0.706
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.057,
+                0.721,
+                0.255,
+                0.747
+              ],
+              "content": "Slide 5.1.35 So we make the leaves and we're done!"
+            },
+            {
+              "bbox": [
+                0.442,
+                0.495,
+                0.919,
+                0.523
+              ],
+              "content": "Slide 5.1.34 So we split on it, and now both children are homogeneous (all data points have the same output)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.717,
+            0.93,
+            0.933
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_9.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.041,
+            0.508,
+            0.055
+          ],
+          "level": 2,
+          "content": "Slide 5.1.36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.004,
+            0.559,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.038,
+            0.436,
+            0.254
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.443,
+                0.495,
+                0.508,
+                0.508
+              ],
+              "content": "Slide 5.1.38"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.123,
+                0.28
+              ],
+              "content": "Slide 5.1.37"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.28,
+            0.55,
+            0.318
+          ],
+          "content": "Let's look at a somewhat tricky data set. The data set has entropy .92. Furthermore, no matter what attribute we split on, the average entropy is .92. If we were using the stopping criterion that says we should stop when there is no split that improves the average entropy, we'd stop now."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.053,
+            0.919,
+            0.114
+          ],
+          "content": "One class of functions that often haunts us in machine learning are those that are based on the \"exclusive OR\". Exclusive OR is the two-input boolean function that has value 1 if one input has value 1 and the other has value 0. If both inputs are 1 or both are 0, then the output is 0. This function is hard to deal with, because neither input feature is, by itself, detectably related to the output. So, local methods that try to add one feature at a time can be easily misled by xor."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.264,
+            0.931,
+            0.481
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.491,
+            0.436,
+            0.707
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.056,
+                0.721,
+                0.296,
+                0.748
+              ],
+              "content": "Slide 5.1.39 So we split on it, and get homogenous children,"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.506,
+            0.91,
+            0.532
+          ],
+          "content": "But let's go ahead and split on feature 1. Now, if we look at the left-hand data set, we'll see that feature 2 will have an average entropy of 0."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.717,
+            0.929,
+            0.933
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_11.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.916,
+            0.902,
+            0.926
+          ],
+          "content": "6.034 - Spring 03  39"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.571,
+            0.74,
+            0.919,
+            0.903
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.041,
+                0.508,
+                0.055
+              ],
+              "content": "Slide 5.1.40"
+            },
+            {
+              "bbox": [
+                0.057,
+                0.721,
+                0.124,
+                0.734
+              ],
+              "content": "Slide 5.1.43"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.184,
+            0.049,
+            0.299,
+            0.068
+          ],
+          "level": 2,
+          "content": "Exclusive OR"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.065,
+            0.038,
+            0.436,
+            0.254
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.268,
+                0.124,
+                0.281
+              ],
+              "content": "Slide 5.1.41"
+            },
+            {
+              "bbox": [
+                0.057,
+                0.28,
+                0.265,
+                0.294
+              ],
+              "content": "And we go straight to leaves on this side."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.053,
+            0.618,
+            0.068
+          ],
+          "content": "Which we can replace with leaves."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.074,
+            0.763,
+            0.09
+          ],
+          "content": "Now, it's also easy to see that feature 2 will again be useful here,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.301,
+            0.534,
+            0.329
+          ],
+          "content": "So we can see that, although no single feature could reduce the average entropy of the child data sets, features 1 and 2 were useful in combination."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.678,
+            0.275,
+            0.792,
+            0.295
+          ],
+          "level": 2,
+          "content": "Exclusive OR"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.557,
+            0.264,
+            0.931,
+            0.481
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_11.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.205,
+            0.503,
+            0.276,
+            0.52
+          ],
+          "level": 2,
+          "content": "Pruning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.494,
+            0.509,
+            0.508
+          ],
+          "level": 2,
+          "content": "Slide 5.1.42"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.523,
+            0.421,
+            0.55
+          ],
+          "content": "• Best way to avoid overfitting and not get tricked by short-term lack of progress"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.549,
+            0.294,
+            0.564
+          ],
+          "content": "• Grow tree as far as possible"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.506,
+            0.938,
+            0.557
+          ],
+          "content": "Most real decision-tree building systems avoid this problem by building the tree down significantly deeper than will probably be useful (using something like an entropy cut-off or even getting down to a single data-point per leaf). Then, they prune the tree, using cross-validation to decide what an appropriate pruning depth is."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.562,
+            0.387,
+            0.577
+          ],
+          "content": "-leaves are uniform or contain a single X"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.576,
+            0.417,
+            0.601
+          ],
+          "continues_prev": true,
+          "content": "• Prune the tree until it performs well on held-out data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.6,
+            0.395,
+            0.628
+          ],
+          "content": "• Amount of pruning is like epsilon in the DNF algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.733,
+            0.546,
+            0.77
+          ],
+          "content": "We ran a simple version of the tree-learning program on the congressional voting database. Instead of pruning, it has a parameter on the minimum leaf size. If it reaches a node with fewer than that number of examples, it stops and makes a leaf with the majority output."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.777,
+            0.544,
+            0.804
+          ],
+          "content": "Here's the tree we get when the minimum leaf size of 20. This problem is pretty easy, so this small tree works very well. If we grow bigger trees, we don't get any real increase in accuracy."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.644,
+            0.729,
+            0.825,
+            0.748
+          ],
+          "level": 2,
+          "content": "Congressional Voting"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.596,
+            0.905,
+            0.699,
+            0.919
+          ],
+          "content": "min leaf size = 20"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.565,
+            0.918,
+            0.581,
+            0.931
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.834,
+            0.915,
+            0.902,
+            0.927
+          ],
+          "content": "6.034 - Spring 03  43"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.069,
+            0.237,
+            0.089,
+            0.253
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.025,
+            0.004,
+            0.559,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.189,
+            0.049,
+            0.293,
+            0.068
+          ],
+          "content": "Data Mining"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.236,
+            0.409,
+            0.247
+          ],
+          "content": "6.034 - Spring 03  44"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.083,
+            0.396,
+            0.11
+          ],
+          "content": "• Making useful predictions in (usually corporate) applications"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.103,
+            0.123,
+            0.239,
+            0.137
+          ],
+          "content": "• easy to implement"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.103,
+            0.136,
+            0.331,
+            0.151
+          ],
+          "content": "• efficient (even on huge data sets)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.102,
+            0.15,
+            0.373,
+            0.176
+          ],
+          "content": "• easy for humans to understand resulting hypotheses"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.041,
+            0.509,
+            0.055
+          ],
+          "content": "Slide 5.1.44"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.053,
+            0.919,
+            0.09
+          ],
+          "content": "Because decision tree learning is easy to implement and relatively computationally efficient, and especially because the hypotheses are easily understandable by humans, this technology is very widely used."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.097,
+            0.921,
+            0.125
+          ],
+          "content": "The field of data mining is the application of learning algorithms to problems of interest in many industries. Decision trees is one of the principle methods used in data mining."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.13,
+            0.923,
+            0.158
+          ],
+          "content": "In the next few sections, we'll see how to broaden the applicability of this and other algorithms to domains with much richer kinds of inputs and outputs."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.394,
+            0.286,
+            0.606,
+            0.305
+          ],
+          "level": 2,
+          "content": "6.034 Notes: Section 5.2"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.343,
+            0.118,
+            0.356
+          ],
+          "level": 2,
+          "content": "Slide 5.2.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.354,
+            0.515,
+            0.381
+          ],
+          "content": "Let's look at one more algorithm, which is called naive Bayes. It's named after the Reverend Thomas Bayes, who developed a very important theory of probabilistic reasoning."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.684,
+            0.328,
+            0.79,
+            0.345
+          ],
+          "level": 2,
+          "content": "Naive Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.362,
+            0.766,
+            0.389
+          ],
+          "content": "• Founded on Bayes' rule for probabilistic inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.37,
+            0.918,
+            0.385
+          ],
+          "content": "Image of Rev. Thomas"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.388,
+            0.916,
+            0.412
+          ],
+          "content": "Bayes removed due to copyright restrictions. based on evidence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.413,
+            0.796,
+            0.451
+          ],
+          "content": "• Choose hypothesis with the maximum probability after the evidence has been incorporated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.805,
+            0.444,
+            0.916,
+            0.46
+          ],
+          "content": "Rev. Thomas Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.839,
+            0.514,
+            0.905,
+            0.525
+          ],
+          "content": "6.034 - Spring 03 • 1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.171,
+            0.55,
+            0.276,
+            0.568
+          ],
+          "level": 2,
+          "content": "Naïve Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.584,
+            0.252,
+            0.61
+          ],
+          "content": "• Founded on Bayes' rule for probabilistic inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.279,
+            0.581,
+            0.405,
+            0.609
+          ],
+          "content": "Image of Rev. Thomas Bayes removed due to"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.609,
+            0.287,
+            0.634
+          ],
+          "content": "• Update probability of hypotheses based on evidence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.634,
+            0.282,
+            0.672
+          ],
+          "content": "• Choose hypothesis with the maximum probability after the evidence has been incorporated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.292,
+            0.665,
+            0.402,
+            0.681
+          ],
+          "content": "Rev. Thomas Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.682,
+            0.291,
+            0.71
+          ],
+          "content": "• Algorithm is particularly useful for domains with lots of features"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.562,
+            0.502,
+            0.576
+          ],
+          "level": 2,
+          "content": "Slide 5.2.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.438,
+            0.574,
+            0.939,
+            0.624
+          ],
+          "content": "It's widely used in applications with lots of features. It was derived using a somewhat different set of justifications than the ones we've given you. We'll start by going through the algorithm, and at the end I'll go through its probabilistic background. Don't worry if you don't follow it exactly. It's just motivational, but it should make sense to anyone who has studied basic probability."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.327,
+            0.736,
+            0.391,
+            0.746
+          ],
+          "content": "6.034 - Spring 03 • 2"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.28,
+            0.935,
+            0.319
+          ],
+          "content": "Now, we look at the negative examples, and figure out what fraction of negative examples have feature 1 on and what fraction have it off. We call these fractions $\\mathbf { R } _ { 1 } ( 1 , 0 )$ and $\\mathbf { R } _ { 1 } ( 0 ,$ 0). Here we see that all negative examples have this feature on."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.839,
+            0.236,
+            0.901,
+            0.247
+          ],
+          "content": "6.034 - Spring 03 • 3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.042,
+            0.117,
+            0.054
+          ],
+          "content": "Slide 5.2.3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.054,
+            0.528,
+            0.078
+          ],
+          "content": "Let's start by looking at an example data set. We're going to try to characterize, for each feature individually, how it is related to the class of an example."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.087,
+            0.552,
+            0.125
+          ],
+          "content": "First, we look at the positive examples, and count up what fraction of them have feature 1 on and what fraction have feature 1 off. We'll call these fractions $\\mathbb { R } _ { 1 } ( 1 , 1 )$ and $\\mathbf { R } _ { 1 } ( 0 , 1 )$ . We can see here that most positive examples have this feature 1 off."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.095,
+            0.301,
+            0.179,
+            0.444
+          ],
+          "content": "f1 f2 f3 f4 y 0 1 1 0 1 0 0 1 1 1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.204,
+            0.277,
+            0.278,
+            0.293
+          ],
+          "content": "Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.501,
+            0.28
+          ],
+          "content": "Slide 5.2.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.297,
+            0.388,
+            0.334
+          ],
+          "content": "$R_{1}(1,1)=1/5$ fraction of all positive examples that have feature 1 on"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.194,
+            0.334,
+            0.388,
+            0.37
+          ],
+          "content": "• R $(0,1)=4/5$ fraction of all positive examples that have feature 1 off"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.194,
+            0.37,
+            0.393,
+            0.406
+          ],
+          "content": "• R1(1,0)=5/5: fraction of all negative examples that have feature 1 on"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.194,
+            0.406,
+            0.393,
+            0.443
+          ],
+          "content": "• R1(0,0)=0/5: fraction of all negative examples that have feature 1 off"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.345,
+            0.463,
+            0.408,
+            0.473
+          ],
+          "content": "6.034 - Spring 03  4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.495,
+            0.117,
+            0.507
+          ],
+          "content": "Slide 5.2.5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.507,
+            0.471,
+            0.52
+          ],
+          "content": "We can compute these values, as shown here, for each of the other features, as well."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.197,
+            0.73,
+            0.284,
+            0.745
+          ],
+          "level": 2,
+          "content": "Prediction"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.75,
+            0.226,
+            0.764
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {1} (0, 1) = 4 / 5",
+          "image_source": "images/page_12_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.762,
+            0.225,
+            0.775
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 0) = 5 / 5 \\quad \\mathrm{R} _ {1} (0, 0) = 0 / 5",
+          "image_source": "images/page_12_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.774,
+            0.225,
+            0.786
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {2} (0, 1) = 4 / 5",
+          "image_source": "images/page_12_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.785,
+            0.225,
+            0.796
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 0) = 2 / 5 \\quad \\mathrm{R} _ {2} (0, 0) = 3 / 5",
+          "image_source": "images/page_12_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.796,
+            0.225,
+            0.808
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 1) = 4 / 5 \\quad \\mathrm{R} _ {3} (0, 1) = 1 / 5",
+          "image_source": "images/page_12_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.808,
+            0.225,
+            0.819
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 0) = 1 / 5 \\quad \\mathrm{R} _ {3} (0, 0) = 4 / 5",
+          "image_source": "images/page_12_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.819,
+            0.225,
+            0.83
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 1) = 2 / 5 \\quad \\mathrm{R} _ {4} (0, 1) = 3 / 5",
+          "image_source": "images/page_12_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.83,
+            0.225,
+            0.843
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 0) = 4 / 5 \\quad \\mathrm{R} _ {4} (0, 0) = 1 / 5",
+          "image_source": "images/page_12_equation_25.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.075,
+            0.672,
+            0.219
+          ],
+          "content": "f{1 f2 f3 f4 y 0 1 1 0 1 0 0 1 1 1 1 0 1 0 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.698,
+            0.05,
+            0.771,
+            0.066
+          ],
+          "content": "Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.687,
+            0.07,
+            0.881,
+            0.107
+          ],
+          "content": "• R₁(1,1)=1/5: fraction of all positive examples that have feature 1 on"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.688,
+            0.107,
+            0.881,
+            0.144
+          ],
+          "content": "• R₁(0,1)=4/5: fraction of all positive examples that have feature 1 off"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.698,
+            0.504,
+            0.772,
+            0.52
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.524,
+            0.767,
+            0.538
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 1) = 1 / 5",
+          "image_source": "images/page_12_equation_31.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.538,
+            0.767,
+            0.553
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 0) = 5 / 5",
+          "image_source": "images/page_12_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.525,
+            0.851,
+            0.538
+          ],
+          "content": "R _ {1} (0, 1) = 4 / 5",
+          "image_source": "images/page_12_equation_33.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.588,
+            0.528,
+            0.672,
+            0.672
+          ],
+          "content": "| $f_{1}$ | $f_{2}$ | $f_{3}$ | $f_{4}$ | y |\n| --- | --- | --- | --- | --- |\n| 0 | 1 | 1 | 0 | 1 |\n| 0 | 0 | 1 | 1 | 1 |\n| 1 | 0 | 1 | 0 | 1 |\n| 0 | 0 | 1 | 1 | 1 |\n| 0 | 0 | 0 | 0 | 1 |\n| 1 | 0 | 0 | 1 | 0 |\n| 1 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 0 | 0 | 0 |\n| 1 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 1 | 0 |",
+          "captions": [
+            {
+              "bbox": [
+                0.443,
+                0.722,
+                0.501,
+                0.734
+              ],
+              "content": "Slide 5.2.6"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_table_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.538,
+            0.851,
+            0.552
+          ],
+          "content": "R _ {1} (0, 0) = 0 / 5",
+          "image_source": "images/page_12_equation_35.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.565,
+            0.767,
+            0.579
+          ],
+          "content": "R _ {2} (1, 1) = 1 / 5",
+          "image_source": "images/page_12_equation_36.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.579,
+            0.766,
+            0.593
+          ],
+          "content": "R _ {2} (1, 0) = 2 / 5",
+          "image_source": "images/page_12_equation_37.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.605,
+            0.767,
+            0.619
+          ],
+          "content": "R _ {3} (1, 1) = 4 / 5",
+          "image_source": "images/page_12_equation_38.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.565,
+            0.852,
+            0.579
+          ],
+          "content": "R _ {2} (0, 1) = 4 / 5",
+          "image_source": "images/page_12_equation_39.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.62,
+            0.767,
+            0.634
+          ],
+          "content": "R _ {3} (1, 0) = 1 / 5",
+          "image_source": "images/page_12_equation_40.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.579,
+            0.851,
+            0.593
+          ],
+          "content": "R _ {2} (0, 0) = 3 / 5",
+          "image_source": "images/page_12_equation_41.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.605,
+            0.852,
+            0.619
+          ],
+          "content": "R _ {3} (0, 1) = 1 / 5",
+          "image_source": "images/page_12_equation_42.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.62,
+            0.852,
+            0.634
+          ],
+          "content": "R _ {3} (0, 0) = 4 / 5",
+          "image_source": "images/page_12_equation_43.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.646,
+            0.768,
+            0.66
+          ],
+          "content": "R _ {4} (1, 1) = 2 / 5",
+          "image_source": "images/page_12_equation_44.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.688,
+            0.66,
+            0.768,
+            0.674
+          ],
+          "content": "R _ {4} (1, 0) = 4 / 5",
+          "image_source": "images/page_12_equation_45.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.772,
+            0.645,
+            0.852,
+            0.66
+          ],
+          "content": "R _ {4} (0, 1) = 3 / 5",
+          "image_source": "images/page_12_equation_46.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.733,
+            0.906,
+            0.758
+          ],
+          "content": "These R values actually represent our hypothesis in a way we'll see more clearly later. But that means that, given a new input x, we can use the R values to compute an output value Y."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.839,
+            0.69,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 5"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.074,
+            0.919,
+            0.086,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.345,
+            0.916,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 6"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.557,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.838,
+            0.236,
+            0.901,
+            0.247
+          ],
+          "content": "6.034 - Spring 03 • 7"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.042,
+            0.117,
+            0.054
+          ],
+          "content": "Slide 5.2.7"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.054,
+            0.551,
+            0.128
+          ],
+          "content": "Imagine we get a new $\\mathrm{x}=<0,0,1,1>$ . We start out by computing a \"score\" for this example being a positive example. We do that by multiplying the positive R values, one for each feature. So, our x has feature 1 equal to 0, so we use R1 of 0, 1. It has feature 2 equal to zero, so we use R<sub>2</sub> of 0, 1. It has feature 3 equal to 1, so we use $\\mathtt { R } _ { 3 }$ of 1, 1. And so on. I've shown the feature values in blue to make it clear which arguments to the R functions they're responsible for. Similarly, I've shown the 1's that come from the fact that we're computing the positive score in green."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.135,
+            0.552,
+            0.172
+          ],
+          "content": "Each of the factors in the score represents the degree to which this feature tends to have this value in positive examples. Multiplied all together, they give us a measure of how likely it is that this example is positive."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.277,
+            0.285,
+            0.292
+          ],
+          "content": "Prediction"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.502,
+            0.28
+          ],
+          "content": "Slide 5.2.8"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.295,
+            0.23,
+            0.308
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {1} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.307,
+            0.229,
+            0.319
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 0) = 5 / 5 \\quad \\mathrm{R} _ {1} (0, 0) = 0 / 5",
+          "image_source": "images/page_13_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.318,
+            0.229,
+            0.33
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {2} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.329,
+            0.229,
+            0.341
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 0) = 2 / 5 \\quad \\mathrm{R} _ {2} (0, 0) = 3 / 5",
+          "image_source": "images/page_13_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.34,
+            0.229,
+            0.353
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 1) = 4 / 5 \\quad \\mathrm{R} _ {3} (0, 1) = 1 / 5",
+          "image_source": "images/page_13_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.351,
+            0.229,
+            0.364
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 0) = 1 / 5 \\quad \\mathrm{R} _ {3} (0, 0) = 4 / 5",
+          "image_source": "images/page_13_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.363,
+            0.23,
+            0.375
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 1) = 2 / 5 \\quad \\mathrm{R} _ {4} (0, 1) = 3 / 5",
+          "image_source": "images/page_13_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.374,
+            0.23,
+            0.388
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 0) = 4 / 5 \\quad \\mathrm{R} _ {4} (0, 0) = 1 / 5",
+          "image_source": "images/page_13_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.091,
+            0.394,
+            0.23,
+            0.408
+          ],
+          "content": "\\text {   New   } x = <   0, 0, 1, 1 >",
+          "image_source": "images/page_13_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.091,
+            0.407,
+            0.402,
+            0.422
+          ],
+          "content": "\\bullet S (1) = R _ {1} (0, 1) * R _ {2} (0, 1) * R _ {3} (1, 1) * R _ {4} (1, 1) = . 2 0 5",
+          "image_source": "images/page_13_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.091,
+            0.421,
+            0.384,
+            0.437
+          ],
+          "content": "\\bullet S (0) = R _ {1} (0, 0) ^ {*} R _ {2} (0, 0) ^ {*} R _ {3} (1, 0) ^ {*} R _ {4} (1, 0) = 0",
+          "image_source": "images/page_13_equation_17.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.69,
+            0.05,
+            0.779,
+            0.066
+          ],
+          "content": "Prediction"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.07,
+            0.721,
+            0.084
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {1} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_19.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.345,
+            0.462,
+            0.408,
+            0.473
+          ],
+          "content": "6.034 - Spring 03 • 8"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.082,
+            0.721,
+            0.095
+          ],
+          "content": "\\mathrm{R} _ {1} (1, 0) = 5 / 5 \\quad \\mathrm{R} _ {1} (0, 0) = 0 / 5",
+          "image_source": "images/page_13_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.093,
+            0.721,
+            0.106
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {2} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.105,
+            0.72,
+            0.117
+          ],
+          "content": "\\mathrm{R} _ {2} (1, 0) = 2 / 5 \\quad \\mathrm{R} _ {2} (0, 0) = 3 / 5",
+          "image_source": "images/page_13_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.127,
+            0.721,
+            0.14
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 0) = 1 / 5 \\quad \\mathrm{R} _ {3} (0, 0) = 4 / 5",
+          "image_source": "images/page_13_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.117,
+            0.72,
+            0.129
+          ],
+          "content": "\\mathrm{R} _ {3} (1, 1) = 4 / 5 \\quad \\mathrm{R} _ {3} (0, 1) = 1 / 5",
+          "image_source": "images/page_13_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.139,
+            0.721,
+            0.151
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 1) = 2 / 5 \\quad \\mathrm{R} _ {4} (0, 1) = 3 / 5",
+          "image_source": "images/page_13_equation_26.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.579,
+            0.15,
+            0.721,
+            0.164
+          ],
+          "content": "\\mathrm{R} _ {4} (1, 0) = 4 / 5 \\quad \\mathrm{R} _ {4} (0, 0) = 1 / 5",
+          "image_source": "images/page_13_equation_27.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.167,
+            0.723,
+            0.182
+          ],
+          "content": "\\text {   New   } x = <   0, 0, 1, 1 >",
+          "image_source": "images/page_13_equation_28.jpg"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.058,
+            0.506,
+            0.548,
+            0.52
+          ],
+          "content": "Finally, we compare score 1 to score 0, and generate output 1 because score 1 is larger than score 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.495,
+            0.117,
+            0.507
+          ],
+          "content": "Slide 5.2.9"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.584,
+            0.18,
+            0.896,
+            0.197
+          ],
+          "content": "\\bullet S (1) = R _ {1} (0, 1) ^ {*} R _ {2} (0, 1) ^ {*} R _ {3} (1, 1) ^ {*} R _ {4} (1, 1) = . 2 0 5",
+          "image_source": "images/page_13_equation_31.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.28,
+            0.925,
+            0.33
+          ],
+          "content": "We can do the same thing to compute a score for x being a negative example. Something pretty radical happens here, because we have $\\mathtt { R } _ { 1 }$ of 0, 0 equal to 0. We've never seen a negative example with feature 1 off, so we have concluded, essentially, that it's impossible for that to happen. Thus, because our x has feature 1 equal to $0 ,$ we think it's impossible for x to be a negative example."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.69,
+            0.504,
+            0.778,
+            0.519
+          ],
+          "level": 2,
+          "content": "Prediction"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.575,
+            0.519,
+            0.727,
+            0.532
+          ],
+          "content": "\\bullet \\quad R _ {1} (1, 1) = 1 / 5 \\quad R _ {1} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.53,
+            0.727,
+            0.544
+          ],
+          "content": "\\bullet \\mathrm{R} _ {1} (1, 0) = 5 / 5 \\quad \\mathrm{R} _ {1} (0, 0) = 0 / 5",
+          "image_source": "images/page_13_equation_35.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.542,
+            0.726,
+            0.555
+          ],
+          "content": "\\bullet \\mathrm{R} _ {2} (1, 1) = 1 / 5 \\quad \\mathrm{R} _ {2} (0, 1) = 4 / 5",
+          "image_source": "images/page_13_equation_36.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.553,
+            0.727,
+            0.566
+          ],
+          "content": "\\cdot R _ {2} (1, 0) = 2 / 5 \\quad R _ {2} (0, 0) = 3 / 5",
+          "image_source": "images/page_13_equation_37.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.565,
+            0.727,
+            0.577
+          ],
+          "content": "\\cdot R _ {3} (1, 1) = 4 / 5 \\quad R _ {3} (0, 1) = 1 / 5",
+          "image_source": "images/page_13_equation_38.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.575,
+            0.727,
+            0.588
+          ],
+          "content": "\\bullet \\mathrm{R} _ {3} (1, 0) = 1 / 5 \\quad \\mathrm{R} _ {3} (0, 0) = 4 / 5",
+          "image_source": "images/page_13_equation_39.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.587,
+            0.728,
+            0.6
+          ],
+          "content": "\\bullet \\mathrm{R} _ {4} (1, 1) = 2 / 5 \\quad \\mathrm{R} _ {4} (0, 1) = 3 / 5",
+          "image_source": "images/page_13_equation_40.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.575,
+            0.598,
+            0.727,
+            0.611
+          ],
+          "content": "\\bullet \\quad R _ {4} (1, 0) = 4 / 5 \\quad R _ {4} (0, 0) = 1 / 5",
+          "image_source": "images/page_13_equation_41.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.62,
+            0.725,
+            0.635
+          ],
+          "content": "\\text {   New   } x = <   0, 0, 1, 1 >",
+          "image_source": "images/page_13_equation_42.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.634,
+            0.896,
+            0.649
+          ],
+          "content": "\\bullet S (1) = R _ {1} (0, 1) ^ {*} R _ {2} (0, 1) ^ {*} R _ {3} (1, 1) ^ {*} R _ {4} (1, 1) = . 2 0 5",
+          "image_source": "images/page_13_equation_43.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.648,
+            0.877,
+            0.663
+          ],
+          "content": "\\bullet S (0) = R _ {1} (0, 0) * R _ {2} (0, 0) * R _ {3} (1, 0) * R _ {4} (1, 0) = 0",
+          "image_source": "images/page_13_equation_44.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.585,
+            0.662,
+            0.791,
+            0.676
+          ],
+          "content": "\\bullet \\mathrm{S} (1) > \\mathrm{S} (0), \\text {so predict class 1}",
+          "image_source": "images/page_13_equation_45.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.838,
+            0.689,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03  9"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.16,
+            0.73,
+            0.321,
+            0.747
+          ],
+          "level": 2,
+          "content": "Learning Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.75,
+            0.302,
+            0.765
+          ],
+          "content": "• Estimate from the data, for all j:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.767,
+            0.316,
+            0.797
+          ],
+          "content": "R _ {j} (1, 1) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 1)}{\\# (y ^ {i} = 1)}",
+          "image_source": "images/page_13_equation_49.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.508,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.10"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.733,
+            0.924,
+            0.772
+          ],
+          "content": "Here's the learning algorithm written out just a little bit more generally. To compute $\\operatorname { R } _ { \\mathrm { j } } \\mathrm { o f } \\: 1 ,$ 1, we just count, in our data set, how many examples there have been in which feature j has had value 1 and the output was also 1, and divide that by the total number of samples with output 1."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.918,
+            0.088,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.342,
+            0.916,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 10"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.057,
+            0.041,
+            0.124,
+            0.054
+          ],
+          "content": "Slide 5.2.11"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.052,
+            0.264,
+            0.069
+          ],
+          "content": "Now, R<sub>j</sub> of 0, 1 is just 1 minus R<sub>j</sub> of 1, 1."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.653,
+            0.049,
+            0.816,
+            0.067
+          ],
+          "content": "Learning Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.07,
+            0.798,
+            0.086
+          ],
+          "content": "• Estimate from the data, for all j:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.646,
+            0.086,
+            0.81,
+            0.118
+          ],
+          "content": "R _ {j} (1, 1) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 1)}{\\# (y ^ {i} = 1)}",
+          "image_source": "images/page_14_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.902,
+            0.247
+          ],
+          "content": "6.034 - Spring 03 • 11"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.648,
+            0.125,
+            0.771,
+            0.143
+          ],
+          "content": "R _ {j} (0, 1) = 1 - R _ {j} (1, 1)",
+          "image_source": "images/page_14_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.159,
+            0.276,
+            0.322,
+            0.294
+          ],
+          "content": "Learning Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.507,
+            0.281
+          ],
+          "content": "Slide 5.2.12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.296,
+            0.303,
+            0.312
+          ],
+          "content": "• Estimate from the data, for all j:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.313,
+            0.316,
+            0.344
+          ],
+          "content": "R _ {j} (1, 1) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 1)}{\\# (y ^ {i} = 1)}",
+          "image_source": "images/page_14_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.351,
+            0.278,
+            0.37
+          ],
+          "content": "R _ {j} (0, 1) = 1 - R _ {j} (1, 1)",
+          "image_source": "images/page_14_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.392,
+            0.317,
+            0.424
+          ],
+          "content": "R _ {j} (1, 0) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 0)}{\\# (y ^ {i} = 0)}",
+          "image_source": "images/page_14_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.428,
+            0.279,
+            0.448
+          ],
+          "content": "R _ {j} (0, 0) = 1 - R _ {j} (1, 0)",
+          "image_source": "images/page_14_equation_14.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.462,
+            0.409,
+            0.474
+          ],
+          "content": "6.034 - Spring 03  12"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.056,
+            0.505,
+            0.552,
+            0.535
+          ],
+          "content": "Now, given a new example, x, let the score for class 1, S(1), be the product, over all j, of $\\mathtt { R _ { j } }$ of 1,1 if $\\mathbf { x _ { j } } = 1$ and $\\mathtt { R _ { j } }$ of 0, 1 otherwise."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.154,
+            0.73,
+            0.327,
+            0.746
+          ],
+          "level": 2,
+          "content": "Prediction Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.75,
+            0.194,
+            0.766
+          ],
+          "content": "• Given a new $\\mathbf{x},$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.16,
+            0.771,
+            0.339,
+            0.805
+          ],
+          "content": "S (1) = \\prod_ {j} \\left\\{ \\begin{array}{l l} R _ {j} (1, 1) & \\text { if } x _ {j} = 1 \\\\ R _ {j} (0, 1) & \\text { otherwise } \\end{array} \\right.",
+          "image_source": "images/page_14_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.16,
+            0.805,
+            0.341,
+            0.838
+          ],
+          "content": "S (0) = \\prod_ {j} \\left\\{ \\begin{array}{l l} R _ {j} (1, 0) & \\text {if} x _ {j} = 1 \\\\ R _ {j} (0, 0) & \\text {otherwise} \\end{array} \\right.",
+          "image_source": "images/page_14_equation_20.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.279,
+            0.929,
+            0.308
+          ],
+          "content": "Similarly, $\\mathrm { R _ { j } }$ of 1, 0 is the number of examples in which feature j had value 1 and the output was 0, divided the total number of examples with output 0. And $\\mathtt { R _ { j } }$ of 0, 0 is just 1 minus $\\mathtt { R _ { j } }$ of 1, 0."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.648,
+            0.503,
+            0.821,
+            0.52
+          ],
+          "level": 2,
+          "content": "Prediction Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.524,
+            0.688,
+            0.539
+          ],
+          "content": "• Given a new x,"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.653,
+            0.545,
+            0.763,
+            0.579
+          ],
+          "content": "S (1) = \\prod_ {j} \\left\\{ \\begin{array}{l} R _ {j} (1, 1) \\\\ R _ {j} (0, 1) \\end{array} \\right.",
+          "image_source": "images/page_14_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.773,
+            0.546,
+            0.828,
+            0.562
+          ],
+          "content": "\\text {if} x _ {j} = 1",
+          "image_source": "images/page_14_equation_25.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.768,
+            0.562,
+            0.835,
+            0.576
+          ],
+          "content": "otherwise"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.508,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.14"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.732,
+            0.864,
+            0.748
+          ],
+          "content": "Similarly, S(0) is the product, over all j, of R<sub>j</sub> of 1, 0 if x<sub>j</sub> = 1 and R<sub>j</sub> of 0,0 otherwise."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.689,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 13"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.918,
+            0.088,
+            0.931
+          ],
+          "content": "o"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.916,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 14"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.058,
+            0.041,
+            0.124,
+            0.054
+          ],
+          "content": "Slide 5.2.15"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.902,
+            0.247
+          ],
+          "content": "6.034 - Spring 03  15"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.053,
+            0.371,
+            0.068
+          ],
+          "content": "If S(1) is greater than S(0), then we'll predict that Y = 1, else 0."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.154,
+            0.276,
+            0.328,
+            0.294
+          ],
+          "content": "Prediction Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.508,
+            0.281
+          ],
+          "content": "Slide 5.2.16"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.298,
+            0.194,
+            0.312
+          ],
+          "content": "• Given a new $\\mathbf{x},$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.221,
+            0.32,
+            0.287,
+            0.335
+          ],
+          "content": "\\log R _ {j} (1, 1)",
+          "image_source": "images/page_15_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.306,
+            0.32,
+            0.352,
+            0.335
+          ],
+          "content": "f x _ {j} = 1",
+          "image_source": "images/page_15_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.221,
+            0.335,
+            0.286,
+            0.351
+          ],
+          "content": "\\log R _ {j} (0, 1)",
+          "image_source": "images/page_15_equation_9.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.292,
+            0.336,
+            0.359,
+            0.35
+          ],
+          "content": "otherwise"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.138,
+            0.355,
+            0.358,
+            0.387
+          ],
+          "content": "log () =∑ log (,0) it $x_{j} = 1$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.391,
+            0.278,
+            0.409
+          ],
+          "content": "• Output 1 if log S(1) > log S(0)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.122,
+            0.425,
+            0.403,
+            0.44
+          ],
+          "content": "Better to add logs than to multiply small probabilities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.462,
+            0.409,
+            0.473
+          ],
+          "content": "6.034 - Spring 03 · 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.495,
+            0.124,
+            0.507
+          ],
+          "content": "Slide 5.2.17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.507,
+            0.554,
+            0.565
+          ],
+          "content": "In our example, we saw that if we had never seen a feature take value 1 in a positive example, our estimate for how likely that would be to happen in the future was 0. That seems pretty radical, especially when we only have had a few examples to learn from. There's a standard hack to fix this problem, called the \"Laplace correction\". When counting up events, we add a 1 to the numerator and a 2 to the denominator."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.574,
+            0.55,
+            0.621
+          ],
+          "content": "If we've never seen any positive instances, for example, our R (1,1) values would be 1/2, which seems sort of reasonable in the absence of any information. And if we see lots and lots of examples, this 1 and 2 will be washed out, and we'll converge to the same estimate that we would have gotten without the correction."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.63,
+            0.532,
+            0.655
+          ],
+          "content": "There's a beautiful probabilistic justification for what looks like an obvious hack. But, sadly, it's beyond the scope of this class."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.139,
+            0.73,
+            0.343,
+            0.746
+          ],
+          "level": 2,
+          "content": "Example with Correction"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.508,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.18"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.28,
+            0.928,
+            0.329
+          ],
+          "content": "We can run into problems of numerical precision in our calculations if we multiply lots of probabilities together, because the numbers will rapidly get very small. One standard way to deal with this is to take logs everywhere. Now, we'll output 1 if the log of the score for 1 is greater than the log of score 0. And the log of a product is the sum of the logs of the factors."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.195,
+            0.75,
+            0.284,
+            0.765
+          ],
+          "content": "\\bullet R _ {1} (1, 1) = 2 / 7",
+          "image_source": "images/page_15_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.287,
+            0.75,
+            0.367,
+            0.765
+          ],
+          "content": "R _ {1} (0, 1) = 5 / 7",
+          "image_source": "images/page_15_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.765,
+            0.283,
+            0.779
+          ],
+          "content": "\\bullet R _ {1} (1, 0) = 6 / 7",
+          "image_source": "images/page_15_equation_24.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.095,
+            0.755,
+            0.178,
+            0.899
+          ],
+          "content": "| $f_{1}$ | $f_{2}$ | $f_{3}$ | $f_{4}$ | y |\n| --- | --- | --- | --- | --- |\n| 0 | 1 | 1 | 0 | 1 |\n| 0 | 0 | 1 | 1 | 1 |\n| 1 | 0 | 1 | 0 | 1 |\n| 0 | 0 | 1 | 1 | 1 |\n| 0 | 0 | 0 | 0 | 1 |\n| 1 | 0 | 0 | 1 | 0 |\n| 1 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 0 | 0 | 0 |\n| 1 | 1 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_table_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.287,
+            0.765,
+            0.378,
+            0.779
+          ],
+          "content": "\\mathrm{R} _ {1} (0, 0) = 1 / 7",
+          "image_source": "images/page_15_equation_26.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.778,
+            0.283,
+            0.792
+          ],
+          "content": "\\bullet R _ {2} (1, 1) = 2 / 7",
+          "image_source": "images/page_15_equation_27.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.287,
+            0.778,
+            0.369,
+            0.792
+          ],
+          "content": "R _ {2} (0, 1) = 5 / 7",
+          "image_source": "images/page_15_equation_28.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.792,
+            0.284,
+            0.805
+          ],
+          "content": "\\bullet R _ {2} (1, 0) = 3 / 7",
+          "image_source": "images/page_15_equation_29.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.805,
+            0.283,
+            0.819
+          ],
+          "content": "\\bullet R _ {3} (1, 1) = 5 / 7",
+          "image_source": "images/page_15_equation_30.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.288,
+            0.792,
+            0.368,
+            0.806
+          ],
+          "content": "R _ {2} (0, 0) = 4 / 7",
+          "image_source": "images/page_15_equation_31.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.819,
+            0.283,
+            0.833
+          ],
+          "content": "\\bullet R _ {3} (1, 0) = 2 / 7",
+          "image_source": "images/page_15_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.288,
+            0.805,
+            0.368,
+            0.82
+          ],
+          "content": "R _ {3} (0, 1) = 2 / 7",
+          "image_source": "images/page_15_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.194,
+            0.832,
+            0.283,
+            0.846
+          ],
+          "content": "\\bullet \\mathrm{R} _ {4} (1, 1) = 3 / 7",
+          "image_source": "images/page_15_equation_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.288,
+            0.819,
+            0.368,
+            0.833
+          ],
+          "content": "R _ {3} (0, 0) = 5 / 7",
+          "image_source": "images/page_15_equation_35.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.288,
+            0.832,
+            0.368,
+            0.846
+          ],
+          "content": "R _ {4} (0, 1) = 4 / 7",
+          "image_source": "images/page_15_equation_36.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.193,
+            0.845,
+            0.369,
+            0.861
+          ],
+          "content": "\\bullet \\mathrm{R} _ {4} (1, 0) = 5 / 7 \\quad \\mathrm{R} _ {4} (0, 0) = 2 / 7",
+          "image_source": "images/page_15_equation_37.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.07,
+            0.688,
+            0.086
+          ],
+          "content": "• Given a new x,"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.646,
+            0.049,
+            0.822,
+            0.067
+          ],
+          "content": "Prediction Algorithm"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.715,
+            0.093,
+            0.762,
+            0.11
+          ],
+          "content": "R _ {j} (1, 1)",
+          "image_source": "images/page_15_equation_40.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.773,
+            0.093,
+            0.828,
+            0.109
+          ],
+          "content": "\\text {if} x _ {j} = 1",
+          "image_source": "images/page_15_equation_41.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.715,
+            0.109,
+            0.762,
+            0.124
+          ],
+          "content": "\\left\\lfloor R _ {j} (0, 1) \\right.",
+          "image_source": "images/page_15_equation_42.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.768,
+            0.109,
+            0.834,
+            0.123
+          ],
+          "content": "otherwise"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.715,
+            0.126,
+            0.764,
+            0.142
+          ],
+          "content": "\\left| R _ {j} (1, 0) \\right.",
+          "image_source": "images/page_15_equation_44.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.774,
+            0.127,
+            0.829,
+            0.142
+          ],
+          "content": "\\text {if} x _ {j} = 1",
+          "image_source": "images/page_15_equation_45.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.714,
+            0.141,
+            0.763,
+            0.157
+          ],
+          "content": "\\left\\lfloor R _ {j} (0, 0) \\right.",
+          "image_source": "images/page_15_equation_46.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.164,
+            0.733,
+            0.183
+          ],
+          "content": "• Output 1 if S(1) > S(0)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.656,
+            0.503,
+            0.812,
+            0.52
+          ],
+          "level": 2,
+          "content": "Laplace Correction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.524,
+            0.811,
+            0.539
+          ],
+          "content": "• Avoid getting 0 or 1 as an answer:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.636,
+            0.54,
+            0.819,
+            0.57
+          ],
+          "content": "R _ {j} (1, 1) = \\frac {\\# (x _ {j} ^ {\\prime} = 1 \\land y ^ {\\prime} = 1) + 1}{\\# (y ^ {\\prime} = 1) + 2}",
+          "image_source": "images/page_15_equation_50.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.636,
+            0.578,
+            0.759,
+            0.596
+          ],
+          "content": "R _ {j} (0, 1) = 1 - R _ {j} (1, 1)",
+          "image_source": "images/page_15_equation_51.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.636,
+            0.619,
+            0.821,
+            0.651
+          ],
+          "content": "R _ {j} (1, 0) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 0) + 1}{\\# (y ^ {i} = 0) + 2}",
+          "image_source": "images/page_15_equation_52.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.636,
+            0.656,
+            0.76,
+            0.674
+          ],
+          "content": "R _ {j} (0, 0) = 1 - R _ {j} (1, 0)",
+          "image_source": "images/page_15_equation_53.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.689,
+            0.903,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 17"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.732,
+            0.932,
+            0.76
+          ],
+          "content": "Here's what happens to our original example if we use the Laplace correction. Notably, $\\mathtt { R _ { 1 } }$ of 0, 0 is now 1/7 instead of 0, which is less dramatic."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.073,
+            0.919,
+            0.087,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.915,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 18"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.462,
+            0.409,
+            0.474
+          ],
+          "content": "6.034 - Spring 03  20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.041,
+            0.124,
+            0.054
+          ],
+          "content": "Slide 5.2.19"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.053,
+            0.554,
+            0.079
+          ],
+          "content": "And so, when it comes time to make a prediction, the score for answer 0 is no longer 0. We think it's possible, but unlikely, that this example is negative. So we still predict class 1."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.625,
+            0.049,
+            0.844,
+            0.066
+          ],
+          "content": "Prediction with Correction"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.065,
+            0.729,
+            0.08
+          ],
+          "content": "\\cdot R _ {1} (1, 1) = 2 / 7 \\quad R _ {1} (0, 1) = 5 / 7",
+          "image_source": "images/page_16_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.077,
+            0.729,
+            0.091
+          ],
+          "content": "\\bullet R _ {1} (1, 0) = 6 / 7 R _ {1} (0, 0) = 1 / 7",
+          "image_source": "images/page_16_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.088,
+            0.729,
+            0.101
+          ],
+          "content": "\\bullet \\mathrm{R} _ {2} (1, 1) = 2 / 7 \\quad \\mathrm{R} _ {2} (0, 1) = 5 / 7",
+          "image_source": "images/page_16_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.1,
+            0.729,
+            0.114
+          ],
+          "content": "\\cdot R _ {2} (1, 0) = 3 / 7 \\quad R _ {2} (0, 0) = 4 / 7",
+          "image_source": "images/page_16_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.11,
+            0.729,
+            0.123
+          ],
+          "content": "\\bullet \\mathrm{R} _ {3} (1, 1) = 5 / 7 \\quad \\mathrm{R} _ {3} (0, 1) = 2 / 7",
+          "image_source": "images/page_16_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.122,
+            0.729,
+            0.135
+          ],
+          "content": "\\cdot R _ {3} (1, 0) = 2 / 7 \\quad R _ {3} (0, 0) = 5 / 7",
+          "image_source": "images/page_16_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.578,
+            0.133,
+            0.729,
+            0.147
+          ],
+          "content": "\\bullet \\mathrm{R} _ {4} (1, 1) = 3 / 7 \\quad \\mathrm{R} _ {4} (0, 1) = 4 / 7",
+          "image_source": "images/page_16_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.576,
+            0.145,
+            0.729,
+            0.16
+          ],
+          "content": "\\cdot R _ {4} (1, 0) = 5 / 7 \\quad R _ {4} (0, 0) = 2 / 7",
+          "image_source": "images/page_16_equation_12.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.902,
+            0.247
+          ],
+          "content": "6.034 - Spring 03  19"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.584,
+            0.167,
+            0.724,
+            0.181
+          ],
+          "content": "\\bullet \\text {New} x = <   0, 0, 1, 1 >",
+          "image_source": "images/page_16_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.584,
+            0.18,
+            0.896,
+            0.196
+          ],
+          "content": "\\bullet S (1) = R _ {1} (0, 1) * R _ {2} (0, 1) * R _ {3} (1, 1) * R _ {4} (1, 1) = . 1 5 6",
+          "image_source": "images/page_16_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.584,
+            0.195,
+            0.896,
+            0.21
+          ],
+          "content": "\\bullet S (0) = R _ {1} (0, 0) * R _ {2} (0, 0) * R _ {3} (1, 0) * R _ {4} (1, 0) = . 0 1 7",
+          "image_source": "images/page_16_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.584,
+            0.208,
+            0.791,
+            0.224
+          ],
+          "content": "\\bullet \\mathrm{S} (1) > \\mathrm{S} (0), \\text {so predict class 1}",
+          "image_source": "images/page_16_equation_17.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.166,
+            0.276,
+            0.316,
+            0.294
+          ],
+          "content": "Hypothesis Space"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.297,
+            0.171,
+            0.312
+          ],
+          "content": "• Output 1 if"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.508,
+            0.281
+          ],
+          "content": "Slide 5.2.20"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.108,
+            0.313,
+            0.407,
+            0.336
+          ],
+          "content": "\\prod_ {j} \\alpha_ {j} x _ {j} + (1 - \\alpha_ {j}) (1 - x _ {j}) > \\prod_ {j} \\beta_ {j} x _ {j} + (1 - \\beta_ {j}) (1 - x _ {j})",
+          "image_source": "images/page_16_equation_21.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.338,
+            0.34,
+            0.365
+          ],
+          "content": "• Depends on parameters $\\alpha_{1} \\cdots \\alpha_{n}, \\beta_{1} \\cdots \\beta_{n}$ (which we set to be the $\\mathsf{R}_{\\mathrm{j}}^{\\mathrm{~*}}$ values)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.279,
+            0.929,
+            0.331
+          ],
+          "content": "What's the story of this algorithm in terms of hypothesis space? We've fixed the spaces of hypotheses to have the form shown here. This is a very restricted form. But it is still a big (infinite, in fact) hypothesis space, because we have to pick the actual values of the coefficients alpha<sub>j</sub> and beta<sub>j</sub> for all j."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.495,
+            0.123,
+            0.507
+          ],
+          "level": 2,
+          "content": "Slide 5.2.21"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.506,
+            0.552,
+            0.556
+          ],
+          "content": "All of our bias is in the form of the hypothesis. We've restricted it significantly, so we would now like to choose the alpha's and beta's in such a way as to minimize the error on the training set. For somewhat subtle technical reasons (ask me and I'll tell you), our choice of the R scores for the alpha's and beta's doesn't exactly minimize error on the training set. But it usually works pretty well."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.562,
+            0.545,
+            0.6
+          ],
+          "content": "The main reason we like this algorithm is that it's easy to train. One pass through the data and we can compute all the parameters. It's especially useful in things like text categorization, where there are huge numbers of attributes and we can't possibly look at them many times."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.166,
+            0.73,
+            0.315,
+            0.747
+          ],
+          "level": 2,
+          "content": "Hypothesis Space"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.086,
+            0.75,
+            0.171,
+            0.765
+          ],
+          "level": 2,
+          "content": "• Output 1 if"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.108,
+            0.766,
+            0.407,
+            0.788
+          ],
+          "content": "\\prod_ {j} \\alpha_ {j} x _ {j} + (1 - \\alpha_ {j}) (1 - x _ {j}) > \\prod_ {j} \\beta_ {j} x _ {j} + (1 - \\beta_ {j}) (1 - x _ {j})",
+          "image_source": "images/page_16_equation_29.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.793,
+            0.341,
+            0.818
+          ],
+          "content": "• Depends on parameters (which we set to be the $\\begin{array}{l}\\alpha_{1} \\ldots \\alpha_{n}, \\beta_{1} \\ldots \\beta_{n} \\\\\\mathsf{R}_{\\mathsf{j}} \\vee \\mathsf{all} \\vee \\mathsf{es})\\end{array}$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.508,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.828,
+            0.391,
+            0.857
+          ],
+          "content": "• Our method of computing parameters doesn't minimize training set error, but it's fast!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.866,
+            0.399,
+            0.884
+          ],
+          "content": "• Weight of feature j's \"vote\" in favor of output 1:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.163,
+            0.884,
+            0.288,
+            0.913
+          ],
+          "content": "\\log \\frac {\\alpha_ {j}}{1 - \\alpha_ {j}} - \\log \\frac {\\beta_ {j}}{1 - \\beta_ {j}}",
+          "image_source": "images/page_16_equation_34.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.661,
+            0.503,
+            0.809,
+            0.52
+          ],
+          "level": 2,
+          "content": "Hypothesis Space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.524,
+            0.664,
+            0.539
+          ],
+          "content": "• Output 1 if"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.601,
+            0.54,
+            0.901,
+            0.561
+          ],
+          "content": "\\prod \\alpha_ {j} x _ {j} + (1 - \\alpha_ {j}) (1 - x _ {j}) > \\prod \\beta_ {j} x _ {j} + (1 - \\beta_ {j}) (1 - x _ {j})",
+          "image_source": "images/page_16_equation_37.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.565,
+            0.834,
+            0.592
+          ],
+          "content": "• Depends on parameters $\\alpha_{1} \\cdots \\alpha_{n}, \\beta_{1} \\cdots \\beta_{n}$ (which we set to be the $\\dot{\\mathsf{R}}_{\\mathrm{j}}^{\\mathrm{~*}}$ values)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.602,
+            0.884,
+            0.63
+          ],
+          "content": "• Our method of computing parameters doesn't minimize training set error, but it's fast!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.834,
+            0.689,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 21"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.439,
+            0.732,
+            0.928,
+            0.77
+          ],
+          "content": "One possible concern about this algorithm is that it's hard to interpret the hypotheses you get back. With DNF or decision trees, it's easy for a human to understand what features are playing an important role, for example."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.439,
+            0.777,
+            0.935,
+            0.838
+          ],
+          "content": "In naive Bayes, all the features are playing some role in the categorization. You can think of each one as casting a weighted vote in favor an answer of 1 versus 0. The weight of each feature's vote is this expression. The absolute value of this weight is a good indication of how important a feature is, and its sign tells us whether that feature is indicative of output 1 (when it's positive) or output 0 (when it's negative)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.919,
+            0.088,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.915,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 22"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.901,
+            0.247
+          ],
+          "content": "6.034 - Spring 03 • 23"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.042,
+            0.123,
+            0.054
+          ],
+          "content": "Slide 5.2.23"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.054,
+            0.549,
+            0.101
+          ],
+          "content": "This algorithm makes a fundamental assumption that we can characterize the influence of each feature on the class independently, and then combine them through multiplication. This assumption isn't always justified. We'll illustrate this using our old nemesis, exclusive or. Here's the data set we used before."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.443,
+            0.268,
+            0.508,
+            0.28
+          ],
+          "content": "Slide 5.2.24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.092,
+            0.3,
+            0.176,
+            0.391
+          ],
+          "content": "f1 f2 f3 f4 y 0 1 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 1 0 1 1 1 0 1 0 0 0 1 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.188,
+            0.277,
+            0.294,
+            0.292
+          ],
+          "content": "Exclusive Or"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.234,
+            0.297,
+            0.385,
+            0.31
+          ],
+          "content": "• R₁}(1,1)=2/4 R}(0,1)=2/4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.235,
+            0.309,
+            0.384,
+            0.321
+          ],
+          "content": "• R1}(1,0)=3/6 R1(0,0)=3/6"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.235,
+            0.32,
+            0.384,
+            0.333
+          ],
+          "content": "• R₂(1,1)=2/4 R2(0,1)=2/4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.236,
+            0.332,
+            0.384,
+            0.344
+          ],
+          "content": "• R2(1,0)=3/6 R2(0,0)=3/6"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.236,
+            0.343,
+            0.384,
+            0.355
+          ],
+          "content": "• R₃(1,1)=2/4 R₃(0,1)=2/4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.236,
+            0.354,
+            0.384,
+            0.367
+          ],
+          "content": "• R3}(1,0)=3/6 R₃3}(0,0)=3/6"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.236,
+            0.365,
+            0.384,
+            0.378
+          ],
+          "content": "\\cdot R _ {4} (1, 1) = 2 / 4 \\quad R _ {4} (0, 1) = 2 / 4",
+          "image_source": "images/page_17_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.235,
+            0.377,
+            0.385,
+            0.39
+          ],
+          "content": "\\bullet \\quad R _ {4} (1, 0) = 3 / 6 \\quad R _ {4} (0, 0) = 3 / 6",
+          "image_source": "images/page_17_equation_14.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.682,
+            0.05,
+            0.788,
+            0.066
+          ],
+          "content": "Exclusive Or"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.341,
+            0.463,
+            0.408,
+            0.473
+          ],
+          "content": "6.034 - Spring 03 • 24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.073,
+            0.67,
+            0.165
+          ],
+          "content": "f1 f2 f3 f4 y 0 1 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 1 0 1 1 1 0 1 0 0 0 1 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.507,
+            0.541,
+            0.531
+          ],
+          "content": "Sure enough, when we compute the scores for any new example, we get the same result, giving us no basis at all for predicting the output."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.28,
+            0.936,
+            0.305
+          ],
+          "content": "Here are the R values obtained via counting and the Laplace correction. They're all equal to 1/2, because no feature individually gives information about whether the example is positive or negative."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.585,
+            0.526,
+            0.67,
+            0.617
+          ],
+          "content": "| $f_1$ | $f_2$ | $f_3$ | $f_4$ | y |\n| --- | --- | --- | --- | --- |\n| 0 | 1 | 1 | 0 | 0 |\n| 1 | 0 | 1 | 0 | 0 |\n| 1 | 0 | 0 | 1 | 0 |\n| 0 | 1 | 0 | 1 | 0 |\n| 1 | 1 | 1 | 0 | 1 |\n| 0 | 0 | 0 | 1 | 1 |",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.495,
+                0.123,
+                0.507
+              ],
+              "content": "Slide 5.2.25"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_17_table_21.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.682,
+            0.504,
+            0.788,
+            0.519
+          ],
+          "level": 2,
+          "content": "Exclusive Or"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.728,
+            0.524,
+            0.878,
+            0.536
+          ],
+          "content": "\\bullet \\mathrm{R} _ {1} (1, 1) = 2 / 4 \\mathrm{R} _ {1} (0, 1) = 2 / 4",
+          "image_source": "images/page_17_equation_23.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.536,
+            0.877,
+            0.548
+          ],
+          "content": "• R₁}(1,0)=3/6 R1}(0,0)=3/6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.548,
+            0.877,
+            0.559
+          ],
+          "content": "• R₂(1,1)=2/4 R₂(0,1)=2/4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.559,
+            0.878,
+            0.57
+          ],
+          "content": "• R₂(1,0)=3/6 R₂(0,0)=3/6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.569,
+            0.877,
+            0.581
+          ],
+          "content": "• R3(1,1)=2/4 R₃(0,1)=2/4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.73,
+            0.581,
+            0.878,
+            0.593
+          ],
+          "content": "• R₃(1,0)=3/6 R₃(0,0)=3/6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.592,
+            0.877,
+            0.604
+          ],
+          "content": "• R4(1,1)=2/4 R4(0,1)=2/4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.729,
+            0.604,
+            0.877,
+            0.615
+          ],
+          "content": "• R4(1,0)=3/6 R4(0,0)=3/6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.624,
+            0.689,
+            0.636
+          ],
+          "content": "• For any new x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.636,
+            0.8,
+            0.65
+          ],
+          "content": "●S(1) =.5\\*.5\\*.5\\*.5 =.0625"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.65,
+            0.8,
+            0.664
+          ],
+          "content": "●S(0) =.5\\*.5\\*.5\\*.5=.0625"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.664,
+            0.809,
+            0.678
+          ],
+          "content": "• We're indifferent between classes"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.152,
+            0.729,
+            0.329,
+            0.747
+          ],
+          "level": 2,
+          "content": "Congressional Voting"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.507,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.26"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.562,
+            0.691,
+            0.582,
+            0.705
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.442,
+            0.733,
+            0.926,
+            0.77
+          ],
+          "content": "Now we show the results of applying naive Bayes to the congressional voting domain. In this case, we might expect the independence assumption to be reasonably well satisfied (a congressperson probably doesn't decide on groups of votes together, unless there are deals being made)."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.835,
+            0.69,
+            0.901,
+            0.7
+          ],
+          "content": "6.034 - Spring 03  25"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.073,
+            0.919,
+            0.087,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.916,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 26"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.069,
+            0.464,
+            0.089,
+            0.48
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.902,
+            0.247
+          ],
+          "content": "6.034 - Spring 03  27"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.057,
+            0.041,
+            0.124,
+            0.055
+          ],
+          "content": "Slide 5.2.27"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.053,
+            0.538,
+            0.102
+          ],
+          "content": "Using cross-validation, we determined that the accuracy of hypotheses generated by naive Bayes was approximately 0.91. This is not as good as that of decision trees, which had an accuracy of about 0.95. This result is not too surprising: decision trees can express more complex hypotheses that consider combinations of attributes."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.644,
+            0.049,
+            0.824,
+            0.068
+          ],
+          "content": "Congressional Voting"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.577,
+            0.084,
+            0.89,
+            0.11
+          ],
+          "content": "• Accuracy on the congressional voting domain is about 0.91"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.109,
+            0.867,
+            0.125
+          ],
+          "content": "• Somewhat worse than decision trees (0.95)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.123,
+            0.866,
+            0.15
+          ],
+          "content": "• Decision trees can express more complex hypotheses over combinations of attributes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.151,
+            0.276,
+            0.331,
+            0.295
+          ],
+          "content": "Congressional Voting"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.31,
+            0.396,
+            0.336
+          ],
+          "content": "• Accuracy on the congressional voting domain is about 0.91"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.335,
+            0.374,
+            0.351
+          ],
+          "content": "• Somewhat worse than decision trees (0.95)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.35,
+            0.372,
+            0.375
+          ],
+          "content": "• Decision trees can express more complex hypotheses over combinations of attributes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.375,
+            0.396,
+            0.399
+          ],
+          "content": "• Domain is small enough so that speed is not an issue"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.398,
+            0.341,
+            0.415
+          ],
+          "content": "• So, prefer trees or DNF in this domain"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.268,
+            0.509,
+            0.281
+          ],
+          "content": "Slide 5.2.28"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.279,
+            0.927,
+            0.306
+          ],
+          "content": "This domain is small enough that the efficiency of naive Bayes doesn't really matter. So we would prefer to use trees or DNF on this problem."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.34,
+            0.462,
+            0.409,
+            0.474
+          ],
+          "content": "6.034 - Spring 03 • 28"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.495,
+            0.124,
+            0.507
+          ],
+          "level": 2,
+          "content": "Slide 5.2.29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.506,
+            0.548,
+            0.555
+          ],
+          "content": "It's interesting to look at the weights found for the various attributes. Here, I've sorted the attributes according to magnitude of the weight assigned to them by naive Bayes. The positive ones (colored black) vote in favor of the output being 1 (republican); the negative ones (colored red) vote against the the output being 1 (and therefore in favor of democrat)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.562,
+            0.549,
+            0.612
+          ],
+          "content": "The results are consistent with the answers we've gotten from the other algorithms. The most diagnostic single issue seems to be voting on whether physician fees should be frozen; that is a strong indicator of being a democrat. The strongest indicators of being republican are accepting the budget, aid to the contras, and support of the mx missile."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.645,
+            0.503,
+            0.824,
+            0.52
+          ],
+          "level": 2,
+          "content": "Congressional Voting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.523,
+            0.756,
+            0.536
+          ],
+          "content": "-6.82 physician-fee-freeze"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.535,
+            0.731,
+            0.547
+          ],
+          "content": "-4.20 el-salvador-aid"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.544,
+            0.688,
+            0.556
+          ],
+          "content": "-4.20 crime"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.554,
+            0.752,
+            0.566
+          ],
+          "content": "-3.56 education-spending"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.841,
+            0.54,
+            0.901,
+            0.563
+          ],
+          "content": "republican democrat"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.564,
+            0.818,
+            0.576
+          ],
+          "content": "3.36 adoption-of-the-budget-resolution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.575,
+            0.782,
+            0.587
+          ],
+          "content": "3.25 aid-to-nicaraguan-contras"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.585,
+            0.713,
+            0.597
+          ],
+          "content": "3.07 mx-missile"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.595,
+            0.768,
+            0.608
+          ],
+          "content": "superfund-right-to-sue"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.605,
+            0.744,
+            0.617
+          ],
+          "content": "2.40 duty-free-exports"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.597,
+            0.615,
+            0.762,
+            0.628
+          ],
+          "content": "2.14 anti-satellite-test-ban"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.625,
+            0.786,
+            0.638
+          ],
+          "content": "-2.07 religious-groups-in-schools"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.636,
+            0.838,
+            0.648
+          ],
+          "content": "2.01 export-administration-act-south-africa"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.597,
+            0.646,
+            0.795,
+            0.658
+          ],
+          "content": "1.66 synfuels-corporation-cutback"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.597,
+            0.656,
+            0.755,
+            0.669
+          ],
+          "content": "1.63 handicapped-infants"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.667,
+            0.718,
+            0.679
+          ],
+          "content": "immigration"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.677,
+            0.784,
+            0.69
+          ],
+          "content": "-0.08 water-project-cost-sharing"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.834,
+            0.69,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 29"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.144,
+            0.728,
+            0.338,
+            0.748
+          ],
+          "level": 2,
+          "content": "Probabilistic Inference"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.509,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.30"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.732,
+            0.935,
+            0.759
+          ],
+          "content": "Now we'll look briefly at the probabilistic justification for the algorithm. If you don't follow it, don't worry. But if you've studied probability before, this ought to provide some useful intuition."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.918,
+            0.088,
+            0.931
+          ],
+          "content": "o"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.916,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 30"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.835,
+            0.236,
+            0.902,
+            0.247
+          ],
+          "content": "6.034 - Spring 03  31"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.041,
+            0.123,
+            0.054
+          ],
+          "content": "Slide 5.2.31"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.053,
+            0.551,
+            0.115
+          ],
+          "content": "One way to think about the problem of deciding what class a new item belongs to is to think of the features and the output as random variables. If we knew $\\operatorname* { P r } ( \\mathbf { Y } = 1 \\mid \\mathbf { f } _ { 1 } \\ldots \\mathbf { f } _ { \\mathtt { n } } ) ,$ then when we got a new example, we could compute the probability that it had a Y value of 1, and generate the answer 1 if the probability was over 0.5. So, we're going to concentrate on coming up with a way to estimate this probability."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.19,
+            0.276,
+            0.292,
+            0.294
+          ],
+          "level": 2,
+          "content": "Bayes' Rule"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.297,
+            0.175,
+            0.312
+          ],
+          "content": "• Generically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.308,
+            0.309,
+            0.338
+          ],
+          "content": "\\Pr (A \\mid B) = \\Pr (B \\mid A) \\frac {\\Pr (A)}{\\Pr (B)}",
+          "image_source": "images/page_19_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.495,
+            0.123,
+            0.507
+          ],
+          "content": "Slide 5.2.33"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.057,
+            0.505,
+            0.532,
+            0.522
+          ],
+          "content": "\\text {Applying it to our problem, we get} \\Pr (\\mathrm{Y} = 1 \\mid \\mathrm{f} _ {1} \\dots \\mathrm{f} _ {\\mathrm{n}}) = \\Pr (\\mathrm{f} _ {1} \\dots \\mathrm{f} _ {\\mathrm{n}} \\mid \\mathrm{Y} = 1) \\Pr (\\mathrm{Y} = 1) / \\Pr (\\mathrm{f} _ {1} \\dots \\mathrm{f} _ {\\mathrm{n}})",
+          "image_source": "images/page_19_equation_8.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.267,
+            0.508,
+            0.281
+          ],
+          "level": 2,
+          "content": "Slide 5.2.32"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.75,
+            0.175,
+            0.765
+          ],
+          "content": "• Generically:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.191,
+            0.73,
+            0.291,
+            0.747
+          ],
+          "level": 2,
+          "content": "Bayes' Rule"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.721,
+            0.508,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.34"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.761,
+            0.309,
+            0.79
+          ],
+          "content": "\\Pr (A \\mid B) = \\Pr (B \\mid A) \\frac {\\Pr (A)}{\\Pr (B)}",
+          "image_source": "images/page_19_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.79,
+            0.175,
+            0.807
+          ],
+          "content": "• Specifically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.116,
+            0.809,
+            0.385,
+            0.839
+          ],
+          "content": "\\Pr (Y = 1 \\mid f _ {1} \\dots f _ {n}) = \\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1) \\frac {\\Pr (Y = 1)}{\\Pr (f _ {1} \\dots f _ {n})}",
+          "image_source": "images/page_19_equation_15.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.638,
+            0.049,
+            0.83,
+            0.067
+          ],
+          "content": "Probabilistic Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.837,
+            0.309,
+            0.851
+          ],
+          "content": "independent of Y"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.083,
+            0.901,
+            0.1
+          ],
+          "content": "• Think of features and output as random variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.279,
+            0.939,
+            0.306
+          ],
+          "content": "Bayes' rule gives us a way to take the conditional probability Pr(A|B) and express it in terms of Pr(B| A) and the marginals Pr(A) and Pr(B)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.098,
+            0.731,
+            0.114
+          ],
+          "content": "• Learn $\\Pr(Y = 1|f_1,\\cdots,f_n)$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.111,
+            0.888,
+            0.136
+          ],
+          "content": "• Given new example, compute probability it has value 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.135,
+            0.89,
+            0.153
+          ],
+          "content": "• Generate answer 1 if that value is $> 0 . 5 ,$ else 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.161,
+            0.894,
+            0.188
+          ],
+          "content": "• Concentrate on estimating this distribution from data"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.664,
+            0.184,
+            0.77,
+            0.203
+          ],
+          "content": "\\Pr (Y = 1 | f _ {1}, \\dots , f _ {n})",
+          "image_source": "images/page_19_equation_24.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.684,
+            0.503,
+            0.785,
+            0.52
+          ],
+          "level": 2,
+          "content": "Bayes' Rule"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.523,
+            0.669,
+            0.539
+          ],
+          "content": "• Generically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.648,
+            0.534,
+            0.803,
+            0.563
+          ],
+          "content": "\\Pr (A \\mid B) = \\Pr (B \\mid A) \\frac {\\Pr (A)}{\\Pr (B)}",
+          "image_source": "images/page_19_equation_27.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.563,
+            0.67,
+            0.581
+          ],
+          "content": "• Specifically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.609,
+            0.581,
+            0.878,
+            0.612
+          ],
+          "content": "\\Pr (Y = 1 \\mid f _ {1} \\dots f _ {n}) = \\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1) \\frac {\\Pr (Y = 1)}{\\Pr (f _ {1} \\dots f _ {n})}",
+          "image_source": "images/page_19_equation_29.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.441,
+            0.731,
+            0.93,
+            0.762
+          ],
+          "content": "Since the denominator is independent of $\\mathrm { { : Y , } }$ we can ignore it in figuring out whether $\\Pr(Y = 1 \\mid  f _1$ $\\mathbf { f } _ { \\mathbf { n } } )$ is greater than $\\operatorname* { P r } ( \\mathbf { Y } = 0 \\mid \\mathbf { f } _ { 1 } \\ldots \\mathbf { f } _ { \\mathtt { n } } ) .$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.834,
+            0.689,
+            0.902,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 33"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.918,
+            0.088,
+            0.93
+          ],
+          "content": "O"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.915,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 34"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.058,
+            0.041,
+            0.124,
+            0.054
+          ],
+          "content": "Slide 5.2.35"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.055,
+            0.053,
+            0.556,
+            0.09
+          ],
+          "content": "The term $\\operatorname* { P r } ( \\mathrm { Y } = 1 )$ is often called the prior. It's a way to build into our decision-making a previous belief about the proportion of things that are positive. For now, we'll just assume that it's 0.5 for both positive and negative classes, and ignore it."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.07,
+            0.669,
+            0.086
+          ],
+          "content": "• Generically:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.684,
+            0.049,
+            0.785,
+            0.067
+          ],
+          "content": "Bayes' Rule"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.647,
+            0.081,
+            0.804,
+            0.11
+          ],
+          "content": "\\Pr (A \\mid B) = \\Pr (B \\mid A) \\frac {\\Pr (A)}{\\Pr (B)}",
+          "image_source": "images/page_20_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.11,
+            0.67,
+            0.127
+          ],
+          "content": "• Specifically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.609,
+            0.129,
+            0.882,
+            0.159
+          ],
+          "content": "\\Pr (Y = 1 \\mid f _ {1} \\dots f _ {n}) = \\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1) \\frac {\\Pr (Y = 1)}{\\Pr (f _ {1} \\dots f _ {n})}",
+          "image_source": "images/page_20_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.706,
+            0.156,
+            0.804,
+            0.172
+          ],
+          "content": "independent of Y"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.852,
+            0.165,
+            0.886,
+            0.18
+          ],
+          "content": "prior"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.276,
+            0.292,
+            0.293
+          ],
+          "content": "Bayes' Rule"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.267,
+            0.508,
+            0.281
+          ],
+          "content": "Slide 5.2.36"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.279,
+            0.717,
+            0.295
+          ],
+          "content": "This will allow us to concentrate on $\\operatorname* { P r } ( \\mathrm { f } _ { 1 } \\dots \\mathrm { f } _ { \\mathrm { n } }   |   \\mathrm { Y } = 1 ) .$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.297,
+            0.175,
+            0.312
+          ],
+          "content": "• Generically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.309,
+            0.309,
+            0.337
+          ],
+          "content": "\\Pr (A \\mid B) = \\Pr (B \\mid A) \\frac {\\Pr (A)}{\\Pr (B)}",
+          "image_source": "images/page_20_equation_14.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.337,
+            0.176,
+            0.354
+          ],
+          "content": "• Specifically:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.116,
+            0.356,
+            0.386,
+            0.384
+          ],
+          "content": "\\Pr (Y = 1 \\mid f _ {1} \\dots f _ {n}) = \\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1) \\frac {\\Pr (Y = 1)}{\\Pr (f _ {1} \\dots f _ {n})}",
+          "image_source": "images/page_20_equation_16.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.211,
+            0.383,
+            0.311,
+            0.399
+          ],
+          "content": "independent of Y"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.358,
+            0.392,
+            0.394,
+            0.405
+          ],
+          "content": "prior"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.405,
+            0.202,
+            0.421
+          ],
+          "content": "• Concentrate on:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.174,
+            0.423,
+            0.279,
+            0.44
+          ],
+          "content": "\\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1)",
+          "image_source": "images/page_20_equation_20.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.34,
+            0.462,
+            0.409,
+            0.474
+          ],
+          "content": "6.034 - Spring 03 • 36"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.495,
+            0.124,
+            0.507
+          ],
+          "level": 2,
+          "content": "Slide 5.2.37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.506,
+            0.551,
+            0.544
+          ],
+          "content": "The algorithm is called **naive** Bayes because it makes a big assumption, which is that it can be broken down into a product like this. A probabilist would say that we are assuming that the features are conditionally independent given the class."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.55,
+            0.495,
+            0.58
+          ],
+          "content": "So, we're assuming that $\\operatorname* { P r } ( \\mathbf { f } _ { 1 } \\dots \\mathbf { f } _ { \\mathfrak { n } } \\mid \\mathbf { Y } = 1 )$ is the product of all the individual conditional probabilities, $\\operatorname* { P r } ( \\mathbf { f } _ { \\mathbf { j } } \\mid \\mathbf { Y } = 1 )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.647,
+            0.502,
+            0.821,
+            0.521
+          ],
+          "level": 2,
+          "content": "Why is Bayes Naïve?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.536,
+            0.829,
+            0.554
+          ],
+          "content": "• Make a big independence assumption"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.628,
+            0.562,
+            0.834,
+            0.591
+          ],
+          "content": "\\Pr (f _ {1} \\dots f _ {n} \\mid Y = 1) = \\prod_ {j} \\Pr (f _ {j} \\mid Y = 1)",
+          "image_source": "images/page_20_equation_27.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.159,
+            0.73,
+            0.322,
+            0.747
+          ],
+          "level": 2,
+          "content": "Learning Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.75,
+            0.304,
+            0.766
+          ],
+          "content": "• Estimate from the data, for all j:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.766,
+            0.34,
+            0.798
+          ],
+          "content": "R (f _ {j} = 1 \\mid Y = 1) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 1)}{\\# (y ^ {i} = 1)}",
+          "image_source": "images/page_20_equation_30.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.72,
+            0.509,
+            0.734
+          ],
+          "level": 2,
+          "content": "Slide 5.2.38"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.845,
+            0.341,
+            0.878
+          ],
+          "content": "R (f _ {j} = 1 \\mid Y = 0) = \\frac {\\# (x _ {j} ^ {i} = 1 \\land y ^ {i} = 0)}{\\# (y ^ {i} = 0)}",
+          "image_source": "images/page_20_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.805,
+            0.347,
+            0.823
+          ],
+          "content": "R (f _ {j} = 0 \\mid Y = 1) = 1 - R (f _ {j} = 1 \\mid Y = 1)",
+          "image_source": "images/page_20_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.882,
+            0.348,
+            0.9
+          ],
+          "content": "R (f _ {j} = 0 \\mid Y = 0) = 1 - R (f _ {j} = 1 \\mid Y = 0)",
+          "image_source": "images/page_20_equation_34.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.834,
+            0.689,
+            0.903,
+            0.7
+          ],
+          "content": "6.034 - Spring 03 • 37"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.732,
+            0.922,
+            0.759
+          ],
+          "content": "Here is our same learning algorithm (without the Laplace correction, for simplicity), expressed in probabilistic terms."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.766,
+            0.926,
+            0.793
+          ],
+          "content": "We can think of the R values as estimates of the underlying conditional probabilities, based on the training set as a statistical sample drawn from those distributions."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.072,
+            0.918,
+            0.088,
+            0.931
+          ],
+          "content": "o"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.915,
+            0.408,
+            0.926
+          ],
+          "content": "6.034 - Spring 03 • 38"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.565,
+            0.239,
+            0.581,
+            0.251
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.042,
+            0.123,
+            0.054
+          ],
+          "content": "Slide 5.2.39"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.054,
+            0.534,
+            0.089
+          ],
+          "content": "And here's the prediction algorithm, just written out using probabilistic notation. The S is also an estimated probability. So we predict output 1 just when we think it's more likely that our new x would have come from class 1 than from class 0."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.057,
+            0.098,
+            0.526,
+            0.122
+          ],
+          "content": "Now, we'll move on to considering the situation in which the inputs and outputs of the learning process can be real-valued."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.649,
+            0.05,
+            0.819,
+            0.066
+          ],
+          "content": "Prediction Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.58,
+            0.071,
+            0.686,
+            0.085
+          ],
+          "content": "• Given a new x,"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.594,
+            0.093,
+            0.891,
+            0.125
+          ],
+          "content": "S (x _ {1} \\dots x _ {n} \\mid Y = 1) = \\prod_ {j} \\left\\{ \\begin{array}{l l} R (f _ {j} = 1 \\mid Y = 1) & \\text {if} x _ {j} = 1 \\\\ R (f _ {j} = 0 \\mid Y = 1) & \\text {otherwise} \\end{array} \\right.",
+          "image_source": "images/page_21_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.594,
+            0.126,
+            0.894,
+            0.157
+          ],
+          "content": "S (x _ {1} \\dots x _ {n} \\mid Y = 0) = \\prod_ {j} \\left\\{ \\begin{array}{l l} R (f _ {j} = 1 \\mid Y = 0) & \\text {if} x _ {j} = 1 \\\\ R (f _ {j} = 0 \\mid Y = 0) & \\text {otherwise} \\end{array} \\right.",
+          "image_source": "images/page_21_equation_8.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.581,
+            0.166,
+            0.663,
+            0.18
+          ],
+          "content": "• Output 1 if"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.631,
+            0.19,
+            0.847,
+            0.206
+          ],
+          "content": "S (x _ {1} \\dots x _ {n} \\mid Y = 1) > S (x _ {1} \\dots x _ {n} \\mid Y = 0)",
+          "image_source": "images/page_21_equation_10.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.836,
+            0.237,
+            0.901,
+            0.246
+          ],
+          "content": "6.034 - Spring 03  39"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "languages": [
+        "en"
+      ],
+      "created_at": "2005-02-25T09:38:52Z",
+      "modified_at": "2005-10-07T14:08:08+05:30",
+      "producer_application": "Acrobat Web Capture 6.0",
+      "page_count": 22,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

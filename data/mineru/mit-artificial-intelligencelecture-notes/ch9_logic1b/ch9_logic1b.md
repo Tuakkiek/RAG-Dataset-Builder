@@ -1,0 +1,1951 @@
+<!-- page: 1 -->
+
+![](images/page_0_image_6.jpg)
+
+## FOL Interpretations
+
+• Interpretation I
+
+## Slide 9.5.2
+
+• U set of objects
+
+(called "domain of discourse" or "universe")
+
+The set is the universe, U, which is a set of objects. So what's an object? Well, really, it could be this chair and that chair and these pieces of chalk or it could be all of you guys or it could be some trees out there, or it could be rather more abstract objects like meetings or points in time or numbers. An object could be anything you can think of, and the universe can be any set (finite or infinite) of objects. The universe is also sometimes called the "domain of discourse."
+
+## Slide 9.5.3
+
+There's a mapping from constant symbols to elements of U, specifying how names are connected to objects in the world. So I might have the constant symbol, **Fred**, and I might have a particular person in the universe, and then the interpretation of the symbol **Fred** could be that person.
+
+• Interpretation I
+
+## FOL Interpretations
+
+• U set of objects
+
+(called "domain of discourse" or "universe")
+
+## FOL Interpretations
+
+(called "domain of discourse" or "universe")
+
+• Interpretation I
+
+## Slide 9.5.4
+
+• Maps constant symbols to elements of U
+
+• Maps constant symbols to elements of U
+
+• U set of objects
+
+• Maps predicate symbols to relations on U (binary relation is a set of pairs)
+
+<!-- page: 2 -->
+
+![](images/page_1_image_0.jpg)
+
+Slide 9.5.7
+
+The denotations of constant symbols are given directly in the interpretation.
+
+## Denotation of Terms
+
+Terms name objects in U
+
+• I(Fred) if Fred is constant, then given
+
+## Denotation of Terms
+
+Terms name objects in U
+
+## Slide 9.5.8
+
+• I(Fred) if Fred is constant, then given
+
+• I(x) if x is a variable, then undefined
+
+<!-- page: 3 -->
+
+## Slide 9.5.9
+
+The denotation of a complex term is defined recursively. So, to find the interpretation of a function symbol applied to some terms, first you look up the function symbol in the interpretation and get a function. (Remember that the function symbol is a syntactic thing, ink on paper, but the function it denotes is an abstract mathematical object.) Then you find the interpretations of the component terms, which will be objects in U. Finally, you apply the function to the objects, yielding an object in U. And that object is the denotation of the complex term.
+
+## Denotation of Terms
+
+Terms name objects in U
+
+## Holds
+
+$$
+\bullet \mathrm{I} (\mathrm{f} (\mathrm{t} _ {1}, \dots , \mathrm{t} _ {\mathrm{n}})) \quad \mathrm{I} (\mathrm{f}) (\mathrm{I} (\mathrm{t} _ {1}), \dots , \mathrm{I} (\mathrm{t} _ {\mathrm{n}}))
+$$
+
+• I(x) if x is a variable, then undefined
+
+## Slide 9.5.10
+
+When does a sentence hold in an interpretation?
+
+• I(Fred) if Fred is constant, then given
+
+## Slide 9.5.11
+
+## Holds
+
+When does a sentence hold in an interpretation?
+
+To figure out its truth value, we first use the denotation rules to find out which objects are named by each of the terms. Then, we look up the predicate symbol in the interpretation, which gives us a mathematical relation on U. Finally, we look to see if the list of objects named by the terms is a member of the relation. If so, the sentence is true in the given interpretation.
+
+In the context of propositional logic, we looked at the rules of semantics, which told us how to determine whether a sentence was true in an interpretation. Now, in first-order logic, we'll add some semantic rules, for the new kinds of sentences we've introduced. One of our new kinds of sentences is a predicate symbol applied to a bunch of terms. That's a sentence, which is going to have a truth value, true or false.
+
+• P is a relation symbol
+
+## Slide 9.5.12
+
+6.034 – Spring 03 • 9
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+$\bullet \mathbf{t}_{1}, \ldots, \mathbf{t}_{\mathsf{n}}$ are terms
+
+Brother(Jon, Joe)??
+
+## Holds
+
+When does a sentence hold in an interpretation?
+
+• P is a relation symbol
+
+$\mathbf{t}_{1}, \ldots, \mathbf{t}_{n}$ are terms
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+<!-- page: 4 -->
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+## Slide 9.5.15
+
+Now we look up the predicate symbol **Brother** and find that it denotes this complicated relation.
+
+## Holds
+
+When does a sentence hold in an interpretation?
+
+• P is a relation symbol
+
+$\mathsf{t}_1, \ldots, \mathsf{t}_{\mathsf{n}}$ are terms
+
+## Slide 9.5.16
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+Brother(Jon, Joe)??
+
+$I(Jon) = \textcircled{S}$ [an element of U]
+
+• I(Joe) =
+
+[an element of U]
+
+$$
+\cdot \mathrm{I} (\text {Brother}) = \{\langle \text {眼}, \text {脸} \rangle , <   \text {眼}, \text {脸} >, <   \dots , \dots >, \dots \}
+$$
+
+## Holds
+
+When does a sentence hold in an interpretation?
+
+• P is a relation symbol
+
+$\bullet \mathsf{t}_1, \ldots, \mathsf{t}_{\mathsf{n}}$ are terms
+
+$$
+\text { holds } (P (t _ {1}, \dots , t _ {n}), I) \text { iff } <   I (t _ {1}), \dots , I (t _ {n}) > \in I (P)
+$$
+
+Brother(Jon, Joe)??
+
+• I(Jon) = [an element of U]
+
+· I(Joe) =福 [an element of U]
+
+$$
+\cdot \mathrm{I} (\text {Brother}) = \{\langle \text {,,}, \text {>, <   }, \text {, > , <   ...,... > , ...} \}
+$$
+
+Images by MIT OCW.
+
+<!-- page: 5 -->
+
+![](images/page_4_image_0.jpg)
+
+## Slide 9.5.17
+
+Another new kind of sentence we introduced has the form **term**<strong><sub>1</sub></strong> **= term**<strong><sub>2</sub></strong>. The semantics are pretty unsurprising: if the object denoted by **term**<strong><sub>1</sub></strong> is the same as the object denoted by **term**<strong><sub>2</sub></strong>, then the sentence holds.
+
+## Equality
+
+holds $(t_{1} = t_{2})$ I) iff I(t1) is the same object as I(t2)
+
+## Equality
+
+holds(t1 = t2, I) iff $I  ( t _1)$ is the same object as $\mathrm{I}(\mathrm{t}_2)$
+
+Jon = Jack ?
+
+• I(Jon) = [an element of U]
+
+• I(Jack) =[an element of U]
+
+• holds(Jon = Jack, I)
+
+Images by MIT OCW.
+
+![](images/page_4_image_13.jpg)
+
+## Slide 9.5.18
+
+Now we have to figure out how to tell whether sentences with quantifiers in them are true.
+
+## Slide 9.5.19
+
+## Semantics of Quantifiers
+
+Extend an interpretation I to bind variable x to element a ∈ U: $\mathbf{I}_{\mathbf{x} / \mathbf{a}}$
+
+It's important to note that two different constant symbols can denote the same object in the universe; so this is not a test on equality of names.
+
+We might have an interpretation that maps the symbols **Jon** and **Jack** both into the same guy. In that case, **Jon = Jack** holds in I.
+
+## Semantics of Quantifiers
+
+## Slide 9.5.20
+
+In order to talk about quantifiers we need the idea of extending an interpretation. We would like to be able to extend an interpretation to bind variable x to value a. We'll write that as I with x bound to a. Here, x is a variable and a is an object; an element of U. The idea is that, in order to understand whether a sentence that has variables in it is true or not, we have to make various temporary assignments to the variables and see what the truth value of the sentence is. Binding x to a is kind of like adding x as a constant symbol to I. It's kind of like temporarily binding a variable in a programming language.
+
+<!-- page: 6 -->
+
+## Slide 9.5.23
+
+It's hard to understand the precedence of these operators using the usual rules. A quantifier is understood to apply to everything to its right in the formula, stopping only when it reaches an enclosing close parenthesis.
+
+$$
+\mathrm{I}_{\mathrm{x / a}}
+$$
+
+Extend an interpretation I to bind variable x to element $B \in \cup :$ $\mathbf{I}_{\mathbf{x} / \mathbf{a}}$
+
+• holds(Vx.Φ, I) iff holds $( \Phi , \mathrm { I } _ { \mathrm { x } / \mathrm { a } } )$ for all $\mathsf{a} \in \mathsf{U}$
+
+• holds(3x.Φ, I) iff holds(Φ, $\vec{\mathrm{I}}_{\mathrm{x/a}}$ for some $\mathsf { a } \in \mathsf { U }$
+
+## Semantics of Quantifiers
+
+Quantifier applies to formula to right until an enclosing right parenthesis:
+
+## Semantics of Quantifiers
+
+$$
+(\forall x. P (x) \lor Q (x)) \land \exists x. R (x) \to Q (x)
+$$
+
+• holds(Vx.Φ, I) iff holds $( \Phi , \mathrm { I } _ { \mathrm { x } / \mathrm { a } } )$ for all $\mathsf{a} \in \mathsf{U}$
+
+## Slide 9.5.24
+
+• holds(3x.Φ, I) iff holds $( \Phi , \mathrm { I } _ { \mathrm { x } / \mathrm { a } } )$ for some $\mathsf { a } \in \mathsf { U }$
+
+Quantifier applies to formula to right until an enclosing right parenthesis:
+
+<!-- page: 7 -->
+
+![](images/page_6_image_0.jpg)
+
+## FOL Example Domain
+
+$$
+\bullet \mathrm{U} = \{\square , \triangle , \bullet , \emptyset \}
+$$
+
+![](images/page_6_image_5.jpg)
+
+![](images/page_6_image_6.jpg)
+
+The Real World
+
+## FOL Example Domain
+
+• U = {−, △,O ,0}
+
+• Constants: Fred
+
+• Preds: Above², Circle1, Oval1, Square
+
+The Real World
+
+Slide 9.5.27 We have one constant symbol, Fred.
+
+![](images/page_6_image_14.jpg)
+
+Slide 9.5.26 There are four things in our U. Here they are.
+
+## FOL Example Domain
+
+![](images/page_6_image_17.jpg)
+
+• Constants: Fred
+
+## Slide 9.5.28
+
+We have four predicates: **Above**, **Circle**, **Oval**, **Square**. The numbers above them indicate their arity, or the number of arguments they take. Now these particular predicate names suggest a particular interpretation. The fact that I used this word, "circle", makes you guess that probably the interpretation of circle is going to be true for the red object. But of course it needn't be. The fact that those marks on the page are like an English word that we think means something about the shape of an object, that doesn't matter. The syntax is just some words that we write down on our page. But it helps us understand what's going on. It's just like using reasonable variable names in a program that you might write. When you call a variable "the number of times I've been through this loop," that doesn't mean that the computer knows what that means. It's the same thing here.
+
+<!-- page: 8 -->
+
+And we have one function symbol, called **hat**, that takes a single argument.
+
+• U = {−, △,O ,0}
+
+• Constants: Fred
+
+## FOL Example Domain
+
+•Function: hat
+
+• Preds: Above², Circle1, Oval1, Square
+
+![](images/page_7_image_8.jpg)
+
+![](images/page_7_image_9.jpg)
+
+## FOL Example Domain
+
+## Slide 9.5.30
+
+• U = {−, △,O ,0}
+
+• Constants: Fred
+
+• Preds: Above², Circle1, Oval1, Square
+
+•Function: hat
+
+• I(Fred) = △
+
+![](images/page_7_image_17.jpg)
+
+![](images/page_7_image_18.jpg)
+
+The Real World
+
+Now we can talk about a particular interpretation, I. We'll define I so that **I(Fred)** is the triangle.
+
+## Slide 9.5.31
+
+Now, what kind of a thing is **I(Above)**? Well, **Above** is a predicate symbol, and the interpretation of a predicate symbol is a relation, so **I(Above)** is a relation. Here's the particular relation we define it to be; it's a set of pairs, because **Above** has arity 2. It contains every pair of objects for which we want the relation **Above** to be true.
+
+• U = {−, △,O,0}
+
+## FOL Example Domain
+
+• Constants: Fred
+
+• Preds: Above², Circle1, Oval1, Square
+
+• Function: hat
+
+• I(Fred) = △
+
+![](images/page_7_image_29.jpg)
+
+$$
+\bullet \mathrm{I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+• I(Circle) = {<●>}
+
+![](images/page_7_image_32.jpg)
+
+The Real World
+
+## FOL Example Domain
+
+• U = {−, △,O,0}
+
+• Constants: Fred
+
+• Preds: Above², Circle1, Oval1, Square
+
+• Function: hat
+
+• I(Fred) = △
+
+![](images/page_7_image_40.jpg)
+
+• I(Above) = {<□ ,△ >,<,0>}
+
+![](images/page_7_image_42.jpg)
+
+The Real World
+
+## Slide 9.5.32
+
+<!-- page: 9 -->
+
+$$
+\bullet \mathrm{U} = \{\square , \triangle , \circ , \circ \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {hat}) = \{<   \triangle , \square >, <   \circlearrowleft , \circlearrowright >, <   \square , \square >, <   \circlearrowleft , \circlearrowright > \}
+$$
+
+## Slide 9.5.35
+
+Finally, just to cause trouble, we'll interpret the predicate **Square** to be true of the triangular object.
+
+## FOL Example
+
+## Slide 9.5.36
+
+• I(Fred) = △
+
+• I(Above) = {<□,∆>,&lt;O,0&gt;}
+
+• I(Circle) = {&lt;O&gt;}
+
+• I(0val) = {&lt;O&gt;,<0>}
+
+$$
+\cdot \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+\text { holds } (\text {Square} (\text {Fred}), \mathrm{I})
+$$
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangleleft > \}
+$$
+
+## FOL Example Domain
+
+• U = {−, △,O,0}
+
+• Constants: Fred
+
+![](images/page_8_image_45.jpg)
+
+• Preds: Above², Circle1, Oval1, Square
+
+• Function: hat
+
+• I(Fred) = △
+
+![](images/page_8_image_49.jpg)
+
+• I(Above) = {< ,△ >, <0,0>}
+
+• I(Circle) = {<●>}
+
+The Real World
+
+• I(0val) = {&lt;O&gt;,<0>}
+
+• I(hat) = {<△ ,>,<0,●>,<,>,<0,●>}
+
+• I(Square) = {<△ >}
+
+<!-- page: 10 -->
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \}
+$$
+
+$$
+\cdot \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+$$
+\bullet \quad I (\text {hat}) = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+\cdot \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+## Slide 9.5.39
+
+Now the question is: does the **Above** relation hold of the triangle and the square? We look this pair up in the relation denoted by **Above**, and we can't find it. So the **Above** relation doesn't hold of these objects.
+
+## FOL Example
+
+$$
+\cdot \mathrm{I} (\text {Oval}) = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(hat)} = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+• holds(Square(Fred), I)?
+
+yes
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{\langle \triangle \rangle \}
+$$
+
+• holds(Above(Fred, hat(Fred)), I)?
+
+$$
+\text {I(hat(Fred))} = \square
+$$
+
+• holds(Above(△, ), I)?
+
+## FOL Example
+
+• I(Fred) = △
+
+## Slide 9.5.40
+
+And our original sentence is false.
+
+• I(Above) = {<□,△>,&lt;O,0&gt;}
+
+• I(Circle) = {&lt;O&gt;}
+
+• I(0val) = {&lt;O&gt;,<0>}
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+$$
+\bullet \quad I (\text {hat}) = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+• holds(Square(Fred), I)?
+
+• I(hat(Fred)) =
+
+• holds(Above(Fred, hat(Fred)), I) ? no
+
+yes
+
+• holds(Above(△, ), I) ? no
+
+<!-- page: 11 -->
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+## Slide 9.5.43
+
+Here's a more complicated question in the same domain and interpretation. Is the sentence: **For all x there exists a y such that either x is Above y or y is Above x** true in I?
+
+## FOL Example: Continued
+
+• I(Fred) = △
+
+## Slide 9.5.44
+
+• I(Above) = {<□,△>,&lt;O,0&gt;}
+
+• I(Circle) = {&lt;O&gt;}
+
+• I(0val) = {&lt;O&gt;,<0>}
+
+• I(hat) = {<△,>,<0,0>
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+• holds(∀x. 3y. Above(x,y) v Above(y, ×), I)?
+
+• holds(3y. Above(x,y) v Above(y,x), Ix/)?
+
+$$
+\bullet \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+## FOL Example: Continued
+
+• I(Fred) = △
+
+• I(Above) = {<□,△>,&lt;O,0&gt;}
+
+• I(Circle) = {&lt;O&gt;}
+
+$$
+\cdot \mathrm{I} (\text {Oval}) = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+$$
+\mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+<,>,&lt;O,O&gt;}
+
+$$
+\text {I(Square)} = \{\langle \triangle \rangle \}
+$$
+
+$$
+\text { holds } (\forall x. \exists y. A b o v e (x, y) \lor A b o v e (y, x), I)?
+$$
+
+<!-- page: 12 -->
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \}
+$$
+
+$$
+\text {I(hat)} = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{<   \triangle > \}
+$$
+
+## FOL Example: Continued
+
+## Slide 9.5.48
+
+• I(Above) = {<□,△>,&lt;O,0&gt;}
+
+• I(Circle) = {&lt;O&gt;}
+
+• I(Fred) = △
+
+• I(0val) = {&lt;O&gt;,<0>}
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\bullet \quad I (\text {hat}) = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+## Slide 9.5.47
+
+$$
+\text {I(Square)} = \{<   \Delta > \}
+$$
+
+Okay. Here's our last example in this domain. What about the sentence: "for all x, for all y, x is above y or y is above x"? Is it true in interpretation I?
+
+$$
+\text {holds(Above(x,y) v Above(y,x), Ix/ \triangle ,y / ■)}? \text {yes}
+$$
+
+• holds(∀x. 3y. Above(x,y) v Above(y, ×), I)? yes
+
+$$
+\text {I(Above)} = \{\langle \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+• holds(3y. Above(x,y) v Above(y,x), Ix/)?yes holds(Above(x,y) v Above(y,x), Ix,y/=) ?yes
+
+• verify for all other values of x
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc \rangle \}
+$$
+
+• holds(∀ x. ∀ y. Above(x,y) v Above(y,x), I)?
+
+$$
+\cdot \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+• holds(Above(x,y) v Above(y,x), Ix/=,y%)?
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \}
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+$$
+\text { holds } (\forall x. \exists y. \text { Above } (x, y) \lor \text { Above } (y, x), I)?
+$$
+
+## FOL Example: Continued
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{\langle \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\cdot \mathrm{I} (\text {Oval}) = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+$$
+\mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{\triangleleft > \}
+$$
+
+• holds(vx. 3y. Above(x,y) v Above(y, x), I)? yes
+
+• holds(3y. Above(x,y) v Above(y,x), Ix/)? yes
+
+• verify for all other values of x
+
+• holds(∀ x. ∀ y. Above(x,y) v Above(y,x), I)?
+
+<!-- page: 13 -->
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+## 6.034 Notes: Section 9.6
+
+## Slide 9.6.1
+
+Now we're going to see how first-order logic can be used to formalize a variety of real-world concepts and situations. In this batch of problems, you should try to think of the answer before you go on to see it.
+
+## Writing FOL
+
+![](images/page_12_image_19.jpg)
+
+## Writing FOL
+
+• Cats are mammals [Cat1, Mammal1]
+
+## Slide 9.6.2
+
+How would you use first-order logic to say "Cats are mammals"? (You can use a unary predicate **cat** and another unary predicate **mammal**).
+
+<!-- page: 14 -->
+
+## Slide 9.6.5
+
+**Surveyor(Jane) and Tall(Jane)**.
+
+## Writing FOL
+
+• Cats are mammals [Cat1, Mammal1] • ∀ x. Cat(x) → Mammal(x)
+
+• Jane is a tall surveyor [Tall1, Surveyor1, Jane] • Tall(Jane) ∧ Surveyor(Jane)
+
+## Writing FOL
+
+• Jane is a tall surveyor [Tall1, Surveyor1, Jane] • Tall(Jane) ^ Surveyor(Jane)
+
+• A nephew is a sibling's son [Nephew², Sibling², Son²] • ∀xy. [Nephew(x,y)↔
+
+## Slide 9.6.6
+
+<!-- page: 15 -->
+
+## Slide 9.6.9
+
+We can say that, "for all x and y, x is the maternal grandmother of y if and only if there exists a z such that x is the mother of z, and z is the mother of y".
+
+## Writing FOL
+
+• Cats are mammals [Cat1, Mammal1]
+
+• ∀ x. Cat(x) → Mammal(x)
+
+• Jane is a tall surveyor [Tall1, Surveyor1, Jane] • Tall(Jane) ^ Surveyor(Jane)
+
+• A nephew is a sibling's son [Nephew², Sibling², Son²] • ∀xy. [Nephew(x,y) ↔ ∃z . [Sibling(y,z) ^ Son(x,z)]] • A maternal grandmother is a mother's mother
+
+[functions: mgm, mother-of]
+
+• ∀xy. x=mgm(y) ↔ =mgm(y)
+
+3z. x=mother-of(z)^ z=mother-of(y)
+
+## Writing FOL
+
+• Cats are mammals [Cat1, Mammal1]
+
+## Slide 9.6.10
+
+• ∀ x. Cat(x) → Mammal(x)
+
+• Jane is a tall surveyor [Tall1, Surveyor1, Jane] • Tall(Jane) ^ Surveyor(Jane)
+
+• A nephew is a sibling's son [Nephew2, Sibling², Son²] • ∀xy. [Nephew(x,y) ↔ ∃z . [Sibling(y,z) ∧ Son(x,z)]] • A maternal grandmother is a mother's mother [functions: mgm, mother-of]
+
+•∀xy. x=mgm(y) ↔
+
+3z. x=mother-of(z)^ z=mother-of(y)
+
+• Everybody loves somebody [loves2]
+
+<!-- page: 16 -->
+
+## Writing More FOL
+
+## Slide 9.6.13
+
+Let's say nobody loves Jane. Poor Jane. How can we say that?
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+## Writing More FOL
+
+• Nobody loves Jane
+
+## Slide 9.6.14
+
+<!-- page: 17 -->
+
+## Slide 9.6.17
+
+**For all x, exists y such that Father(y,x)**
+
+## Writing More FOL
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+• ¬∃x. Loves(x,Jane)
+
+• Everybody has a father
+
+●∀x. ∃ y. Father(y,x)
+
+• Everybody has a father and a mother
+
+## Writing More FOL
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+• →3x. Loves(x,Jane)
+
+• Everybody has a father
+
+∀x. ∃y. Father(y,x)
+
+## Slide 9.6.18
+
+Everybody has a father and a mother.
+
+<!-- page: 18 -->
+
+## Slide 9.6.21
+
+Whoever has a father has a mother.
+
+## Writing More FOL
+
+## Writing More FOL
+
+• Everybody has a father
+
+∀x. ∃ y. Father(y,x)
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+• Everybody has a father and a mother • ∀ x. ∃ y, z. Father(y,x) ∧ Mother(z,x)
+
+• Nobody loves Jane
+
+• Whoever has a father, has a mother • ∀.
+
+• Everybody has a father and a mother • ∀ x. ∃ y, z. Father(y,x) ∧ Mother(z,x)
+
+• →3x. Loves(x,Jane)
+
+• ∀x. ¬ Loves(x,Jane)
+
+• ¬∃x. Loves(x,Jane)
+
+●∀x. ∃ y. Father(y,x)
+
+• Everybody has a father
+
+• Whoever has a father, has a mother
+
+## Slide 9.6.22
+
+<!-- page: 19 -->
+
+## Writing More FOL
+
+## Slide 9.6.24
+
+• Nobody loves Jane
+
+• ∀x.¬ Loves(x,Jane)
+
+• →3x. Loves(x,Jane)
+
+• Everybody has a father
+
+●∀x. ∃ y. Father(y,x)
+
+• Everybody has a father and a mother • ∀ x. ∃ yz. Father(y,x) ∧ Mother(z,x)
+
+• Whoever has a father, has a mother
+
+And we can describe x's that have a mother by **exists y such that Mother (y,x)**.
+
+• ∀x.[[3 y. Father(y,x)] [3 y. Mother(y,x)]]
+
+## Slide 9.6.25
+
+Finally, we put these together using implication, just as we did with the "all cats are mammals" example. We want to say objects with a Father are a subset of the set of objects with a Mother (in this case, it will turn out that the sets are equal). So, we end up with "for all x, if there exists a y such that y is the father of x, then there exists a y such that y is the mother of x".
+
+## Writing More FOL
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+• →3x. Loves(x,Jane)
+
+• Everybody has a father
+
+•∀x. ∃y. Father(y,x)
+
+• Everybody has a father and a mother • ∀ x. ∃ yz. Father(y,x) ∧ Mother(z,x)
+
+• Whoever has a father, has a mother
+
+• ∀ x.[[3 y. Father(y,x)] → [3 y. Mother(y,x)]]
+
+## Writing More FOL
+
+• Nobody loves Jane
+
+• ∀x. ¬ Loves(x,Jane)
+
+• ¬∃x. Loves(x,Jane)
+
+• Everybody has a father
+
+●∀x. ∃ y. Father(y,x)
+
+• Everybody has a father and a mother
+
+• ∀ x. ∃ yz. Father(y,x) ∧ Mother(z,x)
+
+• Whoever has a father, has a mother
+
+• ∀ x.[[3 y. Father(y,x)] → [3 y. Mother(y,x)]]
+
+## Slide 9.6.26
+
+<!-- page: 20 -->
+
+![](images/page_19_image_0.jpg)
+
+## Slide 9.7.1
+
+Now that we understand something about first-order logic as a language, we'll talk about how we can use it to do things. As in propositional logic, the thing that we'll most often want to do with logical statements is to figure out what conclusions we can draw from a set of assumptions. In propositional logic, we had the notion of entailment: a **KB** entails a sentence if and only if the sentence is true in every interpretation that makes **KB** true.
+
+## Entailment in First-Order Logic
+
+![](images/page_19_image_6.jpg)
+
+## Entailment in First-Order Logic
+
+• KB entails S: for every interpretation I, if KB holds in I, then S holds in I
+
+## Slide 9.7.2
+
+In first-order logic, the notion of entailment is the same. A knowledge base entails a sentence if and only if the sentence holds in every interpretation in which the knowledge base holds.
+
+## Slide 9.7.3
+
+It's important that entailment is a relationship between a set of sentences, **KB**, and another sentence, S. It doesn't directly involve a particular intended interpretation that we might have in mind. It has to do with the subsets of all possible interpretations in which **KB** and S hold; entailment requires that the set of interpretations in which **KB** holds be a subset of those in which S holds. This is sort of a hard thing to understand at first, since the number (and potential weirdness) of all possible interpretations in firstorder logic is just huge.
+
+## Entailment in First-Order Logic
+
+• KB entails S: for every interpretation I, if KB holds in I, then S holds in I
+
+all interpretations
+
+![](images/page_19_image_16.jpg)
+
+<!-- page: 21 -->
+
+![](images/page_20_image_1.jpg)
+
+## Intended Interpretations
+
+KB: (∀x.Circle(x)→ Oval(x))^(∀x.Square(x)→−Oval(x))
+
+## Slide 9.7.6
+
+Let's look at a particular situation in which we might want to do logical inference. Consider our shapes example from before. Let's say that we know, as our knowledge base, that all circles are ovals, and that no squares are ovals. We can write this as **for all x, Circle(x) implies Oval(x)**. And **for all x, Square (x) implies not Oval(x)**.
+
+## Slide 9.7.7
+
+Now, let's say we're wondering whether it's also true that no squares are circles. We'll call that sentence S, and write it **for all x, Square(x) implies not Circle(x)**.
+
+## Intended Interpretations
+
+KB: (∀x.Circle(x)→ Oval(x))^(∀x.Square(x)→→Oval(x))
+
+$$
+S: \forall x. \text {Square} (x) \to \neg \text {Oval} (x)
+$$
+
+<!-- page: 22 -->
+
+![](images/page_21_image_0.jpg)
+
+$$
+\bullet \mathrm{I} (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \rangle \}
+$$
+
+$$
+\bullet \quad I (\text {hat}) = \{\triangle , \square >, \circlearrowleft , \circlearrowright >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{\langle \triangle > \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \rangle \}
+$$
+
+$$
+\bullet \quad I (\text {hat}) = \{\triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{<   \Delta > \}
+$$
+
+## Intended Interpretations
+
+KB: (∀x. Circle(x) → Oval(x))^(∀x.Square(x)→¬Oval(x))
+
+S $\forall x . { \mathsf { S q u a r e } } ( x ) \to \neg { \mathsf { O v a l } } ( x )$
+
+• We know holds(KB, I)
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+• We wonder whether holds(S, I)
+
+$$
+\text {I(Above)} = \{\square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+• We could ask: Does KB entail S?
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+• Or we could just try to check whether
+
+$$
+\text {I(hat)} = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+<□,□>,<,>}
+
+holds(S, I)
+
+$$
+\bullet \mathrm{I} (\text {Square}) = \{\triangle <   \Delta > \}
+$$
+
+## Slide 9.7.10
+
+You might say that entailment is too big a hammer. I don't actually care whether S is true in all possible interpretations that satisfy **KB**. Why? because I have a particular interpretation in mind (namely, our little world of geometric shapes, embodied in interpretation I). And I know that **KB** holds in I. So what I really want to know is whether S holds in I.
+
+Unfortunately, the computer does not know what interpretation I have in mind. We want the computer to be able to reach valid conclusions about my intended interpretation without my having to enumerate it (because it may be infinite).
+
+For this particular example of I, it's not too hard to check whether S holds (because the universe is finite and small). But, as we said before, in general, we won't be able even to test whether a sentence holds in a particular interpetation.
+
+## Slide 9.7.11
+
+$$
+S: \forall x. \text {Square} (x) \to \neg \text {Oval} (x)
+$$
+
+KB: (∀x.Circle(x)→ Oval(x))^(∀x.Square(x)→→Oval(x))
+
+## An Infinite Interpretation
+
+<!-- page: 23 -->
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S: \forall x. \text {Square} (x) \rightarrow \neg \text {Oval} (x)
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S: \forall x. \text {Square} (x) \to \neg \text {Oval} (x)
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+## An Infinite Interpretation
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S: \forall x. \text {Square} (x) \rightarrow \neg \text {Oval} (x)
+$$
+
+## Slide 9.7.14
+
+We'll let Oval stand for the even positive integers, {2, 4, 6, 8, ...}.
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+## Slide 9.7.15
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+## An Infinite Interpretation
+
+$$
+S: \forall x. \text {Square} (x) \to \neg \text {Oval} (x)
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+<!-- page: 24 -->
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+## An Infinite Interpretation
+
+## Slide 9.7.18
+
+KB: (∀x. Circle(x) → Oval(x))^(∀x.Square(x)→¬Oval(x))
+
+S: ∀x.Square(x)→¬Oval(x)
+
+• Does KB hold in $\mathrm{I}_{1} ?$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+•Yes, but can't answer via enumerating U
+
+Similarly, we can see that S holds in $\mathbf { I _ { 1 } } ,$ as well. Unfortunately, we can't rely on our computers to be as smart as we are (yet!). So, if we want a computer to arrive at the conclusion that S follows from **KB**, it will have to do it more mechanically.
+
+$$
+\mathrm{I} _ {1} (\text {oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+• S also holds in $\mathbf{I}_{1}$
+
+• No way to verify mechanically
+
+## Slide 9.7.19
+
+$$
+S _ {1}: \forall x, y. \text {Circle} (x) \land \text {Oval} (y) \land \neg \text {Circle} (y) \rightarrow \text {Above} (x, y)
+$$
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+## An Argument for Entailment
+
+<!-- page: 25 -->
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S _ {1}: \forall x, y. \text {Circle} (x) \land \text {Oval} (y) \land \neg \text {Circle} (y) \rightarrow \text {Above} (x, y)
+$$
+
+$$
+\text {I(Above)} = \{\langle \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \}
+$$
+
+$$
+\text {I(hat)} = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{\triangleleft > \}
+$$
+
+$$
+\text { holds } (K B, I)
+$$
+
+$$
+\bullet \text { holds } (S _ {1}, I)
+$$
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S _ {1}: \forall x, y. \text {Circle} (x) \land \text {Oval} (y) \land \neg \text {Circle} (y) \rightarrow \text {Above} (x, y)
+$$
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\bullet \mathrm{I} (\text {Oval}) = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\cdot \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \circ , \circ >
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+$$
+\text {I(Square)} = \{\triangleleft \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Above}) = >
+$$
+
+$$
+\bullet \text { holds } (S _ {1}, I)
+$$
+
+## An Argument for Entailment
+
+$$
+K B: (\forall x. \text {Circle} (x) \rightarrow \text {Oval} (x)) \land (\forall x. \text {Square} (x) \rightarrow \neg \text {Oval} (x))
+$$
+
+## Slide 9.7.22
+
+$$
+S _ {1}: \forall x, y. \text {Circle} (x) \land \text {Oval} (y) \land \neg \text {Circle} (y) \rightarrow \text {Above} (x, y)
+$$
+
+Then S holds in $\mathbf { I _ { 1 } }$ if all integers divisible by 4 are greater than all integers divisible by 2 but not by 4, which is clearly false.
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, <   \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+$$
+\text {I(hat)} = \{<   \triangle , \square >, <   \bigcirc , \bigcirc >
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Above}) = >
+$$
+
+$$
+\text {I(Square)} = \{<   \Delta > \}
+$$
+
+$$
+\text { holds } (K B, I)
+$$
+
+$$
+\cdot \text { holds } (S _ {1}, I)
+$$
+
+$$
+\cdot \text { holds } (K B, I _ {1})
+$$
+
+$$
+\bullet \text {fails} (S _ {1}, I _ {1})
+$$
+
+## Slide 9.7.23
+
+## An Argument for Entailment
+
+$$
+K B: (\forall x. \text {Circle} (x) \to \text {Oval} (x)) \land (\forall x. \text {Square} (x) \to \neg \text {Oval} (x))
+$$
+
+$$
+S _ {1}: \forall x, y. \text {Circle} (x) \land \text {Oval} (y) \land \neg \text {Circle} (y) \rightarrow \text {Above} (x, y)
+$$
+
+$$
+\bullet \quad I (\text {Fred}) = \triangle
+$$
+
+$$
+\text {I(Above)} = \{<   \square , \triangle >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\mathrm{U} _ {1} = \{1, 2, 3, \dots \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Circle}) = \{4, 8, 1 2, 1 6, \dots \}
+$$
+
+$$
+\text {I(Circle)} = \{\langle \bigcirc > \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Oval}) = \{2, 4, 6, 8, \dots \}
+$$
+
+$$
+\text {I(Oval)} = \{\langle \bigcirc >, \langle \bigcirc > \rangle \}
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Square}) = \{1, 3, 5, 7, \dots \}
+$$
+
+$$
+\cdot \mathrm{I} (\text {hat}) = \{\triangle , \square >, <   \circ , \circ >
+$$
+
+$$
+\mathrm{I} _ {1} (\text {Above}) = >
+$$
+
+$$
+<   \square , \square >, <   \bigcirc , \bigcirc > \}
+$$
+
+$$
+\text {I(Square)} = \{<   \Delta > \}
+$$
+
+$$
+\text { holds } (K B, I)
+$$
+
+$$
+\bullet \text { holds } (K B, I _ {1})
+$$
+
+$$
+\bullet \text { holds } (S _ {1}, I)
+$$
+
+$$
+\bullet \text {fails} (S _ {1}, I _ {1})
+$$
+
+$$
+\text {KB doesn't entail} S _ {1}!
+$$
+
+<!-- page: 26 -->
+
+## Proof and Entailment
+
+## Slide 9.7.26
+
+• Entailment captures general notion of "follows from"
+
+• Can't evaluate it directly by enumerating interpretations
+
+• So, we'll do proofs
+
+So what do we do? As we did in propositional logic, we will stay in the domain of syntax, and do proofs to figure out whether S is entailed by **KB**.
+
+## Slide 9.7.27
+
+There are proof rules that are sound and complete, in the sense that if S is entailed by **KB**, there is a finite proof of that. So, it's easier, in general, though not for every particular case, to do a proof of general entailment than to test whether a sentence holds in a given interpretation.
+
+The next few segements of this material will show how to extend the notion of resolution refutation from propositional logic to first-order logic.
+
+## Proof and Entailment
+
+• Entailment captures general notion of "follows from"
+
+• Can't evaluate it directly by enumerating interpretations
+
+• So, we'll do proofs
+
+• In FOL, if S is entailed by KB, then there is a finite proof of S from KB
+
+<!-- page: 27 -->
+
+## Axiomatization
+
+• What if we have a particular interpretation, I, in mind, and want to test whether holds(S, I)?
+
+## Slide 9.7.30
+
+• Write down a set of sentences, called axioms, that will serve as our KB
+
+• We would like KB to hold in I, and as few other interpretations as possible
+
+Ideally the axioms would be so specific that that there was a single interpretation, our intended interpretation, in which they held. In general, though, this will be impossible. You might be able to constrain your axioms to describe domains that contain exactly 4 objects, but you'll never be able to say exactly which 4. You can often give axioms that put stringent enough requirements on the relationships between those objects that all of the interpretations in which the axioms hold are essentially the same as (isomorphic to) your intended interpretation.
+
+![](images/page_26_image_20.jpg)
+
+## Slide 9.7.31
+
+No matter how constraining your axioms are, you can rely on the fact that if your **KB** holds in your intended interpretation and **KB** entails S, then S holds in the intended interpretation.
+
+## Axiomatization
+
+• What if we have a particular interpretation, I, in mind, and want to test whether holds(S, I)?
+
+• Write down a set of sentences, called axioms, that will serve as our KB
+
+• We would like KB to hold in I, and as few other interpretations as possible
+
+• No matter what,
+
+• If holds(KB, I) and KB entails $\mathbb { S } ,$
+
+• then holds(S, I)
+
+<!-- page: 28 -->
+
+![](images/page_27_image_0.jpg)
+
+## Axiomatization Example
+
+Above(A,C)
+
+Above(B,D)
+
+![](images/page_27_image_24.jpg)
+
+## Slide 9.7.34
+
+We propose to axiomatize this domain by specifying the above relation on these constants: **Above(A, C) and Above (B, D)**.
+
+## Slide 9.7.35
+
+Above(B,D)
+
+Above(A,C)
+
+## Axiomatization Example
+
+∀x, y. Above(x, y) → hat(y) = x
+
+∀x. (¬∃y. Above(y,x))→ hat(x) = x
+
+![](images/page_27_image_36.jpg)
+
+<!-- page: 29 -->
+
+## Axiomatization Example
+
+## Slide 9.7.36
+
+![](images/page_28_image_4.jpg)
+
+Slide 9.7.37
+
+So, does our KB entail S? Unfortunately not. Consider the interpretation $\mathbf { I _ { 2 } } .$ It has two extra pairs in the interpretation of Above. Our axioms definitely hold in this interpretation, but S does not. In fact, in this interpretation, the sentence hat(A) = C will hold.
+
+## Axiomatization Example
+
+These four axioms will constitute our **KB**. Now, we're curious to know whether it's okay to conclude that the hat of A is A. It's true in our intended interpretation, and we'd like it to be a consequence of our axioms.
+
+![](images/page_28_image_9.jpg)
+
+![](images/page_28_image_10.jpg)
+
+Slide 9.7.39
+
+Here's a reasonable axiom to add: "for all x and y, if x is above y then y is not above x". It says that above is asymmetric. With this axiom added to our KB, KB no longer holds in $\mathbf { I _ { 2 } } ,$ and so our immediate problem is solved.
+
+## Slide 9.7.38
+
+Just so we can see what's going on, let's go back to our Venn diagram for entailment. In this case, the blue set of interpretations in which the **KB** holds is not a subset of the green set of interpretations in which S holds. So, it is possible to have an interpretation, $\mathbf { I _ { 2 } } ,$ in which **KB** holds but not S. **KB** does not entail S (for it to do so, the blue area would have to be a subset of the green), and so we are not licensed to conclude S from **KB**.
+
+How can we fix this problem? We need to add more axioms, in order to rule out $\mathbf { I } _ { 2 }$ as a possible interpretation. (Our goal is to make the blue area smaller, until it becomes a subset of the green area).
+
+## Axiomatization Example: Another Try
+
+## Above(A,C)
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+![](images/page_28_image_20.jpg)
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \neg \text {Above} (y, x)
+$$
+
+## hat(A) = A
+
+$$
+\bullet \text {fails} (\mathrm{KB} _ {3}, \mathrm{I} _ {2})
+$$
+
+<!-- page: 30 -->
+
+$$
+\text {Above} (A, C)
+$$
+
+$$
+\text { Above } (B, D)
+$$
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \neg \text {Above} (y, x)
+$$
+
+$$
+\text {hat} (A) = A
+$$
+
+$$
+\bullet \mathrm{I} _ {3} (\mathrm{A}) = \square
+$$
+
+$$
+\bullet \mathrm{I} _ {3} (\mathrm{B}) = \bigcirc
+$$
+
+$$
+\bullet \mathrm{I} _ {3} (\mathrm{C}) = \triangle
+$$
+
+$$
+\bullet \text {fails} (\mathrm{KB} _ {3}, \mathrm{I} _ {2})
+$$
+
+$$
+\bullet \mathrm{I} _ {3} (\mathrm{D}) = \bigcirc
+$$
+
+$$
+\bullet \mathrm{I} _ {3} (\text {Above}) = \{<   \square , \triangle >, <   \bigcirc , \bigcirc >,
+$$
+
+$$
+\cdot \text { holds } (K B _ {3}, I _ {3})
+$$
+
+$$
+\bullet \text {fails} (S, I _ {3})
+$$
+
+$$
+\begin{array}{c} \bullet \mathrm{I}_{3}(\text{hat}) = \{\triangle ,\square >, <   \bigcirc ,\bigcirc >\\ <   \bigcirc ,\bigcirc >, <   \square ,\bigcirc >\} \end{array}
+$$
+
+$$
+\text { Above } (A, C)
+$$
+
+$$
+\text {Above} (B, D)
+$$
+
+$$
+\neg \exists x. A b o v e (x, A)
+$$
+
+$$
+\neg \exists x. A b o v e (x, B)
+$$
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+$$
+\text {hat} (A) = A
+$$
+
+## Axiomatization Example: One Last Time
+
+$$
+\text {Above} (A, C)
+$$
+
+$$
+\text {Above} (B, D)
+$$
+
+KB4
+
+## Slide 9.7.42
+
+$$
+\neg \exists x. A b o v e (x, A)
+$$
+
+![](images/page_29_image_42.jpg)
+
+$$
+\neg \exists x. A b o v e (x, B)
+$$
+
+![](images/page_29_image_44.jpg)
+
+If we let our new **KB** have these axioms as well, then it fails in $\mathbf { I } _ { \mathbf { 3 } } ,$ and does, in fact, entail S. Whew.
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+$$
+\text {hat} (A) = A
+$$
+
+$$
+\bullet \text { fails } (\mathrm{KB} _ {4}, \mathrm{I} _ {3})
+$$
+
+• KB4 entails S
+
+## Slide 9.7.43
+
+## Axiomatization Example: One Last Time
+
+$$
+\text {Above} (A, C)
+$$
+
+$$
+\text {Above} (B, D)
+$$
+
+KB4
+
+$$
+\neg \exists x. A b o v e (x, A)
+$$
+
+$$
+\neg \exists x. A b o v e (x, B)
+$$
+
+![](images/page_29_image_62.jpg)
+
+$$
+\forall x, y. \text {Above} (x, y) \rightarrow \text {hat} (y) = x
+$$
+
+$$
+\forall x. (\neg \exists y. A b o v e (y, x)) \rightarrow h a t (x) = x
+$$
+
+$$
+\text {S} \quad \text {hat} (A) = A
+$$
+
+$$
+\bullet \text { fails } (\mathrm{KB} _ {4}, \mathrm{I} _ {3})
+$$
+
+We'll prove S from $\mathsf{KB_{4}}$ later.
+
+$$
+\(\cdot \mathrm{KB} _ {4} \text { entails } S\)
+$$

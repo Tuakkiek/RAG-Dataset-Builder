@@ -1,0 +1,2039 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.736,
+            0.075,
+            0.92,
+            0.137
+          ],
+          "content": "**CS 4700:**"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.198,
+            0.145,
+            0.922,
+            0.215
+          ],
+          "level": 1,
+          "content": "Foundations of Artificial Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.426,
+            0.414,
+            0.601,
+            0.463
+          ],
+          "content": "**Instructor:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.406,
+            0.474,
+            0.611,
+            0.527
+          ],
+          "content": "**Prof. Selman**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.338,
+            0.539,
+            0.678,
+            0.594
+          ],
+          "content": "**selman@cs.cornell.edu**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.407,
+            0.679,
+            0.609,
+            0.73
+          ],
+          "content": "**Introduction**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.307,
+            0.739,
+            0.71,
+            0.797
+          ],
+          "content": "**(Reading R&N: Chapter 1)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.201,
+            0.001,
+            0.799,
+            1.0
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.8,
+            0.267,
+            0.864,
+            0.347
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.301,
+            0.766,
+            0.364
+          ],
+          "content": "**Course Administration (separate slides)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.45,
+            0.617,
+            0.509
+          ],
+          "content": "**What is Artificial Intelligence?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.601,
+            0.721,
+            0.661
+          ],
+          "content": "**Course Themes, Goals, and Syllabus**"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.768,
+            0.104,
+            0.962,
+            0.161
+          ],
+          "content": "AI: Goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.305,
+            0.403,
+            0.361
+          ],
+          "content": "**Ambitious goals:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.374,
+            0.796,
+            0.434
+          ],
+          "content": "– **understand** “**intelligent**” **behavior**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.447,
+            0.809,
+            0.511
+          ],
+          "content": "– **build** “**intelligent**” **agents / artifacts**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.532,
+            0.532,
+            0.883,
+            0.585
+          ],
+          "content": "**autonomous systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.602,
+            0.919,
+            0.813
+          ],
+          "content": "**understand human cognition (learning, reasoning, planning, and decision making) as a computational process.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.553,
+            0.07,
+            0.966,
+            0.142
+          ],
+          "content": "**What is Intelligence?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.366,
+            0.32,
+            0.424
+          ],
+          "content": "**Intelligence:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.429,
+            0.819,
+            0.553
+          ],
+          "content": "**capacity to learn and solve problems**” **(Webster dictionary)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.559,
+            0.638,
+            0.622
+          ],
+          "content": "– **the ability to act rationally**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.107,
+            0.695,
+            0.613,
+            0.757
+          ],
+          "content": "**Hmm… Not so easy to define.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.724,
+            0.071,
+            0.958,
+            0.126
+          ],
+          "content": "What is AI?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.171,
+            0.201,
+            0.845,
+            0.302
+          ],
+          "level": 2,
+          "content": "Views of AI fall into four different perspectives --- two dimensions:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.272,
+            0.362,
+            0.648,
+            0.411
+          ],
+          "level": 2,
+          "content": "1) Thinking versus Acting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.415,
+            0.965,
+            0.465
+          ],
+          "content": "**2) Human versus Rational (which is “easier”?)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.645,
+            0.261,
+            0.808
+          ],
+          "content": "**Thought/ Reasoning (“modeling thought / brain)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.823,
+            0.265,
+            0.997
+          ],
+          "content": "**Behavior/ Actions “behaviorism” “mimics behavior”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.33,
+            0.522,
+            0.479,
+            0.612
+          ],
+          "content": "**Human-like Intelligence**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.539,
+            0.517,
+            0.772,
+            0.612
+          ],
+          "continues_prev": true,
+          "content": "“**Ideal**” **Intelligent/ Pure Rationality**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.299,
+            0.652,
+            0.743,
+            0.936
+          ],
+          "content": "| 2. Thinking | 3. Thinking |\n| --- | --- |\n| humanly | Rationally |\n| 1. Acting | 4.Acting |\n| Humanly | Rationally |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_table_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.594,
+            0.103,
+            0.961,
+            0.169
+          ],
+          "level": 2,
+          "content": "1. Acting Humanly"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.11,
+            0.431,
+            0.752,
+            0.816
+          ],
+          "content": "|  | Human-like Intelligence | “Ideal” Intelligent/Rationally |\n| --- | --- | --- |\n| Thought/ Reasoning | 2. Thinking humanly | 3. Thinking Rationally |\n| Behavior/ Actions | 1. Acting Humanly →Turing Test | 4. Acting Rationally |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.03,
+            0.541,
+            0.359,
+            0.58
+          ],
+          "content": "(interaction via written questions)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.689,
+            0.435,
+            0.896,
+            0.483
+          ],
+          "content": "if interrogator"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.029,
+            0.001,
+            0.127,
+            0.19
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.015,
+                0.2,
+                0.144,
+                0.239
+              ],
+              "content": "Alan Turing"
+            }
+          ],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.395,
+            0.026,
+            0.962,
+            0.091
+          ],
+          "level": 2,
+          "content": "Acting humanly: Turing Test"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.137,
+            0.916,
+            0.189
+          ],
+          "content": "Turing (1950) \"Computing machinery and intelligence”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.257,
+            0.868,
+            0.348
+          ],
+          "content": "\"Can machines think?“ \"Can machines behave intelligently?\" **Operational test for intelligent behavior: the Imitation Game**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.03,
+            0.363,
+            0.595,
+            0.582
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.687,
+            0.382,
+            0.928,
+            0.431
+          ],
+          "content": "**AI system passes**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.688,
+            0.54,
+            0.904,
+            0.587
+          ],
+          "content": "**is the machine.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.625,
+            0.932,
+            0.676
+          ],
+          "content": "**No computer vision or robotics or physical presence required!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.721,
+            0.907,
+            0.828
+          ],
+          "content": "Predicted that by 2000, a machine might have a 30% chance of fooling a lay person for 5 minutes. **Achieved. (Siri!** J )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.872,
+            0.895,
+            0.981
+          ],
+          "content": "But, by scientific consensus, we are still several decades away from truly passing the Turing test (as the test was intended)."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.156,
+            0.067,
+            0.961,
+            0.199
+          ],
+          "level": 1,
+          "content": "Trying to pass the Turing test: Some Famous Human Imitation “Games”"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.105,
+            0.227,
+            0.336,
+            0.278
+          ],
+          "level": 2,
+          "content": "1960s ELIZA"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.283,
+            0.45,
+            0.325
+          ],
+          "content": "– **Joseph Weizenbaum**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.328,
+            0.508,
+            0.373
+          ],
+          "content": "– **Rogerian psychotherapist**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.421,
+            0.347,
+            0.475
+          ],
+          "content": "**1990s ALICE**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.558,
+            0.384,
+            0.619
+          ],
+          "level": 2,
+          "content": "Loebner prize"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.621,
+            0.577,
+            0.667
+          ],
+          "content": "– **win \\$100,000 if you pass the test**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.713,
+            0.912,
+            0.767
+          ],
+          "content": "**Still, passing Turing test is of somewhat questionable value.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.813,
+            0.774,
+            0.865
+          ],
+          "content": "**Because, deception appears required and allowed!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.902,
+            0.956,
+            0.955
+          ],
+          "content": "**Consider questions: Where were you born? How tall are you?**"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.146,
+            0.069,
+            0.962,
+            0.207
+          ],
+          "level": 1,
+          "content": "ELIZA: impersonating a Rogerian psychotherapist"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.313,
+            0.656,
+            0.364
+          ],
+          "content": "**1960s ELIZA Joseph Weizenbaum**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.452,
+            0.288,
+            0.476
+          ],
+          "content": "www-ai.ijs.si/eliza/eliza.html"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.496,
+            0.654,
+            0.542
+          ],
+          "content": "ELIZA - a friend you could never have before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.567,
+            0.363,
+            0.594
+          ],
+          "content": "Eliza: Hello. I am ELIZA. How can I help you?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.412,
+            0.596,
+            0.488,
+            0.619
+          ],
+          "content": "Submit Query"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.429,
+            0.656,
+            0.908,
+            0.901
+          ],
+          "content": "**You: Well, I feel sad Eliza: Do you often feel sad? You: not very often. Eliza: Please go on.**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.859,
+            0.877,
+            0.907,
+            0.94
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.621,
+            0.107,
+            0.847,
+            0.167
+          ],
+          "content": "Alternative"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.345,
+            0.748,
+            0.505
+          ],
+          "content": "See: The New Yorker, August 16, 2013 **Why Can’t My Computer Understand Me?** Posted by <u>Gary Marcus</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.545,
+            0.72,
+            0.704
+          ],
+          "content": "http://www.newyorker.com/online/blogs/elements/2013/08/why-cant-my-computer-understand-me.html"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.769,
+            0.88,
+            0.876
+          ],
+          "content": "**Discusses alternative test by Hector Levesque:** http://www.cs.toronto.edu/\\~hector/Papers/ijcai-13-paper.pdf"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.542,
+            0.104,
+            0.961,
+            0.168
+          ],
+          "level": 2,
+          "content": "2. Thinking Humanly"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.128,
+            0.375,
+            0.753,
+            0.811
+          ],
+          "content": "|  | Human-like Intelligence | “Ideal” Intelligent/Rationally |\n| --- | --- | --- |\n| Thought/ Reasoning | 2. Thinking humanly → Cognitive Modeling | Thinking Rationally |\n| Behavior/ Actions | Acting Humanly → Turing Test | Acting Rationally |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.855,
+            0.913,
+            0.912,
+            0.95
+          ],
+          "content": "here"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.407,
+            0.031,
+            0.961,
+            0.17
+          ],
+          "content": "Thinking humanly: modeling cognitive processes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.212,
+            0.922,
+            0.266
+          ],
+          "content": "**Requires scientific theories of** <strong><u>internal activities of the brain.</u></strong>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.337,
+            0.986,
+            0.534
+          ],
+          "content": "**1) Cognitive Science (top-down) computer models + experimental techniques from psychology** à **Predicting and testing behavior of human subjects**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.593,
+            0.615,
+            0.647
+          ],
+          "content": "**2) Cognitive Neuroscience (bottom-up)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.661,
+            0.875,
+            0.722
+          ],
+          "content": "à **Direct identification from neurological data**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.791,
+            0.908,
+            0.977
+          ],
+          "content": "**Distinct disciplines but especially 2) has become very active. Connection to AI: Neural Nets. (Large** <strong><u>Google / MSR / Facebook AI Lab efforts.)</u></strong>"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.067,
+            0.851,
+            0.13
+          ],
+          "level": 2,
+          "content": "Neuroscience: The Hardware"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.105,
+            0.231,
+            0.264,
+            0.276
+          ],
+          "level": 2,
+          "content": "The brain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.29,
+            0.837,
+            0.331
+          ],
+          "content": "**a neuron, or nerve cell, is the basic information**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.343,
+            0.533,
+            0.387
+          ],
+          "content": "processing unit $( 1 0 ^ { \\lambda } 1 1 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.398,
+            0.881,
+            0.44
+          ],
+          "content": "• **many more synapses** $( 1 0 ^ { \\wedge } 1 4 )$ **connect the neurons**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.45,
+            0.785,
+            0.495
+          ],
+          "content": "cycle time: $1 0 ^ { \\wedge } ( - 3 )$ **seconds (1 millisecond)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.556,
+            0.639,
+            0.598
+          ],
+          "level": 2,
+          "content": "How complex can we make computers?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.609,
+            0.657,
+            0.651
+          ],
+          "content": "• $1 0 ^ { \\wedge } 9$ **or more transistors per CPU**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.663,
+            0.816,
+            0.705
+          ],
+          "content": "• **Ten of thousands of cores,** $1 0 ^ { \\wedge } 1 0$ **bits of RAM**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.717,
+            0.713,
+            0.76
+          ],
+          "content": "• **cycle times: order of** $1 0 ^ { \\wedge } ( - 9 )$ **s**econds"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.823,
+            0.883,
+            0.906
+          ],
+          "content": "**Numbers are getting close! Hardware will surpass human brain within next 20 yrs.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.933,
+            0.918,
+            0.959
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.267,
+            0.029,
+            0.735,
+            0.099
+          ],
+          "level": 2,
+          "content": "Computer vs. Brain"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.136,
+            0.198,
+            0.999,
+            0.917
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.147,
+                0.158,
+                0.432,
+                0.193
+              ],
+              "content": "All Thinks, Great and Small"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.105,
+                0.936,
+                0.517,
+                0.983
+              ],
+              "content": "Aside: Whale vs. human brain"
+            }
+          ],
+          "image_source": "images/page_14_chart_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.933,
+            0.917,
+            0.959
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.135,
+            0.063,
+            0.185,
+            0.104
+          ],
+          "level": 2,
+          "content": "So,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.115,
+            0.919,
+            0.307
+          ],
+          "content": "**In near future, we can have computers with as many processing elements as our brain, but: far fewer interconnections (wires or synapses) then again, much faster updates.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.369,
+            0.7,
+            0.468
+          ],
+          "content": "**Fundamentally different hardware may require fundamentally different algorithms!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.477,
+            0.534,
+            0.519
+          ],
+          "content": "• **Still an open question.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.529,
+            0.506,
+            0.569
+          ],
+          "content": "• **Neural net research.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.196,
+            0.581,
+            0.803,
+            0.625
+          ],
+          "content": "**Can a digital computer simulate our brain?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.353,
+            0.647,
+            0.976,
+            0.805
+          ],
+          "content": "**Likely: Church-Turing Thesis (But, might we need quantum computing?) (Penrose; consciousness; free will)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.933,
+            0.918,
+            0.959
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.067,
+            0.619,
+            0.131
+          ],
+          "level": 2,
+          "content": "A Neuron"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.151,
+            0.224,
+            0.848,
+            0.774
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.933,
+            0.917,
+            0.959
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.168,
+            0.028,
+            0.837,
+            0.176
+          ],
+          "level": 2,
+          "content": "An Artificial Neural Network (Perceptrons)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.296,
+            0.317,
+            0.35
+          ],
+          "content": "Output units $\\mathcal { O } _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.517,
+            0.317,
+            0.574
+          ],
+          "content": "Hidden units $\\mathbf { a } _ { \\parallel }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.746,
+            0.313,
+            0.801
+          ],
+          "content": "Input units $I _ { \\pm }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.221,
+            0.749,
+            0.275
+          ],
+          "content": "**Output Unit**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.278,
+            0.295,
+            0.927,
+            0.818
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_5.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.574,
+            0.889,
+            0.752,
+            0.94
+          ],
+          "content": "Input Units"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.932,
+            0.917,
+            0.959
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.152,
+            0.866,
+            0.298
+          ],
+          "content": "**An artificial neural network is an abstraction (well, really, a** “**drastic simplification**”**) of a real neural network.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.376,
+            0.846,
+            0.573
+          ],
+          "content": "**Start out with random connection weights on the links between units. Then train from input examples and environment, by changing network weights.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.647,
+            0.88,
+            0.961
+          ],
+          "content": "**Recent breakthrough: Deep Learning (automatic discovery of “deep” features by a multi-layer neural network.) Deep learning is bringing perception (hearing & vision) within reach.**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.931,
+            0.918,
+            0.96
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.523,
+            0.103,
+            0.961,
+            0.168
+          ],
+          "level": 2,
+          "content": "3. Thinking Rationally"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.398,
+            0.754,
+            0.882
+          ],
+          "content": "|  | Human-like Intelligence | “Ideal” Intelligent/Rationally |\n| --- | --- | --- |\n| Thought/ Reasoning | Thinking humanly → Cognitive Modeling | 3. Thinking Rationally →formalizing \"Laws of Thought\" |\n| Behavior/ Actions | Acting Humanly →Turing Test | Acting Rationally |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.39,
+            0.008,
+            0.962,
+            0.131
+          ],
+          "content": "**Thinking rationally: formalizing the \"laws of thought”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.134,
+            0.404,
+            0.188
+          ],
+          "content": "**Long and rich history!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.197,
+            0.975,
+            0.319
+          ],
+          "content": "**Logic: Making the right inferences! Remarkably effective in science, math, and engineering.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.377,
+            0.874,
+            0.486
+          ],
+          "content": "**Several Greek schools developed various forms of logic: notation and rules of derivation for thoughts.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.497,
+            0.897,
+            0.603
+          ],
+          "content": "**Aristotle: what are correct arguments/thought processes? (characterization of** “**right thinking**”**).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.37,
+            0.615,
+            0.63,
+            0.664
+          ],
+          "content": "**Socrates is a man**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.657,
+            0.2,
+            0.759
+          ],
+          "content": "**Syllogisms Aristotle**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.372,
+            0.678,
+            0.654,
+            0.729
+          ],
+          "content": "**All men are mortal**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.37,
+            0.805,
+            0.797,
+            0.857
+          ],
+          "content": "**Therefore, Socrates is mortal**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.869,
+            0.909,
+            0.923
+          ],
+          "content": "**Can we mechanize it? (syntactic; strip interpretation)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.934,
+            0.758,
+            0.988
+          ],
+          "content": "**Use: legal cases, diplomacy, ethics etc. (?)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.018,
+            0.012,
+            0.893,
+            0.065
+          ],
+          "content": "**More contemporary logicians (e.g. Boole, Frege, and Tarski).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.065,
+            0.736,
+            0.117
+          ],
+          "content": "**Ambition: Developing the “language of thought.”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.018,
+            0.118,
+            0.927,
+            0.172
+          ],
+          "content": "**Direct line through mathematics and philosophy to modern AI.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.019,
+            0.205,
+            0.228,
+            0.265
+          ],
+          "level": 2,
+          "content": "Key notion:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.018,
+            0.297,
+            0.872,
+            0.36
+          ],
+          "content": "**Inference derives new information from stored facts**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.018,
+            0.391,
+            0.912,
+            0.514
+          ],
+          "content": "Axioms can be very compact. E.g. much of mathematics can be derived (in principle) from the logical axioms of"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.53,
+            0.681,
+            0.589
+          ],
+          "content": "eory. Zermelo-Fraenkel with axiom of choice."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.029,
+            0.521,
+            0.745,
+            0.999
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.749,
+            0.549,
+            0.952,
+            0.735
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.752,
+            0.812,
+            0.991,
+            0.975
+          ],
+          "content": "**Also, Godel’s incompleteness.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.047,
+            0.08,
+            0.231,
+            0.128
+          ],
+          "level": 2,
+          "content": "Limitations:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.185,
+            0.821,
+            0.293
+          ],
+          "content": "• **Not all intelligent behavior is mediated by logical deliberation (much appears not…)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.346,
+            0.907,
+            0.61
+          ],
+          "content": "• **(Logical) representation of knowledge underlying intelligence is quite non-trivial. Studied in the area of “knowledge representation.” Also brings in probabilistic representations. E.g. Bayesian networks and graphical models.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.665,
+            0.592,
+            0.715
+          ],
+          "content": "• **What is the purpose of thinking?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.72,
+            0.554,
+            0.769
+          ],
+          "content": "• **What thoughts should I have?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.812,
+            0.959,
+            0.861
+          ],
+          "content": "• **Seems to require some connection to “acting in the world.”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.866,
+            0.855,
+            0.971
+          ],
+          "content": "• **We (“agents”) want/need to affect our environment (in part for survival).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.573,
+            0.104,
+            0.96,
+            0.169
+          ],
+          "level": 2,
+          "content": "4. Acting Rationally"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.148,
+            0.398,
+            0.754,
+            0.882
+          ],
+          "content": "|  | Human-like Intelligence | “Ideal” Intelligent/Rationally |\n| --- | --- | --- |\n| Thought/ Reasoning | Thinking humanly → Cognitive Modeling | Thinking Rationally →formalizing \"Laws of Thought\" |\n| Behavior/ Actions | Acting Humanly →Turing Test | Acting Rationally |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_table_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.656,
+            0.015,
+            0.961,
+            0.079
+          ],
+          "level": 2,
+          "content": "Rational agents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.094,
+            0.961,
+            0.344
+          ],
+          "content": "**An agent is an entity that perceives and acts in the world (i.e. an “autonomous system” (e.g. self-driving cars) / physical robot or software robot (e.g. an electronic trading system))**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.403,
+            0.866,
+            0.463
+          ],
+          "content": "<strong><u>This course is about designing rational agents</u></strong>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.528,
+            0.937,
+            0.685
+          ],
+          "content": "**For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.751,
+            0.926,
+            0.987
+          ],
+          "content": "Caveat: computational limitations may make perfect rationality unachievable àdesign **best** program for given machine resources à“Limited rationality”"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.392,
+            0.07,
+            0.965,
+            0.142
+          ],
+          "level": 2,
+          "content": "Building Intelligent Machines"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.311,
+            0.964,
+            0.434
+          ],
+          "content": "**I Building exact models of human cognition view from psychology, cognitive science, and neuroscience**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.492,
+            0.779,
+            0.783
+          ],
+          "content": "**II Developing methods to match or exceed human performance in certain domains, possibly by very different means Main focus of current AI.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.856,
+            0.924,
+            0.963
+          ],
+          "content": "**But, I) often provides inspiration for II). Also, Neural Nets blur the separation.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.48,
+            0.013,
+            0.962,
+            0.075
+          ],
+          "level": 2,
+          "content": "Key research areas in AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.102,
+            0.923,
+            0.261
+          ],
+          "content": "**Problem solving, planning, and search --- generic problem solving architecture based on ideas from cognitive science (game playing, robotics).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.273,
+            0.875,
+            0.378
+          ],
+          "content": "**Knowledge Representation – to store and manipulate information (logical and probabilistic representations)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.389,
+            0.942,
+            0.496
+          ],
+          "content": "**Automated reasoning / Inference – to use the stored information to answer questions and draw new conclusions**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.507,
+            0.923,
+            0.611
+          ],
+          "content": "**Machine Learning – intelligence from data; to adapt to new circumstances and to detect and extrapolate patterns**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.623,
+            0.87,
+            0.726
+          ],
+          "content": "**Natural Language Processing – to communicate with the machine**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.74,
+            0.78,
+            0.793
+          ],
+          "content": "**Computer Vision --- processing visual information**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.805,
+            0.908,
+            0.909
+          ],
+          "content": "**Robotics --- Autonomy, manipulation, full integration of AI capabilities**"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 27,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

@@ -1,0 +1,961 @@
+**6.825 Techniques in Artificial Intelligence**
+
+# Satisfiability and Validity
+
+Lecture 4 • 1
+
+Last time we talked about propositional logic. There's no better way to empty out a room than to talk about logic. So now, -- having gone to all that work of establishing syntax and semantics -- what might you actually want to do with some descriptions that are written down in logic? There are two things that we might want to automatically determine about a sentence of logic. One is satisfiability, and another is validity.
+
+Last time we talked about a way to determine whether a sentence is satisfiable. Can you remember what it is? You know an algorithm for this.
+
+Try all possible assignments and see if there is one that makes the sentence true.
+
+## 6.825 Techniques in Artificial Intelligence
+
+## Satisfiability and Validity
+
+Satisfiable sentence: there exists a truth value assignment for the variables that makes the sentence true (truth value = t).
+
+• Algorithm?
+
+• Try all the possible assignments to see if one works.
+
+Valid sentence: all truth value assignments for the variables make the sentence true.
+
+• Algorithm?
+
+• Try all possible assignments and check that they all work.
+
+Lecture 4 • 5
+
+Try all possible assignments and be sure that all of them make the sentence true.
+
+## 6.825 Techniques in Artificial Intelligence
+
+## Satisfiability and Validity
+
+Satisfiable sentence: there exists a truth value assignment for the variables that makes the sentence true (truth value = t).
+
+• Algorithm?
+
+• Try all the possible assignments to see if one works.
+
+Valid sentence: all truth value assignments for the variables make the sentence true.
+
+• Algorithm?
+
+• Try all possible assignments and check that they all work.
+
+Are there better algorithms than these?
+
+Lecture 4 • 6
+
+We're going to spend some time talking about better ways to compute satisfiability and better ways to compute validity.
+
+There are lots of satisfiability problems in the real world. They end up being expressed essentially as lists of constraints, where you're trying to find some assignment of values to variables that satisfy the constraints.
+
+# Satisfiability Problems
+
+Many problems can be expressed as a list of constraints. Answer is assignment to variables that satisfy all the constraints.
+
+## Examples:
+
+• Scheduling people to work in shifts at a hospital
+
+– Some people don’t work at night
+
+– No one can work more than x hours a week
+
+– Some pairs of people can’t be on the same shift
+
+– Is there assignment of people to shifts that satisfy all constraints?
+
+Lecture 4 • 8
+
+One example is scheduling nurses to work shifts in a hospital. Different people have different constraints, some don't want to work at night, no individual can work more than this many hours out of that many hours, these two people don't want to be on the same shift, you have to have at least this many per shift and so on. So you can often describe a setting like that as a bunch of constraints on a set of variables.
+
+## Satisfiability Problems
+
+Many problems can be expressed as a list of constraints. Answer is assignment to variables that satisfy all the constraints.
+
+Examples:
+
+• Scheduling people to work in shifts at a hospital
+
+– Some people don’t work at night
+
+– No one can work more than x hours a week
+
+– Some pairs of people can’t be on the same shift
+
+– Is there assignment of people to shifts that satisfy all constraints?
+
+• Finding bugs in programs [Daniel Jackson, MIT]
+
+– Write logical specification of, e.g. air traffic controller
+
+– Write assertion “two airplanes on same runway at same time”
+
+– Can these be satisfied simultaneously?
+
+Lecture 4 • 9
+
+There's an interesting application of satisfiability that's going on here at MIT in the Lab for Computer Science. Professor Daniel Jackson's interested in trying to find bugs in programs. That's a good thing to do, but (as you know!) it’s hard for humans to do reliably, so he wants to get the computer to do it automatically.
+
+One way to do it is to essentially make a small example instance of a program. So an example of a kind of program that he might want to try to find a bug in would be an air traffic controller. The air traffic controller has all these rules about how it works, right? So you could write down the logical specification of how the air traffic control protocol works, and then you could write down another sentence that says, "and there are two airplanes on the same runway at the same time." And then you could see if there is a satisfying assignment; whether there is a configuration of airplanes and things that actually satisfies the specifications of the air traffic control protocol and also has two airplanes on the same runway at the same time. And if you can find -- if that whole sentence is satisfiable, then you have a problem in your air traffic control protocol.
+
+Satisfiability problems are typically written as sets of constraints, and that means that they're often written – just about always written -- in conjunctive normal form.
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+A sentence is written in conjunctive normal form looks like ((A or B or not C) and (B or D) and (not A) and (B or C or F)). Or something like that.
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+Its outermost structure is a conjunction. It's a conjunction of multiple units. These units are called "clauses."
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+A clause is the disjunction of many things. The units that make up a clause are called literals.
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+And a literal is either a variable or the negation of a variable.
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+So you get an expression where the negations are pushed in as tightly as possible, then you have ors, then you have ands. This is like saying, that every assignment has to meet each of a set of requirements. You can think of each clause as a requirement. So somehow, the first clause has to be satisfied, and it has different ways that it can be satisfied, and the second one has to be satisfied, and the third one has to be satisfied, and so on.
+
+$$
+(A \lor B \lor \neg C) \land (B \lor D) \land (\neg A) \land (B \lor C)
+$$
+
+You can take any sentence in propositional logic and write it in conjunctive normal form.
+
+![](images/page_16_image_0.jpg)
+
+# Converting to CNF
+
+Here’s the procedure for converting sentences to conjunctive normal form.
+
+The first step is to eliminate single and double arrows using their definitions.
+
+$$
+\neg (\phi \lor \varphi) \equiv \neg \phi \land \neg \varphi
+$$
+
+$$
+\neg (\phi \land \varphi) \equiv \neg \phi \lor \neg \varphi
+$$
+
+The next step is to drive in negation. We do it using DeMorgan's Laws. You might have seen them in a digital logic class. Not (phi or psi) is equivalent to (not phi and not psi). And, Not (phi and psi) is equivalent to (not phi or not psi).
+
+So if you have a negation on the outside, you can push it in and change the connective from **and** to **or**, or from **or** to **and**.
+
+$$
+\neg (\phi \lor \varphi) \equiv \neg \phi \land \neg \varphi
+$$
+
+$$
+\neg (\phi \land \varphi) \equiv \neg \phi \lor \neg \varphi
+$$
+
+$$
+A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)
+$$
+
+The third step is to distribute **or** over **and**. That is, if we have (A or (B and C)) we can rewrite it as (A or B) and (A or C).
+
+You can prove to yourself, using the method of truth tables, that the distribution rule (and DeMorgan’s laws) are valid.
+
+## Converting to CNF
+
+1. Eliminate arrows using definitions
+
+2. Drive in negations using De Morgan’s Laws
+
+$$
+\neg (\phi \lor \varphi) \equiv \neg \phi \land \neg \varphi
+$$
+
+$$
+\neg (\phi \land \varphi) \equiv \neg \phi \lor \neg \varphi
+$$
+
+3. Distribute **or** over **and**
+
+$$
+A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)
+$$
+
+4. Every sentence can be converted to CNF, but it may grow exponentially in size
+
+Lecture 4 • 21
+
+One problem with conjunctive normal form is that, although you can convert any sentence to conjunctive normal form, you might do it at the price of an exponential increase in the size of the expression. Because if you have A and B and C OR D and E and F, you end up making the cross- product of all of those things.
+
+For now, we’ll think about satisfiability problems, which are generally fairly efficiently converted into CNF. But on homework 1, we’ll have to think a lot about the size of expressions in CNF.
+
+$$
+(A \lor B) \rightarrow (C \rightarrow D)
+$$
+
+Here’s an example of converting a sentence to CNF.
+
+$$
+(A \lor B) \rightarrow (C \rightarrow D)
+$$
+
+$$
+\neg (A \lor B) \lor (\neg C \lor D)
+$$
+
+First we get rid of both arrows, using the rule that says ${ } ^ { \circ } \mathbf { A }$ implies $\mathbf { B } ^ { \flat \flat }$ is equivalent to “not A or $\mathbf { B } ^ { \flat }$
+
+$$
+(A \lor B) \rightarrow (C \rightarrow D)
+$$
+
+$$
+\neg (A \lor B) \lor (\neg C \lor D)
+$$
+
+$$
+(\neg A \land \neg B) \lor (\neg C \lor D)
+$$
+
+Then we drive in the negation using deMorgan’s law.
+
+# CNF Conversion Example
+
+$$
+(A \lor B) \rightarrow (C \rightarrow D)
+$$
+
+1. Eliminate arrows
+
+$$
+\neg (A \lor B) \lor (\neg C \lor D)
+$$
+
+2. Drive in negations
+
+$$
+(\neg A \land \neg B) \lor (\neg C \lor D)
+$$
+
+3. Distribute
+
+$$
+(\neg A \lor \neg C \lor D) \land (\neg B \lor \neg C \lor D)
+$$
+
+Finally, we dstribute **or** over **and** to get the final CNF expression.
+
+We’re going to be doing a lot of manipulations of CNF sentences, and we’ll sometimes end up with these degenerate cases. Let’s understand what they mean.
+
+An empty clause is false. In general, a disjunction with no disjuncts is false. In order to make such an expression true, you have to satisfy one of the options, and if there aren’t any, you can’t make it true.
+
+A sentence with no clauses is true. In general a conjunction with no conjuncts is true. In order to make such an expression true, you have to make all of its conditions true, and if there aren’t any, then it’s just true.
+
+A sentence containing an empty clause is false. This is because the empty clause is false, and false conjoined with anything else is always false.
+
+$$
+(P \to Q) \to ((Q \to R) \to (P \to R))
+$$
+
+Please do at least two of these problems before going on with the rest of the lecture (and do the rest of them before recitation).
+
+How can we prove that a CNF sentence is satisfiable? By showing that there is a satisfying assignment, that is, an assignment of truth values to variables that makes the sentence true. So, we have to try to find a satisfying assignment.
+
+One strategy would be to enumerate all possible assignments, and evaluate the sentence in each one. But the number of possible assignments grows in the number of variables, and it would be way too slow.
+
+Let's make a search tree. We'll start out by considering the possible assignments that we can make to the variable P. We can assign it true or false.
+
+# Algorithms for Satisfiability
+
+Given a sentence in CNF, how can we prove it is satisfiable?
+
+Enumerate all possible assignments and see if sentence is true for any of them. he numberBut, t of possible assignments grows exponentially in the number of variables.
+
+Consider a search tree where at each level we consider the possible assignments to one variable, say P. On one branch, we assume P is f and on the other that it is t.
+
+Given an assignment for a variable, we can simplify the sentence and then repeat the process for another variable.
+
+Lecture 4 • 34
+
+Now, if I assign P "false", that simplifies my problem a little bit. You could say, before I made any variable assignments, I had to find an assignment to all the variables that would satisfy this set of requirements. Having assigned P the value "false", now there is a simpler set of requirements on the rest of the assignment.
+
+$$
+\begin{array}{c} (P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T) \\ \land (P \lor S) \land (T \lor R \lor S) \land (\neg S \lor T) \end{array}
+$$
+
+So let's think about how we can simplify a sentence based on a partial assignment. Here’s a complicated sentence. Let’s actually figure out how to simplify the sentence in this case, and then we can write down the general rule.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+OK, so if I assign P the value "false", what happens?
+
+$$
+\begin{array}{c} (P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T) \\ \land (P \lor S) \land (T \lor R \lor S) \land (\neg S \lor T) \end{array}
+$$
+
+The first clause (P or Q) simplifies to Q. If we force P to be false, then the only possible way to satisfy is requirement is for Q to be true.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+Similarly, (P or not Q or R) simplifies to (not Q or R).
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+The clause (not P or not T) can be removed entirely. Once we’ve decided to make P false, we’ve satisfied this clauses (made it true) and we don’t have to worry about it any more.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+## P or S simplifies to S.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+$$
+(Q) \land (\neg Q \lor R) \land (T \lor \neg R) \land (S) \land (T \lor R \lor S) \land (\neg S \lor T)
+$$
+
+So, now we have a resulting expression that doesn’t mention P, and is simpler than the one we started with.
+
+So, a little bit more formally, the “assign and simplify” process goes like this: Given a CNF sentence phi and a literal U (remember a literal is either a variable or a negated variable),
+
+delete all clauses from Phi that contain U (because they’re satisfied)
+
+We’ll call the resulting sentence phi of u.
+
+Here’s a big example, illustrating a tree-structured process of searching for a satisfying assignment by assigning values to variables and simplifying the resulting expressions.
+
+We’ll start with our previous example formula. And we’ll arbitrarily pick the variable P to start with and consider what happens if we assign it to have the value f.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+$$
+(Q) \land (\neg Q \lor R) \land (T \lor \neg R)
+$$
+
+$$
+\wedge (S) \wedge (T \vee R \vee S) \wedge (\neg S \vee T)
+$$
+
+We do an “assign and simplify” operation, and end up with the smaller expression we got when we did this example before.
+
+$$
+(P \lor Q) \land (P \lor \neg Q \lor R) \land (T \lor \neg R) \land (\neg P \lor \neg T)
+$$
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+Now, let’s pick Q as our variable, and try assigning it to f.
+
+When we assign and simplify, we find that the resulting expression has an empty clause, which means that it’s false. That means that, given the assignments we’ve made on this path of the tree (P false and Q false), the sentence is unsatisfiable. There’s no reason to continue on with this branch, so we’ll have to back up and try a different choice somewhere.
+
+$$
+\wedge (P \lor S) \wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+$$
+(R) \land (T \lor \neg R) \land (S)
+$$
+
+$$
+\wedge (T \lor R \lor S) \wedge (\neg S \lor T)
+$$
+
+Let’s go up to our most recent decision and try assigning Q to be t. Simplifying gives us this expression.
+
+Now, let’s try assigning R to be f.
+
+Again, when we assign and simplify, we get an empty clause, signaling failure.
+
+So, we go back up, assign R to be t and simplify.
+
+![](images/page_54_image_0.jpg)
+
+**The assignment for a literal appearing by itself in a clause is forced: true for a positive literal, false for a negative literal.**
+
+At this point, we can see a way to be smarter about choosing an assignment to try first. As we saw with Q and with R, if a literal appears by itself in a clause, its assignment is forced: true for a positive literal, false for a negative literal. If you try the negation of that assignment, you’ll reach a dead end and have to back up.
+
+![](images/page_55_image_0.jpg)
+
+**The assignment for a literal appearing by itself in a clause is forced: true for a positive literal, false for a negative literal.**
+
+So, we’ll be smarter and try assigning S to t, which gives us a simple sentence.
+
+![](images/page_56_image_0.jpg)
+
+**The assignment for a literal appearing by itself in a clause is forced: true for a positive literal, false for a negative literal.**
+
+Again, we’re forced to assign T to t, yielding a final result of “True”.
+
+![](images/page_57_image_0.jpg)
+
+**The assignment for a literal appearing by itself in a clause is forced: true for a positive literal, false for a negative literal.**
+
+Now, this path through the tree represents the assignment: P false, Q true, R true, S true, and T true. And because , given those assignments, the sentence simplified to “true”, that is a satisfying assignment.
+
+Another Example
+
+![](images/page_58_image_1.jpg)
+
+Since T occurs only positively, it might as well be assigned to true
+
+Here’s one more small example to illustrate another way to make searching for a satisfying assignment more directed. Consider this sentence. The variable T occurs only positively. Although we don’t **have** to make it true, we don’t lose anything by doing so.
+
+So, if you have a sentence in which a variable occurs always positively, you should just set it to true. If a variable occurs always negatively, you should just set it to false.
+
+Once we assign T to true, all of the clauses containing it drop out, and we’re left with a very simple problem to finish.
+
+DPLL(φ)
+
+All the insight we gained from the previous example can be condensed into an algorithm. It’s called DPLL, which stands for the names of the inventors of the algorithm (Davis, Putnam, Logeman and Loveland). It’s very well described in a paper by Cook, which we have linked into the syllabus (the Cook paper also describes the GSAT and WalkSAT algorithms that we’ll talk about later).
+
+The DPLL algorithm takes a CNF sentence phi as input, and returns true if it is satisfiable and false otherwise. It works recursively.
+
+If phi is empty, then return true. Our work is done!
+
+If there is an empty clause in phi, then return false. Remember than an empty clause is false, and once we have one false clause, the whole sentence is false.
+
+If there is a unit clause containing literal U in phi (remember, a unit clause has only one literal, and so its assignment is forced), then assign the literal, simplify, and call DPLL recursively on the simplified sentence.
+
+## DPLL(φ)
+
+• If φ is empty, return true (embrace truth)
+
+• If there is an empty clause in φ, return false (reject falsity)
+
+• If there is a unit clause U in φ, return DPLL(φ(U)) (accept the inevitable)
+
+• If there is a pure literal U in φ, return DPLL(φ(U)) (go with the flow)
+
+Unit clause has only one literal
+
+Pure literal only occurs positively or negatively
+
+Lecture 4 • 65
+
+If there is a pure literal U in phi (that is, the variable in the literal U always occurs either positively or negatively in phi), then assign the literal, simplify, and call DPLL recursively on the simplified sentence.
+
+If none of the previous conditions hold, then we have to take a guess. Choose any variable v occurring in phi.
+
+Try assigning it to be true: simplify and call DPLL recursively on the simplified sentence. If it returns true, then the sentence is satisfiable, and we can return true as well.
+
+If not, then try assigning v to be false, simplify, and call DPLL recursively.
+
+![](images/page_68_image_0.jpg)
+
+Please do these problems before going on with the lecture.
+
+## Making good guesses
+
+MOMS heuristic for choosing variable v:
+
+Maximum number of Occurrences, Minimum Sized clauses
+
+Lecture 4 • 70
+
+What’s a good way to choose the variable to assign? There are lots of different heuristics. One that seems to work out reasonably well in practice is the “MOMS” heuristic: choose the variable that has the maximum number of occurrences in minimum sized clauses.
+
+## Making good guesses
+
+MOMS heuristic for choosing variable v:
+
+Maximum number of Occurrences,
+
+Minimum Sized clauses
+
+• Choose highly constrained variables
+
+• If you’re going to fail, fail early
+
+Lecture 4 • 71
+
+The idea is that such variables are highly constrained. If you are going to fail, you’d like to fail early (that is, if you’ve made some bad assignments that will lead to a false Phi, you might as well know that before you make a lot of other assignments and grow out a huge tree).
+
+So, intuitively, assigning values to the variables that are most constrained is more likely to reveal problems soon.
+
+The correctness of a variety of algorithms can be described in terms of soundness and completeness
+
+An algorithm is sound if, whenever it gives you an answer, it’s correct.
+
+An algorithm is complete if it always gives you an answer.
+
+The DPLL algorithm, being a systematic search algorithm that only skips assignments that are **sure** to be unsatisfactory, is sound and complete. But sometimes it can be slow!
+
+Now we’re going to consider a couple of algorithms for solving satisfiability problems that have been found to be very effective in practice. They are sound, but not complete.
+
+So, if they give an answer, it’s correct.
+
+But they may not always give an answer
+
+And, on average, they tend to be much faster than any complete algorithm.
+
+## GSAT
+
+Hill climbing in the space of total assignments
+
+The GSAT algorithm is an example of an ‘iterative improvement’ algorithm, such as those discussed in section 4.4 of the book. It does hill-climbing in the space of complete assignments, with random restarts.
+
+Lecture 4 • 81
+
+## GSAT
+
+Hill climbing in the space of total assignments
+
+Starts with random assignment for all variables
+
+Moves to “neighboring” assignment with least cost (flip a single bit)
+
+We start with a random assignment to the variables, and then move to the “neighboring” assignment with the least cost. The assignments that are neighbors of the current assignment are those that can be reached by “flipping” a single bit of the current assignment. “Flipping” a bit is changing the assignment of one variable from true to false, or from false to true.
+
+The cost of an assignment is the number of clauses in the sentence that are unsatisfied under the assignment.
+
+Okay. Here’s the algorithm in pseudocode. We’re going to do n different hill-climbing runs,
+
+starting from different randomly chosen initial assignments.
+
+Now, we loop for m steps, we consider the cost of all the neighboring assignments (those with a single variable assigned differently), and we flip the variable that results in the lowest cost (even if that cost is higher than the cost of the current assignment! This may keep us walking out of some local minima).
+
+If the cost is zero, we’ve found a satisfying assignment. Yay! Exit.
+
+# GSAT vs DPLL
+
+Lecture 4 • 88
+
+So, how does GSAT compare to DPLL?
+
+# GSAT vs DPLL
+
+• GSAT is sound
+
+Lecture 4 • 89
+
+GSAT is sound. If it gives you an answer, it’s correct.
+
+GSAT is not complete. No matter how long you give it to wander around in the space of assignments, or how many times you restart it, there’s always a chance it will miss an existing solution.
+
+It’s particularly unhelpful if you want to enumerate all the satisfying assignments; since it’s not systematic, you could never know whether you had gotten all of them.
+
+For a while, GSAT was doing hugely better than DPLL in contests. But now people are adding better heuristics to DPLL and it is starting to do better than GSAT.
+
+The Cook paper has an interesting discussion of which kinds of problems are easy and hard. Problems that are weakly constrained have many solutions. They’re pretty easy for both DPLL and GSAT to solve.
+
+Highly constrained problems, have only one, or very few solutions. They’re easy for DPLL, because the simplification process will tend to quickly realize that a particular partial assignment has no possible satisfying extensions, and cut off huge chucks of the search space at once. For GSAT, on the other hand, it’s like looking for a needle in a haystack.
+
+There is a class of problems that are neither weakly nor highly constrained. They’re very hard for all known algorithms.
+
+Here’s another algorithm that’s sort of like GSAT, called WalkSAT. It also moves through the space of complete assignments, but with a good deal more randomness than GSAT.
+
+It has the same external structure as GSAT. There’s an outer loop of n restarts at randomly chosen assignments.
+
+Then, we take m steps, but the steps are somewhat different.
+
+First we randomly pick an unsatisfied clause C (on the grounds that, in order to find a solution, we have to find a way to satisfy all the unsatisfied clauses).
+
+Then, we flip a coin. With probability .5, we either
+
+Flip the variable in C that results in the lowest cost, or
+
+Simply flip a randomly chosen variable in C. The reason for flipping randomly chosen variables is that sometimes (as in simulated annealing), its important to take steps that make things worse temporarily, but have the potential to get us into a much better part of the space.
+
+## WALKSAT
+
+Like GSAT with additional “noise”
+
+Loop n times
+
+• Randomly choose assignment A
+
+Loop m times
+
+– Randomly select unsatisfied clause C
+
+With p = 0.5 either
+
+– Flip the variable in C that results in lowest cost, or
+
+– Flip a randomly chosen variable in C
+
+Exit if cost is zero
+
+Lecture 4 • 103
+
+The extra randomness in this algorithm has made it perform better, empirically, than GSAT. But, as you can probably guess from looking at this crazy algorithm, there’s no real science to crafting such a local search algorithm. You just have to try some things and see how well they work out in your domain.
+
+Of course, if we find an assignment with cost 0, we’re done.
+
+# Validity
+
+Okay. Now we’re going to switch gears a bit. We have been thinking about procedures to test whether a sentence is satisfiable. Now, we’re going to look at procedures for testing validity.
+
+Why are we interested in validity? Remember the discussion we had near the end of the last lecture, with the complicated diagram? It ended with the following theorem:
+
+KB entails phi if and only if the sentence “KB implies phi” is valid. So, if we can test the validity of sentences, we can tell whether a conclusion is entailed by, or “follows from” some premises.
+
+Proof is a way of determining validity without examining all models. It works by manipulating the syntactic expressions directly.
+
+We’ll introduce a new symbol, single-turnstile, so that KB single-turnstyle Phi means “phi can be proved from KB”).
+
+A proof system is a mechanical means of getting new sentences from a set of old ones.
+
+A proof system is sound if whenever something is provable from KB it is entailed by KB.
+
+A proof system is complete if whenever something is entailed by KB it is provable from KB.
+
+Wouldn’t it be great if you were sound and complete derivers of answers to problems? You’d always get an answer and it would always be right!
+
+# Natural Deduction
+
+**1.** So what **is** a proof system? What is this single turnstile about, anyway? Well, presumably all of you have studied high-school geometry, that's often people's only exposure to formal proof. Remember that? You knew some things about the sides and angles of two triangles and then you applied the side-angle-side theorem to conclude -- at least people in American high schools were familiar with side-angle-side -- The side-angleside theorem allowed you to conclude that the two triangles were similar, right?
+
+That is formal proof. You've got some set of rules that you can apply. You've got some things written down on your page, and you kind of grind through, applying the rules that you have to the things that are written down, to write some more stuff down and so finally you've written down the things that you wanted to, and then you to declare victory. That's the single turnstile.
+
+There are (at least) two styles of proof system; we're going to talk about one briefly today and then the other one at some length next time.
+
+Natural deduction refers to a set of proof systems that are very similar to the kind of system you used in high-school geometry. We'll talk a little bit about natural deduction just to give you a flavor of how it goes in propositional logic, but it's going to turn out that it's not very good as a general strategy for computers. So this is a proof system that humans like, and then we'll talk about a proof system that computers like, to the extent that computers can like anything.
+
+A proof is a sequence of sentences. This is going to be true in almost all proof systems.
+
+First we'll list the premises. These are the sentences in your knowledge base. The things that you know to start out with. You're allowed to write those down on your page. Sometimes they're called the "givens." You can put the givens down.
+
+Then, you can write down on a new line of your proof the results of applying an inference rule to the previous lines.
+
+Then, when Phi is on some line, you just proved Phi from KB.
+
+And if your inference rules are sound, and they'd better be, then KB entails Phi.
+
+```txt
+Natural Deduction
+Proof is a sequence of sentences
+First ones are premises (KB)
+Then, you can write down on line j the result of applying an inference rule to previous lines
+When φ is on a line, you know KB ⊢ φ
+If inference rules are sound, then KB ⊠ φ
+
+α → β
+β
+Modus
+ponens
+Lecture 4 • 116
+```
+
+So let's look at inference rules, and learn how they work by example. Here’s a famous one (written down by Aristotle); it has the great Latin name, "modus ponens", which means “affirming method”.
+
+It says that if you have “alpha implies beta” written down somewhere on your page, and you have alpha written down somewhere on your page, then you can write beta down on a new line. (Alpha and beta here are metavariables, like phi and psi, ranging over whole complicated sentences).
+
+It’s important to remember that inference rules are just about ink on paper, or bits on your computer screen. They're not about anything in the world. Proof is just about writing stuff on a page, just syntax. But if you're careful in your proof rules and they're all sound, then at the end when you have some bit of syntax written down on your page, you can go back via the interpretation to some semantics.
+
+So you start out by writing down some facts about the world formally as your knowledge base. You do stuff with ink and paper for a while and now you have some other symbols written down on your page. You can go look them up in the world and say, "Oh, I see. That's what they mean."
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\frac {\alpha}{\beta}
+$$
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\begin{array}{c} \neg \beta \\ \hline \neg \alpha \end{array}
+$$
+
+Here’s another inference rule. “Modus tollens” (denying method) says that, from “alpha implies beta” and “not beta” you can conclude “not alpha”.
+
+## Natural Deduction
+
+Proof is a sequence of sentences
+
+First ones are premises (KB)
+
+Then, you can write down on line j the result of applying an inference rule to previous lines When φ is on a line, you know $\dot { \mathsf { K } } \mathsf { B } \vdash \phi$
+
+If inference rules are sound, then $\mathsf { K B } \models \phi$
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\frac {\alpha}{\beta}
+$$
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\begin{array}{c} \neg \beta \\ \hline \neg \alpha \end{array}
+$$
+
+$$
+\frac {\beta}{\alpha \not {A} \not {E} \beta}
+$$
+
+Modus ponens
+
+Modus tolens
+
+Andintroduction
+
+Lecture 4 • 118
+
+And-introduction say that from “alpha” and from “beta” you can conclude “alpha and beta”. That seems pretty obvious.
+
+$$
+\alpha \to \beta
+$$
+
+$$
+\frac {\alpha}{\beta}
+$$
+
+$$
+\begin{array}{c} \alpha \to \beta \\ \neg \beta \\ \hline \neg \alpha \end{array}
+$$
+
+$$
+\begin{array}{c} \alpha \\ \beta \\ \hline \alpha A E \beta \end{array}
+$$
+
+$$
+\frac {\alpha \not {E} \beta}{\alpha}
+$$
+
+Conversely, and-elimination says that from “alpha and beta” you can conclude “alpha”.
+
+# Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Now let’s do a sample proof just to get the idea of how it works. Pretend you’re back in high school…
+
+# Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+We’ll start with 3 sentences in our knowledge base, and we’ll write them on the first three lines of our proof: (P and Q), (P implies R), and (Q and R imply S).
+
+Lecture 4 • 122
+
+## Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+| 4 | P | 1 And-Elim |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+From line 1, using the and-elimination rule, we can conclude P, and write it down on line 4 (together with a reminder of how we derived it).
+
+Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+| 4 | P | 1 And-Elim |
+| 5 | R | 4,2 Modus Ponens |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+Lecture 4 • 123
+
+From lines 4 and 2, using modus ponens, we can conclude R.
+
+Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+| 4 | P | 1 And-Elim |
+| 5 | R | 4,2 Modus Ponens |
+| 6 | Q | 1 And-Elim |
+|  |  |  |
+|  |  |  |
+
+Lecture 4 • 124
+
+From line 1, we can use and-elimination to get Q.
+
+# Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+| 4 | P | 1 And-Elim |
+| 5 | R | 4,2 Modus Ponens |
+| 6 | Q | 1 And-Elim |
+| 7 | Q Æ R | 5,6 And-Intro |
+|  |  |  |
+
+Lecture 4 • 125
+
+From lines 5 and 6, we can use and-introduction to get (Q and R)
+
+Lecture 4 • 126
+
+# Natural deduction example
+
+Prove S
+
+| Step | Formula | Derivation |
+| --- | --- | --- |
+| 1 | P Æ Q | Given |
+| 2 | P → R | Given |
+| 3 | (Q Æ R) → S | Given |
+| 4 | P | 1 And-Elim |
+| 5 | R | 4,2 Modus Ponens |
+| 6 | Q | 1 And-Elim |
+| 7 | Q Æ R | 5,6 And-Intro |
+| 8 | S | 7,3 Modus Ponens |
+
+Finally, from lines 7 and 3, we can use modus ponens to get S. Whew! We did it!
+
+# Proof systems
+
+There are many natural deduction systems; they are typically “proof checkers”, sound but not complete
+
+Lecture 4 • 127
+
+The process of formal proof seems pretty mechanical. So why can’t computers do it?
+
+They can. For natural deduction systems, there are a lot of “proof checkers”, in which you tell the system what conclusion it should try to draw from what premises. They’re always sound, but nowhere near complete. You typically have to ask them to do the proof in baby steps, if you’re trying to prove anything at all interesting.
+
+Part of the problem is that they have a lot of inference rules, which introduces a very big branching factor in the search for proofs.
+
+## Proof systems
+
+There are many natural deduction systems; they are typically “proof checkers”, sound but not complete
+
+Natural deduction uses lots of inference rules which introduces a large branching factor in the search for a proof.
+
+In general, you need to do “proof by cases” which introduces even more branching.
+
+Prove R
+
+| 1 | P v Q |
+| --- | --- |
+| 2 | Q → R |
+| 3 | P → R |
+
+Lecture 4 • 129
+
+Another big problem is the need to do “proof by cases”. What if you wanted to prove R from (P or Q), (Q implies R), and (P implies R)? You have to do it by first assuming that P is try and proving R, then assuming Q is true and proving R. And then finally applying a rule that allows you to conclude that R follows no matter what. This kind of proof by cases introduces another large amount of branching in the space.
+
+## Proof systems
+
+There are many natural deduction systems; they are typically “proof checkers”, sound but not complete
+
+Natural deduction uses lots of inference rules which introduces a large branching factor in the search for a proof.
+
+In general, you need to do “proof by cases” which introduces even more branching.
+
+Prove R
+
+| 1 | P v Q |
+| --- | --- |
+| 2 | Q → R |
+| 3 | P → R |
+
+An alternative is resolution, a single, sound and complete inference rule for propositional logic.
+
+Lecture 4 • 130
+
+An alternative is **resolution**, a single inference rule that is sound and complete, all by itself. It’s not very intuitive for humans to use, but it’s great for computers. We’ll look at it in great detail next time.

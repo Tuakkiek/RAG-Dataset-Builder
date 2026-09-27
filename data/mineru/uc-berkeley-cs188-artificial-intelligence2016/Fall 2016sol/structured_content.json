@@ -1,0 +1,5023 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.068,
+            0.348,
+            0.085
+          ],
+          "content": "**UC Berkeley – Computer Science**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.087,
+            0.416,
+            0.105
+          ],
+          "content": "CS188: Introduction to Artificial Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.107,
+            0.281,
+            0.124
+          ],
+          "content": "Josh Hug and Adam Janin"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.144,
+            0.206,
+            0.161
+          ],
+          "content": "Final, Fall 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.181,
+            0.914,
+            0.239
+          ],
+          "content": "This test has **10** questions worth a total of **100** points, to be completed in 170 minutes. The exam is closed book, except that you are allowed to use three two-sided hand written cheat sheets. No calculators or other electronic devices are permitted. Give your answers and show your work in the space provided."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.258,
+            0.913,
+            0.295
+          ],
+          "content": "**Write the statement out below in the blank provided and sign. You may do this before the exam begins.** Any plagiarism, no matter how minor, will result in an F."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.315,
+            0.89,
+            0.383
+          ],
+          "content": "**“I have neither given nor received any assistance in the taking of this exam.”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.496,
+            0.413,
+            0.866,
+            0.432
+          ],
+          "content": "Signature:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.474,
+            0.435,
+            0.494
+          ],
+          "content": "Name:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.497,
+            0.434,
+            0.517
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.474,
+            0.861,
+            0.494
+          ],
+          "content": "Your EdX Login:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.438,
+            0.497,
+            0.861,
+            0.518
+          ],
+          "content": "Name of person to left:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.521,
+            0.433,
+            0.541
+          ],
+          "content": "Exam Room:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.438,
+            0.521,
+            0.861,
+            0.541
+          ],
+          "content": "Name of person to right:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.545,
+            0.431,
+            0.565
+          ],
+          "content": "Primary TA:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.568,
+            0.129,
+            0.585
+          ],
+          "content": "Tips:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.587,
+            0.518,
+            0.605
+          ],
+          "content": "indicates that only one circle should be filled in."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.607,
+            0.519,
+            0.623
+          ],
+          "content": "● ▢ indicates that more than one box may be filled in."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.625,
+            0.799,
+            0.642
+          ],
+          "content": "● Be sure to fill in the ◯ and ▢ boxes completely and erase fully if you change your answer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.644,
+            0.914,
+            0.681
+          ],
+          "content": "There may be partial credit for incomplete answers. Write as much of the solution as you can, but bear in mind that we may deduct points if your answers are much more complicated than necessary."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.682,
+            0.913,
+            0.719
+          ],
+          "content": "There are a lot of problems on this exam. Work through the ones with which you are comfortable first. **Do not get overly captivated by interesting problems or complex corner cases you’re not sure about.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.72,
+            0.562,
+            0.737
+          ],
+          "content": "Not all information provided in a problem may be useful."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.739,
+            0.913,
+            0.775
+          ],
+          "content": "**There are some problems on this exam with a slow brute force approach and a faster, clever approach. Think before you start calculating with lots of numbers!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.777,
+            0.826,
+            0.795
+          ],
+          "content": "● Write the last four digits of your SID on each page in case pages get shuffled during scanning."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.812,
+            0.903,
+            0.877
+          ],
+          "content": "| Problem | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Points | 7 | 6 | 8.5 | 8.5 | 17 | 14 | 9 | 9 | 10.5 | 10.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_24.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.936,
+            0.464,
+            0.973
+          ],
+          "content": "Optional. Mark along the line to show your feelings on the spectrum between :( and ☺."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.936,
+            0.853,
+            0.955
+          ],
+          "content": "Before exam: [:( ☺]."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.956,
+            0.852,
+            0.974
+          ],
+          "content": "After exam: [:( ☺]."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.976,
+            0.911,
+            0.99
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.072,
+            0.453,
+            0.091
+          ],
+          "level": 2,
+          "content": "1. (7 pts) Naive Bayes - Josh Detector"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.914,
+            0.132
+          ],
+          "content": "Suppose we want to find if Josh is in this office ( Y = 1 ) or not $(   Y = 0   )$ by analyzing the measurements of the following three sensors deployed in his office:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.135,
+            0.778,
+            0.152
+          ],
+          "content": "\\- a chair pressure sensor informs you if someone is on his chair $( X _ { c } = 1   )$ or not $( X _ { c } = 0 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.156,
+            0.761,
+            0.173
+          ],
+          "content": "a motion detector tells you if someone moves in the room $( X _ { m } = 1   )$ or not $( X _ { m } = 0 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.177,
+            0.83,
+            0.194
+          ],
+          "content": "a power meter indicates if someone consumes electricity in the room $( X _ { p } = 1 \\: )$ or not $( X _ { p } = 0 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.197,
+            0.915,
+            0.253
+          ],
+          "content": "Each sensor above only reveals partial information about Josh’s presence. For instance, if Josh is in his office but not sitting on the chair, then the chair pressure sensor can not reliably indicate Josh’s presence. Suppose we have some historical data logs of sensor measurements and Josh’s presence status:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.087,
+            0.27,
+            0.899,
+            0.433
+          ],
+          "content": "| Day | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| X<sub>c</sub> | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1 |\n| X<sub>m</sub> | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |\n| X<sub>p</sub> | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 |\n| Y | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.453,
+            0.914,
+            0.49
+          ],
+          "content": "i. (2 pts) Let us use Naive Bayes to model the sensor measurements and Josh’s presence status as shown in the Bayes Net model below. Fill in the maximum likelihood estimate (MLE) of each entry in the probability tables."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.413,
+            0.491,
+            0.585,
+            0.575
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.482,
+                0.58,
+                0.52,
+                0.596
+              ],
+              "content": "(B1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_1_image_10.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.614,
+            0.208,
+            0.71
+          ],
+          "content": "| Y | P(Y) |\n| --- | --- |\n| 0 | 2/5 |\n| 1 | 3/5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_12.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.229,
+            0.62,
+            0.406,
+            0.779
+          ],
+          "content": "| Y | X<sub>c</sub> | P(X<sub>c</sub>\\|Y) |\n| --- | --- | --- |\n| 0 | 0 | 1 |\n| 0 | 1 | 0 |\n| 1 | 0 | 1/2 |\n| 1 | 1 | 1/2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_13.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.422,
+            0.62,
+            0.599,
+            0.779
+          ],
+          "content": "| Y | X<sub>m</sub> | P(X<sub>m</sub>\\|Y) |\n| --- | --- | --- |\n| 0 | 0 | 1 |\n| 0 | 1 | 0 |\n| 1 | 0 | 2/3 |\n| 1 | 1 | 1/3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_14.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.615,
+            0.62,
+            0.791,
+            0.78
+          ],
+          "content": "| Y | X<sub>p</sub> | P(X<sub>p</sub>\\|Y) |\n| --- | --- | --- |\n| 0 | 0 | 1/2 |\n| 0 | 1 | 1/2 |\n| 1 | 0 | 1/3 |\n| 1 | 1 | 2/3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_15.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.912,
+            0.108
+          ],
+          "content": "ii. (1 pt) Suppose we get a new set of sensor observations: $X_{c}=0,\\ X_{m}=0,\\ X_{p}=1$ . According to the probability tables’ maximum likelihood estimate, is Josh more likely to be present or absent?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.11,
+            0.864,
+            0.128
+          ],
+          "content": "◯ Present ⬤ Absent ◯ Equally Likely ◯ Not Enough Information"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.13,
+            0.291,
+            0.146
+          ],
+          "content": "**Explanation:** We compare:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.085,
+            0.148,
+            0.511,
+            0.165
+          ],
+          "content": "P (Y = 0, X _ {c} = 0, X _ {m} = 0, X _ {p} = 1) = 2 / 5 * 1 * 1 * 1 / 2 = 1 / 5",
+          "image_source": "images/page_2_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.168,
+            0.549,
+            0.185
+          ],
+          "content": "P (Y = 1, X _ {c} = 0, X _ {m} = 0, X _ {p} = 1) = 3 / 5 * 2 / 3 * 2 / 3 * 1 / 3 = 4 / 4 5",
+          "image_source": "images/page_2_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.19,
+            0.605,
+            0.206
+          ],
+          "content": "The former is larger, so we predict that Josh is more likely to be absent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.208,
+            0.914,
+            0.247
+          ],
+          "content": "Notice that this is true even though $Y = 0,X_{c} = 0,X_{m} = 0,X_{p} = 1$ and $Y = 1, X_c = 0, X_m = 0, X_p = 1$ appeared equally frequently in our samples."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.267,
+            0.914,
+            0.304
+          ],
+          "content": "iii. (1 pt) Suppose that instead of maximum likelihood, we now use Laplace Smoothing to estimate each entry in the following probability tables. Assume the prior strength k = 1 ."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.147,
+            0.322,
+            0.267,
+            0.419
+          ],
+          "content": "| Y | P(Y) |\n| --- | --- |\n| 0 | 5/12 |\n| 1 | 7/12 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_10.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.332,
+            0.328,
+            0.508,
+            0.488
+          ],
+          "content": "| Y | X<sub>c</sub> | P(X<sub>c</sub>\\|Y) |\n| --- | --- | --- |\n| 0 | 0 | 5/6 |\n| 0 | 1 | 1/6 |\n| 1 | 0 | 1/2 |\n| 1 | 1 | 1/2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.512,
+            0.901,
+            0.55
+          ],
+          "content": "iv. (1 pt) What happens to our CPTs as we increase k, i.e. what sort of distribution do we get in the large k limit? **Solution:** In the large k limit, we get uniform distributions in each CPT."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.569,
+            0.914,
+            0.663
+          ],
+          "content": "v. (1 pt) Suppose we want to generate exactly two samples from the distribution $\\mathrm{P}(\\mathrm{Y}, \\mathrm{X}_{\\mathrm{c}}, \\mathrm{X}_{\\mathrm{m}}, \\mathrm{X}_{\\mathrm{p}})$ given by the CPTs you computed from MLE estimates in part i. Suppose we run Gibbs sampling for a long time so that the samples are indeed drawn from the correct distribution, and get the resulting sample GS1: $\\left( \\mathrm{Y} = 1, \\mathrm{X}_{\\mathrm{c}} = 0, \\mathrm{X}_{\\mathrm{m}} = 1 \\right.$ $\\mathrm { X _ { \\mathfrak { p } } } = 0 )$ . Suppose we then generate a new sample GS2 by resampling from $\\mathrm{P}(\\mathrm{X}_{\\mathrm{p}} \\mid \\mathrm{Y}=1, \\mathrm{X}_{\\mathrm{c}}=0, \\mathrm{X}_{\\mathrm{m}}=1)$ . What are the different possible values for GS2, and how likely is each?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.701,
+            0.819,
+            0.72
+          ],
+          "content": "Possible Value #1 for GS2: $\\mathrm{Y}=\\underline{\\quad}1\\underline{\\quad}, \\mathrm{X}_{\\mathrm{c}}=\\underline{\\quad}0\\underline{\\quad}, \\mathrm{X}_{\\mathrm{m}}=\\underline{\\quad}1\\underline{\\quad}, \\mathrm{X}_{\\mathrm{p}}=\\underline{\\quad}0.$ \\_\\_, probability: \\_\\_\\_1/3"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.725,
+            0.819,
+            0.745
+          ],
+          "content": "Possible Value #2 for GS2: $\\mathrm{Y}=\\underline{\\quad} 1 \\underline{\\quad}, \\mathrm{X}_{\\mathrm{c}}=\\underline{\\quad} 0 \\underline{\\quad}, \\mathrm{X}_{\\mathrm{m}}=\\underline{\\quad} 1 \\underline{\\quad}, \\mathrm{X}_{\\mathrm{p}}=\\underline{\\quad} 1$ , probability: \\_\\_\\_2/3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.751,
+            0.579,
+            0.769
+          ],
+          "content": "**Explanation:** The probabilities utilize $P(X_{p}|Y,X_{c},X_{m}) = P(X_{p}|Y)$"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.916,
+            0.146
+          ],
+          "content": "vi. (1 pt) Suppose we instead use prior sampling to generate samples PS1 and PS2. Which samples are of higher quality, the two samples generated by Gibbs Sampling or the two samples generated by Prior Sampling? We have intentionally left “higher quality” undefined. Use your best judgment. For partial credit in the event of a wrong answer, very briefly explain your answer below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.165,
+            0.839,
+            0.184
+          ],
+          "content": "⬤ GS1 and GS2 are higher quality ⬤ PS1 and PS2 are higher quality ◯ They are the same quality"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.201,
+            0.899,
+            0.295
+          ],
+          "content": "**Intended solution:** When we have many samples, prior sampling and Gibbs sampling perform equally well. However, when there are only a few samples, prior sampling is better than Gibbs sampling, because the samples generated by Gibbs sampling are correlated with one another (each successive sample only differs by a single variable). For example, if there are only two samples for four variables, Gibbs sampling will only see one value for three of the variables, while prior sampling avoids this correlation bias."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.296,
+            0.912,
+            0.37
+          ],
+          "content": "**Alternate interpretation:** Some students didn’t realize that the samples are for the same query as in the previous part (v) (where no is evidence), and considered the possibility that we have a query that **does** have evidence. In that case, Gibbs sampling is better than prior sampling, since the latter generates samples without paying attention to the evidence."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.071,
+            0.242,
+            0.092
+          ],
+          "level": 2,
+          "content": "2. MDPs [6 pts]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.915,
+            0.152
+          ],
+          "content": "Consider the following Markov Decision Process. Unlike most MDP models where actions have many potential outcomes of varying probability, assume that the transitions are <strong><u>deterministic</u></strong>, i.e. occur with $\\mathrm{T}(\\mathrm{s}, \\mathrm{a}, \\mathrm{s}^{\\prime})=100\\%$ probability as shown in the graph below. The reward for each transition is displayed adjacent to each edge:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.144,
+            0.172,
+            0.868,
+            0.378
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.408,
+            0.913,
+            0.465
+          ],
+          "content": "i. (3 pts) Compute the following quantities, assuming a discount factor of 1. Recall that $\\mathbf { V } _ { \\mathrm { k } } ( \\mathrm { s } )$ represents the expected utility of the state s under the optimal policy assuming the game ends in k more time steps, and $\\mathbf { V } ^ { * } ( \\mathrm { s } )$ is the expected utility starting in state s if we play optimally forever."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.484,
+            0.843,
+            0.502
+          ],
+          "content": "V _ {2} (A) = R (A, C) + R (C, D) = 1 3 \\quad V _ {5} (A) = R (A, C) + R (C, D) + R (D, B) + R (B, E) + R (E, E) = 2 6",
+          "image_source": "images/page_4_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.505,
+            0.503,
+            0.522
+          ],
+          "content": "V (A) from taking the cycle repeatedly.\\* = ∞ C − D − B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.525,
+            0.844,
+            0.544
+          ],
+          "content": "V _ {2} (B) = R (B, E) + R (E, E) = 9 \\quad V _ {5} (B) = R (B, C) + R (C, D) + R (D, B) + R (B, E) + R (E, E) = 1 7",
+          "image_source": "images/page_4_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.546,
+            0.499,
+            0.565
+          ],
+          "content": "V (B) from taking the cycle repeatedly.\\* = ∞ B − C − D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.587,
+            0.915,
+            0.643
+          ],
+          "content": "ii. (1 pt) Consider using feature-based Q-learning to learn what the optimal policy should be. Suppose we use the feature $\\mathbf { f } _ { \\mathrm { l } } ( \\mathrm { s } ,   \\mathrm { a } )$ equal to the smallest number of edges from s to E, and feature $\\mathbf { f } _ { 2 } ( \\mathbf { s } , \\mathbf { a } )$ equal to the smallest number of edges from a’s target to E. For example $\\mathrm { f _ { l } ( A ,   \\rightarrow   B ) }$ is 2, and $\\mathbf{f}_{2}(\\mathbf{C},   \\rightarrow \\mathbf{D})$ is 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.662,
+            0.914,
+            0.698
+          ],
+          "content": "Let the current weight for these features be [3, 2]. What is the current prediction for $\\mathrm { Q ( C ,   \\rightarrow   D ) }$ given these weights for these two features?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.083,
+            0.7,
+            0.582,
+            0.718
+          ],
+          "content": "\\mathrm{Q} (\\mathrm{C}, \\rightarrow \\mathrm{D}) = f _ {1} (C, \\rightarrow D) * w _ {1} + f _ {2} (C, \\rightarrow D) * w _ {2} = 2 * 3 + 1 * 2 = 8",
+          "image_source": "images/page_4_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.74,
+            0.911,
+            0.778
+          ],
+          "content": "iii. (2 pts) Suppose we update w based on a single observation of a transition from C to D, assuming $\\mathbf { q } = 0 . 5$ What is w after updating based on this observation?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.799,
+            0.175,
+            0.815
+          ],
+          "content": "\\mathrm{w} = [ 6, 3. 5 ]",
+          "image_source": "images/page_4_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.819,
+            0.191,
+            0.835
+          ],
+          "content": "**Explanation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.837,
+            0.592,
+            0.854
+          ],
+          "content": "The difference between the actual reward and the predicted reward is:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.854,
+            0.548,
+            0.88
+          ],
+          "content": "\\Delta = (R (C, \\rightarrow D) + \\max _ {a ^ {\\prime}} Q (D, a ^ {\\prime})) - Q (C, \\rightarrow D) = (6 + 5) - 8 = 3.",
+          "image_source": "images/page_4_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.883,
+            0.378,
+            0.9
+          ],
+          "content": "We thus updates our new weights to be:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.085,
+            0.902,
+            0.436,
+            0.92
+          ],
+          "content": "w + \\Delta * \\alpha * f = [ 3, 2 ] + 3 * 0. 5 * [ 2, 1 ] = [ 6, 3. 5 ]",
+          "image_source": "images/page_4_equation_19.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.072,
+            0.309,
+            0.091
+          ],
+          "level": 2,
+          "content": "3. Probability (8.5 pts)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.095,
+            0.498,
+            0.113
+          ],
+          "content": "Consider the following CPT, **to be used for part i only!**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.13,
+            0.411,
+            0.413
+          ],
+          "content": "| A | B | C | P(A, B, C) |\n| --- | --- | --- | --- |\n| +a | +b | +c | 0.15 |\n| +a | +b | -c | 0.2 |\n| +a | -b | +c | 0.3 |\n| +a | -b | -c | 0.1 |\n| -a | +b | +c | 0.15 |\n| -a | +b | -c | 0 |\n| -a | -b | +c | 0.05 |\n| -a | -b | -c | 0.05 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.416,
+            0.914,
+            0.45
+          ],
+          "content": "i. (2 pts) Compute the following expressions for the table above. Write each answer as a single numerical value. It is ok to leave your answer as a fraction of decimal numbers. OK"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.451,
+            0.441,
+            0.474
+          ],
+          "content": "$\\mathrm{P}(\\mp \\mathrm{a} \\mid -\\mathrm{c})=\\frac{P(\\mp \\mathrm{a},-\\mathrm{c})}{P(-\\mathrm{c})}=\\frac{0.2+0.1}{0.2+0.1+0.+0.05}=6/7$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.475,
+            0.424,
+            0.497
+          ],
+          "content": "$\\mathrm{P}(+ \\mathrm{b} \\mid - a, - c)=\\frac{P(- a,+ b,- c)}{P(- a,- c)}=\\frac{0}{0.+0.05}=0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.499,
+            0.456,
+            0.52
+          ],
+          "content": "$\\mathrm{P}(-a \\mid +b, +c)=\\frac{P(-a, +b, +c)}{P(+b, +c)}=\\frac{0.15}{0.15 \\div 0.15}=1/2$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.143,
+            0.523,
+            0.49,
+            0.546
+          ],
+          "content": "\\mathrm{P} (- \\mathrm{b}, + \\mathrm{c} \\mid - \\mathrm{a}) = \\frac {P (- a , - b , + c)}{P (- a)} = \\frac {0 . 0 5}{0 . 1 5 + 0 + 0 . 0 5 + 0 . 0 5} = 1 / 5",
+          "image_source": "images/page_5_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.568,
+            0.912,
+            0.603
+          ],
+          "content": "ii. (1 pt) Let A, B, and C be binary random variables. Select all of the following CPTs that are guaranteed to have 4 rows **for ANY distribution**, not the table above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.605,
+            0.782,
+            0.622
+          ],
+          "content": "0 P(+a | B, C) 0 P(B, C | +a) 0 P(B | A) $\\mathrm{P}(+ \\mathrm{a}, \\mathrm{C} \\mid + \\mathrm{b})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.625,
+            0.896,
+            0.66
+          ],
+          "content": "**Explanation:** Since we have binary random variables, the number of rows that a distribution has is equal to 2 to (the number of unspecified variables in the distribution)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.662,
+            0.874,
+            0.679
+          ],
+          "content": "iii. (2 pts) Select all of the following that are guaranteed to equal 1 for ANY distribution, not the table above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.681,
+            0.276,
+            0.697
+          ],
+          "content": "0 $\\mathrm{P}(+a)+\\mathrm{P}(-a)$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.142,
+            0.705,
+            0.506,
+            0.722
+          ],
+          "content": "\\mathrm{A} \\quad \\mathrm{P(+a|-c)P(-c)/(P(+a,-c,+b)+P(+a,-c,-b))}",
+          "image_source": "images/page_5_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.13,
+            0.73,
+            0.391,
+            0.747
+          ],
+          "content": "\\square \\mathrm{P} (+ \\mathrm{a} \\mid + \\mathrm{b}) \\mathrm{P} (+ \\mathrm{b}) + \\mathrm{P} (- \\mathrm{a} \\mid - \\mathrm{b}) \\mathrm{P} (- \\mathrm{b})",
+          "image_source": "images/page_5_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.755,
+            0.383,
+            0.772
+          ],
+          "content": "\\square \\mathrm{P} (- \\mathrm{c} \\mid - \\mathrm{a}) \\mathrm{P} (- \\mathrm{a}) + \\mathrm{P} (- \\mathrm{c} \\mid + \\mathrm{a}) \\mathrm{P} (+ \\mathrm{a})",
+          "image_source": "images/page_5_equation_17.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.085,
+            0.78,
+            0.189,
+            0.796
+          ],
+          "level": 2,
+          "content": "Explanation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.799,
+            0.422,
+            0.815
+          ],
+          "content": "The first is true by the law of total probability."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.818,
+            0.891,
+            0.855
+          ],
+          "content": "The second's numerator is equal to $P ( + a , - c )$ by the product rule, and the denominator is equal to summing B to also get $P ( + a , - c )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.86,
+            0.606,
+            0.876
+          ],
+          "content": "The third is equal to $P(+a,+b)+P(-a,-b)$ , which is not simplifiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.88,
+            0.494,
+            0.897
+          ],
+          "content": "The fourth is equal to $P(-a,-c)+P(+a,-c)=P(-c)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.91,
+            0.125
+          ],
+          "content": "For parts iv - vi: It’s winter break, and you’re staying at Sherdil’s Casino. Every morning, you receive (as a gift) a random **odd**​ number of gambling chips, C, in the range 1 to k, where k is some odd integer constant, according to the distribution:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.093,
+            0.133,
+            0.568,
+            0.174
+          ],
+          "content": "P (C = c) = \\left\\{ \\begin{array}{c l} 2 / (k + 1), & \\quad c \\text {is odd and} c \\in [ 1, k ] \\\\ 0, & \\quad \\text {otherwise} \\end{array} \\right.",
+          "image_source": "images/page_6_equation_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.978,
+            0.914,
+            0.991
+          ],
+          "content": "7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.182,
+            0.914,
+            0.219
+          ],
+          "content": "Assume the number of chips you receive on a particular day is independent of the number of chips you received on any and all prior days."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.239,
+            0.913,
+            0.276
+          ],
+          "content": "iv. (1 pt) Let the number of chips you receive on days 1, 2, and 3 be C1, C2, and C3 respectively. Is C3 conditionally independent of C1 given C2? (Answer yes or no. No explanation is needed.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.294,
+            0.385,
+            0.311
+          ],
+          "content": "**Explanation:** Depends on if we know k."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.313,
+            0.905,
+            0.352
+          ],
+          "content": "If we don’t know k, then the answer is no because C1 gives us information about k , which C3 is dependent on. If we know k, then the answer is yes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.371,
+            0.728,
+            0.39
+          ],
+          "content": "v. (1 pt) Suppose k is 5. On average, how many chips can you expect to receive per day?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.39,
+            0.194,
+            0.408
+          ],
+          "content": "E[# chips] = 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.409,
+            0.475,
+            0.427
+          ],
+          "content": "**Explanation: E**[C] = 1/3 \\* 1 + 1/3 \\* 3 + 1/3 \\* 5 = 3 ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.449,
+            0.914,
+            0.486
+          ],
+          "content": "vi. (1.5 pts) Suppose you stay for five days and receive the following chip amounts: {5, 11, 1, 9, 9}. Based on your five samples, compute the maximum likelihood estimate for k."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.506,
+            0.198,
+            0.522
+          ],
+          "content": "MLE of k = 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.525,
+            0.191,
+            0.541
+          ],
+          "content": "**Explanation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.544,
+            0.852,
+            0.581
+          ],
+          "content": "Intuitively, as long as k is at least 11, the smaller the k the larger the probability of getting any particular outcome."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.584,
+            0.427,
+            0.601
+          ],
+          "content": "Formally, the log likelihood of the outcome is:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.085,
+            0.61,
+            0.758,
+            0.63
+          ],
+          "content": "l l (k | C) = P (C | k) = \\log \\prod \\frac {2}{k + 1} = \\sum (\\log 2 - \\log (k + 1)) = 5 \\log 2 - 5 \\log (k + 1) \\text {if} k \\geq 1 1 \\text {else} 0",
+          "image_source": "images/page_6_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.641,
+            0.796,
+            0.66
+          ],
+          "content": "This function is strictly decreasing as k increases, so k = 11 is the maximum likelihood estimate."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.681,
+            0.241,
+            0.697
+          ],
+          "level": 2,
+          "content": "Common Mistakes:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.7,
+            0.856,
+            0.738
+          ],
+          "content": "The question says that k is an odd integer. Any answer that is not an odd integer is not a plausible answer; this can be a good sanity check on the answer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.74,
+            0.891,
+            0.798
+          ],
+          "content": "The most common incorrect answer was 13. This is presumably from using a technique like method of moments (i.e. finding k such that E[k] is equal to the average of the sample), since if k = 13 , then $E [ k ] = 7$ . Method of moments sometimes, but does not always, find the maximum likelihood estimate."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.088,
+            0.895,
+            0.411,
+            0.912
+          ],
+          "content": "2016 Most Valuable Goat Celebration Zone"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.24,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.072,
+            0.251,
+            0.092
+          ],
+          "level": 2,
+          "content": "4. CSPs (8.5 pts)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.916,
+            0.17
+          ],
+          "content": "In the game of Hidato, we start with a partially filled grid with N blanks, and our goal is to fill in all the blanks with integers 1 through N such that every number is unique, and every number q (except N) appears adjacent to its successor q + 1, with diagonal moves allowed. For example, if we start from the figure on the left, we can get the solution on the right. Black squares act as obstacles and never receive numbers."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.182,
+            0.178,
+            0.372,
+            0.329
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.591,
+            0.175,
+            0.783,
+            0.327
+          ],
+          "content": "|  | 2 | 3 | 4 |\n| --- | --- | --- | --- |\n| 14 | 1 | 6 | 5 |\n| 13 | 12 |  | 7 |\n| 11 | 10 | 9 | 8 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.34,
+            0.861,
+            0.377
+          ],
+          "content": "We can formulate this as a CSP, where the domain of the variables is {1, …, N}, where N is the number of non-black (i.e. initially blank) squares."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.397,
+            0.901,
+            0.454
+          ],
+          "content": "i. (2.5 pts) If we start from the figure below with 4 variables assigned (to 1, 3, 9, and 14), and run AC-3 (our arc-consistency algorithm), what values remain in the domain of the variable marked with an X? Assume that all 10 blank squares (including X and Y) are unassigned."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.096,
+            0.468,
+            0.295,
+            0.627
+          ],
+          "content": "|  | X | 3 |  |\n| --- | --- | --- | --- |\n| 14 | 1 | Y |  |\n|  |  |  |  |\n|  |  | 9 |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.312,
+            0.473,
+            0.905,
+            0.528
+          ],
+          "content": "Arc-consistency involves processing of binary arcs only, so we must start by deciding what binary arcs exist. Our original intention was that you would derive and apply the following two constraints:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.312,
+            0.53,
+            0.903,
+            0.585
+          ],
+          "content": "NO\\_EQUAL\\_SQUARES (NES): There are binary arcs between all squares which specify that they cannot be equal (and a separate set of constraints that require numbers to be in a sequence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.313,
+            0.587,
+            0.896,
+            0.624
+          ],
+          "content": "● NO\\_DISTANT\\_SUCCESSORS (NDS): There are binary arcs between non-adjacent squares that specify that they cannot be one away from each other."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.643,
+            0.708,
+            0.66
+          ],
+          "content": "In addition, you can also add a 3rd constraint that is a more powerful version of NDS:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.662,
+            0.899,
+            0.719
+          ],
+          "content": "RADIAL\\_DIFFERENCE\\_TEST (RDT): There are binary arcs between every pair of states such that if they have values Xi and Xj respectively then |Xi - Xj| < distance between those arcs. It it redundant with NDS as far as solutions go, but it makes arc consistency more powerful."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.738,
+            0.843,
+            0.775
+          ],
+          "content": "However: it is also possible to cast the Hidato problem without any binary constraints, in which case arc-consistency won’t do anything at all. For example, consider the following multi-variable constraints:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.776,
+            0.738,
+            0.792
+          ],
+          "content": "ALL\\_DISTINCT: A single N-ary constraint that ensures all variables are distinct."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.795,
+            0.788,
+            0.812
+          ],
+          "content": "ALL\\_PRESENT: A single N-ary constraint that says that for every X\\_i, one of them is i."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.814,
+            0.911,
+            0.85
+          ],
+          "content": "NEIGHBOR\\_IS\\_ADJACENT: For each node, its larger successor is one of the neighbors. This is a Q-ary constraint, where Q-1 is the number of neighbors."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.871,
+            0.884,
+            0.908
+          ],
+          "content": "In retrospect, we should have asked you to explicitly enumerate your binary constraints, but we did not, so we gave you credit for ANY valid answer, even if you did not write out your binary constraints."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.026,
+            0.371,
+            0.045
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.07,
+            0.779,
+            0.089
+          ],
+          "content": "Assuming no binary constraints: The right answer is: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.108,
+            0.701,
+            0.126
+          ],
+          "content": "If we apply arc-consistency considering only the arcs from X to 1, 3, 9, and 14, then:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.127,
+            0.36,
+            0.144
+          ],
+          "content": "NES eliminates: {1, 3, 9, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.146,
+            0.326,
+            0.163
+          ],
+          "content": "NDS eliminates: {8, 10}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.165,
+            0.371,
+            0.183
+          ],
+          "content": "RDT eliminates: {7, 8, 10, 11}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.202,
+            0.911,
+            0.24
+          ],
+          "content": "Completing the entire AC-3 algorithm yields no further eliminations from X. So any answer that includes {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14} minus any of the entire sets above is eligible for full credit."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.26,
+            0.268,
+            0.277
+          ],
+          "content": "Sample correct answers:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.279,
+            0.789,
+            0.297
+          ],
+          "content": "Domain of X (assuming no binary constraints): \\_\\_{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.297,
+            0.764,
+            0.315
+          ],
+          "content": "Domain of X (assuming NO\\_EQUAL\\_SQUARES): \\_\\_\\_{2, 4, 5, 6, 7, 8, 10, 11, 12, 13}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.316,
+            0.708,
+            0.335
+          ],
+          "content": "Domain of X (assuming NES and NDS): {2, 4, 5, 6, 7, 11, 12, 13}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.335,
+            0.664,
+            0.355
+          ],
+          "content": "Domain of X (assuming NES and RDT): {2, 4, 5, 6, 12, 13}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.373,
+            0.909,
+            0.411
+          ],
+          "content": "ii. (2.5 pts) If we assign X=2, and re-run AC-3, what will Y’s domain be after AC-3 completes? Assume that all 9 blank squares (including Y) other than X are unassigned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.43,
+            0.904,
+            0.465
+          ],
+          "content": "Similar to above, the answer depends on which binary constraints you came up with and applied. In this case, the possibilities are:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.468,
+            0.372,
+            0.485
+          ],
+          "content": "NES eliminates {1, 2, 3, 9, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.487,
+            0.353,
+            0.504
+          ],
+          "content": "NDS eliminates: {8, 10, 13}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.507,
+            0.342,
+            0.524
+          ],
+          "content": "RDT eliminates: (nothing)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.544,
+            0.792,
+            0.562
+          ],
+          "content": "As before, any combination that involves eliminating zero or more of the entire sets above is fine."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.582,
+            0.187,
+            0.599
+          ],
+          "content": "For example:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.6,
+            0.739,
+            0.619
+          ],
+          "content": "Domain of Y (assuming no binary arcs): \\_\\_{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.62,
+            0.593,
+            0.637
+          ],
+          "content": "Domain of Y (assuming NES): \\_\\_\\_{4, 5, 6, 7, 8, 10, 11, 12, 13}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.638,
+            0.664,
+            0.656
+          ],
+          "content": "Domain of Y (assuming NES and NDS): {4, 5, 6, 7, 11, 12}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.657,
+            0.729,
+            0.676
+          ],
+          "content": "Domain of Y (assuming NDS only): {1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 14}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.695,
+            0.852,
+            0.714
+          ],
+          "content": "iii. (1 pt) If we ensure arc-consistency after every assignment in any Hidato puzzle, we’ll never backtrack."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.732,
+            0.371,
+            0.75
+          ],
+          "content": "◯ True False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.75,
+            0.858,
+            0.787
+          ],
+          "content": "**Explanation:** Even if we have only binary constraints, the constraint graph is not a tree, so backtracking is possible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.812,
+            0.912,
+            0.85
+          ],
+          "content": "iv. (2.5 pts) Repeat part i, but suppose we run an algorithm that ensures 3-consistency instead of arc-consistency (recall that arc-consistency is just 2-consistency). In this case, what is the domain of X?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.851,
+            0.904,
+            0.887
+          ],
+          "content": "**Explanation:** In the CSP lecture, we strongly implied that you didn’t need to know how k-consistency works for k > 2. Oops."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.902,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.907,
+            0.462,
+            0.926
+          ],
+          "content": "Domain of X: \\_\\_\\_**[Beyond scope of course]**"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.072,
+            0.291,
+            0.092
+          ],
+          "level": 2,
+          "content": "5. (17 pts) Potpourri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.506,
+            0.112
+          ],
+          "content": "i. (2.5 pts) You are given a choice between the following:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.114,
+            0.702,
+            0.13
+          ],
+          "content": "● A random lottery in which you receive either \\$A or \\$B uniformly at random."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.134,
+            0.701,
+            0.15
+          ],
+          "content": "● An event in which you receive \\$k, where k is a positive real-valued constant."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.15,
+            0.914,
+            0.21
+          ],
+          "content": "Your utility function for money is $U ( d )   =   d ^ { 2 }$ where $U ( d )$ is the utility corresponding to dollars. For whatd values of k should you take the lottery? Give your answer as an interval or a union of intervals as appropriate, e.g., [12, ∞] or [5, 9] ⋃ [7, ∞) . You may handle ties however you wish. Assume that A, B, and k are non-negative."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.085,
+            0.23,
+            0.259,
+            0.258
+          ],
+          "content": "k \\in [ 0, \\sqrt {(A ^ {2} + B ^ {2}) / 2} ]",
+          "image_source": "images/page_9_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.26,
+            0.907,
+            0.299
+          ],
+          "content": "**Explanation:** We value the lottery at $U ( L ) = ( A ^ { 2 } + B ^ { 2 } ) / 2$ . Thus, we will take the lottery if $U ( \\boldsymbol { k } ) = \\boldsymbol { k } ^ { 2 }$ is less than or equal to this."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.325,
+            0.84,
+            0.343
+          ],
+          "content": "For parts ii and iii: Let X , Y , and Z be independent random variables with the following distributions:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.286,
+            0.363,
+            0.665,
+            0.462
+          ],
+          "content": "| X | P(X) |  | Y | P(Y) |  | Z | P(Z) |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 3 | 2/3 |  | 2 | 1/2 |  | - 2 | 1/4 |\n| - 6 | 1/3 |  | 10 | 1/2 |  | 6 | 3/4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.482,
+            0.378,
+            0.498
+          ],
+          "content": "You can take either action 1 or action 2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.5,
+            0.536,
+            0.517
+          ],
+          "content": "● Action 1 has utility $U_{1}(X,Y,Z)=10*X-3*Y*Z$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.521,
+            0.594,
+            0.538
+          ],
+          "content": "● Action 2 has utility $U_{2}(X,Y,Z)=10*X+5*Y-5*Y*Z$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.561,
+            0.914,
+            0.617
+          ],
+          "content": "ii. (3.5 pts) Calculate the maximum expected utility. Hint, to avoid tedious calculations, recall from your prior coursework that $\\mathrm{E}[\\mathrm{A}^{*} \\mathrm{B}] = \\mathrm{E}[\\mathrm{A}]^{*} \\mathrm{E}[\\mathrm{B}]$ , so long as A and B are independent variables, and that $\\mathrm{E}[\\mathrm{X}+\\mathrm{Y}]=\\mathrm{E}[\\mathrm{X}]+$ E[Y] for any random variables X and Y."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.636,
+            0.221,
+            0.653
+          ],
+          "content": "M E U (\\{\\}) = - 7 2",
+          "image_source": "images/page_9_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.658,
+            0.191,
+            0.674
+          ],
+          "content": "**Explanation:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.676,
+            0.904,
+            0.736
+          ],
+          "content": "We first compute $E[X]=0,E[Y]=6,E[Z]=4$ . Since Y and Z are independent, $E[YZ] = E[Y]E[Z] = 24$ We can then calculate $E[U_{1}] = 10E[X] - 3E[YZ] = - 72$ and $E[U_{2}] = 10E[X] + 5E[Y] - 5E[YZ] = - 90$ , so we should take the first utility value, getting $M E U ( \\{ \\} ) = - 7 2$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.9,
+            0.125
+          ],
+          "content": "iii. (2 pts) Which variable has the lowest VPI? Justify your answer either in words or numerically. Please restrict any answers to fewer than 20 words. X ◯ Y ◯ Z"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.144,
+            0.897,
+            0.201
+          ],
+          "content": "**Explanation: V PI**(X) = 0 because the way X affects the utility is independent of the action. Since VPIs are nonnegative, this variable must have the lowest VPI (or be tied for this property, but we can verify that the VPIs of the other two are positive)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.203,
+            0.864,
+            0.241
+          ],
+          "content": "Specifically, one way of seeing this is to note that $U_{1}(X,Y,Z)-U_{2}(X,Y,Z)=2YZ-5Y$ , which does not depend on X ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.245,
+            0.241,
+            0.26
+          ],
+          "content": "**Common Mistakes:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.264,
+            0.902,
+            0.301
+          ],
+          "content": "Saying that $V P I ( X ) = 0$ because E[X] = 0 or that $E[X] < E[Y], E[Z]$ so X affects the utility the least. Even if we changed the possible values of X to be 100 and 200, that wouldn’t change the answer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.306,
+            0.748,
+            0.323
+          ],
+          "content": "● Saying that X and the utility are independent. X definitely contributes to the utility."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.915,
+            0.127
+          ],
+          "content": "iv. (3 pts) You are given a Bayes Net with the four nodes below. The “number of rows” in a Bayes Net is the total number of rows in all CPTs (including the two-row tables for variables with no incoming edges). Assume all variables are binary."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.146,
+            0.914,
+            0.184
+          ],
+          "content": "Draw 3 edges such that the Bayes Net is valid, and the number of rows in the Bayes Net is **smaller** than the number of rows in the full joint table for all four variables."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.346,
+            0.201,
+            0.652,
+            0.415
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.457,
+            0.905,
+            0.513
+          ],
+          "content": "**Solution:** (The above is an example solution: any solution where no variable has multiple parents would work.) **Explanation:** The number of rows in the full joint table is $2 ^ { 4 } { = } 1 6 .$ . We are thus looking for a Bayes net with fewer than 16 total rows."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.515,
+            0.848,
+            0.551
+          ],
+          "content": "We note that if each edge points to a different variable, then the number of total rows is 14 (2 for the sole unconditioned variable, and 4 for each of the other CPTs)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.553,
+            0.915,
+            0.648
+          ],
+          "content": "To see that this is the necessary condition (when $n = 4   )$ , we prove that any solution with a variable with two parents must have at least 16 rows. Specifically, a variable with three parents will have 16 rows, which is too many. If there is a variable with two parents, it will have 8 rows, but there will be another variable with one parent and thus 4 rows; combined with the two variables with no parents and thus 2 rows each, we have a total of 16 rows."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.915,
+            0.991
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.885,
+            0.107
+          ],
+          "content": "Draw 3 edges such that the Bayes Net is valid, and the number of rows in the Bayes Net is **larger** than the full joint table."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.346,
+            0.126,
+            0.652,
+            0.34
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.346,
+            0.906,
+            0.381
+          ],
+          "content": "**Solution:** (The above is an example solution: any solution where all three edges are pointing to the same variable would work.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.385,
+            0.888,
+            0.421
+          ],
+          "content": "**Explanation:** The solution for this part continues from the same reasoning as the prior: the only way to get the total number of rows to be more than 16 is if a variable has three parents."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.441,
+            0.364,
+            0.458
+          ],
+          "level": 2,
+          "content": "Common Mistakes (for both parts):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.46,
+            0.906,
+            0.495
+          ],
+          "content": "Drawing something that isn't a Bayes net. This includes having undirected edges as well as having cycles in the graph (self-loops included)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.499,
+            0.409,
+            0.515
+          ],
+          "content": "Using more or less than three edges."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.916,
+            0.128
+          ],
+          "content": "v. (2 pts) Suppose you’re trying to choose a move in a two-player adversarial game by using **minimax**. Suppose we use an evaluation function **f(s)** to evaluate the quality of a state during depth limited search. From the list of possibilities for **g(s)** below, which are guaranteed to result in the <strong><u>exact same action</u></strong> as if we used **f(s)** instead?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.146,
+            0.914,
+            0.184
+          ],
+          "content": "You may assume that all else is equal (including any tie-breaking scheme) except the evaluation functions. You may assume that **f(s)** is always positive."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.143,
+            0.205,
+            0.285,
+            0.323
+          ],
+          "sub_type": "algorithm",
+          "content": "- $g(s) = f(s) + 10$\n- $g(s) = 5f(s)$\n- $g(s) = f(s)^2$\n- $g(s) = \\log f(s)$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.349,
+            0.915,
+            0.385
+          ],
+          "content": "vi. (2 pts) Now suppose you’re using **expectimax** instead of minimax to choose a move. From the list of possibilities for **g(s)** below, which are guaranteed to result in the <strong><u>exact same action</u></strong> as if we used **f(s)** instead?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.4,
+            0.914,
+            0.434
+          ],
+          "content": "Again, you may assume everything except the evaluation functions is the same, and that **f(s)** returns a positive value."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.129,
+            0.454,
+            0.286,
+            0.561
+          ],
+          "sub_type": "algorithm",
+          "content": "- $g(s) = f(s) + 10$\n- $g(s) = 5f(s)$\n- $g(s) = f(s)^2$\n- $g(s) = \\log f(s)$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.588,
+            0.321,
+            0.605
+          ],
+          "level": 2,
+          "content": "Explanation (for parts v + vi):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.605,
+            0.911,
+            0.691
+          ],
+          "content": "Minimax does not care about the exact values that the evaluation function outputs: it only compares about their relative sizes. Thus, any monotonic transformation of the evaluation function (as adding constants, multiplying by a positive constant, and the log function are) would keep the same option being chosen by the algorithm. Expectimax cares about the actual values: the transformation must be linear. Thus, taking the square or the log do not work any more."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.915,
+            0.126
+          ],
+          "content": "vii. (2 pts) Suppose we are running depth 1 expectimax, and know that our evaluation function always returns a value between B and T, where $\\mathrm { B } \\leq \\mathrm { T }$ . For what values of B and T can we perform the pruning step as shown below? Assume that all chance outcomes are equally likely."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.101,
+            0.15,
+            0.357,
+            0.317
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.329,
+            0.219,
+            0.345
+          ],
+          "content": "Solution: $T \\leq 1 6$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.35,
+            0.908,
+            0.387
+          ],
+          "content": "**Explanation:** The value of the left chance node is 9. Max will prune if there is no way of the remaining branch to be high enough to make the right chance node worth taking."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.388,
+            0.881,
+            0.424
+          ],
+          "content": "The best that the right chance node could be is (2 + T)/2 , so we prune if this expression is guaranteed to be at most 9."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.428,
+            0.14,
+            0.443
+          ],
+          "content": "**Notes:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.446,
+            0.908,
+            0.483
+          ],
+          "content": "Incorporating knowledge that the evaluation function must be at least 12 or at most 2 as bounds for B and T were not marked wrong, but neither is this information relevant for pruning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.485,
+            0.901,
+            0.521
+          ],
+          "content": "Some students misunderstood the question and wrote answers that tried directly bounding the evaluation function, e.g. T = 16 . However, if T = 15 , we also know that pruning can occur."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.525,
+            0.902,
+            0.56
+          ],
+          "content": "It was not a reasonable assumption that the output of the evaluation function must be integers, or that the output must be nonnegative/positive."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.072,
+            0.642,
+            0.092
+          ],
+          "level": 2,
+          "content": "6. MDPs and RL for Solving Adversarial Games (14 pts)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.915,
+            0.169
+          ],
+          "content": "Consider the problem of using an MDP to develop a strategy to maximize a player’s reward in a game called **The Downward Spiral.** The game starts with both players having an “elevation” of zero. A game consists of N rounds, where each round consists of a turn by player 1, followed by a turn by player 2. After N rounds, the game is over. During each turn:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.171,
+            0.382,
+            0.188
+          ],
+          "content": "● A player may “pass” or “move”."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.19,
+            0.51,
+            0.207
+          ],
+          "content": "● If a player “passes”, their elevation is unchanged."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.209,
+            0.886,
+            0.246
+          ],
+          "content": "If a player “moves”, then their elevation **increases**​ by 1 with probability 0.25, and **decreases**​ by 1 with probability 0.75. Moving only changes the elevation of the active player."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.265,
+            0.915,
+            0.398
+          ],
+          "content": "**Part 1: Suppose that player 1’s utility is equal to the number of times that they end a round with a strictly higher elevation than player 2.** One approach is to model the game’s state as a pair of values representing the elevation of each player, i.e. $\\mathbf { S } _ { 0 }$ is always equal to [0, 0]. After one round, suppose player 1 passes, and player 2 moves and goes down, then the new state is $\\mathbb { S } _ { \\mathrm { x } } = [ 0 ,   - 1 ]$ . To account for player 1’s goal, our model has a reward function such that player 1 earns a reward of 1 point for ending the round with a higher elevation. So in the example above $\\mathrm{R}(\\mathrm{S}_{0}, \\mathrm{pass}, \\mathrm{S}_{\\mathrm{X}}) = 1$ , since the round ended with player 1 having a higher elevation. Throughout the problem, let the discount factor be 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.417,
+            0.915,
+            0.512
+          ],
+          "content": "i. (3 pts) Player 1 will use an MDP model to decide what actions to take to maximize their rewards. Fill in the **MDP search tree** below for the game assuming that the chance of heads is 0.25, that the model predicts player 2 will randomly pick pass/flip with p=0.5 and the game lasts **only one** <strong><u>round</u></strong> **(N = 1)**. <strong><u>Label transitions</u></strong> **with** <strong><u>their reward</u></strong> **and** <strong><u>probability</u></strong>. Label states with the appropriate pair of values [x, y]. The starting state and Q-states are drawn for you. Only the edges and states below the left q-state ([0, 0], “pass”) will be graded."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.53,
+            0.914,
+            0.586
+          ],
+          "content": "There are a few different reasonable interpretations for this problem. See the appendix to these solutions for alternate possibilities. An MDP search tree consists of decision nodes (which we denoted with upward triangles) and chance nodes (circles). The best answer is as shown below, where there are three possible outcomes:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.588,
+            0.651,
+            0.605
+          ],
+          "content": "Outcome 1: Player 2 picks pass, no reward. Happens with chance 0.5."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.607,
+            0.838,
+            0.624
+          ],
+          "content": "● Outcome 2: Player 2 picks move, goes up. No reward. Happens with chance $0.5 * 0.25 = 0.125$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.625,
+            0.866,
+            0.642
+          ],
+          "content": "● Outcome 3: Player 2 picks move, goes down. Reward = 1. Happens with chance $0.5 * 0.75 = 0.375$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.226,
+            0.654,
+            0.769,
+            0.893
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.896,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.026,
+            0.24,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.108,
+            0.914,
+            0.145
+          ],
+          "continues_prev": true,
+          "content": "ii. (1 pt) In the **entire** MDP search tree **from part i** (including the side of the tree that you were not required to draw), what is the exact value of the smallest transition probability?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.146,
+            0.915,
+            0.184
+          ],
+          "content": "**Solution:** The least likely outcome is if both players chose to move and successfully increase their elevation; this happens with probability 1/4 \\* 1/2 \\* 1/4 = 1/32 . See below."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.104,
+            0.215,
+            0.569,
+            0.407
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.432,
+            0.914,
+            0.471
+          ],
+          "content": "iii. (2 pts) **Let N = 2 rounds**. Let Z be the number of transitions in the entire MDP. How many total transitions are there? Give an exact answer. By transition, we mean an edge from a Q-state to a state."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.49,
+            0.139,
+            0.505
+          ],
+          "content": "\\mathrm{Z} = 90",
+          "image_source": "images/page_16_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.509,
+            0.915,
+            0.582
+          ],
+          "content": "**Solution:** There are 9 transitions in round 1, as partially demonstrated in part (i). In round 2, there are 9 potential states where player 1 can make an action from (each player's score can range from -1 to 1), and each has 9 possible transitions (for each combination of player 1's and player 2's possible actions), for 81 transitions in round 2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.585,
+            0.915,
+            0.642
+          ],
+          "content": "Some students observed that the transitions in round 1 are redundant with some of the transitions in round 2, and gave an answer of 81; this is the number of unique transitions $( s , a , s ^ { \\prime } )$ , and thus also correct, although the MDP model is no longer a tree, but a graph."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.643,
+            0.601,
+            0.662
+          ],
+          "content": "If you had the wrong model for part i, there are other possible answers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.681,
+            0.915,
+            0.776
+          ],
+          "content": "iv. (1 pt) Suppose we want to use **model-based reinforcement learning** to approximate player 2’s strategy rather than assuming that they choose randomly. Assume that they have some sort of consistent, but not necessarily deterministic strategy. Assuming there are Z transitions, how many T(s, a, s’) values do we need to learn? Again assume that **N = 2**. You can do this problem even if you didn’t do part 1-ii. If the problem seems ambiguous, state your assumptions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.795,
+            0.384,
+            0.812
+          ],
+          "content": "Number of $\\mathrm { T } ( \\mathrm { s } , \\mathrm { a } , \\mathrm { s } ^ { \\prime } )$ values to learn = Z"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.814,
+            0.902,
+            0.851
+          ],
+          "content": "**Explanation:** We learn one transition probability per transition, which is an edge from a Q-state to a state. Some of you felt that reusing (0, 0) was redundant, and thus we also accepted Z - sqrt(Z) or 72."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.87,
+            0.914,
+            0.927
+          ],
+          "content": "**Special note: If you used one of the incorrect models, the correct answer is zero**. We defined Transitions as between Q-states and regular states, and in alternate models (#1 and #2), these transitions all have probability 0.75 or 0.25, defined by the rules of the game, and thus there is nothing to learn."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.978,
+            0.914,
+            0.991
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.09,
+            0.911,
+            0.185
+          ],
+          "content": "**Special note #2:** Some of you tried to be clever and count the number of states and possible transitions between them. Others tried to note that some transition probabilities can be computed from others. Both of these approaches are incompatible with how model-based RL works, where we don’t get to pick which observations we make. While it is true that sometimes you can compute some transition probabilities from others,this is counterproductive given the learning process of counting + normalizing."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.203,
+            0.892,
+            0.221
+          ],
+          "content": "v. (1 pt) Same as part iii, but how many $\\mathrm { R } ( \\mathrm { s } , \\mathrm { a } , \\mathrm { s } ^ { \\prime } )$ values do we need to learn? If ambiguous, state assumptions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.24,
+            0.382,
+            0.258
+          ],
+          "content": "Number of $\\mathrm { R } ( \\mathrm { s } , \\mathrm { a } , \\mathrm { s } ^ { \\prime } )$ values to learn = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.26,
+            0.805,
+            0.278
+          ],
+          "content": "**Explanation:** The rewards are all based on the rules of the game, and thus don't need to be learned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.298,
+            0.915,
+            0.355
+          ],
+          "content": "**Part 2)** Suppose we keep the rules of The Downward Spiral the same, but change player 1’s utility to **be equal to their elevation at the end of round N**, with no regard to player 2’s elevation. This means adjusting our state space as well as reward function. Note: **You can do this problem without doing part 1.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.373,
+            0.914,
+            0.41
+          ],
+          "content": "vi. (1 pt) Give a minimal representation of the state needed to achieve this new goal, and provide $\\mathbb { S } _ { 0 } .$ Hint: Player 2’s actions no longer matter."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.43,
+            0.913,
+            0.467
+          ],
+          "content": "**Solution 1:** One representation is to store only the current elevation of player 1; the reward is given as +1 or -1 whenever we transition to a different state. The starting state would thus be $\\mathrm { S } _ { 0 } = [ 0 ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.468,
+            0.916,
+            0.563
+          ],
+          "content": "**Solution 2:** A better (and more minimal) representation is based off of the realization that the optimal action is independent of Player 1’s elevation. Thus, our state only needs to be able to track whether Player 1 just moved up or down (in order to use the same reward function). Thus, the minimal state representation can be something like {“Up”, “Down”, “Same”}, with the reward for a transition $R ( s , a , s ^ { \\prime } )$ depending solely on $s ^ { \\prime } . ~ S _ { 0 }$ can be any of these states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.584,
+            0.915,
+            0.62
+          ],
+          "content": "vii. (3 pts) Draw the entire MDP search tree for the game assuming N = 1. Make sure to label the probabilities and rewards for each transition for round 0, as well as the possible states for round 0 and round 1."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.091,
+            0.645,
+            0.496,
+            0.885
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.025,
+            0.371,
+            0.045
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.916,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.24,
+            0.856,
+            0.277
+          ],
+          "content": "viii. (2 pt) If **N = 10,** give the expected utility $\\mathrm { V ^ { * } ( S _ { 0 } ) }$ achieved under the optimal policy for this new MDP. Describe the optimal policy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.279,
+            0.806,
+            0.297
+          ],
+          "content": "**Solution:** 0. We expect moving to move us lower, on average, and thus it is optimal to never move."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.072,
+            0.427,
+            0.092
+          ],
+          "level": 2,
+          "content": "7. Where is Question Goat? (9 pts)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.915,
+            0.246
+          ],
+          "content": "Question Goat is wandering around between positions A, B, C and D below. Question Goat’s location at time t is $\\mathrm { X _ { t } }$ At each time step, Question Goat moves clockwise [e.g. A → B, B → D, etc.] with probability 0.8, moves counterclockwise with probability 0.1, and stays at the same position with probability 0.1. To track down Question Goat’s position, we deploy two sensors in the East (E) and South (S). The measurements of sensors E and S at time t are $\\mathrm { Y _ { E } }$ and $\\mathrm { Y } _ { \\mathrm { s } } ,$ respectively. The distribution of sensor measurements are determined by the Manhattan distance between QG and the sensor. QG’s Manhattan distance to sensor S is given by $\\mathrm { d _ { s } }$ and $\\mathrm { Q G ^ { \\circ } s }$ Manhattan distance to sensor E is given by ${ \\bf d } _ { \\mathrm { E } } ,   { \\bf e . g . }$ QG at B yields $\\mathrm{d}_{\\mathrm{S}} = 3, \\mathrm{d}_{\\mathrm{E}} = 1$ . The measurement model of the sensors is given in the tables below. Essentially, as QG gets closer to a sensor, its chance of being on increases."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.098,
+            0.253,
+            0.274,
+            0.389
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.306,
+            0.268,
+            0.526,
+            0.368
+          ],
+          "content": "| Y<sub>E</sub> | P(Y<sub>E</sub>\\| d<sub>E</sub>) |\n| --- | --- |\n| 0 | 0.2 d<sub>E</sub> |\n| 1 | 1 - 0.2 d<sub>E</sub> |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.541,
+            0.269,
+            0.76,
+            0.366
+          ],
+          "content": "| Y<sub>S</sub> | P(Y<sub>S</sub>\\| d<sub>S</sub>) |\n| --- | --- |\n| 0 | 0.3 d<sub>S</sub> |\n| 1 | 1 - 0.3 d<sub>S</sub> |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.406,
+            0.912,
+            0.463
+          ],
+          "content": "i. (2 pts) Let us find Question Goat’s location by particle filtering with 4 particles. Suppose at $t = 3 3 ,$ , the particles we have are $\\mathrm{X}^{(1)}=\\mathrm{A}, \\mathrm{X}^{(2)}=\\mathrm{B}, \\mathrm{X}^{(3)}=\\mathrm{C}, \\mathrm{X}^{(4)}=\\mathrm{D}$ . What is the probability that the particles are $\\mathrm{X}^{(1)} = \\mathrm{B}, \\mathrm{X}^{(2)} = \\mathrm{A}, \\mathrm{X}^{(3)} = \\mathrm{D}$ $\\mathrm { X ^ { ( 4 ) } { = } D }$ after completion of the time elapsing step in particle filtering?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.483,
+            0.23,
+            0.499
+          ],
+          "content": "Probability: 0.0008"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.502,
+            0.191,
+            0.517
+          ],
+          "content": "**Explanation:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.518,
+            0.695,
+            0.542
+          ],
+          "content": "P (X _ {3 4} ^ {(1)} = B, X _ {3 4} ^ {(2)} = A, X _ {3 4} ^ {(3)} = D, X _ {3 4} ^ {(4)} = D \\mid X _ {3 3} ^ {(1)} = A, X _ {3 3} ^ {(2)} = B, X _ {3 3} ^ {(3)} = C, X _ {3 3} ^ {(4)} = D)",
+          "image_source": "images/page_19_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.087,
+            0.543,
+            0.812,
+            0.568
+          ],
+          "content": "= P (X _ {3 4} ^ {(1)} = B | X _ {3 3} ^ {(1)} = A) * P (X _ {3 4} ^ {(2)} = A | X _ {3 3} ^ {(2)} = A) * P (X _ {3 4} ^ {(3)} = D | X _ {3 3} ^ {(3)} = C) * P (X _ {3 4} ^ {(4)} = D | X _ {3 3} ^ {(4)} = D)",
+          "image_source": "images/page_19_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.568,
+            0.319,
+            0.583
+          ],
+          "content": "= 0. 8 * 0. 1 * 0. 1 * 0. 1 = 0. 0 0 0 8",
+          "image_source": "images/page_19_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.588,
+            0.914,
+            0.626
+          ],
+          "content": "ii. (2 pts) Assume the time elapse step yields $\\mathrm{X}^{(1)}=\\mathrm{B}, \\mathrm{X}^{(2)}=\\mathrm{A}, \\mathrm{X}^{(3)}=\\mathrm{D}, \\mathrm{X}^{(4)}=\\mathrm{D}$ . Assume the sensor measurements at $t = 3 4$ are $\\mathrm { Y _ { \\mathrm { E } }   =   0 }$ and $\\mathrm { Y _ { s }   =   1 }$ . What are the **unnormalized** p article weights given these observations?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.642,
+            0.752,
+            0.809
+          ],
+          "content": "| Particle | Weights |\n| --- | --- |\n| X(<sup>1</sup>)=B | w(<sup>1</sup>)= P(Y<sub>E</sub> = 0 \\|X = B)P(Y<sub>S</sub> = 1 \\|X = B) = 0.2 * 0.1 = 0.02 |\n| X(<sup>2</sup>)=A | w(<sup>2</sup>)= P(Y<sub>E</sub> = 0 \\|X = A)P(Y<sub>S</sub> = 1 \\|X = A) = 0.4 * 0.6 = 0.24 |\n| X(<sup>3</sup>)=D | w(<sup>3</sup>)= P(Y<sub>E</sub> = 0 \\|X = D)P(Y<sub>S</sub> = 1 \\|X = D) = 0.4 * 0.6 = 0.24 |\n| X(<sup>4</sup>)=D | w(<sup>4</sup>)= w(<sup>3</sup>) = 0.24 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.829,
+            0.911,
+            0.847
+          ],
+          "content": "**Notes:** We know that the sensors are independent, so we just multiply the probabilities of the two sensor readings."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.716,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.07,
+            0.913,
+            0.125
+          ],
+          "content": "iii. (3 pts) Given the weights in part (b), what is the probability that the particles are resampled as $\\mathbf { X } ^ { ( 1 ) } \\mathbf { = } \\mathbf { A } , \\mathbf { X } ^ { ( 2 ) } \\mathbf { = } \\mathbf { D }$ $\\mathbf { X } ^ { ( 3 ) } \\mathbf { = } \\mathbf { B } ,$ , and $\\scriptstyle \\mathbf { X } ^ { ( 4 ) } = \\mathbf { B }$ at time t=34? You do not need to calculate the probability as a number. Instead, represent your solution in terms of $\\mathbf { W } ^ { ( 1 ) } , \\mathbf { W } ^ { ( 2 ) } , \\mathbf { W } ^ { ( 3 ) } , \\mathbf { W } ^ { ( 4 ) }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.181,
+            0.127,
+            0.404,
+            0.15
+          ],
+          "content": "(w ^ {(1)}) ^ {2} w ^ {(2)} (w ^ {(3)} + w ^ {(4)})",
+          "image_source": "images/page_20_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.153,
+            0.425,
+            0.175
+          ],
+          "content": "**Solution:** $\\overline { { ( w ^ { ( 1 ) } + w ^ { ( 2 ) } + w ^ { ( 3 ) } + w ^ { ( 4 ) } ) ^ { 4 } } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.179,
+            0.858,
+            0.217
+          ],
+          "content": "**Explanation:** We normalize the weights by dividing each by the sum of the weights, and then multiply the probabilities of being at A , B (twice), and D (noting that the total weight for being at D is $\\mathcal { w } ^ { ( 3 ) } + \\mathcal { w } ^ { ( 4 ) } \\; )$ )."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.238,
+            0.909,
+            0.293
+          ],
+          "content": "iv. (2 pts) If the sensors were malfunctioning at $t = 3 \\varPhi ,$ i.e., no observations are produced, what is the probability that the original set of particles $\\mathrm { X } ^ { ( 1 ) } { = } \\mathbf { A } , \\mathrm { X } ^ { ( 2 ) } { = } \\mathbf { B } , \\mathrm { X } ^ { ( 3 ) } { = } \\mathbf { C } , \\mathrm { X } ^ { ( 4 ) } { = } \\mathbf { D }$ are **resampled** as $\\mathrm { X } ^ { ( 1 ) } { = } \\mathbf { B } , \\mathrm { X } ^ { ( 2 ) } { = } \\mathbf { A } , \\mathrm { X } ^ { ( 3 ) } { = } \\mathbf { D } , \\mathrm { X } ^ { ( 4 ) } { = } \\mathbf { D } ?$ Probability:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.295,
+            0.913,
+            0.33
+          ],
+          "content": "After the exam, we noted that there were three possible interpretations of the problem; we gave all of them full credit."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.333,
+            0.912,
+            0.369
+          ],
+          "content": "**Interpretation 1:** “original set of particles” means pre-time elapse, and it is suboptimal to resample when there are no observations, so we shouldn’t resample."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.37,
+            0.699,
+            0.388
+          ],
+          "content": "**Solution 1:** Since we aren’t resampling, the answer is the same as in part (i): 0.0008."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.389,
+            0.911,
+            0.425
+          ],
+          "content": "**Interpretation 2:** “original set of particles” means pre-time elapse, and the particles post-time elapse are $$\\mathrm { X ^ { ( 1 ) } { = } B }$$ $\\mathrm{X}^{(2)}=\\mathrm{A}, \\mathrm{X}^{(3)}=\\mathrm{D}, \\mathrm{X}^{(4)}=\\mathrm{D}$ as in part (ii)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.427,
+            0.889,
+            0.463
+          ],
+          "content": "**Solution 2:** The normalized weights for B and A are ¼, while the normalized weight for D is ½. Thus, the total probability is $1 / 4 * 1 / 4 * 1 / 2 * 1 / 2 = 1 / 6 4$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.467,
+            0.65,
+            0.485
+          ],
+          "content": "**Interpretation 3:** “original set of particles” are the particles post-time elapse."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.486,
+            0.885,
+            0.522
+          ],
+          "content": "**Solution 3:** Our samples are uniform across the states, so each location is equally likely (1/4) for each particle. Thus, the answer is $1 / { 4 } ^ { 4 } = 1 / 2 5 6$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.913,
+            0.991
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.072,
+            0.529,
+            0.092
+          ],
+          "level": 2,
+          "content": "8. Perceptrons and Neurons (9 pts, 1 pt each)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.095,
+            0.906,
+            0.151
+          ],
+          "content": "After a single weight update on a single incorrectly classified sample, a binary perceptron correctly classifies that sample: ◯ Always ⬤ Sometimes ◯ Never **Explanation:** The size of the change might not be enough; this is one reason why MIRA exists."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.167,
+            0.861,
+            0.207
+          ],
+          "content": "After a single weight update, the accuracy of a perceptron over the entire training set (check all that apply): ◼ Can get better ◼ Can get worse ◼ Can stay the same"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.211,
+            0.9,
+            0.246
+          ],
+          "content": "**Explanation:** Any of the outcomes can occur (since we don't know if the sample updated on is representative of the other samples, or even if the size of the change was enough (see previous part))."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.261,
+            0.913,
+            0.316
+          ],
+          "content": "In a binary perceptron, if a feature vector for a sample is exactly equal to the weight vector, the sample will be classified as part of the positive class. Assume the feature vector is not all zeros. ⬤ Always ◯ Sometimes ◯ Never"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.317,
+            0.908,
+            0.403
+          ],
+          "content": "**Explanation:** If the feature vector equals the weight vector, then the dot product is a sum of squares (nonnegative numbers); since it can't be zero (since the vectors aren't all zeroes), the dot product will always be positive. **Note:** A few students have asked about how using a bias would affect the answer. The answer is that it wouldn't: if there's a bias feature, then either the bias weight = 1 (and the dot product is still positive), or the feature vector couldn't be exactly equal to the weight vector."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.419,
+            0.913,
+            0.473
+          ],
+          "content": "In a multiclass perceptron, if a feature vector for a sample is exactly equal to the weight vector for some class, the sample will be classified as part of that class. Assume the feature vector is not all zeros. ◯ Always ⬤ Sometimes ◯ Never"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.475,
+            0.915,
+            0.56
+          ],
+          "content": "**Explanation:** If two classes had the same weight vector, then a sample with that same feature vector couldn't be classified as both classes. Alternatively, one class could have a weight vector that is a multiple of another class's weight vector (i.e. same direction but larger magnitude), in which case no sample would ever be classified as the class with smaller weights. And even if all weight vectors are unique, one vector may have such a large magnitude that it ‘overpowers’ smaller weight vectors."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.578,
+            0.632,
+            0.632
+          ],
+          "content": "The decision boundary for a binary perceptron is linear in the feature space. ⬤ Always ◯ Sometimes ◯ Never **Explanation:** Perceptrons only look at linear combinations of the features."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.914,
+            0.105
+          ],
+          "content": "Suppose we are trying to classify the “habitable” zone around a star in a 2D universe. The data is shown below, where X denotes belonging to the habitable zone, and O is not part of the habitable zone."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.388,
+            0.106,
+            0.612,
+            0.258
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.263,
+            0.914,
+            0.297
+          ],
+          "content": "A binary perceptron with the right weights would correctly classify all planets shown. Assume you can have any features you want."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.314,
+            0.895,
+            0.366
+          ],
+          "content": "**Explanation:** There are a number of possible sets of features that could make this work. For example, we could have two indicator features that correspond to \"being within first circle\" and \"being within second circle\". Alternatively, if X was the distance from the star, we could have X and X"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.383,
+            0.914,
+            0.437
+          ],
+          "content": "On Project 6, you built a neural network of only a single two-class neuron with a logistic activation function that classified a sample as belonging to the positive class if its activation was greater than 0.5. The decision boundary for this neuron was linear in the feature space."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.451,
+            0.91,
+            0.538
+          ],
+          "content": "**Explanation:** In general, neural networks can have non-linear decision boundaries, but that doesn't mean that this is the case for our particular neuron. The activation function used is a logistic activation function, which outputs a number larger than 0.5 iff the input is positive. The input to the activation function, however, is just the weighted sum of the inputs, and checking to see if that is positive is exactly how a perceptron would classify. Thus, our single neuron can't classify any better than a perceptron can."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.553,
+            0.912,
+            0.588
+          ],
+          "content": "A single two-class neuron as implemented in Project 6 (and described above) would be able to correctly classify the planetary data from above. Assume you can have any features you want."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.605,
+            0.902,
+            0.64
+          ],
+          "content": "**Explanation:** As argued above, our neuron actually classifies the exact same way that a perceptron would, and a perceptron can classify this data perfectly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.655,
+            0.915,
+            0.73
+          ],
+          "content": "The training data for Project 6 featured handwritten digits that were all about the same size. However, if you hand-wrote a single much smaller “5” and fed it to the classify method (using the same training data as in the project, and assuming the handwritten digit was appropriately converted into a 28x28 pixel format)), it would still probably be classified correctly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.748,
+            0.908,
+            0.835
+          ],
+          "content": "**Explanation:** Our features were per-pixel. Thus, if the 5 was in an unexpected location (including but not limited to being smaller in size) that was never seen in the training data, then the models in the project (either the perceptron or the neuron) would not be able to classify the 5 correctly. However, some students interpreted “appropriately converted” to include the step of finding and extracting the digit, magnifying the digit to a \"normal\" size. Thus we took both answers."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.072,
+            0.355,
+            0.092
+          ],
+          "level": 2,
+          "content": "9. Deep Learning (10.5 pts)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.095,
+            0.425,
+            0.111
+          ],
+          "content": "Consider the neural network below. Note that:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.115,
+            0.533,
+            0.131
+          ],
+          "content": "● x, a scalar, is the input. $\\mathbf { a } _ { 4 } ,$ also a scalar, is the output."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.134,
+            0.578,
+            0.15
+          ],
+          "content": "● Each $\\mathbf { a _ { i } }$ value is the final output for neuron i in the network."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.152,
+            0.788,
+            0.169
+          ],
+          "content": "● Each $\\mathbf { z _ { i } }$ value is the **pre-activation** value for neuron i in the network (i.e. the dot product)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.171,
+            0.397,
+            0.188
+          ],
+          "content": "$\\mathbf { w } _ { 1 }$ is the weight used by neuron 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.19,
+            0.489,
+            0.207
+          ],
+          "content": "● Let $\\mathbf { w } _ { \\mathbf { i j } }$ be the weight from neuron i to neuron j."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.21,
+            0.618,
+            0.226
+          ],
+          "content": "The activation function for each neuron is the function $g ( x ) = e ^ { x }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.229,
+            0.652,
+            0.247
+          ],
+          "content": "$L ( y , a _ { \\phi } )$ is the loss function. It is $( \\mathbf { y } - \\mathbf { a } _ { 4 } ) ^ { 2 }$ , where y is the training label."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.241,
+            0.252,
+            0.746,
+            0.39
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.403,
+            0.914,
+            0.459
+          ],
+          "content": "i. (2.5 pts) Use the Chain Rule and the equations given to calculate $\\hat { \\sigma } L / \\hat { \\sigma } z _ { 2 }$ . You may use x and $y ,$ along with all of the $w ,   a ,$ and z values. Note that the picture above only shows the neural network, i.e. does not include the loss function L."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.46,
+            0.733,
+            0.506
+          ],
+          "content": "**Solution:** $\\frac { \\partial L } { \\partial z _ { 2 } } = \\frac { \\partial L } { \\partial a _ { 4 } } \\frac { \\partial a _ { 4 } } { \\partial z _ { 4 } } \\frac { \\partial z _ { 4 } } { \\partial a _ { 2 } } \\frac { \\partial a _ { 2 } } { \\partial z _ { 2 } } = ( - 2 ( y - a _ { 4 } ) ) * ( e ^ { z _ { 4 } } ) * ( w _ { 2 4 } ) * ( e ^ { z _ { 2 } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.565,
+            0.914,
+            0.621
+          ],
+          "content": "ii. (1.5 pts) Use the Chain Rule and the equations given to calculate $\\partial L / \\partial z _ { 3 }$ . You may use x and y, along with all of the $w ,   a ,$ and z values. (**Hint:** If you’re comfortable with the Chain Rule, you should be able to do this quickly by looking at your solution to Part A.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.623,
+            0.733,
+            0.667
+          ],
+          "content": "**Solution:** $\\frac { \\partial L } { \\partial z _ { 3 } } = \\frac { \\partial L } { \\partial a _ { 4 } } \\frac { \\partial a _ { 4 } } { \\partial z _ { 4 } } \\frac { \\partial z _ { 4 } } { \\partial a _ { 3 } } \\frac { \\partial a _ { 3 } } { \\partial z _ { 3 } } = ( - 2 ( y - a _ { 4 } ) ) * ( e ^ { z _ { 4 } } ) * ( w _ { 3 4 } ) * ( e ^ { z _ { 3 } } )$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.914,
+            0.13
+          ],
+          "content": "iii. (2.5 pts) Use the Chain Rule and the equations given to calculate $\\partial L / \\partial w _ { 1 }$ . You may use x and y, along with all of the w, a, and z values. **NOTE**​**:** You can use the symbols $\\hat { \\sigma } L / \\hat { \\sigma } z _ { 2 }$ and $\\partial L / \\partial z _ { 3 }$ in your answer, since you calculated their values above. This is **highly recommended**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.132,
+            0.161,
+            0.146
+          ],
+          "content": "**Solution:**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.147,
+            0.914,
+            0.193
+          ],
+          "content": "\\frac {\\partial L}{\\partial w _ {1}} = \\frac {\\partial L}{\\partial a _ {1}} \\frac {\\partial a _ {1}}{\\partial z _ {1}} \\frac {\\partial z _ {1}}{\\partial w _ {1}} = (\\frac {\\partial L}{\\partial z _ {2}} \\frac {\\partial z _ {2}}{\\partial a _ {1}} + \\frac {\\partial L}{\\partial z _ {3}} \\frac {\\partial z _ {3}}{\\partial a _ {1}}) \\frac {\\partial a _ {1}}{\\partial z _ {1}} \\frac {\\partial z _ {1}}{\\partial w _ {1}} = (\\frac {\\partial L}{\\partial z _ {2}} w _ {1 2} + \\frac {\\partial L}{\\partial z _ {3}} w _ {1 3}) * (e ^ {z _ {1}}) * (x))",
+          "image_source": "images/page_24_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.349,
+            0.912,
+            0.385
+          ],
+          "content": "iv. (1 pt) Suppose we’re using stochastic gradient descent. What values will be updated based on the partial you computed in part iii, i.e. $\\partial L / \\partial w _ { 1 } ?$ Check all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.387,
+            0.757,
+            0.407
+          ],
+          "content": "0 $\\mathbf { W } _ { 1 }$ $口  \\mathbf{w}_{12}$ $口  \\mathbf{w}_{13}$ $口  \\mathbf{w}_{24}$ $口  \\mathbf{w}_{34}$ x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.408,
+            0.913,
+            0.444
+          ],
+          "content": "v. (1 pt) Suppose we’re using mini-batching instead of stochastic gradient descent. What values will be updated based on the computation of $\\partial L / \\partial w _ { 1 }   ?$ Check all that apply."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.174,
+            0.45,
+            0.198,
+            0.465
+          ],
+          "content": "\\mathrm{W}_1",
+          "image_source": "images/page_24_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.248,
+            0.447,
+            0.298,
+            0.465
+          ],
+          "content": "\\square \\mathbf {w} _ {1 2}",
+          "image_source": "images/page_24_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.365,
+            0.447,
+            0.416,
+            0.465
+          ],
+          "content": "\\square \\mathbf {w} _ {1 3}",
+          "image_source": "images/page_24_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.482,
+            0.447,
+            0.534,
+            0.465
+          ],
+          "content": "\\square \\mathrm{W} _ {2 4}",
+          "image_source": "images/page_24_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.601,
+            0.447,
+            0.651,
+            0.465
+          ],
+          "content": "\\square \\mathrm{W} _ {3 4}",
+          "image_source": "images/page_24_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.718,
+            0.446,
+            0.755,
+            0.465
+          ],
+          "content": "x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.467,
+            0.651,
+            0.485
+          ],
+          "content": "**Explanation for (iv) and (v):** In general, calculating $\\partial L / \\partial w _ { i }$ only affects $w _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.506,
+            0.915,
+            0.542
+          ],
+          "content": "vi. (1 pt) What is the main difference between mini-batching and stochastic gradient descent? Describe in 10 words or less. **Answers with more than 10 words will receive no credit.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.563,
+            0.636,
+            0.58
+          ],
+          "content": "**Solution:** SGD uses 1 sample, Mini-Batch uses random larger sub-samples."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.601,
+            0.679,
+            0.618
+          ],
+          "content": "**Common Errors:** Mistaking samples for weights, confusing SGD for Mini-batch"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.638,
+            0.915,
+            0.713
+          ],
+          "content": "vii. (1 pt) We can think of backpropagation as a graph traversal over a computational graph. To ensure that all values are available at the time they are needed, only some traversals are accurate. There are some orderings of nodes/neurons that we must use for maximum efficiency. **For this particular network**​, select **all** such orderings that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.733,
+            0.376,
+            0.75
+          ],
+          "content": "BFS ordering, starting from $\\mathbf { a } _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.752,
+            0.377,
+            0.769
+          ],
+          "content": "⃞ DFS ordering, starting from $\\mathbf { a } _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.771,
+            0.592,
+            0.788
+          ],
+          "content": "⃞ UCS ordering, starting from $\\mathbf { a } _ { 1 }$ and all edge weights are 188."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.79,
+            0.623,
+            0.807
+          ],
+          "content": "0 BFS ordering, starting from $\\mathbf { a } _ { 4 }$ and flipping all edge directions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.809,
+            0.607,
+            0.826
+          ],
+          "content": "⃞ DFS ordering, starting from $\\mathbf { a } _ { 4 }$ and flipping all edge directions"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.828,
+            0.752,
+            0.845
+          ],
+          "content": "0 UCS ordering, starting from $\\mathbf { a } _ { 4 } ,$ flipping all edges, and all edge weights are 188."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.847,
+            0.915,
+            0.903
+          ],
+          "content": "**Explanation:** We want to have calculated the gradients of all of a neuron's children before we calculate the neuron itself's gradient. BFS (or UCS with uniform edge weights, which is identical to BFS) on the reverse of the graph will explore each layer from right to left, in order"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.24,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.071,
+            0.534,
+            0.093
+          ],
+          "level": 2,
+          "content": "10. Pacmanian Speech Recognition (10.5 pts) <sup>1</sup>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.095,
+            0.916,
+            0.17
+          ],
+          "content": "As Adam taught during his lecture, one common approach for converting sound files to words (speech recognition) is to first featurize the sound file by converting each 10 millisecond segment into 13 binned “spectral energies”, which are essentially how strong the low frequency, medium frequency, etc. parts of the signal are for each 10 millisecond segment."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.19,
+            0.915,
+            0.266
+          ],
+          "content": "For this problem, the notation for our features is $\\mathrm { F _ { t } ( i ) }$ where t ranges from 0 to the number of frames in the audio file and i ranges from 0 to 12. For example, if we are processing a 1 second clip, we’d have $\\mathrm { F } _ { 0 } ( \\mathbf { i } )$ through $\\mathrm { F } _ { 9 9 } ( \\dot { \\mathbf { i } } )$ for a total of 1300 features. $\\mathrm{If} \\; \\mathrm{F}_5(0) = 2.3$ , that means the very low frequency component of the sound clip starting at 50ms and ending at 60ms had an energy of 2.3 in some arbitrary unit."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.284,
+            0.916,
+            0.341
+          ],
+          "content": "Suppose throughout this problem that Pacmanian has 20 different sounds, a.k.a. “phonemes” that occur with exactly equal probability. Each word in Pacmanian is composed of a sequence of one or more phonemes. For example, the word “waka” is composed of the phonemes **/w/**, **/a/**, **/k/**, **/a/**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.36,
+            0.915,
+            0.417
+          ],
+          "content": "**Part 1:** The first step of our speech processing algorithm is to build a model for how likely each phoneme is, given a sound segment. For example, our model might predict that $\\mathrm { F } _ { 5 } ( \\mathbf { i } )$ , the sound segment between 50ms and 60ms, had a 40% percent chance of being a **/w/**, a 20% percent chance of being a $/ y / ,$ etc."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.436,
+            0.914,
+            0.473
+          ],
+          "content": "To do this, we can build a neural network that takes in all 13 binned energies for a particular time segment, and which has 20 outputs that use a softmax activation function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.493,
+            0.914,
+            0.53
+          ],
+          "content": "The notation for the outputs of the neural network is $\\mathbf { N _ { t } ( i ) }$ , where t is the frame number and i ranges from 0 to 19. $\\mathrm { N } _ { 1 5 } ( 0 )$ is for $/ a /$ at time $1 5 , \\mathrm { N } _ { 3 1 } ( 1 )$ is for **/b/** at time 31, etc."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.55,
+            0.914,
+            0.588
+          ],
+          "content": "In other words we build a classifier that takes a sound clip (13 energy values) and outputs 20 values (one for each possible phoneme), where N (i) represents how likely the sound at timestep t is actually phoneme number i."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.606,
+            0.915,
+            0.644
+          ],
+          "content": "i. (2 pts) For each of the following expressions, indicate if it is Always True, Sometimes True, or Never True for all values of t, i, and k. Mark “Sometimes” even if the chance is very small."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.66,
+            0.906,
+            0.851
+          ],
+          "content": "|  | Always | Sometimes | Never | Reason |\n| --- | --- | --- | --- | --- |\n| 0 &lt;= N<sub>t</sub>(i) &lt;= 1.0 | ⬤ | ◯ | ◯ | Output ofsoftmax |\n|  | ⬤ | ◯ | ◯ | Output ofsoftmax |\n| N<sub>t</sub>(0) > N<sub>t</sub>(1) | ◯ | ⬤ | ◯ | Could be in any order |\n| F<sub>t</sub>(i) = N<sub>t</sub>(i) | ◯ | ⬤ | ◯ | By coincidence |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_12.jpg"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.082,
+            0.884,
+            0.915,
+            0.932
+          ],
+          "content": "1I know there were some complaints about wordy problems, but I felt this problem was too hard without reexplaining at least some of Adam’s lecture. With a strong enough 188 foundation, you can do this problem without having deeply understood Adam’s lecture."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.915,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.09,
+            0.915,
+            0.202
+          ],
+          "content": "**Part 2:** One way to try to detect words is to build an HMM for each possible word. The state transition diagram for the HMM is shown below, where state i is the ith phoneme of the word, and $\\mathrm { T _ { i j } }$ <sup>is</sup> the probability of moving from state i to state j. For example, for the word waka, we might assume that there is a 20% chance that that a speaker saying the $/ a /$ sound keeps making that sound 10 ms later, and an 80% chance that they move on to the $/ \\mathrm { k } /$ sound. In that case, $\\mathrm { T } _ { 1 , 1 }$ would be 0.2 and $\\mathrm { T } _ { 1 , 2 }$ would be 0.8. $\\mathrm { T } _ { 3 , 4 }$ <sup>represents</sup> the speaker finishes the word. If you’d like, you can think of the terminal state is the speaker being silent."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.092,
+            0.204,
+            0.832,
+            0.316
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.083,
+                0.326,
+                0.901,
+                0.344
+              ],
+              "content": "ii. (2.5 pts) Fill in the table, similar to what you did in part i. Mark “Sometimes” even if the chance is very small."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_26_image_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.361,
+            0.875,
+            0.569
+          ],
+          "content": "|  | Always | Sometimes | Never | Reason |\n| --- | --- | --- | --- | --- |\n| 0 &lt;= T<sub>i</sub>,k &lt;= 1.0 | ⬤ | ◯ | ◯ | Probability |\n| T<sub>0</sub>,1 + T<sub>0</sub>,0 = 1.0 | ⬤ | ◯ | ◯ | Probability |\n| T<sub>0</sub>,1 + T<sub>1</sub>,2 + T<sub>2</sub>,3 = 1.0 | ◯ | ⬤ | ◯ | By coincidence only |\n| T<sub>1</sub>,1 > T<sub>2</sub>,2 | ◯ | ⬤ | ◯ | By coincidence only |\n| T<sub>1</sub>,1 > T<sub>3</sub>,3 | ◯ | ◯ | ⬤ | These are the same value. See NOTE below. |",
+          "captions": [
+            {
+              "bbox": [
+                0.082,
+                0.588,
+                0.914,
+                0.644
+              ],
+              "content": "Part 3: Suppose we have a sound file containing a single word. Suppose this sound file is S samples long, has 13 bins of spectral energy, and that Pacmanian has 20 phonemes. For iii through vi, suppose that we want to use our HMM from above to determine whether the word is “waka”."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_26_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.664,
+            0.914,
+            0.7
+          ],
+          "content": "iii. (2 pts) How many **hidden variables** must our HMM have? Recall that an HMM is just a Bayes Net with a special structure."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.702,
+            0.914,
+            0.758
+          ],
+          "content": "**Solution:** S, as we have a hidden variable Q for each time step, where $\\mathrm { P } ( \\mathrm { Q } _ { \\mathrm { t } } = \\mathrm { q } _ { \\mathrm { t } } )$ represents the probability that the phoneme spoken during time t is qt. Each variable is a vector of 20 probabilities (just like the weather HMM example from lecture, where the variables had values “cloudy”, “rainy”, etc.)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.239,
+            0.042
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.07,
+            0.914,
+            0.107
+          ],
+          "content": "iv. (2 pts) $\\mathrm { ~ H ~ q ~ } _ { 5 }$ is our 5th hidden variable, and $\\mathfrak { q } _ { 6 }$ is our 6th hidden variable, how many rows does $\\mathrm { P } ( \\mathsf { q } _ { 6 } \\mid \\mathsf { q } _ { 5 } )$ have? If the problem seems ambiguous, make sure to state your assumptions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.109,
+            0.678,
+            0.126
+          ],
+          "content": "**Solution:** 400: there are 20 possible values for $q _ { 5 }$ , and 20 possible values for $q _ { 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.13,
+            0.604,
+            0.146
+          ],
+          "content": "**Alternate solution:** 441, where we also allow silence, is also accepted."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.148,
+            0.915,
+            0.227
+          ],
+          "content": "**Alternate solution 2:** If you assume that the HMM **only** needs to support the word “waka”, then the only rows that the transition matrix need to support are $a \\to a, a \\to k, k \\to a, k \\to k, w \\to a, w \\to w$ , and maybe also $a \\rightarrow E X I T$ Other solutions also exist depending on assumptions of what’s in the CPT-- see rubric on gradescope. See also NOTE below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.247,
+            0.655,
+            0.264
+          ],
+          "content": "v. (2 pt) For each hidden variable, how many scalar evidence values are there?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.266,
+            0.374,
+            0.283
+          ],
+          "content": "**Solution:** 13: one for each spectral bin."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.323,
+            0.915,
+            0.416
+          ],
+          "content": "NOTE: Several students have asked about the two $/ \\mathrm { a } / \\mathrm { ^ { \\circ } s }$ in waka. They are the same /a/. The issue is the same as the weather HMM example, where all you have is a probability of it being cloudy tomorrow given it was cloudy today. It's not dependent on the history. In fact, researchers have tried making each phoneme word-position dependent, but it very quickly becomes intractable. Imagine if each and every /a/ were it's own entry -- the CPTs would be huge."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.026,
+            0.24,
+            0.043
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.025,
+            0.916,
+            0.042
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.07,
+            0.455,
+            0.089
+          ],
+          "level": 2,
+          "content": "Appendix: Alternate approaches to Problem #6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.108,
+            0.912,
+            0.204
+          ],
+          "content": "6.i One common incorrect answer was to either have transitions directly between Q-states (top two diagrams), or to have a special “opponent” node with probabilistic behavior. None of these is an MDP search tree. The top left model is fundamentally broken, since it has no Q state for $p2=pas^{s}$ The top right model is strange because we have to allow transitions directly between Q-states, but could theoretically work. The bottom model is an abuse of the symbol for a minimizing agent, but is ultimately equivalent to the top right model."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.093,
+            0.224,
+            0.857,
+            0.61
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.63,
+            0.916,
+            0.706
+          ],
+          "content": "6.ii If you had one of the incorrect solutions for part i, then you didn’t actually draw an MDP search tree. In this case, the question is a bit open to interpretation: the smallest transition probability was either 1/4, 1/8, or 1/32, depending on if you counted the entire aggregate transition probability from the Q-states given to the roots, as well as how you built your model."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.092,
+            0.727,
+            0.83,
+            0.894
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.979,
+            0.914,
+            0.991
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.026,
+            0.372,
+            0.044
+          ],
+          "content": "Last 4 digits of SID:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.026,
+            0.915,
+            0.041
+          ],
+          "content": "CS188 FINAL, FALL 2016"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.071,
+            0.548,
+            0.088
+          ],
+          "content": "6.iv. If you used model 1 or 2, the correct answer is zero, not Z."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.895,
+            0.979,
+            0.914,
+            0.99
+          ],
+          "content": "30"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "Skia/PDF m60",
+      "page_count": 30,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
