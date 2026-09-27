@@ -1,0 +1,5940 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.42,
+            0.562,
+            0.432,
+            0.573
+          ],
+          "content": ""
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.904,
+            0.335,
+            0.918,
+            0.347
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.394,
+            0.089,
+            0.604,
+            0.106
+          ],
+          "content": "6.034 Notes: Section 3.1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.145,
+            0.118,
+            0.159
+          ],
+          "level": 2,
+          "content": "Slide 3.1.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.178,
+            0.51,
+            0.228
+          ],
+          "content": "In this presentation, we'll take a look at the class of problems called Constraint Satisfaction Problems (CSPs). CSPs arise in many application areas: they can be used to formulate scheduling tasks, robot planning tasks, puzzles, molecular structures, sensory interpretation tasks, etc."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.243,
+            0.539,
+            0.305
+          ],
+          "content": "In particular, we'll look at the subclass of Binary CSPs. A binary CSP is described in term of a set of Variables (denoted V<sub>i</sub>), a domain of Values for each of the variables (denoted D<sub>i</sub>) and a set of constraints involving the combinations of values for two of the variables (hence the name \"binary\"). We'll also allow \"unary\" constraints (constraints on a single variable), but these can be seen simply as cutting down the domain of that variable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.312,
+            0.53,
+            0.338
+          ],
+          "content": "We can illustrate the structure of a CSP in a diagram, such as this one, that we call a **constraint graph** for the problem."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.371,
+            0.369,
+            0.389
+          ],
+          "level": 2,
+          "content": "Constraint Satisfaction Problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.406,
+            0.304,
+            0.422
+          ],
+          "content": "General class of Problems: Binary CSP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.365,
+            0.501,
+            0.379
+          ],
+          "content": "Slide 3.1.2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.422,
+            0.406,
+            0.488
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.286,
+            0.433,
+            0.37,
+            0.445
+          ],
+          "content": "values in domain D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.286,
+            0.422,
+            0.353,
+            0.435
+          ],
+          "content": "Variable Vi with"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.309,
+            0.457,
+            0.399,
+            0.482
+          ],
+          "content": "Unary constraints just cut down domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.851,
+            0.332,
+            0.893,
+            0.344
+          ],
+          "content": "tlp · Sept 00 · 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.494,
+            0.293,
+            0.509
+          ],
+          "content": "This diagram is called a constraint graph"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.513,
+            0.177,
+            0.527
+          ],
+          "content": "Basic problem:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.527,
+            0.341,
+            0.552
+          ],
+          "content": "Find a d ∈ D for each V s.t. all constraints satisfied (finding consistent labeling for variables)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.365,
+            0.56,
+            0.408,
+            0.57
+          ],
+          "content": "tlp · Sept 00 · 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.771,
+            0.206,
+            0.854,
+            0.218
+          ],
+          "content": "values in domain D"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.591,
+            0.117,
+            0.605
+          ],
+          "level": 2,
+          "content": "Slide 3.1.3"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.614,
+            0.548,
+            0.65
+          ],
+          "content": "A CSP that has served as a sort of benchmark problem for the field is the so-called N-Queens problem, which is that of placing N queens on an NxN chessboard so that no two queens can attack each other."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.622,
+            0.145,
+            0.854,
+            0.162
+          ],
+          "level": 2,
+          "content": "Constraint Satisfaction Problems"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.659,
+            0.552,
+            0.695
+          ],
+          "content": "One possible formulation is that the variables are the chessboard positions and the values are either Queen or Blank. The constraints hold between any two variables representing positions that are on a line. The constraint is satisfied whenever the two values are not both Queen."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.18,
+            0.788,
+            0.195
+          ],
+          "content": "General class of Problems: Binary CSP"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.057,
+            0.771,
+            0.462,
+            0.786
+          ],
+          "content": "In general, we'll find that there are important choices in the formulation of a CSP."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.704,
+            0.552,
+            0.763
+          ],
+          "content": "This formulation is actually very wasteful, since it has N<sup>2</sup> variables. A better formulation is to have variables correspond to the columns of the board and values to the index of the row where the Queen for that column is to be placed. Note that no two queens can share a column and that every column must have a Queen on it. This choice requires only N variables and also fewer constraints to be checked."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.574,
+            0.195,
+            0.889,
+            0.261
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_28.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.387,
+            0.932,
+            0.424
+          ],
+          "content": "The solution of a CSP involves finding a value for each variable (drawn from its domain) such that all the constraints are satisfied. Before we look at how this can be done, let's look at some examples of CSP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.23,
+            0.883,
+            0.255
+          ],
+          "content": "Unary constraints just cut down domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.267,
+            0.778,
+            0.283
+          ],
+          "content": "This diagram is called a constraint graph"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.671,
+            0.6,
+            0.823,
+            0.626
+          ],
+          "level": 2,
+          "content": "N-Queens as CSP Classic \"benchmark\" problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.639,
+            0.717,
+            0.652
+          ],
+          "content": "Place N queens on an NxN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.65,
+            0.724,
+            0.671
+          ],
+          "continues_prev": true,
+          "content": "chessboard so that none can attack the other."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.792,
+            0.631,
+            0.882,
+            0.685
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_35.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.694,
+            0.878,
+            0.708
+          ],
+          "content": "Variables are board positions in NxN chessboard"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.725,
+            0.752,
+            0.739
+          ],
+          "content": "Domains Queen or blank"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.582,
+            0.752,
+            0.878,
+            0.778
+          ],
+          "content": "Constraints Two positions on a line (vertical, horizontal, diagonal) cannot both be Q"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.786,
+            0.901,
+            0.796
+          ],
+          "content": "tlp · Sept 00 ·3"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.789,
+            0.924,
+            0.799
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.162,
+            0.062,
+            0.319,
+            0.078
+          ],
+          "content": "Line labelings as CSP"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.083,
+            0.208,
+            0.096
+          ],
+          "content": "Label lines in drawing as"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.095,
+            0.213,
+            0.115
+          ],
+          "content": "convex (+), concave (-), or boundary (>)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.332,
+            0.056,
+            0.406,
+            0.112
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.117,
+            0.216,
+            0.177
+          ],
+          "content": "junctions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.18,
+            0.266,
+            0.195
+          ],
+          "content": "Variables are line junctions"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.273,
+            0.116,
+            0.419,
+            0.194
+          ],
+          "content": "All legal junction labels for four junction types"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.502,
+            0.068
+          ],
+          "content": "Slide 3.1.4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.089,
+            0.201,
+            0.403,
+            0.216
+          ],
+          "content": "Domains are set of legal labels for that junction type"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.222,
+            0.396,
+            0.248
+          ],
+          "content": "Constraints shared lines between adjacent junctions must have same label."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.365,
+            0.249,
+            0.408,
+            0.26
+          ],
+          "content": "tlp ·Sept 00 ·4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.117,
+            0.294
+          ],
+          "content": "Slide 3.1.5"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.552,
+            0.34
+          ],
+          "content": "Scheduling actions that share resources is also a classic case of a CSP. The variables are the activities, the values are chunks of time and the constraints enforce exclusion on shared resources as well as proper ordering of the tasks."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.076,
+            0.924,
+            0.125
+          ],
+          "content": "The problem of labeling the lines in a line-drawing of blocks as being either convex, concave or boundary, is the problem that originally brought the whole area of CSPs into prominence. Waltz's approach to solving this problem by propagation of constraints (which we will discuss later) motivated much of the later work in this area."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.42,
+            0.252,
+            0.432,
+            0.262
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.133,
+            0.937,
+            0.18
+          ],
+          "content": "In this problem, the variables are the junctions (that is, the vertices) and the values are a combination of labels (+, -, >) attached to the lines that make up the junction. Some combinations of these labels are physically realizable and others are not. The basic constraint is that junctions that share a line must agree on the label for that line."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.674,
+            0.286,
+            0.812,
+            0.303
+          ],
+          "content": "Scheduling as CSP"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.188,
+            0.929,
+            0.215
+          ],
+          "content": "Note that the more natural formulation that uses lines as the variables is not a BINARY CSP, since all the lines coming into a junction must be simultaneously constrained."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.314,
+            0.731,
+            0.356
+          ],
+          "content": "Choose time for activities e.g. observations on Hubble telescope, or terms to take required classes."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.371,
+            0.738,
+            0.386
+          ],
+          "content": "Variables are activities"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.808,
+            0.321,
+            0.91,
+            0.386
+          ],
+          "content": "activity time"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.395,
+            0.876,
+            0.41
+          ],
+          "content": "Domains sets of start times (or \"chunks\" of time)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.582,
+            0.42,
+            0.866,
+            0.446
+          ],
+          "content": "Constraints 1. Activities that use same resource cannot overlap in time"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.666,
+            0.449,
+            0.819,
+            0.464
+          ],
+          "content": "2. Preconditions satisfied"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.859,
+            0.476,
+            0.901,
+            0.485
+          ],
+          "content": "tlp · Sept 00 · 5"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.169,
+            0.515,
+            0.336,
+            0.532
+          ],
+          "level": 2,
+          "content": "Graph Coloring as CSP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.555,
+            0.227,
+            0.589
+          ],
+          "content": "Pick colors for map regions, avoiding coloring adjacent regions with the same color"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.595,
+            0.228,
+            0.61
+          ],
+          "content": "Variables regions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.62,
+            0.265,
+            0.636
+          ],
+          "content": "Domains colors allowed"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.283,
+            0.54,
+            0.402,
+            0.64
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_chart_31.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.644,
+            0.42,
+            0.66
+          ],
+          "content": "Constraints adjacent regions must have different colors"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.502,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.1.6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.53,
+            0.921,
+            0.605
+          ],
+          "content": "Another classic CSP is that of coloring a graph given a small set of colors. Given a set of regions with defined neighbors, the problem is to assign a color to each region so that no two neighbors have the same color (so that you can tell where the boundary is). You might have heard of the famous [Four Color Theorem](http://mathworld.wolfram.com/Four-ColorTheorem.html) that shows that four colors are sufficient for any planar map. This theorem was a conjecture for more than a century and was not proven until 1976. The CSP is not proving the general theorem, just constructing a solution to a particular instance of the problem."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.734,
+            0.117,
+            0.747
+          ],
+          "level": 2,
+          "content": "Slide 3.1.7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.757,
+            0.544,
+            0.793
+          ],
+          "content": "A very important class of CSPs is the class of boolean satisfiability problems. One is given a formula over boolean variables in conjunctive normal form (a set of ORs connected with ANDs). The objective is to find an assignment that makes the formula true, that is, a satisfying assignment."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.801,
+            0.545,
+            0.85
+          ],
+          "content": "SAT problems are easily transformed into the CSP framework. And, it turns out that many important problems (such as constructing a plan for a robot and many circuit design problems) can be turned into (huge) SAT problems. So, a way of solving SAT problems efficiently in practice would have great practical impact."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.857,
+            0.554,
+            0.932
+          ],
+          "content": "However, SAT is the problem that was originally used to show that some problems are [NP-complete](http://www.ics.uci.edu/~eppstein/161/960312.html), that is, as hard as any problem whose solution can be checked in polynomial time. It is generally believed that there is no polynomial time algorithm for NP-complete problems. That is, that any guaranteed algorithm has a worst-case running time that grows exponentially with the size of the problem. So, at best, we can only hope to find a heuristic approach to SAT problems. More on this later."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.652,
+            0.744,
+            0.814,
+            0.772
+          ],
+          "level": 2,
+          "content": "3-SAT as CSP The original NP-complete problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.789,
+            0.701,
+            0.801
+          ],
+          "content": "Find values for boolean"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.746,
+            0.784,
+            0.907,
+            0.797
+          ],
+          "content": "(A or B or !C) and (IA or C or B)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.799,
+            0.7,
+            0.81
+          ],
+          "content": "variables A,B,C... that"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.809,
+            0.679,
+            0.821
+          ],
+          "content": "satisfy the formula."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.831,
+            0.719,
+            0.846
+          ],
+          "content": "Variables clauses"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.86,
+            0.895,
+            0.886
+          ],
+          "content": "Domains boolean variable assignments that make clause true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.895,
+            0.913,
+            0.921
+          ],
+          "content": "Constraints clauses with shared boolean variables must agree on value of variable"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 -7"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.135,
+            0.062,
+            0.368,
+            0.08
+          ],
+          "content": "Model-based recognition as CSP Model-based recognition as CSP"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.067,
+            0.05,
+            0.439,
+            0.268
+          ],
+          "content": "Find given model in edge image, with rotation and translation MODEL IMAGE allowed. Variables edges in model Domains set of edges in image Constraints angle between model & image edges must match tlp ·Sept 00 ·8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.052,
+            0.503,
+            0.069
+          ],
+          "content": "Slide 3.1.8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.118,
+            0.295
+          ],
+          "content": "Slide 3.1.9"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.554,
+            0.386
+          ],
+          "content": "So, looking through these examples of CSPs we have some good news and bad news. The good news is that CSP is a very general class of problems containing many interesting practical problems. The bad news is that CSPs include many problem that are intractable in the worst case. So, we should not be surprised to find that we do not have efficient guaranteed solutions for CSP. At best, we can hope that our methods perform acceptably in the class of problems we are interested in. This will depend on the structure of the domain of applicability and will not follow directly from the algorithms."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.076,
+            0.938,
+            0.115
+          ],
+          "content": "Model-based recognition is the problem of finding an instance of a known geometric model, described, for example, as a line-boundary in an image which has been pre-processed to identify and fit lines to the boundaries. The position and orientation of the instance, if any, is not known."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.12,
+            0.931,
+            0.148
+          ],
+          "content": "There are a number of constraints that need to be satisfied by edges in the image that correspond to edges in the model. Notably, the angles between pairs of edges must be preserved."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.662,
+            0.289,
+            0.831,
+            0.307
+          ],
+          "content": "Good News / Bad News"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.581,
+            0.339,
+            0.904,
+            0.357
+          ],
+          "content": "Good News - very general & interesting class problems"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.581,
+            0.364,
+            0.899,
+            0.383
+          ],
+          "content": "Bad News- includes NP-Hard (intractable) problems"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.39,
+            0.857,
+            0.419
+          ],
+          "content": "So, good behavior is a function of domain not the formulation as CSP."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.202,
+            0.517,
+            0.302,
+            0.534
+          ],
+          "level": 2,
+          "content": "CSP Example"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.912,
+            0.478,
+            0.925,
+            0.49
+          ],
+          "content": ""
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.066,
+            0.502,
+            0.439,
+            0.721
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.551,
+            0.392,
+            0.578
+          ],
+          "content": "Given 40 courses (8.01, 8.02, . . . . 6.840) & 10 terms (Fall 1. Spring 1, . . . . , Spring 5). Find a legal schedule."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.441,
+            0.507,
+            0.508,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.1.10"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.858,
+            0.475,
+            0.902,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.529,
+            0.934,
+            0.556
+          ],
+          "content": "Let us take a particular problem and look at the CSP formulation in detail. In particular, let's look at an example which should be very familiar to MIT EECS students."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.563,
+            0.936,
+            0.589
+          ],
+          "content": "The problem is to schedule approximately 40 courses into the 10 terms for an MEng. For simplicity, let's assume that the list of courses is given to us."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.734,
+            0.123,
+            0.747
+          ],
+          "content": "Slide 3.1.11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.757,
+            0.376,
+            0.77
+          ],
+          "content": "The constraints we need to represent and enforce are as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.785,
+            0.521,
+            0.809
+          ],
+          "content": "●\t The pre-requisites of a course were taken in an earlier term (we assume the list contains all the pre-requisites)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.809,
+            0.434,
+            0.821
+          ],
+          "content": "●\t Some courses are only offered in the Fall or the Spring term."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.82,
+            0.494,
+            0.832
+          ],
+          "content": "●\t We want to limit the schedule to a feasible load such as 4 courses a term."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.831,
+            0.519,
+            0.855
+          ],
+          "content": "●\t And, we want to avoid time conflicts where we cannot sign up for two courses offered at the same time."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.697,
+            0.744,
+            0.795,
+            0.76
+          ],
+          "level": 2,
+          "content": "CSP Example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.602,
+            0.778,
+            0.885,
+            0.804
+          ],
+          "content": "Given 40 courses (8.01, 8.02, . . . . 6.840) & 10 terms (Fall 1, Spring 1, . .. . , Spring 5). Find a legal schedule."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.603,
+            0.809,
+            0.739,
+            0.823
+          ],
+          "content": "Constraints Pre-requisites"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.666,
+            0.824,
+            0.824,
+            0.838
+          ],
+          "content": "Courses offered on limited terms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.666,
+            0.838,
+            0.836,
+            0.852
+          ],
+          "content": "Limited number of courses per term"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.666,
+            0.853,
+            0.764,
+            0.866
+          ],
+          "content": "Avoid time conflicts"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 11"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.278,
+            0.932,
+            0.494
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.211,
+            0.063,
+            0.311,
+            0.081
+          ],
+          "content": "CSP Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.449,
+            0.06,
+            0.517,
+            0.075
+          ],
+          "content": "Slide 3.1.12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.117,
+            0.098,
+            0.4,
+            0.124
+          ],
+          "content": "Given 40 courses (8.01, 8.02, .. . . 6.840) & 10 terms (Fall 1. Spring 1. . . . . , Spring 5). Find a legal schedule."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.902,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.118,
+            0.128,
+            0.254,
+            0.144
+          ],
+          "content": "Constraints Pre-requisites"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.144,
+            0.339,
+            0.159
+          ],
+          "content": "Courses offered on limited terms"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.158,
+            0.351,
+            0.173
+          ],
+          "content": "Limited number of courses per term"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.448,
+            0.082,
+            0.926,
+            0.109
+          ],
+          "content": "Note that all of these constraints are either satisfed or not. CSPs are not typically used to express preferences but rather to enforce hard and fast constraints."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.173,
+            0.278,
+            0.187
+          ],
+          "content": "Avoid time conflicts"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.478,
+            0.925,
+            0.49
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.112,
+            0.206,
+            0.382,
+            0.232
+          ],
+          "content": "Note, CSPs are not for expressing (soft) preferences e.g.. minimize difficulty, balance subject areas, etc."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.124,
+            0.295
+          ],
+          "content": "Slide 3.1.13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.55,
+            0.375
+          ],
+          "content": "One key question that we must answer for any CSP formulation is \"What are the variables and what are the values?\" For our class scheduling problem, a number of options come to mind. For example, we might pick the terms as the variables. In that case, the values are combinations of four courses that are consistent, meaning that they are offered in the same term and whose times don't conflict. The pre-requisite constraint would relate every pair of terms and would require that no course appear in a term before that of any of its pre-requisite course."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.381,
+            0.536,
+            0.408
+          ],
+          "content": "This perfectly valid formulation has the practical weakness that the domains for the variables are huge, which has a dramatic effect on the running time of the algorithms."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.645,
+            0.289,
+            0.848,
+            0.307
+          ],
+          "content": "Choice of variables & values"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.31,
+            0.646,
+            0.325
+          ],
+          "content": "VARIABLES"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.576,
+            0.33,
+            0.634,
+            0.344
+          ],
+          "content": "A. Terms?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.718,
+            0.31,
+            0.775,
+            0.325
+          ],
+          "content": "DOMAINS"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.712,
+            0.33,
+            0.884,
+            0.365
+          ],
+          "content": "Legal combinations of for example 4 courses (but this is huge set of values)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.151,
+            0.517,
+            0.354,
+            0.533
+          ],
+          "level": 2,
+          "content": "Choice of variables & values"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.537,
+            0.154,
+            0.551
+          ],
+          "content": "VARIABLES"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.556,
+            0.141,
+            0.571
+          ],
+          "content": "A. Terms?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.591,
+            0.162,
+            0.606
+          ],
+          "content": "B. Term Slots?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.605,
+            0.191,
+            0.65
+          ],
+          "content": "subdivide terms into slots e.g. 4 of them (Fall 1,1) (Fall 1,2) (Fall1,3) (Fall 1,4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.224,
+            0.537,
+            0.282,
+            0.552
+          ],
+          "content": "DOMAINS"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.508,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.1.14"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.069,
+            0.505,
+            0.441,
+            0.722
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_28.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.219,
+            0.557,
+            0.39,
+            0.59
+          ],
+          "content": "Legal combinations of for example 4 courses (but this is huge set of values)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.219,
+            0.606,
+            0.374,
+            0.621
+          ],
+          "content": "Courses offered during that term"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.734,
+            0.124,
+            0.747
+          ],
+          "content": "Slide 3.1.15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.756,
+            0.542,
+            0.792
+          ],
+          "content": "Another formulation turns things around and uses the courses themselves as the variables and then uses the terms (or more likely, term slots) as the values. Let's look at this formulation in greater detail."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.53,
+            0.931,
+            0.613
+          ],
+          "content": "One way of avoiding the combinatorics of using 4-course schedules as the values of the variables is to break up each term into \"term slots\" and assign to each term-slot a single course. This formulation, like the previous one, has the limit on the number of courses per term represented directly in the graph, instead of stating an explicit constraint. With this representation, we will still need constraints to ensure that the courses in a given term do not conflict and the pre-requisite ordering is enforced. The availability of a course in a given term could be enforced by filtering the domains of the variables."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.646,
+            0.744,
+            0.846,
+            0.759
+          ],
+          "level": 2,
+          "content": "Choice of variables & values"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.765,
+            0.646,
+            0.778
+          ],
+          "content": "VARIABLES"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.576,
+            0.783,
+            0.634,
+            0.797
+          ],
+          "content": "A. Terms?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.718,
+            0.765,
+            0.775,
+            0.779
+          ],
+          "content": "DOMAINS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.712,
+            0.784,
+            0.884,
+            0.817
+          ],
+          "content": "Legal combinations of for example 4 courses (but this is huge set of values)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.576,
+            0.819,
+            0.656,
+            0.832
+          ],
+          "content": "B. Term Slots?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.833,
+            0.684,
+            0.845
+          ],
+          "content": "subdivide terms into"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.843,
+            0.679,
+            0.855
+          ],
+          "content": "slots e.g. 4 of them"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.713,
+            0.832,
+            0.867,
+            0.847
+          ],
+          "content": "Courses offered during that term"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.586,
+            0.852,
+            0.678,
+            0.864
+          ],
+          "content": "(Fall 1,1) (Fall 1,2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.862,
+            0.674,
+            0.875
+          ],
+          "content": "(Fall1,3) (Fall 1,4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.885,
+            0.648,
+            0.899
+          ],
+          "content": "C. Courses?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.885,
+            0.915,
+            0.918
+          ],
+          "content": "Terms or term slots (Term slots allow expressing constraint on limited number of of courses /term.)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 15"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.053,
+            0.509,
+            0.068
+          ],
+          "content": "Slide 3.1.16"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.05,
+            0.438,
+            0.267
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.281,
+                0.124,
+                0.295
+              ],
+              "content": "Slide 3.1.17"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.076,
+            0.932,
+            0.125
+          ],
+          "content": "One constraint that must be represented is that the pre-requisites of a class must be taken before the actual class. This is easy to represent in this formulation. We introduce types of constraints called \"term before\" and \"term after\" which check that the values assigned to the variables, for example, 6.034 and 6.001, satisfy the correct ordering."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.132,
+            0.934,
+            0.159
+          ],
+          "content": "Note that the undirected links shown in prior constraint graphs are now split into two directed links, each with complementary constraints."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.303,
+            0.536,
+            0.328
+          ],
+          "content": "The constraint that some courses are only offered in some terms simply filters illegal term values from the domains of the variables."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.276,
+            0.931,
+            0.492
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.503,
+            0.439,
+            0.72
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.124,
+                0.747
+              ],
+              "content": "Slide 3.1.19"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.529,
+            0.929,
+            0.556
+          ],
+          "content": "The limit on courses to be taken in a term argues for the use of term-slots as values rather than just terms. If we use term-slots, then the constraint is implicitly satisfied."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.756,
+            0.553,
+            0.805
+          ],
+          "content": "Avoiding time conflicts is also easily represented. If two courses occur at overlapping times then we place a constraint between those two courses. If they overlap in time every term that they are given, we can make sure that they are taken in different terms. If they overlap only on some terms, that can also be enforced by an appropriate constraint."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.73,
+            0.93,
+            0.946
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_12.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.932,
+            0.926,
+            0.943
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.394,
+            0.073,
+            0.606,
+            0.091
+          ],
+          "content": "6.034 Notes: Section 3.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.129,
+            0.117,
+            0.142
+          ],
+          "content": "Slide 3.2.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.15,
+            0.534,
+            0.189
+          ],
+          "content": "We now turn our attention to solving CSPs. We will see that the approaches to solving CSPs are some combination of constraint propagation and search. We will look at these in turn and then look at how they can be profitably combined."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.094,
+            0.357,
+            0.414,
+            0.373
+          ],
+          "level": 2,
+          "content": "Constraint Propagation (aka Arc Consistency)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.379,
+            0.402,
+            0.404
+          ],
+          "content": "Arc consistency eliminates values from domain of variable that can never be part of a consistent solution."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.406,
+            0.209,
+            0.42
+          ],
+          "content": "\\mathbf {V} _ {\\mathrm{i}} \\rightarrow \\mathbf {V} _ {\\mathrm{j}}",
+          "image_source": "images/page_5_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.424,
+            0.401,
+            0.45
+          ],
+          "content": "Directed arc (V. V) is arc consistent if ∀x∈D ∃y∈D such that (x,y) is allowed by the constraint on the arc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.597,
+            0.552,
+            0.667
+          ],
+          "content": "Suppose there are some values in the domain at the tail of the constraint arc (for $\\nabla _ { \\dot { 1 } } )$ that do not have any consistent partner in the domain at the head of the arc (for $\\nabla _ { \\dot { \\mathbf { j } } } ) .$ We achieve arc consistency by dropping those values from $\\mathbf { D _ { i } } .$ Note, however, that if we change $\\mathbf { D _ { i } } ,$ we now have to check to make sure that any other constraint arcs that have $\\mathbf { D _ { i } }$ at their head are still consistent. It is this phenomenon that accounts for the name \"constraint propagation\"."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.551,
+            0.117,
+            0.922,
+            0.335
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.348,
+                0.501,
+                0.363
+              ],
+              "content": "Slide 3.2.2"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.576,
+                0.117,
+                0.59
+              ],
+              "content": "Slide 3.2.3"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.184,
+            0.859,
+            0.207
+          ],
+          "content": "1. Constraint propagation, to eliminate values that could not be part of any solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.207,
+            0.789,
+            0.224
+          ],
+          "content": "2. Search, to explore valid assignments"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.37,
+            0.936,
+            0.436
+          ],
+          "content": "The great success of Waltz's constraint propagation algorithm focused people's attention on CSPs. The basic idea in constraint propagation is to enforce what is known as \"ARC CONSISTENCY\", that is, if one looks at a directed arc in the constraint graph, say an arc from $\\mathrm { V _ { i } }$ to $\\mathrm { V _ { j } , }$ we say that this arc is consistent if for **every** value in the domain of $\\mathbf { V } _ { \\mathbf { i } } ,$ there exists **some** value in the domain of $\\mathrm { V _ { j } }$ that will satisfy the constraint on the arc."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.588,
+            0.584,
+            0.907,
+            0.6
+          ],
+          "level": 2,
+          "content": "Constraint Propagation (aka Arc Consistency)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.606,
+            0.895,
+            0.63
+          ],
+          "content": "Arc consistency eliminates values from domain of variable that can never be part of a consistent solution."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.652,
+            0.632,
+            0.702,
+            0.646
+          ],
+          "content": "\\mathbf {V} _ {\\mathrm{i}} \\rightarrow \\mathbf {V} _ {\\mathrm{j}}",
+          "image_source": "images/page_5_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.65,
+            0.894,
+            0.677
+          ],
+          "content": "Directed arc (V. V) is arc consistent if ∀x∈D ∃y∈D such that (x,y) is allowed by the constraint on the arc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.584,
+            0.686,
+            0.886,
+            0.711
+          ],
+          "content": "We can achieve consistency on arc by deleting values form D (domain of variable at tail of constraint arc) that fail this condition."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.77,
+            0.901,
+            0.78
+          ],
+          "content": "tlp · Sept 00 ·3"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.773,
+            0.925,
+            0.783
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.094,
+            0.062,
+            0.414,
+            0.079
+          ],
+          "content": "Constraint Propagation (aka Arc Consistency)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.085,
+            0.402,
+            0.109
+          ],
+          "content": "Arc consistency eliminates values from domain of variable that can never be part of a consistent solution."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.13,
+            0.399,
+            0.155
+          ],
+          "content": "Directed arc (V. V) is arc consistent if ∀x∈D ∃y∈D such that (x,y) is allowed by the constraint on the arc"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.165,
+            0.391,
+            0.19
+          ],
+          "content": "We can achieve consistency on arc by deleting values form D (domain of variable at tail of constraint arc) that fail this condition."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.195,
+            0.364,
+            0.219
+          ],
+          "content": "Assume domains are size at most d and there are e binary constraints."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.225,
+            0.423,
+            0.25
+          ],
+          "content": "A simple algorithm for arc consistency is O(ed³) – note that just verifying arc consistency takes O(d²) for each arc."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.502,
+            0.068
+          ],
+          "content": "Slide 3.2.4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.281,
+            0.116,
+            0.294
+          ],
+          "content": "Slide 3.2.5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.303,
+            0.505,
+            0.328
+          ],
+          "content": "Let's look at a trivial example of graph coloring. We have three variables with the domains indicated. Each variable is constrained to have values different from its neighbors."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.069,
+            0.503,
+            0.437,
+            0.72
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.507,
+                0.501,
+                0.52
+              ],
+              "content": "Slide 3.2.6"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.735,
+                0.116,
+                0.747
+              ],
+              "content": "Slide 3.2.7"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.53,
+            0.932,
+            0.579
+          ],
+          "content": "We will now simulate the process of constraint propagation. In the interest of space, we will deal in this example with undirected arcs, which are just a shorthand for the two directed arcs between the variables. Each step in the simulation involves examining one of these undirected arcs, seeing if the arc is consistent and, if not, deleting values from the domain of the appropriate variable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.757,
+            0.552,
+            0.823
+          ],
+          "content": "We start with the $\\mathrm { V _ { 1 ^ { - } } } \\mathrm { V } _ { 2 }$ arc. Note that for every value in the domain of $\\mathrm { V _ { 1 } }$ (R, G and B) there is some value in the domain of $\\mathrm { V } _ { 2 }$ that it is consistent with (that is, it is different from). So, for R in $\\mathrm { V _ { 1 } }$ there is a G in $\\mathrm { V } _ { 2 } ,$ for G in $\\mathrm { V _ { 1 } }$ there is an R in $\\nabla _ { 2 }$ and for B in $\\mathrm { V _ { 1 } }$ there is either R and G in $\\nabla _ { 2 } .$ Similarly, for each entry in $\\mathrm { V } _ { 2 }$ there is a valid counterpart in $\\nabla _ { 1 } .$ So, the arc is consistent and no changes are made."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.42,
+            0.252,
+            0.432,
+            0.262
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.365,
+            0.25,
+            0.408,
+            0.259
+          ],
+          "content": "tlp ·Sept 00 ·4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.076,
+            0.923,
+            0.137
+          ],
+          "content": "What is the cost of this operation? In what follows we will reckon cost in terms of \"arc tests\": the number of times we have to check (evaluate) the constraint on an arc for a pair of values in the variable domains of that arc. Assuming that domains have at most d elements and that there are at most e binary constraints (arcs), then a simple constraint propagation algorithm takes O(ed<sup>3</sup>) arc tests in the worst case."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.145,
+            0.928,
+            0.229
+          ],
+          "content": "It is easy to see that checking for consistency of each arc for all the values in the corresponding domains takes O(d<sup>2</sup>) arc tests, since we have to look at all pairs of values in two domains. Going through and checking each arc once requires O(ed<sup>2</sup>) arc tests. But, we may have to go through and look at the arcs more than once as the deletions to a node's domain propagate. However, if we look at an arc only when one of its variable domains has changed (by deleting some entry), then no arc can require checking more than d times and we have the final cost of O(ed<sup>3</sup>) arc tests in the worst case."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.634,
+            0.288,
+            0.862,
+            0.305
+          ],
+          "level": 2,
+          "content": "Constraint Propagation Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.559,
+            0.284,
+            0.931,
+            0.493
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_20.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.736,
+            0.926,
+            0.91
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_21.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.583,
+            0.81,
+            0.734,
+            0.906
+          ],
+          "content": "| Arc examined | Value deleted |\n| --- | --- |\n| $V_1 - V_2$ | none |\n|  |  |\n|  |  |\n|  |  |\n|  |  |\n|  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_22.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.859,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 -7"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.068,
+            0.051,
+            0.438,
+            0.267
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.054,
+                0.501,
+                0.067
+              ],
+              "content": "Slide 3.2.8"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.281,
+                0.116,
+                0.294
+              ],
+              "content": "Slide 3.2.9"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.303,
+            0.552,
+            0.345
+          ],
+          "content": "Moving to $\\nabla _ { 2 ^ { - } } \\nabla _ { 3 } ,$ we note similarly that the G in $\\mathrm { V } _ { 2 }$ has no valid counterpart in $\\mathbf { V } _ { 3 }$ and so we drop it from $\\mathrm { V _ { 2 } } ^ { \\prime } \\mathrm { s }$ domain. Although we have now looked at all the arcs once, we need to keep going since we have changed the domains for $\\mathrm { V _ { 1 } }$ and $\\nabla _ { 2 } .$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.068,
+            0.504,
+            0.438,
+            0.72
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.508,
+                0.506,
+                0.52
+              ],
+              "content": "Slide 3.2.10"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.122,
+                0.747
+              ],
+              "content": "Slide 3.2.11"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.756,
+                0.23,
+                0.77
+              ],
+              "content": "We test $\\mathrm { V } _ { 1 ^ { - } } \\mathrm { V } _ { 3 }$ and it is consistent."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.076,
+            0.935,
+            0.116
+          ],
+          "content": "We move to $\\nabla _ { 1 } \\mathbf { \\cdot } \\nabla _ { 3 } .$ The situation here is different. While R and B in $\\mathrm { V _ { 1 } }$ can co-exist with the G in $\\mathrm { V } _ { 3 } ,$ not so the G in $\\nabla _ { 1 } .$ And, so, we remove the G from $\\mathrm { V _ { 1 } }$ . Note that the arc in the other direction is consistent."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.635,
+            0.289,
+            0.862,
+            0.305
+          ],
+          "level": 2,
+          "content": "Constraint Propagation Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.278,
+            0.93,
+            0.493
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.53,
+            0.934,
+            0.557
+          ],
+          "content": "Looking at $\\mathrm { V _ { 1 ^ { - } } V _ { 2 } }$ again we note that R in $\\mathrm { V _ { 1 } }$ no longer has a valid counterpart in $\\mathrm { V } _ { 2 }$ (since we have deleted G from $\\mathrm { V } _ { 2 } )$ and so we need to drop R from $\\mathrm { V _ { 1 } }$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.635,
+            0.743,
+            0.861,
+            0.757
+          ],
+          "level": 2,
+          "content": "Constraint Propagation Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.699,
+            0.76,
+            0.816,
+            0.804
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_14.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.582,
+            0.809,
+            0.733,
+            0.906
+          ],
+          "content": "| Arc examined | Value deleted |\n| --- | --- |\n| $V_1 - V_2$ | none |\n| $V_1 - V_3$ | $V_1(G)$ |\n| $V_2 - V_3$ | $V_2(G)$ |\n| $V_1 - V_2$ | $V_1(R)$ |\n| $V_1 - V_3$ | none |\n|  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_15.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.759,
+            0.81,
+            0.878,
+            0.858
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_16.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.857,
+            0.929,
+            0.9,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 11"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.139,
+            0.062,
+            0.37,
+            0.079
+          ],
+          "content": "Constraint Propagation Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.08,
+            0.091,
+            0.189,
+            0.114
+          ],
+          "content": "Graph Coloring Initial Domains are indicated"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.201,
+            0.08,
+            0.419,
+            0.125
+          ],
+          "content": "V1 R,G,B Different-color constraint V2 V R,G G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.088,
+            0.13,
+            0.24,
+            0.228
+          ],
+          "content": "Arc examined Value deleted $V_{1} - V_{2}$ none $V_{1} - V_{3}$ V{(G) $V_{2}-V_{3}$ V2(G) $\\overline{V_{1}-V_{2}}$ V\\_{1(R) $V _ { 1 } - V _ { 3 }$ none $V _ { 2 } - V _ { 3 }$ none"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.262,
+            0.129,
+            0.389,
+            0.179
+          ],
+          "content": "V1日V2 R G V3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 3.2.12"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.124,
+            0.294
+          ],
+          "content": "Slide 3.2.13"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.076,
+            0.616,
+            0.091
+          ],
+          "content": "We test $\\mathrm { V } _ { 2 ^ { - } } \\mathrm { V } _ { 3 }$ and it is consistent."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.536,
+            0.352
+          ],
+          "content": "Note that whereas arc consistency is required for there to be a solution for a CSP, having an arcconsistent solution is not sufficient to guarantee a unique solution or even any solution at all. For example, this first graph is arc-consistent but there are NO solutions for it (we need at least three colors and have only two)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.1,
+            0.935,
+            0.139
+          ],
+          "content": "We are done; the graph is arc consistent. In general, we will need to make one pass through any arc whose head variable has changed until no further changes are observed before we can stop. If at any point some variable has an empty domain, the graph has no consistent solution."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.419,
+            0.251,
+            0.433,
+            0.263
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.286,
+            0.905,
+            0.305
+          ],
+          "content": "But, arc consistency is not enough in general"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.598,
+            0.307,
+            0.692,
+            0.323
+          ],
+          "content": "Graph Coloring"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.686,
+            0.31,
+            0.795,
+            0.35
+          ],
+          "content": "R,G R,G R,G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.808,
+            0.315,
+            0.915,
+            0.339
+          ],
+          "content": "arc consistent but no solutions"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.094,
+            0.514,
+            0.411,
+            0.531
+          ],
+          "level": 2,
+          "content": "But, arc consistency is not enough in general"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.534,
+            0.198,
+            0.55
+          ],
+          "content": "Graph Coloring"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.192,
+            0.537,
+            0.302,
+            0.578
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_18.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.912,
+            0.478,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.127,
+            0.592,
+            0.239,
+            0.633
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.315,
+            0.542,
+            0.421,
+            0.566
+          ],
+          "continues_prev": true,
+          "content": "arc consistent but no solutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.32,
+            0.581,
+            0.422,
+            0.616
+          ],
+          "content": "arc consistent but 2 solutions B,R,G ; B.G,R."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.902,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 13"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.362,
+            0.702,
+            0.409,
+            0.713
+          ],
+          "content": "tlp · Sept 00 · 14"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.508,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.2.14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.529,
+            0.869,
+            0.545
+          ],
+          "content": "This next graph is also arc consistent but there are 2 distinct solutions: BRG and BGR."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.734,
+            0.124,
+            0.747
+          ],
+          "content": "Slide 3.2.15"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.056,
+            0.756,
+            0.547,
+            0.782
+          ],
+          "content": "This next graph is also arc consistent but it has a unique solution, by virtue of the special constraint between two of the variables."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.588,
+            0.74,
+            0.904,
+            0.757
+          ],
+          "level": 2,
+          "content": "But, arc consistency is not enough in general"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.599,
+            0.76,
+            0.692,
+            0.776
+          ],
+          "content": "Graph Coloring"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.685,
+            0.764,
+            0.795,
+            0.805
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_31.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.62,
+            0.819,
+            0.733,
+            0.86
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_32.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.688,
+            0.865,
+            0.802,
+            0.906
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_33.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.809,
+            0.769,
+            0.915,
+            0.792
+          ],
+          "continues_prev": true,
+          "content": "arc consistent but no solutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.815,
+            0.808,
+            0.915,
+            0.842
+          ],
+          "content": "arc consistent but 2 solutions B,R,G : B,G,R."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.815,
+            0.853,
+            0.914,
+            0.876
+          ],
+          "content": "arc consistent but 1 solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.804,
+            0.878,
+            0.874,
+            0.897
+          ],
+          "content": "Assume B, R not allowed"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.902,
+            0.94
+          ],
+          "content": "tlp · Sept 00 · 15"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 19"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.068,
+            0.05,
+            0.438,
+            0.267
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.054,
+                0.508,
+                0.068
+              ],
+              "content": "Slide 3.2.16"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.281,
+                0.123,
+                0.294
+              ],
+              "content": "Slide 3.2.17"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.304,
+            0.552,
+            0.362
+          ],
+          "content": "How does one search for solutions to a CSP problem? Any of the search methods we have studied is applicable. All we need to realize is that the space of assignments of values to variables can be viewed as a tree in which all the assignments of values to the first variable are descendants of the first node and all the assignments of values to the second variable form the descendants of those nodes and so forth."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.37,
+            0.552,
+            0.452
+          ],
+          "content": "The classic approach to searching such a tree is called \"backtracking\", which is just another name for depth-first search in this tree. Note, however, that we could use breadth-first search or any of the heuristic searches on this problem. The heuristic value could be used to either guide the search to termination or bias it to a desired solution based on preferences for certain assignments. Uniform-Cost and A\\* would make sense also if there were a non-uniform cost associated with a particular assignment of a value to a variable (note that this is another (better but more expensive) way of incorporating preferences)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.46,
+            0.552,
+            0.495
+          ],
+          "content": "However, you should observe that these CSP problems are different from the graph search problems we looked at before, in that we don't really care about the path to some state but just the final state itself."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.067,
+            0.506,
+            0.437,
+            0.72
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.508,
+                0.507,
+                0.52
+              ],
+              "content": "Slide 3.2.18"
+            },
+            {
+              "bbox": [
+                0.058,
+                0.735,
+                0.123,
+                0.747
+              ],
+              "content": "Slide 3.2.19"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.756,
+            0.548,
+            0.797
+          ],
+          "content": "So, we consider assigning $\\mathbf { V } _ { 2 } \\mathbf { = } \\mathbf { G } ,$ which is consistent with the value for $\\mathbf { V } _ { 1 } .$ We then move to $\\mathrm { V } _ { 3 } \\mathrm { { = } R }$ Since we have a constraint between $\\mathrm { V _ { 1 } }$ and $\\mathrm { V } _ { 3 } ,$ we have to check for consistency and find it is not consistent, and so we backup to consider another value for $\\mathbf { V } _ { 3 } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.076,
+            0.922,
+            0.113
+          ],
+          "content": "In general, if there is more than one value in the domain of any of the variables, we do not know whether there is zero, one, or more than one answer that is globally consistent. We have to search for an answer to actually know for sure."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.595,
+            0.285,
+            0.896,
+            0.3
+          ],
+          "level": 2,
+          "content": "Searching for solutions – backtracking (BT)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.305,
+            0.886,
+            0.337
+          ],
+          "content": "When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.565,
+            0.286,
+            0.932,
+            0.492
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.53,
+            0.938,
+            0.595
+          ],
+          "content": "If we undertake a DFS in this tree, going left to right, we first explore assigning R to $\\mathrm { V _ { 1 } }$ and then move to $\\mathrm { V } _ { 2 }$ and consider assigning R to it. However, for any assignment, we need to check any constraints involving previous assignments in the tree. We note that $\\mathrm { V } _ { 2 } \\mathrm { { = } R }$ is inconsistent with $\\mathbf { V } _ { 1 } \\mathbf { = } \\mathbf { R }$ and so that assignment fails and we have to backup to find an alternative assignment for the most recently assigned variable."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.595,
+            0.738,
+            0.895,
+            0.752
+          ],
+          "level": 2,
+          "content": "Searching for solutions - backtracking (BT)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.758,
+            0.884,
+            0.79
+          ],
+          "content": "When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.565,
+            0.79,
+            0.928,
+            0.944
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_19.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.101,
+            0.057,
+            0.403,
+            0.074
+          ],
+          "level": 2,
+          "content": "Searching for solutions – backtracking (BT)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.078,
+            0.393,
+            0.111
+          ],
+          "content": "When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.068,
+            0.053,
+            0.439,
+            0.268
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.281,
+                0.122,
+                0.294
+              ],
+              "content": "Slide 3.2.21"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.303,
+            0.541,
+            0.329
+          ],
+          "content": "The process continues in that fashion until we find a solution. If we continue past the first success, we can find all the solutions for the problem (two in this case)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "level": 2,
+          "content": "Slide 3.2.20"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.076,
+            0.914,
+            0.105
+          ],
+          "content": "But $\\mathrm { V } _ { 3 } \\mathrm { { = } G }$ is inconsistent with $\\mathbf { V } _ { 2 } \\mathbf { = } \\mathbf { G } ,$ and so we have to backup. But there are no more pending values for $\\mathbf { V } _ { 3 }$ or for $\\mathrm { V } _ { 2 }$ and so we fail back to the $\\mathrm { V _ { 1 } }$ level."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.595,
+            0.285,
+            0.896,
+            0.3
+          ],
+          "level": 2,
+          "content": "Searching for solutions – backtracking (BT)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.305,
+            0.886,
+            0.337
+          ],
+          "content": "When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.296,
+            0.931,
+            0.492
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_10.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.518,
+            0.421,
+            0.533
+          ],
+          "level": 2,
+          "content": "Combine Backtracking & Constraint Propagation"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.508,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.2.22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.548,
+            0.403,
+            0.571
+          ],
+          "content": "A node in BT tree is partial assignment in which the domain of each variable has been set (tentatively) to singleton set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.579,
+            0.42,
+            0.611
+          ],
+          "content": "Use constraint propagation (arc-consistency) to propagate the effect of this tentative assignment, i.e., eliminate values inconsistent with current values."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.734,
+            0.123,
+            0.747
+          ],
+          "level": 2,
+          "content": "Slide 3.2.23"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.057,
+            0.757,
+            0.552,
+            0.781
+          ],
+          "content": "But, how much propagation should we do? Is it worth doing the full arc-consistency propagation we described earlier?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.529,
+            0.936,
+            0.601
+          ],
+          "content": "We can use some form of backtracking search to solve CSP independent of any form of constraint propagation. However, it is natural to consider combining them. So, for example, during a backtracking search where we have a partial assignment, where a subset of all the variables each has unique values assigned, we could then propagate these assignments throughout the constraint graph to obtain reduced domains for the remaining variables. This is, in general, advantageous since it decreases the effective branching factor of the search tree."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.578,
+            0.744,
+            0.914,
+            0.759
+          ],
+          "level": 2,
+          "content": "Combine Backtracking & Constraint Propagation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.584,
+            0.775,
+            0.896,
+            0.798
+          ],
+          "content": "A node in BT tree is partial assignment in which the domain of each variable has been set (tentatively) to singleton set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.584,
+            0.805,
+            0.914,
+            0.838
+          ],
+          "content": "Use constraint propagation (arc-consistency) to propagate the effect of this tentative assignment, i.e., eliminate values inconsistent with current values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.59,
+            0.849,
+            0.789,
+            0.864
+          ],
+          "content": "Question: How much propagation to do?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.362,
+            0.702,
+            0.408,
+            0.713
+          ],
+          "content": "tlp ·Sept 00 · 22"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 23"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.084,
+            0.064,
+            0.421,
+            0.08
+          ],
+          "content": "Combine Backtracking & Constraint Propagation"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 3.2.24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.09,
+            0.095,
+            0.404,
+            0.118
+          ],
+          "content": "A node in BT tree is partial assignment in which the domain of each variable has been set (tentatively) to singleton set."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.09,
+            0.124,
+            0.421,
+            0.158
+          ],
+          "content": "Use constraint propagation (arc-consistency) to propagate the effect of this tentative assignment, i.e., eliminate values inconsistent with current values."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.096,
+            0.169,
+            0.296,
+            0.185
+          ],
+          "content": "Question: How much propagation to do?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.096,
+            0.19,
+            0.406,
+            0.234
+          ],
+          "content": "Answer: Not much, just local propagation from domains with unique assignments, which is called forward checking (FC). This conclusion is not necessarily obvious, but it generally holds in practice."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.364,
+            0.25,
+            0.408,
+            0.259
+          ],
+          "content": "tlp ·Sept 00· 24"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.123,
+            0.294
+          ],
+          "content": "Slide 3.2.25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.549,
+            0.329
+          ],
+          "content": "Let's step through a search that uses a combination of backtracking with forward checking. We start by considering an assignment of $\\mathbf { V } _ { 1 } \\mathbf { = } \\mathbf { R }$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.421,
+            0.252,
+            0.432,
+            0.262
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.076,
+            0.936,
+            0.148
+          ],
+          "content": "The answer is USUALLY no. It is generally sufficient to only propagate to the immediate neighbors of variables that have unique values (the ones assigned earlier in the search). That is, we eliminate from consideration any values for future variables that are inconsistent with the values assigned to past variables. This process is known as forward checking (FC) because one checks values for future variables (forward in time), as opposed to standard backtracking which checks value of past variables (backwards in time, hence back-checking)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.44,
+            0.155,
+            0.934,
+            0.204
+          ],
+          "content": "When the domains at either end of a constraint arc each have multiple legal values, odds are that the constraint is satisfied, and so checking the constraint is usually a waste of time. This conclusion suggests that forward checking is usually as much propagation as we want to do. This is, of course, only a rule of thumb."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.589,
+            0.284,
+            0.902,
+            0.3
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.305,
+            0.901,
+            0.328
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.572,
+            0.328,
+            0.898,
+            0.399
+          ],
+          "content": "R V assignments V2assignments V\\_3assignments"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.694,
+            0.415,
+            0.81,
+            0.457
+          ],
+          "content": "R, G, B V1 V2 V R,G R,G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.901,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 25"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.096,
+            0.511,
+            0.408,
+            0.526
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.531,
+            0.408,
+            0.555
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.08,
+            0.555,
+            0.403,
+            0.623
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.507,
+                0.507,
+                0.521
+              ],
+              "content": "Slide 3.2.26"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_21.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.201,
+            0.641,
+            0.316,
+            0.684
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.123,
+                0.747
+              ],
+              "content": "Slide 3.2.27"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_23.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.529,
+            0.926,
+            0.57
+          ],
+          "content": "We then propagate to the neighbors of $\\mathrm { V _ { 1 } }$ in the constraint graph and eliminate any values that are inconsistent with that assignment, namely the value R. That leaves us with the value G in the domains of $\\mathrm { V } _ { 2 }$ and $\\mathbf { V } _ { 3 } .$ So, we make the assignment $\\mathrm { V } _ { 2 } \\mathrm { { = } G }$ and propagate."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.756,
+            0.551,
+            0.796
+          ],
+          "content": "But, when we propagate to $\\mathbf { V } _ { 3 }$ we see that there are no remaining valid values and so we have found an inconsistency. We fail and backup. Note that we have failed much earlier than with simple backtracking, thus saving a substantial amount of work."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.59,
+            0.738,
+            0.901,
+            0.753
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.758,
+            0.901,
+            0.781
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.574,
+            0.781,
+            0.896,
+            0.85
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_29.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.581,
+            0.87,
+            0.67,
+            0.901
+          ],
+          "content": "We have a conflict whenever a domain becomes empty."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.696,
+            0.868,
+            0.809,
+            0.91
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_31.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.857,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 27"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.911,
+            0.93,
+            0.924,
+            0.941
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.093,
+            0.077,
+            0.408,
+            0.101
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph. with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.067,
+            0.05,
+            0.441,
+            0.266
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC) V1assignments K V\\_2assignments V3assignments When backing up, need to restore domain values, R, G, B V1 since deletions were done V2 to reach consistency with R,G R,G tentative assignments considered during search. tlp · Sept 00 · 28"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.123,
+            0.294
+          ],
+          "content": "Slide 3.2.29"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.303,
+            0.234,
+            0.318
+          ],
+          "content": "That eliminates G from $\\nabla _ { 2 }$ and $\\mathrm { V } _ { 3 } .$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.096,
+            0.51,
+            0.408,
+            0.526
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.531,
+            0.408,
+            0.555
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.201,
+            0.641,
+            0.316,
+            0.685
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.122,
+                0.747
+              ],
+              "content": "Slide 3.2.31"
+            },
+            {
+              "bbox": [
+                0.443,
+                0.507,
+                0.506,
+                0.521
+              ],
+              "content": "Slide 3.2.30"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 3.2.28"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.756,
+            0.312,
+            0.771
+          ],
+          "content": "The domain of $\\mathbf { V } _ { 3 }$ is empty, so we fail and backup."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.075,
+            0.64,
+            0.092
+          ],
+          "content": "We now consider $\\mathbf { V } _ { 1 } \\mathbf { = } \\mathbf { G }$ and propagate."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.42,
+            0.251,
+            0.432,
+            0.262
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.589,
+            0.284,
+            0.902,
+            0.3
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.304,
+            0.901,
+            0.328
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.571,
+            0.327,
+            0.899,
+            0.399
+          ],
+          "content": "V1 assignments G V2assignments V3assignments"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.695,
+            0.415,
+            0.81,
+            0.458
+          ],
+          "content": "G V1 V2 R R"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.902,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 29"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.529,
+            0.639,
+            0.545
+          ],
+          "content": "We now consider $\\mathrm { V } _ { 2 } \\mathrm { { = } } \\mathrm { { R } }$ and propagate."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.591,
+            0.737,
+            0.901,
+            0.753
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.758,
+            0.901,
+            0.781
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.574,
+            0.781,
+            0.898,
+            0.85
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_23.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.695,
+            0.868,
+            0.81,
+            0.911
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_24.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.9,
+            0.939
+          ],
+          "content": "tlp · Sept 00 · 31"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.095,
+            0.056,
+            0.41,
+            0.074
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 3.2.32"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.093,
+            0.077,
+            0.409,
+            0.101
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.078,
+            0.1,
+            0.405,
+            0.172
+          ],
+          "content": "日V1assignments V2assignments V3assignments"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.201,
+            0.188,
+            0.318,
+            0.231
+          ],
+          "content": "R, G, B V1 V2 R,G R,G"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.124,
+            0.294
+          ],
+          "content": "Slide 3.2.33"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.303,
+            0.43,
+            0.319
+          ],
+          "content": "This propagation does not delete any values. We pick $\\mathrm { V } _ { 2 } \\mathrm { { = } } \\mathrm { { R } }$ and propagate."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.441,
+            0.075,
+            0.674,
+            0.092
+          ],
+          "content": "So, we move to consider $\\mathbf { V } _ { 1 } \\mathbf { = } \\mathbf { B }$ and propagate."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.589,
+            0.284,
+            0.902,
+            0.3
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.587,
+            0.304,
+            0.901,
+            0.328
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.756,
+            0.311,
+            0.771
+          ],
+          "content": "We pick $\\mathbf { V } _ { 3 }   =   \\mathbf { G }$ and have a consistent assignment."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.096,
+            0.51,
+            0.409,
+            0.526
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.571,
+            0.327,
+            0.899,
+            0.398
+          ],
+          "content": "日V1assignments V2assignments V3assignments"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.419,
+            0.251,
+            0.433,
+            0.263
+          ],
+          "content": ""
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.555,
+            0.405,
+            0.624
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.734,
+                0.124,
+                0.747
+              ],
+              "content": "Slide 3.2.35"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_13_image_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.531,
+            0.408,
+            0.555
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.641,
+            0.318,
+            0.684
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.442,
+                0.507,
+                0.507,
+                0.521
+              ],
+              "content": "Slide 3.2.34"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_13_image_18.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.902,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 33"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.694,
+            0.415,
+            0.811,
+            0.458
+          ],
+          "content": "日 V1 V\\_2 R,G R,G"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.529,
+            0.722,
+            0.545
+          ],
+          "content": "This removes the R values in the domains of $\\mathrm { V _ { 1 } }$ and $\\mathbf { V } _ { 3 } .$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.59,
+            0.737,
+            0.902,
+            0.753
+          ],
+          "level": 2,
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.757,
+            0.901,
+            0.781
+          ],
+          "content": "When examining assignment V=d, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.574,
+            0.781,
+            0.896,
+            0.856
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_26.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.695,
+            0.868,
+            0.811,
+            0.91
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_27.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.856,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": "tlp · Sept 00· 35"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.068,
+            0.059,
+            0.442,
+            0.267
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC) Backtracking with Forward Checking (BT-FC) When examining assignment V=dk, remove any values inconsistent When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph. with that assignment from neighboring domains in constraint graph.日V1assignments V\\_2assignments V3assignments R日 V1 V2 V G R tlp · Sept 00 · 36"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.574,
+            0.415,
+            0.911,
+            0.456
+          ],
+          "content": "No need to check 日 V1 Generally preferable previous assignments V\\_2 V3 to pure BT G R"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.095,
+            0.056,
+            0.409,
+            0.074
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.508,
+            0.068
+          ],
+          "content": "Slide 3.2.36"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.094,
+            0.077,
+            0.408,
+            0.101
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.075,
+            0.765,
+            0.091
+          ],
+          "content": "We can continue the process to find the other consistent solution."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.123,
+            0.295
+          ],
+          "content": "Slide 3.2.37"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.555,
+            0.39
+          ],
+          "content": "Note that when doing forward checking there is no need to check new assignments against previous assignments. Any potential inconsistencies have been removed by the propagation. BT-FC is usually preferable to plain BT because it eliminates from consideration inconsistent assignments once and for all rather than discovering the inconsistency over and over again in different parts of the tree. For example, in pure BT, an assignment for $\\mathbf { V } _ { 3 }$ that is inconsistent with a value of $\\overline { { \\mathrm { V } _ { 1 } ^ { \\phantom { \\dagger } } } }$ would be \"discovered\" independently for every value of $\\mathrm { ^ { \\cdot } V _ { 2 ^ { \\cdot } } }$ Whereas FC would delete it from the domain of $\\mathbf { V } _ { 3 }$ right away."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.589,
+            0.284,
+            0.902,
+            0.3
+          ],
+          "content": "Backtracking with Forward Checking (BT-FC)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.588,
+            0.304,
+            0.901,
+            0.328
+          ],
+          "content": "When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.574,
+            0.328,
+            0.897,
+            0.402
+          ],
+          "content": "日V1assignments V2assignments V3assignments R"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.395,
+            0.525,
+            0.605,
+            0.544
+          ],
+          "level": 2,
+          "content": "6.034 Notes: Section 3.3"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.582,
+            0.117,
+            0.596
+          ],
+          "level": 2,
+          "content": "Slide 3.3.1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.605,
+            0.546,
+            0.665
+          ],
+          "content": "We have been assuming that the order of the variables is given by some arbitrary ordering. However, the order of the variables (and values) can have a substantial effect on the cost of finding the answer. Consider, for example, the course scheduling problem using courses given in the order that they should ultimately be taken and assume that the term values are ordered as well. Then a depth first search will tend to find the answer very quickly."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.856,
+            0.475,
+            0.901,
+            0.486
+          ],
+          "content": "tlp · Sept 00 · 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.671,
+            0.535,
+            0.72
+          ],
+          "content": "Of course, we generally don't know the answer to start off with, but there are more rational ways of ordering the variables than alphabetical or numerical order. For example, we could order the variables before starting by how many constraints they have. But, we can do even better by dynamically re-ordering variables based on information available during a search."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.635,
+            0.585,
+            0.84,
+            0.601
+          ],
+          "level": 2,
+          "content": "BT-FC with dynamic ordering"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.572,
+            0.611,
+            0.893,
+            0.635
+          ],
+          "content": "Traditional backtracking uses fixed ordering of variables & values, e.g random order or place variables with many constraints first."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.571,
+            0.637,
+            0.879,
+            0.66
+          ],
+          "content": "You can usually do better by choosing an order dynamically as the search proceeds."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.847,
+            0.77,
+            0.892,
+            0.78
+          ],
+          "content": "tlp · Spring 02 ·1"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.905,
+            0.773,
+            0.917,
+            0.783
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.361,
+            0.249,
+            0.409,
+            0.26
+          ],
+          "content": "tlp · Spring 02 ·2"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.25,
+            0.431,
+            0.261
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.149,
+            0.064,
+            0.356,
+            0.08
+          ],
+          "content": "BT-FC with dynamic ordering"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.053,
+            0.502,
+            0.068
+          ],
+          "content": "Slide 3.3.2"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.089,
+            0.414,
+            0.114
+          ],
+          "content": "Traditional backtracking uses fixed ordering of variables & values, e.g.. random order or place variables with many constraints first."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.116,
+            0.396,
+            0.138
+          ],
+          "content": "You can usually do better by choosing an order dynamically as the search proceeds."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.082,
+            0.14,
+            0.401,
+            0.173
+          ],
+          "content": "· Most constrained variable when doing forward-checking. pick variable with fewest legal values to assign next (minimizes branching factor)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.076,
+            0.936,
+            0.126
+          ],
+          "content": "For example, assume we are doing backtracking with forward checking. At any point, we know the size of the domain of each variable. We can order the variables below that point in the search tree so that the most constrained variable (smallest valid domain) is next. This will have the effect of reducing the average branching factor in the tree and also cause failures to happen sooner."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.281,
+            0.118,
+            0.295
+          ],
+          "content": "Slide 3.3.3"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.303,
+            0.553,
+            0.352
+          ],
+          "content": "Furthermore, we can count for each value of the variable the impact on the domains of its neighbors, for example the minimum of the resulting domains after propagation. The value with the largest minimum resulting domain size (or average value or sum) would be one that least constrains the remaining choices and is least likely to lead to failure."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.359,
+            0.544,
+            0.385
+          ],
+          "content": "Of course, value ordering is only worth doing if we are looking for a single answer to the problem. If we want all answers, then all values will have to be tried eventually."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.644,
+            0.29,
+            0.849,
+            0.306
+          ],
+          "content": "BT-FC with dynamic ordering"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.316,
+            0.906,
+            0.339
+          ],
+          "content": "Traditional backtracking uses fixed ordering of variables & values, e.g.. random order or place variables with many constraints first."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.579,
+            0.342,
+            0.888,
+            0.365
+          ],
+          "content": "You can usually do better by choosing an order dynamically as the search proceeds."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.575,
+            0.366,
+            0.894,
+            0.398
+          ],
+          "content": "· Most constrained variable when doing forward-checking. pick variable with fewest legal values to assign next (minimizes branching factor)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.572,
+            0.404,
+            0.905,
+            0.436
+          ],
+          "content": "· Least constraining value choose value that rules out the fewest values from neighboring domains"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.15,
+            0.518,
+            0.355,
+            0.533
+          ],
+          "level": 2,
+          "content": "BT-FC with dynamic ordering"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.543,
+            0.413,
+            0.566
+          ],
+          "content": "Traditional backtracking uses fixed ordering of variables & values, e.g.. random order or place variables with many constraints first."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.501,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.3.4"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.489
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.855,
+            0.475,
+            0.901,
+            0.486
+          ],
+          "content": "tlp · Spring 02 ·3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.569,
+            0.395,
+            0.591
+          ],
+          "content": "You can usually do better by choosing an order dynamically as the search proceeds."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.594,
+            0.4,
+            0.625
+          ],
+          "content": "· Most constrained variable when doing forward-checking. pick variable with fewest legal values to assign next (minimizes branching factor)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.63,
+            0.41,
+            0.663
+          ],
+          "content": "· Least constraining value choose value that rules out the fewest values from neighboring domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.53,
+            0.906,
+            0.545
+          ],
+          "content": "This combination of variable and value ordering can have dramatic impact on some problems."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.67,
+            0.401,
+            0.693
+          ],
+          "content": "E.g. this combination improves feasible n-queens performance from about n = 30 with just FC to about n = 1000 with FC & ordering."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.058,
+            0.734,
+            0.117,
+            0.747
+          ],
+          "content": "Slide 3.3.5"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.057,
+            0.756,
+            0.531,
+            0.793
+          ],
+          "content": "This example of the 4-color map-coloring problem illustrates a simple situation for variable and value ordering. Here, A is colored Green, B is colored Blue and C is colored Red. What country should we color next, D or E or F?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.561,
+            0.731,
+            0.929,
+            0.946
+          ],
+          "content": "Colors: R, G, B, Y A=Green B=Blue日 C=Red Blue, A E D C Red, Blue, F Which country should we color next What color should we pick for it? tlp · Spring 02 -5 tlp · Spring 02 -5 中"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.361,
+            0.702,
+            0.408,
+            0.713
+          ],
+          "content": "tlp · Spring 02 ·4"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.42,
+            0.705,
+            0.432,
+            0.715
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.855,
+            0.929,
+            0.901,
+            0.939
+          ],
+          "content": ""
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.914,
+            0.932,
+            0.926,
+            0.942
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.02
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.913,
+            0.479,
+            0.925,
+            0.49
+          ],
+          "content": ""
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.067,
+            0.05,
+            0.438,
+            0.266
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.058,
+                0.281,
+                0.117,
+                0.295
+              ],
+              "content": "Slide 3.3.7"
+            },
+            {
+              "bbox": [
+                0.057,
+                0.303,
+                0.443,
+                0.318
+              ],
+              "content": "By picking RED, we keep open the most options for D and F, so we pick that."
+            },
+            {
+              "bbox": [
+                0.442,
+                0.053,
+                0.502,
+                0.068
+              ],
+              "content": "Slide 3.3.6"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_16_chart_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.076,
+            0.922,
+            0.103
+          ],
+          "content": "Well, E is more constrained (has fewer) legal values so we should try it next. Which of E's values should we try next?"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.56,
+            0.276,
+            0.93,
+            0.492
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_chart_7.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.106,
+            0.511,
+            0.398,
+            0.527
+          ],
+          "level": 2,
+          "content": "Incremental Repair (min-conflict heuristic)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.538,
+            0.381,
+            0.561
+          ],
+          "content": "1. Initialize a candidate solution using \"greedy\" heuristic – get solution \"near\" correct one."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.566,
+            0.399,
+            0.59
+          ],
+          "content": "2. Select a variable in conflict and assign it a value that minimizes the number of conflicts (beak ties randomly)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.59,
+            0.416,
+            0.613
+          ],
+          "content": "Can use this heuristic as part of systematic backtracker that uses heuristics to do value ordering or in a local hill-climber (without backup)."
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.084,
+            0.625,
+            0.435,
+            0.718
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_chart_12.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.507,
+            0.502,
+            0.521
+          ],
+          "level": 2,
+          "content": "Slide 3.3.8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.53,
+            0.901,
+            0.567
+          ],
+          "content": "All of the methods for solving CSPs that we have discussed so far are systematic (guaranteed searches). More recently, researchers have had surprising success with methods that are not systematic (they are randomized) and do not involve backup."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.574,
+            0.924,
+            0.612
+          ],
+          "content": "The basic idea is to do incremental repair of a nearly correct assignment. Imagine we had some heuristic that could give us a \"good\" answer to any of the problems. By \"good\" we mean one with relatively few constraint violations. In fact, this could even be a randomly chosen solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.619,
+            0.926,
+            0.645
+          ],
+          "content": "Then, we could take the following approach. Identify a random variable involved in some conflict. Pick a new value for that variable that minimizes the number of resulting conflicts. Repeat."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.652,
+            0.686,
+            0.667
+          ],
+          "content": "This is a type of local \"greedy\" search algorithm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.675,
+            0.93,
+            0.734
+          ],
+          "content": "There are variants of this strategy that use this heuristic to do value ordering within a backtracking search. Remarkably, this type of ordering (in connection with a good initial guess) leads to remarkable behavior for benchmark problems. Notably, the systematic versions of this strategy can solve the million-queen problem in minutes. After this, people decided N-queens was not interesting..."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.058,
+            0.054,
+            0.118,
+            0.067
+          ],
+          "content": "Slide 3.3.9"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.077,
+            0.551,
+            0.113
+          ],
+          "content": "The pure \"greedy\" hill-climber can readily fail on any problem (by finding a local minimum where any change to a single variable causes the number of conflicts to increase). We'll look at this a bit in the problem set."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.121,
+            0.549,
+            0.17
+          ],
+          "content": "There are several ways of trying to deal with local minima. One is to introduce weights on the violated constraints. A simpler one is to re-start the search with another random initial state. This is the approach taken by GSAT, a randomized search process that solves SAT problems using a similar approach to the one described here."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.056,
+            0.177,
+            0.555,
+            0.226
+          ],
+          "content": "GSAT's performance is nothing short of remarkable. It can solve SAT problems of mind-boggling complexity. It has forced a complete reconsideration of what it means when we say that a problem is \"hard\". It turns out that for SAT, almost any randomly chosen problem is \"easy\". There are really hard SAT problems but they are difficult to find. This is an area of active study."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.149,
+            0.289,
+            0.332,
+            0.305
+          ],
+          "content": "GSAT as Heuristic Search"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.31,
+            0.394,
+            0.324
+          ],
+          "content": "• State space: Space of all full assignments to variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.324,
+            0.305,
+            0.337
+          ],
+          "content": "• Initial state: A random full assignment"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.855,
+            0.249,
+            0.902,
+            0.26
+          ],
+          "content": "tlp · Spring 02·9"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.086,
+            0.338,
+            0.292,
+            0.35
+          ],
+          "content": "Goal state: A satisfying assignment"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.671,
+            0.058,
+            0.821,
+            0.074
+          ],
+          "content": "Min-conflict heuristic"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.351,
+            0.405,
+            0.365
+          ],
+          "content": "• Actions: Flip value of one variable in current assignment"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.088,
+            0.908,
+            0.149
+          ],
+          "content": "The pure hill climber (without backtracking) can get stuck in local minima. Can add random moves to attempt getting out of minima – generally quite effective. Can also use weights on violated constraints & increase weight every cycle it remains violated."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.578,
+            0.199,
+            0.905,
+            0.226
+          ],
+          "content": "Randomized hill climber used to solve SAT problems. One of the most effective methods ever found for this problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.365,
+            0.42,
+            0.402
+          ],
+          "content": "• Heuristic: The number of satisfied clauses (constraints); we want to maximize this. Alternatively, minimize the number of unsatisfied clauses (constraints)."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.442,
+            0.281,
+            0.508,
+            0.295
+          ],
+          "content": "Slide 3.3.10"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.723,
+            0.168,
+            0.762,
+            0.182
+          ],
+          "content": "GSAT"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.439,
+            0.303,
+            0.935,
+            0.375
+          ],
+          "content": "GSAT can be framed as a heuristic search strategy. Its state space is the space of all full assignments to the variables. The initial state is a random assignment, while the goal state is any assignment that satisfies the formula. The actions available to GSAT are simply to flip one variable in the assignment from true to false or vice-versa. The heuristic value used for the search, which GSAT tries to maximize, is the number of satisfied clauses (constraints). Note that this is equivalent to minimizing the number of conflicts, that is, violated constraints."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.358,
+            0.475,
+            0.409,
+            0.486
+          ],
+          "content": "tlp · Spring 02 · 10"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.508,
+            0.123,
+            0.52
+          ],
+          "level": 2,
+          "content": "Slide 3.3.11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.53,
+            0.548,
+            0.601
+          ],
+          "content": "Here we see the GSAT algorithm, which is very simple in sketch. The critical implementation challenge is that of finding quickly the variable whose flip maximizes the score. Note that there are two user-specified variables: the number of times the outer loop is executed (MAXTRIES) and the number of times the inner loop is executed (MAXFLIPS). These parameters guard against local minima in the search, simply by starting with a new, randomly chosen assignment and trying a different sequence of flips. As we have mentioned, this works surprisingly well."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.702,
+            0.516,
+            0.766,
+            0.531
+          ],
+          "level": 2,
+          "content": "GSAT(F)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.537,
+            0.698,
+            0.55
+          ],
+          "content": "For i=1 to Maxtries"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.596,
+            0.551,
+            0.833,
+            0.564
+          ],
+          "content": "• Select a complete random assignment A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.597,
+            0.564,
+            0.808,
+            0.577
+          ],
+          "content": "Score = number of satisfied clauses"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.597,
+            0.578,
+            0.714,
+            0.591
+          ],
+          "content": "• For j=1 to Maxflips"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.614,
+            0.591,
+            0.838,
+            0.605
+          ],
+          "content": "— If (A satisfies all clauses in F) return A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.615,
+            0.605,
+            0.85,
+            0.618
+          ],
+          "content": "\\- Else flip a variable that maximizes score"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.614,
+            0.618,
+            0.896,
+            0.644
+          ],
+          "content": "\\- Flip a randomly chosen variable if no variable flip increases the score."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.193,
+            0.743,
+            0.288,
+            0.757
+          ],
+          "level": 2,
+          "content": "WALKSAT(F)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.763,
+            0.204,
+            0.777
+          ],
+          "content": "· For i=1 to Maxtries"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.777,
+            0.339,
+            0.791
+          ],
+          "content": "Select a complete random assignment A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.791,
+            0.315,
+            0.804
+          ],
+          "content": "Score = number of satisfied clauses"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.804,
+            0.221,
+            0.817
+          ],
+          "content": "For j=1 to Maxflips"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.818,
+            0.344,
+            0.831
+          ],
+          "content": "— If (A satisfies all clauses in F) return A"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.852,
+            0.702,
+            0.9,
+            0.713
+          ],
+          "content": "tlp · Spring 02 · 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.831,
+            0.164,
+            0.844
+          ],
+          "content": "-Else"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.844,
+            0.288,
+            0.856
+          ],
+          "content": "\\- With probability p / GSAT \\*/"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.856,
+            0.334,
+            0.868
+          ],
+          "content": "» flip a variable that maximizes score"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.867,
+            0.396,
+            0.887
+          ],
+          "continues_prev": true,
+          "content": "» Flip a randomly chosen variable if no variable flip increases the score."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.887,
+            0.334,
+            0.9
+          ],
+          "content": "\\- With probability 1-p /\\* Random Walk \\*/"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.899,
+            0.336,
+            0.911
+          ],
+          "content": "» Pick a random unsatisfied clause C"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.442,
+            0.734,
+            0.508,
+            0.747
+          ],
+          "level": 2,
+          "content": "Slide 3.3.12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.91,
+            0.341,
+            0.923
+          ],
+          "content": "» Flip a randomly chosen variable in C"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.756,
+            0.934,
+            0.794
+          ],
+          "content": "An even more effective strategy turns out to add even more randomness. WALKSAT basically performs the GSAT algorithm some percentage of the time and the rest of the time it does a random walk in the space of assignments by randomly flipping variables in unsatisfied clauses (constraints)."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.44,
+            0.801,
+            0.928,
+            0.839
+          ],
+          "content": "It's a bit depressing to think that such simple randomized strategies can be so much more effective than clever deterministic strategies. There are signs at present that some of the clever deterministic strategies are becoming competitive or superior to the randomized ones. The story is not over."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.359,
+            0.929,
+            0.408,
+            0.939
+          ],
+          "content": "tlp · Spring 02 ·12"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.418,
+            0.93,
+            0.431,
+            0.94
+          ],
+          "content": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "languages": [
+        "en"
+      ],
+      "created_at": "2005-08-16T12:57:03+05:30",
+      "modified_at": "2005-08-16T13:03:11+05:30",
+      "producer_application": "Acrobat Web Capture 6.0",
+      "page_count": 18,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

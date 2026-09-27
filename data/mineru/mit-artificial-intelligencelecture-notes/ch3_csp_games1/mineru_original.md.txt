@@ -1,0 +1,609 @@
+## Slide 3.1.1
+
+In this presentation, we'll take a look at the class of problems called Constraint Satisfaction Problems (CSPs). CSPs arise in many application areas: they can be used to formulate scheduling tasks, robot planning tasks, puzzles, molecular structures, sensory interpretation tasks, etc.
+
+In particular, we'll look at the subclass of Binary CSPs. A binary CSP is described in term of a set of Variables (denoted V<sub>i</sub>), a domain of Values for each of the variables (denoted D<sub>i</sub>) and a set of constraints involving the combinations of values for two of the variables (hence the name "binary"). We'll also allow "unary" constraints (constraints on a single variable), but these can be seen simply as cutting down the domain of that variable.
+
+We can illustrate the structure of a CSP in a diagram, such as this one, that we call a **constraint graph** for the problem.
+
+## Constraint Satisfaction Problems
+
+General class of Problems: Binary CSP
+
+Slide 3.1.2
+
+![](images/page_0_image_11.jpg)
+
+values in domain D
+
+Variable Vi with
+
+Unary constraints just cut down domains
+
+tlp · Sept 00 · 1
+
+This diagram is called a constraint graph
+
+Basic problem:
+
+Find a d ∈ D for each V s.t. all constraints satisfied (finding consistent labeling for variables)
+
+values in domain D
+
+## Slide 3.1.3
+
+## Constraint Satisfaction Problems
+
+General class of Problems: Binary CSP
+
+![](images/page_0_image_28.jpg)
+
+The solution of a CSP involves finding a value for each variable (drawn from its domain) such that all the constraints are satisfied. Before we look at how this can be done, let's look at some examples of CSP.
+
+Unary constraints just cut down domains
+
+This diagram is called a constraint graph
+
+## N-Queens as CSP Classic "benchmark" problem
+
+Place N queens on an NxN chessboard so that none can attack the other.
+
+![](images/page_0_image_35.jpg)
+
+Variables are board positions in NxN chessboard
+
+Domains Queen or blank
+
+Constraints Two positions on a line (vertical, horizontal, diagonal) cannot both be Q
+
+## Graph Coloring as CSP
+
+Pick colors for map regions, avoiding coloring adjacent regions with the same color
+
+Variables regions
+
+Domains colors allowed
+
+![](images/page_1_chart_31.jpg)
+
+Constraints adjacent regions must have different colors
+
+## Slide 3.1.6
+
+Another classic CSP is that of coloring a graph given a small set of colors. Given a set of regions with defined neighbors, the problem is to assign a color to each region so that no two neighbors have the same color (so that you can tell where the boundary is). You might have heard of the famous [Four Color Theorem](http://mathworld.wolfram.com/Four-ColorTheorem.html) that shows that four colors are sufficient for any planar map. This theorem was a conjecture for more than a century and was not proven until 1976. The CSP is not proving the general theorem, just constructing a solution to a particular instance of the problem.
+
+## Slide 3.1.7
+
+A very important class of CSPs is the class of boolean satisfiability problems. One is given a formula over boolean variables in conjunctive normal form (a set of ORs connected with ANDs). The objective is to find an assignment that makes the formula true, that is, a satisfying assignment.
+
+SAT problems are easily transformed into the CSP framework. And, it turns out that many important problems (such as constructing a plan for a robot and many circuit design problems) can be turned into (huge) SAT problems. So, a way of solving SAT problems efficiently in practice would have great practical impact.
+
+However, SAT is the problem that was originally used to show that some problems are [NP-complete](http://www.ics.uci.edu/~eppstein/161/960312.html), that is, as hard as any problem whose solution can be checked in polynomial time. It is generally believed that there is no polynomial time algorithm for NP-complete problems. That is, that any guaranteed algorithm has a worst-case running time that grows exponentially with the size of the problem. So, at best, we can only hope to find a heuristic approach to SAT problems. More on this later.
+
+## 3-SAT as CSP The original NP-complete problem
+
+Find values for boolean
+
+(A or B or !C) and (IA or C or B)
+
+variables A,B,C... that
+
+satisfy the formula.
+
+Variables clauses
+
+Domains boolean variable assignments that make clause true
+
+Constraints clauses with shared boolean variables must agree on value of variable
+
+## CSP Example
+
+![](images/page_2_image_14.jpg)
+
+Given 40 courses (8.01, 8.02, . . . . 6.840) & 10 terms (Fall 1. Spring 1, . . . . , Spring 5). Find a legal schedule.
+
+## Slide 3.1.10
+
+Let us take a particular problem and look at the CSP formulation in detail. In particular, let's look at an example which should be very familiar to MIT EECS students.
+
+The problem is to schedule approximately 40 courses into the 10 terms for an MEng. For simplicity, let's assume that the list of courses is given to us.
+
+Slide 3.1.11
+
+The constraints we need to represent and enforce are as follows:
+
+●	 The pre-requisites of a course were taken in an earlier term (we assume the list contains all the pre-requisites).
+
+●	 Some courses are only offered in the Fall or the Spring term.
+
+●	 We want to limit the schedule to a feasible load such as 4 courses a term.
+
+●	 And, we want to avoid time conflicts where we cannot sign up for two courses offered at the same time.
+
+## CSP Example
+
+Given 40 courses (8.01, 8.02, . . . . 6.840) & 10 terms (Fall 1, Spring 1, . .. . , Spring 5). Find a legal schedule.
+
+Constraints Pre-requisites
+
+Courses offered on limited terms
+
+Limited number of courses per term
+
+Avoid time conflicts
+
+![](images/page_3_image_0.jpg)
+
+## Choice of variables & values
+
+VARIABLES
+
+A. Terms?
+
+B. Term Slots?
+
+subdivide terms into slots e.g. 4 of them (Fall 1,1) (Fall 1,2) (Fall1,3) (Fall 1,4)
+
+DOMAINS
+
+## Slide 3.1.14
+
+![](images/page_3_image_28.jpg)
+
+Legal combinations of for example 4 courses (but this is huge set of values).
+
+Courses offered during that term
+
+Slide 3.1.15
+
+Another formulation turns things around and uses the courses themselves as the variables and then uses the terms (or more likely, term slots) as the values. Let's look at this formulation in greater detail.
+
+One way of avoiding the combinatorics of using 4-course schedules as the values of the variables is to break up each term into "term slots" and assign to each term-slot a single course. This formulation, like the previous one, has the limit on the number of courses per term represented directly in the graph, instead of stating an explicit constraint. With this representation, we will still need constraints to ensure that the courses in a given term do not conflict and the pre-requisite ordering is enforced. The availability of a course in a given term could be enforced by filtering the domains of the variables.
+
+## Choice of variables & values
+
+VARIABLES
+
+A. Terms?
+
+DOMAINS
+
+Legal combinations of for example 4 courses (but this is huge set of values).
+
+B. Term Slots?
+
+subdivide terms into
+
+slots e.g. 4 of them
+
+Courses offered during that term
+
+(Fall 1,1) (Fall 1,2)
+
+(Fall1,3) (Fall 1,4)
+
+C. Courses?
+
+Terms or term slots (Term slots allow expressing constraint on limited number of of courses /term.)
+
+Slide 3.1.16
+
+![](images/page_4_image_2.jpg)
+
+Slide 3.1.17
+
+One constraint that must be represented is that the pre-requisites of a class must be taken before the actual class. This is easy to represent in this formulation. We introduce types of constraints called "term before" and "term after" which check that the values assigned to the variables, for example, 6.034 and 6.001, satisfy the correct ordering.
+
+Note that the undirected links shown in prior constraint graphs are now split into two directed links, each with complementary constraints.
+
+The constraint that some courses are only offered in some terms simply filters illegal term values from the domains of the variables.
+
+![](images/page_4_image_7.jpg)
+
+![](images/page_4_image_8.jpg)
+
+Slide 3.1.19
+
+The limit on courses to be taken in a term argues for the use of term-slots as values rather than just terms. If we use term-slots, then the constraint is implicitly satisfied.
+
+Avoiding time conflicts is also easily represented. If two courses occur at overlapping times then we place a constraint between those two courses. If they overlap in time every term that they are given, we can make sure that they are taken in different terms. If they overlap only on some terms, that can also be enforced by an appropriate constraint.
+
+![](images/page_4_image_12.jpg)
+
+Slide 3.2.1
+
+We now turn our attention to solving CSPs. We will see that the approaches to solving CSPs are some combination of constraint propagation and search. We will look at these in turn and then look at how they can be profitably combined.
+
+## Constraint Propagation (aka Arc Consistency)
+
+Arc consistency eliminates values from domain of variable that can never be part of a consistent solution.
+
+$$
+\mathbf {V} _ {\mathrm{i}} \rightarrow \mathbf {V} _ {\mathrm{j}}
+$$
+
+Directed arc (V. V) is arc consistent if ∀x∈D ∃y∈D such that (x,y) is allowed by the constraint on the arc
+
+Suppose there are some values in the domain at the tail of the constraint arc (for $\nabla _ { \dot { 1 } } )$ that do not have any consistent partner in the domain at the head of the arc (for $\nabla _ { \dot { \mathbf { j } } } ) .$ We achieve arc consistency by dropping those values from $\mathbf { D _ { i } } .$ Note, however, that if we change $\mathbf { D _ { i } } ,$ we now have to check to make sure that any other constraint arcs that have $\mathbf { D _ { i } }$ at their head are still consistent. It is this phenomenon that accounts for the name "constraint propagation".
+
+Slide 3.2.2
+
+Slide 3.2.3
+
+![](images/page_5_image_11.jpg)
+
+1. Constraint propagation, to eliminate values that could not be part of any solution
+
+2. Search, to explore valid assignments
+
+The great success of Waltz's constraint propagation algorithm focused people's attention on CSPs. The basic idea in constraint propagation is to enforce what is known as "ARC CONSISTENCY", that is, if one looks at a directed arc in the constraint graph, say an arc from $\mathrm { V _ { i } }$ to $\mathrm { V _ { j } , }$ we say that this arc is consistent if for **every** value in the domain of $\mathbf { V } _ { \mathbf { i } } ,$ there exists **some** value in the domain of $\mathrm { V _ { j } }$ that will satisfy the constraint on the arc.
+
+## Constraint Propagation (aka Arc Consistency)
+
+Arc consistency eliminates values from domain of variable that can never be part of a consistent solution.
+
+$$
+\mathbf {V} _ {\mathrm{i}} \rightarrow \mathbf {V} _ {\mathrm{j}}
+$$
+
+Directed arc (V. V) is arc consistent if ∀x∈D ∃y∈D such that (x,y) is allowed by the constraint on the arc
+
+We can achieve consistency on arc by deleting values form D (domain of variable at tail of constraint arc) that fail this condition.
+
+Slide 3.2.5
+
+Let's look at a trivial example of graph coloring. We have three variables with the domains indicated. Each variable is constrained to have values different from its neighbors.
+
+![](images/page_6_image_10.jpg)
+
+Slide 3.2.6
+
+Slide 3.2.7
+
+We will now simulate the process of constraint propagation. In the interest of space, we will deal in this example with undirected arcs, which are just a shorthand for the two directed arcs between the variables. Each step in the simulation involves examining one of these undirected arcs, seeing if the arc is consistent and, if not, deleting values from the domain of the appropriate variable.
+
+We start with the $\mathrm { V _ { 1 ^ { - } } } \mathrm { V } _ { 2 }$ arc. Note that for every value in the domain of $\mathrm { V _ { 1 } }$ (R, G and B) there is some value in the domain of $\mathrm { V } _ { 2 }$ that it is consistent with (that is, it is different from). So, for R in $\mathrm { V _ { 1 } }$ there is a G in $\mathrm { V } _ { 2 } ,$ for G in $\mathrm { V _ { 1 } }$ there is an R in $\nabla _ { 2 }$ and for B in $\mathrm { V _ { 1 } }$ there is either R and G in $\nabla _ { 2 } .$ Similarly, for each entry in $\mathrm { V } _ { 2 }$ there is a valid counterpart in $\nabla _ { 1 } .$ So, the arc is consistent and no changes are made.
+
+## Constraint Propagation Example
+
+![](images/page_6_image_20.jpg)
+
+![](images/page_6_image_21.jpg)
+
+| Arc examined | Value deleted |
+| --- | --- |
+| $V_1 - V_2$ | none |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+Slide 3.2.8
+
+![](images/page_7_image_2.jpg)
+
+Slide 3.2.9
+
+Moving to $\nabla _ { 2 ^ { - } } \nabla _ { 3 } ,$ we note similarly that the G in $\mathrm { V } _ { 2 }$ has no valid counterpart in $\mathbf { V } _ { 3 }$ and so we drop it from $\mathrm { V _ { 2 } } ^ { \prime } \mathrm { s }$ domain. Although we have now looked at all the arcs once, we need to keep going since we have changed the domains for $\mathrm { V _ { 1 } }$ and $\nabla _ { 2 } .$
+
+Slide 3.2.10
+
+![](images/page_7_image_6.jpg)
+
+Slide 3.2.11
+
+We test $\mathrm { V } _ { 1 ^ { - } } \mathrm { V } _ { 3 }$ and it is consistent.
+
+We move to $\nabla _ { 1 } \mathbf { \cdot } \nabla _ { 3 } .$ The situation here is different. While R and B in $\mathrm { V _ { 1 } }$ can co-exist with the G in $\mathrm { V } _ { 3 } ,$ not so the G in $\nabla _ { 1 } .$ And, so, we remove the G from $\mathrm { V _ { 1 } }$ . Note that the arc in the other direction is consistent.
+
+## Constraint Propagation Example
+
+![](images/page_7_image_11.jpg)
+
+Looking at $\mathrm { V _ { 1 ^ { - } } V _ { 2 } }$ again we note that R in $\mathrm { V _ { 1 } }$ no longer has a valid counterpart in $\mathrm { V } _ { 2 }$ (since we have deleted G from $\mathrm { V } _ { 2 } )$ and so we need to drop R from $\mathrm { V _ { 1 } }$
+
+## Constraint Propagation Example
+
+![](images/page_7_image_14.jpg)
+
+| Arc examined | Value deleted |
+| --- | --- |
+| $V_1 - V_2$ | none |
+| $V_1 - V_3$ | $V_1(G)$ |
+| $V_2 - V_3$ | $V_2(G)$ |
+| $V_1 - V_2$ | $V_1(R)$ |
+| $V_1 - V_3$ | none |
+|  |  |
+
+![](images/page_7_image_16.jpg)
+
+## But, arc consistency is not enough in general
+
+Graph Coloring arc consistent but no solutions
+
+![](images/page_8_image_18.jpg)
+
+![](images/page_8_image_20.jpg)
+
+arc consistent but 2 solutions B,R,G ; B.G,R.
+
+## Slide 3.2.14
+
+This next graph is also arc consistent but there are 2 distinct solutions: BRG and BGR.
+
+Slide 3.2.15
+
+## But, arc consistency is not enough in general
+
+Graph Coloring arc consistent but no solutions
+
+![](images/page_8_image_31.jpg)
+
+![](images/page_8_image_32.jpg)
+
+![](images/page_8_image_33.jpg)
+
+arc consistent but 2 solutions B,R,G : B,G,R.
+
+arc consistent but 1 solution
+
+Assume B, R not allowed
+
+![](images/page_9_image_2.jpg)
+
+Slide 3.2.16
+
+Slide 3.2.17
+
+How does one search for solutions to a CSP problem? Any of the search methods we have studied is applicable. All we need to realize is that the space of assignments of values to variables can be viewed as a tree in which all the assignments of values to the first variable are descendants of the first node and all the assignments of values to the second variable form the descendants of those nodes and so forth.
+
+The classic approach to searching such a tree is called "backtracking", which is just another name for depth-first search in this tree. Note, however, that we could use breadth-first search or any of the heuristic searches on this problem. The heuristic value could be used to either guide the search to termination or bias it to a desired solution based on preferences for certain assignments. Uniform-Cost and A\* would make sense also if there were a non-uniform cost associated with a particular assignment of a value to a variable (note that this is another (better but more expensive) way of incorporating preferences).
+
+However, you should observe that these CSP problems are different from the graph search problems we looked at before, in that we don't really care about the path to some state but just the final state itself.
+
+Slide 3.2.18
+
+![](images/page_9_image_9.jpg)
+
+Slide 3.2.19
+
+So, we consider assigning $\mathbf { V } _ { 2 } \mathbf { = } \mathbf { G } ,$ which is consistent with the value for $\mathbf { V } _ { 1 } .$ We then move to $\mathrm { V } _ { 3 } \mathrm { { = } R }$ Since we have a constraint between $\mathrm { V _ { 1 } }$ and $\mathrm { V } _ { 3 } ,$ we have to check for consistency and find it is not consistent, and so we backup to consider another value for $\mathbf { V } _ { 3 } .$
+
+In general, if there is more than one value in the domain of any of the variables, we do not know whether there is zero, one, or more than one answer that is globally consistent. We have to search for an answer to actually know for sure.
+
+## Searching for solutions – backtracking (BT)
+
+When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search).
+
+![](images/page_9_image_15.jpg)
+
+If we undertake a DFS in this tree, going left to right, we first explore assigning R to $\mathrm { V _ { 1 } }$ and then move to $\mathrm { V } _ { 2 }$ and consider assigning R to it. However, for any assignment, we need to check any constraints involving previous assignments in the tree. We note that $\mathrm { V } _ { 2 } \mathrm { { = } R }$ is inconsistent with $\mathbf { V } _ { 1 } \mathbf { = } \mathbf { R }$ and so that assignment fails and we have to backup to find an alternative assignment for the most recently assigned variable.
+
+## Searching for solutions - backtracking (BT)
+
+When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search).
+
+![](images/page_9_image_19.jpg)
+
+## Searching for solutions – backtracking (BT)
+
+When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search).
+
+![](images/page_10_image_3.jpg)
+
+Slide 3.2.21
+
+The process continues in that fashion until we find a solution. If we continue past the first success, we can find all the solutions for the problem (two in this case).
+
+## Slide 3.2.20
+
+But $\mathrm { V } _ { 3 } \mathrm { { = } G }$ is inconsistent with $\mathbf { V } _ { 2 } \mathbf { = } \mathbf { G } ,$ and so we have to backup. But there are no more pending values for $\mathbf { V } _ { 3 }$ or for $\mathrm { V } _ { 2 }$ and so we fail back to the $\mathrm { V _ { 1 } }$ level.
+
+## Searching for solutions – backtracking (BT)
+
+When we have too many values in domain (and/or constraints are weak) arc consistency doesn't do much, so we need to search. Simplest approach is pure backtracking (depth-first search).
+
+![](images/page_10_image_10.jpg)
+
+## Combine Backtracking & Constraint Propagation
+
+## Slide 3.2.22
+
+A node in BT tree is partial assignment in which the domain of each variable has been set (tentatively) to singleton set.
+
+Use constraint propagation (arc-consistency) to propagate the effect of this tentative assignment, i.e., eliminate values inconsistent with current values.
+
+## Slide 3.2.23
+
+We can use some form of backtracking search to solve CSP independent of any form of constraint propagation. However, it is natural to consider combining them. So, for example, during a backtracking search where we have a partial assignment, where a subset of all the variables each has unique values assigned, we could then propagate these assignments throughout the constraint graph to obtain reduced domains for the remaining variables. This is, in general, advantageous since it decreases the effective branching factor of the search tree.
+
+## Combine Backtracking & Constraint Propagation
+
+A node in BT tree is partial assignment in which the domain of each variable has been set (tentatively) to singleton set.
+
+Use constraint propagation (arc-consistency) to propagate the effect of this tentative assignment, i.e., eliminate values inconsistent with current values.
+
+Question: How much propagation to do?
+
+## Backtracking with Forward Checking (BT-FC)
+
+When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_11_image_21.jpg)
+
+Slide 3.2.26
+
+![](images/page_11_image_23.jpg)
+
+Slide 3.2.27
+
+We then propagate to the neighbors of $\mathrm { V _ { 1 } }$ in the constraint graph and eliminate any values that are inconsistent with that assignment, namely the value R. That leaves us with the value G in the domains of $\mathrm { V } _ { 2 }$ and $\mathbf { V } _ { 3 } .$ So, we make the assignment $\mathrm { V } _ { 2 } \mathrm { { = } G }$ and propagate.
+
+But, when we propagate to $\mathbf { V } _ { 3 }$ we see that there are no remaining valid values and so we have found an inconsistency. We fail and backup. Note that we have failed much earlier than with simple backtracking, thus saving a substantial amount of work.
+
+## Backtracking with Forward Checking (BT-FC)
+
+When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_11_image_29.jpg)
+
+We have a conflict whenever a domain becomes empty.
+
+![](images/page_11_image_31.jpg)
+
+## Backtracking with Forward Checking (BT-FC)
+
+When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_12_image_7.jpg)
+
+Slide 3.2.31
+
+Slide 3.2.30
+
+The domain of $\mathbf { V } _ { 3 }$ is empty, so we fail and backup.
+
+We now consider $\mathrm { V } _ { 2 } \mathrm { { = } } \mathrm { { R } }$ and propagate.
+
+## Backtracking with Forward Checking (BT-FC)
+
+When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_12_image_23.jpg)
+
+![](images/page_12_image_24.jpg)
+
+We pick $\mathbf { V } _ { 3 }   =   \mathbf { G }$ and have a consistent assignment.
+
+## Backtracking with Forward Checking (BT-FC)
+
+Slide 3.2.35
+
+![](images/page_13_image_16.jpg)
+
+When examining assignment V=dk, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_13_image_18.jpg)
+
+Slide 3.2.34
+
+This removes the R values in the domains of $\mathrm { V _ { 1 } }$ and $\mathbf { V } _ { 3 } .$
+
+## Backtracking with Forward Checking (BT-FC)
+
+When examining assignment V=d, remove any values inconsistent with that assignment from neighboring domains in constraint graph.
+
+![](images/page_13_image_26.jpg)
+
+![](images/page_13_image_27.jpg)
+
+## 6.034 Notes: Section 3.3
+
+## Slide 3.3.1
+
+We have been assuming that the order of the variables is given by some arbitrary ordering. However, the order of the variables (and values) can have a substantial effect on the cost of finding the answer. Consider, for example, the course scheduling problem using courses given in the order that they should ultimately be taken and assume that the term values are ordered as well. Then a depth first search will tend to find the answer very quickly.
+
+Of course, we generally don't know the answer to start off with, but there are more rational ways of ordering the variables than alphabetical or numerical order. For example, we could order the variables before starting by how many constraints they have. But, we can do even better by dynamically re-ordering variables based on information available during a search.
+
+## BT-FC with dynamic ordering
+
+Traditional backtracking uses fixed ordering of variables & values, e.g random order or place variables with many constraints first.
+
+You can usually do better by choosing an order dynamically as the search proceeds.
+
+## BT-FC with dynamic ordering
+
+Traditional backtracking uses fixed ordering of variables & values, e.g.. random order or place variables with many constraints first.
+
+## Slide 3.3.4
+
+You can usually do better by choosing an order dynamically as the search proceeds.
+
+· Most constrained variable when doing forward-checking. pick variable with fewest legal values to assign next (minimizes branching factor)
+
+· Least constraining value choose value that rules out the fewest values from neighboring domains
+
+This combination of variable and value ordering can have dramatic impact on some problems.
+
+E.g. this combination improves feasible n-queens performance from about n = 30 with just FC to about n = 1000 with FC & ordering.
+
+![](images/page_16_chart_2.jpg)
+
+Slide 3.3.7
+
+By picking RED, we keep open the most options for D and F, so we pick that.
+
+Slide 3.3.6
+
+Well, E is more constrained (has fewer) legal values so we should try it next. Which of E's values should we try next?
+
+![](images/page_16_chart_7.jpg)
+
+## Incremental Repair (min-conflict heuristic)
+
+1. Initialize a candidate solution using "greedy" heuristic – get solution "near" correct one.
+
+2. Select a variable in conflict and assign it a value that minimizes the number of conflicts (beak ties randomly).
+
+Can use this heuristic as part of systematic backtracker that uses heuristics to do value ordering or in a local hill-climber (without backup).
+
+![](images/page_16_chart_12.jpg)
+
+## Slide 3.3.8
+
+All of the methods for solving CSPs that we have discussed so far are systematic (guaranteed searches). More recently, researchers have had surprising success with methods that are not systematic (they are randomized) and do not involve backup.
+
+The basic idea is to do incremental repair of a nearly correct assignment. Imagine we had some heuristic that could give us a "good" answer to any of the problems. By "good" we mean one with relatively few constraint violations. In fact, this could even be a randomly chosen solution.
+
+Then, we could take the following approach. Identify a random variable involved in some conflict. Pick a new value for that variable that minimizes the number of resulting conflicts. Repeat.
+
+This is a type of local "greedy" search algorithm.
+
+There are variants of this strategy that use this heuristic to do value ordering within a backtracking search. Remarkably, this type of ordering (in connection with a good initial guess) leads to remarkable behavior for benchmark problems. Notably, the systematic versions of this strategy can solve the million-queen problem in minutes. After this, people decided N-queens was not interesting...
+
+## Slide 3.3.11
+
+Here we see the GSAT algorithm, which is very simple in sketch. The critical implementation challenge is that of finding quickly the variable whose flip maximizes the score. Note that there are two user-specified variables: the number of times the outer loop is executed (MAXTRIES) and the number of times the inner loop is executed (MAXFLIPS). These parameters guard against local minima in the search, simply by starting with a new, randomly chosen assignment and trying a different sequence of flips. As we have mentioned, this works surprisingly well.
+
+## GSAT(F)
+
+For i=1 to Maxtries
+
+• Select a complete random assignment A
+
+Score = number of satisfied clauses
+
+• For j=1 to Maxflips
+
+— If (A satisfies all clauses in F) return A
+
+\- Else flip a variable that maximizes score
+
+\- Flip a randomly chosen variable if no variable flip increases the score.
+
+## WALKSAT(F)
+
+· For i=1 to Maxtries
+
+Select a complete random assignment A
+
+Score = number of satisfied clauses
+
+For j=1 to Maxflips
+
+— If (A satisfies all clauses in F) return A
+
+-Else
+
+\- With probability p / GSAT \*/
+
+» flip a variable that maximizes score» Flip a randomly chosen variable if no variable flip increases the score.
+
+\- With probability 1-p /\* Random Walk \*/
+
+» Pick a random unsatisfied clause C
+
+## Slide 3.3.12
+
+» Flip a randomly chosen variable in C

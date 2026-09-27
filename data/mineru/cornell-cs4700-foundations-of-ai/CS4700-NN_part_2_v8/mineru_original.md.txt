@@ -1,0 +1,397 @@
+# Foundations of Artificial Intelligence
+
+**CS 4700:**
+
+**Prof. Bart Selman**
+
+<u>selman@cs.cornell.edu</u>
+
+**Machine Learning:**
+
+**Neural Networks**
+
+**R&N 18.7**
+
+**Backpropagation**
+
+## Backpropagation
+
+In order to learn multi-layer neural nets, we need another learning algorithm. (invented ca. 1984) A multi-layer net has one or more hidden layers.
+
+We will consider the backpropagation algorithm for training such networks. See also R&N. Here we will present a more detailed example.
+
+## Based on Nilsson (Stanford)
+
+Note that in the perceptron case, we looked at the output value, compared it to the desired value and changed the weights accordingly.
+
+We want to do something similar in the multi-layer çase but one difficulty is to determine the error in the outputs of the hidden units. Luckily, we can approximate those errors by
+
+“backpropagating” the final output error. To do so, we need an activition function that is differentiable.
+
+We use the sigmoid function to compute our output values.
+
+$$
+f (x) = \frac {1}{1 + e ^ {- x}}
+$$
+
+The derivative of $f ( x )$ is:
+
+$$
+f ^ {\prime} (x) = f (x) \times (1 - f (x))
+$$
+
+![](images/page_4_chart_0.jpg)
+
+Note: largest derivative at $x = 0$
+
+That's where neuron is most sensitive to weight changes (effect of changes is well“controlled”).
+
+Output value of neuron is simply the weighted sum of its input “pushed” through the sigmoid.
+
+$\begin{array} { r } { f ( s ) = \frac { 1 } { 1 + e ^ { - s } } } \end{array}$ 7 where
+
+$$
+s = \sum_ {k = 1} ^ {k = n + 1} w _ {k} \times x _ {k}
+$$
+
+Again, we assume the threshold is replaced by an extra input fixed at 1. Inputs: 0 or 1.
+
+![](images/page_6_image_0.jpg)
+
+Figure 3.5
+
+A k-layer Network of Sigmoid Units
+
+## Ok… details backpropagation NOT on exam.
+
+## But do work through gradient Setup and notation: descent example on homework.
+
+k-layer network.
+
+Input vector:
+
+$$
+{\vec {X ^ {(0)}}} = <   x _ {1} ^ {(0)}, x _ {2} ^ {(0)}, \ldots , x _ {m _ {0}} ^ {(0)} >
+$$
+
+The first layer has $m _ { 1 }$ units and its output is:
+
+$$
+X ^ {(1)} = <   f _ {1} ^ {(1)}, f _ {2} ^ {(1)}, \dots , f _ {m _ {1}} ^ {(1)} >
+$$
+
+The weights for the ith unit in the first layer are given by:
+
+$$
+\vec {W _ {i} ^ {(1)}} = <   w _ {1, i} ^ {(1)}, w _ {2, i} ^ {(1)}, \dots , w _ {m _ {0}, i} ^ {(1)} >
+$$
+
+These outputs $\stackrel { \longrightarrow } { X ^ { ( 1 ) } }$ are fed into the second layer of $m _ { 2 }$ units.
+
+The number of units in the j-th layer is $m _ { j }$
+
+In general, the weight vector of unit i in the j-th layer is $W _ { i } ^ { ( j ) }$ with components $w _ { l , i } ^ { j }$ for $l = 1 , m _ { ( j - 1 ) } + 1$
+
+Note that the previous layer had $m _ { ( j - 1 ) }$ units
+
+(and thus outputs) all connected to each unit in the j-th layer. We use one additional weight and fixed input to model the threshold. (Not given on previous slide.)
+
+The weighted sum of the inputs to i-th sigmoid unit in the j-th layer is denoted by $s _ { i } ^ { ( j ) }$ The output is $\begin{array} { r } { f _ { i } ^ { ( j ) } = \frac { 1 } { 1 + e ^ { - s _ { i } ^ { ( j ) } } } } \end{array}$
+
+We have:
+
+$$
+s _ {i} ^ {(j)} = \vec {X ^ {(j - 1)}}. \vec {W ^ {(j)}}
+$$
+
+We used the vector dot product, i.e.,
+
+$$
+s _ {i} ^ {(j)} = \sum_ {l = 1} ^ {l = m _ {(j - 1)} + 1} x _ {l} ^ {(j - 1)} \times w _ {l, j} ^ {(j)}
+$$
+
+$x _ { l } ^ { ( j - 1 ) }$ is the output of unit l in the previous layer. It's connected with weight $w _ { l , i } ^ { ( j ) }$ to the i-th unit in the j-th layer.
+
+Note: again, concerning the $``+1''$ here, we assume that an extra $`` 1 ''$ is added to the input vector and an extra weight, to model the threshold.
+
+Finally, the k-th layer is the output layer.
+
+It has a single unit with input $s ^ { ( k ) }$ (weighted sum) and output value $f ^ { ( k ) } = f$
+
+The objective of the backprogation algorithm is to minimize the output error on each example
+
+That is, we want to minimize:
+
+$$
+(L - f) ^ {2}
+$$
+
+Where, L the label (0 or 1) of the input example under consideration and f is the output of the network given that example.
+
+Note: we will update the weights after each example An alternative approach considers the combined error over the total training set and update after seeing all examples. In the limit the approaches are the same.
+
+A key observation is that the error $( L - f ) ^ { 2 }$ is only a function of the weights. Note: the number of units etc. is fixed Also, the inputs are fixed, since we are considering a particular example.
+
+The idea is now to do a gradient descent in the weight space to minimize the error.
+
+The derivation (basically calculus) is somewhat involved but not difficult.
+
+**It’s “just” multivariate (or multivariable) calculus.**
+
+Optimization and gradient descent.
+
+**Consider x and y our two weights** and $\mathbf { f } ( \mathbf { x } , \mathbf { y } )$ **the error signal.**
+
+**Multi-layer network: composition of sigmoids**; **use chain rule.**
+
+![](images/page_13_image_3.jpg)
+
+$$
+\nabla f = \frac {\partial f}{\partial x _ {1}} \mathbf {e} _ {1} + \dots + \frac {\partial f}{\partial x _ {n}} \mathbf {e} _ {n}
+$$
+
+**Note: For decent we want to go in opposite direction of gradient.**
+
+Gradient descent is based on the observation that if the multivariable function $F ( \mathbf { x } )$ is defined and differentiable in a neighborhood of a point a, then $F ( \mathbf { x } )$ decreases fastest if one goes from a in the direction of the negative gradient of $F$ at $\mathbf { a } , - \nabla F ( \mathbf { a } )$ . It follows that, if
+
+$$
+\mathbf {b} = \mathbf {a} - \gamma \nabla F (\mathbf {a})
+$$
+
+for $\gamma$ small enough, then $F ( \mathbf { a } ) \geq F ( \mathbf { b } )$ . With this observation in mind, one starts with a guess $\mathbf { x } _ { 0 }$ for a local minimum of $F ,$ , and considers the sequence $\mathbf { x } _ { 0 } , \mathbf { x } _ { 1 } , \mathbf { x } _ { 2 } , \ldots$ . such that
+
+Reminder: Gradient descent optimization. (Wikipedia)
+
+![](images/page_14_image_4.jpg)
+
+$$
+\mathbf {x} _ {n + 1} = \mathbf {x} _ {n} - \gamma_ {n} \nabla F (\mathbf {x} _ {n}), n \geq 0.
+$$
+
+We have
+
+$$
+F (\mathbf {x} _ {0}) \geq F (\mathbf {x} _ {1}) \geq F (\mathbf {x} _ {2}) \geq \dots ,
+$$
+
+so hopefully the sequence $\left( \mathbf { x } _ { n } \right)$ converges to the desired local minimum.
+
+Here we just give the results of the calculation.
+
+First, the weight adjustment for the single unit
+
+in the output layer is given by:
+
+$$
+\vec {W ^ {(k)}} \leftarrow \vec {W ^ {(k)}} + \alpha \times (d - f) \times f \times (1 - f) \times \vec {X ^ {(k - 1)}}
+$$
+
+Note: f is the output of the unit; d is desired output.
+
+This rule is analogous to the perceptron rule, except
+
+that we are now using the sigmoid.
+
+The (d — f) is the error signal.
+
+α is the learning rate (a constant chosen by the user).
+
+$f \times ( 1 - f )$ comes from the derivative of the sigmoid.
+
+$X ^ { ( k - 1 ) }$ is the input to the unit under consideration.
+
+So, again we're adding (subtracting) the input vector, depending on (d – f).
+
+Please check for yourself that the correction is in the right direction!
+
+We’re basically going to do something similar for the weights in the hidden layer. The only problem is that we don’t have a direct measure of the error in the outputs on the hidden units.
+
+However, we can estimate those errors by considering the constribution (an estimate) of each unit to the final output value (layer k).
+
+Starting with the final layer and moving backwards,
+
+we compute for the i-th unit in the j-th layer:
+
+$$
+\delta_ {i} ^ {(j)} = f _ {i} ^ {j} (1 - f _ {i} ^ {j}) \sum_ {l = 1} ^ {m _ {j + 1}} \delta_ {l} ^ {(j + 1)} w _ {i, l} ^ {(j + 1)}
+$$
+
+Note that $f _ { i } ^ { ( j ) }$ is the output value of the unit.
+
+So, the δ for a unit in the i-th layer is
+
+computed by considering the delta in the i + 1-th layer.
+
+The base case is the output layer k:
+
+$$
+\delta^ {(k)} = (d - f) \times f \times (1 - f)
+$$
+
+I.e., the real output error times the gradient.
+
+This values is propagated backwards to get error measures
+
+for the internal units (times the gradient again).
+
+Finally, using these $\delta ^ { \flat } \mathbf { s } .$ , we can compute the weight updates for the hidden units:
+
+$$
+\vec {W _ {i} ^ {(j)}} \leftarrow \vec {W _ {i} ^ {(j)}} + \alpha \times \delta_ {i} ^ {j} \times \vec {X} ^ {(j - 1)}
+$$
+
+Verify that this rule is consistent with the update rule for the final node. (Check j = k; drop i, since only one unit in layer.)
+
+**So, first we “backpropagate” the error signal, and then we update the weights, layer by layer.**
+
+**That’s why it’s called “backprop learning.” Now changing speech recognition, image recognition etc.!**
+
+Although, the rules are somewhat intuitive, only by doing the full derivation, can one explain all the terms.
+
+Let us consider an example of the procedure in action.
+
+Figure 3.6
+
+A Network to Be Trained by Backprop
+
+![](images/page_20_image_3.jpg)
+
+We have two layers $( k = 2 )$ à
+
+Two units in first layer, with a total of three inputs $( x _ { 1 } ^ { ( 0 ) } , x _ { 2 } ^ { ( 0 ) } , x _ { 3 } ^ { ( 0 ) } )$
+
+$x _ { 3 } ^ { ( 0 ) }$ will be fixed to 1.
+
+The two units in the first layer are connected to a node in the final layer. This node has three inputs: $( x _ { 1 } ^ { ( 1 ) } , x _ { 2 } ^ { ( 1 ) } , x _ { 3 } ^ { ( 1 ) } )$
+
+$x _ { 1 } ^ { ( 1 ) }$ is the output of the 1st unit in the 1st layer.
+
+$x _ { 2 } ^ { ( 1 ) }$ is the output of the 2nd unit in the 2nd layer.
+
+$x _ { 3 } ^ { ( 1 ) }$ is fixed at 1.
+
+Note the given weights in the figure.
+
+We want to train the network to capture the following patterns:
+
+$$
+\text {ex 1.)} x _ {1} ^ {(0)} = 1, x _ {2} ^ {(0)} = 0, x _ {3} ^ {(0)} = 1, d = 0
+$$
+
+$$
+\mathrm{ex2.)} x _ {1} ^ {(0)} = 0, x _ {2} ^ {(0)} = 0, x _ {3} ^ {(0)} = 1, d = 1
+$$
+
+$$
+\mathrm{ex3.)} x _ {1} ^ {(0)} = 0, x _ {2} ^ {(0)} = 1, x _ {3} ^ {(0)} = 1, d = 0
+$$
+
+ex 4.) $x _ { 1 } ^ { ( 0 ) } = 1 , x _ { 2 } ^ { ( 0 ) } = 1 , x _ { 3 } ^ { ( 0 ) } = 1 , d = 1$
+
+Again, d is the desired output; $x _ { 3 } ^ { ( 0 ) }$ is the fixed unit. Let's consider the update after the first pattern.
+
+Ex 1.) gives input vector $< 1 , 0 , 1 >$ , which leads via the sigmoid to the following output values:
+
+$$
+f _ {1} ^ {(1)} = \frac {1}{1 + e ^ {- 2}} = 0. 8 8 1
+$$
+
+$$
+f _ {2} ^ {(1)} = \frac {1}{1 + e ^ {- 0}} = 0. 5
+$$
+
+$$
+f = \frac {1}{1 + e ^ {- (3 \times 0 . 8 8 1 + (- 2) \times 0 . 5 - 1)}} = 0. 6 6 5
+$$
+
+We now compute the values for the δ’s.
+
+First the base case:
+
+$$
+\delta^ {(2)} = (0 - 0. 6 6 5) \times 0. 6 6 5 \times (1 - 0. 6 6 5) = - 0. 1 4 8
+$$
+
+Backpropagating through the weights gives:
+
+$$
+\begin{array}{l} \delta_ {1} ^ {(1)} = 0. 8 8 1 \times (1 - 0. 8 8 1) \times (- 0. 1 4 8 \times 3) = - 0. 0 4 7 \\ \delta_ {2} ^ {(1)} = 0. 5 \times (1 - 0. 5) \times (- 0. 1 4 8 \times - 2) = 0. 0 7 4 \end{array}
+$$
+
+Double-check at least one of these!
+
+After computing the $\delta ^ { \flat } \mathbf { s } ,$ we can now update the weights. (Use learning rate $\alpha = 1 . )$ We get for the new weights:
+
+$$
+\begin{array}{l}\stackrel {\rightarrow} {W _ {1} ^ {(1)}} = <   1. 9 5 3, - 2. 0, - 0. 0 4 7 >\\\stackrel {\rightarrow} {W _ {2} ^ {(1)}} = <   1. 0 7 4, 3. 0, - 0. 9 2 6 >\\\stackrel {\rightarrow} {W ^ {(2)}} = <   2. 8 7 0, - 2. 0 7 4, - 1. 1 4 8 >\end{array}
+$$
+
+Aside: the original weights were:
+
+$$
+\begin{array}{l} \vec {W} _ {1} ^ {(1)} = <   2. 0, - 2. 0, 0. 0 > \\ \vec {W} _ {2} ^ {(1)} = <   1. 0, 3. 0, - 1. 0 > \\ \vec {W} ^ {(2)} = <   3. 0, - 2. 0, - 1. 0 > \end{array}
+$$
+
+Let's do an example calculation of the first weight vector.
+
+$$
+\vec {W} _ {1} ^ {(1)} = <   1. 9 5 3, - 2. 0, - 0. 0 4 7 >
+$$
+
+$$
+\begin{array}{r} w _ {1, 1} ^ {(1)} = w _ {1, 1} ^ {(1)} + (1 \times \delta_ {1} ^ {1} \times x _ {1} ^ {(0)}) \\ = 2 + (1 \times (- 0. 0 4 7) \times 1) = 1. 9 5 3 \end{array}
+$$
+
+$$
+\begin{array}{r} w _ {1, 2} ^ {(1)} = w _ {1, 2} ^ {(1)} + (1 \times \delta_ {1} ^ {1} \times x _ {2} ^ {(0)}) \\ = - 2 + (1 \times (- 0. 0 4 7) \times 0) = - 2. 0 \end{array}
+$$
+
+$$
+\begin{array}{r} w _ {1, 3} ^ {(1)} = w _ {1, 3} ^ {(1)} + (1 \times \delta_ {1} ^ {1} \times x _ {3} ^ {(0)}) \\ = 0 + (1 \times (- 0. 0 4 7) \times 1) = - 0. 0 4 7 \end{array}
+$$
+
+Let's do the calculation of the third weight vector.
+
+$$
+\begin{array}{r l} \vec {W (2)} = & <   2. 8 7 0, - 2. 0 7 4, - 1. 1 4 8 > w _ {1} ^ {(2)} = w _ {1} ^ {(2)} + (1 \times \delta^ {2} \times x _ {1} ^ {(1)}) \\ & = 3 + (1 \times (- 0. 1 4 8) \times 0. 8 8 1) \\ & = 2. 8 7 0 \end{array}
+$$
+
+$$
+\begin{array}{r l} & w _ {2} ^ {(2)} = w _ {2} ^ {(2)} + (1 \times \delta^ {2} \times x _ {2} ^ {(1)}) \\ & \qquad = - 2 + (1 \times (- 0. 1 4 8) \times 0. 5) \\ & \qquad = - 2. 0 7 4 \end{array}
+$$
+
+$$
+\begin{array}{r l} & w _ {3} ^ {(2)} = w _ {3} ^ {(2)} + (1 \times \delta^ {2} \times x _ {3} ^ {(1)}) \\ & \qquad = - 1 + (1 \times (- 0. 1 4 8) \times 1) \\ & \qquad = - 1. 1 4 8 \end{array}
+$$
+
+**A tour of AI:**
+
+- I) AI
+- --- motivation
+- --- intelligent agents
+- II) Problem-Solving
+- --- search techniques
+- --- adversarial search
+- --- reinforcement learning
+
+## Summary, cont. J
+
+**III) Knowledge Representation and Reasoning**
+
+**--- logical agents**
+
+**--- Boolean satisfiability (SAT) solvers**
+
+**--- first-order logic and inference**
+
+## V) Learning
+
+**--- from examples**
+
+**--- decision tree learning (info gain)**
+
+**--- neural networks**
+
+**The field has grown (and continues to grow) exponentially but you have now seen a good part!**
+
+## Have a great winter break!!!!

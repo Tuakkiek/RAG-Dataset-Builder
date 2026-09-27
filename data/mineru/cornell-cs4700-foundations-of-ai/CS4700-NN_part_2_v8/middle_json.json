@@ -1,0 +1,3818 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "CS4700-NN_part_2_v8",
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 31,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.2,
+            0.393,
+            0.919,
+            0.458
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Foundations of Artificial Intelligence"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.739,
+            0.323,
+            0.917,
+            0.381
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "CS 4700:",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.39,
+            0.569,
+            0.618,
+            0.611
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prof. Bart Selman",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.369,
+            0.614,
+            0.638,
+            0.657
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "selman@cs.cornell.edu",
+              "styles": [
+                "underline"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.385,
+            0.703,
+            0.623,
+            0.746
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Machine Learning:",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.396,
+            0.748,
+            0.612,
+            0.787
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Neural Networks",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.436,
+            0.792,
+            0.571,
+            0.831
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "R&N 18.7",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.397,
+            0.837,
+            0.613,
+            0.881
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Backpropagation",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.877,
+            0.955,
+            0.89,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.327,
+            0.153,
+            0.668,
+            0.214
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Backpropagation"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.145,
+            0.244,
+            0.848,
+            0.491
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In order to learn multi-layer neural nets, we need another learning algorithm. (invented ca. 1984) A multi-layer net has one or more hidden layers."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.144,
+            0.537,
+            0.84,
+            0.782
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will consider the backpropagation algorithm for training such networks. See also R&N. Here we will present a more detailed example."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.875,
+            0.954,
+            0.892,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.122,
+            0.114,
+            0.533,
+            0.168
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Based on Nilsson (Stanford)"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.121,
+            0.218,
+            0.871,
+            0.401
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that in the perceptron case, we looked at the output value, compared it to the desired value and changed the weights accordingly."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.121,
+            0.448,
+            0.863,
+            0.691
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We want to do something similar in the multi-layer çase but one difficulty is to determine the error in the outputs of the hidden units. Luckily, we can approximate those errors by"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.122,
+            0.701,
+            0.786,
+            0.878
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "“backpropagating” the final output error. To do so, we need an activition function that is differentiable."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.875,
+            0.955,
+            0.891,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.21,
+            0.243,
+            0.814,
+            0.358
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We use the sigmoid function to compute our output values."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.211,
+            0.404,
+            0.404,
+            0.47
+          ],
+          "image_path": "images/page_3_equation_1.jpg",
+          "content": "f (x) = \\frac {1}{1 + e ^ {- x}}"
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.211,
+            0.513,
+            0.581,
+            0.566
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The derivative of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "f ( x )"
+            },
+            {
+              "type": "text",
+              "content": " is:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.21,
+            0.613,
+            0.586,
+            0.672
+          ],
+          "image_path": "images/page_3_equation_3.jpg",
+          "content": "f ^ {\\prime} (x) = f (x) \\times (1 - f (x))"
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.875,
+            0.955,
+            0.892,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "chart",
+          "index": 0,
+          "bbox": [
+            0.018,
+            0.013,
+            0.747,
+            0.581
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 0,
+              "bbox": [
+                0.018,
+                0.013,
+                0.747,
+                0.581
+              ],
+              "image_path": "images/page_4_chart_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "chart_caption",
+              "index": 1,
+              "bbox": [
+                0.248,
+                0.587,
+                0.727,
+                0.638
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Note: largest derivative at "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "x = 0"
+                }
+              ]
+            },
+            {
+              "type": "chart_caption",
+              "index": 2,
+              "bbox": [
+                0.246,
+                0.649,
+                0.803,
+                0.831
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "That's where neuron is most sensitive to weight changes (effect of changes is well“controlled”)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.875,
+            0.953,
+            0.892,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.118,
+            0.105,
+            0.826,
+            0.285
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Output value of neuron is simply the weighted sum of its input “pushed” through the sigmoid."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.119,
+            0.33,
+            0.414,
+            0.395
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r } { f ( s ) = \\frac { 1 } { 1 + e ^ { - s } } } \\end{array}"
+            },
+            {
+              "type": "text",
+              "content": " 7 where"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.118,
+            0.394,
+            0.412,
+            0.455
+          ],
+          "image_path": "images/page_5_equation_2.jpg",
+          "content": "s = \\sum_ {k = 1} ^ {k = n + 1} w _ {k} \\times x _ {k}"
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.118,
+            0.501,
+            0.823,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Again, we assume the threshold is replaced by an extra input fixed at 1. Inputs: 0 or 1."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.875,
+            0.954,
+            0.892,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "image",
+          "index": 0,
+          "bbox": [
+            0.052,
+            0.03,
+            0.982,
+            0.841
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 0,
+              "bbox": [
+                0.052,
+                0.03,
+                0.982,
+                0.841
+              ],
+              "image_path": "images/page_6_image_0.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_caption",
+              "index": 1,
+              "bbox": [
+                0.059,
+                0.849,
+                0.175,
+                0.889
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Figure 3.5"
+                }
+              ]
+            },
+            {
+              "type": "image_caption",
+              "index": 2,
+              "bbox": [
+                0.057,
+                0.911,
+                0.388,
+                0.951
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "A k-layer Network of Sigmoid Units"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.385,
+            0.015,
+            0.963,
+            0.149
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ok… details backpropagation NOT on exam."
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.051,
+            0.229,
+            0.989,
+            0.365
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "But do work through gradient Setup and notation: descent example on homework."
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.054,
+            0.391,
+            0.292,
+            0.444
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "k-layer network."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.053,
+            0.456,
+            0.251,
+            0.506
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Input vector:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.054,
+            0.512,
+            0.47,
+            0.591
+          ],
+          "image_path": "images/page_7_equation_4.jpg",
+          "content": "{\\vec {X ^ {(0)}}} = <   x _ {1} ^ {(0)}, x _ {2} ^ {(0)}, \\ldots , x _ {m _ {0}} ^ {(0)} >"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.053,
+            0.597,
+            0.716,
+            0.65
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The first layer has "
+            },
+            {
+              "type": "equation_inline",
+              "content": "m _ { 1 }"
+            },
+            {
+              "type": "text",
+              "content": " units and its output is:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 6,
+          "bbox": [
+            0.054,
+            0.655,
+            0.472,
+            0.734
+          ],
+          "image_path": "images/page_7_equation_6.jpg",
+          "content": "X ^ {(1)} = <   f _ {1} ^ {(1)}, f _ {2} ^ {(1)}, \\dots , f _ {m _ {1}} ^ {(1)} >"
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.054,
+            0.74,
+            0.757,
+            0.857
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The weights for the ith unit in the first layer are given by:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 8,
+          "bbox": [
+            0.052,
+            0.859,
+            0.507,
+            0.95
+          ],
+          "image_path": "images/page_7_equation_8.jpg",
+          "content": "\\vec {W _ {i} ^ {(1)}} = <   w _ {1, i} ^ {(1)}, w _ {2, i} ^ {(1)}, \\dots , w _ {m _ {0}, i} ^ {(1)} >"
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.876,
+            0.953,
+            0.892,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.058,
+            0.137,
+            0.576,
+            0.276
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "These outputs "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\stackrel { \\longrightarrow } { X ^ { ( 1 ) } }"
+            },
+            {
+              "type": "text",
+              "content": " are fed into the second layer of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "m _ { 2 }"
+            },
+            {
+              "type": "text",
+              "content": " units."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.059,
+            0.286,
+            0.526,
+            0.405
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The number of units in the j-th layer is "
+            },
+            {
+              "type": "equation_inline",
+              "content": "m _ { j }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.059,
+            0.427,
+            0.95,
+            0.556
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In general, the weight vector of unit i in the j-th layer is "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { i } ^ { ( j ) }"
+            },
+            {
+              "type": "text",
+              "content": " with components "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { l , i } ^ { j }"
+            },
+            {
+              "type": "text",
+              "content": " for "
+            },
+            {
+              "type": "equation_inline",
+              "content": "l = 1 , m _ { ( j - 1 ) } + 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.059,
+            0.564,
+            0.681,
+            0.617
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that the previous layer had "
+            },
+            {
+              "type": "equation_inline",
+              "content": "m _ { ( j - 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " units"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.118,
+            0.626,
+            0.886,
+            0.807
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(and thus outputs) all connected to each unit in the j-th layer. We use one additional weight and fixed input to model the threshold. (Not given on previous slide.)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.875,
+            0.954,
+            0.891,
+            0.981
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.12,
+            0.096,
+            0.875,
+            0.311
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The weighted sum of the inputs to i-th sigmoid unit in the j-th layer is denoted by "
+            },
+            {
+              "type": "equation_inline",
+              "content": "s _ { i } ^ { ( j ) }"
+            },
+            {
+              "type": "text",
+              "content": " The output is "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { r } { f _ { i } ^ { ( j ) } = \\frac { 1 } { 1 + e ^ { - s _ { i } ^ { ( j ) } } } } \\end{array}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.121,
+            0.348,
+            0.262,
+            0.397
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We have:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.121,
+            0.403,
+            0.394,
+            0.481
+          ],
+          "image_path": "images/page_9_equation_2.jpg",
+          "content": "s _ {i} ^ {(j)} = \\vec {X ^ {(j - 1)}}. \\vec {W ^ {(j)}}"
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.12,
+            0.532,
+            0.654,
+            0.583
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We used the vector dot product, i.e.,"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.123,
+            0.585,
+            0.559,
+            0.657
+          ],
+          "image_path": "images/page_9_equation_4.jpg",
+          "content": "s _ {i} ^ {(j)} = \\sum_ {l = 1} ^ {l = m _ {(j - 1)} + 1} x _ {l} ^ {(j - 1)} \\times w _ {l, j} ^ {(j)}"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.12,
+            0.655,
+            0.63,
+            0.717
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "x _ { l } ^ { ( j - 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the output of unit l in the"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.178,
+            0.716,
+            0.854,
+            0.843
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "previous layer. It's connected with weight "
+            },
+            {
+              "type": "equation_inline",
+              "content": "w _ { l , i } ^ { ( j ) }"
+            },
+            {
+              "type": "text",
+              "content": " to the i-th unit in the j-th layer."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.872,
+            0.953,
+            0.898,
+            0.984
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.073,
+            0.211,
+            0.92,
+            0.391
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: again, concerning the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "``+1''"
+            },
+            {
+              "type": "text",
+              "content": " here, we assume that an extra "
+            },
+            {
+              "type": "equation_inline",
+              "content": "`` 1 ''"
+            },
+            {
+              "type": "text",
+              "content": " is added to the input vector and an extra weight, to model the threshold."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.073,
+            0.441,
+            0.677,
+            0.493
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Finally, the k-th layer is the output layer."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.136,
+            0.501,
+            0.786,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "It has a single unit with input "
+            },
+            {
+              "type": "equation_inline",
+              "content": "s ^ { ( k ) }"
+            },
+            {
+              "type": "text",
+              "content": " (weighted sum) and output value "
+            },
+            {
+              "type": "equation_inline",
+              "content": "f ^ { ( k ) } = f"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.872,
+            0.954,
+            0.895,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.065,
+            0.096,
+            0.805,
+            0.217
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The objective of the backprogation algorithm is to minimize the output error on each example"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.064,
+            0.263,
+            0.503,
+            0.315
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "That is, we want to minimize:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.068,
+            0.324,
+            0.197,
+            0.381
+          ],
+          "image_path": "images/page_11_equation_2.jpg",
+          "content": "(L - f) ^ {2}"
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.065,
+            0.389,
+            0.804,
+            0.572
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Where, L the label (0 or 1) of the input example under consideration and f is the output of the network given that example."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.583,
+            0.962,
+            0.825
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: we will update the weights after each example An alternative approach considers the combined error over the total training set and update after seeing all examples. In the limit the approaches are the same."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.871,
+            0.953,
+            0.898,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.123,
+            0.133,
+            0.925,
+            0.443
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A key observation is that the error "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( L - f ) ^ { 2 }"
+            },
+            {
+              "type": "text",
+              "content": " is only a function of the weights. Note: the number of units etc. is fixed Also, the inputs are fixed, since we are considering a particular example."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.126,
+            0.49,
+            0.829,
+            0.607
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The idea is now to do a gradient descent in the weight space to minimize the error."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.125,
+            0.66,
+            0.765,
+            0.771
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The derivation (basically calculus) is somewhat involved but not difficult."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.112,
+            0.823,
+            0.842,
+            0.873
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "It’s “just” multivariate (or multivariable) calculus.",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.872,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.032,
+            0.087,
+            0.271,
+            0.249
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Optimization and gradient descent."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.035,
+            0.3,
+            0.214,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider x and y our two weights",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { f } ( \\mathbf { x } , \\mathbf { y } )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "text",
+              "content": "the error signal.",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.035,
+            0.674,
+            0.254,
+            0.939
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Multi-layer network: composition of sigmoids",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "; "
+            },
+            {
+              "type": "text",
+              "content": "use chain rule.",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.307,
+            0.067,
+            0.811,
+            0.651
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.307,
+                0.067,
+                0.811,
+                0.651
+              ],
+              "image_path": "images/page_13_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.309,
+            0.728,
+            0.807,
+            0.871
+          ],
+          "image_path": "images/page_13_equation_4.jpg",
+          "content": "\\nabla f = \\frac {\\partial f}{\\partial x _ {1}} \\mathbf {e} _ {1} + \\dots + \\frac {\\partial f}{\\partial x _ {n}} \\mathbf {e} _ {n}"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.785,
+            0.007,
+            0.994,
+            0.328
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: For decent we want to go in opposite direction of gradient.",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.871,
+            0.953,
+            0.898,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.028,
+            0.007,
+            0.439,
+            0.479
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Gradient descent is based on the observation that if the multivariable function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F ( \\mathbf { x } )"
+            },
+            {
+              "type": "text",
+              "content": " is defined and differentiable in a neighborhood of a point a, then "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F ( \\mathbf { x } )"
+            },
+            {
+              "type": "text",
+              "content": " decreases fastest if one goes from a in the direction of the negative gradient of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F"
+            },
+            {
+              "type": "text",
+              "content": " at "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { a } , - \\nabla F ( \\mathbf { a } )"
+            },
+            {
+              "type": "text",
+              "content": " . It follows that, if"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.069,
+            0.495,
+            0.364,
+            0.557
+          ],
+          "image_path": "images/page_14_equation_1.jpg",
+          "content": "\\mathbf {b} = \\mathbf {a} - \\gamma \\nabla F (\\mathbf {a})"
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.028,
+            0.573,
+            0.436,
+            0.886
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "for "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\gamma"
+            },
+            {
+              "type": "text",
+              "content": " small enough, then "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F ( \\mathbf { a } ) \\geq F ( \\mathbf { b } )"
+            },
+            {
+              "type": "text",
+              "content": " . With this observation in mind, one starts with a guess "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { x } _ { 0 }"
+            },
+            {
+              "type": "text",
+              "content": " for a local minimum of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "F ,"
+            },
+            {
+              "type": "text",
+              "content": " , and considers the sequence "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { x } _ { 0 } , \\mathbf { x } _ { 1 } , \\mathbf { x } _ { 2 } , \\ldots"
+            },
+            {
+              "type": "text",
+              "content": " . such that"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.51,
+            0.001,
+            0.938,
+            0.171
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Reminder: Gradient descent optimization. (Wikipedia)"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 4,
+          "bbox": [
+            0.531,
+            0.183,
+            0.903,
+            0.705
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 4,
+              "bbox": [
+                0.531,
+                0.183,
+                0.903,
+                0.705
+              ],
+              "image_path": "images/page_14_image_4.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 5,
+          "bbox": [
+            0.469,
+            0.729,
+            0.928,
+            0.784
+          ],
+          "image_path": "images/page_14_equation_5.jpg",
+          "content": "\\mathbf {x} _ {n + 1} = \\mathbf {x} _ {n} - \\gamma_ {n} \\nabla F (\\mathbf {x} _ {n}), n \\geq 0."
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.438,
+            0.794,
+            0.533,
+            0.832
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We have"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.471,
+            0.845,
+            0.928,
+            0.904
+          ],
+          "image_path": "images/page_14_equation_7.jpg",
+          "content": "F (\\mathbf {x} _ {0}) \\geq F (\\mathbf {x} _ {1}) \\geq F (\\mathbf {x} _ {2}) \\geq \\dots ,"
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.112,
+            0.945,
+            0.998,
+            1.0
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "so hopefully the sequence "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\left( \\mathbf { x } _ { n } \\right)"
+            },
+            {
+              "type": "text",
+              "content": " converges to the desired local minimum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.132,
+            0.083,
+            0.812,
+            0.135
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Here we just give the results of the calculation."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.132,
+            0.187,
+            0.815,
+            0.239
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "First, the weight adjustment for the single unit"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.196,
+            0.251,
+            0.65,
+            0.301
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "in the output layer is given by:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.133,
+            0.298,
+            0.86,
+            0.419
+          ],
+          "image_path": "images/page_15_equation_3.jpg",
+          "content": "\\vec {W ^ {(k)}} \\leftarrow \\vec {W ^ {(k)}} + \\alpha \\times (d - f) \\times f \\times (1 - f) \\times \\vec {X ^ {(k - 1)}}"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.132,
+            0.431,
+            0.904,
+            0.484
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: f is the output of the unit; d is desired output."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.132,
+            0.494,
+            0.894,
+            0.547
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This rule is analogous to the perceptron rule, except"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.196,
+            0.558,
+            0.707,
+            0.609
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "that we are now using the sigmoid."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.132,
+            0.621,
+            0.582,
+            0.675
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The (d — f) is the error signal."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.131,
+            0.685,
+            0.909,
+            0.739
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "α is the learning rate (a constant chosen by the user)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.132,
+            0.747,
+            0.903,
+            0.801
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "f \\times ( 1 - f )"
+            },
+            {
+              "type": "text",
+              "content": " comes from the derivative of the sigmoid."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.132,
+            0.824,
+            0.875,
+            0.88
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "X ^ { ( k - 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the input to the unit under consideration."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.871,
+            0.954,
+            0.898,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.089,
+            0.118,
+            0.868,
+            0.235
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "So, again we're adding (subtracting) the input vector, depending on (d – f)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.09,
+            0.243,
+            0.76,
+            0.361
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Please check for yourself that the correction is in the right direction!"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.091,
+            0.371,
+            0.933,
+            0.613
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We’re basically going to do something similar for the weights in the hidden layer. The only problem is that we don’t have a direct measure of the error in the outputs on the hidden units."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.09,
+            0.624,
+            0.885,
+            0.803
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "However, we can estimate those errors by considering the constribution (an estimate) of each unit to the final output value (layer k)."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.871,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.074,
+            0.075,
+            0.827,
+            0.129
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Starting with the final layer and moving backwards,"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.138,
+            0.139,
+            0.808,
+            0.191
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "we compute for the i-th unit in the j-th layer:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.075,
+            0.231,
+            0.581,
+            0.299
+          ],
+          "image_path": "images/page_17_equation_2.jpg",
+          "content": "\\delta_ {i} ^ {(j)} = f _ {i} ^ {j} (1 - f _ {i} ^ {j}) \\sum_ {l = 1} ^ {m _ {j + 1}} \\delta_ {l} ^ {(j + 1)} w _ {i, l} ^ {(j + 1)}"
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.074,
+            0.302,
+            0.735,
+            0.36
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that "
+            },
+            {
+              "type": "equation_inline",
+              "content": "f _ { i } ^ { ( j ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the output value of the unit."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.074,
+            0.371,
+            0.63,
+            0.421
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "So, the δ for a unit in the i-th layer is"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.138,
+            0.433,
+            0.942,
+            0.487
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "computed by considering the delta in the i + 1-th layer."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.074,
+            0.535,
+            0.596,
+            0.586
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The base case is the output layer k:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.075,
+            0.592,
+            0.481,
+            0.656
+          ],
+          "image_path": "images/page_17_equation_7.jpg",
+          "content": "\\delta^ {(k)} = (d - f) \\times f \\times (1 - f)"
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.073,
+            0.664,
+            0.723,
+            0.715
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I.e., the real output error times the gradient."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.075,
+            0.725,
+            0.927,
+            0.779
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This values is propagated backwards to get error measures"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.138,
+            0.789,
+            0.838,
+            0.843
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "for the internal units (times the gradient again)."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.872,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.139,
+            0.064,
+            0.779,
+            0.182
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Finally, using these "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\delta ^ { \\flat } \\mathbf { s } ."
+            },
+            {
+              "type": "text",
+              "content": " , we can compute the weight updates for the hidden units:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.138,
+            0.22,
+            0.582,
+            0.309
+          ],
+          "image_path": "images/page_18_equation_1.jpg",
+          "content": "\\vec {W _ {i} ^ {(j)}} \\leftarrow \\vec {W _ {i} ^ {(j)}} + \\alpha \\times \\delta_ {i} ^ {j} \\times \\vec {X} ^ {(j - 1)}"
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.139,
+            0.357,
+            0.856,
+            0.54
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Verify that this rule is consistent with the update rule for the final node. (Check j = k; drop i, since only one unit in layer.)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.152,
+            0.579,
+            0.801,
+            0.739
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "So, first we “backpropagate” the error signal, and then we update the weights, layer by layer.",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.168,
+            0.767,
+            0.795,
+            0.927
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "That’s why it’s called “backprop learning.” Now changing speech recognition, image recognition etc.!",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.872,
+            0.953,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.134,
+            0.288,
+            0.841,
+            0.467
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Although, the rules are somewhat intuitive, only by doing the full derivation, can one explain all the terms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.134,
+            0.519,
+            0.778,
+            0.631
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let us consider an example of the procedure in action."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.87,
+            0.953,
+            0.898,
+            0.984
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.356,
+            0.101,
+            0.581,
+            0.151
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Trace example!"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.082,
+            0.499,
+            0.24,
+            0.559
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Figure 3.6"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.081,
+            0.591,
+            0.264,
+            0.748
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A Network to Be Trained by Backprop"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.277,
+            0.265,
+            0.943,
+            0.743
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.277,
+                0.265,
+                0.943,
+                0.743
+              ],
+              "image_path": "images/page_20_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.87,
+            0.953,
+            0.895,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.147,
+            0.129,
+            0.552,
+            0.183
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We have two layers "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( k = 2 )"
+            },
+            {
+              "type": "text",
+              "content": " à"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.147,
+            0.192,
+            0.672,
+            0.312
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Two units in first layer, with a total of three inputs "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( x _ { 1 } ^ { ( 0 ) } , x _ { 2 } ^ { ( 0 ) } , x _ { 3 } ^ { ( 0 ) } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.211,
+            0.311,
+            0.534,
+            0.373
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "x _ { 3 } ^ { ( 0 ) }"
+            },
+            {
+              "type": "text",
+              "content": " will be fixed to 1."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.146,
+            0.383,
+            0.803,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The two units in the first layer are connected to a node in the final layer. This node has three inputs: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( x _ { 1 } ^ { ( 1 ) } , x _ { 2 } ^ { ( 1 ) } , x _ { 3 } ^ { ( 1 ) } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.147,
+            0.566,
+            0.852,
+            0.628
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "x _ { 1 } ^ { ( 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the output of the 1st unit in the 1st layer."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.147,
+            0.631,
+            0.872,
+            0.693
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "x _ { 2 } ^ { ( 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the output of the 2nd unit in the 2nd layer."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.147,
+            0.694,
+            0.396,
+            0.754
+          ],
+          "content": [
+            {
+              "type": "equation_inline",
+              "content": "x _ { 3 } ^ { ( 1 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is fixed at 1."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.146,
+            0.765,
+            0.675,
+            0.819
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note the given weights in the figure."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.87,
+            0.953,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.128,
+            0.183,
+            0.777,
+            0.299
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We want to train the network to capture the following patterns:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.126,
+            0.337,
+            0.686,
+            0.402
+          ],
+          "image_path": "images/page_22_equation_1.jpg",
+          "content": "\\text {ex 1.)} x _ {1} ^ {(0)} = 1, x _ {2} ^ {(0)} = 0, x _ {3} ^ {(0)} = 1, d = 0"
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.126,
+            0.403,
+            0.684,
+            0.466
+          ],
+          "image_path": "images/page_22_equation_2.jpg",
+          "content": "\\mathrm{ex2.)} x _ {1} ^ {(0)} = 0, x _ {2} ^ {(0)} = 0, x _ {3} ^ {(0)} = 1, d = 1"
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.126,
+            0.468,
+            0.686,
+            0.529
+          ],
+          "image_path": "images/page_22_equation_3.jpg",
+          "content": "\\mathrm{ex3.)} x _ {1} ^ {(0)} = 0, x _ {2} ^ {(0)} = 1, x _ {3} ^ {(0)} = 1, d = 0"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.125,
+            0.531,
+            0.684,
+            0.595
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "ex 4.) "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { 1 } ^ { ( 0 ) } = 1 , x _ { 2 } ^ { ( 0 ) } = 1 , x _ { 3 } ^ { ( 0 ) } = 1 , d = 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.127,
+            0.636,
+            0.877,
+            0.761
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Again, d is the desired output; "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { 3 } ^ { ( 0 ) }"
+            },
+            {
+              "type": "text",
+              "content": " is the fixed unit. Let's consider the update after the first pattern."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.87,
+            0.953,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.113,
+            0.243,
+            0.876,
+            0.359
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ex 1.) gives input vector "
+            },
+            {
+              "type": "equation_inline",
+              "content": "< 1 , 0 , 1 >"
+            },
+            {
+              "type": "text",
+              "content": " , which leads via the sigmoid to the following output values:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.114,
+            0.399,
+            0.412,
+            0.47
+          ],
+          "image_path": "images/page_23_equation_1.jpg",
+          "content": "f _ {1} ^ {(1)} = \\frac {1}{1 + e ^ {- 2}} = 0. 8 8 1"
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.467,
+            0.383,
+            0.533
+          ],
+          "image_path": "images/page_23_equation_2.jpg",
+          "content": "f _ {2} ^ {(1)} = \\frac {1}{1 + e ^ {- 0}} = 0. 5"
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.113,
+            0.534,
+            0.587,
+            0.599
+          ],
+          "image_path": "images/page_23_equation_3.jpg",
+          "content": "f = \\frac {1}{1 + e ^ {- (3 \\times 0 . 8 8 1 + (- 2) \\times 0 . 5 - 1)}} = 0. 6 6 5"
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.87,
+            0.953,
+            0.898,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.104,
+            0.131,
+            0.673,
+            0.181
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We now compute the values for the δ’s."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.103,
+            0.195,
+            0.39,
+            0.241
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "First the base case:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.103,
+            0.294,
+            0.819,
+            0.35
+          ],
+          "image_path": "images/page_24_equation_2.jpg",
+          "content": "\\delta^ {(2)} = (0 - 0. 6 6 5) \\times 0. 6 6 5 \\times (1 - 0. 6 6 5) = - 0. 1 4 8"
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.104,
+            0.4,
+            0.738,
+            0.453
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Backpropagating through the weights gives:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.103,
+            0.495,
+            0.842,
+            0.623
+          ],
+          "image_path": "images/page_24_equation_4.jpg",
+          "content": "\\begin{array}{l} \\delta_ {1} ^ {(1)} = 0. 8 8 1 \\times (1 - 0. 8 8 1) \\times (- 0. 1 4 8 \\times 3) = - 0. 0 4 7 \\\\ \\delta_ {2} ^ {(1)} = 0. 5 \\times (1 - 0. 5) \\times (- 0. 1 4 8 \\times - 2) = 0. 0 7 4 \\end{array}"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.104,
+            0.673,
+            0.609,
+            0.721
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Double-check at least one of these!"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.87,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.108,
+            0.207,
+            0.93,
+            0.325
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "After computing the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\delta ^ { \\flat } \\mathbf { s } ,"
+            },
+            {
+              "type": "text",
+              "content": " we can now update the weights. (Use learning rate "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha = 1 . )"
+            },
+            {
+              "type": "text",
+              "content": " We get for the new weights:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.106,
+            0.362,
+            0.585,
+            0.616
+          ],
+          "image_path": "images/page_25_equation_1.jpg",
+          "content": "\\begin{array}{l}\\stackrel {\\rightarrow} {W _ {1} ^ {(1)}} = <   1. 9 5 3, - 2. 0, - 0. 0 4 7 >\\\\\\stackrel {\\rightarrow} {W _ {2} ^ {(1)}} = <   1. 0 7 4, 3. 0, - 0. 9 2 6 >\\\\\\stackrel {\\rightarrow} {W ^ {(2)}} = <   2. 8 7 0, - 2. 0 7 4, - 1. 1 4 8 >\\end{array}"
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.87,
+            0.953,
+            0.898,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.264,
+            0.234,
+            0.74,
+            0.285
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Aside: the original weights were:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.263,
+            0.285,
+            0.643,
+            0.53
+          ],
+          "image_path": "images/page_26_equation_1.jpg",
+          "content": "\\begin{array}{l} \\vec {W} _ {1} ^ {(1)} = <   2. 0, - 2. 0, 0. 0 > \\\\ \\vec {W} _ {2} ^ {(1)} = <   1. 0, 3. 0, - 1. 0 > \\\\ \\vec {W} ^ {(2)} = <   3. 0, - 2. 0, - 1. 0 > \\end{array}"
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.87,
+            0.953,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.097,
+            0.143,
+            0.928,
+            0.193
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let's do an example calculation of the first weight vector."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.098,
+            0.195,
+            0.55,
+            0.276
+          ],
+          "image_path": "images/page_27_equation_1.jpg",
+          "content": "\\vec {W} _ {1} ^ {(1)} = <   1. 9 5 3, - 2. 0, - 0. 0 4 7 >"
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.097,
+            0.314,
+            0.717,
+            0.445
+          ],
+          "image_path": "images/page_27_equation_2.jpg",
+          "content": "\\begin{array}{r} w _ {1, 1} ^ {(1)} = w _ {1, 1} ^ {(1)} + (1 \\times \\delta_ {1} ^ {1} \\times x _ {1} ^ {(0)}) \\\\ = 2 + (1 \\times (- 0. 0 4 7) \\times 1) = 1. 9 5 3 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.097,
+            0.481,
+            0.735,
+            0.612
+          ],
+          "image_path": "images/page_27_equation_3.jpg",
+          "content": "\\begin{array}{r} w _ {1, 2} ^ {(1)} = w _ {1, 2} ^ {(1)} + (1 \\times \\delta_ {1} ^ {1} \\times x _ {2} ^ {(0)}) \\\\ = - 2 + (1 \\times (- 0. 0 4 7) \\times 0) = - 2. 0 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.097,
+            0.647,
+            0.742,
+            0.779
+          ],
+          "image_path": "images/page_27_equation_4.jpg",
+          "content": "\\begin{array}{r} w _ {1, 3} ^ {(1)} = w _ {1, 3} ^ {(1)} + (1 \\times \\delta_ {1} ^ {1} \\times x _ {3} ^ {(0)}) \\\\ = 0 + (1 \\times (- 0. 0 4 7) \\times 1) = - 0. 0 4 7 \\end{array}"
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.87,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.082,
+            0.145,
+            0.812,
+            0.193
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let's do the calculation of the third weight vector."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.083,
+            0.201,
+            0.973,
+            0.394
+          ],
+          "image_path": "images/page_28_equation_1.jpg",
+          "content": "\\begin{array}{r l} \\vec {W (2)} = & <   2. 8 7 0, - 2. 0 7 4, - 1. 1 4 8 > w _ {1} ^ {(2)} = w _ {1} ^ {(2)} + (1 \\times \\delta^ {2} \\times x _ {1} ^ {(1)}) \\\\ & = 3 + (1 \\times (- 0. 1 4 8) \\times 0. 8 8 1) \\\\ & = 2. 8 7 0 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 2,
+          "bbox": [
+            0.083,
+            0.434,
+            0.629,
+            0.623
+          ],
+          "image_path": "images/page_28_equation_2.jpg",
+          "content": "\\begin{array}{r l} & w _ {2} ^ {(2)} = w _ {2} ^ {(2)} + (1 \\times \\delta^ {2} \\times x _ {2} ^ {(1)}) \\\\ & \\qquad = - 2 + (1 \\times (- 0. 1 4 8) \\times 0. 5) \\\\ & \\qquad = - 2. 0 7 4 \\end{array}"
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.083,
+            0.666,
+            0.606,
+            0.852
+          ],
+          "image_path": "images/page_28_equation_3.jpg",
+          "content": "\\begin{array}{r l} & w _ {3} ^ {(2)} = w _ {3} ^ {(2)} + (1 \\times \\delta^ {2} \\times x _ {3} ^ {(1)}) \\\\ & \\qquad = - 1 + (1 \\times (- 0. 1 4 8) \\times 1) \\\\ & \\qquad = - 1. 1 4 8 \\end{array}"
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.87,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.717,
+            0.101,
+            0.958,
+            0.164
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Summary J"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.13,
+            0.255,
+            0.293,
+            0.295
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A tour of AI:",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "index",
+          "index": 2,
+          "bbox": [
+            0.128,
+            0.358,
+            0.504,
+            0.782
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "I) AI"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "--- motivation"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "--- intelligent agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "II) Problem-Solving"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "--- search techniques"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "--- adversarial search"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "--- reinforcement learning"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.871,
+            0.954,
+            0.897,
+            0.983
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.602,
+            0.058,
+            0.959,
+            0.121
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Summary, cont. J"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.103,
+            0.154,
+            0.666,
+            0.199
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "III) Knowledge Representation and Reasoning",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.151,
+            0.209,
+            0.358,
+            0.253
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- logical agents",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.151,
+            0.261,
+            0.614,
+            0.305
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- Boolean satisfiability (SAT) solvers",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.15,
+            0.315,
+            0.555,
+            0.359
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- first-order logic and inference",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 5,
+          "bbox": [
+            0.104,
+            0.42,
+            0.283,
+            0.466
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "V) Learning"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.159,
+            0.475,
+            0.381,
+            0.519
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- from examples",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.159,
+            0.528,
+            0.588,
+            0.572
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- decision tree learning (info gain)",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.16,
+            0.584,
+            0.4,
+            0.623
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "--- neural networks",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.103,
+            0.687,
+            0.897,
+            0.787
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The field has grown (and continues to grow) exponentially but you have now seen a good part!",
+              "styles": [
+                "bold"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.28,
+            0.825,
+            0.773,
+            0.881
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Have a great winter break!!!!"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.87,
+            0.954,
+            0.895,
+            0.984
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "31"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}
