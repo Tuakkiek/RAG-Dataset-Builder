@@ -1,0 +1,875 @@
+<!-- page: 1 -->
+
+**CS 4700:**
+
+# Foundations of Artificial Intelligence
+
+**Bart Selman**
+
+**selman@cs.cornell.edu**
+
+**Module: Knowledge, Reasoning, and Planning Part 2**
+
+**Logical Agents**
+
+**R&N: Chapter 7**
+
+<!-- page: 2 -->
+
+# Illustrative example: Wumpus World
+
+## Performance measure
+
+(Somewhat whimsical!)
+
+– **gold +1000,**
+
+– **death -1000**
+
+**(falling into a pit or being eaten by the wumpus)**
+
+– **-1 per step, -10 for using the arrow**
+
+## Environment
+
+– **Rooms / squares connected by doors.**
+
+– **Squares adjacent to wumpus are smelly**
+
+– **Squares adjacent to pit are breezy**
+
+– **Glitter iff gold is in the same square**
+
+– **Shooting kills wumpus if you are facing it**
+
+– **Shooting uses up the only arrow**
+
+– **Grabbing picks up gold if in same square**
+
+– **Releasing drops the gold in same square**
+
+![](images/page_1_image_17.jpg)
+
+– **Randomly generated at start of game. Wumpus only senses current room.**
+
+**Sensors: Stench, Breeze, Glitter, Bump, Scream [perceptual inputs]**
+
+**Actuators: Left turn, Right turn, Forward, Grab, Release, Shoot**
+
+<!-- page: 3 -->
+
+# Wumpus world characterization
+
+<strong><u>Fully Observable</u></strong> **No – only local perception**
+
+<strong><u>Deterministic</u></strong> **Yes – outcomes exactly specified**
+
+<strong><u>Static</u></strong> **Yes – Wumpus and Pits do not move**
+
+<strong><u>Discrete</u></strong> **Yes**
+
+<strong><u>Single-agent?</u></strong> **Yes – Wumpus is essentially a “natural feature.”**
+
+<!-- page: 4 -->
+
+## Exploring a wumpus world
+
+![](images/page_3_image_1.jpg)
+
+**The** <strong><u>knowledge base</u></strong> **of the agent consists of the rules of the Wumpus world plus the percept “nothing” in [1,1]**
+
+**None, none, none, none, none**
+
+Boolean percept feature values: <0, 0, 0, 0, 0>
+
+Stench, Breeze, Glitter, Bump, Scream
+
+<!-- page: 5 -->
+
+![](images/page_4_image_0.jpg)
+
+None, none, none, none, none
+
+Stench, Breeze, Glitter, Bump, Scream
+
+**World “known” to agent at time = 0.**
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK |  |  |  |
+| OKA | OK |  |  |
+
+T=0 The KB of the agent consists of the rules of the Wumpus world plus the percept “nothing” in [1,1]. By inference, the agent’s knowledge base also has the information that [1,2] and [2,1] are okay. Added as propositions. 5
+
+<!-- page: 6 -->
+
+## Further exploration
+
+T = 0
+
+![](images/page_5_image_2.jpg)
+
+None, none, none, none, none
+
+![](images/page_5_image_4.jpg)
+
+Stench, Breeze, Glitter, Bump, Scream
+
+Where next?
+
+T = 1
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+None, breeze, none, none, none
+
+**A – agent**
+
+**V – visited**
+
+**B - breeze**
+
+**@ T = 1 What follows? Pit(2,2) or Pit(3,1)**
+
+<!-- page: 7 -->
+
+![](images/page_6_image_0.jpg)
+
+T=3
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| W |  |  |  |
+| B S OK A | P |  |  |
+| OK A | OK | P |  |
+
+Stench, none, none, none, none
+
+Stench, Breeze, Glitter, Bump, Scream
+
+**Where is Wumpus?**
+
+**Wumpus cannot be in (1,1) or in (2,2) (Why?)**è **Wumpus in (1,3) Not breeze in (1,2)** è **no pit in (2,2); but we know there is pit in (2,2) or (3,1)** è **pit in (3,1)**
+
+<!-- page: 8 -->
+
+**We reasoned about the possible states the Wumpus world can be in, given our percepts and our knowledge of the rules of the Wumpus world. I.e., the content of KB at T=3.**
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| W |  |  |  |
+| B OKA↑ | P |  |  |
+| OKA | OK | P |  |
+
+**What follows is what holds true in all those worlds that satisfy what is known at that time T=3 about the particular Wumpus world we are in.**
+
+Example property: P\_in\_(3,1)
+
+**Models(KB) Models(P\_in\_(3,1))**
+
+**Essence of logical reasoning: Given all we know, Pit\_in\_(3,1) holds. (“The world cannot be different.”)**
+
+<!-- page: 9 -->
+
+## Formally: Entailment
+
+**Knowledge Base (KB) in the Wumpus World** à **Rules of the wumpus world + new percepts**
+
+**Situation after detecting nothing in [1,1], moving right, breeze in [2,1]. I.e. T=1.**
+
+**Consider possible models for KB with respect to the cells (1,2), (2,2) and (3,1), with** <strong><u>respect to the existence or non existence of pits</u></strong>
+
+**3 Boolean choices** Þ
+
+**8 possible interpretations (enumerate all the models or “possible worlds” wrt Pit location)**
+
+T = 1
+
+![](images/page_8_image_7.jpg)
+
+![](images/page_8_image_8.jpg)
+
+<!-- page: 10 -->
+
+## Is KB consistent with all 8 possible worlds?
+
+**Worlds that violate KB (are inconsistent with what we know)**
+
+![](images/page_9_image_2.jpg)
+
+**KB = Wumpus-world rules + observations (T=1)**
+
+Q: Why does world
+
+violate KB?
+
+<!-- page: 11 -->
+
+## Entailment in Wumpus World
+
+**So, KB defines all worlds that we hold possible.**
+
+**Queries: we want to know the properties of those worlds**.
+
+**That’s how the semantics of logical entailment is defined.**
+
+Models of the KB and α1
+
+![](images/page_10_image_5.jpg)
+
+Note: \alpha\_1 holds in more models than KB. That’s OK, but we don’t care about those worlds.
+
+**KB = Wumpus-world rules + observations**
+
+$\mathfrak { a } _ { 1 } = \mathrm { { } ^ { \prime \prime } [ 1 , } 2 \mathrm { ] }$ has no pit", $\kappa _ { B } \models \alpha _ { 1 }$
+
+– In every model in which KB is true, $\mathbf { u _ { 1 } }$ is True (proved $\mathbf { b } _ { \mathbf { j } _ { 1 } }$ **“model checking”)**
+
+<!-- page: 12 -->
+
+**Wumpus models KB = wumpus-world rules + observations** $\mathfrak { a } 2 = \verb [ 2 , 2 ]$ **has no pit", this is only True in some** of the models for which KB is True, therefore KB $\mu a 2$
+
+![](images/page_11_image_1.jpg)
+
+A model of KB where α2 does NOT hold!
+
+<!-- page: 13 -->
+
+## Entailment via “Model Checking”
+
+**Inference by Model checking –**
+
+**We enumerate all the KB models and check if** $\mathbf { u _ { 1 } }$ **and** $\mathbf { u } _ { 2 }$ **are True in all the models (which implies that we can only use it when we have a finite number of models).**
+
+**I.e. using semantics directly.**
+
+$$
+\text {Models} (\mathrm{KB}) \subseteq \text {Models} (\alpha)
+$$
+
+$$
+K B \models \alpha
+$$
+
+<!-- page: 14 -->
+
+## Example redux: More formal
+
+![](images/page_13_image_1.jpg)
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK |  |  |  |
+| OKA | OK |  |  |
+
+**None, none, none, none, none**
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+Stench, Breeze, Glitter, Bump, Scream
+
+**None, breeze, none, none, none**
+
+**A – agent**
+
+**V – visited**
+
+**B - breeze**
+
+**How do we actually encode background knowledge and percepts in formal language?**
+
+<!-- page: 15 -->
+
+## Wumpus World KB
+
+**Define propositions:**
+
+**Let** $\mathrm { P _ { i , j } }$ **be true if there is a pit in [i, j].**
+
+**Let** $\mathrm { B _ { i , j } }$ **be true if there is a breeze in [i, j].**
+
+**Sentence 1 (R1):** $\neg \operatorname { P } _ { 1 , 1 }$
+
+**Sentence 2 (R2):** $\neg \; \mathrm { B _ { 1 , 1 } }$
+
+[Given.]
+
+[Observation T = 0.]
+
+**Sentence 3 (R3):** $\mathrm { B } _ { 2 , 1 }$
+
+[Observation T = 1.]
+
+**"Pits cause breezes in adjacent squares”**
+
+**Sentence 4 (R4):** $\mathbb { B } _ { 1 , 1 } \Leftrightarrow ( \mathbb { P } _ { 1 , 2 } \lor \mathbb { P } _ { 2 , 1 } )$
+
+**Sentence 5 (R5):** $\mathbb { B } _ { 2 , 1 } \Leftrightarrow   ( \mathbb { P } _ { 1 , 1 } \lor \mathbb { P } _ { 2 , 2 } \lor \mathbb { P } _ { 3 , 1 } )$ **etc.**
+
+**Notes: (1) one such statement about Breeze for each square.**
+
+**(2) similar statements about Wumpus, and stench and Gold and glitter. (Need more propositional letters.)**
+
+<!-- page: 16 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+What about Time? What about Actions?
+Is Time represented?
+No!
+Can include time in propositions:
+Explicit time $P_{i,j,t}$ $B_{i,j,t}$ $L_{i,j,t}$ etc.
+Many more props: O(TN$^{2}$) (L$_{i,j,t}$ for agent at (i,j) at time t)
+Now, we can also model actions, use props: Move(i, j, k, l ,t)
+E.g. Move(1, 1, 2, 1, 0)
+What knowledge axiom(s) capture(s) the effect of an Agent move?
+Move(i, j, k, l ,t) ⇒ (∃ L(i, j, t+1) ∧ L(k, l, t+1))
+Is this it?
+What about i, j, k, and l?
+What about Agent location at time t?
+</div>
+
+<!-- page: 17 -->
+
+**Improved:** Move implies a change in the world state; a change in the world state, implies a move occurred!
+
+$$
+\operatorname{Move} (\mathrm{i}, \mathrm{j}, \mathrm{k}, \mathrm{l}, \mathrm{t}) \Leftrightarrow (\mathrm{L} (\mathrm{i}, \mathrm{j}, \mathrm{t}) \land \neg \mathrm{L} (\mathrm{i}, \mathrm{j}, \mathrm{t} + 1) \land \mathrm{L} (\mathrm{k}, \mathrm{l}, \mathrm{t} + 1))
+$$
+
+**For all tuples (i, j, k, l) that represent legitimate possible moves.**
+
+**E.g. (1, 1, 2, 1) or (1, 1, 1, 2)**
+
+**Still, some remaining subtleties when representing time and actions. What happens to propositions at time t+1 compared to at time t, that are \*not\* involved in any action?**
+
+**E.g. P(1, 3, 3) is derived at some point.**
+
+**What about P(1, 3, 4), True or False?**
+
+**R&N suggests having P as an “atemporal var” since it cannot change over time. Nevertheless, we have many other vars that can change over time, called “fluents”.**
+
+**Values of propositions not involved in any action should not change! “The Frame Problem” / Frame Axioms R&N 7.7.1**
+
+<!-- page: 18 -->
+
+**Axiom schema:**
+
+**F is a fluent (prop. that can change over time)**
+
+For example:
+
+$$
+\begin{array}{r} L _ {1, 1} ^ {t + 1} = (L _ {1, 1} ^ {t} \land (\neg F o r w a r d ^ {t} \lor B u m p ^ {t + 1})) \\ \lor (L _ {1, 2} ^ {t} \land (S o u t h ^ {t} \land F o r w a r d ^ {t})) \\ \lor (L _ {2, 1} ^ {t} \land (W e s t ^ {t} \land F o r w a r d ^ {t})) \end{array}
+$$
+
+**i.e. L\_1,1 was “as before” with [no movement action or bump into wall] or resulted from some action (movement into L\_1,1).**
+
+<!-- page: 19 -->
+
+**Actions and inputs up to time 6 Note: includes turns!**
+
+**Some example inferences Section 7.7.1 R&N**
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\neg Stench^{0} \land \neg Breeze^{0} \land \neg Glitter^{0} \land \neg Bump^{0} \land \neg Scream^{0} ; Forward^{0}$
+$\neg Stench^{1} \land Breeze^{1} \land \neg Glitter^{1} \land \neg Bump^{1} \land \neg Scream^{1} ; TurnRight^{1}$
+$\neg Stench^{2} \land Breeze^{2} \land \neg Glitter^{2} \land \neg Bump^{2} \land \neg Scream^{2} ; TurnRight^{2}$
+$\neg Stench^{3} \land Breeze^{3} \land \neg Glitter^{3} \land \neg Bump^{3} \land \neg Scream^{3} ; Forward^{3}$
+$\neg Stench^{4} \land \neg Breeze^{4} \land \neg Glitter^{4} \land \neg Bump^{4} \land \neg Scream^{4} ; TurnRight^{4}$
+$\neg Stench^{5} \land \neg Breeze^{5} \land \neg Glitter^{5} \land \neg Bump^{5} \land \neg Scream^{5} ; Forward^{5}$
+$Stench^{6} \land \neg Breeze^{6} \land \neg Glitter^{6} \land \neg Bump^{6} \land \neg Scream^{6}$
+</div>
+
+$$
+\mathrm{ASK} (K B, P _ {3, 1}) = \text {true}
+$$
+
+$$
+\mathrm{ASK} (K B, W _ {1, 3}) = \text {true}
+$$
+
+```txt
+Define "OK":
+```
+
+$$
+O K _ {x, y} ^ {t} \Leftrightarrow \neg P _ {x, y} \land \neg (W _ {x, y} \land W u m p u s A l i v e ^ {t})
+$$
+
+$$
+\mathrm{ASK} (K B, O K _ {2, 2} ^ {6}) = \text {true}
+$$
+
+```txt
+so the square [2, 2] is OK
+```
+
+In milliseconds, with modern SAT solver.
+
+<!-- page: 20 -->
+
+## Alternative formulation: Situation Calculus
+
+![](images/page_19_image_1.jpg)
+
+No explicit time. Actions are what changes the world from “situation” to “situation”. More elegant, but still need frame axioms to capture what stays the same. Inherent with many representation formalisms: “physical” persistance does not come for free! (and probably shouldn’t)
+
+<!-- page: 21 -->
+
+# Inference by enumeration / “model checking” Style I
+
+**The goal of logical inference is to decide whether** $\begin{array} { r } { K B \models a , } \end{array}$ **for some** a.
+
+For example, given the rules of the Wumpus World, is $\mathbf { P } _ { 2 2 }$
+
+**entailed?** Relevant propositional symbols:
+
+$$
+\begin{array}{l} \text {R1:} \neg \mathrm{P} _ {1, 1} \\ \text {R2:} \neg \mathrm{B} _ {1, 1} \\ \text {R3:} \mathrm{B} _ {2, 1} \end{array}
+$$
+
+$$
+\begin{array}{c}? \\ \text {Models(KB)} \subseteq \text {Models(} \mathrm{P} _ {2 2}) \end{array}
+$$
+
+"Pits cause breezes in adjacent squares"
+
+$$
+\begin{array}{l l} \text {R4: B_{1,1} \Leftrightarrow} & \quad (\mathrm{P_{1,2} \lor P_{2,1}}) \\ \text {R5: B_{2,1} \Leftrightarrow} & \quad (\mathrm{P_{1,1} \lor P_{2,2} \lor P_{3,1}}) \end{array}
+$$
+
+**Inference by enumeration. We have 7 relevant symbols Therefore** $2 ^ { 7 } = 1 2 8$ **interpretations.**
+
+**Need to check if** $\mathrm { P } _ { 2 2 }$ **is true in all of the KB models (interpretations that satisfy KB sentences).**
+
+**Q.: KB has many more symbols. Why can we restrict ourselves to these symbols here?** But, be careful, typically we can’t!!
+
+<!-- page: 22 -->
+
+1) $\mathbf { K B } \vDash \alpha$
+
+**entailment**
+
+**All equivalent Prop. / FO Logic**
+
+<!-- page: 23 -->
+
+$\mathrm{M}(\mathrm{KB}) \subseteq \mathrm{M}(\alpha)$ by defn. / semantic proofs / truth tables “model checking” **(style I, R&N 7.4.4) Done.**
+
+$\mathrm { K B } \vdash \alpha$ soundness and completeness logical deduction / symbol pushing **proof by inference rules (style II)** e.g. modus ponens (R&N 7.5.1)
+
+(KB ∧ ¬ α) is inconsistent Proof by contradiction use CNF / clausal form **Resolution (style III, R&N 7.5) SAT solvers (style IV, R&N 7.6)** most effective
+
+<!-- page: 24 -->
+
+## Standard syntax and semantics for propositional logic. (CS-2800; see 7.4.1 and 7.4.2.)
+
+Syntax:
+
+```csv
+Sentence → AtomicSentence | ComplexSentence
+AtomicSentence → True | False | P | Q | R | ...
+ComplexSentence → (Sentence) | [Sentence]
+| ¬Sentence
+| Sentence ∧ Sentence
+| Sentence ∨ Sentence
+| Sentence ⇒ Sentence
+| Sentence ⇔ Sentence
+OPERATOR PRECEDENCE : ¬,∧,∨,⇒,⇔
+```
+
+<!-- page: 25 -->
+
+Semantics
+
+Note: Truth value of a sentence is built from its parts “compositional semantics”
+
+| P | Q | $\neg P$ | $P \land Q$ | $P \lor Q$ | $P \Rightarrow Q$ | $P \Leftrightarrow Q$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| false | false | true | false | false | true | true |
+| false | true | true | false | true | true | false |
+| true | false | false | false | true | false | false |
+| true | true | false | true | true | true | true |
+
+<!-- page: 26 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$(\alpha \land \beta) \equiv (\beta \land \alpha) \quad \text{commutativity of } \land$
+$(\alpha \lor \beta) \equiv (\beta \lor \alpha) \quad \text{commutativity of } \lor$
+$((\alpha \land \beta) \land \gamma) \equiv (\alpha \land (\beta \land \gamma)) \quad \text{associativity of } \land$
+$((\alpha \lor \beta) \lor \gamma) \equiv (\alpha \lor (\beta \lor \gamma)) \quad \text{associativity of } \lor$
+$\neg(\neg\alpha) \equiv \alpha \quad \text{double-negation elimination}$
+$(\alpha \Rightarrow \beta) \equiv (\neg\beta \Rightarrow \neg\alpha) \quad \text{contraposition}$
+$(\alpha \Rightarrow \beta) \equiv (\neg\alpha \lor \beta) \quad \text{implication elimination} \quad (*)$
+$(\alpha \Leftrightarrow \beta) \equiv ((\alpha \Rightarrow \beta) \land (\beta \Rightarrow \alpha)) \quad \text{biconditional elimination}$
+$\neg(\alpha \land \beta) \equiv (\neg\alpha \lor \neg\beta) \quad \text{de Morgan}$
+$\neg(\alpha \lor \beta) \equiv (\neg\alpha \land \neg\beta) \quad \text{de Morgan}$
+$(\alpha \land (\beta \lor \gamma)) \equiv ((\alpha \land \beta) \lor (\alpha \land \gamma)) \quad \text{distributivity of } \land \text{ over } \lor$
+$(\alpha \lor (\beta \land \gamma)) \equiv ((\alpha \lor \beta) \land (\alpha \lor \gamma)) \quad \text{distributivity of } \lor \text{ over } \land$
+</div>
+
+**(\*) key to go to clausal (Conjunctive Normal Form) Implication for “humans”; clauses for machines. de Morgan laws also very useful in going to clausal form.**
+
+<!-- page: 27 -->
+
+**KB at T = 1:**
+
+## Style II: Proof by inference rules Modus Ponens (MP)
+
+**R1:** $\mathbf { \_ P _ { 1 , 1 } }$
+
+**R2:** $\neg \mathbf { B _ { 1 , 1 } }$
+
+R3: $\mathbf { B _ { 2 , 1 } }$
+
+R4: $\mathbf { B } _ { 1 , 1 } \Leftrightarrow ( \mathbf { P } _ { 1 , 2 } \lor \mathbf { P } _ { 2 , 1 } )$
+
+R5: $\mathbf { B } _ { 2 , 1 } \Leftrightarrow ( \mathbf { P } _ { 1 , 1 } \lor \mathbf { P } _ { 2 , 2 } \lor \mathbf { P } _ { 3 , 1 } )$
+
+How can we show that $\mathrm { K R } \models \neg \mathrm { ~ P } _ { 1 , 2 } \; ?$
+
+![](images/page_26_image_8.jpg)
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK→ | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+Wumpus world at $\Upsilon = 1$
+
+Note: In formal proof, every step needs to be justified.
+
+So, we used R2 and R4.
+
+<!-- page: 28 -->
+
+## Length of Proofs
+
+**Why bother with inference rules? We could always use a truth table to check the validity of a conclusion from a set of premises.**
+
+**But, resulting proof can be much shorter than truth table method.**
+
+Consider KB:
+
+$$
+\mathrm {p\_1}, \mathrm {p\_1} \to \mathrm {p\_2}, \mathrm {p\_2} \to \mathrm {p\_3}, \dots , \mathrm {p\_(n - 1)} \to \mathrm {p\_n}
+$$
+
+To prove conclusion: p\_n
+
+Inference rules: n-1 MP steps Truth table: $2 ^ { \mathrm { n } }$
+
+**Key open question: Is there always a short proof for any valid conclusion? Probably not. The NP vs. co-NP question. (The closely related: P vs. NP question carries a \$1M prize.)**
+
+<!-- page: 29 -->
+
+**First, we need a conversion to Conjunctive Normal Form (CNF) or Clausal Form.**
+
+**Let’s consider converting R4 in clausal form:**
+
+R4: $\mathbf { B } _ { 1 , 1 } \Leftrightarrow ( \mathbf { P } _ { 1 , 2 } \lor \mathbf { P } _ { 2 , 1 } )$
+
+**We have:**
+
+$$
+\mathrm{B}_{1,1})\left(\mathrm{P}_{1,2} \subset \mathrm{P}_{2,1}\right)
+$$
+
+**which gives (implication elimination):**
+
+$$
+(: \mathbf {B} _ {1, 1} \subsetneq \mathbf {P} _ {1, 2} \subsetneq \mathbf {P} _ {2, 1})
+$$
+
+**Also**
+
+$$
+(\mathbf {P} _ {1, 2} \lor \mathbf {P} _ {2, 1})) \mathbf {B} _ {1, 1}
+$$
+
+**which gives:**
+
+$$
+(: (\mathrm{P} _ {1, 2} \subset \mathrm{P} _ {2, 1}) \subset \mathrm{B} _ {1, 1})
+$$
+
+**Thus,**
+
+$$
+(: \mathrm{P} _ {1, 2} \mathbb {E}: \mathrm{P} _ {2, 1}) \subset \mathrm{B} _ {1, 1}
+$$
+
+**leaving,**
+
+$$
+(: \mathrm{P} _ {1, 2} \subset \mathrm{B} _ {1, 1})
+$$
+
+$$
+(: \mathrm{P} _ {2, 1} \subset \mathrm{B} _ {1, 1})
+$$
+
+## Style III: Resolution
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+Wumpus world at $\Upsilon = 1$
+
+<!-- page: 30 -->
+
+First, we need a conversion to Conjunctive Normal Form (CNF) or Clausal Form.
+
+Let's consider converting R4 in clausal form:
+
+R4: $\mathbf { B } _ { 1 , 1 } \Leftrightarrow ( \mathbf { P } _ { 1 , 2 } \lor \mathbf { P } _ { 2 , 1 } )$
+
+We have:
+
+$$
+\mathrm{B} _ {1, 1} \Rightarrow (\mathrm{P} _ {1, 2} \lor \mathrm{P} _ {2, 1})
+$$
+
+which gives (implication elimination):
+
+$$
+(\neg \mathbf {B} _ {1, 1} \lor \mathbf {P} _ {1, 2} \lor \mathbf {P} _ {2, 1})
+$$
+
+Also
+
+$$
+(\mathbf {P} _ {1, 2} \lor \mathbf {P} _ {2, 1}) \Rightarrow \mathbf {B} _ {1, 1}
+$$
+
+which gives:
+
+$$
+(\neg (\mathrm{P} _ {1, 2} \lor \mathrm{P} _ {2, 1}) \lor \mathrm{B} _ {1, 1})
+$$
+
+Thus,
+
+$$
+(\neg \mathrm{P} _ {1, 2} \land \neg \mathrm{P} _ {2, 1}) \lor \mathrm{B} _ {1, 1}
+$$
+
+leaving,
+
+$$
+(\neg \mathrm{P} _ {1, 2} \lor \mathrm{B} _ {1, 1})
+$$
+
+$$
+(\neg \mathrm{P} _ {2, 1} \lor \mathrm{B} _ {1, 1})
+$$
+
+(note: clauses in red)
+
+## Style III: Resolution
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+Wumpus world at $\mathrm { T } = 1$
+
+<!-- page: 31 -->
+
+```txt
+KB at T = 1:
+    R1: ¬P₁,₁
+    R2: ¬B₁,₁
+    R3: B₂,₁
+
+    R4: B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁)
+    R5: B₂,₁ ⇔ (P₁,₁ ∨ P₂,₂ ∨ P₃,₁)
+
+KB at T=1 in clausal form:
+    R1: ¬P₁,₁
+    R2: ¬B₁,₁
+    R3: B₂,₁
+
+    R4a: ¬B₁,₁ ∨ P₁,₂ ∨ P₂,₁
+    R4b: ¬P₁,₂ ∨ B₁,₁
+    R4c: ¬P₂,₁ ∨ B₁,₁
+
+    R5a: ¬B₂,₁ ∨ P₁,₁ ∨ P₂,₂ ∨ P₃,₁
+    R5b: ¬P₁,₁ ∨ B₂,₁
+    R5c: ¬P₂,₂ ∨ B₂,₁
+    R5d: ¬P₃,₁ ∨ B₂,₁
+
+Wumpus world
+at T = 1
+```
+
+<!-- page: 32 -->
+
+How can we show that $\mathrm { K R } \vDash \lnot \mathrm { P } _ { 1 , 2 } \; ?$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Proof by contradiction:
+Need to show that  $(KB \land P_{1,2})$  is
+inconsistent (unsatisfiable).
+</div>
+
+Resolution rule:
+
+(α ∨ p) and (β ∨ ¬ p)
+
+gives resolvent (logically valid conclusion):
+
+(α∨β)
+
+If we can reach the empty clause, then KB is inconsistent. (And, vice versa.)
+
+<!-- page: 33 -->
+
+![](images/page_32_image_0.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+KB at T=1 in clausal form:
+R1: $\neg P_{1,1}$
+R2: $\neg B_{1,1}$
+R3: $B_{2,1}$
+
+R4a: $\neg B_{1,1} \lor P_{1,2} \lor P_{2,1}$
+R4b: $\neg P_{1,2} \lor B_{1,1}$
+R4c: $\neg P_{2,1} \lor B_{1,1}$
+
+R5a: $\neg B_{2,1} \lor P_{1,1} \lor P_{2,2} \lor P_{3,1}$
+R5b: $\neg P_{1,1} \lor B_{2,1}$
+R5c: $\neg P_{2,2} \lor B_{2,1}$
+R5d: $\neg P_{3,1} \lor B_{2,1}$
+
+Wumpus world
+at T = 1
+
+Show that (KB ∧ $P_{1,2}$) is inconsistent.
+(unsatisfiable)
+
+R4b with $P_{1,2}$ resolves to $B_{1,1}$,
+which with R2, resolves to the empty clause, □ .
+So, we can conclude KB ∨ $\neg P_{1,2}$.
+(make sure you use “what you want to prove.”)
+</div>
+
+<!-- page: 34 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+R1: $\neg \mathbf{P}_{1,1}$ Another example
+R2: $\neg \mathbf{B}_{1,1}$
+R3: $\mathbf{B}_{2,1}$ resolution proof
+R4a: $\neg \mathbf{B}_{1,1} \lor \mathbf{P}_{1,2} \lor \mathbf{P}_{2,1}$
+R4b: $\neg \mathrm{P}_{1,2} \lor \mathrm{B}_{1,1}$
+R4c: $\neg \mathrm{P}_{2,1} \lor \mathrm{B}_{1,1}$
+R5a: $\neg \mathrm{B}_{2,1} \lor \mathrm{P}_{1,1} \lor \mathrm{P}_{2,2} \lor \mathrm{P}_{3,1}$
+R5b: $\neg \mathrm{P}_{1,1} \lor \mathrm{B}_{2,1}$
+R5c: $\neg \mathrm{P}_{2,2} \lor \mathrm{B}_{2,1}$
+R5d: $\neg \mathrm{P}_{3,1} \lor \mathrm{B}_{2,1}$
+</div>
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  |  |  |  |
+| OK | P? |  |  |
+| OKV→ | OKA/B | P? |  |
+
+Wumpus world
+
+Note that R5a resolved with R1, and then resolved with R3, gives $( \mathrm { P } _ { 2 , 2 } \lor \mathrm { P } _ { 3 , 1 } )$
+
+Almost there... to show $\mathrm { K B } \vDash ( \mathrm { P } _ { 2 , 2 } \lor \mathrm { P } _ { 3 , \mathrm { l } } )$ we need to show $\mathrm { K B } \land ( \lnot ( \mathsf { P } _ { 2 , 2 } \lor \mathsf { P } _ { 3 , \mathrm { l } } ) )$ is inconsistent. (Why? Semantically?) So, show KB $\wedge \neg \mathsf{P}_{2,2} \wedge \neg \mathsf{P}_{3,1}$ is inconsistent.
+
+This follows from $( \mathrm { P } _ { 2 , 2 } \lor \mathrm { P } _ { 3 , 1 } )$ ; because in two more resolution steps, we get the empty clause (a contradiction).
+
+<!-- page: 35 -->
+
+```txt
+Consider KB: Length of Proofs
+p_1, p_1 → p_2, p_2 → p_3, ..., p_(n-1) → p_n
+
+To prove conclusion: p_n
+
+Resolution. Assert (¬p_n)
+with (∃p_(n-1) ∨ p_n) gives (∃p_(n-1))
+with (∃p_(n-2) ∨ p_(n-1) gives (∃p_(n-2))
+...
+with (∃p_1) ∨ p_2) gives (∃p_1)
+with (p_1) gives empty clause (contradiction).
+QED
+
+Note how resolution mimics Modus Ponens steps.
+
+Inference rules: n resolution steps Truth table: 2^n
+
+So, efficient on these proofs!
+```
+
+<!-- page: 36 -->
+
+What is hard for resolution? Consider: Given a fixed pos. int. N
+
+![](images/page_35_image_2.jpg)
+
+What does this encode?
+
+Think of: P(i,j) for “object i in location j’
+
+Pigeon hole problem...
+
+Provable requires exponential number of resolution steps to reach empty clause (Haken 1985). Method “can't count."
+
+<!-- page: 37 -->
+
+Instead of using resolution to show that
+
+KB ∧ ¬ α is inconsistent
+
+modern Satisfiability (SAT) solvers operating on the clausal form are \*much\* more effi SAT SOLVERS CAN The SAT solvers treat BE VIEWED AS DOING A SPECIAL blem! FORM OF RESOLUTION illion+ variables and several millions of clauses.
+
+Systematic: Davis Putnam (DPLL) + series of improvements Stochastic local search: WalkSAT (issue?)
+
+See R&N 7.6. “Ironically," we are back to semantic model checking, but way more clever than basic truth assignment enumeration (exponentially faster)!
+
+<!-- page: 38 -->
+
+## Backtracking + …
+
+**1) Component analysis (disjoint sets of constraints? Problem decomposition?)**
+
+**2) Clever variable and value ordering (e.g. degree heuristics)**
+
+**3) Intelligent backtracking and clause learning (conflict learning)**
+
+**4) Random restarts (heavy tails in search spaces…)**
+
+**5) Clever data structures**
+
+**1+ Million Boolean vars & 10+ Million clause/constraints are feasible nowadays. (e.g. Minisat solver)**
+
+**Has changed the world of verification (hardware/software) over the last decade (incl. Turing award for Clarke). Widely used in industry, Intel, Microsoft, IBM etc.**
+
+<!-- page: 39 -->
+
+1) $\mathbf { K B } \vDash \alpha$
+
+ENDS LOGIC PART **entailment**
+
+**All equivalent Prop. / FO Logic**

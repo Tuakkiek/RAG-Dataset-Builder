@@ -1,0 +1,7123 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.24,
+            0.082,
+            0.713,
+            0.11
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.125,
+            0.727,
+            0.159
+          ],
+          "content": "Learning With Hidden Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.175,
+            0.634,
+            0.206
+          ],
+          "content": "• Why do we want hidden variables?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.838,
+            0.541
+          ],
+          "content": "In this lecture, we’ll think about how to learn Bayes Nets with hidden variables. We’ll start out by looking at why you’d want to have models with hidden variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.082,
+            0.713,
+            0.11
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.126,
+            0.725,
+            0.159
+          ],
+          "content": "Learning With Hidden Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.176,
+            0.632,
+            0.204
+          ],
+          "content": "• Why do we want hidden variables?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.192,
+            0.203,
+            0.553,
+            0.231
+          ],
+          "content": "• Simple case of missing data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.84,
+            0.543
+          ],
+          "content": "Then, because the technique we’ll use for working with hidden variables is a bit complicated. we’ll start by looking at a simpler problem, of estimating probabilities when some of the data are missing."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.24,
+            0.082,
+            0.713,
+            0.109
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.126,
+            0.727,
+            0.158
+          ],
+          "content": "Learning With Hidden Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.176,
+            0.633,
+            0.203
+          ],
+          "content": "• Why do we want hidden variables?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.203,
+            0.553,
+            0.229
+          ],
+          "content": "• Simple case of missing data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.192,
+            0.229,
+            0.38,
+            0.255
+          ],
+          "content": "• EM algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.568,
+            0.502
+          ],
+          "content": "That will lead us to the EM algorithm, in general,"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.24,
+            0.082,
+            0.713,
+            0.109
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.227,
+            0.126,
+            0.726,
+            0.158
+          ],
+          "content": "Learning With Hidden Variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.191,
+            0.176,
+            0.633,
+            0.203
+          ],
+          "content": "• Why do we want hidden variables?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.192,
+            0.203,
+            0.553,
+            0.229
+          ],
+          "content": "• Simple case of missing data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.229,
+            0.379,
+            0.253
+          ],
+          "content": "• EM algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.192,
+            0.253,
+            0.701,
+            0.279
+          ],
+          "content": "• Bayesian networks with hidden variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.835,
+            0.522
+          ],
+          "content": "And we’ll finish by seeing how to apply it to bayes nets with hidden nodes, and we’ll work a simple example of that in great detail."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.343,
+            0.071,
+            0.611,
+            0.103
+          ],
+          "content": "Hidden variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.865,
+            0.561
+          ],
+          "content": "Why would we ever want to learn a Bayesian network with hidden variables? One answer is: because we might be able to learn lower-complexity networks that way. Another is that sometimes such networks reveal interesting structure in our data."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.852,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.864,
+            0.561
+          ],
+          "content": "Consider a situation in which you can observe a whole bunch of different evidence variables, E1 through En. Maybe they’re all the different symptoms that a patient might have. Or maybe they represent different movies and whether someone likes them."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.341,
+            0.07,
+            0.612,
+            0.104
+          ],
+          "level": 1,
+          "content": "Hidden variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.338,
+            0.361,
+            0.408
+          ],
+          "content": "Without the cause, all the evidence is dependent on each other"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.259,
+            0.599,
+            0.381
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.63,
+            0.315,
+            0.797,
+            0.341
+          ],
+          "content": "O(2<sup>n</sup>) parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.714,
+            0.419,
+            0.795,
+            0.437
+          ],
+          "content": "Lecture 18 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.873,
+            0.582
+          ],
+          "content": "If those variables are all conditionally dependent on one another, then we’d need a highly connected graph that’s capable of representing the entire joint distribution between the variables. Because the last node has n-1 parents, it will take on the order of $2 \\mathrm {  ~ \\hat { n } ~ }$ parameters to specify the conditional probability tables in this network."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.187,
+            0.118,
+            0.397,
+            0.142
+          ],
+          "content": "Cause is unobservable"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.07,
+            0.613,
+            0.103
+          ],
+          "level": 2,
+          "content": "Hidden variables"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.379,
+            0.119,
+            0.609,
+            0.249
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.186,
+                0.338,
+                0.362,
+                0.408
+              ],
+              "content": "Without the cause, all the evidence is dependent on each other"
+            }
+          ],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.258,
+            0.601,
+            0.382
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.629,
+            0.315,
+            0.797,
+            0.341
+          ],
+          "content": "O(2<sup>n</sup>) parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.714,
+            0.419,
+            0.796,
+            0.437
+          ],
+          "content": "Lecture 18 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.879,
+            0.562
+          ],
+          "content": "But, in some cases, we can get a considerably simpler model by introducing an additional “cause” node. It might represent the underlying disease state that was causing the patients’ symptoms or some division of people into those who like westerns and those who like comedies."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.07,
+            0.613,
+            0.103
+          ],
+          "level": 2,
+          "content": "Hidden variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.118,
+            0.397,
+            0.142
+          ],
+          "content": "Cause is unobservable"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.379,
+            0.12,
+            0.609,
+            0.248
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.623,
+                0.153,
+                0.783,
+                0.179
+              ],
+              "content": "O(n) parameters"
+            },
+            {
+              "bbox": [
+                0.185,
+                0.338,
+                0.362,
+                0.408
+              ],
+              "content": "Without the cause, all the evidence is dependent on each other"
+            }
+          ],
+          "image_source": "images/page_8_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.258,
+            0.601,
+            0.382
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.629,
+                0.315,
+                0.797,
+                0.341
+              ],
+              "content": "O(2<sup>n</sup>) parameters"
+            }
+          ],
+          "image_source": "images/page_8_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.714,
+            0.419,
+            0.796,
+            0.438
+          ],
+          "content": "Lecture 18 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.879,
+            0.584
+          ],
+          "content": "In the simpler model, the evidence variables are conditionally independent given the causes. That means that it would only require on the order of n parameters to describe all the CPTs in the network, because at each node, we just need a table of size 2 (if the cause is binary; or k if the cause can take on k values), and one (or k-1) parameter to specify the probability of the cause."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.341,
+            0.07,
+            0.613,
+            0.103
+          ],
+          "level": 2,
+          "content": "Hidden variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.118,
+            0.397,
+            0.142
+          ],
+          "content": "Cause is unobservable"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.38,
+            0.12,
+            0.609,
+            0.248
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.185,
+                0.338,
+                0.362,
+                0.408
+              ],
+              "content": "Without the cause, all the evidence is dependent on each other"
+            }
+          ],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.622,
+            0.153,
+            0.784,
+            0.179
+          ],
+          "content": "O(n) parameters"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.258,
+            0.601,
+            0.382
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.629,
+            0.315,
+            0.797,
+            0.341
+          ],
+          "content": "O(2<sup>n</sup>) parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.419,
+            0.796,
+            0.436
+          ],
+          "content": "Lecture 18 • 10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.845,
+            0.521
+          ],
+          "content": "So, what if you think there’s a hidden cause? How can you learn a network with unobservable variables?"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.375,
+            0.073,
+            0.579,
+            0.102
+          ],
+          "level": 2,
+          "content": "Missing Data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.312,
+            0.12,
+            0.784,
+            0.167
+          ],
+          "content": "• Given two variables, no independence relations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.436
+          ],
+          "content": "Lecture 18 • 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.875,
+            0.583
+          ],
+          "content": "We’ll start out by looking at a very simple case. Imagine that you have two binary variables A and B, and you know they’re not independent. So you’re just trying to estimate their joint distribution. Ordinarily, you’d just count up how many were true, true; how many were false, false; and so on, and divide by the total number of data cases to get your maximum likelihood probability estimates."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.362
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.374,
+            0.073,
+            0.579,
+            0.102
+          ],
+          "level": 2,
+          "content": "Missing Data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.12,
+            0.784,
+            0.167
+          ],
+          "content": "• Given two variables, no independence relations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.168,
+            0.607,
+            0.193
+          ],
+          "content": "• Some data are missing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.855,
+            0.602
+          ],
+          "content": "But in our case, some of the data are missing. If a whole case were missing, there wouldn’t be much we could do about it; there’s no real way to guess what it might have been that will help us in our estimation process. But if some variables in a case are filled in, and others are missing, then we’ll see how to make use of the variables that are filled in and how to get a probability distribution on the missing data."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.375,
+            0.073,
+            0.579,
+            0.102
+          ],
+          "content": "Missing Data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.784,
+            0.166
+          ],
+          "content": "• Given two variables, no independence relations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.168,
+            0.607,
+            0.192
+          ],
+          "content": "• Some data are missing"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.312,
+            0.193,
+            0.673,
+            0.237
+          ],
+          "content": "• Estimate parameters in joint distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.866,
+            0.519
+          ],
+          "content": "Here, in our example, we have 8 data points, but one of them is missing a value for B."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.124,
+            0.287,
+            0.362
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.374,
+            0.073,
+            0.579,
+            0.102
+          ],
+          "level": 2,
+          "content": "Missing Data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.31,
+            0.12,
+            0.785,
+            0.166
+          ],
+          "content": "• Given two variables, no independence relations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.168,
+            0.608,
+            0.192
+          ],
+          "content": "• Some data are missing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.193,
+            0.674,
+            0.237
+          ],
+          "content": "• Estimate parameters in joint distribution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.238,
+            0.723,
+            0.264
+          ],
+          "content": "• Data must be missing at random"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.867,
+            0.622
+          ],
+          "content": "In order for the methods we’ll talk about here to be of use, the data have to be missing at random. That means that the fact that a data item is missing is independent of the value it would have had. So, for instance, if you didn’t take somebody’s blood pressure because he was already dead, then that reading would not be missing at random! But if the blood-pressure instrument had random failures, unrelated to the actual blood pressure, then that data would be missing at random."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_table_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.381,
+            0.147,
+            0.549,
+            0.217
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | 3/7 | 1/7 |\n| B | 1/7 | 2/7 |",
+          "captions": [
+            {
+              "bbox": [
+                0.405,
+                0.074,
+                0.549,
+                0.102
+              ],
+              "content": "Ignore it"
+            },
+            {
+              "bbox": [
+                0.312,
+                0.122,
+                0.577,
+                0.144
+              ],
+              "content": "Estimated Parameters"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_14_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.586,
+            0.147,
+            0.752,
+            0.215
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | .429 | .143 |\n| B | .143 | .285 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.861,
+            0.541
+          ],
+          "content": "The simplest strategy of all is to just ignore any cases that have missing values. In our example, we’d count the number of cases in each bin and divide by 7 (the number of complete cases)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.405,
+            0.074,
+            0.549,
+            0.102
+          ],
+          "level": 2,
+          "content": "Ignore it"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.381,
+            0.147,
+            0.549,
+            0.217
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | 3/7 | 1/7 |\n| B | 1/7 | 2/7 |",
+          "captions": [
+            {
+              "bbox": [
+                0.312,
+                0.122,
+                0.577,
+                0.143
+              ],
+              "content": "Estimated Parameters"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_15_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.586,
+            0.147,
+            0.752,
+            0.215
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | .429 | .143 |\n| B | .143 | .285 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_table_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.306,
+            0.251,
+            0.793,
+            0.312
+          ],
+          "content": "\\begin{array}{r l} \\log \\mathrm{Pr} (D | M) & = \\log (\\mathrm{Pr} (D, H = 0 \\mid M) + \\mathrm{Pr} (D, H = 1 \\mid M)) \\\\ & = 3 \\log . 4 2 9 + 2 \\log . 1 4 3 + 2 \\log . 2 8 5 + \\log (. 4 2 9 +. 1 4 3) \\\\ & = - 9. 4 9 8 \\end{array}",
+          "image_source": "images/page_15_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.851,
+            0.539
+          ],
+          "content": "It’s easy, and it gives us a log likelihood score of –9.498. Whether that’s good or not remains to be seen. We’ll have to see what results we get with other methods."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.074,
+            0.549,
+            0.102
+          ],
+          "content": "Ignore it"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.312,
+            0.122,
+            0.576,
+            0.143
+          ],
+          "content": "Estimated Parameters"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.381,
+            0.147,
+            0.549,
+            0.217
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ 3/7 1/7 B 1/7 2/7"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.147,
+            0.752,
+            0.215
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A \\~B .429 .143 B .143 .285"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.306,
+            0.251,
+            0.793,
+            0.312
+          ],
+          "content": "\\begin{array}{r l} \\log \\mathrm{Pr} (D | M) & = \\log (\\mathrm{Pr} (D, H = 0 \\mid M) + \\mathrm{Pr} (D, H = 1 \\mid M)) \\\\ & = 3 \\log . 4 2 9 + 2 \\log . 1 4 3 + 2 \\log . 2 8 5 + \\log (. 4 2 9 +. 1 4 3) \\\\ & = - 9. 4 9 8 \\end{array}",
+          "image_source": "images/page_16_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.867,
+            0.541
+          ],
+          "content": "Note that, in order to compute the log likelihood of the actual data (which is what we’re trying to maximize), we’ll need to marginalize out the hidden variable H. We accomplish that by summing over both of its values."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.324,
+            0.072,
+            0.629,
+            0.102
+          ],
+          "content": "Recitation Problem"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.196,
+            0.11,
+            0.815,
+            0.16
+          ],
+          "content": "Show the remaining steps required to get from this expression"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.273,
+            0.172,
+            0.683,
+            0.197
+          ],
+          "content": "\\log \\Pr (D | M) = \\log (\\Pr (D, H = 0 \\mid M) + \\Pr (D, H = 1 \\mid M))",
+          "image_source": "images/page_17_equation_2.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.196,
+            0.206,
+            0.797,
+            0.258
+          ],
+          "content": "to a number for the log likelihood of the observed data given the model."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.197,
+            0.278,
+            0.775,
+            0.327
+          ],
+          "content": "Explain any assumptions you might have had to make."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.871,
+            0.542
+          ],
+          "content": "I skipped a couple of steps in showing you my computation of the log likelihood on the previous slide. Please fill them in and show what assumptions have to be made along the way."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.303,
+            0.071,
+            0.651,
+            0.103
+          ],
+          "content": "Fill in With Best Value"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.12,
+            0.579,
+            0.146
+          ],
+          "content": "Estimated Parameters"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 19"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.873,
+            0.522
+          ],
+          "content": "Another strategy would be to fill in the missing value with the value that makes the log likelihood (of the actual data) biggest."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 20"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.304,
+            0.073,
+            0.65,
+            0.102
+          ],
+          "content": "Fill in With Best Value"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.577,
+            0.144
+          ],
+          "content": "Estimated Parameters"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.381,
+            0.147,
+            0.549,
+            0.217
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ $4 / 8$ 1/8 B 1/8 2/8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.147,
+            0.753,
+            0.215
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A \\~B .5 .125 B .125 .25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.868,
+            0.521
+          ],
+          "content": "In this case, that value is 0. Once you fill in the missing value, you can estimate the probabilities using the standard counting procedure."
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.305,
+            0.074,
+            0.649,
+            0.101
+          ],
+          "content": "Fill in With Best Value"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.122,
+            0.577,
+            0.143
+          ],
+          "content": "Estimated Parameters"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.381,
+            0.147,
+            0.549,
+            0.217
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ $\\mathsf { A }$ ${ \\sim } \\mathsf { B }$ $4 / 8$ $1 / 8$ B $1 / 8$ 2/8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.147,
+            0.753,
+            0.215
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .5 .125 B .125 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.328,
+            0.252,
+            0.771,
+            0.312
+          ],
+          "content": "\\begin{array}{r l} \\log \\Pr (D | M) & = \\log (\\Pr (D, H = 0 \\mid M) + \\Pr (D, H = 1 \\mid M) \\\\ & = 3 \\log . 5 + 2 \\log . 1 2 5 + 2 \\log . 2 5 + \\log (. 5 +. 1 2 5) \\\\ & = - 9. 4 8 1 \\end{array}",
+          "image_source": "images/page_20_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 18 • 21"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.84,
+            0.52
+          ],
+          "content": "That gives us a model with a log likelihood of –9.481, which is an improvement over –9.498, which was the value of the previous model."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.294,
+            0.071,
+            0.659,
+            0.103
+          ],
+          "level": 1,
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | H |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.86,
+            0.542
+          ],
+          "content": "Filling in the missing data point with a particular value might be a bit too extreme. After all, we can’t usually tell from the data exactly what that value should be, so it makes sense to fill in a “soft” assignment for that value, somehow."
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.294,
+            0.072,
+            0.66,
+            0.103
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.12,
+            0.714,
+            0.168
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 23"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.856,
+            0.542
+          ],
+          "content": "Ideally, we’d like to fill in that value using our knowledge of the joint distribution of the variables. But we were hoping to use the filled-in value to compute the joint distribution! So what do we do?"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.293,
+            0.071,
+            0.661,
+            0.103
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.31,
+            0.119,
+            0.715,
+            0.169
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.845,
+            0.523
+          ],
+          "content": "We’ll look at an iterative procedure that alternates between filling in the missing data with a distribution and estimating a new joint probability distribution."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.293,
+            0.072,
+            0.66,
+            0.103
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.31,
+            0.12,
+            0.715,
+            0.168
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.184,
+            0.395,
+            0.206
+          ],
+          "content": "\\theta_ {0}",
+          "image_source": "images/page_24_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.406,
+            0.186,
+            0.572,
+            0.256
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .25 .25 B .25 .25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.783,
+            0.502
+          ],
+          "content": "So, let’s just start by initializing our joint to the uniform 0.25 distribution."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.293,
+            0.071,
+            0.661,
+            0.103
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.31,
+            0.12,
+            0.715,
+            0.168
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.184,
+            0.394,
+            0.206
+          ],
+          "content": "\\theta_ {0}",
+          "image_source": "images/page_25_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.343,
+            0.267,
+            0.431,
+            0.288
+          ],
+          "content": "\\Pr (H | D, \\theta_ {0})",
+          "image_source": "images/page_25_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.186,
+            0.572,
+            0.256
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .25 .25 B .25 .25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.81,
+            0.502
+          ],
+          "content": "Then, we can compute a probability distribution over the missing variable H."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.713,
+            0.167
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.184,
+            0.393,
+            0.205
+          ],
+          "content": "\\theta_ {0}",
+          "image_source": "images/page_26_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.186,
+            0.571,
+            0.255
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .25 .25 B .25 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.343,
+            0.267,
+            0.545,
+            0.287
+          ],
+          "content": "\\Pr (H | D, \\theta_ {0}) = \\Pr (H \\mid D ^ {6}, \\theta_ {0})",
+          "image_source": "images/page_26_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.862,
+            0.54
+          ],
+          "content": "First, we note that, under the assumption that the data cases are independent given the model, the value of a missing variable can only depend on observed data in the same case, case 6."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.713,
+            0.167
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.184,
+            0.393,
+            0.205
+          ],
+          "content": "\\theta_ {0}",
+          "image_source": "images/page_27_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.186,
+            0.571,
+            0.255
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .25 .25 B .25 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.343,
+            0.266,
+            0.546,
+            0.309
+          ],
+          "content": "\\begin{array}{c} \\operatorname * {P r} (H | D, \\theta_ {0}) = \\operatorname * {P r} (H \\mid D ^ {6}, \\theta_ {0}) \\\\ = \\operatorname * {P r} (B \\mid \\neg A, \\theta_ {0}) \\end{array}",
+          "image_source": "images/page_27_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 28"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.826,
+            0.521
+          ],
+          "content": "Since the missing variable is B and the observed one is not A, we just need the probability of B given not A,"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.074,
+            0.659,
+            0.101
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 H 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.122,
+            0.713,
+            0.166
+          ],
+          "content": "Guess a distribution over A,B and compute a distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.184,
+            0.394,
+            0.205
+          ],
+          "content": "\\theta_ {0}",
+          "image_source": "images/page_28_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.405,
+            0.186,
+            0.572,
+            0.256
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .25 .25 B .25 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.342,
+            0.266,
+            0.632,
+            0.37
+          ],
+          "content": "\\begin{array}{r l} \\operatorname * {P r} (H | D, \\theta_ {0}) & = \\operatorname * {P r} (H \\mid D ^ {6}, \\theta_ {0}) \\\\ & = \\operatorname * {P r} (B \\mid \\neg A, \\theta_ {0}) \\\\ & = \\operatorname * {P r} (\\neg A, B \\mid \\theta_ {0}) / \\operatorname * {P r} (\\neg A \\mid \\theta_ {0}) \\\\ & = . 2 5 / 0. 5 \\\\ & = 0. 5 \\end{array}",
+          "image_source": "images/page_28_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 18 • 29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.585,
+            0.5
+          ],
+          "content": "which we can calculate easily from the distribution."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.294,
+            0.071,
+            0.66,
+            0.103
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.171,
+            0.125,
+            0.286,
+            0.376
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0, 0.5 1, 0.5 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.31,
+            0.12,
+            0.731,
+            0.167
+          ],
+          "content": "Use distribution over H to compute better distribution over A,B"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 30"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.795,
+            0.522
+          ],
+          "content": "Now we can fill in our missing data with a distribution: it has value 0 with probability 0.5 and value 1 with probability 0.5."
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.072,
+            0.659,
+            0.102
+          ],
+          "level": 2,
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.171,
+            0.125,
+            0.286,
+            0.377
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0, 0.51, 0.5 |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.121,
+            0.755,
+            0.213
+          ],
+          "content": "Use distribution over H to compute better distribution over A,B Maximum likelihood estimation using expected counts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 31"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.58
+          ],
+          "content": "Given those values we can re-estimate the parameters in our model. We’ll do counting, as before, but this time, the 6th data case will be counted as 1/2 an instance of 00 and 1/2 an instance of 01. You can think of these counts as expected values of the true count, based on the uncertainty in the actual value of H."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.294,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.171,
+            0.126,
+            0.286,
+            0.377
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0, 0.5 1, 0.5 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.755,
+            0.213
+          ],
+          "content": "Use distribution over H to compute better distribution over A,B Maximum likelihood estimation using expected counts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.318,
+            0.24,
+            0.338,
+            0.262
+          ],
+          "content": "1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.357,
+            0.247,
+            0.526,
+            0.317
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A \\~B 3.5/8 1/8 B 1.5/8 2/8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.556,
+            0.247,
+            0.735,
+            0.317
+          ],
+          "content": "\\~A A \\~B .4375 .125 B .1875 .25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 32"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.715,
+            0.501
+          ],
+          "content": "Given the expected counts, we can calculate a new model, theta 1."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.2,
+            0.126,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.121,
+            0.759,
+            0.166
+          ],
+          "content": "Use new distribution over AB to get a better distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.372,
+            0.183,
+            0.393,
+            0.206
+          ],
+          "content": "\\theta_ {1}",
+          "image_source": "images/page_32_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.417,
+            0.182,
+            0.595,
+            0.251
+          ],
+          "content": "\\~A A \\~B .4375 .125 B .1875 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.345,
+            0.286,
+            0.628,
+            0.349
+          ],
+          "content": "\\begin{array}{r l} \\operatorname * {P r} (H | D, \\theta_ {1}) & = \\operatorname * {P r} (\\neg A, B \\mid \\theta_ {1}) / \\operatorname * {P r} (\\neg A \\mid \\theta_ {1}) \\\\ & = . 1 8 7 5 /. 6 2 5 \\\\ & = 0. 3 \\end{array}",
+          "image_source": "images/page_32_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 33"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.827,
+            0.54
+          ],
+          "content": "Now, given our new distribution theta 1, we can do a better job of estimating a probability distribution over H. Our new estimate is that H is true with probability 0.3."
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "level": 2,
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.171,
+            0.126,
+            0.286,
+            0.376
+          ],
+          "content": "| A | B |\n| --- | --- |\n| 1 | 1 |\n| 1 | 1 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0 |\n| 0 | 0, 0.71, 0.3 |\n| 0 | 1 |\n| 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.311,
+            0.121,
+            0.73,
+            0.167
+          ],
+          "content": "Use distribution over H to compute better distribution over A,B"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.357,
+            0.247,
+            0.525,
+            0.317
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | 3.7/8 | 1/8 |\n| B | 1.3/8 | 2/8 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.557,
+            0.247,
+            0.735,
+            0.317
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | .4625 | .125 |\n| B | .1625 | .25 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 34"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.875,
+            0.519
+          ],
+          "content": "We plug the new estimate into the data set, compute new expected counts, and get a new model, theta 2."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.199,
+            0.125,
+            0.286,
+            0.361
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.31,
+            0.121,
+            0.76,
+            0.166
+          ],
+          "content": "Use new distribution over AB to get a better distribution over H"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.183,
+            0.394,
+            0.206
+          ],
+          "content": "\\theta_ {2}",
+          "image_source": "images/page_34_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.417,
+            0.182,
+            0.595,
+            0.251
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A ${ \\sim } \\mathsf { B }$ .4625 .125 B .1625 .25"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.342,
+            0.286,
+            0.632,
+            0.35
+          ],
+          "content": "\\begin{array}{r l} \\operatorname * {P r} (H | D, \\theta_ {2}) & = \\operatorname * {P r} (\\neg A, B \\mid \\theta_ {2}) / \\operatorname * {P r} (\\neg A \\mid \\theta_ {2}) \\\\ & = . 1 6 2 5 /. 6 2 5 \\\\ & = 0. 2 6 \\end{array}",
+          "image_source": "images/page_34_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 35"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.783,
+            0.501
+          ],
+          "content": "Given theta 2, we now estimate the probability of H being true to be 0.26."
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.295,
+            0.073,
+            0.659,
+            0.102
+          ],
+          "content": "Fill in With Distribution"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.171,
+            0.125,
+            0.304,
+            0.377
+          ],
+          "content": "A B 1 1 1 1 0 0 0 0 0 0 0 0, 0.74 1, 0.26 0 1 1 0"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.311,
+            0.122,
+            0.73,
+            0.167
+          ],
+          "content": "Use distribution over H to compute better distribution over A,B"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.358,
+            0.247,
+            0.549,
+            0.317
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A \\~B 3.74/8 1/8 B 1.26/8 2/8"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.557,
+            0.248,
+            0.735,
+            0.317
+          ],
+          "content": "${ \\sim } \\mathsf { A }$ A \\~B .4675 .125 B .1575 .25"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.711,
+            0.421,
+            0.793,
+            0.434
+          ],
+          "content": "Lecture 18 • 36"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.48,
+            0.51,
+            0.5
+          ],
+          "content": "And that estimate leads us to a new theta 3."
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.271,
+            0.072,
+            0.682,
+            0.102
+          ],
+          "level": 2,
+          "content": "Increasing Log-Likelihood"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.232,
+            0.117,
+            0.405,
+            0.185
+          ],
+          "content": "|  | ~A | A |\n| --- | --- | --- |\n| ~B | .25 | .25 |\n| B | .25 | .25 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_36_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.466,
+            0.141,
+            0.706,
+            0.167
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {0}) = - 1 0. 3 9 7 2",
+          "image_source": "images/page_36_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.225,
+            0.196,
+            0.414,
+            0.264
+          ],
+          "content": "\\begin{array}{c c c} \\hline & \\sim \\mathrm{A} & \\mathrm{A} \\\\ \\hline \\sim \\mathrm{B} & . 4 3 7 5 & . 1 2 5 \\\\ \\hline \\mathrm{B} & . 1 8 7 5 & . 2 5 \\\\ \\hline \\end{array}",
+          "image_source": "images/page_36_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.467,
+            0.217,
+            0.692,
+            0.243
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {1}) = - 9. 4 7 6 0",
+          "image_source": "images/page_36_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.27,
+            0.415,
+            0.339
+          ],
+          "content": "\\begin{array}{c c c} \\theta_ {2} & \\sim \\mathrm{A} & \\mathrm{A} \\\\ \\hline \\sim \\mathrm{B} & . 4 6 2 5 & . 1 2 5 \\\\ \\hline \\mathrm{B} & . 1 6 2 5 & . 2 5 \\end{array}",
+          "image_source": "images/page_36_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.467,
+            0.292,
+            0.694,
+            0.319
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {2}) = - 9. 4 5 2 4",
+          "image_source": "images/page_36_equation_6.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.205,
+            0.348,
+            0.415,
+            0.417
+          ],
+          "content": "<table><tr><td rowspan=\"3\"> $\\theta_3$ </td><td></td><td>~A</td><td>A</td></tr><tr><td>~B</td><td>.4675</td><td>.125</td></tr><tr><td>B</td><td>.1575</td><td>.25</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_36_table_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.466,
+            0.369,
+            0.695,
+            0.395
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {3}) = - 9. 4 5 1 4",
+          "image_source": "images/page_36_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 37"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.843,
+            0.54
+          ],
+          "content": "We can iterate this process until it converges or we get tired, or something. One important thing to notice is that the log-likelihood is increasing on each iteration."
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.271,
+            0.072,
+            0.682,
+            0.102
+          ],
+          "level": 2,
+          "content": "Increasing Log-Likelihood"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.206,
+            0.116,
+            0.405,
+            0.186
+          ],
+          "content": "<table><tr><td rowspan=\"3\"> $\\theta_0$ </td><td></td><td>~A</td><td>A</td></tr><tr><td>~B</td><td>.25</td><td>.25</td></tr><tr><td>B</td><td>.25</td><td>.25</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.466,
+            0.141,
+            0.707,
+            0.167
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {0}) = - 1 0. 3 9 7 2",
+          "image_source": "images/page_37_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.676,
+            0.164,
+            0.827,
+            0.206
+          ],
+          "content": "\\begin{array}{c} \\text {ignore: -9.498} \\\\ \\text {best val: -9.481} \\end{array}",
+          "image_source": "images/page_37_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.195,
+            0.415,
+            0.264
+          ],
+          "content": "\\begin{array}{c c c} \\theta_ {1} & \\sim \\mathrm{A} & \\mathrm{A} \\\\ \\hline \\sim \\mathrm{B} & . 4 3 7 5 & . 1 2 5 \\\\ \\hline \\mathrm{B} & . 1 8 7 5 & . 2 5 \\end{array}",
+          "image_source": "images/page_37_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.467,
+            0.218,
+            0.692,
+            0.243
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {1}) = - 9. 4 7 6 0",
+          "image_source": "images/page_37_equation_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.205,
+            0.27,
+            0.415,
+            0.339
+          ],
+          "content": "<table><tr><td rowspan=\"3\"> $\\theta_{2}$ </td><td></td><td> $\\sim A$ </td><td>A</td></tr><tr><td> $\\sim B$ </td><td>.4625</td><td>.125</td></tr><tr><td>B</td><td>.1625</td><td>.25</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_table_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.467,
+            0.292,
+            0.695,
+            0.319
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {2}) = - 9. 4 5 2 4",
+          "image_source": "images/page_37_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.348,
+            0.416,
+            0.418
+          ],
+          "content": "\\begin{array}{c c c} \\theta_ {3} & \\sim \\mathrm{A} & \\mathrm{A} \\\\ \\hline \\sim \\mathrm{B} & . 4 6 7 5 & . 1 2 5 \\\\ \\hline \\mathrm{B} & . 1 5 7 5 & . 2 5 \\end{array}",
+          "image_source": "images/page_37_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.466,
+            0.369,
+            0.695,
+            0.395
+          ],
+          "content": "\\log \\Pr (D \\mid \\theta_ {3}) = - 9. 4 5 1 4",
+          "image_source": "images/page_37_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 38"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.81,
+            0.522
+          ],
+          "content": "And even after one iteration, our model is better than the ones we derived by ignoring case 6 or by plugging in the best value for H."
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 39"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.27,
+            0.071,
+            0.683,
+            0.104
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.858,
+            0.542
+          ],
+          "content": "That iterative process that we just did is an instance of a general procedure, called the EM algorithm. It’s called EM for “expectation-maximization”, though the way we’ll look at it, it’s more like “maximization-maximization”."
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 40"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.268,
+            0.071,
+            0.685,
+            0.104
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.11,
+            0.611,
+            0.139
+          ],
+          "content": "• Want to find to maximize θ $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.854,
+            0.503
+          ],
+          "content": "So, our goal is to find the theta that maximizes the probability of data given theta."
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.271,
+            0.073,
+            0.682,
+            0.102
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.607,
+            0.136
+          ],
+          "content": "• Want to find $\\theta$ to maximize $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.161,
+            0.561,
+            0.187
+          ],
+          "content": "• Instead, find $\\theta , \\tilde { P }$ to maximize"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.263,
+            0.19,
+            0.65,
+            0.261
+          ],
+          "content": "\\begin{array}{c} g (\\theta , \\tilde {P}) = \\sum_ {H} \\tilde {P} (H) \\log (\\operatorname * {P r} (D, H \\mid \\theta) / \\tilde {P} (H)) \\\\ = E _ {\\tilde {P}} \\log \\operatorname * {P r} (D, H \\mid \\theta) - \\log \\tilde {P} (H) \\end{array}",
+          "image_source": "images/page_40_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 41"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.852,
+            0.54
+          ],
+          "content": "The problem is that it’s hard to maximize that directly. Instead, some clever statistician found this expression, g of theta and P tilde. We’re going to try to maximize it instead."
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.27,
+            0.073,
+            0.683,
+            0.102
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.608,
+            0.136
+          ],
+          "content": "• Want to find $\\theta$ to maximize $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.161,
+            0.561,
+            0.187
+          ],
+          "content": "• Instead, find $\\theta , \\tilde { P }$ to maximize"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.263,
+            0.19,
+            0.65,
+            0.261
+          ],
+          "content": "\\begin{array}{c} g (\\theta , \\tilde {P}) = \\sum_ {H} \\tilde {P} (H) \\log (\\operatorname * {P r} (D, H \\mid \\theta) / \\tilde {P} (H)) \\\\ = E _ {\\tilde {P}} \\log \\operatorname * {P r} (D, H \\mid \\theta) - \\log \\tilde {P} (H) \\end{array}",
+          "image_source": "images/page_41_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.666,
+            0.501
+          ],
+          "content": "P tilde is a probability distribution over the hidden variables."
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.434
+          ],
+          "content": "Lecture 18 • 42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.27,
+            0.073,
+            0.683,
+            0.102
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.608,
+            0.137
+          ],
+          "content": "• Want to find $\\theta$ to maximize $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.161,
+            0.561,
+            0.187
+          ],
+          "content": "• Instead, find $\\theta , \\tilde { P }$ to maximize"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.262,
+            0.19,
+            0.651,
+            0.261
+          ],
+          "content": "\\begin{array}{c} g (\\theta , \\tilde {P}) = \\sum_ {H} \\tilde {P} (H) \\log (\\operatorname * {P r} (D, H \\mid \\theta) / \\tilde {P} (H)) \\\\ = E _ {\\tilde {P}} \\log \\operatorname * {P r} (D, H \\mid \\theta) - \\log \\tilde {P} (H) \\end{array}",
+          "image_source": "images/page_42_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.264,
+            0.425,
+            0.286
+          ],
+          "content": "• Alternate between"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.289,
+            0.616,
+            0.314
+          ],
+          "content": "• holding $\\theta$ fixed and optimizing $\\tilde { P }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.315,
+            0.625,
+            0.34
+          ],
+          "content": "• holding $\\tilde { P }$ fixed and optimizing $\\theta$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 43"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.869,
+            0.541
+          ],
+          "content": "So, how are we going to find an optimum of $\\mathbf { g } ^ { \\ell }$ We can do that by holding one argument fixed and finding an optimum with respect to the other, and repeating that procedure over and over."
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.072,
+            0.683,
+            0.103
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.609,
+            0.137
+          ],
+          "content": "• Want to find $\\theta$ to maximize $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.16,
+            0.562,
+            0.188
+          ],
+          "content": "• Instead, find $\\theta , \\tilde { P }$ to maximize"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.261,
+            0.189,
+            0.651,
+            0.232
+          ],
+          "content": "g (\\theta , \\tilde {P}) = \\sum_ {H} \\tilde {P} (H) \\log (\\Pr (D, H \\mid \\theta) / \\tilde {P} (H))",
+          "image_source": "images/page_43_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.329,
+            0.234,
+            0.631,
+            0.261
+          ],
+          "content": "= E _ {\\tilde {P}} \\log \\Pr (D, H \\mid \\theta) - \\log \\tilde {P} (H)",
+          "image_source": "images/page_43_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.263,
+            0.425,
+            0.286
+          ],
+          "content": "• Alternate between"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.288,
+            0.617,
+            0.314
+          ],
+          "content": "• holding fixed and optimizing $\\tilde { P }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.314,
+            0.626,
+            0.34
+          ],
+          "content": "• holding $\\tilde { P }$ fixed and optimizing $\\theta$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.363,
+            0.748,
+            0.392
+          ],
+          "content": "• g has same local and global optima as $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 44"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.878,
+            0.54
+          ],
+          "content": "So, in our algorithm, we’ll hold theta (the model) fixed and find the best distribution over the hidden variables. Then we’ll hold the distribution over the hidden variables fixed and find the best model."
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.071,
+            0.683,
+            0.103
+          ],
+          "content": "Deriving the EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.11,
+            0.609,
+            0.138
+          ],
+          "content": "• Want to find $\\theta$ to maximize $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.159,
+            0.563,
+            0.189
+          ],
+          "content": "• Instead, find $\\theta , \\tilde { P }$ to maximize"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.261,
+            0.189,
+            0.651,
+            0.232
+          ],
+          "content": "g (\\theta , \\tilde {P}) = \\sum_ {H} \\tilde {P} (H) \\log (\\Pr (D, H \\mid \\theta) / \\tilde {P} (H))",
+          "image_source": "images/page_44_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.329,
+            0.233,
+            0.631,
+            0.261
+          ],
+          "content": "= E _ {\\tilde {P}} \\log \\Pr (D, H \\mid \\theta) - \\log \\tilde {P} (H)",
+          "image_source": "images/page_44_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.263,
+            0.425,
+            0.287
+          ],
+          "content": "• Alternate between"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.288,
+            0.617,
+            0.314
+          ],
+          "content": "• holding fixed and optimizing $\\tilde { P }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.314,
+            0.627,
+            0.341
+          ],
+          "content": "• holding $\\tilde { P }$ fixed and optimizing $\\theta$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.362,
+            0.748,
+            0.393
+          ],
+          "content": "• g has same local and global optima as $\\operatorname* { P r } ( D   |   \\theta )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 45"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.877,
+            0.561
+          ],
+          "content": "The clever statisticians that invented the g function proved that it has the same local and global optima with respect to theta as the likelihood function that we really want to optimize. So, working with g should get us the answer we need, and it’s easier to work with than the straight likelihood."
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.072,
+            0.584,
+            0.103
+          ],
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.356,
+            0.138
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 46"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.816,
+            0.52
+          ],
+          "content": "So, here’s the algorithm in a bit more detail. We start by picking some initial model, theta 0."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.368,
+            0.072,
+            0.585,
+            0.103
+          ],
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.356,
+            0.137
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.138,
+            0.589,
+            0.165
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 47"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.847,
+            0.521
+          ],
+          "content": "Then, we loop until we think the process has converged, alternating between two steps."
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.073,
+            0.584,
+            0.102
+          ],
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.355,
+            0.136
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.138,
+            0.589,
+            0.164
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.184,
+            0.464,
+            0.214
+          ],
+          "content": "$\\tilde { P } _ { t + 1 } ( H ) = \\Pr ( H \\mid D , \\theta _ { t } )$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 48"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.823,
+            0.54
+          ],
+          "content": "In the first step, we set our distribution over the hidden variables to be the probability of the hidden variables given the observed data and the current model."
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.073,
+            0.584,
+            0.102
+          ],
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.355,
+            0.136
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.138,
+            0.589,
+            0.164
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.184,
+            0.464,
+            0.213
+          ],
+          "content": "$\\tilde { P } _ { t + 1 } ( H ) = \\Pr ( H \\mid D , \\theta _ { t } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.218,
+            0.215,
+            0.569,
+            0.251
+          ],
+          "content": "\\theta_ {t + 1} = \\underset {\\theta} {\\arg \\max} E _ {\\tilde {P} _ {t + 1}} \\log \\Pr (D, H \\mid \\theta)",
+          "image_source": "images/page_48_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 49"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.871,
+            0.522
+          ],
+          "content": "In the second step, we find the maximum likelihood model for the “expected data”, using the distribution over H to generate expected counts for the different cases."
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.369,
+            0.073,
+            0.584,
+            0.102
+          ],
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.112,
+            0.356,
+            0.136
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.138,
+            0.589,
+            0.165
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.184,
+            0.465,
+            0.213
+          ],
+          "content": "$\\tilde { P } _ { t + 1 } ( H ) = \\Pr ( H \\mid D , \\theta _ { t } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.215,
+            0.569,
+            0.252
+          ],
+          "content": "\\theta_ {t + 1} = \\underset {\\theta} {\\arg \\max} E _ {\\tilde {P} _ {t + 1}} \\log \\Pr (D, H \\mid \\theta)",
+          "image_source": "images/page_49_equation_4.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.287,
+            0.617,
+            0.316
+          ],
+          "content": "• Monotonically increasing likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 50"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.821,
+            0.522
+          ],
+          "content": "It’s possible to prove that this algorithm generates models with monotonically increasing likelihood. So, things always get better."
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.072,
+            0.584,
+            0.102
+          ],
+          "level": 2,
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.356,
+            0.137
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.138,
+            0.589,
+            0.165
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.184,
+            0.465,
+            0.213
+          ],
+          "content": "$\\tilde { P } _ { t + 1 } ( H ) = \\Pr ( H \\mid D , \\theta _ { t } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.218,
+            0.215,
+            0.569,
+            0.252
+          ],
+          "content": "\\theta_ {t + 1} = \\underset {\\theta} {\\arg \\max} E _ {\\tilde {P} _ {t + 1}} \\log \\Pr (D, H \\mid \\theta)",
+          "image_source": "images/page_50_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.288,
+            0.618,
+            0.314
+          ],
+          "content": "• Monotonically increasing likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.314,
+            0.8,
+            0.34
+          ],
+          "content": "• Convergence is hard to determine due to plateaus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 51"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.867,
+            0.562
+          ],
+          "content": "It can be hard to tell when EM has converged, though. Sometimes, the models just get a tiny bit better for a long time, and you think the process is done, and there’s a sudden increase in likelihood. There’s no real way to know whether that’s going to happen or not."
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.072,
+            0.584,
+            0.102
+          ],
+          "level": 2,
+          "content": "EM Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.112,
+            0.357,
+            0.137
+          ],
+          "content": "• Pick initial $\\theta _ { 0 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.138,
+            0.589,
+            0.165
+          ],
+          "content": "• Loop until apparently converged"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.184,
+            0.465,
+            0.213
+          ],
+          "content": "$\\tilde { P } _ { t + 1 } ( H ) = \\Pr ( H \\mid D , \\theta _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.215,
+            0.57,
+            0.252
+          ],
+          "content": "$\\theta_{t + 1} = \\underset{\\theta}{\\arg\\max} E_{\\tilde{P}_{t + 1}} \\log \\Pr(D, H \\mid \\theta)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.288,
+            0.618,
+            0.314
+          ],
+          "content": "• Monotonically increasing likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.314,
+            0.8,
+            0.339
+          ],
+          "content": "• Convergence is hard to determine due to plateaus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.34,
+            0.527,
+            0.364
+          ],
+          "content": "• Problems with local optima"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 52"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.868,
+            0.583
+          ],
+          "content": "Another problem with EM is that it is subject to local minima. Sometimes it converges quite effectively to the maximum model that’s near the one it started with, but there’s a much better model somewhere else in the space. For this reason, it can be important either to start from multiple different initial models, or to initialize your model based on some insight into the domain."
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.072,
+            0.685,
+            0.103
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.489,
+            0.138
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 53"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.878,
+            0.521
+          ],
+          "content": "Okay, so now let’s look at how to apply EM to Bayesian networks. Our data will be a set of cases of observations of some observable variables, D."
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.073,
+            0.685,
+            0.103
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.49,
+            0.137
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.138,
+            0.707,
+            0.164
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 54"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.86,
+            0.543
+          ],
+          "content": "Our hidden variables will actually be the values of the hidden nodes in each case. (So, if we have 10 data cases and a network with one hidden node, we’ll really have 10 hidden variables, or missing pieces of data)."
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.073,
+            0.684,
+            0.102
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.49,
+            0.137
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.138,
+            0.706,
+            0.162
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.164,
+            0.529,
+            0.188
+          ],
+          "content": "• Assume structure is known"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 55"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.495,
+            0.501
+          ],
+          "content": "We’ll assume that the structure is known."
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.073,
+            0.684,
+            0.102
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.49,
+            0.137
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.138,
+            0.707,
+            0.163
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.164,
+            0.53,
+            0.188
+          ],
+          "content": "• Assume structure is known"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.188,
+            0.747,
+            0.213
+          ],
+          "content": "• Goal: maximum likelihood estimation of CPTs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 56"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.502
+          ],
+          "content": "And we want to find the CPTs that maximize the probability of the observed data D."
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.268,
+            0.072,
+            0.685,
+            0.102
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.491,
+            0.137
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.138,
+            0.708,
+            0.163
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.163,
+            0.531,
+            0.188
+          ],
+          "content": "• Assume structure is known"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.187,
+            0.748,
+            0.214
+          ],
+          "content": "• Goal: maximum likelihood estimation of CPTs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.262,
+            0.676,
+            0.29
+          ],
+          "content": "• Initialize CPTs to anything (with no 0’s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 57"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.867,
+            0.521
+          ],
+          "content": "So, we’ll initialize the CPTs to have any values we want (without any zeros, unless we’re absolutely certain that they are true in our domain)."
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.267,
+            0.072,
+            0.685,
+            0.103
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.492,
+            0.138
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.138,
+            0.709,
+            0.163
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.163,
+            0.531,
+            0.188
+          ],
+          "content": "• Assume structure is known"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.187,
+            0.749,
+            0.214
+          ],
+          "content": "• Goal: maximum likelihood estimation of CPTs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.262,
+            0.677,
+            0.289
+          ],
+          "content": "• Initialize CPTs to anything (with no 0’s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.288,
+            0.807,
+            0.335
+          ],
+          "content": "• Fill in the data set with distribution over values for hidden vars"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 58"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.846,
+            0.502
+          ],
+          "content": "We can fill in the data set with distributions over values for the hidden variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.269,
+            0.073,
+            0.683,
+            0.102
+          ],
+          "content": "EM for Bayesian Networks"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.112,
+            0.491,
+            0.137
+          ],
+          "content": "• D: observable variables"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.138,
+            0.707,
+            0.163
+          ],
+          "content": "• H: values of hidden variables in each case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.164,
+            0.53,
+            0.187
+          ],
+          "content": "• Assume structure is known"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.188,
+            0.747,
+            0.213
+          ],
+          "content": "• Goal: maximum likelihood estimation of CPTs"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.263,
+            0.675,
+            0.288
+          ],
+          "content": "• Initialize CPTs to anything (with no 0’s)"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.289,
+            0.805,
+            0.333
+          ],
+          "content": "• Fill in the data set with distribution over values for hidden vars"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.335,
+            0.65,
+            0.36
+          ],
+          "content": "• Estimate CPTs using expected counts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 59"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.585,
+            0.502
+          ],
+          "content": "And then estimate the CPTs using expected counts."
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.338,
+            0.073,
+            0.615,
+            0.102
+          ],
+          "content": "Filling in the data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.138,
+            0.58,
+            0.182
+          ],
+          "content": "• Distribution over H factors over the M data cases"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.234,
+            0.19,
+            0.503,
+            0.261
+          ],
+          "content": "\\begin{array}{c} \\tilde {P} _ {t + 1} (H) = \\Pr (H \\mid D, \\theta_ {t}) \\\\ = \\prod_ {m} \\Pr (H ^ {m} \\mid D ^ {m}, \\theta_ {t}) \\end{array}",
+          "image_source": "images/page_59_equation_2.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 60"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.865,
+            0.541
+          ],
+          "content": "When it’s time to compute the probability distribution over H given D and theta, it seems hard, because we’ll have m different hidden variables: one for the value of node H in each of the m data cases."
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.338,
+            0.073,
+            0.615,
+            0.102
+          ],
+          "content": "Filling in the data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.138,
+            0.58,
+            0.183
+          ],
+          "content": "• Distribution over H factors over the M data cases"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.19,
+            0.503,
+            0.26
+          ],
+          "content": "\\begin{array}{c} \\tilde {P} _ {t + 1} (H) = \\Pr (H \\mid D, \\theta_ {t}) \\\\ = \\prod_ {m} \\Pr (H ^ {m} \\mid D ^ {m}, \\theta_ {t}) \\end{array}",
+          "image_source": "images/page_60_equation_2.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.26,
+            0.802,
+            0.306
+          ],
+          "content": "• We really just need to compute a distribution over each individual hidden variable"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.436
+          ],
+          "content": "Lecture 18 • 61"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.837,
+            0.56
+          ],
+          "content": "Luckily, this distribution factors out. Each hidden variable depends only on the observed variables in its case, given the model. So, we really only have to worry about coming up with the individual distributions over each hidden variable in each case."
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.337,
+            0.073,
+            0.615,
+            0.102
+          ],
+          "level": 2,
+          "content": "Filling in the data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.138,
+            0.581,
+            0.183
+          ],
+          "content": "• Distribution over H factors over the M data cases"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.233,
+            0.19,
+            0.503,
+            0.259
+          ],
+          "content": "\\begin{array}{c} \\tilde {P} _ {t + 1} (H) = \\Pr (H \\mid D, \\theta_ {t}) \\\\ = \\prod_ {m} \\Pr (H ^ {m} \\mid D ^ {m}, \\theta_ {t}) \\end{array}",
+          "image_source": "images/page_61_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.26,
+            0.802,
+            0.304
+          ],
+          "content": "• We really just need to compute a distribution over each individual hidden variable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.306,
+            0.711,
+            0.331
+          ],
+          "content": "• Each factor is a call to Bayes net inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 62"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.582
+          ],
+          "content": "Now, how can we compute Pr(Hm | dm, theta)? That’s just a call to a bayes net inference procedure. We’re given all the parameters of the network, and an assignment to some of the variables, D. We need to find a probability distribution over the other variables, H. We can use variable elimination, or any other technique available to us."
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 63"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.293,
+            0.071,
+            0.661,
+            0.103
+          ],
+          "content": "EM for BN: Simple Case"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.053,
+            0.85,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_62_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.85,
+            0.583
+          ],
+          "content": "Let’s just consider a simple case with a single hidden node (things get a bit more complicated when we have more than one; but not qualitatively different). We’ll use the same network structure we talked about at the beginning of this lecture: one hidden cause directly controlling a whole set of possible effects. And for further simplicity, we’ll assume all the nodes are binary."
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.186,
+            0.119,
+            0.608,
+            0.373
+          ],
+          "content": "| $D_1$ | $D_2$ | ... | $D_n$ | $\\Pr(H^m \\mid D^m, \\theta_t)$ |\n| --- | --- | --- | --- | --- |\n| 1 | 1 |  | 0 | .9 |\n| 0 | 1 |  | 0 | .2 |\n| 0 | 0 |  | 1 | .1 |\n| 1 | 0 |  | 1 | .6 |\n| 1 | 1 |  | 1 | .2 |\n| 1 | 1 |  | 1 | .5 |\n| 0 | 1 |  | 0 | .3 |\n| 0 | 0 |  | 0 | .7 |\n| 1 | 1 |  | 0 | .2 |",
+          "captions": [
+            {
+              "bbox": [
+                0.294,
+                0.073,
+                0.659,
+                0.102
+              ],
+              "content": "EM for BN: Simple Case"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_63_table_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.629,
+            0.12,
+            0.802,
+            0.216
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_63_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.86,
+            0.54
+          ],
+          "content": "So, given a model, theta, we can use bayes net inference to compute, for each case in our data set, the probability that H would be true, given the values of the observed variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.162,
+            0.111,
+            0.816,
+            0.447
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.294,
+                0.073,
+                0.659,
+                0.101
+              ],
+              "content": "EM for BN: Simple Case"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_64_image_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.187,
+            0.134,
+            0.479,
+            0.372
+          ],
+          "content": "| D<sub>1</sub> | D<sub>2</sub> | … | D<sub>n</sub> | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- | --- |\n| 1 | 1 |  | 0 | .9 |\n| 0 | 1 |  | 0 | .2 |\n| 0 | 0 |  | 1 | .1 |\n| 1 | 0 |  | 1 | .6 |\n| 1 | 1 |  | 1 | .2 |\n| 1 | 1 |  | 1 | .5 |\n| 0 | 1 |  | 0 | .3 |\n| 0 | 0 |  | 0 | .7 |\n| 1 | 1 |  | 0 | .2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.863,
+            0.542
+          ],
+          "content": "Then, we can use these distributions to compute expected counts. So, for instance, to get the expected number of times H is true, we’d just add up with probabilities of H being true in each case."
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.294,
+            0.074,
+            0.659,
+            0.101
+          ],
+          "content": "EM for BN: Simple Case"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.187,
+            0.133,
+            0.479,
+            0.372
+          ],
+          "content": "$\\mathsf { D } _ { 1 }$ $\\boxed { \\mathsf { D } _ { 2 } }$ $\\boxed { \\mathsf { D } _ { \\mathsf { n } } }$ $\\Pr(H^{m}\\mid D^{m},\\theta_{t})$ 1 1 0 .9 0 1 0 .2 0 0 1 .1 1 0 1 .6 1 1 1 .2 1 1 1 .5 0 1 0 .3 0 0 0 .7 1 1 0 .2"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.505,
+            0.123,
+            0.59,
+            0.152
+          ],
+          "content": "Bayes net inference"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.629,
+            0.119,
+            0.802,
+            0.216
+          ],
+          "content": "H 2"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.532,
+            0.229,
+            0.705,
+            0.274
+          ],
+          "content": "\\begin{array}{c} E \\# (H) = \\sum_ {m} \\Pr (H ^ {m} \\mid D ^ {m}, \\theta_ {t}) \\\\ = 3. 7 \\end{array}",
+          "image_source": "images/page_65_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.532,
+            0.278,
+            0.77,
+            0.34
+          ],
+          "content": "\\begin{array}{r l} E \\# (H \\wedge D _ {2}) & = \\sum_ {m} \\Pr (H ^ {m} \\mid D ^ {m}, \\theta_ {t}) I (D _ {2} ^ {m}) \\\\ & = . 9 +. 2 +. 2 +. 5 +. 3 +. 2 \\\\ & = 2. 3 \\end{array}",
+          "image_source": "images/page_65_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 66"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.479,
+            0.872,
+            0.521
+          ],
+          "content": "To get the expected number of times that H and D2 are true, we find all the cases in which D2 is true, and add up their probabilities of H being true."
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.293,
+            0.073,
+            0.66,
+            0.102
+          ],
+          "content": "EM for BN: Simple Case"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.122,
+            0.591,
+            0.152
+          ],
+          "content": "Bayes net inference"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.187,
+            0.133,
+            0.479,
+            0.372
+          ],
+          "content": "| D<sub>1</sub> | D<sub>2</sub> | … | D<sub>n</sub> | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- | --- |\n| 1 | 1 |  | 0 | .9 |\n| 0 | 1 |  | 0 | .2 |\n| 0 | 0 |  | 1 | .1 |\n| 1 | 0 |  | 1 | .6 |\n| 1 | 1 |  | 1 | .2 |\n| 1 | 1 |  | 1 | .5 |\n| 0 | 1 |  | 0 | .3 |\n| 0 | 0 |  | 0 | .7 |\n| 1 | 1 |  | 0 | .2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_table_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.165,
+            0.11,
+            0.822,
+            0.446
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.857,
+            0.542
+          ],
+          "content": "Those two expected counts will let us re-estimate theta. The component of theta that represents the probability of D2 given H will be estimated by dividing the two counts we just computed."
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 68"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.256,
+            0.071,
+            0.698,
+            0.104
+          ],
+          "content": "EM for BN: Worked Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.627,
+            0.118,
+            0.803,
+            0.216
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.875,
+            0.541
+          ],
+          "content": "Now, to make everything concrete, we’ll go all the way through a very simple example. Let’s assume there’s a hidden cause, H, and two observable variables, A and B."
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.258,
+            0.072,
+            0.697,
+            0.102
+          ],
+          "level": 2,
+          "content": "EM for BN: Worked Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.134,
+            0.461,
+            0.254
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 |  |\n| 0 | 1 | 1 |  |\n| 1 | 0 | 1 |  |\n| 1 | 1 | 4 |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_table_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.629,
+            0.119,
+            0.802,
+            0.215
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.87,
+            0.582
+          ],
+          "content": "I’ve summarized our data set in this table, indicating that we saw the combination 0,0 6 times, the combination 0,1 once, etc. If we have a domain with more data cases than possible assignments to the observable variables, it’s usually more efficient to store the data this way. But quite typically we never see the same data case more than once, and most of them we never see at all!"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.256,
+            0.071,
+            0.699,
+            0.104
+          ],
+          "content": "EM for BN: Worked Example"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.187,
+            0.133,
+            0.461,
+            0.256
+          ],
+          "content": "A B # $\\Pr(H^m \\mid D^m, \\theta_t)$ 0 0 6 0 1 1 1 0 1 1 1 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.625,
+            0.117,
+            0.805,
+            0.217
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.224,
+            0.585,
+            0.251
+          ],
+          "content": "\\theta_ {1} = \\Pr (H)",
+          "image_source": "images/page_69_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.251,
+            0.619,
+            0.277
+          ],
+          "content": "\\theta_ {2} = \\Pr (A \\mid H)",
+          "image_source": "images/page_69_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.277,
+            0.631,
+            0.303
+          ],
+          "content": "\\theta_ {3} = \\Pr (A \\mid \\neg H)",
+          "image_source": "images/page_69_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.303,
+            0.619,
+            0.329
+          ],
+          "content": "\\theta_ {4} = \\Pr (B \\mid H)",
+          "image_source": "images/page_69_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.329,
+            0.631,
+            0.356
+          ],
+          "content": "\\theta_ {5} = \\Pr (B \\mid \\neg H)",
+          "image_source": "images/page_69_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 70"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.821,
+            0.521
+          ],
+          "content": "We’ll let the thetas be these probabilities, which make up all the CPTs for our simple network."
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.256,
+            0.072,
+            0.699,
+            0.103
+          ],
+          "level": 2,
+          "content": "EM for BN: Worked Example"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.187,
+            0.134,
+            0.461,
+            0.256
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 |  |\n| 0 | 1 | 1 |  |\n| 1 | 0 | 1 |  |\n| 1 | 1 | 4 |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.224,
+            0.586,
+            0.251
+          ],
+          "content": "\\theta_ {1} = \\Pr (H)",
+          "image_source": "images/page_70_equation_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_image_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.251,
+            0.619,
+            0.277
+          ],
+          "content": "\\theta_ {2} = \\Pr (A \\mid H)",
+          "image_source": "images/page_70_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.277,
+            0.631,
+            0.303
+          ],
+          "content": "\\theta_ {3} = \\Pr (A \\mid \\neg H)",
+          "image_source": "images/page_70_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.303,
+            0.619,
+            0.329
+          ],
+          "content": "\\theta_ {4} = \\Pr (B \\mid H)",
+          "image_source": "images/page_70_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.479,
+            0.33,
+            0.631,
+            0.356
+          ],
+          "content": "\\theta_ {5} = \\Pr (B \\mid \\neg H)",
+          "image_source": "images/page_70_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 71"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.877,
+            0.582
+          ],
+          "content": "Note that we have a lot of cases of 00 and of 11, but not many with 01 or 10. We can guess that the hidden node is going to play the role of choosing whether we output a 00 or a 11. And that there are roughly two reasonable solutions: A and B are both on when H is off, or A and B are both on when H is on. Let’s see what learning does for us."
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.288,
+            0.071,
+            0.667,
+            0.103
+          ],
+          "content": "EM for BN: Initial Model"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.187,
+            0.133,
+            0.461,
+            0.256
+          ],
+          "content": "A B # $\\Pr(H^m \\mid D^m, \\theta_t)$ 0 0 6 0 1 1 1 0 1 1 1 4"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.628,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 4",
+          "image_source": "images/page_71_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.247,
+            0.638,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 5 5",
+          "image_source": "images/page_71_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.276,
+            0.636,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 6 1",
+          "image_source": "images/page_71_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 4 3",
+          "image_source": "images/page_71_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.331,
+            0.638,
+            0.357
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 5 2",
+          "image_source": "images/page_71_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 72"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.849,
+            0.521
+          ],
+          "content": "I picked an initial model to be this set of probabilities, which are sort of near, but not equal to 0.5. We’ll see why I did this, later on."
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.296,
+            0.071,
+            0.658,
+            0.103
+          ],
+          "level": 2,
+          "content": "Iteration 1: Fill in data"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.187,
+            0.133,
+            0.461,
+            0.255
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 | .48 |\n| 0 | 1 | 1 | .39 |\n| 1 | 0 | 1 | .42 |\n| 1 | 1 | 4 | .33 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_72_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.627,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 4",
+          "image_source": "images/page_72_equation_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_72_image_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.247,
+            0.638,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 5 5",
+          "image_source": "images/page_72_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.276,
+            0.636,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 6 1",
+          "image_source": "images/page_72_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.486,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 4 3",
+          "image_source": "images/page_72_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.331,
+            0.638,
+            0.357
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 5 2",
+          "image_source": "images/page_72_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 73"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.849,
+            0.522
+          ],
+          "content": "Given that initial model, we can compute the probability of H given A and B, for every combination of A and B, and put those probabilities into our table."
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 74"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.222,
+            0.072,
+            0.733,
+            0.103
+          ],
+          "content": "Iteration 1: Re-estimate Params"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.186,
+            0.134,
+            0.459,
+            0.256
+          ],
+          "content": "A B # $\\Pr(H^m \\mid D^m, \\theta_t)$ 0 0 6 .48 0 1 1 .39 1 0 1 .42 1 1 4 .33"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.502,
+            0.221,
+            0.637,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 4 2",
+          "image_source": "images/page_73_equation_3.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.624,
+            0.117,
+            0.806,
+            0.217
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.484,
+            0.247,
+            0.638,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 3 5",
+          "image_source": "images/page_73_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.472,
+            0.276,
+            0.638,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 4 6",
+          "image_source": "images/page_73_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 3 4",
+          "image_source": "images/page_73_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.472,
+            0.331,
+            0.637,
+            0.358
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 4 7",
+          "image_source": "images/page_73_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.857,
+            0.543
+          ],
+          "content": "Now we can re-estimate the parameters of the model using the expected values of H. Here’s what we get (I used a computer program to do this, so it’s probably right; but I wrote the program, so maybe not…)"
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.072,
+            0.659,
+            0.103
+          ],
+          "level": 2,
+          "content": "Iteration 2: Fill in Data"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.187,
+            0.133,
+            0.46,
+            0.255
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 | .52 |\n| 0 | 1 | 1 | .39 |\n| 1 | 0 | 1 | .39 |\n| 1 | 1 | 4 | .28 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_74_table_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.216
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_74_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.222,
+            0.637,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 4 2",
+          "image_source": "images/page_74_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.248,
+            0.638,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 3 5",
+          "image_source": "images/page_74_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.276,
+            0.638,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 4 6",
+          "image_source": "images/page_74_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 3 4",
+          "image_source": "images/page_74_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.472,
+            0.331,
+            0.637,
+            0.357
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 4 7",
+          "image_source": "images/page_74_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 75"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.479,
+            0.859,
+            0.521
+          ],
+          "content": "Now we can fill in new values of the data. We can start to see a tendency for H to want to be on when A and B are off, and vice versa."
+        }
+      ]
+    },
+    {
+      "page_idx": 75,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.222,
+            0.072,
+            0.733,
+            0.104
+          ],
+          "content": "Iteration 2: Re-estimate params"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.186,
+            0.133,
+            0.46,
+            0.256
+          ],
+          "content": "A B # $\\Pr(H^m \\mid D^m, \\theta_t)$ 0 0 6 .52 0 1 1 .39 1 0 1 .28 1 1 4 .28"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.625,
+            0.117,
+            0.806,
+            0.217
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.637,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 4 2",
+          "image_source": "images/page_75_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.247,
+            0.637,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 3 1",
+          "image_source": "images/page_75_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.275,
+            0.639,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 5 0",
+          "image_source": "images/page_75_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.303,
+            0.639,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 3 0",
+          "image_source": "images/page_75_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.33,
+            0.639,
+            0.358
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 5 0",
+          "image_source": "images/page_75_equation_7.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 76"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.841,
+            0.521
+          ],
+          "content": "Now we recomputed the probabilities in the model. They’re moving away from their initial values."
+        }
+      ]
+    },
+    {
+      "page_idx": 76,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.186,
+            0.134,
+            0.457,
+            0.256
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 | .79 |\n| 0 | 1 | 1 | .31 |\n| 1 | 0 | 1 | .31 |\n| 1 | 1 | 4 | .05 |",
+          "captions": [
+            {
+              "bbox": [
+                0.387,
+                0.072,
+                0.566,
+                0.102
+              ],
+              "content": "Iteration 5"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_76_table_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_76_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.638,
+            0.247
+          ],
+          "content": "\\Pr (H) = 0. 4 6",
+          "image_source": "images/page_76_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.484,
+            0.248,
+            0.639,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 0 9",
+          "image_source": "images/page_76_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.472,
+            0.275,
+            0.638,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 6 9",
+          "image_source": "images/page_76_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 0 9",
+          "image_source": "images/page_76_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.472,
+            0.331,
+            0.638,
+            0.358
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 6 9",
+          "image_source": "images/page_76_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.857,
+            0.56
+          ],
+          "content": "Now we skip ahead to iteration 5. Here are the missing-data distributions and the model. The tendency for H to be on when A and B are off, and for it to be off when they are on is considerably strengthened, as we can see in both distributions."
+        }
+      ]
+    },
+    {
+      "page_idx": 77,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 78"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.378,
+            0.072,
+            0.576,
+            0.102
+          ],
+          "content": "Iteration 10"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.186,
+            0.133,
+            0.459,
+            0.256
+          ],
+          "content": "A B # $\\Pr(H^m \\mid D^m, \\theta_t)$ 0 0 6 .971 0 1 1 .183 1 0 1 .183 1 1 4 .001"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "H A B"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.637,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 5 2",
+          "image_source": "images/page_77_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.248,
+            0.637,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 0 3",
+          "image_source": "images/page_77_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.276,
+            0.637,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 8 3",
+          "image_source": "images/page_77_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.486,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 0 3",
+          "image_source": "images/page_77_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.331,
+            0.637,
+            0.357
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 8 3",
+          "image_source": "images/page_77_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.878,
+            0.561
+          ],
+          "content": "After 10 iterations, the process is pretty well converged. The prior probability of H is just over 50 percent (which makes sense, since about half of the data cases are 00, when it is almost certainly on, and it has some chance of being on in a couple of the other cases)."
+        }
+      ]
+    },
+    {
+      "page_idx": 78,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.377,
+            0.072,
+            0.577,
+            0.102
+          ],
+          "level": 2,
+          "content": "Iteration 10"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.186,
+            0.133,
+            0.46,
+            0.256
+          ],
+          "content": "| A | B | # | Pr(H<sup>m</sup> \\|D<sup>m</sup>,θ<sub>t</sub>) |\n| --- | --- | --- | --- |\n| 0 | 0 | 6 | .971 |\n| 0 | 1 | 1 | .183 |\n| 1 | 0 | 1 | .183 |\n| 1 | 1 | 4 | .001 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_78_table_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.625,
+            0.118,
+            0.805,
+            0.217
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_78_image_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.503,
+            0.221,
+            0.638,
+            0.246
+          ],
+          "content": "\\Pr (H) = 0. 5 2",
+          "image_source": "images/page_78_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.485,
+            0.248,
+            0.637,
+            0.274
+          ],
+          "content": "\\Pr (A | H) = 0. 0 3",
+          "image_source": "images/page_78_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.276,
+            0.637,
+            0.301
+          ],
+          "content": "\\Pr (A \\mid \\neg H) = 0. 8 3",
+          "image_source": "images/page_78_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.486,
+            0.303,
+            0.637,
+            0.329
+          ],
+          "content": "\\Pr (B | H) = 0. 0 3",
+          "image_source": "images/page_78_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.473,
+            0.331,
+            0.637,
+            0.357
+          ],
+          "content": "\\Pr (B \\mid \\neg H) = 0. 8 3",
+          "image_source": "images/page_78_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 18 • 79"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.877,
+            0.542
+          ],
+          "content": "The CPTs for A and B are the same, which also makes sense, since the data is completely symmetric for A and B. When H is on, A and B are almost certainly off. When H is off, A and B have a moderately high probability of being on."
+        }
+      ]
+    },
+    {
+      "page_idx": 79,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.302,
+            0.139,
+            0.589,
+            0.36
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.272,
+                0.07,
+                0.681,
+                0.105
+              ],
+              "content": "Increasing Log Likelihood"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_79_chart_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.881,
+            0.561
+          ],
+          "content": "If we plot the log likelihood of the observed data given the model as a function of the iteration, we can see that it increases monotonically. It flattens out somewhere around iteration 8, and I don’t think it’s going to improve much after that."
+        }
+      ]
+    },
+    {
+      "page_idx": 80,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.272,
+            0.07,
+            0.681,
+            0.106
+          ],
+          "content": "Increasing Log Likelihood"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.302,
+            0.138,
+            0.589,
+            0.36
+          ],
+          "content": "-12 -13 -14 -15 -16 -17 -18 0 5 1 0 iteration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 81"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.478,
+            0.856,
+            0.52
+          ],
+          "content": "You can see that, although it’s always improving, the amount of improvement per iteration is variable."
+        }
+      ]
+    },
+    {
+      "page_idx": 81,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.302,
+            0.137,
+            0.731,
+            0.359
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.273,
+                0.071,
+                0.68,
+                0.104
+              ],
+              "content": "Increasing Log Likelihood"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_81_chart_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.87,
+            0.643
+          ],
+          "content": "To illustrate the problems with local optima, even with such a simple model as this, I tried to solve the same problem, with the same data set, but initializing all of the parameters in the model to 0.5. Because of the symmetry in the parameters and the symmetry in the data set, parameters theta 2 through theta 5 remain at 0.5 forever. It takes just a little bit of asymmetry to tip the iterative process toward one or the other reasonable solution. This is an unstable equilibrium, which is unlikely to arise in practice. But just to be safe, it’s often wise to initialize your parameters to be nearly, but not quite uniform."
+        }
+      ]
+    },
+    {
+      "page_idx": 82,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.303,
+            0.138,
+            0.73,
+            0.359
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.273,
+                0.071,
+                0.68,
+                0.105
+              ],
+              "content": "Increasing Log Likelihood"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.478,
+                0.86,
+                0.583
+              ],
+              "content": "Finally, just for fun, I tried initializing all the parameters near (but not equal to 0). The log likelihood of that model is terrible (something like –35), but then it jumps up to around –16, which is where the completely symmetric model was. Eventually, it manages to break the symmetry, and come up to the same asymptote as the first run."
+            }
+          ],
+          "image_source": "images/page_82_chart_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 83,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.35,
+            0.072,
+            0.603,
+            0.102
+          ],
+          "content": "EM in BN issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.762,
+            0.16
+          ],
+          "content": "• With multiple hidden nodes, take advantage of conditional independencies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 18 • 84"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.854,
+            0.543
+          ],
+          "content": "When you have multiple hidden nodes, it’s important to take advantage of conditional independencies among the hidden nodes given the observables, to avoid having to compute joint distributions over many hidden variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 84,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.351,
+            0.073,
+            0.603,
+            0.101
+          ],
+          "content": "EM in BN issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.112,
+            0.762,
+            0.158
+          ],
+          "content": "• With multiple hidden nodes, take advantage of conditional independencies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.16,
+            0.806,
+            0.203
+          ],
+          "content": "• Lots of tricks to speed up computation of expected counts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 18 • 85"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.478,
+            0.873,
+            0.542
+          ],
+          "content": "The way we described this algorithm, including filling in all of the partial counts, is very inefficient. There are lots of methods, and a fair amount of current research, devoted to making that process much more efficient."
+        }
+      ]
+    },
+    {
+      "page_idx": 85,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.351,
+            0.073,
+            0.603,
+            0.101
+          ],
+          "content": "EM in BN issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.113,
+            0.762,
+            0.158
+          ],
+          "content": "• With multiple hidden nodes, take advantage of conditional independencies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.16,
+            0.806,
+            0.203
+          ],
+          "content": "• Lots of tricks to speed up computation of expected counts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.205,
+            0.781,
+            0.251
+          ],
+          "content": "• If structure is unknown, add search operators to add and delete hidden nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 18 • 86"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.867,
+            0.562
+          ],
+          "content": "What if the structure of the network is unknown? Then we can do structure search, but add to our repertoire of search steps the option of adding or deleting hidden nodes. Then, given a structure, we can use EM to estimate the parameters, and use them to compute a score on the final model."
+        }
+      ]
+    },
+    {
+      "page_idx": 86,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.351,
+            0.074,
+            0.602,
+            0.101
+          ],
+          "content": "EM in BN issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.182,
+            0.113,
+            0.761,
+            0.158
+          ],
+          "content": "• With multiple hidden nodes, take advantage of conditional independencies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.16,
+            0.805,
+            0.202
+          ],
+          "content": "• Lots of tricks to speed up computation of expected counts"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.206,
+            0.781,
+            0.249
+          ],
+          "content": "• If structure is unknown, add search operators to add and delete hidden nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.183,
+            0.252,
+            0.756,
+            0.296
+          ],
+          "content": "• There are clever ways of search with unknown structure and hidden nodes"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.421,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 18 • 87"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.479,
+            0.804,
+            0.541
+          ],
+          "content": "Another topic of current research is how to make search with both unknown structure and hidden nodes more efficient by considering them both simultaneously."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture18Final-Part1",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T09:04:26Z",
+      "modified_at": "2003-06-13T11:27:24+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 87,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 75,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 76,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 77,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 78,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 79,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 80,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 81,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 82,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 83,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 84,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 85,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 86,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

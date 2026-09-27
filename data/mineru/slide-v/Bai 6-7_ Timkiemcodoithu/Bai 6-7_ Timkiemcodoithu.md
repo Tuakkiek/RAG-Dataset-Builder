@@ -1,0 +1,480 @@
+<!-- page: 1 -->
+
+## BACH KHOA
+
+## TRÍ TUỆ NHÂN TẠO
+
+![](images/page_0_image_3.jpg)
+
+Khoa Công Nghệ Thông Tin
+TS. Nguyễn Văn Hiệu
+
+<!-- page: 2 -->
+
+## TRÍ TƯỆ NHÂN TẠO
+
+## BACH KHOA
+
+## Chương 4: Tìm kiểm có đối thủ
+
+<!-- page: 3 -->
+
+## Nội dung
+
+Trò chơi
+
+\- Trò chơi đối kháng và tìm kiếm
+
+\- Chiến lược Minimax
+
+\- Phương pháp cắt tĩa Alpha-Beta
+
+<!-- page: 4 -->
+
+## Trò choi
+
+\- Trò chơi là một trong những đặc tính được xem là thông minh của con người
+
+\- Trò chơi được xem là phiên bản “F1” của trí tuệ nhân tạo
+
+\- Trò chơi đối kháng
+
+○ Cò caro
+
+○ Cò tuóng
+
+○ Cò vua
+
+○ Cò vây
+
+<!-- page: 5 -->
+
+## Trò choi
+
+\- Năm 1997 DeepBlue đã chiến thắng tỉ số 3.5-2.5
+trước siêu đại kiện tương Garry Kimovich Kasparov
+
+\- Bí quyết của DeepBlue, IBM
+
+\- Tìm kiểm vét cạn với độ sâu cao nhất có thể
+
+○ Tính được 2x10^8 nước đi trong vong 1s (trong khi Kasparov chỉ tính được 2 nước)
+
+99.99% nước đi được xem là tôi
+
+\- Hàm ước lượng tương đối phức tạp
+
+<!-- page: 6 -->
+
+## Cây trò chơi đối kháng và tìm kiếm
+
+## - Thành phần
+
+\- tập trạng thái: mỗi trạng thái là một tính thể
+
+\- trạng thái bắt đầu, trạng thái kết thúc
+
+\- hàm succs: các nước đi hợp lệ
+
+\- hàm utility: hàm lợi ích, đánh giá trạng thái kết thúc
+
+• Hai người chơi: Max và Min
+
+\- Không tìm đường đi, mà tìm nước đi “tối ưu”
+
+\- Nước đi của Max phụ thuộc vào nước đi của Min, và ngược lại.
+
+<!-- page: 7 -->
+
+## Minh hoạ 1 người chơi “Tictactoe”
+
+![](images/page_6_image_5.jpg)
+
+<!-- page: 8 -->
+
+## Minh hoạ 2 người chơi “Tictactoe”
+
+![](images/page_7_image_5.jpg)
+
+<!-- page: 9 -->
+
+## Cây trò chơi đối kháng và tìm kiếm
+
+\- Đặc điểm trò chơi đối kháng
+
+\- Người chơi thay phiên nhau chơi theo luật nào đó
+
+\- Môi người chơi biết đầy đủ các luật chơi
+
+\- Mỗi người chơi biết đầy đủ thông tin về tình thế
+
+\- Nước đi “tốt nhất” là nước đi dẫn đến phần thắng
+
+\- Cây trò chơi: biểu diễn không gian trạng thái của trò chơi
+
+<!-- page: 10 -->
+
+## Cây trò chơi đối kháng và tìm kiếm
+
+\- Cây trò chơi: biểu diễn không gian trạng thái của trò chơi
+
+\- Cây trò chơi:
+
+○ Góc : trạng thái ban đầu
+
+○ Đình toàn Max, hoặc toàn Min cùng 1 mức
+
+○ Lá: trạng thái kết thúc
+
+○ Chiến lược của người chơi Max là đường đi từ gốc đến lá
+
+<!-- page: 11 -->
+
+## Cây trò chơi đối kháng và tìm kiếm
+
+\- Một số khó khăn:
+
+\- Bước đi của người chơi phụ thuộc lớn vào bước đi của đối thủ.
+
+\- Rất khó để tổng quát, vì không gian tìm kiếm lớn
+
+\- Khó tìm được lời giải tối ưu, chỉ tìm được lời giải đáp ứng
+
+• Thuật toán tiêu biểu Minimax
+
+<!-- page: 12 -->
+
+## Thuật toán Minimax
+
+• Hai người chơi luôn tối ưu
+
+\- Max tối đa hoá hàm lợi ích
+
+\- Min tối thiểu hoá làm lợi ích
+
+\- Chiến lược Max phụ thuộc vào chiến lược Min
+
+\- Giá trị MinimaxValue: giá trị tiện ích ở trạng thái kết thúc tương ứng với đường đi, trong trường hợp giả sử hai người chơi luôn tối ưu.
+
+<!-- page: 13 -->
+
+## Thuật toán Minimax
+
+\- Giá trị MinimaxValue (u) :
+
+\- utility(u), nếu u là trạng thái kết thúc (lá)
+
+\- max {MinimaxValue(s), s thuộc succs(u)}, nếu u là người chơi Max
+
+\- min {MinimaxValue(s), s thuộc succs(u)}, nếu u là người chơi Min
+
+• Minh hoạ thông qua trò chơi Nim
+
+\- cho n đồng xu, n >2
+
+\- Mỗi nước đi người chơi chia số đồng xu thành 2 nhóm, sao cho số lượng 2 nhóm khác nhau
+
+\- Người thu là người cuối cùng không chia được số đồng xu theo yêu cầu của bài toán
+
+• Hướng giải quyết bài toán?
+
+<!-- page: 14 -->
+
+## Cây trò chơi đối kháng và tìm kiếm
+
+## - Trò chơi Nim
+
+![](images/page_13_image_6.jpg)
+
+<!-- page: 15 -->
+
+## Thuật toán Minimax
+
+## Trò chơi Nim
+
+\- Hai đổi thủ Min và Max
+
+\- Max tối đa ựu thế của mình, Min tìm cách đưa Max vào thế khó
+
+\- Mỗi mức trên cây trò chơi ứng với một đối thủ
+
+\- Đề xây dựng cách đi: Nút lá được gán 1, nếu Max thẳng; Nút lá được gán là 0 nếu Min thẳng
+
+Gán giá trị cho nút bằng cách tiến hành truyền ngược từ nút lá về nút gốc theo quy tắc:
+
+○ Nếu định ở mức Max, thì lấy giá trị lớn nhất của các nút con
+
+○ Nếu định ở mức Min, thì lấy giá trị nhỏ nhất của các nút con
+
+<!-- page: 16 -->
+
+## Minh hoạ Minimax
+
+![](images/page_15_image_5.jpg)
+
+<!-- page: 17 -->
+
+## Minh hoạ Minimax
+
+![](images/page_16_image_5.jpg)
+
+<!-- page: 18 -->
+
+## Minh hoạ Minimax
+
+![](images/page_17_image_5.jpg)
+
+<!-- page: 19 -->
+
+## Minh hoạ Minimax
+
+7
+
+![](images/page_18_image_6.jpg)
+
+5
+
+![](images/page_18_image_8.jpg)
+
+![](images/page_18_image_9.jpg)
+
+![](images/page_18_image_10.jpg)
+
+<!-- page: 20 -->
+
+## Minh hoạ Minimax
+
+7
+
+![](images/page_19_image_6.jpg)
+
+![](images/page_19_image_7.jpg)
+
+5
+
+![](images/page_19_image_9.jpg)
+
+<!-- page: 21 -->
+
+## Thuật toán Minimax
+
+```txt
+function MINIMAX-DECISION (state) returns an action
+    v ← MAX-VALUE (state)
+    return the action in succs(state) with the value v
+
+function MAX-VALUE (state) returns an utility value
+    if TERMINAL-TEST (state) then return the UTILITY (state)
+    v ← -∞
+    for each s in succs(state) do
+        v ← MAX(v, MIN-VALUE(s))
+    return v
+
+function MIN-VALUE (state) returns an utility value
+    if TERMINAL-TEST (state) then return the UTILITY (state)
+    v ← +∞
+    for each s in succs(state) do
+        v ← MIN(v, MAX-VALUE(s))
+    return v
+```
+
+<!-- page: 22 -->
+
+## Demo
+
+## D BACH KHOA
+
+<!-- page: 23 -->
+
+## Đánh giá Minimax
+
+Tính đủ: Có ? nếu cây tìm kiếm hữu hạn
+
+• Tối ưu: Có ? với một đối thủ tối ưu
+
+• Độ phức tạp thời gian: O(b^d)
+
+• Độ phúc tạp không gian: O(b^d)
+
+• Với cò vua:
+
+○ b = 35, d = 100, không tìm thấy lời giải tối ưu
+
+<!-- page: 24 -->
+
+## Trường hợp hạn chế tài nguyên
+
+\- Vấn đề: trong trò chơi thực tế, chúng ta bị hạn chế về mặt thời gian nên không thể tìm kiếm tất cả các lá
+
+\- Đề thiết thực và chạy trong một khoảng thời gian nhất định, Minimax chỉ tìm kiếm theo giới hạn độ sâu hoặc giới hạn các node theo một quy tắc nào đó.
+
+\- Tạo nên sự khác biệt
+
+\- Giải pháp:
+
+• Thay thế hàm tiện ích cho các lá và hàm đánh giá cho các node trong
+
+\- Sử dụng tìm kiếm sâu lắp lại (IDS).
+
+\- Sử dụng phương pháp cắt tĩa: loại bổ những phần lớn của cây.
+
+<!-- page: 25 -->
+
+## Cắt tia Alpha-Beta
+
+## MAX
+
+## MIN
+
+![](images/page_24_image_7.jpg)
+
+<!-- page: 26 -->
+
+## Cắt tia Alpha-Beta
+
+## MAX
+
+## MIN
+
+![](images/page_25_image_7.jpg)
+
+<!-- page: 27 -->
+
+## Cắt tia Alpha-Beta
+
+MAX
+
+MIN
+
+![](images/page_26_image_7.jpg)
+
+<!-- page: 28 -->
+
+## Cắt tia Alpha-Beta
+
+\- Những giá trị nào cần thiết ?
+
+MAX
+
+MIN
+
+![](images/page_27_image_8.jpg)
+
+<!-- page: 29 -->
+
+## Cắt tia Alpha-Beta
+
+![](images/page_28_image_5.jpg)
+
+$$
+\begin{array}{r l} \text {Minimax(root)} & = \max (\min (3, 1 2, 8), \min (2, X, Y), \min (1 4, 5, 2)) \\ & = \max (3, \min (2, X, Y), 2) \\ & = \max (3, Z, 2) \qquad \text {where} Z = \min (2, X, Y) \leq 2 \\ & = 3 \end{array}
+$$
+
+<!-- page: 30 -->
+
+## Cắt tia Alpha-Beta
+
+\- Minimax(root) không phụ thuộc vào giá trị X, Y
+
+![](images/page_29_image_6.jpg)
+
+$$
+\begin{array}{r l} \operatorname{Minimax} (\text {root}) & = \max (\min (3, 1 2, 8), \min (2, X, Y), \min (1 4, 5, 2)) \\ & = \max (3, \min (2, X, Y), 2) \\ & = \max (3, Z, 2) \qquad \text {where} Z = \min (2, X, Y) \leq 2 \\ & = 3 \end{array}
+$$
+
+<!-- page: 31 -->
+
+## Cắt tia Alpha-Beta
+
+\- Giải pháp: MiniMax, DFS
+
+Tham số:
+
+• Alpha - giá trị lớn nhất của Max
+
+\- Beta - giá trị nhỏ nhất của Min
+
+\- Tìm kiểm có thể kết thúc
+
+\- Nút Max có Alpha >=Beta của nút cha Min
+
+\- Nút Min có Alpha <= Beta của nút cha Max
+
+\- Cắt tĩa alpha -beta thực hiện mối quan hệ giữa các nút mức n và mức n + 2, mà tại đó toàn bộ có gốc tại mức n+1 có thể cắt bỏ
+
+<!-- page: 32 -->
+
+## Cắt tia Alpha-Beta
+
+CH KHOA
+
+![](images/page_31_image_6.jpg)
+
+<!-- page: 33 -->
+
+## Cắt tia Alpha-Beta
+
+b
+
+s
+
+![](images/page_32_image_7.jpg)
+
+KHOA
+
+a
+
+<!-- page: 34 -->
+
+## Cắt tia Alpha-Beta
+
+## function ALPHA-BETA-SEARCH (state) returns an action
+
+```txt
+function MAX-VALUE (state, α, β) returns an utility value
+input: state, current state in game
+    α: the value of the best alternate for MAX along the patth to state
+    β: the value of the best alternate for MIN along the patth to state
+if TERMINAL-TEST (state) then return the UTILITY (state)
+v ← -∞
+for each s in succs(state) do
+    v ← MAX(v, MIN-VALUE(s, α, β))
+    if v ≥ β then return v
+    α ← MAX(α, v)
+```
+
+<!-- page: 35 -->
+
+## Cắt tia Alpha-Beta
+
+## function MIN-VALUE (state,  $\alpha$ ,  $\beta$ ) returns an utility value
+
+input: state, current state in game
+
+α: the value of the best alternate for MAX along the path to state
+
+β: the value of the best alterminate for MIN along the path to state if TERMINAL-TEST (state) then return the UTILITY (state)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\mathrm{V} \leftarrow +\infty$
+</div>
+
+for each s in succs(state) do
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$v \leftarrow MIN(v, MIN-VALUE(s, \alpha, \beta))$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+if $v \leq \alpha$ then return $v$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\beta \leftarrow \mathrm{MIN}(\beta, \mathrm{v})$
+</div>
+
+<!-- page: 36 -->
+
+## Demo
+
+## D BACH KHOA
