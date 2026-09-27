@@ -1,0 +1,1290 @@
+<!-- page: 1 -->
+
+# CS 4700: Foundations of Artificial Intelligence
+
+**Bart Selman**
+
+**selman@cs.cornell.edu**
+
+**Module:**
+
+**Informed Search**
+
+Readings R&N - Chapter 3: 3.5 and 3.6
+
+<!-- page: 2 -->
+
+**Search strategies determined by choice of node (in queue) to expand**
+
+<u>Uninformed</u> search:
+
+– Distance to goal not taken into account
+
+<u>Informed</u> search :
+
+– Information about cost to goal taken into account
+
+**Aside: “Cleverness” about what option to explore next, almost seems a hallmark of intelligence. E.g., a sense of what might be a good move in chess or what step to try next in a mathematical proof. We don’t do blind search…**
+
+<!-- page: 3 -->
+
+**Basic idea: State evaluation function can effectively guide search.**
+
+**Also in multi-agent settings. (Chess: board eval.)**
+
+**Reinforcement learning: Learn the state eval function.**
+
+![](images/page_2_image_4.jpg)
+
+<!-- page: 4 -->
+
+**Best-first search**
+
+• **Greedy best-first search**
+
+• $\mathrm { A } ^ { \ast }$ **search**
+
+**Heuristics**
+
+<!-- page: 5 -->
+
+## How to take information into account? Best-first search.
+
+## Idea : use an evaluation function for each node
+
+– Estimate of “desirability” of node
+
+– Expand most desirable unexpanded node first (“best-first search”)
+
+– Heuristic Functions :
+
+• f: States à Numbers
+
+• f(n): expresses the quality of the state n
+
+– Allows us to express problem-specific knowledge,
+
+– Can be imported in a generic way in the algorithms.
+
+– Use uniform-cost search. See Figure 3.14 but use f(n) instead of path cost g(n).
+
+– Queuing based on f(n):
+
+**Order the nodes in fringe in decreasing order of desirability**
+
+**Special cases:**
+
+• **greedy best-first search**
+
+• $\mathrm { A } ^ { \star }$ **search**
+
+<!-- page: 6 -->
+
+![](images/page_5_image_0.jpg)
+
+## Romanian path finding problem
+
+**Base eg on GPS info. No map needed.**
+
+**Searching for good path from Arad to Bucharest, what is a reasonable “desirability measure” to expand nodes on the fringe?**
+
+<!-- page: 7 -->
+
+**Evaluation function at node n,** $f ( n ) = h ( n )$ **(heuristic)**
+
+**= estimate of cost from n to goal**
+
+$\mathbf { e . g . , } h _ { S L D } ( n ) =$ **st**raight-line distance from n to Bucharest
+
+**Greedy best-first search expands the node that appears to have shortest path to goal.**
+
+**Idea: those nodes may lead to solution quickly.**
+
+Similar to depth-first search: It prefers to follow a single path to goal (guided by the heuristic), backing up when it hits a dead-end.
+
+<!-- page: 8 -->
+
+![](images/page_7_image_0.jpg)
+
+## Straight-line dist. to Bucharest
+
+## Greedy best-first search example
+
+| Arad | 366 |
+| --- | --- |
+| Bucharest | 0 |
+| Craiova | 160 |
+| Dobreta | 242 |
+| Eforie | 161 |
+| Fagaras | 176 |
+| Giurgiu | 77 |
+| Hirsova | 151 |
+| Iasi | 226 |
+| Lugoj | 244 |
+| Mehadia | 241 |
+| Neamt | 234 |
+| Oradea | 380 |
+| Pitesti | 10 |
+| Rimnicu Vilcea | 193 |
+| Sibiu | 253 |
+| Timisoara | 329 |
+| Urziceni | 80 |
+| Vaslui | 199 |
+| Zerind | 374 |
+
+<!-- page: 9 -->
+
+![](images/page_8_image_0.jpg)
+
+## Greedy best-first search example
+
+<!-- page: 10 -->
+
+## Greedy best-first search example
+
+![](images/page_9_image_1.jpg)
+
+![](images/page_9_image_2.jpg)
+
+<!-- page: 11 -->
+
+## Greedy best-first search example
+
+![](images/page_10_image_1.jpg)
+
+**So, Arad --- Sibiu --- Fagaras --- Bucharest 140+99+211 = 450**
+
+**Is it optimal?**
+
+**What are we ignoring?**
+
+Also, consider going from bin Iasi to Fagaras – what can happen?
+
+![](images/page_10_image_6.jpg)
+
+<!-- page: 12 -->
+
+## Properties of greedy best-first search
+
+<strong><u>Complete?</u></strong> **No – can get stuck in loops, e.g.,** Iasi → Neamt → Iasi → Neamt...
+
+**But, complete in finite space with repeated state elimination.**
+
+<strong><u>Time?</u></strong> **O(b**<strong><sup>m</sup></strong>**) (imagine nodes all have same distance estimate to goal) but a good heuristic can give dramatic improvement** à Becomes more similar to depth-first search, with reduced branching.
+
+<strong><u>Space?</u></strong> $O ( b ^ { m } )$ **-- keeps all nodes in memory**
+
+<strong><u>Optimal?</u></strong> **No!**
+
+**How can we fix this?**
+
+b: maximum branching factor of the search tree
+
+d: depth of the least-cost solution
+
+m: maximum depth of the state space (may be ∞)
+
+<!-- page: 13 -->
+
+**Note: Greedy best-first search expands the node that appears to have shortest path to goal. But what about cost of getting to that node? Take it into account!**
+
+**Idea: avoid expanding paths that are** <strong><u>already expensive</u></strong>
+
+Evaluation function $f(n) = g(n) + h(n)$
+
+– **g(n) = cost so far to reach n**
+
+– **h(n) = estimated cost from n to goal**
+
+– **f(n) = estimated total cost of path through n to goal**
+
+**Aside: do we still have “looping problem”? Iasi to Fagaras:** Iasi → Neamt → Iasi → Neamt...
+
+**No! We’ll eventually get out of it. g(n) keeps going up.**
+
+<!-- page: 14 -->
+
+$$
+\text {Using:} f (n) = g (n) + h (n)
+$$
+
+$\mathbf { A } ^ { \ast }$ **search example**
+
+![](images/page_13_image_2.jpg)
+
+<!-- page: 15 -->
+
+**Using: f(n) = g(n) + h(n)**
+
+## A<sup>\*</sup> search example
+
+![](images/page_14_image_2.jpg)
+
+![](images/page_14_image_3.jpg)
+
+<!-- page: 16 -->
+
+$$
+\text {Using:} f (n) = g (n) + h (n)
+$$
+
+## A<sup>\*</sup> search example
+
+![](images/page_15_image_2.jpg)
+
+![](images/page_15_image_3.jpg)
+
+<!-- page: 17 -->
+
+$$
+\text {Using:} f (n) = g (n) + h (n)
+$$
+
+## A<sup>\*</sup> search example
+
+![](images/page_16_image_2.jpg)
+
+<!-- page: 18 -->
+
+$$
+\text {Using:} f (n) = g (n) + h (n)
+$$
+
+## A<sup>\*</sup> search example
+
+![](images/page_17_image_2.jpg)
+
+**Bucharest appears on the fringe but not selected for expansion since its cost (450) is higher than that of Pitesti (417).**
+
+**Important to understand for the proof of optimality of A\***
+
+What happens if h(Pitesti) = 150?
+
+<!-- page: 19 -->
+
+**Using: f(n) = g(n) + h(n)**
+
+## A<sup>\*</sup> search example
+
+<u>Arad --- Sibiu --- Rimnicu --- Pitesti --- Bucharest</u>
+
+## Claim: Optimal path found!
+
+1) Can it go wrong?
+
+![](images/page_18_image_5.jpg)
+
+2) What’s special about “straight distance” to goal?
+
+**Note: Greedy best first Arad --- Sibiu --- Fagaras --- Bucharest**
+
+**It underestimates true path distance!**
+
+**Note: Bucharest twice in tree.**
+
+3) What if all our estimates to goal are 0? Eg h(n) = 0
+
+4) What if we overestimate?
+
+![](images/page_18_image_12.jpg)
+
+5) What if h(n) is true distance $( \mathbf{h}^* (\mathbf{n}) ) ?$
+
+<!-- page: 20 -->
+
+## A\* properties
+
+Under some reasonable conditions for the heuristics, we have:
+
+## Complete
+
+– Yes, unless there are infinitely many nodes with $\mathrm{f}(\mathrm{n}) < \mathrm{f}(\mathrm{Gcal})$ Time
+
+– Sub-ex onential grow when Sub-exponenti
+
+– So, a good heuristics can bring $\left| h ( n ) - h ^ { * } ( n ) \right| \leq O ( \log h ^ { * } ( n ) )$ significantly!
+
+## Space
+
+– Fringe nodes in memory. Often exponential. Solution: IDA\*
+
+– Yes (under admissible heuristics; discussed next)
+
+– Also, optimal use of heuristics information!
+
+**Widely used. E.g. Google maps. Provably: Can’t do better!**
+
+**After almost 40 yrs, still new applications found.**
+
+**Also, optimal use of heuristic information.**
+
+<!-- page: 21 -->
+
+## Heuristics: (1) Admissibility
+
+**A heuristic** $h ( n )$ **is admissible if for every node** $n _ { s }$ $h ( n ) \leq h ^ { * } ( n )$ **,** where $h ^ { \dot { \kappa } } ( n )$ **is the true cost to reach the goal state from n.**
+
+**An admissible heuristic never overestimates the cost to reach the goal, i.e., it is optimistic. (But no info of where the goal is if set to 0.)**
+
+**Example:** $h _ { S L D } ( n )$ **(never overestimates the actual road distance)**
+
+Note: it follows that $\mathbf { h } ( \mathbf { g } _ { } { \mathrm { o a l } } ) = \mathbf { 0 }$
+
+Evaluation function $f(n) = g(n) + h(n)$
+
+**Note: less optimistic heuristic push nodes to be expanded later. Can prune a lot more.**
+
+<!-- page: 22 -->
+
+![](images/page_21_image_0.jpg)
+
+## Heuristics: (2) Consistency
+
+**A heuristic is consistent (or monotone) if for every node n, every** successor $n ^ { \prime }$ of n generated by any action $\mathbf { a } _ { \mathbf { \mathfrak { g } } }$
+
+$$
+h (n) \leq c (n, a, n ^ {\prime}) + h (n ^ {\prime})
+$$
+
+(form of the triangle inequality)
+
+**If h is consistent, we have**
+
+**f(n')**
+
+$$
+\begin{array}{l} = \mathrm{g(n')} + \mathrm{h(n')} \\ = \mathrm{g(n)} + \mathrm{c(n,a,n')} + \mathrm{h(n')} \\ \geq \mathrm{g(n)} + \mathrm{h(n)} \\ = \mathbf {f (n)} \end{array}
+$$
+
+à sequence of nodes expanded by $\mathrm { A } ^ { \ast }$ **is in nondecreasing order of f(n)**
+
+à **the first goal selected for expansion must be an optimal goal.**
+
+**i.e.,** $f ( n )$ **is non-decreasing along any path.**
+
+**Note: Monotonicity is a stronger condition than admissibility. Any consistent heuristic is also admissible. (Exercise 3.29)**
+
+<!-- page: 23 -->
+
+## A\*: Tree Search vs. Graph Search
+
+**TREE SEARCH (See Fig. 3.7; used in earlier examples):**
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+If $h(n)$ is admissible, A* using tree search is optimal.
+</div>
+
+**GRAPH SEARCH (See Fig. 3.7) A modification of tree search that includes an “explored set” (or “closed list”; list of expanded nodes to avoid re-visiting the same state); if the current node matches a node on the closed list, it is discarded instead of being expanded. In order to guarantee optimality of A\*, we need to make sure that the optimal path to any repeated state is always the first one followed:**
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+If $h(n)$ is monotonic, A* using graph search is optimal. (proof next)
+</div>
+
+(see details page 95 R&N)
+
+**Reminder: Bit of “sloppiness” in fig. 3.7. Need to be careful with nodes on frontier; allow repetitions or as in Fig. 3.14.**
+
+<!-- page: 24 -->
+
+## Intuition: Contours of A<sup>\*</sup>
+
+$\mathbf { A } ^ { \star }$ **expands nodes in order of increasing f value.**
+
+**Gradually adds "f-contours" of nodes.**
+
+Contour i has all nodes with $f < = f _ { i ^ { * } }$ where $f _ { i } < f _ { i + I }$
+
+$\mathrm { A ^ { * } }$ expands all nodes
+
+with $f(n) < C^*$
+
+Uniform-cost $( \mathbf{h}(\mathbf{n}) = 0 )$
+
+expands in circles.
+
+Note: with uniform cost $( \mathbf{h}(\mathbf{n}) = 0 )$ the bands will be circular around the start state.
+
+![](images/page_23_image_9.jpg)
+
+## Completeness (intuition)
+
+**As we add bands of increasing f, we must eventually reach a band where f is equal to the cost of the path to a goal state. (assuming b finite and step cost exceed some positive finite ε).**
+
+## Optimality (intuition)
+
+**1**<strong><sup>st</sup></strong> **solution found (goal node expanded) must be an optimal one since** <strong><u>goal nodes in subsequent contours will have higher f-cost and therefore higher g-cost</u></strong> **(since h(goal)=0)**
+
+<!-- page: 25 -->
+
+![](images/page_24_image_0.jpg)
+
+**A\* Search: Optimality**
+
+## Theorem:
+
+$\mathbf { A } ^ { \star }$ **used with a consistent heuristic ensures optimality with graph search.**
+
+<!-- page: 26 -->
+
+## Proof:
+
+**(1) If h(n) is consistent, then the values of f(n) along any path are non-decreasing. See consistent heuristics slide.**
+
+**(2) Whenever** $\mathrm { A ^ { \ast } }$ **selects a node n for expansion, the optimal path to that node has been found. Why? Assume not. Then, the optimal path, P, must have some not yet expanded nodes. (\*) Thus, on P, there must be an unexpanded node** $\Pi ^ { \flat }$ **on the current frontier (because of graph separation; fig. 3.9; frontier separates explored region from unexplored** region). But, because f is nondecreasing along any path, $\mathfrak { m } ^ { \flat }$ **would have a lower f-cost than n and would have been selected first for expansion before n. Contradiction.**
+
+From (1) and (2), it follows that the sequence of nodes expanded by $\mathbf { A } ^ { \ast }$ **using Graph-Search is in non-decreasing order of f(n). Thus, the first goal node selected must have the optimal path, because f(n) is the true path cost for goal nodes** $\mathrm { ( h ( G o a l ) = 0 ) }$ **, and all later goal nodes have paths that are are at least as expensive. QED**
+
+**(\*) requires a bit of thought. Must argue that there cannot be a shorter path going only through expanded nodes (by contradiction).**
+
+<!-- page: 27 -->
+
+**Termination is guaranteed when the number of nodes with** $f ( n )   \leq   f ^ { * }$ **is finite.**
+
+**Non-termination can only happen when**
+
+– **There is a node with an infinite branching factor, or**
+
+– **There is a path with a finite cost but an infinite number of nodes along it.**
+
+• **Can be avoided by assuming that the cost of each action is larger than a positive constant d**
+
+<!-- page: 28 -->
+
+## A\* Optimal in Another Way
+
+**It has also been shown that A\* makes optimal use of the heuristics in the sense that there is no search algorithm that could expand fewer nodes using the heuristic information (and still find the optimal / least cost solution.**
+
+**So, A\* is “the best we can get.”**
+
+**Note: We’re assuming a search based approach with states/nodes, actions on them leading to other states/nodes, start and goal states/nodes.**
+
+<!-- page: 29 -->
+
+# Example: Contrasting A\* with Uniform Cost (Dijkstra’s algorithm)
+
+# Example: The shortest route from Hannover to Munich
+
+**1) Dijkstra’s alg., i.e.,** $\mathbf { A } ^ { \star }$ **with h(n)=0 (Uniform cost search)**
+
+**2)** $\mathbf { A } ^ { \star }$ **search**
+
+Example thanks to Meinolf Sellmann
+
+<!-- page: 30 -->
+
+## Shortest Paths in Germany
+
+![](images/page_29_image_1.jpg)
+
+- Hannover 0
+- Bremen ∞
+- Hamburg ∞
+- Kiel ∞
+- Leipzig ∞
+- Schwerin ∞
+- Duesseldorf ∞
+- Rostock ∞
+- Frankfurt ∞
+- Dresden ∞
+- Berlin ∞
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen ∞
+
+<!-- page: 31 -->
+
+## Shortest Paths in Germany
+
+![](images/page_30_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel ∞
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock ∞
+- Frankfurt 365
+- Dresden ∞
+- Berlin ∞
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen ∞
+
+<!-- page: 32 -->
+
+## Shortest Paths in Germany
+
+![](images/page_31_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel ∞
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock ∞
+- Frankfurt 365
+- Dresden ∞
+- Berlin ∞
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen ∞
+
+<!-- page: 33 -->
+
+## Shortest Paths in Germany
+
+![](images/page_32_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock ∞
+- Frankfurt 365
+- Dresden ∞
+- Berlin ∞
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen ∞
+
+<!-- page: 34 -->
+
+## Shortest Paths in Germany
+
+![](images/page_33_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock ∞
+- Frankfurt 365
+- Dresden ∞
+- Berlin ∞
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen ∞
+
+<!-- page: 35 -->
+
+## Shortest Paths in Germany
+
+![](images/page_34_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock ∞
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen 690
+
+<!-- page: 36 -->
+
+## Shortest Paths in Germany
+
+![](images/page_35_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen 690
+
+<!-- page: 37 -->
+
+## Shortest Paths in Germany
+
+![](images/page_36_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen 690
+
+<!-- page: 38 -->
+
+## Shortest Paths in Germany
+
+![](images/page_37_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn ∞
+- Stuttgart ∞
+- Muenchen 690
+
+<!-- page: 39 -->
+
+## Shortest Paths in Germany
+
+![](images/page_38_image_1.jpg)
+
+Note: route via Frankfurt longer than current one.
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 40 -->
+
+## Shortest Paths in Germany
+
+![](images/page_39_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 41 -->
+
+## Shortest Paths in Germany
+
+![](images/page_40_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 42 -->
+
+## Shortest Paths in Germany
+
+![](images/page_41_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 43 -->
+
+## Shortest Paths in Germany
+
+![](images/page_42_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 44 -->
+
+## Shortest Paths in Germany
+
+![](images/page_43_image_1.jpg)
+
+- Hannover 0
+- Bremen 120
+- Hamburg 155
+- Kiel 240
+- Leipzig 255
+- Schwerin 270
+- Duesseldorf 320
+- Rostock 360
+- Frankfurt 365
+- Dresden 395
+- Berlin 440
+- Bonn 545
+- Stuttgart 565
+- Muenchen 690
+
+<!-- page: 45 -->
+
+## Shortest Paths in Germany
+
+**We just solved a shortest path problem by means of the algorithm from Dijkstra.**
+
+**If we denote the cost to reach a state n by g(n), then Dijkstra chooses the state n from the fringe that has minimal cost g(n). (I.e., uniform cost search.)**
+
+**The algorithm can be implemented to run in time O(n log n + m) where n is the number of nodes, and m is the number of edges in the graph. (As noted before, in most settings n (number of world states) and m (number of possible transitions between world states) grow exponentially with problem size. E.g. (N^2-1)-puzzle.)**
+
+**Approach is rather wasteful. Moves in circles around start city. Let’s try** $\mathrm { A } ^ { \ast }$ **with non-zero heuristics (i.e., straight distance).**
+
+<!-- page: 46 -->
+
+## Shortest Paths in Germany
+
+![](images/page_45_image_1.jpg)
+
+![](images/page_45_image_2.jpg)
+
+<!-- page: 47 -->
+
+![](images/page_46_image_0.jpg)
+
+## Shortest Paths in Germany
+
+**Hannover**
+
+**Bremen**
+
+**Hamburg**
+
+**Kiel**
+
+**Leipzig**
+
+**Schwerin**
+
+**Duesseldorf**
+
+**Rostock**
+
+**Frankfurt**
+
+**Dresden**
+
+**Berlin**
+
+**Bonn**
+
+**Stuttgart**
+
+**Muenchen**
+
+$$
+0 + 6 1 0 = 6 1 0
+$$
+
+$$
+120 + 720 = 840
+$$
+
+$$
+155 + 720 = 875
+$$
+
+$$
+\infty + 7 5 0 = \infty
+$$
+
+$$
+2 5 5 + 4 1 0 = 6 6 5
+$$
+
+$$
+2 7 0 + 6 8 0 = 9 5 0
+$$
+
+$$
+3 2 0 + 5 4 0 = 8 6 0
+$$
+
+$$
+\infty + 7 4 0 = \infty
+$$
+
+$$
+3 6 5 + 3 8 0 = 7 4 5
+$$
+
+$$
+\infty + 4 0 0 = \infty
+$$
+
+$$
+\infty + 5 9 0 = \infty
+$$
+
+$$
+\infty + 4 8 0 = \infty
+$$
+
+$$
+\infty + 1 8 0 = \infty
+$$
+
+$$
+\infty + 0 = \infty
+$$
+
+<!-- page: 48 -->
+
+![](images/page_47_image_0.jpg)
+
+## Shortest Paths in Germany
+
+**Hannover**
+
+**Bremen**
+
+**Hamburg**
+
+**Kiel**
+
+**Leipzig**
+
+**Schwerin**
+
+**Rostock**
+
+**Duesseldorf**
+
+**Frankfurt**
+
+**Dresden**
+
+**Berlin**
+
+$$
+2 5 5 + 4 1 0 = 6 6 5
+$$
+
+$$
+0 + 6 1 0 = 6 1 0
+$$
+
+$$
+\infty + 7 5 0 = \infty
+$$
+
+$$
+120 + 720 = 840
+$$
+
+$$
+2 7 0 + 6 8 0 = 9 5 0
+$$
+
+**Bonn**
+
+$$
+155 + 720 = 875
+$$
+
+**Stuttgart**
+
+**Muenchen**
+
+$$
+3 2 0 + 5 4 0 = 8 6 0
+$$
+
+$$
+\infty + 7 4 0 = \infty
+$$
+
+$$
+3 6 5 + 3 8 0 = 7 4 5
+$$
+
+$$
+3 9 5 + 4 0 0 = 7 9 5
+$$
+
+$$
+4 4 0 + 5 9 0 = 1 0 3 0
+$$
+
+$$
+\infty + 4 8 0 = \infty
+$$
+
+$$
+\infty + 1 8 0 = \infty
+$$
+
+$$
+6 9 0 + \quad 0 = 6 9 0
+$$
+
+<!-- page: 49 -->
+
+![](images/page_48_image_0.jpg)
+
+## Shortest Paths in Germany
+
+**Hannover**
+
+**Bremen**
+
+**Hamburg**
+
+**Kiel**
+
+**Leipzig**
+
+**Schwerin**
+
+**Rostock**
+
+**Duesseldorf**
+
+**Frankfurt**
+
+**Dresden**
+
+$$
+2 5 5 + 4 1 0 = 6 6 5
+$$
+
+$$
+\infty + 7 5 0 = \infty
+$$
+
+$$
+0 + 6 1 0 = 6 1 0
+$$
+
+**Berlin**
+
+$$
+2 7 0 + 6 8 0 = 9 5 0
+$$
+
+$$
+120 + 720 = 840
+$$
+
+$$
+155 + 720 = 875
+$$
+
+$$
+3 2 0 + 5 4 0 = 8 6 0
+$$
+
+$$
+\infty + 7 4 0 = \infty
+$$
+
+**Bonn**
+
+**Stuttgart**
+
+$$
+3 6 5 + 3 8 0 = 7 4 5
+$$
+
+$$
+3 9 5 + 4 0 0 = 7 9 5
+$$
+
+**Muenchen**
+
+$$
+4 4 0 + 5 9 0 = 1 0 3 0
+$$
+
+$$
+\infty + 4 8 0 = \infty
+$$
+
+$$
+\infty + 1 8 0 = \infty
+$$
+
+$$
+6 9 0 + \quad 0 = 6 9 0
+$$
+
+<!-- page: 50 -->
+
+## Heuristics
+
+<!-- page: 51 -->
+
+Goal State
+
+Slide the tiles horizontally or vertically into the empty space until the configuration matches the goal configuration
+
+**What’s the branching factor? (slide “empty space”)**
+
+**About 3, depending on location of empty tile: middle** → **4; corner** → **2; edge** → 3
+
+![](images/page_50_image_4.jpg)
+
+Start State
+
+![](images/page_50_image_6.jpg)
+
+**The average solution cost for a randomly generated 8-puzzle instance** à **about 22 steps So, search space to depth 22 is about 322** 网] **3.1** 网 **10**<strong><sup>10</sup></strong> **states.**
+
+à**Reduced to by a factor of about 170,000 by keeping track of repeated states (9!/2 = 181,440 distinct states) note: 2 sets of disjoint states. See exercise 3.4**
+
+**But: 15-puzzle** à **10**<strong><sup>13</sup></strong> **distinct states!**
+
+**We’d better find a good heuristic** <strong><u>to speed up search! Can you suggest one?</u></strong>
+
+**Note: “Clever” heuristics now allow us to solve the 15-puzzle in a few milliseconds!**
+
+<!-- page: 52 -->
+
+**E.g., for the 8-puzzle:**
+
+## Admissible heuristics
+
+h (n) = number of misplaced tiles h (n) = total Manhattan distance **(i.e., no. of steps from desired location of each tile)**
+
+![](images/page_51_image_3.jpg)
+
+Start State
+
+![](images/page_51_image_5.jpg)
+
+Goal State
+
+**Why are heuristics admissible?**
+
+**Which is better?**
+
+**How can we get the optimal heuristics? (Given H\_opt(Start) = 26. How would we find the next board on the optimal path to the goal?)**
+
+**Desired properties heuristics:**
+
+**(1) consistent (admissible)**
+
+**(2) As close to opt as we can get (sometimes go a bit over…)**
+
+**(3) Easy to compute! We want to explore many nodes.**
+
+**Note: each empty-square-move = 1 step tile move.**
+
+<!-- page: 53 -->
+
+## Comparing heuristics
+
+## Effective Branching Factor, $\mathrm { b } ^ { \star }$
+
+– **If** $\mathbf { A } ^ { \star }$ **generates N nodes to find the goal at depth d**
+
+$\mathbf { b } ^ { \star }$ **= branching factor such that a uniform tree of depth d contains N+1 nodes (we add one for the root node that wasn’t included in N)**
+
+$$
+\mathrm{N} + \mathbf {1} = \mathbf {1} + \mathbf {b} ^ {*} + (\mathbf {b} ^ {*}) ^ {2} + \dots + (\mathbf {b} ^ {*}) ^ {\mathrm{d}}
+$$
+
+**E.g., if** $\mathbf { A } ^ { \star }$ **finds solution at depth 5 using 52 nodes, then the effective branching factor is 1.92.**
+
+$\mathtt { b } ^ { \star }$ **close to 1 is ideal**
+
+because this means the heuristic guided the $\mathrm { A } ^ { \star }$ **s**earch is **closer to ideal (linear).**
+
+$\operatorname { I f } \mathsf { b } ^ { \ast }$ **were 100, on average, the heuristic had to consider 100 children for each node**
+
+• Compare heuristics based on their $\mathtt { b } ^ { \star }$
+
+<!-- page: 54 -->
+
+## Comparison of heuristics
+
+<table><tr><td></td><td colspan="3">Search Cost</td><td colspan="3">Effective Branching Factor</td></tr><tr><td>d</td><td>IDS</td><td> $A^{*}(h_1)$ </td><td> $A^{*}(h_2)$ </td><td>IDS</td><td> $A^{*}(h_1)$ </td><td> $A^{*}(h_2)$ </td></tr><tr><td>2</td><td>10</td><td>6</td><td>6</td><td>2.45</td><td>1.79</td><td>1.79</td></tr><tr><td>4</td><td>112</td><td>13</td><td>12</td><td>2.87</td><td>1.48</td><td>1.45</td></tr><tr><td>6</td><td>680</td><td>20</td><td>18</td><td>2.73</td><td>1.34</td><td>1.30</td></tr><tr><td>8</td><td>6384</td><td>39</td><td>25</td><td>2.80</td><td>1.33</td><td>1.24</td></tr><tr><td>10</td><td>47127</td><td>93</td><td>39</td><td>2.79</td><td>1.38</td><td>1.22</td></tr><tr><td>12</td><td>3644035</td><td>227</td><td>73</td><td>2.78</td><td>1.42</td><td>1.24</td></tr><tr><td>14</td><td>-</td><td>539</td><td>113</td><td>-</td><td>1.44</td><td>1.23</td></tr><tr><td>16</td><td>-</td><td>1301</td><td>211</td><td>-</td><td>1.45</td><td>1.25</td></tr><tr><td>18</td><td>-</td><td>3056</td><td>363</td><td>-</td><td>1.46</td><td>1.26</td></tr><tr><td>20</td><td>-</td><td>7276</td><td>676</td><td>-</td><td>1.47</td><td>1.27</td></tr><tr><td>22</td><td>-</td><td>18094</td><td>1219</td><td>-</td><td>1.48</td><td>1.28</td></tr><tr><td>24</td><td>-</td><td>39135</td><td>1641</td><td>-</td><td>1.48</td><td>1.26</td></tr></table>
+
+Figure 4.8 Comparison of the search costs and effective branching factors for the ITERATIVE-DEEPENING-SEARCH and $\mathrm { A } ^ { * }$ algorithms with $h _ { 1 } ,   h _ { 2 } .$ Data are averaged over 100 instances of the 8-puzzle, for various solution lengths.
+
+<!-- page: 55 -->
+
+$\mathrm { h } _ { 2 }$ is always better than $\mathtt { h _ { 1 } }$
+
+– Because for any node, n, $\mathbf { h } _ { 2 } ( \mathbf { n } ) > = \mathbf { h } _ { 1 } ( \mathbf { n } )$ $( \mathrm { W h y } ? )$
+
+We say $\mathbf { h } _ { 2 }$ dominates $\mathbf { h _ { 1 } }$
+
+It follows that h1 will expand at least as many nodes as h2.
+
+Because:
+
+**Recall all nodes with** $\mathrm { f ( \mathbb { n } ) < C ^ { \ast } }$ **will be expanded.**
+
+**This means all nodes,** $\mathrm{h}(\mathrm{n})+\mathrm{g}(\mathrm{n})<\mathrm{C}^{\mathrm{k}}$ **, will be expanded.**
+
+$\mathbb { S } \mathbb { 0 } _ { \mathfrak { z } }$ **all nodes n where** $\mathrm{h}(\mathrm{n}) < \mathrm{C}^{\mathrm{k}} - \mathrm{g}(\mathrm{n})$ **will be expanded**
+
+All nodes $\mathrm { h } _ { 2 }$ expands will also be expanded by $\mathrm { h _ { 1 } }$ and because $\mathrm { h _ { 1 } }$ **is smaller, others may be expanded as well**
+
+<!-- page: 56 -->
+
+# Inventing admissible heuristics: Relaxed Problems
+
+**Can we generate h(n) automatically?**
+
+– **Simplify problem by reducing restrictions on actions**
+
+**A problem with fewer restrictions on the actions is called a relaxed problem**
+
+<!-- page: 57 -->
+
+## Examples of relaxed problems
+
+## Original: A tile can move from square A to square B iff
+
+**(1) A is horizontally or vertically adjacent to B and (2) B is blank**
+
+## Relaxed versions:
+
+**A tile can move from A to B if A is adjacent to B (“overlap”; Manhattan distance)**
+
+– **A tile can move from A to B if B is blank (“teleport”)**
+
+– **A tile can move from A to B (“teleport and overlap”)**
+
+**Key: Solutions to these relaxed problems can be computed** <strong><u>without search</u></strong> **and therefore provide a heuristic that is easy/fast to compute.**
+
+**This technique was used by ABSOLVER (1993) to invent heuristics for the 8-puzzle better than existing ones and it also found a useful heuristic for famous Rubik’s cube puzzle.**
+
+<!-- page: 58 -->
+
+# Inventing admissible heuristics: Relaxed Problems
+
+**The cost of an optimal solution to a relaxed problem is an admissible heuristic for the original problem. Why?**
+
+**1) The optimal solution in the original problem is also a solution to the relaxed problem (satisfying in addition all the relaxed constraints). So, the solution cost matches at most the original optimal solution.**
+
+**2) The relaxed problem has fewer constraints. So, there may be other, less expensive solutions, given a lower cost (admissible) relaxed solution.**
+
+**What if we have multiple heuristics available? I.e., h\_1(n), h\_2(n), …**
+
+$$
+\mathrm{h(n)} = \max \left\{\mathrm{h} _ {1} (\mathrm{n}), \mathrm{h} _ {2} (\mathrm{n}), \dots , \mathrm{h} _ {\mathrm{m}} (\mathrm{n}) \right\}
+$$
+
+**If component heuristics are admissible so is the composite**.
+
+<!-- page: 59 -->
+
+## Inventing admissible heuristics: Learning
+
+**Also automatically learning admissible heuristics using machine learning techniques, e.g., inductive learning and reinforcement learning.**
+
+**Generally, you try to learn a “state-evaluation” function or “board evaluation” function. (How desirable is state in terms of getting to the goal?) Key: What “features / properties” of state are most useful?**
+
+**More later…**
+
+<!-- page: 60 -->
+
+**Uninformed search:**
+
+**(1) Breadth-first search (2) Uniform-cost search**
+
+**(3) Depth-first search (4) Depth-limited search**
+
+**(5) Iterative deepening search (6) Bidirectional search**
+
+**Informed search:**
+
+**(1) Greedy Best-First**
+
+(2) $\mathrm { A } ^ { \ast }$
+
+<!-- page: 61 -->
+
+**Summary, cont.**
+
+**Heuristics allow us to scale up solutions dramatically!**
+
+**Can now search combinatorial (exponential size) spaces with**
+
+**easily** $I \theta ^ { \wedge } I 5$ **states and even up to 10^100 or more states.**
+
+**Especially, in modern heuristics search planners (eg FF).**
+
+**Before informed search, considered totally infeasible.**
+
+**Still many variations and subtleties:**
+
+**There are conferences and journals dedicated solely to search.**
+
+**Lots of variants of A\*. Research in A\* has increased**
+
+**dramatically since** $\mathbf { A } ^ { \star }$ **is the key algorithm used by map engines.**
+
+**Also used in path planning algorithms (autonomous vehicles), and general (robotics) planning, problem solving, and even NLP parsing.**
