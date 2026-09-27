@@ -1,0 +1,70 @@
+<!-- page: 1 -->
+
+**CS6700 Advanced AI**
+
+## Prof. Carla Gomes Prof. Bart Selman
+
+<!-- page: 2 -->
+
+## Projects
+
+**Very open-ended Go for BIG ideas! (No such thing as “failure.” Empirically driven building on foundational insights.)**
+
+```txt
+E.g.
+Can you evolve a language from scratch?
+Can you learn from “reading”? (E.g. game play from text on discussion boards)
+Mechanical Turk --- Human-computing hybrids
+Mine info from twitter feeds
+Boost game play via “mimicry”
+```
+
+<!-- page: 3 -->
+
+## Projects
+
+**Cont.**
+
+**Deep learning: still many “mysteries”**
+
+**E.g. Google’s alphaGo example of successful reinforcement learning using deep nets but what about deep learning chess through self-play?**
+
+**Student project 4701 last semester: works reasonably but hits a limit; end game: can’t figure out it needs to checkmate the opponent! Can we explain this? Fix this?**
+
+**Scientific discovery --- in discrete math and materials science. (Slides: “Non-Human Intelligence”)**
+
+<!-- page: 4 -->
+
+![](images/page_3_image_0.jpg)
+
+<!-- page: 5 -->
+
+## Knowledge or Data?
+
+**Last 5 yrs: New direction.**
+
+**Combine a few general principles / rules (i.e.**
+
+**knowledge) with training (ML) on a large expert**
+
+**data set to tune hundreds of model parameters.**
+
+**Obtain world-expert performance using inference.**
+
+## Examples:
+
+**--- IBM’s Watson / Jeopardy**
+
+**--- Dr. Fill / NYT crosswords**
+
+**--- Iamus / Classical music composition**
+
+**--- Google’s alphaGo (deep learning)**
+
+**--- computer vision (deep learning)**
+
+**--- language translation (deep learning)**
+
+**Performance: (several) Top 50 or better in the world!**
+
+**Is this the key to human expert intelligence?**

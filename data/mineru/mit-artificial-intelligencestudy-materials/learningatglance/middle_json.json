@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2005-05-14T17:43:33-04:00",
+      "modified_at": "2005-08-12T13:29:09+05:30",
+      "creator_application": "OmniOutliner",
+      "producer_application": "Mac OS X 10.3.9 Quartz PDFContext",
+      "page_count": 1,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.474,
+            0.058,
+            0.525,
+            0.075
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "ML Notes"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 1,
+          "bbox": [
+            0.049,
+            0.116,
+            0.955,
+            0.545
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 1,
+              "bbox": [
+                0.049,
+                0.116,
+                0.955,
+                0.545
+              ],
+              "image_path": "images/page_0_table_1.jpg",
+              "content": "<table><tr><td>Algorithm</td><td>Input</td><td>Output</td><td>Learns by</td><td>Complexity Control</td><td>Notes</td></tr><tr><td>• Naive Bayes</td><td>boolean feature vector</td><td>discrete</td><td>estimating conditional probabilities (counting)</td><td>Assumes independent features</td><td>LaPlace Correction, XOR</td></tr><tr><td>• basic Decision Tree</td><td>boolean feature vector</td><td>discrete</td><td>minimizing average entropy at the branches</td><td>parametric: leaf size, minimum entropy</td><td></td></tr><tr><td>• Continuous-Valued Decision Tree</td><td>real feature vector</td><td>discrete</td><td>minimizing average entropy at the branches</td><td></td><td></td></tr><tr><td>• K-Nearest Neighbor</td><td>real feature vector</td><td>discrete</td><td>memorizing all points</td><td>parametric: K</td><td>Scaling</td></tr><tr><td>• Perceptron</td><td>real feature vector</td><td>discrete</td><td>maximizing margin (weight space search)</td><td>limited to linear separator</td><td>guarantees separator if it exists</td></tr><tr><td>• SVM</td><td>real feature vector</td><td>discrete</td><td>maximizing margin (quadratic programming)</td><td>maximizes margin in error function</td><td></td></tr><tr><td>• Neural Net</td><td>real feature vector</td><td>discrete</td><td>gradient descent (weight space search)</td><td>architecture</td><td>Architecture, Scaling</td></tr><tr><td>• Neural Net Regression</td><td>real feature vector</td><td>real</td><td>gradient descent (weight space search)</td><td>architecture</td><td>Architecture, Scaling</td></tr><tr><td>• Regression Trees</td><td>real feature vector</td><td>real</td><td>minimizing variance at the branches</td><td></td><td>Kernel functions (not SVM kernels)</td></tr><tr><td>• Nearest Neighbor Regression</td><td>real feature vector</td><td>real</td><td>memorizing all points</td><td></td><td>Kernel functions (not SVM kernels)</td></tr></table>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

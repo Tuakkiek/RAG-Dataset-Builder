@@ -1,0 +1,1523 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.282,
+            0.091,
+            0.717,
+            0.143
+          ],
+          "level": 1,
+          "content": "6.034 Artificial Intelligence (Spring 05) Formulating Search Problems Due: Wed. March 2 11am, \\*before\\* Lecture"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.167,
+            0.299,
+            0.186
+          ],
+          "level": 2,
+          "content": "1 Instructions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.201,
+            0.887,
+            0.338
+          ],
+          "content": "In this assignment we ask you to look at problems drawn (but simplified) from real research or application problems. The assignment is to think very carefully about how you would solve one of these problems using the representations and algorithms covered in Chapters 2 and 3. The problems are specified very loosely: part of the problem is for you to make (and justify) reasonable assumptions about what’s important. However, if you have basic questions about what is meant by the problem statement, you can send the staff **one** e-mail before midnight on Monday February 28, asking for specific clarification. Also, the recitation meetings on Friday will be devoted to answering your questions."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.356,
+            0.249,
+            0.373
+          ],
+          "level": 2,
+          "content": "1.1 Hand-in"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.383,
+            0.885,
+            0.434
+          ],
+          "content": "You are to hand in a 3-5 page paper (1500-2500 words) by Wed. March 2 at 11am. We have attached a sample solution to a simple problem. This is not necessarily the best possible solution to the indicated problem, but it illustrates what we are looking for."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.435,
+            0.886,
+            0.485
+          ],
+          "content": "Bring a print-out of your paper and turn it in before lecture on March 2. If it is late, it will be subject to a 20% per day late penalty, up until your Friday recitation, after which it will be worth 0 credit."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.486,
+            0.886,
+            0.554
+          ],
+          "content": "During the following Friday (March 4) recitation, we will give you a 10 minute appointment to discuss your paper with one of the staff. You should be ready to give a concise 5 minute verbal presentation of what you did and answer questions for another 5 minutes. The presentation and QA will factor into your grade for the project."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.555,
+            0.886,
+            0.606
+          ],
+          "content": "**You may have discussions with your classmates to better understand the problems and you may look up references. You must write the paper completely independently and be able to justify all aspects of your formulation at the oral presentation.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.625,
+            0.302,
+            0.642
+          ],
+          "level": 2,
+          "content": "1.2 Paper outline"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.652,
+            0.886,
+            0.704
+          ],
+          "content": "Your paper should contain the following sections, in the order indicated below. In all cases, justify your choices. In the “Problem Definition” and “Algorithm” sections, indicate what alternatives you considered and ruled out and why you made the choices you did."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.718,
+            0.259,
+            0.735
+          ],
+          "level": 2,
+          "content": "1. Background"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.741,
+            0.884,
+            0.775
+          ],
+          "content": "Provide a brief textual description of the problem. Elaborate on the given problem statement, providing some more detail about the particular class of problems you chose to solve."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.135,
+            0.786,
+            0.31,
+            0.802
+          ],
+          "level": 2,
+          "content": "2. Problem definition"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.819,
+            0.883,
+            0.835
+          ],
+          "content": "• Define the type of search problem, e.g. path search, constraint satisfaction, optimization."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.841,
+            0.673,
+            0.858
+          ],
+          "content": "• Indicate precisely what data is needed to solve the problem."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.505,
+            0.91
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.092,
+            0.885,
+            0.127
+          ],
+          "content": "• Define precisely the states (or variables/values), descendants, cost function, start state, goal test as appropriate."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.135,
+            0.142,
+            0.255,
+            0.159
+          ],
+          "level": 2,
+          "content": "3. Complexity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.17,
+            0.887,
+            0.238
+          ],
+          "content": "• Estimate the size of the state space for realistic problems as a function of the parameters specified in the problem. Estimate depth to goal and branching factor. Say whether each of these things grows linearly, polynomially, exponentially, or worse, as a function of the parameters."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.25,
+            0.245,
+            0.267
+          ],
+          "level": 2,
+          "content": "4. Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.282,
+            0.886,
+            0.351
+          ],
+          "content": "• Recommend the most efficient algorithm that’s guaranteed to find an optimal solution (a satisfying assignment in the case of a CSP) from among the ones we have studied. Specify any implementation issues that are specific to this problem. For example, if a heuristic is needed, specify it in detail here. Discuss the use of expanded or visited lists."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.355,
+            0.886,
+            0.424
+          ],
+          "content": "• Now specify an algorithm that is not necessarily guaranteed to find an optimal solution, but that will be practical in the case of very large problems. In some of the problems we have given particular hints about how to develop an approximate algorithm; otherwise, consider local and greedy methods we have discussed in lecture."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.135,
+            0.439,
+            0.295,
+            0.455
+          ],
+          "level": 2,
+          "content": "5. Worked example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.462,
+            0.885,
+            0.495
+          ],
+          "content": "Work out a small example by hand. Simplify as necessary to convey the key ideas in your approach."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.135,
+            0.507,
+            0.241,
+            0.524
+          ],
+          "level": 2,
+          "content": "6. Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.53,
+            0.885,
+            0.582
+          ],
+          "content": "Summarize your conclusions. How feasible is solving the problem? Given a hard time constraint in advance (an hour, say) will you always find some answer? What was hard about this problem? What required insight about the specific problem?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.136,
+            0.592,
+            0.249,
+            0.609
+          ],
+          "level": 2,
+          "content": "7. References"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.615,
+            0.528,
+            0.632
+          ],
+          "content": "If you consulted any references, list them here."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.651,
+            0.332,
+            0.67
+          ],
+          "level": 2,
+          "content": "1.3 Grading Criteria"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.678,
+            0.886,
+            0.712
+          ],
+          "content": "Remember that this assignment will account for 7.5% of your grade, so it is important. We will break down the grading as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.727,
+            0.374,
+            0.744
+          ],
+          "content": "• 60% Technical formulation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.756,
+            0.471,
+            0.773
+          ],
+          "content": "• 20% Clarity of writing and explanation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.785,
+            0.341,
+            0.801
+          ],
+          "content": "• 20% Oral presentation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.817,
+            0.886,
+            0.867
+          ],
+          "content": "The problems are marked with difficulty levels of 1 or 2. If you solve a level 1 problem, the maximum score for the technical formulation will be 55%; for level 2 problems, the maximum score is 60%."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.91
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.092,
+            0.887,
+            0.16
+          ],
+          "content": "These problems don’t have a single right answer. We don’t necessarily know the best way to approach them, or even have a particular concrete approach in mind. It will take some thinking to come up with a good answer. Start early so you can mull the problem over and so you can edit your text at least once."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.161,
+            0.677,
+            0.178
+          ],
+          "content": "Be sure to clearly explain your reasoning and justify your decisions."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.201,
+            0.41,
+            0.221
+          ],
+          "level": 2,
+          "content": "2 Problem Descriptions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.235,
+            0.886,
+            0.287
+          ],
+          "content": "Below are some problem descriptions for you to choose from. If you have some alternative problem that you are interested in, please e-mail a description to the staff by midnight on Thursday February 24, and we will let you know if it’s possible to substitute that."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.305,
+            0.401,
+            0.323
+          ],
+          "level": 2,
+          "content": "2.1 Robot Motion Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.332,
+            0.886,
+            0.385
+          ],
+          "content": "In robotics, one of the classic problems is figuring out how a robot should move in an environment so as to move from its current position to some target position while, for example, avoiding collisions and/or minimizing time. Here are a couple of examples of this type of problem:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.402,
+            0.383,
+            0.42
+          ],
+          "level": 2,
+          "content": "2.1.1 Large spaces (Level 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.428,
+            0.887,
+            0.548
+          ],
+          "content": "Consider planning the path for an “off-road” robot vehicle in a very large space (map of continental US or a map of a large chunk of Mars) described as a grid with each grid square being 1 meter on a side. We assume that the robot is small relative to the size of the grid squares, that is, it fits entirely within a grid square and takes some time to traverse a grid square. Each grid square is marked by a value between 0 and 1, indicating how long it takes to move through that space or -1 indicating that it is impassable. A “typical” path might need to be thousands of kilometers. Discuss the complexity of the problem in terms of the area of the map."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.549,
+            0.885,
+            0.583
+          ],
+          "content": "One strategy for developing an approximation method would be to solve the problem hierarchically, starting with a very coarse discretization of the map and gradually refining it."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.601,
+            0.368,
+            0.619
+          ],
+          "level": 2,
+          "content": "2.1.2 Robot arm (Level 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.628,
+            0.888,
+            0.765
+          ],
+          "content": "Consider a planar jointed (robot) arm (such as shown in figure 1) with at least six joints. You can control the robot arm by specifying angles for all the joints; the base of the robot is fixed. You are given a complete description of the environment as a set of polygons that represent obstacles. The problem is how to move the robot arm quickly from its current position to some target position (specified by its joint angles) without colliding with any obstacles. Assume that you are given a function that can test whether a position (joint angles) of the robot arm would lead to a collision. You need not worry whether the robot is in collision with itself. Discuss the complexity of the problem in terms of the number of joints and the granularity of discretization of the joint variables."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.765,
+            0.886,
+            0.798
+          ],
+          "content": "The hierarchical decomposition approach outlined in the previous problem might be less useful here. Explain why, using complexity arguments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.8,
+            0.888,
+            0.851
+          ],
+          "content": "Another strategy for approximation in this domain is to randomly generate arm configurations in the free space and use them as the states. Assume that you have a function that can test whether the straight-line (in joint space) path between two points can be traversed without collision. Outline"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.366,
+            0.093,
+            0.641,
+            0.29
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.378,
+                0.343,
+                0.62,
+                0.36
+              ],
+              "content": "Figure 1: A planar robot arm."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.384,
+            0.885,
+            0.42
+          ],
+          "continues_prev": true,
+          "content": "a search algorithm based on these ideas and explain (informally; doing this formally is hard) what properties of a particular set of obstacles would make it easier or harder to solve."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.437,
+            0.258,
+            0.455
+          ],
+          "level": 2,
+          "content": "2.2 Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.465,
+            0.836,
+            0.482
+          ],
+          "content": "More generally, we are interested in planning sequences of actions required to achieve goals."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.5,
+            0.357,
+            0.518
+          ],
+          "level": 2,
+          "content": "2.2.1 Deliveries (Level 1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.527,
+            0.886,
+            0.629
+          ],
+          "content": "Plan the delivery schedule for a fleet of K trucks and N packages in a city with M destinations with each destination directly connected to some other destinations (each labeled with distance). Each truck can carry a fixed number of packages. All the trucks start at the depot in the morning and the goal is to deliver all the packages and have all the trucks end up at the depot. Ideally we want to minimize the total distance traveled by the trucks. Discuss the complexity of the problem in terms of K, N, and M."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.63,
+            0.886,
+            0.682
+          ],
+          "content": "Initially, assume that the assignment of packages to trucks is given; explain how you would solve the problem. Now, give some ideas how you might assign the packages to the trucks to reduce the total distance covered by all the trucks; can you do it optimally in reasonable time?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.7,
+            0.344,
+            0.717
+          ],
+          "level": 2,
+          "content": "2.2.2 Cooking (Level 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.726,
+            0.887,
+            0.829
+          ],
+          "content": "Plan to cook a large meal on a K-burner stove. You have to cook N dishes, each of which must be started in a clean pan, and needs to cook for a certain (uninterrupted) amount of time (which varies among dishes). You have a limited number (typically less than N) of pans. If you need to re-use a pan, it will take time to clean it. The dishes must all be cooked, and you would like for them all to be as hot as possible when you serve them (once a dish has finished cooking, it begins to cool). Discuss the complexity of the problem in terms of N and K."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.829,
+            0.886,
+            0.863
+          ],
+          "content": "There seem to be two ways of representing time in this problem: one is to discretize it uniformly; another is to consider a “step” of the plan to be whenever a dish is finished cooking. Please discuss"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.506,
+            0.91
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.092,
+            0.641,
+            0.109
+          ],
+          "continues_prev": true,
+          "content": "the relative advantages and disadvantages of these representations."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.128,
+            0.275,
+            0.146
+          ],
+          "level": 2,
+          "content": "2.3 Scheduling"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.155,
+            0.426,
+            0.172
+          ],
+          "level": 2,
+          "content": "2.3.1 Airline Personnel (Level 1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.181,
+            0.887,
+            0.266
+          ],
+          "content": "Given a set of N flights, each of which requires a set of personnel with particular skills (pilot, co-pilot, head flight attendant, etc.) and a set of P personnel that require assignments (one of which can be office work), find a good assignment of personnel to roles on flights. There will be many conditions that a schedule has to satisfy. Here are some of them, but you should add at least three more that seem reasonable:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.276,
+            0.886,
+            0.31
+          ],
+          "content": "• A crew member has to be located in the departure city of a flight at least one hour before the flight is scheduled to take off."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.321,
+            0.57,
+            0.338
+          ],
+          "content": "• Pilots can only fly planes on which they’re certified."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.349,
+            0.674,
+            0.365
+          ],
+          "content": "• Crew members can only work 8 consecutive hours without a rest."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.375,
+            0.887,
+            0.444
+          ],
+          "content": "What if, in an attempt to improve employee satisfaction, we decide to allow people to express preferences about who they work with? Would that make the problem any more computationally difficult? Show how you would have to change your formulation (if you would) in order to deal with it. Discuss the complexity of the problem in terms of N and P."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.462,
+            0.349,
+            0.48
+          ],
+          "level": 2,
+          "content": "2.4 Structural Biology"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.489,
+            0.887,
+            0.591
+          ],
+          "content": "Most of the chemical reactions that are necessary for life are mediated by proteins, complex (approximately) linear molecules that fold up into characteristic shapes in three-dimensions. These shapes are ideally matched to fit the shapes of other molecules, not unlike a lock is matched to a key. Part of understanding the behavior of proteins and designing new drugs is determining the folded shape of actual proteins. This can be done via NMR (nuclear magnetic resonance) and via X-ray diffraction. Here are a couple of computational problems that arise in that context."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.592,
+            0.886,
+            0.66
+          ],
+          "content": "As a **very** simplified model of proteins, assume that a protein is a **sequence** of N spheres of radius 1 unit. Real proteins are made up of a sequence of different amino acids with different physical and chemical properties; here we will use the same model for all of them, so the particular sequence is irrelevant."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.66,
+            0.886,
+            0.71
+          ],
+          "content": "The distance between adjacent sphere centers is approximately 2. The angle between three adjacent spheres is in the range of 90 to 135 degrees. Note that no two spheres are allowed to collide."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.73,
+            0.408,
+            0.747
+          ],
+          "level": 2,
+          "content": "2.4.1 NMR distances (Level 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.756,
+            0.888,
+            0.877
+          ],
+          "content": "One can use Nuclear Magnetic Resonance (NMR) to detect the approximate distances between some spheres in a protein chain. Assume that you are given a few (many fewer than $N ^ { 2 } )$ measured distance ranges of the form $\\mathit { l o } _ { i , j }   \\leq   \\mathit { D i s t } ( i , j )   \\leq   \\mathit { h i } _ { i , j }$ where i and $j$ are the indices of spheres in the protein chain. Given this data, find positions for one arrangement of all N spheres in three dimensions that satisfy the constraints between adjacent spheres as well as the measured distance range constraints between non-adjacent spheres. Typical proteins are sequences of anywhere from 60 to thousands of these spheres. Discuss the complexity of this problem as a function of N."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.092,
+            0.886,
+            0.127
+          ],
+          "content": "Note that, since the distance between adjacent spheres on the sequence is fixed, the angle between three adjacent spheres can be described by the distance between the first and the third."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.145,
+            0.385,
+            0.163
+          ],
+          "level": 2,
+          "content": "2.4.2 Xray density (Level 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.172,
+            0.888,
+            0.31
+          ],
+          "content": "Through X-ray diffraction of protein crystals, it is possible to obtain a three-dimensional array of densities (between 0 and 1), each indicating the probability that there is a sphere of the protein at that location. This data is quite noisy. Assume that each entry in the array covers a volume that is 0.5 units on each side. The goal is to find positions in the array for the N spheres so that the product of the probabilities of those positions is maximal. (Hint: use the log of the product of probabilities as your score). Of course, we have to respect the basic distances and angles among the spheres we indicated in our definition of protein structures, and make sure that the spheres don’t collide. Discuss the complexity of this problem as a function of N."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.344,
+            0.109
+          ],
+          "level": 2,
+          "content": "3 Sample solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.123,
+            0.886,
+            0.158
+          ],
+          "content": "The following text consists of a partial solution, plus some hints and questions (in italics) to help you in developing your own solution."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.176,
+            0.286,
+            0.194
+          ],
+          "level": 2,
+          "content": "3.1 Background"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.203,
+            0.888,
+            0.341
+          ],
+          "content": "The problem considered here is that of an automated mini-bus that has to plan its path through a city to pick-up and drop-off a set of N passengers that have called in. The passengers can be picked up and dropped off in any order. The mini-bus can fit K passengers; it may be given more than this number of passengers to deal with during a trip. After all the pick-ups and drop-offs, the bus then returns to the depot. The bus has a limited amount of gas when it starts and will need to refuel as necessary during its trips. The cost of gas varies at different gas stations throughout the city; there is also cheap gas at the depot. The objective is to do the trip quickly without excessive cost for gas."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.359,
+            0.351,
+            0.376
+          ],
+          "level": 2,
+          "content": "3.2 Problem definition"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.386,
+            0.886,
+            0.437
+          ],
+          "content": "This is clearly a path-finding problem. The objective is to find a path through a graph that represents places in the city that takes all the passengers to their destinations while minimizing some combination of time and gas costs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.453,
+            0.449,
+            0.47
+          ],
+          "content": "• Data: A graph representing the city."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.481,
+            0.887,
+            0.62
+          ],
+          "content": "– A node in the graph represents an intersection of streets or highways; call this an inode. We assume we have (x,y) positions for i-nodes, so we can compute straight-line times between them (assuming fastest travel). Note that we will also need a database of addresses that will tell us the nearest i-node for each passenger origin and destination. We’ll ignore the problem of going from the nearest intersection to the actual address, except that the i-node for an address must allow reaching the address, for example, in one-way streets, the i-node allows entering the street where the address is. This is done before the search actually starts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.196,
+            0.623,
+            0.851,
+            0.64
+          ],
+          "content": "We need a list of i-nodes with gas stations and the price of gas at each gas station."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.645,
+            0.886,
+            0.713
+          ],
+          "content": "– A link represents a segment of a street or highway; call this an i-link. The links are directed, so that we can model one-way streets. Two way streets are represented by two separate links. Associated with each link is an estimated time to traverse it as well as the estimated gas needed to traverse the link."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.725,
+            0.932,
+            0.81
+          ],
+          "content": "• States: A search state is (i-node gas-in-tank in-bus-dest-i-nodes pick-up-origin-i-nodes pick-up-dest-i-nodes) We need to know the destinations of the passengers in the bus and the origin and destination of passengers we have yet to pickup. Note that we don’t need to remember anything about passengers we have dropped off, nor the origins of the passengers currently in the bus, since that doesn’t affect our future choices."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.821,
+            0.886,
+            0.855
+          ],
+          "content": "• Descendants: There are 4 action types that define descendant states. Assume that the current state is defined as above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.092,
+            0.886,
+            0.178
+          ],
+          "content": "Drive to adjacent intersection (i-node2): For all i-node2 connected to the current i-node and not on the current path. Can only be done if the gas consumption along the link to i-node2 is less than the current gas level in the bus. The result is changing the current i-node and decrementing the gas. The cost of the link to the new search node is the estimated time associated with the i-link from i-node to i-node2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.184,
+            0.886,
+            0.252
+          ],
+          "content": "– Pick up passenger: If the current i-node is one of those in pick-up-origin-i-nodes, and if the number of in-bus-dest-i-nodes is less than K, we add the corresponding entry in pick-up-dest-i-nodes to in-bus-dest-i-nodes and delete the entries in pick-up-origin-i-nodes and pick-up-dest-i-nodes. The link cost is 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.257,
+            0.886,
+            0.29
+          ],
+          "content": "– Drop-off passenger: If the current i-node is present in in-bus-dest-i-nodes, we remove them. The link cost is 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.296,
+            0.886,
+            0.365
+          ],
+          "content": "– Fill gas tank: If the current i-node has a gas station, the we can fill the tank. The link cost is α ∗ gasBought + β. The idea is that filling the tank takes some time (β) and we will also penalize the path by some factor (α) that converts gallons to time. Changing this factor will change the tradeoff between time and gas consumption."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.375,
+            0.885,
+            0.409
+          ],
+          "content": "• Initial State: The initial state is (depot-i-node initial-gas () all-origin-i-nodes all-dest-i-nodes)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.421,
+            0.886,
+            0.455
+          ],
+          "content": "• Goal Test: The goal is simply (depot-i-node gas () () ()), where gas needs to be greater than or equal to 0."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.474,
+            0.282,
+            0.492
+          ],
+          "level": 2,
+          "content": "3.3 Complexity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.501,
+            0.888,
+            0.604
+          ],
+          "content": "The size of the state space grows linearly in N (the number of passengers) and in the number of intersections (which is itself likely to be linear in the area of city). The branching factor is a small constant (about 4 next intersections, plus pickup, dropoff, buy gas). The length of a single “trip” (dropping off a vanful of passengers) is likely to be something. And we expect the total path length to be some number of trips. So, the worst case number of states visited by an exact search is something."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.622,
+            0.279,
+            0.64
+          ],
+          "level": 2,
+          "content": "3.4 Algorithms"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.649,
+            0.334,
+            0.666
+          ],
+          "level": 2,
+          "content": "3.4.1 Exact Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.675,
+            0.886,
+            0.744
+          ],
+          "content": "∗ The natural algorithm to use is A since we want to minimize a path-cost measure and we would like to use a heuristic function to focus the search towards the goal. A uniform-cost algorithm would probably be too slow; it would end up expanding many nodes that make no progress towards the goal. The difficulty is in constructing an appropriate heuristic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.744,
+            0.886,
+            0.795
+          ],
+          "content": "A trivial heuristic, which is probably not very good (but better than nothing) is to simply use the estimated time from the current i-node to any node in in-bus-dest-i-nodes or pick-up-origin-i-nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.795,
+            0.885,
+            0.83
+          ],
+          "content": "We can base a better admissible heuristic on the following observation. The remainder of the path from i-node back to the depot will have three “legs”:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.841,
+            0.885,
+            0.874
+          ],
+          "content": "1. from i-node to some node in in-bus-dest-i-nodes or pick-up-origin-i-nodes. Call it the input i-node."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.402,
+            0.093,
+            0.602,
+            0.251
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.328,
+                0.303,
+                0.668,
+                0.321
+              ],
+              "content": "Figure 2: Road map for planning problem."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.345,
+            0.884,
+            0.38
+          ],
+          "content": "2. from some node in in-bus-dest-i-nodes or pick-up-dest-i-nodes (call it the exit i-node) back to the depot."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.391,
+            0.886,
+            0.425
+          ],
+          "content": "3. some tour of all of the i-nodes in the state, starting at the input i-node and ending at the exit i-node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.436,
+            0.886,
+            0.504
+          ],
+          "content": "A (rough) lower-bound on the total remaining path length is: For every i-node in the state (and the current i-node), find which other i-node in the state (and the depot i-node) has the lowest lower-bound-time to it. Sum these minimum times for each i-node in the state (and the current i-node)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.505,
+            0.886,
+            0.573
+          ],
+          "content": "Since we have to pass each i-node in the state (and then go to the depot), the sum of the lower-bound-times to the closest i-node for each i-node that needs to be visited is a lower-bound on the actual path length. So, we have an admissible heuristic. We can keep around a table of i-node times so as to make computing this heuristic not too slow."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.574,
+            0.887,
+            0.677
+          ],
+          "content": "We should use an expanded list; we certainly don’t want to re-expand states. The key question is whether we ever need to re-expand an i-node, that is, does the optimal path ever go through the same intersection but with a difference in the rest of the state entry? The answer is obviously yes, in that only the Drive action changes i-node; the others leave the i-node the same. But, beyond these trivial loops, you may need to backtrack to some intersection to pick up a passenger that did not fit in the bus the first time you went through that intersection."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.695,
+            0.418,
+            0.712
+          ],
+          "level": 2,
+          "content": "3.4.2 Approximation Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.721,
+            0.886,
+            0.755
+          ],
+          "content": "Discussion of local search: How will you generate an initial trajectory? What moves will you consider between trajectories? What moves will you accept? How will you decide to terminate?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.775,
+            0.334,
+            0.791
+          ],
+          "level": 2,
+          "content": "3.4.3 Worked example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.801,
+            0.886,
+            0.851
+          ],
+          "content": "Assume we have four i-nodes: A, B, C, and D. They are laid out in the figure 2. The arcs are labeled with the time to traverse, which, for simplicity is also the amount of gas consumed (in some strange units!)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.162,
+            0.094,
+            0.853,
+            0.547
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.383,
+                0.603,
+                0.615,
+                0.62
+              ],
+              "content": "Figure 3: Partial search tree."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.645,
+            0.885,
+            0.678
+          ],
+          "content": "There is a gas station available at i-node D. The gas tank capacity is 21 units. At this station α = .5 and $\\beta = 2$ . This minibus is actually a red two-seater convertible, so k = 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.679,
+            0.884,
+            0.713
+          ],
+          "content": "Let the initial state be (A 10 () (D B) (C D)) that there is a passenger that wants to go from D to C and another that wants to go from B to D."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.714,
+            0.887,
+            0.798
+          ],
+          "content": "Figure 3 is a partial search tree. It shows all actions at level 1 and level 2, and then goes deeper down what is probably the optimal path to the goal. Note that when there is not enough gas left to traverse any arc, then there are no children left for a node. The past-cost-so-far is written inside each node in bold. Your solution should also include heuristic values for each of the states in the tree."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.898,
+            0.512,
+            0.911
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.093,
+            0.269,
+            0.109
+          ],
+          "level": 2,
+          "content": "3.4.4 Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.119,
+            0.886,
+            0.185
+          ],
+          "content": "If our heuristic is good, the number of expansions is likely to be much better than than the number of i-nodes in a city, which is probably less that 100,000. Assuming the number of i-nodes is proportional to area of the city, we would expect an average trip to be on the order of the square root of the number of i-nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.187,
+            0.887,
+            0.255
+          ],
+          "content": "The larger N will mean that more of the city will have to be explored. If N is much larger than K (say K = 1) there is likely to be lots of re-visiting parts of the city; this could make the worst-case be like doing N separate trips, which could get bad. A local search algorithm that gave up guarantee of optimality is almost certainly feasible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.255,
+            0.885,
+            0.29
+          ],
+          "content": "The hard part of this problem is formulating a useful heuristic. The one here is a weak approximation to the original problem. It remains to be seen how good it would be in practice."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.309,
+            0.281,
+            0.325
+          ],
+          "level": 2,
+          "content": "3.4.5 References"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.335,
+            0.371,
+            0.351
+          ],
+          "content": "I did not consult any references."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.897,
+            0.509,
+            0.911
+          ],
+          "content": "11"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "dp1.pdf",
+      "authors": [
+        "cc_sgera"
+      ],
+      "languages": [
+        "en"
+      ],
+      "created_at": "2005-08-12T15:22:38+05:30",
+      "modified_at": "2005-08-18T12:53:52+05:30",
+      "creator_application": "TeX",
+      "producer_application": "Acrobat Distiller 6.0 (Windows)",
+      "page_count": 11,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

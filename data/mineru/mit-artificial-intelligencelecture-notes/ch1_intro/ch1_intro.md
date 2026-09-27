@@ -1,0 +1,165 @@
+<!-- page: 1 -->
+
+## Topics
+
+The course covers three major topics:
+
+• Search
+
+– Graph search
+
+— Constraint Satisfaction
+
+\- Games
+
+• Machine Learning
+
+\- Nearest Neighbors
+
+– Decision Trees
+
+— Neural Networks
+
+\- SVM
+
+• Knowledge Representation & Inference
+
+— Propositional & First Order Logic
+
+– Rule-based systems
+
+— Natural Language
+
+## Slide 1.1.2
+
+These are the topics that we will cover during the semester. 6.034 is an introductory subject. Our goal is to give you a solid introduction to three key topics: search, knowledge representation and inference, and machine learning. We will introduce a variety of other different topics in AI, such as planning, robotics and natural language only in passing. Subsequent courses in AI cover those areas in more depth.
+
+## Slide 1.1.3
+
+These are the formal and informal prerequisites for the subject.
+
+## Prerequisites
+
+## · 6.001
+
+We will have regular assignments that expect you to be able to read and write Scheme. This is the only formal pre-requisite.
+
+## ·18.02
+
+We will assume that you know what the chain rule is and what a dot product is, and a partial derivative, etc. If you have not taken 18.02, you should really wait to take the subject until you have.
+
+<!-- page: 2 -->
+
+• Everything you do for credit in this subject is supposed to be your own work; this includes on-line work.
+
+## Collaboration
+
+• You can talk to other students (and TAs) about approaches to problems, but then you should sit down and do the problem yourself. This is not only the ethical way but also the only effective way of learning the material.
+
+## Slide 1.1.6
+
+Don't hand in work that you did not do, even to the on-line system. Talking to other people to try to understand the material is fine, in fact, encouraged. Cutting and pasting someone else's answer is NOT fine under any circumstances. Not only is it unethical but you will fail to learn anything in the course.
+
+If you feel so pressured that you are tempted to turn in someone else's work, you are probably trying to do too much. You should probably be taking fewer subjects or cutting back somewhere else. Speak to your advisor or a counseling Dean or come talk to one of us.
+
+<!-- page: 3 -->
+
+## On-Line Interactive Text
+
+• We will use this on-line format to introduce the detailed material for the course. We will also point you to additional material in the suggested textbooks.
+
+• Each of the presentations comes in two forms:
+
+• Slides, Narration and Narration Text (on-line)
+
+• PDF of Slides and Narration Text (for printing)
+
+• Associated with each presentation there will be a few exercises to drive home key points.
+
+• Each week, there will also be a set of assigned problems (including programming ones) that will be done on-line.
+
+## Slide 1.2.2
+
+These presentations will tend to focus on the nitty-gritty detail of the material and be a bit skimpy on motivation - we will do more of that in class. We have tried to provide a variety of ways of going through the material, either on-line or for printing; hopefully you will find one that suits you.
+
+Note that each assigned chapter will have several presentations (sections) as well as some interactive exercise problems. You should do these correctly after going through the appropriate section - this should help make sure that you picked up on the key points of the section.
+
+We also have more substantial interactive problems, including programming problems, in the week's problem set.
+
+## Slide 1.2.3
+
+## On-line problems and exercises
+
+• Problems and exercises come in three forms:
+
+• Multiple Choice/True False
+
+• Short answer
+
+• Coding
+
+• Short-answer and coding problems have a "Check" button that allows you to verify whether your answer is correct before final submission. Multiple-choice/True-False problems do not have a Check button.
+
+• When you are done with a problem, you need to click the "Submit" button. This will show you the "official" answer. You need to submit every problem before the due date to get full credit. After submitting a problem, you cannot change your answers to that problem.
+
+• If you submit every problem and exercise in a problem set and you score 90% or better, you should get a gold star for the problem set. If your score is 90% or better but you have no star, then you forgot to submit some problem – maybe the hours or feedback "problems".
+
+<!-- page: 4 -->
+
+## Slide 1.2.7
+
+We'd like to be able to address any issues that you have with the material, the organization of the course, or the on-line system. To that end, we have provided you with several mechanisms to try to get your feedback. Of course, you can always send email about any of this to me or to any of the TAs. There's an email link at the bottom of every page that reaches all of us. In addition, each chapter and problem set has a question that's explicitly geared to getting feedback on the current material.
+
+Of course, you can always ask questions in class. But, we know that many of you will not ask a question in class if your life depended on it. So, let's see if the technology can help.
+
+## Questions and Suggestions
+
+• We have added a question to each presentation and problem set asking for any issues that you would like to see discussed in class. Please use that to give us feedback so that we can make the class time maximally useful.
+
+• Each on-line page has an e-mail link at the bottom. Please use that to ask any questions that you have on the presented material or on the problems or exercises, especially when the next class will not be for a while.
+
+• If you have any feedback or suggestions about the course, you can use any of these methods to communicate them to us. There is nothing we can do about complaints at the end of the term; we may actually be able to deal with an issue if you let us know during the term.
+
+## Scheme
+
+• There will be coding problems throughout the term
+
+• In many cases, it will be feasible to simply debug your answer on the on-line system using the Check button.
+
+## Slide 1.2.8
+
+• In other case, you should develop your code on a standalone Scheme system, such as MIT Scheme, which hopefully you know from 6.001. The course homepage has a pointer to additional information on Scheme systems.
+
+• We encourage you to install the most recent full release of MIT Scheme on your machine, or use it from the 6.034 locker on Athena. Do not rely on the 6.001 release.
+
+• MIT Scheme can be found at: http://www.gnu.org/software/mit-scheme/
+
+<!-- page: 5 -->
+
+We had someone in the end-of-term survey say "Halfway through the term the sound stopped working", but this person never told anyone who could do anything about it that they were having problems! I guess they assumed that it had stopped working for everyone and someone else would report it. Well it didn't fail for everyone and no one reported it. We might not be able to solve all your problems, given the immense variety of incompatible or broken software and hardware out there, but we definitely can't solve any of your problems if you don't tell us about them.
+
+tlp - Spring 02· 9
+
+## Crash?
+
+• If your browser or machine crashes while running our online system, then most likely you've got a broken OS/Browser/JavaVM combination (they're out there)
+
+• Our code already has patches to avoid the more common landmines but there are many more trained professionals in industry producing buggy code for your browser and OS than there are of us trying to patch around them.
+
+• So, please report these problems but odds are we won't even be able to reproduce them. Luckily, these problems seem to be quite rare.
+
+• Upgrading/Reinstalling the browser sometimes helps. Finding a new machine almost always helps ;-)
+
+• Or, switch to using an HTML form for the code entry window (see Preferences). This most likely will work - the problem, when it occurs, is usually with Java .
+
+tlp - Spring 02 · 10
+
+## Slide 1.2.10
+
+This is a bit of a 6.001 review. Your browser has interpreters for a few languages, specifically HTML, Javascript and Java. You learned about interpreters in 6.001. So, suppose I write a Scheme program for a Scheme interpreter and, when I run it, the interpreter crashes and burns, whose fault is this? Is it my fault for writing such a nasty Scheme program? Or, do we have a buggy interpreter on our hands? If you said it was the fault of the program, you should go back and review 6.001 and try again.
+
+Similarly, if you feel that your browser (or your OS) crashing is due to the little piece of Java (or HTML or Javascript) code in our on-line system, try again. I can pretty much guarantee you that it is because you have some buggy combination of browser and Java Virtual Machine installed on your machine; there are plenty of these around. I am confident of this because, by design, I'm not supposed to be able to write Java (or HTML or Javascript) code that crashes your browser (or, heaven forbid, your machine). Note that I am not promising that all our code will work correctly (I wish!). But crashing your browser or your machine should be beyond our power.
+
+![](images/page_4_image_21.jpg)
+
+Unfortunately, it means that these problems are also likely to be beyond our power to fix. We'd like to know when they happen (which seems to be mercifully rarely), but it's not clear that we will be able to help since we most likely won't even be able to reproduce it. It's likely something about your

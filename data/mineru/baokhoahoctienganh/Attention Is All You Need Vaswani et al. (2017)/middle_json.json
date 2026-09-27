@@ -1,0 +1,3038 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "The Annotated Transformer",
+      "authors": [
+        "Alexander Rush"
+      ],
+      "subject": "NLP-OSS 2018",
+      "created_at": "2018-05-27T17:38:17-04:00",
+      "modified_at": "2018-05-27T17:38:17-04:00",
+      "creator_application": "LaTeX with hyperref package",
+      "producer_application": "pdfTeX-1.40.16",
+      "page_count": 9,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.344,
+            0.093,
+            0.656,
+            0.113
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Annotated Transformer"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.391,
+            0.152,
+            0.613,
+            0.203
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alexander M. Rush",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " srush@seas.harvard.edu Harvard University"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 2,
+          "bbox": [
+            0.261,
+            0.274,
+            0.346,
+            0.292
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Abstract"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.143,
+            0.3,
+            0.461,
+            0.593
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "A major aim of open-source NLP is to quickly and accurately reproduce the results of new work, in a manner that the community can easily use and modify. While most papers publish enough detail for replication, it still may be difficult to achieve good results in practice. This paper is an experiment. In it, I consider a worked exercise with the goal of implementing the results of the recent paper. The replication exercise aims at simple code structure that follows closely with the original work, while achieving an efficient usable system. An implicit premise of this exercise is to encourage researchers to consider this method for new results."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.117,
+            0.603,
+            0.27,
+            0.619
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1 Introduction"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.628,
+            0.49,
+            0.805
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Replication of published results remains a challenging issue in open-source NLP. When a new paper is published with major improvements, it is common for many members of the community to independently reproduce the numbers experimentally, which is often a struggle. Practically this makes it difficult to improve scores, but also importantly it is a pedagogical issue if students cannot reproduce results from scientific publications."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.806,
+            0.49,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The recent turn towards deep learning has exerbated this issue. New models require extensive hyperparameter tuning and long training times. Small mistakes can cause major issues. Fortunately though, new toolsets have made it possible to write simpler more mathematically declarative code."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.508,
+            0.276,
+            0.883,
+            0.454
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this experimental paper, I propose an exercise in open-source NLP. The goal is to transcribe a recent paper into a simple and understandable form. The document itself is pre-sented as an annotated paper. That is the main document (in different font) is an excerpt of the recent paper “Attention is All You Need” (Vaswani et al., 2017). I add annotation in the form of italicized comments and include code in PyTorch directly in the paper itself."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.508,
+            0.457,
+            0.883,
+            0.539
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note this document itself is presented as a blog post "
+            },
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " and is completely executable as a notebook. In the spirit of reproducibility this work itself is distilled from the same source with images inline."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 9,
+          "bbox": [
+            0.621,
+            0.579,
+            0.77,
+            0.592
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Attention Is All You Need"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.548,
+            0.624,
+            0.845,
+            0.647
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ashish Vaswani* Noam Shazeer* Niki Parmar* Jakob Uszkoreit* Google Brain Google Brain Google Research Google Research avaswani@google.com noam@google.com nikip@google.com usz@google.com"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.555,
+            0.651,
+            0.838,
+            0.673
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Llion Jones\" Aidan N. Gomez* † Łukasz Kaiser* Google Research University of Toronto Google Brain 1lion@google.com aidan@cs.toronto.edu lukaszkaiser@google.com"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.641,
+            0.679,
+            0.751,
+            0.694
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Illia Polosukhin* ‡ illia.polosukhin@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 13,
+          "bbox": [
+            0.675,
+            0.706,
+            0.716,
+            0.716
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Abstract"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.568,
+            0.72,
+            0.823,
+            0.812
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 Englishto-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data."
+            }
+          ]
+        },
+        {
+          "type": "page_footnote",
+          "index": 15,
+          "bbox": [
+            0.51,
+            0.868,
+            0.882,
+            0.918
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "superscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Presented at "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://nlp.seas.harvard.edu/2018/04/03/attention.html",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "http://nlp.seas.harvard.edu/2018/04/03/attention.html"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": " with source code at "
+            },
+            {
+              "type": "hyperlink",
+              "url": "https://github.com/harvardnlp/annotated-transformer",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "https://github.com/harvardnlp/annotated-transformer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.491,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "52"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 17,
+          "bbox": [
+            0.23,
+            0.942,
+            0.768,
+            0.969
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Proceedings of Workshop for NLP Open Source Software, pages 52–60 Melbourne, Australia, July 20, 2018. c 2018 Association for Computational Linguistics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.116,
+            0.086,
+            0.266,
+            0.103
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2 Background"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.115,
+            0.117,
+            0.49,
+            0.407
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The goal of reducing sequential computation also forms the foundation of the Extended Neural GPU, ByteNet and ConvS2S, all of which use convolutional neural networks as basic building block, computing hidden representations in parallel for all input and output positions. In these models, the number of operations required to relate signals from two arbitrary input or output positions grows in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet. This makes it more difficult to learn dependencies between distant positions. In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.114,
+            0.407,
+            0.49,
+            0.649
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Self-attention, sometimes called intraattention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization, textual entailment and learning taskindependent sentence representations. Endto-end memory networks are based on a recurrent attention mechanism instead of sequencealigned recurrence and have been shown to perform well on simple-language question answering and language modeling tasks."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.115,
+            0.648,
+            0.49,
+            0.731
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "To the best of our knowledge, however, the Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence aligned RNNs or convolution."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.116,
+            0.742,
+            0.333,
+            0.758
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3 Model Architecture"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.773,
+            0.489,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Most competitive neural sequence transduction models have an encoder-decoder structure (Bahdanau et al., 2014). Here, the encoder maps an input sequence of symbol representations "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\left( x _ { 1 } , . . . , x _ { n } \\right)"
+            },
+            {
+              "type": "text",
+              "content": " to a sequence of continuous representations "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathbf { z } = \\left( z _ { 1 } , . . . , z _ { n } \\right)"
+            },
+            {
+              "type": "text",
+              "content": " Given z, the decoder then generates an output sequence "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\left( y _ { 1 } , . . . , y _ { m } \\right)"
+            },
+            {
+              "type": "text",
+              "content": " of symbols one element at a time. At each step the model"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.508,
+            0.086,
+            0.883,
+            0.136
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "is auto-regressive (Graves, 2013), consuming the previously generated symbols as additional input when generating the next."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "code",
+          "index": 7,
+          "bbox": [
+            0.51,
+            0.145,
+            0.888,
+            0.448
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 7,
+              "bbox": [
+                0.51,
+                0.145,
+                0.888,
+                0.448
+              ],
+              "content": "class EncoderDecoder(nn.Module):\n    \"\"\"\n    A standard Encoder-Decoder architecture.\n    Base for this and many other models.\n    \"\"\"\n    def __init__(self, encoder, decoder, src_embed,\n                   tgt_embed, generator):\n        super(EncoderDecoder, self).__init__()\n        self.encoder = encoder\n        self.decoder = decoder\n        self.src_embed = src_embed\n        self.tgt_embed = tgt_embed\n        self.gender = generator\n\n    def forward(self, src, tgt, src_mask, tgt_mask):\n        \"Take in and process masked src and target sequences.\"\n        return self.decode(self.encode(src, src_mask),\n                     src_mask,\n                     tgt, tgt_mask)\n\n    def encode(self, src, src_mask):\n        return self.encoder(self.src_embed(src), src_mask)\n\n    def decode(self, memory, src_mask, tgt, tgt_mask):\n        return self.decoder(self.tgt_embed(tgt), memory,\n                     src_mask, tgt_mask)\n\nclass Generator(nn.Module):\n    \"Define standard linear + softmax generation step.\"\n    def __init__(self, d_model, vocab):\n        super(Generator, self).__init__()\n        self.proj = nn.Linear(d_model, vocab)\n\n    def forward(self, x):\n        return F.log_softmax(self.proj(x), dim=-1)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.507,
+            0.455,
+            0.883,
+            0.537
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The Transformer follows this overall architecture using stacked self-attention and pointwise, fully connected layers for both the encoder and decoder, shown in the left and right halves of Figure 1, respectively."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.53,
+            0.55,
+            0.863,
+            0.895
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.53,
+                0.55,
+                0.863,
+                0.895
+              ],
+              "image_path": "images/page_1_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "53"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.116,
+            0.086,
+            0.403,
+            0.103
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.1 Encoder and Decoder Stacks"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.117,
+            0.109,
+            0.249,
+            0.124
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.1.1 Encoder"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.128,
+            0.489,
+            0.162
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The encoder is composed of a stack of N = 6 identical layers."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 3,
+          "bbox": [
+            0.117,
+            0.175,
+            0.469,
+            0.335
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 3,
+              "bbox": [
+                0.117,
+                0.175,
+                0.469,
+                0.335
+              ],
+              "content": "def clones(module, N):\n    \"Produce N identical layers.\"\n    return nn.ModuleList([copy.deepcopy(module)\n        for _ in range(N)]\n\nclass Encoder(nn.Module):\n    \"Core encoder is a stack of N layers\"\n    def __init__(self, layer, N):\n        super(Encoder, self).__init__()\n        self.layers = clones(layer, N)\n        self.norm = LayerNorm(layer.size)\n\n    def forward(self, x, mask):\n        \"Pass the input/mask through each layer in turn.\"\n        for layer in self.layers:\n            x = layer(x, mask)\n        return self.norm(x)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.346,
+            0.489,
+            0.397
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We employ a residual connection (He et al., 2016) around each of the two sub-layers, followed by layer normalization (Ba et al., 2016)."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 5,
+          "bbox": [
+            0.117,
+            0.409,
+            0.494,
+            0.521
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 5,
+              "bbox": [
+                0.117,
+                0.409,
+                0.494,
+                0.521
+              ],
+              "content": "class LayerNorm(nn.Module):\n    \"Construct a layernorm module (See citation for details).\"\n    def __init__(self, features, eps=1e-6):\n        super(LayerNorm, self).__init__()\n        self.a_2 = nn.Parameter(torch.ones(features))\n        self.b_2 = nn.Parameter(torch.zeros(features))\n        self.eps = eps\n\n    def forward(self, x):\n        mean = x.mean(-1, keepdim=True)\n        std = x.std(-1, keepdim=True)\n        return (self.a_2 * (x - mean) /\n            (std + self.eps) + self.b_2)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.115,
+            0.532,
+            0.49,
+            0.645
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "That is, the output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. We apply dropout (Srivastava et al., 2014) to the output of each sub-layer, before it is added to the sub-layer input and normalized."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.645,
+            0.49,
+            0.711
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension d"
+            },
+            {
+              "type": "text",
+              "content": "model",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " = 512."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 8,
+          "bbox": [
+            0.118,
+            0.724,
+            0.452,
+            0.837
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 8,
+              "bbox": [
+                0.118,
+                0.724,
+                0.452,
+                0.837
+              ],
+              "content": "class SublayerConnection(nn.Module):\n    \"\"\"\n    A layer norm followed by a residual connection.\n    Note norm is not applied to residual x.\n    \"\"\"\n    def __init__(self, size, dropout):\n        super(SublayerConnection, self).__init__()\n        self.norm = LayerNorm(size)\n        self.dropout = nn.Dropout(dropout)\n\n    def forward(self, x, sublayer):\n        \"Apply residual connection to sublayer fn.\"\n        return x + self.dropout(sublayer(self.norm(x)))"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.115,
+            0.847,
+            0.49,
+            0.912
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 10,
+          "bbox": [
+            0.511,
+            0.09,
+            0.871,
+            0.227
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 10,
+              "bbox": [
+                0.511,
+                0.09,
+                0.871,
+                0.227
+              ],
+              "content": "class EncoderLayer(nn.Module):\n    \"Encoder calls self-attn and feed forward.\"\n    def __init__(self, size, self_attn,\n                   feed_forward, dropout):\n        super(EncoderLayer, self).__init__()\n        self.self_attn = self_attn\n        self.feed_forward = feed_forward\n        sublayer = SublayerConnection(size, dropout)\n        self.sublayer = clones(sublayer, 2)\n        self.size = size\n\n    def forward(self, x, mask):\n        \"Follow Figure 1 (left) for connections.\"\n        x = self.sublayer[0](x, lambda x:\n                                    self.self_attn(x, x, x, mask))\n        return self.sublayer[1](x, self.feed_forward)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.51,
+            0.239,
+            0.643,
+            0.254
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.1.2 Decoder"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.509,
+            0.258,
+            0.883,
+            0.292
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The decoder is also composed of a stack of N = 6 identical layers."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 13,
+          "bbox": [
+            0.511,
+            0.306,
+            0.834,
+            0.401
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 13,
+              "bbox": [
+                0.511,
+                0.306,
+                0.834,
+                0.401
+              ],
+              "content": "class Decoder(nn.Module):\n    \"Generic N layer decoder with masking.\"\n    def __init__(self, layer, N):\n        super(Decoder, self).__init__()\n        self.layers = clones(layer, N)\n        self.norm = LayerNorm(layer.size)\n\n    def forward(self, x, memory, src_mask, tgt_mask):\n        for layer in self.layers:\n            x = layer(x, memory, src_mask, tgt_mask)\n        return self.norm(x)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.508,
+            0.412,
+            0.884,
+            0.527
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In addition to the two sub-layers in each encoder layer, the decoder inserts a third sub-layer, which performs multi-head attention over the output of the encoder stack. Similar to the encoder, we employ residual connections around each of the sub-layers, followed by layer normalization."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 15,
+          "bbox": [
+            0.512,
+            0.54,
+            0.88,
+            0.71
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 15,
+              "bbox": [
+                0.512,
+                0.54,
+                0.88,
+                0.71
+              ],
+              "content": "class DecoderLayer(nn.Module):\n    \"Decoder calls self-attn, src-attn, and feed forward.\"\n    def __init__(self, size, self_attn,\n                   src_attn, feed_forward, dropout):\n        super(DecoderLayer, self).__init__()\n        self.self_attn = self_attn\n        self.src_attn = src_attn\n        self.feed_forward = feed_forward\n        sublayer = SublayerConnection(size, dropout)\n        self.sublayer = clones(sublayer, 3)\n        self.size = size\n\n    def forward(self, x, memory, s_mask, t_mask):\n        \"Follow Figure 1 (right) for connections.\"\n        m = memory\n        x = self.sublayer[0](x, lambda x:\n                                    self.self_attn(x, x, x, t_mask))\n        x = self.sublayer[1](x, lambda x:\n                                    self.src_attn(x, m, m, s_mask))\n        return self.sublayer[2](x, self.feed_forward)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.507,
+            0.721,
+            0.885,
+            0.851
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This masking, combined with fact that the output embeddings are offset by one position, ensures that the predictions for position i can depend only on the known outputs at positions less than i."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 17,
+          "bbox": [
+            0.511,
+            0.865,
+            0.847,
+            0.919
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 17,
+              "bbox": [
+                0.511,
+                0.865,
+                0.847,
+                0.919
+              ],
+              "content": "def subsequent_mask(size):\n    \"Mask out subsequent positions.\"\n    attn_shape = (1, size, size)\n    subsequent_mask = np.triu(np.ones(attn_shape), k=1)\n    return torch.from_numpy(\n        subsequent_mask.astype('uint8')) == 0"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "page_number",
+          "index": 18,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.936
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "54"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.086,
+            0.26,
+            0.102
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.1.3 Attention"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.115,
+            0.106,
+            0.489,
+            0.235
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors. The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.234,
+            0.489,
+            0.348
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We call our particular attention \"Scaled Dot-Product Attention\". The input consists of queries and keys of dimension "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k } ,"
+            },
+            {
+              "type": "text",
+              "content": " and values of dimension "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { v }"
+            },
+            {
+              "type": "text",
+              "content": " . We compute the dot products of the query with all keys, divide each by "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\sqrt { d _ { k } }"
+            },
+            {
+              "type": "text",
+              "content": " , and apply a softmax function to obtain the weights on the values."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.256,
+            0.36,
+            0.349,
+            0.487
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.256,
+                0.36,
+                0.349,
+                0.487
+              ],
+              "image_path": "images/page_3_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.517,
+            0.489,
+            0.615
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In practice, we compute the attention function on a set of queries simultaneously, packed together into a matrix Q. The keys and values are also packed together into matrices K and V. We compute the matrix of outputs as:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 5,
+          "bbox": [
+            0.143,
+            0.634,
+            0.463,
+            0.672
+          ],
+          "image_path": "images/page_3_equation_5.jpg",
+          "content": "\\text {Attention} (Q, K, V) = \\text {softmax} (\\frac {Q K ^ {T}}{\\sqrt {d _ {k}}}) V"
+        },
+        {
+          "type": "code",
+          "index": 6,
+          "bbox": [
+            0.117,
+            0.684,
+            0.47,
+            0.78
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 6,
+              "bbox": [
+                0.117,
+                0.684,
+                0.47,
+                0.78
+              ],
+              "content": "def attention(query, key, value, mask=None, dropout=None):\n    \"Compute 'Scaled Dot Product Attention'\"\n    d_k = query.size(-1)\n    key_t = key.transpose(-2, -1)\n    scores = torch.matmul(query, key_t) / math.sqrt(d_k)\n    if mask is not None:\n        scores = scores.masked_fill(mask == 0, -1e9)\n    p_attn = F.softmax(scores, dim=-1)\n    if dropout is not None:\n        p_attn = dropout(p_attn)\n    return torch.matmul(p_attn, value), p_attn"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.788,
+            0.489,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The two most commonly used attention functions are additive attention (Bahdanau et al., 2014), and dot-product (multiplicative) attention. Dot-product attention is identical to our algorithm, except for the scaling factor of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\frac { 1 } { \\sqrt { d _ { k } } }"
+            },
+            {
+              "type": "text",
+              "content": " Additive attention computes the compatibility function using a feed-forward network with a single hidden layer. While the"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.507,
+            0.086,
+            0.882,
+            0.166
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "two are similar in theoretical complexity, dotproduct attention is much faster and more space-efficient in practice, since it can be implemented using highly optimized matrix multiplication code."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.508,
+            0.167,
+            0.883,
+            0.416
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "While for small values of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k }"
+            },
+            {
+              "type": "text",
+              "content": " the two mechanisms perform similarly, additive attention outperforms dot product attention without scaling for larger values of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k }"
+            },
+            {
+              "type": "text",
+              "content": " (Britz et al., "
+            },
+            {
+              "type": "equation_inline",
+              "content": "2 0 1 7 )"
+            },
+            {
+              "type": "text",
+              "content": " We suspect that for large values of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k } ,"
+            },
+            {
+              "type": "text",
+              "content": " the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients (To illustrate why the dot products get large, assume that the components of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "q"
+            },
+            {
+              "type": "text",
+              "content": " and k are independent random variables with mean 0 and variance 1. Then their dot product, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "q \\cdot k ="
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle \\sum _ { i = 1 } ^ { d _ { k } } q _ { i } k _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " , has mean 0 and variance "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k } . )"
+            },
+            {
+              "type": "text",
+              "content": " . To counteract this effect, we scale the dot products by "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\frac { 1 } { \\sqrt { d _ { k } } }"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 10,
+          "bbox": [
+            0.609,
+            0.451,
+            0.781,
+            0.609
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 10,
+              "bbox": [
+                0.609,
+                0.451,
+                0.781,
+                0.609
+              ],
+              "image_path": "images/page_3_image_10.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.507,
+            0.67,
+            0.883,
+            0.752
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 12,
+          "bbox": [
+            0.508,
+            0.767,
+            0.931,
+            0.786
+          ],
+          "image_path": "images/page_3_equation_12.jpg",
+          "content": "\\text {MultiHead} (Q, K, V) = \\text {Concat} (\\text {head} _ {1}, \\dots , \\text {head} _ {\\mathrm{h}}) W ^ {O}"
+        },
+        {
+          "type": "equation",
+          "index": 13,
+          "bbox": [
+            0.508,
+            0.794,
+            0.881,
+            0.814
+          ],
+          "image_path": "images/page_3_equation_13.jpg",
+          "content": "\\text {where} \\mathrm{head} _ {\\mathrm{i}} = \\text {Attention} (Q W _ {i} ^ {Q}, K W _ {i} ^ {K}, V W _ {i} ^ {V})"
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.508,
+            0.822,
+            0.882,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Where the projections are parameter matrices "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { i } ^ { Q } \\in \\mathbb { R } ^ { d _ { \\mathsf { m o d e l } } \\times d _ { k } }"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { i } ^ { K } \\in \\mathbb { R } ^ { d _ { \\mathsf { m o d e l } } \\times d _ { k } }"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W _ { i } ^ { V } \\; \\in \\; \\dot { \\mathbb { R } } ^ { d _ { \\mathsf { m o d e l } } \\times d _ { v } }"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "W ^ { O } \\; \\stackrel { \\iota } { \\in } \\; \\mathbb { R } ^ { h d _ { v } \\times d _ { \\mathsf { m o d e l } } }"
+            },
+            {
+              "type": "text",
+              "content": " In this work we employ "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h = 8"
+            },
+            {
+              "type": "text",
+              "content": " parallel attention layers, or heads. For each of these we use "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { k } = d _ { v } = d _ { \\mathsf { m o d e l } } / h = 6 4"
+            },
+            {
+              "type": "text",
+              "content": " . Due to the reduced"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 15,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.115,
+            0.086,
+            0.489,
+            0.136
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "dimension of each head, the total computational cost is similar to that of single-head attention with full dimensionality."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "code",
+          "index": 1,
+          "bbox": [
+            0.117,
+            0.147,
+            0.498,
+            0.417
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 1,
+              "bbox": [
+                0.117,
+                0.147,
+                0.498,
+                0.417
+              ],
+              "content": "class MultiHeadedAttention(nn.Module):\n    def __init__(self, h, d_model, dropout=0.1):\n        \"Take in model size and number of heads.\"\n        super(MultiHeadedAttention, self).__init__()\n        assert d_model % h == 0\n        # We assume d_v always equals d_k\n        self.d_k = d_model // h\n        self.h = h\n        self.linears = clones(nn.Linear(d_model, d_model), 4)\n        self.attn = None\n        self.dropout = nn.Dropout(p=dropout)\n\n    def forward(self, query, key, value, mask=None):\n        \"Implements Figure 2\"\n        if mask is not None:\n            # Same mask applied to all h heads.\n            mask = mask.unsqueeze(1)\n        nb = query.size(0)\n\n        # 1) Do all the linear projections in batch from d_model\n        query, key, value = [\n            l(x).view(nb, -1, self.h, self.d_k).transpose(1, 2)\n            for l, x in zip(selflines, (query, key, value))]\n\n        # 2) Apply attention on all the projected vectors in batch\n        x, self.attn = attention(query, key, value, mask=mask,\n                                   dropout=self.dropout)\n\n        # 3) \"Concat\" using a view and apply a final linear.\n        x = x.transpose(1, 2).contiguous().view(\n            nb, -1, self.h * self.d_k)\n        return self.linears[-1](x)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.429,
+            0.487,
+            0.445
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.2 Position-wise Feed-Forward Networks"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.115,
+            0.45,
+            0.489,
+            0.563
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with a ReLU activation in between."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.152,
+            0.575,
+            0.452,
+            0.593
+          ],
+          "image_path": "images/page_4_equation_4.jpg",
+          "content": "\\mathrm{FFN} (x) = \\max (0, x W _ {1} + b _ {1}) W _ {2} + b _ {2}"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.115,
+            0.604,
+            0.49,
+            0.72
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "While the linear transformations are the same across different positions, they use different parameters from layer to layer. Another way of describing this is as two convolutions with kernel size 1. The dimensionality of input and output is "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { \\mathsf { m o d e l } } = 5 1 2"
+            },
+            {
+              "type": "text",
+              "content": " , and the inner-layer has dimensionality "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { f f } = 2 0 4 8"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 6,
+          "bbox": [
+            0.117,
+            0.733,
+            0.471,
+            0.821
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 6,
+              "bbox": [
+                0.117,
+                0.733,
+                0.471,
+                0.821
+              ],
+              "content": "class PositionwiseFeedForward(nn.Module):\n    \"Implements FFN equation.\"\n    def __init__(self, d_model, d_ff, dropout=0.1):\n        super(PositionwiseFeedForward, self).__init__()\n        self.w_1 = nn.Linear(d_model, d_ff)\n        self.w_2 = nn.Linear(d_ff, d_model)\n        self.dropout = nn.Dropout(dropout)\n\n    def forward(self, x):\n        return self.w_2(self.dropout(F.relu(self.w_1(x))))"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 7,
+          "bbox": [
+            0.116,
+            0.833,
+            0.382,
+            0.849
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.3 Embeddings and Softmax"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.115,
+            0.853,
+            0.489,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Similarly to other sequence transduction models, we use learned embeddings to convert the input tokens and output tokens to vectors of dimension "
+            },
+            {
+              "type": "equation_inline",
+              "content": "d _ { \\mathsf { m o d e l } }"
+            },
+            {
+              "type": "text",
+              "content": " We also use"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.508,
+            0.085,
+            0.883,
+            0.218
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "the usual learned linear transformation and softmax function to convert the decoder output to predicted next-token probabilities. In our model, we share the same weight matrix between the two embedding layers and the pre-softmax linear transformation, similar to (Press and Wolf, 2016). In the embedding layers, we multiply those weights by "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\sqrt { d _ { \\mathsf { m o d e l } } }"
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "code",
+          "index": 10,
+          "bbox": [
+            0.511,
+            0.232,
+            0.83,
+            0.313
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 10,
+              "bbox": [
+                0.511,
+                0.232,
+                0.83,
+                0.313
+              ],
+              "content": "class Embeddings(nn.Module):\n    def __init__(self, d_model, vocab):\n        super(Embeddings, self).__init__()\n        self.lut = nn.Embedding(vocab, d_model)\n        self.d_model = d_model\n\n    def forward(self, x):\n        return self.lut(x) * math.sqrt(self.d_model)\n=> h x d k"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.51,
+            0.319,
+            0.727,
+            0.336
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3.4 Positional Encoding"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.507,
+            0.342,
+            0.883,
+            0.552
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "ch.Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. To this end, we add \"positional encodings\" to the input embeddings at the bottoms of the encoder and decoder stacks. The positional encodings have the same dimension d"
+            },
+            {
+              "type": "text",
+              "content": "model",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " as the embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed (Gehring et al., 2017)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.508,
+            0.552,
+            0.882,
+            0.585
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this work, we use sine and cosine functions of different frequencies:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 14,
+          "bbox": [
+            0.546,
+            0.597,
+            0.845,
+            0.657
+          ],
+          "image_path": "images/page_4_equation_14.jpg",
+          "content": "\\begin{array}{c} P E _ {(p o s, 2 i)} = \\sin (p o s / 1 0 0 0 0 ^ {2 i / d _ {\\mathrm{model}}}) \\\\ P E _ {(p o s, 2 i + 1)} = \\cos (p o s / 1 0 0 0 0 ^ {2 i / d _ {\\mathrm{model}}}) \\end{array}"
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.508,
+            0.679,
+            0.883,
+            0.841
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where pos is the position and i is the dimension. That is, each dimension of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from 2π to 10000 · 2π. We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset k, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P E _ { p o s + k }"
+            },
+            {
+              "type": "text",
+              "content": " can be represented as a linear function of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P E _ { p o s }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.507,
+            0.841,
+            0.883,
+            0.907
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In addition, we apply dropout to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P _ { d r o p } = 0 . 1"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 17,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "code",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.09,
+            0.486,
+            0.419
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 0,
+              "bbox": [
+                0.117,
+                0.09,
+                0.486,
+                0.419
+              ],
+              "content": "class PositionalEncoding(nn.Module):\n    \"Implement the PE function.\"\n    def __init__(self, d_model, dropout, max_len=5000):\n        super(PositionalEncoding, self).__init__()\n        self.dropout = nn.Dropout(p=dropout)\n\n        # Compute the positional encodings once in log space.\n        pe = torch.zeros(max_len, d_model)\n        position = torch.arange(0, max_len).unsqueeze(1)\n        div_term = torch.exp(torch.arange(0, d_model, 2) * -(math.log(10000.0) / d_model))\n        pe[:, 0::2] = torch.sin(position * div_term)\n        pe[:, 1::2] = torch.cos(position * div_term)\n        pe = pe.unsqueeze(0)\n        self.register_buffer('pe', pe)\n\n    def forward(self, x):\n        x = x + Variable(self.pe[:, :x.size(1)],\n            requires_grad=False)\n        return self.dropout(x)\n\nplt.figure(figsize=(15, 5))\npe = PositionalEncoding(20, 0)\ny = pe.forward(Variable(torch.zeros(1, 100, 20)))\nplt.plot(np.arange(100), y[0, :, 4:8].data.numpy())\nplt.legend([\"dim %d\" % p for p in [4, 5, 6, 7]])\nNone"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.115,
+            0.463,
+            0.49,
+            0.594
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also experimented with using learned positional embeddings (Gehring et al., 2017) instead, and found that the two versions produced nearly identical results. We chose the sinusoidal version because it may allow the model to extrapolate to sequence lengths longer than the ones encountered during training."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 2,
+          "bbox": [
+            0.117,
+            0.605,
+            0.49,
+            0.785
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 2,
+              "bbox": [
+                0.117,
+                0.605,
+                0.49,
+                0.785
+              ],
+              "content": "def make_model(src_vocab, tgt_vocab, N=6,\n            d_model=512, d_ff=2048, h=8, dropout=0.1):\n    \"Helper: Construct a model from hyperparameters.\"\n    c = copy.deepcopy\n    attn = MultiHeadedAttention(h, d_model)\n    ff = PositionwiseFeedForward(d_model, d_ff, dropout)\n    position = PositionalEncoding(d_model, dropout)\n    d = d_model\n    model = EncoderDecoder(\n        Encoder(EncoderLayer(d, c(attn), c(ff), dropout), N),\n        Decoder(DecoderLayer(d, c(attn), c(attn),\n                c(ff), dropout), N),\n        nn.Sequential(Embeddings(d, src_vocab), c(position)),\n        nn.Sequential(Embeddings(d, tgt_vocab), c(position)),\n        Generator(d_model, tgt_vocab))\n    # This was important from their code.\n    # Initialize parameters with Glorot / fan_avg.\n    for p in model.parameters():\n        if p.dim() > 1:\n            nn.init.xavier_uniform(p)\n    return model"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 3,
+          "bbox": [
+            0.117,
+            0.796,
+            0.232,
+            0.814
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4 Training"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.822,
+            0.489,
+            0.854
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This section describes the training regime for our models."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 5,
+          "bbox": [
+            0.117,
+            0.867,
+            0.345,
+            0.883
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.1 Batches and Masking"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "code",
+          "index": 6,
+          "bbox": [
+            0.117,
+            0.89,
+            0.394,
+            0.919
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 6,
+              "bbox": [
+                0.117,
+                0.89,
+                0.394,
+                0.919
+              ],
+              "content": "class Batch:\n    \"Batch of data with mask for training.\"\n    def __init__(self, src, trg=None, pad=0):"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "code",
+          "index": 7,
+          "bbox": [
+            0.534,
+            0.09,
+            0.883,
+            0.228
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 7,
+              "bbox": [
+                0.534,
+                0.09,
+                0.883,
+                0.228
+              ],
+              "content": "self.src = src\n    self.src_mask = (src != pad).unsqueeze(-2)\n    if trg is not None:\n        self.trg = trg[:, :-1]\n        self.trg_y = trg[:, 1:]\n        self.trg_mask = self.make_std_mask(self.trg, pad)\n        self.ntokens = (self.trg_y != pad).data.sum()\n\n@staticmethod\ndef make_std_mask(tgt, pad):\n    \"Create a mask to hide padding and future words.\"\n    tgt_mask = (tgt != pad).unsqueeze(-2)\n    tgt_mask = tgt_mask & Variable(\n        subsequent_mask(tgt.size(-1))\n        .type_as(tgt_mask.data))\n    return tgt_mask"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 8,
+          "bbox": [
+            0.511,
+            0.239,
+            0.677,
+            0.257
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.2 Training Loop"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "code",
+          "index": 9,
+          "bbox": [
+            0.51,
+            0.261,
+            0.891,
+            0.432
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 9,
+              "bbox": [
+                0.51,
+                0.261,
+                0.891,
+                0.432
+              ],
+              "content": "def run_epoch(data_iter, model, loss_compute):\n    \"Standard Training and Logging Function\"\n    start = time.time()\n    total_tokens = 0\n    total_loss = 0\n    tokens = 0\n    for i, batch in enumerate(data_iter):\n        out = model.forward(batch.src, batch.trg,\n                batch.src_mask, batch.trg_mask)\n        loss = loss_compute(out, batch.trg_y, batch.ntokens)\n        total_loss += loss\n        total_tokens += batch.ntokens\n        tokens += batch.ntokens\n        if i % 50 == 1:\n            elapsed = time.time() - start\n            print(\"Epoch Step: %d Loss: %f Tokens / Sec: %f\" % (i, loss / batch.ntokens, tokens / elapsed))\n            start = time.time()\n            tokens = 0\n    return total_loss / total_tokens"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.51,
+            0.443,
+            0.79,
+            0.46
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.3 Training Data and Batching"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.508,
+            0.464,
+            0.883,
+            0.625
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We trained on the standard WMT 2014 English-German dataset consisting of about 4.5 million sentence pairs. Sentences were encoded using byte-pair encoding, which has a shared source-target vocabulary of about 37000 tokens. For English-French, we used the significantly larger WMT 2014 English-French dataset consisting of 36M sentences and split tokens into a 32000 word-piece vocabulary."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.508,
+            0.625,
+            0.883,
+            0.707
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Sentence pairs were batched together by approximate sequence length. Each training batch contained a set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 13,
+          "bbox": [
+            0.511,
+            0.717,
+            0.811,
+            0.838
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 13,
+              "bbox": [
+                0.511,
+                0.717,
+                0.811,
+                0.838
+              ],
+              "content": "global max_src_in_batch, max_tgt_in_batch\ndef batch_size_fn(new, count, sofar):\n    \"Calculate total number of tokens + padding.\"\n    global max_src_in_batch, max_tgt_in_batch\n    if count == 1:\n        max_src_in_batch = 0\n        max_tgt_in_batch = 0\n    max_src_in_batch = max(max_src_in_batch,\n                       len(new.src))\n    max_tgt_in_batch = max(max_tgt_in_batch,\n                       len(new.trg) + 2)\n    src_elements = count * max_src_in_batch\n    tgt_elements = count * max_tgt_in_batch\n    return max(src_elements, tgt_elements)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 14,
+          "bbox": [
+            0.51,
+            0.849,
+            0.76,
+            0.864
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.4 Hardware and Schedule"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.509,
+            0.87,
+            0.883,
+            0.92
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using the hyperparameters described through-"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.49,
+            0.923,
+            0.512,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "57"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.114,
+            0.086,
+            0.491,
+            0.185
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "out the paper, each training step took about 0.4 seconds. We trained the base models for a total of 100,000 steps or 12 hours. For our big models, step time was 1.0 seconds. The big models were trained for 300,000 steps (3.5 days)."
+            }
+          ],
+          "continues_prev": true
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.116,
+            0.207,
+            0.253,
+            0.224
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.5 Optimizer"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.115,
+            0.235,
+            0.49,
+            0.316
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We used the Adam optimizer (Kingma and Ba, 2014) with "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\beta_{1} = 0.9, \\beta_{2} = 0.98"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\epsilon   =   1 0 ^ { - 9 }"
+            },
+            {
+              "type": "text",
+              "content": " We varied the learning rate over the course of training, according to the formula:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 3,
+          "bbox": [
+            0.115,
+            0.323,
+            0.487,
+            0.392
+          ],
+          "content": [
+            {
+              "type": "algorithm_body",
+              "index": 3,
+              "bbox": [
+                0.115,
+                0.323,
+                0.487,
+                0.392
+              ],
+              "content": [
+                {
+                  "type": "equation_inline",
+                  "content": "lrate = d_{model}^{-0.5}"
+                },
+                {
+                  "type": "text",
+                  "content": " "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\min (step\\_num^{-0.5}, step\\_num \\cdot warmup\\_steps^{-1})"
+                }
+              ]
+            }
+          ],
+          "sub_type": "algorithm"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.115,
+            0.405,
+            0.49,
+            0.488
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This corresponds to increasing the learning rate linearly for the first warmup_steps training steps, and decreasing it thereafter proportionally to the inverse square root of the step number. We used warmup_steps = 4000."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 5,
+          "bbox": [
+            0.114,
+            0.521,
+            0.491,
+            0.919
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 5,
+              "bbox": [
+                0.114,
+                0.521,
+                0.491,
+                0.919
+              ],
+              "content": "class NoamOpt:\n    \"Optim wrapper that implements rate.\"\n    def __init__(self, model_size, factor,\n                   warmup, optimizer):\n        self.optimizer = optimizer\n        self._step = 0\n        self.warmup = warmup\n        self.factor = factor\n        self.model_size = model_size\n        self._rate = 0\n\n    def step(self):\n        \"Update parameters and rate\"\n        self._step += 1\n        rate = self.rate()\n        for p in self.optimizer.param_groups:\n            p['lr'] = rate\n        self._rate = rate\n        self.optimizer.step()\n\n    def rate(self, step=None):\n        \"Implement `lrate` above\"\n        if step is None:\n            step = self._step\n        return self.factor * (\n            self.model_size ** (-0.5) *\n            min(step ** (-0.5), step * self.warmup ** (-1.5)))\n\ndef get_std_opt(model):\n    return NoamOpt(model.src_embed[0].d_model, 2, 4000,\n                    torch.optim.Adam(model.parameters(),\n                            lr=0,\n                            betas=(0.9, 0.98),\n                            eps=1e-9))\n\n# Three settings of the lrate hyperparameters.\nopts = [NoamOpt(512, 1, 4000, None),\n        NoamOpt(512, 1, 8000, None),\n        NoamOpt(256, 1, 4000, None)]\nplt.plot(np.arange(1, 20000), [[opt.rate(i) for opt in opts]\n                          for i in range(1, 20000)])\nplt.legend([\"512:4000\", \"512:8000\", \"256:4000\"])\nNone"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "chart",
+          "index": 6,
+          "bbox": [
+            0.532,
+            0.086,
+            0.857,
+            0.232
+          ],
+          "content": [
+            {
+              "type": "chart_body",
+              "index": 6,
+              "bbox": [
+                0.532,
+                0.086,
+                0.857,
+                0.232
+              ],
+              "image_path": "images/page_6_chart_6.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 7,
+          "bbox": [
+            0.509,
+            0.288,
+            0.683,
+            0.305
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.6 Regularization"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 8,
+          "bbox": [
+            0.509,
+            0.31,
+            0.716,
+            0.327
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.6.1 Label Smoothing"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.507,
+            0.33,
+            0.883,
+            0.411
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "During training, we employed label smoothing of value "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\epsilon _ { l s } = 0 . 1"
+            },
+            {
+              "type": "text",
+              "content": " (Szegedy et al., 2015). This hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 10,
+          "bbox": [
+            0.51,
+            0.426,
+            0.876,
+            0.916
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 10,
+              "bbox": [
+                0.51,
+                0.426,
+                0.876,
+                0.916
+              ],
+              "content": "class LabelSmoothing(nn.Module):\n    \"Implement label smoothing.\"\n    def __init__(self, size, padding_idx, smoothing=0.0):\n        super(LabelSmoothing, self).__init__()\n        self.criterion = nn.KLDivLoss(size_average=False)\n        self.padding_idx = padding_idx\n        self.confidence = 1.0 - smoothing\n        self.smoothing = smoothing\n        self.size = size\n        self.true_dist = None\n\n    def forward(self, x, target):\n        assert x.size(1) == self.size\n        true_dist = x.data.clone()\n        true_dist.fill_(self.smoothing / (self.size - 2))\n        true_dist.scatter_(1, target.data.unsqueeze(1),\n                self.confidence)\n        true_dist[:, self.padding_idx] = 0\n        mask = torch.nonzero(target.data == self.padding_idx\n        if mask.dim() > 0:\n            true_dist.index_fill_(0, mask.squeeze(), 0.0)\n        self.true_dist = true_dist\n        return self.criterion(x,\n                    Variable(true_dist,\n                    requires_grad=False))\n\n#Example of label smoothing.\ncrit = LabelSmoothing(5, 0, 0.4)\npredict = torch.FloatTensor(\n    [[0, 0.2, 0.7, 0.1, 0],\n    [0, 0.2, 0.7, 0.1, 0],\n    [0, 0.2, 0.7, 0.1, 0]])\nv = crit(Variable(predict.log()),\n      Variable(torch.LongTensor([2, 1, 0])))"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "58"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "code",
+          "index": 0,
+          "bbox": [
+            0.116,
+            0.121,
+            0.464,
+            0.379
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 0,
+              "bbox": [
+                0.116,
+                0.121,
+                0.464,
+                0.379
+              ],
+              "content": "crit = LabelSmoothing(5, 0, 0.1)\ndef loss(x):\n    d = x + 3 * 1\n    predict = torch.FloatTensor([[0, x / d, 1 / d,\n                                   1 / d, 1 / d]])\n    return crit(Variable(predict.log()),\n        Variable(torch.LongTensor([1])))data[0]\nplt.plot(np.arange(1, 100),\n       [loss(x) for x in range(1, 100)])\nNone"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.117,
+            0.432,
+            0.317,
+            0.448
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.7 Loss Computation"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "code",
+          "index": 2,
+          "bbox": [
+            0.126,
+            0.458,
+            0.411,
+            0.608
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 2,
+              "bbox": [
+                0.126,
+                0.458,
+                0.411,
+                0.608
+              ],
+              "content": "class SimpleLossCompute:\n    \"A simple loss compute and train function.\"\n    def __init__(self, generator,\n                   criterion, opt=None):\n        self Junctioner = generator\n        self.criterion = criterion\n        self.opt = opt\n\n    def __call__(self, x, y, norm):\n        x = self Junctioner(x)\n        loss = self.criterion(\n            x.contiguous().view(-1, x.size(-1)),\n            y.contiguous().view(-1)) / norm\n        loss.backward()\n        if self.opt is not None:\n            self.opt.step()\n            self.opt.optimizer.zero_grad()\n        return loss.data[0] * norm"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 3,
+          "bbox": [
+            0.117,
+            0.621,
+            0.409,
+            0.638
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5 Decoding and Visualization"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.117,
+            0.648,
+            0.313,
+            0.664
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.1 Greedy Decoding"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "code",
+          "index": 5,
+          "bbox": [
+            0.117,
+            0.673,
+            0.49,
+            0.918
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 5,
+              "bbox": [
+                0.117,
+                0.673,
+                0.49,
+                0.918
+              ],
+              "content": "def greedy_decode(model, src, src_mask,\n              max_len, start_sym):\n    memory = model.encode(src, src_mask)\n    ys = torch.ones(1, 1).fill_(start_sym).type_as(src.data)\n    for i in range(max_len - 1):\n        out = model.decode(memory, src_mask,\n                       Variable(ys),\n                       Variable(\n                       subsequent_mask(ys.size(1))\n                       .type_as(src.data)))\n        prob = model.generator(out[:, -1])\n        _, next_word = torch.max(prob, dim=1)\n        next_word = next_word.data[0]\n        ys = torch.cat([ys,\n                       torch.ones(1, 1)\n                       .type_as(src.data)\n                       .fill_(next_word)],\n                       dim=1)\n    return ys\n\nmodel.eval()\nsent = \"\"\"@@The @@log @@file @@can @@be @@sent @@secret\n           @@with @@email @@or @@FTP @@to @@a @@specified\n           @@receiver\"\"\".split()\nsrc = torch.LongTensor([[SRC.stoi[w] for w in sent]])\nsrc = Variable(src)\nsrc_mask = (src != SRC.stoi[\"<blank>\"]).unsqueeze(-2)\nout = greedy_decode(model, src, src_mask,"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "code",
+          "index": 6,
+          "bbox": [
+            0.511,
+            0.091,
+            0.81,
+            0.177
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 6,
+              "bbox": [
+                0.511,
+                0.091,
+                0.81,
+                0.177
+              ],
+              "content": "max_len=60,\nstart_symbol=TGT.stoi[\"<s>\"])\nprint(\"Translation:\", end=\"\\t\")\ntrans = \"<s> \"\nfor i in range(1, out.size(1)):\n    sym = TGT.itos[out[0, i]]\n    if sym == \"</saped\":\n        break\n    trans += sym + \" \"\nprint(trans)"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 7,
+          "bbox": [
+            0.511,
+            0.189,
+            0.755,
+            0.204
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5.2 Attention Visualization"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "code",
+          "index": 8,
+          "bbox": [
+            0.51,
+            0.211,
+            0.883,
+            0.478
+          ],
+          "content": [
+            {
+              "type": "code_body",
+              "index": 8,
+              "bbox": [
+                0.51,
+                0.211,
+                0.883,
+                0.478
+              ],
+              "content": "tgt_sent = trans.split()\ndef draw(data, x, y, ax):\n    seaborn.heatmap(data,\n        xticklabels=x, square=True,\n        yticklabels=y, vmin=0.0, vmax=1.0,\n        cbar=False, ax=ax)\n\nfor layer_num in range(1, 6, 2):\n    fig, axs = plt.subplots(1, 4, figsize=(20, 10))\n    print(\"Encoder Layer\", layer_num + 1)\n    layer = model.encoder.layers[layer_num]\n    for h in range(4):\n        draw(layer.self_attn.attn[0, h].data,\n            sent, sent if h == 0 else [], ax=axs[h])\n    plt.show()\n\nfor layer_num in range(1, 6, 2):\n    fig, axs = plt.subplots(1, 4, figsize=(20, 10))\n    print(\"Decoder Self Layer\", layer_num + 1)\n    layer = model.decoder.layers[layer_num]\n    for h in range(4):\n        draw(layer.self_attn.attn[0, h]\n            .data[:len(tgt_sent), :len(tgt_sent)],\n            tgt_sent, tgt_sent if h == 0 else [], ax=axs[h])\n    plt.show()\n    print(\"Decoder Src Layer\", layer_num + 1)\n    fig, axs = plt.subplots(1, 4, figsize=(20, 10))\n    for h in range(4):\n        draw(layer.src_attn.attn[0, h].data[\n            :len(tgt_sent), :len(sent)],\n            sent, tgt_sent if h == 0 else [], ax=axs[h])\n    plt.show()"
+            }
+          ],
+          "sub_type": "code",
+          "guess_lang": "python"
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.53,
+            0.492,
+            0.862,
+            0.618
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.53,
+                0.492,
+                0.862,
+                0.618
+              ],
+              "image_path": "images/page_7_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 10,
+          "bbox": [
+            0.511,
+            0.652,
+            0.652,
+            0.668
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6 Conclusion"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.503,
+            0.677,
+            0.884,
+            0.905
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This paper presents a replication exercise of the transformer network. Consult the full online version for features such as multi-gpu training, real experiments on full translation problems, and pointers to other extensions such as beam search, sub-word models, and model averaging. The goal is to explore a literate programming experiment of interleaving model replication with formal writing. While not always possible, this modality can be useful for transmitting ideas and encourlyaging faster open-source uptake. Additionally this method can be an easy way to learn about a model alongside its implementation."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.491,
+            0.923,
+            0.512,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "59"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.117,
+            0.086,
+            0.224,
+            0.102
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "References"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "ref_text",
+          "index": 1,
+          "bbox": [
+            0.119,
+            0.109,
+            0.488,
+            0.15
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. 2016. Layer normalization. arXiv preprint arXiv:1607.06450."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 2,
+          "bbox": [
+            0.119,
+            0.158,
+            0.488,
+            0.211
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1409.0473",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Neural machine translation by jointly learning to align and translate"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1409.0473."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 3,
+          "bbox": [
+            0.119,
+            0.221,
+            0.487,
+            0.274
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Denny Britz, Anna Goldie, Minh-Thang Luong, and Quoc V. Le. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1703.03906",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Massive exploration of neural machine translation architectures"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1703.03906."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 4,
+          "bbox": [
+            0.118,
+            0.284,
+            0.488,
+            0.336
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N. Dauphin. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1705.03122",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Convolutional sequence to sequence learning"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1705.03122."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 5,
+          "bbox": [
+            0.119,
+            0.347,
+            0.487,
+            0.374
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Alex Graves. 2013. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1308.0850",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Generating sequences with recurrent neural networks"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1308.0850."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 6,
+          "bbox": [
+            0.119,
+            0.383,
+            0.488,
+            0.45
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2016. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770–778."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 7,
+          "bbox": [
+            0.119,
+            0.459,
+            0.488,
+            0.499
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Diederik P. Kingma and Jimmy Ba. 2014. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1412.6980",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Adam: A method for stochastic optimization"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1412.6980."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 8,
+          "bbox": [
+            0.119,
+            0.508,
+            0.487,
+            0.549
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ofir Press and Lior Wolf. 2016. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1608.05859",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Using the output embedding to improve language models"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1608.05859."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 9,
+          "bbox": [
+            0.119,
+            0.558,
+            0.489,
+            0.637
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2014. Dropout: A simple way to prevent neural networks from overfitting. The Journal of Machine Learning Research, 15(1):1929–1958."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 10,
+          "bbox": [
+            0.119,
+            0.647,
+            0.488,
+            0.701
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and Zbigniew Wojna. 2015. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1512.00567",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Rethinking the inception architecture for computer vision"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1512.00567."
+            }
+          ]
+        },
+        {
+          "type": "ref_text",
+          "index": 11,
+          "bbox": [
+            0.119,
+            0.71,
+            0.488,
+            0.764
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017. "
+            },
+            {
+              "type": "hyperlink",
+              "url": "http://arxiv.org/abs/1706.03762",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "Attention is all you need"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "content": ". CoRR, abs/1706.03762."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 12,
+          "bbox": [
+            0.49,
+            0.923,
+            0.513,
+            0.935
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "60"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

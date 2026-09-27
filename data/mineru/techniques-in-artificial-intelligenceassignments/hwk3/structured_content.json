@@ -1,0 +1,522 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.392,
+            0.141,
+            0.608,
+            0.165
+          ],
+          "level": 1,
+          "content": "6.825 Homework 3"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.411,
+            0.185,
+            0.588,
+            0.202
+          ],
+          "level": 2,
+          "content": "Not to be handed in"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.115,
+            0.24,
+            0.266,
+            0.261
+          ],
+          "level": 2,
+          "content": "1 Easy EM"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.274,
+            0.885,
+            0.309
+          ],
+          "content": "You are given the network structure shown in Figure 1 and the data in the following table, with actual observed values for A, B, and C, and expected counts for D."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.144,
+            0.319,
+            0.368,
+            0.63
+          ],
+          "content": "| A | B | C | Pr(D\\|A,B,C) |\n| --- | --- | --- | --- |\n| 1 | 1 | 1 | .6 |\n| 0 | 0 | 0 | .3 |\n| 0 | 0 | 1 | .7 |\n| 0 | 1 | 1 | .9 |\n| 1 | 1 | 1 | .6 |\n| 0 | 0 | 0 | .3 |\n| 1 | 0 | 1 | .5 |\n| 1 | 1 | 0 | .4 |\n| 0 | 1 | 1 | .9 |\n| 0 | 0 | 1 | .7 |\n| 0 | 0 | 1 | .7 |\n| 0 | 1 | 0 | .1 |\n| 0 | 1 | 1 | .9 |\n| 0 | 1 | 1 | .9 |\n| 1 | 0 | 0 | .2 |\n| 1 | 0 | 1 | .5 |\n| 1 | 1 | 1 | .6 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.66,
+            0.583,
+            0.819
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.385,
+                0.854,
+                0.615,
+                0.872
+              ],
+              "content": "Figure 1: Network Structure"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_image_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.505,
+            0.91
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.415,
+            0.095,
+            0.585,
+            0.24
+          ],
+          "content": "F A B C D E G"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.384,
+            0.276,
+            0.615,
+            0.293
+          ],
+          "content": "Figure 2: Network Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.317,
+            0.861,
+            0.335
+          ],
+          "content": "1. What are the maximum likelihood estimates for Pr(A), Pr(D|A), Pr(B|D), and $\\mathrm { P r ( C | D ) ? }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.346,
+            0.738,
+            0.363
+          ],
+          "content": "2. What’s another way to represent this data in a table with only 8 entries?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.386,
+            0.294,
+            0.405
+          ],
+          "level": 2,
+          "content": "2 Harder EM"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.42,
+            0.588,
+            0.437
+          ],
+          "content": "Consider the Bayesian network structure shown in Figure 2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.452,
+            0.885,
+            0.486
+          ],
+          "content": "1. Write down an expression for $\\operatorname* { P r } ( \\mathtt { a } , \\mathtt { b } , \\mathtt { c } , \\mathtt { d } , \\mathtt { e } , \\mathtt { f } , \\mathtt { g } )$ using only conditional probabilities that would be stored in that network structure."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.498,
+            0.862,
+            0.515
+          ],
+          "content": "2. We’d like to use variable elimination to compute $\\operatorname* { P r } ( \\mathsf { d } | \\mathsf { b } )$ . Which variables are irrelevant?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.525,
+            0.696,
+            0.543
+          ],
+          "content": "3. Using elimination order A, B, C, D, E, F, G, what factors get created?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.555,
+            0.885,
+            0.624
+          ],
+          "content": "4. Assume variables F and C are hidden. You have a data set consisting of vectors of values of the other variables: $\\langle \\mathsf { a } , \\mathsf { b } , \\mathsf { d } , e , \\mathsf { g } \\rangle$ . You start with an initial set of parameters, $\\theta _ { 0 } ,$ that contains CPTs for the whole network. You decide to estimate $\\operatorname* { P r } ( \\mathsf { f } | \\mathsf { a } , \\mathsf { b } , \\mathsf { d } , e , \\mathsf { g } )$ and $\\operatorname* { P r } ( \\mathsf { c } | \\mathsf { a } , \\mathsf { b } , \\mathsf { d } , e , \\mathfrak { g } )$ separately, for each row of the table, as shown."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.159,
+            0.64,
+            0.627,
+            0.763
+          ],
+          "content": "| A B D E G | Pr(F\\|a,b,d,e,g) | Pr(C\\|a,b,d,e,g) |\n| --- | --- | --- |\n| 0 1 0 1 10 0 0 1 10 0 0 0 10 1 0 1 10 0 0 0 1... |  |  |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.159,
+                0.767,
+                0.435,
+                0.783
+              ],
+              "content": "Is this justified? Why or why not?"
+            }
+          ],
+          "image_source": "images/page_1_table_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.795,
+            0.885,
+            0.83
+          ],
+          "content": "5. Now you think of another shortcut: You decide to estimate $\\operatorname* { P r } ( \\mathsf { G } | \\mathsf { d } , e )$ directly from the data and leave G out of the EM computations all together. Is this justified?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.91
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.325,
+            0.108
+          ],
+          "level": 2,
+          "content": "3 Markov Chain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.123,
+            0.886,
+            0.175
+          ],
+          "content": "Consider a 3-state Markov chain, where $\\mathbb{R}(s_1) = 1, \\mathbb{R}(s_2) = 3$ , and $\\mathsf { R } ( \\mathsf { s } _ { 3 } ) = - 1$ . The transition probabilities are given by the table below, where the entry in row i, column j, is the probability of making a transition from $s _ { \\mathrm { i } }$ to s<sub>j</sub>."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.145,
+            0.187,
+            0.309,
+            0.259
+          ],
+          "content": "|  | s<sub>1</sub> | s<sub>2</sub> | s<sub>3</sub> |\n| --- | --- | --- | --- |\n| s<sub>1</sub> | 0.8 | 0.1 | 0.1 |\n| s<sub>2</sub> | 0.2 | 0.1 | 0.7 |\n| s<sub>3</sub> | 0.9 | 0.1 | 0.0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.272,
+            0.729,
+            0.289
+          ],
+          "content": "1. Compute the values of each state, assuming a discount factor of $\\gamma = 0 . 9$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.3,
+            0.585,
+            0.317
+          ],
+          "content": "2. Compute the values with a discount factor of $\\gamma = 0 . 1$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.341,
+            0.449,
+            0.36
+          ],
+          "level": 2,
+          "content": "4 Markov Decision Process"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.375,
+            0.885,
+            0.426
+          ],
+          "content": "Now, consider a Markov decision process with the same states and rewards as in the previous problem. It has two actions. The first action is described by the transition matrix given above. The second action is described by the following transition matrix:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.145,
+            0.436,
+            0.309,
+            0.508
+          ],
+          "content": "|  | s<sub>1</sub> | s<sub>2</sub> | s<sub>3</sub> |\n| --- | --- | --- | --- |\n| s<sub>1</sub> | 0.1 | 0.1 | 0.8 |\n| s<sub>2</sub> | 0.7 | 0.1 | 0.2 |\n| s<sub>3</sub> | 0.9 | 0.0 | 0.1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.52,
+            0.886,
+            0.589
+          ],
+          "content": "Starting with a value function that is 0 for all states, perform value iteration for 10 iterations for $\\gamma = 0 . 9$ . Do it again for $\\gamma = 0 . 1$ . Can you see it converging faster in one case? If so, why? Can you see what the optimal policy is? How could you compute the values of the states under the optimal policy?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.612,
+            0.388,
+            0.632
+          ],
+          "level": 2,
+          "content": "5 At the Races, again"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.646,
+            0.708,
+            0.663
+          ],
+          "content": "You go to the horse races, hoping to win some money. Your options are to:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.674,
+            0.885,
+            0.709
+          ],
+          "content": "• Bet \\$2 on Moon. You think that he’ll win with probability 0.7. If he wins, you’ll get back \\$4. If he loses, you’ll get back nothing."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.719,
+            0.884,
+            0.754
+          ],
+          "content": "• Bet \\$2 on Jeb. You think that he’ll win with probability 0.2. If he wins, you’ll get back \\$22. If he loses, you’ll get back nothing."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.765,
+            0.885,
+            0.817
+          ],
+          "content": "• Bet \\$1 on Moon and \\$1 on Jeb. With probability 0.7, Moon will win and you’ll get back \\$2. With probability 0.2, Jeb will win, and you’ll get back \\$11. If they both lose, you’ll get back nothing."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.831,
+            0.859,
+            0.849
+          ],
+          "content": "1. What’s the expected value of each bet? What action would a risk-neutral bettor choose?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.898,
+            0.506,
+            0.911
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.092,
+            0.715,
+            0.109
+          ],
+          "content": "2. Now, consider a risk-averse bettor, whose utility function for money is"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.448,
+            0.122,
+            0.594,
+            0.14
+          ],
+          "content": "U (x) = \\sqrt {x + 2 0}.",
+          "image_source": "images/page_3_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.155,
+            0.826,
+            0.171
+          ],
+          "content": "What are the expected utilities of each bet? What action would that person choose?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.183,
+            0.741,
+            0.199
+          ],
+          "content": "3. How do the outcomes of the previous parts relate to investment strategy?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.898,
+            0.506,
+            0.91
+          ],
+          "content": "4"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2002-11-29T21:41:00",
+      "producer_application": "pdfTeX-1.0-pdfcrypt",
+      "page_count": 4,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

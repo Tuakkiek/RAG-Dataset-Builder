@@ -1,0 +1,83 @@
+<!-- page: 1 -->
+
+**CS 4700:**
+
+# Foundations of Artificial Intelligence
+
+**Instructor:**
+
+**Prof. Selman**
+
+**selman@cs.cornell.edu**
+
+**Admin**
+
+<!-- page: 2 -->
+
+# Course Administration 1) Office hours and web page next week
+
+**2) Text book: Russell & Norvig --- Artificial Intelligence: A Modern Approach (AIMA)** ventLocatic Eve
+
+![](images/page_1_image_2.jpg)
+
+<!-- page: 3 -->
+
+**Grading**
+
+**Homework (20%)**
+
+**Prelim/Midterm (35%)**
+
+**Final (45%)**
+
+**Late policy: 4 one-day extensions to be used however you want during the term. (Count weekend as 1 day.)**
+
+**Prelim/exam date & time: See university schedule. (Google: “exam roster Cornell” Out mid Sept. or before.)**
+
+<!-- page: 4 -->
+
+In-class participation **Grading, cont. Previously, 5% part regular grade. Impossible to manage with this size class.**
+
+**New: Extra credit option. 5% max. (Experiment / subject to change.)**
+
+**Required minimum to get (partial) extra credit:**
+
+**7 in-class participation events (in-class question/comment/remark, answer to in-class question, hwk suggestion, help with progr. assign. prep., topic suggestion, news item suggestion)**
+
+**Reporting: Honor system. Keep track yourself (use google doc). I will ask for an interim report during the term and a final report. Email to:** <strong><u>bart.selman@gmail.com</u></strong> **Include your full name & netid.**
+
+<!-- page: 5 -->
+
+## Admin details
+
+**This is a large course. That’s why there is much less flexibility than in a small or mid-size course.**
+
+**Before signing up, make sure that --- you can attend the midterm (don’t schedule interview travel for that date). There is no make-up.**
+
+**--- you can attend the final exam (don’t travel home before the final.) There is no make-up.**
+
+**--- late days on homework are there to give you needed flexibility. Use them wisely.**
+
+**If you cannot attend midterm or exam, do not sign up for the course! (Otherwise need to withdraw later.)**
+
+**Exams date & time: See University schedule on web.**
+
+<!-- page: 6 -->
+
+## Admin details continued
+
+**Grading and re-grades check with TAs!**
+
+**Check office hours.**
+
+**Use email for urgent questions and/or office hours. See TA contact email.**
+
+<!-- page: 7 -->
+
+**1) Class is over-subscribed with many folks on a waiting list. So, if you intend to drop the course (or have signed up by mistake** J **), please de-enroll asap. Thanks!!**
+
+**2) CS-4701 is a project course. We will have brief organizational meeting next week. TBA All announcements for CS-4701 made in CS4700 class, web page, and via CMS email.**
+
+<!-- page: 8 -->
+
+**Homework is very important. It is the best way for you to learn the material. You are encouraged to discuss the problems with your classmates,** but all work handed in **should be original, and written by you in your own words**.

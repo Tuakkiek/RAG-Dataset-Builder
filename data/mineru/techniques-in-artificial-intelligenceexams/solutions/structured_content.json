@@ -1,0 +1,871 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.304,
+            0.15,
+            0.691,
+            0.177
+          ],
+          "level": 1,
+          "content": "6.891 Midterm Examination"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.454,
+            0.233,
+            0.541,
+            0.255
+          ],
+          "level": 2,
+          "content": "3/21/01"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.298,
+            0.322,
+            0.32
+          ],
+          "level": 2,
+          "content": "1 Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.336,
+            0.818,
+            0.374
+          ],
+          "content": "10 points Consider the following graph, in which A is the start node and F is the goal node. Assume that nodes are visited at most once."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.206,
+            0.39,
+            0.564,
+            0.598
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.62,
+            0.772,
+            0.669
+          ],
+          "content": "1. In what order does uniform-cost search visit the nodes? 3 points A, B, E, C, F"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.812,
+            0.504,
+            0.825
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.224,
+            0.097,
+            0.817,
+            0.134
+          ],
+          "content": "Let the heuristic function  $h(n)$  be the minimum number of arcs between node n and the goal node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.146,
+            0.72,
+            0.165
+          ],
+          "content": "2. Is this an admissible heuristic? Why or why not? 3 points"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.177,
+            0.816,
+            0.195
+          ],
+          "content": "Yes, it is admissible because it is a conservative estimate of the distance."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.299,
+            0.818,
+            0.367
+          ],
+          "content": "3. In what order does $A^{*}$ search visit the nodes? What are their estimated values when they are visited? order - 2 points, values - 2 points  \nA(2), B(4), E(4), F(5)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.484,
+            0.529,
+            0.507
+          ],
+          "level": 2,
+          "content": "2 Clausal Normal Form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.523,
+            0.587,
+            0.541
+          ],
+          "content": "8 points Convert the following sentence to CNF."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.406,
+            0.559,
+            0.589,
+            0.578
+          ],
+          "content": "(A \\land B) \\lor \\neg (C \\to D)",
+          "image_source": "images/page_1_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.315,
+            0.61,
+            0.679,
+            0.63
+          ],
+          "content": "(A \\lor C) \\land (A \\lor \\neg D) \\land (B \\lor C) \\land (B \\lor \\neg D)",
+          "image_source": "images/page_1_equation_7.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.695,
+            0.414,
+            0.717
+          ],
+          "level": 2,
+          "content": "3 True or False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.733,
+            0.445,
+            0.751
+          ],
+          "content": "10 points (2 points per answer)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.763,
+            0.662,
+            0.781
+          ],
+          "content": "1. All sentences are either valid or unsatisfiable. False"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.811,
+            0.505,
+            0.825
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.097,
+            0.818,
+            0.133
+          ],
+          "content": "2. Iterative-deepening search requires space linear in the depth of the solution. True"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.146,
+            0.819,
+            0.165
+          ],
+          "content": "3. If $A \\models B$, then $A$ is true in all interpretations in which $B$ is true. False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.177,
+            0.819,
+            0.214
+          ],
+          "content": "4. Testing the validity of a sentence in first-order logic can be done in time exponential in the size of the sentence. False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.226,
+            0.818,
+            0.262
+          ],
+          "content": "5. DPLL runs in worst-case polynomial time in the length of the sentence.\nFalse"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.29,
+            0.474,
+            0.313
+          ],
+          "level": 2,
+          "content": "4 First Order Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.328,
+            0.819,
+            0.4
+          ],
+          "content": "12 points (2 points per answer) Match the formula to the English sentence it encodes (note that there are more English sentences than formulas). Let Big(x) mean “x is big” (so  $\\neg Big(x)$  means “x is small”) and let Cat(x) mean “x is a cat.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.415,
+            0.658,
+            0.434
+          ],
+          "content": "1. (F) $\\exists x.Big(x)\\wedge Cat(x)$ A. All cats are big."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.435,
+            0.782,
+            0.451
+          ],
+          "content": "2. (B) $\\exists x.Big(x)\\to Cat(x)$ B. There is a small thing or a cat."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.453,
+            0.715,
+            0.47
+          ],
+          "content": "3. (H)  $\\exists x. Big(x) \\lor Cat(x)$  C. All big things are cats."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.471,
+            0.72,
+            0.488
+          ],
+          "content": "4. (D) $\\forall x.Big(x)\\wedge Cat(x)$ D. Everything is a big cat."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.489,
+            0.676,
+            0.506
+          ],
+          "content": "5. (C) $\\forall x.Big(x)\\to Cat(x)$ E. All cats are small."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.506,
+            0.676,
+            0.525
+          ],
+          "content": "6. (G) $\\forall x.Big(x)\\lor Cat(x)$ F. There is a big cat."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.478,
+            0.525,
+            0.733,
+            0.542
+          ],
+          "content": "G. All small things are cats."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.477,
+            0.543,
+            0.765,
+            0.561
+          ],
+          "content": "H. There is a big thing or a cat."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.583,
+            0.561,
+            0.605
+          ],
+          "level": 2,
+          "content": "5 Resolution-Refutation 1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.622,
+            0.261,
+            0.638
+          ],
+          "level": 2,
+          "content": "10 points"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.64,
+            0.791,
+            0.657
+          ],
+          "content": "Use resolution-refutation to show that the following sentence is valid."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.408,
+            0.675,
+            0.588,
+            0.694
+          ],
+          "content": "(P \\to Q) \\lor (Q \\to P)",
+          "image_source": "images/page_2_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.708,
+            0.601,
+            0.728
+          ],
+          "content": "\\neg ((P \\to Q) \\lor (Q \\to P))",
+          "image_source": "images/page_2_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.391,
+            0.735,
+            0.604,
+            0.754
+          ],
+          "content": "\\neg (\\neg P \\lor Q) \\land \\neg (\\neg Q \\lor P)",
+          "image_source": "images/page_2_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.419,
+            0.761,
+            0.579,
+            0.78
+          ],
+          "content": "P \\land \\neg Q \\land Q \\land \\neg P",
+          "image_source": "images/page_2_equation_20.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.812,
+            0.505,
+            0.825
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.096,
+            0.319,
+            0.24
+          ],
+          "content": "1. $P$  \n2. $\\neg Q$  \n3. $Q$  \n4. $\\neg P$  \n5. False (1,4)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.265,
+            0.384,
+            0.288
+          ],
+          "level": 2,
+          "content": "6 Unification"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.303,
+            0.708,
+            0.321
+          ],
+          "content": "10 points, 5 points per example (3 for MGU, 2 for unification)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.322,
+            0.819,
+            0.377
+          ],
+          "content": "Show the most general unifier (MGU) for each pair of sentences below. Also show the result of applying the MGU to the sentences. (Capital letters are constants, lowercase are variables.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.39,
+            0.444,
+            0.472
+          ],
+          "content": "1. $P(x,x,A)$ and $P(z,B,y)$. $\\{B / x,B / z,A / y\\}$ $P(B,B,A)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.482,
+            0.532,
+            0.565
+          ],
+          "content": "2. $P(F(x),A,G(x))$ and $P(F(z),z,w)$ $\\{A / x,A / z,G(A) / w\\}$ $P(F(A),A,G(A))$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.59,
+            0.585,
+            0.613
+          ],
+          "level": 2,
+          "content": "7 First Order Clausal Form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.629,
+            0.818,
+            0.664
+          ],
+          "content": "12 points, 3 points per example Convert the following sentences to clausal form."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.679,
+            0.418,
+            0.792
+          ],
+          "content": "1. $\\exists x.\\forall y.K(y,x)\\to D(y)$ $\\neg K(y,\\mathrm{Bozo})\\lor \\mathrm{D}(\\mathbf{y})$   \n2. $\\neg \\exists x.H(x)\\land C(x)$ $\\neg H(x)\\lor \\neg C(x)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.811,
+            0.505,
+            0.825
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.096,
+            0.364,
+            0.116
+          ],
+          "content": "3. $\\exists x.H(x)\\wedge C(x)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.127,
+            0.396,
+            0.147
+          ],
+          "content": "$H(\\mathrm{Bozo})\\wedge \\mathrm{C}(\\mathrm{Bozo})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.159,
+            0.355,
+            0.178
+          ],
+          "content": "4.  $\\neg\\exists x.\\forall y.L(y,x)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.189,
+            0.341,
+            0.209
+          ],
+          "content": "$\\neg L(\\mathrm{foo}(\\mathrm{x}),\\mathrm{x})$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.235,
+            0.564,
+            0.258
+          ],
+          "level": 2,
+          "content": "8 Resolution-Refutation 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.273,
+            0.819,
+            0.328
+          ],
+          "content": "10 points Use resolution-refutation to prove a contradiction from the following sentences. Show the two lines you are resolving and the MGU at each step."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.343,
+            0.384,
+            0.364
+          ],
+          "content": "1. $P(x)\\lor Q(F(x),x)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.374,
+            0.364,
+            0.395
+          ],
+          "content": "2. $R(y) \\lor \\neg Q(y, z)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.405,
+            0.318,
+            0.425
+          ],
+          "content": "3.  $\\neg R(F(A))$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.436,
+            0.288,
+            0.455
+          ],
+          "content": "4.  $\\neg P(A)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.466,
+            0.435,
+            0.487
+          ],
+          "content": "5. $Q(F(A), A)$ (1, 4) $\\{A / x\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.497,
+            0.484,
+            0.518
+          ],
+          "content": "6. $R(F(A))(2,5)\\{F(A) / y,A / z\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.528,
+            0.348,
+            0.549
+          ],
+          "content": "7. False (3, 6) {}"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.575,
+            0.511,
+            0.598
+          ],
+          "level": 2,
+          "content": "9 The Frame Problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.612,
+            0.818,
+            0.65
+          ],
+          "content": "8 points Why don't we need the equivalent of frame axioms in the STRIPS planning representation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.703,
+            0.82,
+            0.759
+          ],
+          "content": "We do not need frame axioms because STRIPS planners assume that the world is static except for the effects explicitly specified by the action descriptions."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.812,
+            0.505,
+            0.826
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.093,
+            0.578,
+            0.116
+          ],
+          "level": 2,
+          "content": "10 Partially Ordered Plans"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.13,
+            0.819,
+            0.187
+          ],
+          "content": "10 points Here's a partially-ordered plan. Give three reasons why it is not yet correct. If any action is responsible for multiple threats, each threat counts separately."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.209,
+            0.219,
+            0.795,
+            0.595
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.201,
+                0.614,
+                0.725,
+                0.634
+              ],
+              "content": "1. One of paint(B)'s preconditions (smooth(B)) is unsatisfied."
+            },
+            {
+              "bbox": [
+                0.2,
+                0.645,
+                0.698,
+                0.665
+              ],
+              "content": "2. Assemble(A,B) threatens paint(A) by its effect -free(A)."
+            },
+            {
+              "bbox": [
+                0.2,
+                0.675,
+                0.696,
+                0.695
+              ],
+              "content": "3. Assemble(A,B) threatens paint(B) by its effect -free(B)."
+            },
+            {
+              "bbox": [
+                0.201,
+                0.706,
+                0.693,
+                0.725
+              ],
+              "content": "4. Assemble(A,B) threatens sand(A) by its effect -free(A)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.812,
+            0.505,
+            0.826
+          ],
+          "content": "6"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2001-04-09T13:50:48",
+      "producer_application": "GNU Ghostscript 5.50",
+      "page_count": 6,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

@@ -1,0 +1,361 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.279,
+            0.316,
+            0.744,
+            0.385
+          ],
+          "content": "**CS6700 Advanced AI**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.306,
+            0.461,
+            0.714,
+            0.601
+          ],
+          "level": 2,
+          "content": "Prof. Carla Gomes Prof. Bart Selman"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.401,
+            0.007,
+            0.606,
+            0.083
+          ],
+          "level": 2,
+          "content": "Projects"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.147,
+            0.822,
+            0.399
+          ],
+          "content": "**Very open-ended Go for BIG ideas! (No such thing as “failure.” Empirically driven building on foundational insights.)**"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.064,
+            0.464,
+            0.933,
+            0.901
+          ],
+          "sub_type": "code",
+          "content": "```txt\nE.g.\nCan you evolve a language from scratch?\nCan you learn from “reading”? (E.g. game play from text on discussion boards)\nMechanical Turk --- Human-computing hybrids\nMine info from twitter feeds\nBoost game play via “mimicry”\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.401,
+            0.008,
+            0.606,
+            0.083
+          ],
+          "level": 2,
+          "content": "Projects"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.114,
+            0.148,
+            0.163
+          ],
+          "content": "**Cont.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.242,
+            0.694,
+            0.297
+          ],
+          "content": "**Deep learning: still many “mysteries”**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.305,
+            0.873,
+            0.46
+          ],
+          "content": "**E.g. Google’s alphaGo example of successful reinforcement learning using deep nets but what about deep learning chess through self-play?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.529,
+            0.888,
+            0.729
+          ],
+          "content": "**Student project 4701 last semester: works reasonably but hits a limit; end game: can’t figure out it needs to checkmate the opponent! Can we explain this? Fix this?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.801,
+            0.935,
+            0.906
+          ],
+          "content": "**Scientific discovery --- in discrete math and materials science. (Slides: “Non-Human Intelligence”)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.024,
+            0.001,
+            1.0,
+            0.996
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.257,
+            0.007,
+            0.748,
+            0.077
+          ],
+          "level": 2,
+          "content": "Knowledge or Data?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.082,
+            0.53,
+            0.133
+          ],
+          "content": "**Last 5 yrs: New direction.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.146,
+            0.828,
+            0.2
+          ],
+          "content": "**Combine a few general principles / rules (i.e.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.211,
+            0.919,
+            0.265
+          ],
+          "content": "**knowledge) with training (ML) on a large expert**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.275,
+            0.925,
+            0.326
+          ],
+          "content": "**data set to tune hundreds of model parameters.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.339,
+            0.961,
+            0.393
+          ],
+          "content": "**Obtain world-expert performance using inference.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.117,
+            0.403,
+            0.292,
+            0.453
+          ],
+          "level": 2,
+          "content": "Examples:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.467,
+            0.601,
+            0.519
+          ],
+          "content": "**--- IBM’s Watson / Jeopardy**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.53,
+            0.602,
+            0.58
+          ],
+          "content": "**--- Dr. Fill / NYT crosswords**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.595,
+            0.787,
+            0.647
+          ],
+          "content": "**--- Iamus / Classical music composition**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.659,
+            0.739,
+            0.713
+          ],
+          "content": "**--- Google’s alphaGo (deep learning)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.723,
+            0.712,
+            0.776
+          ],
+          "content": "**--- computer vision (deep learning)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.787,
+            0.779,
+            0.841
+          ],
+          "content": "**--- language translation (deep learning)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.849,
+            0.954,
+            0.903
+          ],
+          "content": "**Performance: (several) Top 50 or better in the world!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.915,
+            0.866,
+            0.969
+          ],
+          "content": "**Is this the key to human expert intelligence?**"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "CS6700-00-Projects-Overview_v3_short",
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.13.1 Quartz PDFContext",
+      "page_count": 5,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

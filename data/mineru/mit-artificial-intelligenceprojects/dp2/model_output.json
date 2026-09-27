@@ -1,0 +1,2540 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": null,
+      "authors": [],
+      "subject": null,
+      "keywords": [],
+      "description": null,
+      "languages": [
+        "en"
+      ],
+      "identifiers": [],
+      "publisher": null,
+      "created_at": "2005-04-05T11:04:23-04:00",
+      "modified_at": "2005-08-22T18:47:45+05:30",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.11b",
+      "page_count": 6,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "schema_version": "2.0",
+  "schema": "docvortex.model",
+  "pages": [
+    [
+      {
+        "type": "doc_title",
+        "bbox": [
+          0.345,
+          0.137,
+          0.655,
+          0.162
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "6.034 Design Assignment 2"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.347,
+              0.139,
+              0.653,
+              0.161
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.442,
+          0.209,
+          0.557,
+          0.227
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "April 5, 2005"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.444,
+              0.21,
+              0.555,
+              0.225
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.257,
+          0.503,
+          0.303
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Weka Script Due: Friday April 8, in recitation Paper Due: Wednesday April 13, in class Oral reports: Friday April 15, by appointment"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.258,
+              0.498,
+              0.271
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.274,
+              0.457,
+              0.286
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.29,
+              0.498,
+              0.301
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.302,
+          0.886,
+          0.349
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The goal of this assignment is for you to gain some practice in the application of machine learning algorithms to real data. We give you two data sets and a framework that will allow you to experiment with different learning algorithms on that data."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.305,
+              0.882,
+              0.316
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.32,
+              0.881,
+              0.332
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.332,
+              0.418,
+              0.348
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.371,
+          0.272,
+          0.39
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1 Data Sets"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.37,
+              0.271,
+              0.39
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.402,
+          0.465,
+          0.417
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "We ask you to build classifiers for two data sets:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.404,
+              0.461,
+              0.415
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.132,
+          0.43,
+          0.885,
+          0.46
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1. credit­g­500.arff: This is a two­class data set related to credit rating in Germany. Information on the data set can be found at the top of the file."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.136,
+              0.431,
+              0.883,
+              0.443
+            ]
+          },
+          {
+            "bbox": [
+              0.156,
+              0.446,
+              0.495,
+              0.458
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.132,
+          0.469,
+          0.886,
+          0.515
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2. digits­2­4­5­9.arff: This is a collection of 14x14 binary images of hand­written digits (2,4,5,9); see figure. There are 250 samples of each digit. Each image is converted into a feature vector by listing the content of the array in row­ma jor order."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.136,
+              0.47,
+              0.881,
+              0.482
+            ]
+          },
+          {
+            "bbox": [
+              0.156,
+              0.486,
+              0.882,
+              0.498
+            ]
+          },
+          {
+            "bbox": [
+              0.158,
+              0.501,
+              0.472,
+              0.513
+            ]
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "bbox": [
+          0.4,
+          0.514,
+          0.604,
+          0.551
+        ],
+        "content": null,
+        "image_base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCABTAVsDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDz3/gvV/wXq/4Kw/sXf8FYvit+zR+zR+1Z/wAI14J8Nf2F/Ymif8ILoV59m+0aFp91N++urGWZ9008r/M5xuwMKAB8gf8AEUd/wXX/AOj5v/MZeGP/AJWUf8HR3/Kdf45/9yz/AOoxpNfAFAH3/wD8RR3/AAXX/wCj5v8AzGXhj/5WUf8AEUd/wXX/AOj5v/MZeGP/AJWV8AV9P/8ABGf9tb4Wf8E7f+Ck/wAN/wBsX416B4g1Twx4P/tj+07HwtawT38v2vR76xj8pJ5oY2xLcxlt0i4UMRkgKQD2D/iKO/4Lr/8AR83/AJjLwx/8rKP+Io7/AILr/wDR83/mMvDH/wArK/X/AP4jVv8Agll/0QP9oD/wltD/APlxX3/8Wf8AjZR/wSy8Tf8ACi/+JT/wv79n+9/4Q7/hLP3H2P8AtzQ3+yfbfs/n+Xs+1R+b5Xm7cNt34GQD+YH/AIijv+C6/wD0fN/5jLwx/wDKyj/iKO/4Lr/9Hzf+Yy8Mf/KyvP8A/gq3/wAEVP2p/wDgj5/wgX/DS/j74f65/wALE/tT+xP+EF1W+ufI+wfZPO8/7VZ223P22Lbt352vnbgbvkCgD7//AOIo7/guv/0fN/5jLwx/8rKP+Io7/guv/wBHzf8AmMvDH/ysr4AooA/v8r8If+DoH/gsz/wUn/4J2/t9eEPgp+x1+0h/wh/hjVPg/p+t32mf8Ifo+oebfyarqsDzeZfWc0i5itoF2hgo2ZABLE/u9X8wP/B6t/ylN8A/9m/6V/6fNcoA8A/4ijv+C6//AEfN/wCYy8Mf/Kyj/iKO/wCC6/8A0fN/5jLwx/8AKyvgCigD7/8A+Io7/guv/wBHzf8AmMvDH/yso/4ijv8Aguv/ANHzf+Yy8Mf/ACsr4AooA+//APiKO/4Lr/8AR83/AJjLwx/8rKP+Io7/AILr/wDR83/mMvDH/wArK+AKKAPv/wD4ijv+C6//AEfN/wCYy8Mf/Kyj/iKO/wCC6/8A0fN/5jLwx/8AKyvgCv0f/b1/4Nfv2+v+Cdv7J3iv9sX41/F34P6p4Y8H/Yf7TsfC2v6rPfy/a7+3sY/KSfTYY2xLcxlt0i4UMRkgKQDn/wDiKO/4Lr/9Hzf+Yy8Mf/Kyv6nf+Ce3xS8d/HH9gX4H/Gv4pa7/AGp4n8YfB/wzrfiPU/ssUH2u/u9Ktp7iby4VSOPfLI7bUVVXOFAAAr+GOv7ff+CTv/KLL9mn/s3/AMG/+mOzoA+AP+DrX/gqP+3Z/wAE1/8AhQv/AAxT8c/+EL/4TT/hKf8AhJv+KZ0vUftn2P8Asj7P/wAf9tP5ez7VP9zbu3/NnauPyA/4ijv+C6//AEfN/wCYy8Mf/Kyvv/8A4PnP+bXf+52/9wFfgDQB9/8A/EUd/wAF1/8Ao+b/AMxl4Y/+VlH/ABFHf8F1/wDo+b/zGXhj/wCVlfAFFAH3/wD8RR3/AAXX/wCj5v8AzGXhj/5WUf8AEUd/wXX/AOj5v/MZeGP/AJWV4f8A8Ev/APgl/wDH3/grN8fdX/Zz/Zz8X+D9F1vRfB9x4kurrxrqF1bWr2sN1aWrIjWttcOZS95EQCgXarncCAD93/8AEFT/AMFTf+i+fs//APhU65/8p6APAP8AiKO/4Lr/APR83/mMvDH/AMrKP+Io7/guv/0fN/5jLwx/8rK6D9vX/g1+/b6/4J2/sneK/wBsX41/F34P6p4Y8H/Yf7TsfC2v6rPfy/a7+3sY/KSfTYY2xLcxlt0i4UMRkgKfzgoA+/8A/iKO/wCC6/8A0fN/5jLwx/8AKyj/AIijv+C6/wD0fN/5jLwx/wDKyvgCigD+z3/ggr+1H8dv20f+CT3wp/aX/aX8c/8ACS+NvEv9u/23rf8AZlrZ/afs+u6haw/ubWKKFNsMESfKgztycsST4/8A8HQP7ev7WP8AwTt/YF8IfGv9jr4rf8If4n1T4wafol9qf9hWGoebYSaVqs7w+XfQTRrmW2gbcFDDZgEAsD0H/Brj/wAoKPgZ/wBzN/6k+rV4B/werf8AKLLwD/2cBpX/AKY9coA/ID/iKO/4Lr/9Hzf+Yy8Mf/Kyj/iKO/4Lr/8AR83/AJjLwx/8rK+AKKAPv/8A4ijv+C6//R83/mMvDH/yso/4ijv+C6//AEfN/wCYy8Mf/KyvgCigD7//AOIo7/guv/0fN/5jLwx/8rKP+Io7/guv/wBHzf8AmMvDH/ysr4AooA+//wDiKO/4Lr/9Hzf+Yy8Mf/Kyj/iKO/4Lr/8AR83/AJjLwx/8rK+AKKAPv/8A4ijv+C6//R83/mMvDH/yso/4ijv+C6//AEfN/wCYy8Mf/KyvgCigD7//AODo7/lOv8c/+5Z/9RjSa+AK+/8A/g6O/wCU6/xz/wC5Z/8AUY0mvgCgAooooAK/Z7/gk7/wdA/t9f8AC0/2af8AgnR/wqL4P/8ACE/8JB4N+HH9qf2Bqv8Aav8AZXn2emed5v8AaXk/afJ+bf5Ozfz5e35a/GGvf/8Agk7/AMpTf2af+zgPBv8A6fLOgD+r7/gq3/wRU/ZY/wCCwf8AwgX/AA0v4++IGh/8K7/tT+xP+EF1WxtvP+3/AGTzvP8AtVnc7sfYotu3Zjc+d2Rt/lh/4LM/sU/Cz/gnb/wUn+JH7HXwU1/xBqnhjwf/AGP/AGZfeKbqCe/l+16PY30nmvBDDG2JbmQLtjXChQckFj/a7X8gX/B0d/ynX+Of/cs/+oxpNAHwBRRRQB/f5X8wP/B6t/ylN8A/9m/6V/6fNcr+n6v5gf8Ag9W/5Sm+Af8As3/Sv/T5rlAH5A0UUUAFFFft9/wZrfsnfssftQf8NHf8NL/s0/D/AOIn9h/8Ih/Yn/CdeDbHV/7P87+2/O8j7VFJ5XmeVFu243eUmc7RgA/EGivt/wD4OPPhP8LPgd/wWc+Mnwt+Cnw08P8Ag/wxpf8Awjv9meHPC2jQafYWnmeHdMmk8q3gRI498skkjbVG5nZjkkmvcP8Ag0U/Z6+AX7Sn/BSTxt4F/aM+B3g/x/olp8D9Sv7XRvGvhm11W1hul1jRo1uEiuo3RZQksqBwNwWRxnDHIB3/APwb0/8ABvT+xf8A8FZv2L/E/wC0Z+0Z8Tvihout6L8UL3w3a2vgrWtOtrV7WHTtNuld1urC4cyl7yUEhwu1UG0EEn9b/wDg6O/5QUfHP/uWf/Un0mvs/wCCn7PXwC/Zr8K3HgX9nP4HeD/AGiXeoPf3WjeCvDNrpVrNdMkcbXDxWsaI0pSKJC5G4rGgzhRj+JP4pf8ABQn9vr44+BL74W/Gv9uH4weMPDGqeV/afhzxT8S9V1Cwu/LlSaPzbee4eOTZLHHIu5TtZFYYIBoA8fr+33/gk7/yiy/Zp/7N/wDBv/pjs6/iCr+33/gk7/yiy/Zp/wCzf/Bv/pjs6APyA/4PnP8Am13/ALnb/wBwFfgDX7/f8Hzn/Nrv/c7f+4CvwBoAKKKKAP1+/wCDKn/lKb4+/wCzf9V/9Pmh1/T9X8wP/BlT/wApTfH3/Zv+q/8Ap80Ov6fqAPgD/g6O/wCUFHxz/wC5Z/8AUn0mv5Aq+z/+Cw/7bv7aHjT9un9pL9nPxj+138UNW+HsPxw8T2EPgTU/H+oz6Mlra67cNa24snmMAihMMRjQJtQxIVA2jHxhQAUUUUAf1+/8GuP/ACgo+Bn/AHM3/qT6tXgH/B6t/wAosvAP/ZwGlf8Apj1yvf8A/g1x/wCUFHwM/wC5m/8AUn1avAP+D1b/AJRZeAf+zgNK/wDTHrlAH8wNFFFABRRX6/f8EDv+CB37aeo/tp/BL9rD9rD9iXw/r/7Pmv8Ah+71u7u/FOr6Bq1hfWF9oF2+mzS6a9zLM+6ae0dVaDdGxVmCFCVAOA/4Nvf+CKn7LH/BYP8A4XL/AMNL+PviBof/AArv/hHf7E/4QXVbG28/7f8A2n53n/arO53Y+xRbduzG587sjb93/tu/8Gin/BNv9mv9i/4vftGeBfjb8cLvW/AHwv1/xJo1rq3iTR5LWa6sdOnuokmWPSkdoi8ShgroxUkBlPI/Q/46ftLf8Ebf+CG/9l/8J/4c+H/wH/4Wh5/2T/hBfhPNF/bn9m+Xu8/+xrF8+T9vXb52MfaH2Z+fHt/wI+O/7MH/AAUP/Zftfi78ItU0/wAf/C3x/p+oWCtq3h+aO11e1Waexu7ea0voUdoi8U8TJLHtdQeGVgSAfwp0V/Rd/wAHdf7EX7F/7Nf/AATb8E+Ov2c/2RPhf4A1u7+OGm2F1rPgrwBp2lXU1q2j6zI1u8trCjtEXiicoTtLRocZUY/nRoAKKKKAPv8A/wCDo7/lOv8AHP8A7ln/ANRjSa+AK+//APg6O/5Tr/HP/uWf/UY0mvgCgAooroPhb8J/in8cfHdj8Lfgp8NPEHjDxPqnm/2Z4c8LaNPqF/d+XE80nlW8CPJJsijkkbap2qjMcAE0Ac/X7/f8Enf+DUr/AJNp/wCCl3/Def8A0JvxN/4Qr/hV3/Xnqv8AZ/2z+1P+2Xn+T/t+X/DXsH/Br9/wSd+Fn/DAvi//AIeL/wDBNPw//wAJt/wuDUP7L/4XX8G4P7V/sr+ytK8ryv7TtfO+zed9p27fk3+bj5t1fr9/xaz4CfCz/mX/AAX4J8F+H/8Aphp2laFpVnB/wCG1toIY/wDZSNE7KtAHxB/wXO/4Lnf8OXP+FXf8Yu/8LK/4WV/bf/M7f2N/Z39n/YP+nK587zPt3+xt8r+Ld8v8wP8AwVH/AG5/+HlH7dnjn9tb/hV3/CF/8Jp/Zn/FM/23/aP2P7HpdpYf8fHkQeZv+y+Z/q1279vO3cf0/wD+Dyn9rH9lj9qD/hnH/hmj9pb4f/ET+w/+Ev8A7b/4QXxlY6v/AGf539ieT5/2WWTyvM8qXbuxu8p8Z2nH4g0AFFFFAH9/lfzA/wDB6t/ylN8A/wDZv+lf+nzXK/p+r+YH/g9W/wCUpvgH/s3/AEr/ANPmuUAfkDRRXoHwL/ZO/an/AGoP7U/4Zo/Zp+IHxE/sPyP7b/4QXwbfav8A2f53meT5/wBlik8rzPKl27sbvKfGdpwAH7J3wL/4ag/an+Gn7NH/AAlP9h/8LE+IGjeGP7b+w/af7P8At99Da/aPJ3x+b5fm79m9N23G5c5H9Xv/AAQx/wCCGP8Aw5c/4Wj/AMZRf8LK/wCFlf2J/wAyT/Y39nf2f9v/AOn2587zPt3+xt8r+Ld8vQf8E9v+Ce37AvwE/YF+B/x0+On7D3wf8F+NvBfwf8M674x8Y+LPhppWnaroWq2elW1xd397d3Fuk1rcwTRySyzSsrxujMzBlJr6f+Bf7WP7LH7UH9qf8M0ftLfD/wCIn9h+R/bf/CC+MrHV/wCz/O8zyfP+yyyeV5nlS7d2N3lPjO04AP5Qv+Do7/lOv8c/+5Z/9RjSa/b7/gip/wAG3v8Aw58/an1/9pf/AIbL/wCFif258P7rwx/Yn/Cu/wCyPI86+sbr7R539oXO7H2LZs2DPm53Dbhvt/4pf8E9v2Bfjj47vvil8a/2Hvg/4w8T6p5X9p+I/FPw00rUL+78uJIY/NuJ7d5JNkUcca7mO1UVRgACvkD/AIOgf+G+v+GBfCH/AA7o/wCFwf8ACbf8Lg0/+1P+FKf2r/av9lf2Vqvm+b/Zn777N532bdu+Tf5Wfm20Ac//AMFq/wDg5C/4c+ftT6B+zR/wxp/wsT+3Ph/a+J/7b/4WJ/ZHkedfX1r9n8n+z7ndj7Fv37xnzcbRty38oVewftrf8N9f8LT0/wD4eL/8Lg/4Tb/hH4v7L/4XX/av9q/2V58/leV/af777N532nbt+Tf5uPm3V4/QAV/b7/wSd/5RZfs0/wDZv/g3/wBMdnX8QVf2+/8ABJ3/AJRZfs0/9m/+Df8A0x2dAH5Af8Hzn/Nrv/c7f+4CvwBr9/v+D5z/AJtd/wC52/8AcBX4A0AFFFFAH1//AMEVP+Crf/Dnz9qfX/2l/wDhQv8AwsT+3Ph/deGP7E/4Sn+yPI86+sbr7R532W53Y+xbNmwZ83O4bcN/T9/wRU/4Kt/8Pg/2WNf/AGl/+FC/8K7/ALD+IF14Y/sT/hKf7X8/ybGxuvtHnfZbbbn7bs2bDjys7juwv8YVf0/f8GVP/KLLx9/2cBqv/pj0OgD4/wD+C/H/AAbe/wDDO/w6/aE/4K2/8Nl/2x/aHxAm8T/8K/8A+Fd/Z/L/ALb8QxR/Z/t39oPnyft+d/kDzPKxtTdlfxBr+v3/AIOjv+UFHxz/AO5Z/wDUn0mv5AqACiiigD+v3/g1x/5QUfAz/uZv/Un1avAP+D1b/lFl4B/7OA0r/wBMeuV7/wD8GuP/ACgo+Bn/AHM3/qT6tXgH/B6t/wAosvAP/ZwGlf8Apj1ygD+YGiiigAr+33/gk7/yiy/Zp/7N/wDBv/pjs6/iCr9L/wDg3p/4KbfH3wF/wU4+C3gX9pz/AIKDeMNF+C+i6fq1he6N48+LF1beF7C1h8PX8djbvFd3ItIokmW2SFCAqusQQAhaAP3O/wCC53/BDH/h9H/wq7/jKL/hWv8AwrX+2/8AmSf7Z/tH+0PsH/T7beT5f2H/AG93m/w7fm+gP+CXH7DH/Dtf9hPwN+xT/wALR/4TT/hC/wC0/wDipv7E/s77Z9s1S7v/APj38+fy9n2ry/8AWNu2buN20d/8C/2sf2WP2oP7U/4Zo/aW+H/xE/sPyP7b/wCEF8ZWOr/2f53meT5/2WWTyvM8qXbuxu8p8Z2nHH/8FNvFnirwF/wTb/aD8deBfE2oaLrei/A/xZf6NrOk3r211YXUOj3UkVxDLGQ8UqOqurqQysoIIIoA/PH/AIPVv+UWXgH/ALOA0r/0x65X8wNeofGv9t39tD9pTwrb+Bf2jP2u/ih4/wBEtNQS/tdG8a+P9R1W1hulSSNbhIrqZ0WUJLKgcDcFkcZwxz5fQAUUUUAff/8AwdHf8p1/jn/3LP8A6jGk18AV9/8A/B0d/wAp1/jn/wByz/6jGk18AUAfd/8AwS//AODen9tD/grN8AtX/aM/Zz+J3wv0XRNF8YXHhu6tfGutajbXT3UNraXTOi2thcIYil5EAS4bcrjaAAT+l/8AwRn/AODX79vr/gnb/wAFJ/hv+2L8a/i78H9U8MeD/wC2P7TsfC2v6rPfy/a9HvrGPykn02GNsS3MZbdIuFDEZICn2D/gyp/5RZePv+zgNV/9Meh1+v1ABXl/7bvwU8VftKfsX/F79nPwLqGn2mt+P/hfr/hvRrrVpXjtYbq+06e1ieZo0d1iDyqWKo7BQSFY8H1CigD+YH/iCp/4Km/9F8/Z/wD/AAqdc/8AlPXIftC/8Gin/BST9mv4BeOP2jPHXxt+B93ongDwfqfiTWbXSfEmsSXU1rY2sl1KkKyaUiNKUiYKGdFLEAso5H9VteAf8FYv+UWX7S3/AGb/AOMv/THeUAfxBUUUUAf3+V/MD/werf8AKU3wD/2b/pX/AKfNcr+n6v5gf+D1b/lKb4B/7N/0r/0+a5QB+QNfp/8A8G3v/Bav9lj/AII+f8Ll/wCGl/APxA1z/hYn/CO/2J/wgulWNz5H2D+0/O8/7VeW23P22Lbt352vnbgbvzAooA/ou/bd/wCDuv8A4Jt/tKfsX/F79nPwL8Evjhaa34/+F+v+G9GutW8N6PHaw3V9p09rE8zR6q7rEHlUsVR2CgkKx4PH/wDBjH/zdF/3JP8A7n6/GH/gnt8LfAnxx/b6+B/wU+KWhf2p4Y8YfGDwzoniPTPtUsH2uwu9VtoLiHzIWSSPfFI67kZWXOVIIBr+x39hj/glx+wn/wAE1/8AhKf+GKfgZ/whf/CafYf+Em/4qbVNR+2fY/tH2f8A4/7mfy9n2qf7m3dv+bO1cAHv9fkD/wARq3/BLL/ogf7QH/hLaH/8uK+P/wDgvV/wXq/4Kw/sXf8ABWL4rfs0fs0ftWf8I14J8Nf2F/Ymif8ACC6FefZvtGhafdTfvrqxlmfdNPK/zOcbsDCgAfiDQB93/wDBwt/wVA+AX/BWb9tDwx+0Z+zn4Q8YaLomi/C+y8N3Vr410+1trp7qHUdSumdFtbm4QxFLyIAlw25XG0AAn4QoooAK/t9/4JO/8osv2af+zf8Awb/6Y7Ov4gq/t9/4JO/8osv2af8As3/wb/6Y7OgD8gP+D5z/AJtd/wC52/8AcBX4A1+/3/B85/za7/3O3/uAr8AaACiiigAr+n7/AIMqf+UWXj7/ALOA1X/0x6HXv/8AxC4/8EKP+jGf/Mm+J/8A5Z19P/sU/sFfsnf8E7fhZqHwU/Y6+FP/AAh/hjVPEEut32mf27f6h5t/JBBA83mX080i5itoF2hgo2ZABLEgHzB/wdHf8oKPjn/3LP8A6k+k1/IFX9fv/B0d/wAoKPjn/wByz/6k+k1/IFQAUUUUAf1+/wDBrj/ygo+Bn/czf+pPq1eAf8Hq3/KLLwD/ANnAaV/6Y9cr3/8A4Ncf+UFHwM/7mb/1J9WrwD/g9W/5RZeAf+zgNK/9MeuUAfzA0UUUAFFFfX//AAQV/Zc+BP7aP/BWL4U/s0ftL+Bv+El8E+Jf7d/tvRP7TurP7T9n0LULqH99ayxTJtmgif5XGduDlSQQD9P/APgxj/5ui/7kn/3P1+v/APwVi/5RZftLf9m/+Mv/AEx3lH7DH/BLj9hP/gmv/wAJT/wxT8DP+EL/AOE0+w/8JN/xU2qaj9s+x/aPs/8Ax/3M/l7PtU/3Nu7f82dq4/CD/g5D/wCCzP8AwUn+D/8AwUO+Pn/BP34dftIf2d8Irvw/p+iXHhL/AIQ/R5t9hqfhuye+h+1S2bXQ8xru4O4S7k8z5Cu1cAH4w0UUUAFFFFAH3/8A8HR3/Kdf45/9yz/6jGk18AV9/wD/AAdHf8p1/jn/ANyz/wCoxpNfAFABRRRQAUUUUAFFFFABRRRQB/f5X8wP/B6t/wApTfAP/Zv+lf8Ap81yv6fq/mB/4PVv+UpvgH/s3/Sv/T5rlAH5A0UUUAewf8E9vil4E+B37fXwP+NfxS13+y/DHg/4weGdb8R6n9lln+yWFpqttPcTeXCrySbIo3baiszYwoJIFf1O/wDEUd/wQo/6Pm/8xl4n/wDlZX8gVFAH1/8A8F6v2o/gT+2j/wAFYvit+0v+zR45/wCEl8E+Jf7C/sTW/wCzLqz+0/Z9C0+1m/c3UUUybZoJU+ZBnbkZUgn5AoooAKKKKACv7ff+CTv/ACiy/Zp/7N/8G/8Apjs6/iCr+33/AIJO/wDKLL9mn/s3/wAG/wDpjs6APyA/4PnP+bXf+52/9wFfgDX7/f8AB85/za7/ANzt/wC4CvwBoAK/o+/4IK/8F6v+CT37F3/BJ74U/s0ftL/tWf8ACNeNvDX9u/23on/CC67efZvtGu6hdQ/vrWxlhfdDPE/yucbsHDAgfzg0UAf1+/8AEUd/wQo/6Pm/8xl4n/8AlZR/xFHf8EKP+j5v/MZeJ/8A5WV/IFRQB7B/wUJ+KXgT44/t9fHD41/C3Xf7U8MeMPjB4m1vw5qf2WWD7XYXeq3M9vN5cypJHvikRtrqrLnDAEEV4/RRQAUUUUAf1+/8GuP/ACgo+Bn/AHM3/qT6tXgH/B6t/wAosvAP/ZwGlf8Apj1yvf8A/g1x/wCUFHwM/wC5m/8AUn1avAP+D1b/AJRZeAf+zgNK/wDTHrlAH8wNFFFABX7Pf8G3n/BGb/gpP8H/APgod8A/+CgXxF/Zv/s74RXfh/UNbt/Fv/CYaPNvsNT8N3qWM32WK8a6HmNd242mLcnmfOF2tj8Ya/rd8b/trfFP/gnb/wAGxfwx/bF+CmgeH9U8TeD/ANn/AOGv9mWPim1nnsJftaaNYyeakE0MjYiuZCu2RcMFJyAVIB9Qftz/APBUf9hP/gmv/wAIt/w2t8c/+EL/AOE0+3f8Iz/xTOqaj9s+x/Z/tH/HhbT+Xs+1Qff27t/y52tj+UH/AIL1ftR/An9tH/grF8Vv2l/2aPHP/CS+CfEv9hf2Jrf9mXVn9p+z6Fp9rN+5uoopk2zQSp8yDO3IypBJ/wAFW/8AgtX+1P8A8Fg/+EC/4aX8A/D/AEP/AIV3/an9if8ACC6VfW3n/b/snnef9qvLndj7FFt27MbnzuyNvyBQAUUUUAFFFFAH9znxS/4J7fsC/HHx3ffFL41/sPfB/wAYeJ9U8r+0/Efin4aaVqF/d+XEkMfm3E9u8kmyKOONdzHaqKowABWB/wAOnf8Agll/0jT/AGf/APwzeh//ACLRRQAf8Onf+CWX/SNP9n//AMM3of8A8i0f8Onf+CWX/SNP9n//AMM3of8A8i0UUAH/AA6d/wCCWX/SNP8AZ/8A/DN6H/8AItH/AA6d/wCCWX/SNP8AZ/8A/DN6H/8AItFFAB/w6d/4JZf9I0/2f/8Awzeh/wDyLR/w6d/4JZf9I0/2f/8Awzeh/wDyLRRQAf8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0f8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0UUAe/15f8a/2Iv2L/2lPFVv46/aM/ZE+F/j/W7TT0sLXWfGvgDTtVuobVXkkW3SW6hd1iDyyuEB2hpHOMsclFAHIf8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0f8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0UUAH/Dp3/gll/0jT/Z//wDDN6H/APItH/Dp3/gll/0jT/Z//wDDN6H/APItFFAB/wAOnf8Agll/0jT/AGf/APwzeh//ACLR/wAOnf8Agll/0jT/AGf/APwzeh//ACLRRQAf8Onf+CWX/SNP9n//AMM3of8A8i0f8Onf+CWX/SNP9n//AMM3of8A8i0UUAH/AA6d/wCCWX/SNP8AZ/8A/DN6H/8AIte3+E/CfhXwF4V0zwL4F8M6fouiaLp8Nho2jaTZJbWthawoI4reGKMBIokRVRUUBVVQAABRRQBx/wAdP2Tv2WP2oP7L/wCGl/2afh/8RP7D8/8AsT/hOvBtjq/9n+d5fneR9qik8rzPKi3bcbvKTOdoxwH/AA6d/wCCWX/SNP8AZ/8A/DN6H/8AItFFAB/w6d/4JZf9I0/2f/8Awzeh/wDyLR/w6d/4JZf9I0/2f/8Awzeh/wDyLRRQAf8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0f8ADp3/AIJZf9I0/wBn/wD8M3of/wAi0UUAH/Dp3/gll/0jT/Z//wDDN6H/APItH/Dp3/gll/0jT/Z//wDDN6H/APItFFAB/wAOnf8Agll/0jT/AGf/APwzeh//ACLR/wAOnf8Agll/0jT/AGf/APwzeh//ACLRRQB6/wDC34T/AAs+B3gSx+FvwU+Gnh/wf4Y0vzf7M8OeFtGg0+wtPMleaTyreBEjj3yySSNtUbmdmOSSaz/jX+z18Av2lPCtv4F/aM+B3g/x/olpqCX9ro3jXwza6raw3SpJGtwkV1G6LKEllQOBuCyOM4Y5KKAPMP8Ah07/AMEsv+kaf7P/AP4ZvQ//AJFo/wCHTv8AwSy/6Rp/s/8A/hm9D/8AkWiigA/4dO/8Esv+kaf7P/8A4ZvQ/wD5Fr0/xN+z18AvGnwaj/Zz8Y/A7wfq3w9h0+0sIfAmp+GbWfRktbUxta24snjMAihMMRjQJtQxIVA2jBRQB5h/w6d/4JZf9I0/2f8A/wAM3of/AMi0f8Onf+CWX/SNP9n/AP8ADN6H/wDItFFAB/w6d/4JZf8ASNP9n/8A8M3of/yLR/w6d/4JZf8ASNP9n/8A8M3of/yLRRQAf8Onf+CWX/SNP9n/AP8ADN6H/wDItH/Dp3/gll/0jT/Z/wD/AAzeh/8AyLRRQB//2Q=="
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.594,
+          0.305,
+          0.613
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2 Experiments"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.114,
+              0.594,
+              0.303,
+              0.612
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.625,
+          0.886,
+          0.67
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "We would like you to find an effective learning algorithm for each of these data sets. In order to do so, you should think about the general strengths and weaknesses of the different learning algorithms, as well as to experiment with them on the data."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.627,
+              0.882,
+              0.639
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.642,
+              0.882,
+              0.654
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.657,
+              0.366,
+              0.669
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.67,
+          0.886,
+          0.716
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Using the algorithm you choose, generate a classifier, and a prediction of how well it will perform on new data. We will run that classifier on some additional data and compare its performance to your predicted performance."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.671,
+              0.882,
+              0.684
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.685,
+              0.882,
+              0.7
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.702,
+              0.209,
+              0.715
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.738,
+          0.264,
+          0.758
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "3 Write­up"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.113,
+              0.736,
+              0.262,
+              0.759
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.77,
+          0.885,
+          0.801
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In your write­up, describe process by which you developed the classifiers you did. You should answer the following questions, in detail, including supporting data in graphs or tables."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.114,
+              0.77,
+              0.883,
+              0.784
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.785,
+              0.658,
+              0.799
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.81,
+          0.719,
+          0.825
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• What algorithms are generally expected to be appropriate for these data sets?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.81,
+              0.717,
+              0.824
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.505,
+          0.91
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.092,
+          0.885,
+          0.123
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• How did you choose among the different algorithms? Report your chosen algorithm, as well as at least three others that you tried."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.092,
+              0.882,
+              0.107
+            ]
+          },
+          {
+            "bbox": [
+              0.156,
+              0.109,
+              0.352,
+              0.121
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.132,
+          0.885,
+          0.162
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• How did you choose parameter settings for each algorithm? Report the parameters that gave you the best results."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.14,
+              0.133,
+              0.883,
+              0.147
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.148,
+              0.244,
+              0.16
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.172,
+          0.885,
+          0.204
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• How did you come up with a prediction for how well the classifiers you delivered would perform on previously unseen data? Report your prediction."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.143,
+              0.175,
+              0.883,
+              0.186
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.189,
+              0.504,
+              0.203
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.212,
+          0.886,
+          0.259
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• Compare the best performance you got on each data set with the performance if you had picked the class (a) at random (unbiased coin flip) or (b) by always predicting the most prevalent class in the training data."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.143,
+              0.215,
+              0.882,
+              0.226
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.228,
+              0.882,
+              0.243
+            ]
+          },
+          {
+            "bbox": [
+              0.158,
+              0.246,
+              0.255,
+              0.256
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.268,
+          0.886,
+          0.314
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• What classifier would you use in the credit data if it were twice as expensive to say that a person with bad credit was going to have good credit, as to say that a person with good credit would have bad credit?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.27,
+              0.882,
+              0.282
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.284,
+              0.882,
+              0.298
+            ]
+          },
+          {
+            "bbox": [
+              0.157,
+              0.299,
+              0.208,
+              0.311
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.323,
+          0.885,
+          0.369
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• What two attributes seem to be most relevant in each data set? Or is it the case that they’re all just about equally significant? Explain how you determined this, and why you think you obtained the answer you did."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.325,
+              0.882,
+              0.337
+            ]
+          },
+          {
+            "bbox": [
+              0.154,
+              0.339,
+              0.883,
+              0.353
+            ]
+          },
+          {
+            "bbox": [
+              0.156,
+              0.356,
+              0.269,
+              0.366
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.379,
+          0.884,
+          0.41
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• In the multiple­class digits problem, which two digits are most frequently confused by your classifier. Does that make sense to you?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.379,
+              0.882,
+              0.394
+            ]
+          },
+          {
+            "bbox": [
+              0.156,
+              0.396,
+              0.371,
+              0.408
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.431,
+          0.255,
+          0.451
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "4 Grading"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.114,
+              0.431,
+              0.254,
+              0.452
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.463,
+          0.884,
+          0.492
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "There will be a late penalty of 20% per day assessed, with no credit given for assignments turned in after the oral report."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.115,
+              0.462,
+              0.884,
+              0.479
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.479,
+              0.229,
+              0.493
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.494,
+          0.431,
+          0.508
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Grading will be broken down as follows:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.494,
+              0.428,
+              0.507
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.519,
+          0.696,
+          0.534
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "30: Good plan for choosing and validating algorithm, parameters, and classifiers"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.115,
+              0.52,
+              0.694,
+              0.533
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.535,
+          0.468,
+          0.548
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "15: How effective are the classifiers on new data"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.534,
+              0.465,
+              0.548
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.549,
+          0.503,
+          0.563
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "10: How good is the supplied performance prediction"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.549,
+              0.499,
+              0.563
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.564,
+          0.587,
+          0.578
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "5: Completing the Weka script given at the end of this handout"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.115,
+              0.564,
+              0.585,
+              0.578
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.58,
+          0.452,
+          0.594
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "20: Clarity and organization of written report"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.58,
+              0.449,
+              0.593
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.595,
+          0.442,
+          0.61
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "20: Clarity and understanding in oral report"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.595,
+              0.438,
+              0.608
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.631,
+          0.259,
+          0.65
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "5 Software"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.114,
+              0.63,
+              0.259,
+              0.65
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.663,
+          0.849,
+          0.679
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "We ask you to use the Weka environment for machine learning. You can download the software from:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.664,
+              0.848,
+              0.678
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.113,
+          0.688,
+          0.436,
+          0.704
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "http://www.cs.waikato.ac.nz/~ml/weka/"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.69,
+              0.432,
+              0.701
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.713,
+          0.885,
+          0.743
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The software is written in Java and should run under Windows, Linux and Mac. A word of warning: Weka will often run out of memory and need to be re­started, so save results as you go."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.715,
+              0.881,
+              0.727
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.729,
+              0.698,
+              0.744
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.744,
+          0.676,
+          0.759
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Within this system, you can find the major algorithms that we’ve studied:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.745,
+              0.672,
+              0.758
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.768,
+          0.456,
+          0.784
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• K Nearest Neighbor (called IBk in Weka)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.769,
+              0.452,
+              0.783
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.794,
+          0.415,
+          0.809
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• Decision Trees (called J48 in Weka)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.796,
+              0.41,
+              0.807
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.819,
+          0.461,
+          0.834
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• Naive Bayes (called Naive Bayes in Weka)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.144,
+              0.82,
+              0.456,
+              0.833
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.844,
+          0.36,
+          0.859
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• SVM (called SMO in Weka)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.845,
+              0.356,
+              0.858
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.506,
+          0.91
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.092,
+          0.886,
+          0.138
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "There are many other algorithms that you can experiment with if you’d like to, as well, but we expect you to consider these methods. Note that the SMO implementation is relatively slow compared to the others. You might want to use cross­validation sparingly with SMO since if you find that it takes a long time to run."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.093,
+              0.881,
+              0.105
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.108,
+              0.881,
+              0.122
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.124,
+              0.881,
+              0.136
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.138,
+          0.886,
+          0.169
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "You should try at least one additional interesting processing step on at least one of the data sets. You might, for example:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.139,
+              0.882,
+              0.151
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.155,
+              0.256,
+              0.167
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.177,
+          0.734,
+          0.193
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• Run a feature selection or dimensionality reduction algorithm on the digits data"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.18,
+              0.729,
+              0.191
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.202,
+          0.618,
+          0.219
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "• Try normalizing the attributes before applying nearest neighbor"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.14,
+              0.202,
+              0.614,
+              0.218
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.228,
+          0.885,
+          0.26
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Don’t just try something at random, though. Think about what is likely to help classification performance, and justify your choice in your write­up."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.115,
+              0.228,
+              0.882,
+              0.243
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.246,
+              0.404,
+              0.257
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.28,
+          0.297,
+          0.301
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "6 Using Weka"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.111,
+              0.279,
+              0.297,
+              0.3
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.312,
+          0.886,
+          0.358
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "To make sure that you don’t (immediately) run out of memory when running the program. Under Linux and Mac OS X, you should start Weka by connecting to the Weka directory (weka­3­4­4) and calling java with the following arguments:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.314,
+              0.882,
+              0.326
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.328,
+              0.882,
+              0.342
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.344,
+              0.331,
+              0.356
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.368,
+          0.506,
+          0.384
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "java ­mx100000000 ­oss100000000 ­jar weka.jar"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.369,
+              0.501,
+              0.382
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.113,
+          0.392,
+          0.496,
+          0.408
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "If you are running Windows, Weka will install under"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.394,
+              0.492,
+              0.407
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.122,
+          0.418,
+          0.344,
+          0.433
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "c:\\Program Files\\Weka­3­4"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.125,
+              0.419,
+              0.34,
+              0.431
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.443,
+          0.886,
+          0.49
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In that folder, you should see a file called RunWeka.bat, edit that file to add the ­mx and ­oss arguments to the java call. When you start Weka from the Start menu, you should see a console window with the appropriate call to java."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.445,
+              0.883,
+              0.457
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.458,
+              0.883,
+              0.472
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.475,
+              0.287,
+              0.487
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.513,
+          0.884,
+          0.546
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "There are also a couple of documentation PDFs in the Weka directory: Tutorial.pdf and ExplorerGuide.pdf. This page also has some useful information and links:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.515,
+              0.881,
+              0.527
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.53,
+              0.505,
+              0.544
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.556,
+          0.642,
+          0.572
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "http://www.comp.leeds.ac.uk/andyr/teaching/db32/weka­db32.pdf"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.557,
+              0.639,
+              0.57
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.596,
+          0.886,
+          0.644
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Here’s a script to follow that will expose you to the basics of operating Weka. Report the performance values that we ask for below. Hand them in at recitation on April 8. This will be worth 5 points on your grade for the assignment. If you have any questions, please bring them up at recitation."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.139,
+              0.598,
+              0.882,
+              0.61
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.612,
+              0.883,
+              0.626
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.628,
+              0.744,
+              0.642
+            ]
+          }
+        ]
+      },
+      {
+        "type": "code",
+        "bbox": [
+          0.113,
+          0.654,
+          0.548,
+          0.746
+        ],
+        "content": "java -mx100000000 -oss100000000 -jar weka.jar\nGo to Weka GUI Chooser window\nClick Explorer\nChoose Preprocess Tab at the top of the new window\nOpen File\n<pick breast-cancer.arff>"
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.757,
+          0.885,
+          0.804
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Clicking on the name of the different “Attributes” shows a histogram of the values on the bottom right, colored by the Class variable (or whatever attribute is chosen in the pull down above the graph). If you click on the Class attribute, you’ll see how many of each class there are in the dataset."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.759,
+              0.881,
+              0.771
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.775,
+              0.882,
+              0.787
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.79,
+              0.698,
+              0.802
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.506,
+          0.911
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "3"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "code",
+        "bbox": [
+          0.112,
+          0.093,
+          0.866,
+          0.549
+        ],
+        "content": "Click Classify Tab\nClick Choose in Classifier Pane, under Trees, pick J48 (which is Decision Tree)\nClick the Percentage Split button under Test Options\n  (this holds out 1/3 of the data for validation; you could instead do cross-validation)\nClick Start (always make sure it says Class right above the Start button)\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick on the Classifier pane (where it says \"J48 -C ...\").\nIn the dialog window, change the value of MinNumObj to 1\nClick OK\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick Choose in the Classifier Pane, under Bayes, pick NaiveBayes\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick Choose in the Classifier Pane, under functions, pick SMO (which is an SVM)\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick on the Classifier pane (where it says \"SMO -C ...\").\nIn the dialog window, change the value of gamma to 0.1 and useRBF to True\nClick OK\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick Choose in the Classifier Pane, under lazy, pick IBk (which is K Nearest Neighbor)\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window\nClick on the Classifier pane (where it says \"IBk -K ...\").\nIn the dialog window, change the value of KNN to 3\nClick OK\nClick Start\nReport the line \"Correctly Classified Instances\" in the Classifier Output window"
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.557,
+          0.886,
+          0.634
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The procedure above is for a binary (two­class) classification problem. Most of the classifiers in Weka have been extended to handle multiple classes, including Naive Bayes. The SMO (SVM) algorithm is inherently for two classes, if you use it on a data set with more than two classes; Weka will build classifiers for each pair of classes (1­against­1) by default. You can have control of how to build a multi­class classifier from a binary classifier by using the Weka “Meta” classifier MultiClassClassifier (see below)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.558,
+              0.881,
+              0.571
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.574,
+              0.881,
+              0.587
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.59,
+              0.881,
+              0.601
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.604,
+              0.882,
+              0.617
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.62,
+              0.724,
+              0.632
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.111,
+          0.646,
+          0.761,
+          0.874
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Choose Preprocess Tab Open File <pick vehicle.arff> Click Classify Tab Click Choose in the Classifier Pane, under meta, pick MultiClassClassifier Click on the Classifier pane (where it says \"MultiClassClassifier ­M...\"). In the dialog window, the method pull­down allows you to choose 1­against­all or 1­against­1 (and some other options). Pick 1­against­all. In the same dialog window, click Choose in the Classifier entry Under functions, pick SMO Click OK Click on the Classifier pane (where it says \"MultiClassClassifier ­M ...\"). In the dialog window, click the Classifier pane (where it says \"SMO...\") Change the value of C to 10.0"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.646,
+              0.296,
+              0.658
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.662,
+              0.195,
+              0.675
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.678,
+              0.279,
+              0.689
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.693,
+              0.272,
+              0.704
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.708,
+              0.749,
+              0.72
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.723,
+              0.701,
+              0.734
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.737,
+              0.168,
+              0.75
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.754,
+              0.656,
+              0.765
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.768,
+              0.756,
+              0.78
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.782,
+              0.657,
+              0.795
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.797,
+              0.332,
+              0.81
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.813,
+              0.188,
+              0.825
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.829,
+              0.756,
+              0.84
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.843,
+              0.733,
+              0.856
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.859,
+              0.365,
+              0.87
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.506,
+          0.91
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "4"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.093,
+          0.804,
+          0.138
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Click OK, Click OK Click Start (make sure it says Class right above the Start button) Report the line \"Correctly Classified Instances\" in the Classifier Output window"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.095,
+              0.272,
+              0.105
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.109,
+              0.679,
+              0.12
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.124,
+              0.802,
+              0.135
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.148,
+          0.885,
+          0.175
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Note that you can Right click on each of the entries in Results list and choose to save the output to a file."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.149,
+              0.884,
+              0.161
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.165,
+              0.144,
+              0.176
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.137,
+          0.178,
+          0.663,
+          0.192
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "To select a subset of the features (attributes) for the vehicle.arff dataset:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.179,
+              0.659,
+              0.19
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.201,
+          0.677,
+          0.351
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Choose Select attributes Tab Leave default choices for Attribute Evaluator and Search Method Click Use full training set button Click Start Report the line Selected attributes Click the Preprocess Tab On the Attributes, click on the attributes that were NOT selected Make sure that you DON’T click on the Class attribute. Click on the Remove button Repeat the MultiClassClassifier operation we described above."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.202,
+              0.357,
+              0.212
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.217,
+              0.656,
+              0.229
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.232,
+              0.409,
+              0.244
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.247,
+              0.212,
+              0.258
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.262,
+              0.416,
+              0.274
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.277,
+              0.324,
+              0.289
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.293,
+              0.674,
+              0.305
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.309,
+              0.578,
+              0.319
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.322,
+              0.342,
+              0.335
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.337,
+              0.636,
+              0.349
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.138,
+          0.359,
+          0.593,
+          0.374
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Here’s example of comparing multiple algorithms on a dataset:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.36,
+              0.59,
+              0.373
+            ]
+          }
+        ]
+      },
+      {
+        "type": "code",
+        "bbox": [
+          0.112,
+          0.383,
+          0.951,
+          0.687
+        ],
+        "content": "Go to Weka GUI Chooser window\nClick Experimenter\nClick Setup Tab at the top of the new window\nClick New\nPick a name for an ARFF File under Results Destination\nMake sure Experiment Type is Cross-validation and Number of Folds is 10\nClick Add new under Datasets\n<pick breast-cancer.arff>\nClick Add new under Algorithms\nClick Choose, under bayes, pick NaiveBayes, click OK\nClick Choose, under trees, pick J48, click OK\nClick Choose, under lazy, pick IBk, set KNN to 3, click OK\nClick Choose, under functions, pick SMO, set C to 10.0, gamma to 0.1 and useRBF to True, click OK\nClick the Run Tab at the top of the window\nClick Start (wait till it says Finished)\nClick Analyse Tab\nClick Experiment button\nClick Perform test button\nClick Save output\nReport the performance of the methods"
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.114,
+          0.708,
+          0.309,
+          0.726
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "7 Visualization"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.116,
+              0.706,
+              0.308,
+              0.727
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.739,
+          0.885,
+          0.769
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Weka has tools for helping you understand the classifiers you’re learning. If you right­click on a classifier result, you get a menu of options."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.74,
+              0.883,
+              0.754
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.757,
+              0.357,
+              0.768
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.77,
+          0.886,
+          0.814
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Visualize tree: (available only for classifiers that build trees) will show the tree in a new window. If you resize the window, and then right­click (or option­click) in the window, you can resize the tree to fit in the window."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.77,
+              0.884,
+              0.784
+            ]
+          },
+          {
+            "bbox": [
+              0.115,
+              0.785,
+              0.883,
+              0.799
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.801,
+              0.204,
+              0.813
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.815,
+          0.884,
+          0.845
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Visualize classifier errors: correctly classified instances are represented by crosses, errors by squares. You can pick which attributes to use on the X and Y axes."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.815,
+              0.883,
+              0.829
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.831,
+              0.538,
+              0.844
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.845,
+          0.886,
+          0.876
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Visualize margin curve: The margin is the difference between the probability predicted for the actual class and the highest probability predicted for the other classes. (So, for a single class, if it is predicted to"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.142,
+              0.847,
+              0.882,
+              0.859
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.862,
+              0.882,
+              0.874
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.505,
+          0.911
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "5"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.092,
+          0.885,
+          0.122
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "be positive with probability "
+          },
+          {
+            "type": "equation_inline",
+            "content": "p ,"
+          },
+          {
+            "type": "text",
+            "content": " the margin is "
+          },
+          {
+            "type": "equation_inline",
+            "content": "p - ( 1 - p ) = 2 p - 1 . )"
+          },
+          {
+            "type": "text",
+            "content": " Unfortunately, although this can be calculated for SVM, it’s not available in Weka for SMO. It’s also not available for nearest neighbor."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.093,
+              0.883,
+              0.108
+            ]
+          },
+          {
+            "bbox": [
+              0.117,
+              0.109,
+              0.826,
+              0.121
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.112,
+          0.122,
+          0.885,
+          0.184
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Visualize threshold curve: Generates a plot illustrating the tradeoffs in prediction that are obtained by varying the threshold value between classes. For example, with default threshold value of 0.5, the predicted probability of “positive” must be greater than 0.5 for the instance to be predicted as “positive”. (Unfortunately, not applicable for SMO or nearest neighbor)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.123,
+              0.883,
+              0.137
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.139,
+              0.882,
+              0.151
+            ]
+          },
+          {
+            "bbox": [
+              0.116,
+              0.154,
+              0.881,
+              0.167
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.17,
+              0.551,
+              0.181
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page_number",
+        "bbox": [
+          0.494,
+          0.899,
+          0.506,
+          0.911
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "6"
+          }
+        ]
+      }
+    ]
+  ],
+  "page_index_map": []
+}

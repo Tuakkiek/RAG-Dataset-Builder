@@ -1,0 +1,2942 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "languages": [
+        "en"
+      ],
+      "created_at": "2005-01-27T13:59:47Z",
+      "modified_at": "2005-08-21T19:25:26+05:30",
+      "producer_application": "Acrobat Web Capture 6.0",
+      "page_count": 5,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.026,
+            0.004,
+            0.558,
+            0.02
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.394,
+            0.076,
+            0.604,
+            0.094
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Notes: Section 1.1"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.847,
+            0.321,
+            0.894,
+            0.332
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 1"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.903,
+            0.321,
+            0.917,
+            0.333
+          ],
+          "content": []
+        },
+        {
+          "type": "header",
+          "index": 4,
+          "bbox": [
+            0.057,
+            0.132,
+            0.117,
+            0.146
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.1"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 5,
+          "bbox": [
+            0.056,
+            0.154,
+            0.395,
+            0.17
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This is a brief introduction to the content and organization of 6.034."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 6,
+          "bbox": [
+            0.569,
+            0.151,
+            0.759,
+            0.17
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 7,
+          "bbox": [
+            0.575,
+            0.189,
+            0.68,
+            0.205
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Topics covered"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 8,
+          "bbox": [
+            0.576,
+            0.204,
+            0.668,
+            0.218
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Prerequisites"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 9,
+          "bbox": [
+            0.576,
+            0.217,
+            0.718,
+            0.232
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• How the subject works"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 10,
+          "bbox": [
+            0.576,
+            0.231,
+            0.639,
+            0.245
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Grading"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 11,
+          "bbox": [
+            0.576,
+            0.245,
+            0.705,
+            0.259
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Collaboration Policy"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 12,
+          "bbox": [
+            0.576,
+            0.259,
+            0.754,
+            0.274
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Check the course page often."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 13,
+          "bbox": [
+            0.086,
+            0.36,
+            0.14,
+            0.377
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Topics"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.085,
+            0.38,
+            0.264,
+            0.394
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The course covers three major topics:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.102,
+            0.391,
+            0.154,
+            0.403
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Search"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.119,
+            0.401,
+            0.202,
+            0.413
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– Graph search"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.12,
+            0.412,
+            0.242,
+            0.425
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "— Constraint Satisfaction"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.121,
+            0.423,
+            0.174,
+            0.434
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "- Games"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.104,
+            0.433,
+            0.203,
+            0.445
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.119,
+            0.443,
+            0.226,
+            0.455
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "- Nearest Neighbors"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.121,
+            0.454,
+            0.208,
+            0.465
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– Decision Trees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.121,
+            0.464,
+            0.216,
+            0.475
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "— Neural Networks"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 23,
+          "bbox": [
+            0.12,
+            0.475,
+            0.163,
+            0.485
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "- SVM"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 24,
+          "bbox": [
+            0.104,
+            0.484,
+            0.298,
+            0.497
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Knowledge Representation & Inference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.12,
+            0.495,
+            0.288,
+            0.507
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "— Propositional & First Order Logic"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 26,
+          "bbox": [
+            0.121,
+            0.505,
+            0.232,
+            0.517
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– Rule-based systems"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.121,
+            0.515,
+            0.221,
+            0.529
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "— Natural Language"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 28,
+          "bbox": [
+            0.442,
+            0.352,
+            0.502,
+            0.366
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.2"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "footer",
+          "index": 29,
+          "bbox": [
+            0.362,
+            0.547,
+            0.409,
+            0.558
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 2"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 30,
+          "bbox": [
+            0.418,
+            0.548,
+            0.431,
+            0.559
+          ],
+          "content": []
+        },
+        {
+          "type": "text",
+          "index": 31,
+          "bbox": [
+            0.439,
+            0.375,
+            0.934,
+            0.435
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "These are the topics that we will cover during the semester. 6.034 is an introductory subject. Our goal is to give you a solid introduction to three key topics: search, knowledge representation and inference, and machine learning. We will introduce a variety of other different topics in AI, such as planning, robotics and natural language only in passing. Subsequent courses in AI cover those areas in more depth."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 32,
+          "bbox": [
+            0.058,
+            0.579,
+            0.118,
+            0.592
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.3"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 33,
+          "bbox": [
+            0.057,
+            0.602,
+            0.371,
+            0.615
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "These are the formal and informal prerequisites for the subject."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 34,
+          "bbox": [
+            0.056,
+            0.623,
+            0.552,
+            0.718
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.001 is an essential prerequisite. In particular, we expect you to read and understand substantial Scheme programs and to make small modifications to the code. Remember, this is a subject in computer science. Programming is to CS as calculus is to physics and EE; it is the essential language for making the ideas concrete. Also, practice makes perfect and you should take every opportunity to practice programming. Scheme is the language that we can count on everyone having from 6.001, so we use it heavily. It is also highly suitable for many (though not all) of the topics covered in this subject. If you're going to study computer science, you should take mastering programming languages in stride."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 35,
+          "bbox": [
+            0.056,
+            0.725,
+            0.536,
+            0.761
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will assume that you know basic differential calculus of several variables and vector algebra, such as covered in 18.02. You will not be able to understand machine learning without this basic mathematical background."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 36,
+          "bbox": [
+            0.583,
+            0.588,
+            0.681,
+            0.603
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prerequisites"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 37,
+          "bbox": [
+            0.58,
+            0.608,
+            0.626,
+            0.621
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "· 6.001"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 38,
+          "bbox": [
+            0.592,
+            0.621,
+            0.903,
+            0.658
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will have regular assignments that expect you to be able to read and write Scheme. This is the only formal pre-requisite."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 39,
+          "bbox": [
+            0.58,
+            0.658,
+            0.627,
+            0.671
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "·18.02"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 40,
+          "bbox": [
+            0.594,
+            0.671,
+            0.913,
+            0.721
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will assume that you know what the chain rule is and what a dot product is, and a partial derivative, etc. If you have not taken 18.02, you should really wait to take the subject until you have."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 41,
+          "bbox": [
+            0.856,
+            0.774,
+            0.901,
+            0.784
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 3"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 42,
+          "bbox": [
+            0.911,
+            0.775,
+            0.924,
+            0.785
+          ],
+          "content": []
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "page_number",
+          "index": 0,
+          "bbox": [
+            0.911,
+            0.477,
+            0.925,
+            0.488
+          ],
+          "content": []
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.086,
+            0.063,
+            0.23,
+            0.079
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Course organization"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 3,
+          "bbox": [
+            0.085,
+            0.083,
+            0.278,
+            0.097
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 2 x 1.5 hr classes (MW11-12:30)"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 4,
+          "bbox": [
+            0.086,
+            0.098,
+            0.208,
+            0.11
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 1 recitation with TA"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 5,
+          "bbox": [
+            0.086,
+            0.111,
+            0.231,
+            0.124
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• On-line text + exercises"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 6,
+          "bbox": [
+            0.104,
+            0.125,
+            0.409,
+            0.174
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Recommended book (available at Quantum & Amazon): Russell & Norvig, Al: A Modern Approach 2nd edition – This book is only for supplementary reading; all of the course material is covered in the notes."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 7,
+          "bbox": [
+            0.086,
+            0.174,
+            0.209,
+            0.187
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• On-line problem set"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 8,
+          "bbox": [
+            0.086,
+            0.188,
+            0.304,
+            0.201
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 2 Design problems (3-5 page papers)"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.201,
+            0.296,
+            0.215
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 2 in-class quizzes (March 7, April 4)"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 10,
+          "bbox": [
+            0.086,
+            0.215,
+            0.129,
+            0.228
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Final"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 11,
+          "bbox": [
+            0.363,
+            0.249,
+            0.408,
+            0.259
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 4"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 12,
+          "bbox": [
+            0.058,
+            0.281,
+            0.117,
+            0.294
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.5"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 13,
+          "bbox": [
+            0.056,
+            0.304,
+            0.54,
+            0.351
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The grading is broken down as shown here. The only aspect that requires some comment is the treatment of the on-line problems. I feel that you can't really learn the material without doing the problems. You may even be able to do well on the exams but you won't have a full understanding without working the problems. And so, the problems are required."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 14,
+          "bbox": [
+            0.056,
+            0.36,
+            0.546,
+            0.43
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Since most (though not all) of the problems have \"Check\" buttons, you should be able to get full credit for them. Some of the problems don't have Check buttons and so you won't necessarily get 100% on every problem set. On the other hand, we don't expect you to get a score of 100%; 90% is sufficient for full credit. You won't get a better final grade because you got 100% on the problems. So, don't obsess about losing a point here and there. The objective of the problems and exercises is to help you learn the material and make sure that you understand what we view as key points."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.086,
+            0.537,
+            0.416,
+            0.562
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Everything you do for credit in this subject is supposed to be your own work; this includes on-line work."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 16,
+          "bbox": [
+            0.086,
+            0.516,
+            0.184,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Collaboration"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "header",
+          "index": 17,
+          "bbox": [
+            0.442,
+            0.054,
+            0.502,
+            0.067
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.086,
+            0.562,
+            0.421,
+            0.61
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• You can talk to other students (and TAs) about approaches to problems, but then you should sit down and do the problem yourself. This is not only the ethical way but also the only effective way of learning the material."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 19,
+          "bbox": [
+            0.44,
+            0.077,
+            0.926,
+            0.113
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The class meets as a whole twice a week for 1 1/2 hours. The lectures will introduce the basic material for the course. These on-line chapters are the textbook for the course; you are responsible for the material in the on-line text. Most weeks there will be a required on-line problem set."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 20,
+          "bbox": [
+            0.441,
+            0.122,
+            0.929,
+            0.159
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will schedule meetings with the TAs on Friday in groups of about 20 students. These recitation meetings will go over the on-line problem set problems. The meetings are required unless you've already completed all the on-line problems correctly by Friday."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 21,
+          "bbox": [
+            0.44,
+            0.166,
+            0.928,
+            0.203
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The recommended book provides a wealth of additional materials and in-depth exploration of the topics we will cover. Although the book is not required, you might find it very helpful if you want to dig deeper into the material."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 22,
+          "bbox": [
+            0.441,
+            0.21,
+            0.851,
+            0.225
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We will have two in-class quizzes (held in-class on the indicated dates) and a final."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 23,
+          "bbox": [
+            0.58,
+            0.29,
+            0.641,
+            0.305
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Grading"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 24,
+          "bbox": [
+            0.58,
+            0.309,
+            0.651,
+            0.322
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 30% Final"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 25,
+          "bbox": [
+            0.58,
+            0.322,
+            0.668,
+            0.334
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 30% Quizzes"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 26,
+          "bbox": [
+            0.58,
+            0.335,
+            0.871,
+            0.347
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 25% On-line assignments + Recitation participation"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 27,
+          "bbox": [
+            0.58,
+            0.347,
+            0.715,
+            0.36
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 15% Design problems"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 28,
+          "bbox": [
+            0.579,
+            0.372,
+            0.912,
+            0.425
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• The on-line exercises and problems are an essential component of the subject and are required. A 90% score on any on-line assignment gets full credit. There is no difference between 90% and 100%. An average score below 75% will lead to a grade of Incomplete in the subject."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 29,
+          "bbox": [
+            0.579,
+            0.425,
+            0.911,
+            0.459
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• On-line work that is submitted late will receive half credit unless you have a valid reason and make an arrangement with your TA."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 30,
+          "bbox": [
+            0.855,
+            0.476,
+            0.901,
+            0.486
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 5"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 31,
+          "bbox": [
+            0.442,
+            0.508,
+            0.501,
+            0.521
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.1.6"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 32,
+          "bbox": [
+            0.44,
+            0.53,
+            0.933,
+            0.578
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Don't hand in work that you did not do, even to the on-line system. Talking to other people to try to understand the material is fine, in fact, encouraged. Cutting and pasting someone else's answer is NOT fine under any circumstances. Not only is it unethical but you will fail to learn anything in the course."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 33,
+          "bbox": [
+            0.44,
+            0.585,
+            0.936,
+            0.623
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "If you feel so pressured that you are tempted to turn in someone else's work, you are probably trying to do too much. You should probably be taking fewer subjects or cutting back somewhere else. Speak to your advisor or a counseling Dean or come talk to one of us."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 34,
+          "bbox": [
+            0.419,
+            0.704,
+            0.43,
+            0.714
+          ],
+          "content": []
+        },
+        {
+          "type": "footer",
+          "index": 35,
+          "bbox": [
+            0.363,
+            0.703,
+            0.408,
+            0.712
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.847,
+            0.288,
+            0.894,
+            0.298
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 1"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.392,
+            0.04,
+            0.602,
+            0.058
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Notes: Section 1.2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 3,
+          "bbox": [
+            0.057,
+            0.099,
+            0.117,
+            0.112
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.1"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 4,
+          "bbox": [
+            0.056,
+            0.121,
+            0.541,
+            0.158
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This section provides you with a quick overview of the on-line system that we will be using in the class. If you've used the On-Line Tutor in 6.001, you should be familiar with the operation of this system in spite of the slightly different look."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 5,
+          "bbox": [
+            0.57,
+            0.118,
+            0.758,
+            0.135
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 6,
+          "bbox": [
+            0.575,
+            0.156,
+            0.767,
+            0.171
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Intro to On-Line Interactive Text"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 7,
+          "bbox": [
+            0.576,
+            0.17,
+            0.763,
+            0.185
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• On-Line Problems & Exercises"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 8,
+          "bbox": [
+            0.576,
+            0.184,
+            0.702,
+            0.199
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Suggestions/Issues"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.328,
+            0.255,
+            0.342
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-Line Interactive Text"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.085,
+            0.348,
+            0.419,
+            0.384
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• We will use this on-line format to introduce the detailed material for the course. We will also point you to additional material in the suggested textbooks."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.086,
+            0.385,
+            0.353,
+            0.398
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Each of the presentations comes in two forms:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.102,
+            0.398,
+            0.362,
+            0.411
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Slides, Narration and Narration Text (on-line)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.104,
+            0.412,
+            0.368,
+            0.425
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• PDF of Slides and Narration Text (for printing)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.086,
+            0.425,
+            0.389,
+            0.449
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Associated with each presentation there will be a few exercises to drive home key points."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.086,
+            0.45,
+            0.408,
+            0.476
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Each week, there will also be a set of assigned problems (including programming ones) that will be done on-line."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 16,
+          "bbox": [
+            0.442,
+            0.319,
+            0.501,
+            0.332
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.2"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.44,
+            0.341,
+            0.938,
+            0.379
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "These presentations will tend to focus on the nitty-gritty detail of the material and be a bit skimpy on motivation - we will do more of that in class. We have tried to provide a variety of ways of going through the material, either on-line or for printing; hopefully you will find one that suits you."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 18,
+          "bbox": [
+            0.44,
+            0.385,
+            0.938,
+            0.423
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that each assigned chapter will have several presentations (sections) as well as some interactive exercise problems. You should do these correctly after going through the appropriate section - this should help make sure that you picked up on the key points of the section."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.441,
+            0.43,
+            0.938,
+            0.456
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We also have more substantial interactive problems, including programming problems, in the week's problem set."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 20,
+          "bbox": [
+            0.363,
+            0.514,
+            0.408,
+            0.524
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 2"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 21,
+          "bbox": [
+            0.058,
+            0.546,
+            0.117,
+            0.558
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.3"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "footer",
+          "index": 22,
+          "bbox": [
+            0.056,
+            0.568,
+            0.554,
+            0.628
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The on-line problems come in three basic types: multiple-choice or true-false problems which have basically binary answers, short answers where you enter a phrase, expression or equation and coding problems. You can check the correctness of your answers to the short answer and coding problems with the Check button. Once you are satisfied with your answer, Submit it, which will show you our answer. Of course, after submission, you won't be able to change your answer."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 23,
+          "bbox": [
+            0.056,
+            0.636,
+            0.553,
+            0.694
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that you will get a gold star next to the problem set name (in the Contents page) if you submitted all the required problems and scored 90% or better (which means full credit). Some problems are not graded, e.g., surveys and feedback problems, but still have to be submitted (even if blank) to get the star. A few problems may be marked optional and need not be submitted to get the star."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 24,
+          "bbox": [
+            0.086,
+            0.781,
+            0.307,
+            0.796
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-line problems and exercises"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 25,
+          "bbox": [
+            0.086,
+            0.801,
+            0.412,
+            0.86
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Some problems have multiple parts. There is a single submit button for multi-part problems. Be careful that you do not submit a problem before you have done all the parts. It is useful to check your score before submitting (there is a button to get Scores on every page)."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 26,
+          "bbox": [
+            0.086,
+            0.861,
+            0.421,
+            0.931
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If you want to see an on-line presentation while working on a problem, you can open a new page and navigate to the appropriate chapter. Modern browsers allow you to open a new page (Ctl-N) directly. Note that you need to do this since the system does not allow you to login multiple times (a security feature)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 27,
+          "bbox": [
+            0.58,
+            0.555,
+            0.801,
+            0.569
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-line problems and exercises"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.58,
+            0.575,
+            0.799,
+            0.587
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Problems and exercises come in three forms:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 29,
+          "bbox": [
+            0.598,
+            0.586,
+            0.734,
+            0.598
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Multiple Choice/True False"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 30,
+          "bbox": [
+            0.598,
+            0.597,
+            0.673,
+            0.609
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Short answer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 31,
+          "bbox": [
+            0.598,
+            0.609,
+            0.645,
+            0.62
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Coding"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 32,
+          "bbox": [
+            0.58,
+            0.62,
+            0.905,
+            0.65
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Short-answer and coding problems have a \"Check\" button that allows you to verify whether your answer is correct before final submission. Multiple-choice/True-False problems do not have a Check button."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 33,
+          "bbox": [
+            0.579,
+            0.65,
+            0.908,
+            0.69
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• When you are done with a problem, you need to click the \"Submit\" button. This will show you the \"official\" answer. You need to submit every problem before the due date to get full credit. After submitting a problem, you cannot change your answers to that problem."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 34,
+          "bbox": [
+            0.579,
+            0.69,
+            0.906,
+            0.731
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If you submit every problem and exercise in a problem set and you score 90% or better, you should get a gold star for the problem set. If your score is 90% or better but you have no star, then you forgot to submit some problem – maybe the hours or feedback \"problems\"."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 35,
+          "bbox": [
+            0.442,
+            0.773,
+            0.501,
+            0.786
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.4"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 36,
+          "bbox": [
+            0.856,
+            0.74,
+            0.901,
+            0.75
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 ·3"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 37,
+          "bbox": [
+            0.441,
+            0.795,
+            0.935,
+            0.82
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Some problems are multi-part with each part being of one of the types discussed earlier. These problems will have only one Submit button; make sure that you do all of the parts before submitting."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 38,
+          "bbox": [
+            0.911,
+            0.742,
+            0.924,
+            0.752
+          ],
+          "content": []
+        },
+        {
+          "type": "footer",
+          "index": 39,
+          "bbox": [
+            0.441,
+            0.828,
+            0.932,
+            0.853
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On a separate point, it is often useful to have a page open to one of the presentations while working on a problem. To do this, use Ctl-N in most modern browsers."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 40,
+          "bbox": [
+            0.418,
+            0.969,
+            0.431,
+            0.979
+          ],
+          "content": []
+        },
+        {
+          "type": "footer",
+          "index": 41,
+          "bbox": [
+            0.363,
+            0.967,
+            0.407,
+            0.977
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "page_number",
+          "index": 0,
+          "bbox": [
+            0.911,
+            0.263,
+            0.924,
+            0.274
+          ],
+          "content": []
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.026,
+            0.005,
+            0.558,
+            0.019
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.855,
+            0.262,
+            0.901,
+            0.272
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 5"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 3,
+          "bbox": [
+            0.057,
+            0.067,
+            0.118,
+            0.08
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.5"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 4,
+          "bbox": [
+            0.056,
+            0.089,
+            0.539,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Some problems can be solved by guessing using the Check button. This is not recommended; if it comes up on an exam, you won't have a Check button handy."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 5,
+          "bbox": [
+            0.056,
+            0.123,
+            0.552,
+            0.171
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Occasionally, the system will mark wrong an answer that you know is right. Please let us know right away so that we can fix it (although probably not at 3am). Consider it your humanitarian duty towards your fellow students. Don't waste your time trying to figure out what the system is looking for. Of course, before sending us e-mail, please make sure that you actually read the problem..."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 6,
+          "bbox": [
+            0.579,
+            0.075,
+            0.801,
+            0.092
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-line problems and exercises"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 7,
+          "bbox": [
+            0.579,
+            0.096,
+            0.895,
+            0.134
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Some on-line exercises and problems can be solved by guessing multiple times, but you probably won't learn anything that way."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 8,
+          "bbox": [
+            0.579,
+            0.136,
+            0.911,
+            0.208
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If you have trouble with the system recognizing an answer that you're sure is correct, please let us know right away via e-mail (rather than wasting time trying to guess what the system is looking for). We will give you credit for your answer (and update the legal answers so it works correctly for others)."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.302,
+            0.232,
+            0.318
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Preferences/Options"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 10,
+          "bbox": [
+            0.085,
+            0.323,
+            0.415,
+            0.37
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• You can set a number of options, e.g. whether to have the system verify each problem submission or whether it should play the sound with each slide, from the Options page."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 11,
+          "bbox": [
+            0.442,
+            0.294,
+            0.501,
+            0.307
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.6"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 12,
+          "bbox": [
+            0.085,
+            0.37,
+            0.406,
+            0.396
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Note that you need to press Submit (at the bottom of the preferences page) for any change to take effect."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 13,
+          "bbox": [
+            0.441,
+            0.316,
+            0.912,
+            0.342
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Click on the Preferences button to see what options are available. Hopefully the defaults are set sensibly but the Preferences are generally there in response to requests from previous users."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 14,
+          "bbox": [
+            0.362,
+            0.489,
+            0.408,
+            0.499
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 6"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 15,
+          "bbox": [
+            0.057,
+            0.52,
+            0.116,
+            0.533
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.7"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.056,
+            0.543,
+            0.546,
+            0.613
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We'd like to be able to address any issues that you have with the material, the organization of the course, or the on-line system. To that end, we have provided you with several mechanisms to try to get your feedback. Of course, you can always send email about any of this to me or to any of the TAs. There's an email link at the bottom of every page that reaches all of us. In addition, each chapter and problem set has a question that's explicitly geared to getting feedback on the current material."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.056,
+            0.621,
+            0.53,
+            0.647
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Of course, you can always ask questions in class. But, we know that many of you will not ask a question in class if your life depended on it. So, let's see if the technology can help."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 18,
+          "bbox": [
+            0.579,
+            0.529,
+            0.775,
+            0.545
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Questions and Suggestions"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.579,
+            0.55,
+            0.916,
+            0.597
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• We have added a question to each presentation and problem set asking for any issues that you would like to see discussed in class. Please use that to give us feedback so that we can make the class time maximally useful."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.579,
+            0.597,
+            0.914,
+            0.645
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Each on-line page has an e-mail link at the bottom. Please use that to ask any questions that you have on the presented material or on the problems or exercises, especially when the next class will not be for a while."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 21,
+          "bbox": [
+            0.579,
+            0.645,
+            0.915,
+            0.705
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If you have any feedback or suggestions about the course, you can use any of these methods to communicate them to us. There is nothing we can do about complaints at the end of the term; we may actually be able to deal with an issue if you let us know during the term."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 22,
+          "bbox": [
+            0.856,
+            0.715,
+            0.901,
+            0.725
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02 · 7"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 23,
+          "bbox": [
+            0.086,
+            0.755,
+            0.147,
+            0.77
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Scheme"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 24,
+          "bbox": [
+            0.085,
+            0.776,
+            0.375,
+            0.79
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• There will be coding problems throughout the term"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 25,
+          "bbox": [
+            0.085,
+            0.79,
+            0.394,
+            0.815
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• In many cases, it will be feasible to simply debug your answer on the on-line system using the Check button."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 26,
+          "bbox": [
+            0.442,
+            0.747,
+            0.501,
+            0.76
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.8"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 27,
+          "bbox": [
+            0.085,
+            0.815,
+            0.423,
+            0.862
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• In other case, you should develop your code on a standalone Scheme system, such as MIT Scheme, which hopefully you know from 6.001. The course homepage has a pointer to additional information on Scheme systems."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 28,
+          "bbox": [
+            0.086,
+            0.862,
+            0.418,
+            0.898
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• We encourage you to install the most recent full release of MIT Scheme on your machine, or use it from the 6.034 locker on Athena. Do not rely on the 6.001 release."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 29,
+          "bbox": [
+            0.086,
+            0.899,
+            0.325,
+            0.924
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• MIT Scheme can be found at: http://www.gnu.org/software/mit-scheme/"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 30,
+          "bbox": [
+            0.44,
+            0.769,
+            0.938,
+            0.806
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "You will need to use Scheme in this subject. For short problems, you might be able to debug directly on the on-line system - although the underlying Scheme is not very good about error messages and interactive debugging is out of the question."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 31,
+          "bbox": [
+            0.44,
+            0.814,
+            0.932,
+            0.861
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For any substantial programming, especially for the projects, you will need a stand-alone system. On Intel x86 machines (running Windows, Linux, FreeBSD), the MIT Scheme system works pretty well. However, you should install the most recent complete release of MIT Scheme - don't rely on the one from 6.001."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 32,
+          "bbox": [
+            0.44,
+            0.87,
+            0.934,
+            0.896
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "If for some reason you don't have regular access to an Intel x86 machine, there are a couple of other options mentioned on our Web page, but we make no guarantees."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 33,
+          "bbox": [
+            0.362,
+            0.942,
+            0.408,
+            0.952
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp · Spring 02· 8"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 34,
+          "bbox": [
+            0.418,
+            0.944,
+            0.43,
+            0.953
+          ],
+          "content": []
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.026,
+            0.005,
+            0.557,
+            0.019
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 1,
+          "bbox": [
+            0.911,
+            0.263,
+            0.924,
+            0.274
+          ],
+          "content": []
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.058,
+            0.067,
+            0.117,
+            0.08
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.9"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 3,
+          "bbox": [
+            0.056,
+            0.09,
+            0.547,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "If you're experiencing any technical problems, please send us e-mail with helpful information, such as the HTML source of the page showing the problem and a description of your environment."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 4,
+          "bbox": [
+            0.056,
+            0.135,
+            0.55,
+            0.193
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "If you are using an old Netscape and you get a blank page that doesn't mean there is no HTML there. What it means is that the Netscape HTML renderer has decided that the HTML on the page is not perfect and it's not worth rendering. Unfortunately, there's usually an informative error message lurking in there. So, if faced with a blank page, get the HTML source and, if there's anything there, send it along to us. It's likely to help us catch the bug."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.056,
+            0.202,
+            0.543,
+            0.271
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We had someone in the end-of-term survey say \"Halfway through the term the sound stopped working\", but this person never told anyone who could do anything about it that they were having problems! I guess they assumed that it had stopped working for everyone and someone else would report it. Well it didn't fail for everyone and no one reported it. We might not be able to solve all your problems, given the immense variety of incompatible or broken software and hardware out there, but we definitely can't solve any of your problems if you don't tell us about them."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 6,
+          "bbox": [
+            0.58,
+            0.076,
+            0.671,
+            0.091
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Bug Reports"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 7,
+          "bbox": [
+            0.579,
+            0.097,
+            0.915,
+            0.154
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• For technical problems, use the email address at the foot of any of the pages to let us know. Please include the HTML source of the page (Right Click and View Source) and let us know your environment (Linux/Windows, Mozilla/Netscape/lE or whatever)."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 8,
+          "bbox": [
+            0.579,
+            0.156,
+            0.894,
+            0.201
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If you get a blank page in an old Netscape, still do View Source and send that (old Netscapes are finicky about rendering ill-formed HTML). Better still, get a modern browser."
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 9,
+          "bbox": [
+            0.579,
+            0.203,
+            0.91,
+            0.227
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• On Macs, the Java applet for entering code seems to work best on Safari."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.855,
+            0.262,
+            0.901,
+            0.271
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp - Spring 02· 9"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 11,
+          "bbox": [
+            0.086,
+            0.303,
+            0.141,
+            0.316
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Crash?"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.086,
+            0.323,
+            0.41,
+            0.355
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• If your browser or machine crashes while running our online system, then most likely you've got a broken OS/Browser/JavaVM combination (they're out there)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.086,
+            0.355,
+            0.422,
+            0.398
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Our code already has patches to avoid the more common landmines but there are many more trained professionals in industry producing buggy code for your browser and OS than there are of us trying to patch around them."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.086,
+            0.399,
+            0.412,
+            0.431
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• So, please report these problems but odds are we won't even be able to reproduce them. Luckily, these problems seem to be quite rare."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.086,
+            0.431,
+            0.389,
+            0.454
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Upgrading/Reinstalling the browser sometimes helps. Finding a new machine almost always helps ;-)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.086,
+            0.454,
+            0.416,
+            0.487
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• Or, switch to using an HTML form for the code entry window (see Preferences). This most likely will work - the problem, when it occurs, is usually with Java ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.359,
+            0.489,
+            0.409,
+            0.499
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "tlp - Spring 02 · 10"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 18,
+          "bbox": [
+            0.442,
+            0.295,
+            0.507,
+            0.306
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1.2.10"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 19,
+          "bbox": [
+            0.44,
+            0.317,
+            0.936,
+            0.386
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This is a bit of a 6.001 review. Your browser has interpreters for a few languages, specifically HTML, Javascript and Java. You learned about interpreters in 6.001. So, suppose I write a Scheme program for a Scheme interpreter and, when I run it, the interpreter crashes and burns, whose fault is this? Is it my fault for writing such a nasty Scheme program? Or, do we have a buggy interpreter on our hands? If you said it was the fault of the program, you should go back and review 6.001 and try again."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 20,
+          "bbox": [
+            0.44,
+            0.395,
+            0.936,
+            0.476
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Similarly, if you feel that your browser (or your OS) crashing is due to the little piece of Java (or HTML or Javascript) code in our on-line system, try again. I can pretty much guarantee you that it is because you have some buggy combination of browser and Java Virtual Machine installed on your machine; there are plenty of these around. I am confident of this because, by design, I'm not supposed to be able to write Java (or HTML or Javascript) code that crashes your browser (or, heaven forbid, your machine). Note that I am not promising that all our code will work correctly (I wish!). But crashing your browser or your machine should be beyond our power."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 21,
+          "bbox": [
+            0.417,
+            0.49,
+            0.431,
+            0.501
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 21,
+              "bbox": [
+                0.417,
+                0.49,
+                0.431,
+                0.501
+              ],
+              "image_path": "images/page_4_image_21.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 22,
+          "bbox": [
+            0.441,
+            0.485,
+            0.934,
+            0.519
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Unfortunately, it means that these problems are also likely to be beyond our power to fix. We'd like to know when they happen (which seems to be mercifully rarely), but it's not clear that we will be able to help since we most likely won't even be able to reproduce it. It's likely something about your"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 23,
+          "bbox": [
+            0.058,
+            0.518,
+            0.591,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "particular setup. So, you'll need to change the setup. In any case, do let us know if you experience problems."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

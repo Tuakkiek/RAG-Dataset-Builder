@@ -1,0 +1,64 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.474,
+            0.058,
+            0.525,
+            0.075
+          ],
+          "content": "ML Notes"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.049,
+            0.116,
+            0.955,
+            0.545
+          ],
+          "content": "| Algorithm | Input | Output | Learns by | Complexity Control | Notes |\n| --- | --- | --- | --- | --- | --- |\n| • Naive Bayes | boolean feature vector | discrete | estimating conditional probabilities (counting) | Assumes independent features | LaPlace Correction, XOR |\n| • basic Decision Tree | boolean feature vector | discrete | minimizing average entropy at the branches | parametric: leaf size, minimum entropy |  |\n| • Continuous-Valued Decision Tree | real feature vector | discrete | minimizing average entropy at the branches |  |  |\n| • K-Nearest Neighbor | real feature vector | discrete | memorizing all points | parametric: K | Scaling |\n| • Perceptron | real feature vector | discrete | maximizing margin (weight space search) | limited to linear separator | guarantees separator if it exists |\n| • SVM | real feature vector | discrete | maximizing margin (quadratic programming) | maximizes margin in error function |  |\n| • Neural Net | real feature vector | discrete | gradient descent (weight space search) | architecture | Architecture, Scaling |\n| • Neural Net Regression | real feature vector | real | gradient descent (weight space search) | architecture | Architecture, Scaling |\n| • Regression Trees | real feature vector | real | minimizing variance at the branches |  | Kernel functions (not SVM kernels) |\n| • Nearest Neighbor Regression | real feature vector | real | memorizing all points |  | Kernel functions (not SVM kernels) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_1.jpg"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2005-05-14T17:43:33-04:00",
+      "modified_at": "2005-08-12T13:29:09+05:30",
+      "creator_application": "OmniOutliner",
+      "producer_application": "Mac OS X 10.3.9 Quartz PDFContext",
+      "page_count": 1,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

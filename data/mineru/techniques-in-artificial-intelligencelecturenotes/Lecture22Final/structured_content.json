@@ -1,0 +1,2267 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 1"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.084,
+            0.711,
+            0.107
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.288,
+            0.128,
+            0.665,
+            0.156
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.874,
+            0.582
+          ],
+          "content": "When we talked about MDPs, we assumed that we knew the agent’s reward function, R, and a model of how the world works, expressed as the transition probability distribution. In reinforcement learning, we would like an agent to learn to behave well in an MDP world, but without knowing anything about R or P when it starts out."
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.083,
+            0.712,
+            0.108
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.287,
+            0.127,
+            0.667,
+            0.158
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.86,
+            0.523
+          ],
+          "content": "It’s called reinforcement learning because it’s related to early mathematical psychology models of conditioning, or behavior learning, in animals."
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.241,
+            0.082,
+            0.713,
+            0.109
+          ],
+          "content": "6.825 Techniques in Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.286,
+            0.126,
+            0.667,
+            0.158
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.177,
+            0.355,
+            0.203
+          ],
+          "content": "• Exploration"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.193,
+            0.203,
+            0.345,
+            0.229
+          ],
+          "content": "• Q learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.192,
+            0.228,
+            0.519,
+            0.254
+          ],
+          "content": "• Extensions and examples"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.477,
+            0.859,
+            0.542
+          ],
+          "content": "We’ll look at the issue of exploration, talk about Q-learning, which is one of the most successful approaches to reinforcement learning, and then consider some extensions and examples."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.287,
+            0.072,
+            0.667,
+            0.103
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.11,
+            0.813,
+            0.158
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 22 • 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.477,
+            0.805,
+            0.52
+          ],
+          "content": "So, how should you behave when you don’t even know how the world works?"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.285,
+            0.072,
+            0.668,
+            0.103
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.18,
+            0.11,
+            0.813,
+            0.159
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.182,
+            0.33,
+            0.211
+          ],
+          "content": "One option:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.477,
+            0.861,
+            0.523
+          ],
+          "content": "One obvious strategy for dealing with an unknown world is to learn a model of the world, and then solve it using known techniques."
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.287,
+            0.073,
+            0.665,
+            0.103
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.811,
+            0.158
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.183,
+            0.329,
+            0.208
+          ],
+          "content": "One option:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.208,
+            0.787,
+            0.256
+          ],
+          "content": "• estimate R (reward function) and P (transition function) from data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.865,
+            0.603
+          ],
+          "content": "You all know how to do parameter estimation now, by counting the number of times various events occur and taking ratios. So, you can estimate the next-state distribution P(s’|s,a) by counting the number of times the agent has taken action a in state s and looking at the proportion of the time that s’ has been the next state. Similarly, you can estimate R(s) just by averaging all the rewards you’ve received when you were in state s."
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.286,
+            0.072,
+            0.667,
+            0.103
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.111,
+            0.812,
+            0.159
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.181,
+            0.183,
+            0.33,
+            0.209
+          ],
+          "content": "One option:"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.208,
+            0.788,
+            0.255
+          ],
+          "content": "• estimate R (reward function) and P (transition function) from data"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.255,
+            0.811,
+            0.281
+          ],
+          "content": "• solve for optimal policy given estimated R and P"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.848,
+            0.542
+          ],
+          "content": "Once you have estimated values for R and P, then you can use value iteration to compute a policy that’s optimal, if not for the real world, for the world described by the estimated model."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.287,
+            0.073,
+            0.665,
+            0.103
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.811,
+            0.158
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.183,
+            0.329,
+            0.208
+          ],
+          "content": "One option:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.208,
+            0.787,
+            0.255
+          ],
+          "content": "• estimate R (reward function) and P (transition function) from data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.255,
+            0.811,
+            0.281
+          ],
+          "content": "• solve for optimal policy given estimated R and P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.875,
+            0.642
+          ],
+          "content": "Of course, there’s a question of how long you should gather data to estimate the model before it’s good enough to use to find a policy. One way to get around this problem is to re-estimate the model on every step. Each time you get a piece of experience, you update your model estimates. Then, you run value iteration on the updated model. This might be too computationally expensive; if so, you can run value iteration over the continually updated model as a kind of background job, at whatever rate you can afford computationally."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.287,
+            0.072,
+            0.666,
+            0.103
+          ],
+          "level": 2,
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.111,
+            0.811,
+            0.159
+          ],
+          "content": "What do you do when you don’t know how the world works?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.183,
+            0.329,
+            0.209
+          ],
+          "content": "One option:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.208,
+            0.787,
+            0.254
+          ],
+          "content": "• estimate R (reward function) and P (transition function) from data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.255,
+            0.811,
+            0.281
+          ],
+          "content": "• solve for optimal policy given estimated R and P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.304,
+            0.375,
+            0.331
+          ],
+          "content": "Another option:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.33,
+            0.636,
+            0.357
+          ],
+          "content": "• estimate a value function directly"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 22 • 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.864,
+            0.563
+          ],
+          "content": "This approach is sound, and in a lot of cases, it’s probably the right thing to do. But, interestingly enough, it’s possible to find the optimal value function without ever estimating the state transition probabilities directly. We’ll investigate an algorithm for doing that."
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.851,
+            0.449
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.877,
+            0.682
+          ],
+          "content": "But first, let’s think about how the agent should choose its actions. In most supervised learning problems, the agent is simply given a big collection of data and asked to learn something from it. In reinforcement learning, there is an interesting added dimension: the agent gets to choose its own actions and, therefore, it has very direct influence on the data it will receive. Now there are two, possibly opposing reasons for the agent to choose an action: because it thinks the action will have a good result in the world, or because it thinks the action will give it more information about how the world works. Both of these things are valuable, and it’s interesting to think about how to trade them off."
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.052,
+            0.852,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.873,
+            0.663
+          ],
+          "content": "One view of the very simplest reinforcement learning problem, where there’s a single state, is as a **bandit problem**. Imagine you enter a casino with k slot machines. Every time you pull an arm on a machine, it either pays off a dollar or nothing. Assume that each machine has a hidden probability of paying off, and that whenever you pull an arm, the outcome is independent of previous outcomes and is determined by the hidden payoff probability. This is called a **k-armed-bandit** problem, because, in English slang, slot machines are sometimes called one-armed bandits (presumably because they take all your money)."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.147,
+            0.051,
+            0.852,
+            0.45
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.116,
+                0.477,
+                0.849,
+                0.544
+              ],
+              "content": "Now, assume that I let you into the casino and tell you that you have 1000 chances to pull the arm of a machine, and that you should try to make as much money as possible during that time. What should you do?"
+            }
+          ],
+          "image_source": "images/page_11_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.339,
+            0.083,
+            0.614,
+            0.111
+          ],
+          "content": "Bandit Strategies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.112,
+            0.443,
+            0.135
+          ],
+          "content": "• switch on a loser"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.867,
+            0.583
+          ],
+          "content": "There are a lot of strategies, even for this simple problem. One of the first ones that people studied was “switch on a loser”. It says that you should pick one arm. As long as it keeps paying off, you should keep pulling it. As soon as it loses, go to the next arm, and so on. It can be shown that this strategy is better than behaving at random, but it’s not optimal!"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.339,
+            0.084,
+            0.615,
+            0.111
+          ],
+          "level": 1,
+          "content": "Bandit Strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.112,
+            0.443,
+            0.135
+          ],
+          "content": "• switch on a loser"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.135,
+            0.63,
+            0.16
+          ],
+          "content": "• always choose the apparent best"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.87,
+            0.641
+          ],
+          "content": "Another strategy would be to keep estimates of the payoff probabilities of each arm (by counting). Then, always choose the arm with the highest estimated probability of paying off. The problem with this strategy, which initially seems quite appealing, is that you might have initial bad luck with an arm that is actually pretty good, and arrive at a very low estimate of its probability of paying off. If this happens, you might never choose it again, thus preventing yourself from discovering that it’s actually better than it seems to be now."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.084,
+            0.613,
+            0.11
+          ],
+          "level": 2,
+          "content": "Bandit Strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.112,
+            0.443,
+            0.134
+          ],
+          "content": "• switch on a loser"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.135,
+            0.631,
+            0.158
+          ],
+          "content": "• always choose the apparent best"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.158,
+            0.751,
+            0.199
+          ],
+          "content": "• choose the apparent best 90% of the time; choose randomly the other 10%"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.2,
+            0.798,
+            0.241
+          ],
+          "content": "• consider both the amount of experience you’ve had with each arm and the payoff"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.243,
+            0.297,
+            0.264
+          ],
+          "content": "• etc…"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.871,
+            0.623
+          ],
+          "content": "Ultimately, the best strategies spend some time “exploring”: trying all the arms to see what their probabilities are like, and some time exploiting: doing the apparently best action to try to get reward. In general, the longer you expect to live (the longer your horizon, in the finite horizon case, or the closer your gamma is to 1, in the discounted case), the more time you should devote to exploration, because the more you stand to lose by converging too early to the wrong action."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.339,
+            0.084,
+            0.615,
+            0.11
+          ],
+          "content": "Bandit Strategies"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.111,
+            0.445,
+            0.135
+          ],
+          "content": "• switch on a loser"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.135,
+            0.633,
+            0.159
+          ],
+          "content": "• always choose the apparent best"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.158,
+            0.752,
+            0.2
+          ],
+          "content": "• choose the apparent best 90% of the time; choose randomly the other 10%"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.2,
+            0.799,
+            0.242
+          ],
+          "content": "• consider both the amount of experience you’ve had with each arm and the payoff"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.218,
+            0.242,
+            0.299,
+            0.265
+          ],
+          "content": "• etc…"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.286,
+            0.696,
+            0.313
+          ],
+          "content": "Arms are like actions in a single-state MDP"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 22 • 16"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.871,
+            0.562
+          ],
+          "content": "So, how does this relate to reinforcement learning? Well, you can think of the problem of choosing which action to take in a single-state MDP as being equivalent to the problem of choosing which arm to pull (though the rewards may have different distributions)."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.339,
+            0.084,
+            0.613,
+            0.11
+          ],
+          "level": 2,
+          "content": "Bandit Strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.111,
+            0.444,
+            0.135
+          ],
+          "content": "• switch on a loser"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.135,
+            0.632,
+            0.158
+          ],
+          "content": "• always choose the apparent best"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.158,
+            0.751,
+            0.2
+          ],
+          "content": "• choose the apparent best 90% of the time; choose randomly the other 10%"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.2,
+            0.798,
+            0.242
+          ],
+          "content": "• consider both the amount of experience you’ve had with each arm and the payoff"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.243,
+            0.297,
+            0.264
+          ],
+          "content": "• etc…"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.286,
+            0.695,
+            0.312
+          ],
+          "content": "Arms are like actions in a single-state MDP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.332,
+            0.773,
+            0.375
+          ],
+          "content": "Imagine what this problem is like in a multi-state MDP!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 22 • 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.881,
+            0.643
+          ],
+          "content": "It gets even more complicated when you consider exploring a whole MDP. Now, it’s as if you have a casino with many rooms, each room corresponding to a state in the MDP. And each room has many arms, corresponding to the actions available to the agent. Now, each time the agent pulls an arm, it gets some immediate payoff. And then it gets teleported to another room! according to a probability distribution that’s a function of the room and the arm. It’s really hard to think of the best exploration strategy for problems like this, and it’s really still open from a theoretical perspective how to do it."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 22 • 18"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.389,
+            0.073,
+            0.564,
+            0.102
+          ],
+          "content": "Q Function"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.773,
+            0.159
+          ],
+          "content": "A different way to write down the recursive value function equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.869,
+            0.603
+          ],
+          "content": "Assuming we have some way of choosing actions, now we’re going to focus on finding a way to estimate the value function directly. For a long time, people worked on methods of learning V\\* directly, but they ran into a variety of problems. Then someone had the insight that if we just wrote the equations for the optimal value function down in a slightly different way, it would make learning much easier."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.388,
+            0.073,
+            0.563,
+            0.102
+          ],
+          "level": 2,
+          "content": "Q Function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.111,
+            0.773,
+            0.16
+          ],
+          "content": "A different way to write down the recursive value function equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.182,
+            0.807,
+            0.253
+          ],
+          "content": "Q\\*(s,a) is the expected discounted future reward for starting in state s, taking action a, and continuing optimally thereafter."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.863,
+            0.602
+          ],
+          "content": "So, instead of trying to estimate V\\*, we’ll focus on a slightly different function, called $\\mathbf { Q } ^ { \\star } . \\mathbf { Q } ^ { \\star } ( \\mathbf { s } , \\mathbf { a } )$ is the expected discounted future reward for starting in state s, taking a as our first action, and then continuing optimally. It’s like V\\*, except that it specifies the first action, and that action could potentially be sub-optimal (we are going to compute $\\mathbf { Q } ^ { \\star }$ for each possible action in each state)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.436
+          ],
+          "content": "Lecture 22 • 19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.074,
+            0.563,
+            0.102
+          ],
+          "level": 2,
+          "content": "Q Function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.113,
+            0.771,
+            0.158
+          ],
+          "content": "A different way to write down the recursive value function equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.183,
+            0.806,
+            0.251
+          ],
+          "content": "$\\mathsf { Q } ^ { * } ( \\mathsf { s , } \\mathsf { a } )$ is the expected discounted future reward for starting in state $\\mathbb { S } _ { r }$ taking action ${ \\mathsf { a } } _ { r }$ and continuing optimally thereafter."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.296,
+            0.263,
+            0.711,
+            0.306
+          ],
+          "content": "Q ^ {*} (s, a) = R (s) + \\gamma \\sum_ {s ^ {\\prime}} \\Pr (s ^ {\\prime} \\mid s, a) \\max _ {a ^ {\\prime}} Q ^ {*} (s ^ {\\prime}, a ^ {\\prime})",
+          "image_source": "images/page_19_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 20"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.874,
+            0.622
+          ],
+          "content": "There’s a nice set of recursive equations for the Q values, just as there was for V. The Q value of being in state s and taking action a is the immediate reward, R(s), plus the discounted expected value of the future. We get the expected value of the future by taking an expectation over all possible next states, $\\mathbf { s } ^ { \\prime }$ . In each state $\\mathbf { s } ^ { \\prime }$ , we need to know the value of behaving optimally. We can get that by choosing, in each $\\mathbf { s } ^ { \\prime }$ , the action $\\pmb { a } ^ { \\prime }$ that maximizes $\\mathbf { Q } ^ { \\star } ( \\mathbf { s } ^ { \\prime } , \\mathbf { a } ^ { \\prime } )$"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.074,
+            0.563,
+            0.102
+          ],
+          "level": 2,
+          "content": "Q Function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.113,
+            0.771,
+            0.158
+          ],
+          "content": "A different way to write down the recursive value function equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.183,
+            0.806,
+            0.251
+          ],
+          "content": "$\\mathsf { Q } ^ { * } ( \\mathsf { s , } \\mathsf { a } )$ is the expected discounted future reward for starting in state $\\mathbb { S } _ { r }$ taking action ${ \\mathsf { a } } _ { r }$ and continuing optimally thereafter."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.297,
+            0.263,
+            0.711,
+            0.305
+          ],
+          "content": "Q ^ {*} (s, a) = R (s) + \\gamma \\sum_ {s ^ {\\prime}} \\Pr (s ^ {\\prime} \\mid s, a) \\max _ {a ^ {\\prime}} Q ^ {*} (s ^ {\\prime}, a ^ {\\prime})",
+          "image_source": "images/page_20_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.37,
+            0.343,
+            0.592,
+            0.379
+          ],
+          "content": "\\pi^ {*} (s) = \\underset {a} {\\arg \\max} Q ^ {*} (s, a)",
+          "image_source": "images/page_20_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "Lecture 22 • 21"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.479,
+            0.881,
+            0.602
+          ],
+          "content": "A convenient aspect of this approach is that if you know $\\mathbf { Q } ^ { \\star }$ , then it’s really easy to compute the optimal action in a state. All you have to do is take the action that gives the largest Q value in that state. (Back when we were using $V ^ { \\star }$ , it required knowing the transition probabilities to compute the optimal action, so this is considerably simpler. And it will be effective when the model is not explicitly known)."
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.388,
+            0.072,
+            0.564,
+            0.104
+          ],
+          "content": "Q Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 22"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.478,
+            0.857,
+            0.561
+          ],
+          "content": "Now we can look at an algorithm called Q learning, which estimates the $\\mathbf { Q } ^ { \\star }$ function directly, without estimating the transition probabilities. And, as we saw on the previous slide, if we know $\\mathbf { Q } ^ { \\star }$ , then finding the best way to behave is easy."
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.388,
+            0.073,
+            0.565,
+            0.103
+          ],
+          "content": "Q Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.111,
+            0.707,
+            0.139
+          ],
+          "content": "A piece of experience in the world is s,a,r,s ′"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 23"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.879,
+            0.583
+          ],
+          "content": "The learning algorithm deals with individual “pieces” of experience with the world. One piece of experience is a set of the current state s, the chosen action a, the reward r, and the next state s’. Each piece of experience will be folded into the Q values, and then thrown away, so there is no accumulation of old experience in memory."
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.387,
+            0.072,
+            0.566,
+            0.103
+          ],
+          "content": "Q Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.178,
+            0.11,
+            0.709,
+            0.14
+          ],
+          "content": "A piece of experience in the world is $\\langle s , a , r , s ^ { \\prime } \\rangle$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.161,
+            0.551,
+            0.191
+          ],
+          "content": "• Initialize Q(s,a) arbitrarily"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.477,
+            0.879,
+            0.522
+          ],
+          "content": "We start, as in value iteration, by initializing the Q function arbitrarily. Zero is usually a reasonable starting point."
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.388,
+            0.073,
+            0.565,
+            0.102
+          ],
+          "level": 2,
+          "content": "Q Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.112,
+            0.707,
+            0.139
+          ],
+          "content": "A piece of experience in the world is $\\langle s , a , r , s ^ { \\prime } \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.163,
+            0.551,
+            0.188
+          ],
+          "content": "• Initialize $\\mathbf { Q } ( \\mathbf { s , } \\mathbf { a } )$ arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.189,
+            0.633,
+            0.213
+          ],
+          "content": "• After each experience, update Q:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.221,
+            0.635,
+            0.246
+          ],
+          "content": "Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha q (r, s ^ {\\prime})",
+          "image_source": "images/page_24_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 22 • 25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.876,
+            0.683
+          ],
+          "content": "Now, after each experience, we update the Q function. The basic form of the update looks like this. The parameter alpha is a learning rate; usually it’s something like 0.1. So, we’re updating our estimate of $\\mathbf { Q ( s , } \\mathbf { a ) }$ to be mostly like our old value of $\\mathbf { Q } ( \\mathbf { s , } \\mathbf { a } )$ , but adding in a new term that depends on r and the new state. This kind of an update is essentially a running average of the new terms received on each step. The smaller alpha is, the longerterm the average is. With a small alpha, the system will be slow to converge, but the estimates will not fluctuate very much due to the randomness in the process. It is quite typical (and, in fact, required for convergence), to start with a large-ish alpha, and then decrease it over time."
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.388,
+            0.074,
+            0.565,
+            0.102
+          ],
+          "content": "Q Learning"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.112,
+            0.707,
+            0.139
+          ],
+          "content": "A piece of experience in the world is $\\langle s , a , r , s ^ { \\prime } \\rangle$"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.163,
+            0.55,
+            0.188
+          ],
+          "content": "• Initialize $\\mathbf { Q } ( \\mathbf { s , } \\mathbf { a } )$ arbitrarily"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.217,
+            0.189,
+            0.632,
+            0.213
+          ],
+          "content": "• After each experience, update Q:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.32,
+            0.222,
+            0.634,
+            0.246
+          ],
+          "content": "Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha q (r, s ^ {\\prime})",
+          "image_source": "images/page_25_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.32,
+            0.247,
+            0.569,
+            0.278
+          ],
+          "content": "q (r, s ^ {\\prime}) = r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime})",
+          "image_source": "images/page_25_equation_5.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.71,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 22 • 26"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.873,
+            0.582
+          ],
+          "content": "So, what is little $\\mathbf { q } ( \\mathbf { r , } \\mathbf { s } )$ going to be? You can think of it as an example of the value of taking action a in state s. The actual reward, r, is a sample of the expected reward $\\mathsf { R } ( \\mathbf { s } )$ And the actual next state, $\\mathbf { s } ^ { \\prime }$ , is a sample from the next state distribution. And the value of that state $\\mathbf { s } ^ { \\prime }$ is the value of the best action we can take in it, which is the max over $\\pmb { a } ^ { \\prime }$ of $\\mathbf { Q } ( \\mathbf { s } ^ { \\prime } , \\mathbf { a } ^ { \\prime } )$"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.388,
+            0.073,
+            0.565,
+            0.103
+          ],
+          "level": 2,
+          "content": "Q Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.111,
+            0.707,
+            0.139
+          ],
+          "content": "A piece of experience in the world is $\\langle s , a , r , s ^ { \\prime } \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.162,
+            0.551,
+            0.188
+          ],
+          "content": "• Initialize $\\mathbf { Q } ( \\mathbf { s , } \\mathbf { a } )$ arbitrarily"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.188,
+            0.632,
+            0.213
+          ],
+          "content": "• After each experience, update Q:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.221,
+            0.635,
+            0.246
+          ],
+          "content": "Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha q (r, s ^ {\\prime})",
+          "image_source": "images/page_26_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.247,
+            0.569,
+            0.278
+          ],
+          "content": "q (r, s ^ {\\prime}) = r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime})",
+          "image_source": "images/page_26_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.312,
+            0.799,
+            0.36
+          ],
+          "content": "Guaranteed to converge to optimal Q if the world is really an MDP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.419,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 27"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.875,
+            0.683
+          ],
+          "content": "This algorithm is guaranteed to converge to $\\mathbf { Q } ^ { \\star }$ , the optimal Q function, if the world is really an MDP, if we manage the learning rate correctly, and if we explore the world in such a way that we never completely ignore some actions. It’s kind of tricky to show that it converges, because there are really two iterative processes going on here at once. One is the usual kind of averaging we do, when we collect a lot of samples and try to estimate their mean. The other is the dynamic programming iteration done by value iteration, updating the value of a state based on the estimated values of its successors. Both of those iterations are going on at once here, and the algorithm is still guaranteed to work. Amazing."
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.71,
+            0.421,
+            0.794,
+            0.435
+          ],
+          "content": "Lecture 22 • 28"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.367,
+            0.073,
+            0.587,
+            0.102
+          ],
+          "level": 1,
+          "content": "Lots of issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.113,
+            0.625,
+            0.138
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.863,
+            0.662
+          ],
+          "content": "Although Q learning comes with a theoretical guarantee, it doesn’t come close to solving all of our problems. Just like value iteration, it requires that the states and actions be drawn from a small enough set that we can store the Q function in a table. In many domains, we’ll have very large or even continuous state spaces, making the direct representation approach impossible. We can try to use a function approximator, such as a neural network, to store the Q function, rather than a table. Such approaches are no longer theoretically guaranteed to work, and they can be a bit tricky, but sometimes they work very well."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.365,
+            0.073,
+            0.589,
+            0.102
+          ],
+          "content": "Lots of issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.112,
+            0.626,
+            0.138
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.216,
+            0.139,
+            0.454,
+            0.164
+          ],
+          "content": "• slow convergence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 29"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.878,
+            0.543
+          ],
+          "content": "Also, Q learning can sometimes be very slow to converge. There is a whole set of more advanced techniques in reinforcement learning that are aimed at addressing this problem."
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.365,
+            0.072,
+            0.589,
+            0.102
+          ],
+          "level": 2,
+          "content": "Lots of issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.111,
+            0.626,
+            0.139
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.139,
+            0.455,
+            0.165
+          ],
+          "content": "• slow convergence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.235,
+            0.571,
+            0.266
+          ],
+          "content": "Mostly used in large simulations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.436
+          ],
+          "content": "Lecture 22 • 30"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.478,
+            0.855,
+            0.603
+          ],
+          "content": "Because of the slow convergence, most of the applications of Q learning have been in very large domains for which we actually know a model. The domains are too large to solve directly using value iteration, though, so instead we use the known model to build a simulation. Then, using Q learning plus a function approximator, we learn to behave in the simulated environment, which yields a good control policy for the original problem."
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.365,
+            0.072,
+            0.588,
+            0.102
+          ],
+          "level": 2,
+          "content": "Lots of issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.111,
+            0.625,
+            0.139
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.139,
+            0.455,
+            0.165
+          ],
+          "content": "• slow convergence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.264,
+            0.393,
+            0.288
+          ],
+          "content": "• TD Gammon"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.873,
+            0.663
+          ],
+          "content": "The most striking success of reinforcement learning methods has been in the TD gammon system for learning to play backgammon. This system starts out not knowing anything about backgammon. It plays between 1 and 2 **million** games of backgammon against itself (that’s a lot of backgammon!). It has learned to play backgammon so well that it can now draw the human world-champion backgammon player. It is recognized by humans as the expert in at least some aspects of the game, and the human experts have begun playing differently in some situations because of moves advocated by TD gammon."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.365,
+            0.073,
+            0.587,
+            0.102
+          ],
+          "level": 2,
+          "content": "Lots of issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.112,
+            0.625,
+            0.138
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.139,
+            0.455,
+            0.165
+          ],
+          "content": "• slow convergence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.237,
+            0.569,
+            0.264
+          ],
+          "content": "Mostly used in large simulations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.264,
+            0.393,
+            0.287
+          ],
+          "content": "• TD Gammon"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.288,
+            0.473,
+            0.315
+          ],
+          "content": "• Elevator scheduling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.478,
+            0.87,
+            0.703
+          ],
+          "content": "Another interesting example is elevator scheduling. In a skyscraper office building with many floors and many elevators, there is a serious control problem in deciding which elevators to send to which floors next. The input to the system is the locations of the elevators and the set of all buttons that have been pressed (both inside the elevators and outside, where people are waiting to be picked up). Again, through learning in a simulation of the building, the system learns to control the elevators, mapping the current inputs to a direction for each elevator, which the goal of maximizing the throughput of people through the system. The learned policies are considerably more effective that the ones that are standardly built in by the elevator companies."
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.365,
+            0.072,
+            0.589,
+            0.102
+          ],
+          "content": "Lots of issues"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.214,
+            0.111,
+            0.627,
+            0.139
+          ],
+          "content": "• large or continuous state spaces"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.138,
+            0.457,
+            0.165
+          ],
+          "content": "• slow convergence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.179,
+            0.236,
+            0.571,
+            0.264
+          ],
+          "content": "Mostly used in large simulations"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.264,
+            0.395,
+            0.288
+          ],
+          "content": "• TD Gammon"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.215,
+            0.288,
+            0.475,
+            0.316
+          ],
+          "content": "• Elevator scheduling"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.709,
+            0.42,
+            0.795,
+            0.435
+          ],
+          "content": "Lecture 22 • 33"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.477,
+            0.876,
+            0.542
+          ],
+          "content": "So, reinforcement learning is a promising technology, but there are a lot of possible refinements that will have to be made before it has truly widespread application."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Microsoft PowerPoint - Lecture22Final",
+      "authors": [
+        "abgupt"
+      ],
+      "created_at": "2003-06-12T15:15:08+05:30",
+      "modified_at": "2003-06-12T15:15:08+05:30",
+      "creator_application": "PScript5.dll Version 5.2",
+      "producer_application": "Acrobat Distiller 5.0 (Windows)",
+      "page_count": 33,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 540.0,
+          "height_pt": 720.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

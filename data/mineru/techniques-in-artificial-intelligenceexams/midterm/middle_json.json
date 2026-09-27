@@ -1,0 +1,1215 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2001-10-19T21:08:47",
+      "producer_application": "GNU Ghostscript 5.50",
+      "page_count": 6,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.304,
+            0.213,
+            0.691,
+            0.24
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6.891 Midterm Examination"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.454,
+            0.296,
+            0.541,
+            0.319
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3/21/01"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 2,
+          "bbox": [
+            0.178,
+            0.361,
+            0.323,
+            0.384
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1 Search"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.175,
+            0.399,
+            0.818,
+            0.436
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the following graph, in which A is the start node and F is the goal node. Assume that nodes are visited at most once."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 4,
+          "bbox": [
+            0.206,
+            0.449,
+            0.564,
+            0.659
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 4,
+              "bbox": [
+                0.206,
+                0.449,
+                0.564,
+                0.659
+              ],
+              "image_path": "images/page_0_image_4.jpg",
+              "content": ""
+            },
+            {
+              "type": "image_footnote",
+              "index": 5,
+              "bbox": [
+                0.2,
+                0.679,
+                0.696,
+                0.698
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "1. In what order does uniform-cost search visit the nodes?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.493,
+            0.874,
+            0.503,
+            0.888
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.223,
+            0.16,
+            0.817,
+            0.197
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let the heuristic function  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h(n)"
+            },
+            {
+              "type": "text",
+              "content": "  be the minimum number of arcs between node n and the goal node."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.199,
+            0.209,
+            0.644,
+            0.228
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. Is this an admissible heuristic? Why or why not?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.199,
+            0.331,
+            0.818,
+            0.368
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3. In what order does  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A^{*}"
+            },
+            {
+              "type": "text",
+              "content": "  search visit the nodes? What are their estimated values when they are visited?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 3,
+          "bbox": [
+            0.178,
+            0.485,
+            0.529,
+            0.509
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2 Clausal Normal Form"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.176,
+            0.524,
+            0.514,
+            0.542
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Convert the following sentence to CNF."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 5,
+          "bbox": [
+            0.405,
+            0.559,
+            0.589,
+            0.58
+          ],
+          "image_path": "images/page_1_equation_5.jpg",
+          "content": "(A \\land B) \\lor \\neg (C \\to D)"
+        },
+        {
+          "type": "paragraph_title",
+          "index": 6,
+          "bbox": [
+            0.177,
+            0.73,
+            0.414,
+            0.753
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3 True or False"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.2,
+            0.768,
+            0.61,
+            0.786
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1. All sentences are either valid or unsatisfiable."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.199,
+            0.799,
+            0.819,
+            0.835
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. Iterative-deepening search requires space linear in the depth of the solution."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.888
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.199,
+            0.16,
+            0.778,
+            0.179
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3. If "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A \\models B"
+            },
+            {
+              "type": "text",
+              "content": ", then "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A"
+            },
+            {
+              "type": "text",
+              "content": " is true in all interpretations in which "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B"
+            },
+            {
+              "type": "text",
+              "content": " is true."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.199,
+            0.189,
+            0.818,
+            0.226
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4. Testing the validity of a sentence in first-order logic can be done in time exponential in the size of the sentence."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.199,
+            0.236,
+            0.817,
+            0.255
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5. DPLL runs in worst-case polynomial time in the length of the sentence."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 3,
+          "bbox": [
+            0.176,
+            0.281,
+            0.474,
+            0.305
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4 First Order Logic"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.175,
+            0.32,
+            0.819,
+            0.375
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Match the formula to the English sentence it encodes (note that there are more English sentences than formulas). Let  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Big(x)"
+            },
+            {
+              "type": "text",
+              "content": "  mean “x is big” (so  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\neg Big(x)"
+            },
+            {
+              "type": "text",
+              "content": "  means “x is small”) and let  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": "  mean “x is a cat.”"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.215,
+            0.392,
+            0.622,
+            0.41
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\exists x.Big(x)\\wedge Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": " A. All cats are big."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.215,
+            0.411,
+            0.748,
+            0.428
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\exists x.Big(x)\\to Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": " B. There is a small thing or a cat."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.215,
+            0.429,
+            0.68,
+            0.446
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\exists x.Big(x)\\lor Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": " C. All big things are cats."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.215,
+            0.447,
+            0.684,
+            0.465
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\forall x.Big(x)\\wedge Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": " D. Everything is a big cat."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.215,
+            0.465,
+            0.641,
+            0.482
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\forall x.Big(x)\\to Cat(x)\\quad \\mathrm{E}."
+            },
+            {
+              "type": "text",
+              "content": " All cats are small."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.215,
+            0.483,
+            0.642,
+            0.501
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\forall x.Big(x)\\lor Cat(x)"
+            },
+            {
+              "type": "text",
+              "content": " F. There is a big cat."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.442,
+            0.502,
+            0.698,
+            0.519
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "G. All small things are cats."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.442,
+            0.52,
+            0.729,
+            0.538
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "H. There is a big thing or a cat."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 13,
+          "bbox": [
+            0.177,
+            0.559,
+            0.561,
+            0.581
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5 Resolution-Refutation 1"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.177,
+            0.596,
+            0.762,
+            0.615
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use resolution-refutation to show that the following sentence is valid."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 15,
+          "bbox": [
+            0.408,
+            0.626,
+            0.587,
+            0.645
+          ],
+          "image_path": "images/page_2_equation_15.jpg",
+          "content": "(P \\to Q) \\lor (Q \\to P)"
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.889
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.177,
+            0.156,
+            0.383,
+            0.177
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6 Unification"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.175,
+            0.193,
+            0.819,
+            0.248
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Show the most general unifier (MGU) for each pair of sentences below. Also show the result of applying the MGU to the sentences. (Capital letters are constants, lowercase are variables.)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.2,
+            0.264,
+            0.443,
+            0.283
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P(x,x,A)"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P(z,B,y)"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.199,
+            0.34,
+            0.53,
+            0.359
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P(F(x), A, G(x))"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P(F(z), z, w)"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.177,
+            0.432,
+            0.584,
+            0.454
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7 First Order Clausal Form"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.176,
+            0.47,
+            0.584,
+            0.487
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Convert the following sentences to clausal form."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.2,
+            0.504,
+            0.417,
+            0.523
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\exists x.\\forall y.K(y,x)\\to D(y)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.199,
+            0.58,
+            0.375,
+            0.599
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\neg \\exists x.H(x)\\land C(x)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.2,
+            0.656,
+            0.362,
+            0.675
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\exists x.H(x)\\wedge C(x)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.201,
+            0.733,
+            0.353,
+            0.751
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\neg \\exists x.\\forall y.L(y,x)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.491,
+            0.875,
+            0.505,
+            0.888
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.176,
+            0.155,
+            0.564,
+            0.178
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8 Resolution-Refutation 2"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.176,
+            0.193,
+            0.818,
+            0.23
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use resolution-refutation to prove a contradiction from the following sentences. Show the two lines you are resolving and the MGU at each step."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.201,
+            0.245,
+            0.384,
+            0.265
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P(x)\\lor Q(F(x),x)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.2,
+            0.276,
+            0.363,
+            0.296
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "R(y)\\lor \\neg Q(y,z)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.201,
+            0.306,
+            0.318,
+            0.326
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3. "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\neg R(F(A))"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.201,
+            0.338,
+            0.288,
+            0.358
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4.  "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\neg P(A)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 6,
+          "bbox": [
+            0.176,
+            0.674,
+            0.511,
+            0.696
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "9 The Frame Problem"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.175,
+            0.711,
+            0.819,
+            0.748
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Why don't we need the equivalent of frame axioms in the STRIPS planning representation?"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.889
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.178,
+            0.155,
+            0.579,
+            0.179
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "10 Partially Ordered Plans"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.175,
+            0.194,
+            0.818,
+            0.231
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Here's a partially-ordered plan. Give three reasons why it is not yet correct. If any action is responsible for multiple threats, each threat counts separately."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.211,
+            0.265,
+            0.795,
+            0.642
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.211,
+                0.265,
+                0.795,
+                0.642
+              ],
+              "image_path": "images/page_5_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.492,
+            0.874,
+            0.506,
+            0.889
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

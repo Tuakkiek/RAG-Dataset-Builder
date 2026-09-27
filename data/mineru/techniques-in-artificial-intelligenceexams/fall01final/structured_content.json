@@ -1,0 +1,1532 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.391,
+            0.205,
+            0.606,
+            0.227
+          ],
+          "content": "6.825: Final Exam"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.295,
+            0.784,
+            0.325
+          ],
+          "content": "There are 130 points total. Points for individual problems are indicated in bold."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.347,
+            0.336,
+            0.366
+          ],
+          "level": 2,
+          "content": "1 Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.379,
+            0.784,
+            0.456
+          ],
+          "content": "(10) You’re a taxi driver. Your taxi can hold 4 passengers. Passengers pay a flat fee for a ride to the airport, so goal is to pick up 4 passengers and take them to the airport in the smallest number of miles. Your world can be modeled as a graph of locations with distances between them. Some, but not all, of the locations have passengers that you can pick up."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.467,
+            0.589,
+            0.482
+          ],
+          "content": "a. Describe the state space of this search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.492,
+            0.686,
+            0.508
+          ],
+          "content": "b. What would be a good cost function for this search problem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.517,
+            0.784,
+            0.579
+          ],
+          "content": "c. Now, consider a case where passengers have to pay according to how far away they are from the airport when they’re picked up (note: they don’t pay according to how long a ride they take in your taxi, but according to the length of the shortest path from their pickup-point to the airport)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.583,
+            0.589,
+            0.598
+          ],
+          "content": "Describe the state space of this search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.607,
+            0.782,
+            0.639
+          ],
+          "content": "d. What would be a good cost function for this version of the problem? You still have a desire to save gas."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.648,
+            0.783,
+            0.679
+          ],
+          "content": "e. Is uniform cost search guaranteed to find the optimal solution in either or both versions of the problem? Why or why not?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.701,
+            0.436,
+            0.72
+          ],
+          "level": 2,
+          "content": "2 FOL Semantics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.732,
+            0.783,
+            0.779
+          ],
+          "content": "(6) Consider a world with objects A, B, and C. We’ll look at a logical languge with constant symbols X, Y , and Z, function symbols f and g, and predicate symbols $p ,   q ,$ and r. Consider the following interpretation:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.238,
+            0.787,
+            0.493,
+            0.803
+          ],
+          "content": "\\bullet I (X) = \\mathbf {A}, I (Y) = \\mathbf {A}, I (Z) = \\mathbf {B}",
+          "image_source": "images/page_0_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.239,
+            0.812,
+            0.485,
+            0.829
+          ],
+          "content": "\\bullet I (f) = \\{\\langle \\mathbf {A}, \\mathbf {B} \\rangle , \\langle \\mathbf {B}, \\mathbf {C} \\rangle , \\langle \\mathbf {C}, \\mathbf {C} \\rangle \\}",
+          "image_source": "images/page_0_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.239,
+            0.838,
+            0.363,
+            0.854
+          ],
+          "content": "\\bullet I (p) = \\{\\mathbf {A}, \\mathbf {B} \\}",
+          "image_source": "images/page_0_equation_14.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.239,
+            0.158,
+            0.341,
+            0.175
+          ],
+          "content": "$I ( q ) = \\{ \\mathbf { C } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.239,
+            0.183,
+            0.483,
+            0.2
+          ],
+          "content": "• I(r) = {hB, Ai, hC, Bi, hC, Ci}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.209,
+            0.782,
+            0.239
+          ],
+          "content": "For each of the following sentences, say whether it is true or false in the given interpretation I:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.249,
+            0.304,
+            0.265
+          ],
+          "content": "a. $q ( f ( Z ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.274,
+            0.303,
+            0.289
+          ],
+          "content": "b. $r ( X , Y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.299,
+            0.344,
+            0.314
+          ],
+          "content": "c. $\\exists w . f ( w ) = Y$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.325,
+            0.349,
+            0.34
+          ],
+          "content": "d. $\\forall w . r ( f ( w ) , w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.35,
+            0.512,
+            0.365
+          ],
+          "content": "e. $\\forall u , v . r ( u , v ) \\to ( \\forall w . r ( u , w ) \\to v = w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.374,
+            0.512,
+            0.39
+          ],
+          "content": "f. $\\forall u , v . r ( u , v ) \\to ( \\forall w . r ( w , v ) \\to u = w )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.413,
+            0.434,
+            0.432
+          ],
+          "level": 2,
+          "content": "3 Interpretations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.444,
+            0.783,
+            0.489
+          ],
+          "content": "(6) Using the same set of symbols as in the previous problem, for each group of sentences below, provide an interpretation that makes the sentences true, or show that it’s impossible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.5,
+            0.419,
+            0.515
+          ],
+          "content": "a. $\\exists w . p ( w ) \\land \\exists w . q ( w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.52,
+            0.405,
+            0.535
+          ],
+          "content": "$\\neg \\exists w . p ( w ) \\land q ( w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.539,
+            0.43,
+            0.555
+          ],
+          "content": "$\\forall u . p ( u ) \\rightarrow \\exists v . r ( u , v )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.565,
+            0.375,
+            0.58
+          ],
+          "content": "b. $\\forall u . \\exists v . r ( u , v )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.263,
+            0.585,
+            0.379,
+            0.6
+          ],
+          "content": "$\\exists u , v . \\neg r ( u , v )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.605,
+            0.448,
+            0.621
+          ],
+          "content": "$\\forall v . ( \\exists u . r ( u , v ) ) \\leftrightarrow p ( v ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.63,
+            0.435,
+            0.646
+          ],
+          "content": "c. $\\forall u , v . ( p ( v ) \\to r ( u , v ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.263,
+            0.65,
+            0.379,
+            0.665
+          ],
+          "content": "$\\exists u , v . \\neg r ( u , v )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.263,
+            0.671,
+            0.336,
+            0.686
+          ],
+          "content": "$\\exists v . p ( v )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.709,
+            0.387,
+            0.727
+          ],
+          "level": 2,
+          "content": "4 Unification"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.74,
+            0.782,
+            0.77
+          ],
+          "content": "(6) For each pair of literals below, specify a most general unifier, or indicate that they are not unifiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.779,
+            0.422,
+            0.796
+          ],
+          "content": "a. $r ( f ( x ) , y )$ and $r ( z , g ( w ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.805,
+            0.419,
+            0.821
+          ],
+          "content": "b. $r(f(x),x)$ and $r ( y , g ( y ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.83,
+            0.434,
+            0.846
+          ],
+          "content": "c. $r(a,C,a)$ and $r(f(x),x,y)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.155,
+            0.408,
+            0.173
+          ],
+          "level": 2,
+          "content": "5 Clausal form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.186,
+            0.568,
+            0.201
+          ],
+          "content": "(6) Convert each sentence below to clausal form."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.211,
+            0.403,
+            0.227
+          ],
+          "content": "a. $\\forall y . \\exists x . r ( x , y ) \\lor s ( x , y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.236,
+            0.406,
+            0.252
+          ],
+          "content": "b. $\\forall y . ( \\exists x . r ( x , y ) ) \\rightarrow p ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.261,
+            0.407,
+            0.277
+          ],
+          "content": "c. $\\forall y . \\exists x . ( r ( x , y ) \\rightarrow p ( x ) )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.3,
+            0.512,
+            0.32
+          ],
+          "level": 2,
+          "content": "6 Operator descriptions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.33,
+            0.782,
+            0.361
+          ],
+          "content": "(6) Consider a world with a push-button light switch. Pushing the button changes the state of the light from on to off, or from off to on."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.371,
+            0.553,
+            0.386
+          ],
+          "content": "a. Describe this domain in situation calculus."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.396,
+            0.662,
+            0.412
+          ],
+          "content": "b. Describe this domain using one or more strips operators."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.434,
+            0.387,
+            0.454
+          ],
+          "level": 2,
+          "content": "7 GraphPlan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.465,
+            0.784,
+            0.511
+          ],
+          "content": "(13) Draw the graphplan graph for a depth-two plan given the following operator descriptions. Starting state is: not have-keys, not open, not painted. Goal state is: open, painted. Show all mutexes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.239,
+            0.52,
+            0.509,
+            0.536
+          ],
+          "content": "• Get Keys: (Pre: ) (Eff: have-keys)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.239,
+            0.545,
+            0.549,
+            0.562
+          ],
+          "content": "• Open Door: (Pre: not open) (Eff: open)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.239,
+            0.571,
+            0.567,
+            0.587
+          ],
+          "content": "• Paint Door: (Pre: not open) (Eff: painted)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.609,
+            0.532,
+            0.628
+          ],
+          "level": 2,
+          "content": "8 Conditional Probability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.64,
+            0.781,
+            0.686
+          ],
+          "content": "(8) We would like to compute $\\operatorname* { P r } ( a , b | c , d )$ but we only have available to us the following quantities: $\\operatorname* { P r } ( a ) ,   \\operatorname* { P r } ( b ) ,   \\operatorname* { P r } ( c ) ,   \\operatorname* { P r } ( a | d ) ,   \\operatorname* { P r } ( b | d ) ,   \\operatorname* { P r } ( c | d ) ,   \\operatorname* { P r } ( d | a )$ , $\\operatorname* { P r } ( a , b ) ,   \\operatorname* { P r } ( c , d ) ,   \\operatorname* { P r } ( a | c , d ) ,   \\operatorname* { P r } ( b | c , d ) ,   \\operatorname* { P r } ( c | a , b ) ,   \\operatorname* { P r } ( d | a , b )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.686,
+            0.783,
+            0.732
+          ],
+          "content": "For each of the assumptions below, give a set of terms that is sufficient to compute the desired probability, or “none” if it can’t be determined from the given quantities."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.741,
+            0.636,
+            0.756
+          ],
+          "content": "a. A and B are conditionally independent given C and D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.765,
+            0.635,
+            0.781
+          ],
+          "content": "b. C and D are conditionally independent given A and B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.791,
+            0.431,
+            0.806
+          ],
+          "content": "c. A and B are independent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.816,
+            0.636,
+            0.831
+          ],
+          "content": "d. A, B, and C are all conditionally independent given D"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.155,
+            0.488,
+            0.174
+          ],
+          "level": 2,
+          "content": "Network Structures"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.268,
+            0.212,
+            0.356,
+            0.291
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.411,
+            0.216,
+            0.429,
+            0.228
+          ],
+          "content": "G2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.263,
+            0.307,
+            0.388,
+            0.388
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.411,
+            0.214,
+            0.523,
+            0.294
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.412,
+            0.325,
+            0.516,
+            0.383
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.401,
+            0.781,
+            0.433
+          ],
+          "content": "(12) Following is a list of conditional independence statements. For each statement, name all of the graph structures, G1 – G4, or “none” that imply it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.442,
+            0.556,
+            0.457
+          ],
+          "content": "a. A is conditionally independent of B given C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.467,
+            0.556,
+            0.482
+          ],
+          "content": "b. A is conditionally independent of B given D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.492,
+            0.556,
+            0.508
+          ],
+          "content": "c. B is conditionally independent of D given A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.517,
+            0.556,
+            0.532
+          ],
+          "content": "d. B is conditionally independent of D given C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.542,
+            0.398,
+            0.557
+          ],
+          "content": "e. B is independent of C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.567,
+            0.554,
+            0.583
+          ],
+          "content": "f. B is conditionally independent of C given A"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.216,
+            0.605,
+            0.52,
+            0.625
+          ],
+          "level": 2,
+          "content": "10 Counting Parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.637,
+            0.782,
+            0.668
+          ],
+          "content": "(4) How many independent parameters are required to specify a Bayesian network given each of the graph structures G1 – G4? Assume the nodes are binary."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.69,
+            0.512,
+            0.708
+          ],
+          "level": 2,
+          "content": "11 Variable Elimination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.72,
+            0.242,
+            0.736
+          ],
+          "content": "(5)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.301,
+            0.176,
+            0.511,
+            0.274
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.384,
+            0.784,
+            0.414
+          ],
+          "content": "a. In this network, what is the size of the biggest factor that gets generated if we do variable elimination with elimination order A,B,C,D,E, F, G?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.422,
+            0.662,
+            0.438
+          ],
+          "content": "b. Give an elimination order that has a smaller largest factor."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.46,
+            0.529,
+            0.479
+          ],
+          "level": 2,
+          "content": "12 Parameter Estimation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.491,
+            0.242,
+            0.507
+          ],
+          "content": "(2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.515,
+            0.782,
+            0.545
+          ],
+          "content": "a. Given the following data set, what is the maximum likelihood estimate for Pr(A|B)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.554,
+            0.625,
+            0.569
+          ],
+          "content": "b. What result do you get with the Bayesian correction?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.241,
+            0.575,
+            0.338,
+            0.653
+          ],
+          "content": "| A | B | C |\n| --- | --- | --- |\n| 0 | 1 | 0 |\n| 0 | 0 | 0 |\n| 1 | 1 | 0 |\n| 1 | 1 | 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_7.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.216,
+            0.67,
+            0.462,
+            0.69
+          ],
+          "level": 2,
+          "content": "13 Decision Theory"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.702,
+            0.782,
+            0.747
+          ],
+          "content": "(13) You’re an olympic skier. In practice today, you fell down and hurt your ankle. Based on the results of an x-ray, the doctor thinks that it’s broken with probability 0.2. So, the question is, should you ski in the race tomorrow?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.748,
+            0.784,
+            0.822
+          ],
+          "content": "If you ski, you think you’ll win with probability 0.1. If your leg is broken and you ski on it, then you’ll damage it further. So, your utilities are as follows: if you win the race and your leg isn’t broken, +100; if you win and your leg is broken, +50; if you lose and your leg isn’t broken 0; if you lose and your leg is broken -50."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.824,
+            0.782,
+            0.853
+          ],
+          "content": "If you don’t ski, then if your leg is broken your utility is -10, and if it isn’t, it’s 0."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.159,
+            0.526,
+            0.175
+          ],
+          "content": "a. Draw the decision tree for this problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.183,
+            0.779,
+            0.199
+          ],
+          "content": "b. Evaluate the tree, indicating the best action choice and its expected utility."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.209,
+            0.784,
+            0.269
+          ],
+          "content": "You might be able to gather some more information about the state of your leg by having more tests. You might be able to gather more information about whether you’ll win the race by talking to your coach or the TV sports commentators."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.277,
+            0.783,
+            0.309
+          ],
+          "content": "c. Compute the expected value of perfect information about the state of your leg."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.317,
+            0.783,
+            0.348
+          ],
+          "content": "d. Compute the expected value of perfect information about whether you’ll win the race."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.356,
+            0.784,
+            0.402
+          ],
+          "content": "In the original statement of the problem, the probability that your leg is broken and the probability that you’ll win the race are independent. That’s a pretty unreasonable assumption."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.41,
+            0.784,
+            0.441
+          ],
+          "content": "f. Is it possible to use a decision tree in the case that the probability that you’ll win the race depends on whether your leg is broken?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.462,
+            0.586,
+            0.481
+          ],
+          "level": 2,
+          "content": "14 Markov Decision Processes"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.229,
+            0.519,
+            0.536,
+            0.701
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.709,
+            0.784,
+            0.77
+          ],
+          "content": "(10) What are the values of the states in the following MDP, assuming $\\gamma =$ 0.9? In order to keep the diagram for being too complicated, we’ve drawn the transition probabilities for action 1 in one figure and the transition probabilities for action 2 in another. The rewards for the states are the same in both cases."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.791,
+            0.464,
+            0.81
+          ],
+          "level": 2,
+          "content": "15 Neural networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.823,
+            0.784,
+            0.855
+          ],
+          "content": "(9) I have a collection of data, $d _ { i } ,$ each element of which is a number between 0 and 1. I want to fit a parameter p to the data by minimizing mean squared"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.159,
+            0.782,
+            0.19
+          ],
+          "continues_prev": true,
+          "content": "error. $\\mathrm { S o } ,$ the error for parameter $p$ is the sum, over all the data, of the squared difference between p and the data point:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.413,
+            0.198,
+            0.582,
+            0.23
+          ],
+          "content": "\\mathrm{err} (p) = \\sum_ {i} (p - d _ {i}) ^ {2}.",
+          "image_source": "images/page_6_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.24,
+            0.783,
+            0.27
+          ],
+          "content": "Which, if any, of the following are gradient descent rules for updating p based on data?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.28,
+            0.37,
+            0.296
+          ],
+          "content": "a. $p \\gets p + . 1 ( p - d _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.304,
+            0.371,
+            0.32
+          ],
+          "content": "b. $p \\gets p - . 1 ( p - d _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.329,
+            0.396,
+            0.346
+          ],
+          "content": "c. $\\textstyle p \\leftarrow p + . 1 \\sum _ { i } ( p - d _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.353,
+            0.396,
+            0.37
+          ],
+          "content": "d. $\\textstyle p \\leftarrow p - . 1 \\sum _ { i } ( p - d _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.378,
+            0.359,
+            0.396
+          ],
+          "content": "e. $\\textstyle p \\leftarrow p + . 1 \\sum _ { i } d _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.403,
+            0.359,
+            0.42
+          ],
+          "content": "f. $\\textstyle p \\leftarrow p - . 1 \\sum _ { i } d _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.427,
+            0.378,
+            0.445
+          ],
+          "content": "g. $p \\gets p + . 1 ( p - d _ { i } ) ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.451,
+            0.378,
+            0.469
+          ],
+          "content": "h. $p \\gets p - . 1 ( p - d _ { i } ) ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.476,
+            0.361,
+            0.495
+          ],
+          "content": "i. $\\textstyle p \\leftarrow \\sum _ { i } ( p - d _ { i } ) ^ { 2 }$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.516,
+            0.499,
+            0.535
+          ],
+          "level": 2,
+          "content": "16 Misc. True or False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.546,
+            0.252,
+            0.562
+          ],
+          "content": "(14)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.574,
+            0.593,
+            0.59
+          ],
+          "content": "a. Walksat sometimes moves to a worse assignment."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.598,
+            0.604,
+            0.614
+          ],
+          "content": "b. $\\mathrm { A } ^ { * }$ finds better solutions than uniform cost search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.624,
+            0.782,
+            0.654
+          ],
+          "content": "c. If sentence $\\phi$ entails sentence $\\psi ,$ then $\\phi$ is true in only a (possibly proper) subset of the interpretations in which $\\psi$ is true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.663,
+            0.784,
+            0.694
+          ],
+          "content": "d. If the premises are consistent, first-order resolution terminates without a contradiction."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.215,
+            0.704,
+            0.783,
+            0.733
+          ],
+          "content": "e. If first-order resolution terminates without a contradiction, the premises are consistent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.743,
+            0.783,
+            0.774
+          ],
+          "content": "f. The GraphPlan graph can have size exponential in the size of the domain description."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.783,
+            0.783,
+            0.814
+          ],
+          "content": "g. The GraphPlan algorithm runs in time exponential in the size of the domain description."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.823,
+            0.782,
+            0.854
+          ],
+          "content": "h. If A and B are independent, then A and B are conditionally independent given C."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.158,
+            0.783,
+            0.189
+          ],
+          "content": "i. The variable elimination algorithm runs in time polynomial in the size of the CPTs in the network."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.216,
+            0.199,
+            0.702,
+            0.215
+          ],
+          "content": "j. The EM algorithm assigns hidden variables their optimal values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.224,
+            0.783,
+            0.255
+          ],
+          "content": "k. Using the Bayesian correction in parameter estimation means that we no longer get the model that maximizes the likelihood of the data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.265,
+            0.779,
+            0.28
+          ],
+          "content": "l. It is rational to buy insurance if you’re risk-seeking in the domain of losses."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.209,
+            0.29,
+            0.782,
+            0.32
+          ],
+          "content": "m. The discounted model of optimality in MDPs is inappropriate for agents that have a known finite lifetime."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.33,
+            0.782,
+            0.359
+          ],
+          "content": "n. In reinforcement learning, the agent needs to know the reward function in advance."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "8"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2002-12-03T16:07:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.10a",
+      "page_count": 8,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

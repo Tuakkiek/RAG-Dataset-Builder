@@ -1,0 +1,12 @@
+| Algorithm | Input | Output | Learns by | Complexity Control | Notes |
+| --- | --- | --- | --- | --- | --- |
+| • Naive Bayes | boolean feature vector | discrete | estimating conditional probabilities (counting) | Assumes independent features | LaPlace Correction, XOR |
+| • basic Decision Tree | boolean feature vector | discrete | minimizing average entropy at the branches | parametric: leaf size, minimum entropy |  |
+| • Continuous-Valued Decision Tree | real feature vector | discrete | minimizing average entropy at the branches |  |  |
+| • K-Nearest Neighbor | real feature vector | discrete | memorizing all points | parametric: K | Scaling |
+| • Perceptron | real feature vector | discrete | maximizing margin (weight space search) | limited to linear separator | guarantees separator if it exists |
+| • SVM | real feature vector | discrete | maximizing margin (quadratic programming) | maximizes margin in error function |  |
+| • Neural Net | real feature vector | discrete | gradient descent (weight space search) | architecture | Architecture, Scaling |
+| • Neural Net Regression | real feature vector | real | gradient descent (weight space search) | architecture | Architecture, Scaling |
+| • Regression Trees | real feature vector | real | minimizing variance at the branches |  | Kernel functions (not SVM kernels) |
+| • Nearest Neighbor Regression | real feature vector | real | memorizing all points |  | Kernel functions (not SVM kernels) |

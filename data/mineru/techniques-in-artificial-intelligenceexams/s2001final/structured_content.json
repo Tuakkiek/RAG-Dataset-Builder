@@ -1,0 +1,888 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.328,
+            0.213,
+            0.667,
+            0.24
+          ],
+          "level": 1,
+          "content": "6.891 Final Examination"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.455,
+            0.296,
+            0.539,
+            0.319
+          ],
+          "level": 2,
+          "content": "5/23/01"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.361,
+            0.442,
+            0.384
+          ],
+          "level": 2,
+          "content": "1 Gaussian Units"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.399,
+            0.819,
+            0.473
+          ],
+          "content": "Consider a different kind of computing unit for a neural network. Rather than a sigmoid function, it will use a Gaussian. That is, given an input vector x (augmented with a 1 to add the threshold) and a weight vector w the output of the unit will be:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.444,
+            0.49,
+            0.55,
+            0.51
+          ],
+          "content": "o = g (x \\cdot w)",
+          "image_source": "images/page_0_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.524,
+            0.263,
+            0.541
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.439,
+            0.553,
+            0.556,
+            0.575
+          ],
+          "content": "g (z) = e ^ {- z ^ {2}}.",
+          "image_source": "images/page_0_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.591,
+            0.818,
+            0.634
+          ],
+          "content": "1. Derive a gradient-descent training rule for a single Gaussian unit (remember that $\\begin{array} { r } { \\frac { d ( e ^ { f ( x ) } ) } { d x } = e ^ { f ( x ) } \\frac { d ( f ( x ) ) } { d x } ) } \\end{array}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.874,
+            0.504,
+            0.888
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.161,
+            0.819,
+            0.22
+          ],
+          "content": "2. Assume that we assign any x for which the output of the unit is greater than or equal to $\\frac { g ( 0 ) } { 2 }$ to class 1 and for which the output is less than $\\frac { g ( 0 ) } { 2 }$ to class 2. What kind of separator do we get?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.337,
+            0.492,
+            0.359
+          ],
+          "level": 2,
+          "content": "2 Network Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.375,
+            0.818,
+            0.393
+          ],
+          "content": "Show a Bayesian network structure that encodes the following relationships:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.409,
+            0.416,
+            0.426
+          ],
+          "content": "• A is independent of B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.44,
+            0.475,
+            0.458
+          ],
+          "content": "• A is dependent on B given C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.47,
+            0.406,
+            0.488
+          ],
+          "content": "• A is dependent on D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.501,
+            0.491,
+            0.52
+          ],
+          "content": "• A is independent of D given C."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.888
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.155,
+            0.422,
+            0.178
+          ],
+          "level": 2,
+          "content": "3 At The Races"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.194,
+            0.469,
+            0.212
+          ],
+          "content": "You go to the racetrack. You can:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.225,
+            0.498,
+            0.242
+          ],
+          "content": "• Decline to place any bets at all."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.255,
+            0.819,
+            0.292
+          ],
+          "content": "• Bet on Belle. It costs \\$1 to place a bet; you will be paid \\$2 if she wins (for a net profit of \\$1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.304,
+            0.819,
+            0.341
+          ],
+          "content": "• Bet on Jeb. It costs \\$1 to place a bet; you will be paid \\$11 if he wins (for a net profit of \\$10)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.353,
+            0.819,
+            0.391
+          ],
+          "content": "You believe that Belle has probability 0.7 of winning and that Jeb has probability 0.1 of winning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.405,
+            0.821,
+            0.444
+          ],
+          "content": "1. Your goal is to maximize the expected value of your actions. What, if any, bet should you place, and what is your expected value?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.614,
+            0.819,
+            0.65
+          ],
+          "content": "2. Someone comes and offers you gambler’s anti-insurance. If you agree to it,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.248,
+            0.663,
+            0.489,
+            0.682
+          ],
+          "content": "• they play you \\$2 up front"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.247,
+            0.688,
+            0.597,
+            0.707
+          ],
+          "content": "• you agree to pay 50% of any winnings."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.223,
+            0.718,
+            0.819,
+            0.755
+          ],
+          "content": "How would it affect the expected value of each of your courses of action? What would be the best action to take now?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.874,
+            0.505,
+            0.889
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.155,
+            0.489,
+            0.178
+          ],
+          "level": 2,
+          "content": "4 Still At The Races"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.194,
+            0.818,
+            0.23
+          ],
+          "content": "A shady character comes to offer you a free tip (a tip is a piece of information): he says Belle did not eat her breakfast. Assume that:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.243,
+            0.818,
+            0.279
+          ],
+          "content": "• The probability that a horse will win is dependent on the horse’s health and its speed."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.292,
+            0.629,
+            0.31
+          ],
+          "content": "• A horse’s health and its speed are independent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.322,
+            0.818,
+            0.358
+          ],
+          "content": "• A healthy horse has a higher probability of eating breakfast than does a sick horse."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.371,
+            0.71,
+            0.39
+          ],
+          "content": "• Your informant is known to be accurate 80% of the time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.402,
+            0.819,
+            0.476
+          ],
+          "content": "Draw a Bayesian network with 5 variables (T = you got this tip; $\\mathrm { ~ B ~ } { = }$ Belle ate her breakfast; H = Belle is healthy; W = Belle will win; F = Belle is fast). The relationships between the variables should reflect the problem description."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.657,
+            0.818,
+            0.695
+          ],
+          "content": "What is $P ( W )$ (in terms of values stored in the network’s conditional probability tables)?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.875,
+            0.505,
+            0.888
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.16,
+            0.818,
+            0.197
+          ],
+          "content": "What is $P ( W | T )$ (in terms of values stored in the network’s conditional probability tables)?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.406,
+            0.305,
+            0.43
+          ],
+          "level": 2,
+          "content": "5 Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.444,
+            0.818,
+            0.499
+          ],
+          "content": "Write the following sentences in first-order logic, using $\\mathrm { S } ( \\mathbf { x } )$ for slow, $\\mathrm { S ( x , } \\mathrm { y ) }$ to mean that x is slower than $\\mathrm { y ,   H ( x ) }$ for horse $\\mathrm { B } ( \\mathbf { x } )$ for brown, and $\\mathrm { W ( x , } \\mathrm { r ) }$ for horse x winning race r."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.515,
+            0.45,
+            0.532
+          ],
+          "content": "1. All brown horses are slow."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.569,
+            0.449,
+            0.586
+          ],
+          "content": "2. All slow horses are brown."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.622,
+            0.507,
+            0.64
+          ],
+          "content": "3. All slow things are brown horses."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.676,
+            0.469,
+            0.692
+          ],
+          "content": "4. Some slow horses are brown."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.73,
+            0.461,
+            0.746
+          ],
+          "content": "5. The slowest horse is brown."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.199,
+            0.784,
+            0.496,
+            0.8
+          ],
+          "content": "6. There is a winner in every race."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.888
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.177,
+            0.155,
+            0.415,
+            0.178
+          ],
+          "level": 2,
+          "content": "6 Clausal Form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.194,
+            0.807,
+            0.212
+          ],
+          "content": "Given the following sentence in first-order logic, convert it to clausal form:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.416,
+            0.229,
+            0.577,
+            0.248
+          ],
+          "content": "\\forall r. o (r) \\rightarrow \\exists x. w (x)",
+          "image_source": "images/page_5_equation_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.382,
+            0.305,
+            0.406
+          ],
+          "level": 2,
+          "content": "7 Logic"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.419,
+            0.488,
+            0.576,
+            0.508
+          ],
+          "content": "(\\exists x. P (x)) \\to P (b)",
+          "image_source": "images/page_5_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.416,
+            0.522,
+            0.579,
+            0.542
+          ],
+          "content": "\\exists x. (P (x)) \\to P (b)\\left. \\right)",
+          "image_source": "images/page_5_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.42,
+            0.819,
+            0.474
+          ],
+          "content": "In a domain with only three objects, named by constants $$\\mathrm { a , ~ b , }$$ and $\\mathrm { c } ,$ give values for $P(a) ,  P(b)$ , and $\\mathrm { P ( c ) }$ that makes one of these sentences true and the other false."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.875,
+            0.505,
+            0.889
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.155,
+            0.624,
+            0.18
+          ],
+          "level": 2,
+          "content": "8 Bayesian Network Structure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.194,
+            0.67,
+            0.211
+          ],
+          "content": "Consider a Bayesian network with the following structure:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.205,
+            0.21,
+            0.566,
+            0.483
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.206,
+                0.488,
+                0.524,
+                0.507
+              ],
+              "content": "Does computing P(M|A) depend on:"
+            }
+          ],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.517,
+            0.302,
+            0.537
+          ],
+          "content": "$P ( L | J ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.57,
+            0.304,
+            0.591
+          ],
+          "content": "$P ( K | I ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.624,
+            0.308,
+            0.645
+          ],
+          "content": "$P ( D | B ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.678,
+            0.309,
+            0.698
+          ],
+          "content": "$P ( H | G ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.733,
+            0.82,
+            0.788
+          ],
+          "content": "In the network above, if we decided not to include G in our network, but still wanted to model the joint distribution of all the other variables, what is the smallest network structure we could use?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.888
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.178,
+            0.155,
+            0.436,
+            0.178
+          ],
+          "level": 2,
+          "content": "9 True and False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.194,
+            0.818,
+            0.23
+          ],
+          "content": "1. It is sometimes worth paying for a test even if you will choose the same alternative no matter what the test results are."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.243,
+            0.818,
+            0.279
+          ],
+          "content": "2. A person for whom it is rational to play the lottery has a convex utility function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.292,
+            0.818,
+            0.329
+          ],
+          "content": "3. If a dataset of dimension n is not linearly separable, it can be made linearly separable by adding extra features."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.341,
+            0.818,
+            0.378
+          ],
+          "content": "4. A network of perceptrons with step-function outputs induces a linear separator."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.39,
+            0.601,
+            0.408
+          ],
+          "content": "5. Inference in first-order logic is NP-complete."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.42,
+            0.739,
+            0.439
+          ],
+          "content": "6. A logical sentence is valid if it is true in some interpretation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.452,
+            0.818,
+            0.487
+          ],
+          "content": "7. Iterative deepening search requires time exponential in the depth of the solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.5,
+            0.82,
+            0.536
+          ],
+          "content": "8. Iterative deepening search requires space exponential in the depth of the solution."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.874,
+            0.505,
+            0.888
+          ],
+          "content": "8"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "final_dvi",
+      "producer_application": "PStill 1.55.9 by Dipl.-Ing. F. Siegert",
+      "page_count": 8,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

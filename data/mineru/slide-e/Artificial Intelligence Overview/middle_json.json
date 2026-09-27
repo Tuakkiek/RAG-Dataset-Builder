@@ -1,0 +1,1946 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "GNU Ghostscript 6.52",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 792.0,
+          "height_pt": 612.0,
+          "image_rotations": {
+            "2": 90
+          }
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 792.0,
+          "height_pt": 612.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.137,
+            0.463,
+            0.735,
+            0.584
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Class Notes CIS 675 Artificial Intelligence : Overview"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "footer",
+          "index": 1,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 2,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.047,
+            0.386,
+            0.271,
+            0.434
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "AI: Overview"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.488,
+            0.336,
+            0.526
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 An Attempt to clas sify"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.068,
+            0.555,
+            0.219,
+            0.59
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Foundation"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.068,
+            0.623,
+            0.251,
+            0.66
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Modern topics"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 4,
+          "bbox": [
+            0.0,
+            0.954,
+            0.35,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.046,
+            0.236,
+            0.421,
+            0.288
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "An Attempt to Classify"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.338,
+            0.777,
+            0.424
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Two approaches : human-centered vs . rationality. B oth directions have yielded some valuable insights ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.102,
+            0.443,
+            0.757,
+            0.529
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– A human-centered approach is empirical science, involving hypothesis and experimental confirmation."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.102,
+            0.548,
+            0.826,
+            0.636
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– A rationalist approach involves a combination of mathematics and engineering."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.664,
+            0.82,
+            0.761
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 B oth approaches can be broken up into fields that are concerned with – the thought process and reasoning, or"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.102,
+            0.78,
+            0.27,
+            0.814
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– the behavior."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.0,
+            0.954,
+            0.35,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.046,
+            0.396,
+            0.405,
+            0.449
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Four Categories of AI"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.049,
+            0.531,
+            0.75,
+            0.65
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.049,
+                0.531,
+                0.75,
+                0.65
+              ],
+              "image_path": "images/page_3_table_2.jpg",
+              "content": "<table><tr><td>Systems that think like humans.</td><td>Systems that think rationally.</td></tr><tr><td>Systems that act like humans.</td><td>Systems that act rationally.</td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 3,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.046,
+            0.185,
+            0.311,
+            0.238
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Acting humanly"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.066,
+            0.285,
+            0.817,
+            0.422
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Turing Test",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": ", proposed by Alan Turing ( 1 950) . Turing ’ s definition of intelligent behavior as the ability to achieve human-level performance in all cognitive tasks ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.449,
+            0.804,
+            0.584
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "The test involves an interrogator who interacts with one human and one machine. Within a given time the interrogator has to find out which of the two is the human, and which one the machine."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.613,
+            0.823,
+            0.747
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Is sue to solve in order to pas s the test using a terminal : natural language processing, knowledge representation automated reasoning, machine learning."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.775,
+            0.816,
+            0.864
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Additional requirements for the “total Turing test” : computer vision, speech recognition, speech synthesis , robotics ."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.829,
+            0.954,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.045,
+            0.223,
+            0.353,
+            0.276
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Thinking humanly"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.324,
+            0.507,
+            0.361
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Need to understand how humans think."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.392,
+            0.199,
+            0.426
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Methods :"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.102,
+            0.45,
+            0.51,
+            0.488
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– catch our thoughts while they go by"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.101,
+            0.508,
+            0.416,
+            0.546
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– psychological experiments"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.067,
+            0.574,
+            0.793,
+            0.711
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example: GPS , “General Problem Solver” (Newell and Simon 1 96 1 ) . Obj ective to compare the steps of the problem solving with the reasoning of human subj ects solving the same problem."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.067,
+            0.737,
+            0.725,
+            0.825
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Cognitive Science",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " embraces computer models from AI and experimental methods from psychology."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 8,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.046,
+            0.151,
+            0.367,
+            0.204
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Thinking rationally"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.25,
+            0.827,
+            0.378
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Aristotle made first attempt to harnes s “right thinking” . Famous example : “S ocrates is a man ; all men are mortal ; therefore S ocrates is mortal .”"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.404,
+            0.796,
+            0.532
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Formal logic (late nineteenth, early twentieth centuries) provides a precise notation of statements of all kinds of things and relations between them."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.558,
+            0.812,
+            0.691
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Programs that can find the solution to a logical problem if one exists have been around since 1 965 . Given enough memory and time, they should be able to solve everything."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.714,
+            0.206,
+            0.747
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Problems :"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.101,
+            0.768,
+            0.757,
+            0.805
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– not everything can be formalized, e.g. uncertain knowledge"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.102,
+            0.821,
+            0.804,
+            0.905
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "– complexity of problems easily exhausts todays (and tomorrows) computational resources ."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 8,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.262,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: An Attempt to Classify"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.046,
+            0.281,
+            0.325,
+            0.334
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Acting rationally"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.382,
+            0.72,
+            0.42
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 “ . . . acting so as to achieve one ’ s goals , given one ’ s beliefs .”"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.45,
+            0.542,
+            0.488
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Obj ective : construction of rational "
+            },
+            {
+              "type": "text",
+              "content": "agents",
+              "styles": [
+                "bold"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.516,
+            0.824,
+            0.651
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "AI as rational agent design is more general than the “laws of thought” approach; correct inference is useful but not necessary for achieving rationality."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.68,
+            0.817,
+            0.767
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 In contrast to human-centered approaches , the standard of rationality is clearly defined and general."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.181,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Foundation"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.045,
+            0.199,
+            0.239,
+            0.245
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Foundation"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.066,
+            0.3,
+            0.732,
+            0.339
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Philo sophy (42 8 B . C . - present) : Plato , S ocrates , Ari stotle . . ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.368,
+            0.812,
+            0.503
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mathematics (c . 800 - present) : al-Kowarazmi : algorithms , George B oole/B oule: formal language for making logical inferences ( 1 847) , David Hilbert, Kurt Godel, ¨ Alan Turing ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.531,
+            0.76,
+            0.617
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Psychology ( 1 879 - present) : Herman von Helmholtz, Wilhelm Wundt: scientific methods to study human vision . . ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.646,
+            0.825,
+            0.734
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Computer Engineering ( 1 940 - present) Alan Turing : first operational computer, Konrad Zuse: first programmable computer . . ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.067,
+            0.761,
+            0.795,
+            0.848
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Linguistics ( 1 957 - present) : B . F. Skinner: verbal behavior, Noam Chomsky . . ."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.829,
+            0.955,
+            0.885,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.208,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Modern Topics"
+            }
+          ]
+        },
+        {
+          "type": "doc_title",
+          "index": 1,
+          "bbox": [
+            0.045,
+            0.456,
+            0.296,
+            0.509
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Modern Topics"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "footer",
+          "index": 2,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.82,
+            0.955,
+            0.885,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1 0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.207,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Modern Topics"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.047,
+            0.151,
+            0.356,
+            0.198
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "AAAI Conferences"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.244,
+            0.476,
+            0.279
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Advanced Planning Technology (ARPI)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.301,
+            0.601,
+            0.336
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Artificial Intelligence and Manufacturing (SIGMAN)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.358,
+            0.718,
+            0.392
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Artificial Intelligence and Molecular Biology Conference (ISMB )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.415,
+            0.663,
+            0.449
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Artificial Intelligence Planning Systems Conference (AIPS)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.067,
+            0.471,
+            0.594,
+            0.505
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Florida AI Research Society Conferences (FLAIRS)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.067,
+            0.528,
+            0.68,
+            0.564
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 B ar-Ilan Symposium on Foundations of Artificial Intelligence"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.067,
+            0.585,
+            0.742,
+            0.62
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Innovative Applications of Artificial Intelligence Conference (IAAI)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.067,
+            0.642,
+            0.654,
+            0.676
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 International Conference on Multiagent Systems (ICMAS)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.067,
+            0.699,
+            0.662,
+            0.734
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Knowledge Discovery and Data Mining Conference (KDD)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.067,
+            0.755,
+            0.715,
+            0.79
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Midwest AI and Cognitive Science Society Conference (MAICS)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.067,
+            0.813,
+            0.613,
+            0.846
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 National Conference on Artificial Intelligence (AAAI)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.068,
+            0.869,
+            0.601,
+            0.904
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Artificial Intelligence and Manufacturing (SIGMAN)"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 14,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 15,
+          "bbox": [
+            0.82,
+            0.955,
+            0.884,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.068,
+            0.209,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Modern Topics"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.505,
+            0.715,
+            0.543
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Third International Conference on Multistrategy Learning (MSL)"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 2,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.82,
+            0.955,
+            0.885,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.207,
+            0.096
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Modern Topics"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.047,
+            0.151,
+            0.262,
+            0.202
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "AI Magazine"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.069,
+            0.244,
+            0.805,
+            0.349
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 MiTAP for Biosecurity : A Case Study Laurie Damianos , Jay Ponte, Steve Wohlever Florence Reeder, David Day, George Wilson, and Lynette Hirschman 23 (4) : Winter 2000, 1 3 -29"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.069,
+            0.368,
+            0.824,
+            0.472
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Staff Scheduling for Inbound Call and Customer Contact Centers Alex Fukunaga, Ed Hamilton, Jason Fama, David Andre, Ofer Matan, and Illah Nourbakhsh 23 (4) : Winter 2000, 30-40"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.069,
+            0.491,
+            0.784,
+            0.561
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Information Self-Service with a Knowledge B ase That Learns Stephen D . Durbin Doug Warner, J. Neal Richter, and Zuzana Gedeon 23 (4) : Winter 2000, 4 1 -50"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.069,
+            0.578,
+            0.805,
+            0.685
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Training and Using Disciple Agents : A Case Study in the Military Center of Gravity Analysis Domain Gheorghe Tecuci, Mihai B oicu, Dorin Marcu, B ogdan Stanescu Cristina B oicu, and Jerome Comello 23 (4) : Winter 2000, 5 1 -68"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.069,
+            0.702,
+            0.818,
+            0.772
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Applying Perceptually Driven Cognitive Mapping to Virtual Urban Environments Randall W. Hill, Jr. , Changhee Han, and Michael van Lent 23 (4) : Winter, 2002, 69- 80"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.069,
+            0.789,
+            0.801,
+            0.857
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Computational Vulnerability Analysis for Information Survivability Howard Shrobe 23 (4) : Winter, 2002 , 8 1 - 94"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.069,
+            0.875,
+            0.797,
+            0.908
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Intelligent Integration of Information and Services on the Web Eleni Stroulia 23 (4) :"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 9,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.82,
+            0.955,
+            0.884,
+            0.98
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 1 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.0,
+            0.069,
+            0.209,
+            0.098
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "I Overview: Modern Topics"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.536,
+            0.71,
+            0.569
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "\u0000 Consciousness Constrained Paul De Palma 23 (4) : Winter, 2002, 1 22- 1 24"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.091,
+            0.481,
+            0.291,
+            0.513
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Winter, 2002 , 1 09 - 1 1 2"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 3,
+          "bbox": [
+            0.0,
+            0.954,
+            0.351,
+            0.982
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "IS 675 Peter ´ Molnar´ , 2003 (all rights reserved)"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.82,
+            0.955,
+            0.885,
+            0.979
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Slide 14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

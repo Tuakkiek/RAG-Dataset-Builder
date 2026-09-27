@@ -1,0 +1,107 @@
+# 6.891 Midterm Examination
+
+## 3/21/01
+
+## 1 Search
+
+Consider the following graph, in which A is the start node and F is the goal node. Assume that nodes are visited at most once.
+
+![](images/page_0_image_4.jpg)
+
+1. In what order does uniform-cost search visit the nodes?
+
+Let the heuristic function  $h(n)$  be the minimum number of arcs between node n and the goal node.
+
+2. Is this an admissible heuristic? Why or why not?
+
+3. In what order does  $A^{*}$  search visit the nodes? What are their estimated values when they are visited?
+
+## 2 Clausal Normal Form
+
+Convert the following sentence to CNF.
+
+$$
+(A \land B) \lor \neg (C \to D)
+$$
+
+## 3 True or False
+
+1. All sentences are either valid or unsatisfiable.
+
+2. Iterative-deepening search requires space linear in the depth of the solution.
+
+3. If $A \models B$, then $A$ is true in all interpretations in which $B$ is true.
+
+4. Testing the validity of a sentence in first-order logic can be done in time exponential in the size of the sentence.
+
+5. DPLL runs in worst-case polynomial time in the length of the sentence.
+
+## 4 First Order Logic
+
+Match the formula to the English sentence it encodes (note that there are more English sentences than formulas). Let  $Big(x)$  mean “x is big” (so  $\neg Big(x)$  means “x is small”) and let  $Cat(x)$  mean “x is a cat.”
+
+1. $\exists x.Big(x)\wedge Cat(x)$ A. All cats are big.
+
+2. $\exists x.Big(x)\to Cat(x)$ B. There is a small thing or a cat.
+
+3. $\exists x.Big(x)\lor Cat(x)$ C. All big things are cats.
+
+4. $\forall x.Big(x)\wedge Cat(x)$ D. Everything is a big cat.
+
+5. $\forall x.Big(x)\to Cat(x)\quad \mathrm{E}.$ All cats are small.
+
+6. $\forall x.Big(x)\lor Cat(x)$ F. There is a big cat.
+
+G. All small things are cats.
+
+H. There is a big thing or a cat.
+
+## 5 Resolution-Refutation 1
+
+Use resolution-refutation to show that the following sentence is valid.
+
+$$
+(P \to Q) \lor (Q \to P)
+$$
+
+## 6 Unification
+
+Show the most general unifier (MGU) for each pair of sentences below. Also show the result of applying the MGU to the sentences. (Capital letters are constants, lowercase are variables.)
+
+1. $P(x,x,A)$ and $P(z,B,y)$.
+
+2. $P(F(x), A, G(x))$ and $P(F(z), z, w)$.
+
+## 7 First Order Clausal Form
+
+Convert the following sentences to clausal form.
+
+1. $\exists x.\forall y.K(y,x)\to D(y)$
+
+2. $\neg \exists x.H(x)\land C(x)$
+
+3. $\exists x.H(x)\wedge C(x)$
+
+4. $\neg \exists x.\forall y.L(y,x)$
+
+## 8 Resolution-Refutation 2
+
+Use resolution-refutation to prove a contradiction from the following sentences. Show the two lines you are resolving and the MGU at each step.
+
+1. $P(x)\lor Q(F(x),x)$
+
+2. $R(y)\lor \neg Q(y,z)$
+
+3. $\neg R(F(A))$
+
+4.  $\neg P(A)$
+
+## 9 The Frame Problem
+
+Why don't we need the equivalent of frame axioms in the STRIPS planning representation?
+
+## 10 Partially Ordered Plans
+
+Here's a partially-ordered plan. Give three reasons why it is not yet correct. If any action is responsible for multiple threats, each threat counts separately.
+
+![](images/page_5_image_2.jpg)

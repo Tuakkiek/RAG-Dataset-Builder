@@ -1,0 +1,7745 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Tài liệu không có tiêu đề",
+      "authors": [],
+      "subject": null,
+      "keywords": [],
+      "description": null,
+      "languages": [
+        "vi"
+      ],
+      "identifiers": [],
+      "publisher": null,
+      "created_at": null,
+      "modified_at": null,
+      "creator_application": null,
+      "producer_application": "Skia/PDF m154 Google Docs Renderer",
+      "page_count": 11,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 596.0,
+          "height_pt": 842.0
+        }
+      ]
+    }
+  },
+  "schema_version": "2.0",
+  "schema": "docvortex.model",
+  "pages": [
+    [
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.085,
+          0.225,
+          0.101
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Assignments"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.086,
+              0.222,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "type": "doc_title",
+        "bbox": [
+          0.115,
+          0.102,
+          0.684,
+          0.127
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Project 1, Part A: (I Can't Get No) Satisfaction"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.102,
+              0.683,
+              0.126
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.163,
+          0.877,
+          0.23
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "One major challenge in logic-based AI is the difficulty of solving the satisfiability problem (usually referred to as SAT). For this assignment, we will ask you to implement two different SAT solvers, commonly known as DPLL and WALKSAT, run your solvers on some test programs, and analyze the performance of the algorithms."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.165,
+              0.87,
+              0.178
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.18,
+              0.869,
+              0.193
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.197,
+              0.873,
+              0.211
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.214,
+              0.388,
+              0.227
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.243,
+          0.26,
+          0.261
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "SAT Instances"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.244,
+              0.256,
+              0.26
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.267,
+          0.876,
+          0.351
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "SAT instances are simply statements in propositional logic, written in conjunctive normal form (CNF). CNF sentences consist of "
+          },
+          {
+            "type": "text",
+            "content": "variables",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ", "
+          },
+          {
+            "type": "text",
+            "content": "literals",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ", and "
+          },
+          {
+            "type": "text",
+            "content": "clauses",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". In the grammar for this assignment, a variable is a single, case-sensitive character (e.g. “Q”) and a literal is a variable or its negation (“Q” or “~Q”). In a CNF sentence, a clause consists of a disjunction of literals (“Z v ~B v X”). A sentence is a conjunction of clauses, for example:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.269,
+              0.846,
+              0.282
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.285,
+              0.806,
+              0.298
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.301,
+              0.873,
+              0.315
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.317,
+              0.855,
+              0.333
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.334,
+              0.6,
+              0.348
+            ]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "bbox": [
+          0.116,
+          0.364,
+          0.408,
+          0.381
+        ],
+        "content": "(A \\lor C \\lor \\sim B) ^ {\\wedge} (Z) ^ {\\wedge} (\\sim E \\lor X \\lor Y \\lor W)",
+        "image_base64": "data:image/jpeg;base64,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"
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.395,
+          0.881,
+          0.533
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "A "
+          },
+          {
+            "type": "text",
+            "content": "satisfying assignment",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " to a SAT instance is an assignment of truth values to variables that makes the CNF sentence true. If such assignment exists for a SAT instance, we say that the SAT instance is "
+          },
+          {
+            "type": "text",
+            "content": "satisfiable",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". The problem of determining whether or not a particular SAT instance is satisfiable is NP-complete and thus cannot generally be solved efficiently. For a sentence of n variables, it will take O(2_"
+          },
+          {
+            "type": "text",
+            "content": "n",
+            "styles": [
+              "superscript"
+            ]
+          },
+          {
+            "type": "text",
+            "content": "_) operations to discover an assignment in the worst case - equivalent to checking every possible assignment. Many interesting AI problems are NP-complete or harder, which leads us to consider approximate methods of solution, or exact methods that have good average case running times."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.396,
+              0.832,
+              0.409
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.413,
+              0.875,
+              0.425
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.429,
+              0.85,
+              0.442
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.446,
+              0.85,
+              0.459
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.464,
+              0.876,
+              0.479
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.483,
+              0.877,
+              0.496
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.499,
+              0.854,
+              0.512
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.516,
+              0.34,
+              0.529
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.115,
+          0.545,
+          0.71,
+          0.563
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Reading: Russell & Norvig, Chapters 4,6 (Search, Propositional Logic)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.546,
+              0.706,
+              0.561
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.577,
+          0.217,
+          0.594
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The Code"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.576,
+              0.214,
+              0.594
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.602,
+          0.878,
+          0.689
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "We will be providing some handy Java classes that you can use for this assignment. We have tested it with the Java 1.3 JVM, though it should work on any Java 2 JVM (Java 1.2 and higher). We will be distributing compiled classes and source file packaged as a JAR (Java ARchive) file, as well as posting the Javadoc documentation for the classes. You should not need to look at the source to use the classes, but you can expand the jar file if you need it."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.604,
+              0.86,
+              0.618
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.622,
+              0.864,
+              0.635
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.638,
+              0.863,
+              0.652
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.656,
+              0.873,
+              0.667
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.671,
+              0.674,
+              0.685
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.7,
+          0.864,
+          0.769
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The jar file for this assignment is "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/pl/",
+            "content": [
+              {
+                "type": "text",
+                "content": "PL.jar",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ", which contains a package for parsing and representing sentences of propositional logic in CNF. The "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/ans7870/6/6.825/assignments/project1a/javadocs/index.html",
+            "content": [
+              {
+                "type": "text",
+                "content": "documentation",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " for these classes is also available. You will need to include this JAR file in your CLASSPATH, and you will probably want to import the package with the statement import techniques.PL.*; before the class definitions."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.701,
+              0.86,
+              0.716
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.719,
+              0.856,
+              0.732
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.735,
+              0.857,
+              0.748
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.752,
+              0.769,
+              0.764
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.78,
+          0.854,
+          0.816
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "To parse a String or a File, use the parse methods of "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/ans7870/6/6.825/assignments/project1a/javadocs/techniques/PL/CNF.html",
+            "content": [
+              {
+                "type": "text",
+                "content": "techniques.PL.CNF",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". The parser will only parse CNF sentences, so be sure you are entering them correctly."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.782,
+              0.85,
+              0.796
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.8,
+              0.632,
+              0.812
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.828,
+          0.813,
+          0.861
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "To generate a random 3-SAT instance, you can either call "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/ans7870/6/6.825/assignments/project1a/javadocs/techniques/PL/CNF.html#randInstance%28int%29",
+            "content": [
+              {
+                "type": "text",
+                "content": "CNF.randInstance()",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " or use the "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/ans7870/6/6.825/assignments/project1a/javadocs/techniques/PL/CNF.html#main%28java.lang.String[]%29",
+            "content": [
+              {
+                "type": "text",
+                "content": "CNF.main()",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " method via the command-line."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.829,
+              0.809,
+              0.843
+            ]
+          },
+          {
+            "bbox": [
+              0.121,
+              0.847,
+              0.451,
+              0.859
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.875,
+          0.88,
+          0.91
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "If you are new to Java, it might be useful to look at the "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/pages/related-resources/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Java® Resources",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " page before you get too involved with your coding. You are, of course, free to use another programming language. If you"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.876,
+              0.876,
+              0.891
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.893,
+              0.866,
+              0.907
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.085,
+          0.879,
+          0.136
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "are not using Java, you will need to create a your own internal representation for a CNF boolean sentence. You will need to parse the CNF sentences given in our format, as well as create a CNF sentence generator for the experiment detailed below."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.086,
+              0.87,
+              0.1
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.103,
+              0.876,
+              0.115
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.12,
+              0.538,
+              0.132
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.15,
+          0.178,
+          0.166
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Tasks"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.148,
+              0.178,
+              0.168
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.173,
+          0.881,
+          0.239
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "You are to try two algorithms (explained in the next section) on the SAT problem. Input to the algorithms should be given as a CNF sentence. Output should be the satisfying assignment, if one is found; if none is found, output an empty assignment. An assignment is a mapping from propositional variables to boolean values."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.174,
+              0.872,
+              0.188
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.191,
+              0.828,
+              0.204
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.208,
+              0.879,
+              0.221
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.224,
+              0.649,
+              0.237
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.24,
+          0.867,
+          0.32
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1. "
+          },
+          {
+            "type": "text",
+            "content": "(Optional) Brute Force",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": You may want to try implementing a brute force (exhaustive search through the solution space) algorithm before DPLL and WalkSAT. This is just so you have something that works and can check your answers from the other two algorithms. You do not need to write up anything for this."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.24,
+              0.805,
+              0.254
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.257,
+              0.822,
+              0.27
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.273,
+              0.833,
+              0.286
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.29,
+              0.861,
+              0.303
+            ]
+          },
+          {
+            "bbox": [
+              0.238,
+              0.306,
+              0.275,
+              0.32
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.322,
+          0.543,
+          0.337
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2. "
+          },
+          {
+            "type": "text",
+            "content": "DPLL",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": Implement the DPLL algorithm."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.209,
+              0.322,
+              0.539,
+              0.336
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.338,
+          0.598,
+          0.354
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "3. "
+          },
+          {
+            "type": "text",
+            "content": "WalkSAT",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": Implement the WalkSAT algorithm."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.209,
+              0.339,
+              0.594,
+              0.352
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.149,
+          0.355,
+          0.534,
+          0.37
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Run your algorithms on the test cases below."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.356,
+              0.531,
+              0.369
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.371,
+          0.865,
+          0.405
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Using the random CNF generator given in the PL.jar code, run your algorithms on random CNF sentences of varying length and measure the speed of the two algorithms."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.372,
+              0.817,
+              0.386
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.389,
+              0.863,
+              0.403
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.418,
+          0.851,
+          0.451
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "For this assignment, we present the following SAT instances in text files. Your code should be able to solve these in reasonable time."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.419,
+              0.849,
+              0.433
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.437,
+              0.42,
+              0.449
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.466,
+          0.278,
+          0.482
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Debugging Cases:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.466,
+              0.277,
+              0.481
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.497,
+          0.412,
+          0.512
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/satisfiable1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "A simple satisfiable sentence",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.497,
+              0.408,
+              0.51
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.513,
+          0.559,
+          0.528
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/satisfiable2/",
+            "content": [
+              {
+                "type": "text",
+                "content": "A slightly more complicated satisfiable sentence",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.182,
+              0.515,
+              0.554,
+              0.526
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.53,
+          0.432,
+          0.545
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/unsatisfiable1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "A simple unsatisfiable sentence",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.53,
+              0.428,
+              0.543
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.546,
+          0.579,
+          0.561
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/unsatisfiable2/",
+            "content": [
+              {
+                "type": "text",
+                "content": "A slightly more complicated unsatisfiable sentence",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.181,
+              0.548,
+              0.574,
+              0.559
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.562,
+          0.85,
+          0.594
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/solveable-1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "A solveable CNF",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " (Your code should solve this in three minutes or less. Otherwise you need to revise your code)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.563,
+              0.849,
+              0.577
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.58,
+              0.381,
+              0.593
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.596,
+          0.418,
+          0.611
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/solveable/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Solution to the solveable CNF",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.597,
+              0.414,
+              0.609
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.626,
+          0.221,
+          0.642
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Test Cases:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.627,
+              0.219,
+              0.641
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.657,
+          0.228,
+          0.672
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/test1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "test 1",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.658,
+              0.225,
+              0.671
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.674,
+          0.228,
+          0.689
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/test2-1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "test 2",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.673,
+              0.228,
+              0.689
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.691,
+          0.228,
+          0.706
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/test3/",
+            "content": [
+              {
+                "type": "text",
+                "content": "test 3",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.69,
+              0.226,
+              0.705
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.708,
+          0.228,
+          0.722
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/test4/",
+            "content": [
+              {
+                "type": "text",
+                "content": "test 4",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.706,
+              0.227,
+              0.721
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.723,
+          0.228,
+          0.738
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/test5/",
+            "content": [
+              {
+                "type": "text",
+                "content": "test 5",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.723,
+              0.227,
+              0.738
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.755,
+          0.223,
+          0.772
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Algorithms"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.754,
+              0.221,
+              0.771
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.151,
+          0.778,
+          0.539,
+          0.794
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Davis, Putnam, Logemann and Loveland (DPLL)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.156,
+              0.78,
+              0.535,
+              0.792
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.15,
+          0.796,
+          0.866,
+          0.863
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "This algorithm is popularly known as DPLL and is one of the most widely used methods of solving satisfiability problems exactly. By “exactly” we mean that DPLL is guaranteed either to find a satisfying assignment if one exists or terminate and report that none exists. Therefore, it still runs in exponential time in the worse case."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.155,
+              0.798,
+              0.858,
+              0.811
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.814,
+              0.865,
+              0.827
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.831,
+              0.808,
+              0.844
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.847,
+              0.619,
+              0.86
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.151,
+          0.876,
+          0.865,
+          0.909
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Reading: Cook and Mitchell, “Finding Hard Instances of the Satisfiability Problem: A Survey.”",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.154,
+              0.877,
+              0.862,
+              0.891
+            ]
+          },
+          {
+            "bbox": [
+              0.153,
+              0.894,
+              0.234,
+              0.908
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.15,
+          0.085,
+          0.868,
+          0.135
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The crucial sections of this paper are 1-2.1, which explain notation and the DPLL algorithm. Also read Section 3 closely, it discusses the mathematical properties that distinguish hard SAT problems from easy ones."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.156,
+              0.087,
+              0.864,
+              0.099
+            ]
+          },
+          {
+            "bbox": [
+              0.153,
+              0.102,
+              0.853,
+              0.116
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.12,
+              0.396,
+              0.132
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.152,
+          0.148,
+          0.31,
+          0.164
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "GSAT & WALKSAT"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.156,
+              0.15,
+              0.306,
+              0.162
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.15,
+          0.168,
+          0.874,
+          0.35
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "GSAT and WALKSAT are stochastic algorithms. In order to speed up the search for a true assignment, they pick random locations in the space of possible assignments and make limited, local searches from those locations. As a result, they might be able to find a solution to a problem that would take too long to solve using DPLL’s complete, global search. But because they do not cover the entire search space, there is no guarantee that GSAT or WALKSAT will find a solution to every problem, even if one exists. Therefore, these algorithms can never determine if a sentence is unsatisfiable. Algorithms are frequently categorized as "
+          },
+          {
+            "type": "text",
+            "content": "sound",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " or "
+          },
+          {
+            "type": "text",
+            "content": "complete",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". A sound algorithm guarantees that any answer it returns is correct, but does not necessarily return an answer to every problem. A complete algorithm, on the other hand, will always return an answer. DPLL is complete and sound, while GSAT and WALKSAT are sound, but not complete."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.156,
+              0.168,
+              0.854,
+              0.182
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.186,
+              0.84,
+              0.199
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.202,
+              0.873,
+              0.215
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.218,
+              0.846,
+              0.231
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.235,
+              0.835,
+              0.248
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.251,
+              0.803,
+              0.265
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.268,
+              0.834,
+              0.281
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.284,
+              0.868,
+              0.298
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.3,
+              0.798,
+              0.314
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.317,
+              0.844,
+              0.331
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.333,
+              0.596,
+              0.347
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.151,
+          0.363,
+          0.839,
+          0.397
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Optional Reading: Selman and Kautz, “Domain-Independent Extensions to GSAT: Solving Large Structured Satisfiability Problems.”",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.154,
+              0.364,
+              0.837,
+              0.377
+            ]
+          },
+          {
+            "bbox": [
+              0.154,
+              0.381,
+              0.577,
+              0.394
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.152,
+          0.41,
+          0.784,
+          0.443
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Optional Reading: Selman, Kautz, and Cohen, “Local Search Strategies for Satisfiability Testing.”",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.156,
+              0.413,
+              0.781,
+              0.425
+            ]
+          },
+          {
+            "bbox": [
+              0.153,
+              0.427,
+              0.346,
+              0.442
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.15,
+          0.458,
+          0.867,
+          0.508
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The WALKSAT algorithm evolved from the GSAT algorithm. The first paper has an early exploration of some extensions to GSAT, including “GSAT with Random Walk.” The second paper has the actual WALKSAT algorithm, and a brief explanation of its development."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.155,
+              0.458,
+              0.84,
+              0.472
+            ]
+          },
+          {
+            "bbox": [
+              0.155,
+              0.475,
+              0.864,
+              0.489
+            ]
+          },
+          {
+            "bbox": [
+              0.153,
+              0.492,
+              0.821,
+              0.505
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.522,
+          0.245,
+          0.54
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The Write-up"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.121,
+              0.521,
+              0.242,
+              0.54
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.546,
+          0.498,
+          0.561
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "For each algorithm, turn in the following:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.546,
+              0.494,
+              0.561
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.563,
+          0.868,
+          0.627
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ A description of your algorithm (not code!) with enough details that others could replicate your results. Include how and why you made any choices (e.g., values you chose for parameters) you made. ("
+          },
+          {
+            "type": "text",
+            "content": "Suggested Length",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": 1 - 2 pages for each algorithm)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.564,
+              0.859,
+              0.576
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.58,
+              0.86,
+              0.593
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.597,
+              0.865,
+              0.61
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.613,
+              0.321,
+              0.627
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.628,
+          0.726,
+          0.644
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ Give a satisfying assignment (if one exists) for the Test cases."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.209,
+              0.629,
+              0.723,
+              0.643
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.646,
+          0.88,
+          0.743
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ Produce a graph charting solution times vs. clause/variable ratio (for a given number of variables) for each of those algorithms. Graph each up to the ratio at which the puzzles become impractical. Average the results from at least 5 trials at each size. The PL.jar code contains a generator of random CNF sentences. The generator will create sentences with the desired ratio for a fixed number of variables. As coded, the number of possible variables is 26."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.646,
+              0.834,
+              0.658
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.662,
+              0.859,
+              0.676
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.679,
+              0.878,
+              0.692
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.696,
+              0.867,
+              0.708
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.713,
+              0.821,
+              0.725
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.729,
+              0.704,
+              0.741
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.744,
+          0.853,
+          0.809
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ Discuss your results, explaining carefully why you think they came out as they did. Talk about the characteristics of each algorithm, and compare the two algorithms to explain any differences in the results. ("
+          },
+          {
+            "type": "text",
+            "content": "Suggested Length",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": 2 - 3 pages.)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.745,
+              0.847,
+              0.758
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.761,
+              0.816,
+              0.774
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.778,
+              0.846,
+              0.791
+            ]
+          },
+          {
+            "bbox": [
+              0.239,
+              0.794,
+              0.303,
+              0.81
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.809,
+          0.861,
+          0.86
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ "
+          },
+          {
+            "type": "text",
+            "content": "Extras",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": ": For extra credit: Try making DPLL as fast as possible. try making DPLL and/or WalkSAT solve more problems by varying your algorithms. Show experimentally how your changes have helped you solve larger problems."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.811,
+              0.858,
+              0.824
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.828,
+              0.802,
+              0.841
+            ]
+          },
+          {
+            "bbox": [
+              0.242,
+              0.844,
+              0.813,
+              0.856
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.148,
+          0.86,
+          0.228,
+          0.874
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Note:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.176,
+              0.859,
+              0.228,
+              0.874
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.876,
+          0.866,
+          0.907
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ In all parts of this homework, “impractical” means “takes more than 5 minutes to solve.”"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.877,
+              0.863,
+              0.89
+            ]
+          },
+          {
+            "bbox": [
+              0.237,
+              0.892,
+              0.297,
+              0.906
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.085,
+          0.876,
+          0.134
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ “Speed” should be measured in a machine-independent way. When we collect results, we will ask you to report the number of assignments to the variables your algorithm had to check before solving the problem."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.086,
+              0.851,
+              0.1
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.103,
+              0.873,
+              0.116
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.12,
+              0.635,
+              0.133
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.135,
+          0.61,
+          0.15
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● **Bonus Challenge:**Who couldn’t get no satisfaction?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.155,
+              0.133,
+              0.606,
+              0.15
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.165,
+          0.31,
+          0.184
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Collaboration Policy"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.165,
+              0.307,
+              0.184
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.189,
+          0.585,
+          0.206
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "You may work in teams of two, handing in a single write-up."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.19,
+              0.582,
+              0.205
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.221,
+          0.376,
+          0.239
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Handing in the Assignment"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.222,
+              0.373,
+              0.238
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.245,
+          0.564,
+          0.261
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Hand in answers to the questions and all graphs."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.154,
+              0.245,
+              0.561,
+              0.26
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.262,
+          0.47,
+          0.277
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "text",
+            "content": "Do NOT hand in any code listings.",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.155,
+              0.262,
+              0.468,
+              0.276
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.278,
+          0.423,
+          0.294
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Staple all materials together.",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.278,
+              0.42,
+              0.293
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.098,
+          0.308,
+          0.206,
+          0.324
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Assignments"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.31,
+              0.202,
+              0.323
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.327,
+          0.313,
+          0.348
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Project 1, Part B:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.099,
+              0.325,
+              0.316,
+              0.348
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.098,
+          0.382,
+          0.19,
+          0.399
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Materials"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.1,
+              0.382,
+              0.188,
+              0.399
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.401,
+          0.4,
+          0.417
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The project assignment ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/proj1b/",
+            "content": [
+              {
+                "type": "text",
+                "content": "PDF",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ")"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.141,
+              0.402,
+              0.396,
+              0.416
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.418,
+          0.487,
+          0.434
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Code and binaries ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/fol/",
+            "content": [
+              {
+                "type": "text",
+                "content": "JAR",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ") "
+          },
+          {
+            "type": "text",
+            "content": "(updated 10/13)",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.158,
+              0.417,
+              0.485,
+              0.434
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.435,
+          0.383,
+          0.449
+        ],
+        "content": [
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/ans7870/6/6.825/assignments/project1b/javadocs/index.html",
+            "content": [
+              {
+                "type": "text",
+                "content": "Documentation",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " for the code"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.436,
+              0.379,
+              0.448
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.128,
+          0.45,
+          0.887,
+          0.482
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/pages/assignments/project1btools/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Information",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " about a very efficient SAT solver called zChaff. If you like, you can also work with zChaff."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.452,
+              0.886,
+              0.465
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.467,
+              0.219,
+              0.481
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.098,
+          0.499,
+          0.16,
+          0.515
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Notes"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.098,
+              0.498,
+              0.16,
+              0.516
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.518,
+          0.76,
+          0.534
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(10/3)",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " A new JAR file has been posted. The only difference is that it includes a class"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.518,
+              0.756,
+              0.533
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.097,
+          0.548,
+          0.298,
+          0.564
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "techniques.solvers.DPLL"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.55,
+              0.296,
+              0.562
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.096,
+          0.579,
+          0.88,
+          0.613
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "that you can use as your SAT solver (though you are encouraged to use your own from part a). This jarfile supercedes the previous one and you should "
+          },
+          {
+            "type": "text",
+            "content": "remove",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.1,
+              0.58,
+              0.878,
+              0.594
+            ]
+          },
+          {
+            "bbox": [
+              0.098,
+              0.596,
+              0.564,
+              0.61
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.626,
+          0.152,
+          0.643
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "PL.jar"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.098,
+              0.625,
+              0.152,
+              0.643
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.097,
+          0.657,
+          0.18,
+          0.673
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "from your"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.099,
+              0.657,
+              0.179,
+              0.673
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.687,
+          0.207,
+          0.703
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "CLASSPATH"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.689,
+              0.205,
+              0.702
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.749,
+          0.852,
+          0.766
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(10/2)",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Converting from a first-order logic sentence to our FOL grammar (clarification of Figure 3)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.75,
+              0.849,
+              0.764
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.78,
+          0.617,
+          0.796
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "first-order logic:",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Ax, y. foo(x) -> bar(y) v Ez. ~equals(x,z)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.158,
+              0.78,
+              0.613,
+              0.796
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.798,
+          0.379,
+          0.812
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "text",
+            "content": "our FOL grammar format:",
+            "styles": [
+              "bold"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.135,
+              0.797,
+              0.378,
+              0.811
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.813,
+          0.536,
+          0.829
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "all x all y foo(x) -> bar(y) v exists z ~Equals(x,z)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.815,
+              0.532,
+              0.828
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.098,
+          0.844,
+          0.29,
+          0.86
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Important Clarifications:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.846,
+              0.288,
+              0.857
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.874,
+          0.896,
+          0.907
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1. Any time you provide a printout of an assignment, also include a description of it in English (or a with diagram, or something)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.131,
+              0.876,
+              0.893,
+              0.889
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.892,
+              0.398,
+              0.906
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.126,
+          0.085,
+          0.799,
+          0.117
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2. If a question asks you to provide an assignment, you do not need to provide _all_ assignments. One will do."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.086,
+              0.794,
+              0.1
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.103,
+              0.363,
+              0.116
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.118,
+          0.511,
+          0.134
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "3. For items 11 and 12, we mean the following:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.119,
+              0.506,
+              0.133
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.187,
+          0.135,
+          0.882,
+          0.167
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ you should create an axiom that defines what it means to be a well-connected set of rails (i.e., that it’s possible to move from each rail to each other rail)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.19,
+              0.136,
+              0.878,
+              0.148
+            ]
+          },
+          {
+            "bbox": [
+              0.221,
+              0.153,
+              0.746,
+              0.166
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.188,
+          0.168,
+          0.888,
+          0.201
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "then, having asserted well-connectedness, list the actual assignment returned for the “connects” relation: this relation represents the track layout found by your SAT solver."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.221,
+              0.169,
+              0.883,
+              0.181
+            ]
+          },
+          {
+            "bbox": [
+              0.224,
+              0.186,
+              0.884,
+              0.198
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.217,
+          0.862,
+          0.25
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "4. There is a typo in item 13. the definition of liveness from “formula 8” refers to your revised definition of ‘deadlock’ from question _10_."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.219,
+              0.859,
+              0.231
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.235,
+              0.493,
+              0.248
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.25,
+          0.857,
+          0.282
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "5. Yes, the extra credit is worth actual points on 1b, just as it was on 1a. (note that an “extra credit” problem is distinct from a “bonus challenge!”)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.251,
+              0.855,
+              0.265
+            ]
+          },
+          {
+            "bbox": [
+              0.16,
+              0.268,
+              0.568,
+              0.281
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.126,
+          0.283,
+          0.898,
+          0.316
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "6. Yes, please form a group of two (if you like) for this assignment, as well. you can work with the same partner for 3 of the 5 projects."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.285,
+              0.895,
+              0.297
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.302,
+              0.441,
+              0.313
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.097,
+          0.33,
+          0.409,
+          0.346
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Answers to Some Common Questions:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.101,
+              0.332,
+              0.405,
+              0.344
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.361,
+          0.88,
+          0.41
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1. “Deadlocked” refers to the whole situation: a situation is deadlocked if both trains "
+          },
+          {
+            "type": "text",
+            "content": "can not",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " move. If at least one train has a move available, then we do not consider that situation to be deadlocked."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.362,
+              0.856,
+              0.375
+            ]
+          },
+          {
+            "bbox": [
+              0.16,
+              0.38,
+              0.875,
+              0.391
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.396,
+              0.257,
+              0.408
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.427,
+          0.594,
+          0.442
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2. Your solution to the deadlock questions cannot involve:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.429,
+              0.59,
+              0.441
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.187,
+          0.443,
+          0.888,
+          0.509
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ changing the non-determinism of the world dynamics. a question was asked if it was ok for each train to have a plan of action, and to broadcast that plan. that makes the dynamics deterministic, and it would mean the other trains would know what to avoid. this is not really the spirit of the question, since it’s not allowable to have…"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.192,
+              0.444,
+              0.878,
+              0.457
+            ]
+          },
+          {
+            "bbox": [
+              0.222,
+              0.461,
+              0.875,
+              0.474
+            ]
+          },
+          {
+            "bbox": [
+              0.222,
+              0.478,
+              0.884,
+              0.491
+            ]
+          },
+          {
+            "bbox": [
+              0.22,
+              0.494,
+              0.797,
+              0.507
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.187,
+          0.51,
+          0.897,
+          0.575
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ knowledge about the next situation (i.e. “peeking” into the future). your solutions must involve only what is known about the _current_ situation. try to think about whether an additional relation on the trains would “break symmetry” in a way that avoids deadlock. ○ removing the “Safe\"ness of the situations S1 and S2."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.193,
+              0.512,
+              0.888,
+              0.523
+            ]
+          },
+          {
+            "bbox": [
+              0.222,
+              0.528,
+              0.89,
+              0.539
+            ]
+          },
+          {
+            "bbox": [
+              0.222,
+              0.544,
+              0.893,
+              0.557
+            ]
+          },
+          {
+            "bbox": [
+              0.193,
+              0.56,
+              0.634,
+              0.572
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.127,
+          0.608,
+          0.354,
+          0.623
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "4. Running out of memory:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.609,
+              0.351,
+              0.623
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.149,
+          0.625,
+          0.899,
+          0.723
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "you may have gotten “out of memory” errors during the process of changing the FOL sentence into a CNF sentence. this is not a bug in the code, and it’s probably not the ‘fault’ of any individual axiom in your FOL sentence. it’s just the nature of exponential growth: converting a sentence from FOL to PL and then to CNF grows exponentially bad with the number of propositions. exponential growth is bad news; if you didn’t believe that before, you should now!"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.159,
+              0.626,
+              0.897,
+              0.639
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.643,
+              0.843,
+              0.655
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.659,
+              0.889,
+              0.673
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.676,
+              0.838,
+              0.688
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.692,
+              0.857,
+              0.705
+            ]
+          },
+          {
+            "bbox": [
+              0.159,
+              0.708,
+              0.202,
+              0.722
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.724,
+          0.891,
+          0.772
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "that said, it _is_ possible to do the assignment within the standard memory constraints of the JVM (128 MB). if you are running out of memory, try looking at the following things in your set of axioms:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.725,
+              0.883,
+              0.738
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.742,
+              0.89,
+              0.755
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.758,
+              0.244,
+              0.772
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.187,
+          0.773,
+          0.886,
+          0.823
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ do you have any axioms that are redundant, or duplicating the work of other axioms? some people made their definition of “legal” to do the work of both “legal” and of enforcing the world dynamics. a little parsimony goes a long way."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.192,
+              0.775,
+              0.882,
+              0.788
+            ]
+          },
+          {
+            "bbox": [
+              0.22,
+              0.791,
+              0.844,
+              0.804
+            ]
+          },
+          {
+            "bbox": [
+              0.221,
+              0.808,
+              0.728,
+              0.821
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.188,
+          0.823,
+          0.877,
+          0.855
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ do you have statements that say something like “all s” when simply instantiating the statement for S1 would do?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.193,
+              0.824,
+              0.872,
+              0.838
+            ]
+          },
+          {
+            "bbox": [
+              0.221,
+              0.84,
+              0.438,
+              0.853
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.188,
+          0.856,
+          0.883,
+          0.887
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ do you have any axioms left over from previous questions in the assignment that are no longer needed?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.191,
+              0.857,
+              0.879,
+              0.87
+            ]
+          },
+          {
+            "bbox": [
+              0.22,
+              0.873,
+              0.369,
+              0.885
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.221,
+          0.889,
+          0.855,
+          0.906
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "there is really no guaranteed method for avoiding memory problems; if you have"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.227,
+              0.891,
+              0.85,
+              0.903
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.217,
+          0.085,
+          0.884,
+          0.118
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "trouble with it, you’ll just need to play around with your sentences until they get small enough."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.22,
+              0.085,
+              0.881,
+              0.1
+            ]
+          },
+          {
+            "bbox": [
+              0.22,
+              0.103,
+              0.288,
+              0.117
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.097,
+          0.133,
+          0.255,
+          0.15
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "What to Turn In:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.1,
+              0.133,
+              0.252,
+              0.149
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.096,
+          0.152,
+          0.87,
+          0.203
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Please note that the axioms you come up with should assume as little as possible about the arrangement of rails or number of trains; they should be generally applicable to any world with any number of trains and rails. One of the grading criteria will be the generality of your axioms."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.1,
+              0.153,
+              0.817,
+              0.167
+            ]
+          },
+          {
+            "bbox": [
+              0.101,
+              0.17,
+              0.865,
+              0.183
+            ]
+          },
+          {
+            "bbox": [
+              0.101,
+              0.186,
+              0.803,
+              0.2
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.215,
+          0.871,
+          0.233
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "1. - the formulas 1-6, in the language of figure 3 (hereafter denoted as ‘homework language’)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.217,
+              0.869,
+              0.232
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.126,
+          0.249,
+          0.552,
+          0.265
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "2. - the two new axioms, in the homework language."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.25,
+              0.548,
+              0.263
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.126,
+          0.282,
+          0.526,
+          0.297
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "3. - a printout of the found satisfying assignment."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.283,
+              0.521,
+              0.296
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.155,
+          0.298,
+          0.894,
+          0.315
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- in english, a description of the assignment, including the locations of the trains in S1 and S2."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.16,
+              0.299,
+              0.891,
+              0.313
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.126,
+          0.331,
+          0.73,
+          0.347
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "4. - how you used DPLL to show no crashes (a description of your method)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.333,
+              0.725,
+              0.346
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.348,
+          0.424,
+          0.364
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- why or why not to use WalkSAT"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.349,
+              0.419,
+              0.361
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.381,
+          0.571,
+          0.396
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "5. - the new definition of “legal” in homework language"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.381,
+              0.566,
+              0.396
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.397,
+          0.653,
+          0.413
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- an English or standard FOL description of your new definition"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.399,
+              0.649,
+              0.41
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.158,
+          0.414,
+          0.474,
+          0.429
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- any changes to the connects relation?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.416,
+              0.469,
+              0.427
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.158,
+          0.431,
+          0.418,
+          0.445
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- whether the domain is still safe"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.432,
+              0.413,
+              0.443
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.447,
+          0.714,
+          0.463
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- how you used DPLL to show safeness (a description of your method)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.448,
+              0.709,
+              0.462
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.479,
+          0.513,
+          0.495
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "6. - homework language description of layout 2"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.481,
+              0.509,
+              0.495
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.496,
+          0.634,
+          0.512
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- how would you show it is not safe? (describe your method)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.498,
+              0.63,
+              0.511
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.513,
+          0.894,
+          0.545
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- printout demonstrating safeness (either an assignment, or that your procedure returned ’null’ for no assignment)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.515,
+              0.89,
+              0.526
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.531,
+              0.309,
+              0.544
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.562,
+          0.6,
+          0.578
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "7. - the new definition of “legal” in the homework language"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.562,
+              0.596,
+              0.578
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.578,
+          0.653,
+          0.594
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- an English or standard FOL description of your new definition"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.163,
+              0.58,
+              0.649,
+              0.592
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.158,
+          0.596,
+          0.418,
+          0.611
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- whether the domain is still safe"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.597,
+              0.413,
+              0.609
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.612,
+          0.647,
+          0.627
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- a description of your method for showing that it was still safe"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.614,
+              0.642,
+              0.626
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.628,
+          0.822,
+          0.644
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- a safe configuration you found (or more, if you found more than one) for S1 and S2"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.629,
+              0.819,
+              0.643
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.661,
+          0.853,
+          0.676
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "8. - the axiom, in homework language and English/FOL, that asserts that S1 is deadlocked."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.129,
+              0.662,
+              0.851,
+              0.676
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.678,
+          0.679,
+          0.694
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- a description of your method for showing no deadlock in layout 1"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.162,
+              0.679,
+              0.674,
+              0.692
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.127,
+          0.711,
+          0.65,
+          0.726
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "9. - a description of your method for showing deadlock in layout2"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.13,
+              0.712,
+              0.646,
+              0.725
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.727,
+          0.787,
+          0.743
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- the members of the ON relation, if your proof method produced an assignment"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.728,
+              0.784,
+              0.742
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.744,
+          0.525,
+          0.759
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- a printout of the assignment, if you have one"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.745,
+              0.519,
+              0.758
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.776,
+          0.713,
+          0.792
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "10. - the new axiom for legal (in homework language, and English or FOL)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.132,
+              0.778,
+              0.708,
+              0.791
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.156,
+          0.794,
+          0.518,
+          0.808
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- any new axioms or relations that you added"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.794,
+              0.513,
+              0.807
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.81,
+          0.602,
+          0.826
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "- a printout of the assignment for the given arrangement"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.811,
+              0.599,
+              0.823
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.129,
+          0.843,
+          0.891,
+          0.893
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "11. no actual programming is required here. just think about it, and write about what you _would do to axiomatize, in FOL, the notion of “eventually moving”. then, write about whether the approach of this assignment (i.e. of turning an FOL sentence into a propositional one) would"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.132,
+              0.844,
+              0.882,
+              0.857
+            ]
+          },
+          {
+            "bbox": [
+              0.16,
+              0.86,
+              0.855,
+              0.873
+            ]
+          },
+          {
+            "bbox": [
+              0.161,
+              0.877,
+              0.88,
+              0.89
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "code",
+        "bbox": [
+          0.079,
+          0.165,
+          0.899,
+          0.553
+        ],
+        "content": "Course Info\nInstructors\n    Prof. Tomás Lozano-Pérez\n    Prof. Leslie Kaelbling\nDepartments\n    Electrical Engineering and Computer Science\nAs Taught In\nFall 2002\nLevel\nGraduate\nTopics\n    Engineering\n        Computer Science\n            Algorithms and Data Structures\n            Artificial Intelligence\n    Science\nLearning Resource Types\nnotesLecture Notes\nassignmentProgramming Assignments"
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.157,
+          0.084,
+          0.635,
+          0.103
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "work for proving/disproving the correctness of that condition."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.161,
+              0.086,
+              0.631,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.128,
+          0.117,
+          0.851,
+          0.151
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "12. the words “second implication” are a typo: there is only one implication in formula 5. (the formula describing the dynamics.)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.132,
+              0.119,
+              0.847,
+              0.133
+            ]
+          },
+          {
+            "bbox": [
+              0.16,
+              0.135,
+              0.426,
+              0.15
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.578,
+          0.225,
+          0.595
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Assignments"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.58,
+              0.222,
+              0.593
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.596,
+          0.334,
+          0.619
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Project 1, Part C:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.117,
+              0.594,
+              0.338,
+              0.619
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.625,
+          0.21,
+          0.643
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Materials"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.626,
+              0.207,
+              0.643
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.65,
+          0.368,
+          0.666
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The project "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/proj1c/",
+            "content": [
+              {
+                "type": "text",
+                "content": "assignment",
+                "styles": []
+              }
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.651,
+              0.365,
+              0.665
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.667,
+          0.556,
+          0.683
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The Resolution-Refutation Proof Checker ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/rrpc/",
+            "content": [
+              {
+                "type": "text",
+                "content": "JAR",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ")"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.176,
+              0.666,
+              0.552,
+              0.682
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.684,
+          0.313,
+          0.699
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "The project files:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.176,
+              0.683,
+              0.312,
+              0.698
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.7,
+          0.368,
+          0.716
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ sibling.txt ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/sibling/",
+            "content": [
+              {
+                "type": "text",
+                "content": "TXT",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ")"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.21,
+              0.7,
+              0.364,
+              0.715
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.715,
+          0.83,
+          0.732
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ blocks.txt ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/blocks/",
+            "content": [
+              {
+                "type": "text",
+                "content": "TXT",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ") (fixed inconsistencies with ‘on’ predicate and ‘clear’ axiom)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.718,
+              0.825,
+              0.73
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.733,
+          0.844,
+          0.75
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ blocks_extracredit.txt ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/blocks_extracredit/",
+            "content": [
+              {
+                "type": "text",
+                "content": "TXT",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ") (‘move’ axiom is different than blocks.txt version)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.735,
+              0.84,
+              0.747
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.766,
+          0.371,
+          0.781
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ trains1.txt ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/trains1/",
+            "content": [
+              {
+                "type": "text",
+                "content": "TXT",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ")"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.212,
+              0.766,
+              0.365,
+              0.78
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.782,
+          0.371,
+          0.798
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ trains2.txt ("
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/trains2/",
+            "content": [
+              {
+                "type": "text",
+                "content": "TXT",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ")"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.212,
+              0.783,
+              0.367,
+              0.797
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.814,
+          0.276,
+          0.831
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Announcements"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.815,
+              0.272,
+              0.83
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.837,
+          0.312,
+          0.853
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "About the jarfile:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.176,
+              0.838,
+              0.309,
+              0.852
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.853,
+          0.878,
+          0.888
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ The jarfile contains both compiled classes and source files. To use it, you can either put it in your class path and type java RRPC.Checker. Or, on MacOS X and"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.855,
+              0.843,
+              0.868
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.871,
+              0.875,
+              0.885
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.236,
+          0.085,
+          0.823,
+          0.117
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Windows with JDK you can just double-click the jarfile and the checker will launch."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.24,
+              0.087,
+              0.82,
+              0.099
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.103,
+              0.299,
+              0.116
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.118,
+          0.876,
+          0.168
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ If you are saving/loading the proofs as you work on them, you should be sure to "
+          },
+          {
+            "type": "text",
+            "content": "Output Proof",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " the proof as well as saving them. "
+          },
+          {
+            "type": "text",
+            "content": "Output Proof",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " will write the proof in a human-readable format."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.212,
+              0.12,
+              0.862,
+              0.133
+            ]
+          },
+          {
+            "bbox": [
+              0.242,
+              0.136,
+              0.872,
+              0.149
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.153,
+              0.461,
+              0.165
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.148,
+          0.184,
+          0.313,
+          0.199
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "About blocks.txt:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.176,
+              0.183,
+              0.311,
+              0.199
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.208,
+          0.201,
+          0.768,
+          0.232
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ The file has been updated to correct the swapped arguments in the clear"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.208,
+              0.201,
+              0.765,
+              0.215
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.218,
+              0.283,
+              0.232
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.232,
+          0.233,
+          0.879,
+          0.265
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "axiom. (This bug should not have actually affected your ability to do the proof, but it’s fixed now.)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.241,
+              0.235,
+              0.876,
+              0.249
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.251,
+              0.352,
+              0.265
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.267,
+          0.87,
+          0.348
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ There were two versions of the “on” predicate: one with two arguments, and one with three. (This meant that you could not use resolution on the two different versions. However, it really didn’t cause any problems because you did not need to do resolution across the two different versions to do the proof.) This has now been corrected."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.212,
+              0.268,
+              0.866,
+              0.281
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.284,
+              0.835,
+              0.297
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.301,
+              0.867,
+              0.314
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.316,
+              0.857,
+              0.329
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.333,
+              0.364,
+              0.347
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.349,
+          0.865,
+          0.398
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ The extra credit version, blocks_extracredit.txt, has only one version of “on”: the three argument version. It also contains a different version of the “move” axiom, with an additional predicate."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.214,
+              0.351,
+              0.862,
+              0.363
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.367,
+              0.86,
+              0.38
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.384,
+              0.458,
+              0.397
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.429,
+          0.268,
+          0.447
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "What to Turn In"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.431,
+              0.264,
+              0.446
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.453,
+          0.551,
+          0.47
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your proofs, using the "
+          },
+          {
+            "type": "text",
+            "content": "Output Proof",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " command"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.174,
+              0.453,
+              0.548,
+              0.469
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.487,
+          0.403,
+          0.502
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "For each proof, please also:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.487,
+              0.4,
+              0.501
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.503,
+          0.684,
+          0.519
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "O Provide a brief (not more than a paragraph) proof sketch"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.21,
+              0.503,
+              0.681,
+              0.518
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.52,
+          0.614,
+          0.536
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ Point out any key resolution steps in your proof"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.21,
+              0.519,
+              0.609,
+              0.534
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.553,
+          0.871,
+          0.585
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● For the extra credit, in addition the proof, explain why the solution depends on having an axiom that explicitly mentions"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.555,
+              0.869,
+              0.567
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.571,
+              0.41,
+              0.583
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.177,
+          0.586,
+          0.243,
+          0.601
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "clear(x)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.585,
+              0.242,
+              0.602
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.177,
+          0.602,
+          0.281,
+          0.618
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "after moving"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.601,
+              0.279,
+              0.618
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.177,
+          0.62,
+          0.194,
+          0.633
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "x"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.622,
+              0.193,
+              0.632
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.177,
+          0.634,
+          0.732,
+          0.651
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(even though the solution to question 3 didn’t depend on such a thing)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.636,
+              0.728,
+              0.65
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.652,
+          0.815,
+          0.684
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ Correction: don’t worry about justifying the 3-argument version of the “on” predicate."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.208,
+              0.652,
+              0.811,
+              0.666
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.67,
+              0.318,
+              0.683
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.698,
+          0.225,
+          0.714
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Assignments"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.7,
+              0.222,
+              0.713
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.717,
+          0.507,
+          0.74
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Project 2a: Bayes Net Learning"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.716,
+              0.504,
+              0.739
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.777,
+          0.854,
+          0.827
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In this project, you will implement Bayes net learning. That is, you will write a program that will read in some data and come up with a Bayesian network that best matches the data. Reading and understanding Nilsson’s Chapter 20, section 1 is necessary for doing this assignment."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.778,
+              0.852,
+              0.791
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.794,
+              0.851,
+              0.808
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.811,
+              0.822,
+              0.824
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.84,
+          0.813,
+          0.874
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "This assignment is broken up into parts that will take you step-by-step through building a program for Bayes net learning."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.841,
+              0.81,
+              0.856
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.858,
+              0.366,
+              0.872
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.116,
+          0.888,
+          0.612,
+          0.906
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 0: Designing the Data Structure for a Bayes Net"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.888,
+              0.608,
+              0.905
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.085,
+          0.855,
+          0.136
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Please read through this whole assignment and make sure you understand everything you’re asked to do. Then, design and implement a data structure for a Bayes net, taking into account what you’ll have to do with the data structure."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.086,
+              0.845,
+              0.1
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.103,
+              0.853,
+              0.116
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.12,
+              0.472,
+              0.132
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.146,
+          0.148,
+          0.871,
+          0.198
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(Turn-in) 10 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Describe your data structure using plain English and draw your data structure. In particular, describe where and how the links and conditional probability tables are stored in the structure."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.181,
+              0.151,
+              0.869,
+              0.162
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.167,
+              0.828,
+              0.179
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.185,
+              0.438,
+              0.196
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.213,
+          0.381,
+          0.231
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 1: Estimating the CPTs"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.213,
+              0.378,
+              0.23
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.237,
+          0.861,
+          0.303
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In this part, you are given the structure of a network and need to compute the conditional probability tables (CPTs). For this assignment, we will assume that there is no missing data, so this is just a matter of counting. For parts 1 and 2, simply use the raw counts (just as Nilsson does)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.238,
+              0.812,
+              0.251
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.255,
+              0.857,
+              0.268
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.271,
+              0.84,
+              0.284
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.287,
+              0.171,
+              0.301
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.317,
+          0.222,
+          0.333
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your Tasks:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.319,
+              0.22,
+              0.331
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.146,
+          0.348,
+          0.871,
+          0.364
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Write a procedure for computing the estimated CPTs given a network structure and data."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.152,
+              0.349,
+              0.87,
+              0.363
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.365,
+          0.821,
+          0.395
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Test the correctness of your procedure using the network and data in "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/dataa/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data A",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". The “correct” CPTs are in the file."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.366,
+              0.816,
+              0.379
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.382,
+              0.404,
+              0.395
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.398,
+          0.761,
+          0.414
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(Turn-in) 10 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Compute the CPTs of the network and data in "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/datab/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data B",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": "."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.157,
+              0.399,
+              0.754,
+              0.411
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.429,
+          0.513,
+          0.447
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 2: Computing the Score of a Network"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.429,
+              0.509,
+              0.446
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.453,
+          0.849,
+          0.519
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Pretend that you have the network already defined for you. That is, you already know the network structure and the conditional probability tables. How would you know whether it is a good network? This first part is about computing the score of a given network so that you can compare different networks."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.454,
+              0.812,
+              0.466
+            ]
+          },
+          {
+            "bbox": [
+              0.118,
+              0.47,
+              0.837,
+              0.483
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.487,
+              0.846,
+              0.5
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.504,
+              0.336,
+              0.515
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.533,
+          0.858,
+          0.583
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "We can compute the score of a network in any way we want, but a "
+          },
+          {
+            "type": "text",
+            "content": "good scoring metric",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " would take into account two things: (1) probability of the data given the network; (2) complexity of the network. For part 2, please use the scoring metric in Nilsson’s chapter."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.534,
+              0.847,
+              0.546
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.551,
+              0.853,
+              0.564
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.568,
+              0.668,
+              0.579
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.116,
+          0.596,
+          0.222,
+          0.612
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your Tasks:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.598,
+              0.22,
+              0.61
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.627,
+          0.824,
+          0.659
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Write a procedure for computing the score of a network using the scoring metric in Nilsson’s chapter."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.177,
+              0.628,
+              0.821,
+              0.642
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.643,
+              0.32,
+              0.659
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.66,
+          0.871,
+          0.692
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Test the correctness of your procedure using the network and data "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/dataa/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data A",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". The “correct” score is in the file."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.152,
+              0.661,
+              0.866,
+              0.675
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.678,
+              0.321,
+              0.69
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.693,
+          0.873,
+          0.726
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "text",
+            "content": "(Turn-in) 10 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Compute the score of the network and data in "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/datab/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data B",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". Please report both "
+          },
+          {
+            "type": "text",
+            "content": "|B|",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " and m seperately."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.694,
+              0.871,
+              0.708
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.711,
+              0.388,
+              0.725
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.741,
+          0.463,
+          0.759
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 3: Generating an Initial Network"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.741,
+              0.459,
+              0.757
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.114,
+          0.764,
+          0.873,
+          0.864
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Now you have the tools for searching through the space of network structures. However, like many other search problems, exhaustive search through the space of all possible network structures is not practical. In Part 4, you will need to implement some kind of greedy search, and as you should know by now, if you are not doing exhaustive search, your result will depend on how you choose the starting point. So in this part, you will think about how to choose an initial network. Possible candidates for an initial network are:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.767,
+              0.839,
+              0.779
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.783,
+              0.821,
+              0.796
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.799,
+              0.87,
+              0.812
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.816,
+              0.852,
+              0.829
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.832,
+              0.849,
+              0.845
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.849,
+              0.547,
+              0.862
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.147,
+          0.878,
+          0.425,
+          0.894
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Network with no dependencies"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.178,
+              0.879,
+              0.422,
+              0.893
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.895,
+          0.657,
+          0.91
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ This is a network with no arrows between any nodes."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.208,
+              0.895,
+              0.654,
+              0.909
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.086,
+          0.375,
+          0.1
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Fully connected network"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.158,
+              0.085,
+              0.373,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.102,
+          0.879,
+          0.199
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ This is a network in which you randomly choose a top node (root of the tree), which has no parents, then randomly choose the next node whose parent is the root node, then choose the next node whose parents are the first two nodes, etc. In general, when a node is chosen as the next one to be added to the network, its parents are all of the nodes already chosen. If this description is not clear, please talk to one of the TAs."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.102,
+              0.837,
+              0.116
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.12,
+              0.86,
+              0.132
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.136,
+              0.868,
+              0.149
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.153,
+              0.875,
+              0.165
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.169,
+              0.872,
+              0.182
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.185,
+              0.411,
+              0.198
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.201,
+          0.417,
+          0.215
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Randomly connected network"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.202,
+              0.415,
+              0.215
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.217,
+          0.857,
+          0.249
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ This is a network in which the nodes are randomly connected. You just need to make sure that there are no directed cycles."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.212,
+              0.218,
+              0.854,
+              0.232
+            ]
+          },
+          {
+            "bbox": [
+              0.241,
+              0.236,
+              0.583,
+              0.248
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.25,
+          0.874,
+          0.282
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Maximum spanning tree based on mutual information (if you do not choose to implement this one, you don’t need to explain why)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.251,
+              0.873,
+              0.264
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.268,
+              0.492,
+              0.282
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.206,
+          0.283,
+          0.876,
+          0.299
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ This is for the curious minds. If you’re interested in this, come and talk to the TAs."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.284,
+              0.874,
+              0.298
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.314,
+          0.87,
+          0.363
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Note that any network you choose (here and also throughout your search) cannot have directed cycles. Also note, from this point on, you may use bayesian correction if your network has some probability 0 events."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.316,
+              0.866,
+              0.329
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.332,
+              0.866,
+              0.345
+            ]
+          },
+          {
+            "bbox": [
+              0.12,
+              0.349,
+              0.275,
+              0.361
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.377,
+          0.222,
+          0.393
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your Tasks:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.378,
+              0.219,
+              0.391
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.408,
+          0.874,
+          0.44
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Write two procedures that will generate an initial network (any two of the ones mentioned above)"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.149,
+              0.409,
+              0.873,
+              0.423
+            ]
+          },
+          {
+            "bbox": [
+              0.178,
+              0.426,
+              0.238,
+              0.44
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.441,
+          0.872,
+          0.473
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "text",
+            "content": "(Turn-in) 5 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Describe how you’ve made sure that your network does not have any directed cycles"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.442,
+              0.87,
+              0.456
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.46,
+              0.298,
+              0.472
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.474,
+          0.874,
+          0.507
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● "
+          },
+          {
+            "type": "text",
+            "content": "(Turn-in) 5 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Generate two initial network for each of the two data sets: "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/dataa/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data A",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " and "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/datab/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data B",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": ". Draw the four networks and describe how you generated them."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.153,
+              0.475,
+              0.872,
+              0.488
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.491,
+              0.736,
+              0.505
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.522,
+          0.285,
+          0.54
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 4: Searching"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.118,
+              0.521,
+              0.283,
+              0.54
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.115,
+          0.546,
+          0.829,
+          0.578
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Given the initial network in Part 3, implement a local greedy search to find a "
+          },
+          {
+            "type": "text",
+            "content": "locally optimal network.",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " (as described in Nilsson’s Chapter)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.121,
+              0.548,
+              0.826,
+              0.56
+            ]
+          },
+          {
+            "bbox": [
+              0.119,
+              0.564,
+              0.469,
+              0.577
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.593,
+          0.221,
+          0.608
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your Tasks:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.594,
+              0.22,
+              0.607
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.624,
+          0.848,
+          0.656
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "● Write a program to do the search. You need to define a stopping criterion so that your program does not keep searching."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.155,
+              0.625,
+              0.846,
+              0.638
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.641,
+              0.448,
+              0.655
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.658,
+          0.878,
+          0.706
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(Turn-in) 10 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Explain your search algorithm well enough so that someone else can implement it (cf. Project 1a) "
+          },
+          {
+            "type": "text",
+            "content": "Note:",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Please use some manner of randomization into your algorithm, either in your initialization step or in the search itself."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.658,
+              0.876,
+              0.671
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.675,
+              0.859,
+              0.688
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.692,
+              0.671,
+              0.703
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.706,
+          0.876,
+          0.772
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "(Turn-in) 15 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " For one initialization method, run your program 3 times each on data in "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/dataa/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data A",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " and "
+          },
+          {
+            "type": "hyperlink",
+            "url": "https://ocw.mit.edu/courses/6-825-techniques-in-artificial-intelligence-sma-5504-fall-2002/resources/datab/",
+            "content": [
+              {
+                "type": "text",
+                "content": "Data B",
+                "styles": []
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": " to find a locally optimal network. Draw the resulting the networks (there should be 6) along with the CPTs. Do you get different results each time you run it? Why or why not?"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.708,
+              0.874,
+              0.721
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.724,
+              0.853,
+              0.737
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.741,
+              0.855,
+              0.753
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.757,
+              0.336,
+              0.77
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.787,
+          0.298,
+          0.805
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Part 5: Experiment"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.788,
+              0.296,
+              0.804
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.116,
+          0.811,
+          0.875,
+          0.827
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "In this part, you will do two experiments: one with Part 2, and another with either Part 3 or Part 4."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.119,
+              0.812,
+              0.874,
+              0.826
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph_title",
+        "bbox": [
+          0.117,
+          0.842,
+          0.222,
+          0.857
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Your Tasks:"
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.12,
+              0.843,
+              0.219,
+              0.856
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "bbox": [
+          0.148,
+          0.085,
+          0.875,
+          0.134
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Experiment with Part 2: Try using a different scoring metric, for example, by adjusting the weighting of some of the terms. Run it on the two data sets several times and compare the two different scoring metrics you’ve used."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.18,
+              0.087,
+              0.871,
+              0.099
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.104,
+              0.856,
+              0.115
+            ]
+          },
+          {
+            "bbox": [
+              0.18,
+              0.12,
+              0.532,
+              0.133
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.207,
+          0.135,
+          0.845,
+          0.183
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ "
+          },
+          {
+            "type": "text",
+            "content": "(Turn-in) 15 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " How did you change the scoring metric? What was your hypothesis about how this would affect the final networks? Draw the resulting final networks and explain the difference (if any)."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.213,
+              0.137,
+              0.835,
+              0.148
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.153,
+              0.84,
+              0.166
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.169,
+              0.619,
+              0.182
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.147,
+          0.185,
+          0.871,
+          0.298
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "Experiment with Part 3 or Part 4. Make a non-trivial change to your algorithm and see if you get different final networks. The changes can be in the initialization (e.g. trying another method) or in your search itself. If you decide to modify a parameter only, then do this in a systematic way; that is, try various settings of the parameter and plot the changes in some performance measure. Compare the scores of the final networks using different initial networks. Or try a different search algorithm. See if that results in a different final network. Compare the scores."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.179,
+              0.185,
+              0.862,
+              0.199
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.202,
+              0.822,
+              0.216
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.218,
+              0.855,
+              0.232
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.235,
+              0.837,
+              0.249
+            ]
+          },
+          {
+            "bbox": [
+              0.179,
+              0.251,
+              0.869,
+              0.265
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.268,
+              0.817,
+              0.28
+            ]
+          },
+          {
+            "bbox": [
+              0.181,
+              0.285,
+              0.522,
+              0.297
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "bbox": [
+          0.206,
+          0.3,
+          0.875,
+          0.367
+        ],
+        "content": [
+          {
+            "type": "text",
+            "content": "○ "
+          },
+          {
+            "type": "text",
+            "content": "(Turn-in) 15 points",
+            "styles": [
+              "bold"
+            ]
+          },
+          {
+            "type": "text",
+            "content": " Explain your experiment. What did you do differently? What was your hypothesis about how this would affect the final networks and the score of the networks? For each condition, run it on the data three times and draw a graph comparing the two conditions. Discuss your graph."
+          }
+        ],
+        "lines": [
+          {
+            "bbox": [
+              0.211,
+              0.3,
+              0.864,
+              0.313
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.317,
+              0.872,
+              0.33
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.334,
+              0.849,
+              0.347
+            ]
+          },
+          {
+            "bbox": [
+              0.24,
+              0.351,
+              0.685,
+              0.364
+            ]
+          }
+        ]
+      }
+    ]
+  ],
+  "page_index_map": []
+}
