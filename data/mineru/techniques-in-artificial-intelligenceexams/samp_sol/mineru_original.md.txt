@@ -1,0 +1,339 @@
+# 6.891 Review Problems
+
+## 5/16/01
+
+## 1 Bayes’ Nets
+
+I am a professor trying to predict the performance of my class on an exam. After much thought, it is apparent that the students who do well are those that studied and do not have a headache when they take the exam. My vast medical knowledge leads me to believe that headaches can only be caused by being tired or by having the flu. Studying, the flu, and being tired are pairwise independent.
+
+a) Model 3 best models the relationship.
+
+![](images/page_0_image_5.jpg)
+
+![](images/page_0_image_6.jpg)
+
+![](images/page_0_image_7.jpg)
+
+Figure 1: From left to right, models 1, 2, and 3
+
+b) The first model makes flu, tiredness, and studying only conditionally independent (the first two conditioned on H and the third conditioned on E). The second model has the right relations, but many unnecessary dependencies. If the situation is accurately described in the problem, it will produce the same joint distribution as the third model because the dependencies will have no effect (for example, $P ( S | F , T )$ will be the same as $P ( S ) )$ ).
+
+c) If we assume that we need to hold only one value $P ( X = t r u e )$ to represent the apriori probability of a single variable, then we need $2 ^ { n }$ entries for a conditional probability table for a node with n parents. So, the original network has a complexity of $1+1+1+4+4=11$ and the new network has a complexity of $1 + 1 + 4 + 4 + 4 = 1 4 . ~ \mathrm { S o } .$ the size of the information necessary to store the network has increased by about 27%, but we have gained only a little more accuracy.
+
+![](images/page_1_image_1.jpg)
+
+d)
+
+$$
+\begin{array}{r c l} P (\neg E | F) & = & \sum_ {H, S} P (\neg E | H, S, F) P (H, S | F) \\ & = & \sum_ {H, S} P (\neg E | H, S) P (H, S | F) \\ & = & \sum_ {H, S} P (\neg E | H, S) P (H | F, S) P (S | F) \\ & = & \sum_ {H, S} P (\neg E | H, S) P (H | F, S) P (S) \\ & = & \sum_ {H, S} P (\neg E | H, S) P (S) \sum_ {T} P (H | F, T) P (T) \end{array}
+$$
+
+e)
+
+$$
+\begin{array}{r c l} P (S | E) & = & \frac {P (E | S) P (S)}{P (E)} \\ P (E | S) & = & \sum_ {H} P (E | S, H) P (H) \\ & = & \sum_ {H} P (E | S, H) \sum_ {F, T} P (H | F, T) P (F) P (T) \\ P (E) & = & \sum_ {H, S} P (E | S, H) P (S) \sum_ {F, T} P (H | F, T) P (F) P (T) \end{array}
+$$
+
+## 2 True & False
+
+1. False.
+
+2. True.
+
+3. False.
+
+4. True.
+
+5. False.
+
+6. False.
+
+7. False.
+
+8. True.
+
+9. True.
+
+## 3 The Prisoner’s Dilemma
+
+![](images/page_2_image_6.jpg)
+
+The decision tree shows that the best choice is to keep quiet - the expected value is higher than that for talking. If we want to find out how much trust in our partner is necessary make keeping quiet the better choice, we need to find out for what value of $P ( \mathrm { p - q u i e t } )$ the expected value of keeping quiet equals -50.
+
+$$
+\begin{array}{c} - 1 0 0 * (1 - P (\mathrm{p-quiet})) + (- 1 0 * P (\mathrm{p-quiet})) = - 5 0 \\ - 1 0 0 + 1 0 0 P (\mathrm{p-quiet}) - 1 0 P (\mathrm{p-quiet}) = - 5 0 \\ - 1 0 0 + 9 0 P (\mathrm{p-quiet}) = - 5 0 \\ 9 0 P (\mathrm{p-quiet}) = 5 0 \\ P (\mathrm{p-quiet}) = \frac {5}{9} \approx . 5 5 \end{array}
+$$
+
+So as long as I believe that the probability of my partner keeping quiet is $\frac { 5 } { 9 }$ or better, choosing to keep quiet is the best strategy.
+
+## 4 Searching
+
+a) A\*-search would be a good strategy. Straight-line distance is known to be an admissible heuristic and should be a good approximation of the distance remaining to our goal from any point. And, we know that A\*- search will return the shortest path, allowing us to beat out our trading competitors.
+
+b) I can still use the straight-line distances. Heuristics are admissible so long as they do not overestimate the distance to a goal.
+
+## 5 Overfitting
+
+In regression and in crafting generative models, we can make our model fit the training points too closely, which often means that we are modeling noise. Or we start fitting with a model that is more complex than is necessary to fit the points. In either case, future data are likely to not fit our model as well as they would have fit a simpler model of the training data. The standard approach is to add a penalty to the error criterion based on the regularity or the complexity of the model. This will make the best-fit calculation balance the complexity of the model against the error it produces on the training data, and reduce the likelihood of overfitting.
+
+In classification models, we can encounter a similar problem. The classifier will separate the training data precisely, but the boundary may not generalize well. We can resist overfitting by using simpler models, either with fewer features or (in multi-layer nets) with fewer hidden nodes. Other possibilities are to use support vector machines to find the maximal-margin separator, which should be more resistant to error, or to add some noise to the training data to make the learned classifier more robust.
+
+## 6 Planning
+
+There are no constraints on what order the actions must be executed. They are all in the same layer, which indicates that they can be performed in parallel.
+
+## 7 GraphPlan Vs. Partial Order Planner
+
+GraphPlan will return a two-layer plan, either fizz followed by fuzz, or viceversa. POP, on the other hand, will return a single-layer plan, indicating that fizz and fuzz can be performed in parallel. Why does this difference occur? GraphPlan declares actions with inconsistent effects mutex, while POP does not. So, POP’s solutions are more expressive (encompass more valid possibilities) than do GraphPlan’s solutions.
+
+## 8 More GraphPlan
+
+Yes, this is an admissible heuristic because it will always underestimate the distance to a solution (no solution can be nearer than the first layer where all of the solution propositions are not mutex).
+
+## 9 Bayesian Networks
+
+Which of the following conditional independence assumptions are true?
+
+1. False.
+
+2. True.
+
+3. False.
+
+4. True.
+
+5. False.
+
+6. False.
+
+7. False.
+
+8. False.
+
+Neither network is equivalent to the original one. The second network can encode the same joint probability because it’s conditional independence relations are a subset of the original network’s relations.
+
+## 10 Automated Inference
+
+The algorithm attempts to avoid calculating unnecesary information. It is easier to understand what is going on if we look at the description and derivation rather than the pseudocode. α and $\beta$ indicate normalizing factors that can be computed with information from the known probability tables and the return values of previously made recursive calls.
+
+$$
+P (A | L) = \alpha P (L | A) P (A)
+$$
+
+$$
+\begin{array}{r c l} P (L | A) & = & \beta [ P (L | C) \left[ P (C | A B) P (B) + P (C | A \neg B) P (\neg B) \right] \\ & & + P (L | \neg C) \left[ P (\neg C | A B) P (B) + P (\neg C | A \neg B) P (\neg B) \right] ] \end{array}
+$$
+
+Now, we know every value in this equation except for $P ( L | C )$ so we make a recursive call to calculate it.
+
+$$
+\begin{array}{r c l} P (L | C) & = & \beta [ P (L | D) [ P (D | C E) P (E) + P (D | C \neg E) P (\neg E) ] \\ & & + P (L | \neg D) [ P (\neg D | C E) P (E) + P (\neg D | C \neg E) P (\neg E) ] ] \end{array}
+$$
+
+Again, all of these values can be looked up in the network’s conditional probability tables, except for $P ( L | D )$ .
+
+$$
+\begin{array}{r c l} P (L | D) & = & \beta [ P (L | J) [ P (J | D K) P (K) + P (J | D \neg K) P (\neg K) ] \\ & & + P (L | \neg J) [ P (\neg J | D K) P (K) + P (\neg J | D \neg K) P (\neg K) ] ] \end{array}
+$$
+
+Finally, we have arrived at a point where every element of the equation can be directly looked up in a known conditional probability table. Notice that we avoided calculating information for the F-G-H chain, or for I. These help to make our calculation more efficient than the brute-force method of reconstructing the entire joint probability table.
+
+## 11 Sampling
+
+You would use sampling-based inference in a very large Bayesian network or one with undirected cycles that make exact inference procedures infeasible. However, in cases where you wish to evaluate the probability of events with very small probability, sampling is not an effective strategy.
+
+## 12 Medical Decisions
+
+![](images/page_5_image_6.jpg)
+
+Clearly, surgery is the best decision. The value of perfect information is 7 because it would allow me to skip surgery (have zero cost) 70% of the time.
+
+$$
+P (\text {chip}) * 0 + P (\neg \text {chip}) * (- 1 0) = - 3
+$$
+
+![](images/page_6_image_0.jpg)
+
+It’s too hard to fit the math on the diagram, so here are the relevant probabilities and expected values. Abbreviations are: p - positive test, n - negative test, bc - bone chip, s - surgery.
+
+$$
+\begin{array}{r c l} P (p | b c) = x & & P (n | b c) = (1 - x) \\ P (p | \neg b c) = y & & P (n | \neg b c) = (1 - y) \\ P (p) & = & P (p | b c) P (b c) + P (p | \neg b c) P (\neg b c) \\ & = & 0. 3 x + 0. 7 y \\ P (n) & = & P (n | b c) P (b c) + P (n | \neg b c) P (\neg b c) \\ & = & 0. 3 (1 - x) + 0. 7 (1 - y) \\ & = & 1 - 0. 3 x - 0. 7 y \\ P (b c | p) & = & \frac {P (p | b c) P (b c)}{P (p)} \\ & = & \frac {0 . 3 x}{0 . 3 x + 0 . 7 y} \\ P (\neg b c | p) & = & \frac {P (p | \neg b c) P (\neg b c)}{P (p)} \\ & = & \frac {0 . 7 y}{0 . 3 x + 0 . 7 y} \\ P (b c | n) & = & \frac {P (n | b c) P (b c)}{P (n)} \\ & = & \frac {0 . 3 - 0 . 3 x}{1 - 0 . 3 x - 0 . 7 y} \\ P (\neg b c | n) & = & \frac {P (n | \neg b c) P (\neg b c)}{P (n)} \\ & = & \frac {0 . 7 - 0 . 7 y}{1 - 0 . 3 x - 0 . 7 y} \\ E [ s | p ] & = & - 1 2 P (b c | p) + - 1 2 P (\neg b c | p) \\ & = & - 1 2 \end{array}
+$$
+
+$$
+\begin{array}{r c l} E [ \neg s | p ] & = & - 1 0 2 P (b c | p) + - 2 P (\neg b c | p) \\ & = & \frac {- 3 0 . 6 x - 1 . 4 y}{0 . 3 x + 0 . 7 y} \\ E [ s | n ] & = & - 1 2 \\ E [ \neg s | n ] & = & - 1 0 2 P (b c | n) + - 2 P (\neg b c | n) \\ & = & \frac {- 3 2 + 3 0 . 6 x + 1 . 4 y}{1 - 0 . 3 x - 0 . 7 y} \end{array}
+$$
+
+Now it gets ugly. Let’s refer to our decision to take the test as D.
+
+$$
+\begin{array}{c} E [ D ] = \max (E [ s | p ], E [ \neg s | p ]) P (p) + \max (E [ s | n ], E [ \neg s | n ]) P (n) \\ E [ D ] = \max (- 1 2, E [ \neg s | p ]) P (p) + \max (E [ - 1 2, E [ \neg s | n ]) P (n) \end{array}
+$$
+
+Clearly, if we elect to have surgery no matter what, we are going to get an expected value of -12, which is less than our previous max of -10. So we need to at least not elect to have surgery some time. If we always elect not to have surgery, then we are going to end up with a worse expected value than our uninformed “no surgery” choice. Unless the test is completely useless, we should elect to have surgery if it detects bone spurs and elect not to have surgery if it does not.
+
+$$
+\begin{array}{r c l} E [ D ] & = & - 1 2 P (p) + E [ \neg s | n ] P (n) \\ & = & - 1 2 (0. 3 x + 0. 7 y) + \frac {(- 3 2 + 3 0 . 6 x + 1 . 4 y)}{(1 - 0 . 3 x - 0 . 7 y)} (1 - 0. 3 x - 0. 7 y) \\ & = & - 3. 6 x - 8. 4 y - 3 2 + 3 0. 6 x + 1. 4 y \\ & = & 2 7 x - 7 y - 3 2 > - 1 0 \\ 2 7 x - 7 y & > & 2 2 \\ x & > & (0. 2 5 9 y + 0. 8 1 5) \end{array}
+$$
+
+Any values of x and y which satisfy this relationship (and, of course, which are less than or equal to 1, so they are valid probabilities) will give us a better expected value than just deciding on surgery without having the examination.
+
+## 13 Markov Decision Processes
+
+The decision tree for the optimal action strategy over two steps, starting in state s<sub>1</sub>.
+
+![](images/page_8_image_0.jpg)
+
+The decision tree for the optimal one-step strategy, assuming no knowledge of the starting state. Clearly, we should take $a _ { 2 }$
+
+![](images/page_9_image_0.jpg)
+
+And now, the value functions. Because this is a simple system, we can calculate them directly and avoid value-iteration.
+
+$$
+\begin{array}{r c l} V (s _ {1}) & = & 1 + \gamma \max (. 1 V (s _ {1}) +. 9 V (s _ {2}),. 5 V (s _ {1}) +. 5 V (s _ {2})) \\ & = & 1 +. 9 [. 5 V (s _ {1}) +. 5 V (s _ {2}) ] \\ & = & 1 +. 4 5 V (s _ {1}) +. 4 5 V (s _ {2}) \\ V (s _ {2}) & = & 0 + \gamma \max (. 6 V (s _ {1}) +. 4 V (s _ {2}),. 9 V (s _ {1}) +. 1 V (s _ {2})) \\ & = & . 9 [. 9 V (s _ {1}) +. 1 V (s _ {2}) ] \\ & = & . 8 1 V (s _ {1}) +. 0 9 V (s _ {2}) \end{array}
+$$
+
+So, we have two unknowns, and two linear equations. So we can easily solve them and get $V ( s _ { 1 } ) \approx 6 . 6 9$ and $V ( s _ { 2 } ) \approx 5 . 9 6$
+
+## 14 Some Other Questions
+
+1. If we do not observe any occurences of B this value is undefined. Also, if there are no occurences of (A and B) or of not (A and B), then we can get a 0 probability, which can sometimes cause trouble later.
+
+2. Reversal might lower the error in a single step, but deletion and addition as separate steps might require increasing the error temporarily. Gradient descent algorithms will not select moves that increase the measured error so we need to make reversal an atomic action. Another alternative would be a stochastic search method (such as simulated annealing) which can sometimes take non-improving steps.
+
+3. The four-element network has a complexity of 15, the five-element network requires only 9 conditional probability values. This illustrates the use of a hidden variable to simplify a network.
+
+![](images/page_10_image_1.jpg)
+
+![](images/page_10_image_2.jpg)
+
+4. This network is only ever going to generate a single output. Call it z. Then
+
+$$
+E = \sum_ {i} (z - y ^ {i}) ^ {2}.
+$$
+
+So
+
+$$
+\frac {d E}{d z} = \sum_ {i} 2 (z - y ^ {i}) z (1 - z).
+$$
+
+E is minimized when the derivative is zero; that happens, uninterestingly at $z = 0$ and $z = 1$ . Let’s set it to zero and see what else happens (using the proportion of 1’s and 0’s among the $y ^ { i } )$ :
+
+$$
+\begin{array}{r l} 8 0 (z - 1) + 2 0 (z - 0) & = 0 \\ 1 0 0 z = 8 0 \\ z = 0. 8 \end{array}
+$$
+
+5. Let’s assume that the event of prisoner A being executed is represented by A, and the event of being pardoned is represented by ¬A.
+
+So, at first there are three possibilities: A is executed, and B and C are pardoned; B is executed, while A and C are pardoned; or C is executed while A and B are pardoned. All other possible combinations of events are impossible and have probability 0.
+
+When the guard returns and tells A that prisoner B has been pardoned, what is the probability that A will be executed?
+
+$$
+\begin{array}{r c l} P (A | \neg B) & = & \frac {P (A , \neg B)}{P (\neg B)} \\ & = & \frac {P (A , \neg B , \neg C)}{P (A , \neg B , \neg C) + P (C , \neg A , \neg B)} \\ & = & \frac {1 / 3}{1 / 3 + 1 / 3} \\ & = & 0. 5 \end{array}
+$$
+
+$\mathrm { S o }$ now that you know that B is being pardoned, the probability that you will be executed is 50%. Before, your probability of execution was only $\frac { 1 } { 3 }$ Weird, huh? This is similar to another famous probability scenario known as the “Monty Hall” problem.
+
+6. If $f ( X )   =   0   \mathrm { o r }   f ( X )   =   1$ meaning that $X \cdot W$ was greater than b or less than −b, there is no gradient. In the other cases, we can derive the following gradient equation.
+
+$$
+\begin{array}{r c l} {s} & = & {((1 / 2 b) (X \cdot W + b) - d) ^ {2}} \\ {\frac {d s}{d W _ {i}}} & = & {((1 / 2 b) (X \cdot W + b) - d) (X _ {i} / b)} \end{array}
+$$
+
+The problem is that points that are mislabeled, but produce a 0 or a 1 will produce large error, but no gradient. So the classifier will not be able to reduce the error of these cases by gradient descent.
+
+7. Let the vector of weights from the inputs to the first unit be $w _ { 1 }$ and the vector of weights input the second unit be $w _ { 2 }$ . Let $v = \{ g _ { 1 } ( w _ { 1 } \cdot x ) ; x \}$
+
+$$
+\begin{array}{r c l} E & = & (f - d) ^ {2} \\ E & = & (g _ {2} (w _ {2} \cdot v) - d) ^ {2} \\ \frac {d E}{d w _ {2 n}} & = & 2 (g _ {2} - d) \cdot (g _ {2} (1 - g _ {2})) \cdot v _ {n} \\ \frac {d E}{d w _ {1 n}} & = & 2 (g _ {2} - d) \cdot (g _ {2} (1 - g _ {2})) \cdot w _ {2 0} g _ {1} (1 - g _ {1}) \cdot x _ {n} \end{array}
+$$
+
+8. First example: looks good, let’s try resolution.
+
+$$
+\begin{array}{c} \neg ((((\exists x) P (x)) \to Q (A)) \to ((\forall x) (P (x) \to Q (A)))) \\ \neg (\neg (\neg ((\exists x) P (x)) \lor Q (A)) \lor ((\forall y) (\neg P (y) \lor Q (A)))) \end{array}
+$$
+
+$$
+\begin{array}{c} ((\neg \exists x. P (x)) \lor Q (A)) \land \exists y. (P (y) \land \neg Q (A)) \\ (\forall x. \neg P (x) \lor Q (A)) \land \exists y. (P (y) \land \neg Q (A)) \end{array}
+$$
+
+1. ¬ $\neg P ( x ) \lor Q ( A )$
+
+2. $P ( f r e d )$
+
+3. $\neg Q ( A )$
+
+4. $\neg P ( x ) ( 3 , 1 )$
+
+5. False (4,2, fred/x)
+
+Second example: looks good, let’s try resolution.
+
+$$
+\begin{array}{c} \neg (((\forall x. P (x)) \to Q (A)) \to (\exists x. (P (x) \to Q (A)))) \\ ((\forall x. P (x)) \to Q (A)) \land \neg \exists x. (P (x) \to Q (A)) \\ (\neg (\forall x. P (x)) \lor Q (A)) \land \forall x. \neg (\neg P (x) \lor Q (A)) \\ (\exists x. \neg P (x) \lor Q (A)) \land \forall x. (P (x) \land \neg Q (A)) \\ (\neg P (f r e d) \lor Q (A)) \land P (x) \land \neg Q (A) \end{array}
+$$
+
+1. $\neg P ( f r e d ) \lor Q ( A )$
+
+2. $P ( x )$
+
+3. $\neg Q ( A )$
+
+4. $$\neg P ( f r e d )$ (3,1)$
+
+5. False (4,2)
+
+Third example: Hmmm, I’m a bit suspicious. Maybe we can find a counterexample.
+
+$$
+\begin{array}{c} Q (a) = f a l s e \\ P (f r e d) = t r u e \\ P (n e d) = f a l s e \\ \exists x. (P (x) \to Q (a)) \to \forall x. (P (x) \to Q (a)) \end{array}
+$$
+
+We need a situation in which the left-hand side is true and the right-hand side is false. Consider if we satisfy the left-hand side with x=ned. Because $P ( n e d ) = f a l s e ,$ the left-hand side will be true despite the fact the $\mathrm { Q ( a ) }$ is always false. But, because the right-hand side is universally quantified it is not true, because P(fred) is true, which will make $P ( f r e d ) \to Q ( a )$ false. So, the entire expression is false because we have a true left-hand side and a false right-hand side.
+
+$$
+9. \neg \mathrm{On} (x, z) \lor \neg \mathrm{Above} (z, y) \lor \mathrm{Above} (x, y)
+$$
+
+10. The first-order logic description is:
+
+$$
+\begin{array}{c} \forall x. (P (x) \to B (x)) \to \forall y. (\neg P (y) \to G (y)) \\ \forall x. (B (x) \lor G (x)) \land (\neg B (x) \lor \neg G (x)) \\ (\exists x. \neg P (x)) \to (\forall y. P (y) \to B (y)) \\ P (O 1) \\ \neg P (O 2) \end{array}
+$$
+
+Which turns into the following clausal form statements:
+
+1. $P ( F ) \vee P ( y ) \vee G ( y )$
+
+2. $\neg B ( F ) \lor P ( y ) \lor G ( y )$
+
+3. $B ( x ) \vee G ( x )$
+
+4. $\neg B ( x ) \lor \neg G ( x )$
+
+5. $P ( x ) \vee \neg P ( y ) \vee B ( y )$
+
+6. P(O1)
+
+7. ¬P(O2) And then we can prove that there is a green object:
+
+8. $\neg G ( x )$
+
+9. $$\neg B { \big ( } F { \big ) } \vee G { \big ( } O 2 { \big ) }$ (2,7)$
+
+10. $G ( F ) \lor G ( O 2 ) ( 3 { , } 9 )$
+
+11. G(O2) (8,10)
+
+12. False (8,11)
+
+11. (a) Optimize threatens HappyCustomer because it deletes BugFree.
+
+(b) HaveProgram is not linked to optimize, and HavePackaging (requirement of Ship) is unsupported.
+
+(c) Any plan that places debug after optimize and both before ship is acceptable.

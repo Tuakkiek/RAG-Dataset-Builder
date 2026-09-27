@@ -1,0 +1,1866 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.365,
+            0.205,
+            0.634,
+            0.227
+          ],
+          "level": 1,
+          "content": "6.891 Review Problems"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.462,
+            0.273,
+            0.535,
+            0.292
+          ],
+          "level": 2,
+          "content": "5/16/01"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.326,
+            0.398,
+            0.345
+          ],
+          "level": 2,
+          "content": "1 Bayes’ Nets"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.358,
+            0.785,
+            0.45
+          ],
+          "content": "I am a professor trying to predict the performance of my class on an exam. After much thought, it is apparent that the students who do well are those that studied and do not have a headache when they take the exam. My vast medical knowledge leads me to believe that headaches can only be caused by being tired or by having the flu. Studying, the flu, and being tired are pairwise independent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.232,
+            0.46,
+            0.531,
+            0.476
+          ],
+          "content": "a) Model 3 best models the relationship."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.215,
+            0.485,
+            0.388,
+            0.603
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.405,
+            0.486,
+            0.579,
+            0.603
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.596,
+            0.485,
+            0.768,
+            0.603
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.327,
+                0.617,
+                0.671,
+                0.633
+              ],
+              "content": "Figure 1: From left to right, models 1, 2, and 3"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.231,
+            0.651,
+            0.785,
+            0.759
+          ],
+          "content": "b) The first model makes flu, tiredness, and studying only conditionally independent (the first two conditioned on H and the third conditioned on E). The second model has the right relations, but many unnecessary dependencies. If the situation is accurately described in the problem, it will produce the same joint distribution as the third model because the dependencies will have no effect (for example, $P ( S | F , T )$ will be the same as $P ( S ) )$ )."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.767,
+            0.784,
+            0.844
+          ],
+          "content": "c) If we assume that we need to hold only one value $P ( X = t r u e )$ to represent the apriori probability of a single variable, then we need $2 ^ { n }$ entries for a conditional probability table for a node with n parents. So, the original network has a complexity of $1+1+1+4+4=11$ and the new network has a complexity of $1 + 1 + 4 + 4 + 4 = 1 4 . ~ \\mathrm { S o } .$ the size of the information"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.504,
+            0.889
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.159,
+            0.784,
+            0.19
+          ],
+          "continues_prev": true,
+          "content": "necessary to store the network has increased by about 27%, but we have gained only a little more accuracy."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.256,
+            0.191,
+            0.428,
+            0.306
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.232,
+            0.318,
+            0.252,
+            0.333
+          ],
+          "content": "d)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.314,
+            0.344,
+            0.722,
+            0.523
+          ],
+          "content": "\\begin{array}{r c l} P (\\neg E | F) & = & \\sum_ {H, S} P (\\neg E | H, S, F) P (H, S | F) \\\\ & = & \\sum_ {H, S} P (\\neg E | H, S) P (H, S | F) \\\\ & = & \\sum_ {H, S} P (\\neg E | H, S) P (H | F, S) P (S | F) \\\\ & = & \\sum_ {H, S} P (\\neg E | H, S) P (H | F, S) P (S) \\\\ & = & \\sum_ {H, S} P (\\neg E | H, S) P (S) \\sum_ {T} P (H | F, T) P (T) \\end{array}",
+          "image_source": "images/page_1_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.54,
+            0.254,
+            0.555
+          ],
+          "content": "e)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.307,
+            0.565,
+            0.73,
+            0.705
+          ],
+          "content": "\\begin{array}{r c l} P (S | E) & = & \\frac {P (E | S) P (S)}{P (E)} \\\\ P (E | S) & = & \\sum_ {H} P (E | S, H) P (H) \\\\ & = & \\sum_ {H} P (E | S, H) \\sum_ {F, T} P (H | F, T) P (F) P (T) \\\\ P (E) & = & \\sum_ {H, S} P (E | S, H) P (S) \\sum_ {F, T} P (H | F, T) P (F) P (T) \\end{array}",
+          "image_source": "images/page_1_equation_5.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.722,
+            0.411,
+            0.74
+          ],
+          "level": 2,
+          "content": "2 True & False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.753,
+            0.302,
+            0.768
+          ],
+          "content": "1. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.779,
+            0.3,
+            0.794
+          ],
+          "content": "2. True."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.804,
+            0.302,
+            0.819
+          ],
+          "content": "3. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.829,
+            0.299,
+            0.844
+          ],
+          "content": "4. True."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.158,
+            0.303,
+            0.174
+          ],
+          "content": "5. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.183,
+            0.303,
+            0.2
+          ],
+          "content": "6. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.208,
+            0.303,
+            0.225
+          ],
+          "content": "7. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.233,
+            0.301,
+            0.25
+          ],
+          "content": "8. True."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.233,
+            0.259,
+            0.301,
+            0.275
+          ],
+          "content": "9. True."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.297,
+            0.544,
+            0.316
+          ],
+          "level": 2,
+          "content": "3 The Prisoner’s Dilemma"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.215,
+            0.324,
+            0.385,
+            0.509
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.512,
+            0.785,
+            0.587
+          ],
+          "content": "The decision tree shows that the best choice is to keep quiet - the expected value is higher than that for talking. If we want to find out how much trust in our partner is necessary make keeping quiet the better choice, we need to find out for what value of $P ( \\mathrm { p - q u i e t } )$ the expected value of keeping quiet equals -50."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.278,
+            0.613,
+            0.689,
+            0.719
+          ],
+          "content": "\\begin{array}{c} - 1 0 0 * (1 - P (\\mathrm{p-quiet})) + (- 1 0 * P (\\mathrm{p-quiet})) = - 5 0 \\\\ - 1 0 0 + 1 0 0 P (\\mathrm{p-quiet}) - 1 0 P (\\mathrm{p-quiet}) = - 5 0 \\\\ - 1 0 0 + 9 0 P (\\mathrm{p-quiet}) = - 5 0 \\\\ 9 0 P (\\mathrm{p-quiet}) = 5 0 \\\\ P (\\mathrm{p-quiet}) = \\frac {5}{9} \\approx . 5 5 \\end{array}",
+          "image_source": "images/page_2_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.729,
+            0.783,
+            0.761
+          ],
+          "content": "So as long as I believe that the probability of my partner keeping quiet is $\\frac { 5 } { 9 }$ or better, choosing to keep quiet is the best strategy."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.782,
+            0.373,
+            0.802
+          ],
+          "level": 2,
+          "content": "4 Searching"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.231,
+            0.813,
+            0.785,
+            0.845
+          ],
+          "content": "a) A\\*-search would be a good strategy. Straight-line distance is known to be an admissible heuristic and should be a good approximation of the"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.159,
+            0.784,
+            0.205
+          ],
+          "continues_prev": true,
+          "content": "distance remaining to our goal from any point. And, we know that A\\*- search will return the shortest path, allowing us to beat out our trading competitors."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.214,
+            0.785,
+            0.245
+          ],
+          "content": "b) I can still use the straight-line distances. Heuristics are admissible so long as they do not overestimate the distance to a goal."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.267,
+            0.388,
+            0.287
+          ],
+          "level": 2,
+          "content": "5 Overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.298,
+            0.785,
+            0.434
+          ],
+          "content": "In regression and in crafting generative models, we can make our model fit the training points too closely, which often means that we are modeling noise. Or we start fitting with a model that is more complex than is necessary to fit the points. In either case, future data are likely to not fit our model as well as they would have fit a simpler model of the training data. The standard approach is to add a penalty to the error criterion based on the regularity or the complexity of the model. This will make the best-fit calculation balance the complexity of the model against the error it produces on the training data, and reduce the likelihood of overfitting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.435,
+            0.785,
+            0.541
+          ],
+          "content": "In classification models, we can encounter a similar problem. The classifier will separate the training data precisely, but the boundary may not generalize well. We can resist overfitting by using simpler models, either with fewer features or (in multi-layer nets) with fewer hidden nodes. Other possibilities are to use support vector machines to find the maximal-margin separator, which should be more resistant to error, or to add some noise to the training data to make the learned classifier more robust."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.562,
+            0.364,
+            0.583
+          ],
+          "level": 2,
+          "content": "6 Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.594,
+            0.784,
+            0.625
+          ],
+          "content": "There are no constraints on what order the actions must be executed. They are all in the same layer, which indicates that they can be performed in parallel."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.646,
+            0.702,
+            0.666
+          ],
+          "level": 2,
+          "content": "7 GraphPlan Vs. Partial Order Planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.678,
+            0.784,
+            0.77
+          ],
+          "content": "GraphPlan will return a two-layer plan, either fizz followed by fuzz, or viceversa. POP, on the other hand, will return a single-layer plan, indicating that fizz and fuzz can be performed in parallel. Why does this difference occur? GraphPlan declares actions with inconsistent effects mutex, while POP does not. So, POP’s solutions are more expressive (encompass more valid possibilities) than do GraphPlan’s solutions."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.791,
+            0.458,
+            0.811
+          ],
+          "level": 2,
+          "content": "8 More GraphPlan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.822,
+            0.785,
+            0.854
+          ],
+          "content": "Yes, this is an admissible heuristic because it will always underestimate the distance to a solution (no solution can be nearer than the first layer where all"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.159,
+            0.531,
+            0.175
+          ],
+          "continues_prev": true,
+          "content": "of the solution propositions are not mutex)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.196,
+            0.481,
+            0.216
+          ],
+          "level": 2,
+          "content": "9 Bayesian Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.227,
+            0.731,
+            0.244
+          ],
+          "content": "Which of the following conditional independence assumptions are true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.255,
+            0.302,
+            0.27
+          ],
+          "content": "1. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.28,
+            0.3,
+            0.295
+          ],
+          "content": "2. True."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.304,
+            0.302,
+            0.32
+          ],
+          "content": "3. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.329,
+            0.3,
+            0.345
+          ],
+          "content": "4. True."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.354,
+            0.302,
+            0.37
+          ],
+          "content": "5. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.379,
+            0.302,
+            0.395
+          ],
+          "content": "6. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.404,
+            0.302,
+            0.42
+          ],
+          "content": "7. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.429,
+            0.302,
+            0.444
+          ],
+          "content": "8. False."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.456,
+            0.785,
+            0.502
+          ],
+          "content": "Neither network is equivalent to the original one. The second network can encode the same joint probability because it’s conditional independence relations are a subset of the original network’s relations."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.525,
+            0.52,
+            0.543
+          ],
+          "level": 2,
+          "content": "10 Automated Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.555,
+            0.785,
+            0.632
+          ],
+          "content": "The algorithm attempts to avoid calculating unnecesary information. It is easier to understand what is going on if we look at the description and derivation rather than the pseudocode. α and $\\beta$ indicate normalizing factors that can be computed with information from the known probability tables and the return values of previously made recursive calls."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.657,
+            0.602,
+            0.675
+          ],
+          "content": "P (A | L) = \\alpha P (L | A) P (A)",
+          "image_source": "images/page_4_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.261,
+            0.696,
+            0.738,
+            0.732
+          ],
+          "content": "\\begin{array}{r c l} P (L | A) & = & \\beta [ P (L | C) \\left[ P (C | A B) P (B) + P (C | A \\neg B) P (\\neg B) \\right] \\\\ & & + P (L | \\neg C) \\left[ P (\\neg C | A B) P (B) + P (\\neg C | A \\neg B) P (\\neg B) \\right] ] \\end{array}",
+          "image_source": "images/page_4_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.762,
+            0.784,
+            0.792
+          ],
+          "content": "Now, we know every value in this equation except for $P ( L | C )$ so we make a recursive call to calculate it."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.26,
+            0.818,
+            0.739,
+            0.855
+          ],
+          "content": "\\begin{array}{r c l} P (L | C) & = & \\beta [ P (L | D) [ P (D | C E) P (E) + P (D | C \\neg E) P (\\neg E) ] \\\\ & & + P (L | \\neg D) [ P (\\neg D | C E) P (E) + P (\\neg D | C \\neg E) P (\\neg E) ] ] \\end{array}",
+          "image_source": "images/page_4_equation_17.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.159,
+            0.784,
+            0.19
+          ],
+          "content": "Again, all of these values can be looked up in the network’s conditional probability tables, except for $P ( L | D )$ ."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.258,
+            0.215,
+            0.739,
+            0.252
+          ],
+          "content": "\\begin{array}{r c l} P (L | D) & = & \\beta [ P (L | J) [ P (J | D K) P (K) + P (J | D \\neg K) P (\\neg K) ] \\\\ & & + P (L | \\neg J) [ P (\\neg J | D K) P (K) + P (\\neg J | D \\neg K) P (\\neg K) ] ] \\end{array}",
+          "image_source": "images/page_5_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.263,
+            0.785,
+            0.34
+          ],
+          "content": "Finally, we have arrived at a point where every element of the equation can be directly looked up in a known conditional probability table. Notice that we avoided calculating information for the F-G-H chain, or for I. These help to make our calculation more efficient than the brute-force method of reconstructing the entire joint probability table."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.361,
+            0.382,
+            0.382
+          ],
+          "level": 2,
+          "content": "11 Sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.392,
+            0.784,
+            0.455
+          ],
+          "content": "You would use sampling-based inference in a very large Bayesian network or one with undirected cycles that make exact inference procedures infeasible. However, in cases where you wish to evaluate the probability of events with very small probability, sampling is not an effective strategy."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.475,
+            0.482,
+            0.495
+          ],
+          "level": 2,
+          "content": "12 Medical Decisions"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.215,
+            0.502,
+            0.384,
+            0.687
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.69,
+            0.784,
+            0.721
+          ],
+          "content": "Clearly, surgery is the best decision. The value of perfect information is 7 because it would allow me to skip surgery (have zero cost) 70% of the time."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.365,
+            0.735,
+            0.635,
+            0.752
+          ],
+          "content": "P (\\text {chip}) * 0 + P (\\neg \\text {chip}) * (- 1 0) = - 3",
+          "image_source": "images/page_5_equation_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.89
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.238,
+            0.155,
+            0.566,
+            0.339
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.344,
+            0.783,
+            0.389
+          ],
+          "content": "It’s too hard to fit the math on the diagram, so here are the relevant probabilities and expected values. Abbreviations are: p - positive test, n - negative test, bc - bone chip, s - surgery."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.314,
+            0.415,
+            0.685,
+            0.849
+          ],
+          "content": "\\begin{array}{r c l} P (p | b c) = x & & P (n | b c) = (1 - x) \\\\ P (p | \\neg b c) = y & & P (n | \\neg b c) = (1 - y) \\\\ P (p) & = & P (p | b c) P (b c) + P (p | \\neg b c) P (\\neg b c) \\\\ & = & 0. 3 x + 0. 7 y \\\\ P (n) & = & P (n | b c) P (b c) + P (n | \\neg b c) P (\\neg b c) \\\\ & = & 0. 3 (1 - x) + 0. 7 (1 - y) \\\\ & = & 1 - 0. 3 x - 0. 7 y \\\\ P (b c | p) & = & \\frac {P (p | b c) P (b c)}{P (p)} \\\\ & = & \\frac {0 . 3 x}{0 . 3 x + 0 . 7 y} \\\\ P (\\neg b c | p) & = & \\frac {P (p | \\neg b c) P (\\neg b c)}{P (p)} \\\\ & = & \\frac {0 . 7 y}{0 . 3 x + 0 . 7 y} \\\\ P (b c | n) & = & \\frac {P (n | b c) P (b c)}{P (n)} \\\\ & = & \\frac {0 . 3 - 0 . 3 x}{1 - 0 . 3 x - 0 . 7 y} \\\\ P (\\neg b c | n) & = & \\frac {P (n | \\neg b c) P (\\neg b c)}{P (n)} \\\\ & = & \\frac {0 . 7 - 0 . 7 y}{1 - 0 . 3 x - 0 . 7 y} \\\\ E [ s | p ] & = & - 1 2 P (b c | p) + - 1 2 P (\\neg b c | p) \\\\ & = & - 1 2 \\end{array}",
+          "image_source": "images/page_6_equation_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.351,
+            0.156,
+            0.653,
+            0.276
+          ],
+          "content": "\\begin{array}{r c l} E [ \\neg s | p ] & = & - 1 0 2 P (b c | p) + - 2 P (\\neg b c | p) \\\\ & = & \\frac {- 3 0 . 6 x - 1 . 4 y}{0 . 3 x + 0 . 7 y} \\\\ E [ s | n ] & = & - 1 2 \\\\ E [ \\neg s | n ] & = & - 1 0 2 P (b c | n) + - 2 P (\\neg b c | n) \\\\ & = & \\frac {- 3 2 + 3 0 . 6 x + 1 . 4 y}{1 - 0 . 3 x - 0 . 7 y} \\end{array}",
+          "image_source": "images/page_7_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.238,
+            0.3,
+            0.711,
+            0.315
+          ],
+          "content": "Now it gets ugly. Let’s refer to our decision to take the test as D."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.259,
+            0.34,
+            0.708,
+            0.377
+          ],
+          "content": "\\begin{array}{c} E [ D ] = \\max (E [ s | p ], E [ \\neg s | p ]) P (p) + \\max (E [ s | n ], E [ \\neg s | n ]) P (n) \\\\ E [ D ] = \\max (- 1 2, E [ \\neg s | p ]) P (p) + \\max (E [ - 1 2, E [ \\neg s | n ]) P (n) \\end{array}",
+          "image_source": "images/page_7_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.408,
+            0.785,
+            0.514
+          ],
+          "content": "Clearly, if we elect to have surgery no matter what, we are going to get an expected value of -12, which is less than our previous max of -10. So we need to at least not elect to have surgery some time. If we always elect not to have surgery, then we are going to end up with a worse expected value than our uninformed “no surgery” choice. Unless the test is completely useless, we should elect to have surgery if it detects bone spurs and elect not to have surgery if it does not."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.234,
+            0.539,
+            0.763,
+            0.665
+          ],
+          "content": "\\begin{array}{r c l} E [ D ] & = & - 1 2 P (p) + E [ \\neg s | n ] P (n) \\\\ & = & - 1 2 (0. 3 x + 0. 7 y) + \\frac {(- 3 2 + 3 0 . 6 x + 1 . 4 y)}{(1 - 0 . 3 x - 0 . 7 y)} (1 - 0. 3 x - 0. 7 y) \\\\ & = & - 3. 6 x - 8. 4 y - 3 2 + 3 0. 6 x + 1. 4 y \\\\ & = & 2 7 x - 7 y - 3 2 > - 1 0 \\\\ 2 7 x - 7 y & > & 2 2 \\\\ x & > & (0. 2 5 9 y + 0. 8 1 5) \\end{array}",
+          "image_source": "images/page_7_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.676,
+            0.784,
+            0.723
+          ],
+          "content": "Any values of x and y which satisfy this relationship (and, of course, which are less than or equal to 1, so they are valid probabilities) will give us a better expected value than just deciding on surgery without having the examination."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.744,
+            0.588,
+            0.763
+          ],
+          "level": 2,
+          "content": "13 Markov Decision Processes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.775,
+            0.784,
+            0.806
+          ],
+          "content": "The decision tree for the optimal action strategy over two steps, starting in state s<sub>1</sub>."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.877,
+            0.505,
+            0.889
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.234,
+            0.154,
+            0.741,
+            0.614
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.615,
+            0.785,
+            0.648
+          ],
+          "content": "The decision tree for the optimal one-step strategy, assuming no knowledge of the starting state. Clearly, we should take $a _ { 2 }$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.492,
+            0.876,
+            0.505,
+            0.89
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.238,
+            0.157,
+            0.566,
+            0.43
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.434,
+                0.784,
+                0.465
+              ],
+              "content": "And now, the value functions. Because this is a simple system, we can calculate them directly and avoid value-iteration."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.281,
+            0.486,
+            0.716,
+            0.599
+          ],
+          "content": "\\begin{array}{r c l} V (s _ {1}) & = & 1 + \\gamma \\max (. 1 V (s _ {1}) +. 9 V (s _ {2}),. 5 V (s _ {1}) +. 5 V (s _ {2})) \\\\ & = & 1 +. 9 [. 5 V (s _ {1}) +. 5 V (s _ {2}) ] \\\\ & = & 1 +. 4 5 V (s _ {1}) +. 4 5 V (s _ {2}) \\\\ V (s _ {2}) & = & 0 + \\gamma \\max (. 6 V (s _ {1}) +. 4 V (s _ {2}),. 9 V (s _ {1}) +. 1 V (s _ {2})) \\\\ & = & . 9 [. 9 V (s _ {1}) +. 1 V (s _ {2}) ] \\\\ & = & . 8 1 V (s _ {1}) +. 0 9 V (s _ {2}) \\end{array}",
+          "image_source": "images/page_9_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.625,
+            0.783,
+            0.657
+          ],
+          "content": "So, we have two unknowns, and two linear equations. So we can easily solve them and get $V ( s _ { 1 } ) \\approx 6 . 6 9$ and $V ( s _ { 2 } ) \\approx 5 . 9 6$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.215,
+            0.677,
+            0.535,
+            0.697
+          ],
+          "level": 2,
+          "content": "14 Some Other Questions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.235,
+            0.708,
+            0.785,
+            0.755
+          ],
+          "content": "1. If we do not observe any occurences of B this value is undefined. Also, if there are no occurences of (A and B) or of not (A and B), then we can get a 0 probability, which can sometimes cause trouble later."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.762,
+            0.785,
+            0.855
+          ],
+          "content": "2. Reversal might lower the error in a single step, but deletion and addition as separate steps might require increasing the error temporarily. Gradient descent algorithms will not select moves that increase the measured error so we need to make reversal an atomic action. Another alternative would be a stochastic search method (such as simulated annealing) which can sometimes take non-improving steps."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.49,
+            0.877,
+            0.509,
+            0.889
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.158,
+            0.785,
+            0.205
+          ],
+          "content": "3. The four-element network has a complexity of 15, the five-element network requires only 9 conditional probability values. This illustrates the use of a hidden variable to simplify a network."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.255,
+            0.215,
+            0.496,
+            0.267
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.282,
+            0.29,
+            0.484,
+            0.382
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.393,
+            0.782,
+            0.424
+          ],
+          "content": "4. This network is only ever going to generate a single output. Call it z. Then"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.448,
+            0.437,
+            0.588,
+            0.47
+          ],
+          "content": "E = \\sum_ {i} (z - y ^ {i}) ^ {2}.",
+          "image_source": "images/page_10_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.485,
+            0.28,
+            0.499
+          ],
+          "content": "So"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.413,
+            0.512,
+            0.625,
+            0.549
+          ],
+          "content": "\\frac {d E}{d z} = \\sum_ {i} 2 (z - y ^ {i}) z (1 - z).",
+          "image_source": "images/page_10_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.563,
+            0.784,
+            0.611
+          ],
+          "content": "E is minimized when the derivative is zero; that happens, uninterestingly at $z = 0$ and $z = 1$ . Let’s set it to zero and see what else happens (using the proportion of 1’s and 0’s among the $y ^ { i } )$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.413,
+            0.621,
+            0.625,
+            0.675
+          ],
+          "content": "\\begin{array}{r l} 8 0 (z - 1) + 2 0 (z - 0) & = 0 \\\\ 1 0 0 z = 8 0 \\\\ z = 0. 8 \\end{array}",
+          "image_source": "images/page_10_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.692,
+            0.784,
+            0.724
+          ],
+          "content": "5. Let’s assume that the event of prisoner A being executed is represented by A, and the event of being pardoned is represented by ¬A."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.252,
+            0.727,
+            0.784,
+            0.79
+          ],
+          "content": "So, at first there are three possibilities: A is executed, and B and C are pardoned; B is executed, while A and C are pardoned; or C is executed while A and B are pardoned. All other possible combinations of events are impossible and have probability 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.793,
+            0.782,
+            0.825
+          ],
+          "content": "When the guard returns and tells A that prisoner B has been pardoned, what is the probability that A will be executed?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.876,
+            0.509,
+            0.889
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.349,
+            0.181,
+            0.688,
+            0.299
+          ],
+          "content": "\\begin{array}{r c l} P (A | \\neg B) & = & \\frac {P (A , \\neg B)}{P (\\neg B)} \\\\ & = & \\frac {P (A , \\neg B , \\neg C)}{P (A , \\neg B , \\neg C) + P (C , \\neg A , \\neg B)} \\\\ & = & \\frac {1 / 3}{1 / 3 + 1 / 3} \\\\ & = & 0. 5 \\end{array}",
+          "image_source": "images/page_11_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.335,
+            0.784,
+            0.397
+          ],
+          "content": "$\\mathrm { S o }$ now that you know that B is being pardoned, the probability that you will be executed is 50%. Before, your probability of execution was only $\\frac { 1 } { 3 }$ Weird, huh? This is similar to another famous probability scenario known as the “Monty Hall” problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.405,
+            0.784,
+            0.452
+          ],
+          "content": "6. If $f ( X )   =   0   \\mathrm { o r }   f ( X )   =   1$ meaning that $X \\cdot W$ was greater than b or less than −b, there is no gradient. In the other cases, we can derive the following gradient equation."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.369,
+            0.482,
+            0.669,
+            0.533
+          ],
+          "content": "\\begin{array}{r c l} {s} & = & {((1 / 2 b) (X \\cdot W + b) - d) ^ {2}} \\\\ {\\frac {d s}{d W _ {i}}} & = & {((1 / 2 b) (X \\cdot W + b) - d) (X _ {i} / b)} \\end{array}",
+          "image_source": "images/page_11_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.56,
+            0.784,
+            0.606
+          ],
+          "content": "The problem is that points that are mislabeled, but produce a 0 or a 1 will produce large error, but no gradient. So the classifier will not be able to reduce the error of these cases by gradient descent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.615,
+            0.783,
+            0.646
+          ],
+          "content": "7. Let the vector of weights from the inputs to the first unit be $w _ { 1 }$ and the vector of weights input the second unit be $w _ { 2 }$ . Let $v = \\{ g _ { 1 } ( w _ { 1 } \\cdot x ) ; x \\}$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.325,
+            0.675,
+            0.712,
+            0.779
+          ],
+          "content": "\\begin{array}{r c l} E & = & (f - d) ^ {2} \\\\ E & = & (g _ {2} (w _ {2} \\cdot v) - d) ^ {2} \\\\ \\frac {d E}{d w _ {2 n}} & = & 2 (g _ {2} - d) \\cdot (g _ {2} (1 - g _ {2})) \\cdot v _ {n} \\\\ \\frac {d E}{d w _ {1 n}} & = & 2 (g _ {2} - d) \\cdot (g _ {2} (1 - g _ {2})) \\cdot w _ {2 0} g _ {1} (1 - g _ {1}) \\cdot x _ {n} \\end{array}",
+          "image_source": "images/page_11_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.792,
+            0.593,
+            0.807
+          ],
+          "content": "8. First example: looks good, let’s try resolution."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.316,
+            0.818,
+            0.692,
+            0.855
+          ],
+          "content": "\\begin{array}{c} \\neg ((((\\exists x) P (x)) \\to Q (A)) \\to ((\\forall x) (P (x) \\to Q (A)))) \\\\ \\neg (\\neg (\\neg ((\\exists x) P (x)) \\lor Q (A)) \\lor ((\\forall y) (\\neg P (y) \\lor Q (A)))) \\end{array}",
+          "image_source": "images/page_11_equation_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.877,
+            0.509,
+            0.889
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.381,
+            0.157,
+            0.691,
+            0.195
+          ],
+          "content": "\\begin{array}{c} ((\\neg \\exists x. P (x)) \\lor Q (A)) \\land \\exists y. (P (y) \\land \\neg Q (A)) \\\\ (\\forall x. \\neg P (x) \\lor Q (A)) \\land \\exists y. (P (y) \\land \\neg Q (A)) \\end{array}",
+          "image_source": "images/page_12_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.223,
+            0.399,
+            0.24
+          ],
+          "content": "1. ¬ $\\neg P ( x ) \\lor Q ( A )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.244,
+            0.357,
+            0.26
+          ],
+          "content": "2. $P ( f r e d )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.264,
+            0.346,
+            0.28
+          ],
+          "content": "3. $\\neg Q ( A )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.284,
+            0.383,
+            0.3
+          ],
+          "content": "4. $\\neg P ( x ) ( 3 , 1 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.304,
+            0.426,
+            0.32
+          ],
+          "content": "5. False (4,2, fred/x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.332,
+            0.609,
+            0.348
+          ],
+          "content": "Second example: looks good, let’s try resolution."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.328,
+            0.358,
+            0.679,
+            0.452
+          ],
+          "content": "\\begin{array}{c} \\neg (((\\forall x. P (x)) \\to Q (A)) \\to (\\exists x. (P (x) \\to Q (A)))) \\\\ ((\\forall x. P (x)) \\to Q (A)) \\land \\neg \\exists x. (P (x) \\to Q (A)) \\\\ (\\neg (\\forall x. P (x)) \\lor Q (A)) \\land \\forall x. \\neg (\\neg P (x) \\lor Q (A)) \\\\ (\\exists x. \\neg P (x) \\lor Q (A)) \\land \\forall x. (P (x) \\land \\neg Q (A)) \\\\ (\\neg P (f r e d) \\lor Q (A)) \\land P (x) \\land \\neg Q (A) \\end{array}",
+          "image_source": "images/page_12_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.462,
+            0.424,
+            0.479
+          ],
+          "content": "1. $\\neg P ( f r e d ) \\lor Q ( A )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.483,
+            0.333,
+            0.499
+          ],
+          "content": "2. $P ( x )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.503,
+            0.346,
+            0.52
+          ],
+          "content": "3. $\\neg Q ( A )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.523,
+            0.406,
+            0.54
+          ],
+          "content": "4. $$\\neg P ( f r e d )$ (3,1)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.543,
+            0.372,
+            0.56
+          ],
+          "content": "5. False (4,2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.571,
+            0.783,
+            0.602
+          ],
+          "content": "Third example: Hmmm, I’m a bit suspicious. Maybe we can find a counterexample."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.357,
+            0.614,
+            0.651,
+            0.688
+          ],
+          "content": "\\begin{array}{c} Q (a) = f a l s e \\\\ P (f r e d) = t r u e \\\\ P (n e d) = f a l s e \\\\ \\exists x. (P (x) \\to Q (a)) \\to \\forall x. (P (x) \\to Q (a)) \\end{array}",
+          "image_source": "images/page_12_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.254,
+            0.703,
+            0.785,
+            0.81
+          ],
+          "content": "We need a situation in which the left-hand side is true and the right-hand side is false. Consider if we satisfy the left-hand side with x=ned. Because $P ( n e d ) = f a l s e ,$ the left-hand side will be true despite the fact the $\\mathrm { Q ( a ) }$ is always false. But, because the right-hand side is universally quantified it is not true, because P(fred) is true, which will make $P ( f r e d ) \\to Q ( a )$ false. So, the entire expression is false because we have a true left-hand side and a false right-hand side."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.234,
+            0.819,
+            0.544,
+            0.835
+          ],
+          "content": "9. \\neg \\mathrm{On} (x, z) \\lor \\neg \\mathrm{Above} (z, y) \\lor \\mathrm{Above} (x, y)",
+          "image_source": "images/page_12_equation_16.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.49,
+            0.877,
+            0.509,
+            0.889
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.227,
+            0.158,
+            0.509,
+            0.175
+          ],
+          "content": "10. The first-order logic description is:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.35,
+            0.205,
+            0.656,
+            0.299
+          ],
+          "content": "\\begin{array}{c} \\forall x. (P (x) \\to B (x)) \\to \\forall y. (\\neg P (y) \\to G (y)) \\\\ \\forall x. (B (x) \\lor G (x)) \\land (\\neg B (x) \\lor \\neg G (x)) \\\\ (\\exists x. \\neg P (x)) \\to (\\forall y. P (y) \\to B (y)) \\\\ P (O 1) \\\\ \\neg P (O 2) \\end{array}",
+          "image_source": "images/page_13_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.255,
+            0.333,
+            0.661,
+            0.35
+          ],
+          "content": "Which turns into the following clausal form statements:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.36,
+            0.443,
+            0.378
+          ],
+          "content": "1. $P ( F ) \\vee P ( y ) \\vee G ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.38,
+            0.452,
+            0.398
+          ],
+          "content": "2. $\\neg B ( F ) \\lor P ( y ) \\lor G ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.4,
+            0.389,
+            0.418
+          ],
+          "content": "3. $B ( x ) \\vee G ( x )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.42,
+            0.409,
+            0.438
+          ],
+          "content": "4. $\\neg B ( x ) \\lor \\neg G ( x )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.44,
+            0.449,
+            0.458
+          ],
+          "content": "5. $P ( x ) \\vee \\neg P ( y ) \\vee B ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.46,
+            0.346,
+            0.478
+          ],
+          "content": "6. P(O1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.481,
+            0.668,
+            0.519
+          ],
+          "content": "7. ¬P(O2) And then we can prove that there is a green object:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.269,
+            0.521,
+            0.345,
+            0.538
+          ],
+          "content": "8. $\\neg G ( x )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.269,
+            0.541,
+            0.452,
+            0.559
+          ],
+          "content": "9. $$\\neg B { \\big ( } F { \\big ) } \\vee G { \\big ( } O 2 { \\big ) }$ (2,7)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.561,
+            0.441,
+            0.579
+          ],
+          "content": "10. $G ( F ) \\lor G ( O 2 ) ( 3 { , } 9 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.582,
+            0.393,
+            0.599
+          ],
+          "content": "11. G(O2) (8,10)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.602,
+            0.382,
+            0.619
+          ],
+          "content": "12. False (8,11)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.63,
+            0.755,
+            0.647
+          ],
+          "content": "11. (a) Optimize threatens HappyCustomer because it deletes BugFree."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.26,
+            0.65,
+            0.784,
+            0.682
+          ],
+          "content": "(b) HaveProgram is not linked to optimize, and HavePackaging (requirement of Ship) is unsupported."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.262,
+            0.685,
+            0.785,
+            0.716
+          ],
+          "content": "(c) Any plan that places debug after optimize and both before ship is acceptable."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.876,
+            0.511,
+            0.89
+          ],
+          "content": "14"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "solutions_dvi",
+      "producer_application": "PStill 1.55.9 by Dipl.-Ing. F. Siegert",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

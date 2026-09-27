@@ -1,0 +1,4280 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.08,
+            0.061,
+            0.524,
+            0.115
+          ],
+          "level": 2,
+          "content": "CS 188 Introduction to Summer 2024Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.145,
+            0.359,
+            0.161
+          ],
+          "content": "Solutions last updated: August 11th, 2024"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.18,
+            0.274,
+            0.196
+          ],
+          "content": "• You have 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.199,
+            0.908,
+            0.216
+          ],
+          "content": "• The exam is closed book, no calculator, and closed notes, other than three double-sided cheat sheets that you may reference."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.219,
+            0.91,
+            0.25
+          ],
+          "content": "• Anything you write outside the answer boxes or you ~~cross out~~ will not be graded. If you write multiple answers, your answer is ambiguous, or the bubble/checkbox is not entirely filled in, we will grade the worst interpretation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.253,
+            0.579,
+            0.27
+          ],
+          "content": "For questions with **circular bubbles**, you may select only one choice."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.272,
+            0.405,
+            0.29
+          ],
+          "content": "Unselected option (completely unfilled)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.253,
+            0.942,
+            0.284
+          ],
+          "content": "For questions with **square checkboxes**, you may select one or more choices."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.292,
+            0.433,
+            0.31
+          ],
+          "content": "Only one selected option (completely filled)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.609,
+            0.287,
+            0.73,
+            0.304
+          ],
+          "content": "You can select"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.313,
+            0.429,
+            0.329
+          ],
+          "content": "Don’t do this (it will be graded as incorrect)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.608,
+            0.307,
+            0.864,
+            0.325
+          ],
+          "content": "multiple squares (completely filled)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.182,
+            0.331,
+            0.806,
+            0.545
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |\n| Name of person to the right |  |\n| Name of person to the left |  |\n| Discussion TAs (or None) |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.565,
+            0.846,
+            0.582
+          ],
+          "content": "**Honor code**: “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.588,
+            0.885,
+            0.65
+          ],
+          "content": "By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than my cheat sheets), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic \"F\" grade in this class and a referral to the Center for Student Conduct."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.66,
+            0.5,
+            0.679
+          ],
+          "content": "Signature:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.105,
+            0.733,
+            0.512,
+            0.86
+          ],
+          "content": "| Q1. Potpourri | 20 |\n| --- | --- |\n| Q2. Search &amp; Games: Lights, Camera, Action! | 14 |\n| Q3. HMMs: Inside Out | 13 |\n| Q4. BN, Naive Bayes, Perceptron: Bayesketball | 14 |\n| Q5. MDPs: Easy MDPeasy | 11 |\n| Q6. RL: Weight a Minute! | 16 |\n| Q7. ML: N&amp;Ns | 12 |\n| Total | 100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.248,
+                0.71,
+                0.369,
+                0.725
+              ],
+              "content": "Point Distribution"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.551,
+            0.709,
+            0.839,
+            0.725
+          ],
+          "content": "You miss 100% of the shots you don’t take!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.599,
+            0.742,
+            0.742,
+            0.875
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.551,
+            0.893,
+            0.748,
+            0.91
+          ],
+          "content": "Drawing by Samantha Huang"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.499,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.383,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [20 pts] Potpourri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.08,
+            0.732,
+            0.097
+          ],
+          "content": "**Note:** This question is relatively long, so be sure to skip ahead and come back to it if you get stuck!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.109,
+            0.338,
+            0.124
+          ],
+          "content": "**(a)** [2 pts] Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.134,
+            0.758,
+            0.15
+          ],
+          "content": "■ Depth-first graph search is guaranteed to be complete in a finite-space search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.154,
+            0.881,
+            0.17
+          ],
+          "content": "■ If the cost of expanding any node is 1, breadth-first search is guaranteed to be both optimal and complete."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.174,
+            0.841,
+            0.19
+          ],
+          "content": "■ If $h _ { 1 } ( x )$ and $h _ { 2 } ( x )$ are two consistent heuristics, then $h _ { 3 } ( x ) = \\operatorname* { m a x } \\{ h _ { 1 } ( x ) , h _ { 2 } ( x ) \\}$ is also consistent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.195,
+            0.775,
+            0.211
+          ],
+          "content": "□ In Monte Carlo Tree Search, performing more rollouts will always yield better decisions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.215,
+            0.316,
+            0.231
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.241,
+            0.908,
+            0.287
+          ],
+          "content": "The first option is correct because, even though depth-first tree search is not complete, adding a visited set for graph search tracks states that have been visited before. This guarantees that we do not visit the same state twice, so we will eventually visit all possible states and can’t get stuck in an infinite loop."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.292,
+            0.909,
+            0.338
+          ],
+          "content": "The second option is correct because we know that uniform cost search is both optimal and complete. Given that the cost of expanding all nodes is 1, performing uniform cost search is equivalent to performing breadth-first search, making it both optimal and complete."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.342,
+            0.908,
+            0.404
+          ],
+          "content": "The third option is correct because if both $h _ { 1 }$ and $h _ { 2 }$ are consistent, $h ( A ) - h ( B ) \\leq c o s t ( A , B )$ . Note that both $\\Delta h _ { 1 }$ and $\\Delta h _ { 2 }$ pass the condition, so the only danger is if some $\\Delta h _ { 3 }$ evaluates to $h _ { 1 } ( A ) - h _ { 2 } ( B )$ (or vice-versa), which requires $h _ { 1 } ( A ) \\geq h _ { 2 } ( A )$ and $h _ { 2 } ( B ) \\geq h _ { 1 } ( B )$ . We can compare against $\\Delta h _ { 1 }$ and get that $h _ { 1 } ( A ) - h _ { 2 } ( B ) \\leq h _ { 1 } ( A ) - h _ { 2 } ( A )$ because $h _ { 2 } ( B ) \\geq h _ { 1 } ( B )$ , meaning that we are subtracting a potentially bigger but not smaller number."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.407,
+            0.907,
+            0.439
+          ],
+          "content": "The fourth option is incorrect. While the number of rollouts in MCTS approaches infinity, the optimal decision is found, is may find worse outcomes as the number of rollouts get larger due to the stochastic nature of MCTS."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.45,
+            0.908,
+            0.482
+          ],
+          "content": "**(b)** [1 pt] We have a six-sided die, labeled one through six. If we end up observing the seven die-rolls of 6, 3, 4, 2, 5, 6, 1 from this die, what is the maximum likelihood estimate of $p ,$ the probability of rolling a $6 ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.554,
+            0.486,
+            0.57
+          ],
+          "content": "We have 7 observations, and 2 of those outcomes end up as 6."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.583,
+            0.907,
+            0.613
+          ],
+          "content": "**(c)** [2 pts] Is the perceptron algorithm a form of supervised learning, or unsupervised learning? Explain your answer choice in three sentences or fewer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.628,
+            0.329,
+            0.644
+          ],
+          "content": "O Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.426,
+            0.627,
+            0.612,
+            0.645
+          ],
+          "content": "\\# Unsupervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.693,
+            0.627,
+            0.775,
+            0.644
+          ],
+          "content": "\\# Neither"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.87,
+            0.908,
+            0.902
+          ],
+          "content": "It’s a form of supervised learning because we’re training our algorithm using labeled data. In supervised learning, training is done using data that is already labelled for us, rather than data that isn’t labelled."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.047,
+            0.425,
+            0.062
+          ],
+          "content": "**(d)** [1 pt] Select the true statement about HMM’s."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.071,
+            0.83,
+            0.087
+          ],
+          "content": "\\# The Viterbi algorithm, for each state at time 𝑡, keeps track of the total probability of all paths to it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.091,
+            0.899,
+            0.107
+          ],
+          "content": "The Viterbi algorithm chooses the state sequence that maximizes the likelihood of the observation sequence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.117,
+            0.908,
+            0.147
+          ],
+          "content": "The second option is the goal of the Viterbi algorithm. The first answer choice applies to the forward algorithm, not the Viterbi algorithm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.16,
+            0.906,
+            0.205
+          ],
+          "content": "**(e)** [3 pts] Suppose we have a Bayes net with binary variables 𝐴, 𝐵, 𝐶, 𝐷. The conditional probability tables (CPT’s) for this Bayes net are $P ( A | B ) , P ( B ) , P ( C | A , B )$ , and $P ( D | C )$ . Using Likelihood weighting to estimate the query $\\mathbf { P } ( - \\mathbf { b } | + \\mathbf { a } , + \\mathbf { d } )$ we obtain the two samples below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.211,
+            0.908,
+            0.241
+          ],
+          "content": "Fill in the weight for each sample as a product of probabilities. For instance, an example (but incorrect) answer would look like $P(+a|-c)P(-a|+b,-d)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.357,
+            0.908,
+            0.403
+          ],
+          "content": "By the algorithm, we multiply each particle by the Bayes CPT probability of each observation we had to assign. One way to see why this works is that this corresponds to, in rejection filtering, the proportion of the pre- observation assignment stubs that would naturally get the correct assignment and not get filtered."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.415,
+            0.908,
+            0.462
+          ],
+          "content": "Wesley is assigning robots $R _ { 1 } , R _ { 2 } , R _ { 3 } , R _ { 4 }$ , and $R _ { 5 }$ to translate texts from English into the languages German, Chinese, Japanese, Arabic, and Hindi. Each robot will only be able to translate English into exactly one of the five languages, and so Wesley decides to model this as a CSP. Additionally, Wesley has listed the following restrictions he needs to follow:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.485,
+            0.334,
+            0.5
+          ],
+          "content": "1. $R _ { 3 }$ will only translate Japanese."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.51,
+            0.412,
+            0.525
+          ],
+          "content": "2. $R _ { 1 }$ and $R _ { 2 }$ will translate the same language."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.535,
+            0.586,
+            0.55
+          ],
+          "content": "3. $R _ { 4 }$ will translate a language that is different from the rest of the robots."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.56,
+            0.427,
+            0.575
+          ],
+          "content": "4. $R _ { 2 }$ will only translate either German or Hindi."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.588,
+            0.886,
+            0.605
+          ],
+          "content": "**(f)** [2 pts] How many edges are in the constraint graph for this CSP, assuming $R _ { 1 } , R _ { 2 } , R _ { 3 } , R _ { 4 }$ , and $R _ { 5 }$ are the variables?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.122,
+            0.608,
+            0.237,
+            0.66
+          ],
+          "content": "| 5 |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.668,
+            0.906,
+            0.699
+          ],
+          "content": "There’s one edge between $R _ { 1 }$ and $R _ { 2 }$ due to constraint 2, and there’s also an edge from $R _ { 4 }$ to each of $R _ { 1 } , R _ { 2 } , R _ { 3 }$ , and $R _ { 5 }$ due to constraint 4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.712,
+            0.908,
+            0.743
+          ],
+          "content": "Suppose we are in the middle of running the AC-3 arc consistency algorithm on this CSP, and the domains for each of the robots currently are as follows, where only $R _ { 3 }$ has been assigned a value:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.948
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.766,
+            0.284,
+            0.781
+          ],
+          "content": "1. $R _ { 1 } = \\{ G e r m a n , H i n d i \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.792,
+            0.471,
+            0.807
+          ],
+          "content": "2. $R _ { 2 } = \\{ G e r m a n ,$ 𝐶ℎ𝑖𝑛𝑒𝑠𝑒, 𝐽 𝑎𝑝𝑎𝑛𝑒𝑠𝑒, 𝐴𝑟𝑎𝑏𝑖𝑐, 𝐻 𝑖𝑛𝑑𝑖}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.817,
+            0.244,
+            0.832
+          ],
+          "content": "3. $R _ { 3 } = \\{ J a p a n e s e \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.842,
+            0.471,
+            0.857
+          ],
+          "content": "4. $R _ { 4 } = \\{ G e r m a n ,$ 𝐶ℎ𝑖𝑛𝑒𝑠𝑒, 𝐽 𝑎𝑝𝑎𝑛𝑒𝑠𝑒, 𝐴𝑟𝑎𝑏𝑖𝑐, 𝐻 𝑖𝑛𝑑𝑖}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.867,
+            0.472,
+            0.883
+          ],
+          "content": "5. 𝑅<sub>5</sub> = {𝐺𝑒𝑟𝑚𝑎𝑛, 𝐶ℎ𝑖𝑛𝑒𝑠𝑒, 𝐽 𝑎𝑝𝑎𝑛𝑒𝑠𝑒, 𝐴𝑟𝑎𝑏𝑖𝑐, 𝐻 𝑖𝑛𝑑𝑖}"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.047,
+            0.909,
+            0.108
+          ],
+          "content": "**(g)** [3 pts] After processing each of the arcs below, write down which arcs we need to add back to our queue as a result of it, separated by commas. Assume that these arcs are processed in **isolation** (not one after the other, so the domains stay the same with each arc). You may also ignore the arcs that are **already** in the queue (so you don’t have to worry about duplicate arcs in the queue). If no new arcs get added to the queue after the arc is processed, write \"None\"."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.112,
+            0.908,
+            0.144
+          ],
+          "content": "For instance, if you believe the arcs $R _ { 1 } \\to R _ { 2 } ,   R _ { 3 } \\to R _ { 4 } ,$ , and $R _ { 5 } \\rightarrow R _ { 1 }$ get added to the queue as a result of processing the specific arc, write down $R_{1} \\rightarrow R_{2}, R_{3} \\rightarrow R_{4}, R_{5} \\rightarrow R_{1}$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.148,
+            0.186,
+            0.163
+          ],
+          "content": "R _ {4} \\rightarrow R _ {3}",
+          "image_source": "images/page_3_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.179,
+            0.196,
+            0.388,
+            0.215
+          ],
+          "content": "R _ {1} \\rightarrow R _ {4}, R _ {2} \\rightarrow R _ {4}, R _ {5} \\rightarrow R _ {4}",
+          "image_source": "images/page_3_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.252,
+            0.909,
+            0.298
+          ],
+          "content": "Since $R _ { 4 }$ being equal to Japanese doesn’t allow $R _ { 3 }$ to be any value, we must prune Japanese from $R _ { 4 } { } ^ { \\flat } \\mathfrak { z }$ s domain and add in the three arcs back in the queue as shown. Note that $R _ { 3 } \\rightarrow R _ { 4 }$ does not get added since $R _ { 3 }$ has been assigned a value already."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.303,
+            0.186,
+            0.318
+          ],
+          "content": "R _ {5} \\rightarrow R _ {3}",
+          "image_source": "images/page_3_equation_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.121,
+            0.32,
+            0.451,
+            0.4
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.407,
+            0.908,
+            0.44
+          ],
+          "content": "Since every possible value for $R _ { 5 }$ has a corresponding value in $R _ { 3 }$ that doesn’t violate any constraints, no new arcs need to get added to the queue."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.948
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.047,
+            0.909,
+            0.077
+          ],
+          "content": "**(h)** [3 pts] Select the following true statements. For all answers, you may assume that “tokens” means roughly the same thing as “words.”)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.085,
+            0.909,
+            0.118
+          ],
+          "content": "□ RNNs solve the “memory bottleneck” problem in LSTMs, and so RNNs are better at preserving information about early tokens in a sequence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.121,
+            0.909,
+            0.153
+          ],
+          "content": "□ Masked language models predict each token based on the previous ones, while autoregressive (causal) language models predict only some fraction of the tokens based on the tokens before and after them."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.157,
+            0.908,
+            0.188
+          ],
+          "content": "When generating a sequence of tokens, models composed of Transformers use the attention mechanism to capture relationships between the token being generated and earlier tokens in a sequence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.191,
+            0.909,
+            0.223
+          ],
+          "content": "□ Language models today are first pretrained on small amounts of curated, labeled data, then fine-tuned on large amounts of uncurated, unlabeled data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.226,
+            0.908,
+            0.259
+          ],
+          "content": "□ After fine-tuning, an efficient and common way to encourage specific behaviors is to use RL with KL control, regardless of whether the specific behavior exists in the pretraining or fine-tuning data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.262,
+            0.909,
+            0.325
+          ],
+          "content": "DDQN prevents the Q estimator learning algorithm from propagating a spike $( > > Q ^ { * } )$ in one $Q _ { \\mathrm { s p i k e } }$ value into the Q values that depend on that $Q _ { \\mathrm { s p i k e } }$ , **but** it does not help with overfitting. Hint: recall that Double Deep Q-Network (DDQN) keeps 2 Q estimators so that in computing $V ( s ^ { \\prime } )$ to use in weight updates, one estimator gives $Q ( s ^ { \\prime } , a ^ { \\prime } )$ while the other one decides 𝑎′such that it maximizes $Q _ { \\mathrm { o t h e r } } ( s ^ { \\prime } , a ^ { \\prime } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.328,
+            0.317,
+            0.344
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.354,
+            0.642,
+            0.369
+          ],
+          "content": "Note that these subparts (h to j) were taught only in the summer 2024 semester."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.373,
+            0.909,
+            0.42
+          ],
+          "content": "LSTMs were introduced to improve on RNNs at preserving information about early tokens in a sequence. LSTMs are better than RNNs about preserving information on tokens early in a sequence, but they still have a memory bottleneck; attention was introduced to address the memory bottleneck in LSTMs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.424,
+            0.908,
+            0.455
+          ],
+          "content": "Autoregressive LMs predict each token based on the previous ones. Masked LMs predict some fraction of masked tokens based on the tokens around them."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.459,
+            0.908,
+            0.491
+          ],
+          "content": "Language models today are first pretrained on large amounts of uncurated, unlabeled data, then fine-tuned on small amounts of curated, labeled data (large and curated flipped vs. answer option)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.495,
+            0.909,
+            0.54
+          ],
+          "content": "If the specific behavior doesn’t exist in any of the data that created the model, RL cannot teach the new behavior because it only gives out rewards for the behavior when it happens which is then used to update weights to make high rewards more likely."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.545,
+            0.909,
+            0.592
+          ],
+          "content": "DDQN helps to actually better fit the training data by preventing unusual (spike) samples from breaking our model. The $Q _ { \\mathrm { s p i k e } }   \\mathrm { i s } > > Q ^ { * }$ , so it doesn’t fit the training data, and we stop it from breaking other 𝑄 values to not fit the training data. Helping with overfitting fixes the issue of fitting the training data well but not generalizing to test data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.603,
+            0.91,
+            0.68
+          ],
+          "content": "**(i)** [2 pts] Bob is a TA for a computer science class. Bob’s professor accidentally deletes most of the files in each student’s final project (oops!). The professor asks Bob to train a neural network using data from past semesters that takes in each student’s past grades, personal information (name, age, etc.), and the remaining code for their final project, and then generate a final project grade with an explanation. The professor says she’ll use the model outputs to help her decide on final project grades, then release the trained model online so others can predict grades based on students’ past work."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.684,
+            0.561,
+            0.7
+          ],
+          "content": "Which of the following problems should Bob be concerned about?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.709,
+            0.909,
+            0.74
+          ],
+          "content": "The model might learn patterns that are unfair to some students, such as predicting higher grades for older students."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.743,
+            0.909,
+            0.775
+          ],
+          "content": "□ When assigning grades, the professor will most likely trust her own flawed judgment over the model’s impartial decision, an example of automation bias."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.779,
+            0.908,
+            0.81
+          ],
+          "content": "Once the model is released online, other users might be able to extract students’ personal information by querying the model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.814,
+            0.317,
+            0.83
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.84,
+            0.91,
+            0.902
+          ],
+          "content": "This model is likely to result in allocation bias, such as assigning higher grades to some students in unfair ways based on factors like age or demographic background if those happen to correlate with certain grades. (The UK controversially implemented a similar algorithm to predict A-Level grades during Covid.) This could include predicting higher grades for older students if that’s a pattern in the data, even though it’s unfair to younger students who did well."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.047,
+            0.909,
+            0.113
+          ],
+          "content": "Automation bias is when people are likely to trust a model’s flawed prediction over their own (better-informed) judgment, which could certainly happen if the professor trusts a low-quality model prediction over her own knowledge of a student. Training data can indeed be extracted from publicly released models. This could violate students’ rights to have their educational records remain private."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.125,
+            0.909,
+            0.199
+          ],
+          "content": "**(j)** [1 pt] Suppose we have 20 data points, in which 10 of them are considered positive (indicated by a +) and the other 10 are considered negative (indicated by a −). We want to use a decision tree to split up our data, and we have four features to choose from to split our data. Which of the following splits results in the greatest information gain? Assume that is the symbol for separating groups formed by splitting on the feature."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.206,
+            0.496,
+            0.237
+          ],
+          "content": "\\bigcirc + - + - + - + - + - \\bigg | - + - + - + - + - +",
+          "image_source": "images/page_5_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.24,
+            0.479,
+            0.271
+          ],
+          "content": "\\bigcirc \\quad + + \\left| - + - + - + - + \\right| - - + + \\left| + + - - \\right.",
+          "image_source": "images/page_5_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.275,
+            0.496,
+            0.305
+          ],
+          "content": "+\\dots +\\dots +\\dots +\\dots -\\bigg| - - - - - - - - - +",
+          "image_source": "images/page_5_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.307,
+            0.505,
+            0.34
+          ],
+          "content": "\\bigcirc + - \\left| + - \\right| - - \\left| + + + + + + + + - - - - - - \\right.",
+          "image_source": "images/page_5_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.346,
+            0.908,
+            0.377
+          ],
+          "content": "The third answer choice is correct because we almost completely separate our positive data from our negative data, meaning there’s a very high information gain."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.831,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q2. [14 pts] Search & Games: Lights, Camera, Action!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.91,
+            0.143
+          ],
+          "content": "Vivien is currently on an 𝑀 × 𝑁 grid, and she wants to take pictures of 𝑘 sites located on the grid, with each site occupying exactly one square on the grid. At each timestep, she can either move up, down, left, or right exactly one square (assuming this move does not push her out of the grid), or she can stay put and take a picture of her current square. The sites never move, and the 𝑘 sites are labeled as $s _ { 1 } , s _ { 2 } , \\ldots , s _ { k }$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.329,
+            0.166,
+            0.658,
+            0.347
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.081,
+                0.36,
+                0.902,
+                0.39
+              ],
+              "content": "Figure 1: In the example 5 × 7 grid above, assuming that (1, 1) is located at the bottom left square, Vivien is located at (1, 1). In this example, 𝑘 = 3, and the location of the three sites, indicated by filled squares, are (4, 1), (3, 5), and (6, 2)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.415,
+            0.909,
+            0.463
+          ],
+          "content": "Vivien’s goal is to take a picture of each of the 𝑘 sites on the grid. She can only take a picture of a site when she is on that site’s respective square. Note that Vivien can take a picture of whatever square she’s currently on, even if it’s a blank square or a square of an already photographed site. This action will essentially do nothing."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.475,
+            0.407,
+            0.49
+          ],
+          "content": "Vivien decides to model this as a search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.503,
+            0.862,
+            0.52
+          ],
+          "content": "**(a)** [2 pts] Do the sites’ locations **need** to be considered for the state space size calculation? Explain why or why not."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.532,
+            0.219,
+            0.549
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.713,
+            0.879,
+            0.73
+          ],
+          "content": "Since the sites do not move between actions, they do not need to be considered for the calculation of the state space."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.742,
+            0.339,
+            0.758
+          ],
+          "content": "**(b)** [2 pts] Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.766,
+            0.689,
+            0.784
+          ],
+          "content": "□ Depth-first tree search is guaranteed to be complete for this search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.787,
+            0.908,
+            0.819
+          ],
+          "content": "When calculating the branching factor from a state, we take into account actions that result in our agent staying in the same state after taking that action."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.822,
+            0.908,
+            0.854
+          ],
+          "content": "At least a boolean variable is needed for each site when encoding a state representation for the search problem to check whether that site has been photographed yet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.857,
+            0.908,
+            0.889
+          ],
+          "content": "The optimal solution to this search problem is always unique, meaning there is only ever at most one possible optimal solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.892,
+            0.316,
+            0.908
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.047,
+            0.908,
+            0.077
+          ],
+          "content": "The first option is false because depth-first tree search could potentially get trapped in an infinite cycle, causing the search problem to never finish."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.082,
+            0.725,
+            0.097
+          ],
+          "content": "The second option is true because actions that don’t do anything are still considered actions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.102,
+            0.779,
+            0.117
+          ],
+          "content": "The third option is true because we need someway to know whether or not we have visited a site yet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.122,
+            0.909,
+            0.168
+          ],
+          "content": "The fourth option is false because there could be multiple optimal paths that Vivien can take. For instance, if the grid is 2𝑥2, Vivien was at the bottom left, and there was one site at the top right, then Vivien could either go up and right or right and up to get to the site."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.18,
+            0.881,
+            0.196
+          ],
+          "content": "From this subpart onwards, we examine two scenarios for the search problem, labelling them as scenario 1 and scenario 2:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.21,
+            0.908,
+            0.226
+          ],
+          "content": "**Scenario 1:** Vivien can take pictures of the 𝑘 sites in any order. The goal is just to have every site be photographed at least once."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.239,
+            0.908,
+            0.27
+          ],
+          "content": "**Scenario 2:** Vivien still wants to take a picture of each of the 𝑘 sites, but she cannot take a picture of site $s _ { j }$ <sup>unless</sup> sites $s _ { 1 } , s _ { 2 } , \\ldots , s _ { j - 1 }$ have all been photographed, for all $1 < j \\leq k$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.282,
+            0.909,
+            0.328
+          ],
+          "content": "**(c)** [2 pts] Vivien implements goal tests 𝐺(𝑠) and $G ^ { \\prime } ( s ^ { \\prime } )$ for scenarios 1 and 2, respectively. What is the tightest upper bound (in big 𝑂 notation) it takes to run 𝐺(𝑠) and $G ^ { \\prime } ( s ^ { \\prime } )$ , in terms of the variables above (as well as constants, if necessary)? Assume we are using a minimal state space representation, and the functions are optimal (written to be as fast as possible)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.12,
+            0.333,
+            0.337,
+            0.385
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.433,
+            0.332,
+            0.655,
+            0.385
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.392,
+            0.909,
+            0.453
+          ],
+          "content": "For 𝐺(𝑠), the goal state requires checking each of the 𝑘 sites to make sure that they have been photographed, which ultimately takes 𝑂(𝑘) time. However, for $G ^ { \\prime } ( s ^ { \\prime } )$ , it only takes 𝑂(1) time because only the last site, site $s _ { k } ,$ needs to be looked at, since if site $s _ { k }$ has been photographed, it is guaranteed by the problem itself that sites $s _ { 1 } , s _ { 2 } , \\ldots , s _ { k - 1 }$ have ALSO been photographed."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.465,
+            0.908,
+            0.496
+          ],
+          "content": "**(d)** [3 pts] For each of the following heuristics, determine if it is admissible for scenario 1, scenario 2, both, or neither. Assume the heuristic is zero at a goal state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.501,
+            0.773,
+            0.517
+          ],
+          "content": "One plus the maximum Manhattan distance between Vivien and any of the non-photographed sites."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.53,
+            0.868,
+            0.546
+          ],
+          "content": "■ Admissible for scenario 1. ■ Admissible for scenario 2. # Inadmissible for both."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.567,
+            0.908,
+            0.597
+          ],
+          "content": "We are simplifying the problem to require only one space to be photographed, and solving it exactly. Adding one improves over just the Manhattan distance because we need to spend an action to take the picture."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.602,
+            0.669,
+            0.617
+          ],
+          "content": "This is very similar to a Project 1 question where Pacman needs to eat all the foods."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.622,
+            0.908,
+            0.653
+          ],
+          "content": "One plus the Manhattan distance between Vivien and $s _ { j } ,$ , where 𝑗 is the minimum number such that $s _ { j }$ has not been photographed yet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.665,
+            0.869,
+            0.683
+          ],
+          "content": "■ Admissible for scenario 1. ■ Admissible for scenario 2. # Inadmissible for both."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.703,
+            0.908,
+            0.733
+          ],
+          "content": "Same as the last one, but we are constrained to photographing some particular spot that’s not done yet, instead of the furthest remaining one."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.746,
+            0.908,
+            0.776
+          ],
+          "content": "**(e)** [2 pts] Now, Mustafa joins the search problem with Vivien and starts off at a random square. He can move around and take pictures of sites in the same way Vivien can."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.781,
+            0.546,
+            0.797
+          ],
+          "content": "Out of the following game scenarios, select the zero-sum games."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.805,
+            0.909,
+            0.838
+          ],
+          "content": "□ The game ends when both Mustafa and Vivien photograph all 𝑘 sites, and at the end, each person receives a score equal to the number of moves they made in the game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.84,
+            0.909,
+            0.872
+          ],
+          "content": "□ The game ends when all 𝑘 sites have been photographed, but only ONE of Mustafa or Vivien needs to take a picture for each site. The score is the same as the first option."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.877,
+            0.909,
+            0.908
+          ],
+          "content": "The game ends when all 𝑘 sites are photographed, but only ONE of Mustafa or Vivien can photograph each state. However, between Mustafa and Vivien, the person that photographed the MOST of the 𝑘 sites wins."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.046,
+            0.315,
+            0.062
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.072,
+            0.908,
+            0.103
+          ],
+          "content": "Only the third option is zero-sum because in that game, Mustafa’s gain is equal to Vivien’s loss, and vice-versa. The same cannot be said for the first two options."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.115,
+            0.9,
+            0.131
+          ],
+          "content": "**(f)** [3 pts] Select all true statements about the mini-max game tree shown. It is **independent** from the subproblems before."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.153,
+            0.702,
+            0.198
+          ],
+          "content": "Suppose that the values in the terminal nodes have the property that either 𝐷 or 𝐸 is the **minimum** value out of the four terminal nodes, and either 𝐹 or 𝐺 is the **maximum** value out of the four terminal nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.213,
+            0.531,
+            0.229
+          ],
+          "content": "Assume that alpha-beta pruning visits nodes from left to right."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.237,
+            0.702,
+            0.269
+          ],
+          "content": "□ Assuming no pruning, any of the four terminal nodes can be propagated up to the root node."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.721,
+            0.135,
+            0.929,
+            0.303
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.277,
+            0.701,
+            0.295
+          ],
+          "content": "□ If 𝐹 is the max terminal node value, then 𝐺 is guaranteed to always be pruned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.302,
+            0.488,
+            0.32
+          ],
+          "content": "■ This game tree represents a zero-sum game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.328,
+            0.703,
+            0.374
+          ],
+          "content": "■ In general (not just in this game tree), alpha-beta pruning can sometimes result in different values being propagated up compared to standard mini-max tree calculations."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.165,
+            0.384,
+            0.321,
+            0.398
+          ],
+          "level": 2,
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.4,
+            0.908,
+            0.431
+          ],
+          "content": "The first option is false because if 𝐷 is the minimum value, it will be propagated up once, but not propagated up to the root node. Only either node 𝐹 or 𝐺 can be the root node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.435,
+            0.896,
+            0.451
+          ],
+          "content": "The second option is false, as 𝐹 being the maximum terminal node value doesn’t tell us anything about the value of 𝐺."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.456,
+            0.665,
+            0.472
+          ],
+          "content": "The third option is true, as mini-max game trees always represent zero-sum games."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.476,
+            0.909,
+            0.522
+          ],
+          "content": "The fourth option is true, since pruning could potentially not allow us to correctly propagate up the minimum or maximum value. However, alpha-beta pruning will always be sure to allow the root node to choose the same action as in a mini-max game tree."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.516,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q3. [13 pts] HMMs: Inside Out"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.142
+          ],
+          "content": "Riley has 3 different observed behaviors for a given time 𝑡: smiling $( S _ { t } )$ , crying $( C _ { t } )$ , and laughing $( L _ { t } )$ . At each time step, each of these behaviors will either be observed $( X _ { t } = 1 )$ or not observed $( X _ { t } = 0 )$ , and this value is dependent on whether or not her primary emotion, Joy, is active at time $t \\left( J _ { t } = 1 \\right)$ . Zero, one, or two behaviors can be observed at a given time. We cannot directly observe the state of Joy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.154,
+            0.906,
+            0.186
+          ],
+          "content": "This setup can be modeled by the following Hidden Markov Model. You may assume that $P ( C _ { i } | J _ { i } )$ is the same for all $1 \\leq i \\leq n .$ and you can assume the same for $P ( S _ { i } | J _ { i } )$ and $P ( L _ { i } | J _ { i } )$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.206,
+            0.841,
+            0.315
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.091,
+                0.33,
+                0.822,
+                0.346
+              ],
+              "content": "(a) [2 pts] What is the minimum number of conditional probability tables (CPTs) needed to model this HMM?"
+            }
+          ],
+          "image_source": "images/page_9_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.438,
+            0.814,
+            0.454
+          ],
+          "content": "We need prior (𝑃 (𝐽)) and transition $( P ( J _ { i + 1 } | J _ { i } ) )$ distributions for 𝐽, as well as $P ( C | J ) , P ( S | J ) , P ( L | J )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.466,
+            0.908,
+            0.498
+          ],
+          "content": "**(b)** [3 pts] Assume we observe that $J _ { 2 } = 1$ . Which variable(s) in the HMM are guaranteed to be conditionally independent of $J _ { 1 }$ given the observed variable?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.158,
+            0.504,
+            0.908,
+            0.587
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.602,
+            0.652,
+            0.618
+          ],
+          "content": "The chosen nodes are effectively getting their influence \"blocked\" by $J _ { 2 }$ from $J _ { 1 } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.622,
+            0.909,
+            0.684
+          ],
+          "content": "More formally, we can see that all paths from $J _ { 1 }$ to any of the selected variables must pass through $J _ { 2 } ,$ guaranteeing that all paths will include a causal chain with $J _ { 2 }$ observed. Because all the triples through $J _ { 2 }$ are an inactive triple (happens to be the same Unobserved → Observed → Unobserved triple), we know that $J _ { 1 }$ is d-separated with all variables that are descendants of $J _ { 2 } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.696,
+            0.908,
+            0.728
+          ],
+          "content": "We want to model our belief distribution $B ( J _ { i } )$ for whether Joy is active $( J _ { i } = 1 )$ or inactive $( J _ { i } = 0 )$ at any given time step 𝑖, given all observations of $C , S ,$ , and 𝐿 up to and including time 𝑖."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.74,
+            0.878,
+            0.756
+          ],
+          "content": "**(c)** [3 pts] Rewrite the update rule that would be used to derive $B ( J _ { i + 1 } )$ by filling in the blanks of the expression below."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.386,
+            0.771,
+            0.639,
+            0.809
+          ],
+          "content": "B (J _ {i + 1}) = (\\mathbf {i}) \\cdot (\\mathbf {i i}) \\cdot \\sum_ {j _ {i}} \\left((\\mathbf {i i i}) \\cdot B (j _ {i})\\right)",
+          "image_source": "images/page_9_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.169,
+            0.82,
+            0.857,
+            0.867
+          ],
+          "content": "\\text {(i)} \\quad \\bigcirc 1 \\quad \\bigcirc P (J _ {i + 1} | J _ {i}) \\quad \\bullet P (C _ {i + 1} | J _ {i + 1}) \\quad \\bigcirc \\sum_ {c} \\sum_ {\\ell} \\sum_ {s} P (J _ {i} | c _ {i}, \\ell_ {i}, s _ {i})\\tag{ii}",
+          "image_source": "images/page_9_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.216,
+            0.85,
+            0.858,
+            0.871
+          ],
+          "content": "\\bigcirc P (J _ {i}) \\quad \\bigcirc P (J _ {i + 1} | J _ {i}) \\quad \\bullet P (L _ {i + 1} | J _ {i + 1}) P (S _ {i + 1} | J _ {i + 1}) \\quad \\bigcirc \\sum_ {s} \\sum_ {\\ell} P (J _ {i + 1} | s _ {i + 1}, \\ell_ {i + 1})",
+          "image_source": "images/page_9_equation_14.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "10"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.17,
+            0.88,
+            0.844,
+            0.901
+          ],
+          "content": "\\text {(iii)} \\quad \\bigcirc P (j _ {i}) \\quad \\bullet P (J _ {i + 1} | j _ {i}) \\quad \\bigcirc P (j _ {i} | c _ {i}, s _ {i}, \\ell_ {i}) \\quad \\bigcirc P (J _ {i + 1} | c _ {i + 1}, s _ {i + 1}, \\ell_ {i + 1})",
+          "image_source": "images/page_9_equation_16.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.047,
+            0.908,
+            0.093
+          ],
+          "content": "This is the same as the normal belief distribution update rule, just incorporating the fact that there are 3 evidence variables. Notice that each evidence variable $( C _ { i } ,   S _ { i } ,   L _ { i } )$ is independent of all other evidence variables given parent $J _ { i } ,$ so the joint probability can be rewritten as $P ( C , S , L | J ) = P ( C | J ) \\cdot P ( S | J ) \\cdot P ( L | J )$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.047,
+            0.909,
+            0.093
+          ],
+          "content": "Riley’s parents want to tell her some important news, and want to know who should tell her the news out of the two. After observing her behaviors at the third timestep, they will decide whether the mom gives the news $( N = 1 )$ or the dad gives the news $( N = 0 )$ . Their utility from Riley’s reaction to the news depends on whether Joy is active at time step $3 \\: ( J _ { 3 } = 1 )$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.105,
+            0.503,
+            0.121
+          ],
+          "content": "We can model this new setup as the following decision network:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.178,
+            0.144,
+            0.806,
+            0.325
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.341,
+            0.796,
+            0.382
+          ],
+          "content": "**(d)** [1 pt] $\\mathrm{VPI}(C_{1},S_{1},L_{1})\\xlongequal{\\quad\\quad}\\mathrm{VPI}(C_{2},S_{2},L_{2})$ # = # > # ≥ # < ≤ # Not enough information"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.385,
+            0.908,
+            0.416
+          ],
+          "content": "It’s possible that none of these six variables give any information at all, in which case $\\mathrm{VPI}(C_{1},S_{1},L_{1})=\\mathrm{VPI}(C_{2},S_{2},L_{2})=$ 0, so equality is always possible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.42,
+            0.909,
+            0.481
+          ],
+          "content": "We know that the conditional probability tables $P ( C _ { 1 } | J _ { 1 } )$ and $P ( C _ { 2 } | J _ { 2 } )$ , etc. are identical because this is an HMM. So, the observations at step 2 give us the same volume of information about $J _ { 2 }$ as 1 about $J _ { 1 }$ . Finally, $J _ { 2 }$ is closer to the 𝑈 (and in fact would make $J _ { 1 }$ conditionally independent of $U /   U ^ { \\prime } \\mathrm { s }$ parents), so the step 2 is guaranteed to be at least the same 𝑉 𝑃 𝐼 or better."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.494,
+            0.797,
+            0.535
+          ],
+          "content": "**(e)** [1 pt] $\\mathrm{VPI}(C_{1},S_{1},L_{1})\\xlongequal{\\quad\\quad}\\mathrm{VPI}(C_{1},S_{1},L_{1},C_{2},S_{2},L_{2})$ # = # > # ≥ # < ≤ # Not enough information"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.54,
+            0.909,
+            0.584
+          ],
+          "content": "The right has the same, and some extra variables, so it can’t be lower than the left. We can’t guarantee that it is the same because the step 2 observations are not conditionally independent of $U /   U ^ { \\prime } \\mathrm { s }$ parents when conditioned on the step 1 observations."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.597,
+            0.797,
+            0.638
+          ],
+          "content": "**(f)** [1 pt] $\\mathrm{VPI}(C_{1},S_{1},L_{1},J_{2})\\xlongequal{\\quad\\quad}\\mathrm{VPI}(J_{2})$ = # > # ≥ # < # ≤ # Not enough information"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.642,
+            0.907,
+            0.673
+          ],
+          "content": "$C _ { 1 } , S _ { 1 } , L _ { 1 }$ are conditionally independent of $U / U ^ { \\circ } \\mathrm { s }$ parents when conditioned on $J _ { 2 }$ . We can see this with d-Separation, because we will hit the Unobserved → Observed $( = J _ { 2 } )$ → Unobserved inactive triple on all possible paths."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.685,
+            0.817,
+            0.701
+          ],
+          "content": "Riley’s mom will tell Riley the news (𝑁 = 1) if they believe their utility will be non-negative $( E U ( N = 1 ) \\geq 0 )$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "12"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.429,
+            0.726,
+            0.556,
+            0.774
+          ],
+          "content": "| 𝐽<sub>3</sub> | 𝑈(𝑁 = 1) |\n| --- | --- |\n| 0 | -8 |\n| 1 | 10 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.787,
+            0.908,
+            0.832
+          ],
+          "content": "**(g)** [2 pts] Let’s say Riley’s parents are only able to observe Riley’s behaviors at time 𝑡 = 1, and they observe the values $C _ { 1 } = 0 , S _ { 1 } = 1 , L _ { 1 } = 0$ . Their choice 𝑁 at 𝑡 = 3 depends solely on these observations. Should Riley’s mom tell her the news given the assumptions about the probability distributions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.837,
+            0.402,
+            0.852
+          ],
+          "content": "All distributions in the CPT’s are uniform."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.158,
+            0.045,
+            0.277,
+            0.062
+          ],
+          "content": "\\bigcirc \\text {Yes} (N = 1)",
+          "image_source": "images/page_12_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.425,
+            0.045,
+            0.539,
+            0.062
+          ],
+          "content": "\\bigcirc \\text {No} (N = 0)",
+          "image_source": "images/page_12_equation_1.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.694,
+            0.045,
+            0.715,
+            0.061
+          ],
+          "content": ""
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.719,
+            0.047,
+            0.886,
+            0.062
+          ],
+          "content": "Not enough information."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.082,
+            0.767,
+            0.097
+          ],
+          "content": "It could be the case that $J _ { 3 } = 1$ is very unlikely, in which case Riley’s mom would not want to tell."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.841,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q4. [14 pts] BN, Naive Bayes, Perceptron: Bayesketball"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.127
+          ],
+          "content": "Wilson is preparing for his basketball game. He wants to predict his team’s game outcome (G). He believes the game outcome is influenced by several binary random variables: Team Morale (M), Player Health (H), Training Quality (T), Opponent Strength (O), and Recent Injuries (I). Wilson builds a Bayes Network to represent the dependencies between these variables as follows:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.451,
+            0.147,
+            0.536,
+            0.247
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.263,
+            0.808,
+            0.279
+          ],
+          "content": "**(a)** [3 pts] Select the independence statements that are **guaranteed** to be true given this Bayes Net Structure."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.291,
+            0.238,
+            0.309
+          ],
+          "content": "■ O ⟂⟂ I"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.428,
+            0.291,
+            0.555,
+            0.309
+          ],
+          "content": "T ⟂⟂ G ∣ M, H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.692,
+            0.29,
+            0.796,
+            0.309
+          ],
+          "content": "□ I ⟂⟂ G ∣ M"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.321,
+            0.316,
+            0.339
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.358,
+            0.715,
+            0.374
+          ],
+          "content": "O ⟂⟂ I: These are both roots of the graph, and don’t have any shared observed descendants."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.378,
+            0.909,
+            0.425
+          ],
+          "content": "T ⟂⟂ G ∣ M, H: Both of the parents of G are included, and T is an ancestor of G, so they are independent by the base requirement of independences in a Bayes Net. We can also see that any path will encounter the Unobserved → Observed (=M or H) → Unobserved inactive triple."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.428,
+            0.909,
+            0.46
+          ],
+          "content": "I ⟂⟂ G ∣ M: We don’t have all of the parents. Specifically, the path I → H → G is active because the only triple in the path is active."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.472,
+            0.574,
+            0.488
+          ],
+          "content": "Wilson now computes 𝑃 (𝐺 ∣ 𝑀 = +𝑚, 𝐼 = −𝑖) using variable elimination."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.5,
+            0.467,
+            0.517
+          ],
+          "content": "**(b)** [2 pts] What factors are needed to eliminate 𝐻 first?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.529,
+            0.231,
+            0.548
+          ],
+          "content": "□ 𝑃 (𝑇 )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.426,
+            0.529,
+            0.531,
+            0.548
+          ],
+          "content": "□ 𝑃 (𝐼 = −𝑖)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.694,
+            0.53,
+            0.86,
+            0.548
+          ],
+          "content": "■ 𝑃 (𝑀 = +𝑚 ∣ 𝑇 , 𝐻)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.56,
+            0.313,
+            0.578
+          ],
+          "content": "𝑃 (𝐻 ∣ 𝑇 , 𝐼 = −𝑖)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.426,
+            0.559,
+            0.499,
+            0.578
+          ],
+          "content": "□ 𝑃 (𝑂)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.694,
+            0.56,
+            0.879,
+            0.578
+          ],
+          "content": "■ 𝑃 (𝐺 ∣ 𝑀 = +𝑚, 𝐻, 𝑂)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.597,
+            0.908,
+            0.628
+          ],
+          "content": "All factors that have 𝐻 in it. The number of factors is always 1+ how many arrows are coming out of the node – because each node is 𝑃 (node|parents)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.64,
+            0.908,
+            0.688
+          ],
+          "content": "The basketball game is about to end and Wilson is passed the ball, forcing him to think about taking the game winning shot. He uses a Naive Bayes classifier to help him predict the outcome of the shot. He chooses three features during classification: Launch Angle $( X _ { 1 } )$ , Velocity $( X _ { 2 } )$ , and Distance $( X _ { 3 } )$ . Below is the training dataset:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.248,
+            0.702,
+            0.738,
+            0.813
+          ],
+          "content": "| Launch Angle (𝑋<sub>1</sub>) | Velocity (𝑋<sub>2</sub>) | Distance (𝑋<sub>3</sub>) | Outcome (𝑌) |\n| --- | --- | --- | --- |\n| + | + | + | success |\n| + | + | + | success |\n| + | - | + | success |\n| + | + | - | success |\n| + | + | + | fail |\n| + | - | - | fail |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_21.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.836,
+            0.604,
+            0.854
+          ],
+          "content": "**(c)** [3 pts] Under Naive Bayes assumptions, solve the following probabilities:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.245,
+            0.043,
+            0.476,
+            0.088
+          ],
+          "content": "P (Y = \\text {success}) = \\boxed {\\frac {2}{3}}",
+          "image_source": "images/page_14_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.59,
+            0.043,
+            0.792,
+            0.088
+          ],
+          "content": "P (Y = \\text {fail}) = \\boxed {\\frac {1}{3}}",
+          "image_source": "images/page_14_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.182,
+            0.11,
+            0.476,
+            0.156
+          ],
+          "content": "P (X _ {1} = + \\mid Y = \\text {success}) = \\boxed { \\begin{array}{c} 1 \\end{array} }",
+          "image_source": "images/page_14_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.527,
+            0.11,
+            0.792,
+            0.156
+          ],
+          "content": "P (X _ {1} = + \\mid Y = \\text {fail}) = \\boxed { \\begin{array}{c} 1 \\end{array} }",
+          "image_source": "images/page_14_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.193,
+            0.91,
+            0.24
+          ],
+          "content": "All of these are just the count of samples matching all variable assignments divided by the number of samples matching the conditioned variable assignments. This is the MLE assuming each feature is conditionally independent of each other given the label."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.047,
+            0.909,
+            0.078
+          ],
+          "content": "Wilson decides to use a perceptron instead to label whether a shot will be a success (+) or fail (−). He uses 2 features: the Spin and Angle Offset (Angle), which can both be positive or negative integers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.09,
+            0.588,
+            0.106
+          ],
+          "content": "Consider the following labeled training data, where each row signifies a shot:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.347,
+            0.121,
+            0.636,
+            0.202
+          ],
+          "content": "| Spin | Angle | Success (+) or Fail (-) |\n| --- | --- | --- |\n| -5 | 1 | + |\n| 3 | -2 | - |\n| -2 | -1 | - |\n| 4 | 2 | + |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.225,
+            0.908,
+            0.257
+          ],
+          "content": "**(d)** [2 pts] Our perceptron weights have been initialized to $w _ { \\mathrm { s p i n } } = 1$ and $w _ { \\mathrm { a n g l e } } = - 1$ . After processing the first row with the perceptron algorithm, what will be the updated values for these weights?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.119,
+            0.267,
+            0.343,
+            0.321
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.518,
+            0.267,
+            0.747,
+            0.321
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.338,
+            0.868,
+            0.354
+          ],
+          "content": "We misclassified when the true label is positive, so ADD the data to the current weights. $[ 1 ,   - 1 ] + [ - 5 ,   1 ] = [ - 4 ,   0 ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.367,
+            0.839,
+            0.383
+          ],
+          "content": "**(e)** [1 pt] Is the data linearly separable? Hint: You do not need to run the perceptron algorithm to figure this out."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.396,
+            0.219,
+            0.412
+          ],
+          "content": "Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.396,
+            0.614,
+            0.413
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.432,
+            0.908,
+            0.463
+          ],
+          "content": "Looking for easy lines that can separate the data, we can see that all fails have a low angle and all successes have a high angle, so we can separate on just the one angle feature."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.468,
+            0.858,
+            0.485
+          ],
+          "content": "Specifically, Angle=0 separates the data, which corresponds to $w _ { \\mathrm { s p i n } } = 0$ and $w _ { \\mathrm { a n g l e } } = 1$ or any positive number."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.497,
+            0.909,
+            0.543
+          ],
+          "content": "**(f)** [3 pts] For each of the basketball shot datasets represented by the graphs below, select the feature maps for which the perceptron algorithm can perfectly classify the data. Each data point is in the form $( x _ { 1 } , x _ { 2 } ) = ( \\mathrm { s p i n } , \\mathrm { h e i g h t } )$ , and has some label 𝑌 , which is either a + (successful shot) or - (missed shot)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.182,
+            0.566,
+            0.67,
+            0.979
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.162,
+            0.045,
+            0.185,
+            0.062
+          ],
+          "content": "■"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.045,
+            0.275,
+            0.065
+          ],
+          "content": "x _ {1}, x _ {2}, x _ {1} ^ {2}, 1",
+          "image_source": "images/page_16_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.082,
+            0.908,
+            0.113
+          ],
+          "content": "Having the feature 𝑌 just tells us the correct label, so any feature set that has it automatically works, but also is not at all interesting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.117,
+            0.909,
+            0.164
+          ],
+          "content": "First graph: is not linearly separable, disqualifying the linear-only options (1 and 3). We can see that drawing a parabola (in $x _ { 1 } )$ can separate the points, but it needs to pass below the origin, so we need a parabolic feature set with a bias, which is the last option."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.167,
+            0.909,
+            0.214
+          ],
+          "content": "Second graph: is linearly separable, but the + and the − are on the same line as the origin, so we need a bias. A parabola in $x _ { 1 }$ can’t separate the points (option 4) but in $x _ { 2 } ,$ can (option 5). The last option (5) doesn’t strictly need the bias but extra features can always be ignored."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.569,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q5. [11 pts] MDPs: Easy MDPeasy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.08,
+            0.82,
+            0.097
+          ],
+          "content": "Lauren can be on any of floors $F _ { 1 } , F _ { 2 } ,$ or $F _ { 3 }$ in her house, where $F _ { 1 }$ is the lowest floor and $F _ { 3 }$ is the highest floor."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.109,
+            0.908,
+            0.156
+          ],
+          "content": "Lauren can take the action **up**, which moves her from floor $F _ { i }$ to floor $F _ { i + 1 }$ . If she’s originally at floor $F _ { 3 }$ and goes up, she just stays at floor $F _ { 3 }$ . Similarly, she can also take the action **down**, which moves her from floor $F _ { i }$ to floor $F _ { i - 1 }$ . If she’s originally at floor $F _ { 1 }$ and goes down, she just stays at floor $F _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.168,
+            0.473,
+            0.185
+          ],
+          "content": "Both of these actions work correctly with 100% probability."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.197,
+            0.908,
+            0.228
+          ],
+          "content": "Also, at any floor, Lauren can choose to take the **call** action, in which she makes a phone call on that floor. With this action, one of three events can occur:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.25,
+            0.591,
+            0.266
+          ],
+          "content": "• Her call gets accepted, which lands her in the terminal state \"accepted\"."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.275,
+            0.58,
+            0.291
+          ],
+          "content": "• Her call gets rejected, which lands her in the terminal state \"rejected\"."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.3,
+            0.811,
+            0.317
+          ],
+          "content": "• Her phone glitches and she isn’t able to make the phone call, which causes her to stay in her current state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.34,
+            0.479,
+            0.355
+          ],
+          "content": "Lauren decides to model this an a Markov Decision Process."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.368,
+            0.908,
+            0.4
+          ],
+          "content": "The reward is 0 for every action, except for actions that go from a floor state to one of the terminal states: going to \"accepted\" yields a reward of 1, and going to \"rejected\" yields a reward of −1. Assume we use a discount factor of $\\gamma = 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.412,
+            0.909,
+            0.444
+          ],
+          "content": "For the rest of the problem, the below table will represent the transition probabilities for a **𝐜𝐚𝐥𝐥** action in our MDP, with each cell representing $T ( s , c a l l , s ^ { \\prime } )$ for a given $s ^ { \\prime }$ in the column headers and 𝑠 in the row headers."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.326,
+            0.465,
+            0.66,
+            0.53
+          ],
+          "content": "|  | s' = accepted | s' = s | s' = rejected |\n| --- | --- | --- | --- |\n| 𝑠 = 𝐹<sub>3</sub> | 0.3 | 0.4 | 0.3 |\n| 𝑠 = 𝐹<sub>2</sub> | 0.2 | 0.5 | 0.3 |\n| 𝑠 = 𝐹<sub>1</sub> | 0.1 | 0.7 | 0.2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_table_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.542,
+            0.908,
+            0.573
+          ],
+          "content": "**(a)** [2 pts] Lauren wants to go to a floor and choose the call action repeatedly on that floor until she reaches a terminal state. Which floor would yield the highest expected reward from doing this?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.585,
+            0.209,
+            0.603
+          ],
+          "content": "\\bigcirc F _ {1}",
+          "image_source": "images/page_17_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.426,
+            0.585,
+            0.477,
+            0.603
+          ],
+          "content": "\\bigcirc F _ {2}",
+          "image_source": "images/page_17_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.636,
+            0.316,
+            0.653
+          ],
+          "content": "The highest expected reward:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.673,
+            0.351,
+            0.69
+          ],
+          "content": "We set up the following equations:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.412,
+            0.707,
+            0.616,
+            0.771
+          ],
+          "content": "\\begin{array}{l} \\mathbb {E} [ F _ {3} ] = 0. 3 + 0. 4 \\mathbb {E} [ F _ {3} ] - 0. 3 \\\\ \\mathbb {E} [ F _ {2} ] = 0. 2 + 0. 5 \\mathbb {E} [ F _ {2} ] - 0. 3 \\\\ \\mathbb {E} [ F _ {1} ] = 0. 1 + 0. 7 \\mathbb {E} [ F _ {1} ] - 0. 2 \\end{array}",
+          "image_source": "images/page_17_equation_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.776,
+            0.843,
+            0.792
+          ],
+          "content": "Solving each equation and finding the max expected value yields $\\mathbb { E } [ F _ { 3 } ] = 0$ as the maximum expected reward."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.805,
+            0.809,
+            0.821
+          ],
+          "content": "Since the transition probabilities for the \"call\" action don’t change at all, the optimal policy will still be to go to"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.834,
+            0.445,
+            0.85
+          ],
+          "content": "**(b)** [3 pts] Select all true statements about this MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.858,
+            0.908,
+            0.89
+          ],
+          "content": "■ Value iteration will converge to the optimal values after calculating $V _ { 1 } ( s )$ for all states 𝑠 (assuming we start at $V _ { 0 } ( s ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.895,
+            0.766,
+            0.912
+          ],
+          "content": "□ Changing the discount factor 𝛾 will affect the optimal values at each state for this MDP."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.045,
+            0.525,
+            0.063
+          ],
+          "content": "□ There exists a unique optimal policy for this MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.066,
+            0.908,
+            0.097
+          ],
+          "content": "■ If we introduced a negative reward when moving between floors, this could potentially change the optimal values for some states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.101,
+            0.316,
+            0.117
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.127,
+            0.908,
+            0.158
+          ],
+          "content": "The first statement is true. Performing one iteration of value iteration after $V _ { 0 } ( s )$ will result int he same values, meaning we have converged to the optimal values for that state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.162,
+            0.908,
+            0.194
+          ],
+          "content": "The second statement is false because of the fact that our discount rate is being multiplied by $V _ { k - 1 } ( s ^ { \\prime } )$ in the value iteration algorithm, and since $V _ { 0 } ( s ) = 0 ,$ the value of 𝛾 does not matter."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.198,
+            0.908,
+            0.228
+          ],
+          "content": "The third statement is false, as the optimal values are 0 for all states, which can be the result of going either up or down from every state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.233,
+            0.909,
+            0.28
+          ],
+          "content": "The fourth option is true because this could mess with the idea that we can move freely between floors as many times as want. If we can’t do this, then we should have to explore the tradeoffs between moving between floors and calling from a floor you’re already on, which could mess with the optimal values for some states."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.047,
+            0.909,
+            0.164
+          ],
+          "content": "**(c)** [4 pts] Suppose we change the reward of moving into the \"accepted\" state from a non-terminal state to 10, we change the reward of moving into the \"rejected\" state from a non-terminal state to −10, and all other actions now yield a reward of −1 (including \"up\" and \"down\" actions between floors, and \"call\" actions that result in staying in the same floor). Perform two iterations of value iteration for the three floor states, and fill the missing values in the below table. Note that the two terminal states are left out here because they always have a value of 0, and also that $\\gamma = 1$ For convenience, here is the same \"call\" transition table from the last page. Note that \"up\" and \"down\" actions still work correctly all the time."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.346,
+            0.176,
+            0.681,
+            0.24
+          ],
+          "content": "|  | s' = accepted | s' = s | s' = rejected |\n| --- | --- | --- | --- |\n| 𝑠 = 𝐹<sub>3</sub> | 0.3 | 0.4 | 0.3 |\n| 𝑠 = 𝐹<sub>2</sub> | 0.2 | 0.5 | 0.3 |\n| 𝑠 = 𝐹<sub>1</sub> | 0.1 | 0.7 | 0.2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.265,
+            0.255,
+            0.719,
+            0.441
+          ],
+          "content": "| States | 𝐹<sub>1</sub> | 𝐹<sub>2</sub> | 𝐹<sub>3</sub> |\n| --- | --- | --- | --- |\n| 𝑉<sub>0</sub>(𝑠) | 0 | 0 | 0 |\n| 𝑉<sub>1</sub>(𝑠) | -1 | -1 | -0.4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.447,
+            0.908,
+            0.477
+          ],
+          "content": "For $V _ { 1 } ( F _ { 1 } )$ , we see that using the value iteration equation, going up or down will yield a value of −1, as well as making a call on that floor. In fact, this is the case for all floors, so the whole row will be equal to −1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.482,
+            0.907,
+            0.529
+          ],
+          "content": "For $V _ { 2 } ( F _ { 1 } )$ , we first see that going up or down will yield a value of −2 now (since we use the values in $V _ { 1 } ( s )$ now). However, making a call at $F _ { 1 }$ will yield a value of $0 . 1 \\cdot 1 0 - 0 . 2 \\cdot 1 0 + 0 . 7 \\cdot ( 0 + ( - 1 ) ) ) = - 1 . 7$ , and since this is the max value out of all three possible actions, this is the value for $V _ { 2 } ( F _ { 1 } )$ . Similar calculations are made for $V _ { 2 } ( F _ { 2 } )$ and $V _ { 2 } ( F _ { 3 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.54,
+            0.428,
+            0.557
+          ],
+          "content": "This subpart is independent of the previous subparts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.569,
+            0.908,
+            0.6
+          ],
+          "content": "**(d)** [2 pts] True or false: Computing the optimal values of states, given the output of policy iteration, is easier than computing the optimal values without policy iteration."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.614,
+            0.225,
+            0.63
+          ],
+          "content": "True"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.56,
+            0.614,
+            0.628,
+            0.63
+          ],
+          "content": "\\# False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.65,
+            0.854,
+            0.665
+          ],
+          "content": "True or false: Extracting a policy given optimal values is easier than extracting a policy given optimal Q-values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.679,
+            0.225,
+            0.695
+          ],
+          "content": "\\# True"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.561,
+            0.679,
+            0.627,
+            0.695
+          ],
+          "content": "False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.715,
+            0.908,
+            0.746
+          ],
+          "content": "First: we can run policy evaluation and don’t have to consider non-optimal actions. This is better than having to compute values while not knowing the optimal actions; all algorithms for calculating values are slower than just policy evaluation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.75,
+            0.909,
+            0.797
+          ],
+          "content": "Second: we can take the arg $\\operatorname* { m a x } _ { a } Q ( s , a )$ for each state 𝑠, which is $O ( | S | | A | )$ amount of work. If we only have 𝑉 values, there’s no direct way of getting what actions made that happen, we have to use one of the more complex algorithms to either get 𝑄 values from this or do some kind of policy iteration."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.554,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q6. [16 pts] RL: Weight a Minute!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.08,
+            0.908,
+            0.112
+          ],
+          "content": "Consider a state space with states $X _ { 1 } , X _ { 2 } , X _ { 3 } , \\ldots , X _ { n } .$ In any state, one can take the action to move to any **other** state. For instance, from state $X _ { 1 } ,$ , you can move to any of states $X _ { 2 } , X _ { 3 } , \\ldots , X _ { n } ,$ but there is no action that allows you to stay in state $X _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.123,
+            0.909,
+            0.155
+          ],
+          "content": "**(a)** [2 pts] Consider running Q-learning on this problem. How many Q-values do we need in order to represent this problem? Your answer should be an expression in terms of 𝑛."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.121,
+            0.158,
+            0.288,
+            0.21
+          ],
+          "sub_type": "algorithm",
+          "content": "$n(n - 1)$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.218,
+            0.306,
+            0.234
+          ],
+          "content": "Total $\\mathrm { Q - v a l u e s } = | S | \\times | A |$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.246,
+            0.909,
+            0.278
+          ],
+          "content": "**(b)** [2 pts] Compared to Q-learning, select all of the following reinforcement learning (RL) algorithms that have a **greater** space requirement for this problem. Hint: the space requirement for Q-learning is $| S | \\times | A |$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.285,
+            0.346,
+            0.301
+          ],
+          "content": "Model-based Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.304,
+            0.314,
+            0.321
+          ],
+          "content": "Direct Evaluation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.324,
+            0.434,
+            0.341
+          ],
+          "content": "□ Temporal Difference (TD) Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.343,
+            0.317,
+            0.36
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.369,
+            0.909,
+            0.415
+          ],
+          "content": "Model-based learning requires a space complexity of $| S | ^ { 2 } | A |$ due to needing all the transitions from one state to any other state. Direct evaluation and TD-learning, on the other hand, only have a space requirement of |𝑆|, as only $V ( s )$ needs to be stored for all states 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.428,
+            0.899,
+            0.444
+          ],
+          "content": "Now, consider an arbitrary MDP, with unknown transition/reward models. We observe an agent acting according to policy 𝜋."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.457,
+            0.542,
+            0.473
+          ],
+          "content": "In standard TD learning, we would process each sample one at a time:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.352,
+            0.483,
+            0.634,
+            0.501
+          ],
+          "content": "V ^ {\\pi} (s) \\leftarrow (1 - \\alpha) V ^ {\\pi} (s) + \\alpha \\left[ r _ {i} + \\gamma V ^ {\\pi} (s _ {i} ^ {\\prime}) \\right]",
+          "image_source": "images/page_20_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.512,
+            0.908,
+            0.544
+          ],
+          "content": "Danial wants to instead process three samples (all starting at the same state) at a time in one update, rather than in three separate updates. Furthermore, he wants to process these three samples at once using a **weighted average**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.555,
+            0.909,
+            0.603
+          ],
+          "content": "The sample yielding the highest reward out of the three receives weight $w _ { 1 }$ , the sample with the second highest reward receives weight $w _ { 2 }$ , and the sample with the lowest reward receives weight $w _ { 3 }$ , where ties are broken randomly. You can assume $w _ { 1 } > w _ { 2 } > w _ { 3 } > 0$ , and $w _ { 1 } + w _ { 2 } + w _ { 3 } = 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.615,
+            0.443,
+            0.63
+          ],
+          "content": "**(c)** [4 pts] Select Danial’s modified update equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.634,
+            0.438,
+            0.65
+          ],
+          "content": "Sample $( s _ { 1 } , a _ { 1 } , s _ { 1 } ^ { \\prime } , r _ { 1 } )$ yields the highest reward."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.654,
+            0.486,
+            0.67
+          ],
+          "content": "Sample $( s _ { 2 } , a _ { 2 } , s _ { 2 } ^ { \\prime } , r _ { 2 } )$ yields the second highest reward."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.674,
+            0.432,
+            0.69
+          ],
+          "content": "Sample $( s _ { 3 } , a _ { 3 } , s _ { 3 } ^ { \\prime } , r _ { 3 } )$ yields the lowest reward."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.33,
+            0.708,
+            0.697,
+            0.724
+          ],
+          "content": "V ^ {\\pi} (s) \\leftarrow (1 - \\alpha) \\cdot (\\mathbf {i}) \\cdot (\\mathbf {i i}) + \\alpha \\cdot (\\mathbf {i i i}) ((\\mathbf {i v}) \\cdot [ (\\mathbf {v}) + (\\mathbf {v i}) ])",
+          "image_source": "images/page_20_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.734,
+            0.767,
+            0.753
+          ],
+          "content": "**(i)** $\\bigcirc \\quad 0$ 1 # 3 # $( 1 - \\alpha ) ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.765,
+            0.79,
+            0.786
+          ],
+          "content": "**(ii)** $\\begin{array} { r } { \\textcircled { \\sim } ~ \\sum _ { i = 1 } ^ { 3 } V ^ { \\pi } ( s ) } \\end{array}$ ● $V ^ { \\pi } ( s )$ # $w _ { 1 } w _ { 2 } w _ { 3 } V ^ { \\pi } ( s )$ # $\\textstyle \\prod _ { i = 1 } ^ { 3 } V ^ { \\pi } ( s )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.797,
+            0.748,
+            0.82
+          ],
+          "content": "**(iii)** # $\\mathtt { m a x } _ { 1 \\leq i \\leq 3 }$ $\\operatorname* { m i n } _ { 1 \\leq i \\leq 3 }$ $\\Sigma _ { i = 1 } ^ { 3 }$ $\\Pi _ { i = 1 } ^ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.829,
+            0.731,
+            0.855
+          ],
+          "content": "**(iv)** # $\\alpha w _ { i }$ O $w _ { i }$ $( 1 - w _ { i } )$ $\\frac { 1 } { w _ { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.865,
+            0.734,
+            0.885
+          ],
+          "content": "**(v)** $r _ { i }$ $\\gamma r _ { i }$ $\\alpha r _ { i }$ $3 r _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.236,
+            0.895,
+            0.766,
+            0.915
+          ],
+          "content": "**(vi)** $\\textcircled { \\textit { 1 } } w _ { i } V ^ { \\pi } ( s _ { i } ^ { \\prime } )$ # $V ^ { \\pi } ( s _ { i } ^ { \\prime } )$ # $\\gamma V ^ { \\pi } ( s _ { i } )$ O $\\gamma V ^ { \\pi } ( s _ { i } ^ { \\prime } )$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.351,
+            0.043,
+            0.675,
+            0.086
+          ],
+          "content": "V ^ {\\pi} (s) \\leftarrow (1 - \\alpha) V ^ {\\pi} (s) + \\alpha \\sum_ {i = 1} ^ {3} w _ {i} \\left[ r _ {i} + \\gamma V ^ {\\pi} (s _ {i} ^ {\\prime}) \\right]",
+          "image_source": "images/page_21_equation_0.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.047,
+            0.338,
+            0.062
+          ],
+          "content": "**(d)** [3 pts] Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.071,
+            0.791,
+            0.087
+          ],
+          "content": "■ More recent sets of three samples will influence the value of that state more than older sets."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.09,
+            0.622,
+            0.108
+          ],
+          "content": "□ We will learn the optimal policy from this new updated equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.111,
+            0.856,
+            0.128
+          ],
+          "content": "■ If $w _ { 1 } > w _ { 2 } \\geq w _ { 3 } \\geq 0$ instead of $w _ { 1 } > w _ { 2 } > w _ { 3 } > 0 ,$ , we may not converge to the true value of $V ^ { \\pi } ( s )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.132,
+            0.719,
+            0.149
+          ],
+          "content": "Slowly shrinking the learning rate 𝛼 overtime will help $V ^ { \\pi } ( s )$ stabilize its value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.152,
+            0.317,
+            0.169
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.179,
+            0.908,
+            0.21
+          ],
+          "content": "The first option is true because due to the learning rate 𝛼, the older sets of three samples will have exponentially less weight than the newer sets."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.214,
+            0.908,
+            0.244
+          ],
+          "content": "The second option is incorrect because TD-learning is not used to find the optimal policy, and neither will this new update equation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.249,
+            0.908,
+            0.281
+          ],
+          "content": "The third option is true because if, say, $w _ { 1 }   =   1$ and $w _ { 2 }   =   w _ { 3 }   =   0$ , then this update equation essentially becomes the standard update equation for TD-learning, which we know converges already."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.284,
+            0.908,
+            0.316
+          ],
+          "content": "The fourth option is correct because decreasing the learning rate puts less weight on new samples, allowing our $V ( s )$ value to converge quickly to our true value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.328,
+            0.909,
+            0.375
+          ],
+          "content": "**(e)** [3 pts] Danial claims that this new update equation is guaranteed to converge to the true state values, just like the normal TD learning update equation. Curtis, however, claims that this is not necessarily true. Who is correct, and why? Explain your answer in three sentences or fewer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.387,
+            0.303,
+            0.404
+          ],
+          "content": "Danial is correct"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.56,
+            0.388,
+            0.699,
+            0.404
+          ],
+          "content": "Curtis is correct"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.563,
+            0.909,
+            0.642
+          ],
+          "content": "Curtis is correct because assigning the highest weight to the largest reward value of the three samples isn’t guaranteed to help you converge. Consider the case where your two possible rewards from a state are 1 and 999, and the reward of 1 occurs $\\frac{2}{3}$ of the time. If our weights were, say $w _ { 1 } = 0 . 9 5 , w _ { 2 } = 0 . 3 , w _ { 3 } = 0 . 2$ , then even though we would usually sets of three samples with rewards 1, 1, 999, our weights would unevenly weight the largest sample by a lot more, causing us to never converge to the true value for that state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.654,
+            0.933,
+            0.67
+          ],
+          "content": "**(f)** [2 pts] In model-based learning, the approximations for our transition functions $\\hat { T } ( s , a , s ^ { \\prime } )$ are calculated using the"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.678,
+            0.278,
+            0.695
+          ],
+          "content": "learning rate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.698,
+            0.308,
+            0.715
+          ],
+          "content": "weighted average"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.718,
+            0.339,
+            0.735
+          ],
+          "content": "maximum a posteriori"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.739,
+            0.389,
+            0.755
+          ],
+          "content": "maximum likelihood estimate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.759,
+            0.318,
+            0.775
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.784,
+            0.908,
+            0.815
+          ],
+          "content": "This is known as the maximum likelihood estimate, because we are finding the probability $( \\hat { T } ( s , a , s ^ { \\prime } ) )$ that maximizes the chance that we observe our evidence."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.413,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q7. [12 pts] ML: N&Ns"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.112
+          ],
+          "content": "You’re building a neural network to determine whether candies are M&Ms or Skittles, where M&Ms are represented by a 0, and Skittles are represented by a 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.124,
+            0.766,
+            0.14
+          ],
+          "content": "Each data point is represented as a vector 𝑥 consisting of the features [candy diameter, is blue, is brown]."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.153,
+            0.362,
+            0.17
+          ],
+          "content": "The neural net has the following structure:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.414,
+            0.19,
+            0.573,
+            0.23
+          ],
+          "content": "\\begin{array}{c} {h _ {1} = \\sigma (x W _ {1} + b _ {1})} \\\\ {\\hat {y} = \\mathrm{ReLU} (h _ {1} W _ {2} + b _ {2})} \\end{array}",
+          "image_source": "images/page_23_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.249,
+            0.909,
+            0.281
+          ],
+          "content": "Finally, this value ̂𝑦 is put into a loss function $\\mathcal { L } ( \\hat { y } ) = \\| \\hat { y } - y ^ { * } \\| _ { 2 }$ , meaning after you subtract the vector 𝑦<sup>∗</sup>from the vector ̂𝑦, you take the square root of the sum of squares of that resulting vector. 𝑦<sup>∗</sup>is the vector holding the true labels for your input."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.293,
+            0.483,
+            0.309
+          ],
+          "content": "**(a)** [3 pts] You decide to train the model with batch size 4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.313,
+            0.58,
+            0.329
+          ],
+          "content": "Given the already filled-in dimensions, fill in the missing dimensions:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.118,
+            0.33,
+            0.436,
+            0.61
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.614,
+                0.779,
+                0.629
+              ],
+              "content": "A single 𝑥 input needs to contain all of the data, so it needs to have 4 𝑥 vectors, each 3 features long."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_23_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.632,
+            0.909,
+            0.679
+          ],
+          "content": "By definition of matrix multiplication, if $M \\times N$ is valid and 𝑀 is 𝑎 × 𝑏 and 𝑁 is $c \\times d ,$ we must have $b = c$ (because matrix multiplication is just an array of results when looking at the dot product of each possibly pair of row of 𝑀 and column of 𝑁, which in turn is just a similarity check). The result of the matrix multiplication is therefore $a \\times d .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.682,
+            0.909,
+            0.713
+          ],
+          "content": "Tracking the dimensions starting from 𝑥 yields the rest of the numbers. 𝜎 and ReLU are an element-wise functions, so they doesn’t affect the dimensions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.717,
+            0.38,
+            0.734
+          ],
+          "content": "This was also a part of doing Project 5."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.745,
+            0.909,
+            0.777
+          ],
+          "content": "**(b)** [3 pts] When training this model, the training loss remains high, and so does the test loss. Which of the following could help with this problem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.785,
+            0.908,
+            0.816
+          ],
+          "content": "Change the column dimension of $W _ { 1 }$ from 128 to 256 (and modify other vector/matrix dimensions to line up with this)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.82,
+            0.427,
+            0.836
+          ],
+          "content": "■ Increase the size of the training set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.838,
+            0.399,
+            0.855
+          ],
+          "content": "Increase the size of the test set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.858,
+            0.385,
+            0.875
+          ],
+          "content": "Increase the batch size to 10."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.878,
+            0.351,
+            0.893
+          ],
+          "content": "■ Add more features to 𝑥."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.896,
+            0.316,
+            0.912
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.047,
+            0.909,
+            0.092
+          ],
+          "content": "Since both training and test loss are high, we are not fitting the data. This means that either our model is not complex enough to capture the relationship (options 1 and 5), or we don’t have enough data for the algorithm to work well (option 2)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.097,
+            0.909,
+            0.144
+          ],
+          "content": "Increasing the test set means we have less data in the training set (option 3). Changing the batch size (option 4) is usually a hardware-targeted optimization within a reasonable batch size selection; changing batch size from 4 to 10 will not affect the behavior of the optimization algorithm learning the weights."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.047,
+            0.909,
+            0.093
+          ],
+          "content": "**(c)** [4 pts] For each of the partial derivatives below, express these partial derivatives as a chain of other derivatives in the way that backpropagation would do. Do **not** compute the actual derivatives. In your partial derivatives, you may only use the variables $\\mathcal { L } , b _ { 1 } , b _ { 2 } , h _ { 1 }$ , and ̂𝑦."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.161,
+            0.106,
+            0.862,
+            0.225
+          ],
+          "content": "| 𝜕 | 𝜕𝜕𝑦̂ |\n| --- | --- |\n| 𝜕𝑏<sub>2</sub> = | 𝜕𝑦̂ 𝜕𝑏<sub>2</sub> |\n| 𝜕𝜕𝑏<sub>1</sub> = | 𝜕𝜕𝑦̂ 𝜕𝜕ℎ𝑦̂1 𝜕𝜕ℎ𝑏11 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.237,
+            0.907,
+            0.26
+          ],
+          "content": "This uses the chain rule, $\\begin{array} { r } { \\frac { \\partial f ( g ( t ) ) } { \\partial t } = \\frac { \\partial f ( g ) } { \\partial g } \\times \\frac { \\partial g ( t ) } { \\partial t } } \\end{array}$ . We apply this to the neural net formulas at the beginning of the problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.284,
+            0.908,
+            0.316
+          ],
+          "content": "**(d)** [2 pts] Bubby proposes that changing the final activation function from ReLU to sigmoid (which means $\\hat { y } = \\sigma ( h _ { 3 } )$ is the new output step) will be more suitable for our task of classifying the M&Ms. Is he correct?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.324,
+            0.909,
+            0.355
+          ],
+          "content": "Yes, because the sigmoid function squashes our range to be between 0 and 1, allowing our output to be closer to the label value (which is 0 or 1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.359,
+            0.709,
+            0.375
+          ],
+          "content": "\\# Yes, because ReL $\\mathbf { U } ( x ) = \\operatorname* { m a x } ( 0 , x )$ does not have a defined derivative at $x = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.379,
+            0.838,
+            0.395
+          ],
+          "content": "\\# No, because the sigmoid function takes much longer for a computer to run than the ReLU function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.399,
+            0.615,
+            0.416
+          ],
+          "content": "\\# No, because the sigmoid function is undefined for certain inputs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.428,
+            0.908,
+            0.46
+          ],
+          "content": "For binary classification tasks, the sigmoid function can represent probabilities of our input belonging to a certain class, deeming it much more appropriate for our M&M classification task."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.129,
+            0.7,
+            0.857,
+            0.716
+          ],
+          "content": "Congratulations on completing the final! Feel free to use this space to doodle or to let us know about anything!"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "27"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2024-08-11T22:03:54Z",
+      "modified_at": "2024-08-11T22:03:54Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.26",
+      "page_count": 27,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

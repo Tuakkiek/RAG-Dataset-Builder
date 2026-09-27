@@ -1,0 +1,859 @@
+• You have 170 minutes.
+
+• The exam is closed book, no calculator, and closed notes, other than two double-sided cheat sheets that you may reference.
+
+• Anything you write outside the answer boxes or you ~~cross out~~ will not be graded. If you write multiple answers, your answer is ambiguous, or the bubble/checkbox is not entirely filled in, we will grade the worst interpretation.
+
+For questions with **circular bubbles**, you may select only one choice.
+
+For questions with **square checkboxes**, you may select one or more choices.
+
+Unselected option (completely unfilled)
+
+You can select
+
+Only one selected option (completely filled)
+
+multiple squares (completely filled)
+
+Don’t do this (it will be graded as incorrect)
+
+Don’t do this (it will be graded as incorrect)
+
+| First name |  |
+| --- | --- |
+| Last name |  |
+| SID |  |
+| Name of person to the right |  |
+| Name of person to the left |  |
+| Discussion TAs (or None) |  |
+
+**Honor code**: “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”
+
+By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than my cheat sheets), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic "F" grade in this class and a referral to the Center for Student Conduct.
+
+Signature:
+
+Point Distribution
+
+| Q1. Potpourri | 9 |
+| --- | --- |
+| Q2. Acornomics | 14 |
+| Q3. Monotonic Alignment | 18 |
+| Q4. CSPeech | 17 |
+| Q5. Froogle Maps | 13 |
+| Q6. Machine Learning: Easter Island | 18 |
+| Q7. Square Bayes | 11 |
+| Total | 100 |
+
+We hope you have a utility-maximizing holidays!
+
+![](images/page_0_image_21.jpg)
+
+G00D
+
+## Q1. [9 pts] Potpourri
+
+For the next three subparts, consider the search problem below, with start state 𝑆 and a single goal state 𝐺.
+
+![](images/page_1_image_2.jpg)
+
+Assume that when you expand a state, you add its successors on the fringe in alphabetical order. For example, if you expand 𝐵, then 𝐴 is added to the fringe first, then 𝐶.
+
+**(a)** [2 pts] What will be the path returned by DFS Graph Search on the search problem above? Hint: DFS uses a stack. When expanding 𝐴, you push 𝐶, then you push 𝐸. This causes 𝐸 to be popped off before 𝐶.
+
+**(b)** [1 pt] In BFS Graph Search, how many times does the successor function get called on state 𝐶? # 0 # 1 # 2 # 3
+
+**(c)** [2 pts] In BFS Tree Search, how many times does the successor function get called on state 𝐶? # 0 # 1 # 2 # 3
+
+For the next two subparts, consider the following minimax tree. The upwards arrows indicate maximizer nodes and downwards arrows indicate minimizer nodes. The squares indicate terminal leaf nodes.
+
+**(d)** [1 pt] What is the value of the game tree at the root node?
+
+\# 1 # 2 # 3 # 4 # 5 # 6
+
+$$
+\begin{array}{c} \bigcirc 7 \\ \bigcirc 8 \end{array}
+$$
+
+**(e)** [3 pts] We run alpha-beta pruning from left to right. Select all nodes that will be pruned from the game tree.
+
+$$
+\begin{array}{c} \square \\ \hline \square \\ \hline \end{array} \begin{array}{c} A \\ B \\ C \end{array}
+$$
+
+$$
+\begin{array}{c c} \square & D \\ \square & E \\ \square & F \end{array}
+$$
+
+$$
+\begin{array}{c} \square \quad G \\ \square \quad H \\ \bigcirc \quad \text {None} \end{array}
+$$
+
+![](images/page_1_image_17.jpg)
+
+## Q2. [14 pts] Acornomics
+
+Consider a squirrel living in a tree. Each day, the squirrel has two possible actions:
+
+• **Relax**: Stay in the tree. This always earns a reward of $r _ { \mathrm { r e l a x } } > 0 .$
+
+• **Gather**: Attempt to gather an acorn.
+
+– With probability 𝑝, the squirrel succeeds and earns a reward of $r _ { \mathrm { a c o r n } } > 0$
+
+– With probability (1 − 𝑝), the squirrel is caught by a hawk and earns a reward of 0. Once the squirrel is caught, no further actions or rewards are possible.
+
+In this question, consider two policies for the squirrel:
+
+• **Always Relax** $\pi _ { \mathrm { r e l a x } } \dot { \cdot }$ The squirrel always chooses the Relax action.
+
+• **Always Gather** $\pi _ { \mathrm { g a t h e r } } \mathrm { { ^ \circ } }$ The squirrel always chooses the Gather action.
+
+Hint: Recall the sum of a geometric series: $\sum _ { n = 0 } ^ { \infty } a _ { 1 } \cdot r ^ { n } = { \frac { a _ { 1 } } { 1 - r } } .$
+
+For each subpart, select the **minimal** set of terms, such that their product corresponds to the answer. For example, if you think the answer is $\frac { p } { 1 + p }$ , then select only 𝑝 **and** ${ \frac { 1 } { 1 + p } } .$
+
+For the next two subparts, assume an infinite horizon with **no discounting**.
+
+**(a)** [2 pts] What is $V ^ { \pi _ { \mathrm { r e l a x } } }$ , the expected return if the squirrel follows the Always Relax policy?
+
+$$
+\square p
+$$
+
+$$
+\square \frac {1}{p}
+$$
+
+$$
+\square r _ {\mathrm{relax}}
+$$
+
+$$
+\square 1 + p
+$$
+
+$$
+\square 1 - p
+$$
+
+$$
+\square \frac {1}{1 - p}
+$$
+
+$$
+\square r _ {\text {acorn}}
+$$
+
+$$
+\square \infty
+$$
+
+**(b)** [3 pts] What is $V ^ { \pi _ { \mathrm { g a t h e r } } }$ , the expected return if the squirrel follows the Always Gather policy?
+
+$$
+\square p
+$$
+
+$$
+\square 1 - p
+$$
+
+$$
+\square \frac {1}{p}
+$$
+
+$$
+\square r _ {\text {relax}}
+$$
+
+$$
+\square 1 + p
+$$
+
+$$
+\square \frac {1}{1 - p}
+$$
+
+$$
+\square r _ {\text {acorn}}
+$$
+
+$$
+\begin{array}{c c} \square & \infty \end{array}
+$$
+
+For the next three subparts, assume an infinite horizon with a discount factor of $\gamma , 0 < \gamma < 1$
+
+**(c)** [2 pts] What is 𝑉<sup>𝜋relax</sup> , the expected return if the squirrel follows the Always Relax policy?
+
+$$
+\square \gamma
+$$
+
+$$
+\square 1 - p
+$$
+
+$$
+\square \frac{1}{1 - \gamma}
+$$
+
+$$
+\square \frac {1}{1 + p \gamma - \gamma}
+$$
+
+$$
+\square 1 + p
+$$
+
+$$
+\square 1 - \gamma
+$$
+
+$$
+\square 1 + p \gamma - \gamma
+$$
+
+$$
+\square \frac {1}{p}
+$$
+
+$$
+\square r _ {\text {relax}}
+$$
+
+$$
+\square 1 + \gamma
+$$
+
+$$
+\square p
+$$
+
+$$
+\square \frac {1}{\gamma}
+$$
+
+$$
+\square \frac {1}{1 - p}
+$$
+
+$$
+\square r _ {\text {acorn}}
+$$
+
+$$
+\begin{array}{c c} \square & \infty \end{array}
+$$
+
+**(d)** [4 pts] What is $V ^ { \pi _ { \mathrm { g a t h e r } } }$ , the expected return if the squirrel follows the Always Gather policy?
+
+$$
+\square \gamma
+$$
+
+$$
+\square 1 - p
+$$
+
+$$
+\square \frac {1}{1 - \gamma}
+$$
+
+$$
+\square \frac {1}{1 + p \gamma - \gamma}
+$$
+
+$$
+\square 1 + p
+$$
+
+$$
+\square 1 - \gamma
+$$
+
+$$
+\square 1 + p \gamma - \gamma
+$$
+
+$$
+\square \frac {1}{p}
+$$
+
+$$
+\square 1 + \gamma
+$$
+
+$$
+\square r _ {\text {relax}}
+$$
+
+$$
+\square p
+$$
+
+$$
+\square \frac {1}{\gamma}
+$$
+
+$$
+\square \frac {1}{1 - p}
+$$
+
+$$
+\square r _ {\text {acorn}}
+$$
+
+$$
+\begin{array}{c c} \square & \infty \end{array}
+$$
+
+**(e)** [3 pts] What value of $r _ { \mathrm { a c o m } }$ causes the squirrel’s expected return to be the same in the Always Relax and Always Gather policies?
+
+$$
+\square \gamma
+$$
+
+$$
+\square 1 - p
+$$
+
+$$
+\square 1 - \gamma
+$$
+
+$$
+\square \frac {1}{1 - \gamma}
+$$
+
+$$
+\square 1 + p \gamma - \gamma
+$$
+
+$$
+\square \frac {1}{1 + p \gamma - \gamma}
+$$
+
+$$
+\square 1 + p
+$$
+
+$$
+\square p
+$$
+
+$$
+\square \frac {1}{\gamma}
+$$
+
+$$
+\square \frac {1}{p}
+$$
+
+$$
+\square r _ {\text {relax}}
+$$
+
+$$
+\square 1 + \gamma
+$$
+
+$$
+\square \frac {1}{1 - p}
+$$
+
+$$
+\square r _ {\text {acorn}}
+$$
+
+$$
+\square \infty
+$$
+
+## Q3. [18 pts] Monotonic Alignment
+
+Consider the following situation:
+
+• You have a dataset of audio–text pairs. Each data point consists of an audio sequence, and a corresponding text sequence indicating what word was spoken.
+
+• Each text sequence is 𝑁 letters long: $\{ x _ { 1 } , \ldots , x _ { N } \}$
+
+• Each audio sequence is a sequence of 𝑇 audio chunks: $\{ a _ { 1 } , \ldots , a _ { T } \}$
+
+• In this question, an audio chunk is written as two capital letters, e.g. “HH,” “AH,” or “OW.”
+
+• For each audio–text pair, $T > N .$
+
+Given an audio–text pair, you wish to perform **monotonic alignment** on the pair: Find a monotonically-increasing sequence of 𝑇 indices that tells you, for each audio chunk, which letter in the word was said during that audio chunk. The first audio chunk must correspond to the first letter, and the last audio chunk must correspond to the last letter.
+
+For example, consider this audio–text pair:
+
+$$
+\text {Audio:} \{\mathrm{HH}, \mathrm{HH}, \mathrm{AH}, \mathrm{AH}, \mathrm{AH}, \mathrm{LL}, \mathrm{LL}, \mathrm{LL}, \mathrm{OW}, \mathrm{OW}, \mathrm{OW}, \mathrm{OW} \} \quad \text {Text:} \{\mathrm{h}, \mathrm{e}, 1, 1, \mathrm{o} \}
+$$
+
+One plausible alignment for this audio–text pair is {1 1 2 2 2 3 4 4 5 5 5 5}; an unlikely alignment is {1 2 3 4 5 5 5 5 5 5 5 5}.
+
+To figure out which alignment is best, we are given an alignment map , containing the probability that each audio chunk corresponds to a particular letter. An example of an alignment map for the above audio–text pair is shown below.
+
+**For part (a) only**, ignore the bolds and underlines; they are explained later.
+
+| $x_{5}$ | O | 0.0 | 0.0 | 0.2 | 0.3 | $\underline{0.2}$ | $\underline{0.2}$ | $\underline{0.2}$ | $\underline{0.2}$ | $\underline{0.4}$ | $\underline{0.7}$ | $\underline{0.8}$ | $\underline{1.0}$ |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| $x_{4}$ | L | 0.0 | 0.0 | 0.1 | $\underline{0.1}$ | 0.2 | 0.3 | $\underline{0.3}$ | $\underline{0.4}$ | 0.2 | 0.1 | 0.1 | 0.0 |
+| $x_{3}$ | L | 0.0 | 0.0 | $\underline{0.1}$ | 0.1 | 0.2 | $\underline{0.3}$ | 0.4 | 0.2 | 0.2 | 0.1 | 0.1 | 0.0 |
+| $x_{2}$ | E | 0.0 | $\underline{0.1}$ | $\underline{\mathbf{0.5}}$ | $\underline{\mathbf{0.5}}$ | $\underline{\mathbf{0.4}}$ | 0.2 | 0.1 | 0.1 | 0.2 | 0.1 | 0.0 | 0.0 |
+| $x_{1}$ | H | $\underline{\mathbf{1.0}}$ | $\underline{\mathbf{0.9}}$ | 0.1 | 0.0 | 0.0 | 0.1 | 0.1 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 |
+| i |  | HH | HH | AH | AH | AH | LL | LL | LL | OW | OW | OW | OW |
+|  | t | $a_{1}$ | $a_{2}$ | $a_{3}$ | $a_{4}$ | $a_{5}$ | $a_{6}$ | $a_{7}$ | $a_{8}$ | $a_{9}$ | $a_{10}$ | $a_{11}$ | $a_{12}$ |
+
+**(a)** [2 pts] In the alignment map above, what does entry (𝑡, 𝑖) in  represent? Hint: Consider whether each option is a valid probability distribution. # $P ( x _ { i }   |   a _ { t } )$ # $P ( x _ { i } )$ # $P ( a _ { t }   |   x _ { 1 : i } )$ # $P ( a _ { t }   |   x _ { i } )$
+
+For the next five subparts, we will model monotonic alignment as a search problem:
+
+• **State space:** The entries in the map (𝑁 × 𝑇 states in total).
+
+• **Starting state:** The bottom-left entry in the map (i.e. audio chunk 1 corresponding to the first letter)
+
+• **Goal test:** Reach the top-right entry in the map (i.e. the last audio chunk 𝑇 corresponding to the last letter).
+
+• **Actions:** From each state, there are up to two actions available:
+
+(1) Move right one entry (i.e. output the same index again).
+
+(2) Move right one entry and up one entry (i.e. output the next index).
+
+**The optimal solution is the monotonic alignment with the highest probability.** Some possible solutions to the example alignment map above:
+
+• The probability of the alignment {1 1 2 2 2 3 4 4 5 5 5 5} is computed by multiplying the **bold numbers** together.
+
+• The probability of the alignment {1 2 3 4 5 5 5 5 5 5 5 5} is computed by multiplying the <u>underlined numbers</u> together.
+
+**(b)** [1 pt] Which of the following search algorithms is guaranteed to find the optimal solution for the search problem described on the previous page? □ DFS □ BFS # Neither.
+
+**(c)** [2 pts] Which of the following functions, if applied to each map entry 𝑝, converts the entries to “costs,” such that UCS Graph Search (with no modifications) is guaranteed to find the optimal solution? Consider each function independently. Select all that apply. □ log 𝑝 □ exp 𝑝 □ − log 𝑝 □ −𝑝 # None.
+
+**(d)** [3 pts] For this subpart only, consider a modified table where entries are non-negative costs, i.e. entry (𝑖, 𝑡) corresponds to the cost of moving to that entry. Can this modified problem be solved with UCS Tree Search?
+
+\# Yes, because we are guaranteed to have no cycles and the state graph is finite.
+
+\# Yes, because UCS Tree Search tree search is always able to terminate on finite state graphs.
+
+\# No, because we could encounter cycles in the state graph.
+
+**(e)** [3 pts] What is the number of states expanded by UCS Graph Search on the monotonic alignment problem? Express your answer as a tight upper-bound. Reminder: A state is expanded when you call the successor function on that state. # 𝑂(2<sup>𝑇</sup>) # $O \left( 2 ^ { T N } \right)$ # 𝑂(𝑇 ) # 𝑂(𝑇 𝑁)
+
+**(f)** [2 pts] For this subpart only, consider the **general alignment** problem. It is the same as the monotonic alignment problem, except that the output does not need to be monotonically increasing (e.g. {1 1 1 1 4 2 2 3 4 5 5 5} is now a valid solution for the example alignment map). For any given alignment map, is the optimal solution to the monotonic alignment problem the same as the optimal solution to the general alignment problem? # Yes # No
+
+In the rest of the question, consider a totally different formulation of the monotonic alignment problem, using HMMs (independent of all earlier subparts):
+
+• The hidden state 𝐻 represents what letter was said during the audio chunk at time 𝑡. For example, in the alignment {1 1 2 3}, $h _ { 1 } = 1 , h _ { 2 } = 1 , h _ { 3 } = 2$ , and $h _ { 4 } = 3$
+
+• The evidence state $E _ { t }$ represents the audio chunk at time 𝑡.
+
+**(g)** [3 pts] In order for this HMM to properly model the monotonic alignment problem, which of the following entries in the transition function must be set to 0? Select all that apply.
+
+$$
+\square P (H _ {t + 1} = 3 \mid H _ {t} = 2)
+$$
+
+$$
+\square P (H _ {t + 1} = 5 \mid H _ {t} = 1)
+$$
+
+\# None of these.
+
+$$
+\square P (H _ {t + 1} = 4 \mid H _ {t} = 2)
+$$
+
+$$
+\square P (H _ {t + 1} = 2 \mid H _ {t} = 3)
+$$
+
+$$
+\square P (H _ {t + 1} = 3 \mid H _ {t} = 3)
+$$
+
+$$
+\square P (H _ {t + 1} = 3 \mid H _ {t} = 5)
+$$
+
+**(h)** [2 pts] Select all the true assumptions in this HMM.
+
+□ All $E _ { t }$ are independent from each other.
+
+$H _ { 1 : t - 1 }$ is conditionally independent of $H _ { t + 1 : T }$ given $H _ { t } .$
+
+□ $H _ { t }$ is conditionally independent of all previous $( H _ { 1 : t - 2 } )$ and future $( H _ { t + 1 : T } )$ hidden states given $H _ { t - 1 }$
+
+$E _ { t }$ is conditionally independent of $H _ { t }$ given $E _ { t - 1 }$
+
+\# None of the above.
+
+## Q4. [17 pts] CSPeech
+
+We are given the the first and last words of a four-word sentence. Our goal is to complete the sentence by predicting the second and third words.
+
+| the(Position 1) | ??? (Position 2) | ??? (Position 3) | loudly (Position 4) |
+| --- | --- | --- | --- |
+
+In the first half of this question, consider using a CSP to solve the problem. The variables are Position 1 through Position 4 in the sentence, and the domains are the possible words. We treat Position 1 and Position 4 as already assigned.
+
+Here are the words in the domains of each unassigned variable, and the type of each word. (You don’t need to know the definition of “article” or “adverb.”)
+
+| Word | Type of Word |
+| --- | --- |
+| dogs | noun |
+| cats | noun |
+| swim | verb |
+| bark | verb |
+| meow | verb |
+| the | article |
+| loudly | adverb |
+
+This CSP has two constraints:
+
+• The word at Position 2 must be a noun.
+
+• If a word at Position 𝑖 is a noun, then the word at Position 𝑖 + 1 must be a verb.
+
+**(a)** [1 pt] After enforcing unary constraints, what is the size of Position 2’s domain? # 1 # 2 # 3 # 4 # 5 # 6
+
+**(b)** [2 pts] Continuing from the previous subpart: After enforcing arc consistency on only the Position 3 → Position 2 arc, what is the size of Position 3’s domain? # 1 # 2 # 3 # 4 # 5 # 6
+
+**(c)** [2 pts] You run backtracking search on the CSP above. Is the outputted solution guaranteed to be the best solution? # Yes, because backtracking search is complete and optimal. # Yes, because our constraints force backtracking search to output one specific solution. # No, because backtracking search does not measure if one solution is “better” than another solution. # No, because backtracking search does not consider all solutions.
+
+**The rest of this question is independent from the earlier subparts.**
+
+In the second half of this question, consider using the Bayes Net below to solve this problem.
+
+The Bayes Net has four nodes, corresponding to Position 1 $( X _ { 1 } )$ (𝑋 ) through Position 4 $( X _ { 4 } )$
+
+![](images/page_5_image_15.jpg)
+
+CPT (Conditional Probability Table) for $X _ { 3 } ;$
+
+| Row | 𝑋<sub>3</sub> | 𝑋<sub>2</sub> | 𝑃(𝑋<sub>3</sub>\|𝑋<sub>2</sub>,𝑥<sub>1</sub>,𝑥<sub>4</sub>) |
+| --- | --- | --- | --- |
+| 1 | dogs | dogs | 0.1 |
+| 2 | swim | dogs | 0.3 |
+| 3 | bark | dogs | 0.6 |
+| 4 | dogs | swim | 0.4 |
+| 5 | swim | swim | 0.3 |
+| 6 | bark | swim | 0.3 |
+| 7 | dogs | bark | 0.4 |
+| 8 | swim | bark | 0.3 |
+| 9 | bark | bark | 0.3 |
+
+CPT (Conditional Probability Table) for $X _ { 2 } \cdot$
+
+| Row | 𝑋<sub>2</sub> | 𝑃(𝑋<sub>2</sub>\|𝑥<sub>1</sub>,𝑥<sub>4</sub>) |
+| --- | --- | --- |
+| 10 | dogs | 0.8 |
+| 11 | swim | 0.1 |
+| 12 | bark | 0.1 |
+
+The Bayes Net, reprinted:
+
+![](images/page_6_image_5.jpg)
+
+We want to find the values for $X _ { 2 }$ and $X _ { 3 }$ such that $P ( x _ { 1 } , x _ { 2 } , x _ { 3 } , x _ { 4 } )$ is maximized.
+
+**(d)** [1 pt] What variable(s) are observed as evidence in this problem? Select all that apply.
+
+□ 𝑋<sub>1</sub>
+
+□ 𝑋<sub>2</sub>
+
+□ 𝑋<sub>3</sub>
+
+□ 𝑋<sub>4</sub>
+
+\# None
+
+**(e)** [3 pts] Recall that “dogs” is a noun, “swim” is a verb, and “bark” is a verb. Pacman tells you that if a word at Position 𝑖 is a noun, then the word at Position 𝑖 + 1 must be a verb. Which row(s) in the Bayes Net should be set to 0 in order to correctly model Pacman’s statement? Select all that apply.
+
+Row 1 Row 2 Row 3
+
+Row 4 Row 5 Row 6
+
+Row 7 Row 8 Row 9
+
+Row 10 Row 11 Row 12 # None
+
+**(f)** [3 pts] Regardless of your answer to the previous subpart, suppose that we set only Row 5’s value to 0. Which row(s) in the Bayes Net should be updated such that the resulting tables are valid CPTs? Select all that apply.
+
+Row 1 Row 2 Row 3
+
+Row 4 Row 6 Row 7
+
+Row 8 Row 9 Row 10
+
+Row 11 Row 12 None
+
+**(g)** [2 pts] Suppose we use **prior sampling** to generate samples from this Bayes Net. What is the probability of generating the sample “the dogs bark loudly”? # 0.32 # 0.60 # 1.00 # 0.48 # 0.80 # Not enough information.
+
+**(h)** [2 pts] Suppose we use **likelihood weighting** to generate samples from this Bayes Net. What is the probability of generating the sample “the dogs bark loudly”? # 0.32 # 0.60 # 1.00 # 0.48 # 0.80 # Not enough information.
+
+**(i)** [1 pt] Suppose we use **likelihood weighting** to generate one sample from this Bayes Net. True or false: The resulting sample $( x _ { 1 } , x _ { 2 } , x _ { 3 } , x _ { 4 } )$ will always be the sample that maximizes $P ( x _ { 1 } , x _ { 2 } , x _ { 3 } , x _ { 4 } )$ # True # False
+
+## Q5. [13 pts] Froogle Maps
+
+You own Froogle Maps, a navigation app. You model navigation as a search problem, where you know the state space and successor function (i.e. you know the map).
+
+You have a choice of two heuristics: the Traffic heuristic, and the Distance heuristic. You choose exactly one heuristic to use.
+
+After you choose a heuristic, you receive a query from a random user, who wants to know directions from a start state 𝑆 to a goal state 𝐺. You know the probability distributions of 𝑆 and 𝐺.
+
+You run A\* search with your chosen heuristic (𝐻), the user’s start state (𝑆), and the user’s goal state (𝐺). The user is impatient: if you solve the problem within 10 seconds, you receive 𝑈 = 100 utility points. Otherwise, you receive 𝑈 = 0 utility points.
+
+You wish to choose the heuristic that maximizes your expected utility. We can model this as a decision network:
+
+![](images/page_7_image_6.jpg)
+
+**(a)** [2 pts] Which of the following is true about EU(Traffic) and EU(Distance), the expected utility of selecting each heuristic?
+
+□ If the Traffic heuristic dominates the Distance heuristic, then EU(Traffic) > EU(Distance).
+
+If the Distance heuristic always outputs 0, then EU(Distance) is always 0.
+
+\# Neither is true.
+
+**(b)** [2 pts] For this subpart only, suppose the Traffic heuristic is inadmissible. Select all valid reasons for using an inadmissible heuristic.
+
+We don’t need the optimal solution.
+
+The Traffic heuristic is easy to calculate.
+
+\# Neither, we always want to use an admissible heuristic.
+
+Fill in the blanks to describe how EU(Traffic) is calculated.
+
+For each possible value of **(i)** :
+
+Step 1: Run A\* search with the Traffic heuristic to see if a solution is found within 10 seconds.
+
+Step 2: The utility is 100 if A\* search finishes within 10 seconds, and 0 otherwise.
+
+Step 3: Take this utility and multiply it by **(ii)**
+
+Sum up every value you get in Step 3 above.
+
+**(c)** [1 pt] Blank **(i)**: # (𝑆, 𝐺) # 𝑆 # 𝐺 # 𝐻
+
+**(d)** [2 pts] Blank **(ii)**: # 𝑃 (𝑆, 𝐺) # 𝑃 (𝐺) # 1 # 𝑃 (𝑆) # 𝑈(𝑆, 𝐺, 𝐻 = Traffic) # 0
+
+You want to consider whether Froogle Maps should partner with Big Brother, who will tell you the user’s start state 𝑆. For the next two subparts, refer to these tables, and the decision network from the previous page (reprinted below):
+
+| 𝑆 | 𝑃(𝑆) |
+| --- | --- |
+| Library | 0.2 |
+| School | 0.8 |
+
+| 𝐺 | 𝑃(𝐺) |
+| --- | --- |
+| Restaurant | 0.6 |
+| Gym | 0.4 |
+
+| 𝑆 | 𝐺 | 𝐻 | 𝑈(𝑆,𝐺,𝐻) |
+| --- | --- | --- | --- |
+| Library | Restaurant | Traffic | 100 |
+| Library | Gym | Traffic | 100 |
+| School | Restaurant | Traffic | 0 |
+| School | Gym | Traffic | 0 |
+| Library | Restaurant | Distance | 100 |
+| Library | Gym | Distance | 0 |
+| School | Restaurant | Distance | 100 |
+| School | Gym | Distance | 0 |
+
+![](images/page_8_image_4.jpg)
+
+You would like to calculate the fair cost of Big Brother revealing 𝑆.
+
+**(e)** [1 pt] If you know that the start state is Library, which is the better heuristic to use? # Distance # Traffic
+
+**(f)** [2 pts] Calculate MEU(𝑆 = School). # 0 # 40 # 80 # 20 # 60 # 100
+
+**(g)** [1 pt] Froogle Maps could also partner with Little Brother, who can tell you the user’s goal state 𝐺. True or False: VPI(𝑆) + VPI(𝐺) = VPI(𝑆, 𝐺) # True # False
+
+**(h)** [2 pts] Big Brother offers to reveal the value of 𝑆, but only if Froogle Maps pays half of its **total** utility. The inequality that represents whether you should accept this offer is: $\frac { 1 } { 2 } \; ( { \bf i } ) \; > ( { \bf \ddot { n } } )$ What expression goes in blank **(i)**? VPI(𝑆) # EU(Traffic | 𝑆 = School) MEU(∅) # EU(Traffic | 𝑆 = Library) MEU(𝑆)
+
+What expression goes in blank **(ii)**? VPI(𝑆) EU(Traffic | 𝑆 = School) MEU(∅) EU(Traffic | 𝑆 = Library) MEU(𝑆)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+□ $\mathbf{w} = [4,1,1]$   
+□ $\mathbf{w} = [2, - 1,1]$   
+□ $\mathbf{w} = [-2,1, - 1]$   
+$\bigcirc$ None of the above.
+</div>
+
+## Q6. [18 pts] Machine Learning: Easter Island
+
+The elves of Easter Island have left Petru the Paradise Dweller and are headed to the North Pole for their internship with Santa Claus—just in time for the holiday season! Help the elves solve challenges using machine learning.
+
+The elves want to build a binary perceptron model to predict whether a gift will be enjoyed (−1 for Not Enjoyed, and +1 for Enjoyed). Each sample has two features: $x _ { 1 }$ , the Cost of the gift, and $x _ { 2 } ,$ the Popularity of the gift.
+
+| Sample # | Cost (𝑥<sub>1</sub>) | Popularity (𝑥<sub>2</sub>) | Enjoyed (𝑦) |
+| --- | --- | --- | --- |
+| #1 | 1 | 3 | -1 |
+| #2 | 1 | -1.5 | -1 |
+| #3 | 2 | 2 | +1 |
+| #4 | 3 | 1 | -1 |
+| #5 | 4 | 1 | +1 |
+
+Note: For the next four subparts, **the first element in the weight vector is the bias term**.
+
+**(a)** [3 pts] Using the Cost and Popularity features, which of the following weights 𝐰 would allow you to linearly separate the samples above? Select all that apply.
+
+**(b)** [3 pts] Which of the following additional features, if introduced, would result in the samples above being linearly separable? Consider each option independently. Select all that apply.
+
+Note: You may assume that $x _ { 1 } ,$ the Cost feature, always takes on integer values.
+
+$$
+\square x _ {3} = | x _ {1} | + | x _ {2} |
+$$
+
+$$
+\square x _ {3} = x _ {1} \cdot x _ {2}
+$$
+
+$$
+\square x _ {3} = (x _ {1} \bmod 2) \cdot | x _ {2} |
+$$
+
+\# None of the above.
+
+**(c)** [3 pts] In this subpart only, you introduce an additional feature, $x _ { 3 } = x _ { 1 } - x _ { 2 }$ . The initial weights are $\mathbf { w } = [ 1 , 2 , 2 , 0 ]$ Perform a single round of weight updates using Sample #1. What are the new weights?
+
+𝐰 = [0, 1, −1, 2]
+
+\# 𝐰 = [1, 2, 2, 0]
+
+$$
+\bigcirc \mathbf {w} = [ 2, 3, 5, - 2 ]
+$$
+
+**(d)** [1 pt] Suppose the elves introduce a new label, Indifferent. The elves re-label the dataset so that there are now 3 possible classes: Enjoyed, Not Enjoyed, and Indifferent. If we use a multi-class perceptron for this problem, what is the size of the weight matrix?
+
+Note: We are using the Cost and Popularity features, not any additional $x _ { 3 }$ feature.
+
+\# $\mathbf { w } \in \mathbb { R } ^ { 2 \times 2 }$
+
+$\mathbf { w } \in \mathbb { R } ^ { 3 \times 3 }$
+
+$\mathbf { w } \in \mathbb { R } ^ { 4 \times 4 }$
+
+\# None of the above.
+
+**The following subparts are independent from the previous subparts.**
+
+A few of the elves are late to the start of their internship and need to be rescued from Svalbard, Norway. For Santa to pick them up, they need to get to the highest point of NewtonToppen, a mountain outside the city.
+
+Consider the function $f ( x ) = - x ^ { 2 } + 1 0 0 ,$ , where 𝑥 is the elves’ position, and $f ( x )$ is the elevation at that position.
+
+**(e)** [3 pts] The elves start at position $x _ { 0 }   =   1 0$ . They want to use the gradient ascent algorithm to reach the peak of the mountain (i.e. the position with maximum elevation). Their position update rule is: $x _ { t + 1 } = x _ { t } + \alpha ( - 2 x _ { t } )$ , where 𝛼 is the step size. Select all true statements.
+
+□ There exists a value of 𝛼 such that the elves will reach the peak in fewer than 2 steps.
+
+□ If $\alpha < 0 . 5 .$ , the elves will be at a negative position at some step 𝑡 (i.e. $x _ { t } < 0$ for some 𝑡).
+
+□ If $\alpha > 1$ , gradient ascent will converge in the fewest steps possible.
+
+\# None of the above.
+
+As it turns out, Santa Claus doesn’t trust the elves to reach the peak of NewtonToppen, so he plans to meet them at a point along the surface of the mountain. In order to land safely, Santa’s autonomous sleigh needs to use a neural network to approximate the function above.
+
+**(f)** [1 pt] True or False: To within any desired measure of accuracy $\epsilon > 0 ,$ it is possible for a neural network (as defined in lecture) to model the function $f ( x ) = - x ^ { 2 } + 1 0 0$
+
+\# True
+
+\# False
+
+**(g)** [4 pts] Suppose that the neural network onboard Santa’s sleigh has the given architecture:
+
+![](images/page_10_image_12.jpg)
+
+The neurons perform a linear transformation. For example, Neuron A takes in 𝑥 and outputs $1 x + 1 0 .$
+
+The neural network is represented by the following equations, where all variables are scalars, and some of the weights have already been filled in for you:
+
+$$
+\begin{array}{c} h _ {1} = \mathrm{ReLU} (1 x + 1 0) \\ h _ {2} = \mathrm{ReLU} (w _ {1} x + b _ {1}) \\ y = 1 0 h _ {1} + w _ {2} h _ {2} + b _ {2} \end{array}
+$$
+
+Select values for the unknown weights $w _ { 1 } , b _ { 1 } , w _ { 2 }$ , and $b _ { 2 } ,$ , such that the resulting neural network gives the best approximation of the function $f ( x ) = - x ^ { 2 } + 1 0 0$ , for $- 1 0 \leq x \leq 1 0$
+
+Select values for $w _ { 1 }$ and $b _ { 1 } ;$
+
+Select values for $w _ { 2 }$ and $b _ { 2 } ;$
+
+$$
+\bigcirc w _ {1} = - 1, b _ {2} = - 1 0
+$$
+
+$$
+\bigcirc w _ {2} = 1 0, b _ {2} = 1 0 0
+$$
+
+$$
+\bigcirc w _ {1} = 2, b _ {2} = 1 0
+$$
+
+$$
+\bigcirc w _ {2} = - 5, b _ {2} = 0
+$$
+
+$$
+\bigcirc w _ {1} = 4, b _ {2} = 0
+$$
+
+$$
+\bigcirc w _ {2} = 0, b _ {2} = 2 5
+$$
+
+## Q7. [11 pts] Square Bayes
+
+For the first two subparts, consider the 9-node Bayes Net on the right:
+
+**(a)** [2 pts] How many paths are there between 𝐴 and 𝐻 when considering if 𝐴 and 𝐻 are 𝑑-separated?
+
+\# 1
+
+\# 2
+
+\# 3
+
+4
+
+**(b)** [2 pts] Given the structure of the Bayes Net, which of the following are true? Select all that apply. 𝐴 ⟂⟂ 𝐹 | {𝐸} 𝐴 ⟂⟂ 𝐼 | {𝐷} $\bigsqcup B \perp    \perp E \mid \{ C , D , F , G , H \}$ $\bigsqcup \quad D \perp F \quad | \quad \{ A , B , G , H \}$ # None of the above.
+
+![](images/page_11_image_8.jpg)
+
+For the rest of the question, consider the 4-node Bayes Net to the right. Pacman wants to compute $P ( D | B = b )$ using variable elimination.
+
+**(c)** [2 pts] If Pacman eliminates 𝐴 first, which factors should he join on?
+
+𝑃 (𝐴) 𝑃 (𝑏) 𝑃 (𝐶)
+
+□ 𝑃 (𝐷|𝐴, 𝐶)
+
+None
+
+![](images/page_11_image_14.jpg)
+
+**(d)** [2 pts] What is the resulting factor after joining on 𝐴? # 𝑓(𝐴, 𝑏, 𝐶, 𝐷) # 𝑓(𝐴, 𝐶, 𝐷) # 𝑓(𝐴, 𝑏, 𝐷) # 𝑓(𝐴, 𝐷) # 𝑓(𝑏, 𝐶, 𝐷) # 𝑓(𝐴, 𝑏, 𝐶) # 𝑓(𝐴, 𝐶) # 𝑃 (𝐴)
+
+**(e)** [1 pt] Blinky claims that it is more efficient (reduces the size of the largest factor generated) to join and eliminate 𝐶 before 𝐴. Is Blinky correct? # Yes # No
+
+After running variable elimination (not necessarily in the order above), the resulting remaining factors are 𝑓(𝑏) and 𝑓(𝐷). Given these remaining factors, how should Pacman compute his desired query, $P ( D   |   B = b ) ?$
+
+$$
+P (D \mid B = b) = \frac {(\mathbf {i})}{(\mathbf {i i})}
+$$
+
+**(f)** [1 pt] What goes in blank **(i)**? # 𝑓(𝐷) # 𝑓(𝑏) # $\textstyle \sum _ { d } f ( d )$
+
+**(g)** [1 pt] What goes in blank **(ii)**? # 𝑓(𝐷) # 𝑓(𝑏) # $\textstyle \sum _ { d } f ( d )$

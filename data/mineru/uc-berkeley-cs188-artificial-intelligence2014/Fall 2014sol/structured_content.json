@@ -1,0 +1,2494 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.084,
+            0.146,
+            0.914,
+            0.209
+          ],
+          "content": "| CS 188 | Introduction to |  |\n| --- | --- | --- |\n| Fall 2014 | Artificial Intelligence | Final |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.085,
+            0.229,
+            0.215,
+            0.246
+          ],
+          "level": 2,
+          "content": "INSTRUCTIONS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.26,
+            0.325,
+            0.277
+          ],
+          "content": "• You have 2 hours 50 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.285,
+            0.574,
+            0.301
+          ],
+          "content": "• The exam is closed book, closed notes except a one-page crib sheet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.309,
+            0.915,
+            0.34
+          ],
+          "content": "• Please use non-programmable calculators only. Laptops, phones, etc., may not be used. If you have one in your bag please switch it off."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.348,
+            0.917,
+            0.38
+          ],
+          "content": "• Mark your answers ON THE EXAM ITSELF. If you are not sure of your answer you may wish to provide a brief explanation. All short answer sections can be successfully answered in a few sentences at most."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.386,
+            0.836,
+            0.404
+          ],
+          "content": "• Questions are not sequenced in order of difficulty. Make sure to look ahead if stuck on a particular question."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.224,
+            0.441,
+            0.775,
+            0.808
+          ],
+          "content": "| Last Name |  |\n| --- | --- |\n| First Name |  |\n| SID |  |\n| Email |  |\n| First and last name of person on left |  |\n| First and last name of person on right |  |\n| All the work on this exam is my own.(please sign) |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_7.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.086,
+            0.86,
+            0.919,
+            0.933
+          ],
+          "content": "<table><tbody><tr><td>Q. 1</td><td>Q. 2</td><td>Q. 3</td><td>Q. 4</td><td>Q. 5</td><td>Q. 6</td><td>Q. 7</td><td colspan=\"3\">Q. 8 Q. 9 Q. 10</td><td>Total</td></tr><tr><td>/10</td><td>/10</td><td>/ 11</td><td>/ 6</td><td>/12</td><td>/12</td><td>/11</td><td>/11</td><td>/7</td><td>/10</td><td>/100</td></tr></tbody></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.085,
+            0.081,
+            0.099,
+            0.095
+          ],
+          "content": "2"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.105,
+            0.124,
+            0.372,
+            0.141
+          ],
+          "level": 2,
+          "content": "1. (10 points) Agents, Search, CSPs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.146,
+            0.559,
+            0.164
+          ],
+          "content": "Please CIRCLE either True OR False for the following questions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.178,
+            0.915,
+            0.212
+          ],
+          "content": "**(a) (1 pt)** True/ <u>False</u> : A hill-climbing algorithm that never visits states with lower value (or higher cost) is guaranteed to find the optimal solution if given enough time to find a solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.219,
+            0.696,
+            0.237
+          ],
+          "content": "Such an algorithm will reach a local optimum and stop (or wander on a plateau)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.283,
+            0.915,
+            0.331
+          ],
+          "content": "**(b) (1 pt)** True/ <u>False</u> : Suppose the temperature schedule for simulated annealing is set to be constant up to time N and zero thereafter. For any finite problem, we can set N large enough so that the algorithm is returns an optimal solution with probability 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.338,
+            0.921,
+            0.371
+          ],
+          "content": "If the temperature is fixed the algorithm always has a certain amount of randomness, so when it stops there is no guarantee it will be in an optimal state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.41,
+            0.915,
+            0.443
+          ],
+          "content": "**(c) (1 pt)** True/ <u>False</u> : For any local-search problem, hill-climbing will return a global optimum if the algorithm is run starting at any state that is a neighbor of a neighbor of the state corresponding to the global optimum."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.45,
+            0.919,
+            0.483
+          ],
+          "content": "The intervening neighbor could be a local minimum and the current state is on another slope leading to a local maximum."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.52,
+            0.915,
+            0.554
+          ],
+          "content": "**(d) (1 pt)** <u>True</u> / <u>False</u> : Given a fully observable task environment where there is more than one action at every particular state, there exists a simple reflex agent that can take a different action upon revisiting the same state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.561,
+            0.919,
+            0.593
+          ],
+          "content": "The question was not worded precisely enough, since it’s not clear if randomized actions are allowed. Technically they are, so the answer is True, but we allowed both."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.632,
+            0.914,
+            0.665
+          ],
+          "content": "**(e) (1 pt)** True/ <u>False</u> : Running forward checking after the assignment of a variable in backtracking search will ensure that every variable is arc consistent with every other variable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.673,
+            0.758,
+            0.69
+          ],
+          "content": "Forward checking only checks variables that are connected to the variable being assigned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.736,
+            0.914,
+            0.769
+          ],
+          "content": "**(f) (1 pt)** <u>True</u> / <u>False</u> : Suppose we use the min-conflicts algorithm to try to solve a CSP. It is possible the algorithm will not terminate even if the CSP has a solution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.774,
+            0.919,
+            0.808
+          ],
+          "content": "Since min-conflicts takes an integer number of steps as input, it always terminates; but it is true that it can get stuck in local minima where it loops through the same set of states, so we allowed both answers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.845,
+            0.915,
+            0.879
+          ],
+          "content": "**(g) (1 pt)** True/ <u>False</u> : In a CSP constraint graph, a link (edge) between any two variables implies that those two variables may not take on the same values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.886,
+            0.548,
+            0.904
+          ],
+          "content": "A link represents any constraint, including, e.g., equality!"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.082,
+            0.914,
+            0.094
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.124,
+            0.915,
+            0.156
+          ],
+          "content": "**(h) (1 pt)** <u>True</u> /False: A model-based reflex agent maintains some internal state that it updates as the agent collects more information through percepts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.163,
+            0.92,
+            0.195
+          ],
+          "content": "The internal state represents in some form what the agent knows about the external state of the world given the percepts to date, which is a good idea for partially observable environments."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.23,
+            0.821,
+            0.249
+          ],
+          "content": "**(i) (1 pt)** True/ <u>False</u> : For any particular CSP constraint graph, there exists exactly one minimal cutset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.256,
+            0.776,
+            0.273
+          ],
+          "content": "There may be several minimal cutsets of equal size, particularly if the graph has symmetries."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.316,
+            0.914,
+            0.349
+          ],
+          "content": "**(j) (1 pt)** <u>True</u> /False: Suppose agent A1 is rational and agent A2 is irrational. There exists a task environment where A2’s actual score will be greater than A1’s actual score."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.355,
+            0.833,
+            0.372
+          ],
+          "content": "Rational decisions are defined by expected outcomes, not actual outcomes. A1 might just be unlucky."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.085,
+            0.082,
+            0.099,
+            0.094
+          ],
+          "content": "4"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.125,
+            0.43,
+            0.14
+          ],
+          "level": 2,
+          "content": "2. (10 points) Game tree search on intervals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.144,
+            0.914,
+            0.176
+          ],
+          "content": "Consider a modification of a game tree where, rather than numbers, leaf nodes are now intervals, given by [lower, upper], and where the true value is somewhere inside the interval. Here is an example (with a spare copy for later use):"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.128,
+            0.179,
+            0.91,
+            0.363
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.369,
+            0.915,
+            0.4
+          ],
+          "content": "For parts (a) and (b), suppose the min and max players are both trying to optimize avg(lower, upper); that is, max is trying to maximize the average value of the interval chosen and min is trying to minimize it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.408,
+            0.914,
+            0.425
+          ],
+          "content": "**(a) (2 pt)** In each node of the tree above, fill in the interval defining what the agent knows about the value of that node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.427,
+            0.906,
+            0.444
+          ],
+          "content": "**(b) (2 pt)** In the tree above, cross out the leaves that would be pruned by alpha-beta pruning based on average values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.451,
+            0.927,
+            0.483
+          ],
+          "content": "For parts (c) and (d), assume that upper(interval) is the upper bound of current interval we are looking at, lower(interval) is the lower bound, α is the best value for max seen so far and β the best value for min."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.49,
+            0.916,
+            0.537
+          ],
+          "content": "**(c) (3 pt)** Suppose that min and max are both pessimistic: both try to optimize their worst possible outcomes. Is pruning possible in this scenario? If so, write the pruning condition which, if true, would lead to maximal pruning while evaluating a max node. If not, explain why not."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.538,
+            0.921,
+            0.615
+          ],
+          "content": "At a max node, choose the child with the highest lower bound; at a min node, choose the node with the lowest upper bound. The right-hand tree above shows that pruning is possible. Once the third grandchild of the root is known to be [3,7], its parent, a min node, will choose a child with an upper bound of 7 or less. The lower bound of this node has to be 7 or less, by definition, so at the root max will always choose the left branch; thus the fourth grandchild and its two leaves can be pruned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.726,
+            0.915,
+            0.772
+          ],
+          "content": "**(d) (3 pt)** Suppose that min and max are both optimistic: both try to optimize their best possible outcomes. Is pruning possible in this scenario? If so, write the pruning condition which, if true, would lead to maximal pruning while evaluating a max node. If not, explain why not."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.773,
+            0.919,
+            0.805
+          ],
+          "content": "In this case pruning is not possible. Because the players are optimistic, both will think that a leaf node with interval [−∞, ∞] is ideal, so no leaf can be pruned in case it might be such a node."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.081,
+            0.914,
+            0.095
+          ],
+          "content": "5"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.124,
+            0.359,
+            0.141
+          ],
+          "level": 2,
+          "content": "3. (11 points) Propositional Logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.163,
+            0.633,
+            0.181
+          ],
+          "content": "**(a) (3 pt)** $\\boxed { { \\mathit { T r u e } } } { \\mathit { F a l s e } } { \\colon } A \\wedge B \\implies C \\mathbin { \\mathsf { e n t a i l s } } ( A \\implies C ) \\vee ( B \\implies C )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.183,
+            0.921,
+            0.23
+          ],
+          "content": "A truth table shows that they are actually equivalent. Alternatively, one can argue that the LHS is false in a single case: TTF; and for the RHS to be false, both implications have to be false, again just the TTF case. Finally, one could convert to clause form, getting $\\neg A \\lor \\neg B \\lor C$ in both cases."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.36,
+            0.695,
+            0.379
+          ],
+          "content": "**(b) (2 pt)** True False: Every nonempty propositional clause, by itself, is satisfiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.38,
+            0.921,
+            0.412
+          ],
+          "content": "Obviously every literal is satisfiable; and disjoining means unioning the satisfying models. Many people thought that clauses were conjunctions of literals; a conjunction such as A ∧ ¬A is two clauses!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.486,
+            0.914,
+            0.52
+          ],
+          "content": "**(c) (2 pt)** <u>True</u> /False: Suppose a propositional clause contains three literals, each mentioning a different variable; <u>then the clause is satisfied in exactly 7 of the 8 possible models for the three variables.</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.52,
+            0.772,
+            0.537
+          ],
+          "content": "The clause can be false only if all three literals are false, which fixes a single model of the 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.615,
+            0.779,
+            0.632
+          ],
+          "content": "**(d) (4 pt)** Now explain why the following set of clauses is unsatisfiable without using truth tables:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.172,
+            0.63,
+            0.252,
+            0.645
+          ],
+          "content": "A \\vee B \\vee C",
+          "image_source": "images/page_4_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.63,
+            0.412,
+            0.645
+          ],
+          "content": "\\neg A \\lor B \\lor C",
+          "image_source": "images/page_4_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.172,
+            0.645,
+            0.262,
+            0.66
+          ],
+          "content": "A \\lor B \\lor \\neg C",
+          "image_source": "images/page_4_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.645,
+            0.422,
+            0.66
+          ],
+          "content": "\\neg A \\lor B \\lor \\neg C",
+          "image_source": "images/page_4_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.172,
+            0.661,
+            0.263,
+            0.675
+          ],
+          "content": "A \\lor \\neg B \\lor C",
+          "image_source": "images/page_4_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.172,
+            0.676,
+            0.273,
+            0.691
+          ],
+          "content": "A \\lor \\neg B \\lor \\neg C",
+          "image_source": "images/page_4_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.676,
+            0.432,
+            0.691
+          ],
+          "content": "\\neg A \\lor \\neg B \\lor \\neg C",
+          "image_source": "images/page_4_equation_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.7,
+            0.921,
+            0.793
+          ],
+          "content": "Since each clause is false in exactly one model, and all clauses are different and therefore false in different models, all 8 models are ruled out hence the conjunction is unsatisfiable. There are other elegant proofs: for example, suppose there is a satisfying model $[ A   =   a , B   =   b , C   =   c ] ;$ that falsifies the clause $\\neg a \\lor \\neg b \\lor \\neg c ,$ which must be a member of the set, hence no such model can exist. Some more elaborate proofs based on splitting on variable values amount to truth tables in disguise. One approach definitely won’t work: claiming that, say, $A \\vee B \\vee C$ and ¬A $\\lor \\lnot B \\lor \\lnot C$ are contradictory; in fact, there are 6 models where both are true!"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.164,
+            0.315,
+            0.342,
+            0.389
+          ],
+          "sub_type": "algorithm",
+          "content": "$2 * 2 * 3 * 4 * 2 - 1 = 95$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.085,
+            0.082,
+            0.099,
+            0.094
+          ],
+          "content": "6"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.125,
+            0.29,
+            0.14
+          ],
+          "level": 2,
+          "content": "4. (6 points) Bayes Nets"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.145,
+            0.915,
+            0.176
+          ],
+          "content": "You’re interested in predicting whether boba stores in Berkeley will be successful or go out of business. You decide to solve this problem using probablistic inference over a model with the following variables:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.183,
+            0.709,
+            0.199
+          ],
+          "content": "• S, whether or not the store will be successful. May take two values: true or f alse."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.202,
+            0.799,
+            0.218
+          ],
+          "content": "• T, whether or not the store makes boba with real tea leaves. May take two values: true or f alse."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.221,
+            0.684,
+            0.236
+          ],
+          "content": "• N, the number of other boba stores nearby. May take three values: $0 , 1 , \\mathrm { o r } > 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.24,
+            0.784,
+            0.255
+          ],
+          "content": "• L, location of the store relative to campus. May take four values: north, south, east, or west."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.259,
+            0.608,
+            0.274
+          ],
+          "content": "• C, the cost of the boba. May take two values: cheap or expensive."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.284,
+            0.914,
+            0.315
+          ],
+          "content": "**(a) (1 pt)** Your first idea for a probability model is a joint probability table over all of the variables. How many free <u>parameters would this joint probability table have (after taking into account sum-to-1 constraints)?</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.399,
+            0.915,
+            0.43
+          ],
+          "content": "**(b) (2 pt)** You decide this is too many parameters. To fix this, you decide to model the problem with the following Bayes net instead:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.464,
+            0.438,
+            0.61,
+            0.594
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.608,
+            0.914,
+            0.639
+          ],
+          "content": "For this network, write next to each node the total number of free parameters in its conditional probability table, taking into account sum-to-1 constraints."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.642,
+            0.915,
+            0.705
+          ],
+          "content": "**(c) (3 pt)** A new boba store is opening up! You don’t know how expensive it will be, but you have heard that it’s going to use real tea, it will be North of campus, and there will be one other boba store nearby. According to your model, what is the probability it will be successful? (Just write out the expression in terms of conditional probabilities from the model; no need to simplify, though you may include a normalizing constant.)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.163,
+            0.709,
+            0.92,
+            0.928
+          ],
+          "sub_type": "algorithm",
+          "content": "The question asks for $P(S \\mid T = true, L = north, N = 1)$. The most straightforward way to calculate this is to compute the full joint distribution with the given variables and then sum out the unknown variable, $C$. Recall that to calculate the full joint distribution in a Bayes net, we only need the conditional probabilities in our conditional probability table. The full calculation is: $P(S \\mid T = true, L = north, N = 1)$\n$= \\alpha P(S, T = true, L = north, N = 1)$\n$= \\alpha \\sum_{p} P(C = c, S, T = true, L = north, N = 1)$\n$= \\alpha \\sum_{p} P(T = true)P(L = north)P(C = c \\mid T = true, L = north)P(N = 1 \\mid L = north)P(S \\mid N = 1, C = c)$",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.081,
+            0.914,
+            0.094
+          ],
+          "content": "7"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.125,
+            0.298,
+            0.14
+          ],
+          "level": 2,
+          "content": "5. (12 points) Bayes Nets"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.145,
+            0.915,
+            0.191
+          ],
+          "content": "A k-zigzag network has k Boolean root variables and $k + 1$ Boolean leaf variables, where root i is connected to leaves i and i + 1. Here is an example for $k   =   3 ,$ where each $D _ { i }$ represents a Boolean disease variable and each $S _ { j }$ is a Boolean symptom variable:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.321,
+            0.192,
+            0.678,
+            0.288
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.392,
+                0.302,
+                0.605,
+                0.318
+              ],
+              "content": "Figure 1: A 3-zigzag Bayes net."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.333,
+            0.736,
+            0.349
+          ],
+          "content": "**(a) (1 pt)** Does having symptom $S _ { 4 }$ affect the probability of disease $D _ { 1 } ?$ Why or why not?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.355,
+            0.919,
+            0.387
+          ],
+          "content": "No. $D _ { 1 }$ is independent of its nondescendants (including $S _ { 4 } )$ given its parents (empty set), i.e., $D _ { 1 }$ is absolutely independent of $S _ { 4 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.456,
+            0.915,
+            0.488
+          ],
+          "content": "**(b) (3 pt)** Using only conditional probabilities from the model, express the probability of having symptom $S _ { 1 }$ but not symptom $S _ { 2 } ,$ given disease $D _ { 1 }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.166,
+            0.495,
+            0.755,
+            0.514
+          ],
+          "content": "P (s _ {1} \\land \\neg s _ {2} \\mid D _ {1}) = P (s _ {1} \\mid D _ {1}) P (\\neg s _ {2} \\mid D _ {1}) = P (s _ {1} \\mid D _ {1}) \\sum_ {d _ {2}} P (d _ {2}) P (\\neg s _ {2} \\mid D _ {1}, d _ {2})",
+          "image_source": "images/page_6_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.592,
+            0.685,
+            0.61
+          ],
+          "content": "**(c) (1 pt)** <u>True</u> /False: Exact inference in a k-zigzag net can be done in time O(k)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.167,
+            0.619,
+            0.342,
+            0.635
+          ],
+          "content": "The network is a polytree."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.712,
+            0.915,
+            0.76
+          ],
+          "content": "**(d) (1 pt)** Suppose the values of all the symptom variables have been observed, and you would like to do Gibbs sampling on the disease variables (i.e., sample each variable given its Markov blanket). What is the largest number of non-evidence variables that have to be considered when sampling any particular disease variable? Explain your answer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.765,
+            0.919,
+            0.797
+          ],
+          "content": "The Markov blanket of a disease includes its parents, children, children’s other parents; for a disease variable, the non-evidence variables in the Markov blanket are just the two neighboring disease variables."
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.086,
+            0.081,
+            0.098,
+            0.094
+          ],
+          "content": "8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.124,
+            0.915,
+            0.17
+          ],
+          "content": "**(e) (2 pt)** Suppose $k   =   5 0$ . You would like to run Gibbs sampling for 1 million samples. Is it a good idea to precompute all the sampling distributions, so that when generating each individual sample no arithmetic operations are needed? Explain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.177,
+            0.802,
+            0.195
+          ],
+          "content": "Yes. Precomputation requires space for 200 numbers and saves tens of millions of computations."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.271,
+            0.915,
+            0.319
+          ],
+          "content": "**(f) (2 pt)** A k-zigzag++ network is a k-zigzag network with two extra variables: one is a root connected to all the leaves and one is a leaf to which all the roots are connected. You would like to run Gibbs sampling for 1 million samples in a 50-zigzag++ network. Is it a good idea to precompute all the sampling distributions? Explain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.325,
+            0.919,
+            0.358
+          ],
+          "content": "No. The Markov blanket of every disease now includes all other diseases, and a table of $2 ^ { 5 0 }$ numbers is impossible to compute or store."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.426,
+            0.915,
+            0.49
+          ],
+          "content": "**(g) (2 pt)** Let us assume that in every case the values of all symptom variables are observed, which means that we can consider training a neural net to predict diseases from symptoms rather than using a Bayes net. Mary from MIT claims that an equivalent neural net can be obtained by reversing the arrows in the figure. She argues that because $D _ { 1 }$ doesn’t affect $S _ { 3 }$ and S<sub>4</sub>, they are not needed for predicting $D _ { 1 }$ . Is Mary right? Explain."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.165,
+            0.494,
+            0.921,
+            0.543
+          ],
+          "sub_type": "algorithm",
+          "content": "No. While  $D_{1}$  is absolutely independent of  $S_{3}$ , it is not independence given  $S_{1}$  and  $S_{2}$ . The reason is that the value of  $S_{3}$  affects the probability of  $D_{2}$ ;  $D_{2}$  in turn can “explain away”  $S_{2}$ , thereby changing the probability of  $D_{1}$ . The same argument applies, by extension, to all symptoms.",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.901,
+            0.081,
+            0.914,
+            0.094
+          ],
+          "content": "9"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.124,
+            0.428,
+            0.14
+          ],
+          "level": 2,
+          "content": "6. (12 points) Hidden Semi-Markov Models"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.197,
+            0.155,
+            0.771,
+            0.305
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.355,
+            0.915,
+            0.401
+          ],
+          "content": "A Hidden Semi-Markov Model is an extention of HMMs where the system is allowed reside in a given state for some duration before a transition occurs to the next state (which may be the same state as before). In a regular HMM the durations are all 1. The HSMM formulation is as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.41,
+            0.896,
+            0.425
+          ],
+          "content": "• Chain of state variables $X _ { 1 } , \\ldots , X _ { T } ; X _ { t }$ is the state of the system at time $t ;$ actual states are labeled by integers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.429,
+            0.913,
+            0.445
+          ],
+          "content": "• Chain of evidence variables $E _ { 1 } , \\ldots , E _ { T } ; E _ { t }$ is the observation at time $t ;$ actual observations are labeled by integers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.144,
+            0.448,
+            0.914,
+            0.479
+          ],
+          "content": "• State sequence durations $D _ { 1 } , \\ldots , D _ { M }$ , which take on positive integer values; $D _ { m }$ is the number of time steps the system resides in a state $i _ { m }$ between transition $m - 1$ and transition m."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.487,
+            0.913,
+            0.535
+          ],
+          "content": "It is helpful also to define the variables $S _ { m }$ and $F _ { m } ,$ the start and finish times for period $m ,$ where $S _ { 1 }   =   1 , \\; F _ { 1 }   =   D _ { 1 }$ $S _ { 2 }   =   D _ { 1 }   +   1 , \\; F _ { 2 }   =   D _ { 1 }   +   D _ { 2 }$ , etc. Then we can write $X _ { S _ { m } : F _ { m } } = i _ { m }$ as shorthand for $X_{S_m} = i_m, X_{S_m+1} =$ $i _ { m } , \\ldots , X _ { F _ { m } } = i _ { m }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.537,
+            0.914,
+            0.568
+          ],
+          "content": "Suppose that a transition occurs at time t which is the end of residence period m with duration $D _ { m }$ . The new state depends on the old state and its duration, while the new duration depends only on the new state:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.301,
+            0.577,
+            0.912,
+            0.595
+          ],
+          "content": "P (X _ {t + 1}, D _ {m + 1} \\mid X _ {t}, D _ {m}) = P (X _ {t + 1} | X _ {t}, d _ {m}) P (D _ {m + 1} | X _ {t + 1}).\\tag{1}",
+          "image_source": "images/page_8_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.603,
+            0.914,
+            0.635
+          ],
+          "content": "During a residence period, of course, the state and duration remain constant. In all cases the evidence at t depends only on the state at t. Thus, the entire probability model can be built from the following probability tables:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.643,
+            0.381,
+            0.658
+          ],
+          "content": "(A) Initial distribution of X: $P ( X _ { 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.662,
+            0.328,
+            0.677
+          ],
+          "content": "(B) Sensor model: $P ( E | X )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.681,
+            0.522,
+            0.698
+          ],
+          "content": "(C) Transition model: $P ( X _ { S _ { m + 1 } } = i | X _ { F _ { m } } = j , D _ { m } = d ) ;$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.7,
+            0.34,
+            0.716
+          ],
+          "content": "(D) Duration model: $P ( D | X )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.726,
+            0.914,
+            0.773
+          ],
+          "content": "**(a) (2 pt)** Which of the following expressions are correct for $P _ { 1 } \\mathop { = } P ( D _ { 1 } , X _ { 1 } , \\ldots , X _ { D _ { 1 } } , E _ { 1 } , \\ldots , E _ { D _ { 1 } } )$ , the probability that the first period has duration $D _ { 1 }$ and the state sequence is $X _ { 1 } , \\ldots , X _ { D _ { 1 } }$ and the observation sequence is $E _ { 1 } , \\ldots , E _ { D _ { 1 } }$ , assuming $X _ { 1 }   =   X _ { 2 }   =   \\ldots   =   X _ { D _ { 1 } } ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.185,
+            0.775,
+            0.436,
+            0.792
+          ],
+          "content": "P (X _ {1}) P (D _ {1} \\mid X _ {1}) \\prod_ {t = 1} ^ {D _ {1}} P (E _ {t} \\mid X _ {t})",
+          "image_source": "images/page_8_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.182,
+            0.792,
+            0.432,
+            0.81
+          ],
+          "content": "P (X _ {1}) \\prod_ {t = 1} ^ {D _ {1}} P (E _ {t} \\mid X _ {t}) P (D _ {t} \\mid X _ {t})",
+          "image_source": "images/page_8_equation_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.81,
+            0.356,
+            0.826
+          ],
+          "content": "C $P ( X _ { 1 } ) \\textstyle \\prod _ { t \\: = \\: 1 } ^ { D _ { 1 } } P ( E _ { t } \\mid X _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.827,
+            0.466,
+            0.845
+          ],
+          "content": "N $\\textstyle P ( X _ { 1 } , E _ { 1 } ) P ( D _ { 1 } \\mid X _ { 1 } ) \\prod _ { t \\: = \\: 2 } ^ { D _ { 1 } } P ( E _ { t } \\mid X _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.847,
+            0.914,
+            0.892
+          ],
+          "content": "**(b) (2 pt)** The following expression is supposed to be the probability that the first M periods have durations $D _ { 1 } , \\ldots , D _ { M }$ and the state sequence is $X _ { 1 } , \\ldots , X _ { F _ { M } }$ and the observation sequence is $E _ { 1 } , \\ldots , E _ { F _ { M } }$ , but one term is missing. What is that term and where does it go?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.36,
+            0.905,
+            0.713,
+            0.949
+          ],
+          "content": "P _ {1} \\prod_ {m = 2} ^ {M} P (X _ {S _ {m}} \\mid X _ {F _ {m - 1}}, D _ {m - 1}) \\prod_ {t = S _ {m}} ^ {F _ {m}} P (E _ {t} \\mid X _ {t})",
+          "image_source": "images/page_8_equation_22.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.087,
+            0.081,
+            0.106,
+            0.094
+          ],
+          "content": "10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.125,
+            0.755,
+            0.143
+          ],
+          "content": "A term is needed for $D _ { m } , \\mathtt { i . e . , } \\: P ( D _ { m } \\mid X _ { S _ { m } } )$ . It goes in the scope of the product over m."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.234,
+            0.914,
+            0.295
+          ],
+          "content": "**(c) (3 pt)** Suppose we want to describe an HSMM as an ordinary dynamic Bayes net that yields an exactly equivalent distribution over state and observation sequences. In addition to $X _ { t }$ and $E _ { t } ,$ we will handle durations using $C _ { t }$ , the duration of the current period, and $R _ { t } ,$ the amount of time left in the current period. In the figure below, add an appropriate (and minimal) set of links to define the model."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.23,
+            0.295,
+            0.435,
+            0.475
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.481,
+            0.655,
+            0.498
+          ],
+          "content": "**(d) (2 pt)** Describe precisely the conditional distribution for $C _ { 2 }$ in your model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.503,
+            0.92,
+            0.55
+          ],
+          "content": "If $R _ { 1 }   =   1$ then $C _ { 2 }$ depends on $X _ { 2 }$ according to the model $P ( D \\mid X ) ;$ else $C _ { 2 }   =   C _ { 1 }$ Some students interpreted $C _ { t }$ as “the time spent so far in this period,” which is not quite what the question states but still results in a feasible (Markovian) model so we allowed it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.625,
+            0.572,
+            0.642
+          ],
+          "content": "**(e) (3 pt)** The forward equation for an ordinary HMM is given by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.305,
+            0.648,
+            0.768,
+            0.68
+          ],
+          "content": "P (X _ {t + 1} \\mid e _ {1: t + 1}) = \\alpha   P (e _ {t + 1} \\mid X _ {t + 1}) \\sum_ {x _ {t}} P (X _ {t + 1} \\mid x _ {t}) P (x _ {t} \\mid e _ {1: t})  .",
+          "image_source": "images/page_9_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.686,
+            0.914,
+            0.718
+          ],
+          "content": "Write the forward equation for this dynamic Bayes net; i.e., write an equation for $P ( X _ { t + 1 } , C _ { t + 1 } , R _ { t + 1 } \\mid e _ { 1 : t + 1 } )$ in terms of $P ( X _ { t } , C _ { t } , R _ { t } \\mid e _ { 1 : t } )$ and quantities given in the model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.719,
+            0.921,
+            0.765
+          ],
+          "content": "The key is to realize that the state of the process is now constituted by X, C, R instead of just X but otherwise the equation has the same structure. And any distribution for $X$ becomes a joint distribution for X, C, R, expressed as a product of the appropriate conditionals:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.193,
+            0.776,
+            0.891,
+            0.809
+          ],
+          "content": "\\alpha P (e _ {t + 1} \\mid X _ {t + 1}) \\sum_ {x _ {t}, c _ {t}, r _ {t}} P (X _ {t + 1} \\mid x _ {t}, c _ {t}, r _ {t}) P (C _ {t + 1} \\mid X _ {t + 1}, c _ {t}, r _ {t}) P (R _ {t + 1} \\mid C _ {t + 1}, r _ {t}) P (x _ {t}, c _ {t}, r _ {t} \\mid e _ {1: t})",
+          "image_source": "images/page_9_equation_10.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.081,
+            0.914,
+            0.095
+          ],
+          "content": "11"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.124,
+            0.266,
+            0.141
+          ],
+          "level": 2,
+          "content": "7. (11 points) MDPs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.153,
+            0.915,
+            0.216
+          ],
+          "content": "**(a) (3 pt)** The MDP of life has two actions $P a r t y$ and Study in the start state. After that, there is only one choice per state. If the agent parties, it receives a reward of +10 followed by an infinite sequence of rewards of –1. If the agent studies, it receives a reward of –10 followed by an infinite sequence of rewards of +1. For what value of the discount factor γ is the agent indifferent between partying and studying? (Recall that $1   +   x   +   x ^ { 2 }   +   \\cdots   =   1 / ( 1   -   x ) . )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.223,
+            0.62,
+            0.241
+          ],
+          "content": "At indifference, 10 − γ/(1 − γ) = −10 + γ/(1 − γ), so γ = 10/11."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.335,
+            0.915,
+            0.413
+          ],
+          "content": "The GSIs of 188 have started a game company. Their first game, GhostBlushers, starts with two ghosts, Blinky and Pinky. On each turn, the player clicks on a ghost. Clicking on any Blinky (action a<sub>B</sub>) produces a new Blinky with probability $( 2 b + p ) / 2 ( b + p )$ and a new Pinky otherwise, whereas clicking on any Pinky (action $a _ { P } )$ produces a new Pinky with probability $( b + 2 p ) / 2 ( b + p )$ and a new Blinky otherwise, where b and p are the numbers of Blinkies and Pinkies in the current state. There is a reward of +1 for producing an offspring of the same kind. The game ends after T steps."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.131,
+            0.422,
+            0.92,
+            0.601
+          ],
+          "sub_type": "algorithm",
+          "content": "(b) (4 pt) Define the game as an MDP, with a minimal state space. (No need to describe both actions, just $a_B$.)\nStates: pairs $(b, p)$. (Time step is not needed as it's encoded in $b + p$.) Actions: $a_B, a_P$.\nTransition model: $T((b, p), a_B, (b + 1, p)) = (2b + p)/2(b + p)$; $T((b, p), a_B, (b, p + 1)) = p/2(b + p)$; 0 otherwise.\nReward function: $T((b, p), a_B, (b + 1, p)) = 1$; 0 otherwise.",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.617,
+            0.535,
+            0.635
+          ],
+          "content": "**(c) (1 pt)** The total number of states in the MDP is $\\bigcirc \\mathop { O } \\mathopen { O } ( T )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.772,
+            0.617,
+            0.888,
+            0.635
+          ],
+          "content": "None of these"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.642,
+            0.658,
+            0.659
+          ],
+          "content": "It’s just an arithmetic series up to the last time step which has O(T) states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.71,
+            0.806,
+            0.726
+          ],
+          "content": "**(d)** <strong><u>(2 pt)</u></strong> <u>Explain why value iteration applied to this problem converges exactly after O(T) iterations.</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.727,
+            0.922,
+            0.805
+          ],
+          "content": "The key property of this MDP is that the state space is acyclic. After iteration t, states t steps from the end have exact values and no changes take place after that. After T iterations the root is correct. This is in direct contrast to the typical process for a model with cycles in the state space, where convergence is geometric and continues for ever. Notice, on the other hand, that each iteration of VI updates ALL the states; it does not “start from the end and work back.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.9,
+            0.914,
+            0.948
+          ],
+          "content": "**(e) (1 pt)** Assuming that Bellman backups at each state consider only successor states that have nonzero probability, the total runtime of value iteration on this problem is O $O ( T ^ { 2 } )$ N $O ( T ^ { 3 } )$ O(T<sup>4</sup>) O(2<sup>T</sup>) None of these"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.087,
+            0.081,
+            0.107,
+            0.094
+          ],
+          "content": "12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.167,
+            0.126,
+            0.871,
+            0.142
+          ],
+          "content": "For each state the backup work is constant (only two successors); T iterations times $O ( T ^ { 2 } )$ states is $O ( T ^ { 3 } )$"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.081,
+            0.914,
+            0.095
+          ],
+          "content": "13"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.103,
+            0.125,
+            0.401,
+            0.141
+          ],
+          "level": 2,
+          "content": "8. (11 points) Approximate Q-Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.144,
+            0.914,
+            0.161
+          ],
+          "content": "The UC system is experimenting with new transportation options that will help students move between all 10 campuses."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.174,
+            0.822,
+            0.19
+          ],
+          "content": "Each possible **state** for a student is a tuple of location (one of 10 campuses) and mood (happy or upset)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.203,
+            0.679,
+            0.22
+          ],
+          "content": "Available **actions**: Bus, T axi, Motorcycle. Actions have the following properties:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.312,
+            0.233,
+            0.728,
+            0.3
+          ],
+          "content": "| Action | Makes Stops | Max. Passengers | Has Wi-Fi |\n| --- | --- | --- | --- |\n| Bus | Yes | 50 | Yes |\n| Taxi | No | 4 | No |\n| Motorcycle | No | 1 | No |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.315,
+            0.564,
+            0.331
+          ],
+          "content": "We will use a linear, feature-based approximation of the Q-values:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.354,
+            0.34,
+            0.685,
+            0.384
+          ],
+          "content": "Linear value function: $Q _ { \\mathbf { w } } ( s , a ) = \\sum _ { i = 0 } ^ { 3 } f _ { i } ( s , a ) w _ { i } .$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.238,
+            0.395,
+            0.802,
+            0.522
+          ],
+          "content": "<table><tr><td colspan=\"2\">Features</td><td>Initial Weights</td></tr><tr><td colspan=\"2\"> $f_0(state, action) = 1$  (this is a bias feature that is always 1)</td><td> $w_0 = 1$ </td></tr><tr><td colspan=\"2\"> $f_1(state, action) = \\left\\{ \\begin{array}{ll} 1 & \\text{if action makes stops} \\\\ 0 & \\text{otherwise} \\end{array} \\right.$ </td><td> $w_1 = 2.5$ </td></tr><tr><td colspan=\"2\"> $f_2(state, action) = \\left\\{ \\begin{array}{ll} 1 & \\text{if action has max. passengers > 1} \\\\ 0 & \\text{otherwise} \\end{array} \\right.$ </td><td> $w_2 = 0.5$ </td></tr><tr><td colspan=\"2\"> $f_3(state, action) = \\left\\{ \\begin{array}{ll} 1 & \\text{if action has Wi-Fi} \\\\ 0 & \\text{otherwise} \\end{array} \\right.$ </td><td> $w_3 = 1$ </td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.535,
+            0.915,
+            0.566
+          ],
+          "content": "Remember that the approximate Q-values are a function of the weights, so make sure to use the chain rule as follows whenever updating the weights:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.307,
+            0.575,
+            0.732,
+            0.606
+          ],
+          "content": "w _ {i} \\leftarrow w _ {i} + \\alpha \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q _ {\\mathbf {w}} (s ^ {\\prime}, a ^ {\\prime}) - Q _ {\\mathbf {w}} (s, a) \\right] \\frac {\\partial}{\\partial w _ {i}} Q _ {\\mathbf {w}} (s, a)",
+          "image_source": "images/page_12_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.637,
+            0.671,
+            0.654
+          ],
+          "content": "**(a) (3 pt)** Calculate the following initial Q values given the initial weights above:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.162,
+            0.662,
+            0.578,
+            0.781
+          ],
+          "content": "| Q( (UCLA,upset), Bus ) | 1+2.5+0.5+1 = 5 |\n| --- | --- |\n| Q( (UCLA,upset), Taxi ) | 1+0+0.5+0 = 1.5 |\n| Q( (UCLA,upset), Motorcycle ) | 1 + 0 + 0 + 0 = 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.793,
+            0.916,
+            0.855
+          ],
+          "content": "**(b) (2 pt)** The initial Q-values for the state (UCLA, upset) happen to be equal to the corresponding initial Q-values for the state (Berkeley, happy). As you update the weights, will these values always be the equal to each other? In other words, will $Q _ { \\mathbf { w } } ( \\; ( U C \\dot { L A } , u p s e t ) , \\; a \\; ) \\: = \\: Q _ { \\mathbf { w } } ( \\; ( B e r k e l e y , h a p p y ) , \\; a \\; )$ given any action a and vector of weights w?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.869,
+            0.274,
+            0.886
+          ],
+          "content": "N Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.899,
+            0.419,
+            0.916
+          ],
+          "content": "Why / Why not? (in just one sentence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.93,
+            0.661,
+            0.946
+          ],
+          "content": "They are always equal because our features are not dependent on the state."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.087,
+            0.081,
+            0.106,
+            0.094
+          ],
+          "content": "14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.125,
+            0.915,
+            0.171
+          ],
+          "content": "**(c) (2 pt)** Exploration / exploitation: Given the Q-values for the state (UCLA, upset) you calculated on the previous page, what is the probability that each action could be chosen when using \u000f-greedy exploration (assuming any random movements are chosen uniformly from all actions)?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.163,
+            0.18,
+            0.556,
+            0.335
+          ],
+          "content": "<table><tbody><tr><td>Action</td><td>Probability (in terms of\u000f)</td></tr><tr><td rowspan=\"2\">Bus</td><td rowspan=\"2\">(1 -\u000f) + 3\u000f= 1 - 23\u000f</td></tr><tr></tr><tr><td rowspan=\"2\">Taxi</td><td rowspan=\"2\">\u000f3</td></tr><tr></tr><tr><td rowspan=\"2\">Motorcycle</td><td rowspan=\"2\">\u000f3</td></tr><tr></tr></tbody></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.348,
+            0.914,
+            0.38
+          ],
+          "content": "**(d) (2 pt)** Given a sample with start state = (Berkeley, happy), action= Taxi, successor state $\\mathbf { \\mathit { c } } = ( U C L A , \\; u p s e t )$ , and reward = -7: Using a learning rate of $\\alpha = 0 . 5$ and discount of $\\gamma = 0 . 5$ , update each of the weights."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.171,
+            0.41,
+            0.524,
+            0.426
+          ],
+          "content": "\\text {Difference} = - 7 + 0. 5 * \\max (5, 1. 5, 1) - 1. 5 = - 6",
+          "image_source": "images/page_13_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.171,
+            0.425,
+            0.383,
+            0.457
+          ],
+          "content": "\\begin{array}{r l} & {\\frac {\\partial}{\\partial w _ {i}} Q _ {\\mathbf {w}} (s, a) = f _ {i}} \\\\ & {w _ {0} = 1 + 0. 5 * (- 6) * 1 = - 2} \\end{array}",
+          "image_source": "images/page_13_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.171,
+            0.48,
+            0.395,
+            0.498
+          ],
+          "content": "w _ {1} = 2. 5 + 0. 5 * (- 6) * 0 = 2. 5",
+          "image_source": "images/page_13_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.171,
+            0.52,
+            0.407,
+            0.538
+          ],
+          "content": "w _ {2} = 0. 5 + 0. 5 * (- 6) * 1 = - 2. 5",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.171,
+            0.56,
+            0.369,
+            0.578
+          ],
+          "content": "w _ {3} = 1 + 0. 5 * (- 6) * 0 = 1",
+          "image_source": "images/page_13_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.595,
+            0.914,
+            0.611
+          ],
+          "content": "**(e) (2 pt)** Give one advantage and one disadvantage of using approximate Q-Learning rather than standard Q-Learning."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.166,
+            0.618,
+            0.919,
+            0.68
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPros: Feature representation scales to very large or infinite spaces; learning process generalizes from seen states to unseen states.\nCons: True Q may not be representable in the chosen form; learning may not converge; need to design feature functions.\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.081,
+            0.914,
+            0.095
+          ],
+          "content": "15"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.104,
+            0.124,
+            0.315,
+            0.14
+          ],
+          "level": 2,
+          "content": "9. (7 points) Decision Trees"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.144,
+            0.915,
+            0.175
+          ],
+          "content": "After taking CS188, Alice wants to construct a decision tree classifier to predict flight delays. She has collected the data for a few months. A summary of the data is provided in table below. Read it **carefully**."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.284,
+            0.196,
+            0.755,
+            0.321
+          ],
+          "content": "<table><tbody><tr><td rowspan=\"2\">Feature</td><td colspan=\"2\">Feature value = Yes</td><td colspan=\"2\">Feature value = No</td></tr><tr><td># Delayed</td><td># not Delayed</td><td># Delayed</td><td># not Delayed</td></tr><tr><td>Rain</td><td>30</td><td>10</td><td>10</td><td>30</td></tr><tr><td>Wind</td><td>25</td><td>15</td><td>15</td><td>25</td></tr><tr><td>Summer</td><td>5</td><td>35</td><td>35</td><td>5</td></tr><tr><td>Winter</td><td>20</td><td>10</td><td>20</td><td>20</td></tr><tr><td>Day</td><td>20</td><td>20</td><td>20</td><td>20</td></tr><tr><td>Night</td><td>15</td><td>10</td><td>25</td><td>30</td></tr></tbody></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.354,
+            0.915,
+            0.385
+          ],
+          "content": "**(a) (1 pt)** Alice thinks she was tired when filling in the last column and may have made a mistake. Please correct it in the table for her."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.387,
+            0.921,
+            0.42
+          ],
+          "content": "The 4th number is wrong, as the row total should be 80 no matter what feature is used to classify the data. We should change 20 to 30."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.466,
+            0.914,
+            0.497
+          ],
+          "content": "**(b) (2 pt)** Which of “ Rain” and “Day” has the higher information gain for predicting delay? Explain without numerical calculations."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.5,
+            0.921,
+            0.532
+          ],
+          "content": "Day is useless: the subsets have the same delay proportions as the original set; Rain is better as the proportions are different from the prior."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.615,
+            0.915,
+            0.647
+          ],
+          "content": "**(c) (2 pt)** Bob the Stanford student says **among all six features**, “Rain” should be at the root of the decision tree. Do you agree with him? If not, which feature should be at the root? Explain why **qualitatively**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.651,
+            0.921,
+            0.698
+          ],
+          "content": "No. “Rain” is not the best feature. Note that the distribution of “Delay” conditioned on “Summer” is more skewed than conditioned on all other features, which implies the maximum information gain can be achieved when “Summer” is chosen as the root."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.772,
+            0.915,
+            0.805
+          ],
+          "content": "**(d) (2 pt)** Based **only** on the table, can you determine which feature should be on the second level (the level just beneath the root) of the decision tree? If yes, which one is it? Support your answer **qualitatively**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.808,
+            0.922,
+            0.87
+          ],
+          "content": "No, it is impossible to tell. To determine the second level feature we need to know the breakdown of delays for the other features given the value of “Summer”. Since we only have summaries for delay given one feature in this table, there is not enough information to determine the feature that would lead to the highest information gain AFTER we used “Summer”"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.086,
+            0.081,
+            0.107,
+            0.095
+          ],
+          "content": "16"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.106,
+            0.139,
+            0.476,
+            0.29
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.315,
+            0.108,
+            0.33
+          ],
+          "content": "(a)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.706,
+            0.126,
+            0.905,
+            0.302
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.691,
+                0.315,
+                0.715,
+                0.33
+              ],
+              "content": "(b)"
+            },
+            {
+              "bbox": [
+                0.225,
+                0.343,
+                0.772,
+                0.36
+              ],
+              "content": "Figure 2: (a) A neural network with two hidden layers; (b) a multiclass perceptron."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_15_image_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.096,
+            0.379,
+            0.341,
+            0.395
+          ],
+          "level": 2,
+          "content": "10. (10 points) Neural Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.43,
+            0.914,
+            0.479
+          ],
+          "content": "**(a) (2 pt)** Consider the (non-fully connected) neural network in Figure 2(a), where each node is assumed to have a bias input of constant value 1 that is not shown. Assume the inputs to A, B, C and the output Y are boolean (1 or 0). Could this network correctly classify each of the following logical operations? Briefly justify."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.162,
+            0.488,
+            0.371,
+            0.505
+          ],
+          "content": "(A \\land B \\land C) \\lor (\\neg A \\land B \\land C)",
+          "image_source": "images/page_15_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.507,
+            0.601,
+            0.524
+          ],
+          "content": "Yes, this is equivalent to $B \\wedge C$ which can be classified using $H _ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.618,
+            0.232,
+            0.632
+          ],
+          "content": "A XOR B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.632,
+            0.921,
+            0.68
+          ],
+          "content": "No, because (1) $H _ { 1 }$ can only separate the inputs into two sets of size two, each with one positive and one negative example, or into a set of size three and a singleton. (2) $H _ { 2 }$ can only test on B, which is not enough to separate the sets from (1) correctly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.796,
+            0.914,
+            0.829
+          ],
+          "content": "Now assume we have the (non-fully connected) multi-class perceptron shown in Figure 2(b); here we assume no bias inputs. Such a perceptron returns as a prediction the label of the output node with the highest output value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.887,
+            0.915,
+            0.919
+          ],
+          "content": "**(b) (4 pt)** Suppose we start with the weights [1, 1] for output S and the weights [0, 1] for output T and a learning rate of 1. Given the following example run one iteration of weight update."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.16,
+            0.93,
+            0.434,
+            0.946
+          ],
+          "content": "X _ {1} = - 1, X _ {2} = 0. 5, X _ {3} = 1, l a b e l = S",
+          "image_source": "images/page_15_equation_14.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.085,
+            0.079,
+            0.156,
+            0.095
+          ],
+          "content": "NAME:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.894,
+            0.081,
+            0.914,
+            0.095
+          ],
+          "content": "17"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.164,
+            0.124,
+            0.921,
+            0.357
+          ],
+          "sub_type": "algorithm",
+          "content": "Here we do normal perceptron weight updates, the only difference is that S only has weights for $X_1$ and $X_2$ while T only has weights for $X_2$ and $X_3$.\n1) Feed Forward\n$output_S = 1 * -1 + 1 * 0.5 = -0.5$\n$output_T = 0 * 0.5 + 1 * 1 = 1$\nSo we predict T which is incorrect so we update the weights.\n$W_S = [1, 1] + [-1, 0.5] = [0, 1.5]$\n$W_T = [0, 1] - [0.5, 1] = [-0.5, 0]$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.378,
+            0.915,
+            0.426
+          ],
+          "content": "**(c) (2 pt)** Independent of your answer to the previous problem, assume you arrived at the conclusion that the weights for S are [0, 2] and the weights for T are [-1, 0]. What is the condition on the inputs such that this network chooses S rather than T? Express the condition as simply as possible."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.165,
+            0.434,
+            0.921,
+            0.535
+          ],
+          "sub_type": "algorithm",
+          "content": "The condition for choosing $S$ over $T$ is $(0 \\cdot X_1) + (2 \\cdot X_2) > (-1 \\cdot X_2) + (0 \\cdot X_3)$ which simplifies to $X_2 > 0$.",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.564,
+            0.914,
+            0.596
+          ],
+          "content": "Many neural networks used in practice have weights that are shared across multiple connections. In the example below, there are two weights in the first layer, $w _ { 1 }$ and $w _ { 2 } ,$ , each of which appears twice."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.138,
+            0.604,
+            0.506,
+            0.75
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.778,
+            0.699,
+            0.795
+          ],
+          "content": "**(d) (1 pt)** What effect would you expect weight sharing to have on the training error?"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.162,
+            0.794,
+            0.922,
+            0.894
+          ],
+          "sub_type": "code",
+          "content": "```txt\n○ It should go down    ⊗ It should go up    ○ Cannot tell given this information\nThis reduces the ability of the model to fit the data well.\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.915,
+            0.805,
+            0.947
+          ],
+          "content": "**(e) (1 pt)** What effect would you expect weight sharing to have on the test error? It should go down It should go up N Cannot tell given this information"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.087,
+            0.081,
+            0.106,
+            0.095
+          ],
+          "content": "18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.125,
+            0.919,
+            0.157
+          ],
+          "content": "It could go either way, depending on the tradeoff between reduced expressive power and whether the true function agrees or nearly agrees with the constrained function space."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2014-12-23T01:43:11-08:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfeTeX-1.21a",
+      "page_count": 18,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

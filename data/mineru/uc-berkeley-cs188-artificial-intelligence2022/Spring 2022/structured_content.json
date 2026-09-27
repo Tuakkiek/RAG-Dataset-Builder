@@ -1,0 +1,3664 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.081,
+            0.062,
+            0.23,
+            0.115
+          ],
+          "content": "CS 188 Spring 2022"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.261,
+            0.062,
+            0.524,
+            0.115
+          ],
+          "content": "Introduction to Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.151,
+            0.372,
+            0.168
+          ],
+          "content": "• You have approximately 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.172,
+            0.908,
+            0.19
+          ],
+          "content": "• The exam is closed book, no calculator, and closed notes, other than two double-sided \"crib sheets\" that you may reference."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.195,
+            0.322,
+            0.21
+          ],
+          "content": "• For multiple choice questions,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.215,
+            0.416,
+            0.234
+          ],
+          "content": "– □ means mark **all options** that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.236,
+            0.378,
+            0.253
+          ],
+          "content": "means mark a single choice"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.153,
+            0.268,
+            0.834,
+            0.52
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |\n| Exam Room |  |\n| Name and SID of person to the right |  |\n| Name and SID of person to the left |  |\n| Discussion TAs (or None) |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.548,
+            0.846,
+            0.565
+          ],
+          "content": "**Honor code**: “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.57,
+            0.885,
+            0.632
+          ],
+          "content": "By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than two double-sided crib sheet), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic \"F\" grade in this class and a referral to the Center for Student Conduct."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.642,
+            0.451,
+            0.662
+          ],
+          "content": "Signature:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.285,
+            0.712,
+            0.703,
+            0.855
+          ],
+          "content": "| Q1. Machine Learning | 15 |\n| --- | --- |\n| Q2. Satisfiability with a Bayes net | 10 |\n| Q3. Ghostbusters 2 | 13 |\n| Q4. Decisions, Decisions | 16 |\n| Q5. She's So Gone | 10 |\n| Q6. Search and Games | 13 |\n| Q7. Q-Learning on partially observable problems | 14 |\n| Q8. Search on MDPs | 9 |\n| Total | 100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.432,
+                0.686,
+                0.554,
+                0.7
+              ],
+              "content": "Point Distribution"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.936,
+            0.498,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.322,
+            0.047,
+            0.665,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.041,
+            0.504,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [15 pts] Machine Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.08,
+            0.909,
+            0.126
+          ],
+          "content": "**(a)** First, let’s review the basics of perceptrons. The following binary class data has two features, $x _ { 1 }$ and $x _ { 2 } .$ Let x denote the column vector with these elements. We would like to train a perceptron parameterized by $\\mathbf { w } \\in \\mathbb { R } ^ { 2 }$ . The perceptron outputs 1 if $\\mathbf { w } ^ { \\top } \\mathbf { x } \\geq 0$ and −1 otherwise."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.419,
+            0.139,
+            0.608,
+            0.219
+          ],
+          "content": "| Index | 𝑥<sub>1</sub> | 𝑥<sub>2</sub> | Class |\n| --- | --- | --- | --- |\n| 1 | -1 | 1 | 1 |\n| 2 | 0 | 3 | 1 |\n| 3 | 1 | -1 | -1 |\n| 4 | 3 | 0 | -1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.228,
+            0.908,
+            0.261
+          ],
+          "content": "**(i)** [2 pts] If the current weight vector $\\mathbf { w } = ( - 1 , - 1 )$ , select the indices of the samples which will be classified correctly. **[1] [2] [3] [4] (None)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.265,
+            0.908,
+            0.314
+          ],
+          "content": "**(ii)** [1 pt] If w is currently all zeros and sample 4 is picked in the first round of training, what will w be after the update? Assume a learning rate of 𝛼 = 1. **(A)** (0, 0) **(B)** (-3, 0) **(C)** (3, 0) **(D)** (-3, -1) **(E)** (3, 1) **(F)** None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.318,
+            0.909,
+            0.397
+          ],
+          "content": "**(iii)** [2 pts] Notice $\\mathbf { w } _ { 1 }   =   ( - 1 , 1 )$ and $\\mathbf { w } _ { 2 }   =   ( - 4 , 1 )$ are both perceptrons that can correctly classify all samples in the training data but we still want to figure out how robust they are to unseen data. To do so, we add some noise n (with magnitude $\\| \\mathbf { n } \\| _ { 2 }   \\leq   1 )$ to each sample to test the two perceptrons. Which of the two perceptrons is guaranteed to classify the noisy samples correctly? <strong><sup>[w</sup></strong>1] $[ \\mathbf { w } _ { 2 } ]$ **(None)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.401,
+            0.908,
+            0.45
+          ],
+          "content": "**(iv)** [1 pt] True/False: If we add a positive training sample (2, −1), can a linear perceptron correctly classify all the training samples? **(T) (F)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.462,
+            0.909,
+            0.595
+          ],
+          "content": "**(b)** [1 pt] You have trained a perceptron model to perfectly classify your training data but find that it performs poorly on your validation set, which consists of completely new data points. Instead of using the naive perceptron model, which of the following models could improve the validation accuracy? **[A]** Logistic regression **[B]** Linear regression **[C]** Single-layer neural net with softmax activation **(D)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.607,
+            0.889,
+            0.707
+          ],
+          "content": "**(c)** [2 pts] When using a deep neural network to perform classification, which of the following are learned by the model? **[A]** Weight matrices of the neural net [E] Learning rate **[B]** Bias vectors of the neural net [F] Number of layers of the neural net **[C]** Hidden layer size of the neural net **[D]** Batch size **(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.725,
+            0.908,
+            0.756
+          ],
+          "content": "**(d) (i)** [1 pt] **(T) (F)** During training, if a perceptron misclassifies data $x ^ { ( i ) }$ , it will not misclassify it after the weight update."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.76,
+            0.907,
+            0.791
+          ],
+          "content": "**(ii)** [1 pt] **(T) (F)** The number of weights (including bias) of a multiclass logistic regression model with ddimensional input and 3 classes is 3𝑑 + 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.795,
+            0.909,
+            0.827
+          ],
+          "content": "**(iii)** [1 pt] **(T) (F)** Applying Laplace smoothing on Naive Bayes could increase validation accuracy because it mitigates underfitting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.831,
+            0.908,
+            0.862
+          ],
+          "content": "**(iv)** [1 pt] **(T) (F)** We cannot use $y = | x |$ as an activation function in neural networks because it’s not differentiable at 𝑥 = 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.866,
+            0.908,
+            0.883
+          ],
+          "content": "**(v)** [1 pt] **(T) (F)** It’s possible for a neural network with only 1 hidden layer to represent any continuous function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.886,
+            0.826,
+            0.903
+          ],
+          "content": "**(vi)** [1 pt] **(T) (F)** We should decrease the learning rate if the training loss is going up every epoch."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.658,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q2. [10 pts] Satisfiability with a Bayes net"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.126
+          ],
+          "content": "In lecture, we learned that we can reduce the satisfiability (SAT) problem to inference in a Bayes net, where logical circuits with input variables as parent nodes will output a CNF value as the child node. The Bayes net can have multiple levels to represent nested logical circuits."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.14,
+            0.761,
+            0.155
+          ],
+          "content": "For this problem, we seek to determine the satisfiability of ¬(𝐴 ∧ 𝐵) ∨ 𝐷 using the following Bayes net."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.168,
+            0.564,
+            0.184
+          ],
+          "content": "Here, we construct a Bayes net to represent 𝐶 = 𝐴 ∧ 𝐵 and $S = \\neg C \\vee D$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.236,
+            0.2,
+            0.345,
+            0.248
+          ],
+          "content": "| 𝐴 | 𝑃(𝐴) |\n| --- | --- |\n| true | 0.5 |\n| false | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.397,
+            0.199,
+            0.507,
+            0.248
+          ],
+          "content": "| 𝐵 | 𝑃(𝐵) |\n| --- | --- |\n| true | 0.5 |\n| false | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.56,
+            0.2,
+            0.669,
+            0.248
+          ],
+          "content": "| 𝐷 | 𝑃(𝐷) |\n| --- | --- |\n| true | 0.5 |\n| false | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.269,
+            0.257,
+            0.636,
+            0.411
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_7.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.085,
+            0.351,
+            0.332,
+            0.495
+          ],
+          "content": "| 𝐶 | 𝐴 | 𝐵 | 𝑃(𝐶\\|𝐴,𝐵) |\n| --- | --- | --- | --- |\n| true | true | true | 0 |\n| false | true | true | 0 |\n| true | true | false | 0 |\n| false | true | false | 1 |\n| true | false | true | 0 |\n| false | false | true | 1 |\n| true | false | false | 0 |\n| false | false | false | 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.496,
+            0.413,
+            0.732,
+            0.555
+          ],
+          "content": "| 𝑆 | 𝐶 | 𝐷 | P(S\\|C,D) |\n| --- | --- | --- | --- |\n| true | true | true | 1 |\n| false | true | true | 0 |\n| true | true | false | 0 |\n| false | true | false | 1 |\n| true | false | true | 1 |\n| false | false | true | 0 |\n| true | false | false | 1 |\n| false | false | false | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.576,
+            0.908,
+            0.607
+          ],
+          "content": "**(a) (i)** [2 pts] Which condition on the probability of 𝑆 in the Bayes net is true if and only if the logical sentence ¬(𝐴∧𝐵)∨𝐷 is satisfiable?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.622,
+            0.302,
+            0.637
+          ],
+          "content": "**(A)** $P ( S = t r u e ) = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.64,
+            0.302,
+            0.655
+          ],
+          "content": "**(B)** $P ( S = t r u e ) \\geq 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.622,
+            0.696,
+            0.638
+          ],
+          "content": "**(D)** $P ( S = t r u e ) \\geq 0 . 5$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.658,
+            0.302,
+            0.673
+          ],
+          "content": "**(C)** $P ( S = t r u e ) > 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.64,
+            0.695,
+            0.655
+          ],
+          "content": "**(E)** $P ( S = t r u e ) > 0 . 5$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.658,
+            0.682,
+            0.673
+          ],
+          "content": "**(F)** $P ( S = t r u e ) = 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.693,
+            0.908,
+            0.722
+          ],
+          "content": "**(ii)** [2 pts] Which condition on the probability of 𝑆 in the Bayes net is true if and only if the logical sentence $\\neg ( A   \\land   B )   \\lor   D$ is valid?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.738,
+            0.302,
+            0.754
+          ],
+          "content": "**(A)** $P ( S = t r u e ) = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.755,
+            0.302,
+            0.771
+          ],
+          "content": "**(B)** $P ( S = t r u e ) \\geq 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.773,
+            0.302,
+            0.788
+          ],
+          "content": "**(C)** $P ( S = t r u e ) > 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.738,
+            0.696,
+            0.754
+          ],
+          "content": "**(D)** $P ( S = t r u e ) \\geq 0 . 5$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.755,
+            0.696,
+            0.771
+          ],
+          "content": "**(E)** $P ( S = t r u e ) > 0 . 5$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.539,
+            0.773,
+            0.684,
+            0.789
+          ],
+          "content": "**(F)** $P ( S = t r u e ) = 1$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.948
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.047,
+            0.909,
+            0.092
+          ],
+          "content": "**(b)** Now, we will do inference via prior sampling in this Bayes net. Assume that we have access to code that will run prior sampling and return the samples to us. However, the code will only show us the value of the variable 𝑆 in each sample. We can see nothing else."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.097,
+            0.908,
+            0.127
+          ],
+          "content": "**(i)** [1 pt] Suppose we draw 100 samples and find that in exactly 43 of them, 𝑆 has the value true. What can we conclude about the satisfiability o $\\mathbf { f } \\neg ( A \\land B ) \\lor D ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.133,
+            0.339,
+            0.148
+          ],
+          "content": "**(A)** $\\neg ( A \\land B ) \\lor D$ is valid."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.151,
+            0.371,
+            0.165
+          ],
+          "content": "**(B)** $\\neg ( A \\land B ) \\lor D$ is satisfiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.168,
+            0.398,
+            0.183
+          ],
+          "content": "**(C)** $\\neg ( A \\land B ) \\lor D$ is **not** satisfiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.186,
+            0.314,
+            0.201
+          ],
+          "content": "**(D)** None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.207,
+            0.908,
+            0.237
+          ],
+          "content": "**(ii)** [1 pt] Suppose we instead draw 100 total samples and find that 𝑆 has the value false in all 100 of them. What can we conclude about the satisfiability of $\\neg ( A \\land B ) \\lor D ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.244,
+            0.339,
+            0.259
+          ],
+          "content": "**(A)** $\\neg ( A \\land B ) \\lor D$ is valid."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.262,
+            0.371,
+            0.276
+          ],
+          "content": "**(B)** $\\neg ( A \\land B ) \\lor D$ is satisfiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.279,
+            0.398,
+            0.294
+          ],
+          "content": "**(C)** $\\neg ( A \\land B ) \\lor D$ is **not** satisfiable."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.297,
+            0.315,
+            0.312
+          ],
+          "content": "**(D)** None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.326,
+            0.908,
+            0.357
+          ],
+          "content": "**(c) (i)** [2 pts] Consider the same example of determining satisfiability of $\\neg ( A   \\land   B )   \\lor   D .$ If we are still doing prior sampling, what is the probability that our first sample has $S = t r u e ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.419,
+            0.908,
+            0.449
+          ],
+          "content": "**(ii)** [2 pts] Now consider a sentence with 𝑛 uniformly distributed binary variables and 𝑚 models that satisfy the sentence, what is the expected number of samples we draw in order to conclude that the sentence is satisfiable?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.451,
+            0.444,
+            0.474
+          ],
+          "content": "Hint: If $X \\sim G e o m e t r i c ( p )$ , then $\\begin{array} { r } { \\mathbb { E } [ X ] = \\frac { 1 } { p } } \\end{array}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.457,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q3. [13 pts] Ghostbusters 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.08,
+            0.908,
+            0.127
+          ],
+          "content": "A ghost is traveling in an $M   \\times   N$ grid with no walls or obstacles. Pacman is trying to determine the location of the ghost at some finite timestep 𝑇 , where $G _ { t }$ represents ghost’s location at timestep 𝑡. At each timestep 𝑡, there are up to 3 sensor variables— $D _ { t } ,$ $E _ { t }$ , and $F _ { t ^ { - } }$ —connected as shown in the dynamic Bayes net (DBN) below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.14,
+            0.909,
+            0.171
+          ],
+          "content": "Pacman has a guess action 𝑌 which represents Pacman’s guess of the value $G _ { T }$ . The utility Pacman gains for its guess is determined by $U ( Y , G _ { T } )$ which is a predetermined function that is larger when 𝑌 is closer to $G _ { T }$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.203,
+            0.906,
+            0.354
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.365,
+            0.908,
+            0.396
+          ],
+          "content": "**(a)** [2 pts] For this part only: assume that Pacman does not observe the sensor values and does not know any of the CPTs in the DBN; further, let $U ( y , g _ { T } )$ be 100 if $y = g _ { T }$ and −1 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.395,
+            0.909,
+            0.441
+          ],
+          "content": "Sid from Stanford says the distribution is uniform, assuming that the ghost moves randomly for a long time. Using this information, what is Pacman’s maximum expected utility? You may use the values 𝑀, 𝑁, or 𝑇 in your expression as necessary."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.119,
+            0.445,
+            0.525,
+            0.526
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.54,
+            0.778,
+            0.556
+          ],
+          "content": "For the remainder of the question, assume that Pacman knows all the conditional distributions in the DBN."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.568,
+            0.847,
+            0.585
+          ],
+          "content": "**(b)** [1 pt] Which of the following expressions maximizes Pacman’s expected utility when no evidence is available?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.592,
+            0.331,
+            0.62
+          ],
+          "content": "**(A)** $Y = \\mathop { \\operatorname { a r g   m a x } } _ { g _ { T } } P ( g _ { T } | G _ { T - 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.62,
+            0.343,
+            0.647
+          ],
+          "content": "**(B)** $Y = \\mathop { \\operatorname { a r g   m a x } } _ { g _ { T } } P ( g _ { T } | G _ { 0 : T - 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.648,
+            0.345,
+            0.675
+          ],
+          "content": "**(C)** $Y = \\mathop { \\operatorname { a r g   m a x } } _ { g _ { T } } P ( G _ { 0 : T - 1 } , g _ { T } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.676,
+            0.409,
+            0.709
+          ],
+          "content": "**(D)** $Y = \\underset { g _ { T } } { \\operatorname { a r g   m a x } } \\sum _ { g _ { T - 1 } } P ( g _ { T } | g _ { T - 1 } ) P ( g _ { T - 1 } ) ,$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.711,
+            0.282,
+            0.727
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.74,
+            0.884,
+            0.755
+          ],
+          "content": "**(c)** Pacman can choose to uncover the value of one sensor (seeing its value for all 𝑡) in order to help maximize its utility."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.759,
+            0.908,
+            0.79
+          ],
+          "content": "**(i)** [2 pts] Without any assumptions about the sensor CPTs, which of the following inequalities provides the strongest valid statement about the VPIs for the sensor variables?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.794,
+            0.379,
+            0.81
+          ],
+          "content": "**(A)** $\\mathit { V P I } ( D ) \\geq \\mathit { V P I } ( E ) > \\mathit { V P I } ( F )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.811,
+            0.379,
+            0.827
+          ],
+          "content": "**(B)** $\\mathit { V P I } ( E ) \\geq \\mathit { V P I } ( D ) > \\mathit { V P I } ( F )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.828,
+            0.379,
+            0.844
+          ],
+          "content": "**(C)** $\\mathit { V P I } ( E ) \\geq \\mathit { V P I } ( F ) > \\mathit { V P I } ( D )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.845,
+            0.379,
+            0.861
+          ],
+          "content": "**(D)** $\\mathit { V P I } ( E ) \\geq \\mathit { V P I } ( F ) \\geq \\mathit { V P I } ( D )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.863,
+            0.404,
+            0.878
+          ],
+          "content": "**(E)** Any VPI relationship is possible"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.882,
+            0.908,
+            0.914
+          ],
+          "content": "**(ii)** [2 pts] Let 𝑋 and 𝑍 be the sensor variables with the highest and second-highest VPI, respectively. Which of the following statements are guaranteed to be true for any timestep $t \\in [ 0 , T - 1 ]$ and any values $x _ { t }$ and ${ z _ { t } } ^ { ? }$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.501,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.636,
+            0.021,
+            0.903,
+            0.037
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.046,
+            0.5,
+            0.063
+          ],
+          "content": "**[A]** $\\mathit { M E U } ( X _ { t + 1 } = x _ { t + 1 } ) \\geq \\mathit { M E U } ( X _ { t } = x _ { t } ) \\quad \\forall x _ { t } , x _ { t + 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.064,
+            0.485,
+            0.08
+          ],
+          "content": "**[B]** $\\mathit { M E U } ( X _ { t + 1 } = x _ { t + 1 } ) \\geq \\mathit { M E U } ( Z _ { t } = z _ { t } ) \\quad \\forall x _ { t } , z _ { t }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.082,
+            0.334,
+            0.097
+          ],
+          "content": "**[C]** $\\mathit { V P I } ( X _ { t + 1 } ) \\geq \\mathit { V P I } ( X _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.099,
+            0.333,
+            0.115
+          ],
+          "content": "**[D]** $\\mathit { V P I } ( X _ { t } ) \\geq \\mathit { V P I } ( Z _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.117,
+            0.312,
+            0.131
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.137,
+            0.908,
+            0.167
+          ],
+          "content": "**(iii)** [1 pt] Pacman chooses the sensor variable 𝐹 as evidence, so we are given $F _ { t }   =   f _ { t }   \\forall t$ Which of the following expressions for 𝑌 would maximize Pacman’s expected utility?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.171,
+            0.441,
+            0.203
+          ],
+          "content": "**(A)** $Y = \\underset { g _ { T } } { \\operatorname { a r g   m a x } } \\sum _ { g _ { T - 1 } } P ( g _ { T } | g _ { T - 1 } ) P ( g _ { T - 1 } ) ,$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.205,
+            0.467,
+            0.235
+          ],
+          "content": "**(B)** $Y = \\underset { g _ { T } } { \\operatorname { a r g   m a x } } \\sum _ { e _ { T } } P ( f _ { T } | e _ { T } ) \\cdot P ( g _ { T } | e _ { 0 : T - 1 } ) ,$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.184,
+            0.237,
+            0.555,
+            0.268
+          ],
+          "content": "Y = \\arg \\max _ {g _ {T}} \\sum_ {e _ {T}} P (f _ {T} | e _ {T}) P (e _ {T} | d _ {T}, g _ {T}) \\cdot P (g _ {T} | e _ {0: T - 1})",
+          "image_source": "images/page_6_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.183,
+            0.27,
+            0.606,
+            0.302
+          ],
+          "content": "Y = \\arg \\max _ {g _ {T}} \\sum_ {e _ {T}, d _ {T}} P (f _ {T} | e _ {T}) P (d _ {T}) P (e _ {T} | d _ {T}, g _ {T}) \\cdot P (g _ {T} | f _ {0: T - 1})",
+          "image_source": "images/page_6_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.304,
+            0.312,
+            0.318
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.324,
+            0.909,
+            0.356
+          ],
+          "content": "**(iv)** [2 pts] Now consider that Pacman instead chooses only the variable 𝐸 as evidence. Using the functions for the belief distribution (𝐵 or $B ^ { \\prime } )$ and the general utility function 𝑈, what is the expression for $E U ( Y | e _ { 0 : T } ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.355,
+            0.575,
+            0.372
+          ],
+          "content": "Recall that $B ( G _ { T } ) = P ( G _ { T } | e _ { 0 : T } ) \\; \\mathrm { a n d } \\; B ^ { \\prime } ( G _ { T } ) = P ( G _ { T } | e _ { 0 : T - 1 } ) .$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.156,
+            0.375,
+            0.588,
+            0.457
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.47,
+            0.909,
+            0.516
+          ],
+          "content": "**(d)** [3 pts] Pacman is now free to choose as many of the sensor evidence variables as it requires to maximize its expected utility. In addition, Pacman can choose to know the starting position of the ghost. Among all the available evidence listed below, select the minimum set that would allow Pacman to achieve the maximum expected utility possible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.525,
+            0.195,
+            0.664
+          ],
+          "content": "**[A]** $G _ { 0 }$ **[B]** $E _ { 0 }$ **[C]** $D _ { 0 }$ **[D]** $F _ { 0 }$ **[E]** $E _ { 1 : T }$ **[F]** $D _ { 1 : T }$ **[G]** $F _ { 1 : T }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.666,
+            0.281,
+            0.68
+          ],
+          "content": "**(H)** None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.041,
+            0.539,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q4. [16 pts] Decisions, Decisions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.08,
+            0.908,
+            0.097
+          ],
+          "content": "Saagar plans to attend an event in AILand. His situation can be represented as a decision network with the following components:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.1,
+            0.12,
+            0.369,
+            0.374
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.424,
+            0.103,
+            0.638,
+            0.118
+          ],
+          "content": "Chance variables (all Boolean):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.124,
+            0.901,
+            0.14
+          ],
+          "content": "• 𝑅: Whether it Rains or not. According to the forecast, $P ( r ) = 0 . 3 .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.145,
+            0.834,
+            0.161
+          ],
+          "content": "• 𝐶: Whether it is Cloudy or not. This may depend on 𝑅."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.166,
+            0.866,
+            0.183
+          ],
+          "content": "• 𝐸: Whether the Event is held or not. This may depend on 𝑅."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.425,
+            0.188,
+            0.898,
+            0.225
+          ],
+          "content": "• 𝐻: Whether there is Heavy traffic or not. This may depend on 𝐸. Actions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.231,
+            0.905,
+            0.247
+          ],
+          "content": "$A _ { 1 } \\in \\{ \\mathrm { e v e n t ,   a r c a d e } \\}$ : Whether Saagar goes to the event or arcade."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.448,
+            0.252,
+            0.861,
+            0.269
+          ],
+          "content": "$A _ { 2 } \\in \\{ \\mathrm { c a r ,   s u b w a y } \\}$ : Whether Saagar takes a car or subway."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.425,
+            0.274,
+            0.487,
+            0.288
+          ],
+          "content": "Utilities:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.449,
+            0.295,
+            0.909,
+            0.325
+          ],
+          "content": "$U _ { 1 } ( A _ { 1 } , E ) ;$ The utility Saagar derives from his choice of arcade or event (if it happens)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.449,
+            0.331,
+            0.908,
+            0.363
+          ],
+          "content": "$U _ { 2 } ( A _ { 2 } , H )$ : The heavy-traffic-dependent utility Saagar derives from his choice of car or subway."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.449,
+            0.372,
+            0.774,
+            0.388
+          ],
+          "content": "• Saagar’s total utility is the sum: $U = U _ { 1 } + U _ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.414,
+            0.622,
+            0.43
+          ],
+          "content": "It is known that none of the conditional probabilities in the decision network are 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.443,
+            0.908,
+            0.474
+          ],
+          "content": "**(a)** [3 pts] Derive an expression for $M E U ( R = t r u e )$ in terms of conditional probability and utility terms from the network (no numerical values)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.558,
+            0.907,
+            0.604
+          ],
+          "content": "**(b)** [1 pt] Notice that there are two separate utilities $U _ { 1 }$ and $U _ { 2 }$ that contribute to Saagar’s overall utility 𝑈. Select all possible individual variables 𝑋 such that we can correctly decompose $MEU(X = x) = MEU_{1}(X = x) + MEU_{2}(X = x); \\mathrm{i.e.}$ each action can be optimized independently of the other."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.608,
+            0.426,
+            0.625
+          ],
+          "content": "**[R] [C] [E] [H] (None)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.636,
+            0.908,
+            0.667
+          ],
+          "content": "**(c)** [1 pt] **(T) (F)** Let 𝑋 be any Boolean variable in any decision network. The following conditions are jointly sufficient to show that $V P I ( X ) > 0 ;$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.678,
+            0.278,
+            0.692
+          ],
+          "content": "• 𝑃 (𝑥) is not 0 or 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.697,
+            0.495,
+            0.713
+          ],
+          "content": "• The optimal decisions given 𝑥 and ¬𝑥 are different."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.72,
+            0.719,
+            0.735
+          ],
+          "content": "Now we are given the following numerical values for some of the factors in our decision network:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.082,
+            0.763,
+            0.261,
+            0.843
+          ],
+          "content": "| 𝐸 | 𝐻 | 𝑃(𝐻\\|𝐸) |\n| --- | --- | --- |\n| true | true | 0.8 |\n| true | false | 0.2 |\n| false | true | 0.4 |\n| false | false | 0.6 |",
+          "captions": [
+            {
+              "bbox": [
+                0.081,
+                0.75,
+                0.141,
+                0.764
+              ],
+              "content": "𝑃 (𝐻|𝐸)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_table_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.36,
+            0.751,
+            0.431,
+            0.765
+          ],
+          "content": "U _ {1} (A _ {1}, E)",
+          "image_source": "images/page_7_equation_24.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.361,
+            0.764,
+            0.566,
+            0.844
+          ],
+          "content": "| 𝐴<sub>1</sub> | 𝐸 | 𝑈<sub>1</sub>(𝐴<sub>1</sub>,𝐸) |\n| --- | --- | --- |\n| event | true | 100 |\n| arcade | true | 60 |\n| event | false | 0 |\n| arcade | false | 90 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.64,
+            0.751,
+            0.714,
+            0.765
+          ],
+          "content": "U _ {2} (A _ {2}, H)",
+          "image_source": "images/page_7_equation_26.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.64,
+            0.764,
+            0.852,
+            0.844
+          ],
+          "content": "| 𝐴<sub>2</sub> | 𝐻 | 𝑈<sub>2</sub>(𝐴<sub>2</sub>,𝐻) |\n| --- | --- | --- |\n| subway | true | -10 |\n| taxi | true | -30 |\n| subway | false | -10 |\n| taxi | false | 0 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.091,
+                0.852,
+                0.626,
+                0.867
+              ],
+              "content": "(d) [2 pts] Given the information we have, which of the following could be true?"
+            }
+          ],
+          "image_source": "images/page_7_table_27.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.866,
+            0.383,
+            0.914
+          ],
+          "content": "**[A]** $V P I ( E ) > 0$ **[D]** $V P I ( C ) > 0$ **[B]** $V P I ( E ) = 0$ **[E]** $V P I ( C ) = 0$ **[C]** $VPI(E) < 0$ **[F]** $VPI(C) < 0$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.121,
+            0.451,
+            0.855,
+            0.605
+          ],
+          "sub_type": "code",
+          "content": "```txt\nThe image contains no text or content to process. It is a blank template with a single horizontal line, which is a stylistic or background element and not textual content. Therefore, the correct OCR output is an empty string.\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.636,
+            0.021,
+            0.904,
+            0.037
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.047,
+            0.624,
+            0.062
+          ],
+          "content": "**(e)** [2 pts] Given the information we have, which of the following **must** be true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.071,
+            0.316,
+            0.087
+          ],
+          "content": "**[A]** $V P I ( R , C ) > V P I ( R )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.091,
+            0.319,
+            0.107
+          ],
+          "content": "**[B]** $V P I ( R , H ) > V P I ( E )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.111,
+            0.322,
+            0.127
+          ],
+          "content": "**[C]** $V P I ( E , H ) > V P I ( H )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.132,
+            0.298,
+            0.148
+          ],
+          "content": "**[D]** $VPI(C) > VPI(R)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.152,
+            0.282,
+            0.167
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.18,
+            0.906,
+            0.196
+          ],
+          "content": "We want to calculate VPI(𝐻). **For the remainder of this problem**, say we have eliminated 𝑅 and 𝐶 to find $P ( E = t r u e ) = 0 . 6$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.21,
+            0.604,
+            0.225
+          ],
+          "content": "Say we also have the following values for expected utility given no information."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.082,
+            0.253,
+            0.318,
+            0.332
+          ],
+          "content": "| 𝐴<sub>1</sub> | 𝐴<sub>2</sub> | 𝐸𝑈(𝐴<sub>1</sub>,𝐴<sub>2</sub>) |\n| --- | --- | --- |\n| event | subway | 50 |\n| event | taxi | 30 |\n| arcade | subway | 40 |\n| arcade | taxi | 20 |",
+          "captions": [
+            {
+              "bbox": [
+                0.081,
+                0.239,
+                0.164,
+                0.253
+              ],
+              "content": "𝐸𝑈(𝐴<sub>1</sub>, 𝐴<sub>2</sub>)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.345,
+            0.358,
+            0.36
+          ],
+          "content": "**(f)** [2 pts] Find $P ( E = t r u e | H = t r u e )$"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.122,
+            0.365,
+            0.286,
+            0.415
+          ],
+          "sub_type": "code",
+          "content": "```json\n[REDACTED]\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.433,
+            0.892,
+            0.449
+          ],
+          "content": "**(g)** [2 pts] Find the expected utility EU(event, subway|𝐻 = 𝑡𝑟𝑢𝑒). You may show work in the box below for partial credit."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.622,
+            0.908,
+            0.668
+          ],
+          "content": "(h) [3 pts] Let’s say the best decision if there is traffic is to take subway and go to the event (i.e. $A _ { 1 }   =   e v e n t ,   A _ { 2 }   =   s u b w a y )$ The best decision if there is no traffic is to take a taxi and go to the arcade (i.e. $A _ { 1 }   =   a r c a d e ,   A _ { 2 }   =   t a x i )$ . Here we provide two values that are not calculated from the earlier parts of the question:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.399,
+            0.68,
+            0.635,
+            0.714
+          ],
+          "content": "\\begin{array}{l} P (H = f a l s e) = 0. 3 6 \\\\ E U (a r c a d e, t a x i | H = f a l s e) = 8 0. \\end{array}",
+          "image_source": "images/page_8_equation_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.731,
+            0.901,
+            0.747
+          ],
+          "content": "Use your answers from the previous part to calculate 𝑉 𝑃 𝐼(𝐻). You may show work in the box below for partial credit."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.5,
+            0.948
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.634,
+            0.612,
+            0.691,
+            0.629
+          ],
+          "content": "[C] 0.1"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.454,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q5. [10 pts] She’s So Gone"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.922,
+            0.158
+          ],
+          "content": "Mrs. Pacman is moving around in a 4x4 gridworld with deterministic transitions and an action space $A = \\{ u p , d o w n , r i g h t , l e f t \\} =$ {↑, ↓, →, ←}. Any action that would take her into a wall keeps her position constant. There are two possible exiting (absorbing) states: Pacbaby’s location at the top right and a fire pit at the bottom right of the gridworld. Exiting from Pacbaby’s location gives a reward of +1, while exiting from the fire pit gives a reward of -2. Mrs. Pacman starts in the bottom left corner. The discount factor 𝛾 = 1. Below is a figure of her world:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.399,
+            0.18,
+            0.588,
+            0.325
+          ],
+          "content": "|  |  |  | +1 |\n| --- | --- | --- | --- |\n|  |  |  |  |\n|  |  |  |  |\n| Start |  |  | -2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.343,
+            0.91,
+            0.405
+          ],
+          "content": "**(a)** We’re watching Mrs. Pacman move around and would like to understand how she feels about existing — in other words, we’d like to reason about her living reward. Here, we define living reward as a constant reward value that is the same for all non-exit states. For each of the optimal policies displayed below, select the possible living rewards that could have been used to generate each policy. A dot represents the Exit action which is the only action available at exit states."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.157,
+            0.423,
+            0.345,
+            0.569
+          ],
+          "content": "| → | → | → | . |\n| --- | --- | --- | --- |\n| ↑ | ↑ | ↑ | ↑ |\n| ↑ | ↑ | ↑ | ↑ |\n| ↑ | ↑ | ↑ | . |",
+          "captions": [
+            {
+              "bbox": [
+                0.132,
+                0.406,
+                0.203,
+                0.421
+              ],
+              "content": "(i) [2 pts]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_table_6.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.395,
+            0.422,
+            0.585,
+            0.569
+          ],
+          "content": "| → | → | → | . |\n| --- | --- | --- | --- |\n| ↑ | ↑ | ↑ | ↑ |\n| ↑ | ↑ | ↑ | ↑ |\n| → | → | → | . |",
+          "captions": [
+            {
+              "bbox": [
+                0.366,
+                0.406,
+                0.442,
+                0.422
+              ],
+              "content": "(ii) [2 pts]"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.394,
+                0.577,
+                0.444,
+                0.594
+              ],
+              "content": "[A] -1"
+            }
+          ],
+          "image_source": "images/page_9_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.635,
+            0.422,
+            0.822,
+            0.568
+          ],
+          "content": "| ↑ | ↑ | ↑ | . |\n| --- | --- | --- | --- |\n| ↑ | ↑ | ↑ | ↑ |\n| ↑ | ↑ | ↑ | ↑ |\n| ← | ↑ | ↑ | . |",
+          "captions": [
+            {
+              "bbox": [
+                0.602,
+                0.406,
+                0.681,
+                0.422
+              ],
+              "content": "(iii) [2 pts]"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.633,
+                0.577,
+                0.684,
+                0.594
+              ],
+              "content": "[A] -1"
+            },
+            {
+              "bbox": [
+                0.155,
+                0.63,
+                0.201,
+                0.646
+              ],
+              "content": "[D] 1"
+            },
+            {
+              "bbox": [
+                0.395,
+                0.63,
+                0.439,
+                0.646
+              ],
+              "content": "[D] 1"
+            },
+            {
+              "bbox": [
+                0.155,
+                0.648,
+                0.312,
+                0.664
+              ],
+              "content": "(E) None of the above"
+            },
+            {
+              "bbox": [
+                0.634,
+                0.63,
+                0.678,
+                0.646
+              ],
+              "content": "[D] 1"
+            },
+            {
+              "bbox": [
+                0.395,
+                0.648,
+                0.55,
+                0.664
+              ],
+              "content": "(E) None of the above"
+            },
+            {
+              "bbox": [
+                0.634,
+                0.648,
+                0.789,
+                0.664
+              ],
+              "content": "(E) None of the above"
+            }
+          ],
+          "image_source": "images/page_9_table_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.68,
+            0.909,
+            0.742
+          ],
+          "content": "**(b)** [2 pts] Your friend Scott suggests using the Forward Algorithm to estimate Mrs. Pacman’s living reward. In the HMM, the hidden variable would be Mrs. Pacman’s living reward and the evidence variable would be Mrs. Pacman’s observed (true) position. You go to office hours and overhear that this approach wouldn’t work. Select all reasons why an HMM model would NOT be a good choice here."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.75,
+            0.908,
+            0.767
+          ],
+          "content": "**[A]** The evidence variable at a timestep is not independent of everything else given the hidden variable at that timestep"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.77,
+            0.421,
+            0.787
+          ],
+          "content": "**[B]** The hidden variable is not time-varying"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.79,
+            0.66,
+            0.807
+          ],
+          "content": "**[C]** The discount factor causes the transition model to change between timesteps"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.81,
+            0.282,
+            0.827
+          ],
+          "content": "**(D)** None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.047,
+            0.908,
+            0.093
+          ],
+          "content": "**(c)** [2 pts] Knowing that a vanilla HMM would not be a good model, you decide to consider using a dynamic Bayes net. Select the DBN below that could represent the relationship between Mrs. Pacman’s living reward (𝑅), her true position (𝑃<sub>𝑖</sub>), and a noisy sensor reading of her location (𝑆<sub>𝑖</sub>)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.123,
+            0.1,
+            0.399,
+            0.856
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.506,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q6. [13 pts] Search and Games"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.08,
+            0.761,
+            0.096
+          ],
+          "content": "**(a)** Please evaluate the truth of each following statement regarding search algorithms and game trees."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.1,
+            0.908,
+            0.131
+          ],
+          "content": "**(i)** [1 pt] **(T) (F)** UCS graph search is complete for any graph with edge costs that are strictly greater than some finite positive value 𝜖."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.135,
+            0.855,
+            0.152
+          ],
+          "content": "**(ii)** [1 pt] **(T) (F)** Greedy graph search is complete if the heuristic is consistent and all edge costs are 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.155,
+            0.725,
+            0.172
+          ],
+          "content": "**(iii)** [1 pt] **(T) (F)** We can never prune an expectimax tree with bounded leaf nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.175,
+            0.909,
+            0.207
+          ],
+          "content": "**(iv)** [1 pt] **(T) (F)** We can never prune a multi-agent non-zero-sum game tree (where each agent has its own independent utility function) with unbounded leaf nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.219,
+            0.909,
+            0.281
+          ],
+          "content": "**(b)** Maria is exploring an 𝑀 by 𝑁 grid of the ocean. Her goal is to visit all of the 𝑘 island squares. There is also one evil pirate ship that will sink Maria’s ship if they occupy the same grid square. Maria and the pirate are playing a minimax game where Maria is the maximizer and the pirate is a minimizer. Both agent ships can move up, down, left, right; if they attempt to move off the map, they stay put."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.285,
+            0.909,
+            0.316
+          ],
+          "content": "**(i)** [2 pts] We can view this as a minimax search problem where Maria takes a move and then the pirate ship takes a move. What is the size of the minimal state space in terms of 𝑀, 𝑁, and 𝑘?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.373,
+            0.864,
+            0.425
+          ],
+          "content": "**(ii)** [1 pt] What is the maximum possible branching factor for the minimax tree induced by this search problem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.449,
+            0.909,
+            0.481
+          ],
+          "content": "**(c)** Suppose now that whenever Maria takes an action, it fails with probability 0.5, resulting in her ship remaining in the same spot. The following game tree depicts the updated scenario. For all pruning subparts below, we do not prune on equality."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.161,
+            0.498,
+            0.84,
+            0.715
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.731,
+            0.854,
+            0.779
+          ],
+          "content": "**(i)** <u>[2 pts] What</u> is the maximum number of leaves that can be pruned if there is **no bound** on the leaf values?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.786,
+            0.864,
+            0.835
+          ],
+          "content": "**(ii)** <u>[2 pts] What</u> is the maximum number of leaves that can be pruned if leaf values are finitely **lower** bounded?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.842,
+            0.866,
+            0.891
+          ],
+          "content": "**(iii)** <u>[2 pts] What</u> is the maximum number of leaves that can be pruned if leaf values are finitely **upper** bounded?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.637,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.865,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q7. [14 pts] Q-Learning on partially observable problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.08,
+            0.908,
+            0.127
+          ],
+          "content": "Pacman is exploring a 3 × 3 grid world with deterministic transitions and the action space $A = \\{ u p , d o w n , r i g h t , l e f t \\}   =   \\{ \\uparrow$, ↓, →, ←}. The states are numbered 1 through 9 as shown below left, and the rewards are as shown below right. The discount factor is $\\gamma = 0 . 5$ **.** Note that there is no exit action at any state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.139,
+            0.908,
+            0.17
+          ],
+          "content": "The deterministic transition function 𝑇 (𝑠, 𝑎) returns the result $s ^ { \\prime }$ of taking action 𝑎 from state 𝑠. (Note: this is different from the $T ( s , a , s ^ { \\prime } ) = P ( s ^ { \\prime } | s , a )$ notation that we used earlier in the class.) When Pacman hits a wall, it stays in place."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.219,
+            0.175,
+            0.36,
+            0.283
+          ],
+          "content": "| 1 | 2 | 3 |\n| --- | --- | --- |\n| 4 | 5 | 6 |\n| 7 | 8 | 9 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.244,
+                0.291,
+                0.335,
+                0.304
+              ],
+              "content": "State Numbers"
+            }
+          ],
+          "image_source": "images/page_12_table_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.63,
+            0.175,
+            0.772,
+            0.283
+          ],
+          "content": "| 0 | 0 | 0 |\n| --- | --- | --- |\n| 0 | 0 | 0 |\n| 0 | 0 | 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.626,
+            0.29,
+            0.778,
+            0.305
+          ],
+          "content": "$R ( s , a , s ^ { \\prime } )$ for each state 𝑠"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.322,
+            0.784,
+            0.338
+          ],
+          "content": "**(a)** Let $V _ { 2 }$ be the value function after two iterations of value iteration, assuming $V _ { 0 } ( s ) = 0$ for all states 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.342,
+            0.908,
+            0.372
+          ],
+          "content": "**(i)** [2 pts] Write an expression for the policy $\\pi _ { 2 } ( s )$ obtained by policy extraction, in terms of 𝑇 and $V _ { 2 } ,$ for the case where 𝑠 ≠ 9."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.42,
+            0.826,
+            0.437
+          ],
+          "content": "**(ii)** [2 pts] Select all policies that can be obtained by using policy extraction with $V _ { 2 }$ as the value function."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.44,
+            0.33,
+            0.549
+          ],
+          "content": "| → | → | ↓ |\n| --- | --- | --- |\n| → | ↓ | ↓ |\n| → | → | ↓ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.535,
+            0.183,
+            0.551
+          ],
+          "content": "**[A]**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.352,
+            0.536,
+            0.376,
+            0.551
+          ],
+          "content": "**[B]**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.382,
+            0.44,
+            0.524,
+            0.549
+          ],
+          "content": "| → | → | → |\n| --- | --- | --- |\n| ↓ | ↓ | ↓ |\n| → | → | ↓ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.536,
+            0.571,
+            0.551
+          ],
+          "content": "**[C]**"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.576,
+            0.439,
+            0.718,
+            0.549
+          ],
+          "content": "| ↑ | → | ↓ |\n| --- | --- | --- |\n| ↓ | ↓ | ↓ |\n| → | → | ↓ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.735,
+            0.536,
+            0.802,
+            0.55
+          ],
+          "content": "**(D)** None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.555,
+            0.908,
+            0.586
+          ],
+          "content": "**(iii)** [2 pts] What is the minimum number of iterations 𝑘 for value iteration such that the value function $V _ { k }$ is optimal? Write ∞ if the value function is never optimal."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.635,
+            0.908,
+            0.666
+          ],
+          "content": "**(iv)** [2 pts] What is the minimum number of iterations 𝑘 for value iteration such that the extracted policy $\\pi _ { k }$ is optimal? Write ∞ if the extracted policy is never optimal."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.047,
+            0.908,
+            0.078
+          ],
+          "content": "For the remainder of the question, we suppose that Pacman only perceives the 𝑥-coordinate. In other words, the world from its eyes looks like the 1 × 3 grid world $\\tilde { S } = \\widetilde { \\{ \\tilde { 1 } , \\tilde { 2 } , \\tilde { 3 } \\} }$ represented below. The action space remains $A = \\{ u p , d o w n , r i g h t , l e f t \\}$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.423,
+            0.089,
+            0.565,
+            0.127
+          ],
+          "content": "| 1̃ | 2̃ | 3̃ |\n| --- | --- | --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.144,
+            0.908,
+            0.176
+          ],
+          "content": "**(b)** [2 pts] What must be accounted for to evaluate the policy learned using Q-learning in this environment? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.184,
+            0.809,
+            0.2
+          ],
+          "content": "**[A]** The problem cannot be represented by a deterministic transition function $T : \\tilde { S } \\times A \\to \\tilde { S }$ anymore."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.204,
+            0.857,
+            0.22
+          ],
+          "content": "**[B]** The problem cannot be represented by a reward function depending only on the state $R : \\tilde { S } \\to \\mathbb { R } \\; \\mathrm { a n y m o r e }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.225,
+            0.762,
+            0.24
+          ],
+          "content": "**[C]** The problem cannot be represented by a deterministic reward function $R : { \\tilde { S } } \\times A \\times { \\tilde { S } } \\to \\mathbb { R } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.245,
+            0.753,
+            0.26
+          ],
+          "content": "**[D]** The optimal policy cannot be represented by a deterministic function $\\pi : { \\tilde { S } } \\to A { \\mathrm { ~ a n y m o r e } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.265,
+            0.281,
+            0.28
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.294,
+            0.613,
+            0.309
+          ],
+          "content": "**(c)** We modify the reward function of the fully observed grid world as follows."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.122,
+            0.313,
+            0.262,
+            0.421
+          ],
+          "content": "| 0 | 0 | 0 |\n| --- | --- | --- |\n| 0 | 0 | 1 |\n| 0 | 0 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.43,
+            0.426,
+            0.446
+          ],
+          "content": "PacMan still only perceives the 𝑥-coordinates."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.45,
+            0.908,
+            0.481
+          ],
+          "content": "**(i)** [2 pts] What must be accounted for to evaluate the policy learned using Q-learning in this environment? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.485,
+            0.839,
+            0.501
+          ],
+          "content": "**[A]** The problem cannot be represented by a deterministic transition function $T : \\tilde { S } \\times A \\to \\tilde { S }$ anymore."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.504,
+            0.887,
+            0.519
+          ],
+          "content": "**[B]** The problem cannot be represented by a reward function depending only on the state $R : { \\tilde { S } } \\to \\mathbb { R } { \\mathrm { ~ a n y m o r e } } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.521,
+            0.791,
+            0.536
+          ],
+          "content": "**[C]** The problem cannot be represented by a deterministic reward function $R : \\tilde { S } \\times A \\times \\tilde { S } \\to \\mathbb { R }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.539,
+            0.784,
+            0.555
+          ],
+          "content": "**[D]** The optimal policy cannot be represented by a deterministic function $\\pi : { \\tilde { S } } \\to A$ anymore."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.557,
+            0.312,
+            0.571
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.577,
+            0.908,
+            0.621
+          ],
+          "content": "**(ii)** [2 pts] Assuming an infinite number of samples from each transition and a reasonable decreasing schedule for the learning rate, under which environment will Q-learning always find the optimal policy of the fully observable environment?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.627,
+            0.487,
+            0.642
+          ],
+          "content": "**[A]** The fully observable environment for part (a)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.645,
+            0.511,
+            0.66
+          ],
+          "content": "**[B]** The partially observable environment for part (b)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.662,
+            0.511,
+            0.677
+          ],
+          "content": "**[C]** The partially observable environment for part (c)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.68,
+            0.312,
+            0.694
+          ],
+          "content": "**(D)** None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.637,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.466,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q8. [9 pts] Search on MDPs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.08,
+            0.909,
+            0.142
+          ],
+          "content": "**(a)** In the following grid, we want to move from start state 𝑆 to target state 𝑇 through the shortest possible path. The arrows indicate the available actions. We will formulate the problem as a search problem or an MDP. To formulate it as a search problem, assume an edge cost of 1 for any transition. To formulate it as an MDP, we use a deterministic transition, a reward of 0 when transitioning to the terminal state 𝑇 , a reward of -1 for any other transition, and a discount factor of 1."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.379,
+            0.143,
+            0.649,
+            0.262
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.279,
+            0.808,
+            0.295
+          ],
+          "content": "**(i)** [1 pt] We first try to use uniform-cost tree search. What is total cost of the solution?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.299,
+            0.908,
+            0.315
+          ],
+          "content": "**(ii)** [2 pts] We run value iteration to convergence and extract the policy. Which of the following statements are correct?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.318,
+            0.799,
+            0.334
+          ],
+          "content": "**[A]** The policy at state 𝑆 will be the same as the action returned by the UCS algorithm at state 𝑆."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.335,
+            0.846,
+            0.351
+          ],
+          "content": "**[B]** Starting at any state, we can go to the terminal state 𝑇 with the shortest path by following the policy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.352,
+            0.811,
+            0.368
+          ],
+          "content": "**[C]** For the new reward function $R _ { 1 } ( s , a , s ^ { \\prime } ) = 1 + R ( s , a , s ^ { \\prime } )$ , the policy should remain unchanged."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.37,
+            0.907,
+            0.4
+          ],
+          "content": "**[D]** While standard BFS/UCS tree search no longer works when the transitions are non-deterministic, we can use the same value-iteration/Q-iteration algorithm to generalize to cases where transitions are non-deterministic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.402,
+            0.312,
+            0.417
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.429,
+            0.909,
+            0.46
+          ],
+          "content": "**(b)** [2 pts] Let’s consider the following idea: we first do 𝑘 iterations of value iteration (with initialization of all zeros), and then use the values $- V _ { k }$ as a heuristic to run $A ^ { * }$ search on. Which of the following statements are correct?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.468,
+            0.401,
+            0.484
+          ],
+          "content": "**[A]** The heuristic is admissible for any 𝑘."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.487,
+            0.396,
+            0.503
+          ],
+          "content": "**[B]** The heuristic is consistent for any 𝑘."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.506,
+            0.571,
+            0.522
+          ],
+          "content": "**[C]** For $k = 1$ , the heuristic will be equivalent to the zero heuristic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.525,
+            0.849,
+            0.542
+          ],
+          "content": "**[D]** If $V _ { k } = V ^ { * }$ , then the number of states expanded by $A ^ { * }$ equals the number of states along the optimal path."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.545,
+            0.282,
+            0.56
+          ],
+          "content": "**(E)** None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.573,
+            0.909,
+            0.664
+          ],
+          "content": "**(c)** In this part, we want to find the shortest path from any state to any state (instead of only to 𝑇 ). To solve this problem in an MDP setting, we define a goal-conditioned MDP to be a collection of MDPs with the same state and action space and transition probabilities, but the rewards depend on the goal state. In a goal-conditioned MDP, we define $V ^ { * } ( s , g )$ as the optimal expected value starting in 𝑠 when the goal is $g ,$ and $Q ^ { * } ( s , a , g )$ as the optimal value of taking action 𝑎 in state 𝑠 when the goal state is 𝑔. Also assume that the reward is 0 when we transition to a goal state, and is -1 for all other transitions. The discount factor is 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.668,
+            0.908,
+            0.699
+          ],
+          "content": "**(i)** [2 pts] Write down the recursive update equation for $Q _ { k + 1 } ( s , a , g )$ assuming that the deterministic transition of taking action 𝑎 from state 𝑠 leads to state $s ^ { \\prime }$ and $s ^ { \\prime }$ is not a goal state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.75,
+            0.91,
+            0.812
+          ],
+          "content": "**(ii)** [2 pts] Doing Q-learning on a goal-conditioned MDP can require less samples than solving for each MDP with a different goal separately, when the transitional probabilities are unknown (but we know they are the same for all the MDPs with different goals in the same goal-conditioned MDP). Say we have a transition sample $( s , a , s ^ { \\prime } )$ . Write down the Q-learning update rules for a general goal-conditioned MDP with learning rate 𝛼 and discount factor 1."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.23,
+            0.821,
+            0.833,
+            0.904
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_20.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.078,
+            0.042,
+            0.116,
+            0.062
+          ],
+          "content": "Q1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.092,
+            0.155,
+            0.111
+          ],
+          "content": "**(a) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.651,
+            0.093,
+            0.682,
+            0.11
+          ],
+          "content": "**(iv)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.131,
+            0.119,
+            0.15
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.088,
+            0.152,
+            0.712,
+            0.19
+          ],
+          "content": "(\\mathrm{d}) \\quad (\\mathrm{i}) \\square \\quad (\\mathrm{ii}) \\square \\quad (\\mathrm{iii}) \\square \\quad (\\mathrm{iv}) \\square \\quad (\\mathrm{v}) \\square \\quad (\\mathrm{vi}) \\square",
+          "image_source": "images/page_15_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.222,
+            0.118,
+            0.244
+          ],
+          "content": "**Q2**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.258,
+            0.312,
+            0.293
+          ],
+          "content": "**(a) (i) (ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.296,
+            0.312,
+            0.331
+          ],
+          "content": "**(b) (i) (ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.375,
+            0.155,
+            0.395
+          ],
+          "content": "**(c) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.428,
+            0.117,
+            0.45
+          ],
+          "content": "**Q3**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.553,
+            0.177,
+            0.586
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.606,
+            0.155,
+            0.626
+          ],
+          "content": "**(c) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.691,
+            0.155,
+            0.71
+          ],
+          "content": "**(iv)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.73,
+            0.118,
+            0.748
+          ],
+          "content": "**(d)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.782,
+            0.118,
+            0.804
+          ],
+          "content": "**Q4**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.871,
+            0.118,
+            0.89
+          ],
+          "content": "**(a)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.935,
+            0.506,
+            0.95
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.057,
+            0.118,
+            0.075
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.122,
+            0.117,
+            0.139
+          ],
+          "content": "**(f)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.304,
+            0.058,
+            0.326,
+            0.075
+          ],
+          "content": "**(c)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.324,
+            0.118,
+            0.342
+          ],
+          "content": "**(g)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.399,
+            0.058,
+            0.424,
+            0.075
+          ],
+          "content": "**(d)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.526,
+            0.118,
+            0.544
+          ],
+          "content": "**(h)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.578,
+            0.117,
+            0.6
+          ],
+          "level": 2,
+          "content": "Q5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.339,
+            0.63,
+            0.365,
+            0.647
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.63,
+            0.581,
+            0.647
+          ],
+          "content": "**(iii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.669,
+            0.118,
+            0.686
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.303,
+            0.669,
+            0.326,
+            0.686
+          ],
+          "content": "**(c)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.721,
+            0.117,
+            0.742
+          ],
+          "level": 2,
+          "content": "Q6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.772,
+            0.154,
+            0.791
+          ],
+          "content": "**(a) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.424,
+            0.773,
+            0.454,
+            0.79
+          ],
+          "content": "**(iv)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.816,
+            0.155,
+            0.835
+          ],
+          "content": "**(b) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.502,
+            0.817,
+            0.527,
+            0.834
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.861,
+            0.155,
+            0.88
+          ],
+          "content": "**(c) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.258,
+            0.862,
+            0.283,
+            0.879
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.388,
+            0.862,
+            0.417,
+            0.879
+          ],
+          "content": "**(iii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.635,
+            0.021,
+            0.674,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.61,
+            0.058,
+            0.634,
+            0.075
+          ],
+          "content": "**(e)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.935,
+            0.505,
+            0.95
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.078,
+            0.042,
+            0.116,
+            0.063
+          ],
+          "content": "Q7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.105,
+            0.155,
+            0.124
+          ],
+          "content": "**(a) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.151,
+            0.155,
+            0.17
+          ],
+          "content": "**(iii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.19,
+            0.119,
+            0.209
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.228,
+            0.156,
+            0.248
+          ],
+          "content": "**(c) (i)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.281,
+            0.118,
+            0.303
+          ],
+          "level": 2,
+          "content": "Q8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.332,
+            0.155,
+            0.351
+          ],
+          "content": "**(a) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.422,
+            0.155,
+            0.441
+          ],
+          "content": "**(c) (i)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.371,
+            0.119,
+            0.39
+          ],
+          "content": "**(b)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.455,
+            0.185,
+            0.475
+          ],
+          "content": "**(ii) (1)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.486,
+            0.186,
+            0.505
+          ],
+          "content": "**(3)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.338,
+            0.152,
+            0.369,
+            0.17
+          ],
+          "content": "**(iv)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.501,
+            0.105,
+            0.528,
+            0.123
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.338,
+            0.229,
+            0.365,
+            0.247
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.272,
+            0.332,
+            0.3,
+            0.35
+          ],
+          "content": "**(ii)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.368,
+            0.455,
+            0.395,
+            0.475
+          ],
+          "content": "**(2)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.368,
+            0.486,
+            0.395,
+            0.505
+          ],
+          "content": "**(4)**"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.935,
+            0.505,
+            0.95
+          ],
+          "content": "18"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2022-05-09T18:16:03Z",
+      "modified_at": "2022-05-09T18:16:03Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.23",
+      "page_count": 18,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

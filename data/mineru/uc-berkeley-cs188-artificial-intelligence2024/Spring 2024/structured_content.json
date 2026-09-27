@@ -1,0 +1,3406 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.081,
+            0.062,
+            0.229,
+            0.115
+          ],
+          "content": "CS 188 Spring 2024"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.261,
+            0.062,
+            0.524,
+            0.115
+          ],
+          "content": "Introduction to Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.151,
+            0.274,
+            0.167
+          ],
+          "content": "• You have 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.173,
+            0.908,
+            0.19
+          ],
+          "content": "• The exam is closed book, no calculator, and closed notes, other than two double-sided cheat sheets that you may reference."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.195,
+            0.909,
+            0.226
+          ],
+          "content": "• Anything you write outside the answer boxes or you ~~cross out~~ will not be graded. If you write multiple answers, your answer is ambiguous, or the bubble/checkbox is not entirely filled in, we will grade the worst interpretation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.229,
+            0.579,
+            0.246
+          ],
+          "content": "For questions with **circular bubbles**, you may select only one choice."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.249,
+            0.405,
+            0.266
+          ],
+          "content": "Unselected option (completely unfilled)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.607,
+            0.23,
+            0.942,
+            0.26
+          ],
+          "content": "For questions with **square checkboxes**, you may select one or more choices."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.269,
+            0.432,
+            0.286
+          ],
+          "content": "Only one selected option (completely filled)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.609,
+            0.264,
+            0.73,
+            0.28
+          ],
+          "content": "You can select"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.29,
+            0.428,
+            0.307
+          ],
+          "content": "Don’t do this (it will be graded as incorrect)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.609,
+            0.284,
+            0.864,
+            0.301
+          ],
+          "content": "multiple squares (completely filled)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.182,
+            0.318,
+            0.806,
+            0.534
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |\n| Name of person to the right |  |\n| Name of person to the left |  |\n| Discussion TAs (or None) |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.562,
+            0.846,
+            0.578
+          ],
+          "content": "**Honor code**: “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.583,
+            0.885,
+            0.646
+          ],
+          "content": "By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than my cheat sheets), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic \"F\" grade in this class and a referral to the Center for Student Conduct."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.657,
+            0.499,
+            0.674
+          ],
+          "content": "Signature:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.135,
+            0.729,
+            0.481,
+            0.856
+          ],
+          "content": "| Q1. Potpourri | 16 |\n| --- | --- |\n| Q2. Search &amp; Games: Shelving Books | 15 |\n| Q3. Logic: Easter Island Revisited | 15 |\n| Q4. MDPs: Blinky's Hamster | 10 |\n| Q5. VPI: Cost of Extra Samples | 16 |\n| Q6. RL: Optimistic Q-Learning | 11 |\n| Q7. ML: Spam Filter | 17 |\n| Total | 100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.248,
+                0.707,
+                0.369,
+                0.721
+              ],
+              "content": "Point Distribution"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.551,
+            0.706,
+            0.87,
+            0.723
+          ],
+          "content": "We hope you set a new high score on this exam!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.561,
+            0.735,
+            0.874,
+            0.873
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_20.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.499,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.384,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [16 pts] Potpourri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.08,
+            0.565,
+            0.096
+          ],
+          "content": "**(a)** [2 pts] Which of the following statements about heuristics are true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.104,
+            0.858,
+            0.121
+          ],
+          "content": "□ The trivial heuristic can sometimes (but rarely) speed up A\\* search, compared to uniform cost search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.125,
+            0.585,
+            0.141
+          ],
+          "content": "If a heuristic is admissible, it is guaranteed to be consistent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.145,
+            0.585,
+            0.161
+          ],
+          "content": "□ If a heuristic is consistent, it is guaranteed to be admissible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.165,
+            0.681,
+            0.181
+          ],
+          "content": "□ Greedy tree search with a consistent heuristic is complete, but not optimal."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.185,
+            0.316,
+            0.201
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.214,
+            0.909,
+            0.277
+          ],
+          "content": "**(b)** [1 pt] Which of the following statements means that 𝜙 **is satisfiable**, where 𝜙 is an arbitrary logical expression and ⊥ is always false? # $\\phi \\models \\bot$ # $\\phi  卩上$ # $\\neg \\phi \\models \\bot$ # $\\neg \\phi \\models \\bot$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.295,
+            0.908,
+            0.327
+          ],
+          "content": "For subparts (c)-(e), consider the following game tree. Assume that alpha-beta pruning visits nodes from left to right. Assume pruning on equality."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.339,
+            0.522,
+            0.355
+          ],
+          "content": "**(c)** [1 pt] Fill out the four missing values in the game tree below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.316,
+            0.504,
+            0.335,
+            0.52
+          ],
+          "content": "A"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.295,
+            0.382,
+            0.717,
+            0.64
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.396,
+            0.634,
+            0.414,
+            0.649
+          ],
+          "content": "B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.487,
+            0.634,
+            0.506,
+            0.649
+          ],
+          "content": "D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.693,
+            0.702,
+            0.709
+          ],
+          "content": "**(d)** [2 pts] Select all terminal nodes that are never explored as a result of alpha-beta pruning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.72,
+            0.208,
+            0.739
+          ],
+          "content": "□ A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.321,
+            0.72,
+            0.366,
+            0.739
+          ],
+          "content": "□ B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.481,
+            0.72,
+            0.528,
+            0.739
+          ],
+          "content": "□ D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.641,
+            0.72,
+            0.685,
+            0.739
+          ],
+          "content": "□ F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.8,
+            0.72,
+            0.847,
+            0.738
+          ],
+          "content": "□ H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.752,
+            0.313,
+            0.769
+          ],
+          "content": "None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.782,
+            0.908,
+            0.864
+          ],
+          "content": "**(e)** [2 pts] Which of the following pairs of nodes, when their values are swapped, will produce a tree where zero nodes are pruned during alpha-beta pruning? # A and B # B and H # D and F # F and H"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.046,
+            0.908,
+            0.079
+          ],
+          "content": "For subparts $( \\mathbf { f } ) \\mathbf { - } ( \\mathbf { g } ) ,$ , consider the following dataset. Points represented by the plus symbol (+) correspond to a label of +1, and points represented by the minus symbol (−) correspond to a label of −1."
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.318,
+            0.099,
+            0.678,
+            0.339
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_chart_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.358,
+            0.908,
+            0.39
+          ],
+          "content": "**(f)** [3 pts] Assuming that we fit a linear perceptron to this dataset, select all sets of features that would allow such a perceptron to perfectly classify the dataset. Assume points on the decision boundary are classified as label +1."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.4,
+            0.229,
+            0.454
+          ],
+          "content": "\\begin{array}{c c} \\square & x, y \\\\ \\square & x ^ {2}, y \\\\ \\square & x ^ {3}, y \\end{array}",
+          "image_source": "images/page_2_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.426,
+            0.4,
+            0.532,
+            0.455
+          ],
+          "content": "\\begin{array}{l l} \\square & x ^ {2}, y ^ {2}, x, y \\\\ \\square & x, y, 1 \\\\ \\square & x ^ {2}, y ^ {2}, y, 1 \\end{array}",
+          "image_source": "images/page_2_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.692,
+            0.402,
+            0.849,
+            0.419
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.474,
+            0.908,
+            0.505
+          ],
+          "content": "**(g)** [2 pts] Suppose we use 𝑥, 𝑦 as the features, and the initial weight vector of the perceptron is $[ 0 , 0 , - 1 ]$ . In other words, the feature weights are [0, 0] and the bias is −1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.508,
+            0.908,
+            0.54
+          ],
+          "content": "After running 1 iteration of the perceptron training algorithm with the point at $x = - 1 , y = 1$ , what is the new weight vector (including the bias term)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.611,
+            0.909,
+            0.659
+          ],
+          "content": "**(h)** [2 pts] Recall Monte Carlo Tree Search, where UCT (upper confidence bound applied to trees) is used to determine the next best rollout. Which of the following terms, in combination, are necessary to determine the upper confidence bound at a particular node 𝑠? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.666,
+            0.425,
+            0.683
+          ],
+          "content": "Number of rollouts $N ( s )$ at node 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.686,
+            0.425,
+            0.703
+          ],
+          "content": "Number of wins 𝑈(𝑠) from node 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.706,
+            0.525,
+            0.724
+          ],
+          "content": "Number of rollouts $N ( p )$ at the parent 𝑝 of node 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.727,
+            0.579,
+            0.744
+          ],
+          "content": "□ The number of rollouts $N ( c _ { i } )$ from **each** child $c _ { i }$ of node 𝑠."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.747,
+            0.316,
+            0.763
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.776,
+            0.908,
+            0.83
+          ],
+          "content": "**(i)** [1 pt] Suppose we use gradient descent to find the value of 𝑥 that minimizes the loss function $L ( x ) = x ^ { 2 }$ . The gradient is ${ \\frac { \\partial L } { \\partial x } } = 2 x$ . What is the smallest value of the learning rate for which gradient descent does **not** converge (assuming we do not start at the minimum $x = 0 ) ?$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.718,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q2. [15 pts] Search & Games: Shelving Books"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.08,
+            0.909,
+            0.111
+          ],
+          "content": "At the library, Carolyn plans to place 36 books on a bookshelf. The bookshelf consists of 6 rows, labeled Row 0 to Row 5, and each row can hold exactly 6 books."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.272,
+            0.158,
+            0.711,
+            0.356
+          ],
+          "content": "| Row 0 | 𝑏<sub>0</sub> | 𝑏<sub>1</sub> | 𝑏<sub>2</sub> | 𝑏<sub>3</sub> | 𝑏<sub>4</sub> | 𝑏<sub>5</sub> |\n| --- | --- | --- | --- | --- | --- | --- |\n| Row 1 | 𝑏<sub>6</sub> | 𝑏<sub>7</sub> | 𝑏<sub>8</sub> | 𝑏<sub>9</sub> | 𝑏<sub>10</sub> | 𝑏<sub>11</sub> |\n| Row 2 | 𝑏<sub>12</sub> | 𝑏<sub>13</sub> | 𝑏<sub>14</sub> | 𝑏<sub>15</sub> | 𝑏<sub>16</sub> | 𝑏<sub>17</sub> |\n| Row 3 | 𝑏<sub>18</sub> | 𝑏<sub>19</sub> | 𝑏<sub>20</sub> | 𝑏<sub>21</sub> | 𝑏<sub>22</sub> | 𝑏<sub>23</sub> |\n| Row 4 | 𝑏<sub>24</sub> | 𝑏<sub>25</sub> | 𝑏<sub>26</sub> | 𝑏<sub>27</sub> | 𝑏<sub>28</sub> | 𝑏<sub>29</sub> |\n| Row 5 | 𝑏<sub>30</sub> | 𝑏<sub>31</sub> | 𝑏<sub>32</sub> | 𝑏<sub>33</sub> | 𝑏<sub>34</sub> | 𝑏<sub>35</sub> |",
+          "captions": [
+            {
+              "bbox": [
+                0.078,
+                0.124,
+                0.909,
+                0.155
+              ],
+              "content": "The 36 books are labeled from $b _ { 0 }$ to $b _ { 3 5 }$ . Furthermore, each spot on the bookshelf is labeled from 0 to 35. Here is a diagram of what the bookshelf looks like with all the books in their correct positions:"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.078,
+                0.365,
+                0.543,
+                0.38
+              ],
+              "content": "Carolyn first places all 36 books onto the bookshelf in a random order."
+            }
+          ],
+          "image_source": "images/page_3_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.393,
+            0.601,
+            0.409
+          ],
+          "content": "Carolyn can move books around using these three actions (each action costs 1):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.42,
+            0.801,
+            0.435
+          ],
+          "content": "1. Shift all books in any row to the right by 1, with the rightmost book moving to the first spot on that row."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.446,
+            0.904,
+            0.464
+          ],
+          "content": "• For instance, using this action on Row 3, $\\left\\{ b _ { 1 8 } , b _ { 1 9 } , b _ { 2 0 } , b _ { 2 1 } , b _ { 2 2 } , b _ { 2 3 } \\right\\}$ , turns the row into $\\left\\{ b _ { 2 3 } , b _ { 1 8 } , b _ { 1 9 } , b _ { 2 0 } , b _ { 2 1 } , b _ { 2 2 } \\right\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.475,
+            0.781,
+            0.49
+          ],
+          "content": "2. Shift all books in any row to the left by 1, with the leftmost book moving to the last spot on that row."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.501,
+            0.904,
+            0.52
+          ],
+          "content": "• For instance, using this action on Row 4, $\\left\\{ b _ { 2 4 } , b _ { 2 5 } , b _ { 2 6 } , b _ { 2 7 } , b _ { 2 8 } , b _ { 2 9 } \\right\\}$ , turns the row into $\\left\\{ b _ { 2 5 } , b _ { 2 6 } , b _ { 2 7 } , b _ { 2 8 } , b _ { 2 9 } , b _ { 2 4 } \\right\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.53,
+            0.434,
+            0.545
+          ],
+          "content": "3. Swap any two books that are on **different** rows."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.557,
+            0.908,
+            0.589
+          ],
+          "content": "• For instance, the books at positions 6 and 22 can be swapped, and so can the books at positions 25 and 31, but the books at positions 24 and 26 **cannot** be swapped."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.604,
+            0.908,
+            0.635
+          ],
+          "content": "Carolyn’s goal is to **sort** the books by putting all the books in their correct positions. In other words, for $0 \\leq i \\leq 3 5$ , Carolyn wants book $b _ { i }$ to be placed on the 𝑖th position on the bookshelf."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.647,
+            0.415,
+            0.663
+          ],
+          "content": "Carolyn decides to model this as a search problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.676,
+            0.907,
+            0.707
+          ],
+          "content": "**(a)** [2 pts] Carolyn claims that the size of the state space for this problem is $2 ^ { 3 6 }$ , while a coworker Julia claims that it is 36! instead. Who is correct, and why? Explain your choice in two sentences or fewer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.72,
+            0.31,
+            0.737
+          ],
+          "content": "\\# Carolyn is correct"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.694,
+            0.72,
+            0.848,
+            0.736
+          ],
+          "content": "\\# Neither are correct"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.427,
+            0.721,
+            0.554,
+            0.736
+          ],
+          "content": "Julia is correct"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.948
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.047,
+            0.909,
+            0.098
+          ],
+          "content": "**(b)** [4 pts] Derive the maximum branching factor for this problem. Your answer must written as a single integer. Hint 1: How many ways are there to swap two books on different rows? How many possible ways are there to shift any of the rows?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.115,
+            0.881,
+            0.195
+          ],
+          "content": "Hint 2: The choose function, $\\begin{array} { r } { { \\binom { n } { k } } = \\frac { n ! } { k ! ( n - k ) ! } } \\end{array}$ , may be useful here (though you can also solve this question without it)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.21,
+            0.772,
+            0.292
+          ],
+          "content": "**(c)** [1 pt] Another coworker Nawoda claims that the following goal test is valid for this search problem. (Reminder: the goal state is when every book is at its correct position on the bookshelf.) • For the leftmost book $b _ { i }$ of every row, book $b _ { i + 1 }$ is to its direct right. • For the rightmost book $b _ { i }$ of every row, book $b _ { i - 1 }$ is to its direct left."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.295,
+            0.848,
+            0.342
+          ],
+          "content": "• For each book $b _ { i }$ on **neither** end of a row, book $b _ { i - 1 }$ is to its direct left, and book $b _ { i + 1 }$ is to its direct right. # This is a valid goal test. # This is not a valid goal test."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.36,
+            0.785,
+            0.376
+          ],
+          "content": "**(d)** [3 pts] Which of the following heuristics are admissible for this search problem? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.385,
+            0.908,
+            0.416
+          ],
+          "content": "□ The minimum number of **swaps** needed to sort all the books, assuming you can swap **any** two books, regardless of whether they are on the same row."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.42,
+            0.577,
+            0.436
+          ],
+          "content": "□ The number of books that are **not** in their correct position."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.44,
+            0.908,
+            0.472
+          ],
+          "content": "□ For some book $b _ { i } ,$ define dist(𝑏<sub>𝑖</sub>) to be the number of rows plus the number of columns book $b _ { i }$ is from its correct position. The heuristic is max(dist(𝑏 )) for all books 𝑏."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.476,
+            0.316,
+            0.491
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.505,
+            0.909,
+            0.552
+          ],
+          "content": "Now consider the following game: Julia and Carolyn take turns making moves on the same bookshelf until all the books are in their correct position. The person who makes the move that results in the bookshelf being completely sorted wins. Assume both players are playing optimally."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.565,
+            0.748,
+            0.58
+          ],
+          "content": "**(e)** [2 pts] Julia and Carolyn decide to model this game with a game tree. Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.588,
+            0.419,
+            0.605
+          ],
+          "content": "This game tree is infinite in depth."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.609,
+            0.474,
+            0.625
+          ],
+          "content": "□ This game tree requires expectation nodes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.628,
+            0.359,
+            0.645
+          ],
+          "content": "This is a zero-sum game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.649,
+            0.842,
+            0.666
+          ],
+          "content": "□ Every non-terminal node’s branching factor will be equal to the game’s maximum branching factor."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.669,
+            0.318,
+            0.685
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.699,
+            0.908,
+            0.729
+          ],
+          "content": "**(f)** [3 pts] Julia is trying to maximize her utility. Fill in the boxes below with integer values such that 𝑓(𝑠) is an evaluation function that causes Julia to act optimally."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.135,
+            0.759,
+            0.889,
+            0.886
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_17.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.665,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q3. [15 pts] Logic: Easter Island Revisited"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.08,
+            0.908,
+            0.112
+          ],
+          "content": "To recap from the midterm: Matei is an elf on Easter Island who is discontent with the current leadership of Pietru the Rotund. In preparation for the election outcome on May 9th, Matei has decided to predict the politics of Easter Island using logic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.124,
+            0.908,
+            0.155
+          ],
+          "content": "Matei has quickly gathered that there are only 5 voting members on Easter Island—Abby (𝐴), Brad (𝐵), Charles (𝐶), Datsu (𝐷), Ershawn (𝐸)—who determine the outcome of the election."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.168,
+            0.908,
+            0.2
+          ],
+          "content": "Let the proposition $P _ { d }$ represent the decision 𝑑 made by voter 𝑃 in an election. A voter may either vote YES, NO, or ABSTAIN, i.e. 𝑃<sub>𝑦</sub> = True, 𝑃<sub>𝑛</sub> = True, or $P _ { a } = \\mathrm { T r u e }$ , respectively."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.212,
+            0.578,
+            0.227
+          ],
+          "content": "**(a)** [3 pts] What is the constraint that represents the following statement?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.242,
+            0.814,
+            0.258
+          ],
+          "content": "“Brad must either vote YES, NO, or ABSTAIN, **and can only choose one of these options**.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.272,
+            0.908,
+            0.304
+          ],
+          "content": "Write your answer in Disjunctive Normal Form (DNF) using a combination of the following symbols: ∧ (and), ∨ (or), ¬ (not), $B _ { y } , B _ { n } , B _ { a } .$ Parentheses—“(” and “)”—may also be used."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.39,
+            0.535,
+            0.405
+          ],
+          "content": "**(b)** [4 pts] Convert the following statement to a logical expression:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.42,
+            0.793,
+            0.435
+          ],
+          "content": "“If Brad votes NO, then either Charles abstains or Ershawn votes YES, but not both.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.45,
+            0.908,
+            0.482
+          ],
+          "content": "Write your answer in Conjunctive Normal Form (CNF) using a combination of the following symbols: ∧ (and), ∨ (or), ¬ (not), $A _ { y } , A _ { n } , A _ { a } , . . . , E _ { y } , E _ { n } , E _ { a }$ . Parentheses—\"(\" and \")\"—may also be used."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.5,
+            0.885,
+            0.517
+          ],
+          "content": "Hint 1: $A \\bigoplus B$ is a function that evaluates to True if 𝐴 and 𝐵 are opposite truth values, or False if they are the same."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.535,
+            0.519,
+            0.551
+          ],
+          "content": "Hint 2: 𝐴⨁ 𝐵, can be represented as (𝐴 ∨ 𝐵) ∧ (¬𝐴 ∨ ¬𝐵)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.637,
+            0.437,
+            0.653
+          ],
+          "content": "Subparts (c)-(f) are unrelated to the previous subparts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.666,
+            0.763,
+            0.681
+          ],
+          "content": "**(c)** [2 pts] Which options should be picked in the square brackets below to make the description true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.686,
+            0.909,
+            0.731
+          ],
+          "content": "The DPLL algorithm is used for checking whether a sentence in CNF form has any assignment of values to variables that makes the sentence [true / false]. As the algorithm progresses, we evaluate partial models with [more / fewer] assignments of values to variables."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.745,
+            0.262,
+            0.761
+          ],
+          "content": "true; more"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.36,
+            0.745,
+            0.466,
+            0.761
+          ],
+          "content": "false; more"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.56,
+            0.745,
+            0.664,
+            0.761
+          ],
+          "content": "true; fewer"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.759,
+            0.745,
+            0.868,
+            0.761
+          ],
+          "content": "false; fewer"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.5,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.047,
+            0.902,
+            0.063
+          ],
+          "content": "Depending on the sentence and the partial model, we might employ different techniques for speeding up the DPLL algorithm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.075,
+            0.795,
+            0.091
+          ],
+          "content": "**(d)** [2 pts] Select the CNF sentence and partial model such that the DPLL algorithm can output True early."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.1,
+            0.639,
+            0.115
+          ],
+          "content": "\\# $( A \\lor \\lnot B ) \\land ( \\lnot B \\lor C ) \\land ( \\lnot A \\lor C )$ . Partial model: {B: false, C: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.12,
+            0.586,
+            0.136
+          ],
+          "content": "\\# $( A \\lor \\lnot B ) \\land ( \\lnot B \\lor C ) \\land ( \\lnot A \\lor C )$ . Partial model: {B: false}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.14,
+            0.553,
+            0.156
+          ],
+          "content": "\\# $( A \\lor B ) \\land ( B \\lor C ) \\land ( A \\lor C )$ . Partial model: {B: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.16,
+            0.582,
+            0.176
+          ],
+          "content": "\\# $( A \\lor \\lnot A ) \\land ( B \\lor \\lnot B ) \\land ( C \\lor \\lnot C )$ . Partial model: {A: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.189,
+            0.908,
+            0.22
+          ],
+          "content": "**(e)** [2 pts] Select the CNF sentence and partial model such that the DPLL algorithm can use the **Pure Symbol** trick to update the partial model for the next iteration."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.229,
+            0.538,
+            0.245
+          ],
+          "content": "\\# $( A \\lor \\lnot B ) \\land ( B \\lor \\lnot C ) \\land ( \\lnot A \\lor C )$ . Partial model: {}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.249,
+            0.581,
+            0.265
+          ],
+          "content": "\\# $( A \\lor \\lnot B ) \\land ( \\lnot B \\lor C ) \\land ( \\lnot A \\lor C )$ . Partial model: {C: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.269,
+            0.582,
+            0.285
+          ],
+          "content": "\\# $( A \\lor \\lnot A ) \\land ( B \\lor \\lnot B ) \\land ( C \\lor \\lnot C )$ . Partial model: {C: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.29,
+            0.706,
+            0.305
+          ],
+          "content": "\\# $( A \\lor B \\lor C \\lor D ) \\land ( \\neg A \\lor \\neg B ) \\land ( \\neg C \\lor \\neg D )$ . Partial model: {A: true, C: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.319,
+            0.909,
+            0.349
+          ],
+          "content": "**(f)** [2 pts] Select the CNF sentence and partial model such that the DPLL algorithm can use the **Unit Clause** trick to update the partial model for the next iteration."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.358,
+            0.548,
+            0.374
+          ],
+          "content": "$\\begin{array} { r } { \\bigcirc \\quad ( \\neg A \\lor \\neg B \\lor \\neg C ) \\land ( A \\lor \\neg D \\lor \\neg E ) } \\end{array}$ . Partial model: {}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.378,
+            0.576,
+            0.394
+          ],
+          "content": "\\# $( A \\lor B \\lor C \\lor D \\lor E \\lor F ) \\land ( \\neg A \\lor \\neg B )$ . Partial model: {}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.399,
+            0.679,
+            0.415
+          ],
+          "content": "0 $\\begin{array}{l}\\text {  \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\text {  } \\text {  } \\text \\text {  } \\text \\ \\end{array}$ . Partial model: {A: true}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.419,
+            0.652,
+            0.435
+          ],
+          "content": "\\# $( A \\lor \\lnot B ) \\land ( \\lnot B \\lor C \\lor D ) \\land ( \\lnot A \\lor C \\lor \\lnot D )$ . Partial model: {B: true}"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.601,
+            0.069
+          ],
+          "level": 2,
+          "content": "Q4. [10 pts] MDPs: Blinky’s Hamster"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.908,
+            0.111
+          ],
+          "content": "Blinky has a hamster that runs between 3 hamster wheels, labeled 𝑋, 𝑌 , and 𝑍. At each timestep 𝑡, the hamster is at one of the wheels. Between timestep 𝑡 and 𝑡 + 1, the hamster either stays at its current wheel or moves to one of the other two wheels."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.124,
+            0.848,
+            0.14
+          ],
+          "content": "We can model the hamster’s movement as a Markov process, where $S _ { t }$ represents the hamster’s location at timestep 𝑡."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.164,
+            0.154,
+            0.414,
+            0.306
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.539,
+            0.209,
+            0.862,
+            0.274
+          ],
+          "content": "|  | 𝑆<sub>𝑡+1</sub> = 𝑋 | 𝑆<sub>𝑡+1</sub> = 𝑌 | 𝑆<sub>𝑡+1</sub> = 𝑍 |\n| --- | --- | --- | --- |\n| 𝑆<sub>𝑡</sub> = 𝑋 | 0.25 | 0.50 | 0.25 |\n| 𝑆<sub>𝑡</sub> = 𝑌 | 0.25 | 0.25 | 0.50 |\n| 𝑆<sub>𝑡</sub> = 𝑍 | 0.50 | 0.25 | 0.25 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.337,
+            0.908,
+            0.367
+          ],
+          "content": "For the next two subparts, use the above table of transition probabilities for $T ( S _ { t + 1 } | S _ { t } )$ . Suppose we know $S _ { 2 } = X$ , i.e. the hamster is in location 𝑋 at $t = 2$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.375,
+            0.306,
+            0.391
+          ],
+          "content": "**(a)** [1 pt] Calculate $P ( S _ { 3 } = Y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.585,
+            0.375,
+            0.807,
+            0.391
+          ],
+          "content": "**(b)** [2 pts] Calculate $P ( S _ { 4 } = Y )$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.615,
+            0.395,
+            0.813,
+            0.447
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.459,
+            0.907,
+            0.505
+          ],
+          "content": "Consider the following game. At every timestep, Blinky chooses to look inside wheel 𝑋, $Y ,$ or $Z .$ Let $A _ { t }$ represent Blinky’s choice of wheel at time 𝑡. At every timestep 𝑡, if Blinky finds the hamster, Blinky gets a reward of 1 (i.e. $R _ { t } = 1 \\; { \\mathrm { i f } } \\; A _ { t } = S _ { t } )$ Otherwise, the reward is zero."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.292,
+            0.526,
+            0.691,
+            0.689
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.705,
+            0.907,
+            0.757
+          ],
+          "content": "**(c)** [1 pt] Blinky’s observation at time 𝑡 consists of $A _ { t }$ (Blinky’s choice of wheel) and $R _ { t }$ (the reward at that time step). Does this observation qualify as a state that obeys the Markov property? In other words, is it true that $( A _ { t } , R _ { t } )$ is conditionally independent of $( A _ { 0 : t - 2 } , R _ { 0 : t - 2 } )$ , given $( A _ { t - 1 } , R _ { t - 1 } ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.769,
+            0.219,
+            0.785
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.768,
+            0.614,
+            0.785
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.047,
+            0.776,
+            0.063
+          ],
+          "content": "For the rest of the question, assume Blinky does not know the hamster’s transition probabilities $T ( s _ { t + 1 } | s _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.075,
+            0.908,
+            0.106
+          ],
+          "content": "**(d)** [3 pts] Suppose Blinky chooses a wheel and receives a reward at each timestep from 1 to 𝐾, where $K \\gg 1$ , to learn about the game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.11,
+            0.908,
+            0.141
+          ],
+          "content": "After these initial 𝐾 steps, Blinky will leave the game for a long time (while the hamster continues to move between wheels). Then, far in the future, at timestep $C \\gg K$ , Blinky returns and wants to find the hamster."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.145,
+            0.803,
+            0.161
+          ],
+          "content": "Select all strategies that maximize the probability of choosing the wheel with the hamster at timestep 𝐶."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.169,
+            0.909,
+            0.202
+          ],
+          "content": "□ Treat the game as a bandit game with one arm per wheel. Play by **UCB1** for the initial 𝐾 steps, keeping track of the 𝑄-value for each wheel. Then, at time step 𝐶, look inside the wheel with the highest 𝑄-value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.205,
+            0.909,
+            0.251
+          ],
+          "content": "□ Treat the game as a bandit game with one arm per wheel. Play by **𝝐-greedy with constant 𝝐** for the initial 𝐾 steps, keeping track of the 𝑄-value for each wheel. Then, at time step 𝐶, look inside the wheel with the highest 𝑄-value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.255,
+            0.909,
+            0.287
+          ],
+          "content": "□ Select wheels randomly for the initial 𝐾 steps, keeping track of the average reward for each wheel. At time step 𝐶, look inside the wheel with the highest average reward."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.29,
+            0.909,
+            0.322
+          ],
+          "content": "□ Use the initial 𝐾 steps to estimate $T ( s _ { t + 1 } | s _ { t } )$ . Solve the steady state equations to find the most likely hamster wheel. At time step 𝐶, choose the corresponding wheel."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.326,
+            0.316,
+            0.342
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.356,
+            0.629,
+            0.372
+          ],
+          "content": "In the rest of the question, Blinky wants to estimate $T ( s _ { t + 1 } | s _ { t } )$ by playing the game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.385,
+            0.908,
+            0.43
+          ],
+          "content": "Blinky plays the game for a long time, choosing wheels uniformly at random at every time step, and records many samples in the following format: $( A _ { t } , R _ { t } , A _ { t + 1 } , R _ { t + 1 } )$ . For example, (𝑋, 0, 𝑌 , 1) represents Blinky choosing 𝑋 and receiving a reward of 0, and then choosing 𝑌 and receiving a reward of 1 at the next time step."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.443,
+            0.342,
+            0.459
+          ],
+          "content": "Blinky writes the following expression:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.259,
+            0.469,
+            0.725,
+            0.501
+          ],
+          "content": "T _ {\\text {guess}} (S _ {t + 1} = Y | S _ {t} = X) = \\frac {\\text {Count} ((X , 1 , Y , 1))}{\\text {Count} ((X , 1 , Y , 1)) + \\text {Count} ((X , 1 , Y , 0))}",
+          "image_source": "images/page_8_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.511,
+            0.459,
+            0.526
+          ],
+          "content": "where Count(⋅) denotes the number of matching samples."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.539,
+            0.909,
+            0.575
+          ],
+          "content": "**(e)** [1 pt] Will this expression approach the true value of $T ( S _ { t + 1 } = Y | S _ { t } = X )$ as the number of samples approaches infinity? (Assume all transition probabilities are greater than zero.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.588,
+            0.219,
+            0.605
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.588,
+            0.614,
+            0.605
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.626,
+            0.781,
+            0.644
+          ],
+          "content": "**(f)** [1 pt] Does the expression below always evaluate to 1? (Note: This subpart uses 𝑇 instead of $T _ { \\mathrm { g u e s s } } . )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.699,
+            0.219,
+            0.715
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.408,
+            0.657,
+            0.618,
+            0.716
+          ],
+          "content": "\\begin{array}{c} \\sum_ {i \\in \\{X, Y, Z \\}} T (S _ {t + 1} = i \\mid S _ {t} = X) \\\\ \\bigcirc \\text {No} \\end{array}",
+          "image_source": "images/page_8_equation_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.735,
+            0.781,
+            0.752
+          ],
+          "content": "**(g)** [1 pt] Does the expression below always evaluate to 1? (Note: This subpart uses $T _ { \\mathrm { g u e s s } }$ instead of 𝑇 .)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.767,
+            0.631,
+            0.8
+          ],
+          "content": "\\sum_ {i \\in \\{X, Y, Z \\}} T _ {\\text {guess}} (S _ {t + 1} = i \\mid S _ {t} = X)",
+          "image_source": "images/page_8_equation_21.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.807,
+            0.219,
+            0.823
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.807,
+            0.614,
+            0.823
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.713,
+            0.833,
+            0.989,
+            1.0
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_24.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.5,
+            0.948
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.629,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q5. [16 pts] VPI: Cost of Extra Samples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.08,
+            0.908,
+            0.111
+          ],
+          "content": "Consider the following game. There are two doors, Left and Right. One of the doors contains a prize, and you want to choose the door with the prize."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.124,
+            0.355,
+            0.14
+          ],
+          "content": "Consider the following decision network:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.157,
+            0.538,
+            0.189
+          ],
+          "content": "• 𝐷: Random variable indicating which door (Left or Right) has the prize. The prize is equally likely to be behind each door."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.197,
+            0.539,
+            0.228
+          ],
+          "content": "• 𝐴: Action indicating which door (Left or Right) the player chooses to open."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.237,
+            0.539,
+            0.283
+          ],
+          "content": "• 𝑋, 𝑌 , 𝑍: Three independent, imperfect sensors indicating which door the prize is behind. Each sensor is correct 70% of the time, and incorrect 30% of the time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.293,
+            0.538,
+            0.325
+          ],
+          "content": "• 𝑈: The player’s utility is 100 if they choose the door with the prize, and 0 if they choose the door without the prize."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.578,
+            0.15,
+            0.859,
+            0.33
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.118,
+            0.364,
+            0.278,
+            0.443
+          ],
+          "content": "| 𝐷 | 𝐴 | 𝑈 |\n| --- | --- | --- |\n| Left | Left | 100 |\n| Left | Right | 0 |\n| Right | Left | 0 |\n| Right | Right | 100 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.369,
+            0.379,
+            0.484,
+            0.429
+          ],
+          "content": "| 𝐷 | 𝑃(𝐷) |\n| --- | --- |\n| Left | 0.5 |\n| Right | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_9.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.538,
+            0.354,
+            0.729,
+            0.434
+          ],
+          "content": "| 𝑋 | 𝐷 | 𝑃(𝑋\\|𝐷) |\n| --- | --- | --- |\n| Left | Left | 0.7 |\n| Left | Right | 0.3 |\n| Right | Left | 0.3 |\n| Right | Right | 0.7 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.536,
+                0.44,
+                0.855,
+                0.455
+              ],
+              "content": "Similar tables for 𝑃 (𝑌 |𝐷) and 𝑃 (𝑍|𝐷) omitted."
+            },
+            {
+              "bbox": [
+                0.092,
+                0.465,
+                0.569,
+                0.481
+              ],
+              "content": "(a) [2 pts] From the above tables, we can derive 𝑃 (𝐷|𝑋), shown below."
+            }
+          ],
+          "image_source": "images/page_9_table_10.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.419,
+            0.494,
+            0.609,
+            0.574
+          ],
+          "content": "| 𝐷 | 𝑋 | 𝑃(𝐷\\|𝑋) |\n| --- | --- | --- |\n| Left | Left | 0.7 |\n| Left | Right | 0.3 |\n| Right | Left | 0.3 |\n| Right | Right | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.588,
+            0.292,
+            0.602
+          ],
+          "content": "Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.611,
+            0.482,
+            0.628
+          ],
+          "content": "This table can be derived using Bayes’ rule."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.631,
+            0.901,
+            0.648
+          ],
+          "content": "□ This table’s values would be different if the prize was not equally likely to be behind either of the two doors."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.651,
+            0.839,
+            0.668
+          ],
+          "content": "□ This table’s values would be different if the sensor readings were accurate 80% of the time instead."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.671,
+            0.759,
+            0.688
+          ],
+          "content": "□ This table’s values would be different if the utility for guessing correctly was different."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.692,
+            0.317,
+            0.707
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.722,
+            0.601,
+            0.737
+          ],
+          "content": "For the rest of the question, suppose that we learn that sensor 𝑋 has value Left."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.75,
+            0.836,
+            0.766
+          ],
+          "content": "**(b)** [2 pts] What is EU(Right|𝑋 = Left), the expected utility of choosing action Right, given this sensor reading?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.122,
+            0.769,
+            0.254,
+            0.822
+          ],
+          "content": "|  |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.838,
+            0.714,
+            0.855
+          ],
+          "content": "**(c)** [2 pts] What is MEU(𝑋 = Left), the maximum expected utility, given this sensor reading?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.122,
+            0.857,
+            0.254,
+            0.91
+          ],
+          "content": "|  |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_24.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.047,
+            0.682,
+            0.062
+          ],
+          "content": "From the tables in the decision network, we can derive $P ( D | X = \\operatorname { L e f t } , Y , Z )$ , shown below."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.3,
+            0.083,
+            0.686,
+            0.225
+          ],
+          "content": "|  | 𝐷 | 𝑌 | 𝑍 | 𝑃(𝐷\\|𝑋 = Left,𝑌,𝑍) |\n| --- | --- | --- | --- | --- |\n| (i) | Left | Left | Left | 0.927 |\n| (ii) | Right | Left | Left | 0.073 |\n| (iii) | Left | Left | Right | 0.7 |\n| (iv) | Right | Left | Right | 0.3 |\n| (v) | Left | Right | Left | 0.7 |\n| (vi) | Right | Right | Left | 0.3 |\n| (vii) | Left | Right | Right | 0.3 |\n| (viii) | Right | Right | Right | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.238,
+            0.909,
+            0.289
+          ],
+          "content": "**(d)** [3 pts] What is VPI(𝑌 , 𝑍|𝑋 = Left), the value of learning the other two sensor readings, rounded to the nearest integer? Hint: Our solution uses the probabilities in rows (i), (iii), (v), and (viii) in the table above, along with values from the utilities table."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.122,
+            0.29,
+            0.254,
+            0.342
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.359,
+            0.909,
+            0.39
+          ],
+          "content": "**(e)** [1 pt] The structure of 𝐷, 𝑋, 𝑌 , and 𝑍 in the decision network looks similar to a Naive Bayes structure. Which of the following best explains why?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.398,
+            0.436,
+            0.415
+          ],
+          "content": "\\# The sensor readings are independent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.419,
+            0.686,
+            0.435
+          ],
+          "content": "\\# The sensor readings are conditionally independent, given the prize location."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.439,
+            0.707,
+            0.455
+          ],
+          "content": "\\# The sensor readings are the training data, and the prize location is the test data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.459,
+            0.708,
+            0.476
+          ],
+          "content": "\\# The sensor readings are the test data, and the prize location is the training data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.488,
+            0.909,
+            0.533
+          ],
+          "content": "**(f)** [2 pts] Suppose you and your friend each play the game once. You play the game with access to one sensor reading, and your friend plays the game with access to all three sensor readings. Is it possible that you receive more utility than your friend?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.543,
+            0.796,
+            0.56
+          ],
+          "content": "\\# Yes, because VPI is an expectation and does not guarantee anything about a particular game."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.563,
+            0.683,
+            0.58
+          ],
+          "content": "\\# Yes, because the two extra sensor readings never result in additional utility."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.584,
+            0.459,
+            0.599
+          ],
+          "content": "\\# No, because VPI is always non-negative."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.603,
+            0.868,
+            0.62
+          ],
+          "content": "\\# No, because the two extra sensor readings mean that your friend has strictly more information than you."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.119,
+            0.637,
+            0.906,
+            0.691
+          ],
+          "content": "| VPI( ) |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.047,
+            0.909,
+            0.092
+          ],
+          "content": "Now, consider a different game setting: the prize is revealed to be a hamster! There are still two doors, but the hamster can move between doors on each time step. You can use the sensor to try and locate the hamster for a few time steps, before making a decision."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.105,
+            0.91,
+            0.151
+          ],
+          "content": "At time step $t = 0$ , the hamster is hiding behind one of the doors. At each time step, the hamster might move behind the other door, or stay behind the same door. At time step 𝑡 = 2, you want to guess where the hamster is, and you win a prize for guessing correctly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.165,
+            0.909,
+            0.195
+          ],
+          "content": "As before, there are three independent, imperfect sensors showing which door has the prize. If you have access to a sensor, you can read its value once per time step $( t = 0 , t = 1$ , and 𝑡 = 2)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.208,
+            0.553,
+            0.224
+          ],
+          "content": "$X _ { t }$ represents the value of the sensor 𝑋 at time 𝑡 (and similar for $Y _ { t } , Z _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.237,
+            0.756,
+            0.253
+          ],
+          "content": "**(g)** [2 pts] Which of the following decision network structures correctly models the game described?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.129,
+            0.256,
+            0.504,
+            0.376
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.264,
+                0.39,
+                0.375,
+                0.407
+              ],
+              "content": "# Network (i)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.516,
+            0.255,
+            0.894,
+            0.376
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.651,
+                0.39,
+                0.765,
+                0.407
+              ],
+              "content": "# Network (ii)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.42,
+            0.488,
+            0.543
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.259,
+                0.557,
+                0.378,
+                0.574
+              ],
+              "content": "# Network (iii)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.516,
+            0.42,
+            0.893,
+            0.542
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.648,
+                0.557,
+                0.768,
+                0.574
+              ],
+              "content": "Network (iv)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.604,
+            0.908,
+            0.635
+          ],
+          "content": "**(h)** [2 pts] Write a VPI expression for the value of having access to two additional sensors 𝑌 and 𝑍 during this game, given that you already have access to sensor 𝑋."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.041,
+            0.626,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q6. [11 pts] RL: Optimistic Q-Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.112
+          ],
+          "content": "Consider a Markov Decision Process where the reward function is bounded between −𝑅 and 𝑅, inclusive. Pacman suggests we use optimistic initialization to perform Q-learning on our MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.123,
+            0.91,
+            0.14
+          ],
+          "content": "Recall that the online Q-learning algorithm uses the following update rule: $Q ( s , a ) \\longleftarrow ( 1 { - } \\alpha ) Q ( s , a ) { + } \\alpha \\left( r + \\gamma \\cdot \\operatorname* { m a x } _ { a ^ { \\prime } } Q ( s ^ { \\prime } , a ^ { \\prime } ) \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.155,
+            0.851,
+            0.173
+          ],
+          "content": "**(a)** [2 pts] What is the highest Q-value that can possibly be achieved in the MDP? Hint: $\\textstyle \\sum _ { i = 0 } ^ { \\infty } c ^ { i } = { \\frac { 1 } { 1 - c } } , { \\mathrm { f o r } } \\left| c \\right| < 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.247,
+            0.812,
+            0.301
+          ],
+          "content": "**(b)** [1 pt] Sometimes MDPs can be sparse, which means that nonzero rewards are given very rarely. For this subpart only, suppose that reward in our MDP is given only when transitioning to terminal states. What is the highest Q-value that can possibly be achieved in this MDP?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.373,
+            0.872,
+            0.39
+          ],
+          "content": "**(c)** [2 pts] Select all true statements about comparing online Q-Learning with different forms of Q-value initialization."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.396,
+            0.908,
+            0.428
+          ],
+          "content": "□ Optimistic initialization could be implemented by setting 𝑄(𝑠, 𝑎) to the maximum possible Q-value in the MDP for every state-action pair (𝑠, 𝑎)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.429,
+            0.909,
+            0.461
+          ],
+          "content": "□ Q-learning with optimistic initialization is guaranteed to converge to the optimal policy with a finite number of samples."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.463,
+            0.901,
+            0.48
+          ],
+          "content": "□ Q-values are more likely to be updated downward with optimistic initialization, than with zero initialization."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.482,
+            0.863,
+            0.5
+          ],
+          "content": "□ Zero initialization is likely to perform better than optimistic initialization when the rewards are sparse."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.502,
+            0.317,
+            0.517
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.527,
+            0.909,
+            0.573
+          ],
+          "content": "**(d)** [2 pts] Suppose we use online Q-learning with optimistic initialization and generate samples in an MDP with a purely greedy policy (i.e. the agent always selects actions with the highest Q-values and breaks ties randomly). You can assume an initial learning rate 𝛼 < 1 that decays exponentially over time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.577,
+            0.875,
+            0.593
+          ],
+          "content": "Is the agent guaranteed to find to the optimal policy for the MDP after it has seen an infinite number of transitions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.6,
+            0.852,
+            0.616
+          ],
+          "content": "\\# Yes, because when the policy selects suboptimal actions, their Q-values will eventually be decreased."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.619,
+            0.717,
+            0.635
+          ],
+          "content": "\\# Yes, because the policy by definition selects the action with the highest Q-value."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.638,
+            0.845,
+            0.654
+          ],
+          "content": "\\# No, because rare transitions may cause the agent to underestimate the Q-value of the optimal action."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.656,
+            0.618,
+            0.673
+          ],
+          "content": "\\# No, because new samples will always cause the policy to change."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.682,
+            0.479,
+            0.697
+          ],
+          "content": "**(e)** [2 pts] Which of the following are forms of optimism?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.701,
+            0.849,
+            0.72
+          ],
+          "content": "□ Admissible heuristics □ UCB1 # None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.72,
+            0.567,
+            0.738
+          ],
+          "content": "□ Alpha-beta pruning □ Gibbs sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.749,
+            0.907,
+            0.779
+          ],
+          "content": "**(f)** [2 pts] This subpart is about exploration and exploitation. Suppose we have taken some actions and collected a finite number of samples in an arbitrary MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.783,
+            0.908,
+            0.815
+          ],
+          "content": "In which of the following scenarios is it possible for an agent following a purely greedy policy to ignore explored stateaction pairs (𝑠, 𝑎)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.82,
+            0.654,
+            0.839
+          ],
+          "content": "□ When Q-values are initialized to zero and rewards are always positive."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.84,
+            0.657,
+            0.857
+          ],
+          "content": "□ When Q-values are initialized to zero and rewards are always negative."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.859,
+            0.698,
+            0.875
+          ],
+          "content": "□ When Q-values are initialized optimistically and rewards are always positive."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.878,
+            0.701,
+            0.895
+          ],
+          "content": "□ When Q-values are initialized optimistically and rewards are always negative."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.897,
+            0.316,
+            0.912
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.484,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q7. [17 pts] ML: Spam Filter"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.08,
+            0.866,
+            0.097
+          ],
+          "content": "Pacman has hired you to work on his PacMail email service. You have been given the task of designing a spam detector."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.109,
+            0.862,
+            0.125
+          ],
+          "content": "You are given a dataset of emails 𝑋, each with labels 𝑌 of “spam” or “ham.” Here are some examples from the dataset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.137,
+            0.878,
+            0.153
+          ],
+          "content": "Spam Email Ex. 1: “WINNER!! As a valued network customer you have been selected to receive a \\$900 prize reward!!!”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.166,
+            0.908,
+            0.183
+          ],
+          "content": "Spam Email Ex. 2: “We are trying to contact you. Last weekend’s draw shows that you won a £1000 prize GUARANTEED!!!”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.195,
+            0.679,
+            0.211
+          ],
+          "content": "Ham Email Ex. 1: “Hey! Did you want to grab coffee before the team meeting on Friday?”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.224,
+            0.909,
+            0.255
+          ],
+          "content": "Ham Email Ex. 2: “Thank you for attending the talk this morning. I’ve attached the presentation for you to share with your team. Please let me know if you have any questions.”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.267,
+            0.702,
+            0.283
+          ],
+          "content": "Your job is to classify the emails in a second dataset, the test dataset, which do not have labels."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.297,
+            0.908,
+            0.327
+          ],
+          "content": "**(a)** [3 pts] Considering only the examples given, which of the following features, in isolation, would be sufficient to classify the examples correctly using a linear classifier?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.335,
+            0.422,
+            0.352
+          ],
+          "content": "The number of words in the email."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.356,
+            0.651,
+            0.372
+          ],
+          "content": "□ The number of times the exclamation point (“!”) appears in the email."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.376,
+            0.524,
+            0.393
+          ],
+          "content": "□ The number of times “prize” appears in the email."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.396,
+            0.471,
+            0.413
+          ],
+          "content": "□ The number of capital letters in the email."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.416,
+            0.317,
+            0.432
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.445,
+            0.641,
+            0.461
+          ],
+          "content": "**(b)** [2 pts] Select all true statements about using naive Bayes to solve this problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.47,
+            0.812,
+            0.487
+          ],
+          "content": "□ We assume that each feature is conditionally independent of the other features, given the label."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.49,
+            0.908,
+            0.522
+          ],
+          "content": "□ Given that the prior (class) probabilities are the same, the probability of classifying an email as “spam”, given the contents of the email, is proportional to the probability of the contents, given that the email is labeled “spam”."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.526,
+            0.688,
+            0.543
+          ],
+          "content": "□ Including more features in the model will always increase the test accuracy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.546,
+            0.806,
+            0.563
+          ],
+          "content": "□ Naive Bayes uses the maximum likelihood estimate to compute probabilities in the Bayes net."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.566,
+            0.316,
+            0.582
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.595,
+            0.908,
+            0.626
+          ],
+          "content": "**(c)** [3 pts] You want to determine whether naive Bayes or logistic regression is better for your problem. Select all true statements about these two methods."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.635,
+            0.861,
+            0.652
+          ],
+          "content": "□ Logistic regression requires fewer learnable parameters than naive Bayes, assuming the same features."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.655,
+            0.725,
+            0.672
+          ],
+          "content": "□ Both logistic regression and naive Bayes use the same independence assumption."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.675,
+            0.732,
+            0.691
+          ],
+          "content": "□ Both logistic regression and naive Bayes can be used for multi-class classification."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.695,
+            0.908,
+            0.726
+          ],
+          "content": "□ Logistic regression models the conditional class distribution 𝑃 (𝑌 |𝑊 ) directly, whereas naive Bayes models the joint distribution 𝑃 (𝑌 , 𝑊 )."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.73,
+            0.317,
+            0.746
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.047,
+            0.856,
+            0.063
+          ],
+          "content": "You decide to use binary bag-of-words (see definition below) to extract a feature vector from each email in the dataset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.075,
+            0.908,
+            0.106
+          ],
+          "content": "**Binary bag-of-words**: given a vocabulary of 𝑁 words, bag-of-words represents a string as an 𝑁–element vector, where the value at index 𝑖 is 1 if word 𝑖 appears in the string, and 0 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.119,
+            0.909,
+            0.165
+          ],
+          "content": "The next 3 subparts (d)-(f) are connected. After training a naive Bayes model with **binary bag-of-words** features, you compute the following probability tables for $P ( W = w _ { i } | Y = y )$ , where $w _ { i }$ is the 𝑖th word in your vocabulary. Assume that there are no other words in your model’s vocabulary."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.266,
+            0.167,
+            0.717,
+            0.217
+          ],
+          "content": "|  | \"hey\" | \"valued\" | \"team\" | \"share\" |\n| --- | --- | --- | --- | --- |\n| Spam | 0.25 | 0.6 | 0.3 | 0.8 |\n| Ham | 0.4 | 0.1 | 0.5 | 0.3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.232,
+            0.426,
+            0.247
+          ],
+          "content": "Now you are tasked with classifying this new email:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.245,
+            0.255,
+            0.742,
+            0.27
+          ],
+          "content": "“Hey, what time is our team meeting? Can’t wait to share with the team!!!”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.283,
+            0.908,
+            0.314
+          ],
+          "content": "**(d)** [1 pt] Fill in the following table with integers corresponding to the bag-of-words vector w for the new email. Ignore punctuation and capitalization."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.242,
+            0.315,
+            0.741,
+            0.364
+          ],
+          "content": "|  | \"hey\" | \"valued\" | \"team\" | \"share\" |\n| --- | --- | --- | --- | --- |\n| w |  |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.379,
+            0.909,
+            0.425
+          ],
+          "content": "**(e)** [3 pts] Compute the probability distribution 𝑃 (𝑌 , 𝑊 = w) for this email. You may assume the prior probabilities of each class are equal, i.e. $P(Y =  span ) = P(Y =  hand ) = 0.5$ . You may ignore words in the sentence that are not present in our model’s vocabulary. Write your answer as a single decimal value, rounded to 3 decimal places."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.496,
+            0.909,
+            0.551
+          ],
+          "content": "**(f)** [2 pts] To get the conditional class distribution from the joint probabilities in part (e), we normalize 𝑃 (𝑌 , 𝑊 = w) by dividing it by some 𝑍, such that $P ( Y | W = \\mathbf { w } ) = \\frac { 1 } { Z } P ( Y , W = \\mathbf { w } )$ . Write an expression for 𝑍 using any of the following terms: 𝑃 (𝑌 = ham, 𝑊 = w), 𝑃 (𝑌 = spam, 𝑊 = w), 𝑃 (𝑌 = ham), 𝑃 (𝑌 = spam), and the integer 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.622,
+            0.658,
+            0.639
+          ],
+          "content": "After training the binary bag-of-words model, you find that the test accuracy is still low."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.651,
+            0.909,
+            0.681
+          ],
+          "content": "**(g)** [1 pt] Instead of treating each word as a feature, you decide to use 𝑛-grams of words instead. You then split your labeled dataset into a large training set and a small validation set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.685,
+            0.778,
+            0.702
+          ],
+          "content": "Which of the following is the best way of identifying the optimal value of 𝑛 for your 𝑛-gram model?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.71,
+            0.908,
+            0.726
+          ],
+          "content": "\\# Train the model on the training data using different values of 𝑛; select the 𝑛 with the highest validation accuracy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.729,
+            0.908,
+            0.745
+          ],
+          "content": "\\# Train the model on the training data using different values of 𝑛; select the 𝑛 with the highest training accuracy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.748,
+            0.802,
+            0.764
+          ],
+          "content": "\\# Select the 𝑛 that maximizes the number of sequences of 𝑛 repeated words in the training data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.767,
+            0.652,
+            0.783
+          ],
+          "content": "\\# Select 𝑛 to be the average number of characters per word divided by 2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.797,
+            0.71,
+            0.813
+          ],
+          "content": "**(h)** [2 pts] You apply Laplace smoothing on the bag-of-words data. Select all true statements."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.819,
+            0.614,
+            0.837
+          ],
+          "content": "□ Laplace smoothing for bag-of-words always leads to overfitting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.839,
+            0.798,
+            0.855
+          ],
+          "content": "□ Laplace smoothing is applied by subtracting a constant positive value from each word count."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.858,
+            0.581,
+            0.875
+          ],
+          "content": "□ Laplace smoothing eliminates the need for a validation set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.877,
+            0.664,
+            0.895
+          ],
+          "content": "□ Laplace smoothing is only useful for large-vocabulary training datasets."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.897,
+            0.316,
+            0.912
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "15"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2024-05-09T00:46:35Z",
+      "modified_at": "2024-05-09T00:46:35Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.25",
+      "page_count": 15,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
