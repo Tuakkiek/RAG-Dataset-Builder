@@ -1,0 +1,4595 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2018-05-27T15:01:36-07:00",
+      "modified_at": "2018-05-27T15:01:36-07:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.16",
+      "page_count": 18,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.081,
+            0.062,
+            0.23,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "CS 188 Spring 2013"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 1,
+          "bbox": [
+            0.261,
+            0.063,
+            0.523,
+            0.115
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Introduction to Artificial Intelligence"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "index": 2,
+          "bbox": [
+            0.803,
+            0.075,
+            0.896,
+            0.113
+          ],
+          "content": []
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.103,
+            0.152,
+            0.475,
+            0.168
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " You have approximately 2 hours and 50 minutes."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.103,
+            0.177,
+            0.618,
+            0.193
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " The exam is closed book, closed notes except a three-page crib sheet."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.104,
+            0.202,
+            0.458,
+            0.219
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " Please use non-programmable calculators only."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.104,
+            0.226,
+            0.908,
+            0.26
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": " Mark your answers ON THE EXAM ITSELF. If you are not sure of your answer you may wish to provide a brief explanation. All short answer sections can be successfully answered in a few sentences AT MOST."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 7,
+          "bbox": [
+            0.114,
+            0.294,
+            0.873,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 7,
+              "bbox": [
+                0.114,
+                0.294,
+                0.873,
+                0.531
+              ],
+              "image_path": "images/page_0_table_7.jpg",
+              "content": "<table><tr><td>First name</td><td></td></tr><tr><td>Last name</td><td></td></tr><tr><td>SID</td><td></td></tr><tr><td>EdX username</td><td></td></tr><tr><td>First and last name of student to your left</td><td></td></tr><tr><td>First and last name of student to your right</td><td></td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 9,
+          "bbox": [
+            0.244,
+            0.73,
+            0.743,
+            0.896
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 8,
+              "bbox": [
+                0.418,
+                0.718,
+                0.569,
+                0.732
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "For staff use only:"
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 9,
+              "bbox": [
+                0.244,
+                0.73,
+                0.743,
+                0.896
+              ],
+              "image_path": "images/page_0_table_9.jpg",
+              "content": "<table><tbody><tr><td>Q1. Bounded suboptimal search: weighted A*</td><td>/19</td></tr><tr><td>Q2. Generalizing Reinforcement Learning</td><td>/6</td></tr><tr><td>Q3. Extending the Forward Algorithm</td><td>/18</td></tr><tr><td>Q4. Dual Perceptron CSPs</td><td>/11</td></tr><tr><td>Q5. Generalization</td><td>/18</td></tr><tr><td>Q6. Fun with Probability</td><td>/17</td></tr><tr><td>Q7. Games</td><td>/5</td></tr><tr><td>Q8. Pruning</td><td>/6</td></tr><tr><td>Total</td><td>/100</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.488,
+            0.936,
+            0.499,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.306,
+            0.046,
+            0.681,
+            0.061
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.043,
+            0.815,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q1. [19 pts] Bounded suboptimal search: weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.085,
+            0.908,
+            0.131
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this class you met "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " , an algorithm for informed search guaranteed to return an optimal solution when given an admissible heuristic. Often in practical applications it is too expensive to find an optimal solution, so instead we search for good suboptimal solutions."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.077,
+            0.142,
+            0.908,
+            0.174
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " is a variant of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " commonly used for suboptimal search. Weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " is exactly the same as "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " but where the f-value is computed differently:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 3,
+          "bbox": [
+            0.416,
+            0.174,
+            0.57,
+            0.19
+          ],
+          "image_path": "images/page_2_equation_3.jpg",
+          "content": "f (n) = g (n) + \\varepsilon h (n)"
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.196,
+            0.908,
+            0.227
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "where "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon \\geq 1"
+            },
+            {
+              "type": "text",
+              "content": " is a parameter given to the algorithm. In general, the larger the value of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon ,"
+            },
+            {
+              "type": "text",
+              "content": " the faster the search is, and the higher cost of the goal found."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.076,
+            0.239,
+            0.909,
+            0.302
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pseudocode for weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " tree search is given below. NOTE: The only differences from the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " tree search pseudocode presented in the lectures are: (1) fringe is assumed to be initialized with the start node before this function is called (this will be important later), and (2) now Insert takes ε as a parameter so it can compute the correct f-value of the node."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.086,
+            0.318,
+            0.553,
+            0.335
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "1: function Weighted-A*-Tree-Search(problem, fringe, ε)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.086,
+            0.334,
+            0.199,
+            0.349
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "2: loop do"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.086,
+            0.35,
+            0.446,
+            0.365
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3: if fringe is empty then return failure"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.365,
+            0.404,
+            0.379
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4: node ← Remove-Front(fringe)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.086,
+            0.379,
+            0.575,
+            0.395
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5: if Goal-Test(problem, State[node]) then return node"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.086,
+            0.395,
+            0.398,
+            0.409
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6: for child-node in child-nodes do"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.086,
+            0.41,
+            0.481,
+            0.425
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7: fringe ← Insert(child-node, fringe, ε)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.087,
+            0.441,
+            0.653,
+            0.458
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [2 pts] We’ll first examine how weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " works on the following graph:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 14,
+          "bbox": [
+            0.311,
+            0.477,
+            0.717,
+            0.694
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 14,
+              "bbox": [
+                0.311,
+                0.477,
+                0.717,
+                0.694
+              ],
+              "image_path": "images/page_2_image_14.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.118,
+            0.716,
+            0.907,
+            0.748
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Execute weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " on the above graph with "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 2"
+            },
+            {
+              "type": "text",
+              "content": " , completing the following table. To save time, you can optionally just write the nodes added to the fringe, with their g and f values."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "3"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 17,
+          "bbox": [
+            0.122,
+            0.76,
+            0.789,
+            0.9
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 17,
+              "bbox": [
+                0.122,
+                0.76,
+                0.789,
+                0.9
+              ],
+              "image_path": "images/page_2_table_17.jpg",
+              "content": "<table><tbody><tr><td>node</td><td>Goal?</td><td>fringe</td></tr><tr><td>-</td><td>-</td><td>{S : g = 0,f = 16}</td></tr><tr><td>S</td><td>No</td><td>{S → A : g = 5,f = 7; S → B : g = 6,f = 20}</td></tr></tbody></table>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.086,
+            0.046,
+            0.908,
+            0.092
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [5 pts] After running weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " with weight "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon \\geq 1"
+            },
+            {
+              "type": "text",
+              "content": " a goal node "
+            },
+            {
+              "type": "equation_inline",
+              "content": "G"
+            },
+            {
+              "type": "text",
+              "content": " is found, of cost "
+            },
+            {
+              "type": "equation_inline",
+              "content": "g ( G )"
+            },
+            {
+              "type": "text",
+              "content": " . Let "
+            },
+            {
+              "type": "equation_inline",
+              "content": "C ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " be the optimal solution cost, and suppose the heuristic is admissible. Select the strongest bound below that holds, and provide a proof."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 1,
+          "bbox": [
+            0.122,
+            0.105,
+            0.899,
+            0.124
+          ],
+          "image_path": "images/page_3_equation_1.jpg",
+          "content": "\\bigcirc g (G) \\leq \\varepsilon C ^ {*} \\quad \\bigcirc g (G) \\leq C ^ {*} + \\varepsilon \\quad \\bigcirc g (G) \\leq C ^ {*} + 2 \\varepsilon \\quad \\bigcirc g (G) \\leq 2 ^ {\\varepsilon} C ^ {*} \\quad \\bigcirc g (G) \\leq \\varepsilon^ {2} C ^ {*}"
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.119,
+            0.137,
+            0.498,
+            0.153
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Proof: (Partial credit for reasonable proof sketches.)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.088,
+            0.411,
+            0.908,
+            0.443
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) Weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " includes a number of other algorithms as special cases. For each of the following, name the corresponding algorithm."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.128,
+            0.447,
+            0.25,
+            0.464
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) "
+            },
+            {
+              "type": "equation_inline",
+              "content": "[ 1 ~ \\mathrm { p t } ] \\quad \\varepsilon = 1 ."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.166,
+            0.467,
+            0.25,
+            0.484
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithm:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.124,
+            0.516,
+            0.249,
+            0.533
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [1 pt] ε = 0."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.166,
+            0.537,
+            0.249,
+            0.553
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithm:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.167,
+            0.606,
+            0.25,
+            0.622
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithm:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.12,
+            0.585,
+            0.524,
+            0.602
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [1 "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { p t ] } \\varepsilon \\to \\infty \\mathrm { ( i . e . , }"
+            },
+            {
+              "type": "text",
+              "content": " , as ε becomes arbitrarily large)."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.086,
+            0.046,
+            0.338,
+            0.063
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d) Here is the same graph again:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.311,
+            0.082,
+            0.718,
+            0.299
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.311,
+                0.082,
+                0.718,
+                0.299
+              ],
+              "image_path": "images/page_4_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 3,
+          "bbox": [
+            0.156,
+            0.342,
+            0.826,
+            0.577
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 2,
+              "bbox": [
+                0.128,
+                0.315,
+                0.906,
+                0.333
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "(i) [3 pts] Execute weighted "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\mathrm { A } ^ { * }"
+                },
+                {
+                  "type": "text",
+                  "content": " on the above graph with "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\varepsilon = 1 ,"
+                },
+                {
+                  "type": "text",
+                  "content": " completing the following table as in part (a):"
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 3,
+              "bbox": [
+                0.156,
+                0.342,
+                0.826,
+                0.577
+              ],
+              "image_path": "images/page_4_table_3.jpg",
+              "content": "<table><tbody><tr><td>node</td><td>Goal?</td><td>fringe</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.123,
+            0.596,
+            0.909,
+            0.659
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [4 pts] You’ll notice that weighted "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\mathrm { A } ^ { * }"
+            },
+            {
+              "type": "text",
+              "content": " with "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 1"
+            },
+            {
+              "type": "text",
+              "content": " repeats computations performed when run with "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 2 ."
+            },
+            {
+              "type": "text",
+              "content": " . Is there a way to reuse the computations from the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 2"
+            },
+            {
+              "type": "text",
+              "content": " search by starting the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 1"
+            },
+            {
+              "type": "text",
+              "content": " search with a different fringe? Let F denote the set that consists of both (i) all nodes the fringe the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\varepsilon = 2"
+            },
+            {
+              "type": "text",
+              "content": " search ended with, and (ii) the goal node G it selected. Give a brief justification for your answer."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.154,
+            0.67,
+            0.389,
+            0.686
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use F as new starting fringe"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.154,
+            0.685,
+            0.544,
+            0.701
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use F with goal G removed as new starting fringe"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.154,
+            0.701,
+            0.734,
+            0.716
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use F as new starting fringe, updating the f-values to account for the new ε"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.154,
+            0.715,
+            0.888,
+            0.731
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Use F with goal G removed as new starting fringe, updating the f-values to account for the new ε"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.155,
+            0.731,
+            0.688,
+            0.746
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Initialize the new starting fringe to all nodes visited in previous search"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.154,
+            0.746,
+            0.906,
+            0.775
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Initialize the new starting fringe to all nodes visited in previous search, updating the f-values to account for the new ε"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.154,
+            0.776,
+            0.766,
+            0.792
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "It is not possible to reuse computations, initialize the new starting fringe as usual"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.156,
+            0.809,
+            0.253,
+            0.823
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Justification:"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 13,
+          "bbox": [
+            0.488,
+            0.937,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.119,
+            0.047,
+            0.338,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Here is the same graph again:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.311,
+            0.081,
+            0.718,
+            0.299
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.311,
+                0.081,
+                0.718,
+                0.299
+              ],
+              "image_path": "images/page_5_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 3,
+          "bbox": [
+            0.158,
+            0.356,
+            0.825,
+            0.589
+          ],
+          "content": [
+            {
+              "type": "table_caption",
+              "index": 2,
+              "bbox": [
+                0.12,
+                0.315,
+                0.908,
+                0.346
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "(iii) [2 pts] Now re-run the \u000f = 1 search for the above graph using the fringe you selected in the previous question."
+                }
+              ]
+            },
+            {
+              "type": "table_body",
+              "index": 3,
+              "bbox": [
+                0.158,
+                0.356,
+                0.825,
+                0.589
+              ],
+              "image_path": "images/page_5_table_3.jpg",
+              "content": "<table><tbody><tr><td>node</td><td>Goal?</td><td>fringe</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.741,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q2. [6 pts] Generalizing Reinforcement Learning"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.084,
+            0.909,
+            0.146
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Assume we have an MDP with state space S, action space A, reward function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "R ( s , a , s ^ { \\prime } )"
+            },
+            {
+              "type": "text",
+              "content": " , and discount γ. Our eventual goal is to learn a policy that can be used by a robot in the real world. However, we only have access to simulation software, not the robot directly. We know that the simulation software is built using the transition model "
+            },
+            {
+              "type": "equation_inline",
+              "content": "T _ { \\mathrm { s i m } } ( s , a , s ^ { \\prime } )"
+            },
+            {
+              "type": "text",
+              "content": " which is unfortunately different than the transition model that governs our real robot, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "T _ { \\mathrm { r e a l } } ( s , a , s ^ { \\prime } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.077,
+            0.158,
+            0.908,
+            0.189
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Without changing the simulation software, we want to use the samples drawn from the simulator to learn Q-values for our real robot."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.077,
+            0.202,
+            0.767,
+            0.218
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recall the Q-learning update rule. Given a sample "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( s , a , s ^ { \\prime } , r )"
+            },
+            {
+              "type": "text",
+              "content": " , it performs the following update:"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.311,
+            0.23,
+            0.672,
+            0.255
+          ],
+          "image_path": "images/page_6_equation_4.jpg",
+          "content": "Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.087,
+            0.266,
+            0.909,
+            0.313
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [4 pts] Assuming the samples are drawn from the simulator, which new update rule will learn the correct Q-value functions for the real world robot? Circle the correct update rule and provide an explanation for your choice in the box below."
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 6,
+          "bbox": [
+            0.127,
+            0.322,
+            0.614,
+            0.34
+          ],
+          "image_path": "images/page_6_equation_6.jpg",
+          "content": "\\bigcirc \\quad Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha T _ {\\mathrm{sim}} (s, a, s ^ {\\prime}) \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.127,
+            0.36,
+            0.614,
+            0.377
+          ],
+          "image_path": "images/page_6_equation_7.jpg",
+          "content": "\\bigcirc \\quad Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha T _ {\\text {real}} (s, a, s ^ {\\prime}) \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "equation",
+          "index": 8,
+          "bbox": [
+            0.127,
+            0.396,
+            0.598,
+            0.417
+          ],
+          "image_path": "images/page_6_equation_8.jpg",
+          "content": "\\bigcirc \\quad Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\frac {1}{T _ {\\mathrm{sim}} (s , a , s ^ {\\prime})} \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "equation",
+          "index": 9,
+          "bbox": [
+            0.127,
+            0.435,
+            0.599,
+            0.457
+          ],
+          "image_path": "images/page_6_equation_9.jpg",
+          "content": "\\bigcirc \\quad Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\frac {1}{T _ {\\mathrm{real}} (s , a , s ^ {\\prime})} \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "equation",
+          "index": 10,
+          "bbox": [
+            0.127,
+            0.476,
+            0.599,
+            0.5
+          ],
+          "image_path": "images/page_6_equation_10.jpg",
+          "content": "\\bigcirc Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\frac {T _ {\\mathrm{real}} (s , a , s ^ {\\prime})}{T _ {\\mathrm{sim}} (s , a , s ^ {\\prime})} \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "equation",
+          "index": 11,
+          "bbox": [
+            0.128,
+            0.518,
+            0.6,
+            0.541
+          ],
+          "image_path": "images/page_6_equation_11.jpg",
+          "content": "\\bigcirc Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\frac {T _ {\\mathrm{sim}} (s , a , s ^ {\\prime})}{T _ {\\mathrm{real}} (s , a , s ^ {\\prime})} \\left[ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\right]"
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.119,
+            0.55,
+            0.218,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Justification:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.086,
+            0.714,
+            0.908,
+            0.762
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [2 pts] Now consider the case where we have n real robots with transition models "
+            },
+            {
+              "type": "equation_inline",
+              "content": "T _ { \\mathrm { r e a l } } ^ { 1 } ( s , a , s ^ { \\prime } ) , \\ldots , T _ { \\mathrm { r e a l } } ^ { n } ( s , a , s ^ { \\prime } )"
+            },
+            {
+              "type": "text",
+              "content": " and still only one simulator. Is there a way to learn policies for all n robots simultaneously by using the same samples from the simulator? If yes, explain how. If no, explain why not. (1-2 sentences)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.119,
+            0.775,
+            0.261,
+            0.792
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Yes No"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.119,
+            0.805,
+            0.218,
+            0.82
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Justification:"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.714,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q3. [18 pts] Extending the Forward Algorithm"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.083,
+            0.439,
+            0.099
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the HMM graph structure shown below."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "bbox": [
+            0.381,
+            0.119,
+            0.606,
+            0.222
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 2,
+              "bbox": [
+                0.381,
+                0.119,
+                0.606,
+                0.222
+              ],
+              "image_path": "images/page_7_image_2.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.077,
+            0.247,
+            0.907,
+            0.278
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recall the Forward algorithm is a two step iterative algorithm used to approximate the probability distribution "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ( X _ { t } | e _ { 1 } , \\ldots , e _ { t } )"
+            },
+            {
+              "type": "text",
+              "content": " . The two steps of the algorithm are as follows:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.3,
+            0.618,
+            0.318
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Elapse Time "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle P ( X _ { t } | e _ { 1 } , \\ldots , e _ { t - 1 } ) = \\sum _ { x _ { t - 1 } } P ( X _ { t } | x _ { t - 1 } ) P ( x _ { t - 1 } | e _ { 1 } , \\ldots , e _ { t - 1 } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.078,
+            0.328,
+            0.468,
+            0.352
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Observe "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { l } { P ( X _ { t } | e _ { 1 } , \\ldots , e _ { t } ) = \\frac { P ( e _ { t } | X _ { t } ) P ( X _ { t } | e _ { 1 } , \\ldots , e _ { t - 1 } ) } { \\sum _ { x _ { t } } P ( e _ { t } | x _ { t } ) P ( x _ { t } | e _ { 1 } , \\ldots , e _ { t - 1 } ) } } \\\\ \\end{array}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.076,
+            0.373,
+            0.908,
+            0.42
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For this problem we will consider modifying the forward algorithm as the HMM graph structure changes. Our goal will continue to be to create an iterative algorithm which is able to compute the distribution of states, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "X _ { t } ,"
+            },
+            {
+              "type": "text",
+              "content": " given all available evidence from time 0 to time t."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.076,
+            0.434,
+            0.909,
+            0.466
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note: If the probabilities required can be computed without any change to original update equations, mark the no change bubble. Otherwise write the new update equation inside the box."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.078,
+            0.478,
+            0.819,
+            0.494
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the graph below where new observed variables, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Z _ { i } ,"
+            },
+            {
+              "type": "text",
+              "content": " are introduced and influence the evidence."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.358,
+            0.513,
+            0.629,
+            0.615
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.358,
+                0.513,
+                0.629,
+                0.615
+              ],
+              "image_path": "images/page_7_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.087,
+            0.63,
+            0.459,
+            0.647
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [3 pts] State the modified Elapse Time update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.808,
+            0.63,
+            0.908,
+            0.647
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 12,
+          "bbox": [
+            0.13,
+            0.684,
+            0.372,
+            0.701
+          ],
+          "image_path": "images/page_7_equation_12.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t - 1}, z _ {1}, \\dots , z _ {t - 1}) ="
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.086,
+            0.769,
+            0.428,
+            0.786
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [3 pts] State the modified Observe update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.807,
+            0.769,
+            0.908,
+            0.786
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 15,
+          "bbox": [
+            0.131,
+            0.821,
+            0.339,
+            0.84
+          ],
+          "image_path": "images/page_7_equation_15.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t}, z _ {1}, \\dots , z _ {t}) ="
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.046,
+            0.588,
+            0.062
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Next, consider the graph below where the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "Z _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " variables are unobserved."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.358,
+            0.078,
+            0.63,
+            0.18
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.358,
+                0.078,
+                0.63,
+                0.18
+              ],
+              "image_path": "images/page_8_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.088,
+            0.195,
+            0.459,
+            0.213
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) [3 pts] State the modified Elapse Time update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.801,
+            0.195,
+            0.908,
+            0.212
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.13,
+            0.247,
+            0.284,
+            0.265
+          ],
+          "image_path": "images/page_8_equation_4.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t - 1}) ="
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.086,
+            0.332,
+            0.428,
+            0.35
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(d) [3 pts] State the modified Observe update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.807,
+            0.333,
+            0.908,
+            0.35
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 7,
+          "bbox": [
+            0.131,
+            0.385,
+            0.267,
+            0.402
+          ],
+          "image_path": "images/page_8_equation_7.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t}) ="
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.078,
+            0.47,
+            0.906,
+            0.486
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Finally, consider a graph where the newly introduced variables are unobserved and influenced by the evidence nodes."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 9,
+          "bbox": [
+            0.38,
+            0.501,
+            0.607,
+            0.64
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 9,
+              "bbox": [
+                0.38,
+                0.501,
+                0.607,
+                0.64
+              ],
+              "image_path": "images/page_8_image_9.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.088,
+            0.655,
+            0.459,
+            0.672
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(e) [3 pts] State the modified Elapse Time update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.802,
+            0.655,
+            0.908,
+            0.672
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 12,
+          "bbox": [
+            0.131,
+            0.702,
+            0.283,
+            0.721
+          ],
+          "image_path": "images/page_8_equation_12.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t - 1}) ="
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.089,
+            0.788,
+            0.427,
+            0.805
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(f) [3 pts] State the modified Observe update."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.802,
+            0.788,
+            0.908,
+            0.805
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "No Change"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 15,
+          "bbox": [
+            0.131,
+            0.84,
+            0.266,
+            0.858
+          ],
+          "image_path": "images/page_8_equation_15.jpg",
+          "content": "P (X _ {t} | e _ {1}, \\dots , e _ {t}) ="
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.043,
+            0.559,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q4. [11 pts] Dual Perceptron CSPs"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.084,
+            0.908,
+            0.131
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this question, we formulate the dual perceptron algorithm as a constraint satisfaction problem (CSP). We have a binary classification problem with classes +1 and −1 and a set of n training points, "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { 1 } , x _ { 2 } , . . . , x _ { n }"
+            },
+            {
+              "type": "text",
+              "content": " with labels "
+            },
+            {
+              "type": "equation_inline",
+              "content": "y _ { i } \\in \\{ - 1 , + 1 \\}"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.143,
+            0.908,
+            0.191
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recall that the dual perceptron algorithm takes as input a kernel function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ( x _ { i } , x _ { j } )"
+            },
+            {
+              "type": "text",
+              "content": " defined on all pairs of training points "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { j }"
+            },
+            {
+              "type": "text",
+              "content": " , estimates an "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " for each training point "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i } ,"
+            },
+            {
+              "type": "text",
+              "content": " and predicts the class of a point z using "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { \\alpha } ( z )   ="
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\textstyle \\sum _ { i = 1 } ^ { n } \\alpha _ { i } K ( x _ { i } , z )"
+            },
+            {
+              "type": "text",
+              "content": " , classifying z as positive (+1) if "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { \\alpha } ( a ) \\geq 0 ,"
+            },
+            {
+              "type": "text",
+              "content": " , and negative (−1) otherwise."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.076,
+            0.202,
+            0.908,
+            0.249
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Let the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " variables of the dual perceptron be the variables in a CSP, with domains restricted to "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\{ - 1 , 0 , 1 \\}"
+            },
+            {
+              "type": "text",
+              "content": " . Each training point "
+            },
+            {
+              "type": "equation_inline",
+              "content": "x _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " induces a constraint "
+            },
+            {
+              "type": "equation_inline",
+              "content": "c _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " requiring that it is correctly classified with a margin of at least 1; i.e., "
+            },
+            {
+              "type": "equation_inline",
+              "content": "y _ { i } h _ { \\alpha } ( x _ { i } ) \\geq 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.077,
+            0.26,
+            0.908,
+            0.307
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "For this problem, we work with a predefined kernel function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ( x _ { i } , x _ { j } )"
+            },
+            {
+              "type": "text",
+              "content": " . The value of the kernel function (left) for the training points and their labels (right) are given in the tables below. In the kernel table, the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "j ^ { \\mathrm { t h } }"
+            },
+            {
+              "type": "text",
+              "content": " entry in the "
+            },
+            {
+              "type": "equation_inline",
+              "content": "i ^ { \\mathrm { t h } }"
+            },
+            {
+              "type": "text",
+              "content": " row is the value of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ( x _ { i } , x _ { j } )"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.188,
+            0.32,
+            0.372,
+            0.398
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.188,
+                0.32,
+                0.372,
+                0.398
+              ],
+              "image_path": "images/page_9_table_5.jpg",
+              "content": "<table><tbody><tr><td></td><td>x<sub>1</sub></td><td>x<sub>2</sub></td><td>x<sub>3</sub></td><td>x<sub>4</sub></td></tr><tr><td>x<sub>1</sub></td><td>1</td><td>0</td><td>0</td><td>-1</td></tr><tr><td>x<sub>2</sub></td><td>0</td><td>4</td><td>-2</td><td>-2</td></tr><tr><td>x<sub>3</sub></td><td>0</td><td>-2</td><td>1</td><td>1</td></tr><tr><td>x<sub>4</sub></td><td>-1</td><td>-2</td><td>1</td><td>2</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 6,
+          "bbox": [
+            0.589,
+            0.342,
+            0.772,
+            0.375
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 6,
+              "bbox": [
+                0.589,
+                0.342,
+                0.772,
+                0.375
+              ],
+              "image_path": "images/page_9_table_6.jpg",
+              "content": "<table><tbody><tr><td>i</td><td>1 2 3 4</td></tr><tr><td>y<sub>i</sub></td><td>-1 -1 +1 +1</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.087,
+            0.41,
+            0.901,
+            0.428
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [2 pts] Write each constraint "
+            },
+            {
+              "type": "equation_inline",
+              "content": "c _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " as an inequality in terms of the variables α. (c"
+            },
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " has been completed for you.)"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 8,
+          "bbox": [
+            0.141,
+            0.466,
+            0.846,
+            0.534
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 8,
+              "bbox": [
+                0.141,
+                0.466,
+                0.846,
+                0.534
+              ],
+              "image_path": "images/page_9_table_8.jpg",
+              "content": "<table><tbody><tr><td>c<sub>1</sub></td><td>α<sub>1</sub> - α<sub>4</sub> ≤ -1</td><td>c<sub>3</sub></td><td></td></tr><tr><td>c<sub>2</sub></td><td></td><td>c<sub>4</sub></td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.086,
+            0.553,
+            0.613,
+            0.569
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) We now randomly initialize to the full assignment "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha = ( 1 , - 1 , 0 , - 1 )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 10,
+          "bbox": [
+            0.127,
+            0.573,
+            0.908,
+            0.604
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(i) [3 pts] For a constraint of the form "
+            },
+            {
+              "type": "equation_inline",
+              "content": "a \\geq b ,"
+            },
+            {
+              "type": "text",
+              "content": " define the constraint violation margin (CVM) as the difference "
+            },
+            {
+              "type": "equation_inline",
+              "content": "b - a ."
+            },
+            {
+              "type": "text",
+              "content": " . For each of the above constraints, circle either Satisfied or Violated and compute the CVM."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 11,
+          "bbox": [
+            0.126,
+            0.606,
+            0.862,
+            0.69
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 11,
+              "bbox": [
+                0.126,
+                0.606,
+                0.862,
+                0.69
+              ],
+              "image_path": "images/page_9_table_11.jpg",
+              "content": "<table><tbody><tr><td></td><td>Satisfied?</td><td>CVM</td><td></td><td>Satisfied?</td><td>CVM</td></tr><tr><td>c<sub>1</sub></td><td>Satisfied Violated</td><td></td><td>c<sub>3</sub></td><td>Satisfied Violated</td><td></td></tr><tr><td>c<sub>2</sub></td><td>Satisfied Violated</td><td></td><td>c<sub>4</sub></td><td>Satisfied Violated</td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 12,
+          "bbox": [
+            0.122,
+            0.701,
+            0.909,
+            0.748
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [4 pts] We decide to run a variation of the min-conflicts algorithm. Recall that min-conflicts begins with a full assignment of all variables and tries to get all constraints satisfied by iteratively modifying the assignment."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.152,
+            0.75,
+            0.917,
+            0.795
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In our variant of the algorithm, a single iteration consists of selecting the currently most violated constraint— i.e., the constraint with the highest CVM—and then reassigning all variables that are part of the constraint to values such that the new CVM for the selected constraint is minimized."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 14,
+          "bbox": [
+            0.152,
+            0.797,
+            0.909,
+            0.859
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Starting from the assignment above "
+            },
+            {
+              "type": "equation_inline",
+              "content": "( \\alpha = ( 1 , - 1 , 0 , - 1 ) )"
+            },
+            {
+              "type": "text",
+              "content": " , run a single iteration of this algorithm. Indicate which constraint "
+            },
+            {
+              "type": "equation_inline",
+              "content": "c _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " is selected, then compute the updated assignment "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha ^ { \\prime }"
+            },
+            {
+              "type": "text",
+              "content": " and the updated CVM for the selected constraint "
+            },
+            {
+              "type": "equation_inline",
+              "content": "c _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " . Finally, indicate whether or not after this single iteration all constraints have been satisfied (and the algorithm terminates)."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 15,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "table",
+          "index": 0,
+          "bbox": [
+            0.195,
+            0.044,
+            0.792,
+            0.094
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 0,
+              "bbox": [
+                0.195,
+                0.044,
+                0.792,
+                0.094
+              ],
+              "image_path": "images/page_10_table_0.jpg",
+              "content": "<table><tbody><tr><td>Selected c<sub>i</sub></td><td>α<sub>1</sub><sup>0</sup></td><td>α<sub>2</sub><sup>0</sup></td><td>α<sub>3</sub><sup>0</sup></td><td>α<sub>4</sub><sup>0</sup></td><td>Updated CVM</td><td>Terminated?</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Yes No</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.12,
+            0.101,
+            0.909,
+            0.146
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [2 pts] Suppose we are given a solution to this CSP of "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\alpha ^ { * } = ( - 1 , - 1 , + 1 , + 1 )"
+            },
+            {
+              "type": "text",
+              "content": " . For each test point "
+            },
+            {
+              "type": "equation_inline",
+              "content": "z _ { i }"
+            },
+            {
+              "type": "text",
+              "content": " whose kernel values with each training point are given in the table below, compute "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { \\alpha ^ { * } } ( z _ { i } )"
+            },
+            {
+              "type": "text",
+              "content": " and the predicted classification for "
+            },
+            {
+              "type": "equation_inline",
+              "content": "z _ { i }"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 2,
+          "bbox": [
+            0.081,
+            0.149,
+            0.919,
+            0.232
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 2,
+              "bbox": [
+                0.081,
+                0.149,
+                0.919,
+                0.232
+              ],
+              "image_path": "images/page_10_table_2.jpg",
+              "content": "<table><tbody><tr><td></td><td>K(x<sub>1</sub>,z<sub>i</sub>)</td><td>K(x<sub>2</sub>,z<sub>i</sub>)</td><td>K(x<sub>3</sub>,z<sub>i</sub>)</td><td>K(x<sub>4</sub>,z<sub>i</sub>)</td><td>h<sub>α</sub>∗(z<sub>i</sub>)</td><td>Class prediction?</td></tr><tr><td>z<sub>1</sub></td><td>3</td><td>0</td><td>-2</td><td>1</td><td></td><td></td></tr><tr><td>z<sub>2</sub></td><td>-2</td><td>1</td><td>2</td><td>-2</td><td></td><td></td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 3,
+          "bbox": [
+            0.484,
+            0.936,
+            0.503,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.448,
+            0.071
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q5. [18 pts] Generalization"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.078,
+            0.083,
+            0.841,
+            0.099
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "We consider the following different classifiers for classification of samples in a 2-dimensional feature space."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.078,
+            0.113,
+            0.488,
+            0.146
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "PNoBias Linear perceptron without a bias term (features "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\left[ \\begin{matrix} { x _ { 1 } } & { x _ { 2 } ^ { \\mathsf { T } } } \\\\ \\end{matrix} \\right] ^ { \\mathsf { T } } )"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.078,
+            0.151,
+            0.488,
+            0.184
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "PBias Linear perceptron with a bias term (features -1 x "
+            },
+            {
+              "type": "text",
+              "content": "1",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": " x "
+            },
+            {
+              "type": "text",
+              "content": "2",
+              "styles": [
+                "subscript"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "\u0003 |)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.078,
+            0.189,
+            0.488,
+            0.22
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "PQuad Kernel perceptron with the quadratic kernel function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ( x , z ) = ( 1 + x \\cdot z ) ^ { 2 }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.498,
+            0.113,
+            0.909,
+            0.221
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "PCutoff Kernel perceptron with the kernel function "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K ( x , z ) = \\operatorname* { m a x } \\{ 0 , 0 . 0 1 - | | x - z | | _ { 2 } \\} ( | | a - b | | _ { 2 }"
+            },
+            {
+              "type": "text",
+              "content": " is the Euclidean distance between a and b) 1NN 1-nearest neighbor classifier 3NN 3-nearest neighbor classifier"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.087,
+            0.234,
+            0.909,
+            0.281
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [8 pts] In each of the plots below you are given points from two classes, shown as filled rectangles and open circles. For each plot, fill in the bubble next to each classifier that will be able to perfectly classify all of the training data (or, if none, mark “None of these will classify the data perfectly”)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.115,
+            0.285,
+            0.909,
+            0.315
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Note that when computing the nearest neighbors for a training data point, the training data point will be its own nearest neighbor."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 8,
+          "bbox": [
+            0.164,
+            0.325,
+            0.33,
+            0.45
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 8,
+              "bbox": [
+                0.164,
+                0.325,
+                0.33,
+                0.45
+              ],
+              "image_path": "images/page_11_image_8.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.42,
+            0.319,
+            0.79,
+            0.336
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# PNoBias # PQuad 1NN"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 10,
+          "bbox": [
+            0.165,
+            0.455,
+            0.329,
+            0.58
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 10,
+              "bbox": [
+                0.165,
+                0.455,
+                0.329,
+                0.58
+              ],
+              "image_path": "images/page_11_image_10.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.42,
+            0.352,
+            0.789,
+            0.37
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "PBias PCutoff 3NN"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 12,
+          "bbox": [
+            0.165,
+            0.585,
+            0.33,
+            0.71
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 12,
+              "bbox": [
+                0.165,
+                0.585,
+                0.33,
+                0.71
+              ],
+              "image_path": "images/page_11_image_12.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 13,
+          "bbox": [
+            0.419,
+            0.384,
+            0.916,
+            0.502
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of these will be able to classify the training data perfectly. PNoBias PQuad 1NN PBias PCutoff 3NN"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 14,
+          "bbox": [
+            0.164,
+            0.717,
+            0.331,
+            0.84
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 14,
+              "bbox": [
+                0.164,
+                0.717,
+                0.331,
+                0.84
+              ],
+              "image_path": "images/page_11_image_14.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 15,
+          "bbox": [
+            0.419,
+            0.514,
+            0.916,
+            0.633
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of these will be able to classify the training data perfectly. PNoBias PQuad 1NN PBias PCutoff 3NN"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 16,
+          "bbox": [
+            0.419,
+            0.645,
+            0.917,
+            0.763
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "None of these will be able to classify the training data perfectly. PNoBias PQuad 1NN PBias PCutoff 3NN"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 17,
+          "bbox": [
+            0.421,
+            0.774,
+            0.916,
+            0.791
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# None of these will be able to classify the training data perfectly."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 18,
+          "bbox": [
+            0.484,
+            0.935,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.086,
+            0.046,
+            0.908,
+            0.12
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) (i) [5 pts] Suppose you train a classifier and test it on a held-out validation set. It gets 80% classification accuracy on the training set and 20% classification accuracy on the validation set. From what problem is your model most likely suffering? # Underfitting # Overfitting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.154,
+            0.128,
+            0.908,
+            0.184
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Fill in the bubble next to any measure of the following which could reasonably be expected to improve your classifier’s performance on the validation set. # Add extra features # Remove some features"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.156,
+            0.192,
+            0.723,
+            0.261
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Briefly justify: # Collect more training data # Throw out some training data"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.154,
+            0.298,
+            0.909,
+            0.346
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Assuming features are outcome counts (k is the Laplace smoothing parameter controlling the number of extra times you “pretend” to have seen an outcome in the training data): # Increase k # Decrease k (assuming k > 0 currently)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.155,
+            0.391,
+            0.491,
+            0.431
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Assuming your classifier is a Bayes’ net: # Add edges # Remove edges"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.122,
+            0.478,
+            0.907,
+            0.551
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(ii) [3 pts] Suppose you train a classifier and test it on a held-out validation set. It gets 30% classification accuracy on the training set and 30% classification accuracy on the validation set. From what problem is your model most likely suffering? # Underfitting # Overfitting"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.153,
+            0.56,
+            0.908,
+            0.631
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Fill in the bubble next to any measure of the following which could reasonably be expected to improve your classifier’s performance on the validation set. # Add extra features # Remove some features Briefly justify:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 7,
+          "bbox": [
+            0.206,
+            0.668,
+            0.728,
+            0.684
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Collect more training data # Throw out some training data"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.119,
+            0.69,
+            0.909,
+            0.799
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(iii) [2 pts] Your boss provides you with an image dataset in which some of the images contain your company’s logo, and others contain competitors’ logos. You are tasked to code up a classifier to distinguish your company’s logos from competitors’ logos. You complete the assignment quickly and even send your boss your code for training the classifier, but your boss is furious. Your boss says that when running your code with images and a random label for each of the images as input, the classifier achieved perfect accuracy on the training set. And this happens for all of the many random labelings that were generated. Do you agree that this is a problem? Justify your answer."
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.043,
+            0.537,
+            0.072
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q6. [17 pts] Fun with Probability"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.083,
+            0.908,
+            0.13
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "In this question you will be asked to complete a table specifying a count of samples drawn from a probability distribution, and subsequently answer questions about Bayes’ nets constructed from the table using maximum likelihood techniques."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.086,
+            0.142,
+            0.909,
+            0.189
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(a) [8 pts] The table below shows a count of samples drawn from a distribution over 4 variables: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A ,   B ,   C"
+            },
+            {
+              "type": "text",
+              "content": " and D. As each of the 4 variables is binary, there are 16 possible values a sample can take on. The counts for 15 of these have been recorded in the table below, but the remaining one is missing."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.116,
+            0.193,
+            0.909,
+            0.239
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Calculate the remaining value such that a maximum likelihood estimate of the joint probability distribution over the 4 variables below will have the following properties: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A \\perp D \\mid C"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B \\perp D \\mid C"
+            },
+            {
+              "type": "text",
+              "content": " . You must show work in order to receive credit."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.117,
+            0.243,
+            0.908,
+            0.275
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Hint: For this example just enforcing "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B \\perp D \\mid C"
+            },
+            {
+              "type": "text",
+              "content": " is sufficient to find n. (I.e., the numbers in this examples are chosen such that after enforcing "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B \\perp D   |   C"
+            },
+            {
+              "type": "text",
+              "content": " the n you found will automatically also make "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A \\perp D   |   C"
+            },
+            {
+              "type": "text",
+              "content": " hold true.)"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.395,
+            0.287,
+            0.632,
+            0.572
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.395,
+                0.287,
+                0.632,
+                0.572
+              ],
+              "image_path": "images/page_13_table_5.jpg",
+              "content": "<table><tbody><tr><td></td><td></td><td></td><td></td><td>Sample</td></tr><tr><td>A</td><td>B</td><td>C</td><td>D</td><td>Count</td></tr><tr><td>+a</td><td>+b</td><td>+c</td><td>+d</td><td>n</td></tr><tr><td>-a</td><td>+b</td><td>+c</td><td>+d</td><td>18</td></tr><tr><td>+a</td><td>-b</td><td>+c</td><td>+d</td><td>3</td></tr><tr><td>-a</td><td>-b</td><td>+c</td><td>+d</td><td>9</td></tr><tr><td>+a</td><td>+b</td><td>-c</td><td>+d</td><td>6</td></tr><tr><td>-a</td><td>+b</td><td>-c</td><td>+d</td><td>2</td></tr><tr><td>+a</td><td>-b</td><td>-c</td><td>+d</td><td>0</td></tr><tr><td>-a</td><td>-b</td><td>-c</td><td>+d</td><td>8</td></tr><tr><td>+a</td><td>+b</td><td>+c</td><td>-d</td><td>6</td></tr><tr><td>-a</td><td>+b</td><td>+c</td><td>-d</td><td>6</td></tr><tr><td>+a</td><td>-b</td><td>+c</td><td>-d</td><td>1</td></tr><tr><td>-a</td><td>-b</td><td>+c</td><td>-d</td><td>3</td></tr><tr><td>+a</td><td>+b</td><td>-c</td><td>-d</td><td>18</td></tr><tr><td>-a</td><td>+b</td><td>-c</td><td>-d</td><td>6</td></tr><tr><td>+a</td><td>-b</td><td>-c</td><td>-d</td><td>0</td></tr><tr><td>-a</td><td>-b</td><td>-c</td><td>-d</td><td>24</td></tr></tbody></table>"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "index": 0,
+          "bbox": [
+            0.085,
+            0.046,
+            0.909,
+            0.078
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(b) [3 pts] Draw a Bayes’ net that makes exactly the 2 independence assumptions indicated by the set of samples shown above: "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A \\perp D   |   C"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B \\perp D   |   C ."
+            },
+            {
+              "type": "text",
+              "content": " . Make sure it doesn’t make any additional independence assumptions."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "bbox": [
+            0.444,
+            0.1,
+            0.584,
+            0.205
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 1,
+              "bbox": [
+                0.444,
+                0.1,
+                0.584,
+                0.205
+              ],
+              "image_path": "images/page_14_image_1.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.088,
+            0.219,
+            0.909,
+            0.334
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "(c) [6 pts] Now we run maximum likelihood learning of the parameters for each of the Bayes’ nets below from the data on the previous page. The result is four learned distributions "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\begin{array} { l } { P ^ { ( 1 ) } ( A , B , C , \\dot { D } ) , P ^ { ( 2 ) } ( A , B , C , D ) } \\\\ \\end{array}"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(3)}(A,B,C,D),\\tilde{P^{(4)}}(A,\\tilde{B},\\tilde{C},D)"
+            },
+            {
+              "type": "text",
+              "content": " . We also define another distribution "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(0)}(\\widetilde{A,B,C,D})"
+            },
+            {
+              "type": "text",
+              "content": " which is obtained by renormalizing the table on the previous page. Fill in the bubble for every true statement below. Hint: You shouldn’t need to inspect the numbers in the table on the previous page. The key information about the table on the previous page is that the numbers are such that "
+            },
+            {
+              "type": "equation_inline",
+              "content": "\\widetilde { P } ^ { ( 0 ) } ( A , \\widetilde { B } , \\widetilde { C } , D )"
+            },
+            {
+              "type": "text",
+              "content": " satisfies "
+            },
+            {
+              "type": "equation_inline",
+              "content": "A   \\perp   D \\mid C"
+            },
+            {
+              "type": "text",
+              "content": " and "
+            },
+            {
+              "type": "equation_inline",
+              "content": "B \\perp D \\mid C ,"
+            },
+            {
+              "type": "text",
+              "content": " but doesn’t satisfy any other independence assumptions."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 4,
+          "bbox": [
+            0.185,
+            0.35,
+            0.302,
+            0.462
+          ],
+          "content": [
+            {
+              "type": "image_caption",
+              "index": 3,
+              "bbox": [
+                0.13,
+                0.396,
+                0.165,
+                0.412
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "P("
+                },
+                {
+                  "type": "text",
+                  "content": "1",
+                  "styles": [
+                    "superscript"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "content": ")"
+                }
+              ]
+            },
+            {
+              "type": "image_body",
+              "index": 4,
+              "bbox": [
+                0.185,
+                0.35,
+                0.302,
+                0.462
+              ],
+              "image_path": "images/page_14_image_4.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 5,
+          "bbox": [
+            0.362,
+            0.395,
+            0.968,
+            0.415
+          ],
+          "image_path": "images/page_14_equation_5.jpg",
+          "content": "P ^ {(0)} (B) = P ^ {(1)} (B) \\quad \\bigcirc \\quad P ^ {(0)} (D \\mid C) = P ^ {(1)} (D \\mid C) \\quad \\bigcirc \\quad P ^ {(0)} (A, B) = P ^ {(1)} (A, B)"
+        },
+        {
+          "type": "image",
+          "index": 7,
+          "bbox": [
+            0.186,
+            0.472,
+            0.301,
+            0.585
+          ],
+          "content": [
+            {
+              "type": "image_caption",
+              "index": 6,
+              "bbox": [
+                0.131,
+                0.518,
+                0.164,
+                0.534
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "P("
+                },
+                {
+                  "type": "text",
+                  "content": "2",
+                  "styles": [
+                    "superscript"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "content": ")"
+                }
+              ]
+            },
+            {
+              "type": "image_body",
+              "index": 7,
+              "bbox": [
+                0.186,
+                0.472,
+                0.301,
+                0.585
+              ],
+              "image_path": "images/page_14_image_7.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.329,
+            0.517,
+            0.969,
+            0.539
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(0)}(B) = P^{(2)}(B)"
+            },
+            {
+              "type": "text",
+              "content": " # "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ^ { ( 0 ) } ( D   |   C ) = P ^ { ( 2 ) } ( D   |   C )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(0)}(A,B)=P^{(2)}(A,B)"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 10,
+          "bbox": [
+            0.187,
+            0.595,
+            0.3,
+            0.706
+          ],
+          "content": [
+            {
+              "type": "image_caption",
+              "index": 9,
+              "bbox": [
+                0.132,
+                0.64,
+                0.164,
+                0.656
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "P("
+                },
+                {
+                  "type": "text",
+                  "content": "3",
+                  "styles": [
+                    "superscript"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "content": ")"
+                }
+              ]
+            },
+            {
+              "type": "image_body",
+              "index": 10,
+              "bbox": [
+                0.187,
+                0.595,
+                0.3,
+                0.706
+              ],
+              "image_path": "images/page_14_image_10.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 11,
+          "bbox": [
+            0.329,
+            0.639,
+            0.969,
+            0.661
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "# "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(0)}(B) = P^{(3)}(B)"
+            },
+            {
+              "type": "text",
+              "content": " () "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P ^ { ( 0 ) } ( D   |   C ) = P ^ { ( 3 ) } ( D   |   C )"
+            },
+            {
+              "type": "text",
+              "content": " "
+            },
+            {
+              "type": "equation_inline",
+              "content": "P^{(0)}(A,B)=P^{(3)}(A,B)"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 13,
+          "bbox": [
+            0.186,
+            0.717,
+            0.301,
+            0.828
+          ],
+          "content": [
+            {
+              "type": "image_caption",
+              "index": 12,
+              "bbox": [
+                0.131,
+                0.763,
+                0.164,
+                0.779
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "P("
+                },
+                {
+                  "type": "text",
+                  "content": "4",
+                  "styles": [
+                    "superscript"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "content": ")"
+                }
+              ]
+            },
+            {
+              "type": "image_body",
+              "index": 13,
+              "bbox": [
+                0.186,
+                0.717,
+                0.301,
+                0.828
+              ],
+              "image_path": "images/page_14_image_13.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 14,
+          "bbox": [
+            0.365,
+            0.763,
+            0.504,
+            0.782
+          ],
+          "image_path": "images/page_14_equation_14.jpg",
+          "content": "P ^ {(0)} (B) = P ^ {(4)} (B)"
+        },
+        {
+          "type": "equation",
+          "index": 15,
+          "bbox": [
+            0.551,
+            0.762,
+            0.742,
+            0.782
+          ],
+          "image_path": "images/page_14_equation_15.jpg",
+          "content": "P ^ {(0)} (D \\mid C) = P ^ {(4)} (D \\mid C)"
+        },
+        {
+          "type": "page_number",
+          "index": 16,
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.33,
+            0.073
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q7. [5 pts] Games"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.131
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider a zero-sum game with two players, one maximizing agent and one minimizing agent, in which the ordering of moves is no longer deterministic. Each turn, a coin is flipped in order to determine which agent gets to make a move during that time step."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.142,
+            0.909,
+            0.205
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Consider the game tree below encoding the result of playing for two turns. It is currently the maximizer’s move, so the top node is a max node, but we don’t know which agent is going to play on the next turn, so we’ve replaced those nodes with boxes. Draw a new game tree that consists of only the traditional min, max, and expecti-nodes that models this situation."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 3,
+          "bbox": [
+            0.153,
+            0.289,
+            0.929,
+            0.506
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 3,
+              "bbox": [
+                0.153,
+                0.289,
+                0.929,
+                0.506
+              ],
+              "image_path": "images/page_15_image_3.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.078,
+            0.042,
+            0.349,
+            0.074
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Q8. [6 pts] Pruning"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.076,
+            0.083,
+            0.91,
+            0.131
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Pacman has a new kind of magic that allows him to look ahead during game search. Concretely, for a given node he can call a function Get-Lowest-Avg-Highest(node) which tells him the lowest, L, highest, H, and average, A, values of all leaves below that node in the tree."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.076,
+            0.141,
+            0.908,
+            0.175
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Below is some modified code for performing alpha-beta pruning in this new situation. Select the choices that result in maximal pruning while still preserving that the correct value is found."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "index": 3,
+          "bbox": [
+            0.105,
+            0.2,
+            0.915,
+            0.78
+          ],
+          "content": [
+            {
+              "type": "algorithm_body",
+              "index": 3,
+              "bbox": [
+                0.105,
+                0.2,
+                0.915,
+                0.78
+              ],
+              "content": [
+                {
+                  "type": "text",
+                  "content": "function MAX-VALUE(node, "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": ", "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": ")\n    if node is leaf then\n        return VALUE(node)\n    (L, A, H) ← GET-LOWEST-AVG-HIGHEST(node)\n    if (1) then\n        return H\n    v ← -"
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\infty"
+                },
+                {
+                  "type": "text",
+                  "content": "\n    for child ← CHILDREN(node) do\n        v ← MAX(v, MIN-VALUE(child, "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": ", "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "))\n        if v == H then\n            return v\n        if v ≥ "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": " then\n            return v\n        "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": " ← MAX("
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": ", v)\n    return v\n    (1)\n        ○ L < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\nfunction MIN-VALUE(node, "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": ", "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": ")\n    if node is leaf then\n        return VALUE(node)\n    (L, A, H) ← GET-LOWEST-AVG-HIGHEST(node)\n    if (2) then\n        return L\n    v ← "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\infty"
+                },
+                {
+                  "type": "text",
+                  "content": "\n    for child ← CHILDREN(node) do\n        v ← MIN(v, MAX-VALUE(child, "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": ", "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "))\n        if v == L then\n            return v\n        if v ≤ "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": " then\n            return v\n        "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": " ← MIN("
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": ", v)\n    return v\n    (2)\n        ○ L < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ L > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ H > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A < "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\beta"
+                },
+                {
+                  "type": "text",
+                  "content": "\n        ○ A > "
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "\\alpha"
+                },
+                {
+                  "type": "equation_inline",
+                  "content": "A > \\beta"
+                }
+              ]
+            }
+          ],
+          "sub_type": "algorithm"
+        },
+        {
+          "type": "page_number",
+          "index": 4,
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.95
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "index": 0,
+          "bbox": [
+            0.306,
+            0.046,
+            0.681,
+            0.061
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}

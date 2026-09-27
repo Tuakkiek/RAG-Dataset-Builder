@@ -1,0 +1,864 @@
+<!-- page: 1 -->
+
+## CS 188 Introduction to Summer 2021Artificial Intelligence
+
+• You have approximately 170 minutes.
+
+• The exam is open book, open calculator, and open notes.
+
+• For multiple choice questions,
+
+□ means mark **all options** that apply
+
+means mark a single choice
+
+| First name |  |
+| --- | --- |
+| Last name |  |
+| SID |  |
+
+For staff use only:
+
+| Q1. Potpourri | /20 |
+| --- | --- |
+| Q2. Model-Based RL with Function Approximation | /14 |
+| Q3. Naive Bayes and Perceptron | /18 |
+| Q4. Backpropagation with Activation Checkpointing | /18 |
+| Q5. Ace King Queen | /16 |
+| Q6. Pure Romance | /20 |
+| Q7. Games | /18 |
+| Q8. Hidden Markov Models and Particle Filtering | /15 |
+| Total | /139 |
+
+<!-- page: 2 -->
+
+<!-- page: 3 -->
+
+SID:
+
+## Q1. [20 pts] Potpourri
+
+**(a)** [3 pts] Which of the following statements are always true?
+
+$$
+\square P (X, Y) = \sum_ {a} P (X, a) \sum_ {b} P (Y, b)
+$$
+
+$$
+\square P (X) = \sum_ {a} \sum_ {b} \sum_ {c} \sum_ {d} P (X, a, b, c, d)
+$$
+
+$$
+\square P (X _ {1}, X _ {2}, \dots , X _ {n}) = P (X _ {1}) \prod_ {i = 2} ^ {n} P (X _ {i} | X _ {i - 1})
+$$
+
+$$
+\square P (X) \propto \sum_ {Y} P (X | Y)
+$$
+
+$$
+\square P (X | Y) = \frac {P (X , Y)}{\sum_ {Y} P (X , Y)}
+$$
+
+$$
+\square P (X | y) \propto P (y | X) P (X)
+$$
+
+**(b)** [1 pt] Oski trains a neural network to classify whether or not a student is from Stanfurd. He notices that his classifier gets high accuracy when he tests it on his friends at Berkeley, but low accuracy when he visits Stanfurd. Which of the following is the best reason for why this is happening?
+
+\# Oski used a learning rate that was too low which led classifier to be stuck in a local minimum
+
+\# Oski added too much regularization when training his model
+
+\# Oski’s training data has disproportionately more Berkeley examples than Stanfurd examples
+
+\# Oski is incorrectly calculating the accuracy
+
+**(c)** [1 pt] Regina is trying to perform gradient descent on a function 𝑓(𝑥) using the following update rule:
+
+$$
+x = x - \frac {\partial f}{\partial x} (x)
+$$
+
+Is gradient descent guaranteed to converge to the global minimum for any $f(x)?$
+
+\# Yes, since she’s updating using the gradient of 𝑥.
+
+\# Yes, but not for the reason above.
+
+\# No, since she is updating 𝑥 in the wrong direction.
+
+\# No, but not for the reason above.
+
+**(d)** [3 pts] Which of the following statements regarding VPI are always true?
+
+$$
+\square V P I (E ^ {\prime} | E = e) - V P I (F ^ {\prime} | F = f) \geq 0
+$$
+
+$$
+\square V P I (E ^ {\prime} | E = e) * V P I (F ^ {\prime} | F = f) \geq 0
+$$
+
+$$
+\square V P I (E _ {h}, E _ {i}, E _ {j} | E = e) = V P I (E _ {h} | E = e) + V P I (E _ {i} | E = e, E _ {h}) + V P I (E _ {j} | E = e, E _ {h}, E _ {i})
+$$
+
+$$
+\square V P I (E _ {h}, E _ {i}, E _ {j} | E = e) = V P I (E _ {h} | E = e) + V P I (E _ {i} | E = e) + V P I (E _ {j} | E = e)
+$$
+
+$$
+\square V P I (E _ {j}, E _ {k} | E = e) = V P I (E _ {j} | E = e) + V P I (E _ {k} | E = e)
+$$
+
+**(e)** [3 pts] Seth tries to generate samples using a modified version of prior sampling. Half of the time, he follows the normal prior sampling procedure. The other half of the time, he randomly generates a sample where he gives all of the variable assignments an equal chance. What is the probability of a certain sample following this procedure? Let the variables be $x _ { 1 } , x _ { 2 } , . . . , x _ { n } ,$ each of which can take on 𝑘 possible values.
+
+$$
+P (s a m p l e) = \frac {1}{2} (A) (B) + \frac {1}{2} (C)
+$$
+
+• (A): $\begin{array}{l}\text { \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text { \text {  } } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text { \end{array}$
+
+• (B): $\textcircled { \; }  \quad P ( x _ { i } ) \quad \textcircled { \; }  \quad P ( x _ { i } | p a r e n t s ( x _ { i } ) ) \quad \textcircled { \; }  \quad P ( x _ { i } | c h i l d r e n ( x _ { i } ) )$
+
+• (C): $\begin{array}{l}\text {  \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text {  } \text \text {  } \text \text {  } \text {  } \text \end{array}$
+
+**(f)** Although both great lecturers, Carl (Ca) and Mesut (Me) want to formalize this by seeing student satisfaction based off each of their lectures. They both lecture about two different topics, Reinforcement Learning (RL) or Game Trees (GT). They also both have different guest appearances in lecture, John Denero (JD), who Carl is closer to, and Carol Christ (CC), who Mesut is closer to.
+
+<!-- page: 4 -->
+
+<table><tr><td colspan="2">P(L)</td></tr><tr><td>Me</td><td>x</td></tr><tr><td>Ca</td><td>y</td></tr></table>
+
+![](images/page_3_image_1.jpg)
+
+<table><tr><td colspan="3">P(G|L)</td></tr><tr><td>JD</td><td>Me</td><td>0.3</td></tr><tr><td>CC</td><td>Me</td><td>0.7</td></tr><tr><td>JD</td><td>Ca</td><td>0.9</td></tr><tr><td>CC</td><td>Ca</td><td>0.1</td></tr></table>
+
+<table><tr><td colspan="3">P(T|L)</td></tr><tr><td>RL</td><td>Me</td><td>0.8</td></tr><tr><td>GT</td><td>Me</td><td>0.2</td></tr><tr><td>RL</td><td>Ca</td><td>0.1</td></tr><tr><td>GT</td><td>Ca</td><td>0.9</td></tr></table>
+
+<table><tr><td colspan="4">P(S|T,G)</td></tr><tr><td>Sat</td><td>RL</td><td>JD</td><td>0.9</td></tr><tr><td>Unsat</td><td>RL</td><td>JD</td><td>0.1</td></tr><tr><td>Sat</td><td>RL</td><td>CC</td><td>0.5</td></tr><tr><td>Unsat</td><td>RL</td><td>CC</td><td>0.5</td></tr><tr><td>Sat</td><td>GT</td><td>JD</td><td>0.8</td></tr><tr><td>Unsat</td><td>GT</td><td>JD</td><td>0.2</td></tr><tr><td>Sat</td><td>GT</td><td>CC</td><td>0.5</td></tr><tr><td>Unsat</td><td>GT</td><td>CC</td><td>0.5</td></tr></table>
+
+𝑃 (𝑆𝑎𝑡 ∣ 𝐶𝐶) =
+
+**(i)** [2 pts] What’s the probability that the students are satisfied with a lecture where Carol Christ makes an appearance?
+
+**(ii)** [2 pts] Given that the students were satisfied with a lecture, what’s the probability that the lecture was given by Carl? You should use $x = 0 . 5$ and $y = 0 . 5$ for this question if needed.
+
+𝑃 (𝐶𝑎 ∣ 𝑆𝑎𝑡) =
+
+<!-- page: 5 -->
+
+SID:
+
+![](images/page_4_image_1.jpg)
+
+| Node | $h_1$ | $h_2$ |
+| --- | --- | --- |
+| A | 9.5 | 10 |
+| B | 9 | 12 |
+| C | 8 | 10 |
+| D | 7 | 8 |
+| E | 1.5 | 1 |
+| F | 4 | 4.5 |
+| G | 0 | 0 |
+
+**(g)** Consider the state space graph shown above. A is the start state and G is the goal state. The costs for each edge are shown on the graph. Each edge can be traversed in both directions. Note that the heuristic $h _ { 1 }$ is consistent but the heuristic $h _ { 2 }$ is not consistent.
+
+For each of the following graph search strategies (do not answer for tree search), mark which, if any, of the listed paths it could return. Note that for some search strategies the specific path returned might depend on tie-breaking behavior. In any such cases, make sure to mark all paths that could be returned under some tie-breaking scheme.
+
+(i)
+
+```txt
+[1 pt] DFS
+□ A-B-D-G
+□ A-C-D-G
+□ A-B-C-D-F-G
+□ None of the above
+```
+
+(ii)
+
+```txt
+[1 pt] BFS
+□ A-B-D-G
+□ A-C-D-G
+□ A-B-C-D-F-G
+□ None of the above
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+[1 pt] $A^{*}$ Search with $h_{2}$
+    A-B-D-G
+    A-C-D-G
+    A-B-C-D-F-G
+    None of the above
+</div>
+
+Suppose you are completing the new heuristic function $h _ { 3 }$ shown below. All the values are fixed except $h _ { 3 } ( B )$
+
+| Node | A | B | C | D | E | F | G |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| $h_3$ | 10 | ? | 9 | 7 | 1.5 | 4.5 | 0 |
+
+**(iv)** [1 pt] What values of $h _ { 3 } ( B )$ make $h _ { 3 }$ admissible? $\alpha \leq h _ { 3 } \leq \beta$ 𝛼 = 𝛽 =
+
+**(v)** [1 pt] What values of $h _ { 3 } ( B )$ make $h _ { 3 }$ consistent? $\gamma \leq h _ { 3 } \leq \lambda$ 𝛾 = 𝜆 =
+
+<!-- page: 6 -->
+
+## Q2. [14 pts] Model-Based RL with Function Approximation
+
+![](images/page_5_chart_1.jpg)
+
+Consider a robot navigating in the above grid world with walls around the edges as shown above. The robot’s state is represented by (𝑟𝑜𝑤, 𝑐𝑜𝑙𝑢𝑚𝑛), with the starting position at (1, 1)
+
+The robot cannot leave the grid. The robot can move into the wall, but its state will stay the same after the action. The allowed actions are $a \in \{ \mathtt { u p }$ , down, left, right} in all states except the sink state shaded in green In this sink state, only the exit action is available, which takes the agent to a terminal state in which it can no longer take actions or receive rewards.
+
+When the robot transitions into the terminal state, it receives a reward of 10. For all other states, the robot receives a living reward of −1 for transitioning into the state.
+
+The robot wants to learn a policy to maximize its reward, but unfortunately does not know the transition model of the MDP exactly. However, the robot does know that any given state 𝑠, there is an associated (unknown) probability $s _ { p }$ that any action it takes will be flipped (eg. up becomes down, right becomes left).
+
+**(a)** [3 pts] To estimate the MDP transition model, the robot executes some policy 𝜋 in the grid world and collects a set of 𝑁 transitions $\{ ( s _ { i } , a _ { i } , s _ { i } ^ { \prime } , r _ { i } ) \} _ { i = 1 } ^ { N }$ . The robot then decides to use this to create a dataset $\mathcal { D } = \{ ( s _ { i } , y _ { i } ) \} _ { i = 1 } ^ { N }$ of states in which action flips occur, where $y _ { i } = 1$ if a flip happened at $s _ { i }$ and −1 otherwise.
+
+2 The robot could use the number of action flips at each state to estimate the empirical probability of an action flip at each individual state. However, the robot is also considering training a logistic regression classifier $g : S \mapsto \{ 0 , 1 \}$ which uses  to learn whether an action flip will occur at a given state. Which of the following is a possible advantage of learning a classifier? Select all that apply.
+
+The classifier will use less memory if the state space dimension is much lower than the number of possible states The classifier will give us information about action flip probabilities even on states not visited in .
+
+□ The classifier will always be more accurate.
+
+□ The classifier will be able to reuse information about the probability of action flips across different states.
+
+**(b)** [2 pts] You decide to use logistic regression to estimate the probability of an action flip at a given state $( P ( y _ { i } | s _ { i } , w ) )$ Define the logistic function $\begin{array} { r } { \phi ( z ) = \frac { 1 } { 1 + e ^ { - z } } } \end{array}$ . Which of the following is a correct expression for $P ( y _ { i } | s _ { i } , w ) ?$
+
+$1 + \phi ( y _ { i } w \cdot s _ { i } )$
+
+$1 / \phi ( y _ { i } w \cdot s _ { i } )$
+
+$1 / \phi ( 1 - y _ { i } w \cdot s _ { i } )$
+
+$1 / \phi ( 1 + y _ { i } w \cdot s _ { i } )$
+
+$\phi ( y _ { i } w \cdot s _ { i } )$
+
+$\phi ( 1 + y _ { i } w \cdot s _ { i } )$
+
+**(c)** Suppose the robot now wants to update the weights for logistic regression with gradient ascent to maximize the likelihood of the 𝑁 transitions in .
+
+Directly maximizing the likelihood of transitions in  gives the following udpate:
+
+<!-- page: 7 -->
+
+$$
+w \leftarrow w + \eta \nabla_ {w} \prod_ {i = 1} ^ {N} P (y _ {i} | s _ {i}, w)
+$$
+
+Suppose the dataset has $N   =   6 4$ transitions and we are computing our weights on a computer which can only store variables 𝑥 in memory if $| x | > 1 0 ^ { - 3 2 }$
+
+**(i)** [2 pts] If $P ( y _ { i } | s _ { i } , w ) \leq \alpha \; \forall y _ { i } , s _ { i }$ , what is the largest value of 𝛼 such that $\textstyle \prod _ { i = 1 } ^ { N } P ( y _ { i } | s _ { i } , w )$ will **not** fit in memory? **(ii)** [2 pts] If $N = 6 4$ and $\alpha = 0 . 1$ , will value of $\textstyle \prod _ { i = 1 } ^ { N } P ( y _ { i } | s _ { i } , w )$ fit in memory? # Yes # No
+
+**(d)** Concerned about memory issues, you decide to instead maximize the log-likelihood of the transitions in  as follows:
+
+$$
+w \leftarrow w + \eta \nabla_ {w} \sum_ {i = 1} ^ {N} \log P (y _ {i} | s _ {i}, w)
+$$
+
+For this question, assume that log is in base 10.
+
+**(i)** [2 pts] For $N = 6 4$ and $\alpha = 0 . 1$ , will $\Sigma _ { i = 1 } ^ { N }$ log $P ( y _ { i } | s _ { i } , w )$ fit in memory?
+
+\# Yes
+
+\# No
+
+![](images/page_6_image_10.jpg)
+
+**(e)** Having estimated 𝑤 by running logistic regression, we can now use the resulting classifier to estimate the value of different policies in the environment. For this problem, consider a simplified $2 \times 2$ grid world where the action flip probability is included in the top left of each grid cell. For policy $\pi _ { 1 }$ illustrated above:
+
+**(i)** [3 pts] What is $V ^ { \pi _ { 1 } } ( ( 1 , 1 ) )$ if $p   =   q   =   0 . 3 ?$ Here 𝑝 and 𝑞 are the flip probabilities (probabilities of choosing the opposite action) for the respective states.
+
+<!-- page: 8 -->
+
+## Q3. [18 pts] Naive Bayes and Perceptron
+
+Pacman has received a ton of spam lately. He decides to use some machine learning techniques to filter his emails.
+
+**(a)** Pacman first tries using Naive Bayes. For some reason, he chooses the words "buy", "discount", and "dollar" as features during classification. Below is the training dataset:
+
+| "buy" (𝑊<sub>1</sub>) | "discount" (𝑊<sub>2</sub>) | "dollar" (𝑊<sub>3</sub>) | label (𝐸) |
+| --- | --- | --- | --- |
+| 1 | 1 | 0 | spam |
+| 1 | 0 | 1 | spam |
+| 1 | 0 | 0 | spam |
+| 0 | 1 | 0 | spam |
+| 0 | 0 | 0 | ham |
+| 0 | 1 | 1 | ham |
+
+Under the assumptions of Naive Bayes, work out the following probabilities.
+
+**(i)** [2 pts] $\mathbb{P}(E = h a m) =$ $\mathbb { P } ( E = s p a m ) =$
+
+**(ii)** [4 pts] $\mathbb { P } ( W _ { 1 } = 1 | E = s p a m ) =$ $\mathbb { P } ( W _ { 1 } = 0 | E = h a m ) =$
+
+$\mathbb { P } ( W _ { 3 } = 1 | E = s p a m , W _ { 2 } = 0 ) =$ $\mathbb { P } ( W _ { 2 } = 1 , W _ { 3 } = 0 | E = h a m ) =$
+
+**(iii)** [2 pts] After filling out the probability table, Pacman found that one probability gets value zero, so he decided to use Laplace smoothing with $k = 1$ . However, his roommate said that it’s better to use $k = 2$ . What k value should Pacman choose?
+
+He should pick the value that works best in training data
+
+He should pick the value that works best in validation data
+
+He should pick the value that works best in testing data
+
+\## He should pick the average number of samples per class, which is 3 in this case.
+
+**(iv)** [3 pts] Right after implementing Laplace smoothing with $k = 1$ , Pacman receives an email which includes all three feature words. How would the model classify this email?
+
+$\mathbb{P}(E = span, W_1 = 1, W_2 = 1, W_3 = 1) =$
+
+$\mathbb{P}(E = hand, W_1 = 1, W_2 = 1, W_3 = 1) =$
+
+\# ham spam
+
+**(b)** Pacman is unhappy with the performance of Naive Bayes, so he decided to switch to using a Linear Perceptron with bias, with new features: number of $\sum ^ { \prime \prime }$ sign, and number of digits. Below is the training dataset:
+
+| number of "$" sign (𝑛<sub>1</sub>) | number of digits (𝑛<sub>2</sub>) | label (𝐸) |
+| --- | --- | --- |
+| 7 | 3 | spam (1) |
+| 0 | 2 | ham (-1) |
+| 5 | 5 | spam (1) |
+| 1 | 1 | ham (-1) |
+
+**(i)** [2 pts] Pacman is confident that the Perceptron will correctly classify all incoming emails after it converges. Is that true?
+
+\# Yes, because the training data is linearly separable
+
+\# Yes, but not the reason above
+
+\# No, because no decision boundary that goes through the origin can separate the data
+
+$\mathrm { N o } ,$ but not the reason above
+
+**(ii)** [3 pts] Starting from initial weight $w = \begin{bmatrix} 0 \\ 0 \\ -1 \end{bmatrix}$ (the last entry being the bias weight), determine the weight for the first few iterations. Leave all answers in form of $\mathbf { [ a , } \mathbf { b , } \mathbf { c ] }$ After seeing the first data:
+
+<!-- page: 9 -->
+
+SID:
+
+After seeing the second data:
+
+After seeing the third data:
+
+**(iii)** [2 pts] To decouple from the above, suppose Pacman now uses a Linear Perceptron **without bias**, and the current weight is $\left[ \frac{1}{2} \atop -\frac{1}{2} \right]$ , which is in the fourth quadrant. The next training example has 1 occurrence of $\text{" }\mathbb{S}\text{" }$ sign, and 1 occurrence of digits. Which quadrant could the weight be in after training using this sample?
+
+The first quadrant
+
+The second quadrant
+
+□ The third quadrant
+
+□ The fourth quadrant
+
+□ The x or y axis
+
+<!-- page: 10 -->
+
+## Q4. [18 pts] Backpropagation with Activation Checkpointing
+
+Below is a neural network with residual connections (square nodes) whose weights are $w _ { 1 } , w _ { 2 } , w _ { 3 } , w _ { 4 } , w _ { 5 }$ . The neural network takes 𝑥 as input and outputs 𝑦.
+
+![](images/page_9_image_2.jpg)
+
+The outputs at each node are computed as the following:
+
+$o _ { a } = \operatorname { R e L U } ( z _ { a } )$ where $z _ { a } = x \cdot w _ { 1 }$
+
+$o _ { b } = \mathrm { R e L U } ( z _ { b } ) + x$ where $z _ { b } = o _ { a } \cdot w _ { 2 }$
+
+$o _ { c } = \mathrm { L e a k y R e L U } ( z _ { c } )$ where $z _ { c } = o _ { b } \cdot w _ { 3 }$
+
+$o_{d} =  LeakyReLU (z_{d}) + o_{b}$ where $z _ { d } = o _ { c } \cdot w _ { 4 }$
+
+$$
+y = o _ {d} * w _ {5}
+$$
+
+$\mathbf { U } ( z ) = \left\{ \begin{aligned} { } & { { } z , } \\ { } & { { } \gamma * z , } \end{aligned} \right.$ if 𝑧 > 0 Let ReL $\mathrm { U } ( z ) = \operatorname* { m a x } ( z , 0 )$ while LeakyReL, otherwise
+
+Suppose the network has input $x = 2$ and $\gamma = 0 . 1$
+
+The weight values are $w _ { 1 } = 1 , w _ { 2 } = 2 , w _ { 3 } = 1 , w _ { 4 } = - 5 , w _ { 5 } = 3$
+
+**(a)** [2 pts] Perform forward propagation on the neural network.
+
+$\rho _ { a } =$
+
+$\rho _ { b } =$
+
+$\rho _ { c } =$
+
+$\rho _ { d } =$
+
+$y =$
+
+**(b)** [3 pts] Run backpropagation to calculate the following partial derivatives. Express the values of partial derivatives using only input (𝑥), activations $( o _ { a } , o _ { b } , o _ { c } , o _ { d } )$ , and constants. Do not write as a single number (must be an expression using 𝑥 and/or $o _ { i } , i \in \{ a , b , c , d \} )$ .
+
+**Input** $o _ { a } , o _ { b } , o _ { c } , o _ { d } \; \mathrm { a s \; \textless { } ^ { \textless } 0 \textunderscore a \textgreater } , \; \mathrm { { } ^ { \textless } 0 \textunderscore b \textgreater } , \; \mathrm { { } ^ { \textless } 0 \textunderscore c \textgreater } , \; \mathrm { { } ^ { \textless } 0 \textunderscore d \textgreater }$ **respectively.**
+
+${ \frac { \partial y } { \partial w _ { 5 } } } =$
+
+$\frac { \partial y } { \partial w _ { 4 } }$ =
+
+$\frac { \partial y } { \partial w _ { 3 } }$ =
+
+${ \frac { \partial y } { \partial w _ { 2 } } } =$
+
+${ \frac { \partial y } { \partial w _ { 1 } } } =$
+
+<!-- page: 11 -->
+
+**(c)** [1 pt] Let’s say storing the value of a single activation $o _ { i } ,   i \in \{ a , b , c , d \} )$ costs 1 memory unit. What is the maximum number of memory units used while running the backpropagation above?
+
+**(d)** As we try to train this neural network, we get an out-of-memory error and it turns out the main culprit is the cost of storing activations. To address this issue, we explore **activation checkpointing** where only a subset of activations are stored/checkpointed during forward propagation. This means that we may need to re-run parts of the forward propagation in order to re-compute activations that are missing, but needed during backpropagation.
+
+During backpropagation, you may use more memory units to re-compute and store additional activations needed for computing a particular partial derivative, but they must be released either when they are no longer needed for computing that partial derivative or if that partial derivative is successfully computed. Checkpointed activations are never released.
+
+As an example, suppose $o _ { a }$ is stored/checkpointed after forward propagation (memory: $[ o _ { a } ] )$ and we are interested in knowing the partial derivative which can be computed using just $o _ { c }$ . The neural network re-computes $o _ { b }$ based on 𝑥 and $o _ { a }$ (memory: $[ o _ { a } , o _ { b } ] )$ . Then, the neural network uses $o _ { b }$ to re-compute $o _ { c }$ (memory: $[ o _ { a } , o _ { b } , o _ { c } ] ) . o _ { b }$ is released as it’s no longer needed in computing the partial derivative of interest (memory: $[ o _ { a } , o _ { c } ] )$ . Once the partial derivative in interest is computed using $o _ { c } , o _ { c }$ is released (memory: $[ o _ { a } ] )$
+
+**Now, suppose we only checkpointed** $o _ { b }$ **during forward propagation.**
+
+**(i)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 5 } } \gamma$
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(ii)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 4 } } ?$
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(iii)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 3 } } ?$
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(iv)** [2 pts] What is the maximum number of memory units used while computing the above partial derivatives? If a partial derivative cannot be computed, assume no additional memory unit was used.
+
+**Now, suppose we only checkpoint** $o _ { c }$ **during forward propagation.**
+
+**(v)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 5 } }   \mathrm { ? }$
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(vi)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 4 } } ?$
+
+<!-- page: 12 -->
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(vii)** [1 pt] Can you compute $\frac { \partial y } { \partial w _ { 3 } } ?$
+
+\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing).
+
+\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing).
+
+\# No
+
+**(viii)** [2 pts] What is the maximum number of memory units used while computing the above partial derivatives? If a partial derivative cannot be computed, assume no additional memory unit was used.
+
+**(ix)** [2 pts] Which one is a better checkpoint between $o _ { b }$ and ${ o _ { c } } ^ { ? }$
+
+Both are the same.
+
+\# $o _ { b }$ because it has a lower peak memory usage.
+
+$o _ { c }$ because it has a lower peak memory usage.
+
+$o _ { b }$ because it requires less additional compute.
+
+\# $o _ { c }$ because it requires less additional compute.
+
+<!-- page: 13 -->
+
+SID:
+
+## Q5. [16 pts] Ace King Queen
+
+Your friend, Trevor, proposes a simplified game of poker with three cards - an Ace, a King, and Queen (best to worst in that order).
+
+In the game, each player gets a card (drawn from the 3 total cards without replacement) face down and puts in a mandatory \$10 ante. The first player can either "bet" (put in another) \$20 or "check" which ends the game (causing the player with the better card to take the \$20 in the middle).
+
+If the first player bets, the second player can either "call", matching first player’s bet (and have the player with the highest card win the now \$60 pot), or "fold" (let the first player win without seeing his card).
+
+An example round would be the first player drawing an Ace and second player drawing a King. The first player could either "bet" or "check". Say the first player "bets", then the second player could either "call" or "fold". If the second player "calls" he would lose \$30 to the first player (they would reveal cards and first player would have a higher card).
+
+**(a)** Now, let’s model this game as a Bayes net. ofa
+
+**(i)** [2 pts] Is the first player’s card independent from the second player’s card?
+
+\# Yes, because they are drawn separately.
+
+\# Yes, but for another reason.
+
+\# No, because the card may affect the player’s strategy.
+
+\# No, but for another reason.
+
+**(ii)** [1 pt] Is the first player’s card independent from the second player’s card given the last (third) card in the deck? # Yes # No
+
+**(b)** Suppose you’re the second player, and the opponent has just bet, so now it’s your turn to decide on an action. Furthermore, you know that the opponent will bet a third of his Queens, two-thirds of his Kings, and all of his Aces.
+
+**(i)** [1 pt] If you have a Queen, what is the expected utility of "calling" in your spot? EU =
+
+**(ii)** [1 pt] If you have a Queen, what is the expected utility of "folding" in your spot? EU =
+
+**(iii)** [1 pt] Say you have a Queen as the second player, and the first player bets, what is the optimal move? # Fold # Call
+
+**(iv)** [1 pt] If you now have an Ace, what is the expected utility of "calling" in your spot? EU =
+
+**(v)** [1 pt] What is the expected utility of the game for the first player if he chooses to always check? Value =
+
+**(c)** Suppose you’re the second player with a King, and the opponent has just bet, so now it’s your turn to decide on an action. You still know that the opponent will bet a third of his Queens, two-thirds of his Kings, and all of his Aces.
+
+**(i)** [1 pt] What is probability that your opponent is holding an Ace? P =
+
+**(ii)** [1 pt] What is probability that your opponent is holding an King? P =
+
+<!-- page: 14 -->
+
+**(iii)** [1 pt] What is probability that your opponent is holding an Queen?
+
+P =
+
+**(iv)** [3 pts] Now, the dealer tells you that if you pay him, he will tell you what card your opponent is holding. The dealer never lies. What is the maximum expected utility of this state if you were to find out your opponent’s card? MEU =
+
+**(v)** [2 pts] Suppose the dealer doesn’t always tell you the truth, even if you pay him. Can we still model how much to pay him with value of perfect information?
+
+\# Yes
+
+\# No
+
+## (d) Bonus! Only attempt if you have extra time. Worth 0 points. Not on the examtool for confusion reasons.
+
+**(i)** [0 pts] As the first player, with what probability should you bet when holding a King? P =
+
+**(ii)** [0 pts] As the first player, with what probability should you bet when holding a Queen? P =
+
+**(iii)** [0 pts] As the mandatory contribution to the pot increases, how does the optimal strategy with a Queen change as the first player?
+
+\# Bet more
+
+Check more
+
+\## Optimal strategy doesn’t change
+
+<!-- page: 15 -->
+
+SID:
+
+## Q6. [20 pts] Pure Romance
+
+Andy’s got a problem: he has a crush on Brianna and doesn’t know if he should ask her out. One day, Andy watches lecture and realizes something — he can model his current worry as a decision net! He drew up the following net with utility function 𝑈(𝐴, 𝐵):
+
+![](images/page_14_image_3.jpg)
+
+$A \in \{ y e s , n o \}$ : Whether Andy asks Brianna out
+
+• 𝐵: How Brianna feels towards Andy
+
+• 𝐹: How Brianna’s best friend thinks of Andy
+
+• 𝑀: Brianna’s mood when Andy is around her
+
+• 𝑅: The time it takes for Brianna to reply to Andy’s messages
+
+• 𝐶: The courseload that Brianna is taking this semester
+
+**(a)** For the following relations, indicate whether it is always, sometimes, or never true.
+
+**(i)** [2 pts] 𝑉 𝑃 𝐼(𝑅|𝑀) > 0 # Always true # Sometimes true # Never true
+
+(ii) [2 pts] 𝑉 𝑃 𝐼(𝐶) <= 0 # Always true # Sometimes true # Never true
+
+(iii) [2 pts] 𝑉 𝑃 𝐼(𝐹 , 𝐵) > 𝑉 𝑃 𝐼(𝐵) # Always true # Sometimes true # Never true
+
+**(iv)** [2 pts] $V P I ( R , M | B ) = V P I ( R | B ) + V P I ( M | B )$ Always true Sometimes true Never true
+
+<!-- page: 16 -->
+
+**(b)** Andy realizes he can observe 𝑅 and 𝑀. He’s not sure that his estimates of how Brianna feels about him (𝐵) and her courseload (𝐶) are close to reality, and so he decides to take his time to estimate these two variables using a Hidden Markov Model. He decides to disregard 𝐹 in his HMM.
+
+![](images/page_15_image_1.jpg)
+
+He plans to spend 𝑡 days collecting evidence, and use his belief of 𝐵 and 𝐶 on day 𝑡 to inform his decision net.
+
+**(i)** [2 pts] How should Andy solve for these beliefs?
+
+\# Particle filtering, because particle weights are useful in decision nets.
+
+\# Particle filtering, because we don’t know how long the time horizon t will be.
+
+Exact inference, since it is always more accurate than particle filtering
+
+Exact inference if the time horizon t is short and particle filtering if the time horizon t is long
+
+\# Unable to answer with the information provided
+
+**(ii)** [2 pts] We want to develop a model for this HMM. Which of the following are equivalent to an observation model $P ( M _ { i } , R _ { i } | B _ { i } , C _ { i } )$ , where $3 \leq i \leq t ?$
+
+$$
+\square P (M _ {i} | B _ {i}) P (R _ {i} | B _ {i}, C _ {1})
+$$
+
+$$
+\square P (M _ {i} | B _ {i}) P (M _ {i} | C _ {i}) P (R _ {i} | B _ {i}) P (R _ {i} | C _ {i})
+$$
+
+$$
+\square P (M _ {i} | B _ {i}, C _ {i}) P (R _ {i} | B _ {i}, C _ {i})
+$$
+
+$$
+\square P (M _ {i} | B _ {i}) P (M _ {i} | C _ {i}) P (R _ {i} | B _ {i})
+$$
+
+$$
+\square P (M _ {i} | R _ {i}, B _ {i}, C _ {i}) P (R _ {i} | B _ {i}, C _ {i})
+$$
+
+None of the above
+
+**(iii)** [2 pts] Which of the following are equivalent to $P ( B _ { i } , C _ { i } | B _ { i - 1 } , C _ { i - 1 } , R _ { i - 1 } )$ , where $3 \leq i \leq t ?$
+
+$$
+\square P (B _ {i} | B _ {i - 1}, R _ {i - 1}) P (C _ {i} | C _ {i - 1}, R _ {i - 1})
+$$
+
+$$
+\square P (B _ {i} | B _ {i - 1}, R _ {i - 1}) P (C _ {i} | B _ {i}, C _ {i - 1}, R _ {i - 1})
+$$
+
+$$
+\square P (B _ {i} | B _ {i - 1}, C _ {i}, R _ {i - 1}) P (C _ {i} | B _ {i}, C _ {i - 1}, R _ {i - 1})
+$$
+
+□ 𝑃 (𝐶<sub>𝑖</sub>|𝐵<sub>𝑖</sub>, 𝐶<sub>𝑖−1</sub>)
+
+$P ( B _ { i } | B _ { i - 1 } , C _ { i - 1 } )$
+
+None of the above
+
+<!-- page: 17 -->
+
+**(c)** [2 pts] An issue is that running this HMM takes time. And every day Andy puts off the decision to ask Brianna out makes him miserable. What of the following ways can he incorporate this logic into his algorithm?
+
+□ Conduct Laplace Smoothing on $B _ { t } ( B )$ and $B _ { t } ( C )$ , using 𝑡 as the hyperparameter 𝑘
+
+Replace $U ( A , B )$ with $U _ { 1 } ( A , B , t )$ , where $U _ { 1 } ( A , B , t ) = U ( A , B ) + t$
+
+□ Replace $U ( A , B )$ with $U _ { 2 } ( A , B , t )$ , where $\begin{array} { r } { U _ { 2 } ( A , B , t ) = \frac { U ( A , B ) } { t } } \end{array}$
+
+□ None of the above
+
+**(d)** [2 pts] Andy’s friend Joe thinks he might be able to break this HMM into two separate HMMs, one with state variable 𝐵 and evidence variables 𝑅 and 𝑀, and one with state variable 𝐶 and evidence variable 𝑅. Joe says Andy can then calculate his beliefs of 𝐶 and 𝐵 separately. Is this approach valid?
+
+\# Yes, because 𝐶 doesn’t affect the final utility
+
+\# Yes, but not for the reason above
+
+\# No, because 𝐵 and 𝐶 are conditionally independent
+
+\# No, but not for the reason above
+
+## (e) [2 pts] Andy solved for his belief of his HMM at a time 𝑡. He’s ready to make his decision. Does he need any other factors to decide on asking Brianna out?
+
+He needs the factor 𝑃 (𝐹)
+
+He needs the factors 𝑃 (𝐹) and 𝑃 (𝐶|𝑅, 𝑀)
+
+He needs factors other than the options above
+
+\# He doesn’t need any additional factors, but he would have to do additional computation before using the belief in the decision net.
+
+\# He doesn’t need any additional factors, and he would not have to do additional computation before using the belief in the decision net
+
+<!-- page: 18 -->
+
+## Q7. [18 pts] Games
+
+**(a)** In the following problems please choose all the answers that apply. You may pick more than one answer.
+
+**(i)** [2 pts] In the context of adversarial search, 𝛼 − 𝛽 pruning
+
+□ can reduce computation time by pruning portions of the game tree
+
+□ is generally faster than minimax, but loses the guarantee of optimality
+
+□ always returns the same value as minimax for the root of the tree
+
+□ always returns the same value as minimax for all nodes on the leftmost (first to be explored) edge of the tree,
+
+assuming successor game states are expanded from left to right
+
+□ always returns the same value as minimax for all nodes of the tree
+
+**(ii)** [2 pts] Consider an adversarial game in which each state s has minimax value v(s). Assume that the maximizer plays according to the optimal minimax policy 𝜋, but the opponent (the minimizer) plays according to an unknown, possibly suboptimal policy $\pi ^ { \prime }$ . Which of the following statements are true?
+
+The score for the maximizer from a state s under the maximizer’s control could be greater than v(s)
+
+The score for the maximizer from a state s under the maximizer’s control could be less than v(s).
+
+□ Even if the opponent’s strategy $\pi ^ { \prime }$ were known, the maximizer should play according to 𝜋.
+
+□ $\operatorname { I f } \pi ^ { \prime }$ is optimal and known, the outcome from any s under the maximizer’s control will be v(s).
+
+**(iii)** [3 pts] Consider a very deep game tree where the root node is a maximizer, and the complete-depth minimax value of the game is known to be $v _ { \infty } .$ Similarly, let $\pi _ { \infty }$ be the minimax-optimal policy. Also consider a depth-limited version of the game tree where an evaluation function replaces any tree regions deeper than depth 10. Let the minimax value of the depth-limited game tree be $v _ { 1 0 }$ for the current root node, and let $\pi _ { 1 0 }$ be the policy which results from acting according to a depth 10 minimax search at every move. Which of the following statements are true?
+
+$v _ { \infty }$ may be greater than or equal to $v _ { 1 0 }$
+
+$v _ { \infty }$ may be less than or equal to $v _ { 1 0 }$
+
+□ Against a perfect opponent, the actual outcome from following $\pi _ { 1 0 }$ may be greater than $v _ { \infty } ,$
+
+□ Against a perfect opponent, the actual outcome from following $\pi _ { 1 0 }$ may be less than $\pi _ { \infty } .$ This assumes that the perfect opponent is playing with infinite depth lookahead.
+
+**(b) (i)** [2 pts] Consider the 3-player game shown below. The player going first (at the top of the tree) is the Left player, the player going second is the Middle player, and the player going last is the Right player, optimizing the left, middle and right components respectively of the utility vectors shown. Fill in the values at all nodes. Note that all players maximize their own respective utilities.
+
+![](images/page_17_image_20.jpg)
+
+## (ii) [6 pts]
+
+**We have the knowledge that the sum of the utilities of all 3 players is always zero.**
+
+Select all edges for which observing the node will not affect the top-level decision (edges that can be pruned). To clarify, we only care about the left player’s value.
+
+If you prune a parent branch, do not mark any downstream children as pruned. □ (f)
+
+<!-- page: 19 -->
+
+SID:
+
+![](images/page_18_image_1.jpg)
+
+(i) (l) None of the above
+
+(iii) [3 pts]
+
+![](images/page_18_image_4.jpg)
+
+If we assume more about a game, additional pruning may become possible. Now, in addition to assuming that the sum of the utilities of all 3 players is still zero, we also assume that all utilities are in the interval [-10, 10]. Select all edges that would be pruned under these assumptions.
+
+If you prune a parent branch, do not mark any downstream children as pruned.
+
+□ (l)
+
+□ None of the above
+
+<!-- page: 20 -->
+
+## Q8. [15 pts] Hidden Markov Models and Particle Filtering
+
+The elevator in the Tower of Terror moves up and down to the other floors (L1, L2, L3, L4). The location of the elevator at time t is $X _ { t } .$ At the beginning of each timestep,
+
+(i) the elevator goes upwards with a probability of 0.4. It may go to any floor above its current position with equal probability. (ii) the elevator goes downwards with a probability of 0.4. It may go to any floor below its current position with equal probability (iii) the elevator stays where it is with a probability of 0.2. If the elevator is on floor L4, it goes down with probability 0.8 and stays in position with probability 0.2. Similarly, if the elevator is on floor L1, it goes up with probability 0.8 and stays in position with probability 0.2.
+
+| L4 |
+| --- |
+| L3 |
+| L2 |
+| L1 |
+
+| $X_0$ | $P(X_0)$ |
+| --- | --- |
+| L4 | 0.2 |
+| L3 | 0.2 |
+| L2 | 0.3 |
+| L1 | 0.3 |
+
+(a) [3 pts] Fill in the table below with the distribution of the elevator’s location at time $\mathbf { t } = 1$
+
+| $X_{1}$ | $P(X_{1})$ |
+| --- | --- |
+| L4 | 0.26 |
+| L3 |  |
+| L2 |  |
+| L1 |  |
+
+<!-- page: 21 -->
+
+**(b)** Calculate the stationary distribution for the tower states by filling the unknown values in the matrix below
+
+$$
+\left[ \begin{array}{c c c c} 0. 2 & (i) & 0. 2 & 0. 2 6 6 \\ (i i) & (i i i) & 0. 2 & 0. 2 6 6 \\ 0. 2 6 6 & 0. 2 & 0. 2 & 0. 2 6 6 \\ 0. 2 6 6 & (i v) & 0. 4 & 0. 2 \\ 1 & 1 & 1 & 1 \end{array} \right] \left[ \begin{array}{c} P (X _ {\infty} = L 1) \\ P (X _ {\infty} = L 2) \\ P (X _ {\infty} = L 3) \\ P (X _ {\infty} = L 4) \end{array} \right] = \left[ \begin{array}{c} P (X _ {\infty} = L 1) \\ P (X _ {\infty} = L 2) \\ P (X _ {\infty} = L 3) \\ P (X _ {\infty} = L 4) \\ 1 \end{array} \right]
+$$
+
+Fill in the missing values in the stationary system of equations for the following subparts. **(i)** [1 pt] **(ii)** [1 pt] **(iii)** [1 pt] **(iv)** [1 pt]
+
+To keep track of the position of the elevator, a sound sensor $S _ { u }$ is installed on the top of the tower and a sound sensor $S _ { b }$ is installed in the basement. Both sensors detect the excited sounds of the passengers, (+𝑠), or no sound at all, -s. The distribution of sensor measurements is determined by 𝑑, the number of floors between the elevator and the respective sensor. For example, if the elevator is on floor L3, then $d _ { b } = 2$ because there are two floors (L2 and L1) between floor L3 and the bottom and $d _ { u } =$ 1 because there is one floor (L4) between floor L3 and the top. The prior of the both sensors’ outputs are identical and listed below.
+
+![](images/page_20_image_5.jpg)
+
+| $S_{u}$ | $P(S_{u}\|d_{u})$ | $S_{b}$ | $P(S_{b}\|d_{b})$ |
+| --- | --- | --- | --- |
+| +s | $0.2/(d_{u}+1)$ | +s | $1 - 0.2*d_{b}$ |
+| -s | $1 - 0.2/(d_{u}+1)$ | -s | $0.2*d_{b}$ |
+
+**(c)** [2 pts] You decide to track the elevator’s position by particle filtering with 3 particles. At the end of time t = 1, the particles are at positions $p _ { 1 } = \mathrm { L } 1 ,   p _ { 2 } = \mathrm { L } 2$ and $p _ { 3 } = \mathrm { L } 3$ . Without incorporating any sensory information, what is the probability that the particles will be resampled as $p _ { 1 } = \mathrm { L } 3 , p _ { 2 } = \mathrm { L } 2$ , and $p _ { 3 } = \mathrm { L } 4$ , at the end of time t=1?
+
+**(d)** [3 pts] To decouple this from the previous question, assume the particles after time elapsing are $p_{1}=\mathrm{L}3, p_{2}=\mathrm{L}2, p_{3}=$ L1, and the sensors observe $S _ { u } = + \mathrm { s }$ and $S _ { b } = \mathrm { - s }$ . What are the particle weights given these observations?
+
+<!-- page: 22 -->
+
+| Particle | Weight |
+| --- | --- |
+| $X_{1} = L3$ |  |
+| $X_{2} = L2$ |  |
+| $X_{3} = L1$ |  |
+
+**(e)** [3 pts] Note: the u and b subscripts from before will be written here as superscripts. Part of the expression for the forward algorithm update for Hidden Markov Models is given below. $s _ { 0 : t } ^ { u }$ are all the measurements from the roof sensor $s _ { 0 } ^ { u } ,   s _ { 1 } ^ { u } ,$ $s _ { 2 } ^ { u } , \ldots ,   s _ { t } ^ { u } . s _ { 0 : t } ^ { b }$ are all the measurements from the roof sensor $s _ { 0 } ^ { b ^ { 0 . 1 } } s _ { 1 } ^ { b }   ,   s _ { 1 2 } ^ { b }   , \ldots   ,   s _ { t } ^ { b } .$
+
+Choose all the correct options for the blank given
+
+![](images/page_21_image_3.jpg)
+
+$$
+P (x _ {t} | s _ {0: t} ^ {u}, s _ {0: t} ^ {b}) \propto P (x _ {t}, s _ {0: t} ^ {u}, s _ {0: t} ^ {b})
+$$
+
+$$
+= \sum_ {x _ {t - 1}} P (x _ {t - 1}, x _ {t}, s _ {0: t} ^ {u}, s _ {0: t} ^ {b})
+$$
+
+$$
+= \sum_ {x _ {t - 1}} P (x _ {t - 1}, x _ {t}, s _ {0: t - 1} ^ {u}, s _ {0: t - 1} ^ {b}, s _ {t} ^ {u}, s _ {t} ^ {b})
+$$
+
+$\propto \Sigma _ { x _ { t - 1 } }$
+
+$$
+\square P (s _ {t} ^ {u}, s _ {t} ^ {b} | x _ {t - 1}, x _ {t}, s _ {0: t - 1} ^ {u}, s _ {0: t - 1} ^ {b})
+$$
+
+□ 𝑃 (𝑠𝑢𝑡 |𝑥𝑡)𝑃 (𝑠𝑏𝑡 |𝑥𝑡)
+
+$P ( s _ { t } ^ { u } | x _ { t - 1 } ) P ( s _ { t } ^ { b } | x _ { t - 1 } )$
+
+$P ( s _ { t } ^ { u } | s _ { t - 1 } ^ { u } ) P ( s _ { t } ^ { b } | s _ { t - 1 } ^ { b } )$
+
+None of the above
