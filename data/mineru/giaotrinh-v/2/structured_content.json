@@ -1,0 +1,251 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.245,
+            0.158,
+            0.294
+          ],
+          "content": "2"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.219,
+            0.243,
+            0.848,
+            0.315
+          ],
+          "level": 1,
+          "content": "Biểu thức chính quy, chuẩn hóa text edit distance"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.16,
+            0.376,
+            0.742,
+            0.5
+          ],
+          "sub_type": "code",
+          "content": "```txt\nUser : You are like my father in some ways.\nELIZA: WHAT RESEMBLANCE DO YOU SEE\nUser : You are not very aggressive but I think you don't want me to notice that.\nELIZA: WHAT MAKES YOU THINK I AM NOT VERY AGGRESSIVE\nUser : You don't argue with me.\nELIZA: WHY DO YOU THINK I DON'T ARGUE WITH YOU\nUser : You are afraid of me.\nELIZA: DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.521,
+            0.755,
+            0.744
+          ],
+          "content": "Đoạn hội thoại trên là từ **ELIZA**, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhanạ dạng các cụm từ như \"Bạn là X\" và sau đó chuyển thành câu hỏi hợp lý như \"Điều gì khiến bạn nghĩ tôi là X?\". Kỹ thuật đơn giản này đạt được thành công trong lĩnh vực này vì ELIZA không cần biết điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại mà người nghe có thể phản ứng mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thanh công đáng chú ý: rất nhiều người tauwơng tác với ELIZA bắt đầu tin rằng nó thực sự hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những chatbots như vậy cũng rất thú vị."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.744,
+            0.756,
+            0.847
+          ],
+          "content": "Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật; chúng có thể trả lời trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, chúng ta sẽ cùng tìm hiểu trong chương 25. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.452,
+            0.866,
+            0.462,
+            0.879
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.243,
+            0.122,
+            0.85,
+            0.14
+          ],
+          "content": "2CHAPTER 2. BIỂU THỨC CHÍNH QUY, CHUẨN HÓA TEXTEDIT DISTANCE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.162,
+            0.839,
+            0.248
+          ],
+          "content": "Chúng ta sẽ bắt đầu với công cụ quan trọng nhất trong việc biểu diễn các luật văn bản: **biểu thức chính quy**. Các biểu thức chính quy có thể chỉ định một chuỗi chúng ta muốn tách ra từ một văn bản, từ các cụm từ \"Bạn là X\" như ở ELIZA, cho đến các chuỗi như \\$199 hay \\$24.99 để trích xuất giá từ một bảng trong một văn bản."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.194,
+            0.262,
+            0.597,
+            0.289
+          ],
+          "level": 2,
+          "content": "2.1. BIỂU THỨC CHÍNH QUY"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.241,
+            0.301,
+            0.836,
+            0.336
+          ],
+          "content": "Một trong những thành công lớn trong khoa học máy tính là biểu thức chính quy, một ngôn ngữ để chỉ định các chuỗi tìm kiếm."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.211,
+            0.345,
+            0.571,
+            0.362
+          ],
+          "level": 2,
+          "content": "2.1.1. CÁC BIỂU THỨC CHÍNH QUY CƠ BẢN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.219,
+            0.36,
+            0.838,
+            0.411
+          ],
+          "content": "Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ woodchuck, ta gõ /woodchuck. Biểu thức /Buttercup/ khớp với tất cả các chuỗi có chứa cụm từ Buttercup; grep"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.246,
+            0.421,
+            0.727,
+            0.495
+          ],
+          "content": "| RE | Example Patterns Matched |\n| --- | --- |\n| /woodchucks | interesting links to woodchucks and lemurs |\n| /a/ | Mary Ann stopped by Mona's |\n| /!/ | \"You've left the burglar behind again!\" said Nori |",
+          "captions": [
+            {
+              "bbox": [
+                0.354,
+                0.507,
+                0.725,
+                0.525
+              ],
+              "content": "Figure 2.1: Ví dụ các biểu thức chính quy đơn giản"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_1_table_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.261,
+            0.539,
+            0.443,
+            0.556
+          ],
+          "content": "abc (Phuong, 2016) def"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.198,
+            0.248,
+            0.428,
+            0.283
+          ],
+          "level": 2,
+          "content": "Bibliography"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.332,
+            0.754,
+            0.385
+          ],
+          "content": "Le-Hong Phuong. 2016. [Vietnamese named entity recognition using token regular expressions and bidirectional inference](http://arxiv.org/abs/1610.05652). CoRR abs/1610.05652. [http://arxiv.org/abs/1610.05652](http://arxiv.org/abs/1610.05652)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.451,
+            0.865,
+            0.464,
+            0.879
+          ],
+          "content": "3"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2018-09-29T10:45:03+07:00",
+      "modified_at": "2018-09-29T10:45:03+07:00",
+      "creator_application": "LaTeX with hyperref package",
+      "producer_application": "pdfTeX-1.40.18",
+      "page_count": 3,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
