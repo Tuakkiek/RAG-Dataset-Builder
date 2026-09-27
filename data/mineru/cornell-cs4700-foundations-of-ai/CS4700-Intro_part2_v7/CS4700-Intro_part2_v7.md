@@ -1,0 +1,673 @@
+<!-- page: 1 -->
+
+## Theoretical aspects
+
+– **Mathematical formalizations, properties, algorithms**
+
+**Engineering aspects**
+
+– **The act of building (useful) machines**
+
+**Empirical science**
+
+– **Experiments**
+
+<!-- page: 2 -->
+
+# What's involved in Intelligence?
+
+**A) Ability to interact with the real world to perceive, understand, and act speech recognition and understanding (natural language) image understanding (computer vision)**
+
+## B) Reasoning and Planning
+
+CS4700
+
+**modeling the external world problem solving, planning, and decision making ability to deal with unexpected problems, uncertainties**
+
+**C) Learning and Adaptation Lots of data. Use to train statistical models. We are continuously learning and adapting. We want systems that adapt to us!**
+
+<!-- page: 3 -->
+
+## AI leverages from different disciplines
+
+## philosophy
+
+**e.g., foundational issues (can a machine think?), issues of knowledge and believe, mutual knowledge**
+
+**psychology and cognitive science**
+
+**e.g., problem solving skills**
+
+**neuro-science**
+
+**e.g., brain architecture**
+
+**computer science and engineering**
+
+**e.g., complexity theory, algorithms, logic and inference, programming languages, and system building.**
+
+**mathematics, statistics, and physics e.g., statistical modeling, continuous mathematics, statistical physics, and complex systems.**
+
+<!-- page: 4 -->
+
+## Historical Perspective
+
+**Obtaining an understanding of the human mind is one of the final frontiers of modern science.**
+
+## Founders:
+
+**George Boole, Gottlob Frege, and Alfred Tarski**
+
+• **formalizing the laws of human thought**
+
+**Alan Turing, John von Neumann, and Claude Shannon**
+
+**thinking as computation**
+
+**John McCarthy (Stanford), Marvin Minsky (MIT),**
+
+**Herbert Simon and Allen Newell (CMU)**
+
+• **the start of the field of AI (1956)**
+
+<!-- page: 5 -->
+
+## History of AI: The gestation of AI 1943-1956 (See Russell & Norvig)
+
+**1943 McCulloch and Pitts**
+
+– **McCulloch and Pitts’ model of artificial neurons**
+
+– **Minsky’s 40-neuron network**
+
+**1950 Turing’s** “**Computing machinery and intelligence** ”
+
+**1950s Early AI programs, including Samuel’s checkers program, Newell and Simon’s Logic theorist**
+
+**1956 Dartmouth meeting : Birth of “Artificial Intelligence** ”
+
+– 2-month Dartmouth workshop; 10 attendees
+
+– Name was chosen. AI
+
+<!-- page: 6 -->
+
+**History of AI:**
+
+**(1952-1969)**
+
+1957 Herb Simon (CMU): **Early enthusiasm, great expectations**
+
+**It is not my aim to surprise or shock you – but the simplest way I can summarize is to say that** <strong><u>there are now in the world machines that think, that learn, and that create</u></strong>**.** J
+
+**1958 John McCarthy’s LISP (symbol processing at core)**
+
+**1965 J.A. Robinson invents the resolution principle, basis for automated theorem. General reasoning procedure.**
+
+**Limited intelligent reasoning in microworlds (such as the “blocks world” --- a toy robotics domain)**
+
+<!-- page: 7 -->
+
+## gripper
+
+## The Blocks World
+
+![](images/page_6_image_2.jpg)
+
+(a) "Pick up a big red block."
+
+![](images/page_6_image_4.jpg)
+
+(b) "Find a block which is taller than the one you are holding and put it into the box."
+
+**Requires:**
+
+**--- Vision**
+
+**--- Reasoning/Planning**
+
+**--- Manipulation**
+
+**--- Acting/Robotics**
+
+**“A Microworld”**
+
+![](images/page_6_image_12.jpg)
+
+(c) "Will you please stack up both of the red blocks and either a green cube or a pyramid?"
+
+<!-- page: 8 -->
+
+**“Brainy, Yes, but Far From Handy” New York Times 09/01/14 Making dexterous hands with human-level touch and sensing still a real challenge.** <strong><u>Link.</u></strong>
+
+![](images/page_7_image_1.jpg)
+
+Stacking blocks may seem like an easy task for a human, but robots have long struggled with such fine control. HDT’s Adroit manipulator uses **force-sensing and vision** to accomplish the delicate task.
+
+Dynamic human touch — for example, when a finger slides across a surface — could distinguish ridges no higher than 13 nanometers, or about 0.0000005 of an inch. Individual molecules...
+
+<!-- page: 9 -->
+
+**1) Weizenbaum’s ELIZA (“fools” users)**
+
+**Capturing general knowledge is hard.**
+
+## 2) Difficulties in automated translation See Babelfish
+
+**Syntax and dictionaries are not enough Consider going from English to Russian back to English. Early effort…**
+
+“**The spirit is willing but the flesh is weak.** ”
+
+“**The vodka is good but the meat is rotten.** ” **Natural language processing (NLP) is hard. (Ambiguity! Context! Anaphora resolution.)**
+
+<!-- page: 10 -->
+
+**History of AI A dose of reality, cont. (1965 - 1978)**
+
+**3) Cars climbing up trees (at CMU)… Road sides look like parallel lines. But, unfortunately, so do trees!**
+
+**Computer vision is hard. (Ambiguity! Context! Noisy pixels.)**
+
+**4) Limitations of perceptrons discovered Minsky and Papert (1969)**
+
+![](images/page_9_image_4.jpg)
+
+**Can only represent linearly separable functions Neural network research almost disappears**
+
+**Machine learning is hard.**
+
+**5) Intractability of inference. NP-Completeness (Cook 72) Intractability of many problems attempted in AI. Worst-case result….** Machine reasoning is hard
+
+<!-- page: 11 -->
+
+**Knowledge-based systems (lots of knowledge with limited but fast reasoning) (Feigenbaum)**
+
+**versus**
+
+**general “weak” methods (a few basic principles with general reasoning)**
+
+**(Simon and Newell)**
+
+**Some success: Expert Systems**
+
+– **Mycin: diagnose blood infections (medical domain)**
+
+– **R1 : configuring computer systems**
+
+– **AT&T phone switch configuration**
+
+Knowledge in rules of form:
+
+<!-- page: 12 -->
+
+## Expert Systems
+
+**Very expensive to code. (\$1M+)**
+
+**Response: Try to learn knowledge from data.**
+
+**Weak with uncertain inputs / noisy data / partial information**
+
+**Response: Incorporate probabilistic reasoning**
+
+**Brittle! (fail drastically outside domain)**
+
+## Leads to 1980 -- 1995:
+
+**--- General foundations reconsidered**
+
+**--- Foundations of machine learning established (e.g. computational learning theory; PAC learning; statistical learning)**
+
+**--- Foundations of probabilistic formalisms: Bayesian reasoning; graphical models; mixed logical and probabilistic formalisms.**
+
+## From 1995 onward:
+
+**--- Data revolution combined with statistical methods**
+
+**--- Building actual systems**
+
+**--- Human world expert performance matched (and exceeded) in certain domains**
+
+<!-- page: 13 -->
+
+**Several success stories with high impact …**
+
+<!-- page: 14 -->
+
+## Machine Learning
+
+![](images/page_13_image_1.jpg)
+
+**World-champion level play by Neural Network that learned from scratch by playing millions and millions of games against itself! (about 4 months of training. Temporal-Difference learning.)**
+
+**(initial games hundreds of moves) Has changed human play.**
+
+**Remaining open question: Why does this NOT work for, e.g., chess??**
+
+![](images/page_13_image_5.jpg)
+
+<!-- page: 15 -->
+
+## 1996 --- EQP: “Robbin’s Algebras are all Boolean”
+
+**A mathematical conjecture (Robbins conjecture) unsolved for 60 years!**
+
+![](images/page_14_image_2.jpg)
+
+**First creative mathematical proof by computer. Contrast with brute-force based proofs such as the 4-color theorem.**
+
+**The Robbins problem was to determine whether one particular set of rules is powerful enough to capture all of the laws of Boolean algebra.**
+
+**Mathematically: Can the equation not(not(P) )= P be derived from the following three equations?**
+
+```txt
+[1] (P or Q) = (Q or P)
+```
+
+```txt
+[2] (P or Q) or R = P or (Q or R),
+```
+
+```txt
+[3] not(not(P or Q) or not(P or not(Q))) = P.
+```
+
+**[An Argonne lab program] has come up with a major mathematical proof that would have been called creative if a human had thought of it. New York Times, December, 1996**
+
+http://www-unix.mcs.anl.gov/\~mccune/papers/robbins/
+
+<!-- page: 16 -->
+
+![](images/page_15_image_0.jpg)
+
+p+q+p+q=q
+
+[Robbins axiom]
+
+$$
+\overline {{\overline {{p + q}} + \overline {{p}} + q + q}} = \overline {{p + q}}
+$$
+
+$$
+[ 7 \to 7 ]
+$$
+
+$$
+\overline {{\overline {{p + q}} + p + q + q}} = \overline {{\overline {{p + q}}}}
+$$
+
+$$
+[ 7 \to 7 ]
+$$
+
+29
+
+$$
+\overline {{\overline {{p + q}} + p + 2 q}} + \overline {{\overline {{p + q}}}} = q
+$$
+
+$$
+[ 1 1 \to 7 ]
+$$
+
+$$
+\overline {{\overline {{p + q}} + p + 2 q}} + \overline {{\overline {{p + q}} + r}} + \overline {{q + r}} = r
+$$
+
+$$
+[ 2 9 \rightarrow 7 ]
+$$
+
+217
+
+$$
+\overline {{\overline {{p + q}} + p + 2 q}} + \overline {{\overline {{p + q}}}} + \overline {{q + r}} + r + r = \overline {{q + r}}
+$$
+
+$$
+[ 5 4 \rightarrow 7 ]
+$$
+
+674
+
+$$
+\overline {{\overline {{p + q}} + p + 2 q}} + \overline {{p + q}} + \overline {{q + r}} + r + r + s + \overline {{q + r}} + s = s
+$$
+
+$$
+[ 2 1 7 \rightarrow 7 ]
+$$
+
+6736
+
+$$
+\overline {{\overline {{3 p + p}} + \overline {{3 p}} + \overline {{\overline {{3 p + p}} + 5 p}}}} = \overline {{\overline {{3 p + p}}}}
+$$
+
+$$
+[ 1 0 \to 6 7 4 ]
+$$
+
+8855
+
+$$
+\overline {{\overline {{3 p + p}} + 5 p}} = \overline {{3 p}}
+$$
+
+$$
+[ 6 7 3 6 \to 7, s i m p: 5 4 ]
+$$
+
+8865
+
+$$
+\overline {{\overline {{3 p + p}} + \overline {{3 p}} + 2 p + \overline {{3 p}}}} = \overline {{\overline {{3 p}} + p}} + 2 p
+$$
+
+$$
+[ 8 8 5 5 \rightarrow 7 ]
+$$
+
+8866
+
+$$
+\overline {{\overline {{3 p}} + p + \overline {{3 p}}}} = p
+$$
+
+$$
+[ 8 8 5 5 \to 7, s i m p: 1 1 ]
+$$
+
+8870
+
+$$
+\overline {{\overline {{3 p + p}} + \overline {{3 p}} + q + \overline {{p + q}}}} = q
+$$
+
+$$
+[ 8 8 6 6 \to 7 ]
+$$
+
+8871
+
+$$
+\overline {{3 p + p}} + 2 p = 2 p
+$$
+
+[8865, simp : 8870]
+
+A Raker's Dozen, The key steps in proving the Robbins conjecture, as reported by EQP, an automated theorem-proving program developed by William McCune and colleagues at Argonne National Laboratory. (See Box, "Substitute Teacher." page 63 for details.)
+
+## As Eas
+
+he phrase il est French mathematiciar phrase is common in spelling out details th matical techniques. words. What Laplac: intense mathematical
+
+Oddly enough, Laj see how a particular was easy to see. Th right combination of Could a computer have.
+
+William McCune, Laboratory in Illinois proving programs. 1 dicts on a range of pí His most powerful pi can be every bit as program considers e; the program's creato
+
+Cryptic or not, E announced a solutiol bolic logic that ha posed in the 1930's. has been solved by described as reasoni
+
+"It's a clear lan Stanley Burris, a lo Canada. "Now tha problem, it opens th
+
+The Robbins co which are named (1815–1864), who into algebraic exprt expressed as p + p + N(g); a logic
+
+<!-- page: 17 -->
+
+## Deep Blue beats the World Chess Champion
+
+![](images/page_16_image_2.jpg)
+
+Deep Blue had Kasparoy in deep thought (CNN)
+
+![](images/page_16_image_4.jpg)
+
+**I could feel human-level intelligence across the room Gary Kasparov, World Chess Champion (human…)**
+
+<!-- page: 18 -->
+
+## Note: when training in self-play, be careful to randomize!
+
+## Deep Blue vs. Kasparov
+
+![](images/page_17_image_2.jpg)
+
+**Game 1: 5/3/97: Kasparov wins**
+
+**Game 2: 5/4/97: Deep Blue wins**
+
+**Game 3: 5/6/97: Draw**
+
+**Game 4: 5/7/97: Draw**
+
+**Game 5: 5/10/97: Draw**
+
+**Game 3: Why did Kasparov not simply repeat moves from game 1?**
+
+**Game 6: 5/11/97: Deep Blue wins**
+
+**The value of IBM’s stock increased by \$18 Billion!**
+
+**We’ll discuss Deep Blue’s architecture, when we cover multi-agent search.**
+
+<!-- page: 19 -->
+
+## On Game 2
+
+**Game 2 - Deep Blue took an early lead. Kasparov resigned, but it turned out he could have forced a draw by perpetual check.**
+
+**Interestingly, if Kasparov had been playing a human he would most likely not have resigned!**
+
+**This was real chess. This was a game any human grandmaster would have been proud of.**
+
+**Joel Benjamin**
+
+**grandmaster, member Deep Blue team**
+
+<!-- page: 20 -->
+
+**Kasparov on Deep Blue 1996: Kasparov Beats Deep Blue**
+
+“**I could feel --- I could smell --- a new kind of intelligence across the table.**” **(CNN)**
+
+**1997: Deep Blue Beats Kasparov**
+
+“**Deep Blue hasn't proven anything.**” J
+
+**Current strongest play: Computer-Human hybrid**
+
+<!-- page: 21 -->
+
+**May, '97 --- Deep Blue vs. Kasparov. First match won against world-champion. \`\`intelligent creative'' play. 200 million board positions per second!**
+
+**Kasparov: ... still understood 99.9 of Deep Blue's moves.**
+
+**Deep Blue considers 60 billion boards per move! Human?**
+
+**Around 10 to 20 lines of play. Hmm…**
+
+**Intriguing issue: How does human cognition deal with the search space explosion of chess? Or how can humans compete with computers at all?? (What does human cognition do? Truly unknown…)**
+
+<!-- page: 22 -->
+
+## Concepts (briefly) (more details with multi-agent search)
+
+**--- Minimax search on game tree to get optimal move (large tree >= 10^80 chess)**
+
+**Size tree: b^d (b --- average branching; d --- depth)**
+
+**alpha-beta pruning: b^(d/2) [key technique]**
+
+**--- Board evaluation or utility function when**
+
+**you can’t search to the bottom**
+
+**--- Board eval is linear weighted some of features; can be trained via learning**
+
+**--- Chess complexity?**
+
+**O(1) (formally speaking…)**
+
+<!-- page: 23 -->
+
+## Robocup @ Cornell --- Raff D’Andrea 2000
+
+![](images/page_22_image_1.jpg)
+
+<!-- page: 24 -->
+
+![](images/page_23_chart_1.jpg)
+
+<!-- page: 25 -->
+
+**Kiva Systems \$700M**
+
+## From Robocup to Warehouse Automation
+
+![](images/page_24_image_2.jpg)
+
+<!-- page: 26 -->
+
+## 2005 Autonomous Control: DARPA GRAND CHALLENGE
+
+![](images/page_25_image_1.jpg)
+
+**October 9, 2005 Stanley and the Stanford RacingTeam were awarded 2 million dollars for being the first team to complete the 132 mile DARPA Grand Challenge course (Mojave Desert). Stanley finished in just under 6 hours 54 minutes and averaged over 19 miles per hours on the course.**
+
+**Sebastian Thrun: Google's driverless car (2011)**
+
+**Cornell team stuck** L **due to malfunctioning GPS.**
+
+<!-- page: 27 -->
+
+![](images/page_26_image_0.jpg)
+
+# path planning
+
+## Path Planning Overview
+
+Path planning is the basic process by which our vehicle decides on what path to take through the world. The A.I. uses the world model created by the sensors, the GPS waypoints provided during the race by DARPA, and a road following algorithm to pick a best path.
+
+## Road Following
+
+The road following algorithm uses color differences, shadowing, and edge-detection algorithms to detect the sides of a road (if there is a road) and then decides if the road is turning, going straight, which direction, how sharply, etc. The road following algorithm uses input from most of the vehicle sensors, and provides the A.I. with probable road characteristics.
+
+![](images/page_26_image_6.jpg)
+
+$\mathrm { A ^ { * } }$ algorithm Covered in search and problem solving.
+
+The red line represents the ideal path picked by our A.I., and the turquoise path represents the actual path traveled by our vehicle. The differences arise because 1) we did not start our vehicle on the ideal path, and 2) our vehicle must, without exceeding its performance limits, avoid small obstacles such as boulders.
+
+<!-- page: 28 -->
+
+Cornell: 4<sup>th</sup>! **2007 Darpa Urban Challenge** Also, in historic **Winner: CMU Tartan Racing's Boss 1**<strong><sup>st</sup></strong> **autonomous driverless car collision. Rear-ended by MIT car!**
+
+## 2007Darpa Urban Challenge
+
+The Urban Challenge will pit driverless vehicles against one another on city streets. Robots will have to handle traffic, intersections, rules of the road and other robots. The challenge is a high-stakes competition that plays out on a world stage. The prize is \$2M, but the payoff for driver safety is much greater. This competition will be held November 3, 2007.
+
+EREDBYIL The Urban Chalene is hid in aries o autonomus ohide compe, tions Carnegie Mellon's "Sandstorm" and "H1ghlander" crossed the finish line of URBAN DAuAd Chalenge er usfuly ml a 12-mlecours CHALLENGE
+
+![](images/page_27_image_4.jpg)
+
+http://www.tartanracing.org/blog/index.html#26
+
+<!-- page: 29 -->
+
+**Watson: Question-Answering system, 2011**
+
+![](images/page_28_image_1.jpg)
+
+Watson defeats the two greatest Jeopardy! champions
+
+http://www.youtube.com/watch?v=dr7IxQeXr7g
+
+<!-- page: 30 -->
+
+## Watson
+
+![](images/page_29_image_1.jpg)
+
+<!-- page: 31 -->
+
+**New York Times: “Scientists See Promise in Deep-Learning**
+
+**Programs,” Saturday, Nov. 24, 2012.**
+
+<strong><u>http://www.nytimes.com/2012/11/24/science/scientists-see-advances</u></strong>**-**<strong><u>in-deep-learning-a-part-of-artificial-intelligence.html?hpw</u></strong>
+
+## Multi-layer neural networks, a resurgence!
+
+**a) Winner one of the most recent learning competitions**
+
+**b) Automatic (unsupervised) learning of “cat” and “human face” from 10 million of Google images; 16,000 cores 3 days; multi-layer neural network (Stanford & Google).**
+
+**c) Speech recognition and real-time translation (Microsoft Research, China).**
+
+Aside: see web site for great survey article
+
+“A Few Useful Things to Know About
+
+Machine Learning” by Domingos, CACM, 2012.
+
+<!-- page: 32 -->
+
+![](images/page_31_image_0.jpg)
+
+Start at min. 3:00. Deep Neural Nets in speech recognition.
+
+<!-- page: 33 -->
+
+## Other promising ongoing efforts
+
+**1) Intelligent autonomous assistants, e.g., iPhone’s Siri (still a long way to go** J**) Integrated, autonomous agents. Google Glass will be the next step. Location / context aware; rich sensing, vision and speech understanding and generation.**
+
+**2) Fully self-driving car (Google; assisted driving Mercedes and BMW** the cost of a car is becoming software and sensors Incredibly **more lines of code in a Mercedes than in a Boeing 747.)**
+
+**2) Google translate. Reaches around 70% of human translator performance. Almost fully a purely statistical approach.**
+
+**Not clear yet how far one can go without a real understanding of the semantics (meaning). But with Big Data, statistical methods already went much further than many researchers had considered possible only 10 years ago.**
+
+<!-- page: 34 -->
+
+![](images/page_33_image_0.jpg)
+
+- Course Administration
+- What is Artificial Intelligence?
+- Course Themes, Goals, and Syllabus
+
+<!-- page: 35 -->
+
+## Setting expectations for this course
+
+**Are you going to build real systems and robots? NO…**
+
+**Introduce the conceptual framework and computational techniques that serve as a foundation for the field of artificial intelligence (AI).**
+
+<!-- page: 36 -->
+
+• **Structure of intelligent agents and environments.**
+
+**Problem solving by search: principles of search, uninformed (**“**blind**”) **search, informed (**“**heuristic**”**) search, and local search.**
+
+**Constraint satisfaction problems: definition, search and inference, and study of structure.**
+
+**Adversarial search: games, optimal strategies, imperfect, real-time decisions.**
+
+**Logical agents: propositional and first order logic, knowledge bases and inference.**
+
+**Uncertainty and probabilistic reasoning: probability concepts, Bayesian networks, probabilistic reasoning over time, and decision making.**
+
+**Learning: inductive learning, concept formation, decision tree learning, statistical approaches, neural networks, reinforcement learning.**
+
+<!-- page: 37 -->
+
+**So far, we discussed**
+
+# Artificial Intelligence and characteristics of intelligent systems.
+
+**Brief history of AI**
+
+**Major recent AI achievements**
+
+**Reading: Chapter 1 Russell & Norvig**

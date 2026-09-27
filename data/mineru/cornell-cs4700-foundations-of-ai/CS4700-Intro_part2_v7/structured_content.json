@@ -1,0 +1,3374 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.642,
+            0.103,
+            0.961,
+            0.169
+          ],
+          "content": "AI Methodology"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.304,
+            0.442,
+            0.361
+          ],
+          "level": 2,
+          "content": "Theoretical aspects"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.377,
+            0.884,
+            0.498
+          ],
+          "content": "– **Mathematical formalizations, properties, algorithms**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.515,
+            0.455,
+            0.574
+          ],
+          "content": "**Engineering aspects**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.588,
+            0.819,
+            0.647
+          ],
+          "content": "– **The act of building (useful) machines**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.664,
+            0.416,
+            0.722
+          ],
+          "content": "**Empirical science**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.739,
+            0.416,
+            0.797
+          ],
+          "content": "– **Experiments**"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.344,
+            0.07,
+            0.972,
+            0.139
+          ],
+          "level": 1,
+          "content": "What's involved in Intelligence?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.171,
+            0.816,
+            0.391
+          ],
+          "content": "**A) Ability to interact with the real world to perceive, understand, and act speech recognition and understanding (natural language) image understanding (computer vision)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.072,
+            0.405,
+            0.534,
+            0.464
+          ],
+          "level": 2,
+          "content": "B) Reasoning and Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.751,
+            0.425,
+            0.868,
+            0.477
+          ],
+          "content": "CS4700"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.471,
+            0.757,
+            0.626
+          ],
+          "content": "**modeling the external world problem solving, planning, and decision making ability to deal with unexpected problems, uncertainties**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.639,
+            0.652,
+            0.863
+          ],
+          "content": "**C) Learning and Adaptation Lots of data. Use to train statistical models. We are continuously learning and adapting. We want systems that adapt to us!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.197,
+            0.029,
+            0.806,
+            0.174
+          ],
+          "level": 2,
+          "content": "AI leverages from different disciplines"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.098,
+            0.197,
+            0.285,
+            0.249
+          ],
+          "level": 2,
+          "content": "philosophy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.253,
+            0.883,
+            0.356
+          ],
+          "content": "**e.g., foundational issues (can a machine think?), issues of knowledge and believe, mutual knowledge**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.367,
+            0.648,
+            0.419
+          ],
+          "content": "**psychology and cognitive science**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.427,
+            0.47,
+            0.474
+          ],
+          "content": "**e.g., problem solving skills**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.485,
+            0.333,
+            0.532
+          ],
+          "content": "**neuro-science**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.543,
+            0.412,
+            0.589
+          ],
+          "content": "**e.g., brain architecture**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.602,
+            0.656,
+            0.654
+          ],
+          "content": "**computer science and engineering**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.66,
+            0.847,
+            0.762
+          ],
+          "content": "**e.g., complexity theory, algorithms, logic and inference, programming languages, and system building.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.773,
+            0.787,
+            0.932
+          ],
+          "content": "**mathematics, statistics, and physics e.g., statistical modeling, continuous mathematics, statistical physics, and complex systems.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.238,
+            0.065,
+            0.767,
+            0.138
+          ],
+          "level": 2,
+          "content": "Historical Perspective"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.229,
+            0.771,
+            0.327
+          ],
+          "content": "**Obtaining an understanding of the human mind is one of the final frontiers of modern science.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.105,
+            0.389,
+            0.251,
+            0.43
+          ],
+          "level": 2,
+          "content": "Founders:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.441,
+            0.736,
+            0.487
+          ],
+          "content": "**George Boole, Gottlob Frege, and Alfred Tarski**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.494,
+            0.733,
+            0.539
+          ],
+          "content": "• **formalizing the laws of human thought**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.547,
+            0.833,
+            0.592
+          ],
+          "content": "**Alan Turing, John von Neumann, and Claude Shannon**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.603,
+            0.544,
+            0.645
+          ],
+          "content": "**thinking as computation**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.655,
+            0.743,
+            0.701
+          ],
+          "content": "**John McCarthy (Stanford), Marvin Minsky (MIT),**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.708,
+            0.701,
+            0.753
+          ],
+          "content": "**Herbert Simon and Allen Newell (CMU)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.76,
+            0.645,
+            0.805
+          ],
+          "content": "• **the start of the field of AI (1956)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.527,
+            0.05,
+            0.962,
+            0.223
+          ],
+          "level": 2,
+          "content": "History of AI: The gestation of AI 1943-1956 (See Russell & Norvig)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.257,
+            0.467,
+            0.305
+          ],
+          "content": "**1943 McCulloch and Pitts**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.32,
+            0.866,
+            0.369
+          ],
+          "content": "– **McCulloch and Pitts’ model of artificial neurons**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.385,
+            0.593,
+            0.434
+          ],
+          "content": "– **Minsky’s 40-neuron network**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.445,
+            0.895,
+            0.5
+          ],
+          "content": "**1950 Turing’s** “**Computing machinery and intelligence** ”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.513,
+            0.876,
+            0.618
+          ],
+          "content": "**1950s Early AI programs, including Samuel’s checkers program, Newell and Simon’s Logic theorist**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.627,
+            0.943,
+            0.68
+          ],
+          "content": "**1956 Dartmouth meeting : Birth of “Artificial Intelligence** ”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.695,
+            0.768,
+            0.744
+          ],
+          "content": "– 2-month Dartmouth workshop; 10 attendees"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.758,
+            0.472,
+            0.805
+          ],
+          "content": "– Name was chosen. AI"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.686,
+            0.019,
+            0.96,
+            0.083
+          ],
+          "content": "**History of AI:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.815,
+            0.097,
+            0.96,
+            0.141
+          ],
+          "content": "**(1952-1969)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.154,
+            0.962,
+            0.219
+          ],
+          "content": "1957 Herb Simon (CMU): **Early enthusiasm, great expectations**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.227,
+            0.931,
+            0.361
+          ],
+          "content": "**It is not my aim to surprise or shock you – but the simplest way I can summarize is to say that** <strong><u>there are now in the world machines that think, that learn, and that create</u></strong>**.** J"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.401,
+            0.882,
+            0.455
+          ],
+          "content": "**1958 John McCarthy’s LISP (symbol processing at core)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.528,
+            0.943,
+            0.637
+          ],
+          "content": "**1965 J.A. Robinson invents the resolution principle, basis for automated theorem. General reasoning procedure.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.71,
+            0.881,
+            0.829
+          ],
+          "content": "**Limited intelligent reasoning in microworlds (such as the “blocks world” --- a toy robotics domain)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.022,
+            0.071,
+            0.139,
+            0.121
+          ],
+          "level": 2,
+          "content": "gripper"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.616,
+            0.023,
+            0.968,
+            0.079
+          ],
+          "level": 2,
+          "content": "The Blocks World"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.042,
+            0.134,
+            0.465,
+            0.432
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.145,
+                0.439,
+                0.35,
+                0.47
+              ],
+              "content": "(a) \"Pick up a big red block.\""
+            }
+          ],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.534,
+            0.131,
+            0.958,
+            0.43
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.538,
+                0.439,
+                0.955,
+                0.493
+              ],
+              "content": "(b) \"Find a block which is taller than the one you are holding and put it into the box.\""
+            }
+          ],
+          "image_source": "images/page_6_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.481,
+            0.188,
+            0.53
+          ],
+          "content": "**Requires:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.533,
+            0.184,
+            0.577
+          ],
+          "content": "**--- Vision**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.586,
+            0.382,
+            0.636
+          ],
+          "content": "**--- Reasoning/Planning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.64,
+            0.287,
+            0.689
+          ],
+          "content": "**--- Manipulation**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.693,
+            0.314,
+            0.744
+          ],
+          "content": "**--- Acting/Robotics**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.672,
+            0.535,
+            0.914,
+            0.583
+          ],
+          "content": "**“A Microworld”**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.292,
+            0.636,
+            0.713,
+            0.925
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.319,
+                0.93,
+                0.673,
+                0.983
+              ],
+              "content": "(c) \"Will you please stack up both of the red blocks and either a green cube or a pyramid?\""
+            }
+          ],
+          "image_source": "images/page_6_image_12.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.069,
+            0.631,
+            0.264
+          ],
+          "content": "**“Brainy, Yes, but Far From Handy” New York Times 09/01/14 Making dexterous hands with human-level touch and sensing still a real challenge.** <strong><u>Link.</u></strong>"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.008,
+            0.299,
+            0.658,
+            0.785
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.686,
+            0.068,
+            0.976,
+            0.467
+          ],
+          "content": "Stacking blocks may seem like an easy task for a human, but robots have long struggled with such fine control. HDT’s Adroit manipulator uses **force-sensing and vision** to accomplish the delicate task."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.677,
+            0.485,
+            0.999,
+            0.795
+          ],
+          "content": "Dynamic human touch — for example, when a finger slides across a surface — could distinguish ridges no higher than 13 nanometers, or about 0.0000005 of an inch. Individual molecules..."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.529,
+            0.0,
+            0.962,
+            0.116
+          ],
+          "content": "History of AI A dose of reality (1965 - 1978)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.118,
+            0.625,
+            0.171
+          ],
+          "content": "**1) Weizenbaum’s ELIZA (“fools” users)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.355,
+            0.222,
+            0.881,
+            0.278
+          ],
+          "content": "**Capturing general knowledge is hard.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.303,
+            0.6,
+            0.415
+          ],
+          "level": 2,
+          "content": "2) Difficulties in automated translation See Babelfish"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.471,
+            0.885,
+            0.641
+          ],
+          "content": "**Syntax and dictionaries are not enough Consider going from English to Russian back to English. Early effort…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.702,
+            0.863,
+            0.769
+          ],
+          "content": "“**The spirit is willing but the flesh is weak.** ”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.83,
+            0.865,
+            0.998
+          ],
+          "content": "“**The vodka is good but the meat is rotten.** ” **Natural language processing (NLP) is hard. (Ambiguity! Context! Anaphora resolution.)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.45,
+            0.009,
+            0.97,
+            0.128
+          ],
+          "content": "**History of AI A dose of reality, cont. (1965 - 1978)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.004,
+            0.207,
+            0.587,
+            0.377
+          ],
+          "content": "**3) Cars climbing up trees (at CMU)… Road sides look like parallel lines. But, unfortunately, so do trees!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.389,
+            0.544,
+            0.495
+          ],
+          "content": "**Computer vision is hard. (Ambiguity! Context! Noisy pixels.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.005,
+            0.503,
+            0.589,
+            0.613
+          ],
+          "content": "**4) Limitations of perceptrons discovered Minsky and Papert (1969)**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.615,
+            0.153,
+            0.998,
+            0.616
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.625,
+            0.631,
+            0.723
+          ],
+          "content": "**Can only represent linearly separable functions Neural network research almost disappears**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.629,
+            0.678,
+            0.998,
+            0.729
+          ],
+          "content": "**Machine learning is hard.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.006,
+            0.783,
+            0.873,
+            0.976
+          ],
+          "content": "**5) Intractability of inference. NP-Completeness (Cook 72) Intractability of many problems attempted in AI. Worst-case result….** Machine reasoning is hard"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.223,
+            0.939,
+            0.325
+          ],
+          "content": "**Knowledge-based systems (lots of knowledge with limited but fast reasoning) (Feigenbaum)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.445,
+            0.337,
+            0.53,
+            0.376
+          ],
+          "content": "**versus**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.436,
+            0.878,
+            0.485
+          ],
+          "content": "**general “weak” methods (a few basic principles with general reasoning)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.491,
+            0.264,
+            0.537
+          ],
+          "content": "**(Simon and Newell)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.598,
+            0.381,
+            0.645
+          ],
+          "content": "**Some success: Expert Systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.651,
+            0.715,
+            0.7
+          ],
+          "content": "– **Mycin: diagnose blood infections (medical domain)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.704,
+            0.528,
+            0.751
+          ],
+          "content": "– **R1 : configuring computer systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.756,
+            0.523,
+            0.806
+          ],
+          "content": "– **AT&T phone switch configuration**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.821,
+            0.446,
+            0.874
+          ],
+          "content": "Knowledge in rules of form:"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.038,
+            0.005,
+            0.27,
+            0.053
+          ],
+          "level": 2,
+          "content": "Expert Systems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.061,
+            0.42,
+            0.105
+          ],
+          "content": "**Very expensive to code. (\\$1M+)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.115,
+            0.653,
+            0.159
+          ],
+          "content": "**Response: Try to learn knowledge from data.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.167,
+            0.771,
+            0.213
+          ],
+          "content": "**Weak with uncertain inputs / noisy data / partial information**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.223,
+            0.674,
+            0.267
+          ],
+          "content": "**Response: Incorporate probabilistic reasoning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.275,
+            0.518,
+            0.321
+          ],
+          "content": "**Brittle! (fail drastically outside domain)**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.381,
+            0.307,
+            0.421
+          ],
+          "level": 2,
+          "content": "Leads to 1980 -- 1995:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.435,
+            0.485,
+            0.477
+          ],
+          "content": "**--- General foundations reconsidered**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.489,
+            0.952,
+            0.587
+          ],
+          "content": "**--- Foundations of machine learning established (e.g. computational learning theory; PAC learning; statistical learning)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.594,
+            0.93,
+            0.685
+          ],
+          "content": "**--- Foundations of probabilistic formalisms: Bayesian reasoning; graphical models; mixed logical and probabilistic formalisms.**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.746,
+            0.283,
+            0.787
+          ],
+          "level": 2,
+          "content": "From 1995 onward:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.801,
+            0.676,
+            0.841
+          ],
+          "content": "**--- Data revolution combined with statistical methods**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.853,
+            0.363,
+            0.895
+          ],
+          "content": "**--- Building actual systems**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.906,
+            0.902,
+            0.99
+          ],
+          "content": "**--- Human world expert performance matched (and exceeded) in certain domains**"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.685,
+            0.045,
+            0.963,
+            0.173
+          ],
+          "content": "History of AI: 1995 - present"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.447,
+            0.944,
+            0.509
+          ],
+          "content": "**Several success stories with high impact …**"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.065,
+            0.131,
+            0.404,
+            0.189
+          ],
+          "level": 2,
+          "content": "Machine Learning"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.624,
+            0.001,
+            0.985,
+            0.307
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.328,
+            0.884,
+            0.575
+          ],
+          "content": "**World-champion level play by Neural Network that learned from scratch by playing millions and millions of games against itself! (about 4 months of training. Temporal-Difference learning.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.584,
+            0.639,
+            0.705
+          ],
+          "content": "**(initial games hundreds of moves) Has changed human play.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.745,
+            0.626,
+            0.85
+          ],
+          "content": "**Remaining open question: Why does this NOT work for, e.g., chess??**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.659,
+            0.579,
+            0.967,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.386,
+            0.087,
+            0.996,
+            0.213
+          ],
+          "level": 2,
+          "content": "1996 --- EQP: “Robbin’s Algebras are all Boolean”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.243,
+            0.839,
+            0.285
+          ],
+          "content": "**A mathematical conjecture (Robbins conjecture) unsolved for 60 years!**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.074,
+            0.351,
+            0.247,
+            0.518
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.543,
+            0.4,
+            0.685
+          ],
+          "content": "**First creative mathematical proof by computer. Contrast with brute-force based proofs such as the 4-color theorem.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.413,
+            0.32,
+            0.881,
+            0.431
+          ],
+          "content": "**The Robbins problem was to determine whether one particular set of rules is powerful enough to capture all of the laws of Boolean algebra.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.414,
+            0.461,
+            0.888,
+            0.569
+          ],
+          "content": "**Mathematically: Can the equation not(not(P) )= P be derived from the following three equations?**"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.416,
+            0.569,
+            0.636,
+            0.605
+          ],
+          "sub_type": "code",
+          "content": "```txt\n[1] (P or Q) = (Q or P)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.416,
+            0.605,
+            0.736,
+            0.641
+          ],
+          "sub_type": "code",
+          "content": "```txt\n[2] (P or Q) or R = P or (Q or R),\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.416,
+            0.639,
+            0.837,
+            0.677
+          ],
+          "sub_type": "code",
+          "content": "```txt\n[3] not(not(P or Q) or not(P or not(Q))) = P.\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.753,
+            0.97,
+            0.889
+          ],
+          "content": "**[An Argonne lab program] has come up with a major mathematical proof that would have been called creative if a human had thought of it. New York Times, December, 1996**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.923,
+            0.936,
+            0.977
+          ],
+          "content": "http://www-unix.mcs.anl.gov/\\~mccune/papers/robbins/"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.319,
+            0.133,
+            0.665,
+            0.21
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.292,
+            0.225,
+            0.404,
+            0.243
+          ],
+          "content": "p+q+p+q=q"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.6,
+            0.218,
+            0.681,
+            0.236
+          ],
+          "content": "[Robbins axiom]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.318,
+            0.253,
+            0.441,
+            0.273
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + \\overline {{p}} + q + q}} = \\overline {{p + q}}",
+          "image_source": "images/page_15_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.643,
+            0.247,
+            0.682,
+            0.265
+          ],
+          "content": "[ 7 \\to 7 ]",
+          "image_source": "images/page_15_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.319,
+            0.283,
+            0.443,
+            0.305
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + p + q + q}} = \\overline {{\\overline {{p + q}}}}",
+          "image_source": "images/page_15_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.644,
+            0.279,
+            0.682,
+            0.297
+          ],
+          "content": "[ 7 \\to 7 ]",
+          "image_source": "images/page_15_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.29,
+            0.322,
+            0.306,
+            0.335
+          ],
+          "content": "29"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.32,
+            0.315,
+            0.448,
+            0.336
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + p + 2 q}} + \\overline {{\\overline {{p + q}}}} = q",
+          "image_source": "images/page_15_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.64,
+            0.311,
+            0.683,
+            0.329
+          ],
+          "content": "[ 1 1 \\to 7 ]",
+          "image_source": "images/page_15_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.321,
+            0.345,
+            0.502,
+            0.369
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + p + 2 q}} + \\overline {{\\overline {{p + q}} + r}} + \\overline {{q + r}} = r",
+          "image_source": "images/page_15_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.641,
+            0.344,
+            0.684,
+            0.362
+          ],
+          "content": "[ 2 9 \\rightarrow 7 ]",
+          "image_source": "images/page_15_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.288,
+            0.389,
+            0.308,
+            0.403
+          ],
+          "content": "217"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.323,
+            0.381,
+            0.539,
+            0.404
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + p + 2 q}} + \\overline {{\\overline {{p + q}}}} + \\overline {{q + r}} + r + r = \\overline {{q + r}}",
+          "image_source": "images/page_15_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.642,
+            0.378,
+            0.686,
+            0.396
+          ],
+          "content": "[ 5 4 \\rightarrow 7 ]",
+          "image_source": "images/page_15_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.288,
+            0.425,
+            0.31,
+            0.439
+          ],
+          "content": "674"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.324,
+            0.413,
+            0.594,
+            0.439
+          ],
+          "content": "\\overline {{\\overline {{p + q}} + p + 2 q}} + \\overline {{p + q}} + \\overline {{q + r}} + r + r + s + \\overline {{q + r}} + s = s",
+          "image_source": "images/page_15_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.638,
+            0.413,
+            0.687,
+            0.432
+          ],
+          "content": "[ 2 1 7 \\rightarrow 7 ]",
+          "image_source": "images/page_15_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.284,
+            0.459,
+            0.311,
+            0.473
+          ],
+          "content": "6736"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.326,
+            0.449,
+            0.493,
+            0.473
+          ],
+          "content": "\\overline {{\\overline {{3 p + p}} + \\overline {{3 p}} + \\overline {{\\overline {{3 p + p}} + 5 p}}}} = \\overline {{\\overline {{3 p + p}}}}",
+          "image_source": "images/page_15_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.634,
+            0.447,
+            0.689,
+            0.466
+          ],
+          "content": "[ 1 0 \\to 6 7 4 ]",
+          "image_source": "images/page_15_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.285,
+            0.489,
+            0.311,
+            0.505
+          ],
+          "content": "8855"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.327,
+            0.485,
+            0.41,
+            0.505
+          ],
+          "content": "\\overline {{\\overline {{3 p + p}} + 5 p}} = \\overline {{3 p}}",
+          "image_source": "images/page_15_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.588,
+            0.48,
+            0.69,
+            0.499
+          ],
+          "content": "[ 6 7 3 6 \\to 7, s i m p: 5 4 ]",
+          "image_source": "images/page_15_equation_23.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.286,
+            0.523,
+            0.312,
+            0.539
+          ],
+          "content": "8865"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.328,
+            0.516,
+            0.499,
+            0.539
+          ],
+          "content": "\\overline {{\\overline {{3 p + p}} + \\overline {{3 p}} + 2 p + \\overline {{3 p}}}} = \\overline {{\\overline {{3 p}} + p}} + 2 p",
+          "image_source": "images/page_15_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.636,
+            0.513,
+            0.691,
+            0.531
+          ],
+          "content": "[ 8 8 5 5 \\rightarrow 7 ]",
+          "image_source": "images/page_15_equation_26.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.288,
+            0.556,
+            0.314,
+            0.571
+          ],
+          "content": "8866"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.329,
+            0.551,
+            0.407,
+            0.571
+          ],
+          "content": "\\overline {{\\overline {{3 p}} + p + \\overline {{3 p}}}} = p",
+          "image_source": "images/page_15_equation_28.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.59,
+            0.545,
+            0.692,
+            0.565
+          ],
+          "content": "[ 8 8 5 5 \\to 7, s i m p: 1 1 ]",
+          "image_source": "images/page_15_equation_29.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.288,
+            0.589,
+            0.315,
+            0.605
+          ],
+          "content": "8870"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.329,
+            0.581,
+            0.462,
+            0.605
+          ],
+          "content": "\\overline {{\\overline {{3 p + p}} + \\overline {{3 p}} + q + \\overline {{p + q}}}} = q",
+          "image_source": "images/page_15_equation_31.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.638,
+            0.578,
+            0.693,
+            0.598
+          ],
+          "content": "[ 8 8 6 6 \\to 7 ]",
+          "image_source": "images/page_15_equation_32.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.289,
+            0.619,
+            0.315,
+            0.636
+          ],
+          "content": "8871"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.331,
+            0.615,
+            0.414,
+            0.635
+          ],
+          "content": "\\overline {{3 p + p}} + 2 p = 2 p",
+          "image_source": "images/page_15_equation_34.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.604,
+            0.609,
+            0.694,
+            0.629
+          ],
+          "content": "[8865, simp : 8870]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.661,
+            0.703,
+            0.707
+          ],
+          "content": "A Raker's Dozen, The key steps in proving the Robbins conjecture, as reported by EQP, an automated theorem-proving program developed by William McCune and colleagues at Argonne National Laboratory. (See Box, \"Substitute Teacher.\" page 63 for details.)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.752,
+            0.122,
+            0.855,
+            0.155
+          ],
+          "level": 2,
+          "content": "As Eas"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.754,
+            0.192,
+            0.854,
+            0.3
+          ],
+          "content": "he phrase il est French mathematiciar phrase is common in spelling out details th matical techniques. words. What Laplac: intense mathematical"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.756,
+            0.299,
+            0.853,
+            0.385
+          ],
+          "content": "Oddly enough, Laj see how a particular was easy to see. Th right combination of Could a computer have."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.758,
+            0.384,
+            0.854,
+            0.499
+          ],
+          "content": "William McCune, Laboratory in Illinois proving programs. 1 dicts on a range of pí His most powerful pi can be every bit as program considers e; the program's creato"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.761,
+            0.499,
+            0.853,
+            0.585
+          ],
+          "content": "Cryptic or not, E announced a solutiol bolic logic that ha posed in the 1930's. has been solved by described as reasoni"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.584,
+            0.853,
+            0.643
+          ],
+          "content": "\"It's a clear lan Stanley Burris, a lo Canada. \"Now tha problem, it opens th"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.763,
+            0.641,
+            0.853,
+            0.731
+          ],
+          "content": "The Robbins co which are named (1815–1864), who into algebraic exprt expressed as p + p + N(g); a logic"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.264,
+            0.761,
+            0.279,
+            0.776
+          ],
+          "content": "58"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.079,
+            0.845,
+            0.914,
+            0.933
+          ],
+          "content": "Note: Same order of search complexity as performed by Deep Blue per move. Quantative threshold for creativity?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.297,
+            0.755,
+            0.421,
+            0.78
+          ],
+          "content": "WHAT'S HAPPENING IN THE MATHEMATICAL SCIENCES"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.877,
+            0.072,
+            0.972,
+            0.121
+          ],
+          "content": "1997:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.232,
+            0.132,
+            0.973,
+            0.189
+          ],
+          "level": 2,
+          "content": "Deep Blue beats the World Chess Champion"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.058,
+            0.299,
+            0.433,
+            0.665
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.055,
+                0.671,
+                0.437,
+                0.731
+              ],
+              "content": "Deep Blue had Kasparoy in deep thought (CNN)"
+            }
+          ],
+          "image_source": "images/page_16_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.49,
+            0.297,
+            0.976,
+            0.715
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.801,
+            0.934,
+            0.893
+          ],
+          "content": "**I could feel human-level intelligence across the room Gary Kasparov, World Chess Champion (human…)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.02,
+            0.045,
+            0.461,
+            0.147
+          ],
+          "level": 2,
+          "content": "Note: when training in self-play, be careful to randomize!"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.493,
+            0.075,
+            0.953,
+            0.14
+          ],
+          "level": 2,
+          "content": "Deep Blue vs. Kasparov"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.056,
+            0.187,
+            0.542,
+            0.671
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.164,
+            0.748,
+            0.24
+          ],
+          "content": "**Game 1: 5/3/97: Kasparov wins**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.588,
+            0.264,
+            0.749,
+            0.343
+          ],
+          "content": "**Game 2: 5/4/97: Deep Blue wins**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.369,
+            0.748,
+            0.446
+          ],
+          "content": "**Game 3: 5/6/97: Draw**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.476,
+            0.749,
+            0.552
+          ],
+          "content": "**Game 4: 5/7/97: Draw**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.583,
+            0.758,
+            0.66
+          ],
+          "content": "**Game 5: 5/10/97: Draw**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.779,
+            0.232,
+            0.952,
+            0.505
+          ],
+          "content": "**Game 3: Why did Kasparov not simply repeat moves from game 1?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.589,
+            0.691,
+            0.757,
+            0.767
+          ],
+          "content": "**Game 6: 5/11/97: Deep Blue wins**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.705,
+            0.791,
+            0.974,
+            0.871
+          ],
+          "content": "**The value of IBM’s stock increased by \\$18 Billion!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.867,
+            0.691,
+            0.955
+          ],
+          "content": "**We’ll discuss Deep Blue’s architecture, when we cover multi-agent search.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.367,
+            0.066,
+            0.639,
+            0.132
+          ],
+          "level": 2,
+          "content": "On Game 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.229,
+            0.843,
+            0.379
+          ],
+          "content": "**Game 2 - Deep Blue took an early lead. Kasparov resigned, but it turned out he could have forced a draw by perpetual check.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.453,
+            0.871,
+            0.555
+          ],
+          "content": "**Interestingly, if Kasparov had been playing a human he would most likely not have resigned!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.629,
+            0.874,
+            0.73
+          ],
+          "content": "**This was real chess. This was a game any human grandmaster would have been proud of.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.313,
+            0.745,
+            0.512,
+            0.792
+          ],
+          "content": "**Joel Benjamin**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.312,
+            0.801,
+            0.831,
+            0.848
+          ],
+          "content": "**grandmaster, member Deep Blue team**"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.029,
+            0.591,
+            0.147
+          ],
+          "content": "**Kasparov on Deep Blue 1996: Kasparov Beats Deep Blue**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.219,
+            0.781,
+            0.323
+          ],
+          "content": "“**I could feel --- I could smell --- a new kind of intelligence across the table.**” **(CNN)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.397,
+            0.591,
+            0.45
+          ],
+          "content": "**1997: Deep Blue Beats Kasparov**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.522,
+            0.691,
+            0.579
+          ],
+          "content": "“**Deep Blue hasn't proven anything.**” J"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.652,
+            0.843,
+            0.707
+          ],
+          "content": "**Current strongest play: Computer-Human hybrid**"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.06,
+            0.85,
+            0.215
+          ],
+          "content": "**May, '97 --- Deep Blue vs. Kasparov. First match won against world-champion. \\`\\`intelligent creative'' play. 200 million board positions per second!**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.275,
+            0.877,
+            0.321
+          ],
+          "content": "**Kasparov: ... still understood 99.9 of Deep Blue's moves.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.379,
+            0.81,
+            0.427
+          ],
+          "content": "**Deep Blue considers 60 billion boards per move! Human?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.438,
+            0.467,
+            0.895,
+            0.513
+          ],
+          "content": "**Around 10 to 20 lines of play. Hmm…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.565,
+            0.831,
+            0.877
+          ],
+          "content": "**Intriguing issue: How does human cognition deal with the search space explosion of chess? Or how can humans compete with computers at all?? (What does human cognition do? Truly unknown…)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.148,
+            0.04,
+            0.857,
+            0.165
+          ],
+          "level": 2,
+          "content": "Concepts (briefly) (more details with multi-agent search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.208,
+            0.913,
+            0.307
+          ],
+          "content": "**--- Minimax search on game tree to get optimal move (large tree >= 10^80 chess)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.317,
+            0.916,
+            0.371
+          ],
+          "content": "**Size tree: b^d (b --- average branching; d --- depth)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.382,
+            0.83,
+            0.436
+          ],
+          "content": "**alpha-beta pruning: b^(d/2) [key technique]**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.447,
+            0.769,
+            0.495
+          ],
+          "content": "**--- Board evaluation or utility function when**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.512,
+            0.613,
+            0.561
+          ],
+          "content": "**you can’t search to the bottom**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.575,
+            0.934,
+            0.673
+          ],
+          "content": "**--- Board eval is linear weighted some of features; can be trained via learning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.687,
+            0.426,
+            0.737
+          ],
+          "content": "**--- Chess complexity?**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.751,
+            0.541,
+            0.805
+          ],
+          "content": "**O(1) (formally speaking…)**"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.121,
+            0.001,
+            0.96,
+            0.063
+          ],
+          "level": 2,
+          "content": "Robocup @ Cornell --- Raff D’Andrea 2000"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.081,
+            0.087,
+            0.969,
+            0.971
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.554,
+            0.024,
+            0.948,
+            0.075
+          ],
+          "content": "RoboCup Japan open 2013"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.0,
+            0.151,
+            1.0,
+            0.91
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_chart_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.264,
+            0.034,
+            0.57,
+            0.085
+          ],
+          "content": "**Kiva Systems \\$700M**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.5,
+            0.068,
+            0.961,
+            0.197
+          ],
+          "level": 2,
+          "content": "From Robocup to Warehouse Automation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.14,
+            0.198,
+            0.908,
+            0.964
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.326,
+            0.067,
+            0.961,
+            0.198
+          ],
+          "level": 2,
+          "content": "2005 Autonomous Control: DARPA GRAND CHALLENGE"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.008,
+            0.269,
+            0.398,
+            0.553
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.461,
+            0.303,
+            0.968,
+            0.667
+          ],
+          "content": "**October 9, 2005 Stanley and the Stanford RacingTeam were awarded 2 million dollars for being the first team to complete the 132 mile DARPA Grand Challenge course (Mojave Desert). Stanley finished in just under 6 hours 54 minutes and averaged over 19 miles per hours on the course.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.747,
+            0.467,
+            0.851
+          ],
+          "content": "**Sebastian Thrun: Google's driverless car (2011)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.529,
+            0.713,
+            0.934,
+            0.818
+          ],
+          "content": "**Cornell team stuck** L **due to malfunctioning GPS.**"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.036,
+            0.889,
+            0.724,
+            0.944
+          ],
+          "content": "http://www.youtube.com/watch?v=bp9KBrH8H04"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.115,
+            0.082,
+            0.839,
+            0.3
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_0.jpg"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.306,
+            0.351,
+            0.646,
+            0.478
+          ],
+          "level": 1,
+          "content": "path planning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.116,
+            0.516,
+            0.285,
+            0.536
+          ],
+          "level": 2,
+          "content": "Path Planning Overview"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.534,
+            0.474,
+            0.631
+          ],
+          "content": "Path planning is the basic process by which our vehicle decides on what path to take through the world. The A.I. uses the world model created by the sensors, the GPS waypoints provided during the race by DARPA, and a road following algorithm to pick a best path."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.116,
+            0.651,
+            0.226,
+            0.671
+          ],
+          "level": 2,
+          "content": "Road Following"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.668,
+            0.481,
+            0.8
+          ],
+          "content": "The road following algorithm uses color differences, shadowing, and edge-detection algorithms to detect the sides of a road (if there is a road) and then decides if the road is turning, going straight, which direction, how sharply, etc. The road following algorithm uses input from most of the vehicle sensors, and provides the A.I. with probable road characteristics."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.494,
+            0.511,
+            0.754,
+            0.729
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.742,
+                0.346,
+                0.98,
+                0.562
+              ],
+              "content": "$\\mathrm { A ^ { * } }$ algorithm Covered in search and problem solving."
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.493,
+                0.749,
+                0.754,
+                0.901
+              ],
+              "content": "The red line represents the ideal path picked by our A.I., and the turquoise path represents the actual path traveled by our vehicle. The differences arise because 1) we did not start our vehicle on the ideal path, and 2) our vehicle must, without exceeding its performance limits, avoid small obstacles such as boulders."
+            }
+          ],
+          "image_source": "images/page_26_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.019,
+            0.01,
+            0.995,
+            0.229
+          ],
+          "content": "Cornell: 4<sup>th</sup>! **2007 Darpa Urban Challenge** Also, in historic **Winner: CMU Tartan Racing's Boss 1**<strong><sup>st</sup></strong> **autonomous driverless car collision. Rear-ended by MIT car!**"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.116,
+            0.271,
+            0.705,
+            0.339
+          ],
+          "level": 2,
+          "content": "2007Darpa Urban Challenge"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.336,
+            0.606,
+            0.447
+          ],
+          "content": "The Urban Challenge will pit driverless vehicles against one another on city streets. Robots will have to handle traffic, intersections, rules of the road and other robots. The challenge is a high-stakes competition that plays out on a world stage. The prize is \\$2M, but the payoff for driver safety is much greater. This competition will be held November 3, 2007."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.455,
+            0.827,
+            0.571
+          ],
+          "content": "EREDBYIL The Urban Chalene is hid in aries o autonomus ohide compe, tions Carnegie Mellon's \"Sandstorm\" and \"H1ghlander\" crossed the finish line of URBAN DAuAd Chalenge er usfuly ml a 12-mlecours CHALLENGE"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.104,
+            0.265,
+            0.928,
+            0.909
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.071,
+                0.922,
+                0.617,
+                0.966
+              ],
+              "content": "http://www.tartanracing.org/blog/index.html#26"
+            }
+          ],
+          "image_source": "images/page_27_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.621,
+            0.05,
+            0.973,
+            0.232
+          ],
+          "content": "**Watson: Question-Answering system, 2011**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.332,
+            0.298,
+            0.701,
+            0.578
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.325,
+            0.66,
+            0.682,
+            0.843
+          ],
+          "content": "Watson defeats the two greatest Jeopardy! champions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.287,
+            0.889,
+            0.947,
+            0.945
+          ],
+          "content": "http://www.youtube.com/watch?v=dr7IxQeXr7g"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.377,
+            0.127,
+            0.622,
+            0.193
+          ],
+          "level": 2,
+          "content": "Watson"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.076,
+            0.223,
+            0.94,
+            0.872
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.37,
+            0.035,
+            0.96,
+            0.086
+          ],
+          "content": "Neural Networks --- Deep Learning, 2012."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.111,
+            0.799,
+            0.155
+          ],
+          "content": "**New York Times: “Scientists See Promise in Deep-Learning**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.163,
+            0.524,
+            0.209
+          ],
+          "content": "**Programs,” Saturday, Nov. 24, 2012.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.215,
+            0.89,
+            0.307
+          ],
+          "content": "<strong><u>http://www.nytimes.com/2012/11/24/science/scientists-see-advances</u></strong>**-**<strong><u>in-deep-learning-a-part-of-artificial-intelligence.html?hpw</u></strong>"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.368,
+            0.599,
+            0.413
+          ],
+          "level": 2,
+          "content": "Multi-layer neural networks, a resurgence!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.423,
+            0.758,
+            0.466
+          ],
+          "content": "**a) Winner one of the most recent learning competitions**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.476,
+            0.872,
+            0.609
+          ],
+          "content": "**b) Automatic (unsupervised) learning of “cat” and “human face” from 10 million of Google images; 16,000 cores 3 days; multi-layer neural network (Stanford & Google).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.615,
+            0.918,
+            0.705
+          ],
+          "content": "**c) Speech recognition and real-time translation (Microsoft Research, China).**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.78,
+            0.683,
+            0.83
+          ],
+          "content": "Aside: see web site for great survey article"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.831,
+            0.633,
+            0.881
+          ],
+          "content": "“A Few Useful Things to Know About"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.884,
+            0.768,
+            0.937
+          ],
+          "content": "Machine Learning” by Domingos, CACM, 2012."
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.072,
+            0.001,
+            0.943,
+            0.919
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.081,
+                0.925,
+                0.875,
+                0.975
+              ],
+              "content": "Start at min. 3:00. Deep Neural Nets in speech recognition."
+            }
+          ],
+          "image_source": "images/page_31_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.306,
+            0.058,
+            0.758,
+            0.109
+          ],
+          "level": 2,
+          "content": "Other promising ongoing efforts"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.121,
+            0.859,
+            0.327
+          ],
+          "content": "**1) Intelligent autonomous assistants, e.g., iPhone’s Siri (still a long way to go** J**) Integrated, autonomous agents. Google Glass will be the next step. Location / context aware; rich sensing, vision and speech understanding and generation.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.386,
+            0.919,
+            0.519
+          ],
+          "content": "**2) Fully self-driving car (Google; assisted driving Mercedes and BMW** the cost of a car is becoming software and sensors Incredibly **more lines of code in a Mercedes than in a Boeing 747.)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.581,
+            0.835,
+            0.673
+          ],
+          "content": "**2) Google translate. Reaches around 70% of human translator performance. Almost fully a purely statistical approach.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.733,
+            0.931,
+            0.911
+          ],
+          "content": "**Not clear yet how far one can go without a real understanding of the semantics (meaning). But with Big Data, statistical methods already went much further than many researchers had considered possible only 10 years ago.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.668,
+            0.423,
+            0.729,
+            0.5
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_image_0.jpg"
+        },
+        {
+          "type": "index",
+          "bbox": [
+            0.097,
+            0.268,
+            0.726,
+            0.648
+          ],
+          "content": "- Course Administration\n- What is Artificial Intelligence?\n- Course Themes, Goals, and Syllabus"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.29,
+            0.103,
+            0.962,
+            0.169
+          ],
+          "level": 2,
+          "content": "Setting expectations for this course"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.113,
+            0.303,
+            0.912,
+            0.447
+          ],
+          "content": "**Are you going to build real systems and robots? NO…**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.586,
+            0.868,
+            0.869
+          ],
+          "content": "**Introduce the conceptual framework and computational techniques that serve as a foundation for the field of artificial intelligence (AI).**"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.793,
+            0.049,
+            0.96,
+            0.112
+          ],
+          "content": "Syllabus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.169,
+            0.681,
+            0.209
+          ],
+          "content": "• **Structure of intelligent agents and environments.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.219,
+            0.931,
+            0.307
+          ],
+          "content": "**Problem solving by search: principles of search, uninformed (**“**blind**”) **search, informed (**“**heuristic**”**) search, and local search.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.317,
+            0.937,
+            0.405
+          ],
+          "content": "**Constraint satisfaction problems: definition, search and inference, and study of structure.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.416,
+            0.891,
+            0.501
+          ],
+          "content": "**Adversarial search: games, optimal strategies, imperfect, real-time decisions.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.514,
+            0.952,
+            0.599
+          ],
+          "content": "**Logical agents: propositional and first order logic, knowledge bases and inference.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.612,
+            0.952,
+            0.701
+          ],
+          "content": "**Uncertainty and probabilistic reasoning: probability concepts, Bayesian networks, probabilistic reasoning over time, and decision making.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.71,
+            0.949,
+            0.798
+          ],
+          "content": "**Learning: inductive learning, concept formation, decision tree learning, statistical approaches, neural networks, reinforcement learning.**"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.572,
+            0.102,
+            0.962,
+            0.166
+          ],
+          "content": "**So far, we discussed**"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.053,
+            0.255,
+            0.955,
+            0.312
+          ],
+          "level": 1,
+          "content": "Artificial Intelligence and characteristics of intelligent systems."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.383,
+            0.328,
+            0.437
+          ],
+          "content": "**Brief history of AI**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.511,
+            0.498,
+            0.565
+          ],
+          "content": "**Major recent AI achievements**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.361,
+            0.745,
+            0.908,
+            0.801
+          ],
+          "content": "**Reading: Chapter 1 Russell & Norvig**"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "creator_application": "PowerPoint",
+      "producer_application": "Mac OS X 10.10.3 Quartz PDFContext",
+      "page_count": 37,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
