@@ -1,0 +1,3657 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.252,
+            0.162,
+            0.604,
+            0.211
+          ],
+          "level": 2,
+          "content": "STAT 479: Machine Learning Lecture Notes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.281,
+            0.239,
+            0.574,
+            0.29
+          ],
+          "content": "Sebastian Raschka Department of Statistics University of Wisconsin–Madison"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.304,
+            0.675,
+            0.323
+          ],
+          "content": "[http://stat.wisc.edu/∼sraschka/teaching/stat479-fs2018/](http://stat.wisc.edu/~sraschka/teaching/stat479-fs2018/)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.386,
+            0.339,
+            0.47,
+            0.357
+          ],
+          "level": 2,
+          "content": "Fall 2018"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.394,
+            0.205,
+            0.414
+          ],
+          "level": 2,
+          "content": "Contents"
+        },
+        {
+          "type": "index",
+          "bbox": [
+            0.102,
+            0.429,
+            0.768,
+            0.886
+          ],
+          "content": "- L01: What is Machine Learning? An Overview. 1\n- 1.1 Machine Learning – The Big Picture . 1\n- 1.2 Applications of Machine Learning . 3\n- 1.3 Overview of the Categories of Machine Learning . 4\n- 1.3.1 Supervised Learning . 4\n- 1.3.2 Unsupervised learning . 5\n- 1.3.3 Reinforcement learning . 6\n- 1.3.4 Semi-supervised learning . 6\n- 1.4 Introduction to Supervised Learning . 6\n- 1.4.1 Statistical Learning Notation . 8\n- 1.5 Data Representation and Mathematical Notation . 8\n- 1.6 Hypothesis space . 9\n- 1.7 Classes of Machine Learning Algorithms . 10\n- 1.7.1 Algorithm Categorization Schemes . 10\n- 1.7.2 Pedro Domingo's 5 Tribes of Machine Learning . 11\n- 1.8 Components of Machine Learning Algorithms . 12\n- 1.8.1 Training . 13\n- 1.8.2 Evaluation . 14\n- 1.8.3 Intuition . 14\n- 1.8.4 Prediction Error . 14\n- 1.9 Different Motivations for Studying Machine Learning . 15"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "index",
+          "bbox": [
+            0.116,
+            0.1,
+            0.765,
+            0.292
+          ],
+          "content": "- 1.10 On Black Boxes & Interpretability 15\n- 1.11 The Relationship between Machine Learning and Other Fields 17\n- 1.11.1 Machine Learning and Data Mining 17\n- 1.11.2 Machine Learning, AI, and Deep Learning 17\n- 1.12 Roadmap for this Course 18\n- 1.13 Software 19\n- 1.14 Glossary 20\n- 1.15 Reading Assignments 21\n- 1.16 Further Reading 21"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.423,
+            0.906,
+            0.434,
+            0.916
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.253,
+            0.164,
+            0.603,
+            0.212
+          ],
+          "level": 1,
+          "content": "STAT 479: Machine Learning Lecture Notes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.282,
+            0.243,
+            0.574,
+            0.294
+          ],
+          "content": "Sebastian Raschka Department of Statistics University of Wisconsin–Madison"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.309,
+            0.675,
+            0.327
+          ],
+          "content": "[http://stat.wisc.edu/∼sraschka/teaching/stat479-fs2018/](http://stat.wisc.edu/~sraschka/teaching/stat479-fs2018/)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.386,
+            0.345,
+            0.47,
+            0.361
+          ],
+          "content": "Fall 2018"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.401,
+            0.704,
+            0.421
+          ],
+          "level": 2,
+          "content": "1 L01: What is Machine Learning? An Overview."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.44,
+            0.514,
+            0.457
+          ],
+          "level": 2,
+          "content": "1.1 Machine Learning – The Big Picture"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.471,
+            0.765,
+            0.586
+          ],
+          "content": "One of the main motivations why we develop (computer) programs to automate various kinds of processes. Originally developed as a subfield of Artificial Intelligence (AI), one of the goals behind machine learning was to replace the need for developing computer programs “manually.” Considering that programs are being developed to automate processes, we can think of machine learning as the process of “automating automation.” In other words, machine learning lets computers “create” programs (often, the intent for developing these programs is making predictions) themselves. In other words, machine learning is the process of turning data into programs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.592,
+            0.765,
+            0.65
+          ],
+          "content": "It is said that the term machine learning was first coined by Arthur Lee Samuel, a pioneer in the AI field, in 1959<sup>1</sup>. One quote that almost every introductory machine learning resource cites is the following, which summarizes the concept behind machine learning nicely and concisely:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.668,
+            0.722,
+            0.698
+          ],
+          "content": "Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed. <sup>2</sup> — Arthur L. Samuel, AI pioneer, 1959"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.716,
+            0.764,
+            0.745
+          ],
+          "content": "Now, before we introduce machine learning more formally, here is what some other people said about the field:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.764,
+            0.722,
+            0.793
+          ],
+          "content": "The field of machine learning is concerned with the question of how to construct computer programs that automatically improve with experience."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.793,
+            0.722,
+            0.822
+          ],
+          "content": "— Tom Mitchell, Professor Machine Learning at Carnegie Mellon University and author of the popular “Machine Learning” textbook"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.091,
+            0.826,
+            0.766,
+            0.85
+          ],
+          "content": "<sup>1</sup>Arthur L Samuel. “Some studies in machine learning using the game of checkers”. In: IBM Journal of research and development 3.3 (1959), pp. 210–229."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.091,
+            0.85,
+            0.764,
+            0.874
+          ],
+          "content": "<sup>2</sup>This is not a direct quote but a paraphrased version of Samuel’s sentence ”Programming computers to learn from experience should eventually eliminate the need for much of this detailed programming effort.”"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.092,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.765,
+            0.071
+          ],
+          "content": "Page 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.102,
+            0.551,
+            0.132
+          ],
+          "content": "Machine learning is the hot new thing. John L. Hennessy, President of Stanford (2000–2016)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.149,
+            0.638,
+            0.179
+          ],
+          "content": "A breakthrough in machine learning would be worth ten Microsofts. — Bill Gates, Microsoft Co-Founder"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.235,
+            0.206,
+            0.631,
+            0.441
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.232,
+                0.467,
+                0.623,
+                0.482
+              ],
+              "content": "Figure 1: Machine learning vs. “classic” programming."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_3_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.507,
+            0.718,
+            0.522
+          ],
+          "content": "A bit more concrete is Tom Mitchell’s description from his Machine Learning book<sup>3</sup>:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.541,
+            0.724,
+            0.583
+          ],
+          "content": "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.583,
+            0.701,
+            0.598
+          ],
+          "content": "— Tom Mitchell, Machine Learning Professor at Carnegie Mellon University"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.617,
+            0.764,
+            0.646
+          ],
+          "content": "To illustrate this quote with an example, consider the problem of recognizing handwritten digits:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.664,
+            0.515,
+            0.679
+          ],
+          "content": "• Task T: classifying handwritten digits from images"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.688,
+            0.616,
+            0.703
+          ],
+          "content": "• Performance measure P : percentage of digits classified correctly"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.712,
+            0.689,
+            0.727
+          ],
+          "content": "• Training experience E: dataset of digits given classifications, e.g., MNIST<sup>4</sup>"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.089,
+            0.734,
+            0.764,
+            0.758
+          ],
+          "content": "<sup>3</sup>Tom M Mitchell et al. “Machine learning. 1997”. In: Burr Ridge, IL: McGraw Hill 45.37 (1997), pp. 870–877."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.757,
+            0.765,
+            0.781
+          ],
+          "content": "<sup>4</sup>Yann LeCun et al. “Gradient-based learning applied to document recognition”. In: Proceedings of the IEEE 86.11 (1998), pp. 2278–2324."
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.268,
+            0.103,
+            0.59,
+            0.146
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.267,
+            0.172,
+            0.59,
+            0.214
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.231,
+                0.228,
+                0.625,
+                0.242
+              ],
+              "content": "Figure 2: Examples of digits from the MNIST database"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_image_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.27,
+            0.485,
+            0.287
+          ],
+          "level": 2,
+          "content": "1.2 Applications of Machine Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.301,
+            0.765,
+            0.345
+          ],
+          "content": "After the field of machine learning was “founded” more than a half a century ago, we can now find applications of machine learning in almost every aspect of hour life. Popular applications of machine learning include the following:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.36,
+            0.3,
+            0.374
+          ],
+          "content": "• Email spam detection"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.381,
+            0.473,
+            0.396
+          ],
+          "content": "• Face detection and matching (e.g., iPhone X)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.403,
+            0.479,
+            0.419
+          ],
+          "content": "• Web search (e.g., DuckDuckGo, Bing, Google)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.426,
+            0.273,
+            0.44
+          ],
+          "content": "• Sports predictions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.448,
+            0.465,
+            0.463
+          ],
+          "content": "• Post office (e.g., sorting letters by zip codes)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.47,
+            0.345,
+            0.485
+          ],
+          "content": "• ATMs (e.g., reading checks)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.493,
+            0.268,
+            0.507
+          ],
+          "content": "• Credit card fraud"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.515,
+            0.267,
+            0.528
+          ],
+          "content": "• Stock predictions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.537,
+            0.501,
+            0.551
+          ],
+          "content": "• Smart assistants (Apple Siri, Amazon Alexa, . . . )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.559,
+            0.504,
+            0.574
+          ],
+          "content": "• Product recommendations (e.g., Netflix, Amazon)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.581,
+            0.396,
+            0.596
+          ],
+          "content": "• Self-driving cars (e.g., Uber, Tesla)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.603,
+            0.433,
+            0.618
+          ],
+          "content": "• Language translation (Google translate)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.625,
+            0.277,
+            0.64
+          ],
+          "content": "• Sentiment analysis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.648,
+            0.229,
+            0.662
+          ],
+          "content": "• Drug design"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.67,
+            0.272,
+            0.684
+          ],
+          "content": "• Medical diagnoses"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.722,
+            0.764,
+            0.751
+          ],
+          "content": "While we go over some of these applications in class, it is a good exercise to think about how machine learning could be applied in these problem areas or tasks listed above:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.766,
+            0.36,
+            0.78
+          ],
+          "content": "• What is the desired outcome?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.788,
+            0.389,
+            0.802
+          ],
+          "content": "• What could the dataset look like?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.811,
+            0.764,
+            0.84
+          ],
+          "content": "• Is this a supervised or unsupervised problem, and what algorithms would you use? (Something to revisit later in this semester.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.847,
+            0.384,
+            0.861
+          ],
+          "content": "• How would you measure success?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.869,
+            0.443,
+            0.884
+          ],
+          "content": "• What are potential challenges or pitfalls?"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 4"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.1,
+            0.63,
+            0.118
+          ],
+          "level": 2,
+          "content": "1.3 Overview of the Categories of Machine Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.131,
+            0.765,
+            0.204
+          ],
+          "content": "The three broad categories of machine learning are summarized in the following figure: Supervised learing, unsupervised learning, and reinforcement learning. Note that in this class, we will primarily focus on supervised learning, which is the “most developed” branch of machine learning. While we will also cover various unsupervised learning algorithms, reinforcement learning will be out of the scope of this class."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.192,
+            0.214,
+            0.658,
+            0.425
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.09,
+                0.437,
+                0.763,
+                0.464
+              ],
+              "content": "Figure 3: Categories of Machine Learning (Source: Raschka & Mirjalili: Python Machine Learning, 2nd Ed.)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.492,
+            0.331,
+            0.507
+          ],
+          "level": 2,
+          "content": "1.3.1 Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.521,
+            0.764,
+            0.566
+          ],
+          "content": "Supervised learning is the subcategory of machine learning that focuses on learning a classification or regression model, that is, learning from labeled training data (i.e., inputs that also contain the desired outputs or targets; basically, “examples” of what we want to predict)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.263,
+            0.578,
+            0.594,
+            0.803
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.09,
+                0.815,
+                0.763,
+                0.844
+              ],
+              "content": "Figure 4: Illustration of a binary classification problem (plus, minus) and two feature variable (x1 and x2). (Source: Raschka & Mirjalili: Python Machine Learning, 2nd Ed.)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.26,
+            0.1,
+            0.595,
+            0.33
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.343,
+                0.764,
+                0.385
+              ],
+              "content": "Figure 5: Illustration of a linear regression model with one feature variable (x1) and the target variable y. The dashed-line indicates the functional form of the linear regression model. (Source: Raschka & Mirjalili: Python Machine Learning, 2nd Ed.)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.411,
+            0.346,
+            0.427
+          ],
+          "level": 2,
+          "content": "1.3.2 Unsupervised learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.441,
+            0.765,
+            0.499
+          ],
+          "content": "In contrast to supervised learning, unsupervised learning is a branch of machine learning that is concerned with unlabeled data. Common tasks in unsupervised learning are clustering analysis (assigning group memberships) and dimensionality reduction (compressing data onto a lower-dimensional subspace or manifold)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.229,
+            0.511,
+            0.628,
+            0.782
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.09,
+                0.796,
+                0.765,
+                0.836
+              ],
+              "content": "Figure 6: Illustration of clustering, where the dashed lines indicate potential group membership assignments of unlabeled data points. (Source: Raschka & Mirjalili: Python Machine Learning, 2nd Ed.)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 6"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.102,
+            0.354,
+            0.117
+          ],
+          "level": 2,
+          "content": "1.3.3 Reinforcement learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.131,
+            0.766,
+            0.245
+          ],
+          "content": "Reinforcement is the process of learning from rewards while performing a series of actions. In reinforcement learning, we do not tell the learner or agent, for example, a (ro)bot, which action to take but merely assign a reward to each action and/or the overall outcome. Instead of having “correct/false” label for each step, the learner must discover or learn a behavior that maximizes the reward for a series of actions. In that sense, it is not a supervised setting and somewhat related to unsupervised learning; however, reinforcement learning really is its own category of machine learning. Reinforcement learning will not be covered further in this class."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.252,
+            0.765,
+            0.297
+          ],
+          "content": "Typical applications of reinforcement learning involve playing games (chess, Go, Atari video games) and some form of robots, e.g., drones, warehouse robots, and more recently self-driving cars."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.263,
+            0.308,
+            0.592,
+            0.423
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.433,
+                0.764,
+                0.461
+              ],
+              "content": "Figure 7: Illustration of reinforcement learning (Source: Raschka & Mirjalili: Python Machine Learning, 2nd Ed.)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_image_5.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.488,
+            0.368,
+            0.503
+          ],
+          "level": 2,
+          "content": "1.3.4 Semi-supervised learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.517,
+            0.765,
+            0.576
+          ],
+          "content": "Losely speaking, semi-supervised learning can be described as a mix between supervised and unsupervised learning. In semi-supervised learning tasks, some training examples contain outputs, but some do not. We then use the labeled training subset to label the unlabeled portion of the training set, which we then also utilize for model training."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.599,
+            0.512,
+            0.617
+          ],
+          "level": 2,
+          "content": "1.4 Introduction to Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.63,
+            0.764,
+            0.66
+          ],
+          "content": "Unless noted otherwise (later in future lectures), we will focus on supervised learning and classification, the most prevalent form of machine learning, from now on."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.666,
+            0.766,
+            0.753
+          ],
+          "content": "In supervised learning, we are given a labeled training dataset from which a machine learning algorithm can learn a model that can predict labels of unlabeled data points. These unlabeled data points could be either test data points (for which we actually have labels but we withold them for testing purposes) or unlabeled data we will collect in future. For example, given a corpus of spam and non-spam email, a supervised learning task would be to learn a model that predicts to which class (spam or non-spam) new emails belong."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.759,
+            0.765,
+            0.788
+          ],
+          "content": "More formally, we define h as the “hypothesis,” a function that we use to approximate some unknown function"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.39,
+            0.788,
+            0.762,
+            0.803
+          ],
+          "content": "f (\\mathbf {x}) = y,\\tag{1}",
+          "image_source": "images/page_7_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.808,
+            0.765,
+            0.853
+          ],
+          "content": "where x is a vector of input features associated with a training example or dataset instance (for example, the pixel values of an image) and y is the outcome we want to predict (e.g., what class of object we see in an image). In other words, $h ( \\mathbf { x } )$ is a function that predicts y."
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.765,
+            0.071
+          ],
+          "content": "Page 7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.102,
+            0.486,
+            0.117
+          ],
+          "content": "In classification, we define the hypothesis function as"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.383,
+            0.128,
+            0.762,
+            0.143
+          ],
+          "content": "h: \\mathcal {X} \\to \\mathcal {Y},\\tag{2}",
+          "image_source": "images/page_8_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.153,
+            0.763,
+            0.184
+          ],
+          "content": "where $\\mathcal { X } = \\mathbb { R } ^ { m }$ and $\\mathcal { Y } = \\{ 1 , . . . , k \\}$ with class labels k. in the special case of binary classification, we have $\\mathcal { Y } = \\{ 0 , 1 \\} ( \\mathrm { o r } \\mathcal { Y } = \\{ - 1 , 1 \\} )$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.19,
+            0.456,
+            0.205
+          ],
+          "content": "And in regression, the task is to learn a function"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.377,
+            0.215,
+            0.762,
+            0.231
+          ],
+          "content": "h: \\mathbb {R} ^ {m} \\to \\mathbb {R}.\\tag{3}",
+          "image_source": "images/page_8_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.242,
+            0.246,
+            0.257
+          ],
+          "content": "Given a training set"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.302,
+            0.254,
+            0.762,
+            0.271
+          ],
+          "content": "\\mathcal {D} = \\{<   \\mathbf {x} ^ {[ i ]}, y ^ {[ i ]} >, i = 1, \\dots , n \\},\\tag{4}",
+          "image_source": "images/page_8_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.277,
+            0.765,
+            0.35
+          ],
+          "content": "we denote the ith training example as $< \\mathbf { x } ^ { [ i ] } , y ^ { [ i ] } >$ . Please note that the superscript [i] is unrelated to exponentiation, and we choose this rather unconvential notational convention for reasons that will become apparent later in this lecture. Note that a critical assumption for (most) machine learning theory is that the training examples are i.i.d. (independent and indentically distributed)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.213,
+            0.361,
+            0.647,
+            0.543
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.212,
+                0.552,
+                0.643,
+                0.566
+              ],
+              "content": "Figure 8: Rough overview of the supervised learning process."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.19,
+            0.592,
+            0.666,
+            0.835
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.181,
+                0.844,
+                0.672,
+                0.858
+              ],
+              "content": "Figure 9: More detailed ilustration of the supervised learning process."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_image_12.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.07
+          ],
+          "content": "Page 8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.102,
+            0.765,
+            0.146
+          ],
+          "content": "A crucial assumption we make in supervised learning is that the training examples have the same distribution as the test (future) examples. In real-world applications, this assumption is oftentimes violated, which is one of the common challenges in the field."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.168,
+            0.403,
+            0.183
+          ],
+          "level": 2,
+          "content": "1.4.1 Statistical Learning Notation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.198,
+            0.765,
+            0.285
+          ],
+          "content": "Please note that the notation varies wildly across the literature, since machine learning is a field that is popular across so many disciplines. For example, in the context of statistical learning theory, we can think of the dataset $\\mathcal { D } \\quad = \\quad \\{ < \\quad \\mathbf { x } ^ { [ \\tilde { 1 } ] } , \\dot { y } ^ { [ 1 ] } \\quad > , < \\quad \\mathbf { x } ^ { [ 2 ] } , y ^ { [ 2 ] } \\quad > \\quad \\ldots \\quad , <$ $\\mathbf { x } ^ { [ n ] } , y ^ { [ n ] } > \\}$ as a sample from the population of all possible input-target pairs, and $\\mathbf { x } ^ { [ i ] }$ and $y ^ { [ i ] }$ are instances of two random variables $X \\in { \\mathcal { X } }$ and $Y \\in { \\mathcal { Y } }$ and that the training pairs are drawn from a joint distribution $P(X,Y)=P(X)P(Y|X)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.291,
+            0.622,
+            0.306
+          ],
+          "content": "Given an error term \u000f we can then formulate the following relationship:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.327,
+            0.762,
+            0.342
+          ],
+          "content": "Y = f (X) + \\epsilon .\\tag{5}",
+          "image_source": "images/page_9_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.348,
+            0.762,
+            0.363
+          ],
+          "content": "The goal in statistical learning is then to estimate $f ,$ which can then be used to predict Y :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.385,
+            0.381,
+            0.762,
+            0.399
+          ],
+          "content": "\\hat {f} (X) = \\hat {Y}.\\tag{6}",
+          "image_source": "images/page_9_equation_8.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.423,
+            0.637,
+            0.44
+          ],
+          "level": 2,
+          "content": "1.5 Data Representation and Mathematical Notation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.454,
+            0.764,
+            0.484
+          ],
+          "content": "In previous section, we defined refered to the ith pair in a labeled training set $\\mathcal { D }   \\mathrm { ~ a s ~ } <$ $\\mathbf { x } ^ { [ i ] } , y ^ { [ i ] } >$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.49,
+            0.764,
+            0.52
+          ],
+          "content": "We will adopt the convention to use italics for scalars, boldface characters for vectors, and uppercase boldface fonts for matrices."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.538,
+            0.764,
+            0.568
+          ],
+          "content": "• x: A scalar denoting a single training example with 1 feature $( \\mathrm { e . g . }$ , the height of a person)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.575,
+            0.765,
+            0.619
+          ],
+          "content": "• x: A training example with m features $( \\mathrm { e . g . }$ . with $m   =   3$ we could represent the height, weight, and age of a person), represented as a column vector (i.e., a matrix with 1 column, $\\mathbf { x } \\in \\mathbb { R } ^ { m } )$ ,"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.38,
+            0.647,
+            0.762,
+            0.715
+          ],
+          "content": "\\mathbf {x} = \\left[ \\begin{array}{c} x _ {1} \\\\ x _ {2} \\\\ \\vdots \\\\ x _ {m} \\end{array} \\right].\\tag{7}",
+          "image_source": "images/page_9_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.728,
+            0.655,
+            0.743
+          ],
+          "content": "(Note that most programming languages, incl. Python, start indexing at 0!)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.761,
+            0.764,
+            0.79
+          ],
+          "content": "• X: Design matrix, $\\mathbf { X } \\; \\in \\; \\mathbb { R } ^ { n \\times m }$ , which stores n training examples, where m is the number of features."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.38,
+            0.817,
+            0.762,
+            0.887
+          ],
+          "content": "\\mathbf {X} = \\left[ \\begin{array}{c} \\mathbf {x} _ {1} ^ {T} \\\\ \\mathbf {x} _ {2} ^ {T} \\\\ \\vdots \\\\ \\mathbf {x} _ {n} ^ {T} \\end{array} \\right].\\tag{8}",
+          "image_source": "images/page_9_equation_17.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.709,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 9"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.102,
+            0.765,
+            0.146
+          ],
+          "content": "Note that in order to distinguish the feature index and the training example index, we will use a square-bracket superscript notation to refer to the ith training example and a regular subscript notation to refer to the jth feature:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.313,
+            0.16,
+            0.762,
+            0.238
+          ],
+          "content": "\\mathbf {X} = \\left[ \\begin{array}{c c c c} x _ {1} ^ {[ 1 ]} & x _ {2} ^ {[ 1 ]} & \\dots & x _ {m} ^ {[ 1 ]} \\\\ x _ {1} ^ {[ 2 ]} & x _ {2} ^ {[ 2 ]} & \\dots & x _ {m} ^ {[ 2 ]} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ x _ {1} ^ {[ n ]} & x _ {2} ^ {[ n ]} & \\dots & x _ {m} ^ {[ n ]} \\end{array} \\right].\\tag{9}",
+          "image_source": "images/page_10_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.249,
+            0.653,
+            0.265
+          ],
+          "content": "The corresponding targets are represented in a column vector y, $\\mathbf { y } \\in \\mathbb { R } ^ { n }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.378,
+            0.273,
+            0.762,
+            0.343
+          ],
+          "content": "\\mathbf {y} = \\left[ \\begin{array}{c} y ^ {[ 1 ]} \\\\ y ^ {[ 2 ]} \\\\ \\vdots \\\\ y ^ {[ n ]} \\end{array} \\right].\\tag{10}",
+          "image_source": "images/page_10_equation_5.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.365,
+            0.32,
+            0.382
+          ],
+          "level": 2,
+          "content": "1.6 Hypothesis space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.395,
+            0.765,
+            0.469
+          ],
+          "content": "In the previous section on supervised learning, we defined the hypothesis $h ( \\mathbf { x } )$ to predict a target y. Machine learning algorithms sample from a hypothesis space that is usually smaller than the entire space of all possible hypotheses H – an exhaustive search covering all $h \\in \\mathcal { H }$ would be computationally infeasible since H grows exponentially with the size (dimensionality) of the training set. This is illustrated in the following paragraph."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.475,
+            0.766,
+            0.561
+          ],
+          "content": "Assume we are given a dataset with 4 features and 3 class labels, the class label $( y   \\in$ {Setosa, Versicolor, Virginica}). Also, assume all features are binary. Given 4 features with binary values (True, False), we have $2 ^ { 4 } = 1 6$ different feature combinations (see table below). Now, of the 16 rules, we have three classes to consider (Setosa, Versicolor, Virginica). Hence, we have $3 ^ { 1 6 } = 4 3 , 0 4 6 , 7 2 1$ potential combinations of 16 rules that we can evaluate (this is the size hypothesis space, $| \\mathcal { H } | = 4 3 , 0 4 6 , 7 2 1 ) !$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.093,
+            0.597,
+            0.77,
+            0.695
+          ],
+          "content": "| sepal length &lt;5 cm | sepal width &lt;5 cm | petal length &lt;5 cm | petal width &lt;5 cm | Class Label |\n| --- | --- | --- | --- | --- |\n| True | True | True | True | Setosa |\n| True | True | True | False | Versicolor |\n| True | True | False | True | Setosa |\n| ... | ... | ... | ... |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.193,
+                0.572,
+                0.66,
+                0.587
+              ],
+              "content": "Table 1: Example of decision rules for the Iris flower data dataset."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_table_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.72,
+            0.767,
+            0.822
+          ],
+          "content": "Now, imagine the features are not binary but real-valued. The hypothesis space will become so big that it would be impossible to evaluate it exhaustively. Hence, we use machine learning to reduce the search space within the hypothesis space. (A neural network with a single hidden layer, a finite number of neurons, and non-linear activation functions such as sigmoid units, was proved to be a universal function approximator<sup>5</sup>. However, the concept of universal function approximation<sup>6</sup> does not imply practicality, usefulness, or adequate performance in practical problems."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.827,
+            0.767,
+            0.852
+          ],
+          "content": "<sup>5</sup>George Cybenko. “Approximations by superpositions of a sigmoidal function”. In: Mathematics of Control, Signals and Systems 2 (1989), pp. 183–192."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.85,
+            0.766,
+            0.875
+          ],
+          "content": "6Balázs Csanád Csáji. “Approximation with artificial neural networks”. In: Faculty of Sciences, Etvs Lornd University, Hungary 24 (2001), p. 48."
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.765,
+            0.071
+          ],
+          "content": "Page 10"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.211,
+            0.101,
+            0.652,
+            0.339
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.22,
+                0.354,
+                0.634,
+                0.369
+              ],
+              "content": "Figure 10: Selecting a hypothesis from a hypothesis space."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_chart_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.393,
+            0.764,
+            0.424
+          ],
+          "content": "Typically, the number of training examples required is proportional to the flexibility of the learning algorithms. I.e., we need more training for models with"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.442,
+            0.403,
+            0.457
+          ],
+          "content": "• a large number of parameters to fit;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.465,
+            0.538,
+            0.481
+          ],
+          "content": "• a large number of “knobs” to tune (hyperparameters);"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.489,
+            0.487,
+            0.504
+          ],
+          "content": "• a large size of the hypothesis set to select from."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.522,
+            0.765,
+            0.552
+          ],
+          "content": "(As a rule of thumb, the more parameter to fit and/or hyperparameters to tune, the larger the set of hypotheses to choose from)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.576,
+            0.55,
+            0.593
+          ],
+          "level": 2,
+          "content": "1.7 Classes of Machine Learning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.607,
+            0.686,
+            0.622
+          ],
+          "content": "Below are some classes of algorithms that were are going to discuss in this class:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.641,
+            0.511,
+            0.656
+          ],
+          "content": "• Generalized linear models (e.g., logistic regression)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.664,
+            0.596,
+            0.679
+          ],
+          "content": "• Support vector machines (e.g., linear SVM, RBF-kernel SVM)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.688,
+            0.55,
+            0.703
+          ],
+          "content": "• Artificial neural networks (e.g., multi-layer perceptrons)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.712,
+            0.486,
+            0.726
+          ],
+          "content": "• Tree- or rule-based models (e.g., decision trees)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.736,
+            0.456,
+            0.75
+          ],
+          "content": "• Graphical models (e.g., Bayesian networks)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.759,
+            0.382,
+            0.774
+          ],
+          "content": "• Ensembles (e.g., Random Forest)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.783,
+            0.509,
+            0.798
+          ],
+          "content": "• Instance-based learners (e.g., K-nearest neighbors)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.821,
+            0.45,
+            0.837
+          ],
+          "level": 2,
+          "content": "1.7.1 Algorithm Categorization Schemes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.85,
+            0.764,
+            0.88
+          ],
+          "content": "To aid our conceptual understsanding, each of the algorithms can be categorized into various categories."
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 11"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.103,
+            0.239,
+            0.117
+          ],
+          "content": "• eager vs lazy;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.126,
+            0.256,
+            0.14
+          ],
+          "content": "• batch vs online;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.149,
+            0.357,
+            0.163
+          ],
+          "content": "• parametric vs nonparametric;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.172,
+            0.348,
+            0.187
+          ],
+          "content": "• discriminative vs generative."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.204,
+            0.765,
+            0.248
+          ],
+          "content": "These concepts or categorizations will become more clear once we discussed a few of the different algorithms. However, below are brief descriptions of the various categorizations listed above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.255,
+            0.765,
+            0.327
+          ],
+          "content": "Eager vs lazy learners. Eager learners are algorithms that process training data immediately whereas lazy learners defer the processing step until the prediction. In fact, lazy learners do not have an explicit training step other than storing the training data. A popular example of a lazy learner is the Nearest Neighbor algorithm, which we will discuss in the next lecture."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.333,
+            0.765,
+            0.392
+          ],
+          "content": "Batch vs online learning. Batch learning refers to the fact that the model is learned on the entire set of training examples. Online learners, in contrast, learn from one training example at the time. It is not uncommon, in practical applications, to learn a model via batch learning and then update it later using online learning."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.398,
+            0.766,
+            0.499
+          ],
+          "content": "Parametric vs nonparametric models. Parametric models are “fixed” models, where we assume a certain functional form for $f ( \\mathbf { x } )   =   y$ . For example, linear regression can be considered as a parametric model with $h ( { \\bf x } ) \\: = \\: w _ { 1 } x _ { 1 } \\: + \\: . . . \\: + \\: w _ { m } x _ { m } \\: + \\: b .$ Nonparametric models are more “flexible” and do not have a pre-specfied number of parameters. In fact, the number of parameters grows typically with the size of the training set. For example, a decision tree would be an example of a nonparametric model, where each decision node (e.g., a binary “True/False” assertion) can be regarded as a parameter."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.505,
+            0.766,
+            0.621
+          ],
+          "content": "Discriminative vs generative. Generative models (classically) describe methods that model the joint distribution $P ( X , Y ) \\: = \\: P ( Y ) P ( X | Y ) \\: \\stackrel { \\cdot } { = } \\: P ( X ) \\dot { P ( Y | X ) }$ for training pairs $<   \\mathbf { x } ^ { [ i ] } , y ^ { [ i ] }   \\stackrel { \\cdot } { > }   ^ { 7 }$ Discriminative models are taking a more “direct” approach for modeling $P ( Y | X )$ directly. While generative models provide typically more insights and allow sampling from the joint distribution, discriminative models are typically easier to compute and produce more accurate predictions. Helpful for understanding discriminative models is the following analogy: discriminative modeling is like trying to extract information from text in a foreign language without learning that language."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.643,
+            0.557,
+            0.658
+          ],
+          "level": 2,
+          "content": "1.7.2 Pedro Domingo’s 5 Tribes of Machine Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.672,
+            0.765,
+            0.715
+          ],
+          "content": "Another useful way to think about different machine learning algorithms is Pedro Domingons categorization of machine learning algorithms into five tribes, which he defined in his book “The Master Algorithm”<sup>8</sup>."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.734,
+            0.426,
+            0.749
+          ],
+          "content": "• Evolutionaries: e.g., genetic algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.758,
+            0.411,
+            0.771
+          ],
+          "content": "• Eonnectionists: $\\mathbf { e . g . } ,$ neural networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.78,
+            0.3,
+            0.795
+          ],
+          "content": "• Symbolists: e.g., logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.803,
+            0.382,
+            0.819
+          ],
+          "content": "• Bayesians: e.g., graphical models"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.441,
+            0.838,
+            0.489,
+            0.848
+          ],
+          "content": "x ∼ X"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.089,
+            0.825,
+            0.765,
+            0.86
+          ],
+          "content": "7<sub>However</sub>, in recent years, the term ”generative model” has also been used to describe models that learn an approximation of X and sample training examples x ∼ . Examples of such models are Generative Adversarial Networks and Variational Autoencoders; deep learning models that are not covered in this class."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.089,
+            0.859,
+            0.765,
+            0.883
+          ],
+          "content": "<sup>8</sup>Pedro Domingos. The master algorithm: How the quest for the ultimate learning machine will remake our world. Basic Books, 2015."
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 12"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.103,
+            0.45,
+            0.117
+          ],
+          "content": "• Analogizers: e.g., support vector machines"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.198,
+            0.145,
+            0.657,
+            0.469
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.483,
+                0.764,
+                0.511
+              ],
+              "content": "Figure 11: 5 Tribes of Machine Learning. REPR=Representation, EVAL.=Evaluation metric, OPTIMIZ.=Optimization algorithm. (Source: Pedro Domingos, The Master Algorithm)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_13_image_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.539,
+            0.602,
+            0.556
+          ],
+          "level": 2,
+          "content": "1.8 Components of Machine Learning Algorithms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.57,
+            0.763,
+            0.599
+          ],
+          "content": "As it was already indicated in the figure of Pedro Domingo’s 5 Tribes of Machine Learning, there are several different components of machine learning algorithms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.606,
+            0.764,
+            0.636
+          ],
+          "content": "Representation. The first component is the “representation,” i.e., which hypotheses we can represent given a certain algorithm class."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.642,
+            0.764,
+            0.671
+          ],
+          "content": "Optimization. The second component is the optimization metric that we use to fit the model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.678,
+            0.765,
+            0.708
+          ],
+          "content": "Evaluation. The evaluation component is the step where we evaluate the performance of the model after model fitting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.714,
+            0.764,
+            0.743
+          ],
+          "content": "To extend this list slightly, these are the following 5 steps that we want to think about when approaching a machine learning application:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.762,
+            0.377,
+            0.776
+          ],
+          "content": "1. Define the problem to be solved."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.785,
+            0.304,
+            0.8
+          ],
+          "content": "2. Collect (labeled) data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.81,
+            0.335,
+            0.823
+          ],
+          "content": "3. Choose an algorithm class."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.833,
+            0.536,
+            0.847
+          ],
+          "content": "4. Choose an optimization metric for learning the model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.856,
+            0.447,
+            0.871
+          ],
+          "content": "5. Choose a metric for evaluating the model."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 13"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.102,
+            0.765,
+            0.16
+          ],
+          "content": "Note that optimization objectives are usually not the same in practice. For example, the optimization objective of the logistic regression algorithm is to minimize the negative loglikelihood (or binary cross-entropy), whereas the evaluation metric could be the classification accuracy or misclassification error."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.166,
+            0.765,
+            0.21
+          ],
+          "content": "Also, while the list above indicates a linear workflow, in practice, we often jump back to previous steps and e.g., collect more data, try out different algorithms, and/or tune the “knobs” (i.e., “hyperparameters”) of learning algorithms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.216,
+            0.764,
+            0.245
+          ],
+          "content": "The following two subsections will provide a short overview of the optimization (training) and evaluation parts."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.269,
+            0.229,
+            0.284
+          ],
+          "level": 2,
+          "content": "1.8.1 Training"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.298,
+            0.765,
+            0.357
+          ],
+          "content": "Training/fitting a classification or regression model typically involves the use of an optimization algorithms that optimizes an objective function (e.g., maximizing the log-likelihood or minimizing mean squared error). Some of the methods that we will cover in this course are the following:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.375,
+            0.729,
+            0.39
+          ],
+          "content": "• Combinatorial search, greedy search (e.g., decision trees over, not within nodes);"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.398,
+            0.585,
+            0.414
+          ],
+          "content": "• Unconstrained convex optimization (e.g., logistic regression);"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.422,
+            0.476,
+            0.437
+          ],
+          "content": "• Constrained convex optimization (e.g., SVM);"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.446,
+            0.763,
+            0.476
+          ],
+          "content": "• Nonconvex optimization, here: using backpropagation, chain rule, reverse autodiff. (e.g., neural networks)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.484,
+            0.765,
+            0.513
+          ],
+          "content": "• Constrained nonconvex optimization (semi adversarial networks<sup>9</sup>, not covered in this course)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.531,
+            0.765,
+            0.59
+          ],
+          "content": "There exists a number of different algorithms for each optimization task category (for example, gradient descent or conjugate gradient, and quasi-Newton methods to optimize convex optimization problems). Also, the objective functions that we optimize can take different forms. Below are some examples:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.608,
+            0.545,
+            0.623
+          ],
+          "content": "• Maximize the posterior probabilities (e.g., naive Bayes)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.632,
+            0.515,
+            0.647
+          ],
+          "content": "• Maximize a fitness function (genetic programming)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.655,
+            0.628,
+            0.67
+          ],
+          "content": "• Maximize the total reward/value function (reinforcement learning)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.679,
+            0.761,
+            0.708
+          ],
+          "content": "• Maximize information gain/minimize child node impurities (CART decision tree classification)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.717,
+            0.763,
+            0.746
+          ],
+          "content": "• Minimize a mean squared error cost (or loss) function (CART, decision tree regression, linear regression, adaptive linear neurons, . . . )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.755,
+            0.674,
+            0.77
+          ],
+          "content": "• Maximize log-likelihood or minimize cross-entropy loss (or cost) function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.778,
+            0.475,
+            0.793
+          ],
+          "content": "• Minimize hinge loss (support vector machine)"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.798,
+            0.764,
+            0.823
+          ],
+          "content": "<sup>9</sup>Vahid Mirjalili et al. “Semi-Adversarial Networks: Convolutional Autoencoders for Imparting Privacy to Face Images”. In: 2018 International Conference on Biometrics (ICB). IEEE. 2018."
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 14"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.102,
+            0.246,
+            0.116
+          ],
+          "level": 2,
+          "content": "1.8.2 Evaluation"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.131,
+            0.231,
+            0.145
+          ],
+          "level": 2,
+          "content": "1.8.3 Intuition"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.161,
+            0.764,
+            0.205
+          ],
+          "content": "There are several different evaluation metric to assess the performance of a model, and the most common ones will be discussed in future lectures. Unless noted otherwise, though, we will focus on the classification accuracy (ACC) or misclassification error $\\left(  ERR  = 1 -  ACC  \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.211,
+            0.766,
+            0.369
+          ],
+          "content": "The classification accuracy of an algorithm is usually evaluated empirically by counting the fraction of correctly classified instances considering all instances that the model attempted to classify. For instance, if we have a test dataset of 100 instances and a model classified 7,000 out of 10,000 instances correctly, then we say that the model has a 70% accuracy on that dataset. In practice, we are often interested in the generalization performance of a model, which is the performance on new, unseen data that has the same distribution as the training data. The simplest way to estimate the generalization accuracy is to compute the accuracy on a reasonably sized unseen dataset (e.g., the test dataset that we set aside). However, there are several different techniques to estimate the generalization performance which have different strengths and weaknesses. Being such an important topic, we will devote a seperate lecture to model evaluation."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.391,
+            0.297,
+            0.406
+          ],
+          "level": 2,
+          "content": "1.8.4 Prediction Error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.421,
+            0.764,
+            0.45
+          ],
+          "content": "To introduce the notion of the prediction or misclassification error more formally, consider the 0-1 loss function"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.337,
+            0.468,
+            0.762,
+            0.521
+          ],
+          "content": "L (\\hat {y}, y) = \\left\\{ \\begin{array}{l l} 0 & \\text {if} \\hat {y} = y \\\\ 1 & \\text {if} \\hat {y} \\neq y, \\end{array} \\right.\\tag{11}",
+          "image_source": "images/page_15_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.534,
+            0.764,
+            0.563
+          ],
+          "content": "where ŷ is the class label predicted by a given hypothesis $h ( \\mathbf { x } )   =   \\hat { y } ,$ and y is the ground truth (correct class label). Then, the prediction error can be defined as the expected value"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.349,
+            0.581,
+            0.762,
+            0.6
+          ],
+          "content": "E R R = \\mathrm{E} \\big [ L (\\hat {Y}, Y) \\big ],\\tag{12}",
+          "image_source": "images/page_15_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.611,
+            0.469,
+            0.627
+          ],
+          "content": "which we can estimate from the test dataset $\\mathcal { D } _ { \\mathrm { t e s t } }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.313,
+            0.644,
+            0.762,
+            0.682
+          ],
+          "content": "E R R _ {\\mathcal {D} _ {\\mathrm{test}}} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} L \\Big (\\hat {y} ^ {[ i ]}, y ^ {[ i ]} \\Big),\\tag{13}",
+          "image_source": "images/page_15_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.693,
+            0.585,
+            0.709
+          ],
+          "content": "where n is the number of examples in the test dataset, $n = | D _ { \\mathrm { t e s t } } |$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.716,
+            0.765,
+            0.758
+          ],
+          "content": "As mentioned before, there are many, many more metrics, which can be more useful in specialized contexts, which will be discussed in future lectures. Some of the most popular metrics are:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.776,
+            0.279,
+            0.791
+          ],
+          "content": "• Accuracy (1-Error)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.799,
+            0.22,
+            0.814
+          ],
+          "content": "• ROC AUC"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.823,
+            0.207,
+            0.837
+          ],
+          "content": "• Precision"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.846,
+            0.186,
+            0.859
+          ],
+          "content": "• Recall"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.869,
+            0.258,
+            0.884
+          ],
+          "content": "• (Cross) Entropy"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 15"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.102,
+            0.218,
+            0.116
+          ],
+          "content": "• Likelihood"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.125,
+            0.29,
+            0.141
+          ],
+          "content": "• Squared Error/MSE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.15,
+            0.203,
+            0.164
+          ],
+          "content": "• L-norms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.172,
+            0.189,
+            0.188
+          ],
+          "content": "• Utility"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.196,
+            0.193,
+            0.211
+          ],
+          "content": "• Fitness"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.254,
+            0.429,
+            0.269
+          ],
+          "content": "But more on other metrics in future lectures."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.293,
+            0.678,
+            0.31
+          ],
+          "level": 2,
+          "content": "1.9 Different Motivations for Studying Machine Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.324,
+            0.764,
+            0.354
+          ],
+          "content": "There are several different motivations or approaches we take when are studying ML. While the following bullet points attempt an overall categorization, there are many exceptions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.372,
+            0.764,
+            0.401
+          ],
+          "content": "• Engineers: Focus on developing systems with high predictive performance for realworld problem solving"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.41,
+            0.766,
+            0.44
+          ],
+          "content": "• Mathematicians, computer scientists, and statisticians: understanding properties of predictive models and modeling approaches"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.448,
+            0.73,
+            0.463
+          ],
+          "content": "• Neuroscientists: understanding and modeling how a brain and intelligence works"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.481,
+            0.765,
+            0.539
+          ],
+          "content": "Note that machine learning was originally inspired by neuroscience, when the first attempt of an artificial neuron, the McCulloch-Pitts Neuron<sup>10</sup>, was modeled after a biological neuron and letter lead to the popular perceptron algorithm by Frank Rosenblatt<sup>11</sup> – more on that in later lectures."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.563,
+            0.502,
+            0.58
+          ],
+          "level": 2,
+          "content": "1.10 On Black Boxes & Interpretability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.595,
+            0.766,
+            0.709
+          ],
+          "content": "As mentioned in earlier section, when we are applying machine learning to real-world problem solving, we need to define the overall objective first and then choose the right tool for the task. Unfortunately, as a rule of thumb, simpler models are usually associated with lower accuracy. Hence, when we are choosing modeling approaches or learning algorithms, we have to think about whether the emphasis is on understanding a phenomenon or making accurate predictions. Then, the problem becomes how meaningful the insights into a modeling procedure are if the predictions are not accurate. (I.e., what is it good for if I understand the model if the model is wrong)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.716,
+            0.547,
+            0.731
+          ],
+          "content": "In this context, a famous quote by our department’s founder:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.749,
+            0.631,
+            0.779
+          ],
+          "content": "All models are wrong; some models are useful. — George Box (1919-2013), Professor of Statistics at UW-Madison"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.089,
+            0.786,
+            0.764,
+            0.81
+          ],
+          "content": "10<sub>Warren</sub> S McCulloch and Walter Pitts. “A logical calculus of the ideas immanent in nervous activity”. In: The bulletin of mathematical biophysics 5.4 (1943), pp. 115–133."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.089,
+            0.809,
+            0.765,
+            0.833
+          ],
+          "content": "11<sub>Frank</sub> Rosenblatt. The perceptron, a perceiving and recognizing automaton Project Para. Cornell Aeronautical Laboratory, 1957."
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.765,
+            0.071
+          ],
+          "content": "Page 16"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.343,
+            0.1,
+            0.513,
+            0.252
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.09,
+                0.263,
+                0.764,
+                0.291
+              ],
+              "content": "Figure 12: Evolved antenna (Source: https://en.wikipedia.org/wiki/Evolved antenna) via evolu-treats the data mechanism as unknown. The statistical community has g   rapidly in fields outside statistics. It can be used both on large complexdata sets and as a more accurate and informative alternative to data tionary algorithms; used on a 2006 NASA spacecraft.ment has led to irrelevant theory, questionable conclusions, and has keptLeo Breimanmodeling on"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_17_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.315,
+            0.765,
+            0.374
+          ],
+          "content": "Back in 2001, Leo Breiman wrote an interesting, highly recommended article called “Sta-solve problems, then we need to move away from exclusive dependenceon data models and adopt a more diverse set of tools.y     .      treats the data mechanism as unknown. The statistical community hasStatistics starts with data. Think of the data asbeing generated by a black box in which a vector of        and/or prediction. Thus the black box is filled in like tistical Modeling: The Two Cultures”<sup>12</sup> where he contrasted two different approaches with           ment has led to irrelevant theory, questionable conclusions, and has keptp   ( p ) g  side, and on the other side the response variables ylinear regression respect the the two different goals “information” and “prediction.” He referred to the twoStatistics starts with data. Think of the data asthe data and the model then used for informationlems. Algorithmic modeling, both in ory and practice, has developedrapidly in fields outside statistics. It can be used both on large complexassociate the predictor variables with the responseCox model approaches as the “data modeling culture” and the “algorithmic modeling culture.”input variables x (independent variables) go in onethis:           modeling on smaller data sets. If our goal as a field is to use data toy nature x tests and residual examination."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.128,
+            0.382,
+            0.727,
+            0.477
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.484,
+                0.765,
+                0.526
+              ],
+              "content": "a stochastic data model for the inside of the blackneural nets       Information. To extract some information aboutthe box complex and unknown. Their approach is toran om no se, parameters)In this paper I will argue that the focus in theFigure 13: Three screenshots from Breiman’s “Statistical Modeling: The Two Cultures” paper. are generated by independent draws fromModel validation. Measured by predictive accuracy.to the input variables.x to predict the responses y. Their black box looksLeo Breiman is Professor, Department of Statistics,University of California, Berkeley, California 94720- • Led to irrelevant theory and questionable sci-(A) the two overall motivations or goals in analyzing data. (B) The so-called “data modeling espo se va a es = (p e c o va a es,random noise, parameters) many in other fields.    pp  goals: y unknown e-ma : eo@s a . er e ey.e u).culture.” The so-called “algorithmic modeling” culture."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_17_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.549,
+            0.765,
+            0.637
+          ],
+          "content": "199ox. or examp e, a common a a mo e s a a aare generated by independent draws from Model validation. Measured by predictive accuracy.The moral of the story is that whether to choose a “data model” or an “algorithmic model” response variables = f(predictor variables,random noise, parameters) many in other fields.really depends on the problem we want to solve, and it’s best to use the appropriate tool Leo Breiman is Professor, Department of Statistics, statistical community on data models has:for the task. In this course, we will of course not be restricted to one kind or the other. y  , y,  4735 (e-mail: leo@stat.berkeley.edu).•    y  q entific conclusions;We will cover techniques of what would fit into the “data modeling culture” (Bayes optimal 199classifiers, Bayesian networks, naive Bayes, logistic regression, etc.) as well as “algorithmic approaches” (k-nearest neighbors, decision trees, support vector machines, etc.)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.643,
+            0.765,
+            0.673
+          ],
+          "content": "Further, Breiman mentions three lessons learned in the statistical modeling and machine learning communities, which I summarized below:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.69,
+            0.765,
+            0.734
+          ],
+          "content": "• Rashomon effect; the the multiplicity of good models. Often we have mutliple good models that fit the data well. If we have different models that all fit the data well, which one should we pick?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.742,
+            0.766,
+            0.8
+          ],
+          "content": "• Occam’s razor. While we prefer favoring simple models, there is usually a conflict between accuracy and simplicity to varying degree (in later lectures, we will learn about techniques for selecting models within a “sweet spot” considering that this is a trade-off)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.808,
+            0.766,
+            0.853
+          ],
+          "content": "• Bellman and the “curse of dimensionality.” Usually, having more data is considered a good thing (i.e., more information). However, more data can be harmful to a model and make it more prone to overfitting (fitting the training data too closely"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.858,
+            0.765,
+            0.884
+          ],
+          "content": "12<sub>Leo</sub> Breiman et al. “Statistical modeling: The two cultures (with comments and a rejoinder by the author)”. In: Statistical science 16.3 (2001), pp. 199–231."
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 17"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.102,
+            0.765,
+            0.202
+          ],
+          "continues_prev": true,
+          "content": "and not generalizing well to new data that was not seen during training; fitting noise). Note that the curse of dimensionality refers to an increasing number of feature variables given a fixed number of training examples. Some models have smart workarounds for dealing with large feature sets. E.g., Breiman’s random forest algorithm, which partitions the feature space to fit individual decision trees that are then later joined to a decistion tree ensemble (the particular algorithm is called random forest), but more on that in future lectures."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.22,
+            0.765,
+            0.251
+          ],
+          "content": "Also note that there’s a “No Free Lunch” theorem for machine learning<sup>13</sup>, meaning that there’s no single best algorithm that works well across different problem domains."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.274,
+            0.764,
+            0.292
+          ],
+          "level": 2,
+          "content": "1.11 The Relationship between Machine Learning and Other Fields"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.305,
+            0.47,
+            0.321
+          ],
+          "level": 2,
+          "content": "1.11.1 Machine Learning and Data Mining"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.335,
+            0.765,
+            0.422
+          ],
+          "content": "Data mining focuses on the discovery of patterns in datasets or “gaining knowledge and insights” from data – often, this involves a heavy focus on computational techniques, working with databases, etc (nowdays, the term is more or less synonymous to “data science”). We can then think of machine learning algorithms as tools within a data mining project. Data mining is not “just” but also emphasis data processing, visualization, and tasks that are traditionally not categorized as “machine learning” (for example, association rule mining)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.444,
+            0.525,
+            0.46
+          ],
+          "level": 2,
+          "content": "1.11.2 Machine Learning, AI, and Deep Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.473,
+            0.765,
+            0.518
+          ],
+          "content": "Artificial intelligence (AI) was created as a subfield of computer science focussing on solving tasks that humans are good at (for example, natural language processing, image recognition). Or in other words, the goal of AI is to mimick human intelligence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.524,
+            0.765,
+            0.596
+          ],
+          "content": "There are two subtypes of AI: Artificial general intelligence (AGI) and narrow AI. AGI refers to an intelligence that equals humans in several tasks, i.e., multi-purpose AI. In contrast, narrow AI is more narrowly focused on solving a particular task that humans are traditionally good at (e.g., playing a game, or driving a car – I would not go so far and refer to “image classification” as AI)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.603,
+            0.766,
+            0.676
+          ],
+          "content": "In general, AI can be approached in many ways. One approach is to write a computer program that implements a set of rules devised by domain experts. Now, hand-crafting rules can be very laborious and time consuming. The field of machine learning then emerged as a subfield of AI – it was concerned with the development of algorithms so that computers can automatically learn (predictive) models from data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.681,
+            0.765,
+            0.768
+          ],
+          "content": "Assume we want to develop a program that can recognize handwritten digits from images. One approach would be to look at all of these images and come up with a set of (nested) ifthis-than-that rules to determine which digit is displayed in a particular image (for instance, by looking at the relative locations of pixels). Another approach would be to use a machine learning algorithm, which can fit a predictive model based on a thousands of labeled image samples that we may have collected in a database."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.774,
+            0.765,
+            0.832
+          ],
+          "content": "Now, there is also deep learning, which in turn is a subfield of machine learning, referring to a particular subset of models that are particularly good at certain tasks such as image recognition and natural language processing. We will talk more about deep learning toward the end of this class."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.09,
+            0.836,
+            0.764,
+            0.861
+          ],
+          "content": "13<sub>David</sub> H Wolpert. “The lack of a priori distinctions between learning algorithms”. In: Neural computation 8.7 (1996), pp. 1341–1390."
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 18"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.101,
+            0.765,
+            0.146
+          ],
+          "content": "Or in short, machine learning (and deep learning) definitely helps to develop “AI,” however, AI doesn’t necessarily have to be developed using machine learning – although, machine learning makes “AI” much more convenient."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.164,
+            0.162,
+            0.686,
+            0.41
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.426,
+                0.765,
+                0.468
+              ],
+              "content": "Figure 14: Relationship between machine learning, deep learning, and artificial intelligence. Note that there is also overlap between Machine learning and data mining, data science, statistics, etc. (not shown)."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_19_image_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.495,
+            0.411,
+            0.512
+          ],
+          "level": 2,
+          "content": "1.12 Roadmap for this Course"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.526,
+            0.766,
+            0.571
+          ],
+          "content": "This is an outline that might change depending on how the course progresses. If we have to skip the deep learning part, that’s okay. There will be a whole course dedicated to deep learning offered in future."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.088,
+            0.579,
+            0.848,
+            0.878
+          ],
+          "content": "| Date | Description |\n| --- | --- |\n| Part I: Introduction |  |\n|  | Course Overview, Intro to MLIntro to Supervised Learning: KNN |\n| Part II: Computational Foundations |  |\n|  | Python, Matplotlib, Jupyter NotebooksNumPy, SciPy, Scikit-LearnData Preprocessing |\n| Part III: Tree-Based Methods |  |\n|  | Decision TreesEnsemble Methods |\n| Part IV: Evaluation |  |\n|  | Model Selection &amp; Evaluation 1Model Selection &amp; Evaluation 2 |\n| Part V: Dimensionality Reduction |  |\n|  | Feature SelectionFeature Extraction |\n| Part V: Bayesian Learning |  |\n|  | Bayes ClassifiersText Data &amp; Sentiment Analysis |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 19"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.09,
+            0.1,
+            0.847,
+            0.327
+          ],
+          "continues_prev": true,
+          "content": "<table><tr><td>Date</td><td>Description</td></tr><tr><td rowspan=\"3\">Part VI: Regression and Unsupervised Learning</td><td>Naïve Bayes Classification</td></tr><tr><td>Regression Analysis</td></tr><tr><td>Clustering</td></tr><tr><td rowspan=\"4\">Part VII: Artificial Neural Networks</td><td>Perceptron</td></tr><tr><td>Adaline &amp; Logistic Regression</td></tr><tr><td>SVM</td></tr><tr><td>Multilayer Perceptron</td></tr><tr><td rowspan=\"4\">Part VIII: Deep Learning</td><td>Intro to TensorFlow, PyTorch</td></tr><tr><td>CNNs (Deep Learning)</td></tr><tr><td>RNNs (Deep Learning)</td></tr><tr><td>Training Neural Nets: “Tricks of the Trade”</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_table_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.355,
+            0.247,
+            0.372
+          ],
+          "level": 2,
+          "content": "1.13 Software"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.386,
+            0.765,
+            0.416
+          ],
+          "content": "We will talk more about software in upcoming lectures, but at this point, I want to provide a brief overview of the “Python for scientific computing” landscape."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.189,
+            0.428,
+            0.666,
+            0.679
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.089,
+                0.688,
+                0.765,
+                0.768
+              ],
+              "content": "Figure 15: Scientific Python packages, some of which we will discuss in class. (Image by Jake VanderPlas; Source: https://speakerdeck.com/jakevdp/the-state-of-the-stack-scipy-2015-keynote?slide=8). The graphic is structured in terms of “low level” to “high level.” For example, NumPy is a numerical array library for Python. SciPy is a package with scientific computing functions that extends/depends on NumPy. Scikit-learn is a machine learning library that uses both NumPy and SciPy."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_20_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.792,
+            0.618,
+            0.807
+          ],
+          "content": "The Python-topics we will make use of in this course are the following:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.826,
+            0.423,
+            0.841
+          ],
+          "content": "• Python, IPython / Jupyter Notebooks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.85,
+            0.49,
+            0.865
+          ],
+          "content": "• NumPy, SciPy, Matplotlib, Scikit-learn, Pandas"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.61,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.056,
+            0.764,
+            0.071
+          ],
+          "content": "Page 20"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.1,
+            0.247,
+            0.117
+          ],
+          "level": 2,
+          "content": "1.14 Glossary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.131,
+            0.765,
+            0.176
+          ],
+          "content": "Machine learning borrows concepts from many other fields and redefines what has been known in other fields under different names. Below is a small glossary of machine learningspecfic terms along with some key concepts to help navigate the machine learning literature."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.194,
+            0.765,
+            0.238
+          ],
+          "content": "• Training example: A row in the table representing the dataset. Synonymous to an observation, training record, training instance, training sample (in some contexts, sample refers to a collection of training examples)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.246,
+            0.73,
+            0.261
+          ],
+          "content": "• Training: model fitting, for parametric models similar to parameter estimation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.269,
+            0.764,
+            0.298
+          ],
+          "content": "• Feature, x: a column in the table representing the dataset. Synonymous to predictor, variable, input, attribute."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.307,
+            0.764,
+            0.337
+          ],
+          "content": "• Target, y: Synonymous to outcome, output, response variable, dependent variable, (class) label, ground truth."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.345,
+            0.765,
+            0.374
+          ],
+          "content": "• Predicted output, ŷ: use this to distinguish from targets; here, means output from the model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.383,
+            0.765,
+            0.427
+          ],
+          "content": "• Loss function: Often used synomymously with cost function; sometimes also called error function. In some contexts the loss for a single data point, whereas the cost function refers to the overall (average or summed) loss over the entire dataset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.435,
+            0.766,
+            0.493
+          ],
+          "content": "• Hypothesis: A hypothesis is a certain function that we believe (or hope) is similar to the true function, the target function that we want to model. In context of spam classification, it would be a classification rule we came up with that allows us to separate spam from non-spam emails."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.501,
+            0.765,
+            0.56
+          ],
+          "content": "• Model: In the machine learning field, the terms hypothesis and model are often used interchangeably. In other sciences, they can have different meanings: A hypothesis could be the “educated guess” by the scientist, and the model would be the manifestation of this guess to test this hypothesis."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.567,
+            0.765,
+            0.64
+          ],
+          "content": "• Learning algorithm: Again, our goal is to find or approximate the target function, and the learning algorithm is a set of instructions that tries to model the target function using our training dataset. A learning algorithm comes with a hypothesis space, the set of possible hypotheses it explores to model the unknown target function by formulating the final hypothesis."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.648,
+            0.766,
+            0.763
+          ],
+          "content": "• Classifier: A classifier is a special case of a hypothesis (nowadays, often learned by a machine learning algorithm). A classifier is a hypothesis or discrete-valued function that is used to assign (categorical) class labels to particular data points. In an email classification example, this classifier could be a hypothesis for labeling emails as spam or non-spam. Yet, a hypothesis must not necessarily be synonymous to the term classifier. In a different application, our hypothesis could be a function for mapping study time and educational backgrounds of students to their future, continuous-valued, SAT scores – a continuous target variable, suited for regression analysis."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.771,
+            0.767,
+            0.873
+          ],
+          "content": "• Hyperparameters: Hyperparameters are the tuning parameters of a machine learning algorithm – for example, the regularization strength of an L2 penalty in the mean squared error cost function of linear regression, or a value for setting the maximum depth of a decision tree. In contrast, model parameters are the parameters that a learning algorithm fits to the training data – the parameters of the model itself. For example, the weight coefficients (or slope) of a linear regression line and its bias (or y-axis intercept) term are model parameters."
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.091,
+            0.056,
+            0.609,
+            0.071
+          ],
+          "content": "Sebastian Raschka STAT479 FS18. L01: Intro to Machine Learning"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.701,
+            0.057,
+            0.763,
+            0.07
+          ],
+          "content": "Page 21"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.092,
+            0.1,
+            0.373,
+            0.117
+          ],
+          "level": 2,
+          "content": "1.15 Reading Assignments"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.131,
+            0.609,
+            0.146
+          ],
+          "content": "• Raschka and Mirjalili: Python Machine Learning, 2nd ed., Ch 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.155,
+            0.764,
+            0.184
+          ],
+          "content": "• Trevor Hastie, Robert Tibshirani, and Jerome Friedman: The Elements of Statistical Learning, Ch 01"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.209,
+            0.325,
+            0.225
+          ],
+          "level": 2,
+          "content": "1.16 Further Reading"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.24,
+            0.657,
+            0.255
+          ],
+          "content": "Optional reading beyond the scope of this class for those who are interested."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.273,
+            0.762,
+            0.302
+          ],
+          "content": "• Statistical Modeling: The Two Cultures (2001) by Leo Breiman, [https://projecteuclid.org/euclid.ss/1009213726](https://projecteuclid.org/euclid.ss/1009213726)"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2018-09-06T07:01:47-05:00",
+      "modified_at": "2018-09-06T07:01:47-05:00",
+      "creator_application": "LaTeX with hyperref package",
+      "producer_application": "pdfTeX-1.40.19",
+      "page_count": 23,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 595.2760009765625,
+          "height_pt": 841.8900146484375
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

@@ -1,0 +1,2925 @@
+{
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "creator_application": "Apple Keynote 5.1",
+      "producer_application": "Mac OS X 10.6.8 Quartz PDFContext",
+      "page_count": 20,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 800.0,
+          "height_pt": 600.0
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "index": 0,
+          "bbox": [
+            0.091,
+            0.15,
+            0.911,
+            0.314
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Introduction to Machine Learning Lecture 1"
+            }
+          ],
+          "level": 1
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.383,
+            0.47,
+            0.615,
+            0.524
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.214,
+            0.524,
+            0.784,
+            0.576
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Courant Institute and Google Research"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.341,
+            0.578,
+            0.658,
+            0.632
+          ],
+          "content": [
+            {
+              "type": "hyperlink",
+              "url": "mailto:mohri@cims.nyu.edu",
+              "content": [
+                {
+                  "type": "text",
+                  "content": "mohri@cims.nyu.edu"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.345,
+            0.465,
+            0.654,
+            0.542
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Introduction"
+            }
+          ],
+          "level": 2
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.395,
+            0.086,
+            0.607,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Logistics"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.225,
+            0.95,
+            0.341
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Prerequisites: basics concepts needed in probability and statistics will be introduced."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.069,
+            0.378,
+            0.296,
+            0.43
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Workload:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.107,
+            0.455,
+            0.577,
+            0.511
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• 5 homework assignments."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.106,
+            0.533,
+            0.624,
+            0.588
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• mid-term exam, final project."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.625,
+            0.805,
+            0.682
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Textbooks: recommended, not mandatory."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.106,
+            0.702,
+            0.93,
+            0.76
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• no single textbook covering material presented."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.107,
+            0.778,
+            0.743,
+            0.836
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• lecture slides available electronically."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.069,
+            0.873,
+            0.695,
+            0.93
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mailing list: join as soon as possible."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 9,
+          "bbox": [
+            0.045,
+            0.966,
+            0.39,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 10,
+          "bbox": [
+            0.717,
+            0.966,
+            0.767,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.285,
+            0.085,
+            0.716,
+            0.168
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Machine Learning"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.226,
+            0.929,
+            0.403
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Definition: computational methods using experience to improve performance, e.g., to make accurate predictions."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.068,
+            0.439,
+            0.818,
+            0.558
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Experience: data-driven task, thus statistics, probability."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.591,
+            0.923,
+            0.653
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example: use height and weight to predict gender."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.685,
+            0.883,
+            0.864
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Computer science: need to design efficient and accurate algorithms, analysis of complexity, theoretical guarantees."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 5,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 6,
+          "bbox": [
+            0.716,
+            0.968,
+            0.771,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.172,
+            0.085,
+            0.83,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Examples of Learning Tasks"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.226,
+            0.609,
+            0.283
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Optical character recognition."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.318,
+            0.902,
+            0.374
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Text or document classification, spam detection."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.068,
+            0.412,
+            0.866,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Morphological analysis, part-of-speech tagging, statistical parsing."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.068,
+            0.565,
+            0.856,
+            0.678
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Speech recognition, speech synthesis, speaker verification."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.719,
+            0.695,
+            0.778
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Image recognition, face recognition."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.046,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.717,
+            0.967,
+            0.77,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.172,
+            0.085,
+            0.829,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Examples of Learning Tasks"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.225,
+            0.925,
+            0.338
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Fraud detection (credit card, telephone), network intrusion."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.379,
+            0.595,
+            0.437
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Games (chess, backgammon)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.472,
+            0.946,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Unassisted control of a vehicle (robots, navigation)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.068,
+            0.565,
+            0.41,
+            0.622
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Medical diagnosis."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.659,
+            0.806,
+            0.776
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Recommendation systems, search engines, information extraction systems."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.046,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.716,
+            0.969,
+            0.771,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.192,
+            0.085,
+            0.806,
+            0.157
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Some Broad Areas of ML"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.226,
+            0.869,
+            0.346
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Classification: assign a category to each object (OCR, text classification, speech recognition)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.106,
+            0.379,
+            0.887,
+            0.491
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• note: infinite number of categories in difficult tasks."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.068,
+            0.531,
+            0.913,
+            0.652
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Regression: predict a real value for each object (prices, stock values, economic variables, ratings)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.106,
+            0.686,
+            0.881,
+            0.742
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• measure of success: closeness of predictions."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.069,
+            0.779,
+            0.949,
+            0.9
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ranking: order objects according to some criterion (relevant web pages returned by a search engine)."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.716,
+            0.968,
+            0.768,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.192,
+            0.085,
+            0.805,
+            0.157
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Some Broad Areas of ML"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.226,
+            0.94,
+            0.347
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Clustering: partition data into homogenous groups (analysis of very large data sets)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.068,
+            0.379,
+            0.911,
+            0.559
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Dimensionality reduction: find lower-dimensional manifold preserving some properties of the data (computer vision)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.592,
+            0.948,
+            0.833
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Density estimation: learning probability distribution according to which data has been sampled (distribution typically selected out of pre-selected family)."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 4,
+          "bbox": [
+            0.046,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 5,
+          "bbox": [
+            0.717,
+            0.967,
+            0.765,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.115,
+            0.085,
+            0.886,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Objectives of Machine Learning"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.225,
+            0.829,
+            0.345
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithms: design of efficient, accurate, and general learning algorithms to"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.106,
+            0.377,
+            0.93,
+            0.437
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• deal with large-scale problems (|data| > 1-10M)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.106,
+            0.472,
+            0.903,
+            0.531
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• make accurate predictions (unseen examples)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.105,
+            0.564,
+            0.91,
+            0.624
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• handle a variety of different learning problems."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.659,
+            0.475,
+            0.713
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Theoretical questions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.106,
+            0.735,
+            0.896,
+            0.789
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• what can be learned? Under what conditions?"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.107,
+            0.828,
+            0.866,
+            0.886
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• how well can it be learned computationally?"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 8,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.716,
+            0.968,
+            0.765,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.354,
+            0.086,
+            0.645,
+            0.155
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "This course"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.226,
+            0.906,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithms: covers most key learning algorithms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.107,
+            0.303,
+            0.621,
+            0.359
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• nearest-neighbor algorithms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.106,
+            0.379,
+            0.939,
+            0.438
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• perceptron, Winnow, Halving, Weighted Majority."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.106,
+            0.457,
+            0.838,
+            0.511
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• support vector machines, kernel methods."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.107,
+            0.533,
+            0.438,
+            0.592
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• boosting, bagging."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 6,
+          "bbox": [
+            0.07,
+            0.625,
+            0.331,
+            0.681
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Applications:"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.107,
+            0.702,
+            0.733,
+            0.757
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• illustration of the use of algorithms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 8,
+          "bbox": [
+            0.107,
+            0.779,
+            0.839,
+            0.837
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• software and familiarization (assignments)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 9,
+          "bbox": [
+            0.069,
+            0.872,
+            0.869,
+            0.93
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Theory: analysis and introduction to concepts."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 10,
+          "bbox": [
+            0.045,
+            0.966,
+            0.39,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 11,
+          "bbox": [
+            0.716,
+            0.966,
+            0.776,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.42,
+            0.085,
+            0.58,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Topics"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.224,
+            0.567,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Basic notions of probability."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.319,
+            0.427,
+            0.376
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Bayesian inference."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.412,
+            0.597,
+            0.47
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Nearest-neighbor algorithms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.068,
+            0.504,
+            0.876,
+            0.626
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-line learning with expert advice (Weighted Majority, Exponentiated Average)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.657,
+            0.934,
+            0.717
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "On-line linear classification (Perceptron, Winnow)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.068,
+            0.75,
+            0.661,
+            0.812
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Support Vector Machines (SVMs)."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.716,
+            0.966,
+            0.775,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.42,
+            0.085,
+            0.58,
+            0.169
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Topics"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.224,
+            0.39,
+            0.28
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Kernel methods."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.319,
+            0.367,
+            0.371
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Decision trees."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.41,
+            0.744,
+            0.473
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Ensemble methods (boosting, bagging)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.505,
+            0.432,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Logistic regression."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.597,
+            0.777,
+            0.657
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Density estimation (ML, Maxent models)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.068,
+            0.691,
+            0.514,
+            0.747
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Multi-class classification."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.717,
+            0.966,
+            0.776,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.42,
+            0.085,
+            0.581,
+            0.17
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Topics"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.066,
+            0.226,
+            0.411,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Linear regression."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.317,
+            0.614,
+            0.378
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Kernel ridge regression, Lasso."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.066,
+            0.41,
+            0.408,
+            0.467
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Neural networks."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.067,
+            0.503,
+            0.299,
+            0.565
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Clustering."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.597,
+            0.533,
+            0.656
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Dimensionality reduction"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.067,
+            0.691,
+            0.758,
+            0.751
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Introduction to reinforcement learning."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.068,
+            0.784,
+            0.577,
+            0.845
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Elements of learning theory."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 8,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.716,
+            0.966,
+            0.776,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.158,
+            0.085,
+            0.844,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Definitions and Terminology"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.225,
+            0.828,
+            0.283
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example: an object or instance in data used."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.319,
+            0.949,
+            0.499
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Features: the set of attributes, often represented as a vector, associated to an example, e.g., height and weight for gender prediction."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.069,
+            0.532,
+            0.233,
+            0.582
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Labels:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.107,
+            0.609,
+            0.826,
+            0.782
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "in classification, category associated to an object, e.g., positive or negative in binary classification."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.107,
+            0.806,
+            0.716,
+            0.862
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• in regression, real-valued numbers."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.717,
+            0.968,
+            0.775,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.158,
+            0.085,
+            0.844,
+            0.167
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Definitions and Terminology"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.224,
+            0.861,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Training data: data used for training algorithm."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.067,
+            0.318,
+            0.97,
+            0.377
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Test data: data exclusively used for testing algorithm."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.068,
+            0.412,
+            0.674,
+            0.467
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Some standard learning scenarios:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.105,
+            0.49,
+            0.816,
+            0.547
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• supervised learning: labeled training data."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.106,
+            0.566,
+            0.779,
+            0.622
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• unsupervised learning: no labeled data."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.106,
+            0.642,
+            0.929,
+            0.755
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "semi-supervised learning: labeled training data + unlabeled data."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 7,
+          "bbox": [
+            0.107,
+            0.779,
+            0.867,
+            0.892
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "transductive learning: labeled training data + unlabeled test data."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 8,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 9,
+          "bbox": [
+            0.716,
+            0.966,
+            0.774,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.169,
+            0.085,
+            0.83,
+            0.163
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example - SPAM Detection"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.068,
+            0.224,
+            0.922,
+            0.346
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Problem: classify each e-mail message as SPAM or non-SPAM (binary classification problem)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.068,
+            0.377,
+            0.86,
+            0.498
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Data: large collection of SPAM and non-SPAM messages (labeled examples)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.068,
+            0.531,
+            0.867,
+            0.65
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Features: define features for all examples (e.g., presence or absence of some sequences)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.106,
+            0.669,
+            0.841,
+            0.728
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• critical step (should use prior knowledge)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.068,
+            0.762,
+            0.891,
+            0.878
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Algorithm: choose type of algorithm adapted to the problem."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.107,
+            0.899,
+            0.838,
+            0.957
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• typically requires choice of hypothesis set."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.045,
+            0.966,
+            0.39,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.716,
+            0.968,
+            0.772,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.17,
+            0.085,
+            0.83,
+            0.164
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example - SPAM Detection"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.069,
+            0.227,
+            0.377,
+            0.284
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Learning stages:"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.107,
+            0.318,
+            0.897,
+            0.431
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "divide labeled collection into training and test data."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.107,
+            0.472,
+            0.909,
+            0.591
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "use training data and features to train machine learning algorithm."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.107,
+            0.624,
+            0.957,
+            0.743
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "predict labels of examples in test data to evaluate algorithm."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.107,
+            0.779,
+            0.96,
+            0.956
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• algorithms may require choosing a parameter (number of rounds, learning parameter, trade--off parameter) validation set or cross-validation."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.046,
+            0.966,
+            0.389,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.716,
+            0.967,
+            0.77,
+            0.995
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.296,
+            0.085,
+            0.702,
+            0.155
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Cross-Validation"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.067,
+            0.224,
+            0.907,
+            0.283
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Partition data into folds (typically, K "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K   =   5"
+            },
+            {
+              "type": "text",
+              "content": " or ).10"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.066,
+            0.317,
+            0.968,
+            0.376
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Train on all but th fold hypothesisk "
+            },
+            {
+              "type": "equation_inline",
+              "content": "h _ { \\theta , k } ,   k   \\in   [ 1 ,   K ]"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.067,
+            0.411,
+            0.755,
+            0.467
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Compute -fold cross validation error:k"
+            }
+          ]
+        },
+        {
+          "type": "equation",
+          "index": 4,
+          "bbox": [
+            0.329,
+            0.484,
+            0.71,
+            0.634
+          ],
+          "image_path": "images/page_17_equation_4.jpg",
+          "content": "\\frac {1}{K} \\sum_ {k = 1} ^ {K} \\widehat {\\mathrm{error}} (h _ {\\theta , k}, \\mathrm{fold} k)."
+        },
+        {
+          "type": "text",
+          "index": 5,
+          "bbox": [
+            0.067,
+            0.651,
+            0.757,
+            0.707
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Choose value of minimizing CV error.θ"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 6,
+          "bbox": [
+            0.067,
+            0.728,
+            0.95,
+            0.842
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "When "
+            },
+            {
+              "type": "equation_inline",
+              "content": "K   =   m"
+            },
+            {
+              "type": "text",
+              "content": " (sample size) leave-one-out cross-validation and error."
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.717,
+            0.966,
+            0.776,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.214,
+            0.086,
+            0.786,
+            0.166
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Importance of Features"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph_title",
+          "index": 1,
+          "bbox": [
+            0.069,
+            0.227,
+            0.269,
+            0.277
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Features:"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.107,
+            0.302,
+            0.885,
+            0.421
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "poor features, uncorrelated with labels, make learning very difficult for all algorithms."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.107,
+            0.439,
+            0.827,
+            0.558
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "good features, can be very effective; often knowledge of the task can help."
+            }
+          ]
+        },
+        {
+          "type": "paragraph_title",
+          "index": 4,
+          "bbox": [
+            0.069,
+            0.591,
+            0.268,
+            0.648
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Example:"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "table",
+          "index": 5,
+          "bbox": [
+            0.224,
+            0.672,
+            0.759,
+            0.921
+          ],
+          "content": [
+            {
+              "type": "table_body",
+              "index": 5,
+              "bbox": [
+                0.224,
+                0.672,
+                0.759,
+                0.921
+              ],
+              "image_path": "images/page_18_table_5.jpg",
+              "content": "<table><tr><td>00|0|00|||0</td><td>2</td><td>||000|||00|</td><td>0</td></tr><tr><td>||0|0||000|</td><td>1</td><td>0000||000||</td><td>0</td></tr><tr><td>00|0|00|||0</td><td>2</td><td>||0|000|||0|</td><td>1</td></tr><tr><td>|||||0|||||00</td><td>0</td><td>00|0|0|0|00</td><td>4</td></tr><tr><td>||||00|00|00</td><td>2</td><td>||0000|||00</td><td>0</td></tr></table>"
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 6,
+          "bbox": [
+            0.045,
+            0.966,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 7,
+          "bbox": [
+            0.717,
+            0.967,
+            0.775,
+            0.993
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "page19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "index": 0,
+          "bbox": [
+            0.32,
+            0.086,
+            0.679,
+            0.155
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Generalization"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "text",
+          "index": 1,
+          "bbox": [
+            0.069,
+            0.226,
+            0.675,
+            0.278
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Generalization: not memorization."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 2,
+          "bbox": [
+            0.107,
+            0.303,
+            0.902,
+            0.421
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "minimizing error on the training set in general does not guarantee good generalization."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 3,
+          "bbox": [
+            0.107,
+            0.44,
+            0.908,
+            0.555
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "too complex hypotheses could overfit training sample."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "index": 4,
+          "bbox": [
+            0.107,
+            0.575,
+            0.904,
+            0.634
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "• how much complexity vs. training sample size?"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 5,
+          "bbox": [
+            0.182,
+            0.667,
+            0.416,
+            0.857
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 5,
+              "bbox": [
+                0.182,
+                0.667,
+                0.416,
+                0.857
+              ],
+              "image_path": "images/page_19_image_5.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "index": 6,
+          "bbox": [
+            0.551,
+            0.667,
+            0.813,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "image_body",
+              "index": 6,
+              "bbox": [
+                0.551,
+                0.667,
+                0.813,
+                0.994
+              ],
+              "image_path": "images/page_19_image_6.jpg",
+              "content": ""
+            }
+          ]
+        },
+        {
+          "type": "footer",
+          "index": 7,
+          "bbox": [
+            0.046,
+            0.967,
+            0.389,
+            0.994
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "Mehryar Mohri - Introduction to Machine Learning"
+            }
+          ]
+        },
+        {
+          "type": "page_number",
+          "index": 8,
+          "bbox": [
+            0.756,
+            0.968,
+            0.777,
+            0.992
+          ],
+          "content": [
+            {
+              "type": "text",
+              "content": "20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "is_full_document": true,
+  "schema": "docvortex.middle",
+  "schema_version": "2.0"
+}
