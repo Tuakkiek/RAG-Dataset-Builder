@@ -1,0 +1,334 @@
+<!-- page: 1 -->
+
+## Lecture 1  1
+
+**Introduction to knowledge-base  to intelligent systems**
+
+■ **Intelligent  machines , or what machines  can do**
+
+**The history  of artificial  intelligence  or from the “Dark Ages” to  to knowledge -based systems**
+
+■ **Summary**
+
+<!-- page: 2 -->
+
+**Intelligent  machines , or what machines  can do**
+
+■ Philosophers have been trying for over 2000 years to understand and resolve two to  Big Questions  of the Universe:  **How does a human mind work, and Can non-humans have minds?**  These questions are still unanswered. .
+
+■ **Intelligence**  is their ability to understand is  and learn thing s . 2 . 2 **Intelligence**  i s the ability to think and i s understand instead of doing things by instinct or automatically . .
+
+(Essential English Dictionary , Collins , London, 1 990)
+
+<!-- page: 3 -->
+
+■ In order to think, some In one or some or thing has to have  to a brain,  or an organ that or an  enables some one or something to learn and understand things, to solve to  to problems and to make decisions . So we can define . So we intelligence as  as the ability to learn and understand **to solve problems and to make to  decisions** .
+
+■ The goal of  of **artificial intelligence**  (AI) as a science  as a is to make machines do things that would require is to  do intelligence if done by humans . Therefore, the . answer to the question  Can Machines Think ?  was vitally important to the di s cipline . .
+
+■ The answer is not a simple “  a  “Yes” or “No” .
+
+<!-- page: 4 -->
+
+■ Some people are smarter in some ways than others . . Sometimes we make very  we  intelligent decisions but sometimes we also make very silly mistakes . S ome  we . of us deal with complex mathematical and engineering problems but are moronic in  in philosophy and history. Some people are good at .  at making money, while others are better at spending  at it. As humans , we all have the ability to learn and it. As  we understand, to solve problems and to make  to decisions ; however, our abilities are not equal and lie in different areas . Therefore, we should expect  in .  we that if machines can think, some of them might be smarter than others in some ways .  in .
+
+<!-- page: 5 -->
+
+■ One of the  most significant  papers on machine  on intelligence,  **“Computing Machinery and Intelligence** ”, was written by the British mathematician  **Alan Turing**  over fifty years ago However, it still stands up well under the test of  it  up time, and the Turing ’ s approach remains universal . s .
+
+■ He asked: He  **Is there thought without experience ? Is Is  Is there mind without communication ? Is there  Is language without living ? Is there intelligence  Is witho ut life ?**  All these questions , as you can see ,  as are just variations on the fundamental question of  on  of artificial intelligence,  **Can machines think ?**
+
+<!-- page: 6 -->
+
+■ Turing did not provide definitions of machines and thinking, he just avoided semantic arguments by  by inventing a game, the  **Turing Imitation Game** .
+
+■ The imitation game originally included two phases . . In the first phase, the interrogator, a man and a In  a woman are each placed in separate rooms . The interrogator ’ s obj ective i s to work out who i s the s  i s to  i s man and who is the woman by questioning them.  is . The man should attempt to deceive the interrogator that he i s the woman, while the woman has to i s  to convince the interrogator that  she is the woman . is .
+
+<!-- page: 7 -->
+
+## Turing Imitation Game: Phase 1  1
+
+![](images/page_6_image_1.jpg)
+
+![](images/page_6_image_2.jpg)
+
+![](images/page_6_image_3.jpg)
+
+<!-- page: 8 -->
+
+## Turing Imitation Game: Phase 2
+
+■ In the second phase of the game, the man is In  is replaced by a computer programmed to deceive the interrogator as the man did. It would even be  as . programmed to make mistakes and provide fuzzy answers in the way a human would. If the  in computer can fool the interrogator as often as the  as  as man did, we may say this computer has passed the  we intelligent behaviour test. .
+
+<!-- page: 9 -->
+
+## Turing Imitation Game: Phase 2
+
+![](images/page_8_image_1.jpg)
+
+<!-- page: 10 -->
+
+**The Turing test has two remarkable qualities that make it really universal.**
+
+■ By maintaining communication between the human and the machine via terminals , the test gives us an  us an obj ective standard view on intelligence.  on .
+
+■ The test itself is quite independent from the details of the experiment. It can be conducted .  as a two as - phase game, or even as a single  as a -phase game when - the interrogator needs to choose between the  to human and the machine from the beginning of the te st .
+
+<!-- page: 11 -->
+
+Turing believed that by the end of the 20th century it would be pos sible to program a digital computer  to to play the imitation game. Although modern to . computers still cannot pas s the Turing test, it  it provides a basis for the verification and validation of knowledge-based systems . - .
+
+■ **A program thought intelligent in some narrow area of expertise is evaluated by comparing its performance with the performance of a human expert.**
+
+■ To build an intelligent computer system, we have to To  an  to capture, organise and use human expert knowledge in some narrow area of expertise . in .
+
+ N eg nevitsky, Pearson E d ucation , 2002 ,
+
+<!-- page: 12 -->
+
+**The history of artificial intelligence The birth of artificial intelligence (1943 – 1956)**  –
+
+The first work recognised in the field of AI was presented by  **Warren McCulloch**  and **Walter Pitts** in 1 943 in . They proposed a model of an artificial  neural  network  and demonstrated  that simple network structures could learn . .
+
+■ McCulloch, the second “founding father” of AI after Alan Turing, had created the corner stone of  of neural computing and artificial neural networks (ANN) .
+
+<!-- page: 13 -->
+
+■ The third founder of AI was  **John von Neumann** the brilliant Hungarian-born mathematician. In - . In 1 930, he j oined the Princeton University, lecturing in mathematical physics . in . He was an adviser for the He  an Electronic Numerical Integrator and Calculator proj ect at the University of Pennsylvania and helped to design the  **Electronic  Discrete Variable Calculator** . He was influenced by McCulloch . He  and Pitts ’ s s neural network model . When .  **Marvin Minsky** and **Dean Edmonds** , two graduate students in the Princeton mathematics department,  in built the first neural network computer in 1 95 1 , , von Neumann  encouraged and supported them. .
+
+<!-- page: 14 -->
+
+Another of the first generation researchers was **Claude Shannon** . He graduated from . He  MIT and j oined B ell Telephone Laboratories  in 1 94 1 . in Shannon shared Alan Turing ’ s ideas on the s  on po s sibility of machine intelligence . In 1 95 0 , he . In  he published a paper on chess-playing machines,  on - which pointed out that a typical chess game involved about 1 0  1 0<sup>120</sup> possible moves (Shannon, 1 950) . Even if the new .  von Neumann -type computer could examine one move per microsecond, it would take  3 × 1 0 <sup>1 06</sup> years to make  to its first move. Thus Shannon demonstrated the need to use heuristic s in the search for the solution .  in .
+
+<!-- page: 15 -->
+
+■ In 1 95 6, In  **John McCarthy** , **Martin Minsky**  and **Claude Shannon**  organised a summer workshop at  a  at Dartmouth College. They brought together . researchers interested in the study of machine intelligence, artificial neural nets and automata theory . Although there were j ust ten researchers , . this workshop gave birth to a new science called **artificial intelligence** .
+
+<!-- page: 16 -->
+
+## The rise of artificial  intelligence , or the ,  era of great expectations  (1956 – late 1960s)  –
+
+■ The early works on neural computing and artificial  on neural networks started by  McCulloch  and Pitts was continued. Learning methods were improved . and **Frank Rosenblatt**  proved the  **perceptron convergence theorem** , demonstrating that his learning algorithm could adjust the connection strengths of a  perceptron . .
+
+<!-- page: 17 -->
+
+■ One of the most ambitious proj ects of the era of  of great expectations was the  **General Problem Solver (GPS)** . **Allen Newell**  and **Herbert Simon** from the Carnegie Mellon University developed a  a general-purpose program to simulate human- - solving methods . .
+
+■ Newell and Simon postulated that a problem to be  be solved could be defined in terms of  of **states** . They . used the mean-end analysis to determine a - to  a difference between the current and desirable or  or goal state  of the problem, and to choose and apply operators  to reach the goal state. The set of to . operators determined the solution plan. .
+
+ N eg nevitsky, Pearson E d ucation , 2002 ,
+
+<!-- page: 18 -->
+
+■ However, GPS failed to solve complex problems . . The program was based on formal logic and could  on generate an infinite number of possible operators .  an . The amount of computer time and memory that GPS required to solve real-world problems led to - the proj ect being abandoned. .
+
+■ In the sixties , AI researchers attempted to simulate In the thinking process by inventing  general methods for solving  broad classes of problems . They used . the general-purpose search mechanism to find a - a solution to the problem. Such approaches, now  to . referred to as  as **weak methods** , applied weak information about the problem domain. .
+
+<!-- page: 19 -->
+
+■ By 1 970, the euphoria about AI was gone, and most government funding for AI proj ects was cancelled. . AI was still a relatively new field, academic in AI  in nature, with few practical applications apart from playing games . So, to the outsider, the achieved .  to results would be seen as toy s , as no AI sy stem at  as  as no AI  at that time could manage real-world problems . - .
+
+<!-- page: 20 -->
+
+**Unfulfilled  promises , or the** ,  **impact of reality (late 1960s – early 1970s)**  –
+
+**The main difficulties for AI in the late 1960s were :**
+
+■ Because AI researchers were developing general methods for broad classes of problems , early programs contained little or even no knowledge  no about a problem domain. To solve problems, . To programs applied a search strategy by trying out  a different combinations of small steps , until the right one was found. This approach was quite feasible for . simple **toy problems** , so it seemed reasonable that, , so it if the programs could be “scaled up” to solve large  to problems , they would finally succeed. .
+
+<!-- page: 21 -->
+
+■ Many of the problems that AI attempted to solve were **too broad and too difficult** . A typical task for . early AI was machine translation. For example, the . National Research Council, USA, funded the translation of Rus sian scientific papers after the launch of the first artificial s atellite (Sputnik) in 1 9 5 7 . Initially , the proj ect team tried simply . replacing Russian words with English, using an  an electronic dictionary. However, it was soon found . that translation requires a general understanding of  of the subj ect to choose the correct words . This task was too difficult. In 1 9 66 , all translation proj ects . In funded by the US government were cancelled. .
+
+<!-- page: 22 -->
+
+■ In 1 97 1 , the British government also suspended In support for AI research . Sir .  James Lighthill  had been commissioned by the Science Research Council of Great Britain to review the current state of AI . He  to . He did not find any maj or or even significant results from AI research, and therefore saw no need to have  no a separate science called “artificial intelligence” . a .
+
+<!-- page: 23 -->
+
+**The technology  of expert systems , or the key to success  (early 1970s – mid- 1980s)**  –
+
+Probably the most important development in the seventies was the realisation that the domain for intelligent machines had to be sufficiently  be restricted. Previously, AI researchers had believed that clever search algorithms and reasoning techniques could be invented to emulate general human-like, problem-solving methods . A general- - - . purpose search mechanism could rely on  on elementary reasoning steps to find complete  to solutions and could use weak knowledge about domain.
+
+<!-- page: 24 -->
+
+When weak methods failed, researchers finally realised that the only way to deliver practical results was to solve typical cases in narrow  to  in areas of expertise, making large reasoning step s .
+
+<!-- page: 25 -->
+
+## DENDRAL
+
+DENDRAL was developed at Stanford University  to determine the molecular structure of Martian soil based on the mass spectral data provided by a mass  on spectrometer. . The proj ect was supported by  NASA. Edward Feigenbaum, Bruce Buchanan (a computer scientist) and Joshua Lederberg (a Nobel prize winner in genetics) formed in  a team.
+
+■ There was no scientific algorithm  no  for mapping the mas s spectrum into its molecular structure . . Feigenbaum’ s j ob was to incorporate the expertise of  to  of Lederberg into a computer program to make it  it perform at a human expert level. Such programs were  at . later called  **expert systems** .
+
+<!-- page: 26 -->
+
+■ DENDRAL marked a maj or “paradigm shift” in AI : a  in  a shift from  general-purpose, knowledge-sparse weak - - methods to domain- specific, knowledge-intensive  to - - techniques . .
+
+The aim of the proj ect was to develop a computer  to program to attain the level of performance of an experienced human chemist. Using heuristics in the .  in form of high-quality specific - rules , rules-of-thumb -of- , the DENDRAL team proved that  computers could equal an  an expert in narrow ,  well defined , problem areas , .
+
+■ The DENDRAL proj ect originated the fundamental idea of expert systems –  – **knowledge engineering** , which , encompassed techniques of capturing, analysing and expres sing in rules an expert’ s “know-how” .  an s - .
+
+<!-- page: 27 -->
+
+## MYCIN
+
+■ MYCIN was a rule-based expert system for the - diagno si s of infectious blood di seases . It also provided . It a doctor with therapeutic advice in a convenient, user-  in - friendly manner. .
+
+■ MYCIN’ s knowledge consisted of about 450 rules s derived from human knowledge in a  in a narrow domain through extensive interviewing of experts . .
+
+■ The knowledge  incorporated in the form of rules was clearly separated from the reasoning mechanism. The . system developer could easily manipulate knowledge in the sy stem by inserting or deleting some rules . For in  or . example, a domain-independent version of MYCIN - called EMYCIN (Empty MYCIN) was later produced. .
+
+ N eg nevitsky, Pearson E d ucation , 2002
+
+<!-- page: 28 -->
+
+## PROSPECTOR
+
+PROSPECTOR was an expert system for mineral  an exploration developed by the Stanford Research Institute. Nine experts contributed their knowledge and . expertise. PROSPECTOR used a combined structure . that incorporated rules and a semantic network.  a . PROSPECTOR had over 1 000  rules.
+
+The user, an exploration geologist  an , was asked to input the characteristics of a suspected deposit: the geological setting , structures , kinds of rocks and minerals . PROSPECTOR compared  these characteristics with models of ore  deposits and made an assessment of the  an suspected mineral deposit. It could also explain the . step s it used to reach the conclusion . .
+
+<!-- page: 29 -->
+
+■ A 1 986 survey reported a remarkable number of  of succes sful expert system applications in different  in areas : chemistry, electronics , engineering, geology management, medicine, process control and military science (  (Waterman , 1 9 8 6) . Although , . Waterman  found nearly 200 expert systems, most of the applications were in the field of medical  in diagnosis . S even years later a similar survey .  a reported over 2500 developed expert systems (Durkin, 1 994) . The new growing area was , . business and manufacturing, which accounted for about 60% of the applications . Expert system . technology had clearly matured. .
+
+<!-- page: 30 -->
+
+## However :
+
+Expert systems are restricted to a very narrow domain of expertise. For example, MYCIN, which . was developed for the diagnosis of infectious blood diseases, lacks any real knowledge of human physiology. If a patient has more than one disease, . we cannot rely on MYCIN. In fact, therapy we  on . In prescribed for the blood disease might even be harmful because of the other disease. .
+
+■ Expert systems  can show the sequence of the rules they applied  to reach a solution, but cannot relate to  a accumulated, heuristic knowledge to any deeper  to understanding of the problem domain. .
+
+<!-- page: 31 -->
+
+Expert systems have difficulty in recognising domain boundaries . When given a task different from the typical problems , an expert system might attempt to , an solve it and fail in rather unpredictable way s .  it .
+
+■ Heuristic rules represent knowledge in abstract form  in and lack even basic understanding of the domain area. It makes the task of identifying incorrect, . incomplete  or inconsistent knowledge difficult. .
+
+■ Expert systems , especially the first generation, have little or no ability to learn from their experience . . Expert systems are built individually and cannot be developed fast. . Complex systems can take over 30  30 person-years to build . - to .
+
+<!-- page: 32 -->
+
+**How to make a machine  learn, or the** ,  **rebirth  of neural networks  (mid- 1980s – onwards)**  –
+
+■ In the mid-eighties , researchers , engineers and In - experts found that building an expert system  an required much more than just buying a reasoning system or expert system shell and putting enough rule s in it . Di sillu sion s about the applic ability of  in it .  of expert system technology even led to people predicting an  an AI “winter ” AI  with severely squeezed funding for AI proj ects . AI researchers decided to . have a new look at neural networks . .
+
+<!-- page: 33 -->
+
+■ B y the late sixties , mo st of the basic ideas and concepts necessary for neural computing had already been formulated. However, only in the mid-eighties did the solution emerge . The maj or - . reason for the delay was technological : there were no PCs or powerful workstations to model and no  to experiment with artificial neural networks . .
+
+■ In the eighties , because of the need for brain-like In - information proces sing , as well as the advances in  as  as  in computer technology and progress in neuroscience,  in the field of neural networks experienced a dramatic resurgence. Maj or contributions to both theory and .  to design were made on several fronts .  on .
+
+<!-- page: 34 -->
+
+■ Gros sberg  established a new principle of self- - organisation (  (**adaptive resonance theory** ) , which ) , provided the basis for a new clas s of neural networks (  (Gro s sberg , 1 9 80) . , .
+
+■ Hopfield  introduced neural networks with feedback **Hopfield  networks** , which attracted much attention in the eightie s ( in  (Hopfield , 1 9 8 2) . , .
+
+Kohonen  published a paper on  on **self-organising maps** (Kohonen , 1 9 8 2) . , .
+
+■ B arto, Sutton and Anderson published their work on reinforcement learning  and its application in  in control ( B arto et al . , 1 9 8 3 et al . , ) .
+
+<!-- page: 35 -->
+
+But the real breakthrough came in 1 986 when the  in **back-propagation learning algorithm** , first introduced by Bryson and Ho in 1 969 (Bryson &  in  & Ho, 1 969) , was reinvented by Rumelhart and McClelland in  Parallel Distributed Processing ( 1 9 8 6) . .
+
+■ Artificial neural networks have come a long way from the early models of McCulloch and Pitts to an  to an interdisciplinary subj ect with roots in neuroscience,  in psychology, mathematics and engineering, and will continue to develop in both theory and practical  to applications . .
+
+<!-- page: 36 -->
+
+**The new era of knowledge  engineering , or computing  with words (late 1980s – onwards)**  –
+
+■ Neural network technology offers more natural interaction with the real world than do systems  do based on symbolic reasoning . Neural networks can  on learn, adapt to changes in a problem’ s environment,  in s establish patterns in situations where rules are not  in known, and deal with fuzzy or incomplete information. However, they lack explanation facilities and usually act as a black box. The  as process of training neural networks with current technologies is slow, and frequent retraining can  is cause serious difficulties .
+
+<!-- page: 37 -->
+
+■ Clas sic expert systems are especially good for closed- system applications with precise inputs and - logical outputs . They use expert knowledge in the .  in form of rules and, if required, can interact with the user to establish a particular fact. A maj or . A drawback is that human experts cannot always expres s their knowledge in terms of rules or explain  in the line of their reasoning . This can prevent the . expert system from accumulating the necessary knowledge, and consequently lead to its failure. .
+
+<!-- page: 38 -->
+
+■ Very important technology dealing with vague, imprecise and uncertain knowledge and data is  **fuzzy logic** .
+
+■ Human experts do not usually think in probability  do values , but in such terms as  as often , gene rally , sometimes , occasionally  and rarely. Fuzzy logic is .  is concerned with  capturing the meaning of words, human reasoning and decision making. . Fuzzy logic provides the way to break through the computational bottlenecks of traditional expert systems . .
+
+■ At the heart of fuzzy logic lies the concept of a **linguistic variable** . The values of the linguistic . variable are words rather than numbers . .
+
+<!-- page: 39 -->
+
+Fuzzy logic or  or fuzzy set theory  was introduced by Profes sor  **Lotfi Zadeh** , B erkeley ’ s electrical , s engineering department chairman, in  in 1 9 65 . It . It provided  a means of computing with words . . However, acceptance of fuzzy set theory by the technical community was slow and difficult. Part . of the problem was the provocative name – “fuzzy  – – it seemed too light-hearted to be taken seriously . – it - be . Eventually, fuzzy theory, ignored in the West, was taken seriously in the East – by the Japanese . It has  – been used successfully since 1 9 87 in Japanese- - designed dishwashers, washing machines, air conditioners , television sets , copiers , and even cars .
+
+<!-- page: 40 -->
+
+**Benefits derived from the application of fuzzy logic models in knowledge-based and  in decision-support systems can be summarised as follows :**
+
+**Improved computational power:**  Fuzzy rule- - based systems perform faster than conventional expert systems and require fewer rules . A fuzzy . expert system merges the rules, making them more powerful . . Lotfi Zadeh  believes that in a few years mo st expert sy stems will use fuzzy logic to solve  to highly nonlinear  and computationally difficult problems . .
+
+<!-- page: 41 -->
+
+**Improved cognitive modelling:**  Fuzzy systems allow the encoding of knowledge in a form that reflects the  in way experts think about a complex problem. They . usually think in such imprecise terms as  as high and low fast and slow, heavy and light. In order to build . In conventional rules, we need to define the crisp  we boundaries for these  terms by breaking  down the expertise into fragments . . This fragmentation  leads to  to the poor performance of conventional expert systems when they deal  with complex  problems . In contrast, . In fuzzy expert systems model imprecise information capturing expertise  similar  to the way it is represented in the expert mind, and thus improve cognitive in modelling of the problem. .
+
+<!-- page: 42 -->
+
+■ **The ability to represent multiple experts :** Conventional expert systems are built for  a narrow domain. It makes the system’ s performance . s  fully dependent on the right choice of experts . . When a more complex expert system is being built or when expertise is not well defined,  is  multiple experts  might be needed. . However, multiple experts seldom reach close agreements ; there are often differences in opinions and  in even conflicts . Thi s i s especially true in areas , such as .  i s  in  as business and management , where no simple solution ,  no exists and conflicting views should be taken into account. Fuzzy expert systems can help to represent . the expertise of multiple experts when they have opposing views . .
+
+<!-- page: 43 -->
+
+■ Although fuzzy systems allow expression of expert knowledge in a more natural way, they still depend  in on the rules extracted from the experts, and thus on might be smart or dumb . Some experts can provide . very clever fuzzy rules – but some just guess and  – may even get them wrong . Therefore, all rules . must be tested and tuned, which can be a prolonged and tedious proces s . For example, it took .  Hitachi engineers several years to test and tune only 54  to fuzzy rules to guide the Sendal Subway System.  to .
+
+<!-- page: 44 -->
+
+In recent years, several methods based on neural  on network technology have been used to search numerical data for fuzzy rules . Adaptive or neural . fuzzy systems can find new fuzzy rules, or change and tune existing ones based on the data provided.  on . In other words , data in – rules out, or experience in In  –  in – common sense out. – .
+
+<!-- page: 45 -->
+
+## Summary
+
+■ Expert, neural and fuzzy systems have now matured and been applied to a broad range of  of different problems , mainly in engineering, medicine, finance, business and management. .
+
+■ Each technology handles the uncertainty and ambiguity of human knowledge differently, and each technology has found its place in knowledge engineering . They no longer compete ; rather they .  no complement each  other.
+
+<!-- page: 46 -->
+
+■ A synergy of expert systems with fuzzy logic and A neural computing improves adaptability robustnes s , fault-tolerance and speed of - of knowledge-based systems . Besides, computing - . with words makes them more “human” . It is now . common practice to build intelligent sy stems using  to existing theories rather than to propose new ones ,  to and to apply these systems to real-world problems  to - rather than to “toy  to ” problems . ” .
+
+<!-- page: 47 -->
+
+## Main events in the history of AI  in
+
+| (1 I<sub>n</sub> T 9 t h <sub>4</sub> e<sub>l</sub> e 3 l<sub>i</sub> b<sub>i</sub> 1- <sup>g</sup><sub>e</sub> <sub>t</sub>r 9 n h 5 c o 6 e f)A r t i f i c i a l | P e r<sub>i</sub> o d |
+| --- | --- |
+| 9561 g,teeceinllin eatoutTh Drmh 9501 g,oSao Prrhnnn jp (voectorn eectocTh Elrni gp, CoutmuTrin aet immnnnI Ccuoc adMllhn atcaeuaetsrifiil nrl n g C woee sueollmmrr gp Cai aoutemmnmr ) Neuamnn g Nuecateatomril Inrr gydiacie anhnn Mr I y,9vv Nseouctiitr A 1 g, Coicalalctts A L Pi an sk fo an ten 34 ul d autom po ohn ylainr P Cdacul glliecen fsu o teh at m g al , I a ac C to 9 1 de teh hin seh r 50 sa o e s r , y, | <sub>yevest</sub>K <sub>En</sub> |
+
+<!-- page: 48 -->
+
+| Period | Key Events |
+| --- | --- |
+| The rise of artificial intelligence (1956-late 1960s) | LISP (McCarthy)The General Problem Solver (GPR) project (Newell and Simon)Newell and Simon, Human Problem Solving, 1972Minsky, A Framework for Representing Knowledge, 1975 |
+| The disillusionment in artificial intelligence (late 1960s-early 1970s) | Cook, The Complexity of Theorem Proving Procedures, 1971Karp, Reducibility Among Combinatorial Problems, 1972The Lighthill Report, 1971 |
+
+<!-- page: 49 -->
+
+| 1 e T 9 x h 7 p e 0 e <sub>s</sub> <sub>tr</sub> d<sub>i</sub> - s s mi ys co d t v - e e 91 sm yr 8 ( o 0 e f)s a r l y | P e r i o d |
+| --- | --- |
+| , GWatea Armn (CSNtaEMYIn ousse adRln a loOOGPRL - OSCOPRPETR g (CNeeMYIFi S Utaodnfrn (NeDEDRALF ui of K gi ( bn vi gi pde tox E Uvderni ,woaslki g pcoarr Staodnfr au admn y)estri ,ebaunm e <sub>s</sub><sup>r</sup> F <sup>m</sup> <sup>R</sup> S B tr ti ar m es h u y Ss y) cen gin ear otrli cah t ) l c f n e a h f a m n I ,e n,s gu stn St an 98 1 gae tuti anf d L 6 ( e o e C ) dr de o r l U b m n e e i r r v g a e , <sub>u</sub> <sub>s</sub>r e i r t, y) | <sub>yevest</sub>K <sub>En</sub> |
+
+<!-- page: 50 -->
+
+| (<sub>9</sub>1 <sub>et</sub>n a<sub>tri</sub> T<sub>h</sub> <sub>6</sub> <sub>w</sub> <sub>fi</sub> e 5o- ork cail eb ri n s r w e n th adr uar of s l) | <sub>e</sub>P r<sub>i</sub> o<sub>d</sub> |
+| --- | --- |
+| ),W.atocMhrk In ,wN Neuaetorlrk MATLA y,,w N NseualetokarrHkin 1 ,9w8Netos7rk 1 estteatTh Fir IEEE Inrni g,9ssocei86nPr 1 Cueat adceRmlhrn Mll p,Csoecteatuearr Fr M 1 fg,z SOdelaienooerKhnn- g Cv CeetollectieomnEr p,w N NeualetokoedrrHfil B A 994 oanl ,adln 982 o Fr putm s an <sub>p</sub> <sup>m</sup> <sup>a</sup><sub>t</sub> d pcatlii Coenf a Pr ation ioaln ysh P on ern alle f o bi A ical <sub>T</sub> <sup>c</sup><sub>e</sub> <sub>l</sub> l<sup>i</sup><sub>t</sub> o o T ie y S <sup>o</sup><sub>l</sub> o <sup>D</sup> p ,<sup>s</sup> s<sub>t</sub> (box Nen sitibr goloic 98 12 sem <sub>T</sub> <sub>u</sub> u<sub>t</sub> <sub>a</sub> w <sub>h</sub> <sub>a</sub><sup>r</sup> <sub>e</sub> <sup>l</sup><sub>l</sub> i<sub>t</sub> e l d y h | <sub>yevest</sub>K <sub>En</sub> |
+
+<!-- page: 51 -->
+
+| 1 c E 9 o v 7 m o 0s- put utli o a o <sup>n</sup> t<sub>i</sub> n <sup>w</sup> <sub>o</sub> a<sub>r</sub> <sup>a</sup><sub>r</sub> <sup>n</sup> y d (e)s a r l y | P e r <sup>o</sup><sub>d</sub>i |
+| --- | --- |
+| fypsiloo oachhhP M gy,volutioanoe ErFl ,volutiSwcee Ehfl ypCsoute beamnr M g, Geeticonoa PrKz 95.71 p,datationoad AHlln f,9oationmn7Ir 1 y SssecicethnhTr g,volutiecebe ERhnr ietnn I p Com o ann f Ns o aimmr N ian 3 Neem ssotnr gellie utatio p Odt atualr g O:n tualr ach P gateie,cen n - ium Sel tnh d an zinr n - 995. 1 wdsoa aTr g Seekimn ,99ection 1 geoam Prr f Stiicial Ar p diieenr B p Otiieumnr Ne , .2 im ys io g w 995 1 fg on ,stem gsloic th eh e n | <sub>yevest</sub>K <sub>En</sub> |
+
+<!-- page: 52 -->
+
+| (<sub>a</sub>l W C<sub>o</sub> te or m 1 d p 9 s u <sub>8</sub> t<sub>i</sub> 0 n s g-o w n ti w h a r d s) | <sub>e</sub>P r<sub>i</sub> o d |
+| --- | --- |
+| ),W.atocMhrk In ygpp (,uoccatoooboeFzz Li MATLAB Aliin TlxTh fggp,, C w W Sdsdoutiitoaaiitmnhmhader A PrZh - yy,,zz99 SssdeuteabookChmno T F Hx 14 yg,,zz99uiki3hnnoso F TKk 1 yy,,zz99w S N Nsdsseualetok autenmosorr FKk 12 y,99Sstesm 12 y Cestteatoaoeece ouTh Fir IEEE Inrninlnfrnn Fzz yyp (),,9S Sw S86edaubastetacaa JnimHihin 1 p)coesir g,,wvasaces a codtoes teeso shin mhinirniinrliin yp p (,waaeseu cosueoductsdsasesJnfzznmrrihhr "" gyy,,zz9ueoS83hueo F Trn 1 gggy,9 U Sssssseaoiiiuiticteinnnnnh77R L 1 fygpppp,zzlicatio ouoic tooxinmada A F L ArMmni yg,,zz99suloit6hmade F ArZh 1 y,,zz9 Ssuet65ade FZh 1 1 e a t t 9 s e9 ,6 | <sub>yevest</sub>K <sub>En</sub> |

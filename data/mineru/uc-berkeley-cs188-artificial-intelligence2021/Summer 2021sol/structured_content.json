@@ -1,0 +1,5155 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.081,
+            0.062,
+            0.523,
+            0.115
+          ],
+          "level": 2,
+          "content": "CS 188 Introduction to Summer 2021Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.802,
+            0.074,
+            0.896,
+            0.113
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.152,
+            0.372,
+            0.168
+          ],
+          "content": "• You have approximately 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.177,
+            0.494,
+            0.193
+          ],
+          "content": "• The exam is open book, open calculator, and open notes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.202,
+            0.322,
+            0.218
+          ],
+          "content": "• For multiple choice questions,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.222,
+            0.416,
+            0.241
+          ],
+          "content": "□ means mark **all options** that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.242,
+            0.378,
+            0.258
+          ],
+          "content": "means mark a single choice"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.236,
+            0.274,
+            0.75,
+            0.39
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_7.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.272,
+            0.76,
+            0.715,
+            0.902
+          ],
+          "content": "| Q1. Potpourri | /20 |\n| --- | --- |\n| Q2. Model-Based RL with Function Approximation | /14 |\n| Q3. Naive Bayes and Perceptron | /18 |\n| Q4. Backpropagation with Activation Checkpointing | /18 |\n| Q5. Ace King Queen | /16 |\n| Q6. Pure Romance | /20 |\n| Q7. Games | /18 |\n| Q8. Hidden Markov Models and Particle Filtering | /15 |\n| Total | /139 |",
+          "captions": [
+            {
+              "bbox": [
+                0.429,
+                0.747,
+                0.558,
+                0.761
+              ],
+              "content": "For staff use only:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_9.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.937,
+            0.498,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.322,
+            0.047,
+            0.665,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.384,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [20 pts] Potpourri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.08,
+            0.506,
+            0.096
+          ],
+          "content": "**(a)** [3 pts] Which of the following statements are always true?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.098,
+            0.386,
+            0.118
+          ],
+          "content": "\\square P (X, Y) = \\sum_ {a} P (X, a) \\sum_ {b} P (Y, b)",
+          "image_source": "images/page_2_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.123,
+            0.121,
+            0.411,
+            0.14
+          ],
+          "content": "P (X) = \\sum_ {a} \\sum_ {b} \\sum_ {c} \\sum_ {d} P (X, a, b, c, d)",
+          "image_source": "images/page_2_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.142,
+            0.454,
+            0.162
+          ],
+          "content": "\\square P (X _ {1}, X _ {2}, \\dots , X _ {n}) = P (X _ {1}) \\prod_ {i = 2} ^ {n} P (X _ {i} | X _ {i - 1})",
+          "image_source": "images/page_2_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.123,
+            0.165,
+            0.296,
+            0.184
+          ],
+          "content": "\\square P (X) \\propto \\sum_ {Y} P (X | Y)",
+          "image_source": "images/page_2_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.186,
+            0.295,
+            0.211
+          ],
+          "content": "\\square P (X | Y) = \\frac {P (X , Y)}{\\sum_ {Y} P (X , Y)}",
+          "image_source": "images/page_2_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.216,
+            0.315,
+            0.233
+          ],
+          "content": "P (X | y) \\propto P (y | X) P (X)",
+          "image_source": "images/page_2_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.245,
+            0.909,
+            0.292
+          ],
+          "content": "**(b)** [1 pt] Oski trains a neural network to classify whether or not a student is from Stanfurd. He notices that his classifier gets high accuracy when he tests it on his friends at Berkeley, but low accuracy when he visits Stanfurd. Which of the following is the best reason for why this is happening?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.296,
+            0.768,
+            0.312
+          ],
+          "content": "\\# Oski used a learning rate that was too low which led classifier to be stuck in a local minimum"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.316,
+            0.557,
+            0.332
+          ],
+          "content": "\\# Oski added too much regularization when training his model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.336,
+            0.753,
+            0.353
+          ],
+          "content": "Oski’s training data has disproportionately more Berkeley examples than Stanfurd examples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.356,
+            0.443,
+            0.373
+          ],
+          "content": "\\# Oski is incorrectly calculating the accuracy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.385,
+            0.79,
+            0.402
+          ],
+          "content": "**(c)** [1 pt] Regina is trying to perform gradient descent on a function 𝑓(𝑥) using the following update rule:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.462,
+            0.404,
+            0.565,
+            0.427
+          ],
+          "content": "x = x - \\frac {\\partial f}{\\partial x} (x)",
+          "image_source": "images/page_2_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.427,
+            0.647,
+            0.443
+          ],
+          "content": "Is gradient descent guaranteed to converge to the global minimum for any $f(x)?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.446,
+            0.478,
+            0.463
+          ],
+          "content": "\\# Yes, since she’s updating using the gradient of 𝑥."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.467,
+            0.377,
+            0.482
+          ],
+          "content": "\\# Yes, but not for the reason above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.487,
+            0.488,
+            0.503
+          ],
+          "content": "\\# No, since she is updating 𝑥 in the wrong direction."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.507,
+            0.366,
+            0.522
+          ],
+          "content": "No, but not for the reason above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.535,
+            0.602,
+            0.552
+          ],
+          "content": "**(d)** [3 pts] Which of the following statements regarding VPI are always true?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.123,
+            0.555,
+            0.425,
+            0.572
+          ],
+          "content": "\\square V P I (E ^ {\\prime} | E = e) - V P I (F ^ {\\prime} | F = f) \\geq 0",
+          "image_source": "images/page_2_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.575,
+            0.425,
+            0.592
+          ],
+          "content": "V P I (E ^ {\\prime} | E = e) * V P I (F ^ {\\prime} | F = f) \\geq 0",
+          "image_source": "images/page_2_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.595,
+            0.772,
+            0.613
+          ],
+          "content": "V P I (E _ {h}, E _ {i}, E _ {j} | E = e) = V P I (E _ {h} | E = e) + V P I (E _ {i} | E = e, E _ {h}) + V P I (E _ {j} | E = e, E _ {h}, E _ {i})",
+          "image_source": "images/page_2_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.618,
+            0.698,
+            0.637
+          ],
+          "content": "\\square V P I (E _ {h}, E _ {i}, E _ {j} | E = e) = V P I (E _ {h} | E = e) + V P I (E _ {i} | E = e) + V P I (E _ {j} | E = e)",
+          "image_source": "images/page_2_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.64,
+            0.549,
+            0.66
+          ],
+          "content": "\\square V P I (E _ {j}, E _ {k} | E = e) = V P I (E _ {j} | E = e) + V P I (E _ {k} | E = e)",
+          "image_source": "images/page_2_equation_26.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.671,
+            0.909,
+            0.734
+          ],
+          "content": "**(e)** [3 pts] Seth tries to generate samples using a modified version of prior sampling. Half of the time, he follows the normal prior sampling procedure. The other half of the time, he randomly generates a sample where he gives all of the variable assignments an equal chance. What is the probability of a certain sample following this procedure? Let the variables be $x _ { 1 } , x _ { 2 } , . . . , x _ { n } ,$ each of which can take on 𝑘 possible values."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.411,
+            0.736,
+            0.616,
+            0.759
+          ],
+          "content": "P (s a m p l e) = \\frac {1}{2} (A) (B) + \\frac {1}{2} (C)",
+          "image_source": "images/page_2_equation_28.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.765,
+            0.43,
+            0.785
+          ],
+          "content": "• **(A)**: $\\begin{array} { r } { \\bigcirc \\prod _ { i = 1 } ^ { n } \\mathrm { ~ \\textcircled { \\textoneoldstyle ~ } ~ } \\sum _ { i = 1 } ^ { n } \\mathrm { ~ \\textcircled { \\textoneoldstyle ~ } ~ } m a x _ { i = 1 \\ldots n } } \\end{array}$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.136,
+            0.787,
+            0.574,
+            0.805
+          ],
+          "content": "\\bullet \\quad (\\mathbf {B}): \\bigcirc P (x _ {i}) \\bullet P (x _ {i} | p a r e n t s (x _ {i})) \\bigcirc P (x _ {i} | c h i l d r e n (x _ {i}))",
+          "image_source": "images/page_2_equation_30.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "3"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.808,
+            0.364,
+            0.83
+          ],
+          "content": "\\bullet (\\mathbf {C}): \\quad \\textcircled {\\bullet} (\\frac {1}{k}) ^ {n} \\bigcirc (\\frac {1}{n}) ^ {k} \\bigcirc \\frac {1}{n}",
+          "image_source": "images/page_2_equation_32.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.839,
+            0.909,
+            0.9
+          ],
+          "content": "**(f)** Although both great lecturers, Carl (Ca) and Mesut (Me) want to formalize this by seeing student satisfaction based off each of their lectures. They both lecture about two different topics, Reinforcement Learning (RL) or Game Trees (GT). They also both have different guest appearances in lecture, John Denero (JD), who Carl is closer to, and Carol Christ (CC), who Mesut is closer to."
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.171,
+            0.082,
+            0.263,
+            0.161
+          ],
+          "content": "<table><tr><td colspan=\"2\">P(L)</td></tr><tr><td>Me</td><td>x</td></tr><tr><td>Ca</td><td>y</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.142,
+            0.072,
+            0.626,
+            0.438
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.642,
+            0.066,
+            0.762,
+            0.184
+          ],
+          "content": "<table><tr><td colspan=\"3\">P(T|L)</td></tr><tr><td>RL</td><td>Me</td><td>0.8</td></tr><tr><td>GT</td><td>Me</td><td>0.2</td></tr><tr><td>RL</td><td>Ca</td><td>0.1</td></tr><tr><td>GT</td><td>Ca</td><td>0.9</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.142,
+            0.263,
+            0.262,
+            0.381
+          ],
+          "content": "<table><tr><td colspan=\"3\">P(G|L)</td></tr><tr><td>JD</td><td>Me</td><td>0.3</td></tr><tr><td>CC</td><td>Me</td><td>0.7</td></tr><tr><td>JD</td><td>Ca</td><td>0.9</td></tr><tr><td>CC</td><td>Ca</td><td>0.1</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.641,
+            0.2,
+            0.876,
+            0.44
+          ],
+          "content": "<table><tr><td colspan=\"4\">P(S|T,G)</td></tr><tr><td>Sat</td><td>RL</td><td>JD</td><td>0.9</td></tr><tr><td>Unsat</td><td>RL</td><td>JD</td><td>0.1</td></tr><tr><td>Sat</td><td>RL</td><td>CC</td><td>0.5</td></tr><tr><td>Unsat</td><td>RL</td><td>CC</td><td>0.5</td></tr><tr><td>Sat</td><td>GT</td><td>JD</td><td>0.8</td></tr><tr><td>Unsat</td><td>GT</td><td>JD</td><td>0.2</td></tr><tr><td>Sat</td><td>GT</td><td>CC</td><td>0.5</td></tr><tr><td>Unsat</td><td>GT</td><td>CC</td><td>0.5</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.469,
+            0.908,
+            0.485
+          ],
+          "content": "**(i)** [2 pts] What’s the probability that the students are satisfied with a lecture where Carol Christ makes an appearance?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.487,
+            0.429,
+            0.523
+          ],
+          "content": "P (S a t \\mid C C) = \\boxed {0. 5}",
+          "image_source": "images/page_3_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.525,
+            0.908,
+            0.556
+          ],
+          "content": "By observation, you can see in the $P ( S \\mid T , G )$ table that all lectures where Carol Christ is the guest have a 0.5/0.5 chance of being satisfying or not satisfying."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.56,
+            0.908,
+            0.591
+          ],
+          "content": "**(ii)** [2 pts] Given that the students were satisfied with a lecture, what’s the probability that the lecture was given by Carl? You should use $x = 0 . 5$ and $y = 0 . 5$ for this question if needed."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.594,
+            0.425,
+            0.632
+          ],
+          "content": "P (C a \\mid S a t) = \\boxed { \\begin{array}{c} 0. 5 5 \\end{array} }",
+          "image_source": "images/page_3_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.634,
+            0.346,
+            0.657
+          ],
+          "content": "P (C a \\mid S a t) = \\frac {P (C a \\text { and } S a t)}{P (S a t)}",
+          "image_source": "images/page_3_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.657,
+            0.784,
+            0.672
+          ],
+          "content": "P (C a \\text {and} S a t) = 0. 5 * (0. 9 * (0. 1 * 0. 9 + 0. 9 * 0. 8) + 0. 1 * (0. 1 * 0. 5 + 0. 9 * 0. 5)) = 0. 3 8 9 5",
+          "image_source": "images/page_3_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.675,
+            0.781,
+            0.69
+          ],
+          "content": "P (M e a n d S a t) = 0. 5 * (0. 3 * (0. 8 * 0. 9 + 0. 2 * 0. 8) + 0. 7 * (0. 8 * 0. 5 + 0. 2 * 0. 5)) = 0. 3 0 7",
+          "image_source": "images/page_3_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.69,
+            0.454,
+            0.713
+          ],
+          "content": "P (C a \\mid S a t) = \\frac {P (C a \\text {and} S a t)}{P (S a t)} = \\frac {0 . 3 8 9 5}{0 . 6 9 6 5} = 0. 5 6",
+          "image_source": "images/page_3_equation_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.963
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.341,
+            0.076,
+            0.649,
+            0.189
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.082,
+            0.198,
+            0.201,
+            0.303
+          ],
+          "content": "| Node | $h_1$ | $h_2$ |\n| --- | --- | --- |\n| A | 9.5 | 10 |\n| B | 9 | 12 |\n| C | 8 | 10 |\n| D | 7 | 8 |\n| E | 1.5 | 1 |\n| F | 4 | 4.5 |\n| G | 0 | 0 |",
+          "captions": [
+            {
+              "bbox": [
+                0.092,
+                0.307,
+                0.907,
+                0.353
+              ],
+              "content": "(g) Consider the state space graph shown above. A is the start state and G is the goal state. The costs for each edge are shown on the graph. Each edge can be traversed in both directions. Note that the heuristic $h _ { 1 }$ is consistent but the heuristic $h _ { 2 }$ is not consistent."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.372,
+            0.909,
+            0.42
+          ],
+          "content": "For each of the following graph search strategies (do not answer for tree search), mark which, if any, of the listed paths it could return. Note that for some search strategies the specific path returned might depend on tie-breaking behavior. In any such cases, make sure to mark all paths that could be returned under some tie-breaking scheme."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.132,
+            0.436,
+            0.308,
+            0.515
+          ],
+          "sub_type": "code",
+          "content": "```txt\n(i) [1 pt] DFS\nA-B-D-G\nA-C-D-G\nA-B-C-D-F-G\n□ None of the above\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.128,
+            0.532,
+            0.308,
+            0.61
+          ],
+          "sub_type": "code",
+          "content": "```txt\n(ii) [1 pt] BFS\nA-B-D-G\nA-C-D-G\nA-B-C-D-F-G\nNone of the above\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.156,
+            0.627,
+            0.321,
+            0.706
+          ],
+          "sub_type": "code",
+          "content": "```txt\n[1 pt] A* Search with h₂\n□ A-B-D-G\n□ A-C-D-G\n■ A-B-C-D-F-G\n□ None of the above\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.724,
+            0.909,
+            0.77
+          ],
+          "content": "DFS can return any path. BFS will return all the shallowest paths, i.e. A-B-D-G and A-C-D-G. A-B-C-D-F-G is the optimal path for this problem, so that UCS and $A ^ { * }$ using consistent heuristic $h _ { 1 }$ will return that path. Although, $h _ { 2 }$ is not consistent, it will also return this path."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.774,
+            0.842,
+            0.791
+          ],
+          "content": "Suppose you are completing the new heuristic function $h _ { 3 }$ shown below. All the values are fixed except $h _ { 3 } ( B )$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.202,
+            0.807,
+            0.786,
+            0.87
+          ],
+          "content": "| Node | A | B | C | D | E | F | G |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| $h_3$ | 10 | ? | 9 | 7 | 1.5 | 4.5 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.882,
+            0.484,
+            0.899
+          ],
+          "content": "**(iv)** [1 pt] What values of $h _ { 3 } ( B )$ make $h _ { 3 }$ admissible?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.898,
+            0.237,
+            0.913
+          ],
+          "content": "\\alpha \\leq h _ {3} \\leq \\beta",
+          "image_source": "images/page_4_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.913,
+            0.247,
+            0.927
+          ],
+          "content": "\\alpha = 0 \\beta = 12",
+          "image_source": "images/page_4_equation_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.062,
+            0.478,
+            0.107
+          ],
+          "content": "**(v)** [1 pt] What values of $h _ { 3 } ( B )$ make $h _ { 3 }$ consistent? $\\gamma \\leq h _ { 3 } \\leq \\lambda$ $\\gamma = 9 ~ \\lambda = 1 0$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "chart",
+          "bbox": [
+            0.249,
+            0.09,
+            0.729,
+            0.297
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.077,
+                0.307,
+                0.909,
+                0.339
+              ],
+              "content": "Consider a robot navigating in the above grid world with walls around the edges as shown above. The robot’s state is represented by (𝑟𝑜𝑤, 𝑐𝑜𝑙𝑢𝑚𝑛), with the starting position at (1, 1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_chart_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.9,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q2. [14 pts] Model-Based RL with Function Approximation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.351,
+            0.909,
+            0.399
+          ],
+          "content": "The robot cannot leave the grid. The robot can move into the wall, but its state will stay the same after the action. The allowed actions are $a \\in \\{ \\mathtt { u p }$ , down, left, right} in all states except the sink state shaded in green In this sink state, only the exit action is available, which takes the agent to a terminal state in which it can no longer take actions or receive rewards."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.41,
+            0.909,
+            0.441
+          ],
+          "content": "When the robot transitions into the terminal state, it receives a reward of 10. For all other states, the robot receives a living reward of −1 for transitioning into the state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.454,
+            0.909,
+            0.501
+          ],
+          "content": "The robot wants to learn a policy to maximize its reward, but unfortunately does not know the transition model of the MDP exactly. However, the robot does know that any given state 𝑠, there is an associated (unknown) probability $s _ { p }$ that any action it takes will be flipped (eg. up becomes down, right becomes left)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.513,
+            0.908,
+            0.56
+          ],
+          "content": "**(a)** [3 pts] To estimate the MDP transition model, the robot executes some policy 𝜋 in the grid world and collects a set of 𝑁 transitions $\\{ ( s _ { i } , a _ { i } , s _ { i } ^ { \\prime } , r _ { i } ) \\} _ { i = 1 } ^ { N }$ . The robot then decides to use this to create a dataset $\\mathcal { D } = \\{ ( s _ { i } , y _ { i } ) \\} _ { i = 1 } ^ { N }$ of states in which action flips occur, where $y _ { i } = 1$ if a flip happened at $s _ { i }$ and −1 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.563,
+            0.909,
+            0.623
+          ],
+          "content": "2 The robot could use the number of action flips at each state to estimate the empirical probability of an action flip at each individual state. However, the robot is also considering training a logistic regression classifier $g : S \\mapsto \\{ 0 , 1 \\}$ which uses  to learn whether an action flip will occur at a given state. Which of the following is a possible advantage of learning a classifi er? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.623,
+            0.891,
+            0.655
+          ],
+          "content": "The classifier will use less memory if the state space dimension is much lower than the number of possible states The classifier will give us information about action flip probabilities even on states not visited in ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.654,
+            0.437,
+            0.669
+          ],
+          "content": "□ The classifier will always be more accurate."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.669,
+            0.841,
+            0.685
+          ],
+          "content": "■ The classifier will be able to reuse information about the probability of action flips across different states."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.712,
+            0.905,
+            0.748
+          ],
+          "content": "**(b)** [2 pts] You decide to use logistic regression to estimate the probability of an action flip at a given state $( P ( y _ { i } | s _ { i } , w ) )$ Define the logistic function $\\begin{array} { r } { \\phi ( z ) = \\frac { 1 } { 1 + e ^ { - z } } } \\end{array}$ . Which of the following is a correct expression for $P ( y _ { i } | s _ { i } , w ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.747,
+            0.252,
+            0.763
+          ],
+          "content": "$1 + \\phi ( y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.763,
+            0.244,
+            0.779
+          ],
+          "content": "$1 / \\phi ( y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.779,
+            0.269,
+            0.794
+          ],
+          "content": "$1 / \\phi ( 1 - y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.794,
+            0.269,
+            0.809
+          ],
+          "content": "$1 / \\phi ( 1 + y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.809,
+            0.224,
+            0.824
+          ],
+          "content": "\\# $\\phi ( y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.824,
+            0.252,
+            0.84
+          ],
+          "content": "$\\phi ( 1 + y _ { i } w \\cdot s _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.867,
+            0.908,
+            0.897
+          ],
+          "content": "**(c)** Suppose the robot now wants to update the weights for logistic regression with gradient ascent to maximize the likelihood of the 𝑁 transitions in ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.902,
+            0.659,
+            0.919
+          ],
+          "content": "Directly maximizing the likelihood of transitions in  gives the following udpate:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.41,
+            0.072,
+            0.616,
+            0.115
+          ],
+          "content": "w \\leftarrow w + \\eta \\nabla_ {w} \\prod_ {i = 1} ^ {N} P (y _ {i} | s _ {i}, w)",
+          "image_source": "images/page_7_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.125,
+            0.908,
+            0.155
+          ],
+          "content": "Suppose the dataset has $N   =   6 4$ transitions and we are computing our weights on a computer which can only store variables 𝑥 in memory if $| x | > 1 0 ^ { - 3 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.16,
+            0.897,
+            0.178
+          ],
+          "content": "**(i)** [2 pts] If $P ( y _ { i } | s _ { i } , w ) \\leq \\alpha \\; \\forall y _ { i } , s _ { i }$ , what is the largest value of 𝛼 such that $\\textstyle \\prod _ { i = 1 } ^ { N } P ( y _ { i } | s _ { i } , w )$ will **not** fit in memory?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.384,
+            0.184,
+            0.641,
+            0.202
+          ],
+          "content": "\\alpha^ {N} = 1 0 ^ {- 3 2} \\implies \\alpha = 1 / \\sqrt {1 0} = 0. 3 1",
+          "image_source": "images/page_7_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.228,
+            0.661,
+            0.246
+          ],
+          "content": "**(ii)** [2 pts] If $N = 6 4$ and $\\alpha = 0 . 1$ , will value of $\\textstyle \\prod _ { i = 1 } ^ { N } P ( y _ { i } | s _ { i } , w )$ fit in memory?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.25,
+            0.185,
+            0.265
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.265,
+            0.175,
+            0.28
+          ],
+          "content": "O No"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.439,
+            0.307,
+            0.548,
+            0.325
+          ],
+          "content": "| 0. 1 ^ {6 4} | <   1 0 ^ {- 3 2}",
+          "image_source": "images/page_7_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.36,
+            0.893,
+            0.377
+          ],
+          "content": "**(d)** Concerned about memory issues, you decide to instead maximize the log-likelihood of the transitions in  as follows:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.399,
+            0.392,
+            0.628,
+            0.435
+          ],
+          "content": "w \\leftarrow w + \\eta \\nabla_ {w} \\sum_ {i = 1} ^ {N} \\log P (y _ {i} | s _ {i}, w)",
+          "image_source": "images/page_7_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.445,
+            0.432,
+            0.46
+          ],
+          "content": "For this question, assume that log is in base 10."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.464,
+            0.638,
+            0.483
+          ],
+          "content": "**(i)** [2 pts] For $N = 6 4$ and $\\alpha = 0 . 1$ , will $\\Sigma _ { i = 1 } ^ { N }$ log $P ( y _ { i } | s _ { i } , w )$ fit in memory?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.482,
+            0.215,
+            0.496
+          ],
+          "content": "Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.497,
+            0.213,
+            0.512
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.459,
+            0.53,
+            0.568,
+            0.548
+          ],
+          "content": "| - 6 4 | > 1 0 ^ {- 3 2}",
+          "image_source": "images/page_7_equation_14.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.369,
+            0.581,
+            0.598,
+            0.779
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.795,
+            0.909,
+            0.842
+          ],
+          "content": "**(e)** Having estimated 𝑤 by running logistic regression, we can now use the resulting classifier to estimate the value of different policies in the environment. For this problem, consider a simplified $2 \\times 2$ grid world where the action flip probability is included in the top left of each grid cell. For policy $\\pi _ { 1 }$ illustrated above:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.845,
+            0.908,
+            0.877
+          ],
+          "content": "**(i)** [3 pts] What is $V ^ { \\pi _ { 1 } } ( ( 1 , 1 ) )$ if $p   =   q   =   0 . 3 ?$ Here 𝑝 and 𝑞 are the flip probabilities (probabilities of choosing the opposite action) for the respective states."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.745,
+            0.022,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.062,
+            0.498,
+            0.077
+          ],
+          "content": "We have the following system of equations for $V ^ { \\pi _ { 1 } }$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.355,
+            0.089,
+            0.707,
+            0.161
+          ],
+          "content": "\\begin{array}{l} V ^ {\\pi_ {1}} ((1, 1)) = - 1 + V ^ {\\pi_ {1}} ((1, 2)) \\\\ V ^ {\\pi_ {1}} ((1, 2)) = - 1 + p V ^ {\\pi_ {1}} ((2, 2)) + (1 - p) V ^ {\\pi_ {1}} ((1, 2)) \\\\ V ^ {\\pi_ {1}} ((2, 1)) = - 1 + (1 - q) V ^ {\\pi_ {1}} ((2, 2)) + q V ^ {\\pi_ {1}} ((2, 1)) \\\\ V ^ {\\pi_ {1}} ((2, 2)) = 1 0 \\end{array}",
+          "image_source": "images/page_8_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.176,
+            0.37,
+            0.192
+          ],
+          "content": "Solving the above system gives:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.362,
+            0.203,
+            0.699,
+            0.327
+          ],
+          "content": "\\begin{array}{l} V ^ {\\pi_ {1}} ((1, 2)) = - 1 + 1 0 p + (1 - p) V ^ {\\pi_ {1}} ((1, 2)) \\implies \\\\ p V ^ {\\pi_ {1}} ((1, 2)) = 1 0 p - 1 \\implies \\\\ V ^ {\\pi_ {1}} ((1, 2)) = \\frac {1 0 p - 1}{p} \\implies \\\\ V ^ {\\pi_ {1}} ((1, 1)) = - 1 + V ^ {\\pi_ {1}} ((1, 2)) \\implies \\\\ V ^ {\\pi_ {1}} ((1, 1)) = \\frac {9 p - 1}{p} = \\frac {9 * 0 . 3 - 1}{0 . 3} = 5. 6 7 \\end{array}",
+          "image_source": "images/page_8_equation_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.951,
+            0.501,
+            0.964
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.636,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q3. [18 pts] Naive Bayes and Perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.095,
+            0.829,
+            0.111
+          ],
+          "content": "Pacman has received a ton of spam lately. He decides to use some machine learning techniques to filter his emails."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.124,
+            0.909,
+            0.155
+          ],
+          "content": "**(a)** Pacman first tries using Naive Bayes. For some reason, he chooses the words \"buy\", \"discount\", and \"dollar\" as features during classification. Below is the training dataset:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.314,
+            0.17,
+            0.71,
+            0.277
+          ],
+          "content": "| \"buy\" (𝑊<sub>1</sub>) | \"discount\" (𝑊<sub>2</sub>) | \"dollar\" (𝑊<sub>3</sub>) | label (𝐸) |\n| --- | --- | --- | --- |\n| 1 | 1 | 0 | spam |\n| 1 | 0 | 1 | spam |\n| 1 | 0 | 0 | spam |\n| 0 | 1 | 0 | spam |\n| 0 | 0 | 0 | ham |\n| 0 | 1 | 1 | ham |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.282,
+            0.624,
+            0.297
+          ],
+          "content": "Under the assumptions of Naive Bayes, work out the following probabilities."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.3,
+            0.693,
+            0.324
+          ],
+          "content": "**(i)** [2 pts] $\\mathbb{P}(E = hand) = \\quad  開開  \\quad \\frac{1}{3}$ $\\mathbb { P } ( E = s p a m ) = \\quad \\frac { 2 } { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.335,
+            0.808,
+            0.359
+          ],
+          "content": "**(ii)** [4 pts] $\\mathbb{P}(W_{1}=1|E=span)=\\frac{3}{4}$ $\\mathbb { P } ( W _ { 1 } = 0 | E = h a m ) = \\quad { \\frac { 1 } { 1 } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.382,
+            0.908,
+            0.413
+          ],
+          "content": "Notice that it’s under the assumptions of Naive Bayes, which is different from the normal \"inference by enumeration\" technique for the last two questions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.417,
+            0.909,
+            0.461
+          ],
+          "content": "**(iii)** [2 pts] After filling out the probability table, Pacman found that one probability gets value zero, so he decided to use Laplace smoothing with 𝑘 = 1. However, his roommate said that it’s better to use $k = 2$ . What k value should Pacman choose?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.462,
+            0.56,
+            0.478
+          ],
+          "content": "He should pick the value that works best in training data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.478,
+            0.571,
+            0.493
+          ],
+          "content": "He should pick the value that works best in validation data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.493,
+            0.552,
+            0.508
+          ],
+          "content": "He should pick the value that works best in testing data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.508,
+            0.711,
+            0.524
+          ],
+          "content": "\\## He should pick the average number of samples per class, which is 3 in this case."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.528,
+            0.908,
+            0.558
+          ],
+          "content": "**(iv)** [3 pts] Right after implementing Laplace smoothing with $k = 1$ , Pacman receives an email which includes all three feature words. How would the model classify this email?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.559,
+            0.575,
+            0.605
+          ],
+          "content": "\\begin{array}{l} \\mathbb {P} (E = s p a m, W _ {1} = 1, W _ {2} = 1, W _ {3} = 1) = \\\\ \\mathbb {P} (E = h a m, W _ {1} = 1, W _ {2} = 1, W _ {3} = 1) = \\end{array} \\quad \\begin{array}{c} \\frac {5}{7 2} \\\\ \\hline \\frac {3}{1 2 8} \\end{array}",
+          "image_source": "images/page_9_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.605,
+            0.304,
+            0.622
+          ],
+          "content": "ham spam"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.644,
+            0.343,
+            0.674
+          ],
+          "content": "\\mathbb {P} (E = s p a m) = \\frac {4 + 1}{6 + 2} = \\frac {5}{8}",
+          "image_source": "images/page_9_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.539,
+            0.644,
+            0.723,
+            0.674
+          ],
+          "content": "\\mathbb {P} (E = h a m) = \\frac {2 + 1}{6 + 2} = \\frac {3}{8}",
+          "image_source": "images/page_9_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.675,
+            0.397,
+            0.705
+          ],
+          "content": "\\mathbb {P} (W _ {1} = 1 | E = s p a m) = \\frac {3 + 1}{4 + 2} = \\frac {2}{3}",
+          "image_source": "images/page_9_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.539,
+            0.675,
+            0.777,
+            0.705
+          ],
+          "content": "\\mathbb {P} (W _ {1} = 1 | E = h a m) = \\frac {0 + 1}{2 + 2} = \\frac {1}{4}",
+          "image_source": "images/page_9_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.705,
+            0.396,
+            0.735
+          ],
+          "content": "\\mathbb {P} (W _ {2} = 1 | E = s p a m) = \\frac {2 + 1}{4 + 2} = \\frac {1}{2}",
+          "image_source": "images/page_9_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.54,
+            0.706,
+            0.777,
+            0.735
+          ],
+          "content": "\\mathbb {P} (W _ {2} = 1 | E = h a m) = \\frac {1 + 1}{2 + 2} = \\frac {1}{2}",
+          "image_source": "images/page_9_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.736,
+            0.398,
+            0.765
+          ],
+          "content": "\\mathbb {P} (W _ {3} = 1 | E = s p a m) = \\frac {1 + 1}{4 + 2} = \\frac {1}{3}",
+          "image_source": "images/page_9_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.54,
+            0.736,
+            0.778,
+            0.765
+          ],
+          "content": "\\mathbb {P} (W _ {3} = 1 | E = h a m) = \\frac {1 + 1}{2 + 2} = \\frac {1}{2}",
+          "image_source": "images/page_9_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.765,
+            0.918,
+            0.796
+          ],
+          "content": "\\mathbb {P} (E = s p a m, W _ {1} = 1, W _ {2} = 1, W _ {3} = 1) = \\frac {5}{8} \\frac {2}{3} \\frac {1}{2} \\frac {1}{3} = \\frac {5}{7 2} \\quad \\mathbb {P} (E = h a m, W _ {1} = 1, W _ {2} = 1, W _ {3} = 1) = \\frac {3}{8} \\frac {1}{4} \\frac {1}{2} \\frac {1}{2} = \\frac {3}{1 2 8}",
+          "image_source": "images/page_9_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.796,
+            0.538,
+            0.819
+          ],
+          "content": "\\hat {E} = \\arg \\max _ {e} \\mathbb {P} (E = e, W _ {1} = 1, W _ {2} = 1, W _ {3} = 1) = s p a m",
+          "image_source": "images/page_9_equation_25.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.854,
+            0.908,
+            0.886
+          ],
+          "content": "**(b)** Pacman is unhappy with the performance of Naive Bayes, so he decided to switch to using a Linear Perceptron with bias, with new features: number of \"\\$\" sign, and number of digits. Below is the training dataset:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.903,
+            0.037
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.308,
+            0.058,
+            0.715,
+            0.135
+          ],
+          "content": "| number of \"$\" sign (𝑛<sub>1</sub>) | number of digits (𝑛<sub>2</sub>) | label (𝐸) |\n| --- | --- | --- |\n| 7 | 3 | spam (1) |\n| 0 | 2 | ham (-1) |\n| 5 | 5 | spam (1) |\n| 1 | 1 | ham (-1) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.139,
+            0.909,
+            0.169
+          ],
+          "content": "**(i)** [2 pts] Pacman is confident that the Perceptron will correctly classify all incoming emails after it converges. Is that true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.17,
+            0.521,
+            0.186
+          ],
+          "content": "\\# Yes, because the training data is linearly separable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.185,
+            0.384,
+            0.2
+          ],
+          "content": "\\# Yes, but not the reason above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.2,
+            0.74,
+            0.216
+          ],
+          "content": "\\# No, because no decision boundary that goes through the origin can separate the data"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.215,
+            0.377,
+            0.23
+          ],
+          "content": "No, but not the reason above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.231,
+            0.529,
+            0.246
+          ],
+          "content": "The Perceptron might not correctly classify unseen data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.248,
+            0.908,
+            0.311
+          ],
+          "content": "**(ii)** [3 pts] Starting from initial weight $w = \\begin{bmatrix} 0 \\\\ 0 \\\\ -1 \\end{bmatrix}$ (the last entry being the bias weight), determine the weight for the first few iterations. Leave all answers in form of $\\mathbf { \\Gamma } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } } } } } } } } [ a , b , c ] } } } \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { { } ^ { \\mathrm { } } } } } } } } } } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.326,
+            0.331,
+            0.343
+          ],
+          "content": "After seeing the first data:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.384,
+            0.31,
+            0.49,
+            0.36
+          ],
+          "content": "\\left[ \\begin{array}{c} 0 \\\\ 0 \\\\ - 1 \\end{array} \\right] + \\left[ \\begin{array}{c} 7 \\\\ 3 \\\\ 1 \\end{array} \\right] = \\left[ \\begin{array}{c} 7 \\\\ 3 \\\\ 0 \\end{array} \\right]",
+          "image_source": "images/page_10_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.378,
+            0.351,
+            0.395
+          ],
+          "content": "After seeing the second data:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.402,
+            0.36,
+            0.505,
+            0.413
+          ],
+          "content": "\\left[ \\begin{array}{c} 7 \\\\ 3 \\\\ 0 \\end{array} \\right] - \\left[ \\begin{array}{c} 0 \\\\ 2 \\\\ 1 \\end{array} \\right] = \\left[ \\begin{array}{c} 7 \\\\ 1 \\\\ - 1 \\end{array} \\right]",
+          "image_source": "images/page_10_equation_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.391,
+            0.414,
+            0.428,
+            0.464
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.47,
+            0.908,
+            0.539
+          ],
+          "content": "**(iii)** [2 pts] To decouple from the above, suppose Pacman now uses a Linear Perceptron **without bias**, and the current weight is $\\left[ \\frac{1}{2} \\atop -\\frac{1}{2} \\right]_1$ , which is in the fourth quadrant. The next training example has 1 occurrence of $\\text{\" }\\mathbb{S}\\text{\" }$ sign, and 1 occurrence of digits. Which quadrant could the weight be in after training using this sample?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.537,
+            0.325,
+            0.613
+          ],
+          "content": "The first quadrant The second quadrant The third quadrant The fourth quadrant The x or y axis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.613,
+            0.909,
+            0.66
+          ],
+          "content": "If the sample is classified correctly, then the weight would still be in the fourth quadrant. Otherwise, if the sample is a ham, then the weight would be subtracted by [1,1] and end up in the third quadrant. If the sample is a spam, then the weight would be added to [1,1], and end up in the first quadrant."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.503,
+            0.964
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.908,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q4. [18 pts] Backpropagation with Activation Checkpointing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.126
+          ],
+          "content": "Below is a neural network with residual connections (square nodes) whose weights are $w _ { 1 } , w _ { 2 } , w _ { 3 } , w _ { 4 } , w _ { 5 }$ . The neural network takes 𝑥 as input and outputs 𝑦."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.206,
+            0.16,
+            0.816,
+            0.307
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.347,
+            0.452,
+            0.363
+          ],
+          "content": "The outputs at each node are computed as the following:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.078,
+            0.376,
+            0.308,
+            0.391
+          ],
+          "content": "o _ {a} = \\mathrm{ReLU} (z _ {a}) \\text {where} z _ {a} = x \\cdot w _ {1}",
+          "image_source": "images/page_11_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.078,
+            0.392,
+            0.341,
+            0.406
+          ],
+          "content": "o _ {b} = \\mathrm{ReLU} (z _ {b}) + x \\text {where} z _ {b} = o _ {a} \\cdot w _ {2}",
+          "image_source": "images/page_11_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.078,
+            0.406,
+            0.354,
+            0.421
+          ],
+          "content": "o _ {c} = \\text {LeakyReLU} (z _ {c}) \\text {where} z _ {c} = o _ {b} \\cdot w _ {3}",
+          "image_source": "images/page_11_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.078,
+            0.422,
+            0.39,
+            0.437
+          ],
+          "content": "o _ {d} = \\text {LeakyReLU} (z _ {d}) + o _ {b} \\text {where} z _ {d} = o _ {c} \\cdot w _ {4}",
+          "image_source": "images/page_11_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.078,
+            0.438,
+            0.167,
+            0.452
+          ],
+          "content": "y = o _ {d} * w _ {5}",
+          "image_source": "images/page_11_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.464,
+            0.55,
+            0.505
+          ],
+          "content": "Let ReL $\\mathrm { U } ( z ) = \\operatorname* { m a x } ( z , 0 )$ while LeakyReL $\\mathrm{LU}(z)=\\begin{cases}z, &  if   z > 0 \\\\\\gamma * z, &  otherwise \\end{cases}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.516,
+            0.41,
+            0.53
+          ],
+          "content": "Suppose the network has input $x = 2$ and $\\gamma = 0 . 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.531,
+            0.515,
+            0.547
+          ],
+          "content": "The weight values are $w _ { 1 } = 1 , w _ { 2 } = 2 , w _ { 3 } = 1 , w _ { 4 } = - 5 , w _ { 5 } = 3$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.56,
+            0.511,
+            0.575
+          ],
+          "content": "**(a)** [2 pts] Perform forward propagation on the neural network."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.117,
+            0.576,
+            0.286,
+            0.651
+          ],
+          "content": "| 𝑜<sub>𝑎</sub> = | 2 |\n| --- | --- |\n| 𝑜<sub>𝑏</sub> = | 6 |\n| 𝑜<sub>𝑐</sub> = | 6 |\n| 𝑜<sub>𝑑</sub> = | 3 |\n| 𝑦 = | 9 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.664,
+            0.909,
+            0.71
+          ],
+          "content": "**(b)** [3 pts] Run backpropagation to calculate the following partial derivatives. Express the values of partial derivatives using only input (𝑥), activations $( o _ { a } , o _ { b } , o _ { c } , o _ { d } )$ , and constants. Do not write as a single number (must be an expression using 𝑥 and/or $o _ { i } , i \\in \\{ a , b , c , d \\} )$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.715,
+            0.55,
+            0.73
+          ],
+          "content": "**Input** $$o _ { a } , o _ { b } , o _ { c } , o _ { d }$ $\\mathrm { a s \\; { `` \\mathrm { 0 } } \\_ a ^ { \\prime \\prime } , \\; { `` \\mathrm { 0 } } \\_ b ^ { \\prime \\prime } , \\; { `` \\mathrm { 0 } } \\_ c ^ { \\prime \\prime } , \\; { `` \\mathrm { 0 } } \\_ d ^ { \\prime \\prime } }$ respectively.$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.12,
+            0.747,
+            0.306,
+            0.771
+          ],
+          "content": "\\frac {\\partial y}{\\partial w _ {5}} = \\underline {{\\quad o _ {d} \\quad}}",
+          "image_source": "images/page_11_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.777,
+            0.335,
+            0.8
+          ],
+          "content": "\\frac {\\partial y}{\\partial w _ {4}} = \\underline {{\\quad 0 . 3 \\cdot o _ {c} \\quad}}",
+          "image_source": "images/page_11_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.807,
+            0.346,
+            0.831
+          ],
+          "content": "\\frac {\\partial y}{\\partial w _ {3}} = \\underline {{\\quad - 1 . 5 \\cdot o _ {b} \\quad}}",
+          "image_source": "images/page_11_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.837,
+            0.336,
+            0.861
+          ],
+          "content": "\\frac {\\partial y}{\\partial w _ {2}} = \\underline {{\\quad 1 . 5 \\cdot o _ {a} \\quad}}",
+          "image_source": "images/page_11_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.12,
+            0.867,
+            0.318,
+            0.891
+          ],
+          "content": "\\frac {\\partial y}{\\partial w _ {1}} = \\underline {{\\quad 3 \\cdot x \\quad}}",
+          "image_source": "images/page_11_equation_20.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.745,
+            0.022,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.39,
+            0.085,
+            0.515,
+            0.138
+          ],
+          "content": "\\begin{array}{c} \\frac {\\partial y}{\\partial w _ {5}} = \\frac {\\partial (o _ {d} \\cdot w _ {5})}{\\partial w _ {5}} \\\\ = o _ {d} \\end{array}",
+          "image_source": "images/page_12_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.39,
+            0.158,
+            0.636,
+            0.265
+          ],
+          "content": "\\begin{array}{r l} & {\\frac {\\partial y}{\\partial w _ {4}} = \\frac {\\partial o _ {d}}{\\partial w _ {4}} \\frac {\\partial y}{\\partial o _ {d}}} \\\\ & {\\qquad = \\frac {\\partial (\\gamma \\cdot o _ {c} \\cdot w _ {4} + o _ {b})}{\\partial w _ {4}} \\frac {\\partial (o _ {d} \\cdot w _ {5})}{\\partial o _ {d}}} \\\\ & {\\qquad = \\gamma \\cdot o _ {c} \\cdot w _ {5}} \\\\ & {\\qquad = 0. 3 \\cdot o _ {c}} \\end{array}",
+          "image_source": "images/page_12_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.39,
+            0.286,
+            0.554,
+            0.392
+          ],
+          "content": "\\begin{array}{r l} \\frac {\\partial y}{\\partial w _ {3}} & = \\frac {\\partial o _ {c}}{\\partial w _ {3}} \\frac {\\partial y}{\\partial o _ {c}} \\\\ & = \\frac {\\partial o _ {c}}{\\partial w _ {3}} \\frac {\\partial o _ {d}}{\\partial o _ {c}} \\frac {\\partial y}{\\partial o _ {d}} \\\\ & = o _ {b} \\cdot (\\gamma \\cdot w _ {4}) \\cdot w _ {5} \\\\ & = - 1. 5 \\cdot o _ {b} \\end{array}",
+          "image_source": "images/page_12_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.39,
+            0.414,
+            0.614,
+            0.52
+          ],
+          "content": "\\begin{array}{r l} & {\\frac {\\partial y}{\\partial w _ {2}} = \\frac {\\partial o _ {b}}{\\partial w _ {2}} \\frac {\\partial y}{\\partial o _ {b}}} \\\\ & {\\qquad = \\frac {\\partial o _ {b}}{\\partial w _ {2}} \\frac {\\partial o _ {d}}{\\partial o _ {b}} \\frac {\\partial y}{\\partial o _ {d}}} \\\\ & {\\qquad = o _ {a} \\cdot (\\gamma \\cdot w _ {4} \\cdot w _ {3} + 1) \\cdot w _ {5}} \\\\ & {\\qquad = 1. 5 \\cdot o _ {a}} \\end{array}",
+          "image_source": "images/page_12_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.389,
+            0.541,
+            0.639,
+            0.646
+          ],
+          "content": "\\begin{array}{r l} & {\\frac {\\partial y}{\\partial w _ {1}} = \\frac {\\partial o _ {a}}{\\partial w _ {1}} \\frac {\\partial y}{\\partial o _ {a}}} \\\\ & {\\qquad = \\frac {\\partial o _ {a}}{\\partial w _ {1}} \\frac {\\partial o _ {b}}{\\partial o _ {a}} \\frac {\\partial y}{\\partial o _ {b}}} \\\\ & {\\qquad = x \\cdot w _ {2} \\cdot (\\gamma \\cdot w _ {4} \\cdot w _ {3} + 1) \\cdot w _ {5}} \\\\ & {\\qquad = 3 \\cdot x} \\end{array}",
+          "image_source": "images/page_12_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.725,
+            0.909,
+            0.786
+          ],
+          "content": "**(c)** [1 pt] Let’s say storing the value of a single activation $o _ { i } ,   i \\in \\{ a , b , c , d \\} )$ costs 1 memory unit. What is the maximum number of memory units used while running the backpropagation above? 4 All activations must be known to compute all the partial derivatives. This means that a maximum of 4 memory units had to be used."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.8,
+            0.909,
+            0.861
+          ],
+          "content": "**(d)** As we try to train this neural network, we get an out-of-memory error and it turns out the main culprit is the cost of storing activations. To address this issue, we explore **activation checkpointing** where only a subset of activations are stored/checkpointed during forward propagation. This means that we may need to re-run parts of the forward propagation in order to re-compute activations that are missing, but needed during backpropagation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.864,
+            0.91,
+            0.93
+          ],
+          "content": "During backpropagation, you may use more memory units to re-compute and store additional activations needed for computing a particular partial derivative, but they must be released either when they are no longer needed for computing that partial derivative or if that partial derivative is successfully computed. Checkpointed activations are never released. As an example, suppose $o _ { a }$ is stored/checkpointed after forward propagation (memory: $[ o _ { a } ] )$ and we are interested in"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.062,
+            0.909,
+            0.123
+          ],
+          "continues_prev": true,
+          "content": "knowing the partial derivative which can be computed using just $o _ { c }$ . The neural network re-computes $o _ { b }$ based on 𝑥 and $o _ { a }$ (memory: $[ o _ { a } , o _ { b } ] )$ . Then, the neural network uses $o _ { b }$ to re-compute $o _ { c }$ (memory: $[ o _ { a } , o _ { b } , o _ { c } ] ) . o _ { b }$ is released as it’s no longer needed in computing the partial derivative of interest (memory: $[ o _ { a } , o _ { c } ] )$ . Once the partial derivative in interest is computed using $o _ { c } , o _ { c }$ is released (memory: $[ o _ { a } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.127,
+            0.594,
+            0.143
+          ],
+          "content": "**Now, suppose we only checkpointed** $o _ { b }$ **during forward propagation.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.146,
+            0.353,
+            0.17
+          ],
+          "content": "**(i)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 5 } } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.174,
+            0.907,
+            0.205
+          ],
+          "content": "\\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.206,
+            0.908,
+            0.237
+          ],
+          "content": "Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.238,
+            0.246,
+            0.254
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.26,
+            0.908,
+            0.29
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { d }$ . Since we only stored $o _ { b } ,$ we need to re-compute $o _ { c }$ using $o _ { b } ,$ , and then use $o _ { b }$ and $o _ { c }$ to re-compute $o _ { d }$ . So you can compute the partial derivative, but need extra computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.294,
+            0.353,
+            0.317
+          ],
+          "content": "**(ii)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 4 } } \\boldsymbol { \\gamma }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.321,
+            0.908,
+            0.352
+          ],
+          "content": "\\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.355,
+            0.908,
+            0.385
+          ],
+          "content": "Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.386,
+            0.246,
+            0.402
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.407,
+            0.907,
+            0.438
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { c }$ . Since we only stored $o _ { b } ,$ we need to re-compute $o _ { c }$ using $o _ { b } .$ . So you can compute the partial derivative, but need extra computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.441,
+            0.353,
+            0.464
+          ],
+          "content": "**(iii)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 3 } } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.469,
+            0.908,
+            0.5
+          ],
+          "content": "Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.501,
+            0.908,
+            0.532
+          ],
+          "content": "\\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.533,
+            0.246,
+            0.549
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.555,
+            0.908,
+            0.585
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { b }$ , which we already have. So you can compute the partial derivative without needing additional computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.59,
+            0.908,
+            0.635
+          ],
+          "content": "**(iv)** [2 pts] What is the maximum number of memory units used while computing the above partial derivatives? If a partial derivative cannot be computed, assume no additional memory unit was used. 3 In the beginning of backpropagation, $o _ { b }$ is the only activation that is stored (memory: $[ o _ { b } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.638,
+            0.907,
+            0.695
+          ],
+          "content": "To compute $\\frac { \\partial y } { \\partial w _ { 5 } } ,   o _ { d }$ is required, so we re-compute $o _ { c }$ first (memory: $[ o _ { b } , o _ { c } ] )$ . Using $o _ { c }$ and $o _ { b } ,$ , we re-compute $o _ { d }$ (memory: $[ o _ { b } , o _ { c } , o _ { d } ] )$ . Since $o _ { c }$ is no longer needed, it is released (memory: $[ o _ { b } , o _ { d } ] )$ . After computing $\\frac { \\partial y } { \\partial w _ { 5 } } ,   o _ { d }$ is released (memory: $[ o _ { b } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.697,
+            0.875,
+            0.743
+          ],
+          "content": "To compute $\\frac { \\partial y } { \\partial w _ { 4 } }$ , we re-compute $o _ { c }$ (memory: $[ o _ { b } , o _ { c } ] )$ . Once $\\frac { \\partial y } { \\partial w _ { 4 } }$ is computed, $o _ { c }$ is released (memory: $[ o _ { b } ] )$ Finally, to compute $\\frac { \\partial y } { \\partial w _ { 3 } }$ we use $o _ { b }$ (memory: $[ o _ { b } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.745,
+            0.559,
+            0.759
+          ],
+          "content": "As a result, the maximum number of memory units used is 3."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.8,
+            0.577,
+            0.816
+          ],
+          "content": "**Now, suppose we only checkpoint** $o _ { c }$ **during forward propagation.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.82,
+            0.353,
+            0.842
+          ],
+          "content": "**(v)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 5 } } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.847,
+            0.908,
+            0.878
+          ],
+          "content": "\\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.88,
+            0.908,
+            0.91
+          ],
+          "content": "Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.912,
+            0.246,
+            0.927
+          ],
+          "content": "\\# No"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.747,
+            0.022,
+            0.781,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.062,
+            0.908,
+            0.094
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { d }$ . Since we only stored $o _ { c } ,$ , we need to re-compute $o _ { a } ,$ and then $o _ { b } .$ Using $o _ { b }$ and $o _ { c } , o _ { d }$ is re-computed. So you can compute the partial derivative, but need extra computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.096,
+            0.353,
+            0.12
+          ],
+          "content": "**(vi)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 4 } } \\boldsymbol { ? }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.124,
+            0.908,
+            0.154
+          ],
+          "content": "Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.156,
+            0.908,
+            0.188
+          ],
+          "content": "\\# Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.188,
+            0.246,
+            0.204
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.21,
+            0.908,
+            0.239
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { c }$ which is checkpointed. So you can compute the partial derivative without extra computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.243,
+            0.354,
+            0.266
+          ],
+          "content": "**(vii)** [1 pt] Can you compute $\\frac { \\partial y } { \\partial w _ { 3 } } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.27,
+            0.907,
+            0.302
+          ],
+          "content": "\\# Yes, and without needing any additional computation than what is required in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.304,
+            0.908,
+            0.335
+          ],
+          "content": "Yes, but requiring more computation than what is used in the vanilla backpropagation (without activation checkpointing)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.336,
+            0.246,
+            0.352
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.357,
+            0.907,
+            0.388
+          ],
+          "content": "Computing this partial derivative requires the value of $o _ { b }$ . We need to re-compute $o _ { a }$ and then use it to re-compute $o _ { b } .$ So you can compute the partial derivative, but need additional computation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.391,
+            0.908,
+            0.438
+          ],
+          "content": "**(viii)** [2 pts] What is the maximum number of memory units used while computing the above partial derivatives? If a partial derivative cannot be computed, assume no additional memory unit was used. 3 In the beginning of backpropagation, $o _ { c }$ is the only activation that is stored (memory: $[ o _ { c } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.44,
+            0.908,
+            0.51
+          ],
+          "content": "To compute $\\begin{array} { r } { \\frac { \\partial y } { \\partial w _ { 5 } } , \\; o _ { d } } \\end{array}$ is required. We re-compute $o _ { a }$ first (memory: $[ o _ { a } ,   o _ { c } ] )$ . Using 𝑥 and $o _ { a } ,$ we re-compute $o _ { b }$ (memory: $[ o _ { a } , \\dot { o } _ { b } , o _ { c } ] )$ . Since $o _ { a }$ is no longer needed, it is released (memory: $[ o _ { b } , o _ { c } ] )$ . Re-compute $o _ { d }$ using $o _ { b }$ and $o _ { c }$ (memory: $[ o _ { b } ,   o _ { c } ,   o _ { d } ] ) . o _ { b }$ is released as it’s no longer needed (memory: $[ o _ { c } ,   o _ { d } ] )$ . After computing $\\frac { \\partial y } { \\partial w _ { 5 } } ,   o _ { d }$ is released (memory: $[ o _ { c } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.514,
+            0.559,
+            0.533
+          ],
+          "content": "To compute $\\frac { \\partial y } { \\partial w _ { 4 } }$ , we use the checkpointed $o _ { c }$ (memory: $[ o _ { c } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.538,
+            0.906,
+            0.597
+          ],
+          "content": "Finally, to compute $\\frac { \\partial y } { \\partial w _ { 3 } } ,   o _ { b }$ is required. We re-compute $o _ { a }$ first (memory: $[ o _ { a } , o _ { c } ] )$ . Using 𝑥 and $o _ { a } ,$ we re-compute $o _ { b }$ (memory: $[ o _ { a } ,   o _ { b } ,   o _ { c } ] )$ . Since $o _ { a }$ is no longer needed, it is released (memory: $[ o _ { b } ,   o _ { c } ] )$ . After computing $\\frac { \\partial y } { \\partial w _ { 3 } }$ using $o _ { b } ,$ it is released (memory: $[ o _ { c } ] )$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.597,
+            0.558,
+            0.611
+          ],
+          "content": "As a result, the maximum number of memory units used is 3."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.617,
+            0.549,
+            0.633
+          ],
+          "content": "**(ix)** [2 pts] Which one is a better checkpoint between $o _ { b }$ and ${ o _ { c } } ^ { ? }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.637,
+            0.346,
+            0.652
+          ],
+          "content": "\\# Both are the same."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.655,
+            0.524,
+            0.67
+          ],
+          "content": "\\# $o _ { b }$ because it has a lower peak memory usage."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.672,
+            0.524,
+            0.688
+          ],
+          "content": "$o _ { c }$ because it has a lower peak memory usage."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.69,
+            0.521,
+            0.706
+          ],
+          "content": "O $o _ { b }$ because it requires less additional compute."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.708,
+            0.525,
+            0.724
+          ],
+          "content": "$o _ { c }$ because it requires less additional compute."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.728,
+            0.908,
+            0.779
+          ],
+          "content": "The peak memory usage for both activation checkpoints are the same (3), yet checkpointing $o _ { c }$ requires more additional compute because, for instance, computing $o _ { d }$ to get $\\frac { \\partial y } { \\partial w _ { 5 } }$ involves re-running the forward propagation all the way from the input node."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.482,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q5. [16 pts] Ace King Queen"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.126
+          ],
+          "content": "Your friend, Trevor, proposes a simplified game of poker with three cards - an Ace, a King, and Queen (best to worst in that order)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.139,
+            0.91,
+            0.185
+          ],
+          "content": "In the game, each player gets a card (drawn from the 3 total cards without replacement) face down and puts in a mandatory \\$10 ante. The first player can either \"bet\" (put in another) \\$20 or \"check\" which ends the game (causing the player with the better card to take the \\$20 in the middle)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.198,
+            0.909,
+            0.23
+          ],
+          "content": "If the first player bets, the second player can either \"call\", matching first player’s bet (and have the player with the highest card win the now \\$60 pot), or \"fold\" (let the first player win without seeing his card)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.242,
+            0.91,
+            0.289
+          ],
+          "content": "An example round would be the first player drawing an Ace and second player drawing a King. The first player could either \"bet\" or \"check\". Say the first player \"bets\", then the second player could either \"call\" or \"fold\". If the second player \"calls\" he would lose \\$30 to the first player (they would reveal cards and first player would have a higher card)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.301,
+            0.402,
+            0.316
+          ],
+          "content": "**(a)** Now, let’s model this game as a Bayes net."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.321,
+            0.647,
+            0.337
+          ],
+          "content": "**(i)** [2 pts] Is the first player’s card independent from the second player’s card?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.337,
+            0.448,
+            0.351
+          ],
+          "content": "\\# Yes, because they are drawn separately."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.351,
+            0.371,
+            0.366
+          ],
+          "content": "\\# Yes, but for another reason."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.366,
+            0.536,
+            0.381
+          ],
+          "content": "\\# No, because the card may affect the player’s strategy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.382,
+            0.365,
+            0.396
+          ],
+          "content": "No, but for another reason."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.396,
+            0.873,
+            0.413
+          ],
+          "content": "Knowing the first player’s card eliminates the second player from drawing it and affect their card distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.416,
+            0.884,
+            0.432
+          ],
+          "content": "**(ii)** [1 pt] Is the first player’s card independent from the second player’s card given the last (third) card in the deck?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.431,
+            0.217,
+            0.446
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.446,
+            0.211,
+            0.461
+          ],
+          "content": "● No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.462,
+            0.529,
+            0.478
+          ],
+          "content": "Knowing the last card doesn’t eliminate the dependence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.49,
+            0.834,
+            0.507
+          ],
+          "content": "**(b)** Suppose you’re the second player, and the opponent has just bet, so now it’s your turn to decide on an action."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.51,
+            0.882,
+            0.526
+          ],
+          "content": "Furthermore, you know that the opponent will bet a third of his Queens, two-thirds of his Kings, and all of his Aces."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.53,
+            0.685,
+            0.547
+          ],
+          "content": "**(i)** [1 pt] If you have a Queen, what is the expected utility of \"calling\" in your spot?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.56,
+            0.909,
+            0.591
+          ],
+          "content": "You have a 100% chance of losing as the second player with a Queen. By \"calling\" you lose an extra \\$20 on top of the ante."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.595,
+            0.687,
+            0.612
+          ],
+          "content": "**(ii)** [1 pt] If you have a Queen, what is the expected utility of \"folding\" in your spot?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.626,
+            0.605,
+            0.643
+          ],
+          "content": "Same as above except \"folding\" stops you from losing the extra \\$20."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.646,
+            0.819,
+            0.663
+          ],
+          "content": "**(iii)** [1 pt] Say you have a Queen as the second player, and the first player bets, what is the optimal move?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.662,
+            0.221,
+            0.676
+          ],
+          "content": "Fold"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.676,
+            0.221,
+            0.691
+          ],
+          "content": "\\# Call"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.691,
+            0.528,
+            0.707
+          ],
+          "content": "Action with MEU is \"Fold\" as seen from parts i) and ii)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.711,
+            0.707,
+            0.758
+          ],
+          "content": "**(iv)** [1 pt] If you now have an Ace, what is the expected utility of \"calling\" in your spot? EU = 30 Same as queen, except you now always win."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.761,
+            0.784,
+            0.778
+          ],
+          "content": "**(v)** [1 pt] What is the expected utility of the game for the first player if he chooses to always check?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.778,
+            0.345,
+            0.794
+          ],
+          "content": "Value = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.793,
+            0.908,
+            0.827
+          ],
+          "content": "EU = 𝑃 (having a higher card) ∗ \\$10 + (1 − 𝑃 (having a higher card)) $\\textstyle * - { \\mathbb { S } } 1 0 = { \\frac { 1 } { 2 } }   * { \\mathbb { S } } 1 0 + { \\frac { 1 } { 2 } }   * - { \\mathbb { S } } 1 0 = 0 .$ The game is symmetric if no betting happens."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.839,
+            0.908,
+            0.875
+          ],
+          "content": "**(c)** Suppose you’re the second player with a King, and the opponent has just bet, so now it’s your turn to decide on an action. You still know that the opponent will bet a third of his Queens, two-thirds of his Kings, and all of his Aces."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.879,
+            0.582,
+            0.895
+          ],
+          "content": "**(i)** [1 pt] What is probability that your opponent is holding an Ace?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.895,
+            0.318,
+            0.918
+          ],
+          "content": "P = 34"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.746,
+            0.022,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.06,
+            0.654,
+            0.094
+          ],
+          "content": "𝑃 (opponent has an Ace|opponent bet, we have a $\\begin{array} { r } { \\mathrm { ( K i n g ) } = \\frac { \\frac { 1 } { 3 } \\ast \\frac { 1 } { 2 } \\ast 1 } { \\frac { 1 } { 3 } \\ast \\frac { 1 } { 2 } \\ast 1 + \\frac { 1 } { 3 } \\ast \\frac { 1 } { 2 } \\ast \\frac { 1 } { 3 } } = \\frac { 3 } { 4 } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.095,
+            0.587,
+            0.111
+          ],
+          "content": "**(ii)** [1 pt] What is probability that your opponent is holding an King?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.125,
+            0.524,
+            0.141
+          ],
+          "content": "The opponent cannot hold a King if you’re holding one."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.145,
+            0.596,
+            0.161
+          ],
+          "content": "**(iii)** [1 pt] What is probability that your opponent is holding an Queen?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.16,
+            0.318,
+            0.183
+          ],
+          "content": "P = 14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.183,
+            0.631,
+            0.204
+          ],
+          "content": "1 − 𝑃 (opponent has an Ace|opponent bet, we have a $\\begin{array} { r } { \\mathrm { K i n g ) } = 1 - \\frac { 3 } { 4 } = \\frac { 1 } { 4 } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.205,
+            0.909,
+            0.235
+          ],
+          "content": "**(iv)** [3 pts] Now, the dealer tells you that if you pay him, he will tell you what card your opponent is holding. The dealer never lies."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.238,
+            0.788,
+            0.255
+          ],
+          "content": "What is the maximum expected utility of this state if you were to find out your opponent’s card?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.254,
+            0.342,
+            0.268
+          ],
+          "content": "MEU = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.269,
+            0.908,
+            0.299
+          ],
+          "content": "If we know the opponent’s card, we can act optimally, which will be folding if they have an Ace and calling if they have a Queen."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.299,
+            0.999,
+            0.334
+          ],
+          "content": "MEU = −\\$10 ∗ 𝑃 (opponent has an Ace|opponent bet, we have a King)+\\$30 ∗ 𝑃 (opponent has a Queen|opponent bet, we have a $-10\\frac{3}{4}+30\\frac{1}{4}=0.$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.335,
+            0.908,
+            0.366
+          ],
+          "content": "**(v)** [2 pts] Suppose the dealer doesn’t always tell you the truth, even if you pay him. Can we still model how much to pay him with value of perfect information?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.366,
+            0.215,
+            0.38
+          ],
+          "content": "Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.381,
+            0.212,
+            0.395
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.397,
+            0.908,
+            0.427
+          ],
+          "content": "You can use an additional node to represent the information that the dealer tells you and model it’s relation to the true value."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.091,
+            0.44,
+            0.843,
+            0.456
+          ],
+          "level": 2,
+          "content": "(d) Bonus! Only attempt if you have extra time. Worth 0 points. Not on the examtool for confusion reasons."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.46,
+            0.721,
+            0.477
+          ],
+          "content": "**(i)** [0 pts] As the first player, with what probability should you bet when holding a King?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.476,
+            0.315,
+            0.49
+          ],
+          "content": "P = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.495,
+            0.729,
+            0.526
+          ],
+          "content": "**(ii)** [0 pts] As the first player, with what probability should you bet when holding a Queen? P = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.53,
+            0.908,
+            0.56
+          ],
+          "content": "**(iii)** [0 pts] As the mandatory contribution to the pot increases, how does the optimal strategy with a Queen change as the first player?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.561,
+            0.253,
+            0.575
+          ],
+          "content": "\\# Bet more"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.576,
+            0.269,
+            0.59
+          ],
+          "content": "Check more"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.591,
+            0.401,
+            0.607
+          ],
+          "content": "\\# Optimal strategy doesn’t change"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.453,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q6. [20 pts] Pure Romance"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.142
+          ],
+          "content": "Andy’s got a problem: he has a crush on Brianna and doesn’t know if he should ask her out. One day, Andy watches lecture and realizes something — he can model his current worry as a decision net! He drew up the following net with utility function 𝑈(𝐴, 𝐵):"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.346,
+            0.154,
+            0.648,
+            0.334
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.369,
+            0.439,
+            0.385
+          ],
+          "content": "$A \\in \\{ y e s , n o \\}$ : Whether Andy asks Brianna out"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.393,
+            0.366,
+            0.409
+          ],
+          "content": "• 𝐵: How Brianna feels towards Andy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.417,
+            0.423,
+            0.433
+          ],
+          "content": "• 𝐹: How Brianna’s best friend thinks of Andy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.44,
+            0.428,
+            0.456
+          ],
+          "content": "• 𝑀: Brianna’s mood when Andy is around her"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.465,
+            0.524,
+            0.48
+          ],
+          "content": "• 𝑅: The time it takes for Brianna to reply to Andy’s messages"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.489,
+            0.483,
+            0.505
+          ],
+          "content": "• 𝐶: The courseload that Brianna is taking this semester"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.517,
+            0.664,
+            0.534
+          ],
+          "content": "**(a)** For the following relations, indicate whether it is always, sometimes, or never true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.536,
+            0.324,
+            0.606
+          ],
+          "content": "**(i)** [2 pts] $V P I ( R | M ) > 0$ Always true Sometimes true Never true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.608,
+            0.669,
+            0.625
+          ],
+          "content": "There is a possibility that knowing R after knowing M will increase the MEU."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.627,
+            0.331,
+            0.712
+          ],
+          "content": "**(ii)** [2 pts] $V P I ( C ) < = 0$ Always true Sometimes true Never true VPI of C alone is always e"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.699,
+            0.724,
+            0.715
+          ],
+          "content": "VPI of C alone is always equal to 0, since C is independent of B when R is not known."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.72,
+            0.362,
+            0.788
+          ],
+          "content": "**(iii)** [2 pts] 𝑉 𝑃 𝐼(𝐹 , 𝐵) > 𝑉 𝑃 𝐼(𝐵) # Always true # Sometimes true Never true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.79,
+            0.909,
+            0.821
+          ],
+          "content": "Knowing B already gives us the maximum information, since it is the only non-action input into the utility node. So VPI(F, B) will always be exactly equal to VPI(B)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.825,
+            0.501,
+            0.895
+          ],
+          "content": "**(iv)** [2 pts] $V P I ( R , M | B ) = V P I ( R | B ) + V P I ( M | B )$ Always true Sometimes true Never true"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.897,
+            0.91,
+            0.928
+          ],
+          "content": "Though VPI usually is not additive, it is in this case because both 𝑉 𝑃 𝐼(𝑅|𝐵) and 𝑉 𝑃 𝐼(𝑀|𝐵) are zero (because of the reasoning in the subquestion above)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.062,
+            0.909,
+            0.107
+          ],
+          "content": "**(b)** Andy realizes he can observe 𝑅 and 𝑀. He’s not sure that his estimates of how Brianna feels about him (𝐵) and her courseload (𝐶) are close to reality, and so he decides to take his time to estimate these two variables using a Hidden Markov Model. He decides to disregard 𝐹 in his HMM."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.156,
+            0.127,
+            0.823,
+            0.345
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.376,
+            0.843,
+            0.391
+          ],
+          "content": "He plans to spend 𝑡 days collecting evidence, and use his belief of 𝐵 and 𝐶 on day 𝑡 to inform his decision net."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.396,
+            0.481,
+            0.411
+          ],
+          "content": "**(i)** [2 pts] How should Andy solve for these beliefs?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.415,
+            0.676,
+            0.431
+          ],
+          "content": "\\# Particle filtering, because particle weights are useful in decision nets."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.434,
+            0.729,
+            0.449
+          ],
+          "content": "\\# Particle filtering, because we don’t know how long the time horizon t will be."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.451,
+            0.684,
+            0.466
+          ],
+          "content": "Exact inference, since it is always more accurate than particle filtering"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.468,
+            0.832,
+            0.485
+          ],
+          "content": "\\# Exact inference if the time horizon t is short and particle filtering if the time horizon t is long"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.486,
+            0.534,
+            0.502
+          ],
+          "content": "Unable to answer with the information provided"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.507,
+            0.907,
+            0.537
+          ],
+          "content": "We don’t know the size of the domain of the state variables. B could have a tiny domain , for example like, dislike Or it could have an extremely large number of possible values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.542,
+            0.908,
+            0.573
+          ],
+          "content": "**(ii)** [2 pts] We want to develop a model for this HMM. Which of the following are equivalent to an observation model $P ( M _ { i } , R _ { i } | B _ { i } , C _ { i } )$ , where $3 \\leq i \\leq t ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.577,
+            0.373,
+            0.595
+          ],
+          "content": "P (M _ {i} | B _ {i}) P (R _ {i} | B _ {i}, C _ {1})",
+          "image_source": "images/page_18_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.596,
+            0.474,
+            0.614
+          ],
+          "content": "\\square P (M _ {i} | B _ {i}) P (M _ {i} | C _ {i}) P (R _ {i} | B _ {i}) P (R _ {i} | C _ {i})",
+          "image_source": "images/page_18_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.616,
+            0.395,
+            0.633
+          ],
+          "content": "P (M _ {i} | B _ {i}, C _ {i}) P (R _ {i} | B _ {i}, C _ {i})",
+          "image_source": "images/page_18_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.635,
+            0.415,
+            0.652
+          ],
+          "content": "\\square P (M _ {i} | B _ {i}) P (M _ {i} | C _ {i}) P (R _ {i} | B _ {i})",
+          "image_source": "images/page_18_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.654,
+            0.418,
+            0.671
+          ],
+          "content": "P (M _ {i} | R _ {i}, B _ {i}, C _ {i}) P (R _ {i} | B _ {i}, C _ {i})",
+          "image_source": "images/page_18_equation_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.673,
+            0.342,
+            0.689
+          ],
+          "content": "□ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.694,
+            0.908,
+            0.723
+          ],
+          "content": "$P ( M _ { i } , R _ { i } | B _ { i } , C _ { i } ) = P ( M _ { i } | R _ { i } , B _ { i } , C _ { i } ) P ( R _ { i } | B _ { i } , C _ { i } )$ through chain rule, and the other two options come from applying conditional independences."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.729,
+            0.765,
+            0.745
+          ],
+          "content": "**(iii)** [2 pts] Which of the following are equivalent to $P ( B _ { i } , C _ { i } | B _ { i - 1 } , C _ { i - 1 } , R _ { i - 1 } )$ , where $3 \\leq i \\leq t ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.75,
+            0.448,
+            0.767
+          ],
+          "content": "P (B _ {i} | B _ {i - 1}, R _ {i - 1}) P (C _ {i} | C _ {i - 1}, R _ {i - 1})",
+          "image_source": "images/page_18_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.77,
+            0.471,
+            0.786
+          ],
+          "content": "P (B _ {i} | B _ {i - 1}, R _ {i - 1}) P (C _ {i} | B _ {i}, C _ {i - 1}, R _ {i - 1})",
+          "image_source": "images/page_18_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.217,
+            0.788,
+            0.492,
+            0.805
+          ],
+          "content": "P (B _ {i} | B _ {i - 1}, C _ {i}, R _ {i - 1}) P (C _ {i} | B _ {i}, C _ {i - 1}, R _ {i - 1})",
+          "image_source": "images/page_18_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.807,
+            0.321,
+            0.824
+          ],
+          "content": "\\square P (C _ {i} | B _ {i}, C _ {i - 1})",
+          "image_source": "images/page_18_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.826,
+            0.335,
+            0.843
+          ],
+          "content": "\\square P (B _ {i} | B _ {i - 1}, C _ {i - 1})",
+          "image_source": "images/page_18_equation_24.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.844,
+            0.342,
+            0.861
+          ],
+          "content": "□ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.866,
+            0.908,
+            0.896
+          ],
+          "content": "We can expand this probability into a product of two through the chain rule, and simplify using conditional independences."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.062,
+            0.908,
+            0.093
+          ],
+          "content": "**(c)** [2 pts] An issue is that running this HMM takes time. And every day Andy puts off the decision to ask Brianna out makes him miserable. What of the following ways can he incorporate this logic into his algorithm?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.1,
+            0.726,
+            0.118
+          ],
+          "content": "□ Conduct Laplace Smoothing on $B _ { t } ( B )$ and $B _ { t } ( C )$ , using 𝑡 as the hyperparameter 𝑘"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.122,
+            0.635,
+            0.139
+          ],
+          "content": "□ Replace $U ( A , B )$ with $U _ { 1 } ( A , B , t )$ , where $U _ { 1 } ( A , B , t ) = U ( A , B ) + t$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.143,
+            0.598,
+            0.164
+          ],
+          "content": "Replace $U ( A , B )$ with $U _ { 2 } ( A , B , t )$ , where $\\begin{array} { r } { U _ { 2 } ( A , B , t ) = \\frac { U ( A , B ) } { t } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.168,
+            0.313,
+            0.185
+          ],
+          "content": "□ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.195,
+            0.908,
+            0.226
+          ],
+          "content": "Higher values of t will result in lower overall utility, so we want to replace the utility function with $U _ { 2 }$ . Laplace smoothing doesn’t make sense on a probability distribution that we’ve found from an HMM."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.239,
+            0.909,
+            0.285
+          ],
+          "content": "**(d)** [2 pts] Andy’s friend Joe thinks he might be able to break this HMM into two separate HMMs, one with state variable 𝐵 and evidence variables 𝑅 and 𝑀, and one with state variable 𝐶 and evidence variable 𝑅. Joe says Andy can then calculate his beliefs of 𝐶 and 𝐵 separately. Is this approach valid?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.294,
+            0.488,
+            0.31
+          ],
+          "content": "\\# Yes, because 𝐶 doesn’t affect the final utility"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.314,
+            0.411,
+            0.329
+          ],
+          "content": "\\# Yes, but not for the reason above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.334,
+            0.533,
+            0.35
+          ],
+          "content": "\\# No, because 𝐵 and 𝐶 are conditionally independent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.354,
+            0.4,
+            0.37
+          ],
+          "content": "No, but not for the reason above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.38,
+            0.712,
+            0.396
+          ],
+          "content": "B and C are not conditionally independent because there exists an active path $B _ { i } t o M _ { i } t o C _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.408,
+            0.908,
+            0.439
+          ],
+          "content": "**(e)** [2 pts] Andy solved for his belief of his HMM at a time 𝑡. He’s ready to make his decision. Does he need any other factors to decide on asking Brianna out?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.449,
+            0.361,
+            0.464
+          ],
+          "content": "He needs the factor 𝑃 (𝐹)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.469,
+            0.476,
+            0.484
+          ],
+          "content": "He needs the factors 𝑃 (𝐹) and $P ( C | R , M )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.489,
+            0.493,
+            0.504
+          ],
+          "content": "\\# He needs factors other than the options above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.509,
+            0.909,
+            0.54
+          ],
+          "content": "He doesn’t need any additional factors, but he would have to do additional computation before using the belief in the decision net."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.544,
+            0.908,
+            0.575
+          ],
+          "content": "\\# He doesn’t need any additional factors, and he would not have to do additional computation before using the belief in the decision net"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.585,
+            0.909,
+            0.63
+          ],
+          "content": "The belief at time 𝑡 is $P ( B , C | R , M )$ To solve the decision net, he just needs $P ( B | R , M )$ since 𝐵 is the only non-deterministic input to 𝑈 and 𝑅 and 𝑀 are the only evidence. So he would have to marginalize before using the output of the HMM in the decision net."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.057,
+            0.349,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q7. [18 pts] Games"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.095,
+            0.806,
+            0.111
+          ],
+          "content": "**(a)** In the following problems please choose all the answers that apply. You may pick more than one answer."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.115,
+            0.538,
+            0.13
+          ],
+          "content": "**(i)** [2 pts] In the context of adversarial search, 𝛼 − 𝛽 pruning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.13,
+            0.624,
+            0.145
+          ],
+          "content": "■ can reduce computation time by pruning portions of the game tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.145,
+            0.644,
+            0.16
+          ],
+          "content": "□ is generally faster than minimax, but loses the guarantee of optimality"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.16,
+            0.615,
+            0.175
+          ],
+          "content": "■ always returns the same value as minimax for the root of the tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.175,
+            0.908,
+            0.205
+          ],
+          "content": "always returns the same value as minimax for all nodes on the leftmost (first to be explored) edge of the tree, assuming successor game states are expanded from left to right"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.205,
+            0.619,
+            0.22
+          ],
+          "content": "□ always returns the same value as minimax for all nodes of the tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.239,
+            0.909,
+            0.285
+          ],
+          "content": "**(ii)** [2 pts] Consider an adversarial game in which each state s has minimax value v(s). Assume that the maximizer plays according to the optimal minimax policy 𝜋, but the opponent (the minimizer) plays according to an unknown, possibly suboptimal policy $\\pi ^ { \\prime }$ . Which of the following statements are true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.285,
+            0.839,
+            0.3
+          ],
+          "content": "The score for the maximizer from a state s under the maximizer’s control could be greater than v(s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.299,
+            0.816,
+            0.315
+          ],
+          "content": "□ The score for the maximizer from a state s under the maximizer’s control could be less than v(s)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.177,
+            0.315,
+            0.776,
+            0.33
+          ],
+          "content": "Even if the opponent’s strategy $\\pi ^ { \\prime }$ were known, the maximizer should play according to 𝜋."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.163,
+            0.33,
+            0.808,
+            0.345
+          ],
+          "content": "■ $\\operatorname { I f } \\pi ^ { \\prime }$ is optimal and known, the outcome from any s under the maximizer’s control will be v(s)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.364,
+            0.909,
+            0.44
+          ],
+          "content": "**(iii)** [3 pts] Consider a very deep game tree where the root node is a maximizer, and the complete-depth minimax value of the game is known to be $v _ { \\infty } .$ Similarly, let $\\pi _ { \\infty }$ be the minimax-optimal policy. Also consider a depth-limited version of the game tree where an evaluation function replaces any tree regions deeper than depth 10. Let the minimax value of the depth-limited game tree be $v _ { 1 0 }$ for the current root node, and let $\\pi _ { 1 0 }$ be the policy which results from acting according to a depth 10 minimax search at every move. Which of the following statements are true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.44,
+            0.444,
+            0.455
+          ],
+          "content": "$v _ { \\infty }$ may be greater than or equal to $v _ { 1 0 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.457,
+            0.424,
+            0.471
+          ],
+          "content": "$v _ { \\infty }$ may be less than or equal to $v _ { 1 0 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.472,
+            0.784,
+            0.489
+          ],
+          "content": "□ Against a perfect opponent, the actual outcome from following $\\pi _ { 1 0 }$ may be greater than $v _ { \\infty } ,$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.489,
+            0.908,
+            0.52
+          ],
+          "content": "■ Against a perfect opponent, the actual outcome from following $\\pi _ { 1 0 }$ may be less than $\\pi _ { \\infty }$ . This assumes that the perfect opponent is playing with infinite depth lookahead."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.532,
+            0.909,
+            0.594
+          ],
+          "content": "**(b) (i)** [2 pts] Consider the 3-player game shown below. The player going first (at the top of the tree) is the Left player, the player going second is the Middle player, and the player going last is the Right player, optimizing the left, middle and right components respectively of the utility vectors shown. Fill in the values at all nodes. Note that all players maximize their own respective utilities."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.219,
+            0.613,
+            0.779,
+            0.786
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.815,
+            0.221,
+            0.83
+          ],
+          "content": "Solution:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.128,
+            0.849,
+            0.204,
+            0.865
+          ],
+          "level": 2,
+          "content": "(ii) [6 pts]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.865,
+            0.722,
+            0.881
+          ],
+          "content": "**We have the knowledge that the sum of the utilities of all 3 players is always zero.**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.882,
+            0.909,
+            0.914
+          ],
+          "content": "Select all edges for which observing the node will not affect the top-level decision (edges that can be pruned). To clarify, we only care about the left player’s value."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.503,
+            0.964
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.199,
+            0.068,
+            0.786,
+            0.507
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.155,
+                0.517,
+                0.67,
+                0.532
+              ],
+              "content": "If you prune a parent branch, do not mark any downstream children as pruned."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_21_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.592,
+            0.909,
+            0.667
+          ],
+          "content": "(l) can be pruned: The node farthest on the right can be pruned. This is because by the time search reaches this node, we know that the first player can achieve a utility of 8, the second player can achieve a utility of 4, and the third player can achieve a utility of -5. For the third player to pick the node connected to branch (l) it needs to be a value > -4. Since we know this is a zero sum game, if the value of third player is > -4 then the sum of player 1 and player 2 has to be < 4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.668,
+            0.528,
+            0.682
+          ],
+          "content": "Let the node be x,y,z. We know $z > - 4 ,$ hence $x  +  y  < 4.$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.683,
+            0.908,
+            0.713
+          ],
+          "content": "Case 1. x <= 8 and y <= 4: in this case neither players would pick this node, since both have preferable values already."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.713,
+            0.908,
+            0.744
+          ],
+          "content": "Case 2. y > 4. Hence, x < -1; This node might be preferred by player 2. However, player 1 will HAVE to have a value < 8 in order for the sum to 0. Hence, player 1 will end up rejecting this node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.743,
+            0.908,
+            0.775
+          ],
+          "content": "Case 3. x > 8. Hence, y < -5. In this case player 2 will reject the node, because it’s value would definitely have to be < 4 to get the sum to be 0 and player 2 will choose the node that gives it a value of 4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.788,
+            0.909,
+            0.85
+          ],
+          "content": "(i) cannot be pruned: Each player is trying to maximize their own value. Since there is no upper limit on the value that a node can take, there isn’t enough information yet to prune (i). This is because even if the 3rd player has a value > 10, the second player could still have a value > 2 and this node could end up being propagated by the middle player. Hence, we cannot prune (i)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.866,
+            0.909,
+            0.928
+          ],
+          "content": "(f) cannot be pruned for the same reason as (i), since there’s no defined range of values that each value can take on. Hence, it’s possible that the leaf nodes in subtree under (f) contain the nodes (9;5;-14) and (10;6;-16). In this case the right player will propagate (9;5;-14) and this is preferable for both the middle player and the left player and will end up being the top value."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.202,
+            0.085,
+            0.785,
+            0.266
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.123,
+                0.061,
+                0.204,
+                0.078
+              ],
+              "content": "(iii) [3 pts]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.277,
+            0.908,
+            0.324
+          ],
+          "content": "If we assume more about a game, additional pruning may become possible. Now, in addition to assuming that the sum of the utilities of all 3 players is still zero, we also assume that all utilities are in the interval [-10, 10]. Select all edges that would be pruned under these assumptions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.339,
+            0.67,
+            0.355
+          ],
+          "content": "If you prune a parent branch, do not mark any downstream children as pruned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.399,
+            0.307,
+            0.415
+          ],
+          "content": "□ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.432,
+            0.909,
+            0.54
+          ],
+          "content": "Pruning is now possible, for we can bound the best case scenario for the player above us. For the first pruning at (-10; 0; 10), the Right player sees a value of 9. This means that Right can get at least a 9, no matter what other values are explored next. If Right gets a 9, then Middle can only get at best a 1 (calculated from $C - v _ { r } = 1 0 - 9 )$ which corresponds to the utility triple (−10; 1; 9). Middle however has an option for a 2 above, so Middle would never prefer this branch so we can prune. Similar reasoning holds for the pruning on the right Middle sees a 4, which means Left would get at best a 6, but Left already has an option for an 8, so all other parts of this tree will never be returned upwards."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.95,
+            0.504,
+            0.964
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.872,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q8. [15 pts] Hidden Markov Models and Particle Filtering"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.908,
+            0.126
+          ],
+          "content": "The elevator in the Tower of Terror moves up and down to the other floors (L1, L2, L3, L4). The location of the elevator at time t is $X _ { t } .$ At the beginning of each timestep,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.125,
+            0.909,
+            0.202
+          ],
+          "content": "(i) the elevator goes upwards with a probability of 0.4. It may go to any floor above its current position with equal probability. (ii) the elevator goes downwards with a probability of 0.4. It may go to any floor below its current position with equal probability (iii) the elevator stays where it is with a probability of 0.2. If the elevator is on floor L4, it goes down with probability 0.8 and stays in position with probability 0.2. Similarly, if the elevator is on floor L1, it goes up with probability 0.8 and stays in position with probability 0.2."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.281,
+            0.245,
+            0.362,
+            0.557
+          ],
+          "content": "| L4 |\n| --- |\n| L3 |\n| L2 |\n| L1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.487,
+            0.295,
+            0.708,
+            0.515
+          ],
+          "content": "| $X_0$ | $P(X_0)$ |\n| --- | --- |\n| L4 | 0.2 |\n| L3 | 0.2 |\n| L2 | 0.3 |\n| L1 | 0.3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_table_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.264,
+            0.661,
+            0.73,
+            0.829
+          ],
+          "content": "| $X_{1}$ | $P(X_{1})$ |\n| --- | --- |\n| L4 | 0.26 |\n| L3 |  |\n| L2 |  |\n| L1 |  |",
+          "captions": [
+            {
+              "bbox": [
+                0.092,
+                0.625,
+                0.702,
+                0.642
+              ],
+              "content": "(a) [3 pts] Fill in the table below with the distribution of the elevator’s location at time $\\mathbf { t } = 1$"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_23_table_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.26,
+            0.071,
+            0.725,
+            0.238
+          ],
+          "continues_prev": true,
+          "content": "| $X_{1}$ | $P(X_{1})$ |\n| --- | --- |\n| L4 | 0.26 |\n| L3 | $0.2*0.2+0.2*0.8/3+0.3*0.4/2+0.3*0.8/3 = 0.23$ |\n| L2 | $0.3*0.2+0.3*0.8/3+0.2*0.4/2+0.2*0.8/3 = 0.233$ |\n| L1 | $0.3*0.2+0.3*0.4+0.2*0.4/2+0.2*0.8/3 = 0.273$ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.169,
+            0.277,
+            0.62,
+            0.427
+          ],
+          "content": "| X_1 | P(X_1) |\n| --- | --- |\n| L4 | 0.26 (Which is wrong. Should have been 0.3) |\n| L3 | $0.2*0.8/3 + 0.2*0.4/2 + 0.3*0.2 + 0.3*0.8/3 = 0.233$ |\n| L2 | $0.2*0.8/3 + 0.2*0.2 + 0.3*0.4/2 + 0.3*0.8/3 = 0.233$ |\n| L1 | $0.2*0.2 + 0.2*0.8/3 + 0.3*0.4/2 + 0.3*0.8/3 = 0.233$or 1 - 0.26 - 0.233 - 0.233 = 0.273 (if using P(X_1 = L4) = 0.26) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.647,
+            0.29,
+            0.812,
+            0.414
+          ],
+          "content": "| X_0 | P(X_0) |\n| --- | --- |\n| L1 | 0.2 |\n| L2 | 0.2 |\n| L3 | 0.3 |\n| L4 | 0.3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.445,
+            0.908,
+            0.477
+          ],
+          "content": "Figure 1: Solutions for an alternative initial distribution $X _ { 0 }$ (shown on the right). Note that this question is initially not intended to have an alternative initial distribution, so this figure is added after final exam grade release."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.485,
+            0.815,
+            0.5
+          ],
+          "content": "**(b)** Calculate the stationary distribution for the tower states by filling the unknown values in the matrix below"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.296,
+            0.515,
+            0.729,
+            0.593
+          ],
+          "content": "\\left[ \\begin{array}{c c c c} 0. 2 & (i) & 0. 2 & 0. 2 6 6 \\\\ (i i) & (i i i) & 0. 2 & 0. 2 6 6 \\\\ 0. 2 6 6 & 0. 2 & 0. 2 & 0. 2 6 6 \\\\ 0. 2 6 6 & (i v) & 0. 4 & 0. 2 \\\\ 1 & 1 & 1 & 1 \\end{array} \\right] \\left[ \\begin{array}{c} P (X _ {\\infty} = L 1) \\\\ P (X _ {\\infty} = L 2) \\\\ P (X _ {\\infty} = L 3) \\\\ P (X _ {\\infty} = L 4) \\end{array} \\right] = \\left[ \\begin{array}{c} P (X _ {\\infty} = L 1) \\\\ P (X _ {\\infty} = L 2) \\\\ P (X _ {\\infty} = L 3) \\\\ P (X _ {\\infty} = L 4) \\\\ 1 \\end{array} \\right]",
+          "image_source": "images/page_24_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.604,
+            0.706,
+            0.62
+          ],
+          "content": "Fill in the missing values in the stationary system of equations for the following subparts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.624,
+            0.223,
+            0.64
+          ],
+          "content": "**(i)** [1 pt] 0.4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.644,
+            0.634,
+            0.66
+          ],
+          "content": "**(ii)** [1 pt] 0.266, or 0.268 (to make the first column a probability distribution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.664,
+            0.222,
+            0.68
+          ],
+          "content": "**(iii)** [1 pt] 0.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.684,
+            0.222,
+            0.7
+          ],
+          "content": "**(iv)** [1 pt] 0.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.713,
+            0.909,
+            0.804
+          ],
+          "content": "To keep track of the position of the elevator, a sound sensor $S _ { u }$ is installed on the top of the tower and a sound sensor $S _ { b }$ installed in the basement. Both sensors detect the excited sounds of the passengers, (+𝑠), or no sound at all, -s. The distribution of sensor measurements is determined by 𝑑, the number of floors between the elevator and the respective sensor. For example, if the elevator is on floor L3, then $d _ { b } = 2$ because there are two floors (L2 and L1) between floor L3 and the bottom and $d _ { u } =$ 1 because there is one floor (L4) between floor L3 and the top. The prior of the both sensors’ outputs are identical and listed below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.817,
+            0.908,
+            0.863
+          ],
+          "content": "**(c)** [2 pts] You decide to track the elevator’s position by particle filtering with 3 particles. At the end of time t = 1, the particles are at positions $p _ { 1 } = \\mathrm { L } 1 ,   p _ { 2 } = \\mathrm { L } 2$ and $p _ { 3 } = \\mathrm { L } 3$ . Without incorporating any sensory information, what is the probability that the particles will be resampled as $p _ { 1 } = \\mathrm { L } 3 , p _ { 2 } = \\mathrm { L } 2$ , and $p _ { 3 } = \\mathrm { L } 4$ , at the end of time t=1?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.126,
+            0.863,
+            0.578,
+            0.879
+          ],
+          "content": "P (p _ {1} = L 3 | p _ {1} = L 1) * P (p _ {2} = L 2 | p _ {2} = L 2) * P (p _ {3} = L 4 | p _ {3} = L 3)",
+          "image_source": "images/page_24_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.878,
+            0.238,
+            0.891
+          ],
+          "content": "0.8 $; /3*0.2*0.4$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.894,
+            0.17,
+            0.907
+          ],
+          "content": "0.0213"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.288,
+            0.083,
+            0.339,
+            0.301
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.407,
+            0.147,
+            0.706,
+            0.242
+          ],
+          "content": "| $S_{u}$ | $P(S_{u}\\|d_{u})$ | $S_{b}$ | $P(S_{b}\\|d_{b})$ |\n| --- | --- | --- | --- |\n| +s | $0.2/(d_{u}+1)$ | +s | $1 - 0.2*d_{b}$ |\n| -s | $1 - 0.2/(d_{u}+1)$ | -s | $0.2*d_{b}$ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.326,
+            0.907,
+            0.357
+          ],
+          "content": "**(d)** [3 pts] To decouple this from the previous question, assume the particles after time elapsing are $p_{1}=\\mathrm{L}3, p_{2}=\\mathrm{L}2, p_{3}=$ L1, and the sensors observe $S _ { u } = + \\mathrm { s }$ and $S _ { b } = \\mathrm { - s }$ . What are the particle weights given these observations?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.286,
+            0.403,
+            0.694,
+            0.528
+          ],
+          "content": "| Particle | Weight |\n| --- | --- |\n| $X_{1} = L3$ |  |\n| $X_{2} = L2$ |  |\n| $X_{3} = L1$ |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.258,
+            0.59,
+            0.718,
+            0.692
+          ],
+          "content": "| Particle | Weight |\n| --- | --- |\n| $p_1 = L3$ | $P(S_u = +s\\|d_u = 1) P(S_b = -s\\|d_b = 2) = 0.2/2 * 0.2*2 = 0.04$ |\n| $p_2 = L2$ | $P(S_u = +s\\|d_u = 2) P(S_b = -s\\|d_b = 1) = 0.2/3 * 0.2*1 = 0.0133$ |\n| $p_3 = L1$ | $P(S_u = +s\\|d_u = 3) P(S_b = -s\\|d_b = 0) = 0.2/4 * 0.2*0 = 0$ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.062,
+            0.908,
+            0.114
+          ],
+          "content": "**(e)** [3 pts] Note: the u and b subscripts from before will be written here as superscripts. Part of the expression for the forward algorithm update for Hidden Markov Models is given below. $s _ { 0 : t } ^ { u }$ are all the measurements from the roof sensor $s _ { 0 } ^ { u } ,   s _ { 1 } ^ { u } ,$ $s _ { 2 } ^ { u } , \\ldots , s _ { t } ^ { u } . s _ { 0 : t } ^ { b }$ are all the measurements from the roof sensor $s _ { 0 } ^ { b } , s _ { 1 } ^ { b } , s _ { 1 2 } ^ { b } , \\ldots , s _ { t } ^ { b } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.115,
+            0.449,
+            0.13
+          ],
+          "content": "Choose all the correct options for the blank given"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.25,
+            0.137,
+            0.716,
+            0.285
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.308,
+            0.386,
+            0.401
+          ],
+          "content": "\\begin{array}{r l} & P (x _ {t} | s _ {0: t} ^ {u}, s _ {0: t} ^ {b}) \\propto P (x _ {t}, s _ {0: t} ^ {u}, s _ {0: t} ^ {b}) \\\\ & = \\sum_ {x _ {t - 1}} P (x _ {t - 1}, x _ {t}, s _ {0: t} ^ {u}, s _ {0: t} ^ {b}) \\\\ & = \\sum_ {x _ {t - 1}} P (x _ {t - 1}, x _ {t}, s _ {0: t - 1} ^ {u}, s _ {0: t - 1} ^ {b}, s _ {t} ^ {u}, s _ {t} ^ {b}) \\end{array}",
+          "image_source": "images/page_26_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.12,
+            0.414,
+            0.176,
+            0.434
+          ],
+          "content": "\\propto \\sum_ {x _ {t - 1}}",
+          "image_source": "images/page_26_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.447,
+            0.36,
+            0.536
+          ],
+          "content": "\\begin{array}{l} \\boxed {\\quad P (s _ {t} ^ {u}, s _ {t} ^ {b} | x _ {t - 1}, x _ {t}, s _ {0: t - 1} ^ {u}, s _ {0: t - 1} ^ {b})} \\\\ \\boxed {\\quad P (s _ {t} ^ {u} | x _ {t}) P (s _ {t} ^ {b} | x _ {t})} \\\\ \\boxed {\\quad P (s _ {t} ^ {u} | x _ {t - 1}) P (s _ {t} ^ {b} | x _ {t - 1})} \\\\ \\boxed {\\quad P (s _ {t} ^ {u} | s _ {t - 1} ^ {u}) P (s _ {t} ^ {b} | s _ {t - 1} ^ {b})} \\\\ \\boxed {\\quad \\text {None of the above}} \\end{array}",
+          "image_source": "images/page_26_equation_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "27"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2021-12-15T06:35:02Z",
+      "modified_at": "2021-12-15T06:35:02Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.21",
+      "page_count": 27,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

@@ -1,0 +1,1263 @@
+## CS 188 Spring 2020
+
+## Introduction to Artificial Intelligence
+
+• You have approximately 170 minutes.
+
+• The exam is closed book, closed calculator, and closed notes except your two-page crib sheet.
+
+• Mark your answers on gradescope, and click "submit".
+
+• For multiple choice questions,
+
+– □ means mark **all options** that apply
+
+\- means mark a single choice
+
+| First name |  |
+| --- | --- |
+| Last name |  |
+| SID |  |
+
+## Your Discussion TA(s) (fill all that apply):
+
+□ Ajan
+
+Benson
+
+□ Jasmine
+
+Albert
+
+Rachel
+
+□ Carl
+
+□ Jeffrey
+
+□ Ryan
+
+Amitav
+
+□ Cathy
+
+□ Jierui
+
+Saagar
+
+Angela
+
+Charles
+
+□ Lindsay
+
+Anusha
+
+Yanlai
+
+Harry (Huazhe)
+
+□ Mesut
+
+□ Arin
+
+□ Jade
+
+Pravin
+
+For staff use only:
+
+| Q1. Potpourri | /17 |
+| --- | --- |
+| Q2. Learn From Old Data | /6 |
+| Q3. Value of Perfect Information | /11 |
+| Q4. Languages | /20 |
+| Q5. Pacman Loses Control | /13 |
+| Q6. A Nonconvolutional Nontrivial Network | /9 |
+| Q7. Searching for a Bayes Network | /13 |
+| Q8. Particle Madness | /11 |
+| Total | /100 |
+
+## Q1. [17 pts] Potpourri
+
+**(a)** Recall that in search algorithms, that nodes are expanded and each node corresponds to a state 𝑠 and a path from the start state to 𝑠. Recall further that in graph search one can only expand a node corresponding to a state once. Also, below we will denote a heuristic for $A ^ { * }$ by ℎ(⋅). Assume all state transitions have a positive cost.
+
+**(i)** [1 pt] Which search algorithm would typically have a bigger fringe in graph search for large search problems?
+
+#BFS scales exponentially with the size of the path while DFS scales linearly.
+
+**(ii)** [1 pt] Which search algorithms are complete for tree search?
+
+DFS
+
+Cost Search
+
+𝐴∗ with any heuristic
+
+𝐴∗ with a consistent heuristic. Uniform
+
+BFS,A\*, and UCS are all complete because they explore nodes in the order of increasing distance away from start node, preventing the from getting stuck in cycles. Note, even with a really bad (or even negative heuristic) the positive backwards cost for nodes in A\* will eventually accumulate and it will eventually be forced to explore a path to the goal node if it exists.
+
+Special Note, this question was intended for finite state spaces, but with infinite graphs we can get different results. In the example below, your fringe will always prefer to go upwards since the backwards cost for all of those nodes is less than 2. Thus the goal will never be explored and UCS is not complete. UCS is equivalent to $\mathrm { A } ^ { * }$ with the trivial (h = 0) heuristic which is also admissible and consistent. Thus A\* with any heuristic and A\* with consistent heuristic are also not complete, only BFS is. So if one marked BFS only they were also given full credit.
+
+![](images/page_2_image_12.jpg)
+
+**(iii)** [1 pt] Which search algorithms are optimal for graph search?
+
+A\* with a consistent heuristic.
+
+Only UCS and $\mathrm { A } ^ { * }$ even take into account edge weight distance and $\mathrm { A } ^ { * }$ requires a heuristic to at least be admissible to guarantee optimality.
+
+**(iv)** [1 pt]
+
+If for a constant 𝑐 and all states $s , h ( s ) = c ,   A ^ { * }$ is equivalent to UCS (uniform cost search).
+
+True # False]
+
+If every node has the same constant added to its backwards cost, when comparing nodes in the fringe node state will look relatively the same as if the constant wasn’t added (which is UCS since $\mathrm { A } ^ { * }$ is just UCS with no heuristic).
+
+**(v)** [1 pt]
+
+If for any pair of states, 𝑠 and $s ^ { \prime } ,   h ( s ) - h ( s ^ { \prime } ) \leq c ( s , s ^ { \prime } )$ where $c ( s , s ^ { \prime } )$ is the minimum cost path from 𝑠 to $s ^ { \prime } ,$ then $A ^ { * }$ will expand a node at most once in a tree search.
+
+O True # False
+
+This is the definition of consistency which guarantees that a node will only be explored in A\* if it is by the optimal path to that node.
+
+**(vi)** [1 pt]
+
+In $A ^ { * }$ tree search with any heuristic, one may not get the optimal path.
+
+● True # False
+
+The heuristic needs to be admissible to ensure optimality.
+
+**(vii)** [1 pt] In a minimax tree of depth 2 (one max layer, one min layer, and a leaf layer) with a branching factor of 3, what is the maximum number of nodes that can be pruned by alpha-beta pruning? # 0 # 2 # 3 4 # 6 # # None of the above
+
+![](images/page_3_image_1.jpg)
+
+This is an example of such a tree.
+
+In full depth minimax search, with $\alpha - \beta$ pruning, the minimum number of leaves that can be explored is that one can do in a depth-D tree (the depth is the total depth considering both players) with branching factor 𝐵 (both players have 𝐵 options) is # (𝐵∕2)<sup>𝐷</sup> # $D ^ { B / 2 }$ # $B ^ { D }$ # $D ^ { B }$ $B ^ { D / 2 }$
+
+Normally there are $B ^ { D }$ leaf nodes. In Alpha beta pruning we have to look at all the first player’s moves but we only have to look at one of the second players moves. Thus we "skip" every other levels and only have to look at $B ^ { D / 2 }$
+
+In expectimax search with two players, one max and the other chance, one can use pruning to reduce the search cost. # True False
+
+Pruning is about exploiting your knowledge of how both players will choose actions to look at less nodes. Since in expectimax one player will be picking randomly we have to look at every one of their actions, which will affect the expected value and the value of the node above it.
+
+**(b)** Suppose we are solving a CSP that has 20 variables $( X _ { i }$ for $i = 1 , 2 , . . . , 2 0 )$ and all constraints are binary. $X _ { 1 }$ is involved in binary constraints with 6 other variables. $X _ { 2 }$ is involved in binary constraints with 9 other variables.
+
+While running the arc consistency algorithm, we reach a point when all variables have 4 values left in their domains, and we have one last arc in the queue: $X _ { 1 } \longrightarrow X _ { 2 } .$ . (Recall a value 𝑥 for a variable 𝑋 is consistent with an arc $X \longrightarrow Y$ if there is still a value $y$ for variable 𝑌 where $( x , y )$ is valid for the binary constraint on 𝑋 and 𝑌 .)
+
+**(i)** [1 pt] Now, we are processing the arc $X _ { 1 } \longrightarrow X _ { 2 }$ . We are able to remove a value from the domain of a variable because it was inconsistent, and add the necessary arcs into the queue. How many arcs are in the queue now? # 3 # 4 # 5 6 # 9 # 18 # None of these # We cannot determine the exact number of arcs
+
+We remove values of the variable on the tail, so $X _ { 1 }$ loses a value. This means we have to add every possible arc that points into $X _ { 1 }$ . There are 6 of those, one for each constraint that involves $X _ { 1 }$
+
+**(ii)** [1 pt] Following the previous part, we processed any arcs that may have been added to the queue. No more values were removed from any variable. As a result, we plan to assign a value to one of the variables to continue with backtracking search. Pick the statement below that is most valid. We should assign a value to $X _ { 1 }$ because it has the Least Constraining Value We should assign a value to $X _ { 1 }$ because it has the Minimum Remaining Values We should assign a value to $X _ { 2 }$ because it has the Least Constraining Value We should assign a value to $X _ { 2 }$ because it has the Minimum Remaining Values We should assign a value to some $X _ { i } \: ( i \geq 3 )$ that has the Least Constraining Value We should assign a value to some $X _ { i } \: ( i \geq 3 )$ that has the Minimum Remaining Values #We choose variables based on MRV not $\operatorname { L C V . } X _ { 1 }$ has the fewest number of values remaining as it lost a value in part (i) and no other variable lost a value.
+
+**(c)** We are given the traditional game of Pacman with food and 2 ghosts on an M by N grid. Pacman can move up, left, right, or down each turn and he wins by eating all the food. Whenever Pacman moves, the ghosts will move in the opposite direction.
+
+**(i)** [1 pt] **State representation 1** is to keep track of Pacman’s location, the location of both ghosts, and which food was eaten. Please select all of the terms below that should be multiplied together as one product to correctly quantify the number of states in this representation.
+
+□ 3<sup>𝑀𝑁</sup> ■ 𝑀𝑁 ■ 2<sup>𝑀𝑁</sup> ■ (𝑀𝑁)<sup>2</sup>
+
+There are 𝑀𝑁 possible locations for pacman, (𝑀𝑁)<sup>2</sup> possible location combos for both ghosts, and 2<sup>𝑀𝑁</sup> possible values of the 𝑀𝑁 booleans we need to keep track of whether each food was eaten.
+
+**(ii)** [1 pt] **State representation 2** is to keep track of whether each food was eaten, and what is in each location (whether it contains Pacman, a Ghost, or nothing). Please select all of the terms below that should be multiplied together as one product to correctly quantify the number of states in this representation.
+
+■ 3<sup>𝑀𝑁</sup> □ 𝑀𝑁 ■ 2<sup>𝑀𝑁</sup> □ (𝑀𝑁)<sup>2</sup>
+
+There are still 2<sup>𝑀</sup>𝑁 possible food configurations and there are 3<sup>𝑀</sup>𝑁 possible configurations to keep track of what is in each location(there are 3 options for each of 𝑀𝑁 locations).
+
+**(iii)** [1 pt] Which state representation would have a higher branching factor?
+
+\# **State representation 1** will have a higher branching factor # **State representation 2** will have a higher branching factor They will have the same branching factor Pacman has 4 actions available regardless of the state representation so they will have the same branching factor.
+
+**(iv)** [1 pt] If we were to run DFS on a particular starting game using both state representations which representation will expand more states?
+
+\# **State representation 1** will expand more states # **State representation 2** will expand more states They will expand the same amount of states
+
+Since the starting location are the same and the actions available are the same, the successors for each representation will be the same. Thus at each step in DFS we would be presented with the same options, so DFS will run identically on both representations. Note, **State representation 2** has way more possible states but most of them are unreachable by the games rule so they will not affect DFS.
+
+## (d) [1 pt] Which of the following are true statements about perceptrons?
+
+□ A larger magnitude of activation corresponds to higher certainty.
+
+□ The main purpose of the bias term is to restrict the activation values to fall in our desired range.
+
+■ We can use a black-box binary perceptron to build a multi-class perceptron.
+
+\# None of the above
+
+A) Perceptrons are only trained to label samples not give confidence bounds. B) The bias term is used to shift the boundary so that it’s not restricted to stay at the origin. C) A binary perceptron can be used for each class to build a multiclass perceptron. To classify a new training sample, we will select one of the classes that the binary perceptrons classifies it as since we don’t know the exact activation.
+
+**(e)** [1 pt] You are training a logistic regression model and you find that your training loss is near 0 but test loss is very high. Which of the following is expected to help to reduce test loss? Select all that apply.
+
+(A) Increase the training data size.
+
+□ (B) Decrease the training data size.
+
+□ (C) Increase model complexity.
+
+(D) Decrease model complexity.
+
+(E) Train on a combination of your training data and your test data but you test only on your test data (F) Conclude that Machine Learning does not work
+
+Since we are facing overfitting we can increase the training data size or decrease the model complexity to combat this. Also, if we train on our test data our test loss will definitely improve dramatically (although you should NEVER do this in practice because it defeats the purpose of testing)
+
+## Q2. [6 pts] Learn From Old Data
+
+You encounter a generic MDP and decide to play the game, performing random actions at every timestep. You record all of your transitions in the form $( s , a , s ^ { \prime } , r )$ , where 𝑠 is the orginal state, 𝑎 is the action taken, 𝑠′is the state you reached, and 𝑟 is the reward you earned from that transition. After collecting a large amount of these data points you decide reinforcement learning some things about this MDP.
+
+**(a)** [1 pt] You want to estimate a function $Q ( s , a )$ which returns the total rewards you will earn in expectation if you start in state 𝑠, take action 𝑎, and act optimally from then on. You will do this by initializing 𝑄(𝑠, 𝑎) to 0 for every state and action pair. Then you will examine your data points one at a time, updating your approximation after every data point. Assign each of the following terms into an entry of the equation below, which indicates how to use **a collected data point** $( s , a , s ^ { \prime } , r )$ to update your $Q ( s , a )$ function. Fill in the blanks with an integer from 1 to 5 corresponding to the correct expression. Note, 𝛼 is the learning rate.
+
+1. 𝑟
+
+2. 𝛼
+
+3. $Q _ { \mathrm { c u r r } } ( s ^ { \prime } , a ^ { \prime } )$
+
+4. $1 - \alpha$
+
+5. $\operatorname* { m a x } _ { a ^ { \prime } }$
+
+$$
+Q _ {\text {updated}} (s, a) \leftarrow \boxed {\mathrm{A} = 4} Q _ {\text {curr}} (s, a) + \boxed {\mathrm{B} = 2} [ \boxed {\mathrm{C} = 1} + \gamma \boxed {\mathrm{D} = 5} \boxed {\mathrm{E} = 3} ]
+$$
+
+Recall the formula for Q-learning:
+
+$$
+\begin{array}{c} Q _ {u p d a t e d} (s, a) \leftarrow (1 - \alpha) Q _ {c u r r} (s, a) + \alpha \cdot s a m p l e \\ \leftarrow (1 - \alpha) Q _ {c u r r} (s, a) + \alpha \cdot [ r + \gamma \max _ {a ^ {\prime}} Q _ {c u r r} (s ^ {\prime}, a ^ {\prime}) ] \end{array}
+$$
+
+**(b)** After you finish examining your data in the order you collected it and updating the $Q ( s , a )$ function accordingly you realize you have converged to the true optimal and accurate $Q ( s , a )$ function. However, you have an accident and lose all of your memory about that $Q ( s , a )$ function. Even worse, you also randomly shuffled the order of your data points and have no way of knowing what the original order was.
+
+**(i)** [1 pt] Can you use your procedure from part (a) on the shuffled data to recreate the optimal $Q ( s , a )$ given that you only examine each data point once?
+
+\# Yes No
+
+We are not guaranteed in Q-learning to converge to the optimal Q function after only making a single pass on our data $( s , a , s ^ { \prime } , r )$ because of the fact way we use a max over the current approximation of $Q ( s , a )$ so the order we do the updates in matters.
+
+**(ii)** [1 pt] Can you use your procedure from part (a) on the shuffled data to recreate the optimal $Q ( s , a )$ given that you are allowed to run the procedure as much as you want (You are allowed to examine the same data points multiple times)?
+
+● Yes No
+
+Q learning convergence requires us to look at all the $( s , a , s ^ { \prime } , r )$ and iterate infinitely many times over that data with sufficient exploration before we converge to the optimal Q-learning function. Since there was sufficient exploration in the old ordering there will be sufficient exploration in the data overall.
+
+**(c)** Later on, you decide to try to approximate a different function, $V ^ { * } ( s )$ which returns the total rewards you will earn in expectation if you start in state s and act optimally from then on. You want to do this by initializing $V ^ { * } ( S )$ to 0 for every state. Then you will examine your data points one at a time, updating your approximation after every data point.
+
+**(i)** [1 pt] Assign each of the following terms into an entry of the equation below, which indicates how to use **a collected data point** $( s , a , s ^ { \prime } , r )$ to update your $V ^ { * } ( s )$ function. Note, 𝛼 is the learning rate.
+
+1. 𝑟
+
+SID:
+
+2. 𝛼
+
+3. $V _ { \mathrm { c u r f } } ( s ^ { \prime } )$
+
+4. $1 - \alpha$
+
+![](images/page_6_image_4.jpg)
+
+We can use TD-learning.
+
+$$
+\begin{array}{c} V _ {u p d a t e d} (s) \gets (1 - \alpha) V _ {c u r r} (s) + \alpha (s a m p l e) \\ \leftarrow (1 - \alpha) V _ {c u r r} (s) + \alpha [ r + \gamma V _ {c u r r} (s ^ {\prime}) ] \end{array}
+$$
+
+**(ii)** [2 pts] Can you use your data points to train the true optimal and accurate $V ^ { * } ( s )$ function?
+
+\# Yes, because the 𝑟 and $s ^ { \prime }$ in the definition is the result of taking action 𝑎 from state 𝑠. This is true for 𝑟 and $s ^ { \prime }$ from any data point $( s , a , s ^ { \prime } , r )$ collected under any policy (i.e., even an old one)
+
+\# $\operatorname { Y e s } ,$ because the source of the data doesn’t matter in RL
+
+$\mathrm { N o } ,$ because the old data is useless without the policy
+
+\## $\mathrm { N o } ,$ because the max cannot be calculated after-the-fact
+
+No, because the 𝑟 and $s ^ { \prime }$ in the definition is the result of taking the optimal action from 𝑠. This is only true for 𝑟 and $s ^ { \prime }$ from a data point $( s , a , s ^ { \prime } , r )$ collected under the most recent/optimal policy
+
+By definition, TD learning only converges to the optimal $V ^ { * }$ if we are exploring on the optimal policy $\pi ^ { * }$ . Since we are not guaranteed to receive $( s , a , s ^ { \prime } , r )$ on the optimal $\pi ^ { * }$ , we cannot necessarily converge to $V ^ { * }$
+
+## Q3. [11 pts] Value of Perfect Information
+
+Consider the setup shown in the figure below, involving a robotic plant-watering system with some mysterious random forces involved. Here, there are 4 main items at play.
+
+(1) The robot (𝑅) can choose to move either left (𝑙) or right (𝑟). Its chosen action pushes a water pellet into the corresponding opening.
+
+(2) The random switch (𝑆) is arbitrarily in one of two possible positions $\{ s _ { 0 } , s _ { 1 } \}$ . When in position $( s _ { 0 } ) ,$ , it accepts a water pellet only from the (𝑙) tube. When in position $( s _ { 1 } )$ , it accepts a water pellet only from the (𝑟) tube.
+
+(3) A controllable three-way switch (𝑇 ) can be chosen to be placed in one of three possible positions $\{ t _ { 0 } , t _ { 1 } , t _ { 2 } \}$
+
+(4) A plant (𝑃 ) is arbitrarily located in one of three possible locations $\{ p _ { 0 } , p _ { 1 } , p _ { 2 } \}$ . When in position $p _ { i } ,$ it can only be successfully watered if the corresponding tube $t _ { i }$ has been selected **and** if the water pellet was sent in a direction that was indeed accepted by the first switch (𝑆).
+
+Finally, in this problem, utility (U) is 1 when the plant successfully receives the water pellet, and 0 otherwise.
+
+![](images/page_7_image_7.jpg)
+
+**(a)** Let’s first set this problem up as a decision network.
+
+**(i)** [1 pt] Which of the following decision networks correctly describe the problem described above? Select all that apply. Recall the conventions from the lecture notes:
+
+action nodes as rectangles , chance nodes as ovals , and utility nodes as diamonds
+
+![](images/page_7_image_11.jpg)
+
+(A)
+
+![](images/page_7_image_13.jpg)
+
+□ (B)
+
+![](images/page_7_image_15.jpg)
+
+R and T are
+
+SID:
+
+![](images/page_8_image_2.jpg)
+
+![](images/page_8_image_3.jpg)
+
+□ (D)
+
+actions you can choose so they should be rectangles, S and P are random outcomes so they should be ovals. All the variables are involved in the calculation of U but they do not influence each other directly, so A has to be the answer.
+
+**(ii)** [1 pt] Fill in the following probability tables, given that there is an equal chance of being at each of their possible locations.
+
+<table><tbody><tr><td>𝑆</td><td>𝑃(𝑆)</td></tr><tr><td rowspan="2">𝑠<sub>0</sub></td><td rowspan="2">12</td></tr><tr></tr><tr><td rowspan="2">𝑠<sub>1</sub></td><td rowspan="2">12</td></tr><tr></tr></tbody></table>
+
+<table><tbody><tr><td>𝑃</td><td>𝑃(𝑃)</td></tr><tr><td rowspan="2">𝑝<sub>0</sub></td><td rowspan="2">13</td></tr><tr></tr><tr><td rowspan="2">𝑝<sub>1</sub></td><td rowspan="2">13</td></tr><tr></tr><tr><td rowspan="2">𝑝<sub>2</sub></td><td rowspan="2">13</td></tr><tr></tr></tbody></table>
+
+**(iii)** [<u>1 pt] Consider</u> the table below.
+
+![](images/page_9_image_4.jpg)
+
+rows would have 𝑈 = 0.
+
+1∕6 of the combinations will success<u>fully water the plant and</u> there are 36 total combinations. So there are 6 with 𝑈 = 1 and 30 (the rest) with $U = 0. \begin{array}{c|c|c|c|c|}R & S & T & P & \hline& U \\\hline\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\\hline\end{array}$
+
+**(b)** Before selecting your actions, suppose that someone could tell you the value of either 𝑆 or 𝑃 . Follow the steps below to calculate the **maximum expected utility (MEU)** when knowing 𝑆, or when knowing 𝑃 . Then, decide which one you would prefer to be told.
+
+**(i)** [1 pt] What is 𝑀𝐸𝑈(𝑆)? # 0 $\frac{\frac{1}{9}}{\frac{3}{4}}$ $\frac{\frac{1}{6}}{\frac{5}{6}}$ $\frac{1}{4}$ $\frac{1}{3}$ $\frac { 1 } { 2 }$ # $\frac{2}{3}$ # # None of the above
+
+\# #Note: can definitely answer this with intuition (and no math). $\begin{array} { r } { = \frac { 1 } { 2 } M E U ( S = s _ { 0 } ) + \frac { 1 } { 2 } M E U ( S = s _ { 1 } ) } \end{array}$ $= { \textstyle { \frac { 1 } { 2 } } } ( m a x _ { t } ( E U ( S = s _ { 0 } , T = t _ { 0 } ) , E U ( S = s _ { 0 } , T = t _ { 1 } ) , E U ( S = s _ { 0 } , T = t _ { 2 } ) ) )$ $\begin{array} { r } { + \frac { 1 } { 2 } ( m a x _ { t } ( E U ( S = s _ { 1 } , T = t _ { 0 } ) , E U ( S = s _ { 1 } , T = t _ { 1 } ) , E U ( S = s _ { 1 } , T = t _ { 2 } ) ) ) } \end{array}$ (𝑚𝑎𝑥(1∕3, 1∕3, 1∕3)) + 1(𝑚𝑎𝑥(1∕3, 1∕3, 1∕3)) = 3
+
+**(ii)** [1 t] What is 𝑀𝐸𝑈(𝑃 )? [¹ p]
+
+\# 0 $\frac{\frac{1}{6}}{\frac{5}{6}}$ 14 # 13 12 # $\frac{2}{3}$ # # 1 # None of the above #Note: can definitely answer this with intuition (and no math). $\begin{array} { r } { = \frac { 1 } { 3 } M E U ( P = p _ { 0 } ) + \frac { 1 } { 3 } M E U ( P = p _ { 1 } ) + \frac { 1 } { 3 } M E U ( P = p _ { 2 } ) } \end{array}$ $= { \textstyle { \frac { 1 } { 3 } } } ( m a x _ { R } ( E U ( P = p _ { 0 } , R = l ) , E U ( P = p _ { 0 } , R = r ) ) ) +$ $\begin{array} { r } { \frac { 1 } { 3 } ( m a x _ { R } ( E U ( P = p _ { 1 } , R = l ) , E U ( P = p _ { 1 } , R = r ) ) ) + } \end{array}$ $\begin{array} { r } { \frac { 1 } { 3 } ( m a x _ { R } ( E U ( P = p _ { 2 } , R = l ) , E U ( P = p _ { 2 } , R = r ) ) ) } \end{array}$ $= { \textstyle { \frac { 1 } { 3 } } } ( m a x ( 1 / 2 , 1 / 2 ) ) +$ (𝑚𝑎𝑥(1∕2, 1∕2)) + 1(𝑚𝑎𝑥(1∕2, 1∕2))
+
+**(iii)** [1 pt] Would you prefer to be told 𝑆 or 𝑃 ? # 𝑆 𝑃 𝑃 since it has a higher MEU (and therefore a higher VPI).
+
+**(c) (i)** [1 pt] What is 𝑀𝐸𝑈(𝑆, 𝑃 )? 0 $\frac{\frac{1}{6}}{\frac{5}{6}}$ $\frac { 1 } { 4 }$ $\frac{1}{3}$ $\frac { 1 } { 2 }$ # $\frac{2}{3}$ 1 None of the above # # #1, because you have enough information to definitely get the water pellet to the plant.
+
+**(ii)** [1 pt] In this problem, does 𝑉 𝑃 𝐼(𝑆, 𝑃 ) = 𝑉 𝑃 𝐼(𝑆) + 𝑉 𝑃 𝐼(𝑃 )? # Yes No $V P I ( S , P ) = M E U ( S , P ) - M E U ( n o n e )$ $VPI(S) = MEU(S) - MEU(noise)$
+
+$$
+V P I (P) = M E U (P) - M E U (n o n e)
+$$
+
+Answer is NO, because $\begin{array} { r } { \widehat { M E U ( S , P ) } = 1 ,   M E U ( S ) = \frac { 1 } { 3 } , \mathrm { a n d } M E U ( P ) = \frac { 1 } { 2 } . } \end{array}$
+
+**(iii)** [1 pt] In general, does $VPI(a,b)=VPI(a)+VPI(b)?$ Select all of the statements below which are true.
+
+\# Yes, because of the additive property.
+
+\# Yes, because the order in which we observe the variables does not matter.
+
+\# Yes, but the reason is not listed.
+
+No, because the value of knowing each variable can be dependent on whether or not we know the other one.
+
+\# No, because the order in which we observe the variables matters.
+
+\# No, but the reason is not listed.
+
+**(d)** For each of the following new variables introduced to this problem, what would the corresponding VPI of that variable be?
+
+**(i)** [1 pt] A new variable X indicates the weather outside, which affects the overall health of the plant. # VPI(X)<0 VPI(X)=0 # VPI(X)>0 The health of the plant does not affect the utility so the VPI is 0.
+
+**(ii)** [1 pt] A new variable X indicates the weather outside, which affects the metal of switch 𝑆 such that when it’s hot outside, the switch is most likely to remain in position $s _ { 0 }$ with probability 0.9 (and goes to $s _ { 1 }$ with probability 0.1). # VPI(X)<0 # VPI(X)=0 VPI(X)>0
+
+This will allow us to predict which direction to move the robot with more accuracy so the VPI is greater than 0.
+
+## Q4. [20 pts] Languages
+
+To discuss a strategy to play against Pacman, the ghosts send each other encrypted messages. Pacman knows that they are using one of English, Romanian, French, German and Swedish. He intercepted the ghosts’ messages, but only characters "a", "o", "u", "ä", "ö", "ü" and "â" are decrypted correctly and everything else were lost.
+
+Pacman would like to know which language the ghosts are using. He gathered information about the 5 languages, as below. Assume that characters that are not checked in the table will never appear in texts in that language.
+
+## Characters occurrence table:
+
+|  | a | o | u | ä | ö | ü | â |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| English | ✓ | ✓ | ✓ |  |  |  |  |
+| Romanian | ✓ | ✓ | ✓ |  |  |  | ✓ |
+| French | ✓ | ✓ | ✓ |  |  | ✓ | ✓ |
+| German | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |
+| Swedish | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |
+
+Frequency table:
+
+|  | a | o | u |
+| --- | --- | --- | --- |
+| English | 0.4 | 0.4 | 0.2 |
+| Romanian | 0.6 | 0.1 | 0.25 |
+| French | 0.4 | 0.25 | 0.3 |
+| German | 0.4 | 0.2 | 0.3 |
+| Swedish | 0.5 | 0.2 | 0.1 |
+
+**(a)** Probability Warm Up
+
+**(i)** [1 pt] If Pacman does not see any ü, select the languages that are possible:
+
+■ English ■ Romanian ■ French ■ German ■ Swedish # None of the above Text from any language has a non-zero probability of not having ü, although for some languages it happens with probability 1 and for German and French, the probability is smaller.
+
+**(ii)** [2 pts]
+
+| English | Romanian | French | German | Swedish |
+| --- | --- | --- | --- | --- |
+| 0 % | 0 % | 0 % | 34 % | 66 % |
+
+Pacman assumes that the ghosts have chosen their language uniformly randomly, and he did research on the character frequencies and normalized them among the 7 characters in each language, as listed in the frequency table above. Unfortunately Pacman lost the old decryption data and can only recall from memory that he has seen ä. **For languages that are not possible, please write down 0 in the table above.**
+
+The ghosts sent a new message just now, and Pacman has 4 characters successfully decrypted, which are 3 occurrences of a and 1 occurrence of o. Assuming the occurrences of characters are mutually independent, what is Pacman’s best estimation of the probabilities of each language, in percentages? **Write down the nearest integers in the table above.**
+
+The two language that have ä are German and Swedish.
+
+0.530.21 0.43 0.21 𝑃 (Swedish) = 0.5<sup>3</sup>0.2<sup>1</sup>+0.4<sup>3</sup>0.2<sup>1</sup> = 0.66, and 𝑃 (German) = 0.5<sup>3</sup>0.2<sup>1</sup>+0.4<sup>3</sup>0.2<sup>1</sup> = 0.34. They sum to 1.
+
+Note that we can omit the ${ \textstyle { \binom { 3 + 1 } { 1 } } }$ since it’s a common factor.
+
+Pacman thinks it’s a good idea to train neural networks to classify the text based on the decrypted characters.
+
+**(b) (i)** [1 pt] Given an arbitrary function from 𝑥 to 𝑦, with enough training time and appropriate hyper-parameters, a neural net with 2 hidden layers that have sufficient number of parameters can gain a training accuracy arbitrarily close to 100% for an arbitrarily large training set. True # False Universal function approximation theorem.
+
+**(ii)** [1 pt] Given any dataset and enough training time, with appropriate hyper-parameters, a sufficiently large neural net can gain a training accuracy arbitrarily close to 100%. # True False It’s possible to have exactly the same features but different labels, and the training accuracy would never reach 100% in this case. In general, we just don’t get 100% training accuracy even heavily overfitted.
+
+**(iii)** [1 pt] Given any dataset and enough training time, with appropriate hyper-parameters, a sufficiently large neural net can gain a test accuracy arbitrarily close to 100%. # True False We cannot guarantee 100% test accuracy.
+
+**(c)** [7 pts]
+
+Given the following concepts in neural nets, match them to the ...
+
+(a) Back Propagation.
+
+(b) Output layer
+
+SID:
+
+(c) Hidden unit
+
+(d) Stochastic Gradient Descent
+
+(e) Batch Gradient Descent
+
+(f) Activation function.
+
+(g) Gradient
+
+Match them to the most related concept or procedure in the list.
+
+(1) tanh can be used as the (f)
+
+(2) weight vectors are used in a (c)
+
+(3) a single data point is used in (d) to compute a(n) (g) using (a)
+
+(4) many data points are used in (e) to compute a(n) (g) using (a)
+
+(5) (b) can compute a probability distribution over classes
+
+But Pacman decided to start simple.
+
+$f _ { 1 } , f _ { 2 } , f _ { 3 }$ are the (normalized) frequencies of $\mathrm{a},\mathrm{o},\mathrm{u}$ , respectively
+
+$z _ { 1 i } = w _ { 1 i } f + b _ { 1 i } ,$ where $f = [ f _ { 1 } \; f _ { 2 } \; f _ { 3 } ] ^ { \top }$ and each $w _ { 1 j }$ is a $1 \times 3$ vector
+
+He built Neural Net A as above.
+
+![](images/page_12_image_16.jpg)
+
+**(d)** [1 pt] Pacman used the set up for Project 5 to implement neural network A. He trained it for 1 epoch and got a training accuracy of 50%, but he forgot to save the model. The TA suggests that Pacman can train neural network A from the start again for 1 epoch, passing in the same data in the same order, and Pacman will have the same weights and the 50% training accuracy.
+
+This is not guaranteed. If you tried and remember, you don’t always get the same thing by rerunning the Project 5 codes. Basically, there’s randomness in initialization and Stochastic GD (if you are using it).
+
+**(e)** Pacman trained Neural Net A with some data. He tried to classify some new data with the trained model, but the test accuracy was low. What can he do to improve the performance?
+
+**(i)** [1 pt] Pacman can replace the softmax layer with sigmoid □ if the training accuracy is low □ if the training accuracy is high None of the above Sigmoid is an activation function.
+
+**(ii)** [1 pt] Pacman can add more nodes $( z _ { 1 6 } , z _ { 1 7 } , \ldots )$ to the layer □ if the training accuracy is low □ if the training accuracy is high None of the above There are 5 labels, so we should have 5 nodes in the layer before softmax.
+
+**(iii)** [1 pt] Pacman can add more training data
+
+□ if the training accuracy is low ■ if the training accuracy is high # None of the above
+
+With this simple architecture, it’s hard to overfit unless we have very few/biased training data. Adding more training data would hopefully solve the overfitting issue.
+
+Neural Net B:
+
+![](images/page_13_image_0.jpg)
+
+**(f)** [1 pt] Pacman would like to try adding a layer on Neural Net A to get Neural Net B. Which of the following would lead you to expect Neural Net B to have better training accuracy than Neural Net A?
+
+□ $z _ { 2 i } = w _ { 2 i } \cdot z _ { 1 } + b _ { 2 i }$ , where $z _ { 1 } = [ z _ { 1 1 } , z _ { 1 2 } , z _ { 1 3 } , z _ { 1 4 } , z _ { 1 5 } ] ^ { \top }$ □ $z _ { 2 i } = w _ { 2 i } \cdot z _ { 1 } + b _ { 2 i }$ , where $z _ { 1 } = [ z _ { 1 1 } , z _ { 1 2 } , z _ { 1 3 } , z _ { 1 4 } , z _ { 1 5 } ] ^ { \top }$ , and change $z _ { 1 i } = w _ { 1 i } f + b _ { 1 i }$ to $z_{1i} = \mathrm{ReLU}\left( w_{1i} f \right) + b_{1i}$ ■ $z_{2i} = w_{2i} \cdot \mathrm{ReLU}\left(z_1\right) + b_{2i}$ , where $z _ { 1 } = [ z _ { 1 1 } , z _ { 1 2 } , z _ { 1 3 } , z _ { 1 4 } , z _ { 1 5 } ] ^ { \top }$
+
+\# None of the above
+
+2 layers of linear combination without non-linearity in between is in no way more powerful than 1 layer of linear combination. This is learned in lecture and reinforced in WHW 4.
+
+ReLU $\left( w _ { 1 i } f \right)$ seems to include non-linearity, but without the bias term included in the parenthesis, it’s really a scaled feature or a 0, which is nothing more powerful than the original $z _ { 1 }$ layer.
+
+**(g)** [2 pts] Suppose the activation function for $z _ { 1 i }$ is 𝑔, then we can represent the NN in the graph as
+
+□ softmax $\left( g \left( w _ { 2 } ( w _ { 1 } f + b _ { 1 } ) + b _ { 2 } \right) \right)$
+
+softmax $\left( w _ { 2 } \cdot g \left( w _ { 1 } f + b _ { 1 } \right) + b _ { 2 } \right)$
+
+\# both are incorrect
+
+with dimensions: $w _ { 1 } { : } \underline { { \begin{array} { r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r l r \end{array}$
+
+## Q5. [13 pts] Pacman Loses Control
+
+Pacman finds himself inside the grid world Markov Decision Process (MDP) depicted below. Each rectangle represents a possible state. Pacman has two possible actions, left or right. However, these movement actions only work with probability 𝑝. With probability 𝑞 Pacman moves in the opposite direction. Otherwise Pacman stays in the same state. I.E. $T ( B , r i g h t , C ) = p ,$ $T ( B , r i g h t , A ) = q$ and $T ( B , r i g h t , B ) = 1 - q - p .$ If Pacman physically moves right from state D (with probability 𝑝 if he chooses right from D, or with probability 𝑞 if he chooses left from D) he earns a reward of 3000 and enters the terminal state where he can no longer perform actions. Similarly if Pacman physically moves left from A he earns a reward of 0 and enters the terminal state. Note 𝛾 is the discount factor.
+
+| ← | A | B | C | D | R = 3000 |
+| --- | --- | --- | --- | --- | --- |
+
+(a) Assume $p = . 5 ,   q = 0 ,$ and $\gamma = { \frac { 2 } { 3 } }$ for part (a)
+
+**(i)** [1 pt] What is the value of $V ^ { * } ( D )$ (the expected value of total discounted rewards pacman can get from state D)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$V^{*}(D) = \left| \begin{array}{c}  \\  2250 \end{array} \right|$
+</div>
+
+$$
+V ^ {*} (D) = . 5 * 3 0 0 0 +. 5 * \frac {2}{3} * V ^ {*} (D)
+$$
+
+.5 chance of moving and getting a reward 3000, .5 chance of staying and getting a reward of $V ^ { * } ( D ) * \gamma$
+
+**(ii)** [1 pt] What is the value of $V ^ { * } ( C )$ (the expected value of total discounted rewards pacman can get from state C)
+
+$$
+V ^ {*} (C) = \boxed {1 1 2 5}
+$$
+
+$$
+V ^ {*} (C) = . 5 * \frac {2}{3} * V ^ {*} (D) +. 5 * \frac {2}{3} * V ^ {*} (C)
+$$
+
+.5 chance of moving and getting a reward $V ^ { * } ( D ) * \gamma , . 5$ chance of staying and getting a reward of $V ^ { * } ( C ) * \gamma$
+
+**(b)** For each subpart in part (b) you will be given two sets of parameters. Select which set of parameters results in a greater value of $V ^ { * } ( D )$ (or whether they are the same).
+
+$$
+(1 \mathrm{pt}) \text {Set I:} \{p = . 5, q = 0, \gamma = . 5 \} \quad \text {Set II:} \{p = . 6, q = 0, \gamma = . 5 \}
+$$
+
+\# Set I’s $V ^ { * } ( D )$ is greater Set $\Pi ^ { \prime } \mathrm { s } \; V ^ { * } ( D )$ is greater # They are equal Since 𝑝 is higher in Set II it will reach the reward faster and incur less discounting.
+
+$$
+(1 \text {pt}) \text {Set I:} \{p = . 5, q = 0, \gamma = 1 \} \quad \text {Set II:} \{p = . 6, q = 0, \gamma = 1 \}
+$$
+
+\# Set I’s $V ^ { * } ( D )$ is greater # Set $\Pi ^ { \prime } \mathrm { s } \; V ^ { * } ( D )$ is greater They are equal Even though 𝑝 is higher in Set II so it will reach the reward faster there is no discounting so they will both get the max reward anyway.
+
+$$
+(1 \text {pt}) \text {Set I:} \{p = . 6, q = . 1, \gamma = . 5 \} \quad \text {Set II:} \{p = . 1, q = . 6, \gamma = . 5 \}
+$$
+
+\# Set I’s $V ^ { * } ( D )$ is greater # Set II’s $V ^ { * } ( D )$ is greater They are equal Since 𝑝 and 𝑞 are swapped, for whatever policy is optimal for Set I we can choose the opposite actions and get the same performance in Set II.
+
+$$
+(\mathbf {i v}) [ 1 \mathrm{pt} ] \text {Set I:} \{p = . 1, q = 0, \gamma = 1 \} \quad \text {Set II:} \{p = . 8, q = . 1, \gamma = 1 \}
+$$
+
+Set I’s $V ^ { * } ( D )$ is greater # Set $\Pi ^ { \prime } \mathrm { s } \; V ^ { * } ( D )$ is greater # They are equal
+
+In Set I there is no discounting so you will eventually reach and earn the max reward of 3000. In Set II there is a nonzero probability of accidentally taking the reward of 0 so we will have an expectation less than 3000.
+
+$$
+(\mathbf {v}) [ 1 \mathrm{pt} ] \text {Set I:} \{p = . 5, q = 0, \gamma = . 5 \} \quad \text {Set II:} \{p = . 5, q = . 1, \gamma = . 5 \}
+$$
+
+![](images/page_14_image_24.jpg)
+
+Set I’s $V ^ { * } ( D )$ is greater # Set $\Pi ^ { \prime } \mathrm { s } \; V ^ { * } ( D )$ is greater # They are equal
+
+In Set II, the positive Q Value causes you to accidentally go in the opposite direction and earn less than 3000 in expectation.
+
+**(c)** Assume $p = 0 , q = . 5 ,$ , and $\gamma = . 5$ for part (c). Pacman decides to use policy iteration to figure out the optimal policy for $\begin{array}{c|c}\pi(A) & \pi(B) \\\hline\mathbf{right} & \mathbf{left} \\\end{array}$ 𝜋(𝐶) 𝜋(𝐷) this MDP. He starts with this policy: left left
+
+**(i)** [1 pt] Pacman uses policy evaluation to evaluate his policy and then he uses policy improvement to update his policy. Select which states (if any) have a different action according to the policy after improvement is over.
+
+$\begin{array}{l} A  \quad \bigsqcup  B  \quad \bigsqcup  C  \quad \bigsqcup  D  \quad \bigcirc\end{array}$ None changed
+
+Since $q = . 5$ and $p = 0$ #it is optimal to choose left at every state and try to accidentally move towards the 3000 reward. Thus the only state whose action needs to change to be optimal is state A.
+
+**(ii)** [1 pt] After part (i) we run policy evaluation and policy improvement infinitely more times. How many more times will the policy change (not including a potential change in part (i))? 0 # 1 # 2 # 3 # 4 # 16 # ∞
+
+Since the policy is optimal after state A changes to left there will be no more changes.
+
+**(d)** After some practice runs, Pacman realizes what he thought about $T ( s , a , s ^ { \prime } )$ and $R ( s , a , s ^ { \prime } )$ might be wrong. A policy 𝜋 is **strictly greedy** with respect to a set of Q-values as long as ∀𝑠 ∀𝑎 ≠ 𝜋(𝑠) $Q ( s , \pi ( s ) )   >   Q ( s , a )$ I.E. the Q value for the action chosen by the policy must be strictly greater than the Q value for all other actions. Pacman decides to use approximate q-learning to come up with a strictly greedy policy.
+
+Pacman has 4 feature functions available.
+
+$$
+\begin{array}{l} \text {Pachman has a weathered conditions available?} \\ f _ {1} (s, a) = \left\{ \begin{array}{l l} 1 & \text {if s = C} \\ 0 & e l s e \end{array} \right. \quad f _ {2} (s, a) = \left\{ \begin{array}{l l} 1 & \text {if (a = right) \land (s = A)} \\ 0 & e l s e \end{array} \right. \\ f _ {3} (s, a) = \left\{ \begin{array}{l l} 1 & \text {if a = left} \\ 0 & e l s e \end{array} \right. \quad f _ {4} (s, a) = \left\{ \begin{array}{l l} 1 & \text {if (a = left) \land ((s = A) \lor (s = B))} \\ 0 & e l s e \end{array} \right. \end{array}
+$$
+
+He wants to choose weights $w _ { 1 } ,   w _ { 2 } ,   w _ { 3 } ,$ , and $w _ { 4 }$ that he can use to calculate $Q ( s , a )$ by multiplying each weight by its respective feature and adding the products together. For each policy below select which weights **must be non-zero** (weights can be negative or positive) for the calculated Q-values to generate the policy as a strictly greedy policy. If it is not possible to generate the strictly greedy policy with the given features mark “Not Possible".
+
+𝜋(𝐴) 𝜋(𝐵) 𝜋(𝐶) 𝜋(𝐷) **(i)** [1 pt] 𝑤1 𝑤2 𝑤3 𝑤4 Not Possible right right right right If we choose $w _ { 3 }$ to be negative $\overline { { Q ( s , L e f t ) } }$ will be less than 𝑄(𝑠, 𝑅𝑖𝑔ℎ𝑡) for every state.
+
+**(ii)** [1 pt] 𝜋(𝐴) right 𝜋(𝐵) left 𝜋(𝐶) left 𝜋(𝐷) left 𝑤1 𝑤2 𝑤3 𝑤4 # Not Possible
+
+If we choose $w _ { 3 }$ to be positive $\overline { { Q ( s , L e f t ) } }$ will be greater than $Q ( s , R i g h t )$ for every state. If we choose $w _ { 2 }$ to be even more positive then 𝑄(𝐴, 𝑅𝑖𝑔ℎ𝑡) will be greater than $Q ( A , L e f t )$
+
+$$
+\text {(iii)} [ 1 \mathrm{pt} ] \begin{array}{c c c c} \hline \pi (A) & \pi (B) & \pi (C) & \pi (D) \\ \hline \text {left} & \text {right} & \text {left} & \text {right} \\ \hline \end{array} \square w _ {1} \quad \square w _ {2} \quad \square w _ {3} \quad \square w _ {4} \quad \bullet \text {Not Possible}
+$$
+
+There is no way to distinguish better actions for C and D since none of the features consider those states and an action at the same time.
+
+**(iv)** [1 pt] 𝜋(𝐴) 𝜋(𝐵) 𝜋(𝐶) 𝜋(𝐷) 𝑤1 𝑤2 𝑤3 𝑤4 Not Possible right left right right
+
+If we choose $w _ { 3 }$ to be negative $\overline { { Q ( s , L e f t ) } }$ will be less than $Q ( s , R i g h t )$ for every state. If we choose $w _ { 4 }$ to be even more negative, states A and B will prefer left. If we choose $w _ { 2 }$ to be even more positive than those, state A will prefer right
+
+## Q6. [9 pts] A Nonconvolutional Nontrivial Network
+
+You have a robotic friend MesutBot who has trouble passing Recaptchas (and Turing tests in general). MesutBot got a 99.99% on the last midterm because he could not determine which squares in the image contained stop signs. To help him ace the final, you decide to design a few classifiers using the below features.
+
+• 𝐴 = 1 if the image contains an octagon, else 0.
+
+• 𝐵 = 1 if the image contains the word STOP, else 0.
+
+– 𝑆 = 1 if the image contains the letter S, else 0.
+
+– 𝑇 = 1 if the image contains the letter T, else 0.
+
+– 𝑂 = 1 if the image contains the letter O, else 0.
+
+– 𝑃 = 1 if the image contains the letter P, else 0.
+
+• 𝐶 = 1 if the image is more than 50% red in color, else 0.
+
+![](images/page_16_image_10.jpg)
+
+• 𝐷 = 1 if the image contains a post, else 0.
+
+**(a)** First, we use a Naive Bayes-inspired approach to determine which images have stop signs based on the features and Bayes Net above. We use the following features to predict 𝑌 = 1 if the image has a stop sign anywhere, or 𝑌 = 0 if it doesn’t.
+
+**(i)** [1 pt] Using the independence assumptions encoded in the Bayes Net, which of the following are true?
+
+■ If we know whether the picture has the word "STOP" (𝐵), the appearance of the letter "S" is independent from the appearance of the letter "T" in the image.
+
+□ If we know whether the picture has a STOP sign (𝑌 ), the appearance of the letter "S" is independent from the appearance of the letter "T" in the image.
+
+𝑆 ⟂⟂ 𝐷|𝑌
+
+□ 𝐴 ⟂⟂ 𝐵|{𝑆, 𝑇 , 𝑂, 𝑃 }
+
+□ The 7 features (A, S, T, O, P, C, D) satisfy the Naive Bayes independence assumptions.
+
+\# None
+
+• 𝑆 ⟂⟂ 𝑇 |𝐵 due to inactive triple (blocked common cause S-T-B).
+
+• 𝑆 is not ⟂⟂ 𝑇 |𝑌 due to active triple (common cause S-T-B).
+
+• 𝑆 ⟂⟂ 𝐷|𝑌 due to inactive triple (blocked common cause B-Y-D).
+
+• 𝐴 ⟂⟂ 𝐵|{𝑆, 𝑇 , 𝑂, 𝑃 } is not true due to active triple (common cause A-Y-B).
+
+• This Bayes net doesn’t satisfy the Naive Bayes independence assumptions because the S,T,O,P features are dependent given 𝑌 .
+
+**(ii)** [1 pt] Which expressions would a Naive Bayes model use to predict the label for 𝐵 if given the values for features $S = s , T = t , O = o , P = p ?$ Choose all valid expressions.
+
+■ $b = \arg \max_{b} P(b)P(s|b)P(t|b)P(o|b)P(p|b)$
+
+$$
+\square b = \arg \max _ {b} P (s | b) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+b = \arg \max _ {b} P (b | s, t, o, p)
+$$
+
+$$
+b = \arg \max _ {b} P (b, s, t, o, p)
+$$
+
+$$
+\square b = \arg \max _ {b} P (s, t, o, p | b)
+$$
+
+\# None
+
+Note arg max $P ( b ) P ( s | b ) P ( t | b ) P ( o | b ) P ( p | b ) \; = \; \arg \operatorname* { m a x } _ { t } P ( b , s , t , o , p )$ , which are both correct. The conditional 𝑏 probability assumptions from the Bayes Net enable us to write this equality.
+
+Note $P ( s | b ) P ( t | b ) P ( o | b ) P ( p | b )   =   P ( s , t , o , p | b )$ . This can be read off of the Bayes Net as well, because all the features are independent given the label $B = b .$
+
+Finally note arg max $P(b|s,t,o,p)=\arg\max_{b}\frac{P(b,s,t,o,p)}{P(s,t,o,p)}=\arg\max_{b}P(b,s,t,o,p)$ because $P ( s , t , o , p )$ has all four of its values already given, and does not depend on our optimization variable 𝑏 in any way.
+
+**(iii)** [1 pt] Which expressions would we use to predict the label for 𝑌 with our Bayes Net above? Assume we are given all features except 𝐵. So $A = a , S = s , T = t ,$ etc. For the below choices, the underscore means we are dropping the value of that variable. So $y , { } _ { -- } = ( 0 , 1 )$ would mean $y = 0$
+
+$$
+\square y, _ {- -} = \arg \max _ {y, b} P (y) P (a | y) P (b | y) P (c | y) P (d | y) P (s | b) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+\square y _ {, - -} = \arg \max _ {v, b} P (s) P (t) P (o) P (p) P (a) P (b | s, t, o, p) P (c) P (d) P (y | a, b, c, d)
+$$
+
+First compute $b ^ { \prime } = \arg \operatorname* { m a x } _ { b }$ of the formula chosen in part (𝑖𝑖).
+
+Then compute 𝑦 = arg max $P ( y ) P ( a | y ) P ( b ^ { \prime } | y ) P ( c | y ) P ( d | y )$
+
+□ First compute 𝑏′ = arg maxof the formula chosen in part (𝑖𝑖).
+
+Then compute $y = \arg \max_{y} P(y|a,b',c,d)$
+
+$$
+y = \arg \max _ {y} \sum_ {b ^ {\prime}} P (y) P (a | y) P (b ^ {\prime} | y) P (c | y) P (d | y) P (s | b ^ {\prime}) P (t | b ^ {\prime}) P (o | b ^ {\prime}) P (p | b ^ {\prime})
+$$
+
+\# None
+
+Sum out possibilities for 𝑏 given the features 𝑆, 𝑇 , 𝑂, 𝑃
+
+**(iv)** [1 pt] One day MesutBot got allergic from eating too many cashews. The incident broke his letter 𝑆 detector, so that he no longer gets reliable 𝑆 features. Now what expressions would we use to predict the label for 𝑌 ? Assume all features except 𝐵, 𝑆 are given. So $A = a , T = t , O = o ,$ etc.
+
+$$
+\square y = \arg \max _ {y} P (y) P (a | y) P (c | y) P (d | y)
+$$
+
+$$
+\square y, _ {- - }, _ {- - } = \arg \max _ {y, b, s} P (y) P (a | y) P (b | y) P (c | y) P (d | y) P (s | b) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+\square y, _ {- -} = \arg \max _ {y, s} P (y) P (a | y) P (b | y) P (c | y) P (d | y) P (s | b) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+\square y, _ {- -} = \arg \max _ {y, b} P (y) P (a | y) P (b | y) P (c | y) P (d | y) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+\square y, _ {- -} = \arg \max _ {y b} P (y) P (a | y) P (b | y) P (c | y) P (d | y) P (s | b) P (t | b) P (o | b) P (p | b)
+$$
+
+$$
+\square y, _ {- - } = \arg \max _ {y, b} P (y | a, b, c, d)
+$$
+
+$$
+y = \arg \max _ {y} P (y) P (a | y) P (c | y) P (d | y) \sum_ {b ^ {\prime}, s ^ {\prime}} P (b ^ {\prime} | y) P (s ^ {\prime} | b ^ {\prime}) P (t | b ^ {\prime}) P (o | b ^ {\prime}) P (p | b ^ {\prime})
+$$
+
+\# None
+
+Use variable elimination on 𝑠 and 𝑏 (because 𝑏 cannot be accurately calculated without 𝑠).
+
+**(b)** [1 pt] You decide to try to output a probability 𝑃 (𝑌 |𝑓 𝑒𝑎𝑡𝑢𝑟𝑒𝑠) of a stop sign being in the picture instead of a discrete ±1 prediction. We denote this probability as $P ( Y | { \vec { f } } ( x ) )$ . Which of the following functions return a **valid** probability distribution for $P ( Y = y | { \vec { f } } ( x ) ) ?$ Recall that $y \in \{ - 1 , 1 \}$
+
+$$
+\begin{array}{c} \hline \hline \frac {e ^ {y \cdot \vec {w} ^ {T} \vec {f} (x)}}{e ^ {- y \cdot \vec {w} ^ {T} \vec {f} (x)} + e ^ {y \cdot \vec {w} ^ {T} \vec {f} (x)}} \\ \hline \frac {1}{2} \end{array}
+$$
+
+$$
+\square \frac {0 . 5}{1 + e ^ {- \vec {w} T} \vec {f} (x)}
+$$
+
+$$
+\square \frac {- 1}{1 + e ^ {\vec {w} T} \vec {f} (x)} + 1
+$$
+
+\# None
+
+Valid probability distribution means that the probabilities over all possible values of 𝑦 must sum to 1.
+
+$\begin{array} { r } { P ( Y = y | \vec { f } ( x ) ) = \frac { e ^ { y \cdot \vec { w } ^ { T } \vec { f } ( x ) } } { e ^ { - y \cdot \vec { w } ^ { T } \vec { f } ( x ) } + e ^ { y \cdot \vec { w } ^ { T } \vec { f } ( x ) } } } \end{array}$ works because $P ( Y = 1 | { \vec { f } } ( x ) ) + P ( Y = - 1 | { \vec { f } } ( x ) ) = 1$ (it is the softmax function).
+
+$\frac { 1 } { 2 }$ works because we just need $\begin{array} { r } { P ( Y = 1 | \vec { f } ( x ) ) + P ( Y = - 1 | \vec { f } ( x ) ) = \frac { 1 } { 2 } + \frac { 1 } { 2 } = 1 } \end{array}$ , so it is valid.
+
+$\begin{array} { r } { \frac { 0 . 5 } { 1 + e ^ { - \vec { w } ^ { T } \vec { f } ( x ) } } \mathrm { ~ a n d ~ } \frac { - 1 } { 1 + e ^ { \vec { w } ^ { T } \vec { f } ( x ) } } + 1 } \end{array}$ don’t depend on 𝑦 so we can’t guarantee the sum of the two probabilities adds to 1, and thus cannot guarantee that those two expressions are a valid probability distribution.
+
+Unimpressed by the perceptron, you note that features are inputs into a neural network and the output is a label, so you modify the Bayes Net from above into a Neural Network computation graph. Recall the logistic function $\begin{array} { r } { s ( x ) = \frac { 1 } { 1 + e ^ { - x } } } \end{array}$ has derivative $\begin{array} { r } { \frac { \partial s ( x ) } { \partial x } = s ( x ) [ 1 - s ( x ) ] } \end{array}$
+
+![](images/page_18_image_2.jpg)
+
+**(c)** For this part, ignore the dashed edge when calculating the below.
+
+**(i)** [1 pt] What is $\frac { \partial L o s s } { \partial w _ { A } } ?$
+
+● $\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A } \end{array}$
+
+$\underline { { 2 } } ( s ( X ) - y ^ { * } ) \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot 2 A + 1 } \end{array}$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot 2 A } \end{array}$
+
+$2 ( \widetilde { s ( X ) } - y ^ { * } ) \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A + 1$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A + 1 } \end{array}$
+
+None
+
+$$
+\begin{array}{c} \frac {\partial L o s s}{\partial w _ {A}} = \frac {\partial L o s s}{\partial s (X)} \cdot \frac {\partial s (X)}{\partial X} \cdot \frac {\partial X}{\partial A w _ {A}} \cdot \frac {\partial A w _ {A}}{\partial w _ {A}} \\ = \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot 1 \cdot A \end{array}
+$$
+
+**(ii)** [1 pt] What is $\frac { \partial L o s s } { \partial w _ { S } } ?$ Keep in mind we are still ignoring the dotted edge in this subpart.
+
+$$
+\bullet \frac {\partial \text {Loss}}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right) \cdot S \right.
+$$
+
+$$
+\bigcirc \quad 2 (s (X) - y ^ {*}) \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot S
+$$
+
+$$
+\bigcirc \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot 2 S + S
+$$
+
+$$
+\bigcirc \frac {\partial \text {Loss}}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot 2 S
+$$
+
+$$
+\bigcirc 2 (s (X) - y ^ {*}) \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot S + S
+$$
+
+$$
+\bigcirc \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot S + S
+$$
+
+\# None
+
+$$
+\begin{array}{l} \frac {\partial L o s s}{\partial w _ {S}} = \frac {\partial L o s s}{\partial s (X)} \cdot \frac {\partial s (X)}{\partial X} \cdot \frac {\partial X}{\partial B w _ {B}} \cdot \frac {\partial B w _ {B}}{\partial R e L U (E)} \cdot \frac {\partial R e L U (E)}{\partial E} \cdot \frac {\partial E}{\partial S w _ {S}} \cdot \frac {\partial S w _ {S}}{\partial w _ {S}} \\ = \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot 1 \cdot w _ {B} \cdot \left(\left\{ \begin{array}{c c} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot 1 \cdot S \end{array}
+$$
+
+**(d)** MesutBot is having trouble paying attention to the S feature because sometimes it gets zeroed out by the ReLU, so we connect it directly to the input of $s ( \cdot )$ via the dotted edge. For the below, treat the dotted edge as a regular edge in the neural net.
+
+**(i)** [1 pt] Which of the following is equivalent to $\frac { \partial L o s s } { \partial w _ { A } } ?$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A } \end{array}$
+
+$\underline { { 2 } } ( s ( X ) - y ^ { * } ) \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot 2 A + A } \end{array}$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot 2 A } \end{array}$
+
+$\underline { { 2 } } ( s ( X ) - y ^ { * } ) \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A + A$
+
+$\begin{array} { r } { \frac { \partial L o s s } { \partial s ( X ) } \cdot [ s ( X ) \cdot ( 1 - s ( X ) ) ] \cdot A + A } \end{array}$
+
+\# None
+
+This doesn’t change because the added edge is further upstream from $w _ { A }$ and doesn’t affect gradient flows between $w _ { A }$ and 𝐿𝑜𝑠𝑠. From above, we copy:
+
+$$
+\begin{array}{r l} \frac {\partial L o s s}{\partial w _ {A}} & = \frac {\partial L o s s}{\partial s (X)} \cdot \frac {\partial s (X)}{\partial X} \cdot \frac {\partial X}{\partial A w _ {A}} \cdot \frac {\partial A w _ {A}}{\partial A} \\ & = \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot 1 \cdot w _ {A} \end{array}
+$$
+
+**(ii)** [1 pt] Which of the following is equivalent to $\frac { \partial L o s s } { \partial w _ { S } } ?$ Keep in mind we are still treating the dotted edge as a regular edge.
+
+SID:
+
+$$
+\bigcirc \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right) \cdot S \right.
+$$
+
+$$
+\bigcirc \quad 2 (s (X) - y ^ {*}) \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right) \cdot S \right.
+$$
+
+$$
+\bigcirc \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot 2 S + S
+$$
+
+$$
+\bigcirc \frac {\partial \text {Loss}}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot 2 S
+$$
+
+$$
+\bigcirc 2 (s (X) - y ^ {*}) \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot S + S
+$$
+
+$$
+\bigcirc \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot w _ {B} \cdot \left(\left\{ \begin{array}{l l} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right.\right) \cdot S + S
+$$
+
+None
+
+Due to the new dotted edge, there are now two paths along the neural network that lead from output to $w _ { S }$
+
+$$
+\begin{array}{l} \frac {\partial L o s s}{\partial w _ {S}} = \frac {\partial L o s s}{\partial s (X)} \cdot \frac {\partial s (X)}{\partial X} \cdot \left(\frac {\partial X}{\partial B w _ {B}} \cdot \frac {\partial B w _ {B}}{\partial R e L U (E)} \cdot \frac {\partial R e L U (E)}{\partial E} \cdot \frac {\partial E}{\partial S w _ {S}} + \frac {\partial X}{\partial S w _ {S}}\right) \cdot \frac {\partial S w _ {S}}{\partial w _ {S}} \\ = \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot \left(1 \cdot w _ {B} \cdot \left(\left\{ \begin{array}{c c} 1 & E \geq 0 \\ 0 & E <   0 \end{array} \right) \cdot 1 + 1\right) \cdot S \right. \\ = \frac {\partial L o s s}{\partial s (X)} \cdot [ s (X) \cdot (1 - s (X)) ] \cdot \left(\left\{ \begin{array}{c c} w _ {B} + 1 & E \geq 0 \\ 1 & E <   0 \end{array} \right) \cdot S \right. \end{array}
+$$
+
+# Q7. [13 pts] Searching for a Bayes Network
+
+Your friend gives you a joint distribution $P ( X _ { 1 } , X _ { 2 } , . . . , X _ { n } )$ and wants you to find the structure of a Bayes Network that best represents this data. This can be formulated as a search problem.
+
+**Initial state:**
+
+![](images/page_21_image_3.jpg)
+
+**Legal actions:** Add an edge between any pair of nodes $X _ { i } \rightarrow X _ { j }$ so long as it does not violate the structure of a Bayes Network (remember, no cycles!).
+
+**Goal state:** We don’t know this but our friend does and can tell us if a given state is the goal state or not.
+
+Answer the following questions regarding the search tree for this problem setup.
+
+**(a)** [1 pt] Considering the set of legal actions, what is the branching factor of the search tree at depth 1? That is, the branching factor of the node representing the initial state. Write your answer in terms of the number of nodes, 𝑁.
+
+𝑁 × (𝑁 − 1)
+
+We are allowed to add an edge between $X _ { i } \rightarrow X _ { j }$ so long as it doesn’t violate the structure of a Bayes Net. When choosing where to draw our edge, there are 𝑁 possible ways to select the $X _ { i }$ node and (𝑁 − 1) possible ways to select the $X _ { j }$ node (can’t draw an edge from a node to itself!)
+
+**(b)** [1 pt] Will any states be repeated in our search tree?
+
+![](images/page_21_image_11.jpg)
+
+**(c)** Assume infinite computational resources, and that the goal state exists somewhere in the search tree.
+
+**(i)** [1 pt] DFS is guaranteed to return the solution
+
+if 𝑁 = 10000 □ if 𝑁 = 10000 and deleting edges are also legal actions # None of the above Note that in the original search setup, we cannot form cycles in the search tree, so we will eventually reach the solution. However, if deleting edges are also legal actions, then we can form cycles. DFS is not complete and therefore is not guaranteed to find a solution if it exists.
+
+**(ii)** [1 pt] BFS is guaranteed to return the solution
+
+if 𝑁 = 10000 if 𝑁 = 10000 and deleting edges are also legal actions # None of the above BFS is complete so if a solution exists, BFS will find it given infinite computational resources.
+
+Now your friend gives you the joint distribution $P ( X _ { 1 } , X _ { 2 } , X _ { 3 } , X _ { 4 } )$ and wants you to run $\mathrm { A } ^ { * }$ search to find the right structure. Recall that $\mathrm { A } ^ { * }$ search expands states with the lowest estimated total cost, where total cost is equal to the sum of backward cost (sum of edge weights in the path to the state) and estimated forward cost (heuristic value).
+
+**(d)** For the following heuristics, select the state (or multiple states, if there are ties) that would be expanded by $\mathrm { A } ^ { * }$ search if the backward cost for all of the states are the same. **Assume that** $X _ { 1 } , X _ { 2 } , X _ { 3 }$ **and** $X _ { 4 }$ **are binary variables.**
+
+![](images/page_21_image_19.jpg)
+
+(A)
+
+![](images/page_21_image_21.jpg)
+
+(B)
+
+**(i)** [1 pt] Number of nodes with no ancestors.
+
+![](images/page_21_image_24.jpg)
+
+B
+
+![](images/page_21_image_26.jpg)
+
+**(ii)** [1 pt] Number of parameters in Bayes Net representation.
+
+□ B
+
+To solve this we need to count the number of parameters in each individual CPT and add them together. We are told that the variables are binary.
+
+(A) Node $X _ { 1 }$ has 2 parameters and nodes $X _ { 2 } , X _ { 3 }$ and $X _ { 4 }$ have $2 ^ { 2 }$ parameters each so there are a total of $2 + 2 ^ { 2 }$ + $2 ^ { 2 } + 2 ^ { 2 } = 1 4$ parameters.
+
+(B) Node $X _ { 1 }$ has $2 ^ { 4 }$ parameters and nodes $X _ { 2 } , X _ { 3 }$ and $X _ { 4 }$ have 2 parameters each so there are a total of $^ { 1 2 ^ { 4 } + 2 + 2 + 2 } =$ 22 parameters.
+
+(C) Node $X _ { 1 }$ has 2 parameters and nodes $X _ { 2 } , X _ { 3 }$ and $X _ { 4 }$ have $2 ^ { 2 }$ parameters each so there are a total of $2 + 2^{2} +$ $2 ^ { 2 } + 2 ^ { 2 } = 1 4$ parameters.
+
+(D) Nodes $X _ { 1 }$ and $X _ { 2 }$ have 2 parameters each, node $X _ { 3 }$ has $2 ^ { 3 }$ parameters and node $X _ { 4 }$ has $2 ^ { 2 }$ parameters so there are a total of $2+2+2^{3}+2^{2}=16$ parameters.
+
+**(iii)** [1 pt] Number of pairs of nodes that are not independent. Note that in each pair, the 2 nodes are unordered, i.e., the set of all pairs of nodes $\mathfrak { t } = \{ X _ { 1 } X _ { 2 } , X _ { 1 } X _ { 3 } , X _ { 1 } X _ { 4 } , X _ { 2 } X _ { 3 } , X _ { 2 } X _ { 4 } , X _ { 3 } X _ { 4 } \} )$ }).
+
+□ A ■ B □ C □ D
+
+To solve this we should count the number of pairs of nodes that are not guaranteed to be independent, running dseparation where needed.
+
+(A) 6 pairs. $X_{1}X_{2},X_{1}X_{3},$ and $X _ { 1 } X _ { 4 }$ are not guaranteed to be independent because they share an edge. Pair $X _ { 2 } X _ { 3 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 3 } \leftarrow A \rightarrow X _ { 2 } . X _ { 2 } X _ { 4 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 4 } \leftarrow A \rightarrow X _ { 2 } . X _ { 3 } X _ { 4 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 3 } \leftarrow A \rightarrow X _ { 4 }$
+
+(B) 3 pairs. $X_{1}X_{2},X_{1}X_{3}$ , and $X _ { 1 } X _ { 4 }$ are not guaranteed to be independent because they share an edge. Pair $X _ { 2 } X _ { 3 }$ **is** guaranteed to be independent because the only path between them **is** an inactive triple $X _ { 3 } \to A \leftarrow X _ { 2 } . X _ { 2 } X _ { 4 }$ is guaranteed to be independent because the only path between them is an inactive triple $X _ { 4 }   \rightarrow   A   \leftarrow   X _ { 2 } .     X _ { 3 } X _ { 4 }$ is guaranteed to be independent because the only path between them is an inactive triple $X _ { 3 } \rightarrow A \leftarrow X _ { 4 }$
+
+(C) 6 pairs. $X_{1}X_{2},X_{2}X_{3}$ , and $X _ { 2 } X _ { 4 }$ are not guaranteed to be independent because they share an edge. Pair $X _ { 1 } X _ { 3 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 1 } \to B \to X _ { 3 } . X _ { 1 } X _ { 4 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 1 } \to B \to X _ { 4 } . X _ { 3 } X _ { 4 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 3 } \leftarrow B \rightarrow X _ { 4 }$
+
+(D) 5 pairs. $X_{1}X_{3},X_{2}X_{3},$ and $X _ { 3 } X _ { 4 }$ are not guaranteed to be independent because they share an edge. Pair $X _ { 1 } X _ { 2 }$ **is** guaranteed to be independent because the only path between them **is** an inactive triple $X _ { 1 } \to C \leftarrow X _ { 2 } . X _ { 1 } X _ { 4 }$ **is** not guaranteed to be independent because the only path between them is an active triple $X _ { 1 } \to C \to X _ { 4 } . X _ { 2 } X _ { 4 }$ is not guaranteed to be independent because the only path between them is an active triple $X _ { 2 } \rightarrow C \rightarrow X _ { 4 }$
+
+You found a Bayes Net that represents a joint distribution 𝑃 (𝐴, 𝐵, 𝐶, 𝐷, 𝐸, 𝐹), as below.
+
+![](images/page_23_image_1.jpg)
+
+| C | A | P(C\|A) |
+| --- | --- | --- |
+| 𝑐<sub>1</sub> | 𝑎<sub>1</sub> | 0.2 |
+| 𝑐<sub>2</sub> | 𝑎<sub>1</sub> | 0.8 |
+| 𝑐<sub>1</sub> | 𝑎<sub>2</sub> | 0.4 |
+| 𝑐<sub>2</sub> | 𝑎<sub>2</sub> | 0.6 |
+| 𝑐<sub>1</sub> | 𝑎<sub>3</sub> | 0.5 |
+| 𝑐<sub>2</sub> | 𝑎<sub>3</sub> | 0.5 |
+
+| D | A | C | P(D\|A, C) |
+| --- | --- | --- | --- |
+| 𝑑<sub>1</sub> | 𝑎<sub>1</sub> | 𝑐<sub>1</sub> | 0.7 |
+| 𝑑<sub>2</sub> | 𝑎<sub>1</sub> | 𝑐<sub>1</sub> | 0.3 |
+| 𝑑<sub>1</sub> | 𝑎<sub>2</sub> | 𝑐<sub>1</sub> | 0.4 |
+| 𝑑<sub>2</sub> | 𝑎<sub>2</sub> | 𝑐<sub>1</sub> | 0.6 |
+| 𝑑<sub>1</sub> | 𝑎<sub>3</sub> | 𝑐<sub>1</sub> | 0.8 |
+| 𝑑<sub>2</sub> | 𝑎<sub>3</sub> | 𝑐<sub>1</sub> | 0.2 |
+| 𝑑<sub>1</sub> | 𝑎<sub>1</sub> | 𝑐<sub>2</sub> | 0.6 |
+| 𝑑<sub>2</sub> | 𝑎<sub>1</sub> | 𝑐<sub>2</sub> | 0.4 |
+| 𝑑<sub>1</sub> | 𝑎<sub>2</sub> | 𝑐<sub>2</sub> | 0.5 |
+| 𝑑<sub>2</sub> | 𝑎<sub>2</sub> | 𝑐<sub>2</sub> | 0.5 |
+| 𝑑<sub>1</sub> | 𝑎<sub>3</sub> | 𝑐<sub>2</sub> | 0.9 |
+| 𝑑<sub>2</sub> | 𝑎<sub>3</sub> | 𝑐<sub>2</sub> | 0.1 |
+
+| A | P(A) |
+| --- | --- |
+| 𝑎<sub>1</sub> | 0.2 |
+| 𝑎<sub>2</sub> | 0.3 |
+| 𝑎<sub>3</sub> | 0.5 |
+
+| E | B | C | P(E\|B, C) |
+| --- | --- | --- | --- |
+| 𝑒<sub>1</sub> | 𝑏<sub>1</sub> | 𝑐<sub>1</sub> | 0.3 |
+| 𝑒<sub>2</sub> | 𝑏<sub>1</sub> | 𝑐<sub>1</sub> | 0.4 |
+| 𝑒<sub>3</sub> | 𝑏<sub>1</sub> | 𝑐<sub>1</sub> | 0.3 |
+| 𝑒<sub>1</sub> | 𝑏<sub>2</sub> | 𝑐<sub>1</sub> | 0.1 |
+| 𝑒<sub>2</sub> | 𝑏<sub>2</sub> | 𝑐<sub>1</sub> | 0.8 |
+| 𝑒<sub>3</sub> | 𝑏<sub>2</sub> | 𝑐<sub>1</sub> | 0.1 |
+| 𝑒<sub>1</sub> | 𝑏<sub>1</sub> | 𝑐<sub>2</sub> | 0.6 |
+| 𝑒<sub>2</sub> | 𝑏<sub>1</sub> | 𝑐<sub>2</sub> | 0.3 |
+| 𝑒<sub>3</sub> | 𝑏<sub>1</sub> | 𝑐<sub>2</sub> | 0.1 |
+| 𝑒<sub>1</sub> | 𝑏<sub>2</sub> | 𝑐<sub>2</sub> | 0.5 |
+| 𝑒<sub>2</sub> | 𝑏<sub>2</sub> | 𝑐<sub>2</sub> | 0.2 |
+| 𝑒<sub>3</sub> | 𝑏<sub>2</sub> | 𝑐<sub>2</sub> | 0.3 |
+
+| B | A | P(B\|A) |
+| --- | --- | --- |
+| 𝑏<sub>1</sub> | 𝑎<sub>1</sub> | 0 |
+| 𝑏<sub>2</sub> | 𝑎<sub>1</sub> | 1 |
+| 𝑏<sub>1</sub> | 𝑎<sub>2</sub> | 0.4 |
+| 𝑏<sub>2</sub> | 𝑎<sub>2</sub> | 0.6 |
+| 𝑏<sub>1</sub> | 𝑎<sub>3</sub> | 0.9 |
+| 𝑏<sub>2</sub> | 𝑎<sub>3</sub> | 0.1 |
+
+| F | D | E | P(F\|D, E) |
+| --- | --- | --- | --- |
+| 𝑓<sub>1</sub> | 𝑑<sub>1</sub> | 𝑒<sub>1</sub> | 0.5 |
+| 𝑓<sub>2</sub> | 𝑑<sub>1</sub> | 𝑒<sub>1</sub> | 0.5 |
+| 𝑓<sub>1</sub> | 𝑑<sub>2</sub> | 𝑒<sub>1</sub> | 0.8 |
+| 𝑓<sub>2</sub> | 𝑑<sub>2</sub> | 𝑒<sub>1</sub> | 0.2 |
+| 𝑓<sub>1</sub> | 𝑑<sub>1</sub> | 𝑒<sub>2</sub> | 0.6 |
+| 𝑓<sub>2</sub> | 𝑑<sub>1</sub> | 𝑒<sub>2</sub> | 0.4 |
+| 𝑓<sub>1</sub> | 𝑑<sub>2</sub> | 𝑒<sub>2</sub> | 0.4 |
+| 𝑓<sub>2</sub> | 𝑑<sub>2</sub> | 𝑒<sub>2</sub> | 0.6 |
+| 𝑓<sub>1</sub> | 𝑑<sub>1</sub> | 𝑒<sub>3</sub> | 0.1 |
+| 𝑓<sub>2</sub> | 𝑑<sub>1</sub> | 𝑒<sub>3</sub> | 0.9 |
+| 𝑓<sub>1</sub> | 𝑑<sub>2</sub> | 𝑒<sub>3</sub> | 0.3 |
+| 𝑓<sub>2</sub> | 𝑑<sub>2</sub> | 𝑒<sub>3</sub> | 0.7 |
+
+(e) [1 pt] Starting with the original 6 CPTs, you eliminated D and got a factor. What is the size of the factor?
+
+| 36 |
+| --- |
+
+We have 𝑃 (𝐴), 𝑃 (𝐵|𝐴), 𝑃 (𝐶|𝐴), 𝑃 (𝐷|𝐴, 𝐶), 𝑃 (𝐸|𝐵, 𝐶), 𝑃 (𝐹|𝐷, 𝐸). To eliminating D, we look at P(D|A,C) and P(F|D,E), and get a factor $f ( F | A , C , E )$ . The domain sizes of 𝐴, 𝐶, 𝐸, 𝐹 are 3, 2, 3, 2, respectively. So the size of the factor is 36.
+
+**(f)** You would like to find $P ( c _ { 1 } | e _ { 1 } , f _ { 1 } )$ . For each ordering 𝑖 of variable elimination, we denote 𝑆(𝑖) to be the size of the largest factor that gets generated during the variable elimination process following the ordering 𝑖.
+
+**(i)** [1 pt] Among the 4 orderings below, select the ordering(s) 𝑖 with the largest 𝑆(𝑖). 𝐴, 𝐵, 𝐷 𝐴, 𝐷, 𝐵 □ 𝐵, 𝐴, 𝐷 𝐵, 𝐷, 𝐴
+
+**(ii)** [1 pt] Among the 4 orderings below, select the ordering(s) 𝑖 with the smallest 𝑆(𝑖). 𝐴, 𝐵, 𝐷 □ 𝐴, 𝐷, 𝐵 𝐵, 𝐴, 𝐷 𝐵, 𝐷, 𝐴
+
+The original 6 CPTs: $P ( A ) , P ( B | A ) , P ( C | A ) , P ( D | A , C ) , P ( E | B , C ) , P ( F | D , E )$ . ~~Domain sizes: A: 3, B: 2, C: 2, D: 2, E: 3, F: 2.~~
+
+Domain sizes: A: 3, B: 2, C: 2, D: 2, 𝑒<sub>1</sub>: 1, 𝑓<sub>1</sub>: 1.
+
+𝐴, 𝐵, 𝐷: 8
+
+Eliminate 𝐴: $f ( B , C , D ) , P ( e _ { 1 } | B , C ) , P ( f _ { 1 } | D , e _ { 1 } )$ . Factor size is 8. Eliminate 𝐵: $f ( C , D , e _ { 1 } ) , P ( f _ { 1 } | D , e _ { 1 } )$ . Factor size is 4. Then eliminate 𝐷 and get $f ( C , e _ { 1 } , f _ { 1 } )$ . Factor size is 2.
+
+𝐴, 𝐷, 𝐵: 8
+
+$$
+f (B, C, D), P (e _ {1} | B, C), P (f _ {1} | D, e _ {1})
+$$
+
+Eliminate 𝐷: $f ( B , C , f _ { 1 } | e _ { 1 } ) , P ( e _ { 1 } | B , C )$ . Factor size is 4.
+
+Then eliminate 𝐵 and get $f ( C , e _ { 1 } , f _ { 1 } )$ . Factor size is 2.
+
+𝐵, 𝐴, 𝐷: 6
+
+Eliminate 𝐵: 𝑓(𝑒<sub>1</sub>|𝐴, 𝐶), 𝑃 (𝐴), 𝑃 (𝐶|𝐴), 𝑃 (𝐷|𝐴, 𝐶), 𝑃 (𝑓<sub>1</sub>|𝐷, 𝑒<sub>1</sub>). Factor size is 6. Eliminate 𝐴: $f ( C , D , e _ { 1 } ) , P ( f _ { 1 } | D , e _ { 1 } )$ . Factor size is 4. Then eliminate 𝐷 and get $f ( C , e _ { 1 } , f _ { 1 } )$ . Factor size is 2.
+
+𝐵, 𝐷, 𝐴: 6
+
+Eliminate 𝐵: $f(e_{1}|A,C),P(A),P(C|A),P(D|A,C),P(f_{1}|D,e_{1}).$ . Factor size is 6. Eliminate 𝐷: $f(e_{1}|A,C),P(A),P(C|A),f(f_{1}|A,C,e_{1})$ . Factor size is 6. Then eliminate 𝐴 and get $f ( C , e _ { 1 } , f _ { 1 } )$ . Factor size is 2.
+
+**(g)** You’d like to try out sampling to find $P ( c _ { 1 } | e _ { 1 } , f _ { 1 } )$ . For each question below, select the sampling method(s) that may generate the specified data point.
+
+**(i)** [1 pt] $a _ { 2 } , b _ { 1 } , c _ { 1 } , d _ { 2 } , e _ { 1 } , f _ { 1 }$
+
+■ prior sampling ■ rejection sampling ■ likelihood sampling ■ gibbs sampling # None The evidences match, and the joint distribution of this observation would be non-zero. All sampling methods can have this sample.
+
+**(ii)** [1 pt] $a _ { 1 } , b _ { 2 } , c _ { 2 } , d _ { 2 } , e _ { 3 } , f _ { 1 }$ ■ prior sampling □ rejection sampling □ likelihood sampling □ gibbs sampling # None Not all the evidences match, so it can only be generated in prior sampling.
+
+**(iii)** [1 pt] $a _ { 1 } , b _ { 1 } , c _ { 2 } , d _ { 2 } , e _ { 1 } , \underline { { f _ { 1 } } }$
+
+□ prior sampling □ rejection sampling □ likelihood sampling gibbs sampling # None The evidences match, but the joint distribution of this observation is 0. Only Gibbs Sampling can have this sample since variables that are not the evidence are randomly assigned at first.
+
+## Q8. [11 pts] Particle Madness
+
+Humans are finicky and have beliefs, and robots often get annoyed at dealing with us. Ideally, the human will have fully rational conscious beliefs that drive their actions.
+
+**(a)** 𝐶 represents the human’s conscious beliefs, 𝐴 represents human actions, and 𝑅 represents reward distribution. Let’s consider this model that makes the robots happy, in which actions and rewards directly influence conscious beliefs, and conscious beliefs influence actions.
+
+![](images/page_25_image_3.jpg)
+
+**(i)** [1 pt] Select all variables that exhibit the Markov (memoryless) property in this model
+
+■ $\overline { { C } } \quad \bigsqcup A \quad \bigsqcup R \bigcirc$ None
+
+#A and R are not independent of the past, given the present. For example, using d-separation, there is an active path from $A _ { t - 1 } \; \mathrm { t o } \; A _ { t + 1 }$
+
+All variables are binary and have their probabilities specified in the table below. **Note the first table doesn’t contain all the rows.**
+
+| 𝐶<sub>𝑡+1</sub> | 𝐴<sub>𝑡</sub> | 𝑅<sub>𝑡</sub> | 𝐶<sub>𝑡</sub> | 𝑃(𝐶<sub>𝑡+1</sub>\|𝐶<sub>𝑡</sub>,𝐴<sub>𝑡</sub>,𝑅<sub>𝑡</sub>) |
+| --- | --- | --- | --- | --- |
+| +c | +a | +r | +c | .25 |
+| -c | +a | +r | +c | .75 |
+| +c | +a | +r | -c | .2 |
+| -c | +a | +r | -c | .8 |
+| +c | +a | -r | +c | .4 |
+| +c | -a | -r | -c | .9 |
+
+| 𝐴<sub>𝑡</sub> | 𝐶<sub>𝑡</sub> | 𝑃(𝐴<sub>𝑡</sub>\|𝐶<sub>𝑡</sub>) |
+| --- | --- | --- |
+| +a | +c | .8 |
+| -a | +c | .2 |
+| +a | -c | .3 |
+| -a | -c | .7 |
+
+| 𝑅<sub>𝑡</sub> | 𝐴<sub>𝑡</sub> | 𝑃(𝑅<sub>𝑡</sub>\|𝐴<sub>𝑡</sub>) |
+| --- | --- | --- |
+| +r | +a | .5 |
+| -r | +a | .5 |
+| +r | -a | .4 |
+| -r | -a | .6 |
+
+We are trying to run the forward algorithm to obtain a belief distribution at time i, $B ( C _ { i } ) = P ( C _ { i } | a _ { 1 } , . . , a _ { i } , r _ { 1 } , . . . . , r _ { i } )$ . We have $B ( C _ { i - 1 } = + c ) = . 4$ and $B ( C _ { i - 1 } = - c ) = . 6$ and we know that $A _ { i } = + a$ and $R _ { i } = + r$
+
+**(ii)** [1 pt]
+
+If possible, calculate $B ^ { \prime } ( C _ { i } = + c )$ where $B ^ { \prime } ( C _ { i } ) = P ( C _ { i } | a _ { 1 } , . . , a _ { i - 1 } , r _ { 1 } , . . . . , r _ { i - 1 } )$ , the belief distribution after the time elapse update b<u>ut before including t</u>he new evidence.
+
+$$
+B ^ {\prime} (C _ {i} = + c) = \boxed {}
+$$
+
+Not Possible with the given information
+
+In the time elapse update you sum over the old belief state multiplied by corresponding entries in $P ( C _ { t + 1 } | C _ { t } , A _ { t } , R _ { t } )$ Since we didn’t give you $A _ { i - 1 }$ and $R _ { i - 1 }$ you do not have enough information to do this.
+
+**(iii)** [1 pt] Now it is time to calculate $B ( C _ { i } = + c )$ by performing the observation update. If possible, fill in the blank with a number that will be multiplied by $B ^ { \prime } ( C _ { i }   =   + c )$ to create an expression that is equal to $B ( C _ { i }   =   + c )$ after normalization.
+
+$$
+B (C _ {i} = + c) = \frac {B ^ {\prime} (C _ {i} = + c) * \boxed {. 8}}{B (C _ {i} = + c) + B (C _ {i} = + c)}
+$$
+
+Not Possible with the given information
+
+#In the observation update you weight based on probability of the evidence given the state and then normalize. So the weight is $P(+a|+r)=.8.$ Note we do not consider R because R is independent of C given A so A has all the weighting information we need.
+
+![](images/page_26_image_0.jpg)
+
+**(iv)** [1 pt] Your friend claims that using particle filtering with 100 particles to estimate the belief distribution for this model will result in more accurate results than using the forward algorithm. Is your friend correct?
+
+Yes No
+
+\# Particle filtering essentially is trying to approximate the belief distribution, so by definition it can’t be more accurate than computing the actual belief distribution itself
+
+**(v)** [1 pt] Your friend also claims that using particle filtering with 100 particles to estimate the belief distribution for this model will require less computation and time than using the forward algorithm. Is your friend correct?
+
+Yes No
+
+\# For the forward algorithm on 100 particles, it requires processing/computing 100 different numbers whereas for the forward algorithm, we only need to keep track of 2 numbers 𝐵(+𝑐) and 𝐵(−𝑐). In general you should not use particle filtering unless you have an extremely large amount of states.
+
+You decide to listen to your friend and run particle filtering. At time 𝑖 you have a particle that is in state +𝑐. You also know that $A _ { i } = + a ,   R _ { i } = - r ,   A _ { i + 1 } = - a ,$ and $R _ { i + 1 } = - r .$
+
+**(vi)** [<u>1 pt] If possible, wh</u>at is the probability that that particle is sampled into state −𝑐 after the time elapse update?.6 Not possible with the given information # Not possible with the given information
+
+In the time update you sample from $P ( C _ { t + 1 } | C _ { t } , A _ { t } , R _ { t } )$ so you are looking for $P ( - c | + c , + a , - r )$ . However we only gave you $P ( + c | + c , + a , - r ) = . 4$ , but since there are only 2 values of C, $P ( - c | + c , + a , - r ) = 1 - P ( + c | + c , + a , - r ) =$.6
+
+**(vii)** [1 pt] If possible, assume that particle did get sampled into state −𝑐. What is its weight during the observation update?
+
+\# Not possible with the given information
+
+In particle filtering you weight by the probability of evidence given the actual states. Thus the weight of this particle is just $P ( - a | - c ) = 0 . 7$ . Note we ignore R again because R is independent of C given A.
+
+**(b)** Humans have unconscious preferences that can influence their beliefs. We incorporate another hidden Markov layer, where $H _ { t }$ represents unconscious preferences that influence $C _ { t }$ . Our revised model is shown below.
+
+![](images/page_26_image_16.jpg)
+
+(i) [1 pt] From the model above, indicate which independence relations hold true.
+
+$$
+C _ {t + 1} \perp C _ {t - 1} | C _ {t}, H _ {t}
+$$
+
+$C _ { t + 1 } \perp    \perp C _ { t - 1 } | C _ { t }$
+
+$$
+C _ {t + 1} \perp C _ {t - 1} | C _ {t}, H _ {t}, H _ {t + 1}
+$$
+
+$$
+C _ {t + 1} \perp C _ {t - 1} | C _ {t}, H _ {t}, A _ {t}
+$$
+
+$$
+C _ {t + 1} \perp C _ {t - 1} | C _ {t}, H _ {t}, A _ {t}, R _ {t}
+$$
+
+All of the answers above except $C _ { t + 1 } \perp     \perp C _ { t - 1 } | C _ { t }$ have no active paths between the selected nodes, and are thus independent.
+
+$R _ { t } \perp   \boldsymbol { C } _ { t } | \boldsymbol { A } _ { t } ;$ Independent, because the path from $C _ { t }   \rightarrow   A _ { t }   \rightarrow   R _ { t }$ is blocked since we are given $A _ { t } ,$ and the path $C _ { t } \rightarrow H _ { t + 1 } \leftarrow R _ { t }$ is blocked as a common effect triple.
+
+$C _ { t + 1 } \perp C _ { t - 1 } | C _ { t } , H _ { t } { : }$ Having $C _ { t }$ and $H _ { t }$ given blocks the causal chains from $C _ { t - 1 } \; \mathrm { t o } \; C _ { t + 1 }$
+
+$C _ { t + 1 } \perp     \perp C _ { t - 1 } | C _ { t } { : }$ The causal chain through $H _ { t }$ is active, since its no longer given.
+
+$C_{t+1} \perp C_{t-1}[C_t,H_t,H_{t+1}]$ From the second choice, since knowing $C _ { t }$ and $H _ { t }$ is sufficient for independence between the two nodes, adding additional variables will still mean that they are independent.
+
+$C _ { t + 1 } \perp    \perp C _ { t - 1 } | C _ { t } , H _ { t } , A _ { t }$ : Same as the previous one.
+
+$C _ { t + 1 } \perp C _ { t - 1 } | C _ { t } , H _ { t } , A _ { t } , R _ { t } { : }$ Same as the previous one.
+
+The computation is difficult, so we use particle filtering with 𝑛 particles. Particles can be defined in a few different ways. For the next three subparts, indicate whether the proposed particle definition is valid, which means it could be used to simulate a true distribution of the hidden variables while also incorporating observed 𝐴 and 𝑅 values.
+
+**(ii)** [1 pt] $n / 2$ of the particles code for 𝐻, and $n / 2$ of the particles code for 𝐶.
+
+Yes No
+
+\# Having half of the particles code for 𝐻 and half code for 𝐶 can’t represent the true distribution because they’re dependent on each other. We need to make sure particles encode the proper dependencies between the random variables.
+
+**(iii)** [1 pt] All 𝑛 particles code for an $( H , C )$ pair.
+
+Yes No
+
+#Yes, since each particle properly encodes the relationship between 𝐻 and 𝐶. It is as if you combined 𝐻 and 𝐶 into a single joint variable.
+
+**(iv)** [1 pt] All 𝑛 particles code for 𝐻, and each particle generates an additional particle sampled only from $P ( C _ { t } | H _ { t } , C _ { t - 1 } , A _ { t - 1 } , R _ { t - 1 } )$ to represent 𝐶 only when needed
+
+Yes # No
+
+Yes, since sampling from $P ( C _ { t } | H _ { t } , C _ { t - 1 } , A _ { t - 1 } , R _ { t - 1 } )$ for each particle coded for 𝐻 also properly encodes the relationship between 𝐻 and 𝐶.
