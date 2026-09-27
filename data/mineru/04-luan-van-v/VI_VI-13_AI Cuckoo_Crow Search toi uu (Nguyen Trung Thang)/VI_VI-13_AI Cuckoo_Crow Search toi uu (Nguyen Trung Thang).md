@@ -1,0 +1,5152 @@
+<!-- page: 1 -->
+
+BỘ GIÁO DỤC VÀ ĐÀO TẠO **TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT THÀNH PHỐ HỒ CHÍ MINH**
+
+**NGUYỄN TRUNG THẮNG**
+
+# ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO GIẢI BÀI TOÁN PHỐI HỢP HỆ THỐNG THỦY NHIỆT ĐIỆN
+
+**LUẬN ÁN TIẾN SĨ NGÀNH: KỸ THUẬT ĐIỆN**
+
+Tp. Hồ Chí Minh, tháng 10/2017
+
+<!-- page: 2 -->
+
+BỘ GIÁO DỤC VÀ ĐÀO TẠO
+
+**TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT THÀNH PHỐ HỒ CHÍ MINH**
+
+## NGUYỄN TRUNG THẮNG
+
+# ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO GIẢI BÀI TOÁN PHỐI HỢP HỆ THỐNG THỦY NHIỆT ĐIỆN
+
+**NGÀNH: KỸ THUẬT ĐIỆN-**62520202
+
+Hướng dẫn khoa học:
+
+1. PGS.TS. VÕ NGỌC ĐIỀU
+
+2. PGS.TS. TRƯƠNG VIỆT ANH
+
+<!-- page: 3 -->
+
+## QUYÉT DINH
+
+V viêc giao đ tài luân án và ngưòi hưóng dn nghiên cu sinh khóa 2013 HIÉU TRUONG TRUÒNG DAI HQC SU PHAM KÝ THUÁT TP. HÓ CHÍ MINH
+
+Căn c quyt đnh s 426/QĐ-TTg ngày 27/10/1976 cůa Th tưóng Chính ph quy đinh v mang lưi t chc và nhim v ca các trưòng đi hc;
+
+Cǎn cú chuong 6 Đièu l Truòng Đi hoc ban hành kèm theo quyêt dnh sô 58/2010/QĐ-TTg ngày 22 tháng 9 năm 2010 ca Th tuóng Chính ph;
+
+Căn c thông tur s 10/2009/TT-BGDĐT ngày 07/5/2009 ca B Giáo dc và Đào to vê vic Ban hành Qui ch đào to trình đ tin sĩ;
+
+Căn c thông tr s05/2012/TT-BGDDT ngày 15/02/2012 cua B Giáo dc và Đào tao v viêc sa đi, b sung mt s điu ca Quy ch đào to trinh đ tin sĩ ban hành kèm theo Thông tư s 10/2009/TT-BGDĐT ngày 07/5/2009 ca B trung B Giáo dc và Đào tão;
+
+Xét nhu cu công tác và khå năng cán b;
+
+Xét đè nghi cua Trung phòng Đào to,
+
+## QUYÉT DINH
+
+Điu 1: Giao đ tài lun án tin sĩ và ngưi hưóng dn cho:
+
+Nghiên círu sinh : Nguyên TrungThăng
+
+Ngành : Ky thut đin Khoá:2013-2016
+
+Tên luân án : Áp dng các phương pháp thông minh nhân to gii bài toán phi hơp h thông thy nhit đin.
+
+Ngưi HD th nht (HD chính): TS. Vō Ngoc Điu
+
+Nguòi HD th hai : TS. Truong Viêt Anh
+
+Thi gian thưc hiên : 01/10/2013 dên 01/10/2016
+
+Điu 2: Giao cho Phòng Đào to qun lý, thc hin theo đúng Qui ch đào to trinh đ tin sĩ cůa B Giáo dc & Đào to đã ban hành.
+
+Điu 3: - Trưng các đon vi và các Ông (Bà) có tên  điu 1 chu trách nhim thi hành quyt dinh này.
+
+\- Quyt đnh có hiu lc k tù ngày ký ke
+
+Noi nhân :
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">BGH (đ bit);</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">Nhu điu 2, 3;</span></small>
+
+<small><span class="docvortex-page-footnote" data-block-type="page_footnote" style="color:#6b7280">Luu P.DT</span></small>
+
+PGS.TS. D Văn Düng
+
+![](images/page_2_image_27.jpg)
+
+<details>
+<summary>seal</summary>
+
+TRUÒING
+DAI HOC SUPHAM
+KYTHUAT
+P. HO CHMINH
+o8
+Đ Văn Dūng
+M
+</details>
+
+<!-- page: 4 -->
+
+# LÝ LỊCH CÁ NHÂN
+
+## I. THÔNG TIN CÁ NHÂN
+
+Họ và Tên: **NGUYỄN TRUNG THẮNG** Phái : Nam
+
+Ngày/tháng/năm sinh : 06 / 08 / 1985
+
+Tại : Bình Thuận
+
+## II. QUÁ TRÌNH ĐÀO TẠO :
+
+\- Từ 2003 - 2008 : Sinh viên ngành Điện khí hóa-cung cấp điện, Đại học sư phạm kỹ thuật TPHCM.
+
+\- Từ 2008 - 2010 : Học viên cao học ngành Thiết bị Mạng và Nhà máy điện, trường Đại học Sư Phạm Kỹ Thuật TP.Hồ Chí Minh.
+
+## III. QUÁ TRÌNH CÔNG TÁC :
+
+\- Từ 2008 - 2009 : Giảng viên trường Cao đẳng Kỹ Thuật Cao Thắng
+
+\- Từ 2009 - Nay: Giảng viên trường Đại học Tôn Đức Thắng
+
+Tp. HCM, ngày 06 tháng 10 năm 2017
+
+Nguyễn Trung Thắng
+
+<!-- page: 5 -->
+
+## LỜI CAM ĐOAN
+
+Tôi cam đoan đây là công trình nghiên cứu của tôi.
+
+Các số liệu, kết quả nêu trong Luận án là trung thực và chưa từng được ai công bố trong bất kỳ công trình nào khác.
+
+Tp. HCM, ngày 06 tháng 10 năm 2017
+
+**Nguyễn Trung Thắng**
+
+<!-- page: 6 -->
+
+## CẢM TẠ
+
+Sau một thời gian dài nghiên cứu và hoàn thành luận án, tôi vô cùng cảm ơn những đóng góp từ gia đình, thầy cô, đồng nghiệp và bạn bè đã giúp tôi hoàn thành tốt luận án của mình.
+
+Tôi chân thành cảm ơn giảng viên hướng dẫn PGS. TS. Võ Ngọc Điều và PGS. TS. Trương Việt Anh đã tận tình hướng dẫn tôi.
+
+Tôi chân thành cảm ơn sâu sắc thầy PGS. TS. Quyền Huy Ánh đã dạy tôi các môn học ở mái trường đại học và hướng dẫn đồ án tốt nghiệp đại học. Đặc biệt thầy đã truyền đam mê để tôi có tiếp tục học thạc sĩ và tiến sĩ.
+
+Tôi chân thành cảm ơn vợ Nguyễn Thị Tâm đã hỗ trợ tôi về tinh thần, cổ vũ những khi tôi nản chí và mệt mỏi.
+
+Tôi chân thành cảm ơn trưởng bộ môn kỹ thuật điện TS. Đinh Hoàng Bách và trưởng Khoa Điện-Điện Tử TS. Võ Hoàng Duy đã tạo điều kiện tốt để tôi có thể học tốt và nghiên cứu tốt.
+
+Tôi xin chân thành cảm ơn những người bạn Trần Quang Thọ, Nguyễn Ngọc Âu và Phạm Hữu Lý đã sát cánh, ủng hộ và giúp đỡ tôi.
+
+<!-- page: 7 -->
+
+## ABSTRACT
+
+The study presents the application of several artificial interlligence based method for solving short-term hydrothermal scheduling problem. The objective of these problems is mainly to minimize total electricity generation fuel cost at thermal plants while neglecting the cost at hydropower plants so that all equality and inequality constraints of the system including power balance constraint considering transmission line, upper and lower limits on power generated by thermal and hydro plants, and hydraulic constraints at hydropower plants such as boundaries of water discharge, boundaries of reservoir volume, avaialbe water, initial volume as well as end volume. In addition, constraints in transmission lines such as transmission capacity of lines, voltage at buses, tap setting, etc are also taken into consideration. The complicated level of the considered constraints is increased and ranged from the first problem to the final problem. Augmented Lagrange Hopfield Network and three other methods such as conventional Cuckoo Search algorithm, Modified Cuckoo Search algorithm and Adaptive Selective Cuckoo Search algorithm are applied for solving the problems in the study. Among the applied Cuckoo Search algorithms, conventional Cuckoo Search algorithm is the original one which has been successfully applied for recent years since it was first developed in 2009 meanwhile Modified Cuckoo Search algorithm has been developed based on the original one and Adaptive Selective Cuckoo Search algorithm is first introduced in the study. In addition, Augmented Lagrange Hopfield Network is also a strong method which has been developed and successfully applied for solving electrical engineering problems.The performance of these methods are tested on several systems according to each kind of problem and there is a fact that not every applied method is applied for solving all considered problems because their different effcciency on considered problem. In fact, the three Cuckoo Search algorithms are run on all the problems but Augmented Lagrange Hopfield Network is only applied for the first problem where water head of reservoir is fixed and reservoir volume constraints are not taken into account. As a result, the comparison among these methods with many existing methods indicates that the methods are effecitve and robust for solving the short-term hydrothermal scheduling problem because they obtains better solution quality and shorter execution time than most methods available in the report. Among the methods, Augmented Lagrange Hopfield Network is very effective for the first problem where valve point loading effects of thermal units are not considered but it must stop working when the effects are taken into account. On the contrary, the three Cuckoo Search algorithms become more effective for the problems with valve point loading effects. Among the three Cuckoo Search algorithm, Adaptive Selective Cuckoo Search is the most efficient method whereas the effectiveness between convnetional Cuckoo Search and Modified Cuckoo Search has a trade-off for different problems. In fact, the Modified Cuckoo Search is more effective than conventional Cuckoo Search for the first and the final problems; however, the Hình is opposite for the rest of the problems.
+
+<!-- page: 8 -->
+
+## TÓM TẮT
+
+Luận án trình bày ứng dụng của các phương pháp thông minh nhân tạo để giải các bài toán phối hợp tối ưu hệ thống thủy nhiệt điện với mục tiêu giảm thiểu chi phí phát điện của các nhà máy nhiệt điện khi không xét đến chi phí phát điện của các nhà máy thủy điện sao cho các ràng buộc cân bằng và bất cân bằng của hệ thống như ràng buộc cân bằng công suất có xét đến tổn hao truyền tải đường dây, các giới hạn công suất phát của nhà máy thủy điện và nhiệt điện và các ràng buộc từ hồ thủy điện như thể tích hồ chứa, lưu lượng xả, thể tích nước cho phép sử dụng phải được thỏa mãn. Ngoài ra, ràng buộc trên lưới truyền tải như khả năng truyền tải đường dây, điện áp tại các nút, cài đặt đầu phân áp, và chọn công suất tụ bù cũng được xét đến. Mức độ phức tạp của các ràng buộc được tăng dần từ bài toán thứ nhất đến bài toán cuối cùng. Ba phương pháp Cuckoo Search (CSA) như Cuckoo Search cổ điển (CCSA), Cuckoo Search cải biên (MCSA) Cuckoo Search chọn lọc thi nghi (ASCSA), và phương pháp mạng Hopfield Lagrange tăng cường (ALHN) đã được áp dụng để giải các bài toán trên. CCSA là phương pháp Cuckoo Search đầu tiên được xây dựng năm 2009 trong khi đó MCSA được phát triển dựa trên CCSA vào năm 2011. ALHN cũng là một phương pháp được phát triển từ một phương pháp khác và đã được áp dụng trong lĩnh vực kỹ thuật điện. Khác với ba phương pháp này, ASCSA là phương pháp được phát triển đầu tiên trong luận án này dựa trên các cải biên từ CCSA và chưa được áp dụng cho bất cứ bài toán nào trước đây. Tính hiệu quả của các phương pháp được kiểm tra trên các hệ thống khác nhau với năm bài toán khác nhau. Kết quả được so sánh giữa bốn phương pháp với nhau và giữa bốn phương pháp với các phương pháp đã được nghiên cứu trước đây để đưa ra nhận xét về tính hiệu quả của bốn phương pháp này so với các phương pháp khác và tìm ra phương pháp hiệu quả nhất trong bốn phương pháp cũng như đề xuất khả năng áp dụng của từng phương pháp cho từng bài toán cụ thể. Kết quả đánh giá cho thấy ALHN chỉ hiệu quả cho hai bai toán đầu tiên với chiều cao cột nước cố định bỏ qua thể tích hồ chứa và bỏ qua hiệu ứng xả van tại các nhà máy nhiệt điện. Trong khi đó, phương pháp được đề xuất ASCSA tỏ ra hiệu quả hơn CCSA và MCSA cho tất cả các hệ thống ở năm bài toán này và hiệu quả hơn ALHN cho ba bài toán còn lại. So sánh giữa CCSA và MCSA cho thấy MCSA chỉ hiệu quả hơn CCSA ở hai bài toán đầu tiên và bài toán cuối nhưng kém hơn ở bài toán thứ ba và thứ tư. Ngoài ra, so sánh với các phương pháp trước ở các công trình nghiên cứu khác cũng cho thấy bốn phương pháp áp dụng này là các công cụ mạnh khi hầu hết nổi trội hơn các phương pháp khác về chất lượng lời giải tối ưu và tốc độ hội tụ nhanh và đặc biệt là sự vượt trội của phương pháp ASCSA.
+
+<!-- page: 9 -->
+
+## NỘI DUNG
+
+- Trang tựa
+- Quyết định giao đề tài
+- Lý lịch cá nhân
+- Lời cam đoan
+- Cảm tạ
+- Tóm tắt
+- Mục lục
+- Danh sách các chữ viết tắt
+- Danh sách các hình
+- Danh sách các bằng
+- Thuật ngữ
+- TRANG
+
+## CHƯƠNG 1: GIỚI THIỆU
+
+- 1.1. Đặt Văn Đề.... 1
+- 1.2. Các Bài Toán Nghiên Cửu.... 2
+- 1.3. Mục Tiêu Nghiên Cửu.... 4
+- 1.4. Các Đóng Góp Của Luận Án.... 4
+- 1.5. Giới Hạn Đề Tài.... 4
+- 1.6. Bố Cục Của Luận Án.... 5
+- CHƯỜNG 2: TỔNG QUAN
+- 2.1. Giới Thiệu.... 6
+- 2.2. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cổ Định Bỏ Qua Các Ràng Buộc Về Hồ Chứa.... 6
+- 2.3. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cổ Định Xét Các Ràng Buộc Về Hồ Chứa.... 9
+- 2.4. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Biến Đổi Xét Các Hồ Thủy Điện Bậc Thang.... 11
+- 2.5. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cổ Định Xét Mục Tiêu Chi Phí Và Phát Thái.... 16
+- 2.6. Phân Bố Công Suất Tối U'u Hệ Thống Thủy Nhiệt Điện.... 18
+- 2.7. Kết Luận.... 19
+
+<!-- page: 10 -->
+
+## CHƯƠNG 3: CÁC PHƯƠNG PHÁP CUCKOO SEARCH VÀ MẠNG HOPFIELD LAGRANGE TĂNG CƯỜNG
+
+- 3.1. Giới Thiệu ....20
+- 3.2. Thuật Toán Cuckoo Search Cổ Điển (CCSA) ....21
+- 3.2.1. Đặc tính chim Cuckoo và Lévy Flights ....21
+- 3.2.2. Mô tả thuật toán Cuckoo Search ....22
+- 3.2.3. Các áp dụng CCSA gần đây....25
+- 3.3. Cuckoo Search Cái Biên (MCSA) ....25
+- 3.3.1. Giới thiệu ....25
+- 3.3.2. Cuckoo Search cải biên (MCSA) ....25
+- 3.3.3. Các ứng dụng gần đây của MCSA ....27
+- 3.4. Cuckoo Search Chọn Lọc Thích Nghi (ASCSA)....27
+- 3.4.1. Kỹ thuật chọn lọc mới ....28
+- 3.4.2. Cơ chế phát hiện trứng lạ thích nghi ....30
+- 3.5. Mạng Hopfield Lagrange Tăng Cường (ALHN)....36
+- 3.6. Tóm Tất....38
+- CHƯƠNG 4: ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO ĐIỀU ĐỘ TỔI UỦ HỆ THÔNG THỦY NHIỆT ĐIỆN NGẪN HẠN XẾT CHIỀU CAO CỘT NƯỚC CỔ ĐỊNH VÀ BỔ QUA RÀNG BUỘC THỂ TÍCH HỒ CHÚA
+- 4.1. Giới Thiệu ....39
+- 4.2. Mô Tả Bài Toán ....39
+- 4.2.1. Hàm mục tiêu ....39
+- 4.2.2. Các ràng buộc ....42
+- 4.3. Tính Toán Các Tổ Máy Cân Bằng Thùy Điện Và Nhiệt Điện ....42
+- 4.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán FH-ST-HTS ....44
+- 4.4.1. Khởi tạo....44
+- 4.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights ....45
+- 4.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ ....46
+- 4.4.4. Tiêu chuẩn dùng vòng lặp....47
+- 4.4.5. Các bước tính toán của phương pháp CCSA cho bài toán FH-ST-HTS ....47
+- 4.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán FH-ST-HTS....48
+- 4.5.1. Khởi tạo....48
+- 4.5.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights ....49
+
+<!-- page: 11 -->
+
+- 4.5.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ ....50
+- 4.5.4. Tiêu chuẩn dùng vòng lặp....50
+- 4.5.5. Các bước tính toán của phương pháp MCSA cho bài toán FH-ST-HTS....50
+- 4.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán FH-ST-HTS ....51
+- 4.7. Áp Dụng ALHN Cho Bài Toán FH-ST-HTS ....53
+- 4.7.1. Xây dựng phương pháp ALHN cho bài toán ....53
+- 4.7.2. Khởi tạo....56
+- 4.7.3. Lựa chọn thông số....56
+- 4.7.4. Tiêu chuẩn dùng tính toán ....56
+- 4.7.5. Các bước tính toán phương pháp ALHN cho bài toán FH-ST-HTS....57
+- 4.8. Áp Dụng Các Phương Pháp Tìm Nghiệm Thỏa Hiệp Cho Bài Toán Đa Mục Tiêu 58
+- 4.8.1. Phương pháp Fuzzy ....59
+- 4.8.2. Phương pháp hệ số phạt ....59
+- 4.9. Kết Quả ....60
+- 4.9.1. Lựa chọn thông số....60
+- 4.9.2. Tối ưu hóa đơn mục tiêu chi phí phát điện ....62
+- 4.9.3. Tối ưu đa mục tiêu ....79
+- 4.10. Tóm Tất....90
+- CHƯỜNG 5: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH ĐIỀU ĐỘ HỆ THÔNG THỦY NHIỆT ĐIỆN NGẪN HẠN XẾT CHIỀU CAO CỘT NUỐC KHÔNG ĐỔI VÀ RÀNG BUỘC THỂ TÍCH HỒ CHÚA
+- 5.1. Giới Thiệu ....92
+- 5.2. Mô Hình Bài Toán ....92
+- 5.3. Tính Toán Công Suất Tổ Máy Nhiệt Điện Cân Bằng ....93
+- 5.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán RC-FH-ST-HTS ....94
+- 5.4.1. Khởi tạo....94
+- 5.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights ....95
+- 5.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ ....96
+- 5.4.4. Tiêu chuẩn dùng vòng lặp....96
+- 5.4.5. Các bước tính toán của phương pháp CCSA cho bài toán RC-FH-ST-HTS96
+- 5.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán RC-FH-ST-HTS ....98
+- 5.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán RC-FH-ST-HTS ....99
+
+<!-- page: 12 -->
+
+- 5.7. Kết Quả Số....101
+- 5.7.1. Thử nghiệm với các biến điều khiển khác nhau và các phương pháp xử lý ràng buộc khác nhau....101
+- 5.7.2. Hệ thống 1 bỏ qua hiệu ứng xả van....103
+- 5.7.3. Hệ thống 2 có xét đến hiệu ứng xả van....105
+- 5.8. Tóm Tất....107
+- CHƯƠNG 6: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH ĐIỀU ĐỘ TỔI UÙ HỆ THÔNG THỦY NHIỆT ĐIỆN XẾT CHIỀU CAO CỘT NƯỚC BIỂN ĐỔI
+- 6.1. Giới Thiệu....108
+- 6.2. Mô Hình Bài Toán....108
+- 6.3. Tính Toán Lưu Lượng Xả Và Công Suất Nhiệt Điện Cần Bằng....110
+- 6.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán....110
+- 6.4.1. Khởi tạo....110
+- 6.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights....111
+- 6.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ....112
+- 6.4.4. Tiêu chuẩn dùng vòng lặp....112
+- 6.4.5. Các bước tính toán của phương pháp CCSA cho bài toán VH-ST-HTS...112
+- 6.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán VH-ST-HTS....114
+- 6.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán VH-ST-HTS....115
+- 6.7. Kết Quả Số....117
+- 6.7.1. Hai hệ thống không xét hiệu ứng xả van....117
+- 6.7.2. Hai hệ thống xét hiệu ứng xả van....124
+- 6.8. Tóm Tất....128
+- CHƯƠNG 7: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH PHÂN BỐ CÔNG SUẤT TỔI UÙ HỆ THÔNG THỦY NHIỆT ĐIỆN
+- 7.1. Giới Thiệu....129
+- 7.2. Mô Tả Bài Toán....131
+- 7.2.1. Hàm mục tiêu....131
+- 7.2.2. Ràng buộc hệ thống....131
+- 7.2.3. Ràng buộc lưới truyền tải....132
+- 7.2.4. Biến điều khiển và biến phụ thuộc....133
+- 7.3. Áp Dụng Phương Pháp CCSA Cho Bài Toán HTOPF....134
+- 7.3.1. Khởi tạo....134
+
+<!-- page: 13 -->
+
+- 7.3.2. Tạo thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights ..... 135
+- 7.3.3. Tạo thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ ..... 136
+- 7.3.4. Tiêu chuẩn dùng vòng lặp..... 136
+- 7.3.5. Các bước tính toán của phương pháp CCSA cho bài toán HTOPF ..... 136
+- 7.4. Áp Dụng Phương Pháp MCSA Cho Bài Toán HTOPF ..... 139
+- 7.5. Áp Dụng Phương Pháp ASCSA Cho Bài Toán HTOPF ..... 140
+- 7.6. Kết Quả Số ..... 141
+- 7.6.1. Lựa chọn thông số điều khiển ..... 141
+- 7.6.2. Kết quả từ hệ thống IEEE 30 nút ..... 143
+- 7.6.3. Kết quả từ hệ thống IEEE 118 nút ..... 150
+- 7.7. Tóm Tất ..... 153
+- CHƯƠNG 8: TỔM TẮT
+- 8.1 Tóm Tất ..... 155
+- 8.2 Hướng Phát Triển ..... 158
+- PHỤ LỤC ..... 159
+- TÀI LIỆU THAM KHẢO ..... 176
+- CÁC CÔNG TRÌNH CÔNG BỐ ..... 185
+
+<!-- page: 14 -->
+
+## DANH SÁCH CÁC CHỮ VIẾT TẮT
+
+-PSO Particle swarm optimization and gamma based method ABCA Adaptive artificial bee colony algorithm ACABCA Adaptive chaotic artificial bee colony algorithm ACRCGA Adaptive Chaotic Real Coded Genetic Algorithm AIS Artificial immune system ASCSA Adaptive selective Cuckoo search algorithm BBO Biogeography-Based Optimization BCGA Binary coded genetic algorithm CA Cultural algorithm CABC Chaotic artificial bee colony algorithm CHDE Chaotic hybrid differential evolution CPLN Chi phí lớn nhất CPNN Chi phí nhỏ nhất CPTB Chi phí trung bình CS Clonal selection algorithm CSA Cuckoo search algorithm DE Differential evolutionary DLC Độ lệch chuẩn DRQEA Differential real-coded quantum-inspired evolutionary algorithm EGA Enhanced GA EP Evolutionary programming EPSO Enhanced PSO FEP Fast Evolutionary programming FGA Fast Genetic Algorithm FH-ST-HTS Fixed-head short-term hydrothermal scheduling FIPSO Fully-informed particle swarm optimization GA Genetic algorithm GWPSO Global vision of PSO with inertia weight GWPSO GCPSO Global vision of PSO with constriction factor GS Gradient search GSA Gravitational Search Algorithm GTLN Giá trị lớn nhất GTNN Giá trị nhỏ nhất GTTB Giá trị trung bình HBMOA Honey-bee Mating Optimization Algorithm HDE Hybrid DE HDE–SQP Hybrid differential evolution and sequential quadratic programming
+
+<!-- page: 15 -->
+
+HEP Hybrid Evolutionary programming HNN Hopfield neural networks HT Hệ thống HTOPF Hydrothermal optimal power flow IBFA Improved Bacterial Foraging Algorithm IDE Improved differential evolution IFEP Improved fast evolutionary programming IGA-MU Improved genetic algorithm, multiplier updating and the ε-constraint technique IPSO Improved particle swarm optimization IRM-MEDA Improved regularity model-based multiobjective estimation of distribution algorithm ISPSO Improved self-adaptive PSO LCEL Linearization of coordination equation based Lagrange method LCPSO Global vision of PSO with constriction factor LRA Lagrangian relaxation approach LWPSO Local vision of PSO with inertia weight MB-EPSO Mixed-binary evolutionary particle swarm optimizer MBFA Modified Bacterial Foraging Algorithm MCDEA Modified chaotic differential evolution algorithm MCSA Modified Cuckoo search algorithm MDE Modified DE MDNLPSO Modified dynamic neighborhood learning based particle swarm optimization MHDE Modified hybrid DE MODE Multiobjective differential evolution NSGA-II Non-dominated sorting genetic algorithm-II OGB-GA Optimal gamma based Genetic algorithm PP Phương pháp PPO Predator prey optimization PPO Predator-prey optimization PPO-PM PPO with penalty method PPO-PS PPO and Powell Search Method PPO-PS-PM PPO and PS method with penalty method PSO Particle swarm optimization PSO-PM PSO with penalty method QMBBO Quadratic Migration of Biogeography based Optimization QOTLBO Quasi-oppositional teaching learning based optimization RCCRO Real coded chemical reaction based optimization RCGA Real-coded genetic algorithm RCGA–AFSA Real coded genetic algorithm and artificial fish swarm algorithm
+
+<!-- page: 16 -->
+
+RIFEP Running Improved fast EP SA Simulated annealing SA-BGA A simulated annealing-based goal-attainment SOH-PSO Self-Organizing Hierarchical particle swarm optimization TGTT Thời gian tính toán TLBO Teaching learning based optimization TLTC Tỉ lệ thành công TPNN Two-phase neural network VH-ST-HTS Variable-Head Short-Term Hydrothermal Scheduling λ-γ Lamda-gamma method
+
+<!-- page: 17 -->
+
+## DANH SÁCH CÁC HÌNH
+
+Hình 3.1. Thuật toán Cuckoo Search cổ điển (CCSA)
+
+Hình 3.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán tối ưu
+
+Hình 3.3. Thuật toán Cuckoo Search cải biên
+
+Hình 3.4. Lưu đồ giải thuật áp dụng MCSA cho các bài toán tối ưu
+
+Hình 3.5. Biểu đồ trứng của CCSA và ASCSA
+
+Hình 3.6. Các nghiệm ở các vòng lặp đầu quá trình tìm kiếm
+
+Hình 3.7. Các nghiệm ở các vòng lặp cuối quá trình tìm kiếm
+
+Hình 3.8. Xác định phương thức tạo nghiệm tối ưu
+
+Hình 3.9. Thuật toán ASCSA
+
+Hình 3.10. Lưu đồ giải thuật áp dụng ASCSA cho các bài toán tối ưu
+
+Hình 3.11. Lưu đồ giải thuật áp dụng ALHN cho các bài toán tối ưu
+
+Hình 4.1. Đặc tính hàm chi phí khi xét và không xét hiệu ứng xả van
+
+Hình 4.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán FH-ST-HTS
+
+Hình 4.3. Lưu đồ giải thuật áp dụng MCSA cho bài toán FH-ST-HTS
+
+Hình 4.4. Lưu đồ giải thuật áp dụng ASCSA cho bài toán FH-ST-HTS
+
+Hình 4.5. Lưu đồ giải thuật áp dụng ALHN cho bài toán FH-ST-HTS
+
+Hình 4.6. Đặc tính hội tụ các phương pháp CSA cho hệ thống 1
+
+Hình 4.7. Đặc tính hội tụ phương pháp ALHN cho hệ thống 1
+
+Hình 4.8. Đặc tính hội tụ các phương pháp CSA cho hệ thống 2
+
+Hình 4.9. Đặc tính hội tụ phương pháp ALHN cho hệ thống 2
+
+Hình 4.10. Đặc tính hội tụ các phương pháp CSA cho hệ thống 6
+
+Hình 4.11. Đặc tính hội tụ các phương pháp CSA cho hệ thống 7
+
+Hình 4.12. Đặc tính hội tụ cho hệ thống 8 với điều độ kinh tế
+
+Hình 4.13. Đặc tính hội tụ cho hệ thống 8 với điều độ phát thải
+
+Hình 5.1. Lưu đồ giải thuật áp dụng CCSA cho bài toán RC-FH-ST-HTS
+
+Hình 5.2. Lưu đồ giải thuật áp dụng MCSA cho bài toán RC-FH-ST-HTS
+
+Hình 5.3. Lưu đồ giải thuật áp dụng ASCSA cho bài toán RC-FH-ST-HTS
+
+Hình 5.4. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 1
+
+Hình 5.5. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 2
+
+Hình 6.1. Một hệ thống các hồ thủy điện bậc thang
+
+Hình 6.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán xem xét
+
+Hình 6.3. Lưu đồ giải thuật áp dụng MCSA cho bài toán xem xét
+
+Hình 6.4. Lưu đồ giải thuật áp dụng ASCSA cho bài toán xem xét
+
+Hình 6.5. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 1
+
+Hình 6.6. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 2
+
+Hình 6.7. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 3
+
+Hình 6.8. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 4
+
+Hình 7.1. Lưu đồ giải thuật áp dụng CCSA cho bài toán HTOPF
+
+Hình 7.2. Lưu đồ giải thuật áp dụng MCSA cho bài toán HTOPF
+
+<!-- page: 18 -->
+
+Hình 7.3. Lưu đồ giải thuật áp dụng ASCSA cho bài toán HTOPF
+
+Hình 7.4. Lưới IEEE 30 nút
+
+Hình 7.5. Đặc tính hội tụ của các phương pháp CSA cho lưới IEEE 30 nút.
+
+Hình 7.6. Đặc tính hội tụ của các phương pháp CSA cho lưới IEEE 118 nút
+
+Hình 8.1. Tóm tắt nghiên cứu của luận án
+
+<!-- page: 19 -->
+
+## DANH SÁCH CÁC BẢNG
+
+Bảng 3.1. Các nghiệm mới được tạo từ CCSA và ASCSA sử dụng Lévy flights ở vòng lặp thứ hai. Bảng 3.2. Các hàm toán Benchmark Bảng 3.3. So sánh kết quả hàm Rosenbrock Bảng 3.4. So sánh kết quả hàm Sphere Bảng 3.5. So sánh kết quả hàm Griewangk Bảng 3.6. So sánh kết quả hệ thống HTS 1 Bảng 3.7. So sánh kết quả hệ thống HTS 2 Bảng 4.1. Chọn lựa thông $s \hat { 0 }$ điều khiển của các phương pháp CSA Bảng 4.2. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của CCSA Bảng 4.3. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của MCSA Bảng 4.4. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của ASCSA Bảng 4.5. Ảnh hưởng của ε lên kết quả của ASCSA Bảng 4.6. Ảnh hưởng của G<sub>max</sub> lên kết quả của CCSA Bảng 4.7. Ảnh hưởng của G<sub>max</sub> lên kết quả của MCSA Bảng 4.8. Ảnh hưởng của G<sub>max</sub> lên kết quả của ASCSA Bảng 4.9. Ảnh hưởng của N<sub>p</sub> lên kết quả của CCSA Bảng 4.10. Ảnh hưởng của N<sub>p</sub> lên kết quả của MCSA Bảng 4.11. Ảnh hưởng của N<sub>p</sub> lên kết quả của ASCSA Bảng 4.12. Ảnh hưởng của tỉ lệ trứng lên kết quả của MCSA Bảng 4.13. So sánh kết quả cho hệ thống 1 Bảng 4.14. So sánh kết quả cho hệ thống 2 Bảng 4.15. So sánh kết quả cho hệ thống 3, 4 và 5 Bảng 4.16. So sánh kết quả cho 5 hệ thống đầu tiên Bảng 4.17. So sánh kết quả giữa các phương pháp CSA cho hệ thống 6 Bảng 4.18. So sánh kết quả giữa các phương pháp CSA cho hệ thống 7 Bảng 4.19. So sánh kết quả cho hệ thống 6 Bảng 4.20. So sánh kết quả cho hệ thống 7 Bảng 4.21. So sánh thời gian quy đổi cho hệ thống 6 và 7 Bảng 4.22. Cài đặt thông số các phương pháp CSA cho hệ thống 1 Bảng 4.23. So sánh điều độ phát thải cho hệ thống 1 Bảng 4.24. Tập nghiệm không trội của ALHN và CCSA cho hệ thống 1 Bảng 4.25. Tập nghiệm không trội của MCSA và ASCSA cho hệ thống Bảng 4.26. So sánh điều độ đa mục tiêu cho các phương pháp khác nhau Bảng 4.27. So sánh kết quả cho hệ thống thứ nhất Bảng 4.28. Cài đặt thông số điều khiển cho hệ thống 3, 4 và 5 Bảng 4.29. So sánh điều độ kinh tế cho hệ thống 3, 4 và 5 Bảng 4.30. So sánh điều độ phát thải cho hệ thống 3, 4 và 5 Bảng 4.31. So sánh điều độ đa mục tiêu cho hệ thống 3, 4 và 5
+
+<!-- page: 20 -->
+
+Bảng 4.32. So sánh thời gian tính toán cho hệ thống 3, 4 và 5 Bảng 4.33. Lựa chọn thông số cho hệ thống 8 Bảng 4.34. So sánh kết quả cho hệ thống 8 Bảng 5.1. Kết quả của CCSA cho trường hợp chọn biến điều khiển thứ nhất Bảng 5.2. Kết quả của CCSA cho trường hợp chọn biến điều khiển thứ hai Bảng 5.3. Kết quả của CCSA khi sử dụng phương pháp khởi tạo ngẫu nhiên Bảng 5.4. Kết quả so sánh giữa ba phương pháp CSA cho hệ thống 1 Bảng 5.5. So sánh kết quả giữa các phương pháp cho hệ thống 1 Bảng 5.6. Kết quả đạt được của ASCSA cho hệ thống 2 Bảng 5.7. So sánh kết quả đạt được cho hệ thống 2 Bảng 6.1. Cài đặt thông số các phương pháp CSA cho hệ thống 1 và 2 Bảng 6.2. So sánh kết quả giữa các phương pháp CSA cho hệ thống 1 và 2 Bảng 6.3. So sánh kết quả giữa các phương pháp cho hệ thống 1 Bảng 6.4. So sánh kết quả giữa các phương pháp cho hệ thống 2 Bảng 6.5. So sánh thời gian quy đổi giữa các phương pháp cho hệ thống 1 và 2 Bảng 6.6. So sánh kết quả giữa các phương pháp CSA cho hệ thống 3 và 4 Bảng 6.7. So sánh kết quả giữa các phương pháp cho hệ thống 3 Bảng 6.8. So sánh kết quả giữa các phương pháp cho hệ thống 4 Bảng 6.9. So sánh thời gian quy đổi cho hệ thống 3 và 4 Bảng 7.1. Giới hạn công suất tác dụng và phản kháng máy phát Bảng 7.2. Hệ số hàm chi phí Bảng 7.3. Hệ số hàm xả nước và thể tích nước sử dụng Bảng 7.4. Thông số tụ bù Bảng 7.5. Giới hạn truyền tải đường dây Bảng 7.6. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút Bảng 7.7. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút Bảng 7.8. Ảnh hưởng của $\mathrm { P _ { a } }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút Bảng 7.9. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút Bảng 7.10. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút Bảng 7.11. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút Bảng 7.12. Ảnh hưởng của $\mathrm { N _ { p } }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút Bảng 7.13. Ảnh hưởng của $\mathrm { N _ { p } }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút Bảng 7.14. Ảnh hưởng của $\mathrm { N _ { p } }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút Bảng 7.15. So sánh kết quả cho lưới IEEE 30 nút Bảng 7.16. So sánh kết quả cho lưới IEEE 118 nút. Bảng 7.17. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của CCSA cho hệ thống IEEE 118 nút Bảng 7.18. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của MCSA cho hệ thống IEEE 118 nút Bảng 7.19. Ảnh hưởng của $\mathbf { G } _ { \mathrm { m a x } }$ lên kết quả của ASCSA cho hệ thống IEEE 118 nút
+
+<!-- page: 21 -->
+
+## THUẬT NGỮ
+
+| $\oplus$ | Phép nhân |
+| --- | --- |
+| $\alpha_{si},\beta_{si},\gamma_{si},\eta_{si},\text{ và } \delta_{si}$ | Các hệ số hàm khí thải của nhà máy nhiệt điện $i$. |
+| $\Delta X_{d}^{new}$ | Khoảng thay đổi cho nghiệm mới $d$ |
+| $\psi_1,\psi_2$ | Trọng số tương ứng với hàm chi phí và khí thải |
+| $\Delta Q_{ci}$ | Công suất mỗi bộ tụ tại nút $i$ |
+| $a_{hj},b_{hj},c_{hj}$ | Hệ số hàm xả nước nhà máy thủy điện thứ $j$ |
+| $a_{si},b_{si},c_{si}$ | Hệ số hàm chi phí nhiệt điện thứ $i$ |
+| $B_{ij},B_{0i},B_{00}$ | Hệ số hàm tổn thất công suất truyền tải |
+| $C_{1hj},C_{2hj},C_{3hj}$ | Hệ số hàm công suất thủy điện thứ $j$ |
+| $C_{4hj},C_{5hj},C_{6hj}$ | Hệ số hàm công suất thủy điện thứ $j$ |
+| $e_{si},f_{si}$ | Hệ số hàm chi phí nhiệt điện thứ $i$ khi xét hiệu ứng xả van |
+| $F_1,F_2$ | Hàm chi phí và hàm phát thải |
+| $F_i$ | Hàm chi phí tổ máy thứ $i$ |
+| $FT_d$ | Giá trị hàm fitness nghiệm $d$ |
+| $FT_r$ | Giá trị hàm fitness nghiệm ngẫu nhiên $r$ |
+| $G$ | Vòng lập hiện tại |
+| $Gbest$ | Nghiệm tốt nhất |
+| $G_{max}$ | Số vòng lặp lớn nhất |
+| $i$ | Chỉ số nhiệt điện thứ $i$ |
+| $I_{j,m}$ | Lưu lượng nước về hồ thủy điện $j$ ở khoảng $m$ |
+| $j$ | Chỉ số thủy điện thứ $j$ |
+| $K$ | Hệ số thực thi phát hiện trứng lạ |
+| $K_h$ | Hệ số phạt cho công suất thủy điện |
+| $K_Q$ | Hệ số phạt cho lưu lượng xả thủy điện ở khoảng $M$ |
+| $K_s$ | Hệ số phạt cho nhà máy nhiệt điện cân bằng |
+| $K_V$ | Hệ số phạt cho thể tích hồ thủy điện |
+| $M$ | Số khoảng thời gian tối ưu |
+| $N_1$ | Số nhà máy nhiệt điện |
+| $N_2$ | Số nhà máy thủy điện |
+| $N_g$ | Tổng số nhà máy nhiệt điện và thủy điện |
+| $N_{ci}$ | Số bộ tụ được chọn làm việc |
+| $N_P$ | Dân số (Tập hợp nghiệm) |
+| $N_{tk}$ | Nắc phân áp thứ k |
+| $Nu$ | Số hồ thủy điện phía trên hồ đang xét |
+| $P_a$ | Xác suất phát hiện trứng lạ |
+| $P_{D,m}$ | Công suất tải ở khoảng $m$ |
+| $P_{di},Q_{di}$ | Công suất tác dụng và phản kháng tải yêu cầu tại nút $i$ |
+| $P_{gi},Q_{gi}$ | Công suất tác dụng và phản kháng của máy phát đặt tại nút $i$. |
+| $P_{hj,m}$ | Công suất phát thủy điện thứ $j$ ở khoảng thời gian thứ $m$ |
+| $P_{hj,max},P_{hj,min}$ | Công suất lớn nhất và nhỏ nhất của thủy điện $j$ |
+| $P_{L,m}$ | Tồn thất công suất truyền tải ở khoảng $m$ |
+| $P_{s1md}$ | Công suất tổ máy nhiệt điện cân bằng |
+
+<!-- page: 22 -->
+
+| $P_{si,m}$ | Công suất phát nhiệt điện thứ $i$ ở khoảng thời gian thứ $m$ |
+| --- | --- |
+| $P_{si,max}, P_{si,min}$ | Công suất lớn nhất và nhỏ nhất của nhiệt điện $i$ |
+| $P_{si,md}$ | Công suất tổ máy nhiệt điện thứ $i$ tại khoảng thứ $m$ cho nghiệm thứ $d$ |
+| $Q_{j,m}$ | Tổng lưu lượng xả trong $t_m$ giờ ở khoảng thứ $m$ của thủy điện $j$ ($m^3/t_m$ giờ) |
+| $q_{j,m,d}$ | Lưu lượng xả mỗi giờ của thủy điện thứ $j$ tại khoảng $m$ của nghiệm thứ $d$ ($m^3/giò$) |
+| $Q_{j,min}, Q_{j,max}$ | Tổng lưu lượng xả lớn nhất và nhỏ nhất trong $t_m$ giờ của thủy điện thứ $j$ trong khoảng $m$ ($m^3/t_m$ giờ) |
+| $q_{j,min}, q_{j,max}$ | Lưu lượng xả nhỏ nhất và lớn nhất mỗi giờ qua turbine ($m^3/giò$) |
+| $q_{j,m}$ | Lưu lượng xả mỗi giờ ở khoảng thứ $m$ của thủy điện $j$ ($m^3/giò$) |
+| $q_{j,M,d}$ | Lưu lượng xả mỗi giờ của nhà máy thủy điện $j$ ở khoảng $M$ cho nghiệm thứ $d$ ($m^3/giò$) |
+| rand | Số ngẫu nhiên thuộc khoảng [0, 1] |
+| Randper | Phép xáo trộn ngẫu nhiên |
+| $rand_x, rand_y$ | Các biến được phân bố ngẫu nhiên |
+| $RN$ | Giá trị ngẫu nhiên có giá trị từ 0 đến 1 |
+| $S_{j,m}$ | Lưu lượng thẩm quá đập hồ thủy điện $j$ ở khoảng thứ $m$ |
+| $t_m$ | Thời gian cho mỗi khoảng thứ $m$ |
+| $t_M$ | Thời gian của khoảng $M$ |
+| $V_{j,end}$ | Thể tích ở cuối thời gian hoạch định của hồ thủy điện $j$ |
+| $V_{j,initial}$ | Thể tích ban đầu của hồ thủy điện $j$ |
+| $V_{j,m}$ | Thể tích hồ chứa $j$ ở khoảng $m$ |
+| $V_{j,min}, V_{j,max}$ | Thể tích nhỏ nhất và lớn nhất của hồ thủy điện $j$ |
+| $Xbest_d$ | Nghiệm cực trị địa phương thứ $d$ |
+| $X_d$ | Nghiệm cũ thứ $d$ |
+| $X_d^{dis}$ | Nghiệm mới được tạo ra theo cơ chế phát hiện trứng lạ |
+| $X_d^{new}$ | Nghiệm mới thứ $d$ |
+| $X_{r1}, X_{r2}$ | Xáo trộn ngẫu nhiên lần 1 và 2 các nghiệm hiện tại |
+| $\alpha$ | Hệ số cập nhật |
+| $\beta$ | Phép phân bổ chuẩn |
+| $\tau_{i,j}$ | Thời gian nước chảy từ hồi phía trên xuống hồ $j$ phía dưới |
+| $\varphi$ | Hệ số vàng |
+
+<!-- page: 23 -->
+
+## CHƯƠNG 1: GIỚI THIỆU
+
+## 1.1. Đặt Vấn Đề
+
+Hệ thống điện cơ bản gồm các nhà máy nhiệt điện và thủy điện kết nối với nhau qua hệ thống lưới truyền tải để phát điện đến các phụ tải lớn như khu công nghiệp, nhà máy, khu dân cư, .v.v. Để có thể chạy được các tổ máy phát, nhà máy nhiệt điện sử dụng nhiên liệu hóa thạch như khí, than và dầu rất đắt đỏ và ngày càng cạn kiệt trong khi đó các nhà máy thủy điện sử dụng nguồn nước từ các dòng sông tự nhiên với giá thành nhiên liệu rất nhỏ so với nhà máy nhiệt điện nên có thể bỏ qua. Sự khác biệt giữa các nhà máy nhiệt điện và thủy điện không chỉ ở nhiên liệu mà đặc tính còn khác nhau rất nhiều. Thật vậy, nhà máy nhiệt điện phải mất từ vài chục phút đến vài giờ để có thể chuyển từ quá trình khởi động đến phát công suất định mức nhưng nhà máy thủy điện chỉ mất khoảng vài phút đã có thể đạt được công suất tối đa. Bên cạnh đó, trong quá trình làm việc với phụ tải biến động theo thời gian, nhà máy thủy điện cũng vượt trội hơn nhà máy nhiệt điện khi có thể thay đổi gần như tức thời. Quá trình tăng giảm công suất của nhà máy nhiệt điện đều làm hao phí nhiên liệu cho nên cần hạn chế việc giảm và tăng công suất với số lượng lớn cũng như quá trình dừng máy hoàn toàn. Xét trong khoảng thời gian một ngày, một tuần hoặc có thể lên đến một năm, nhiên liệu tại các nhà máy nhiệt điện có thể xem như dồi dào và vấn đề chủ yếu là giảm thiểu chi phí nhiên liệu phát điện thấp nhất có thể. Ngược lại, thủy điện phải đối mặt với kế hoạch phát điện hiệu quả sao cho nhà máy có thể làm việc trong một năm mà vẫn có đủ nước mặc dù mùa khô có thể kéo dài đến nữa thời gian trong năm. Như vậy có thể thấy, việc thay đổi công suất trong thời gian ngắn nên được đảm nhiệm bởi nhà máy thủy điện trong khi đó quá trình đảm bảo an ninh năng lượng trong năm nên được gánh bởi nhà máy nhiệt điện. Hơn nữa, chi phí phát điện từ nhà máy nhiệt điện cao hơn rất nhiều so với thủy điện và nếu càng sử dụng lãng phí nhiên liệu hóa thạch thì sẽ gây ra thiếu năng lượng trầm trọng trong tương lai trong khi đó nguồn nước tại các hồ thủy điện nếu không sử dụng hiệu quả phải bị xả bỏ. Rõ ràng nhiên liệu nhiệt điện có thể dự trữ trong khi nguồn nước phải xả bỏ vào mùa mưa và đặc biệt khi có lũ lụt. Dùng nguồn nước xả bỏ để phát điện thay cho chi phí nhiên liệu hóa thạch đắt đỏ là điều hết sức kinh tế của hệ thống thủy nhiệt điện. Từ phân tích trên cho thấy rằng kết hợp các nhà máy thủy điện và nhiệt điện thành một hệ thống là điều thiết yếu và lập kế hoạch phối hợp phát điện cho hệ thống thủy nhiệt điện là bài toán kinh tế và an ninh nên làm.
+
+Trong quá trình làm việc, các nhà máy nhiệt điện bị ràng buộc bởi các vấn đề liên quan đến giới hạn máy phát trong khi đó thủy điện không chỉ bị ràng buộc bởi giới hạn tổ máy phát mà còn phải thỏa mãn các yêu cầu về hồ thủy điện như thể tích nước cho phép sử dụng trong thời gian hoạch định, giới hạn lưu lượng xả tức thời qua turbine, giới hạn thể tích nước trong hồ, v.v. Các ràng buộc liên quan đến nguồn nước trong hồ thủy điện cũng như cách xác định công suất phát của thủy điện phụ thuộc vào mô hình
+
+<!-- page: 24 -->
+
+thủy điện được xét đến trong từng bài toán nghiên cứu khác nhau.
+
+Tính đến thời điểm hiện tại, đã có rất nhiều phương pháp cổ điển, phương pháp mạng neuron, phương pháp mờ và các phương pháp meta-heuristic đã được áp dụng thành công cho các bài toán điều độ hệ thống thủy nhiệt điện tối ưu. Các phương pháp giải không ngừng được cải tiến và phát minh để có thể giải được các bài toán phức tạp hơn về hàm mục tiêu, về ràng buộc và về độ lớn của hệ thống. Bên cạnh đó, các mô hình bài toán cũng được cải tiến dần dần nhằm tiến đến bài toán thực tế trong cuộc sống. Từ đó, việc áp dụng các phương pháp thông minh nhân tạo để giải các bài toán phối hợp hệ thống thủy nhiệt điện được nghiên cứu trong luận án này.
+
+## 1.2. Các Bài Toán Nghiên Cứu
+
+Trong luận án này, năm bài toán phối hợp hệ thống thủy nhiệt điện được xem xét để áp dụng các thuật toán tối ưu nhằm tìm được lời giải với hàm mục tiêu là chi phí phát điện cũng như khí phát thải là nhỏ nhất. Năm bài toán được giới thiệu lần lượt như sau:
+
+1) Phối hợp hệ thống thủy nhiệt điện ngắn hạn với chiều cao cột nước không đổi và bỏ qua thể tích hồ chứa (SO-FH-ST-HTS)
+
+Ở bài toán này, chiều cao cột nước ở các hồ thủy điện được xem như là không đổi trong toàn thời gian hoạch định phát điện tối ưu và lưu lượng xả qua turbine được xem như là hàm số bậc hai theo công suất phát và các hệ số xả nước. Các ràng buộc khác liên quan đến thể tích hồ chứa như thể tích nước trong hồ ở đầu và cuối quá trình hoạch định, giới hạn lớn nhất và nhỏ nhất của hồ trong toàn thời gian hoạch định không được xét đến. Thay vào đó, thủy điện sẽ được giới hạn bởi lưu lượng xả qua turbine sao cho công suất thủy điện nằm trong giới hạn máy phát và tổng thể tích nước sử dụng trong toàn thời gian hoạch định phải bằng giá trị xác định cho phép trước đó. Bên cạnh đó, ràng buộc cân bằng công suất trên hệ thống có xét đến tổn thất truyền tải đường dây cũng được xét đến.
+
+2) Phối hợp hệ thống thủy nhiệt điện ngắn hạn với chiều cao cột nước không đổi và xét thể tích hồ chứa (RC-FH-ST-HTS)
+
+Giống như bài toán trên, trong mô hình bài toán này, chiều cao cột nước ở các hồ thủy điện vẫn được xem như là không đổi trong toàn thời gian hoạch định và lưu lượng xả qua turbine được xem như là hàm số bậc hai theo công suất phát và các hệ số xả nước. Tuy nhiên, các ràng buộc khác liên quan đến thể tích hồ chứa như thể tích nước trong hồ ở đầu và cuối quá trình hoạch định, giới hạn lớn nhất và nhỏ nhất của hồ trong toàn thời gian hoạch định và tính liên tục của nguồn nước trong hồ đều được xét đến. Bên cạnh đó, giới hạn lưu lượng xả qua turbine và tổn thất truyền tải đường dây cũng được
+
+<!-- page: 25 -->
+
+xét đến.
+
+3) Phối hợp hệ thống thủy nhiệt điện ngắn hạn với chiều cao cột nước biến đổi và xét hệ thống hồ thủy điện bậc thang (VH-ST-HTS)
+
+Ở bài toán này, chiều cao cột nước hồ thủy điện được xem như thay đổi theo thời gian trong quá trình vận hành hồ chứa phát điện tối ưu kết hợp với các nhà máy nhiệt điện. Công suất thủy điện là hàm số theo thể tích hồ chứa và lưu lượng xả qua turbine. Mô hình bài toán này phức tạp hơn hai bài toán đề cập trên do xét đến nhiều ràng buộc thủy điện và hệ thống các hồ thủy điện bậc thang có ảnh hưởng về lưu lượng nước. Lưu lượng nước xả của hồ thủy điện phía trên trở thành lưu lượng về của hồ thủy điện phía dưới có xét đến thời gian chảy của nước. Các ràng buộc hồ chứa được xét đến như ràng buộc thể tích ở đầu và cuối thời gian hoạch định, giới hạn thể tích lớn nhất và nhỏ nhất.
+
+4) Phối hợp hệ thống thủy nhiệt điện ngắn hạn đa mục tiêu với chiều cao cột nước cố định và bỏ qua thể tích hồ chứa (MO-FH-ST-HTS)
+
+Bài toán phối hợp tối ưu hệ thống thủy nhiệt điện đa mục tiêu xem xét giảm thiểu cả chi phí lẫn phát thải từ nhà máy nhiệt điện. Những giả thuyết và ràng buộc của bài toán đa mục tiêu ngắn hạn với chiều cao cột nước không đổi bỏ qua thể tích hồ chứa cũng được xem xét như bài toán đơn mục tiêu.
+
+## 5) Phân bố công suất tối ưu hệ thống thủy nhiệt điện (HTOPF)
+
+Phân bố công suất tối ưu hệ thống thủy nhiệt điện (HTOPF) là một bài toán lớn và phức tạp hơn rất nhiều so với bài toán phân bố công suất (OPF) và bài toán phối hợp các nhà máy thủy nhiệt điện (HTS). Bài toán này là sự kết hợp của hai bài toán OPF và HTS trong đó các ràng buộc từ hai bài toán đều được xét đến một cách chi tiết. Sự phức tạp của bài toán OPF về số lượng ràng buộc trên lưới truyền tải như khả năng truyền tải của đường dây, điện áp tại các thanh cái, cài đặt đầu phân áp, xác định dung lượng tụ bù và công suất phản kháng của các máy phát trong khi đó độ phức tạp của bài toán HTS thuộc về ràng buộc thủy lực ở các hồ thủy điện cùng với nhiều khoảng thời gian được xét đến. Như vậy lời giải tối ưu cho bài toán này phải đảm bảo các giá trị trên lưới truyền tải trong tất cả các khoảng thời gian phải đảm bảo và lưu lượng xả cũng như tổng thể tích nước sử dụng tại các hồ thủy điện cũng không được sai lệch. Rõ ràng bài toán này rất phức tạp và hạn chế các nghiên cứu trên thế giới tính đến thời điểm này. Các nghiên cứu với đa phần từ nhưng năm 1980 và 1990 với mục tiêu là có thể áp dụng các phương pháp cổ điển để tìm ra lời giải khả thi không vi phạm ràng buộc hơn là so sánh chi phí phát điện tại các nhà máy nhiệt điện. Từ đó, hai hệ thống điện IEEE 30 nút và IEEE 118 nút được cấp nguồn từ hệ thống thủy nhiệt điện với hàm mục tiêu cực tiểu chi phí phát điện được thực hiện với sự áp dụng của các phương pháp CCSA, MCSA và ASCSA.
+
+<!-- page: 26 -->
+
+## 1.3. Mục Tiêu Nghiên Cứu
+
+Các mục tiêu chính của luận án như sau:
+
+ Áp dụng các thuật toán Cuckoo search cổ điển (CCSA), Cuckoo search cải biên (MCSA) và mạng Hopfield Lagrange tăng cường (ALHN) giải các bài toán phối hợp tối ưu hệ thống thủy nhiệt điện.
+
+ Xây dựng thuật toán Cuckoo search chọn lọc thích nghi (ASCSA) và áp dụng thành công cho các bài toán phối hợp tối ưu hệ thống thủy nhiệt điện.
+
+Đánh giá tính hiệu quả các phương pháp CCSA, MCSA, ASCSA và ALHN khi áp dụng cho các bài toán phối hợp hệ thống thủy nhiệt điện dựa trên kết quả hàm mục tiêu, tính khả thi của nghiệm tối ưu và thời gian tính toán so với các phương pháp khác.
+
+ Đề xuất ứng dụng một cách phù hợp với tính hiệu quả của từng phương pháp cho từng bài toán và các hệ thống thực tế.
+
+## 1.4. Các Đóng Góp Của Luận Án
+
+Những đóng góp chính của luận án như sau:
+
+Xây dựng thuật toán mới Cuckoo search chọn lọc thích nghi với các cải biên trên thuật toán Cuckoo search cổ điển và áp dụng thành công thuật toán cho các bài toán phối hợp tối ưu hệ thống thủy nhiệt điện.
+
+ Xây dựng thành công bài toán phân bố công suất tối ưu hệ thống thủy nhiệt điện.
+
+Áp dụng thành công các thuật toán CCSA, MCSA và ASCSA cho các bài toán phân bố công suất tối ưu hệ thống thủy nhiệt điện có xét đến ràng buộc lưới truyền tải và ràng buộc hệ thống nhà máy thủy nhiệt điện.
+
+ Đề xuất cách áp dụng hiệu quả nhất các phương pháp cho từng bài toán cụ thể. Cách chọn biến điều khiển và cách giải quyết các ràng buộc.
+
+## 1.5. Giới Hạn Đề Tài
+
+Phạm vi nghiên cứu của đề tài như sau:
+
+Hàm chi phí nhiên liệu của các nhà máy nhiệt điện được biểu diễn dưới dạng các hàm bậc hai hoặc hàm không khả vi. Các hàm chi phí trích dẫn từ các nghiên cứu trước và không cần xây dựng lại trong luận án.
+
+ Thời gian phối hợp tối ưu hệ thống từ một ngày đến một tuần.
+
+ Ràng buộc hệ thống có xét đến cân bằng công suất với tổn thất truyền tải trên đường dây.
+
+<!-- page: 27 -->
+
+ Lưới điện IEEE 30 nút và IEEE 118 nút được sử dụng với các ràng buộc trên lưới được xét đến như giới hạn truyền tải đường dây, điện áp các nút, cài đặt đầu phân áp, chọn tụ bù, .v.v.
+
+ Xét đến ràng buộc liên quan đến hồ thủy điện như lưu lượng xả, thể tích hồ chứa, thể tích nước sử dụng, thời gian chảy của nước được đặc trưng theo từng bài toán cụ thể.
+
+## 1.6. Bố Cục Của Luận Án
+
+Luận án được bố cục bởi 8 chương chính như sau:
+
+Chương 1: Giới thiệu
+
+Chương 2: Tổng quan
+
+Chương 3: Các phương pháp Cuckoo Search và mạng Hopfield Lagrange tăng cường
+
+Chương 4: Áp dụng các phương pháp thông minh nhân tạo điều độ tối ưu hệ thống thủy nhiệt điện ngắn hạn xét chiều cao cột nước cố định và bỏ qua ràng buộc thể tích hồ chứa
+
+Chương 5: Áp dụng các phương pháp Cuckoo Search điều độ hệ thống thủy nhiệt điện có xét đến thể tích hồ chứa
+
+Chương 6: Áp dụng các phương pháp Cuckoo Search điều độ tối ưu hệ thống thủy nhiệt điện xét chiều cao cột nước biến đổi
+
+Chương 7: Áp dụng các phương pháp Cuckoo Search phân bố công suất tối ưu cho hệ thống thủy nhiệt điện
+
+Chương 8: Tóm tắt
+
+<!-- page: 28 -->
+
+# CHƯƠNG 2: TỔNG QUAN
+
+## 2.1. Giới Thiệu
+
+Rất nhiều phương pháp tối ưu từ các thuật toán cổ điển đến các thuật toán hiện đại đã được áp dụng nhằm điều độ tối ưu hệ thống thủy nhiệt điện. Trong chương này, tổng quan về các bài toán điều độ hệ thống thủy nhiệt điện và các phương pháp đã áp dụng được trình bày.
+
+## 2.2. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cố Định Bỏ Qua Các Ràng Buộc Về Hồ Chứa
+
+Trong nhiều năm qua, đã có nhiều phương pháp tối ưu được áp dụng để điều độ tối ưu hệ thống thủy nhiệt điện ngắn hạn với chiều cao cột nước cố định bỏ qua các ràng buộc về hồ chứa. Cụ thể các phương pháp được áp dụng ở các công trình nghiên cứu như sau:
+
+Newton-Raphson [1-2]
+
+Powell’s sybrid [1]
+
+\- Newton-Raphson dựa vào phân loại nhân tử Lagrange [3]
+
+\- Lagrange dựa vào tuyến tính hóa phương trình kết hợp (LCEL) [4]
+
+Lamda-gamma (λ-γ ) [2]
+
+\- Lagrangian relaxation (LR) [5]
+
+Hopfield neural networks (HNN) [6]
+
+\- Evolutionary programming (EP) [7-8]
+
+Artificial immune system (AIS) [8]
+
+Particle swarm optimization (PSO) [8]
+
+Differential evolutionary (DE) [8]
+
+Modified Bacterial Foraging (MBFA) [9]
+
+\- Gen dựa vào tối ưu gamma (OGB-GA) [10]
+
+\- Fast Genetic (FGA) [11]
+
+\- Predator prey optimization (PPO) [12]
+
+Trong số các phương pháp này, phương pháp ở các nghiên cứu [1-5] là phương pháp cổ điển và các phương pháp khác ở các nghiên cứu [6-12] thuộc các phương pháp thông minh nhân tạo. Nhóm phương pháp đầu tiên chủ yếu dựa vào Newton Raphson hoặc lý thuyết tối ưu Lagrange cổ điển hoặc cải tiến của hai phương pháp cổ điển này. Trong khi đó, nhóm phương pháp thứ hai tìm kiếm nghiệm tối ưu dưa vào một dân số xác định trước. Mặt khác, các phương pháp ở nhóm thứ nhất còn được gọi là các phương pháp tiền định, tìm kiếm nghiệm tối ưu dựa vào một đường tìm kiếm duy nhất với nghiệm ban đầu có chất lượng thấp nhất với hàm mục tiêu lớn nhất và các vi phạm ràng buộc gần như cực đại. Các thuật toán tiền định chỉ có duy nhất một nghiệm tối ưu ở từng vòng lặp và nghiệm này được cải thiện dần khi số vòng lặp tăng dần, và đạt được nghiệm tốt nhất có hàm mục tiêu và vi phạm ràng buộc nhỏ nhất ở vòng lặp cuối cùng. Chất lượng nghiệm tối ưu này bị ảnh hưởng bởi giá trị khởi tạo ban đầu của tiến trình tính toán nên
+
+<!-- page: 29 -->
+
+điểm khởi tạo ban đầu đối với các phương pháp tiền định rất quan trọng. Tiêu chuẩn dừng quá trình tìm kiếm của phương pháp tiền định dựa vào sai số lớn nhất được xác định ngay từ ban đầu bởi người lập trình. Thật vậy, khi sai số lớn nhất càng nhỏ thì nghiệm tối ưu càng chất lượng về hàm mục tiêu và vi phạm ràng buộc. Tuy nhiên, các phương pháp tiền định gặp khó khăn với việc giải quyết các bài toán có hàm mục tiêu và các ràng buộc không khả vi và khả năng ứng dụng cho các hệ thống lớn cũng bị giới hạn. Khác với các phương pháp tiền định, các phương pháp thông minh nhân tạo (ngoại trừ HNN [6]) khởi tạo một tập nghiệm ở thời điểm ban đầu của quá trình tìm kiếm. Các nghiệm này được tạo mới tại mỗi vòng lặp và chất lượng của chúng được đánh giá thông qua hàm thích nghi (fitness function) bao gồm giá trị của hàm mục tiêu cần được cực tiểu và lượng phạt do vi phạm các ràng buộc. Các phương pháp này dừng quá trình tìm kiếm dựa vào số vòng lặp tối đa được xác định từ trước và các nghiệm này có khả năng thỏa mãn tất cả các ràng buộc ngay cả khi số vòng lặp hiện tại nhỏ hơn số vòng lặp lớn nhất xác định trước rất nhiều. Tuy nhiên, đôi khi các nghiệm này cũng có khả năng rơi ra ngoài vùng làm việc khả thi mặc dù số vòng lặp lớn nhất đã đạt được. Các phương pháp này được cho là hiệu quả hơn so với các phương pháp tiền định khi nó có thể giải được các bài toán mà hàm mục tiêu và các ràng buộc phức tạp cũng như các hệ thống lớn được xét đến.
+
+Phương pháp Newton Raphson [1-2] ổn định về tính toán, hiệu quả và giải nhanh cho các phương trình không tuyến tính. Do đó, nó là một tiềm năng lớn cho việc thực thi các bài toán tối ưu như điều độ kinh tế trong hệ thống thủy nhiệt điện. Tuy nhiên, phương pháp Newton Raphson chủ yếu phụ thuộc vào quá trình thành lập và lấy nghịch đảo ma trận Jacobi, làm cho phương pháp này bị hạn chế áp dụng cho các bài toán lớn. Phương pháp Newton Raphson được đánh giá là phương pháp yếu nhất bởi vì quá trình hội tụ có thể không thành công mặc dù hệ thống xem xét chỉ có một nhà máy thủy điện và một nhà máy nhiệt điện [3]. Ở phương pháp LCEL [4], phương trình kết hợp được tuyến tính hóa và được giải để tìm các ràng buộc nguồn nước có sẵn từ các tổ máy phát. Do đó, các nhân tử Lagrange tương ứng với ràng buộc nguồn nước được tách ra từ công suất của các tổ máy. Dựa vào nhân tử Lagrange của nguồn nước có thể tính được nhân tử Lagrange tương ứng với ràng buộc cân bằng công suất và cuối cùng công suất của các nhà máy thủy điện và nhiệt điện được tính toán như ở phương pháp Lambda-gama [2]. Các giá trị gama của các nhà máy thủy điện được chọn từ ban đầu và sau đó tiến trình lặp lambda được thực hiện để đạt được các giá trị công suất tại mỗi khoảng thời gian xem xét trong toàn bộ thời gian hoạch định. Phương pháp HNN [6] cũng là một phương pháp hiệu quả cho giải quyết các bài toán tối ưu. Để giải bài toán này, HNN xây dựng một hàm năng lượng bao gồm hàm chi phí bình phương, ràng buộc nguồn nước, ràng buộc cân bằng công suất và tổn thất công suất trên hệ thống điện. Yếu tố chính để giải quyết tất cả các ràng buộc và hội tụ nhanh đến nghiệm tối ưu của phương pháp HNN hoàn toàn phụ thuộc vào 4 nhân tử Lagrange tương ứng với 4 ràng buộc ở trên mà việc chọn giá trị cho 4 nhân tử này là một việc không dễ dàng. Do đó, HNN phải đối mặt với
+
+<!-- page: 30 -->
+
+hội tụ chậm và để có thể áp dụng được phương pháp này các ràng buộc của bài toán nghiên cứu phải được tuyến tính hóa [13-14].
+
+Cả GA và EP là các phương pháp tiến hóa để giải các bài toán tối ưu. Ở phương pháp GA, quá trình lai tạo và đột biến được yêu cầu nhằm đa dạng hóa các cá thể con. Ở phương pháp EP, quá trình cũng gần như tương tự và quá trình đột biến là một kỹ thuật quan trọng của EP nhằm tạo ra các nghiệm mới hiệu quả [13]. Hơn thế nữa, việc tạo ra nghiệm mới và chọn lọc ở EP lần lượt là quá trình đột biến và quá trình tranh đấu nhưng ở GA các thủ tục này phức tạp hơn bởi các quá trình tái sản xuất, lai tạo và chọn lọc. Do đó, EP thuận lợi hơn GA. DE cũng là một phương pháp tiến hóa với ba quá trình chính như đột biến, lai tạo và chọn lọc. Đột biến được sử dụng để tạo ra nghiệm mới và lai tạo là một kỹ thuật để giữ lại một dân số tốt cho quá trình tìm kiếm tiếp theo. Trong khi đó, chọn lọc được áp dụng để xác định nghiệm tốt nhất đến thời điểm hiện tại. Hiệu quả của đột biến và lai tạo chủ yếu phụ thuộc vào quá trình lựa chọn hai hệ số bao gồm hệ số đột biến và hệ số lai tạo, và quá trình lựa chọn ba nghiệm ngẫu nhiên cho quá trình đột biến. Giá trị của hệ số lai tạo được chọn từ 0 đến 1 nhưng giá trị lớn hơn nhiều, từ 0 đến 2 là vùng làm việc cho hệ số đột biến. Các phương pháp DE có khả năng tìm kiếm trong một không gian lớn; tuy nhiên, việc chọn giá trị cho hệ số đột biến và lai tạo là một công việc phức tạp và phải trải qua nhiều lần chạy chương trình cho nhiều giá trị khác nhau để tìm giá trị tốt nhất. AIS được phát triển năm 1998 dựa trên ý tưởng sinh sản vô tính, tăng trưởng và già hóa trong cơ thể con người. AIS bao gồm ba quá trình chính: tăng trưởng, đột biến và chọn lọc nhưng tăng trưởng và đột biến là hai bước chính để tạo ra các nghiệm mới. Trong đó, tăng trưởng được sử dụng để tạo ra các kháng thể và quá trình đột biến sử dụng các kết quả từ quá trình tăng trưởng để tạo ra các nghiệm mới. Ngoài ra, AIS còn sử dụng kỹ thuật loại bỏ các kháng thể già tương ứng với việc tránh hội tụ sớm đến nghiệm cực trị địa phương. Tính hiệu quả của AIS phụ thuộc vào quá trình đột biến và loại bỏ các kháng thể già. Do đó, việc chọn hệ số đột biến và hệ số loại bỏ các kháng thể già có ý nghĩa vô cùng quan trọng. AIS được cho là thuật toán dễ áp dụng với ít thông số điều khiển. Tuy nhiên, nhược điểm của AIS là ở quá trình loại bỏ các kháng thể già. Nếu quá trình loại bỏ không hiệu quả thì AIS dễ hội tụ sớm và đạt cực trị địa phương không mong muốn. AIS đã được áp dụng thành công giải bài toán tối ưu thủy nhiệt điện và so sánh với các phương pháp EP, DE, PSO đạt hiệu quả tốt hơn về chi phí sản xuất điện [8]. Ở nghiên cứu [8], DE, EP, PSO và AIS được kiểm tra trên hai hệ thống thủy nhiệt điện có xét đến hiệu ứng xả van (hàm chi phí không khả vi- non convex function). Để thực thi cho hai hệ thống này, dân số của AIS chỉ được chọn bằng một nửa giá trị của ba phương pháp kia trong khi số vòng lặp lớn nhất của các phương pháp là như nhau. Mặc dù vậy nhưng AIS vẫn đạt được chi phí thấp hơn so với các phương pháp khác. Thời gian tính toán thì các phương pháp này như nhau, khoảng một đến hai phút và được xem như hội tụ chậm. Như vậy cơ cấu làm việc của AIS khá chậm ở mỗi vòng lặp khi so với DE, EP và PSO. OGB-GA [10] là phiên bản cải tiến của GA để giải các bài toán HTS một cách hiệu quả. OGB-GA là sự kết hợp giữa lý thuyết tối ưu Lagrange và phương pháp GA cổ điển. Để áp dụng OGB-GA, trước tiên hàm
+
+<!-- page: 31 -->
+
+Lagrange được thành lập và lấy đạo hàm sau đó phương pháp GA được áp dụng để xác định các giá trị tối ưu của nhân tử Lagrange. Cuối cùng, các nhân tử Lagrange được thay thế vào phương trình kết hợp từ quá trình đạo hàm hàm Lagrange để tính công suất tối ưu của các nhà máy. Như vậy, phương pháp OGB-GA cũng phụ thuộc vào quá trình lấy đạo hàm của hàm Lagrange làm cho khả năng áp dụng của OGB-GA dừng lại ở các hệ thống có xét đến hiệu ứng xả van- hàm chi phí không khả vi. Phương pháp OGB-GA được kiểm tra ở nghiên cứu [10] và được đánh giá hiệu quả hơn so với phương pháp Lagrange và GA cổ điển.
+
+Nói chung hầu hết các phương pháp thông minh nhân tạo mà được áp dụng đều gặp phải quá trình hội tụ chậm đến cực trị toàn cục hoặc bị hạn chế với các bài toán có hàm mục tiêu không khả vi.
+
+## 2.3. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cố Định Xét Các Ràng Buộc Về Hồ Chứa
+
+Ở bài toán này, thể tích hồ thủy điện ở đầu quá trình và cuối thời gian hoạch định sẽ được xem xét cùng với các giới hạn lớn nhất và nhỏ nhất của hồ chứa. Bài toán này khá phức tạp so với bài toán bỏ qua ràng buộc thể tích ở trên; tuy nhiên, khá nhiều nghiên cứu quan tâm về bài toán này và đã áp dụng nhiều thuật toán nhằm đạt được kết quả tốt. Các phương pháp nghiên cứu được liệt kê như sau:
+
+Gradient search (GS) [2]
+
+Newton-Raphson [3]
+
+Simulated annealing (SA) [15]
+
+Evolutionary programming (EP) [16-18]
+
+Genetic algorithm (GA) [19]
+
+Fast EP (FEP) [20]
+
+Improved fast EP (IFEP) [20]
+
+\- Hybrid EP (HEP) [21]
+
+\- Particle Swarm Optimization [22]
+
+Improved Bacterial Foraging Algorithm (IBFA) [23]
+
+Self-Organizing Hierarchical PSO [24]
+
+Running Improved fast EP (RIFEP) [25]
+
+Improved PSO (IPSO) [26-27]
+
+Clonal selection algorithm (CS) [28]
+
+Fully-informed particle swarm optimization (FIPSO) [29]
+
+Các phương pháp được kể trên chủ yếu thuộc hai nhóm chính gồm nhóm phương pháp tiền định và nhóm meta heuristic. Nhóm tiền định bao gồm các phương pháp GS [2] và Newton Raphson [3]. Trong khi đó, nhóm meta heuristic bao gồm các phương pháp SA [15], GA [19], EP [16-18], [20-21], [25], IBFA [23], CSA [28]. Trong các phương pháp này, GS được cho là phương pháp kém hiệu quả nhất khi chỉ có thể áp dụng cho hệ thống có hàm công suất thủy điện cổ điển được thể hiện dưới dạng tuyến tính bậc hai [16]. Để giải bài toán HTS, đầu tiên GS xây dựng hàm Lagrange và sau đó lấy đạo hàm
+
+<!-- page: 32 -->
+
+riêng theo tất cả các biến. Do đó, GS phụ thuộc vào số lượng biến và số lượng ràng buộc của bài toán. Newton Raphson được cho là hiệu quả hơn GS khi áp dụng cho hệ thống một nhà máy thủy điện và một nhà máy nhiệt điện. Tuy nhiên Newton Raphson lại phụ thuộc vào quá trình lấy đạo hàm riêng và nghịch đảo của ma trận Jacobi. Với hệ thống càng lớn kích thước ma trận Jacobi càng lớn và khả năng giải quyết hệ thống này từ phương pháp Newton Raphson càng trở nên khó khăn.
+
+Ngược với các phương pháp tiền định, phương pháp ở nhóm thứ hai được áp dụng rộng rãi và thành công hơn cho các bài toán HTS có xét đến ràng buộc thể tích hồ chứa thủy điện. Mặc dù SA và GA có thể khắc phục được các hạn chế từ các phương pháp tiền định như hệ thống lớn và hàm chi phí không khả vi nhưng hai phương pháp này vẫn không được áp dụng rộng rãi bởi vì thời gian tính toán lớn và chất lượng lời giải không cao. Khả năng áp dụng của SA cho bài toán HTS phụ thuộc chủ yếu vào quá trình chọn nhiệt độ và quá trình làm mát ban đầu. Giá trị tối ưu của nhiệt độ không dễ để xác định khi giá trị của nó nằm trong một vùng vô cùng lớn từ 0 đến vô cùng. Trong khi đó tỷ lệ làm mát thì được sử dụng để giảm nhiệt độ và được tính toán dựa vào nhiệt độ. Nếu nhiệt độ được cài đặt bởi một giá trị lớn hệ thống thủy nhiệt điện sẽ làm việc tại một giá trị hàm mục tiêu khá cao và cực tiểu gần như không thể đạt được. Ngược lại, khi chọn giá trị quá nhỏ cho nhiệt độ thì hệ thống thủy nhiệt điện sẽ dễ rơi vào vùng có cực trị địa phương bởi vì không đủ năng lượng để thoát khỏi vùng cực trị địa phương hiện tại và đi đến vùng cực trị toàn cục. Bên cạnh đó, công việc quan trọng của thuật toán SA là phải điều chỉnh quá trình làm mát nhằm giúp hệ thống mát xuống từ từ, từ một nhiệt độ cao đến một nhiệt độ thấp hơn. Nhiệt độ ban đầu cao sẽ làm cho tỷ lệ làm mát lớn và dẫn đến nhiệt độ sẽ giảm nhanh. Do đó, khả năng hội tụ đến một cực trị toàn cục khi sử dụng SA cho một hệ thống lớn dường như không phải là một công việc dễ dàng. So sánh với SA và GA, PSO và EP đã được chứng minh hiệu quả hơn và được áp dụng rộng rãi hơn để đạt được các nghiệm có chất lượng tốt hơn và quá trình hội tụ nhanh hơn. Ở phương pháp EP [16-18], việc tạo ra các cá thể con chỉ từ phép tạo ra các biến ngẫu nhiên Gauss được sử dụng và hệ số kích thước được xem như là hằng số. Trong khi đó ở các phiên bản cải tiến EP ở nghiên cứu [20] và [25], số lượng cá thể con được tạo ra từ cá thể bố mẹ ban đầu nhờ sử dụng đột biến Gauss hoặc Cauchy cùng với việc sử dụng hệ số kích thước như là một biến số trong quá trình tìm kiếm. Phương pháp EP cải tiến này có thể cải thiện được chất lượng lời giải và tăng tốc quá trình hội tụ, hiệu quả hơn so với phương pháp cổ điển. Sự cải tiến của các phiên bản EP như FEP và IFEP ở [20] và HEP ở [21] đã không được chứng minh mặc dù tác giả đã phát biểu rằng phương pháp của họ hiệu quả hơn so với phương pháp EP cổ điển. Thật vậy, các nghiên cứu này chỉ xét một hệ thống thủy nhiệt điện gồm một nhà máy thủy điện và một nhà máy nhiệt điện được hoạch định trong 6 khoảng 12 giờ và hàm chi phí là một hàm bậc hai không xét đến hiệu ứng xả van. Hơn thế nữa, nghiệm tối ưu được báo cáo trong nghiên cứu [20] và [21] đã chỉ ra rằng lưu lượng xả nhỏ hơn giá trị nhỏ nhất được xác định từ thông số đầu vào. Các thông tin khác như kích thước dân số và thời gian chạy chương trình không được báo cáo trong các nghiên cứu này đã dẫn đến sự khó khăn khi
+
+<!-- page: 33 -->
+
+muốn so sánh tốc độ hội tụ và kiểm tra tính khả thi của nghiệm tối ưu đã đạt được. So sánh với nhóm gồm GA, SA và EP, việc thực thi PSO cho việc phối hợp tối ưu hệ thống thủy nhiệt điện đơn giản hơn bởi vì cấu trúc của PSO chỉ đơn giản với 3 quá trình là cập nhật vận tốc, cập nhật vị trí và chọn lọc. Ở phương pháp PSO, mỗi nghiệm tối ưu được đặc trưng bởi một vị trí của một cá thể (chim hoặc cá) và phương pháp để cập nhật nghiệm mới chỉ dựa vào vị trí hiện tại và vận tốc vừa được cập nhật. Vận tốc vừa được cập nhật được xác định bởi 3 cá thể gồm cá thể đang xét, cá thể tốt nhất đến thời điểm hiện tại của cá thể đang xét và cá thể tốt nhất đến hiện tại trong toàn bầy. Để cải tiến hiệu quả và độ ổn định của PSO cổ điển, một trọng số [26] và một hệ số giới hạn [27] đã được đề xuất để cập nhật vận tốc. Trọng số được thay đổi giá trị tại mỗi vòng lặp trong khi hệ số giới hạn được xác định tại một giá trị phụ thuộc vào giá trị chọn lọc của hai hằng số gia tốc. Việc cải tiến này cũng cho nghiệm tối ưu hiệu quả hơn với thời gian tính toán nhanh hơn so với PSO cổ điển. Tuy nhiên, hai nghiên cứu này đã báo cáo các nghiệm tối ưu không khả thi có lưu lượng nước xả vi phạm giới hạn nhỏ nhất được cho ở thông số đề bài. Ở FIPSO [29], phiên bản mới để cập nhật vận tốc được đề xuất nhằm cải tiến được vị trí tốt hơn cho mỗi cá thể và các phương pháp đã được kiểm chứng bởi một hệ thống và so sánh kết quả. Mặc dù phương pháp FIPSO đã được đánh giá tốt hơn các phương pháp khác nhưng phương pháp này đã không được đánh giá là một công cụ mạnh để tìm kiếm tối ưu cho bài toán này do nghiệm tối ưu đã vi phạm các ràng buộc giới hạn. Farhat cùng cộng sự của ông [23] đã đề xuất IBFA để giải bài toán này, tuy nhiên nghiên cứu này cũng đã báo cáo nghiệm tối ưu vi phạm ràng buộc cân bằng nguồn nước. Clonal Selection [28] cũng là một thuật toán meta heuristic được áp dụng cho bài toán này. Quá trình tìm kiếm nghiệm tối ưu của Clone Seletion khá phức tạp so với các phương pháp tiến hóa như GA, EP và DE. Phương pháp này có chất lượng lời giải khá tốt so với các phương pháp khác cải tiến từ EP và các phương pháp khác nhưng thời gian tính toán và các thông số điều khiển như số vòng lặp và dân số cho thấy phương pháp này vẫn chưa hội tụ nhanh.
+
+Rõ ràng rằng những phương pháp meta heuristic bao gồm các phiên bản cổ điển và cải tiến đã được áp dụng cho bài toán phối hợp tối ưu hệ thống thủy nhiệt điện có xét đến ràng buộc thể tích hồ chứa thủy điện. Các kết quả đạt được đều được so sánh để chỉ ra tính hiệu quả và ổn định nhưng mức độ chấp nhận cao thì vẫn còn là một thách thức vì chỉ có một hệ thống đơn giản với số ít nhà máy, hàm mục tiêu khả vi, và các phương pháp này đã báo cáo nghiệm tối ưu không khả thi vi phạm ràng buộc.
+
+## 2.4. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Biến Đổi Xét Các Hồ Thủy Điện Bậc Thang
+
+So với các bài toán trên, đây là bài toán phức tạp hơn vì các hồ thủy điện bậc thang với lưu lượng xả của hồ trên sẽ trở thành lưu lượng về của hồ dưới và thời gian nước chảy từ hồ trên xuống hồ dưới được xét đến. Hơn nữa, công suất thủy điện là một hàm toán phục thuộc vào lưu lượng nước và thể tích nước với giả thuyết chiều cao cột nước thay đổi theo thời gian. Các phương pháp được áp dụng cho bài toán này như sau:
+
+<!-- page: 34 -->
+
+\- Clonal selection algorithm (CSA) [28]
+
+\- Genetic algorithm (GA) [30]
+
+\- Improved fast evolutionary programming (IFEP) [18]
+
+\- Evolutionary programming (EP) [18, 31]
+
+\- Simulated annealing (SA) [31]
+
+Particle swarm optimization (PSO) [31]
+
+\- Modified DE (MDE) [32-33],
+
+\- Hybrid DE (HDE)[33],
+
+\- Modified hybrid DE (MHDE) [33]
+
+Global vision of PSO with constriction factor (GCPSO) [34]
+
+\- Global vision of PSO with inertia weight GWPSO [34]
+
+Global vision of PSO with constriction factor (LCPSO) [34]
+
+\- Local vision of PSO with inertia weight LWPSO[34]
+
+\- Enhanced GA (EGA) [35]
+
+\- Enhanced PSO (EPSO) [35]
+
+\- Improved PSO (IPSO) [36]
+
+\- Adaptive artificial bee colony algorithm (ABCA) [37]
+
+\- Chaotic artificial bee colony algorithm CABCA [37]
+
+Adaptive chaotic artificial bee colony algorithm (ACABCA) [37]
+
+Real coded genetic algorithm and artificial fish swarm algorithm (RCGA– AFSA) [38]
+
+\- Two-phase neural network (TPNN) [39]
+
+\- Cultural algorithm (CA) [40]
+
+\- Real coded genetic algorithm (RCGA) [41]
+
+\- Binary coded genetic algorithm (BCGA) [41]
+
+\- Cuckoo search algorithm (CSA) [42]
+
+\- Chaotic hybrid differential evolution (CHDE) [43]
+
+Hybrid differential evolution and sequential quadratic programming (HDE–SQP) [44]
+
+Honey-bee Mating Optimization Algorithm (HBMOA) [45]
+
+\- Biogeography-Based Optimization (BBO) [46]
+
+Differential real-coded quantum-inspired evolutionary algorithm (DRQEA)[47]
+
+\- Gravitational Search Algorithm (GSA) [48]
+
+\- Improved self-adaptive PSO (ISPSO) [49]
+
+\- Mixed-binary evolutionary particle swarm optimizer (MB-EPSO) [50]
+
+\- Teaching learning based optimization (TLBO) [51]
+
+\- Quasi-oppositional teaching learning based optimization (QOTLBO) [51]
+
+Adaptive Chaotic Real Coded Genetic Algorithm (ACRCGA) [52]
+
+Improved differential evolution (IDE) [53]
+
+Quadratic Migration of Biogeography based Optimization (QMBBO) [54]
+
+Real coded chemical reaction based optimization (RCCRO) [55]
+
+<!-- page: 35 -->
+
+Modified chaotic differential evolution algorithm (MCDEA) [56]
+
+Modified dynamic neighborhood learning based particle swarm optimization (MDNLPSO) [57]
+
+Phương pháp EP cổ điển (CEP) [31] và các phiên bản cải tiến của EP [18] bao gồm Fast EP (FEP) và Improved Fast EP (IFEP) đã được xây dựng nhằm giải bài toán phối hợp hệ thống thủy nhiệt điện xét chiều cao cột nước biến đổi và hệ thống hồ thủy điện bậc thang. Sự khác biệt giữa 3 phương pháp EP là sử dụng các phép phân phối khác nhau để tạo ra các thế hệ con từ thế hệ ba mẹ. Thật vậy, CEP đã áp dụng phép phân phối Gauss, FEP đã sử dụng phép phân phối Cauchy. Trong khi đó, cả hai phép phân phối này đều được sử dụng ở phương pháp IFEP. Tính hiệu quả của các phương pháp EP này chủ yếu phụ thuộc vào các phép phân phối. Một hệ thống với bốn nhà máy thủy điện bậc thang và một nhà máy nhiệt điện với hàm chi phí không khả vi được xem xét ở nghiên cứu [18]. Để thực thi các phương pháp EP cho hệ thống này, số vòng lặp lớn nhất đã được chọn với nhiều giá trị khác nhau cho ba phương pháp trong đó CEP đã sử dụng giá trị lớn nhất 1200 vòng lặp, FEP đã sử dụng 800 vòng lặp và IFEP đã sử dụng số vòng lặp nhỏ nhất 300 vòng lặp. Mặc dù sử dụng số vòng lặp nhỏ nhất nhưng IFEP đã đạt được kết quả tốt nhất với chi phí nhỏ nhất và thời gian nhanh nhất. Trong khi đó, CEP có chi phí lớn nhất và thời gian tính toán lâu nhất. Tuy nhiên, so sánh thêm nữa giữa IFEP và các phương pháp khác ngoài CEP và FEP đã không được thực hiện ở nghiên cứu [18]. PSO cổ điển đã được áp dụng cho một hệ thống lớn với ba nhà máy nhiệt điện và bốn nhà máy thủy điện có xét đến hiệu ứng xả van ở nghiên cứu [31]. SA cổ điển và EP cổ điển cũng đã được áp dụng cho hệ thống này để chứng minh tính hiệu quả của PSO cổ điển. Kết quả cho thấy PSO cổ điển đã hiệu quả hơn SA và EP cổ điển. Các phiên bản cải tiến khác của PSO đã được xây dựng ở nghiên cứu [34] bởi việc kết hợp các hệ số khác nhau như trọng số, hệ số giới hạn và cá thể tốt nhất trong một vài cá thể lân cận, và cá thể tốt nhất trong toàn bộ dân số. Kết quả là phiên bản PSO với trọng số và cá thể tốt nhất trong một vài cá thể lân cận là phiên bản tốt nhất. Mặc dù đã đạt được các kết quả này nhưng phương pháp PSO này vẫn không thể đạt được kết quả tốt hơn so với các phiên bản cải tiến của DE.
+
+GA cổ điển và phiên bản cải tiến của nó RCGA đã được áp dụng ở các nghiên cứu [30], [41], [52]. Ở nghiên cứu [30], CGA được áp dụng cho một hệ thống với bốn nhà máy thủy điện bậc thang và một nhà máy nhiệt điện hoạch định phát điện trong 24 giờ có xét đến thời gian nước chảy từ hồ phía trên xuống hồ phía dưới. Ngoài ra, các ràng buộc thực tế khác cũng đã được xét đến tuy nhiên kích thước hệ thống vẫn còn nhỏ và chưa đủ minh chứng để chỉ ra rằng CGA có thể giải được các hệ thống lớn hơn. Ở nghiên cứu [41], BCGA và RCGA đã được áp dụng thành công cho hai hệ thống có cùng kích thước với một nhà máy nhiệt điện và bốn nhà máy thủy điện bậc thang. Hệ thống thứ nhất bỏ qua hiệu ứng xả van tại nhà máy nhiệt điện trong khi đó hệ thống thứ hai có xét đến hiệu ứng này. So sánh kết quả đạt được đã chỉ ra rằng RCGA hiệu quả hơn BCGA về chất lượng lời giải cho cả hai hệ thống. Tuy nhiên cả hai phương pháp
+
+<!-- page: 36 -->
+
+này đã không được so sánh với các phương pháp khác và đã không có các kết luận về tính hiệu quả của RCGA so với các phương pháp khác ngoài BCGA. Phương pháp ACRCGA đã được đề xuất cho bài toán này ở nghiên cứu [52]. Quá trình lai tạo và đột biến đã được thay đổi để cải tiến khả năng tìm kiếm nghiệm toàn cục. Trong khi đó kỹ thuật tìm kiếm Chao và RCGA đã được kết hợp để khai thác khả năng tìm kiếm địa phương. Ngoài ra một kỹ thuật hiệu quả đã được đề xuất để xử lý ràng buộc cân bằng công suất hệ thống và ràng buộc cân bằng nguồn nước tại các hồ thủy điện. Ở nghiên cứu này, ACRCGA chỉ được chạy trên một hệ thống với một nhà máy nhiệt điện và bốn nhà máy thủy điện bậc thang không xét đến hiệu ứng xả van để kiểm tra tính hiệu quả. Kết quả cho thấy ACRCGA đã hiệu quả hơn RCGA và BCGA và các phương pháp khác. Tuy nhiên việc kiểm tra lại nghiệm tối ưu đã chỉ ra rằng ACRCGA đã vi phạm ràng buộc thể tích hồ chứa thủy điện tại nhà máy thứ ba và thứ tư. Do đó nghiệm tối ưu này không còn khả thi để so sánh với các phương pháp khác. Ở nghiên cứu [39], một phương pháp dựa vào mạng neuron (TPNN) đã được áp dụng để giải bài toàn này để so sánh với phương pháp Lagrange tăng cường (ALM). Hai phương pháp này đã được kiểm tra trên hệ thống nhỏ đã được đề cập ở trên và không xét đến hiệu ứng xả van và với thay đổi nhỏ về thông số đề bài như thời gian trì hoãn của nước và hàm chi phí phát điện tại nhà máy nhiệt điện. Do đó, TPNN chỉ được so sánh với ALM mà không so sánh với các phương pháp khác. So sánh về chi phí có thể kết luận được rằng TPNN có chất lượng lời giải tốt hơn ALM; tuy nhiên đã không có đủ minh chứng để kết luận được rằng TPNN hội tụ nhanh hơn ALM do thông tin về sai số và số vòng lặp đã không đề cập đến. Ngoài ra, cũng không có bất cứ kết luận nào về việc so sánh tính hiệu quả của TPNN với các phương pháp khác trong nghiên cứu này. Ở nghiên cứu [32], MDE với hai cải tiến mới đã được áp dụng cho hệ thống thủy nhiệt điện. Các cải tiến đã không được thực hiện cho các cơ chế của DE mà chỉ nhằm xử lý các ràng buộc hồ chứa ở cuối thời gian hoạch định tại các hồ thủy điện. Cải tiến thứ nhất thực hiện sau quá trình khởi tạo để có thể giải quyết ràng buộc giới hạn lưu lượng xả và cải tiến thứ hai thực hiện sau cơ chế đột biến nhằm giải quyết ràng buộc thể tích hồ chứa ở cuối thời gian hoạch định. Phương pháp MDE này đã được thực thi cho hai hệ thống có xét đến hiệu ứng xả van và có hàm chi phí khác nhau. Hệ thống thứ nhất với một nhà máy nhiệt điện và bốn nhà máy thủy điện đã tập trung vào cực tiểu chi phí trong khi đó hệ thống thứ hai với ba nhà máy nhiệt điện và bốn nhà máy thủy điện đã tập trung vào cực tiểu chi phí và khí thải. Với hệ thống thứ nhất, so sánh đã được mở rộng khi đã có ba nghiên cứu trước đó nhưng so sánh này đã bị hạn chế cho hệ thống thứ hai khi chỉ có Fuzzy EP được áp dụng trước đó. Dựa vào các cải tiến này MDE đã đạt được kết quả tốt hơn so với GA, DE và IFEP cùng với nghiệm khả thi tối ưu đạt được; tuy nhiên, với hệ thống thứ hai, MDE chỉ được chứng minh hiệu quả hơn một phương pháp duy nhất là Fuzzy EP. Rõ ràng việc chứng minh tính hiệu quả của MDE đã không hoàn toàn thuyết phục bạn đọc cũng như các nhà nghiên cứu. Một phươg pháp mới của DE (MHDE) [33] đã được phát triển bởi các tác giả ở nghiên cứu [32] bởi sự kết hợp giữa hai cải tiến xử lý ràng buộc ở nghiên cứu [32] và phương pháp HDE. HDE được xây dựng bởi phát triển thêm hai cơ chế mới gồm gia
+
+<!-- page: 37 -->
+
+tốc và di cư trong đó cơ chế thứ nhất cho phép cải thiện chất lượng hàm thích nghi và cơ chế thứ hai nhằm tăng khả năng tìm kiếm trong một không gian rộng. Cơ chế thứ nhất giúp tăng tốc hội tụ trong khi cơ chế thứ hai giúp tăng khả năng tìm kiếm toàn cục. MHDE đã được kiểm chứng trên hai hệ thống xét đến hiệu ứng xả van và kích thước khác nhau. Các kết quả đạt được đã hé lộ thông tin rằng MHDE có thể đạt được chất lượng nghiệm tốt hơn với thời gian nhanh hơn so với DE, MDE, HDE và các phương pháp khác. Nghiên cứu [43] đã phát biểu rằng CDE phải đối mặt với những khó khăn về việc chọn giá trị cho các thông số điều khiển bởi vì hệ số đột biến và hệ số lai tạo có vùng làm việc khá rộng. Từ đó, nghiên cứu này đã đề xuất phương pháp CHDE bởi áp dụng lý thuyết Chao để cài đặt các thông số này một cách tự động. Lý thuyết Chao này đã được sử dụng để tính giá trị cho hệ số đột biến và hệ số lai tạo một cách tự động ở mỗi vòng lặp thay vì những giá trị cố định như các phiên bản khác của DE trước đó. Cải tiến này đã giúp CHDE giảm đáng kể một số lượng lớn tính toán thử nghiệm. Một phương pháp lai dựa vào kết hợp giữa CDE và SQP đã được thực hiện ở nghiên cứu [44]. Ở phương pháp này DE đóng vai trò tìm kiếm nghiệm tối ưu địa phương trong khi đó SQP hỗ trợ quá trình tìm kiếm cực trị toàn cục. Một vài thử nghiệm đã được thực hiện để kiểm tra tính hiệu quả của phương pháp này khi xem xét hệ thống có hàm mục tiêu không khả vi và vùng cấm làm việc của các tổ máy thủy điện. Nghiên cứu [53] đã đề xuất một phương pháp DE cải tiến khác nhằm xác định công suất tối ưu cho hệ thống thủy nhiệt điện. Thay vì sử dụng hệ số đột biến cho cơ chế đột biến trong toàn bộ quá trình tìm kiếm nghiệm tối ưu thì phương pháp IDE này đã sử dụng phép phân phối Gauss với mục đích giảm thiểu số lần chạy thử nghiệm và cải tiến khả năng tìm kiếm địa phương cho CDE. Phép phân phối Gauss đã tạo ra một vector cho mỗi biến trong nghiệm tối ưu. Việc cải tiến phương pháp IDE đã được kiểm chứng trên hai hệ thống có xét đến hiệu ứng xả van cho thấy rằng phương pháp IDE này đã đạt được chi phí thấp hơn so với IDE và MDE ở nghiên cứu [32], IPSO ở nghiên cứu [36], GA ở nghiên cứu [30] và IFEP ở nghiên cứu [18]. Tuy nhiên, việc kiểm tra nghiệm tối ưu cho thấy rằng các lưu lượng xả ở hồ thứ tư đã vi phạm giới hạn nhỏ nhất cho hệ thống thứ nhất. Giá trị tối ưu được báo cáo bằng 6 trong khi đó thông số đầu vào nhỏ nhất là 13. Với hệ thống thứ hai, nghiệm tối ưu của phương pháp này được kiểm tra đã thỏa mãn tất cả các ràng buộc.Do vi phạm ở hệ thống thứ nhất nên hiệu suất của phương pháp IDE này vẫn còn là một biến số và đã không có những nghiên cứu về sau để chứng minh tính hiệu quả của nó. Phương pháp cuckoo search đã được áp dụng cho bài toán này ở nghiên cứu [42] với kiểm chứng trên một hệ thống gồm có một nhà máy nhiệt điện và bốn nhà máy thủy điện với hai trường hợp khác nhau của hàm chi phí gồm không xét đến và có xét đến hiệu ứng xả van. So sánh kết quả chỉ ra rằng phương pháp CSA nổi trội hơn so với GA, PSO, DE, và TLBO; tuy nhiên nghiên cứu này đã báo cáo nghiệm tối ưu không khả thi, vi phạm ràng buộc. Do đó, đã không có đủ minh chứng để kết luận về tính hiệu quả của phương pháp CSA trong nghiên cứu này. MCDEA đã được phát triển ở nghiên cứu [56] bởi việc kết hợp kỹ thuật dò tự động cho hệ số lai tạo và cơ chế tìm kiếm địa phương Chao. Kỹ thuật dò này đã giúp phương pháp này giảm được số lượng lớn tính toán trong
+
+<!-- page: 38 -->
+
+khi đó cơ chế tìm kiếm địa phương Chao giúp giảm hội tụ sớm một cách hiệu quả. So sánh với các phiên bản khác của DE, phương pháp MCDEA là phiên bản tốt nhất cho nghiệm tối ưu và thời gian tính toán. ACABC [37] đã được áp dụng để tìm kiếm nghiệm tối ưu cho bài toán này, phương pháp này có thể giảm được quá trình hội tụ sớm và giảm rơi vào vùng cực trị địa phương nhờ kỹ thuật tìm kiếm Chao cùng với kỹ thuật kết hợp thích nghi tương tự như các cải tiến trên thực thi trên DE. Phương pháp TLBO đã được áp dụng ở nghiên cứu [51]. TLBO chủ yếu dựa vào cơ chế dạy và học và không sử dụng bất cứ kỹ thuật nào để xác định thông số điều khiển. Một sự kết hợp giữa MDNL và PSO đã được phát triển ở nghiên cứu [57]. Ở nghiên cứu này, tất cả các cá thể được nhóm lại thành một tập hợp hàng xóm của nhau và mỗi cá thể sẽ học kinh nghiệm từ một cá thể khác trong nhóm này. Các thành viên trong nhóm sẽ thay đổi để trao đổi thông tin để cập nhật vị trí mới. Phương pháp này đã kiểm tra trên 3 hệ thống và đã đạt được kết quả tốt hơn so với các phương pháp khác như TLBO, ALM và TPNN.
+
+## 2.5. Phối Hợp Hệ Thống Thủy Nhiệt Điện Ngắn Hạn Với Chiều Cao Cột Nước Cố Định Xét Mục Tiêu Chi Phí Và Phát Thải
+
+Bài toán này giống với bài toán thứ nhất trong mục 2.2 ở trên về ràng buộc và khác nhau về hàm mục tiêu. Trong bài toán này, cả chi phí và phát thải đều được xét đến và cực tiểu cần đạt được cho cả hai hàm mục tiêu này. Với đa phần các phương pháp thông mình nhân tạo được áp dụng cho bài toán này như sau:
+
+\- A simulated annealing-based goal-attainment (SA-BGA) [58]
+
+\- Particle swarm optimization and gamma (-PSO) [59]
+
+Real-coded genetic algorithm (RCGA) [60]
+
+Multiobjective differential evolution (MODE) [60]
+
+\- Non-dominated sorting genetic algorithm-II (NSGA-II) [60]
+
+Improved genetic algorithm, multiplier updating and the ε-constraint technique (IGA-MU) [61]
+
+Particle Swarm Optimization (PSO) [62]
+
+PSO with penalty (PSO-PM) [62]
+
+Predator-prey optimization (PPO) [62]
+
+PPO with penalty method (PPO-PM) [62]
+
+PPO and Powell Search Method (PPO-PS) [62]
+
+PPO and PS method with penalty method (PPO-PS-PM) [62].
+
+Improved regularity model-based multiobjective estimation of distribution algorithm (IRM-MEDA) [63]
+
+Phương pháp SA–BGA đã được áp dụng cho bài toán phối hợp tối ưu hệ thống thủy nhiệt điện ngắn hạn đa mục tiêu với hàm chi phí có xét đến hiệu ứng xả van ở nghiên cứu [58]. Ở nghiên cứu này, hai hàm mục tiêu bao gồm chi phí và khí thải đã được
+
+<!-- page: 39 -->
+
+chuyển đổi sang đơn mục tiêu bởi việc sử dụng các trọng số tương ứng với hàm chi phí và hàm phát thải. Nghiên cứu này chỉ trình bày một vài kết quả tương ứng với một vài giá trị của các trọng số và kết quả của nghiệm thỏa hiệp hai mục tiêu được xác định do đó phát thải tốt nhất có thể là hợp lý nhưng chi phí lại quá lớn không mong đợi. Hơn nữa, đã không có bất cứ sự so sánh nào giữa SA – BGA và các phương pháp khác. Do đó đã không có kết luận về tính hiệu quả của phương pháp này ngoài việc đóng góp một bài toán nghiên cứu mới cho ngành kỹ thuật điện. Thời gian tính toán tìm kiếm nghiệm tối ưu khi áp dụng phương pháp này phải mất đến gần nửa giờ. Giá trị thời gian này đã gởi đến một lời khuyên rằng phương pháp SA – BGA không nên được áp dụng cho một hệ thống lớn. Thật vậy, chỉ có nghiên cứu [58] áp dụng phương pháp này tính đến thời điểm hiện tại. Ba hệ thống lớn có xét đến hàm mục tiêu chi phí và khí thải để kiểm chứng phương pháp Gama – PSO ở nghiên cứu [59]. Giống như phương pháp LGM ở nghiên cứu [2], phương pháp Gama – PSO đã sử dụng phương trình kết hợp để thu được nghiệm tối ưu để sử dụng phương pháp phương trình kết hợp này, đầu tiên hàm tối ưu Lagrange được xây dựng với hàm đa mục tiêu, ràng buộc cân bằng công suất và ràng buộc nguồn nước. Tiếp theo, phương pháp PSO được thực thi để tìm kiếm giá trị tối ưu của Gama (nhân tử Lagrange tương ứng với ràng buộc nguồn nước). Sau cùng, giá trị Gama được thay vào phương trình kết hợp để tính toán công suất cho các nhà máy thủy điện và nhiệt điện. Khác với các ứng dụng khác của PSO cổ điển, phương pháp Gama-PSO này chỉ có giá trị Gama là biến số trong vị trí của mỗi cá thể thay cho cả lưu lượng xả và công suất nhiệt điện. Sự cải tiến này được xem như là một lợi thế của Gama-PSO giúp cho hội tụ dễ dàng hơn với thời gian tính toán nhanh hơn. Việc cải tiến này đã giúp cho Gama - PSO đạt được hàm mục tiêu nhỏ hơn PSO cổ điển cho tất cả các trường hợp nghiên cứu mặc dù sử dụng dân số và số vòng lặp nhỏ hơn. Tuy nhiên, phương pháp Gama – PSO cũng gặp phải khó khăn như phương pháp Lagrange khi giải quyết hệ thống có xét đến hiệu ứng xả van với hàm chi phí không khả vi và khả năng ứng dụng của Gama – PSO dừng lại ở các hệ thống này. Nghiên cứu ở [60] đã áp dụng phương pháp NSGA – II cho bài toán đa mục tiêu này với hàm chi phí có xét đến hiệu ứng xả van. Phương pháp này được đánh giá là hiệu quả hơn so với các phương pháp khác khi có thể xác định nghiệm thỏa hiệp mà không dựa vào phương pháp Fuzzy. Để đánh giá hiệu quả các phương pháp khác cũng đã được áp dụng như RCGA và MODE cho hai hệ thống trong đó hệ thống thứ nhất bỏ qua hiệu ứng xả van và hệ thống thứ hai có xét đến hiệu ứng này. Kết quả cho thấy NSGA – II hiệu quả hơn so với hai phương pháp này về nghiệm tối ưu nhưng thời gian tính toán của phương pháp vẫn còn dài do bị ảnh hưởng bởi đặc tính của phương pháp GA cổ điển. Chiang và các cộng sự của ông đã đề xuất một thuật toán GA cải tiến dựa vào cập nhật nhân tử Lagrange (IGA – MU) để giải bài toán đa mục tiêu này ở nghiên cứu [61]. Phương pháp GA cải tiến này đã đạt được hiệu quả cao bởi việc cập nhật nhân tử Lagrange cho việc xử lý các ràng buộc. Do đó phương pháp này đã hiệu quả hơn GA cổ điển. Hơn thế nữa, phương pháp này đã đạt được nghiệm tối ưu tốt hơn và thời gian tính toán nhanh hơn GA–MU và SA–BGA. Mặc dù các tác giả này đã nhấn mạnh tính hiệu quả của IGA–MU vượt trội hơn so với
+
+<!-- page: 40 -->
+
+GA–MU và SA–BGA nhưng điều tra chi tiết hơn về hiệu suất đã không đủ thuyết phục bởi vì những phương pháp này chỉ được kiểm chứng trên một hệ thống duy nhất và thậm chí thời gian tính toán của phương pháp này vẫn còn khá dài. Một phương pháp khác PPO–PS ở nghiên cứu [62] đã được áp dụng cho bài toán đa mục tiêu. Ở phương pháp này PPO được sử dụng như một công cụ tìm kiếm toàn cục trong khi đó phương pháp Powell đóng vai trò quan trọng cho tìm kiếm địa phương. PPO được xây dựng dựa trên đặc tính của PSO do đó nó cũng thừa hưởng những thuận lợi như ít hệ số điều khiển dễ thực hiện nhưng PPO cũng gặp phải khó khăn khi khả năng rơi vào cực trị địa phương là khá cao. Phương pháp Powell đóng vai trò quan trọng cho tìm kiếm xung quanh những nghiệm đã được tìm ra từ phương pháp PPO. Ngoài ra, phương pháp xử lý ràng buộc cân bằng và bất cân bằng PM cũng đã được áp dụng cho PPO-PS để đẩy mạnh tính hiệu quả và tạo thành phương pháp PPO-PS-PM. Phương pháp PPO-PS-PM có khả năng tìm kiếm toàn cục tốt nhờ PPO, tìm kiếm địa phương tốt nhờ phương pháp Powell và khả năng xử lý ràng buộc tốt nhờ phương pháp PM. Tính hiệu quả của phương pháp PPO-PS-PM đã được kiểm chứng qua 3 hệ thống và cho thấy nó vượt trội hơn tất cả các phương pháp khác như PPO, PSO, PSO-PM và PPO-PM và PPO-PS. So sánh các kết quả đạt được đã hé lộ thông tin rằng PPO-PS-PM là phương pháp hiệu quả nhất trong những phương pháp được áp dụng nhưng thời gian tính toán bởi phương pháp PPO-PS PM vẫn chưa nhanh cho các hệ thống nhỏ. IRM – MEDA đã được áp dụng thành công ở nghiên cứu [63]. Tuy nhiên so sánh kết quả có thể thấy được rằng phương pháp này không hiệu quả hơn MODE, NSGA – II và IGA-MU bởi vì nó đã đạt được lời giải kém hiệu quả hơn cho tất cả các trương hợp.
+
+Rõ ràng tất cả các nghiên cứu đều có xu hướng áp dụng các phương pháp hoặc cải tiến các phương pháp nhằm đạt được lời giải tốt hơn với tốc độ hội tụ nhanh hơn. Những phân tích ở đây cho thấy rằng càng về sau các phương pháp càng hiệu quả hơn. Tuy nhiên, thành tựu đạt được vẫn còn chưa hoàn toàn thuyết phục và cần nhiều nghiên cứu hơn nhằm đạt được hiệu quả tốt hơn.
+
+## 2.6. Phân Bố Công Suất Tối Ưu Hệ Thống Thủy Nhiệt Điện
+
+Phân bố công suất tối ưu hệ thống thủy nhiệt điện (HTOPF) là một bài toán lớn và phức tạp hơn rất nhiều so với bài toán phân bố công suất (OPF) và bài toán phối hợp các nhà máy thủy nhiệt điện (HTS). Bài toán này là sự kết hợp của hai bài toán OPF và HTS trong đó các ràng buộc từ hai bài toán đều được xét đến một cách chi tiết. Sự phức tạp của bài toán OPF ở số lượng ràng buộc trên lưới truyền tải như khả năng truyền tải của đường dây, điện áp tại các thanh cái, cài đặt đầu phân áp, xác định dung lượng tụ bù và công suất phản kháng của các máy phát trong khi đó độ phức tạp của bài toán HTS thuộc về ràng buộc thủy lực ở các hồ thủy điện cùng với nhiều khoảng thời gian được xét đến. Như vậy lời giải tối ưu cho bài toán này phải thỏa mãn các giá trị trên lưới truyền tải trong tất cả các khoảng thời gian và lưu lượng xả cũng như tổng thể tích nước sử dụng
+
+<!-- page: 41 -->
+
+tại các hồ thủy điện cũng không được sai lệch. Rõ ràng bài toán này rất phức tạp và hạn chế các nghiên cứu trên thế giới tính đến thời điểm này.
+
+## 2.7. Kết Luận
+
+Chương này trình bày tổng quan về các nghiên cứu trên thế giới tính đến thời điểm hiện tại về năm bài toán phối hợp tối ưu hệ thống thủy nhiệt điện được xem xét trong luận án. Về cơ bản các nghiên cứu đều đi đến mục đích tìm ra phương pháp hiệu quả có thể áp dụng cho từng bài toán cụ thể.
+
+<!-- page: 42 -->
+
+## CHƯƠNG 3: CÁC PHƯƠNG PHÁP CUCKOO SEARCH VÀ MẠNG HOPFIELD LAGRANGE TĂNG CƯỜNG
+
+## 3.1. Giới Thiệu
+
+Ở chương 2, chúng tôi đã giới thiệu năm bài toán điều độ tối ưu hệ thống thủy nhiệt điện mà sẽ được thực thi trong luận án này bởi áp dụng các phương pháp toán tối ưu hiện đại. Chương 3 này sẽ trình bày các thuật toán gồm Augmented Lagrange Hopfield Network (ALHN), Cuckoo Search cổ điển (CCSA), Cuckoo Search cải biên (MCSA) và Cuckoo Search chọn lọc thích nghi (ASCSA). Trong các phương pháp giới thiệu, ALHN, CCSA và MCSA là các phương pháp đã được nghiên cứu từ các tác giả trước và áp dụng nhiều cho các bài toán tối ưu trong khi đó ASCSA là phương pháp được xây dựng đầu tiên trong luận án này dựa trên các cải tiến từ phương pháp CCSA. Trong số các phương pháp được áp dụng, ALHN thuộc nhóm phương pháp tiền định (deterministic methods) còn các phương pháp dựa trên Cuckoo Search (CSA) thuộc nhóm Meta-heuristic. Hai nhóm này có đặc tính và khả năng áp dụng hoàn toàn khác nhau. Thật vậy, ALHN được xây dựng dựa trên hàm toán tối ưu Lagrange tăng cường và sau đó được chuyển sang hàm năng lượng. Nghiệm tối ưu là các biến số từ hàm năng lượng được đạo hàm riêng và giải hệ phương trình. Hàm năng lượng của phương pháp ALHN bao gồm nhiều số hạng và nhân tử Lagrange chứa hàm mục tiêu, ràng buộc cân bằng công suất và các ràng buộc liên quan đến hồ thủy điện. Trái lại, việc áp dụng các phương pháp Cuckoo search sẽ không yêu cầu thành lập bất cứ hàm tối ưu nào như Hàm Lagrange và hàm năng lượng nhưng hàm thích nghi dùng để đánh giá chất lượng nghiệm có tính chất rất quan trọng khi áp dụng các phương pháp Cuckoo search này. Các phương pháp Cuckoo search được khởi tạo bởi một dân số (một tập nghiệm), mỗi cá thể (mỗi nghiệm) trong dân số này sẽ chứa các biến số cần tìm. Chất lượng nghiệm được đánh giá dựa vào hàm thích nghi với các thành phần như hàm mục tiêu và các lượng phạt cho các biến phụ thuộc vi phạm ràng buộc. Các phương pháp CSA không dựa trên đạo hàm nên có thể giải được các bài toán có hàm mục tiêu không khả vi trong khi đó ALHN dựa trên đạo hàm và không thể giải quyết các bài toán có xét đến hàm không khả vi này. Như phân tích ở chương 2, HNN được cho là phương pháp tiền định hiệu quả nhất khi có thể tìm được nghiệm tối ưu có giá trị chi phí phát điện thấp và khả năng giải các bài toán lớn tốt hơn các phương pháp Larange, Newton-Raphson, các phương pháp cải tiến của Lagrange và Newton-Raphson. Trong khi đó, ALHN là phương pháp cải tiến từ phương pháp HNN và cho kết quả hiệu quả hơn HNN. Từ đó, ALHN được chọn để áp dụng điều độ tối ưu hệ thống thủy nhiệt điện trong luận án này. Tương tự, CCSA và MCSA là các phương pháp đã được áp dụng và cho thấy tính hiệu quả khi áp dụng cho các bài toán tối ưu khác trong lĩnh vực kỹ thuật điện. Do đó, việc chọn các phương pháp ALHN, CCSA, MCSA và ASCSA có thể mang đến hai đóng góp lớn cho lĩnh vực hệ thống điện. Đóng góp thứ nhất là có thể đạt được kết quả tốt trong điều độ hệ thống thủy
+
+<!-- page: 43 -->
+
+nhiệt điện và đóng góp thứ hai là tư vấn cho bạn đọc hay các nhà nghiên cứu về khả năng áp dụng cũng như ưu và nhược điểm của hai nhóm phương pháp chính này.
+
+Ở chương này, chúng tôi sẽ trình bày chi tiết về 4 thuật toán ALHN, CCSA, MCSA và ASCSA khi áp dụng cho một bài toán tối ưu chung. Trong số 4 phương pháp này, CCSA, MCSA và ALHN là các phương pháp đã được xây dựng và áp dụng cho nhiều bài toán tối ưu trong lĩnh vực kỹ thuật điện trong đó ASCSA là phương pháp được đề xuất đầu tiên trong luận án này. CCSA được xây dựng bởi Yang và Deb năm 2009 [64] nhưng ALHN và MCSA là các cải tiến về sau dựa trên các thuật toán nguyên thủy ban đầu. Cụ thể, ALHN được phát triển bởi Điều và các cộng sự của ông năm 2008 [13] dựa trên cải tiến từ phương pháp HNN [6] và MCSA là phương pháp cải tiến từ CCSA được xây dựng bởi Walton và các cộng sự của ông năm 2011[65]. Tương tự, ASCSA cũng được đề xuất nhằm cải tiến CCSA để đạt được hiệu quả cao hơn CCSA và MCSA. Chi tiết của bốn phương pháp được trình bày ở các mục bên dưới.
+
+## 3.2. Thuật Toán Cuckoo Search Cổ Điển (CCSA)
+
+## 3.2.1. Đặc tính chim Cuckoo và Lévy Flights
+
+## 3.2.1.1. Đặc tính chim Cuckoo
+
+Hiện nay có 54 loại chim Cuckoo đang sinh sống trên toàn thế giới. Các loại cuckoo khác nhau sẽ có màu sắc và trọng lượng khác nhau nhưng đặc tính rất giống nhau [66]. Các chim cuckoo không xây tổ của riêng mình mà sẽ đẻ trứng vào tổ của chim khác để nhờ sự ấp trứng và cho ăn từ các loài chim khác. Chim Cuckoo rất thông minh khi chọn các loài chim mà trứng có màu sắc giống với trứng của chúng để đẻ trứng. Hơn nữa, chim cuckoo cũng quan sát và thường đẻ trứng vào tổ chim có thời gian ấp lâu hơn so với trứng cuckoo. Theo đặc tính bẩm sinh, chim cuckoo con sẽ đẩy các trứng của chim chủ ra khỏi tổ và chúng kêu giống tiếng chim mẹ để được cho ăn và nuôi lớn. Thuật toán CCSA được xây dựng dựa trên các đặc tính này của chim Cuckoo cùng với hành động bay của các côn trùng gọi là Lévy flights được mô tả như bên dưới.
+
+## 3.2.1.2. Lévy flights
+
+Sự thể hiện của Lévy flights trong hiện tượng vật lý rất đa dạng, ví dụ trong động lực học chất lỏng, hệ thống động lực và trong hệ thống sinh học. Các nghiên cứu đã chỉ ra rằng hành vi bay của nhiều loài động vật và côn trùng đã chứng minh được đặc điểm điển hình của Lévy flights [67]. Thập kỷ trước, Lévy flights được phát hiện nhờ quan sát hành vi tìm kiếm thức ăn của loài kiến và ruồi giấm khám phá quang cảnh xung quanh bằng cách sử dụng một loạt các đường bay thẳng và bất ngờ rẽ 90<sup>0</sup>. Các nghiên cứu về hành vi của con người như săn bắt, hái lượm, tìm kiếm thức ăn cũng cho thấy đặc tính điển hình của Lévy flights. Sau đó các hành vi này đã được áp dụng vào bài toán tối ưu hóa và tìm kiếm tối ưu, qua kết quả kiểm tra sơ bộ cho thấy khi sử dụng Lévy flights vào
+
+<!-- page: 44 -->
+
+bài toán tìm kiếm tối ưu thì cho ra kết quả đầy hứa hẹn. Lévy flights là các bước đi tăng giảm ngẫu nhiên với độ lớn thay đổi không cố định và được tạo ra từ phép phân phối xác suất [67]. Các nghiên cứu ở tài liệu tham khảo [68-69] cho thấy chi tiết các đặc tính của cơ chế Lévy Flights và sau đó các đặc tính này được áp dụng vào tối ưu hóa và cho các kết quả đầy mong đợi [70-71].
+
+## 3.2.1.3. Các luật trong thuật toán Cuckoo search
+
+Những đặc tính thông minh và kỳ lạ của chim cuckoo đã lôi cuốn Yang và Deb phát minh thuật toán Cuckoo search dựa trên ba quy luật sau đây [64]:
+
+Quy luật 1: Mỗi chim cuckoo đẻ mỗi trứng tại một thời điểm vào mỗi tổ chim khác loài trong số tổ có sẵn.
+
+Quy luật 2: Chim cuckoo được nở ra và được nuôi lớn nhờ chim chủ và tiếp tục đẻ trứng vào tổ chim khác.
+
+Quy luật 3: Khi chim chủ phát hiện trứng cuckoo sẽ bỏ trứng ra khỏi tổ hoặc bỏ cả tổ và trứng để xây dựng tổ mới. Tuy nhiên xác suất tất cả các trứng cuckoo bị phát hiện là không lớn chỉ trong khoảng từ 0 đến 1. Xác suất này gọi là xác suất phát hiện trứng lạ, $P _ { a }$
+
+Mỗi trứng cuckoo trong một tổ đại diện cho 1 nghiệm tối ưu và 3 luật trên đại diện cho ba bước rất quan trọng của thuật toán Cuckoo Search. Quy luật 1 đại diện cho quá trình khởi tạo nhằm tạo ra tập nghiệm đầu tiên trong khi đó quy luật 2 và quy luật 3 lần lượt là hai quá trình tạo ra nghiệm mới thế hệ thứ nhất và thế hệ thứ hai trong mỗi vòng lặp. Lần tạo ra thế hệ nghiệm mới thứ nhất dựa trên quy luật 2 được gọi là cơ chế Lévy flights và lần tạo ra nghiệm mới thế hệ thứ hai dựa trên quy luật 3 được gọi là cơ chế phát hiện trứng lạ.
+
+## 3.2.2. Mô tả thuật toán Cuckoo Search
+
+## 3.2.2.1. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+Mỗi nghiệm mới thứ d ở vòng lặp thứ G ${ \cal { X } } _ { d } ^ { ( G ) }$ được tạo ra theo cơ chế Lévy Flights như sau:
+
+$$
+X _ {d} ^ {(G)} = X _ {d} ^ {(G - 1)} + \alpha \oplus \Delta X _ {d} ^ {G - 1} \oplus L \acute {e} v y (\beta)\tag{3.1}
+$$
+
+$$
+L \acute {e} v y (\beta) \sim t ^ {- \beta}\tag{3.2}
+$$
+
+Trong đó  là phép nhân; Lévy(β) là Lévy Flights với các kích thước được tạo ra từ phép phân phối ổn định β [64]. Lévy Flights đóng vai trò hết sức quan trọng cho quá trình tạo ra thế hệ nghiệm mới chất lượng cao của CCSA. Số hạng đầu tiên bên vế phải của phương trình (3.1) là vị trí trước đó của nghiệm trong khi đó số hạng thứ hai là lượng tăng giảm để tạo ra nghiệm mới thay đổi so với nghiệm cũ. Cơ chế Lévy Flights tạo ra một sự đa dạng khoảng cách giữa nghiệm mới và nghiệm cũ rất khác với thuật toán PSO và có kết quả tốt hơn so với PSO về tỉ lệ thành công và tốc độ hội tụ. Điều này được
+
+<!-- page: 45 -->
+
+chứng minh thông qua các hàm tối ưu benchmark ở nghiên cứu [64]. Giá trị $\Delta X _ { d } ^ { G - 1 }$ dùng để thay đổi độ lớn của nghiệm mới so với nghiệm cũ được tính dựa vào nghiệm cũ và nghiệm tốt nhất đến thời điểm hiện tại như công thức (3.3)
+
+$$
+\Delta X _ {d} ^ {G - 1} = \alpha \left(X _ {d} ^ {G - 1} - X _ {\text {best}} ^ {G - 1}\right)\tag{3.3}
+$$
+
+Trong đó $\alpha \geq 0$ là hệ số dương thường chọn trong khoảng [0, 1].
+
+## 3.2.2.2. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+CCSA sẽ tạo ra nghiệm mới lần thứ hai thông qua cơ chế phát hiện trứng lạ như quy luật 2 ở trên. Về hiện tượng tự nhiên, lần tạo ra nghiệm mới này được gọi là phát hiện trứng lạ và về toán học thì được gọi là bước đi ngẫu nhiên chọn lọc (Selective random walk). Ở lần tạo ra nghiệm mới này, xác suất phát hiện trứng lạ $P _ { a }$ sẽ được so sánh với một số ngẫu nhiên (RN). Nếu RN nhỏ hơn $P _ { a _ { 2 } }$ nghiệm mới sẽ được tạo ra nhờ hai nghiệm cũ bất kỳ $X _ { r a n d p e r I }$ và $\mathrm { X } _ { r a n d p e r 2 }$ và sẽ không có nghiệm mới được tạo ra nếu ngược lại. Cụ thể được trình bày trong công thức (3.4).
+
+$$
+X _ {d} ^ {\text {new}} = \left\{ \begin{array}{l l} X _ {d} + \text {rand.} (X _ {\text {randper1}} - X _ {\text {ranper2}}) & \text {if} R N <   P a \\ X _ {d} & \text {otherwise} \end{array} \right.\tag{3.4}
+$$
+
+$P _ { a }$ đóng vai trò quan trọng cho chất lượng nghiệm mới lần hai và giá trị này được cân nhắc chọn lựa. Trong các nghiên cứu đầu tay về CCSA [64] và [69], giá trị của $P _ { a }$ được Yang và cộng sự của ông chọn [0, 0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.4, 0.5] và kết quả chỉ ra rằng giá trị tốt nhất là 0.25 cho giá trị dân số là 15.
+
+## 3.2.2.3. Kỹ thuật chọn lọc
+
+Kỹ thuật chọn lọc là một bước quan trọng trong CCSA nhằm giữ lại các nghiệm chất lượng giữa nghiệm mới và nghiệm cũ. Vì lập luận cho rằng nghiệm mới được tạo ra chưa hoàn toàn chắc chắn sẽ có chất lượng tốt hơn nghiệm cũ. Do đó, mỗi nghiệm mới và nghiệm cũ tại cùng một tổ chim sẽ được so sánh. Nghiệm có chất lượng tốt hơn tức giá trị hàm thích nghi nhỏ hơn sẽ được giữ lại và nghiệm còn lại sẽ được bỏ đi. Quá trình này được thực hiện dựa vào công thức (3.5).
+
+$$
+X _ {d} = \left\{ \begin{array}{l l} X _ {d} ^ {\text {new}} & \text {if Fitness} (X _ {d} ^ {\text {new}}) <   \text {Fitness} (X _ {d}) \\ X _ {d} & \text {otherwise} \end{array} , d = 1, \dots , N _ {p} \right.\tag{3.5}
+$$
+
+Công thức (3.5) được sử dụng 2 lần cho thuật toán CCSA, lần đầu sau khi áp dụng Lévy flights và lần thứ hai sau khi áp dụng cơ chế phát hiện trứng lạ. Quá trình tìm kiếm nghiệm tối ưu của CCSA được trình bày chi tiết trong hình trong hình 3.1 và 3.2.
+
+<!-- page: 46 -->
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Thuật toán 1: CCSA
+Hàm mục tiêu $f(X)$, $C = (X_1, ..., X_d)^T$;
+Tạo ra dân số ban đầu gồm $N_p$ tổ chim $d$ ($d = 1, 2, ..., N_p$)
+Tính hàm thích nghi và chọn nghiệm có giá trị nhỏ nhất làm nghiệm tối ưu toàn cục
+while ($Vòng lặp hiện tại G &lt; Vòng lặp lớn nhất G_{max}$)
+    Tạo ra nghiệm mới thể hệ thứ nhất $X_{d}^{new}$ theo cơ chế Lévy flights ở công thức (3.1)
+        Đánh giá nghiệm mới (tính hàm thích nghi)
+        So sánh $X_d$ và $X_{d}^{new}$ để giữ lại nghiệm tốt hơn như ct. (3.5)
+    Tạo ra nghiệm mới thể hệ thứ hai $X_{d}^{new}$ theo cơ chế phát hiện trúng lạ (3.4)
+    Đánh giá nghiệm mới (tính hàm thích nghi)
+        So sánh $X_d$ và $X_{d}^{new}$ để giữ lại nghiệm tốt hơn như ct. (3.5)
+    Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tối ưu toàn cục end while
+</div>
+
+Hình 3.1. Thuật toán Cuckoo Search cổ điển (CCSA)
+
+![](images/page_45_image_2.jpg)
+
+Hình 3.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán tối ưu
+
+<!-- page: 47 -->
+
+## 3.2.3. Các áp dụng CCSA gần đây
+
+Kể từ khi được công bố năm 2009, CCSA đã được ứng dụng nhiều trong các bài toán tối ưu trong nhiều lĩnh vực và đặc biệt là kỹ thuật điện. Chi tiết như sau:
+
+$\acute { \mathbf { A } } \mathbf { p }$ dụng cho các hàm toán benchmark [64]
+
+$\acute { \mathbf { A } } \mathbf { p }$ dụng cho điều độ kinh tế hệ thống các nhà máy nhiệt điện [72]
+
+\- Áp dụng cho điều độ kinh tế có xét đến năng lượng mới cho lưới điện nhỏ [73]
+
+\- Áp dụng dò tìm điểm công suất cực đại cho hệ thống pin mặt trời [74]
+
+\- $\acute { \mathbf { A } } \mathbf { p }$ dụng tái cấu trúc lưới điện phân phối[75]
+
+$\acute { \mathbf { A } } \mathbf { p }$ dụng xác định vị trí và tìm dung lượng máy phát phân tán DG trên lưới điện [76]
+
+\- Áp dụng phân bố tối ưu công suất kháng [77]
+
+$\acute { \mathbf { A } } \mathbf { p }$ dụng quản lý chống nghẽn mạch lưới điện [78]
+
+## 3.3. Cuckoo Search Cải Biên (MCSA)
+
+## 3.3.1. Giới thiệu
+
+Ở nghiên cứu [64], Yang và Deb đã chứng minh CCSA vượt trội hơn so với PSO và GA về tỉ lệ thành công và tốc độ hội tụ nhưng Walton và cộng sự của ông ở nghiên cứu [65] đã bình luận và chỉ ra những hạn chế của CCSA khi hoàn toàn dựa vào các tìm kiếm ngẫu nhiên làm cho CCSA chưa hoàn thiện về khả năng tìm kiếm. Do đó, nhóm tác giả này đã đề nghị cải biên thuật toán CCSA thành MCSA với các cơ chế khác nhau cho thế hệ nghiệm mới thứ nhất dựa vào cơ chế Lévy flights.
+
+## 3.3.2. Cuckoo Search cải biên (MCSA)
+
+Trong thuật toán MCSA, tập nghiệm sau khi được khởi tạo thep quy luật thứ nhất và tính toán hàm fitness sẽ được phân thành hai nhóm nghiệm (trứng) trong đó nhóm nghiệm tốt có hàm thích nghi thấp hơn và nhóm nghiệm xấu sẽ có giá trị hàm thích nghi lớn hơn. Hai cải biên sẽ được xây dựng cho hai nhóm này như sau:
+
+## 3.3.2.1. Cải biên thứ nhất cho nhóm nghiệm xấu
+
+Trong cải biên thứ nhất này, giá trị α ở ct. (3.1) sẽ được thay thế thành một hàm phụ thuộc vào giá trị vòng lặp hiện tại G, $\alpha   =   1 / \sqrt { G }$ . Với cải biên này, α sẽ có giá trị lớn nhất ở vòng lặp đầu tiên và nhỏ nhất ở vòng lặp cuối cùng sẽ giúp MCSA mở rộng không gian tìm kiếm toàn cục ở đầu quá trình và co hẹp không gian khi vòng lặp tăng dần đến lúc dừng quá trình tìm kiếm.
+
+## 3.2.2.2. Cải biên thứ hai cho nhóm nghiệm tốt
+
+<!-- page: 48 -->
+
+Ở cải biên thứ hai này, hai trứng tốt sẽ được lấy thông tin và tạo ra bước nhảy cho nghiệm mới. Từng trứng trong nhóm tốt sẽ được chọn ra lần lượt trong khi đó một trứng tốt còn lại sẽ được chọn một cách ngẫu nhiên. Như vậy sẽ có 4 trường hợp xảy ra cho trứng tốt được chọn và trứng tốt ngẫu nhiên như sau:
+
+1) Trứng được chọn và trứng ngẫu nhiên giống nhau
+
+2) Trứng được chọn và trứng ngẫu nhiên khác nhau nhưng có cùng giá trị hàm thích nghi
+
+3) Trứng được chọn có hàm thích nghi lớn hơn trứng ngẫu nhiên
+
+4) Trứng được chọn có hàm thích nghi nhỏ hơn trứng ngẫu nhiên
+
+Walton và cộng sự của ông đã đề xuất tỉ lệ 1:3 cho số trứng trong nhóm tốt và số trứng trong nhóm xấu [65]. Theo tỉ lệ này, số trứng được chia ra làm 4 phần bằng nhau và trứng tốt sẽ chiếm 1 phần trong khi đó 3 phần còn lại thuộc nhóm xấu. Piechocki và cộng sự của ông [79] cũng đã áp dụng tỉ lệ này và kết quả đạt được khá mong đợi. Tuy nhiên, luận án này sẽ thử nghiệm các tỉ lệ khác nhau để đánh giá ảnh hưởng lên kết quả và sau cùng đề xuất tỉ lệ tốt nhất cho phương pháp MCSA khi áp dụng cho điều độ hệ thống thủy nhiệt điện (chi tiết sẽ được trình bày ở chương 4). MCSA được mô tả chi tiết trong hình 3.3 và lưu đồ giải thuật ở hình 3.4 [65].
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Thuật toán 2: MCSA
+Khởi tạo $N_p$ tổ chim, $X_d(d=1,2,\ldots,N_p)$
+Tính toán hàm thích nghi $F_d=f(X_d)$
+Bắt đầu với vòng lập đầu tiên G=1
+    while (Vòng lặp hiện tại $G&lt;Vòng$ lặp lớn nhất $G_{max}$) do
+$G \leftarrow G+1$
+Tách ra thành hai nhóm trúng tốt và nhóm trúng xấu dựa vào hàm thích nghi
+for Cho nhóm trúng xấu do
+Tạo nghiệm mới thể hệ thứ nhất theo cơ chế Lévy flights với $\alpha=1/\sqrt{G}$
+Đánh giá nghiệm mới, so sánh với nghiệm cũ và giữ lại nghiệm tốt hơn
+end for
+for Cho nhóm trúng tốt do
+Chọn ngẫu nhiên 1 trúng $X_r$ trong nhóm tốt
+    if $X_d=X_r$ (Trúng chọn và trúng ngẫu nhiên là 1) do
+        Sử dụng Lévy flights, tạo ra nghiệm mới với $\alpha=1/G^2$
+    end if
+    if ($F_d&gt;F_r$) do
+        $dx=(X_r-X_d)/\varphi$; $\varphi=(1+\sqrt{5})/2$
+        $X_d^{new}=X_d+dx$
+    end if
+    if ($F_d&lt;F_r$) do
+        $dx=(X_d-X_r)/\varphi$
+        $X_d^{new}=X_r+dx$
+    end if
+    if ($F_d=F_r$) do
+</div>
+
+<!-- page: 49 -->
+
+**end if**
+
+Tính hàm thích nghi, so sánh nghiệm tốt và nghiệm cũ giữ lại nghiệm tốt hơn **end for**
+
+Gộp hai nhóm thành một nhóm
+
+Tạo nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ
+
+Đánh giá chất lượng nghiệm
+
+So sánh nghiệm mới và cũ để giữ lại nghiệm tốt hơn
+
+Tìm nghiệm tốt nhất trong số nghiệm giữ lại
+
+**end while**
+
+Hình 3.3. Thuật toán Cuckoo Search cải biên
+
+![](images/page_48_image_9.jpg)
+
+Hình 3.4. Lưu đồ giải thuật áp dụng MCSA cho các bài toán tối ưu
+
+## 3.3.3. Các ứng dụng gần đây của MCSA
+
+Áp dụng giải các hàm toán benchmark [65]
+
+[Thiết kế hệ thống điện hợp nhất cho nông trại tự chủ hiện đại \[](http://www.sciencedirect.com/science/article/pii/S0306261913006247)79]
+
+## 3.4. Cuckoo Search Chọn Lọc Thích Nghi (ASCSA)
+
+<!-- page: 50 -->
+
+Trong luận án này, chúng tôi xây dựng phương pháp ASCSA từ phương pháp CCSA dựa trên hai cải tiến nhằm cải thiện chất lượng nghiệm tối ưu và tăng tốc hội tụ với số vòng lặp nhỏ nhất cho ASCSA. Cải tiến đầu tiên nhằm vào kỹ thuật chọn lọc để giữ lại nghiệm trội trong khi đó cải tiến thứ hai nhằm tăng cường khả năng tìm nghiệm tối ưu địa phương cho thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ. Như đề cập ở trên, CCSA gồm 3 kỹ thuật quan trọng như sau [64]
+
+1) Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights (ct. 3.1)
+
+2) Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ (ct. 3.4)
+
+3) So sánh chọn lọc (ct. 3.5)
+
+Như vậy, ASCSA sẽ cải biên kỹ thuật 2 và kỹ thuật 3 của CCSA nhằm đạt được kết quả tốt hơn. Chỉ tiết được mô tả như sau:
+
+## 3.4.1. Kỹ thuật chọn lọc mới
+
+Trong mục này, kỹ thuật chọn lọc mới được đề xuất nhằm thay thế cho kỹ thuật so sánh chọn lọc cổ điển ở ct. (3.5) ở cuối mỗi vòng lặp trước khi tìm nghiệm tốt nhất trong các nghiệm được chọn lọc giữ lại. Kỹ thuật chọn lọc mới như sau:
+
+\- Tất cả $N _ { p }$ nghiệm cũ và $N _ { p }$ nghiệm mới được gộp lại thành một nhóm $2   \times   N _ { p }$ nghiệm.
+
+\- Sắp xếp $2 \times N _ { p }$ nghiệm này theo thứ tự tăng dần hàm thích nghi (tức giảm dần theo chất lượng nghiệm)
+
+\- Giữ lại $\mathrm { N _ { p } }$ nghiệm đầu tiên trong số $2 \times N _ { p }$ nghiệm đang có.
+
+Tính hiệu quả của kỹ thuật chọn lọc mới này sẽ giúp ASCSA hiệu quả hơn CCSA rất nhiều theo phân tích sau đây.
+
+Ở vòng lặp đầu tiên của tiến trình tìm kiếm nghiệm được thực hiện bởi CCSA và ASCSA được mô tả trong biểu đồ trứng hình 3.5. Tiến trình tìm kiếm bởi CCSA bao gồm các hàng 1, 2, 3, 4 và 5 trong khi đó quá trình này bao gồm các hàng 1, 2, 3, 4 và 6 cho ASCSA. Điểm khác biệt lớn giữa hai phương pháp này là hàng 5 và 6 như trong hình. Để đơn giản, ta chỉ xem xét dân số với 5 nghiệm. Tại hàng 1, 5 trứng trong tổ được khởi tạo và được sắp xếp từ trái sang phải với chất lượng nghiệm được ghi bên trên mỗi trứng. Ví dụ trứng 1 với chất lượng F1 có nghĩa là trứng một có hàm thích nghi nhỏ nhất và hiệu quả nhất trong khi đó trứng 4 với hàm F5 là trứng có chất lượng kém nhất với hàm lớn nhất. Theo cơ chế Lévy flights ở công thức (3.1), 5 trứng mới được tạo ra lần lượt là $1^{\circ},2^{\circ},3^{\circ},4^{\circ}  via  5^{\circ}$ ở hàng thứ 2. Bước này được gọi là lần tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy flights. Quá trình chọn lọc ở công thức (3.5) sau đó được áp dụng để so sánh hai trứng trong cùng một tổ, gọi là so sánh cặp (pair comparison) như trong hình. Do đó, mỗi trứng ở hàng 1 sẽ được so sánh với hàng 2 để tìm ra trứng tốt hơn có hàm thích nghi nhỏ hơn. Giả sử trứng 1’, 2’, 3, 4 và $5 ^ { \circ }$ lần lượt tốt hơn các trứng 1, 2, 3’, 4’ và 5. Như vậy, 5 trứng 1’, 2’, 3, 4 và $5 ^ { \circ }$ được giữ lại ở hàng 3 trong khi đó các trứng 1, 2, 3’, 4’ và 5 bị loại bỏ. Theo cơ chế phát hiện trứng lạ, 5 nghiệm mới được tạo ra ở hàng 4 gồm $1 ^ { \prime \prime } , 2 ^ { \prime \prime } , 3 ^ { \prime \prime } , 4 ^ { \prime \prime }$ và $5 ^ { \circ }$ . Để tạo ra nghiệm mới lần hai này, CCSA sử dụng công thức (3.4) trong khi ASCSA sẽ sử dụng thuật toán chọn lọc thích nghi (sẽ
+
+<!-- page: 51 -->
+
+được trình bày ở mục sau). Giả sử rằng bước này là giống nhau cho cả hai phương pháp với lâp luận do chỉ mới là vòng lặp thứ nhất nên độ chênh lệch hàm thích nghi giữa trứng tốt nhất với các trứng khác vẫn còn khá lớn và cả hai phương pháp chỉ dùng bước nhảy với hai nghiệm ngấu nhiên. CCSA tiếp tục quá trình với kỹ thuật chọn lọc so sánh cặp như ở công thức (3.5) và giữ lại lân lượt các trứng 1’, 2”, 3”, 4 và 5’’ tương ứng với các giá trị hàm thích nghi F1, F3, F5, F8, và F7. Rõ ràng ràng các trứng tương ứng với hàm thích nghi F2 và F4 đã bị bỏ đi một cách đáng tiếc. Ngược lại, kỹ thuật chọn lọc mới của ASCSA sẽ giữ lại 5 trứng tốt nhất 1’, 1”, 2”, 4’ và 3”tương ứng với các hàm thích nghi F1, F2, F3, F4 và F5 ở hàng thứ 6. Như vậy, sau vòng lặp thứ nhất, tập nghiệm tốt được giữ lại của ASCSA tốt hơn so với CCSA. Tại đầu vòng lặp thứ hai, Lévy flights sẽ được sử dụng để thực hiện quá trình tìm kiếm toàn cục trên diện rộng và thế mạnh hiệu quả hơn của ASCSA là công đoạn tìm kiếm so với CCSA. Bảng 3.1 trình bày các nghiệm mới thu được từ quá trình tìm kiếm này bởi CCSA và ASCSA. Bảng này cho thấy 3 nghiệm của CCSA gồm 1’, 2’ và 3’ tương ứng với 3 nghiệm 1’, 3’ và 5’ của ASCSA trong khi đó 2 nghiệm còn lại thì khác nhau. Hai nghiệm trước 4’ và 5’ của CCSA có hàm thích nghi là F8 và F7 trong khi đó 2 nghiệm trước 2’ và 4’ của ASCSA có hàm thích nghi là F2 và F4. Rõ ràng F2 và F4 của ASCSA nhỏ hơn rất nhiều so với F8 và F7 của CCSA. Do đó, hai nghiệm mới 4’ và 5’ của CCSA ở xa nghiệm tốt nhất hơn nhiều so với hai nghiệm 2’ và 4’ của ASCSA. Thật vậy, các nghiệm mới được tạo ra từ Lévy flights là quá trình tìm kiếm toàn cục trên diện rộng [64], do đó quá trình chọn lọc của ASCSA có thể cải thiện hiệu suất từ CCSA. Ngoài ra, quá trình tìm kiếm địa phương (local search) của ASCSA cũng được cải thiện đáng kể so với CCSA. Kỹ thuật tìm kiếm này sẽ được phân tích theo mục 3.4.2 bên dưới.
+
+Bảng 3.1. Các nghiệm mới được tạo từ CCSA và ASCSA sử dụng Lévy flights ở vòng lặp thứ hai.
+
+| Nghiệm mới của CCSA | CCSA | ASCSA | Nghiệm mới của ASCSA |
+| --- | --- | --- | --- |
+| 1' | X1'X1'0X1'X1'Lévy() | X1'X1'0X1'X1'Lévy() | 1' |
+| 2' | X2'X2"0X2"X1'Lévy() | X2'X1"0X1"X1'Lévy() | 2' |
+| 3' | X3'X3"0X3"X1'Lévy() | X3'X2"0X2"X1'Lévy() | 3' |
+| 4' | X4'X40X4X1'Lévy() | X4'X2'0X2'X1'Lévy() | 4' |
+| 5' | X5'X5"0X5"X1'Lévy() | X5'X3"0X3"X1'Lévy() | 5' |
+
+<!-- page: 52 -->
+
+![](images/page_51_image_0.jpg)
+
+## 3.4.2. Cơ chế phát hiện trứng lạ thích nghi
+
+Trong lần tạo ra thế hệ nghiệm mới thứ hai ở ct. (3.4), CCSA đã chỉ sử dụng một bước nhảy dựa vào hai nghiệm ngẫu nhiên được viết lại như sau:
+
+$$
+\Delta X _ {d, n e w 1} = r a n d. (X _ {r a n d p e r 1} - X _ {r a n d p e r 2})\tag{3.6}
+$$
+
+Giá trị bước nhảy X<sub>d</sub>,n<sub>ew1</sub> sẽ rất bé khi các nghiệm X<sub>randper1</sub> và X<sub>randper2</sub> gần bằng nhau và giá trị bước nhảy này gần như bằng 0 ở các vòng lặp cuối của quá trình tìm kiếm nghiệm vì ở các vòng lặp cuối cùng các nghiệm có xu hướng gần giống nhau và giống với nghiệm tốt nhất. Điều này cho thấy, giá trị bước nhảy này sẽ đẩy CCSA và vùng cực trị địa phương và khả năng nhảy ra khỏi vùng này gần như rất thấp. Từ đó, giá trị bước nhảy dựa vào 4 nghiệm ngẫu nhiên được đề xuất như ct. (3.7).
+
+$$
+\Delta X _ {d, n e w 2} = r a n d. (X _ {r a n d p e r 1} - X _ {r a n d p e r 2} + X _ {r a n d p e r 3} - X _ {r a n d p e r 4})\tag{3.7}
+$$
+
+Trong đó $X _ { r a n d p e r I } ,$ , X<sub>randper2</sub>, X<sub>randper3</sub> và $X _ { r a n d p e r 4 }$ là 4 nghiệm ngẫu nhiên được lấy ra từ tập $N _ { p }$ nghiệm đang có.
+
+Như vậy, sẽ có hai trường hợp tạo ra nghiệm mới cho cơ chế phát hiện trứng lạ như ct. (3.8) và ct. (3.9) nếu số ngẫu nhiên RN nhỏ hơn xác suất phát hiện trứng lạ $P _ { a }$
+
+$$
+X _ {d, n e w 1} = X _ {d} + r a n d. (X _ {r a n d p e r 1} - X _ {r a n d p e r 2})\tag{3.8}
+$$
+
+$$
+X _ {d, n e w 2} = X _ {d} + r a n d. (X _ {r a n d p e r 1} - X _ {r a n d p e r 2} + X _ {r a n d p e r 3} - X _ {r a n d p e r 4})\tag{3.9}
+$$
+
+Chứng minh hình học dựa vào Hình 3.6, Hình 3.7 và Hình 3.8 cho thấy rằng hai công thức này nên được sử dụng song song cho dân số nghiệm đang có. Hình 3.6 biểu diễn cho quá trình nghiệm ở các vòng lặp đầu tiên khi các nghiệm còn đang ở rất xa nhau. Trong trường hợp này nếu ct. (3.9) được sử dụng thì nghiệm mới $X _ { n e w 2 }   \mathfrak { s } \tilde { \mathbf { c } }$ ở rất xa nghiệm cũ của nó. Ngược lại, nghiệm mới $X _ { n e w I }$ được tạo ra từ ct. (3.8) sẽ hợp lý hơn
+
+<!-- page: 53 -->
+
+cho trường hợp này. Thật vậy, trong quá trình tìm kiếm ở giai đoạn đầu, nếu không gian tìm kiếm quá rộng sẽ dẫn đến bỏ sót nghiệm và vùng tìm kiếm cực trị địa phương sẽ không hiệu quả. Ngược lại, giá trị $X _ { n e w 2 }$ lại trở nên hiệu quả cho cuối quá trình tìm kiếm mô tả ở Hình 3.7 khi các nghiệm ở rất gần nhau. Lúc này, $X _ { n e w I }$ sẽ rất gần với nghiệm cũ của nó hoặc sẽ trùng với nghiệm cũ trong khi đó $X _ { n e w 2 }$ có sự khác biệt rõ ràng. Hình 3.6 và Hình 3.7 cho thấy việc áp dụng riêng lẽ hai công thức (3.8) và (3.9) sẽ không hiệu quả. Hình 3.8 mô tả thực tế quá trình tìm kiếm nghiệm ở các vòng lặp bất kỳ. Như vậy nghiệm tốt nhất và nghiệm ngẫu nhiên nào đó sẽ có thể ở rất gần nhau hoặc ở xa nhau. Trường hợp nghiệm cũ $X _ { o l d I }$ ở xa nghiệm tốt nhất Gbest, nghiệm mới $X _ { n e w I }$ ở ct. (3.8) sẽ được áp dụng và ngược lại khi nghiệm cũ $X _ { o l d 2 }$ ở rất gần nghiệm tốt nhất Gbest, nghiệm mới $X _ { n e w 2 }$ ở ct. (3.9) sẽ được áp dụng. Tuy nhiên, cần đưa ra giá trị cụ thể về khoảng cách để xác định nên áp dụng (3.8) hay (3.9). Từ đó, tỉ $s \hat { 0 }$ chênh lệch hàm thích nghi FDR được xây dựng theo công thức (3.10). Trong công thức này $F T _ { d }$ là giá trị hàm thích nghi của nghiệm d và FTbest là giá trị hàm thích nghi nhỏ nhất của nghiệm tốt nhất trong dân số đang xét.
+
+$$
+F D R _ {d} = \frac {F T _ {d} - F T _ {b e s t}}{F T _ {b e s t}}\tag{3.10}
+$$
+
+Khi giá trị $F D R _ { d }$ nhỏ hơn giá trị ngưỡng ε , tức nghiệm d và nghiệm tốt nhất đang ở gần nhau thì công thức (3.9) sẽ được áp dụng. Ngược lại, ct. (3.8) sẽ là lựa chọn tốt hơn. Để tìm giá trị ngưỡng hiệu quả, chúng tôi đưa ra 5 giá trị[10<sup>-1</sup>, 10<sup>-2</sup>, 10<sup>-3</sup>, 10<sup>-4</sup>, 10<sup>-5</sup>] và kết quả sẽ được phân tích cho 5 giá trị này để đánh giá ảnh hưởng. Hình 3.9 và lưu đồ giải thuật ở
+
+Hình 3.10 trình bày chi tiết thuật toán ASCSA.
+
+![](images/page_52_image_4.jpg)
+
+Hình 3.6. Các nghiệm ở các vòng lặp đầu quá trình tìm kiếm
+
+<!-- page: 54 -->
+
+![](images/page_53_image_0.jpg)
+
+Hình 3.7. Các nghiệm ở các vòng lặp cuối quá trình tìm kiếm
+
+![](images/page_53_image_2.jpg)
+
+Hình 3.8. Xác định phương thức tạo nghiệm tối ưu
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Adaptive Selective Cuckoo Search Algorithm
+Hàm mục tiêu $f(X), C = (X_1, ..., X_d)^T$;
+Tạo ra dân số ban đầu gồm $N_p$ tổ chim $d$ ($d = 1, 2, ..., N_p$)
+Tính hàm thích nghi và chọn nghiệm có giá trị nhỏ nhất làm nghiệm $G_{best}$
+while ($Vòng\ lặp\ hiện\ tại \ G &lt; Vòng\ lặp\ lớn\ nhất \ G_{max}$)
+    1) Tạo ra nghiệm mới thể hệ thứ nhất $X_d^{new}$ theo cơ chế Lévy flights
+    2) Đánh giá nghiệm mới (tính hàm thích nghi)
+    3) So sánh $X_d$ và $X_d^{new}$ để giữ lại nghiệm tốt hơn nhờ sử dụng ct. (3.5)
+    4) Tạo ra nghiệm mới thể hệ hai theo cơ chế phát hiện trứng lạ thích nghi
+For $d = 1: N_p$
+    If RN&lt;$P_a$ % $RN \in [0, 1]$
+        If $FR_d &lt; \varepsilon$
+            $X_{d,new2} = X_d + rand.(X_{randper1} - X_{randper2} + X_{randper3} - X_{randper4})$ % ct. (3.9)
+        else
+            $X_{d,new2} = X_d + rand.(X_{randper1} - X_{randper2})$ % ct. (3.8)
+        end
+    else
+</div>
+
+<!-- page: 55 -->
+
+$$
+X _ {d, n e w 2} = X _ {d}
+$$
+
+end
+
+end
+
+5) Tính hàm thích nghi
+
+6) $\acute { \mathbf { A } } \mathbf { p }$ dụng kỹ thuật chọn lọc mới giữ lại $N _ { p }$ nghiệm trội
+
+7) Chọn nghiệm tốt nhất có hàm thích nghi nhỏ nhất
+
+**end while**
+
+Hình 3.9. Thuật toán ASCSA
+
+![](images/page_54_image_8.jpg)
+
+Hình 3.10. Lưu đồ giải thuật áp dụng ASCSA cho các bài toán tối ưu
+
+## 3.4.3. Kiểm tra tính hiệu quả và ổn định
+
+Ở mục này, chúng tôi sẽ kiểm tra tính hiệu quả và độ ổn định của ASCSA với các bước nhảy khác nhau gồm $( \Delta \mathbf { X } _ { 1 } + \Delta \mathbf { X } _ { 2 } )$ như ở công thức (3.9) và $\left( \Delta \mathrm { X } _ { 1 } + \Delta \mathrm { X } _ { 2 } + \Delta \mathrm { X } _ { 3 } \right)$ như ở công thức (3.11). Để dễ dàng so sánh, phương pháp ASCSA với công thức (3.9) được gọi là ASCSA-V1 trong khi đó ASCSA sử dụng (3.11) được gọi là ASCSA-V2.
+
+$$
+X _ {n e w 2} = X _ {o l d} + \Delta X _ {1} + \Delta X _ {2} + \Delta X _ {3}\tag{3.11}
+$$
+
+Hai phiên bản này của ASCSA được thực thi $\mathsf { d } \hat { \mathsf { e } }$ tìm nghiệm tối ưu cho 3 hàm toán Benchmark ở bảng 3.2 là Rosenbrock, Sphere và Griewangk, và hai hệ thống thủy nhiệt điện gồm hệ thống 1 và hệ thống 6 ở chương 4. Trong đó, hệ thống thứ nhất bỏ qua hiệu ứng xả van-tương ứng với hàm chi phí khả vi và hệ thống thứ hai có xét đến hiệu ứng
+
+<!-- page: 56 -->
+
+xả van-tương ứng với hàm chi phí không khả vi. Để thực thi cho các thử nghiệm này, dân số $N _ { p } { = } 2 0$ được cố định cho 3 hàm toán và $N _ { p } { = } 3 0$ được chọn cho 2 hệ thống HTS trong khi đó giá trị số vòng lặp lớn nhất được chọn tùy độ phức tạp của hàm và hệ thống. Cụ thể $G_{max}=1,500,G_{max}=200$ và $G _ { m a x } { = } 5 0 0$ được chọn cho hàm Rosenbrock, Sphere và hàm Griewangk nhưng $G _ { m a x } { = } 5 0$ được chọn cho cả 2 hệ thống HTS. Với mỗi trường hợp của bộ thông $s \hat { \hat { 0 } } ,$ cả hai phiên bản ASCSA đều được chạy 100 lần và các giá trị được báo cao cho 3 hàm toán là giá trị nhỏ nhất (GTNN), giá trị trung bình (GTTB), giá trị lớn nhất (GTLN) và độ lệch chuẩn (DLC) trong khi đó các giá trị báo cáo cho 2 hệ thống HTS là chi phí nhỏ nhất (CPNN), chi phí trung bình (CPTB), chi phí lớn nhất (CPLN) và DLC. Các giá trị của 3 hàm toán là giá trị khi thay các biến vào hàm F1, F2 và F3 trong khi chi phí của 2 hệ thống là hàm mục tiêu chi phí phát điện tại các nhà máy nhiệt điện cần cực tiểu. Các đại lượng này sẽ được tiếp tục sử dụng ở các chương sau. So sánh các giá trị này được trình bày trong bảng 3.2, 3.3 và 3.4 cho 3 hàm toán benchmark và trình bày trong bảng 3.6 và 3.7 cho hai hệ thống thủy nhiệt điện. Kết quả từ bảng 3.3 cho thấy ASCSA-V1 có thể đạt được giá trị nhỏ nhất tốt hơn ASCSA-V2 tại tất cả các giá trị của threshold ε ngoại trừ giá trị $1 0 ^ { - 1 }   \mathrm { v } \dot { \mathrm { a } }   1 0 ^ { - 3 }$ . Hơn nữa, giá trị nhỏ nhất tốt nhất đạt được từ ASCSA-V1 là 0.0008 trong khi đó giá trị nhỏ nhất của ASCSA-V2 rất lớn với 1.1181. Mặc dù giá trị độ lệch chuẩn cho thấy ASCSA-V2 ổn định hơn ASCSA-V1 nhưng ASCSA-V1 vẫn được đánh giá hiệu quả hơn bởi giá trị nhỏ nhất luôn là tiêu chuẩn đầu tiên và chất lượng lời giải được thể hiện thông qua giá trị này. So sánh cho hàm Sphere và hàm Griewangk cho thấy ASCSA-V1 luôn luôn đạt được giá trị nhỏ nhất tốt hơn ASCSA-V2; tuy nhiên, không có kết luận về độ ổn định do có sự đánh đổi độ lệch chuẩn giữa hai phương pháp này. Tương tự, so sánh ở 2 hệ thống thủy nhiệt điện cũng cho thấy ASCSA-V1 có giá trị nhỏ nhất và độ lệch chuẩn nhỏ hơn ASCSA-V2. Do đó, có thể kết luận tính hiệu quả và ổn định của ASCSA-V1 vượt trội ASCSA-V2.
+
+Bảng 3.2. Các hàm toán Benchmark
+
+<table><tbody><tr><td>TT</td><td>Hàm</td><td>Miền</td></tr><tr><td>F1(Rosenbrock)</td><td>N [( 100(xi1 xi2))2(xi 1)2] i1</td><td>xi[30, 30] ; N30</td></tr><tr><td>F3(sphere)</td><td>n xi2 i1</td><td>xi[5. 12, 5. 12]; N25</td></tr><tr><td rowspan="2">F5(Griewangk)</td><td>11N 2Nxi</td><td rowspan="2">xi[600, 600]; N25</td></tr><tr><td>xi cos <sup>4000</sup> i1 i1i</td></tr></tbody></table>
+
+<!-- page: 57 -->
+
+Bảng 3.3. So sánh kết quả hàm Rosenbrock
+
+<table><tbody><tr><td>Thresholdε</td><td>Phương pháp</td><td>GTNN</td><td>GTTB</td><td>GTLN</td><td>DLC</td></tr><tr><td rowspan="2">10<sup>-1</sup></td><td>ASCSA-V1</td><td>10.1809</td><td>8111.5742</td><td>58528.962</td><td>10728.53</td></tr><tr><td>ASCSA-V2</td><td>4.5404</td><td>4419.1812</td><td>36686.734</td><td>6665.304</td></tr><tr><td rowspan="2">10<sup>-2</sup></td><td>ASCSA-V1</td><td>1.3234</td><td>6457.4885</td><td>50055.682</td><td>9382.683</td></tr><tr><td>ASCSA-V2</td><td>4.7734</td><td>6581.541</td><td>46761.743</td><td>9164.041</td></tr><tr><td rowspan="2">10<sup>-3</sup></td><td>ASCSA-V1</td><td>1.3609</td><td>8670.6706</td><td>50386.756</td><td>12362.12</td></tr><tr><td>ASCSA-V2</td><td>1.1181</td><td>6146.9652</td><td>39531.321</td><td>8645.03</td></tr><tr><td rowspan="2">10<sup>-4</sup></td><td>ASCSA-V1</td><td>2.1895</td><td>7585.0316</td><td>48480.15</td><td>9900.631</td></tr><tr><td>ASCSA-V2</td><td>4.7979</td><td>6527.7366</td><td>50291.85</td><td>8885.626</td></tr><tr><td rowspan="2">10<sup>-5</sup></td><td>ASCSA-V1</td><td>0.0008</td><td>11472.849</td><td>303905.84</td><td>41969.35</td></tr><tr><td>ASCSA-V2</td><td>5.2318</td><td>7020.8013</td><td>52215.377</td><td>11493.47</td></tr></tbody></table>
+
+Bảng 3.4. So sánh kết quả hàm Sphere
+
+<table><tbody><tr><td>Thresholdε</td><td>Phương pháp</td><td>GTNN</td><td>GTTB</td><td>GTLN</td><td>DLC</td></tr><tr><td rowspan="2">10<sup>-1</sup></td><td>ASCSA-V1</td><td>9.371E-05</td><td>0.00131</td><td>0.00977</td><td>0.00152</td></tr><tr><td>ASCSA-V2</td><td>1.89E-04</td><td>0.00195</td><td>0.00960</td><td>0.00186</td></tr><tr><td rowspan="2">10<sup>-2</sup></td><td>ASCSA-V1</td><td>5.834E-05</td><td>0.00111</td><td>0.01087</td><td>0.00143</td></tr><tr><td>ASCSA-V2</td><td>7.031E-05</td><td>0.00123</td><td>0.00579</td><td>0.00118</td></tr><tr><td rowspan="2">10<sup>-3</sup></td><td>ASCSA-V1</td><td>6.313E-05</td><td>0.00108</td><td>0.00460</td><td>0.00102</td></tr><tr><td>ASCSA-V2</td><td>1.39E-04</td><td>0.00131</td><td>0.00677</td><td>0.00149</td></tr><tr><td rowspan="2">10<sup>-4</sup></td><td>ASCSA-V1</td><td>1.17E-04</td><td>0.00103</td><td>0.00739</td><td>0.00110</td></tr><tr><td>ASCSA-V2</td><td>9.768E-05</td><td>0.00108</td><td>0.00631</td><td>0.00092</td></tr><tr><td rowspan="2">10<sup>-5</sup></td><td>ASCSA-V1</td><td>8.609E-05</td><td>0.00104</td><td>0.00810</td><td>0.00136</td></tr><tr><td>ASCSA-V2</td><td>1.09E-04</td><td>0.00119</td><td>0.00520</td><td>0.00107</td></tr></tbody></table>
+
+Bảng 3.5. So sánh kết quả hàm Griewangk
+
+<table><tbody><tr><td>Thresholdε</td><td>Phương pháp</td><td>GTNN</td><td>GTTB</td><td>GTLN</td><td>DLC</td></tr><tr><td rowspan="2">10<sup>-1</sup></td><td>ASCSA-V1</td><td>1.401E-09</td><td>0.01342</td><td>0.08311</td><td>0.01840</td></tr><tr><td>ASCSA-V2</td><td>8.399E-10</td><td>0.01456</td><td>0.06640</td><td>0.01559</td></tr><tr><td rowspan="2">10<sup>-2</sup></td><td>ASCSA-V1</td><td>3.405E-10</td><td>0.01758</td><td>0.08574</td><td>0.02120</td></tr><tr><td>ASCSA-V2</td><td>2.945E-09</td><td>0.01573</td><td>0.08112</td><td>0.01778</td></tr><tr><td rowspan="2">10<sup>-3</sup></td><td>ASCSA-V1</td><td>5.118E-10</td><td>0.01521</td><td>0.08570</td><td>0.01889</td></tr><tr><td>ASCSA-V2</td><td>2.496E-09</td><td>0.01584</td><td>0.06619</td><td>0.01676</td></tr><tr><td rowspan="2">10<sup>-4</sup></td><td>ASCSA-V1</td><td>1.683E-09</td><td>0.01825</td><td>0.07568</td><td>0.01796</td></tr><tr><td>ASCSA-V2</td><td>1.308E-09</td><td>0.01892</td><td>0.15666</td><td>0.02305</td></tr><tr><td rowspan="2">10<sup>-5</sup></td><td>ASCSA-V1</td><td>1.141E-09</td><td>0.01642</td><td>0.12982</td><td>0.02237</td></tr><tr><td>ASCSA-V2</td><td>4.346E-09</td><td>0.01998</td><td>0.25375</td><td>0.03098</td></tr></tbody></table>
+
+<!-- page: 58 -->
+
+Bảng 3.6. So sánh kết quả hệ thống HTS 1
+
+<table><tbody><tr><td>Thresholdε</td><td>Phương pháp</td><td>CPNN($)</td><td>CPTB($)</td><td>CPLN($)</td><td>DLC($)</td></tr><tr><td rowspan="2">10<sup>-1</sup></td><td>ASCSA-V1</td><td>64606.0334</td><td>64606.6575</td><td>64608.9856</td><td>0.6462</td></tr><tr><td>ASCSA-V2</td><td>64606.1236</td><td>64607.9957</td><td>64621.6834</td><td>1.9670</td></tr><tr><td rowspan="2">10<sup>-2</sup></td><td>ASCSA-V1</td><td>64606.0367</td><td>64606.6263</td><td>64610.8960</td><td>0.7031</td></tr><tr><td>ASCSA-V2</td><td>64606.0951</td><td>64607.7546</td><td>64617.4620</td><td>1.8294</td></tr><tr><td rowspan="2">10<sup>-3</sup></td><td>ASCSA-V1</td><td>64606.0440</td><td>64606.4445</td><td>64608.3386</td><td>0.4584</td></tr><tr><td>ASCSA-V2</td><td>64606.0555</td><td>64607.0461</td><td>64610.8857</td><td>0.8574</td></tr><tr><td rowspan="2">10<sup>-4</sup></td><td>ASCSA-V1</td><td>64606.0267</td><td>64606.3507</td><td>64608.8666</td><td>0.3910</td></tr><tr><td>ASCSA-V2</td><td>64606.0403</td><td>64606.4592</td><td>64608.1551</td><td>0.4100</td></tr><tr><td rowspan="2">10<sup>-5</sup></td><td>ASCSA-V1</td><td>64606.0101</td><td>64606.2045</td><td>64606.9124</td><td>0.1724</td></tr><tr><td>ASCSA-V2</td><td>64606.0131</td><td>64606.2545</td><td>64607.6208</td><td>0.2278</td></tr></tbody></table>
+
+Bảng 3.7. So sánh kết quả hệ thống HTS 2
+
+<table><tbody><tr><td>Thresholdε</td><td>Phương pháp</td><td>CPNN($)</td><td>CPTB($)</td><td>CPLN($)</td><td>DLC($)</td></tr><tr><td rowspan="2">10<sup>-1</sup></td><td>ASCSA-V1</td><td>66121.8709</td><td>66187.5314</td><td>66307.8597</td><td>30.7381</td></tr><tr><td>ASCSA-V2</td><td>66159.542</td><td>66210.7102</td><td>66309.3901</td><td>32.9847</td></tr><tr><td rowspan="2">10<sup>-2</sup></td><td>ASCSA-V1</td><td>66131.2874</td><td>66185.312</td><td>66269.5585</td><td>29.3715</td></tr><tr><td>ASCSA-V2</td><td>66134.2087</td><td>66214.1903</td><td>66319.9156</td><td>40.0744</td></tr><tr><td rowspan="2">10<sup>-3</sup></td><td>ASCSA-V1</td><td>66122.0419</td><td>66180.2551</td><td>66304.1944</td><td>29.9719</td></tr><tr><td>ASCSA-V2</td><td>66133.5232</td><td>66191.8279</td><td>66401.9865</td><td>36.0796</td></tr><tr><td rowspan="2">10<sup>-4</sup></td><td>ASCSA-V1</td><td>66117.8498</td><td>66170.3513</td><td>66353.8719</td><td>27.1936</td></tr><tr><td>ASCSA-V2</td><td>66121.3158</td><td>66167.1845</td><td>66376.2189</td><td>29.3707</td></tr><tr><td rowspan="2">10<sup>-5</sup></td><td>ASCSA-V1</td><td>66122.6111</td><td>66170.3275</td><td>66323.2674</td><td>25.8363</td></tr><tr><td>ASCSA-V2</td><td>66129.5038</td><td>66176.921</td><td>66362.3401</td><td>33.3311</td></tr></tbody></table>
+
+Tóm lại, phương pháp ASCSA-V1 sử dụng bước nhảy từ bốn nghiệm để cập nhật nghiệm mới cho kết quả tốt hơn so với ASCSA-V2 sử dụng sáu nghiệm khi áp dụng cho các hàm benchmark và hai hệ thống thủy nhiệt điện. Do đó, phương pháp ASCSA đề xuất sẽ chỉ sử dụng bốn nghiệm như ở phiên bản ASCSA-V1 cho toàn bộ luận án trong khi đó ASCSA-V2 sẽ không được áp dụng tiếp theo.
+
+## 3.5. Mạng Hopfield Lagrange Tăng Cường (ALHN)
+
+ALHN là sự kết hợp giữa hàm tăng cường Lagrange và mạng neuron Hopfield liên tục trong đó hàm Lagrange tăng cường được sử dụng trực tiếp như hàm năng lượng [13-14]. Để có thể áp dụng được phương pháp ALHN, hàm Lagrange tăng cường trước tiên được thành lập và tiếp theo là hàm năng lượng. Nghiệm tối ưu được tìm ra nhờ hệ phương trình đạo hàm từ hàm năng lượng. Do đó, ALHN phụ thuộc vào quá trình lấy
+
+<!-- page: 59 -->
+
+đạo hàm riêng của hàm mục tiêu và hàm ràng buộc và ALHN sẽ không giải được các hệ thống có hàm mục tiêu và ràng buộc không khả vi. Quá trình áp dụng ALHN cho bài toán tối ưu như sau
+
+Hàm mục tiêu của bài toán tối ưu: Cực tiểu f(x)
+
+Ràng buộc bởi
+
+$$
+g _ {i} \left(x _ {j}\right) = 0 i = 1, 2, \dots , \mathrm{N}\tag{3.12}
+$$
+
+$$
+x _ {j, \min} \leq x _ {j} \leq x _ {j, \max} j = 1, 2,..., \mathrm{N}\tag{3.13}
+$$
+
+Trong đó
+
+$x _ { j }$ là biến thứ j và $x _ { j m i n }$ và $x _ { j m a x }$ là giới hạn nhỏ nhất và lớn nhất của biến $x _ { j }$
+
+Hàm Lagrange tăng cường được xây dựng như sau:
+
+$$
+L = f (x _ {j}) - \lambda_ {i} \sum_ {i = 1} ^ {M} g _ {i} (x _ {j}) - \frac {1}{2} \beta_ {i} \sum_ {i = 1} ^ {M} [ g _ {i} (x _ {j}) ] ^ {2}\tag{3.14}
+$$
+
+Trong $\mathbf { \dot { d } \dot { 0 } }$
+
+λ là nhân tử Lagrange tương ứng với ràng buộc cân bằng
+
+$\beta _ { i }$ là các hệ số phạt
+
+Hàm năng lượng được thành lập như sau:
+
+$$
+E = f (V _ {j, x}) - \sum_ {i = 1} ^ {M} V _ {i, \lambda} g _ {i} (V _ {j, x}) - \frac {1}{2} \beta_ {i} \sum_ {i = 1} ^ {M} [ g _ {i} (V _ {j, x}) ] ^ {2} + \sum_ {j = 1} ^ {N} \int_ {0} ^ {V _ {s k}} g _ {c} ^ {- 1} (V) d V\tag{3.15}
+$$
+
+Trong đó
+
+$V _ { j , x }$ là ngỏ ra neuron liên tục tương ứng với biến $x _ { j }$
+
+$V _ { i , \lambda }$ là ngỏ ra neuron liên tục i tương ứng với nhân tử Lagrange $\lambda _ { i }$
+
+$g _ { c } ^ { - I }$ là hàm sigmoid nghịch đảo của neuron liên tục
+
+Lưu đồ giải thuật áp dụng ALHN giải các bài toán tối ưu được trình bày ở Hình 3.11
+
+![](images/page_58_image_19.jpg)
+
+Hình 3.11. Lưu đồ giải thuật áp dụng ALHN cho các bài toán tối ưu
+
+<!-- page: 60 -->
+
+## 3.6. Tóm Tắt
+
+Chương này đã trình bày mô tả chi tiết các phương pháp được áp dụng gồm ALHN, CCSA, MCSA và ASCSA. Trong 4 phương pháp áp dụng này, ASCSA là phương pháp được xây dựng đầu tiên trong luận án này trong khi 3 phương pháp còn lại đã được xây dựng và áp dụng trước đó. Do đặc tính khác nhau nên cách áp dụng và khả năng áp dụng của ALHN khác hẳn so với ba phương pháp Cuckoo Search còn lại. ALHN sẽ được áp dụng cho hai bài toán đơn giản nhất ở chương 4 trong khi đó CCSA, MCSA và ASCSA được áp dụng cho tất cả các bài toán điều độ tối ưu ở chương 4, 5, 6 và 7.
+
+<!-- page: 61 -->
+
+# CHƯƠNG 4: ÁP DỤNG CÁC PHƯƠNG PHÁP THÔNG MINH NHÂN TẠO ĐIỀU ĐỘ TỐI ƯU HỆ THỐNG THỦY NHIỆT ĐIỆN NGẮN HẠN XÉT CHIỀU CAO CỘT NƯỚC CỐ ĐỊNH VÀ BỎ QUA RÀNG BUỘC THỂ TÍCH HỒ CHỨA
+
+## 4.1. Giới Thiệu
+
+Chương này sẽ áp dụng bốn thuật toán CCSA, MCSA, ASCSA và ALHN để điều độ tối ưu các hệ thống thủy nhiệt điện theo hai bài toán sau:
+
+1) Điều độ hệ thống thủy nhiệt điện ngắn hạn xét chiều cao cột nước cố định và đơn mục tiêu (SO-FH-ST-HTS)
+
+2) Điều độ hệ thống thủy nhiệt điện ngắn hạn xét chiều cao cột nước cố định và đa mục tiêu (MO-FH-ST-HTS)
+
+Ở hai bài toán này, các nhà máy thủy điện với chiều cao cột nước không đổi cùng với các nhà máy nhiệt điện được lên kế hoạch phát điện ngắn hạn trong ngày hoặc vài ngày. Với mô hình chiều cao cột nước cố định, lưu lượng xả qua turbine là một hàm số bậc hai theo công suất phát và các hệ số xả nước. Các ràng buộc về thể tích hồ chứa không được xét trong khi tổng thể tích nước sử dụng trong thời gian hoạch định phải đảm bảo chính xác với giá trị cho phép đã biết trước. Hàm đơn mục tiêu cực tiểu chi phí phát điện của nhà máy nhiệt điện được xét ở bài toán thứ nhất trong khi đó hàm đa mục tiêu cực tiểu cả chi phí và phát điện được xét trong bài toán thứ hai. Hàm phát thải được đặt ra vì các nhà máy nhiệt điện là nguồn phát thải chính các khi như $\mathrm { C O } _ { 2 } , \mathrm { S O } _ { 2 }$ và $\mathrm { N O _ { x } }$ gây ra hiệu ứng nhà kính làm nhiệt độ trái đất tăng dần [58].
+
+Như đã đề cập ở chương 2, các công trình [1-12] nghiên cứu về bài toán đơn mục tiêu cực tiểu chi phí phát điện trong khi đó các công trình [58-63] nghiên cứu về bài toán đa mục tiêu cực tiểu cả chi phí lẫn khí thải. Các công trình [1-5] đã áp dụng các phương pháp tiền định cổ điển và các công trình còn lại [6-12], [58-62] đã áp dụng các phương pháp thông minh nhân tạo gồm mạng neuron và các phương pháp metaheuristic. Chi tiết hai bài toán được mô tả như mục 4.2 bên dưới.
+
+## 4.2. Mô Tả Bài Toán
+
+## 4.2.1. Hàm mục tiêu
+
+## 4.2.1.1. Hàm chi phí
+
+Hàm mục tiêu cực tiểu chi phí phát điện được tóm tắt như công thức (4.1) bên dưới.
+
+$$
+\text {Min} C _ {T} = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} F _ {i m}\tag{4.1}
+$$
+
+Trong đó $C _ { T }$ là tổng chi phí phát điện trong tất cả thời gian, $t _ { m }$ là thời gian của khoảng thứ m và $F _ { i m }$ là chi phí phát điện mỗi giờ của nhà máy thứ i trong khoảng m. Hàm chi phí cổ điển như sau [1]:
+
+<!-- page: 62 -->
+
+$$
+F _ {i m} = \left[ a _ {s i} + b _ {s i} P _ {s i, m} + c _ {s i} P _ {s i, m} ^ {2} \right]\tag{4.2}
+$$
+
+Tuy nhiên trong thực tế quá trình tăng công suất tại các nhà máy, hiệu ứng xả van ảnh hưởng đáng kể đến chi phí nhiên liệu làm cho hàm chi phí lúc này không còn là hàm bậc hai trơn và liên tục mà trở nên hàm không liên tục có dạng như Hình 4.1 và công thức (4.3).
+
+$$
+F _ {i m} = \left[ a _ {s i} + b _ {s i} P _ {s i, m} + c _ {s i} P _ {s i, m} ^ {2} + \left| d _ {s i} \times \sin \left(e _ {s i} \times \left(P _ {s i} ^ {\min} - P _ {s i, m}\right)\right) \right| \right]\tag{4.3}
+$$
+
+![](images/page_61_chart_3.jpg)
+
+Hình 4.1. Đặc tính hàm chi phí khi xét và không xét hiệu ứng xả van
+
+## 4.2.1.2. Hàm phát thải
+
+Như đã đề cập ở [58], các nguồn khí thải từ nhà máy nhiệt điện gồm $\mathrm { S O } _ { 2 } , \mathrm { C O } _ { 2 }$ và $\mathrm { N O _ { x } }$ đã gây hiệu ứng nhà kính nên cần được giảm đến mức nhỏ nhất có thể. Các khí này được biểu diễn bởi các hàm toán học bậc hai như sau [59]:
+
+$$
+N O _ {s i m} = \alpha_ {1 s i} + \beta_ {1 s i} P _ {s i m} + \gamma_ {1 s i} P _ {s i m} ^ {2}\tag{4.4}
+$$
+
+$$
+S O _ {s i m} = \alpha_ {2 s i} + \beta_ {2 s i} P _ {s i m} + \gamma_ {2 s i} P _ {s i m} ^ {2}\tag{4.5}
+$$
+
+$$
+C O _ {s i m} = \alpha_ {3 s i} + \beta_ {3 s i} P _ {s i m} + \gamma_ {3 s i} P _ {s i m} ^ {2}\tag{4.6}
+$$
+
+Tổng khí phát thải là hàm $F _ { 2 }$ như sau [59]:
+
+$$
+\begin{array}{c} F _ {2} = w _ {1} N O _ {s i, m} + w _ {2} S O _ {s i, m} + w _ {3} C O _ {s i, m} \\ = \left(a _ {s e, i} + b _ {s e, i} P _ {s i, m} + c _ {s e, i} P _ {s i, m} ^ {2}\right) \end{array}\tag{4.7}
+$$
+
+Trong đó w1, w2 và $w _ { 3 } \in [ 0 ,   1 ]$ là các trọng số dương tương ứng với các khí thải khác nhau; $\alpha _ { I s i } ,   \beta _ { I s i } ,$ và $\gamma _ { I s i }$ là hệ số khi thải $\mathrm{NO_{x}};$ 2si, $\beta _ { 2 s i } ,$ và $\gamma _ { 2 s i }$ là hệ $s \hat { 0 }$ khí thải $\mathrm{SO}_{2};   \alpha_{3si},$ $\beta _ { { 3 s i } _ { 2 } }$ và $\gamma _ { 3 s i }$ là hệ số khí thải $\mathrm { C O } _ { 2 }$ . Trong trường hợp xem xét cả ba loại khí thải này, các trọng số được đề xuất như nghiên cứu [59]. Cụ thể, $w _ { I } = w _ { 2 } = w _ { 3 } = 0$ sử dụng cho trường
+
+<!-- page: 63 -->
+
+hợp điều độ kinh tế chỉ xét hàm chi phí, $w _ { I } = w _ { 2 } = w _ { 3 } = 1 / 3$ sử dụng cho trường hợp điều độ môi trường chỉ xét khí thải và $w _ { l } = w _ { 2 } = w _ { 3 } = 0 . 5 / 3$ sử dụng cho điều độ đa mục tiêu xét chi phí lẫn khí thải.
+
+Ngoài ra, trong các nghiên cứu gần đây tổng khí thải đại diện cho tất cả các loại khi thải trở nên phức tạp hơn khi được đặc trưng bởi tổng đại số của hàm mũ và hàm bậc hai như sau [62]:
+
+$$
+F _ {2} = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} \left[ \alpha_ {s i} + \beta_ {s i} P _ {s i, m} + \gamma_ {s i} P _ {s i, m} ^ {2} + \eta_ {s i} \exp (\delta_ {s i} P _ {s i, m}) \right]\tag{4.8}
+$$
+
+Trong đó $\alpha _ { s i } ,   \beta _ { s i } ,   \gamma _ { s i } ,   \eta _ { s i } ,$ và $\delta _ { s i }$ là các hệ $s \hat { 0 }$ hàm khí thải của nhà máy nhiệt điện i.
+
+## 4.2.1.3. Hàm đa mục tiêu
+
+Phối hợp tối ưu hệ thống thủy đa mục tiêu là bài toán phức tạp hơn nhiều so với bài toán đơn mục tiêu. Thật vậy, các bài toán đơn mục tiêu chỉ xem xét các hàm mục tiêu riêng lẻ tại mỗi thời điểm như chỉ cực tiểu chi phí phát điện hoặc chỉ cực tiểu phát thải. Bài toán đa mục tiêu xét đến cả chi phí và phát thải phải tìm ra nghiệm thỏa hiệp có chi phí và phát thải chấp nhận được. Để đạt được điều này, nhiệm vụ đa mục tiêu sẽ được chuyển đổi thành đơn mục tiêu sử dụng trọng số hàm chi phí và trọng số của hàm phát thải như sau [83]:
+
+$$
+F = \psi_ {1} F _ {1} + \psi_ {2} F _ {2}\tag{4.9}
+$$
+
+Trong đó $\psi _ { 1 }$ và $\psi _ { 2 }$ là các trọng số tương ứng với hàm chi phí và phát thải được ràng buộc như sau:
+
+$$
+\psi_ {1} + \psi_ {2} = 1\tag{4.10}
+$$
+
+$$
+0 \leq \psi_ {1}, \psi_ {2} \leq 1\tag{4.11}
+$$
+
+Với hàm đa mục tiêu, ba trường hợp điều độ cho hệ thống thủy nhiệt điện được lên $\mathrm { k } \hat { \mathsf { e } }$ hoạch và giá trị của các trọng số cũng khác nhau tương ứng với các trường hợp này như sau:
+
+1) Điều độ kinh tế chỉ xét hàm chi phí, chọn $\Psi _ { l }   = 1$ và $\Psi _ { 2 } = 0$
+
+2) Điều độ phát thải (hay còn gọi là điều độ môi trường) chỉ xét hàm phát thải, chọn $\Psi _ { I }   =   0$ và $\Psi _ { 2 } = I$
+
+3) Điều độ đa mục tiêu (kinh tế- phát thải), $\Psi _ { I }$ và $\Psi _ { 2 }$ được chọn với nhiều giá trị sao cho $\psi _ { 1 }$ và $\psi _ { 2 }$ trong khoảng 0 và 1 như ct. (4.11) và tổng của hai trọng số này luôn bằng 1 như ràng buộc (4.10). Sau đó nghiệm thỏa hiệp cho điều độ đa mục tiêu (là nghiệm có giá trị chi phí và khí thải phù hợp nhất) sẽ được xác định nhờ phương pháp Fuzzy [84]. Các nghiên cứu về bài toán đa mục tiêu [58-63] đã sử dụng phương pháp Fuzzy để tìm nghiệm thỏa hiệp và cho kết quả thỏa đáng.
+
+Ngoài phương pháp Fuzzy còn có phương pháp hệ số phạt đã được xây dựng bởi Kulkarni và cộng sự của ông ở nghiên cứu [85] để tìm nghiệm thỏa hiệp cho bài toán đa mục tiêu. Phương pháp hệ số phạt được xem là đơn giản hơn khi xác định hệ $\mathrm { s } \hat { 0 }$ phạt và
+
+<!-- page: 64 -->
+
+thay vào hàm đa mục tiêu cùng với các giá trị $\psi _ { 1 } = \psi _ { 2 } { = } 1$ và đã được sử dụng rộng rãi trong lĩnh vực kỹ thuật điện [32, 86-91]. Như vậy phương pháp hệ số phạt có thể giảm được việc tìm tập hợp nghiệm trội như phương pháp Fuzzy, giảm thời gian tính toán và số lần thử nghiệm các hệ số điều khiển thuộc về phương pháp tối ưu.
+
+## 4.2.2. Các ràng buộc
+
+Ràng buộc cân bằng hệ thống: tổng công suất phát thủy điện và nhiệt điện bằng tổng công suất tải và tổn thất trên lưới
+
+$$
+\sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} - P _ {L, m} - P _ {D, m} = 0; m = 1, \dots , M\tag{4.12}
+$$
+
+Trong đó $P _ { L , m }$ là tổn thất công suất được tính như sau [2]:
+
+$$
+P _ {L, m} = \sum_ {i = 1} ^ {N _ {1} + N _ {2}} \sum_ {j = 1} ^ {N _ {1} + N _ {2}} P _ {i, m} B _ {i j} P _ {j, m} + \sum_ {i = 1} ^ {N _ {1} + N _ {2}} B _ {0 i} P _ {i, m} + B _ {0 0}\tag{4.13}
+$$
+
+Ràng buộc thể tích nước cho phép: tổng thể tích nước xả qua turbine trong các khoảng thời gian xem xét bằng với thể tích nước cho phép đã được xác định trước.
+
+$$
+\sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} = W _ {a j}; j = 1, \dots , N _ {2}\tag{4.14}
+$$
+
+Với giả sử hồ chứa lớn có sự chênh lệch rất thấp giữa lưu lượng về hồ và lưu lượng xả làm cho thể tích nước trong hồ và chiều cao cột nước gần như không đổi, Glimn-Kirchmayer đã xây dựng hàm xả nước là hàm bậc hai phụ thuộc trực tiếp vào công suất phát như sau[2]:
+
+$$
+q _ {j, m} = a _ {h j} + b _ {h j} P _ {h j, m} + c _ {j} P _ {h j, m} ^ {2}\tag{4.15}
+$$
+
+Ràng buộc công suất nhiệt điện và thủy điện: Giá trị phát ở mỗi thời điểm của từng nhà máy phải nằm trong giới hạn lớn nhất và nhỏ nhất của nhà máy
+
+$$
+P _ {s i, \min} \leq P _ {s i, m} \leq P _ {s i, \max}; i = 1, \dots , N _ {l}; m = 1, \dots , M\tag{4.16}
+$$
+
+$$
+P _ {h j, \min} \leq P _ {h j, m} \leq P _ {h j, \max}; j = 1, \dots , N _ {2}; m = 1, \dots , M\tag{4.17}
+$$
+
+## 4.3. Tính Toán Các Tổ Máy Cân Bằng Thủy Điện Và Nhiệt Điện
+
+Khả năng ứng dụng của ba phương phap CSA cũng như các phương pháp metaheuristic khác cho bài toán FH-ST-HTS không chỉ phụ thuộc vào khả năng tìm kiếm của các phương pháp mà còn phụ thuộc vào cách thức xử lý các ràng buộc trong bài toán. Trong một vài trường hợp, các phương pháp tiềm năng có thể tìm ra các lời giải tối ưu khả thi có chất lượng cao đáp ứng hoàn toàn các ràng buộc từ bài toán; tuy nhiên, với các trường còn lại, một số phương pháp đã không thể vượt qua thách thức này và đã báo cáo lời giải không khả thi vi phạm một số ràng buộc. Do sai sót này, trong mục kết quả số của các chương, một số phương pháp báo cáo lời giải không khả thi sẽ được chỉ ra để làm minh chứng. Để đề nghị phương pháp tốt nhất giải quyết các ràng buộc, một tập hợp các phương trình và bất phương trình phải được quan sát và đánh giá một cách kỹ lưỡng, sau đó việc chọn lựa các biến điều khiển và biến phụ thuộc sẽ được quyết định sao cho
+
+<!-- page: 65 -->
+
+khả năng giải quyết tất cả các ràng buộc là cao nhất. Ở các phương pháp CSA này, các biến điều khiển sẽ được đưa vào lời giải tối ưu và tạo mới thông qua cơ chế Lévy Flights và cơ chế phát hiện trứng lạ trong khi đó các biến phụ thuộc còn lại được tính toán dựa trên các biến điều khiển này cùng với tập hợp các ràng buộc. Các biến điều khiển luôn luôn thỏa mãn các giới hạn lớn nhất và nhỏ nhất bởi vì sau mỗi lần tạo ra nghiệm mới các lời giải đều được kiểm tra và hiệu chỉnh nếu vi phạm. Ngược lại, các biến phụ thuộc đã không được kiểm tra và hiệu chỉnh như vậy mà nó sẽ được phạt vào hàm thích nghi khi vi phạm giới hạn trên hoặc giới hạn dưới của nó. Trong kỹ thuật này, các biến phụ thuộc được gọi là biến cân bằng và các giá trị như công suất của một vài tổ máy nhiệt điện và thủy điện sẽ được sử dụng làm biến cân bằng.
+
+Trong bài toán FH-ST-HTS được xem xét ở đây, có hai ràng buộc cân bằng gồm các phương trình (4.12) và (4.14). Để thỏa mãn cá ràng buộc (4.12) và (4.14), có hai biến cân bằng tương ứng được sử dụng gồm tổ máy nhiệt điện thứ nhất tại M khoảng thời gian xem xét $P _ { s I , m }   ( m   =   1 , 2 , \ldots , M )$ để xử lý ràng buộc cân bằng công suất (4.12) và lưu lượng xả của mỗi nhà máy nhiệt điện ở khoảng thời gian thứ M cuối cùng để xử lý ràng buộc (4.14). Vậy sẽ có (M+N2) ràng buộc cân bằng từ các phương trình (4.12) và (4.14). Do đó, công suất của mỗi nhà máy thủy điện sẽ được tính từ lưu lượng xả tương ứng trong khi đó công suất của tổ máy nhiệt điện thứ nhất sẽ được tính dựa vào (4.12). Toàn bộ quá trình tính toán xử lý các biến cân bằng như sau:
+
+Lưu lượng xả của mỗi nhà máy nhiệt điện ở (M-1) khoảng đầu tiên được giả sử đã được biết trước và lưu lượng xả tại khoảng M cuối cùng $q _ { j , M }$ sau đó được xác định dựa vào (4.14) như sau:
+
+$$
+q _ {j, M} = (W _ {j} - \sum_ {m = 1} ^ {M - 1} t _ {m} q _ {j, m}) / t _ {M}\tag{4.18}
+$$
+
+Khi đã có $q _ { j , m } ,$ công suất thủy điện có thể tính được dựa vào hàm xả nước (4.15) như sau:
+
+$$
+P _ {h j, m} = \frac {- b _ {h j} \pm \sqrt {b _ {h j} ^ {2} - 4 c _ {h j} (a _ {h j} - q _ {j , \mathrm{m}})}}{2 c _ {h j}}; \text {với} \left(b _ {h j} ^ {2} - 4 c _ {h j} (a _ {h j} - q _ {j, \mathrm{m}})\right) \geq 0\tag{4.19}
+$$
+
+Như vậy, N2 ràng buộc nguồn nước đã được giải quyết bởi các biến cân bằng thủy điện. Tiếp theo giả sử đã biết công suất của tổ máy nhiệt điện từ thứ 2 đến tổ máy thứ $N _ { I }$ ta có thể tính được công suất của tổ máy thứ nhất ở mỗi khoảng theo:
+
+$$
+P _ {s 1, m} = P _ {D, m} + P _ {L, m} - \sum_ {i = 2} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m}\tag{4.20}
+$$
+
+Phương trình (4.20) được viết lại dưới dạng biến cân bằng tổ máy nhiệt điện số 1 như sau:
+
+$$
+P _ {L, m} = B _ {1 1} P _ {s 1, m} ^ {2} + \left(2 \sum_ {i = 2} ^ {N _ {1} + N _ {2}} B _ {s i} P _ {i m} + B _ {0 s}\right) P _ {s 1, m} + \sum_ {i = 2} ^ {N _ {1} + N _ {2}} \sum_ {j = 2} ^ {N _ {1} + N _ {2}} P _ {i m} B _ {i j} P _ {j m} + \sum_ {i = 2} ^ {N _ {1} + N _ {2}} B _ {0 i} P _ {i m} + B _ {0 0}\tag{4.21}
+$$
+
+Thay (4.21) vào (4.20), phương trình bậc hai theo $P _ { s l , m }$ như sau:
+
+$$
+A \times P _ {s 1, m} ^ {2} + B \times P _ {s 1, m} + C = 0\tag{4.22}
+$$
+
+<!-- page: 66 -->
+
+Trong đó các hệ số A, B và C của phương trình được tính bằng:
+
+$$
+A = B _ {1 1}\tag{4.23}
+$$
+
+$$
+B = 2 \sum_ {i = 2} ^ {N _ {1}} B _ {1 i} P _ {s i, m} + 2 \sum_ {j = 1} ^ {N _ {2}} B _ {1 j} P _ {h j, m} + B _ {0 1} - 1\tag{4.24}
+$$
+
+$$
+\begin{array}{l} C = \sum_ {i = 2} ^ {N _ {1}} \sum_ {j = 2} ^ {N _ {1}} P _ {s i, m} B _ {i j} P _ {s j, m} + \sum_ {i = 1} ^ {N _ {2}} \sum_ {j = 1} ^ {N _ {2}} P _ {h i, m} B _ {i j} P _ {h j, m} + 2 \sum_ {i = 2} ^ {N _ {1}} \sum_ {j = 1} ^ {N _ {2}} P _ {s i, m} B _ {i j} P _ {h j, m} \\ + \sum_ {i = 2} ^ {N _ {1}} B _ {0 i} P _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} B _ {0 j} P _ {h j, m} + B _ {0 0} + P _ {D, m} - \sum_ {i = 2} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} \end{array}\tag{4.25}
+$$
+
+Cuối cùng, công suất tổ máy nhiệt điện cân bằng số 1 được tìm ra theo công thức (4.22) sau:
+
+$$
+P _ {s 1, m} = \frac {- B \pm \sqrt {B ^ {2} - 4 A C}}{2 A}; \text {với} B ^ {2} - 4 A C \geq 0\tag{4.26}
+$$
+
+Lưu ý rằng một nghiệm tối ưu phải thỏa mãn toàn bộ các ràng buộc và được đánh giá thông qua việc so sánh với các phương pháp khác. Để đạt được nghiệm tối ưu có hàm mục tiêu (4.9), bốn phương pháp ALHN, CCSA, MCSA và ASCSA được áp dụng ở chương này. Trong toàn bộ quá trình tìm kiếm của ba phương pháp CSA, mỗi phương pháp sẽ khởi tạo ngẫu nhiên ban đầu một dân số (một tập nghiệm) và sau đó sẽ xử lý tất cả các ràng buộc. Tập nghiệm này sau đó sẽ được tạo mới ở thế hệ thứ nhất thông qua cơ chế Lévy Flights và ở thế hệ thứ hai theo cơ chế phát hiện trứng lạ. Tại bước cuối cùng, tất cả các nghiệm được đánh giá để xác định nghiệm tốt nhất đến thời điểm hiện tại. Có một sự khác biệt lớn giữa các phương pháp CSA và phương pháp ALHN là ở quá trình tạo ra nghiệm tối ưu. Thật vậy, ALHN chỉ tìm kiếm dựa trên một nghiệm duy nhất để đạt được nghiệm tối ưu cuối cùng và nghiệm tối ưu này ở vòng lặp cuối cùng sẽ thỏa mãn tất cả các ràng buộc xem xét.
+
+Ứng dụng các phương pháp CSA và phương pháp ALHN để giải bài toán FH-ST-HTS sẽ được trình bày ở các mục 4.4-4.7.
+
+## 4.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán FH-ST-HTS
+
+## 4.4.1. Khởi tạo
+
+Với các phương pháp meta-heuristic, ở bước đầu tính toán một tập nghiệm hay còn được gọi là một dân số sẽ được khởi tạo một cách ngẫu nhiên và sau đó dựa vào các cơ chế riêng của từng phương pháp để cải thiện chất lượng nghiệm. Dù các phương pháp khác nhau, nhưng thông thường đều có cùng quá trình khởi tạo ban đầu giống nhau. Tương tự như vậy, quá trình khởi tạo của phương pháp CCSA cũng như MCSA và ASCSA như sau:
+
+Một dân số gồm $N _ { p }$ tổ chim là $X   =   [ X _ { I } ,   . . ,   X _ { d } ,   . . . ,   X _ { N p } ] ^ { T }$ được tạo ra ban đầu trong đó $X _ { d } \left( d = 1 , \ldots , N _ { P } \right)$ đại diễn cho nghiệm thứ d chứa các biến số điều khiển $[ P _ { s i , m , d } q _ { j , m , d } ]$ với $P _ { s i , m , d }$ là công suất của $t \hat { \hat { 0 } }$ máy nhiệt điện thứ i ở khoảng thứ m và $q _ { j , m , d }$ là lưu lượng xả thủy điện thứ j tại khoảng m. Các biến này được khởi tạo như sau:
+
+<!-- page: 67 -->
+
+$$
+P _ {s i, m, d} = P _ {s i, \min} + r a n d * (P _ {s i, \max} - P _ {s i, \min}); i = 2,..., N _ {1}; m = 1,..., M\tag{4.27}
+$$
+
+$$
+q _ {j, m, d} = q _ {j, \min} + r a n d * (q _ {j, \max} - q _ {j, \min}); j = 1, \dots , N _ {2}; m = 1, \dots , M - 1\tag{4.28}
+$$
+
+Như vậy, mỗi trứng d sẽ đặc trưng bởi $X_{d} = \left[ P_{s2,m,d}, P_{s3,m,d}, \ldots, P_{sN_{1},m,d}, q_{1,m,d}, q_{2,m,d}, \ldots, q_{N_{2},m,d} \right]$ trong đó (M-1) khoảng đầu tiên sẽ có các biến công suất của $t \hat { \hat { 0 } }$ máy nhiệt điện thứ hai đến $N _ { I }$ và lưu lượng xả cho $N _ { 2 }   \mathrm { t } \hat { \hat { 0 } }$ máy thủy điện nhưng tại khoảng M mỗi trứng chỉ có các biến công suất của $t \dot { \hat { 0 } }$ máy nhiệt điện thứ hai đến $N _ { I }$ mà không chứa các biến lưu lượng xả. Các giá trị công suất và lưu lượng xả luôn luôn thỏa mãn giới hạn ràng buộc sau $P _ { s i , m i n } \leq P _ { s i , m , d } \leq P _ { s i , m a x }$ và $q _ { j , m i n } \leq q _ { j , m , d } \leq q _ { j , m a x } .$
+
+Hàm thích nghi của mỗi nghiệm tối ưu là giá trị dùng để đánh giá chất lượng. Chất lượng của nghiệm sẽ bao gồm giá trị hàm mục tiêu (4.9) và giá trị phạt do các biến phụ thuộc vi phạm ràng buộc trong khi các biến điều khiển hoàn toàn không bị phạt. Như mô tả trên cho bài toán này, biến phụ thuộc sẽ bao gồm lưu lượng xả của thủy điện j ở khoảng M và công suất nhà máy nhiệt điện thứ nhất ở mỗi khoảng m. Cuối cùng, hàm thích nghi như sau:
+
+$$
+F T _ {d} = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} F (P _ {s i, m, d}) + K _ {s} \sum_ {m = 1} ^ {M} (P _ {s 1, m, d} - P _ {s 1} ^ {\lim}) ^ {2} + K _ {q} \sum_ {j = 1} ^ {N _ {2}} (q _ {j, M, d} - q _ {j} ^ {\lim}) ^ {2}\tag{4.29}
+$$
+
+Trong đó các giới hạn của $t \hat { \hat { 0 } }$ máy nhiệt điện cân bằng số 1 và lưu lượng xả ở khoảng M được xác định như sau:
+
+$$
+P _ {s 1} ^ {\lim} = \left\{ \begin{array}{l l} P _ {s 1, \max} & \text {if} P _ {s 1, m, d} > P _ {s 1, \max} \\ P _ {s 1, \min} & \text {if} P _ {s 1, m} <   P _ {s 1, \min} \\ P _ {s 1, m, d} & \text {otherwise} \end{array} \right.\tag{4.30}
+$$
+
+$$
+q _ {j} ^ {\lim} = \left\{ \begin{array}{l l} q _ {j, \max} & \text {if} q _ {j, M, d} > q _ {j, \max} \\ q _ {j, \min} & \text {if} q _ {j, M, d} <   q _ {j, \min} \\ q _ {j, M, d} & \text {otherwise} \end{array} \right.\tag{4.31}
+$$
+
+Mỗi trứng trong toàn bộ dân số được khởi tạo được xem như là nghiệm tốt nhất đến thời điểm hiện tại Xbestd $( d   =   1 ,   \ldots ,   N _ { d } )$ và trứng có hàm thích nghi (4.29) nhỏ nhất là trứng tốt nhất Gbest trong toàn bộ dân số. Trứng tốt nhất này sẽ được xem như là trứng chủ đạo để thực hiện cơ chế Lévy Flights tạo ra nghiệm mới ở thế hệ thứ nhất tại mỗi vòng lặp.
+
+## 4.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+Lần tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights là bước đầu tiên trong toàn bộ tiến trình lặp của thuật toán sau khi quá trình khởi tạo ban đầu ở vòng lặp thứ nhất hoặc quá trình phát hiện trứng lạ ở các vòng lặp tiếp theo. Các nghiệm mới được tạo ra dựa vào trứng tốt nhất thông qua cơ chế Lévy Flights bởi thuật toán Mantegna [69] như sau:
+
+$$
+X _ {d} ^ {\text {new}} = X \text {best} _ {d} + \alpha \times \text {rand} \times \Delta X _ {d} ^ {\text {new}}\tag{4.32}
+$$
+
+Trong đó $\alpha > 0$ là hệ số kích thước và bước nhảy $\varDelta { { X } _ { d } } ^ { n e w }$ được xác định như sau:
+
+<!-- page: 68 -->
+
+$$
+\Delta X _ {d} ^ {\text {new}} = \nu \times \frac {\sigma_ {x} (\beta)}{\sigma_ {y} (\beta)} \times (X b e s t _ {d} - G b e s t)\tag{4.33}
+$$
+
+Với
+
+$$
+\nu = \frac {\text {rand} _ {x}}{\left| \text {rand} _ {y} \right| ^ {1 / \beta}}\tag{4.34}
+$$
+
+Và độ lệch chuẩn $\sigma _ { x } ( \beta )$ và $\sigma _ { \mathcal { Y } } ( \beta )$ được tính toán bởi:
+
+$$
+\sigma_ {x} (\beta) = \left[ \frac {\Gamma (1 + \beta) \times \sin \left(\frac {\pi \beta}{2}\right)}{\Gamma \left(\frac {1 + \beta}{2}\right) \times \beta \times 2 ^ {\left(\frac {\beta - 1}{2}\right)}} \right] ^ {1 / \beta}\tag{4.35}
+$$
+
+$$
+\sigma_ {y} (\beta) = 1\tag{4.36}
+$$
+
+Trong đó $\beta$ là hệ số phân phối có giá trị $( 0 . 3 \leq \beta \leq 1 . 9 9 )$ và $I ( . )$ là hàm phân phối gamma.
+
+Mỗi nghiệm mới tạo được luôn luôn thỏa mãn giới hạn nhỏ nhất và lớn nhất của nó nhờ quá trình kiểm tra và hiệu chỉnh theo công thức (4.37) và (4.38) sau:
+
+$$
+q _ {j, m, d} = \left\{ \begin{array}{l l} q _ {j, \max} & \text {if} \quad q _ {j, m, d} > q _ {j, \max} \\ q _ {j, \min} & \text {if} \quad q _ {j, m, d} <   q _ {j, \min}; j = 1, \dots , N _ {2}; m = 1, \dots , M - 1 \\ q _ {j, m, d} & \text {otherwise} \end{array} \right.\tag{4.37}
+$$
+
+$$
+P _ {s i, m, d} = \left\{ \begin{array}{l l} P _ {s i, \max} & \text {if} \quad P _ {s i, m, d} > P _ {s i, \max} \\ P _ {s i, \min} & \text {if} \quad P _ {s i, m, d} <   P _ {s i, \min}; i = 2, \dots , N _ {1}; m = 1, \dots , M \\ P _ {s i, m, d} & \text {otherwise} \end{array} \right.\tag{4.38}
+$$
+
+Công suất của $N _ { 2 }$ tổ máy thủy điện và tổ máy nhiệt điện cân bằng $\mathrm { s } \hat { 0 }$ 1 sẽ được tính toán theo mục 4.3. Sau đó hàm thích nghi sẽ được tính toán để đánh giá chất lượng nghiệm và so sánh với nghiệm cũ trước đó để giữ lại nghiệm tốt hơn.
+
+## 4.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+Mục này sẽ mô tả phương thức tạo ra thế hệ nghiệm mới thứ hai tương ứng với cơ chế phát hiện trứng lạ và cũng là quy luật thứ ba của phương pháp CCSA. Ở đây xác suất phát hiện trứng lạ $P _ { a }$ cũng là xác suất để tạo ra nghiệm mới cho nghiệm cũ hiện tại. Nghiệm mới được tạo ra như sau:
+
+$$
+X _ {d} ^ {d i s} = X b e s t _ {d} + K \times \Delta X _ {d} ^ {d i s}\tag{4.39}
+$$
+
+Trong đó
+
+$$
+K = \left\{ \begin{array}{l l} 1 & \text {if rand <   P_{a}} \\ 0 & \text {otherwise} \end{array} \right.\tag{4.40}
+$$
+
+Và $\varDelta { { { { { X } } _ { d } } ^ { d i s } } }$ được xác định như sau:
+
+$$
+\Delta X _ {d} ^ {\text {dis}} = \text {rand} \times \left[ \text {randp} _ {1} (X \text {best} _ {d}) - \text {randp} _ {2} (X \text {best} _ {d}) \right]\tag{4.41}
+$$
+
+<!-- page: 69 -->
+
+Mỗi nghiệm mới được tạo ra sẽ được kiểm tra giới hạn trên, giới hạn dưới và hiệu chỉnh theo công thức (4.37) và (4.38). Công suất của $N _ { 2 }$ tổ máy thủy điện và tổ máy nhiệt điện cân bằng số 1 sẽ được tính toán theo mục 4.3. Sau đó hàm thích nghi sẽ được tính toán để đánh giá chất lượng nghiệm và so sánh với nghiệm cũ trước đó để giữ lại nghiệm tốt hơn. Nghiệm có hàm thích nghi (4.29) nhỏ nhất là nghiệm tốt nhất Gbest trong toàn bộ dân số.
+
+## 4.4.4. Tiêu chuẩn dừng vòng lặp
+
+Thuật toán lặp sẽ ngừng làm việc khi vòng lặp hiện tại G đạt giá trị lớn nhất xác định trước đó $G _ { m a x }$
+
+## 4.4.5. Các bước tính toán của phương pháp CCSA cho bài toán FH-ST-HTS
+
+Toàn bộ thủ tục tính toán khi áp dụng phương pháp CCSA cho bài toán này được trình bày trong lưu đồ giải thuật hình 4.2 và được mô tả như sau.
+
+Bước 1: Chọn các thông số cho CCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ và số vòng lặp lớn nhất $G _ { m a x }$
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 4.4.1 và tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3
+
+Bước 3: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm và chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy flights như mục 4.4.2
+
+\- Kiểm tra và hiệu chỉnh nghiệm mới theo các công thức (4.37) và (4.38).
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3
+
+Bước 5: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ như mục 4.4.3
+
+\- Kiểm tra và hiệu chỉnh nghiệm mới theo các công thức (4.37) và (4.38)
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3.
+
+Bước 7: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn. Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại là Xbestd
+
+Bước 8:Nếu $G { \leq } G _ { m a x } ,$ gán $G = G + 1$ và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 70 -->
+
+![](images/page_69_image_0.jpg)
+
+Hình 4.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán FH-ST-HTS
+
+## 4.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán FH-ST-HTS
+
+Phương pháp MCSA được áp dụng cho bài toán FH-ST-HTS như sau:
+
+## 4.5.1. Khởi tạo
+
+Thực hiện quá trình khởi tạo cho phương pháp MCSA cũng giống như phương pháp CCSA ở mục 4.4.1 từ phương trình (4.27) đến (4.31). Sau đó, tất cả các trứng được sắp xếp theo trình tự giảm dần giá trị hàm thích nghi và sau đó được chia thành hai nhóm trứng. Nhóm với số trứng có hàm thích nghi lớn hơn sẽ được sắp xếp vào nhóm xấu trong khi đó các trứng có hàm thích nghi nhỏ hơn được xếp vào nhóm tốt. Mỗi trứng trong nhóm xấu được gọi là Xbest\_discardd và mỗi trứng trong nhóm tốt được gọi là
+
+<!-- page: 71 -->
+
+Xbest\_nodiscardd. Ngoài ra, một trứng được chọn ngẫu nhiên trong nhóm tốt được gọi là Xbest\_nodiscard<sub>r</sub>. Trứng tốt nhất tương ứng với hàm thích nghi nhỏ nhất sẽ được gọi là Gbest trong toàn bộ dân số.
+
+## 4.5.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+## 4.5.2.1. Tạo ra nghiệm mới cho nhóm xấu
+
+Như đã mô tả ở mục 3.3.2.1, cải tiến thứ nhất được thực hiện để tạo ra nghiệm mới cho nhóm nghiệm xấu $(d = N o t o p + 1 , \ldots , N _ { d } )$ theo phương pháp Mantegna [69] như sau:
+
+$$
+X \text {discard} _ {d} ^ {\text {new}} = X \text {best\_discard} _ {d} + \alpha \times \text {rand} \times \Delta X \text {discard} _ {d} ^ {\text {new}}\tag{4.42}
+$$
+
+Trong đó $\alpha   =   1 / \sqrt { G }$ và Xdiscard<sub>d</sub><sup>new</sup> được tính như sau:
+
+$$
+\Delta X d i s c a r d _ {d} ^ {n e w} = v \times \frac {\sigma_ {x} (\beta)}{\sigma_ {y} (\beta)} \times (X b e s t \_ d i s c a r d _ {d} - G b e s t);\tag{4.43}
+$$
+
+## 4.5.2.2. Tạo ra nghiệm mới cho nhóm tốt
+
+Như đã mô tả ở mục 3.3.2.2, có bốn trường hợp khác nhau tạo ra nghiệm mới cho nhóm tốt do trao đổi thông tin giữa hai trứng với nhau. Nghiệm mới được quyết định bởi phương pháp Mantegna [69] như sau:
+
+$$
+X n o d i s c a r d _ {d} ^ {\text {new}} = X \text {best\_nodiscard} _ {d} + \alpha \times \text {rand} \times \Delta X n o d i s c a r d _ {d} ^ {\text {new}}\tag{4.44}
+$$
+
+Trong đó  và Xnodiscard<sub>d</sub><sup>new</sup> được xác định như sau:
+
+ Trường hợp 1: Một trứng được chọn hai lần
+
+$$
+\Delta X n o d i s c a r d _ {d} ^ {n e w} = v \times \frac {\sigma_ {x} (\beta)}{\sigma_ {y} (\beta)} \times (X b e s t \_ n o d i s c a r d _ {d} - G b e s t)\tag{4.45}
+$$
+
+Với trường hợp này, $\alpha = I / G ^ { 2 }$
+
+ Trường hợp 2: Cả hai trứng có cùng giá trị hàm thích nghi
+
+$$
+\Delta X n o d i s c a r d _ {d} ^ {\text {new}} = (X b e s t \_ n o d i s c a r d _ {r} - X b e s t \_ n o d i s c a r d _ {d}) / 2\tag{4.46}
+$$
+
+ở trường hợp này $\alpha = I$
+
+ Trường hợp 3: Trứng ngẫu nhiên r có hàm thích nghi nhỏ hơn trứng được chọn d
+
+$$
+\Delta X \text {nodiscard} _ {d} ^ {\text {new}} = (X \text {best\_nodiscard} _ {r} - X \text {best\_nodiscard} _ {d}) / \varphi ;\tag{4.47}
+$$
+
+Ở trường hợp này $\alpha   = I$ và $\varphi = ( 1 + \sqrt { 5 } ) / 2$
+
+ Trường hợp 4: Trứng ngẫu nhiên r có hàm thích nghi cao hơn trứng được chọn d
+
+$$
+X n o d i s c a r d _ {d} ^ {\text {new}} = X \text {best\_nodiscard} _ {r} + \alpha \times \text {rand} \times \Delta X n o d i s c a r d _ {d} ^ {\text {new}}\tag{4.48}
+$$
+
+Trong đó
+
+$$
+\Delta X n o d i s c a r d _ {d} ^ {\text {new}} = (X b e s t \_ n o d i s c a r d _ {d} - X b e s t \_ n o d i s c a r d _ {r}) / \varphi\tag{4.49}
+$$
+
+và
+
+<!-- page: 72 -->
+
+$$
+\alpha = 1 \& \varphi = (1 + \sqrt {5}) / 2
+$$
+
+Mỗi nghiệm mới được tạo ra sẽ được kiểm tra giới hạn trên và giới hạn dưới bởi áp dụng các công thức (4.37) và (4.38). Công suất của $N _ { 2 }$ tổ máy thủy điện và tổ máy nhiệt điện cân bằng số 1 sẽ được tính toán theo mục 4.3. Sau đó hàm thích nghi sẽ được tính toán để đánh giá chất lượng nghiệm và so sánh với nghiệm cũ trước đó để giữ lại nghiệm tốt hơn.
+
+## 4.5.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+Như đã đề cập ở mục 3.3, phương pháp MCSA cũng có quá trình tạo ra nghiệm mới lần hai thông qua cơ chế phát hiện trứng lạ như phương pháp CCSA. Do đó, mục 4.4.3 ở trên sẽ được áp dụng tương tự cho quá trình này cho phương pháp MCSA.
+
+## 4.5.4. Tiêu chuẩn dừng vòng lặp
+
+Thuật toán lặp sẽ ngừng làm việc khi vòng lặp hiện tại G đạt giá trị lớn nhất xác định trước đó $G _ { m a x }$
+
+## 4.5.5. Các bước tính toán của phương pháp MCSA cho bài toán FH-ST-HTS
+
+Bước 1: Chọn các thông số cho MCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ số vòng lặp lớn nhất $G _ { m a x }$ và tỉ lệ giữa số trứng trong nhóm tốt với số trứng trong nhóm xấu.
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 4.4.1.
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3 Bước 3: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại đều được đặt là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Xếp hạng và tách ra làm hai nhóm nghiệm: nhóm tốt và nhóm xấu
+
+\- Tạo nghiệm mới thế hệ thứ nhất cho hai nhóm nghiệm theo cơ chế Lévy flights
+
+\- Hiệu chỉnh nghiệm theo (4.37) và (4.38).và gộp hai nhóm nghiệm thành một
+
+\- Tính công suất thủy điện và nhiệt điện như mục 4.3
+
+Bước 5: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ như mục 4.4.3
+
+\- Kiểm tra và hiệu chỉnh nghiệm mới theo các công thức (4.37) và (4.38)
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3.
+
+Bước 7: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn. Chọn nghiệm có hàm thích nghi nhỏ nhất
+
+<!-- page: 73 -->
+
+làm nghiệm tốt nhất Gbest và các nghiệm còn lại là Xbestd
+
+Bước 8:Nếu $G { \leq } G _ { m a x } ,$ gán $G = G + 1$ và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+![](images/page_72_image_2.jpg)
+
+Hình 4.3. Lưu đồ giải thuật áp dụng MCSA cho bài toán FH-ST-HTS
+
+## 4.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán FH-ST-HTS
+
+Phương pháp ASCSA cũng bao gồm các quá trình quan trọng giống phương pháp CCSA và MCSA như khởi tạo, tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy flights, tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ, và quá trình chọn lọc. Tuy nhiên, một vài cải tiến như đã mô tả ở mục 3.4 ở chương 3 so với phương pháp CCSA dẫn đến quá trình tính toán có những điểm khác nhau ở cơ chế phát hiện trứng lạ thích nghi và quá trình chọn lọc mới. Toàn bộ quá trình tính toán của phương phápASCSA cho bài toán này được trình bày trong lưu đồ giải thuật hình 4.4 và được mô tả chi tiết như sau:
+
+<!-- page: 74 -->
+
+Bước 1: Chọn thông số điều khiển cho ASCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ số vòng lặp lớn nhất $G _ { m a x }$ và giá trị ngưỡng threshold ε
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 4.4.1
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3
+
+Bước 3: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm -Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất G = 1.
+
+Bước 4: Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy flights như mục 4.4.2
+
+\- Kiểm tra và hiệu chỉnh nghiệm mới theo các công thức (4.37) và (4.38).
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3
+
+Bước 5: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm.
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra thế hệ nghiệm mới thứ hai theo kỹ thuật chọn lọc thích nghi như mục 3.4.2 ở chương 3.
+
+\- Kiểm tra và hiệu chỉnh nghiệm mới theo công thức (4.37) và (4.38).
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như mục 4.3
+
+Bước 7: Tính toán hàm thích nghi (4.29) cho mỗi nghiệm.
+
+\- Áp dụng kỹ thuật chọn lọc mới như trình bày ở mục 3.4.1 ở chương 3 để giữ lại $N _ { p }$ nghiệm tốt nhất.
+
+\- Chọn nghiệm tốt nhất làm Gbest và gọi các nghiệm còn lại là Xbestd.
+
+Bước 8:Nếu G<G<sub>max</sub>, gán $G = G + 1$ và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 75 -->
+
+![](images/page_74_image_0.jpg)
+
+Hình 4.4. Lưu đồ giải thuật áp dụng ASCSA cho bài toán FH-ST-HTS
+
+## 4.7. Áp Dụng ALHN Cho Bài Toán FH-ST-HTS
+
+## 4.7.1. Xây dựng phương pháp ALHN cho bài toán
+
+Như đã đề cập ở chương 3, ALHN là phương pháp tiền định có phương pháp tìm kiếm nghiệm tối ưu khác hẳn so với các phương pháp CSA ở trên. ALHN không gồm một dân số lớn mà chỉ có duy nhất một nghiệm tối ưu và nghiệm này được cải thiện dần dần qua từng vòng lặp. Quá trình tìm kiếm của ALHN dựa vào cập nhật các neuron ngỏ vào và neuron ngỏ ra trên cơ sở của hàm tối ưu Lagrange tăng cường và hàm năng lượng. Để bắt đầu quá trình tìm kiếm, hàm Lagrange tăng cường được xây dựng trước tiên theo công thức bên dưới.
+
+<!-- page: 76 -->
+
+$$
+\begin{array}{l} L = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} \left(a _ {i} + b _ {i} P _ {s i, m} + c _ {i} P _ {s i, m} ^ {2}\right) + \sum_ {m = 1} ^ {M} \lambda_ {m} \Bigg (P _ {L, m} + P _ {D, m} - \sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} \Bigg) + \\ \sum_ {j = 1} ^ {N _ {2}} \gamma_ {j} \left[ \sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} - W _ {j} \right] + \frac {1}{2} \sum_ {m = 1} ^ {M} \beta_ {m} \Bigg (P _ {L, m} + P _ {D, m} - \sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} \Bigg) ^ {2} + \frac {1}{2} \sum_ {j = 1} ^ {N _ {2}} \beta_ {h} \left[ \sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} - W _ {j} \right] ^ {2} \end{array}\tag{4.50}
+$$
+
+Trong đó $\lambda _ { m , \gamma _ { j } }$ là các nhân tử Lagrange tương ứng với ràng buộc cân bằng công suất và ràng buộc cân bằng nguồn nước. $\beta _ { m } , \beta _ { i }$ là các hệ số phạt tương ứng với ràng buộc cân bằng công suất và ràng buộc cân bằng nguồn nước và $a_{i} = \psi_{1}a_{si} + \psi_{2}\alpha_{se,i}$ bi =ψ1bsi +ψ2βse,i, ci =ψ1csi +ψ2γse,i
+
+Tiếp theo, hàm năng lượng E đặc trưng dưới dạng các neuron được xây dựng từ hàm Lagrange tăng cường như sau:
+
+$$
+\begin{array}{l} E = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} \left(a _ {i} + b _ {i} V _ {s i, m} + c _ {i} V _ {s i, m} ^ {2}\right) + \sum_ {m = 1} ^ {M} V _ {\lambda , m} \left(P _ {L, m} + P _ {D, m} - \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} V _ {h j, m}\right) \\ + \sum_ {j = 1} ^ {N _ {2}} V _ {\gamma j} \left[ \sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} - W _ {j} \right] + \frac {1}{2} \sum_ {m = 1} ^ {M} \beta_ {m} \left(P _ {L, m} + P _ {D, m} - \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} V _ {j, m}\right) ^ {2} \\ + \frac {1}{2} \sum_ {j = 1} ^ {N _ {2}} \beta_ {j} \left[ \sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} - W _ {j} \right] ^ {2} + \sum_ {m = 1} ^ {M} \left(\sum_ {i = 1} ^ {N _ {1}} \int_ {0} ^ {V _ {s i, m}} g ^ {- 1} (V) d V + \sum_ {j = 1} ^ {N _ {2}} \int_ {0} ^ {V _ {h j, m}} g ^ {- 1} (V) d V\right) \end{array}\tag{4.51}
+$$
+
+Trong đó $V _ { \lambda , m } ,   V _ { \gamma , j }$ là các ngỏ ra neuron nhân tử Lagrange tương ứng với ràng buộc cân bằng công suất và ràng buộc cân bằng nguồn nước. $V _ { h j , m , } ~ V _ { s i , m }$ là các ngỏ ra neuron liên tục hj,m, si,m đại diện cho $P _ { h j , , m } ,   P _ { s i , m }$
+
+Cập nhật ngỏ vào của các neuron như sau:
+
+(4.52)
+
+$$
+\begin{array}{l} \frac {d U _ {s i , m}}{d t} = - \frac {\partial E}{\partial V _ {s i , m}} = - \left\{ \begin{array}{l} t _ {m} \left(b _ {i} + 2 c _ {i} V _ {s i, m}\right) \\ + \left[ V _ {\lambda , m} + \beta_ {m} \binom {P _ {D, m} + P _ {L, m}} {- \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} - \sum_ {h = 1} ^ {N _ {2}} V _ {h j, m}} \right] \left(\frac {\partial P _ {L , m}}{\partial V _ {s i , m}} - 1\right) + U _ {s i, m} \end{array} \right\} \\ \frac {d U _ {h j , m}}{d t} = - \frac {\partial E}{\partial V _ {h j , m}} = - \left\{ \begin{array}{l} \left[ V _ {\lambda , m} + \beta_ {m} \binom {P _ {D, m} + P _ {L, m}} {- \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} V _ {h j, m}} \right] \left(\frac {\partial P _ {L , m}}{\partial V _ {h j , m}} - 1\right) \\ + \left[ V _ {\gamma , j} + \beta_ {h} \binom {\sum_ {m = 1} ^ {M} t _ {m} q _ {j, m}} {- W _ {j}} \right] \left(t _ {m} \frac {\partial q _ {j , m}}{\partial V _ {h j , m}}\right) + U _ {h j, m} \end{array} \right\} \\ \frac {d U _ {\lambda , m}}{d t} = + \frac {\partial E}{\partial V _ {\lambda , m}} = P _ {D, m} + P _ {L, m} - \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} V _ {h j, m} \end{array}\tag{4.53}
+$$
+
+(4.54)
+
+<!-- page: 77 -->
+
+$$
+\frac {d U _ {\gamma , j}}{d t} = + \frac {\partial E}{\partial V _ {\gamma , j}} = \sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} - W _ {j}\tag{4.55}
+$$
+
+Với
+
+$$
+\frac {\partial P _ {L , m}}{\partial V _ {s i , m}} = 2 \sum_ {i = 1} ^ {N _ {1}} B _ {s i} V _ {i, m} + 2 \sum_ {j = 1} ^ {N _ {2}} B _ {h, j} V _ {h, m} + B _ {0 s i}\tag{4.56}
+$$
+
+$$
+\frac {\partial P _ {L , m}}{\partial V _ {h j , m}} = 2 \sum_ {i = 1} ^ {N _ {1}} B _ {s, i} V _ {s i, m} + 2 \sum_ {j = 1} ^ {N _ {2}} B _ {h j} V _ {h j, m} + B _ {0 h j}\tag{4.57}
+$$
+
+$$
+\frac {\partial q _ {\mathrm{j} , m}}{\partial V _ {h j , m}} = \left(b _ {h j} + 2 c _ {h j} V _ {h j, m}\right)\tag{4.58}
+$$
+
+Trong đó $B _ { h , j } ,   B _ { s , I } ,   B _ { s , h } ,   B _ { h , s }$ là các hệ số tổn thất công suất và $B _ { s , i } = B _ { h , j } { } ^ { T } .$
+
+Cập nhật các ngỏ vào của neuron tại vòng lặp thứ G như sau:
+
+$$
+U _ {s i, m} ^ {(G)} = U _ {s i, m} ^ {(G - 1)} - \alpha_ {s i, m} \frac {\partial E}{\partial V _ {s i , m}}\tag{4.59}
+$$
+
+$$
+U _ {h j, m} ^ {(G)} = U _ {h j, m} ^ {(G - 1)} - \alpha_ {h j, m} \frac {\partial E}{\partial V _ {h j , m}}\tag{4.60}
+$$
+
+$$
+U _ {\lambda , m} ^ {(G)} = U _ {\lambda , m} ^ {(G - 1)} + \alpha_ {\lambda , m} \frac {\partial E}{\partial V _ {\lambda , m}}\tag{4.61}
+$$
+
+$$
+U _ {\gamma , j} ^ {(G)} = U _ {\gamma , j} ^ {(G - 1)} + \alpha_ {\gamma , j} \frac {\partial E}{\partial V _ {\gamma , j}}\tag{4.62}
+$$
+
+Trong đó $U _ { \lambda , m } ,   U _ { \gamma , h }$ là các ngỏ vào của neuron nhân tử Lagrange, $U _ { s i , m }$ $U _ { h j , m }$ là các ngỏ vào của neuron si,m và hj,m; $\alpha _ { \lambda , m } ,   \alpha _ { \gamma , j }$ là các hệ số để cập nhật neuron nhân tử Lagrange và $\alpha _ { s i , m } ,   \alpha _ { h j , m }$ các hệ số để cập nhật neuron liên tục.
+
+Ngỏ ra của neuron liên tục đại diện cho công suất nhiệt điện và thủy điện được tính toán theo hàm sigmoid như sau:
+
+$$
+V _ {s i, m} = g (U _ {s i, m}) = \left(P _ {s i} ^ {\max} - P _ {s i} ^ {\min}\right) \left(\frac {1 + \tanh \left(\sigma U _ {s i , m}\right)}{2}\right) + P _ {s i} ^ {\min}\tag{4.63}
+$$
+
+$$
+V _ {h j, m} = g (U _ {h j, m}) = \left(P _ {h j} ^ {\max} - P _ {h j} ^ {\min}\right) \left(\frac {1 + \tanh \left(\sigma U _ {h j , m}\right)}{2}\right) + P _ {h j} ^ {\min}\tag{4.64}
+$$
+
+Trong đó  là độ dốc của hàm sigmoid [82].
+
+Ngỏ ra của neuron nhân tử được xác định như sau:
+
+$$
+V _ {\lambda , m} = U _ {\lambda , m}\tag{4.65}
+$$
+
+$$
+V _ {\gamma , j} = U _ {\gamma , j}\tag{4.66}
+$$
+
+<!-- page: 78 -->
+
+Tính toán từ công thức (4.50) đến (4.66) là toàn bộ quá trình tính toán cập nhật các neuron ngỏ vào và ngỏ ra của ALHN khi áp dụng cho bài toán FH-ST-HTS đang xét. Tuy nhiên, thuật toán lặp của ALHN cũng giống với các phương pháp CSA với các quá trình khởi tạo, lựa chọn thông số và tiêu chuẩn dừng vòng lặp như các mục sau.
+
+## 4.7.2. Khởi tạo
+
+Phương pháp yêu cầu các điều kiện ban đầu cho các ngỏ vào và ngỏ ra của các neuron. Đối với neuron liên tục, ngỏ ra ban đầu được chọn là giá trị trung bình của giới hạn như sau:
+
+$$
+V _ {s i, m} ^ {(0)} = \left(P _ {s i} ^ {\max} + P _ {s i} ^ {\min}\right) / 2\tag{4.67}
+$$
+
+$$
+V _ {h j, m} ^ {(0)} = \left(P _ {h j} ^ {\max} + P _ {h j} ^ {\min}\right) / 2\tag{4.68}
+$$
+
+Trong đó $V _ { h j , m } { } ^ { ( \theta ) } ,   V _ { s i , m }   { } ^ { ( \theta ) }$ là các ngỏ vào ban đầu của neuron liên tục hj,m và si,m.
+
+Ngỏ ra ban đầu của neuron nhân tử Lagrange được chọn như sau:
+
+$$
+V _ {\lambda , m} ^ {(0)} = \frac {1}{N _ {1}} \sum_ {i = 1} ^ {N _ {1}} \frac {t _ {m} \left(b _ {s i} + 2 c _ {s i} V _ {s i , m} ^ {(0)}\right)}{1 - \frac {\partial P _ {L , m}}{\partial V _ {s i , m}}}\tag{4.69}
+$$
+
+$$
+V _ {\gamma , j} ^ {(0)} = \frac {1}{M} \sum_ {m = 1} ^ {M} \frac {V _ {\lambda , m} ^ {(0)} \left(1 - \frac {\partial P _ {L , m}}{\partial V _ {h j , m}}\right)}{t _ {m} \frac {\partial q _ {j , m}}{\partial V _ {h j , m}}}\tag{4.70}
+$$
+
+## 4.7.3. Lựa chọn thông số
+
+Bằng thực nghiệm, giá trị của  được cố định bằng 100 cho tất cả các hệ thống trong khi đó các giá trị khác thay đổi theo thông số của hệ thống. Ngoài ra, để đơn giản, $\alpha _ { s i , m }$ và $\alpha _ { h j , m _ { 1 } }$ , và $\beta _ { m }$ và $\beta _ { h }$ có thể được chọn bằng nhau và cũng có giá trị khác nhau với các hệ thống khác nhau. Quá trình tìm kiếm nghiệm tối ưu của ALHN phụ thuộc đáng kể vào các thông số này khi các thông số này thay đổi nhỏ cũng làm cho giá trị đầu ra chênh lệch rất lớn. Do đó, số lượng thông số của ALHN càng lớn khi các bài toán có nhiều ràng buộc và việc chọn giá trị thông số điều khiển là công việc rất khó khăn. Do đó, ALHN chỉ được áp dụng ở chương này.
+
+## 4.7.4. Tiêu chuẩn dừng tính toán
+
+Ở phương pháp ALHN, các sai số tại vòng lặp G được kiểm tra và sau đó giá trị sai số lớn nhất sẽ được xác định. Các sai số được tính như sau: Sai số ràng buộc cân bằng công suất ở mỗi khoảng m:
+
+<!-- page: 79 -->
+
+$$
+\Delta P _ {m} = \left| \sum_ {i = 1} ^ {N _ {1}} V _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} V _ {h j, m} - P _ {L, m} - P _ {D, m} \right|; m = 1, \dots , M\tag{4.71}
+$$
+
+Sai $\mathrm { s } \hat { 0 }$ ràng buộc cân bằng nguồn nước $\mathring { \mathbf { U } }$ mỗi nhà máy thủy điện j:
+
+$$
+\Delta W _ {j} = \left| W _ {a j} ^ {G} - \sum_ {m = 1} ^ {M} q _ {j, m} t _ {m} \right|; j = 1, \dots , N _ {2}\tag{4.72}
+$$
+
+Giá trị sai $\mathrm { s } \hat { 0 }$ lớn nhất được xác định theo công thức sau:
+
+$$
+E r r _ {\max} = \max \left\{\max (\Delta P _ {m}), \max (\Delta W _ {j}) \right\}\tag{4.73}
+$$
+
+Quá trình tính toán của ALHN sẽ dừng lại khi hoặc sai $\mathrm { s } \hat { 0 }$ lớn nhất $E r r _ { m a x }$ nhỏ hơn giá trị ngưỡng xác định trước  hoặc khi vòng lặp hiện tại G bằng số vòng lặp lớn nhất $G _ { m a x }$
+
+## 4.7.5. Các bước tính toán phương pháp ALHN cho bài toán FH-ST-HTS
+
+Toàn bộ quá trình tính toán của phương pháp ALHN được trình bày trong lưu đồ giải thuật hình 4.5 và được mô tả chi tiết như sau:
+
+Bước 1: Chọn thông số điều khiển như mục 4.7.3.
+
+Bước 2: Khởi tạo ngỏ vào và ngỏ ra các neuron theo các công thức (4.67)-(4.70).
+
+\- Bắt đầu với vòng lặp $G   = 1$
+
+Bước 3: Tính toán các neuron theo công thức (4.52)-(4.55).
+
+Bước 4: Sử dụng công thức (4.59)-(4.62) để cập nhật ngỏ vào neuron.
+
+Bước 5: Sử dụng công thức (4.63)-(4.66) để tính toán các ngỏ ra của neuron.
+
+Bước 6: Tính toán sai số lớn nhất bằng cách sử dụng công thức (4.71)-(4.73).
+
+Bước 7: Nếu $E r r _ { m a x } > \varepsilon$ và $G \leq G _ { m a x }$ thì gán $G = G + 1$ và quay lại bước 3. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 80 -->
+
+![](images/page_79_image_0.jpg)
+
+Hình 4.5. Lưu đồ giải thuật áp dụng ALHN cho bài toán FH-ST-HTS
+
+## 4.8. Áp Dụng Các Phương Pháp Tìm Nghiệm Thỏa Hiệp Cho Bài Toán Đa Mục Tiêu
+
+Trong bài toán điều độ tối ưu hệ thống điện, hàm đa mục tiêu bao gồm hàm chi phí và hàm phát thải và luôn luôn có một sự đối lập cho một nghiệm tối ưu khi xét đến cả hai mục tiêu. Điều này có nghĩa là chi phí phát điện của nghiệm sẽ đạt giá trị nhỏ nhất (tối ưu nhất) thì phát thải phải chịu giá trị lớn nhất (kém hiệu quả về môi trường nhất). Ngược lại, giá trị phát thải sẽ nhỏ nhất (hiệu quả nhất cho môi trường) và chi phí phát điện là cao nhất (kém kinh tế nhất). Do đó, nghiệm tối ưu của bài toán đa mục tiêu phải đạt được sự thỏa hiệp sao cho cả chi phí và phát thải của nghiệm phải là giá trị hợp lý nhất về kinh tế lẫn môi trường. Như vậy nghiệm thoải hiệp sẽ là một điểm nằm giữa hai điểm đơn mục tiêu này. Khi xét đến hàm đa mục tiêu, các phương pháp thường được sử dụng để tìm ra ba điểm quan trọng nhất đó là hai điểm đầu mút của bài toán đơn mục tiêu và điểm thỏa hiệp ở khoảng giữa của hai điểm này. Với điểm có chi phí nhỏ nhất và phát thải lớn nhất được gọi là điểm điều độ kinh tế còn điểm có phát thải nhỏ nhất và chi phí lớn nhất được gọi là điểm điều độ phát thải. Điểm thỏa hiệp cho chi phí và phát thải hợp lý được gọi là điểm điều độ đa mục tiêu hay còn gọi là điều độ kinh tế-phát thải. Để tìm được điểm thỏa hiệp này, hai phương pháp được giới thiệu trong luận án gồm phương pháp Fuzzy và phương pháp hệ số phạt.
+
+<!-- page: 81 -->
+
+## 4.8.1. Phương pháp Fuzzy
+
+Để $\mathrm { \acute { a } p }$ dụng phương pháp Fuzzy, trước tiên phải tìm tập hợp các nghiệm không trội bằng cách thay đổi giá trị $\Psi _ { I }$ và $\Psi _ { 2 }$ sao cho hai hệ $s \hat { 0 }$ này nằm trong giới hạn [0, 1] và tổng luôn bằng 1 thỏa điều kiện (4.10) và (4.11). Sau đó, giá trị hàm thành viên tương ứng cho từng hàm mục tiêu được tìm ra theo công thức sau [84].
+
+$$
+\mu (F _ {j}) = \left\{ \begin{array}{l l} 1 & \text {if} \quad F _ {j} \leq F _ {j} ^ {\min} \\ \frac {F _ {j} ^ {\max} - F _ {j}}{F _ {j} ^ {\max} - F _ {j} ^ {\min}} & \text {if} \quad F _ {j} ^ {\min} <   F _ {j} <   F _ {j} ^ {\max} \\ 0 & \text {if} \quad F _ {j} \geq F _ {j} ^ {\max} \end{array} \right.\tag{4.74}
+$$
+
+Trong đó $F _ { j }$ là giá trị hàm mục tiêu gồm hàm chi phí tương ứng $\scriptstyle \mathbf { v } { \dot { \mathbf { o } } } { \dot { \mathbf { i } } } j = 1$ và hàm phát thải tương ứng với $j {=} 2;   \mu(F_j)$ là hàm thành viên của hàm mục tiêu j; $F _ { j m a x }$ và $F _ { j m i n }$ là giá trị lớn nhất và nhỏ nhất của hàm mục tiêu j.
+
+Cho mỗi nghiệm không trội k, giá trị hàm thành viên được tính như sau [84]:
+
+$$
+\mu_ {D} ^ {k} = \sum_ {j = 1} ^ {2} \mu (F _ {j} ^ {k}) / \sum_ {k = 1} ^ {N s p} \sum_ {j = 1} ^ {2} \mu (F _ {j} ^ {k})\tag{4.75}
+$$
+
+Trong đó $\mu ^ { k } D$ là trị số ưu tiên của nghiệm thứ k; $N _ { s p }$ là số nghiệm được chọn ra.
+
+Nghiệm k có trị số ưu tiên lớn nhất sẽ là nghiệm thỏa hiệp cho hàm đa mục tiêu [83]:
+
+$$
+\text {Max} \{\mu_ {D} ^ {k}: k = 1, 2, \dots , N _ {s p} \}\tag{4.76}
+$$
+
+## 4.8.2. Phương pháp hệ số phạt
+
+Khác với phương pháp Fuzzy, phương pháp hệ $\mathrm { s } \hat { 0 }$ phạt xây dựng hàm đa mục tiêu như sau[85].
+
+$$
+F = \psi_ {1} \times F _ {1} \left(P _ {s, i m}\right) + \psi_ {2} \times \mathrm{PR} _ {\mathrm{m}} \times F _ {2} \left(P _ {s, i m}\right)\tag{4.77}
+$$
+
+Trong đó, hai hệ số $\Psi _ { I }$ và $\Psi _ { 2 }$ là các trọng số hàm chi phí và phát thải như trong phương pháp Fuzzy còn $P R _ { m }$ là hệ số phạt ở khoảng thời gian thứ m. Cho bài toán đa mục tiêu khi xét 3 trường hợp điều độ kinh tế, điều độ phát thải và điều độ kinh tế phát thải thì các giá trị của trọng số và hệ số phạt được xác định như sau:
+
+1) Điều độ kinh tế, $\Psi _ { l }   = 1$ và $\Psi _ { 2 }   =   0$
+
+2) Điều độ phát thải, $\Psi _ { l }   =   0$ và $\Psi _ { 2 } = I / P R _ { m }$
+
+3) Điều độ kinh tế- phát thải (đa mục tiêu), $\Psi _ { l }   =   1$ và $\Psi _ { 2 }   = 1$ và $P R _ { m }$ được xác định theo 6 bước [85].
+
+Bước 1: Tính chi phí trung bình cho mỗi MW của mỗi tổ máy nhiệt điện ở khoảng m.
+
+Bước 2: Tính phát thải trung bình cho mỗi MW của mỗi tổ máy nhiệt điện ở khoảng m
+
+Bước 3: Tính hệ số phạt bằng phép chia chi phí trung bình cho phát thải trung bình ở bước 1 và 2 theo công thức (4.78)
+
+<!-- page: 82 -->
+
+$$
+P R _ {i m} = \frac {F _ {1} \left(P _ {s i \max}\right) / P _ {s i \max}}{F _ {2} \left(P _ {s i \max}\right) / P _ {s i \max}} (\mathbb {S} / l b)\tag{4.78}
+$$
+
+Bước 4: Sắp xếp hệ số phạt theo thư tự tăng dần giá trị
+
+Bước 5: Tính tổng công suất định mức của các tổ máy từ tổ máy có hệ $s \hat { 0 }$ phạt nhỏ nhất đến lớn hơn cho đến khi tổng công suất này bằng hoặc lớn hơn công suất tải.
+
+Bước 6: Hệ số phạt $P R _ { m }$ ở khoảng m sẽ bằng với hệ số phạt của tổ máy cuối cùng được cộng vào tổng công suất ở bước 5 và đó là giá trị hệ số phạt của khoảng m.
+
+Các giá trị hệ số phạt được tính từ nghiên cứu [85] cho thấy $P R _ { m }$ phụ thuộc vào tải và có giá trị duy nhất cho từng khoảng.
+
+## 4.9. Kết Quả
+
+$\dot { \mathrm { O } }$ các mục trên, bài toán ST-FH-HTS đã được giới thiệu cùng với cách thực thi các phương pháp CCSA, MCSA, ASCSA và ALHN cho bài toán này. $\dot { \mathrm { O } }$ mục này, các phương pháp này sẽ được kiểm chứng tính hiệu quả lên 8 hệ thống thủy nhiệt điện khác nhau với các dữ liệu khác nhau và sau cùng sẽ so sánh với các phương pháp đã được nghiên cứu trước đây. Đối với mỗi trường hợp cho từng bộ thông số điểu khiển, bốn phương pháp đề xuất được lập trình bởi ngôn ngữ Matlab và chạy 50 lần cho mỗi giá trị $P _ { a }$ trên laptop 2.0 Ghz, Ram 4 GB.
+
+## 4.9.1. Lựa chọn thông số
+
+Các phương pháp áp dụng thường không giống nhau hoàn toàn về cơ chế và cách thực thi cho cùng bài toán tối ưu nhưng hầu hết tất cả các phương pháp đều có điểm chung là kết quả luôn bị ảnh hưởng bởi quá trình cài đặt thông số điều khiển. Để có hiệu quả cao nhất cho phương pháp áp dụng, các giá trị thông số điều khiển cần được phân tích và chon lựa một cẩn thận. Do đó, mục này sẽ phân tích và khảo sát ảnh hưởng của các thông số lên kết quả cuối cùng để có chọn lựa tốt nhất và hiệu quả nhất.
+
+## 4.9.1.1. Chọn thông số điều khiển của CCSA
+
+Ở phương pháp CCSA, ba thông số điều khiển cần được xác định gồm số tổ chim (cũng là số trứng và số nghiệm) $N _ { p _ { 2 } }$ xác suất phát hiện trứng lạ $P _ { a }$ và số vòng lặp lớn nhất $G _ { m a x }$ . Ngoài ra, hệ số kích thước α và hệ số phân phối $\beta$ trong cơ chế Lévy Flights để cập nhật nghiệm mới lần thứ nhất cũng là các hệ số quan trọng để có thể đạt được nghiệm tối ưu hiệu quả. Trong $s \hat { 0 }$ các thông số này, $N _ { p }$ và $G _ { m a x }$ ảnh hượng trực tiếp lên chất lượng nghiệm và thời gian tính toán trong khi đó các thông số còn lại $\alpha , P _ { a }$ và $\beta$ chỉ ảnh hưởng lên chất lượng nghiệm. Khi $N _ { p }$ được chọn với giá trị lớn thì khả năng đạt được nghiệm có chất lượng tốt sẽ cao hơn. Tuy nhiên, thời gian tính toán cho trường hợp này sẽ dài hơn. Bởi thực nghiệm, giá trị của thông số này được chọn tùy thuộc vào
+
+<!-- page: 83 -->
+
+kích thước của hệ thống thủy nhiệt điện. Tương tự như $N _ { p } , \; G _ { m a x }$ cũng có ảnh hưởng tương tự lên chất lượng nghiệm và thời gian tính toán. Giá trị của nó cũng được chọn phục thuộc vào độ phức tạp và kích thước của hệ thống. Giá trị của xác suất phát hiện trứng lạ được chọn trong khoảng 0 và 1. Tuy nhiên, các giá trị khác nhau của thông số này sẽ cho các kết quả khác nhau cho cùng một bài toán. Cho các bài toán phức tạp và có kích thước lớn, việc chọn giá trị cho thông $\mathrm { s } \hat { 0 }$ này sẽ có ảnh hưởng phân biệt rõ rệt. Ngược lại, với các bài toán đơn giản và kích thước nhỏ, ảnh hưởng của $P _ { a }$ gần như không đáng kể. Do đó, các giá trị của $P _ { a }$ được chọn trong khoảng từ 0 đến 1 với bước nhảy 0.1. Các ứng dụng của CCSA cho các hàm toán benchmark [64] và cho bài toán thiết kế tối ưu [69], Yang và Deb đã chọn $P _ { a }$ với nhiều giá trị khác nhau như [0, 0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.4, 0.5] và kết quả tốt nhất tại giá trị 0.25 cho cả hai bài toán này. Hai nghiên cứu khác [72] và [73] đã áp dụng CCSA cho cùng một bài toán điều độ kinh tế hệ thống điện; tuy nhiên, nghiên cứu [72] chỉ sử dụng giá trị 0.7 trong khi đó nghiên cứu [73] đã chỉ ra rằng xác suất này nên được chọn trong toàn vùng với chín giá trị từ 0.1 đến 0.9 để tìm nghiệm tối ưu. Một nghiên cứu khác về phân bố công suất phản kháng tối ưu [77] đã sử dụng giá trị 0.25 trong khi đó để áp dụng CCSA cho bài toán dò tìm điểm công suất cực đại ở nghiên cứu [74] và bài toán tái cấu trúc lưới điện ở nghiên cứu [75] cũng đã sử dụng chín giá trị cho xác suất này như nghiên cứu [73]. Do đó, giá trị của xác suất này cũng được chọn lần lượt với 9 giá trị từ 0.1 đến 0.9 cho các bài toán trong luận án này.
+
+Bên cạnh đó, giá trị của hệ số phân phối β cũng cần được xác định và hệ $\mathrm { s } \hat { 0 }$ này được đề nghị trong khoảng [0.3, 1.99] như phương pháp [68]. Dựa vào kinh nghiệm, ở nghiên cứu [64] và [69], Yang và Deb đã chỉ ra rằng $\beta$ đã không ảnh hưởng nhiều đến chất lượng nghiệm tối ưu và họ đã chứng mình giá trị 1.5 có thể giúp CCSA đạt hiệu quả cao khi kiểm tra trên tập hợp các hàm toán benchmark và bài toán thiết kế tối ưu lò xo. Dựa vào đề nghị này, các nghiên cứu trong lĩnh vực kỹ thuật điện [72-75], [77], [79] đã chọn giá trị 1.5 cho thông số này và đã đạt được kết quả như mong đợi. Do đó, giá trị của thông số này cũng được cố định tại 1.5 cho tất cả các bài toán trong luận án này. Khác với $P _ { a } , \alpha$ đã không được xem như là một hệ $s \hat { 0 }$ quan trọng ảnh hưởng nhiều lên kết quả cuối cùng. Hai nghiên cứu đầu tiên [64, 69] đã sử dụng giá trị $\alpha { = } 1$ cho các trường hợp nghiên cứu và các nghiên cứu sau này [72-79] cũng đã nhận giá trị này cho các áp dụng mà không có bất cứ sự thay đổi và bình luận nào khác. Để đơn giản, giá trị này cũng được sử dụng trong toàn bộ luận án.
+
+## 4.9.1.2. Chọn thông số điều khiển của MCSA
+
+MCSA cũng có ba thông số cơ bản như CCSA là $N _ { p } \mathrm { ~ , ~ } G _ { m a x } , P _ { a }$ và một thông số điều khiển của riêng MCSA là tỉ lệ trứng trong nhóm tốt với trứng trong nhóm xấu. Ba thông số đầu tiên cũng có ảnh hưởng lên chất lượng nghiệm và thời gian tính toán của MCSA giống như ảnh hưởng lên CCSA. Do đó, phương pháp để thu được kết quả tốt cũng được thực hiện tương tự như phân tích ở mục trên. Tuy nhiên, MCSA còn có một
+
+<!-- page: 84 -->
+
+thông số riêng do quá trình cải tiến lần tạo ra thế hệ nghiệm mới đầu tiên theo cơ chế Lévy Flights. Ở cải tiến này, tất cả các trứng được sắp xếp và chia thành hai nhóm gồm nhóm tốt và nhóm xấu. Nhóm đầu tiên bao gồm các trứng có chất lượng cao trong khi nhóm thứ hai sẽ là các trứng còn lại có chất lượng kém hơn. Do đó, việc chọn số trứng trong từng nhóm cũng đóng vai trò quan trọng. Trong nghiên cứu đầu tiên về MCSA [65], Walton và cộng sự của ông đã chọn kích thước của từng nhóm dựa vào tổng dân số đang có và bằng thực nghiệm các tác giả đã chọn tỉ lệ 1:3. Tỉ lệ này có nghĩa tổng dân số sẽ được chia làm bốn phần bằng nhau, trong đó nhóm tốt sẽ chiếm một phần và ba phần còn lại thuộc nhóm trứng xấu. Tỉ số này sau đó được sử dụng ở nghiên cứu [79]. Tuy nhiên, để khảo sát tính hiệu quả của tỉ số này lên kết quả cuối cùng chúng tôi sẽ kiểm tra với nhiều giá trị khác nhau như 1:3, 1:2, 1:1, 2:1 và 3:1 cho hệ thống thứ nhất trong chương này và sau đó tỉ số tốt nhất sẽ được quyết định.
+
+## 4.9.1.3. Chọn thông số điều khiển của ASCSA
+
+Tương tự như CCSA, ASCSA cũng có ba thông số điều khiển cơ bản như $N _ { p } ,   G _ { m a x }$ và $P _ { a }$ cùng với một thông số đặc trưng cho ASCSA là threshold ε. Ba thông số đầu tiên có cùng ảnh hưởng lên chất lượng nghiệm và thời gian tính toán của ASCSA như ảnh hưởng lên CCSA và MCSA nhưng thông số đặc trưng ε thì chưa thể có kết luận gì. Do đó, ba thông số đầu tiên được xác định như cách ở CCSA và MCSA trong khi đó threshold ε được chọn với năm giá trị khác nhau gồm $1 0 ^ { - 5 } , 1 0 ^ { - 4 } , 1 0 ^ { - 3 } , 1 0 ^ { - 2 } , 1 0 ^ { - 1 }$ và sau đó giá trị tốt nhất sẽ được quyết định dựa vào kết quả số. Chi tiết của chọn lọc thông số điều khiển cho ASCSA được thực hiện, phân tích và thảo luận như mục 4.9.2 bên dưới.
+
+## 4.9.1.4. Chọn thông số điều khiển của ALHN
+
+ALHN là phương pháp tiền định có tiêu chuẩn dừng quá trình tính toán dựa vào phép so sánh giữa sai số lớn nhất của các ràng buộc và ngưỡng chấp nhận lớn nhất của sai số ε. Quá trình tìm kiếm nghiệm tối ưu của ALHN dừng lại khi sai số lớn nhất của các ràng buộc nhỏ hơn hoặc bằng giá trị ngưỡng cài đặt trước đó. Để thực thi cho các hệ thống ở chương này, ngưỡng chấp nhận được chọn là $1 0 ^ { - 4 }$ cho mỗi hệ thống và khi sai số đã thỏa mãn điều kiện dừng thì số vòng lặp đã thực hiện sẽ được báo cáo. Ngoài ra, dựa vào kinh nghiệm giá trị độ dốc  được cố định tại 100 cho tất cả các hệ thống trong khi đó các thông số khác thay đổi tùy thuộc bài toán xem xét. Để đơn giản hóa vấn đề chọn lựa, giá trị của $\alpha _ { s k }$ và αhk cũng như giá tr ca βk và βh đưc chn theo cp
+
+## 4.9.2. Tối ưu hóa đơn mục tiêu chi phí phát điện
+
+## 4.9.2.1. Năm hệ thống không xét hiệu ứng xả van
+
+Ở mục này, các phương pháp tối ưu đề xuất sẽ được áp dụng để cực tiểu chi phí phát điện cho năm hệ thống thủy nhiệt điện mà không xét đến hiệu ứng xả van. Trong năm
+
+<!-- page: 85 -->
+
+hệ thống này, hai hệ thống đầu tiên có hai nhà máy thủy điện và hai nhà máy nhiệt điện trong đó hệ thống thứ nhất được hoạch định phát điện tối ưu trong ba khoảng thời gian với 8 giờ mỗi khoảng và hệ thống thứ hai được hoạch định phát điện tối ưu trong bốn khoảng 12 giờ. Ba hệ thống còn lại được hoạch định phát điện tối ưu trong 24 khoảng 1 giờ. Hệ thống thứ ba gồm một nhà máy thủy điện và một nhà máy nhiệt điện, hệ thống thứ tư gồm một nhà máy nhiệt điện và hai nhà máy thủy điện và hệ thống cuối gồm hai nhà máy thủy điện và hai nhà máy nhiệt điện. Dữ liệu các hệ thống được trích dẫn từ nghiên cứu [12] cho hệ thống thứ nhất, [6] cho hệ thống thứ hai và [4] cho ba hệ thống cuối cùng. Các dữ liệu này cũng được cho trong phụ lục của luận án.
+
+Để thực thi cho năm hệ thống đang xét, thông số điều khiển của các phương pháp CCSA, MCSA và ASCSA được chọn như trong bảng 4.1. Có thể thấy rằng số tổ chim của các phương pháp gần như bằng nhau cho tất cả các hệ thống ngoại trừ MCSA được chọn với số lượng nhỏ hơn không đáng kể so với CCSA và ASCSA ở 3 hệ thống cuối trong khi đó số vòng lặp lớn nhất của CCSA và MCSA gần gấp đôi và gấp đôi giá trị của ASCSA cho hệ thống thứ nhất và thứ hai, và lớn hơn không đáng kể cho ba hệ thống cuối cùng. Mặc dù số tổ chim của ASCSA lớn hơn MCSA nhưng thời gian tính toán của ASCSA không lâu hơn so với MCSA vì số vòng lặp nhỏ hơn và hơn nữa cơ cấu của MCSA cũng phức tạp hơn CCSA và ASCSA như đã trình bày ở mục 3.3 ở chương 3.
+
+Bảng 4.1. Chọn lựa thông số điều khiển của các phương pháp CSA
+
+<table><tbody><tr><td>Hệ thống</td><td>Phương pháp</td><td>CCSA</td><td>MCSA</td><td>ASCSA</td></tr><tr><td rowspan="2">1</td><td>Nd</td><td>30</td><td>30</td><td>30</td></tr><tr><td>G<sub>max</sub></td><td>100</td><td>100</td><td>70</td></tr><tr><td rowspan="2">2</td><td>Nd</td><td>50</td><td>50</td><td>50</td></tr><tr><td>G<sub>max</sub></td><td>400</td><td>400</td><td>200</td></tr><tr><td rowspan="2">3</td><td>Nd</td><td>10</td><td>8</td><td>10</td></tr><tr><td>G<sub>max</sub></td><td>800</td><td>800</td><td>700</td></tr><tr><td rowspan="2">4</td><td>Nd</td><td>15</td><td>8</td><td>15</td></tr><tr><td>G<sub>max</sub></td><td>1,800</td><td>1800</td><td>1500</td></tr><tr><td rowspan="2">5</td><td>Nd</td><td>15</td><td>12</td><td>15</td></tr><tr><td>G<sub>max</sub></td><td>3,000</td><td>3000</td><td>2800</td></tr></tbody></table>
+
+Ngoài ra, để thực thi ASCSA cho các hệ thống này, giá trị của hai thông số còn lại như xác suất phát hiện trứng lạ và ngưỡng threshold ε cũng được chọn trong dải xác định trước. Cụ thể, $P _ { a }$ được chọn với 9 giá trị từ 0.1 đến 0.9 với bước nhảy 0.1 trong khi đó threshold ε được chọn với 5 giá trị $1 0 ^ { - 5 } , 1 0 ^ { - 4 } , 1 0 ^ { - 3 } , 1 0 ^ { - 2 }$ , và $1 0 ^ { - 1 }$ . Ngoài ra, MCSA cũng cần xác định tỉ lệ trứng trong nhóm tốt và nhóm xấu. Như nghiên cứu [65] đã chỉ ra tỉ lệ tốt nhất là 1:3; tuy nhiên, nhiều tỉ lệ sẽ được thử nghiệm ở hệ thống thứ nhất để tìm ra giá trị tốt nhất cho MCSA.
+
+Trường hợp 1: Hệ thống 1 với hai nhà máy thủy điện và hai nhà máy nhiệt điện được hoạch định phát điện tối ưu trong ba khoảng 8 giờ.
+
+<!-- page: 86 -->
+
+Ở trường hợp này, CCSA, MCSA và ASCSA được áp dụng với các giá trị khác nhau của thông số điều khiển như xác suất $P _ { a _ { 2 } }$ giá trị ngưỡng threshold ε, số vòng lặp lớn nhất $G _ { m a x _ { 1 } }$ , số tổ chim $N _ { p }$ và tỉ lệ trứng tốt và trứng xấu. Việc chọn các giá trị khác nhau này nhằm khảo xác ảnh hưởng của từng thông $s \hat { 0 }$ lên chất lượng nghiệm tối ưu và thời gian tính toán, và cuối cùng chọn lựa hiệu quả nhất sẽ được đề xuất cho các phương pháp nhằm đạt được tính hiệu quả cao nhất. Để làm rõ điều này, 5 kịch bản lần lượt được xây dựng như sau:
+
+## Kịch bản 1: Khảo sát ảnh hưởng của $P _ { a }$ lên kết quả của các phương pháp CSA
+
+Ở kịch bản này, các phương pháp được thực thi với sự lựa chọn $N_{p}=30,   G_{max}=100$ cho CCSA và MCSA, và $N_{p}=30,G_{max}=70$ và threshold $\varepsilon { = } 1 0 ^ { - 2 }$ cho ASCSA. Kết quả đạt được từ ba phương pháp được báo cáo ở các bảng 4.2, 4.3 và 4.4. Các bảng số cho thấy giá trị chi phí nhỏ nhất đạt được từ các phương pháp ở các giá trị khác nhau của $P _ { a } .$ . Cụ thể CCSA đạt được 64,606.0376\$ tại $P _ { a } { = } 0 . 8$ , MCSA đạt chi phí 64606.0274\$ tại $P _ { a } { = } 0 . 9$ và ASCSA đạt chi phí 64606.0036\$ tại $P_{a}=0.4, 0.5, 0.6, 0.7$ . Chú ý vào các giá trị nhỏ nhất đạt được từ các phương pháp có thể thấy các phương pháp này có xu hướng đạt được kết quả tốt hơn khi $P _ { a }$ ở trong khoảng từ 0.5 đến 0.9. Hơn nữa, ảnh hưởng của $P _ { a }$ lên kết quả của CCSA và MCSA rõ ràng hơn so với ảnh hưởng lên ASCSA bởi vì sự chênh lệch chi phí của hai phương pháp CCSA và MCSA lớn hơn rất nhiều so với sự chênh lệch của ASCSA. Các giá trị nhỏ nhất của ASCSA gần như bằng với giá trị tốt nhất 64606.0036\$ trong khi đó giá trị nhỏ nhất của CCSA và MCSA chênh lệch khá lớn so với giá trị nhỏ nhất tốt nhất. Tuy nhiên, ảnh hưởng của $P _ { a }$ lên độ ổn định của ASCSA rõ rệt hơn khi độ lệch chuẩn khá cao và lần lượt bằng 213.9504\$, 84.4375\$ và 66.7341\$ ở các giá trị $P_{a}=0.1,\;0.2,\;0.3$ . Phân tích này chỉ ra rằng, giá trị của $P _ { a }$ nên được chọn trong vùng từ 0.1 đến 0.9 cho từng phương pháp và sau đó giá trị tốt nhất sẽ được xác định dựa vào giá trị nhỏ nhất và độ lệch chuẩn. Thông thường, giá trị nhỏ nhất sẽ thể hiệu tính hiệu quả của phương pháp trong khi đó giá trị độ lệch chuẩn sẽ thể hiện độ ổn định của phương pháp.
+
+Bảng 4.2. Ảnh hưởng của $P _ { a }$ lên kết quả của CCSA
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT(giây) |
+| --- | --- | --- | --- | --- | --- |
+| 0.1 | 64,607.1244 | 64,612.1866 | 64,640.9683 | 5.996 | 0.29 |
+| 0.2 | 64,606.2586 | 64,608.7835 | 64,617.0461 | 2.101 | 0.31 |
+| 0.3 | 64,606.1780 | 64,607.5334 | 64,610.9801 | 1.057 | 0.29 |
+| 0.4 | 64,606.3368 | 64,607.3154 | 64,611.3209 | 1.004 | 0.3 |
+| 0.5 | 64,606.0991 | 64,606.8949 | 64,608.6728 | 0.634 | 0.3 |
+| 0.6 | 64,606.1262 | 64,606.7962 | 64,608.1610 | 0.525 | 0.29 |
+| 0.7 | 64,606.1586 | 64,606.6753 | 64,608.4112 | 0.428 | 0.29 |
+| 0.8 | 64,606.0376 | 64,606.8948 | 64,608.2771 | 0.5075 | 0.31 |
+| 0.9 | 64,606.1391 | 64,606.4915 | 64,607.1547 | 0.253 | 0.3 |
+
+<!-- page: 87 -->
+
+Bảng 4.3. Ảnh hưởng của $P _ { a }$ lên kết quả của MCSA
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT (giây) |
+| --- | --- | --- | --- | --- | --- |
+| 0.1 | 64606.6683 | 64614.6832 | 64631.3056 | 4.429 | 0.32 |
+| 0.2 | 64607.2992 | 64611.9592 | 64628.7813 | 4.208 | 0.33 |
+| 0.3 | 64606.2357 | 64608.8794 | 64613.4235 | 1.875 | 0.33 |
+| 0.4 | 64606.2050 | 64607.5926 | 64609.4527 | 0.913 | 0.34 |
+| 0.5 | 64606.1964 | 64607.1479 | 64609.3068 | 0.690 | 0.33 |
+| 0.6 | 64606.2932 | 64606.8844 | 64608.5601 | 0.432 | 0.33 |
+| 0.7 | 64606.1107 | 64606.8339 | 64609.6054 | 0.594 | 0.35 |
+| 0.8 | 64606.0956 | 64606.5133 | 64607.7652 | 0.340 | 0.35 |
+| 0.9 | 64606.0274 | 64606.8723 | 64613.6754 | 1.1825 | 0.35 |
+
+Kịch bản 2: Khảo sát ảnh hưởng của threshold ε lên kết quả của ASCSA
+
+Kịch bản thứ hai tập trung vào phân tích ảnh hưởng của threshold ε lên kết quả đạt được từ ASCSA. Do đó, ASCSA sẽ được áp dụng với sự thay đổi giá trị của threshold ε với các sự lựa chọn như $1 0 ^ { - 1 } ,   1 0 ^ { - 2 } ,   1 0 ^ { - 3 } ,   1 0 ^ { - 4 } ,   1 0 ^ { - 5 }$ trong khi đó $N_{p}=30,   G_{max}=70$ được cố định cho tất cả các trường hợp của threshold ε và $P _ { a }$ cũng được chọn với 9 giá trị từ 0.1 đến 0.9. Kết quả tốt nhất đạt được với các giá trị khác nhau của threshold ε báo cáo trong bảng 4.5 cho thấy giá trị tốt nhất luôn xấp xỉ bằng 64,606.0036\$ Ngoài ra, giá trị độ lệch chuẩn đạt được tại các giá trị threshold ε gần như bằng nhau ngoại trừ giá trị $1 0 ^ { - 5 }$ đạt giá trị nhỏ nhất. Do đó, để đơn giản cho việc chọn lựa các giá trị của threshold ε để giảm một số lượng lớn lần chạy thử nghiệm và giảm thơi gian thực nghiệm, giá trị này có thể chọn $1 0 ^ { - 3 }$ hoặc $1 0 ^ { - 5 }$ . Ảnh hưởng của thông số này lên kết quả đạt được sẽ tiếp tục được thực hiện và phân tích ở hệ thống thứ hai ở trường hợp sau.
+
+Bảng 4.4. Ảnh hưởng của $P _ { a }$ lên kết quả của ASCSA
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT(giây) |
+| --- | --- | --- | --- | --- | --- |
+| 0.1 | 64606.0111 | 64727.5073 | 65500.0665 | 213.9504 | 0.26 |
+| 0.2 | 64606.0043 | 64628.595 | 65061.2903 | 84.4375 | 0.25 |
+| 0.3 | 64606.0038 | 64622.198 | 64937.278 | 66.7341 | 0.24 |
+| 0.4 | 64606.0037 | 64606.049 | 64606.2684 | 0.0623 | 0.25 |
+| 0.5 | 64606.0036 | 64606.015 | 64606.334 | 0.046 | 0.25 |
+| 0.6 | 64606.0036 | 64606.01 | 64606.0919 | 0.0135 | 0.24 |
+| 0.7 | 64606.0037 | 64606.016 | 64606.0953 | 0.018 | 0.25 |
+| 0.8 | 64606.0042 | 64606.017 | 64606.1168 | 0.0185 | 0.25 |
+| 0.9 | 64606.0043 | 64606.022 | 64606.0911 | 0.0188 | 0.24 |
+
+<!-- page: 88 -->
+
+Bảng 4.5. Ảnh hưởng của ε lên kết quả của ASCSA
+
+| Threshold ε(P<sub>a</sub>) | 10<sup>-1</sup> (0.7) | 10<sup>-2</sup> (0.6) | 10<sup>-3</sup> (0.7) | 10<sup>-4</sup> (0.8) | 10<sup>-5</sup> (0.8) |
+| --- | --- | --- | --- | --- | --- |
+| CPNN ($) | 64,606.0037 | 64,606.0036 | 64,606.0038 | 64,606.0039 | 64,606.0036 |
+| CPTB ($) | 64,606.0118 | 64,606.01 | 64,606.0112 | 64,606.0111 | 64,606.0090 |
+| CPLN ($) | 64,606.0698 | 64,606.0919 | 64,606.0531 | 64,606.0713 | 64,606.0460 |
+| DLC ($) | 0.0132 | 0.0135 | 0.0101 | 0.0114 | 0.0071 |
+| TGTT (giây) | 0.23 | 0.24 | 0.23 | 0.24 | 0.25 |
+
+## Kịch bản 3: Khảo sát ảnh hưởng của G<sub>max</sub> lên kết quả của các phương pháp CSA
+
+Kịch bản thứ ba tập trung vào phân tích vào ảnh hưởng của tiêu chuẩn dừng (số vòng lặp lớn nhất $G _ { m a x } )$ lên kết quả đạt được của CCSA, MCSA và ASCSA. Để điều tra ảnh hưởng này, cả ba phương pháp được thực thi với thông số được chọn như sau: N<sub>p</sub>=30, P<sub>a</sub>=0.1-0.9 và $G _ { m a x }$ được thay đổi giá trị 50, 70, 100, 150 và 200. Các kết quả được trình bày trong bảng 4.6-4.8 cho CCSA, MCSA và ASCSA. Rõ ràng CCSA và MCSA có sự cải thiện kết quả tốt khi tăng số vòng lặp từ 50 lên đến 200. Thật vậy, CCSA lần lượt đạt giá trị nhỏ nhất và độ lệch chuẩn là 64608.7463\$ và 13.366\$ khi chọn $G _ { m a x } { = } 5 0$ , và đạt 64606.0037\$ và 0\$ khi chọn $G _ { m a x } { = } 2 0 0$ trong khi đó kết quả của MCSA giảm từ 64606.7129\$ đến 64606.0037\$ cho chi phí nhỏ nhất, và giảm từ 3.928\$ đến 0.001\$ cho độ lệch chuẩn. Khác với hai phương pháp này, sự cải thiện của ASCSA chỉ đạt được từ 50 đến 100 vòng lặp và không có sự cải thiện hơn nữa khi tăng lên đến 150 và 200. Thật vậy, giá trị tốt nhất của chi phí có thể đạt được bởi phương pháp ASCSA tại tất cả các giá trị của $G _ { m a x }$ từ 70 đến 200 và độ lệch chuẩn đã đạt giá trị 0 tại $G _ { m a x }$ =100, 150, 200. Điều này có nghĩa là ASCSA đã đạt được hiệu quả cao nhất tại $G _ { m a x }$ =100 và không cần phải tăng lên đến 150 và 200 như CCSA và MCSA. Mặt khác, thời gian tính toán càng lớn khi tăng $G _ { m a x }$ lên giá trị cao hơn cho cả CCSA, MCSA và ASCSA. Như vậy, phân tích này cho ta thấy số vòng lặp lớn có thể giúp cải thiện chất lượng nghiệm tuy nhiên khi số vòng lăp lớn đến một giới hạn nào đó thì không còn cải thiện được thêm nữa và số vòng lặp lớn sẽ làm cho thời gian tính toán lâu.
+
+Bảng 4.6. Ảnh hưởng của $G _ { m a x }$ lên kết quả của CCSA
+
+| G<sub>max</sub> | P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT(giây) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 50 | 0.7 | 64608.7463 | 64626.6639 | 64668.9893 | 13.366 | 0.12 |
+| 70 | 0.8 | 64606.3218 | 6 4,608.7512 | 64616.7139 | 1.7573 | 0.24 |
+| 100 | 0.8 | 64606.0376 | 64606.8948 | 64608.2771 | 0.5075 | 0.31 |
+| 150 | 0.9 | 64606.0046 | 64606.0147 | 64606.0455 | 0.009 | 0.32 |
+| 200 | 0.9 | 64606.0037 | 64606.0039 | 64606.0044 | 0.000 | 0.427 |
+
+<!-- page: 89 -->
+
+Bảng 4.7. Ảnh hưởng của $G _ { m a x }$ lên kết quả của MCSA
+
+| G<sub>max</sub> | P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT(giây) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 50 | 0.5 | 64606.7129 | 64613.8465 | 64623.2531 | 3.928 | 0.15 |
+| 70 | 0.9 | 64606.3111 | 64609.5625 | 64613.0881 | 1.4373 | 0.27 |
+| 100 | 0.9 | 64606.0274 | 64606.8723 | 64613.6754 | 1.1825 | 0.35 |
+| 150 | 0.9 | 64606.0046 | 64606.0218 | 64606.075 | 0.0117 | 0.42 |
+| 200 | 0.9 | 64606.0037 | 64606.0044 | 64606.0063 | 0.001 | 0.45 |
+
+Bảng 4.8. Ảnh hưởng của $G _ { m a x }$ lên kết quả của ASCSA
+
+| G<sub>max</sub> | Thresholdε(P<sub>a</sub>) | CPNN ($) | CPTB ($) | CPLN ($) | DLC($) | TGTT(giây) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 50 | 10<sup>-2</sup>(0.8) | 64606.0384 | 64606.4483 | 64608.9854 | 0.4858 | 0.12 |
+| 70 | 10<sup>-5</sup> (0.8) | 64606.0036 | 64606.0090 | 64606.0460 | 0.0071 | 0.24 |
+| 100 | 10<sup>-2</sup>(0.7) | 64606.0036 | 64606.0037 | 64606.0040 | 0.0001 | 0.32 |
+| 150 | 10<sup>-3</sup>(0.8) | 64606.0036 | 64606.0037 | 64606.0037 | 0.0000 | 0.34 |
+| 200 | 10<sup>-4</sup>(0.8) | 64606.0036 | 64606.0036 | 64606.0036 | 0.0000 | 0.41 |
+
+## Kịch bản 4: Khảo sát ảnh hưởng của $N _ { p }$ lên kết quả của các phương pháp CSA
+
+Kịch bản thứ tư nhằm vào phân tích ảnh hưởng của số tổ chim lên kết quả đạt được của CCSA, MCSA và ASCSA khi điều độ tối ưu hệ thống thứ nhất. Các phương pháp sẽ được thay đổi với số tổ chim từ 10 đến 50 trong khi đó $G _ { m a x } { = } 1 0 0$ được cố định. Kết quả thực nghiệm được báo cáo ở các bảng số 4.9, 4.10 và 4.11 cho CCSA, MCSA và ASCSA. Quan sát từ giá trị đạt được tại các giá trị $N _ { p }$ khác nhau cho thấy các kết về chi phí nhỏ nhất, trung bình, lớn nhất và độ lệch chuẩn tốt hơn khi $N _ { p }$ có giá trị lớn hơn ngoại trừ trường hợp $N _ { p } { = } 2 0$ cho giá trị nhỏ nhất và $N _ { p } { = } 3 0$ cho độ lệch chuẩn đạt được ở phương pháp MCSA. Sự cải thiện ở giá trị nhỏ nhất và độ lệch chuẩn rất lớn ở phương pháp CCSA nhưng với ASCSA là không đáng kể khi $N _ { p } { = } 4 0 ,$ , 50 bởi vì ASCSA gần như đã đạt được hiệu quả cao nhất ở $N _ { p } { = } 3 0$ . Quan sát về thời gian tính toán cho thấy khi số tổ chim càng lớn thì thời gian tính toán càng dài.
+
+Nói chung, phân tích ảnh hưởng của số tổ chim lên kết quả đạt được có thể cho ta kết luận cuối cùng rằng số tổ chim càng lớn thì kết quả đạt được càng tốt hơn; tuy nhiên, kết quả sẽ không còn cải thiện được nữa khi số tổ chim này được chọn ở một giá trị lớn nào đó vì hiệu suất của nó đã đạt được tối đa ở một giá trị nhỏ hơn. Do đó, việc chọn số tổ chim phải cân nhắc để hiệu quả lời giải cao mà không mất nhiều thời gian tính toán.
+
+<!-- page: 90 -->
+
+Bảng 4.9. Ảnh hưởng của $N _ { p }$ lên kết quả của CCSA
+
+| N<sub>p</sub> | 10 | 20 | 30 | 40 | 50 |
+| --- | --- | --- | --- | --- | --- |
+| P<sub>a</sub> | 0.6 | 0.7 | 0.8 | 0.9 | 0.7 |
+| CPNN ($) | 64,606.2037 | 64,606.0683 | 64,606.0376 | 64,606.0287 | 64,606.0176 |
+| CPTB ($) | 64,607.5279 | 64,606.8654 | 64,606.8948 | 64,606.4027 | 64,606.1702 |
+| CPLN ($) | 64,612.8786 | 64,608.6499 | 64,608.2771 | 64,607.1441 | 64,606.6774 |
+| DLC ($) | 1.559 | 0.583 | 0.5075 | 0.252 | 0.155 |
+| TGTT (giây) | 0.158 | 0.19 | 0.31 | 0.33 | 0.35 |
+
+Bảng 4.10. Ảnh hưởng của $N _ { p }$ lên kết quả của MCSA
+
+| N<sub>p</sub> | 10 | 20 | 30 | 40 | 50 |
+| --- | --- | --- | --- | --- | --- |
+| P<sub>a</sub> | 0.9 | 0.7 | 0.9 | 0.9 | 0.6 |
+| CPNN ($) | 64,606.0479 | 64,606.0531 | 64,606.0274 | 64,606.0196 | 64,606.0189 |
+| CPTB ($) | 64,606.9799 | 64,606.9955 | 64,606.8723 | 64,606.3968 | 64,606.3699 |
+| CPLN ($) | 64,609.6505 | 64,608.3237 | 64,613.6754 | 64,607.0277 | 64,606.8671 |
+| DLC ($) | 0.820 | 0.542 | 1.1825 | 0.238 | 0.185 |
+| TGTT (giây) | 0.140 | 0.210 | 0.35 | 0.37 | 0.4 |
+
+Bảng 4.11. Ảnh hưởng của $N _ { p }$ lên kết quả của ASCSA
+
+| N<sub>p</sub> | 10 | 20 | 30 | 40 | 50 |
+| --- | --- | --- | --- | --- | --- |
+| P<sub>a</sub> | 0.9 | 0.8 | 0.7 | 0.8 | 0.8 |
+| CPNN ($) | 64,606.0037 | 64,606.0036 | 64,606.0036 | 64,606.0036 | 64,606.0036 |
+| CPTB ($) | 64,625.6155 | 64,606.0038 | 64,606.0037 | 64,606.0036 | 64,606.0036 |
+| CPLN ($) | 64,937.2680 | 64,606.0057 | 64,606.004 | 64,606.0037 | 64,606.0037 |
+| DLC ($) | 75.511 | 0.0001 | 0.0001 | 0.0000 | 0.0000 |
+| TGTT (giây) | 0.15 | 0.186 | 0.29 | 0.32 | 0.340 |
+
+Kịch bản 5: Khảo sát ảnh hưởng của tỉ lệ trứng lên kết quả của MCSA
+
+Kịch bản cuối cùng nhằm vào phân tích ảnh hưởng của tỉ lệ số trứng trong nhóm tốt và nhóm xấu lên kết quả đạt được của MCSA cho hệ thống này. Để quan sát độ nhạy của tỉ lệ này, giá trị $N _ { p } { = } 3 0$ và $G _ { m a x }   =   1 0 0$ được cố định trong khi đó tỉ lệ sẽ thay đổi gồm 1:3, 1:2, 1:1, 2:1 và 3:1. Kết quả đạt được trình bày ở bảng 4.12. So sánh chi phí và thời gian tính toán có thể thấy kết quả trở nên xấu khi số trứng trong nhóm tốt càng lớn và số trứng trong nhóm xấu càng giảm mặc dù chênh lệch là không quá lớn. Chi phí tốt nhất ở tỉ lệ 1:3 là 64606.0223\$ trong khi đó chi phí nhỏ nhất cao nhất đạt được ở tỉ lệ 2:1 với 64606.0677\$ và giá trị cao nhất thứ hai đạt được ở tỉ lệ 3:1 với 64606.0509\$. Các so sánh này chỉ ra rằng tỉ lệ 1:3 là tốt nhất để đạt được hiệu quả cao và độ ổn định lớn cho MCSA. Do đó, tỉ lệ 1:3 sẽ được áp dụng cho MCSA cho tất cả hệ thống trong luận án này.
+
+<!-- page: 91 -->
+
+Bảng 4.12. Ảnh hưởng của tỉ lệ trứng lên kết quả của MCSA
+
+| Tỉ lệ | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 |
+| --- | --- | --- | --- | --- | --- |
+| P<sub>a</sub> | 0.9 | 0.7 | 0.7 | 0.8 | 0.8 |
+| CPNN ($) | 64,606.0223 | 64,606.0337 | 64,606.0349 | 64,606.0677 | 64,606.0509 |
+| CPTB ($) | 64,606.4851 | 64,606.5110 | 64,606.6107 | 64,606.6794 | 64,606.7361 |
+| CPLN ($) | 64,608.3577 | 64,607.9046 | 64,610.6774 | 64,608.5838 | 64,608.7364 |
+| DLC ($) | 0.2893 | 0.3057 | 0.4263 | 0.4178 | 0.4274 |
+| TGTT (giây) | 0.35 | 0.36 | 0.374 | 0.41 | 0.44 |
+
+![](images/page_90_chart_2.jpg)
+
+Hình 4.6. Đặc tính hội tụ các phương pháp CSA cho hệ thống 1
+
+<!-- page: 92 -->
+
+![](images/page_91_chart_0.jpg)
+
+Hình 4.7. Đặc tính hội tụ phương pháp ALHN cho hệ thống 1
+
+So sánh kết quả đạt được cho hệ thống này giữa các phương pháp CSA và ALHN được trình bày trong bảng 4.13 trong khi đó đặc tính hội tụ của các phương pháp CSA được vẽ trong hình 4.6 và đặc tính hội tụ về sai số của ALHN được vẽ trong hình 4.7. So sánh kết quả chi phí chỉ ra rằng ASCSA và ALHN là hai phương pháp hiệu quả nhất khi có cùng chi phí nhỏ nhất và nhỏ hơn giá trị chi phí của CCSA và MCSA. Hơn thế nữa, giá trị trung bình, lớn nhất và độ lệch chuẩn của ASCSA cũng nhỏ hơn so với CCSA và MCSA. So sánh thời gian tính toán chỉ ra rằng CCSA và ASCSA là hai phương pháp nhanh nhất trong khi đó ALHN là phương pháp chậm nhất cho quá trình tìm kiếm nghiệm tối ưu.
+
+Hơn thế nữa, đặc tính hội tụ trong hình tương ứng với đường đặc tính tốt nhất của 50 lần chạy độc lập cũng chỉ ra được khả năng tìm kiếm vượt trội của ASCSA so với CCSA và MCSA khi ở một vài vòng lặp đầu tiên thì các giá trị hàm thích nghi gần như bằng nhau nhưng khi số vòng lặp tăng lên đến khoảng 15 thì hàm thích nghi của ASCSA đã giảm một cách đáng kể trong khi đó giá trị của CCSA và MCSA giảm ít hơn. Tại những vòng lặp cuối cùng, ASCSA đạt giá trị hàm thích nghi nhỏ hơn CCSA và MCSA. Đặc tính hội tụ về sai số lớn nhất của ALHN trong hình 4.7 cho thấy sai số lớn nhất của ràng buộc đạt được là 9.996x10<sup>-5</sup> và quá trình tìm kiếm dừng lại ở vòng lặp 6229. Mặc dù số vòng lặp của ALHN lớn hơn rất nhiều so với các phương pháp CSA nhưng thời gian tính toán lớn hơn không đáng kể do ALHN chỉ tìm kiếm với một nghiệm duy nhất ở từng vòng lặp và thời gian tính toán ở mỗi vòng lặp của ALHN cũng rất nhanh.
+
+Phân tích về chi phí và thời gian chỉ ra rằng ASCSA là phương pháp hiệu quả nhất trong bốn phương pháp sử dụng ở đây cho hệ thống thứ nhất trong khi đó MCSA hiệu quả hơn CCSA. ALHN có chất lượng nghiệm tốt nhưng thời gian tính toán lâu hơn.
+
+<!-- page: 93 -->
+
+Bảng 4.13. So sánh kết quả cho hệ thống 1
+
+| Phương pháp | CCSA | MCSA | ASCSA | ALHN |
+| --- | --- | --- | --- | --- |
+| N<sub>p</sub> | 30 | 30 | 30 | - |
+| G<sub>max</sub> | 70 | 70 | 70 | 6299 |
+| CPNN ($) | 64606.3218 | 64606.311 | 64606.0036 | 64,606.0037 |
+| CPTB ($) | 6 4,608.7512 | 64609.563 | 64606.0090 | - |
+| CPLN ($) | 64616.7139 | 64613.088 | 64606.0460 | - |
+| DLC ($) | 1.7573 | 1.4373 | 0.0071 | - |
+| TGTT (giây) | 0.24 | 0.27 | 0.24 | 0.6 |
+
+Trường hợp 2: Hệ thống 2 với hai nhà máy thủy điện và hai nhà máy nhiệt điện hoạch định phát điện tối ưu trong bốn khoảng 12 giờ.
+
+Để đơn giản và ngắn gọn, các kết quả đạt được từ CCSA, MCSA, ASCSA và ALHN được tóm tắt và báo cáo trong bảng 4.14 cho hệ thống thứ hai. Kết quả đạt được cho thấy ALHN là một phương pháp có chi phí và thời gian tính toán tốt nhất. Trong ba phương pháp CSA, giá trị nhỏ nhất của ASCSA tại tất cả các giá trị của threshold ε đều nhỏ hơn giá trị nhỏ nhất của CCSA và MCSA. Hơn nữa, thời gian tính toán của ASCSA cũng nhanh hơn so với CCSA và MCSA vì ASCSA chỉ sử dụng 200 vòng lặp trong khi đó CCSA và MCSA sử dụng 400 vòng lặp. Hình 4.8 thể hiện toàn bộ quá trình tìm kiếm nghiệm tối ưu của lần chạy tốt nhất của các phương pháp CSA trong 50 lần chạy độc lập. Có thể thấy rằng ASCSA có thể tìm kiếm nghiệm tối ưu tốt hơn rất nhiều so với CCSA và MCSA tại vòng lặp thứ 20 khi có giá trị hàm thích nghi nhỏ hơn rất nhiều. ASCSA tiếp tục nổi trội hơn khi tiếp tục giảm giá trị hàm thích nghi một cách đáng kể cho đến khi dừng quá trình tìm kiếm hoàn toàn. Bên cạnh đó, CCSA và MCSA cũng đã có thể giảm đáng kể giá trị hàm thích nghi nhưng giá trị vẫn chưa đủ lớn để đạt được nghiệm tối ưu tốt như ASCSA. So sánh giữa CCSA và MCSA cho thấy MCSA hiệu quả hơn CCSA khi có chi phí phát điện thấp hơn mặc dù thời gian tính toán lâu hơn không đáng kể. Đặc tính hội tụ sai số của ALHN thể hiện trong hình 4.9 cho thấy giá trị sai số lớn nhất và số vòng lặp đạt được là 9.9654x10<sup>-5</sup> và 1511.
+
+Bảng 4.14. So sánh kết quả cho hệ thống 2
+
+<table><tbody><tr><td>Phương pháp</td><td>CPNN ($)(ε, P<sub>a</sub>)</td><td>CPTB ($)</td><td>CPLN ($)</td><td>DLC($)</td><td>TGTT (giây)</td></tr><tr><td>CCSA</td><td>376,045.03(-, 0.9)</td><td>376,199.08</td><td>376,339.27</td><td>64.56</td><td>1.89</td></tr><tr><td>MCSA</td><td>376,036.20(-, 0.9)</td><td>376,272.17</td><td>376,539.35</td><td>90.43</td><td>2.35</td></tr><tr><td rowspan="5">ASCSA</td><td>375,965.95(10<sup>-1</sup>, 0.6)</td><td>376,058.27</td><td>376,175.40</td><td>53.938</td><td>0.922</td></tr><tr><td>375,966.99(10<sup>-2</sup> , 0.6)</td><td>376,139.10</td><td>376,441.79</td><td>115.09</td><td>0.91</td></tr><tr><td>375,966.51(10<sup>-3</sup> , 0.7)</td><td>376,148.11</td><td>377,447.46</td><td>203.09</td><td>1.15</td></tr><tr><td>375,969.59(10<sup>-4</sup> , 0.7)</td><td>376,097.12</td><td>377,123.20</td><td>161.94</td><td>0.94</td></tr><tr><td>375,967.47(10<sup>-5</sup> , 0.8)</td><td>376,124.06</td><td>376,498.75</td><td>105.82</td><td>0.93</td></tr></tbody></table>
+
+<!-- page: 94 -->
+
+| ALHN | 375,933.6473(-,-) | - | - | - | 0.19 |
+| --- | --- | --- | --- | --- | --- |
+
+![](images/page_93_chart_1.jpg)
+
+Hình 4.8. Đặc tính hội tụ các phương pháp CSA cho hệ thống 2
+
+![](images/page_93_chart_3.jpg)
+
+Hình 4.9. Đặc tính hội tụ phương pháp ALHN cho hệ thống 2
+
+Trường hợp 3: Ba hệ thống được hoạch định phát điện tối ưu trong 24 khoảng 1 giờ
+
+Ở trường hợp này, hệ thống 3, 4 và 5 được sử dụng để kiểm nghiệm tính hiệu quả của các phương pháp. Các hệ thống đều được hoạch định trong khoảng thời gian một ngày đêm được chia ra thành 24 khoảng với mỗi khoảng 1 giờ. Kết quả đạt được từ các phương pháp được trình bày trong bảng 4.15 cho thấy các phương pháp có chi phí nhỏ nhất xấp xỉ nhau; tuy nhiên, ALHN là phương pháp nhanh nhất trong khi đó ba phương pháp CSA gần như có tốc độ bằng nhau.
+
+Tóm lại, trong mục này bốn phương pháp được áp dụng cho năm hệ thống thủy nhiệt điện không xét đến hiệu ứng xả van với kích thước hệ thống khác nhau, thời gian hoạch
+
+<!-- page: 95 -->
+
+định phát điện tối ưu khác nhau và thông số khác nhau. Phân thích chỉ ra rằng ALHN là phương pháp hiệu quả nhất cho hầu hết tất cả các hệ thống với chi phí hợp lý và thời gian tính toán nhanh. Tuy nhiên, vẫn có trường hợp ALHN là phương pháp chậm nhất ở hệ thống thứ nhất. Thật vây, việc áp dụng ALHN gặp khó khăn ở việc điều chỉnh các thông số điều khiển vì độ nhạy của các thông số khá lớn lên kết quả đạt được giống như nhược điểm của HNN phân tích ở chương 2. Với các phương pháp CSA, ASCSA là phương pháp hiệu quả nhất có khả năng tìm ra nghiệm tối ưu hiệu quả nhất hoặc xấp xỉ với phương pháp CCSA và MCSA mặc dù sử dụng số vòng lặp nhỏ hơn CCSA và MCSA. Giữa phương pháp CCSA và MCSA, MCSA hiệu quả hơn CCSA cho nhiều trường hợp xem xét.
+
+Bảng 4.16 trình bày kết quả so sánh từ CCSA, MCSA, ASCSA, ALHN và các phương pháp khác. Kết quả của hệ thống 1 và 2 cho thấy bốn phương pháp đề xuất có chi phí nhỏ hơn các phương pháp khác và đặc biệt nhỏ hơn nhiều HNN và phương pháp Newton [6]. Ngoài ra 4 phương pháp đề xuất cũng có thời gian tính toán nhanh hơn các phương pháp khác. Thật vậy, các phương pháp đề xuất ở đây chỉ trải qua dưới 1 giây để đạt được nghiệm tối ưu trong khi đó PPO phải mất 12.4 giây. HNN và phương pháp Newton đã không báo cáo thời gian tính toán nên không thể so sánh về tốc độ tìm kiếm.
+
+Bảng 4.15. So sánh kết quả cho hệ thống 3, 4 và 5
+
+<table><tbody><tr><td>HT</td><td>PP</td><td>CPNN ($)</td><td>CPTB ($)</td><td>CPLN ($)</td><td>DLC($)</td><td>TGTT(giây)</td></tr><tr><td rowspan="4">3</td><td>CCSA</td><td>96,024.404</td><td>96,061.6754</td><td>96,693.4420</td><td>103.6924</td><td>4.3</td></tr><tr><td>MCSA</td><td>96,024.378</td><td>96,945.7053</td><td>103,317.6720</td><td>1513.6914</td><td>4.9</td></tr><tr><td>ASCSA</td><td>96,024.374</td><td>96,230.9523</td><td>104,038.4284</td><td>893.1234</td><td>4.7</td></tr><tr><td>ALHN</td><td>96,024.373</td><td>-</td><td>-</td><td>-</td><td>1.0</td></tr><tr><td rowspan="4">4</td><td>CCSA</td><td>848.3464</td><td>848.3494</td><td>848.3651</td><td>0.0037</td><td>11.7</td></tr><tr><td>MCSA</td><td>848.3463</td><td>848.3485</td><td>848.3751</td><td>0.0066</td><td>11.6</td></tr><tr><td>ASCSA</td><td>848.3468</td><td>871.6687</td><td>974.3850</td><td>26.0009</td><td>11.5</td></tr><tr><td>ALHN</td><td>848.3490</td><td>-</td><td>-</td><td>-</td><td>0.6</td></tr><tr><td rowspan="4">5</td><td>CCSA</td><td>53,051.4765</td><td>53,051.4771</td><td>53,051.4827</td><td>0.0011</td><td>25.3</td></tr><tr><td>MCSA</td><td>53,051.4764</td><td>53,051.4770</td><td>53,051.4770</td><td>0.0002</td><td>26.3</td></tr><tr><td>ASCSA</td><td>53,051.4766</td><td>53,084.6136</td><td>54,082.7887</td><td>45.768</td><td>24.5</td></tr><tr><td>ALHN</td><td>53,051.609</td><td>-</td><td>-</td><td>-</td><td>0.9</td></tr></tbody></table>
+
+Bảng 4.16. So sánh kết quả cho 5 hệ thống đầu tiên
+
+<table><tbody><tr><td>HT</td><td>Phương pháp</td><td>Chi phí ($)</td><td>CPU (giây)</td><td>H T</td><td>Phương pháp</td><td>Chi phí ($)</td><td>CPU (giây)</td></tr><tr><td rowspan="5">1</td><td>PPO [12]</td><td>64,626</td><td>12.4</td><td rowspan="5"></td><td>GA [10]</td><td>848.027</td><td>210</td></tr><tr><td>CCSA</td><td>64,606.038</td><td>0.3</td><td>OGB-GA [10]</td><td>848.326</td><td>90</td></tr><tr><td>MCSA</td><td>64,606.027</td><td>0.36</td><td>LCEL [4]</td><td>848.346</td><td>NA</td></tr><tr><td>ASCSA</td><td>64,606.0037</td><td>0.23</td><td>-[2]</td><td>848.359</td><td>NA</td></tr><tr><td>ALHN</td><td>64,606.0037</td><td>0.6</td><td>MBFA [9]</td><td>*848.2512</td><td>11.96</td></tr></tbody></table>
+
+<!-- page: 96 -->
+
+<table><tbody><tr><td rowspan="6">2</td><td>Newton [6]</td><td>377,374.67</td><td>NA</td><td rowspan="7">4</td><td>GA [11]</td><td>848.867</td><td>39.4</td></tr><tr><td>HNN [6]</td><td>377,554.94</td><td>NA</td><td>FGA [11]</td><td>*843.5 8</td><td>3.02</td></tr><tr><td>CCSA</td><td>376,045.03</td><td>1.89</td><td>PPO [12]</td><td>848.34602</td><td>15.24</td></tr><tr><td>MCSA</td><td>376,036.20</td><td>2.35</td><td>CCSA</td><td>848.3464</td><td>11.1</td></tr><tr><td>ASCSA</td><td>375,965.950</td><td>0.92</td><td>MCSA</td><td>848.3463</td><td>11.6</td></tr><tr><td>ALHN</td><td>375,933.6473</td><td>0.19</td><td>ASCSA</td><td>848.3468</td><td>11.5</td></tr><tr><td rowspan="11">3</td><td>GA [10]</td><td>96,028.651</td><td>220</td><td>ALHN</td><td>848.3490</td><td>0.6</td></tr><tr><td>OGB-GA [10]</td><td>96,024.344</td><td>52</td><td rowspan="10">5</td><td>EGA [10]</td><td>53,055.712</td><td>312</td></tr><tr><td>LCEL [4]</td><td>96,024.37</td><td>NA</td><td>OGB-GA [10]</td><td>53,053.708</td><td>92</td></tr><tr><td>-[2]</td><td>96,024.413</td><td>NA</td><td>LCEL [4]</td><td>53,051.470</td><td>NA</td></tr><tr><td>GA [11]</td><td>*95,847.86</td><td>6.09</td><td>-[2]</td><td>53,051.791</td><td>NA</td></tr><tr><td>FGA [11]</td><td>*95,809.366</td><td>0.3</td><td>GA [11]</td><td>*53,020</td><td>2.48</td></tr><tr><td>PPO [12]</td><td>96,024.392</td><td>12.4</td><td>FGA [11]</td><td>*53,015.5 53</td><td>0.142</td></tr><tr><td>CCSA</td><td>96,024.4039</td><td>4.3</td><td>CSA</td><td>53,051.4765</td><td>25.3</td></tr><tr><td>MCSA</td><td>96,024.3778</td><td>4.9</td><td>MCSA</td><td>53,051.4764</td><td>26.3</td></tr><tr><td>ASCSA</td><td>96,024.3736</td><td>4.7</td><td>ASCSA</td><td>53,051.4766</td><td>24.5</td></tr><tr><td>ALHN</td><td>96,024.3730</td><td>1.0</td><td>ALHN</td><td>53,051.609</td><td>0.9</td></tr></tbody></table>
+
+\* Nghiệm vi phạm ràng buộc; NA: nghiệm tối ưu không được báo cáo
+
+Quan sát ở bảng số cho thấy chi phí của MBFA [9] tại hệ thống 4, chi phí của GA và FGA [11] ở hệ thống 3, 4 và 5 nhỏ hơn tất cả các phương pháp khác. Tuy nhiên, kiểm tra lại lời giai tối ưu đã báo cáo ở các công trình này cho thấy nghiệm tối ưu ở đây không khả thi vì đã vi phạm giới hạn về lưu lượng xả và ràng buộc cân bằng công suất không đảm bảo ở một số khoảng thời gian xem xét. Thật vậy MBFA đã vi phạm ràng buộc cân bằng công suất và ràng buộc cân bằng nguồn nước trong khi GA và FGA đã vi phạm ràng buộc cân bằng nguồn nước ở hệ thống 3 và 4 và sử dụng nhiều nước hơn ở hệ thống 5. Hơn thế nữa, GA và FGA đã bỏ qua tổn thất công suất ở khoảng thời gian cuối cùng cho hệ thống 3, 4 và 5. Khi so sánh với các phương pháp có nghiệm khả thi như GA [10], OGB-GA [10], LCEL [4], - [2] và PPO [12], bốn phương pháp đề xuất của luận án có chi phí nhỏ hơn hoặc xấp xỉ. Thời gian tính toán cho thấy các phương pháp đề xuất nhanh hơn GA và OGB-GA trong khi các phương pháp còn lại đã không báo cao thời gian tính toán. Phương pháp PPO [12] đã được xử lý trên máy tính với thông số 1.66 GHz, Pentium-IV PC, 512MB RAM trong khi đó các nghiên cứu khác đã không cho biết thông tin này.
+
+Từ kết quả phân tích trên có thể thấy được rằng ALHN rất hiệu quả khi giải các hệ thống bỏ qua hiệu ứng xả van tương ứng với hàm chi phí khả vi. Trong 3 thuật toán CSA, khả năng tìm kiếm nghiệm tối ưu của ASCSA tốt hơn CCSA và MCSA trong khi đó MCSA cho kết quả tốt hơn CCSA.
+
+## 4.9.2.2. Hai hệ thống xét đến hiệu ứng xả van của các nhà máy nhiệt điện
+
+Ở mục này, hai hệ thống điện có xét đến hiệu ứng xả van ở các nhà máy nhiệt điện được sử dụng để kiểm tra hiệu quả của các phương pháp CCSA, MCSA và ASCSA
+
+<!-- page: 97 -->
+
+trong khi đó ứng dụng của ALHN không thể thực thi cho hai hệ thống này vì hàm chi phí không khả vi khi xét đến hiệu ứng xả van. Hai hệ thống này được gọi tên lần lượt là hệ thống 6 và 7 được trích dẫn từ nghiên cứu [8] trong đó hệ thống 6 gồm hai nhà máy thủy điện và hai nhà máy nhiệt điện được hoạch định phát điện tối ưu trong ba khoảng 8 giờ trong khi đó hệ thống 7 gồm có hai nhà máy thủy điện và bốn nhà máy nhiệt điện được hoạch định phát điện tối ưu trong bốn khoảng 12 giờ. Dữ liệu của hai hệ thống được cho trong phụ lục.
+
+Để thực thi ba phương pháp này, giá trị $N _ { p }$ được chọn là 50 trong khi đó số vòng lặp lớn nhất của CCSA và MCSA gấp đôi số vòng lặp của ASCSA. Cụ thể, CCSA và MCSA sử dụng $G _ { m a x } { = } 2 0 0$ cho hệ thống 6 và $G _ { m a x }   =   4 0 0$ cho hệ thống 7 trong khi đó ASCSA sử dụng $G _ { m a x }   =   1 0 0$ cho hệ thống 6 và $G _ { m a x }   { = }   2 0 0$ cho hệ thống 7. Ngoài ra, giá trị xác suất phát hiện trứng lạ vẫn được chọn 9 giá trị từ 0.1 đến 0.9 và threshold ε vẫn được cài đặt với 5 giá trị như ở mục trên. Kết quả được trình bày trong bảng 4.17 và 4.18 cho hệ thống 6 và 7 trong đó giá trị threshold ε của ASCSA luôn được báo cáo. Bảng 4.17 cho thấy giá trị tốt nhất của 50 lần chạy độc lập đạt được từ CCSA là 66116.05\$ ở giá trị $P _ { a } { = } 0 . 9$ trong khi đó các giá trị khác của $P _ { a }$ cho kết quả không tốt bằng. Các giá trị khác bao gồm chi phí trung bình, chi phí lớn nhất, độ lệch chuẩn và thời gian tính toán lần lượt là 66142.97\$, 66166.36\$, 15.16\$ và 0.67 giây cũng đạt được tại giá trị $P _ { a } { = } 0 . 9$ Tương tự, chi phí tốt nhất là 66115.66 và các giá trị khác của MCSA đạt được tại $P _ { a }$ =0.9. Có một sự chênh lệch nhỏ giữa các giá trị tốt nhất đạt được bởi phương pháp ASCSA trong bảng số này. Năm hàng giá trị tương ứng với các giá trị khác nhau của threshold ε với các giá trị tối ưu khác nhau của $P _ { a } .$ Các giá trị chi phi nhỏ nhất đạt được bởi ASCSA lần lượt là 66115.50\$, 66115.52\$, 66115.49\$, 66115.52\$ và 66115.55\$ luôn luôn nhỏ hơn giá trị chi phí tốt nhất cả CCSA và MCSA ở trên. Mặt khác thời gian tính toán của ASCSA cũng nhanh hơn so với CCSA và MCSA khi ASCSA chỉ tìm kiếm trung bình khoảng 0.35 giây trong khi đó CCSA và MCSA phải mất 0.67 và 0.75 giây. Thời gian tính toán ngắn hơn do ASCSA sử dụng $\mathrm { s } \hat { 0 }$ vòng lặp nhỏ hơn so với CCSA và MCSA.
+
+Bảng 4.17. So sánh kết quả giữa các phương pháp CSA cho hệ thống 6
+
+<table><tbody><tr><td>Phương pháp</td><td>Np/Gmax</td><td>Thresholdε / P<sub>a</sub></td><td>CPNN($)</td><td>CPTB($)</td><td>CPLN($)</td><td>DLC($)</td><td>TGTT (giây)</td></tr><tr><td>CCSA</td><td>50/200</td><td>__,/0.9</td><td>66,116.05</td><td>66,142.97</td><td>66,166.36</td><td>15.16</td><td>0.67</td></tr><tr><td>MCSA</td><td>50/200</td><td>__,/ 0.9</td><td>66,115.66</td><td>66,158.84</td><td>66,230.84</td><td>21.53</td><td>0.75</td></tr><tr><td rowspan="5">ASCSA</td><td rowspan="5">50/100</td><td>10<sup>-1</sup> / 0.5</td><td>66,115.50</td><td>66,143.85</td><td>66,178.03</td><td>19.12</td><td>0.36</td></tr><tr><td>10<sup>-2</sup> / 0.4</td><td>66,115.52</td><td>66,140.88</td><td>66,161.31</td><td>16.84</td><td>0.36</td></tr><tr><td>10<sup>-3</sup> / 0.3</td><td>66,115.49</td><td>66,143.56</td><td>66,176.57</td><td>18.00</td><td>0.37</td></tr><tr><td>10<sup>-4</sup> / 0.7</td><td>66,115.52</td><td>66,137.87</td><td>66,160.93</td><td>17.59</td><td>0.36</td></tr><tr><td>10<sup>-5</sup> / 0.6</td><td>66,115.55</td><td>66,143.31</td><td>66,177.41</td><td>19.62</td><td>0.38</td></tr></tbody></table>
+
+Bây giờ ta đi đến so sánh kết quả của CCSA và MCSA để đánh giá tính hiệu quả của hai phương pháp này. Rõ ràng chi phí của MCSA nhỏ hơn CCSA trong khi đó các chi
+
+<!-- page: 98 -->
+
+phí còn lại và thời gian tính toán lớn hơn không đáng kể. Tuy nhiên vẫn có thể kết luận được rằng MCSA hiệu qua hơn CCSA do chất lượng lời giải thông qua chi phí nhỏ nhất là tiêu chí đánh giá đầu tiên của các phương pháp. Hình 4.10 thể hiện toàn bộ quá trình tìm kiếm tốt nhất của các phương pháp CSA thông qua đặc tính hội tụ hàm thích nghi. Giá trị hàm thích nghi của các phương pháp được báo cáo từ vòng lặp thứ 13 đến vòng lặp cuối để có thể thể hiện được tổng thể quá trình tìm kiếm. Có thể thấy rằng tại vòng lặp 20, hàm thích nghi của ASCSA nhỏ hơn giá trị $6 . 6 3 \mathrm { x } 1 0 ^ { 4 } \S$ trong khi giá trị của CCSA và MCSA lớn hơn $6 . 6 5 \mathrm { x } 1 0 ^ { 4 } \S$ . Sự chênh lệch vẫn còn khá lớn cho đến khi quá trình tìm kiếm của ASCSA dừng lại ở vòng lặp 100 trong khi đó CCSA và MCSA vẫn tiếp tục quá trình tìm kiếm nghiệm tối ưu giá trị hàm thích nghi vẫn luôn luôn lớn hơn giá trị của ASCSA. So sánh kết quả trong bảng 4.18 cho thấy giá trị tốt nhất và tệ nhất của chi phí nhỏ nhất tốt nhất đạt được từ ASCSA lần lượt là 92,729.95\$ và 92,790.06\$ trong khi đó giá trị tốt nhất của chi phí nhỏ nhất đạt được từ CCSA và MCSA lần lượt là 93,423.04\$ và 93,274.13\$. Rõ ràng, chi phí đạt được từ ASCSA nhỏ hơn rất nhiều so với CCSA và MCSA. Hơn nữa, thời gian tính toán của ASCSA cũng nhanh hơn CCSA và MCSA rất nhiều. Thật vậy, ASCSA chỉ sử dụng chưa đến 1 giây trong khi đó CCSA và MCSA phải sử dụng gần đến 2 giây. Đặc tính hội tụ báo cáo trong hình 4.11 cho thấy ASCSA luôn có nghiệm tối ưu tốt hơn CCSA và MCSA ở từng vòng lặp. So sánh giữa CCSA và MCSA chỉ ra rằng MCSA hiệu quả hơn CCSA về chi phí nhưng thời gian tính toán chậm hơn không đáng kể.
+
+Bảng 4.18. So sánh kết quả giữa các phương pháp CSA cho hệ thống 7
+
+<table><tbody><tr><td>Phương pháp</td><td>Np/Gmax</td><td>Thresholdε / P<sub>a</sub></td><td>CPNN($)</td><td>CPTB($)</td><td>CPLN($)</td><td>DLC($)</td><td>TGTT (giây)</td></tr><tr><td>CCSA</td><td>50/400</td><td>__ /0.5</td><td>93,423.04</td><td>94,406.55</td><td>95,807.15</td><td>505.87</td><td>1.54</td></tr><tr><td>MCSA</td><td>50/400</td><td>__ / 0.6</td><td>93,274.13</td><td>94,401.73</td><td>95,875.69</td><td>497.34</td><td>1.98</td></tr><tr><td rowspan="5">ASCSA</td><td rowspan="5">50/200</td><td>10<sup>-1</sup> / 0.9</td><td>92,790.06</td><td>93,308.99</td><td>96,081.49</td><td>587.05</td><td>0.988</td></tr><tr><td>10<sup>-2</sup> / 0.8</td><td>92,794.38</td><td>93,254.62</td><td>94,175.95</td><td>348.94</td><td>0.97</td></tr><tr><td>10<sup>-3</sup> / 0.9</td><td>92,740.33</td><td>93,220.22</td><td>94,389.8</td><td>323.53</td><td>0.99</td></tr><tr><td>10<sup>-4</sup> / 0.8</td><td>92,729.95</td><td>94,045.46</td><td>99,968.12</td><td>1,446.86</td><td>0.96</td></tr><tr><td>10<sup>-5</sup> / 0.8</td><td>92,764.58</td><td>93,872.28</td><td>98,765.58</td><td>1,132.593</td><td>0.98</td></tr></tbody></table>
+
+Tóm lại, mục này đã kiểm tra tính hiệu quả của các phương pháp CSA khi áp dụng cho hai hệ thống có xét đến hiệu ứng xả van tương ứng với hàm chi phí nhiệt điện không khả vi. So sánh về các giá trị chi phí và thời gian tính toán đã gởi đến một thông tin về tính hiệu quả của ASCSA luôn luôn vượt trội so với CCSA và MCSA về chất lượng lời giải và thời gian tính toán. Đánh giá còn lại giữa CCSA và MCSA cũng cho biết MCSA hiệu quả hơn CCSA về chất lượng lời giải nhưng thời gian tính toán chậm hơn không đáng kể.
+
+<!-- page: 99 -->
+
+![](images/page_98_chart_0.jpg)
+
+Hình 4.10. Đặc tính hội tụ các phương pháp CSA cho hệ thống 6
+
+![](images/page_98_chart_2.jpg)
+
+Hình 4.11. Đặc tính hội tụ các phương pháp CSA cho hệ thống 7
+
+Bảng 4.19. So sánh kết quả cho hệ thống 6
+
+| Phương pháp | Chi phí ($) | TGTT (giây) |
+| --- | --- | --- |
+| AIS [8] | 66,117 | 53.43 |
+| EP [8] | 66,198 | 75.48 |
+| PSO [8] | 66,166 | 71.62 |
+| DE [8] | 66,121 | 60.76 |
+| PPO [12] | *64,786 | 15.33 |
+| CCSA | 66,116.05 | 0.67 |
+| MCSA | 66,115.66 | 0.75 |
+
+<!-- page: 100 -->
+
+| ASCSA | 66,115.490 | 0.37 |
+| --- | --- | --- |
+
+\*Nghiệm không khả thi
+
+Mặt khác để làm rõ khả năng tìm kiếm nghiệm tối ưu của các phương pháp CSA cho bài toán điều độ thủy nhiệt điện đang xét, các phương pháp này sẽ được so sánh với các phương pháp khác như PSO, DE, EP và AIS ở nghiên cứu [8], và PPO ở nghiên cứu [12]. Chi tiết so sánh kết quả được trình bày trong bảng 4.19 và 4.20. Chi phí nhiên liệu nhỏ nhất đạt được từ PPO [12] cho thấy PPO là phương pháp có thể hiệu quả nhất; tuy nhiên, kiểm tra ràng buộc cân bằng công suất cho thấy phương pháp này đã báo cáo lời giải không khả thi vi phạm ràng buộc. Thật vậy, chúng tôi đã tính lại tổn thất công suất dựa vào các công suất tối ưu thủy điện và nhiệt điện đã báo cáo trong nghiên cứu [12] và kết quả cho thấy các giá trị tính toán nhỏ hơn giá trị đã báo cáo. Như vậy phương pháp này đã vi phạm ràng buộc và nghiệm tối ưu đã không được chấp nhận. Do đó, phương pháp này sẽ không được so sánh tính hiệu quả với các phương pháp khác còn lại. So sánh kết quả với các phương pháp còn lại cho thấy các phương pháp CSA rất hiệu quả, đặc biệt là ASCSA. Với hệ thống 7, các giá trị đạt được từ CCSA, MCSA và ASCSA lần lượt là 93,423.04\$, 93,274.13\$ và 92,729.946\$ trong khi đó giá trị đạt được từ DE , EP , PSO và AIS lân lượt là 94,094\$, 94,126\$, 94,250\$ và 93,950\$. Bên cạnh đó, quá trình tìm kiếm của ASCSA cũng dựa trên số vòng lặp nhỏ hơn tất cả các phương pháp ngoại trừ AIS nhưng thời gian tính toán của ASCSA là nhỏ nhất. Phương pháp CCSA và MCSA cũng trải qua thời gian tính toán nhanh chưa đến 2 giây trong khi các phương pháp khác phải trải qua khoảng 1.5 phút. Các phương pháp ở nghiên cứu [8] được thực thi trên máy tính có tốc độ xử lý 3.0 Ghz.
+
+Bảng 4.20. So sánh kết quả cho hệ thống 7
+
+| Phương pháp | Chi phí ($) | TGTT (giây) |
+| --- | --- | --- |
+| AIS [8] | 93,950 | 59.14 |
+| EP [8] | 94,250 | 67.82 |
+| PSO [8] | 94,126 | 80.37 |
+| DE [8] | 94,094 | 83.54 |
+| PPO [12] | *93,699 | 5.20 |
+| CCSA | 93,423.04 | 1.54 |
+| MCSA | 93,274.13 | 1.98 |
+| ASCSA | 92,729.95 | 0.96 |
+
+Do các phương pháp nghiên cứu ở các bài báo khác nhau sử dụng cấu hình máy tính khác nhau nên việc so sánh thời gian là chưa hợp lý. Do đó, các cấu hình máy tính và thời gian tính toán nên quy đổi về giá trị chung để có thể so sánh công bằng hơn. Từ đó, công thức (4.79) được xây dựng [80].
+
+<!-- page: 101 -->
+
+$$
+\text {Adjusted CPU time} = \frac {\text {Given CPU speed (GHz)}}{2 . 0 (\text {GHz})} \times \frac {\text {Given CPU time (second)}}{\text {CPU time from ASCSA (second)}}\tag{4.79}
+$$
+
+Trong đó giá trị 2.0 (GHZ) là tốc độ xử lý của máy tính mà luận án này sử dụng còn given CPU speed là cấu hình của máy tính mà bài báo khác sử dụng để chạy thuật toán trong bài báo đó. Given cpu time cũng là thời gian mà phương pháp trong bài báo khác chạy chương trình. Kết quả Adjusted cpu time (thời gian quy đổi) dùng để đánh giá tốc độ nhanh hay chậm của phương pháp khác so với ASCSA. Giả sử giá trị này của 1 phương pháp khác bằng 2, có nghĩa là thời gian chạy chương trình của phương pháp đó gấp 2 lần ASCSA và ngược lại nếu giá trị đó bằng 0.5 thì phương pháp đó chỉ sử dụng một nửa thời gian mà ASCSA chạy chương trình. Thời gian quy đổi được báo cáo trong bảng 4.21cho thấy rằng ASCSA nhanh hơn các phương pháp khác ở [8] từ 92.4306 lần và nhanh hơn CCSA và MCSA khoảng 2 lần. Vậy CCSA và MCSA cũng nhanh hơn các phương pháp ở [8] khoảng một nửa số lần mà ASCSA đạt được.
+
+Từ đó có thể kết luận rằng ba phương pháp CSA rất hiệu quả so với các phương pháp khác. So sánh giữa ba phương pháp CSA, ASCSA hiệu quả nhất và CCSA kém hiệu quả hơn.
+
+Bảng 4.21. So sánh thời gian quy đổi cho hệ thống 6 và 7
+
+<table><tbody><tr><td>Hệ thống</td><td>Phương pháp</td><td>Tốc độ CPU (GHz)</td><td>Tốc độ CPU (PU)</td><td>Thời gian thực (giây)</td><td>Thời gian thực (pu)</td><td>Thời gian quy đổi (pu)</td></tr><tr><td rowspan="7">6</td><td>AIS [8]</td><td>3.0</td><td>1.5</td><td>53.43</td><td>144.41</td><td>216.61</td></tr><tr><td>EP [8]</td><td>3.0</td><td>1.5</td><td>75.48</td><td>204</td><td>306</td></tr><tr><td>PSO [8]</td><td>3.0</td><td>1.5</td><td>71.62</td><td>193.57</td><td>290.35</td></tr><tr><td>DE [8]</td><td>3.0</td><td>1.5</td><td>60.76</td><td>164.22</td><td>246.32</td></tr><tr><td>CSA</td><td>2.0</td><td>1</td><td>0.67</td><td>1.8108</td><td>1.81</td></tr><tr><td>MCSA</td><td>2.0</td><td>1</td><td>0.75</td><td>2.027</td><td>2.027</td></tr><tr><td>ASCSA</td><td>2.0</td><td>1</td><td>0.37</td><td>1</td><td>1</td></tr><tr><td rowspan="7">7</td><td>AIS [8]</td><td>3.0</td><td>1.5</td><td>59.14</td><td>61.604</td><td>92.406</td></tr><tr><td>EP [8]</td><td>3.0</td><td>1.5</td><td>67.82</td><td>70.646</td><td>105.97</td></tr><tr><td>PSO [8]</td><td>3.0</td><td>1.5</td><td>80.37</td><td>83.719</td><td>125.58</td></tr><tr><td>DE [8]</td><td>3.0</td><td>1.5</td><td>83.54</td><td>87.021</td><td>130.53</td></tr><tr><td>CSA</td><td>2.0</td><td>1</td><td>1.54</td><td>1.6042</td><td>1.6042</td></tr><tr><td>MCSA</td><td>2.0</td><td>1</td><td>1.98</td><td>2.0625</td><td>2.0625</td></tr><tr><td>ASCSA</td><td>2.0</td><td>1</td><td>0.96</td><td>1</td><td>1</td></tr></tbody></table>
+
+## 4.9.3. Tối ưu đa mục tiêu
+
+## 4.9.3.1. Các hệ thống không xét đến hiệu ứng xả van
+
+<!-- page: 102 -->
+
+Trong mục này, bốn hệ thống 1, 3, 4 và 5 không xét đến hiệu ứng xả van ở mục 4.9.2.1 được sử dụng để kiểm tra tính hiệu quả của bốn phương pháp áp dụng CCSA, MCSA, ASCSA và ALHN. Cho mỗi hệ thống, ba trường hợp điều độ được tiến hành nhằm đạt được:
+
+1) Chi phí nhỏ nhất (điều độ kinh tế) $( \Psi _ { I }   = 1$ và $\Psi _ { 2 } = 0 )$
+
+2) Phát thải nhỏ nhất (điều độ phát thải) $( \Psi _ { I } = 0 \mathrm { v i a } \Psi _ { 2 } = 1 )$
+
+3 Cả hi hí lẫ há hải hỏ hấ điề đ đ iê . ) c p n p t t n n t ( u ộ a mục t u)
+
+Để thực hiện hai trường hợp đầu, các giá trị của trọng số hàm chi phí và phát thải được chọn như các giá trị trong dấu ngoặc đơn trong khi đó ở trường hợp thứ ba về điều độ cả chi phí và khi thải thì cần phải xác định một tập hợp các nghiệm không trội và sau đó áp dụng phương pháp Fuzzy (đã mô tả ở mục 4.8.1) để xác định nghiệm thỏa hiệp có chi phí và phát thải phù hợp. Trường hợp điêu độ kinh tế đã được thực hiện ở mục 4.9.2.1 và mục này chỉ thực hiện hai trường hợp còn lại cho các hệ thống, cực tiểu đơn mục tiêu phát thải và cực tiểu đa mục tiêu.
+
+## Trường hợp 1: Hệ thống 1 với hai hàm mục tiêu
+
+Các thông số điều khiển của các phương pháp CSA được sử dụng như trong bảng 4.22 trong khi đó ngưỡng sai số chấp nhận của ALHN là $1 0 ^ { - 4 }$ . Kết quả đạt được của điều độ phát thải được thể hiện trong bảng 4.23.
+
+Bảng 4.22. Cài đặt thông số các phương pháp CSA cho hệ thống 1
+
+<table><tbody><tr><td colspan="2">Phương pháp</td><td>CCSA</td><td>MCSA</td><td>ASCSA</td></tr><tr><td rowspan="2">Điều độ phát thải</td><td>Nd</td><td>20</td><td>20</td><td>20</td></tr><tr><td>G<sub>max</sub></td><td>350</td><td>350</td><td>100</td></tr><tr><td rowspan="2">Điều độ đa mục tiêu</td><td>Nd</td><td>20</td><td>20</td><td>20</td></tr><tr><td>G<sub>max</sub></td><td>150</td><td>150</td><td>70</td></tr></tbody></table>
+
+Kết quả phát thải giữa các phương pháp chênh lệch nhau không đáng kể; tuy nhiên, ASCSA đã đạt được phát thải nhỏ nhất với thời gian tính toán nhanh nhất. ALHN đã gặp phải khó khăn khi xử lý các ràng buộc cho điều độ phát thải và thời gian tính toán dài so với các phương pháp CSA. Một tập hợp các nghiệm không trội đã được tìm ra bởi các phương pháp này và báo cáo trong bảng 4.24 và 4.25. Trong bảng này, µD được tính toán dựa vào phương pháp Fuzzy và nghiệm tương ứng với giá trị lớn nhất của µD sẽ là nghiệm thỏa hiệp cho chi phí và phát thải mong muốn. Kết quả đạt được từ ALHN cho chi phí và phát thải lần lượt là 64,823.3599\$ và 614.1486 lb với giá trị $\mu \mathrm { { D } }$ bằng 0.0614. Tương tự, CCSA, MCSA và ASCSA đã đạt được các giá trị (65,055.42\$, 593.9374 lb), (65,056.6\$, 593.86 lb) và (65,052.2057\$, 594.1617 lb). So sánh giữa các giá trị cho thấy có một sự đánh đổi giữa chi phí và phát thải giữa các phương pháp. Tức là phương pháp này có chi phí nhỏ hơn thì lại có phát thải lớn hơn hoặc ngược lại.
+
+<!-- page: 103 -->
+
+Bảng 4.23. So sánh điều độ phát thải cho hệ thống 1
+
+<table><tr><td>Phương pháp</td><td>GTNN (lb) (threshold  $\varepsilon / P_a$ )</td><td>GTTB (lb)</td><td>GTLN (lb)</td><td>DLC (lb)</td><td>TGTT (giây)</td></tr><tr><td>CCSA</td><td>564.883(-/ 0.6)</td><td>566.1564</td><td>568.0415</td><td>0.6228</td><td>1.2234</td></tr><tr><td>MCSA</td><td>564.819 (-/ 0.8)</td><td>566.4713</td><td>569.8332</td><td>0.9174</td><td>0.7355</td></tr><tr><td rowspan="5">ASCSA</td><td>564.8387 ( $10^{-1}$ / 0.6)</td><td>569.5845</td><td>596.8618</td><td>5.7832</td><td>0.4103</td></tr><tr><td>564.719 ( $10^{-2}$ / 0.6)</td><td>571.0537</td><td>583.8311</td><td>4.9022</td><td>0.3835</td></tr><tr><td>564.801( $10^{-3}$ / 0.7)</td><td>568.9584</td><td>579.9511</td><td>3.8904</td><td>0.3866</td></tr><tr><td>564.903( $10^{-4}$ / 0.7)</td><td>570.1369</td><td>584.5283</td><td>4.9640</td><td>0.3769</td></tr><tr><td>564.737( $10^{-5}$ / 0.8)</td><td>567.8296</td><td>580.1705</td><td>3.3527</td><td>0.3878</td></tr><tr><td>ALHN</td><td>564.86</td><td>-</td><td>-</td><td>-</td><td>5.0</td></tr></table>
+
+Ngoài ra, điều độ đa mục tiêu (chi phí và phát thải) cũng được thực hiện bởi phương pháp hệ số phạt như đã trình bày ở mục 4.8.2. Chi phí và phát thải của nghiệm thỏa hiệp được tìm ra bởi áp dụng phương pháp hệ số phạt và phương pháp Fuzzy và được so sánh trong bảng 4.26. Khi so sánh chi phí và phát thải ở cùng một phương pháp sử dụng Fuzzy và hệ số phạt cho thấy chi phí từ hệ số phạt tốt hơn nhưng phát thải cao hơn rất nhiều. Để chọn kết quả từ một phương pháp tốt hơn trong hai phương pháp này, giá trị chi phí và phát thải từ phương pháp tốt nhất được thực hiện ở các nghiên cứu khác được sử dụng đó là phương pháp PPO-PS ở nghiên cứu [62] để so sánh. Chi phí và phát thải đạt được từ ASCSA khi sử dụng phương pháp Fuzzy lần lượt là 65,052.2\$ và 594.162 lb đã nhỏ giá trị đạt được từ PPO-PS [62] là 5.8\$ và 0.018 lb trong khi đó giá trị đạt được bởi ASCSA khi áp dụng phương pháp hệ số phạt là 64,616.4966\$ và 658.1339 lb đã nhỏ hơn 441.503\$ nhưng cao hơn 63.954 lb so với phương pháp PPO-PS [62]. Rõ ràng khi sử dụng phương pháp hệ số phạt sẽ không thể đánh giá được về tính hiệu quả giữa ASCSA và PPO-PS do luôn có sự đánh đổi và Fuzzy là phương pháp có thể đưa ra một đánh giá so sánh cụ thể hơn. Vấn đề cũng tương tự khi so sánh kết quả từ CCSA và MCSA với PPO-PS.
+
+Tóm lại, điểm thỏa hiệp cho bài toán đa mục tiêu cực tiểu cả chi phí và phát thải được xác định nhờ sử dụng phương pháp Fuzzy có thể hỗ trợ đánh giá tốt chất lượng nghiệm giữa các phương pháp với nhau mặc dù phương pháp này phức tạp hơn so với phương pháp hệ số phạt. Do đó, phương pháp Fuzzy sẽ được áp dụng cho các hệ thống còn lại để tìm điểm thỏa hiệp.
+
+Kết quả đạt được từ ALHN, CCSA, MCSA và ASCSA được so sánh với các phương pháp khác trong bảng 4.27 như RCGA [60], MODE [60], NSGA-II [60], PSO, PSO-PM, PPO, PPO-PM, PPO-PS, PPO-PS-PM [62]. So sánh giá trị chi phí, khí thải và chi phí lẫn khí thải cho các trường hợp có thể đánh giá được rằng 3 các phương pháp CSA có chi phí và khí thải nhỏ hơn và thời gian cũng nhanh hơn cho cả 3 trường hợp. Với phương pháp ALHN, chi phí và khí thải nhỏ hơn các phương pháp khác khi cực tiểu chi phí và khí thải độc lập và có sự đánh đổi giữa chi phí và khí thải cho trường hợp cực tiểu đa mục tiêu. So sánh về thời gian tính toán cho thấy các phương pháp CSA và
+
+<!-- page: 104 -->
+
+ALHN là những phương pháp nhanh nhất với thời gian tính toán nhanh nhỏ hơn 1 giây ngoại trừ ALHN ở điều độ phát thải và điều độ đa mục tiêu. Bên cạnh đó, cũng được nhấn mạnh rằng các phương pháp ở nghiên cứu [60] được thực thi trên máy tính với tốc độ xử lý 3.0 Ghz trong khi các phương pháp ở nghiên cứu ở [62] đã không được báo cáo tốc độ xử lý máy tính. Do đó, dựa vào kết quả về chi phí và khí thải có thể kết luận được ràng các phương pháp được áp dụng trong luận án gồm CCSA, MCSA, ASCSA và ALHN là những phương pháp hiệu quả hơn các phương pháp được so sánh khác.
+
+<!-- page: 105 -->
+
+Bảng 4.24. Tập nghiệm không trội của ALHN và CCSA cho hệ thống 1
+
+<table><tbody><tr><td rowspan="2">w1</td><td colspan="3">ALHN</td><td colspan="3">CCSA</td></tr><tr><td>F<sub>1</sub> ($)</td><td>F2 (lb)</td><td>µ<sub>D</sub></td><td>F<sub>1</sub> ($)</td><td>F2 (lb)</td><td>µ<sub>D</sub></td></tr><tr><td>0</td><td>65,797.4155</td><td>564.8693</td><td>0.0456</td><td>65,807.2879</td><td>564.8830</td><td>0.0465</td></tr><tr><td>0.01</td><td>65,631.4723</td><td>589.6963</td><td>0.0411</td><td>65,958.52</td><td>566.1585</td><td>0.0413</td></tr><tr><td>0.02</td><td>65,463.2105</td><td>592.4525</td><td>0.0463</td><td>65,643.48</td><td>568.0805</td><td>0.0503</td></tr><tr><td>0.03</td><td>65,369.9322</td><td>594.9277</td><td>0.0488</td><td>65,465.48</td><td>573.3661</td><td>0.0537</td></tr><tr><td>0.04</td><td>65,301.2507</td><td>597.5562</td><td>0.0503</td><td>65,397.12</td><td>575.5129</td><td>0.0550</td></tr><tr><td>0.05</td><td>65,203.9388</td><td>602.3212</td><td>0.0520</td><td>65,233.39</td><td>583.0882</td><td>0.0570</td></tr><tr><td>0.06</td><td>65,131.3720</td><td>606.6244</td><td>0.0529</td><td>65,111.04</td><td>590.2369</td><td>0.0579</td></tr><tr><td>0.07</td><td>65,078.7312</td><td>610.3163</td><td>0.0533</td><td>65,055.42</td><td>593.9374</td><td>0.0582</td></tr><tr><td>0.08</td><td>65,028.5500</td><td>614.4644</td><td>0.0534</td><td>64,929.73</td><td>603.6738</td><td>0.0581</td></tr><tr><td>0.09</td><td>64,981.9246</td><td>619.6337</td><td>0.0529</td><td>64,872.16</td><td>609.0066</td><td>0.0578</td></tr><tr><td>0.1</td><td>64,823.3599</td><td>614.1486</td><td>0.0614</td><td>64,827.86</td><td>613.6456</td><td>0.0573</td></tr><tr><td>0.2</td><td>64,661.9632</td><td>639.8036</td><td>0.0564</td><td>64,662.13</td><td>639.7608</td><td>0.0520</td></tr><tr><td>0.3</td><td>64,626.9970</td><td>650.9070</td><td>0.0529</td><td>64,626.91</td><td>650.9489</td><td>0.0487</td></tr><tr><td>0.4</td><td>64,615.1597</td><td>657.0853</td><td>0.0506</td><td>64,615.06</td><td>657.1479</td><td>0.0465</td></tr><tr><td>0.5</td><td>64,610.2185</td><td>661.0163</td><td>0.0491</td><td>64,610.15</td><td>661.083</td><td>0.0451</td></tr><tr><td>0.6</td><td>64,607.9227</td><td>663.7395</td><td>0.0480</td><td>64,607.88</td><td>663.8037</td><td>0.0441</td></tr><tr><td>0.7</td><td>64,606.8222</td><td>665.7347</td><td>0.0472</td><td>64,606.79</td><td>665.7966</td><td>0.0433</td></tr><tr><td>0.8</td><td>64,606.2911</td><td>667.2593</td><td>0.0465</td><td>64,606.27</td><td>667.3183</td><td>0.0428</td></tr><tr><td>0.9</td><td>64,606.0681</td><td>668.4632</td><td>0.0460</td><td>64,606.06</td><td>668.5187</td><td>0.0423</td></tr><tr><td>1</td><td>64,606.0037</td><td>669.4378</td><td>0.0456</td><td>64,606.037</td><td>669.6255</td><td>0.0418</td></tr></tbody></table>
+
+<!-- page: 106 -->
+
+Bảng 4.25. Tập nghiệm không trội của MCSA và ASCSA cho hệ thống 1
+
+<table><tbody><tr><td rowspan="2">w1</td><td colspan="3">MCSA</td><td colspan="3">ASCSA</td></tr><tr><td>F<sub>1</sub> ($)</td><td>F2 (lb)</td><td>µ<sub>D</sub></td><td>F<sub>1</sub> ($)</td><td>F2 (lb)</td><td>µ<sub>D</sub></td></tr><tr><td>0</td><td>65,776.4</td><td>564.819</td><td>0.0443</td><td>65,802.5</td><td>564.72</td><td>0.043</td></tr><tr><td>0.01</td><td>65,814</td><td>564.971</td><td>0.0429</td><td>65,732.9</td><td>566.097</td><td>0.045</td></tr><tr><td>0.02</td><td>65,704.6</td><td>566.009</td><td>0.0463</td><td>65,662.2</td><td>567.346</td><td>0.047</td></tr><tr><td>0.03</td><td>65,524.7</td><td>570.787</td><td>0.0508</td><td>65,500.8</td><td>571.922</td><td>0.0509</td></tr><tr><td>0.04</td><td>65,395</td><td>575.481</td><td>0.0534</td><td>65,420</td><td>574.723</td><td>0.0527</td></tr><tr><td>0.05</td><td>65,233.4</td><td>581.088</td><td>0.0569</td><td>65,236.2</td><td>582.991</td><td>0.0559</td></tr><tr><td>0.06</td><td>65,111</td><td>591.237</td><td>0.0571</td><td>65,136.7</td><td>588.666</td><td>0.0571</td></tr><tr><td>0.07</td><td>65,056.6</td><td>593.86</td><td>0.0581</td><td>65,057.8</td><td>593.777</td><td>0.0579</td></tr><tr><td>0.08</td><td>64,929.7</td><td>603.674</td><td>0.0579</td><td>65,055.3</td><td>593.953</td><td>0.0579</td></tr><tr><td>0.09</td><td>64,872.2</td><td>609.007</td><td>0.058</td><td>65,052.2</td><td>594.162</td><td>0.0579</td></tr><tr><td>0.1</td><td>64,827.9</td><td>613.646</td><td>0.0579</td><td>64,826.4</td><td>613.807</td><td>0.0579</td></tr><tr><td>0.2</td><td>64,662.1</td><td>639.761</td><td>0.0531</td><td>64,661.4</td><td>639.983</td><td>0.0532</td></tr><tr><td>0.3</td><td>64,626.9</td><td>650.949</td><td>0.0497</td><td>64,627.4</td><td>650.78</td><td>0.0499</td></tr><tr><td>0.4</td><td>64,615.1</td><td>657.148</td><td>0.0476</td><td>64,614.8</td><td>657.32</td><td>0.0477</td></tr><tr><td>0.5</td><td>64,609.1</td><td>661.083</td><td>0.0462</td><td>64,610.1</td><td>661.117</td><td>0.0463</td></tr><tr><td>0.6</td><td>64,607.9</td><td>663.804</td><td>0.0451</td><td>64,608.1</td><td>663.622</td><td>0.0454</td></tr><tr><td>0.7</td><td>64,606.8</td><td>665.796</td><td>0.0443</td><td>64,606.9</td><td>665.653</td><td>0.0446</td></tr><tr><td>0.8</td><td>64,606.3</td><td>667.318</td><td>0.0437</td><td>64,606.7</td><td>669.164</td><td>0.0431</td></tr><tr><td>0.9</td><td>64,606.1</td><td>668.519</td><td>0.0432</td><td>64,606.1</td><td>668.613</td><td>0.0434</td></tr><tr><td>1</td><td>64,606</td><td>669.309</td><td>0.0429</td><td>64,606</td><td>669.49</td><td>0.043</td></tr></tbody></table>
+
+Bảng 4.26. So sánh điều độ đa mục tiêu cho các phương pháp khác nhau
+
+<table><tbody><tr><td rowspan="2">Phương pháp</td><td colspan="2">Phương pháp Fuzzy</td><td colspan="2">Phương pháp hệ số phạt</td></tr><tr><td>Chi phí ($)</td><td>Phát thải (lb)</td><td>Chi phí($)</td><td>Phát thải (lb)</td></tr><tr><td>ALHN</td><td>64,823.36</td><td>614.1486</td><td>64,616.7</td><td>657.9843</td></tr><tr><td>CCSA</td><td>65,055.42</td><td>593.9374</td><td>56948,616.6</td><td>658.5974</td></tr><tr><td>MCSA</td><td>65,056.6</td><td>593.86</td><td>66045,615.5</td><td>658.4694</td></tr><tr><td>ASCSA</td><td>65,052.2</td><td>594.162</td><td>76842,616.4</td><td>658.1339</td></tr><tr><td>PPO-PS [62]</td><td>65,058</td><td>594.18</td><td>966 -</td><td>-</td></tr></tbody></table>
+
+<!-- page: 107 -->
+
+Bảng 4.27. So sánh kết quả cho hệ thống thứ nhất
+
+<table><tbody><tr><td rowspan="2">Phương pháp</td><td colspan="2">Điều độ kinh tế</td><td colspan="2">Điều độ phát thải</td><td colspan="3">Điều độ đa mục tiêu</td></tr><tr><td>Chi phí($)</td><td>TGTT (giây)</td><td>Phát thải (lb)</td><td>TGTT (giây)</td><td>Chi phí ($)</td><td>Phát thải (lb)</td><td>TGTT (giây)</td></tr><tr><td>RCGA [60]</td><td>66,031</td><td>21.63</td><td>586.14</td><td>20.27</td><td>-</td><td>-</td><td>-</td></tr><tr><td>NSGA-II [60]</td><td>-</td><td>-</td><td>-</td><td>-</td><td>66,331</td><td>618.08</td><td>27.85</td></tr><tr><td>MODE [60]</td><td>-</td><td>-</td><td>-</td><td>-</td><td>66,354</td><td>619.42</td><td>30.71</td></tr><tr><td>SPEA-2 [60]</td><td>-</td><td>-</td><td>-</td><td>-</td><td>66,332</td><td>618.45</td><td>34.87</td></tr><tr><td>PSO-PM [62]</td><td>65,741</td><td>18.25</td><td>585.67</td><td>18.00</td><td>65,821</td><td>620.78</td><td>18.98</td></tr><tr><td>PSO [62]</td><td>65,241</td><td>18.32</td><td>579.56</td><td>18.31</td><td>65,731</td><td>618.78</td><td>19.31</td></tr><tr><td>PPO-PM [62]</td><td>64,873</td><td>16.14</td><td>572.71</td><td>15.93</td><td>65,426</td><td>612.34</td><td>16.53</td></tr><tr><td>PPO [62]</td><td>64,718</td><td>15.99</td><td>569.73</td><td>15.18</td><td>65,104</td><td>601.16</td><td>16.34</td></tr><tr><td>PPO-PS-PM[62]</td><td>64,689</td><td>15.98</td><td>568.78</td><td>15.92</td><td>65,089</td><td>600.24</td><td>16.15</td></tr><tr><td>PPO-PS [62]</td><td>64,614</td><td>15.89</td><td>564.92</td><td>15.45</td><td>65,058</td><td>594.18</td><td>16.74</td></tr><tr><td>CCSA</td><td>64,606</td><td>0.24</td><td>564.88</td><td>1.2234</td><td>65,055</td><td>593.93</td><td>0.33</td></tr><tr><td>MCSA</td><td>64,606</td><td>0.27</td><td>564.82</td><td>0.7355</td><td>65,056.6</td><td>593.86</td><td>0.35</td></tr><tr><td>ASCSA</td><td>64,606</td><td>0.24</td><td>564.72</td><td>0.39</td><td>65,052.2</td><td>594.16</td><td>0.23</td></tr><tr><td>ALHN</td><td>64,606</td><td>0.6</td><td>564.87</td><td>5</td><td>64,823.3</td><td>614.1</td><td>2.3</td></tr></tbody></table>
+
+## Trường hợp 2: Hệ thống 3, 4 và 5 với bốn hàm mục tiêu
+
+Ở mục này, các hệ thống 3, 4 và 5 ở mục 4.9.2.1 được sử dụng để thử nghiệm đánh giá tính hiệu quả các phương pháp áp dụng trong đó mỗi hệ thống được xét đến với bốn hàm mục tiêu gồm một hàm chi phí và ba hàm phát thải, $\mathrm{NO}_{3},\mathrm{CO}_{2}\mathrm{va}\mathrm{SO}_{2}$ Các hàm phát thải được lấy từ nghiên cứu [91] trong đó các dữ liệu còn lại được lấy từ nghiên cứu [4]. Các phương pháp được thực thi cho các hệ thống với trường hợp điều độ kinh tế $( \varPsi _ { I } = 1$ , w1 $= w _ { 2 } = w _ { 3 } = 0 )$ , điều độ phát thải (Ψ1 = 0, Ψ2 = 1 và $w _ { I } = w _ { 2 } = w _ { 3 } = 1 / 3 )$ , và điều độ đa mục tiêu $( \Psi _ { I } = \Psi _ { 2 } = 0 . 5 , w _ { I } = w _ { 2 } = w _ { 3 } = 0 . 5 / 3 ) [ 5 9 ]$ . Bên cạnh đó, số tổ chim và vòng lặp lớn nhất của các phương pháp CSA được chọn như bảng 4.28 trong khi đó tiêu chuẩn dừng vòng lặp của ALHN dựa vào sai $\mathrm { s } \hat { 0 }$ chấp nhận $1 0 ^ { - 4 }$
+
+Bảng 4.28. Cài đặt thông số điều khiển cho hệ thống 3, 4 và 5
+
+<table><tbody><tr><td rowspan="2">Hệ thống</td><td colspan="2">CCSA</td><td colspan="2">MCSA</td><td colspan="2">ASCSA</td></tr><tr><td>N<sub>p</sub></td><td>G<sub>max</sub></td><td>N<sub>p</sub></td><td>G<sub>max</sub></td><td>N<sub>p</sub></td><td>G<sub>max</sub></td></tr><tr><td>3</td><td>10</td><td>800</td><td>8</td><td>800</td><td>10</td><td>700</td></tr><tr><td>4</td><td>15</td><td>1,800</td><td>8</td><td>1,800</td><td>15</td><td>1,500</td></tr><tr><td>5</td><td>15</td><td>3,000</td><td>12</td><td>3,000</td><td>15</td><td>2,500</td></tr></tbody></table>
+
+<!-- page: 108 -->
+
+Bảng 4.29. So sánh điều độ kinh tế cho hệ thống 3, 4 và 5
+
+<table><tbody><tr><td rowspan="2">Phương pháp</td><td colspan="2">HT 3</td><td colspan="2">HT 4</td><td colspan="2">HT 5</td></tr><tr><td>Chi phí($)</td><td>TGTT (giây)</td><td>Chi phí($)</td><td>TGTT (giây)</td><td>Chi phí ($)</td><td>TGTT (giây)</td></tr><tr><td>LGM [59]</td><td>96024.418</td><td>-</td><td>848.241</td><td>-</td><td>53053.790</td><td>-</td></tr><tr><td>EPSO [59]</td><td>96024.607</td><td>-</td><td>848.204</td><td>-</td><td>53053.790</td><td>-</td></tr><tr><td>PS[59]</td><td>96024.399</td><td>-</td><td>847.908</td><td>-</td><td>53053.790</td><td>-</td></tr><tr><td>ALHN</td><td>96024.373</td><td>1.0</td><td>848.349</td><td>0.6</td><td>53051.609</td><td>0.9</td></tr><tr><td>CCSA</td><td>96024.404</td><td>4.3</td><td>848.346</td><td>11.7</td><td>53051.477</td><td>25.3</td></tr><tr><td>MCSA</td><td>96024.378</td><td>4.9</td><td>848.346</td><td>11.6</td><td>53051.476</td><td>26.3</td></tr><tr><td>ASCSA</td><td>96024.374</td><td>4.7</td><td>848.347</td><td>11.5</td><td>53051.477</td><td>24.5</td></tr></tbody></table>
+
+Bảng 4.30. So sánh điều độ phát thải cho hệ thống 3, 4 và 5
+
+<table><tbody><tr><td rowspan="2" colspan="2">Phương pháp</td><td colspan="4">Phát thải (kg)</td><td>TGTT</td></tr><tr><td>NO<sub>x</sub></td><td>SO<sub>2</sub></td><td>CO<sub>2</sub></td><td>Tổng</td><td>(giây)</td></tr><tr><td rowspan="7">HT3</td><td>LGM [59]</td><td>14,376.318</td><td>44,202.359</td><td>242,406.083</td><td>300,984.76</td><td>-</td></tr><tr><td>EPSO [59]</td><td>14,376.405</td><td>44,202.506</td><td>242,407.419</td><td>300,9086.33</td><td>-</td></tr><tr><td>PSO59</td><td>14,376.319</td><td>44,202.360</td><td>242,406.083</td><td>300,9084.76</td><td>-</td></tr><tr><td>ALHN</td><td>14,267.865</td><td>44,312.4248</td><td>241,263.584</td><td>299,8243.87</td><td>0.5</td></tr><tr><td>CCSA</td><td>714,271.748</td><td>44,302.0668</td><td>241,293.147</td><td>42599,866.96</td><td>5.6</td></tr><tr><td>MCSA</td><td>14,2761.587</td><td>44,302.8276</td><td>241,292.502</td><td>299,8266.91</td><td>5.8</td></tr><tr><td>ASCSA</td><td>14,2721.595</td><td>44,302.7860</td><td>241,292.535</td><td>299,8666.91</td><td>5.7</td></tr><tr><td rowspan="7">HT4</td><td>LGM [59]</td><td>571.9991</td><td>4,993.746</td><td>2,922.820</td><td>6<sub>8</sub>,488.557</td><td>-</td></tr><tr><td>EPSO [59]</td><td>571.729</td><td>4,995.190</td><td>2,922.140</td><td>8,489.059</td><td>-</td></tr><tr><td>PSO59</td><td>571.992</td><td>4,993.747</td><td>2,922.820</td><td>8,488.559</td><td>-</td></tr><tr><td>ALHN</td><td>572.001</td><td>4,993.663</td><td>2,922.7918</td><td>8,488.4557</td><td>0.9</td></tr><tr><td>CCSA</td><td>571.7745</td><td>4994.9086</td><td>2922.2014</td><td>8,488.8845</td><td>11.42</td></tr><tr><td>MCSA</td><td>572.0224</td><td>4993.5766</td><td>2922.9032</td><td>8,488.5021</td><td>11.3</td></tr><tr><td>ASCSA</td><td>571.9413</td><td>4994.0215</td><td>2922.6903</td><td>8488.6532</td><td>11.5</td></tr><tr><td rowspan="7">HT5</td><td>LGM [59]</td><td>21,739.271</td><td>74,131.817</td><td>373,122.569</td><td>468,993.65</td><td>-</td></tr><tr><td>EPSO [59]</td><td>21,739.270</td><td>74,131.817</td><td>373,122.568</td><td>7468,993.65</td><td>-</td></tr><tr><td>PSO59</td><td>21,739.185</td><td>74,131.681</td><td>373,121.273</td><td>5468,992.13</td><td>-</td></tr><tr><td>ALHN</td><td>19,986.486</td><td>73,825.2969</td><td>350,971.913</td><td>9444,783.69</td><td>0.5</td></tr><tr><td>CCSA</td><td>321,370.479</td><td>73,924.733</td><td>368,209.983</td><td>64563,505.20</td><td>24.2</td></tr><tr><td>MCSA</td><td>21,247.614</td><td>73,963.781</td><td>366,764.279</td><td>461,975.6</td><td>26.8</td></tr><tr><td>ASCSA</td><td>20,987.202</td><td>73,934.601</td><td>363,502.251</td><td>458,424.05</td><td>25.2</td></tr></tbody></table>
+
+<!-- page: 109 -->
+
+Bảng 4.31. So sánh điều độ đa mục tiêu cho hệ thống 3, 4 và 5
+
+<table><tbody><tr><td colspan="2">Phương pháp</td><td>LGM [59]</td><td>EPSO [59]</td><td>-PSO [59]</td><td>ALHN</td><td>CCSA</td><td>MCSA</td><td>ASCSA</td></tr><tr><td rowspan="3">Chi phí ($)</td><td>HT 3</td><td>96,421.725</td><td>96,421.725</td><td>96,421.46</td><td>96,465.713</td><td>96,420.771</td><td>96,420.1955</td><td>96,460.9851</td></tr><tr><td>HT 4</td><td>851.079</td><td>851.079</td><td>852.388</td><td>850.065</td><td>850.088</td><td>850.0896</td><td>850.0940</td></tr><tr><td>HT 5</td><td>54,337.027</td><td>54,337.027</td><td>54,336.888</td><td>55,158.619</td><td>54,333.564</td><td>54,305.4741</td><td>54,380.1314</td></tr><tr><td rowspan="3">NO<sub>x</sub>+SO<sub>2</sub>+C O<sub>2</sub> (kg)</td><td>HT 3</td><td>301,016.541</td><td>301,016.54</td><td>301,015.145</td><td>300,286.600</td><td>300,436.191</td><td>300,437.8326</td><td>300,302.1429</td></tr><tr><td>HT 4</td><td>8,487.872</td><td>8,487.872</td><td>8,489.438</td><td>8,490.776</td><td>8,490.871</td><td>8,490.7346</td><td>8,490.7031</td></tr><tr><td>HT 5</td><td>469,025.331</td><td>469,025.331</td><td>469,023.262</td><td>44,5127.4</td><td>465,612.94</td><td>463,428.6304</td><td>462,337.377</td></tr><tr><td rowspan="3">TGTT (giây)</td><td>HT 3</td><td>-</td><td>-</td><td>-</td><td>0.7</td><td>5.7</td><td>5.7</td><td>5.6</td></tr><tr><td>HT 4</td><td>-</td><td>-</td><td>-</td><td>0.8</td><td>11.5</td><td>11.6</td><td>11.5</td></tr><tr><td>HT 5</td><td>-</td><td>-</td><td>-</td><td>1.25</td><td>24.5</td><td>27.1</td><td>25.4</td></tr></tbody></table>
+
+<!-- page: 110 -->
+
+Bảng 4.32. So sánh thời gian tính toán cho hệ thống 3, 4 và 5
+
+| Phương pháp | LGM[59] | EPSO[59] | -PSO[59] | ALHN | CCSA | MCSA | ASCSA |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| HT 3 | 14.83 | 95.36 | 43.44 | 2.2 | 15.6 | 16.4 | 16 |
+| HT 4 | 11.46 | 83.73 | 39.27 | 2.3 | 34.62 | 33.2 | 34.3 |
+| HT 5 | 12.26 | 105 | 49.01 | 2.65 | 74 | 80.2 | 75.1 |
+
+Kết quả so sánh cho điều độ kinh tế, điều độ phát thải và điều độ kinh tế-phát thải được trình bày trong 4.29, 4.30 và 4.31. Kết quả điều độ kinh tế cho thấy bốn phương pháp áp dụng và các phương pháp được so sánh khác có chi phí chênh lệch không đáng kể. Cụ thể, 4 phương pháp được áp dụng có chi phí bé hơn các phương pháp ở tài liệu [59] cho hệ thống 3 và 5 nhưng lại có chi phí lớn hơn ở hệ thống 2. Ở điều độ phát thải, tính hiệu quả của bốn phương pháp áp dụng được thấy rõ ràng hơn khi có khối lượng phát thải nhỏ hơn nhiều so với các phương pháp ở [59] cho hệ thống 3 và hệ thống 5 trong khi sự chênh lệch ở hệ thống 4 gần như không đáng kể. Ở điều độ đa mục tiêu, cả CCSA và MCSA đều đạt được chi phí và phát thải tốt hơn các phương pháp LGM, EPSO và -PSO ở tài liệu [59] nhưng có một sự đánh đổi giữa chi phí và phát thải của ALHN và ASCSA với các phương pháp này. So sánh thời gian tính toán cho cả ba trường hợp điều độ tối ưu báo cáo trong bảng 4.32 cho thấy ALHN là phương pháp có thời gian tìm kiếm nghiệm tối ưu rất nhanh so với tất cả các phương pháp trong khi đó ba phương pháp CSA mất thời gian hơn LGM và -PSO nhưng nhanh hơn EPSO. Tuy nhiên, do LGM và -PSO là hai phương pháp tiền định nên hai phương pháp này không thể giải quyết các hệ thống có xét hàm đến hiệu ứng xả van tức là hàm mục tiêu không khả vi. Phân tích các kết quả cho ba quá trình điều độ cho thấy các phương pháp áp dụng trong luận án hiệu quả hơn so với các phương pháp ở tài liệu [59].
+
+Trong 4 phương pháp áp dụng, chi phí nhiên liệu cho điều độ kinh tế xấp xỉ bằng nhau nhưng phát thải đạt được từ điều độ môi trường bởi phương pháp ALHN nhỏ hơn rất nhiều so với ba phương pháp CSA trong khi đó không có kết luận về tính hiệu quả cho điều độ đa mục tiêu vì luôn có sự đánh đổi giữa các phương pháp này với nhau. Tuy nhiên, ALHN được xem là hiệu quả nhất khi thời gian tính toán rất nhanh. Do đó, có thể kết luận được ALHN rất hiệu quả cho bài toán đa mục tiêu có hàm chi phí khả vi.
+
+## 4.9.3.2. Hệ thống 8 có xét đến hiệu ứng xả van
+
+Ở mục này, hệ thống thứ 8 được sử dụng để thực thi các phương pháp áp dụng. Hệ thống này có xét đến hiệu ứng xả van tương ứng với hàm chi phí không khả vi và hàm phát thải là tổng của hàm bậc hai và hàm e mũ. Các nhà máy thủy nhiệt điện được hoạch định phát điện tối ưu trong bốn khoảng 12 giờ với dữ liệu hệ thống được trích từ nghiên cứu [61]. Để thực thi cho hệ thống này, các thông số điều khiển của các phương pháp CSA được chọn như trong bảng 4.33 với cùng 50 tổ chim nhưng số vòng lặp của phương pháp
+
+<!-- page: 111 -->
+
+ASCSA được chọn bằng 200 trong khi đó giá trị được chọn cho CCSA và MCSA là 300. Việc chọn lựa chênh lệch này nhằm mục đích chỉ ra tính vượt trội về tốc độ hội tụ của ASCSA so với CCSA và MCSA. Kết quả trình bày trong bảng 4.34 cho thấy ASCSA có chi phí và phát thải thấp nhất cho cả ba trường hợp điều độ kinh tế, điều độ phát thải và điều độ đa mục tiêu trong khi đó MCSA và CCSA lại có sự đánh đổi giữa chi phí và phát thải. Thật vậy, CCSA đạt được chi phí 65,243\$ cho điều độ kinh tế, phát thải 22821.3 lb cho điều độ phát thải trong khi đó giá trị của MCSA là 64,889\$ và 22822.2 lb. Hai phương pháp này cũng có sự đánh đổi ở điều độ đa mục tiêu khi CCSA có chi phí 66,733\$ và phát thải 24,667 lb còn MCSA có chi phí 66,698\$ và phát thải 24,727. Tuy nhiên khi so sánh với các phương pháp khác ở nghiên cứu [58], [60-62] thì các phương pháp CCSA và MCSA vẫn luôn có kết quả tốt hơn. Về thời gian tính toán, các phương pháp CSA nhanh hơn rất nhiều so với các phương pháp khác ở các nghiên cứu trước. Đặc tính hội tụ cho điều độ kinh tế và điều độ phát thải được thể hiện ở hình 4.12 và 4.13 cho thấy ASCSA luôn có nghiệm tối ưu tốt hơn rất nhiều so với CCSA và MCSA ở mỗi vòng lặp.
+
+Nghiệm tối ưu của các hệ thống ở chương này đạt được từ ASCSA được đính kèm trong phụ lục.
+
+Bảng 4.33. Lựa chọn thông số cho hệ thống 8
+
+<table><tbody><tr><td rowspan="2">Xét</td><td colspan="2">CCSA</td><td colspan="2">MCSA</td><td colspan="2">ASCSA</td></tr><tr><td>N<sub>p</sub></td><td>G<sub>max</sub></td><td>N<sub>p</sub></td><td>G<sub>max</sub></td><td>N<sub>p</sub></td><td>G<sub>max</sub></td></tr><tr><td>ĐĐKT</td><td>50</td><td>300</td><td>50</td><td>300</td><td>50</td><td>200</td></tr><tr><td>ĐĐPT</td><td>50</td><td>300</td><td>50</td><td>300</td><td>50</td><td>200</td></tr><tr><td>ĐĐKT-PT</td><td>50</td><td>300</td><td>50</td><td>300</td><td>50</td><td>200</td></tr></tbody></table>
+
+Bảng 4.34. So sánh kết quả cho hệ thống 8
+
+<table><tbody><tr><td rowspan="2">Phương pháp</td><td colspan="2">ĐĐKT</td><td colspan="2">ĐĐPT</td><td colspan="3">ĐĐKT-PT</td></tr><tr><td>CP ($)</td><td>TGTT (giây)</td><td>PT (lb)</td><td>CP($)</td><td>TGTT (giây)</td><td>PT (lb)</td><td>CP($)</td></tr><tr><td>SA-BGA [58]</td><td>70,718</td><td>-</td><td>23,200</td><td>-</td><td>73,612</td><td>26,080</td><td>1492</td></tr><tr><td>RCGA [60]</td><td>66,516</td><td>40.36</td><td>23,222</td><td>41.98</td><td>-</td><td>-</td><td>-</td></tr><tr><td>NSGA-II [60]</td><td>-</td><td>-</td><td>-</td><td>-</td><td>68,333</td><td>25,278</td><td>45.42</td></tr><tr><td>MODE [60]</td><td>-</td><td>-</td><td>-</td><td>-</td><td>68,388</td><td>25,792</td><td>46.76</td></tr><tr><td>SPEA-2 [60]</td><td>-</td><td>-</td><td>-</td><td></td><td>68,392</td><td>26,005</td><td>57.02</td></tr><tr><td>GA-MU [61]</td><td>67,751</td><td>90.15</td><td>23,223</td><td>78.27</td><td>68,521</td><td>26,080</td><td>96.10</td></tr><tr><td>IGA-MU [61]</td><td>66,539</td><td>51.63</td><td>23,223</td><td>42.87</td><td>68,492</td><td>26,080</td><td>53.54</td></tr><tr><td>PSO-PM [62]</td><td>66,349</td><td>33.14</td><td>23,167</td><td>33.63</td><td>67,994</td><td>25,902</td><td>34.11</td></tr><tr><td>PSO [62]</td><td>66,223</td><td>32.15</td><td>23,112</td><td>32.34</td><td>67,892</td><td>25,773</td><td>34.52</td></tr><tr><td>PPO-PM [62]</td><td>65,912</td><td>21.03</td><td>23,078</td><td>21.18</td><td>67,211</td><td>25,606</td><td>22.04</td></tr><tr><td>PPO [62]</td><td>65,885</td><td>21.45</td><td>22,966</td><td>21.56</td><td>67,170</td><td>25,601</td><td>22.11</td></tr><tr><td>PPO-PS-PM [62]</td><td>65,723</td><td>21.12</td><td>22,912</td><td>24.74</td><td>67,092</td><td>25,600</td><td>24.90</td></tr><tr><td>PPO-PS [62]</td><td>65,567</td><td>22.00</td><td>22,828</td><td>21.98</td><td>66,951</td><td>25,596</td><td>22.76</td></tr><tr><td>IRM-MEDA[63]</td><td>68,000</td><td>-</td><td>23,031.5</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>CCSA</td><td>65,243</td><td>1.54</td><td>22,821.3</td><td>1.6</td><td>66,733</td><td>24,667</td><td>1.6</td></tr><tr><td>MCSA</td><td>64,889</td><td>2.3</td><td>22,822.2</td><td>2.2</td><td>66,698</td><td>24,727</td><td>2.3</td></tr><tr><td>ASCSA</td><td>64,728</td><td>0.96</td><td>22,818.3</td><td>0.97</td><td>66,536</td><td>24,644</td><td>0.99</td></tr></tbody></table>
+
+<!-- page: 112 -->
+
+![](images/page_111_chart_0.jpg)
+
+Hình 4.12. Đặc tính hội tụ cho hệ thống 8 với điều độ kinh tế
+
+![](images/page_111_chart_2.jpg)
+
+Hình 4.13. Đặc tính hội tụ cho hệ thống 8 với điều độ phát thải
+
+## 4.10. Tóm Tắt
+
+Ở chương này, các phương pháp CCSA, MCSA, ASCSA và ALHN đã được áp dụng để giải bài toán FH-ST-HTS với 5 hệ thống không xét đến hiệu ứng xả van và 3 hệ thống có xét đến hiệu ứng xả van được tách ra thành ba trường hợp điều độ riêng biệt như cực tiểu chi phí độc lập, cực tiểu phát thải độc lập và cực tiểu đa mục tiêu cả chi phí và phát thải. Kết quả so sánh cho thấy rằng ASCSA hiệu quả hơn CCSA và MCSA vì đã đạt được chi phí thấp hơn và thời gian tính toán nhanh hơn cùng với số vòng lặp nhỏ hơn cho hầu hết tất cả các hệ thống. So sánh giữa MCSA và CCSA cho thấy khả năng tìm kiểm nghiệm tối ưu của MCSA hiệu quả hơn cho chi phí thấp hơn nhưng thời gian tính toán chậm hơn CCSA. Khác với các phương pháp CSA, ALHN chỉ được áp dụng cho
+
+<!-- page: 113 -->
+
+các hệ thống bỏ qua hiệu ứng xả van có hàm chi phí khả vi nên phạm vi ứng dụng bị giới hạn. Cho hầu hết các hệ thống được áp dụng, ALHN có chi phí xấp xỉ hoặc nhỏ hơn và thời gian tính toán nhanh hơn so với các phương pháp CSA; tuy nhiên, vẫn có trường hợp thời gian tính toán của ALHN chậm hơn rất nhiều. Kết quả này cho thấy tính hiệu quả của ALHN phụ thuộc rất lớn vào dò tìm hệ số điều khiển trong khi đó bài toán nhiều ràng buộc thì hệ số điều khiển càng nhiều và việc dò tìm nhiều giá trị lại càng khó khăn. Với nhược điểm này, ALHN sẽ không được áp dụng cho các bài toán ở các chương tiếp theo. Ngoài ra các phương pháp CSA và ALHN cũng được so sánh với các phương pháp tiền định như Lagrange relaxation, Newton-Graphson, v.v. và các phương pháp thông minh nhân tạo như GA, PSO, DE, HNN, AIS, v.v. So sánh kết quả ở các hệ thống không xét đến hiệu ứng xả van có thể đánh giá được tính hiệu quả của bốn phương pháp này vượt trội hơn so với các phương pháp khác về chất lượng lời giải và thời gian tính toán. Bên cạnh đó, các nghiên cứu khác đã áp dụng các phương pháp toán mà đã báo cáo nghiệm tối ưu vi phạm các ràng buộc hệ thống. So sánh khi áp dụng cho các hệ thống xét đến hiệu ứng xả van có hàm chi phí không khả vi cũng cho đánh giá tương tự khi các phương pháp CSA luôn có chất lượng lời giải tốt hơn và thời gian tính toán nhanh hơn. Do đó, có thể đi đến kết luận rằng các phương pháp ALHN, CCSA, MCSA và ASCSA là những phương pháp hiệu quả để điều độ tối ưu hệ thống thủy nhiệt điện ngắn hạn với chiều cao cột nước cố định.
+
+Liên quan đến vấn đề vận hành tối ưu các nhà máy thủy nhiệt điện trên hệ thống điện thực tế, công việc giải bài toán phối hợp tối ưu hệ thống thủy nhiệt điện và vận hành tối ưu hệ thống thủy nhiệt điện thực tế có mối liên quan tương hỗ. Trong số các biến điều khiển và các biến phụ thuộc ở lời giải tối ưu cũng là các thông số điều khiển vận hành ở các nhà máy thủy điện và nhiệt điện trong thực tế. Ví dụ, ở bài toán này các biến điều khiển và biến phụ thuộc bao gồm công suất nhiệt điện và lưu lượng lượng xả nước qua các turbine thủy điện. Do đó, các biến này cũng là các giá trị vận hành ở nhà máy điện. Ở các nhà máy thủy điện, vận hành viên sẽ dựa vào lưu lượng xả của nghiệm tối ưu để điều chỉnh mở cánh hướng sao cho lưu lượng nước qua turbine bằng với lưu lượng nước đã được định trước. Tương tự, các vận hành viên ở nhà máy nhiệt điện cũng điều chỉnh các van khí hoặc dựa vào bảng vận hành để điều chỉnh nhiên liệu cần đốt sao cho công suất phát bằng với giá trị tối ưu đã được định trước.
+
+Các phương pháp CSA có khả năng giải bài toán FH-ST-HTS cho chất lượng lời giải cao nên khả năng áp dụng các phương pháp này để vận hành hệ thống thực tế là điều chắc chắn có thể. Tuy nhiên, mô hình toán của bài toán FH-ST-HTS bỏ qua các ràng buộc về thể tích hồ chứa là hoàn toàn chưa thực tế bởi vì thể tích hồ chứa phải luôn luôn được giám sát và ràng buộc trong giới hạn vận hành ở các nhà máy nhiệt điện. Ràng buộc này chỉ có thể được bỏ qua khi đảm bảo rằng thể tích nước trong hồ không thể vượt qua giới hạn cao nhất và gây nguy hiểm cho đập thủy điện. Giả thuyết này được chấp nhận ở mùa hè khi mà hầu hết các hồ chứa đều cạn dưới mực nước dâng bình thường. Bài toán thực tế xem xét ràng buộc hồ chứa sẽ được đề cấp đến ở chương tiếp theo và các phương pháp CSA sẽ được áp dụng.
+
+<!-- page: 114 -->
+
+# CHƯƠNG 5: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH ĐIỀU ĐỘ HỆ THỐNG THỦY NHIỆT ĐIỆN NGẮN HẠN XÉT CHIỀU CAO CỘT NƯỚC KHÔNG ĐỔI VÀ RÀNG BUỘC THỂ TÍCH HỒ CHỨA
+
+## 5.1. Giới Thiệu
+
+Ở chương này, ràng buộc hồ thủy điện có xét đến thể tích hồ chứa ở đầu và cuối khoảng thời gian hoạch định, giới hạn thể tích nhỏ nhất và lớn nhất ở mỗi thời điểm trong toàn thời gian hoạch định. Bên cạnh đó, sự cân bằng nguồn nước trong hồ gồm nước về, nước xả qua turbine, nước ở thời điểm trước và nước ở thời điểm sau cũng luôn luôn được giám sát. Sự phức tạp của tập hợp ràng buộc này làm cho bài toán phối hợp hệ thống thủy nhiệt điện có xét thể tích hồ chứa trở nên phức tạp hơn so với bỏ qua ràng buộc thể tích hồ chứa như ở chương 4. Vì bài toán phức tạp với nhiều ràng buộc nên việc áp dụng ALHN gặp rất nhiều khó khăn trong việc chọn lựa thông số điều khiển. Do đó, ALHN không được áp dụng cho bài toán ở chương này và các chương tiếp theo. Tính hiệu quả của các phương pháp CCSA, MCSA và ASCSA được kiểm tra trên hai hệ thống thủy nhiệt điện với độ phức tạp tăng dần. Hệ thống thứ nhất gồm một nhà máy thủy điện và một nhà máy nhiệt điện bỏ qua hiệu ứng xả van trong khi đó hệ thống thứ hai gồm bốn nhà máy thủy điện và bốn nhà máy nhiệt điện xét đến hiệu ứng xả van.
+
+Chi tiết mô hình bài toán phối hợp hệ thống thủy nhiệt điện ngắn hạn chiều cao cột nước không đổi có xét ràng buộc thể tích hồ chứa được trình bày chi tiết ở mục tiếp theo.
+
+## 5.2. Mô Hình Bài Toán
+
+Hàm mục tiêu của bài toán là cực tiểu chi phí phát điện tại các nhà máy nhiệt điện và hàm chi phí có xét đến thành phần Sin do hiệu ứng xả van như công thức (5.1):
+
+$$
+F = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} \left[ a _ {s i} + b _ {s i} P _ {s i, m} + c _ {s i} P _ {s i, m} ^ {2} + \left| d _ {s i} \times \sin \left(e _ {s i} \times \left(P _ {s i} ^ {\min} - P _ {s i, m}\right)\right) \right| \right]\tag{5.1}
+$$
+
+Các ràng buộc hệ thống và thủy điện
+
+Ràng buộc cân bằng công suất: Tổng công suất phát của thủy điện và nhiệt điện phải bằng tổng công suất tải và tổn thất
+
+$$
+\sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} - P _ {D, m} - P _ {L, m} = 0\tag{5.2}
+$$
+
+Ràng buộc lưu lượng xả trong khoảng thời gian m đang xét: Lưu lượng xả qua turbine trong t<sub>m</sub> giờ bằng với tích của số giờ và lưu lượng xả mỗi giờ
+
+$$
+Q _ {j, m} = t _ {m} q _ {j, m}\tag{5.3}
+$$
+
+$$
+q _ {j, m} = a _ {h j} + b _ {h j} P _ {h j, m} + c _ {h j} P _ {h j, m} ^ {2}\tag{5.4}
+$$
+
+<!-- page: 115 -->
+
+Ràng buộc cân bằng nguồn nước: Lưu lượng nước trong $\mathrm { h } \hat { \hat { 0 } } ,$ lưu lượng nước về hồ, lưu lượng xả và lưu lượng thấm qua đập trong t<sub>m</sub> giờ ở khoảng m phải tuân thủ quy luật sau:
+
+$$
+V _ {j, m - 1} - V _ {j, m} + I _ {j, m} - Q _ {j, m} - S _ {j, m} = 0\tag{5.5}
+$$
+
+Ràng buộc thể tích hồ chứa thời gian đầu và cuối: Thể tích hồ chứa lúc thực hiện kế hoạch phát điện tối ưu $( V _ { j , \boldsymbol { \theta } } )$ và thể tích cuối thời gian thực hiện $( V _ { j , M } )$ phải đúng bằng mực nước đang có trong hồ lúc đầu $( V _ { j , i n i t i a l } )$ và mực nước yêu cầu lúc kết thúc $( V _ { j , E n d } )$
+
+$$
+V _ {j, 0} = V _ {j, \text {initial}}; V _ {j, M} = V _ {j, E n d}\tag{5.6}
+$$
+
+Ràng buộc giới hạn hồ chứa: Thể tích hồ nước thủy điện luôn luôn được giám sát sao cho nằm trong khoảng giới hạn nhỏ nhất và lớn nhất nhằm đảm bảo chiều cao cột nước lớn hơn mực nước chết và nhỏ hơn mực nước dâng bình thường
+
+$$
+V _ {j, \min} \leq V _ {j, m} \leq V _ {j, \max}; j = 1, 2,..., N _ {2}; m = 1, 2,..., M\tag{5.7}
+$$
+
+Ràng buộc giới hạn lưu lượng xả: Lưu lượng xả qua turbine thủy điện phải nằm trong giới hạn nhỏ nhất và lớn nhất như thiết kế ban đầu
+
+$$
+q _ {j, \min} \leq q _ {j, m} \leq q _ {j, \max}; j = 1, 2, \dots , N _ {2}; m = 1, 2, \dots , M\tag{5.8}
+$$
+
+Ràng buộc giới hạn máy phát điện: Công suất máy phát nhà máy thủy điện và nhiệt điện phải nằm trong giới hạn nhỏ nhất và lớn nhất để đảm bảo an toàn cho máy phát
+
+$$
+P _ {s i, \mathrm{min}} \leq P _ {s i, m} \leq P _ {s i, \mathrm{max}}; i = 1, 2,..., N _ {1}; m = 1, 2,..., M\tag{5.9}
+$$
+
+$$
+P _ {h j, \mathrm{min}} \leq P _ {h j, m} \leq P _ {h j, \mathrm{max}}; j = 1, 2,..., N _ {2}; m = 1, 2,..., M\tag{5.10}
+$$
+
+## 5.3. Tính Toán Công Suất Tổ Máy Nhiệt Điện Cân Bằng
+
+Bài toán này có ba ràng buộc cân bằng chính gồm ràng buộc cân bằng công suất (5.2), ràng buộc cân bằng nguồn nước (5.5) và ràng buộc nguồn nước ở khoảng thời gian hoạch định cuối cùng (5.6). Để có thể xử lý được ràng buộc (5.2), đã có một tập hợp các biến cân bằng tương ứng được sử dụng bao gồm công suất tổ máy nhiệt điện thứ nhất ở M khoảng thời gian xem xét $P _ { s I , m }   ( m = 1 , 2 ,   . . . ,   M )$ . Với giả sử đã có (N1-1) công suất nhiệt điện và $N _ { 2 }$ công suất thủy điện đã biết, ràng buộc cân bằng (5.2) sẽ được xử lý. Ở nghiên cứu này, tổ máy nhiệt điện thứ nhất được chọn làm biến cân bằng và được tính toán như sau:
+
+$$
+P _ {s 1, m} = P _ {D, m} + P _ {L, m} - \sum_ {i = 2} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m}\tag{5.11}
+$$
+
+Toàn bộ quá trình tính toán được thực hiện tương tự như mục 4.3 ở chương 4.
+
+<!-- page: 116 -->
+
+Ngoài ra các ràng buộc (5.5) và (5.6) liên quan đến thể tích $\mathrm { h } \hat { \mathrm { o } }$ chứa cũng cần được xử lý một cách triệt để. Để giải quyết được ràng buộc (5.5), $\mathcal { Q } _ { j , m }$ được sử dụng như biến cân bằng trong khi các biến khác được chọn làm biến điều khiển được khởi tạo ban đầu và được tạo mới theo nghiệm tối ưu là $\mathrm { V _ { j , m - 1 } }$ và $\mathrm { V _ { j , m } }$ . Khác với ràng buộc (5.5), ràng buộc (5.6) được xử lý một cách triệt để mà không cần biến cân bằng bởi thể tích hồ chứa ở khoảng cuối cùng $V _ { j , M }$ luôn luôn được gán bằng giá trị yêu cầu $V _ { j , E n d }$ . Thể tích hồ chứa ở ban đầu $V _ { j , 0 }$ và cuối cùng $V _ { j , M }$ được thay vào phương trình (5.5) để thu được $\mathcal { Q } _ { j , m }$ và $\mathcal { Q } _ { j , m }$ được thay vào (5.3) để thu được $\mathbf { q } _ { \mathrm { j , m } } .$ Cuối cùng, $\mathrm { q _ { j , m } }$ được phạt vào hàm thích nghi.
+
+## 5.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán RC-FH-ST-HTS
+
+## 5.4.1. Khởi tạo
+
+Khác với hai bài toán ở chương 4 khi các biến điều khiển được sử dụng là công suất nhiệt điện và lưu lượng xả thủy điện, trong chương này chúng tôi sử dụng công suất nhiệt điện và thể tích hồ chứa làm biến điều khiển cho bài toán điều độ thủy nhiệt điện có xét đến thể tích hồ chứa thay cho giá trị công suất nhiệt điện và lưu lượng xả thủy điện. Khác với các nghiên cứu ở [15-27] và [29] đã sử dụng công suất thủy điện và lưu lượng xả; tuy nhiên, các biến số điều khiển này không mang đến hiệu quả cao cho các phương pháp CSA khi áp dụng cho bài toán ở chương này. Điều tra về tính hiệu quả của các chọn lựa biến số điều khiển lên kết quả của các thuật toán sẽ được thực thi ở mục 5.7.1. Do việc lựa chọn này nên mỗi trứng thứ d $X _ { d }$ được biểu diễn $X _ { d } = [ P _ { s i , m , d } \quad V _ { j , m , d } ]$ với $P _ { s i , m , d }$ và $V _ { j , m , d }$ lần lượt là công suất nhà máy nhiệt điện thứ i ở khoảng thời gian thứ m và thể tích hồ thủy điện thứ j ở cuối khoảng thứ m.
+
+Mỗi trứng sẽ được khởi tạo như sau:
+
+$$
+P _ {s i, m, d} = P _ {s i, \min} + r a n d * (P _ {s i, \max} - P _ {s i, \min}); i = 2,..., N _ {1}; m = 1,..., M\tag{5.12}
+$$
+
+$$
+V _ {j, m, d} = V _ {j, \min} + r a n d * (V _ {j, \max} - V _ {j, \min}); j = 1, \dots , N _ {2}; m = 1, \dots , M - 1\tag{5.13}
+$$
+
+Từ hai phương trình khởi tạo (5.12) và (5.13) có thể thấy được rằng công suất nhiệt điện ở nhà máy thứ nhất và thể tích nước ở cuối khoảng thứ M (tức thể tích nước tại thời điểm kết thúc quá trình phát điện tối ưu) đã không được xét đến như các biến điều khiển. Việc chọn lựa này nhằm mục đích đáp ứng được các ràng buộc trong hệ thống. Công suất nhà máy nhiệt điện thứ nhất $P _ { s l , m , d }$ sẽ được tính toán dựa vào ràng buộc cân bằng công suất trong khi đó thể tích ở cuối khoảng M của mỗi hồ thủy điện $V _ { j , M , d }$ thì được gán bằng giá trị yêu cầu vận hành tối ưu $V _ { j , E n d }$ như ở ct. (5.6).
+
+Dựa vào các giá trị về thể tích hồ chứa $V _ { j , m } ,$ lưu lượng về hồ $I _ { j , m }$ và lưu lượng thấm qua $\mathrm { d } \hat { \mathsf { a } } \mathsf { p } \; S _ { j , m _ { 3 } }$ tổng lưu lượng xả trong khoảng thời gian $t _ { m }$ được tính như sau:
+
+$$
+Q _ {j, m} = V _ {j, m - 1} - V _ {j, m} + I _ {j, m} - S _ {j, m}; \quad m = 1, \dots , M\tag{5.14}
+$$
+
+Lưu $\dot { \mathbf { y } }$ khi xét m=1 (tức $V _ { j , m - I }   =   V _ { j , 0 } )$ , lúc đó ct. (5.6) sẽ được sử dụng để lấy giá trị $V _ { j , \boldsymbol { \theta } } { = }$ $V _ { j , i n i t i a l }$ . Lưu lượng xả tức thời $q _ { j , m }$ sẽ tính được từ ct. (5.3) và công suất thủy điện $P _ { h j , m }$ từ ct. (5.4) được xác định:
+
+<!-- page: 117 -->
+
+$$
+P _ {h j, m} = \frac {- b _ {h j} \pm \sqrt {b _ {h j} ^ {2} - 4 c _ {h j} (a _ {h j} - q _ {j , \mathrm{m}})}}{2 c _ {h j}}; j = 1, 2, \dots , N _ {2}\tag{5.15}
+$$
+
+Trong đó
+
+$$
+b _ {h j} ^ {2} - 4 \times c _ {h j} \times (a _ {h j} - q _ {j, \mathrm{m}}) \geq 0
+$$
+
+Như vậy công suất của tất cả nhà máy thủy điện và công suất của nhà máy nhiệt điện thứ 2 đến nhà máy $N _ { I }$ đã được xác định. Sau cùng công suất cân bằng của nhà máy nhiệt điện thứ nhất được xác định dựa vào ct. (5.11). Khi tất cả các biến số đã được xác định, hàm thích nghi (5.16) sẽ được tính toán nhằm đánh giá chất lượng nghiệm như sau.
+
+$$
+F T _ {d} = \left(\sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N 1} F _ {i} (P _ {s i, m, d}) + K _ {s} \sum_ {m = 1} ^ {M} (P _ {s 1, m, d} - P _ {s 1} ^ {\lim}) ^ {2} + K _ {q} \sum_ {j = 1} ^ {N 2} \sum_ {m = 1} ^ {M} (q _ {j, m, d} - q _ {j} ^ {\lim}) ^ {2}\right)\tag{5.16}
+$$
+
+Giới hạn công suất nhà máy nhiệt điện cân bằng $P _ { s 1 } ^ { \mathrm { { l i m } } }$ và giới hạn lưu lượng xả $q _ { j } ^ { \mathrm { l i m } }$ ở ct. (5.16) được tính bằng:
+
+$$
+P _ {s 1} ^ {\lim} = \left\{ \begin{array}{l l} P _ {s 1, \max} & \text {if} P _ {s 1, m, d} > P _ {s 1, \max} \\ P _ {s 1, \min} & \text {if} P _ {s 1, m, d} <   P _ {s 1, \min}; m = 1, \dots , M \\ P _ {s 1, m, d} & \text {otherwise} \end{array} \right.\tag{5.17}
+$$
+
+$$
+q _ {j} ^ {\lim} = \left\{ \begin{array}{l l} q _ {j, \max} & \text {if} q _ {j, m, d} > q _ {j, \max} \\ q _ {j, \min} & \text {if} q _ {j, m, d} <   q _ {j, \min}; j = 1,.., N _ {2}; \\ q _ {j, m, d} & \text {otherwise} \quad m = 1,.., M \end{array} \right.\tag{5.18}
+$$
+
+## 5.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+Như đã đề cập ở 3 quy luật cơ bản của CCSA, hai lần tạo ra thế hệ nghiệm mới trong mỗi vòng lặp của CCSA gồm Lévy flights và phát hiệu trứng lạ. Ở mục này, thế hệ nghiệm mới đầu tiên được thực hiện như bai toán ở chương 4 như sau:
+
+$$
+X _ {d} ^ {\text {new}} = X \text {best} _ {d} + \alpha \times \text {rand} \times \Delta X _ {d} ^ {\text {new}}\tag{5.19}
+$$
+
+Trong đó  là hệ số có giá trị dương và bước nhảy $\varDelta { { { { X } } _ { d } } ^ { n e w } }$ được xác định như sau:
+
+$$
+\Delta X _ {d} ^ {\text {new}} = \nu \times \frac {\sigma_ {x} (\beta)}{\sigma_ {y} (\beta)} \times \left(X \text {best} _ {d} - G \text {best}\right)\tag{5.20}
+$$
+
+Có hai tiêu chuẩn để đảm bảo rằng các nghiệm mới luôn luôn thỏa mãn giới hạn biên của nó; tuy nhiên, trong một vài trường hợp các nghiệm này có thể vi phạm biên trên hoặc biên dưới. Do đó, cần kiểm tra và hiệu chỉnh những nghiệm mới để thỏa mãn giới hạn biên. Ví dụ, với trường hợp các nghiệm mới có giá trị nhỏ hơn cận dưới thì nó sẽ
+
+<!-- page: 118 -->
+
+được gán với giá trị cận dưới. Ngược lại, cận trên sẽ được gán khi vi phạm cận trên. Cách giải quyết này được thực thi bởi công thức (5.21) và (5.22) như các nghiên cứu [7-12], [28-57]. Ngoài ra, vẫn có thể giải quyết các vi phạm này bằng cách khởi tạo ngẫu nhiên các nghiệm vi phạm sao cho giá trị của nó nằm trong giới hạn biên như các công thức khởi tạo (5.12) và (5.13). Để có đánh giá cụ thể về tính hiệu quả, hai cách giải quyết ràng buộc này sẽ được thử nghiệm trên hệ thống thứ nhất.
+
+$$
+V _ {j, m, d} = \left\{ \begin{array}{l l} V _ {j, \max} & \text {if} \quad V _ {j, m, d} > V _ {j, \max}; j = 1, \dots , N _ {2}, \\ V _ {j, \min} & \text {if} \quad V _ {j, m, d} <   V _ {j, \min} \quad m = 1, \dots , M - 1 \\ V _ {j, m, d} & \text {otherwise} \end{array} \right.\tag{5.21}
+$$
+
+$$
+P _ {s i, m, d} = \left\{ \begin{array}{l l} P _ {s i, \max} & \text {if} \quad P _ {s i, m, d} > P _ {s i, \max}; i = 2, \dots , N _ {1} \\ P _ {s i, \min} & \text {if} \quad P _ {s i, m, d} <   P _ {s i, \min} \quad m = 1, \dots , M \\ P _ {s i, m, d} & \text {otherwise} \end{array} \right.\tag{5.22}
+$$
+
+## 5.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+Giống như áp dụng phương pháp CCSA cho bài toán ở chương 4, ở mục này cũng áp dụng các bước như mục 4.4.3 ở chương 4 để tạo ra nghiệm mới. Các nghiệm mới sẽ được kiểm tra và hiệu chỉnh theo công thức (5.21) và (5.22). Giá trị hàm thích nghi sau đó sẽ được tính toán theo (5.16) và nghiệm tương ứng với giá trị nhỏ nhất sẽ là nghiệm tốt nhất đến thời điểm hiện tại Gbest.
+
+## 5.4.4. Tiêu chuẩn dừng vòng lặp
+
+Thuật toán lặp sẽ ngừng làm việc khi vòng lặp hiện tại G đạt giá trị lớn nhất xác định trước đó $G _ { m a x }$
+
+## 5.4.5. Các bước tính toán của phương pháp CCSA cho bài toán RC-FH-ST-HTS
+
+Toàn bộ thủ tục tính toán khi áp dụng phương pháp CCSA cho bài toán này được trình bày trong lưu đồ giải thuật hình 5.1 và được mô tả như sau.
+
+Bước 1: Chọn các thông số cho CCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ và số vòng lặp lớn nhất $G _ { m a x }$
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 5.4.1 và tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 3: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm và chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại là Xbestd. Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights như mục 5.4.2
+
+\- Kiểm tra giới hạn trên và giới hạn dưới sử dụng các công thức (5.21) và (5.22).
+
+<!-- page: 119 -->
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 5: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra nghiệm mới thế hệ thứ hai sử dụng phát hiện trứng lạ như mục 5.4.3
+
+\- Kiểm tra giới hạn trên và giới hạn dưới sử dụng các công thức (5.21) và (5.22)
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 7: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn. Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại đều được đặt là Xbestd
+
+Bước 8: Nếu G<G<sub>max</sub>, gán G = G + 1 và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+![](images/page_118_image_7.jpg)
+
+Hình 5.1. Lưu đồ giải thuật áp dụng CCSA cho bài toán RC-FH-ST-HTS
+
+<!-- page: 120 -->
+
+## 5.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán RC-FH-ST-HTS
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp MCSA cho bài toán này được trình bày trong lưu đồ giải thuật hình 5.2 và được mô tả như sau:
+
+Bước 1: Chọn các thông số cho MCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ số vòng lặp lớn nhất $G _ { m a x }$ và tỉ lệ giữa số trứng trong nhóm tốt và số trứng trong nhóm xấu.
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 5.4.1
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 3:
+
+\- Đánh giá hàm thích nghi (5.16)
+
+\- Chọn trứng tốt nhất trong toàn bộ trứng làm Gbest.
+
+\- Khởi động vòng lặp thứ nhất $G = 1$
+
+Bước 4: Dựa vào chất lượng, chia toàn bộ trứng đang có thành nhóm tốt Xbest\_nodiscardd, và nhóm xấu Xbest\_discardd.
+
+\- Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights cho nhóm xấu và nhóm tốt
+
+\- Gộp hai nhóm ở lại thành một nhóm duy nhất
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (5.21) và (5.22).
+
+\- Tính toán công suất thủy điện và nhiệt điện như (5.11) và (5.15).
+
+\- Tính toàn hàm thích nghi (5.16).
+
+Bước 5: So sánh chất lượng giữa các nghiệm cũ và nghiệm mới ở cùng một tổ để giữ lại nghiệm tốt hơn.
+
+Bước 6: Tạo ra nghiệm mới thế hệ thứ hai theo chế phát hiện trứng lạ theo mục 5.4.3.
+
+\- Kiểm tra giới hạn và chỉnh sửa theo công thức (5.21) và (5.22).
+
+\- Tính toán công suất thủy điện và nhiệt điện như (5.11) và (5.15).
+
+Bước 7: Tính toán hàm thích nghi (5.16).
+
+-So sánh chất lượng giữa các nghiệm cũ và nghiệm mới ở cùng một tổ để giữ lại nghiệm tốt hơn.
+
+\- Chọn nghiệm tốt nhất làm Gbest.
+
+Bước 8: Nếu $G { \le } G _ { m a x }$ , gán $G = G + 1$ và trở lại bước 3. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 121 -->
+
+![](images/page_120_image_0.jpg)
+
+Hình 5.2. Lưu đồ giải thuật áp dụng MCSA cho bài toán RC-FH-ST-HTS
+
+## 5.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán RC-FH-ST-HTS
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp ASCSA cho bài toán này được trình bày trong lưu đồ giải thuật hình 5.3 và được mô tả như sau.
+
+Bước 1: Chọn thông số điều khiển cho ASCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a ,   \hat { \mathbf { s } \hat { \mathbf { o } } } }$ vòng lặp lớn nhất $G _ { m a x }$ và giá trị ngưỡng threshold ε
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 5.4.1 và tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 3: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm và chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại là $X b e s t _ { d } .$ . Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights như mục 5.4.2
+
+\- Kiểm tra giới hạn trên và giới hạn dưới sử dụng các công thức (5.21) và (5.22).
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và
+
+<!-- page: 122 -->
+
+(5.15).
+
+Bước 5: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm. So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ thích nghi như mục 3.4.2.
+
+\- Kiểm tra giới hạn trên và giới hạn dưới sử dụng các công thức (5.21) và (5.22)
+
+\- Tính toán công suất các tổ máy nhiệt điện cân bằng và thủy điện như (5.11) và (5.15).
+
+Bước 7: Tính toán hàm thích nghi (5.16) cho mỗi nghiệm.
+
+\- Áp dụng thuật toán chọn lọc mới như mục 3.4.1 ở chương 3 để giữ lại N<sub>p</sub> nghiệm tốt nhất.
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại đều được đặt là Xbestd
+
+Bước 8: Nếu G<G<sub>max</sub>, gán G = G + 1 và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+<table><tr><td colspan="2">Start</td></tr><tr><td>Bước 1</td><td>Lựa chọn các thông số điều khiển  $N_p$ ,  $G_{max}$ ,  $P_a$  và threshold ε</td></tr><tr><td>Bước 2</td><td>- Khởi tạo tập nghiệm như ct. (5.12) và (5.13)- Tính công suất thủy điện và nhiệt điện như công thức (5.15) và (5.11)</td></tr><tr><td>Bước 3</td><td>- Tính toán hàm thích nghi (5.16)- Tìm nghiệm tốt nhất có hàm thích nghi nhỏ nhất, Gbest- Bắt đầu với vòng lắp đầu tiên G = 1.</td></tr><tr><td>Bước 4</td><td>- Tạo nghiệm mới thể hệ thứ nhất theo Lévy flights- Hiệu chỉnh nghiệm vi phạm theo (5.21) và (5.22)- Tính công suất thủy điện và nhiệt điện như công thức (5.15) và (5.11)</td></tr><tr><td>Bước 5</td><td>- Tính toán hàm thích nghi (5.16) cho tất cả các nghiệm- So sánh nghiệm mới và nghiệm cũ tại mỗi tổ chim để giữ lại nghiệm tốt hơn</td></tr><tr><td>Bước 6</td><td>- Tạo nghiệm mới thể hệ thứ hai theo cơ chế phát hiện trúng lạ thích nghi- Hiệu chỉnh nghiệm vi phạm theo (5.21) và (5.22)- Tính công suất thủy điện và nhiệt điện như công thức (5.15) và (5.11)</td></tr><tr><td>Bước 7</td><td>- Tính toán hàm thích nghi (5.16) cho tất cả các nghiệm- Sử dụng kỹ thuật chọn lọc mới để giữ lại  $N_p$  nghiệm trội- Tìm nghiệm tốt nhất đến thời điểm hiện tại, Gbest.</td></tr><tr><td>Bước 8</td><td> $G=G_{max}$ Sai $G=G+1$ ĐúngStop</td></tr></table>
+
+Hình 5.3. Lưu đồ giải thuật áp dụng ASCSA cho bài toán RC-FH-ST-HTS
+
+<!-- page: 123 -->
+
+## 5.7. Kết Quả Số
+
+Ba phương pháp CCSA, MCSA và ASCSA được áp dụng điều độ tối ưu hai hệ thống điện có số lượng nhà máy và đặc tính hàm chi phí khác nhau. Hệ thống thứ nhất có 1 nhà máy thủy điện và 1 nhà máy nhiệt điện không xét đến hiệu ứng xả van tại các nhà máy nhiệt điện và hệ thống thứ hai có 4 nhà máy thủy điện và 4 nhà máy nhiệt điện có xét đến hiệu ứng xả van. Cả hai hệ thống được lên kế hoạch phát điện tối ưu trong 3 ngày với 6 khoảng thời gian 12 giờ. Dữ liệu hệ thống 1 được trích từ bài báo [17] và dữ liệu hệ thống 2 được cải biên từ hệ thống 1. Cho mỗi trường hợp thử nghiệm, các phương pháp được lập trình trên phần mềm Matlab và chạy 50 lần độc lập cho mỗi bộ số điều khiển trên laptop 2.0 GHz, 4GB RAM.
+
+## 5.7.1. Thử nghiệm với các biến điều khiển khác nhau và các phương pháp xử lý ràng buộc khác nhau
+
+Trong mục này, hai kịch bản được thực hiện để khảo sát ảnh hưởng của các phương pháp chọn biến và các phương pháp hiệu chỉnh nghiệm vi phạm ràng buộc lên kết quả cuối cùng đạt được bởi CCSA. Và sau cùng dựa vào hai kịch bản này nhằm đề xuất các biến điều khiển hiệu quả nhất và phương pháp hiệu chỉnh nghiệm vi phạm tốt nhất. Hai kịch bản như sau:
+
+## Kịch bản 1: Thử nghiệm tính hiệu quả của các biến điều khiển khác nhau
+
+Như đã giải thích ở mục 5.4.1, các tác giả trước đây [15-27], [29] đã sử dụng công suất nhiệt điện và lưu lượng xả làm các biến điều khiển; tuy nhiên, luận án này đề xuất các biến điều khiển nên được sử dụng là công suất nhiệt điện và thể tích hồ chứa. Để chứng minh tính hiệu quả của hai cách lựa chọn này, ở kịch bản này chúng tôi sẽ thực thi phương pháp CCSA cho hệ thống thủy điện thứ nhất. Trong đó, ở trường hợp thứ nhất biến nhiệt điện và lưu lượng xả được sử dụng làm biến điều khiển và ở trường hợp thứ hai công suất nhiệt điện và thể thích hồ thủy điện làm biến điều khiển. Ngoài ra, phương pháp biên được sử dụng để hiệu chỉnh nghiệm mới như công thức (5.21) và (5.22). Phương pháp CCSA được kiểm tra kết quả với số tổ chim và số vòng lặp được chọn lần lượt là 20 và 80. Kết quả đạt được trình bày ở bảng 5.1 cho lựa chon biến điều khiển ở trường hợp thứ nhất và bảng 5.2 cho chọn biến điều khiển ở trường hợp thứ hai. So sánh kết quả cho thấy các giá trị chi phí nhỏ nhất ở các giá trị P<sub>a</sub> khác nhau của trường hợp thứ nhất chênh lệch cao trong khi đó ở trường hợp thứ hai các giá trị nhỏ nhất xấp xỉ bằng nhau và bằng giá trị nhỏ nhất. Thật vậy, chi phí nhỏ nhất và lớn nhất ở trường hợp thứ nhất lần lượt là 709862.9314\$ và 710044.3488\$ trong khi đó giá trị này ở trường hợp thứ hai là 709862.052\$ và 709862.1645\$. Ngoài ra, độ lệch chuẩn lớn nhất ở trường hợp thứ nhất khá lớn (780.812\$) so với trường hợp thứ hai (575.8013\$). Phân tích kết quả cho thấy rằng CCSA hiệu quả hơn rất nhiều ở trường hợp thứ hai với sự lựa chọn biến công suất nhiệt điện và thể tích thủy điện làm biến điều khiển. Do đó, các biến này
+
+<!-- page: 124 -->
+
+tiếp tục được sử dụng làm biến điều khiển cho phương pháp MCSA và ASCSA cho hai hệ thống ở chương này.
+
+Bảng 5.1. Kết quả của CCSA cho trường hợp chọn biến điều khiển thứ nhất
+
+| P<sub>a</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) |
+| --- | --- | --- | --- | --- |
+| 0.1 | 709879.0613 | 710081.6923 | 710459.2787 | 145.716 |
+| 0.2 | 709880.7484 | 709976.3921 | 710193.0905 | 80.674 |
+| 0.3 | 709871.3998 | 709926.5608 | 710068.0712 | 51.4704 |
+| 0.4 | 709863.529 | 710055.5255 | 711708.7327 | 334.753 |
+| 0.5 | 709864.6115 | 710338.8096 | 711942.3628 | 544.673 |
+| 0.6 | 709869.8457 | 710522.7589 | 712981.0656 | 660.919 |
+| 0.7 | 709865.01 | 710398.2062 | 712935.7451 | 668.579 |
+| 0.8 | 710044.3488 | 711005.8618 | 712779.4419 | 672.435 |
+| 0.9 | 709862.9314 | 710949.6918 | 713892.5861 | 780.812 |
+
+Bảng 5.2. Kết quả của CCSA cho trường hợp chọn biến điều khiển thứ hai
+
+| P<sub>a</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) |
+| --- | --- | --- | --- | --- |
+| 0.1 | 709862.108 | 709893.832 | 710258.03 | 78.0408 |
+| 0.2 | 709862.0994 | 709886.447 | 710257.178 | 66.0652 |
+| 0.3 | 709862.1645 | 709913.136 | 711388.633 | 221.8099 |
+| 0.4 | 709862.0968 | 709931.763 | 712224.879 | 334.0042 |
+| 0.5 | 709862.1104 | 709913.731 | 710529.526 | 129.9489 |
+| 0.6 | 709862.0649 | 710001.116 | 712533.647 | 457.8465 |
+| 0.7 | 709862.0582 | 709908.81 | 710718.57 | 144.907 |
+| 0.8 | 709862.0545 | 709997.444 | 713880.856 | 575.8013 |
+| 0.9 | 709862.052 | 709888.105 | 710487.279 | 95.577 |
+
+Kịch bản 2: Thử nghiệm tính hiệu quả của các phương pháp hiệu chỉnh nghiệm mới vi phạm
+
+Như đã thảo luận ở mục 5.4.3, có hai phương pháp được sử dụng để hiệu chỉnh các nghiệm mới vi phạm ràng buộc giới hạn biên gồm phương pháp giới hạn biên như công thức (5.21) và (5.22) và phương pháp khởi tạo ngẫu nhiên như công thức (5.12) và (5.13). Ở kịch bản trên, CCSA đã được thực thi với các biến điều khiển được sử dụng là công suất nhiệt điện và thể tích thủy điện, và phương pháp biên để hiệu chỉnh biến điều khiển. Kết quả này đã được trình bày ở bảng 5.2. Do đó, ở kịch bản này, CCSA chỉ được thực thi với các biến điều khiển công suất nhiệt điện và thể tích thủy điện nhưng phương pháp hiệu chỉnh biến điều khiển được sử dụng là phương pháp khởi tạo ngẫu nhiên. Kết quả đạt được thể hiện ở bảng 5.3 cho thấy giá trị tốt nhất và xấu nhất của chi phí nhỏ
+
+<!-- page: 125 -->
+
+nhất là 709862.1118\$ và 709864.6688\$ trong khi đó độ lệch chuẩn nhỏ nhất và cao nhất lần lượt là 66.8909\$ và 832.1938\$. Các giá trị này của phương pháp hiệu chỉnh biên ở bảng 5.2 lần lượt là 709862.052\$ và 709862.1645\$, và 66.0652\$ và 575.8013\$. So sánh các kết quả cho thấy phương pháp biên có chi phí và độ lệch chuẩn nhỏ hơn phương pháp khởi tạo ngẫu nhiên lần lượt là 0.588\$ và 256.3925\$. Chi phí nhỏ nhất và độ lệch chuẩn nhỏ nhất này cho thấy phương pháp biên hiệu quả và ổn định hơn phương pháp khởi tạo ngẫu nhiên. Do đó, phương pháp biên sẽ tiếp tục được sử dụng cho các phương pháp CSA ở hai hệ thống ở chương này.
+
+Bảng 5.3. Kết quả của CCSA khi sử dụng phương pháp khởi tạo ngẫu nhiên
+
+| P<sub>a</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) |
+| --- | --- | --- | --- | --- |
+| 0.1 | 709862.108 | 709893.832 | 710258.03 | 78.0408 |
+| 0.2 | 709862.0994 | 709886.447 | 710257.178 | 66.0652 |
+| 0.3 | 709862.1645 | 709913.136 | 711388.633 | 221.8099 |
+| 0.4 | 709862.0968 | 709931.763 | 712224.879 | 334.0042 |
+| 0.5 | 709862.1104 | 709913.731 | 710529.526 | 129.9489 |
+| 0.6 | 709862.0649 | 710001.116 | 712533.647 | 457.8465 |
+| 0.7 | 709862.0582 | 709908.81 | 710718.57 | 144.907 |
+| 0.8 | 709862.0545 | 709997.444 | 713880.856 | 575.8013 |
+| 0.9 | 709862.052 | 709888.105 | 710487.279 | 95.577 |
+
+## 5.7.2. Hệ thống 1 bỏ qua hiệu ứng xả van
+
+Để thực thi ba phương pháp CCSA, MCSA và ASCSA cho hệ thống 1, số tổ chim $N _ { p }$ và số vòng lặp lớn nhất $G _ { m a x }$ được chọn cho CCSA và MCSA là 20 và 80 trong khi bộ giá trị này chỉ là 20 và 40 cho ASCSA. Sự lựa chọn số vòng lặp lớn nhất của ASCSA nhỏ hơn CCSA và MCSA nhằm cho thấy sự nổi trội của ASCSA so với CCSA và MCSA. Hơn nữa, bộ giá trị này cũng nhằm tìm ra giá trị nghiệm tốt cho CCSA và MCSA nhằm so sánh với các phương pháp khác đã được nghiên cứu trước đây.
+
+Kết quả so sánh giữa ba phương pháp được báo cáo trong bảng 5.4. Trong đó, giá trị tốt nhất của các phương pháp ASCSA là $P _ { \mathrm { a } } { = } 0 . 9$ và threshold $\varepsilon   =   1 0 ^ { - 3 }$ . Kết quả cho thấy ASCSA hiệu quả hơn rất nhiều khi đạt được kết quả tốt hơn về chi phí nhỏ nhất, chi phí trung bình, chi phí lớn nhất, độ lệch chuẩn cũng như thời gian tính toán so với CCSA và MCSA. Hơn nữa, ASCSA cũng chỉ sử dụng một nửa số vòng lặp so với CCSA và MCSA. Sự nổi trội của ASCSA có thể cho thấy rõ hơn trong Hình 5.4. Thật vậy, giá trị hàm thích nghi của ASCSA luôn luôn nhỏ hơn CCSA và MCSA tại mỗi vòng lặp và đặc biệt sự chênh lệch khá lớn. Hơn nữa, khi ASCSA đã đạt được nghiệm tối ưu tại G=40 thì nghiệm tốt nhất hiện tại của CCSA và MCSA vẫn còn rất xa nghiệm tối ưu này.
+
+So sánh giữa CCSA và MCSA cho thấy MCSA có kết quả tốt hơn về nghiệm tối ưu cũng như độ ổn định về tìm kiếm khi giá trị chi phí trung bình và độ lệch chuẩn đều nhỏ hơn so với CCSA ngoại trừ thời gian tính toán.
+
+<!-- page: 126 -->
+
+Bảng 5.4. Kết quả so sánh giữa ba phương pháp CSA cho hệ thống 1
+
+| Phương pháp | CCSA | MCSA | ASCSA |
+| --- | --- | --- | --- |
+| N<sub>p</sub> | 20 | 20 | 20 |
+| G<sub>max</sub> | 80 | 80 | 40 |
+| CPNN ($) | 709,862.052 | 709,862.051 | 709,862.049 |
+| CPTB ($) | 709,888.105 | 709,863.007 | 709,862.162 |
+| CPLN ($) | 710,487.279 | 709,865.793 | 709,863.242 |
+| ĐLC ($) | 95.577 | 0.88 | 0.263 |
+| TGTT (giây) | 0.034 | 0.069 | 0.03 |
+
+![](images/page_125_chart_2.jpg)
+
+Hình 5.4. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 1
+
+Để có thể đánh giá được tính hiệu quả của ba phương pháp áp dụng CSA, các kết quả từ các nghiên cứu khác cũng được so sánh trong bảng 5.5 như GS [2], SA [15], EP [16-17], FEP, IFEP [20], HEP [21], IBFA [23], SOH-PSO [24], RIFEP [25], IPSO [26-27], CS [28], và FIPSO [29]. Các phương pháp HEP [21], IBFA [23], SOH-PSO[24], và IPSO [26-27] đã báo cáo chi phí thấp hơn rất nhiều so với các phương pháp CSA. Tuy nhiên, HEP và IBFA đã vi phạm sử dụng thể tích nước nhiều hơn quy định và SOH-PSO đã báo cáo chi phí không đúng với giá trị được kiểm tra lại như trong dấu ngoặc. Bên cạnh đó, IPSO đã vi phạm giới hạn lưu lượng xả khi giá trị xả nhỏ hơn giá trị cho phép. Rõ ràng rất nhiều phương pháp báo cáo nghiệm tối ưu vi phạm ràng buộc và kết quả này không được chấp nhận. So với các phương pháp khác, các phương pháp CSA này cho giá trị chi phí xấp xỉ hoặc nhỏ hơn rất nhiều và đặc biệt là thời gian tính toán của ba phương pháp rất nhỏ so với 1 giây trong khi các phương pháp khác có thể lên đến hang chục phút ví dụ 101.4 giây của FEP [20], 264 giây của EP [17] và 901 giây
+
+<!-- page: 127 -->
+
+của SA [15]. Kết quả này cho thấy các phương pháp CSA rất hiệu quả cho bài toán đang xét với hệ thống bỏ qua hiệu ứng xả van.
+
+Bảng 5.5. So sánh kết quả giữa các phương pháp cho hệ thống 1
+
+<table><tbody><tr><td>Phương pháp</td><td>Chi Phí ($)</td><td>TGTT (giây)</td><td>Cấu hình máy tính</td></tr><tr><td>EP [17]</td><td>709,863.29</td><td>264</td><td>PC 486</td></tr><tr><td>EP [16]</td><td>709,862.06</td><td>8</td><td>PC-486</td></tr><tr><td>FEP [20]</td><td>709,862.05</td><td>101.4</td><td>Pentium-II,128MB Ram</td></tr><tr><td>IFEP [20]</td><td>709,862.05</td><td>59.7</td><td>Pentium-II,128MB Ram</td></tr><tr><td>RIFEP [25]</td><td>709,862.05</td><td>NA</td><td>1.83 GHz, 1GB Ram</td></tr><tr><td>GS [2]</td><td>709,877.38</td><td>NA</td><td>-</td></tr><tr><td>SA [15]</td><td>709,874.36</td><td>901</td><td>PC- 486</td></tr><tr><td>CS[28]</td><td>709,862.05</td><td>4.54</td><td>Pentium IV, 256 MB Ram</td></tr><tr><td>HEP [21]</td><td>*703,180</td><td>NA</td><td>NA</td></tr><tr><td>IBFA [23]</td><td>*709,837.926</td><td>NA</td><td>NA</td></tr><tr><td>SOH-PSO[24]</td><td>* 709,528.45(709,592.4)</td><td>NA</td><td>NA</td></tr><tr><td>IPSO [26]</td><td>*606,423.16</td><td>NA</td><td>NA</td></tr><tr><td>IPSO [27]</td><td>*606,423.16</td><td>NA</td><td>NA</td></tr><tr><td>FIPSO [29]</td><td>*623,550</td><td>NA</td><td>NA</td></tr><tr><td>CCSA</td><td>709,862.052</td><td>0.034</td><td rowspan="3">2.0 GHz, 4 GB RAM</td></tr><tr><td>MCSA</td><td>709,862.051</td><td>0.069</td></tr><tr><td>ASCSA</td><td>7098,62.0490</td><td>0.03</td></tr></tbody></table>
+
+\*Nghiệm báo cáo vi phạm ràng buộc; NA: Không báo cáo
+
+## 5.7.3. Hệ thống 2 có xét đến hiệu ứng xả van
+
+Để thử nghiệm tính hiệu quả của các phương pháp CSA, hệ thống hai được xây dựng từ hệ thống thứ nhất với số lượng nhà máy gấp 4 lần và hàm chi phí cũng phức tạp hơn. Để thực thi các phương pháp này cho hệ thống đang xét, giá trị $N _ { p }$ được chọn bằng 50 cho 3 phương pháp trong khi đó ASCSA chỉ sử dụng $G _ { m a x }   =   5 0 0$ còn CCSA và MCSA sử dụng 3 giá trị $G_{max}=500,800,1000$ Do hệ thống 2 có kích thước lớn và hàm chi phí phức tạp nên CCSA và MCSA rất khó hội tụ đến nghiệm khả thi thỏa mãn tất cả các ràng buộc. Từ đó, việc gia tăng giá trị $G _ { m a x }$ cho CCSA và MCSA để khảo sát được tính ưu việc của ASCSA so với CCSA và MCSA. Kết quả của ASCSA với 5 giá trị khác nhau của Threshold ε được cho hiển thị trong Bảng 5.6. Giá trị tốt nhất của chi phí nhỏ nhất là 377594.090\$ tương ứng với $P _ { \mathrm { a } }   { = } 0 . 7$ và the threshold $\varepsilon   =   1 0 ^ { - 3 }$ và giá trị lớn nhất của chi phí nhỏ nhất là 383,753.700\$ tương ứng với $P _ { \mathrm { a } } { = } 0 . 8$ và $\varepsilon   =   1 0 ^ { - 1 }$ trong khi tỉ lệ thành công cho tất cả các trường hợp là 100%. Bảng 5.7 so sánh kết quả của CCSA, MCSA và ASCSA tương ứng với nhiều giá trị của $G _ { m a x }$ cho CCSA và MCSA. Kết quả
+
+<!-- page: 128 -->
+
+cho thấy được rằng khi $G _ { m a x } = 5 0 0 _ { \mathrm { { , } } }$ cả CCSA và MCSA không thể hội tụ và khả năng hội tụ đã tăng lên đến 87.70% cho CCSA và 64.10% cho MCSA khi $G _ { m a x } = 8 0 0$ . Kết quả tỉ lệ hội tụ không được cải thiện cho CCSA nhưng hiệu quả cho MCSA khi $G _ { m a x } =$ 1,000. Chi phí tốt nhất cả CCSA và MCSA khi $G _ { m a x } = 1 , 0 0 0$ lần lượt là 389761.0\$ và 390440.15\$. Như vậy ASCSA có thể giảm được chi phí rất lớn so với CCSA và MCSA lần lượt là 12,166.91\$ và 12,846.06\$. Khi so sánh với giá trị lớn nhất của chi phí nhỏ nhất của ASCSA thì kết quả này vẫn còn khá lớn khi ASCSA có thể tiết kiệm được 6,007.3\$ và 6,686.45\$ so với CCSA và MCSA. Rõ ràng sự chênh lệch vẫn là khá lớn. Kết quả so sánh giữa CCSA và MCSA cho thấy CCSA hiệu quả hơn MCSA cho hệ thống 2 này khi có chi phí bé hơn và tỉ lệ thành công cao hơn. Hình 5.5 mô tả đặc tính hội tụ của các phương pháp cho hệ thống 2. Các đường cong cho thấy rằng ASCSA luôn đạt được nghiệm tối ưu tốt hơn CCSA và MCSA cho tất cả các vòng lặp. Hơn nữa thời gian hội tụ của ASCSA nhanh hơn gấp đôi so với CCSA và MCSA do chỉ sử dụng 500 vòng lặp còn hai phương pháp CCSA và MCSA sử dụng đến 1,000 vòng lặp.
+
+Như vậy, kết quả so sánh chỉ ra rằng ASCSA là phương pháp hiệu quả nhất khi có thể giảm được rất lớn chi phí nhiên liệu, thời gian tìm kiếm nghiệm nhanh hơn, sử dụng ít vòng lặp hơn và luôn đạt tỉ lệ thành công 100%. So sánh tương tự dựa trên các tiêu chí trên cho thấy CCSA hiệu quả hơn MCSA khi có kết quả chi phí thấp hơn và tỉ lệ thành công cao hơn.
+
+Nghiệm tối ưu của hai hệ thống ở chương này đạt được từ ASCSA được đính kèm trong phụ lục.
+
+Bảng 5.6. Kết quả đạt được của ASCSA cho hệ thống 2
+
+| Threshold ε(Pa) | 10<sup>-1</sup> (0.8) | 10<sup>-2</sup> (0.9) | 10<sup>-3</sup> (0.7) | 10<sup>-4</sup> (0.9) | 10<sup>-5</sup> (0.8) |
+| --- | --- | --- | --- | --- | --- |
+| CPNN ($) | 383,753.700 | 379,544.06 | 377,594.090 | 378,850.557 | 379,919.061 |
+| CPTB ($) | 390,256.967 | 386,213.51 | 385,393.368 | 384,333.231 | 388,163.143 |
+| CPLN ($) | 401,084.703 | 396,902.78 | 394,586.528 | 395,980.920 | 400,556.727 |
+| ĐLC ($) | 4,358.561 | 3,536.198 | 3,509.840 | 3,463.811 | 4,804.250 |
+| TLTC | 100% | 100% | 100% | 100% | 100% |
+| TGTT (giây) | 3.4 | 3.3 | 3.23 | 3.3 | 3.5 |
+
+Bảng 5.7. So sánh kết quả đạt được cho hệ thống 2
+
+| Phương pháp | CCSA | MCSA | ASCSA | CCSA | MCSA | CCSA | MCSA |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| N<sub>p</sub> | 50 | 50 | 50 | 50 | 50 | 50 | 50 |
+| G<sub>max</sub> | 500 | 500 | 500 | 800 | 800 | 1,000 | 1,000 |
+| CPNN ($) | - | - | 377594.09 | 392236.8 | 394144.7 | 389761.0 | 390440.15 |
+| CPTB ($) | - | - | 385393.37 | 403638.3 | 402051.9 | 398739.6 | 403291.35 |
+| CPLN ($) | - | - | 394586.53 | 414370 | 413609 | 407834.5 | 410936.33 |
+| ĐLC ($) | - | - | 3509.8396 | 4675.9 | 4465.073 | 3552.826 | 3594.85 |
+| TLTC | 0% | 0% | 100% | 87.70% | 64.10% | 84.75% | 75.6% |
+| TGTT (giây) | 3.18 | 3.65 | 3.23 | 5.4 | 6.1 | 6.9 | 7.8 |
+
+<!-- page: 129 -->
+
+![](images/page_128_chart_0.jpg)
+
+Hình 5.5. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 2
+
+## 5.8. Tóm Tắt
+
+Ở chương này, các phương pháp CCSA, MCSA và ASCSA được áp dụng để điều phối hệ thống thủy nhiệt điện ngắn hạn xét chiều cao cột nước không đổi và thể tích hồ thủy điện trong toàn thời gian. Các phương pháp được áp dụng cho hai hệ thống và so sánh với các phương pháp khác. So sánh tính hiệu quả giữa các phương pháp CSA với các phương pháp trước cho thấy rằng CSA hiệu quả hơn trong tìm nghiệm tối ưu và thời gian tính toán nhanh cho nghiệm khả thi. So sánh giữa các phương pháp CSA với nhau chỉ ra tính hiệu quả của ASCSA vượt trội CCSA và MCSA khi có chi phí thấp hơn rất nhiều, thời gian tính toán nhanh và tỉ lệ thành công cao. Với hai phương pháp còn lại, CCSA tỏ ra hiệu quả hơn MCSA.
+
+Liên quan đến vấn đề vận hành tối ưu các nhà máy thủy nhiệt điện trên hệ thống điện thực tế, một số các giá trị của biến điều khiển và biến phụ thuộc ở nghiệm tối ưu cũng là các thông số vận hành nhà máy nhiệt điện và thủy điện mà các vận hành viên phải tuân thủ. Ở bài toán này, công suất nhiệt điện và thể tích thủy điện được chọn làm biến điều khiển; tuy nhiên, giá trị vận hành chính ở nhà máy nhiệt điện và thủy điện là công suất nhiệt điện và lưu lượng xả. Các vận hành viên ở các nhà máy nhiệt điện sẽ dựa vào biến điều khiển công suất nhiệt điện để vận hành các thông số trong lò đốt trong khi đó vận hành viên ở các nhà máy thủy điện sẽ dựa vào biến phụ thuộc lưu lượng xả để điều chỉnh cánh hướng sao cho lưu lượng xả qua turbine thủy điện đúng bằng giá trị ở nghiệm tối ưu và công suất thủy điện đúng bằng giá trị mong muốn. Ở chương này, các phương pháp CSA đã được áp dụng thành công cho bài toán FH-ST-HTS có xét đến thể tích hồ chứa với chất lượng lời giải cao và thời gian tính toán nhanh. Do đó, khả năng áp dụng của các phương pháp này cho các hệ thống điện thực tế là hoàn toàn khả thi.
+
+<!-- page: 130 -->
+
+# CHƯƠNG 6: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH ĐIỀU ĐỘ TỐI ƯU HỆ THỐNG THỦY NHIỆT ĐIỆN XÉT CHIỀU CAO CỘT NƯỚC BIẾN ĐỔI
+
+## 6.1. Giới Thiệu
+
+So với bài toán điều độ tối ưu hệ thống thủy nhiệt điện xét chiều cao cột nước không đổi ở chương 4 và chương 5, bài toán điều độ hệ thống thủy nhiệt điện xét đến sự biến đổi của chiều cao cột nước trong thời gian hoạch định trong chương này hoàn toàn phức tạp hơn. Trong hai chương trước, mối quan hệ giữa công suất thủy điện và lưu lượng xả qua turbine là một hàm toán học bậc hai trong đó lưu lượng xả là hàm số theo biến số công suất phát còn thể tích hồ chứa được bỏ qua do giả thuyết chiều cao cột nước không thay đổi. Ở chương này, công suất thủy điện là hàm số theo biến lưu lượng xả trong khoảng thời gian và thể tích hồ chứa ở cuối khoảng đó. Với mối liên hệ này cho thấy việc xác định công suất thủy điện trở nên phức tạp hơn. Hơn nữa, các hồ thủy điện ở hai chương trước không có mối liên hệ về lưu lượng xả và lưu lượng về giữa hồ phía trên và hồ phía dưới do các hồ thủy điện là độc lập. Ngược lại, một hệ thống các hồ thủy điện bậc thang được xét ở chương này với thời gian nước di chuyển từ hồ phía trên về hồ phía dưới cũng được xét đến. Các phương pháp CCSA, MCSA và ASCSA vẫn được áp dụng cho bài toán này trong khi ALHN không thể giải quyết được do tính phức tạp về số lượng ràng buộc và biến số lớn. Chi tiết bài toán được phân tích trong mục 6.2.
+
+## 6.2. Mô Hình Bài Toán
+
+Tương tự như chương 4 và 5, hàm mục tiêu của bài toán là cực tiểu chi phí phát điện
+
+$$
+\text {Min} C _ {T} = \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} t _ {m} F _ {i m}\tag{6.1}
+$$
+
+Trong đó CT là tổng chi phí phát điện trong tất cả thời gian, $t _ { m }$ là thời gian của khoảng thứ m và $F _ { i m }$ là chi phí phát điện mỗi giờ của nhà máy thứ i trong khoảng m. Hàm chi phí cổ điển khi bỏ qua hiệu ứng xả van như sau [1]:
+
+$$
+F _ {i m} = \left[ a _ {s i} + b _ {s i} P _ {s i, m} + c _ {s i} P _ {s i, m} ^ {2} \right]\tag{6.2}
+$$
+
+Hàm chi phí khi có xét đến thành phần Sin do hiệu ứng xả van như sau
+
+$$
+F _ {i m} = \left[ a _ {s i} + b _ {s i} P _ {s i, m} + c _ {s i} P _ {s i, m} ^ {2} + \left| d _ {s i} \times \sin \left(e _ {s i} \times \left(P _ {s i} ^ {\min} - P _ {s i, m}\right)\right) \right| \right]\tag{6.3}
+$$
+
+Các ràng buộc hệ thống và thủy điện
+
+Ràng buộc cân bằng công suất: Tổng công suất phát của thủy điện và nhiệt điện phải bằng tổng công suất tải và tổn thất
+
+$$
+\sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} - P _ {L, m} - P _ {D, m} = 0\tag{6.4}
+$$
+
+<!-- page: 131 -->
+
+Trong đó công suất thủy điện $P _ { h j , m }$ được xác định như sau:
+
+$$
+P _ {h j, m} = C _ {1 h j} (V _ {j, m}) ^ {2} + C _ {2 h j} (Q _ {j, m}) ^ {2} + C _ {3 h j} Q _ {j, m} V _ {j, m} + C _ {4 h j} V _ {j, m} + C _ {5 h j} Q _ {j, m} + C _ {6 h j}\tag{6.5}
+$$
+
+Ràng buộc cân bằng nguồn nước: Lưu lượng nước trong hồ, lưu lượng nước $\mathbf { v } \dot { \hat { \mathbf { e } } }$ hồ, lưu lượng xả và lưu lượng thấm qua đập trong $t _ { m }$ giờ ở khoảng m phải tuân thủ quy luật sau:
+
+$$
+V _ {j, m - 1} - V _ {j, m} + I _ {j, m} - Q _ {j, m} - S _ {j, m} + \sum_ {i = 1} ^ {N u} \sum_ {m = 1} ^ {M} (Q _ {i, m - \tau_ {i, j}} + S _ {i, m - \tau_ {i, j}}) = 0\tag{6.6}
+$$
+
+Ở bài toán này, một hệ thống gồm $N _ { u }$ các hồ thủy điện bậc thang được xét đến như Hình 6.1. Theo hình có thể thấy, lưu lượng xả từ hồ thứ nhất và thứ hai sẽ trở thành lưu lượng về hồ thứ ba. Tương tự, lưu lượng xả ở hồ thứ ba trở thành lưu lượng về của hồ thứ 4. Ở đây có xét đến thời gian trễ của nước xả từ hồ trên về hồ dưới. Ví dụ, $\tau _ { 1 , 3 }$ là thời gian nước chảy từ hồ thứ nhất về hồ thứ ba và $\tau _ { 2 , 3 }$ là thời gian nước chảy tử hồ thứ hai về hồ thứ ba. Sẽ không có thời gian trễ nước chảy từ hồ thứ nhất và hồ thứ hai về hồ thứ tư cũng như từ hồ thứ nhất về hồ thứ hai.
+
+![](images/page_130_image_5.jpg)
+
+Hình 6.1. Một hệ thống các hồ thủy điện bậc thang
+
+Ràng buộc thể tích hồ chứa thời gian đầu và cuối: Thể tích hồ chứa lúc lên kế hoạch phát điện tối ưu $( V _ { j , \boldsymbol { \theta } } )$ và thể tích cuối thời gian thực hiện $( V _ { j , M } )$ phải đúng bằng mực nước đang có trong hồ lúc đầu $( V _ { j , i n i t i a l } )$ và mực nước yêu cầu lúc kết thúc $( V _ { j , E n d } )$
+
+$$
+V _ {j, 0} = V _ {j, \text {initial}}; V _ {j, M} = V _ {j, E n d}\tag{6.7}
+$$
+
+Ràng buộc giới hạn hồ chứa: Thể tích hồ nước thủy điện luôn luôn được giám sát sao cho nằm trong khoảng giới hạn nhỏ nhất và lớn nhất nhằm đảm bảo chiều cao cột nước lớn hơn mực nước chết và nhỏ hơn mực nước dâng bình thường
+
+$$
+V _ {j, \min} \leq V _ {j, m} \leq V _ {j, \max}; j = 1, 2,..., N _ {2}; m = 1, 2,..., M\tag{6.8}
+$$
+
+<!-- page: 132 -->
+
+Ràng buộc giới hạn lưu lượng xả: Lưu lượng xả qua turbine thủy điện phải nằm trong giới hạn nhỏ nhất và lớn nhất như thiết kế ban đầu.
+
+$$
+Q _ {j, \min} \leq Q _ {j, m} \leq Q _ {j, \max}; j = 1, 2,..., N _ {2}; m = 1, 2,..., M\tag{6.9}
+$$
+
+Ràng buộc giới hạn máy phát điện: Công suất máy phát nhà máy thủy điện và nhiệt điện phải nằm trong giới hạn nhỏ nhất và lớn nhất để đảm bảo an toàn cho máy phát
+
+$$
+P _ {s i, \min} \leq P _ {s i, m} \leq P _ {s i, \max}; i = 1, 2, \dots , N _ {1}; m = 1, 2, \dots , M\tag{6.10}
+$$
+
+$$
+P _ {h j, \mathrm{min}} \leq P _ {h j, m} \leq P _ {h j, \mathrm{max}}; j = 1, 2, \dots , N _ {2}; m = 1, 2, \dots , M\tag{6.11}
+$$
+
+## 6.3. Tính Toán Lưu Lượng Xả Và Công Suất Nhiệt Điện Cân Bằng
+
+Trong bài toán này, các ràng buộc cân bằng công suất (6.4) và ràng buộc cân bằng nguồn nước (6.6) cần được giải quyết một cách hiệu quả trong khi đó ràng buộc thể tích hồ chứa ở đầu và cuối quá trình vận hành tối ưu được giải quyết một cách dễ dàng. Với giả sử tất cả các lưu lượng xả nước từ khoảng thời gian đầu tiên đến khoảng gần cuối cùng (M-1) và thể tích hồ chứa ở đầu và cuối thời gian hoạch định đã biết, lưu lượng xả ở khoảng thứ M được tìm ra như sau:
+
+$$
+Q _ {j, M, d} = V _ {j, 0} - V _ {j, M} + \sum_ {m = 1} ^ {M} I _ {j, m} - \sum_ {m = 1} ^ {M - 1} Q _ {j, m} - \sum_ {m = 1} ^ {M} S _ {j, m} + \sum_ {i = 1} ^ {N u} \sum_ {m = 1} ^ {M} (Q _ {i, m - \tau_ {i, j}} + S _ {i, m - \tau_ {i, j}})\tag{6.12}
+$$
+
+Tương tự, với giả sử tất cả công suất thủy điện và nhiệt điện (trừ nhà máy nhiệt điện thứ nhất) đã biết, công suất tổ máy nhiệt điện cân bằng thứ nhất được tính như sau:
+
+$$
+P _ {s 1, m} = P _ {D, m} + P _ {L, m} - \sum_ {i = 2} ^ {N _ {1}} P _ {s i, m} - \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m}\tag{6.13}
+$$
+
+## 6.4. Áp Dụng Phương Pháp CCSA Cho Bài Toán
+
+## 6.4.1. Khởi tạo
+
+Một dân số gồm $N _ { p }$ tổ chim được biểu diễn bởi $X = [ X _ { 1 } , X _ { 2 } , \cdots , X _ { N p } ] ^ { T }$ , trong đó mỗi tổ chim đại diện cho một trứng cuckoo (một nghiệm) là $X _ { d }   ( d = 1 ,   . . . ,   N _ { p } )$ và $X _ { d } = [ P _ { s i , m , d } ,$ $\mathcal { Q } _ { j , m , d } ]$
+
+Các biến điều khiển trong mỗi nghiệm tối ưu được khởi tạo như sau:
+
+$$
+P _ {s i, m, d} = P _ {s i, \min} + r a n d * (P _ {s i, \max} - P _ {s i, \min}); i = 2,..., N _ {1}; m = 1,..., M\tag{6.14}
+$$
+
+$$
+Q _ {j, m, d} = Q _ {j, \min} + r a n d * (Q _ {j, \max} - Q _ {j, \min}); j = 1,..., N _ {2}; m = 1,..., M - 1\tag{6.15}
+$$
+
+Sau khi có giá trị lưu lượng xả theo thời gian ở M-1 khoảng đầu tiên, lưu lượng xả ở khoảng thứ M sẽ được tính theo (6.12) và cuối cùng thể tích hồ chứa ở cuối mỗi khoảng được tính như sau dựa vào ct. (6.6):
+
+$$
+V _ {j, m} = V _ {j, m - 1} + I _ {j, m} - q _ {j, m} - S _ {j, m} + \sum_ {i = 1} ^ {N _ {u}} (Q _ {j, m - \tau_ {i, j}} + S _ {i, m - \tau_ {i, j}}); m = 1, 2, \dots , M - 1\tag{6.16}
+$$
+
+<!-- page: 133 -->
+
+Đến thời điểm hiện tại, thể tích hồ chứa và lưu lượng xả tại các hổ thủy điện đã được xác định. Từ đó, công suất thủy điện được tính theo ct. (6.5) và công suất nhiệt điện cân bằng được tìm ra theo ct. (6.13).
+
+Các biến điều khiển và biến phụ thuộc cho mỗi nghiệm đã được xác định. Từ đó, chất lượng nghiệm được đánh giá thông qua hàm thích nghi như sau:
+
+$$
+F T _ {d} = \left( \begin{array}{l} \sum_ {m = 1} ^ {M} \sum_ {i = 1} ^ {N _ {1}} F _ {i} (P _ {s i, m, d}) + K _ {s} \sum_ {m = 1} ^ {M} (P _ {s 1, m, d} - P _ {s 1} ^ {\lim}) ^ {2} + K _ {V} \sum_ {j = 1} ^ {N _ {2}} \sum_ {m = 1} ^ {M - 1} (V _ {j, m, d} - V _ {j} ^ {\lim}) ^ {2} \\ + K _ {Q} \sum_ {j = 1} ^ {N _ {2}} \Big ((Q _ {j, M, d} - Q _ {j} ^ {\lim}) ^ {2} \Big) + K _ {h} \sum_ {j = 1} ^ {N _ {2}} \sum_ {m = 1} ^ {M} (P _ {h j, m, d} - P _ {h j} ^ {\lim}) ^ {2} \end{array} \right)\tag{6.17}
+$$
+
+Các giới hạn dùng để phạt các biến cân bằng và biến phụ thuộc như sau:
+
+$$
+P _ {s 1} ^ {\lim} = \left\{ \begin{array}{l l} P _ {s 1, \max} & \text {if} P _ {s 1, m, d} > P _ {s 1, \max} \\ P _ {s 1, \min} & \text {if} P _ {s 1, m, d} <   P _ {s 1, \min}; m = 1, \dots , M \\ P _ {s 1, m, d} & \text {otherwise} \end{array} \right.\tag{6.18}
+$$
+
+$$
+V _ {j} ^ {\lim} = \left\{ \begin{array}{l l} V _ {j, \max} & \text {if} V _ {j, m, d} > V _ {j, \max} \\ V _ {j, \min} & \text {if} V _ {j, m, d} <   V _ {j, \min} \quad ; j = 1,.., N _ {2}; \\ V _ {j, m, d} & \text {otherwise} \quad m = 1,.., M - 1 \end{array} \right.\tag{6.19}
+$$
+
+$$
+Q _ {j} ^ {\lim} = \left\{ \begin{array}{l l} Q _ {j, \max} & \text {if} Q _ {j, M, d} > Q _ {j, \max} \\ Q _ {j, \min} & \text {if} Q _ {j, M, d} <   Q _ {j, \min}; j = 1,.., N _ {2} \\ Q _ {j, M, d} & \text {otherwise} \end{array} \right.\tag{6.20}
+$$
+
+$$
+P _ {h j} ^ {\lim} = \left\{ \begin{array}{l l} P _ {h j, \max} & \text {if} P _ {h j, m, d} > P _ {h j, \max} \\ P _ {h j, \min} & \text {if} P _ {h j, m, d} <   P _ {h j, \min}; j = 1,.., N _ {2}; \\ P _ {h j, m, d} & \text {otherwise} \quad m = 1,.., M \end{array} \right.\tag{6.21}
+$$
+
+## 6.4.2. Tạo ra thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+Các nghiệm mới được tạo ra dựa vào nghiệm tốt nhất đến thời điểm hiện tại theo cơ chế Lévy flights như công thức sau:
+
+$$
+X _ {d} ^ {n e w} = X b e s t _ {d} + \alpha \times r a n d \times \Delta X _ {d} ^ {n e w}\tag{6.22}
+$$
+
+Trong đó $\varDelta { { X } _ { d } } ^ { n e w }$ được tính toán như công thức (4.33).
+
+Các nghiệm mới được tạo ra sẽ được kiểm tra giới hạn và hiệu chỉnh theo công thức sau:
+
+$$
+P _ {s i, m, d} = \left\{ \begin{array}{l l} P _ {s i, \max} & \text {if} \quad P _ {s i, m, d} > P _ {s i, \max}; i = 2, \dots , N _ {1} \\ P _ {s i, \min} & \text {if} \quad P _ {s i, m, d} <   P _ {s i, \min} \quad m = 1, \dots , M \\ P _ {s i, m, d} & \text {otherwise} \end{array} \right.\tag{6.23}
+$$
+
+$$
+Q _ {j, m, d} = \left\{ \begin{array}{l l} Q _ {j, \max} & \text {if} \quad Q _ {j, m, d} > Q _ {j, \max}; j = 1, \dots , N _ {2} \\ Q _ {j, \min} & \text {if} \quad Q _ {j, m, d} <   Q _ {j, \min} \quad m = 1, \dots , M - 1 \\ Q _ {j, m, d} & \text {otherwise} \end{array} \right.\tag{6.24}
+$$
+
+<!-- page: 134 -->
+
+Dựa vào công thức (6.12) và (6.16), lưu lượng xả ở khoảng M và thể tích hồ chứa ở các khoảng m được xác định. Sau đó, thay các giá trị này vào (6.5) và (6.13), có thể tính được công suất thủy điện và nhiệt điện còn lại.
+
+## 6.4.3. Tạo ra thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+Hành động phát hiện trứng lạ của chim chủ với một xác suất $P _ { a }$ nhằm tạo ra nghiệm mới giống như cơ chế Lévy Flights ở mục trên. Công thức sau cũng được áp dụng như các chương 4 và 5 ở trên
+
+$$
+X _ {d} ^ {\text {dis}} = \left\{ \begin{array}{l l} X \text {best} _ {d} + K \times \Delta X _ {d} ^ {\text {dis}} & \text {if} \text {rand} <   P a \\ X \text {best} _ {d} & \text {otherwise} \end{array} \right.\tag{6.25}
+$$
+
+Các nghiệm mới này sau đó được kiểm tra giới hạn biên và hiệu chỉnh như các công thức (6.23) và (6.24). Dựa vào công thức (6.12) và (6.16), lưu lượng xả ở khoảng M và thể tích hồ chứa ở các khoảng m được xác định. Sau đó, thay các giá trị này vào (6.5) và (6.13), ta có thê tính được công suất thủy điện và nhiệt điện.
+
+## 6.4.4. Tiêu chuẩn dừng vòng lặp
+
+Thuật toán lặp sẽ ngừng làm việc khi vòng lặp hiện tại G đạt giá trị lớn nhất xác định trước đó G<sub>max</sub>.
+
+## 6.4.5. Các bước tính toán của phương pháp CCSA cho bài toán VH-ST-HTS
+
+Toàn bộ thủ tục tính toán khi áp dụng phương pháp CCSA cho bài toán VH-ST-HTS này được trình bày trong lưu đồ giải thuật hình 6.2 và được mô tả như sau.
+
+Bước 1: Chọn các thông số cho CCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ và số vòng lặp lớn nhất $G _ { m a x }$
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 6.4.1
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 3: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest
+
+\- Các nghiệm còn lại đều được đặt là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights như mục 6.4.2
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24).
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+<!-- page: 135 -->
+
+Bước 5: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ như mục 6.4.3
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24).
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 7: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn.
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại đều được đặt là Xbestd
+
+Bước 8: Nếu G<G<sub>max</sub>, gán G = G + 1 và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+![](images/page_134_image_10.jpg)
+
+## Buc 8
+
+Hình 6.2. Lưu đồ giải thuật áp dụng CCSA cho bài toán xem xét
+
+<!-- page: 136 -->
+
+## 6.5. Áp Dụng Phương Pháp MCSA Cho Bài Toán VH-ST-HTS
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp MCSA cho bài toán VH-ST-HTS này được trình bày trong lưu đồ giải thuật hình 6.3 và được mô tả như sau.
+
+Bước 1: Chọn các thông số cho MCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$
+
+số vòng lặp lớn nhất $G _ { m a x }$ và tỉ lệ giữa số trứng trong nhóm tốt và số trứng trong nhóm xấu.
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 6.4.1
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 3: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest
+
+\- Các nghiệm còn lại đều được đặt là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 4: Chia các nghiệm ra làm hai nhóm, nhóm tốt và nhóm xấu
+
+\- Tạo nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights cho hai nhóm này theo mục 4.5.2.1 và 4.5.2.2
+
+\- Nhóm các nghiệm mới ở hai nhóm thành một nhóm duy nhất
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24).
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 5: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ như mục 6.4.3
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24).
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 7: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn.
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest
+
+Bước 8: Nếu G<G<sub>max</sub>, gán G = G + 1 và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 137 -->
+
+![](images/page_136_image_0.jpg)
+
+Hình 6.3. Lưu đồ giải thuật áp dụng MCSA cho bài toán xem xét
+
+## 6.6. Áp Dụng Phương Pháp ASCSA Cho Bài Toán VH-ST-HTS
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp ASCSA cho bài toán VH-ST-HTS này được trình bày trong lưu đồ giải thuật hình 6.4 và được mô tả như sau.
+
+Bước 1: Chọn thông số điều khiển cho ASCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng
+
+lạ $P _ { a ,   \hat { \mathbf { s } \hat { \mathbf { o } } } }$ vòng lặp lớn nhất $G _ { m a x }$ và giá trị ngưỡng threshold ε.
+
+Bước 2: Khởi tạo $N _ { p }$ tổ chim như mục 6.4.1
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+<!-- page: 138 -->
+
+Bước 3: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest
+
+\- Các nghiệm còn lại đều được đặt là Xbestd.
+
+\- Khởi động với vòng lặp thứ nhất G = 1.
+
+Bước 4: Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights như mục 6.4.2
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24)
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 5: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- So sánh nghiệm mới và nghiệm cũ để giữ lại nghiệm tốt hơn
+
+Bước 6: Tạo ra nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ thích nghi như mục 3.4.2 ở chương 3.
+
+\- Kiểm tra giới hạn và hiệu chỉnh theo công thức (6.23) và (6.24).
+
+\- Tính toán lưu lượng xả tại khoảng M và thể tích hồ ở các khoảng m theo công thức (6.12) và (6.16)
+
+\- Tính toán công suất nhiệt điện và thủy điện sử dụng công thức (6.5) và (6.13)
+
+Bước 7: Tính toán hàm thích nghi (6.17) cho mỗi nghiệm
+
+\- Áp dụng kỹ thuật chọn lọc mới như mục 3.4.1 để giữ lại N<sub>p</sub> nghiệm tốt nhất.
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm nghiệm tốt nhất Gbest và các nghiệm còn lại đều được đặt là Xbestd
+
+Bước 8: Nếu G<G<sub>max</sub>, gán $G = G + 1$ và trở lại bước 4. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 139 -->
+
+![](images/page_138_image_0.jpg)
+
+Hình 6.4. Lưu đồ giải thuật áp dụng ASCSA cho bài toán xem xét
+
+## 6.7. Kết Quả Số
+
+Để kiểm tra tính hiệu quả của CCSA, MCSA và ASCSA cho bài toán FH-ST-HTS, bốn hệ thống được sử dụng để so sánh kết quả giữa các phương pháp này với nhau và giữa các phương pháp này với các phương pháp ở các nghiên cứu trước. Bốn hệ thống được chia ra hai trường hợp: không xét và xét hiệu ứng xả van tại các nhà máy nhiệt điện. Trường hợp 1 gồm 2 hệ thống [30], [39] và trường hợp 2 gồm 2 hệ thống [41], [92].
+
+## 6.7.1. Hai hệ thống không xét hiệu ứng xả van
+
+<!-- page: 140 -->
+
+Ở mục này, các phương pháp CSA sẽ được áp dụng cho hai hệ thống thủy nhiệt điện gồm bốn nhà máy thủy điện bậc thang và một nhà máy nhiệt điện được hoạch định phát điện tối ưu trong trong 24 khoảng 1 giờ. Thời gian nước chảy từ hồ phía trên xuống hồ phía dưới ở hệ thống 1 lần lượt là $\tau _ { 1 3 } { = } 2$ $\tau _ { 2 3 } { = } 3$ , τ34=4 giờ, và ở hệ thống 2 lần lượt là $\tau _ { 1 3 } { = } 1$ $\tau _ { 2 3 } { = } 2$ $\tau _ { 3 4 } { = } 2$ giờ. Dữ liệu hệ thống được trích dẫn từ nghiên cứu [30] và [39] và được đính kèm ở phục lục.
+
+Để thực thi cho hai hệ thống này, ba phương pháp CCSA, MCSA và ASCSA được chọn giá trị các thông số điều khiển $N _ { p }$ và $G _ { m a x }$ như trong bảng 6.1 trong khi đó các giá trị $P _ { a }$ được chọn trong khoảng từ 0.1 đến 0.9 và giá trị threshold ε cho ASCSA được chọn $1 0 ^ { - 5 }$ đến $1 0 ^ { - 1 }$ như các chương trước. Từ bảng thông số có thể thấy giá trị $G _ { m a x }$ được chọn cho MCSA là lớn nhất trong khi đó giá trị này là nhỏ nhất cho ASCSA.
+
+Bảng 6.1. Cài đặt thông số các phương pháp CSA cho hệ thống 1 và 2
+
+<table><tbody><tr><td>HT</td><td>Phương pháp</td><td>N<sub>p</sub></td><td>G<sub>max</sub></td></tr><tr><td rowspan="3">1</td><td>CCSA</td><td>200</td><td>3,000</td></tr><tr><td>MCSA</td><td>200</td><td>6,000</td></tr><tr><td>ASCSA</td><td>200</td><td>2,000</td></tr><tr><td rowspan="3">2</td><td>CCSA</td><td>200</td><td>9,000</td></tr><tr><td>MCSA</td><td>200</td><td>9,000</td></tr><tr><td>ASCSA</td><td>200</td><td>3,000</td></tr></tbody></table>
+
+Bảng 6.2. So sánh kết quả giữa các phương pháp CSA cho hệ thống 1 và 2
+
+<table><tbody><tr><td>HT</td><td>PP</td><td>CPNN ($)( ε, P<sub>a</sub>)</td><td>CPTB ($)</td><td>CPLN ($)</td><td>DLC ($)</td><td>TGTT (giây)</td></tr><tr><td rowspan="3">1</td><td>CCSA</td><td>922,896.12(__, 0.5)</td><td>923,292.06</td><td>923,788.7449</td><td>180.0018</td><td>25.8</td></tr><tr><td>MCSA</td><td>923,034.40(__, 0.6)</td><td>923,356.41</td><td>923,928.6972</td><td>201.9796</td><td>65.4</td></tr><tr><td>ASCSA</td><td>922,366.84(10<sup>-4</sup>, 0.5)</td><td>923,027.17</td><td>924,177.9045</td><td>428.5601</td><td>24.6</td></tr><tr><td rowspan="3">2</td><td>CCSA</td><td>154,594.88(__, 0.5)</td><td>154,595.7</td><td>154,596.2</td><td>0.2800</td><td>54.6</td></tr><tr><td>MCSA</td><td>154,597.62</td><td>154,600.37</td><td>154,602.4711</td><td>0.9508</td><td>89.6</td></tr><tr><td>ASCSA</td><td>154,594.32(10<sup>-1</sup>, 0.4)</td><td>154,598.72</td><td>154,905.8722</td><td>24.8486</td><td>35.4</td></tr></tbody></table>
+
+Tóm tắt kết quả đạt được từ các phương pháp CSA được trình bày trong bảng 6.2 cho thấy giá trị nhỏ nhất của chi phí đạt được từ CCSA, MCSA và ASCSA cho hệ thống thứ nhất lần lượt là 922,896.1233\$, 923,034.4051\$ và 922,366.8492\$ và cho hệ thống thứ hai là 154594.882\$, 154,597.6257\$ và 154594.3212\$. So sánh giữa các con số này cho thấy ASCSA đạt được chỉ phí nhỏ nhất cho cả hai hệ thống trong khi đó MCSA kém hiệu
+
+<!-- page: 141 -->
+
+quả nhất với chi phí cao nhất. So sánh thời gian tính toán cũng cho kết quả tương tự với thời gian lâu nhất của MCSA và nhanh nhất của ASCSA. Với hệ thống 1, CCSA và ASCSA đã sử dụng thời gian xấp xỉ nhau và nhỏ hơn MCSA trong khi đó ở hệ thống 2, ASCSA đã nhanh hơn CCSA khi sử dụng 35.4 giây trong khi đó CCSA sử dụng 54.6 giây. Đặc tính hội tụ cho hai hệ thống được thể hiện ở hình 6.5 và 6.6 đã minh họa được quá trình tìm kiếm nghiệm của các phương pháp. Ở đó, ASCSA đã đạt được chi phí nhỏ nhất ở mỗi vòng lặp và nhỏ hơn rất nhiều so với CCSA và đặc biệt là MCSA. Hơn nữa, khi ASCSA đã dừng quá trình tìm kiếm mà CCSA và MCSA vẫn tiếp tục quá trình và kết thúc ở vòng lặp cuối cùng với chi phí vẫn còn cao hơn rất nhiều so với ASCSA.
+
+Phân tích từ so sánh trên có thể dẫn đến kết luận rằng ASCSA là phương pháp hiệu quả nhất và MCSA là phương pháp kém hiệu quả nhất khi áp dụng cho hai hệ thống thủy nhiệt điện không xét đến hiệu ứng xả van.
+
+![](images/page_140_chart_2.jpg)
+
+Hình 6.5. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 1
+
+Bảng 6.3 và 6.4 trình bày kết quả so sánh giữa các phương pháp CSA và các phương pháp ở các nghiên cứu trước đây cho hai hệ thống đang xét. Ngoài các giá trị về chi phí và thời gian, các vi phạm về ràng buộc hệ thống từ các phương pháp cũng được báo cáo một cách cụ thể. Như thông tin từ cột cuối cùng của bảng 6.3, các phương pháp GA [30], MHDE [33], LWPSO [34], HDE–SQP [44], ACRCGA [52] và IDE [53] đã vi phạm các ràng buộc như ràng buộc thể tích hồ chứa ở khoảng cuối thời gian hoạch định và/hoặc vi phạm về giới hạn lưu lượng xả. Ví dụ, chênh lệch giữa giá trị yêu cầu và giá trị đạt được của thể tích hồ chứa thứ tư ở cuối thơi gian hoạc định của GA và MHDE lần lượt là $0 . 1 \; \mathrm { x } 1 0 ^ { 4 } ( \mathrm { m } ^ { 3 } )$ và $1 3 ~ \mathrm { x } 1 0 ^ { 4 } ( \mathrm { m } ^ { 3 } )$ . Các phương pháp HDE–SQP [44], ACRCGA [52], IDE [53] và MDNLPSO [57] có giá trị chi phí nhỏ hơn các phương pháp CSA; tuy nhiên, HDE-SQP đã vi phạm thể tích hồ chứa thứ tư ở cuối khoảng thời gian hoạch định, ACRCGA vi phạm ở hồ chứa thứ 3 và thứ 4 trong khi đó IDE đã vi phạm giới hạn biên dưới của lưu lượng xả tại hồ thủy điện thứ tư và MDNLPSO đã vi phạm giới hạn biên của hồ chứa thứ ba và thứ tư. Do những vi phạm liệt kê trên nên các phương pháp này
+
+<!-- page: 142 -->
+
+đã không còn giá trị để so sánh và đánh giá còn lại sẽ dựa vào các phương pháp có nghiệm tối ưu khả thi không vi phạm ràng buộc. So sánh với các phương pháp khả thi còn lại, các phương pháp CSA đều cho chi phí nhỏ hơn tất cả ngoại trừ IPSO[36] có chi phí nhỏ hơn CCSA và MCSA.
+
+Tương tự, so sánh ở bảng 6.4 cho hệ thống hai cũng có chỉ ra những vi phạm của các phương pháp ở cột cuối cùng. Phương pháp TLBO [51] đã báo cáo chi phí đạt được là 154,594.1\$; tuy nhiên, tính toán lại cho từ giá trị công suất nhiệt điện cho thấy giá trị chính xác là 154,693.135\$. Ngoài ra, các phương pháp ISAPSO[49], TLBO [51], QOTLBO [51] và QMBBO [54] đã báo cáo nghiệm tối ưu vi phạm các ràng buộc như thể tích ở khoảng cuối cùng ở các hồ chứa. So sánh với các phương pháp không báo cáo nghiệm tối ưu hoặc có nghiệm tối ưu khả thi cho thấy các phương pháp CSA hiệu quả hơn hầu hết các phương pháp ngoại trừ MDNL-PSO [57] có giá trị chi phí nhỏ hơn CCSA và ASCSA không đáng kể.
+
+![](images/page_141_chart_2.jpg)
+
+Hình 6.6. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 2
+
+<!-- page: 143 -->
+
+Bảng 6.3. So sánh kết quả giữa các phương pháp cho hệ thống 1
+
+| Phương pháp | Chi phí($) | TGTT (giây) | Kiểm tra vi phạm ràng buộc |
+| --- | --- | --- | --- |
+| CEP [20] | 930,166.25 | 2,292.1 | NA |
+| FEP [20] | 930,267.92 | 1,911.2 | NA |
+| IFEP [20] | 930,129.82 | 1,033.2 | NA |
+| GA* [30] | 926,707 | 1,920 | Vi phạm V<sub>4</sub>,end |
+| BCGA [41] | 926,922.71 | 64.51 | NA |
+| RCGA [41] | 925,940.03 | 57.52 | NA |
+| MDE [32] | 922,555.44 | - | Không vi phạm |
+| MHDE [33] | *921,893.94 | 8 | Vi phạm V<sub>4</sub>,end |
+| GCPSO [34] | 927,288.4 | 182.4 | NA |
+| GWPSO [34] | 930,622.5 | 129.1 | NA |
+| LCPSO [34] | 925,618.5 | 103.5 | NA |
+| LWPSO [34] | *925,383.8 | 82.9 | Vi phạm V<sub>3</sub>,end |
+| EGA [35] | 934,727.00 | NA | NA |
+| PSO [35] | 928,878.00 | NA | NA |
+| EPSO [35] | 922,904.00 | NA | NA |
+| IPSO[36] | 922,553.49 | NA | Không vi phạm |
+| HDE-SQP [44] | *912,267.89 | NA | Vi phạm V<sub>4</sub>,end |
+| HBMO [45] | 923,300 | 153.8 | NA |
+| RCGA [52] | 923,864.125 | 9.236 | NA |
+| ACRCGA [52] | 922,451.500 | 7.866 | Vi phạm V<sub>3</sub>,end , V<sub>4</sub>,end |
+| IDE [53] | *917,237.7 | 366.0781 | Vi phạm q<sub>4</sub>,min |
+| MDNLPSO[57] | *922,336.3 | 35 | Vi phạm V<sub>3</sub>,min <sup>ở</sup> <sup>khoảng</sup> <sup>4</sup> Vi phạm V<sub>4</sub>,max <sup>ở</sup> <sup>khoảng16</sup>, 18 và 19 |
+| CCSA | 922,896.1233 | 25.8 | Không vi phạm |
+| MCSA | 923034.4051 | 65.4 | Không vi phạm |
+| ASCSA | 922,366.8492 | 24.6 | Không vi phạm |
+
+\* Nghiệm không khả thi; NA: Không được báo cáo
+
+Để có thể so sánh được thời gian tính toán, thời gian quy đổi adjusted CPU time được tính từ công thức (4.79) như ở chương 4 và được trình bày trong bảng 6.5 cho hai hệ thống đang xét. Giá tri thời gian ở hệ thống thứ nhất cho thấy CCSA và ASCSA có thể nhanh gấp từ 3.37 lần đến 39.4 lần so với các phương pháp khác ngoại trừ MHDE [33], RCGA và ACRCGA [52]. Ở đây cần lưu ý rằng, MHDE và các phương pháp khác ở nghiên cứu [54] đã sử dụng ngôn ngữ lập trình C++ với ưu điểm nhanh hơn so với ngôn ngữ Matlab từ 2 đến 3 lần [80]. Thời gian quy đổi này ở hệ thống thứ hai cho thấy các phương pháp CSA đã không vượt trội hơn so với các phương pháp như ở hệ thống thứ nhất khi chỉ có thể nhanh hơn phương pháp BBO [46]. Tuy nhiên, những phương pháp có giá trị nhỏ hơn 1, tức nhanh hơn các phương pháp CSA lại là những phương pháp báo cáo nghiệm không khả thi hoặc không báo cáo nghiệm khả thi. Từ đó có thể
+
+<!-- page: 144 -->
+
+kết luận được rằng các phương pháp CSA khá hiệu quả so với các phương pháp khác khi có chi phí nhỏ hơn, thời gian tính toán tương đối nhanh và báo cáo nghiệm khả thi.
+
+Bảng 6.4. So sánh kết quả giữa các phương pháp cho hệ thống 2
+
+| Phương pháp | CPNN ($) | TGTT (giây) | Kiểm tra vi phạm ràng buộc |
+| --- | --- | --- | --- |
+| TPNN [39] | 154,808.5 | NA | NA |
+| ALM[39] | 154,739 | NA | NA |
+| PSO [49] | 154,705 | NA | NA |
+| ISAPSO[49] | 154,594 .9 | NA | Vi phạm V<sub>4</sub>,end |
+| BBO [46] | 154,670.7707 | 63 | Không vi phạm |
+| TLBO [51] | *154,594.1(154,693.135) | 23.8 | Vi phạm V<sub>2</sub>,e<sub>nd</sub> ,V<sub>3</sub>,e<sub>nd</sub> , V<sub>4</sub>,e<sub>nd</sub> |
+| QOTLBO [51] | *154,593.7 | 20.3 | Vi phạm V<sub>3</sub>,end , V<sub>4</sub>,end |
+| QMBBO [54] | *154,580.55116 | 19.2 | Vi phạm V<sub>3</sub>,end , V<sub>4</sub>,end |
+| MDNL-PSO [57] | 154,593.58 | 28 | Không vi phạm |
+| CCSA | 154,594.8 | 54.6 | Không vi phạm |
+| MCSA | 154,597.6 | 89.6 | Không vi phạm |
+| ASCSA | 154,594.3 | 35.4 | Không vi phạm |
+
+<!-- page: 145 -->
+
+Bảng 6.5. So sánh thời gian quy đổi giữa các phương pháp cho hệ thống 1 và 2
+
+<table><tbody><tr><td>Hệ thống</td><td>Phương pháp</td><td>Phần mềm &amp; tốc độ CPU (GHz)</td><td>Tốc độ CPU (pu)</td><td>TGTT (giây)</td><td>TGTT (pu)</td><td>Thời gian quy đổi (pu)</td></tr><tr><td rowspan="25">1</td><td>CEP [18]</td><td>Matlab, 0,85</td><td>0.423</td><td>2292.1</td><td>93.17</td><td>39.4</td></tr><tr><td>FEP [18]</td><td>Matlab, 0,85</td><td>0.423</td><td>1911.2</td><td>77.69</td><td>32.9</td></tr><tr><td>IFEP [18]</td><td>Matlab, 0,85</td><td>0.423</td><td>1033.2</td><td>42</td><td>17.8</td></tr><tr><td>GA [30]</td><td>* NA</td><td>NA</td><td>1920</td><td>78.05</td><td>NA</td></tr><tr><td>BCGA [41]</td><td>Matlab, 3.0</td><td>1.503</td><td>64.51</td><td>2.622</td><td>3.94</td></tr><tr><td>RCGA [41]</td><td>Matlab, 3.0</td><td>1.503</td><td>57.52</td><td>2.338</td><td>3.51</td></tr><tr><td>MDE [32]</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>MHDE [33]</td><td>* C++, 2.4</td><td>1.197</td><td>8</td><td>0.325</td><td>0.39</td></tr><tr><td>GCPSO [34]</td><td>C++, 2.0</td><td>1</td><td>182.4</td><td>7.415</td><td>7.41</td></tr><tr><td>GWPSO [34]</td><td>C++, 2.0</td><td>1</td><td>129.1</td><td>5.248</td><td>5.24</td></tr><tr><td>LCPSO [34]</td><td>C++, 2.0</td><td>1</td><td>103.5</td><td>4.207</td><td>4.2</td></tr><tr><td>LWPSO [34]</td><td>C++, 2.0</td><td>1</td><td>82.9</td><td>3.37</td><td>3.37</td></tr><tr><td>EGA [35]</td><td>Matlab, 2.0</td><td>0.999</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>PSO [35]</td><td>Matlab, 2.0</td><td>0.999</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>EPSO [35]</td><td>Matlab, 2.0</td><td>0.999</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>IPSO[36]</td><td>Matlab, 3.06</td><td>1.53</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>HDE-SQP [44]</td><td>* NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>HBMO [45]</td><td>Matlab, 2.67</td><td>1.332</td><td>153.8</td><td>6.252</td><td>8.33</td></tr><tr><td>RCGA [52]</td><td>C++, 2.0</td><td>0.999</td><td>9.24</td><td>0.376</td><td>0.38</td></tr><tr><td>ACRCGA [52]</td><td>C++, 2.0</td><td>0.999</td><td>7.87</td><td>0.32</td><td>0.32</td></tr><tr><td>IDE [53]</td><td>* Matlab, 3.0</td><td>1.503</td><td>366.08</td><td>14.88</td><td>22.4</td></tr><tr><td>MDNLPSO [57]</td><td>* NA</td><td>NA</td><td>35</td><td>1.423</td><td>NA</td></tr><tr><td>CCSA</td><td>Matlab, 2.0</td><td>1</td><td>25.8</td><td>1.05</td><td>1.05</td></tr><tr><td>MCSA</td><td>Matlab, 2.0</td><td>1</td><td>65.4</td><td>2.66</td><td>2.66</td></tr><tr><td>ASCSA</td><td>Matlab, 2.0</td><td>1</td><td>24.6</td><td>1</td><td>1</td></tr><tr><td rowspan="8">2</td><td>BBO [46]</td><td>Matlab, 2.0</td><td>1</td><td>63</td><td>1.78</td><td>1.78</td></tr><tr><td>TLBO [51]</td><td>* Matlab, 2.0</td><td>1</td><td>23.8</td><td>0.672</td><td>0.67</td></tr><tr><td>QOTLBO [51]</td><td>* Matlab, 2.0</td><td>1</td><td>20.3</td><td>0.573</td><td>0.57</td></tr><tr><td>QMBBO [54]</td><td>* Matlab, 2.67</td><td>1.335</td><td>19.2</td><td>0.542</td><td>0.72</td></tr><tr><td>MDNL-PSO[57]</td><td>NA</td><td>NA</td><td>28</td><td>0.791</td><td>NA</td></tr><tr><td>CCSA</td><td>Matlab, 2.0</td><td>1</td><td>54.6</td><td>1.542</td><td>1.54</td></tr><tr><td>MCSA</td><td>Matlab, 2.0</td><td></td><td>89.6</td><td>2.53</td><td>2.53</td></tr><tr><td>ASCSA</td><td>Matlab, 2.0</td><td>1</td><td>35.4</td><td>1</td><td>1</td></tr></tbody></table>
+
+<!-- page: 146 -->
+
+## 6.7.2. Hai hệ thống xét hiệu ứng xả van
+
+Ở mục này, các phương pháp CSA được áp dụng trên hai hệ thống có xét đến hiệu ứng xả van. Cả hai hệ thống 3 và 4 đều có một hệ thống thủy điện bậc thang với 4 nhà máy trong khi đó hệ thống 3 chỉ có một nhà máy nhiệt điện và hệ thống 4 có 3 nhà máy nhiệt điện. Cả hai hệ thống đều được hoạch định phát điện trong 24 khoảng 1 giờ. Dữ liệu hệ thống được trích dẫn từ các nghiên cứu [41] và [92] và cũng được đính kèm ở phục lục.
+
+Bảng 6.6. So sánh kết quả giữa các phương pháp CSA cho hệ thống 3 và 4
+
+<table><tbody><tr><td>HT</td><td>Phương pháp</td><td>CPNN ($)( ε, P<sub>a</sub>)</td><td>CPTB ($)</td><td>CPLN ($)</td><td>DLC ($)</td><td>TGTT (giây)</td></tr><tr><td rowspan="3">3</td><td>CCSA</td><td>947,316.2564(__, 0.5)</td><td>947,810.9269</td><td>948,561.8442</td><td>281.5006</td><td>32.6</td></tr><tr><td>MCSA</td><td>947,797.3685(__, 0.5))</td><td>948,459.4</td><td>949,145.2</td><td>260.7036</td><td>68.5</td></tr><tr><td>ASCSA</td><td>946,744.0663(10<sup>-2</sup>, 0.6)</td><td>947,418.7997</td><td>948,038.3417</td><td>456.5164</td><td>30.8</td></tr><tr><td rowspan="3">4</td><td>CCSA</td><td>41,701.2073(__, 0.6)</td><td>43,891.5080</td><td>45,500.2320</td><td>611.2509</td><td>75.8</td></tr><tr><td>MCSA</td><td>44,836.038</td><td>45,460.2562</td><td>46,104.3631</td><td>415.0538</td><td>165.7</td></tr><tr><td>ASCSA</td><td>41,661.8193(10<sup>-4</sup>, 0.6)</td><td>42,683.6470</td><td>43,945.9440</td><td>533.4047</td><td>75.3</td></tr></tbody></table>
+
+Để thực thi cho các hệ thống này, $N _ { p }$ được cố định với 200 tổ chim trong khi đó $G _ { m a x }$ ở hệ thống 3 được chọn lần lượt là 5,000, 6,000 và 3,000 cho CCSA, MCSA và ASCSA và ở hệ thống 4 được chọn lần lượt là 9,000, 12,000 và 6,000 cho CCSA, MCSA và ASCSA.
+
+![](images/page_145_chart_5.jpg)
+
+Hình 6.7. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 3
+
+<!-- page: 147 -->
+
+Bảng 6.6 thể hiện chi tiết kết quả đạt được từ các phương pháp CSA cho hệ thống 3 và 4 cho thấy ASCSA là phương pháp hiệu quả nhất khi có chi phí nhỏ nhất và thời gian tính toán nhanh nhất trong khi đó giá trị từ MCSA là kém hiệu quả nhất với thời gian tính toán lâu nhất. Đánh giá này tiếp tục được phản ảnh thông qua hình 6.7 và 6.8 về đặc tính hội tụ của các phương pháp.
+
+![](images/page_146_chart_1.jpg)
+
+Hình 6.8. Đặc tính hội tụ của các phương pháp CSA cho hệ thống 4
+
+Bảng 6.7. So sánh kết quả giữa các phương pháp cho hệ thống 3
+
+| Phương pháp | Chi phí($) | TGTT (giây) | Kiểm tra vi phạm ràng buộc |
+| --- | --- | --- | --- |
+| BCGA [41] | 952,618.00 | 66.3 | Không vi phạm |
+| RCGA [41] | 951,559.24 | 57.32 | Không vi phạm |
+| DE [44] | 947,497.85 | - | Không vi phạm |
+| HDE-SQP [44] | *945,293.81 | - | Vi phạm V<sub>4</sub>,end |
+| CCSA | 947,316.2564 | 32.6 | Không vi phạm |
+| MCSA | 947,797.3685 | 68.5 | Không vi phạm |
+| ASCSA | 946,744.0663 | 30.8 | Không vi phạm |
+
+Bảng 6.7 và 6.8 so sánh chi phí và thời gian đạt được từ các phương pháp CSA với các phương pháp trước đây với hai hệ thống đang xét. Chi phí đạt được ở hệ thống 3 từ các phương pháp CSA nhỏ hơn hầu hết các phương pháp được so sánh ngoại trừ HDE-SQP [44] đã báo cáo chi phí nhỏ hơn cả ba phương pháp CSA, và DE [44] báo cáo chỉ phí nhỏ hơn MCSA. Tuy nhiên, việc kiểm tra các vi phạm ràng buộc đã cho thấy HDE-SQP đã báo cáo nghiệm không khả thi vi phạm thể tích hồ thủy điện thứ tư ở khoảng thời gian cuối cùng, giá trị này lớn hơn rất nhiều so với yêu cầu từ dữ liệu đầu vào.
+
+Với hệ thống 4, các nghiên cứu trước đây đa phần chỉ tập trung vào mục tiêu cực tiểu chi phí mà bỏ qua lưu ý về tính khả thi của nghiệm tối ưu. Do đó, các vi phạm ràng
+
+<!-- page: 148 -->
+
+buộc được phát hiện từ các nghiệm tối ưu báo cáo từ các nghiên cứu trước đây. Phương pháp IDE [53] và MCDE [56] đã vi phạm ràng buộc cân bằng công suất, ACABC [37] vi phạm thể tích ở khoảng cuối cùng ở hồ thủy điện thứ 4 và RCCRO [55] đã vi phạm thể tích hồ chứa ở khoảng cuối cùng ở cả 4 hồ thủy điện và vi phạm ràng buộc cân bằng công suất. So sánh thực hiện với các phương pháp khả thi còn lại cho thấy CCSA và ASCSA hiệu quả hơn tất cả khi cho chi phí thấp hơn trong khi đó MCSA chỉ vượt trội so với một số phương pháp như EP-IFS [81], SA [31] và EP [31].
+
+Bảng 6.8. So sánh kết quả giữa các phương pháp cho hệ thống 4
+
+| Phương pháp | Chi phí ($) | TGTT (giây) | Kiểm tra vi phạm ràng buộc |
+| --- | --- | --- | --- |
+| EP-IFS [92] | 45,063 | NA | Không vi phạm |
+| SA [31] | 47,306.00 | NA | Không vi phạm |
+| EP [31] | 45,466.00 | NA | Không vi phạm |
+| PSO [31] | 44,740.00 | NA | Không vi phạm |
+| DE [33] | 44,526.10 | 200 | NA |
+| MDE [33] | 42,611.14 | 125 | NA |
+| HDE [33] | 42,337.30 | 48 | NA |
+| MHDE [33] | 41,856.50 | 31 | Chỉ báo cáo lưu lượng xả |
+| Clonal selection [28] | 42440.574 | 109 | NA |
+| AABC [37] | 42217.01 | 15 | NA |
+| CABC [37] | 43362.68 | 21 | NA |
+| ACABC [37] | *41074.42 | 16 | Vi phạm V<sub>4</sub>,end |
+| TLBO [51] | 423,85 | NA | Không vi phạm |
+| TLBO [51] | 42,386.13 | 25.7 | Không vi phạm |
+| QOTLBO [51] | 42,187.49 | 21.6 | Không vi phạm |
+| IDE [53] | *40,627.92 | 627.06 | Vi phạm cân bằng công suất |
+| RCCRO [55] | *41,497.851 | 15.51 | Vi phạm V<sub>1</sub>,e<sub>nd</sub> ,V<sub>2</sub>,e<sub>nd</sub> ,V<sub>3</sub>,e<sub>nd</sub> , V<sub>4</sub>,end <sup>và</sup> ràng buộc cân bằng công suất |
+| RCGA-AFSA [38] | *40,913.82 | 21 | Báo cáo công suất thủy điện không đúng với giá trị kiểm tra |
+| MCDE [56] | *40,945.75 | 50.8 | Vi phạm cân bằng công suất |
+| CCSA | 41,701.207 | 75.8 | Không vi phạm |
+| MCSA | 44,836.038 | 165.7 | Không vi phạm |
+| ASCSA | 41,661.8193 | 75.3 | Không vi phạm |
+
+So sánh về thời gian tính toán và thời gian quy đổi adjusted CPU time dưới dạng đơn vị tương đối cũng được trình bày trong bảng 4.9. Ở hệ thống 3, CCSA và ASCSA có thể nhanh hơn gấp 2 lần so với BCGA và RCGA in [41] trong khi đó MCSA có tốc độ không bằng CCSA và ASCSA nhưng vẫn nhanh hơn hai phương pháp ở nghiên cứu [41]. Cụ thể, MCSA có giá trị 2.2 pu trong khi đó BCGA và RCGA có giá trị lần lượt là
+
+<!-- page: 149 -->
+
+2.8 và 3.2. So sánh ở hệ thống 4 trở nên đa dạng hơn khi có rất nhiều phương pháp có tốc độ hội tụ nhanh và có nhiều phương pháp có tốc độ hội tụ chậm. các phương pháp ở nghiên cứu [33] và [37] sử dụng các phần mềm java và C++ với tốc độ nhanh hơn từ 2 đến 3 lần so với Matlab [80]. So sánh với các phương pháp ở nghiên cứu [33], các phương pháp CCSA và ASCSA nhanh hơn DE và MDE nhưng chậm hơn HDE và MHDE với giá trị của HDE là 0.8 và của MHDE là 0.5 trong khi giá trị của CCSA và ASCSA là 1. Tuy nhiên, như đã ghi chú với hai phương pháp này đã được chạy trên phần mềm C++ nên 2 phương pháp này không nhanh hơn so với CCSA và ASCSA. Các phương pháp ở nghiên cứu [37], [38], [53], [55] và [56] có thời gian nhanh nhưng là những phương pháp vi phạm ràng buộc hệ thống nên về thời gian tính toán nhanh cũng không thể hiện được sự so sánh với các phương pháp này. Khi so sánh với các phương pháp khả thi còn lại ở các nghiên cứu khác, các phương pháp CCSA và ASCSA đều nhanh hơn ngoại trừ ở nghiên cứu [51]; tuy nhiên, giá trị hàm chi phí cho thấy phương pháp CCSA và ASCSA hiệu quả hơn rất nhiều so với các phương pháp này.
+
+Bảng 6.9. So sánh thời gian quy đổi cho hệ thống 3 và 4
+
+<table><tbody><tr><td>Hệ thống</td><td>Phương pháp</td><td>Phần mềm &amp; CPU (GHz)</td><td>CPU (pu)</td><td>TGTT (giây)</td><td>TGTT (pu)</td><td>Thời gian quy đổi (pu)</td></tr><tr><td rowspan="5">3</td><td>BCGA [41]</td><td>Matlab, 3.0</td><td>1.5</td><td>66.3</td><td>2.2</td><td>3.2</td></tr><tr><td>RCGA [41]</td><td>Matlab , 3.0</td><td>1.5</td><td>57.32</td><td>1.9</td><td>2.8</td></tr><tr><td>CCSA</td><td>Matlab, 2.0</td><td>1</td><td>32.6</td><td>1.1</td><td>1.1</td></tr><tr><td>MCSA</td><td>Matlab, 2.0</td><td>1</td><td>68.5</td><td>2.2</td><td>2.2</td></tr><tr><td>ASCSA</td><td>Matlab, 2.0</td><td>1</td><td>30.8</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan="18">4</td><td>DE [33]</td><td>C++, 2.4</td><td>1.2</td><td>200</td><td>2.656042</td><td>3.2</td></tr><tr><td>MDE [33]</td><td>C++, 2.4</td><td>1.2</td><td>125</td><td>1.660027</td><td>2.0</td></tr><tr><td>HDE [33]</td><td>C++, 2.4</td><td>1.2</td><td>48</td><td>0.63745</td><td>0.8</td></tr><tr><td>MHDE [33]</td><td>C++, 2.4</td><td>1.2</td><td>31</td><td>0.411687</td><td>0.5</td></tr><tr><td>CS [28]</td><td>Matlab, 3.06</td><td>1.53</td><td>109</td><td>1.447543</td><td>2.2</td></tr><tr><td>AABC [37]</td><td>JAVA, 2.53</td><td>1.265</td><td>15</td><td>0.199203</td><td>0.3</td></tr><tr><td>CABC [37]</td><td>JAVA, 2.53</td><td>1.265</td><td>21</td><td>0.278884</td><td>0.4</td></tr><tr><td>ACABC [37]</td><td>*JAVA, 2.53</td><td>1.265</td><td>16</td><td>0.212483</td><td>0.3</td></tr><tr><td>TLBO [51]</td><td>NA</td><td>NA</td><td>0</td><td>0</td><td>NA</td></tr><tr><td>TLBO [51]</td><td>Matlab, 2.0 GHz</td><td>1</td><td>25.7</td><td>0.341301</td><td>0.3</td></tr><tr><td>QOTLBO [51]</td><td>Matlab, 2.0 GHz</td><td>1</td><td>21.6</td><td>0.286853</td><td>0.3</td></tr><tr><td>IDE [53]</td><td>*Matlab, 3.0</td><td>1.5</td><td>627.06</td><td>8.32749</td><td>12.5</td></tr><tr><td>RCCRO [55]</td><td>*Matlab, 2.3 GHz</td><td>1.15</td><td>15.51</td><td>0.205976</td><td>0.2</td></tr><tr><td>RCGA-AFSA[38]</td><td>*Matlab, 2.0</td><td>1</td><td>21</td><td>0.278884</td><td>0.3</td></tr><tr><td>MCDE [56]</td><td>*Matlab, 2.4</td><td>1.2</td><td>50.8</td><td>0.674635</td><td>0.8</td></tr><tr><td>CCSA</td><td>Matlab, 2.0</td><td>1</td><td>75.8</td><td>1.00664</td><td>1.0</td></tr><tr><td>MCSA</td><td>Matlab, 2.0</td><td>1</td><td>165.7</td><td>2.200531</td><td>2.2</td></tr><tr><td>ASCSA</td><td>Matlab, 2.0</td><td>1</td><td>75.3</td><td>1</td><td>1.0</td></tr></tbody></table>
+
+<!-- page: 150 -->
+
+Kết quả so sánh về chất lượng lời giải, tốc độ hội tụ và tính khả thi của nghiệm tối ưu cho thấy phương pháp CCSA và ASCSA hiệu quả hơn rất nhiều phương pháp khi có chi phí nhỏ hơn, thời gian tính toán nhanh hơn và nghiệm khả thi. Với một số ít các phương pháp có thời gian tính toán nhanh hơn CCSA và ASCSA nhưng gặp những vấn đề về chất lượng nghiệm như chi phí quá cao hoặc nghiệm không khả thi vi phạm ràng buộc. Từ đó có thể kết luận được rằng CCSA và ASCSA rất hiệu quả cho bài toán này. Ngược lại, tính hiệu quả của MCSA không được như mong đợi khi phương pháp MCSA cho chi phí cao hơn nhiều phương pháp và cơ bản chỉ hiệu quả hơn các phương pháp như PSO, DE, EP và SA về thời gian tính toán và chất lượng nghiệm. Nghiệm tối ưu của bốn hệ thống ở chương này đạt được từ ASCSA được đính kèm trong phụ lục.
+
+## 6.8. Tóm Tắt
+
+Bốn hệ thống thủy nhiệt điện có xét đến hồ thủy điện bậc thang được xem xét trong chương này với sự áp dụng ba phương pháp CSA nhằm tìm giá trị vận hành tối ưu. Kết quả cho thấy ba phương pháp CSA có thể giải được bài toán này một cách hiệu quả với chi phí và thời gian chấp nhận được. ASCSA là phương pháp tốt nhất và MCSA là phương pháp kém hiệu quả nhất trong ba phương pháp. So với các phương pháp khác đã được áp dụng trước đây, ASCSA hiệu quả hơn nhiều trong khi đó CCSA vẫn còn kém hiệu quả hơn so với một vài phương pháp và MCSA là phương pháp kém hơn hầu hết các phương pháp lai và cải tiến gần đây.
+
+Liên quan đến bài toán vận hành thực tế của các hệ thống thủy nhiệt điện, một số các biến điều khiển và phụ thuộc của nghiệm tối ưu sẽ là những thông số vận hành tại các nhà máy điện. Ở bài toán này, công suất nhiệt điện và lưu lượng xả được xem như các biến điều khiển và thể tích hồ chứa là các biến phụ thuộc; tuy nhiên, các giá trị vận hành ở nhà máy nhiệt điện là công suất nhiệt điện và ở nhà máy thủy điện là lưu lượng xả qua turbine giống như ở bài toán vận hành ở chương 4 và 5. Ở bài toán này, thời gian trễ của nước chảy từ hồ phía trên xuống hồ phía dưới là một yếu tố quan trọng để có được các giá trị điều khiển tại các nhà máy thủy điện. Nếu giá trị này được dự báo chính xác thì quá trình vận hành sẽ hiệu quả, ngược lại sẽ có kết quả không tốt so với mong đợi. Do đó, vận hành thực tế ở các nhà máy thủy điện cần có những thông số chính xác về nguồn nước và hồ thủy điện thì kết quả áp dụng vận hành tối ưu sẽ đạt hiệu quả cao về năng lượng. Ở chương này, các phương pháp CSA đã được áp dụng thành công đạt được lời giải khả thi có chất lượng tốt. Do đó, việc áp dụng các phương pháp này cho hệ thống điện thực tế là điều hoàn toàn khả thi.
+
+<!-- page: 151 -->
+
+# CHƯƠNG 7: ÁP DỤNG CÁC PHƯƠNG PHÁP CUCKOO SEARCH PHÂN BỐ CÔNG SUẤT TỐI ƯU HỆ THỐNG THỦY NHIỆT ĐIỆN
+
+## 7.1. Giới Thiệu
+
+Phân bố công suât tối ưu (OPF) là bài toán tĩnh không tuyến tính với nhiệm vụ chính là là xác định các thông số trạng thái của tất cả các máy phát trên hệ thống điện sao cho chi phí phát điện là nhỏ nhất mà vẫn có thể đáp ứng tất cả các ràng buộc trên lưới, ràng buộc của thiết bị như giới hạn giới han công suất tác dụng và phản kháng của máy phát, đầu phân áp máy biến áp và công suất tụ bù, điện áp ở các nút và giới hạn truyền tải của các đường dây [93]. Thông thường, các biến điều khiển của bài toán OPF được xác định trước như công suất tác dụng của máy phát, biên độ điện áp của máy phát, công suất phản kháng tại các nút có tụ bù và cài đặt đầu phân áp và sau đó các biến phụ thuộc sẽ được xác định sau như là công suất phản kháng máy phát, công suất máy phát ở nút cân bằng và biên độ điện áp ở các nút còn lại. Mục tiêu của bài toán OPF nhằm đạt được chi phí nhỏ nhất phát điện từ các tôt máy nhiệt điện hoặc giảm thiểu tổn thất công suất trên đường dây truyền tải.
+
+Ở bài toán OPF, tất cả các tổ máy phát ở các nút đều là các tổ máy nhiệt điện sử dụng nhiên liệu hóa thạch trong khi đó các nhà máy thủy điện đều không được xét đến. Bài toán OPF đã thách thức các phương pháp toán tối ưu với tập hợp các ràng buộc phức tạp từ các máy biến áp, tụ bù, lưới truyền tải và máy phát. Về khía cạnh này, bài toán phối hợp tối ưu các nhà máy thủy điện và nhiệt điện HTS xem xét cả nhà máy nhiệt điện và thủy điện như các nguồn chính để phát điện đến tải thông qua lưới truyền tải. Hệ thống này trở nên phổ biến trên hệ thống điện do đóng góp quan trọng khi các ngồn năng lượng tái tạo không thể đáp ứng đủ nhu cầu phụ tải gia tăng hàng năm. Vận hành hệ thống thủy nhiệt điện trở nên phức tạp khi các nhà máy thủy điện phải chịu nhiều ràng buộc về hồ chứa và nguồn nước trong toàn bộ thời gian hoạch định phát điện tối ưu.
+
+Các nghiên cứu về hệ thống điện từ trước đên giờ với đa phần bài toán OPF và HTS đều được tách biệt ra làm hai bài toán riêng biệt do tính phức tạp riêng của từng bài toán. Ở bài toán HTS, các ràng buộc từ các hồ thủy điện trở thành rào cản lớn do thời gian hoạch định phát điện tối ưu được chia ra nhiều khoảng thời gian và ảnh hưởng của các đại lượng liên quan lẫn nhau trong toàn bộ thời gian này. Ở bài toán OPF, các nhà máy thủy điện không được xét đến nên tính phức tạp để giải quyết ràng buộc hồ chứa không gây khó khăn nhưng tập hợp các ràng buộc liên quan đến lưới truyền tải và thiết bị trở nên phức tạp và là thách thức lớn. Với bài toán OPF, thời gian thực thi là các khoảng thời gian riêng lẻ không ảnh hưởng lẫn nhau dù có là đa khoảng như bài toán OPF. Việc kết hợp hai bài toán này trở thành bài toán phân bố công suất tối ưu hệ thống thủy nhiệt điện (hydrothermal optimal power flow-HTOPF) đã làm cho các nghiên cứu hạn chế hơn khi xem xét cả những ràng buộc phức tạp của các hồ thủy điện. Với thống kê từ các
+
+<!-- page: 152 -->
+
+nghiên cứu trước về hai bài toán cho thấy đã có một số lượng lớn các công trình nghiên cứu về các bài toán này. Bào toán OPF đã được quan tâm và nghiên cứu ở các công trình [94-126] trong khi đó bài toán HTS được nghiên cứu ở các công trình [1-63]. Mặc dù vậy, vẫn có một số lượng nhỏ các công trình nghiên cứu về bài toán kết hợp HTOPF ở các tài liệu [127-132].
+
+Các nghiên cứu [127-131] đã được thực hiện ở ba thập niên vừa qua với các ứng dụng từ phương pháp tiền định trong khi đó chỉ có nghiên cứu [132] áp dụng phương pháp meta-heuristuc để giải bài toán HTOPF mà chưa có các ứng dụng nào ở phương pháp thông minh nhân tạo khác. Các bài báo này đều được trích từ nguồn IEEE trong khi đó ở các nguồn khác như sciendirect, Taylor Francis và Springer link, v.v. vẫn chưa có nghiên cứu nào thực hiện. Trong số những nghiên cứu này, Newton là phương pháp đầu tiên được áp dụng cho hệ thống từ 5 nút đến 118 nút với mô hình thủy điện ngắn hạn chiều cao cột nước cố định. Mục tiêu của nghiên cứu này là thử nghiệm khả năng áp dụng của phương pháp Newton lên bài toán phức tạp để đánh giá khả năng giải quyết càng ràng buộc của lưới truyền tải ở bài toán OPF và khả năng giải quyết các ràng buộc thủy điện đa thời gian của bài toán HTS. Toàn bộ dữ liệu của hệ thống và kết quả hàm mục tiêu đã không được trình bày ở nghiên cứu này làm cho bạn đọc cũng như các nhà nghiên cứu không thể thực hiện bài toán và so sánh kết quả. Các nghiên cứu ở [128-131] đã đề cập đến tầm quan trọng của việc xem xét ràng buộc tổn thất công suất trên lưới truyền tải khi giải quyết bài toán HTS. Các nghiên cứu đã xây dựng dữ liệu riêng và áp dụng thuật toán đề xuất của họ để thực thi cho bài toán này để chứng mình khả năng xử lý thành công các ràng buộc. Các nghiên cứu trước đó được trích dẫn từ các nghiên cứu đã rất lâu và các dữ liệu trên các nguồn không còn nữa. Chỉ có nghiên cứu [132] gần đây nhất với ứng dụng phương pháp PSO cải tiến (IPSO) để giải hệ thống có 8 nút. Tương tự như các nghiên cứu [128-131], nghiên cứu này cũng chỉ áp dụng nhằm chứng minh khả năng giải quyết các ràng buộc của phương pháp IPSO hơn là chứng minh khả năng tìm nghiệm tối ưu hiệu quả của IPSO. Phân tích từ các nghiên cứu này cho thấy rằng bài toán HTOPF kết hợp giữa bài toán OPF và HTS là bài toán phức tạp và làm hạn chế các công trình nghiên cứu về bài toán này.
+
+Do đó, bài toán phức tạp phân bố công suất tối ưu hệ thống thủy nhiệt điện HTOPF là trọng tâm trong chương 7 này với nhiệm vụ chính là cực tiểu chi phí phát điện của các nhà máy nhiệt điện nhưng phải đảm bảo tất cả các ràng buộc phải thỏa mãn như ràng buộc của bài toán HTS và ràng buộc của bài toán OPF đã đề cập ở trên. Tuy nhiên, khi xem xét bài toán HTOPF thì vấn đề cần bàn luận là đặt nhà máy nhiệt điện hay thủy điện tại nút cân bằng là hiệu quả nhất. Về nguyên tắc, nút cân bằng cần có khả năng đáp ứng nhanh việc huy động công suất đảm bảo cân bằng công suất trong thời gian ngắn. Bên cạnh đó, nút cân bằng cần có công suất đáp ứng lớn và ổn định trong thời gian dài để tránh trường hợp mất nguồn hay thiếu nguồn từ nút cân bằng. Nếu nút cân bằng được cấp nguồn từ nhà máy thủy điện có công suất lớn và luôn luôn ổn định trong năm thì hệ thống sẽ hiệu quả hơn rất nhiều. Tuy nhiên, các nghiên cứu trước [127-132]
+
+<!-- page: 153 -->
+
+chỉ sử dụng nhà máy nhiệt điện ở nút cân bằng cho các hệ thống IEEE 30 nút và 118 nút và đã có thể vận hành thành công thỏa mãn tất cả các ràng buộc. Từ đó cho thấy lựa chọn này là hợp lý và có thể lý giải như sau:
+
+1) Các hệ thống IEEE 30 và 118 nút là các hệ thống đã được chuẩn hóa nhằm mục đích phục vụ cho nghiên cứu. Trong các hệ thống này, các nhà máy ban đầu được đặt ở các nút có nguồn phát đều là nhiệt điện.
+
+2) Nhà máy thủy điện lại bị hạn chế công suất phát ở mùa khô trong thời gian dài và thậm chí trong mùa mưa công suất cũng đôi khi mất ổn định do mưa lũ lớn. Do đó, nếu sử dụng nhà máy thủy điện tại nút cân bằng thì hệ thống sẽ có nguy cơ mất ổn định rất cao trong năm.
+
+Do đó, để giải quyết bài toán HTOPF trong luận án này thì hai hệ thống IEEE 30 nút và IEEE 118 nút vốn chỉ được cấp nguồn bởi các nhà máy nhiệt điện sẽ được thay thế một số nhà máy nhiệt điện có công suất vừa và nhỏ bởi những nhà máy thủy điện có công suất tương ứng trong khi đó nút cân bằng vẫn được cấp nguồn bởi nhà máy nhiệt điện. Bên cạnh đó, các phương pháp tối ưu CCSA, MCSA và ASCSA sẽ được sử dụng để thực thi hai hệ thống IEEE 30 nút và IEEE 118 nút này. Các kết quả đạt được từ hai hệ thống sẽ được phân tích để chỉ ra khả năng áp dụng của các phương pháp CSA và đặc biệt là phương pháp đề xuất ASCSA. Chi tiết bài toán được trình bày như mục 7.2 bên dưới.
+
+## 7.2. Mô Tả Bài Toán
+
+## 7.2.1. Hàm mục tiêu
+
+Chi phí nhiên liệu tại các nhà máy nhiệt điện được giảm thiểu đến mức nhỏ nhất có thể:
+
+$$
+\text {Min} \sum_ {\mathrm{i=1}} ^ {N _ {1}} F _ {i} (P _ {g i})\tag{7.1}
+$$
+
+Trong đó hàm chi phí nhiên liệu $F _ { i } ( P _ { g i } )$ được cho dưới dạng
+
+$$
+F _ {i} (P _ {g i}) = a _ {i} + b _ {i} P _ {g i} + c _ {i} P _ {g i} ^ {2}\tag{7.2}
+$$
+
+## 7.2.2. Ràng buộc hệ thống
+
+\- Ràng buộc cân bằng công suất:
+
+$$
+\sum_ {i = 1} ^ {N _ {1}} P _ {s i, m} + \sum_ {j = 1} ^ {N _ {2}} P _ {h j, m} - P _ {L, m} - P _ {D, m} = 0; m = 1, \dots , M\tag{7.3}
+$$
+
+<!-- page: 154 -->
+
+\- Ràng buộc nguồn nước cho phép:
+
+$$
+\sum_ {m = 1} ^ {M} t _ {m} q _ {j, m} = W _ {j}; j = 1, \dots , N _ {2}\tag{7.4}
+$$
+
+Trong đó $q _ { j , m }$ là lưu lượng xả qua turbine được xác định theo ct. (4.15) ở chương 4 như sau:
+
+$$
+q _ {j, m} = a _ {h j} + b _ {h j} P _ {h j, m} + c _ {j} P _ {h j, m} ^ {2}\tag{7.5}
+$$
+
+\- Ràng buộc giới hạn công suất tác dụng và phản kháng tổ máy:
+
+$$
+P _ {g i, \mathrm{min}} \leq P _ {g i} \leq P _ {g i, \mathrm{max}}; i = 1, \dots , N _ {g}\tag{7.6}
+$$
+
+$$
+Q _ {g i, \min} \leq Q _ {g i} \leq Q _ {g i, \max}; i = 1, \dots , N _ {g}\tag{7.7}
+$$
+
+\- Ràng buộc điện áp tổ máy phát:
+
+$$
+V _ {g i, \mathrm{min}} \leq V _ {g i} \leq V _ {g i, \mathrm{max}}; i = 1, \dots , N _ {g}\tag{7.8}
+$$
+
+## 7.2.3. Ràng buộc lưới truyền tải
+
+\- Ràng buộc cân bằng công suất tác dụng và phản kháng mỗi nút:
+
+$$
+P _ {g i} - P _ {d i} = V _ {i} \sum_ {j = 1} ^ {N _ {b}} V _ {j} \Big [ G _ {i j} \cos (\delta_ {i} - \delta_ {j}) + B _ {i j} \sin (\delta_ {i} - \delta_ {j}) \Big ]; i = 1, \dots , N _ {b}\tag{7.9}
+$$
+
+$$
+Q _ {g i} + Q _ {c i} - Q _ {d i} = V _ {i} \sum_ {j = 1} ^ {N _ {b}} V _ {j} \left[ G _ {i j} \sin (\delta_ {i} - \delta_ {j}) - B _ {i j} \cos (\delta_ {i} - \delta_ {j}) \right]; i = 1, \dots , N _ {b}\tag{7.10}
+$$
+
+Trong đó $P _ { d i }$ và $Q _ { d i }$ là công suất tác dụng và phản kháng tải yêu cầu tại nút i; $P _ { g i }$ và $Q _ { g i }$ là công suất tác dụng và phản kháng của máy phát đặt tại nút i.
+
+\- Ràng buộc công suất phát của tụ bù:
+
+$$
+Q _ {c i, \min} \leq Q _ {c i} \leq Q _ {c i, \max}; i = 1, \dots , N _ {c}\tag{7.11}
+$$
+
+Trong trường hợp hệ thống tụ bù không được chỉ rõ số lượng bộ tụ, dung lượng mỗi bộ có thể chuyển đổi mà chỉ cho biết giới hạn lớn nhất và nhỏ nhất thì công suất bộ tụ phát lên lưới được xác định là các biến liên tục như (7.11). Tuy nhiên, nếu được biết số bộ tụ và công suất mỗi bộ tụ thì công suất phát lên lưới của tụ là các biến rời rạc và có giá trị được xác định như ct. (7.12) [133]
+
+$$
+Q _ {c i} = Q _ {c i, \min} + N _ {c i}. \Delta Q _ {c i}\tag{7.12}
+$$
+
+Trong đó $N _ { c i }$ là số bộ tụ được chọn làm việc và ∆Qci $\Delta Q _ { c i }$ là công suất mỗi bộ tụ tại nút i.
+
+Ràng buộc giới hạn đầu phân áp: Đầu phân áp làm việc của máy biến áp phải thỏa mãn giới hạn sau:
+
+$$
+T _ {k, \min} \leq T _ {k} \leq T _ {k, \max}; k = 1, \dots , N _ {t}\tag{7.13}
+$$
+
+Cũng giống như giá trị tụ bù, khi giá trị mỗi nấc phân áp $\Delta \mathrm { T _ { k } }$ và số lượng đầu phân áp N<sub>t</sub> đã biết thì giá trị đầu phân áp sẽ là các biến rời rạc được xác định như ct. (7.14) [133]
+
+<!-- page: 155 -->
+
+$$
+T _ {k} = T _ {k, \min} + N _ {t k}. \Delta \mathrm{T} _ {\mathrm{k}}\tag{7.14}
+$$
+
+Trong đó $N _ { t k }$ là thứ tự đầu phân áp được chọn trong tổng số $N _ { t }$ đầu phân áp của máy biến áp. Với hai hệ thống IEEE 30 nút và IEEE 118 nút được xét đến ở chương này, giá trị tụ bù được giới hạn trong khoảng nhỏ nhất và lớn nhất, và mỗi nấc chuyển đổi tụ bù được cho là $\Delta Q _ { c i }   { = } 0 . 1$ MVar. Do đó, công suất tụ bù được xác định là bội số của 0.1. Đối với đầu phân áp của máy biến áp, giá trị được tính ở đơn vị tương đối và giá trị mỗi nấc phân áp $\Delta T_{\mathrm{k}} = 0.01[133]$
+
+Ràng buộc điện áp tại nút tải:
+
+$$
+V _ {l i, \min} \leq V _ {l i} \leq V _ {l i, \max}; i = 1, \dots , N _ {d}\tag{7.15}
+$$
+
+Ràng buộc giới hạn công suất truyền tải : công suất biểu kiến truyền tải trên nhánh l phải nhỏ hơn giới hạn công suất của dây dẫn.
+
+$$
+S _ {l} \leq S _ {l, \max}; l = 1, \dots , N _ {l}\tag{7.16}
+$$
+
+Trong đó
+
+$$
+S _ {l} = \max \left\{\mid S _ {i j} \mid , \mid S _ {j i} \mid \right\}\tag{7.17}
+$$
+
+## 7.2.4. Biến điều khiển và biến phụ thuộc
+
+## 7.2.4.1. Tập hợp các biến điều khiển
+
+Các biến điều khiển trong bài toán phân bố công suất tối ưu hệ thống thủy nhiệt điện được chọn như ct. (7.18)
+
+$$
+u = \{P _ {g 2},.., P _ {g 2},.., P _ {g N _ {g}}, V _ {g 1},.. V _ {g 1},.., V _ {g N _ {g}}, T _ {1},.. T _ {k},.., T _ {N _ {t}}, Q _ {c 1},.., Q _ {c i},.., Q _ {c N _ {c}} \} ^ {T}\tag{7.18}
+$$
+
+Trong đó:
+
+$P _ { g i }   ( i   =   2 ,   \ldots ,   N _ { g } )$ : Công suất tác dụng máy phát thứ i (không xét đến công suất nút cân bằng)
+
+$V _ { g i }   ( i   =   1 ,   \ldots ,   N _ { g } )$ : Điện áp tại các nút phát i
+
+$T _ { k }   ( k   =   1 ,   \ldots ,   N _ { t } ) ;$ : Giá trị điện áp đầu phân áp
+
+$Q _ { c i }   ( i = 1 , \ldots , N _ { c } ) ;$ : Công suất phản kháng tụ bù tại nút i
+
+## 7.2.4.2. Tập hợp các biện phụ thuộc
+
+Từ các biến điều khiển, biến phụ thuộc sẽ được xác định dựa vào phân bố công suất và các ràng buộc hệ thống. Tập hợp các biến phụ thuộc được cho trong ct. (7.19)
+
+$$
+x = \left\{P _ {g 1}, Q _ {g 1},.., Q _ {g i},.., Q _ {g N _ {g}}, V _ {l 1},..., V _ {l i},., V _ {l N _ {l b}}, S _ {1},.., S _ {l},.., S _ {N _ {l}}, q _ {j, m}, W _ {j} \right\} ^ {T}\tag{7.19}
+$$
+
+Trong đó:
+
+<!-- page: 156 -->
+
+$P _ { g I } .$ Công suất tác dụng của máy phát tại nút cân bằng.
+
+$V _ { l i }   ( i   =   1 ,   \ldots ,   N _ { l b } )$ : Điện áp tại nút tải
+
+$Q _ { g i }   ( i = 1 , \ldots , N _ { g } )$ : Công suất phản kháng của tất cả máy phát
+
+$S _ { l }   ( l   =   1 ,   \ldots ,   N _ { l } )$ : Công suất biểu kiến trên đường dây truyền tải l
+
+$q _ { j , m }$ : Lưu lượng xả của thủy điện j ở khoảng thời gian m trong ngày
+
+$W _ { j } )$ Thể tích nước sử dụng trong ngày ở nhà máy thủy điện thứ j
+
+## 7.3. Áp Dụng Phương Pháp CCSA Cho Bài Toán HTOPF
+
+## 7.3.1. Khởi tạo
+
+Khi áp dụng phương pháp CCSA cho bài toán HTOPF, mỗi trứng d được khởi tạo sẽ bao gồm các biến điều khiển như đã đề cập ở công thức (7.18) và được biểu diễn bởi $X_{d}^{m} = \left[ P_{g2}, \ldots, P_{gN_{g}}, V_{g1}, \ldots, V_{gN_{g}}, Q_{c1}, \ldots, Q_{cN_{c}}, T_{1}, \ldots, T_{N_{r}} \right]$ . Trong đó, m là khoảng thời gian thứ m đang xét trong M khoảng thời gian hoạch định phát điện tối ưu. Ở (M-1) khoảng đầu tiên, công suất tác dụng từ tổ máy nhiệt điện thứ hai đến tổ máy cuối cùng và công suất tác dụng của tất cả các tổ máy thủy điện đóng vai trò biến điều khiển trong khi đó ở khoảng cuối cùng thứ M các công suất thủy điện sẽ không được xem xét làm biến điều khiển và trở thành biến phụ thuộc. Quá trình khởi tạo được thực hiện như sau:
+
+$$
+X _ {d} ^ {m} = X _ {\min} + r a n d \times (X _ {\max} - X _ {\min}); \mathrm{m} = 1, 2,..., \mathrm{M} - 1;;\tag{7.20}
+$$
+
+$$
+X _ {d} ^ {M} = X _ {\min} ^ {M} + r a n d \times (X _ {\max} ^ {M} - X _ {\min} ^ {M});;\tag{7.21}
+$$
+
+Trong đó:
+
+$$
+X _ {\max} = [ P _ {g 2} ^ {\max}, \dots , P _ {g N g} ^ {\max}, V _ {g 1} ^ {\max}, \dots , V _ {g N _ {g}} ^ {\max}, Q _ {c 1} ^ {\max}, \dots , Q _ {c N c} ^ {\max}, T _ {1} ^ {\max}, \dots , T _ {N _ {t}} ^ {\max} ]\tag{7.22}
+$$
+
+$$
+X _ {\min} = \left[ P _ {g 2} ^ {\min}, \dots , P _ {g N g} ^ {\min}, V _ {g 1} ^ {\min}, \dots , V _ {g N _ {g}} ^ {\min}, Q _ {c 1} ^ {\min}, \dots , Q _ {c N c} ^ {\min}, T _ {1} ^ {\min}, \dots , T _ {N _ {t}} ^ {\min} \right].\tag{7.23}
+$$
+
+$$
+X _ {\max} ^ {M} = \left[ P _ {g 2} ^ {\max}, \dots , P _ {g N 1} ^ {\max}, V _ {g 1} ^ {\max}, \dots , V _ {g N _ {g}} ^ {\max}, Q _ {c 1} ^ {\max}, \dots , Q _ {c N c} ^ {\max}, T _ {1} ^ {\max}, \dots , T _ {N _ {t}} ^ {\max} \right].\tag{7.24}
+$$
+
+$$
+X _ {\min} ^ {M} = \left[ P _ {g 2} ^ {\min}, \dots , P _ {g N 1} ^ {\min}, V _ {g 1} ^ {\min}, \dots , V _ {g N _ {g}} ^ {\min}, Q _ {c 1} ^ {\min}, \dots , Q _ {c N c} ^ {\min}, T _ {1} ^ {\min}, \dots , T _ {N _ {t}} ^ {\min} \right].\tag{7.25}
+$$
+
+Có thể thấy rằng, ở M-1 khoảng đầu tiên tất cả công suất thủy điện và công suất nhiệt điện (ngoại trừ tại nút cân bằng) đều được chọn làm biến điều khiển. Tuy nhiên, ở khoảng cuối cùng chỉ có các tổ máy nhiệt điện được chọn nhằm giúp cho việc giải quyết ràng buộc cân bằng nguồn nước tại hồ thủy điện.
+
+Khi đã có tất cả công suất thủy điện ở M-1 khoảng đầu tiên, lưu lượng xả ở M-1 khoảng này sẽ được tìm ra nhờ ct. (7.5). Sau đó, dựa vào ct. (7.4) và (7.5), lưu lượng xả và công suất thủy điện ở khoảng M được tính như sau:
+
+<!-- page: 157 -->
+
+$$
+q _ {j, M} = (W _ {j} - \sum_ {m = 1} ^ {M - 1} t _ {m} q _ {j, m}) / t _ {M}; j = 1, \dots , \mathrm{N} _ {2}\tag{7.26}
+$$
+
+$$
+P _ {h j, M} = \frac {- b _ {h j} \pm \sqrt {b _ {h j} ^ {2} - 4 c _ {h j} (a _ {h j} - q _ {j , M})}}{2 c _ {h j}}\tag{7.27}
+$$
+
+Khi đã có đầy đủ các biến công suất ở các nút ngoại trừ nút cân bằng, điện áp máy phát, giá trị tụ bù và đầu phân áp, phân bố công suất được thực hiện nhờ chạy chương trình Mathpower và thu được tất cả các biến phụ thuộc cho M khoảng thời gian xem xét.
+
+Hàm thích nghi được tính toán nhằm đánh giá chất lượng nghiệm. Giá trị hàm chi phí và các thành phần phạt của các biến phụ thuộc được xét đến trong hàm thích nghi (7.28).
+
+$$
+F T = \binom{F + K _ {h} \sum_ {j = 1} ^ {N _ {2}} \left(P _ {h j M} - P _ {h j M} ^ {\lim}\right) ^ {2} + K _ {g} \sum_ {i = 1} ^ {N _ {g}} \left(P _ {g 1} - P _ {g 1} ^ {\lim}\right) ^ {2}}{+ K _ {q} \sum_ {i = 1} ^ {N _ {g}} \left(Q _ {g i} - Q _ {g i} ^ {\lim}\right) ^ {2} + K _ {v} \sum_ {i = 1} ^ {N _ {d}} \left(V _ {l i} - V _ {l i} ^ {\lim}\right) ^ {2} + K _ {s} \sum_ {l = 1} ^ {N _ {l}} \left(S _ {l} - S _ {l} ^ {\lim}\right) ^ {2}}\tag{7.28}
+$$
+
+Trong đó $K _ { h } , K _ { g } , K _ { q } , K _ { v } ,$ và $K _ { s }$ là các hệ số phạt cho công suất thủy điện ở khoảng M, công suất tại nút cân bằng, công suất phản kháng máy phát, điện áp tại nút tải và công suất biểu kiến truyền tải trên đường dây.
+
+Các giới hạn công suất và điện áp $\dot { \mathbf { \Theta } }$ hàm thích nghi được xác định như sau:
+
+$$
+P _ {h j M} ^ {\lim} = \left\{ \begin{array}{l l} P _ {h j} ^ {\max} & \text {if} P _ {h j M} > P _ {h j} ^ {\max} \\ P _ {h j} ^ {\min} & \text {if} P _ {h j M} <   P _ {h j} ^ {\min} \\ P _ {h j M} & \text {otherwise} \end{array} \right.\tag{7.29}
+$$
+
+$$
+P _ {g 1} ^ {\lim} = \left\{ \begin{array}{l l} P _ {g 1} ^ {\max} & \text {if} P _ {g 1} > P _ {g 1} ^ {\max} \\ P _ {g 1} ^ {\min} & \text {if} P _ {g 1} <   P _ {g 1} ^ {\min} \\ P _ {g 1} & \text {otherwise} \end{array} \right.\tag{7.30}
+$$
+
+$$
+Q _ {g i} ^ {\lim} = \left\{ \begin{array}{l l} Q _ {g i} ^ {\max} & \text {if} Q _ {g i} > Q _ {g i} ^ {\max} \\ Q _ {g i} ^ {\min} & \text {if} Q _ {g i} <   Q _ {g i} ^ {\min} \\ Q _ {g i} & \text {otherwise} \end{array} \right.\tag{7.31}
+$$
+
+$$
+V _ {l i} ^ {\lim} = \left\{ \begin{array}{l l} V _ {l i} ^ {\max} & \text {if} V _ {l i} > V _ {l i} ^ {\max} \\ V _ {l i} ^ {\min} & \text {if} V _ {l i} <   V _ {l i} ^ {\min} \\ V _ {l i} & \text {otherwise} \end{array} \right.\tag{7.32}
+$$
+
+$$
+S _ {l} ^ {\mathrm{lim}} = \left\{ \begin{array}{c c} S _ {l} ^ {\mathrm{max}} & \text {if} S _ {l} > S _ {l} ^ {\mathrm{max}} \\ S _ {l} & \text {otherwise} \end{array} \right.\tag{7.33}
+$$
+
+## 7.3.2. Tạo thế hệ nghiệm mới thứ nhất theo cơ chế Lévy Flights
+
+<!-- page: 158 -->
+
+Thế hệ nghiệm mới thứ nhất được tạo ra theo cơ chế Lévy flights như công thức (7.34) và sau đó được kiểm tra và hiệu chỉnh như công thức (7.35) sau:
+
+$$
+X _ {d} ^ {\text {new}} = X \text {best} _ {d} + \alpha \times \text {rand} \times \Delta X _ {d} ^ {\text {new}}\tag{7.34}
+$$
+
+$$
+X _ {d} ^ {\text {new}} = \left\{ \begin{array}{l l} X ^ {\max} & \text {if} \quad X _ {d} ^ {\text {new}} > X ^ {\max} \\ X ^ {\min} & \text {if} \quad X _ {d} ^ {\text {new}} <   X ^ {\min} \\ X _ {d} ^ {\text {new}} & \text {otherwise} \end{array} \right.\tag{7.35}
+$$
+
+## 7.3.3. Tạo thế hệ nghiệm mới thứ hai theo cơ chế phát hiện trứng lạ
+
+Cũng giống như như áp dụng cho các chương trước, thế hệ nghiệm mới thứ hai được tạo ra thông qua cơ chế phát hiện trứng lạ như công thức (7.36) và sau đó được kiểm tra và hiệu chỉnh như công thức (7.35)
+
+$$
+X _ {d} ^ {\text {dis}} = \left\{ \begin{array}{l} X _ {d} + \text {rand} (X _ {r 1} - X _ {r 2}) \text {if} \quad \text {rand} <   P a \\ X _ {d} \quad \text {otherwise} \end{array} \right.\tag{7.36}
+$$
+
+## 7.3.4. Tiêu chuẩn dừng vòng lặp
+
+Thuật toán lặp sẽ ngừng làm việc khi vòng lặp hiện tại G đạt giá trị lớn nhất xác định trước đó $G _ { m a x }$
+
+## 7.3.5. Các bước tính toán của phương pháp CCSA cho bài toán HTOPF
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp CCSA cho bài toán HTOPF này được trình bày trong lưu đồ giải thuật hình 7.1 và được mô tả chi tiết như sau:
+
+Bước 1: Chọn các thông số cho CCSA gồm $N _ { p }$ tổ chim, xác suất phát hiện trứng lạ $P _ { a _ { 2 } }$ và số vòng lặp lớn nhất $G _ { m a x }$
+
+Bước 2: Khởi tạo dân số ban đầu với $N _ { p }$ tổ chim như mục 7.3.1
+
+Bước 3: Chạy phân bố công suất cho M-1 khoảng đầu tiên để đạt được giá trị công suất của các biến phụ thuộc như ở công thức (7.19) trong đó có công suất tác dụng của tổ máy cân bằng.
+
+Bước 4: Tính toán công suất tác dụng của các tổ máy thủy điện ở khoảng thời gian thứ M theo công thức (7.26) và (7.27).
+
+Bước 5: Chạy phân bố công suất cho khoảng M để đạt được giá trị công suất của các biến phụ thuộc như ở công thức (7.19) trong đó có công suất tác dụng của tổ máy cân bằng.
+
+Bước 6: Tính toán hàm thích nghi cho các trứng theo công thức (7.28) để chọn trứng tốt nhất làm Gbest và gọi các trứng còn lại là Xbestd. Khởi động với vòng lặp thứ nhất $G   = 1$
+
+Bước 7:Tạo ra nghiệm mới thế hệ thứ nhất theo cơ chế Lévy flights như mục 7.3.2
+
+<!-- page: 159 -->
+
+\- Kiểm tra và hiệu chỉnh nghiệm tối ưu theo công thức (7.35).
+
+\- Tìm công suất thủy điện ở khoảng cuối cùng thứ M theo công thức (7.26) và (7.27).
+
+\- Chạy phân bố công suất cho M khoảng để đạt được biến phụ thuộc
+
+Bước 8: Tính toán hàm thích nghi theo công thức (7.28).
+
+\- So sánh các nghiệm cũ và nghiệm mới ở cùng tổ chim để giữ lại nghiệm tốt hơn
+
+Bước 9: Tạo ra nghiệm mới thế hệ thứ hai theo cơ chế phát hiện trứng lạ như mục 7.3.3 - Kiểm tra và hiệu chỉnh nghiệm tối ưu theo công thức (7.35).
+
+\- Tìm công suất thủy điện ở khoảng cuối cùng thứ M theo công thức (7.26) và (7.27).
+
+\- Chạy phân bố công suất cho M khoảng để đạt được biến phụ thuộc
+
+Bước 10: Tính toán hàm thích nghi theo công thức (7.28).
+
+\- So sánh các nghiệm cũ và nghiệm mới ở cùng tổ chim để giữ lại nghiệm tốt hơn
+
+\- Chọn nghiệm có hàm thích nghi nhỏ nhất làm Gbest và các nghiệm còn lại là Xbestd.
+
+Bước 11:Bước 8: Nếu G<G<sub>max</sub>, gán G = G + 1 và trở lại bước 7. Ngược lại, dừng quá trình tính toán.
+
+<!-- page: 160 -->
+
+![](images/page_159_image_0.jpg)
+
+Hình 7.1. Lưu đồ giải thuật áp dụng CCSA cho bài toán HTOPF
+
+<!-- page: 161 -->
+
+## 7.4. Áp Dụng Phương Pháp MCSA Cho Bài Toán HTOPF
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp MCSA cho bài toán HTOPF này được trình bày trong lưu đồ giải thuật hình 7.2.
+
+![](images/page_160_image_2.jpg)
+
+Hình 7.2. Lưu đồ giải thuật áp dụng MCSA cho bài toán HTOPF
+
+<!-- page: 162 -->
+
+## 7.5. Áp Dụng Phương Pháp ASCSA Cho Bài Toán HTOPF
+
+Toàn bộ thủ tục tính toàn khi áp dụng phương pháp ASCSA cho bài toán HTOPF này được trình bày trong lưu đồ giải thuật hình 7.3.
+
+<!-- page: 163 -->
+
+![](images/page_162_image_0.jpg)
+
+Hình 7.3. Lưu đồ giải thuật áp dụng ASCSA cho bài toán HTOPF
+
+## 7.6. Kết Quả Số
+
+## 7.6.1. Lựa chọn thông số điều khiển
+
+<!-- page: 164 -->
+
+Về mặt ứng dụng, các hệ số của các phương pháp CSA đang xét đều có ảnh hưởng đến kết quả cụ thể về chất lượng nghiệm và tốc độ tính toán được phản ảnh thông qua tổng chi phí phát điện và thời gian trung bình như đã phân tích ở Chương 4, Mục 4.9.1 về các ảnh hưởng của thông số lên kết quả và đã kiểm nghiệm trên một hệ thống. Bài toán HTOPF là bài toán rất lớn và phức tạp cùng với hạn chế về cấu hình máy tính nên thời gian tính toán khá lâu, mất khoảng 1 phút cho một lần chạy cho hệ thống IEEE 30 nút và 5 phút cho một lần chạy cho hệ thống IEEE 118 nút. Do đó, rất khó để đánh giá hết tất cả các tổ hợp thông số của phương pháp CSA cho bài toán này. Hơn nữa, việc giảm lựa chọn thông số điều khiển mà vẫn đạt được kết quả cao là một trong những mục tiêu khi áp dụng các phương pháp meta-heuristic do các phương pháp này thường có đặc điểm là phụ thuộc vào nhiều thông số điều khiển. Với các bài toán đơn giản và kích thước nhỏ, hầu hết tất cả các thông số thường được xét đến và chạy thử nghiệm chi tiết để từ đó rút ra được các ảnh hưởng lên kết quả và đề xuất các giá trị cụ thể nếu có thể để ứng dụng cho bài toán lớn và phức tạp nhằm giảm khối lượng tính toán mà vẫn đạt hiệu quả tốt. Tuy nhiên, đối với bài toán lớn thì việc thực thi tất cả các khảo sát ảnh hưởng từ thông số lên kết quả là không khả thi và cách chọn thông số tốt nhất cho các trường hợp này là dựa vào kinh nghiệm các bài toán nhỏ hơn trước đó. Ở đây, phương pháp CCSA được sử dụng làm dẫn chứng với số lượng thông số điều khiển của CSA gồm $P _ { a } , \beta , \alpha ,$ dân số $N _ { p _ { 1 } }$ , số vòng lặp lớn nhất $G _ { m a x }$ . Với phân tích như sau:
+
+$\mathrm { P _ { a } }$ thuộc khoảng [0, 1]: 10 giá trị (giả sử chọn bước nhảy bằng 0.1)
+
+β thuộc khoảng [0.3, 1.99]: 18 giá trị (giả sử chọn bước nhảy bằng 0.1)
+
+\- α thuộc khoảng [0, 1]: 10 giá trị (giả sử chọn bước nhảy bằng 0.1)
+
+$\mathrm { N _ { p } }$ giả sử thuộc khoảng [10, 200]: 20 giá trị (giả sử chọn bước nhảy bằng 10)
+
+G<sub>max</sub> giả sử thuộc khoảng [25, 500]: 20 giá trị (giả sử chọn bước nhảy bằng 25)
+
+Như vậy, sẽ có $1 0 \mathrm { x } 1 8 \mathrm { x } 1 0 \mathrm { x } 2 0 \mathrm { x } 2 0 = 7 2 0 \mathrm { , } 0 0 0$ tổ hợp giá trị và với mỗi tổ hợp giá trị thường được chạy ít nhất 50 lần để tìm các giá trị nhỏ nhất, trung bình, lớn nhất, độ lệch chuẩn và thời gian tính toán. Như vậy sẽ có tất cả 36,000,000 lần chạy và với thời gian chạy cho hệ thống IEEE 30 nút sẽ mất khoảng 600,000 giờ và chạy cho hệ thống IEEE 118 nút sẽ mất khoảng 3,000,000 giờ. Tương tự, phương pháp MCSA có nhiều hơn phương pháp CCSA một thông số là tỉ lệ trứng tốt và trứng xấu. Như Bảng 4.12, tỉ lệ này được chọn 5 giá trị. Do đó thời gian thực thi cho MCSA sẽ gấp 5 lần CCSA. Vậy MCSA sẽ mất thời gian khoảng 3,000,000 giờ cho hệ thống IEEE 30 nút và mất khoảng 15,000,000 giờ cho hệ thống IEEE 118 nút. ASCSA cũng nhiều hơn CCSA một thông số là ε. Bảng 4.5 có 5 giá trị cho ε. Vậy thời gian chạy cho ASCSA cũng xấp xỉ thời gian của MCSA.
+
+Như vậy, các thông số không ảnh hưởng nhiều đến kết quả thì nên được cố định để giảm bớt thời gian tính toán. Các thông số có thể cố định và phân tích ở Chương 4 gồm β, α, ε và tỉ lệ trứng với giá trị như sau: $\beta = 1.5, \alpha = 1, \varepsilon = 10^{-3}$ và tỉ lệ trứng là 1:3. Các thống số còn lại gồm $P _ { a } , ~ N _ { p }$ và $G _ { m a x }$ là những giá trị không thể cố định cho các bài toán khác nhau như đã phân tích ở mục 4.9.1. Do đó, ảnh hưởng của các thống số này
+
+<!-- page: 165 -->
+
+lên các phương pháp CSA cho hệ thống IEEE 30 nút và 118 nút sẽ được khảo sát ở các mục bên dưới. Tương ứng với mỗi tổ hợp thông số điều khiển, mỗi phương pháp sẽ được chạy thành công 50 lần và sau đó tỉ lệ thành công (TLTC) được tính bằng cách chia tổng số lần chạy cho 50 lần thành công này.
+
+## 7.6.2. Kết quả từ hệ thống IEEE 30 nút
+
+Hệ thống IEEE 30 nút ở hình 7.4 với 6 nút phát, 24 nút tải và 41 nhánh được thể hiện ở Trong đó, 4 tổ máy phát nhiệt điện ở nút 1, 2, 5 và 8, và 2 nút máy phát còn lại 11 và 13 được chạy bởi 2 nhà máy thủy điện. Ngoài ra còn có 4 máy biến áp ở các nút 11, 12, 15, và 36, và hai bộ tụ lần lượt được đặt ở nút 10 và 24. Tổng số biến điều khiển của hệ thống là 17 bao gồm công suất tác dụng của 5 máy phát không kể máy phát ở nút cân bằng, điện áp ở 6 nút phát, đầu phân áp của 4 máy biến áp và công suất phản kháng của hai bộ tụ. Thời gian làm việc của hệ thống là 24 giờ được chia thành hai khoảng thời gian bằng nhau. Công suất tải ở khoảng thứ nhất được giữ nguyên như công suất tải ở lưới IEEE 30 nút và công suất ở khoảng thứ hai bằng 85% công suất ở khoảng thứ nhất. Giới hạn công suất tác dụng và công suất phản kháng của các tổ máy phát được cho trong Bảng 7.1. Hệ số hàm chi phí và hàm xả nước được cho trong Bảng 7.2 và Bảng 7.3. Giới hạn tụ bù được cho trong Bảng 7.4 và giới hạn đường dây truyền tải được cho ở bảng 7.5. Dữ liệu lưới IEEE 30 nút và hệ số hàm chi phí được lấy từ tài liệu [134] và hệ số hàm xả nước thủy điện được lấy từ tài liệu số [8].
+
+Bảng 7.1. Giới hạn công suất tác dụng và phản kháng máy phát
+
+<table><tbody><tr><td>Loại nhà máy</td><td>TT</td><td>Nút</td><td>P<sub>gi</sub>,min (MW)</td><td>P<sub>gi</sub>,max (MW)</td><td>Qgi,min (MVAr)</td><td>Qgi,max (MVAr)</td></tr><tr><td rowspan="4">Nhiệt điện</td><td>1</td><td>1</td><td>50</td><td>200</td><td>-20</td><td>200</td></tr><tr><td>2</td><td>2</td><td>20</td><td>80</td><td>-20</td><td>100</td></tr><tr><td>3</td><td>5</td><td>15</td><td>50</td><td>-15</td><td>80</td></tr><tr><td>4</td><td>8</td><td>10</td><td>35</td><td>-15</td><td>60</td></tr><tr><td rowspan="2">Thủy điện</td><td>5</td><td>11</td><td>10</td><td>30</td><td>-10</td><td>50</td></tr><tr><td>6</td><td>13</td><td>12</td><td>40</td><td>-15</td><td>60</td></tr></tbody></table>
+
+<!-- page: 166 -->
+
+![](images/page_165_image_0.jpg)
+
+Hình 7.4. Lưới IEEE 30 nút
+
+Bảng 7.2. Hệ số hàm chi phí
+
+| TT | ai ($/h) | b<sub>i</sub> ($/MWh) | ci ($/MW<sup>2</sup>h) |
+| --- | --- | --- | --- |
+| 1 | 0 | 2.00 | 0.00375 |
+| 2 | 0 | 1.75 | 0.01750 |
+| 3 | 0 | 1.00 | 0.06250 |
+| 4 | 0 | 3.25 | 0.00834 |
+
+Bảng 7.3. Hệ số hàm xả nước và thể tích nước sử dụng
+
+| Thủy điện | ahj(MCF/h) | b<sub>hj</sub>(MCF/MWh) | chj (MCF /MW<sup>2</sup>h) | W<sub>j</sub> (MCF) |
+| --- | --- | --- | --- | --- |
+| 1 | 1.980 | 0.306 | 0.000216 | 200 |
+| 2 | 0.936 | 0.612 | 0.000360 | 400 |
+
+<!-- page: 167 -->
+
+Bảng 7.4. Thông số tụ bù
+
+| Thứ tự | Nút | Qci,min (MVAr) | Qci,max (MVAr) |
+| --- | --- | --- | --- |
+| 1 | 10 | 0 | 19 |
+| 2 | 24 | 0 | 4.3 |
+
+Bảng 7.5. Giới hạn truyền tải đường dây
+
+<table><tbody><tr><td>Nhánh</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr><tr><td>S<sub>l</sub>,max (MVA)</td><td>130</td><td>130</td><td>65</td><td>130</td><td>130</td><td>65</td><td>90</td><td>130</td><td>130</td><td>32</td><td>65</td><td>32</td><td>65</td><td>65</td></tr><tr><td>Nhánh</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr><tr><td>S<sub>l</sub>,max (MVA)</td><td>65</td><td>65</td><td>32</td><td>32</td><td>32</td><td>16</td><td>16</td><td>16</td><td>16</td><td>32</td><td>32</td><td>32</td><td>32</td><td>32</td></tr><tr><td>Nhánh</td><td>29</td><td>30</td><td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td>37</td><td>38</td><td>39</td><td>40</td><td>41</td><td rowspan="2"></td></tr><tr><td>S<sub>l</sub>,max (MVA)</td><td>32</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td><td>16</td><td>65</td><td>16</td><td>16</td><td>16</td><td>32</td><td>32</td></tr></tbody></table>
+
+Để có thể xác định được các giá trị cho các thông số $P _ { a } , ~ N _ { p }$ và $G _ { m a x }$ nhằm đạt được kết quả chi phí tốt và thời gian tính toán hợp lý cho hệ thống IEEE 30 nút, ở mục này chúng tôi sẽ xây dựng 3 kịch bản lần lượt như sau:
+
+## Kịch bản 1: Khảo sát ảnh hưởng của $P _ { a }$ lên kết quả của các phương pháp CSA
+
+Ở kịch bản này, giá trị $\mathrm { P _ { a } }$ sẽ được thử nghiệm từ 0.1 đến 0.9 trong khi đó $N _ { p } { = } 1 0 ,$ $G _ { m a x }   = 1 5 0$ được cố định cho CCSA, MCSA và ASCSA. Bên cạnh đó, tỉ lệ trứng tốt đối với trứng xấu của MCSA được chọn giá trị 1:3 (giá trị tốt nhất tử kết quả bảng 4.12 ở chương 4) và ε của ASCSA được chọn giá trị $1 0 ^ { - 3 }$ (giá trị cho chi phí nhỏ nhất và độ lệch chuẩn tương đối tốt ở bảng 4.5).
+
+Bảng 7.6. Ảnh hưởng của $P _ { a }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.1 | 13761.53 | 13886.34 | 14170.47 | 89.76 | 66.94 | 76% |
+| 0.2 | 13742.46 | 13816.94 | 13955.57 | 43.00 | 66.58 | 66% |
+| 0.3 | 13742.46 | 13804.92 | 14145.14 | 63.10 | 67.10 | 52% |
+| 0.4 | 13742.46 | 13803.15 | 13979.34 | 43.13 | 67.04 | 44% |
+| 0.5 | 13733.51 | 13788.32 | 13893.24 | 29.64 | 67.76 | 52% |
+| 0.6 | 13742.46 | 13797.02 | 14059.22 | 51.97 | 65.49 | 48% |
+| 0.7 | 13742.46 | 13779.71 | 13858.56 | 21.64 | 62.70 | 58% |
+| 0.8 | 13736.98 | 13773.30 | 13883.88 | 28.39 | 66.68 | 60% |
+| 0.9 | 13,722.21 | 13,759.82 | 13,815.14 | 16.895 | 67.036 | 76% |
+
+<!-- page: 168 -->
+
+Bảng 7.7. Ảnh hưởng của $P _ { a }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC ($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.1 | 13787.72 | 14188.54 | 15048.44 | 343.14 | 68.28 | 92% |
+| 0.2 | 13754.61 | 14138.17 | 16147.94 | 511.11 | 67.52 | 100% |
+| 0.3 | 13729.73 | 13882.93 | 14753.62 | 179.81 | 67.66 | 98% |
+| 0.4 | 13741.95 | 13893.1 | 14929.45 | 215.72 | 67.31 | 98% |
+| 0.5 | 13727.62 | 13791.28 | 13940.95 | 44.81 | 68.82 | 98% |
+| 0.6 | 13727.62 | 13791.28 | 13940.95 | 44.81 | 68.82 | 94% |
+| 0.7 | 13728.64 | 13798.76 | 14322.92 | 87.993 | 69.20 | 89% |
+| 0.8 | 13718.23 | 13783.94 | 14066.09 | 53.707 | 65.69 | 91% |
+| 0.9 | 13726.9 | 13785.91 | 13964.96 | 35.051 | 67.51 | 90% |
+
+Bảng 7.8. Ảnh hưởng của $P _ { a }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút
+
+| P<sub>a</sub> | CPNN ($) | CPTB ($) | CPLN ($) | DLC($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.1 | 13714.84 | 13829.27 | 14491.05 | 148.23 | 65.75 | 98% |
+| 0.2 | 13704.01 | 13797.65 | 14542.65 | 129.57 | 63.12 | 98% |
+| 0.3 | 13734.43 | 14044.88 | 15275.96 | 348.49 | 66.20 | 98% |
+| 0.4 | 13,721.72 | 13,829.32 | 14,592.14 | 177.07 | 65.64 | 92% |
+| 0.5 | 13,746.08 | 14,151.83 | 15,791.34 | 404.15 | 64.89 | 96% |
+| 0.6 | 13727.30 | 14064.49 | 15114.15 | 377.39 | 66.07 | 94% |
+| 0.7 | 13697.27 | 13873.20 | 14347.765 | 154.60 | 69.20 | 98% |
+| 0.8 | 13691.61 | 13897.83 | 14606.45 | 220.32 | 65.78 | 98% |
+| 0.9 | 13655.54 | 13808.73 | 14548.91 | 171.31 | 65.871 | 98% |
+
+Kết quả đạt được từ ba phương pháp được báo cáo ở các Bảng 7.6, Bảng 7.7 và Bảng 7.8. Các bảng số cho thấy giá trị chi phí nhỏ nhất đạt được từ các phương pháp ở các giá trị của $P _ { a }$ trong khoảng từ 0.8 đến 0.9. Cụ thể, CCSA, MCSA và ASCSA lần lượt đạt giá trị nhỏ nhất bằng \$13722.208, \$13,718.230, và \$13655.538 ở các giá trị của $P _ { a }$ lần lượt là 0.9, 0.8 và 0.9. Bên cạnh đó, các kết quả cũng cho thấy các phương pháp có xu hướng đạt giá trị nhỏ nhất ở các giá trị của $\mathrm { P _ { a } }$ trong khoảng [0.6, 0.9] tốt hơn các giá trị trong khoảng [0.1, 0.5]. Từ các kết quả này có thể rút ra kết luận rằng giá trị của $P _ { a }$ ảnh hưởng lên kết quả đáng kể và việc chọn giá trị cho một bài toán cụ thể nên được thử nghiệm từ giá trị 0.1 đến 0.9 để tìm ra giá trị hiệu quả nhất.
+
+<!-- page: 169 -->
+
+## Kịch bản 2: Khảo sát ảnh hưởng của $G _ { m a x }$ lên kết quả của các phương pháp CSA
+
+Kịch bản thứ hai tập trung vào phân tích vào ảnh hưởng của số vòng lặp lớn nhất $G _ { m a x }$ lên kết quả đạt được của CCSA, MCSA và ASCSA. Để điều tra ảnh hưởng này, cả ba phương pháp được thực thi với thông số được chọn như sau: $N_{p}=10,\;P_{a}=0.9$ cho CCSA và ASCSA, $P _ { a } { = } 0 . 8$ cho MCSA và $G _ { m a x }$ được chọn các giá trị 25, 50, 75, 100, 125, 150, 175 và 200. Các kết quả được trình bày trong Bảng 7.9, Bảng 7.10 và Bảng 7.11. So sánh kết quả từ giá trị nhỏ nhất, trung bình, lớn nhất và độ lệch chuẩn có thể thấy rằng các phương pháp có xu hướng cải thiện được nghiệm tối ưu khi số vòng lặp tăng dần nhưng độ cải thiện giảm dần khi số vòng lặp vượt qua giá trị 100 đến giá trị 200. Với CCSA, chi phí nhỏ nhất giảm đáng kể khi tăng vòng lặp từ 25 lên 50, từ 50 lên 75 và đến 100 với sự giảm chi phí lần lượt là 53.81\$, 120.48\$ và 19.48\$ nhưng khi vòng lặp tăng lên 125, 150, 175 và 200 thì chi phí giảm không đáng kể lần lượt là 6.71\$, 6.97\$, 10.21\$, 0.96\$. Giá trị độ lệch chuẩn và tỉ lệ thành công cũng thể hiện sự cải thiện về tính ổn định và khả năng xử lý ràng buộc của các phương pháp, khi tại giá trị $G_{max}=25$ độ lệch chuẩn là 304.96 và tỉ lệ thành công là 30% nhưng đến giá trị $G_{ max } = 150$ độ lệch chuẩn chỉ còn 16.895 và tỉ lệ thành công là 76%. Kết quả từ MCSA cũng cho thấy hiện tượng tương tự khi tăng số vòng lặp. Với ASCSA kết quả đạt giá trị nhỏ nhất không thể cải thiện sau vòng lặp 150 khi giá trị nhỏ nhất tại $G_{max}=175$ và $G_{max}=200$ không cải thiện so với $G_{ max } = 150$ . So sánh độ lệch chuẩn cho thấy ASCSA có sự cải thiện không đáng kể khi tăng $G_{ max } = 175$ và $G_{ max } = 200$ Tương tự, tỉ lệ thành công của ASCSA không cải thiện khi $\mathbf { G } _ { \mathrm { m a x } }$ tăng đến 175 và 200. Các phương pháp đều có đặc điểm chung về thời gian tăng dần khi số vòng lặp được tăng lên.
+
+Các kết quả này cho thấy số vòng lặp tăng sẽ đem lại hiệu quả cao cho các phương pháp. Tuy nhiên, khi tăng số vòng lặp vượt qua một giá trị đủ lớn nào đó thì kết quả gần như không được cải thiện hoặc cải thiện không đáng kể.
+
+Bảng 7.9. Ảnh hưởng của $G _ { m a x }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút
+
+| G<sub>max</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 25 | 13929.66 | 14100.52 | 14862.53 | 304.96 | 12.57 | 30% |
+| 50 | 13875.85 | 14014.92 | 14587.62 | 231.81 | 24.29 | 45% |
+| 75 | 13755.37 | 13870.36 | 14098.92 | 88.81 | 35.96 | 55% |
+| 100 | 13735.89 | 13810.85 | 13884.61 | 44.92 | 47.88 | 60% |
+| 125 | 13729.18 | 13772.22 | 13843.62 | 31.40 | 59.95 | 55% |
+| 150 | 13722.21 | 13759.82 | 13815.14 | 16.895 | 67.036 | 76% |
+| 175 | 13712.00 | 13737.76 | 13762.89 | 11.39 | 83.69 | 70% |
+| 200 | 13711.04 | 13733.40 | 13760.24 | 11.70 | 95.30 | 76% |
+
+<!-- page: 170 -->
+
+Bảng 7.10. Ảnh hưởng của $G _ { m a x }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút
+
+| G<sub>max</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 25 | 13952.91 | 14531.91 | 15754.58 | 417.45 | 12.54 | 48% |
+| 50 | 13819.28 | 14172.39 | 15305.17 | 320.66 | 24.91 | 67% |
+| 75 | 13755.87 | 13965.06 | 14863.30 | 206.42 | 37.32 | 75% |
+| 100 | 13747.75 | 13877.87 | 14612.40 | 142.87 | 49.33 | 82% |
+| 125 | 13732.71 | 13842.23 | 14503.97 | 139.62 | 57.42 | 96% |
+| 150 | 13718.23 | 13783.94 | 14066.09 | 53.71 | 65.70 | 91% |
+| 175 | 13712.96 | 13790.76 | 14150.31 | 74.71 | 85.26 | 98% |
+| 200 | 13711.62 | 13766.32 | 13874.63 | 35.22 | 96.95 | 96% |
+
+Bảng 7.11. Ảnh hưởng của $G _ { m a x }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút
+
+| G<sub>max</sub> | CPNN($) | CPTB($) | CPLN($) | DLC($) | TGTT (giây) | TLTC |
+| --- | --- | --- | --- | --- | --- | --- |
+| 25 | 13843.65 | 14365.85 | 15498.90 | 354.80 | 12.28 | 66% |
+| 50 | 13751.79 | 14019.21 | 14896.44 | 265.93 | 24.86 | 86% |
+| 75 | 13718.40 | 13935.35 | 14741.69 | 238.77 | 36.78 | 80% |
+| 100 | 13715.61 | 13821.25 | 14550.69 | 176.35 | 47.60 | 98% |
+| 125 | 13716.98 | 13794.21 | 14738.99 | 156.53 | 57.10 | 98% |
+| 150 | 13655.54 | 13808.73 | 14548.91 | 171.31 | 65.87 | 98% |
+| 175 | 13655.54 | 13792.64 | 14377.98 | 146.25 | 76.29 | 98% |
+| 200 | 13675.45 | 13796.77 | 14250.05 | 133.18 | 89.05 | 98% |
+
+Kịch bản 3: Khảo sát ảnh hưởng của $N _ { p }$ lên kết quả của các phương pháp CSA
+
+Kịch bản thứ ba được thực hiện để xét tính ảnh hưởng của dân số lên kết quả đạt được của CCSA, MCSA và ASCSA. Các phương pháp sẽ được thay đổi với số tổ chim từ 5 đến 20 với bước nhảy bằng 5 trong khi đó $G _ { m a x } { = } 1 5 0$ được giữ nguyên trong suốt quá trình tìm kiếm. Kết quả thực nghiệm được báo cáo ở Bảng 7.12, Bảng 7.13 và Bảng 7.14 cho CCSA, MCSA và ASCSA. Quan sát từ giá trị đạt được như chi phí nhỏ nhất, trung bình, lớn nhất và độ lệch chuẩn tốt hơn khi $N _ { p }$ có giá trị lớn hơn ngoại trừ trường hợp $N _ { p } { = } 2 0$ của MCSA và $N _ { p } { = } 1 5$ , 20 của ASCSA vì MCSA đã đạt được giá trị nhỏ nhất với $N _ { p } { = } 1 5$ và ASCSA đã đạt được giá trị tối ưu tại $N _ { p } { = } 1 0$ . Rõ ràng sự cải thiện ở giá trị nhỏ nhất và độ lệch chuẩn rất lớn ở phương pháp CCSA nhưng với MCSA là không đáng kể và đặc biệt là ASCSA không có sự cải thiện khi $N _ { p } { = } 1 5 , 2 0$ . Phân tích này chỉ ra rằng khi các phương pháp đã đạt được nghiệm tối ưu toàn cục hoặc gần điểm tối ưu toàn cục thì việc tăng dân số lên cũng không thể cải thiện hơn được khả năng tìm kiếm nhưng thời gian tính toán thì luôn tăng khi dân số tăng.
+
+<!-- page: 171 -->
+
+Bảng 7.12. Ảnh hưởng của $N _ { p }$ lên kết quả của CCSA cho hệ thống IEEE 30 nút
+
+| N<sub>p</sub> | 5 | 10 | 15 | 20 |
+| --- | --- | --- | --- | --- |
+| CPNN ($) | 13796.22 | 13722.21 | 13718.75 | 13715.64 |
+| CPTB ($) | 13788.14 | 13759.82 | 13775.26 | 13777.90 |
+| CPLN ($) | 13882.12 | 13815.14 | 13866.54 | 13866.54 |
+| DLC ($) | 88.16 | 16.90 | 28.51 | 27.19 |
+| TGTT (giây) | 36.71 | 67.04 | 108.07 | 139.83 |
+| TLTC | 92% | 76% | 68% | 72% |
+
+Bảng 7.13. Ảnh hưởng của $N _ { p }$ lên kết quả của MCSA cho hệ thống IEEE 30 nút
+
+| N<sub>p</sub> | 5 | 10 | 15 | 20 |
+| --- | --- | --- | --- | --- |
+| CPNN ($) | 13784.4915 | 13718.23 | 13715.4105 | 13717.5912 |
+| CPTB ($) | 14248.0248 | 13783.94 | 13758.2883 | 13751.3078 |
+| CPLN ($) | 15330.5361 | 14066.09 | 13830.0038 | 13793.7023 |
+| DLC ($) | 357.6535 | 53.71 | 26.9698 | 17.9125 |
+| TGTT (giây) | 27.9914 | 65.7 | 84.1471 | 116.1841 |
+| TLTC | 89.30% | 91% | 76.90% | 77% |
+
+Bảng 7.14. Ảnh hưởng của $N _ { p }$ lên kết quả của ASCSA cho hệ thống IEEE 30 nút
+
+| N<sub>p</sub> | 5 | 10 | 15 | 20 |
+| --- | --- | --- | --- | --- |
+| CPNN ($) | 13733.06 | 13655.54 | 13655.54 | 13655.54 |
+| CPTB ($) | 13861.77 | 13808.73 | 13738.69 | 13721.08 |
+| CPLN ($) | 15236.45 | 14548.91 | 14080.34 | 13772.29 |
+| DLC ($) | 403.92 | 171.31 | 53.25 | 14.2043 |
+| TGTT (giây) | 33.6 | 65.871 | 109.7516 | 118.1628 |
+| TLTC | 78% | 98% | 98% | 94% |
+
+Kết quả đạt được bởi các phương pháp CSA dưới dạng chi phí nhỏ nhất, chi phí trung bình, chi phí lớn nhất, độ lệch chuẩn, thời gian chạy chương trình và tỉ lệ thành công được so sánh trong Bảng 7.15 với giá trị của $G _ { m a x } { = } 1 5 0$ và $\mathrm { N _ { p } { = } 1 0 }$ . Kết quả cho thấy ASCSA đạt chi phí nhỏ nhất tốt nhất với 13,655.538\$ trong khi MCSA đạt giá trị tốt thứ hai sau ASCSA với 13,718.230\$ và CCSA có chi phí lớn nhất với 13,722.208\$. Tính toán chỉ ra rằng ASCSA có thể giảm được 66.67\$ so với CCSA và 62.692\$ so với MCSA. Hơn nữa, tỉ lệ thành công của ASCSA rất cao gần như đạt tỉ lệ 100% trong khi đó CCSA chỉ đạt 76% và MCSA đạt 91%. Mặc dù kết quả độ lệch chuẩn của ASCSA cao hơn MCSA và CCSA nhưng vẫn có đủ minh chứng để cho thấy rằng ASCSA hiệu quả hơn CCSA và MCSA do nghiệm tối ưu chất lượng tốt hơn và khả năng xử lý ràng buộc hiệu quả hơn với TLTC cao hơn. Đặc tính hội tụ của ba phương pháp được vẽ
+
+<!-- page: 172 -->
+
+trong Hình 7.5 cho thấy ASCSA luôn luôn hiệu quả hơn hai phương pháp CCSA và MCSA từ vòng lặp thứ 25 trở về sau. CCSA có được kết quả tốt hơn MCSA gần như toàn quá trình, tuy nhiên ở những vòng lặp cuối cùng thì MCSA đã tìm ra nghiệm tốt hơn CCSA.
+
+Kết quả từ lưới IEEE 30 nút cho thấy ASCSA là phương pháp hiệu quả nhất và CCSA là phương pháp kém hiệu quả nhất.
+
+Bảng 7.15. So sánh kết quả cho lưới IEEE 30 nút
+
+| Phương pháp | CCSA | MCSA | ASCSA |
+| --- | --- | --- | --- |
+| P<sub>a</sub> | 0.9 | 0.8 | 0.9 |
+| CPNN ($) | 13,722.208 | 13,718.230 | 13,655.538 |
+| CPTB ($) | 13,759.815 | 13,783.937 | 13,808.732 |
+| CPLN ($) | 13,815.143 | 14,066.094 | 14,548.909 |
+| DLC ($) | 16.895 | 53.707 | 171.314 |
+| TGTT (giây) | 67.036 | 65.695 | 65.871 |
+| TLTC | 76% | 91% | 98% |
+
+![](images/page_171_chart_4.jpg)
+
+Hình 7.5. Đặc tính hội tụ của các phương pháp CSA cho lưới IEEE 30 nút.
+
+## 7.6.3. Kết quả từ hệ thống IEEE 118 nút
+
+Ở mục này, các phương pháp CSA được kiểm nghiệm trên hệ thống IEEE 118 nút [127] với nguồn phát từ 50 nhà máy nhiệt điện và 4 nhà máy thủy điện, 54 nút phát, 64 nút tải, 186 nhánh, 9 trạm biến áp, 14 vị trí lắp đặt tụ bù. Các máy phát nhiệt điện ở các nút 111, 112, 113 và 116 được thay thế bởi các tổ máy thủy điện [127]. Hệ thống này trở nên phức tạp hơn và lớn hơn rất nhiều so với số lượng biến điều khiển lớn cho các
+
+<!-- page: 173 -->
+
+ràng buộc thủy điện, ràng buộc tổ máy và đa khoảng thời gian. Để áp dụng các phương pháp này, mỗi nghiệm tối ưu bao gồm 130 biến điều khiển bao gồm công suất tác dụng của 53 tổ máy không kể đến tổ máy ở nút cân bằng ở nút 69, biên độ điện áp của 54 nút phát, đầu phân áp của 9 máy phát và công suất tác dụng của 14 bộ tụ bù. Thời gian phân bố công suất tối ưu cho hệ thống là một ngày đêm với hai khoảng thời gian, khoảng thứ nhất 20 giờ và khoảng thứ hai 4 giờ. Công suất ở khoảng thời gian thứ nhất được lấy bằng với công suất từ lưới IEEE 118 nút trong khi đó khoảng thứ hai có tải bằng 70% giá trị khoảng thứ nhất.
+
+Bảng 7.16. So sánh kết quả cho lưới IEEE 118 nút.
+
+| Phương pháp | CCSA | MCSA | ASCSA |
+| --- | --- | --- | --- |
+| P<sub>a</sub> | 0.9 | 0.9 | 0.8 |
+| CPNN ($) | 3,088,459.0 | 2,994,592.1 | 2,818,001.7 |
+| CPTB ($) | 3,358,689.2 | 3,2163,12.3 | 2,961,433.3 |
+| CPLN ($) | 3,665,459.0 | 3,491,042.1 | 3,336,941.4 |
+| DLC ($) | 153,667.7 | 129,941.3 | 123,993.9 |
+| TGTT (giây) | 278 | 286 | 282 |
+| TLTC | 21% | 46% | 66% |
+
+Để thực thi các phương pháp CSA cho hệ thống IEEE 118 nút, $P _ { a }$ cũng được thử nghiệm trong khoảng từ 0.1 đến 0.9 với dân số và số vòng lặp được cố định ở giá trị 20 và 300. Giá trị dân số và số vòng lặp được chọn dựa trên kích thước hệ thống 118 nút so với 30 nút. Kết quả chi phí nhỏ nhất đạt được từ các phương pháp lần lượt là 0.9 cho CCSA và MCSA, và 0.8 cho ASCSA và được báo cáo trong Bảng 7.16. Kết quả cho thấy ASCSA đạt giá trị tốt nhất về chi phí, độ lệch chuẩn và tỉ lệ thành công lần lượt là 2,818,001.7\$, 123,993.9\$ và 66% trong khi đó CCSA đạt kết quả kém nhất lần lượt là 3,088,459.0\$, 153,667.7\$ và 21%. So sánh giá trị về chi phí nhỏ nhất và độ lệch chuẩn cho thấy ASCSA giảm được 270,457.30\$ và 29,673.80\$ so với CCSA và giảm được 176,590.40\$ và 5,947.40\$ so với MCSA. Hình 7.6 cho thấy được hiệu quả của ASCSA và MCSA nổi trội hơn CCSA. Dựa vào chi phí, độ lệch chuẩn và tỉ lệ thành công có thể đánh giá được rằng ASCSA là phương pháp hiệu quả nhất và CCSA là phương pháp kém hiệu quả nhất cho lưới IEEE 118 nút. Nghiệm tối ưu hai hệ thống này của ASCSA được đính kèm trong phụ lục.
+
+<!-- page: 174 -->
+
+![](images/page_173_chart_0.jpg)
+
+Hình 7.6. Đặc tính hội tụ của các phương pháp CSA cho lưới IEEE 118 nút
+
+Bảng 7.17. Ảnh hưởng của $G _ { m a x }$ lên kết quả của CCSA cho hệ thống IEEE 118 nút
+
+| G<sub>max</sub> | 150 | 200 | 250 | 300 |
+| --- | --- | --- | --- | --- |
+| CPNN ($)` | - | 3176044.27 | 3162046.63 | 3088459.0 |
+| CPTB ($) | - | 3389860.89 | 3346975.11 | 3358689.2 |
+| CPLN ($) | - | 3893408.99 | 3681661.74 | 3665459 |
+| DLC ($) | - | 174439.538 | 136062.946 | 153667.7 |
+| TGTT(giây) | - | 185.518667 | 257.15 | 278 |
+| TLTC | 0% | 11% | 16% | 21% |
+
+Bảng 7.18. Ảnh hưởng của $G _ { m a x }$ lên kết quả của MCSA cho hệ thống IEEE 118 nút
+
+| G<sub>max</sub> | 150 | 200 | 250 | 300 |
+| --- | --- | --- | --- | --- |
+| CPNN ($)` | - | 3142021.64 | 3052933.52 | 2,994,592.10 |
+| CPTB ($) | - | 3388254.36 | 3339530.31 | 3,2163,12.3 |
+| CPLN ($) | - | 3802714.81 | 3778668.27 | 3,491,042.10 |
+| DLC ($) | - | 171945.43 | 149863.70 | 129,941.30 |
+| TGTT(giây) | - | 191 | 267 | 286 |
+| TLTC | 0% | 24% | 41% | 46% |
+
+<!-- page: 175 -->
+
+Bảng 7.19. Ảnh hưởng của $G _ { m a x }$ lên kết quả của ASCSA cho hệ thống IEEE 118 nút
+
+| G<sub>max</sub> | 150 | 200 | 250 | 300 |
+| --- | --- | --- | --- | --- |
+| CPNN ($) | 3021010.2 | 2908390.92 | 2862389.53 | 2818001.7 |
+| CPTB ($) | 3413914 | 3227602.18 | 3173034.49 | 2961433.3 |
+| CPLN ($) | 4207334.6 | 3684446.56 | 3562838.26 | 3336941.4 |
+| DLC ($) | 276424.38 | 207251.66 | 18863.45 | 123993.9 |
+| TGTT(giây) | 139.1 | 185.9 | 235.4 | 282 |
+| TLTC | 42% | 47% | 62% | 66% |
+
+Ngoài ra, ba phương pháp CCSA, MCSA và ASCSA cũng được thử nghiệm với giá trị số vòng lặp được thay đổi trong khoảng từ 150 đến 300 trong khi dân số được cố định ở giá trị 20, $P _ { a }$ được chọn 0.9 cho CCSA và MCSA và 0.8 cho ASCSA. Kết quả được báo cáo lần lượt trong Bảng 7.17, 7.18 và 7.19 cho thấy ở giá trị vòng lặp bằng 150, CCSA và MCSA không thể xử lý các ràng buộc của hệ thống và có giá trị tỉ lệ thành công bằng 0% trong khi đó ASCSA vẫn thành công được 42%. Các phương pháp có sự cải thiện đáng kể về chi phí và tỉ lệ thành công khi số vòng lặp tăng từ 200 đến 300. Cụ thể, CCSA giảm từ \$3176044.27 xuống \$3162046.63 và \$3088459 khi số vòng lặp tăng từ 200 đến 250 và 300. Tương tự, CCSA cũng tăng dần tỉ lệ thành công từ 11% lên 16% và 21% khi tăng số vòng lặp. Sự cải thiện đáng kể hơn được đánh giá từ MCSA khi chi phí giảm từ \$3142021.64 xuống 2,994,592.10 và tỉ lệ thành công tăng từ 24% lên 46% khi số vòng lặp tăng từ 200 lên 300. Kết quả tốt hơn rất nhiều khi nhận thấy rằng ASCSA có thể thành công khi $G_{ max } = 150$ và có chi phí bằng \$3,021,010.2, giá trị này nhỏ hơn giá trị của CCSA ở $G_{ max } = 300$ (\$3088459.0) và của MCSA ở $G_{ max } = 250$ (\$3052933.52). Tỉ lệ thành công của ASCSA rất cao từ 42% ở $G_{ max } = 150$ và 66% ở $G_{max}=300$ Từ việc so sánh kết quả về chi phí nhỏ nhất và tỉ lệ thành có thể cho thấy rằng ASCSA là phương pháp hiệu quả hơn rất nhiều so với phương pháp CCSA và MCSA ở hệ thống IEEE 118 nút.
+
+## 7.7. Tóm Tắt
+
+Chương này trình bày ứng dụng của các thuật toán Cuckoo Search để phân bố công suất tối ưu hệ thống thủy nhiệt điện. Hai hệ thống truyền tải gồm IEEE 30 nút và IEEE 118 nút được xét đến trong chương này với nguồn phát từ hệ thống nhà máy thủy điện và nhiệt điện để thử nghiệm tính hiệu quả của các phương pháp Cuckoo Search. Kết quả cho thấy các phương pháp đều không thể đạt được tỉ lệ thành công 100% như ở các chương khác và đặc biệt CCSA có tỉ lệ rất thấp với lưới IEEE 118 nút. MCSA và ASCSA cải thiện kết quả đáng kể so với CCSA. Các kết quả như chi phí, độ lệch chuẩn và tỉ lệ thành công cho thấy ASCSA hiệu quả hơn nhiều so với CCSA và MCSA. So sánh giữa
+
+<!-- page: 176 -->
+
+CCSA và MCSA cho thấy MCSA hiệu quả hơn CCSA cho cả hai hệ thống. Điều này giống với kết quả của hai bài toán ở chương 4.
+
+<!-- page: 177 -->
+
+# CHƯƠNG 8: TÓM TẮT
+
+## 8.1 Tóm Tắt
+
+Nội dung nghiên cứu của luận án được trình bày trong hình 8.1 với 5 bài toán điều độ tối ưu hệ thống thủy nhiệt điện như sau:
+
+1) Phối hợp hệ thống các nhà máy thủy nhiệt điện ngắn hạn với chiều cao cột nước cố định bỏ qua các ràng buộc thể tích hồ chứa và xét đơn mục tiêu.
+
+2) Phối hợp hệ thống các nhà máy thủy nhiệt điện ngắn hạn với chiều cao cột nước cố định bỏ qua các ràng buộc thể tích hồ chứa và xét hai mục tiêu gồm chi phí và phát thải
+
+3) Phối hợp hệ thống các nhà máy thủy nhiệt điện ngắn hạn với chiều cao cột nước cố định xét đến các ràng buộc thể tích hồ chứa và xét đơn mục tiêu.
+
+4) Phối hợp hệ thống các nhà máy thủy nhiệt điện ngắn hạn với chiều cao cột nước biến đổi xét đến hệ thống các hồ thủy điện bậc thang và xét đơn mục tiêu.
+
+5) Phân bố công suất tối ưu cho hệ thống thủy nhiệt điện
+
+Và các thuật toán được áp dụng để giải năm bài toán trên là:
+
+1) Thuật toán Cuckoo Search cổ điển (CCSA)
+
+2) Thuật toán Cuckoo Search cải tiến (MCSA)
+
+3) Thuật toán Cuckoo Search chọn lọc thích nghi (ASCSA)
+
+4) Thuật toán mạng Hopfield Lagrange tăng cường (ALHN)
+
+Trong 4 phương pháp trên CCSA, MCSA và ALHN là các phương pháp được áp dụng trong khi đó ASCSA là phương pháp được xây dựng và áp dụng lần đầu trong luận án này.
+
+Về kết quả:
+
+ASCSA hiệu quả cho tất cả các bài toán trên với các ràng buộc đơn giản và phức tạp.
+
+ALHN chỉ có thể giải được bài toán thứ nhất và thứ hai với hàm chi phí khả vi cho chất lượng lời giải cao và thời gian tính toán nhanh. Tuy nhiên, ALHN phụ thuộc đáng kể vào thông số điều khiển trong khi việc chọn giá trị thông số là công việc không dễ dàng. Với bài toán có nhiều ràng buộc như ở các chương 5, 6 và 7, phương pháp ALHN sẽ gặp nhiều khó khăn do có nhiều thông số điều khiển hơn các bài toán ở chương 4. Do đó, ALHN đã không được áp dụng ở các chương này và ứng dụng của ALHN chỉ dừng lại ở bài toán điều độ tối ưu hệ thống thủy nhiệt điện ngắn hạn xét chiều cao cột nước cố định và bỏ qua ràng buộc hồ chứa.
+
+<!-- page: 178 -->
+
+MCSA hiệu quả hơn CCSA cho bài toán 1, 2 và 5 và kém hiệu quả hơn ở bài toán 3 và 4.
+
+<!-- page: 179 -->
+
+![](images/page_178_image_0.jpg)
+
+Hình 8.1. Tóm tắt nghiên cứu của luận án
+
+<!-- page: 180 -->
+
+## 8.2 Hướng Phát Triển
+
+Do thời gian nghiên cứu còn hạn chế nên còn nhiều vấn đề sẽ tiếp tục nghiên cứu sau khi hoàn thành luận án. Các nghiên cứu tiếp theo như sau:
+
+Cải tiến thuật toán Cuckoo Search cổ điển để đạt hiệu quả tốt hơn thuật toán ASCSA
+
+Xét đến các năng lượng mới như mặt trời, pin nhiên liệu và gió cùng với hệ thống thủy nhiệt điện.
+
+Áp dụng các thuật toán mới hiệu quả hơn cho các bài toán nghiên cứu ở luận án
+
+Sẽ kết hợp các phương pháp Cuckoo Search với các phương pháp khác như PSO, DE, v.v. để nâng cao tính hiệu quả.
+
+<!-- page: 181 -->
+
+## PHỤ LỤC
+
+## A1: Nghiệm tối ưu các hế thống chương 4
+
+Bảng A.1. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 1
+
+<table><tbody><tr><td>Điều độ</td><td>m</td><td>P<sub>D</sub> (MW)</td><td>P<sub>s1</sub> (MW)</td><td>P<sub>s2</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td><td>P<sub>h2</sub> (MW)</td></tr><tr><td rowspan="3">Kinh tế</td><td>1</td><td>900</td><td>168.6634</td><td>415.9205</td><td>245.3948</td><td>98.5524</td></tr><tr><td>2</td><td>1200</td><td>219.1281</td><td>570.2793</td><td>305.4036</td><td>157.0828</td></tr><tr><td>3</td><td>1100</td><td>202.1743</td><td>518.4747</td><td>285.2499</td><td>137.3699</td></tr><tr><td rowspan="3">Phát thải</td><td>1</td><td>900</td><td>299.9557</td><td>359.1235</td><td>213.0055</td><td>59.9468</td></tr><tr><td>2</td><td>1200</td><td>299.9728</td><td>434.9514</td><td>330.9877</td><td>188.3681</td></tr><tr><td>3</td><td>1100</td><td>299.8197</td><td>415.1421</td><td>289.3711</td><td>141.2896</td></tr><tr><td rowspan="3">Kinh tế-phát thải</td><td>1</td><td>900</td><td>229.9500</td><td>372.4037</td><td>237.1526</td><td>89.9903</td></tr><tr><td>2</td><td>1200</td><td>289.7771</td><td>488.0138</td><td>311.6328</td><td>163.8229</td></tr><tr><td>3</td><td>1100</td><td>269.9705</td><td>449.0947</td><td>286.7511</td><td>138.6597</td></tr></tbody></table>
+
+Bảng A.2. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 2
+
+| m | Thời gian (h) | P<sub>D</sub> (MW) | P<sub>s1</sub> (MW) | P<sub>s2</sub> (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 12 | 1200 | 433.5774 | 328.2687 | 160.8732 | 308.6786 |
+| 2 | 12 | 1500 | 449.5233 | 444.7805 | 247.4742 | 407.1446 |
+| 3 | 12 | 1400 | 449.7922 | 407.7626 | 216.7919 | 368.1650 |
+| 4 | 12 | 1700 | 449.7328 | 566.8245 | 249.9468 | 497.1215 |
+
+<!-- page: 182 -->
+
+Bảng A.3. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 3
+
+<table><tbody><tr><td rowspan="2">m</td><td rowspan="2">P<sub>D</sub> (MW)</td><td colspan="2">Điều độ kinh tế</td><td colspan="2">Điều độ phát thải</td><td colspan="2">Điều độ kinh tế-phát thải</td></tr><tr><td>P<sub>s1</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td><td>P<sub>s1</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td><td>P<sub>s1</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td></tr><tr><td>1</td><td>455</td><td>231.8769</td><td>235.2000</td><td>273.4875</td><td>191.8207</td><td>263.2428</td><td>202.4348</td></tr><tr><td>2</td><td>425</td><td>203.6943</td><td>232.4307</td><td>254.6108</td><td>179.3700</td><td>241.6474</td><td>192.7785</td></tr><tr><td>3</td><td>415</td><td>194.2978</td><td>231.5304</td><td>248.2996</td><td>175.2608</td><td>234.1149</td><td>189.9257</td></tr><tr><td>4</td><td>407</td><td>186.8320</td><td>230.7634</td><td>243.3159</td><td>171.9140</td><td>228.9807</td><td>186.7261</td></tr><tr><td>5</td><td>400</td><td>180.2002</td><td>230.2021</td><td>238.9338</td><td>169.0132</td><td>223.3769</td><td>185.0832</td></tr><tr><td>6</td><td>420</td><td>199.0422</td><td>231.9307</td><td>251.4708</td><td>177.2979</td><td>237.7575</td><td>191.4790</td></tr><tr><td>7</td><td>487</td><td>261.9334</td><td>238.2604</td><td>293.7428</td><td>205.0853</td><td>285.5055</td><td>213.6361</td></tr><tr><td>8</td><td>604</td><td>372.8085</td><td>249.3242</td><td>368.6690</td><td>253.6476</td><td>369.6337</td><td>252.6394</td></tr><tr><td>9</td><td>665</td><td>431.1252</td><td>255.1320</td><td>408.2837</td><td>279.0060</td><td>413.9746</td><td>273.0372</td></tr><tr><td>10</td><td>675</td><td>440.8545</td><td>255.9461</td><td>414.8211</td><td>283.1588</td><td>421.0270</td><td>276.6456</td></tr><tr><td>11</td><td>695</td><td>459.8355</td><td>258.1032</td><td>427.9131</td><td>291.4811</td><td>435.6319</td><td>283.3706</td></tr><tr><td>12</td><td>705</td><td>469.5090</td><td>259.0078</td><td>434.4751</td><td>295.6430</td><td>443.5437</td><td>286.1097</td></tr><tr><td>13</td><td>580</td><td>350.0394</td><td>246.9647</td><td>353.1818</td><td>243.6836</td><td>352.2713</td><td>244.6338</td></tr><tr><td>14</td><td>605</td><td>373.8182</td><td>249.3602</td><td>369.3027</td><td>254.0763</td><td>371.3327</td><td>251.9551</td></tr><tr><td>15</td><td>616</td><td>384.3249</td><td>250.3893</td><td>376.4250</td><td>258.6413</td><td>378.2904</td><td>256.6903</td></tr><tr><td>16</td><td>653</td><td>419.7777</td><td>253.8283</td><td>400.4454</td><td>274.0311</td><td>404.8481</td><td>269.4162</td></tr><tr><td>17</td><td>721</td><td>484.9928</td><td>260.4715</td><td>447.1817</td><td>300.0000</td><td>456.2474</td><td>290.4669</td></tr><tr><td>18</td><td>740</td><td>503.2976</td><td>262.3311</td><td>467.2179</td><td>300.0000</td><td>468.8336</td><td>298.3013</td></tr><tr><td>19</td><td>700</td><td>464.7077</td><td>258.5174</td><td>431.1999</td><td>293.5545</td><td>439.5179</td><td>284.8122</td></tr><tr><td>20</td><td>678</td><td>443.5196</td><td>256.4562</td><td>416.7676</td><td>284.4223</td><td>423.5640</td><td>277.2887</td></tr><tr><td>21</td><td>630</td><td>397.7189</td><td>251.6947</td><td>385.4969</td><td>264.4637</td><td>388.3202</td><td>261.5084</td></tr><tr><td>22</td><td>585</td><td>354.8111</td><td>247.4218</td><td>356.4099</td><td>245.7524</td><td>355.8544</td><td>246.3323</td></tr><tr><td>23</td><td>540</td><td>312.1042</td><td>243.1525</td><td>327.5011</td><td>227.0842</td><td>324.0401</td><td>230.6875</td></tr><tr><td>24</td><td>503</td><td>277.1378</td><td>239.6452</td><td>303.9000</td><td>211.7290</td><td>296.8021</td><td>219.1041</td></tr></tbody></table>
+
+<!-- page: 183 -->
+
+Bảng A.4. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 4
+
+<table><tbody><tr><td rowspan="2">m</td><td colspan="3">Điều độ kinh tế</td><td colspan="3">Điều độ phát thải</td><td colspan="3">Điều độ kinh tế-phát thải</td></tr><tr><td>P<sub>s1</sub>(MW)</td><td>P<sub>h1</sub>(MW)</td><td>P<sub>h2</sub>(MW)</td><td>P<sub>s1</sub>(MW)</td><td>P<sub>h1</sub>(MW)</td><td>P<sub>h2</sub>(MW)</td><td>P<sub>s1</sub>(MW)</td><td>P<sub>h1</sub>(MW)</td><td>P<sub>h2</sub>(MW)</td></tr><tr><td>1</td><td>1.2692</td><td>20.2185</td><td>8.9613</td><td>6.0695</td><td>16.8535</td><td>7.3883</td><td>4.8282</td><td>18.5758</td><td>6.9654</td></tr><tr><td>2</td><td>2.0914</td><td>21.1934</td><td>10.2165</td><td>6.283</td><td>16.7437</td><td>10.3068</td><td>5.0936</td><td>19.7462</td><td>8.587</td></tr><tr><td>3</td><td>2.637</td><td>21.9027</td><td>11.0006</td><td>6.5018</td><td>22.1295</td><td>6.8821</td><td>5.2908</td><td>20.9099</td><td>9.2795</td></tr><tr><td>4</td><td>3.4438</td><td>22.9502</td><td>12.2073</td><td>6.4444</td><td>21.6032</td><td>10.4739</td><td>5.5572</td><td>21.9323</td><td>11.0525</td></tr><tr><td>5</td><td>3.9755</td><td>23.5922</td><td>13.0744</td><td>6.3699</td><td>22.025</td><td>12.1642</td><td>5.7064</td><td>22.7984</td><td>12.0881</td></tr><tr><td>6</td><td>5.2874</td><td>25.2796</td><td>15.1874</td><td>6.699</td><td>24.861</td><td>14.1583</td><td>6.212</td><td>24.9141</td><td>14.6012</td></tr><tr><td>7</td><td>6.7187</td><td>26.9999</td><td>17.1576</td><td>6.6712</td><td>26.3918</td><td>17.7918</td><td>6.6799</td><td>26.949</td><td>17.2461</td></tr><tr><td>8</td><td>9.1127</td><td>30.0056</td><td>21.0026</td><td>6.8097</td><td>32.5361</td><td>20.9319</td><td>7.5211</td><td>30.595</td><td>22.0634</td></tr><tr><td>9</td><td>9.6883</td><td>30.6874</td><td>21.8038</td><td>6.9005</td><td>31.9852</td><td>23.4114</td><td>7.7172</td><td>31.6547</td><td>22.8922</td></tr><tr><td>10</td><td>8.8402</td><td>29.6351</td><td>20.6155</td><td>6.8124</td><td>31.4029</td><td>20.9911</td><td>7.419</td><td>30.2905</td><td>21.4377</td></tr><tr><td>11</td><td>8.2944</td><td>29.0142</td><td>19.7278</td><td>6.7596</td><td>29.3947</td><td>20.9288</td><td>7.2503</td><td>29.3394</td><td>20.4808</td></tr><tr><td>12</td><td>8.6059</td><td>29.304</td><td>20.1519</td><td>6.8174</td><td>29.9932</td><td>21.3162</td><td>7.3328</td><td>29.9048</td><td>20.8746</td></tr><tr><td>13</td><td>9.4088</td><td>30.2303</td><td>21.5061</td><td>6.9629</td><td>32.168</td><td>22.1492</td><td>7.6055</td><td>31.1099</td><td>22.5057</td></tr><tr><td>14</td><td>9.696</td><td>30.6485</td><td>21.8331</td><td>7.1419</td><td>32.0833</td><td>23.0702</td><td>7.7381</td><td>31.812</td><td>22.7201</td></tr><tr><td>15</td><td>10.8454</td><td>31.9428</td><td>23.5084</td><td>6.9907</td><td>34.425</td><td>25.084</td><td>8.1121</td><td>33.2495</td><td>25.0579</td></tr><tr><td>16</td><td>11.6587</td><td>32.971</td><td>24.7641</td><td>7.0693</td><td>36.8989</td><td>25.7242</td><td>8.4019</td><td>34.32</td><td>26.8154</td></tr><tr><td>17</td><td>12.4358</td><td>33.9723</td><td>26.0862</td><td>7.1809</td><td>33.8995</td><td>31.567</td><td>8.6545</td><td>35.761</td><td>28.2627</td></tr><tr><td>18</td><td>9.9587</td><td>30.992</td><td>22.2576</td><td>6.8028</td><td>33.0155</td><td>23.5491</td><td>7.8433</td><td>32.0206</td><td>23.4361</td></tr><tr><td>19</td><td>8.0311</td><td>28.6527</td><td>19.3239</td><td>6.8277</td><td>29.6553</td><td>19.5884</td><td>7.1753</td><td>28.8208</td><td>20.0353</td></tr><tr><td>20</td><td>6.6571</td><td>26.9686</td><td>17.2504</td><td>6.6672</td><td>27.1017</td><td>17.112</td><td>6.7545</td><td>27.3435</td><td>16.7905</td></tr><tr><td>21</td><td>4.7782</td><td>24.65</td><td>14.2814</td><td>6.59</td><td>23.6175</td><td>13.4406</td><td>5.9931</td><td>23.977</td><td>13.6985</td></tr><tr><td>22</td><td>2.0774</td><td>21.1876</td><td>10.2364</td><td>6.2947</td><td>18.2737</td><td>8.8043</td><td>5.1087</td><td>19.7586</td><td>8.5597</td></tr><tr><td>23</td><td>1.5548</td><td>20.5585</td><td>9.3531</td><td>6.6161</td><td>18.6439</td><td>6.1063</td><td>4.8976</td><td>19.0539</td><td>7.4392</td></tr><tr><td>24</td><td>1.2444</td><td>20.2393</td><td>8.9661</td><td>6.2021</td><td>17.3699</td><td>6.7525</td><td>4.8109</td><td>18.5799</td><td>6.9787</td></tr></tbody></table>
+
+<!-- page: 184 -->
+
+Bảng A.5. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 5
+
+| m | P<sub>D</sub> (MW) | P<sub>s1</sub> (MW) | P<sub>s2</sub> (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub> (MW) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 400 | 77.6831 | 136.8856 | 168.2674 | 22.7930 |
+| 2 | 300 | 61.6138 | 88.0302 | 149.4335 | 4.1851 |
+| 3 | 250 | 53.2862 | 61.1838 | 137.8995 | 0.0001 |
+| 4 | 250 | 53.3433 | 60.8589 | 138.1685 | 0.0024 |
+| 5 | 250 | 53.2022 | 61.1584 | 138.0094 | 0.0000 |
+| 6 | 300 | 61.7888 | 87.9729 | 148.9640 | 4.5372 |
+| 7 | 450 | 85.5907 | 160.8527 | 178.1458 | 32.4986 |
+| 8 | 900 | 158.2327 | 384.5638 | 266.8333 | 119.0004 |
+| 9 | 1230 | 213.2001 | 553.1110 | 334.0924 | 184.3093 |
+| 10 | 1250 | 216.6235 | 563.3793 | 338.4511 | 188.1365 |
+| 11 | 1350 | 233.3441 | 615.5772 | 358.9517 | 208.6348 |
+| 12 | 1400 | 242.0489 | 641.5138 | 369.5919 | 218.6463 |
+| 13 | 1200 | 208.0736 | 536.8381 | 327.9850 | 179.0714 |
+| 14 | 1250 | 216.3527 | 564.1343 | 338.1110 | 187.9882 |
+| 15 | 1250 | 216.4506 | 563.5739 | 338.0954 | 188.4709 |
+| 16 | 1270 | 219.8857 | 574.0724 | 342.4155 | 192.1280 |
+| 17 | 1350 | 233.6024 | 615.7020 | 359.0031 | 208.1978 |
+| 18 | 1470 | 254.2683 | 678.3164 | 384.2598 | 232.7466 |
+| 19 | 1330 | 230.0044 | 605.0363 | 354.5649 | 204.8494 |
+| 20 | 1250 | 216.6084 | 563.4881 | 338.2948 | 188.1988 |
+| 21 | 1170 | 202.8279 | 522.4675 | 321.8921 | 172.0975 |
+| 22 | 1050 | 182.9725 | 461.0206 | 296.9568 | 148.4056 |
+| 23 | 900 | 158.0611 | 385.0740 | 266.8225 | 118.6685 |
+| 24 | 600 | 109.4387 | 234.6064 | 207.2290 | 61.2802 |
+
+<!-- page: 185 -->
+
+Bảng A.6. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 5
+
+<table><tbody><tr><td rowspan="2">Hour</td><td colspan="4">Điều độ phát thải</td><td colspan="4">Điều độ kinh tế-phát thải</td></tr><tr><td>P<sub>s1</sub> (MW)</td><td>P<sub>s2</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td><td>P<sub>h2</sub>(MW)</td><td>P<sub>s1</sub> (MW)</td><td>P<sub>s2</sub> (MW)</td><td>P<sub>h1</sub> (MW)</td><td>P<sub>h2</sub> (MW)</td></tr><tr><td>1</td><td>192.6915</td><td>201.1468</td><td>14.6681</td><td>0.0537</td><td>212.58</td><td>155.6618</td><td>40.5969</td><td>0.1025</td></tr><tr><td>2</td><td>159.0612</td><td>142.4605</td><td>2.8348</td><td>0.8864</td><td>136.9734</td><td>165.2829</td><td>1.1483</td><td>1.3342</td></tr><tr><td>3</td><td>120.3071</td><td>131.101</td><td>1.36</td><td>0.6181</td><td>134.8239</td><td>111.293</td><td>3.8756</td><td>3.649</td></tr><tr><td>4</td><td>119.9897</td><td>131.4044</td><td>1.7794</td><td>0.2064</td><td>98.3161</td><td>154.433</td><td>0.265</td><td>0.0759</td></tr><tr><td>5</td><td>125.8007</td><td>126.543</td><td>0.717</td><td>0.4419</td><td>103.5107</td><td>149.5215</td><td>0.0169</td><td>0.1026</td></tr><tr><td>6</td><td>144.6028</td><td>159.2323</td><td>0</td><td>1.0833</td><td>159.9122</td><td>138.1002</td><td>6.7721</td><td>0.44</td></tr><tr><td>7</td><td>218.4502</td><td>202.0932</td><td>38.1618</td><td>1.8436</td><td>187.8615</td><td>217.368</td><td>52.4895</td><td>1.6143</td></tr><tr><td>8</td><td>296.8249</td><td>304.4692</td><td>329.4139</td><td>1.398</td><td>264.3565</td><td>326.9807</td><td>291.7706</td><td>47.5754</td></tr><tr><td>9</td><td>299.9863</td><td>422.5924</td><td>398.9264</td><td>165.9816</td><td>291.251</td><td>445.6408</td><td>399.7606</td><td>150.0848</td></tr><tr><td>10</td><td>299.2622</td><td>379.2124</td><td>394.6984</td><td>238.06</td><td>293.8717</td><td>458.0649</td><td>396.5269</td><td>160.0937</td></tr><tr><td>11</td><td>299.8428</td><td>439.6847</td><td>397.8704</td><td>283.3286</td><td>299.7433</td><td>499.5768</td><td>365.2981</td><td>254.112</td></tr><tr><td>12</td><td>298.7266</td><td>512.3992</td><td>396.8207</td><td>266.3313</td><td>298.618</td><td>530.1118</td><td>399.9427</td><td>245.0566</td></tr><tr><td>13</td><td>299.6358</td><td>373.3613</td><td>395.6511</td><td>187.2663</td><td>288.2393</td><td>401.4717</td><td>397.6118</td><td>167.4933</td></tr><tr><td>14</td><td>298.1432</td><td>429.2083</td><td>396.7948</td><td>185.2549</td><td>296.8477</td><td>409.7018</td><td>376.136</td><td>227.3928</td></tr><tr><td>15</td><td>298.1188</td><td>431.0795</td><td>386.7461</td><td>193.4238</td><td>290.6822</td><td>486.0947</td><td>396.8611</td><td>134.2818</td></tr><tr><td>16</td><td>299.3815</td><td>428.2011</td><td>399.825</td><td>204.2349</td><td>298.3824</td><td>371.9167</td><td>378.8757</td><td>284.7865</td></tr><tr><td>17</td><td>299.8188</td><td>497.5597</td><td>399.7981</td><td>221.4927</td><td>298.9347</td><td>449.9349</td><td>399.9077</td><td>271.5173</td></tr><tr><td>18</td><td>298.4131</td><td>562.6983</td><td>393.9527</td><td>296.6175</td><td>299.3705</td><td>558.1608</td><td>399.743</td><td>294.5227</td></tr><tr><td>19</td><td>299.2375</td><td>423.1693</td><td>389.6652</td><td>286.8879</td><td>298.8625</td><td>434.0005</td><td>384.6127</td><td>281.0423</td></tr><tr><td>20</td><td>296.195</td><td>426.9073</td><td>399.3809</td><td>186.9583</td><td>290.7133</td><td>429.9142</td><td>399.9972</td><td>188.66</td></tr><tr><td>21</td><td>292.5397</td><td>349.259</td><td>391.155</td><td>190.5973</td><td>292.9252</td><td>379.4309</td><td>400</td><td>150.1333</td></tr><tr><td>22</td><td>297.5226</td><td>398.8491</td><td>366.376</td><td>28.8745</td><td>284.796</td><td>340.0504</td><td>381.6775</td><td>85.7276</td></tr><tr><td>23</td><td>283.2309</td><td>291.275</td><td>306.782</td><td>50.4798</td><td>250.6298</td><td>311.2651</td><td>321.8338</td><td>46.7438</td></tr><tr><td>24</td><td>237.3409</td><td>248.8853</td><td>125.7219</td><td>3.5389</td><td>211.117</td><td>241.5526</td><td>152.4725</td><td>9.2063</td></tr></tbody></table>
+
+Bảng A.7 Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 6
+
+| m | Thời gian (h) | P<sub>D</sub> (MW) | P<sub>s1</sub> (MW) | P<sub>s2</sub> (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub> (MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 8 | 900 | 220.0824 | 399.0636 | 238.6569 | 82.4836 |
+| 2 | 8 | 1200 | 221.3586 | 538.6881 | 323.6736 | 184.0920 |
+| 3 | 8 | 1100 | 221.3529 | 538.6790 | 274.2817 | 125.5669 |
+
+Bảng A.8. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 7
+
+| m | P<sub>D</sub> (MW) | P<sub>s1</sub> (MW) | P<sub>s2</sub> (MW) | P<sub>s3</sub> (MW) | P<sub>s4</sub> (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub> (MW) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 900 | 95.5733 | 174.9945 | 110.8227 | 50.0012 | 177.8334 | 314.4102 |
+| 2 | 1100 | 95.5733 | 174.9995 | 121.9693 | 50.0001 | 245.3832 | 411.2796 |
+| 3 | 1000 | 95.5733 | 174.9982 | 119.6776 | 50.0173 | 203.0607 | 355.0632 |
+| 4 | 1300 | 95.5733 | 174.9985 | 220.6308 | 69.4488 | 249.9983 | 499.9766 |
+
+<!-- page: 186 -->
+
+Bảng A.9. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 8
+
+<table><tbody><tr><td>Điều độ</td><td>m</td><td>P<sub>D</sub> (MW)</td><td>P<sub>s1</sub>(MW)</td><td>P<sub>s2</sub>(MW)</td><td>P<sub>s3</sub>(MW)</td><td>P<sub>s4</sub>(MW)</td><td>P<sub>h1</sub>(MW)</td><td>P<sub>h2</sub>(MW)</td></tr><tr><td rowspan="4">Kinh tế</td><td>1</td><td>900</td><td>99.074</td><td>30.179</td><td>125.065</td><td>139.795</td><td>175.171</td><td>346.455</td></tr><tr><td>2</td><td>1100</td><td>98.647</td><td>30.000</td><td>124.977</td><td>229.506</td><td>216.244</td><td>424.244</td></tr><tr><td>3</td><td>1000</td><td>98.574</td><td>30.000</td><td>40.000</td><td>229.494</td><td>242.226</td><td>379.766</td></tr><tr><td>4</td><td>1300</td><td>98.554</td><td>112.675</td><td>209.832</td><td>229.606</td><td>243.064</td><td>438.760</td></tr><tr><td rowspan="4">Phát thải</td><td>1</td><td>900</td><td>72.376</td><td>133.715</td><td>136.053</td><td>91.508</td><td>167.833</td><td>314.330</td></tr><tr><td>2</td><td>1100</td><td>78.874</td><td>141.821</td><td>147.592</td><td>100.161</td><td>249.623</td><td>405.876</td></tr><tr><td>3</td><td>1000</td><td>75.419</td><td>137.437</td><td>142.303</td><td>95.598</td><td>208.030</td><td>360.863</td></tr><tr><td>4</td><td>1300</td><td>101.826</td><td>167.785</td><td>184.864</td><td>129.322</td><td>249.996</td><td>500.000</td></tr><tr><td rowspan="4">Kinh tế- phát thải</td><td>1</td><td>900</td><td>98.523</td><td>112.683</td><td>124.935</td><td>50.076</td><td>185.955</td><td>344.091</td></tr><tr><td>2</td><td>1100</td><td>98.536</td><td>112.699</td><td>124.919</td><td>139.769</td><td>244.179</td><td>403.679</td></tr><tr><td>3</td><td>1000</td><td>98.534</td><td>112.667</td><td>124.894</td><td>139.762</td><td>196.680</td><td>346.885</td></tr><tr><td>4</td><td>1300</td><td>98.537</td><td>146.090</td><td>209.813</td><td>139.768</td><td>249.796</td><td>489.397</td></tr></tbody></table>
+
+## A2: Nghiệm tối ưu các hế thống chương 5
+
+Bảng A.10. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống 1
+
+| m | P<sub>Dm</sub> (MW) | V<sub>m</sub> (acre-ft) | q<sub>m</sub>(arce-ft/hr) | P<sub>sm</sub> (MW) | P<sub>hm</sub> (MW) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 1200 | 101914.6514 | 1840.4457 | 303.9126 | 896.0874 |
+| 2 | 1500 | 85933.7628 | 3331.7407 | 603.9720 | 896.0280 |
+| 3 | 1100 | 93847.9818 | 1340.4818 | 203.3162 | 896.6838 |
+| 4 | 1800 | 60000.0000 | 4820.6651 | 903.5544 | 896.4456 |
+| 5 | 950 | 70429.1366 | 1130.9053 | 161.1479 | 788.8521 |
+| 6 | 1300 | 60000.0000 | 2869.0947 | 510.8842 | 789.1158 |
+
+Bảng A.11. Thể tích tối ưu tìm được bởi ASCSA cho hệ thống 2
+
+| m | V<sub>1m</sub>(acre-ft) | V<sub>2m</sub>(acre-ft) | V<sub>3m</sub>(acre-ft) | V<sub>4m</sub>(acre-ft) |
+| --- | --- | --- | --- | --- |
+| 1 | 111920 | 60860 | 96800 | 103750 |
+| 2 | 115100 | 64630 | 78580 | 77650 |
+| 3 | 114020 | 76010 | 99890 | 76760 |
+| 4 | 62015 | 60143 | 60157 | 60000 |
+| 5 | 60137 | 62247 | 60139 | 61937 |
+| 6 | 60000 | 60000 | 60000 | 60000 |
+
+<!-- page: 187 -->
+
+Bảng A.13. Lưu lượng xả tối ưu tìm được bởi ASCSA cho hệ thống 2
+
+| m | q<sub>1m</sub>(arce-ft/hr) | q<sub>2m</sub>(arce-ft/hr) | q<sub>3m</sub>(arce-ft/hr) | q<sub>4m</sub>(arce-ft/hr) |
+| --- | --- | --- | --- | --- |
+| 1 | 1.0065 | 5.2620 | 3.2666 | 1.6879 |
+| 2 | 2.2355 | 4.6851 | 4.5181 | 5.1747 |
+| 3 | 2.0901 | 4.0523 | 1.2246 | 2.0741 |
+| 4 | 5.3333 | 5.3220 | 5.3110 | 5.3967 |
+| 5 | 3.1565 | 4.8247 | 2.0015 | 0.8386 |
+| 6 | 5.0115 | 4.1872 | 2.0115 | 5.1614 |
+
+Bảng A.14. Công suất tối ưu tìm được bởi ASCSA cho hệ thống 2
+
+| m | P<sub>h1</sub>(MW) | P<sub>h2</sub>(MW) | P<sub>h3</sub>(MW) | P<sub>h4</sub>(MW) | P<sub>s1</sub>(MW) | P<sub>s2</sub>(MW) | P<sub>s3</sub>(MW) | P<sub>s4</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 135.743 | 973.298 | 583.997 | 271.727 | 256.930 | 609.014 | 549.334 | 499.464 |
+| 2 | 380.488 | 861.356 | 828.859 | 956.380 | 255.782 | 608.626 | 549.574 | 499.894 |
+| 3 | 351.649 | 737.987 | 179.348 | 348.480 | 255.946 | 608.915 | 549.303 | 498.693 |
+| 4 | 987.105 | 984.906 | 982.781 | 999.355 | 411.598 | 675.000 | 550.000 | 497.461 |
+| 5 | 562.346 | 888.484 | 334.073 | 102.133 | 334.669 | 608.225 | 549.655 | 499.981 |
+| 6 | 924.737 | 764.347 | 336.066 | 953.806 | 176.951 | 195.451 | 550.000 | 319.413 |
+
+<!-- page: 188 -->
+
+## A3: Nghiệm tối ưu các hế thống chương 6
+
+Bảng A.15. Lưu lượng xả tối ưu cho hệ thống 1 tìm được bởi ASCSA
+
+| m | Q1 (×104 m3) | Q2 (×104 m3) | Q3 (×104 m3) | Q4 (×104 m3) |
+| --- | --- | --- | --- | --- |
+| 1 | 10.403 | 7.393138 | 29.9985781 | 13.000021 |
+| 2 | 9.91412 | 6.015092 | 30 | 13 |
+| 3 | 8.88573 | 6.132454 | 30 | 13 |
+| 4 | 8.67184 | 6 | 29.998238 | 13.000132 |
+| 5 | 8.10609 | 6.004554 | 17.8717465 | 13 |
+| 6 | 8.04891 | 6.040286 | 18.2758679 | 13.000169 |
+| 7 | 8.16364 | 6.616339 | 17.5466902 | 13.001029 |
+| 8 | 8.43568 | 7.418679 | 16.0658411 | 13 |
+| 9 | 8.76855 | 7.734379 | 14.7408161 | 13.006234 |
+| 10 | 8.79002 | 7.954557 | 14.9583517 | 13.00597 |
+| 11 | 8.7154 | 8.118506 | 15.535801 | 13.001842 |
+| 12 | 8.66097 | 8.330343 | 14.9102911 | 13.753051 |
+| 13 | 8.5745 | 8.447059 | 16.0385734 | 14.536914 |
+| 14 | 8.39369 | 8.822026 | 16.1881605 | 14.954367 |
+| 15 | 8.17484 | 8.855132 | 16.4368082 | 15.55289 |
+| 16 | 8.18036 | 8.965131 | 17.7816904 | 15.047097 |
+| 17 | 7.96728 | 9.270083 | 16.8826969 | 15.884271 |
+| 18 | 7.68223 | 9.645615 | 16.4727897 | 16.192833 |
+| 19 | 7.7421 | 10.31411 | 14.7053231 | 16.461155 |
+| 20 | 7.64621 | 10.96507 | 13.3612269 | 17.773181 |
+| 21 | 7.50422 | 11.63384 | 10 | 18.549371 |
+| 22 | 7.41281 | 9.752431 | 10.000105 | 19.872425 |
+| 23 | 5.00073 | 10.33973 | 10.0283825 | 20.923683 |
+| 24 | 5.15713 | 11.23145 | 10.0205509 | 22.052858 |
+
+<!-- page: 189 -->
+
+Bảng A.16. Công suất tối ưu cho hệ thống 1 tìm được bởi ASCSA
+
+| m | PD (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub> (MW) | P<sub>h3</sub> (MW) | P<sub>h4</sub>(MW) | P<sub>s1</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1370 | 87.63489 | 58.678287 | 0 | 200.09384 | 1023.593 |
+| 2 | 1390 | 85.123797 | 50.609947 | 0 | 187.75526 | 1066.511 |
+| 3 | 1360 | 79.613101 | 53.047785 | 0 | 173.73325 | 1053.606 |
+| 4 | 1290 | 77.846027 | 53.704756 | 0 | 156.79253 | 1001.657 |
+| 5 | 1290 | 73.818002 | 54.764142 | 26.515657 | 178.74013 | 956.1621 |
+| 6 | 1410 | 73.099373 | 55.505819 | 25.178151 | 198.95799 | 1057.259 |
+| 7 | 1650 | 73.725786 | 59.266378 | 27.768219 | 217.44762 | 1271.792 |
+| 8 | 2000 | 75.516434 | 64.382649 | 32.474558 | 234.18504 | 1593.441 |
+| 9 | 2240 | 77.832322 | 66.515933 | 35.777145 | 238.72139 | 1821.153 |
+| 10 | 2320 | 78.744715 | 68.424751 | 35.81835 | 243.40574 | 1893.606 |
+| 11 | 2230 | 79.428905 | 69.879746 | 35.259441 | 247.27198 | 1798.16 |
+| 12 | 2310 | 79.538044 | 70.967346 | 38.153898 | 256.74033 | 1864.6 |
+| 13 | 2230 | 79.75164 | 71.412995 | 37.540928 | 264.39987 | 1776.895 |
+| 14 | 2200 | 79.621633 | 73.644495 | 38.637399 | 268.23456 | 1739.862 |
+| 15 | 2130 | 78.902083 | 73.906825 | 39.380393 | 273.52369 | 1664.287 |
+| 16 | 2070 | 79.322104 | 73.993229 | 35.647212 | 268.93447 | 1612.103 |
+| 17 | 2130 | 78.119002 | 74.370188 | 39.390855 | 276.38082 | 1661.739 |
+| 18 | 2140 | 76.231304 | 74.162995 | 41.530275 | 278.96106 | 1669.114 |
+| 19 | 2240 | 76.510657 | 75.290637 | 46.402002 | 281.13799 | 1760.659 |
+| 20 | 2280 | 75.535393 | 76.159315 | 49.401359 | 291.25727 | 1787.647 |
+| 21 | 2240 | 74.447913 | 76.944399 | 50.616655 | 295.09339 | 1742.898 |
+| 22 | 2120 | 73.915573 | 68.477292 | 52.818339 | 299.98771 | 1624.801 |
+| 23 | 1850 | 54.724859 | 69.544783 | 54.661367 | 299.00351 | 1372.065 |
+| 24 | 1590 | 56.486671 | 70.848165 | 56.098509 | 294.13797 | 1112.429 |
+
+<!-- page: 190 -->
+
+Bảng A.17. Lưu lượng xả tối ưu cho hệ thống 2 tìm được bởi ASCSA
+
+| m | Q1 (×104 m3) | Q2 (×104 m3) | Q3 (×104 m3) | Q4 (×104 m3) |
+| --- | --- | --- | --- | --- |
+| 1 | 5.0000 | 6.0000 | 21.0749 | 13.0000 |
+| 2 | 5.0000 | 6.0000 | 19.8717 | 13.0000 |
+| 3 | 5.0000 | 6.0000 | 18.6982 | 13.0000 |
+| 4 | 5.0000 | 6.0000 | 18.5392 | 13.0000 |
+| 5 | 5.0000 | 6.0000 | 17.8155 | 13.0000 |
+| 6 | 6.2404 | 6.0000 | 17.5765 | 13.0000 |
+| 7 | 8.2771 | 6.0000 | 17.4306 | 13.0000 |
+| 8 | 9.8731 | 6.6846 | 17.4496 | 13.0000 |
+| 9 | 11.1370 | 7.8407 | 17.4543 | 13.0000 |
+| 10 | 13.6622 | 9.8727 | 17.6318 | 13.0000 |
+| 11 | 15.0000 | 11.8719 | 18.4157 | 15.0306 |
+| 12 | 13.3614 | 10.1223 | 18.3964 | 14.2810 |
+| 13 | 14.9990 | 11.9136 | 18.8503 | 17.2055 |
+| 14 | 15.0000 | 12.4215 | 19.3012 | 18.4308 |
+| 15 | 13.5428 | 11.2503 | 19.4079 | 18.1899 |
+| 16 | 12.6228 | 10.8107 | 19.4488 | 18.5644 |
+| 17 | 11.4870 | 10.3470 | 19.2310 | 18.9009 |
+| 18 | 9.9761 | 9.7027 | 18.7735 | 19.2334 |
+| 19 | 8.3969 | 8.8418 | 17.9875 | 19.5401 |
+| 20 | 6.4049 | 8.1571 | 16.6548 | 19.9027 |
+| 21 | 6.7237 | 8.6645 | 15.5936 | 21.0138 |
+| 22 | 7.1303 | 9.4986 | 14.5434 | 22.1693 |
+| 23 | 6.1654 | 6.0000 | 13.8122 | 23.1911 |
+| 24 | 5.0000 | 6.0000 | 15.0414 | 24.4929 |
+
+<!-- page: 191 -->
+
+Bảng A.18. Công suất tối ưu cho hệ thống 2 tìm được bởi ASCSA
+
+| m | PD (MW) | P<sub>h1</sub> (MW) | P<sub>h2</sub> (MW) | P<sub>h3</sub> (MW) | P<sub>h4</sub>(MW) | P<sub>s1</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 190 | 23.7250 | 16.7560 | 42.9061 | 45.6210 | 60.9919 |
+| 2 | 170 | 24.9000 | 17.3040 | 39.4683 | 41.6040 | 46.7237 |
+| 3 | 170 | 26.0250 | 17.8440 | 37.3932 | 44.1389 | 44.5988 |
+| 4 | 190 | 27.1000 | 18.3760 | 35.7775 | 46.1934 | 62.5531 |
+| 5 | 190 | 28.1250 | 18.9000 | 33.9625 | 47.8254 | 61.1870 |
+| 6 | 210 | 34.0272 | 19.4160 | 32.4325 | 49.3497 | 74.7747 |
+| 7 | 230 | 42.2250 | 19.9240 | 31.2717 | 50.6249 | 85.9544 |
+| 8 | 250 | 47.8248 | 22.4340 | 30.7132 | 51.7938 | 97.2341 |
+| 9 | 270 | 51.5898 | 25.9457 | 30.5619 | 52.8856 | 109.0170 |
+| 10 | 310 | 57.6674 | 30.8560 | 30.9737 | 53.9426 | 136.5603 |
+| 11 | 350 | 59.3505 | 34.1561 | 32.4263 | 59.3868 | 164.6803 |
+| 12 | 310 | 54.4710 | 29.6656 | 34.3395 | 58.4758 | 133.0480 |
+| 13 | 350 | 56.7003 | 32.2742 | 36.3637 | 64.9164 | 159.7454 |
+| 14 | 350 | 55.0519 | 31.7322 | 38.1742 | 66.9786 | 158.0631 |
+| 15 | 310 | 50.6685 | 28.3810 | 40.1157 | 66.7737 | 124.0611 |
+| 16 | 290 | 47.5977 | 26.5255 | 41.6931 | 67.5684 | 106.6153 |
+| 17 | 270 | 44.1761 | 24.7476 | 42.6429 | 68.2197 | 90.2138 |
+| 18 | 250 | 39.8747 | 22.7539 | 43.1095 | 68.7648 | 75.4971 |
+| 19 | 230 | 35.3360 | 20.4633 | 42.9400 | 69.1068 | 62.1539 |
+| 20 | 210 | 29.2225 | 18.7119 | 41.7612 | 69.2657 | 51.0388 |
+| 21 | 210 | 31.2456 | 19.7601 | 40.3496 | 69.6540 | 48.9907 |
+| 22 | 210 | 33.4718 | 21.2158 | 38.7961 | 68.9375 | 47.5788 |
+| 23 | 190 | 30.7255 | 12.6960 | 37.7777 | 66.9741 | 41.8266 |
+| 24 | 190 | 27.1000 | 13.3000 | 40.1701 | 63.6743 | 45.7556 |
+
+<!-- page: 192 -->
+
+Bảng A.19. Lưu lượng xả tối ưu cho hệ thống 3 tìm được bởi ASCSA
+
+| m | Q1 (×104 m3) | Q2 (×104 m3) | Q3 (×104 m3) | Q4 (×104 m3) |
+| --- | --- | --- | --- | --- |
+| 1 | 9.8573 | 6.7865 | 30.0000 | 13.0000 |
+| 2 | 9.6476 | 6.0877 | 29.9993 | 13.0000 |
+| 3 | 9.8302 | 7.1638 | 30.0000 | 13.0000 |
+| 4 | 10.7073 | 9.2208 | 16.6128 | 13.0001 |
+| 5 | 10.6614 | 9.3274 | 29.9753 | 13.0003 |
+| 6 | 9.9768 | 9.1767 | 15.6734 | 13.0001 |
+| 7 | 5.0000 | 6.0000 | 30.0000 | 13.0001 |
+| 8 | 5.0000 | 6.0021 | 19.5366 | 13.0000 |
+| 9 | 10.6688 | 9.9325 | 12.7883 | 14.8489 |
+| 10 | 10.2877 | 9.4811 | 12.7258 | 14.7900 |
+| 11 | 10.7819 | 10.1444 | 12.9451 | 15.4380 |
+| 12 | 11.2011 | 11.6975 | 12.6047 | 19.5310 |
+| 13 | 9.5905 | 9.2322 | 13.8408 | 16.6246 |
+| 14 | 7.0369 | 8.6222 | 15.4451 | 15.1979 |
+| 15 | 5.0001 | 6.0001 | 20.2699 | 13.0000 |
+| 16 | 5.0013 | 6.0000 | 18.9469 | 13.0008 |
+| 17 | 5.0000 | 6.0001 | 17.4884 | 13.0000 |
+| 18 | 5.0000 | 6.0011 | 14.4361 | 13.0000 |
+| 19 | 8.3201 | 9.4850 | 13.8428 | 16.7861 |
+| 20 | 9.5162 | 12.6072 | 11.5424 | 20.5465 |
+| 21 | 7.8337 | 10.5044 | 10.0000 | 17.3260 |
+| 22 | 5.0000 | 6.0000 | 10.0000 | 13.0001 |
+| 23 | 7.8734 | 10.6112 | 10.0153 | 22.5003 |
+| 24 | 6.2078 | 9.9160 | 10.0028 | 22.8827 |
+
+<!-- page: 193 -->
+
+Bảng A.20. Công suất tối ưu cho hệ thống 3 tìm được bởi ASCSA
+
+| Hour | PD (MW) | P<sub>h1</sub>(MW) | P<sub>h2</sub>(MW) | P<sub>h3</sub>(MW) | P<sub>h4</sub>(MW) | P<sub>s1</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1370 | 85.3856 | 55.1229 | 0 | 200.0937 | 1029.398 |
+| 2 | 1390 | 84.1492 | 51.4293 | 0 | 187.7553 | 1066.666 |
+| 3 | 1360 | 84.3554 | 59.7726 | 0 | 173.7334 | 1042.139 |
+| 4 | 1290 | 86.5868 | 71.6922 | 36.14446 | 156.792 | 938.7846 |
+| 5 | 1290 | 84.3116 | 71.4408 | 0 | 178.7439 | 955.5037 |
+| 6 | 1410 | 80.1914 | 69.3099 | 36.56851 | 198.9579 | 1024.972 |
+| 7 | 1650 | 49.7783 | 49.7238 | 0 | 217.4404 | 1333.058 |
+| 8 | 2000 | 50.9099 | 50.3139 | 20.18489 | 221.1441 | 1657.447 |
+| 9 | 2240 | 85.8686 | 72.4773 | 39.85008 | 252.9422 | 1788.862 |
+| 10 | 2320 | 84.6569 | 69.9658 | 39.60617 | 253.285 | 1872.486 |
+| 11 | 2230 | 87.1386 | 72.4025 | 41.29678 | 272.5264 | 1756.636 |
+| 12 | 2310 | 88.1133 | 76.2218 | 45.02774 | 303.1442 | 1797.493 |
+| 13 | 2230 | 82.1199 | 64.6658 | 47.7077 | 278.8679 | 1756.639 |
+| 14 | 2200 | 68.6147 | 61.7197 | 48.35753 | 264.6762 | 1756.632 |
+| 15 | 2130 | 53.5703 | 47.2713 | 34.02074 | 243.9511 | 1751.187 |
+| 16 | 2070 | 54.2846 | 48.4807 | 39.44811 | 243.6146 | 1684.172 |
+| 17 | 2130 | 54.6839 | 49.0745 | 43.85099 | 244.3369 | 1738.054 |
+| 18 | 2140 | 54.9043 | 49.0809 | 49.92872 | 246.4378 | 1739.648 |
+| 19 | 2240 | 81.0402 | 68.5609 | 49.99253 | 283.771 | 1756.635 |
+| 20 | 2280 | 87.4378 | 77.8184 | 50.62915 | 307.4786 | 1756.636 |
+| 21 | 2240 | 77.0149 | 69.0358 | 50.73447 | 286.5843 | 1756.631 |
+| 22 | 2120 | 54.7118 | 45.6513 | 53.13019 | 249.3692 | 1717.138 |
+| 23 | 1850 | 78.0155 | 69.7703 | 55.23589 | 309.2214 | 1337.757 |
+| 24 | 1590 | 65.7606 | 65.3157 | 56.0653 | 297.3328 | 1105.526 |
+
+<!-- page: 194 -->
+
+Bảng A.21. Nghiệm tối ưu cho hệ thống 4 tìm được bởi ASCSA
+
+| Hour | Q1 (×104 m3) | Q2 (×104 m3) | Q3 (×104 m3) | Q4 (×104 m3) | P<sub>S2</sub>(MW) | P<sub>S3</sub>(MW) |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 10.3033 | 6.3038 | 20.1498 | 9.5732 | 295.1177 | 50.7440 |
+| 2 | 12.9518 | 12.2710 | 28.9867 | 9.6386 | 124.7283 | 139.9554 |
+| 3 | 8.3395 | 8.3971 | 29.9990 | 9.8903 | 124.9035 | 139.8006 |
+| 4 | 6.3418 | 6.0069 | 10.0873 | 18.8566 | 209.2471 | 50.0166 |
+| 5 | 9.1845 | 7.7540 | 20.5141 | 10.3044 | 40.1765 | 229.0907 |
+| 6 | 7.2359 | 6.2560 | 18.8524 | 8.0746 | 40.0008 | 319.0314 |
+| 7 | 10.5177 | 6.8749 | 14.0281 | 8.2337 | 209.1946 | 319.4478 |
+| 8 | 9.0613 | 6.1715 | 19.4292 | 9.8991 | 125.1754 | 408.8135 |
+| 9 | 5.0004 | 8.4289 | 15.0462 | 18.0452 | 209.7814 | 409.1077 |
+| 10 | 7.2045 | 7.4199 | 10.8956 | 8.3861 | 210.3053 | 319.1290 |
+| 11 | 5.0306 | 9.0894 | 19.0814 | 15.3263 | 209.8410 | 408.6711 |
+| 12 | 8.4346 | 7.2153 | 18.9541 | 18.4741 | 208.2668 | 408.5680 |
+| 13 | 10.8768 | 6.4042 | 13.2870 | 18.5852 | 124.8258 | 409.5411 |
+| 14 | 5.2959 | 6.0258 | 20.2018 | 12.6173 | 294.5935 | 139.8911 |
+| 15 | 5.2948 | 8.1863 | 17.3137 | 14.2884 | 40.1229 | 409.1715 |
+| 16 | 7.8579 | 8.5259 | 13.7400 | 19.7052 | 294.4179 | 229.2568 |
+| 17 | 5.0590 | 6.0000 | 14.3408 | 12.5562 | 125.3463 | 319.2742 |
+| 18 | 13.2111 | 10.1429 | 15.8683 | 19.7911 | 294.6437 | 319.4344 |
+| 19 | 9.9743 | 8.0404 | 14.3402 | 19.8063 | 294.3439 | 139.7171 |
+| 20 | 11.2105 | 14.6285 | 11.5914 | 19.9878 | 209.3330 | 230.1709 |
+| 21 | 5.8974 | 14.9910 | 13.3350 | 17.4964 | 125.9538 | 229.6995 |
+| 22 | 6.8762 | 11.4054 | 10.7611 | 19.8449 | 40.3383 | 319.0971 |
+| 23 | 5.1009 | 9.3491 | 18.5492 | 17.7069 | 209.6703 | 50.1300 |
+| 24 | 10.3033 | 6.3038 | 20.1498 | 9.5732 | 208.2865 | 50.0000 |
+
+<!-- page: 195 -->
+
+## A4: Nghiệm tối ưu các hế thống chương 7
+
+Bảng A.22. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống IEEE 30 nút
+
+| Giá trị | m=1 | m=2 | Giá trị | m=1 | m=2 |
+| --- | --- | --- | --- | --- | --- |
+| P<sub>g1</sub> (MW) | 153.2844 | 149.3397 | V<sub>g8</sub> (pu) | 1.0679 | 1.051 |
+| P<sub>g2</sub> (MW) | 43.0415 | 42.0074 | V<sub>g11</sub> (pu) | 1.0962 | 1.0688 |
+| P<sub>g5</sub> (MW) | 19.669 | 18.0139 | V<sub>g13</sub> (pu) | 1.0998 | 1.0902 |
+| P<sub>g8</sub> (MW) | 10 | 10.0061 | T<sub>11</sub> (pu) | 1.02 | 1.04 |
+| P<sub>g11</sub> (MW) | 24.8623 | 16.0447 | T<sub>12</sub> (pu) | 1.04 | 0.92 |
+| P<sub>g13</sub> (MW) | 40 | 12 | T<sub>15</sub> (pu) | 1.08 | 1.04 |
+| V<sub>g1</sub> (pu) | 1.1 | 1.0857 | T<sub>36</sub> (pu) | 0.99 | 1 |
+| V<sub>g2</sub> (pu) | 1.0875 | 1.0657 | Q<sub>c10</sub> (MVAr) | 18.9 | 6.3 |
+| V<sub>g5</sub> (pu) | 1.0619 | 1.042 | Q<sub>c24</sub> (MVAr) | 4.3 | 4 |
+
+<!-- page: 196 -->
+
+Bảng A.23. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống IEEE 118 nút ở khoảng 1
+
+<table><tbody><tr><td>P<sub>g1</sub> (MW)</td><td>19.0598</td><td>P<sub>g100</sub> (MW)</td><td>235.4283</td><td>V<sub>g76</sub> (PU)</td><td>1.0018</td></tr><tr><td>P<sub>g4</sub> (MW)</td><td>55.7638</td><td>P<sub>g103</sub> (MW)</td><td>29.832</td><td>V<sub>g77</sub> (PU)</td><td>1.0186</td></tr><tr><td>P<sub>g6</sub> (MW)</td><td>0.5868</td><td>P<sub>g104</sub> (MW)</td><td>12.5777</td><td>V<sub>g80</sub> (PU)</td><td>1.0244</td></tr><tr><td>P<sub>g8</sub> (MW)</td><td>62.9104</td><td>P<sub>g105</sub> (MW)</td><td>0.8445</td><td>V<sub>g85</sub> (PU)</td><td>1.0879</td></tr><tr><td>P<sub>g10</sub> (MW)</td><td>385.1619</td><td>P<sub>g107</sub> (MW)</td><td>57.3857</td><td>V<sub>g87</sub> (PU)</td><td>1.0535</td></tr><tr><td>P<sub>g12</sub> (MW)</td><td>77.7162</td><td>P<sub>g110</sub> (MW)</td><td>6.0031</td><td>V<sub>g89</sub> (PU)</td><td>1.0854</td></tr><tr><td>P<sub>g15</sub> (MW)</td><td>10.2586</td><td>P<sub>g111</sub> (MW)</td><td>72.9236</td><td>V<sub>g90</sub> (PU)</td><td>0.9988</td></tr><tr><td>P<sub>g18</sub> (MW)</td><td>4.4213</td><td>P<sub>g112</sub> (MW)</td><td>68.6941</td><td>V<sub>g91</sub> (PU)</td><td>1.0322</td></tr><tr><td>P<sub>g19</sub> (MW)</td><td>9.2522</td><td>P<sub>g113</sub> (MW)</td><td>79.4957</td><td>V<sub>g92</sub> (PU)</td><td>1.0691</td></tr><tr><td>P<sub>g24</sub> (MW)</td><td>4.8536</td><td>P<sub>g116</sub> (MW)</td><td>61.6715</td><td>V<sub>g99</sub> (PU)</td><td>1.0311</td></tr><tr><td>P<sub>g25</sub> (MW)</td><td>186.0854</td><td>V<sub>g1</sub> (PU)</td><td>0.9717</td><td>V<sub>g100</sub> (PU)</td><td>1.0313</td></tr><tr><td>P<sub>g26</sub> (MW)</td><td>268.4305</td><td>V<sub>g4</sub> (PU)</td><td>1.0146</td><td>V<sub>g103</sub> (PU)</td><td>1.0283</td></tr><tr><td>P<sub>g27</sub> (MW)</td><td>22.7964</td><td>V<sub>g6</sub> (PU)</td><td>0.9955</td><td>V<sub>g104</sub> (PU)</td><td>0.9969</td></tr><tr><td>P<sub>g31</sub> (MW)</td><td>4.9791</td><td>V<sub>g8</sub> (PU)</td><td>1.0072</td><td>V<sub>g105</sub> (PU)</td><td>0.9941</td></tr><tr><td>P<sub>g32</sub> (MW)</td><td>23.0057</td><td>V<sub>g10</sub> (PU)</td><td>1.0498</td><td>V<sub>g107</sub> (PU)</td><td>1.0015</td></tr><tr><td>P<sub>g34</sub> (MW)</td><td>0.9164</td><td>V<sub>g12</sub> (PU)</td><td>0.9811</td><td>V<sub>g110</sub> (PU)</td><td>1.0588</td></tr><tr><td>P<sub>g36</sub> (MW)</td><td>4.7562</td><td>V<sub>g15</sub> (PU)</td><td>1.0167</td><td>V<sub>g111</sub> (PU)</td><td>1.0884</td></tr><tr><td>P<sub>g40</sub> (MW)</td><td>56.9505</td><td>V<sub>g18</sub> (PU)</td><td>1.0366</td><td>V<sub>g112</sub> (PU)</td><td>1.0684</td></tr><tr><td>P<sub>g42</sub> (MW)</td><td>20.769</td><td>V<sub>g19</sub> (PU)</td><td>1.0353</td><td>V<sub>g113</sub> (PU)</td><td>1.0202</td></tr><tr><td>P<sub>g46</sub> (MW)</td><td>16.9152</td><td>V<sub>g24</sub> (PU)</td><td>1.0402</td><td>V<sub>g116</sub> (PU)</td><td>1.0196</td></tr><tr><td>P<sub>g49</sub> (MW)</td><td>196.975</td><td>V<sub>g25</sub> (PU)</td><td>1.0208</td><td>T<sub>8</sub> (pu)</td><td>0.98</td></tr><tr><td>P<sub>g54</sub> (MW)</td><td>0.0539</td><td>V<sub>g26</sub> (PU)</td><td>1.0601</td><td>T<sub>32</sub> (pu)</td><td>0.9</td></tr><tr><td>P<sub>g55</sub> (MW)</td><td>9.424</td><td>V<sub>g27</sub> (PU)</td><td>0.9739</td><td>T<sub>36</sub> (pu)</td><td>1</td></tr><tr><td>P<sub>g56</sub> (MW)</td><td>76.0762</td><td>V<sub>g31</sub> (PU)</td><td>1.007</td><td>T<sub>51</sub> (pu)</td><td>0.92</td></tr><tr><td>P<sub>g59</sub> (MW)</td><td>133.4323</td><td>V<sub>g32</sub> (PU)</td><td>0.98</td><td>T<sub>93</sub> (pu)</td><td>1</td></tr><tr><td>P<sub>g61</sub> (MW)</td><td>142.7216</td><td>V<sub>g34</sub> (PU)</td><td>1.0501</td><td>T<sub>95</sub> (pu)</td><td>1.09</td></tr><tr><td>P<sub>g62</sub> (MW)</td><td>4.2606</td><td>V<sub>g36</sub> (PU)</td><td>1.0388</td><td>T<sub>102</sub> (pu)</td><td>1.05</td></tr><tr><td>P<sub>g65</sub> (MW)</td><td>338.6671</td><td>V<sub>g40</sub> (PU)</td><td>1.0447</td><td>T<sub>107</sub> (pu)</td><td>1.02</td></tr><tr><td>P<sub>g66</sub> (MW)</td><td>332.8104</td><td>V<sub>g42</sub> (PU)</td><td>1.0837</td><td>T<sub>127</sub> (pu)</td><td>0.97</td></tr><tr><td>P<sub>g69</sub> (MW)</td><td>434.6983</td><td>V<sub>g46</sub> (PU)</td><td>1.0036</td><td>Qc5 (MVAr)</td><td>-33.3</td></tr><tr><td>P<sub>g70</sub> (MW)</td><td>1.1097</td><td>V<sub>g49</sub> (PU)</td><td>1.018</td><td>Q<sub>c34</sub> (MVAr)</td><td>3.4</td></tr><tr><td>P<sub>g72</sub> (MW)</td><td>0.1819</td><td>V<sub>g54</sub> (PU)</td><td>1.0582</td><td>Q<sub>c37</sub> (MVAr)</td><td>-18.5</td></tr><tr><td>P<sub>g73</sub> (MW)</td><td>0.3883</td><td>V<sub>g55</sub> (PU)</td><td>1.0561</td><td>Q<sub>c44</sub> (MVAr)</td><td>7</td></tr><tr><td>P<sub>g74</sub> (MW)</td><td>21.8734</td><td>V<sub>g56</sub> (PU)</td><td>1.0555</td><td>Q<sub>c45</sub> (MVAr)</td><td>4.2</td></tr><tr><td>P<sub>g76</sub> (MW)</td><td>2.0134</td><td>V<sub>g59</sub> (PU)</td><td>1.0069</td><td>Q<sub>c46</sub> (MVAr)</td><td>3.7</td></tr><tr><td>P<sub>g77</sub> (MW)</td><td>61.773</td><td>V<sub>g61</sub> (PU)</td><td>1.0225</td><td>Q<sub>c48</sub> (MVAr)</td><td>1.9</td></tr><tr><td>P<sub>g80</sub> (MW)</td><td>406.4545</td><td>V<sub>g62</sub> (PU)</td><td>1.0384</td><td>Q<sub>c74</sub> (MVAr)</td><td>0.7</td></tr><tr><td>P<sub>g85</sub> (MW)</td><td>22.9793</td><td>V<sub>g65</sub> (PU)</td><td>1.0196</td><td>Q<sub>c79</sub> (MVAr)</td><td>18.5</td></tr><tr><td>P<sub>g87</sub> (MW)</td><td>4.1302</td><td>V<sub>g66</sub> (PU)</td><td>0.9934</td><td>Qc82 (MVAr)</td><td>0</td></tr><tr><td>P<sub>g89</sub> (MW)</td><td>164.3211</td><td>V<sub>g69</sub> (PU)</td><td>0.994</td><td>Qc83 (MVAr)</td><td>0.2</td></tr><tr><td>P<sub>g90</sub> (MW)</td><td>47.9289</td><td>V<sub>g70</sub> (PU)</td><td>1.0475</td><td>Q<sub>c105</sub> (MVAr)</td><td>20</td></tr><tr><td>P<sub>g91</sub> (MW)</td><td>27.7547</td><td>V<sub>g72</sub> (PU)</td><td>1.0438</td><td>Q<sub>c107</sub> (MVAr)</td><td>1.7</td></tr><tr><td>P<sub>g92</sub> (MW)</td><td>32.9663</td><td>V<sub>g73</sub> (PU)</td><td>1.0643</td><td>Q<sub>c110</sub> (MVAr)</td><td>1</td></tr><tr><td>P<sub>g99</sub> (MW)</td><td>15.4033</td><td>V<sub>g74</sub> (PU)</td><td>1.0157</td><td colspan="2"></td></tr></tbody></table>
+
+<!-- page: 197 -->
+
+Bảng A.24. Nghiệm tối ưu tìm được bởi ASCSA cho hệ thống IEEE 118 nút ở khoảng 2
+
+<table><tbody><tr><td>P<sub>g1</sub> (MW)</td><td>8.5778</td><td>P<sub>g100</sub> (MW)</td><td>164.7772</td><td>V<sub>g76</sub> (PU)</td><td>1.0114</td></tr><tr><td>P<sub>g4</sub> (MW)</td><td>5.5039</td><td>P<sub>g103</sub> (MW)</td><td>24.7425</td><td>V<sub>g77</sub> (PU)</td><td>0.9729</td></tr><tr><td>P<sub>g6</sub> (MW)</td><td>97.5555</td><td>P<sub>g104</sub> (MW)</td><td>3.1914</td><td>V<sub>g80</sub> (PU)</td><td>0.9698</td></tr><tr><td>P<sub>g8</sub> (MW)</td><td>31.8538</td><td>P<sub>g105</sub> (MW)</td><td>2.1724</td><td>V<sub>g85</sub> (PU)</td><td>0.9591</td></tr><tr><td>P<sub>g10</sub> (MW)</td><td>278.4146</td><td>P<sub>g107</sub> (MW)</td><td>68.9825</td><td>V<sub>g87</sub> (PU)</td><td>0.9531</td></tr><tr><td>P<sub>g12</sub> (MW)</td><td>57.9114</td><td>P<sub>g110</sub> (MW)</td><td>99.9985</td><td>V<sub>g89</sub> (PU)</td><td>0.9666</td></tr><tr><td>P<sub>g15</sub> (MW)</td><td>4.6559</td><td>P<sub>g111</sub> (MW)</td><td>38.254</td><td>V<sub>g90</sub> (PU)</td><td>1.008</td></tr><tr><td>P<sub>g18</sub> (MW)</td><td>16.1638</td><td>P<sub>g112</sub> (MW)</td><td>17.6654</td><td>V<sub>g91</sub> (PU)</td><td>1.0387</td></tr><tr><td>P<sub>g19</sub> (MW)</td><td>0.6935</td><td>P<sub>g113</sub> (MW)</td><td>1.5754</td><td>V<sub>g92</sub> (PU)</td><td>0.9926</td></tr><tr><td>P<sub>g24</sub> (MW)</td><td>7.3221</td><td>P<sub>g116</sub> (MW)</td><td>54.8051</td><td>V<sub>g99</sub> (PU)</td><td>1.0387</td></tr><tr><td>P<sub>g25</sub> (MW)</td><td>125.5236</td><td>V<sub>g1</sub> (PU)</td><td>0.9559</td><td>V<sub>g100</sub> (PU)</td><td>1.004</td></tr><tr><td>P<sub>g26</sub> (MW)</td><td>262.3018</td><td>V<sub>g4</sub> (PU)</td><td>1.0163</td><td>V<sub>g103</sub> (PU)</td><td>0.9808</td></tr><tr><td>P<sub>g27</sub> (MW)</td><td>4.2622</td><td>V<sub>g6</sub> (PU)</td><td>0.9937</td><td>V<sub>g104</sub> (PU)</td><td>0.9744</td></tr><tr><td>P<sub>g31</sub> (MW)</td><td>1.9636</td><td>V<sub>g8</sub> (PU)</td><td>1.0183</td><td>V<sub>g105</sub> (PU)</td><td>0.9894</td></tr><tr><td>P<sub>g32</sub> (MW)</td><td>53.1329</td><td>V<sub>g10</sub> (PU)</td><td>0.9984</td><td>V<sub>g107</sub> (PU)</td><td>1.0007</td></tr><tr><td>P<sub>g34</sub> (MW)</td><td>0.763</td><td>V<sub>g12</sub> (PU)</td><td>0.9844</td><td>V<sub>g110</sub> (PU)</td><td>1.011</td></tr><tr><td>P<sub>g36</sub> (MW)</td><td>0.0233</td><td>V<sub>g15</sub> (PU)</td><td>1.0946</td><td>V<sub>g111</sub> (PU)</td><td>1.0458</td></tr><tr><td>P<sub>g40</sub> (MW)</td><td>39.9631</td><td>V<sub>g18</sub> (PU)</td><td>1.0531</td><td>V<sub>g112</sub> (PU)</td><td>0.952</td></tr><tr><td>P<sub>g42</sub> (MW)</td><td>9.4247</td><td>V<sub>g19</sub> (PU)</td><td>1.0939</td><td>V<sub>g113</sub> (PU)</td><td>1.0726</td></tr><tr><td>P<sub>g46</sub> (MW)</td><td>15.8308</td><td>V<sub>g24</sub> (PU)</td><td>0.9841</td><td>V<sub>g116</sub> (PU)</td><td>1.0523</td></tr><tr><td>P<sub>g49</sub> (MW)</td><td>81.5138</td><td>V<sub>g25</sub> (PU)</td><td>1.0359</td><td>T<sub>8</sub> (pu)</td><td>0.95</td></tr><tr><td>P<sub>g54</sub> (MW)</td><td>0.217</td><td>V<sub>g26</sub> (PU)</td><td>0.9543</td><td>T<sub>32</sub> (pu)</td><td>0.94</td></tr><tr><td>P<sub>g55</sub> (MW)</td><td>11.059</td><td>V<sub>g27</sub> (PU)</td><td>1.0132</td><td>T<sub>36</sub> (pu)</td><td>0.99</td></tr><tr><td>P<sub>g56</sub> (MW)</td><td>0</td><td>V<sub>g31</sub> (PU)</td><td>1.0137</td><td>T<sub>51</sub> (pu)</td><td>1.01</td></tr><tr><td>P<sub>g59</sub> (MW)</td><td>121.5805</td><td>V<sub>g32</sub> (PU)</td><td>1.0459</td><td>T<sub>93</sub> (pu)</td><td>1.08</td></tr><tr><td>P<sub>g61</sub> (MW)</td><td>124.1151</td><td>V<sub>g34</sub> (PU)</td><td>1.0788</td><td>T<sub>95</sub> (pu)</td><td>1.08</td></tr><tr><td>P<sub>g62</sub> (MW)</td><td>0.8983</td><td>V<sub>g36</sub> (PU)</td><td>1.0677</td><td>T<sub>102</sub> (pu)</td><td>0.98</td></tr><tr><td>P<sub>g65</sub> (MW)</td><td>59.4265</td><td>V<sub>g40</sub> (PU)</td><td>1.0986</td><td>T<sub>107</sub> (pu)</td><td>1.06</td></tr><tr><td>P<sub>g66</sub> (MW)</td><td>285.8251</td><td>V<sub>g42</sub> (PU)</td><td>1.0881</td><td>T<sub>127</sub> (pu)</td><td>1.08</td></tr><tr><td>P<sub>g69</sub> (MW)</td><td>406.1577</td><td>V<sub>g46</sub> (PU)</td><td>1.0272</td><td>Qc5 (MVAr)</td><td>-40</td></tr><tr><td>P<sub>g70</sub> (MW)</td><td>1.5995</td><td>V<sub>g49</sub> (PU)</td><td>1.0583</td><td>Q<sub>c34</sub> (MVAr)</td><td>11.3</td></tr><tr><td>P<sub>g72</sub> (MW)</td><td>0.2329</td><td>V<sub>g54</sub> (PU)</td><td>1.0871</td><td>Q<sub>c37</sub> (MVAr)</td><td>-22</td></tr><tr><td>P<sub>g73</sub> (MW)</td><td>3.7515</td><td>V<sub>g55</sub> (PU)</td><td>1.087</td><td>Q<sub>c44</sub> (MVAr)</td><td>0</td></tr><tr><td>P<sub>g74</sub> (MW)</td><td>99.9542</td><td>V<sub>g56</sub> (PU)</td><td>1.0808</td><td>Q<sub>c45</sub> (MVAr)</td><td>8.7</td></tr><tr><td>P<sub>g76</sub> (MW)</td><td>1.9594</td><td>V<sub>g59</sub> (PU)</td><td>1.0141</td><td>Q<sub>c46</sub> (MVAr)</td><td>9.3</td></tr><tr><td>P<sub>g77</sub> (MW)</td><td>8.1114</td><td>V<sub>g61</sub> (PU)</td><td>0.9962</td><td>Q<sub>c48</sub> (MVAr)</td><td>0.2</td></tr><tr><td>P<sub>g80</sub> (MW)</td><td>17.8145</td><td>V<sub>g62</sub> (PU)</td><td>0.9999</td><td>Q<sub>c74</sub> (MVAr)</td><td>9.4</td></tr><tr><td>P<sub>g85</sub> (MW)</td><td>4.3697</td><td>V<sub>g65</sub> (PU)</td><td>1.0195</td><td>Q<sub>c79</sub> (MVAr)</td><td>2.1</td></tr><tr><td>P<sub>g87</sub> (MW)</td><td>5.0134</td><td>V<sub>g66</sub> (PU)</td><td>1.0264</td><td>Qc82 (MVAr)</td><td>7.6</td></tr><tr><td>P<sub>g89</sub> (MW)</td><td>316.5723</td><td>V<sub>g69</sub> (PU)</td><td>0.9637</td><td>Qc83 (MVAr)</td><td>9.5</td></tr><tr><td>P<sub>g90</sub> (MW)</td><td>1.1845</td><td>V<sub>g70</sub> (PU)</td><td>1.0143</td><td>Q<sub>c105</sub> (MVAr)</td><td>19.3</td></tr><tr><td>P<sub>g91</sub> (MW)</td><td>1.5896</td><td>V<sub>g72</sub> (PU)</td><td>0.95</td><td>Q<sub>c107</sub> (MVAr)</td><td>5.3</td></tr><tr><td>P<sub>g92</sub> (MW)</td><td>0.6171</td><td>V<sub>g73</sub> (PU)</td><td>0.95</td><td>Q<sub>c110</sub> (MVAr)</td><td>1.4</td></tr><tr><td>P<sub>g99</sub> (MW)</td><td>0.7622</td><td>V<sub>g74</sub> (PU)</td><td>1.0085</td><td colspan="2"></td></tr></tbody></table>
+
+<!-- page: 198 -->
+
+## TÀI LIỆU THAM KHẢO
+
+[1] M. E. El-Hawary, J. K. Landrigan. Optimum operation of fixed-head hydro-thermal electric power systems: Powell's Hybrid Method Versus Newton-Raphson Method. IEEE Transactions on Power Apparatus and Systems, Vol. PAS-101, Issue 3, pp. 547-554, March 1982.
+
+[2] A. Wood, B. Wollenberg, “Power Generation, Operation and Control,” New York: Wiley, 1996.
+
+[3] M. Farid Zaghlool, F. C. Trutt. Efficient methods for optimal scheduling Of fixed head hydrothermal power systems. IEEE Transactions on Power Systems, Vol. 3, issue 1, pp. 24-30, February 1988.
+
+[4] A. H. A. Rashid, K. M. Nor. An efficient method for optimal scheduling of fixed head hydro and thermal plants. IEEE Trans Power Systems, Vol. 6, Issue 2, pp. 632-636, May 1991.
+
+[5] M. S. Salam, K. M. Nor, A. R. Hamdam. Hydrothermal scheduling based Lagrangian relaxation approach to hydrothermal coordination. IEEE Transactions on Power Systems, Vol. 13, pp. 226–235, 1998.
+
+[6] M. Basu. Hopfield neural networks for optimal scheduling of fixed head hydrothermal power systems. Electr. Power Syst., Vol. 64, pp. 11-5, 2003.
+
+[7] A. K. Sharma, Short term hydrothermal scheduling using evolutionary programming, Thesis submitted in partial fulfillment of the requirements for the award of degree of Master of Engineering in Power Systems & Electric Drives, Thapar University, Patiala. 2009
+
+[8] M. Basu. Artificial immune system for fixed head hydrothermal power system. Energy, Vol. 36, pp. 606-612, 2011.
+
+[9] I. A. Farhat, M. E. El-Hawary. Fixed-Head Hydro-Thermal Scheduling Using a Modified Bacterial Foraging Algorithm. IEEE Electrical Power & Energy Conference, pp. 1-6, 2010.
+
+[10] J. Sasikala, M. Ramaswamy. Optimal gamma based fixed head hydrothermal scheduling using genetic algorithm, Expert Systems with Applications, Vol. 37, pp. 3352–3357, 2010.
+
+[11] B. R. Kumar, M. Murali, M. S. Kumari, M. Sydulu. Short-range Fixed head Hydrothermal Scheduling using Fast Genetic Algorithm. Industrial Electronics and Applications (ICIEA), 7th IEEE Conference, pp. 1313-1318, 2012.
+
+[12] N. Naranga, J. S. Dhillonb, D. P. Kothari. Scheduling short-term hydrothermal generation using predator prey optimization technique. Applied Soft Computing, Vol. 21, pp. 298–308, 2014.
+
+[13] V. N. Dieu, W. Ongsakul. Enhanced merit order and augmented Lagrange Hopfield network for hydrothermal scheduling. Int. J Electr. Power Energy Syst., Vol. 30, pp. 93-101, 2008.
+
+[14] V. N. Dieu, W. Ongsakul. Improved merit order and augmented Lagrange Hopfield network for short term hydrothermal scheduling. Energy Convers Manage., Vol. 50, pp. 3015-23, 2009.
+
+[15] K. P. Wong, Y. W. Wong. Short-term hydrothermal scheduling, part-I: simulated annealing approach. IEEE Proc Part-C, Vol. 141, pp. 497–501, 1994.
+
+<!-- page: 199 -->
+
+[16] P. C. Yang, H. T. Yang, C. L. Huang. Scheduling short-term hydrothermal generation using evolutionary programming technique. IEEE Proc Gener Transm Distrib, Vol. 143, pp. 371–376, 1996.
+
+[17] P. K. Hota, P. K. Chakrabarti, Chattopadhyay. Short-term hydrothermal scheduling through evolutionary programming technique. Electric Power Systems Research, Vol. 52, pp. 189-196, 1999.
+
+[18] N. Sinha, R. Chakrabarti, P. K. Chattopadhyay. Fast evolutionary programming techniques for short-term hydrothermal scheduling. IEEE Transactions on Power Systems, Vol. 18, pp. 214-220, February 2003.
+
+[19] H. C. Chang, P. H. Chen. Hydrothermal generation scheduling package: A genetic based approach. IEEE Proc.-Gener Transm. Distrib, Vol. 145, Issue. 4, pp. 451-57, July 1998.
+
+[20] N. Sinha, R. Chakrabarti, P. K. Chattopadhaya. Fast evolutionary programming techniques for short-term hydrothermal scheduling. Electric Power Syst. Res, Vol. 66, pp. 97–103, 2003.
+
+[21] C. Nallasivan, D. S. Suman, J. Henry, S. Ravichandran. A Novel Approach for Short-Term Hydrothermal Scheduling Using Hybrid Technique. IEEE [Power India Conference,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=10872) pp. 1-5, 2006.
+
+[22] H. Samudi, P. D. Gautham, C. O. Piyush, T. S. Sreeni, S. Cherian. Hydro Thermal Scheduling using Particle Swarm Optimization. IEEE conference in India, pp. 1-5, 2008.
+
+[23] I. A. Farhat, M. E. El-Hawary. Short-Term Hydro-Thermal Scheduling Using an Improved Bacterial Foraging Algorithm. IEEE Electrical Power & Energy Conference, pp. 1-5, 2009.
+
+[24] S. Thakur, C. Boonchay, W. Ongsakul. Optimal Hydrothermal Generation Scheduling using Self-Organizing Hierarchical PSO. IEEE [Power and Energy Society General Meeting,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=5577387) pp. 1-6, 2010.
+
+[25] B. Türkay, F. Mecitoğlu, S. Baran. Application of a fast evolutionary algorithm to shortterm hydro-thermal generation scheduling. Energy Sources, Part B: Economics, Planning and Policy, Vol. 6, pp. 395-405, 2011.
+
+[26] S. Padmini, C. C. A. Rajan. Improved PSO for Short Term Hydrothermal Scheduling. IEEE conference in India, pp. 332-334, 2011.
+
+[27] S. Padmini, C. C. A. Rajan, P. Murthy. Application of Improved PSO Technique for Short Term Hydrothermal Generation Scheduling of Power System. SEMCCO, pp. 176-182, 2011.
+
+[28] R. K. Swain, A. K. Barisal, P. K. Hota, R. Chakrabarti. Short-term hydrothermal scheduling using clonal selection algorithm. Electrical Power & Energy Systems, Vol. 33, pp. 647–656, 2011.
+
+[29] M. S. Fakhar, S. A. R. Kashif, M. A. S. T. Hassan. Non cascaded short-term hydro-thermal scheduling using fully-informed particle swarm optimization. Electrical Power and Energy Systems, Vol. 73, pp. 983–990, 2015.
+
+[30] S. O. Orero, M. R. Irving. A genetic algorithm modeling framework and solution technique for short termoptimal hydrothermal scheduling. IEEE Trans. Power Syst., Vol. 13, pp. 501–518, May 1998.
+
+[31] K. K. Mandal, M. Basu, N. Chakraborty. Particle swarm optimization technique based short-term hydrothermal scheduling. Applied Soft Computing, Vol. 8, pp. 1392–1399, 2008.
+
+<!-- page: 200 -->
+
+[32] L. Lakshminarasimman, S. Subramanian. Short-term scheduling of hydrothermal power system with cascaded reservoirs by using modified differential evolution. IEEE Proc-Gener Transm. Distrib, Vol. 153, Issue. 6, pp. 693-700, 2006.
+
+[33] L. Lakshminarasimman, S. Subramanian. A modified hybrid differential evolution for short-term scheduling of hydrothermal power systems with cascaded reservoirs. Energy Conversion and Management, Vol. 49, pp. 2513-2521, 2008.
+
+[34] B. Yu, X. Yuan, J. Wang. Short-term hydro-thermal scheduling using particle swarm optimization method. Energy Conversion and Management, Vol. 48, pp. 1902–1908, 2007.
+
+[35] X. Yuan, L. Wang, Y. Yuan. Application of enhanced PSO approach to optimal scheduling of hydro system. Energy Convers Manage, Vol. 49, Issue. 11, pp. 2966–72, 2008.
+
+[36] P. K. Hotaa, A. K. Barisal, R. Chakrabarti. An improved PSO technique for short-term optimal hydrothermal scheduling. Electric Power Systems Research, Vol. 79, pp. 1047–1053, 2009.
+
+[37] X. Liao, J. Zhou, S. Ouyang, R. Zhang, Y. Zhan. An adaptive chaotic artificial bee colony algorithm for short-term hydrothermal generation scheduling. Electrical Power and Energy Systems, Vol. 53, pp. 34–42, 2013.
+
+[38] N. Fang, J. Zhou, R. Zhang, Y. Liu, Y. Zhang. A hybrid of real coded genetic algorithm and artificial fish swarm algorithm for short-term optimal hydrothermal scheduling. Electrical Power and Energy Systems, Vol. 62, pp. 617–629, 2014.
+
+[39] R. Naresh, J. Sharma. Two-phase neural network based solution technique for short term hydrothermal scheduling. IEEE Proc-Gener. Transm. Distrib, Vol. 146, Issue. 6, pp. 657-663, 1999.
+
+[40] X. Yuan, Y. Yuan. Application of cultural algorithm to generation scheduling of hydrothermal systems. Energy Conversion and Management, Vol. 47, pp. 2192–2201, 2006.
+
+[41] S. Kumar, R. Naresh. Efficient real coded genetic algorithm to solve the non-convex hydrothermal scheduling problem. Int J Electr. Power Energy Syst, Vol. 29, Issue. 10, pp. 738–47, 2007.
+
+[42] H.M. Dubey, M. Pandit and B.K. Panigrahi, “Cuckoo Search Algorithm for Short Term Hydrothermal Scheduling”, Proceedings of ICPERES 2014, Lecture Notes in Electrical Engineering, Vol. 326, pp. 573-589, 2014.
+
+[43] X. Yuan, B. Cao, B. Yang, Y. Yuan. Hydrothermal scheduling using chaotic hybrid differential evolution. Energy Conversion and Management, Vol. 49, pp. 3627–3633, 2008.
+
+[44] S. Sivasubramani, K. S. Swarup. Hybrid DE–SQP algorithm for non-convex short term hydrothermal scheduling problem. Energy Conversion and Management, Vol. 52, pp. 757-761, 2011.
+
+[45] H. B. Tavakoli, B. Mozafari. Short-term Hydrothermal Scheduling via Honey-bee Mating Optimization Algorithm. [Power and Energy Engineering Conference (APPEEC), Asia-Pacific,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6304951) pp. 1-5, 2012.
+
+[46] M. Basu, S. Datta. Biogeography-Based Optimization for Short-term Hydrothermal Scheduling. [Emerging Trends in Electrical Engineering and Energy Management (ICETEEEM), International Conference,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6480927) pp. 38-43, 2012.
+
+<!-- page: 201 -->
+
+[47] Y. Wang, J. Zhou, LiMo, R. Zhang, Y. Zhang. Short-term hydrothermal generation scheduling using differential real-coded quantum-inspired evolutionary algorithm. Energy, Vol. 44, pp. 657-671, 2012.
+
+[48] A. K. Barisal, N. C. Sahu, R. C. Prusty, P. K. Hota. Short-term hydrothermal scheduling using Gravitational Search Algorithm. 2nd International Conference on Power, Control and Embedded Systems, pp.1-6, 2012.
+
+[49] Y. Wang, J. Zhou, C. Zhou, Y. Wang, H. Qin, Y. Lu. An improved self-adaptive PSO technique for short-term hydrothermal scheduling. Expert Systems with Applications, Vol. 39, pp. 2288-2295, 2012.
+
+[50] V. H. Hinojosa, C. Leyton. Short-term hydrothermal generation scheduling solved with a mixed-binary evolutionary particle swarm optimizer. Electric Power Systems Research, Vol. 92, pp. 162–170, 2012.
+
+[51] P. K. Roy, A. Sur, D. K. Pradhan. Optimal short-term hydro-thermal scheduling using quasi-oppositional teaching learning based optimization. Engineering Applications of Artificial Intelligence, Vol. 26, pp. 2516–2524, 2013.
+
+[52] N. Fang, J. Zhou, J. Ma. Short-term Hydrothermal Scheduling Based on Adaptive Chaotic Real Coded Genetic Algorithm. IEEE conference on Intelligent Control and Automation, pp. 3412-3416, 2014.
+
+[53] M. Basu. Improved differential evolution for short-term hydrothermal scheduling. Electrical Power and Energy Systems, Vol. 58, pp. 91–100, 2014.
+
+[54] G. Kumar, V. Sharma, R. Naresh, P. K. Singhal. Quadratic Migration of Biogeography based Optimization for Short Term Hydrothermal Scheduling. [Networks & Soft Computing (ICNSC), First International Conference on,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6898114) pp. 400-405, 2014.
+
+[55] K. Bhattacharjee, A. Bhattacharya, S. H. Dey. Real coded chemical reaction based optimization for short-term hydrothermal scheduling. Applied Soft Computing, Vol. 24, pp. 962–976, 2014.
+
+[56] J. Zhang, S. Lin, W. Qiu. A modified chaotic differential evolution algorithm for shortterm optimal hydrothermal scheduling. Electrical Power and Energy Systems, Vol. 65, pp. 159-168, 2015.
+
+[57] A. Rasoulzadeh-akhijahani, B. Mohammadi-ivatloo. Short-term hydrothermal generation scheduling by a modified dynamic neighborhood learning based particle swarm optimization. Electrical Power and Energy Systems, Vol. 67, pp. 350–367, 2015.
+
+[58] M. Basu, A simulated annealing-based goal-attainment method for economic emission load dispatch of fixed head hydrothermal power systems, Electr Power and Ener Syst, 27(2), pp. 147–153, 2005.
+
+[59] J. Sasikala, M. Ramaswamy, PSO based economic emission dispatch for fixed head hydrothermal systems, Electr. Eng, 94 (4), pp. 233-239, 2012.
+
+[60] M. Basu, Economic environmental dispatch of fixed head hydrothermal power systems using nondominated sorting genetic algorithm-II, Applied Soft Computing, 11(3), pp. 3046-3055, 2011.
+
+[61] C. L. Chiang, Optimal economic emission dispatch of hydrothermal power systems, Electr. Power and Ener Syst, 29 (6), pp. 462–469, 2007.
+
+[62] N. Narang, J. S. Dhillon, D. P. Kothari, Multiobjective fixed head hydrothermal scheduling using integrated predator-prey optimization and Powell search method, Energy, 47 (1), pp. 237-252, 2012.
+
+<!-- page: 202 -->
+
+[63] Y. Li, H. He, Y. Wang, X. Xu, L. Jiao, An improved multiobjective estimation of distribution algorithm for environmental economic dispatch of hydrothermal power systems, Applied Soft Computing 28, pp. 559-568, 2015.
+
+[64] X. S. Yang, S. Deb. Cuckoo search via Lévy flights. In: Proc. World congress on nature & biologically inspired computing (NaBIC 2009), India, pp. 210–214, 2009.
+
+[65] S. Walton, O. Hassan, K. Morgan, M. R. Brown. Modified cuckoo search: A new gradient free optimisation algorithm. Chaos, Solutions & Fractals, Vol. 44, pp. 710–718, 2011.
+
+[66] https://en.wikipedia.org/wiki/Cuckoo
+
+[67] G. M. Viswanathan, G. M. Afanasyev, V. Buldyrev, S. V. Havlin, S. Luz, M. Raposo, E. P. Stanley, H. E. Lévy flights in random searches, Physica A: [Statistical Mechanics and its Applications,](http://www.sciencedirect.com/science/journal/03784371) Vol. 282, Issue. 1, pp. 1-12, 2000.
+
+[68] Brown, C. Liebovitch, S. L. Glendon. R. Lévy flights in Dobe Ju/hoansi foraging patterns. Human Ecol, Vol. 35, Issue. 1, pp. 129-138, 2007.
+
+[69] X. S. Yang, S. Deb. Engineering optimisation by cuckoo search. Int. J. Mathematical Modelling and Numerical Optimisation, Vol. 1, Issue. 4, pp. 330-343, 2010.
+
+[70] M. F. Shlesinger. Mathematical physics: search research. Nature, Vol. 443, pp. 281-282, 2006.
+
+[71] I. Pavlyukevich. Lévy flights, non-local search and simulated annealing. J. Computational Physics, Vol. 226, Issue. 2, pp. 1830-1844, 2007.
+
+[72] N. V. Dieu, P. Schegner, W. Ongsakul. Cuckoo search algorithm for non-convex economic dispatch. IET Generation, Transmission & Distribution, Vol. 7, pp. 645–54, 2013.
+
+[73] M. Basu, A. Chowdhury. Cuckoo search algorithm for economic dispatch. Energy, Vol. 60, pp. 99-108, 2013.
+
+[74] J. Ahmed, Z. Salam. A Maximum Power Point Tracking (MPPT) for PV system using Cuckoo Search with partial shading capability. Applied Energy, Vol. 119, pp. 118–130, 2014.
+
+[75] N. T. Thuan, T. V. Anh. Distribution network reconfiguration for power loss minimization and Voltage profile improvement using cuckoo search algorithm. International Journal of Electrical Power & Energy Systems, Vol. 68, pp. 233-242, June 2015.
+
+[76] W. S. [Tan, M. Y. Hassan,](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Tan%2C%20W.S..QT.&newsearch=true) M. S. [Majid,](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Majid%2C%20M.S..QT.&newsearch=true) H. A. [Rahman.](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Rahman%2C%20H.A..QT.&newsearch=true) [Allocation and sizing of DG using Cuckoo Search algorithm.](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6450192&queryText=cuckoo+search+algorithm&newsearch=true&searchField=Search_All) [Power and Energy (PECon), IEEE International Conference on,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6423700) pp. 133-138, 2012.
+
+[77] S. B. [Raha,](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Raha%2C%20S.B..QT.&newsearch=true) T. [Som,](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Som%2C%20T..QT.&newsearch=true) K. K. [Mandal,](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Mandal%2C%20K.K..QT.&newsearch=true) N. [Chakraborty.](http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22Authors%22:.QT.Chakraborty%2C%20N..QT.&newsearch=true) [Cuckoo search algorithm based optimal reactive power dispatch.](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6959121&queryText=cuckoo+search+algorithm&newsearch=true&searchField=Search_All) [Control, Instrumentation, Energy and Communication (CIEC), International Conference on,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6937464) pp. 412-416, 2014.
+
+[78] S. Deb, A. K. Goswami. [Rescheduling of real power for congestion management using Cuckoo Search Algorithm.](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7030383&queryText=cuckoo+search+algorithm&newsearch=true&searchField=Search_All) [India Conference (INDICON). Annual IEEE,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7016294) pp. 1-6, 2014.
+
+[79] J. Piechocki, D. Ambroziak, A. Palkowskib, G. Redlarski. Use of Modified Cuckoo Search algorithm in the design process of integrated power systems for modern and energy self-sufficient farms. Applied Energy, Vol. 114, pp. 901-908, 2013.
+
+[80] V. N. Dieu, W. Ongsakul. Augmented Lagrange—Hopfield Network for Economic Load Dispatch with Combined Heat and Power. Electric Power Components and Systems, Vol. 37, pp. 1289–1304, 2009.
+
+<!-- page: 203 -->
+
+[81] M. Basu. An interactive fuzzy satisfying method based on evolutionary programming technique for multi-objective short-term hydrothermal scheduling. Electric Power Systems Research, Vol. 69, Issue. 2-3, pp. 277–285, 2004.
+
+[82] V. N. Dieu and W. OngSakul, “Enhanced augmented Lagrangian Hopfield network for unit commitment”, IEE Proc. Gener. Transm. Distrib, Vol. 153, no. 6, pp. 624-632, Nov. 2006.
+
+[83] J.S. Dhillon, S.C. Parti, D.P. Kothari. “Fuzzy decision making in multiobjective longterm scheduling of hydrothermal system”, Int J Electrical Power Energy Syst., Vol. 23, no. 1, pp.19-29, 2001.
+
+[84] J.A. Momoh, X.W. Ma, K. Tomsovic, “Overview and literature survey of fuzzy set theory in power systems”, IEEE Trans Power Syst., Vol. 10, no. 3, pp. 1676–90, 1995.
+
+[85] P. S. Kulkarni, A. G. Kothari, D. P. Kothari, “Combined Economic and Emission Dispatch Using Improved Backpropagation Neural Network”, Electric Machines and Power Systems, Vol. 28, pp.31–44, 2000.
+
+[86] K. Mandal, N. Chakraborty, “Short-term combined economic emission scheduling of hydrothermal power systems with cascaded reservoirs using differential evolution”, Energy Conversion and Management, Vol. 50,pp.97–104, 2008.
+
+[87] S. Lu, C. Sun, L. Zhengding, “An improved quantum-behaved particle swarm optimization method for short-term combined economic emission hydrothermal scheduling”, Energy Conversion and Management, Vol. 51, pp. 561–571, 2010.
+
+[88] C. Sun, S. Lu, Short-term combined economic emission hydrothermal scheduling using improved quantum-behaved particle swarm optimization, Expert Syst. Appl., Vol. 37 No.6, pp. 4232–41, 2010.
+
+[89] M. Basu, “Economic environmental dispatch of hydrothermal power system”, Electrical Power and Energy Systems, Vol. 32, pp.711–720, 2010.
+
+[90] S. Lu, C. Sun, “Quadratic approximation based differential evolution with valuable trade off approach for bi-objective short-term hydrothermal scheduling”, Expert Syst. Appl., Vol. 38, No. 11, pp. 13950–60, 2011.
+
+[91] K. K. Mandal, N. Chakraborty, “Short-term combined economic emission scheduling of hydrothermal systems with cascaded reservoirs using particle swarm optimization”, Appl. Soft Computing, Vol. 11, No. 1, pp.1295–302, 2011.
+
+[92] J. S. Dhillon, S. C. Parti, D. P. Kothari, Fuzzy decision-making in stochastic multiobjective short-term hydrothermal scheduling, IEE Proc. Gener., Transm. Distrib, Vol. 149, Issue 2, pp. 191-200, 2002.
+
+[93] T. Niknam, M. R. Narimani, M. Jabbari, A. R. Malekpour: ‘A modified shuffle frog leaping algorithm for multi-objective optimal power flow’, Energy, Vol. 36, Issue 11, pp. 6420–6432, 2011.
+
+[94] H. W. Dommel, W. F. Tinny. Optimal power flow solution. IEEE Trans Power Appar Syst, 30, Vol. PAS-87, Issue 10, pp. 1866–1876, 1968.
+
+[95] B. Stott, O. Alsac, A. J. Monticelli. Security analysis and optimization. Proc IEEE, Vol. 75, Issue 12, pp. 1623–1644, 1987.
+
+[96] J. A. Momoh, R. J. Koessler, M. S. Bond, B. Stott, D. Sun, A. Papalexopoulos, et al. Challenges to optimal power flow. IEEE Trans Power Syst, Vol. 12, Issue 1, pp. 444–447, 1997.
+
+<!-- page: 204 -->
+
+[97] M. B. Cain, R. P. O’Neill, A. Castillo. History of optimal power flow and formulations. FERC staff technical paper, December 2012.
+
+[98] D. Thukaram, K. Parhasarathy, H. P. Khincha, U. Narendranath, A. Bansilal. Voltage stability improvement:case studies if indian power networks. Electr Power Syst Res, Vol. 44, Issue 1, pp. 35–44, 1998.
+
+[99] G. Yesuratnam, D. Thukaram. Congestion management in open access based on relative electrical distances using Voltage stability criteria. Electr Power Syst Res, Vol. 77, Issue 12, pp. 1608–1618, 2006.
+
+[100] P. Nagendra, S. Halder nee Dey, T. Datta, S. Paul. Voltage stability assessment of a power system incorporating FACTS controllers using unique network equivalent. Ain Shams Eng Journal, Vol. 5, Issue 1, pp. 103–111, 2014.
+
+[101] P. Ristanovic. Successive linear programming based optimal power flow solution, optimal power flow solution techniques, requirements and challenges. IEEE Power Eng Soc, 1996.
+
+[102] J. L. Martinez, A. Ramous, G. Exposito, V. Quintana. Transmission loss reduction by Interior point methods: implementation issues and practical experience. Proc IEE Gener Transm Distrib, Vol. 152, Issue 1, pp. 90–98, 2005.
+
+[103] G. L. Torres, V. H. Quintana. An interior point method for non-linear optimal power flow using Voltage rectangular coordinates. IEEE Trans Power Syst, Vol. 13, Issue 4, pp. 1211–1218, 1998.
+
+[104] G. L. Torres, V. H. Quintana. Optimal power flow by a non-linear complementarity method. IEEE Trans Power Syst, Vol. 15, Issue 3, pp. 1028–1033, 2000.
+
+[105] E. J. Oliveira, L. W. Oliveira, J. L. R. Pereira, L. M. Honório, I. C. Silva Junior, A. L. M. Marcato. An optimal power flow based on safety barrier interior point method. Electr Power Energy Syst, Vol. 64, pp. 977–985, 2015.
+
+[106] K. Deb. Multi-objective optimization using evolutionary algorithms. New York: John Wiley and Sons, Inc, 2001 .
+
+[107] M. S. Osman, M. A. Abo-Sinna, A. A. Mousa. A solution to the optimal power flow using genetic algorithm. Appl Math Comput, Vol. 155, Issue 2, pp. 391–405, 2004.
+
+[108] J. Yuryevich. Evolutionary programming based optimal power flow algorithm. IEEE Trans Power Syst, Vol. 14, Issue 4, pp. 1245–1250, 1999.
+
+[109] M. A. Abido. Optimal power flow using particle swarm optimization. Int J Electr Power Energy Syst, Vol. 24, Issue 7, pp. 563–571, 2002.
+
+[110] A. A. Abou El Ela, M. A. Abido, S. R. Spea. Optimal power flow using differential evolution algorithm. Electr Power Syst Res, Vol. 80, Issue 7, pp. 878–885, 2010.
+
+[111] M. A. Abido. Optimal power flow using tabu search algorithm. Electr Power Compon Syst, Vol. 30, Issue 5, pp. 469–483, 2002.
+
+[112] A. Bhattacharya, P. K. Chattopadhyay. Application of biogeography-based optimisation to solve different optimal power flow problems. IET Gener Transm Distrib, Vol. 5, Issue 1, pp. 70–80, 2011.
+
+[113] C. A. Roa-Sepulveda, B. J. Pavez-Lazo. A solution to the optimal power flow using simulated annealing. Int J Electr Power Energy Syst, Vol. 25, Issue 1, pp. 47–57, 2003.
+
+[114] K. Vaisakh, L. R. Srinivas, K. Meah. Genetic evolving ant direction particle swarm optimization algorithm for optimal power flow with non-smooth cost
+
+<!-- page: 205 -->
+
+functions and statistical analysis. Appl Soft Comput, Vol. 13, Issue 12, pp. 4579–4593, 2013.
+
+[115] T. Niknam, M. R. Narimani, R. A. Abarghooee. A new hybrid algorithm for optimal power flow considering prohibited zones and valve point effect. Energy Convers Manage, Vol. 58, pp. 197–206, 2012.
+
+[116] Y. Z. Li, M. S. Li, Q. H. Wu. Energy saving dispatch with complex constraints: prohibited zones, valve point effect and carbon tax. Electr Power Energy Syst, Vol. 63, pp. 657–666, 2014.
+
+[117] H. R. E. H. Bouchekaraa, M. A. Abido, M. Boucherma. Optimal power flow using teaching-learning-based optimization technique. Electr Power Syst Res, Vol. 114, pp. 49–59, 2014.
+
+[118] M. Ghasemi, S. Ghavidel, M. Gitizadeh, E. Akbari. An improved teaching– learning-based optimization algorithm using Lévy mutation strategy for nonsmooth optimal power flow. Electr Power Energy Syst, Vol. 65, pp. 375–384, 2015.
+
+[119] S. Sayah, K. Zehar. Modified differential evolution algorithm for optimal power flow with non-smooth cost functions. Energy Convers Manage, Vol. 49, Issue 11, pp. 3036–3042, 2008.
+
+[120] N. Amjady, H. Sharifzadeh. Security constrained optimal power flow considering detailed generator model by a new robust differential evolution algorithm. Electr Power Syst Res, Vol. 81, Issue 2, pp. 740–749, 2011.
+
+[121] Y. Tan, C. Li, Y. Cao, K. Y. Lee, L. Li, S. Tang, et al. Improved group search optimization method for optimal power flow problem considering valve-point loading effects. Neurocomputing, Vol. 148, pp. 229–239, 2015.
+
+[122] A. G. Bakirtzis, P. N. Biskas, C. E. Zoumas, V. Petridis. Optimal power flow by enhanced genetic algorithm. IEEE Trans Power Syst, Vol. 17, Issue 2, pp. 229–236, 2002.
+
+[123] S. Surender Reddy, P. R. Bijwe, A. R. Abhyankar. Faster evolutionary algorithm based optimal power flow using incremental variables. Electr Power Energy Syst, Vol. 54, pp. 198–210, 2014.
+
+[124] O. Alsac, B. Scott. Optimal power flow with steady state security. IEEE Trans Power Appar Syst, Vol. 93, Issue 3, pp. 745–751, 1974.
+
+[125] L. L. Lai, J. T. Ma, R. Yokoyama, M. Zhao. Improved genetic algorithms for optimal power flow under both normal and contingent operation states. Electr Power Energy Syst, Vol. 19, Issue 5, pp. 287–292, 1997.
+
+[126] S. Sivasubramani, K. S. Swarup. Multi-agent based differential evolution approach to optimal power flow. Appl Soft Comput, Vol. 12, Issue 2, pp. 735–740, 2012.
+
+[127] M. E. El-Hawary, D. H. Tsang, The Hydrothermal Optimal Load Flow, A Practical Formulation And Solution Techniques Using Newton's Approach, IEEE Transactions on Power Systems, Vol. PWRS-l, No. 3, pp. 157-166, August 1986.
+
+[128] H. Habibollahzadeh, G. X. Luo A. Semlyen, Hydrothermal optimal power flow based on a combined linear and nonlinear programming methodology, IEEE Transactions on Power Systems, Vol. 4, No. 2, pp. 530-537, May 1989.
+
+[129] George Angelidis, Short-term Optimal Hydrothermal Scheduling Problem Considering Power Flow Constraint, Can. J. Elect. & Comp. Eng., Vol. 19, No. 2, pp. 81-86, 1994.
+
+<!-- page: 206 -->
+
+[130] Hua Wei, Hiroshi Sasaki, Junji Kubokawa, Interior Point Method For Hydro-Thermaloptimal Power Flow, [Energy Management and Power Delivery. Proceedings of EMPD '95. 1995 International Conference on,](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=3588) Vol. 2, pp. 607-612, 1995.
+
+[131] Hua Wei, Hiroshi Sasaki, Junji Kubokawa, and Ryuichi Yokoyama, Large Scale Hydrothermal Optimal Power Flow Problems Based on Interior Point Nonlinear Programming,, IEEE Transactions on Power System, Vol. 15, Issue 1, pp. 396-403, 2002.
+
+[132] Shuang Lin, Jian Huang, Jingrui Zhang, Qinghui Tang and Weixia Qiu, Short-term Optimal Hydrothermal Scheduling with Power Flow Constraint, [The 27th Chinese Control and Decision Conference (2015 CCDC),](http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7140653) pp. 1189-1194, 2015.
+
+[133] A. Soliman, A.H. Mantawy, “Modern Optimizati on Technique ues with applications in electric power systems”. Springer, New York, 2010.
+
+[134] O. Alsac, B. Stott, Optimal load flow with steady-state security. IEEE Trans. Power Apparatus Syst, Vol. 93, Issue 3, pp. 745–751, 1974.
+
+<!-- page: 207 -->
+
+## CÁC CÔNG TRÌNH CÔNG BỐ
+
+## CHAPTER 4
+
+1. TT Nguyen, DN Vo, AV Truong, “[Cuckoo search algorithm for short-term hydrothermal scheduling](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:u-x6o8ySG0sC)”, Applied Energy (2014) 132, 276-287 (SCI)
+
+2. TT Nguyen, DN Vo, “[Multi-objective short-term fixed head hydrothermal scheduling using augmented lagrange hopfield network](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:UeHWp8X0CEIC)”, Journal of Electrical Engineering and Technology (2014) 9 (6), 1882-1890 (SCIE)
+
+3. TT Nguyen, DN Vo, “[Modified Cuckoo Search algorithm for short-term hydrothermal scheduling](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:d1gkVwhDpl0C)”, International Journal of Electrical Power & Energy Systems (2015) 65, 271-281 (SCIE)
+
+4. TT Nguyen, DN Vo, AV Truong, LD Ho, “[An Efficient Cuckoo-Inspired Meta-Heuristic Algorithm for Multiobjective Short-Term Hydrothermal Scheduling](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:7PzlFSSx8tAC)”, Advances in Electrical and Electronic Engineering (2016)14 (1), 18-28 (Scopus)
+
+5. LH Pham, TT Nguyen, DN Vo, BH Dinh, “[Optimal Generation Coordination of Hydrothermal System](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:TQgYirikUcIC)”, International Journal of Hybrid Information Technology (2016) 9 (5), 13-20 (Scopus)
+
+6. TT Nguyen, DN Vo, “[Cuckoo Search Algorithm for Hydrothermal Scheduling Problem](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:dhFuZR0502QC)”, Handbook of Research on Modern Optimization Algorithms and Applications in Engineering and Economics, publisher: IGI Global (2015) (Book chapter)
+
+7. TT Nguyen, AV Truong, HP Trieu. “Adaptive selective cuckoo search algorithm for multi-objective short-term hydrothermal scheduling”, Journal of Technical Education Science (2017) 41, 7-14
+
+8. TT Nguyen, DN Vo, “Modified Cuckoo Search Algorithm for Multiobjective Short-Term Hydrothermal Scheduling”. Swarm and evolutionary computation. (SCIE-Article in press).
+
+9. TT Nguyen, DN Vo, AV Truong, BH Dinh, “Adaptive selective Cuckoo Search algorithm for short-term hydrothermal scheduling problem”, Applied soft computing. (SCIE- under review round 3)
+
+## CHAPTER 5
+
+10. BH Dinh, TT Nguyen, DN Vo, “[Adaptive Cuckoo Search Algorithm for Short-Term Fixed-Head Hydrothermal Scheduling Problem with Reservoir Volume Constraints](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:R3hNpaxXUhUC)”, International Journal of Grid and Distributed Computing (2016) 9 (5), 191-20 (ISI)
+
+11. TT Nguyen, DN Vo, BH Dinh, “[Cuckoo Search Algorithm Using Different Distributions for Short-Term Hydrothermal Scheduling with Reservoir Volume](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:ZeXyd9-uunAC)
+
+<!-- page: 208 -->
+
+[Constraint](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:ZeXyd9-uunAC)”, International Journal on Electrical Engineering and Informatics (2016) 8 (1), 76-92 **(Scopus)**
+
+## CHAPTER 6
+
+12. TT Nguyen, DN Vo, “[An efficient cuckoo bird inspired meta-heuristic algorithm for short-term combined economic emission hydrothermal scheduling](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:-f6ydRqryjwC)”, Ain Shams Engineering Journal (2016), Article in press (Elsevier) (ISI-Article in Press).
+
+13. TT Nguyen, DN Vo, “[Solving Short-Term Cascaded Hydrothermal Scheduling Problem Using Modified Cuckoo Search Algorithm](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&cstart=20&pagesize=80&citation_for_view=NT14nkoAAAAJ:kNdYIx-mwKoC)”, International Journal of Grid and Distributed Computing (2016) 9 (1), 67-78 (ISI).
+
+14. TT Nguyen, DN Vo, AV Truong, BH Dinh, A cuckoo bird-inspired metaheuristic algorithm for optimal short-term hydrothermal generation cooperation. Cogent engineering, (2016) 3(1):1-9. (ISI)
+
+15. TT Nguyen, DN Vo, AV Truong, PT Ha, LD Ho, “An Effectively Enhanced Cuckoo Search Algorithm for Variable Head Short-Term Hydrothermal Scheduling”, [GMSARN International Journal,](http://www.gmsarnjournal.com/) (2016) 10 (4):157 – 162.
+
+## CHAPTER 7
+
+16. TT Nguyen, DN Vo, AV Truong, LD Ho, “[Meta-Heuristic Algorithms for Solving Hydrothermal System Scheduling Problem Considering Constraints in Transmission Lines](https://scholar.google.com/citations?view_op=view_citation&hl=vi&user=NT14nkoAAAAJ&citation_for_view=NT14nkoAAAAJ:HDshCWvjkbEC)”, Global Journal of Technology and Optimization (2016) 7 (1): 1-6
+
+17. TT Nguyen, DN Vo, AV Truong, BH Dinh“An effective novel optimal algorithm for solving hydrothermal optimal power flow problem”, Cogent Engineering (ISI-under review)
