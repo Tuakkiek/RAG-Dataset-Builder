@@ -1,0 +1,2426 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.237,
+            0.383,
+            0.763,
+            0.519
+          ],
+          "level": 2,
+          "content": "Chapter 11 Acting with Nondeterministic Models"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.644,
+            0.567,
+            0.691
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.705,
+            0.613,
+            0.756
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.301
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.847,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "level": 2,
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.869,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.421,
+            0.066,
+            0.579,
+            0.118
+          ],
+          "level": 2,
+          "content": "Motivation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.178,
+            0.555,
+            0.265
+          ],
+          "content": "In Chapters 8–10, we had probability distributions over the possible outcomes of actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.334,
+            0.571,
+            0.419
+          ],
+          "content": "● Sometimes we want to reason about nondeterminism without the probability distributions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.434,
+            0.387,
+            0.475
+          ],
+          "content": "▸ Probabilities might not be available"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.489,
+            0.537,
+            0.532
+          ],
+          "content": "▸ We might want policies that satisfy safety conditions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.545,
+            0.554,
+            0.585
+          ],
+          "content": "• Guaranteed to work for all possible action outcomes"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.088,
+            0.717,
+            0.274,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.09,
+                0.94,
+                0.259,
+                0.966
+              ],
+              "content": "Credit: [Dennis Hill](https://www.flickr.com/people/7888217@N04), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)"
+            }
+          ],
+          "image_source": "images/page_1_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.379,
+            0.629,
+            0.609,
+            0.937
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.384,
+                0.945,
+                0.567,
+                0.971
+              ],
+              "content": "Credit: [Airtuna08](https://en.wikipedia.org/wiki/User:Airtuna08), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)"
+            }
+          ],
+          "image_source": "images/page_1_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.67,
+            0.113,
+            0.89,
+            0.445
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.69,
+            0.575,
+            0.965,
+            0.941
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.691,
+                0.949,
+                0.874,
+                0.974
+              ],
+              "content": "Credit: [David Wilson](https://www.flickr.com/people/32693718@N07), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)"
+            },
+            {
+              "bbox": [
+                0.006,
+                0.975,
+                0.354,
+                0.997
+              ],
+              "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+            }
+          ],
+          "image_source": "images/page_1_image_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.439,
+            0.065,
+            0.561,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.027,
+            0.049,
+            0.391,
+            0.463
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.027,
+                0.471,
+                0.207,
+                0.501
+              ],
+              "content": "Credit: [Slaunger](https://en.m.wikipedia.org/wiki/User:Slaunger), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)"
+            }
+          ],
+          "image_source": "images/page_2_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.565,
+            0.425,
+            0.609
+          ],
+          "content": "● Very simple harbor management domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.619,
+            0.387,
+            0.664
+          ],
+          "content": "▸ Unload a single item from a ship"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.676,
+            0.316,
+            0.717
+          ],
+          "content": "▸ Move it around a harbor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.761,
+            0.327,
+            0.803
+          ],
+          "content": "● One state variable: pos(item)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.817,
+            0.34,
+            0.859
+          ],
+          "content": "▸ Simplified names for states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.873,
+            0.492,
+            0.917
+          ],
+          "content": "▸ For {pos(item)=on\\_ship}, just write on\\_ship"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.438,
+            0.297,
+            0.969,
+            0.95
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_2_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.248,
+            0.065,
+            0.751,
+            0.123
+          ],
+          "level": 2,
+          "content": "Nondeterministic Planning Domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.178,
+            0.214,
+            0.221
+          ],
+          "content": "O ● 3-tuple $( S , A , \\gamma )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.233,
+            0.45,
+            0.273
+          ],
+          "content": "▸ S and A – finite sets of states and actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.289,
+            0.237,
+            0.331
+          ],
+          "content": "▸ $\\gamma \\colon S \\times { \\mathcal { A } } \\to 2 ^ { S }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.344,
+            0.411,
+            0.433
+          ],
+          "content": "● γ(s,a) = {all possible “next states” after applying action a in state s}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.444,
+            0.427,
+            0.487
+          ],
+          "content": "▸ a is applicable in state s iff $\\gamma ( s , a ) \\neq \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.499,
+            0.447,
+            0.588
+          ],
+          "content": "● Applicable(s) = {all actions applicable in s} $= \\{ a \\in { \\mathcal { A } } \\mid \\gamma ( s , a ) \\neq \\emptyset \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.601,
+            0.163,
+            0.643
+          ],
+          "content": "Example:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.655,
+            0.381,
+            0.699
+          ],
+          "content": "▸ Applicable(at\\_harbor) = {park}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.712,
+            0.387,
+            0.753
+          ],
+          "content": "▸ park has three possible outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.767,
+            0.618,
+            0.81
+          ],
+          "content": "• put item in parking1 or parking2 if one of them has space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.823,
+            0.477,
+            0.865
+          ],
+          "content": "or in transit1 if there’s no parking space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.878,
+            0.536,
+            0.921
+          ],
+          "content": "▸ γ(at\\_harbor, park) = {parking1, parking2, transit1}"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.435,
+            0.306,
+            0.969,
+            0.948
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_3_image_13.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.249,
+            0.065,
+            0.751,
+            0.122
+          ],
+          "level": 2,
+          "content": "Nondeterministic Planning Domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.021,
+            0.144,
+            0.344,
+            0.185
+          ],
+          "content": "● One possible action representation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.199,
+            0.561,
+            0.24
+          ],
+          "content": "▸ like classical, but with n mutually exclusive “effects” lists"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.021,
+            0.257,
+            0.135,
+            0.296
+          ],
+          "level": 2,
+          "content": "● e.g., park:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.3,
+            0.342,
+            0.341
+          ],
+          "content": "pre: pos(item) = at\\_harbor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.344,
+            0.339,
+            0.385
+          ],
+          "content": "eff<sub>1</sub>: pos(item) ← parking1"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.094,
+            0.389,
+            0.339,
+            0.43
+          ],
+          "content": "\\mathrm{eff} _ {2}: \\quad \\text {pos(item)} \\leftarrow \\text {parking2}",
+          "image_source": "images/page_4_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.433,
+            0.333,
+            0.475
+          ],
+          "content": "eff<sub>3</sub>: pos(item) ← transit1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.489,
+            0.126,
+            0.526
+          ],
+          "content": "Problem:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.543,
+            0.513,
+            0.586
+          ],
+          "content": "▸ number of effects lists may be combinatorially large"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.6,
+            0.372,
+            0.687
+          ],
+          "content": "▸ Suppose a can cause any possible combination of effects $e _ { 1 } , e _ { 2 } , . . . , e _ { k }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.699,
+            0.284,
+            0.741
+          ],
+          "content": "▸ Need $\\mathrm { e f f } _ { 1 } , \\mathrm { e f f } _ { 2 } , . . . , \\mathrm { e f f } _ { 2 ^ { k } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.755,
+            0.354,
+            0.794
+          ],
+          "content": "• One for for each combination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.809,
+            0.587,
+            0.851
+          ],
+          "content": "▸ Section 12.3: a different representation that can alleviate this"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.02,
+            0.865,
+            0.605,
+            0.909
+          ],
+          "content": "● For now, ignore most of that, just look at the underlying semantics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.923,
+            0.422,
+            0.963
+          ],
+          "content": "▸ states, actions ⇔ nodes, edges in a graph"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.437,
+            0.271,
+            0.969,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_4_image_16.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.249,
+            0.065,
+            0.751,
+            0.123
+          ],
+          "level": 2,
+          "content": "Nondeterministic Planning Domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.178,
+            0.451,
+            0.266
+          ],
+          "content": "● For deterministic planning problems, search space was a graph"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.278,
+            0.319,
+            0.32
+          ],
+          "content": "● Now it’s an AND/OR graph"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.334,
+            0.21,
+            0.372
+          ],
+          "content": "OR branch:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.39,
+            0.358,
+            0.473
+          ],
+          "content": "several applicable actions, which one to choose?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.489,
+            0.223,
+            0.528
+          ],
+          "content": "▸ AND branch:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.545,
+            0.372,
+            0.629
+          ],
+          "content": "• multiple possible outcomes, must handle all of them"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.645,
+            0.322,
+            0.687
+          ],
+          "level": 2,
+          "content": "● Analogy to PSP in Chapter 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.701,
+            0.364,
+            0.74
+          ],
+          "content": "▸ OR branch ⇔ action selection"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.756,
+            0.364,
+            0.795
+          ],
+          "content": "▸ AND branch ⇔ flaw selection"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.438,
+            0.273,
+            0.967,
+            0.948
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_5_image_10.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.445,
+            0.061,
+            0.555,
+            0.115
+          ],
+          "level": 2,
+          "content": "Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.15,
+            0.322,
+            0.191
+          ],
+          "content": "● Policy: a function $\\pi : S ^ { \\prime }   \\rightarrow   A$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.205,
+            0.165,
+            0.244
+          ],
+          "content": "▸ $S ^ { \\prime } \\subseteq S$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.262,
+            0.341,
+            0.349
+          ],
+          "content": "▸ For every $s \\in$ Domain(π), require π(s) ∈ Applicable(s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.362,
+            0.301,
+            0.403
+          ],
+          "content": "● Two equivalent notations:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.101,
+            0.437,
+            0.295,
+            0.575
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi_{1}(\\text{on\\_ship}) = \\text{unload},$\n$\\pi_{1}(\\text{at\\_harbor}) = \\text{park},$\n$\\pi_{1}(\\text{parking1}) = \\text{deliver}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.102,
+            0.6,
+            0.32,
+            0.736
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi_1 = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.751,
+            0.276,
+            0.791
+          ],
+          "level": 2,
+          "content": "● That’s just the notation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.805,
+            0.442,
+            0.848
+          ],
+          "content": "▸ implementation could be quite different"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.44,
+            0.298,
+            0.968,
+            0.951
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_6_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.328,
+            0.065,
+            0.672,
+            0.119
+          ],
+          "level": 2,
+          "content": "Definitions Over Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.144,
+            0.241,
+            0.182
+          ],
+          "content": "● Transitive closure:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.199,
+            0.48,
+            0.242
+          ],
+          "content": "▸ $\\hat { \\gamma } ( s , \\pi ) = \\{ \\mathrm { a l l }$ states reachable from s using $\\pi \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.254,
+            0.325,
+            0.297
+          ],
+          "content": "▸ $\\hat { \\gamma } ( s , \\pi ) = S _ { 0 } \\cup S _ { 1 } \\cup S _ { 2 } \\cup$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.309,
+            0.212,
+            0.354
+          ],
+          "content": "S _ {0} = \\{s \\}",
+          "image_source": "images/page_7_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.364,
+            0.391,
+            0.411
+          ],
+          "content": "S _ {1} = S _ {0} \\cup \\{\\gamma (s _ {0}, \\pi (s _ {0})) \\mid s _ {0} \\in S _ {0} \\}",
+          "image_source": "images/page_7_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.419,
+            0.391,
+            0.466
+          ],
+          "content": "S _ {2} = S _ {1} \\cup \\{\\gamma (s _ {1}, \\pi (s _ {1})) \\mid s _ {1} \\in S _ {1} \\}",
+          "image_source": "images/page_7_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.577,
+            0.411,
+            0.619
+          ],
+          "content": "● Reachability graph: Graph $( s , \\pi ) = ( V , E )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.631,
+            0.194,
+            0.675
+          ],
+          "content": "▸ $V   =   \\hat { \\gamma } ( s ,   \\pi )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.086,
+            0.687,
+            0.397,
+            0.732
+          ],
+          "content": "E = \\{(s _ {1}, s _ {2}) \\mid s _ {1} \\in V, s _ {2} \\in \\gamma (s _ {1}, \\pi (s _ {1})) \\}",
+          "image_source": "images/page_7_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.787,
+            0.334,
+            0.831
+          ],
+          "content": "● $l e a v e s ( s , \\pi ) = \\hat { \\gamma } ( s , \\pi ) \\setminus \\mathrm { D o m } ( \\pi )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.846,
+            0.231,
+            0.887
+          ],
+          "content": "▸ may be empty"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.396,
+            0.271,
+            0.971,
+            0.948
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.39,
+            0.801,
+            0.612,
+            0.937
+          ],
+          "continues_prev": true,
+          "content": "π<sub>1</sub> = {(on\\_ship, unload), (at\\_harbor, park), (parking1, deliver)}"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.817,
+            0.963,
+            0.87,
+            0.991
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.361,
+            0.073,
+            0.639,
+            0.134
+          ],
+          "level": 2,
+          "content": "Acting with a Policy"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.142,
+            0.184,
+            0.273,
+            0.225
+          ],
+          "level": 2,
+          "content": "● ActPolicy(π)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.2,
+            0.231,
+            0.421,
+            0.268
+          ],
+          "content": "s ← observe current state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.201,
+            0.272,
+            0.41,
+            0.314
+          ],
+          "content": "while s ∈ Domain(π) do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.228,
+            0.318,
+            0.398,
+            0.36
+          ],
+          "content": "perform action $\\pi ( s )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.228,
+            0.363,
+            0.45,
+            0.403
+          ],
+          "content": "s ← observe current state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.889,
+            0.269,
+            0.942,
+            0.3
+          ],
+          "content": "transit3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.389,
+            0.303,
+            0.969,
+            0.949
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.817,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_8_image_7.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.383,
+            0.065,
+            0.616,
+            0.124
+          ],
+          "level": 2,
+          "content": "Types of Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.178,
+            0.438,
+            0.223
+          ],
+          "content": "● Acting (or planning) problem $P = ( \\Sigma , s _ { 0 } , S _ { g } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.233,
+            0.505,
+            0.323
+          ],
+          "content": "▸ planning domain $\\Sigma = ( S ,   A ,  \\gamma )$ , initial state $s _ { \\theta } \\in S _ { \\ast }$ set of goal states $S _ { g } \\subseteq S$ (shown in green)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.334,
+            0.481,
+            0.421
+          ],
+          "content": "● π is a solution if at least one execution ends at a goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.433,
+            0.279,
+            0.48
+          ],
+          "content": "▸ leaves(s,π) ∩ $S _ { g } \\neq \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.511,
+            0.352,
+            0.603
+          ],
+          "content": "● A policy π is safe if ∀ $s \\in \\hat { \\gamma } ( s _ { 0 } , \\pi )$ , leaves(s,π) $\\cap S _ { g } \\not = \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.613,
+            0.402,
+            0.744
+          ],
+          "content": "▸ at every state in $\\hat { \\gamma } ( s _ { 0 } ,   \\pi )$ at least one of the execution paths from s using π stops at a goal state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.756,
+            0.291,
+            0.799
+          ],
+          "content": "● Otherwise, unsafe policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.871,
+            0.236,
+            0.909
+          ],
+          "content": "**Poll:** Is $\\pi _ { 1 }$ safe or unsafe?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.406,
+            0.305,
+            0.969,
+            0.947
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.818,
+                0.963,
+                0.87,
+                0.991
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_9_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.41,
+            0.063,
+            0.589,
+            0.121
+          ],
+          "level": 2,
+          "content": "Safe Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.155,
+            0.221,
+            0.197
+          ],
+          "content": "● Acyclic safe policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.209,
+            0.449,
+            0.255
+          ],
+          "content": "▸ Graph(s<sub>0</sub>,π) is acyclic, and leaves $( s , \\pi ) \\subseteq S _ { g }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.265,
+            0.359,
+            0.355
+          ],
+          "content": "● If we run ActPolicy(π) starting at $\\mathbf { S } _ { 0 } ,$ we’re guaranteed to stop at a goal"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.244,
+            0.286,
+            0.784,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.692,
+            0.039,
+            0.812,
+            0.077
+          ],
+          "content": "● ActPolicy(π)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.75,
+            0.081,
+            0.949,
+            0.116
+          ],
+          "content": "s ← observe current state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.751,
+            0.119,
+            0.939,
+            0.158
+          ],
+          "content": "while s ∈ Domain(π) do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.159,
+            0.931,
+            0.198
+          ],
+          "content": "perform action π(s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.201,
+            0.978,
+            0.237
+          ],
+          "content": "s ← observe current state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.771,
+            0.447,
+            0.951
+          ],
+          "content": "$\\pi _ { 2 } =$ {(on\\_ship, unload), (at\\_harbor, park), (parking1, deliver), (parking2, deliver), (transit1, move), (transit2, move), (transit3, move)}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.632,
+            0.965,
+            0.685,
+            0.995
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.41,
+            0.063,
+            0.589,
+            0.121
+          ],
+          "level": 1,
+          "content": "Safe Policies"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.155,
+            0.215,
+            0.197
+          ],
+          "level": 2,
+          "content": "● Cyclic safe policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.209,
+            0.456,
+            0.3
+          ],
+          "content": "▸ Graph $( s _ { 0 } , \\pi )$ is cyclic, and leaves $( s , \\pi ) \\subseteq S _ { g }$ and $\\forall s \\in \\hat { \\gamma } ( s _ { 0 } ,   \\pi )$ , leaves(s,π) $\\cap \\; S _ { g } \\neq \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.31,
+            0.355,
+            0.487
+          ],
+          "content": "At every state s in $\\hat { \\gamma } ( s _ { 0 } ,   \\pi )$ at least one of the execution paths from s using π ends at a goal state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.499,
+            0.296,
+            0.583
+          ],
+          "content": "Will never get caught in a dead end"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.773,
+            0.426,
+            0.951
+          ],
+          "content": "$\\pi_{3} =$ {(on\\_ship, unload), (at\\_harbor, park), (parking1, deliver), (parking2, back), (transit1, move), (transit2, move), (gate1, back)}"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.252,
+            0.275,
+            0.783,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_6.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.688,
+            0.031,
+            0.985,
+            0.243
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- ActPolicy(π)\n    s ← observe current state\n    while s ∈ Domain(π) do\n        perform action π(s)\n        s ← observe current state\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.299,
+            0.969,
+            0.462
+          ],
+          "content": "**Poll**: Let π be a cyclic safe solution. Suppose we run ActPolicy(π) starting at $s _ { 0 } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.473,
+            0.99,
+            0.593
+          ],
+          "content": "1. Are there situations where we can be sure π will reach a goal?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.605,
+            0.975,
+            0.765
+          ],
+          "content": "2. Are there situations where we can’t be sure π will reach a goal?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.633,
+            0.965,
+            0.685,
+            0.994
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.155,
+            0.215,
+            0.197
+          ],
+          "level": 2,
+          "content": "● Cyclic safe policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.209,
+            0.453,
+            0.3
+          ],
+          "content": "▸ Graph $( s _ { 0 } , \\pi )$ is cyclic, and leaves $( s , \\pi ) \\subseteq S _ { g } ,$ and $\\forall s \\in \\hat { \\gamma } ( s _ { 0 } ,   \\pi )$ , leaves(s,π) $\\cap \\; S _ { g } \\neq \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.31,
+            0.356,
+            0.487
+          ],
+          "content": "At every state s in $\\hat { \\gamma } ( s _ { 0 } ,   \\pi )$ at least one of the execution paths from s using π ends at a goal state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.498,
+            0.296,
+            0.584
+          ],
+          "content": "Will never get caught in a dead end"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.598,
+            0.213,
+            0.732
+          ],
+          "content": "▸ Every “fair” execution will reach a goal"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.41,
+            0.063,
+            0.589,
+            0.121
+          ],
+          "level": 2,
+          "content": "Safe Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.773,
+            0.426,
+            0.951
+          ],
+          "content": "π<sub>3</sub> = {(on\\_ship, unload), (at\\_harbor, park), (parking1, deliver), (parking2, back), (transit1, move), (transit2, move), (gate1, back)}"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.257,
+            0.275,
+            0.784,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_7.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.688,
+            0.031,
+            0.985,
+            0.243
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- ActPolicy(π)\n    s ← observe current state\n    while s ∈ Domain(π) do\n        perform action π(s)\n        s ← observe current state\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.795,
+            0.3,
+            0.837,
+            0.337
+          ],
+          "level": 2,
+          "content": "Poll:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.351,
+            0.993,
+            0.512
+          ],
+          "content": "1. Can you think of a real-world situation in which all executions are “fair”?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.523,
+            0.985,
+            0.683
+          ],
+          "content": "2. Can you think of a real-world situation in which there are “unfair” executions?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.633,
+            0.965,
+            0.685,
+            0.994
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.323,
+            0.064,
+            0.677,
+            0.122
+          ],
+          "level": 2,
+          "content": "Kinds of Solution Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.525,
+            0.245,
+            0.616
+          ],
+          "content": "solution policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.278,
+            0.447,
+            0.354,
+            0.539
+          ],
+          "continues_prev": true,
+          "content": "safe policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.388,
+            0.377,
+            0.463,
+            0.471
+          ],
+          "continues_prev": true,
+          "content": "acyclic policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.502,
+            0.463,
+            0.595
+          ],
+          "content": "cyclic policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.527,
+            0.738,
+            0.574
+          ],
+          "content": "Goal States"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.427,
+            0.65,
+            0.502,
+            0.741
+          ],
+          "content": "unsafe policies"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.831,
+            0.937,
+            0.856,
+            0.969
+          ],
+          "content": ""
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.065,
+            0.611,
+            0.123
+          ],
+          "level": 2,
+          "content": "Beyond Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.217,
+            0.412,
+            0.349
+          ],
+          "content": "Sometimes we want to give the actor instructions that can’t be described as a policy, e.g.,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.361,
+            0.401,
+            0.494
+          ],
+          "content": "Try to open the door twice. If it opens, go through it. If it doesn’t, go to another door"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.55,
+            0.4,
+            0.636
+          ],
+          "content": "The book describes two other ways to represent instructions to the actor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.651,
+            0.308,
+            0.692
+          ],
+          "content": "▸ Input/Output Automata"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.706,
+            0.24,
+            0.744
+          ],
+          "content": "Behavior Trees"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.805,
+            0.406,
+            0.889
+          ],
+          "level": 2,
+          "content": "● I’ll discuss behavior trees in a separate set of slides"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.257,
+            0.69,
+            0.294
+          ],
+          "content": "• same state of the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.299,
+            0.753,
+            0.335
+          ],
+          "content": "• actor’s internal state is different"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.409,
+            0.341,
+            0.993,
+            0.619
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.067,
+            0.569,
+            0.124
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.178,
+            0.444,
+            0.221
+          ],
+          "content": "● Actions, plans, policies, planning problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.234,
+            0.306,
+            0.277
+          ],
+          "content": "● Types of solution policies:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.289,
+            0.348,
+            0.332
+          ],
+          "content": "▸ unsafe, safe (acyclic, cyclic)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.345,
+            0.467,
+            0.387
+          ],
+          "content": "Motivation for instructions other than policies"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "16"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 16,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

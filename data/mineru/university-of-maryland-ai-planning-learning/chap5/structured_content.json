@@ -1,0 +1,4756 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.261,
+            0.396,
+            0.739,
+            0.532
+          ],
+          "level": 2,
+          "content": "Chapter 5 HTN Representation and Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.623,
+            0.567,
+            0.671
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.683,
+            0.613,
+            0.735
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.777,
+            0.614,
+            0.825
+          ],
+          "content": "with contributions from"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.399,
+            0.838,
+            0.601,
+            0.884
+          ],
+          "content": "[Mark “mak” Roberts](https://scholar.google.com/citations?user=vlbX4J8AAAAJ)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.301
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.847,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.868,
+            0.395,
+            0.981,
+            0.446
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.207,
+            0.065,
+            0.793,
+            0.125
+          ],
+          "level": 2,
+          "content": "Hierarchical Task Network (HTN) Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.175,
+            0.46,
+            0.257
+          ],
+          "content": "For some planning problems, we may already have ideas for how to look for solutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.27,
+            0.478,
+            0.313
+          ],
+          "content": "● Example: travel to a destination that’s far away:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.327,
+            0.277,
+            0.366
+          ],
+          "content": "▸ Brute-force search:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.381,
+            0.444,
+            0.466
+          ],
+          "content": "• many combinations of vehicles and routes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.481,
+            0.432,
+            0.568
+          ],
+          "content": "▸ Experienced human: small number of “ recipes ”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.581,
+            0.246,
+            0.627
+          ],
+          "content": "e.g., flying:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.635,
+            0.446,
+            0.721
+          ],
+          "content": "1. buy ticket from local airport to remote airport"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.735,
+            0.368,
+            0.777
+          ],
+          "content": "2. travel to local airport"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.791,
+            0.363,
+            0.833
+          ],
+          "content": "3. fly to remote airport"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.847,
+            0.402,
+            0.887
+          ],
+          "content": "4. travel to final destination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.178,
+            0.882,
+            0.265
+          ],
+          "continues_prev": true,
+          "content": "● Two ways to put such information into a planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.277,
+            0.796,
+            0.321
+          ],
+          "content": "Domain-specific algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.333,
+            0.901,
+            0.422
+          ],
+          "content": "▸ Domain-independent planning engine + domain-specific planning information"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.433,
+            0.807,
+            0.477
+          ],
+          "content": "HTN planning (this Part)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.513,
+            0.545,
+            0.642,
+            0.587
+          ],
+          "level": 2,
+          "content": "● Ingredients:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.6,
+            0.892,
+            0.643
+          ],
+          "content": "▸ state-variable planning domain (Part I)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.656,
+            0.793,
+            0.697
+          ],
+          "content": "▸ tasks: activities to perform"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.711,
+            0.88,
+            0.754
+          ],
+          "content": "▸ HTN methods: ways to perform tasks"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.318,
+            0.065,
+            0.681,
+            0.123
+          ],
+          "level": 2,
+          "content": "Total-Order HTN Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.179,
+            0.232,
+            0.219
+          ],
+          "content": "● Three kinds of tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.234,
+            0.362,
+            0.276
+          ],
+          "content": "▸ Primitive task: head of an action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.29,
+            0.332,
+            0.334
+          ],
+          "content": "▸ Compound task: name(args)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.347,
+            0.384,
+            0.389
+          ],
+          "content": "• name is a compound-task name"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.401,
+            0.244,
+            0.445
+          ],
+          "content": "▸ Goal task: goal(g)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.456,
+            0.372,
+            0.502
+          ],
+          "content": "• g is any classical goal formula"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.542,
+            0.271,
+            0.675
+          ],
+          "content": "Method: a tuple (head, nonprimitive task, preconditions, subtasks)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.687,
+            0.281,
+            0.935
+          ],
+          "content": "Write it as pseudocode: method-name(args) Task: nonprimitive task Pre: preconditions Sub: list of subtasks"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.297,
+            0.431,
+            0.675,
+            0.915
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.601,
+            0.181,
+            0.965,
+            0.227
+          ],
+          "continues_prev": true,
+          "content": "● TOHTN planning domain: a pair (Σ,M)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.632,
+            0.239,
+            0.946,
+            0.283
+          ],
+          "content": "▸ Σ: state-variable planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.633,
+            0.292,
+            0.822,
+            0.335
+          ],
+          "content": "▸ $\\mathcal { M } ;$ set of methods"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.601,
+            0.376,
+            0.987,
+            0.484
+          ],
+          "content": "● TOHTN planning problem $P = ( \\Sigma , \\mathcal { M } , s _ { 0 } , T )$ ▸ $T = \\langle t _ { 1 } , t _ { 2 } , \\ldots , t _ { k } \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.603,
+            0.521,
+            0.753,
+            0.562
+          ],
+          "content": "● Solution for P:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.634,
+            0.577,
+            0.922,
+            0.668
+          ],
+          "content": "▸ any executable plan that can be generated for T by applying"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.657,
+            0.677,
+            0.939,
+            0.721
+          ],
+          "content": "methods to nonprimitive tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.658,
+            0.733,
+            0.896,
+            0.775
+          ],
+          "content": "• actions to primitive tasks"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.265,
+            0.037,
+            0.733,
+            0.095
+          ],
+          "level": 2,
+          "content": "The DWR Domain from Chapter 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.143,
+            0.477,
+            0.221
+          ],
+          "content": "● The slides for Chapter 2 used a simpler domain than the one in the book"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.236,
+            0.433,
+            0.275
+          ],
+          "content": "▸ Too simple to illustrate what HTNs can do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.286,
+            0.384,
+            0.325
+          ],
+          "content": "● Here’s the DWR domain from the book"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.386,
+            0.158,
+            0.425
+          ],
+          "content": "● Objects:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.433,
+            0.218,
+            0.471
+          ],
+          "content": "▸ robots r1, r2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.477,
+            0.31,
+            0.516
+          ],
+          "content": "loading docks d1, d2, d3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.525,
+            0.277,
+            0.562
+          ],
+          "content": "▸ containers c1, c2, c3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.569,
+            0.241,
+            0.61
+          ],
+          "content": "▸ piles p1, p2, p3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.63,
+            0.212,
+            0.67
+          ],
+          "content": "● Rigid relations:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.686,
+            0.408,
+            0.767
+          ],
+          "content": "adjacent = {(d1,d2), (d2,d1), (d2,d3), (d3,d2), (d3,d1), (d1,d3)};"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.773,
+            0.368,
+            0.814
+          ],
+          "content": "at = {(p1, d1), (p2, d2), (p3, d2)}."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.133,
+            0.695,
+            0.172
+          ],
+          "content": "● State variables:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.605,
+            0.18,
+            0.85,
+            0.22
+          ],
+          "content": "• cargo(r) ∈ Containers ∪ {nil}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.225,
+            0.743,
+            0.265
+          ],
+          "content": "loc(r) ∈ Docks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.271,
+            0.786,
+            0.311
+          ],
+          "content": "• occupied(d) ∈ {T, F}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.361,
+            0.91,
+            0.403
+          ],
+          "content": "• pos(c) ∈ Robots ∪ Containers ∪ {nil}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.453,
+            0.932,
+            0.493
+          ],
+          "content": "▸ where r ∈ Robots, c ∈ Containers, p ∈ Piles"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.548,
+            0.519,
+            0.99,
+            0.791
+          ],
+          "sub_type": "algorithm",
+          "content": "$s_0 = \\{\\text{cargo}(r1) = \\text{nil}, \\text{cargo}(r2) = \\text{nil}, \\quad \\text{loc}(r1) = d1, \\quad \\text{loc}(r2) = d2, \\quad \\text{occupied}(d1) = T, \\text{occupied}(d2) = F, \\text{occupied}(d3) = F, \\quad \\text{pile}(c1) = p1, \\quad \\text{pile}(c2) = p2, \\quad \\text{pile}(c3) = p2, \\quad \\text{pos}(c1) = \\text{nil}, \\quad \\text{pos}(c2) = c3, \\quad \\text{pos}(c3) = \\text{nil}, \\quad \\text{top}(p1) = c1, \\quad \\text{top}(p2) = c2, \\quad \\text{top}(p3) = \\text{nil}\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.441,
+            0.791,
+            0.762,
+            0.965
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_19.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.265,
+            0.037,
+            0.733,
+            0.095
+          ],
+          "level": 2,
+          "content": "The DWR Domain from Chapter 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.124,
+            0.193,
+            0.161
+          ],
+          "content": "Action schemas:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.176,
+            0.22,
+            0.215
+          ],
+          "content": "▸ take(r, c, c′, p, d)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.225,
+            0.545,
+            0.267
+          ],
+          "content": "pre: at(p,d), cargo(r) = nil, loc(r) = d, pos(c)= c′, top(p) = c"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.277,
+            0.526,
+            0.317
+          ],
+          "content": "• eff: cargo(r) ← c, pile(c) ← nil, pos(c) ← r, top(p) ← cʹ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.328,
+            0.214,
+            0.367
+          ],
+          "content": "▸ put(r, c, c′, p, d)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.379,
+            0.444,
+            0.419
+          ],
+          "content": "• pre: at(p,d), pos(c) = r, loc(r) = d, top(p) = c′"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.431,
+            0.528,
+            0.472
+          ],
+          "content": "• eff: cargo(r) ← nil, pile(c) ←p, pos(c) ← c′, top(p) ← c"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.481,
+            0.198,
+            0.52
+          ],
+          "content": "▸ move(r, d, d′ )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.532,
+            0.466,
+            0.573
+          ],
+          "content": "pre: adjacent(d,d′), loc(r) = d, occupied(d ʹ) = F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.635,
+            0.115,
+            0.671
+          ],
+          "content": "where"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.582,
+            0.504,
+            0.623
+          ],
+          "content": "• eff: loc(r) ← d′, occupied(d) ← F, occupied(d ʹ) ← T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.687,
+            0.457,
+            0.725
+          ],
+          "content": "▸ c ∈ Containers; c′ ∈ Containers ∪ Robots ∪ {nil};"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.737,
+            0.362,
+            0.776
+          ],
+          "content": "▸ d, d ʹ ∈ Docks; p ∈ Piles; r ∈ Robots."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.814,
+            0.414,
+            0.935
+          ],
+          "content": "**Poll:** Notice that cargo(r) = c iff pos(c) = r. Can we rewrite the domain to eliminate cargo(r)? A. yes B. no C. don’t know"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.123,
+            0.695,
+            0.161
+          ],
+          "content": "● State variables:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.17,
+            0.85,
+            0.209
+          ],
+          "content": "• cargo(r) ∈ Containers ∪ {nil}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.215,
+            0.743,
+            0.253
+          ],
+          "content": "• loc(r) ∈ Docks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.261,
+            0.786,
+            0.3
+          ],
+          "content": "• occupied(d) ∈ {T, F}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.606,
+            0.305,
+            0.79,
+            0.345
+          ],
+          "content": "• pile(c) ∈ Piles ∪ {nil}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.605,
+            0.351,
+            0.91,
+            0.391
+          ],
+          "content": "• pos(c) ∈ Robots ∪ Containers ∪ {nil}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.58,
+            0.443,
+            0.932,
+            0.482
+          ],
+          "content": "▸ where r ∈ Robots, c ∈ Containers, p ∈ Piles"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.548,
+            0.51,
+            0.99,
+            0.78
+          ],
+          "sub_type": "algorithm",
+          "content": "$s_0 = \\{\\text{cargo}(r1) = \\text{nil}, \\text{cargo}(r2) = \\text{nil}, \\quad \\text{loc}(r1) = d1, \\quad \\text{loc}(r2) = d2, \\quad \\text{occupied}(d1) = T, \\text{occupied}(d2) = F, \\text{occupied}(d3) = F, \\quad \\text{pile}(c1) = p1, \\quad \\text{pile}(c2) = p2, \\quad \\text{pile}(c3) = p2, \\quad \\text{pos}(c1) = \\text{nil}, \\quad \\text{pos}(c2) = c3, \\quad \\text{pos}(c3) = \\text{nil}, \\quad \\text{top}(p1) = c1, \\quad \\text{top}(p2) = c2, \\quad \\text{top}(p3) = \\text{nil}\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.442,
+            0.781,
+            0.791,
+            0.963
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_23.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.326,
+            0.066,
+            0.672,
+            0.123
+          ],
+          "level": 2,
+          "content": "TOHTN Planning Domain"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.012,
+            0.102,
+            0.207,
+            0.164
+          ],
+          "level": 2,
+          "content": "If I say “HTN” assume TOHTN unless stated otherwise"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.175,
+            0.375,
+            0.214
+          ],
+          "content": "● TOHTN planning domain $\\Sigma = ( \\Sigma _ { \\mathrm { c } } ,   \\mathcal { M } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.229,
+            0.421,
+            0.268
+          ],
+          "content": "▸ $\\Sigma _ { \\mathrm { c } } = \\mathrm { D W R }$ domain on the previous pages"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.279,
+            0.324,
+            0.317
+          ],
+          "content": "▸ $\\mathcal { M }   =   \\mathbf { a }$ set of eight methods:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.064,
+            0.446,
+            0.412,
+            0.637
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.177,
+            0.964,
+            0.258
+          ],
+          "content": "Compound task put-in-pile $( r ,   c ,   p ,   d ) ;$ put container c into pile $p$ if it isn’t there already"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.505,
+            0.314,
+            0.969,
+            0.474
+          ],
+          "sub_type": "code",
+          "content": "```txt\nm1-put-in-pile(r, c, p, d)\n  task: {pile(c) = p}\n    pre: at(p, d), pile(c) ≠ p, cargo(r) = nil\n    sub: get-container(r, c), navigate(r, d), put(r, c, top(p), p, d)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.515,
+            0.525,
+            0.649,
+            0.561
+          ],
+          "content": "Preconditions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.575,
+            0.853,
+            0.612
+          ],
+          "content": "• $1 ^ { \\mathrm { s t } }$ one ensures d has the correct value"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.627,
+            0.793,
+            0.667
+          ],
+          "content": "• Others check for applicability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.718,
+            0.946,
+            0.757
+          ],
+          "content": "▸ Last subtask: one of the args is a state variable, $\\mathsf { t o p } ( p )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.769,
+            0.823,
+            0.807
+          ],
+          "content": "• Violates a restriction in Chapter 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.539,
+            0.819,
+            0.964,
+            0.858
+          ],
+          "content": "• But many HTN algorithms don’t need the restriction"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.242,
+            0.064,
+            0.757,
+            0.125
+          ],
+          "level": 2,
+          "content": "TOHTN Planning Domain (continued)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.055,
+            0.171,
+            0.964,
+            0.974
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- Goal task: goal(cargo(r)=c)\n  - Get c onto r\n  - Subtask of m2-put-in-pile\n- We aren't doing classical planning, so we need a method:\n    m1-get-container(r, c)\n      task: get-container(r, c)\n        pre: cargo(r) = c\n        sub: // no subtasks\n    m2-get-container(r, c, p, d)\n      task: get-container(r, c)\n        pre: cargo(r) = nil, pile(c) = p, at(p, d)\n        sub: navigate(r, d), uncover(c),\n          take(r, c, pos(c), p, d)\n\n- Compound task uncover(c):\n    - Subtask of m1-fetch\n    - Remove any containers that may be piled on top of c\n    m1-uncover(c)\n      task: uncover(c)\n      pre: top(pile(c)) = c\n      sub: // no subtasks\n    m2-uncover(r, c, p, c', p', d)\n      task: uncover(c)\n      pre: pile(c) = p, top(p) = c', c' ≠ c,\n         at(p, d), at(p', d), p ≠ p',\n         loc(r) = d, cargo(r) = nil\n      sub: take(r, c', pos(c'), p, d),\n         put(r, c', top(p'), p', d),\n         uncover(c)\n\nPoll: Can we rewrite m2-uncover to eliminate c'?\nA. yes B. no C. don't know\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.242,
+            0.064,
+            0.757,
+            0.125
+          ],
+          "level": 2,
+          "content": "TOHTN Planning Domain (continued)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.31,
+            0.217
+          ],
+          "content": "● Compound task navigate(r,d):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.228,
+            0.394,
+            0.266
+          ],
+          "content": "Get robot r from current location to d"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.279,
+            0.368,
+            0.318
+          ],
+          "content": "▸ May require several move actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.33,
+            0.374,
+            0.411
+          ],
+          "content": "These methods are just for illustration, I don’t recommend using them"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.421,
+            0.318,
+            0.462
+          ],
+          "content": "Use a route planner instead"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.054,
+            0.499,
+            0.362,
+            0.712
+          ],
+          "sub_type": "algorithm",
+          "content": "- Method for the case where $\\mathrm{loc}(r) = d$  \n    m1-navigate(r, d)  \n    task: navigate(r, d)  \n    pre: loc(r) = d  \n    sub: — // no subtasks",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.743,
+            0.429,
+            0.959
+          ],
+          "content": "Method for cases where loc(r) is adjacent to d m2-navigate(r, d', d) task: navigate(r, d) pre: adjacent(d', d), loc(r) = d' sub: move(r, d', d)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.483,
+            0.177,
+            0.981,
+            0.427
+          ],
+          "sub_type": "code",
+          "content": "```javascript\n- Method for cases where loc(r) isn't adjacent to d\n  m3-navigate(r, d', d)\n    task: navigate(r, d)\n      pre: loc(r) ≠ d, ¬adjacent(loc(r), d), adjacent(loc(r), d')\n      sub: move(r, loc(r), d')          // primitive task\n        navigate(r, d)              // compound task\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.484,
+            0.437,
+            0.628,
+            0.475
+          ],
+          "content": "● Methods in M:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.514,
+            0.491,
+            0.844,
+            0.651
+          ],
+          "sub_type": "code",
+          "content": "```css\nm1-put-in-pile, m2-put-in-pile,\nm1-get-container, m2-get-container,\nm1-uncover, m2-uncover,\nm1-navigate, m2-navigate, m3-navigate\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.484,
+            0.661,
+            0.595,
+            0.699
+          ],
+          "content": "● Tasks in Σ:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.713,
+            0.735,
+            0.751
+          ],
+          "content": "Primitive: all instances of"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.763,
+            0.821,
+            0.803
+          ],
+          "content": "• move(r,l,m), take(r,c,l), put(r,c,l)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.815,
+            0.75,
+            0.854
+          ],
+          "content": "▸ Compound: all instances of"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.867,
+            0.915,
+            0.906
+          ],
+          "content": "• put-in-pile(c,p), uncover(c), and navigate(r,d)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.917,
+            0.881,
+            0.957
+          ],
+          "content": "▸ Goal tasks: all instances of goal(cargo(r) = c)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.32,
+            0.061,
+            0.679,
+            0.127
+          ],
+          "level": 2,
+          "content": "TOHTN Planning problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.162,
+            0.311,
+            0.203
+          ],
+          "content": "● Planning problem: $P = ( \\Sigma ,   s _ { 0 } ,   T )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.213,
+            0.342,
+            0.253
+          ],
+          "content": "● Solution (detailed definition in book)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.265,
+            0.521,
+            0.347
+          ],
+          "content": "any executable plan produced by applying method instances to nonprimitive tasks, actions to primitive tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.356,
+            0.399,
+            0.397
+          ],
+          "content": "● Refinement tree (detailed definition in book)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.406,
+            0.414,
+            0.447
+          ],
+          "content": "▸ tree showing how the solution was derived"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.459,
+            0.145,
+            0.495
+          ],
+          "content": "▸ Nodes:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.498,
+            0.34,
+            0.578
+          ],
+          "content": "root, compound tasks, goal tasks, method instances, actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.591,
+            0.307,
+            0.753
+          ],
+          "content": "▸ Edges: root → top-level tasks, task → method instance, method instance → subtasks"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.065,
+            0.821,
+            0.552,
+            0.92
+          ],
+          "content": "\\begin{array}{l} P = (\\Sigma , s _ {0}, \\langle \\{\\text {pile} (c 1) = p 2 \\} \\rangle) \\\\ \\pi = \\langle \\text {take} (r 1, c 1, c 2, p 1, d 1), \\text {move} (r 1, d 1, d 2), \\text {put} (r 1, c 1, c 3, p 2, d 2) \\rangle \\end{array}",
+          "image_source": "images/page_8_equation_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.358,
+            0.033,
+            0.972,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_10.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.07,
+            0.051,
+            0.965,
+            0.975
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPlanning Algorithm\nDefinitions\nAchievers(s, t) = {a ∈ Applicable(s) | γ(s, a) ⊨ t}\nGround(M) = {all ground instances of methods in M}\nRefiners(s, t, M) = {m ∈ Ground(M) | t is refinable by m in s}\nThree cases: primitive, compound, goal task\n▶ Primitive task: apply action\nstate s; T = ⟨t, t2, ..., tk⟩\nnew state γ(s, t); T' = ⟨t2, ..., tk⟩\n▶ Compound task: apply method instance\nstate s; T = ⟨t, t2, ..., tk⟩\nmethod instance m\n⟨u1, ..., uj, t2, ..., tk⟩\n▶ Goal task: apply method instance or action\nTO-HTN-Forward(Σc, M, s, T)\nif T is empty then return ⟨⟩\nt ← the first element of T; T' ← the rest of T\nM ← HTN-Get-Candidates(Σc, M, s, t)\nif M = Ø then return failure\nnondeterministically choose m ∈ M\nswitch m do\ncase m is an action do\nπ ← TO-HTN-Forward(Σc, M, γ(s, m), T')\nif π ≠ failure then return m · π\nelse return failure\ncase m is a ground method do\nreturn TO-HTN-Forward(Σc, M, s, subtasks(m) · T')\nHTN-Get-Candidates(Σc, M, s, t)\nswitch t do\ncase t is an action do\nif t is applicable in s then M ← {a}\nelse M ← Ø\ncase t is a compound task do M ← Methods(s, t, M)\ncase t is a goal task do\nM ← Methods(s, t, M) ∪ Actions(s, t)\nif s ⊨ t then M ← M ∪ {null}\nreturn M\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.121,
+            0.061,
+            0.395,
+            0.128
+          ],
+          "level": 2,
+          "content": "Planning Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.175,
+            0.345,
+            0.218
+          ],
+          "content": "● Most implementations do depth-first"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.227,
+            0.417,
+            0.312
+          ],
+          "content": "Can use heuristic function, but the ones in Chapter 3 will probably need modification"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.317,
+            0.306,
+            0.361
+          ],
+          "content": "Primitive task: apply action"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.197,
+            0.393,
+            0.323,
+            0.437
+          ],
+          "content": "T = \\langle t, t _ {2}, \\dots , t _ {k} \\rangle",
+          "image_source": "images/page_10_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.471,
+            0.354,
+            0.517
+          ],
+          "content": "\\gamma (s, t); T = \\left\\langle t _ {2}, \\dots , t _ {k} \\right\\rangle",
+          "image_source": "images/page_10_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.573,
+            0.426,
+            0.616
+          ],
+          "content": "Compound task: apply all method instances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.643,
+            0.319,
+            0.726
+          ],
+          "content": "state s; $T = \\langle t , t _ { 2 } , \\ldots , t _ { k } \\rangle$ method instance m"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.37,
+            0.035,
+            0.984,
+            0.911
+          ],
+          "sub_type": "code",
+          "content": "```txt\nTO-HTN-Forward-Det(Σc, M, s0, T0)\n    Frontier ← {⟨⟩, s0, T0} // {initial node}\n    Expanded ← Ø\n    while Frontier ≠ Ø do\n        select a node ν = (π, s, T) ∈ Frontier\n        remove ν from Frontier and add it to Expanded\n        if T = ⟨⟩ then return π\n        t ← the first element of T; T' ← the rest of T\n        switch t do\n            case t is an action do\n                if t is applicable in s then Children ← {(π·t, γ(s, t), T')} else Children ← Ø\n            case t is a compound task do\n                Children ← {(π, s, sub(m)·T') | m ∈ Refiners(s, t, M)}\n            case t is a goal task do\n                Children ← {(π·a, γ(s, a), T') | a ∈ Achievers(s, t) ∪ {(π, s, sub(m)·T') | m ∈ Refiners(s, t, M)}\n                if s |= t then Children ← Children ∪ {(π, s, T')} prune 0 or more nodes from Children, Frontier and Expanded Frontier ← Frontier ∪ Children\n    return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.07,
+            0.828,
+            0.378,
+            0.909
+          ],
+          "level": 2,
+          "content": "Goal task: apply all method instances and actions"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.255,
+            0.065,
+            0.744,
+            0.123
+          ],
+          "level": 2,
+          "content": "Search Direction, Search Strategies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.177,
+            0.35,
+            0.218
+          ],
+          "content": "● Down, then forward (progression)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.231,
+            0.597,
+            0.275
+          ],
+          "content": "▸ totally-ordered compound tasks: SHOP, Pyhop, GTPyhop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.287,
+            0.526,
+            0.33
+          ],
+          "content": "▸ partially-ordered compound tasks: SHOP2, SHOP3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.342,
+            0.504,
+            0.385
+          ],
+          "content": "▸ totally-ordered goal tasks: GDP, GoDeL"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.399,
+            0.337,
+            0.44
+          ],
+          "content": "▸ acting, task refinement: RAE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.453,
+            0.356,
+            0.495
+          ],
+          "content": "▸ Monte Carlo rollouts: UPOM"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.509,
+            0.342,
+            0.551
+          ],
+          "content": "● Down and backward (regression)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.565,
+            0.476,
+            0.609
+          ],
+          "content": "▸ plan-space planning: SIPE, O-Plan, UMCP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.62,
+            0.473,
+            0.662
+          ],
+          "content": "● Forward, then down (level 1, level 2, level 3, …)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.677,
+            0.25,
+            0.715
+          ],
+          "content": "▸ AHA\\*: A\\* search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.731,
+            0.445,
+            0.775
+          ],
+          "content": "▸ Bridge Baron 1997: game-tree generation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.51,
+            0.438,
+            0.974,
+            0.864
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_12.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.303,
+            0.065,
+            0.696,
+            0.125
+          ],
+          "level": 2,
+          "content": "Complexity and Expressivity"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.178,
+            0.369,
+            0.221
+          ],
+          "level": 2,
+          "content": "● HTN planning is Turing-complete"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.234,
+            0.466,
+            0.317
+          ],
+          "content": "▸ There are HTN planning problems that are undecidable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.333,
+            0.442,
+            0.421
+          ],
+          "content": "● TOHTN planning is decidable, but is more expressive than classical planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.434,
+            0.449,
+            0.566
+          ],
+          "content": "▸ Every classical planning problem can be translated into an equivalent TOHTN planning problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.578,
+            0.469,
+            0.709
+          ],
+          "content": "▸ There are TOHTN planning problems that cannot be translated into classical planning problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.179,
+            0.896,
+            0.266
+          ],
+          "content": "Some subsets of TOHTN planning can be translated into classical planning problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.279,
+            0.891,
+            0.365
+          ],
+          "content": "● Some subsets of TOHTN planning can be translated into propositional logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.378,
+            0.933,
+            0.466
+          ],
+          "content": "These translation techniques have been used to produce efficient TOHTN planners"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.589,
+            0.824,
+            0.629
+          ],
+          "content": "● All of these are worst-case results"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.645,
+            0.932,
+            0.732
+          ],
+          "content": "▸ Most TOHTN planning problems are much simpler (e.g., in NP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.746,
+            0.687,
+            0.787
+          ],
+          "content": "▸ Example later"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.453,
+            0.065,
+            0.546,
+            0.126
+          ],
+          "level": 2,
+          "content": "Pyhop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.426,
+            0.222
+          ],
+          "content": "● A simple HTN planner written in Python"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.568,
+            0.178,
+            0.918,
+            0.221
+          ],
+          "content": "Open-source software, Apache license"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.233,
+            0.275,
+            0.271
+          ],
+          "content": "• import pyhop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.598,
+            0.231,
+            0.966,
+            0.265
+          ],
+          "content": "[▸ http://bitbucket.org/dananau/pyhop](http://bitbucket.org/dananau/pyhop)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.283,
+            0.598,
+            0.327
+          ],
+          "content": "▸ Depth-first version of TO-HTN-Forward with no goal tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.341,
+            0.595,
+            0.383
+          ],
+          "content": "▸ Less than 150 lines of code, works in both Python 2 and 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.437,
+            0.486,
+            0.479
+          ],
+          "content": "State: Python object that contains state variables"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.491,
+            0.517,
+            0.528
+          ],
+          "content": "s = gtpyhop.State('Current state')"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.543,
+            0.341,
+            0.585
+          ],
+          "content": "▸ To say r1 is at d1 in state s:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.597,
+            0.34,
+            0.633
+          ],
+          "content": "• s.loc['r1'] = 'd1'"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.65,
+            0.489,
+            0.692
+          ],
+          "content": "● Actions and methods: ordinary Python functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.706,
+            0.552,
+            0.747
+          ],
+          "content": "● Some limitations compared to most other HTN planners"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.762,
+            0.246,
+            0.801
+          ],
+          "content": "▸ I’ll discuss later"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.372,
+            0.029,
+            0.544,
+            0.087
+          ],
+          "level": 2,
+          "content": "Comparison"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.123,
+            0.441,
+            0.167
+          ],
+          "content": "Task: transport(c,y,z) – transport c from y to z"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.034,
+            0.195,
+            0.206,
+            0.235
+          ],
+          "level": 2,
+          "content": "● TOHTN method:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.028,
+            0.251,
+            0.455,
+            0.449
+          ],
+          "sub_type": "code",
+          "content": "```python\nMethod m_transport(r,x,c,y,z)\n    Task: transport(c,y,z)\n    Pre: loc(r) = x, cargo(r) = nil, loc(c) = y\n    Sub: move(r,x,y), take(r,c,y), move(r,y,z), put(r,c,z)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.031,
+            0.468,
+            0.209,
+            0.51
+          ],
+          "level": 2,
+          "content": "Most HTN planners:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.524,
+            0.435,
+            0.611
+          ],
+          "content": "● Write in a planning language the planner can read and analyze"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.03,
+            0.624,
+            0.451,
+            0.72
+          ],
+          "content": "Can have parameters not mentioned in the task • robot r, location x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.735,
+            0.395,
+            0.777
+          ],
+          "content": "▸ Backtrack over multiple possibilities"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.791,
+            0.462,
+            0.831
+          ],
+          "content": "Planner knows in advance what the subtasks are"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.846,
+            0.46,
+            0.889
+          ],
+          "content": "▸ Helps with implementing heuristic functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.103,
+            0.874,
+            0.197
+          ],
+          "continues_prev": true,
+          "content": "● Pyhop method: ordinary Python function ▸ Args: state s and the task parameters"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.472,
+            0.22,
+            0.988,
+            0.473
+          ],
+          "sub_type": "code",
+          "content": "```python\ndef m_transport(s,c,y,z):\n    (r,x) = find_suitable_robot('transport',s,c,y,z)\n    if r != 'failure':\n        return [('move',r,x,y), ('take',r,c,y), \\\n            ('move',r,y,z), ('put',r,c,z)]\n    else: return False\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.505,
+            0.489,
+            0.632,
+            0.529
+          ],
+          "level": 2,
+          "content": "● Advantages"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.543,
+            0.949,
+            0.629
+          ],
+          "content": "Don’t need to learn a planning language: write methods and actions in Python"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.505,
+            0.643,
+            0.66,
+            0.685
+          ],
+          "level": 2,
+          "content": "Disadvantages:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.698,
+            0.915,
+            0.783
+          ],
+          "content": "▸ Planner doesn’t know in advance what the subtasks are"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.561,
+            0.799,
+            0.921,
+            0.84
+          ],
+          "content": "• How to implement a heuristic function?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.854,
+            0.979,
+            0.895
+          ],
+          "content": "▸ What about parameters not mentioned in the task?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.423,
+            0.064,
+            0.576,
+            0.129
+          ],
+          "level": 2,
+          "content": "GTPyhop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.231,
+            0.221
+          ],
+          "content": "● GTPyhop (2021):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.233,
+            0.434,
+            0.321
+          ],
+          "content": "● Like Pyhop, but has both compound tasks and goal tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.333,
+            0.456,
+            0.377
+          ],
+          "content": "▸ declare task methods for compound tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.388,
+            0.409,
+            0.433
+          ],
+          "content": "▸ declare goal methods for goal tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.445,
+            0.465,
+            0.527
+          ],
+          "content": "Open-source: [https://github.com/dananau/GTPyhop](https://github.com/dananau/GTPyhop)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.595,
+            0.43,
+            0.642
+          ],
+          "content": "● Mostly backward-compatible with Pyhop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.503,
+            0.18,
+            0.677,
+            0.225
+          ],
+          "content": "Two kinds of goals:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.237,
+            0.726,
+            0.281
+          ],
+          "content": "● Unigoal: a single atom"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.293,
+            0.903,
+            0.337
+          ],
+          "content": "▸ represented as a triple (name, arg, value)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.592,
+            0.345,
+            0.782,
+            0.386
+          ],
+          "sub_type": "code",
+          "content": "```txt\n('pos', 'a', 'b')\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.399,
+            0.805,
+            0.443
+          ],
+          "content": "▸ goal: get to a state s in which"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.588,
+            0.451,
+            0.762,
+            0.491
+          ],
+          "sub_type": "code",
+          "content": "```javascript\ns.pos['a']=='b'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.506,
+            0.819,
+            0.551
+          ],
+          "content": "● Multigoal: a conjunction of atoms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.563,
+            0.834,
+            0.606
+          ],
+          "content": "▸ represented as a state-like object"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.559,
+            0.615,
+            0.978,
+            0.656
+          ],
+          "sub_type": "code",
+          "content": "```txt\ng = gtpyhop.Multigoal('Sussman goal')\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.559,
+            0.665,
+            0.856,
+            0.707
+          ],
+          "sub_type": "code",
+          "content": "```txt\ng.pos = {'a':'b', 'b':'c'}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.72,
+            0.806,
+            0.763
+          ],
+          "content": "▸ goal: get to a state s in which"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.579,
+            0.772,
+            0.975,
+            0.811
+          ],
+          "sub_type": "code",
+          "content": "```javascript\ns.pos['a']=='b' and s.pos['b']=='c'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.339,
+            0.064,
+            0.66,
+            0.123
+          ],
+          "level": 2,
+          "content": "Example: Blocks World"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.157,
+            0.322,
+            0.197
+          ],
+          "content": "● Simple classical planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.209,
+            0.379,
+            0.289
+          ],
+          "content": "Blocks, robot hand for stacking them, infinitely large table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.3,
+            0.244,
+            0.337
+          ],
+          "content": "● State-variable notation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.379,
+            0.14,
+            0.417
+          ],
+          "content": "● pickup(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.422,
+            0.409,
+            0.462
+          ],
+          "content": "▸ pre: loc(x)=table, clear(x)=T, holding=nil"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.469,
+            0.404,
+            0.508
+          ],
+          "content": "▸ eff: loc(x)=crane, clear(x)=F, holding=x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.521,
+            0.159,
+            0.559
+          ],
+          "content": "● putdown(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.565,
+            0.217,
+            0.604
+          ],
+          "content": "▸ pre: holding=x"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.61,
+            0.415,
+            0.651
+          ],
+          "content": "▸ eff: holding=nil, loc(x)=table, clear(x)=T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.662,
+            0.161,
+            0.699
+          ],
+          "content": "unstack(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.068,
+            0.707,
+            0.38,
+            0.747
+          ],
+          "content": "▸ pre: loc(x)=y, clear(x)=T, holding=nil"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.753,
+            0.489,
+            0.793
+          ],
+          "content": "▸ eff: loc(x)=crane, clear(x)=F, holding=x, clear(y)=T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.805,
+            0.141,
+            0.842
+          ],
+          "content": "● stack(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.851,
+            0.303,
+            0.889
+          ],
+          "content": "▸ pre: holding=x, clear(y)=T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.894,
+            0.47,
+            0.934
+          ],
+          "content": "▸ eff: holding=nil, clear(y)=F, loc(x)=y, clear(x)=T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.491,
+            0.157,
+            0.708,
+            0.196
+          ],
+          "content": "● The “Sussman anomaly”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.521,
+            0.209,
+            0.914,
+            0.289
+          ],
+          "content": "Planning problem that caused problems for early classical planners"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.591,
+            0.322,
+            0.806,
+            0.543
+          ],
+          "content": "\\begin{array}{r l} s _ {0} = & \\{\\text {clear} (a) = F, \\text {clear} (b) = T, \\\\ & \\text {clear} (c) = T, \\\\ & \\text {loc} (a) = \\text {table}, \\\\ & \\text {loc} (b) = \\text {table}, \\text {loc} (c) = a, \\\\ & \\text {holding} (\\text {hand}) = \\text {nil} \\} \\end{array}",
+          "image_source": "images/page_16_equation_18.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.834,
+            0.313,
+            0.95,
+            0.537
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.587,
+            0.599,
+            0.771,
+            0.64
+          ],
+          "content": "g = \\{\\text {loc} (a) = b, \\text {loc} (b) = c \\}",
+          "image_source": "images/page_16_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.55,
+            0.75,
+            0.787,
+            0.877
+          ],
+          "content": "π = ⟨unstack(c,a), putdown(c), pickup(b), stack(b,c), pickup(a), stack(a,b)⟩"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.836,
+            0.557,
+            0.951,
+            0.781
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_22.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.312,
+            0.065,
+            0.687,
+            0.124
+          ],
+          "level": 2,
+          "content": "Domain-Specific Algorithm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.127,
+            0.084,
+            0.165
+          ],
+          "level": 2,
+          "content": "loop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.173,
+            0.431,
+            0.338
+          ],
+          "content": "**if** there’s clear block that needs to be moved and it can immediately be moved to a place where it won’t need to be moved again **then** move it there"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.511,
+            0.161,
+            0.627,
+            0.384
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.347,
+            0.447,
+            0.434
+          ],
+          "content": "**else if** there’s a clear block that needs to be moved **then** move it to the table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.444,
+            0.367,
+            0.483
+          ],
+          "content": "**else if** the current state satisfies the goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.493,
+            0.255,
+            0.527
+          ],
+          "content": "**then return** success"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.539,
+            0.208,
+            0.575
+          ],
+          "content": "**else return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.641,
+            0.373,
+            0.679
+          ],
+          "content": "● Situations in which c needs to be moved:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.691,
+            0.41,
+            0.729
+          ],
+          "content": "▸ $\\operatorname { l o c } ( c ) { = } d ,$ goal contains $\\operatorname { l o c } ( c ) { = } e ,$ and $d \\neq e$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.737,
+            0.543,
+            0.776
+          ],
+          "content": "▸ $\\operatorname { l o c } ( c ) { = } d ,$ d is a block, goal contains $\\mathsf { l o c } ( b ) { = } d$ for some $b   \\neq   c$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.785,
+            0.46,
+            0.823
+          ],
+          "content": "▸ loc $c ( c ) { = } d$ and d is a block that needs to be moved"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.835,
+            0.551,
+            0.875
+          ],
+          "content": "● Can extend this to include situations involving clear and holding"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.658,
+            0.161,
+            0.774,
+            0.387
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.159,
+            0.933,
+            0.405
+          ],
+          "content": "π = ⟨unstack(c,b), putdown(c), pickup(b), stack(b,c), pickup(a), stack(a,b)⟩"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.616,
+            0.509,
+            0.959,
+            0.547
+          ],
+          "content": "● Sound, complete, guaranteed to terminate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.616,
+            0.561,
+            0.787,
+            0.598
+          ],
+          "content": "● Runs in time $O ( n ^ { 3 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.646,
+            0.613,
+            0.944,
+            0.651
+          ],
+          "content": "▸ Can be modified to run in time $O ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.616,
+            0.662,
+            0.945,
+            0.742
+          ],
+          "content": "Often finds optimal (shortest) solutions, but sometimes only near-optimal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.648,
+            0.753,
+            0.9,
+            0.833
+          ],
+          "content": "▸ For block-stacking problems, PLAN-LENGTH is NP-complete"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.616,
+            0.846,
+            0.928,
+            0.885
+          ],
+          "content": "● Can implement as GTPyhop methods"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.381,
+            0.073,
+            0.618,
+            0.129
+          ],
+          "level": 2,
+          "content": "States and Goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.05,
+            0.147,
+            0.145,
+            0.184
+          ],
+          "content": "Initial state:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.087,
+            0.27,
+            0.309
+          ],
+          "content": "s _ {0} \\quad \\begin{array}{c c c} & & \\\\ & \\text {c} \\\\ & \\text {a} & \\\\ & & \\text {b} \\end{array}",
+          "image_source": "images/page_18_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.371,
+            0.455,
+            0.41
+          ],
+          "content": "A State object to hold all the state-variable bindings:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.055,
+            0.457,
+            0.501,
+            0.637
+          ],
+          "sub_type": "code",
+          "content": "```python\ns0 = gtpyhop.State('Sussman initial state')\ns0.pos = {'a':'table', 'b':'table', 'c':'a'}\ns0.clear = {'a':False, 'b':True, 'c':True}\ns0.holding = {'hand':False}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.06,
+            0.695,
+            0.525,
+            0.733
+          ],
+          "sub_type": "code",
+          "content": "```python\ns0.pos = {'a':'table', 'b':'table', 'c':'a'}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.745,
+            0.337,
+            0.784
+          ],
+          "content": "is Python dictionary notation for"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.085,
+            0.795,
+            0.301,
+            0.9
+          ],
+          "sub_type": "code",
+          "content": "```txt\ns0.pos['a'] = 'table'\ns0.pos['b'] = 'table'\ns0.pos['c'] = 'a'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.733,
+            0.195,
+            0.78,
+            0.235
+          ],
+          "content": "Goal:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.795,
+            0.111,
+            0.888,
+            0.333
+          ],
+          "content": "\\boxed { \\begin{array}{c} g \\\\ \\hline a \\\\ \\hline b \\\\ \\hline c \\end{array} }",
+          "image_source": "images/page_18_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.546,
+            0.32,
+            0.742,
+            0.361
+          ],
+          "content": "Two ways to write goals:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.373,
+            0.748,
+            0.411
+          ],
+          "content": "Unigoal: a single atom"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.425,
+            0.912,
+            0.464
+          ],
+          "content": "▸ represented as a triple (name, arg, value)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.606,
+            0.472,
+            0.775,
+            0.509
+          ],
+          "sub_type": "code",
+          "content": "```txt\n('pos', 'a', 'b')\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.521,
+            0.781,
+            0.56
+          ],
+          "content": "▸ get to a state s in which"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.603,
+            0.571,
+            0.757,
+            0.605
+          ],
+          "sub_type": "code",
+          "content": "```javascript\ns.pos['a']=='b'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.547,
+            0.619,
+            0.832,
+            0.658
+          ],
+          "content": "● Multigoal: a conjunction of atoms"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.577,
+            0.671,
+            0.977,
+            0.801
+          ],
+          "sub_type": "code",
+          "content": "```python\nrepresented as a state-like object\ng = gtpyhop.Multigoal('Sussman goal')\ng.pos = {'a':'b', 'b':'c'}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.579,
+            0.816,
+            0.781,
+            0.853
+          ],
+          "content": "▸ get to a state s in which"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.601,
+            0.863,
+            0.958,
+            0.899
+          ],
+          "sub_type": "code",
+          "content": "```javascript\ns.pos['a']=='b' and s.pos['b']=='c'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.445,
+            0.065,
+            0.555,
+            0.122
+          ],
+          "level": 2,
+          "content": "Actions"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.487,
+            0.178,
+            0.997,
+            0.929
+          ],
+          "sub_type": "code",
+          "content": "```python\n• Args: current state s, block x\ndef pickup(s,x):\n    if s.pos[x] == 'table' \\\n        and s.clear[x] == True \\\n        and s.holding['hand'] == False:\n    s.pos[x] = 'hand'\n    s.clear[x] = False\n    s.holding['hand'] = x\n    return s\n\ndef putdown(s,x):\n    if s.holding['hand'] = x:\n        s.pos[x] = 'table'\n        s.clear[x] = True\n        s.holding['hand'] = False\n        return s\n\ngtpyhop.declare_actions(pickup,putdown)\n    Tell GTPyhop these are actions\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.036,
+            0.819,
+            0.472,
+            0.914
+          ],
+          "content": "<table><tr><td colspan=\"5\">Poll. How many arguments does the unstack task have?</td></tr><tr><td>A. 1</td><td>B. 2</td><td>C. 3</td><td>D. other</td><td>E. don’t know</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.4,
+            0.065,
+            0.6,
+            0.12
+          ],
+          "level": 2,
+          "content": "Task Methods"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.178,
+            0.436,
+            0.265
+          ],
+          "level": 2,
+          "content": "m\\_take: method to pick up a clear block x, regardless of what it’s on"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.273,
+            0.354,
+            0.315
+          ],
+          "content": "▸ Args: current state s, block x."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.087,
+            0.323,
+            0.208,
+            0.362
+          ],
+          "level": 2,
+          "content": "▸ if x is clear:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.372,
+            0.451,
+            0.459
+          ],
+          "content": "return one task list if x is on the table, another task list if x isn’t on the table"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.467,
+            0.272,
+            0.509
+          ],
+          "content": "▸ Else return nothing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.517,
+            0.387,
+            0.559
+          ],
+          "content": "means method is inapplicable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.566,
+            0.481,
+            0.609
+          ],
+          "content": "• (also OK to return false like Pyhop does)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.617,
+            0.413,
+            0.659
+          ],
+          "content": "▸ Declare m\\_take to be a task method"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.667,
+            0.409,
+            0.743
+          ],
+          "content": "• relevant for all tasks of the form (take, ...)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.498,
+            0.169,
+            0.988,
+            0.796
+          ],
+          "sub_type": "code",
+          "content": "```python\ndef m_take(s,x):\n    if s.clear[x] == True:\n        if s.pos[x] == 'table':\n            return [('pickup', x)]\n        else: return [('unstack',x,s.pos[x])]\ngtpyhop.declare_task_methods('take',m_take)\n\ndef m_put(s,x,y):\n    if s.holding['hand'] == x:\n        if y == 'table': return [('putdown',x)]\n        else: return [('stack',x,y)]\n    else: return False} optional\ngtpyhop.declare_task_methods('put',m_put}) declare relevant for task 'put'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.783,
+            0.202,
+            0.825
+          ],
+          "level": 2,
+          "content": "● m\\_put: similar"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.432,
+            0.818,
+            0.799,
+            0.949
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPoll. In a TOHTN planning domain, how many methods would we need for take?\nA. 1 B. 2 C. 3 D. other E. don’t know\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.993,
+            0.995
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.391,
+            0.035,
+            0.992,
+            0.964
+          ],
+          "sub_type": "code",
+          "content": "```python\ndef m_moveblocks(s, mgoal):\n    for x in all_clear_blocks(s):\n        stat = status(x, s, mgoal)\n        if stat == 'move-to-block':\n            where = mgoal.pos[x]\n            return [('take',x), ('put',x,where), mgoal]\n        elif stat == 'move-to-table':\n            return [('take',x), (put,x,'table'), mgoal]\n    for x in all_clear_blocks(s):\n        if status(x,s,mgoal) == 'waiting' \\\n            and s.pos[x] != 'table':\n            return [('take',x), ('put',x,'table'), mgoal]\n        return [ ]\n                declare relevant for every\n    gtpyhop.declare_multigoal_methods(m_moveblocks)} multigoal\n\ngtpyhop.find_plan(s0,g)\nreturns\n[('unstack','c','a'), ('putdown','c'),\n('pickup','b'), ('stack','b','c'),\n('pickup','a'), ('stack','a','b')]\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.142,
+            0.058,
+            0.343,
+            0.117
+          ],
+          "level": 2,
+          "content": "Goal Methods"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.027,
+            0.167,
+            0.423,
+            0.623
+          ],
+          "sub_type": "code",
+          "content": "```txt\nloop\nif there's clear block that needs to be moved and it can immediately be moved to a place where it won't need to be moved again then move it there\nelse if there's a clear block that needs to be moved then move it to the table\nelse if the current state satisfies the goal then return success\nelse return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.1,
+            0.664,
+            0.348,
+            0.893
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.217,
+            0.064,
+            0.784,
+            0.125
+          ],
+          "level": 2,
+          "content": "POHTN (Partially Ordered HTN) Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.177,
+            0.444,
+            0.266
+          ],
+          "content": "Sometimes we don’t want to specify a total ordering on tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.277,
+            0.435,
+            0.362
+          ],
+          "content": "Represent partially ordered tasks as a task network:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.372,
+            0.259,
+            0.421
+          ],
+          "content": "▸ a pair $\\mathcal { T }   =   ( T , \\prec )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.433,
+            0.302,
+            0.475
+          ],
+          "content": "▸ T is a set of task nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.488,
+            0.337,
+            0.533
+          ],
+          "content": "▸ ≺ is a partial ordering of T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.543,
+            0.3,
+            0.588
+          ],
+          "content": "● Task node: a pair τ = (l, t)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.6,
+            0.192,
+            0.641
+          ],
+          "content": "▸ t is a task"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.655,
+            0.413,
+            0.699
+          ],
+          "content": "▸ l is a name that uniquely identifies τ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.711,
+            0.39,
+            0.797
+          ],
+          "content": "Need labels so we can have multiple occurrences of t"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.855,
+            0.338,
+            0.945
+          ],
+          "content": "● POHTN Method: a tuple (head, task, pre, sub, ≺)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.177,
+            0.95,
+            0.221
+          ],
+          "content": "● As usual, write POHTN methods as pseudocode:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.25,
+            0.712,
+            0.293
+          ],
+          "content": "method-name(args)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.555,
+            0.299,
+            0.762,
+            0.343
+          ],
+          "content": "Task: nonprimitive task"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.565,
+            0.35,
+            0.728,
+            0.393
+          ],
+          "content": "Pre: preconditions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.561,
+            0.399,
+            0.73,
+            0.441
+          ],
+          "content": "Sub: subtask nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.577,
+            0.449,
+            0.918,
+            0.495
+          ],
+          "content": "≺: partial ordering of the subtask nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.559,
+            0.931,
+            0.65
+          ],
+          "content": "● TOHTN planning is a special case of POHTN planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.661,
+            0.744,
+            0.705
+          ],
+          "content": "▸ ≺ is a total ordering"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.771,
+            0.802,
+            0.815
+          ],
+          "content": "● Details on the following slides"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.827,
+            0.711,
+            0.871
+          ],
+          "content": "▸ We’ll skip them"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.176,
+            0.063,
+            0.532,
+            0.124
+          ],
+          "level": 2,
+          "content": "Example POHTN Problem"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.017,
+            0.173,
+            0.499,
+            0.996
+          ],
+          "sub_type": "algorithm",
+          "content": "- $\\Sigma_{c}$: DWR with cranes attached to loading docks, not robots\nunstack(k, c, c', p, d) // take container c from pile p\npre: at(k, d), at(p, d), holding(k) = nil, pos(c) = c', top(p) = c\neff: holding(k) ← c, pos(c) ← k, pile(c) ← nil, top(p) ← c'\nstack(k, c, c', p, d) // put container c onto pile p\npre: at(k, d), at(p, d), holding(k) = c, top(p) ← c'\neff: holding(k) ← nil, pos(c) = c', pile(c) ← p, top(p) = c\nunload(k, c, r, d) // take container c from robot r\npre: at(k, d), holding(k) = c, loc(r) = d\neff: cargo(r) ← c, pos(c) ← r, holding(k) ← nil\nload(k, c, r, d) // put container c onto robot r\npre: at(k, d), holding(k) = nil, loc(r) = d, cargo(r) = c\neff: pos(c) ← k, holding(k) ← c, cargo(r) ← nil\n\nPoll. How many solution plans?\nA. 1 B. 2 C. 3 D. 4 E. other\n\ncture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.61,
+            0.005,
+            0.999,
+            0.261
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_2.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.538,
+            0.008,
+            1.0,
+            0.997
+          ],
+          "sub_type": "code",
+          "content": "```txt\nP = (Σ, s₀, (T, <))\n► T = {put-on-robot(c1,r1)}; < = Ø\n\nm1-put-on-robot(k, c, c', r, d, p)\ntask: put-on-robot(c, r)\n\nΣ = (Σc, M)\n► M : three\nmethods\npre: cargo(r) = nil, top(p) = c, at(p,d),\nattached(k,d), holding(k) = nil\nsub: (t1, navigate(r, d))\n(t2, unstack(k,c,c',p,d))\n(t3, load(k,r,c,d))\n<: t1 < t3, t2 < t3\n\nm1-navigate(r, d)\ntask: navigate(r, d)\npre: loc(r) = d\nsub: // none\n<: // none\nm2-navigate(r, d', d)\ntask: navigate(r, d)\npre: adjacent(d', d), loc(r) = d'\nsub: (t1, move(r, d', d))\n<: // none\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.236,
+            0.038,
+            0.443,
+            0.099
+          ],
+          "level": 2,
+          "content": "Solution Trees"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.008,
+            0.009,
+            1.0,
+            0.973
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.973,
+            0.355,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.122,
+            0.059,
+            0.394,
+            0.122
+          ],
+          "level": 2,
+          "content": "Planning Algorithm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.165,
+            0.365,
+            0.207
+          ],
+          "content": "Three cases: primitive, compound, goal task"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.228,
+            0.304,
+            0.269
+          ],
+          "content": "Primitive task node: apply action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.281,
+            0.446,
+            0.327
+          ],
+          "content": "$\\mathcal { T } = ( T , \\prec ) , \\quad T = \\{ \\tau , \\tau _ { 2 } , \\ldots , \\tau _ { k } \\}$ , nothing precedes τ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.331,
+            0.154,
+            0.373
+          ],
+          "content": "state s<sub>0</sub>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.296,
+            0.327,
+            0.458,
+            0.367
+          ],
+          "content": "i.e., $\\not \\exists \\tau ^ { \\prime }   \\in T$ s.t. $\\tau ^ { \\prime } \\prec \\tau$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.375,
+            0.295,
+            0.419
+          ],
+          "content": "new state $\\vec { \\gamma ( s _ { 0 } , \\tau ) } \\; ; \\quad \\{ \\tau _ { 2 } ,   \\dots ,   \\tau _ { k } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.483,
+            0.396,
+            0.525
+          ],
+          "content": "● Compound task node: apply method instance"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.54,
+            0.437,
+            0.587
+          ],
+          "content": "$T = (T, \\prec), \\quad T = \\{\\tau, \\tau_2, \\ldots, \\tau_k\\}$ , nothing precedes τ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.594,
+            0.207,
+            0.633
+          ],
+          "content": "method instance m"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.287,
+            0.593,
+            0.451,
+            0.635
+          ],
+          "content": "i.e., $\\nexists \\tau ^ { \\prime }   \\in   T   \\mathrm { s . t . } \\; \\tau ^ { \\prime }   \\prec \\tau$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.645,
+            0.12,
+            0.684
+          ],
+          "content": "state $s _ { 0 }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.148,
+            0.635,
+            0.315,
+            0.703
+          ],
+          "content": "\\{\\overbrace {v _ {1} , \\dots , v _ {j}} ^ {}, \\tau_ {2}, \\dots , \\tau_ {k} \\}",
+          "image_source": "images/page_25_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.709,
+            0.406,
+            0.754
+          ],
+          "content": "make $v _ { 1 } , . . . , v _ { j }$ precede everything τ preceded"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.496,
+            0.152,
+            0.702,
+            0.188
+          ],
+          "content": "PO-HTN-Forward $( \\Sigma _ { \\mathtt { c } } , \\mathcal { M } , s , \\mathcal { T } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.517,
+            0.188,
+            0.706,
+            0.223
+          ],
+          "content": "if T is empty then return <>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.498,
+            0.223,
+            0.99,
+            0.292
+          ],
+          "content": "1 nondeterministically choose a node τ in T that has no predecessors in T foreach τ' in T that has no predecessors in T do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.498,
+            0.291,
+            0.926,
+            0.332
+          ],
+          "content": "2 $\\bigsqcup \\textbf { i f } \\tau ^ { \\prime } \\neq \\tau$ then add ordering constraints to T to make $\\tau < \\tau ^ { \\prime }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.516,
+            0.337,
+            0.6,
+            0.372
+          ],
+          "content": "t \\leftarrow \\operatorname{task} (\\tau)",
+          "image_source": "images/page_25_equation_18.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.516,
+            0.371,
+            0.775,
+            0.408
+          ],
+          "content": "M \\leftarrow \\text { HTN - Get - Candidates } (\\Sigma_ {\\mathrm{c}}, \\mathcal {M}, s, t)",
+          "image_source": "images/page_25_equation_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.517,
+            0.407,
+            0.62,
+            0.441
+          ],
+          "content": "if $M \\ne \\varnothing$ then"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.441,
+            0.784,
+            0.477
+          ],
+          "content": "nondeterministically choose $m \\in M$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.477,
+            0.686,
+            0.511
+          ],
+          "content": "if m is an action then"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.564,
+            0.511,
+            0.877,
+            0.548
+          ],
+          "content": "\\pi \\leftarrow \\text {PO - HTN - Forward} (\\Sigma_ {\\mathrm{c}}, \\mathcal {M}, \\gamma (s, a), \\mathcal {T} \\setminus \\{\\tau \\})",
+          "image_source": "images/page_25_equation_23.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.562,
+            0.547,
+            0.766,
+            0.583
+          ],
+          "content": "if π ≠ failure then return $a \\cdot \\pi$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.538,
+            0.591,
+            0.764,
+            0.626
+          ],
+          "content": "else if m is a ground method then"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.559,
+            0.622,
+            0.898,
+            0.66
+          ],
+          "content": "return PO-HTN-Forward $( \\Sigma _ { \\mathtt { c } } , \\mathcal { M } , s , \\mathit { r e f i n e } ( \\mathcal { T } , \\tau , m ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.517,
+            0.667,
+            0.611,
+            0.702
+          ],
+          "content": "return failure"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.059,
+            0.569,
+            0.115
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.127,
+            0.127,
+            0.278,
+            0.169
+          ],
+          "level": 2,
+          "content": "● HTN planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.182,
+            0.541,
+            0.223
+          ],
+          "content": "▸ Planning problem: initial state, list of tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.238,
+            0.682,
+            0.281
+          ],
+          "content": "▸ Apply HTN methods to tasks to get subtasks (smaller tasks)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.293,
+            0.667,
+            0.335
+          ],
+          "content": "• Do this recursively to get smaller and smaller subtasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.213,
+            0.349,
+            0.709,
+            0.391
+          ],
+          "content": "▸ At the bottom: primitive tasks that correspond to actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.403,
+            0.467,
+            0.445
+          ],
+          "content": "▸ TOHTN: tasks are totally ordered"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.459,
+            0.528,
+            0.502
+          ],
+          "content": "• Planning algorithm: TO-HTN-Forward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.515,
+            0.482,
+            0.557
+          ],
+          "content": "▸ POHTN: tasks are partially ordered"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.571,
+            0.529,
+            0.613
+          ],
+          "content": "• Planning algorithm: PO-HTN-Forward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.626,
+            0.657,
+            0.671
+          ],
+          "content": "● Pyhop: Python implementation of total-order HTN planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.685,
+            0.642,
+            0.725
+          ],
+          "content": "▸ Open source: [http://bitbucket.org/dananau/pyhop](http://bitbucket.org/dananau/pyhop)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.737,
+            0.657,
+            0.781
+          ],
+          "content": "GTPyhop: Python implementation of HTN + HGN planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.795,
+            0.641,
+            0.835
+          ],
+          "content": "▸ Open source: [https://github.com/dananau/GTPyhop](https://github.com/dananau/GTPyhop)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.849,
+            0.48,
+            0.891
+          ],
+          "content": "● Examples: DWR, blocks world, cranes"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "27"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 27,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

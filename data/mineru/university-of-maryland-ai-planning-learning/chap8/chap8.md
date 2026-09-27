@@ -1,0 +1,814 @@
+<!-- page: 1 -->
+
+## Chapter 8 Probabilistic Representation and Acting
+
+Dana S. Nau
+
+University of Maryland
+
+with contributions from
+
+[Mark “mak” Roberts](https://scholar.google.com/citations?user=vlbX4J8AAAAJ)
+
+![](images/page_0_image_6.jpg)
+
+Acting, Planning, and Learning
+
+Malik Ghallab, Dana Nau, and Paolo Traverso
+
+<!-- page: 2 -->
+
+## Motivation
+
+● Situations where actions have multiple possible outcomes and each outcome has a known probability distribution of occurring
+
+▸ Part IV: Non-deterministic Models addresses multiple actions outcomes with unknown probability distributions
+
+● Several possible action representations
+
+▸ Bayes nets, probabilistic actions, …
+
+Book doesn’t commit to any representation
+
+▸ Mainly concentrates on the underlying semantics
+
+![](images/page_1_image_7.jpg)
+
+Credit: [Dennis Hill](https://www.flickr.com/people/7888217@N04), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
+```txt
+roll-die(d)
+    pre: holding(d) = true
+    eff:
+        1/6: top(d) ← 1
+        1/6: top(d) ← 2
+        1/6: top(d) ← 3
+        1/6: top(d) ← 4
+        1/6: top(d) ← 5
+        1/6: top(d) ← 6
+```
+
+<!-- page: 3 -->
+
+## Definitions and Example
+
+● Probabilistic domain model: $\Sigma   =   ( S , A , \gamma ,$ Pr, cost)
+
+▸ S and A – finite sets of states and actions
+
+▸ $\gamma \colon S \times { \mathcal { A } } \to 2 ^ { S }$
+
+● $\gamma ( s , a ) = \{ a \}$ possible “next states” after applying action a in state s}
+
+▸ a is applicable in state s iff $\gamma ( s , a ) \neq \emptyset$
+
+● $\operatorname* { P r } ( s ^ { \prime } | s , a ) = \mathrm { p r o b a b i l i t y }$ that a will take us to s′ from s ▸ $\Pr(s' \mid s, a) \neq 0   if   s' \in \gamma(s, a)$
+
+● cost: $S \times A \times S \to \mathbb { R }$
+
+▸ $\operatorname { c o s t } ( s , a , s ^ { \prime } ) =$ cost if a takes us to s′ from s
+
+▸ may omit, default is $\operatorname { c o s t } ( s , a , s ^ { \prime } ) = 1$
+
+● Applicable(s) = {all actions applicable in s} $= \{ a \in { \mathcal { A } } \mid \gamma ( s , a ) \neq \emptyset \}$
+
+![](images/page_2_image_11.jpg)
+
+● Start at d1, want to get to d4
+
+● Some roads are one-way, some are two-way
+
+Unreliable steering when the road forks ▸ may take the wrong fork
+
+● Simplified state and action names:
+
+write $\{ \log ( r 1 ) = d 2 \}$ as d2
+
+▸ write move(r1,d2,d3) as m23
+
+<!-- page: 4 -->
+
+● $\gamma(\mathsf{d1,m12}) = \{\mathsf{d2}\}$
+
+▸ $\Pr(\mathsf{d}2 \mid \mathsf{d}1, \mathsf{m}12) = 1$
+
+● m21, m34, m41, m43, m45, m52, m54:
+
+▸ deterministic like m12
+
+● γ(d1,m14) = {d1,d4}
+
+▸ Pr(d4 | d1, m14) = 0.5
+
+▸ $\Pr(\mathsf{d}1 \mid \mathsf{d}1, \mathsf{m}14) = 0.5$
+
+● $\gamma(\mathsf{d}2,\mathsf{m}23)=\{\mathsf{d}3,\mathsf{d}5\}$
+
+▸ $\Pr(\mathsf{d}3 \mid \mathsf{d}2, \mathsf{m}23) = 0.8$
+
+▸ $\Pr(\mathsf{d}5 \mid \mathsf{d}2, \mathsf{m}23) = 0.2$
+
+● there’s no m25
+
+## Example
+
+![](images/page_3_image_12.jpg)
+
+● Start at d1, want to get to d4
+
+● Some roads are one-way, some are two-way
+
+Unreliable steering when the road forks ▸ may take the wrong fork
+
+● Simplified state and action names:
+
+▸ write $\{ \log ( r 1 ) = d 2 \}$ as d2
+
+▸ write move(r1,d2,d3) as m23
+
+<!-- page: 5 -->
+
+● $\gamma(\mathsf{d1,m12}) = \{\mathsf{d2}\}$
+
+Pr(d2 | d1, m12) = 1
+
+● m21, m34, m41, m43, m45, m52, m54:
+
+▸ deterministic like m12
+
+● γ(d1,m14) = {d1,d4}
+
+▸ Pr(d4 | d1, m14) = 0.5
+
+▸ $\Pr(\mathsf{d}1 \mid \mathsf{d}1, \mathsf{m}14) = 0.5$
+
+● γ $( \mathsf{d}2, \mathsf{m}23 ) = \{ \mathsf{d}3, \mathsf{d}5 \}$
+
+▸ $\Pr(\mathrm{d}3 \mid \mathrm{d}2, \mathrm{m}23) = 0.8$
+
+▸ $\Pr(\mathsf{d}5 \mid \mathsf{d}2, \mathsf{m}23) = 0.2$
+
+● there’s no m25
+
+## Example
+
+![](images/page_4_image_12.jpg)
+
+We will represent these problems as a graph
+
+▸ Nodes are assignments to variables (i.e., states)
+
+▸ Weighted edges change the assignment (i.e, actions)
+
+• Label is action instance; value indicates $\operatorname* { P r } ( \mathrm { s } ^ { \prime } | \mathrm { s } , \mathrm { a } )$
+
+● Simplified state and action names:
+
+▸ write $\{ \log ( r 1 ) = d 2 \}$ as d2
+
+▸ write move(r1,d2,d3) as m23
+
+<!-- page: 6 -->
+
+● Policy: function $\pi : S ^ { \prime }   \rightarrow   A$ where $S ^ { \prime } \subseteq S$
+
+• require π(s) ∈ Applicable(s) for every $s \in S ^ { \prime }$
+
+▸ Domain $( \pi ) = S ^ { \prime }$
+
+● Transitive closure
+
+▸ $\hat { \gamma } ( s _ { 0 } , \pi ) = \{ \mathrm { a l l }$ states reachable from $s _ { 0 }$ using π} = union of the following sets
+
+$$
+S _ {0} = \{s _ {0} \}
+$$
+
+S<sub>1</sub> = {states reachable from $S _ { 0 } \} = \bigcup \left\{ \gamma ( s , \pi ( s ) ) \mid s \in S _ { 0 } \right\}$
+
+$$
+S _ {2} = \{\text {states reachable from} S _ {1} \} = \cup \{\gamma (s, \pi (s)) \mid s \in S _ {1} \}
+$$
+
+Reachability graph: $G r a p h ( s , \pi ) = ( V , E )$
+
+▸ $V   =   \hat { \gamma } ( s ,   \pi )$
+
+## Policies
+
+$$
+E = \{(s, s ^ {\prime}) \mid s \in V, s ^ {\prime} \in \gamma (s, \pi (s)) \}
+$$
+
+● $l e a v e s ( s , \pi ) = \hat { \gamma } ( s , \pi ) \setminus$ Domain(π)
+
+▸ may be empty
+
+Set minus
+
+![](images/page_5_image_15.jpg)
+
+**Poll**: Can we use a plan (sequence of actions) instead?
+
+$$
+\pi_ {1} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4) \}
+$$
+
+A. yes B. no
+
+C. don’t know
+
+$$
+\pi_ {2} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 4) \}
+$$
+
+$$
+\pi_ {3} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 6) \}
+$$
+
+**Poll**: What are the leaves of $\pi _ { 3 } ?$
+
+$$
+\pi_ {4} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 7), (d 7, m 7 5) \}
+$$
+
+<!-- page: 7 -->
+
+![](images/page_6_image_0.jpg)
+
+## Problems, Solutions
+
+● MDP problem: $P = ( \Sigma ,   s _ { 0 } ,   S _ { g } )$ , require $s _ { 0 } \not \in S _ { g }$
+
+▸ This is a specific type of MDP problem called a goal reachability problem
+
+▸ More generally, MDPs specify a set of terminal states
+
+● Solution for $( \Sigma , s _ { 0 } , S _ { g } )$
+
+▸ A policy π such that leaves $( s _ { 0 } , \pi ) \cap S _ { g } \neq \emptyset$
+
+A solution policy π is closed if it doesn’t stop at non-goal states unless there’s no way to continue
+
+▸ for every state s in $\widehat { \gamma } ( s _ { 0 } ,   \pi )$ , either
+
+s ∈ Domain(π) (i.e., π(s) is defined)
+
+or $s \in S _ { g }$
+
+or Applicable(s) = ∅
+
+**Poll**. Is $\pi _ { 1 }$ a solution?
+
+A. yes B. no C. don’t know
+
+**Poll.** Is $\pi _ { 1 }$ a closed solution?
+
+![](images/page_6_image_15.jpg)
+
+$$
+\pi_ {1} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4) \}
+$$
+
+**Poll**. Suppose d3 was the goal instead. Which policies are closed wrt. d3?
+
+$$
+\pi_ {2} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 4) \}
+$$
+
+$$
+\pi_ {3} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 6) \}
+$$
+
+$$
+\pi_ {4} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), (d 5, m 5 7), (d 7, m 7 5) \}
+$$
+
+<!-- page: 8 -->
+
+## Histories
+
+```txt
+Run-Policy(Σ, s₀, S_g, π)
+    s ← s₀
+    while s ∉ S_g and s ∈ Domain(π) do
+        perform action π(s)
+        s ← observe resulting state
+```
+
+History: sequence of states $\sigma = \langle s _ { 0 } , s _ { 1 } , s _ { 2 } , \ldots \rangle$ produced by Run-Policy
+
+▸ May be finite or infinite
+
+● Let $H ( s , \pi ) = \{ a \}$ possible histories from s using π}
+
+● If $\sigma \in H ( s , \pi )$ then
+
+$$
+\Pr (\sigma \mid s, \pi) = \prod_ {s _ {i}, s _ {i + 1} \in \sigma} \Pr (s _ {i + 1} \mid s _ {i}, \pi (s _ {i}))
+$$
+
+= product of probabilities of state transitions
+
+● $\begin{array} { r } { \sum _ { \sigma \: \in \: H ( s , \pi ) } \operatorname* { P r } \left( \sigma   \mid   s , \pi \right) = 1 } \end{array}$
+
+**Poll.** If s ∉ Domain(π) then what is $H ( s , \pi ) ?$
+
+A. undefined B. ∅ C. {⟨⟩} D. $\{ s \}$
+
+E. {⟨s⟩}
+
+F. other
+
+G. unsure
+
+![](images/page_7_image_14.jpg)
+
+● π<sub>3</sub> = {(d1,m12), (d2,m23), (d3,m34), (d5,m56)}
+
+● $H ( s _ { 0 } , \pi _ { 3 } ) = \{ \sigma _ { 1 } , \sigma _ { 2 } \}$ , where:
+
+$$
+\sigma_ {1} = \langle \mathrm{d} 1, \mathrm{d} 2, \mathrm{d} 3, \mathrm{d} 4 \rangle
+$$
+
+$$
+\sigma_ {2} = \langle \mathrm{d} 1, \mathrm{d} 2, \mathrm{d} 5, \mathrm{d} 6 \rangle
+$$
+
+● $\Pr(\sigma_{1} \mid s_{0}, \pi_{3}) = 1 \times 0.8 \times 1 = 0.8$
+
+● $\Pr(\sigma_{2} \mid s_{0}, \pi_{3}) = 1 \times 0.2 \times 1 = 0.2$
+
+<!-- page: 9 -->
+
+## Unsafe Solutions
+
+● Probability of reaching a goal state:
+
+$\begin{array} { r } { \operatorname* { P r } \left( S _ { g }   |   s , \pi \right) = \sum _ { \sigma \in H \left( s , \pi \right) } \left\{ \operatorname* { P r } \left( \sigma   |   s , \pi \right) \right\} } \end{array}$ σ ends at a state in $S _ { g } \}$
+
+● Equivalently:
+
+$$
+\Pr \left(S _ {g} \mid s, \pi\right) = \left\{ \begin{array}{c l} 1, & \text {if} s \in S _ {g} \\ \sum_ {s ^ {\prime} \in \gamma (s, \pi (s))} \Pr \left(S _ {g} \mid s ^ {\prime}, \pi\right), & \text {otherwise} \end{array} \right.
+$$
+
+● A solution is unsafe if $0 < \Pr \left( S _ { g } \mid s _ { 0 } , \pi \right) < 1$
+
+● π<sub>3</sub> = {(d1,m12), (d2,m23), (d3,m34), (d5,m56)}
+
+● $H ( s _ { 0 } , \pi _ { 3 } ) = \{ \sigma _ { 1 } , \sigma _ { 2 } \}$
+
+▸ $\sigma _ { 1 } = \langle \mathsf { d } 1 , \mathsf { d } 2 , \mathsf { d } 3 , \mathsf { d } 4 \rangle$ ends at a goal state; $\Pr(\sigma_{1} \mid s_{0}, \pi_{3}) = 1 \times 0.8 \times 1 = 0.8$
+
+![](images/page_8_image_9.jpg)
+
+▸ $\sigma _ { 2 } = \langle \mathsf { d } 1 , \mathsf { d } 2 , \mathsf { d } 5 , \mathsf { d } 6 \rangle$ doesn’t;
+
+$$
+\Pr (\sigma_ {2} \mid s _ {0}, \pi_ {3}) = 1 \times 0. 2 \times 1 = 0. 2
+$$
+
+$$
+\Pr (S _ {g} \mid s _ {0}, \pi_ {3}) = \Pr (\sigma_ {1} \mid s _ {0}, \pi_ {3}) = 0. 8
+$$
+
+<!-- page: 10 -->
+
+## Unsafe Solutions
+
+● Probability of reaching a goal state:
+
+$\begin{array} { r } { \operatorname* { P r } \left( S _ { g }   |   s , \pi \right) = \sum _ { \sigma \in H \left( s , \pi \right) } \left\{ \operatorname* { P r } \left( \sigma   |   s , \pi \right) \right\} } \end{array}$ σ ends at a state in $S _ { g } \}$
+
+● Equivalently:
+
+$$
+\Pr \left(S _ {g} \mid s, \pi\right) = \left\{ \begin{array}{c l} 1, & \text {if} s \in S _ {g} \\ \sum_ {s ^ {\prime} \in \gamma (s, \pi (s))} \Pr \left(S _ {g} \mid s ^ {\prime}, \pi\right), & \text {otherwise} \end{array} \right.
+$$
+
+A solution is unsafe if $0 < \Pr \left( S _ { g } \mid s _ { 0 } , \pi \right) < 1$
+
+![](images/page_9_image_6.jpg)
+
+● π<sub>4</sub> = {(d1,m12), (d2,m23), (d3,m34), (d5,m57), (d7,m75)}
+
+● $H ( s _ { 0 } , \pi _ { 4 } ) = \{ \sigma _ { 1 } , \sigma _ { 2 } \}$
+
+▸ $\sigma _ { 1 } = \langle \mathsf { d } 1 , \mathsf { d } 2 , \mathsf { d } 3 , \mathsf { d } 4 \rangle$ ends at a goal state; $\Pr(\sigma_{1} \mid s_{0}, \pi_{4}) = 1 \times .8 \times 1 = 0.8$
+
+▸ $\sigma _ { 3 } = \langle \mathrm { d } 1 , \mathrm { d } 2 , \mathrm { d } 5 , \mathrm { d } 7 , \mathrm { d } 5 , \mathrm { d } 7 , \ldots \rangle$ doesn’t; $\Pr(\sigma_{3} \mid s_{0}, \pi_{4}) = 1 \times 2 \times 1 \times 1 \times 1 \times \ldots = 0.2$
+
+● Pr(S<sub>g</sub> | s<sub>0</sub>, π<sub>4</sub>) = Pr(σ<sub>1</sub> | s<sub>0</sub>, π<sub>4</sub>) = 0.8
+
+<!-- page: 11 -->
+
+## Safe Solutions
+
+● A solution is safe if $\operatorname* { P r } \left( S _ { g }   \mid   s _ { 0 } , \pi \right) = 1$
+
+● An acyclic safe solution:
+
+$$
+\begin{array}{c} \triangleright \pi_ {2} = \{(d 1, m 1 2), (d 2, m 2 3), (d 3, m 3 4), \\ (d 5, m 5 4) \} \end{array}
+$$
+
+● $H ( s _ { 0 } , \pi _ { 2 } ) = \{ \sigma _ { 1 } , \sigma _ { 2 } \}$ , where:
+
+$$
+\sigma_ {1} = \langle \mathrm{d} 1, \mathrm{d} 2, \mathrm{d} 3, \mathrm{d} 4 \rangle
+$$
+
+$$
+\Pr (\sigma_ {1} \mid s _ {0}, \pi_ {2}) = 1 \times . 8 \times 1 = . 8
+$$
+
+$$
+\sigma_ {4} = \langle \mathrm{d} 1, \mathrm{d} 2, \mathrm{d} 5, \mathrm{d} 4 \rangle
+$$
+
+$$
+\Pr (\sigma_ {4} \mid s _ {0}, \pi_ {2}) = 1 \times . 2 \times 1 = . 2
+$$
+
+$$
+\Pr (S _ {g} | s _ {0}, \pi_ {2}) = . 8 +. 2 = 1
+$$
+
+![](images/page_10_image_10.jpg)
+
+<!-- page: 12 -->
+
+## Safe Solutions
+
+● A solution is safe if $\operatorname* { P r } \left( S _ { g }   \mid   s _ { 0 } , \pi \right) = 1$
+
+● A cyclic safe solution:
+
+$$
+\triangleright \pi_ {5} = \{(d 1, m 1 4) \}
+$$
+
+● $H ( s _ { 0 } , \pi _ { 5 } )$ contains infinitely many histories:
+
+$$
+\sigma_ {5} = \langle \mathrm{d} 1, \mathrm{d} 4 \rangle
+$$
+
+$$
+\Pr (\sigma_ {5} \mid s _ {0}, \pi_ {5}) = \frac{1}{2}
+$$
+
+$$
+\sigma_ {6} = \langle \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 4 \rangle
+$$
+
+$$
+\Pr (\sigma_ {6} \mid s _ {0}, \pi_ {5}) = (^ {1 / 2}) ^ {2} = ^ {1 / 4}
+$$
+
+$$
+\sigma_ {7} = \langle \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 4 \rangle
+$$
+
+$$
+\Pr (\sigma_ {7} \mid s _ {0}, \pi_ {5}) = (^ {1 / 2}) ^ {3} = ^ {1 / 8}
+$$
+
+$$
+\sigma_ {\infty} = \langle \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 1, \mathrm{d} 1, \dots \rangle
+$$
+
+$$
+\Pr (S _ {g} | s _ {0}, \pi_ {5}) = ^ {1 / 2} + ^ {1 / 4} + ^ {1 / 8} + \dots = 1
+$$
+
+![](images/page_11_image_13.jpg)
+
+Poll: what is $\operatorname* { P r } { ( \sigma _ { \infty }   |   s _ { 0 } , \pi _ { 5 } ) } ?$
+
+A. 1
+
+B. 0
+
+C. a number between 0 and 1
+
+D. undefined
+
+<!-- page: 13 -->
+
+## Safe and Unsafe States
+
+• s is safe if ∃π such that $\operatorname* { P r } \left( S _ { g }   |   s , \pi \right) = 1$
+
+▸ same as saying $( \Sigma ,   s ,   S _ { g } )$ has a safe solution
+
+▸ d1, d2, d3, d4
+
+• s is unsafe if ∃π s.t. $\operatorname* { P r } \left( S _ { g }   |   s , \pi \right) > 0$ and $\forall \pi , \Pr \left( S _ { g } \mid s , \pi \right) < 1$
+
+▸ same as saying $( \Sigma ,   s ,   S _ { g } )$ has an unsafe solution but no safe solution
+
+• s is a dead end if ∀π, $\operatorname* { P r } ( S _ { g }   |   \mathrm { s } , \pi ) = 0$
+
+▸ same as saying $( \Sigma ,   s ,   S _ { g } )$ has no solution
+
+• d6, d7, d8, d9
+
+• An MDP is safe if all of its states are safe
+
+![](images/page_12_image_10.jpg)
+
+• d7 is an immediate dead end
+
+▸ No applicable actions
+
+• d6, d8, d9 are deep dead ends
+
+▸ Applicable actions, but can’t reach $S _ { g }$
+
+<!-- page: 14 -->
+
+## Expected Cost
+
+● cost(s,a,s′) = cost of using a in s
+
+● Extend example so that:
+
+▸ each “horizontal” action costs 1
+
+**Poll**: Are the two versions equivalent?
+
+▸ each “vertical” action costs 100
+
+A. yes
+
+B. no
+
+● Let $\sigma = \langle s _ { 0 } , s _ { 1 } , s _ { 2 } , \ldots \rangle \in H ( s _ { 0 } , \pi )$
+
+▸ i.e., starting at $S _ { 0 } ,$ π can produce history σ
+
+● Then cost $\begin{array} { r } { ( \sigma ) = \sum _ { i } \mathrm { c o s t } ( s _ { i } , \pi ( s _ { i } ) ) } \end{array}$
+
+● Let π be a safe solution, i.e., $\operatorname* { P r } ( S _ { g } | s _ { 0 } , \pi ) = 1$
+
+● At each state $s \in D o m a i n ( \pi )$ , expected cost of following π to goal:
+
+![](images/page_13_image_13.jpg)
+
+▸ Weighted sum of history costs:
+
+$$
+\text {Run - Policy} (\Sigma , s _ {0}, S _ {g}, \pi)
+$$
+
+My version
+
+$\begin{array} { r } { V ^ { \pi } ( s ) = \sum _ { \sigma   \in   H ( s , \pi ) } \operatorname* { P r } ( \sigma   |   s , \pi ) \operatorname { c o s t } ( \sigma ) } \end{array}$
+
+$$
+S \leftarrow S _ {0}
+$$
+
+Recursive equation **while** s $\notin S _ { g }$ and s ∈ Domain(π) **do** perform action $\pi ( s )$
+
+$$
+V ^ {\pi} (s) = \left\{ \begin{array}{l} 0, \text {if} s \in S _ {g} \\ \sum_ {s ^ {\prime} \in \gamma (s, \pi (s))} \operatorname * {P r} \left(s ^ {\prime} \mid s, \pi (s)\right) \left[ \cos (s, \pi (s), s ^ {\prime}) + V ^ {\pi} \left(s ^ {\prime}\right) \right], \text {otherwise} \end{array} \right.
+$$
+
+s ← observe resulting state
+
+<!-- page: 15 -->
+
+## Example
+
+• π<sub>3</sub> = {(d1, m12), (d2, m23), (d3, m34), (d5, m54)}
+
+• Weighted sum of history costs:
+
+$\sigma _ { 1 } = \langle \mathsf { d } 1 ,   \mathsf { d } 2 ,   \mathsf { d } 3 ,   \mathsf { d } 4 \rangle$
+
+$\Pr \left( \sigma _ { 1 } \mid s _ { 0 } , \pi _ { 3 } \right) = 0 . 8$
+
+$\cot(\sigma_{1}) = 100 + 1 + 100 = 201$
+
+$\sigma _ { 2 } = \langle \mathsf { d } 1 ,   \mathsf { d } 2 ,   \mathsf { d } 5 ,   \mathsf { d } 4 \rangle$
+
+$\Pr \left( \sigma _ { 2 } \mid s _ { 0 } , \pi _ { 3 } \right) = 0 . 2$
+
+$\cot(\sigma_{2}) = 100 + 1 + 100 = 201$
+
+$V^{\pi_{3}}(d1)=.8(201)+.2(201)=201$
+
+![](images/page_14_image_10.jpg)
+
+• Recursive equation $\Rightarrow 4$ equations, 4 unknowns
+
+$$
+V ^ {\pi_ {3}} (\mathrm{d} 1) = 1 0 0 + V ^ {\pi_ {3}} (\mathrm{d} 2)
+$$
+
+$$
+V ^ {\pi_ {3}} (\mathrm{d} 2) = 1 +. 8 (V ^ {\pi_ {3}} (\mathrm{d} 3)) +. 2 (V ^ {\pi_ {3}} (\mathrm{d} 5))
+$$
+
+$$
+V ^ {\pi_ {3}} (\mathrm{d} 3) = 1 0 0 + V ^ {\pi_ {3}} (\mathrm{d} 4)
+$$
+
+$$
+V ^ {\pi_ {3}} (\mathrm{d} 5) = 1 0 0 + V ^ {\pi_ {3}} (\mathrm{d} 4)
+$$
+
+$$
+V ^ {\pi_ {3}} (\mathrm{d} 4) = 0
+$$
+
+$$
+\bullet \quad \text {So} V ^ {\pi_ {3}} (\mathrm{d} 1) = 1 0 0 + 1 +. 8 (1 0 0) +. 2 (1 0 0) = 2 0 1
+$$
+
+<!-- page: 16 -->
+
+## Example
+
+$\pi _ { 7 } = \{ ( \mathsf { d } 1 , \mathsf { m } 1 4 ) \}$ , (d2, m23), (d3, m34), (d5, m54)}
+
+● Weighted sum of history costs:
+
+▸ $\sigma _ { 5 } = \langle \mathsf { d } 1 , \mathsf { d } 4 \rangle$
+
+$$
+\Pr \left(\sigma_ {5} \mid \pi_ {7}\right) = ^ {1 / 2}, \quad \operatorname{cost} \left(\sigma_ {5}\right) = 1
+$$
+
+▸ $\sigma _ { 6 } = \langle \mathsf { d } 1 ,   \mathsf { d } 1 ,   \mathsf { d } 4 \rangle$
+
+$$
+\Pr \left(\sigma_ {6} \mid \pi_ {7}\right) = (\frac {1}{2}) ^ {2}, \quad \mathrm{cost} \left(\sigma_ {6}\right) = 2
+$$
+
+▸ $\sigma _ { 7 }   =   \langle \mathsf { d } 1 ,   \mathsf { d } 1 ,   \mathsf { d } 1 ,   \mathsf { d } 4 \rangle$
+
+$$
+\Pr \left(\sigma_ {7} \mid \pi_ {7}\right) = \left(\frac {1}{2}\right) ^ {3}, \quad \operatorname{cost} \left(\sigma_ {7}\right) = 3
+$$
+
+● $V^{\pi_{7}}(d1)=(\%)1+(\%)^{2}2+(\%)^{3}3+\cdots=2$
+
+● Recursive equation:
+
+$$
+V ^ {\pi_ {7}} (\mathrm{d} 1) = 1 + \frac {1}{2} (0) + \frac {1}{2} (V ^ {\pi_ {7}} (\mathrm{d} 1))
+$$
+
+$$
+{ } ^ { 1 / _ { 2 } } V ^ { \pi _ { 7 } } ( \mathrm{d} 1 ) = 1
+$$
+
+$$
+V ^ {\pi_ {7}} (\mathrm{d} 1) = 2
+$$
+
+![](images/page_15_image_14.jpg)
+
+● Given safe solution $\pi ,$
+
+▸ Compute $V ^ { \pi }$ by solving n linear equations, n unknowns
+
+▸ n = number of states reachable from $s _ { 0 }$ using π $= | \hat { \gamma } ( s _ { 0 } , \pi ) |$
+
+<!-- page: 17 -->
+
+## Dominance and Optimality
+
+• Let π and $\pi ^ { \prime }$ be safe solutions
+
+▸ $\pi$ dominates π′ if $V ^ { \pi } ( s ) \leq V ^ { \pi ^ { \prime } } ( s )$
+
+at every state s where they’re both defined
+
+• i.e., every state $s   \in   D o m a i n ( \pi ) \cap D o m a i n ( \pi ^ { \prime } )$
+
+• On the previous two slides
+
+▸ π<sub>3</sub> = {(d1, m12), (d2, m23), (d3, m34), (d5, m54)}
+
+▸ π<sub>7</sub> = {(d1, m14), (d2, m23), (d3, m34), (d5, m54)}
+
+▸ They differ only at d1
+
+$V^{\pi_{3}}(d1)=201; \quad V^{\pi_{7}}(d1)=2$
+
+$\pi _ { 7 }$ dominates $\pi _ { 3 }$
+
+• Compare $\pi _ { 3 }$ with $\pi_{5}=\{(\mathsf{d}1,\mathsf{m}14)\}$
+
+▸ the only state in the domain of both policies is d1
+
+$V^{\pi_{3}}(d1)=201; \quad V^{\pi_{5}}(d1)=2$
+
+▸ $\pi _ { 5 }$ dominates $\pi _ { 3 }$
+
+![](images/page_16_image_15.jpg)
+
+• π is optimal if π dominates every safe solution
+
+• If π and $\pi ^ { \prime }$ are both optimal, then $V ^ { \pi } ( s ) = V ^ { \pi ^ { \prime } } ( s )$ at every state where they’re both defined
+
+• Example: compare $\pi _ { 5 }$ and $\pi _ { 7 }$
+
+▸ the only state where both are defined is d1
+
+$V ^ { \pi _ { 5 } } ( \mathsf { d } 1 ) = V ^ { \pi _ { 7 } } ( \mathsf { d } 1 ) = 2$
+
+<!-- page: 18 -->
+
+## Optimality
+
+• Let $V ^ { * } ( s ) =$ expected cost of an optimal safe solution
+
+• Optimality principle (Bellman’s theorem):
+
+$\begin{array} { r } { V ^ { * } ( s ) = \left\{ \begin{array} { l l } { 0 , \mathrm { i f } s \mathrm { i s a g o a l } } \\ { \operatorname* { m i n } _ { a \in \mathrm { A p p i c a b l e } ( s ) } \sum _ { s ^ { \prime } \in \gamma ( s , a ) } \operatorname* { P r } ( s ^ { \prime } \mid s , a ) [ \operatorname { c o s t } ( s , a , s ^ { \prime } ) + V ^ { * } ( s ^ { \prime } ) ] . } \end{array} \right. } \end{array}$ , otherwise
+
+• Example:
+
+$V ^ { * } ( \mathsf { d } 4 ) = 0$
+
+$V^{*}(\mathbf{d}\mathbf{3}) = 100$
+
+$V^{*}(\mathrm{d}5)=\min\left\{100,15+V^{*}(\mathrm{d}2)\right\}$
+
+$$
+\begin{array}{r l} \triangleright & V ^ {*} (\mathrm{d} 2) = 0. 8 [ 1 5 + V ^ {*} (\mathrm{d} 3) ] + 0. 2 [ 1 5 + V ^ {*} (\mathrm{d} 5) ] \\ & = 1 5 + 0. 8 V ^ {*} (\mathrm{d} 3) + 0. 2 V ^ {*} (\mathrm{d} 5) = 9 5 + 0. 2 V ^ {*} (\mathrm{d} 5) \end{array}
+$$
+
+$V ^ { * } ( \mathsf { d } 6 ) = 1$
+
+$$
+\begin{array}{r l} \blacktriangleright & V ^ {*} (\mathrm{d} 1) = \min \left\{1 0 + V ^ {*} (\mathrm{d} 2), 0. 5 [ 2 0 + V ^ {*} (\mathrm{d} 6) ] + 0. 5 [ 2 0 ] \right\} \\ & = \min \left\{1 0 + V ^ {*} (\mathrm{d} 2), 2 0 + 0. 5 V ^ {*} (\mathrm{d} 6) \right\} \\ & = \min \left\{1 0 + V ^ {*} (\mathrm{d} 2), 2 0. 5 \right\} \end{array}
+$$
+
+![](images/page_17_image_11.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Poll. What is $V^{*}(\mathrm{d}5)$?  
+A. 100 B. $15 + V^{*}(\mathrm{d}2)$ C. other D. don't know
+</div>
+
+**Poll.** What is $V ^ { * } ( { \mathsf { d } } 1 ) ?$ A. $1 0   +   V ^ { * } ( \mathsf { d } 2 )$ B. 20.5 C. other D. don’t know
+
+<!-- page: 19 -->
+
+## Summary
+
+● Actions with probabilistic outcomes
+
+● $\gamma ( s , a ) = a$ set of states, $\operatorname* { P r } ( s ^ { \prime }   |   s ,   a )$
+
+● cost $\mathbf { \bar { \ell } } ( s , a , s ^ { \prime } ) \in \mathbb { R }$
+
+● Policies
+
+▸ Transitive closure
+
+▸ Reachability graph, leaves
+
+● MDP problem: $P = ( \Sigma ,   s _ { 0 } ,   S _ { g } )$ , require $s _ { 0 } \not \in S _ { g }$
+
+▸ This is a goal reachability problem
+
+● Solutions, closed solutions
+
+● History: sequence of states
+
+$\sigma = \langle s _ { 0 } , s _ { 1 } , s _ { 2 } , \ldots \rangle$ produced by Run-Policy
+
+● $H ( s , \pi ) = \{ a \}$ possible histories from s using π}
+
+● Probability of reaching a goal state:
+
+$\begin{array} { r } { \operatorname* { P r } \left( S _ { g }   |   s , \pi \right) = \sum _ { \sigma \in H ( s , \pi ) } \left\{ \operatorname* { P r } \left( \sigma   |   s , \pi \right)   \mid   \sigma \right. } \end{array}$ ends in $S _ { g } \}$ or equivalently:
+
+$$
+\Pr \left(S _ {g} \mid s, \pi\right) = \left\{ \begin{array}{c l} 1, & \text {if} s \in S _ {g} \\ \sum_ {s ^ {\prime} \in \gamma (s, \pi (s))} \Pr \left(S _ {g} \mid s ^ {\prime}, \pi\right), & \text {otherwise} \end{array} \right.
+$$
+
+● Unsafe and safe solutions
+
+▸ Acyclic and cyclic safe solutions
+
+● Expected cost
+
+$$
+V ^ {\pi} (s) = \sum_ {\sigma \in H (s, \pi)} \Pr (\sigma \mid s, \pi) \operatorname{cost} (\sigma)
+$$
+
+$$
+\begin{array}{c} V ^ {\pi} (s) = 0, \text {if} s \in S _ {g} \\ = \sum_ {s ^ {\prime} \in \gamma (s, \pi (s))} \Pr (s ^ {\prime} \mid s, \pi (s)) [ \mathrm{cost} (s, \pi (s), s ^ {\prime}) + V ^ {\pi} (s ^ {\prime}) ], \\ \text {otherwise} \end{array}
+$$
+
+● Planning as optimization

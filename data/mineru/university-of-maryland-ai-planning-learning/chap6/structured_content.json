@@ -1,0 +1,2260 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.001,
+            0.997,
+            0.472
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_0.jpg"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.251,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.377,
+            0.395,
+            0.622,
+            0.529
+          ],
+          "level": 2,
+          "content": "Chapter 6 Acting with HTNs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.434,
+            0.623,
+            0.566,
+            0.67
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.683,
+            0.612,
+            0.735
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.777,
+            0.613,
+            0.824
+          ],
+          "content": "with contributions from"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.4,
+            0.839,
+            0.6,
+            0.884
+          ],
+          "content": "[Mark “mak” Roberts](https://scholar.google.com/citations?user=vlbX4J8AAAAJ)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.848,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "level": 2,
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.869,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.066,
+            0.76,
+            0.124
+          ],
+          "level": 2,
+          "content": "Using HTN Domain Models for Acting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.217,
+            0.881,
+            0.258
+          ],
+          "content": "● Unlike an HTN domain model, the actor’s environment is not necessarily deterministic or static"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.273,
+            0.916,
+            0.358
+          ],
+          "content": "▸ Exogenous events, unanticipated action outcomes ⇒ current state may be different from what an HTN model would predict"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.373,
+            0.658,
+            0.415
+          ],
+          "content": "● Actor can’t backtrack to a previous state; prior actions are in the past"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.483,
+            0.807,
+            0.525
+          ],
+          "content": "● HTN domain models still are very useful for providing operational models to the actor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.54,
+            0.53,
+            0.581
+          ],
+          "content": "▸ How to carry out “standard operating procedures”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.595,
+            0.751,
+            0.637
+          ],
+          "content": "▸ How to perform complex tasks without searching through a large state space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.651,
+            0.818,
+            0.691
+          ],
+          "content": "▸ How to avoid situations where unanticipated events are likely to cause bad outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.707,
+            0.522,
+            0.747
+          ],
+          "content": "▸ How to recover when unanticipated events occur"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.996
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.058,
+            0.354,
+            0.111
+          ],
+          "level": 2,
+          "content": "Reactive HTN Actor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.017,
+            0.155,
+            0.405,
+            0.193
+          ],
+          "content": "● Like TO-HTN-Forward but executes each action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.016,
+            0.206,
+            0.441,
+            0.294
+          ],
+          "content": "▸ Can similarly modify other Chapter 5 algorithms **Line**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.015,
+            0.303,
+            0.342,
+            0.343
+          ],
+          "content": "0 Return success or failure, not a plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.015,
+            0.354,
+            0.355,
+            0.394
+          ],
+          "content": "1 s isn’t an argument, observe it instead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.015,
+            0.406,
+            0.357,
+            0.447
+          ],
+          "content": "3 Instead of computing γ, execute action"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.015,
+            0.457,
+            0.366,
+            0.499
+          ],
+          "content": "2 Failure recovery: if m fails, try next one"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.508,
+            0.409,
+            0.629
+          ],
+          "content": "if they all fail, return failure to next higher level in the recursion stack, to try other methods there"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.01,
+            0.667,
+            0.376,
+            0.746
+          ],
+          "content": "● At Line 2, a bad method instance can lead to non-optimal solution or failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.759,
+            0.28,
+            0.797
+          ],
+          "content": "Can use a heuristic function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.81,
+            0.387,
+            0.889
+          ],
+          "content": "▸ Can call an HTN planner – but other ways have less computational overhead"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.457,
+            0.105,
+            0.982,
+            0.607
+          ],
+          "sub_type": "algorithm",
+          "content": "TO-HTN-Act($\\Sigma_c, \\mathcal{M}, T$)\nif $T$ is empty then return success\n    $t \\leftarrow$ the first element of $T$; $T' \\leftarrow$ the rest of $T$\n$s \\leftarrow$ observe current state\n    $M \\leftarrow$ HTN-Get-Candidates($\\Sigma_c, \\mathcal{M}, s, t$)\nforeach $m \\in M$ do\n    if $m$ is a method instance then\n        if TO-HTN-Act($\\Sigma, \\text{sub}(m) \\cdot T'$) = success then return success\n    else if $m$ is an action then\n        execute $m$\n        if $m$ executed successfully then return TO-HTN-Act($\\Sigma, T'$)\nreturn failure",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.465,
+            0.705,
+            0.826,
+            0.813
+          ],
+          "content": "| Poll 1. Is line doing backtracking?A. Yes B. No C. Unsure |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_12.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.378,
+            0.065,
+            0.62,
+            0.119
+          ],
+          "level": 2,
+          "content": "Run-HLookahead"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.052,
+            0.177,
+            0.392,
+            0.573
+          ],
+          "sub_type": "code",
+          "content": "```python\nHTN-Run-Lookahead(Σ, T)\n    while True do:\n        s ← observed current state\n        π = Lookahead(Σ, s, T)\n        if π = failure then return failure\n        if π = ⟨⟩ then return success\n        a ← pop(π)\n        trigger execution of a\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.583,
+            0.388,
+            0.626
+          ],
+          "content": "● Here, Lookahead is an HTN planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.639,
+            0.315,
+            0.681
+          ],
+          "content": "● Goal formula may not exist"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.696,
+            0.287,
+            0.737
+          ],
+          "content": "▸ Cannot rely on $s \\models g$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.75,
+            0.469,
+            0.837
+          ],
+          "content": "▸ Need Lookahead to return ⟨ ⟩ iff no actions are needed to accomplish T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.495,
+            0.177,
+            0.909,
+            0.265
+          ],
+          "content": "Call Lookahead, get π, perform 1<sup>st</sup> action, call HLookahead again …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.496,
+            0.277,
+            0.958,
+            0.377
+          ],
+          "content": "● Useful when unexpected things are likely to happen ▸ Replans immediately"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.496,
+            0.388,
+            0.814,
+            0.433
+          ],
+          "content": "● Lookahead needs to return quickly"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.528,
+            0.444,
+            0.918,
+            0.534
+          ],
+          "content": "▸ Otherwise, HTN-Run-Lookahead may pause repeatedly waiting for Lookahead to return"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.528,
+            0.544,
+            0.95,
+            0.63
+          ],
+          "content": "▸ May want Lookahead to look a limited distance or horizon ahead"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.556,
+            0.707,
+            0.903,
+            0.939
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_11.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.293,
+            0.063,
+            0.706,
+            0.124
+          ],
+          "level": 2,
+          "content": "Run-HLookahead (Example 1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.175,
+            0.287,
+            0.219
+          ],
+          "content": "HTN-Run-Lookahead(Σ, T )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.227,
+            0.213,
+            0.269
+          ],
+          "content": "**while** True **do**:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.278,
+            0.34,
+            0.319
+          ],
+          "content": "s ← observed current state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.376,
+            0.39,
+            0.42
+          ],
+          "content": "if π = failure **then return** failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.427,
+            0.366,
+            0.472
+          ],
+          "content": "i $\\Gamma \\pi = \\langle \\rangle$ **then return** success"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.11,
+            0.479,
+            0.213,
+            0.523
+          ],
+          "content": "a \\leftarrow \\mathrm{pop} (\\pi)",
+          "image_source": "images/page_4_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.527,
+            0.298,
+            0.573
+          ],
+          "content": "trigger execution of a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.088,
+            0.685,
+            0.446,
+            0.876
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.43,
+            0.162,
+            0.982,
+            0.202
+          ],
+          "content": "Call HTN-Run-Lookahead with Lookahead = TO-HTN-Forward (THF)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.213,
+            0.793,
+            0.254
+          ],
+          "content": "▸ Σ = the TOHTN domain in Example 5.8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.263,
+            0.722,
+            0.306
+          ],
+          "content": "71 $\\mathbf { P } = ( \\Sigma ,   s _ { 0 } ,   T = \\langle \\{ \\mathsf { p i l e } ( \\mathsf { c } 1 ) { = } \\mathsf { p } 2 \\} \\rangle )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.431,
+            0.317,
+            0.698,
+            0.357
+          ],
+          "content": "● If nothing unexpected happens:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.464,
+            0.364,
+            0.725,
+            0.405
+          ],
+          "content": "▸ Call TO-HTN-Forward(Σ, s<sub>0</sub>, T )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.488,
+            0.417,
+            0.839,
+            0.5
+          ],
+          "content": "• π = ⟨take(r1,c1,c2,p1,d1), move(r1,d1,d2), $\\mathsf { p u t } ( \\mathsf { r } 1 { , } \\mathsf { c } 1 { , } \\mathsf { c } 3 { , } \\mathsf { p } 2 { , } \\mathsf { d } 2 ) \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.463,
+            0.509,
+            0.708,
+            0.549
+          ],
+          "content": "▸ Execute take(r1,c1,c2,p1,d1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.559,
+            0.928,
+            0.603
+          ],
+          "content": "▸ Call THF(..), get π = ⟨move(r1,d1,d2), put(r1,c1,c3,p2,d2)⟩"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.463,
+            0.611,
+            0.674,
+            0.651
+          ],
+          "content": "▸ execute move(r1,d1,d2),"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.463,
+            0.662,
+            0.797,
+            0.704
+          ],
+          "content": "▸ call $\\mathsf { T H F } ( . . ) , \\mathsf { g e t } \\; \\pi = \\langle \\mathsf { p u t } ( \\mathsf { r 1 } , \\mathsf { c 1 } , \\mathsf { c 3 } , \\mathsf { p 2 } , \\mathsf { d 2 } ) \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.463,
+            0.715,
+            0.702,
+            0.755
+          ],
+          "content": "▸ execute put(r1,c1,c3,p2,d2),"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.463,
+            0.764,
+            0.776,
+            0.805
+          ],
+          "content": "▸ Call $\\mathsf { T H F } ( . . ) _ { 2 }$ get $\\pi = \\langle \\rangle ,$ return success"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.454,
+            0.815,
+            0.959,
+            0.858
+          ],
+          "content": "If something unexpected happens but the problem is still solvable:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.866,
+            0.934,
+            0.906
+          ],
+          "content": "▸ Call $\\mathsf { T H F } ( . . )$ with latest observed state, it returns a new plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.917,
+            0.976,
+            0.958
+          ],
+          "content": "▸ This could fail if there is no applicable method for the new state!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.342,
+            0.063,
+            0.657,
+            0.126
+          ],
+          "level": 2,
+          "content": "Run-Lazy-HLookahead"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.052,
+            0.157,
+            0.43,
+            0.668
+          ],
+          "sub_type": "code",
+          "content": "```python\nHTN-Run-Lazy-Lookahead(Σ, T)\n    π ← ⟨⟩; a ← nil\n    while True do:\n        if π = ⟨⟩ or execution of a failed then\n            s ← observed state\n            π = Lookahead(Σ, s, T)\n            if π = failure then return failure\n            if π = ⟨⟩ then return success\n        a ← pop(π)\n    trigger execution of a\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.052,
+            0.749,
+            0.425,
+            0.844
+          ],
+          "level": 2,
+          "content": "● Could also add a Simulate program as in Run-Lazy-Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.561,
+            0.229,
+            0.907,
+            0.323
+          ],
+          "content": "If we’ve exhausted the current plan, call Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.383,
+            0.961,
+            0.479
+          ],
+          "content": "Requires Lookahead to return ⟨ ⟩ iff no actions are needed to accomplish T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.774,
+            0.639,
+            0.913,
+            0.744
+          ],
+          "content": "Planning Stage Acting Stage"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.577,
+            0.749,
+            0.924,
+            0.945
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_6.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.258,
+            0.064,
+            0.741,
+            0.125
+          ],
+          "level": 2,
+          "content": "Run-Lazy-HLookahead (Example 1)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.052,
+            0.16,
+            0.433,
+            0.664
+          ],
+          "sub_type": "code",
+          "content": "```python\nHTN-Run-Lazy-Lookahead(Σ, T)\n    π ← ⟨⟩; a ← nil\n    while True do:\n        if π = ⟨⟩ or execution of a failed then\n            s ← observed state\n            π = Lookahead(Σ, s, T)\n            if π = failure then return failure\n            if π = ⟨⟩ then return success\n        a ← pop(π)\n    trigger execution of a\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.114,
+            0.733,
+            0.463,
+            0.924
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.177,
+            0.859,
+            0.258
+          ],
+          "content": "● Call HTN-Run-Lazy-Lookahead with Lookahead = TO-HTN-Forward (THF)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.267,
+            0.845,
+            0.307
+          ],
+          "content": "▸ Σ = TOHTN domain in Example 5.8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.317,
+            0.822,
+            0.358
+          ],
+          "content": "▸ initial state $s _ { 0 } ,   T = \\langle \\{ { \\mathsf { p i l e } } ( { \\mathsf { c } } 1 ) { \\mathsf { = } } { \\mathsf { p } } 2 \\} \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.371,
+            0.779,
+            0.411
+          ],
+          "content": "● If nothing unexpected happens:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.472,
+            0.919,
+            0.553
+          ],
+          "content": "• π = ⟨take(r1,c1,c2,p1,d1), move(r1,d1,d2), put(r1,c1,c3,p2,d2)⟩"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.563,
+            0.942,
+            0.604
+          ],
+          "content": "▸ Pop actions from π and execute them, until $\\pi = \\langle \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.614,
+            0.881,
+            0.654
+          ],
+          "content": "Call THF again, get $\\pi = \\langle \\rangle$ , return success"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.665,
+            0.936,
+            0.743
+          ],
+          "content": "● If something unexpected happens but the problem is still solvable:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.756,
+            0.867,
+            0.796
+          ],
+          "content": "▸ Eventually, either π = ⟨ ⟩ or a has failed"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.808,
+            0.948,
+            0.848
+          ],
+          "content": "▸ Call THF with observed state, it returns a new plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.886,
+            0.944,
+            0.965
+          ],
+          "content": "HTN-Run-Lookahead is similar but it calls Lookahead before each action is executed"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.426,
+            0.064,
+            0.574,
+            0.123
+          ],
+          "level": 2,
+          "content": "Example 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.025,
+            0.113,
+            0.249,
+            0.153
+          ],
+          "content": "● POHTN planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.165,
+            0.399,
+            0.205
+          ],
+          "content": "▸ Cranes at loading docks, not on the robots"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.026,
+            0.219,
+            0.118,
+            0.254
+          ],
+          "content": "● Actions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.267,
+            0.339,
+            0.305
+          ],
+          "content": "The usual move action, and these:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.046,
+            0.329,
+            0.535,
+            0.455
+          ],
+          "sub_type": "code",
+          "content": "```txt\nunstack(k, c, c', p, d) // take container c from pile p\npre: at(k, d), at(p, d), holding(k) = nil, pos(c) = c', top(p) = c\neff: holding(k) ← c, pos(c) ← k, pile(c) ← nil, top(p) ← c'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.045,
+            0.48,
+            0.506,
+            0.609
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nstack(k, c, c', p, d) // put container c onto pile p\npre: at(k, d), at(p, d), holding(k) = c, top(p) ← c'\neff: holding(k) ← nil, pos(c) = c', pile(c) ← p, top(p) = c\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.045,
+            0.631,
+            0.469,
+            0.76
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nunload(k, c, r, d) // take container c from robot r\npre: at(k, d), holding(k) = c, loc(r) = d\neff: cargo(r) ← c, pos(c) ← r, holding(k) ← nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.046,
+            0.782,
+            0.473,
+            0.91
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nload(k, c, r, d) // put container c onto robot r\npre: at(k, d), holding(k) = nil, loc(r) = d, cargo(r) = c\neff: pos(c) ← k, holding(k) ← c, cargo(r) ← nil\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.54,
+            0.152,
+            0.999,
+            0.625
+          ],
+          "sub_type": "code",
+          "content": "```javascript\n- Methods\n  m1-put-on-robot(k, c, c', r, d, p)\n    task: put-on-robot(c, r)\n      pre: cargo(r) = nil, top(p) = c, at(p, d),\n        attached(k, d), holding(k) = nil\n      sub: (t1, navigate(r, d)),          // compound task\n        (t2, unstack(k, c, c', p, d)),   // action\n        (t3, load(k, c, r, d))         // action\n      <: t1 < t3, t2 < t3\n- The usual navigate methods\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.552,
+            0.682,
+            0.997,
+            0.978
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_10.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.973,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.426,
+            0.065,
+            0.574,
+            0.123
+          ],
+          "level": 2,
+          "content": "Example 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.012,
+            0.141,
+            0.482,
+            0.219
+          ],
+          "content": "● Call HTN-Run-Lazy-Lookahead with Lookahead = POHTN-Forward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.234,
+            0.36,
+            0.274
+          ],
+          "content": "7 $\\Sigma = \\mathrm { P O H T N }$ domain on previous page"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.282,
+            0.486,
+            0.323
+          ],
+          "content": "▸ initial state $s _ { 0 } ,$ the only task in T is put-on-robot(c1,r1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.013,
+            0.337,
+            0.28,
+            0.376
+          ],
+          "content": "If nothing unexpected happens:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.384,
+            0.301,
+            0.425
+          ],
+          "content": "Call POTHN-Forward $( \\Sigma ,   s _ { 0 } ,   \\mathcal { T } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.438,
+            0.454,
+            0.479
+          ],
+          "content": "Two solution plans, suppose it returns this one:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.488,
+            0.454,
+            0.567
+          ],
+          "content": "• $\\pi _ { 2 } = \\langle \\mathsf { u n s t a c k } ( \\mathsf { k 2 } , \\mathsf { c 1 } , \\mathsf { c 2 } , \\mathsf { p 2 } , \\mathsf { d 2 } ) ,   \\mathsf { m o v e } ( \\mathsf { r 1 } , \\mathsf { d 1 } , \\mathsf { d 2 } ) ,$ load(k2,c1,r1,d2)⟩"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.579,
+            0.445,
+            0.619
+          ],
+          "content": "▸ Pop actions from π and execute them, until $\\pi = \\langle \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.63,
+            0.477,
+            0.671
+          ],
+          "content": "Call POHTN-Forward again, get $\\pi = \\langle \\rangle$ , return success"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.013,
+            0.683,
+            0.457,
+            0.722
+          ],
+          "content": "● Suppose move fails without changing the current state:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.731,
+            0.301,
+            0.769
+          ],
+          "content": "▸ Call POHTN-Forward $( \\Sigma ,   s _ { 0 } ,   \\mathcal { T } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.069,
+            0.784,
+            0.496,
+            0.825
+          ],
+          "content": "failure: no applicable methods when k2 is holding c1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.014,
+            0.836,
+            0.162,
+            0.871
+          ],
+          "content": "● Run-Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.044,
+            0.886,
+            0.517,
+            0.963
+          ],
+          "content": "Call POHTN-Forward, get plan, execute unstack, call PPlan, PPlan fails"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.004,
+            0.973,
+            0.356,
+            0.999
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.537,
+            0.139,
+            0.918,
+            0.641
+          ],
+          "sub_type": "code",
+          "content": "```txt\nRun-Lazy-HLookahead(Σ, T)\n    π ← ⟨⟩; a ← nil\n    while True do:\n        if π = ⟨⟩ or execution of a failed then\n            s ← observed state\n            π = HTN-Lookahead(Σ, s, T)\n            if π = failure then return failure\n            if π = ⟨⟩ then return success\n        a ← pop(π)\n    trigger execution of a\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.552,
+            0.684,
+            0.997,
+            0.979
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_17.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.28,
+            0.067,
+            0.72,
+            0.121
+          ],
+          "level": 2,
+          "content": "Error Recovery in HTN Domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.179,
+            0.432,
+            0.266
+          ],
+          "content": "HTN methods require the solution plan to follow a particular trajectory"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.279,
+            0.469,
+            0.365
+          ],
+          "content": "● Encode requirements that aren’t explicit in the classical planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.379,
+            0.285,
+            0.42
+          ],
+          "content": "▸ Safety requirements:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.434,
+            0.473,
+            0.52
+          ],
+          "content": "Secure a container onto the robot before starting to move the robot"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.535,
+            0.358,
+            0.575
+          ],
+          "content": "▸ Commitments to other agents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.589,
+            0.473,
+            0.676
+          ],
+          "content": "Don’t use a particular resource, because others may need it"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.69,
+            0.48,
+            0.733
+          ],
+          "content": "▸ A company’s standard operating procedures"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.508,
+            0.179,
+            0.97,
+            0.309
+          ],
+          "continues_prev": true,
+          "content": "● HTN-Run-Lookahead and HTN-Run-Lazy-Lookahead don’t know anything about the trajectory requirements"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.508,
+            0.323,
+            0.816,
+            0.366
+          ],
+          "content": "● That’s OK if nothing goes wrong"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.508,
+            0.379,
+            0.975,
+            0.465
+          ],
+          "content": "If unexpected events occur, need to recover in a way that still satisfies the trajectory requirements"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.508,
+            0.479,
+            0.686,
+            0.52
+          ],
+          "content": "● Three approaches"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.533,
+            0.937,
+            0.577
+          ],
+          "content": "1. Modify TO-HTN-Act to call an HTN planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.564,
+            0.589,
+            0.93,
+            0.631
+          ],
+          "content": "• HTN planner returns a method selection"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.644,
+            0.948,
+            0.687
+          ],
+          "content": "2. Modify HTN planner to return a solution tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.565,
+            0.702,
+            0.789,
+            0.74
+          ],
+          "content": "• Actor traverses the tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.755,
+            0.955,
+            0.84
+          ],
+          "content": "3. Actor calls HTN planner to do replanning in a modified domain"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.192,
+            0.109,
+            0.81,
+            0.168
+          ],
+          "level": 2,
+          "content": "TO-HTN-Act (modified) with an HTN Planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.235,
+            0.584,
+            0.311
+          ],
+          "content": "● HTN planner similar to TO-HTN-Forward, but returns the top-level method in its solution tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.327,
+            0.382,
+            0.365
+          ],
+          "content": "● Suppose there’s an execution error here"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.376,
+            0.616,
+            0.414
+          ],
+          "content": "▸ TO-HTN-Act calls the planner here, tells it to use a different method"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.005,
+            0.415,
+            0.805,
+            0.95
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_4.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.316,
+            0.065,
+            0.682,
+            0.123
+          ],
+          "level": 2,
+          "content": "Traversing a Solution Tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.217,
+            0.354,
+            0.255
+          ],
+          "content": "● HTN planner returns a solution tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.271,
+            0.261,
+            0.305
+          ],
+          "content": "● Actor traverses the tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.321,
+            0.384,
+            0.36
+          ],
+          "content": "Suppose there’s an execution error here"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.37,
+            0.378,
+            0.45
+          ],
+          "content": "▸ Actor calls the planner here, tells it to use a different method"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.178,
+            0.989,
+            0.215
+          ],
+          "content": "● HTN planner returns a solution tree, actor traverses the tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.229,
+            0.722,
+            0.267
+          ],
+          "content": "● Time vs. space tradeoff"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.281,
+            0.787,
+            0.318
+          ],
+          "content": "▸ Here, we need the entire tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.331,
+            0.995,
+            0.447
+          ],
+          "content": "▸ In TO-HTN-Act, we don’t but the actor and planner duplicate effort, repeatedly recreating the current part of the tree"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.006,
+            0.437,
+            0.805,
+            0.95
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.277,
+            0.065,
+            0.721,
+            0.125
+          ],
+          "level": 2,
+          "content": "Modifying the Planning Domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.217,
+            0.437,
+            0.254
+          ],
+          "content": "● Modified version of HTN-Run-Lazy-Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.269,
+            0.297,
+            0.308
+          ],
+          "content": "▸ Calls TPlan to get a plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.321,
+            0.384,
+            0.359
+          ],
+          "content": "● Suppose there’s an execution error here"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.371,
+            0.328,
+            0.451
+          ],
+          "content": "▸ $a _ { k 2 }$ was supposed to produce state $s _ { k 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.461,
+            0.324,
+            0.501
+          ],
+          "content": "▸ it produced state $s _ { k 2 } { } ^ { \\prime }$ instead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.421,
+            0.371,
+            0.52,
+            0.411
+          ],
+          "content": "initial task t"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.178,
+            0.952,
+            0.256
+          ],
+          "content": "● Actor calls TO-HTN-Forward again, with the same initial state $s _ { 0 }$ and task t as before"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.269,
+            0.823,
+            0.308
+          ],
+          "content": "● Modified planning domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.621,
+            0.319,
+            0.943,
+            0.4
+          ],
+          "content": "Methods are modified so that the initial actions of the plan must be $a _ { 1 1 } , . . . , a _ { k n }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.621,
+            0.411,
+            0.992,
+            0.45
+          ],
+          "content": "▸ Action $a _ { k 2 }$ is modified so that $\\gamma ( s _ { k 1 } ,   a _ { k 2 } ) = \\; s _ { k 2 } { } ^ { \\prime }$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.003,
+            0.456,
+            0.806,
+            0.951
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_11.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.993,
+            0.995
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.067,
+            0.569,
+            0.125
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.179,
+            0.136,
+            0.217
+          ],
+          "level": 2,
+          "content": "● Issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.234,
+            0.568,
+            0.275
+          ],
+          "content": "▸ Actor’s environment may not be deterministic or static"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.29,
+            0.451,
+            0.331
+          ],
+          "content": "▸ Actor can’t backtrack to a previous state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.345,
+            0.543,
+            0.385
+          ],
+          "content": "● TO-HTN-Act: reactive actor similar to TO-HTN-Forward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.401,
+            0.489,
+            0.441
+          ],
+          "content": "● HTN-Run-Lookahead, HTN-Run-Lazy-Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.456,
+            0.534,
+            0.499
+          ],
+          "content": "▸ Examples where they work well, where they don’t"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.511,
+            0.353,
+            0.553
+          ],
+          "content": "● Error recovery in HTN domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.567,
+            0.233,
+            0.609
+          ],
+          "content": "● Three approaches"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.621,
+            0.492,
+            0.666
+          ],
+          "content": "▸ TO-HTN-Act modified to call an HTN planner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.533,
+            0.637,
+            0.793,
+            0.681
+          ],
+          "content": "● Tradeoff: time versus space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.678,
+            0.4,
+            0.719
+          ],
+          "content": "▸ Actor that traverses a solution tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.733,
+            0.514,
+            0.823
+          ],
+          "content": "▸ Actor that re-invokes TO-HTN-Forward on the original problem in a modified planning domain"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "14"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

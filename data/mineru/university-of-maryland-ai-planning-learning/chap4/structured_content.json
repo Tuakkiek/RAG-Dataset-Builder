@@ -1,0 +1,1494 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.249,
+            0.324,
+            0.75,
+            0.533
+          ],
+          "level": 2,
+          "content": "Chapter 4 Learning with Deterministic Models (brief summary)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.644,
+            0.566,
+            0.691
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.705,
+            0.613,
+            0.755
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.302
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.848,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.869,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.322,
+            0.065,
+            0.677,
+            0.123
+          ],
+          "level": 2,
+          "content": "Outline and Assumptions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.177,
+            0.485,
+            0.221
+          ],
+          "content": "I’ll briefly summarize the following sections:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.233,
+            0.339,
+            0.275
+          ],
+          "content": "4.1 Learning Heuristics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.289,
+            0.433,
+            0.331
+          ],
+          "content": "4.2. Learning Action Specifications"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.345,
+            0.43,
+            0.387
+          ],
+          "content": "4.2.2 Online Action Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.511,
+            0.399,
+            0.554
+          ],
+          "content": "● Classical planning assumptions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.567,
+            0.468,
+            0.609
+          ],
+          "content": "• Finite, static world, just one actor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.623,
+            0.513,
+            0.664
+          ],
+          "content": "• No concurrent actions, no explicit time"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.679,
+            0.427,
+            0.72
+          ],
+          "content": "Determinism, no uncertainty"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.734,
+            0.613,
+            0.777
+          ],
+          "content": "• Sequence of states and actions $\\langle s _ { 0 } , a _ { 1 } , s _ { 1 } , a _ { 2 } , s _ { 2 } , \\ldots \\rangle$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.335,
+            0.066,
+            0.663,
+            0.123
+          ],
+          "level": 2,
+          "content": "4.1. Learning Heuristics"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.054,
+            0.177,
+            0.202,
+            0.218
+          ],
+          "content": "\\mathsf {L R T A} ^ {*} (\\Sigma , s _ {0}, S _ {g}, h _ {0})",
+          "image_source": "images/page_2_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.225,
+            0.486,
+            0.359
+          ],
+          "content": "$s \\gets s _ { 0 } ; \\; \\pi \\gets \\big \\langle \\big \\rangle$ // initialize current state and plan $h ( s ) \\leftarrow h _ { 0 } ( s )$ for every s∈ S // initialize the heuristic **while** $s \\notin S _ { g }$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.367,
+            0.346,
+            0.407
+          ],
+          "content": "**for each** a in Applicable(s) **do**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.413,
+            0.367,
+            0.454
+          ],
+          "content": "Q (s, a) \\leftarrow \\mathrm{cost} (s, a) + h (\\gamma (s, a))",
+          "image_source": "images/page_2_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.111,
+            0.461,
+            0.259,
+            0.503
+          ],
+          "content": "h (s) \\leftarrow \\min _ {a} Q (s, a)",
+          "image_source": "images/page_2_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.11,
+            0.51,
+            0.265,
+            0.551
+          ],
+          "content": "a \\leftarrow \\operatorname{argmin} _ {a} Q (s, a)",
+          "image_source": "images/page_2_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.11,
+            0.563,
+            0.188,
+            0.593
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cdot a",
+          "image_source": "images/page_2_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.11,
+            0.605,
+            0.194,
+            0.645
+          ],
+          "content": "s \\leftarrow \\gamma (s, a)",
+          "image_source": "images/page_2_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.177,
+            0.842,
+            0.216
+          ],
+          "content": "● Assume the domain is safely explorable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.229,
+            0.836,
+            0.27
+          ],
+          "content": "▸ At every state s there is a path to $S _ { g }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.28,
+            0.939,
+            0.36
+          ],
+          "content": "● In each state $s ,   Q ( s , a )$ is the estimated cost of getting to $S _ { g }$ if we start with action a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.369,
+            0.782,
+            0.411
+          ],
+          "content": "● $\\mathsf { L R T A ^ { * } }$ finds a path from $s _ { 0 }$ to $S _ { g }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.42,
+            0.862,
+            0.462
+          ],
+          "content": "▸ Updates $h ( s )$ for every s along the path"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.471,
+            0.921,
+            0.553
+          ],
+          "content": "● Call it again, it finds another path, updates h along that path"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.563,
+            0.891,
+            0.604
+          ],
+          "content": "● After enough calls, it will find an optimal path"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.615,
+            0.784,
+            0.656
+          ],
+          "content": "▸ Along that path, $h ( s ) = h ^ { * } ( s )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.666,
+            0.76,
+            0.705
+          ],
+          "content": "▸ But not along other paths"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.769,
+            0.933,
+            0.846
+          ],
+          "content": "● Other algorithms to find a heuristic h that is close to $h ^ { * }$ at every state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.861,
+            0.754,
+            0.897
+          ],
+          "content": "▸ Based on value iteration"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.259,
+            0.065,
+            0.739,
+            0.124
+          ],
+          "level": 2,
+          "content": "4.2. Learning Action Specifications"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.187,
+            0.503,
+            0.226
+          ],
+          "content": "● Action trace: a triple (s, head(a), s′) such that $\\gamma ( s , a ) = s ^ { \\prime }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.238,
+            0.441,
+            0.36
+          ],
+          "content": "▸ $( \\{ \\mathsf { l o c } ( \\mathsf { r } 1 ) = \\mathsf { d } 3 , \\mathsf { c a r g o } ( \\mathsf { r } 1 ) = \\mathsf { r i } 1 , \\mathsf { l o c } ( \\mathsf { c } 1 ) = \\mathsf { d } 1 \\} ,$ $\\mathsf { m o v e } ( \\mathsf { r 1 } , \\mathsf { d 3 } , \\mathsf { d 1 } ) ,$ $\\{ \\mathsf { l o c } ( \\mathsf { r } 1 ) = \\mathsf { d } 1 , \\mathsf { c a r g o } ( \\mathsf { r } 1 ) = \\mathsf { r i l } , \\mathsf { l o c } ( \\mathsf { c } 1 ) = \\mathsf { d } 1 \\} )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.397,
+            0.337,
+            0.433
+          ],
+          "content": "Let Σ be a state-transition system,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.437,
+            0.391,
+            0.477
+          ],
+          "content": "$T _ { \\Sigma } = \\{ \\mathrm { a l l }$ possible action traces for $\\sum \\gamma$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.515,
+            0.325,
+            0.553
+          ],
+          "content": "● Action model learning problem:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.565,
+            0.373,
+            0.603
+          ],
+          "content": "▸ Given a set of action traces $T \\subseteq T _ { \\Sigma }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.617,
+            0.382,
+            0.655
+          ],
+          "content": "examples of what the actions do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.665,
+            0.498,
+            0.703
+          ],
+          "content": "▸ Create an action model $\\mathcal { A M } = ( X _ { } { s y m } , A _ { } { s y m } , S _ { } { c h e m a } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.719,
+            0.497,
+            0.798
+          ],
+          "content": "Xsym and Asym are sets of state-variable names and action names (without arguments)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.809,
+            0.463,
+            0.888
+          ],
+          "content": "Schema is a function that maps each action name α ∈ Asym into an action schema"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.185,
+            0.858,
+            0.223
+          ],
+          "content": "● AM defines a state-transition system $\\Sigma ^ { \\prime }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.238,
+            0.883,
+            0.279
+          ],
+          "content": "● Let $T _ { \\Sigma ^ { \\prime } } = \\{ \\mathrm { a l l }$ possible action traces for $\\Sigma ^ { \\prime } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.327,
+            0.743,
+            0.367
+          ],
+          "content": "● $\\mathcal { A } \\mathcal { M }$ is sound if $T _ { \\Sigma ^ { \\prime } } \\subseteq T _ { \\Sigma }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.566,
+            0.381,
+            0.937,
+            0.421
+          ],
+          "content": "▸ $T _ { \\Sigma ^ { \\prime } }$ doesn’t include any incorrect action traces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.429,
+            0.765,
+            0.469
+          ],
+          "content": "● AM is complete if $T _ { \\Sigma } \\subseteq T _ { \\Sigma ^ { \\prime } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.567,
+            0.483,
+            0.877,
+            0.523
+          ],
+          "content": "$T _ { \\Sigma ^ { \\prime } }$ includes every correct action trace"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.574,
+            0.816,
+            0.612
+          ],
+          "content": "● Three ways to get the traces in T:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.567,
+            0.625,
+            0.645,
+            0.661
+          ],
+          "content": "▸ offline"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.567,
+            0.677,
+            0.642,
+            0.712
+          ],
+          "content": "▸ online"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.567,
+            0.727,
+            0.786,
+            0.765
+          ],
+          "content": "▸ from “informative states”"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.993
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.334,
+            0.065,
+            0.665,
+            0.123
+          ],
+          "level": 2,
+          "content": "Three Kinds of Learning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.178,
+            0.21,
+            0.217
+          ],
+          "level": 2,
+          "content": "● Offline learning:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.229,
+            0.416,
+            0.267
+          ],
+          "content": "▸ Given a fixed set of action traces $T \\subseteq T _ { \\Sigma }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.281,
+            0.393,
+            0.32
+          ],
+          "content": "▸ Advantage: quick access to examples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.331,
+            0.45,
+            0.411
+          ],
+          "content": "Disadvantage: The examples might not show you conclusively what each action does"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.449,
+            0.466,
+            0.489
+          ],
+          "level": 2,
+          "content": "Online learning: learner generates T by acting in Σ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.5,
+            0.458,
+            0.62
+          ],
+          "content": "▸ Observe current state, choose action a, send it to the execution platform, see what state it produces, …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.631,
+            0.465,
+            0.711
+          ],
+          "content": "▸ Advantage: If you’re unsure what a does in the current state, you can try it and see"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.722,
+            0.466,
+            0.839
+          ],
+          "content": "▸ Disadvantage: Each action execution takes time. Collecting enough observations may take lots of time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.178,
+            0.796,
+            0.216
+          ],
+          "content": "● Learning from informative states:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.229,
+            0.864,
+            0.267
+          ],
+          "content": "▸ Suppose the learner has an oracle for Σ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.282,
+            0.767,
+            0.32
+          ],
+          "content": "• e.g., a quick simulator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.331,
+            0.93,
+            0.411
+          ],
+          "content": "Given (s,a), it either returns γ(s,a) or says that a isn’t applicable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.422,
+            0.926,
+            0.499
+          ],
+          "content": "▸ Advantage: Learner can try a in many different states until it’s sure what a does"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.514,
+            0.912,
+            0.591
+          ],
+          "content": "▸ Disadvantage: Not feasible unless you have a simulator that’s both fast and accurate"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.513,
+            0.643,
+            0.903,
+            0.721
+          ],
+          "level": 2,
+          "content": "In all three cases, observations give information about actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.737,
+            0.866,
+            0.775
+          ],
+          "content": "▸ To get action schemas, must generalize"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.787,
+            0.807,
+            0.825
+          ],
+          "content": "▸ Use techniques based on lifting"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.279,
+            0.065,
+            0.721,
+            0.119
+          ],
+          "level": 2,
+          "content": "Lifted Preconditions and Effects"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.385,
+            0.215
+          ],
+          "content": "● Recall what an action schema looks like"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.229,
+            0.28,
+            0.267
+          ],
+          "content": "▸ head: $n a m e ( z _ { 1 } ,   \\dots ,   z _ { n } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.281,
+            0.471,
+            0.359
+          ],
+          "content": "pre: atoms in which every object variable is one of $[ z _ { 1 } , \\dots , z _ { n }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.37,
+            0.483,
+            0.451
+          ],
+          "content": "eff: assignments in which every object variable is one of $[ z _ { 1 } , \\dots , z _ { n }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.503,
+            0.449,
+            0.541
+          ],
+          "content": "● Assume the action schemas contain no constants"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.551,
+            0.41,
+            0.591
+          ],
+          "content": "▸ Then the action schemas are fully lifted"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.604,
+            0.218,
+            0.643
+          ],
+          "content": "▸ In pre and eff,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.656,
+            0.481,
+            0.735
+          ],
+          "content": "• every state variable contains only $z _ { 1 } ,   . . . ,   z _ { n }   { \\mathfrak { a } } { \\mathfrak { s } }$ parameters"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.748,
+            0.484,
+            0.787
+          ],
+          "content": "• every state variable’s value is one of $[ z _ { 1 } , . . . , z _ { n }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.177,
+            0.924,
+            0.271
+          ],
+          "continues_prev": true,
+          "content": "● Suppose we’re given an action trace $( \\{ \\mathsf { l o c } ( \\mathsf { r } 1 ) = \\mathsf { d } 3 \\} , \\mathsf { m o v e } ( \\mathsf { r } 1 , \\mathsf { d } 3 , \\mathsf { d } 1 ) ,   \\{ \\mathsf { l o c } ( \\mathsf { r } 1 ) = \\mathsf { d } 1 \\} )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.28,
+            0.927,
+            0.359
+          ],
+          "content": "● We want to figure out the preconditions and effects of move $( z _ { 1 } , z _ { 2 } , z _ { 3 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.371,
+            0.837,
+            0.451
+          ],
+          "content": "● For pre and eff, consider atoms such as lo $\\mathtt { c } ( z _ { 1 } ) = z _ { 2 } ,   \\mathsf { I o c } ( z _ { 1 } ) = z _ { 3 }$"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.52,
+            0.617,
+            0.961,
+            0.846
+          ],
+          "sub_type": "code",
+          "content": "```txt\nThis restriction can exclude useful action schemas, e.g.\n    load(r, c, l)\n        pre: cargo(r)=nil, loc(c)=l, loc(r)=l\n        eff: cargo(r)←c, loc(c)←r\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.303,
+            0.065,
+            0.695,
+            0.124
+          ],
+          "level": 2,
+          "content": "Offline Learning (Basic Idea)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.177,
+            0.461,
+            0.216
+          ],
+          "content": "● Given $T \\subseteq T _ { \\Sigma } \\mathrm { ~ - ~ }$ a set of triples $( s , \\alpha ( \\mathbf { c } _ { 1 } , \\ldots , \\mathbf { c } _ { k } ) , s ^ { \\prime } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.255,
+            0.471,
+            0.294
+          ],
+          "content": "For each α, begin with action schema (head,pre,eff)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.307,
+            0.245,
+            0.345
+          ],
+          "content": "$h e a d = \\alpha ( z _ { 1 } { , } { \\cdots } { , } z _ { k } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.359,
+            0.458,
+            0.437
+          ],
+          "content": "▸ $p r e =$ {atoms of the form $x ( z ^ { \\prime } { } _ { 1 } , \\ldots , z ^ { \\prime } { } _ { n } ) = z ^ { \\prime } { } _ { n + 1 }$ where x ∈ Xsym and each ${ \\boldsymbol { z } } ^ { \\prime } { } _ { i }$ is one of $\\scriptstyle z _ { 1 } , \\ldots , z _ { k } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.447,
+            0.163,
+            0.486
+          ],
+          "content": "▸ $e f f = \\emptyset$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.499,
+            0.342,
+            0.537
+          ],
+          "content": "● **for** every $( s , \\alpha ( c _ { 1 } , . . . , c _ { k } ) , s ^ { \\prime } ) \\in T$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.551,
+            0.43,
+            0.667
+          ],
+          "content": "▸ **for** every atom $x ( z _ { 1 } ^ { \\prime } , \\ldots , z _ { n } ^ { \\prime } ) = z _ { n + 1 } ^ { \\prime }$ in pre $( \\alpha ( z _ { 1 } , { \\ldots } , z _ { k } ) )$ that doesn’t have a ground instance in s **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.683,
+            0.37,
+            0.721
+          ],
+          "content": "• remove it from $\\operatorname { p r e } ( \\alpha ( z _ { 1 } { , } { \\cdots } { , } z _ { k } ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.733,
+            0.433,
+            0.812
+          ],
+          "content": "▸ **for** every atom $x ( z _ { 1 } , \\ldots , z _ { n } ) = z _ { n + 1 }$ that has a ground instance in $s ^ { \\prime } \\setminus s$ **do**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.826,
+            0.432,
+            0.864
+          ],
+          "content": "• add $x ( z _ { 1 } , \\ldots , z _ { n } ) \\longleftarrow z _ { n + 1 }$ to $\\mathbf { e f f } ( \\alpha ( z _ { 1 } { , \\ldots , } z _ { k } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.177,
+            0.825,
+            0.214
+          ],
+          "content": "● Need to fill in some additional details"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.229,
+            0.872,
+            0.267
+          ],
+          "content": "● Can prove it produces a sound action model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.279,
+            0.633,
+            0.317
+          ],
+          "content": "▸ $T _ { \\Sigma ^ { \\prime } } \\subseteq T _ { \\Sigma }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.33,
+            0.943,
+            0.409
+          ],
+          "content": "● Completeness depends on whether T contains enough action traces"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.421,
+            0.937,
+            0.497
+          ],
+          "content": "● Can enhance the algorithm by allowing action traces of the form"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.514,
+            0.78,
+            0.553
+          ],
+          "content": "$( s , \\alpha ( \\mathbf { c } _ { 1 } { , \\ldots , } c _ { k } ) ,$ , inapplicable)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.615,
+            0.858,
+            0.655
+          ],
+          "content": "● As given, the algorithm is very inefficient"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.666,
+            0.924,
+            0.745
+          ],
+          "content": "▸ each action schema starts with huge number of preconditions, must remove most of them"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.759,
+            0.875,
+            0.795
+          ],
+          "content": "● Paolo will revise it to make it more efficient"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.349,
+            0.066,
+            0.65,
+            0.123
+          ],
+          "level": 2,
+          "content": "4.2.2 Online Learning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.191,
+            0.315,
+            0.233
+          ],
+          "level": 2,
+          "content": "● Learning actions by queries"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.247,
+            0.468,
+            0.287
+          ],
+          "content": "▸ Access to an oracle, e.g., a quick simulator"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.303,
+            0.255,
+            0.342
+          ],
+          "content": "▸ Informative state"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.357,
+            0.45,
+            0.441
+          ],
+          "content": "• A state s such that γ(s,a) will provide needed information about a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.457,
+            0.4,
+            0.497
+          ],
+          "content": "Generate queries about such states"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.513,
+            0.465,
+            0.598
+          ],
+          "content": "Can write an algorithm that is both correct and complete"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.513,
+            0.191,
+            0.729,
+            0.232
+          ],
+          "level": 2,
+          "content": "● Online action learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.247,
+            0.939,
+            0.377
+          ],
+          "content": "▸ Observe current state, choose action a, send it to the execution platform, see what state it produces, …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.545,
+            0.391,
+            0.882,
+            0.474
+          ],
+          "content": "▸ Try to generate plans that will lead to informative states"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "8"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 8,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

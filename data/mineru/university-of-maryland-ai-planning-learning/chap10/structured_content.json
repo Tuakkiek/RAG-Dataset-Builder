@@ -1,0 +1,3615 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 2:49 PM, March 12, 2025"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.33,
+            0.395,
+            0.67,
+            0.529
+          ],
+          "level": 2,
+          "content": "Chapter 10 Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.644,
+            0.567,
+            0.691
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.705,
+            0.613,
+            0.755
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.301
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.848,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.869,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.411,
+            0.066,
+            0.589,
+            0.119
+          ],
+          "level": 2,
+          "content": "Introduction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.184,
+            0.42,
+            0.226
+          ],
+          "content": "• Idea: agent interacts directly with the world"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.234,
+            0.42,
+            0.277
+          ],
+          "content": "▸ Improves performance by trial and error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.284,
+            0.426,
+            0.326
+          ],
+          "content": "▸ Might or might not have a domain model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.334,
+            0.284,
+            0.375
+          ],
+          "content": "• Requires a reward function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.384,
+            0.522,
+            0.427
+          ],
+          "content": "▸ r(s,a,s′) = reward for going from s to s′ with action a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.435,
+            0.17,
+            0.475
+          ],
+          "content": "• Agent tries to"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.483,
+            0.546,
+            0.525
+          ],
+          "content": "▸ remember which states/actions led to good/bad rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.058,
+            0.535,
+            0.171,
+            0.577
+          ],
+          "content": "▸ generalize"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.583,
+            0.522,
+            0.626
+          ],
+          "content": "▸ maximize long-term perceived benefits of its actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.027,
+            0.634,
+            0.245,
+            0.675
+          ],
+          "content": "• Simple RL: no teacher"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.177,
+            0.384,
+            0.22
+          ],
+          "content": "● Estimate $V ^ { * }$ or $Q ^ { * }$ by trial and error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.264,
+            0.163,
+            0.305
+          ],
+          "content": "● Example:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.319,
+            0.357,
+            0.362
+          ],
+          "content": "▸ Three paella recipes $a _ { 1 } ,   a _ { 2 } ,   a _ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.375,
+            0.348,
+            0.418
+          ],
+          "content": "▸ Rewards = ratings by guests"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.053,
+            0.455,
+            0.344,
+            0.717
+          ],
+          "content": "| recipe | trial 1 | trial 2 | trial 3 |\n| --- | --- | --- | --- |\n| $a_1$ | 7.2 |  |  |\n| $a_2$ | 5.4 | 8 | 7.6 |\n| $a_3$ | 6.8 |  |  |\n| $a_2$ avg | 5.4 | 6.7 | 7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.39,
+            0.065,
+            0.609,
+            0.118
+          ],
+          "level": 2,
+          "content": "Value-Based RL"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.166,
+            0.838,
+            0.208
+          ],
+          "content": "● $r ( a , i ) =$ reward for running a the i’th time"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.486,
+            0.211,
+            0.649,
+            0.309
+          ],
+          "content": "Q _ {k} (a) = \\frac {1}{k} \\sum_ {i = 1} ^ {k} r (a, i)",
+          "image_source": "images/page_2_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.466,
+            0.321,
+            0.958,
+            0.68
+          ],
+          "content": "\\begin{array}{r l} & Q _ {k + 1} (a) = \\frac {1}{k + 1} [ r (a, k + 1) + \\sum_ {i = 1} ^ {k} r (a, i) ] \\\\ & \\qquad = \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) - (k + 1) Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) - Q _ {k} (a) \\end{array}",
+          "image_source": "images/page_2_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.721,
+            0.852,
+            0.765
+          ],
+          "content": "● Update rule: $Q(a) \\leftarrow Q(a) + \\alpha \\left( r(a) - Q(a) \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.493,
+            0.777,
+            0.748,
+            0.819
+          ],
+          "content": "▸ $\\alpha = 1 / ( k + 1 ) = l e a r n i n g \\; r a t e$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.462,
+            0.833,
+            0.773,
+            0.876
+          ],
+          "content": "● Begin with initial value $Q ( a )   =   q _ { 0 }$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.065,
+            0.61,
+            0.119
+          ],
+          "level": 2,
+          "content": "Value-Based RLQk(a) = Â r(a,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.177,
+            0.385,
+            0.22
+          ],
+          "content": "● Estimate $V ^ { * }$ or $Q ^ { * }$ by trial and error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.234,
+            0.164,
+            0.275
+          ],
+          "content": "● Example:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.289,
+            0.357,
+            0.333
+          ],
+          "content": "▸ Three paella recipes $a _ { 1 } ,   a _ { 2 } ,   a _ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.344,
+            0.349,
+            0.389
+          ],
+          "content": "▸ Rewards = ratings by guests"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.431,
+            0.163,
+            0.955,
+            0.544
+          ],
+          "content": "\\begin{array}{r l} & Q _ {k + 1} (a) = \\frac {1}{k + 1} [ r (a, k + 1) + \\sum_ {i = 1} ^ {k} r (a, i) ] \\\\ & \\qquad = \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) - (k + 1) Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) - Q _ {k} (a) \\end{array}",
+          "image_source": "images/page_3_equation_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.052,
+            0.427,
+            0.346,
+            0.699
+          ],
+          "content": "| recipe | trial 1 | trial 2 | trial 3 |\n| --- | --- | --- | --- |\n| $a_1$ | 7.2 |  |  |\n| $a_2$ | 5.4 | 8 | 7.6 |\n| $a_3$ | 6.8 |  |  |\n| $a_2$ avg | 5.4 | 6.7 | 7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.752,
+            0.356,
+            0.836
+          ],
+          "content": "● Let r(a,i) = reward for running a the i’th time"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.076,
+            0.847,
+            0.249,
+            0.952
+          ],
+          "content": "Q _ {k} (a) = \\frac {1}{k} \\sum_ {i = 1} ^ {k} r (a, i)",
+          "image_source": "images/page_3_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.414,
+            0.595,
+            0.718,
+            0.639
+          ],
+          "content": "● Temporal difference update rule:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.445,
+            0.648,
+            0.724,
+            0.697
+          ],
+          "content": "▸ Q(a) ← Q(a) + α (r(a) – Q(a))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.449,
+            0.707,
+            0.615,
+            0.75
+          ],
+          "content": "▸ α = learning rate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.415,
+            0.791,
+            0.617,
+            0.831
+          ],
+          "content": "● Which a to run next:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.844,
+            0.759,
+            0.948
+          ],
+          "content": "$\\operatorname { a r g m a x } _ { a } Q ( a )$ with probability 1 – ε other random with probability ε"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.777,
+            0.588,
+            0.964,
+            0.68
+          ],
+          "content": "**Poll**: What to use for α? A. $1 / ( k   +   1 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.779,
+            0.687,
+            0.951,
+            0.767
+          ],
+          "content": "B. any monotonically decreasing $f ( k ) > 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.773,
+            0.931,
+            0.815
+          ],
+          "content": "C. any constant > 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.82,
+            0.933,
+            0.861
+          ],
+          "content": "D. any of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.778,
+            0.868,
+            0.892,
+            0.907
+          ],
+          "content": "E. don’t know"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)[1](https://projects.laas.fr/planning/)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.389,
+            0.065,
+            0.61,
+            0.119
+          ],
+          "level": 2,
+          "content": "Value-Based RLQk(a) = Â r(a,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.177,
+            0.376,
+            0.221
+          ],
+          "content": "● Estimate V and Q by trial and error"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.234,
+            0.164,
+            0.275
+          ],
+          "content": "● Example:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.289,
+            0.357,
+            0.333
+          ],
+          "content": "▸ Three paella recipes $a _ { 1 } ,   a _ { 2 } ,   a _ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.344,
+            0.349,
+            0.389
+          ],
+          "content": "▸ Rewards = ratings by guests"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.052,
+            0.427,
+            0.346,
+            0.699
+          ],
+          "content": "| recipe | trial 1 | trial 2 | trial 3 |\n| --- | --- | --- | --- |\n| $a_1$ | 7.2 |  |  |\n| $a_2$ | 5.4 | 8 | 7.6 |\n| $a_3$ | 6.8 |  |  |\n| $a_2$ avg | 5.4 | 6.7 | 7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.431,
+            0.163,
+            0.956,
+            0.544
+          ],
+          "content": "\\begin{array}{r l} & Q _ {k + 1} (a) = \\frac {1}{k + 1} [ r (a, k + 1) + \\sum_ {i = 1} ^ {k} r (a, i) ] \\\\ & \\qquad = \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) + k Q _ {k} (a) - (k + 1) Q _ {k} (a) ] \\\\ & \\qquad = Q _ {k} (a) + \\frac {1}{k + 1} [ r (a, k + 1) - Q _ {k} (a) \\end{array}",
+          "image_source": "images/page_4_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.752,
+            0.356,
+            0.836
+          ],
+          "content": "● Let r(a,i) = reward for running a the i’th time"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.076,
+            0.847,
+            0.25,
+            0.952
+          ],
+          "content": "Q _ {k} (a) = \\frac {1}{k} \\sum_ {i = 1} ^ {k} r (a, i)",
+          "image_source": "images/page_4_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.414,
+            0.595,
+            0.718,
+            0.639
+          ],
+          "content": "● Temporal difference update rule:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.445,
+            0.648,
+            0.723,
+            0.697
+          ],
+          "content": "▸ Q(a) ← Q(a) + α (r(a) – Q(a))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.446,
+            0.706,
+            0.617,
+            0.751
+          ],
+          "content": "▸ α = learning rate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.415,
+            0.791,
+            0.759,
+            0.948
+          ],
+          "content": "● Which a to run next: argmaxa $, Q ( a ) ^ { < }$ with probability 1 – ε other random with probability ε"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.753,
+            0.6,
+            0.99,
+            0.684
+          ],
+          "content": "**Poll**: What to use for Q(a) here if a hasn’t been tried yet?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.691,
+            0.978,
+            0.732
+          ],
+          "content": "A. ∞ B. max possible r"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.762,
+            0.737,
+            0.978,
+            0.78
+          ],
+          "content": "C. 0 D. anything > – ∞"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.763,
+            0.785,
+            0.949,
+            0.825
+          ],
+          "content": "E. other F. don’t know"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)[1](https://projects.laas.fr/planning/)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.424,
+            0.065,
+            0.576,
+            0.125
+          ],
+          "level": 2,
+          "content": "Q-learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.165,
+            0.399,
+            0.203
+          ],
+          "content": "● Consider an MDP in which we don’t know γ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.217,
+            0.331,
+            0.256
+          ],
+          "content": "● Adapt temporal-difference learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.268,
+            0.4,
+            0.306
+          ],
+          "content": "▸ Modified MDP model: maximize reward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.359,
+            0.183,
+            0.395
+          ],
+          "content": "● Same as before:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.409,
+            0.249,
+            0.448
+          ],
+          "content": "▸ Σ = (S, A, γ, Pr, cost)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.461,
+            0.387,
+            0.542
+          ],
+          "content": "γ(s,a) = {all possible “next states” after applying action a in state s}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.551,
+            0.417,
+            0.591
+          ],
+          "content": "▸ Pr(s′ | s, a) = probability that a takes us to s′"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.601,
+            0.325,
+            0.642
+          ],
+          "content": "• $\\Pr(s' \\mid s, a) \\neq 0   if   s' \\in \\gamma(s, a)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.695,
+            0.295,
+            0.732
+          ],
+          "content": "● Instead of cost(s,a,s′), we have"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.747,
+            0.405,
+            0.784
+          ],
+          "content": "▸ r(s,a,s′) = reward if a takes us to s′ from s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.797,
+            0.302,
+            0.835
+          ],
+          "content": "● Want a policy π that maximizes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.848,
+            0.349,
+            0.889
+          ],
+          "content": "▸ E(reward for getting from s0 to $S _ { g } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.482,
+            0.165,
+            0.628,
+            0.201
+          ],
+          "content": "● Value function:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.215,
+            0.976,
+            0.258
+          ],
+          "content": "▸ was $\\begin{array} { r } { V ^ { \\pi } ( s ) = \\sum _ { s ^ { \\prime } \\in \\gamma ( s , \\pi ( s ) ) } \\operatorname* { P r } ( s ^ { \\prime }   |   s , \\pi ( s ) ) [ \\cos ( s , \\pi ( s ) , s ^ { \\prime } ) + V ^ { \\pi } ( s ^ { \\prime } ) ] } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.267,
+            0.958,
+            0.311
+          ],
+          "content": "▸ now $\\begin{array} { r } { V ^ { \\pi } ( s ) = \\sum _ { s ^ { \\prime }   \\in   \\gamma ( s , \\pi ( s ) ) } \\operatorname* { P r } ( s ^ { \\prime }   |   s , \\pi ( s ) ) [ r ( s , \\pi ( s ) ,   s ^ { \\prime } )   +   V ^ { \\pi } ( s ^ { \\prime } ) ] } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.482,
+            0.359,
+            0.636,
+            0.397
+          ],
+          "content": "● Bellman-update:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.407,
+            0.939,
+            0.451
+          ],
+          "content": "▸ was $\\begin{array} { r } { Q ( s , a ) \\gets \\sum _ { s ^ { \\prime } \\in \\mathbb { Y } ( s , a ) } \\operatorname* { P r } \\left( s ^ { \\prime } | s , a \\right) \\left[ \\operatorname { c o s t } ( s , a , s ^ { \\prime } ) + V ( s ^ { \\prime } ) \\right] } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.594,
+            0.46,
+            0.821,
+            0.501
+          ],
+          "content": "• where $V(s') = \\min_{a} Q(s', a)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.511,
+            0.919,
+            0.555
+          ],
+          "content": "▸ now $\\begin{array} { r } { \\mathcal { Q } ( s ,   a ) \\leftarrow \\sum _ { s ^ { \\prime } \\in \\gamma ( s , a ) } \\mathrm { P r } \\left( s ^ { \\prime } | s ,   a \\right)   [ r ( s ,   a ,   s ^ { \\prime } ) +   V ( s ^ { \\prime } ) ] } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.594,
+            0.563,
+            0.823,
+            0.603
+          ],
+          "content": "• where $V(s') = \\max_{a} Q(s', a)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.481,
+            0.654,
+            0.76,
+            0.693
+          ],
+          "content": "Temporal-difference update rule:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.705,
+            0.765,
+            0.746
+          ],
+          "content": "▸ $Q(a) \\leftarrow Q(a) + a \\left( r(a) - Q(a) \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.481,
+            0.757,
+            0.806,
+            0.795
+          ],
+          "content": "● Temporal-difference update for MDPs:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.531,
+            0.807,
+            0.885,
+            0.847
+          ],
+          "content": "Q (s, a) \\leftarrow Q (s, a) + \\alpha \\left(r (s, a, s ^ {\\prime}) + V (s ^ {\\prime}) - Q (s, a)\\right)",
+          "image_source": "images/page_5_equation_24.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.483,
+            0.859,
+            0.612,
+            0.898
+          ],
+          "content": "● Equivalently:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.532,
+            0.908,
+            0.95,
+            0.95
+          ],
+          "content": "Q (s, a) \\leftarrow Q (s, a) + \\alpha \\left(r (s, a, s ^ {\\prime}) + \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) - Q (s, a)\\right)",
+          "image_source": "images/page_5_equation_26.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.424,
+            0.065,
+            0.576,
+            0.125
+          ],
+          "level": 2,
+          "content": "Q-learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.164,
+            0.399,
+            0.204
+          ],
+          "content": "● Consider an MDP in which we don’t know γ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.216,
+            0.331,
+            0.257
+          ],
+          "content": "● Adapt temporal-difference learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.267,
+            0.4,
+            0.307
+          ],
+          "content": "▸ Modified MDP model: maximize reward"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.427,
+            0.354,
+            0.473
+          ],
+          "content": "<u>From previous slide</u>"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.438,
+            0.169,
+            0.996,
+            0.517
+          ],
+          "sub_type": "code",
+          "content": "```python\nQ-learning\n    initialize Q and a starting state s\n    until Termination do\n        a ← Select(s)\n        perform action a\n        observe resulting state s' and reward r(s, a, s')\n        Q(s, a) ← Q(s, a) + α[r(s, a, s') + max_{a'}{Q(s', a')} - Q(s, a)]\n        s ← s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.619,
+            0.609,
+            0.823,
+            0.655
+          ],
+          "content": "**Poll**. Is line 2 practical?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.619,
+            0.665,
+            0.906,
+            0.709
+          ],
+          "content": "A. Yes B. No C. don’t know"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.424,
+            0.065,
+            0.576,
+            0.125
+          ],
+          "level": 2,
+          "content": "Q-learning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.034,
+            0.179,
+            0.232,
+            0.22
+          ],
+          "level": 2,
+          "content": "● Learn in two stages:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.232,
+            0.349,
+            0.277
+          ],
+          "content": "1. Learn from simulated acting:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.288,
+            0.384,
+            0.378
+          ],
+          "content": "• Replace lines 2, 3 with (s′, r(s,a,s′)) ← Simulate(a,s)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.387,
+            0.349,
+            0.432
+          ],
+          "content": "2. Learn from real-world acting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.443,
+            0.317,
+            0.487
+          ],
+          "content": "• Use lines 2, 3 as shown"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.16,
+            0.55,
+            0.461,
+            0.66
+          ],
+          "sub_type": "code",
+          "content": "```txt\nPoll. Is Stage 2 needed?\nA. Yes    B. No    C. don’t know\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.437,
+            0.167,
+            0.996,
+            0.518
+          ],
+          "sub_type": "algorithm",
+          "content": "Q-learning\n    initialize Q and a starting state s\n    until Termination do\n        $a \\leftarrow \\text{Select}(s)$\n        perform action $a$\n        observe resulting state $s'$ and reward $r(s, a, s')$\n        $Q(s, a) \\leftarrow Q(s, a) + \\alpha[r(s, a, s') + \\max_{a'} \\{Q(s', a')\\} - Q(s, a)]$\n        $s \\leftarrow s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.517,
+            0.717,
+            0.802,
+            0.808
+          ],
+          "content": "**Poll**. Is it practical to store Q(s,a) for every s and a?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.358,
+            0.066,
+            0.642,
+            0.123
+          ],
+          "level": 2,
+          "content": "Parametric Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.178,
+            0.361,
+            0.221
+          ],
+          "content": "● Input: a set of numeric $( x , y )$ pairs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.23,
+            0.353,
+            0.274
+          ],
+          "content": "▸ $\\mathcal { D } = \\{ ( x ^ { ( i ) } , y ^ { ( i ) } ) \\mid i = 1 , . . . , N \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.289,
+            0.289,
+            0.331
+          ],
+          "content": "● Parametric function $f _ { \\boldsymbol { \\theta } } ( \\boldsymbol { x } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.345,
+            0.369,
+            0.387
+          ],
+          "content": "▸ θ is a parameter that changes f"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.398,
+            0.486,
+            0.444
+          ],
+          "content": "▸ adjust θ to try to make $f _ { \\theta } ( x ^ { ( i ) } )   \\approx   y ^ { ( i ) }$ for each i"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.5,
+            0.312,
+            0.543
+          ],
+          "content": "● Example: linear regression"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.554,
+            0.241,
+            0.601
+          ],
+          "content": "f _ {\\theta} (x) = \\theta_ {0} + \\theta_ {1} x",
+          "image_source": "images/page_8_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.609,
+            0.204,
+            0.655
+          ],
+          "content": "▸ $\\pmb { \\theta } = ( \\theta _ { 0 } ,   \\theta _ { 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.667,
+            0.279,
+            0.707
+          ],
+          "content": "● Empirical loss function"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.103,
+            0.718,
+            0.399,
+            0.942
+          ],
+          "content": "\\begin{array}{c} L o s s = \\frac {1}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} (f _ {\\theta} (x) - y) ^ {2} \\\\ = \\frac {1}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} (\\theta_ {0} + \\theta_ {1} x - y) ^ {2} \\end{array}",
+          "image_source": "images/page_8_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.532,
+            0.177,
+            0.928,
+            0.218
+          ],
+          "content": "● Loss is minimized when both of these are 0:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.573,
+            0.237,
+            0.875,
+            0.345
+          ],
+          "content": "\\frac {\\partial \\text {Loss}}{\\partial \\theta_ {0}} = \\frac {2}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} (\\theta_ {0} + \\theta_ {1} x - y)",
+          "image_source": "images/page_8_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.574,
+            0.354,
+            0.888,
+            0.463
+          ],
+          "content": "\\frac {\\partial \\text {Loss}}{\\partial \\theta_ {1}} = \\frac {2}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} x (\\theta_ {0} + \\theta_ {1} x - y)",
+          "image_source": "images/page_8_equation_13.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.583,
+            0.51,
+            0.901,
+            0.966
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_chart_14.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.312,
+            0.053,
+            0.687,
+            0.111
+          ],
+          "level": 2,
+          "content": "Linear Regression Example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.143,
+            0.463,
+            0.242
+          ],
+          "content": "Example: (seafood,rice) proportions in paella ▸ D = {(150,300), (300,400), (450,700)}"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.084,
+            0.265,
+            0.432,
+            0.587
+          ],
+          "content": "\\begin{array}{l} \\frac {\\partial L o s s}{\\partial \\theta_ {0}} = \\frac {2}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} (\\theta_ {0} + \\theta_ {1} x - y) \\\\ \\qquad = (2 / 3) [ (\\theta 0 + 1 5 0 \\theta 1 - 3 0 0) \\\\ \\qquad \\qquad + (\\theta 0 + 3 0 0 \\theta 1 - 4 0 0) \\\\ \\qquad \\qquad + (\\theta 0 + 4 5 0 \\theta 1 - 7 0 0) ] \\\\ \\qquad = (2 / 3) [ 3 \\theta 0 + 9 0 0 \\theta 1 - 1 4 0 0 ] \\end{array}",
+          "image_source": "images/page_9_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.085,
+            0.613,
+            0.507,
+            0.927
+          ],
+          "content": "\\begin{array}{l} \\frac {\\partial L o s s}{\\partial \\theta_ {1}} = \\frac {2}{| \\mathcal {D} |} \\sum_ {(x, y) \\in \\mathcal {D}} x (\\theta_ {0} + \\theta_ {1} x - y) \\\\ \\qquad = (2 / 3) [ 1 5 0 (\\theta 0 + 1 5 0 \\theta 1 - 3 0 0) \\\\ \\qquad \\qquad + 3 0 0 (\\theta 0 + 3 0 0 \\theta 1 - 4 0 0) \\\\ \\qquad \\qquad + 4 5 0 (\\theta 0 + 4 5 0 \\theta 1 - 7 0 0) ] \\\\ \\qquad = (2 / 3) [ 9 0 0 \\theta 0 + 3 1 5, 0 0 0 \\theta 1 - 4 8 0, 0 0 0 ] \\end{array}",
+          "image_source": "images/page_9_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.144,
+            0.597,
+            0.182
+          ],
+          "content": "● Solve:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.651,
+            0.197,
+            0.86,
+            0.243
+          ],
+          "content": "3 \\theta_ {0} + 9 0 0 \\theta_ {1} - 1 4 0 0 = 0",
+          "image_source": "images/page_9_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.567,
+            0.251,
+            0.861,
+            0.299
+          ],
+          "content": "9 0 0 \\theta_ {0} + 3 1 5, 0 0 0 \\theta_ {1} - 4 8 0, 0 0 0 = 0",
+          "image_source": "images/page_9_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.311,
+            0.614,
+            0.349
+          ],
+          "content": "● Answer:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.59,
+            0.363,
+            0.745,
+            0.409
+          ],
+          "content": "\\theta_ {0} = 2 0 0 / 3 \\approx 6 6. 6",
+          "image_source": "images/page_9_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.589,
+            0.419,
+            0.724,
+            0.464
+          ],
+          "content": "\\theta_ {1} = 4 / 3 \\approx 1. 3 3",
+          "image_source": "images/page_9_equation_9.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.515,
+            0.473,
+            0.914,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_chart_10.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.279,
+            0.065,
+            0.72,
+            0.123
+          ],
+          "level": 2,
+          "content": "Multivariable Linear Regression"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.174,
+            0.326,
+            0.219
+          ],
+          "content": "● $\\mathcal { D } = \\{ ( \\mathbf { x } ^ { ( i ) } , y ^ { ( i ) } ) \\mid i = 1 , . . . , N \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.236,
+            0.442,
+            0.279
+          ],
+          "content": "▸ Each $\\mathbf { X } ^ { ( i ) }$ is a column vector $[ x _ { 1 } ,   \\ldots ,   x _ { n } ] ^ { \\top }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.295,
+            0.362,
+            0.339
+          ],
+          "content": "● 𝜽 is a column vector $[ \\theta _ { 0 } ,   \\ldots ,   \\theta _ { n } ] ^ { \\top }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.355,
+            0.297,
+            0.403
+          ],
+          "content": "▸ $\\begin{array} { r } { f _ { \\boldsymbol { \\theta } } \\left( \\mathbf { x } \\right) = \\theta _ { 0 } + \\sum _ { 1 \\leq j \\leq n } \\theta _ { j } x _ { j } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.414,
+            0.307,
+            0.457
+          ],
+          "content": "● Extend $\\mathbf { x } \\; \\mathrm { t o } \\; [ x _ { 0 } , x _ { 1 } , . . . , x _ { n } ] ^ { \\top }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.471,
+            0.303,
+            0.515
+          ],
+          "content": "▸ $x _ { 0 } = 1 { \\mathrm { ~ f o r ~ e v e r y ~ } } \\mathbf { x } \\in { \\mathcal { D } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.531,
+            0.319,
+            0.581
+          ],
+          "content": "▸ $\\begin{array} { r } { f _ { \\pmb { \\theta } } \\left( \\mathbf { x } \\right) = \\sum _ { 0 \\leq j \\leq n } \\theta _ { j } x _ { j } = \\pmb { \\theta } \\cdot \\mathbf { x } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.589,
+            0.393,
+            0.637
+          ],
+          "content": "▸ $\\begin{array} { r } { L o s s = ( 1 / | \\mathcal { D } | ) \\sum _ { ( \\mathbf { x } , y ) \\in \\mathcal { D } } { ( \\pmb { \\theta } \\cdot \\mathbf { x } - y ) ^ { 2 } } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.652,
+            0.241,
+            0.691
+          ],
+          "content": "● Partial derivatives:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.708,
+            0.403,
+            0.755
+          ],
+          "content": "▸ ∂Loss/∂𝜃j = (2/|D|) ∑ j (θ · x – y) xj"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.769,
+            0.417,
+            0.813
+          ],
+          "content": "▸ $\\nabla L o s s = [ \\hat { c } L o s s / \\hat { c } \\theta _ { 1 } , \\ldots , \\hat { c } L o s s / \\hat { c } \\theta _ { n } ] ^ { \\top }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.829,
+            0.417,
+            0.872
+          ],
+          "content": "● Can solve analytically to minimize Loss"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.889,
+            0.326,
+            0.931
+          ],
+          "content": "▸ but it’s more complicated"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.515,
+            0.172,
+            0.878,
+            0.219
+          ],
+          "content": "GradientDescent( $( \\{ ( \\mathbf { x } ^ { ( i ) } , y ^ { ( i ) } ) \\mid 1 \\leq i \\leq N \\} )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.223,
+            0.724,
+            0.262
+          ],
+          "content": "until convergence do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.571,
+            0.266,
+            0.76,
+            0.308
+          ],
+          "content": "foreach $0 \\leq j \\leq n$ do"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.595,
+            0.307,
+            0.939,
+            0.369
+          ],
+          "content": "\\theta_ {j} \\leftarrow \\theta_ {j} - \\alpha \\sum_ {1 \\leq i \\leq N} (\\boldsymbol {\\theta} \\cdot \\mathbf {x} ^ {(i)} - y ^ {(i)}) x _ {j} ^ {(i)}",
+          "image_source": "images/page_10_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.427,
+            0.821,
+            0.468
+          ],
+          "content": "● In each iteration of the outer loop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.485,
+            0.92,
+            0.531
+          ],
+          "content": "▸ Move each $\\theta _ { j }$ in the direction of ∂Loss/∂𝜃<sub>j</sub>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.544,
+            0.877,
+            0.589
+          ],
+          "content": "▸ How far depends on ∂Loss/∂𝜃<sub>j</sub> and α"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.604,
+            0.914,
+            0.649
+          ],
+          "content": "● Stop when each θ stops changing very much"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.512,
+            0.663,
+            0.84,
+            0.705
+          ],
+          "content": "● Two ways to call GradientDescent:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.721,
+            0.802,
+            0.763
+          ],
+          "content": "▸ Batch: argument is all of D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.78,
+            0.938,
+            0.822
+          ],
+          "content": "▸ Stochastic: argument is random subset of D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.841,
+            0.79,
+            0.884
+          ],
+          "content": "● Can generalize to nonlinear $f _ { \\theta }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.544,
+            0.901,
+            0.833,
+            0.944
+          ],
+          "content": "▸ update rule $\\theta \\leftarrow \\theta - \\alpha \\nabla L o s s ( f _ { \\theta } )$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.25,
+            0.065,
+            0.748,
+            0.124
+          ],
+          "level": 2,
+          "content": "Parametric Q-Learning (Motivation)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.179,
+            0.193,
+            0.217
+          ],
+          "level": 2,
+          "content": "● From before:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.067,
+            0.231,
+            0.492,
+            0.665
+          ],
+          "sub_type": "algorithm",
+          "content": "Q-learning\n    initialize Q and a starting state s\n    until Termination do\n        $a \\leftarrow \\text{Select}(s) \\quad // selects a \\in Applicable(s)$\n        perform action $a$\n        observe resulting state $s'$, reward $r(s, a, s')$\n        $Q(s, a) \\leftarrow Q(s, a) + \\alpha[r(s, a, s') + \\max_{a'} \\{Q(s', a')\\} - Q(s, a)]$\n        $s \\leftarrow s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.222,
+            0.785,
+            0.263
+          ],
+          "content": "● Problems with Q-learning:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.565,
+            0.277,
+            0.867,
+            0.321
+          ],
+          "content": "▸ Need a large table to store $\\mathcal { Q } ( s , a )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.566,
+            0.333,
+            0.895,
+            0.376
+          ],
+          "content": "▸ Doesn’t generalize to new situations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.432,
+            0.886,
+            0.521
+          ],
+          "content": "● Idea: develop a parameterized formula $Q _ { \\theta } ( s , a ) \\approx Q ( s , a )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.566,
+            0.532,
+            0.904,
+            0.617
+          ],
+          "content": "▸ Adjust θ to make $Q _ { \\theta } ( s , a )$ fit observed rewards"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.567,
+            0.633,
+            0.767,
+            0.675
+          ],
+          "content": "▸ Use gradient descent"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.052,
+            0.828,
+            0.338,
+            0.933
+          ],
+          "sub_type": "algorithm",
+          "content": "Poll. Should this be $-2\\alpha$ instead? A. Yes B. No C. don't know",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.16,
+            0.065,
+            0.477,
+            0.125
+          ],
+          "level": 2,
+          "content": "Parametric Q-Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.227,
+            0.334,
+            0.272
+          ],
+          "content": "● Use gradient descent to learn $Q _ { \\theta }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.058,
+            0.323,
+            0.478,
+            0.373
+          ],
+          "content": "L o s s = \\left[ r (s, a, s ^ {\\prime}) + \\max _ {a ^ {\\prime}} \\{Q _ {\\boldsymbol {\\theta}} (s ^ {\\prime}, a ^ {\\prime}) \\} - Q _ {\\boldsymbol {\\theta}} (s, a) \\right] ^ {2}",
+          "image_source": "images/page_12_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.045,
+            0.41,
+            0.483,
+            0.569
+          ],
+          "content": "\\begin{array}{c} \\frac {\\partial L o s s}{\\partial \\theta_ {j}} = - 2 [ r (s, a, s ^ {\\prime}) + \\\\ \\max _ {a ^ {\\prime}} \\{Q _ {\\boldsymbol {\\theta}} (s ^ {\\prime}, a ^ {\\prime}) \\} - Q _ {\\boldsymbol {\\theta}} (s, a) ] \\frac {\\partial Q _ {\\boldsymbol {\\theta}} (s , a)}{\\partial \\theta_ {j}} \\end{array}",
+          "image_source": "images/page_12_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.043,
+            0.589,
+            0.146,
+            0.63
+          ],
+          "content": "Update rule:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.045,
+            0.655,
+            0.483,
+            0.814
+          ],
+          "content": "\\begin{array}{l} \\theta_ {j} \\leftarrow \\theta_ {j} + \\alpha [ r (s, a, s ^ {\\prime}) + \\\\ \\uparrow \\max _ {a ^ {\\prime}} \\{Q _ {\\theta} (s ^ {\\prime}, a ^ {\\prime}) \\} - Q _ {\\theta} (s, a) ] \\frac {\\partial Q _ {\\theta} (s , a)}{\\partial \\theta_ {j}} \\end{array}",
+          "image_source": "images/page_12_equation_6.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.544,
+            0.037,
+            0.964,
+            0.469
+          ],
+          "sub_type": "algorithm",
+          "content": "Q-learning\n    initialize Q and a starting state s\n    until Termination do\n        $a \\leftarrow \\text{Select}(s) \\quad // selects a \\in Applicable(s)$\n        perform action $a$\n        observe resulting state $s'$, reward $r(s, a, s')$\n        $Q(s, a) \\leftarrow Q(s, a) + \\alpha[r(s, a, s') + \\max_{a'} \\{Q(s', a')\\} - Q(s, a)]$\n        $s \\leftarrow s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.544,
+            0.489,
+            0.982,
+            0.979
+          ],
+          "sub_type": "code",
+          "content": "```python\nQ-learning\n    initialize θ and a starting state s\n    until Termination do\n        a ← Select(s)\n        perform action a\n        observe resulting state s' and reward r(s, a, s')\n        forall parameters θj do\n            θj ← θj + α[r(s, a, s') +\n                maxa' {Qθ(s', a')} - Qθ(s, a)] ∂Qθ(s, a)/∂θj\n        s ← s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.993,
+            0.995
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.342,
+            0.063,
+            0.657,
+            0.121
+          ],
+          "level": 2,
+          "content": "McCulloch-Pitts “unit”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.214,
+            0.162,
+            0.439,
+            0.253
+          ],
+          "content": "Apply activation function to weighted sum of inputs"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.031,
+            0.147,
+            0.559,
+            0.51
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.551,
+            0.331,
+            0.595
+          ],
+          "content": "● Simple mathematical model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.607,
+            0.448,
+            0.652
+          ],
+          "content": "▸ Inspired by neurons, but much simpler"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.663,
+            0.526,
+            0.708
+          ],
+          "content": "● Output of unit j depends on weighted sum of inputs"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.098,
+            0.716,
+            0.289,
+            0.841
+          ],
+          "content": "\\mathbf {\\Delta} \\cdot \\mathbf {W} = \\left[ \\begin{array}{c} w _ {0, j} \\\\ \\vdots \\\\ w _ {n, j} \\end{array} \\right], \\mathbf {X} = \\left[ \\begin{array}{c} a _ {0} \\\\ \\vdots \\\\ a _ {n} \\end{array} \\right]",
+          "image_source": "images/page_13_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.099,
+            0.873,
+            0.3,
+            0.923
+          ],
+          "content": "\\triangleright i n _ {j} = \\sum_ {i} w _ {i, j} a _ {i} = \\mathbf {w} ^ {\\top} \\mathbf {x}",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.617,
+            0.171,
+            0.797,
+            0.22
+          ],
+          "content": "● Output: $a _ { j }   =   g ( i n _ { j } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.617,
+            0.258,
+            0.826,
+            0.301
+          ],
+          "content": "● g: activation function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.648,
+            0.312,
+            0.799,
+            0.356
+          ],
+          "content": "▸ nondecreasing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.648,
+            0.367,
+            0.944,
+            0.413
+          ],
+          "content": "▸ usually positive, often nonlinear"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.649,
+            0.425,
+            0.855,
+            0.469
+          ],
+          "content": "▸ e.g., logistic (sigmoid):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.672,
+            0.477,
+            0.798,
+            0.521
+          ],
+          "content": "g (z) = 1 / (1 + e ^ {- z})",
+          "image_source": "images/page_13_equation_13.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.585,
+            0.574,
+            0.919,
+            0.958
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_14.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.394,
+            0.066,
+            0.606,
+            0.123
+          ],
+          "level": 2,
+          "content": "Expressiveness"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.126,
+            0.209,
+            0.462,
+            0.555
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_chart_1.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.565,
+            0.217,
+            0.899,
+            0.554
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_chart_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.617,
+            0.821,
+            0.717
+          ],
+          "content": "With 2 layers and enough units in those layers, can approximate all continuous functions ▸ with exponentially many units, can get any desired accuracy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.729,
+            0.311,
+            0.769
+          ],
+          "content": "● With 3 layers, all functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.784,
+            0.631,
+            0.827
+          ],
+          "content": "Combine two opposite-facing threshold functions to make a ridge"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.84,
+            0.513,
+            0.883
+          ],
+          "content": "Combine two perpendicular ridges to make a bump"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.895,
+            0.577,
+            0.937
+          ],
+          "content": "● Add bumps of various sizes and locations to fit any surface"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.254,
+            0.065,
+            0.746,
+            0.123
+          ],
+          "level": 2,
+          "content": "Multilayer Feed-Forward Networks"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.211,
+            0.143,
+            0.792,
+            0.662
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.677,
+            0.39,
+            0.719
+          ],
+          "content": "● Acyclic network of units"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.733,
+            0.45,
+            0.776
+          ],
+          "content": "▸ usually organized into layers"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.789,
+            0.481,
+            0.831
+          ],
+          "content": "▸ connections go from left to right"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.843,
+            0.768,
+            0.887
+          ],
+          "content": "▸ how many layers, and units in each layer, typically chosen by hand"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.9,
+            0.351,
+            0.943
+          ],
+          "content": "● Input $\\mathbf { x } = [ x _ { 1 } ,   \\ldots ,   x _ { n } ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.454,
+            0.899,
+            0.648,
+            0.945
+          ],
+          "content": "Output $\\hat { \\mathbf { y } } = [ \\hat { y } _ { 1 } , \\dots , \\hat { y } _ { k } ]$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.107,
+            0.155,
+            0.364,
+            0.604
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.055,
+            0.684,
+            0.279,
+            0.73
+          ],
+          "content": "a _ {3} = g _ {3} (w _ {1, 3} x _ {1} + w _ {2, 3} x _ {2})",
+          "image_source": "images/page_16_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.055,
+            0.74,
+            0.279,
+            0.785
+          ],
+          "content": "a _ {4} = g _ {4} (w _ {1, 4} x _ {1} + w _ {2, 4} x _ {2})",
+          "image_source": "images/page_16_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.063,
+            0.793,
+            0.589,
+            0.95
+          ],
+          "content": "\\begin{array}{r l} \\hat {y} & = g _ {5} (w _ {3, 5} a _ {3} + w _ {4, 5} a _ {4}) \\\\ & = g _ {5} [ w _ {3, 5} g _ {3} (w _ {1, 3} x _ {1} + w _ {2, 3} x _ {2}) + w _ {4, 5} g _ {4} (w _ {1, 4} x _ {1} + w _ {2, 4} x _ {2}) ] \\\\ & = h _ {\\mathbf {w}} (\\mathbf {x}) \\end{array}",
+          "image_source": "images/page_16_equation_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.159,
+            0.88,
+            0.203
+          ],
+          "content": "● Let $\\mathbf { W } ^ { ( i ) } =$ matrix of weights in i’th layer"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.568,
+            0.211,
+            0.755,
+            0.292
+          ],
+          "content": "• $\\mathbf { W } ^ { ( 1 ) } = \\left[ \\begin{matrix} { w _ { 1 , 3 } } & { w _ { 1 , 4 } } \\\\ { w _ { 2 , 3 } } & { w _ { 2 , 4 } } \\end{matrix} \\right]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.568,
+            0.294,
+            0.704,
+            0.371
+          ],
+          "content": "• $\\mathbf { W } ^ { ( 2 ) } = \\left[ \\begin{matrix} { w _ { 3 , 5 } } \\\\ { w _ { 4 , 5 } } \\end{matrix} \\right]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.377,
+            0.933,
+            0.421
+          ],
+          "content": "Let $\\mathbf { g } ^ { ( i ) } =$ column vector of activation functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.429,
+            0.679,
+            0.506
+          ],
+          "content": "• $\\mathbf { g } ^ { ( 1 ) } = \\left[ \\begin{matrix} { g _ { 3 } } \\\\ { g _ { 4 } } \\end{matrix} \\right]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.513,
+            0.679,
+            0.563
+          ],
+          "content": "• $\\mathbf { g } ^ { ( 2 ) } = [ g _ { 5 } ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.57,
+            0.841,
+            0.617
+          ],
+          "content": "● Then $h _ { \\mathbf { w } } ( \\mathbf { x } ) = \\mathbf { g } ^ { ( 2 ) }   ( \\mathbf { W } ^ { ( 2 ) }   \\mathbf { g } ^ { ( 1 ) }   ( \\mathbf { W } ^ { ( 1 ) }   \\mathbf { x } ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.542,
+            0.628,
+            0.854,
+            0.672
+          ],
+          "content": "▸ Parameterized family of functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.712,
+            0.871,
+            0.758
+          ],
+          "content": "● Adjusting weights changes the function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.543,
+            0.769,
+            0.74,
+            0.813
+          ],
+          "content": "▸ do learning this way"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.311,
+            0.065,
+            0.689,
+            0.125
+          ],
+          "level": 2,
+          "content": "Back-Propagation Learning"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.093,
+            0.185,
+            0.494,
+            0.261
+          ],
+          "content": "a _ {i} \\xrightarrow {w _ {i j}} \\boxed {j} \\xrightarrow [ a _ {j} ]{w _ {j k}} \\boxed {k} a _ {k} \\quad \\text {desired} = y _ {k}",
+          "image_source": "images/page_17_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.287,
+            0.327,
+            0.325
+          ],
+          "content": "• Backward from the output layer"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.335,
+            0.57,
+            0.379
+          ],
+          "content": "output layer: $\\Delta_{k} = (y_{k} - a_{k})g^{\\prime}(in_{k});$ $w _ { j k } \\leftarrow w _ { j k } + \\alpha a _ { j } \\Delta _ { k }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.074,
+            0.385,
+            0.568,
+            0.429
+          ],
+          "content": "hidden layer: $\\begin{array} { r } { \\Delta _ { j } = \\left( \\sum _ { k } w _ { j k } \\Delta _ { k } \\right) g ^ { \\prime } ( i n _ { j } ) ; \\quad w _ { i j } \\leftarrow w _ { i j } + \\alpha \\; a _ { i } \\; \\Delta _ { j } } \\end{array}$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.187,
+            0.487,
+            0.588,
+            0.679
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.199,
+            0.687,
+            0.557,
+            0.731
+          ],
+          "content": "\\Delta_ {4} = (y _ {4} - a _ {4}) g ^ {\\prime} (i n _ {4}); \\quad w _ {3 4} \\leftarrow w _ {3 4} + \\alpha a _ {3} \\Delta_ {4}",
+          "image_source": "images/page_17_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.199,
+            0.734,
+            0.557,
+            0.777
+          ],
+          "content": "\\Delta_ {5} = (y _ {5} - a _ {5}) g ^ {\\prime} (i n _ {5}); \\quad w _ {3 5} \\leftarrow w _ {3 5} + \\alpha a _ {3} \\Delta_ {5}",
+          "image_source": "images/page_17_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.141,
+            0.781,
+            0.556,
+            0.886
+          ],
+          "content": "\\Delta_ {3} = (w _ {3 4} \\Delta_ {4} + w _ {3 5} \\Delta_ {5}) g ^ {\\prime} (i n _ {3}); \\left\\{ \\begin{array}{l} w _ {1 3} \\leftarrow w _ {1 3} + \\alpha a _ {1} \\Delta_ {3} \\\\ w _ {2 3} \\leftarrow w _ {2 3} + \\alpha a _ {2} \\Delta_ {3} \\end{array} \\right.",
+          "image_source": "images/page_17_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.611,
+            0.177,
+            0.7,
+            0.217
+          ],
+          "content": "Two ways:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.612,
+            0.229,
+            0.691,
+            0.264
+          ],
+          "content": "Batch:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.643,
+            0.281,
+            0.94,
+            0.36
+          ],
+          "content": "▸ At each epoch, compute the updates for all examples, then apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.642,
+            0.371,
+            0.94,
+            0.45
+          ],
+          "content": "Don’t apply any of the updates until you’ve seen all the examples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.612,
+            0.462,
+            0.698,
+            0.497
+          ],
+          "content": "● Online:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.643,
+            0.513,
+            0.871,
+            0.553
+          ],
+          "content": "▸ Update after each example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.611,
+            0.615,
+            0.852,
+            0.653
+          ],
+          "content": "● Can lead to different results"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.643,
+            0.666,
+            0.946,
+            0.746
+          ],
+          "content": "▸ At one time, batch was thought to be theoretically superior"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.643,
+            0.759,
+            0.92,
+            0.832
+          ],
+          "content": "▸ In practice, online seems to work better"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.354,
+            0.065,
+            0.644,
+            0.121
+          ],
+          "level": 2,
+          "content": "Activation Functions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.21,
+            0.219,
+            0.358
+          ],
+          "content": "● logistic (sigmoid): $g ( z ) = 1 / ( 1 + e ^ { - z } )$ $g ^ { \\prime } ( z ) = e ^ { - z } / ( 1 + e ^ { - z } ) ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.363,
+            0.36,
+            0.447
+          ],
+          "content": "In deep multilayer networks, sigmoid has a vanishing gradient problem"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.455,
+            0.287,
+            0.497
+          ],
+          "content": "▸ $g ^ { \\prime }$ too small to be useful"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.038,
+            0.527,
+            0.355,
+            0.925
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_chart_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.421,
+            0.209,
+            0.897,
+            0.252
+          ],
+          "content": "● Rectified linear (ReLU) or softplus are widely used instead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.423,
+            0.343,
+            0.504,
+            0.383
+          ],
+          "content": "ReLU:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.449,
+            0.395,
+            0.574,
+            0.44
+          ],
+          "content": "g (z) = \\max (0, z)",
+          "image_source": "images/page_18_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.448,
+            0.446,
+            0.655,
+            0.491
+          ],
+          "content": "g ^ {\\prime} (z) = 0 \\text {if} z <   0, 1 \\text {if} z > 0",
+          "image_source": "images/page_18_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.715,
+            0.338,
+            0.811,
+            0.381
+          ],
+          "content": "● softplus:"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.382,
+            0.53,
+            0.664,
+            0.929
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_chart_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.741,
+            0.389,
+            0.87,
+            0.436
+          ],
+          "content": "g (z) = \\log (1 + e ^ {z})",
+          "image_source": "images/page_18_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.741,
+            0.44,
+            0.871,
+            0.488
+          ],
+          "content": "g ^ {\\prime} (z) = 1 / (1 + e ^ {- z})",
+          "image_source": "images/page_18_equation_12.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.678,
+            0.543,
+            0.977,
+            0.928
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_chart_13.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.355,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.355,
+            0.065,
+            0.646,
+            0.119
+          ],
+          "level": 2,
+          "content": "Relation to the Book"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.138,
+            0.221
+          ],
+          "content": "● $\\hat { \\mathbf { y } } \\rightarrow \\tilde { \\mathbf { y } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.233,
+            0.377,
+            0.277
+          ],
+          "content": "● $w \\geq \\theta$ (with subscript, superscript)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.288,
+            0.141,
+            0.327
+          ],
+          "content": "● $w \\geq \\theta$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.425,
+            0.477,
+            0.767
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.385,
+            0.741,
+            0.429
+          ],
+          "content": "Backpropagation $( x , y )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.573,
+            0.429,
+            0.646,
+            0.469
+          ],
+          "content": "\\mathbf {x} ^ {1} \\leftarrow \\mathbf {x}",
+          "image_source": "images/page_19_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.573,
+            0.476,
+            0.722,
+            0.516
+          ],
+          "content": "for l = 1 to L do"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.583,
+            0.516,
+            0.765,
+            0.565
+          ],
+          "content": "\\left\\lfloor \\mathbf {x} ^ {l + 1} \\leftarrow g (\\boldsymbol {\\Theta} ^ {l} \\times \\mathbf {x} ^ {l}) \\right.",
+          "image_source": "images/page_19_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.575,
+            0.569,
+            0.867,
+            0.617
+          ],
+          "content": "\\boldsymbol {\\delta} ^ {L + 1} \\leftarrow (\\mathbf {x} ^ {L + 1} - \\mathbf {y}) \\times g ^ {\\prime} (\\boldsymbol {\\Theta} ^ {L} \\times \\mathbf {x} ^ {L})",
+          "image_source": "images/page_19_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.575,
+            0.617,
+            0.832,
+            0.663
+          ],
+          "content": "\\Theta^ {L} \\leftarrow \\Theta^ {L} - \\alpha [ \\delta^ {L + 1} \\otimes (\\mathbf {x} ^ {L}) ^ {\\top} ]",
+          "image_source": "images/page_19_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.574,
+            0.666,
+            0.722,
+            0.705
+          ],
+          "content": "for $l = L$ to 2 do"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.606,
+            0.705,
+            0.934,
+            0.754
+          ],
+          "content": "\\boldsymbol {\\delta} ^ {l} \\leftarrow [ (\\boldsymbol {\\Theta} ^ {l}) ^ {\\top} \\times \\boldsymbol {\\delta} ^ {l + 1} ] \\times g ^ {\\prime} (\\boldsymbol {\\Theta} ^ {l - 1} \\times \\mathbf {x} ^ {l - 1})",
+          "image_source": "images/page_19_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.606,
+            0.753,
+            0.876,
+            0.799
+          ],
+          "content": "\\Theta^ {l - 1} \\leftarrow \\Theta^ {l - 1} - \\alpha [ \\delta^ {l} \\otimes (\\mathbf {x} ^ {l - 1}) ^ {\\top} ]",
+          "image_source": "images/page_19_equation_13.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.067,
+            0.569,
+            0.124
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.177,
+            0.286,
+            0.218
+          ],
+          "content": "● McCulloch-Pitts “units”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.233,
+            0.343,
+            0.278
+          ],
+          "content": "▸ weighted input, bias weight"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.289,
+            0.27,
+            0.329
+          ],
+          "content": "▸ activation function"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.345,
+            0.189,
+            0.388
+          ],
+          "content": "● Expressivity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.399,
+            0.375,
+            0.443
+          ],
+          "content": "● Multi-layer feed-forward networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.455,
+            0.308,
+            0.5
+          ],
+          "content": "● Back-propagation learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.511,
+            0.254,
+            0.551
+          ],
+          "content": "Gradient descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.567,
+            0.164,
+            0.605
+          ],
+          "content": "▸ ReLU"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "24"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 21,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
