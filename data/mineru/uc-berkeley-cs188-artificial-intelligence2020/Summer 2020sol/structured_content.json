@@ -1,0 +1,6259 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.08,
+            0.062,
+            0.523,
+            0.115
+          ],
+          "level": 2,
+          "content": "CS 188 Introduction to Summer 2020 Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.685,
+            0.074,
+            0.898,
+            0.114
+          ],
+          "content": "Final Exam"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.151,
+            0.372,
+            0.168
+          ],
+          "content": "\\- You have approximately 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.177,
+            0.495,
+            0.193
+          ],
+          "content": "\\- The exam is open book, open calculator, and open notes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.202,
+            0.909,
+            0.233
+          ],
+          "content": "\\- In the interest of fairness, we want everyone to have access to the same information. To that end, we will not be answering questions about the content or making clarifications."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.243,
+            0.322,
+            0.258
+          ],
+          "content": "\\- For multiple choice questions,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.263,
+            0.416,
+            0.281
+          ],
+          "content": "\\- $\\square$ means mark all options that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.282,
+            0.378,
+            0.298
+          ],
+          "content": "\\- $\\bigcirc$ means mark a single choice"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.236,
+            0.315,
+            0.75,
+            0.431
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.34,
+            0.729,
+            0.646,
+            0.902
+          ],
+          "content": "| Q1. | Testing Time | /1 |\n| --- | --- | --- |\n| Q2. | Searching for a Triple | /6 |\n| Q3. | HMM | /7 |\n| Q4. | Filter the Filter | /6 |\n| Q5. | Potpourri | /22 |\n| Q6. | Value Iteration Networks | /15 |\n| Q7. | Q Learning Fundamentals | /9 |\n| Q8. | A Cluster of Trees | /9 |\n| Q9. | Tupacman’s NB Model | /11 |\n| Q10. | Perceptron’s Plan | /14 |\n|  | Total | /100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.429,
+                0.715,
+                0.558,
+                0.729
+              ],
+              "content": "For staff use only:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_10.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.936,
+            0.499,
+            0.948
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.322,
+            0.047,
+            0.665,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.948
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.406,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [1 pt] Testing Time"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.079,
+            0.807,
+            0.096
+          ],
+          "content": "It's testing time! Not only for you, but for our CS188 robots as well! Circle your favorite robot for a free point!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.092,
+            0.174,
+            0.915,
+            0.522
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.935,
+            0.501,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.535,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q2. [6 pts] Searching for a Triple"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.126
+          ],
+          "content": "Pacman is performing search over undirected paths through the Bayes Net below. Pacman knows the set of all nodes and the set of directed edges, as well as the fact that nodes E and K are observed."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.234,
+            0.131,
+            0.753,
+            0.317
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.078,
+                0.322,
+                0.476,
+                0.338
+              ],
+              "content": "Note: There was an alternate graph with the same solutions."
+            }
+          ],
+          "image_source": "images/page_3_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.35,
+            0.909,
+            0.382
+          ],
+          "content": "(a) [2 pts] Suppose Pacman performs search with the aim of finding an undirected path that starts at node A and ends at node C. Here, \"undirected path\" means that the path may follow edges in the Bayes Net in either direction."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.385,
+            0.91,
+            0.432
+          ],
+          "content": "Using DFS Graph Search, does Pacman find a path from node A to node C? If yes, write out the nodes in the order of the path that he finds, separated by commas. If no path is found, write 'No Path'. Assume that we break ties between nodes alphabetically."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.446,
+            0.31,
+            0.463
+          ],
+          "content": "$A, D, E, B, I, J, C$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.483,
+            0.909,
+            0.53
+          ],
+          "content": "Since we are referring to an undirected path here, we can ignore the direction of the edges and just run DFS Graph search as normal. Breaking ties alphabetically, we end up expanding in the order of A, D, E, B, H, I, J, C, in which case the path we return is just A, D, E, B, I, J, C, since expanding H forced us to backtrack."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.541,
+            0.91,
+            0.603
+          ],
+          "content": "(b) Pacman decides to modify the search procedure to only look for active paths, thereby implementing d-separation. Pacman now intends to verify whether nodes A and C are independent conditioned on E and K. The search starts at node A, and terminates when it finds an active path that reaches node C, or once the fringe becomes empty. Pacman performs Graph Search as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.612,
+            0.909,
+            0.642
+          ],
+          "content": "\\- Whenever Pacman is about to expand a node, he checks the closed set to determine whether he should skip expanding it, using one of two variants:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.167,
+            0.646,
+            0.892,
+            0.662
+          ],
+          "content": "\\- Variant 1: Pacman takes the last random variable along the current path and checks if it is in the closed set"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.167,
+            0.665,
+            0.885,
+            0.68
+          ],
+          "content": "\\- Variant 2: Pacman takes the last triple of nodes along the current path and checks if it is in the closed set"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.685,
+            0.91,
+            0.73
+          ],
+          "content": "\\- If he detects an inactive triple along the path that's about to be expanded, the path is discarded. Pacman must backtrack, i.e. select another candidate for expansion on the fringe and continue his search from there. The closed set is not updated in this case."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.734,
+            0.766,
+            0.75
+          ],
+          "content": "\\- If no inactive triple is detected, Pacman expands the current node and updates the closed set:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.753,
+            0.878,
+            0.769
+          ],
+          "content": "\\- For Variant 1: Pacman takes the last random variable along the current path and adds it to the closed set."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.771,
+            0.868,
+            0.786
+          ],
+          "content": "\\- For Variant 2: Pacman takes the last triple of nodes along the current path and adds it to the closed set"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.79,
+            0.909,
+            0.836
+          ],
+          "content": "(i) [2 pts] Does Pacman find an active path from $A$ to $C$ using BFS Graph Search Variant 1? If yes, write out the nodes in the order of the path that he finds, separated by commas. If no path is found, write 'No Active Path'. Assume that we break ties between nodes alphabetically."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.228,
+            0.85,
+            0.334,
+            0.866
+          ],
+          "content": "No Active Path"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.882,
+            0.91,
+            0.929
+          ],
+          "content": "Adding nodes instead of triples to the closed set prevents Pacman from finding an active path, since the first time that we encounter the last node in an active triple, it prevents Pacman from ever revisiting that node. Following the order of expanded nodes, Pacman will encounter the active triple A, D, E with observed child K, so E will be added"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.963
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.062,
+            0.909,
+            0.093
+          ],
+          "continues_prev": true,
+          "content": "to the closed set. However, the only actual active path from A to C uses triple H, B, E, which Pacman will never find because we can no longer expand E."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.096,
+            0.909,
+            0.142
+          ],
+          "content": "(ii) [2 pts] Does Pacman find an active path from $A$ to $C$ using BFS Graph Search Variant 2? If yes, write out the nodes in the order of the path that he finds, separated by commas. If no path is found, write 'No Active Path'. Assume that we break ties between nodes alphabetically."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.155,
+            0.338,
+            0.172
+          ],
+          "content": "A, H, B, E, F, C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.189,
+            0.91,
+            0.266
+          ],
+          "content": "The difference between Variant 1 and Variant 2 is that we save the triple into the closed set instead, which allows us to revisit the same node if we find it from a different triple. Therefore, if we run BFS Variant 2, even though Pacman encounters the active triple A, D, E with observed child K first, E is not added to the closed set; instead, the triple A, D, E is added. Thus, we can still encounter H, B, E later on without being limited by our closed set. Following the standard BFS Graph search procedure, we end up returning the path A, H, B, E, F, C"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.323,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q3. [7 pts] HMM"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.142
+          ],
+          "content": "Recall that for the canonical HMM structure, the Viterbi algorithm finds the most probable sequence of hidden states  $X_{1:T}$ , given a sequence of observations  $e_{1:T}$ . Throughout this question you may assume there are no ties. Note that for the canonical HMM, the Viterbi algorithm performs the following dynamic programming computations:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.344,
+            0.153,
+            0.642,
+            0.177
+          ],
+          "content": "m _ {t} [ x _ {t} ] = P (e _ {t} | x _ {t}) \\max _ {x _ {t - 1}} P (x _ {t} | x _ {t - 1}) m _ {t - 1} [ x _ {t - 1} ]",
+          "image_source": "images/page_5_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.2,
+            0.909,
+            0.232
+          ],
+          "content": "Note: There was another version of this graph that used o instead of e and V instead of S. Please substitute in the corresponding letters as appropriate to match your version."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.244,
+            0.909,
+            0.305
+          ],
+          "content": "(a) [3 pts] For the HMM structure below, we want to find the most likely sequence of states  $X_{1:T}$  and  $S_{1:T}$  given the sequence of observations  $e_{1:T}$, so we modify the Viterbi algorithm to work with our new structure. Which of the following probabilities are maximized by the sequence of states returned by this modified Viterbi algorithm? Mark all the correct option(s)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.318,
+            0.307,
+            0.659,
+            0.52
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_5.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.157,
+            0.54,
+            0.609,
+            0.715
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_chart_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.739,
+            0.981,
+            0.792
+          ],
+          "content": "First, by definition, the sequence of states returned by the Viterbi algorithm maximizes the conditional probability  $P(X_{1:T}, S_{1:T}|e_{1:T})$ . Then, since  $P(e_{1:T})$  is a constant with the evidence being observed, and since  $P(X_{1:T}, S_{1:T}, e_{1:T}) \\propto P(X_{1:T}, S_{1:T}|e_{1:T})$ , the full joint probability  $P(X_{1:T}, S_{1:T}, e_{1:T})$  is also maximized."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.795,
+            0.984,
+            0.83
+          ],
+          "content": "Finally, using the Chain rule and the conditional independences implied by the HMM structure, we have that  $P(S_{1})P(X_{1}|S_{1})P(e_{1}|X_{1})$ .  $\\prod_{t=2}^{T}P(S_{t})P(e_{t}|X_{t})P(X_{t}|S_{t},X_{t-1})== P(X_{1:T},S_{1:T},e_{1:T})$ , and thus, this option is also maximized."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.951,
+            0.501,
+            0.964
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.061,
+            0.311,
+            0.077
+          ],
+          "content": "(b) Assume in the HMM above,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.081,
+            0.432,
+            0.097
+          ],
+          "content": "1. The hidden variable $X$ can take on $x$ values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.101,
+            0.429,
+            0.117
+          ],
+          "content": "2. The hidden variable $S$ can take on $s$ values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.121,
+            0.516,
+            0.137
+          ],
+          "content": "3. The (observed) emission variable $E$ can take on $e$ values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.142,
+            0.348,
+            0.157
+          ],
+          "content": "4. Our sequence has $T$ time steps."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.162,
+            0.908,
+            0.245
+          ],
+          "content": "(i) [2 pts] What is the runtime of the modified Viterbi algorithm?\n○  $\\mathcal{O}(T^{2}xs)$  ●  $\\mathcal{O}(Tx^{2}+Txs)$  ○  $\\mathcal{O}(x^{2}s^{2}e^{2})$  ○  $\\mathcal{O}(Tx^{2}s^{2})$ \n○  $\\mathcal{O}(Txs)$  ○  $\\mathcal{O}(T^{2}x^{2}s^{2}e^{2})$  ○  $\\mathcal{O}(Tx^{2}s^{2}+Txse)$  ○  $\\mathcal{O}(x^{2}s^{2})$ \n○  $\\mathcal{O}(xs)$  ○  $\\mathcal{O}(Tx^{2}s^{2}e^{2})$  ○  $\\mathcal{O}(T^{2}x^{2}s^{2})$  ○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.276,
+            0.909,
+            0.321
+          ],
+          "content": "Although both X and S are hidden, Viterbi only looks at X since it affects the evidence, so there are x states, giving  $\\mathcal{O}(Tx^{2})$  with a sequence of T observations. However, X is dependent on S, so we still need the additional runtime  $\\mathcal{O}(Txs)$  to capture this part of the conditional probability."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.323,
+            0.908,
+            0.355
+          ],
+          "content": "Therefore, the total runtime is  $\\mathcal{O}(Tx^{2} + Txs)$ . However, this simplification was more of an optimization style analysis, so full credit was also given for those who thought there were xs-many states, resulting in  $\\mathcal{O}(Tx^{2}s^{2})$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.372,
+            0.916,
+            0.471
+          ],
+          "content": "(ii) [2 pts] Ignoring the storage of the emission probabilities, $P(E_t|X_t, S_t)$, and the transition probabilities, $P(X_t|X_{t-1}, S_t)$, what is the storage requirement (space needed) of the modified Viterbi algorithm?\n○ $\\mathcal{O}(T)$\n○ $\\mathcal{O}(Te)$\n○ $\\mathcal{O}(Tse)$\n○ $\\mathcal{O}(T + e)$\n● $\\mathcal{O}(Tx)$\n○ $\\mathcal{O}(Txs)$\n○ $\\mathcal{O}(Txse)$\n○ $\\mathcal{O}(T + x + s + e)$\n○ $\\mathcal{O}(Ts)$\n○ $\\mathcal{O}(Txe)$\n○ $\\mathcal{O}(T + x + s)$\n○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.504,
+            0.908,
+            0.535
+          ],
+          "content": "Similar to the runtime argument, we only need to record the states of X, so there are a total of x states. Therefore, given a sequence of T observations, the required storage space is  $\\mathcal{O}(Tx)$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.539,
+            0.629,
+            0.555
+          ],
+          "content": "For the same reason as the previous subpart, full credit was given for  $\\mathcal{O}(Txs)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.95,
+            0.5,
+            0.964
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.444,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q4. [6 pts] Filter the Filter"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.095,
+            0.909,
+            0.143
+          ],
+          "content": "A group of CS188 robots are at a factory trying to filter some magical packages that come through constantly to ensure safety. We denote the possible label of each package as an integer from 1 through 10 (inclusive). However, since we're in a magical robotics land, the package and its label might mutate at every time step."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.154,
+            0.911,
+            0.246
+          ],
+          "content": "The label of a package at time step i is represented by the random variable  $X_{i}$ . At each time step, the package will either remain with its current label, or swap to a different label corresponding to an adjacent region of the current label on the following grid. For example, the available actions from label 3 are (UP, RIGHT, STAY), corresponding to labels 2, 6, and 3 respectively. The new package label is chosen between the successor states of all available actions from a label with equal probability. Note: a package can only be assigned a label between 1 and 10 (inclusive), and actions that would lead to exiting the grid are invalid; the two empty boxes above and below box 10 are invalid as well."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.202,
+            0.257,
+            0.389,
+            0.366
+          ],
+          "content": "| 1 | 4 | 7 |  |\n| --- | --- | --- | --- |\n| 2 | 5 | 8 | 10 |\n| 3 | 6 | 9 |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.383,
+            0.909,
+            0.415
+          ],
+          "content": "We have two sensors for detecting labels. The first sensor  $S_{1}$  monitors if labels remain between 1 through 5 inclusive. The second sensor  $S_{2}$  checks whether the labels between 1 through 9 inclusive."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.426,
+            0.839,
+            0.443
+          ],
+          "content": "Note: Each subpart had three different versions. Please reference the version that corresponded to your actual exam."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.455,
+            0.908,
+            0.487
+          ],
+          "content": "(a) [2 pts] Assume that we utilize particle filtering to track the labels of our packages. Suppose we start with five particles with corresponding labels [1, 6, 10, 5, 8]."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.505,
+            0.741,
+            0.522
+          ],
+          "content": "Fill out the table below for the time elapse update, using the given generated random numbers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.54,
+            0.908,
+            0.588
+          ],
+          "content": "Note: Assign the label IDs numerically. For example, if a label has 2 potential successor labels 3 and 7 with corresponding probabilities $P(X_{t+1} = 3)$ and $P(X_{t+1} = 7)$, then we would select label 3 if the generated random number is less than $P(X_{t+1} = 3)$, and select label 7 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.606,
+            0.909,
+            0.668
+          ],
+          "content": "For each label at t = 0, we arrange the possible labels for the next timestep in numerical order. We then use these as bins between 0 and 1, and use the random number generated to sample from the range. For example, for label 1, the possible labels for the next timestep are 1, 2, 4, so we can separate it such that any random number from 0 to 0.33 goes to 1, from 0.34 to 0.66 goes to 2, and anything above 0.66 goes to 4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.672,
+            0.193,
+            0.687
+          ],
+          "content": "Version 1:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.251,
+            0.687,
+            0.776,
+            0.827
+          ],
+          "content": "| Label at t = 0 | 1 | 6 | 10 | 5 | 8 |\n| --- | --- | --- | --- | --- | --- |\n| Random number for time elapse update | 0.49 | 0.23 | 0.89 | 0.12 | 0.43 |\n| Label after time elapse update | 2 | 3 | 10 | 2 | 8 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.251,
+            0.077,
+            0.777,
+            0.216
+          ],
+          "content": "| Label at t = 0 | 1 | 6 | 10 | 5 | 8 |\n| --- | --- | --- | --- | --- | --- |\n| Random number for time elapse update | 0.89 | 0.30 | 0.52 | 0.43 | 0.74 |\n| Label after time elapse update | 4 | 5 | 10 | 5 | 9 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.062,
+                0.192,
+                0.076
+              ],
+              "content": "Version 2:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.255,
+            0.252,
+            0.774,
+            0.391
+          ],
+          "content": "| Label at t = 0 | 1 | 6 | 10 | 5 | 8 |\n| --- | --- | --- | --- | --- | --- |\n| Random number for time elapse update | 0.3 | 0.98 | 0.12 | 0.86 | 0.36 |\n| Label after time elapse update | 1 | 9 | 8 | 8 | 7 |",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.235,
+                0.192,
+                0.25
+              ],
+              "content": "Version 3:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.418,
+            0.908,
+            0.47
+          ],
+          "content": "(b) [2 pts] Ignore your answer from part (a). Suppose you obtain the following labels after the update: [1, 9, 10, 5, 7]. Recall that you have two sensors for detecting labels. The first sensor $S_{1}$ monitors if labels remain between 1 through 5 inclusive. The second sensor $S_{2}$ checks whether the labels between 1 through 9 inclusive."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.474,
+            0.896,
+            0.49
+          ],
+          "content": "However, you suddenly realize that your sensors are not precise, and they are giving results following this distribution:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.139,
+            0.53,
+            0.506,
+            0.586
+          ],
+          "content": "| Sensor 1 | $P(S_1\\|1 \\leq X_i \\leq 5)$ | $P(S_1\\|6 \\leq X_i \\leq 10)$ |\n| --- | --- | --- |\n| True | 0.75 | 0.2 |\n| False | 0.25 | 0.8 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.512,
+                0.193,
+                0.526
+              ],
+              "content": "Version 1:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.549,
+            0.53,
+            0.887,
+            0.586
+          ],
+          "content": "| Sensor 2 | $P(S_2\\|1 \\leq X_i \\leq 9)$ | $P(S_2\\|X_i = 10)$ |\n| --- | --- | --- |\n| True | 0.9 | 0.4 |\n| False | 0.1 | 0.6 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_9.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.14,
+            0.622,
+            0.506,
+            0.679
+          ],
+          "content": "| Sensor 1 | $P(S_1\\|1 \\leq X_i \\leq 5)$ | $P(S_1\\|6 \\leq X_i \\leq 10)$ |\n| --- | --- | --- |\n| True | 0.7 | 0.25 |\n| False | 0.3 | 0.75 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.605,
+                0.192,
+                0.619
+              ],
+              "content": "Version 2:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_11.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.548,
+            0.622,
+            0.887,
+            0.678
+          ],
+          "content": "| Sensor 2 | $P(S_2\\|1 \\leq X_i \\leq 9)$ | $P(S_2\\|X_i = 10)$ |\n| --- | --- | --- |\n| True | 0.8 | 0.3 |\n| False | 0.2 | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_12.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.139,
+            0.715,
+            0.505,
+            0.772
+          ],
+          "content": "| Sensor 1 | $P(S_1\\|1 \\leq X_i \\leq 5)$ | $P(S_1\\|6 \\leq X_i \\leq 10)$ |\n| --- | --- | --- |\n| True | 0.9 | 0.3 |\n| False | 0.1 | 0.7 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.697,
+                0.192,
+                0.711
+              ],
+              "content": "Version 3:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_8_table_14.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.545,
+            0.715,
+            0.884,
+            0.771
+          ],
+          "content": "| Sensor 2 | $P(S_2\\|1 \\leq X_i \\leq 9)$ | $P(S_2\\|X_i = 10)$ |\n| --- | --- | --- |\n| True | 0.75 | 0.1 |\n| False | 0.25 | 0.9 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.79,
+            0.908,
+            0.821
+          ],
+          "content": "Suppose that Sensor 1 reports $S_{1} =$ False and Sensor 2 reports $S_{2} =$ True. What is the weight for each label after incorporating the sensor readings?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.84,
+            0.909,
+            0.886
+          ],
+          "content": "We multiply the values in the sensor model tables corresponding to  $S_{1}=False$  and  $S_{2}=True$  based on the label value. For example, for a label of 1, we would multiply  $P(S_{1}=False|1\\leq X_{i}\\leq5)P(S_{2}=True|1\\leq X_{i}\\leq9)$ , since 1 falls between those corresponding ranges."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.951,
+            0.5,
+            0.963
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.139,
+            0.077,
+            0.888,
+            0.17
+          ],
+          "content": "| Label(s) | 1 | 9 | 10 | 5 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| Weight(s) | $0.25 \\times 0.9 = 0.225$ | $0.8 \\times 0.9 = 0.72$ | $0.8 \\times 0.4 = 0.32$ | $0.25 \\times 0.9 = 0.225$ | $0.8 \\times 0.9 = 0.72$ |",
+          "captions": [
+            {
+              "bbox": [
+                0.121,
+                0.062,
+                0.193,
+                0.076
+              ],
+              "content": "Version 1:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_table_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.147,
+            0.202,
+            0.879,
+            0.295
+          ],
+          "content": "| Label(s) | 1 | 9 | 10 | 5 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| Weight(s) | $0.3 \\times 0.8 = 0.24$ | $0.75 \\times 0.8 = 0.6$ | $0.75 \\times 0.3 = 0.225$ | $0.3 \\times 0.8 = 0.24$ | $0.75 \\times 0.8 = 0.6$ |",
+          "captions": [
+            {
+              "bbox": [
+                0.121,
+                0.187,
+                0.192,
+                0.2
+              ],
+              "content": "Version 2:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.123,
+            0.327,
+            0.904,
+            0.42
+          ],
+          "content": "| Label(s) | 1 | 9 | 10 | 5 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| Weight(s) | $0.1 \\times 0.75 = 0.075$ | $0.7 \\times 0.75 = 0.525$ | $0.7 \\times 0.1 = 0.07$ | $0.1 \\times 0.75 = 0.075$ | $0.7 \\times 0.75 = 0.525$ |",
+          "captions": [
+            {
+              "bbox": [
+                0.121,
+                0.311,
+                0.192,
+                0.325
+              ],
+              "content": "Version 3:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.458,
+            0.909,
+            0.49
+          ],
+          "content": "(c) [2 pts] Ignore your answer for part (b). Suppose you obtain these weights for each label after incorporating the sensor readings:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.356,
+            0.504,
+            0.671,
+            0.598
+          ],
+          "content": "| Label(s) | 1 | 9 | 10 | 5 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| Weight(s) | 0.3 | 0.2 | 0.5 | 0.8 | 0.2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.613,
+            0.563,
+            0.629
+          ],
+          "content": "Use the following random numbers to resample the package labels."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.633,
+            0.586,
+            0.65
+          ],
+          "content": "As in part (a), assign label IDs to sample spaces in numerical order."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.668,
+            0.907,
+            0.699
+          ],
+          "content": "Take the labels and their corresponding weights, reorder them numerically, and the normalize to get ranges for each label. Then resample the label with the random numbers based on your version of the exam."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.702,
+            0.214,
+            0.717
+          ],
+          "content": "Normalizing:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.721,
+            0.358,
+            0.737
+          ],
+          "content": "\\mathrm{X} = 1: 0. 3 / 2 = 0. 1 5 \\longrightarrow (0, 0. 1 5)",
+          "image_source": "images/page_9_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.741,
+            0.369,
+            0.757
+          ],
+          "content": "\\mathrm{X} = 5: 0. 8 / 2 = 0. 4 \\longrightarrow (0. 1 5, 0. 5 5)",
+          "image_source": "images/page_9_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.761,
+            0.369,
+            0.776
+          ],
+          "content": "\\mathrm{X} = 7: 0. 2 / 2 = 0. 1 \\longrightarrow (0. 5 5, 0. 6 5)",
+          "image_source": "images/page_9_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.78,
+            0.369,
+            0.795
+          ],
+          "content": "\\mathrm{X} = 9: 0. 2 / 2 = 0. 1 \\longrightarrow (0. 6 5, 0. 7 5)",
+          "image_source": "images/page_9_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.8,
+            0.366,
+            0.815
+          ],
+          "content": "\\mathrm{X} = 1 0: 0. 5 / 2 = 0. 2 5 \\longrightarrow (0. 7 5, 1)",
+          "image_source": "images/page_9_equation_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.82,
+            0.194,
+            0.834
+          ],
+          "content": "Version 1:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.267,
+            0.834,
+            0.761,
+            0.928
+          ],
+          "content": "| Random number(s) | 0.11 | 0.98 | 0.58 | 0.47 | 0.62 | 0.70 | 0.84 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Label(s) | 1 | 10 | 7 | 5 | 7 | 9 | 10 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_18.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.747,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.267,
+            0.077,
+            0.761,
+            0.172
+          ],
+          "content": "| Random number(s) | 0.48 | 0.61 | 0.80 | 0.73 | 0.10 | 0.93 | 0.56 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Label(s) | 5 | 7 | 10 | 9 | 1 | 10 | 7 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.062,
+                0.192,
+                0.076
+              ],
+              "content": "Version 2:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_table_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.267,
+            0.205,
+            0.761,
+            0.299
+          ],
+          "content": "| Random number(s) | 0.21 | 0.90 | 0.11 | 0.58 | 0.68 | 0.84 | 0.52 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Label(s) | 5 | 10 | 1 | 7 | 9 | 10 | 5 |",
+          "captions": [
+            {
+              "bbox": [
+                0.12,
+                0.19,
+                0.192,
+                0.204
+              ],
+              "content": "Version 3:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_10_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.056,
+            0.385,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q5. [22 pts] Potpourri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.094,
+            0.882,
+            0.112
+          ],
+          "content": "(a) Different versions had different numberings of the same graphs, leading to slightly different answers for a.i. and a.ii."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.115,
+            0.194,
+            0.13
+          ],
+          "content": "Version 1:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.109,
+            0.13,
+            0.343,
+            0.25
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.257,
+                0.239,
+                0.275
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.396,
+            0.129,
+            0.631,
+            0.25
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.257,
+                0.528,
+                0.275
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.665,
+            0.13,
+            0.898,
+            0.25
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.769,
+                0.257,
+                0.796,
+                0.275
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.283,
+            0.194,
+            0.3
+          ],
+          "content": "Version 2:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.111,
+            0.298,
+            0.343,
+            0.419
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.426,
+                0.239,
+                0.443
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.397,
+            0.296,
+            0.632,
+            0.419
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.426,
+                0.528,
+                0.444
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.665,
+            0.295,
+            0.899,
+            0.419
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.768,
+                0.425,
+                0.795,
+                0.444
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.452,
+            0.194,
+            0.468
+          ],
+          "content": "Version 3:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.111,
+            0.466,
+            0.343,
+            0.586
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.595,
+                0.239,
+                0.611
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_17.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.397,
+            0.465,
+            0.632,
+            0.587
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.594,
+                0.527,
+                0.611
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_19.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.665,
+            0.465,
+            0.899,
+            0.587
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.769,
+                0.594,
+                0.795,
+                0.612
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_image_21.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.95,
+            0.505,
+            0.965
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.021,
+            0.783,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.111,
+            0.069,
+            0.342,
+            0.193
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.131,
+                0.548,
+                0.908,
+                0.58
+              ],
+              "content": "(i) [4 pts] For each conditional independence expression, select the Bayes net(s) for which the conditional independence is guaranteed to be true."
+            },
+            {
+              "bbox": [
+                0.214,
+                0.2,
+                0.239,
+                0.217
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.398,
+            0.071,
+            0.631,
+            0.192
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.2,
+                0.528,
+                0.217
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.666,
+            0.071,
+            0.898,
+            0.193
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.769,
+                0.2,
+                0.795,
+                0.218
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.111,
+            0.222,
+            0.342,
+            0.356
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.213,
+                0.362,
+                0.239,
+                0.38
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.398,
+            0.233,
+            0.632,
+            0.355
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.363,
+                0.527,
+                0.38
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.666,
+            0.233,
+            0.898,
+            0.356
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.769,
+                0.362,
+                0.795,
+                0.38
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.111,
+            0.385,
+            0.341,
+            0.518
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.525,
+                0.238,
+                0.542
+              ],
+              "content": "(1)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_14.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.398,
+            0.396,
+            0.631,
+            0.517
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.502,
+                0.525,
+                0.527,
+                0.542
+              ],
+              "content": "(2)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_16.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.666,
+            0.396,
+            0.898,
+            0.518
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.769,
+                0.525,
+                0.795,
+                0.542
+              ],
+              "content": "(3)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_12_image_18.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.136,
+            0.549,
+            0.595,
+            0.934
+          ],
+          "content": "<table><tr><td colspan=\"5\">(i) [4 pts] For each conditional independence expression, select the Bay is guaranteed to be true.</td></tr><tr><td colspan=\"5\">Version 1:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td colspan=\"5\">Version 2:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td> $\\square$ (3)</td><td>○ None</td></tr><tr><td colspan=\"5\">Version 3:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td>□(3)</td><td>○ None</td></tr><tr><td colspan=\"5\">Version 4:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td>- (3)</td><td>○ None</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_20.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.156,
+            0.062,
+            0.586,
+            0.223
+          ],
+          "continues_prev": true,
+          "content": "<table><tr><td colspan=\"5\">Version 5:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td colspan=\"5\">Version 6:</td></tr><tr><td>A ⊥ E | D</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>A ⊥ D | B, C</td><td>(1)</td><td>(2)</td><td>(3)</td><td>○ None</td></tr><tr><td>B ⊥ C | A, E</td><td>(1)</td><td>(2)</td><td> $\\square$ (3)</td><td>○ None</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.127,
+            0.234,
+            0.535,
+            0.249
+          ],
+          "level": 2,
+          "content": "(ii) [2 pts] Select all of the following statements that are true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.253,
+            0.832,
+            0.27
+          ],
+          "content": "☐ Any distribution that can be represented by Bayes net (1) can be represented by Bayes net (2)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.271,
+            0.831,
+            0.287
+          ],
+          "content": "Any distribution that can be represented by Bayes net (2) can be represented by Bayes net (1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.289,
+            0.766,
+            0.305
+          ],
+          "content": "☐ A Bayes net with no edges can represent any distribution over its random variables."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.306,
+            0.895,
+            0.322
+          ],
+          "content": "☐ If two Bayes nets can represent the same set of distributions, then they must have the same set of edges."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.324,
+            0.346,
+            0.339
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.349,
+            0.907,
+            0.379
+          ],
+          "content": "\\- Bayes net (1) has an extra edge compared to Bayes net (2), so therefore Bayes net (1) can represent a strictly greater set of distributions (rather than the other way around)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.381,
+            0.908,
+            0.41
+          ],
+          "content": "\\- A Bayes net with no edges is the most restrictive Bayes net and can only represent distributions where all variables are independent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.414,
+            0.908,
+            0.444
+          ],
+          "content": "\\- Two Bayes nets can represent the same set of distributions with different edges. For example, $A \\to B$ and $A \\leftarrow B$ are equivalent Bayes nets that have different graph structure."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.45,
+            0.507,
+            0.465
+          ],
+          "level": 2,
+          "content": "For each version, the following is the correct answer:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.47,
+            0.801,
+            0.486
+          ],
+          "content": "1. Any distribution that can be represented by Bayes net (2) can be represented by Bayes net (1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.488,
+            0.801,
+            0.503
+          ],
+          "content": "2. Any distribution that can be represented by Bayes net (3) can be represented by Bayes net (1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.506,
+            0.801,
+            0.521
+          ],
+          "content": "3. Any distribution that can be represented by Bayes net (1) can be represented by Bayes net (3)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.524,
+            0.801,
+            0.539
+          ],
+          "content": "4. Any distribution that can be represented by Bayes net (1) can be represented by Bayes net (2)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.541,
+            0.801,
+            0.556
+          ],
+          "content": "5. Any distribution that can be represented by Bayes net (3) can be represented by Bayes net (2)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.558,
+            0.801,
+            0.574
+          ],
+          "content": "6. Any distribution that can be represented by Bayes net (2) can be represented by Bayes net (3)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.062,
+            0.91,
+            0.108
+          ],
+          "content": "(b) Pacman is about to play as the maximizer agent in the game shown below, but the values of some leaf nodes are known to all players except Pacman! In this problem, let's think about Pacman's VPI associated with learning the leaf utility for one or more leaf nodes. In the game tree, square nodes are terminal nodes and the circle is a chance node."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.29,
+            0.114,
+            0.756,
+            0.344
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.356,
+            0.908,
+            0.386
+          ],
+          "content": "Note: We also gave full credit to answers that were correct if we assumed a prior distribution of the chance node, although this was not specified by the problem and should not have been assumed."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.39,
+            0.755,
+            0.406
+          ],
+          "content": "(i) [2 pts] Consider the game tree above, and select the choices that are guaranteed to be true."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.152,
+            0.398,
+            0.313,
+            0.51
+          ],
+          "sub_type": "code",
+          "content": "```ini\n[2 pts] Consider the gain\n□ VPI(B) = 0\n    VPI(C) = 0\n    VPI(D) = 0\n    VPI(E) = 0\n□ VPI(C|D) = 0\n□ VPI(D|C) = 0\n○ None of the above\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.51,
+            0.908,
+            0.556
+          ],
+          "content": "The maximizer will never select the second and the fourth branch, so $VPI(E) = 0$. It's possible that $B < 9$, in which case the maximizer knows that it should select the first branch, so $VPI(B)$ is not guaranteed to be 0. For the same reason, $VPI(C, D)$ is not guaranteed to be 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.557,
+            0.909,
+            0.601
+          ],
+          "content": "Knowing C or D does not give any information of the expected value that the chance node returns, so  $VPI(C) = VPI(D) = 0$ . Therefore,  $VPI(C|D) = VPI(C, D) - VPI(D)$  and  $VPI(D|C) = VPI(C, D) - VPI(C)$  are not guaranteed to be 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.618,
+            0.909,
+            0.648
+          ],
+          "content": "If we assumed a prior distribution, then  $VPI(C)$  and  $VPI(D)$  are not guaranteed to be 0, so the only correct answer was  $VPI(E)=0$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.653,
+            0.732,
+            0.668
+          ],
+          "content": "(ii) [4 pts] Consider the game tree above, and select the choices that are possible to be true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.743,
+            0.65,
+            0.758
+          ],
+          "content": "$VPI(A)=0$ , and  $VPI(B,C)\\geq VPI(B)$ , which is not guaranteed to be 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.835,
+            0.909,
+            0.896
+          ],
+          "content": "$VPI(B,C) \\geq VPI(B)$ for any general variables B and C, but in this case, $VPI(B,C) = VPI(B)$, because without D, C does not add any information on the choice of branch (action). If we assumed a prior distribution, then $VPI(C)$ is not guaranteed to be 0, so $VPI(B,C)$ is not guaranteed to be $VPI(B)$. Therefore, the correct answer in this case would be > 0 and = 0."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.161,
+            0.06,
+            0.218,
+            0.091
+          ],
+          "content": "\\[= 0\\]\n$< 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.107,
+            0.772,
+            0.121
+          ],
+          "content": "$VPI(B,C) = VPI(B)$. We cannot guarantee any relation between $VPI(B)$ and $VPI(C,D)$."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.122,
+            0.357,
+            0.182
+          ],
+          "content": "\\begin{array}{l} V P I (C, D) - V P I (B, C | D) \\\\ \\boxed {\\quad} > 0 \\\\ \\boxed {\\quad} = 0 \\\\ \\boxed {\\quad} <   0 \\end{array}",
+          "image_source": "images/page_15_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.197,
+            0.864,
+            0.212
+          ],
+          "content": "V P I (C, D) - V P I (B, C | D) = V P I (C, D) - (V P I (B, C, D) - V P I (D)) = V P I (C, D) - V P I (B, C, D).",
+          "image_source": "images/page_15_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.213,
+            0.909,
+            0.242
+          ],
+          "content": "Note that  $VPI(B,C,D) \\geq VPI(C,D)$ , and there are cases that  $VPI(B,C,D) > VPI(C,D)$ , e.g. B = 8 and C = D = 12."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.745,
+            0.021,
+            0.905,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.061,
+            0.459,
+            0.079
+          ],
+          "content": "(c) Select the model(s) that each graph is representing:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.158,
+            0.121,
+            0.554,
+            0.311
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.131,
+                0.095,
+                0.198,
+                0.112
+              ],
+              "content": "(i) [1 pt]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_16_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.327,
+            0.75,
+            0.346
+          ],
+          "content": "Dynamic Bayes Net □ Naive Bayes □ Decision Network ○ None of the above"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.156,
+            0.389,
+            0.74,
+            0.578
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.127,
+                0.364,
+                0.199,
+                0.38
+              ],
+              "content": "(ii) [1 pt]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_16_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.595,
+            0.75,
+            0.615
+          ],
+          "content": "Dynamic Bayes Net □ Naive Bayes □ Decision Network ○ None of the above"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.128,
+            0.633,
+            0.74,
+            0.83
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.123,
+                0.63,
+                0.198,
+                0.648
+              ],
+              "content": "(iii) [1 pt]"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_16_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.845,
+            0.746,
+            0.865
+          ],
+          "content": "□ Dynamic Bayes Net □ Naive Bayes □ Decision Network ● None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.866,
+            0.911,
+            0.929
+          ],
+          "content": "None of the 3 graphs above are decision networks because there are no action nodes. They are not Naive Bayes either because they don't satisfy the Naive Bayes assumption, no matter which node is considered as the label. (i) and (ii) are Dynamic Bayes Nets (a generalization of HMMs), but (iii) is not because it does not repeat a fixed Bayes net structure at each time."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.062,
+            0.909,
+            0.107
+          ],
+          "content": "(d) In hidden Markov models, a common task is to compute the probability distribution of the final state given the evidence, $P(s_T|e_{1:T})$. Suppose that instead of using the forward algorithm, we wish to apply variable elimination to compute this probability."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.214,
+            0.109,
+            0.773,
+            0.24
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.245,
+            0.787,
+            0.261
+          ],
+          "content": "(i) [2 pts] Select the most optimal variable ordering(s) for which we should eliminate our variables."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.155,
+            0.263,
+            0.401,
+            0.363
+          ],
+          "sub_type": "algorithm",
+          "content": "$s_0, s_1, s_2, ..., s_{T-1}$\n$s_{T-1}, s_{T-2}, ..., s_0$\n$e_0, s_0, e_1, s_1, e_2, s_2, ..., s_{T-1}, e_T$\n$e_T, s_{T-1}, e_{T-1}, s_{T-2}, ..., s_0, s_T$\n$s_0, s_1, s_2, ..., s_{T-1}, e_0, e_1, ..., e_T$\n$s_{T-1}, s_{T-2}, ..., s_0, e_T, e_{T-1}, ..., e_0$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.359,
+            0.312,
+            0.374
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.376,
+            0.909,
+            0.423
+          ],
+          "content": "Eliminating from $s_0$ to $s_{T-1}$ one by one will lead to the lowest factor size created, since this means that every factor will be in terms of exactly one $s_i$. Eliminating backwards doesn't work because we are not eliminating $s_T$ since it's part of our query. We also do not eliminate the evidence, so any answer choices involving that were incorrect."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.426,
+            0.908,
+            0.457
+          ],
+          "content": "(ii) [2 pts] Let $|S|$ and $|E|$ denote the domain sizes of $S$ and $E$, respectively. What is the size of the largest factor created using the most optimal variable ordering(s)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.456,
+            0.212,
+            0.471
+          ],
+          "content": "● |S|"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.471,
+            0.214,
+            0.487
+          ],
+          "content": "$\\bigcirc |E|$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.486,
+            0.248,
+            0.502
+          ],
+          "content": "$\\bigcirc \\quad |S| \\cdot |E|$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.502,
+            0.204,
+            0.516
+          ],
+          "content": "○ T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.517,
+            0.237,
+            0.532
+          ],
+          "content": "$\\bigcirc T\\cdot |S|$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.532,
+            0.237,
+            0.547
+          ],
+          "content": "$\\bigcirc T\\cdot |E|$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.547,
+            0.272,
+            0.563
+          ],
+          "content": "$\\bigcirc T \\cdot |S| \\cdot |E|$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.562,
+            0.235,
+            0.577
+          ],
+          "content": "$\\bigcirc \\quad |S|^{\\bar{T} -1}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.576,
+            0.224,
+            0.591
+          ],
+          "content": "$\\bigcirc |E|^T$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.591,
+            0.281,
+            0.607
+          ],
+          "content": "$\\bigcirc \\quad |S|^{T - 1} \\cdot |E|^T$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.606,
+            0.224,
+            0.622
+          ],
+          "content": "$\\bigcirc |S|^T$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.621,
+            0.237,
+            0.637
+          ],
+          "content": "$\\bigcirc |E|^{T + 1}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.636,
+            0.281,
+            0.653
+          ],
+          "content": "$\\bigcirc \\quad |S|^T \\cdot |E|^{T+1}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.653,
+            0.311,
+            0.669
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.673,
+            0.909,
+            0.72
+          ],
+          "content": "The optimal variable elimination ordering will be to sum out variables from left to right, starting from $s_0$ and ending at $s_{T-1}$. This produces $T$ factors with size $|S|$. If we eliminate a node without first eliminating it's predecessor, this will generate a factor with size $|S|^2$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.732,
+            0.908,
+            0.763
+          ],
+          "content": "(e) [1 pt] Pacman must navigate through a maze with the goal of eating a specific power pellet. Which of the following must be included in the minimal search space for this problem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.77,
+            0.515,
+            0.789
+          ],
+          "content": "☐ The number of actions Pacman has taken thus far"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.791,
+            0.312,
+            0.808
+          ],
+          "content": "Pacman's position"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.811,
+            0.402,
+            0.829
+          ],
+          "content": "☐ The location of the power pellet"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.831,
+            0.439,
+            0.849
+          ],
+          "content": "☐ A dot boolean for each dot in the grid"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.851,
+            0.415,
+            0.869
+          ],
+          "content": "☐ The total number of power pellets"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.871,
+            0.359,
+            0.889
+          ],
+          "content": "☐ The location of any walls"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.892,
+            0.316,
+            0.909
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.746,
+            0.022,
+            0.903,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.062,
+            0.908,
+            0.093
+          ],
+          "content": "Only Pacman's position is necessary. The location of the power pellet is not necessary because it is stationary, and the rest of the features are not relevant to the minimal state space."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.105,
+            0.588,
+            0.121
+          ],
+          "content": "(f) [1 pt] Which of the following is true about relaxed problem heuristics?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.129,
+            0.6,
+            0.146
+          ],
+          "content": "☐ Greedy tree search with a relaxed problem heuristic is optimal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.15,
+            0.611,
+            0.167
+          ],
+          "content": "☐ Greedy graph search with a relaxed problem heuristic is optimal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.17,
+            0.572,
+            0.186
+          ],
+          "content": "A\\* tree search with a relaxed problem heuristic is optimal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.19,
+            0.584,
+            0.207
+          ],
+          "content": "☐ A\\* graph search with a relaxed problem heuristic is optimal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.21,
+            0.316,
+            0.226
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.236,
+            0.908,
+            0.267
+          ],
+          "content": "A relaxed problem heuristic is an admissible heuristic for the original problem, for which only A\\* tree search is guaranteed to be optimal."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.28,
+            0.909,
+            0.311
+          ],
+          "content": "(g) [1 pt] What is the size of the smallest minimax search tree where at least one node can be pruned by alpha-beta pruning? Your answer should be the total number of nodes in the tree (including all maximizer, minimizer, and leaf nodes)."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.122,
+            0.314,
+            0.246,
+            0.354
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.362,
+            0.908,
+            0.392
+          ],
+          "content": "Consider a game tree with one maximizer node, one minimizer node, and three leaf nodes (for a total of 5 nodes) such as the following:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.352,
+            0.393,
+            0.52,
+            0.533
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.536,
+            0.907,
+            0.567
+          ],
+          "content": "In this case, because the maximizer is already guaranteed a value of 10 or greater, once we see a 7 from the minimizer, we can prune the remaining node."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.95,
+            0.505,
+            0.964
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.594,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q6. [15 pts] Value Iteration Networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.095,
+            0.908,
+            0.125
+          ],
+          "content": "In this problem, we'll explore how neural network architectures can be designed to mimic value iteration for Markov Decision Processes. Consider the following 5-state MDP:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.286,
+            0.129,
+            0.698,
+            0.195
+          ],
+          "content": "| 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.205,
+            0.481,
+            0.296
+          ],
+          "content": "The agent can transition deterministically between any adjacent states, or remain in place. Suppose we're in a situation where we know the values of the policy for some iteration of value iteration, but we don't know the reward function. We can set up a modified neural network to solve for the rewards as shown on the right:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.309,
+            0.481,
+            0.373
+          ],
+          "content": "The node  $V_{i}^{(k)}$  represents the value of state i at iteration k. The reward  $r_{ij}$  represents the reward obtained on a transition from state i to state j. Each node can be calculated from values at the previous layer according to:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.11,
+            0.408,
+            0.447,
+            0.468
+          ],
+          "content": "V _ {j} ^ {(k)} = \\left\\{ \\begin{array}{l l} \\max _ {i \\in (0, 1)} r _ {i j} + \\gamma V _ {i} ^ {(k - 1)} & j = 0 \\\\ \\max _ {i \\in (j - 1, j, j + 1)} r _ {i j} + \\gamma V _ {i} ^ {(k - 1)} & 1 \\leq j \\leq 3 \\\\ \\max _ {i \\in (3, 4)} r _ {i j} + \\gamma V _ {i} ^ {(k - 1)} & j = 4 \\end{array} \\right.",
+          "image_source": "images/page_19_equation_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.497,
+            0.21,
+            0.897,
+            0.447
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.493,
+            0.482,
+            0.508
+          ],
+          "content": "Suppose we have estimates $\\mathbf{y}$ for the values at iteration 2, and"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.501,
+            0.908,
+            0.54
+          ],
+          "content": "Suppose we have estimates $\\mathbf{y}$ for the values at iteration 2, and we feed in a value of 0 as the input to this network on the bottom layer ($V_{i}^{(0)} = 0$ for all $i$). We use the following squared loss function, where the network is parameterized by the rewards $\\mathbf{r}$:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.408,
+            0.552,
+            0.578,
+            0.593
+          ],
+          "content": "\\mathcal {L} (\\mathbf {r}) = \\frac {1}{2} \\sum_ {i = 0} ^ {4} (y _ {i} - V _ {i} ^ {(2)}) ^ {2}",
+          "image_source": "images/page_19_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.606,
+            0.735,
+            0.624
+          ],
+          "content": "Note that the superscript (2) in $V_{i}^{(2)}$ denotes the second layer of the network, and not a square."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.636,
+            0.908,
+            0.688
+          ],
+          "content": "(a) [2 pts] We are interested in minimizing the loss $\\mathcal{L}$ in order to learn the rewards $r_{ij}$. How many learnable parameters are there in this network? Hint: The reward parameters $r_{ij}$ are shared between different layers. 13 There is one reward $r_{ij}$ for each transition $i$ to $j$. There are 13 such transitions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.7,
+            0.908,
+            0.73
+          ],
+          "content": "(b) [2 pts] Suppose we fix all parameters but consider a change in the value of $r_{12}$. In the forward pass, which of the following values can possibly be changed?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.151,
+            0.733,
+            0.531,
+            0.774
+          ],
+          "content": "\\begin{array}{c c c c c} \\square & V _ {0} ^ {(2)} & \\blacksquare & V _ {1} ^ {(2)} & \\blacksquare \\\\ \\square & V _ {0} ^ {(1)} & \\square & V _ {1} ^ {(1)} & \\blacksquare \\\\ \\end{array} \\quad \\begin{array}{c c c c c} \\blacksquare & V _ {2} ^ {(2)} & \\blacksquare & V _ {3} ^ {(2)} & \\square \\\\ \\blacksquare & V _ {2} ^ {(1)} & \\square & V _ {3} ^ {(1)} & \\square \\\\ \\end{array} \\quad \\begin{array}{c c c c c} \\square & V _ {4} ^ {(2)} \\\\ \\square & V _ {4} ^ {(1)} \\\\ \\square & V _ {4} ^ {(1)} \\\\ \\end{array}",
+          "image_source": "images/page_19_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.778,
+            0.909,
+            0.817
+          ],
+          "content": "On the first layer, the value of $r_{12}$ directly affects the value of $V_2^{(1)}$. The value of $V_2^{(1)}$ can potentially affect the values of its neighbors in the MDP on the next iteration, $V_1^{(2)}, V_2^{(2)}$, and $V_3^{(2)}$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.82,
+            0.265,
+            0.834
+          ],
+          "content": "Alternative solutions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.836,
+            0.511,
+            0.857
+          ],
+          "content": "For $r_{01}$, the values $V_{1}^{(1)}, V_{0}^{(2)}, V_{1}^{(2)}, V_{2}^{(2)}$ should be affected."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.86,
+            0.512,
+            0.882
+          ],
+          "content": "For $r_{23}$, the values $V_{3}^{(1)}, V_{2}^{(2)}, V_{3}^{(2)}, V_{4}^{(2)}$ should be affected."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.892,
+            0.908,
+            0.924
+          ],
+          "content": "(c) [2 pts] Suppose we fix all parameters but consider a change in the value of $r_{12}$. In the backward pass, which of the following derivatives can possibly be changed?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.151,
+            0.056,
+            0.551,
+            0.111
+          ],
+          "content": "\\begin{array}{c c c c c c} \\square & \\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(2)}} & \\square & \\frac {\\partial \\mathcal {L}}{\\partial V _ {1} ^ {(2)}} & \\square & \\frac {\\partial \\mathcal {L}}{\\partial V _ {2} ^ {(2)}} \\\\ \\hline & \\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(1)}} & \\hline & \\frac {\\partial \\mathcal {L}}{\\partial V _ {1} ^ {(1)}} & \\hline & \\frac {\\partial \\mathcal {L}}{\\partial V _ {2} ^ {(1)}} \\\\ \\hline \\end{array} \\quad \\begin{array}{c c c c c c} \\square & \\frac {\\partial \\mathcal {L}}{\\partial V _ {3} ^ {(2)}} & \\square & \\frac {\\partial \\mathcal {L}}{\\partial V _ {4} ^ {(2)}} \\\\ \\hline & \\frac {\\partial \\mathcal {L}}{\\partial V _ {3} ^ {(1)}} & \\hline & \\frac {\\partial \\mathcal {L}}{\\partial V _ {4} ^ {(1)}} \\\\ \\hline \\end{array}",
+          "image_source": "images/page_20_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.116,
+            0.909,
+            0.166
+          ],
+          "content": "Because the forward pass affects the values of $V_{1}^{(2)}$, $V_{2}^{(2)}$, and $V_{3}^{(2)}$, and all nodes in the first layer are connected to at least one of those nodes, all of the first layer's derivatives are affected. The second layer's derivatives are unaffected because they only depend on the difference between $V_{i}^{(2)}$ and $y_{i}$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.17,
+            0.265,
+            0.184
+          ],
+          "content": "Alternative solutions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.19,
+            0.606,
+            0.205
+          ],
+          "content": "For both  $r_{01}$  and  $r_{23}$ , the solution is still the entire bottom row of answers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.218,
+            0.415,
+            0.234
+          ],
+          "content": "Now, let's begin with computing some derivatives."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.245,
+            0.595,
+            0.268
+          ],
+          "content": "(d) [3 pts] Compute the derivative $\\frac{\\partial\\mathcal{L}}{\\partial r_{00}}$. Select one entry from each column."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.131,
+            0.274,
+            0.631,
+            0.387
+          ],
+          "content": "\\begin{array}{c c c c c c c} \\boxed {\\quad} & \\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(1)}} & \\boxed {\\quad} & \\frac {\\partial V _ {0} ^ {(1)}}{\\partial r _ {0 0}} & \\boxed {\\quad} & \\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(2)}} & \\boxed {\\quad} \\\\ \\boxed {\\quad} & \\frac {\\partial \\mathcal {L}}{\\partial V _ {1} ^ {(0)}} & \\boxed {\\quad} & \\frac {\\partial V _ {0} ^ {(2)}}{\\partial r _ {0 0}} & \\boxed {\\quad} & \\frac {\\partial \\mathcal {L}}{\\partial V _ {2} ^ {(0)}} & \\boxed {\\quad} \\\\ \\boxed {\\quad} & r _ {0 0} & \\boxed {\\quad} + & \\boxed {\\quad} & r _ {0 1} & \\boxed {\\quad} + & \\boxed {\\quad} \\\\ \\boxed {\\quad} & \\gamma & \\boxed {\\quad} * & \\boxed {\\quad} & 1 & \\boxed {\\quad} * & \\boxed {\\quad} \\\\ \\boxed {\\quad} & 1 & & \\boxed {\\quad} & 0 & & \\boxed {\\quad} \\\\ \\end{array}",
+          "image_source": "images/page_20_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.391,
+            0.909,
+            0.425
+          ],
+          "content": "$r_{00}$ shows up in two places in the computation graph, in the edge from $V_0^{(0)}$ to $V_0^{(1)}$ and from $V_0^{(1)}$ to $V_0^{(2)}$. The rule for a parameter that shows up multiple times is to add the gradients together."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.43,
+            0.805,
+            0.445
+          ],
+          "content": "Using the chain rule twice (one for each time the parameter shows up in the graph), we get a solution of:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.402,
+            0.455,
+            0.624,
+            0.502
+          ],
+          "content": "\\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(1)}} * \\frac {\\partial V _ {0} ^ {(1)}}{\\partial r _ {0 0}} + \\frac {\\partial \\mathcal {L}}{\\partial V _ {0} ^ {(2)}} * \\frac {\\partial V _ {0} ^ {(2)}}{\\partial r _ {0 0}}",
+          "image_source": "images/page_20_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.526,
+            0.908,
+            0.573
+          ],
+          "content": "(e) [3 pts] Compute the derivative $\\frac{\\partial V_2^{(2)}}{\\partial V_2^{(1)}}$ using the chain rule. Please select from the following terms such that when multiplied together, they yield the correct derivative."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.149,
+            0.575,
+            0.925,
+            0.679
+          ],
+          "content": "\\begin{array}{l l l l l} \\boxed {\\gamma} & \\boxed {\\square} r _ {1, 2} & \\boxed {\\square} r _ {2, 2} & \\boxed {\\square} r _ {3, 2} & \\boxed {\\square} r _ {2, 1} & \\boxed {\\square} r _ {2, 3} \\\\ \\boxed {\\square} \\left\\{ \\begin{array}{l l} 1 & r _ {1 2} + \\gamma V _ {1} ^ {(1)} > r _ {2 2} + \\gamma V _ {2} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\boxed {\\square} \\left\\{ \\begin{array}{l l} 1 & r _ {1 2} + \\gamma V _ {1} ^ {(1)} > r _ {3 2} + \\gamma V _ {3} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\boxed {\\blacksquare} \\left\\{ \\begin{array}{l l} 1 & r _ {2 2} + \\gamma V _ {2} ^ {(1)} > r _ {3 2} + \\gamma V _ {3} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\\\ \\boxed {\\square} \\left\\{ \\begin{array}{l l} 1 & r _ {3 2} + \\gamma V _ {3} ^ {(1)} > r _ {2 2} + \\gamma V _ {2} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\boxed {\\blacksquare} \\left\\{ \\begin{array}{l l} 1 & r _ {2 2} + \\gamma V _ {2} ^ {(1)} > r _ {1 2} + \\gamma V _ {1} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\boxed {\\square} \\left\\{ \\begin{array}{l l} 1 & r _ {3 2} + \\gamma V _ {3} ^ {(1)} > r _ {1 2} + \\gamma V _ {1} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\end{array}",
+          "image_source": "images/page_20_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.683,
+            0.389,
+            0.701
+          ],
+          "content": "☐ Not possible with the given choices"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.704,
+            0.565,
+            0.725
+          ],
+          "content": "The forward pass equation for $V_{2}^{(2)}$ is: $V_{2}^{(2)} = \\max_{i\\in (1,2,3)}r_{i2} + \\gamma V_{i}^{1}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.728,
+            0.645,
+            0.75
+          ],
+          "content": "If $r_{22} + \\gamma V_2^{(1)}$ is smaller then $r_{12} + \\gamma V_1^{(1)}$ or $r_{32} + \\gamma V_3^{(1)}$ then the derivative is 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.752,
+            0.654,
+            0.774
+          ],
+          "content": "If $r_{22} + \\gamma V_2^{(1)}$ is greater, then we have $V_2^{(2)} = r_{22} + \\gamma V_1^{(1)}$, and the derivative is $\\gamma$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.778,
+            0.908,
+            0.81
+          ],
+          "content": "Let $1[i > j]$ to denote an indicator function that is 1 if $r_{i2} + \\gamma V_i^{(1)} > r_{j2} + \\gamma V_j^{(1)}$, and 0 if not. We can write this derivative as $\\gamma * 1[2 > 3] * 1[2 > 1]$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.816,
+            0.266,
+            0.83
+          ],
+          "content": "Alternative solutions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.832,
+            0.569,
+            0.865
+          ],
+          "content": "For computing $\\frac{\\partial V_2^{(2)}}{\\partial V_1^{(1)}}$, the correct solution is $\\gamma * 1[1 > 2] * 1[1 > 3]$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.87,
+            0.569,
+            0.903
+          ],
+          "content": "For computing $\\frac{\\partial V_2^{(2)}}{\\partial V_3^{(1)}}$, the correct solution is $\\gamma * 1[3 > 2] * 1[3 > 1]$."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.503,
+            0.964
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.058,
+            0.908,
+            0.1
+          ],
+          "content": "(f) [3 pts] Compute the derivative $\\frac{\\partial V_2^{(2)}}{\\partial r_{12}}$, assuming that $\\frac{\\partial V_2^{(1)}}{\\partial r_{12}} = 0$. Please select from the following terms, such that when multiplied together, they yield the correct derivative."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.151,
+            0.103,
+            0.924,
+            0.206
+          ],
+          "content": "\\begin{array}{l l} \\square \\gamma & \\square r _ {1, 2} \\quad \\square r _ {2, 2} \\quad \\square r _ {3, 2} \\quad \\square r _ {2, 1} \\quad \\square r _ {2, 3} \\\\ \\blacksquare \\left\\{ \\begin{array}{l l} 1 & r _ {1 2} + \\gamma V _ {1} ^ {(1)} > r _ {2 2} + \\gamma V _ {2} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\blacksquare \\left\\{ \\begin{array}{l l} 1 & r _ {1 2} + \\gamma V _ {1} ^ {(1)} > r _ {3 2} + \\gamma V _ {3} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\\\ \\square \\left\\{ \\begin{array}{l l} 1 & r _ {3 2} + \\gamma V _ {3} ^ {(1)} > r _ {2 2} + \\gamma V _ {2} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. & \\square \\left\\{ \\begin{array}{l l} 1 & r _ {2 2} + \\gamma V _ {2} ^ {(1)} > r _ {1 2} + \\gamma V _ {1} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\\\ \\end{array} \\quad \\begin{array}{l l} \\square \\left\\{ \\begin{array}{l l} 1 & r _ {2 2} + \\gamma V _ {2} ^ {(1)} > r _ {3 2} + \\gamma V _ {3} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\\\ \\square \\left\\{ \\begin{array}{l l} 1 & r _ {3 2} + \\gamma V _ {3} ^ {(1)} > r _ {1 2} + \\gamma V _ {1} ^ {(1)} \\\\ 0 & \\text {otherwise} \\end{array} \\right. \\\\ \\end{array}",
+          "image_source": "images/page_21_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.211,
+            0.389,
+            0.229
+          ],
+          "content": "☐ Not possible with the given choices"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.232,
+            0.868,
+            0.253
+          ],
+          "content": "This is similar to the previous problem. Again, the forward pass equation for $V_{2}^{(2)}$ is: $V_{2}^{(2)} = \\max_{i\\in (1,2,3)}r_{i2} + \\gamma V_{i}^{1}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.255,
+            0.646,
+            0.277
+          ],
+          "content": "If $r_{12} + \\gamma V_1^{(1)}$ is smaller then $r_{22} + \\gamma V_2^{(1)}$ or $r_{32} + \\gamma V_3^{(1)}$ then the derivative is 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.28,
+            0.654,
+            0.301
+          ],
+          "content": "If $r_{12} + \\gamma V_1^{(1)}$ is greater, then we have $V_2^{(2)} = r_{12} + \\gamma V_1^{(1)}$, and the derivative is 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.306,
+            0.908,
+            0.339
+          ],
+          "content": "Let $1[i > j]$ to denote an indicator function that is 1 if $r_{i2} + \\gamma V_i^{(1)} > r_{j2} + \\gamma V_j^{(1)}$, and 0 if not. We can write this derivative as $1[1 > 2] * 1[1 > 3]$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.344,
+            0.266,
+            0.357
+          ],
+          "content": "Alternative solutions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.359,
+            0.492,
+            0.39
+          ],
+          "content": "For computing $\\frac{\\partial V_2^{(2)}}{\\partial r_{22}}$, the solution is $1[2 > 1] * 1[2 > 3]$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.393,
+            0.494,
+            0.424
+          ],
+          "content": "For computing $\\frac{\\partial V_2^{(2)}}{\\partial r_{32}}$, the solution is $1[3 > 1] * 1[3 > 2]$."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.056,
+            0.592,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q7. [9 pts] Q Learning Fundamentals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.095,
+            0.595,
+            0.111
+          ],
+          "content": "(a) (i) [1 pt] Q-learning is a model-based reinforcement learning method."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.112,
+            0.323,
+            0.127
+          ],
+          "content": "○ True ● False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.128,
+            0.497,
+            0.144
+          ],
+          "content": "Q-Learning is a off-policy, model-free RL method."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.148,
+            0.784,
+            0.164
+          ],
+          "content": "(ii) [1 pt] In approximate Q-learning, which of the following can be learned with a neural network?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.167,
+            0.165,
+            0.483,
+            0.181
+          ],
+          "content": "Weights Features ○ Neither"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.181,
+            0.909,
+            0.212
+          ],
+          "content": "Q-Learning can have neural networks learn both the weights and the features. Learning the weights only is the simpler case."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.224,
+            0.909,
+            0.256
+          ],
+          "content": "(b) For the following parts, consider the following MDP. The state space is determined by the grid-world like letters, and the agent can take one of four actions: up, down, right, left."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.225,
+            0.281,
+            0.744,
+            0.474
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.356,
+                0.493,
+                0.629,
+                0.509
+              ],
+              "content": "Figure 1: The MDP that we are learning."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_image_9.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.245,
+            0.542,
+            0.739,
+            0.58
+          ],
+          "content": "|  | A | B | C | D | E | F | G | H | I | J | K | L |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| $Q_0(s,a)$ | 0 | -10 | 0 | 0 | 0 | 0 | -10 | 10 | 0 | 25 | 50 | 100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.524,
+                0.611,
+                0.54
+              ],
+              "content": "We start with the following Q values for the states for all possible actions:"
+            },
+            {
+              "bbox": [
+                0.406,
+                0.59,
+                0.579,
+                0.605
+              ],
+              "content": "Table 1: Initial Q Values."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_table_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.618,
+            0.908,
+            0.649
+          ],
+          "content": "Now, consider the following episodes, shown in Table 2 below and compute the Q values for the given state-action pairs after running Q learning for the following transitions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.653,
+            0.391,
+            0.668
+          ],
+          "content": "Operate with the following assumptions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.669,
+            0.304,
+            0.683
+          ],
+          "content": "1) a discount factor,  $\\gamma = .9$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.684,
+            0.895,
+            0.713
+          ],
+          "content": "2) a terminal reward is received after leaving a terminal state and the only action available in a terminal state is to exit.  \n3) a living reward of $-1$ for all other transitions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.715,
+            0.308,
+            0.729
+          ],
+          "content": "4) the learning rate  $\\alpha = 0.5$ ."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.348,
+            0.727,
+            0.906,
+            0.749
+          ],
+          "content": "Q (s, a) \\leftarrow (1 - \\alpha) Q (s, a) + \\alpha \\big [ r + \\gamma \\max _ {a ^ {\\prime}} Q (s ^ {\\prime}, a ^ {\\prime}) \\big ]\\tag{1}",
+          "image_source": "images/page_22_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.225,
+            0.762,
+            0.762,
+            0.829
+          ],
+          "content": "\\begin{array}{l c}\\text {sequence}&(\\text {step index, state, action, next state})\\\\\\hline 1&(0, \\mathrm{F}, \\text {down, I}) \\rightarrow (1, \\mathrm{I}, \\text {down, L}) \\rightarrow (2, \\mathrm{L}, \\text {exit})\\\\\\hline 2&(3, \\mathrm{D}, \\text {down, E}) \\rightarrow (4, \\mathrm{E}, \\text {right, F}) \\rightarrow (5, \\mathrm{F}, \\text {down, G}) \\rightarrow (6, \\mathrm{G}, \\text {exit})\\\\\\hline 3&(7, \\mathrm{A}, \\text {down, D}) \\rightarrow (8, \\mathrm{D}, \\text {down, H}) \\rightarrow (9, \\mathrm{H}, \\text {down, J})\\end{array}",
+          "image_source": "images/page_22_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.409,
+            0.841,
+            0.577,
+            0.856
+          ],
+          "content": "Table 2: Agent roll-outs."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.863,
+            0.508,
+            0.88
+          ],
+          "content": "(i) [1 pt]  $Q(\\mathrm{F}, \\mathrm{down}) = \\alpha^{2} - 1\\alpha - 10\\alpha$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.885,
+            0.504,
+            0.901
+          ],
+          "content": "(ii) [1 pt] $Q(\\mathrm{D},\\mathrm{down}) = \\underline{\\alpha^2 - 1\\alpha + 8\\alpha}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.905,
+            0.438,
+            0.922
+          ],
+          "content": "(iii) [1 pt] Q(A, down) = \\_\\_\\_\\_ -α"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "24"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.062,
+            0.629,
+            0.077
+          ],
+          "content": "Step by step with the q-learning formula. Sequence 1 entails steps 0,1, and 2:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.174,
+            0.088,
+            0.906,
+            0.109
+          ],
+          "content": "\\eta = Q (\\mathrm{F}, \\text {down}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{F}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} (\\mathrm{I}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot 0 + \\alpha (- 1 + 0. 9 \\cdot 0)\\tag{2}",
+          "image_source": "images/page_23_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.186,
+            0.114,
+            0.906,
+            0.135
+          ],
+          "content": "= Q (\\mathrm{I}, \\text {down}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{I}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} \\left(\\mathrm{L}, a ^ {\\prime}\\right) \\right] = (1 - \\alpha) \\cdot 0 + \\alpha (- 1 + 0. 9 \\cdot 1 0 0)\\tag{3}",
+          "image_source": "images/page_23_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.188,
+            0.141,
+            0.906,
+            0.158
+          ],
+          "content": "= Q (\\mathrm{L}, \\text {exit}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{L}, \\text {exit}) + \\alpha [ 1 0 0 ] = (1 - \\alpha) \\cdot 1 0 0 + \\alpha (1 0 0)\\tag{4}",
+          "image_source": "images/page_23_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.169,
+            0.414,
+            0.184
+          ],
+          "content": "Now for sequence 2 with steps 3, 4, 5 and 6:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.175,
+            0.195,
+            0.906,
+            0.216
+          ],
+          "content": "\\beta = Q (\\mathrm{D}, \\text {down}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{D}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} (\\mathrm{E}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot 0 + \\alpha (- 1 + 0. 9 \\cdot 0)\\tag{5}",
+          "image_source": "images/page_23_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.222,
+            0.906,
+            0.243
+          ],
+          "content": "= Q (\\mathrm{E}, \\text {right}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{E}, \\text {right}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} (\\mathrm{F}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot 0 + \\alpha (- 1 + 0. 9 \\cdot 0)\\tag{6}",
+          "image_source": "images/page_23_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.248,
+            0.906,
+            0.27
+          ],
+          "content": "= Q (\\mathrm{F}, \\mathrm{down}) \\leftarrow (1 - \\alpha) \\eta + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} (\\mathrm{G}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot \\eta + \\alpha (- 1 + 0. 9 \\cdot - 1 0)\\tag{7}",
+          "image_source": "images/page_23_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.275,
+            0.906,
+            0.292
+          ],
+          "content": "= Q (\\mathrm{G}, \\text {exit}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{G}, \\text {exit}) + \\alpha [ - 1 0 ] = (1 - \\alpha) \\cdot - 1 0 + \\alpha (- 1 0)\\tag{8}",
+          "image_source": "images/page_23_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.304,
+            0.376,
+            0.318
+          ],
+          "content": "And sequence 3 with steps 7, 8, and 9:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.179,
+            0.33,
+            0.906,
+            0.35
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{A}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q (\\mathrm{D}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot 0 + \\alpha (- 1 + 0. 9 \\cdot 0)\\tag{9}",
+          "image_source": "images/page_23_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.179,
+            0.356,
+            0.906,
+            0.377
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) \\leftarrow (1 - \\alpha) Q (\\mathrm{D}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} (\\mathrm{H}, a ^ {\\prime}) \\right] = (1 - \\alpha) \\cdot \\beta + \\alpha (- 1 + 0. 9 \\cdot 1 0)\\tag{10}",
+          "image_source": "images/page_23_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.179,
+            0.382,
+            0.906,
+            0.402
+          ],
+          "content": "= Q (\\mathrm{H}, \\text {down}) \\leftarrow (1 - \\alpha) Q _ {0} (\\mathrm{H}, \\text {down}) + \\alpha \\left[ - 1 + 0. 9 \\max _ {a ^ {\\prime}} Q _ {0} \\left(\\mathrm{J}, a ^ {\\prime}\\right) \\right] = (1 - \\alpha) \\cdot 1 0 + \\alpha (- 1 + 0. 9 \\cdot 2 5)\\tag{11}",
+          "image_source": "images/page_23_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.421,
+            0.32,
+            0.435
+          ],
+          "content": "So, in summary, for general  $\\alpha$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.322,
+            0.447,
+            0.906,
+            0.465
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = (1 - \\alpha) \\big [ - \\alpha \\big ] + \\alpha \\cdot - 1 0 = \\alpha^ {2} - 1 \\alpha - 1 0 \\alpha\\tag{12}",
+          "image_source": "images/page_23_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.322,
+            0.469,
+            0.906,
+            0.486
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) = (1 - \\alpha) \\big [ - \\alpha \\big ] + \\alpha \\cdot 8 = \\alpha^ {2} - 1 \\alpha + 8 \\alpha\\tag{13}",
+          "image_source": "images/page_23_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.323,
+            0.49,
+            0.906,
+            0.505
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - \\alpha\\tag{14}",
+          "image_source": "images/page_23_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.524,
+            0.206,
+            0.537
+          ],
+          "content": "For  $\\alpha = 0.3$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.55,
+            0.595,
+            0.565
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = - 3. 2 1",
+          "image_source": "images/page_23_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.551,
+            0.906,
+            0.584
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) = 2. 1 9\\tag{15}",
+          "image_source": "images/page_23_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.878,
+            0.57,
+            0.906,
+            0.583
+          ],
+          "content": "(16)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.588,
+            0.906,
+            0.603
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - 0. 3\\tag{17}",
+          "image_source": "images/page_23_equation_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.622,
+            0.206,
+            0.635
+          ],
+          "content": "For  $\\alpha = 0.4$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.648,
+            0.906,
+            0.664
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = - 4. 2 4\\tag{18}",
+          "image_source": "images/page_23_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.667,
+            0.905,
+            0.682
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) = 2. 9 6\\tag{19}",
+          "image_source": "images/page_23_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.686,
+            0.906,
+            0.701
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - 0. 4\\tag{20}",
+          "image_source": "images/page_23_equation_26.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.719,
+            0.206,
+            0.732
+          ],
+          "content": "For  $\\alpha = 0.5$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.746,
+            0.906,
+            0.762
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = - 5. 2 5\\tag{21}",
+          "image_source": "images/page_23_equation_28.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.765,
+            0.906,
+            0.78
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) = 3. 7 5\\tag{22}",
+          "image_source": "images/page_23_equation_29.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.784,
+            0.906,
+            0.799
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - 0. 5\\tag{23}",
+          "image_source": "images/page_23_equation_30.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.817,
+            0.206,
+            0.83
+          ],
+          "content": "For  $\\alpha = 0.6$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.845,
+            0.906,
+            0.86
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = - 6. 2 4\\tag{24}",
+          "image_source": "images/page_23_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.863,
+            0.906,
+            0.879
+          ],
+          "content": "= Q (\\mathrm{D}, \\text {down}) = 4. 5 6\\tag{25}",
+          "image_source": "images/page_23_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.882,
+            0.906,
+            0.897
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - 0. 6\\tag{26}",
+          "image_source": "images/page_23_equation_34.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.746,
+            0.022,
+            0.904,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.062,
+            0.206,
+            0.076
+          ],
+          "content": "For  $\\alpha = 0.7$ :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.089,
+            0.594,
+            0.105
+          ],
+          "content": "= Q (\\mathrm{F}, \\text {down}) = - 7. 2 1",
+          "image_source": "images/page_24_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.09,
+            0.906,
+            0.142
+          ],
+          "content": "= Q (\\mathrm{A}, \\text {down}) = - 0. 7\\tag{27}",
+          "image_source": "images/page_24_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.437,
+            0.108,
+            0.908,
+            0.123
+          ],
+          "content": "$= Q(\\mathrm{D},\\text{down}) = 5.39$ (28)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.877,
+            0.128,
+            0.906,
+            0.141
+          ],
+          "content": "(29)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.061,
+            0.614,
+            0.077
+          ],
+          "content": "Given a new Q table for the same MDP, we want to look closer at some behavior."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.228,
+            0.079,
+            0.759,
+            0.177
+          ],
+          "content": "|  | A | B | C | D | E | F | G | H | I | J | K | L |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| $Q_0(s, \\text{right})$ | 0 | - | 1 | 4 | 0 | -5 | - | 10 | 10 | 25 | 50 | - |\n| $Q_0(s, \\text{down})$ | 1 | - | 0 | 6 | 1 | 3 | - | 9 | 50 | 25 | 50 | - |\n| $Q_0(s, \\text{left})$ | 0 | - | 0 | 1 | 2 | 2 | - | 8 | 10 | 25 | 50 | - |\n| $Q_0(s, \\text{up})$ | 0 | - | 0 | 2 | 1 | -5 | - | 7 | 0 | 25 | 50 | - |\n| $Q_0(s, \\text{exit})$ | - | -10 | - | - | - | - | -10 | - | - | - | - | 100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.407,
+                0.187,
+                0.58,
+                0.203
+              ],
+              "content": "Table 3: Initial Q Values."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_25_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.224,
+            0.909,
+            0.256
+          ],
+          "content": "(c) For the following initial states, what state will the agent end up in after two steps following the policy extracted from the given Q values in Table 3? In the case of a tie, both solutions will be accepted (the agent can go either direction)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.274,
+            0.91,
+            0.32
+          ],
+          "content": "If the agent has left the MDP, write “exit”. Assume in this subpart that the dynamics are deterministic. Valid actions always move the agent in the intended direction, while invalid actions will result in no movement (i.e. moving into a wall will leave the agent in the same location)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.325,
+            0.908,
+            0.341
+          ],
+          "content": "Only four out of seven of these were given on the exam, please reference your own exam to compare the correct subparts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.345,
+            0.39,
+            0.362
+          ],
+          "content": "(i) [1 pt] State A. H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.365,
+            0.391,
+            0.382
+          ],
+          "content": "(ii) [1 pt] State C. H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.385,
+            0.391,
+            0.402
+          ],
+          "content": "(iii) [1 pt] State D. H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.405,
+            0.391,
+            0.422
+          ],
+          "content": "(iv) [1 pt] State E. H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.425,
+            0.395,
+            0.443
+          ],
+          "content": "(v) [0 pts] State F. L"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.445,
+            0.401,
+            0.463
+          ],
+          "content": "(vi) [0 pts] State H. \\_\\_\\_\\_ H"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.465,
+            0.406,
+            0.482
+          ],
+          "content": "(vii) [0 pts] State I. exit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.485,
+            0.714,
+            0.502
+          ],
+          "content": "The chosen action from each state will be the action corresponding to the highest Q-value:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.511,
+            0.258,
+            0.527
+          ],
+          "content": "\\- State A: down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.531,
+            0.248,
+            0.547
+          ],
+          "content": "\\- State $B$: exit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.551,
+            0.251,
+            0.568
+          ],
+          "content": "\\- State $c$: right"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.571,
+            0.259,
+            0.587
+          ],
+          "content": "\\- State $D$: down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.591,
+            0.259,
+            0.607
+          ],
+          "content": "\\- State $E$: down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.612,
+            0.259,
+            0.627
+          ],
+          "content": "\\- State $F$: down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.632,
+            0.248,
+            0.647
+          ],
+          "content": "\\- State $G$: exit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.652,
+            0.257,
+            0.668
+          ],
+          "content": "\\- State $H$: right"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.672,
+            0.255,
+            0.687
+          ],
+          "content": "\\- State $I$: down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.693,
+            0.351,
+            0.709
+          ],
+          "content": "\\- State $J$: up, left, right, down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.713,
+            0.353,
+            0.729
+          ],
+          "content": "\\- State $K$: up, left, right, down"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.733,
+            0.246,
+            0.748
+          ],
+          "content": "\\- State $L$: exit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.757,
+            0.909,
+            0.788
+          ],
+          "content": "Take the optimal action from the initial state, and then the optimal action from the successor state in order to get the answers in the solutions."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.488,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q8. [9 pts] A Cluster of Trees"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.095,
+            0.909,
+            0.126
+          ],
+          "content": "(a) Consider using the k-means algorithm to cluster the following points A, B, C, D, E, F, marked on the grid with black dots. S and T correspond to the current cluster centers, which are marked in the graph by red dots:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.326,
+            0.145,
+            0.659,
+            0.36
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.373,
+                0.798,
+                0.389
+              ],
+              "content": "There were different graphs between versions, but all had the same answers for the following questions."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_26_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.393,
+            0.909,
+            0.454
+          ],
+          "content": "(i) [2 pts] We run one iteration of the k-means algorithm from the current state. For which of the following distance functions will point A be assigned to cluster center T? All distance functions are written as a function of two arbitrary points  $M = (M_x, M_y)$  and  $N = (N_x, N_y)$ . Assume that in choosing between cluster centers we break ties alphabetically (i.e.: select S over T)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.457,
+            0.521,
+            0.567
+          ],
+          "content": "\\begin{array}{l} \\blacksquare d (M, N) = | M _ {x} - N _ {x} | + | M _ {y} - N _ {y} | \\\\ \\blacksquare d (M, N) = (M _ {x} - N _ {x}) ^ {2} + (M _ {y} - N _ {y}) ^ {2} \\\\ \\square d (M, N) = \\max \\left\\{(M _ {x} - N _ {x}) ^ {2}, (M _ {y} - N _ {y}) ^ {2} \\right\\} \\\\ \\blacksquare d (M, N) = \\min \\left\\{(M _ {x} - N _ {x}) ^ {2}, (M _ {y} - N _ {y}) ^ {2} \\right\\} \\\\ \\blacksquare d (M, N) = \\frac {| M _ {x} - N _ {x} |}{| M _ {x} | + | N _ {x} |} + \\frac {| M _ {y} - N _ {y} |}{| M _ {y} | + | N _ {y} |} \\end{array}",
+          "image_source": "images/page_26_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.566,
+            0.346,
+            0.582
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.587,
+            0.908,
+            0.617
+          ],
+          "content": "For each distance function, solve for  $d(S, A)$  and  $d(T, A)$ . The evaluation associated with the smaller value will be the center to which A is assigned."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.622,
+            0.799,
+            0.637
+          ],
+          "content": "1.  $d(S, A) = |-6 - 2| + |6 - 2| = 12$ ;  $d(T, A) = |4 - 2| + |-6 - 2| = 10$ . A is assigned to T."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.639,
+            0.799,
+            0.655
+          ],
+          "content": "2. $d(S, A) = (-6 - 2)^{2} + (6 - 2)^{2} = 80$; $d(T, A) = (4 - 2)^{2} + (-6 - 2)^{2} = 68$. $A$ is assigned to"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.656,
+            0.907,
+            0.687
+          ],
+          "content": "3. $d(S, A) = \\max \\left\\{(-6 - 2)^2, (6 - 2)^2\\right\\} = 64$; $d(T, A) = \\max \\left\\{(4 - 2)^2, (-6 - 2)^2\\right\\} = 64$. $A$ is assigned to $S$ by tiebreaking."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.163,
+            0.689,
+            0.875,
+            0.705
+          ],
+          "content": "4. $d(S, A) = \\min \\left\\{(-6 - 2)^2, (6 - 2)^2\\right\\} = 16$; $d(T, A) = \\min \\left\\{(4 - 2)^2, (-6 - 2)^2\\right\\} = 4$. $A$ is assigned to $T$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.707,
+            0.746,
+            0.732
+          ],
+          "content": "5. $d(S,A) = \\frac{| - 6 - 2|}{| - 6| + |2|} +\\frac{|6 - 2|}{|6| + |2|} = \\frac{3}{2};d(T,A) = \\frac{|4 - 2|}{|4| + |2|} +\\frac{| - 6 - 2|}{| - 6| + |2|} = \\frac{4}{3} .A$ is assigned to $T$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.737,
+            0.907,
+            0.784
+          ],
+          "content": "(ii) [2 pts] After assigning a new set of points to $T$ using distance function $d(M, N) = (M_x - N_x)^2 + (M_y - N_y)^2$, we update $T$ to $T'$. What is the new coordinate of $T'$ under this distance function? Write your answer as a tuple. Assume that in choosing between cluster centers we break ties alphabetically (i.e.: select $S$ over $T$)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.796,
+            0.349,
+            0.837
+          ],
+          "content": "T ^ {\\prime} = \\boxed {(3. 5, - 1)}",
+          "image_source": "images/page_26_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.842,
+            0.908,
+            0.889
+          ],
+          "content": "To update T to  $T'$ , for the points assigned to T based on the distance function, we set  $T'$  to be the point that minimizes the sum of the distances between each of those assigned points and  $T'$ . Using the distance function, we assign points A, B, C, and F to T, so we try to find  $T'$  that minimizes  $d(T', A) + d(T', B) + d(T', C) + d(T', F)$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.891,
+            0.908,
+            0.925
+          ],
+          "content": "Using the standard distance function, this corresponds to just taking an average over all the points assigned to center T. Therefore, we have  $T' = \\left(\\frac{2+6+-2+8}{4}, \\frac{2+4-6-4}{4}\\right) = (3.5, -1)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.062,
+            0.909,
+            0.122
+          ],
+          "content": "(iii) [1 pt] Consider a set of n data points  $x_{1}, x_{2}, \\cdots, x_{n}$  which we would like to group into m clusters, where n > m. For which of the following cluster center initialization procedures is k-means guaranteed to converge to a local optimum when using Euclidean distance as the distance function? Assume that we always select the first cluster center uniformly at random from the dataset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.126,
+            0.648,
+            0.142
+          ],
+          "content": "Sample all $m$ centers from the $n$ data points uniformly at random."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.143,
+            0.777,
+            0.159
+          ],
+          "content": "Iteratively select the unselected datapoint furthest from all currently selected centers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.212,
+            0.16,
+            0.898,
+            0.177
+          ],
+          "content": "Run agglomerative clustering on the dataset, and use the centroids of the $m$ largest clusters for $k$-means."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.194,
+            0.178,
+            0.907,
+            0.194
+          ],
+          "content": "Find $m$ equally spaced areas in the feature space that cover all the data points, then take the center of each."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.195,
+            0.347,
+            0.211
+          ],
+          "content": "○ None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.215,
+            0.908,
+            0.245
+          ],
+          "content": "The k-means algorithm is guaranteed to converge to some local optimum, regardless of how we initialize our cluster centers here."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.25,
+            0.909,
+            0.31
+          ],
+          "content": "(iv) [1 pt] Consider a set of n data points  $x_{1}, x_{2}, \\cdots, x_{n}$  which we would like to group into m clusters, where n > m. For which of the following cluster center initialization procedures is k-means guaranteed to converge to the global optimum when using Euclidean distance as the distance function? Assume that we always select the first cluster center uniformly at random from the dataset."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.313,
+            0.648,
+            0.33
+          ],
+          "content": "☐ Sample all m centers from the n data points uniformly at random."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.331,
+            0.776,
+            0.348
+          ],
+          "content": "☐ Iteratively select the unselected datapoint furthest from all currently selected centers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.348,
+            0.898,
+            0.365
+          ],
+          "content": "☐ Run agglomerative clustering on the dataset, and use the centroids of the m largest clusters for k-means."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.366,
+            0.907,
+            0.383
+          ],
+          "content": "☐ Find m equally spaced areas in the feature space that cover all the data points, then take the center of each."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.384,
+            0.341,
+            0.399
+          ],
+          "content": "None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.404,
+            0.91,
+            0.465
+          ],
+          "content": "The k-means algorithm is never guaranteed to converge to the global optimum, regardless of how we initialize our cluster centers here. The only way we would guarantee a global optimum convergence would be setting our cluster centers to the exact centroids of the m clusters that were associated with the global optimum, but we would only be able to perfectly solve for this using brute force. Other methods approximate this result in less time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.477,
+            0.907,
+            0.509
+          ],
+          "content": "(b) Suppose that we've successfully used clustering to separate our data points into two distinct classes: circles and x's. There were different versions of the same graphs below, but the answers were the same between versions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.512,
+            0.908,
+            0.544
+          ],
+          "content": "(i) [1 pt] The graph depicting the same dataset separated into classes is shown below. Each coordinate corresponds to the values of two features  $f_{1}$  and  $f_{2}$  of a datapoint, plotted on the x and y axes respectively:"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.327,
+            0.55,
+            0.66,
+            0.765
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_chart_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.774,
+            0.908,
+            0.805
+          ],
+          "content": "What is the minimum depth of the decision tree that completely separates the two classes? Assume that each decision involves comparing a single feature value against a chosen threshold."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.808,
+            0.371,
+            0.929
+          ],
+          "content": "1\n○ 2\n○ 3\n○ 4\n○ 5\n○ > 5\n○ Cannot be determined"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.745,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.062,
+            0.908,
+            0.093
+          ],
+          "content": "The data is linearly separable by a single line, so we only need to query once to determine if a point is red or blue, which can be drawn as a decision tree of depth 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.096,
+            0.909,
+            0.128
+          ],
+          "content": "(ii) [2 pts] We recovered some additional data points that were missing from the graph! We've plotted them alongside the original data, and labeled their classes accordingly."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.326,
+            0.135,
+            0.66,
+            0.351
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.36,
+            0.908,
+            0.392
+          ],
+          "content": "What is the minimum depth of the decision tree that completely separates the two classes now? Assume that each decision involves comparing a single feature value against a chosen threshold."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.187,
+            0.394,
+            0.371,
+            0.517
+          ],
+          "content": "○ 1\n○ 2\n● 3\n○ 4\n○ 5\n○ > 5\n○ Cannot be determined"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.522,
+            0.909,
+            0.583
+          ],
+          "content": "Intuitively, we want to separate the dataset above using as few horizontal and vertical lines as possible such that our separation will correspond to the minimal depth of the decision tree. The key is to segment off as much of the dataset that is of the same class together that we can; however, the way that the data overlaps on x and y axes make it not so straightforward."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.584,
+            0.91,
+            0.631
+          ],
+          "content": "At depth 1 and depth 2, no matter how we section off the dataset into two parts, we will be unable to perform a separation that perfectly separates the data, because of how points of different classes share identical x and y coordinates. Only at depth 3 can we completely separate the data. An example of this is seen below:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.169,
+            0.648,
+            0.719,
+            0.889
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.95,
+            0.505,
+            0.964
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.57,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q9. [11 pts] Tupacman's NB Model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.095,
+            0.91,
+            0.141
+          ],
+          "content": "(a) Tupacman is ready to begin his rap career and wants to use his CS 188 knowledge to figure out how to make it. After some thorough research, he realizes that the success of Billboard Hits, whether $H = +h$ or $H = -h$, only depends on the following factors:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.15,
+            0.544,
+            0.165
+          ],
+          "content": "\\- $T$: +t if songs have a tempo greater than 120 BPM, else -t"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.169,
+            0.496,
+            0.184
+          ],
+          "content": "\\- $E$: $+e$ if the song contains explicit content, else $-e$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.188,
+            0.467,
+            0.203
+          ],
+          "content": "\\- $D$: $+d$ if the song has a Drake feature, else $-d$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.212,
+            0.642,
+            0.227
+          ],
+          "content": "He also collects data on recently released music and stores it in the table below."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.23,
+            0.371,
+            0.372
+          ],
+          "content": "| Song | E | T | D | H |\n| --- | --- | --- | --- | --- |\n| 1 | + | + | + | + |\n| 2 | + | - | - | + |\n| 3 | - | - | - | + |\n| 4 | + | - | - | + |\n| 5 | - | - | + | - |\n| 6 | - | - | + | - |\n| 7 | + | - | + | - |\n| 8 | + | - | + | - |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.131,
+                0.375,
+                0.539,
+                0.391
+              ],
+              "content": "(i) [2 pts] Use MLE to fill in the following probability tables:"
+            }
+          ],
+          "image_source": "images/page_29_table_6.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.189,
+            0.407,
+            0.277,
+            0.456
+          ],
+          "content": "| H | P(H) |\n| --- | --- |\n| + | 0.5 |\n| - | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.315,
+            0.392,
+            0.457,
+            0.471
+          ],
+          "content": "| E | H | $P(E\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.75 |\n| + | - | 0.5 |\n| - | + | 0.25 |\n| - | - | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.472,
+            0.908,
+            0.502
+          ],
+          "content": "For MLE, we take the number of data points consistent with the query, and divide that by the total based on the query we're estimating."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.506,
+            0.738,
+            0.522
+          ],
+          "content": "(ii) [2 pts] Now use Laplace Smoothing with $k = 3$ to fill in the following probability tables:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.237,
+            0.523,
+            0.379,
+            0.602
+          ],
+          "content": "| T | H | $P(T\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.4 |\n| + | - | 0.3 |\n| - | + | 0.6 |\n| - | - | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_12.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.464,
+            0.523,
+            0.608,
+            0.602
+          ],
+          "content": "| D | H | $P(D\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.4 |\n| + | - | 0.7 |\n| - | + | 0.6 |\n| - | - | 0.3 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.154,
+                0.604,
+                0.908,
+                0.634
+              ],
+              "content": "For Laplace Smoothing, we add the constant $k = 3$ to each count, and divide that by the total based on the query plus $k$ times the domain of the random variable we're currently estimating for."
+            }
+          ],
+          "image_source": "images/page_29_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.638,
+            0.755,
+            0.654
+          ],
+          "content": "(iii) [1 pt] How does decreasing the value of $k$ in Laplace Smoothing affect the learned model?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.655,
+            0.528,
+            0.67
+          ],
+          "content": "\\- Increases overfitting    - Decreases overfitting"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.672,
+            0.91,
+            0.718
+          ],
+          "content": "The purpose of Laplace Smoothing is to prevent overfitting by adding a constant k to the count. By reducing the value of k, we would be increasing overfitting in our learned model. This is easiest to see for the smallest value of k = 0, which would be the same as having our model without Laplace Smoothing at all."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.73,
+            0.505,
+            0.746
+          ],
+          "content": "(b) Use the following probability tables for the next few parts."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.156,
+            0.757,
+            0.245,
+            0.791
+          ],
+          "content": "| H | P(H) |\n| --- | --- |\n| + | 0.4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_19.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.288,
+            0.75,
+            0.432,
+            0.798
+          ],
+          "content": "| E | H | $P(E\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.55 |\n| + | - | 0.45 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_20.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.526,
+            0.75,
+            0.669,
+            0.799
+          ],
+          "content": "| T | H | $P(T\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.6 |\n| + | - | 0.4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_21.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.763,
+            0.749,
+            0.907,
+            0.798
+          ],
+          "content": "| D | H | $P(D\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.3 |\n| + | - | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.801,
+            0.242,
+            0.816
+          ],
+          "content": "Alternate version:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.156,
+            0.825,
+            0.244,
+            0.859
+          ],
+          "content": "| H | P(H) |\n| --- | --- |\n| + | 0.4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_24.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.288,
+            0.817,
+            0.432,
+            0.865
+          ],
+          "content": "| E | H | $P(E\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.5 |\n| + | - | 0.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_25.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.526,
+            0.817,
+            0.669,
+            0.865
+          ],
+          "content": "| T | H | $P(T\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.8 |\n| + | - | 0.2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_26.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.763,
+            0.817,
+            0.907,
+            0.865
+          ],
+          "content": "| D | H | $P(D\\|H)$ |\n| --- | --- | --- |\n| + | + | 0.6 |\n| + | - | 0.4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_27.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.882,
+            0.909,
+            0.929
+          ],
+          "content": "(i) [2 pts] Tupacman wants to release a song at 150 BPM (+t) that contains no slurs (-e) and has a Drake feature (+d). Find the joint probability of this song being a hit (+h). Simplify your answer as much as possible and round your answer to the nearest thousandth (i.e.: 1.2345 would round to 1.236)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.904,
+            0.037
+          ],
+          "content": "SID: \\_\\_\\_\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.104,
+            0.908,
+            0.134
+          ],
+          "content": "$P(H = +h, T = +t, E = -e, D = +d) = P(+h)P(T = +t| + h)P(E = -e| + h)P(D = +d| + h) = 0.4 * 0.6 * 0.45 * 0.3 = 0.032$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.144,
+            0.908,
+            0.174
+          ],
+          "content": "ALTERNATE VERSION:  $P(H = +h, T = +t, E = -e, D = +d) = P(+h)P(T = +t|+h)P(E = -e|+h)P(D = +d| + h) = 0.4 * 0.8 * 0.5 * 0.6 = 0.096$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.179,
+            0.909,
+            0.209
+          ],
+          "content": "(ii) [3 pts] Find $P(H = -h|T = +, E = -, D = +)$. Simplify your answer as much as possible and round your answer to the nearest hundredth (i.e.: 1.234 would round to 1.23)."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.16,
+            0.211,
+            0.409,
+            0.25
+          ],
+          "sub_type": "code",
+          "content": "```txt\n0.74\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.256,
+            0.688,
+            0.271
+          ],
+          "content": "Normalize the values from the previous part. That is, 0.0924 / (0.0324 + 0.0924)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.28,
+            0.907,
+            0.31
+          ],
+          "content": "\\begin{array}{l} \\text {ALTERNATE VERSION:} P (H = - h, T = + t, E = - e, D = + d) = P (- h) P (T = + t | - h) P (E = - e | - h) P (D = \\\\ + d | - h) = 0. 6 * 0. 2 * 0. 5 * 0. 4 = 0. 0 2 4 \\end{array}",
+          "image_source": "images/page_30_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.314,
+            0.704,
+            0.328
+          ],
+          "content": "Normalize the values from the previous part. That is,  $0.024 / (0.024 + 0.096) = 0.2$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.333,
+            0.554,
+            0.348
+          ],
+          "content": "(iii) [1 pt] What prediction would the model make for this song?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.35,
+            0.909,
+            0.399
+          ],
+          "content": "○ Hit ● Not a Hit ○ Not enough information ○ Tie\nCompare  $P(H = h, T = +t, E = -e, D = +D) = P(h)P(T = +t|h)P(E = -e|h)P(D = +d|h)$  for both values of h. The value is 0.0324 for +h and 0.0924 for -h."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.408,
+            0.732,
+            0.423
+          ],
+          "content": "ALTERNATE VERSION: HIT, since value for +h is 0.096 and value for -h is 0.024."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.056,
+            0.508,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q10. [14 pts] Perceptron's Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.095,
+            0.91,
+            0.172
+          ],
+          "content": "(a) Tupacman has written another song that he is thinking about releasing but is waiting to hear back from Drake about a potential feature. He has to let his team know if he will release the song by tonight and makes a decision network that is shown below to help him make the right decision. The outcome of his track purely depends on Drake's reply (+d if he agrees, else -d) which Tupacman will try to predict by observing Drake's mood (+m if he's in a good mood, else -m) through his twitter feed. He estimates  $P(M = +m|D = +d) = 0.8$ ,  $P(M = +m|D = -d) = 0.3$  and  $P(D = +d) = 0.4$ ."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.211,
+            0.25,
+            0.446,
+            0.33
+          ],
+          "content": "| Action | Drake | Utility |\n| --- | --- | --- |\n| Release | + | 2000 |\n| Release | - | -1000 |\n| Don’t Release | + | -400 |\n| Don’t Release | - | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_table_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.622,
+            0.193,
+            0.834,
+            0.372
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.391,
+            0.242,
+            0.405
+          ],
+          "content": "Alternate version:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.21,
+            0.47,
+            0.446,
+            0.55
+          ],
+          "content": "| Action | Drake | Utility |\n| --- | --- | --- |\n| Don’t Release | + | -300 |\n| Release | + | 3000 |\n| Release | - | -1000 |\n| Don’t Release | - | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_table_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.622,
+            0.41,
+            0.834,
+            0.591
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.609,
+            0.329,
+            0.625
+          ],
+          "content": "(i) [1 pt] What is his MEU?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.16,
+            0.626,
+            0.408,
+            0.665
+          ],
+          "content": "| 200 |\n| --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_table_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.671,
+            0.912,
+            0.701
+          ],
+          "content": "$MEU = max(EU(release), EU(don't release).EU(release) = 2000 * 0.4 - 1000 * 0.6 = 200. EU(don't release) = -400 * 0.4 + 0 = -160.$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.711,
+            0.908,
+            0.741
+          ],
+          "content": "ALTERNATE VERSION: $MEU = max(EU(release), EU(don't release).EU(release) = 3000 * 0.4 - 1000 * 0.6 = 600$. $EU(don't release) = -300 * 0.4 + 0 = -120$. Therefore, 600."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.746,
+            0.505,
+            0.762
+          ],
+          "content": "(ii) [1 pt] What is the value of perfect information of $D$?"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.161,
+            0.764,
+            0.408,
+            0.802
+          ],
+          "sub_type": "code",
+          "content": "```txt\n600\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.808,
+            0.756,
+            0.824
+          ],
+          "content": "M E U (D) = P (+ d) * 2 0 0 0 + P (- d) * 0 = 8 0 0. M E U (D) - M E U () = 8 0 0 - 2 0 0 = 6 0 0.",
+          "image_source": "images/page_31_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.832,
+            0.907,
+            0.862
+          ],
+          "content": "ALTERNATE VERSION: $MEU(D) = P(+d) * 3000 + P(-d) * 0 = 1,200$. $MEU(D) - MEU() = 1,200 - 600 = 600$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.868,
+            0.516,
+            0.884
+          ],
+          "content": "(iii) [2 pts] What is the value of perfect information of M?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.161,
+            0.434,
+            0.408,
+            0.472
+          ],
+          "sub_type": "code",
+          "content": "```txt\n0\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.746,
+            0.022,
+            0.782,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.062,
+            0.907,
+            0.199
+          ],
+          "content": "$VPI(M) = (P(+m) * MEU(+m) + P(-m) * MEU(-m)) - MEU($.  \n$P(+m) = P(-m) = 0.5$ since $P(m) = P(m| + d)P(+d) + P(m| - d)P(-d)$.  \n$P(+d| + m) = 0.64$ and $P(+d| - m) = 0.16$ since $P(d|m) = P(m|d)P(d)/P(m)$.  \n$EU(release| + m) = P(+d| + m) * EU(rel, +d) + P(-d| + m) * EU(rel, -d) = 920.$  \n$EU(release| - m) = P(+d| - m) * EU(rel, +d) + P(-d| - m) * EU(rel, -d) = -320.$  \n$EU(don't release| + m) = P(+d| + m) * EU(don't release, +d) + P(-d| + m) * EU(don't release, -d) = -256.$  \n$EU(don't release| - m) = P(+d| - m) * EU(don't release, +d) + P(-d| - m) * EU(don't release, -d) = -64.$  \n$MEU(+m) = max(920, -256) = 920, MEU(-m) = max(-320, -64) = -64.$ Therefore, $VPI = 428 - 200 = 228$."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.155,
+            0.209,
+            0.344,
+            0.223
+          ],
+          "level": 2,
+          "content": "ALTERNATE VERSION:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.226,
+            0.909,
+            0.412
+          ],
+          "sub_type": "algorithm",
+          "content": "$VPI(M) = (P(+m) * MEU(+m) + P(-m) * MEU(-m)) - MEU($.  \n$P(+m) = P(-m) = 0.5 since P(m) = P(m| + d)P(+d) + P(m| - d)P(-d)$.  \n$P(+d| + m) = 0.64 and P(+d| - m) = 0.16 since P(d|m) = P(m|d)P(d)/P(m)$.  \n$EU(release| + m) = P(+d| + m) * EU(rel, +d) + P(-d| + m) * EU(rel, -d) = 0.64 * 3000 + 0.36 * -1000 = 1,560.$  \n$EU(release|-m) = P(+d|-m) * EU(rel, +d)+P(-d|-m) * EU(rel, -d) = 0.16 * 3000+0.84 * -1000 = -360.$  \n$EU(don't release| + m) = P(+d| + m) * EU(don't release, +d) + P(-d| + m) * EU(don't release, -d) = 0.64 * -300 + 0.36 * 0 = -192.$  \n$EU(don't release|-m) = P(+d|-m) * EU(don't release, +d) + P(-d|-m) * EU(don't release, -d) = 0.16 * -300 + 0.84 * 0 = -48.$  \n$MEU(+m) = max(1560, -192) = 1560, MEU(-m) = max(-360, -48) = -48.$ Therefore, $VPI = P(+m) * 1560 + P(-m) * -48 - MEU() = 756 - 600 = 156$.",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.415,
+            0.572,
+            0.431
+          ],
+          "content": "(iv) [2 pts] What is the value of perfect information of $M$ given $D$?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.475,
+            0.407,
+            0.49
+          ],
+          "content": "Since M is independent of H given D."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.495,
+            0.671,
+            0.51
+          ],
+          "content": "(v) [1 pt] What decision does Tupacman make given that Drake is in a bad mood?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.513,
+            0.401,
+            0.528
+          ],
+          "content": "○ Release ● Do not release"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.531,
+            0.716,
+            0.546
+          ],
+          "content": "Not releasing corresponds to a higher utility than releasing if Drake is in a bad mood."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.559,
+            0.909,
+            0.62
+          ],
+          "content": "(b) Naive Bayes is not working out (it's too naive!) and Tupacman wants to use a binary perceptron model with more detailed data to predict which songs will be hits. He now considers two new features for this model, $G$: the groove of the song rated on a scale of 1 to 10 and $D$: the number of sentences said by Drake. He stores this data in the table below, where $H$ is the true label of the sample, + or −."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.122,
+            0.624,
+            0.283,
+            0.719
+          ],
+          "content": "| Song | G | D | H |\n| --- | --- | --- | --- |\n| 1 | 10 | 20 | + |\n| 2 | 4 | 15 | - |\n| 3 | 1 | 15 | + |\n| 4 | 1 | 10 | - |\n| 5 | 5 | 20 | + |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_table_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.729,
+            0.908,
+            0.76
+          ],
+          "content": "(i) [2 pts] Starting with $w = [1\\ 2\\ 3]$, where the first entry is the weight for the bias term, fill in the following table with the results of running the perceptron algorithm on the five samples. $\\hat{H}$ is the prediction made by his model, + or −."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.158,
+            0.759,
+            0.375,
+            0.853
+          ],
+          "content": "| Song | $\\hat{H}$ | Updated Weight |\n| --- | --- | --- |\n| 1 | + | [1 2 3] |\n| 2 | + | [0 -2 -12] |\n| 3 | - | [1 -1 3] |\n| 4 | + | [0 -2 -7] |\n| 5 | - | [1 3 13] |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.155,
+                0.855,
+                0.673,
+                0.87
+              ],
+              "content": "Song 1: [1 2 3] · [1 10 20] > 0, therefore, $\\hat{H} = +$ and the weight isn't updated."
+            }
+          ],
+          "image_source": "images/page_32_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.87,
+            0.908,
+            0.917
+          ],
+          "content": "Song 2: [1 2 3] · [1 4 15] > 0, therefore, $\\hat{H} = +$ which is incorrect. Since our dot product was too large, we lower the weight by subtracting the data point that was misclassified from it. Therefore, $w = [1\\ 2\\ 3] - [1\\ 4\\ 15] = [0\\ -2\\ -12]$. The same procedure is used for the remaining samples."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.062,
+            0.909,
+            0.091
+          ],
+          "content": "(ii) [1 pt] What is the value of the dual perceptron weight $\\alpha$ after the five updates? (assume $\\alpha$ was initialized as a zero vector)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.138,
+            0.909,
+            0.185
+          ],
+          "content": "The dual weight vector has size = the number of samples. Every time we misclassify a song, we add the true H for that song to the corresponding entry of the dual vector. As a result, dual vector times a matrix of shape  $5 \\times 3$  with all of our samples is equal to the final weight vector found in part (b)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.188,
+            0.491,
+            0.204
+          ],
+          "content": "(iii) [1 pt] True or False: The algorithm has converged."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.205,
+            0.322,
+            0.22
+          ],
+          "content": "○ True ● False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.222,
+            0.531,
+            0.236
+          ],
+          "content": "Since the final weight still misclassifies the second song."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.241,
+            0.908,
+            0.271
+          ],
+          "content": "(iv) [1 pt] True or False: The perceptron algorithm is always able to converge on data that a Naive Bayes classifier can separate."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.273,
+            0.322,
+            0.288
+          ],
+          "content": "○ True ● False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.289,
+            0.908,
+            0.319
+          ],
+          "content": "It can be shown that the Naive Bayes classifier can find any linear decision boundary that the perceptron algorithm can find."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.324,
+            0.908,
+            0.355
+          ],
+          "content": "(v) [1 pt] True or False: In a situation where perceptron is unable to separate the data, a neural network with many hidden layers using linear activation functions will be able to separate the data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.356,
+            0.323,
+            0.371
+          ],
+          "content": "○ True ● False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.373,
+            0.525,
+            0.387
+          ],
+          "content": "Both networks can only find linear decision boundaries."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.392,
+            0.909,
+            0.422
+          ],
+          "content": "(vi) [1 pt] True or False: The final weights for a converged perceptron instance can be written in terms of the initial weights and the feature vectors it trained on."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.424,
+            0.323,
+            0.44
+          ],
+          "content": "● True ○ False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.44,
+            0.709,
+            0.456
+          ],
+          "content": "Weights are updated by adding or subtracting feature vectors from the initial weight."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "34"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2020-10-14T06:32:15+00:00",
+      "modified_at": "2020-10-14T06:32:15+00:00",
+      "creator_application": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36",
+      "producer_application": "Skia/PDF m86",
+      "page_count": 34,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

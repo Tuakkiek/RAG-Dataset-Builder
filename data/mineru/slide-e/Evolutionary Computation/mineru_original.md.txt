@@ -1,0 +1,364 @@
+## Lecture 9  9
+
+**Evolutionary Computation: Genetic algorithms**
+
+■ **Introduction, or  or can evolution  be intelligent** ?
+
+■ **Simulation of  of natural  evolution**
+
+■ **Genetic  algorithms**
+
+■ **Case study : maintenance  scheduling  with genetic  algorithms**
+
+■ **Summary**
+
+## Can evolution be intelligent ?
+
+■ Intelligence can be defined as the capability of a  as system to adapt its behaviour to ever-changing - environment. According to Alan Turing, the form . or appearance of a system is irrelevant to its or intelligence . .
+
+■ Evolutionary computation simulates evolution on a  on a computer. The result of such a simulation i s a .  a  i s a series of optimis ation algorithms , usually based on ,  on a simple set of rules . Optimi s ation a .  iteratively improves the quality of solutions until an optimal  an or at least feasible , solution i s found . or  i s
+
+■ The behaviour of  of an individual organism an  is an inductive inference about some yet unknown aspects of its environment. . If, over succes sive generations , the organism survives , we can say  we that this organism is capable of learning to predict changes in its environment.  in .
+
+The evolutionary approach is based on  on computational models of natural selection and genetics . We call them . We  **evolutionary computation** , an umbrella term that combines , an **genetic algorithms** , **evolution strategies**  and **genetic programming** .
+
+## Simulation of  of natural  evolution
+
+On 1 July 1 85 8 , On  **Charles Darwin**  presented his theory of evolution before the  Linnean  Society of  of London. This day marks the beginning of a . revolution in biology . .
+
+■ Darwin ’ s s clas sical  **theory of evolution** , together with Weismann’ s s theory of natural selection  and Mendel ’ s s concept of  genetics , now represent the , neo-Darwinian paradigm. - .
+
+■ **Neo-Darwinism**  is based on proces ses of is  of reproduction, mutation, competition and selection. . The power to reproduce appears to be an essential  to be an property of life . The power to mutate is also .  is guaranteed in any living organism that reproduces itself in a continuously changing environment. . Processes of competition and selection normally take place in the natural world, where expanding  in populations of different species are limited by a  a finite space . .
+
+■ Evolution can be seen as a process leading to the  as maintenance  of a population ’ s s ability to survive and reproduce in a specific environment. This  in a . ability is called  **evolutionary fitness** .
+
+■ Evolutionary fitness can also be viewed as a  be  as a measure of the organism ’ s ability to anticipate s changes in its environment.  in .
+
+The fitnes s , or the quantitative measure of the ability to predict environmental changes and respond adequately, can be considered as the  as quality that i s  optimi s ed  in natural life . in .
+
+**How is a population with increasing fitness generated?**
+
+Let us consider  a population of rabbits . Some rabbits are faster than others , and we may say that  we these rabbits pos ses s superior fitnes s , because they have a greater chance of avoiding foxes, surviving and then breeding .
+
+■ If two parents have superior fitnes s , there is a good  is chance that a combination of their genes will produce an offspring with even higher fitness .  an Over time the entire population of rabbits becomes faster to meet their environmental challenges in the face of foxes . .
+
+## Simulation of  of natural  evolution
+
+■ All methods of evolutionary computation simulate natural  evolution by creating  a population of  of individuals , evaluating their fitnes s , generating a  a new population through genetic operations, and repeating this proces s a number of times .
+
+■ We will start with We  **Genetic Algorithms**  (GAs) as  as most of the other evolutionary  algorithms can be viewed as variations of  as  of genetic algorithms .
+
+## Genetic Algorithms
+
+■ In the early 1 970s, John In  Holland introduced the concept of genetic algorithms . .
+
+■ His aim was to make computers do what nature  to  do does . Holland was concerned with  algorithms that manipulate string s of binary digits .
+
+■ Each artificial “chromosomes” consists of a number of “genes” , and each gene is represented  of  is by 0 or 1 :  or 1 :
+
+| 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+■ Nature has an ability to adapt and learn without  an being told what to do . In other words , nature  do . In finds good chromosomes blindly. . GAs do the same. Two mechanisms link a GA to the problem .  a it i s solving :  **encoding**  and **evaluation** .
+
+■ The GA uses a measure of fitness of individual  GA chromosomes to carry out reproduction . As  to . As reproduction takes place, the crossover operator exchanges parts of two single chromosomes, and the mutation operator changes the gene value in  in some randomly chosen location of the chromosome. .
+
+## Basic genetic  algorithms
+
+**Step 1 :** Represent the problem variable domain as  as a chromosome of a fixed length, choose the size of a chromosome population  N, the crossover , probability $\widehat { p }$ and the mutation probability $p p _ { m }$
+
+**Step 2 :** Define a fitnes s function to measure the  to performance, or fitnes s , of an individual chromosome in the problem domain. The fitness  in . function establi shes the basi s for selecting chromosomes that will be mated during reproduction. .
+
+**Step 3 :** Randomly generate an initial population of  an  of chromosomes of size  N:
+
+x <sub>1</sub> , x<sub>2</sub> , . . . , , . . . , x<sub>N</sub>
+
+**Step 4 :** Calculate the fitness of each individual chromosome: f (x <sub>1</sub> ) , f (x<sub>2</sub>) , . . . , ) , . . . , f (x<sub>N</sub>)
+
+**Step 5 :** Select a pair of chromosomes for mating from the current population. Parent . chromosomes are selected with a probability related to their fitnes s . .
+
+**Step 6 :** Create a pair of offspring chromosomes by  by applying the genetic operators  − **crossover**  and **mutation** .
+
+**Step 7 :** Place the created offspring chromosomes in the new population . in .
+
+**Step 8 :** Repeat Step 5 until the size of the new chromosome population becomes  equal to the size of the  initial population ,  N.
+
+**Step 9 :** Replace  the initial (parent) chromosome population with the new (offspring) population. .
+
+**Step 10 :** Go to Step 4, and repeat the proces s until , the termination criterion i s s ati sfied .  i s .
+
+## Genetic  algorithms
+
+■ GA represents an iterative proces s . Each iteration is  an .  is called a  a **generation** . A typical number of generations . for a simple GA can range from 50 to over  a  GA  500. The . entire set  of generations i s called a  i s  a **run** .
+
+■ B ecause GAs use a stochastic search method, the  a fitnes s of a population may  remain stable for a  a number of generations before a superior chromosome  a appears . .
+
+■ A common practice is to terminate a GA after a A  is to  a GA  a specified number of generations and then examine the best chromo somes in the population . If no  in . s atisfactory solution i s found, the GA i s restarted .  i s .
+
+**Genetic  algorithms : case study**
+
+A simple example will help us to understand how A  us to a GA works . Let us find the maximum value of a GA .  of the function ( 1 5 x − x2) where parameter )  x varies between 0 and 1 5 . For simplicity , we may  0 .  we as sume that  x takes only integer values . Thus , . chromosomes can be built with only four  genes :
+
+| Integer | Binary code | Integer | Binary code | Integer | Binary code |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 0001 | 6 | 0110 | 11 | 1011 |
+| 2 | 0010 | 7 | 0111 | 12 | 1100 |
+| 3 | 0011 | 8 | 1000 | 13 | 1101 |
+| 4 | 0100 | 9 | 1001 | 14 | 1110 |
+| 5 | 0101 | 10 | 1010 | 15 | 1111 |
+
+## Suppose that the size of the chromosome population N i s 6 , the cro s sover probability i s 6 , $\frac { p } { C }$ equal s 0 . 7 , and  0 . 7 , the mutation probability $\overline { { p } }$ equal s 0 . 00 1 . The  0 . . fitnes s function in our example is defined  in  is  by
+
+$$
+f (x) = 1 5 x - x ^ {2}
+$$
+
+## The fitness function and chromosome locations
+
+f(x )
+
+| Chromosome label | Chromosome string | Decoded integer | Chromosome fitness | Fitness ratio, % |
+| --- | --- | --- | --- | --- |
+| X1 | 1100 | 12 | 36 | 16.5 |
+| X2 | 0100 | 4 | 44 | 20.2 |
+| X3 | 0001 | 1 | 14 | 6.4 |
+| X4 | 1110 | 14 | 14 | 6.4 |
+| X5 | 0111 | 7 | 56 | 25.7 |
+| X6 | 1001 | 9 | 54 | 24.8 |
+
+![](images/page_16_chart_3.jpg)
+
+(a ) C hromos ome in it ia l loc atio ns .
+
+![](images/page_16_chart_5.jpg)
+
+(b ) Chromos ome final loc ations .
+
+■ In natural selection, only the fittest species can In survive, breed, and thereby pass their genes on to  on to the next generation . . GAs use a similar approach,  a but unlike nature, the size of the chromosome population remains unchanged from one generation to the next .  to .
+
+The last column in Table shows the ratio of the  in individual chromo some ’ s fitnes s to the s  to population ’ s total fitnes s . Thi s ratio determines s the chromosome ’ s chance of being selected for s mating . . The chromosome ’ s average fitness s improves from one generation to the next.  to .
+
+## Roulette  wheel selection The most commonly used chromosome selection techniques is the  is  roulette wheel selection .
+
+![](images/page_18_chart_1.jpg)
+
+## Crossover operator
+
+■ In our example, we have an initial population of 6 In  an chromo somes . Thus , to establish the s ame .  to population in the next generation, the roulette  in wheel would be spun six times .
+
+■ Once a pair of parent chromosomes is selected,  is the **crossover**  operator is applied. .
+
+■ First, the crossover operator randomly chooses a  a crossover point where two parent chromosomes “break”, and then exchanges the chromosome parts after that point. As a result, two new . As offspring are created. .
+
+■ If a pair of chromosomes does not cros s over, then the chromosome cloning takes place, and the offspring are created as exact copies of each  as parent. .
+
+## Crossover
+
+![](images/page_21_image_1.jpg)
+
+## Mutation operator
+
+■ Mutation represents a change in  in the gene. .
+
+■ Mutation i s a background operator. Its role i s to  i s .  i s to provide a guarantee that  the search algorithm is not trapped on a local optimum.  on .
+
+The mutation operator flips a randomly selected gene in a chromosome.  in .
+
+■ The mutation probability i s quite small in nature , and i s kept low for  GAs , typically in the range , between 0 . 00 1 and 0 . 0 1 .  0 . . 0 1 .
+
+## Mutation
+
+| X5i | 0111 |  |
+| --- | --- | --- |
+| X2i | 0100 | × |
+| X5i | 0100 |  |
+| X1i | 1111 | × |
+| X2i | 0101 |  |
+| X6i | 1000 |  |
+
+## The genetic algorithm cycle
+
+![](images/page_24_image_1.jpg)
+
+**Genetic  algorithms : case study**
+
+■ Suppose it is desired to find the maximum of the “peak” function of two variables :
+
+$$
+f (x, y) = (1 - x) ^ {2} e ^ {- x ^ {2} - (y + 1) ^ {2}} - (x - x ^ {3} - y ^ {3}) e ^ {- x ^ {2} - y ^ {2}}
+$$
+
+where parameters  x and y vary between  −3 and 3 . 3 .
+
+■ The first step is to represent the problem variables  to as a chromosome  − parameters  x and y as a concatenated binary string :
+
+x
+
+![](images/page_26_image_0.jpg)
+
+■ We also choose We  the size of the chromosome population, for instance 6, and randomly generate  6, an initial population . an .
+
+The next step is to calculate the fitnes s of each  to chromo some . Thi s i s done in two stages . .  i s  in .
+
+■ First, a chromo some , that i s a string of 1 6 bits , i s  a  i s p artitioned into two 8 -bit string s :  8 -
+
+![](images/page_26_image_4.jpg)
+
+and
+
+■ Then these strings are converted from binary (base 2) to decimal (base 1 0) :
+
+$$
+(1 0 0 0 1 0 1 0) _ {2} = 1 \times 2 ^ {7} + 0 \times 2 ^ {6} + 0 \times 2 ^ {5} + 0 \times 2 ^ {4} + 1 \times 2 ^ {3} + 0 \times 2 ^ {2} + 1 \times 2 ^ {1} + 0 \times 2 ^ {0} = (1 3 8) _ {1 0} \text {and}
+$$
+
+1 07 6 5 4 3 2 1 02 (00 1 1 1 0 1 1 ) = 0 × 2 + 0 × 2 + 1 × 2 + 1 × 2 + 1 × 2 + 0 × 2 + 1 × 2 + 1 × 2 = (5 9 )
+
+■ Now the range of integers that can be handled by 8 -bits , that i s the range from 0 to (2 8 - (2<sup>8</sup> − 1 ) , i s mapped to the actual range of parameters  x and y, that i s the range from  −3 to 3 :  3 :
+
+$$
+\frac {6}{2 5 6 - 1} = 0. 0 2 3 5 2 9 4
+$$
+
+■ To obtain the actual values of  of x and y, we multiply , we their decimal values by 0.023 5294 and subtract 3 . from the results :
+
+$$
+x = (1 3 8) _ {1 0} \times 0. 0 2 3 5 2 9 4 - 3 = 0. 2 4 7 0 5 8 8
+$$
+
+and
+
+$$
+y = (5 9) _ {1 0} \times 0. 0 2 3 5 2 9 4 - 3 = - 1. 6 1 1 7 6 4 7
+$$
+
+■ Using decoded values of  of x and y as inputs in the as  in mathematical function, the GA calculates the  GA fitnes s of each chromosome. .
+
+■ To find the maximum of the “peak” function, we  we will use cros sover with the probability equal to 0 . 7  0 . 7 and mutation with the probability equal to 0 . 00 1 .  0 . . As we mentioned earlier, a common practice in As we  in GAs is to specify the number of generations . is to . Suppose the desired number of generations is 1 00 .  is . That is , the GA will create 1 00 generations of 6  GA chromosomes before stopping . .
+
+## Chromosome locations on the surface of the  on “peak” function: initial population
+
+![](images/page_29_image_1.jpg)
+
+## Chromosome locations on the surface of the  on “peak” function: first generation
+
+![](images/page_30_image_1.jpg)
+
+## Chromosome locations on the surface of the  on “peak” function: local maximum
+
+![](images/page_31_image_1.jpg)
+
+## Chromosome locations on the surface of the  on “peak” function: global maximum
+
+![](images/page_32_image_1.jpg)
+
+## Performance graphs for 100 generations of 6 chromosomes : local maximum
+
+![](images/page_33_chart_1.jpg)
+
+## Performance graphs for 100 generations of 6 chromosomes : global maximum
+
+![](images/page_34_chart_1.jpg)
+
+## Performance graphs for  20 generations of  of 60 chromosomes
+
+![](images/page_35_chart_1.jpg)
+
+**Case study : maintenance  scheduling**
+
+■ Maintenance scheduling problems are usually solved using a combination of search techniques and heuri stic s . .
+
+■ These problems are complex and difficult to s olve .
+
+■ They are NP-complete and cannot be solved by  NP-combinatorial search  techniques . .
+
+■ Scheduling involves competition for limited resources , and is complicated by a great number  a of badly formalised constraints . .
+
+## Steps in the GA development  in
+
+1 . Specify 1 .  the problem, define constraints  and optimum  criteria ;
+
+2 . Represent .  the problem domain as  as a chromosome ;
+
+3 . Define  a fitnes s function to evaluate the  to chromosome  performance ;
+
+4 . Construct 4 .  the genetic  operators ;
+
+5 . Run 5 .  the GA and tune its  GA  parameters . .
+
+## Case study
+
+**Scheduling of 7 units in 4 equal intervals  in 4 The problem constraints :**
+
+■ The maximum loads expected during four intervals are 80, 90, 65 and 70 MW;  65
+
+■ Maintenance of any unit starts at the beginning of an interval and finishes at the end of the same or adj acent  or interval. The maintenance cannot be aborted or finished earlier than scheduled;
+
+■ The net reserve of the power system must be greater or  or equal to zero at any interval .  at .
+
+**The optimum criterion is the maximum of the net reserve at any maintenance period.**
+
+## Case study
+
+## Unit data and maintenance requirements
+
+| Unit number | Unit capacity, MW | Number of intervals required for unit maintenance |
+| --- | --- | --- |
+| 1 | 20 | 2 |
+| 2 | 15 | 1 |
+| 3 | 35 | 1 |
+| 4 | 40 | 1 |
+| 5 | 15 | 1 |
+| 6 | 10 | 1 |
+| 7 |  |  |
+
+## Case study Unit gene pools
+
+| Unit 1: | 1 1 0 0 | 0 1 1 0 | 0 0 1 1 |  |
+| --- | --- | --- | --- | --- |
+| Unit 2: | 1 1 0 0 | 0 1 1 0 | 0 0 1 1 |  |
+| Unit 3: | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 0 0 0 1 |
+| Unit 4: | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 0 0 0 1 |
+| Unit 5: | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 0 0 0 1 |
+| Unit 6: | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 0 0 0 1 |
+| Unit 7: | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 0 0 0 1 |
+
+## Chromosome for the scheduling problem
+
+| Unit 1 | Unit 2 | Unit 3 | Unit 4 | Unit 5 | Unit 6 | Unit 7 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 1 1 0 | 0 0 1 1 | 0 0 0 1 | 1 0 0 0 | 0 1 0 0 | 0 0 1 0 | 1 0 0 0 |
+
+## Case study The crossover operator
+
+<table><tr><td colspan="101">Parent 1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr></table>
+
+## Case study The mutation operator
+
+## Performance  graphs and the best maintenance schedules created in a population of 20 chromosomes
+
+![](images/page_43_chart_1.jpg)
+
+![](images/page_43_chart_2.jpg)
+
+(a) 50 generations
+
+## Performance  graphs and the best maintenance schedules created in a population of 20 chromosomes
+
+![](images/page_44_chart_1.jpg)
+
+![](images/page_44_chart_2.jpg)
+
+(b) 1 00 generations
+
+## Performance  graphs and the best maintenance schedules created in a population of  of 100 chromosomes
+
+![](images/page_45_chart_1.jpg)
+
+![](images/page_45_chart_2.jpg)
+
+## Performance  graphs and the best maintenance schedules created in a population of  of 100 chromosomes
+
+![](images/page_46_chart_1.jpg)
+
+![](images/page_46_chart_2.jpg)
