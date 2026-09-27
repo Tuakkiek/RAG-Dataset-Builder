@@ -1,0 +1,6097 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.019,
+            0.027,
+            0.252,
+            0.057
+          ],
+          "content": "Last update: 11:09 PM, March 7, 2025"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.433,
+            0.644,
+            0.567,
+            0.691
+          ],
+          "content": "Dana S. Nau"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.22,
+            0.383,
+            0.779,
+            0.519
+          ],
+          "level": 2,
+          "content": "Chapter 12 Planning with Nondeterministic Models"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.705,
+            0.613,
+            0.756
+          ],
+          "content": "University of Maryland"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.814,
+            0.003,
+            0.999,
+            0.301
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.848,
+            0.309,
+            0.982,
+            0.389
+          ],
+          "content": "Acting, Planning, and Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.869,
+            0.396,
+            0.981,
+            0.445
+          ],
+          "content": "Malik Ghallab, Dana Nau, and Paolo Traverso"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.977,
+            0.994,
+            0.994
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.322,
+            0.064,
+            0.677,
+            0.123
+          ],
+          "level": 2,
+          "content": "Kinds of Solution Policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.524,
+            0.245,
+            0.617
+          ],
+          "content": "solution policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.278,
+            0.447,
+            0.354,
+            0.539
+          ],
+          "continues_prev": true,
+          "content": "safe policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.388,
+            0.377,
+            0.463,
+            0.471
+          ],
+          "continues_prev": true,
+          "content": "acyclic policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.387,
+            0.502,
+            0.463,
+            0.595
+          ],
+          "content": "cyclic policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.527,
+            0.739,
+            0.574
+          ],
+          "content": "Goal States"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.427,
+            0.65,
+            0.502,
+            0.741
+          ],
+          "content": "unsafe policies"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.057,
+            0.684,
+            0.12
+          ],
+          "level": 2,
+          "content": "Finding (Unsafe) Solutions"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.048,
+            0.196,
+            0.983,
+            0.883
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$; $s \\leftarrow s_0$; $Visited \\leftarrow \\{s_0\\}$\n    loop\n        if $s \\in S_g$ then return $\\pi$\n        $A' \\leftarrow Applicable(s)$\n        if $A' = \\varnothing$ then return failure\n        nondeterministically choose $a \\in A'$\n    (\\*) nondeterministically choose $s' \\in \\gamma(s, a)$\n    if $s' \\in Visited$ then return failure\n        $\\pi(s) \\leftarrow a$; $Visited \\leftarrow Visited \\cup \\{s'\\}$; $s \\leftarrow s'$\n\nFor comparison:\n    Forward-search ($\\Sigma$, $s_0$, $g$)\n        $s \\leftarrow s_0$; $\\pi \\leftarrow \\langle\\rangle$\n        while $s \\not\\equiv g$ do\n            if $Applicable(s) = \\varnothing$ then return failure\n            nondeterministically choose $a \\in Applicable(s)$\n            $s \\leftarrow \\gamma(s, a)$; $\\pi \\leftarrow \\pi \\cdot a$\n        return $\\pi$\n\nDecide which state to plan for\nCycle-checking",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.315,
+            0.057,
+            0.685,
+            0.119
+          ],
+          "level": 2,
+          "content": "Finding (Unsafe) Solutions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.93,
+            0.089,
+            0.975,
+            0.115
+          ],
+          "content": "transit3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.243,
+            0.172,
+            0.472,
+            0.216
+          ],
+          "content": "**Poll**: which should (\\*) be?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.219,
+            0.514,
+            0.261
+          ],
+          "content": "A. nondeterministically choose"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.243,
+            0.263,
+            0.424,
+            0.305
+          ],
+          "content": "B. arbitrarily choose"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.243,
+            0.307,
+            0.371,
+            0.349
+          ],
+          "content": "C. don’t know"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.046,
+            0.412,
+            0.48,
+            0.877
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Solution $(\\Sigma, s_0, S_g)$\n    $\\pi \\leftarrow \\varnothing$; $s \\leftarrow s_0$; $Visited \\leftarrow \\{s_0\\}$\n    loop\n        if $s \\in S_g$ then return $\\pi$\n        $A' \\leftarrow Applicable(s)$\n        if $A' = \\varnothing$ then return failure\n        nondeterministically choose $a \\in A'$\n    (\\*) nondeterministically choose $s' \\in \\gamma(s, a)$\n        if $s' \\in Visited$ then return failure\n        $\\pi(s) \\leftarrow a$; $Visited \\leftarrow Visited \\cup \\{s'\\}$; $s \\leftarrow s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.542,
+            0.121,
+            0.999,
+            0.671
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.502,
+            0.724,
+            0.738,
+            0.768
+          ],
+          "content": "Decide which state to plan for"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.799,
+            0.662,
+            0.843
+          ],
+          "content": "Cycle-checking"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.011,
+            0.0,
+            0.924,
+            0.955
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Solution (Σ, s₀, S_g)\n  π ← Ø; s ← s₀; Visited ← {s₀}\n  loop\n    if s ∈ S_g then return π\n      A' ← Applicable(s)\n      if A' = Ø then return failure\n      nondeterministically choose a ∈ A'\n      nondeterministically choose s' ∈ γ(s, a)\n      if s' ∈ Visited then return failure\n      π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'\n    s = on_ship\n    π = {}\n    Visited = {on_ship}\n\n    on_ship\n    at_harbor\n    park\n    parking2\n    deliver\n    transit3\n    gate1\n    gate2\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking1\n    deliver\n    transit1\n    gate1\n    transit1\n    gate2\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking2\n    deliver\n    transit1\n    gate1\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking1\n    deliver\n    transit1\n    gate1\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking2\n    deliver\n    transit1\n    gate1\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking2\n    deliver\n    transit1\n    gate1\n    S_g\n    on_ship\n    at_harbor\n    park\n    parking1\n    deliver\n    transit1\n    gate1\n    S_g\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.389,
+            0.277,
+            0.922,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.984,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.768,
+            0.965,
+            0.821,
+            0.994
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.387,
+            0.278,
+            0.921,
+            0.954
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_1.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.002,
+            0.922,
+            0.947
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Solution (Σ, s₀, S_g)\nπ ← Ø; s ← s₀; Visited ← {s₀}\nloop\nif s ∈ S_g then return π\nA' ← Applicable(s)\nif A' = Ø then return failure\nnondeterministically choose a ∈ A'\nnondeterministically choose s' ∈ γ(s, a)\nif s' ∈ Visited then return failure\nπ(s) ← a; Visited ← Visited ∪ {s'}; s ← s'\n\ns = on_ship\na = unload\nγ(s,a) = {at_harbor}\ns ← s' = at_harbor\n\nπ = {(on_ship, unload)}\nVisited = {on_ship, at_harbor}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.003,
+            0.921,
+            0.942
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Solution (Σ, s₀, S_g)\n    π ← Ø; s ← s₀; Visited ← {s₀}\n    loop\n        if s ∈ S_g then return π\n            A' ← Applicable(s)\n            if A' = Ø then return failure\n            nondeterministically choose a ∈ A'\n            nondeterministically choose s' ∈ γ(s, a)\n            if s' ∈ Visited then return failure\n            π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'\n\n    s = at_harbor\n    a = park\n    γ(s,a) = {parking1,\n    parking2,\n    transit1}\n    s ← s' = parking1\n\n    π = {(on_ship, unload),\n    (at_harbor, park)}\n    Visited = {on_ship, at_harbor, parking1}\n\n    on_ship --> at_harbor\n    on_ship --> transit1\n    at_harbor --> park\n    park --> parking2\n    parking2 --> deliver\n    drive --> park\n    drive --> transit1\n    drive --> park1\n    drive --> transit1\n    drive --> park2\n    drive --> transit2\n    drive --> park2\n    drive --> transit2\n    drive --> park3\n    drive --> transit3\n    move --> gate1\n    move --> gate2\n    move --> transit2\n    move --> park1\n    move --> transit1\n    move --> park2\n    move --> transit1\n    move --> park3\n    move --> transit2\n    move --> park4\n    move --> transit2\n    move --> park5\n    move --> transit3\n    move --> park6\n    move --> transit4\n    move --> park7\n    move --> transit5\n    move --> park8\n    move --> transit6\n    move --> park9\n    move --> transit7\n    move --> park10\n    move --> transit8\n    move --> park11\n    move --> transit9\n    move --> park12\n    move --> transit13\n    move --> park14\n    move --> transit15\n    move --> park16\n    move --> transit17\n    move --> park18\n    move --> transit19\n    move --> park20\n    move --> transit21\n    move --> park22\n    move --> transit23\n    move --> park24\n    move --> transit25\n    move --> park26\n    move --> transit27\n    move --> park28\n    move --> transit29\n    move --> park30\n    move --> transit31\n    move --> park32\n    move --> transit33\n    move --> park34\n    move --> transit35\n    move --> park36\n    move --> transit37\n    move --> park38\n    move --> transit39\n    move --> park40\n    move --> transit41\n    move --> park42\n    move --> transit43\n    move --> park44\n    move --> transit45\n    move --> park46\n    move --> transit47\n    move --> park48\n    move --> transit49\n    move --> park50\n    move --> transit51\n    move --> park52\n    move --> transit53\n    move --> park54\n    move --> transit55<|content_end|>\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.003,
+            0.92,
+            0.942
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Solution (Σ, s₀, S_g)\n  π ← Ø; s ← s₀; Visited ← {s₀}\n  loop\n    if s ∈ S_g then return π\n      A' ← Applicable(s)\n      if A' = Ø then return failure\n      nondeterministically choose a ∈ A'\n      nondeterministically choose s' ∈ γ(s, a)\n      if s' ∈ Visited then return failure\n      π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'\n\n    s = parking1\n    a = deliver\n    γ(s,a) = {gate1,\n    gate2,\n    transit2}\n    s ← s' = gate1\n\n    π = {(on_ship, unload),\n    (at_harbor, park),\n    (parking1, deliver)}\n    Visited = {on_ship, at_harbor, parking1, gate1}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.002,
+            0.92,
+            0.946
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Solution (Σ, s₀, S_g)\nπ ← Ø; s ← s₀; Visited ← {s₀}\nloop\nif s ∈ S_g then return π\nA' ← Applicable(s)\nif A' = Ø then return failure\nnondeterministically choose a ∈ A'\nnondeterministically choose s' ∈ γ(s, a)\nif s' ∈ Visited then return failure\nπ(s) ← a; Visited ← Visited ∪ {s'}; s ← s'\ns = gate1\ngate1 is a goal,\nso return π\nπ = {(on_ship, unload),\n(at_harbor, park),\n(parking1, deliver)}\nVisited = {on_ship, at_harbor, parking1, gate1}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.985,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.352,
+            0.064,
+            0.647,
+            0.125
+          ],
+          "level": 2,
+          "content": "Find-Acyclic-Solution"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.201,
+            0.16,
+            0.892,
+            0.881
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Acyclic-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in \\text{Frontier} \\setminus S_g$ do\n        Frontier $\\leftarrow \\text{Frontier} \\setminus \\{s\\}$\n        if Applicable(s) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in \\text{Applicable}(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow$ Frontier $\\cup (\\gamma(s, a) \\setminus \\text{Domain}(\\pi))$\n        if has-loops($\\pi, a, \\text{Frontier}$) then return failure\n    return $\\pi$\n\nKeep track of unexpanded states, as in A\\*\n\nAdd all states $s$ such that $\\pi(s)$ isn't already defined\n\nCheck for cycles:\n  Does $\\gamma(s, a)$ include a state $s'$ that is a $\\pi$-ancestor of $s$?\n  for each $s' \\in \\gamma(s, a) \\cap \\text{Domain}(\\pi)$, is $s \\in \\hat{\\gamma}(s', \\pi)$?",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.005,
+            0.9,
+            0.938
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s0, Sg)\nπ ← Ø\nFrontier ← {s0}\nfor every s ∈ Frontier \\ Sg do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {on_ship}\n\nπ = {}\n\nunload\nat_harbor\non_ship\npark\nback\nparking2\ndeliver\nback\ngate1\ngate2\nSg\ntransit3\nmove\nmove\nmove\nmove\nparking1\ndeliver\ndeliver\ntransit1\ntransit2\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.362,
+            0.231,
+            0.9,
+            0.927
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.006,
+            0.9,
+            0.945
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s0, Sg)\nπ ← Ø\nFrontier ← {s0}\nfor every s ∈ Frontier \\ Sg do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {at_harbor}\n    π = {(on_ship, unload)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.366,
+            0.232,
+            0.9,
+            0.919
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.005,
+            0.0,
+            0.9,
+            0.952
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {parking1, parking2, transit1}\n    π = {(on_ship, unload), (at_harbor, park)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.366,
+            0.229,
+            0.899,
+            0.923
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.007,
+            0.901,
+            0.935
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s0, Sg)\nπ ← Ø\nFrontier ← {s0}\nfor every s ∈ Frontier \\ Sg do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {parking2, transit1, transit2,\ngate1, gate2}\n    π = {(on_ship, unload),\n(at_harbor, park),\n(parking1, deliver)}\n    on_ship\n    at_harbor\n    parking1\n    parking2\n    gate1\n    gate2\n    transit1\n    transit2\n    Sg\n    back\n    back\n    deliver\n    move\n    move\n    move\n    move\n    back\n    back\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n    drive\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.007,
+            0.419,
+            0.472
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s0, Sg)\n    π ← ∅\n    Frontier ← {s0}\n    for every s ∈ Frontier \\ Sg do\n        Frontier ← Frontier \\ {s}\n        if Applicable(s) = ∅ then return failure\n        nondeterministically choose a ∈ Applicable(s)\n        π ← π ∪ (s, a)\n        Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n        if has-loops(π, a, Frontier) then return failure\n    return π\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.129,
+            0.469,
+            0.429,
+            0.555
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFrontier = {transit1, transit2, transit3,\n    gate1, gate2}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.681,
+            0.35,
+            0.851
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver}), (\\text{parking2, deliver})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.476,
+            0.022,
+            0.6,
+            0.081
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.098,
+            0.871,
+            0.139
+          ],
+          "content": "nondeterministically choose back or deliver"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.141,
+            0.802,
+            0.179
+          ],
+          "content": "• back ⇒ cycle, so return failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.536,
+            0.18,
+            0.808,
+            0.218
+          ],
+          "content": "• deliver ⇒ no cycle, so continue"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.368,
+            0.224,
+            0.9,
+            0.919
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_7.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.006,
+            0.901,
+            0.939
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s0, Sg)\nπ ← Ø\nFrontier ← {s0}\nfor every s ∈ Frontier \\ Sg do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n\nFrontier = {transit2, transit3,\ngate1, gate2}\n\nπ = {(on_ship, unload),\n(at_harbor, park),\n(parking1, deliver),\n(parking2, deliver),\n(transit1, move)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.005,
+            0.901,
+            0.952
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {transit3,\n    gate1, gate2}\n    π = {(on_ship, unload),\n    (at_harbor, park),\n    (parking1, deliver),\n    (parking2, deliver),\n    (transit1, move),\n    (transit2, move)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.0,
+            0.902,
+            0.989
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Acyclic-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {gate1, gate2} ⊆ S_g\nFound a solution\nπ = {(on_ship, unload),\n(at_harbor, park),\n(parking1, deliver),\n(parking2, deliver),\n(transit1, move),\n(transit2, move),\n(transit3, move)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.364,
+            0.232,
+            0.901,
+            0.959
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.37,
+            0.063,
+            0.63,
+            0.123
+          ],
+          "level": 2,
+          "content": "Find-Safe-Solution"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.155,
+            0.939,
+            0.905
+          ],
+          "sub_type": "code",
+          "content": "```python\nLike\nFind-Acyclic-Solution\nexcept here:\n    Find-Safe-Solution (Σ, s₀, S_g)\n        π ← Ø\n        Frontier ← {s₀}\n        for every s ∈ Frontier \\ S_g do\n            Frontier ← Frontier \\ {s}\n            if Applicable(s) = Ø then return failure\n            nondeterministically choose a ∈ Applicable(s)\n            π ← π ∪ (s, a)\n            Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n            if has-unsafe-loops(π, a, Frontier) then return failure\n        return π\n    Check for unsafe cycles:\n        Does γ(s, a) include a state s' from which π can't take us to the frontier?\n        For each s' ∈ γ(s, a) ∩ Dom(π), is ŷ(s', π) ∩ Frontier = Ø?\n        If so, then π contains a cycle that can't be escaped\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.005,
+            0.945,
+            0.943
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Safe-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-unsafe-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {on_ship}\n\nπ = {}\n\nrun\n\n  on_ship\n  at_harbor\n  park\n  parking2\n  deliver\n  parking1\n  transit1\n  transit2\n  gate1\n  gate2\n  transit3\n  move\n  S_g\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.404,
+            0.233,
+            0.943,
+            0.96
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.006,
+            0.945,
+            0.945
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Safe-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-unsafe-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {at_harbor}\n    π = {(on_ship, unload)}\n    on_ship --> at_harbor\n    park --> parking2\n    park --> gate1\n    parking1 --> gate2\n    transit1 --> S_g\n    transit2 --> S_g\n    back --> park\n    back --> parking2\n    back --> gate1\n    back --> park\n    back --> transit1\n    back --> transit2\n    move --> transit3\n    move --> gate1\n    move --> gate2\n    move --> transit2\n    move --> park\n    move --> parking1\n    move --> transit1\n    move --> transit2\n    exit --> transit3\n    exit --> gate1\n    exit --> gate2\n    exit --> transit2\n    exit --> park<|content_end|>\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.407,
+            0.232,
+            0.943,
+            0.958
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.993,
+            0.995
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.008,
+            0.0,
+            0.944,
+            0.959
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Safe-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-unsafe-loops(π, a, Frontier) then return failure\n    return π\n    frontier = {parking1, parking2, transit1}\n    π = {(on_ship, unload), (at_harbor, park)}\n    on_ship --> at_harbor\n    park --> at_harbor\n    on_ship --> at_harbor\n    park --> at_harbor\n    parking1 --> at_harbor\n    parking2 --> at_harbor\n    on_ship --> park\n    park --> park\n    parking1 --> park\n    parking2 --> park\n    on_ship --> park\n    park --> park\n    parking1 --> park\n    parking2 --> park\n    on_ship --> park\n    park --> park\n    parking1 --> park\n    parking2 --> park\n    on_ship --> park\n    park --> park\n    parking1 --> park\n    parking2 --> park\n    on_ship --> park\n    park --> park\n    parking1 --> park\n    parking2 --> park\n    on_ship --> park\n  move\n  back\n  back\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n  drive\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.407,
+            0.23,
+            0.942,
+            0.955
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.011,
+            0.008,
+            0.462,
+            0.467
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in Frontier \\setminus S_g$ do\n        Frontier $\\leftarrow Frontier \\setminus \\{s\\}$\n        if Applicable($s$) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in Applicable(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow Frontier \\cup (\\gamma(s, a) \\setminus Domain(\\pi))$\n        if has-unsafe-loops($\\pi$, $a$, Frontier) then return failure\n    return $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.077,
+            0.483,
+            0.382,
+            0.574
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFrontier = {parking2, transit1, transit2,\n    gate1, gate2}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.683,
+            0.354,
+            0.814
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.407,
+            0.229,
+            0.942,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.006,
+            0.007,
+            0.457,
+            0.465
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in Frontier \\setminus S_g$ do\n        Frontier $\\leftarrow Frontier \\setminus \\{s\\}$\n        if Applicable($s$) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in Applicable(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow Frontier \\cup (\\gamma(s, a) \\setminus Domain(\\pi))$\n        if has-unsafe-loops($\\pi, a$, Frontier) then return failure\n    return $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.077,
+            0.485,
+            0.382,
+            0.573
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFrontier = {parking2, transit1, transit2, gate1, gate2}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.153,
+            0.685,
+            0.353,
+            0.813
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.477,
+            0.021,
+            0.6,
+            0.083
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.409,
+            0.129,
+            0.945,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_4.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.013,
+            0.007,
+            0.459,
+            0.467
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in Frontier \\setminus S_g$ do\n        Frontier $\\leftarrow Frontier \\setminus \\{s\\}$\n        if Applicable($s$) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in Applicable(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow Frontier \\cup (\\gamma(s, a) \\setminus Domain(\\pi))$\n        if has-unsafe-loops($\\pi$, $a$, Frontier) then return failure\n    return $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.077,
+            0.485,
+            0.307,
+            0.573
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFrontier = {transit1, transit2,\n    gate1, gate2}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.152,
+            0.681,
+            0.352,
+            0.855
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver}), (\\text{parking2, back})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.406,
+            0.229,
+            0.943,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.012,
+            0.007,
+            0.459,
+            0.467
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution ($\\Sigma$, $s_0$, $S_g$)\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in Frontier \\setminus S_g$ do\n        Frontier $\\leftarrow Frontier \\setminus \\{s\\}$\n        if Applicable($s$) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in Applicable(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow Frontier \\cup (\\gamma(s, a) \\setminus Domain(\\pi))$\n        if has-unsafe-loops($\\pi$, $a$, Frontier) then return failure\n    return $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.076,
+            0.481,
+            0.274,
+            0.573
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFrontier = {transit2,\n    gate1, gate2}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.152,
+            0.681,
+            0.352,
+            0.896
+          ],
+          "sub_type": "algorithm",
+          "content": "$\\pi = \\{(\\text{on\\_ship, unload}), (\\text{at\\_harbor, park}), (\\text{parking1, deliver}), (\\text{parking2, back}), (\\text{transit1, move})\\}$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.406,
+            0.23,
+            0.943,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.005,
+            0.003,
+            0.946,
+            0.953
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFind-Safe-Solution (Σ, s₀, S_g)\nπ ← Ø\nFrontier ← {s₀}\nfor every s ∈ Frontier \\ S_g do\n    Frontier ← Frontier \\ {s}\n    if Applicable(s) = Ø then return failure\n    nondeterministically choose a ∈ Applicable(s)\n    π ← π ∪ (s, a)\n    Frontier ← Frontier ∪ (γ(s, a) \\ Domain(π))\n    if has-unsafe-loops(π, a, Frontier) then return failure\n    return π\n    Frontier = {gate1, gate2} ⊆ S_g\n\nπ = {(on_ship, unload), (at_harbor, park), (parking1, deliver), (parking2, back), (transit1, move), (transit2, move)}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.406,
+            0.23,
+            0.943,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.314,
+            0.065,
+            0.684,
+            0.119
+          ],
+          "level": 2,
+          "content": "Guided-Find-Safe-Solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.179,
+            0.665,
+            0.219
+          ],
+          "content": "Motivation: much easier to find solutions if they don’t have to be safe"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.235,
+            0.67,
+            0.275
+          ],
+          "content": "▸ Find-Safe-Solution needs plans for all possible outcomes of actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.29,
+            0.51,
+            0.331
+          ],
+          "content": "▸ Find-Solution only needs a plan for one of them"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.346,
+            0.126,
+            0.383
+          ],
+          "content": "● Idea:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.402,
+            0.15,
+            0.442
+          ],
+          "content": "▸ loop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.457,
+            0.43,
+            0.497
+          ],
+          "content": "• Find a (possibly unsafe) solution π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.512,
+            0.378,
+            0.551
+          ],
+          "content": "• For each each leaf node of π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.567,
+            0.397,
+            0.608
+          ],
+          "content": "If the leaf node isn’t a goal,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.623,
+            0.464,
+            0.708
+          ],
+          "content": "find a (possibly unsafe) solution and incorporate it into π"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.996
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.314,
+            0.064,
+            0.685,
+            0.121
+          ],
+          "level": 2,
+          "content": "Guided-Find-Safe-Solution"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.14,
+            0.17,
+            0.924,
+            0.885
+          ],
+          "sub_type": "algorithm",
+          "content": "Guided-Find-Safe-Solution $(\\Sigma, s_0, S_g)$\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable $(s_0) = \\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select arbitrarily $s \\in Q$\n        $\\pi' \\leftarrow \\text{Find-Solution}(\\Sigma, s, S_g)$\n        if $\\pi' \\neq$ failure then do\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin \\text{Domain}(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make $a$ not applicable in $s'$\n    $\\pi$ is a solution. Return the part that's reachable from $s_0$.\n    Choose any leaf $s$ that isn't a goal.\n    Find a (possibly unsafe) solution $\\pi'$ for $s$.\n    For each $(s, a)$ in $\\pi'$, add to $\\pi$ unless $\\pi$ already has an action at $s$\n    $s$ is unsolvable. For each $(s', a)$ that can produce $s$, modify $\\pi$ and $\\Sigma$ so we'll never use $a$ at $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.001,
+            0.01,
+            0.409,
+            0.685
+          ],
+          "sub_type": "algorithm",
+          "content": "Guided-Find-Safe-Solution ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select arbitrarily $s \\in Q$\n        $\\pi' \\leftarrow \\text{Find-Solution}(\\Sigma, s, S_g)$\n        if $\\pi' \\neq$ failure then do\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.544,
+            0.064,
+            0.666,
+            0.126
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.429,
+            0.193,
+            0.977,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.013,
+            0.409,
+            0.889
+          ],
+          "sub_type": "algorithm",
+          "content": "Guided-Find-Safe-Solution ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select arbitrarily $s \\in Q$\n        $\\pi' \\leftarrow \\text{Find-Solution}(\\Sigma, s, S_g)$\n        if $\\pi' \\neq$ failure then do\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.195,
+            0.976,
+            0.92
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.003,
+            0.013,
+            0.396,
+            0.925
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(∅)\n    if Applicable(s0) = ∅ then return(failure)\n    π ← ∅\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = ∅ then do\n            π ← π \\ {(s, a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s, a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) d\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.377,
+            0.197,
+            0.975,
+            0.927
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.007,
+            0.402,
+            0.694
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ γ(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) do\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.195,
+            0.975,
+            0.964
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.993,
+            0.995
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.007,
+            0.402,
+            0.695
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) do\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.197,
+            0.975,
+            0.963
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.009,
+            0.4,
+            0.691
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) do\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.036,
+            0.976,
+            0.965
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_34_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "35"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.008,
+            0.397,
+            0.693
+          ],
+          "sub_type": "code",
+          "content": "```powershell\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ŷ(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) d\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.197,
+            0.974,
+            0.964
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.015,
+            0.388,
+            0.924
+          ],
+          "sub_type": "algorithm",
+          "content": "Guided-Find-Safe-Solution ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select arbitrarily $s \\in Q$\n        $\\pi' \\leftarrow \\text{Find-Solution}(\\Sigma, s, S_g)$\n        if $\\pi' \\neq$ failure then do\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin \\text{Domain}(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.378,
+            0.061,
+            0.975,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_36_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "37"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.001,
+            0.011,
+            0.392,
+            0.924
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s, a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s, a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) or\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.196,
+            0.975,
+            0.925
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.008,
+            0.4,
+            0.7
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) do\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.193,
+            0.975,
+            0.962
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "39"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.007,
+            0.4,
+            0.696
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s0, Sg)\n    if s0 ∈ Sg then return(Ø)\n    if Applicable(s0) = Ø then return(failure)\n    π ← Ø\n    loop\n        Q ← leaves(s0, π) \\ Sg\n        if Q = Ø then do\n            π ← π \\ {(s,a) ∈ π | s∉ γ̂(s0, π)}\n            return(π)\n        select arbitrarily s ∈ Q\n        π' ← Find-Solution(Σ, s, Sg)\n        if π' ≠ failure then do\n            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}\n        else for every s' and a such that s ∈ γ(s', a) do\n            π ← π \\ {(s', a)}\n            make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.375,
+            0.193,
+            0.975,
+            0.967
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_39_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.354,
+            0.054,
+            0.974,
+            0.97
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_40_image_0.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.01,
+            0.015,
+            0.978,
+            0.966
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGuided-Find-Safe-Solution (Σ,s₀,Sg)\nif s₀ ∈ Sg then return(Ø)\nif Applicable(s₀) = Ø then return(failure)\nπ ← Ø\nloop\n    Q ← leaves(s₀, π) \\ Sg\n    if Q = Ø then do\n        π ← π \\ {(s, a) ∈ π | s ∉ γ̂(s₀, π)}\n        return(π)\n    select arbitrarily s ∈ Q\n    π' ← Find-Solution(Σ, s, Sg)\n    if π' ≠ failure then do\n        π ← π ∪ {(s, a) ∈ π' | s ∉ Domain(π)}\n    else for every s' and a such that s ∈ γ(s', a) do\n        π ← π \\ {(s', a)}\n        make a not applicable in s'\n    end\n\nExample\n    Remove (tr4,move)\n    from π because π can't ever reach tr4\n    on_ship --> unload\n    at_harbor --> park\n    parking2 --> back\n    on_ship --> park\n    at_harbor --> park\n    parking1 --> deliver\n    on_ship --> park\n    at_harbor --> park\n    parking1 --> drive\n    transit1 --> move\n    at_harbor --> drive\n    park --> drive\n    on_ship --> drive\n    at_harbor --> drive\n    parking1 --> drive\n    transit2 --> move\n    at_harbor --> drive\n    park --> drive\n    on_ship --> drive\n    at_harbor --> drive\n    parking1 --> drive\n    transit2 --> drive\n    at_harbor --> drive\n    park --> drive\n    on_ship --> drive\n    at_harbor --> drive\n    parking1 --> drive\n    transit2 --> drive\n    at_harbor --> drive\n    park --> drive\n    on_ship --> drive\n    at_harbor --> drive\n    parking1 --> drive\n    transit2 --> drive\n    at_harbor --> drive\n    park --> drive\n    on_ship --> drive\n    start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|stop()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|\n    Sg --> gate1\n    gate2 --> gate1\n    Sg --> gate2\n    Sg --> gate2\n    Sg --> gate2<|content_end|>\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.993,
+            0.994
+          ],
+          "content": "41"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.007,
+            0.01,
+            0.943,
+            0.903
+          ],
+          "sub_type": "algorithm",
+          "content": "Guided-Find-Safe-Solution ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select arbitrarily $s \\in Q$\n        $\\pi' \\leftarrow \\text{Find-Solution}(\\Sigma, s, S_g)$\n        if $\\pi' \\neq$ failure then do\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin \\text{Domain}(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make $a$ not applicable in $s'$\n\nDiscussion\n• How to implement it?\n    ▶ Need implementation of Find-Solution\n    ▶ Need it to be very efficient\n    • We’ll call it many times\n• Idea: instead of Find-Solution,\n    use a classical planner\n    ▶ Any of the algorithms from Chapter 2\n    ▶ Efficient algorithms, search heuristics\n• Need to convert the actions into something\n    the classical planner can use ...",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.066,
+            0.614,
+            0.119
+          ],
+          "level": 2,
+          "content": "Determinization"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.159,
+            0.563,
+            0.201
+          ],
+          "content": "● Let $\\pmb { a } _ { i }$ be a nondeterministic action with n possible outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.216,
+            0.254,
+            0.256
+          ],
+          "content": "● Determinization of $\\boldsymbol{a}_{i} =$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.27,
+            0.505,
+            0.313
+          ],
+          "content": "{n deterministic actions, one for each outcome of $| a _ { i } |$ }"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.183,
+            0.318,
+            0.677,
+            0.941
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.534,
+                0.952,
+                0.583,
+                0.979
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_42_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.702,
+            0.18,
+            0.937,
+            0.889
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_42_image_6.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "43"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.385,
+            0.053,
+            0.614,
+            0.106
+          ],
+          "level": 2,
+          "content": "Determinization"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.163,
+            0.624,
+            0.207
+          ],
+          "content": "Suppose a classical planner returns an acyclic plan $p = \\langle a _ { 1 } , a _ { 2 } , \\ldots , a _ { n } \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.661,
+            0.135,
+            0.926,
+            0.179
+          ],
+          "content": "Plan2policy $(p = \\langle a_1, \\ldots, a_n \\rangle, s)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.219,
+            0.469,
+            0.262
+          ],
+          "content": "● Actions and states: $\\langle s _ { 0 } , a _ { 1 } , s _ { 1 } , a _ { 2 } , s _ { 2 } , a _ { 3 } , . . . , a _ { n } , s _ { n } \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.023,
+            0.274,
+            0.468,
+            0.318
+          ],
+          "content": "● Convert p to a policy $\\langle ( s _ { 0 } , { \\pmb a } _ { 1 } ) , ( s _ { 1 } , { \\pmb a } _ { 2 } ) , \\ldots , ( s _ { n - 1 } , { \\pmb a } _ { n } ) \\rangle$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.33,
+            0.636,
+            0.373
+          ],
+          "content": "▸ $\\boldsymbol{a}_{1} =$ the nondeterministic action whose determinization includes $a _ { i }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.683,
+            0.185,
+            0.748,
+            0.217
+          ],
+          "content": "\\pi \\leftarrow \\varnothing",
+          "image_source": "images/page_43_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.681,
+            0.223,
+            0.904,
+            0.263
+          ],
+          "content": "loop for i from 1 to n do"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.706,
+            0.267,
+            0.946,
+            0.31
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cup (s, \\det 2 \\text {nondet} (a _ {i}))",
+          "image_source": "images/page_43_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.35,
+            0.941,
+            0.392,
+            0.963
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.708,
+            0.311,
+            0.821,
+            0.353
+          ],
+          "content": "s \\leftarrow \\gamma_ {d} (s, a _ {i})",
+          "image_source": "images/page_43_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.683,
+            0.359,
+            0.763,
+            0.392
+          ],
+          "content": "return π"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.05,
+            0.423,
+            0.472,
+            0.932
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.49,
+            0.421,
+            0.91,
+            0.964
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.006,
+                0.975,
+                0.355,
+                0.997
+              ],
+              "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+            }
+          ],
+          "image_source": "images/page_43_image_13.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.231,
+            0.04,
+            0.769,
+            0.1
+          ],
+          "level": 2,
+          "content": "Find-Safe-Solution-by-Determinization"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.016,
+            0.142,
+            0.415,
+            0.832
+          ],
+          "sub_type": "code",
+          "content": "```python\nGuided-Find-Safe-Solution (Σ,s0,sg)\nif s0 ∈ Sg then return(∅)\nif Applicable(s0) = ∅ then return(failure)\nπ ← ∅\nloop\n    Q ← leaves(s0, π) \\ Sg\n    if Q = ∅ then do\n        π ← π \\ {(s,a) ∈ π | s∉γ̂(s0, π)}\n        return(π)\n    select arbitrarily s ∈ Q\n    π' ← Find-Solution(Σ, s, Sg)\n    if π' ≠ failure then do\n        π ← π ∪ {(s,a) ∈ π' | s∉Domain(π)}\n    else for every s' and a such that s ∈ γ(s', a) d\n        π ← π \\ {(s', a)}\n    make a not applicable in s'\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.423,
+            0.143,
+            0.993,
+            0.914
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization $(\\Sigma, s_0, S_g)$\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable $(s_0) = \\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search $(\\Sigma_d, s, S_g)$\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "45"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.569,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.195,
+            0.976,
+            0.923
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_45_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "46"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.576,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.196,
+            0.977,
+            0.924
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "47"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.571,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.196,
+            0.977,
+            0.924
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "48"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.576,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.421,
+            0.196,
+            0.976,
+            0.924
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "49"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.569,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.419,
+            0.195,
+            0.976,
+            0.921
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_49_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "50"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.574,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.419,
+            0.194,
+            0.977,
+            0.924
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "51"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.571,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.42,
+            0.195,
+            0.975,
+            0.923
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "52"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.141,
+            0.58,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.063,
+            0.562,
+            0.126
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.416,
+            0.048,
+            0.978,
+            0.922
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "53"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.293,
+            0.149,
+            0.363,
+            0.189
+          ],
+          "content": "(\\Sigma , s _ {0}, S _ {g})",
+          "image_source": "images/page_53_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.043,
+            0.19,
+            0.1,
+            0.229
+          ],
+          "content": "s _ {0} \\in S _ {g}",
+          "image_source": "images/page_53_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.133,
+            0.229,
+            0.204,
+            0.268
+          ],
+          "content": "e (s _ {0}) = \\varnothing",
+          "image_source": "images/page_53_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.274,
+            0.085,
+            0.306
+          ],
+          "content": "\\pi \\leftarrow \\varnothing",
+          "image_source": "images/page_53_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.313,
+            0.051,
+            0.35
+          ],
+          "content": "\\Sigma_ {d}",
+          "image_source": "images/page_53_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.393,
+            0.238,
+            0.435
+          ],
+          "content": "Q \\leftarrow l e a v e s (s _ {0}, \\pi) \\setminus S _ {g}",
+          "image_source": "images/page_53_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.064,
+            0.434,
+            0.118,
+            0.471
+          ],
+          "content": "Q = \\varnothing",
+          "image_source": "images/page_53_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.473,
+            0.336,
+            0.515
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat {\\gamma} (s _ {0}, \\pi) \\}",
+          "image_source": "images/page_53_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.098,
+            0.557,
+            0.145,
+            0.595
+          ],
+          "content": "s \\in Q",
+          "image_source": "images/page_53_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.597,
+            0.093,
+            0.635
+          ],
+          "content": "p ^ {\\prime} \\leftarrow",
+          "image_source": "images/page_53_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.597,
+            0.299,
+            0.639
+          ],
+          "content": "(\\Sigma_ {d}, s, S _ {g})",
+          "image_source": "images/page_53_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.065,
+            0.639,
+            0.103,
+            0.677
+          ],
+          "content": "p ^ {\\prime} \\neq",
+          "image_source": "images/page_53_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.678,
+            0.255,
+            0.719
+          ],
+          "content": "\\pi^ {\\prime} \\leftarrow \\text {Plan2policy} (p ^ {\\prime}, s)",
+          "image_source": "images/page_53_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.72,
+            0.27,
+            0.759
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi^ {\\prime} \\mid s \\notin",
+          "image_source": "images/page_53_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.761,
+            0.171,
+            0.797
+          ],
+          "content": "s ^ {\\prime}",
+          "image_source": "images/page_53_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.289,
+            0.761,
+            0.377,
+            0.8
+          ],
+          "content": "s \\in \\gamma (s ^ {\\prime}, a)",
+          "image_source": "images/page_53_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.801,
+            0.207,
+            0.842
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s ^ {\\prime}, a) \\}",
+          "image_source": "images/page_53_equation_16.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.416,
+            0.195,
+            0.976,
+            0.907
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_18.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "54"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.141,
+            0.567,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.063,
+            0.562,
+            0.126
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.064,
+            0.977,
+            0.923
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "55"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.143,
+            0.565,
+            0.886
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.419,
+            0.195,
+            0.976,
+            0.921
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_55_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "56"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.0,
+            0.142,
+            0.571,
+            0.885
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.194,
+            0.976,
+            0.921
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "57"
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.293,
+            0.149,
+            0.363,
+            0.189
+          ],
+          "content": "(\\Sigma , s _ {0}, S _ {g})",
+          "image_source": "images/page_57_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.043,
+            0.19,
+            0.1,
+            0.229
+          ],
+          "content": "s _ {0} \\in S _ {g}",
+          "image_source": "images/page_57_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.134,
+            0.229,
+            0.204,
+            0.268
+          ],
+          "content": "e (s _ {0}) = \\varnothing",
+          "image_source": "images/page_57_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.273,
+            0.085,
+            0.306
+          ],
+          "content": "\\pi \\leftarrow \\varnothing",
+          "image_source": "images/page_57_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.313,
+            0.051,
+            0.35
+          ],
+          "content": "\\Sigma_ {d}",
+          "image_source": "images/page_57_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.393,
+            0.238,
+            0.435
+          ],
+          "content": "Q \\leftarrow l e a v e s (s _ {0}, \\pi) \\setminus S _ {g}",
+          "image_source": "images/page_57_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.064,
+            0.434,
+            0.118,
+            0.471
+          ],
+          "content": "Q = \\varnothing",
+          "image_source": "images/page_57_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.473,
+            0.336,
+            0.515
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat {\\gamma} (s _ {0}, \\pi) \\}",
+          "image_source": "images/page_57_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.098,
+            0.557,
+            0.145,
+            0.595
+          ],
+          "content": "s \\in Q",
+          "image_source": "images/page_57_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.597,
+            0.093,
+            0.635
+          ],
+          "content": "p ^ {\\prime} \\leftarrow",
+          "image_source": "images/page_57_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.597,
+            0.299,
+            0.639
+          ],
+          "content": "(\\Sigma_ {d}, s, S _ {g})",
+          "image_source": "images/page_57_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.065,
+            0.639,
+            0.103,
+            0.677
+          ],
+          "content": "p ^ {\\prime} \\neq",
+          "image_source": "images/page_57_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.678,
+            0.255,
+            0.719
+          ],
+          "content": "\\pi^ {\\prime} \\leftarrow \\text {Plan2policy} (p ^ {\\prime}, s)",
+          "image_source": "images/page_57_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.72,
+            0.27,
+            0.759
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi^ {\\prime} \\mid s \\notin",
+          "image_source": "images/page_57_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.761,
+            0.171,
+            0.797
+          ],
+          "content": "s ^ {\\prime}",
+          "image_source": "images/page_57_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.289,
+            0.761,
+            0.377,
+            0.8
+          ],
+          "content": "s \\in \\gamma (s ^ {\\prime}, a)",
+          "image_source": "images/page_57_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.801,
+            0.207,
+            0.842
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s ^ {\\prime}, a) \\}",
+          "image_source": "images/page_57_equation_16.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.415,
+            0.195,
+            0.977,
+            0.921
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_57_image_18.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "58"
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.043,
+            0.19,
+            0.1,
+            0.229
+          ],
+          "content": "s _ {0} \\in S _ {g}",
+          "image_source": "images/page_58_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.293,
+            0.149,
+            0.363,
+            0.189
+          ],
+          "content": "(\\Sigma , s _ {0}, S _ {g})",
+          "image_source": "images/page_58_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.133,
+            0.229,
+            0.204,
+            0.268
+          ],
+          "content": "e (s _ {0}) = \\varnothing",
+          "image_source": "images/page_58_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.273,
+            0.085,
+            0.306
+          ],
+          "content": "\\pi \\leftarrow \\varnothing",
+          "image_source": "images/page_58_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.313,
+            0.051,
+            0.35
+          ],
+          "content": "\\Sigma_ {d}",
+          "image_source": "images/page_58_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.393,
+            0.238,
+            0.435
+          ],
+          "content": "Q \\leftarrow l e a v e s (s _ {0}, \\pi) \\setminus S _ {g}",
+          "image_source": "images/page_58_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.064,
+            0.434,
+            0.118,
+            0.471
+          ],
+          "content": "Q = \\varnothing",
+          "image_source": "images/page_58_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.473,
+            0.336,
+            0.515
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat {\\gamma} (s _ {0}, \\pi) \\}",
+          "image_source": "images/page_58_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.098,
+            0.557,
+            0.145,
+            0.595
+          ],
+          "content": "s \\in Q",
+          "image_source": "images/page_58_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.597,
+            0.093,
+            0.635
+          ],
+          "content": "p ^ {\\prime} \\leftarrow",
+          "image_source": "images/page_58_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.597,
+            0.299,
+            0.639
+          ],
+          "content": "(\\Sigma_ {d}, s, S _ {g})",
+          "image_source": "images/page_58_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.065,
+            0.639,
+            0.103,
+            0.677
+          ],
+          "content": "p ^ {\\prime} \\neq",
+          "image_source": "images/page_58_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.678,
+            0.255,
+            0.719
+          ],
+          "content": "\\pi^ {\\prime} \\leftarrow \\text {Plan2policy} (p ^ {\\prime}, s)",
+          "image_source": "images/page_58_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.72,
+            0.27,
+            0.759
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi^ {\\prime} \\mid s \\notin",
+          "image_source": "images/page_58_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.761,
+            0.171,
+            0.797
+          ],
+          "content": "s ^ {\\prime}",
+          "image_source": "images/page_58_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.289,
+            0.761,
+            0.377,
+            0.8
+          ],
+          "content": "s \\in \\gamma (s ^ {\\prime}, a)",
+          "image_source": "images/page_58_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.801,
+            0.207,
+            0.842
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s ^ {\\prime}, a) \\}",
+          "image_source": "images/page_58_equation_16.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.418,
+            0.195,
+            0.976,
+            0.922
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_18.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "59"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.293,
+            0.149,
+            0.363,
+            0.189
+          ],
+          "content": "(\\Sigma , s _ {0}, S _ {g})",
+          "image_source": "images/page_59_equation_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.043,
+            0.19,
+            0.1,
+            0.229
+          ],
+          "content": "s _ {0} \\in S _ {g}",
+          "image_source": "images/page_59_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.133,
+            0.229,
+            0.204,
+            0.268
+          ],
+          "content": "e (s _ {0}) = \\varnothing",
+          "image_source": "images/page_59_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.273,
+            0.085,
+            0.306
+          ],
+          "content": "\\pi \\leftarrow \\varnothing",
+          "image_source": "images/page_59_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.025,
+            0.313,
+            0.051,
+            0.35
+          ],
+          "content": "\\Sigma_ {d}",
+          "image_source": "images/page_59_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.393,
+            0.238,
+            0.435
+          ],
+          "content": "Q \\leftarrow l e a v e s (s _ {0}, \\pi) \\setminus S _ {g}",
+          "image_source": "images/page_59_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.064,
+            0.434,
+            0.118,
+            0.471
+          ],
+          "content": "Q = \\varnothing",
+          "image_source": "images/page_59_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.473,
+            0.336,
+            0.515
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat {\\gamma} (s _ {0}, \\pi) \\}",
+          "image_source": "images/page_59_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.098,
+            0.557,
+            0.145,
+            0.595
+          ],
+          "content": "s \\in Q",
+          "image_source": "images/page_59_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.049,
+            0.597,
+            0.093,
+            0.635
+          ],
+          "content": "p ^ {\\prime} \\leftarrow",
+          "image_source": "images/page_59_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.219,
+            0.597,
+            0.299,
+            0.639
+          ],
+          "content": "(\\Sigma_ {d}, s, S _ {g})",
+          "image_source": "images/page_59_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.065,
+            0.639,
+            0.103,
+            0.677
+          ],
+          "content": "p ^ {\\prime} \\neq",
+          "image_source": "images/page_59_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.678,
+            0.255,
+            0.719
+          ],
+          "content": "\\pi^ {\\prime} \\leftarrow \\text {Plan2policy} (p ^ {\\prime}, s)",
+          "image_source": "images/page_59_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.07,
+            0.72,
+            0.27,
+            0.759
+          ],
+          "content": "\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi^ {\\prime} \\mid s \\notin",
+          "image_source": "images/page_59_equation_13.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.438,
+            0.065,
+            0.562,
+            0.125
+          ],
+          "level": 2,
+          "content": "Example"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.761,
+            0.171,
+            0.797
+          ],
+          "content": "s ^ {\\prime}",
+          "image_source": "images/page_59_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.289,
+            0.761,
+            0.377,
+            0.8
+          ],
+          "content": "s \\in \\gamma (s ^ {\\prime}, a)",
+          "image_source": "images/page_59_equation_16.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.801,
+            0.207,
+            0.842
+          ],
+          "content": "\\pi \\leftarrow \\pi \\setminus \\{(s ^ {\\prime}, a) \\}",
+          "image_source": "images/page_59_equation_17.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.419,
+            0.197,
+            0.976,
+            0.923
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_18.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "60"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.004,
+            0.062,
+            0.978,
+            0.925
+          ],
+          "sub_type": "code",
+          "content": "```txt\nExample\nFind-Safe-Solution-by-Determinization (Σ, s₀, S_g)\nif s₀ ∈ S_g then return(Ø)\nif Applicable(s₀) = Ø then return(failure)\nπ ← Ø\nΣ_d ← mk-deterministic(Σ)\nloop\n    Q ← leaves(s₀, π) \\ S_g\n    if Q = Ø then do\n        π ← π \\ {(s, a) ∈ π | s ∉ γ̂(s₀, π)}\n        return(π)\n    select s ∈ Q\n    p' ← Forward-Search (Σ_d, s, S_g)\n    if p' ≠ failure then do\n        π' ← Plan2policy(p', s)\n        π ← π ∪ {(s, a) ∈ π' | s ∉ Domain(π)}\n    else for every s' and a such that s ∈ γ(s', a) do\n    π ← π \\ {(s', a)}\n    make the actions in the determinization of a not applicable in s'\n    end\n    on_ship\n    at_harbor\n    park\n    parking1\n    on_ship\n    deposit\n    transit1\n    deposit\n    transit2\n    gate1\n    gate2\n    S_g\n    move\n    back\n    back\n    drive\n    move\n    on_ship\n    at_harbor\n    park\n    parking1\n    deposit\n    transit1\n    deposit\n    transit2\n    S_g\n    move\n    back\n    back\n    drive\n    on_ship\n    at_harbor\n    park\n    parking1\n    deposit\n    transit1\n    deposit\n    transit2\n    S_g\n    move\n    back\n    back\n    drive\n    on_ship\n    at_harbor\n    park\n    parking1\n    deposit\n    transit1\n    deposit\n    transit2\n    S_g\n    move\n    back\n    back\n    drive\n    on_ship\nis the path from start to end.\nremove (tr4, move)\nfrom π because π can't ever reach tr4\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "61"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.303,
+            0.064,
+            0.697,
+            0.125
+          ],
+          "level": 2,
+          "content": "Making Actions Inapplicable"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.129,
+            0.149,
+            0.907,
+            0.942
+          ],
+          "sub_type": "algorithm",
+          "content": "Find-Safe-Solution-by-Determinization ($\\Sigma, s_0, S_g$)\n    if $s_0 \\in S_g$ then return($\\varnothing$)\n    if Applicable($s_0$) = $\\varnothing$ then return(failure)\n    $\\pi \\leftarrow \\varnothing$\n    $\\Sigma_d \\leftarrow$ mk-deterministic($\\Sigma$)\n    loop\n        $Q \\leftarrow leaves(s_0, \\pi) \\setminus S_g$\n        if $Q = \\varnothing$ then do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s, a) \\in \\pi \\mid s \\notin \\widehat{\\gamma}(s_0, \\pi)\\}$\n            return($\\pi$)\n        select $s \\in Q$\n        $p' \\leftarrow$ Forward-Search ($\\Sigma_d, s, S_g$)\n        if $p' \\neq$ failure then do\n            $\\pi' \\leftarrow$ Plan2policy($p', s$)\n            $\\pi \\leftarrow \\pi \\cup \\{(s, a) \\in \\pi' \\mid s \\notin Domain(\\pi)\\}$\n        else for every $s'$ and $a$ such that $s \\in \\gamma(s', a)$ do\n            $\\pi \\leftarrow \\pi \\setminus \\{(s', a)\\}$\n            make the actions in the determinization of $a$ not applicable in $s'$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "62"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.29,
+            0.065,
+            0.709,
+            0.123
+          ],
+          "level": 2,
+          "content": "12.1.3196 Online Approaches"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.142,
+            0.185,
+            0.265,
+            0.222
+          ],
+          "level": 2,
+          "content": "● Motivation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.239,
+            0.528,
+            0.326
+          ],
+          "content": "▸ Planning models are approximate – execution seldom works out as planned"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.34,
+            0.52,
+            0.427
+          ],
+          "content": "Large problems may require too much planning time"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.439,
+            0.478,
+            0.523
+          ],
+          "content": "2nd motivation even more stronger in nondeterministic domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.539,
+            0.477,
+            0.627
+          ],
+          "content": "▸ Nondeterminism makes planning exponentially harder"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.64,
+            0.465,
+            0.727
+          ],
+          "content": "Exponentially more time, exponentially larger policies"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.555,
+            0.197,
+            0.839,
+            0.684
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.613,
+                0.716,
+                0.775,
+                0.801
+              ],
+              "content": "Offline vs Runtime.  Search Spaces"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_62_image_7.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)o"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "63ng"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.365,
+            0.065,
+            0.634,
+            0.124
+          ],
+          "level": 2,
+          "content": "Online Approaches"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.178,
+            0.646,
+            0.221
+          ],
+          "content": "● Need to identify good actions without exploring entire search space"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.235,
+            0.427,
+            0.275
+          ],
+          "content": "▸ Can be done using heuristic estimates"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.289,
+            0.387,
+            0.331
+          ],
+          "content": "● Some domains are safely explorable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.345,
+            0.68,
+            0.387
+          ],
+          "content": "▸ Safe to create partial plans, because goal states are always reachable"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.401,
+            0.659,
+            0.442
+          ],
+          "content": "● In domains with dead-ends, partial planning won’t guarantee success"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.456,
+            0.793,
+            0.499
+          ],
+          "content": "▸ Can get trapped in dead ends that we would have detected if we had planned fully"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.512,
+            0.321,
+            0.553
+          ],
+          "content": "• No applicable actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.568,
+            0.38,
+            0.608
+          ],
+          "content": "▸ robot’s battery goes dead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.623,
+            0.472,
+            0.665
+          ],
+          "content": "• Applicable actions, but caught in a loop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.679,
+            0.701,
+            0.719
+          ],
+          "content": "▸ robot goes into a collection of rooms from which there’s no exit"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.734,
+            0.568,
+            0.777
+          ],
+          "content": "▸ But partial planning can still make success more likely"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "64"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.336,
+            0.053,
+            0.663,
+            0.107
+          ],
+          "level": 2,
+          "content": "Lookahead-Partial-Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.201,
+            0.458,
+            0.244
+          ],
+          "content": "Adaptation of Run-Lazy-Lookahead (Chapter 2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.258,
+            0.333,
+            0.345
+          ],
+          "content": "Lookahead is any planning algorithm that returns a policy π"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.357,
+            0.381,
+            0.399
+          ],
+          "content": "▸ π may be partial or unsafe solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.411,
+            0.528,
+            0.455
+          ],
+          "content": "● Execute π as far as it will go, then call Lookahead again"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.034,
+            0.547,
+            0.409,
+            0.918
+          ],
+          "sub_type": "algorithm",
+          "content": "Lookahead-Partial-Policy($\\Sigma, s_0, S_g$)\n    $s \\leftarrow s_0$\n    while $s \\notin S_g$ and Applicable($s$) $\\neq \\varnothing$ do\n        $\\pi \\leftarrow \\text{Lookahead}(s, \\theta)$\n        if $\\pi = \\varnothing$ then return failure\n        else do\n            act according to the partial policy $\\pi$\n            $s \\leftarrow$ observe current state",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.429,
+            0.239,
+            0.977,
+            0.926
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_image_6.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "65"
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.429,
+            0.053,
+            0.571,
+            0.112
+          ],
+          "level": 2,
+          "content": "FS-Replan"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.034,
+            0.156,
+            0.517,
+            0.527
+          ],
+          "sub_type": "algorithm",
+          "content": "FS-Replan ($\\Sigma, s, S_g$)\n    $\\pi_d \\leftarrow \\varnothing$\n    while $s \\notin S_g$ and Applicable($s$) $\\neq \\varnothing$ do\n        if $\\pi_d$ undefined for $s$ then do\n            $\\pi_d \\leftarrow$ Plan2policy(Forward-Search($\\Sigma_d, s, S_g$), $s$)\n            if $\\pi_d =$ failure then return failure\n    perform action $\\pi_d(s)$\n    $s \\leftarrow$ observe resulting state",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.619,
+            0.393,
+            0.662
+          ],
+          "content": "● Adaptation of Lookahead-Partial-Plan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.675,
+            0.498,
+            0.718
+          ],
+          "content": "▸ Calls classical planner on determinized domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.731,
+            0.419,
+            0.774
+          ],
+          "content": "▸ Gets plan, converts converts to policy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.787,
+            0.264,
+            0.825
+          ],
+          "content": "Unsafe solution"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.841,
+            0.48,
+            0.929
+          ],
+          "content": "▸ Executes policy as far as it will go, then calls classical planner again"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.42,
+            0.189,
+            0.98,
+            0.927
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_image_7.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.974,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "66"
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.271,
+            0.043,
+            0.729,
+            0.097
+          ],
+          "level": 2,
+          "content": "More Possibilities for Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.163,
+            0.429,
+            0.251
+          ],
+          "content": "What if Lookahead doesn’t have time to run to completion?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.264,
+            0.43,
+            0.351
+          ],
+          "content": "Can use the same techniques we discussed in Chapter 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.363,
+            0.367,
+            0.406
+          ],
+          "content": "• Receding horizon"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.419,
+            0.301,
+            0.464
+          ],
+          "content": "• Sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.474,
+            0.316,
+            0.519
+          ],
+          "content": "• Subgoaling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.531,
+            0.379,
+            0.573
+          ],
+          "content": "• Iterative deepening"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.165,
+            0.586,
+            0.323,
+            0.625
+          ],
+          "content": "▸ A few others …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.738,
+            0.256,
+            0.812,
+            0.347
+          ],
+          "content": "Planning Acting"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.594,
+            0.363,
+            0.823,
+            0.901
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "67"
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.271,
+            0.043,
+            0.729,
+            0.098
+          ],
+          "level": 2,
+          "content": "More Possibilities for Lookahead"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.022,
+            0.122,
+            0.286,
+            0.161
+          ],
+          "content": "● Full horizon, limited breadth:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.175,
+            0.504,
+            0.215
+          ],
+          "content": "▸ look for solution that works for some of the outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.225,
+            0.676,
+            0.273
+          ],
+          "content": "▸ E.g., modify Find-Acyclic-Solution to examine i outcomes of each action<sup>back</sup>"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.023,
+            0.308,
+            0.501,
+            0.961
+          ],
+          "sub_type": "algorithm",
+          "content": "- Iterative broadening:\n    for $i = 1$ by 1 until time runs out\n        look for a solution that handles $i$ outcomes per action\nFind-Acyclic-Solution $(\\Sigma, s_0, S_g)$\n    $\\pi \\leftarrow \\varnothing$\n    Frontier $\\leftarrow \\{s_0\\}$\n    for every $s \\in \\text{Frontier} \\setminus S_g$ do\n        Frontier $\\leftarrow \\text{Frontier} \\setminus \\{s\\}$\n        if Applicable(s) = $\\varnothing$ then return failure\n        nondeterministically choose $a \\in \\text{Applicable}(s)$\n        $\\pi \\leftarrow \\pi \\cup (s, a)$\n        Frontier $\\leftarrow \\text{Frontier} \\cup (\\gamma(s, a) \\setminus \\text{Domain}(\\pi))$\n        if has-loops$(\\pi, a, \\text{Frontier})$ then return failure\nreturn $\\pi$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.46,
+            0.163,
+            0.994,
+            0.971
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_67_image_5.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.005,
+            0.974,
+            0.356,
+            0.998
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.995
+          ],
+          "content": "68"
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.313,
+            0.053,
+            0.685,
+            0.111
+          ],
+          "level": 2,
+          "content": "Safely Explorable Domains"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.198,
+            0.391,
+            0.24
+          ],
+          "content": "● Safely explorable domain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.254,
+            0.689,
+            0.295
+          ],
+          "content": "▸ for every state s, at least one goal state is reachable from s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.365,
+            0.757,
+            0.405
+          ],
+          "content": "For Lookahead, suppose we use Lookahead-Partial-Plan or FS-Replan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.421,
+            0.521,
+            0.459
+          ],
+          "content": "▸ Then Lookahead never returns failure"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.476,
+            0.601,
+            0.518
+          ],
+          "content": "● Every “fair” execution will eventually reach a goal"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.467,
+            0.591,
+            0.682,
+            0.817
+          ],
+          "content": "**Poll**: Suppose we just choose a random action each time. Is every “fair” execution guaranteed to reach a goal?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.996
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.995
+          ],
+          "content": "69"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.387,
+            0.065,
+            0.611,
+            0.12
+          ],
+          "level": 2,
+          "content": "Min-Max LRTA\\*"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.203,
+            0.198,
+            0.687,
+            0.527
+          ],
+          "sub_type": "code",
+          "content": "```txt\nMinMax LRTA* (Σ, s0, Sg)\n    s ← s0\n    while s ∉ Sg and Applicable(s) ≠ ∅ do\n        a ← argmin_a∈Applicable(s) max_s' ∈ γ(s,a) h(s')\n        h(s) ← max{h(s), cost(s,a) + max_s' ∈ γ(s,a) h(s')} \n        perform action a\n    s ← the current state\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.117,
+            0.569,
+            0.184,
+            0.611
+          ],
+          "level": 2,
+          "content": "● loop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.624,
+            0.739,
+            0.667
+          ],
+          "content": "▸ choose an action a that (according to h) has optimal worst-case cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.68,
+            0.52,
+            0.721
+          ],
+          "content": "• Update h(s) to use a’s worst-case cost"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.174,
+            0.736,
+            0.287,
+            0.774
+          ],
+          "content": "• Perform a"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.82,
+            0.746,
+            0.907
+          ],
+          "content": "● In safely explorable domains with no “unfair” executions, guaranteed to reach a goal"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "70"
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.033,
+            0.07,
+            0.875,
+            0.954
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.584,
+            0.293,
+            0.673
+          ],
+          "content": "● Suppose that initially, $h ( s ) = 0$ for every s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.721,
+            0.967,
+            0.774,
+            0.995
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "71"
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.034,
+            0.069,
+            0.875,
+            0.955
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_71_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.583,
+            0.294,
+            0.674
+          ],
+          "content": "● Suppose that initially, $h ( s ) = 0$ for every s"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.721,
+            0.967,
+            0.774,
+            0.996
+          ],
+          "content": "transit2"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.979,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "72"
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.035,
+            0.067,
+            0.874,
+            0.957
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.721,
+                0.967,
+                0.774,
+                0.995
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_72_image_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.975,
+            0.994,
+            0.994
+          ],
+          "content": "73"
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.03,
+            0.068,
+            0.876,
+            0.955
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.721,
+                0.967,
+                0.774,
+                0.995
+              ],
+              "content": "transit2"
+            }
+          ],
+          "image_source": "images/page_73_image_0.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.007,
+            0.975,
+            0.354,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "74"
+        }
+      ]
+    },
+    {
+      "page_idx": 74,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.43,
+            0.067,
+            0.569,
+            0.125
+          ],
+          "level": 2,
+          "content": "Summary"
+        },
+        {
+          "type": "index",
+          "bbox": [
+            0.055,
+            0.171,
+            0.934,
+            0.856
+          ],
+          "content": "- - Types of solutions: unsafe, safe (acyclic, cyclic)\n- - Find-Solution,\n- - Find-Acyclic-Solution\n- - Find-Safe-Solution\n- - Guided-Find-Safe-Solution\n- - call Find-Solution to get an unsafe solution\n- - call Find-Solution again on the leaves\n- - if dead-ends are encountered, modify actions that lead to them\n- - Find-Safe-Solution-by-Determinization\n- - Like Guided-Find-Safe-Solution, but call classical planner on determined domain, convert plan into policy\n- - Online approaches\n- - Lookahead-Partial-Plan\n- - adaptation of Run-Lazy-Lookahead\n- - FS-Replan\n- - adaptation of Run-Lookahead\n- - Ways to do the lookahead\n- - full breadth with limited depth,\n- - iterative deepening\n- - full depth with limited breadth\n- - iterative broadening\n- - convergence in safely explorable domains\n- - Min-Max LRTA\\*"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.006,
+            0.975,
+            0.355,
+            0.997
+          ],
+          "content": "Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.98,
+            0.976,
+            0.994,
+            0.994
+          ],
+          "content": "75"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "producer_application": "macOS Version 15.3.1 (Build 24D70) Quartz PDFContext",
+      "page_count": 75,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 74,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

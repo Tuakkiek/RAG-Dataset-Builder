@@ -1,0 +1,2272 @@
+Dana S. Nau
+
+## Chapter 12 Planning with Nondeterministic Models
+
+University of Maryland
+
+![](images/page_0_image_4.jpg)
+
+Acting, Planning, and Learning
+
+Malik Ghallab, Dana Nau, and Paolo Traverso
+
+## Kinds of Solution Policies
+
+solution policies safe policies acyclic policies
+
+cyclic policies
+
+Goal States
+
+unsafe policies
+
+## Finding (Unsafe) Solutions
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$; $s \leftarrow s_0$; $Visited \leftarrow \{s_0\}$
+    loop
+        if $s \in S_g$ then return $\pi$
+        $A' \leftarrow Applicable(s)$
+        if $A' = \varnothing$ then return failure
+        nondeterministically choose $a \in A'$
+    (*) nondeterministically choose $s' \in \gamma(s, a)$
+    if $s' \in Visited$ then return failure
+        $\pi(s) \leftarrow a$; $Visited \leftarrow Visited \cup \{s'\}$; $s \leftarrow s'$
+
+For comparison:
+    Forward-search ($\Sigma$, $s_0$, $g$)
+        $s \leftarrow s_0$; $\pi \leftarrow \langle\rangle$
+        while $s \not\equiv g$ do
+            if $Applicable(s) = \varnothing$ then return failure
+            nondeterministically choose $a \in Applicable(s)$
+            $s \leftarrow \gamma(s, a)$; $\pi \leftarrow \pi \cdot a$
+        return $\pi$
+
+Decide which state to plan for
+Cycle-checking
+</div>
+
+## Finding (Unsafe) Solutions
+
+transit3
+
+**Poll**: which should (\*) be?
+
+A. nondeterministically choose
+
+B. arbitrarily choose
+
+C. don’t know
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Solution $(\Sigma, s_0, S_g)$
+    $\pi \leftarrow \varnothing$; $s \leftarrow s_0$; $Visited \leftarrow \{s_0\}$
+    loop
+        if $s \in S_g$ then return $\pi$
+        $A' \leftarrow Applicable(s)$
+        if $A' = \varnothing$ then return failure
+        nondeterministically choose $a \in A'$
+    (*) nondeterministically choose $s' \in \gamma(s, a)$
+        if $s' \in Visited$ then return failure
+        $\pi(s) \leftarrow a$; $Visited \leftarrow Visited \cup \{s'\}$; $s \leftarrow s'$
+</div>
+
+![](images/page_3_image_7.jpg)
+
+Decide which state to plan for
+
+Cycle-checking
+
+```txt
+Find-Solution (Σ, s₀, S_g)
+  π ← Ø; s ← s₀; Visited ← {s₀}
+  loop
+    if s ∈ S_g then return π
+      A' ← Applicable(s)
+      if A' = Ø then return failure
+      nondeterministically choose a ∈ A'
+      nondeterministically choose s' ∈ γ(s, a)
+      if s' ∈ Visited then return failure
+      π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'
+    s = on_ship
+    π = {}
+    Visited = {on_ship}
+
+    on_ship
+    at_harbor
+    park
+    parking2
+    deliver
+    transit3
+    gate1
+    gate2
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking1
+    deliver
+    transit1
+    gate1
+    transit1
+    gate2
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking2
+    deliver
+    transit1
+    gate1
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking1
+    deliver
+    transit1
+    gate1
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking2
+    deliver
+    transit1
+    gate1
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking2
+    deliver
+    transit1
+    gate1
+    S_g
+    on_ship
+    at_harbor
+    park
+    parking1
+    deliver
+    transit1
+    gate1
+    S_g
+```
+
+![](images/page_4_image_1.jpg)
+
+transit2
+
+![](images/page_5_image_1.jpg)
+
+```txt
+Find-Solution (Σ, s₀, S_g)
+π ← Ø; s ← s₀; Visited ← {s₀}
+loop
+if s ∈ S_g then return π
+A' ← Applicable(s)
+if A' = Ø then return failure
+nondeterministically choose a ∈ A'
+nondeterministically choose s' ∈ γ(s, a)
+if s' ∈ Visited then return failure
+π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'
+
+s = on_ship
+a = unload
+γ(s,a) = {at_harbor}
+s ← s' = at_harbor
+
+π = {(on_ship, unload)}
+Visited = {on_ship, at_harbor}
+```
+
+```txt
+Find-Solution (Σ, s₀, S_g)
+    π ← Ø; s ← s₀; Visited ← {s₀}
+    loop
+        if s ∈ S_g then return π
+            A' ← Applicable(s)
+            if A' = Ø then return failure
+            nondeterministically choose a ∈ A'
+            nondeterministically choose s' ∈ γ(s, a)
+            if s' ∈ Visited then return failure
+            π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'
+
+    s = at_harbor
+    a = park
+    γ(s,a) = {parking1,
+    parking2,
+    transit1}
+    s ← s' = parking1
+
+    π = {(on_ship, unload),
+    (at_harbor, park)}
+    Visited = {on_ship, at_harbor, parking1}
+
+    on_ship --> at_harbor
+    on_ship --> transit1
+    at_harbor --> park
+    park --> parking2
+    parking2 --> deliver
+    drive --> park
+    drive --> transit1
+    drive --> park1
+    drive --> transit1
+    drive --> park2
+    drive --> transit2
+    drive --> park2
+    drive --> transit2
+    drive --> park3
+    drive --> transit3
+    move --> gate1
+    move --> gate2
+    move --> transit2
+    move --> park1
+    move --> transit1
+    move --> park2
+    move --> transit1
+    move --> park3
+    move --> transit2
+    move --> park4
+    move --> transit2
+    move --> park5
+    move --> transit3
+    move --> park6
+    move --> transit4
+    move --> park7
+    move --> transit5
+    move --> park8
+    move --> transit6
+    move --> park9
+    move --> transit7
+    move --> park10
+    move --> transit8
+    move --> park11
+    move --> transit9
+    move --> park12
+    move --> transit13
+    move --> park14
+    move --> transit15
+    move --> park16
+    move --> transit17
+    move --> park18
+    move --> transit19
+    move --> park20
+    move --> transit21
+    move --> park22
+    move --> transit23
+    move --> park24
+    move --> transit25
+    move --> park26
+    move --> transit27
+    move --> park28
+    move --> transit29
+    move --> park30
+    move --> transit31
+    move --> park32
+    move --> transit33
+    move --> park34
+    move --> transit35
+    move --> park36
+    move --> transit37
+    move --> park38
+    move --> transit39
+    move --> park40
+    move --> transit41
+    move --> park42
+    move --> transit43
+    move --> park44
+    move --> transit45
+    move --> park46
+    move --> transit47
+    move --> park48
+    move --> transit49
+    move --> park50
+    move --> transit51
+    move --> park52
+    move --> transit53
+    move --> park54
+    move --> transit55<|content_end|>
+```
+
+```txt
+Find-Solution (Σ, s₀, S_g)
+  π ← Ø; s ← s₀; Visited ← {s₀}
+  loop
+    if s ∈ S_g then return π
+      A' ← Applicable(s)
+      if A' = Ø then return failure
+      nondeterministically choose a ∈ A'
+      nondeterministically choose s' ∈ γ(s, a)
+      if s' ∈ Visited then return failure
+      π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'
+
+    s = parking1
+    a = deliver
+    γ(s,a) = {gate1,
+    gate2,
+    transit2}
+    s ← s' = gate1
+
+    π = {(on_ship, unload),
+    (at_harbor, park),
+    (parking1, deliver)}
+    Visited = {on_ship, at_harbor, parking1, gate1}
+```
+
+```txt
+Find-Solution (Σ, s₀, S_g)
+π ← Ø; s ← s₀; Visited ← {s₀}
+loop
+if s ∈ S_g then return π
+A' ← Applicable(s)
+if A' = Ø then return failure
+nondeterministically choose a ∈ A'
+nondeterministically choose s' ∈ γ(s, a)
+if s' ∈ Visited then return failure
+π(s) ← a; Visited ← Visited ∪ {s'}; s ← s'
+s = gate1
+gate1 is a goal,
+so return π
+π = {(on_ship, unload),
+(at_harbor, park),
+(parking1, deliver)}
+Visited = {on_ship, at_harbor, parking1, gate1}
+```
+
+## Find-Acyclic-Solution
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Acyclic-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in \text{Frontier} \setminus S_g$ do
+        Frontier $\leftarrow \text{Frontier} \setminus \{s\}$
+        if Applicable(s) = $\varnothing$ then return failure
+        nondeterministically choose $a \in \text{Applicable}(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow$ Frontier $\cup (\gamma(s, a) \setminus \text{Domain}(\pi))$
+        if has-loops($\pi, a, \text{Frontier}$) then return failure
+    return $\pi$
+
+Keep track of unexpanded states, as in A*
+
+Add all states $s$ such that $\pi(s)$ isn't already defined
+
+Check for cycles:
+  Does $\gamma(s, a)$ include a state $s'$ that is a $\pi$-ancestor of $s$?
+  for each $s' \in \gamma(s, a) \cap \text{Domain}(\pi)$, is $s \in \hat{\gamma}(s', \pi)$?
+</div>
+
+```txt
+Find-Acyclic-Solution (Σ, s0, Sg)
+π ← Ø
+Frontier ← {s0}
+for every s ∈ Frontier \ Sg do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {on_ship}
+
+π = {}
+
+unload
+at_harbor
+on_ship
+park
+back
+parking2
+deliver
+back
+gate1
+gate2
+Sg
+transit3
+move
+move
+move
+move
+parking1
+deliver
+deliver
+transit1
+transit2
+```
+
+![](images/page_10_image_1.jpg)
+
+```txt
+Find-Acyclic-Solution (Σ, s0, Sg)
+π ← Ø
+Frontier ← {s0}
+for every s ∈ Frontier \ Sg do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {at_harbor}
+    π = {(on_ship, unload)}
+```
+
+![](images/page_11_image_1.jpg)
+
+```txt
+Find-Acyclic-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {parking1, parking2, transit1}
+    π = {(on_ship, unload), (at_harbor, park)}
+```
+
+![](images/page_12_image_1.jpg)
+
+```txt
+Find-Acyclic-Solution (Σ, s0, Sg)
+π ← Ø
+Frontier ← {s0}
+for every s ∈ Frontier \ Sg do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {parking2, transit1, transit2,
+gate1, gate2}
+    π = {(on_ship, unload),
+(at_harbor, park),
+(parking1, deliver)}
+    on_ship
+    at_harbor
+    parking1
+    parking2
+    gate1
+    gate2
+    transit1
+    transit2
+    Sg
+    back
+    back
+    deliver
+    move
+    move
+    move
+    move
+    back
+    back
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+    drive
+```
+
+```txt
+Find-Acyclic-Solution (Σ, s0, Sg)
+    π ← ∅
+    Frontier ← {s0}
+    for every s ∈ Frontier \ Sg do
+        Frontier ← Frontier \ {s}
+        if Applicable(s) = ∅ then return failure
+        nondeterministically choose a ∈ Applicable(s)
+        π ← π ∪ (s, a)
+        Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+        if has-loops(π, a, Frontier) then return failure
+    return π
+```
+
+```txt
+Frontier = {transit1, transit2, transit3,
+    gate1, gate2}
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \{(\text{on\_ship, unload}), (\text{at\_harbor, park}), (\text{parking1, deliver}), (\text{parking2, deliver})\}$
+</div>
+
+## Example
+
+nondeterministically choose back or deliver
+
+• back ⇒ cycle, so return failure
+
+• deliver ⇒ no cycle, so continue
+
+![](images/page_14_image_7.jpg)
+
+```txt
+Find-Acyclic-Solution (Σ, s0, Sg)
+π ← Ø
+Frontier ← {s0}
+for every s ∈ Frontier \ Sg do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+
+Frontier = {transit2, transit3,
+gate1, gate2}
+
+π = {(on_ship, unload),
+(at_harbor, park),
+(parking1, deliver),
+(parking2, deliver),
+(transit1, move)}
+```
+
+```txt
+Find-Acyclic-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {transit3,
+    gate1, gate2}
+    π = {(on_ship, unload),
+    (at_harbor, park),
+    (parking1, deliver),
+    (parking2, deliver),
+    (transit1, move),
+    (transit2, move)}
+```
+
+```txt
+Find-Acyclic-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {gate1, gate2} ⊆ S_g
+Found a solution
+π = {(on_ship, unload),
+(at_harbor, park),
+(parking1, deliver),
+(parking2, deliver),
+(transit1, move),
+(transit2, move),
+(transit3, move)}
+```
+
+![](images/page_17_image_1.jpg)
+
+## Find-Safe-Solution
+
+```python
+Like
+Find-Acyclic-Solution
+except here:
+    Find-Safe-Solution (Σ, s₀, S_g)
+        π ← Ø
+        Frontier ← {s₀}
+        for every s ∈ Frontier \ S_g do
+            Frontier ← Frontier \ {s}
+            if Applicable(s) = Ø then return failure
+            nondeterministically choose a ∈ Applicable(s)
+            π ← π ∪ (s, a)
+            Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+            if has-unsafe-loops(π, a, Frontier) then return failure
+        return π
+    Check for unsafe cycles:
+        Does γ(s, a) include a state s' from which π can't take us to the frontier?
+        For each s' ∈ γ(s, a) ∩ Dom(π), is ŷ(s', π) ∩ Frontier = Ø?
+        If so, then π contains a cycle that can't be escaped
+```
+
+```txt
+Find-Safe-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-unsafe-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {on_ship}
+
+π = {}
+
+run
+
+  on_ship
+  at_harbor
+  park
+  parking2
+  deliver
+  parking1
+  transit1
+  transit2
+  gate1
+  gate2
+  transit3
+  move
+  S_g
+```
+
+![](images/page_19_image_1.jpg)
+
+```txt
+Find-Safe-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-unsafe-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {at_harbor}
+    π = {(on_ship, unload)}
+    on_ship --> at_harbor
+    park --> parking2
+    park --> gate1
+    parking1 --> gate2
+    transit1 --> S_g
+    transit2 --> S_g
+    back --> park
+    back --> parking2
+    back --> gate1
+    back --> park
+    back --> transit1
+    back --> transit2
+    move --> transit3
+    move --> gate1
+    move --> gate2
+    move --> transit2
+    move --> park
+    move --> parking1
+    move --> transit1
+    move --> transit2
+    exit --> transit3
+    exit --> gate1
+    exit --> gate2
+    exit --> transit2
+    exit --> park<|content_end|>
+```
+
+![](images/page_20_image_1.jpg)
+
+```txt
+Find-Safe-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-unsafe-loops(π, a, Frontier) then return failure
+    return π
+    frontier = {parking1, parking2, transit1}
+    π = {(on_ship, unload), (at_harbor, park)}
+    on_ship --> at_harbor
+    park --> at_harbor
+    on_ship --> at_harbor
+    park --> at_harbor
+    parking1 --> at_harbor
+    parking2 --> at_harbor
+    on_ship --> park
+    park --> park
+    parking1 --> park
+    parking2 --> park
+    on_ship --> park
+    park --> park
+    parking1 --> park
+    parking2 --> park
+    on_ship --> park
+    park --> park
+    parking1 --> park
+    parking2 --> park
+    on_ship --> park
+    park --> park
+    parking1 --> park
+    parking2 --> park
+    on_ship --> park
+    park --> park
+    parking1 --> park
+    parking2 --> park
+    on_ship --> park
+  move
+  back
+  back
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+  drive
+```
+
+![](images/page_21_image_1.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in Frontier \setminus S_g$ do
+        Frontier $\leftarrow Frontier \setminus \{s\}$
+        if Applicable($s$) = $\varnothing$ then return failure
+        nondeterministically choose $a \in Applicable(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow Frontier \cup (\gamma(s, a) \setminus Domain(\pi))$
+        if has-unsafe-loops($\pi$, $a$, Frontier) then return failure
+    return $\pi$
+</div>
+
+```txt
+Frontier = {parking2, transit1, transit2,
+    gate1, gate2}
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \{(\text{on\_ship, unload}), (\text{at\_harbor, park}), (\text{parking1, deliver})\}$
+</div>
+
+![](images/page_22_image_3.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in Frontier \setminus S_g$ do
+        Frontier $\leftarrow Frontier \setminus \{s\}$
+        if Applicable($s$) = $\varnothing$ then return failure
+        nondeterministically choose $a \in Applicable(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow Frontier \cup (\gamma(s, a) \setminus Domain(\pi))$
+        if has-unsafe-loops($\pi, a$, Frontier) then return failure
+    return $\pi$
+</div>
+
+```txt
+Frontier = {parking2, transit1, transit2, gate1, gate2}
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \{(\text{on\_ship, unload}), (\text{at\_harbor, park}), (\text{parking1, deliver})\}$
+</div>
+
+## Example
+
+![](images/page_23_image_4.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in Frontier \setminus S_g$ do
+        Frontier $\leftarrow Frontier \setminus \{s\}$
+        if Applicable($s$) = $\varnothing$ then return failure
+        nondeterministically choose $a \in Applicable(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow Frontier \cup (\gamma(s, a) \setminus Domain(\pi))$
+        if has-unsafe-loops($\pi$, $a$, Frontier) then return failure
+    return $\pi$
+</div>
+
+```txt
+Frontier = {transit1, transit2,
+    gate1, gate2}
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \{(\text{on\_ship, unload}), (\text{at\_harbor, park}), (\text{parking1, deliver}), (\text{parking2, back})\}$
+</div>
+
+![](images/page_24_image_3.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution ($\Sigma$, $s_0$, $S_g$)
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in Frontier \setminus S_g$ do
+        Frontier $\leftarrow Frontier \setminus \{s\}$
+        if Applicable($s$) = $\varnothing$ then return failure
+        nondeterministically choose $a \in Applicable(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow Frontier \cup (\gamma(s, a) \setminus Domain(\pi))$
+        if has-unsafe-loops($\pi$, $a$, Frontier) then return failure
+    return $\pi$
+</div>
+
+```txt
+Frontier = {transit2,
+    gate1, gate2}
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \{(\text{on\_ship, unload}), (\text{at\_harbor, park}), (\text{parking1, deliver}), (\text{parking2, back}), (\text{transit1, move})\}$
+</div>
+
+![](images/page_25_image_3.jpg)
+
+```txt
+Find-Safe-Solution (Σ, s₀, S_g)
+π ← Ø
+Frontier ← {s₀}
+for every s ∈ Frontier \ S_g do
+    Frontier ← Frontier \ {s}
+    if Applicable(s) = Ø then return failure
+    nondeterministically choose a ∈ Applicable(s)
+    π ← π ∪ (s, a)
+    Frontier ← Frontier ∪ (γ(s, a) \ Domain(π))
+    if has-unsafe-loops(π, a, Frontier) then return failure
+    return π
+    Frontier = {gate1, gate2} ⊆ S_g
+
+π = {(on_ship, unload), (at_harbor, park), (parking1, deliver), (parking2, back), (transit1, move), (transit2, move)}
+```
+
+![](images/page_26_image_1.jpg)
+
+## Guided-Find-Safe-Solution
+
+Motivation: much easier to find solutions if they don’t have to be safe
+
+▸ Find-Safe-Solution needs plans for all possible outcomes of actions
+
+▸ Find-Solution only needs a plan for one of them
+
+● Idea:
+
+▸ loop
+
+• Find a (possibly unsafe) solution π
+
+• For each each leaf node of π
+
+If the leaf node isn’t a goal,
+
+find a (possibly unsafe) solution and incorporate it into π
+
+## Guided-Find-Safe-Solution
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Guided-Find-Safe-Solution $(\Sigma, s_0, S_g)$
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable $(s_0) = \varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select arbitrarily $s \in Q$
+        $\pi' \leftarrow \text{Find-Solution}(\Sigma, s, S_g)$
+        if $\pi' \neq$ failure then do
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin \text{Domain}(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make $a$ not applicable in $s'$
+    $\pi$ is a solution. Return the part that's reachable from $s_0$.
+    Choose any leaf $s$ that isn't a goal.
+    Find a (possibly unsafe) solution $\pi'$ for $s$.
+    For each $(s, a)$ in $\pi'$, add to $\pi$ unless $\pi$ already has an action at $s$
+    $s$ is unsolvable. For each $(s', a)$ that can produce $s$, modify $\pi$ and $\Sigma$ so we'll never use $a$ at $s'$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Guided-Find-Safe-Solution ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select arbitrarily $s \in Q$
+        $\pi' \leftarrow \text{Find-Solution}(\Sigma, s, S_g)$
+        if $\pi' \neq$ failure then do
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_29_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Guided-Find-Safe-Solution ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select arbitrarily $s \in Q$
+        $\pi' \leftarrow \text{Find-Solution}(\Sigma, s, S_g)$
+        if $\pi' \neq$ failure then do
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make $a$ not applicable in $s'$
+</div>
+
+![](images/page_30_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(∅)
+    if Applicable(s0) = ∅ then return(failure)
+    π ← ∅
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = ∅ then do
+            π ← π \ {(s, a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s, a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) d
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_31_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ γ(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) do
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_32_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) do
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_33_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) do
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_34_image_1.jpg)
+
+```powershell
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ŷ(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) d
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_35_image_1.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Guided-Find-Safe-Solution ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select arbitrarily $s \in Q$
+        $\pi' \leftarrow \text{Find-Solution}(\Sigma, s, S_g)$
+        if $\pi' \neq$ failure then do
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin \text{Domain}(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make $a$ not applicable in $s'$
+</div>
+
+![](images/page_36_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s, a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s, a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) or
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_37_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) do
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_38_image_1.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s0, Sg)
+    if s0 ∈ Sg then return(Ø)
+    if Applicable(s0) = Ø then return(failure)
+    π ← Ø
+    loop
+        Q ← leaves(s0, π) \ Sg
+        if Q = Ø then do
+            π ← π \ {(s,a) ∈ π | s∉ γ̂(s0, π)}
+            return(π)
+        select arbitrarily s ∈ Q
+        π' ← Find-Solution(Σ, s, Sg)
+        if π' ≠ failure then do
+            π ← π ∪ {(s,a) ∈ π' | s∉ Domain(π)}
+        else for every s' and a such that s ∈ γ(s', a) do
+            π ← π \ {(s', a)}
+            make a not applicable in s'
+```
+
+![](images/page_39_image_1.jpg)
+
+![](images/page_40_image_0.jpg)
+
+```txt
+Guided-Find-Safe-Solution (Σ,s₀,Sg)
+if s₀ ∈ Sg then return(Ø)
+if Applicable(s₀) = Ø then return(failure)
+π ← Ø
+loop
+    Q ← leaves(s₀, π) \ Sg
+    if Q = Ø then do
+        π ← π \ {(s, a) ∈ π | s ∉ γ̂(s₀, π)}
+        return(π)
+    select arbitrarily s ∈ Q
+    π' ← Find-Solution(Σ, s, Sg)
+    if π' ≠ failure then do
+        π ← π ∪ {(s, a) ∈ π' | s ∉ Domain(π)}
+    else for every s' and a such that s ∈ γ(s', a) do
+        π ← π \ {(s', a)}
+        make a not applicable in s'
+    end
+
+Example
+    Remove (tr4,move)
+    from π because π can't ever reach tr4
+    on_ship --> unload
+    at_harbor --> park
+    parking2 --> back
+    on_ship --> park
+    at_harbor --> park
+    parking1 --> deliver
+    on_ship --> park
+    at_harbor --> park
+    parking1 --> drive
+    transit1 --> move
+    at_harbor --> drive
+    park --> drive
+    on_ship --> drive
+    at_harbor --> drive
+    parking1 --> drive
+    transit2 --> move
+    at_harbor --> drive
+    park --> drive
+    on_ship --> drive
+    at_harbor --> drive
+    parking1 --> drive
+    transit2 --> drive
+    at_harbor --> drive
+    park --> drive
+    on_ship --> drive
+    at_harbor --> drive
+    parking1 --> drive
+    transit2 --> drive
+    at_harbor --> drive
+    park --> drive
+    on_ship --> drive
+    at_harbor --> drive
+    parking1 --> drive
+    transit2 --> drive
+    at_harbor --> drive
+    park --> drive
+    on_ship --> drive
+    start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|remove|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|stop()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|to|start()->|move|
+    Sg --> gate1
+    gate2 --> gate1
+    Sg --> gate2
+    Sg --> gate2
+    Sg --> gate2<|content_end|>
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Guided-Find-Safe-Solution ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select arbitrarily $s \in Q$
+        $\pi' \leftarrow \text{Find-Solution}(\Sigma, s, S_g)$
+        if $\pi' \neq$ failure then do
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin \text{Domain}(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make $a$ not applicable in $s'$
+
+Discussion
+• How to implement it?
+    ▶ Need implementation of Find-Solution
+    ▶ Need it to be very efficient
+    • We’ll call it many times
+• Idea: instead of Find-Solution,
+    use a classical planner
+    ▶ Any of the algorithms from Chapter 2
+    ▶ Efficient algorithms, search heuristics
+• Need to convert the actions into something
+    the classical planner can use ...
+</div>
+
+## Determinization
+
+● Let $\pmb { a } _ { i }$ be a nondeterministic action with n possible outcomes
+
+● Determinization of $\boldsymbol{a}_{i} =$
+
+{n deterministic actions, one for each outcome of $| a _ { i } |$ }
+
+![](images/page_42_image_4.jpg)
+
+transit2
+
+![](images/page_42_image_6.jpg)
+
+## Determinization
+
+Suppose a classical planner returns an acyclic plan $p = \langle a _ { 1 } , a _ { 2 } , \ldots , a _ { n } \rangle$
+
+Plan2policy $(p = \langle a_1, \ldots, a_n \rangle, s)$
+
+● Actions and states: $\langle s _ { 0 } , a _ { 1 } , s _ { 1 } , a _ { 2 } , s _ { 2 } , a _ { 3 } , . . . , a _ { n } , s _ { n } \rangle$
+
+● Convert p to a policy $\langle ( s _ { 0 } , { \pmb a } _ { 1 } ) , ( s _ { 1 } , { \pmb a } _ { 2 } ) , \ldots , ( s _ { n - 1 } , { \pmb a } _ { n } ) \rangle$
+
+▸ $\boldsymbol{a}_{1} =$ the nondeterministic action whose determinization includes $a _ { i }$
+
+$$
+\pi \leftarrow \varnothing
+$$
+
+loop for i from 1 to n do
+
+$$
+\pi \leftarrow \pi \cup (s, \det 2 \text {nondet} (a _ {i}))
+$$
+
+transit2
+
+$$
+s \leftarrow \gamma_ {d} (s, a _ {i})
+$$
+
+return π
+
+![](images/page_43_image_12.jpg)
+
+![](images/page_43_image_13.jpg)
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+## Find-Safe-Solution-by-Determinization
+
+```python
+Guided-Find-Safe-Solution (Σ,s0,sg)
+if s0 ∈ Sg then return(∅)
+if Applicable(s0) = ∅ then return(failure)
+π ← ∅
+loop
+    Q ← leaves(s0, π) \ Sg
+    if Q = ∅ then do
+        π ← π \ {(s,a) ∈ π | s∉γ̂(s0, π)}
+        return(π)
+    select arbitrarily s ∈ Q
+    π' ← Find-Solution(Σ, s, Sg)
+    if π' ≠ failure then do
+        π ← π ∪ {(s,a) ∈ π' | s∉Domain(π)}
+    else for every s' and a such that s ∈ γ(s', a) d
+        π ← π \ {(s', a)}
+    make a not applicable in s'
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization $(\Sigma, s_0, S_g)$
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable $(s_0) = \varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search $(\Sigma_d, s, S_g)$
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_45_image_2.jpg)
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_46_image_2.jpg)
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_47_image_2.jpg)
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_48_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_49_image_2.jpg)
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_50_image_2.jpg)
+
+## Example
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+![](images/page_51_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_52_image_2.jpg)
+
+$$
+(\Sigma , s _ {0}, S _ {g})
+$$
+
+$$
+s _ {0} \in S _ {g}
+$$
+
+$$
+e (s _ {0}) = \varnothing
+$$
+
+$$
+\pi \leftarrow \varnothing
+$$
+
+$$
+\Sigma_ {d}
+$$
+
+$$
+Q \leftarrow l e a v e s (s _ {0}, \pi) \setminus S _ {g}
+$$
+
+$$
+Q = \varnothing
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat {\gamma} (s _ {0}, \pi) \}
+$$
+
+$$
+s \in Q
+$$
+
+$$
+p ^ {\prime} \leftarrow
+$$
+
+$$
+(\Sigma_ {d}, s, S _ {g})
+$$
+
+$$
+p ^ {\prime} \neq
+$$
+
+$$
+\pi^ {\prime} \leftarrow \text {Plan2policy} (p ^ {\prime}, s)
+$$
+
+$$
+\pi \leftarrow \pi \cup \{(s, a) \in \pi^ {\prime} \mid s \notin
+$$
+
+$$
+s ^ {\prime}
+$$
+
+$$
+s \in \gamma (s ^ {\prime}, a)
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s ^ {\prime}, a) \}
+$$
+
+## Example
+
+![](images/page_53_image_18.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_54_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_55_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## Example
+
+![](images/page_56_image_2.jpg)
+
+$$
+(\Sigma , s _ {0}, S _ {g})
+$$
+
+$$
+s _ {0} \in S _ {g}
+$$
+
+$$
+e (s _ {0}) = \varnothing
+$$
+
+$$
+\pi \leftarrow \varnothing
+$$
+
+$$
+\Sigma_ {d}
+$$
+
+$$
+Q \leftarrow l e a v e s (s _ {0}, \pi) \setminus S _ {g}
+$$
+
+$$
+Q = \varnothing
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat {\gamma} (s _ {0}, \pi) \}
+$$
+
+$$
+s \in Q
+$$
+
+$$
+p ^ {\prime} \leftarrow
+$$
+
+$$
+(\Sigma_ {d}, s, S _ {g})
+$$
+
+$$
+p ^ {\prime} \neq
+$$
+
+$$
+\pi^ {\prime} \leftarrow \text {Plan2policy} (p ^ {\prime}, s)
+$$
+
+$$
+\pi \leftarrow \pi \cup \{(s, a) \in \pi^ {\prime} \mid s \notin
+$$
+
+$$
+s ^ {\prime}
+$$
+
+$$
+s \in \gamma (s ^ {\prime}, a)
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s ^ {\prime}, a) \}
+$$
+
+## Example
+
+![](images/page_57_image_18.jpg)
+
+$$
+s _ {0} \in S _ {g}
+$$
+
+$$
+(\Sigma , s _ {0}, S _ {g})
+$$
+
+$$
+e (s _ {0}) = \varnothing
+$$
+
+$$
+\pi \leftarrow \varnothing
+$$
+
+$$
+\Sigma_ {d}
+$$
+
+$$
+Q \leftarrow l e a v e s (s _ {0}, \pi) \setminus S _ {g}
+$$
+
+$$
+Q = \varnothing
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat {\gamma} (s _ {0}, \pi) \}
+$$
+
+$$
+s \in Q
+$$
+
+$$
+p ^ {\prime} \leftarrow
+$$
+
+$$
+(\Sigma_ {d}, s, S _ {g})
+$$
+
+$$
+p ^ {\prime} \neq
+$$
+
+$$
+\pi^ {\prime} \leftarrow \text {Plan2policy} (p ^ {\prime}, s)
+$$
+
+$$
+\pi \leftarrow \pi \cup \{(s, a) \in \pi^ {\prime} \mid s \notin
+$$
+
+$$
+s ^ {\prime}
+$$
+
+$$
+s \in \gamma (s ^ {\prime}, a)
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s ^ {\prime}, a) \}
+$$
+
+## Example
+
+![](images/page_58_image_18.jpg)
+
+$$
+(\Sigma , s _ {0}, S _ {g})
+$$
+
+$$
+s _ {0} \in S _ {g}
+$$
+
+$$
+e (s _ {0}) = \varnothing
+$$
+
+$$
+\pi \leftarrow \varnothing
+$$
+
+$$
+\Sigma_ {d}
+$$
+
+$$
+Q \leftarrow l e a v e s (s _ {0}, \pi) \setminus S _ {g}
+$$
+
+$$
+Q = \varnothing
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat {\gamma} (s _ {0}, \pi) \}
+$$
+
+$$
+s \in Q
+$$
+
+$$
+p ^ {\prime} \leftarrow
+$$
+
+$$
+(\Sigma_ {d}, s, S _ {g})
+$$
+
+$$
+p ^ {\prime} \neq
+$$
+
+$$
+\pi^ {\prime} \leftarrow \text {Plan2policy} (p ^ {\prime}, s)
+$$
+
+$$
+\pi \leftarrow \pi \cup \{(s, a) \in \pi^ {\prime} \mid s \notin
+$$
+
+## Example
+
+$$
+s ^ {\prime}
+$$
+
+$$
+s \in \gamma (s ^ {\prime}, a)
+$$
+
+$$
+\pi \leftarrow \pi \setminus \{(s ^ {\prime}, a) \}
+$$
+
+![](images/page_59_image_18.jpg)
+
+```txt
+Example
+Find-Safe-Solution-by-Determinization (Σ, s₀, S_g)
+if s₀ ∈ S_g then return(Ø)
+if Applicable(s₀) = Ø then return(failure)
+π ← Ø
+Σ_d ← mk-deterministic(Σ)
+loop
+    Q ← leaves(s₀, π) \ S_g
+    if Q = Ø then do
+        π ← π \ {(s, a) ∈ π | s ∉ γ̂(s₀, π)}
+        return(π)
+    select s ∈ Q
+    p' ← Forward-Search (Σ_d, s, S_g)
+    if p' ≠ failure then do
+        π' ← Plan2policy(p', s)
+        π ← π ∪ {(s, a) ∈ π' | s ∉ Domain(π)}
+    else for every s' and a such that s ∈ γ(s', a) do
+    π ← π \ {(s', a)}
+    make the actions in the determinization of a not applicable in s'
+    end
+    on_ship
+    at_harbor
+    park
+    parking1
+    on_ship
+    deposit
+    transit1
+    deposit
+    transit2
+    gate1
+    gate2
+    S_g
+    move
+    back
+    back
+    drive
+    move
+    on_ship
+    at_harbor
+    park
+    parking1
+    deposit
+    transit1
+    deposit
+    transit2
+    S_g
+    move
+    back
+    back
+    drive
+    on_ship
+    at_harbor
+    park
+    parking1
+    deposit
+    transit1
+    deposit
+    transit2
+    S_g
+    move
+    back
+    back
+    drive
+    on_ship
+    at_harbor
+    park
+    parking1
+    deposit
+    transit1
+    deposit
+    transit2
+    S_g
+    move
+    back
+    back
+    drive
+    on_ship
+is the path from start to end.
+remove (tr4, move)
+from π because π can't ever reach tr4
+```
+
+## Making Actions Inapplicable
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Find-Safe-Solution-by-Determinization ($\Sigma, s_0, S_g$)
+    if $s_0 \in S_g$ then return($\varnothing$)
+    if Applicable($s_0$) = $\varnothing$ then return(failure)
+    $\pi \leftarrow \varnothing$
+    $\Sigma_d \leftarrow$ mk-deterministic($\Sigma$)
+    loop
+        $Q \leftarrow leaves(s_0, \pi) \setminus S_g$
+        if $Q = \varnothing$ then do
+            $\pi \leftarrow \pi \setminus \{(s, a) \in \pi \mid s \notin \widehat{\gamma}(s_0, \pi)\}$
+            return($\pi$)
+        select $s \in Q$
+        $p' \leftarrow$ Forward-Search ($\Sigma_d, s, S_g$)
+        if $p' \neq$ failure then do
+            $\pi' \leftarrow$ Plan2policy($p', s$)
+            $\pi \leftarrow \pi \cup \{(s, a) \in \pi' \mid s \notin Domain(\pi)\}$
+        else for every $s'$ and $a$ such that $s \in \gamma(s', a)$ do
+            $\pi \leftarrow \pi \setminus \{(s', a)\}$
+            make the actions in the determinization of $a$ not applicable in $s'$
+</div>
+
+## 12.1.3196 Online Approaches
+
+## ● Motivation
+
+▸ Planning models are approximate – execution seldom works out as planned
+
+Large problems may require too much planning time
+
+2nd motivation even more stronger in nondeterministic domains
+
+▸ Nondeterminism makes planning exponentially harder
+
+Exponentially more time, exponentially larger policies
+
+![](images/page_62_image_7.jpg)
+
+Offline vs Runtime.  Search Spaces
+
+## Online Approaches
+
+● Need to identify good actions without exploring entire search space
+
+▸ Can be done using heuristic estimates
+
+● Some domains are safely explorable
+
+▸ Safe to create partial plans, because goal states are always reachable
+
+● In domains with dead-ends, partial planning won’t guarantee success
+
+▸ Can get trapped in dead ends that we would have detected if we had planned fully
+
+• No applicable actions
+
+▸ robot’s battery goes dead
+
+• Applicable actions, but caught in a loop
+
+▸ robot goes into a collection of rooms from which there’s no exit
+
+▸ But partial planning can still make success more likely
+
+## Lookahead-Partial-Plan
+
+Adaptation of Run-Lazy-Lookahead (Chapter 2)
+
+Lookahead is any planning algorithm that returns a policy π
+
+▸ π may be partial or unsafe solution
+
+● Execute π as far as it will go, then call Lookahead again
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Lookahead-Partial-Policy($\Sigma, s_0, S_g$)
+    $s \leftarrow s_0$
+    while $s \notin S_g$ and Applicable($s$) $\neq \varnothing$ do
+        $\pi \leftarrow \text{Lookahead}(s, \theta)$
+        if $\pi = \varnothing$ then return failure
+        else do
+            act according to the partial policy $\pi$
+            $s \leftarrow$ observe current state
+</div>
+
+![](images/page_64_image_6.jpg)
+
+## FS-Replan
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+FS-Replan ($\Sigma, s, S_g$)
+    $\pi_d \leftarrow \varnothing$
+    while $s \notin S_g$ and Applicable($s$) $\neq \varnothing$ do
+        if $\pi_d$ undefined for $s$ then do
+            $\pi_d \leftarrow$ Plan2policy(Forward-Search($\Sigma_d, s, S_g$), $s$)
+            if $\pi_d =$ failure then return failure
+    perform action $\pi_d(s)$
+    $s \leftarrow$ observe resulting state
+</div>
+
+● Adaptation of Lookahead-Partial-Plan
+
+▸ Calls classical planner on determinized domain
+
+▸ Gets plan, converts converts to policy
+
+Unsafe solution
+
+▸ Executes policy as far as it will go, then calls classical planner again
+
+![](images/page_65_image_7.jpg)
+
+## More Possibilities for Lookahead
+
+What if Lookahead doesn’t have time to run to completion?
+
+Can use the same techniques we discussed in Chapter 3
+
+• Receding horizon
+
+• Sampling
+
+• Subgoaling
+
+• Iterative deepening
+
+▸ A few others …
+
+Planning Acting
+
+![](images/page_66_image_9.jpg)
+
+## More Possibilities for Lookahead
+
+● Full horizon, limited breadth:
+
+▸ look for solution that works for some of the outcomes
+
+▸ E.g., modify Find-Acyclic-Solution to examine i outcomes of each action<sup>back</sup>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- Iterative broadening:
+    for $i = 1$ by 1 until time runs out
+        look for a solution that handles $i$ outcomes per action
+Find-Acyclic-Solution $(\Sigma, s_0, S_g)$
+    $\pi \leftarrow \varnothing$
+    Frontier $\leftarrow \{s_0\}$
+    for every $s \in \text{Frontier} \setminus S_g$ do
+        Frontier $\leftarrow \text{Frontier} \setminus \{s\}$
+        if Applicable(s) = $\varnothing$ then return failure
+        nondeterministically choose $a \in \text{Applicable}(s)$
+        $\pi \leftarrow \pi \cup (s, a)$
+        Frontier $\leftarrow \text{Frontier} \cup (\gamma(s, a) \setminus \text{Domain}(\pi))$
+        if has-loops$(\pi, a, \text{Frontier})$ then return failure
+return $\pi$
+</div>
+
+![](images/page_67_image_5.jpg)
+
+## Safely Explorable Domains
+
+● Safely explorable domain
+
+▸ for every state s, at least one goal state is reachable from s
+
+For Lookahead, suppose we use Lookahead-Partial-Plan or FS-Replan
+
+▸ Then Lookahead never returns failure
+
+● Every “fair” execution will eventually reach a goal
+
+**Poll**: Suppose we just choose a random action each time. Is every “fair” execution guaranteed to reach a goal?
+
+## Min-Max LRTA\*
+
+```txt
+MinMax LRTA* (Σ, s0, Sg)
+    s ← s0
+    while s ∉ Sg and Applicable(s) ≠ ∅ do
+        a ← argmin_a∈Applicable(s) max_s' ∈ γ(s,a) h(s')
+        h(s) ← max{h(s), cost(s,a) + max_s' ∈ γ(s,a) h(s')} 
+        perform action a
+    s ← the current state
+```
+
+## ● loop
+
+▸ choose an action a that (according to h) has optimal worst-case cost
+
+• Update h(s) to use a’s worst-case cost
+
+• Perform a
+
+● In safely explorable domains with no “unfair” executions, guaranteed to reach a goal
+
+![](images/page_70_image_0.jpg)
+
+● Suppose that initially, $h ( s ) = 0$ for every s
+
+transit2
+
+![](images/page_71_image_0.jpg)
+
+● Suppose that initially, $h ( s ) = 0$ for every s
+
+transit2
+
+![](images/page_72_image_0.jpg)
+
+transit2
+
+![](images/page_73_image_0.jpg)
+
+transit2
+
+## Summary
+
+- - Types of solutions: unsafe, safe (acyclic, cyclic)
+- - Find-Solution,
+- - Find-Acyclic-Solution
+- - Find-Safe-Solution
+- - Guided-Find-Safe-Solution
+- - call Find-Solution to get an unsafe solution
+- - call Find-Solution again on the leaves
+- - if dead-ends are encountered, modify actions that lead to them
+- - Find-Safe-Solution-by-Determinization
+- - Like Guided-Find-Safe-Solution, but call classical planner on determined domain, convert plan into policy
+- - Online approaches
+- - Lookahead-Partial-Plan
+- - adaptation of Run-Lazy-Lookahead
+- - FS-Replan
+- - adaptation of Run-Lookahead
+- - Ways to do the lookahead
+- - full breadth with limited depth,
+- - iterative deepening
+- - full depth with limited breadth
+- - iterative broadening
+- - convergence in safely explorable domains
+- - Min-Max LRTA\*

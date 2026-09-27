@@ -1,0 +1,2633 @@
+## Chapter 9 Planning with Probabilistic Models
+
+Dana S. Nau
+
+University of Maryland
+
+![](images/page_0_image_4.jpg)
+
+## Acting, Planning, and Learning
+
+Malik Ghallab, Dana Nau, and Paolo Traverso
+
+## Introduction
+
+Stochastic Shortest Path (SSP) problem: an MDP problem $P = ( \Sigma ,   s _ { 0 } ,   S _ { g } )$ such that
+
+▸ there is at least one safe solution
+
+▸ cost $( s , a , s ^ { \prime } )$ is always $> 0$
+
+• Let $V ^ { * } ( s ) =$ expected cost of an optimal safe solution
+
+• Optimality principle (Bellman’s theorem)
+
+![](images/page_1_image_6.jpg)
+
+$V^{*}(s) = \int_{0}^{s} \mathrm{if} s \mathrm{isa goal} \\ \min_{a \in \mathrm{Appendix}(s)} \sum_{s' \in \gamma(s,a)} \Pr(s' \mid s, a) \left[ \cos(s, a, s') + V^{*}(s') \right]$ , otherwise
+
+• We’ll only consider safe $\mathrm { S S P ^ { \circ } s }$
+
+▸ no dead-end states
+
+Safe solution: $\operatorname* { P r } \left( S _ { g }   \mid   s _ { 0 } , \pi \right) = 1$
+
+## Planning and Acting
+
+Run-Lookahead $( \Sigma ,   s _ { 0 } ,   S _ { g } )$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$s \leftarrow s_0$
+while $s \notin S_g$ and Applicable($s$) $\neq \emptyset$ do
+    $a \leftarrow Lookahead(\Sigma, s, S_g)$
+    if $a =$ failure then return failure
+    perform action $a$
+    $s \leftarrow$ observe resulting state
+</div>
+
+• Like Run-Lookahead from Chapter 2
+
+• Differences:
+
+▸ Explicit starting state $s _ { 0 }$
+
+• Not necessary, could observe $s _ { 0 }$ instead
+
+▸ Doesn’t abstract s (to simplify the presentation)
+
+▸ Lookahead returns an action instead of a plan
+
+As in Chapter 2, Lookahead can be modified to cut off its search before reaching $S _ { g }$
+
+![](images/page_2_image_10.jpg)
+
+● What to use for Lookahead?
+
+▸ Classical planner on determinized domain
+
+next page
+
+▸ $\mathsf{AO^{*},LAO^{*},}$,
+
+Modify to search part of the space
+
+▸ Stochastic sampling algorithms
+
+## Planning and Acting
+
+```txt
+Algorithm 5.15 in
+Automated Planning and Acting
+(see supplemental materials)
+
+FS-Replan(Σ, s, Sg)
+π ← ∅
+while s ∈ Sg and Applicable(s) ≠ ∅ do
+    if π(s) is undefined then do
+        π ← Plan2policy(Lookahead(Σd, s, Sg))
+        if π = failure then return failure
+    perform action π(s)
+    s ← observe resulting state
+```
+
+• Generalization of a well-known planner called FF-Replan
+
+• Like Run-Lazy-lookahead from Chapter 2
+
+▸ Lookahead = classical planner on determinized domain
+
+• Example:
+
+▸ Forward-Search returns ⟨m12, ${ \sf m } 2 3 _ { 1 ^ { \prime } }$ m34⟩
+
+▸ Plan2policy returns $\pi = \langle ( \mathsf { d } 1 , \mathsf { m } 1 2 ) , ( \mathsf { d } 2 , \mathsf { m } 2 3 ) , ( \mathsf { d } 3 , \mathsf { m } 3 4 ) \rangle$
+
+▸ If m23 goes to d5, then call Forward-search again
+
+![](images/page_3_image_9.jpg)
+
+## Planning and Acting
+
+```txt
+Algorithm 5.15 in
+Automated Planning and Acting
+(see supplemental materials)
+
+FS-Replan(Σ, s, Sg)
+π ← ∅
+while s ∈ Sg and Applicable(s) ≠ ∅ do
+    if π(s) is undefined then do
+        π ← Plan2policy(Lookahead(Σd, s, Sg))
+        if π = failure then return failure
+    perform action π(s)
+    s ← observe resulting state
+```
+
+Problem: classical planner may choose a plan that depends on low-probability outcome
+
+• Example: Forward-search returns $\langle \mathsf { m } 1 4 _ { 1 } \rangle$ , cost 5
+
+▸ Plan2policy returns $\pi = \langle ( \mathsf { d } 1 , \mathsf { m } 1 4 ) \rangle$
+
+▸ m14 very likely to go to d6 ⇒ cost 305
+
+• RFF algorithm (see book) attempts to alleviate this
+
+![](images/page_4_image_7.jpg)
+
+## Cost to Go
+
+● Let π be a safe solution that’s defined at all non-goal states
+
+▸ $\operatorname* { P r } \left( S _ { g }   \mid   s _ { 0 } , \pi \right) = 1$
+
+▸ $D o m a i n ( \pi ) = S \setminus S _ { g }$
+
+● Compute $V ^ { \pi }$ as |S| equations, $| S |$ unknowns
+
+● Cost-to-go:
+
+▸ expected cost at s if we first use $a _ { \flat }$ then use π afterward
+
+$$
+Q ^ {\pi} (s, a) = \sum_ {s ^ {\prime} \in \gamma (s, a ^ {\prime})} \Pr \left(s ^ {\prime} \mid s, a ^ {\prime}\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V ^ {\pi} (s ^ {\prime}) \right]
+$$
+
+● For every $s \in S \setminus S _ { g }$
+
+▸ $\{ a ^ { \prime }   |   a ^ { \prime } { \in } \mathrm { A p p l i c a b l e ( s ) } \}$ includes $\pi ( s )$
+
+▸ so $\{ Q ^ { \pi } ( s , a ^ { \prime } ) \mid a ^ { \prime } \in \mathrm { A p p l i c a b l e ( s ) } \}$ includes $\bar { V } ^ { \pi } ( s )$
+
+▸ so min $\{ Q ^ { \pi } ( s , a ^ { \prime } ) \mid a ^ { \prime } { \in } \mathrm { A p p l i c a b l e } ( s ) \} \leq V ^ { \pi } ( s )$
+
+▸ so let $\pi ^ { \prime } ( s ) \in \operatorname { a r g m i n } _ { a ^ { \prime } \in \mathrm { A p p l i c a b l e } ( s ) } Q ^ { \pi } ( s , a ^ { \prime } )$
+
+![](images/page_5_image_13.jpg)
+
+**Poll**: Does π′ dominate π?
+
+A. always
+
+B. sometimes
+
+C. never
+
+![](images/page_6_image_0.jpg)
+
+![](images/page_6_image_1.jpg)
+
+## Example
+
+$$
+\begin{array}{c} Q ^ {\pi} (\mathrm{d} 1, \mathrm{m} 1 4) = 1 + \frac {1}{2} (2 0 1) + \frac {1}{2} (0) = 1 0 1. 5 \\ \min = 1 0 1. 5, \operatorname{argmin} = \mathrm{m} 1 4 \end{array}
+$$
+
+$$
+\begin{array}{r l} Q ^ {\pi} (\mathrm{d} 2, \mathrm{m} 2 3) & = (0. 8 (1 + 1 0 0) + 0. 2 (1 + 1 0 0)) \\ & = 1 0 1 \end{array}
+$$
+
+$$
+\begin{array}{r l} V ^ {\pi} (\mathrm{d} 2) & = 0. 8 (1 + V ^ {\pi} (\mathrm{d} 3)) + 0. 2 (1 + V ^ {\pi} (\mathrm{d} 5)) \\ & = 1 0 1 \end{array}
+$$
+
+$$
+\begin{array}{c} Q ^ {\pi} (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0 \\ Q ^ {\pi} (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 1 0 1 = 1 0 2 \\ \min = 1 0 0, \arg \min = \mathrm{m} 5 4 \end{array}
+$$
+
+$$
+\begin{array}{l} \text {Start:} \\ \pi^ {\prime} = \{(d 1, m 1 4), (d 2, m 2 3), \\ \quad (d 3, m 3 4), (d 5, m 5 4) \} \\ V ^ {\pi^ {\prime}} (d 4) = 0 \\ V ^ {\pi^ {\prime}} (d 3) = 1 0 0 + V ^ {\pi^ {\prime}} (d 4) = 1 0 0 \\ V ^ {\pi^ {\prime}} (d 5) = 1 0 0 + V ^ {\pi^ {\prime}} (d 4) = 1 0 0 \\ V ^ {\pi^ {\prime}} (d 2) = 1 + (0. 8 V ^ {\pi^ {\prime}} (d 3) + 0. 2 V ^ {\pi^ {\prime}} (d 5)) \\ \quad = 1 0 1 \\ V ^ {\pi^ {\prime}} (d 1) = 1 + \frac {1}{2} V ^ {\pi^ {\prime}} (d 1) + \frac {1}{2} V ^ {\pi^ {\prime}} (d 4) \\ \Rightarrow V ^ {\pi^ {\prime}} (d 1) = 2 \end{array}
+$$
+
+PI(S, π)
+
+## Policy Iteration
+
+**until** π stops changing **do** compute $\{ V ^ { \pi } ( s ) \mid s \in S \}$ for each $s \in S \setminus S _ { g }$ **do** ● Converges in a finite number of iterations
+
+[cost of using a then π]
+
+![](images/page_7_image_5.jpg)
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+![](images/page_8_image_2.jpg)
+
+**until** reaching an approximate fixed point **do for each** $s \in S \setminus S _ { g }$ **do** Bellman-Update(s)
+
+Bellman-Update(s)
+
+**for every** $a \in \operatorname { A p p l i c a b l e } ( s )$ **do**
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \operatorname{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+π(s) ← argmin<sub>a</sub> Q(s,a)
+
+## Value Iteration
+
+● $V _ { 0 } ;$ a heuristic function
+
+• e.g., adapt an h heuristic from Chapter 2
+
+▸ $V _ { 0 } ( s ) =$ estimated cost of getting from s to $S _ { g }$
+
+▸ Require $V _ { 0 } ( s ) = 0$ for every $s \in S _ { g }$
+
+● V and π are global arrays
+
+● Initially $V ( s ) = V _ { 0 } ( s ) \; \nabla$ s
+
+● In each iteration, $V \leftarrow$ improved estimate
+
+● approximate fixed point: V stops changing very much
+
+▸ usually when the residual (max change to $V ) \mathbf { \dot { \varepsilon } } \mathrm { i s } \leq \eta$
+
+▸ The book gives several other possibilities
+
+● V doesn’t depend on π
+
+Could wait and compute π at the very end
+
+## Iteration 1
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+\eta = 0.25
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+initial values
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 0 = 1 0 0
+$$
+
+**until** reaching an approximate fixed point **do**
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 4) = ^ {1 / 2} (1 + 0) + ^ {1 / 2} (1 + 0) = 1
+$$
+
+**for each** $s \in S \setminus S _ { g }$ **do**
+
+$$
+V (\mathrm{d} 1) = 0
+$$
+
+$$
+V (\mathrm{d} 1) = 1; \pi (\mathrm{d} 1) = \mathrm{m} 1 4; \Delta V (\mathrm{d} 1): 1 - 0 = 1
+$$
+
+$$
+\text{Bellman-Update}(s)
+$$
+
+$$
+V (\mathrm{d} 2) = 0
+$$
+
+$$
+V (\mathrm{d} 3) = 0
+$$
+
+$$
+V (\mathrm{d} 5) = 0
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 1) = 1 0 0 + 1 = 1 0 1
+$$
+
+Bellman-Update(s)
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 3) = . 8 (1 + 0) +. 2 (1 + 0) = 1
+$$
+
+**for every** a Î Applicable(s) **do**
+
+$$
+V (\mathrm{d} 2) = 1; \pi (\mathrm{d} 2) = \mathrm{m} 2 3; \Delta V (\mathrm{d} 2): 1 - 0 = 1
+$$
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) [ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) ]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$Q(\mathrm{d}3,\mathrm{m}32) = 1 + 1 = 2$
+</div>
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+![](images/page_9_image_25.jpg)
+
+$$
+V (\mathrm{d} 3) = 2; \pi (\mathrm{d} 3) = \mathrm{m} 3 2; \Delta V (\mathrm{d} 3): 2 - 0 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 1 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 2; \pi (\mathrm{d} 5) = \mathrm{m} 5 2; \Delta V (\mathrm{d} 5): 2 - 0 = 2
+$$
+
+$$
+r = \max (1, 1, 2, 2) = 2
+$$
+
+## Iteration 2
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+$$
+\eta = 0.25
+$$
+
+**until** reaching an approximate fixed point **do for each** $s \in S \setminus S _ { g }$ **do** Bellman-Update(s)
+
+Bellman-Update(s)
+
+**for every** a Î Applicable(s) **do**
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) [ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) ]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+from iteration 1
+
+$$
+V (\mathrm{d} 1) = 1
+$$
+
+$$
+V (\mathrm{d} 2) = 1
+$$
+
+$$
+V (\mathrm{d} 3) = 2
+$$
+
+$$
+V (\mathrm{d} 5) = 2
+$$
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 4) = 1 + \frac {1}{2} (1) + \frac {1}{2} (0) = 1 \frac {1}{2}
+$$
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 1 = 1 0 1
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 2 3
+$$
+
+$$
+\pi (\mathrm{d} 1) = \mathrm{m} 1 4
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 3 2
+$$
+
+$$
+V (\mathrm{d} 1) = 1 ^ {1 / 2}; \pi (\mathrm{d} 1) = \mathrm{m} 1 4; \quad \Delta V (d 1): 1 ^ {1 / 2} - 1 = ^ {1 / 2}
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 1) = 1 0 0 + 1 \frac {1}{2} = 1 0 1 \frac {1}{2}
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 3) = 1 +. 8 (2) +. 2 (2) = 3
+$$
+
+$$
+V (\mathrm{d} 2) = 3; \pi (\mathrm{d} 2) = \mathrm{m} 2 3; \quad \Delta V (d 2): 3 - 1 = 2
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 2) = 1 + 3 = 4
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+![](images/page_10_image_26.jpg)
+
+$$
+V (\mathrm{d} 3) = 4; \pi (\mathrm{d} 3) = \mathrm{m} 3 2; \quad \Delta V (d 3): 4 - 2 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 3 = 4
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 4; \pi (\mathrm{d} 5) = \mathrm{m} 5 2; \quad \Delta V (d 5): 4 - 2 = 2
+$$
+
+$$
+r = \max (^ {1 / 2}, 2, 2, 2) = 2
+$$
+
+## Iteration 3
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+\eta = 0.25
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+from iteration 2
+
+**until** reaching an approximate fixed point **do for each** $s \in S \setminus S _ { g }$ **do** Bellman-Update(s)
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 3 = 1 0 3
+$$
+
+Bellman-Update(s)
+
+$$
+V (\mathrm{d} 1) = 1 \frac {1}{2}
+$$
+
+**for every** a Î Applicable(s) **do**
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 4) = 1 + ^ {1 / 2} (1 ^ {1 / 2}) + ^ {1 / 2} (0) = 1 ^ {3 / 4}
+$$
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) [ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) ]
+$$
+
+$$
+V (\mathrm{d} 2) = 3
+$$
+
+$$
+V (\mathrm{d} 1) = 1 ^ {3 / _ {4}}; \pi (\mathrm{d} 1) = \mathrm{m} 1 4; \quad \Delta V (\mathrm{d} 1): 1 ^ {3 / _ {4}} - 1 ^ {1 / _ {2}} = ^ {1 / _ {4}}
+$$
+
+$$
+V (\mathrm{d} 3) = 4
+$$
+
+$$
+V (\mathrm{d} 5) = 4
+$$
+
+$$
+Q(\mathrm{d}2,\mathrm{m}21) = 100 + 1^{3 / 4} = 101^{3 / 4}
+$$
+
+$$
+\pi (\mathrm{d} 1) = \mathrm{m} 1 4
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 2 3
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 3) = 1 +. 8 (4) +. 2 (4) = 5
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 3 2
+$$
+
+$$
+V (\mathrm{d} 2) = 5; \pi (\mathrm{d} 2) = \mathrm{m} 2 3; \quad \Delta V (\mathrm{d} 2): 5 - 3 = 2
+$$
+
+$$
+\pi (\mathrm{d} 5) = \mathrm{m} 5 2
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 2) = 1 + 5 = 6
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 3) = 6; \pi (\mathrm{d} 3) = \mathrm{m} 3 2;
+$$
+
+![](images/page_11_image_28.jpg)
+
+$$
+\Delta V (\mathrm{d} 3): 6 - 4 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 5 = 6
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 6; \pi (\mathrm{d} 5) = \mathrm{m} 5 2; \quad \Delta V (\mathrm{d} 5): 6 - 4 = 2
+$$
+
+$$
+r = \max (^{1 / 4},2,2,2) = 2
+$$
+
+## Iteration 4
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+\eta = 0.25
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+**until** reaching an approximate fixed point **do**
+
+$$
+s \in S \setminus S _ {g}
+$$
+
+$$
+\text{Bellman-Update}(s)
+$$
+
+Bellman-Update(s)
+
+**for every** $a \in \operatorname { A p p l i c a b l e } ( s )$ **do**
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+**Poll:** Total number of iterations?
+
+A. $i \leq 1 0$
+
+D. $4 0 \leq i \leq 8 0$
+
+B . $1 0 \leq i \leq 2 0$
+
+$$
+\mathrm{E.} 8 0 <   i \leq 1 6 0
+$$
+
+C. $2 0 \leq i \leq 4 0$
+
+F. 160 < i
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+from iteration 3
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 5 = 1 0 5
+$$
+
+$$
+V (\mathrm{d} 1) = 1 ^ {3 / 4}
+$$
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 4) = 1 + ^ {1 / 2} (1 ^ {3 / 4}) + ^ {1 / 2} (0) = 1 ^ {7 / 8}
+$$
+
+$$
+V (\mathrm{d} 2) = 5
+$$
+
+$$
+V (\mathrm{d} 3) = 6
+$$
+
+$$
+V (\mathsf {d 1}) = 1 ^ {7} / _ {8}; \pi (\mathsf {d 1}) = \mathsf {m 1 4}; 1 ^ {7} / _ {8} - 1 ^ {3} / _ {4} = ^ {1} / _ {8}
+$$
+
+$$
+V (\mathrm{d} 5) = 6
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 1) = 1 0 0 + 1 ^ {7} / _ {8} = 1 0 1 ^ {7} / _ {8}
+$$
+
+$$
+\pi (\mathrm{d} 1) = \mathrm{m} 1 4
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 2 3
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 3) = 1 +. 8 (6) +. 2 (6) = 7
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 3 2
+$$
+
+$$
+V (\mathrm{d} 2) = 7; \pi (\mathrm{d} 2) = \mathrm{m} 2 3; \quad 7 - 5 = 2
+$$
+
+$$
+\pi (\mathrm{d} 5) = \mathrm{m} 5 2
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 2) = 1 + 7 = 8
+$$
+
+![](images/page_12_image_36.jpg)
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 3) = 8; \pi (\mathrm{d} 3) = \mathrm{m} 3 2; \quad 8 - 6 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 7 = 8
+$$
+
+$$
+V (\mathrm{d} 5) = 8; \pi (\mathrm{d} 5) = \mathrm{m} 5 2; \quad 8 - 6 = 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+r = \max (^{1}/_{8}, 2, 2, 2) = 2
+$$
+
+## Iteration 1, with a better $V _ { 0 }$
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+V \leftarrow V _ {0}
+$$
+
+$$
+\eta = 0.25
+$$
+
+$$
+V _ {0} (s) = \min
+$$
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 1 0 1 = 2 0 1
+$$
+
+**until** reaching an approximate fixed point **do for each** $s \in S \setminus S _ { g }$ **do** Bellman-Update(s)
+
+$$
+V (\mathrm{d} 1) = 1. 5; \pi (\mathrm{d} 1) = \mathrm{m} 1 4; \quad \Delta V (\mathrm{d} 1): 1. 5 - 1 = 0. 5
+$$
+
+Bellman-Update(s)
+
+$$
+V (\mathrm{d} 1) = 1
+$$
+
+$$
+V (\mathrm{d} 2) = 1 0 1
+$$
+
+$$
+V (\mathrm{d} 3) = 1 0 0
+$$
+
+**for every** a Î Applicable(s) **do**
+
+$$
+V (\mathrm{d} 5) = 1 0 0
+$$
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 2) = 1 + 1 0 1 = 1 0 2
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+![](images/page_13_image_19.jpg)
+
+$$
+V (\mathrm{d} 3) = 1 0 0; \pi (\mathrm{d} 3) = \mathrm{m} 3 4;
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 1 0 1 = 1 0 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 1 0 0; \pi (\mathrm{d} 5) = \mathrm{m} 5 4;
+$$
+
+$$
+r = \max (0. 5, 0, 0, 0) = 0. 5
+$$
+
+## Iteration 2
+
+$$
+\mathsf {V I} (\Sigma , S _ {g}, V _ {0})
+$$
+
+$$
+\eta = 0.25
+$$
+
+from iteration 1
+
+$$
+V \leftarrow V _ {0}
+$$
+
+**until** reaching an approximate fixed point **do**
+
+$$
+V (\mathrm{d} 1) = 1. 5
+$$
+
+**for each** $s \in S \setminus S _ { g }$ **do**
+
+$$
+V (\mathrm{d} 2) = 1 0 1
+$$
+
+$$
+\text{Bellman-Update}(s)
+$$
+
+Bellman-Update(s)
+
+$$
+V (\mathrm{d} 3) = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 1 0 0
+$$
+
+**for every** $a \in \operatorname { A p p l i c a b l e } ( s )$ **do**
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 2) = 1 0 0 + 1 0 1 = 2 0 1
+$$
+
+$$
+V (\mathrm{d} 1) = 1. 7 5; \pi (\mathrm{d} 1) = \mathrm{m} 1 4; \quad \Delta 1. 7 5 - 1. 5 = 0. 2 5
+$$
+
+$$
+Q (\mathrm{d} 1, \mathrm{m} 1 4) = 1 + \frac {1}{2} (0) + \frac {1}{2} (1. 5) = 1. 7 5
+$$
+
+$$
+\pi (\mathrm{d} 1) = \mathrm{m} 1 4
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 2 3
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 1) = 1 0 0 + 2 = 1 0 2
+$$
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+Q (\mathrm{d} 2, \mathrm{m} 2 3) = 1 +. 8 (1 0 0) +. 2 (1 0 0) = 1 0 1
+$$
+
+$$
+\pi (\mathrm{d} 2) = \mathrm{m} 3 4
+$$
+
+$$
+V (\mathrm{d} 2) = 1 0 1; \pi (\mathrm{d} 2) = \mathrm{m} 2 3; \quad \Delta 1 0 1 - 1 0 1 = 0
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+\pi (\mathrm{d} 5) = \mathrm{m} 5 4
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 2) = 1 + 1 0 1 = 1 0 2
+$$
+
+![](images/page_14_image_28.jpg)
+
+Lecture slides for [Acting, Planning, and Learning](https://projects.laas.fr/planning/). Creative Commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+
+$$
+Q (\mathrm{d} 3, \mathrm{m} 3 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 3) = 1 0 0; \pi (\mathrm{d} 3) = \mathrm{m} 3 4; \quad \Delta 1 0 0 - 1 0 0 = 0
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 2) = 1 + 1 0 1 = 1 0 2
+$$
+
+$$
+Q (\mathrm{d} 5, \mathrm{m} 5 4) = 1 0 0 + 0 = 1 0 0
+$$
+
+$$
+V (\mathrm{d} 5) = 1 0 0; \pi (\mathrm{d} 5) = \mathrm{m} 5 4; \quad \Delta 1 0 0 - 1 0 0 = 0
+$$
+
+$$
+r = \max (0. 2 5, 0, 0, 0) = 0. 2 5
+$$
+
+VI returns π
+
+## Discussion
+
+• In each iteration of Policy Iteration
+
+▸ Compute $V ^ { \pi }$ for current π
+
+• |S| linear equations, |S| unknowns
+
+▸ Use $V ^ { \pi }$ to choose new π
+
+• argmin $Q ^ { \pi } ( s , a )$ at each state
+
+• More work per iteration than value iteration
+
+▸ Needs to solve simultaneous equations
+
+• In each iteration of Value Iteration
+
+▸ Compute new $V ;$ min $\mathcal { Q } ( s , a )$ at each state
+
+▸ New V is a revised set of heuristic estimates
+
+• Doesn’t depend on any π
+
+▸ new π = argmin $\mathcal { Q } ( s , a )$ at each state
+
+• But $V \neq V ^ { \pi }$
+
+▸ Less work per iteration: doesn’t need to solve a set of equations
+
+• More iterations to converge unless $V _ { 0 }$ is good
+
+● At each iteration, both algorithms need to examine the entire state space
+
+▸ Number of iterations polynomial in |S|, but |S| may be quite large
+
+● Next: use search techniques to avoid searching the entire space
+
+## Digression: $\mathsf { A } ^ { * }$ Search as Value Iteration
+
+![](images/page_16_image_1.jpg)
+
+frontier state
+
+with smallest f
+
+At each iteration, $\mathrm { A } ^ { * }$ chooses frontier node with smallest f value = frontier node with min cost $i ( \langle a _ { 1 } , . . . , a _ { n } \rangle ) + h ( s _ { n } )$
+
+● For $i = 1 ,   . . . ,   n ,$ let
+
+$V ( s _ { i } ) = \operatorname* { m i n } [$ [(cost of path from $s _ { i }$ to frontier) + h(frontier state)]
+
+$$
+= \mathrm{cost} (\langle a _ {i + 1}, \dots , a _ {n} \rangle) + h (s _ {i})
+$$
+
+● Can do $\mathbf { A } ^ { * }$ search with either f or V
+
+● Make $\langle a _ { 1 } { , \ldots , } a _ { n } \rangle$ a policy:
+
+$$
+\pi (s _ {0}) = a _ {1}, \pi (s _ {1}) = a _ {2}, \dots , \pi (s _ {n - 1}) = a _ {n}
+$$
+
+Bellman
+
+● **while** True **do**
+
+update
+
+▸ starting at $s _ { 0 }$ , follow π to a frontier state s
+
+▸ **if** s is a goal **then return** π
+
+▸ expand s
+
+do $\mathbf { A } ^ { * } { } ^ { \flat } \mathbf { S }$ usual pruning
+
+▸ **for each** $s ^ { \prime }$ **o**n the path from s back to $s _ { 0 }$ do
+
+• **for each** $a \in A p p l i c a b l e ( s ^ { \prime } )$ **do**
+
+▸ $Q ( s ^ { \prime } , a ) = \operatorname { c o s t } ( a ) + V ( \gamma ( s ^ { \prime } , a ) )$
+
+▸ $V(s') = \min_{a} Q(s', a)$
+
+$$
+\pi (s ^ {\prime}) = \operatorname{argmin} _ {a} Q (s ^ {\prime}, a)
+$$
+
+## Digression: $\mathsf { A } ^ { * }$ Search as Value Iteration
+
+![](images/page_17_image_1.jpg)
+
+frontier state
+
+At each iteration, $\mathrm { A } ^ { * }$ chooses frontier node with smallest f value = frontier node with min cost $i ( \langle a _ { 1 } , . . . , a _ { n } \rangle ) + h ( s _ { n } )$
+
+● For $i = 1 ,   . . . ,   n ,$ let
+
+$V ( s _ { i } ) = \operatorname* { m i n } [$ [(cost of path from $s _ { i }$ to frontier) + h(frontier state)] = cost(⟨a<sub>i+1</sub>,…,a<sub>n</sub>⟩) + h(s<sub>i</sub>)
+
+● Can do $\mathbf { A } ^ { * }$ search with either f or V
+
+with smallest f
+
+● Make $\langle a _ { 1 } { , \ldots , } a _ { n } \rangle$ a policy:
+
+$$
+\pi (s _ {0}) = a _ {1}, \pi (s _ {1}) = a _ {2}, \dots , \pi (s _ {n - 1}) = a _ {n}
+$$
+
+update
+
+Bellman
+
+● **while** True **do**
+
+▸ starting at $s _ { 0 }$ , follow π to a frontier state s
+
+▸ **if** s is a goal **then return** π
+
+▸ expand s
+
+▸ do $\mathbf { A } ^ { * } { } ^ { \flat } \mathbf { S }$ usual pruning
+
+▸ **for each** $s ^ { \prime }$ **o**n the path from s back to $s _ { 0 }$ do
+
+• **for each** $a \in A p p l i c a b l e ( s ^ { \prime } )$ **do**
+
+▸ $Q ( s ^ { \prime } , a ) = \operatorname { c o s t } ( a ) + V ( \gamma ( s ^ { \prime } , a ) )$
+
+▸ $V(s') = \min_{a} Q(s', a)$
+
+▸ $\pi ( s ^ { \prime } ) = \operatorname { a r g m i n } _ { a } Q ( s ^ { \prime } , a )$
+
+![](images/page_18_image_0.jpg)
+
+## Digression: $\mathsf { A } ^ { * }$ Search as Value Iteration
+
+$$
+\begin{array}{l} \pi : \begin{array}{c} a _ {1} ^ {\prime} \xrightarrow {s _ {1} ^ {\prime}} \dots \\ s _ {0} \xrightarrow {a _ {1}} \dots \xrightarrow {a _ {i}} \dots \xrightarrow {a _ {n}} s _ {n} \end{array} \xrightarrow {a _ {n + 1} ^ {\prime}} s _ {n + 1} ^ {\prime} \\ f (s _ {0}) = h (s _ {0}) \quad f (\nu_ {n}) = \text {cost} (\langle a _ {1}, \dots , a _ {n} \rangle) + h (s _ {n}) \quad f (\nu_ {n + 1}) = \text {cost} (\langle a _ {1}, \dots , a _ {n}, a _ {n + 1} \rangle) + h (s _ {n + 1}) \\ V (s _ {0}) = \min \{c _ {1} + V (s _ {1}), c _ {1} ^ {\prime} + V (s _ {1} ^ {\prime}) \} \quad V (s _ {n}) = \min \{c _ {n + 1} + V (s _ {n + 1}), c _ {n + 1} ^ {\prime} + V (s _ {n + 1} ^ {\prime}) \} \quad V (s _ {n + 1}) = h (s _ {n + 1}) \\ = \text {cost} (a _ {1}) + V (s _ {1}) \quad = \text {cost} (a _ {n + 1}) + V (s _ {n + 1}) \\ = \text {cost} (\langle a _ {1}, \dots , a _ {n}, a _ {n + 1} \rangle) + h (s _ {n + 1}) \quad = \text {cost} (\langle a _ {n + 1} \rangle) + h (s _ {n + 1}) \end{array}
+$$
+
+with smallest f
+
+At each iteration, $\mathrm { A } ^ { * }$ chooses frontier node with smallest f value = frontier node with min cost $i ( \langle a _ { 1 } , . . . , a _ { n } \rangle ) + h ( s _ { n } )$
+
+● For $i = 1 ,   . . . ,   n ,$ let
+
+V(s<sub>i</sub>) = min[(cost of path from $s _ { i }$ to frontier) + h(frontier state)] = cost(⟨a<sub>i+1</sub>,…,a<sub>n</sub>⟩) + h(s<sub>i</sub>)
+
+● **while** True **do**
+
+● Can do $\mathbf { A } ^ { * }$ search with either f or V
+
+● Make $\langle a _ { 1 } { , \ldots , } a _ { n } \rangle$ a policy:
+
+$$
+\pi (s _ {0}) = a _ {1}, \pi (s _ {1}) = a _ {2}, \dots , \pi (s _ {n - 1}) = a _ {n}
+$$
+
+Bellman
+
+update
+
+▸ starting at $s _ { 0 }$ , follow π to a frontier state s
+
+▸ **if** s is a goal **then return** π
+
+▸ expand s
+
+▸ do $\mathbf { A } ^ { * } { } ^ { \flat } \mathbf { S }$ usual pruning
+
+▸ **for each** $s ^ { \prime }$ **o**n the path from s back to $s _ { 0 }$ do
+
+• **for each** $a \in A p p l i c a b l e ( s ^ { \prime } )$ **do**
+
+▸ $Q ( s ^ { \prime } , a ) = \operatorname { c o s t } ( a ) + V ( \gamma ( s ^ { \prime } , a ) )$
+
+▸ $V(s') = \min_{a} Q(s', a)$
+
+$$
+\pi (s ^ {\prime}) = \operatorname{argmin} _ {a} Q (s ^ {\prime}, a)
+$$
+
+## AO\* (Basic Idea)
+
+An SSP can be represented as an AND/OR graph
+
+▸ OR nodes: choose an action
+
+▸ AND nodes: action’s outcomes
+
+● $\mathrm{AO^{*}};$ generalization of $\mathrm { A } ^ { * }$ for acyclic MDPs
+
+● leaves $( s _ { 0 } , \pi ) = \{ s _ { 7 } , s _ { 8 } , s _ { 1 1 } , s _ { 1 2 } \}$
+
+▸ Expand one of them, $\mathbf { e . g . , } \: s _ { 1 1 }$
+
+![](images/page_19_image_7.jpg)
+
+● Going bottom-up, update V and π values for $s _ { 1 1 }$ and its ancestors
+
+$$
+V (s) = \min _ {a \in \text {Applicable} (s)} \sum_ {s ^ {\prime} \in \gamma (s, a)} P \left(s ^ {\prime} \mid s, a\right) \left[ \cos (s, a, s ^ {\prime}) + V \left(s ^ {\prime}\right) \right\}
+$$
+
+$$
+\pi (s) = \operatorname{argmin} _ {a \in \text {Applicable} (s)} \sum_ {s ^ {\prime} \in \gamma (s, a)} P \left(s ^ {\prime} \mid s, a\right) \left[ \cos (s, a, s ^ {\prime}) + V \left(s ^ {\prime}\right) \right\}
+$$
+
+● $e . g . ,$
+
+▸ $V ( s _ { 2 } ) = \operatorname* { m i n } ( Q ( s _ { 2 } , a _ { 5 } ) , Q ( s _ { 2 } , a _ { 6 } ) )$
+
+**Poll**: Can this work correctly on an acyclic AND/OR graph that isn’t a tree?
+
+A. yes
+
+B. no
+
+C. don’t know
+
+## AO\* (Basic Idea)
+
+An SSP can be represented as an AND/OR graph
+
+▸ OR nodes: choose an action
+
+▸ AND nodes: action’s outcomes
+
+● $\mathrm{AO^{*}};$ generalization of $\mathrm { A } ^ { * }$ for **acyclic** MDPs
+
+● leaves $( s _ { 0 } , \pi ) = \{ s _ { 7 } , s _ { 8 } , s _ { 1 1 } , s _ { 1 2 } \}$
+
+▸ Expand one of them, $\mathbf { e . g . , } \: s _ { 1 1 }$
+
+● Going bottom-up, update V and π values for $s _ { 1 1 }$ **and its ancestors**
+
+![](images/page_20_image_8.jpg)
+
+▸ V(s) = min a∈Applicable(s) ∑ s′∈γ(s,a) P(s′ |s,a) [cost(s,a,s′) + V(s′)}
+
+$$
+\pi (s) = \operatorname{argmin} _ {a \in \text {Applicable} (s)} \sum_ {s ^ {\prime} \in \gamma (s, a)} P \left(s ^ {\prime} \mid s, a\right) \left[ \cos (s, a, s ^ {\prime}) + V \left(s ^ {\prime}\right) \right\}
+$$
+
+● $e . g . ,$
+
+$$
+V (s _ {2}) = \min (Q (s _ {2}, a _ {5}), Q (s _ {2}, a _ {6}))
+$$
+
+**Poll**: If V(s) changes and s has more than one parent, do we need to update all of them?
+
+A. yes
+
+B. no
+
+C. sometimes
+
+D. don’t know
+
+```txt
+AO* (Σ,s₀,Sg,V₀)
+    global
+        Envelope ← {s₀}
+        π ← ∅
+        V(s₀) ← V₀(s₀)
+        while Fringe(s₀,π) ≠ ∅ do
+            select a state s ∈ Fringe(s₀,π)
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        AO-Update(s)
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+            for each a ∈ Applicable(S)
+                if s' ∉ Envelope then
+                    add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+        for each a ∈ Applicable(S)
+            if S is not defined by Z
+                add s' to Envelope
+                V(s') ← V₀(s)
+        for each a ∈ Applicable(S)
+            if S is not defined by Z
+                add s' to Envelope
+                V(s') ← V₀(s)
+        for each a ∈ Applicable(S)
+            if S is not defined by Z
+                add s' to Envelope
+                V(s') ← V₀(s)
+        for each a ∈ Applicable(S)
+            if S is not defined by Z
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                V(s'), θ = {s}
+                add s' to Envelope
+                A0*
+```
+
+$$
+\begin{array}{l} \text {Bellman - Update} (s) \\ \quad \text {for every} a \in \text {Applicable} (s) \text {do} \\ \quad Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) [ \operatorname{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) ] \\ \quad V (s) \leftarrow \min _ {a} Q (s, a) \\ \quad \pi (s) \leftarrow \operatorname{argmin} _ {a} Q (s, a) \end{array}
+$$
+
+![](images/page_21_image_2.jpg)
+
+```txt
+AO* Example
+AO* (Σ,s₀,Sg,V₀)
+Envelope ← {s₀}
+π ← Ø
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+Z ← {s} // states that need updating
+while Z ≠ Ø do
+    select s ∈ Z such that Ŷ(s,π(s)) ∩ Z = {s}
+    remove s from Z
+    Bellman-Update(s)
+    Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))
+```
+
+![](images/page_22_image_1.jpg)
+
+```txt
+Poll: Which states are currently in Envelope?
+(choose 1 or more)
+A. d1 B. d2 C. d3 D. d4 E. d5
+```
+
+## Iteration 1
+
+```txt
+AO* (Σ,s0,SG,V0)
+    Envelope ← {s0}
+    π ← ∅
+    V(s0) ← V0(s0)
+    while Fringe(s0,π) ≠ ∅ do
+        select a state s ∈ Fringe(s0,π)
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s'∉ Envelope then
+                add s' to Envelope
+                V(s') ← V0(s')
+    AO-Update(s)
+```
+
+$$
+Z \neq \emptyset
+$$
+
+$$
+s \in Z
+$$
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+![](images/page_23_image_7.jpg)
+
+```asm
+Iteration 2
+AO* (Σ,s₀,Sg,V₀)
+Envelope ← {s₀}
+π ← Ø
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+        AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+Z ← {s} // states that need updating
+while Z ≠ Ø do
+    select s ∈ Z such that Ŷ(s,π(s)) ∩ Z = {s}
+    remove s from Z
+    Bellman-Update(s)
+    Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))}
+
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s'∈γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+
+d2
+c = 15
+0.8
+0.2
+V(d2) = 15
+π(d2) = m23
+V(d6) = 0
+c = 10
+V(d5) = 0
+V(d3) = 0
+c = 100
+V(d1) = 25
+π(d1) = m12
+Suppose V₀(s) = 0 for all s
+
+d1
+c = 20
+0.5
+0.5
+Start:
+s₀ = d₁
+
+d3
+c = 1
+V(d4) = 0
+
+d4
+c = 1
+V(d6) = 0
+
+Goal:
+Sg = {d4}
+```
+
+![](images/page_24_image_1.jpg)
+
+```txt
+AO* (Σ,s₀,Sg,V₀)
+Envelope ← {s₀}
+π ← Ø
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+        AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+    Z ← {s} // states that need updating
+    while Z ≠ Ø do
+        select s ∈ Z such that Ŷ(s,π(s)) ∩ Z = {s}
+        remove s from Z
+        Bellman-Update(s)
+        Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))}
+
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s' ∈ γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+
+d2
+c = 15
+0.2
+d5
+V(d2) = 15
+π(d2) = m23
+c = 10
+0.8
+d3
+V(d3) = 0
+c = 100
+V(d6) = 0
+d1
+c = 20
+0.5
+v(d1) = 20
+π(d1) = m14
+Start:
+s₀ = d1
+
+d6
+c = 1
+v(d4) = 0
+Suppose V₀(s) = 0 for all s
+
+Goal:
+Sg = {d4}
+```
+
+![](images/page_25_image_1.jpg)
+
+```txt
+AO* (Σ,s₀,Sg,V₀)
+    Envelope ← {s₀}
+    π ← Ø
+    V(s₀) ← V₀(s₀)
+    while Fringe(s₀,π) ≠ Ø do
+        select a state s ∈ Fringe(s₀,π)
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+            AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+    Z ← {s} // states that need updating
+    while Z ≠ Ø do
+        select s ∈ Z such that Ŷ(s,π(s)) ∩ Z = {s}
+        remove s from Z
+        Bellman-Update(s)
+        Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))}
+
+Bellman-Update(s)
+    for every a ∈ Applicable(s) do
+        Q(s,a) ← Σ_{s' ∈ γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+        V(s) ← minₐ Q(s,a)
+        π(s) ← argminₐ Q(s,a)
+
+d2
+V(d2) = 15
+π(d2) = m23
+c = 15
+0.2
+d5
+V(d5) = 0
+c = 10
+0.8
+d3
+V(d3) = 0
+c = 100
+V(d6) = 1
+π(d6) = m54
+c = 1
+d1
+V(d1) = 20.5
+π(d1) = m14
+0.5
+d6
+c = 20
+d4
+V(d4) = 0
+Suppose V₀(s) = 0 for all s
+
+Start:
+s₀ = d1
+
+Goal:
+Sg = {d4}
+```
+
+## Heuristics through Determinization
+
+What to use for $V _ { 0 } ( s ) ?$
+
+One possibility: a heuristic for the determinized domain $\Sigma _ { d }$
+
+For each action a of Σ
+
+▸ If a has k possible outcomes, then
+
+• $\Sigma _ { d }$ contains k deterministic actions $a _ { 1 } , . . . , a _ { k }$
+
+• one for each of $a ^ { \flat } \mathbf { S }$ outcome
+
+● Let h be a classical heuristic function for $\Sigma _ { d }$
+
+If h is admissible for $\Sigma _ { d }$ then also admissible for Σ
+
+● Proof:
+
+▸ Let $\pi ^ { * }$ be any optimal solution for $( \Sigma , s , g )$
+
+Then $V ^ { * } ( s ) = E ( \cos ( \pi ^ { * } ) )$ = weighted avg. of all executions of $\pi ^ { * }$
+
+▸ Let $p ^ { * }$ be the least costly execution of $\pi ^ { * }$
+
+• $p ^ { * }$ is a solution for $( \Sigma _ { d } , s , g )$
+
+• so $h ( s ) \leq \operatorname { c o s t } ( p ^ { * } ) \leq E ( \operatorname { c o s t } ( \pi ) )$
+
+![](images/page_27_image_15.jpg)
+
+## Heuristics through Determinization
+
+What to use for $V _ { 0 } ( s ) ?$
+
+Another possibility: call a classical planner on the determinized problem $( \Sigma _ { d } ,   S ,   g )$
+
+▸ Get plan $p = \langle a _ { 1 } , a _ { 2 } , . . . , a _ { n } \rangle$
+
+▸ Return $V _ { 0 } ( s ) = \cos ( p )$
+
+If the classical planner always returns optimal solutions, then $V _ { 0 }$ is admissible for $\sum$
+
+Proof:
+
+▸ Let s be any state, $\pi ^ { * }$ be any optimal solution for $( \Sigma , s , g )$
+
+▸ Let $p ^ { * } =$ least costly execution of $\pi ^ { * }$
+
+▸ Then
+
+▸ $p ^ { * }$ is an optimal solution for $( \Sigma _ { d } ,   s ,   g )$
+
+• so $V _ { 0 } ( s ) = \operatorname { c o s t } ( p ) = \operatorname { c o s t } ( p ^ { * } ) \leq E ( \operatorname { c o s t } ( \pi ) )$
+
+![](images/page_28_image_12.jpg)
+
+## Heuristics through Determinization
+
+What to use for $V _ { 0 } ( s ) ?$
+
+Another possibility: call a classical planner on the determinized problem $( \Sigma _ { d } , s , g )$
+
+• Get plan $p = \langle a _ { 1 } , a _ { 2 } , . . . , a _ { n } \rangle$
+
+• Return $V _ { 0 } ( s ) = \cos ( p )$
+
+**Theorem.** If the classical planner always returns optimal solutions, then $V _ { 0 }$ is admissible
+
+Outline of proof:
+
+▸ Let $\pi ^ { * }$ be any optimal solution for $( \Sigma ,   s ,   g )$
+
+▸ Then $V ^ { * } ( s ) = E ( \cos ( \pi ^ { * } ) )$ = weighted avg. of all executions of π
+
+▸ Let $p ^ { * }$ be the least costly execution of π
+
+• $p ^ { * }$ is a solution for $( \Sigma _ { d } , s , g )$ , so the classical planner returns a plan p of ≤ cost
+
+• So $V _ { 0 } ( s ) = \operatorname { c o s t } ( p ) \leq \operatorname { c o s t } ( p ^ { * } ) \leq E ( \operatorname { c o s t } ( \pi ) )$
+
+![](images/page_29_image_12.jpg)
+
+```txt
+AO* (Σ,s₀,Sg,V₀)
+    Envelope ← {s₀}
+    π ← ∅
+    V(s₀) ← V₀(s₀)
+    while Fringe(s₀,π) ≠ ∅ do
+        select a state s ∈ Fringe(s₀,π)
+        for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s'∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+    AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+    Z ← {s} // states that need updating
+    while Z ≠ ∅ do
+        select s ∈ Z such that ŷ(s,π(s)) ∩ Z = {s}
+        remove s from Z
+        Bellman-Update(s)
+        Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))
+```
+
+$$
+Q (s, a) \leftarrow \sum_ {s ^ {\prime} \in \gamma (s, a)} \Pr \left(s ^ {\prime} | s, a\right) \left[ \mathrm{cost} (s, a, s ^ {\prime}) + V (s ^ {\prime}) \right]
+$$
+
+$$
+V (s) \leftarrow \min _ {a} Q (s, a)
+$$
+
+$$
+\pi (s) \leftarrow \operatorname{argmin}_a Q(s,a)
+$$
+
+![](images/page_30_image_4.jpg)
+
+```txt
+Iteration 1
+AO* (Σ,s0, Sg, V0)
+Envelope ← {s0}
+π ← Ø
+V(s0) ← V0 (s0)
+while Fringe(s0, π) ≠ Ø do
+    select a state s ∈ Fringe(s0, π)
+    for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V0(s')
+    AO-Update(s)
+
+AO-Update(s) // update V and π values of s and its ancestors
+Z ← {s} // states that need updating
+while Z ≠ Ø do
+    select s ∈ Z such that Ŷ(s, π(s)) ∩ Z = {s}
+    remove s from Z
+    Bellman-Update(s)
+    Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s', π(s'))}
+
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σs'∈γ(s,a) Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← mina Q(s,a)
+    π(s) ← argmina Q(s,a)
+
+Start:
+s0 = d1
+
+d2
+V(d2) = 115
+c = 15
+0.2
+d5
+d3
+c = 100
+V(d6) = 1
+d6
+c = 20
+0.8
+d4
+V(d4) = 0
+c = 100
+0
+
+Goal:
+Sg = {d4}
+```
+
+![](images/page_31_image_1.jpg)
+
+```txt
+Iterations 2, 3
+AO* (Σ,s₀,S_g,V₀)
+Envelope ← {s₀}
+π ← Ø
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for each a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+    AO-Update(s)
+AO-Update(s) // update s and its ancestors
+Z ← {s} // states that need updating
+while Z ≠ Ø do
+    select s ∈ Z such that Ŷ(s,π(s)) ∩ Z = {s}
+    remove s from Z
+    Bellman-Update(s)
+    Z ← Z ∪ {s' ∈ Envelope | s ∈ γ(s',π(s'))}
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s'∈γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+V(d2) = 115
+V(d6) = 1
+V(d4) = 0
+Start:
+s₀ = d₁
+d₁
+d₂
+d₃
+d₄
+c = 15
+c = 10
+c = 20
+c = 1
+c = 0.8
+c = 0.2
+0.5
+0.5
+0.5
+0.5
+115
+115
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+10<nl>Goal:
+S_g = {d4}
+```
+
+![](images/page_32_image_1.jpg)
+
+## LAO\* (Basic Idea)
+
+● $\mathrm { L A O ^ { * } }$ : generalization of $\mathrm { A O ^ { * } }$ for cyclic MDPs
+
+● Fringe(s<sub>0</sub>,π) = leaves(s<sub>0</sub>,π) ∖ S<sub>g</sub> = {s<sub>7</sub>, s<sub>8</sub>, s<sub>11</sub>, s<sub>12</sub>}
+
+▸ Expand one of them, $\mathbf { e . g . , } \: s _ { 7 }$
+
+![](images/page_33_image_4.jpg)
+
+## LAO\* (Basic Idea)
+
+● $\mathrm { L A O ^ { * } } _ { ! }$ : generalization of $\mathrm { A O ^ { * } }$ for cyclic MDPs
+
+● Frin $\mathit { l g e } ( s _ { 0 } , \pi ) = \mathit { l e a v e s } ( s _ { 0 } , \pi ) \setminus S _ { g } = \{ s _ { 7 } , s _ { 8 } , s _ { 1 1 } , s _ { 1 2 } \}$
+
+▸ Expand one of them, $\mathbf { e . g . , } \: s _ { 7 }$
+
+● Do value iteration on the cyclic part
+
+▸ Stop if either
+
+V stops changing very much
+
+for some s, π(s) changes to go to other states
+
+![](images/page_34_image_8.jpg)
+
+```txt
+LAO* (Σ,s₀,Sg,V₀)
+    π ← Ø
+    Envelope ← {s₀}
+    V(s₀) ← V₀(s₀)
+    while Fringe(s₀,π) ≠ Ø do
+        select a state s ∈ Fringe(s₀,π)
+        for all a ∈ Applicable(s) and s' ∈ γ(s,a) do
+            if s' ∉ Envelope then
+                add s' to Envelope
+                V(s') ← V₀(s')
+    LAO-Update(s)
+    return π
+    LAO-Update(s)
+    Z ← {s} ∪ {s' ∈ Envelope | s ∈ ŷ(s',π)}
+    until new states are added to Fringe(s₀,π) or residual ≤ η do
+        for each s ∈ Z do
+            Bellman-Update(s)
+    Value iteration, restricted to Z
+
+Bellman-Update(s)
+    for every a ∈ Applicable(s) do
+        Q(s,a) ← Σ_{s'∈γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+        V(s) ← minₐ Q(s,a)
+        π(s) ← argminₐ Q(s,a)
+
+may be cyclic
+
+Ballman-Update(s)
+    π(s₀)=a₁
+    a₁
+    π(s₁)=a₄
+    π(s₂)=a₆
+    a₂
+    π(s₃)=a₆
+    S₁
+    S₂
+    S₃
+    S₄
+    a₃
+    a₄
+    a₅
+    a₆
+    S₅
+    S₆
+    S₇
+    S₈
+    S₉
+    S₁₀
+    S₁₁
+    S₁₂
+    ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○ο
+```
+
+![](images/page_35_image_1.jpg)
+
+```csv
+Example 1
+LAO* (Σ,s₀,Sg,V₀)
+π ← Ø
+Envelope ← {s₀}
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for all a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s'∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+LAO-Update(s)
+return π
+
+Start:
+s₀ = d₁
+
+LAO-Update(s)
+Z ← {s} ∪ {s' ∈ Envelope | s ∈ ŷ(s',π)}
+until new states are added to Fringe(s₀,π) or residual ≤ η do
+for each s ∈ Z do
+Bellman-Update(s)
+
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s'∈γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+
+Start:
+s₀ = d₁
+
+Iteration 1
+V(d₂) = 0
+V(d₁) = 1.875
+V(d₄) = 0
+c = 1
+c = 100
+c = 0.5
+c = 0.5
+c = 1
+c = 100
+c = 100
+c = 1
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+c = 100
+CCT (Acting, Planning, and Learning) Creative Commons CC BY-SA 4.0
+```
+
+![](images/page_36_image_1.jpg)
+
+![](images/page_36_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \emptyset$; Envelope = {d1}; $V(s_0) = 0$
+Iteration 1:
+    $\pi = \emptyset$, so $Fringe(s_0, \pi) = \{s_0\} = \{\mathrm{d1}\}$
+    select $s = \mathrm{d1}$
+    Applicable(d1) = {m12, m14}
+    add d2 to Envelope; $V(\mathrm{d2}) \leftarrow 0$
+    add d4 to Envelope; $V(\mathrm{d4}) \leftarrow 0$
+    Call LAO-Update(d1)
+        $\pi$ is empty, so $Z = \{\mathrm{d1}\}$
+        Call Bellman-update(d1):
+            $v_{old} = V(\mathrm{d1}) = 0$
+            $Q(\mathrm{d1}, \mathrm{m12}) = 100 + 0 = 100$
+            $Q(\mathrm{d1}, \mathrm{m14}) = 1 + (\frac{1}{2}(0) + \frac{1}{2}(0)) = 1$
+            $V(\mathrm{d1}) = 1$; $\pi(\mathrm{d1}) = \mathrm{m14}$
+            $r = |V(\mathrm{d1}) - 0| = 1$
+            Keep iterating until $r \leq 0.2$
+            $V(\mathrm{d1}) = 1.875$; $r = 0.0625$
+Iteration 2:
+    $Fringe(s_0, \pi) = \emptyset$, so return $\pi = \{(\mathrm{d1}, \mathrm{m14})\}$
+</div>
+
+```txt
+Example 2
+LAO* (Σ,s₀,Sg,V₀)
+π ← Ø
+Envelope ← {s₀}
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for all a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+LAO-Update(s)
+return π
+
+LAO-Update(s)
+Z ← {s} ∪ {s' ∈ Envelope | s ∈ ŷ(s',π)}
+until new states are added to Fringe(s₀,π) or residual ≤ η do
+for each s ∈ Z do
+Bellman-Update(s)
+
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s'∈γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')] 
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+
+Lecture slides for Acting, Planning, and Learning, Creative Commons CC BY-SA 4.0
+```
+
+![](images/page_37_image_1.jpg)
+
+![](images/page_37_image_2.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\pi = \emptyset$; Envelope = {d1}; $V(s_0) = 0$
+Iteration 1:
+    $\pi = \emptyset$, so Fringe($s_0, \pi$) = $\{s_0\} = \{\text{d1}\}$
+    select $s = \text{d1}$; Applicable(d1) = $\{\text{m12}, \text{m14}\}$
+    add d2 to Envelope; $V(\text{d2}) \leftarrow 0$
+    add d4 to Envelope; $V(\text{d4}) \leftarrow 0$
+    Call LAO-Update(d1)
+        $\pi = \emptyset$, so $Z = \{\text{d1}\}$
+        loop iteration 1:
+            call Bellman-update(d1):
+                $v_{old} = V(\text{d1}) = 0$
+                $Q(\text{d1}, \text{m12}) = 100 + 0 = 100$
+                $Q(\text{d1}, \text{m14}) = 80 + (\frac{1}{2}(0) + \frac{1}{2}(0)) = 80$
+                $V(\text{d1}) = 80$; $\pi(\text{d1}) = \text{m14}$
+                return $|80 - 0| = 80$
+            call Bellman-update(d1) again:
+                $v_{old} = V(\text{d1}) = 80$
+                $Q(\text{d1}, \text{m12}) = 100 + 0 = 100$
+                $Q(\text{d1}, \text{m14}) = 80 + (\frac{1}{2}(80) + \frac{1}{2}(0)) = 120$
+                $V(\text{d1}) = 100$; $\pi(\text{d1}) = \text{m12}$
+                return $|100 - 80| = 20$
+            new state d2 in Fringe($s_0, \pi$)
+} LAO-Update returns; more on next page
+</div>
+
+![](images/page_38_image_0.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Example 2 continued
+$\eta = 0.25; V_0(s) = 0$ for all $s$
+$\text{LAO}^*(\Sigma, s_0, S_g, V_0)$
+$\pi \leftarrow \emptyset$
+$\text{Envelope} \leftarrow \{s_0\}$
+$V(s_0) \leftarrow V_0(s_0)$
+while $Fringe(s_0, \pi) \neq \emptyset$ do
+    select a state $s \in Fringe(s_0, \pi)$
+    for all $a \in Applicable(s)$ and $s' \in \gamma(s, a)$ do
+        if $s' \notin Envelope$ then
+            add $s'$ to Envelope
+            $V(s') \leftarrow V_0(s')$
+LAO-Update($s$)
+return $\pi$
+LAO-Update($s$)
+$Z \leftarrow \{s\} \cup \{s' \in Envelope | s \in \hat{\gamma}(s', \pi)\}$
+until new states are added to $Fringe(s_0, \pi)$ or residual $\leq \eta$ do
+for each $s \in Z$ do
+Bellman-Update($s$)
+Bellman-Update($s$)
+for every $a \in Applicable(s)$ do
+    $Q(s, a) \leftarrow \sum_{s' \in \gamma(s, a)} Pr(s'|s, a) [cost(s, a, s') + V(s')]$
+    $V(s) \leftarrow min_a Q(s, a)$
+    $\pi(s) \leftarrow argmin_a Q(s, a)$
+Start: $s_0 = d1$
+$V(d2) = 0 \\ c = 1 \\ d2 \\ d3 \\ d4 \\ d5 \\ d1 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4
+V(d1) = 100 \\ c = 80 \\ V(d4) = 0
+V(d2) = 1
+c = 100
+c = 80
+c = 1
+c = 100
+c = 80
+c = 1
+c = 100
+c = 80
+c = 1
+c = 100
+c = 80
+c = 1
+c = 100
+c = 80
+c = 1
+c = 100
+c = 80
+c = 1
+c = 10
+c = 100
+c = 80
+c = 1
+c = 10
+c = 100
+c = 80
+c = 1
+c = 10
+c = 100
+c = 80
+c = 1
+c = 10
+c = 100
+c = 80
+c = 1
+c = 10
+c = (d2)(d3)(d4)(d5)
+Goal: \( S_g = \{d4\}$
+Iteration 2
+$V(d5) = 0$
+$V(d3) = 0 \\ c = 1 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3
+d4 = 0
+Goal: \( S_g = \{d4\}$
+Lecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+operation 2:
+    π = {(d1,m12)}, so $Fringe(s_0,\pi) = \{d2\}$
+    select s = d2; Applicable(d2) = {m21, m23}
+    add d3, d5 to Envelope; V(d3) = V(d5) = 0
+    Call LAO-Update(d2)
+        Z = {d2} ∪ {d1}
+        loop iteration 1:
+            call Bellman-update(d1):
+                $v_{old} = 100$
+                Q(d1,m12) = 100 + 0 = 100
+                Q(d1,m14) = 80 + (½(80) + ½(0)) = 120
+                V(d1) = 100; π(d1) = m12
+                return |100 - 100| = 0
+            call Bellman-update(d2):
+                $v_{old} = 0$
+                Q(d2,m21) = 100 + 100 = 200
+                Q(d1,m23) = 1 + (.8(0) + .2(0)) = 1
+                V(d2) = 1; π(d2) = m23
+                r = max(|1 - 0|) = 1
+            new states d3,d5 in $Fringe(s_0,\pi)$
+            LAO-Update returns
+After more iterations, LAO* eventually returns
+    $\pi = \{(d1,m12),(d2,m23),(d3,m34),(d5,m54)\}$
+</div>
+
+```csv
+Dead Ends
+LAO* (Σ,s₀,Sg,V₀)
+π ← Ø
+Envelope ← {s₀}
+V(s₀) ← V₀(s₀)
+while Fringe(s₀,π) ≠ Ø do
+    select a state s ∈ Fringe(s₀,π)
+    for all a ∈ Applicable(s) and s' ∈ γ(s,a) do
+        if s' ∉ Envelope then
+            add s' to Envelope
+            V(s') ← V₀(s')
+    LAO-Update(s)
+return π
+LAO-Update(s)
+Z ← {s} ∪ {s' ∈ Envelope | s ∈ ŷ(s',π)}
+until new states are added to Fringe(s₀,π) or residual ≤ η do
+    for each s ∈ Z do
+        Bellman-Update(s)
+Bellman-Update(s)
+for every a ∈ Applicable(s) do
+    Q(s,a) ← Σ_{s' ∈ γ(s,a)} Pr(s'|s,a) [cost(s,a,s') + V(s')]
+    V(s) ← minₐ Q(s,a)
+    π(s) ← argminₐ Q(s,a)
+Start:
+s₀ = d1
+d1
+0.5
+0.5
+c = 80
+d2
+0.2
+d3
+0.8
+d5
+c = 15
+adeadend
+d6
+c = 10
+d4
+c = 100
+Goal:
+Sg = {d4}
+At dead-end states, add a dummy action adeadend
+• γ(s, adeadend) = s
+• cost = a constant > 0
+```
+
+![](images/page_39_image_1.jpg)
+
+## Digression: Monte Carlo rollouts
+
+● Multi-arm bandit problem: statistical model of sequential experiments
+
+▸ Name derived from one-armed bandit (slot machine)
+
+● Multiple actions $a_{1}, a_{2}, \ldots, a_{n}, \mathrm{e.g.}, a_{n} = \mathrm{p l a y}$ machine i
+
+● Each $a _ { i }$ provides a reward from an unknown probability distribution $p _ { i }$
+
+▸ Assume every $p _ { i }$ is stationary
+
+• same every time, regardless of history (not true for real slot machines)
+
+▸ Objective: maximize expected utility of a sequence of actions
+
+● Exploitation vs exploration dilemma:
+
+▸ Exploitation: choose an action that has given you high rewards in the past
+
+▸ Exploration: choose a less-familiar action in hopes that it might produce a higher reward
+
+![](images/page_40_image_11.jpg)
+
+Credit: [Billy Hicks](https://en.wikipedia.org/wiki/User:BillyH), [CC BY-SA 4.0](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License)
+
+## UCB (Upper Confidence Bound) Algorithm
+
+● Assume all rewards are between 0 and 1
+
+▸ If they aren’t, normalize them
+
+● For each action $a ,$ let
+
+▸ r(a) = average reward you’ve gotten from a
+
+▸ n(a) = number of times you’ve tried a
+
+▸ $\begin{array} { r } { t = \sum _ { a } n ( a ) } \end{array}$
+
+▸ $Q(a)=r(a)+\sqrt{2(\ln t)}/n(a)$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+UCB algorithm
+    if there are any untried actions:
+        $\tilde{a} \leftarrow$ any untried action
+    else: $\tilde{a} \leftarrow \arg\max_a Q(a)$
+    perform $\tilde{a}$ and get reward
+    update $r(\tilde{a}), n(\tilde{a}), t, Q(\tilde{a})$
+</div>
+
+● Theorem (given some assumptions):
+
+As $t \to \infty ,   \operatorname { a r g m a x } _ { \tilde { a } \in \mathcal { A } } Q ( a )$ → optimal choice
+
+![](images/page_41_image_11.jpg)
+
+Credit: [Billy Hicks](https://en.wikipedia.org/wiki/User:BillyH), [CC BY-SA 4.0](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License)
+
+## UCB (Upper Confidence Bound) Algorithm
+
+## ● For each action a, let
+
+▸ r(a) = average reward you’ve gotten from a
+
+▸ n(a) = number of times you’ve tried a
+
+▸ $\begin{array} { r } { t = \sum _ { a } n ( a ) } \end{array}$
+
+▸ $Q(a)=r(a)+\sqrt{2(\ln t)}/n(a)$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+UCB:
+    if there are any untried actions:
+        $\tilde{a} \leftarrow$ any untried action
+    else:
+        $\tilde{a} \leftarrow \text{argmax}_a Q(a)$
+    perform $\tilde{a}$ and get reward
+    update $r(\tilde{a}), n(\tilde{a}), t, Q(\tilde{a})$
+</div>
+
+## ● Example: actions a1, a2, a3
+
+▸ a1 pays every other time
+
+▸ a2 pays every third time
+
+▸ a3 never pays
+
+| Actions: | a1 |  | a2 |  | a3 |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |  |
+| No. of tries: | n(a1) = | 5 | n(a2) = | 3 | n(a3) = | 2 | t = | 10 |
+|  |  |  |  |  |  |  |  |  |
+| Rewards: | r(a1) = | 0.4 |  | 0.3333 |  | 0 |  |  |
+|  |  |  |  |  |  |  |  |  |
+| Q values: | Q(a1) = | 1.35971 |  | 1.5723 |  | 1.5174 |  |  |
+|  |  |  |  |  |  |  |  |  |
+| Payoffs: |  |  |  |  |  |  |  |  |
+| 1st |  | 0 |  |  |  |  |  |  |
+| 2nd |  |  |  | 0 |  |  |  |  |
+| 3rd |  |  |  |  |  | 0 |  |  |
+| 4th |  | 1 |  |  |  |  |  |  |
+| 5th |  | 0 |  |  |  |  |  |  |
+| 6th |  |  |  | 0 |  |  |  |  |
+| 7th |  |  |  |  |  | 0 |  |  |
+| 8th |  | 1 |  |  |  |  |  |  |
+| 9th |  | 0 |  |  |  |  |  |  |
+| 10th |  |  |  | 1 |  |  |  |  |
+
+Poll: what action will UCB choose the $1 1 ^ { \mathrm { t h } }$ time?
+
+## Monte Carlo Tree Search
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+root
+max search depth
+MCTS($s_r, h$)
+number of rollouts of $\tilde{a}$
+until termination condition do
+    Select an open state $s \in \widehat{\gamma}(s_r, \pi)$
+    Choose an action $\tilde{a} \in Applicable(s)$
+    $Q(s, \tilde{a}) \leftarrow [n(s, \tilde{a}) \times Q(s, \tilde{a}) + [\text{Rollout}(s, \tilde{a}, \pi_r, h)] / (1 + n(s, \tilde{a}))$
+    $n(s, \tilde{a}) \leftarrow n(s, \tilde{a}) + 1$
+    $V(s) \leftarrow \min_a\{Q(s, a)\}$
+    $\pi(s) \leftarrow \text{argmin}_a\{Q(s, a)\}$
+    Update all ancestors of $s$ in $\widehat{\gamma}(s', \pi)$
+</div>
+
+![](images/page_43_image_2.jpg)
+
+## UCT Algorithm
+
+● Recursive UCB computation on an SSP
+
+▸ Adapted for minimization rather than maximization
+
+● Monte Carlo rollout:
+
+▸ At s, choose action ã using UCB computation
+
+• Perform ã, get state s′
+
+• Do the same thing recursively at $s ^ { \prime }$
+
+• Continue until reaching a goal, dead end, or depth h
+
+▸ At each state visited, keep statistics on choices, utilities
+
+![](images/page_44_image_9.jpg)
+
+UCB:
+
+if there are untried actions: $\tilde { a } \leftarrow$ any untried action else: $\tilde { a } \gets \operatorname { a r g m a x } _ { a } Q ( a )$ perform ã and get reward update r(ã), n(ã), t , Q(ã)
+
+● Statistics for each action a:
+
+▸ r(a) = average reward
+
+▸ n(a) = number of times you’ve tried a
+
+▸ $\begin{array} { r } { t = \sum _ { a } n ( a ) } \end{array}$
+
+▸ $Q(a)=r(a)+\sqrt{2(\ln t)}/n(a)$
+
+```txt
+max search depth
+UCT(s, h)
+until termination condition do
+  UCT-Rollout(s, h)
+UCT-Rollout(s, h)
+if s ∈ Sg then return 0
+if h = 0 then return V0(s)
+if s ∉ Envelope then
+  add s to Envelope
+  n(s) ← 0 like t in UCB
+  foreach a ∈ Applicable(s) do
+    Q(s, a) ← 0; n(s, a) ← 0 like Q(a), n(a) in UCB
+  ã ← Select(s)
+  s' ← Sample(s, ã) choose s' with probability Pr(s'|s, ã)
+  cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+  Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+  π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+  n(s) ← n(s) + 1
+  n(s, ã) ← n(s, ã) + 1
+  return cost-rollout
+
+Select(s) = {any a ∈ Untried(s) ln, I think if Untried(s) ≠ Ø
+    argmin_a{Q(s, a) - C × [log(n(s))/n(s, a)]^{1/2} if not,
+```
+
+## Using UCT Offline
+
+```txt
+UCT(s, h)
+until termination condition do
+    UCT-Rollout(s, h)
+UCT-Rollout(s, h)
+if s ∈ S_g then return 0
+if h = 0 then return V_0(s)
+if s ∉ Envelope then
+    add s to Envelope
+    n(s) ← 0
+    foreach a ∈ Applicable(s) do
+        Q(s, a) ← 0; n(s, a) ← 0
+    ã ← Select(s)
+    s' ← Sample(s, ã)
+    cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+    Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+    π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+    n(s) ← n(s) + 1
+    n(s, ã) ← n(s, ã) + 1
+    return cost-rollout
+
+• Suppose we do n calls to UCT-Rollout
+• As n → ∞, π converges to optimal
+    Problem: finding optimal π may take many iterations
+
+Select(s) = {any a ∈ Untried(s) if Untried(s) ≠ Ø
+    argmin_a{Q(s, a) - C × [log(n(s))/n(s, a)]^{1/2} if not,
+```
+
+![](images/page_46_image_2.jpg)
+
+## Using UCT Online
+
+```txt
+UCT(s, h)
+until termination condition do
+    UCT-Rollout(s, h)
+
+UCT-Rollout(s, h)
+if s ∈ Sg then return 0
+if h = 0 then return V0(s)
+if s ∉ Envelope then
+    add s to Envelope
+    n(s) ← 0
+    foreach a ∈ Applicable(s) do
+        Q(s, a) ← 0; n(s, a) ← 0
+
+ã ← Select(s)
+s' ← Sample(s, ã)
+cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+n(s) ← n(s) + 1
+n(s, ã) ← n(s, ã) + 1
+return cost-rollout
+
+• Works better for online planning
+    ▶ π(s0) approaches optimal must faster than the rest of π
+
+• Lookahead procedure for Run-Lookahead:
+    ▶ call UCT-Rollout(s,h) multiple times at current state s
+    ▶ e.g., until
+        • allotted time runs out, or
+        • max change in Q(s,a) is ≤ η
+    ▶ return π(s)
+
+Select(s) = {any a ∈ Untried(s) if Untried(s) ≠ Ø
+    argmin{Q(s, a) - C × [log(n(s))/n(s, a)]^1/2} if not,
+```
+
+![](images/page_47_image_2.jpg)
+
+## Using UCT Online
+
+```txt
+UCT(s, h)
+until termination condition do
+    UCT-Rollout(s, h)
+UCT-Rollout(s, h)
+if s ∈ Sg then return 0
+if h = 0 then return V0(s)
+if s ∉ Envelope then
+    add s to Envelope
+    n(s) ← 0
+    foreach a ∈ Applicable(s) do
+        Q(s, a) ← 0; n(s, a) ← 0
+    ã ← Select(s)
+    s' ← Sample(s, ã)
+    cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+    Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+    π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+    n(s) ← n(s) + 1
+    n(s, ã) ← n(s, ã) + 1
+    return cost-rollout
+
+• Suppose Run-Lazy-Lookahead uses the same Lookahead procedure:
+    ▶ call UCT-Rollout(s, h) multiple times at current state s
+    ▶ return π(s)
+
+• Problem: the farther you follow π,
+    the less likely that π(s) is optimal
+    ▶ Near the bottom of the tree, π(s)
+    might be ≈ random choice
+
+• Possible workaround
+    ▶ Make Run-Lazy-Lookahead
+    call UCT more frequently
+
+Select(s) = {any a ∈ Untried(s) if Untried(s) ≠ Ø
+    argmin_a{Q(s, a) - C × [log(n(s))/n(s, a)]^{1/2} if not,
+```
+
+![](images/page_48_image_2.jpg)
+
+## Using UCT with a Simulator
+
+```txt
+UCT(s, h)
+until termination condition do
+    UCT-Rollout(s, h)
+UCT-Rollout(s, h)
+if s ∈ S_g then return 0
+if h = 0 then return V_0(s)
+if s ∉ Envelope then
+    add s to Envelope
+    n(s) ← 0
+    foreach a ∈ Applicable(s) do
+        Q(s, a) ← 0; n(s, a) ← 0
+    ã ← Select(s)
+    s' ← Sample(s, ã) simulate a; observe s'
+    cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+    Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+    π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+    n(s) ← n(s) + 1
+    n(s, ã) ← n(s, ã) + 1
+    return cost-rollout
+
+• Suppose you don’t know the probabilities and costs
+    ▶ But you have a fast, accurate simulator for the environment
+    ▶ Run UCT many times in the simulated environment
+    ▶ Learn state-transition probabilities, expected utilities
+
+Select(s) = {any a ∈ Untried(s) if Untried(s) ≠ Ø
+    argmin_a{Q(s, a) - C × [log(n(s))/n(s, a)]^{1/2} if not,
+```
+
+![](images/page_49_image_2.jpg)
+
+## Using UCT for Exploration
+
+```txt
+UCT(s, h)
+until termination condition do
+    UCT-Rollout(s, h)
+UCT-Rollout(s, h)
+if s ∈ Sg then return 0
+if h = 0 then return V0(s)
+if s ∉ Envelope then
+    add s to Envelope
+    n(s) ← 0
+    foreach a ∈ Applicable(s) do
+        Q(s, a) ← 0; n(s, a) ← 0
+    ã ← Select(s)
+    s' ← Sample(s, ã) perform a; observe s'
+    cost-rollout ← cost(s, ã, s') + UCT-Rollout(s', h - 1)
+    Q(s, ã) ← [n(s, ã) × Q(s, ã) + cost-rollout]/(1 + n(s, ã))
+    π(s) ← argmax{Q(s, a) | a ∈ Applicable(s)
+    n(s) ← n(s) + 1
+    n(s, ã) ← n(s, ã) + 1
+    return cost-rollout
+
+• Suppose you don’t know the probabilities and costs
+    ▶ But you can restart your actor
+    as many times as you want
+    Can modify UCT to be an acting procedure
+    ▶ use it to explore the environment
+    Caveat: usually not very feasible in real environments
+
+Select(s) = {any a ∈ Untried(s) if Untried(s) ≠ Ø
+    argmin_a{Q(s, a) - C × [log(n(s))/n(s, a)]^{1/2} if not,
+```
+
+![](images/page_50_image_2.jpg)
+
+## UCT in Two-Player Games
+
+● Generate Monte Carlo rollouts using a modified version of UCT
+
+● Main differences:
+
+▸ Instead of accumulated cost, use heuristic evaluation function values
+
+▸ UCT for player 1 recursively calls UCT for player 2
+
+Choose opponent’s action
+
+▸ UCT for player 2 recursively calls UCT for player 1
+
+First competent computer programs for go ▸ ≈ 2008–2012
+
+Monte Carlo rollout techniques similar to UCT were used to train AlphaGo
+
+![](images/page_51_image_9.jpg)
+
+Credit: [Brian Jeffery Beggerly](https://www.flickr.com/people/94509941@N00), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
+## Summary
+
+● MDPs and SSPs
+
+● solutions, closed solutions, histories
+
+● unsafe solutions, acyclic safe solutions, cyclic safe solutions
+
+● expected cost, planning as optimization
+
+● policy iteration
+
+● value iteration (asynchronous version)
+
+▸ Bellman-update
+
+● AO\*, LAO\*
+
+● Planning and Acting
+
+▸ Run-Lookahead
+
+▸ FS-Replan
+
+● UCB, UCT
