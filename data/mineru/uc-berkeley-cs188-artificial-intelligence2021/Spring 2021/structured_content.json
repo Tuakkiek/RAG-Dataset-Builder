@@ -1,0 +1,4099 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.261,
+            0.062,
+            0.524,
+            0.115
+          ],
+          "content": "Introduction to Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.081,
+            0.062,
+            0.226,
+            0.115
+          ],
+          "content": "CS 188 Spring 2021"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.803,
+            0.074,
+            0.896,
+            0.113
+          ],
+          "content": ""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.152,
+            0.372,
+            0.168
+          ],
+          "content": "• You have approximately 170 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.177,
+            0.494,
+            0.193
+          ],
+          "content": "• The exam is open book, open calculator, and open notes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.202,
+            0.322,
+            0.218
+          ],
+          "content": "• For multiple choice questions,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.222,
+            0.416,
+            0.241
+          ],
+          "content": "□ means mark **all options** that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.242,
+            0.378,
+            0.258
+          ],
+          "content": "means mark a single choice"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.236,
+            0.274,
+            0.75,
+            0.39
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_8.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.329,
+            0.791,
+            0.659,
+            0.902
+          ],
+          "content": "| Q1. Tic-Tac-Toe | /11 |\n| --- | --- |\n| Q2. I Want a Project Partner | /20 |\n| Q3. Pac-ML | /23 |\n| Q4. Keyboard Navigation | /15 |\n| Q5. Accommodating Course Robot | /17 |\n| Q6. Holiday Planning | /14 |\n| Total | /100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.429,
+                0.778,
+                0.557,
+                0.792
+              ],
+              "content": "For staff use only:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_10.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.489,
+            0.937,
+            0.498,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.322,
+            0.047,
+            0.665,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.419,
+            0.07
+          ],
+          "level": 2,
+          "content": "Q1. [11 pts] Tic-Tac-Toe"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.08,
+            0.909,
+            0.111
+          ],
+          "content": "In this problem we will look at the classic game of Tic-Tac-Toe. Albert is training his intelligent agent, AlbertBot, to compete with MesutBot in a Tic-Tac-Toe competition."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.411,
+            0.125,
+            0.579,
+            0.258
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.248,
+                0.277,
+                0.737,
+                0.294
+              ],
+              "content": "Figure 1: Example winning state for the ’X’ player in a Tic-Tac-Toe game"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_2_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.315,
+            0.909,
+            0.363
+          ],
+          "content": "**Rules of Tic-Tac-Toe:** Two players, X and O, take turns marking an empty square on a three-by-three board. A player wins by placing three marks in a row, horizontally, vertically, or diagonally, as the ’X’ player has in the game shown above. If the board fills up with neither player getting three in a row, then the game is a draw."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.374,
+            0.91,
+            0.421
+          ],
+          "content": "**Assumptions:** AlbertBot plays $\\mathrm { { } ^ { \\circ } O ^ { \\flat } s , }$ and always plays second. MesutBot has a fixed, unknown, possibly stochastic and possibly suboptimal policy. AlbertBot can train against MesutBot as many times as we want prior to the real competition. In the real competition, AlbertBot gets a reward of 1 if it wins against MesutBot, and a reward of 0 if it draws or loses."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.433,
+            0.887,
+            0.45
+          ],
+          "content": "**Problem (Goal):** Maximize AlbertBot’s expected reward, i.e., its expected probability of winning, in the real competition."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.462,
+            0.908,
+            0.492
+          ],
+          "content": "**(a)** [2 pts] Among the following choices, which is a tightest upper bound on the number of leaf nodes in the complete game tree of Tic-Tac-Toe, ignoring possible symmetries?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.538,
+            0.698,
+            0.554
+          ],
+          "content": "**(b)** [2 pts] Is the minimax algorithm a suitable way of solving the problem specified above?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.556,
+            0.908,
+            0.572
+          ],
+          "content": "\\# Yes, because the state space of Tic-Tac-Toe is small enough that running Minimax on the whole game tree is feasible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.571,
+            0.482,
+            0.586
+          ],
+          "content": "\\# Yes, but not due to the reason in the choice above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.586,
+            0.765,
+            0.601
+          ],
+          "content": "\\# No, because the minimax only works for zero-sum games, while Tic-Tac-Toe is not zero-sum."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.601,
+            0.478,
+            0.616
+          ],
+          "content": "\\# No, but not due to the reason in the choice above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.645,
+            0.909,
+            0.69
+          ],
+          "content": "**(c)** [3 pts] Let MesutBot’s policy be $\\pi _ { M } ( s , a ) ,$ , denoting the probability that MesutBot plays 𝑎 in state 𝑠, and let $R e s u l t ( s , a )$ denote the state resulting from playing 𝑎 in 𝑠. Can we formulate AlbertBot’s Tic-Tac-Toe problem as an MDP, and, if so, which of the following are correct formulas for the transition model $P ( s ^ { \\prime } \\mid a , s ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.692,
+            0.501,
+            0.708
+          ],
+          "content": "□ Yes, $P ( s ^ { \\prime } \\mid a , s ) = 1 { \\mathrm { ~ i f ~ } } s ^ { \\prime } = R e s u l t ( s , a ) , 0 { \\mathrm { ~ o t h e r w i s e } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.71,
+            0.549,
+            0.726
+          ],
+          "content": "□ Yes, $P ( s ^ { \\prime } \\mid a , s ) = \\pi _ { M } ( s , a ) \\; { \\mathrm { i f } } \\; s ^ { \\prime } = R e s u l t ( s , a ) ,$ 0 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.727,
+            0.577,
+            0.745
+          ],
+          "content": "□ Yes, $\\begin{array} { r } { P ( s ^ { \\prime } \\mid a , s ) = \\sum _ { a ^ { \\prime } \\colon s ^ { \\prime } = R e s u l t ( R e s u l t ( s , a ) , a ^ { \\prime } ) } \\pi _ { M } ( R e s u l t ( s , a ) , a ^ { \\prime } ) . } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.746,
+            0.776,
+            0.763
+          ],
+          "content": "□ Yes, $P(s' \\mid a, s) = \\pi_M(Results(s, a), a') \\;  if  \\; s' = Results(Results(s, a), a')$ for some $a ^ { \\prime } .$ , 0 otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.764,
+            0.539,
+            0.78
+          ],
+          "content": "\\# No, AlbertBot’s problem cannot be formulated as an MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.808,
+            0.658,
+            0.823
+          ],
+          "content": "We now introduce a new method for solving AlbertBot’s problem that works as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.823,
+            0.908,
+            0.87
+          ],
+          "content": "(1) Let $V ( s )$ be a table, indexed by state, representing the value, i.e., the expected win probability starting in 𝑠. Let the initial values for $V ( s )$ be 0.5, except the terminal states: for states with three ’X’s in a row, or drawn terminal states, we set an initial value of 0, and for states with three $\\mathrm { { } ^ { \\circ } O ^ { \\circ } s }$ in a row, we set an initial value of 1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.882,
+            0.908,
+            0.914
+          ],
+          "content": "(2) AlbertBot plays many practice games against MesutBot. In any state 𝑠, AlbertBot plays $a ^ { * } = \\arg \\operatorname* { m a x } _ { a } V ( R e s u l t ( s , a ) )$ , i.e., the best move according to one-step lookahead with 𝑉 , breaking ties randomly."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.062,
+            0.908,
+            0.093
+          ],
+          "content": "(3) For each round (consisting of MesutBot’s move followed by AlbertBot’s move), let $S _ { t }$ denote the state before the MesutBot’s move and $S _ { t + 1 }$ denote the state after AlbertBot’s move. 𝑉 is updated after each round according to the following equation:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.358,
+            0.104,
+            0.628,
+            0.12
+          ],
+          "content": "V (S _ {t}) \\longleftarrow V (S _ {t}) + \\alpha (V (S _ {t + 1}) - V (S _ {t}))",
+          "image_source": "images/page_3_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.132,
+            0.612,
+            0.148
+          ],
+          "content": "where $V ( S _ { t } )$ denotes the value of the state $S _ { t }$ and $0 < \\alpha < 1$ is a hyperparameter."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.16,
+            0.966,
+            0.177
+          ],
+          "content": "(4) We update 𝑉 for many games. Then, in the real competition, 𝑉 remains fixed and AlbertBot again plays $a ^ { * } = \\arg \\operatorname* { m a x } _ { a } V ( R e s u l t ( s , a ) )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.19,
+            0.91,
+            0.236
+          ],
+          "content": "**(d)** [3 pts] There is at least one major problem in the method as introduced above that can be fixed to make it working better in practice. Which of the following describes the problem, and proposes a reasonable fix to the problem? Choose all correct statements. A statement is considered correct if and only if both the problem and the fix is described correctly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.245,
+            0.856,
+            0.261
+          ],
+          "content": "□ AlbertBot cannot reason about the opponent (MesutBot’s) moves. The fix is to use self-play during training."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.262,
+            0.908,
+            0.294
+          ],
+          "content": "□ AlbertBot cannot reason about the opponent (MesutBot’s) moves. The fix is to train a neural network to predict the opponent’s move given a certain state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.295,
+            0.908,
+            0.326
+          ],
+          "content": "□ The training process lacks exploration. The fix is to use epsilon-greedy exploration during training and update the value table for every action taken during training."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.327,
+            0.908,
+            0.358
+          ],
+          "content": "□ The training process lacks exploration. The fix is to use epsilon-greedy exploration during training, but update the value table only for non-exploratory actions during training."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.359,
+            0.908,
+            0.389
+          ],
+          "content": "□ The training process requires full information about the opponent’s policy which we do not have access to. The fix is to use Q-learning instead."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.39,
+            0.908,
+            0.42
+          ],
+          "content": "□ The training process requires full information about the opponent’s policy which we do not have access to. The fix is to use policy iteration."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.421,
+            0.717,
+            0.437
+          ],
+          "content": "\\# None of the above (for every sentence above either the problem or the fix is incorrect)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.465,
+            0.908,
+            0.495
+          ],
+          "content": "**(e)** [1 pt] Given that the problem described in the previous part is successfully addressed, what is a suitable schedule for the value of $\\alpha ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.495,
+            0.281,
+            0.51
+          ],
+          "content": "Constant close to 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.51,
+            0.282,
+            0.525
+          ],
+          "content": "Constant close to 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.525,
+            0.377,
+            0.54
+          ],
+          "content": "Increase asymptotically towards 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.541,
+            0.382,
+            0.556
+          ],
+          "content": "Decrease asymptotically towards 0"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.963
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.581,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q2. [20 pts] I Want a Project Partner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.095,
+            0.828,
+            0.111
+          ],
+          "content": "In 2035, CS 188 will provide an AI partner for your projects. The process of acquiring a partner works as follows:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.135,
+            0.909,
+            0.18
+          ],
+          "content": "• In the Begin state, you draw a random AI partner whose quality 𝑥 is an integer drawn from a distribution 𝑃 (𝑋). 𝑃 (𝑋) is non-zero over a single contiguous range of values [𝑎, 𝑏], where 𝑏 may be ∞. (Throughout this question, the variables 𝑥 and $x ^ { \\prime }$ will refer to integers in the range [𝑎, 𝑏]) The cost of this draw is 0."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.19,
+            0.351,
+            0.205
+          ],
+          "content": "• Afterwards, you have two choices:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.215,
+            0.521,
+            0.23
+          ],
+          "content": "1. Stop: Keep the current partner, and go to the End state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.235,
+            0.828,
+            0.25
+          ],
+          "content": "2. Draw: Pay 𝑐 tokens to draw another AI partner whose quality comes from the same distribution 𝑃 (𝑋)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.273,
+            0.902,
+            0.29
+          ],
+          "content": "We denote state 𝑥 to be the current quality of your partner. For example, one possible sequence of states and actions might be"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.354,
+            0.3,
+            0.634,
+            0.322
+          ],
+          "content": "B e g i n \\xrightarrow {\\text {Draw}} 1 \\xrightarrow {\\text {Draw}} 2 \\xrightarrow {\\text {Draw}} 5 \\xrightarrow {\\text {Stop}} E n d",
+          "image_source": "images/page_4_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.335,
+            0.909,
+            0.367
+          ],
+          "content": "with you paying 𝑐 for each of the second and third draws and getting a quality=5 partner by stopping. The reward for stopping equals the quality of the agent that you get at the end. We assume no discounting, $\\mathbf { i . e . , } \\gamma = 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.379,
+            0.694,
+            0.395
+          ],
+          "content": "**(a)** [6 pts] We will go through some steps to solve the problem as an infinite-horizon MDP."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.399,
+            0.908,
+            0.427
+          ],
+          "content": "**(i)** [1 pt] Assume $x , x ^ { \\prime }$ are positive integers, which of the following are true about the reward function $R ( s , a , s ^ { \\prime } )$ of this MDP?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.43,
+            0.423,
+            0.446
+          ],
+          "content": "□ For all 𝑥, 𝑅(𝐵𝑒𝑔𝑖𝑛, 𝐷𝑟𝑎𝑤, 𝑥) = −𝑐"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.446,
+            0.414,
+            0.461
+          ],
+          "content": "□ For all $x , x ^ { \\prime } , R ( x , D r a w , x ^ { \\prime } ) = - c$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.462,
+            0.428,
+            0.477
+          ],
+          "content": "For all 𝑥, $R ( x , S t o p , E n d ) = - c + x$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.477,
+            0.392,
+            0.492
+          ],
+          "content": "For all 𝑥 $: , R ( x , S t o p , E n d ) = x$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.492,
+            0.316,
+            0.506
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.512,
+            0.531,
+            0.527
+          ],
+          "content": "**(ii)** [1 pt] What can we say about the 𝑄-values in this MDP?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.531,
+            0.386,
+            0.549
+          ],
+          "content": "□ $Q ^ { * } ( x , D r a w )$ increases with 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.55,
+            0.496,
+            0.566
+          ],
+          "content": "$Q ^ { * } ( x , D r a w )$ is a constant 𝐷, independent of 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.568,
+            0.874,
+            0.585
+          ],
+          "content": "□ $Q ^ { * } ( x , D r a w )$ is a constant 𝐷 for some (possible empty) sequence $[ a , . . . , s ]$ and thereafter increases with 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.585,
+            0.316,
+            0.6
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.605,
+            0.665,
+            0.621
+          ],
+          "content": "**(iii)** [1 pt] True/False If it’s optimal to Stop at 𝑥, it’s optimal to Stop at any $x ^ { \\prime } > x .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.62,
+            0.224,
+            0.635
+          ],
+          "content": "True"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.635,
+            0.226,
+            0.65
+          ],
+          "content": "\\# False"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.655,
+            0.531,
+            0.67
+          ],
+          "content": "**(iv)** [1 pt] What can we say about the 𝑈-values in this MDP?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.676,
+            0.419,
+            0.694
+          ],
+          "content": "\\square U ^ {*} (x) = \\max _ {a \\in \\{D r a w, S t o p \\}} Q ^ {*} (x, a)",
+          "image_source": "images/page_4_equation_26.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.694,
+            0.339,
+            0.71
+          ],
+          "content": "$U ^ { * } ( x )$ increases with 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.712,
+            0.45,
+            0.728
+          ],
+          "content": "$U ^ { * } ( x )$ is a constant 𝐷, independent of 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.729,
+            0.828,
+            0.746
+          ],
+          "content": "□ $U ^ { * } ( x )$ is a constant 𝐷 for some (possible empty) sequence $[ a , . . . , s ]$ and thereafter increases with 𝑥"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.746,
+            0.316,
+            0.761
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.767,
+            0.906,
+            0.797
+          ],
+          "content": "**(v)** [1 pt] Assume at state 𝑠, the optimal policy is indifferent between Draw and Stop, i.e. $Q ^ { * } ( s , D r a w ) = Q ^ { * } ( s , S t o p )$ What can we say about the optimal policy $\\pi ^ { * }$ and optimal 𝑄-values $Q ^ { * } ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.801,
+            0.37,
+            0.818
+          ],
+          "content": "\\square \\pi^ {*} (x) = \\text {Draw for all} x <   s",
+          "image_source": "images/page_4_equation_32.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.157,
+            0.82,
+            0.364,
+            0.836
+          ],
+          "content": "\\square \\pi^ {*} (x) = \\text {Stop for all} x <   s",
+          "image_source": "images/page_4_equation_33.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.157,
+            0.837,
+            0.37,
+            0.854
+          ],
+          "content": "\\square \\pi^ {*} (x) = \\text {Draw for all} x > s",
+          "image_source": "images/page_4_equation_34.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.855,
+            0.362,
+            0.871
+          ],
+          "content": "\\square \\pi^ {*} (x) = \\text {Stop for all} x > s",
+          "image_source": "images/page_4_equation_35.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.157,
+            0.873,
+            0.303,
+            0.889
+          ],
+          "content": "\\square Q ^ {*} (s, D r a w) = s",
+          "image_source": "images/page_4_equation_36.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.89,
+            0.315,
+            0.905
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.062,
+            0.908,
+            0.092
+          ],
+          "content": "**(vi)** [1 pt] Let $D   =   Q ^ { * } ( s , D r a w )   =   Q ^ { * } ( s , S t o p )$ We are interested in finding 𝐷 by solving a Bellman equation on 𝑈-values. Which, if any, of the following equations are correct?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.096,
+            0.356,
+            0.114
+          ],
+          "content": "\\square D = - c + D \\cdot \\sum_ {x = 1} ^ {\\infty} P (x)",
+          "image_source": "images/page_5_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.117,
+            0.34,
+            0.134
+          ],
+          "content": "\\square D = - c + \\sum_ {x = 1} ^ {\\infty} x P (x)",
+          "image_source": "images/page_5_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.137,
+            0.48,
+            0.156
+          ],
+          "content": "\\square D = - c + \\cdot \\sum_ {x = 1} ^ {D} x P (x) + D \\cdot \\sum_ {x = D + 1} ^ {\\infty} P (x)",
+          "image_source": "images/page_5_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.158,
+            0.473,
+            0.177
+          ],
+          "content": "\\square D = - c + D \\cdot \\sum_ {x = 1} ^ {D} P (x) + \\sum_ {x = D + 1} ^ {\\infty} x P (x)",
+          "image_source": "images/page_5_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.177,
+            0.315,
+            0.193
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.206,
+            0.907,
+            0.237
+          ],
+          "content": "**(b)** [4 pts] Now, suppose the 𝑃 (𝑋) is given in the table below, and suppose $\\textstyle c = { \\frac { 3 } { 4 } }$ . Remember we define 𝐷 to be the 𝑄 value of the state at which the optimal policy is indifferent between the two actions, i.e. $D = Q ^ { * } ( s , D r a w ) = Q ^ { * } ( s , S t o p )$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.454,
+            0.24,
+            0.533,
+            0.32
+          ],
+          "content": "| x | P(x) |\n| --- | --- |\n| 1 | 1∕4 |\n| 2 | 1∕4 |\n| 3 | 1∕4 |\n| 4 | 1∕4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.328,
+            0.542,
+            0.344
+          ],
+          "content": "**(i)** [2 pts] What is 𝐷? (hint: it’s an integer)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.348,
+            0.416,
+            0.365
+          ],
+          "content": "**(ii)** [1 pt] What is $U ^ { * } ( 3 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.368,
+            0.414,
+            0.384
+          ],
+          "content": "**(iii)** [1 pt] What is $\\pi ^ { * } ( 1 )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.397,
+            0.907,
+            0.429
+          ],
+          "content": "**(c)** [3 pts] Now suppose that $c = 1$ , for the entire partner-drawing process, $x \\in \\{ 1 , 2 , 3 , 4 , 5 , 6 \\}$ , and the distribution of 𝑥, $P ( X )$ can be one of $P _ { u n i f o r m } ( X ) \\; \\mathrm { o r } \\; P _ { b i a s e d } ( X )$ . The two distributions are shown in the table below:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.392,
+            0.433,
+            0.595,
+            0.545
+          ],
+          "content": "| x | 𝑃<sub>uniform</sub>(𝑥) | 𝑃<sub>biased</sub>(𝑥) |\n| --- | --- | --- |\n| 1 | 1∕6 | 1∕2 |\n| 2 | 1∕6 | 1∕10 |\n| 3 | 1∕6 | 1∕10 |\n| 4 | 1∕6 | 1∕10 |\n| 5 | 1∕6 | 1∕10 |\n| 6 | 1∕6 | 1∕10 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_table_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.549,
+            0.907,
+            0.582
+          ],
+          "content": "Define $D _ { \\mathit { u n i f o r m } } \\: = \\: D$ when 𝑃 (𝑋) is $P _ { u n i f o r m } ( X )$ , and define $D _ { b i a s e d } \\: = \\: D$ when 𝑃 (𝑋) is $P _ { b i a s e d } ( X )$ . Define $Q _ { \\mathit { u n i f o r m } } ,$ $Q _ { b i a s e d } , \\dot { U _ { u n i f o r m } } , \\dot { U _ { b i a s e d } }$ similarly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.585,
+            0.405,
+            0.6
+          ],
+          "content": "**(i)** [1 pt] Which of the following is true?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.602,
+            0.31,
+            0.619
+          ],
+          "content": "$D _ { u n i f o r m } > D _ { b i a s e d }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.62,
+            0.31,
+            0.636
+          ],
+          "content": "$D _ { u n i f o r m } < D _ { b i a s e d }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.636,
+            0.31,
+            0.653
+          ],
+          "content": "$D _ { u n i f o r m } = D _ { b i a s e d }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.656,
+            0.622,
+            0.672
+          ],
+          "content": "**(ii)** [2 pts] Given $D _ { b i a s e d } = 2$ , which of the following are necessarily false?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.674,
+            0.341,
+            0.694
+          ],
+          "content": "\\square U _ {\\text {uniform}} ^ {*} (1) = U _ {\\text {biased}} ^ {*} (1)",
+          "image_source": "images/page_5_equation_19.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.695,
+            0.341,
+            0.714
+          ],
+          "content": "\\square U _ {\\text {uniform}} ^ {*} (2) = U _ {\\text {biased}} ^ {*} (2)",
+          "image_source": "images/page_5_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.715,
+            0.341,
+            0.735
+          ],
+          "content": "\\square U _ {\\text {uniform}} ^ {*} (3) = U _ {\\text {biased}} ^ {*} (3)",
+          "image_source": "images/page_5_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.735,
+            0.341,
+            0.755
+          ],
+          "content": "\\square U _ {\\text {uniform}} ^ {*} (4) = U _ {\\text {biased}} ^ {*} (4)",
+          "image_source": "images/page_5_equation_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.755,
+            0.315,
+            0.77
+          ],
+          "content": "None of the Above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.062,
+            0.908,
+            0.094
+          ],
+          "content": "**(d)** [7 pts] Suppose that AI agents are produced by two manufacturers, $m _ { 1 }$ and $m _ { 2 } . m _ { 1 }$ manufactures agents whose qualities come from $P _ { u n i f o r m } ( X )$ and $m _ { 2 }$ manufactures agents whose qualities come from $P _ { b i a s e d } ( X )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.097,
+            0.909,
+            0.159
+          ],
+          "content": "Throughout the partner-selecting process, you will be drawing partners from exactly one of the two manufacturers, with an a priori probability of 0.5 for each. Moreover, agents manufactured by $m _ { 1 }$ and $m _ { 2 }$ might have slightly different pitches of voice 𝑉 , such that agents whose qualities come from $P _ { u n i f o r m } ( X )$ have a 0.8 probability of having “high” pitches while agents whose qualities come from $P _ { b i a s e d } ( X )$ have only a 0.6 probability chance of having “high” pitches."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.162,
+            0.908,
+            0.193
+          ],
+          "content": "You are still faced with a decision between Draw and Stop. However, before you perform any actions, you can listen to the voice of your AI agent. This problem can be formulated as a decision network, as shown in Figure 2."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.278,
+            0.197,
+            0.708,
+            0.408
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.475,
+            0.328,
+            0.708,
+            0.408
+          ],
+          "content": "| M | V | 𝑃(𝑉\\|𝑀) |\n| --- | --- | --- |\n| 𝑚<sub>1</sub>(uniform) | high | 0.8 |\n| 𝑚<sub>1</sub>(uniform) | low | 0.2 |\n| 𝑚<sub>2</sub>(biased) | high | 0.6 |\n| 𝑚<sub>2</sub>(biased) | low | 0.4 |",
+          "captions": [
+            {
+              "bbox": [
+                0.214,
+                0.421,
+                0.77,
+                0.435
+              ],
+              "content": "Figure 2: Decision network and associated conditional distributions for the problem."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.443,
+            0.907,
+            0.495
+          ],
+          "content": "**(i)** [2 pts] Define $E U _ { x } ( a | e )$ as “the expected utility of executing action 𝑎 from state 𝑥 given evidence $e ^ { \\prime \\prime }$ , i.e. $E U _ { x } ( a | e ) =$ $\\textstyle \\sum _ { m } P ( m | e ) \\cdot Q _ { P _ { m } } ^ { * } ( x , a )$ . Note $Q _ { P _ { m } } ^ { * }$ represents the optimal 𝑄-values when drawing from the quality distribution $P _ { m }$ associated with manufacturer 𝑚, i.e. when $m = m _ { 1 } ,   Q _ { P _ { m } } ^ { * } \\; \\mathrm { i s } \\; Q _ { u n i f o r m } ^ { * } .$ . What is $EU_{2}(Draw)?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.497,
+            0.504,
+            0.517
+          ],
+          "content": "$0 . 5 \\cdot Q _ { u n i f o r m } ^ { * } ( 2 , D r a w ) + 0 . 5 \\cdot Q _ { b i a s e d } ^ { * } ( 2 , D r a w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.516,
+            0.31,
+            0.535
+          ],
+          "content": "$Q _ { u n i f o r m } ^ { * } ( 2 , D r a w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.535,
+            0.304,
+            0.552
+          ],
+          "content": "$Q _ { b i a s e d } ^ { * } ( 2 , D r a w )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.553,
+            0.49,
+            0.574
+          ],
+          "content": "𝑄 uniform(2, 𝐷𝑟𝑎𝑤) + ∗ ∗ d(2, 𝐷𝑟𝑎𝑤) 6 10"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.132,
+            0.576,
+            0.908,
+            0.687
+          ],
+          "content": "**(ii)** [2 pts] Define $M E U _ { x } ( e )$ as “the maximum expected utility from state 𝑥 given evidence $e ^ { \\prime \\prime } .$ , i.e. $MEU_{x}(e)\\ =$ ma $\\mathtt { x } _ { a }   E U _ { x } ( a | e )$ . What is $MEU_{2}(\\varnothing)?$ # $0 . 5 \\cdot U _ { u n i f o r m } ^ { * } ( 2 ) + 0 . 5 \\cdot U _ { b i a s e d } ^ { * } ( 2 )$ $U _ { \\mathit { u n i f o r m } } ^ { * } ( 2 )$ # $U _ { b i a s e d } ^ { * } ( 2 )$ # $\\begin{array} { r } { \\frac { 1 } { 6 } \\cdot U _ { \\mathit { u n i f o r m } } ^ { * } ( 2 ) + \\frac { 1 } { 1 0 } \\cdot U _ { \\mathit { b i a s e d } } ^ { * } ( 2 ) } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.689,
+            0.909,
+            0.735
+          ],
+          "content": "**(iii)** [3 pts] Define $V P I _ { x } ( E ^ { \\prime } | e )$ as “the value of observing $E ^ { \\prime }$ given our current evidence 𝑒 from state $x ^ { \\prime \\prime }$ . Given that $D _ { u n i f o r m } = 3$ and $D _ { b i a s e d } = 2$ , for which state(s) 𝑥 is $V P I _ { x } ( V ) > 0$ (Remember 𝑉 represents the pitches of voice of the AI agents)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.736,
+            0.572,
+            0.756
+          ],
+          "content": "$\\bigsqcup 1 \\bigsqcup 2 \\bigsqcup 3 \\bigsqcup 4 \\bigsqcup 5 \\bigsqcup 6 \\bigcirc$ None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.499,
+            0.963
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.057,
+            0.366,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q3. [23 pts] Pac-ML"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.095,
+            0.639,
+            0.111
+          ],
+          "content": "In this problem we will build classifiers to predict a binary target attribute $y \\in \\{ 0 , 1 \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.124,
+            0.762,
+            0.14
+          ],
+          "content": "**(a)** [4 pts] In this part we will assume that examples are described by a single real-valued attribute $x _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.145,
+            0.374,
+            0.16
+          ],
+          "content": "**(i)** [1 pt] Here are three data points:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.47,
+            0.161,
+            0.594,
+            0.194
+          ],
+          "content": "| 𝑦 0 0 1 |\n| --- |\n| 𝑥<sub>1</sub> 1 2 3 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.194,
+            0.425,
+            0.21
+          ],
+          "content": "Are these data points linearly separable?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.223,
+            0.251,
+            0.24
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.572,
+            0.223,
+            0.627,
+            0.24
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.257,
+            0.508,
+            0.273
+          ],
+          "content": "**(ii)** [1 pt] Let’s add a few more data points in our dataset."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.43,
+            0.275,
+            0.634,
+            0.306
+          ],
+          "content": "| 𝑦 0 0 1 0 0 1 |\n| --- |\n| 𝑥<sub>1</sub> 1 2 3 4 5 6 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.308,
+            0.425,
+            0.324
+          ],
+          "content": "Are these data points linearly separable?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.336,
+            0.251,
+            0.354
+          ],
+          "content": "\\# Yes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.572,
+            0.336,
+            0.627,
+            0.353
+          ],
+          "content": "\\# No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.37,
+            0.908,
+            0.417
+          ],
+          "content": "**(iii)** [2 pts] The data can be augmented by adding a second feature $x _ { 2 }   =   f ( x _ { 1 } )$ for some function 𝑓. Which of the following candidates for 𝑓 will render the data in the previous question linearly separable? For your convenience, the values of sin(𝑥) when $x \\in \\{ 1 , 2 , 3 , 4 , 5 , 6 \\}$ are {0.84, 0.91, 0.14, −0.76, −0.96, −0.28}."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.428,
+            0.305,
+            0.469
+          ],
+          "content": "\\begin{array}{l} \\square x _ {2} = x _ {1} ^ {3} \\\\ \\square x _ {2} = \\sin (x _ {1}) \\end{array}",
+          "image_source": "images/page_7_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.572,
+            0.428,
+            0.703,
+            0.468
+          ],
+          "content": "\\begin{array}{l} \\square x _ {2} = x _ {1} \\bmod 2 \\\\ \\square x _ {2} = x _ {1} \\bmod 3 \\end{array}",
+          "image_source": "images/page_7_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.493,
+            0.905,
+            0.51
+          ],
+          "content": "For the remainder of this question we consider examples described by three binary attributes. The training data are as follows:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.335,
+            0.533,
+            0.652,
+            0.597
+          ],
+          "content": "| 𝑦 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 𝑥<sub>1</sub> | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |\n| 𝑥<sub>2</sub> | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |\n| 𝑥<sub>3</sub> | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.609,
+            0.168,
+            0.625
+          ],
+          "content": "**(b)** [4 pts]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.629,
+            0.846,
+            0.645
+          ],
+          "content": "Let us first try a naive Bayes classifier, for which we estimate the necessary probability model $\\hat { P }$ from the data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.649,
+            0.909,
+            0.681
+          ],
+          "content": "**(i)** [1 pt] Given a new data point $x _ { 1 } ^ { \\prime } , x _ { 2 } ^ { \\prime } , x _ { 3 } ^ { \\prime }$ , which of the following are correct expressions for the predicted label $y ^ { \\prime }$ of that data point using the naive Bayes classifier? Note that 𝛼 is a normalizing constant."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.692,
+            0.45,
+            0.735
+          ],
+          "content": "\\begin{array}{l} \\square \\arg \\max _ {y} \\alpha \\hat {P} (y | x _ {1} ^ {\\prime}) \\hat {P} (y | x _ {2} ^ {\\prime}) \\hat {P} (y | x _ {3} ^ {\\prime}) \\\\ \\square \\arg \\max _ {y} \\alpha \\prod_ {i = 1} ^ {3} \\hat {P} (x _ {i} ^ {\\prime} | y) \\end{array}",
+          "image_source": "images/page_7_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.572,
+            0.692,
+            0.794,
+            0.735
+          ],
+          "content": "\\begin{array}{l} \\square \\arg \\max _ {y} \\alpha \\hat {P} (y) \\prod_ {i = 1} ^ {3} \\hat {P} (x _ {i} ^ {\\prime} | y) \\\\ \\square \\arg \\max _ {y} \\hat {P} (y) \\prod_ {i = 1} ^ {3} \\hat {P} (x _ {i} ^ {\\prime} | y) \\end{array}",
+          "image_source": "images/page_7_equation_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.749,
+            0.907,
+            0.795
+          ],
+          "content": "**(ii)** [1 pt] How many parameters need to be estimated for $\\hat { P } _ { \\star } ^ { \\prime }$ Here, \"parameters\" are the conditional and/or marginal probabilities needed in the naive Bayes model. Do not count parameters that can be calculated using the sum-to-1 constraint."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.808,
+            0.235,
+            0.843
+          ],
+          "content": "\\begin{array}{c c} \\bigcirc & 4 \\\\ \\bigcirc & 7 \\end{array}",
+          "image_source": "images/page_7_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.572,
+            0.808,
+            0.624,
+            0.843
+          ],
+          "content": "\\begin{array}{c c} \\bigcirc & 8 \\\\ \\bigcirc & 1 0 \\end{array}",
+          "image_source": "images/page_7_equation_25.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.86,
+            0.908,
+            0.892
+          ],
+          "content": "**(iii)** [1 pt] If we discard all the conditional independence assumptions of the naive Bayes model, how many parameters does 𝑃̂ require? (Again, do not count parameters that can be calculated using the sum-to-1 constraint.)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.951,
+            0.5,
+            0.964
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.636,
+            0.021,
+            0.903,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.188,
+            0.058,
+            0.625,
+            0.095
+          ],
+          "content": "| ○ 9 | ○ 15 |\n| --- | --- |\n| ○ 12 | ○ 16 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.112,
+            0.91,
+            0.173
+          ],
+          "content": "**(iv)** [1 pt] A new, unlabeled data point arrives with an extra feature $x _ { 4 }$ . There are no previous training data to estimate the parameters associated with $x _ { 4 }$ , but it is still possible to make a prediction that incorporates $x _ { 4 }$ using Laplace smoothing. Predicting 𝑦 using $x _ { 4 }$ and Laplace smoothing in this case will necessarily give identical results to predicting 𝑦 while ignoring $x _ { 4 }$ altogether."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.228,
+            0.908,
+            0.245
+          ],
+          "content": "**(c)** [3 pts] Now we consider decision trees for classifying these examples. We include the data here as well for convenience."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.356,
+            0.247,
+            0.672,
+            0.311
+          ],
+          "content": "| 𝑦 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 𝑥<sub>1</sub> | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |\n| 𝑥<sub>2</sub> | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |\n| 𝑥<sub>3</sub> | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.315,
+            0.629,
+            0.362
+          ],
+          "content": "**(i)** [1 pt] Are all decision trees linear classifiers? # Yes # No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.377,
+            0.751,
+            0.427
+          ],
+          "content": "**(ii)** [1 pt] Which of $x _ { 1 } , x _ { 2 } ,$ , and $x _ { 3 }$ has the highest information gain? # $x _ { 1 }$ # $x _ { 2 }$ # $x _ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.44,
+            0.908,
+            0.505
+          ],
+          "content": "**(iii)** [1 pt] An adversary would like to flip one of the input bits in the first data column, so that the decision tree learning algorithm cannot fit the training data exactly. Which bit should be flipped? # $x _ { 1 }$ # $x _ { 2 }$ # $x _ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.527,
+            0.662,
+            0.544
+          ],
+          "content": "**(d)** [4 pts] For this part, we consider logistic regression and we ignore the attribute $x _ { 3 }$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.547,
+            0.908,
+            0.583
+          ],
+          "content": "**(i)** [2 pts] Which of the following neural networks are capable of representing a logistic regression model, assuming that the “Logistic” nodes implement the logistic function $g ( z ) = { \\frac { \\mathbf { \\nabla } _ { 1 } } { 1 + e ^ { - z } } } \\mathbf { \\nabla } ?$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.95,
+            0.501,
+            0.964
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.2,
+            0.08,
+            0.545,
+            0.292
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_0.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.078,
+            0.936,
+            0.306
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.572,
+                0.058,
+                0.598,
+                0.077
+              ],
+              "content": "□"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.211,
+            0.326,
+            0.546,
+            0.54
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.581,
+            0.326,
+            0.996,
+            0.54
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.554,
+            0.908,
+            0.626
+          ],
+          "content": "**(ii)** [2 pts] Which of the following expressions is the correct gradient descent update rule for parameter $w _ { 2 }$ in the weight vector 𝐰? Assume that the loss function is the squared loss $\\frac { 1 } { 2 } ( y - h _ { \\mathbf { w } } ( \\mathbf { x } ) ) ^ { 2 }$ , that $\\begin{array} { r } { h _ { \\mathbf { w } } ( x ) = \\frac { 1 } { 1 + e ^ { - \\mathbf { w } ^ { T } \\mathbf { x } } } } \\end{array}$ , that $\\mathbf { w } ^ { T } \\mathbf { x }$ denotes the inner-product and that 𝛼 is the learning rate. Hint: the derivative of the logistic function $\\begin{array} { r } { g ( z ) \\; = \\; \\frac { 1 } { 1 + e ^ { - z } } } \\end{array}$ is $g ^ { \\prime } ( z ) = g ( z ) ( 1 - g ( z ) )$ ."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.188,
+            0.63,
+            0.655,
+            0.665
+          ],
+          "content": "\\bigcirc w _ {2} \\leftarrow w _ {2} - \\alpha \\left(y - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}} \\left(1 - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) x _ {2}",
+          "image_source": "images/page_9_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.665,
+            0.655,
+            0.7
+          ],
+          "content": "\\bigcirc w _ {2} \\leftarrow w _ {2} - \\alpha \\left(y - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}} \\left(y - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) x _ {2}",
+          "image_source": "images/page_9_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.701,
+            0.53,
+            0.734
+          ],
+          "content": "\\bigcirc w _ {2} \\leftarrow w _ {2} + \\alpha \\left(y - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}} x _ {2}",
+          "image_source": "images/page_9_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.735,
+            0.655,
+            0.769
+          ],
+          "content": "\\bigcirc w _ {2} \\leftarrow w _ {2} + \\alpha \\left(y - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}} \\left(1 - \\frac {1}{1 + e ^ {- \\mathbf {w} ^ {T} \\mathbf {x}}}\\right) x _ {2}",
+          "image_source": "images/page_9_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.78,
+            0.909,
+            0.842
+          ],
+          "content": "**(e)** In this question we explore using approximate Q-learning to train a robot to complete a fixed, 2D grid maze in the fewest timesteps possible. The Q-function $Q ( s , a )$ and policy 𝜋(𝑠) will be represented by neural networks with input vector $s = \\begin{bmatrix} x & y \\end{bmatrix}$ , corresponding to the robot’s 𝑥 and 𝑦 coordinates in the grid, and actions $a \\in \\{ 1 , 2 , 3 , 4 \\}$ representing {North, South, East, West} respectively."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.845,
+            0.908,
+            0.876
+          ],
+          "content": "Albert trains the neural network shown below to learn his Q-values, where $w _ { x } , w _ { y } , w _ { a }$ are scalar weights and $b _ { x } , b _ { y } , b _ { a }$ are scalar biases."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.88,
+            0.906,
+            0.912
+          ],
+          "content": "$q ( s = ( x , y ) , a )$ is the target Q-value calculated using transitions (assume that this is the value we want to get close to). The labels $D , E , F , G$ represent the output value of the preceding node:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.505,
+            0.964
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.635,
+            0.021,
+            0.904,
+            0.038
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.119,
+            0.083,
+            0.861,
+            0.335
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.344,
+            0.908,
+            0.375
+          ],
+          "content": "**(i)** [2 pts] Which of the following are true about the above neural network? Assume that we use an arbitrary differentiable loss function for the Loss node."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.378,
+            0.908,
+            0.41
+          ],
+          "content": "□ Using a sigmoid activation instead of the currently used ReLU activation will lead to minimal loss in fewer iterations of training."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.411,
+            0.908,
+            0.442
+          ],
+          "content": "□ As long as we train on enough data, we can guarantee a validation accuracy at least as good as our training accuracy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.444,
+            0.657,
+            0.46
+          ],
+          "content": "□ Removing $b _ { x }$ will not affect the expressivity of the neural network."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.461,
+            0.879,
+            0.486
+          ],
+          "content": "□ During backpropagation, we compute $\\frac { \\partial L o s s } { \\partial w _ { a } }$ , which we then can use to help compute $\\frac { \\partial L o s s } { \\partial w _ { x } }$ and $\\frac { \\partial L o s s } { \\partial w _ { y } }$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.487,
+            0.346,
+            0.503
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.505,
+            0.518,
+            0.529
+          ],
+          "content": "**(ii)** [2 pts] Which of the following are equivalent to $\\frac { \\partial L o s s } { \\partial b _ { x } } ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.533,
+            0.321,
+            0.556
+          ],
+          "content": "\\square \\frac {\\partial L o s s}{\\partial F} \\cdot \\frac {\\partial F}{\\partial E} \\cdot \\frac {\\partial E}{\\partial D}",
+          "image_source": "images/page_10_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.556,
+            0.354,
+            0.579
+          ],
+          "content": "\\square \\frac {\\partial L o s s}{\\partial F} \\cdot \\frac {\\partial F}{\\partial E} \\cdot \\frac {\\partial E}{\\partial D} \\cdot \\frac {\\partial D}{\\partial b _ {x}}",
+          "image_source": "images/page_10_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.188,
+            0.581,
+            0.479,
+            0.607
+          ],
+          "content": "\\square \\frac {\\partial L o s s}{\\partial F} \\cdot \\left(\\frac {\\partial F}{\\partial E} \\cdot \\frac {\\partial E}{\\partial D} \\cdot \\frac {\\partial D}{\\partial b _ {x}} + \\frac {\\partial F}{\\partial G} \\cdot \\frac {\\partial G}{\\partial b _ {a}} \\cdot \\frac {\\partial b _ {a}}{\\partial b _ {x}}\\right)",
+          "image_source": "images/page_10_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.609,
+            0.446,
+            0.635
+          ],
+          "content": "\\square \\frac {\\partial L o s s}{\\partial F} \\cdot \\left(\\frac {\\partial F}{\\partial E} \\cdot \\frac {\\partial E}{\\partial D} \\cdot \\frac {\\partial D}{\\partial b _ {x}} + \\frac {\\partial F}{\\partial G} \\cdot \\frac {\\partial G}{\\partial b _ {x}}\\right)",
+          "image_source": "images/page_10_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.635,
+            0.346,
+            0.651
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.657,
+            0.732,
+            0.673
+          ],
+          "content": "**(iii)** [2 pts] Which of the following loss functions should Albert use for this neural network?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.678,
+            0.514,
+            0.694
+          ],
+          "content": "\\# Mean-squared-error loss: $L ( \\hat { y } , y ) = ( y - \\hat { y } ) ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.696,
+            0.385,
+            0.735
+          ],
+          "content": "$L ( { \\hat { y } } , y ) = \\left\\{ { \\begin{aligned} { } & { { } 0 { \\mathrm { ~ i f ~ } } y = { \\hat { y } } } \\\\ { } & { { } 1 { \\mathrm { ~ o t h e r w i s e } } } \\end{aligned} } \\right.$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.738,
+            0.855,
+            0.76
+          ],
+          "content": "\\# Cross-entropy loss: $L ( \\hat { y } , y ) = - [ t \\log y ^ { \\prime } + ( 1 - t ) \\log ( 1 - y ^ { \\prime } ) ]$ where 𝑡 =zero-one loss, $\\begin{array} { r } { y ^ { \\prime } = \\frac { 1 } { 1 + e ^ { - \\hat { y } } } } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.771,
+            0.346,
+            0.788
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.803,
+            0.908,
+            0.847
+          ],
+          "content": "**(f)** After training the neural network for $Q ( s , a )$ , Albert trains another neural network to return a distribution of actions to take at the current state $\\phi ( a | s )$ . $w _ { n }$ is a vector weight in $\\mathbb { R } ^ { 4 }$ and $b _ { n }$ is a vector bias in $\\mathbb { R } ^ { 4 }$ . This neural network is shown below:"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.503,
+            0.964
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.118,
+            0.084,
+            0.945,
+            0.231
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.236,
+            0.909,
+            0.297
+          ],
+          "content": "The node 𝑄 in the above represents the neural network from the previous part, which takes in $( x , y , a )$ and returns a Qvalue. $\\phi ( a | x , y )$ is a vector containing a probability distribution over all possible actions the robot can take from a state. Albert defines 𝐽 as a function that computes the expected Q-value weighted by the probabilities of the policy network output as follows:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.381,
+            0.312,
+            0.646,
+            0.343
+          ],
+          "content": "J (\\phi , Q, x, y) = \\sum_ {a} \\phi (a | x, y) Q ((x, y), a)",
+          "image_source": "images/page_11_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.354,
+            0.739,
+            0.37
+          ],
+          "content": "We want to train $\\phi ( a | x , y )$ to put higher probability on actions associated with larger Q-values."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.374,
+            0.728,
+            0.39
+          ],
+          "content": "**(i)** [1 pt] Which of the following can we use to appropriately update $w _ { y }$ at every iteration?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.395,
+            0.335,
+            0.412
+          ],
+          "content": "Gradient descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.414,
+            0.328,
+            0.43
+          ],
+          "content": "Gradient ascent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.431,
+            0.401,
+            0.448
+          ],
+          "content": "Stochastic gradient descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.449,
+            0.382,
+            0.465
+          ],
+          "content": "□ Perceptron learning rule"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.467,
+            0.346,
+            0.482
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.487,
+            0.907,
+            0.518
+          ],
+          "content": "**(ii)** [1 pt] Which of the following is / are the appropriate update rule(s) for $w _ { x }$ based on the above neural network and 𝐽 function? We set 𝛼 to be the learning rate."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.522,
+            0.355,
+            0.541
+          ],
+          "content": "\\square w _ {x} \\leftarrow w _ {x} - \\alpha \\nabla_ {w _ {x}} J",
+          "image_source": "images/page_11_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.544,
+            0.355,
+            0.562
+          ],
+          "content": "\\square w _ {x} \\leftarrow w _ {x} + \\alpha \\nabla_ {w _ {x}} J",
+          "image_source": "images/page_11_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.565,
+            0.425,
+            0.589
+          ],
+          "content": "\\square w _ {x} \\leftarrow w _ {x} + \\alpha \\left(\\nabla_ {w _ {x}} J + \\nabla_ {b _ {x}} J\\right)",
+          "image_source": "images/page_11_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.593,
+            0.435,
+            0.617
+          ],
+          "content": "\\square w _ {x} \\leftarrow w _ {x} - \\alpha \\left(\\nabla_ {w _ {x}} J - \\left| \\nabla_ {b _ {x}} J \\right|\\right)",
+          "image_source": "images/page_11_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.619,
+            0.346,
+            0.635
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.544,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q4. [15 pts] Keyboard Navigation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.095,
+            0.909,
+            0.172
+          ],
+          "content": "Pacman is navigating in a map shown in the figure below (following the QWERTY keyboard). There are 𝑁 = 12 grid squares in total. Each sqaure is labeled with a letter and its coordinate. Let $C _ { t } = ( x _ { t } , y _ { t } )$ denote Pacman’s position at time step 𝑡, and it can move to any of the 6 directions to $(x_{t},y_{t}+1),(x_{t},y_{t}-1),(x_{t}-1,y_{t}),(x_{t}+1,y_{t}),(x_{t}+1,y_{t}+1),\\mathrm{or} (x_{t}-1,y_{t}-1)$ in the next timestep. When Pacman attempts to move out of the map, i.e., $x _ { t + 1 } \\notin \\{ 1 , 2 , . . . , 6 \\} \\; \\mathrm { o r } \\; y _ { t + 1 } \\notin \\{ 1 , 2 \\}$ , it will stay in the same square."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.184,
+            0.909,
+            0.261
+          ],
+          "content": "We assume that Pacman knows the layout of the map. However, Pacman does not know its position, and also does not know whether the move succeeds (i.e., not staying in the same square) at each step. There are two sensors to help Pacman track its position: (1) $A _ { t }$ is the number of neighboring squares for $( x _ { t } , y _ { t } )$ . For example, $A_{t}=4\\  when \\ (x_{t},y_{t})=(2,2)$ . (2) $E _ { t }$ is the number of alphabetically adjacent letters among the neighboring squares. The table below summarizes the (deterministic) value of $E _ { t }$ for each square."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.084,
+            0.273,
+            0.519,
+            0.385
+          ],
+          "content": "| $\\mathbf{Q}^{(1,2)}$ | $\\mathbf{W}^{(2,2)}$ | $\\mathbf{E}^{(3,2)}$ | $\\mathbf{R}^{(4,2)}$ | $\\mathbf{T}^{(5,2)}$ | $\\mathbf{Y}^{(6,2)}$ |\n| --- | --- | --- | --- | --- | --- |\n| $\\mathbf{A}^{(1,1)}$ | $\\mathbf{S}^{(2,1)}$ | $\\mathbf{D}^{(3,1)}$ | $\\mathbf{F}^{(4,1)}$ | $\\mathbf{G}^{(5,1)}$ | $\\mathbf{H}^{(6,1)}$ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.61,
+            0.343,
+            0.794,
+            0.418
+          ],
+          "content": "| 𝐶<sub>𝑡</sub> | 𝐸<sub>𝑡</sub> |\n| --- | --- |\n| Q, W, R, Y, A, S, T | 0 |\n| E, D, F, H | 1 |\n| G | 2 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.431,
+            0.908,
+            0.478
+          ],
+          "content": "**(a)** At step 𝑡 = 0, Pacman can be in any square of the map with equal probability. In this part, at each step 𝑡, Pacman can move in any of the 6 directions with an equal probability. Note that Pacman can stay in the same square by taking an invalid move out of the map. We denote $P r [ C _ { t } = ( x _ { t } , y _ { t } ) ]$ as the probability of Pacman at position $( x _ { t } , y _ { t } )$ at step 𝑡."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.48,
+            0.909,
+            0.526
+          ],
+          "content": "**(i)** [1 pt] Assume that Pacman does not have access to sensor signals. What is $Pr[C_1 = (2,2)], \\mathrm{i.e.}$ ., the probability that Pacman is at position (2, 2) when 𝑡 = 1? Please fill in your solution as a fraction below. Please reduce the fraction into the lowest terms. For example, 2∕72 should be simplified to $1 / 3 6$ . Please fill in 0∕1 if the answer is 0."
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.156,
+            0.526,
+            0.336,
+            0.555
+          ],
+          "sub_type": "code",
+          "content": "```txt\n/\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.56,
+            0.751,
+            0.577
+          ],
+          "content": "**(ii)** [1 pt] Pacman observes that $E _ { 0 } = 1$ . Given this evidence, what is $P r [ C _ { 1 } = ( 2 , 2 ) | E _ { 0 } = 1 ] ?$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.156,
+            0.578,
+            0.336,
+            0.605
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.621,
+            0.907,
+            0.652
+          ],
+          "content": "**(b)** Pacman decides to track its location by particle filtering. Let $( x _ { t } ^ { ( i ) } , y _ { t } ^ { ( i ) } )$ be the location of the 𝑖-th particle at step 𝑡. At step 𝑡 = 0, we have 4 particles initialized in {(1, 1), (1, 2), (6, 1), (6, 2)}."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.656,
+            0.906,
+            0.686
+          ],
+          "content": "**(i)** [2 pts] Assume that after one forward simulation update, these particles reach states {(2, 1), (2, 2), (6, 2), (6, 2)} respectively. What is the probability of each of these transitions?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.702,
+            0.358,
+            0.718
+          ],
+          "content": "Particle 1 from (1, 1) to (2, 1):"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.359,
+            0.686,
+            0.539,
+            0.745
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.733,
+            0.358,
+            0.748
+          ],
+          "content": "Particle 4 from (6, 2) to (6, 2):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.752,
+            0.908,
+            0.781
+          ],
+          "content": "**(ii)** [2 pts] What is the updated belief distribution based on the new particle values? Note that we have not incorporated any observations."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.782,
+            0.457,
+            0.815
+          ],
+          "content": "P r [ C _ {1} = (2, 1) ] = \\boxed {\\quad} / \\boxed {\\quad}",
+          "image_source": "images/page_12_equation_17.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.815,
+            0.457,
+            0.846
+          ],
+          "content": "P r [ C _ {1} = (2, 2) ] = \\boxed {\\quad} / \\boxed {\\quad}",
+          "image_source": "images/page_12_equation_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.846,
+            0.458,
+            0.877
+          ],
+          "content": "𝑃 𝑟[𝐶<sub>1</sub> = (6, 2)] ="
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.88,
+            0.727,
+            0.896
+          ],
+          "content": "**(iii)** [2 pts] Pacman observes that $A _ { 1 } = 4 .$ . Please fill in the probabilities given the evidence."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.157,
+            0.897,
+            0.51,
+            0.928
+          ],
+          "content": "P r [ C _ {1} = (2, 1) | A _ {1} = 4 ] = \\boxed {\\quad} / \\boxed {\\quad}",
+          "image_source": "images/page_12_equation_21.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.057,
+            0.511,
+            0.122
+          ],
+          "content": "\\begin{array}{l} P r [ C _ {1} = (2, 2) | A _ {1} = 4 ] = \\boxed {\\quad} / \\boxed {\\quad} \\\\ P r [ C _ {1} = (6, 2) | A _ {1} = 4 ] = \\boxed {\\quad} / \\boxed {\\quad} \\end{array}",
+          "image_source": "images/page_13_equation_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.135,
+            0.908,
+            0.212
+          ],
+          "content": "**(c)** In this part, Pacman’s goal is to reach the position $( g _ { x } , g _ { y } ) = ( 1 , 2 )$ with the minimal cost. The cost of a move from $( x _ { t } , y _ { t } )$ to $( x _ { t + 1 } , y _ { t + 1 } )$ is $1 + E _ { t + 1 }$ . For example, a move from (3, 2) to (2, 2) has the cost of 1, and a move from (2, 2) to (3, 2) has the cost of 2. Note that even if Pacman stays in the same square after the move, Pacman still needs to pay the cost; e.g., moving left from (1, 1) has the cost of 1. Knowing its position at step $t = 0 .$ , Pacman performs a search to find the optimal sequence of actions to take. Let $h ( x , y )$ be the cost from (𝑥, 𝑦) to $( g _ { x } , g _ { y } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.215,
+            0.908,
+            0.245
+          ],
+          "content": "**(i)** [3 pts] Which of the following are admissible heuristics for $h ( x , y ) ?$ Note that we know $( g _ { x } , g _ { y } ) = ( 1 , 2 )$ , i.e. the letter Q."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.25,
+            0.347,
+            0.269
+          ],
+          "content": "\\square | x - g _ {x} | + | g _ {y} - y |",
+          "image_source": "images/page_13_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.271,
+            0.372,
+            0.289
+          ],
+          "content": "\\square \\min (| x - g _ {x} |, | g _ {y} - y |)",
+          "image_source": "images/page_13_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.291,
+            0.374,
+            0.31
+          ],
+          "content": "\\square \\max (| x - g _ {x} |, | g _ {y} - y |)",
+          "image_source": "images/page_13_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.312,
+            0.383,
+            0.33
+          ],
+          "content": "\\square 2 \\min (| x - g _ {x} |, | g _ {y} - y |)",
+          "image_source": "images/page_13_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.333,
+            0.398,
+            0.351
+          ],
+          "content": "\\square \\min (| x - g _ {x} |, | g _ {y} - y |) + 1",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.354,
+            0.4,
+            0.371
+          ],
+          "content": "\\square \\max (| x - g _ {x} |, | g _ {y} - y |) + 1",
+          "image_source": "images/page_13_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.375,
+            0.851,
+            0.392
+          ],
+          "content": "□ m $\\mathbf { a } \\mathbf { x } ( | x - g _ { x } | , | g _ { y } - y | ) + \\mathbf { I } [ x > 3 ]$ , where $\\mathbf { I } [ x > 3 ] = 1$ when $x > 3 .$ , and $\\mathbf { I } [ x > 3 ] = 0$ otherwise."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.395,
+            0.346,
+            0.41
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.417,
+            0.907,
+            0.446
+          ],
+          "content": "**(ii)** [2 pts] In this part and onwards, Pacman does not know the position at step $t = 0$ , but can infer possible positions according to the evidence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.446,
+            0.908,
+            0.477
+          ],
+          "content": "Pacman observes that $A _ { 0 } = 2$ and $E _ { 0 } = 1$ at step 𝑡 = 0. What is the cost of the path found by $\\mathrm { A } ^ { * }$ Tree Search with <u>an admissibl</u>e heuristics?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.51,
+            0.908,
+            0.572
+          ],
+          "content": "**(iii)** [2 pts] Pacman observes that $A _ { 0 }   =   3$ and $E _ { 0 }   =   0$ at step $t   =   0$ . We want to find an action sequence such that Pacman is guaranteed to be in $( g _ { x } ^ { \\prime } , g _ { y } ^ { \\prime } ) = ( 1 , 1 )$ after performing this action sequence. We also want to minimize the worst-case cost of this sequence among all possible initial positions $( x _ { 0 } , y _ { 0 } )$ . Pacman does not have access to $A _ { t }$ or $E _ { t }$ when $t > 0$ . What is the worst-case cost of this action sequence among all possible initial positions?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.057,
+            0.675,
+            0.084
+          ],
+          "level": 2,
+          "content": "Q5. [17 pts] Accommodating Course Robot"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.095,
+            0.672,
+            0.111
+          ],
+          "content": "The CS188 GSIs are designing an instructional robot to improve the mood of the students."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.124,
+            0.908,
+            0.171
+          ],
+          "content": "At every timestep $t ,$ the robot stores in its state a list of ongoing CS188 assignments $S _ { t } ,$ and the robot takes action $A _ { t }$ to release a list of future assignments $S _ { t + 1 }$ . The released assignments $S _ { t + 1 }$ are also improved by student mood and feedback from the previous timestep 𝑡, denoted $M _ { t }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.183,
+            0.307,
+            0.199
+          ],
+          "content": "This gives us the Bayes net below."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.233,
+            0.866,
+            0.456
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.469,
+            0.908,
+            0.5
+          ],
+          "content": "**(a)** [1 pt] Which of the below represent the conditional probability table for the variable $S _ { t + 1 }$ in the Bayes net shown above? We denote this quantity $T ( S _ { t + 1 } ) ,$ , as it is the transition model for 𝑆 at time $t + 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.5,
+            0.248,
+            0.517
+          ],
+          "content": "$P ( S _ { t + 1 } | S _ { t } , A _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.518,
+            0.277,
+            0.535
+          ],
+          "content": "□ $P ( S _ { t + 1 } | S _ { t } , A _ { t } , M _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.535,
+            0.292,
+            0.551
+          ],
+          "content": "□ $P ( S _ { t + 1 } | S _ { t } , A _ { t } , M _ { t - 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.551,
+            0.277,
+            0.565
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.594,
+            0.908,
+            0.625
+          ],
+          "content": "**(b)** [1 pt] Which of the below represent the conditional probability table for the variable $M _ { t + 1 }$ with the Bayes net shown above? We denote this quantity $T ( M _ { t + 1 } )$ , as it is the transition model for 𝑀 at time $t + 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.625,
+            0.236,
+            0.642
+          ],
+          "content": "$P ( M _ { t + 1 } | M _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.642,
+            0.261,
+            0.659
+          ],
+          "content": "$P ( M _ { t + 1 } | M _ { t } , A _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.659,
+            0.255,
+            0.675
+          ],
+          "content": "$P ( M _ { t + 1 } | S _ { t } , A _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.676,
+            0.232,
+            0.692
+          ],
+          "content": "$P ( M _ { t + 1 } | S _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.693,
+            0.247,
+            0.709
+          ],
+          "content": "$P ( M _ { t + 1 } | S _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.71,
+            0.274,
+            0.726
+          ],
+          "content": "$P ( M _ { t + 1 } | M _ { t } , S _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.726,
+            0.275,
+            0.74
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.769,
+            0.924,
+            0.8
+          ],
+          "content": "**(c)** [2 pts] What is the joint transition model for variables $( S _ { t } , M _ { t } )$ in the Bayes net above? We denote this quantity $T ( S _ { t + 1 } , M _ { t + 1 } )$ Include all choices that can be proved to be equivalent using conditional independence assertions expressed by the Bayes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.813,
+            0.318,
+            0.83
+          ],
+          "content": "\\square P (S _ {t + 1}, M _ {t + 1} | S _ {t}, M _ {t}, A _ {t})",
+          "image_source": "images/page_14_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.831,
+            0.295,
+            0.847
+          ],
+          "content": "\\square P (S _ {t + 1}, M _ {t + 1} | S _ {t}, M _ {t})",
+          "image_source": "images/page_14_equation_21.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.847,
+            0.264,
+            0.864
+          ],
+          "content": "\\square T (S _ {t + 1}) T (M _ {t + 1})",
+          "image_source": "images/page_14_equation_22.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.865,
+            0.355,
+            0.882
+          ],
+          "content": "\\square P (S _ {t + 1}, M _ {t + 1} | S _ {1: t}, M _ {1: t}, A _ {1: t})",
+          "image_source": "images/page_14_equation_23.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.881,
+            0.281,
+            0.898
+          ],
+          "content": "\\square P (S _ {t + 1}, M _ {t + 1} | S _ {1: t})",
+          "image_source": "images/page_14_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.898,
+            0.281,
+            0.915
+          ],
+          "content": "\\square P (S _ {t + 1}, M _ {t + 1} | A _ {1: t})",
+          "image_source": "images/page_14_equation_25.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.06,
+            0.286,
+            0.078
+          ],
+          "content": "$P ( S _ { t + 1 } , M _ { t + 1 } | M _ { 1 : t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.077,
+            0.276,
+            0.092
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.12,
+            0.474,
+            0.136
+          ],
+          "content": "**(d)** [2 pts] Is the above Bayes net Markovian in $( S _ { t } , M _ { t } ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.136,
+            0.308,
+            0.15
+          ],
+          "content": "\\# Yes, always Markovian"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.151,
+            0.295,
+            0.165
+          ],
+          "content": "\\# No, never Markovian"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.165,
+            0.632,
+            0.182
+          ],
+          "content": "\\# It is possibly Markovian, depending on whether the values $m _ { 1 : t }$ <sup>are</sup> given"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.181,
+            0.275,
+            0.195
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.225,
+            0.908,
+            0.27
+          ],
+          "content": "**(e)** [2 pts] You decide the above Bayes net is too complex, and want to try to simplify it down to the MDP format we’ve learned in class, where the transition dynamics are given by $P ( z _ { t + 1 } | z _ { t } , a _ { t } )$ for some single state variable $z _ { t } ,$ instead of the transition functions you computed in earlier subparts of this problem. What are valid approaches to do this?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.269,
+            0.318,
+            0.284
+          ],
+          "content": "□ No modifications needed."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.285,
+            0.369,
+            0.301
+          ],
+          "content": "Redefine states to be $z _ { t } = [ s _ { t } , m _ { t } ]$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.302,
+            0.432,
+            0.317
+          ],
+          "content": "□ Redefine states to be $z _ { t } = [ s _ { t } , m _ { t - 1 } ] , \\forall t \\geq 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.318,
+            0.403,
+            0.333
+          ],
+          "content": "Perform variable elimination on $m _ { t } , \\forall t$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.335,
+            0.398,
+            0.35
+          ],
+          "content": "Perform variable elimination on $s _ { t } , \\forall t$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.35,
+            0.275,
+            0.365
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.394,
+            0.907,
+            0.424
+          ],
+          "content": "For the remainder of the question, we denote the transitions in this setting as $( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } )$ , where $r _ { t } = R ( m _ { t + 1 } )$ , since the reward is entirely dictated by the mood of the student, and not the state of the robot. We use discount factor 𝛾."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.437,
+            0.831,
+            0.453
+          ],
+          "content": "**(f)** [2 pts] What is the discounted sum of rewards if the robot observes a sequence of student moods $m _ { 0 } , . . . , m _ { N } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.452,
+            0.264,
+            0.471
+          ],
+          "content": "$\\textstyle \\sum _ { t = 0 } ^ { N - 1 } \\gamma ^ { t } R ( m _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.475,
+            0.295,
+            0.492
+          ],
+          "content": "$R ( m _ { 1 } ) + \\gamma V ( [ s _ { 2 } , m _ { 2 } ] )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.494,
+            0.35,
+            0.514
+          ],
+          "content": "$R ( m _ { 1 } ) + \\gamma \\operatorname* { m a x } _ { a _ { 1 } } Q ( [ s _ { 2 } , m _ { 2 } ] , a _ { 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.517,
+            0.275,
+            0.533
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.561,
+            0.908,
+            0.593
+          ],
+          "content": "**(g)** [2 pts] Say you wish to run Q-learning on some dataset of transitions $D = \\{ ( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } ) \\} _ { i = 0 } ^ { N - 1 }$ . Each transition is generated by picking a state, taking an action, and observing the result."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.596,
+            0.909,
+            0.628
+          ],
+          "content": "You initialize all $Q ( [ s _ { t } , m _ { t } ] , a _ { t } )   =   0 , \\forall ( s _ { t } , m _ { t } ) , a _ { t }$ , and then use the below approach, largely plugging in the Q-learning algorithm from lecture:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.636,
+            0.643,
+            0.651
+          ],
+          "content": "1. Randomly select some transition from the dataset $( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.655,
+            0.497,
+            0.676
+          ],
+          "content": "2. Compute 𝑠𝑎𝑚𝑝𝑙𝑒 $= r _ { t } + \\gamma \\operatorname* { m a x } _ { a _ { t + 1 } } Q ( [ s _ { t + 1 } , m _ { t + 1 } ] , a _ { t + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.68,
+            0.496,
+            0.696
+          ],
+          "content": "3. $Q ( [ s _ { t } , m _ { t } ] , a _ { t } ) \\gets \\alpha ( s a m p l e ) + ( 1 - \\alpha ) Q ( [ s _ { t } , m _ { t } ] , a _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.705,
+            0.908,
+            0.735
+          ],
+          "content": "Given the transition dynamics encoded by the Bayes net in this problem, select whether or not this algorithm needs additional modifications, and why."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.738,
+            0.907,
+            0.77
+          ],
+          "content": "\\# Yes. Since the transition dynamics differ from an MDP, we need to account for that in our Q-learning update by weighing the samples according to their likelihood of occurring."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.769,
+            0.908,
+            0.8
+          ],
+          "content": "$\\bigcirc \\quad \\mathrm { N o . }$ The samples are generated from the true dynamics and will, after a sufficient number of updates, represent the #empirical probabilities of the true transition probabilities."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.813,
+            0.907,
+            0.844
+          ],
+          "content": "**(h)** If we were to run value iteration, what would the update formula be for the value $V ( [ s _ { t } , m _ { t } ] )$ , the expected sum of discounted rewards acting optimally from $( s _ { t } , m _ { t } ) ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.863,
+            0.907,
+            0.895
+          ],
+          "content": "For each letter **(A), (B), (C), (D), (E)** fill in a single entry for the term corresponding to the correct equation. Recall the definition of $T ( s _ { t + 1 } ) , T ( m _ { t + 1 } )$ , and $T ( s _ { t + 1 } , m _ { t + 1 } )$ from earlier subparts of this problem."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.333,
+            0.911,
+            0.693,
+            0.93
+          ],
+          "content": "V ([ s _ {t}, m _ {t} ]) \\leftarrow (\\mathbf {A}) (\\mathbf {B}) (\\mathbf {C}) \\left[ (\\mathbf {D}) + (\\mathbf {E}) V ([ s _ {t + 1}, m _ {t + 1} ]) \\right]",
+          "image_source": "images/page_15_equation_30.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.634,
+            0.02,
+            0.905,
+            0.039
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.074,
+            0.759,
+            0.103
+          ],
+          "content": "**(i)** [1 pt] **(A)** $\\bigcirc \\max_{a} \\bigcirc \\max_{m_{t}} \\bigcirc \\max_{s_{t}} \\bigcirc \\max_{s_{t},m_{t}} \\bigcirc \\sum_{a} \\bigcirc \\sum_{s_{t}} \\bigcirc \\sum_{m_{t}} \\bigcirc \\sum_{s_{t},m_{t}} \\bigcirc 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.105,
+            0.539,
+            0.136
+          ],
+          "content": "**(ii)** [1 pt] **(B)** $\\bigcirc \\sum_{a} \\bigcirc \\sum_{m_{t+1}} \\bigcirc \\sum_{s_{t+1}} \\bigcirc \\gamma \\bigcirc 0 \\bigcirc 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.137,
+            0.645,
+            0.168
+          ],
+          "content": "**(iii)** [1 pt] **(C)** # $\\sum _ { s _ { t + 1 } } T ( s _ { t + 1 } , m _ { t + 1 } ) \\; \\bigcirc \\; T ( m _ { t + 1 } ) \\; \\bigcirc \\; T ( s _ { t + 1 } ) \\; \\bigcirc \\; 0 \\; \\bigcirc \\; 1$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.171,
+            0.524,
+            0.21
+          ],
+          "content": "**(iv)** [1 pt] **(D)** # $R ( m _ { t + 1 } ) \\enspace \\bigcirc \\enspace \\sum _ { t = 1 } ^ { N } R ( m _ { t + 1 } ) \\enspace \\bigcirc \\enspace \\mathbf { 0 } \\enspace \\bigcirc \\enspace \\mathbf { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.211,
+            0.319,
+            0.23
+          ],
+          "content": "(v) [1 pt] (E) # 𝛾 # 1"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.95,
+            0.505,
+            0.964
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.057,
+            0.492,
+            0.085
+          ],
+          "level": 2,
+          "content": "Q6. [14 pts] Holiday Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.095,
+            0.908,
+            0.127
+          ],
+          "content": "After a stressful exam period, you plan to spend some time traveling in your new programmable self-driving car. Given two points on the map and a search procedure, the car calculates the optimal route from start to finish."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.139,
+            0.71,
+            0.156
+          ],
+          "content": "**(a)** Let’s first frame this problem as a search problem. Consider the following directed graph:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.235,
+            0.169,
+            0.749,
+            0.379
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.385,
+            0.909,
+            0.431
+          ],
+          "content": "The edges of the graph indicate the cost of the path between the two nodes connected by that edge. We start at node 𝑆 and we want to reach node 𝐺. For the following sub-questions, assume ties resolve in such a way that states with earlier alphabetical order are expanded first."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.435,
+            0.908,
+            0.515
+          ],
+          "content": "**(i)** [1 pt] We first decide to use the graph-search version of Breadth-First Search (BFS) to find the path from 𝑆 to 𝐺. What is the correct order in which states are going to be expanded? # S, A, D, E, G # S, A, B, D, E, G # S, A, B, D, C, E, F, G # S, A, D, F, H, G"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.53,
+            0.909,
+            0.611
+          ],
+          "content": "**(ii)** [2 pts] Now let’s take into account the path costs between nodes by running Uniform Cost Search (UCS). What is the final path that is going to be returned by UCS? # S, A, D, E, G # S, A, B, D, E, G # S, A, B, D, C, E, F, G # S, A, D, F, H, G"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.626,
+            0.908,
+            0.658
+          ],
+          "content": "**(iii)** [2 pts] Imagine that you are trying to implement informed search for a graph similar to the one above. Which of the following statements are true? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.661,
+            0.63,
+            0.679
+          ],
+          "content": "A heuristic function that is consistent must also be admissible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.68,
+            0.852,
+            0.697
+          ],
+          "content": "□ The graph-search version of 𝐴<sup>∗</sup>search is optimal, as long as our heuristic function is admissible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.697,
+            0.907,
+            0.714
+          ],
+          "content": "□ 𝐴<sup>∗</sup>search with a heuristic function ℎ(𝑛) = 0 for every node 𝑛 in the graph expands fewer nodes than UCS."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.715,
+            0.804,
+            0.732
+          ],
+          "content": "□ A non-negative heuristic that never overestimates the cost to reach the goal is admissible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.733,
+            0.346,
+            0.749
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.636,
+            0.022,
+            0.672,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.062,
+            0.908,
+            0.092
+          ],
+          "content": "**(b)** To account for probabilistic events, we will now frame the problem as a Markov Decision Process (MDP). We will focus on a subset of the nodes from the graph above:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.356,
+            0.105,
+            0.63,
+            0.251
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.258,
+            0.909,
+            0.319
+          ],
+          "content": "We start at node 𝐷 and we want to reach node 𝐺. From 𝐷 we can go either to node 𝐹 or 𝐸. We denote the action of moving from 𝐷 to 𝐹 as Move to F and the action of moving from 𝐷 to 𝐸 as Move to E. For other nodes, we say that we Move when we go from the node to its neighbor in the direction of the edge. Specifically, we can Move from 𝐹 to 𝐻, from 𝐻 to 𝐺, and from 𝐸 to 𝐺."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.322,
+            0.909,
+            0.367
+          ],
+          "content": "**(i)** [2 pts] For actions Move to F, Move to E, and Move, we arrive at the destination node with a probability of 75%, otherwise we transition to a special state called Broke. Which of the following values for the transition function are accurate? Select all that apply."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.37,
+            0.45,
+            0.39
+          ],
+          "content": "\\square T (D, M o v e, s) = \\frac {1}{4}, \\text {for} s \\in \\{E, F \\}",
+          "image_source": "images/page_18_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.391,
+            0.594,
+            0.41
+          ],
+          "content": "\\square T (s, \\text {Move}, s ^ {\\prime}) = \\frac {3}{4}, \\text {for} (s, s ^ {\\prime}) \\in \\{(F, H), (H, G), (E, G) \\}",
+          "image_source": "images/page_18_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.188,
+            0.412,
+            0.522,
+            0.432
+          ],
+          "content": "\\square T (s, \\text {Move}, \\text {Broke}) = \\frac {1}{4}, \\text {for} s \\in \\{D, E, F, H \\}",
+          "image_source": "images/page_18_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.433,
+            0.351,
+            0.45
+          ],
+          "content": "□ 𝑇 (𝐷, Move, 𝐺) = 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.452,
+            0.346,
+            0.467
+          ],
+          "content": "\\# None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.47,
+            0.908,
+            0.516
+          ],
+          "content": "**(ii)** [2 pts] At any point we can choose to take the action Stop, which will transition us to the special state Done and yield the reward indicated next to the node in the graph above. For instance, if we take the action Stop at node 𝐹, we obtain a reward of 1. Which of the following values for the reward function are accurate? Select all that apply."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.517,
+            0.366,
+            0.533
+          ],
+          "content": "𝑅(𝐺, Stop, Done) = 4"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.535,
+            0.592,
+            0.551
+          ],
+          "content": "\\square R (s, \\text {Move}, s ^ {\\prime}) = 0, \\text {for} (s, s ^ {\\prime}) \\in \\{(F, H), (H, G), (E, G) \\}",
+          "image_source": "images/page_18_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.191,
+            0.552,
+            0.382,
+            0.566
+          ],
+          "content": "□ 𝑅(𝐷, Move to E, 𝐸) = 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.567,
+            0.468,
+            0.583
+          ],
+          "content": "□ 𝑅(𝑠, Stop, Done) = 2, for 𝑠 ∈ {𝐸, 𝐻}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.19,
+            0.585,
+            0.346,
+            0.6
+          ],
+          "content": "None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.603,
+            0.502,
+            0.619
+          ],
+          "content": "**(iii)** [3 pts] Now recall the policy improvement equation:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.33,
+            0.631,
+            0.732,
+            0.661
+          ],
+          "content": "\\forall s, \\pi_ {i + 1} (s) \\leftarrow \\arg \\max _ {a} \\sum_ {s ^ {\\prime}} T (s, a, s ^ {\\prime}) [ R (s, a, s ^ {\\prime}) + \\gamma V ^ {\\pi_ {i}} (s ^ {\\prime}) ]",
+          "image_source": "images/page_18_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.67,
+            0.594,
+            0.685
+          ],
+          "content": "We begin by performing value iteration given the initial policy $\\pi _ { 0 } \\colon$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.274,
+            0.692,
+            0.788,
+            0.742
+          ],
+          "content": "| States | 𝐷 | 𝐹 | 𝐻 | 𝐸 | 𝐺 |\n| --- | --- | --- | --- | --- | --- |\n| 𝜋<sub>0</sub> | Move to F | Move | Stop | Move | Stop |\n| 𝑉<sup>𝜋0</sup> | 1.125 | 1.5 | 2 | 3 | 4 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_table_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.751,
+            0.908,
+            0.78
+          ],
+          "content": "What is the updated policy $\\pi _ { 1 }$ for each of the following states, given the value of the initial policy above? Use the discount factor $\\gamma = 1$"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.274,
+            0.787,
+            0.789,
+            0.822
+          ],
+          "content": "| States | 𝐷 | 𝐹 | 𝐻 | 𝐸 | 𝐺 |\n| --- | --- | --- | --- | --- | --- |\n| 𝜋<sub>1</sub> |  |  |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_table_21.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.83,
+            0.908,
+            0.86
+          ],
+          "content": "**(iv)** [2 pts] Consider the impact of the discount factor 𝛾 on the resulting policy. How would the policy $\\pi _ { 1 }$ change if we set the discount factor to $\\gamma = 0 ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.189,
+            0.864,
+            0.769,
+            0.879
+          ],
+          "content": "\\# $\\pi ( D ) = M o \\nu e t o F , \\pi ( F ) = M o \\nu e , \\pi ( H ) = M o \\nu e , \\pi ( E ) = M o \\nu e , \\pi ( G ) = S t o p$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.88,
+            0.712,
+            0.895
+          ],
+          "content": "\\# 𝜋(𝐷) = Stop, 𝜋(𝐹) = Stop, 𝜋(𝐻) = Stop, 𝜋(𝐸) = Stop, 𝜋(𝐺) = Stop"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.188,
+            0.897,
+            0.764,
+            0.912
+          ],
+          "content": "\\# 𝜋(𝐷) = Move to F, 𝜋(𝐹) = Move, 𝜋(𝐻) = Stop, 𝜋(𝐸) = Move, 𝜋(𝐺) = Stop"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.913,
+            0.769,
+            0.929
+          ],
+          "content": "\\bigcirc \\pi (D) = \\text {Move to} E, \\pi (F) = \\text {Move}, \\pi (H) = \\text {Move}, \\pi (E) = \\text {Move}, \\pi (G) = \\text {Stop}",
+          "image_source": "images/page_18_equation_26.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.951,
+            0.504,
+            0.964
+          ],
+          "content": "19"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2021-05-17T19:43:00Z",
+      "modified_at": "2021-05-17T19:43:00Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.21",
+      "page_count": 19,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

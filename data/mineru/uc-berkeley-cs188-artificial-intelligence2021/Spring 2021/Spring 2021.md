@@ -1,0 +1,895 @@
+<!-- page: 1 -->
+
+• You have approximately 170 minutes.
+
+• The exam is open book, open calculator, and open notes.
+
+• For multiple choice questions,
+
+□ means mark **all options** that apply
+
+means mark a single choice
+
+| First name |  |
+| --- | --- |
+| Last name |  |
+| SID |  |
+
+For staff use only:
+
+| Q1. Tic-Tac-Toe | /11 |
+| --- | --- |
+| Q2. I Want a Project Partner | /20 |
+| Q3. Pac-ML | /23 |
+| Q4. Keyboard Navigation | /15 |
+| Q5. Accommodating Course Robot | /17 |
+| Q6. Holiday Planning | /14 |
+| Total | /100 |
+
+<!-- page: 2 -->
+
+<!-- page: 3 -->
+
+## Q1. [11 pts] Tic-Tac-Toe
+
+In this problem we will look at the classic game of Tic-Tac-Toe. Albert is training his intelligent agent, AlbertBot, to compete with MesutBot in a Tic-Tac-Toe competition.
+
+![](images/page_2_image_3.jpg)
+
+Figure 1: Example winning state for the ’X’ player in a Tic-Tac-Toe game
+
+**Rules of Tic-Tac-Toe:** Two players, X and O, take turns marking an empty square on a three-by-three board. A player wins by placing three marks in a row, horizontally, vertically, or diagonally, as the ’X’ player has in the game shown above. If the board fills up with neither player getting three in a row, then the game is a draw.
+
+**Assumptions:** AlbertBot plays $\mathrm { { } ^ { \circ } O ^ { \flat } s , }$ and always plays second. MesutBot has a fixed, unknown, possibly stochastic and possibly suboptimal policy. AlbertBot can train against MesutBot as many times as we want prior to the real competition. In the real competition, AlbertBot gets a reward of 1 if it wins against MesutBot, and a reward of 0 if it draws or loses.
+
+**Problem (Goal):** Maximize AlbertBot’s expected reward, i.e., its expected probability of winning, in the real competition.
+
+**(a)** [2 pts] Among the following choices, which is a tightest upper bound on the number of leaf nodes in the complete game tree of Tic-Tac-Toe, ignoring possible symmetries?
+
+**(b)** [2 pts] Is the minimax algorithm a suitable way of solving the problem specified above?
+
+\# Yes, because the state space of Tic-Tac-Toe is small enough that running Minimax on the whole game tree is feasible.
+
+\# Yes, but not due to the reason in the choice above.
+
+\# No, because the minimax only works for zero-sum games, while Tic-Tac-Toe is not zero-sum.
+
+\# No, but not due to the reason in the choice above.
+
+**(c)** [3 pts] Let MesutBot’s policy be $\pi _ { M } ( s , a ) ,$ , denoting the probability that MesutBot plays 𝑎 in state 𝑠, and let $R e s u l t ( s , a )$ denote the state resulting from playing 𝑎 in 𝑠. Can we formulate AlbertBot’s Tic-Tac-Toe problem as an MDP, and, if so, which of the following are correct formulas for the transition model $P ( s ^ { \prime } \mid a , s ) ?$
+
+□ Yes, $P ( s ^ { \prime } \mid a , s ) = 1 { \mathrm { ~ i f ~ } } s ^ { \prime } = R e s u l t ( s , a ) , 0 { \mathrm { ~ o t h e r w i s e } }$
+
+□ Yes, $P ( s ^ { \prime } \mid a , s ) = \pi _ { M } ( s , a ) \; { \mathrm { i f } } \; s ^ { \prime } = R e s u l t ( s , a ) ,$ 0 otherwise.
+
+□ Yes, $\begin{array} { r } { P ( s ^ { \prime } \mid a , s ) = \sum _ { a ^ { \prime } \colon s ^ { \prime } = R e s u l t ( R e s u l t ( s , a ) , a ^ { \prime } ) } \pi _ { M } ( R e s u l t ( s , a ) , a ^ { \prime } ) . } \end{array}$
+
+□ Yes, $P(s' \mid a, s) = \pi_M(Results(s, a), a') \;  if  \; s' = Results(Results(s, a), a')$ for some $a ^ { \prime } .$ , 0 otherwise.
+
+\# No, AlbertBot’s problem cannot be formulated as an MDP.
+
+We now introduce a new method for solving AlbertBot’s problem that works as follows:
+
+(1) Let $V ( s )$ be a table, indexed by state, representing the value, i.e., the expected win probability starting in 𝑠. Let the initial values for $V ( s )$ be 0.5, except the terminal states: for states with three ’X’s in a row, or drawn terminal states, we set an initial value of 0, and for states with three $\mathrm { { } ^ { \circ } O ^ { \circ } s }$ in a row, we set an initial value of 1.
+
+(2) AlbertBot plays many practice games against MesutBot. In any state 𝑠, AlbertBot plays $a ^ { * } = \arg \operatorname* { m a x } _ { a } V ( R e s u l t ( s , a ) )$ , i.e., the best move according to one-step lookahead with 𝑉 , breaking ties randomly.
+
+<!-- page: 4 -->
+
+(3) For each round (consisting of MesutBot’s move followed by AlbertBot’s move), let $S _ { t }$ denote the state before the MesutBot’s move and $S _ { t + 1 }$ denote the state after AlbertBot’s move. 𝑉 is updated after each round according to the following equation:
+
+$$
+V (S _ {t}) \longleftarrow V (S _ {t}) + \alpha (V (S _ {t + 1}) - V (S _ {t}))
+$$
+
+where $V ( S _ { t } )$ denotes the value of the state $S _ { t }$ and $0 < \alpha < 1$ is a hyperparameter.
+
+(4) We update 𝑉 for many games. Then, in the real competition, 𝑉 remains fixed and AlbertBot again plays $a ^ { * } = \arg \operatorname* { m a x } _ { a } V ( R e s u l t ( s , a ) )$
+
+**(d)** [3 pts] There is at least one major problem in the method as introduced above that can be fixed to make it working better in practice. Which of the following describes the problem, and proposes a reasonable fix to the problem? Choose all correct statements. A statement is considered correct if and only if both the problem and the fix is described correctly.
+
+□ AlbertBot cannot reason about the opponent (MesutBot’s) moves. The fix is to use self-play during training.
+
+□ AlbertBot cannot reason about the opponent (MesutBot’s) moves. The fix is to train a neural network to predict the opponent’s move given a certain state.
+
+□ The training process lacks exploration. The fix is to use epsilon-greedy exploration during training and update the value table for every action taken during training.
+
+□ The training process lacks exploration. The fix is to use epsilon-greedy exploration during training, but update the value table only for non-exploratory actions during training.
+
+□ The training process requires full information about the opponent’s policy which we do not have access to. The fix is to use Q-learning instead.
+
+□ The training process requires full information about the opponent’s policy which we do not have access to. The fix is to use policy iteration.
+
+\# None of the above (for every sentence above either the problem or the fix is incorrect).
+
+**(e)** [1 pt] Given that the problem described in the previous part is successfully addressed, what is a suitable schedule for the value of $\alpha ?$
+
+Constant close to 1
+
+Constant close to 0
+
+Increase asymptotically towards 1
+
+Decrease asymptotically towards 0
+
+<!-- page: 5 -->
+
+## Q2. [20 pts] I Want a Project Partner
+
+In 2035, CS 188 will provide an AI partner for your projects. The process of acquiring a partner works as follows:
+
+• In the Begin state, you draw a random AI partner whose quality 𝑥 is an integer drawn from a distribution 𝑃 (𝑋). 𝑃 (𝑋) is non-zero over a single contiguous range of values [𝑎, 𝑏], where 𝑏 may be ∞. (Throughout this question, the variables 𝑥 and $x ^ { \prime }$ will refer to integers in the range [𝑎, 𝑏]) The cost of this draw is 0.
+
+• Afterwards, you have two choices:
+
+1. Stop: Keep the current partner, and go to the End state.
+
+2. Draw: Pay 𝑐 tokens to draw another AI partner whose quality comes from the same distribution 𝑃 (𝑋).
+
+We denote state 𝑥 to be the current quality of your partner. For example, one possible sequence of states and actions might be
+
+$$
+B e g i n \xrightarrow {\text {Draw}} 1 \xrightarrow {\text {Draw}} 2 \xrightarrow {\text {Draw}} 5 \xrightarrow {\text {Stop}} E n d
+$$
+
+with you paying 𝑐 for each of the second and third draws and getting a quality=5 partner by stopping. The reward for stopping equals the quality of the agent that you get at the end. We assume no discounting, $\mathbf { i . e . , } \gamma = 1$
+
+**(a)** [6 pts] We will go through some steps to solve the problem as an infinite-horizon MDP.
+
+**(i)** [1 pt] Assume $x , x ^ { \prime }$ are positive integers, which of the following are true about the reward function $R ( s , a , s ^ { \prime } )$ of this MDP?
+
+□ For all 𝑥, 𝑅(𝐵𝑒𝑔𝑖𝑛, 𝐷𝑟𝑎𝑤, 𝑥) = −𝑐
+
+□ For all $x , x ^ { \prime } , R ( x , D r a w , x ^ { \prime } ) = - c$
+
+For all 𝑥, $R ( x , S t o p , E n d ) = - c + x$
+
+For all 𝑥 $: , R ( x , S t o p , E n d ) = x$
+
+None of the Above
+
+**(ii)** [1 pt] What can we say about the 𝑄-values in this MDP?
+
+□ $Q ^ { * } ( x , D r a w )$ increases with 𝑥
+
+$Q ^ { * } ( x , D r a w )$ is a constant 𝐷, independent of 𝑥
+
+□ $Q ^ { * } ( x , D r a w )$ is a constant 𝐷 for some (possible empty) sequence $[ a , . . . , s ]$ and thereafter increases with 𝑥
+
+None of the Above
+
+**(iii)** [1 pt] True/False If it’s optimal to Stop at 𝑥, it’s optimal to Stop at any $x ^ { \prime } > x .$
+
+True
+
+\# False
+
+**(iv)** [1 pt] What can we say about the 𝑈-values in this MDP?
+
+$$
+\square U ^ {*} (x) = \max _ {a \in \{D r a w, S t o p \}} Q ^ {*} (x, a)
+$$
+
+$U ^ { * } ( x )$ increases with 𝑥
+
+$U ^ { * } ( x )$ is a constant 𝐷, independent of 𝑥
+
+□ $U ^ { * } ( x )$ is a constant 𝐷 for some (possible empty) sequence $[ a , . . . , s ]$ and thereafter increases with 𝑥
+
+None of the Above
+
+**(v)** [1 pt] Assume at state 𝑠, the optimal policy is indifferent between Draw and Stop, i.e. $Q ^ { * } ( s , D r a w ) = Q ^ { * } ( s , S t o p )$ What can we say about the optimal policy $\pi ^ { * }$ and optimal 𝑄-values $Q ^ { * } ?$
+
+$$
+\square \pi^ {*} (x) = \text {Draw for all} x <   s
+$$
+
+$$
+\square \pi^ {*} (x) = \text {Stop for all} x <   s
+$$
+
+$$
+\square \pi^ {*} (x) = \text {Draw for all} x > s
+$$
+
+$$
+\square \pi^ {*} (x) = \text {Stop for all} x > s
+$$
+
+$$
+\square Q ^ {*} (s, D r a w) = s
+$$
+
+None of the Above
+
+<!-- page: 6 -->
+
+**(vi)** [1 pt] Let $D   =   Q ^ { * } ( s , D r a w )   =   Q ^ { * } ( s , S t o p )$ We are interested in finding 𝐷 by solving a Bellman equation on 𝑈-values. Which, if any, of the following equations are correct?
+
+$$
+\square D = - c + D \cdot \sum_ {x = 1} ^ {\infty} P (x)
+$$
+
+$$
+\square D = - c + \sum_ {x = 1} ^ {\infty} x P (x)
+$$
+
+$$
+\square D = - c + \cdot \sum_ {x = 1} ^ {D} x P (x) + D \cdot \sum_ {x = D + 1} ^ {\infty} P (x)
+$$
+
+$$
+\square D = - c + D \cdot \sum_ {x = 1} ^ {D} P (x) + \sum_ {x = D + 1} ^ {\infty} x P (x)
+$$
+
+None of the Above
+
+**(b)** [4 pts] Now, suppose the 𝑃 (𝑋) is given in the table below, and suppose $\textstyle c = { \frac { 3 } { 4 } }$ . Remember we define 𝐷 to be the 𝑄 value of the state at which the optimal policy is indifferent between the two actions, i.e. $D = Q ^ { * } ( s , D r a w ) = Q ^ { * } ( s , S t o p )$
+
+| x | P(x) |
+| --- | --- |
+| 1 | 1∕4 |
+| 2 | 1∕4 |
+| 3 | 1∕4 |
+| 4 | 1∕4 |
+
+**(i)** [2 pts] What is 𝐷? (hint: it’s an integer)
+
+**(ii)** [1 pt] What is $U ^ { * } ( 3 )$
+
+**(iii)** [1 pt] What is $\pi ^ { * } ( 1 )$
+
+**(c)** [3 pts] Now suppose that $c = 1$ , for the entire partner-drawing process, $x \in \{ 1 , 2 , 3 , 4 , 5 , 6 \}$ , and the distribution of 𝑥, $P ( X )$ can be one of $P _ { u n i f o r m } ( X ) \; \mathrm { o r } \; P _ { b i a s e d } ( X )$ . The two distributions are shown in the table below:
+
+| x | 𝑃<sub>uniform</sub>(𝑥) | 𝑃<sub>biased</sub>(𝑥) |
+| --- | --- | --- |
+| 1 | 1∕6 | 1∕2 |
+| 2 | 1∕6 | 1∕10 |
+| 3 | 1∕6 | 1∕10 |
+| 4 | 1∕6 | 1∕10 |
+| 5 | 1∕6 | 1∕10 |
+| 6 | 1∕6 | 1∕10 |
+
+Define $D _ { \mathit { u n i f o r m } } \: = \: D$ when 𝑃 (𝑋) is $P _ { u n i f o r m } ( X )$ , and define $D _ { b i a s e d } \: = \: D$ when 𝑃 (𝑋) is $P _ { b i a s e d } ( X )$ . Define $Q _ { \mathit { u n i f o r m } } ,$ $Q _ { b i a s e d } , \dot { U _ { u n i f o r m } } , \dot { U _ { b i a s e d } }$ similarly.
+
+**(i)** [1 pt] Which of the following is true?
+
+$D _ { u n i f o r m } > D _ { b i a s e d }$
+
+$D _ { u n i f o r m } < D _ { b i a s e d }$
+
+$D _ { u n i f o r m } = D _ { b i a s e d }$
+
+**(ii)** [2 pts] Given $D _ { b i a s e d } = 2$ , which of the following are necessarily false?
+
+$$
+\square U _ {\text {uniform}} ^ {*} (1) = U _ {\text {biased}} ^ {*} (1)
+$$
+
+$$
+\square U _ {\text {uniform}} ^ {*} (2) = U _ {\text {biased}} ^ {*} (2)
+$$
+
+$$
+\square U _ {\text {uniform}} ^ {*} (3) = U _ {\text {biased}} ^ {*} (3)
+$$
+
+$$
+\square U _ {\text {uniform}} ^ {*} (4) = U _ {\text {biased}} ^ {*} (4)
+$$
+
+None of the Above
+
+<!-- page: 7 -->
+
+**(d)** [7 pts] Suppose that AI agents are produced by two manufacturers, $m _ { 1 }$ and $m _ { 2 } . m _ { 1 }$ manufactures agents whose qualities come from $P _ { u n i f o r m } ( X )$ and $m _ { 2 }$ manufactures agents whose qualities come from $P _ { b i a s e d } ( X )$
+
+Throughout the partner-selecting process, you will be drawing partners from exactly one of the two manufacturers, with an a priori probability of 0.5 for each. Moreover, agents manufactured by $m _ { 1 }$ and $m _ { 2 }$ might have slightly different pitches of voice 𝑉 , such that agents whose qualities come from $P _ { u n i f o r m } ( X )$ have a 0.8 probability of having “high” pitches while agents whose qualities come from $P _ { b i a s e d } ( X )$ have only a 0.6 probability chance of having “high” pitches.
+
+You are still faced with a decision between Draw and Stop. However, before you perform any actions, you can listen to the voice of your AI agent. This problem can be formulated as a decision network, as shown in Figure 2.
+
+![](images/page_6_image_4.jpg)
+
+| M | V | 𝑃(𝑉\|𝑀) |
+| --- | --- | --- |
+| 𝑚<sub>1</sub>(uniform) | high | 0.8 |
+| 𝑚<sub>1</sub>(uniform) | low | 0.2 |
+| 𝑚<sub>2</sub>(biased) | high | 0.6 |
+| 𝑚<sub>2</sub>(biased) | low | 0.4 |
+
+Figure 2: Decision network and associated conditional distributions for the problem.
+
+**(i)** [2 pts] Define $E U _ { x } ( a | e )$ as “the expected utility of executing action 𝑎 from state 𝑥 given evidence $e ^ { \prime \prime }$ , i.e. $E U _ { x } ( a | e ) =$ $\textstyle \sum _ { m } P ( m | e ) \cdot Q _ { P _ { m } } ^ { * } ( x , a )$ . Note $Q _ { P _ { m } } ^ { * }$ represents the optimal 𝑄-values when drawing from the quality distribution $P _ { m }$ associated with manufacturer 𝑚, i.e. when $m = m _ { 1 } ,   Q _ { P _ { m } } ^ { * } \; \mathrm { i s } \; Q _ { u n i f o r m } ^ { * } .$ . What is $EU_{2}(Draw)?$
+
+$0 . 5 \cdot Q _ { u n i f o r m } ^ { * } ( 2 , D r a w ) + 0 . 5 \cdot Q _ { b i a s e d } ^ { * } ( 2 , D r a w )$
+
+$Q _ { u n i f o r m } ^ { * } ( 2 , D r a w )$
+
+$Q _ { b i a s e d } ^ { * } ( 2 , D r a w )$
+
+𝑄 uniform(2, 𝐷𝑟𝑎𝑤) + ∗ ∗ d(2, 𝐷𝑟𝑎𝑤) 6 10
+
+**(ii)** [2 pts] Define $M E U _ { x } ( e )$ as “the maximum expected utility from state 𝑥 given evidence $e ^ { \prime \prime } .$ , i.e. $MEU_{x}(e)\ =$ ma $\mathtt { x } _ { a }   E U _ { x } ( a | e )$ . What is $MEU_{2}(\varnothing)?$ # $0 . 5 \cdot U _ { u n i f o r m } ^ { * } ( 2 ) + 0 . 5 \cdot U _ { b i a s e d } ^ { * } ( 2 )$ $U _ { \mathit { u n i f o r m } } ^ { * } ( 2 )$ # $U _ { b i a s e d } ^ { * } ( 2 )$ # $\begin{array} { r } { \frac { 1 } { 6 } \cdot U _ { \mathit { u n i f o r m } } ^ { * } ( 2 ) + \frac { 1 } { 1 0 } \cdot U _ { \mathit { b i a s e d } } ^ { * } ( 2 ) } \end{array}$
+
+**(iii)** [3 pts] Define $V P I _ { x } ( E ^ { \prime } | e )$ as “the value of observing $E ^ { \prime }$ given our current evidence 𝑒 from state $x ^ { \prime \prime }$ . Given that $D _ { u n i f o r m } = 3$ and $D _ { b i a s e d } = 2$ , for which state(s) 𝑥 is $V P I _ { x } ( V ) > 0$ (Remember 𝑉 represents the pitches of voice of the AI agents)?
+
+$\bigsqcup 1 \bigsqcup 2 \bigsqcup 3 \bigsqcup 4 \bigsqcup 5 \bigsqcup 6 \bigcirc$ None of the above
+
+<!-- page: 8 -->
+
+## Q3. [23 pts] Pac-ML
+
+In this problem we will build classifiers to predict a binary target attribute $y \in \{ 0 , 1 \}$
+
+**(a)** [4 pts] In this part we will assume that examples are described by a single real-valued attribute $x _ { 1 }$
+
+**(i)** [1 pt] Here are three data points:
+
+| 𝑦 0 0 1 |
+| --- |
+| 𝑥<sub>1</sub> 1 2 3 |
+
+Are these data points linearly separable?
+
+\# Yes
+
+\# No
+
+**(ii)** [1 pt] Let’s add a few more data points in our dataset.
+
+| 𝑦 0 0 1 0 0 1 |
+| --- |
+| 𝑥<sub>1</sub> 1 2 3 4 5 6 |
+
+Are these data points linearly separable?
+
+\# Yes
+
+\# No
+
+**(iii)** [2 pts] The data can be augmented by adding a second feature $x _ { 2 }   =   f ( x _ { 1 } )$ for some function 𝑓. Which of the following candidates for 𝑓 will render the data in the previous question linearly separable? For your convenience, the values of sin(𝑥) when $x \in \{ 1 , 2 , 3 , 4 , 5 , 6 \}$ are {0.84, 0.91, 0.14, −0.76, −0.96, −0.28}.
+
+$$
+\begin{array}{l} \square x _ {2} = x _ {1} ^ {3} \\ \square x _ {2} = \sin (x _ {1}) \end{array}
+$$
+
+$$
+\begin{array}{l} \square x _ {2} = x _ {1} \bmod 2 \\ \square x _ {2} = x _ {1} \bmod 3 \end{array}
+$$
+
+For the remainder of this question we consider examples described by three binary attributes. The training data are as follows:
+
+| 𝑦 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 𝑥<sub>1</sub> | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 𝑥<sub>2</sub> | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |
+| 𝑥<sub>3</sub> | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+
+**(b)** [4 pts]
+
+Let us first try a naive Bayes classifier, for which we estimate the necessary probability model $\hat { P }$ from the data.
+
+**(i)** [1 pt] Given a new data point $x _ { 1 } ^ { \prime } , x _ { 2 } ^ { \prime } , x _ { 3 } ^ { \prime }$ , which of the following are correct expressions for the predicted label $y ^ { \prime }$ of that data point using the naive Bayes classifier? Note that 𝛼 is a normalizing constant.
+
+$$
+\begin{array}{l} \square \arg \max _ {y} \alpha \hat {P} (y | x _ {1} ^ {\prime}) \hat {P} (y | x _ {2} ^ {\prime}) \hat {P} (y | x _ {3} ^ {\prime}) \\ \square \arg \max _ {y} \alpha \prod_ {i = 1} ^ {3} \hat {P} (x _ {i} ^ {\prime} | y) \end{array}
+$$
+
+$$
+\begin{array}{l} \square \arg \max _ {y} \alpha \hat {P} (y) \prod_ {i = 1} ^ {3} \hat {P} (x _ {i} ^ {\prime} | y) \\ \square \arg \max _ {y} \hat {P} (y) \prod_ {i = 1} ^ {3} \hat {P} (x _ {i} ^ {\prime} | y) \end{array}
+$$
+
+**(ii)** [1 pt] How many parameters need to be estimated for $\hat { P } _ { \star } ^ { \prime }$ Here, "parameters" are the conditional and/or marginal probabilities needed in the naive Bayes model. Do not count parameters that can be calculated using the sum-to-1 constraint.
+
+$$
+\begin{array}{c c} \bigcirc & 4 \\ \bigcirc & 7 \end{array}
+$$
+
+$$
+\begin{array}{c c} \bigcirc & 8 \\ \bigcirc & 1 0 \end{array}
+$$
+
+**(iii)** [1 pt] If we discard all the conditional independence assumptions of the naive Bayes model, how many parameters does 𝑃̂ require? (Again, do not count parameters that can be calculated using the sum-to-1 constraint.)
+
+<!-- page: 9 -->
+
+SID:
+
+| ○ 9 | ○ 15 |
+| --- | --- |
+| ○ 12 | ○ 16 |
+
+**(iv)** [1 pt] A new, unlabeled data point arrives with an extra feature $x _ { 4 }$ . There are no previous training data to estimate the parameters associated with $x _ { 4 }$ , but it is still possible to make a prediction that incorporates $x _ { 4 }$ using Laplace smoothing. Predicting 𝑦 using $x _ { 4 }$ and Laplace smoothing in this case will necessarily give identical results to predicting 𝑦 while ignoring $x _ { 4 }$ altogether.
+
+**(c)** [3 pts] Now we consider decision trees for classifying these examples. We include the data here as well for convenience.
+
+| 𝑦 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 𝑥<sub>1</sub> | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 𝑥<sub>2</sub> | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 |
+| 𝑥<sub>3</sub> | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+
+**(i)** [1 pt] Are all decision trees linear classifiers? # Yes # No
+
+**(ii)** [1 pt] Which of $x _ { 1 } , x _ { 2 } ,$ , and $x _ { 3 }$ has the highest information gain? # $x _ { 1 }$ # $x _ { 2 }$ # $x _ { 3 }$
+
+**(iii)** [1 pt] An adversary would like to flip one of the input bits in the first data column, so that the decision tree learning algorithm cannot fit the training data exactly. Which bit should be flipped? # $x _ { 1 }$ # $x _ { 2 }$ # $x _ { 3 }$
+
+**(d)** [4 pts] For this part, we consider logistic regression and we ignore the attribute $x _ { 3 }$ .
+
+**(i)** [2 pts] Which of the following neural networks are capable of representing a logistic regression model, assuming that the “Logistic” nodes implement the logistic function $g ( z ) = { \frac { \mathbf { \nabla } _ { 1 } } { 1 + e ^ { - z } } } \mathbf { \nabla } ?$
+
+<!-- page: 10 -->
+
+![](images/page_9_image_0.jpg)
+
+□
+
+![](images/page_9_image_2.jpg)
+
+![](images/page_9_image_3.jpg)
+
+![](images/page_9_image_4.jpg)
+
+**(ii)** [2 pts] Which of the following expressions is the correct gradient descent update rule for parameter $w _ { 2 }$ in the weight vector 𝐰? Assume that the loss function is the squared loss $\frac { 1 } { 2 } ( y - h _ { \mathbf { w } } ( \mathbf { x } ) ) ^ { 2 }$ , that $\begin{array} { r } { h _ { \mathbf { w } } ( x ) = \frac { 1 } { 1 + e ^ { - \mathbf { w } ^ { T } \mathbf { x } } } } \end{array}$ , that $\mathbf { w } ^ { T } \mathbf { x }$ denotes the inner-product and that 𝛼 is the learning rate. Hint: the derivative of the logistic function $\begin{array} { r } { g ( z ) \; = \; \frac { 1 } { 1 + e ^ { - z } } } \end{array}$ is $g ^ { \prime } ( z ) = g ( z ) ( 1 - g ( z ) )$ .
+
+$$
+\bigcirc w _ {2} \leftarrow w _ {2} - \alpha \left(y - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}} \left(1 - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) x _ {2}
+$$
+
+$$
+\bigcirc w _ {2} \leftarrow w _ {2} - \alpha \left(y - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}} \left(y - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) x _ {2}
+$$
+
+$$
+\bigcirc w _ {2} \leftarrow w _ {2} + \alpha \left(y - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}} x _ {2}
+$$
+
+$$
+\bigcirc w _ {2} \leftarrow w _ {2} + \alpha \left(y - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}} \left(1 - \frac {1}{1 + e ^ {- \mathbf {w} ^ {T} \mathbf {x}}}\right) x _ {2}
+$$
+
+**(e)** In this question we explore using approximate Q-learning to train a robot to complete a fixed, 2D grid maze in the fewest timesteps possible. The Q-function $Q ( s , a )$ and policy 𝜋(𝑠) will be represented by neural networks with input vector $s = \begin{bmatrix} x & y \end{bmatrix}$ , corresponding to the robot’s 𝑥 and 𝑦 coordinates in the grid, and actions $a \in \{ 1 , 2 , 3 , 4 \}$ representing {North, South, East, West} respectively.
+
+Albert trains the neural network shown below to learn his Q-values, where $w _ { x } , w _ { y } , w _ { a }$ are scalar weights and $b _ { x } , b _ { y } , b _ { a }$ are scalar biases.
+
+$q ( s = ( x , y ) , a )$ is the target Q-value calculated using transitions (assume that this is the value we want to get close to). The labels $D , E , F , G$ represent the output value of the preceding node:
+
+<!-- page: 11 -->
+
+SID:
+
+![](images/page_10_image_1.jpg)
+
+**(i)** [2 pts] Which of the following are true about the above neural network? Assume that we use an arbitrary differentiable loss function for the Loss node.
+
+□ Using a sigmoid activation instead of the currently used ReLU activation will lead to minimal loss in fewer iterations of training.
+
+□ As long as we train on enough data, we can guarantee a validation accuracy at least as good as our training accuracy.
+
+□ Removing $b _ { x }$ will not affect the expressivity of the neural network.
+
+□ During backpropagation, we compute $\frac { \partial L o s s } { \partial w _ { a } }$ , which we then can use to help compute $\frac { \partial L o s s } { \partial w _ { x } }$ and $\frac { \partial L o s s } { \partial w _ { y } }$ .
+
+\# None of the above
+
+**(ii)** [2 pts] Which of the following are equivalent to $\frac { \partial L o s s } { \partial b _ { x } } ?$
+
+$$
+\square \frac {\partial L o s s}{\partial F} \cdot \frac {\partial F}{\partial E} \cdot \frac {\partial E}{\partial D}
+$$
+
+$$
+\square \frac {\partial L o s s}{\partial F} \cdot \frac {\partial F}{\partial E} \cdot \frac {\partial E}{\partial D} \cdot \frac {\partial D}{\partial b _ {x}}
+$$
+
+$$
+\square \frac {\partial L o s s}{\partial F} \cdot \left(\frac {\partial F}{\partial E} \cdot \frac {\partial E}{\partial D} \cdot \frac {\partial D}{\partial b _ {x}} + \frac {\partial F}{\partial G} \cdot \frac {\partial G}{\partial b _ {a}} \cdot \frac {\partial b _ {a}}{\partial b _ {x}}\right)
+$$
+
+$$
+\square \frac {\partial L o s s}{\partial F} \cdot \left(\frac {\partial F}{\partial E} \cdot \frac {\partial E}{\partial D} \cdot \frac {\partial D}{\partial b _ {x}} + \frac {\partial F}{\partial G} \cdot \frac {\partial G}{\partial b _ {x}}\right)
+$$
+
+\# None of the above
+
+**(iii)** [2 pts] Which of the following loss functions should Albert use for this neural network?
+
+\# Mean-squared-error loss: $L ( \hat { y } , y ) = ( y - \hat { y } ) ^ { 2 }$
+
+$L ( { \hat { y } } , y ) = \left\{ { \begin{aligned} { } & { { } 0 { \mathrm { ~ i f ~ } } y = { \hat { y } } } \\ { } & { { } 1 { \mathrm { ~ o t h e r w i s e } } } \end{aligned} } \right.$
+
+\# Cross-entropy loss: $L ( \hat { y } , y ) = - [ t \log y ^ { \prime } + ( 1 - t ) \log ( 1 - y ^ { \prime } ) ]$ where 𝑡 =zero-one loss, $\begin{array} { r } { y ^ { \prime } = \frac { 1 } { 1 + e ^ { - \hat { y } } } } \end{array}$
+
+\# None of the above
+
+**(f)** After training the neural network for $Q ( s , a )$ , Albert trains another neural network to return a distribution of actions to take at the current state $\phi ( a | s )$ . $w _ { n }$ is a vector weight in $\mathbb { R } ^ { 4 }$ and $b _ { n }$ is a vector bias in $\mathbb { R } ^ { 4 }$ . This neural network is shown below:
+
+<!-- page: 12 -->
+
+![](images/page_11_image_0.jpg)
+
+The node 𝑄 in the above represents the neural network from the previous part, which takes in $( x , y , a )$ and returns a Qvalue. $\phi ( a | x , y )$ is a vector containing a probability distribution over all possible actions the robot can take from a state. Albert defines 𝐽 as a function that computes the expected Q-value weighted by the probabilities of the policy network output as follows:
+
+$$
+J (\phi , Q, x, y) = \sum_ {a} \phi (a | x, y) Q ((x, y), a)
+$$
+
+We want to train $\phi ( a | x , y )$ to put higher probability on actions associated with larger Q-values.
+
+**(i)** [1 pt] Which of the following can we use to appropriately update $w _ { y }$ at every iteration?
+
+Gradient descent
+
+Gradient ascent
+
+Stochastic gradient descent
+
+□ Perceptron learning rule
+
+\# None of the above
+
+**(ii)** [1 pt] Which of the following is / are the appropriate update rule(s) for $w _ { x }$ based on the above neural network and 𝐽 function? We set 𝛼 to be the learning rate.
+
+$$
+\square w _ {x} \leftarrow w _ {x} - \alpha \nabla_ {w _ {x}} J
+$$
+
+$$
+\square w _ {x} \leftarrow w _ {x} + \alpha \nabla_ {w _ {x}} J
+$$
+
+$$
+\square w _ {x} \leftarrow w _ {x} + \alpha \left(\nabla_ {w _ {x}} J + \nabla_ {b _ {x}} J\right)
+$$
+
+$$
+\square w _ {x} \leftarrow w _ {x} - \alpha \left(\nabla_ {w _ {x}} J - \left| \nabla_ {b _ {x}} J \right|\right)
+$$
+
+\# None of the above
+
+<!-- page: 13 -->
+
+## Q4. [15 pts] Keyboard Navigation
+
+Pacman is navigating in a map shown in the figure below (following the QWERTY keyboard). There are 𝑁 = 12 grid squares in total. Each sqaure is labeled with a letter and its coordinate. Let $C _ { t } = ( x _ { t } , y _ { t } )$ denote Pacman’s position at time step 𝑡, and it can move to any of the 6 directions to $(x_{t},y_{t}+1),(x_{t},y_{t}-1),(x_{t}-1,y_{t}),(x_{t}+1,y_{t}),(x_{t}+1,y_{t}+1),\mathrm{or} (x_{t}-1,y_{t}-1)$ in the next timestep. When Pacman attempts to move out of the map, i.e., $x _ { t + 1 } \notin \{ 1 , 2 , . . . , 6 \} \; \mathrm { o r } \; y _ { t + 1 } \notin \{ 1 , 2 \}$ , it will stay in the same square.
+
+We assume that Pacman knows the layout of the map. However, Pacman does not know its position, and also does not know whether the move succeeds (i.e., not staying in the same square) at each step. There are two sensors to help Pacman track its position: (1) $A _ { t }$ is the number of neighboring squares for $( x _ { t } , y _ { t } )$ . For example, $A_{t}=4\  when \ (x_{t},y_{t})=(2,2)$ . (2) $E _ { t }$ is the number of alphabetically adjacent letters among the neighboring squares. The table below summarizes the (deterministic) value of $E _ { t }$ for each square.
+
+| $\mathbf{Q}^{(1,2)}$ | $\mathbf{W}^{(2,2)}$ | $\mathbf{E}^{(3,2)}$ | $\mathbf{R}^{(4,2)}$ | $\mathbf{T}^{(5,2)}$ | $\mathbf{Y}^{(6,2)}$ |
+| --- | --- | --- | --- | --- | --- |
+| $\mathbf{A}^{(1,1)}$ | $\mathbf{S}^{(2,1)}$ | $\mathbf{D}^{(3,1)}$ | $\mathbf{F}^{(4,1)}$ | $\mathbf{G}^{(5,1)}$ | $\mathbf{H}^{(6,1)}$ |
+
+| 𝐶<sub>𝑡</sub> | 𝐸<sub>𝑡</sub> |
+| --- | --- |
+| Q, W, R, Y, A, S, T | 0 |
+| E, D, F, H | 1 |
+| G | 2 |
+
+**(a)** At step 𝑡 = 0, Pacman can be in any square of the map with equal probability. In this part, at each step 𝑡, Pacman can move in any of the 6 directions with an equal probability. Note that Pacman can stay in the same square by taking an invalid move out of the map. We denote $P r [ C _ { t } = ( x _ { t } , y _ { t } ) ]$ as the probability of Pacman at position $( x _ { t } , y _ { t } )$ at step 𝑡.
+
+**(i)** [1 pt] Assume that Pacman does not have access to sensor signals. What is $Pr[C_1 = (2,2)], \mathrm{i.e.}$ ., the probability that Pacman is at position (2, 2) when 𝑡 = 1? Please fill in your solution as a fraction below. Please reduce the fraction into the lowest terms. For example, 2∕72 should be simplified to $1 / 3 6$ . Please fill in 0∕1 if the answer is 0.
+
+```txt
+/
+```
+
+**(ii)** [1 pt] Pacman observes that $E _ { 0 } = 1$ . Given this evidence, what is $P r [ C _ { 1 } = ( 2 , 2 ) | E _ { 0 } = 1 ] ?$
+
+![](images/page_12_image_10.jpg)
+
+**(b)** Pacman decides to track its location by particle filtering. Let $( x _ { t } ^ { ( i ) } , y _ { t } ^ { ( i ) } )$ be the location of the 𝑖-th particle at step 𝑡. At step 𝑡 = 0, we have 4 particles initialized in {(1, 1), (1, 2), (6, 1), (6, 2)}.
+
+**(i)** [2 pts] Assume that after one forward simulation update, these particles reach states {(2, 1), (2, 2), (6, 2), (6, 2)} respectively. What is the probability of each of these transitions?
+
+Particle 1 from (1, 1) to (2, 1):
+
+![](images/page_12_image_14.jpg)
+
+Particle 4 from (6, 2) to (6, 2):
+
+**(ii)** [2 pts] What is the updated belief distribution based on the new particle values? Note that we have not incorporated any observations.
+
+$$
+P r [ C _ {1} = (2, 1) ] = \boxed {\quad} / \boxed {\quad}
+$$
+
+$$
+P r [ C _ {1} = (2, 2) ] = \boxed {\quad} / \boxed {\quad}
+$$
+
+𝑃 𝑟[𝐶<sub>1</sub> = (6, 2)] =
+
+**(iii)** [2 pts] Pacman observes that $A _ { 1 } = 4 .$ . Please fill in the probabilities given the evidence.
+
+$$
+P r [ C _ {1} = (2, 1) | A _ {1} = 4 ] = \boxed {\quad} / \boxed {\quad}
+$$
+
+<!-- page: 14 -->
+
+$$
+\begin{array}{l} P r [ C _ {1} = (2, 2) | A _ {1} = 4 ] = \boxed {\quad} / \boxed {\quad} \\ P r [ C _ {1} = (6, 2) | A _ {1} = 4 ] = \boxed {\quad} / \boxed {\quad} \end{array}
+$$
+
+**(c)** In this part, Pacman’s goal is to reach the position $( g _ { x } , g _ { y } ) = ( 1 , 2 )$ with the minimal cost. The cost of a move from $( x _ { t } , y _ { t } )$ to $( x _ { t + 1 } , y _ { t + 1 } )$ is $1 + E _ { t + 1 }$ . For example, a move from (3, 2) to (2, 2) has the cost of 1, and a move from (2, 2) to (3, 2) has the cost of 2. Note that even if Pacman stays in the same square after the move, Pacman still needs to pay the cost; e.g., moving left from (1, 1) has the cost of 1. Knowing its position at step $t = 0 .$ , Pacman performs a search to find the optimal sequence of actions to take. Let $h ( x , y )$ be the cost from (𝑥, 𝑦) to $( g _ { x } , g _ { y } )$
+
+**(i)** [3 pts] Which of the following are admissible heuristics for $h ( x , y ) ?$ Note that we know $( g _ { x } , g _ { y } ) = ( 1 , 2 )$ , i.e. the letter Q.
+
+$$
+\square | x - g _ {x} | + | g _ {y} - y |
+$$
+
+$$
+\square \min (| x - g _ {x} |, | g _ {y} - y |)
+$$
+
+$$
+\square \max (| x - g _ {x} |, | g _ {y} - y |)
+$$
+
+$$
+\square 2 \min (| x - g _ {x} |, | g _ {y} - y |)
+$$
+
+$$
+\square \min (| x - g _ {x} |, | g _ {y} - y |) + 1
+$$
+
+$$
+\square \max (| x - g _ {x} |, | g _ {y} - y |) + 1
+$$
+
+□ m $\mathbf { a } \mathbf { x } ( | x - g _ { x } | , | g _ { y } - y | ) + \mathbf { I } [ x > 3 ]$ , where $\mathbf { I } [ x > 3 ] = 1$ when $x > 3 .$ , and $\mathbf { I } [ x > 3 ] = 0$ otherwise.
+
+\# None of the above
+
+**(ii)** [2 pts] In this part and onwards, Pacman does not know the position at step $t = 0$ , but can infer possible positions according to the evidence.
+
+Pacman observes that $A _ { 0 } = 2$ and $E _ { 0 } = 1$ at step 𝑡 = 0. What is the cost of the path found by $\mathrm { A } ^ { * }$ Tree Search with <u>an admissibl</u>e heuristics?
+
+**(iii)** [2 pts] Pacman observes that $A _ { 0 }   =   3$ and $E _ { 0 }   =   0$ at step $t   =   0$ . We want to find an action sequence such that Pacman is guaranteed to be in $( g _ { x } ^ { \prime } , g _ { y } ^ { \prime } ) = ( 1 , 1 )$ after performing this action sequence. We also want to minimize the worst-case cost of this sequence among all possible initial positions $( x _ { 0 } , y _ { 0 } )$ . Pacman does not have access to $A _ { t }$ or $E _ { t }$ when $t > 0$ . What is the worst-case cost of this action sequence among all possible initial positions?
+
+<!-- page: 15 -->
+
+## Q5. [17 pts] Accommodating Course Robot
+
+The CS188 GSIs are designing an instructional robot to improve the mood of the students.
+
+At every timestep $t ,$ the robot stores in its state a list of ongoing CS188 assignments $S _ { t } ,$ and the robot takes action $A _ { t }$ to release a list of future assignments $S _ { t + 1 }$ . The released assignments $S _ { t + 1 }$ are also improved by student mood and feedback from the previous timestep 𝑡, denoted $M _ { t }$
+
+This gives us the Bayes net below.
+
+![](images/page_14_image_5.jpg)
+
+**(a)** [1 pt] Which of the below represent the conditional probability table for the variable $S _ { t + 1 }$ in the Bayes net shown above? We denote this quantity $T ( S _ { t + 1 } ) ,$ , as it is the transition model for 𝑆 at time $t + 1$
+
+$P ( S _ { t + 1 } | S _ { t } , A _ { t } )$
+
+□ $P ( S _ { t + 1 } | S _ { t } , A _ { t } , M _ { t } )$
+
+□ $P ( S _ { t + 1 } | S _ { t } , A _ { t } , M _ { t - 1 } )$
+
+\# None of the above
+
+**(b)** [1 pt] Which of the below represent the conditional probability table for the variable $M _ { t + 1 }$ with the Bayes net shown above? We denote this quantity $T ( M _ { t + 1 } )$ , as it is the transition model for 𝑀 at time $t + 1$
+
+$P ( M _ { t + 1 } | M _ { t } )$
+
+$P ( M _ { t + 1 } | M _ { t } , A _ { t } )$
+
+$P ( M _ { t + 1 } | S _ { t } , A _ { t } )$
+
+$P ( M _ { t + 1 } | S _ { t } )$
+
+$P ( M _ { t + 1 } | S _ { t + 1 } )$
+
+$P ( M _ { t + 1 } | M _ { t } , S _ { t + 1 } )$
+
+\# None of the above
+
+**(c)** [2 pts] What is the joint transition model for variables $( S _ { t } , M _ { t } )$ in the Bayes net above? We denote this quantity $T ( S _ { t + 1 } , M _ { t + 1 } )$ Include all choices that can be proved to be equivalent using conditional independence assertions expressed by the Bayes
+
+$$
+\square P (S _ {t + 1}, M _ {t + 1} | S _ {t}, M _ {t}, A _ {t})
+$$
+
+$$
+\square P (S _ {t + 1}, M _ {t + 1} | S _ {t}, M _ {t})
+$$
+
+$$
+\square T (S _ {t + 1}) T (M _ {t + 1})
+$$
+
+$$
+\square P (S _ {t + 1}, M _ {t + 1} | S _ {1: t}, M _ {1: t}, A _ {1: t})
+$$
+
+$$
+\square P (S _ {t + 1}, M _ {t + 1} | S _ {1: t})
+$$
+
+$$
+\square P (S _ {t + 1}, M _ {t + 1} | A _ {1: t})
+$$
+
+<!-- page: 16 -->
+
+$P ( S _ { t + 1 } , M _ { t + 1 } | M _ { 1 : t } )$
+
+\# None of the above
+
+**(d)** [2 pts] Is the above Bayes net Markovian in $( S _ { t } , M _ { t } ) ?$
+
+\# Yes, always Markovian
+
+\# No, never Markovian
+
+\# It is possibly Markovian, depending on whether the values $m _ { 1 : t }$ <sup>are</sup> given
+
+\# None of the above
+
+**(e)** [2 pts] You decide the above Bayes net is too complex, and want to try to simplify it down to the MDP format we’ve learned in class, where the transition dynamics are given by $P ( z _ { t + 1 } | z _ { t } , a _ { t } )$ for some single state variable $z _ { t } ,$ instead of the transition functions you computed in earlier subparts of this problem. What are valid approaches to do this?
+
+□ No modifications needed.
+
+Redefine states to be $z _ { t } = [ s _ { t } , m _ { t } ]$
+
+□ Redefine states to be $z _ { t } = [ s _ { t } , m _ { t - 1 } ] , \forall t \geq 1$
+
+Perform variable elimination on $m _ { t } , \forall t$
+
+Perform variable elimination on $s _ { t } , \forall t$
+
+\# None of the above
+
+For the remainder of the question, we denote the transitions in this setting as $( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } )$ , where $r _ { t } = R ( m _ { t + 1 } )$ , since the reward is entirely dictated by the mood of the student, and not the state of the robot. We use discount factor 𝛾.
+
+**(f)** [2 pts] What is the discounted sum of rewards if the robot observes a sequence of student moods $m _ { 0 } , . . . , m _ { N } ?$
+
+$\textstyle \sum _ { t = 0 } ^ { N - 1 } \gamma ^ { t } R ( m _ { t + 1 } )$
+
+$R ( m _ { 1 } ) + \gamma V ( [ s _ { 2 } , m _ { 2 } ] )$
+
+$R ( m _ { 1 } ) + \gamma \operatorname* { m a x } _ { a _ { 1 } } Q ( [ s _ { 2 } , m _ { 2 } ] , a _ { 1 } )$
+
+\# None of the above
+
+**(g)** [2 pts] Say you wish to run Q-learning on some dataset of transitions $D = \{ ( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } ) \} _ { i = 0 } ^ { N - 1 }$ . Each transition is generated by picking a state, taking an action, and observing the result.
+
+You initialize all $Q ( [ s _ { t } , m _ { t } ] , a _ { t } )   =   0 , \forall ( s _ { t } , m _ { t } ) , a _ { t }$ , and then use the below approach, largely plugging in the Q-learning algorithm from lecture:
+
+1. Randomly select some transition from the dataset $( s _ { t } , m _ { t } , a _ { t } , r _ { t } , s _ { t + 1 } , m _ { t + 1 } )$
+
+2. Compute 𝑠𝑎𝑚𝑝𝑙𝑒 $= r _ { t } + \gamma \operatorname* { m a x } _ { a _ { t + 1 } } Q ( [ s _ { t + 1 } , m _ { t + 1 } ] , a _ { t + 1 } )$
+
+3. $Q ( [ s _ { t } , m _ { t } ] , a _ { t } ) \gets \alpha ( s a m p l e ) + ( 1 - \alpha ) Q ( [ s _ { t } , m _ { t } ] , a _ { t } )$
+
+Given the transition dynamics encoded by the Bayes net in this problem, select whether or not this algorithm needs additional modifications, and why.
+
+\# Yes. Since the transition dynamics differ from an MDP, we need to account for that in our Q-learning update by weighing the samples according to their likelihood of occurring.
+
+$\bigcirc \quad \mathrm { N o . }$ The samples are generated from the true dynamics and will, after a sufficient number of updates, represent the #empirical probabilities of the true transition probabilities.
+
+**(h)** If we were to run value iteration, what would the update formula be for the value $V ( [ s _ { t } , m _ { t } ] )$ , the expected sum of discounted rewards acting optimally from $( s _ { t } , m _ { t } ) ?$
+
+For each letter **(A), (B), (C), (D), (E)** fill in a single entry for the term corresponding to the correct equation. Recall the definition of $T ( s _ { t + 1 } ) , T ( m _ { t + 1 } )$ , and $T ( s _ { t + 1 } , m _ { t + 1 } )$ from earlier subparts of this problem.
+
+$$
+V ([ s _ {t}, m _ {t} ]) \leftarrow (\mathbf {A}) (\mathbf {B}) (\mathbf {C}) \left[ (\mathbf {D}) + (\mathbf {E}) V ([ s _ {t + 1}, m _ {t + 1} ]) \right]
+$$
+
+<!-- page: 17 -->
+
+SID:
+
+**(i)** [1 pt] **(A)** $\bigcirc \max_{a} \bigcirc \max_{m_{t}} \bigcirc \max_{s_{t}} \bigcirc \max_{s_{t},m_{t}} \bigcirc \sum_{a} \bigcirc \sum_{s_{t}} \bigcirc \sum_{m_{t}} \bigcirc \sum_{s_{t},m_{t}} \bigcirc 1$
+
+**(ii)** [1 pt] **(B)** $\bigcirc \sum_{a} \bigcirc \sum_{m_{t+1}} \bigcirc \sum_{s_{t+1}} \bigcirc \gamma \bigcirc 0 \bigcirc 1$
+
+**(iii)** [1 pt] **(C)** # $\sum _ { s _ { t + 1 } } T ( s _ { t + 1 } , m _ { t + 1 } ) \; \bigcirc \; T ( m _ { t + 1 } ) \; \bigcirc \; T ( s _ { t + 1 } ) \; \bigcirc \; 0 \; \bigcirc \; 1$
+
+**(iv)** [1 pt] **(D)** # $R ( m _ { t + 1 } ) \enspace \bigcirc \enspace \sum _ { t = 1 } ^ { N } R ( m _ { t + 1 } ) \enspace \bigcirc \enspace \mathbf { 0 } \enspace \bigcirc \enspace \mathbf { 1 }$
+
+(v) [1 pt] (E) # 𝛾 # 1
+
+<!-- page: 18 -->
+
+## Q6. [14 pts] Holiday Planning
+
+After a stressful exam period, you plan to spend some time traveling in your new programmable self-driving car. Given two points on the map and a search procedure, the car calculates the optimal route from start to finish.
+
+**(a)** Let’s first frame this problem as a search problem. Consider the following directed graph:
+
+![](images/page_17_image_3.jpg)
+
+The edges of the graph indicate the cost of the path between the two nodes connected by that edge. We start at node 𝑆 and we want to reach node 𝐺. For the following sub-questions, assume ties resolve in such a way that states with earlier alphabetical order are expanded first.
+
+**(i)** [1 pt] We first decide to use the graph-search version of Breadth-First Search (BFS) to find the path from 𝑆 to 𝐺. What is the correct order in which states are going to be expanded? # S, A, D, E, G # S, A, B, D, E, G # S, A, B, D, C, E, F, G # S, A, D, F, H, G
+
+**(ii)** [2 pts] Now let’s take into account the path costs between nodes by running Uniform Cost Search (UCS). What is the final path that is going to be returned by UCS? # S, A, D, E, G # S, A, B, D, E, G # S, A, B, D, C, E, F, G # S, A, D, F, H, G
+
+**(iii)** [2 pts] Imagine that you are trying to implement informed search for a graph similar to the one above. Which of the following statements are true? Select all that apply.
+
+A heuristic function that is consistent must also be admissible.
+
+□ The graph-search version of 𝐴<sup>∗</sup>search is optimal, as long as our heuristic function is admissible.
+
+□ 𝐴<sup>∗</sup>search with a heuristic function ℎ(𝑛) = 0 for every node 𝑛 in the graph expands fewer nodes than UCS.
+
+□ A non-negative heuristic that never overestimates the cost to reach the goal is admissible.
+
+\# None of the above
+
+<!-- page: 19 -->
+
+**(b)** To account for probabilistic events, we will now frame the problem as a Markov Decision Process (MDP). We will focus on a subset of the nodes from the graph above:
+
+![](images/page_18_image_2.jpg)
+
+We start at node 𝐷 and we want to reach node 𝐺. From 𝐷 we can go either to node 𝐹 or 𝐸. We denote the action of moving from 𝐷 to 𝐹 as Move to F and the action of moving from 𝐷 to 𝐸 as Move to E. For other nodes, we say that we Move when we go from the node to its neighbor in the direction of the edge. Specifically, we can Move from 𝐹 to 𝐻, from 𝐻 to 𝐺, and from 𝐸 to 𝐺.
+
+**(i)** [2 pts] For actions Move to F, Move to E, and Move, we arrive at the destination node with a probability of 75%, otherwise we transition to a special state called Broke. Which of the following values for the transition function are accurate? Select all that apply.
+
+$$
+\square T (D, M o v e, s) = \frac {1}{4}, \text {for} s \in \{E, F \}
+$$
+
+$$
+\square T (s, \text {Move}, s ^ {\prime}) = \frac {3}{4}, \text {for} (s, s ^ {\prime}) \in \{(F, H), (H, G), (E, G) \}
+$$
+
+$$
+\square T (s, \text {Move}, \text {Broke}) = \frac {1}{4}, \text {for} s \in \{D, E, F, H \}
+$$
+
+□ 𝑇 (𝐷, Move, 𝐺) = 0
+
+\# None of the above
+
+**(ii)** [2 pts] At any point we can choose to take the action Stop, which will transition us to the special state Done and yield the reward indicated next to the node in the graph above. For instance, if we take the action Stop at node 𝐹, we obtain a reward of 1. Which of the following values for the reward function are accurate? Select all that apply.
+
+𝑅(𝐺, Stop, Done) = 4
+
+$$
+\square R (s, \text {Move}, s ^ {\prime}) = 0, \text {for} (s, s ^ {\prime}) \in \{(F, H), (H, G), (E, G) \}
+$$
+
+□ 𝑅(𝐷, Move to E, 𝐸) = 2
+
+□ 𝑅(𝑠, Stop, Done) = 2, for 𝑠 ∈ {𝐸, 𝐻}
+
+None of the above
+
+**(iii)** [3 pts] Now recall the policy improvement equation:
+
+$$
+\forall s, \pi_ {i + 1} (s) \leftarrow \arg \max _ {a} \sum_ {s ^ {\prime}} T (s, a, s ^ {\prime}) [ R (s, a, s ^ {\prime}) + \gamma V ^ {\pi_ {i}} (s ^ {\prime}) ]
+$$
+
+We begin by performing value iteration given the initial policy $\pi _ { 0 } \colon$
+
+| States | 𝐷 | 𝐹 | 𝐻 | 𝐸 | 𝐺 |
+| --- | --- | --- | --- | --- | --- |
+| 𝜋<sub>0</sub> | Move to F | Move | Stop | Move | Stop |
+| 𝑉<sup>𝜋0</sup> | 1.125 | 1.5 | 2 | 3 | 4 |
+
+What is the updated policy $\pi _ { 1 }$ for each of the following states, given the value of the initial policy above? Use the discount factor $\gamma = 1$
+
+| States | 𝐷 | 𝐹 | 𝐻 | 𝐸 | 𝐺 |
+| --- | --- | --- | --- | --- | --- |
+| 𝜋<sub>1</sub> |  |  |  |  |  |
+
+**(iv)** [2 pts] Consider the impact of the discount factor 𝛾 on the resulting policy. How would the policy $\pi _ { 1 }$ change if we set the discount factor to $\gamma = 0 ?$
+
+\# $\pi ( D ) = M o \nu e t o F , \pi ( F ) = M o \nu e , \pi ( H ) = M o \nu e , \pi ( E ) = M o \nu e , \pi ( G ) = S t o p$
+
+\# 𝜋(𝐷) = Stop, 𝜋(𝐹) = Stop, 𝜋(𝐻) = Stop, 𝜋(𝐸) = Stop, 𝜋(𝐺) = Stop
+
+\# 𝜋(𝐷) = Move to F, 𝜋(𝐹) = Move, 𝜋(𝐻) = Stop, 𝜋(𝐸) = Move, 𝜋(𝐺) = Stop
+
+$$
+\bigcirc \pi (D) = \text {Move to} E, \pi (F) = \text {Move}, \pi (H) = \text {Move}, \pi (E) = \text {Move}, \pi (G) = \text {Stop}
+$$

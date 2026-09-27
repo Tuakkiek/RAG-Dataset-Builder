@@ -1,0 +1,2133 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.08,
+            0.062,
+            0.524,
+            0.115
+          ],
+          "content": "CS 188 Introduction to Summer 2019Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.706,
+            0.075,
+            0.898,
+            0.113
+          ],
+          "content": "Midterm 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.152,
+            0.385,
+            0.168
+          ],
+          "content": "• You have approximately 80 minutes."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.177,
+            0.789,
+            0.193
+          ],
+          "content": "• The exam is closed book, closed calculator, and closed notes except your one-page crib sheet."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.202,
+            0.908,
+            0.234
+          ],
+          "content": "• Mark your answers ON THE EXAM ITSELF. If you are not sure of your answer you may wish to provide a brief explanation. All short answer sections can be successfully answered in a few sentences AT MOST."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.243,
+            0.338,
+            0.258
+          ],
+          "content": "• For multiple choice questions,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.263,
+            0.451,
+            0.281
+          ],
+          "content": "– \u0003 means mark all options that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.282,
+            0.41,
+            0.298
+          ],
+          "content": "means mark a single choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.3,
+            0.774,
+            0.316
+          ],
+          "content": "#– When selecting an answer, please fill in the bubble or square completely ( and \u0004)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.195,
+            0.333,
+            0.792,
+            0.526
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |\n| Student to your right |  |\n| Student to your left |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_9.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.299,
+            0.791,
+            0.689,
+            0.902
+          ],
+          "content": "| Q1. Probability | /12 |\n| --- | --- |\n| Q2. Bayes Net Inference | /25 |\n| Q3. HMMs: Help Your House Help You | /20 |\n| Q4. Variable Elimination | /12 |\n| Q5. Decision Networks and VPI | /21 |\n| Q6. Bayes Nets Representation | /10 |\n| Total | /100 |",
+          "captions": [
+            {
+              "bbox": [
+                0.418,
+                0.779,
+                0.569,
+                0.792
+              ],
+              "content": "For staff use only:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_0_table_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.499,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.306,
+            0.047,
+            0.681,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.948
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.164,
+            0.277,
+            0.346,
+            0.307
+          ],
+          "sub_type": "algorithm",
+          "content": "$(2\\times 2 - 1)\\times 2\\times 5 = 30$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.021,
+            0.832,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.405,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q1. [12 pts] Probability"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.084,
+            0.905,
+            0.1
+          ],
+          "content": "(a) A, B, C, and D are boolean random variables, and E is a random variable whose domain is $\\{ e _ { 1 } , e _ { 2 } , e _ { 3 } , e _ { 4 } , e _ { 5 } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.104,
+            0.908,
+            0.135
+          ],
+          "content": "(i) [5 pts] How many entries are in the following probability tables and what is the sum of the values in each table? Write “?” if there is not enough information given."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.389,
+            0.147,
+            0.675,
+            0.245
+          ],
+          "content": "| Table | Size | Sum |\n| --- | --- | --- |\n| P(e \\| B) | 2 | ? |\n| P(A,B \\| c) | 4 | 1 |\n| P(A,B \\| C,d,E) | 40 | 10 |\n| P(a,E \\| B,C) | 20 | ? |\n| P(A,c,E) | 10 | ? OR P(c) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.255,
+            0.907,
+            0.272
+          ],
+          "content": "(ii) [1 pt] What is the minimum number of parameters needed to fully specify the distribution $P ( A , B | C , d , E )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.32,
+            0.907,
+            0.337
+          ],
+          "content": "(iii) [1 pt] What is the minimum number of parameters needed to fully specify the distribution $P ( a , E | B , C )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.201,
+            0.348,
+            0.311,
+            0.366
+          ],
+          "content": "5 \\times 2 \\times 2 = 2 0",
+          "image_source": "images/page_2_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.393,
+            0.908,
+            0.461
+          ],
+          "content": "(b) Given the same set of random variables as defined in part (a). Write each of the following expressions in its simplest form, i.e., a single term. Make no independence assumptions unless otherwise stated. Write “Not possible” if it is not possible to simplify the expression without making further independence assumptions."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.478,
+            0.206,
+            0.496
+          ],
+          "content": "(i) [2 pts]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.505,
+            0.372,
+            0.538
+          ],
+          "content": "\\sum_ {a ^ {\\prime}} P (a ^ {\\prime} \\mid B, E) P (c \\mid a ^ {\\prime}, B, E)",
+          "image_source": "images/page_2_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.213,
+            0.561,
+            0.298,
+            0.58
+          ],
+          "content": "P (c \\mid B, E)",
+          "image_source": "images/page_2_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.696,
+            0.205,
+            0.714
+          ],
+          "content": "(ii) [3 pts]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.722,
+            0.395,
+            0.759
+          ],
+          "content": "\\frac {\\sum_ {a ^ {\\prime}} P (B \\mid a ^ {\\prime} , C) P (a ^ {\\prime} \\mid C) P (C)}{\\sum_ {d ^ {\\prime} , e ^ {\\prime}} P (d ^ {\\prime} \\mid e ^ {\\prime} , C) P (e ^ {\\prime} \\mid C) P (C)}",
+          "image_source": "images/page_2_equation_14.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.222,
+            0.782,
+            0.291,
+            0.8
+          ],
+          "content": "P (B \\mid C)",
+          "image_source": "images/page_2_equation_15.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.306,
+            0.72,
+            0.409,
+            0.781
+          ],
+          "content": "| C | P(C) |\n| --- | --- |\n| +c | (i) |\n| -c | (ii) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_0.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.523,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q2. [25 pts] Bayes Net Inference"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.414,
+            0.095,
+            0.571,
+            0.216
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.245,
+            0.412,
+            0.26
+          ],
+          "content": "Consider the Bayes net graph depicted above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.273,
+            0.772,
+            0.289
+          ],
+          "content": "(a) (i) [4 pts] Select all conditional independences that are enforced by this Bayes net graph."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.29,
+            0.624,
+            0.325
+          ],
+          "content": "\\begin{array}{c c c c} \\square A \\perp \\perp B & \\square A \\perp \\perp C | B & \\blacksquare D \\perp \\perp C | A, B & \\square D \\perp \\perp C \\\\ \\blacksquare A \\perp \\perp C & \\square A \\perp \\perp C | D & \\square A \\perp \\perp C | B, D & \\square D \\perp \\perp C | B \\end{array}",
+          "image_source": "images/page_3_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.329,
+            0.909,
+            0.375
+          ],
+          "content": "(ii) [3 pts] Because of these conditional independences, there are some distributions that cannot be represented by this Bayes net. What is the minimum set of edges that would need to be added such that the resulting Bayes net could represent any distribution?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.375,
+            0.555,
+            0.41
+          ],
+          "content": "\\begin{array}{c c c c} \\square A \\to C & \\blacksquare C \\to A & \\blacksquare C \\to D & \\square D \\to C \\\\ \\square D \\to A & \\square D \\to B & \\square B \\to C & \\square B \\to A \\end{array}",
+          "image_source": "images/page_3_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.412,
+            0.572,
+            0.428
+          ],
+          "content": "Either (C → A AND C → D) OR (A → C AND C → D)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.44,
+            0.909,
+            0.503
+          ],
+          "content": "(b) [6 pts] For the rest of this Q2, we use the original, unmodified Bayes net depicted at the beginning of the problem statement. Here are some partially-filled conditional probability tables on A, B, C, and D. Note that these are not necessarily factors of the Bayes net. Fill in the six blank entries such that this distribution can be represented by the Bayes net."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.176,
+            0.554,
+            0.348,
+            0.645
+          ],
+          "content": "\\begin{array}{c c c} \\hline A & C & P (C \\mid A) \\\\ \\hline + a & + c & 0. 8 \\\\ + a & - c & 0. 2 \\\\ - a & + c & 0. 8 \\\\ - a & - c & 0. 2 \\\\ \\hline \\end{array}",
+          "image_source": "images/page_3_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.366,
+            0.516,
+            0.6,
+            0.681
+          ],
+          "content": "\\begin{array}{c c c c} \\hline A & B & D & P (D \\mid A, B) \\\\ \\hline + a & + b & + d & 0. 6 0 \\\\ + a & + b & - d & 0. 4 0 \\\\ + a & - b & + d & 0. 1 0 \\\\ + a & - b & - d & 0. 9 0 \\\\ - a & + b & + d & 0. 2 0 \\\\ - a & + b & - d & 0. 8 0 \\\\ - a & - b & + d & 0. 5 0 \\\\ - a & - b & - d & 0. 5 0 \\end{array}",
+          "image_source": "images/page_3_equation_11.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.619,
+            0.517,
+            0.849,
+            0.681
+          ],
+          "content": "\\begin{array}{c c c c} \\hline A & B & C & P (C \\mid A, B) \\\\ \\hline + a & + b & + c & 0. 5 0 \\\\ + a & + b & - c & 0. 5 0 \\\\ + a & - b & + c & 0. 2 0 \\\\ + a & - b & - c & 0. 8 0 \\\\ - a & + b & + c & 0. 9 0 \\\\ - a & + b & - c & 0. 1 0 \\\\ - a & - b & + c & 0. 4 0 \\\\ - a & - b & - c & 0. 6 0 \\\\ \\hline \\end{array}",
+          "image_source": "images/page_3_equation_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.427,
+            0.693,
+            0.588,
+            0.809
+          ],
+          "content": "\\begin{array}{c c c c} \\hline A & B & C & D \\\\ \\hline + a & + b & + c & + d \\\\ + a & + b & - c & - d \\\\ + a & - b & + c & + d \\\\ + a & - b & - c & - d \\\\ \\vdots & \\vdots & \\vdots & \\vdots \\\\ \\hline \\end{array}",
+          "image_source": "images/page_3_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.639,
+            0.711,
+            0.672,
+            0.727
+          ],
+          "content": "(iii)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.64,
+            0.729,
+            0.672,
+            0.745
+          ],
+          "content": "(iv)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.641,
+            0.748,
+            0.67,
+            0.764
+          ],
+          "content": "(v)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.639,
+            0.765,
+            0.672,
+            0.782
+          ],
+          "content": "(vi)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.831,
+            0.146,
+            0.848
+          ],
+          "content": "(i):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.234,
+            0.829,
+            0.263,
+            0.845
+          ],
+          "content": "0.8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.388,
+            0.831,
+            0.417,
+            0.848
+          ],
+          "content": "(ii):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.505,
+            0.829,
+            0.534,
+            0.845
+          ],
+          "content": "0.2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.654,
+            0.831,
+            0.688,
+            0.848
+          ],
+          "content": "(iii):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.733,
+            0.829,
+            0.845,
+            0.846
+          ],
+          "content": "0. 6 * 0. 5 = 0. 3",
+          "image_source": "images/page_3_equation_23.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.021,
+            0.832,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.059,
+            0.154,
+            0.075
+          ],
+          "content": "(iv):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.199,
+            0.055,
+            0.313,
+            0.073
+          ],
+          "content": "0. 4 * 0. 5 = 0. 2",
+          "image_source": "images/page_4_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.388,
+            0.059,
+            0.416,
+            0.075
+          ],
+          "content": "(v):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.654,
+            0.059,
+            0.688,
+            0.075
+          ],
+          "content": "(vi):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.729,
+            0.055,
+            0.849,
+            0.073
+          ],
+          "content": "0. 9 * 0. 8 = 0. 7 2",
+          "image_source": "images/page_4_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.107,
+            0.489,
+            0.123
+          ],
+          "content": "The original Bayes net is depicted again for convenience:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.414,
+            0.145,
+            0.571,
+            0.265
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.281,
+            0.909,
+            0.327
+          ],
+          "content": "(c) [3 pts] What is the minimal set of edges that needs to be removed from the above graph, such that it is possible to construct a Markov random field (i.e. an undirected graphical model) that is I-equivalent to the resulting graph? If no edges need to be removed, select ‘None’."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.329,
+            0.715,
+            0.347
+          ],
+          "content": "\\square A \\rightarrow B \\quad \\blacksquare C \\rightarrow B \\quad \\square A \\rightarrow D \\quad \\square B \\rightarrow D \\quad \\square B \\rightarrow D \\quad \\bigcirc \\text {None}",
+          "image_source": "images/page_4_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.36,
+            0.483,
+            0.376
+          ],
+          "content": "(d) Given the following conditional probability tables:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.209,
+            0.425,
+            0.312,
+            0.473
+          ],
+          "content": "| A | P(A) |\n| --- | --- |\n| +a | 0.05 |\n| -a | 0.95 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_11.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.33,
+            0.425,
+            0.431,
+            0.473
+          ],
+          "content": "| C | P(C) |\n| --- | --- |\n| +c | 0.3 |\n| -c | 0.7 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_table_12.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.45,
+            0.38,
+            0.624,
+            0.519
+          ],
+          "content": "\\begin{array}{c c c c} \\hline P (B & A, C) \\\\ \\hline + a & + c & + b & 0. 6 5 \\\\ + a & + c & - b & 0. 3 5 \\\\ + a & - c & + b & 0. 1 5 \\\\ + a & - c & - b & 0. 8 5 \\\\ - a & + c & + b & 0. 2 5 \\\\ - a & + c & - b & 0. 7 5 \\\\ - a & - c & + b & 0. 5 5 \\\\ - a & - c & - b & 0. 4 5 \\\\ \\hline \\end{array}",
+          "image_source": "images/page_4_equation_13.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.644,
+            0.379,
+            0.818,
+            0.518
+          ],
+          "content": "\\begin{array}{c c c c} \\hline P (D & A, B) \\\\ \\hline + a & + b & + d & 0. 6 0 \\\\ + a & + b & - d & 0. 4 0 \\\\ + a & - b & + d & 0. 1 0 \\\\ + a & - b & - d & 0. 9 0 \\\\ - a & + b & + d & 0. 2 0 \\\\ - a & + b & - d & 0. 8 0 \\\\ - a & - b & + d & 0. 5 0 \\\\ - a & - b & - d & 0. 5 0 \\end{array}",
+          "image_source": "images/page_4_equation_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.523,
+            0.908,
+            0.568
+          ],
+          "content": "(i) [5 pts] Suppose that we want to use likelihood weighted sampling to approximate $P ( A \\mid + b , + c , + d )$ However, we accidentally forgot to fix the value of C and $D ,$ and instead we sampled them just like unconditioned variables!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.571,
+            0.906,
+            0.617
+          ],
+          "content": "For each of the samples below, write what the weight of the sample should be, in order to correctly approximate $P(A \\mid  + b,  + c,  + d)$ . If the weight of the sample does not matter for calculating $P(A \\mid  + b,  + c,  + d)$ write ‘reject’ instead (since we would not use that sample)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.641,
+            0.281,
+            0.658
+          ],
+          "content": "(+ a, + b, - c, + d):",
+          "image_source": "images/page_4_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.359,
+            0.64,
+            0.405,
+            0.655
+          ],
+          "content": "reject"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.696,
+            0.281,
+            0.713
+          ],
+          "content": "(+ a, + b, + c, + d):",
+          "image_source": "images/page_4_equation_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.365,
+            0.694,
+            0.399,
+            0.709
+          ],
+          "content": "0.65"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.75,
+            0.281,
+            0.767
+          ],
+          "content": "(- a, + b, + c, + d):",
+          "image_source": "images/page_4_equation_21.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.365,
+            0.748,
+            0.399,
+            0.763
+          ],
+          "content": "0.25"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.813,
+            0.909,
+            0.859
+          ],
+          "content": "(ii) [4 pts] Let’s say we’re trying to approximate $P ( A \\mid - b )$ using Gibbs sampling. Suppose the most recent sample is $( + a , - b , + c , + d )$ If we choose D to resample, what is the probability of resampling +d and −d respectively?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.5,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.021,
+            0.832,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.043,
+            0.734,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q3. [20 pts] HMMs: Help Your House Help You"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.13
+          ],
+          "content": "Imagine you have a smart house that wants to track your location within itself so it can turn on the lights in the room you are in and make you food in your kitchen. Your house has 4 rooms $( A , B , C , D )$ in the floorplan below (A is connected to B and D, B is connected to A and $\\mathrm { C } ,$ C is connected to B and D, and D is connected to A and C):"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.368,
+            0.154,
+            0.619,
+            0.216
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.246,
+            0.909,
+            0.308
+          ],
+          "content": "At the beginning of the day $( t = 0 )$ , your probabilities of being in each room are $p _ { A } , p _ { B } , p _ { C } ,$ , and $p _ { D }$ for rooms A, B, C, and D, respectively, and at each time t your position (following a Markovian process) is given by $X _ { t }$ . At each time, your probability of staying in the same room is $q _ { 0 } ,$ your probability of moving clockwise to the next room is $q _ { 1 }$ , and your probability of moving counterclockwise to the next room is $q _ { - 1 } = 1 - q _ { 0 } - q _ { 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.32,
+            0.909,
+            0.35
+          ],
+          "content": "(a) [3 pts] Initially, assume your house has no way of sensing where you are. What is the probability that you will be in room D at time $t = 1 ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.132,
+            0.365,
+            0.8,
+            0.412
+          ],
+          "content": "\\begin{array}{l l l l} \\bigcirc & q _ {0} p _ {D} & \\bigcirc & q _ {0} p _ {D} + q _ {1} p _ {A} + q _ {- 1} p _ {C} + 2 q _ {1} p _ {B} \\\\ \\bigcirc & q _ {0} p _ {D} + q _ {- 1} p _ {A} + q _ {1} p _ {C} & \\bigcirc & q _ {1} p _ {A} + q _ {1} p _ {C} + q _ {0} p _ {D} \\end{array} \\quad \\begin{array}{l l l l} \\bullet & q _ {0} p _ {D} + q _ {1} p _ {A} + q _ {- 1} p _ {C} \\\\ \\bigcirc & \\text {None of these} \\end{array}",
+          "image_source": "images/page_6_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.415,
+            0.908,
+            0.462
+          ],
+          "content": "This probability is given by the sum of three probabilities: 1) $q _ { 0 } p _ { D } ;$ You are in room D to start $( p _ { D } )$ and stay there (q<sub>0</sub>), 2) q<sub>1</sub>p<sub>A</sub>: You are in room A to start $( p _ { A } )$ and move clockwise to room D (q<sub>1</sub>), and $3) $q _ { - 1 } p _ { C } \\colon$$ You are in room C to start $( p _ { C } )$ and move counterclockwise to room D (q−1)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.486,
+            0.909,
+            0.533
+          ],
+          "content": "Now assume your house contains a sensor $M ^ { A }$ that detects motion (+m) or no motion (-m) in room A. However, the sensor is a bit noisy and can be tricked by movement in adjacent rooms, resulting in the conditional distributions for the sensor given in the table below. The prior distribution for the sensor’s output is also given."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.115,
+            0.554,
+            0.885,
+            0.626
+          ],
+          "content": "<table><tbody><tr><td>M<sup>A</sup></td><td>P(M<sup>A</sup> | X = A)</td><td>P(M<sup>A</sup> | X = B)</td><td>P(M<sup>A</sup> | X = C)</td><td>P(M<sup>A</sup> | X = D)</td><td rowspan=\"3\"></td><td>M<sup>A</sup></td><td>P(M<sup>A</sup>)</td></tr><tr><td>+m<sup>A</sup></td><td>1 - 2γ</td><td>γ</td><td>0.0</td><td>γ</td><td>+m<sup>A</sup></td><td>0.5</td></tr><tr><td>-m<sup>A</sup></td><td>2γ</td><td>1 - γ</td><td>1.0</td><td>1 - γ</td><td>-m<sup>A</sup></td><td>0.5</td></tr></tbody></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.638,
+            0.908,
+            0.685
+          ],
+          "content": "(b) [3 pts] You decide to help your house to track your movements using a particle filter with three particles. At time $t = T .$ , the particles are at $X^{0} = A,X^{1} = B,X^{2} = D$ . What is the probability that the particles will be resampled as $X ^ { 0 } = X ^ { 1 } = X ^ { 2 } = A$ after time elapse? Select all terms in the product."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "7"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.127,
+            0.7,
+            0.746,
+            0.72
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.724,
+            0.908,
+            0.77
+          ],
+          "content": "The probability that all particles will be resampled as being in room A is $q _ { 0 } q _ { 1 } q _ { - 1 }$ since particle $X ^ { 0 }$ stays in A with probability $q _ { 0 } ,$ particle $X ^ { 1 }$ moves clockwise to A with probability $q _ { 1 }$ , and particle $X ^ { 2 }$ moves counterclockwise with probability $q _ { - 1 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.795,
+            0.908,
+            0.827
+          ],
+          "content": "(c) [3 pts] Assume that the particles are actually resampled after time elapse as $X ^ { 0 } = D , X ^ { 1 } = B , X ^ { 2 } = C$ , and the sensor observes $M ^ { A } = - m ^ { A }$ . What are the particle weights given the observation?"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.129,
+            0.043,
+            0.898,
+            0.144
+          ],
+          "content": "<table><tr><td>Particle</td><td colspan=\"10\">Weight</td></tr><tr><td> $X^{0} = D$ </td><td colspan=\"10\">○ γ ● 1-γ ○ 1-2γ ○ 0.0 ○ 1.0 ○ 2γ ○ None of these</td></tr><tr><td> $X^{1} = B$ </td><td colspan=\"10\">○ γ ● 1-γ ○ 1-2γ ○ 0.0 ○ 1.0 ○ 2γ ○ None of these</td></tr><tr><td> $X^{2} = C$ </td><td colspan=\"10\">○ γ ○ 1-γ ○ 1-2γ ○ 0.0 ● 1.0 ○ 2γ ○ None of these</td></tr></table>",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.148,
+                0.908,
+                0.195
+              ],
+              "content": "We can read these weights off of the tables given above. The weight for $X ^ { 0 }$ is given by $P ( M ^ { A } = - m ^ { A } | X =$ $\\overline { { D } } ) = 1 - \\gamma$ , the weight for $X ^ { 1 }$ is given by $P ( M ^ { A } = - m ^ { A } | X = B ) = 1 - \\gamma$ , and the weight for $X ^ { 2 }$ is given by $\\vec { P ( M ^ { A } = - m ^ { A } | X = C ) } = 1$"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_table_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.182,
+            0.26,
+            0.804,
+            0.416
+          ],
+          "content": "| M<sup>B</sup> | P(M<sup>B</sup> \\| X = A) | P(M<sup>B</sup> \\| X = B) | P(M<sup>B</sup> \\| X = C) | P(M<sup>B</sup> \\| X = D) |\n| --- | --- | --- | --- | --- |\n| +m<sup>B</sup> | γ | 1 - 2γ | γ | 0.0 |\n| -m<sup>B</sup> | 1 - γ | 2γ | 1 - γ | 1.0 |\n| M<sup>D</sup> | P(M<sup>D</sup> \\| X = A) | P(M<sup>D</sup> \\| X = B) | P(M<sup>D</sup> \\| X = C) | P(M<sup>D</sup> \\| X = D) |\n| +m<sup>D</sup> | γ | 0.0 | γ | 1 - 2γ |\n| -m<sup>D</sup> | 1 - γ | 1.0 | 1 - γ | 2γ |",
+          "captions": [
+            {
+              "bbox": [
+                0.077,
+                0.207,
+                0.908,
+                0.24
+              ],
+              "content": "Now, assume your house also contains sensors $M ^ { B }$ and $M ^ { D }$ in rooms B and D, respectively, with the conditional distributions of the sensors given below and the prior equivalent to that of sensor $M ^ { \\hat { A } }$"
+            },
+            {
+              "bbox": [
+                0.086,
+                0.428,
+                0.908,
+                0.475
+              ],
+              "content": "(d) [6 pts] Again, assume that the particles are actually resampled after time elapse as $X ^ { 0 } = D , X ^ { 1 } = B , X ^ { 2 } = C$ The sensor readings are now $\\tilde { M ^ { A } } = - m ^ { A } , M ^ { B } = \\tilde { - m ^ { B } } , \\tilde { M ^ { D } } = + m ^ { D }$ . What are the particle weights given the observations?"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_table_3.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.195,
+            0.49,
+            0.831,
+            0.726
+          ],
+          "content": "| Particle | Weight |\n| --- | --- |\n| X<sup>0</sup> = D | 1#- 3γ + 2γ<sup>2</sup> #2 - γ 1#- 2γ + γ<sup>2</sup> # None of theseγ<sup>2</sup> - 2γ<sup>3</sup> 3 - 2γ 0.0 γ - γ<sup>2</sup> + γ<sup>3</sup># # # |\n| X<sup>1</sup> = B | γ<sup>2</sup> - 2γ<sup>3</sup> 3 - 2γ 0.0 γ - γ<sup>2</sup> + γ<sup>3</sup>1#- 3γ + 2γ<sup>2</sup> #2 - γ 1 - 2γ + γ<sup>2</sup># None of these# # # # |\n| X<sup>2</sup> = C | γ<sup>2</sup> - 2γ<sup>3</sup> 3 - 2γ 0.0 γ - γ<sup>2</sup> + γ<sup>3</sup># 1#- 3γ + 2γ<sup>2</sup> # #2 - γ # #1 - 2γ + γ<sup>2</sup># None of these |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.118,
+                0.73,
+                0.909,
+                0.795
+              ],
+              "content": "The weight for $X ^ { 0 }$ is given by $P ( M ^ { A }   =   - m ^ { A } | X   =   D ) P ( M ^ { B }   =   - m ^ { B } | X   =   D ) P ( m ^ { D }   =   + m ^ { D } | X   =   D )   =$ $( 1 - \\gamma ) \\dot { ( 1 . 0 ) } ( 1 - 2 \\gamma ) = \\dot { 1 } - 3 \\gamma \\dot { + } 2 \\gamma ^ { 2 }$ , the weight for $X ^ { 1 }$ is given by $P(M^{A} = -m^{A}|X = B)P(M^{B} = -m^{B}|X =$ $B ) P ( M ^ { D } = + m ^ { D } | X = B ) = ( 1 - \\gamma ) ( 2 \\gamma ) ( 0 . 0 ) = 0 . 0 ,$ and the weight for $X ^ { 2 }$ is given by $P ( M ^ { A } = - m ^ { A } | X =$ C) ${ } ^ { 1 } P ( M ^ { B } = - m ^ { B } | X = C ) P ( M ^ { A } = + m ^ { D } | X = C ) = ( 1 . 0 ) ( 1 - \\gamma ) ( \\gamma ) = \\gamma - \\gamma ^ { 2 }$"
+            }
+          ],
+          "image_source": "images/page_7_table_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "8"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.818,
+            0.925,
+            0.88
+          ],
+          "content": "The sequence of observations from each sensor are expressed as the following: $m _ { 0 : t } ^ { A }$ are all measurements $m _ { 0 } ^ { A } , m _ { 1 } ^ { A } , \\ldots , m _ { t } ^ { A }$ from sensor $M ^ { A } , m _ { 0 : t } ^ { B }$ are all measurements $\\tilde { m _ { 0 } ^ { B } , m _ { 1 } ^ { B } , \\ldots , m _ { t } ^ { B } }$ from sensor $\\hat { M } ^ { B }$ , and $m _ { 0 : t } ^ { D }$ are all measurements $m _ { 0 } ^ { D } , m _ { 1 } ^ { D } , \\ldots , m _ { t } ^ { D }$ from sensor $M ^ { D }$ . Your house can get an accurate estimate of where you are at a given time t using the forward algorithm. The forward algorithm update step is shown here:"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.022,
+            0.832,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.185,
+            0.071,
+            0.905,
+            0.091
+          ],
+          "content": "P (X _ {t} \\mid m _ {0: t} ^ {A}, m _ {0: t} ^ {B}, m _ {0: t} ^ {D}) \\propto P (X _ {t}, m _ {0: t} ^ {A}, m _ {0: t} ^ {B}, m _ {0: t} ^ {D})\\tag{1}",
+          "image_source": "images/page_8_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.355,
+            0.093,
+            0.905,
+            0.121
+          ],
+          "content": "= \\sum_ {x _ {t - 1}} P (X _ {t}, x _ {t - 1}, m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B}, m _ {0: t - 1} ^ {D})\\tag{2}",
+          "image_source": "images/page_8_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.356,
+            0.13,
+            0.905,
+            0.163
+          ],
+          "content": "= \\sum_ {x _ {t - 1}} \\underline {{\\quad}} P (X _ {t} \\mid x _ {t - 1}) P (x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B}, m _ {0: t - 1} ^ {D})\\tag{3}",
+          "image_source": "images/page_8_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.175,
+            0.907,
+            0.207
+          ],
+          "content": "(e) [5 pts] Which of the following expression(s) correctly complete the missing expression in line (3) above (regardless of whether they are available to the algorithm during execution)? Fill in all that apply."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.222,
+            0.908,
+            0.243
+          ],
+          "content": "P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}, x _ {t - 1}) \\quad \\square P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid x _ {t - 1}) \\quad \\square P (m _ {t} ^ {A} \\mid x _ {t - 1}) P (m _ {t} ^ {B} \\mid x _ {t - 1}) P (m _ {t} ^ {D} \\mid x _ {t - 1})",
+          "image_source": "images/page_8_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.126,
+            0.252,
+            0.905,
+            0.273
+          ],
+          "content": "\\square P (m _ {t} ^ {A} \\mid m _ {0: t - 1} ^ {A}) P (m _ {t} ^ {B} \\mid m _ {0: t - 1} ^ {B}) P (m _ {t} ^ {D} \\mid m _ {0: t - 1} ^ {D}) \\quad \\blacksquare P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}, x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B}, m _ {0: t - 1} ^ {D})",
+          "image_source": "images/page_8_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.19,
+            0.282,
+            0.842,
+            0.302
+          ],
+          "content": "\\begin{array}{c} \\blacksquare P (m _ {t} ^ {A} \\mid X _ {t}) P (m _ {t} ^ {B} \\mid X _ {t}) P (m _ {t} ^ {D} \\mid X _ {t}) \\end{array} \\quad \\begin{array}{c} \\blacksquare P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}) \\end{array} \\quad \\bigcirc \\quad \\text {None of these}",
+          "image_source": "images/page_8_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.305,
+            0.439,
+            0.321
+          ],
+          "content": "Using the chain rule from the previous step,"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.33,
+            0.885,
+            0.551
+          ],
+          "content": "\\begin{array}{l} P (X _ {t}, x _ {t - 1}, m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B}, m _ {0: t - 1} ^ {D}) = [ P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}, x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B}, m _ {0: t - 1} ^ {D}) \\\\ \\qquad \\qquad \\qquad P (X _ {t} \\mid x _ {t - 1}) P (x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B} m _ {0: t - 1} ^ {D}) ] \\\\ \\qquad = [ P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}, x _ {t - 1}) \\\\ \\qquad \\qquad P (X _ {t} \\mid x _ {t - 1}) P (x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B} m _ {0: t - 1} ^ {D}) ] \\\\ \\qquad \\text {(indep. of measurements from prev.measurements)} \\\\ \\qquad = [ P (m _ {t} ^ {A}, m _ {t} ^ {B}, m _ {t} ^ {D} \\mid X _ {t}) \\\\ \\qquad \\qquad P (X _ {t} \\mid x _ {t - 1}) P (x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B} m _ {0: t - 1} ^ {D}) ] \\\\ \\qquad \\text {(indep. of measurements from prev.states)} \\\\ \\qquad = [ P (m _ {t} ^ {A} \\mid X _ {t}) P (m _ {t} ^ {B} \\mid X _ {t}) P (m _ {t} ^ {D} \\mid X _ {t}) \\\\ \\qquad \\qquad P (X _ {t} \\mid x _ {t - 1}) P (x _ {t - 1}, m _ {0: t - 1} ^ {A}, m _ {0: t - 1} ^ {B} m _ {0: t - 1} ^ {D}) ] \\\\ \\qquad \\text {(indep.of measurements from each other)} \\end{array}",
+          "image_source": "images/page_8_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.563,
+            0.704,
+            0.579
+          ],
+          "content": "All of the expressions on the right side of the above equations should be selected."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.532,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q4. [12 pts] Variable Elimination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.082,
+            0.327,
+            0.1
+          ],
+          "content": "Consider the following Bayes Net:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.333,
+            0.129,
+            0.653,
+            0.25
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.285,
+            0.535,
+            0.302
+          ],
+          "content": "(a) [4 pts] Given the following domain sizes for the variables:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.416,
+            0.305,
+            0.612,
+            0.456
+          ],
+          "content": "| Variable | Domain Size |\n| --- | --- |\n| A | $2^{2}$ |\n| B | $2^{3}$ |\n| C | $2^{8}$ |\n| D | $2^{5}$ |\n| E | $2^{6}$ |\n| F | $2^{7}$ |\n| G | $2^{8}$ |\n| H | $2^{9}$ |\n| I | $2^{10}$ |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.46,
+            0.908,
+            0.493
+          ],
+          "content": "What is the size of the biggest factor generated when we perform variable elimination with an alphabetical elimination order for the query $P ( G = g \\mid I = i )$ for some $g \\in \\mathrm { d o m } ( G )$ and $i \\in \\mathrm { d o m } ( I ) ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.189,
+            0.507,
+            0.218,
+            0.524
+          ],
+          "content": "2^{27}",
+          "image_source": "images/page_9_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.543,
+            0.409,
+            0.56
+          ],
+          "content": "Eliminating A generates f(B) of size $2 ^ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.562,
+            0.579,
+            0.579
+          ],
+          "content": "Eliminating B generates $f ( D , E , F , g , C )$ of size $2 ^ { 5 + 6 + 7 + 8 } = 2 ^ { 2 6 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.582,
+            0.592,
+            0.6
+          ],
+          "content": "Eliminating C generates $f ( D , E , F , g , H , i )$ of size $2^{5+6+7+9}=2^{27}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.603,
+            0.632,
+            0.62
+          ],
+          "content": "Eliminating $D , \\ldots , H$ generates factors of size strictly smaller than $2 ^ { 2 7 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.639,
+            0.907,
+            0.706
+          ],
+          "content": "(b) [3 pts] Which is the variable whose elimination generates the biggest factor if we perform variable elimination in alphabetical order for the query $P ( G = g \\mid I = i )$ for some $g \\in \\mathrm { d o m } ( G )$ and $i \\in \\mathrm { d o m } ( I ) ?$ # A # B C # D # E # F # G # H # I # None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.71,
+            0.439,
+            0.727
+          ],
+          "content": "The solution follows from the previous part."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.754,
+            0.909,
+            0.815
+          ],
+          "content": "(c) [5 pts] Now, suppose the variables are all boolean variables, give an elimination ordering that generates the smallest largest factor for the query $P ( A = a \\mid I = i )$ for some $a \\in \\operatorname { d o m } ( A )$ and i ∈ dom(I). Leave the extra boxes blank. For example, if your elimination ordering is $X , Y , Z ,$ you should only fill in the first 3 boxes."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.12,
+            0.821,
+            0.844,
+            0.851
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_14.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.854,
+            0.682,
+            0.87
+          ],
+          "content": "\\- Any permutation of {D, E, F, H}, followed by any permutation of $\\{ B , C , G \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.87,
+            0.601,
+            0.885
+          ],
+          "content": "\\- Alternative solutions like {D, E, F, B, G, C, H} are also accepted."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.021,
+            0.832,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.043,
+            0.628,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q5. [21 pts] Decision Networks and VPI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.075,
+            0.083,
+            0.91,
+            0.146
+          ],
+          "content": "Valerie has just found a cookie on the ground. She is concerned that the cookie contains raisins, which she really dislikes but she still wants to eat the cookie. If she eats the cookie and it contains raisins she will receive a utility of −100 and if the cookie doesn’t contain raisins she will receive a utility of 10. If she doesn’t eat the cookie she will get 0 utility. The cookie contains raisins with probability 0.1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.157,
+            0.909,
+            0.189
+          ],
+          "content": "(a) [3 pts] We want to represent this decision network as an expectimax game tree. Fill in the nodes of the tree below, with the top node representing her maximizing choice."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.234,
+            0.193,
+            0.792,
+            0.4
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.414,
+            0.532,
+            0.432
+          ],
+          "content": "(b) [1 pt] Should Valerie eat the cookie? # Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.444,
+            0.909,
+            0.536
+          ],
+          "content": "(c) [3 pts] Valerie can now smell the cookie to judge whether it has raisins before she eats it. However, since she dislikes raisins she does not have much experience with them and cannot recognize their smell well. As a result she will incorrectly identify raisins when there are no raisins with probability 0.2 and will incorrectly identify no raisins when there are raisins with probability 0.3. This decision network can be represented by the diagram below where E is her choice to eat, U is her utility earned, R is whether the cookie contains raisins, and S is her attempt at smelling."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.402,
+            0.544,
+            0.626,
+            0.645
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.66,
+            0.908,
+            0.691
+          ],
+          "content": "Valerie has just smelled the cookie and she thinks it doesn’t have raisins. Write the probability, X, that the cookie has raisins given that she smelled no raisins as a simplest form fraction or decimal."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.695,
+            0.722,
+            0.757
+          ],
+          "content": "\\begin{array}{l} X = \\boxed {0. 0 4} \\\\ P (+ r | - s) = \\frac {P (- s | + r) P (+ r)}{P (- s)} = \\frac {P (- s | + r) P (+ r)}{P (- s | + r) P (+ r) + P (- s | - r) P (- r)} = \\frac {. 3 * . 1}{. 3 * . 1 + . 8 * . 9} = \\frac {. 0 3}{. 7 5} = . 0 4 \\end{array}",
+          "image_source": "images/page_10_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.766,
+            0.909,
+            0.797
+          ],
+          "content": "(d) [3 pts] What is her maximum expected utility, Y given that she smelled no raisins? You can answer in terms of X or as a simplest form fraction or decimal."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.116,
+            0.8,
+            0.752,
+            0.903
+          ],
+          "content": "\\begin{array}{l} Y = \\boxed {- 1 0 0 X + 1 0 (1 - X),   5. 6} \\\\ M E U (- s) = m a x (M E U (e a t i n g | - s), M E U (n o t e a t i n g | - s)) = \\\\ m a x (P (+ r | - s) * E U (e a t i n g, + r) + P (- r | - s) * E U (e a t i n g, - r), M E U (n o t e a t i n g)) = \\\\ m a x (X * (- 1 0 0) + (1 - X) * 1 0, 0) = \\\\ X * 1 0 0 + (1 - X) * 1 0 \\end{array}",
+          "image_source": "images/page_10_equation_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.046,
+            0.909,
+            0.077
+          ],
+          "content": "(e) [3 pts] What is the Value of Perfect Information (VPI) of smelling the cookie? You can answer in terms of X and Y or as a simplest form fraction or decimal."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.118,
+            0.08,
+            0.428,
+            0.118
+          ],
+          "content": "| VPI = | 0.75 * Y,4.2 |\n| --- | --- |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.121,
+            0.357,
+            0.136
+          ],
+          "content": "V P I (S) = M E U (S) - M E U (\\emptyset)",
+          "image_source": "images/page_11_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.137,
+            0.478,
+            0.152
+          ],
+          "content": "M E U (S) = P (- s) M E U (- s) + P (+ s) M E U (+ s)",
+          "image_source": "images/page_11_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.153,
+            0.434,
+            0.167
+          ],
+          "content": "P (- s) = . 7 5 \\text { from   part (c), } M E U (- s) = Y",
+          "image_source": "images/page_11_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.167,
+            0.908,
+            0.213
+          ],
+          "content": "$M E U ( + s ) = 0$ because it was better for her to not eat the raisin without knowing anything, smelling raisins will only make it more likely for the cookie to have raisins and it will still be best for her to not eat and earn a utility of 0. Note this means we do not have to calculate P(+s)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.121,
+            0.212,
+            0.22,
+            0.227
+          ],
+          "content": "M E U (\\emptyset) = 0",
+          "image_source": "images/page_11_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.227,
+            0.383,
+            0.243
+          ],
+          "content": "V P I (S) = . 7 5 * Y + 0 - 0 = . 7 5 * Y",
+          "image_source": "images/page_11_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.255,
+            0.909,
+            0.317
+          ],
+          "content": "(f) [8 pts] Valerie is unsatisfied with the previous model and wants to incorporate more variables into her decision network. First, she realizes that the air quality (A) can affect her smelling accuracy. Second, she realizes that she can question (Q) the people around to see if they know where the cookie came from. These additions are reflected in the decision network below."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.36,
+            0.341,
+            0.668,
+            0.444
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_9.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.121,
+            0.502,
+            0.798,
+            0.709
+          ],
+          "content": "|  | Could Be True | Must Be True | Must Be False |\n| --- | --- | --- | --- |\n| $VPI(A,S) > VPI(A) + VPI(S)$ | ● | ○ | ○ |\n| $VPI(A) = 0$ | ○ | ● | ○ |\n| $VPI(Q,R) \\leq VPI(Q) + VPI(R)$ | ○ | ● | ○ |\n| $VPI(S,R) > VPI(R)$ | ○ | ○ | ● |\n| $VPI(Q) \\geq 0$ | ○ | ● | ○ |\n| $VPI(Q,A) > VPI(Q)$ | ○ | ○ | ● |\n| $VPI(S\\|A) < VPI(S)$ | ○ | ○ | ● |\n| $VPI(A\\|S) > VPI(A)$ | ● | ○ | ○ |",
+          "captions": [
+            {
+              "bbox": [
+                0.118,
+                0.477,
+                0.339,
+                0.493
+              ],
+              "content": "Choose one for each equation:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_11_table_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.935,
+            0.505,
+            0.949
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.021,
+            0.832,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.042,
+            0.615,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q6. [10 pts] Bayes Nets Representation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.083,
+            0.502,
+            0.101
+          ],
+          "content": "(a) [5 pts] Given the joint probability table on the right."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.104,
+            0.644,
+            0.151
+          ],
+          "content": "Clearly fill in all circles corresponding to Bayes Nets (BNs) that can correctly represent the distribution on the right. If no such Bayes Nets are given, clearly select None of the above."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.138,
+            0.153,
+            0.619,
+            0.383
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.673,
+            0.08,
+            0.874,
+            0.221
+          ],
+          "content": "| A | B | C | P(A,B,C) |\n| --- | --- | --- | --- |\n| 0 | 0 | 0 | .22 |\n| 0 | 0 | 1 | .08 |\n| 0 | 1 | 0 | .22 |\n| 0 | 1 | 1 | .08 |\n| 1 | 0 | 0 | .09 |\n| 1 | 0 | 1 | .11 |\n| 1 | 1 | 0 | .09 |\n| 1 | 1 | 1 | .11 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_table_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.672,
+            0.364,
+            0.867,
+            0.381
+          ],
+          "content": "\\# None of the above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.398,
+            0.909,
+            0.46
+          ],
+          "content": "From the table we can see that the values of $P ( A , B , C )$ repeat in two blocks. This means that the value of B does not matter to the distribution. The values are otherwise all unique, meaning that there is a relationship between A and C. Together, this means that B ⊥⊥ A, (B ⊥⊥ A | C), B ⊥⊥ C, and $(B \\perp    \\perp C \\mid A)$ are the only independence relationships in the distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.474,
+            0.911,
+            0.582
+          ],
+          "content": "(b) [5 pts] For the pair of Bayes Net (BN) models below, indicate if the New BN model is guaranteed to be able to represent any joint distribution that the Old BN Model can represent. If the New BN model is guaranteed to be able to represent any joint distribution that the Old BN Model can represent, select ”None.” Otherwise, fill in the squares corresponding to the minimal number of edges that must be added such that the modified New BN can represent any joint distribution that the Old BN Model can represent. Select ”Not Possible” if no combination of added edges can result in the modified New BN representing any joint distribution that the Old BN Model can represent."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.299,
+            0.596,
+            0.431,
+            0.613
+          ],
+          "content": "Old BN Model"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.612,
+            0.596,
+            0.751,
+            0.613
+          ],
+          "content": "New BN Model"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.272,
+            0.595,
+            0.772,
+            0.755
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.122,
+            0.766,
+            0.724,
+            0.823
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.82,
+            0.354,
+            0.838
+          ],
+          "content": "None Not Possible"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.841,
+            0.906,
+            0.873
+          ],
+          "content": "The new BN makes the following independence assumptions that the old BN does not make: C ⊥⊥ E, $(B \\perp    \\perp C | D)$ $(C \\perp    \\perp F | E),   (D \\perp    \\perp F | E)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.881,
+            0.414,
+            0.898
+          ],
+          "content": "• $E \\rightarrow C$ resolves $C \\perp     \\perp E,   (D \\perp     \\perp F | E)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.897,
+            0.427,
+            0.913
+          ],
+          "content": "Alternatively, $C \\rightarrow E$ resolves $C \\perp     \\perp E$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.047,
+            0.359,
+            0.061
+          ],
+          "content": "• C → B resolves $(B \\perp    \\perp C | D)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.066,
+            0.442,
+            0.082
+          ],
+          "content": "• D → F resolves $(C \\perp F | E),   (D \\perp F | E)$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "14"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2019-08-12T06:29:45Z",
+      "modified_at": "2019-08-12T06:29:45Z",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.18",
+      "page_count": 14,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

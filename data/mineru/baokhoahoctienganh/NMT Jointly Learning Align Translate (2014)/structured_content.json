@@ -1,0 +1,2888 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "aside_text",
+          "bbox": [
+            0.024,
+            0.264,
+            0.059,
+            0.7
+          ],
+          "content": "arXiv:1409.0473v7 [cs.CL] 19 May 2016"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.481,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.173,
+            0.1,
+            0.796,
+            0.147
+          ],
+          "level": 1,
+          "content": "NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.171,
+            0.428,
+            0.2
+          ],
+          "content": "**Dzmitry Bahdanau** Jacobs University Bremen, Germany"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.22,
+            0.444,
+            0.248
+          ],
+          "content": "**KyungHyun Cho Yoshua Bengio**<sup>∗</sup> Universite de Montr ´ eal ´"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.452,
+            0.285,
+            0.548,
+            0.3
+          ],
+          "level": 2,
+          "content": "ABSTRACT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.231,
+            0.313,
+            0.768,
+            0.524
+          ],
+          "content": "Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder–decoders and encode a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder–decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.175,
+            0.546,
+            0.339,
+            0.561
+          ],
+          "level": 2,
+          "content": "1 INTRODUCTION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.576,
+            0.826,
+            0.648
+          ],
+          "content": "Neural machine translation is a newly emerging approach to machine translation, recently proposed by Kalchbrenner and Blunsom (2013), Sutskever et al. (2014) and Cho et al. (2014b). Unlike the traditional phrase-based translation system (see, e.g., Koehn et al., 2003) which consists of many small sub-components that are tuned separately, neural machine translation attempts to build and train a single, large neural network that reads a sentence and outputs a correct translation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.654,
+            0.827,
+            0.752
+          ],
+          "content": "Most of the proposed neural machine translation models belong to a family of encoder– decoders (Sutskever et al., 2014; Cho et al., 2014a), with an encoder and a decoder for each language, or involve a language-specific encoder applied to each sentence whose outputs are then compared (Hermann and Blunsom, 2014). An encoder neural network reads and encodes a source sentence into a fixed-length vector. A decoder then outputs a translation from the encoded vector. The whole encoder–decoder system, which consists of the encoder and the decoder for a language pair, is jointly trained to maximize the probability of a correct translation given a source sentence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.758,
+            0.827,
+            0.829
+          ],
+          "content": "A potential issue with this encoder–decoder approach is that a neural network needs to be able to compress all the necessary information of a source sentence into a fixed-length vector. This may make it difficult for the neural network to cope with long sentences, especially those that are longer than the sentences in the training corpus. Cho et al. (2014b) showed that indeed the performance of a basic encoder–decoder deteriorates rapidly as the length of an input sentence increases."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.192,
+            0.911,
+            0.334,
+            0.924
+          ],
+          "content": "<sup>∗</sup>CIFAR Senior Fellow"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.835,
+            0.827,
+            0.905
+          ],
+          "content": "In order to address this issue, we introduce an extension to the encoder–decoder model which learns to align and translate jointly. Each time the proposed model generates a word in a translation, it (soft-)searches for a set of positions in a source sentence where the most relevant information is concentrated. The model then predicts a target word based on the context vectors associated with these source positions and all the previous generated target words."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.495,
+            0.949,
+            0.504,
+            0.96
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.481,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.105,
+            0.827,
+            0.19
+          ],
+          "content": "The most important distinguishing feature of this approach from the basic encoder–decoder is that it does not attempt to encode a whole input sentence into a single fixed-length vector. Instead, it encodes the input sentence into a sequence of vectors and chooses a subset of these vectors adaptively while decoding the translation. This frees a neural translation model from having to squash all the information of a source sentence, regardless of its length, into a fixed-length vector. We show this allows a model to cope better with long sentences."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.195,
+            0.828,
+            0.295
+          ],
+          "content": "In this paper, we show that the proposed approach of jointly learning to align and translate achieves significantly improved translation performance over the basic encoder–decoder approach. The improvement is more apparent with longer sentences, but can be observed with sentences of any length. On the task of English-to-French translation, the proposed approach achieves, with a single model, a translation performance comparable, or close, to the conventional phrase-based system. Furthermore, qualitative analysis reveals that the proposed model finds a linguistically plausible (soft-)alignment between a source sentence and the corresponding target sentence."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.312,
+            0.627,
+            0.328
+          ],
+          "level": 2,
+          "content": "2 BACKGROUND: NEURAL MACHINE TRANSLATION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.343,
+            0.826,
+            0.428
+          ],
+          "content": "From a probabilistic perspective, translation is equivalent to finding a target sentence y that maximizes the conditional probability of y given a source sentence $\\mathbf { x } , \\; \\mathrm { i . e . } , \\; \\operatorname { a r g } \\operatorname* { m a x } _ { \\mathbf { y } } p ( \\mathbf { y } \\; \\mid \\; \\mathbf { x } )$ . In neural machine translation, we fit a parameterized model to maximize the conditional probability of sentence pairs using a parallel training corpus. Once the conditional distribution is learned by a translation model, given a source sentence a corresponding translation can be generated by searching for the sentence that maximizes the conditional probability."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.434,
+            0.827,
+            0.532
+          ],
+          "content": "Recently, a number of papers have proposed the use of neural networks to directly learn this conditional distribution (see, e.g., Kalchbrenner and Blunsom, 2013; Cho et al., 2014a; Sutskever et al., 2014; Cho et al., 2014b; Forcada and Neco, 1997). This neural machine translation approach typ- ˜ ically consists of two components, the first of which encodes a source sentence x and the second decodes to a target sentence y. For instance, two recurrent neural networks (RNN) were used by (Cho et al., 2014a) and (Sutskever et al., 2014) to encode a variable-length source sentence into a fixed-length vector and to decode the vector into a variable-length target sentence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.538,
+            0.827,
+            0.637
+          ],
+          "content": "Despite being a quite new approach, neural machine translation has already shown promising results. Sutskever et al. (2014) reported that the neural machine translation based on RNNs with long shortterm memory (LSTM) units achieves close to the state-of-the-art performance of the conventional phrase-based machine translation system on an English-to-French translation task.<sup>1</sup> Adding neural components to existing translation systems, for instance, to score the phrase pairs in the phrase table (Cho et al., 2014a) or to re-rank candidate translations (Sutskever et al., 2014), has allowed to surpass the previous state-of-the-art performance level."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.651,
+            0.406,
+            0.666
+          ],
+          "level": 2,
+          "content": "2.1 RNN ENCODER–DECODER"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.677,
+            0.826,
+            0.72
+          ],
+          "content": "Here, we describe briefly the underlying framework, called RNN Encoder–Decoder, proposed by Cho et al. (2014a) and Sutskever et al. (2014) upon which we build a novel architecture that learns to align and translate simultaneously."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.726,
+            0.826,
+            0.755
+          ],
+          "content": "In the Encoder–Decoder framework, an encoder reads the input sentence, a sequence of vectors $\\mathbf { x } = ( x _ { 1 } , \\cdots , x _ { T _ { x } } )$ , into a vector $c ^ { 2 }$ The most common approach is to use an RNN such that"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.437,
+            0.757,
+            0.824,
+            0.773
+          ],
+          "content": "h _ {t} = f \\left(x _ {t}, h _ {t - 1}\\right)\\tag{1}",
+          "image_source": "images/page_1_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.775,
+            0.203,
+            0.789
+          ],
+          "content": "and"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.418,
+            0.791,
+            0.576,
+            0.807
+          ],
+          "content": "c = q \\left(\\left\\{h _ {1}, \\dots , h _ {T _ {x}} \\right\\}\\right),",
+          "image_source": "images/page_1_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.809,
+            0.826,
+            0.853
+          ],
+          "content": "where $h _ { t }   \\in   \\mathbb { R } ^ { n }$ is a hidden state at time t, and c is a vector generated from the sequence of the hidden states. $f$ and q are some nonlinear functions. Sutskever et al. (2014) used an LSTM as $f$ and $q \\left( \\{ h _ { 1 } , \\cdots , \\bar { h _ { T } } \\} \\right) = \\bar { h } _ { T }$ , for instance."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.171,
+            0.859,
+            0.826,
+            0.886
+          ],
+          "content": "1 We mean by the state-of-the-art performance, the performance of the conventional phrase-based system without using any neural network-based component."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.171,
+            0.886,
+            0.826,
+            0.925
+          ],
+          "content": "2 Although most of the previous works (see, e.g., Cho et al., 2014a; Sutskever et al., 2014; Kalchbrenner and Blunsom, 2013) used to encode a variable-length input sentence into a fixed-length vector, it is not necessary, and even it may be beneficial to have a variable-length vector, as we will show later."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.506,
+            0.96
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.481,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.105,
+            0.826,
+            0.148
+          ],
+          "content": "The decoder is often trained to predict the next word $y _ { t ^ { \\prime } }$ given the context vector $c$ and all the previously predicted words $\\{ y _ { 1 } , \\cdots , y _ { t ^ { \\prime } - 1 } \\}$ . In other words, the decoder defines a probability over the translation y by decomposing the joint probability into the ordered conditionals:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.371,
+            0.154,
+            0.824,
+            0.195
+          ],
+          "content": "p (\\mathbf {y}) = \\prod_ {t = 1} ^ {T} p (y _ {t} \\mid \\{y _ {1}, \\dots , y _ {t - 1} \\}, c),\\tag{2}",
+          "image_source": "images/page_2_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.202,
+            0.729,
+            0.219
+          ],
+          "content": "where $\\mathbf { y } = \\left( y _ { 1 } , \\cdots , y _ { T _ { y } } \\right)$ . With an RNN, each conditional probability is modeled as"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.355,
+            0.226,
+            0.824,
+            0.243
+          ],
+          "content": "p (y _ {t} \\mid \\{y _ {1}, \\dots , y _ {t - 1} \\}, c) = g (y _ {t - 1}, s _ {t}, c),\\tag{3}",
+          "image_source": "images/page_2_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.248,
+            0.826,
+            0.292
+          ],
+          "content": "where $g$ is a nonlinear, potentially multi-layered, function that outputs the probability of $y _ { t }$ , and $s _ { t }$ is the hidden state of the RNN. It should be noted that other architectures such as a hybrid of an RNN and a de-convolutional neural network can be used (Kalchbrenner and Blunsom, 2013)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.311,
+            0.535,
+            0.327
+          ],
+          "level": 2,
+          "content": "3 LEARNING TO ALIGN AND TRANSLATE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.342,
+            0.826,
+            0.386
+          ],
+          "content": "In this section, we propose a novel architecture for neural machine translation. The new architecture consists of a bidirectional RNN as an encoder (Sec. 3.2) and a decoder that emulates searching through a source sentence during decoding a translation (Sec. 3.1)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.401,
+            0.466,
+            0.415
+          ],
+          "level": 2,
+          "content": "3.1 DECODER: GENERAL DESCRIPTION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.427,
+            0.615,
+            0.456
+          ],
+          "content": "In a new model architecture, we define each conditional probability in Eq. (2) as:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.262,
+            0.463,
+            0.614,
+            0.479
+          ],
+          "content": "p (y _ {i} | y _ {1}, \\dots , y _ {i - 1}, \\mathbf {x}) = g (y _ {i - 1}, s _ {i}, c _ {i}),\\tag{4}",
+          "image_source": "images/page_2_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.485,
+            0.549,
+            0.5
+          ],
+          "content": "where $s _ { i }$ is an RNN hidden state for time $i ,$ computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.317,
+            0.506,
+            0.469,
+            0.523
+          ],
+          "content": "s _ {i} = f (s _ {i - 1}, y _ {i - 1}, c _ {i}).",
+          "image_source": "images/page_2_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.529,
+            0.615,
+            0.572
+          ],
+          "content": "It should be noted that unlike the existing encoder–decoder approach (see Eq. (2)), here the probability is conditioned on a distinct context vector $c _ { i }$ for each target word $y _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.578,
+            0.615,
+            0.662
+          ],
+          "content": "The context vector $c _ { i }$ depends on a sequence of annotations $( h _ { 1 } , \\cdots , h _ { T _ { x } } )$ to which an encoder maps the input sentence. Each annotation $h _ { i }$ contains information about the whole input sequence with a strong focus on the parts surrounding the i-th word of the input sequence. We explain in detail how the annotations are computed in the next section."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.63,
+            0.442,
+            0.821,
+            0.643
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.625,
+                0.657,
+                0.825,
+                0.729
+              ],
+              "content": "Figure 1: The graphical illustration of the proposed model trying to generate the t-th target word $y _ { t }$ given a source sentence $( x _ { 1 } , x _ { 2 } , \\ldots , x _ { T } )$ ."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_2_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.668,
+            0.615,
+            0.697
+          ],
+          "content": "The context vector $c _ { i }$ is, then, computed as a weighted sum of these annotations $h _ { i } ;$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.339,
+            0.702,
+            0.614,
+            0.745
+          ],
+          "content": "c _ {i} = \\sum_ {j = 1} ^ {T _ {x}} \\alpha_ {i j} h _ {j}.\\tag{5}",
+          "image_source": "images/page_2_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.752,
+            0.526,
+            0.768
+          ],
+          "content": "The weight $\\alpha _ { i j }$ of each annotation $h _ { j }$ is computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.418,
+            0.774,
+            0.824,
+            0.81
+          ],
+          "content": "\\alpha_ {i j} = \\frac {\\exp (e _ {i j})}{\\sum_ {k = 1} ^ {T _ {x}} \\exp (e _ {i k})},\\tag{6}",
+          "image_source": "images/page_2_equation_20.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.816,
+            0.219,
+            0.829
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.438,
+            0.829,
+            0.559,
+            0.845
+          ],
+          "content": "e _ {i j} = a (s _ {i - 1}, h _ {j})",
+          "image_source": "images/page_2_equation_22.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.847,
+            0.826,
+            0.891
+          ],
+          "content": "is an alignment model which scores how well the inputs around position $j$ and the output at position i match. The score is based on the RNN hidden state $s _ { i - 1 }$ (just before emitting $y _ { i }$ , Eq. (4)) and the $j _ { 1 }$ -th annotation $h _ { j }$ of the input sentence."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.505,
+            0.961
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.896,
+            0.826,
+            0.925
+          ],
+          "content": "We parametrize the alignment model a as a feedforward neural network which is jointly trained with all the other components of the proposed system. Note that unlike in traditional machine translation,"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.481,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.105,
+            0.826,
+            0.149
+          ],
+          "continues_prev": true,
+          "content": "the alignment is not considered to be a latent variable. Instead, the alignment model directly computes a soft alignment, which allows the gradient of the cost function to be backpropagated through. This gradient can be used to train the alignment model as well as the whole translation model jointly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.154,
+            0.826,
+            0.211
+          ],
+          "content": "We can understand the approach of taking a weighted sum of all the annotations as computing an expected annotation, where the expectation is over possible alignments. Let $\\alpha _ { i j }$ be a probability that the target word $y _ { i }$ is aligned $\\mathbf { t o } ,$ or translated from, a source word $x _ { j }$ . Then, the i-th context vector $c _ { i }$ is the expected annotation over all the annotations with probabilities $\\alpha _ { i j }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.216,
+            0.827,
+            0.316
+          ],
+          "content": "The probability $\\alpha _ { i j }$ , or its associated energy $e _ { i j }$ , reflects the importance of the annotation $h _ { j }$ with respect to the previous hidden state $s _ { i - 1 }$ in deciding the next state $s _ { i }$ and generating $y _ { i } .$ Intuitively, this implements a mechanism of attention in the decoder. The decoder decides parts of the source sentence to pay attention to. By letting the decoder have an attention mechanism, we relieve the encoder from the burden of having to encode all information in the source sentence into a fixedlength vector. With this new approach the information can be spread throughout the sequence of annotations, which can be selectively retrieved by the decoder accordingly."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.332,
+            0.668,
+            0.347
+          ],
+          "level": 2,
+          "content": "3.2 ENCODER: BIDIRECTIONAL RNN FOR ANNOTATING SEQUENCES"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.358,
+            0.826,
+            0.43
+          ],
+          "content": "The usual RNN, described in Eq. (1), reads an input sequence x in order starting from the first symbol $x _ { 1 }$ to the last one $x _ { T _ { x } }$ . However, in the proposed scheme, we would like the annotation of each word to summarize not only the preceding words, but also the following words. Hence, we propose to use a bidirectional RNN (BiRNN, Schuster and Paliwal, 1997), which has been successfully used recently in speech recognition (see, e.g., Graves et al., 2013)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.438,
+            0.826,
+            0.508
+          ],
+          "content": "A BiRNN consists of forward and backward RNN’s. The forward RNN $\\vec { f }$ reads the input sequence as it is ordered (from $x _ { 1 } \\operatorname { t o } x _ { T _ { x } } )$ and calculates a sequence of forward hidden states $( \\overrightarrow { h } _ { 1 } , \\cdots , \\overrightarrow { h } _ { T _ { x } } )$ The backward RNN $\\overleftarrow { f }$ reads the sequence in the reverse order (from $x _ { T _ { x } } \\mathrm { ~ t o ~ } x _ { 1 } )$ , resulting in a sequence of backward hidden states $( \\overleftarrow { h } _ { 1 } , \\cdots , \\overleftarrow { h } _ { T _ { x } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.515,
+            0.827,
+            0.615
+          ],
+          "content": "We obtain an annotation for each word $x _ { j }$ by concatenating the forward hidden state $\\overrightarrow { h } _ { j }$ and the backward one $\\overleftarrow { h } _ { j } , \\mathrm { i . e . , } h _ { j } = \\left[ \\overrightarrow { h } _ { j } ^ { \\top } ; \\overleftarrow { h } _ { j } ^ { \\top } \\right] ^ { \\top }$ . In this way, the annotation $h _ { j }$ contains the summaries of both the preceding words and the following words. Due to the tendency of RNNs to better represent recent inputs, the annotation $h _ { j }$ will be focused on the words around $x _ { j }$ . This sequence of annotations is used by the decoder and the alignment model later to compute the context vector (Eqs. (5)–(6))."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.62,
+            0.584,
+            0.635
+          ],
+          "content": "See Fig. 1 for the graphical illustration of the proposed model."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.656,
+            0.408,
+            0.672
+          ],
+          "level": 2,
+          "content": "4 EXPERIMENT SETTINGS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.688,
+            0.826,
+            0.745
+          ],
+          "content": "We evaluate the proposed approach on the task of English-to-French translation. We use the bilingual, parallel corpora provided by ACL WMT ’14.<sup>3</sup> As a comparison, we also report the performance of an RNN Encoder–Decoder which was proposed recently by Cho et al. (2014a). We use the same training procedures and the same dataset for both models.<sup>4</sup>"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.762,
+            0.282,
+            0.776
+          ],
+          "level": 2,
+          "content": "4.1 DATASET"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.787,
+            0.826,
+            0.874
+          ],
+          "content": "WMT ’14 contains the following English-French parallel corpora: Europarl (61M words), news commentary (5.5M), UN (421M) and two crawled corpora of 90M and 272.5M words respectively, totaling 850M words. Following the procedure described in Cho et al. (2014a), we reduce the size of the combined corpus to have 348M words using the data selection method by Axelrod et al. $(2011).^{5}$ We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder. We concatenate news-test-"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.192,
+            0.883,
+            0.639,
+            0.897
+          ],
+          "content": "3 [http://www.statmt.org/wmt14/translation-task.html](http://www.statmt.org/wmt14/translation-task.html)"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.192,
+            0.896,
+            0.785,
+            0.911
+          ],
+          "content": "4Implementations are available at [https://github.com/lisa-groundhog/GroundHog](https://github.com/lisa-groundhog/GroundHog)."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.192,
+            0.911,
+            0.825,
+            0.925
+          ],
+          "content": "5 Available online at [http://www-lium.univ-lemans.fr/˜schwenk/cslm\\_joint\\_paper/](http://www-lium.univ-lemans.fr/~schwenk/cslm_joint_paper/)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.506,
+            0.96
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.186,
+            0.104,
+            0.603,
+            0.285
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.631,
+                0.145,
+                0.827,
+                0.258
+              ],
+              "content": "Figure 2: The BLEU scores of the generated translations on the test set with respect to the lengths of the sentences. The results are on the full test set which includes sentences having unknown words to the models."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_4_chart_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.315,
+            0.827,
+            0.357
+          ],
+          "content": "2012 and news-test-2013 to make a development (validation) set, and evaluate the models on the test set (news-test-2014) from WMT ’14, which consists of 3003 sentences not present in the training data."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.364,
+            0.827,
+            0.408
+          ],
+          "content": "After a usual tokenization<sup>6</sup>, we use a shortlist of 30,000 most frequent words in each language to train our models. Any word not included in the shortlist is mapped to a special token ([UNK]). We do not apply any other special preprocessing, such as lowercasing or stemming, to the data."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.425,
+            0.279,
+            0.44
+          ],
+          "level": 2,
+          "content": "4.2 MODELS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.452,
+            0.826,
+            0.509
+          ],
+          "content": "We train two types of models. The first one is an RNN Encoder–Decoder (RNNencdec, Cho et al., 2014a), and the other is the proposed model, to which we refer as RNNsearch. We train each model twice: first with the sentences of length up to 30 words (RNNencdec-30, RNNsearch-30) and then with the sentences of length up to 50 word (RNNencdec-50, RNNsearch-50)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.515,
+            0.828,
+            0.586
+          ],
+          "content": "The encoder and decoder of the RNNencdec have 1000 hidden units each.<sup>7</sup> The encoder of the RNNsearch consists of forward and backward recurrent neural networks (RNN) each having 1000 hidden units. Its decoder has 1000 hidden units. In both cases, we use a multilayer network with a single maxout (Goodfellow et al., 2013) hidden layer to compute the conditional probability of each target word (Pascanu et al., 2014)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.591,
+            0.826,
+            0.635
+          ],
+          "content": "We use a minibatch stochastic gradient descent (SGD) algorithm together with Adadelta (Zeiler, 2012) to train each model. Each SGD update direction is computed using a minibatch of 80 sentences. We trained each model for approximately 5 days."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.641,
+            0.827,
+            0.685
+          ],
+          "content": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability (see, e.g., Graves, 2012; Boulanger-Lewandowski et al., 2013). Sutskever et al. (2014) used this approach to generate translations from their neural machine translation model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.69,
+            0.826,
+            0.719
+          ],
+          "content": "For more details on the architectures of the models and training procedure used in the experiments, see Appendices A and B."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.74,
+            0.285,
+            0.756
+          ],
+          "level": 2,
+          "content": "5 RESULTS"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.773,
+            0.391,
+            0.788
+          ],
+          "level": 2,
+          "content": "5.1 QUANTITATIVE RESULTS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.8,
+            0.828,
+            0.885
+          ],
+          "content": "In Table 1, we list the translation performances measured in BLEU score. It is clear from the table that in all the cases, the proposed RNNsearch outperforms the conventional RNNencdec. More importantly, the performance of the RNNsearch is as high as that of the conventional phrase-based translation system (Moses), when only the sentences consisting of known words are considered. This is a significant achievement, considering that Moses uses a separate monolingual corpus (418M words) in addition to the parallel corpora we used to train the RNNsearch and RNNencdec."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.191,
+            0.896,
+            0.743,
+            0.911
+          ],
+          "content": "6 We used the tokenization script from the open-source machine translation package, Moses."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.192,
+            0.91,
+            0.758,
+            0.925
+          ],
+          "content": "<sup>7</sup>In this paper, by a ’hidden unit’, we always mean the gated hidden unit (see Appendix A.1.1)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.506,
+            0.961
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.174,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.182,
+            0.106,
+            0.482,
+            0.346
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.322,
+                0.354,
+                0.342,
+                0.368
+              ],
+              "content": "(a)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.516,
+            0.109,
+            0.819,
+            0.347
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.658,
+                0.354,
+                0.679,
+                0.368
+              ],
+              "content": "(b)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.185,
+            0.371,
+            0.482,
+            0.635
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.321,
+                0.642,
+                0.342,
+                0.656
+              ],
+              "content": "(c)"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.521,
+            0.393,
+            0.817,
+            0.634
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.657,
+                0.641,
+                0.679,
+                0.655
+              ],
+              "content": "(d)"
+            },
+            {
+              "bbox": [
+                0.171,
+                0.667,
+                0.826,
+                0.753
+              ],
+              "content": "Figure 3: Four sample alignments found by RNNsearch-50. The x-axis and y-axis of each plot correspond to the words in the source sentence (English) and the generated translation (French), respectively. Each pixel shows the weight $\\alpha _ { i j }$ of the annotation of the j-th source word for the i-th target word (see Eq. (6)), in grayscale (0: black, 1: white). (a) an arbitrary sentence. (b–d) three randomly selected samples among the sentences without any unknown words and of length between 10 and 20 words from the test set."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_5_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.814,
+            0.827,
+            0.926
+          ],
+          "content": "One of the motivations behind the proposed approach was the use of a fixed-length context vector in the basic encoder–decoder approach. We conjectured that this limitation may make the basic encoder–decoder approach to underperform with long sentences. In Fig. 2, we see that the performance of RNNencdec dramatically drops as the length of the sentences increases. On the other hand, both RNNsearch-30 and RNNsearch-50 are more robust to the length of the sentences. RNNsearch-50, especially, shows no performance deterioration even with sentences of length 50 or more. This superiority of the proposed model over the basic encoder–decoder is further confirmed by the fact that the RNNsearch-30 even outperforms RNNencdec-50 (see Table 1)."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.506,
+            0.961
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.179,
+            0.119,
+            0.451,
+            0.224
+          ],
+          "content": "| Model | All | No UNK◦ |\n| --- | --- | --- |\n| RNNencdec-30 | 13.93 | 24.19 |\n| RNNsearch-30 | 21.50 | 31.44 |\n| RNNencdec-50 | 17.82 | 26.71 |\n| RNNsearch-50 | 26.75 | 34.16 |\n| RNNsearch-50? | 28.45 | 36.15 |\n| Moses | 33.30 | 35.63 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.471,
+            0.106,
+            0.823,
+            0.246
+          ],
+          "content": "Table 1: BLEU scores of the trained models computed on the test set. The second and third columns show respectively the scores on all the sentences and, on the sentences without any unknown word in themselves and in the reference translations. Note that RNNsearch-50? was trained much longer until the performance on the development set stopped improving. (◦) We disallowed the models to generate [UNK] tokens when only the sentences having no unknown words were evaluated (last column)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.274,
+            0.389,
+            0.289
+          ],
+          "level": 2,
+          "content": "5.2 QUALITATIVE ANALYSIS"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.302,
+            0.319,
+            0.316
+          ],
+          "level": 2,
+          "content": "5.2.1 ALIGNMENT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.328,
+            0.827,
+            0.4
+          ],
+          "content": "The proposed approach provides an intuitive way to inspect the (soft-)alignment between the words in a generated translation and those in a source sentence. This is done by visualizing the annotation weights $\\alpha _ { i j }$ from Eq. (6), as in Fig. 3. Each row of a matrix in each plot indicates the weights associated with the annotations. From this we see which positions in the source sentence were considered more important when generating the target word."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.405,
+            0.827,
+            0.518
+          ],
+          "content": "We can see from the alignments in Fig. 3 that the alignment of words between English and French is largely monotonic. We see strong weights along the diagonal of each matrix. However, we also observe a number of non-trivial, non-monotonic alignments. Adjectives and nouns are typically ordered differently between French and English, and we see an example in Fig. 3 (a). From this figure, we see that the model correctly translates a phrase [European Economic Area] into [zone economique europ ´ een]. The RNNsearch was able to correctly align [zone] with [Area], jumping ´ over the two words ([European] and [Economic]), and then looked one word back at a time to complete the whole phrase [zone economique europ ´ eenne]. ´"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.523,
+            0.828,
+            0.663
+          ],
+          "content": "The strength of the soft-alignment, opposed to a hard-alignment, is evident, for instance, from Fig. 3 (d). Consider the source phrase [the man] which was translated into [l’ homme]. Any hard alignment will map [the] to [l’] and [man] to [homme]. This is not helpful for translation, as one must consider the word following [the] to determine whether it should be translated into [le], [la], [les] or [l’]. Our soft-alignment solves this issue naturally by letting the model look at both [the] and [man], and in this example, we see that the model was able to correctly translate [the] into [l’]. We observe similar behaviors in all the presented cases in Fig. 3. An additional benefit of the soft alignment is that it naturally deals with source and target phrases of different lengths, without requiring a counter-intuitive way of mapping some words to or from nowhere ([NULL]) (see, e.g., Chapters 4 and 5 of Koehn, 2010)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.681,
+            0.361,
+            0.696
+          ],
+          "level": 2,
+          "content": "5.2.2 LONG SENTENCES"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.707,
+            0.826,
+            0.765
+          ],
+          "content": "As clearly visible from Fig. 2 the proposed model (RNNsearch) is much better than the conventional model (RNNencdec) at translating long sentences. This is likely due to the fact that the RNNsearch does not require encoding a long sentence into a fixed-length vector perfectly, but only accurately encoding the parts of the input sentence that surround a particular word."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.77,
+            0.586,
+            0.785
+          ],
+          "content": "As an example, consider this source sentence from the test set:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.229,
+            0.799,
+            0.768,
+            0.841
+          ],
+          "content": "An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre <u>to carry out a diagnosis or a procedure, based on his status as a health care worker at a hospital.</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.854,
+            0.499,
+            0.869
+          ],
+          "content": "The RNNencdec-50 translated this sentence into:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.229,
+            0.883,
+            0.768,
+            0.925
+          ],
+          "content": "Un privilege d’admission est le droit d’un m \\` edecin de reconna ´ ˆıtre un patient à l’hopital ou un centre m ˆ edical ´ <u>d’un diagnostic ou de prendre un diagnostic en fonction de son etat ´</u> de sante.´"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.505,
+            0.96
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.481,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.105,
+            0.827,
+            0.162
+          ],
+          "content": "The RNNencdec-50 correctly translated the source sentence until [a medical center]. However, from there on (underlined), it deviated from the original meaning of the source sentence. For instance, it replaced [based on his status as a health care worker at a hospital] in the source sentence with [en fonction de son etat de sant ´ e] (“based on his state of health”). ´"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.167,
+            0.826,
+            0.197
+          ],
+          "content": "On the other hand, the RNNsearch-50 generated the following correct translation, preserving the whole meaning of the input sentence without omitting any details:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.207,
+            0.768,
+            0.25
+          ],
+          "content": "Un privilege d’admission est le droit d’un m \\` edecin d’admettre un patient ´ a un \\` hopital ou un centre m ˆ edical ´ <u>pour effectuer un diagnostic ou une procedure,</u> ´ selon son statut de travailleur des soins de santé à l’hopital. ˆ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.261,
+            0.505,
+            0.275
+          ],
+          "content": "Let us consider another sentence from the test set:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.287,
+            0.768,
+            0.33
+          ],
+          "content": "This kind of experience is part of Disney’s efforts to ”extend the lifetime of its series and build new relationships with audiences <u>via digital platforms that are becoming ever more important,” he added.</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.34,
+            0.442,
+            0.355
+          ],
+          "content": "The translation by the RNNencdec-50 is"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.366,
+            0.768,
+            0.409
+          ],
+          "content": "Ce type d’experience fait partie des initiatives du Disney pour ”prolonger la dur ´ ee´ de vie de ses nouvelles et de developper des liens avec les ´ <u>lecteurs numeriques</u> ´ qui <u>deviennent plus complexes.</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.419,
+            0.826,
+            0.475
+          ],
+          "content": "As with the previous example, the RNNencdec began deviating from the actual meaning of the source sentence after generating approximately 30 words (see the underlined phrase). After that point, the quality of the translation deteriorates, with basic mistakes such as the lack of a closing quotation mark."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.481,
+            0.672,
+            0.497
+          ],
+          "content": "Again, the RNNsearch-50 was able to translate this long sentence correctly:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.23,
+            0.507,
+            0.768,
+            0.551
+          ],
+          "content": "Ce genre d’experience fait partie des efforts de Disney pour ”prolonger la dur ´ ee´ de vie de ses series et cr ´ eer de nouvelles relations avec des publics ´ <u>via des</u> plateformes numeriques ´ <u>de plus en plus importantes”, a-t-il ajoute.´</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.561,
+            0.826,
+            0.604
+          ],
+          "content": "In conjunction with the quantitative results presented already, these qualitative observations confirm our hypotheses that the RNNsearch architecture enables far more reliable translation of long sentences than the standard RNNencdec model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.61,
+            0.825,
+            0.64
+          ],
+          "content": "In Appendix C, we provide a few more sample translations of long source sentences generated by the RNNencdec-50, RNNsearch-50 and Google Translate along with the reference translations."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.658,
+            0.348,
+            0.674
+          ],
+          "level": 2,
+          "content": "6 RELATED WORK"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.689,
+            0.366,
+            0.704
+          ],
+          "level": 2,
+          "content": "6.1 LEARNING TO ALIGN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.715,
+            0.826,
+            0.801
+          ],
+          "content": "A similar approach of aligning an output symbol with an input symbol was proposed recently by Graves (2013) in the context of handwriting synthesis. Handwriting synthesis is a task where the model is asked to generate handwriting of a given sequence of characters. In his work, he used a mixture of Gaussian kernels to compute the weights of the annotations, where the location, width and mixture coefficient of each kernel was predicted from an alignment model. More specifically, his alignment was restricted to predict the location such that the location increases monotonically."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.806,
+            0.826,
+            0.863
+          ],
+          "content": "The main difference from our approach is that, in (Graves, 2013), the modes of the weights of the annotations only move in one direction. In the context of machine translation, this is a severe limitation, as (long-distance) reordering is often needed to generate a grammatically correct translation (for instance, English-to-German)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.869,
+            0.827,
+            0.926
+          ],
+          "content": "Our approach, on the other hand, requires computing the annotation weight of every word in the source sentence for each word in the translation. This drawback is not severe with the task of translation in which most of input and output sentences are only 15–40 words. However, this may limit the applicability of the proposed scheme to other tasks."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.506,
+            0.961
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.105,
+            0.573,
+            0.12
+          ],
+          "level": 2,
+          "content": "6.2 NEURAL NETWORKS FOR MACHINE TRANSLATION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.142,
+            0.826,
+            0.214
+          ],
+          "content": "Since Bengio et al. (2003) introduced a neural probabilistic language model which uses a neural network to model the conditional probability of a word given a fixed number of the preceding words, neural networks have widely been used in machine translation. However, the role of neural networks has been largely limited to simply providing a single feature to an existing statistical machine translation system or to re-rank a list of candidate translations provided by an existing system."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.22,
+            0.827,
+            0.305
+          ],
+          "content": "For instance, Schwenk (2012) proposed using a feedforward neural network to compute the score of a pair of source and target phrases and to use the score as an additional feature in the phrase-based statistical machine translation system. More recently, Kalchbrenner and Blunsom (2013) and Devlin et al. (2014) reported the successful use of the neural networks as a sub-component of the existing translation system. Traditionally, a neural network trained as a target-side language model has been used to rescore or rerank a list of candidate translations (see, e.g., Schwenk et al., 2006)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.31,
+            0.828,
+            0.395
+          ],
+          "content": "Although the above approaches were shown to improve the translation performance over the stateof-the-art machine translation systems, we are more interested in a more ambitious objective of designing a completely new translation system based on neural networks. The neural machine translation approach we consider in this paper is therefore a radical departure from these earlier works. Rather than using a neural network as a part of the existing system, our model works on its own and generates a translation from a source sentence directly."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.174,
+            0.444,
+            0.321,
+            0.459
+          ],
+          "level": 2,
+          "content": "7 CONCLUSION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.493,
+            0.826,
+            0.563
+          ],
+          "content": "The conventional approach to neural machine translation, called an encoder–decoder approach, encodes a whole input sentence into a fixed-length vector from which a translation will be decoded. We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by Cho et al. (2014b) and Pouget-Abadie et al. (2014)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.57,
+            0.827,
+            0.695
+          ],
+          "content": "In this paper, we proposed a novel architecture that addresses this issue. We extended the basic encoder–decoder by letting a model (soft-)search for a set of input words, or their annotations computed by an encoder, when generating each target word. This frees the model from having to encode a whole source sentence into a fixed-length vector, and also lets the model focus only on information relevant to the generation of the next target word. This has a major positive impact on the ability of the neural machine translation system to yield good results on longer sentences. Unlike with the traditional machine translation systems, all of the pieces of the translation system, including the alignment mechanism, are jointly trained towards a better log-probability of producing correct translations."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.701,
+            0.827,
+            0.801
+          ],
+          "content": "We tested the proposed model, called RNNsearch, on the task of English-to-French translation. The experiment revealed that the proposed RNNsearch outperforms the conventional encoder–decoder model (RNNencdec) significantly, regardless of the sentence length and that it is much more robust to the length of a source sentence. From the qualitative analysis where we investigated the (soft-)alignment generated by the RNNsearch, we were able to conclude that the model can correctly align each target word with the relevant words, or their annotations, in the source sentence as it generated a correct translation."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.806,
+            0.827,
+            0.877
+          ],
+          "content": "Perhaps more importantly, the proposed approach achieved a translation performance comparable to the existing phrase-based statistical machine translation. It is a striking result, considering that the proposed architecture, or the whole family of neural machine translation, has only been proposed as recently as this year. We believe the architecture proposed here is a promising step toward better machine translation and a better understanding of natural languages in general."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.883,
+            0.827,
+            0.925
+          ],
+          "content": "One of challenges left for the future is to better handle unknown, or rare words. This will be required for the model to be more widely used and to match the performance of current state-of-the-art machine translation systems in all contexts."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.949,
+            0.505,
+            0.96
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.034,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.104,
+            0.359,
+            0.119
+          ],
+          "level": 2,
+          "content": "ACKNOWLEDGMENTS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.135,
+            0.827,
+            0.206
+          ],
+          "content": "The authors would like to thank the developers of Theano (Bergstra et al., 2010; Bastien et al., 2012). We acknowledge the support of the following agencies for research funding and computing support: NSERC, Calcul Quebec, Compute Canada, the Canada Research Chairs and CIFAR. Bah- ´ danau thanks the support from Planet Intelligent Systems GmbH. We also thank Felix Hill, Bart van Merrienboer, Jean Pouget-Abadie, Coline Devin and Tae-Ho Kim. ´"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.225,
+            0.289,
+            0.241
+          ],
+          "level": 2,
+          "content": "REFERENCES"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.25,
+            0.825,
+            0.292
+          ],
+          "content": "Axelrod, A., He, X., and Gao, J. (2011). Domain adaptation via pseudo in-domain data selection. In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 355–362. Association for Computational Linguistics."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.301,
+            0.825,
+            0.344
+          ],
+          "content": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012). Theano: new features and speed improvements. Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.353,
+            0.825,
+            0.382
+          ],
+          "content": "Bengio, Y., Simard, P., and Frasconi, P. (1994). Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks, 5(2), 157–166."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.391,
+            0.824,
+            0.419
+          ],
+          "content": "Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003). A neural probabilistic language model. J. Mach. Learn. Res., 3, 1137–1155."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.429,
+            0.825,
+            0.472
+          ],
+          "content": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010). Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy). Oral Presentation."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.481,
+            0.825,
+            0.51
+          ],
+          "content": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2013). Audio chord recognition with recurrent neural networks. In ISMIR."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.519,
+            0.825,
+            0.575
+          ],
+          "content": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014a). Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014). to appear."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.585,
+            0.826,
+            0.627
+          ],
+          "content": "Cho, K., van Merrienboer, B., Bahdanau, D., and Bengio, Y. (2014b). On the properties of neural ¨ machine translation: Encoder–Decoder approaches. In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation. to appear."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.637,
+            0.826,
+            0.68
+          ],
+          "content": "Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R., and Makhoul, J. (2014). Fast and robust neural network joint models for statistical machine translation. In Association for Computational Linguistics."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.688,
+            0.826,
+            0.745
+          ],
+          "content": "Forcada, M. L. and Neco, R. P. (1997). Recursive hetero-associative memories for translation. In ˜ J. Mira, R. Moreno-D´ıaz, and J. Cabestany, editors, Biological and Artificial Computation: From Neuroscience to Technology, volume 1240 of Lecture Notes in Computer Science, pages 453–462. Springer Berlin Heidelberg."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.755,
+            0.826,
+            0.796
+          ],
+          "content": "Goodfellow, I., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013). Maxout networks. In Proceedings of The 30th International Conference on Machine Learning, pages 1319–1327."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.806,
+            0.826,
+            0.835
+          ],
+          "content": "Graves, A. (2012). Sequence transduction with recurrent neural networks. In Proceedings of the 29th International Conference on Machine Learning (ICML 2012)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.845,
+            0.825,
+            0.873
+          ],
+          "content": "Graves, A. (2013). Generating sequences with recurrent neural networks. arXiv:1308.0850 [cs.NE]."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.883,
+            0.824,
+            0.924
+          ],
+          "content": "Graves, A., Jaitly, N., and Mohamed, A.-R. (2013). Hybrid speech recognition with deep bidirectional LSTM. In Automatic Speech Recognition and Understanding (ASRU), 2013 IEEE Workshop on, pages 273–278."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.949,
+            0.511,
+            0.961
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.172,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.105,
+            0.826,
+            0.147
+          ],
+          "content": "Hermann, K. and Blunsom, P. (2014). Multilingual distributed representations without word alignment. In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.173,
+            0.156,
+            0.826,
+            0.185
+          ],
+          "content": "Hochreiter, S. (1991). Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, Institut fur Informatik, Lehrstuhl Prof. Brauer, Technische Universit ¨ at M¨ unchen. ¨"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.194,
+            0.825,
+            0.222
+          ],
+          "content": "Hochreiter, S. and Schmidhuber, J. (1997). Long short-term memory. Neural Computation, 9(8), 1735–1780."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.232,
+            0.826,
+            0.274
+          ],
+          "content": "Kalchbrenner, N. and Blunsom, P. (2013). Recurrent continuous translation models. In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1700–1709. Association for Computational Linguistics."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.283,
+            0.826,
+            0.311
+          ],
+          "content": "Koehn, P. (2010). Statistical Machine Translation. Cambridge University Press, New York, NY, USA."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.32,
+            0.826,
+            0.377
+          ],
+          "content": "Koehn, P., Och, F. J., and Marcu, D. (2003). Statistical phrase-based translation. In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1, NAACL ’03, pages 48–54, Stroudsburg, PA, USA. Association for Computational Linguistics."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.386,
+            0.826,
+            0.415
+          ],
+          "content": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a). On the difficulty of training recurrent neural networks. In ICML’2013."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.424,
+            0.826,
+            0.466
+          ],
+          "content": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013b). On the difficulty of training recurrent neural networks. In Proceedings of the 30th International Conference on Machine Learning (ICML 2013)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.475,
+            0.826,
+            0.519
+          ],
+          "content": "Pascanu, R., Gulcehre, C., Cho, K., and Bengio, Y. (2014). How to construct deep recurrent neural networks. In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.527,
+            0.826,
+            0.571
+          ],
+          "content": "Pouget-Abadie, J., Bahdanau, D., van Merrienboer, B., Cho, K., and Bengio, Y. (2014). Overcoming ¨ the curse of sentence length for neural machine translation using automatic segmentation. In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation. to appear."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.578,
+            0.824,
+            0.608
+          ],
+          "content": "Schuster, M. and Paliwal, K. K. (1997). Bidirectional recurrent neural networks. Signal Processing, IEEE Transactions on, 45(11), 2673–2681."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.616,
+            0.826,
+            0.66
+          ],
+          "content": "Schwenk, H. (2012). Continuous space translation models for phrase-based statistical machine translation. In M. Kay and C. Boitet, editors, Proceedings of the 24th International Conference on Computational Linguistics (COLIN), pages 1071–1080. Indian Institute of Technology Bombay."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.668,
+            0.826,
+            0.711
+          ],
+          "content": "Schwenk, H., Dchelotte, D., and Gauvain, J.-L. (2006). Continuous space language models for statistical machine translation. In Proceedings of the COLING/ACL on Main conference poster sessions, pages 723–730. Association for Computational Linguistics."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.174,
+            0.72,
+            0.825,
+            0.749
+          ],
+          "content": "Sutskever, I., Vinyals, O., and Le, Q. (2014). Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems (NIPS 2014)."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.172,
+            0.757,
+            0.824,
+            0.786
+          ],
+          "content": "Zeiler, M. D. (2012). ADADELTA: An adaptive learning rate method. arXiv:1212.5701 [cs.LG]."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.49,
+            0.949,
+            0.509,
+            0.961
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.104,
+            0.415,
+            0.119
+          ],
+          "level": 2,
+          "content": "A MODEL ARCHITECTURE"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.137,
+            0.411,
+            0.152
+          ],
+          "level": 2,
+          "content": "A.1 ARCHITECTURAL CHOICES"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.164,
+            0.826,
+            0.208
+          ],
+          "content": "The proposed scheme in Section 3 is a general framework where one can freely define, for instance, the activation functions $f$ of recurrent neural networks (RNN) and the alignment model a. Here, we describe the choices we made for the experiments in this paper."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.225,
+            0.464,
+            0.24
+          ],
+          "level": 2,
+          "content": "A.1.1 RECURRENT NEURAL NETWORK"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.17,
+            0.251,
+            0.828,
+            0.378
+          ],
+          "content": "For the activation function f of an RNN, we use the gated hidden unit recently proposed by Cho et al. (2014a). The gated hidden unit is an alternative to the conventional simple units such as an element-wise tanh. This gated unit is similar to a long short-term memory (LSTM) unit proposed earlier by Hochreiter and Schmidhuber (1997), sharing with it the ability to better model and learn long-term dependencies. This is made possible by having computation paths in the unfolded RNN for which the product of derivatives is close to 1. These paths allow gradients to flow backward easily without suffering too much from the vanishing effect (Hochreiter, 1991; Bengio et $a l .$ , 1994; Pascanu et al., 2013a). It is therefore possible to use LSTM units instead of the gated hidden unit described here, as was done in a similar context by Sutskever et al. (2014)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.383,
+            0.687,
+            0.399
+          ],
+          "content": "The new state $s _ { i }$ of the RNN employing n gated hidden $\\mathrm { { \\bf u } n i t s ^ { 8 } }$ is computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.33,
+            0.41,
+            0.668,
+            0.425
+          ],
+          "content": "s _ {i} = f (s _ {i - 1}, y _ {i - 1}, c _ {i}) = (1 - z _ {i}) \\circ s _ {i - 1} + z _ {i} \\circ \\tilde {s} _ {i},",
+          "image_source": "images/page_11_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.435,
+            0.826,
+            0.465
+          ],
+          "content": "where ◦ is an element-wise multiplication, and $z _ { i }$ is the output of the update gates (see below). The proposed updated state $\\tilde { s } _ { i }$ <sup>is</sup> computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.342,
+            0.475,
+            0.655,
+            0.491
+          ],
+          "content": "\\tilde {s} _ {i} = \\tanh \\left(W e (y _ {i - 1}) + U \\left[ r _ {i} \\circ s _ {i - 1} \\right] + C c _ {i}\\right),",
+          "image_source": "images/page_11_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.501,
+            0.826,
+            0.557
+          ],
+          "content": "where $e ( y _ { i - 1 } )   \\in   \\mathbb { R } ^ { m }$ is an m-dimensional embedding of a word $y _ { i - 1 } ,$ , and $r _ { i }$ is the output of the reset gates (see below). When $y _ { i }$ is represented as a 1-of-K vector, $e ( y _ { i } )$ is simply a column of an embedding matrix $E \\in \\mathbb { R } ^ { m \\times K }$ . Whenever possible, we omit bias terms to make the equations less cluttered."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.565,
+            0.826,
+            0.607
+          ],
+          "content": "The update gates $z _ { i }$ allow each hidden unit to maintain its previous activation, and the reset gates $r _ { i }$ control how much and what information from the previous state should be reset. We compute them by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.364,
+            0.617,
+            0.633,
+            0.652
+          ],
+          "content": "\\begin{array}{l} z _ {i} = \\sigma (W _ {z} e (y _ {i - 1}) + U _ {z} s _ {i - 1} + C _ {z} c _ {i}), \\\\ r _ {i} = \\sigma (W _ {r} e (y _ {i - 1}) + U _ {r} s _ {i - 1} + C _ {r} c _ {i}), \\end{array}",
+          "image_source": "images/page_11_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.661,
+            0.449,
+            0.677
+          ],
+          "content": "where $\\sigma \\left( \\cdot \\right)$ is a logistic sigmoid function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.683,
+            0.826,
+            0.727
+          ],
+          "content": "At each step of the decoder, we compute the output probability (Eq. (4)) as a multi-layered function (Pascanu et al., 2014). We use a single hidden layer of maxout units (Goodfellow et al., 2013) and normalize the output probabilities (one for each word) with a softmax function (see Eq. (6))."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.744,
+            0.379,
+            0.759
+          ],
+          "level": 2,
+          "content": "A.1.2 ALIGNMENT MODEL"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.77,
+            0.826,
+            0.814
+          ],
+          "content": "The alignment model should be designed considering that the model needs to be evaluated $T _ { x } \\times T _ { y }$ times for each sentence pair of lengths $T _ { x }$ and $T _ { y }$ . In order to reduce computation, we use a singlelayer multilayer perceptron such that"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.354,
+            0.823,
+            0.644,
+            0.842
+          ],
+          "content": "a (s _ {i - 1}, h _ {j}) = v _ {a} ^ {\\top} \\tanh \\left(W _ {a} s _ {i - 1} + U _ {a} h _ {j}\\right),",
+          "image_source": "images/page_11_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.853,
+            0.826,
+            0.883
+          ],
+          "content": "where $W _ { a } \\in \\mathbb { R } ^ { n \\times n } , U _ { a } \\in \\mathbb { R } ^ { n \\times 2 n }$ and $v _ { a }   \\in   \\mathbb { R } ^ { n }$ are the weight matrices. Since $U _ { a } h _ { j }$ does not depend on i, we can pre-compute it in advance to minimize the computational cost."
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.336,
+            0.914,
+            0.35,
+            0.924
+          ],
+          "content": "ci"
+        },
+        {
+          "type": "page_footnote",
+          "bbox": [
+            0.171,
+            0.898,
+            0.826,
+            0.925
+          ],
+          "content": "8 Here, we show the formula of the decoder. The same formula can be used in the encoder by simply ignoring the context vector and the related terms."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.949,
+            0.511,
+            0.961
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.105,
+            0.504,
+            0.119
+          ],
+          "level": 2,
+          "content": "A.2 DETAILED DESCRIPTION OF THE MODEL"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.13,
+            0.305,
+            0.145
+          ],
+          "level": 2,
+          "content": "A.2.1 ENCODER"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.155,
+            0.825,
+            0.184
+          ],
+          "content": "In this section, we describe in detail the architecture of the proposed model (RNNsearch) used in the experiments (see Sec. 4–5). From here on, we omit all bias terms in order to increase readability."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.19,
+            0.658,
+            0.205
+          ],
+          "content": "The model takes a source sentence of 1-of-K coded word vectors as input"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.21,
+            0.6,
+            0.226
+          ],
+          "content": "\\mathbf {x} = (x _ {1}, \\dots , x _ {T _ {x}}), x _ {i} \\in \\mathbb {R} ^ {K _ {x}}",
+          "image_source": "images/page_12_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.231,
+            0.592,
+            0.246
+          ],
+          "content": "and outputs a translated sentence of 1-of-K coded word vectors"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.395,
+            0.25,
+            0.602,
+            0.268
+          ],
+          "content": "\\mathbf {y} = (y _ {1}, \\dots , y _ {T _ {y}}), y _ {i} \\in \\mathbb {R} ^ {K _ {y}},",
+          "image_source": "images/page_12_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.271,
+            0.825,
+            0.301
+          ],
+          "content": "where $K _ { x }$ and $K _ { y }$ are the vocabulary sizes of source and target languages, respectively. $T _ { x }$ and $T _ { y }$ respectively denote the lengths of source and target sentences."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.307,
+            0.786,
+            0.322
+          ],
+          "content": "First, the forward states of the bidirectional recurrent neural network (BiRNN) are computed:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.333,
+            0.325,
+            0.665,
+            0.365
+          ],
+          "content": "\\overrightarrow {h} _ {i} = \\left\\{ \\begin{array}{l l} (1 - \\overrightarrow {z} _ {i}) \\circ \\overrightarrow {h} _ {i - 1} + \\overrightarrow {z} _ {i} \\circ \\overrightarrow {\\underline {{h}} _ {i}} & , \\text {if} i > 0 \\\\ 0 & , \\text {if} i = 0 \\end{array} \\right.",
+          "image_source": "images/page_12_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.37,
+            0.219,
+            0.384
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.36,
+            0.385,
+            0.636,
+            0.466
+          ],
+          "content": "\\begin{array}{l} \\overrightarrow {h} _ {i} = \\tanh \\left(\\overrightarrow {W} \\overline {{E}} x _ {i} + \\overrightarrow {U} \\left[ \\overrightarrow {r} _ {i} \\circ \\overrightarrow {h} _ {i - 1} \\right]\\right) \\\\ \\overrightarrow {z} _ {i} = \\sigma \\left(\\overrightarrow {W} _ {z} \\overline {{E}} x _ {i} + \\overrightarrow {U} _ {z} \\overrightarrow {h} _ {i - 1}\\right) \\\\ \\overrightarrow {r} _ {i} = \\sigma \\left(\\overrightarrow {W} _ {r} \\overline {{E}} x _ {i} + \\overrightarrow {U} _ {r} \\overrightarrow {h} _ {i - 1}\\right). \\end{array}",
+          "image_source": "images/page_12_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.471,
+            0.826,
+            0.52
+          ],
+          "content": "$\\overline { { E } }   \\in   \\mathbb { R } ^ { m \\times K _ { x } }$ is the word embedding matrix. $\\begin{array} { r } { \\overrightarrow { W } , \\overrightarrow { W } _ { z } , \\overrightarrow { W } _ { r }   \\in   \\mathbb { R } ^ { n \\times m } , \\; \\overrightarrow { U } , \\overrightarrow { U } _ { z } , \\overrightarrow { U } _ { r }   \\in   \\mathbb { R } ^ { n \\times n } } \\end{array}$ are weight matrices. m and n are the word embedding dimensionality and the number of hidden units, respectively. $\\sigma ( \\cdot )$ is as usual a logistic sigmoid function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.526,
+            0.825,
+            0.56
+          ],
+          "content": "The backward states $( \\overleftarrow { h } _ { 1 } , \\cdots , \\overleftarrow { h } _ { T _ { x } } )$ are computed similarly. We share the word embedding matrix E between the forward and backward RNNs, unlike the weight matrices."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.565,
+            0.823,
+            0.594
+          ],
+          "content": "We concatenate the forward and backward states to to obtain the annotations $( h _ { 1 } , h _ { 2 } , \\cdots , h _ { T _ { x } } )$ where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.448,
+            0.595,
+            0.824,
+            0.638
+          ],
+          "content": "h _ {i} = \\left[ \\begin{array}{c} \\overrightarrow {h} _ {i} \\\\ \\overleftarrow {h} _ {i} \\end{array} \\right]\\tag{7}",
+          "image_source": "images/page_12_equation_16.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.174,
+            0.648,
+            0.304,
+            0.662
+          ],
+          "level": 2,
+          "content": "A.2.2 DECODER"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.672,
+            0.762,
+            0.687
+          ],
+          "content": "The hidden state $s _ { i }$ of the decoder given the annotations from the encoder is computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.398,
+            0.692,
+            0.599,
+            0.708
+          ],
+          "content": "s _ {i} = (1 - z _ {i}) \\circ s _ {i - 1} + z _ {i} \\circ \\tilde {s} _ {i},",
+          "image_source": "images/page_12_equation_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.712,
+            0.219,
+            0.725
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.351,
+            0.73,
+            0.646,
+            0.782
+          ],
+          "content": "\\begin{array}{l} \\tilde {s} _ {i} = \\tanh \\left(W E y _ {i - 1} + U \\left[ r _ {i} \\circ s _ {i - 1} \\right] + C c _ {i}\\right) \\\\ z _ {i} = \\sigma \\left(W _ {z} E y _ {i - 1} + U _ {z} s _ {i - 1} + C _ {z} c _ {i}\\right) \\\\ r _ {i} = \\sigma \\left(W _ {r} E y _ {i - 1} + U _ {r} s _ {i - 1} + C _ {r} c _ {i}\\right) \\end{array}",
+          "image_source": "images/page_12_equation_21.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.787,
+            0.825,
+            0.853
+          ],
+          "content": "E is the word embedding matrix for the target language. $\\begin{array} { r } { W , W _ { z } , W _ { r } \\in \\mathbb { R } ^ { n \\times m } , U , U _ { z } , U _ { r } \\in \\mathbb { R } ^ { n \\times n } } \\end{array}$ and $C , C _ { z } , C _ { r } \\: \\in \\: \\mathbb { R } ^ { n \\times 2 \\overbrace { n } }$ are weights. Again, m and n are the word embedding dimensionality and the number of hidden units, respectively. The initial hidden state $s _ { 0 }$ is computed by $s _ { 0 } =$ tanh $\\left( W _ { s }   \\overleftarrow { h } _ { 1 } \\right)$ , where $W _ { s } \\in \\mathbb { R } ^ { n \\times n }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.86,
+            0.664,
+            0.875
+          ],
+          "content": "The context vector $c _ { i }$ are recomputed at each step by the alignment model:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.444,
+            0.878,
+            0.554,
+            0.921
+          ],
+          "content": "c _ {i} = \\sum_ {j = 1} ^ {T _ {x}} \\alpha_ {i j} h _ {j},",
+          "image_source": "images/page_12_equation_24.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.949,
+            0.51,
+            0.961
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.175,
+            0.1,
+            0.833,
+            0.19
+          ],
+          "content": "| Model | Updates (×10<sup>5</sup>) | Epochs | Hours | GPU | Train NLL | Dev. NLL |\n| --- | --- | --- | --- | --- | --- | --- |\n| RNNenc-30 | 8.46 | 6.4 | 109 | TITAN BLACK | 28.1 | 53.0 |\n| RNNenc-50 | 6.00 | 4.5 | 108 | Quadro K-6000 | 44.0 | 43.6 |\n| RNNsearch-30 | 4.71 | 3.6 | 113 | TITAN BLACK | 26.7 | 47.2 |\n| RNNsearch-50 | 2.88 | 2.2 | 111 | Quadro K-6000 | 40.7 | 38.1 |\n| RNNsearch-50? | 6.67 | 5.0 | 252 | Quadro K-6000 | 36.7 | 35.2 |",
+          "captions": [
+            {
+              "bbox": [
+                0.171,
+                0.202,
+                0.826,
+                0.26
+              ],
+              "content": "Table 2: Learning statistics and relevant information. Each update corresponds to updating the parameters once using a single minibatch. One epoch is one pass through the training set. NLL is the average conditional log-probabilities of the sentences in either the training set or the development set. Note that the lengths of the sentences differ."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_13_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.284,
+            0.22,
+            0.298
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.382,
+            0.303,
+            0.614,
+            0.36
+          ],
+          "content": "\\begin{array}{l} \\alpha_ {i j} = \\frac {\\exp (e _ {i j})}{\\sum_ {k = 1} ^ {T _ {x}} \\exp (e _ {i k})} \\\\ e _ {i j} = v _ {a} ^ {\\top} \\tanh (W _ {a} s _ {i - 1} + U _ {a} h _ {j}), \\end{array}",
+          "image_source": "images/page_13_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.367,
+            0.826,
+            0.418
+          ],
+          "content": "and $h _ { j }$ is the j-th annotation in the source sentence (see Eq. (7)). $v _ { a }   \\in   \\mathbb { R } ^ { n ^ { \\prime } } , W _ { a }   \\in   \\mathbb { R } ^ { n ^ { \\prime } \\times n }$ and $U _ { a } \\; \\in \\; \\mathbb { R } ^ { n ^ { \\prime } \\times 2 n }$ are weight matrices. Note that the model becomes RNN Encoder–Decoder (Cho et al., 2014a), if we fix $c _ { i }$ to $\\vec { h } _ { T _ { x } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.424,
+            0.825,
+            0.453
+          ],
+          "content": "With the decoder state $s _ { i - 1 }$ , the context $c _ { i }$ and the last generated word $y _ { i - 1 }$ , we define the probability of a target word $y _ { i }$ as"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.378,
+            0.46,
+            0.619,
+            0.478
+          ],
+          "content": "p (y _ {i} | s _ {i}, y _ {i - 1}, c _ {i}) \\propto \\exp \\left(y _ {i} ^ {\\top} W _ {o} t _ {i}\\right),",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.484,
+            0.22,
+            0.498
+          ],
+          "content": "where"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.384,
+            0.502,
+            0.614,
+            0.527
+          ],
+          "content": "t _ {i} = \\left[ \\max \\left\\{\\tilde {t} _ {i, 2 j - 1}, \\tilde {t} _ {i, 2 j} \\right\\} \\right] _ {j = 1, \\dots , l} ^ {\\top}",
+          "image_source": "images/page_13_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.533,
+            0.592,
+            0.55
+          ],
+          "content": "and $\\tilde { t } _ { i , k }$ is the k-th element of a vector $\\tilde { t } _ { i }$ which is computed by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.389,
+            0.557,
+            0.608,
+            0.574
+          ],
+          "content": "\\tilde {t} _ {i} = U _ {o} s _ {i - 1} + V _ {o} E y _ {i - 1} + C _ {o} c _ {i}.",
+          "image_source": "images/page_13_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.58,
+            0.826,
+            0.625
+          ],
+          "content": "$W _ { o } \\in \\mathbb { R } ^ { K _ { y } \\times l } , U _ { o } \\in \\mathbb { R } ^ { 2 l \\times n } , V _ { o } \\in \\mathbb { R } ^ { 2 l \\times m }$ and $C _ { o } \\in \\mathbb { R } ^ { 2 l \\times 2 n }$ are weight matrices. This can be understood as having a deep output (Pascanu et al., 2014) with a single maxout hidden layer (Goodfellow et al., 2013)."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.639,
+            0.326,
+            0.655
+          ],
+          "level": 2,
+          "content": "A.2.3 MODEL SIZE"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.663,
+            0.826,
+            0.707
+          ],
+          "content": "For all the models used in this paper, the size of a hidden layer n is 1000, the word embedding dimensionality m is 620 and the size of the maxout hidden layer in the deep output l is 500. The number of hidden units in the alignment model $n ^ { \\prime }$ is 1000."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.726,
+            0.406,
+            0.742
+          ],
+          "level": 2,
+          "content": "B TRAINING PROCEDURE"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.758,
+            0.423,
+            0.772
+          ],
+          "level": 2,
+          "content": "B.1 PARAMETER INITIALIZATION"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.779,
+            0.826,
+            0.855
+          ],
+          "content": "We initialized the recurrent weight matrices $U , U _ { z } , U _ { r } , \\overleftarrow { U } , \\overleftarrow { U } _ { z } , \\overleftarrow { U } _ { r } , \\overrightarrow { U } , \\overrightarrow { U } _ { r }$ z and ${ \\vec { U } } _ { r }$ as random orthogonal matrices. For $W _ { a }$ and $\\bar { U } _ { a }$ , we initialized them by sampling each element from the Gaussian distribution of mean 0 and variance $0 . 0 0 1 ^ { 2 }$ . All the elements of $V _ { a }$ and all the bias vectors were initialized to zero. Any other weight matrix was initialized by sampling from the Gaussian distribution of mean 0 and variance $0 . 0 1 ^ { 2 }$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.173,
+            0.87,
+            0.292,
+            0.885
+          ],
+          "level": 2,
+          "content": "B.2 TRAINING"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.896,
+            0.826,
+            0.926
+          ],
+          "content": "We used the stochastic gradient descent (SGD) algorithm. Adadelta (Zeiler, 2012) was used to automatically adapt the learning rate of each parameter $( \\epsilon   =   1 0 ^ { - 6 }$ and $\\rho   =   0 . 9 5 )$ . We explicitly"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.949,
+            0.51,
+            0.96
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.173,
+            0.033,
+            0.482,
+            0.048
+          ],
+          "content": "Published as a conference paper at ICLR 2015"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.105,
+            0.827,
+            0.149
+          ],
+          "continues_prev": true,
+          "content": "normalized the L<sub>2</sub>-norm of the gradient of the cost function each time to be at most a predefined threshold of 1, when the norm was larger than the threshold (Pascanu et al., 2013b). Each SGD update direction was computed with a minibatch of 80 sentences."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.154,
+            0.828,
+            0.211
+          ],
+          "content": "At each update our implementation requires time proportional to the length of the longest sentence in a minibatch. Hence, to minimize the waste of computation, before every 20-th update, we retrieved 1600 sentence pairs, sorted them according to the lengths and split them into 20 minibatches. The training data was shuffled once before training and was traversed sequentially in this manner."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.216,
+            0.786,
+            0.232
+          ],
+          "content": "In Tables 2 we present the statistics related to training all the models used in the experiments."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.251,
+            0.528,
+            0.268
+          ],
+          "level": 2,
+          "content": "C TRANSLATIONS OF LONG SENTENCES"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.173,
+            0.284,
+            0.862,
+            0.862
+          ],
+          "content": "| Source | An admitting privilege is the right ofa doctor to admit a patient to a hospital or a medical centre to carry out a diagnosis or a procedure, based on his status as a health care worker at a hospital. |\n| --- | --- |\n| Reference | Le privile`ge d'admission est le droit d'un me´decin, en vertu de son statut de membre soignant d'un hoˆpital, d'admettre un patient dans un hoˆpital ou un centre me´dical afin d'y de´livrer un diagnostic ou un traitement. |\n| RNNenc-50 | Un privile`ge d'admission est le droit d'un me´decin de reconnaˆıtre un patient a` l'hoˆpital ou un centre me´dical d'un diagnostic ou de prendre un diagnostic en fonction de son e´tat de sante´. |\n| RNNsearch-50 | Un privile`ge d'admission est le droit d'un me´decin d'admettre un patient a` un hoˆpital ou un centre me´dical pour effectuer un diagnostic ou une proce´dure, selon son statut de travailleur des soins de sante´ a` l'hoˆpital. |\n| Google | Un privile`ge admettre est le droit d'un me´decin d'admettre un patient dans un hoˆpital ou un |\n| Translate | centre me´dical pour effectuer un diagnostic ou une proce´dure, fonde´e sur sa situation en tant que travailleur de soins de sante´ dans un hoˆpital. |\n| Source | This kind of experience is part of Disney's efforts to \"extend the lifetime of its series and build new relationships with audiences via digital platforms that are becoming ever more important,\" he added. |\n| Reference | Ce type d'expe´rience entre dans le cadre des efforts de Disney pour \"e´tendre la dure´e de vie de ses se´ries et construire de nouvelles relations avec son public graˆce a` des plateformes nume´riques qui sont de plus en plus importantes\", a-t-il ajoute´. |\n| RNNenc-50 | Ce type d'expe´rience fait partie des initiatives du Disney pour \"prolonger la dure´e de vie de ses nouvelles et de de´velopper des liens avec les lecteurs nume´riques qui deviennent plus com-plexes. |\n| RNNsearch-50 | Ce genre d'expe´rience fait partie des efforts de Disney pour \"prolonger la dure´e de vie de ses se´ries et cre´er de nouvelles relations avec des publics via des plateformes nume´riques de plus en plus importantes\", a-t-il ajoute´. |\n| Google | Ce genre d'expe´rience fait partie des efforts de Disney a` \"e´tendre la dure´e de vie de sa se´rie et |\n| Translate | construire de nouvelles relations avec le public par le biais des plates-formes nume´riques qui deviennent de plus en plus important\", at-il ajoute´. |\n| Source | In a press conference on Thursday, Mr Blair stated that there was nothing in this video that might constitute a \"reasonable motive\" that could lead to criminal charges being brought against the mayor. |\n| Reference | En confe´rence de presse,jeudi, M. Blair a affirme´ qu'il n'y avait rien dans cette vide´o qui puisse constituer des \"motifs raisonnables\" pouvant mener au de´poˆt d'une accusation criminelle contre le maire. |\n| RNNenc-50 | Lors de la confe´rence de presse de jeudi, M. Blair a dit qu'il n'y avait rien dans cette vide´o qui pourrait constituer une \"motivation raisonnable\" pouvant entraˆıner des accusations criminelles porte´es contre le maire. |\n| RNNsearch-50 | Lors d'une confe´rence de pressejeudi, M. Blair a de´clare´ qu'il n'y avait rien dans cette vide´o qui pourrait constituer un \"motif raisonnable\" qui pourrait conduire a` des accusations criminelles contre le maire. |\n| Google | Lors d'une confe´rence de presse jeudi, M. Blair a de´clare´ qu'il n'y avait rien dans cette vido |\n| Translate | qui pourrait constituer un \"motif raisonnable\" qui pourrait mener a` des accusations criminelles portes contre le maire. |",
+          "captions": [
+            {
+              "bbox": [
+                0.172,
+                0.873,
+                0.827,
+                0.916
+              ],
+              "content": "Table 3: The translations generated by RNNenc-50 and RNNsearch-50 from long source sentences (30 words or more) selected from the test set. For each source sentence, we also show the goldstandard translation. The translations by Google Translate were made on 27 August 2014."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_14_table_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.491,
+            0.949,
+            0.511,
+            0.961
+          ],
+          "content": "15"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2016-05-23T00:19:15Z",
+      "modified_at": "2016-05-23T00:19:15Z",
+      "creator_application": "LaTeX with hyperref package",
+      "producer_application": "pdfTeX-1.40.12",
+      "page_count": 15,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
