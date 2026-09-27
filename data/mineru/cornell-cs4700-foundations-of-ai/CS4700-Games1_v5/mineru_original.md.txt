@@ -1,0 +1,645 @@
+**CS 4700:**
+
+# Foundations of Artificial Intelligence
+
+**Bart Selman**
+
+**selman@cs.cornell.edu**
+
+**Module:**
+
+**Adversarial Search**
+
+**R&N: Chapter 5**
+
+**Adversarial Search Optimal decisions Minimax α-β pruning Case study: Deep Blue UCT and Go**
+
+## Mathematical Game Theory
+
+**Branch of economics that views any multi-agent environment as a game, provided that the impact of each agent on the others is** “**significant**”**, regardless of whether the agents are cooperative or competitive.**
+
+## First step:
+
+**Deterministic**
+
+**Turn taking**
+
+– **2-player**
+
+**Zero-sum game of perfect information (fully observable) “my win is your loss” and vice versa; utility of final states opposite for each player. My +10 is your -10.**
+
+**Multi-agent game vs. single-agent search problem**
+
+**"Unpredictable" opponent need a strategy: specifies a move for each possible opponent reply. E.g with “huge” lookup table.**
+
+**Time limits** à **unlikely to find optimal response, must approximate**
+
+**Rich history of game playing in AI, in particular in the area of chess.**
+
+**Both Turing and Shannon viewed chess as an important challenge for machine intelligence because playing chess appears to require some level of intelligence.**
+
+![](images/page_4_image_0.jpg)
+
+## A Brief History of Computer Chess
+
+![](images/page_4_image_2.jpg)
+
+![](images/page_4_image_3.jpg)
+
+1912
+
+![](images/page_4_image_5.jpg)
+
+![](images/page_4_image_6.jpg)
+
+1997
+
+1970s
+
+![](images/page_4_image_9.jpg)
+
+1950s
+
+![](images/page_4_image_11.jpg)
+
+![](images/page_4_image_12.jpg)
+
+![](images/page_4_image_13.jpg)
+
+man 0 Today
+
+![](images/page_5_image_0.jpg)
+
+**Human-computer hybrid most exciting new level of play. Computers as smart assistants are becoming accepted. Area referred to as “Assisted Cognition.”**
+
+## Why is Game-Playing a Challenge for AI?
+
+**Competent game playing is a mark of some aspects of “intelligence”**
+
+– **Requires planning, reasoning and learning**
+
+**Proxy for real-world decision making problems**
+
+– **Easy to represent states & define rules**
+
+– **Obtaining good performance is hard**
+
+**“Adversary” can be nature**
+
+**PSPACE-complete (or worse)**
+
+**Computationally equivalent to hardware debugging, formal verification, logistics planning**
+
+– **PSPACE believed to be harder than NP.**
+
+## Traditional Board Games
+
+Finite
+
+Two-player
+
+Zero-sum
+
+Deterministic
+
+Perfect Information
+
+Sequential
+
+![](images/page_7_image_7.jpg)
+
+![](images/page_7_image_8.jpg)
+
+![](images/page_7_image_9.jpg)
+
+**We start 3 moves per player in:**
+
+![](images/page_8_image_3.jpg)
+
+## Look-ahead based Tic-Tac-Toe
+
+![](images/page_9_image_1.jpg)
+
+## Look-ahead based Tic-Tac-Toe
+
+![](images/page_10_image_1.jpg)
+
+## Look-ahead based Tic-Tac-Toe
+
+![](images/page_11_image_1.jpg)
+
+![](images/page_12_image_1.jpg)
+
+**Each board in game tree gets unique game tree value (utility; -1/0/+1) under optimal rational play. (Convince yourself.)**
+
+**E.g. 0 for top board.**
+
+**What if our opponent does not play optimally?**
+
+![](images/page_13_image_3.jpg)
+
+**Approach: Look first at bottom tree. Label bottom-most boards.**
+
+**Then label boards one level up, according result of best possible move.**
+
+**… and so on. Moving up layer by layer.**
+
+**Termed the Minimax Algorithm**
+
+– **Implemented as a depth-first search**
+
+## Aside: Game tree learning
+
+**Can (in principle) store all board values in large table. 3^19 = 19,683 for tic-tac-toe.**
+
+**Can use table to try to train classifier to predict “win”, “loss”, or “draw.”**
+
+**Issue: For real games, one can only look at tiny, tiny fragment of table.**
+
+**Reinforcement learning builds on this idea.**
+
+## Look-ahead based Chess 、
+
+![](images/page_15_image_1.jpg)
+
+## How big is this tree?
+
+![](images/page_16_image_1.jpg)
+
+\~35 moves per position
+
+\~80 levels <u>deep</u>
+
+Approx. 10^120 > Number of atoms in the observable universe (10^80)
+
+We can really only search a **tiny, miniscule faction** of this tree! Around 60 x 10^9 nodes for 5 minute move. **Approx. 1 / 10^70 fraction.**
+
+## Don’t search to the very end
+
+## What’s the work-around?
+
+– **Go down 10-12 levels (still deeper than most humans)**
+
+– **But now what?**
+
+– **Compute an estimate of the position’s value**
+
+• **This heuristic function is typically designed by a domain expert**
+
+![](images/page_17_image_6.jpg)
+
+**Consider a game tree with leaf utilities (final boards) +1 / 0 / -1 (or +inf / 0 –inf). What are the utilities of intermediate boards in the game tree? +1 / 0 / -1 (or +inf / 0 / -inf)**
+
+**The board heuristics is trying to estimate these values from a quick calculation on the board. Eg, considering material won/loss on chess board or regions captures in GO. Heuristic value of e.g. +0.9, suggests true value may be +1**.
+
+**What is a problem for the board heuristics (or evaluation functions) at the beginning of the game?**
+
+**(Consider a heuristics that looks at lost and captured pieces.)**
+
+**What will the heuristic values be near the top?**
+
+**Close to 0! Not much has happened yet….**
+
+**Other issue: children of any node are mostly quite similar. Gives almost identical heuristic board values. Little or no information about the right move.**
+
+**Solution: Look ahead. I.e., build search tree several levels deep (hopefully 10 or more levels). Boards at bottom of tree more diverse. Use minimax search to determine value of starting board, assuming optimal play for both players.**
+
+![](images/page_19_chart_0.jpg)
+
+Figure 6.23. Relationship between the level of play by chess programs
+
+**IBM knew this when they “acquired” the Deep Thought team. They could predict what it would take to beat Kasparov.**
+
+## Will deeper search give stronger play? Always? And why?
+
+**Very counterintuitive: there are “artificial games” where searching deeper leads to worse play! (Nau and Pearl 1980) Not in natural games! Game tree anomaly.**
+
+**Heuristic board eval value is sometimes informally referred to as the “chance of winning” from that position.**
+
+**That’s a bit odd, because in a deterministic game with perfect information and optimal play, there is no “chance” at all! Each board has a fixed utility: -1, 0, or +1 (a loss, draw, or a win). (result from game theory)**
+
+**Still, “chance of winning” is an informally useful notion. But, remember, no clear semantics to heuristic values.**
+
+**What if board eval gives true board utility? How much search is needed to make a move? We’ll see that using machine learning and “self play,” we can get close for backgammon.**
+
+Two important factors for success:
+
+– Deep look ahead
+
+– Good heuristic function
+
+Are there games where this is not feasible?
+
+## Limitations?
+
+![](images/page_21_image_5.jpg)
+
+Two important factors for success:
+
+– ~~Deep look ahead~~
+
+– Good heuristic function
+
+Are there games where this is not feasible?
+
+## Limitations?
+
+Looking 14 levels ahead in Chess ≈ Looking 4 levels ahead in Go
+
+![](images/page_23_image_0.jpg)
+
+Two important factors for success:
+
+– ~~Deep look ahead~~
+
+– ~~Good heuristic function~~
+
+Are there games where this is not feasible?
+
+## Limitations?
+
+Looking 14 levels ahead in Chess ≈ Looking 4 levels ahead in Go
+
+Moves have extremely delayed effects
+
+Two important factors for success:
+
+## Limitations?
+
+– ~~Deep look ahead~~
+
+– ~~Good heuristic function~~
+
+Are there games where this is not feasible?
+
+Looking 14 levels ahead in Chess ≈ Looking 4 levels ahead in Go
+
+Moves have extremely delayed effects
+
+Minimax players for GO were very weak until 2007…but then play at master level. Now, AlphaGo world champion.
+
+Two important factors for success:
+
+– ~~Deep look ahead~~
+
+– ~~Good heuristic function~~
+
+Are there games where this is not feasible?
+
+## Limitations?
+
+Looking 14 levels ahead in Chess ≈ Looking 4 levels ahead in Go
+
+Moves have extremely delayed effects
+
+New sampling based search method: Upper Confidence bounds applied to Trees (UCT)
+
+Rule 4
+
+## Well… Why not use a strategy / knowledge, as humans do?
+
+## Consider for Tic-Tac-Toe:
+
+1. If there is a winning move, make it.
+
+2. If the opponent can win at a square by his next move, play that move.
+
+3.Taking the central square is more important than taking other squares.
+
+4. Taking corner squares is more important than taking squares on the edges.
+
+![](images/page_26_image_7.jpg)
+
+**So, although one can capture strategic knowledge of many games in high-level rules (at least to some extent), in practice any interesting game will revolve precisely around the exceptions to those rules!**
+
+**Issue has been studied for decades but research keeps coming back to game tree search (or most recently, game tree sampling).**
+
+**Currently only one exception: reinforcement learning for backgammon. (discussed later)**
+
+**A very strong board evaluation function was learned in self-play.**
+
+**Represented as a neural net.**
+
+**Almost no search remained.**
+
+## Formal definition of a game:
+
+**Initial state**
+
+**Successor function: returns list of (move, state) pairs**
+
+**Terminal test: determines when game over Terminal states: states where game ends**
+
+**Utility function (objective function or payoff function): gives numeric value for terminal states**
+
+We will consider games with 2 players (**Max and Min**)
+
+**Max moves first.**
+
+## Game Tree Example: Tic-Tac-Toe
+
+Tree from Max’s perspective
+
+![](images/page_29_image_2.jpg)
+
+## Minimax Algorithm
+
+## Minimax algorithm
+
+– **Perfect play for deterministic, 2-player game**
+
+– **Max tries to maximize its score**
+
+– **Min tries to minimize Max’s score (Min)**
+
+– **Goal: Max to move to position with highest minimax value**
+
+à **Identify best achievable payoff against best play**
+
+## Minimax Algorithm
+
+![](images/page_31_image_1.jpg)
+
+Payoff for Max
+
+## Minimax Algorithm (cont’d)
+
+![](images/page_32_image_1.jpg)
+
+Payoff for Max
+
+## Minimax Algorithm (cont’d)
+
+![](images/page_33_image_1.jpg)
+
+Payoff for Max
+
+**What if payoff(Q) = 100 payoff(R) = 200**
+
+**Starting DFS, left to right, do we need to know eval(H)?**
+
+## Minimax Algorithm
+
+**Do DFS. Real games: use iterative deepening. (gives “anytime” approach.)**
+
+![](images/page_34_image_4.jpg)
+
+**Properties of minimax algorithm:**
+
+<strong><u>Complete?</u></strong> **Yes (if tree is finite)**
+
+<strong><u>Optimal?</u></strong> **Yes (against an optimal opponent)**
+
+<strong><u>Time complexity?</u></strong> **O(b**<strong><sup>m</sup></strong>**)**
+
+<strong><u>Space complexity?</u></strong> **O(bm) (depth-first exploration, if it generates all successors at once)**
+
+**For chess, b ≈ 35, m ≈ 80 for "reasonable" games** à **exact solution completely infeasible**
+
+**m – maximum depth of the tree; b – legal moves**
+
+## Limitations
+
+– **Generally not feasible to traverse entire tree**
+
+– **Time limitations**
+
+## Key Improvements
+
+**Use evaluation function instead of utility (discussed earlier)**
+
+• **Evaluation function provides estimate of utility at given position**
+
+– **Alpha/beta pruning**
+
+## α-β Pruning
+
+Can we improve search by reducing the size of the game tree to be examined?
+
+à **Yes! Using alpha-beta pruning**
+
+## Principle
+
+**If a move is determined worse than another move already examined, then there is no need for further examination of the node.**
+
+**Analysis shows that will be able to search almost twice as deep.**
+
+**Really is what makes game tree search practically feasible.**
+
+**E.g. Deep Blue 14 plies using alpha-beta pruning.**
+
+**Otherwise only 7 or 8 (weak chess player). (plie = half move / one player)**
+
+![](images/page_38_image_1.jpg)
+
+MAX
+
+MIN
+
+![](images/page_39_image_2.jpg)
+
+![](images/page_40_image_0.jpg)
+
+![](images/page_41_image_0.jpg)
+
+![](images/page_42_image_0.jpg)
+
+**What gives best pruning?**
+
+**Note: order children matters!**
+
+**Visit most promising (from min/max perspective) first.**
+
+## Rules:
+
+– **α is the best (highest) found so far along the path for Max**
+
+– **β is the best (lowest) found so far along the path for Min**
+
+**Search below a MIN node may be alpha-pruned if its β <= α of some MAX ancestor**
+
+**Search below a MAX node may be beta-pruned if its α >= β of some MIN ancestor.**
+
+**See also fig. 5.5 R&N.**
+
+**α is the value of the best (i.e., highest-value) choice found so far at any choice point along the path for max**
+
+**If v is worse than α, max will avoid it**
+
+à **prune that branch**
+
+Define β similarly for min
+
+MAX
+
+MIN "
+
+MAX
+
+MIN
+
+## More abstractly
+
+![](images/page_44_image_9.jpg)
+
+## Properties of α-β Prune
+
+**Pruning does not affect final result**
+
+**Good move ordering improves effectiveness of pruning b(e.g., chess, try captures first, then threats, froward moves, then backward moves…)**
+
+With "perfect ordering," time complexity $= \mathbf { O } ( \mathbf { b } ^ { \mathbf { m } / 2 } )$
+
+à **doubles depth of search that alpha-beta pruning can explore**
+
+**Example of the value of reasoning about which computations are relevant (a form of metareasoning)**
+
+```txt
+A few quick approx. numbers for Chess:
+```
+
+```txt
+b = 35
+200M nodes / second ==> 5 mins = 60 B nodes in search tree
+(2 M nodes / sec. software only, fast PC ==> 600 M nodes in tree)
+```
+
+$$
+35^{\wedge}7 = 64\mathrm{B}
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$35^{5}=52\mathrm{M}$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+So, basic minimax: around 7 plies deep. (5 plies)
+With, alpha-beta  $35^{(14/2)} = 64$  B. Therefore, 14 plies deep. (10 plies)
+</div>
+
+```txt
+Aside:
+4-ply ≈ human novice
+8-ply / 10-ply ≈ typical PC, human master
+14-ply ≈ Deep Blue, Kasparov (+ depth 25 for “selective extensions”) / 7 moves by each player.
+```
+
+**Can’t go to all the way to the “bottom:”**
+
+**evaluation function = estimated desirability of position**
+
+## cutoff test:
+
+**e.g., depth limit (Use Iterative Deepening)**
+
+**“Unstable positions:” Search deeper. Selective extensions. E.g. exchange of several pieces in a row.**
+
+**What is the problem with that?**
+
+**Horizon effect.**
+
+à **add quiescence search:** à **quiescent position: position where next move unlikely to cause large change in players**’ **positions**
+
+## Evaluation Function
+
+– **Performed at search cutoff point**
+
+– **Must have same terminal/goal states as utility function**
+
+– **Tradeoff between accuracy and time → reasonable complexity**
+
+## – Accurate
+
+**Performance of game-playing system dependent on accuracy/ goodness of evaluation**
+
+**Evaluation of nonterminal states strongly correlated with actual chances of winning**
+
+**For chess, typically linear weighted sum of features**
+
+$$
+E v a l (\mathbf {s}) = \mathbf {w} _ {1} \mathbf {f} _ {1} (\mathbf {s}) + \mathbf {w} _ {2} \mathbf {f} _ {2} (\mathbf {s}) + \dots + \mathbf {w} _ {\mathrm{n}} \mathbf {f} _ {\mathrm{n}} (\mathbf {s})
+$$
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+e.g., $\mathbf{w}_1 = 1$ with
+</div>
+
+**f**<strong><sub>1</sub></strong>**(s) = (number of white pawns) – (number of black pawns), etc.**
+
+```txt
+Key challenge – find a good evaluation features: Not just material! (as used by novice) Isolated pawns are bad. How well protected is your king? How much maneuverability to you have? Do you control the center of the board? Strategies change as the game proceeds
+```
+
+**Features are a form of chess knowledge. Hand-coded in eval function.**
+
+**Knowledge tightly integrated in search.**
+
+**Feature weights: can be automatically tuned (“learned”). Standard issue in machine learning:**
+
+![](images/page_49_image_9.jpg)
+
+```txt
+Features, generally hand-coded; weights tuned automatically.
+```
+
+![](images/page_50_image_2.jpg)
+
+24 23 22 21 20 19 18 17 16 15 14 13
+
+**Generalization of minimax for games with chance nodes**
+
+**Examples: Backgammon, bridge**
+
+**Calculates expected value where probability is taken over all possible dice rolls/chance events**
+
+**- Max and Min nodes determined as before**
+
+**- Chance nodes evaluated as weighted average**
+
+## Game Tree for Backgammon
+
+MIN
+
+DICE
+
+MAX
+
+TERMINAL
+
+![](images/page_52_image_5.jpg)
+
+**Expectiminimax**
+
+**Expectiminimax(n) =**
+
+**Utility(n)** for n, a terminal state
+
+$m a x _ { _ { s \in S u c c ( n ) } }$ for n, a Max node expectiminimax( )s
+
+$m i n _ { _ { s \in \mathit { S u c c } ( n ) } }$ for n, a Min node expectiminimax( )s
+
+$\scriptstyle \sum _ { s \in S u c c ( n ) } P ( s )   ^ { * }$ for n, a chance node expectiminimax( )     s
+
+![](images/page_54_image_0.jpg)
+
+$$
+\mathbf {. 9} * \mathbf {2} + \mathbf {. 1} * \mathbf {3} = \mathbf {2 . 1}
+$$
+
+## Expectiminimax
+
+![](images/page_54_image_3.jpg)
+
+Small chance at high payoff wins. But, not necessarily the best thing to do!
+
+**--- game tree search**
+
+**--- minimax**
+
+**--- optimality under rational play**
+
+**--- alpha-beta pruning**
+
+**--- board evaluation function (utility) / weighted sum of features and tuning**
+
+**--- expectiminimax**
