@@ -1,0 +1,211 @@
+## BACH KHOA
+
+## TRÍ TUỆ NHÂN TẠO
+
+![](images/page_0_image_3.jpg)
+
+Khoa Công Nghệ Thông Tin
+TS. Nguyễn Văn Hiệu
+
+## TRÍ TƯỆ NHÂN TẠO
+
+## BACH KHOA
+
+Neural Networks
+
+## Nội dung
+
+\- Giới thiệu
+
+\- Neural Networks
+
+• Demo
+
+## Giới thiệu
+
+\- Mạng nơ-ron được cấu thành từ các nơ-ron đơn lẻ được gọi Perceptron
+
+\- Sigmoid Neurons
+
+![](images/page_3_image_7.jpg)
+
+![](images/page_3_image_8.jpg)
+
+```python
+class Neuron(object):
+    # ...
+    def forward(self, inputs):
+        # assume inputs and weights and bias
+        cell_body_sum = np.sum(inputs * self.weights) + self.bias
+        # sigmoid activation function
+        firing_rate = 1.0 / (1.0 + math.exp(-cell_body_sum))
+return firing_rate
+```
+
+## Giới thiệu
+
+## - Sigmoid Neurons
+
+## Kiến trúc Neural Networks
+
+\- Mạng Neural networks có 3 kiểu tầng
+
+![](images/page_5_image_6.jpg)
+
+output layer
+
+![](images/page_5_image_8.jpg)
+
+hidden layer 1 hidden layer 2
+
+\- Mỗi node trong hidden layer và output layer:
+
+\- Liên kết tất cả với các node ở layer trước đó với hệ số riêng w
+
+\- Mỗi node có một hệ số bias riêng
+
+\- Diễn ra 2 bước: tính tổng linear và tính activation function
+
+## Kiến trúc Neural Networks
+
+![](images/page_6_image_5.jpg)
+
+Input layer
+
+Hidden layer 1
+
+Hidden layer 2
+
+Output layer
+
+## Kiến trúc Neural Networks
+
+\- $W^{(1)} \in R^{2 \times 3}, W^{(2)} \in R^{3 \times 3}, W^{(3)} \in R^{3 \times 1}$
+
+\- $b^{(1)} \in R^{3 \times 1}, b^{(2)} \in R^{3 \times 1}, b^{(3)} \in R$
+
+\- $z^{(1)} \in R^{3 \times 1}, z^{(2)} \in R^{3 \times 1}, z^{(3)} \in R$
+
+\- $a^{(0)} = x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, a^{(1)} \in R^{3 \times 1}, a^{(2)} \in R^{3 \times 1}, a^{(3)} \in R$
+
+## Lan truyền tiến
+
+$$
+a ^ {(0)} \longrightarrow z ^ {(1)} \longrightarrow a ^ {(1)} \longrightarrow z ^ {(2)} \longrightarrow a ^ {(2)} \longrightarrow z ^ {(3)} \longrightarrow a ^ {(3)} = \hat {y}
+$$
+
+## BACH KHOA
+
+$$
+\boldsymbol {a} ^ {(0)} = [ \boldsymbol {x} ] = \left[ \begin{array}{c} x _ {1} \\ x _ {2} \end{array} \right]
+$$
+
+$$
+z _ {j} ^ {(l + 1)} = \sum_ {i = 1} ^ {n (l)} w _ {i j} ^ {(l + 1)} a _ {i} ^ {(l)} + b _ {j} ^ {(l + 1)}
+$$
+
+$$
+a _ {j} ^ {(l + 1)} = \delta \Big (z _ {j} ^ {(l + 1)} \Big)
+$$
+
+## Học với Neural Network
+
+\- Loss function
+
+$$
+J = - \frac {1}{m} \cdot \sum_ {i = 1} ^ {m} \sum_ {k = 1} ^ {K} \left(y _ {k} ^ {(i)} \log \overbrace {\hat {y} _ {k} ^ {(i)}} ^ {a _ {k} ^ {L}} + \left(1 - y _ {k} ^ {(i)}\right) \log \left(1 - \hat {y} _ {k} ^ {(i)}\right)\right)
+$$
+
+SGD:
+
+$$
+\Phi_ {w} J, \Phi_ {b} J
+$$
+
+## Lan truyền ngược
+
+$$
+\begin{array}{c} \frac {\partial \mathrm{J}}{\partial \mathrm{w} ^ {(1)}} \quad \frac {\partial \mathrm{J}}{\partial \mathrm{b} ^ {(1)}} \\ \hline \frac {\partial \mathrm{J}}{\partial \mathrm{a} ^ {(1)}} \end{array} \xleftarrow {} \begin{array}{c} \frac {\partial \mathrm{J}}{\partial \mathrm{w} ^ {(2)}} \quad \frac {\partial \mathrm{J}}{\partial \mathrm{b} ^ {(2)}} \\ \hline \frac {\partial \mathrm{J}}{\partial \mathrm{a} ^ {(2)}} \end{array} \xleftarrow {} \begin{array}{c} \frac {\partial \mathrm{J}}{\partial \mathrm{w} ^ {(3)}} \quad \frac {\partial \mathrm{J}}{\partial \mathrm{b} ^ {(3)}} \\ \hline \frac {\partial \mathrm{J}}{\partial \hat {\mathrm{y}}} \end{array}
+$$
+
+• Buốc 1:
+
+$$
+\frac {\mathrm{d} J}{\mathrm{d} \hat {y}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(3)}}
+$$
+
+• Bước 2:
+
+$$
+\begin{array}{l} \frac {\mathrm{d} J}{\mathrm{d} w ^ {(3)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot \frac {\mathrm{d} z ^ {(3)}}{\mathrm{d} w ^ {(3)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot a ^ {(2)} \\ \frac {\mathrm{d} J}{\mathrm{d} b ^ {(3)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot \frac {\mathrm{d} z ^ {(3)}}{\mathrm{d} b ^ {(3)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot (1) \\ \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot \frac {\mathrm{d} z ^ {(3)}}{\mathrm{d} a ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} \hat {y}} \cdot \frac {\mathrm{d} a ^ {(3)}}{\mathrm{d} z ^ {(3)}} \cdot (w ^ {(3)}) ^ {T} \end{array}
+$$
+
+## Lan truyền ngược
+
+• Bước 3:
+
+$$
+\begin{array}{l} \frac {\mathrm{d} J}{\mathrm{d} w ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot \frac {\mathrm{d} z ^ {(2)}}{\mathrm{d} w ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot a ^ {(1)} \\ \frac {\mathrm{d} J}{\mathrm{d} b ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot \frac {\mathrm{d} z ^ {(2)}}{\mathrm{d} b ^ {(2)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot (1) \\ \frac {\mathrm{d} J}{\mathrm{d} a ^ {(1)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot \frac {\mathrm{d} z ^ {(2)}}{\mathrm{d} a ^ {(1)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(2)}} \cdot \frac {\mathrm{d} a ^ {(2)}}{\mathrm{d} z ^ {(2)}} \cdot (w ^ {(2)}) ^ {T} \end{array}
+$$
+
+• Buóc 4:
+
+$$
+\begin{array}{c} \frac {\mathrm{d} J}{\mathrm{d} w ^ {(1)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(1)}} \cdot \frac {\mathrm{d} a ^ {(1)}}{\mathrm{d} z ^ {(1)}} \cdot a ^ {(0)} \\ \frac {\mathrm{d} J}{\mathrm{d} b ^ {(1)}} = \frac {\mathrm{d} J}{\mathrm{d} a ^ {(1)}} \cdot \frac {\mathrm{d} a ^ {(1)}}{\mathrm{d} z ^ {(1)}} \cdot (1) \end{array}
+$$
+
+## Demo
+
+```python
+ass NN():
+    def __init__(self, layers):
+        self.layers = layers
+        self.L = len(layers)
+        self.w = [np.random.randn(12, l1 + 1)
+            for l2, l1 in zip(layers[1:], layers[:-1])]
+```
+
+## Demo
+
+```python
+ss NN():
+    def feedforward(self, x):
+        z = []
+        a = [self.add_bias(x)]
+        for l in range(1, self.L):
+            z_l = np.dot(self.w[l], a[l-1])
+            a_l = self.sigmoid(z_l)
+            if l < self.L - 1:
+                a_l = self.add_bias(a_l)
+
+            z.append(z_l)
+            a.append(a_l)
+
+        return (z, a)
+```
+
+## Demo
+
+```python
+class NN():
+    def backprop(self, x, y):
+        w_grad = [np.zeros(W.shape) for W in self.w]
+        z, a = self.feedforward(x) # feedforward
+        dz = a[-1] - y # backward
+        for _l in range(1, self.L):
+            l = -_l # layer index
+            if l < -1:
+                da = self.sigmoid_grad(z[l])
+                dz = np.dot(self.w[l+1][:, 1:].transpose(), dz) * da
+                w_grad[l] = np.dot(dz, a[l-1].transpose()) # gradient
+        return w_grad
+    def add_bias(self, a):
+        return np.insert(a, 0, 1, axis=0)
+    def sigmoid(self, z):
+        return 1.0 / (1.0 + np.exp(-z))
+    def sigmoid_grad(self, z):
+        s = self.sigmoid(z)
+        return s * (1 - s)
+```
+
+## D BACH KHOA

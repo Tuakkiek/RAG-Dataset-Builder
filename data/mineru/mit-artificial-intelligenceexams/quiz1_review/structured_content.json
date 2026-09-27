@@ -1,0 +1,2563 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.491,
+            0.113
+          ],
+          "level": 2,
+          "content": "1 Tree Search (12 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.768,
+            0.145
+          ],
+          "content": "Consider the tree shown below. The numbers on the arcs are the arc lengths."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.237,
+            0.162,
+            0.786,
+            0.461
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.483,
+            0.886,
+            0.558
+          ],
+          "content": "Assume that the nodes are expanded in alphabetical order when no other order is specified by the search, and that the goal is state G. No visited or expanded lists are used. What order would the states be expanded by each type of search? Stop when you expand G. Write only the sequence of states expanded by each search."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.116,
+            0.599,
+            0.874,
+            0.768
+          ],
+          "content": "| Search Type | List of states |\n| --- | --- |\n| Breadth First |  |\n| Depth First |  |\n| Progressive Deepening Search |  |\n| Uniform Cost Search |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.896,
+            0.507,
+            0.91
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.089,
+            0.518,
+            0.114
+          ],
+          "level": 2,
+          "content": "2 Graph Search (10 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.886,
+            0.182
+          ],
+          "content": "Consider the graph shown below where the numbers on the links are link costs and the numbers next to the states are heuristic estimates. Note that the arcs are undirected. Let A be the start state and G be the goal state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.325,
+            0.197,
+            0.681,
+            0.446
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.112,
+                0.478,
+                0.886,
+                0.589
+              ],
+              "content": "Simulate A\\* search with a strict expanded list on this graph. At each step, show the path to the state of the node that's being expanded, the length of that path, the total estimated cost of the path (actual + heuristic), and the current value of the expanded list (as a list of states). You are welcome to use scratch paper or the back of the exam pages to simulate the search. However, please transcribe (only) the information requested into the table given below."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_1_image_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.115,
+            0.628,
+            0.954,
+            0.87
+          ],
+          "content": "| Path to State Expanded | Length of Path | Total Estimated Cost | Expanded List |\n| --- | --- | --- | --- |\n| A | 0 | 5 | (A) |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_1_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.896,
+            0.506,
+            0.912
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.562,
+            0.113
+          ],
+          "level": 2,
+          "content": "3 Heuristics and A\\* (8 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.126,
+            0.637,
+            0.145
+          ],
+          "content": "1. Is the heuristic given in Problem 2 admissible? Explain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.248,
+            0.633,
+            0.267
+          ],
+          "content": "2. Is the heuristic given in Problem 2 consistent? Explain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.37,
+            0.888,
+            0.462
+          ],
+          "content": "3. Did the A\\* algorithm with strict expanded list find the optimal path in the previous example? If it did find the optimal path, explain why you would expect that. If it didn't find the optimal path, explain why you would expect that and give a simple (specific) change of state values of the heuristic that would be sufficient to get the correct behavior."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.897,
+            0.506,
+            0.911
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.713,
+            0.114
+          ],
+          "level": 2,
+          "content": "4 Search problem formulation (10 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.884,
+            0.162
+          ],
+          "content": "A Mars rover has to leave the lander, collect rock samples from three places (in any order) and return to the lander."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.164,
+            0.885,
+            0.218
+          ],
+          "content": "Assume that it has a navigation module that can take it directly from any place of interest to any other place of interest. So it has primitive actions go-to-lander, go-to-rock-1, go-to-rock-2, and go-to-rock-3."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.218,
+            0.886,
+            0.256
+          ],
+          "content": "We know the time it takes to traverse between each pair of special locations. Our goal is to find a sequence of actions that will perform this task in the shortest amount of time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.27,
+            0.886,
+            0.327
+          ],
+          "content": "1. Formulate this problem as a search problem by specifying the state space, initial state, path-cost function, and goal test. Try to be sure that the state space is detailed enough to support solving the problem, but not redundant."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.52,
+            0.706,
+            0.539
+          ],
+          "content": "2. Say what search technique would be most appropriate, and why."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.733,
+            0.886,
+            0.806
+          ],
+          "content": "3. One possible heuristic evaluation function for a state would be the distance back to the lander from the location of the state; this is clearly admissible. What would be a more powerful, but still admissible, heuristic for this problem? (Don't worry about whether it's consistent or not.)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.896,
+            0.506,
+            0.912
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.389,
+            0.113
+          ],
+          "level": 2,
+          "content": "5 CSP (16 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.884,
+            0.162
+          ],
+          "content": "Let's look at the problem of scheduling programs on a set of computers as a constraint satisfaction problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.163,
+            0.885,
+            0.255
+          ],
+          "content": "We have a set of programs (jobs) $J_{i}$ to schedule on a set of computers (machines) $M_{j}$. Each job has a maximum running time $R_{i}$. We will assume that jobs (on any machines) can only be started at some pre-specified times $T_{k}$. Also, there's a $T_{max}$ time by which all the jobs must be finished running; that is, start time + running time is less than or equal to max time. For now, we assume that any machine can execute any job."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.255,
+            0.885,
+            0.291
+          ],
+          "content": "Let's assume that we attack the problem by using the jobs as variables and using values that are each a pair $(M_j, T_k)$. Here is a simple example."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.307,
+            0.414,
+            0.325
+          ],
+          "content": "\\- Running time of $J_{1}$ is $R_{1} = 2$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.338,
+            0.414,
+            0.356
+          ],
+          "content": "\\- Running time of $J_{2}$ is $R_{2} = 4$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.369,
+            0.414,
+            0.387
+          ],
+          "content": "\\- Running time of $J_{3}$ is $R_{2} = 3$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.4,
+            0.414,
+            0.417
+          ],
+          "content": "\\- Running time of $J_{4}$ is $R_{4} = 3$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.43,
+            0.439,
+            0.449
+          ],
+          "content": "\\- Starting times $T_{k} = \\{1, 2, 3, 4, 5\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.462,
+            0.47,
+            0.479
+          ],
+          "content": "\\- Two available machines $M_{1}$ and $M_{2}$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.492,
+            0.39,
+            0.51
+          ],
+          "content": "\\- The max time is $T_{max} = 7$."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.523,
+            0.885,
+            0.559
+          ],
+          "content": "\\- An assignment would look like $J_{1} = (M_{2}, 2)$, that is, run job $J_{1}$ on machine $M_{2}$ starting at time 2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.575,
+            0.886,
+            0.63
+          ],
+          "content": "1. What are the constraints for this type of CSP problem? Write a boolean expression (using logical connectives and arithmetic operations) that must be satisfied by the assignments to each pair of variables. In particular:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.643,
+            0.393,
+            0.661
+          ],
+          "content": "\\- $J_{i}$ with value $(M_{j}, T_{k})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.668,
+            0.402,
+            0.686
+          ],
+          "content": "\\- $J_{m}$ with value $(M_{n}, T_{p})$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.897,
+            0.506,
+            0.911
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.092,
+            0.745,
+            0.111
+          ],
+          "content": "2. Write down a complete valid solution to the example problem above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.123,
+            0.251,
+            0.141
+          ],
+          "content": "\\- $J_{1} =$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.148,
+            0.251,
+            0.166
+          ],
+          "content": "\\- $J_{2} =$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.172,
+            0.252,
+            0.19
+          ],
+          "content": "\\- $J_{3} =$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.196,
+            0.251,
+            0.215
+          ],
+          "content": "\\- $J_{4} =$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.227,
+            0.885,
+            0.265
+          ],
+          "content": "3. Which variable would be chosen first if we did BT-FC with dynamic ordering of variables (most constrained)? Why?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.367,
+            0.885,
+            0.405
+          ],
+          "content": "4. If we do constraint propagation in the initial state of the example problem, what domain values (if any) are eliminated? Explain."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.507,
+            0.842,
+            0.526
+          ],
+          "content": "5. If we set $J_{2} = (M_{1}, 1)$, what domain values are still legal after forward checking?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.538,
+            0.248,
+            0.556
+          ],
+          "content": "\\- $J_{1} \\in$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.585,
+            0.248,
+            0.604
+          ],
+          "content": "\\- $J_{2} \\in$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.633,
+            0.248,
+            0.651
+          ],
+          "content": "\\- $J_{3} \\in$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.68,
+            0.248,
+            0.698
+          ],
+          "content": "\\- $J_{4} \\in$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.896,
+            0.506,
+            0.911
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.091,
+            0.885,
+            0.147
+          ],
+          "content": "6. We could have formulated this problem using the machines $M_{j}$ as the variables. What would the values be in this formulation, assuming you have N machines and have K jobs to schedule?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.25,
+            0.838,
+            0.269
+          ],
+          "content": "7. What are some disadvantages of this formulation (using machines as variables)?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.897,
+            0.506,
+            0.911
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.089,
+            0.51,
+            0.113
+          ],
+          "level": 2,
+          "content": "6 Game Search (10 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.886,
+            0.183
+          ],
+          "content": "Consider the game tree shown below. The top node is a max node. The labels on the arcs are the moves. The numbers in the bottom layer are the values of the different outcomes of the game to the max player."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.268,
+            0.198,
+            0.719,
+            0.341
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.379,
+            0.586,
+            0.398
+          ],
+          "content": "1. What is the value of the game to the max player?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.423,
+            0.556,
+            0.442
+          ],
+          "content": "2. What first move should the max player make?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.468,
+            0.885,
+            0.506
+          ],
+          "content": "3. Assuming the max player makes that move, what is the best next move for the min player, assuming that this is the entire game tree?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.53,
+            0.885,
+            0.567
+          ],
+          "content": "4. Using alpha-beta pruning, consider the nodes from right to left, which nodes are cut off? Circle the nodes that are not examined."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.292,
+            0.586,
+            0.745,
+            0.73
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_7.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.896,
+            0.506,
+            0.911
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.49,
+            0.113
+          ],
+          "level": 2,
+          "content": "1 Tree Search (10 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.127,
+            0.886,
+            0.18
+          ],
+          "content": "Consider the tree shown below. The numbers on the arcs are the arc lengths; the numbers near states B, C, and D are the heuristic estimates; all other states have a heuristic estimate of 0."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.328,
+            0.194,
+            0.673,
+            0.35
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.37,
+            0.886,
+            0.443
+          ],
+          "content": "Assume that the children of a node are expanded in alphabetical order when no other order is specified by the search, and that the goal is state J. No visited or expanded lists are used. What order would the states be expanded by each type of search. Write only the sequence of states expanded by each search."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.145,
+            0.484,
+            0.902,
+            0.69
+          ],
+          "content": "| Search Type | List of states |\n| --- | --- |\n| Breadth First |  |\n| Depth First |  |\n| Progressive Deepening Search |  |\n| Best-First Search |  |\n| A* Search |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.934,
+            0.506,
+            0.949
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.089,
+            0.502,
+            0.114
+          ],
+          "level": 2,
+          "content": "2 Graph Search (8 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.886,
+            0.164
+          ],
+          "content": "Consider the graph shown below. Note that the arcs are undirected. Let A be the start state and G be the goal state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.43,
+            0.179,
+            0.57,
+            0.348
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.368,
+            0.886,
+            0.424
+          ],
+          "content": "Simulate uniform cost search with a strict expanded list on this graph. At each step, show the state of the node that's being expanded, the length of that path, and the current value of the expanded list (as a list of states)."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.145,
+            0.467,
+            0.713,
+            0.709
+          ],
+          "content": "| State Expanded | Length of Path | Expanded List |\n| --- | --- | --- |\n| A | 0 | (A) |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_table_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.934,
+            0.506,
+            0.949
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.515,
+            0.114
+          ],
+          "level": 2,
+          "content": "3 A\\* Algorithm (12 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.127,
+            0.702,
+            0.145
+          ],
+          "content": "1. Let's consider three elements in the design of the $A*$ algorithm:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.158,
+            0.516,
+            0.175
+          ],
+          "content": "\\- The heuristic, where the choices are:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.182,
+            0.413,
+            0.2
+          ],
+          "content": "\\- arbitrary heuristic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.203,
+            0.424,
+            0.221
+          ],
+          "content": "\\- admissible heuristic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.218,
+            0.225,
+            0.421,
+            0.242
+          ],
+          "content": "\\- consistent heuristic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.25,
+            0.278,
+            0.268
+          ],
+          "content": "\\- History:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.275,
+            0.294,
+            0.291
+          ],
+          "content": "\\- none"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.295,
+            0.342,
+            0.313
+          ],
+          "content": "\\- visited list"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.317,
+            0.415,
+            0.335
+          ],
+          "content": "\\- strict expanded list"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.338,
+            0.457,
+            0.356
+          ],
+          "content": "\\- non-strict expanded list"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.363,
+            0.287,
+            0.38
+          ],
+          "content": "\\- Pathmax"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.387,
+            0.364,
+            0.405
+          ],
+          "content": "\\- Use pathmax"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.217,
+            0.408,
+            0.421,
+            0.427
+          ],
+          "content": "\\- Don't use pathmax"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.439,
+            0.886,
+            0.513
+          ],
+          "content": "In the table below, indicate all the combinations that guarantee that A\\* will find an optimal path. Not all rows have to be filled. If multiple values works for any of Heuristic, History and Pathmax, independent of the other choices, you can write the multiple values in one row. So"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.164,
+            0.516,
+            0.438,
+            0.555
+          ],
+          "content": "| Heuristic | History | Pathmax |\n| --- | --- | --- |\n| A,B | C | D,E |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_table_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.56,
+            0.719,
+            0.579
+          ],
+          "content": "can be used to represent all of: A,C,D; A,C,E; B,C,D; and B,C,E."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.164,
+            0.628,
+            0.739,
+            0.834
+          ],
+          "content": "| Heuristic | History | Pathmax |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_table_17.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.935,
+            0.507,
+            0.949
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.092,
+            0.846,
+            0.11
+          ],
+          "content": "2. In the network of problem 2, assume you are given the following heuristic values:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.406,
+            0.126,
+            0.642,
+            0.143
+          ],
+          "content": "A = 5; B = 4; C = 0; G = 0",
+          "image_source": "images/page_11_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.16,
+            0.304,
+            0.176
+          ],
+          "content": "Is this heuristic:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.208,
+            0.415,
+            0.225
+          ],
+          "content": "\\- Admissible? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.247,
+            0.412,
+            0.263
+          ],
+          "content": "\\- Consistent? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.278,
+            0.436,
+            0.295
+          ],
+          "content": "Justify your answer very briefly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.49,
+            0.871,
+            0.508
+          ],
+          "content": "3. With the heuristic above will $\\mathrm{A}^*$ using a strict expanded list find the optimal path?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.546,
+            0.265,
+            0.563
+          ],
+          "content": "Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.604,
+            0.436,
+            0.621
+          ],
+          "content": "Justify your answer very briefly."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.935,
+            0.506,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.114,
+            0.089,
+            0.495,
+            0.113
+          ],
+          "level": 2,
+          "content": "4 Game Search (5 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.127,
+            0.886,
+            0.182
+          ],
+          "content": "Consider the game tree shown below. Assume the top node is a max node. The labels on the arcs are the moves. The numbers in the bottom layer are the values of the different outcomes of the game to the max player."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.267,
+            0.196,
+            0.728,
+            0.391
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.412,
+            0.587,
+            0.43
+          ],
+          "content": "1. What is the value of the game to the max player?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.443,
+            0.558,
+            0.461
+          ],
+          "content": "2. What first move should the max player make?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.473,
+            0.885,
+            0.511
+          ],
+          "content": "3. Assuming the max player makes that move, what is the best next move for the min player, assuming that this is the entire game tree?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.536,
+            0.593,
+            0.562
+          ],
+          "level": 2,
+          "content": "5 Alpha-Beta Pruning (5 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.575,
+            0.628,
+            0.594
+          ],
+          "content": "In the following game tree, are there any alpha-beta cutoffs?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.327,
+            0.608,
+            0.668,
+            0.764
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.785,
+            0.885,
+            0.822
+          ],
+          "content": "\\- Consider the nodes from left to right, which nodes are cutoff? Circle the nodes that are not examined and label them with L."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.848,
+            0.885,
+            0.885
+          ],
+          "content": "\\- Consider the nodes from right to left, which nodes are cutoff? Circle the nodes that are not examined and label them with R."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.935,
+            0.507,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.113,
+            0.089,
+            0.521,
+            0.113
+          ],
+          "level": 2,
+          "content": "6 CSP Methods (15 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.127,
+            0.885,
+            0.164
+          ],
+          "content": "Let's consider some combinations of CSP methods. For each of the combinations described below say very briefly whether:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.176,
+            0.885,
+            0.213
+          ],
+          "content": "1. It would be well-defined to combine them, in the sense that none of the implementation assumptions of the methods as we defined them are violated in the combination."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.135,
+            0.225,
+            0.886,
+            0.298
+          ],
+          "content": "2. It could be useful, that is, one would expect improved performance (over using only the first method mentioned), at least in some problems. Improved performance could be either from being better able to solve problems or improved efficiency (indicate which)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.31,
+            0.886,
+            0.346
+          ],
+          "content": "In each case, circle Yes or No for each of Well-Defined? and Useful? and give a very brief explanation of your answers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.347,
+            0.887,
+            0.421
+          ],
+          "content": "Warning: Please pay careful attention to the definition of the methods being combined, we are referring to the original definition of the methods – in isolation. Almost any idea can be made to work with any other idea with sufficient creativity - but that's not what we are looking for in this problem."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.459,
+            0.753,
+            0.478
+          ],
+          "content": "\\- Full constraint propagation (CP) followed by pure backtracking (BT)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.493,
+            0.431,
+            0.511
+          ],
+          "content": "1. Well-Defined? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.518,
+            0.415,
+            0.535
+          ],
+          "content": "2. Useful? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.643,
+            0.771,
+            0.662
+          ],
+          "content": "\\- Full constraint propagation (CP) combined with forward checking (FC)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.678,
+            0.431,
+            0.695
+          ],
+          "content": "1. Well-Defined? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.703,
+            0.415,
+            0.72
+          ],
+          "content": "2. Useful? Yes No"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.494,
+            0.935,
+            0.506,
+            0.95
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.092,
+            0.885,
+            0.129
+          ],
+          "content": "\\- Pure backtracking (BT) combined with dynamic variable (most constrained) and value ordering (least constraining)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.145,
+            0.43,
+            0.162
+          ],
+          "content": "1. Well-Defined? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.169,
+            0.414,
+            0.187
+          ],
+          "content": "2. Useful? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.295,
+            0.884,
+            0.332
+          ],
+          "content": "\\- Min-conflict-hill-climb (MC) combined with dynamic variable (most constrained) and value ordering (least constraining)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.179,
+            0.348,
+            0.43,
+            0.365
+          ],
+          "content": "1. Well-Defined? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.372,
+            0.414,
+            0.39
+          ],
+          "content": "2. Useful? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.498,
+            0.885,
+            0.534
+          ],
+          "content": "\\- Pure backtracking (BT) combined with full constraint propagation (CP) after each tentative assignment."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.55,
+            0.43,
+            0.568
+          ],
+          "content": "1. Well-Defined? Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.178,
+            0.575,
+            0.414,
+            0.592
+          ],
+          "content": "2. Useful? Yes No"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.493,
+            0.934,
+            0.506,
+            0.949
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.143,
+            0.092,
+            0.446,
+            0.119
+          ],
+          "level": 2,
+          "content": "Problem 1 – Search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.136,
+            0.842,
+            0.191
+          ],
+          "content": "Below is a graph to be searched (starting at S and ending at G). Link/edge costs are shown as well as heuristic estimates at the states. You may not need all the information for every search."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.244,
+            0.225,
+            0.772,
+            0.504
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.541,
+            0.85,
+            0.615
+          ],
+          "content": "Draw the complete search tree for this graph. Label each node in the tree with the cost of the path to that node and the heuristic cost at that node. When you need to refer to a node, use the name of the corresponding state and the length of the path to that node."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.84,
+            0.938,
+            0.855,
+            0.954
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.108,
+            0.833,
+            0.161
+          ],
+          "content": "For each of the searches below, just give a list of node names (state name, length of path) drawn from the tree above. Break ties using alphabetical order."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.176,
+            0.846,
+            0.232
+          ],
+          "content": "1. Perform a depth-first search using a visited list. Assume children of a state are ordered in alphabetical order. Show the sequence of nodes that are expanded by the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.299,
+            0.849,
+            0.337
+          ],
+          "content": "2. Perform a best-first (greedy search) without a visited or expanded list. Show the sequence of nodes that are expanded by the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.403,
+            0.81,
+            0.441
+          ],
+          "content": "3. Perform a Uniform Cost Search without a visited or expanded list. Show the sequence of nodes that are expanded by the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.507,
+            0.842,
+            0.545
+          ],
+          "content": "4. Perform an A\\* search (no pathmax) without an expanded list. Show the sequence of nodes that are expanded by the search."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.612,
+            0.43,
+            0.648
+          ],
+          "content": "Is the heuristic in this example\n1. admissible?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.665,
+            0.403,
+            0.703
+          ],
+          "content": "2. consistent?\nJustify your answer, briefly."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.84,
+            0.939,
+            0.855,
+            0.954
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.108,
+            0.854,
+            0.164
+          ],
+          "content": "For each of the following situations, pick the search that is most appropriate (be specific about visited and expanded list). Give a one sentence reason why you picked it. If you write a paragraph, we will not read it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.176,
+            0.844,
+            0.232
+          ],
+          "content": "1. We have a very large search space with a large branching factor and with possibly infinite paths. We have no heuristic. We want to find paths to the goal with minimum numbers of state."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.334,
+            0.807,
+            0.389
+          ],
+          "content": "2. We have a space with a manageable number of states but lots of cycles in the state graph. We have links of varying costs but no heuristic and we want to find shortest paths."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.508,
+            0.842,
+            0.562
+          ],
+          "content": "3. Our search space is a tree of fixed depth and all the goals are the leaves of the tree. We have a heuristic and we want to find any goal as quickly as possible."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.681,
+            0.807,
+            0.737
+          ],
+          "content": "4. We have a space with a manageable number of states but lots of cycles in the state graph. We have links of varying costs and an admissible heuristic and we want to find shortest paths."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.841,
+            0.939,
+            0.855,
+            0.953
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.142,
+            0.093,
+            0.565,
+            0.122
+          ],
+          "level": 2,
+          "content": "Problem 1: Search (25 points)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.318,
+            0.153,
+            0.665,
+            0.421
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.458,
+            0.852,
+            0.514
+          ],
+          "content": "A. Construct the search tree for the graph above, indicate the path length to each node. The numbers shown above are link lengths. Pay careful attention to the arrows; some are bi-directional (shown thick) while some are uni-directional."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.841,
+            0.939,
+            0.855,
+            0.953
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.094,
+            0.829,
+            0.148
+          ],
+          "content": "B. Using the following search tree (different from Part A), perform the searches indicated below (always from S to G). Each node shows both the total path cost to the node as well as the heuristic value for the corresponding state."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.159,
+            0.171,
+            0.796,
+            0.46
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.483,
+            0.846,
+            0.536
+          ],
+          "content": "For each of the searches below, write the sequence of nodes expanded by the search. Specify a node by writing the name of the state and the length of the path (shown as C=x above), e.g. S0, B3, etc. Break ties using alphabetical order."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.174,
+            0.552,
+            0.479,
+            0.57
+          ],
+          "content": "1. Depth First Search (no visited list)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.639,
+            0.508,
+            0.656
+          ],
+          "content": "2. Breadth First Search (with visited list)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.726,
+            0.581,
+            0.744
+          ],
+          "content": "3. Uniform Cost Search (with strict expanded list)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.813,
+            0.419,
+            0.831
+          ],
+          "content": "4. A\\* (without expanded list)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.841,
+            0.94,
+            0.855,
+            0.953
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.093,
+            0.804,
+            0.131
+          ],
+          "content": "C. Choose the most efficient search method that meets the criteria indicated below. Explain your choice."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.146,
+            0.852,
+            0.202
+          ],
+          "content": "1. You are given a state graph with link costs. The running time of the algorithm should be a function of the number of states in the graph and the algorithm should guarantee that the path with shortest path cost is found."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.337,
+            0.841,
+            0.41
+          ],
+          "content": "2. You are given a state graph with link costs and consistent heuristic values on the states. The running time of the algorithm should be a function of the number of states in the graph and the algorithm should guarantee that the path with shortest path cost is found."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.564,
+            0.841,
+            0.62
+          ],
+          "content": "You are given a state graph with no link costs or heuristic values. The algorithm should find paths to a goal with the least number of states and the space requirements should depend on the depth of the first goal found and not be exponential in that depth."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.841,
+            0.938,
+            0.855,
+            0.953
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.151,
+            0.092,
+            0.408,
+            0.118
+          ],
+          "level": 2,
+          "content": "Problem 5 – CSP"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.136,
+            0.849,
+            0.19
+          ],
+          "content": "Assume we have four variables (A, B, C, D) and two values (1, 2). We write variable/value assignments as A1, B2, etc. Assume the only legal values are as listed below:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.206,
+            0.441,
+            0.225
+          ],
+          "content": "■ A-B: A1-B1, A2-B1, A2-B2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.241,
+            0.374,
+            0.259
+          ],
+          "content": "A-C: A1-C2, A2-C1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.275,
+            0.314,
+            0.294
+          ],
+          "content": "A-D: A2-D2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.31,
+            0.367,
+            0.329
+          ],
+          "content": "■ B-C: B1-C2, B2-C1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.345,
+            0.309,
+            0.363
+          ],
+          "content": "B-D: B2-D2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.38,
+            0.375,
+            0.399
+          ],
+          "content": "C-D: C1-D1, C1-D2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.415,
+            0.821,
+            0.453
+          ],
+          "content": "An entry in the matrix below indicates a consistent assignment. This is simply another way of presenting the same information in the list above."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.136,
+            0.465,
+            0.862,
+            0.631
+          ],
+          "content": "|  | A1 | A2 | B1 | B2 | C1 | C2 | D1 | D2 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| A1 |  |  | X |  |  | X |  |  |\n| A2 |  |  | X | X | X |  |  | X |\n| B1 | X | X |  |  |  | X |  |  |\n| B2 |  | X |  |  | X |  |  | X |\n| C1 |  | X |  | X |  |  | X | X |\n| C2 | X |  | X |  |  |  |  |  |\n| D1 |  |  |  |  | X |  |  |  |\n| D2 |  | X |  | X | X |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.665,
+            0.842,
+            0.702
+          ],
+          "content": "Assume you do full constraint propagation in this problem. Show the legal values for each variable after propagation:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.718,
+            0.234,
+            0.735
+          ],
+          "content": "A:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.752,
+            0.233,
+            0.77
+          ],
+          "content": "■ B:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.787,
+            0.233,
+            0.805
+          ],
+          "content": "■ C :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.821,
+            0.235,
+            0.84
+          ],
+          "content": "■ D :"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.832,
+            0.938,
+            0.855,
+            0.954
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.179,
+            0.141,
+            0.815,
+            0.26
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.142,
+                0.273,
+                0.814,
+                0.312
+              ],
+              "content": "Assume that you do the backtracking with forward checking. Show the assignments in order as they are generated during the search."
+            },
+            {
+              "bbox": [
+                0.142,
+                0.107,
+                0.479,
+                0.127
+              ],
+              "content": "Here's the search tree (as in the PS):"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_22_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.43,
+            0.572,
+            0.45
+          ],
+          "content": "What is the first solution found in the search?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.569,
+            0.575,
+            0.588
+          ],
+          "content": "The constraints – repeated for easy reference:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.17,
+            0.587,
+            0.443,
+            0.605
+          ],
+          "content": "■ A-B: A1-B1, A2-B1, A2-B2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.605,
+            0.375,
+            0.622
+          ],
+          "content": "A-C: A1-C2, A2-C1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.622,
+            0.315,
+            0.639
+          ],
+          "content": "A-D: A2-D2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.639,
+            0.369,
+            0.656
+          ],
+          "content": "■ B-C: B1-C2, B2-C1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.657,
+            0.311,
+            0.673
+          ],
+          "content": "B-D: B2-D2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.674,
+            0.376,
+            0.692
+          ],
+          "content": "C-D: C1-D1, C1-D2"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.136,
+            0.706,
+            0.863,
+            0.872
+          ],
+          "content": "|  | A1 | A2 | B1 | B2 | C1 | C2 | D1 | D2 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| A1 |  |  | X |  |  | X |  |  |\n| A2 |  |  | X | X | X |  |  | X |\n| B1 | X | X |  |  |  | X |  |  |\n| B2 |  | X |  |  | X |  |  | X |\n| C1 |  | X |  | X |  |  | X | X |\n| C2 | X |  | X |  |  |  |  |  |\n| D1 |  |  |  |  | X |  |  |  |\n| D2 |  | X |  | X | X |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_table_11.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.832,
+            0.939,
+            0.855,
+            0.954
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.172,
+            0.094,
+            0.56,
+            0.121
+          ],
+          "level": 2,
+          "content": "Problem 5: CSP (15 points)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.141,
+            0.155,
+            0.829,
+            0.209
+          ],
+          "content": "Consider the following constraint graph for a graph coloring problem (the constraints indicate that connected nodes cannot have the same color). The domains are shown in the boxes next to each variable node."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.281,
+            0.24,
+            0.715,
+            0.476
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.142,
+                0.511,
+                0.7,
+                0.531
+              ],
+              "content": "A. What are the variable domains after a full constraint propagation?"
+            }
+          ],
+          "image_source": "images/page_23_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.832,
+            0.938,
+            0.856,
+            0.954
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.252,
+            0.106,
+            0.685,
+            0.344
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.393,
+            0.845,
+            0.5
+          ],
+          "content": "B. Show the sequence of variable assignments during a pure backtracking search (do not assume that the propagation above has been done), assume that the variables are examined in numerical order and the values are assigned in the order shown next to each node. Show assignments by writing the variable number and the value, e.g. 1R. Don't write more than 10 assignments, even if it would take more to find a consistent answer."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.832,
+            0.938,
+            0.855,
+            0.954
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.281,
+            0.106,
+            0.715,
+            0.344
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.171,
+            0.395,
+            0.845,
+            0.468
+          ],
+          "content": "C. Show the sequence of variable assignments during backtracking with forward checking, assume that the variables are examined in numerical order and the values are assigned in the order shown next to each node. Show assignments by writing the variable number and the value, e.g. 1R."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.832,
+            0.938,
+            0.856,
+            0.954
+          ],
+          "content": "16"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "title": "Problem 1 â€“ Search",
+      "authors": [
+        "Tomas Lozano-Perez"
+      ],
+      "languages": [
+        "en"
+      ],
+      "created_at": "2005-08-16T09:35:25+05:30",
+      "modified_at": "2005-08-16T09:37:41+05:30",
+      "creator_application": "Acrobat PDFMaker 5.0 for Word",
+      "producer_application": "Acrobat Distiller 6.0 (Windows)",
+      "page_count": 26,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

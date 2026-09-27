@@ -1,0 +1,3733 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.081,
+            0.062,
+            0.229,
+            0.115
+          ],
+          "content": "CS 188 Spring 2019"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.261,
+            0.062,
+            0.524,
+            0.115
+          ],
+          "content": "Introduction to Artificial Intelligence"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.686,
+            0.075,
+            0.897,
+            0.113
+          ],
+          "content": "Final Exam"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.132,
+            0.908,
+            0.163
+          ],
+          "content": "• You have 170 minutes. The time will be projected at the front of the room. You may not leave during the last 10 minutes of the exam."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.168,
+            0.765,
+            0.185
+          ],
+          "content": "• Do NOT open exams until told to. Write your SIDs in the top right corner of every page."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.19,
+            0.821,
+            0.206
+          ],
+          "content": "• If you need to go to the bathroom, bring us your exam, phone, and SID. We will record the time."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.211,
+            0.908,
+            0.258
+          ],
+          "content": "• In the interest of fairness, we want everyone to have access to the same information. To that end, we will not be answering questions about the content. If a clarification is needed, it will be projected at the front of the room. Make sure to periodically check the clarifications."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.263,
+            0.908,
+            0.294
+          ],
+          "content": "• The exam is closed book, closed laptop, and closed notes except your three-page double-sided cheat sheet. Turn off and put away all electronics."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.299,
+            0.908,
+            0.331
+          ],
+          "content": "• We will give you two sheets of scratch paper. Please do not turn them in with your exam. Mark your answers ON THE EXAM IN THE DESIGNATED ANSWER AREAS. We will not grade anything on scratch paper."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.336,
+            0.337,
+            0.351
+          ],
+          "content": "• For multiple choice questions:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.356,
+            0.456,
+            0.374
+          ],
+          "content": "– \u0003 means mark ALL options that apply"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.375,
+            0.373,
+            0.391
+          ],
+          "content": "means mark ONE choice"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.136,
+            0.392,
+            0.806,
+            0.41
+          ],
+          "content": "#– When selecting an answer, please fill in the bubble or square COMPLETELY \u0000 and \u0004\u0001"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.138,
+            0.425,
+            0.848,
+            0.617
+          ],
+          "content": "| First name |  |\n| --- | --- |\n| Last name |  |\n| SID |  |\n| Student to the right (SID and Name) |  |\n| Student to the left (SID and Name) |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_13.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.291,
+            0.728,
+            0.695,
+            0.902
+          ],
+          "content": "| Q1. Agent Testing Today! | /1 |\n| --- | --- |\n| Q2. Search | /12 |\n| Q3. Pacman's Treasure Hunt | /14 |\n| Q4. Inexpensive Elimination | /9 |\n| Q5. Sampling | /10 |\n| Q6. HMM Smoothing | /11 |\n| Q7. Partying Particle #No Filter(ing) | /8 |\n| Q8. Double Decisions and VPI | /11 |\n| Q9. Naively Fishing | /11 |\n| Q10. Neural Networks and Decision Trees | /13 |\n| Total | /100 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_table_14.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.499,
+            0.949
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.306,
+            0.046,
+            0.681,
+            0.061
+          ],
+          "content": "THIS PAGE IS INTENTIONALLY LEFT BLANK"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.077,
+            0.041,
+            0.519,
+            0.074
+          ],
+          "content": "Q1. [1 pt] Agent Testing Today!"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.794,
+            0.019,
+            0.909,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.237,
+            0.858,
+            0.255
+          ],
+          "content": "It’s testing time! Not only for you, but for our CS188 robots as well! Circle your favorite robot below."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.131,
+            0.39,
+            0.864,
+            0.699
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.935,
+            0.501,
+            0.95
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.041,
+            0.342,
+            0.073
+          ],
+          "level": 2,
+          "content": "Q2. [12 pts] Search"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.379,
+            0.097,
+            0.612,
+            0.257
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.276,
+            0.908,
+            0.309
+          ],
+          "content": "(a) Consider the class of directed, $m \\times n$ grid graphs as illustrated above. (We assume that $m , n > 2 . )$ Each edge has a cost of 1. The start state is $A _ { 1 1 }$ at top left and the goal state at $A _ { m n }$ is bottom right."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.311,
+            0.909,
+            0.358
+          ],
+          "content": "(i) [2 pts] If we run Uniform-Cost graph search (breaking ties randomly), what is the maximum possible size of the fringe? Write your answer in terms of m and n in big-O style, ignoring constants. For example, if you think the answer is $m ^ { 3 } n ^ { 3 } + 2 .$ , write $m ^ { 3 } n ^ { 3 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.446,
+            0.908,
+            0.465
+          ],
+          "content": "(ii) [2 pts] If we run Depth-First graph search with a stack, what is the maximum possible size of the stack?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.562,
+            0.908,
+            0.594
+          ],
+          "content": "(b) Now answer the same questions for undirected $m \\times n$ grid graphs (i.e., the links go in both directions between neighboring nodes)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.596,
+            0.606,
+            0.614
+          ],
+          "content": "(i) [2 pts] Maximum fringe size for Uniform-Cost graph search?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.703,
+            0.586,
+            0.72
+          ],
+          "content": "(ii) [2 pts] Maximum stack size for Depth-First graph search?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.818,
+            0.938,
+            0.851
+          ],
+          "content": "(c) The following questions are concerned with an undirected grid graph G and with Manhattan distance $d ( ( i , j ) , ( k , l ) ) =$ $| i - k | + | j - l |$ . Now the start and goal locations can be anywhere in the graph."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.853,
+            0.908,
+            0.885
+          ],
+          "content": "(i) [1 pt] True/False: Let $G ^ { + }$ be a copy of G with n extra links added with edge cost 1 that connect arbitrary non-adjacent nodes. Then Manhattan distance is an admissible heuristic for finding shortest paths in $G ^ { + }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.889,
+            0.321,
+            0.907
+          ],
+          "content": "True False"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.081,
+            0.908,
+            0.128
+          ],
+          "content": "(ii) [1 pt] True/False: Let $G ^ { - }$ be a copy of $G$ with n arbitrarily chosen links deleted, and let $h ^ { + } ( s , t )$ be the exact cost of the shortest path from location s to location t in $G ^ { + }$ . Then $h ^ { + } ( \\cdot , g )$ is an admissible heuristic for finding shortest paths in $G ^ { - }$ when the goal is location $g .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.133,
+            0.32,
+            0.149
+          ],
+          "content": "True False"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.046,
+            0.908,
+            0.136
+          ],
+          "content": "(iii) [2 pts] Suppose that K robots are at K different locations $( x _ { k } , y _ { k } )$ on the complete grid $G ,$ and can move simultaneously. The goal is for them all to meet in one location as soon as possible, subject to the constraint that if two robots meet in the same location en route, they immediately settle down together and cannot move after that. Define $d _ { X }$ to be the maximum x separation, i.e., $| \\operatorname* { m a x } \\{ x _ { 1 } , \\ldots , x _ { K } \\} - \\operatorname* { m i n } \\{ x _ { 1 } , \\ldots , x _ { K } \\} |$ with $d _ { Y }$ defined similarly. Which of the following is the most accurate admissible heuristic for this problem? (Select one only.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.138,
+            0.315,
+            0.155
+          ],
+          "content": "$\\lceil d _ { X } / 2 \\rceil + \\lceil d _ { Y } / 2 \\rceil$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.155,
+            0.253,
+            0.169
+          ],
+          "content": "$d _ { X } + d _ { Y }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.17,
+            0.366,
+            0.185
+          ],
+          "content": "$\\lceil d _ { X } / 2 \\rceil + \\lceil d _ { Y } / 2 \\rceil + K / 4$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.157,
+            0.185,
+            0.387,
+            0.2
+          ],
+          "content": "max $\\{ \\lceil d _ { X } / 2 \\rceil , \\lceil d _ { Y } / 2 \\rceil , K / 4 \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.2,
+            0.398,
+            0.216
+          ],
+          "content": "max $\\{ \\lceil d _ { X } / 2 \\rceil + \\lceil d _ { Y } / 2 \\rceil , K / 4 \\}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.936,
+            0.5,
+            0.949
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.206,
+            0.439,
+            0.428,
+            0.455
+          ],
+          "content": "Pacman does not have the key"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.043,
+            0.587,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q3. [14 pts] Pacman’s Treasure Hunt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.91,
+            0.146
+          ],
+          "content": "Pacman is hunting for gold in a linear grid-world with cells A, B, C, D. Cell A contains the gold but the entrance to A is locked. Pacman can pass through if he has a key. The possible states are as follows: $X _ { k }$ means that Pacman is in cell X and has the key; $X _ { - k }$ means that Pacman is in cell X and does not have the key. The initial state is always C−k."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.157,
+            0.91,
+            0.205
+          ],
+          "content": "In each state Pacman has two possible actions, left and right. These actions are deterministic but do not change the state if Pacman tries to enter cell A without the key or run into a wall (left from cell A or right from cell D). The key is in cell D and entering cell D causes the key to be picked up instantly."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.216,
+            0.909,
+            0.248
+          ],
+          "content": "If Pacman tries to enter cell A without the key, he receives a reward of -10, i.e. $R ( B _ { - k } , l e f t , B _ { - k } ) { = } - 1 0$ The “exit” action from cell A receives a reward of 100. All other actions have 0 reward."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.207,
+            0.271,
+            0.752,
+            0.427
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.232,
+            0.451,
+            0.753,
+            0.6
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_7.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.281,
+            0.658,
+            0.746,
+            0.695
+          ],
+          "content": "| State | A<sub>k</sub> | B<sub>k</sub> | C<sub>k</sub> | D<sub>k</sub> | A-k | B-k | C-k | D-k |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Action | exit | left | left | left | exit | left | right | right |",
+          "captions": [
+            {
+              "bbox": [
+                0.087,
+                0.62,
+                0.616,
+                0.637
+              ],
+              "content": "(a) [2 pts] Consider the discount factor $\\gamma = 0 . 1$ and the following policy:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_6_table_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.717,
+            0.583,
+            0.734
+          ],
+          "content": "Fill in $V ^ { \\pi } ( B _ { - k } )$ and $V ^ { \\pi } ( C _ { - k } )$ for this policy in the table below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.854,
+            0.909,
+            0.886
+          ],
+          "content": "(b) [3 pts] Now, we will redefine the MDP so that Pacman has a probability $\\beta \\in [ 0 , 1 ]$ , on each attempt, of crashing through the gate even without the key. So our transition function from B will be modified as follows:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.315,
+            0.896,
+            0.711,
+            0.914
+          ],
+          "content": "T (B _ {- k}, l e f t, A _ {- k}) = \\beta \\text {and} T (B _ {- k}, l e f t, B _ {- k}) = 1 - \\beta .",
+          "image_source": "images/page_6_equation_12.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.5,
+            0.949
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.046,
+            0.91,
+            0.093
+          ],
+          "content": "All other aspects remain the same. The immediate reward for attempting to go through the gate is −10 if Pacman fails to go through the gate, as before, and 0 if Pacman succeeds in crashing through gate. Which of the following are true? (Select one or more choices.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.113,
+            0.907,
+            0.145
+          ],
+          "content": "For any fixed \u0003 $\\gamma < 1$ , there is some value $\\beta < 1$ such that trying to crash through the gate is better than fetching the key."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.151,
+            0.908,
+            0.185
+          ],
+          "content": "\u0003 For any fixed β, there is some value of $\\gamma < 1$ such that trying to crash through the gate is better than fetching the key."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.192,
+            0.908,
+            0.224
+          ],
+          "content": "For \u0003 $\\beta = { \\textstyle { \\frac { 1 } { 2 } } }$ , there is some value of $\\gamma < 1$ such that trying to crash through the gate is better than fetching the key."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.23,
+            0.289,
+            0.248
+          ],
+          "content": "\u0003 None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.261,
+            0.844,
+            0.277
+          ],
+          "content": "(c) Thus far we’ve assumed knowledge of the transition function $T ( s , a , s ^ { \\prime } )$ . Now let’s assume we do not."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.288,
+            0.891,
+            0.305
+          ],
+          "content": "(i) [2 pts] Which of the following can be used to obtain a policy if we don’t know the transition function?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.308,
+            0.519,
+            0.325
+          ],
+          "content": "\u0003 Value Iteration followed by Policy Extraction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.329,
+            0.369,
+            0.345
+          ],
+          "content": "Approximate Q-learning\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.348,
+            0.498,
+            0.364
+          ],
+          "content": "\u0003 TD learning followed by Policy Extraction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.369,
+            0.486,
+            0.385
+          ],
+          "content": "Policy Iteration with a learned\u0003 $T ( s , a , s ^ { \\prime } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.395,
+            0.905,
+            0.426
+          ],
+          "content": "(ii) [1 pt] Under which conditions would one benefit from using approximate Q-learning over vanilla Qlearning? (Select one only)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.43,
+            0.527,
+            0.446
+          ],
+          "content": "When the state space is very high-dimensional"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.45,
+            0.472,
+            0.465
+          ],
+          "content": "When the transition function is known"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.469,
+            0.49,
+            0.485
+          ],
+          "content": "\\# When the transition function is unknown"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.489,
+            0.436,
+            0.505
+          ],
+          "content": "When the discount factor is small"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.408,
+            0.581,
+            0.656,
+            0.664
+          ],
+          "content": "| s<sub>t</sub> | a | s<sub>t+1</sub> | reward |\n| --- | --- | --- | --- |\n| C<sub>k</sub> | left | B<sub>k</sub> | 0 |\n| B<sub>k</sub> | left | A<sub>k</sub> | 0 |\n| A<sub>k</sub> | exit | terminal | 100 |\n| B-k | left | B-k | -10 |",
+          "captions": [
+            {
+              "bbox": [
+                0.119,
+                0.545,
+                0.908,
+                0.576
+              ],
+              "content": "(iii) [4 pts] Suppose we choose to use Q-learning (in absence of the transition function) and we obtain the following observations:"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_7_table_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.681,
+            0.908,
+            0.711
+          ],
+          "content": "What values does the Q-function attain if we initialize the Q-values to 0 and replay the experience in the table exactly two times? Use a learning rate, α, of 0.5 and a discount factor, γ, of 0.1."
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.162,
+            0.715,
+            0.619,
+            0.801
+          ],
+          "content": "| 1. | $Q(A_{k}, exit)$: | ○ | 100 | ○ | 75 | ○ | 50 | ○ | 0 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2. | $Q(B_{k}, left)$: | ○ | 10 | ○ | 5 | ○ | 2.5 | ○ | 0 |\n| 3. | $Q(C_{k}, left)$: | ○ | 10 | ○ | 5 | ○ | 2.5 | ○ | 0 |\n| 4. | $Q(B_{-k}, left)$: | ○ | -10 | ○ | 5 | ○ | -2.5 | ○ | -7.5 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_table_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.816,
+            0.908,
+            0.863
+          ],
+          "content": "(d) Suppose we want to define the (deterministic) transition model using propositional logic instead of a table. States are defined using proposition symbols be $A _ { t } , B _ { t } , C _ { t } , D _ { t }$ and $K _ { t }$ , where, $\\mathrm { e . g . , } A _ { t }$ means that Pacman is in cell A at time t and $K _ { t }$ means that the Pacman has the key. The action symbols are Lef $\\mathbf { t } _ { t } ,   \\mathtt { R i g h t } _ { t } ,$ Exit<sub>t</sub>."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.877,
+            0.885,
+            0.894
+          ],
+          "content": "(i) [1 pt] Which of the following statements are correct formulations of the successor-state axiom for A<sub>t</sub>?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.897,
+            0.481,
+            0.913
+          ],
+          "content": "\\bigcirc \\quad A _ {t} \\Leftrightarrow (A _ {t - 1} \\Rightarrow (\\mathsf {L e f t} _ {t - 1} \\land B _ {t - 1} \\land K _ {t - 1})",
+          "image_source": "images/page_7_equation_22.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.488,
+            0.937,
+            0.501,
+            0.949
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.045,
+            0.523,
+            0.062
+          ],
+          "content": "\\bigcirc \\quad A _ {t} \\Leftrightarrow (A _ {t} \\land \\mathsf {L e f t} _ {t}) \\lor (B _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1} \\land K _ {t - 1})",
+          "image_source": "images/page_8_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.066,
+            0.555,
+            0.082
+          ],
+          "content": "\\bigcirc \\quad A _ {t} \\Leftrightarrow (A _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1}) \\lor (B _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1} \\land K _ {t - 1})",
+          "image_source": "images/page_8_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.085,
+            0.506,
+            0.102
+          ],
+          "content": "\\bigcirc \\quad A _ {t} \\Leftrightarrow (A _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1}) \\lor (B _ {t} \\land \\mathsf {L e f t} _ {t} \\land K _ {t})",
+          "image_source": "images/page_8_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.106,
+            0.566,
+            0.122
+          ],
+          "content": "\\bigcirc \\quad A _ {t} \\Leftrightarrow (A _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1}) \\lor (B _ {t - 1} \\land \\mathsf {L e f t} _ {t - 1} \\land \\neg K _ {t - 1})",
+          "image_source": "images/page_8_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.127,
+            0.886,
+            0.143
+          ],
+          "content": "(ii) [1 pt] Which of the following statements are correct formulations of the successor-state axiom for $K _ { t } ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.146,
+            0.424,
+            0.163
+          ],
+          "content": "$K _ { t } \\Leftrightarrow K _ { t - 1 } \\wedge ( C _ { t - 1 } \\vee \\mathtt { R i g h t } _ { t - 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.166,
+            0.374,
+            0.183
+          ],
+          "content": "$K _ { t } \\Leftrightarrow K _ { t } \\vee ( C _ { t } \\wedge \\mathtt { R i g h t } _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.185,
+            0.424,
+            0.204
+          ],
+          "content": "$K _ { t } \\Leftrightarrow K _ { t - 1 } \\vee ( C _ { t - 1 } \\wedge \\mathtt { R i g h t } _ { t - 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.206,
+            0.33,
+            0.223
+          ],
+          "content": "$K _ { t } \\Leftrightarrow K _ { t - 1 } \\vee D _ { t - 1 }$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.487,
+            0.936,
+            0.501,
+            0.949
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.563,
+            0.072
+          ],
+          "level": 2,
+          "content": "Q4. [9 pts] Inexpensive Elimination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.819,
+            0.1
+          ],
+          "content": "In this problem, we will be using the Bayes Net below. Assume all random variables are binary-valued."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.395,
+            0.101,
+            0.593,
+            0.254
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.273,
+            0.588,
+            0.29
+          ],
+          "content": "(a) [1 pt] Consider using Variable Elimination to get $P ( C , G | D = d )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.292,
+            0.91,
+            0.341
+          ],
+          "content": "What is the factor generated if B is the first variable to be eliminated? Comma-separate all variables in the resulting factor, e.g., $f(A,B,C)$ , without conditioned and unconditioned variables. Alphabetically order variables in your answer. ${ \\mathrm { E . g . , ~ } } P ( A )$ before $P ( B )$ , and $P ( A | B )$ before $P ( A | C )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.411,
+            0.909,
+            0.458
+          ],
+          "content": "(b) Suppose we want to find the optimal ordering for variable elimination such that we have the smallest sum of factor sizes. Recall that all random variables in the graph are binary-valued (that means if there are two factors, one over two variables and another over three variables, the sum of factor sizes is 4+8=12)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.465,
+            0.91,
+            0.557
+          ],
+          "content": "In order to pick this ordering, we consider using A\\* Tree Search. Our state space graph consists of states which represent the variables we have eliminated so far, and does not take into account the order which they are eliminated. For example, eliminating B is a transition from the start state to state B, then eliminating A will result in state AB. Similarly, eliminating A is a transition from the start state to state A, then eliminating B will also result in state AB. An edge represents a step in variable elimination, and has weight equal to the size of the factor generated after eliminating the variable."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.345,
+            0.563,
+            0.642,
+            0.716
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.725,
+            0.909,
+            0.783
+          ],
+          "content": "(i) [2 pts] Yes/No: As the graph is defined, we have assumed that different elimination orderings of the same subset of random variables will always produce the same final set of factors. Does this hold for all graphs? Yes # No#"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.804,
+            0.909,
+            0.869
+          ],
+          "content": "(ii) [4 pts] For this part, we consider possible heuristics $h ( s )$ , for a generic Bayes Net which has N variables left to eliminate at state s. Each remaining variable has domain size D. Let the set E be the costs of edges from state s (e.g. for $s = A$ , E is the costs of edges from A to AE, and A to AB). Which of the following would be admissible heuristics?"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.794,
+            0.02,
+            0.909,
+            0.036
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.199,
+            0.879,
+            0.238
+          ],
+          "content": "\u0003 min E \u0003 max E N ∗ D\u0003 2 min E\u0003 \u0003 max (E)/N None are admissible\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.261,
+            0.908,
+            0.292
+          ],
+          "content": "(c) [2 pts] Now let’s consider $\\mathrm { A } ^ { * }$ tree search on our Bayes Net for the query $P ( C , G | D = d )$ , where d is observed evidence."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.298,
+            0.527,
+            0.314
+          ],
+          "content": "Fill in the edge weights (a) − (d) to complete the graph."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.344,
+            0.32,
+            0.643,
+            0.478
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.456,
+            0.514,
+            0.479,
+            0.532
+          ],
+          "content": "(b)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.95
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.38,
+            0.073
+          ],
+          "level": 2,
+          "content": "Q5. [10 pts] Sampling"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.13
+          ],
+          "content": "Variables H, F, D, E and W denote the event of being health conscious, having free time, following a healthy diet, exercising and having a normal body weight, respectively. If an event does occur, we denote it with a +, otherwise −, e.g., +e denotes an exercising and −e denotes not exercising."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.132,
+            0.479,
+            0.148
+          ],
+          "content": "• A person is health conscious with probability 0.8."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.157,
+            0.438,
+            0.173
+          ],
+          "content": "• A person has free time with probability 0.4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.182,
+            0.712,
+            0.198
+          ],
+          "content": "• If someone is health conscious, they will follow a healthy diet with probability 0.9."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.207,
+            0.788,
+            0.224
+          ],
+          "content": "• If someone is health conscious and has free time, then they will exercise with probability 0.9."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.233,
+            0.828,
+            0.249
+          ],
+          "content": "• If someone is health conscious, but does not have free time, they will exercise with probability 0.4."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.258,
+            0.851,
+            0.275
+          ],
+          "content": "• If someone is not health conscious, but they do have free time, they will exercise with probability 0.3."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.283,
+            0.891,
+            0.3
+          ],
+          "content": "• If someone is neither health conscious, nor they have free time, then they will exercise with probability 0.1."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.308,
+            0.907,
+            0.325
+          ],
+          "content": "• If someone follows both a healthy diet and exercises, they will have a normal body weight with probability 0.9."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.333,
+            0.908,
+            0.365
+          ],
+          "content": "• If someone only follows a healthy diet and does not exercise, or vice versa, they will have a normal body weight with probability 0.5."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.373,
+            0.906,
+            0.39
+          ],
+          "content": "• If someone neither exercises nor has a healthy diet, they will have a normal body weight with probability 0.2."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.401,
+            0.813,
+            0.419
+          ],
+          "content": "(a) [2 pts] Select the minimal set of edges that needs to be added to the following Bayesian network"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.394,
+            0.421,
+            0.434,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_13.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.474,
+            0.421,
+            0.514,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_14.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.554,
+            0.421,
+            0.593,
+            0.451
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_15.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.474,
+            0.482,
+            0.514,
+            0.512
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_16.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.554,
+            0.482,
+            0.593,
+            0.512
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.528,
+            0.251,
+            0.547
+          ],
+          "content": "D → H\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.359,
+            0.528,
+            0.449,
+            0.547
+          ],
+          "content": "F → E\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.549,
+            0.251,
+            0.567
+          ],
+          "content": "\u0003 H → D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.557,
+            0.528,
+            0.648,
+            0.547
+          ],
+          "content": "\u0003 D → E"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.359,
+            0.549,
+            0.452,
+            0.567
+          ],
+          "content": "\u0003 D → W"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.57,
+            0.249,
+            0.588
+          ],
+          "content": "\u0003 H → F"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.755,
+            0.528,
+            0.852,
+            0.547
+          ],
+          "content": "D → W\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.558,
+            0.549,
+            0.649,
+            0.567
+          ],
+          "content": "F → D\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.359,
+            0.57,
+            0.452,
+            0.588
+          ],
+          "content": "H → W\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.557,
+            0.569,
+            0.65,
+            0.588
+          ],
+          "content": "\u0003 E → W"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.755,
+            0.549,
+            0.852,
+            0.567
+          ],
+          "content": "\u0003 W → D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.755,
+            0.569,
+            0.851,
+            0.588
+          ],
+          "content": "\u0003 E → W"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.607,
+            0.908,
+            0.639
+          ],
+          "content": "(b) Suppose we want to estimate the probability of a person being normal body weight given that they exercise (i.e. P(+w| + e)), and we want to use likelihood weighting."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.642,
+            0.909,
+            0.689
+          ],
+          "content": "(i) [1 pt] We observe the following sample: $( - w , - d , + e , + f , - h )$ . What is our estimate of P(+w| + e) given this one sample? Express your answer in decimal notation rounded to the second decimal point, or express it as a fraction simplified to the lowest terms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.745,
+            0.909,
+            0.791
+          ],
+          "content": "(ii) [2 pts] Now, suppose that we observe another sample: $( + w , + d , + e , + f , + h )$ . What is our new estimate for $P ( + w | + e ) ?$ Express your answer in decimal notation rounded to the second decimal point, or express it as a fraction simplified to the lowest terms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.853,
+            0.909,
+            0.9
+          ],
+          "content": "(iii) [1 pt] True/False: After 10 iterations, both rejection sampling and likelihood weighting would typically compute equally accurate probability estimates. Each sample counts as an iteration, and rejecting a sample counts as an iteration."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.901,
+            0.402,
+            0.918
+          ],
+          "content": "\\# True False"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.795,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.046,
+            0.635,
+            0.063
+          ],
+          "content": "(c) Suppose we now want to use Gibbs sampling to estimate $P ( + w | + e )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.066,
+            0.909,
+            0.112
+          ],
+          "content": "(i) [2 pts] We start with the sample $( + w , + d , + e , + h , + f )$ , and we want to resample the variable W. What is the probability of sampling $( - w , + d , + e , + h , + f ) ?$ Express your answer in decimal notation rounded to the second decimal point, or express it as a fraction simplified to the lowest terms."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.207,
+            0.736,
+            0.224
+          ],
+          "content": "(ii) [1 pt] Suppose we observe the following sequence of samples via Gibbs sampling:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.212,
+            0.235,
+            0.85,
+            0.251
+          ],
+          "content": "(+ w, + d, + e, + h, + f), (- w, + d, + e, + h, + f), (- w, - d, + e, + h, + f), (- w, - d, + e, - h, + f)",
+          "image_source": "images/page_12_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.265,
+            0.579,
+            0.281
+          ],
+          "content": "What is your estimate of $P ( + w | + e )$ given these samples?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.36,
+            0.951,
+            0.451
+          ],
+          "content": "(iii) [1 pt] While estimating $P ( + w | + e )$ , the following is a possible sequence of sample that can be obtained via Gibbs sampling: (+w, +d, +e, +h, +f), (−w, +d, +e, +h, +f), (−w, −d, +e, +h, +f), (−w, −d, +e, −h, +f), (−w, −d, −e, −h, +f) # True # False"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.49,
+            0.072
+          ],
+          "level": 1,
+          "content": "Q6. [11 pts] HMM Smoothing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.083,
+            0.848,
+            0.099
+          ],
+          "content": "Consider the HMM with state variables $X _ { t }$ and observation variables $E _ { t }$ . The joint distribution is given by"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.254,
+            0.108,
+            0.73,
+            0.15
+          ],
+          "content": "P (X _ {1: T}, E _ {1: T} = e _ {1: T}) = P \\left(X _ {1}\\right) \\prod_ {t = 1} ^ {T - 1} P \\left(X _ {t + 1} | X _ {t}\\right) \\prod_ {t = 1} ^ {T} P \\left(E _ {t} = e _ {t} | X _ {t}\\right).",
+          "image_source": "images/page_13_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.16,
+            0.908,
+            0.223
+          ],
+          "content": "where $X _ { 1 : T }$ means $X _ { 1 } , . . . , X _ { T }$ and $E _ { 1 : T }   =   e _ { 1 : T }$ means $E _ { 1 }   =   e _ { 1 } , . . . , E _ { T }   =   e _ { T }$ We learned about how the forward algorithm can be used to solve the filtering problem, which calculates $P \\left( X _ { t } | E _ { 1 : t } = e _ { 1 : t } \\right)$ We will now focus on the smoothing problem, which calculates $P \\left( X _ { t } | E _ { 1 : T } = e _ { 1 : T } \\right)$ , where $1 \\leq t < T$ , for obtaining a more informed estimate of the past state $X _ { t }$ given all observed evidence $E _ { 1 : T } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.235,
+            0.432,
+            0.25
+          ],
+          "content": "Now define the following vectors of probabilities:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.274,
+            0.896,
+            0.29
+          ],
+          "content": "$\\alpha ( X _ { t } ) \\equiv P ( E _ { 1 : t } \\mathop { = } e _ { 1 : t } , X _ { t } )$ , the probability of seeing evidence $E _ { 1 }   =   e _ { 1 }$ through $E _ { t }   =   e _ { t }$ and being in state $X _ { t } ;$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.298,
+            0.908,
+            0.33
+          ],
+          "content": "• $\\beta ( X _ { t } ) \\equiv P ( E _ { t + 1 : T } \\mathop { = } e _ { t + 1 : T } | X _ { t } )$ , the probability of seeing evidence $E _ { t + 1 }   =   e _ { t + 1 }$ through $E _ { T }   =   e _ { T }$ having started in state $X _ { t } .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.342,
+            0.908,
+            0.373
+          ],
+          "content": "(a) [2 pts] Let us consider $\\beta ( X _ { T - 1 } )$ . Which of the following are equivalent to $P ( E _ { T }   =   e _ { T } | X _ { T - 1 } ) ?$ (Select one or more.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.377,
+            0.464,
+            0.397
+          ],
+          "content": "\u0003 $\\textstyle \\sum _ { x _ { t } } P ( X _ { T }   =   x _ { t } | X _ { T - 1 } ) P ( E _ { T }   =   e _ { T } | X _ { T }   =   x _ { t } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.4,
+            0.512,
+            0.42
+          ],
+          "content": "\\square \\quad \\sum_ {x _ {t}} P (X _ {T} = x _ {t} | X _ {T - 1}) P (E _ {T} = e _ {T} | X _ {T} = x _ {t}, X _ {T - 1})",
+          "image_source": "images/page_13_equation_9.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.425,
+            0.432,
+            0.443
+          ],
+          "content": "\\square P (X _ {T} = x _ {t} | X _ {T - 1}) P (E _ {T} = e _ {T} | X _ {T} = x _ {t})",
+          "image_source": "images/page_13_equation_10.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.118,
+            0.446,
+            0.479,
+            0.465
+          ],
+          "content": "\\square \\quad P (X _ {T} = x _ {t} | X _ {T - 1}) P (E _ {T} = e _ {T} | X _ {T} = x _ {t}, X _ {T - 1})",
+          "image_source": "images/page_13_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.085,
+            0.49,
+            0.909,
+            0.537
+          ],
+          "content": "(b) [4 pts] In lecture we covered the forward recursion for filtering. An almost identical algorithm can be derived for computing the sequence $\\alpha ( X _ { 1 } ) , \\ldots , \\alpha ( X _ { T } )$ . For $\\beta ,$ we need a backward recursion. What is the appropriate expression for $\\beta ( X _ { t } )$ to implement such a recursion? The expression may have up to four parts, as follows:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.248,
+            0.557,
+            0.778,
+            0.583
+          ],
+          "content": "P (E _ {t + 1} = e _ {t + 1},..., E _ {T} = e _ {T} | X _ {t}) = \\boxed {\\text {(i)} \\quad \\text {(ii)} \\quad \\text {(iii)} \\quad \\text {(iv)}}",
+          "image_source": "images/page_13_equation_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.604,
+            0.907,
+            0.635
+          ],
+          "content": "For each blank (i) through (iv), mark the appropriate subexpression. If it is possible to write the expression for $\\beta ( X _ { t } )$ without a particular subexpression, mark “None.”"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "14"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.637,
+            0.69,
+            0.658
+          ],
+          "content": "(i) [1 pt] # $\\Sigma _ { x _ { t - 1 } }$ # $\\Sigma _ { x _ { t } }$ # $\\sum _ { x _ { t + 1 } }$ # None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.666,
+            0.822,
+            0.703
+          ],
+          "content": "(ii) [1 pt] $\\alpha ( X _ { t - 1 } = x _ { t - 1 } )$ # $\\alpha ( X _ { t } = x _ { t } )$ # $\\alpha ( X _ { t + 1 } = x _ { t + 1 } )$ # $\\beta ( X _ { t - 1 } = x _ { t - 1 } )$ # $\\beta ( X _ { t + 1 } = x _ { t + 1 } )$ # None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.718,
+            0.745,
+            0.755
+          ],
+          "content": "(iii) [1 pt] # $P ( X _ { t } = x _ { t } | X _ { t - 1 } )$ ## $P ( X _ { t + 1 } = x _ { t + 1 } | X _ { t } )$ # $P ( X _ { t } | X _ { t - 1 } = x _ { t - 1 } )$ # $P ( X _ { t + 1 } | X _ { t } = x _ { t } )$ # None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.762,
+            0.905,
+            0.815
+          ],
+          "content": "(iv) [1 pt] # $P ( E _ { t - 1 } = e _ { t - 1 } | X _ { t - 1 } )$ # $P ( E _ { t } = e _ { t } | X _ { t } )$ # $P ( E _ { t + 1 } = e _ { t + 1 } | X _ { t + 1 } )$ # $P ( E _ { t - 1 } = e _ { t - 1 } | X _ { t - 1 } = x _ { t - 1 } )$ # $P ( E _ { t } = e _ { t } | X _ { t } = x _ { t } )$ # $P ( E _ { t + 1 } = e _ { t + 1 } | X _ { t + 1 } = x _ { t + 1 } )$ # None"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.794,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.062,
+            0.908,
+            0.094
+          ],
+          "content": "(c) [1 pt] If the number of values that each $X _ { t }$ can take on is K and the number of timesteps is T, what is the total computational complexity of calculating $\\beta ( X _ { t } )$ for all t, where $1 \\leq t \\leq T ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.139,
+            0.109,
+            0.808,
+            0.127
+          ],
+          "content": "\\bigcirc O (K) \\quad \\bigcirc O (T) \\quad \\bigcirc O \\left(K ^ {2} T\\right) \\quad \\bigcirc O \\left(K T ^ {2}\\right) \\quad \\bigcirc O \\left(K ^ {2} T ^ {2}\\right) \\quad \\bigcirc \\text {None}",
+          "image_source": "images/page_14_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.165,
+            0.886,
+            0.182
+          ],
+          "content": "(d) $[ 2 ~ \\mathrm { p t s } ]$ Which of the following expressions are equivalent to $P \\left( X _ { t } = x _ { t } | E _ { 1 : T } = e _ { 1 : T } \\right) ?$ (Select one or more.)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.185,
+            0.35,
+            0.205
+          ],
+          "content": "\u0003 $\\textstyle \\sum _ { x _ { t } ^ { \\prime } } \\alpha ( X _ { t } = x _ { t } ^ { \\prime } ) \\beta ( X _ { t } = x _ { t } ^ { \\prime } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.21,
+            0.317,
+            0.228
+          ],
+          "content": "$\\alpha ( X _ { t } = x _ { t } ) \\beta ( X _ { t } = x _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.231,
+            0.306,
+            0.256
+          ],
+          "content": "\u0003 \u0003 $\\begin{array} { c } { \\frac { \\alpha ( X _ { t } = x _ { t } ) \\beta ( X _ { t } = x _ { t } ) } { \\sum _ { x _ { t } ^ { \\prime } } \\alpha ( X _ { t } = x _ { t } ^ { \\prime } ) \\beta ( X _ { t } = x _ { t } ^ { \\prime } ) } } \\\\ \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.26,
+            0.276,
+            0.286
+          ],
+          "content": "\u0003 $\\begin{array} { c } { \\frac { \\alpha ( X _ { t } = x _ { t } ) \\beta ( X _ { t } = x _ { t } ) } { \\sum _ { x _ { T } ^ { \\prime } } \\alpha ( X _ { T } = x _ { T } ^ { \\prime } ) } } \\\\ \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.324,
+            0.908,
+            0.355
+          ],
+          "content": "(e) [2 pts] If the number of values that each $X _ { t }$ can take on is K and the number of timesteps is T, what is the lowest total computational complexity of calculating $P \\left( X _ { t } | E _ { 1 : T } = e _ { 1 : T } \\right)$ for all t, where $1 \\leq t \\leq T ?$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.139,
+            0.369,
+            0.806,
+            0.388
+          ],
+          "content": "\\bigcirc O (K) \\quad \\bigcirc O (T) \\quad \\bigcirc O \\left(K ^ {2} T\\right) \\quad \\bigcirc O \\left(K T ^ {2}\\right) \\quad \\bigcirc O \\left(K ^ {2} T ^ {2}\\right) \\quad \\bigcirc \\text {None}",
+          "image_source": "images/page_14_equation_9.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.042,
+            0.691,
+            0.073
+          ],
+          "level": 2,
+          "content": "Q7. [8 pts] Partying Particle #No Filter(ing)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.081,
+            0.089,
+            0.909,
+            0.249
+          ],
+          "sub_type": "algorithm",
+          "content": "Algorithm 1 Particle Filtering\nprocedure PARTICLE FILTERING(T, N) $\\triangleright$ T: number of time steps, N: number of sampled particles\n    $x \\leftarrow$ sample $N$ particles from initial state distribution $P(X_0)$ $\\triangleright$ Initialize\n    for $t \\leftarrow 0$ to $T - 1$ do $\\triangleright$ $X_t$: hidden state, $E_t$: observed evidence\n        $x_i \\leftarrow$ sample particle from $P(X_{t+1}|X_t = x_i)$ for $i = 1, \\ldots, N$ $\\triangleright$ Time Elapse Update\n        $w_i \\leftarrow P(E_{t+1}|X_{t+1} = x_i)$ for $i = 1, \\ldots, N$ $\\triangleright$ Evidence Update\n        $x \\leftarrow$ resample $N$ particles according to weights w $\\triangleright$ Particle Resampling\n    end for\n    return $x$\nend procedure",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.26,
+            0.908,
+            0.292
+          ],
+          "content": "Algorithm 1 outlines the particle filtering algorithm discussed in lecture. The variable x represents a list of N particles, while w is a list of N weights for those particles."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.298,
+            0.699,
+            0.315
+          ],
+          "content": "(a) Here, we consider the unweighted particles in x as approximating a distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.125,
+            0.318,
+            0.836,
+            0.36
+          ],
+          "content": "(i) [1 pt] After executing line 4, which distribution do the particles x represent? # $P ( X _ { t + 1 } | E _ { 1 : t } )$ # $P ( X _ { 1 : t + 1 } | E _ { 1 : t } )$ # $P ( X _ { t + 1 } | E _ { 1 : t + 1 } )$ # None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.368,
+            0.835,
+            0.41
+          ],
+          "content": "(ii) [1 pt] After executing line 6, which distribution do the particles x represent? # $P ( X _ { t + 1 } | X _ { t } , E _ { 1 : t + 1 } )$ $\\bigcirc \\quad P ( X _ { 1 : t + 1 } | E _ { 1 : t + 1 } )$ # $P ( X _ { t + 1 } | E _ { 1 : t + 1 } )$ # None"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.427,
+            0.909,
+            0.535
+          ],
+          "content": "(b) The particle filtering algorithm should return a sample-based approximation to the true posterior distribution $P ( X _ { T } \\mid E _ { 1 : T } )$ . The algorithm is consistent if and only if the approximation converges to the true distribution as $N \\to \\infty$ . In this question, we present several modifications to Algorithm 1. For each modification, indicate if the algorithm is still consistent or not consistent, and if it is consistent, indicate whether you expect it to be more accurate in general in terms of its estimate of $P ( X _ { T } \\mid E _ { 1 : T } )$ (i.e., you would expect the estimated distribution to be closer to the true one) or less accurate. Assume unlimited computational resources and arbitrary precision arithmetic."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.544,
+            0.909,
+            0.59
+          ],
+          "content": "(i) [2 pts] We modify line 6 to sample 1 or 2N − 1 particles with equal probability p = 0.5 for each time step (as opposed to a fixed number of particles N). You can assume that $P ( E _ { t + 1 } | X _ { t + 1 } ) > 0$ for all observations and states. This algorithm is:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.184,
+            0.598,
+            0.714,
+            0.615
+          ],
+          "content": "Consistent and More Accurate Not Consistent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.615,
+            0.439,
+            0.63
+          ],
+          "content": "Consistent and Less Accurate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.654,
+            0.894,
+            0.73
+          ],
+          "content": "(ii) [1 pt] Replace lines 4–6 as follows: 4<sup>0</sup>: Compute a tabular representation of $P ( X _ { t } = s | E _ { 1 : t } )$ based on the proportion of particles in state s. 5<sup>0</sup>: Use the forward algorithm to calculate $P ( X _ { t + 1 } | E _ { 1 : t + 1 } )$ exactly from the tabular representation. 6<sup>0</sup>: Set x to be a sample of N particles from $P ( X _ { t + 1 } | E _ { 1 : t + 1 } )$ This algorithm is:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.743,
+            0.71,
+            0.76
+          ],
+          "content": "Consistent and More Accurate # Not consistent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.76,
+            0.439,
+            0.775
+          ],
+          "content": "Consistent and Less Accurate"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.791,
+            0.894,
+            0.822
+          ],
+          "content": "(iii) [1 pt] At the start of the algorithm, we initialize each entry in w to 1s. Keep line 4, but replace lines 5 and 6 with the following multiplicative update:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.821,
+            0.31,
+            0.836
+          ],
+          "content": "5<sup>0</sup>: For $i = 1 , \\ldots , N$ do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.836,
+            0.438,
+            0.852
+          ],
+          "content": "6<sup>0</sup> $w _ { i } \\leftarrow w _ { i } * P ( E _ { t + 1 } | X _ { t + 1 } = x _ { i } ) .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.852,
+            0.893,
+            0.883
+          ],
+          "content": "Finally, only at the end of the T iterations, we resample x according to the cumulative weights w just like in line 6, producing a list of particle positions. This algorithm is:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.889,
+            0.699,
+            0.906
+          ],
+          "content": "Consistent and More Accurate # Not Consistent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.17,
+            0.907,
+            0.424,
+            0.923
+          ],
+          "content": "Consistent and Less Accurate"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.794,
+            0.02,
+            0.907,
+            0.034
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.046,
+            0.908,
+            0.077
+          ],
+          "content": "(c) [2 pts] Suppose that instead of particle filtering we run the following algorithm on the Bayes net with $T$ time steps corresponding to the HMM:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.087,
+            0.723,
+            0.101
+          ],
+          "content": "1. Fix all the evidence variables $E _ { 1 : T }$ and initialize each $X _ { t }$ to a random value $x _ { t }$ ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.107,
+            0.3,
+            0.121
+          ],
+          "content": "2. For $i = 1 , \\ldots , N$ do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.168,
+            0.127,
+            0.623,
+            0.142
+          ],
+          "content": "• Choose a variable $X _ { t }$ uniformly at random from $X _ { 1 } , \\ldots , X _ { T }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.145,
+            0.796,
+            0.16
+          ],
+          "content": "• Resample $X _ { t }$ according to the distribution $P ( X _ { t } | X _ { t - 1 } = x _ { t - 1 } , X _ { t + 1 } = x _ { t + 1 } , E _ { t } = e _ { t } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.169,
+            0.163,
+            0.452,
+            0.177
+          ],
+          "content": "• Record the value of $X _ { T }$ as a sample."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.187,
+            0.858,
+            0.203
+          ],
+          "content": "Finally, estimate $P ( X _ { T } = s | E _ { 1 : T } = e _ { 1 : T } )$ by the proportion of samples with $X _ { T } = s$ . This algorithm is:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.181,
+            0.213,
+            0.296,
+            0.228
+          ],
+          "content": "Consistent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.565,
+            0.213,
+            0.712,
+            0.229
+          ],
+          "content": "Not Consistent"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.043,
+            0.609,
+            0.071
+          ],
+          "level": 2,
+          "content": "Q8. [11 pts] Double Decisions and VPI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.13
+          ],
+          "content": "In both parts of this problem, you are given a decision network with two decision nodes: $D _ { 1 }$ and $D _ { 2 }$ . Your total utility is the sum of two subparts: $U _ { \\mathrm { t o t a l } } = U _ { 1 } + U _ { 2 }$ , where $U _ { 1 }$ only depends on decision $D _ { 1 }$ and $U _ { 2 }$ only depends on decision $D _ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.142,
+            0.414,
+            0.158
+          ],
+          "content": "(a) Consider the following decision network:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.224,
+            0.171,
+            0.805,
+            0.298
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.315,
+            0.742,
+            0.331
+          ],
+          "content": "For each subpart below, select all comparison relations that are true or could be true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.345,
+            0.199,
+            0.363
+          ],
+          "content": "(i) [1 pt]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.161,
+            0.36,
+            0.492,
+            0.411
+          ],
+          "content": "\\begin{array}{r c l} & \\square & > \\\\ V P I (\\{A, B \\}) & \\square & = & V P I (A) + V P I (B) \\\\ & \\square & <  \\end{array}",
+          "image_source": "images/page_17_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.522,
+            0.345,
+            0.599,
+            0.363
+          ],
+          "content": "(ii) [1 pt]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.562,
+            0.359,
+            0.889,
+            0.411
+          ],
+          "content": "\\begin{array}{r l} & \\square > \\\\ V P I (\\{A, F \\}) & \\square = V P I (A) + V P I (F) \\\\ & \\square <  \\end{array}",
+          "image_source": "images/page_17_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.12,
+            0.432,
+            0.202,
+            0.449
+          ],
+          "content": "(iii) [1 pt]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.163,
+            0.448,
+            0.413,
+            0.5
+          ],
+          "content": "\\begin{array}{r l} \\square & > \\\\ V P I (\\{B, G \\}) & \\square = V P I (G) \\\\ \\square & <  \\end{array}",
+          "image_source": "images/page_17_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.513,
+            0.445,
+            0.529
+          ],
+          "content": "(b) Now consider the following decision network:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.225,
+            0.541,
+            0.806,
+            0.669
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.686,
+            0.742,
+            0.702
+          ],
+          "content": "For each subpart below, select all comparison relations that are true or could be true."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.712,
+            0.201,
+            0.73
+          ],
+          "content": "(i) [2 pts]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.746,
+            0.259,
+            0.766
+          ],
+          "content": "V P I (\\{F, G \\})",
+          "image_source": "images/page_17_equation_15.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.274,
+            0.726,
+            0.485,
+            0.778
+          ],
+          "content": "\\begin{array}{l l} \\square & > \\\\ \\square & = V P I (F) + V P I (G) \\\\ \\square & <  \\end{array}",
+          "image_source": "images/page_17_equation_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.518,
+            0.712,
+            0.601,
+            0.73
+          ],
+          "content": "(ii) [2 pts]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.556,
+            0.725,
+            0.885,
+            0.778
+          ],
+          "content": "\\begin{array}{l l l} \\text {P} & \\square & > \\\\ V P I (\\{A, F \\}) & \\square & = \\\\ & \\square & <   \\end{array} \\quad V P I (A) + V P I (F)",
+          "image_source": "images/page_17_equation_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.81,
+            0.203,
+            0.827
+          ],
+          "content": "(iii) [2 pts]"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.16,
+            0.843,
+            0.262,
+            0.863
+          ],
+          "content": "V P I (\\{B, G \\})",
+          "image_source": "images/page_17_equation_20.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.274,
+            0.825,
+            0.408,
+            0.876
+          ],
+          "content": "\\begin{array}{l l} \\square & > \\\\ \\square & = V P I (G) \\\\ \\square & <  \\end{array}",
+          "image_source": "images/page_17_equation_21.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.387,
+            0.073,
+            0.608,
+            0.175
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.201,
+            0.896,
+            0.217
+          ],
+          "content": "(c) [2 pts] Select all statements that are true. For the first two statements, consider the decision network above."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.23,
+            0.466,
+            0.247
+          ],
+          "content": "If A, B are independent, then \u0003 $V P I ( B ) = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.247,
+            0.609,
+            0.263
+          ],
+          "content": "If A, B are guaranteed to be dependent, then $VPI(B) > 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.264,
+            0.767,
+            0.28
+          ],
+          "content": "In general, Gibbs Sampling can estimate the probabilities used when calculating VPI\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.279,
+            0.775,
+            0.296
+          ],
+          "content": "\u0003In general, Particle Filtering can estimate the probabilities used when calculating VPI"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.484,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.042,
+            0.465,
+            0.073
+          ],
+          "level": 2,
+          "content": "Q9. [11 pts] Naively Fishing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.083,
+            0.909,
+            0.144
+          ],
+          "content": "Pacman has developed a hobby of fishing. Over the years, he has learned that a day can be considered fit or unfit for fishing Y which results in three features: whether or not Ms. Pacman can show up M, the temperature of the day T, and how high the water level is W. Pacman models it as the following Naive Bayes classification problem, shown below:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.395,
+            0.142,
+            0.592,
+            0.233
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.238,
+            0.908,
+            0.27
+          ],
+          "content": "(a) We wish to calculate the probability a day is fit for fishing given features of the day. Consider the conditional probability tables that Pacman has estimated over the years: T V P(T|V)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.192,
+            0.266,
+            0.832,
+            0.374
+          ],
+          "content": "<table><tr><td colspan=\"2\"></td><td>M</td><td>Y</td><td>P(M|Y)</td><td>W</td><td>Y</td><td>P(W|Y)</td><td>T</td><td>Y</td><td>P(T|Y)</td></tr><tr><td>Y</td><td>P(Y)</td><td>yes</td><td>yes</td><td>0.5</td><td>high</td><td>yes</td><td>0.1</td><td>cold</td><td>yes</td><td>0.2</td></tr><tr><td>yes</td><td>0.1</td><td>no</td><td>yes</td><td>0.5</td><td>low</td><td>yes</td><td>0.9</td><td>warm</td><td>yes</td><td>0.2</td></tr><tr><td>no</td><td>0.9</td><td>yes</td><td>no</td><td>0.2</td><td>high</td><td>no</td><td>0.5</td><td>hot</td><td>yes</td><td>0.5</td></tr><tr><td></td><td></td><td>no</td><td>no</td><td>0.8</td><td>low</td><td>no</td><td>0.5</td><td>cold</td><td>no</td><td>0.1</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>warm</td><td>no</td><td>0.2</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>hot</td><td>no</td><td>0.6</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_table_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.379,
+            0.908,
+            0.411
+          ],
+          "content": "(i) [1 pt] Using the method of Naive Bayes, what are these conditional probabilities, calculated from the conditional probability tables above? Fill in your final, decimal answer in the boxes below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.53,
+            0.908,
+            0.561
+          ],
+          "content": "(ii) [1 pt] Using the method of Naive Bayes, do we predict that the day is fit for fishing if Ms. Pacman is available, the weather is cold, and the water level is high?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.574,
+            0.294,
+            0.59
+          ],
+          "content": "\\# Fit for fishing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.385,
+            0.574,
+            0.544,
+            0.591
+          ],
+          "content": "Not fit for fishing"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.603,
+            0.909,
+            0.65
+          ],
+          "content": "(b) Assume for this problem we do not have estimates for the conditional probability tables, and that Pacman is still using a Naive Bayes model. Write down an expression for each of the following queries. Express your solution using the conditional probabilities $P ( M | T ) , \\thinspace \\tilde { P } ( T | Y ) , \\thinspace P ( W | Y )$ , and $P ( Y )$ from the Naive Bayes model."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.653,
+            0.908,
+            0.685
+          ],
+          "content": "(i) [1 pt] Pacman now wishes to find the probability of Ms. Pacman being available or not given that the temperature is hot and the water level is low. Select all expressions that are equal to $P ( M | T , W )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.156,
+            0.695,
+            0.732,
+            0.722
+          ],
+          "content": "\\square \\frac {\\sum_ {f} P (f) P (M | f) P (T | f) P (W | f)}{\\sum_ {f} P (f) P (W | f) P (T | f)} \\quad \\square \\sum_ {f} P (M | f) \\quad \\square \\sum_ {f} \\frac {P (M | f) P (T | f) P (W | f)}{P (T | f) P (W | f)}",
+          "image_source": "images/page_19_equation_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.746,
+            0.697,
+            0.908,
+            0.716
+          ],
+          "content": "None of the above"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.736,
+            0.908,
+            0.783
+          ],
+          "content": "(ii) [2 pts] Pacman now wants to now choose the class that gives the maximum P(features|class), that is, choosing the class that maximizes the probability of seeing the features. Write an expression that is equal to $P ( M , T , W | Y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.844,
+            0.908,
+            0.89
+          ],
+          "content": "(iii) [2 pts] Assume that Pacman is equally likely to go fishing as he is to not, i.e. $P(Y = yes) = P(Y = no)$ Which method would give the correct Naive Bayes classification of whether a day is a good day for fishing if Pacman observes values for M, T, and W?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.417,
+            0.895,
+            0.647,
+            0.914
+          ],
+          "content": "\\square \\arg \\max _ {y} P (Y = y | M, T, W)",
+          "image_source": "images/page_19_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.665,
+            0.895,
+            0.834,
+            0.912
+          ],
+          "content": "None of the above"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.794,
+            0.02,
+            0.833,
+            0.034
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.046,
+            0.911,
+            0.123
+          ],
+          "content": "(c) Assume Pacman now has the underlying Bayes Net model, and the conditional probability tables from the previous parts do not apply. Recall that predictions are made under the Naive Bayes classification using the conditional probability, P(Y |W, T, M), and the Naive Bayes assumption that features are independent given the class. We wish to explore if the Naive Bayes model is guaranteed to be able to able to represent the true distribution."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.126,
+            0.909,
+            0.159
+          ],
+          "content": "For each of the following true distributions, select 1) if the Naive Bayes modeling assumption holds and 2) if the Naive Bayes model is guaranteed to be able to represent the true conditional probability, P(Y |W, T, M)."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.127,
+            0.16,
+            0.207,
+            0.179
+          ],
+          "content": "(i) [2 pts]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.157,
+            0.19,
+            0.324,
+            0.333
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.373,
+            0.178,
+            0.609,
+            0.211
+          ],
+          "content": "Does the Naive Bayes modeling assumption hold here?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.416,
+            0.244,
+            0.561,
+            0.264
+          ],
+          "content": "\\# Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.672,
+            0.177,
+            0.892,
+            0.225
+          ],
+          "content": "Can the Naive Bayes model represent the true conditional distribution P(Y |W, T, M)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.708,
+            0.246,
+            0.851,
+            0.265
+          ],
+          "content": "Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.405,
+            0.207,
+            0.425
+          ],
+          "content": "(ii) [2 pts]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.158,
+            0.44,
+            0.324,
+            0.573
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.374,
+            0.423,
+            0.608,
+            0.456
+          ],
+          "content": "Does the Naive Bayes modeling assumption hold here?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.416,
+            0.49,
+            0.561,
+            0.509
+          ],
+          "content": "Yes No"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.673,
+            0.421,
+            0.891,
+            0.47
+          ],
+          "content": "Can the Naive Bayes model represent the true conditional distribution P(Y |W, T, M)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.707,
+            0.49,
+            0.851,
+            0.509
+          ],
+          "content": "\\# Yes # No"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.504,
+            0.949
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.043,
+            0.76,
+            0.071
+          ],
+          "level": 2,
+          "content": "Q10. [13 pts] Neural Networks and Decision Trees"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.084,
+            0.909,
+            0.145
+          ],
+          "content": "(a) Given the Boolean function represented by the truth table on the right, indicate which of the models can perfectly represent this function for some choice of parameters. Where no constraints are stated on the architecture (e.g. the number of neurons, activation function), answer yes if there exists some architecture which could represent the function."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.147,
+            0.473,
+            0.164
+          ],
+          "content": "(i) [2 pts] f(x, y) = x ⊕ y can be modelled by:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.172,
+            0.588,
+            0.19
+          ],
+          "content": "\u0003A neural network with a single layer (no hidden layer)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.158,
+            0.199,
+            0.602,
+            0.217
+          ],
+          "content": "A neural network with two layers (a single hidden layer)\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.225,
+            0.403,
+            0.244
+          ],
+          "content": "\u0003A decision tree of depth one"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.25,
+            0.403,
+            0.269
+          ],
+          "content": "A decision tree of depth two\u0003"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.698,
+            0.163,
+            0.826,
+            0.252
+          ],
+          "content": "| x | y | x ⊕ y |\n| --- | --- | --- |\n| 0 | 0 | 0 |\n| 0 | 1 | 1 |\n| 1 | 0 | 1 |\n| 1 | 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_table_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.315,
+            0.494,
+            0.333
+          ],
+          "content": "(ii) [2 pts] f(x, y) = ¬(x ∨ y) can be modelled by:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.34,
+            0.588,
+            0.359
+          ],
+          "content": "A neural network with a single layer (no hidden layer)\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.367,
+            0.601,
+            0.385
+          ],
+          "content": "A neural network with two layers (a single hidden layer)\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.392,
+            0.403,
+            0.411
+          ],
+          "content": "A decision tree of depth one\u0003"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.159,
+            0.417,
+            0.404,
+            0.436
+          ],
+          "content": "A decision tree of depth two\u0003"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.7,
+            0.33,
+            0.849,
+            0.42
+          ],
+          "content": "| x | y | ¬(x ∨ y) |\n| --- | --- | --- |\n| 0 | 0 | 1 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 0 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_table_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.086,
+            0.468,
+            0.909,
+            0.498
+          ],
+          "content": "(b) Ada is training a single layer (no hidden layer) neural network to predict a one-dimensional value from a one-dimensional input:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.445,
+            0.498,
+            0.581,
+            0.514
+          ],
+          "content": "f (x) = g (W x + b)",
+          "image_source": "images/page_21_equation_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.52,
+            0.746,
+            0.537
+          ],
+          "content": "where $g ( y ) = \\operatorname { r e l u } ( y ) = \\operatorname* { m a x } ( 0 , y )$ . She initializes her weight and bias parameters to be:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.447,
+            0.548,
+            0.579,
+            0.564
+          ],
+          "content": "W = - 1, \\quad b = 0.",
+          "image_source": "images/page_21_equation_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.575,
+            0.579,
+            0.592
+          ],
+          "content": "(i) [1 pt] The derivative of the ReLU function takes the form:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.448,
+            0.603,
+            0.613,
+            0.644
+          ],
+          "content": "\\mathrm{relu} ^ {\\prime} (y) = \\left\\{ \\begin{array}{l l} s & y > u, \\\\ t & y <   u. \\end{array} \\right.",
+          "image_source": "images/page_21_equation_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.149,
+            0.671,
+            0.505,
+            0.687
+          ],
+          "content": "Select the appropriate choice of s, t and u below."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.705,
+            0.25,
+            0.72
+          ],
+          "content": "s is equal to:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.398,
+            0.704,
+            0.495,
+            0.72
+          ],
+          "content": "t is equal to:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.645,
+            0.705,
+            0.745,
+            0.72
+          ],
+          "content": "u is equal to:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.727,
+            0.274,
+            0.745
+          ],
+          "content": "\\bigcirc \\quad s = 0.",
+          "image_source": "images/page_21_equation_24.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.192,
+            0.752,
+            0.274,
+            0.77
+          ],
+          "content": "\\bigcirc \\quad s = 1.",
+          "image_source": "images/page_21_equation_25.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.439,
+            0.727,
+            0.519,
+            0.745
+          ],
+          "content": "\\bigcirc \\quad t = 0.",
+          "image_source": "images/page_21_equation_26.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.752,
+            0.519,
+            0.77
+          ],
+          "content": "\\# t = 1."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.191,
+            0.778,
+            0.274,
+            0.796
+          ],
+          "content": "\\bigcirc \\quad s = y.",
+          "image_source": "images/page_21_equation_28.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.439,
+            0.778,
+            0.519,
+            0.796
+          ],
+          "content": "\\# t = y ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.686,
+            0.778,
+            0.77,
+            0.795
+          ],
+          "content": "\\# u = 1."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.794,
+            0.02,
+            0.908,
+            0.035
+          ],
+          "content": "SID:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.121,
+            0.069,
+            0.909,
+            0.1
+          ],
+          "content": "(ii) [2 pts] Compute the following partial derivatives of f with respect to the weight W assuming the same parameters W and b as above."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.154,
+            0.124,
+            0.535,
+            0.152
+          ],
+          "content": "\\left. \\frac {\\partial f}{\\partial W} \\right| _ {x = - 1} = \\underline {{\\quad}} \\quad \\left. \\frac {\\partial f}{\\partial W} \\right| _ {x = 1} = \\underline {{\\quad}}",
+          "image_source": "images/page_22_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.209,
+            0.861,
+            0.227
+          ],
+          "content": "(iii) [2 pts] For inputs $x > 0$ , what range of values will $\\frac { \\partial f } { \\partial W }$ take on for the current values of W and b?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.252,
+            0.399,
+            0.276
+          ],
+          "content": "$\\begin{array} { r } { \\leq \\frac { \\partial f } { \\partial W } \\leq } \\end{array}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.307,
+            0.909,
+            0.369
+          ],
+          "content": "(iv) [1 pt] Suppose we now use gradient descent to train W and b to minimize a squared loss. Assume the training data consists only of inputs $x   >   0$ . For the given weight initialization, which of the following activation functions will result in the loss decreasing over time? You may find your answer to (b)(iii) helpful."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.371,
+            0.459,
+            0.39
+          ],
+          "content": "\u0003 Rectified Linear Unit: $g ( y ) = \\operatorname { r e l u } ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.394,
+            0.448,
+            0.411
+          ],
+          "content": "Hyperbolic Tangent: \u0003 $g ( y ) = \\operatorname { t a n h } y .$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.154,
+            0.416,
+            0.418,
+            0.434
+          ],
+          "content": "\u0003 Sigmoid Function: $g ( y ) = \\sigma ( y )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.457,
+            0.908,
+            0.489
+          ],
+          "content": "(c) [1 pt] Suppose you have found a learning rate $\\alpha _ { b }$ that achieves low loss when using batch gradient descent. A learning rate $\\alpha _ { s }$ for stochastic gradient descent that achieves similarly low loss would be expected to be:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.497,
+            0.504,
+            0.515
+          ],
+          "content": "Higher than for batch gradient descent: $\\alpha _ { s } > \\alpha _ { b }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.119,
+            0.523,
+            0.499,
+            0.54
+          ],
+          "content": "\\# Lower than for batch gradient descent: $\\alpha _ { s } < \\alpha _ { b }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.572,
+            0.911,
+            0.603
+          ],
+          "content": "(d) Your friend Alex is training a deep neural network, AlexNet, to classify images. He observes that the training loss is low, but that loss on a held-out validation dataset is high. Validation loss can be improved by:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.607,
+            0.203,
+            0.624
+          ],
+          "content": "(i) [1 pt]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.627,
+            0.429,
+            0.644
+          ],
+          "content": "Decreasing the number of layers.#"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.647,
+            0.426,
+            0.664
+          ],
+          "content": "\\# Increasing the number of layers."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.124,
+            0.7,
+            0.203,
+            0.717
+          ],
+          "content": "(ii) [1 pt]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.72,
+            0.484,
+            0.737
+          ],
+          "content": "Decreasing the size of each hidden layer.#"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.156,
+            0.74,
+            0.481,
+            0.757
+          ],
+          "content": "Increasing the size of each hidden layer."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.483,
+            0.936,
+            0.505,
+            0.949
+          ],
+          "content": "23"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.7"
+    },
+    "document": {
+      "created_at": "2019-05-20T20:09:39Z",
+      "modified_at": "2019-08-09T23:37:03-07:00",
+      "creator_application": "TeX",
+      "producer_application": "pdfTeX-1.40.18",
+      "page_count": 23,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

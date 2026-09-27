@@ -1,0 +1,717 @@
+It’s testing time for our CS188 robots!
+
+## CS 188 Spring 2023
+
+• You have 170 minutes.
+
+• The exam is closed book, no calculator, and closed notes, other than four double-sided cheat sheets that you may reference.
+
+• For multiple choice questions,
+
+means mark **all options** that apply
+
+means mark a single choice
+
+| First name |  |
+| --- | --- |
+| Last name |  |
+| SID |  |
+| Name of person to the right |  |
+| Name of person to the left |  |
+| Discussion TAs (or None) |  |
+
+**Honor code**: “As a member of the UC Berkeley community, I act with honesty, integrity, and respect for others.”
+
+By signing below, I affirm that all work on this exam is my own work, and honestly reflects my own understanding of the course material. I have not referenced any outside materials (other than my cheat sheets), nor collaborated with any other human being on this exam. I understand that if the exam proctor catches me cheating on the exam, that I may face the penalty of an automatic "F" grade in this class and a referral to the Center for Student Conduct.
+
+Signature:
+
+Point Distribution
+
+| Q1. Search and Slime | 12 |
+| --- | --- |
+| Q2. Searching for a Path with a CSP | 11 |
+| Q3. A Multiplayer MDP | 9 |
+| Q4. Slightly Different MDPs | 13 |
+| Q5. Bayes' Nets | 8 |
+| Q6. Dynamic Bayes' Nets: Book Club | 10 |
+| Q7. Inequalities of VPI | 7 |
+| Q8. Inverted Naive Bayes | 13 |
+| Q9. Higher-Dimensional Perceptrons | 8 |
+| Q10. Q-Networks | 9 |
+| Total | 100 |
+
+![](images/page_0_image_15.jpg)
+
+## Q1. [12 pts] Search and Slime
+
+Slowmo the snail is trying to find a path to a goal in an 𝑁 × 𝑀 grid maze. The available actions are to move one square up, down, left, right, and each action costs 1. Moves into walls are impossible. The goal test is a black-box function (the snail does not know how the function works) that returns true if its state argument is a goal state, and false otherwise.
+
+**(a)** [1 pt] Assume that there is a reachable goal state. Which algorithms are **complete** for this problem? Select all that apply.
+
+Breadth-first tree search Depth-first tree search
+
+Uniform-cost tree search A∗tree search with ℎ = 0
+
+A∗ graph search with ℎ = 0 None of the above
+
+**(b)** [1 pt] Assume that there is a reachable goal state. Which algorithms are **optimal** for this problem? Select all that apply.
+
+Breadth-first tree search Depth-first tree search
+
+Uniform-cost tree search A∗tree search with ℎ = 0
+
+A∗ graph search with ℎ = 0 None of the above
+
+**(c)** [2 pts] Assume that there may or may not be a reachable goal state. Which algorithms are **complete** for this problem? Select all that apply.
+
+Breadth-first tree search Depth-first tree search
+
+Uniform-cost tree search A∗tree search with ℎ = 0
+
+A∗ graph search with ℎ = 0 None of the above
+
+For the rest of the question, consider a modified version of the search problem: Slowmo the snail hates entering squares that are already covered in his own slime trail. This means that an action is impossible if it would enter a square that Slowmo has previously entered. There may or may not be a reachable goal state in this problem.
+
+**(d)** [2 pts] What is the size of the state space (in terms of 𝑁 and 𝑀) required to correctly reflect this modified problem?
+
+**(e)** [2 pts] In this modified problem, which algorithms are **complete**? Select all that apply.
+
+Breadth-first tree search Depth-first tree search
+
+Uniform-cost tree search A∗tree search with ℎ = 0
+
+A∗ graph search with ℎ = 0 None of the above
+
+**(f)** [2 pts] In this modified problem, which algorithms are **optimal**? Select all that apply.
+
+Breadth-first tree search Depth-first tree search
+
+Uniform-cost tree search A∗tree search with ℎ = 0
+
+A∗ graph search with ℎ = 0 None of the above
+
+**(g)** [2 pts] Consider an arbitrary search problem. We want to modify this search problem so that the agent is not allowed to move into a state more than once.
+
+Which of the following changes to the original problem, each considered in isolation, correctly represents this modification? Select all that apply.
+
+□ Change the successor function to disallow actions that move into a previously-visited state.
+
+□ Add a list of visited states in the state space, and also change the successor function to disallow actions that move into a previously-visited state.
+
+□ Change the goal test to return false if a state has been visited more than once.
+
+□ Add a list of visited states in the state space, and also change the goal test to return false if a state has been visited more than once.
+
+None of the above
+
+# Q2. [11 pts] Searching for a Path with a CSP
+
+We have a graph with directed edges between nodes. We want to find a simple path (i.e. no node is visited twice) between node 𝑠 and node 𝑔.
+
+We decide to use a CSP to solve this problem. The CSP has one variable for each edge in the graph: the variable $X _ { v w }$ represents whether the edge between node 𝑣 and node 𝑤 is part of the path. Each variable has domain {true, false}.
+
+In each of the next three parts, a constraint is described; select the logical expression that represents the constraint. Notation:
+
+• 𝑁(𝑣) is the set of all neighbors of node 𝑣. (Recall: a node 𝑤 is a neighbor of 𝑣 iff there is an edge from 𝑣 to 𝑤).
+
+• The function ExactlyOne() returns an expression that is true iff exactly one of its inputs is true.
+
+$\textstyle \bigwedge _ { x _ { i } \in S } x _ { i }$ refers to the conjunction of all $x _ { i }$ in the set 𝑆.
+
+$\textstyle \bigvee _ { x _ { i } \in S } x _ { i }$ refers to the disjunction of all $x _ { i }$ in the set 𝑆.
+
+**(a)** [2 pts] The starting node 𝑠 has a single outgoing edge in the path and no incoming edge in the path. # ExactlyOne( $( \{ X _ { s v } \mid v \in N ( s ) \} ) { \wedge } { \textstyle \bigwedge } _ { v \in N ( s ) } { \neg } X _ { v s }$ # ExactlyOne $\begin{array} { r } { ( \{ X _ { s v } \mid v \in N ( s ) \} ) \wedge \bigwedge _ { v \in N ( s ) } X _ { v s } } \end{array}$ # Exactl $\mathtt { y O n e } ( \{ X _ { v s } \mid v \in N ( s ) \} ) { \land } { \bigwedge } _ { v \in N ( s ) } { \lnot } X _ { s v }$ # ExactlyOne( $\begin{array} { r } { \{ X _ { v s } \mid v \in N ( s ) \} ) \wedge \bigwedge _ { v \in N ( s ) } X _ { s v } } \end{array}$
+
+**(b)** [2 pts] The goal node 𝑔 has a single incoming edge in the path and no outgoing edge in the path. # ExactlyOne( $\{ X _ { g v } \mid v \in N ( s ) \} ) { \wedge } { \textstyle \bigwedge } _ { v \in N ( g ) } { \neg } X _ { v g }$ # ExactlyOne $\begin{array} { r } { ( \{ X _ { g v } \mid v \in N ( s ) \} ) \wedge \bigwedge _ { v \in N ( g ) } X _ { v g } } \end{array}$ # $\begin{array} { r } { \mathtt { E x a c t l y O n e } ( \{ X _ { v g } \mid v \in N ( s ) \} ) \land   \bigwedge _ { v \in N ( g ) } \neg X _ { g v } } \end{array}$ # ExactlyOne $\begin{array} { r } { ( \{ X _ { v g } \mid v \in N ( s ) \} ) \wedge \bigwedge _ { v \in N ( g ) } X _ { g v } } \end{array}$
+
+**(c)** [2 pts] If node 𝑣 has an incoming edge in the path, then it must have exactly one outgoing edge in the path.
+
+$$
+\bigcirc \quad \bigwedge_ {w \in N (v)} X _ {w v} \iff \text {ExactlyOne} (\{X _ {v w} \mid w \in N (v) \})
+$$
+
+$$
+\bigcirc \quad \bigwedge_ {w \in N (v)} X _ {w v} \implies \text {ExactlyOne} (\{X _ {v w} \mid w \in N (v) \})
+$$
+
+$$
+\bigcirc \quad \bigvee_ {w \in N (v)} X _ {w v} \iff \text {ExactlyOne} (\{X _ {v w} \mid w \in N (v) \})
+$$
+
+$$
+\bigcirc \quad \bigvee_ {w \in N (v)} X _ {w v} \implies \text {ExactlyOne} (\{X _ {v w} \mid w \in N (v) \})
+$$
+
+**(d)** [2 pts] Suppose the graph has 𝑁 nodes and 𝑀 edges. How many different assignments to the variables exist in this CSP? Your answer should be an expression, possibly in terms of 𝑁 and 𝑀.
+
+Suppose we set up our CSP on a graph with nodes 𝑠, 𝑎, 𝑏, 𝑐, 𝑑, 𝑒, 𝑔. We want to run a hill climbing algorithm to maximize the number of satisfied constraints. Sideways steps (variable changes that don’t change the number of satisfied constraints) are allowed. All variables in the CSP initially set to false.
+
+**(e)** [2 pts] Assuming that each of the following variables exists in the CSP, select all variables that might be set to true in the first step of running hill-climbing.
+
+$$
+\square X _ {s a}
+$$
+
+□ 𝑋<sub>𝑠𝑏</sub>
+
+□ 𝑋<sub>𝑐𝑠</sub>
+
+□ 𝑋<sub>𝑎𝑏</sub>
+
+□ 𝑋<sub>𝑑𝑒</sub>
+
+□ 𝑋<sub>𝑒𝑔</sub>
+
+None of the above
+
+**(f)** [1 pt] Will our hill-climbing algorithm always find a solution to the CSP if one exists?
+
+\# Yes, the algorithm will incrementally add edges to the path until the path connects 𝑠 and 𝑔.
+
+\# Yes, the algorithm will eventually search over all combinations of assignments to the variables until a satisfying one is found.
+
+\# No, the search will sometimes find a solution to the CSP that is not a valid path.
+
+\# No, the search will sometimes fail to satisfy all of the constraints in the CSP.
+
+## Q3. [9 pts] A Multiplayer MDP
+
+Alice and Bob are playing a game on a 2-by-2 grid, shown below. To start the game, a puck is placed on square A.
+
+At each time step, the available actions are:
+
+• Up, Left, Down, Right: These actions move the puck deterministically. Actions that move the puck off the grid are disallowed. These actions give both players a reward of 0.
+
+• Exit: This action ends the game. Note that the Exit action can be taken no matter where the puck is. This action gives Alice and Bob rewards depending on the puck’s final location, as shown below.
+
+Each player tries to maximize their own reward, and does not care about what rewards the other player gets.
+
+| X | Y |
+| --- | --- |
+| W | Z |
+
+Figure 1: The grid that the puck moves on.
+
+| Puck location when "exit" is taken | Alice's reward | Bob's reward |
+| --- | --- | --- |
+| W | -1 | +3 |
+| X | 0 | 0 |
+| Y | +1 | +2 |
+| Z | -1 | +2 |
+
+Figure 2: Exit rewards for Alice and Bob.
+
+**(a)** [2 pts] Suppose Bob is the only player taking actions in this game. Bob models this game as an MDP with a discount factor 0 < 𝛾 ≤ 1.
+
+For which of the following states does Bob’s optimal policy depend on the value of 𝛾? Select all that apply.
+
+None of the above.
+
+For the rest of the question, Alice and Bob alternate taking actions. Alice goes first.
+
+Alice models this game with the following game tree, and wants to run depth-limited search with limit 3 turns. She uses an evaluation of 0 for any leaf node that is not a terminal state. (Note: Circles do not necessarily represent chance nodes.)
+
+![](images/page_3_image_15.jpg)
+
+**(b)** [1 pt] This is a zero-sum game.
+
+True
+
+**(c)** [1 pt] What is Alice’s value of the root node of the tree?
+
+|  |
+| --- |
+
+**(d)** [1 pt] What is Bob’s value of the root node of the tree?
+
+**(e)** [2 pts] Assuming that Alice and Bob play optimally, what are possible sequences of actions that they might play? Select all that apply.
+
+up, right, exit
+
+□ right, up, exit
+
+up, right, down
+
+□ right, exit
+
+right, left, right
+
+None of the above.
+
+Alice instead decides to model the game as an MDP. Assumptions:
+
+$\gamma = 0 . 5$
+
+• Alice knows Bob’s policy is 𝜋.
+
+$D ( s , a )$ represents the new state you move into when you start at state 𝑠 and take action 𝑎.
+
+**(f)** [2 pts] Fill in the blanks to derive a modified Bellman equation that Alice can use to compute the values of states. Let $s ^ { \prime } = D ( s , a )$ and $s ^ { \prime \prime } = D ( s ^ { \prime } , \pi ( s ^ { \prime } ) )$ .
+
+$$
+V (s) = \max _ {a} R (s, a, s ^ {\prime}) + (\mathbf {i}) (\mathbf {i i}) + (\mathbf {i i i}) (\mathbf {i v})
+$$
+
+$$
+\begin{array}{c c c c c c c} \text {(i)} & \bigcirc & 1 & \bigcirc & 0. 5 & \bigcirc & 0. 2 5 \\ \text {(ii)} & \bigcirc & 0 & \bigcirc & R (s, \pi (s), s ^ {\prime}) & \bigcirc & R (s ^ {\prime}, \pi (s ^ {\prime}), s ^ {\prime \prime}) \\ \text {(iii)} & \bigcirc & 1 & \bigcirc & 0. 5 & \bigcirc & 0. 2 5 \\ \text {(iv)} & \bigcirc & V (s) & \bigcirc & V (s ^ {\prime}) & \bigcirc & V (s ^ {\prime \prime}) \end{array}
+$$
+
+## Q4. [13 pts] Slightly Different MDPs
+
+Each subpart of this question is independent.
+
+For all MDPs in this question, you may assume that:
+
+• The maximum reward for any single action is some fixed number $R > 0 ,$ and the minimum reward is 0.
+
+• The discount factor satisfies $0 < \gamma \leq 1$
+
+• There are a finite number of possible states and actions.
+
+**(a)** [2 pts] Which statements are always true? Select all that apply.
+
+□∑𝑠∈𝑆 𝑇 (𝑠, 𝑎, 𝑠′) = 1.
+
+$\begin{array} { r } { \sum _ { s ^ { \prime } \in S } T ( s , a , s ^ { \prime } ) = 1 } \end{array}$
+
+$\begin{array} { r } { \sum _ { a \in A } T ( s , a , s ^ { \prime } ) \leq 1 . } \end{array}$
+
+□ For all state-action pairs (𝑠, 𝑎), there exists some $s ^ { \prime } ,$ such that $T ( s , a , s ^ { \prime } ) = 1$
+
+None of the above
+
+**(b)** [2 pts] Which statements are always true? Select all that apply.
+
+□ Every MDP has a unique set of optimal values for each state.
+
+□ Every MDP has a unique optimal policy.
+
+□ If we change the discount factor 𝛾 of an MDP, the original optimal policy will remain optimal.
+
+□ If we scale the reward function $r ( s , a )$ of an MDP by a constant multiplier $\alpha > 0$ , the original optimal policy will remain optimal.
+
+\# None of the above
+
+**(c)** [2 pts] Which statements are true? Select all that apply.
+
+□ Policy iteration is guaranteed to converge to a policy whose values are the same as the values computed by value iteration in the limit.
+
+□ Policy iteration usually converges to exact values faster than value iteration.
+
+□ Temporal difference (TD) learning is off-policy.
+
+□ An agent is performing Q-learning, using a table representation of Q (with all Q-values initialized to 0). If this agent takes only optimal actions during learning, this agent will eventually learn the optimal policy.
+
+None of the above
+
+**(d)** [2 pts] We modify the reward function of an MDP by adding or subtracting at most 𝜖 from each single-step reward. (Assume 𝜖 > 0.)
+
+We fix a policy 𝜋, and compute $V _ { \pi } ( s )$ , the values of all states 𝑠 in the original MDP under policy 𝜋.
+
+Then, we compute $V _ { \pi } ^ { \prime } ( s )$ , the values of all states in the modified MDP under the same policy 𝜋.
+
+What is the maximum possible difference $\left| V _ { \pi } ^ { \prime } ( s ) - V _ { \pi } ( s ) \right|$ for any state 𝑠?
+
+𝜖 # 𝛾𝜖 # $\begin{array} { r } { \sum _ { n = 0 } ^ { \infty } \epsilon ( \gamma ) ^ { n } = \epsilon / ( 1 - \gamma ) } \end{array}$ # 𝜖𝑅 None of the above
+
+**(e)** [3 pts] We modify the reward function of an MDP by adding exactly 𝐶 to each single-step reward. (Assume $C > 0 . )$ Let 𝑉 and $V ^ { \prime }$ be the optimal value functions for the original and modified MDPs. Select all true statements.
+
+For all states 𝑠, $\begin{array} { r } { V ^ { \prime } ( s ) - V ( s ) = \sum _ { n = 0 } ^ { \infty } C ( \gamma ) ^ { n } = C / ( 1 - \gamma ) . } \end{array}$
+
+For all states 𝑠, $V ^ { \prime } ( s ) - V ( s ) = C .$
+
+□ For some MDPs, the difference $V ^ { \prime } ( s ) - V ( s )$ may vary depending on 𝑠.
+
+None of the above
+
+**(f)** [2 pts] We notice that an MDP’s state transition probability $T ( s , a , s ^ { \prime } )$ does **not** depend on the action 𝑎.
+
+Can we derive an optimal policy for this MDP without computing exact or approximate values (or Q-values) for each state?
+
+\# Yes, because the optimal policy for this MDP can be derived directly from the reward function.
+
+\# Yes, because policy iteration gives an optimal policy and does not require computing values (or Q-values).
+
+\# No, because we need a set of optimal values (or Q-values) to do policy extraction.
+
+\# No, because there is no optimal policy for such an MDP.
+
+None of the above
+
+Bayes’ net (iii) None of the above
+
+## Q5. [8 pts] Bayes’ Nets
+
+The head of Pac-school is selecting the speaker (S) for the commencement ceremony, which depends on the student’s major (M), academic performance (A), and confidence (C). The student’s hard work (H) affects their academic performance (A), and academic performance (A) can affect confidence (C).
+
+**(a)** [1 pt] Select all of the well-formed Bayes’ nets that can represent a scenario consistent with the assertions given above (even if the Bayes’ net is not the most efficient representation).
+
+![](images/page_7_image_4.jpg)
+
+Bayes’ net (i) Bayes’ net (ii)
+
+![](images/page_7_image_6.jpg)
+
+![](images/page_7_image_7.jpg)
+
+For the rest of the question, consider this Bayes net with added nodes Fearlessness (F) and Voice (V).
+
+![](images/page_7_image_9.jpg)
+
+**(b)** [2 pts] Select all the conditional independence expressions that follow from the two standard axioms (1) a variable is independent of its non-descendants given its parents, and (2) a variable is independent of everything else given its Markov blanket.
+
+$$
+\square F \perp C
+$$
+
+$$
+\square M \perp C | H, F
+$$
+
+$$
+\square H \perp \perp S \mid C, A, M
+$$
+
+$$
+\square F \perp A | H, M
+$$
+
+None of the above
+
+The Bayes’ net, repeated for your convenience:
+
+![](images/page_8_image_1.jpg)
+
+Assume all the variables have a domain size of 2. Consider the query $P ( S | + h , + v , + f )$ in the Bayes net from the previous part.
+
+**(c)** [1 pt] Suppose the query is answered by variable elimination, using the variable ordering 𝐶, 𝐴, 𝑀. What is the size (number of entries) of the largest factor generated during variable elimination? (Ignore the sizes of the initial factors.) # 21 # 23 # 25 # 2<sub>2</sub> # 2<sub>4</sub> # 2<sub>6</sub>
+
+**(d)** [2 pts] If we use Gibbs sampling to answer this query, what other variables need to be referenced when sampling 𝑀? 𝐻 𝐹 # None of the above 𝐴 𝑀 𝑆 𝐶
+
+Now suppose the CPT for variable 𝐴 is as follows, and assume there are no zeroes in any other CPT.
+
+| 𝐴 | 𝐻 | 𝑃(𝐴\|𝐻) |
+| --- | --- | --- |
+| +𝑎 | +ℎ | 1 |
+| -𝑎 | +ℎ | 0 |
+| +𝑎 | -ℎ | 0 |
+| -𝑎 | -ℎ | 1 |
+
+Hint: Recall that one requirement for Gibbs sampling to converge is that, in the limit of infinitely many samples, every state with non-zero probability is sampled infinitely often, regardless of the initial state.
+
+**(e)** [1 pt] Will Gibbs sampling converge to the correct answer for the query $P ( S \mid + f ) ?$
+
+\# Yes, because convergence properties of Gibbs sampling depend only on the structure of Bayes net, not on the values in the CPTs.
+
+\# Yes, but it will converge very slowly because of the 0s and 1s in the CPT.
+
+\# No, because some states with non-zero probability are unreachable from other such states.
+
+\# No, because Gibbs sampling always fails with deterministic CPTs like this one.
+
+None of the above
+
+**(f)** [1 pt] Will Gibbs sampling converge to the correct answer for the query $P ( S \mid + h , + v , + f ) ?$
+
+\# Yes, because convergence properties of Gibbs sampling depend only on the structure of Bayes net, not on the values in the CPTs.
+
+\# Yes, but it will converge very slowly because of the 0s and 1s in the CPT.
+
+\# No, because some states with non-zero probability are unreachable from other such states.
+
+\# No, because Gibbs sampling always fails with deterministic CPTs like this one.
+
+None of the above
+
+## Q6. [10 pts] Dynamic Bayes’ Nets: Book Club
+
+Each week $t \left( t \geq 0 \right)$ , the members of a book club decide on the genre of the book $G _ { t }$ to read that week: romance $( + g _ { t } )$ or science fiction $( - g _ { t } )$ . Each week’s choice is influenced by the genre chosen in the previous week. In addition, after week $t \left( t \geq 0 \right)$ , they collect feedback $( F _ { t + 1 } )$ from the members, which can be overall positive $( + f _ { t + 1 } )$ or negative $( - f _ { t + 1 } ) ,$ , and that influences the choice at week $t + 2 .$ The situation is shown in the Bayes’ net below:
+
+![](images/page_9_image_2.jpg)
+
+**(a)** [1 pt] Recall that the joint distribution up to time 𝑇 for the "standard" HMM model with state $X _ { t }$ and evidence $E _ { t }$ is given by $\begin{array} { r } { P ( X _ { 0 : T } , E _ { 1 : T } )   =   P ( X _ { 0 } ) \prod _ { t = 1 } ^ { T } P ( X _ { t }   |   X _ { t - 1 } ) P ( E _ { t }   |   X _ { t } ) } \end{array}$
+
+Write an expression for the joint distribution in the model shown above.
+
+![](images/page_9_image_5.jpg)
+
+**(b)** [2 pts] Which of the following Markov assumptions are implied by the network structure, assuming $t \geq 2 ?$
+
+$$
+\square P (G _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (G _ {t} \mid F _ {t - 1})
+$$
+
+$$
+\square P (G _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (G _ {t} \mid G _ {t - 1})
+$$
+
+$$
+\square P (G _ {t}, F _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (G _ {t}, F _ {t} \mid G _ {t - 1})
+$$
+
+$$
+\square P (G _ {t}, F _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (G _ {t}, F _ {t} \mid G _ {t - 1}, F _ {t - 1})
+$$
+
+$$
+\square P (F _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (F _ {t} \mid F _ {t - 1})
+$$
+
+$$
+\square P (F _ {t} \mid G _ {0: t - 1}, F _ {1: t - 1}) = P (F _ {t} \mid G _ {t - 1}, F _ {t - 2})
+$$
+
+None of the above
+
+The conditional probability tables for $G _ { t }$ and $F _ { t }$ are shown below, where $a , b , c , d , p , q$ are constants between 0 and 1.
+
+| 𝐹<sub>𝑡</sub> | 𝐺<sub>𝑡-1</sub> | 𝑃(𝐹<sub>𝑡</sub>\|𝐺<sub>𝑡-1</sub>) |
+| --- | --- | --- |
+| + | + | 𝑝 |
+| - | + | 1 - 𝑝 |
+| + | - | 𝑞 |
+| - | - | 1 - 𝑞 |
+
+| 𝐺<sub>𝑡</sub> | 𝐹<sub>𝑡-1</sub> | 𝐺<sub>𝑡-1</sub> | 𝑃(𝐺<sub>𝑡</sub>\|𝐹<sub>𝑡-1</sub>,𝐺<sub>𝑡-1</sub>) |
+| --- | --- | --- | --- |
+| + | + | + | 𝑎 |
+| - | + | + | 1 - 𝑎 |
+| + | + | - | 𝑏 |
+| - | + | - | 1 - 𝑏 |
+| + | - | + | 𝑐 |
+| - | - | + | 1 - 𝑐 |
+| + | - | - | 𝑑 |
+| - | - | - | 1 - 𝑑 |
+
+Let’s consider this model as a Markov chain with state variables $( F _ { t } , G _ { t } )$
+
+**(c)** [2 pts] Write out the transition probabilities below.
+
+Your answer should be an expression, possibly in terms of $a , b , c , d , p ,$ and 𝑞.
+
+$$
+\begin{array}{l} x _ {1} = P (+ f _ {t}, + g _ {t} \mid + f _ {t - 1}, + g _ {t - 1}) = \\ x _ {3} = P (+ f _ {t}, + g _ {t} \mid - f _ {t - 1}, + g _ {t - 1}) = \end{array}
+$$
+
+![](images/page_9_image_21.jpg)
+
+The Bayes’ net, repeated for your convenience:
+
+![](images/page_10_image_1.jpg)
+
+**(d)** [2 pts] As 𝑡 goes to infinity, the stationary distribution of this Markov chain is shown below, where $y _ { 1 } , y _ { 2 } , y _ { 3 } , y _ { 4 }$ are constants between 0 and 1.
+
+$$
+\begin{array}{r} y _ {1} = P (+ f _ {\infty}, + g _ {\infty}) \\ y _ {2} = P (+ f _ {\infty}, - g _ {\infty}) \\ y _ {3} = P (- f _ {\infty}, + g _ {\infty}) \\ y _ {4} = P (- f _ {\infty}, - g _ {\infty}) \end{array}
+$$
+
+Write an equation that must be true if this is a stationary distribution.
+
+Your answer should be an equation, possibly in terms of $x _ { 1 } , x _ { 2 } , x _ { 3 } , x _ { 4 }$ (from the previous part), $y _ { 1 } , y _ { 2 } , y _ { 3 } , y _ { 4 }$
+
+**(e)** [3 pts] Select all true statements.
+
+□ There are values of $a , b , c , d$ such that the feedback model defined by $p , q$ is irrelevant to the stationary distribution of the genre 𝐺.
+
+□ Even if $P ( F _ { t } , G _ { t } )$ reaches a unique stationary distribution, it is possible that the marginal probabilities $P ( F _ { t } )$ and $P ( G _ { t } )$ do not reach unique stationary distributions.
+
+□ For any values of $a , b , c , d , p , q ,$ , there is at least one stationary distribution.
+
+None of the above
+
+## Q7. [7 pts] Inequalities of VPI
+
+Consider the decision network shown below.
+
+![](images/page_11_image_2.jpg)
+
+Choose the single equality or inequality symbol that results in the strongest assertion that is necessarily true in this network. (For example, if $\dot { \boldsymbol { a } } = \boldsymbol { b }$ and $a \geq b$ are both necessarily true, choose $a = b$ because it is a strictly stronger assertion than $a \geq b . )$
+
+**(a)** [1 pt] $\mathrm{VPI}(X_{1},X_{2},X_{3})\xlongequal{\quad\quad}\mathrm{VPI}(X_{1})$ # = # > # ≥ $\circ < \circ \leq$ # Not enough information
+
+**(b)** [ $\mathrm { ~ l ~ p t ] ~ V P I } ( X _ { 1 } ) \mathrm { \underline { { \quad } } } \mathrm { ~ V P I } ( W )$ # = # > # ≥ $\begin{array} { r l r l r l r l r l r } { \bigcirc } & { { } < } & { } & { { } } & { \bigcirc } & { } & { { } \leq } & { } & { { } } & { \bigcirc } \end{array}$ Not enough information
+
+**(c)** [1 pt] $\mathrm{VPI}(X_{1},X_{2})\xlongequal{\quad\quad}\mathrm{VPI}(X_{2})+\mathrm{VPI}(X_{1})$ # = # > # ≥ $\circ < \circ \leq$ # Not enough information
+
+**(d)** [1 pt] $\mathrm{VPI}(X_{3},X_{4})\xlongequal{\quad\quad}\mathrm{VPI}(X_{3})+\mathrm{VPI}(X_{4})$ # = # > # ≥ # < # ≤ # Not enough information
+
+**(e)** [1 pt] $\mathrm{VPI}(X_{1},X_{2}|X_{3}) \xlongequal{\quad } \mathrm{VPI}(X_{2}|X_{3})$ # = # > # ≥ # < # ≤ # Not enough information
+
+**(f)** [2 pts] Under which of the following circumstances would VPI(X) be 0 for every set of random variables X? Select all that apply.
+
+𝑈 is a deterministic function of 𝐴 and 𝑊 .
+
+□ 𝑈 is independent of 𝐴 given 𝑊 .
+
+□ 𝑈 is independent of 𝑊 given 𝐴.
+
+□ The best action choice, given 𝑊 , is the same for each value of 𝑊 .
+
+□ The expected utility of the best action choice, given 𝑊 , is the same for each value of 𝑊 .
+
+None of the above
+
+## Q8. [13 pts] Inverted Naive Bayes
+
+Consider a standard naive Bayes model with $n \mathrm { ~ > ~ } 1 0$ Boolean features $X _ { 1 } , \ldots , X _ { n }$ and a Boolean class variable 𝑌 . In this question, Boolean variables have values 0 or 1.
+
+![](images/page_12_image_2.jpg)
+
+**(a)** [1 pt] How many parameters do we need to learn in this model (not counting parameters that can be derived by the sum-to-1 rule)?
+
+Example of sum-to-1 rule: Given $P ( Y = 0 )$ , we can compute $P ( Y = 1 )$ since we know that these two values sum to 1. Therefore, $P ( Y = 0 )$ and $P ( Y = 1 )$ only count as one parameter we need to learn.
+
+Your answer should be an expression, possibly in terms of 𝑛.
+
+**(b)** [2 pts] We observe one training example with features $x _ { 1 } , \ldots , x _ { n }$ and class 𝑦. Fill in the blanks to derive the likelihood of this training example.
+
+$$
+L = P (x _ {1}, \dots , x _ {n}, y) = P (Y = 1) ^ {\mathrm{(i)}} P (Y = 0) ^ {\mathrm{(ii)}} \prod_ {i = 1} ^ {n} P (X _ {i} = 1 | y) ^ {\mathrm{(iii)}} P (X _ {i} = 0 | y) ^ {\mathrm{(iv)}}
+$$
+
+$$
+\begin{array}{c c c c c c c c c} \text {(i)} & \bigcirc & x & \bigcirc & 1 - x & \bigcirc & y & \bigcirc & 1 - y \\ \text {(ii)} & \bigcirc & x & \bigcirc & 1 - x & \bigcirc & y & \bigcirc & 1 - y \\ \text {(iii)} & \bigcirc & x & \bigcirc & 1 - x & \bigcirc & y & \bigcirc & 1 - y \\ \text {(iv)} & \bigcirc & x & \bigcirc & 1 - x & \bigcirc & y & \bigcirc & 1 - y \end{array}
+$$
+
+**(c)** [1 pt] Suppose that this training example was missing a feature value, so we only observed $x _ { 2 } , \ldots , x _ { n }$ and class 𝑦. How is the likelihood with a missing feature $L ^ { \prime } = P ( x _ { 2 } , \ldots , x _ { n } , y )$ , related to the original likelihood 𝐿?
+
+\# 𝐿′is equal to 𝐿, but with any terms involving $P ( X _ { 1 } | y )$ dropped.
+
+\# 𝐿′is equal to 𝐿, with an extra term related to the prior probabilities $P ( X _ { 1 } )$ , and any terms involving $P ( X _ { 1 } | y )$ dropped.
+
+The correct expression for 𝐿′cannot be determined from 𝐿.
+
+![](images/page_13_image_0.jpg)
+
+Suppose we "invert" the naive Bayes model so that the arrows point from the feature variables to the class variable:
+
+![](images/page_13_image_2.jpg)
+
+**(d)** [1 pt] How many parameters do we need to learn in this model (not counting parameters that can be derived by the sum-to-1 rule)?
+
+Your answer should be an expression, possibly in terms of 𝑛.
+
+For the rest of this question, Boolean variables are represented as positive or negative (e.g. +𝑦 and −𝑦).
+
+Suppose you have all the parameters from the original naive Bayes model. Using any relevant parameters from the original model, derive the following parameters in the inverted naive Bayes’ model, so that the two models represent the same joint distribution.
+
+Your answers should be expressions, possibly in terms of 𝑃 (+𝑦), 𝑃 (−𝑦), 𝑃 (+𝑥𝑖| + 𝑦), 𝑃 (−𝑥𝑖| + 𝑦), 𝑃 (+𝑥𝑖| − 𝑦), and 𝑃 (−𝑥𝑖| − 𝑦), for 1 ≤ 𝑖 ≤ 𝑛. Hint: You can also use summations ∑ and products ∏.
+
+**(e)** [2 pts] 𝑃 (+𝑥<sub>𝑖</sub>) =
+
+**(g)** [3 pts] Select all true statements.
+
+□ For any set of parameters in the original naive Bayes model, there is some set of parameters in the inverted naive Bayes model that captures the same joint distribution.
+
+□ For any set of parameters in the inverted naive Bayes model, there is some set of parameters in the original naive Bayes model that captures the same joint distribution.
+
+□ The inverted naive Bayes model will typically require far more training data than the original naive Bayes model to achieve the same level of test accuracy.
+
+\# None of the above
+
+**(h)** [1 pt] What learning behavior should we expect to see with this inverted naive Bayes’ model?
+
+\# High training accuracy, high test accuracy
+
+High training accuracy, low test accuracy
+
+\# Low training accuracy, high test accuracy
+
+Low training accuracy, low test accuracy
+
+## Q9. [8 pts] Higher-Dimensional Perceptrons
+
+Consider a dataset with 6 points on a 2D coordinate grid Each point belongs to one of two classes. Points [−1, 0], [1, 0], [0, 1] belong to the negative class. Points [−2, 0], [2, 0], [0, 2] belong to the positive class.
+
+![](images/page_14_image_2.jpg)
+
+**(a)** [1 pt] Suppose we run the perceptron algorithm with the initial weight vector set to [0, 5].
+
+What is the updated weight vector after processing the data point [0, 1]?
+
+**(b)** [1 pt] How many iterations of the perceptron algorithm will run before the algorithm converges? Processing one data point counts as one iteration. If the algorithm never converges, write ∞.
+
+In the next few subparts, we’ll consider transforming the data points by applying some modification to each of the data points. Then, we pass these modified data points into the perceptron algorithm.
+
+For example, consider the transformation $[ x , y ] \to [ x , y , x ^ { 2 } , 1 ] .$ In this transformation, we add two extra dimensions: one whose value is always the square of the first coordinate, and one whose value is always the constant 1. For example, the point at [2, 0] is transformed into a point at [2, 0, 4, 1] in 4-dimensional space.
+
+**(c)** [2 pts] Which of the following data transformations will cause the perceptron algorithm to converge, when run on the transformed data? Select all that apply.
+
+$$
+\square \quad [ x, y ] \rightarrow [ y, x ]
+$$
+
+$$
+\square \quad [ x, y ] \rightarrow [ x, y, 1 ]
+$$
+
+$$
+\square \quad [ x, y ] \to [ x, y, x ^ {2}, 1 ]
+$$
+
+$$
+\square \quad [ x, y ] \rightarrow [ x, y, x ^ {2} + y ^ {2} ]
+$$
+
+None of the above.
+
+**(d)** [2 pts] Suppose we transform [𝑥, 𝑦] to $[ x , y , x ^ { 2 } + y ^ { 2 } ,$ 1], and pass the transformed data points into the perceptron.
+
+Write one possible weight vector that the perceptron algorithm may converge to.
+
+**(e)** [2 pts] Construct another transformation (not equal to the ones above) that will allow the perceptron algorithm to converge. Hint: The transformation $[ x , y ] \rightarrow [ x , y , x ^ { 2 } + y ^ { 2 }$ , 1] allows the perceptron algorithm to converge.
+
+Fill in the blank: $[ x , y ] \rightarrow [ x , y , \_ \_ , 1 ]$
+
+Exam continues on next page.
+
+## Q10. [9 pts] Q-Networks
+
+Consider running Q-learning on the following Pacman problem: the maze is an 𝑥-by-𝑥 square, and each position can contain a food pellet or no food pellet. There are no ghosts or walls. Pacman’s only actions are {up, down, left, right}.
+
+**(a)** [2 pts] How many Q-values do we need to learn for this problem?
+
+Your answer should be an expression, possibly in terms of 𝑥.
+
+To learn every Q-value, we could run standard Q-learning, but we decide to try a different approach:
+
+Suppose somebody tells us 𝑁 exact Q-values for 𝑁 different state-action pairs: the exact Q-value for the state-action pair $( s _ { i } , a _ { i } )$ is 𝑞𝑖, for $1 \leq i \leq N$ . (𝑁 is less than the total number of state-action pairs.)
+
+We decide to use these exact Q-values to train a neural network, so that we can estimate other Q-values we don’t know. To train this neural network, we need to apply gradient descent to minimize the following loss function:
+
+$$
+L (\theta) = \frac {1}{N} \sum_ {i = 1} ^ {N} (f (\theta , s _ {i}, a _ {i}) - q _ {i}) ^ {2}
+$$
+
+𝜃 represents the weights of the neural network. $f ( \theta , s _ { i } , a _ { i } )$ represents running the neural network with weights 𝜃 on state-action pair $( s _ { i } , a _ { i } )$
+
+**(b)** [1 pt] What is the gradient $\frac { \partial L } { \partial \theta } ?$
+
+Your answer should be an expression, possibly in terms of $\begin{array} { r } { N ,   \frac { \partial f } { \partial \theta } , } \end{array}$ and $q _ { i }$ .
+
+$$
+\frac {\partial L}{\partial \theta} =
+$$
+
+**(c)** [1 pt] After running 𝑡 iterations of gradient descent, our current weights are $\theta _ { t }$ . The learning rate is 𝛼. What are the weights on the next iteration, $\theta _ { t + 1 } ?$
+
+Your answer should be an expression, possibly in terms of $\theta _ { t } ,   \alpha ,   \mathrm { a n d }   \frac { \partial L } { \partial \theta } .$
+
+$$
+\theta_ {t + 1} =
+$$
+
+**(d)** [2 pts] Eventually, gradient descent converges to the weights $\theta ^ { * }$
+
+We use the neural network with weights $\theta ^ { * }$ to compute Q-values, and extract a policy out of these Q-values:
+
+$$
+\pi (s) = \arg \max _ {a} f (\theta^ {*}, s, a)
+$$
+
+Is 𝜋 the optimal policy for this problem? # Yes # No # Not enough information
+
+Instead of the Pacman problem, consider a different problem where the action space is continuous. In other words, there are infinitely many actions available from a given state.
+
+**(e)** [3 pts] Can we still use the strategy from the previous subparts (without any modifications) to obtain a policy 𝜋? # Yes # No Briefly explain why or why not.
