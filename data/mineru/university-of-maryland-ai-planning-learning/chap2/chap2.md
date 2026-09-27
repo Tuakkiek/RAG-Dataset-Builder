@@ -1506,7 +1506,7 @@ State-variable representation:
 <div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
 $s_0 = \{\text{adjacent(d1,d2), adjacent(d2,d1)},$
     adjacent(d1,d3), adjacent(d3,d1),
-    loc(c1,d1), loc(r1,d2)\}\)
+    loc(c1,d1), loc(r1,d2)\})
 </div>
 
 <!-- page: 40 -->

@@ -10519,7 +10519,7 @@ Có một tương ứng đáng ngạc nhiên giữa phép tam giác phân của 
 Một phép ngoặc đơn đầy đủ của một biểu thức tương ứng với một cây nhị phân đầy đủ, đôi lúc còn gọi là cây phân ngữ [parse tree] của biểu thức. Hình 16.5(a) nêu một cây phân ngữ cho tích xích ma trận đã ngoặc đơn
 
 $$
-((A _ {1} A _ {2} A _ {3})) (A _ {4} (A _ {5} A _ {6}))\).\tag{16.6}
+((A _ {1} A _ {2} A _ {3})) (A _ {4} (A _ {5} A _ {6}))).\tag{16.6}
 $$
 
 Mỗi lá của một cây phân ngữ được gán nhân bằng một trong các thành phần nguyên tử (các ma trận) trong biểu thức. Nếu gốc của một cây con của cây phân ngữ có một cây con trái biểu thị cho một biểu thức $E_{i}$ và một cây con phải biểu thị cho một biểu thức $E_{r}$, thì bản thân cây con đó biểu thị cho biểu thức $(E_{i}E_{r})$. Có một sự tương ứng một-một giữa các cây phân ngữ và các biểu thức được ngoại đơn đầy đủ trên $n$ thành phần nguyên tử.
@@ -17558,7 +17558,7 @@ Cũng vây, (S, ⊙, 1) là một nửa nhóm.
 
 7. Tính kết hợp, tính giao hoán, và tính lũy đẳng áp dụng cho các tóm tất vô hạn. (Như vây, mọi tóm tất vô hạn có thể được viết lại dưới dạng một tóm tất vô hạn ở đó mỗi số hạng của tóm tất được góp thì một lần và thứ tự đánh giá là tùy ý.)
 
-8. ⊙ phân phối trên các tóm tất vô hạn: $a \odot (b_1 \oplus b_2 \oplus b_3 \oplus ...$) = (a \odot b\_1) \oplus (a \odot b\_2) \oplus (a \odot b\_3) \oplus ...\) và $(a_1 \oplus a_2 \oplus a_3 \oplus ...$) \odot b = (a\_1 \odot b) \oplus (a\_2 \odot b) \oplus (a\_3 \odot b) \oplus ....\).
+8. ⊙ phân phối trên các tóm tất vô hạn: $a \odot (b_1 \oplus b_2 \oplus b_3 \oplus ...$) = (a \odot b\_1) \oplus (a \odot b\_2) \oplus (a \odot b\_3) \oplus ...) và $(a_1 \oplus a_2 \oplus a_3 \oplus ...$) \odot b = (a\_1 \odot b) \oplus (a\_2 \odot b) \oplus (a\_3 \odot b) \oplus ....).
 
 ## Một hệ tính các lộ trình trong đồ thị có hướng
 

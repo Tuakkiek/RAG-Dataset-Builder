@@ -1485,7 +1485,7 @@ This is nothing but a denoising problem because we need to find a network $\wide
 $\mathbb { E } _ { q ( \mathbf { x } _ { t } | \mathbf { x } _ { 0 } ) } \mathbf { : }$ We are not trying to denoise any random noisy image. Instead, we are carefully choosing the noisy image to be
 
 $$
-\begin{array}{r l} \mathbf {x} _ {t} \sim q (\mathbf {x} _ {t} | \mathbf {x} _ {0}) = \mathcal {N} (\mathbf {x} _ {t} \mid \sqrt {\overline {{\alpha}} _ {t}} \mathbf {x} _ {0}, (1 - \overline {{\alpha}} _ {t}) \mathbf {I}) \\ \mathbf {x} _ {t} = \sqrt {\overline {{\alpha}} _ {t}} \mathbf {x} _ {0} + \sqrt {(1 - \overline {{\alpha}} _ {t})} \boldsymbol {\epsilon} _ {t}, & \text {where} \quad \boldsymbol {\epsilon} _ {t} \sim \mathcal {N} (0, \mathbf {I}). \end{array}\tag{\(\Leftrightarrow\}
+\begin{array}{r l} \mathbf {x} _ {t} \sim q (\mathbf {x} _ {t} | \mathbf {x} _ {0}) = \mathcal {N} (\mathbf {x} _ {t} \mid \sqrt {\overline {{\alpha}} _ {t}} \mathbf {x} _ {0}, (1 - \overline {{\alpha}} _ {t}) \mathbf {I}) \\ \mathbf {x} _ {t} = \sqrt {\overline {{\alpha}} _ {t}} \mathbf {x} _ {0} + \sqrt {(1 - \overline {{\alpha}} _ {t})} \boldsymbol {\epsilon} _ {t}, & \text {where} \quad \boldsymbol {\epsilon} _ {t} \sim \mathcal {N} (0, \mathbf {I}). \end{array}\tag{\(\Leftrightarrow\)}
 $$
 
 $\textstyle \frac { 1 } { 2 \sigma _ { q } ^ { 2 } ( t ) } \frac { ( 1 - \alpha _ { t } ) ^ { 2 } \overline { { \alpha } } _ { t - 1 } } { ( 1 - \overline { { \alpha } } _ { t } ) ^ { 2 } }$ : We do not weight the denoising loss equally for all steps. Instead, there is a scheduler to control the relative emphasis on each denoising loss. Considering this, and using Monte Carlo to approximate the expectation, we can write the optimization problem as

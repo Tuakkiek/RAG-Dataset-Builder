@@ -261,7 +261,7 @@ Assume that we first observe evidence $\underline { { \mathcal { B } } } _ { \un
 <!-- page: 23 -->
 
 $$
-p\big(H_{i}|E_{3}\big) = \frac{p\big(E_{3}|H_{i}\big)\times p\big(H_{i}\big)}{\sum\limits_{k = 1}^{3}p\big(E_{3}|H_{k}\big)\times p\big(H_{k}\big)},\tag{\(i = 1,2,3\}
+p\big(H_{i}|E_{3}\big) = \frac{p\big(E_{3}|H_{i}\big)\times p\big(H_{i}\big)}{\sum\limits_{k = 1}^{3}p\big(E_{3}|H_{k}\big)\times p\big(H_{k}\big)},\tag{\(i = 1,2,3\)}
 $$
 
 Thus ,
@@ -311,7 +311,7 @@ Hypothesis $原 ($ has now become the most likely one. .
 After observing evidence $\underline { { \mathcal { D } } } _ { \underline { { \mathcal { D } } } }$ the final po sterior probabilities for all hypotheses are calculated :
 
 $$
-p \big (H _ {i} | E _ {1} E _ {2} E _ {3} \big) = \frac {p \big (E _ {1} | H _ {i} \big) \times p \big (E _ {2} | H _ {i} \big) \times p \big (E _ {3} | H _ {i} \big) \times p \big (H _ {i} \big)}{\sum_ {k = 1} ^ {3} p \big (E _ {1} | H _ {k} \big) \times p \big (E _ {2} | H _ {k} \big) \times p \big (E _ {3} | H _ {k} \big) \times p \big (H _ {k} \big)},\tag{\(i = 1,2,3\}
+p \big (H _ {i} | E _ {1} E _ {2} E _ {3} \big) = \frac {p \big (E _ {1} | H _ {i} \big) \times p \big (E _ {2} | H _ {i} \big) \times p \big (E _ {3} | H _ {i} \big) \times p \big (H _ {i} \big)}{\sum_ {k = 1} ^ {3} p \big (E _ {1} | H _ {k} \big) \times p \big (E _ {2} | H _ {k} \big) \times p \big (E _ {3} | H _ {k} \big) \times p \big (H _ {k} \big)},\tag{\(i = 1,2,3\)}
 $$
 
 $$

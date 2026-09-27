@@ -5737,27 +5737,27 @@ $$
 Nếu điều này xảy ra, mẫu số trong biểu thức (14.12) sẽ bị triệt tiêu. Phương trình vi phân này không quá phức tạp. Thật vậy, (14.14) tương đương với
 
 $$
-\frac {\partial a}{a (1 - a)} = \partial z\tag{\(\Leftrightarrow\}
+\frac {\partial a}{a (1 - a)} = \partial z\tag{\(\Leftrightarrow\)}
 $$
 
 $$
-\left(\frac {1}{a} + \frac {1}{1 - a}\right) \partial a = \partial z\tag{\(\Leftrightarrow\}
+\left(\frac {1}{a} + \frac {1}{1 - a}\right) \partial a = \partial z\tag{\(\Leftrightarrow\)}
 $$
 
 $$
-\log a - \log (1 - a) = z + C\tag{\(\Leftrightarrow\}
+\log a - \log (1 - a) = z + C\tag{\(\Leftrightarrow\)}
 $$
 
 $$
-\log {\frac {a}{1 - a}} = z + C\tag{\(\Leftrightarrow\}
+\log {\frac {a}{1 - a}} = z + C\tag{\(\Leftrightarrow\)}
 $$
 
 $$
-\frac {a}{1 - a} = e ^ {z + C}\tag{\(\Leftrightarrow\}
+\frac {a}{1 - a} = e ^ {z + C}\tag{\(\Leftrightarrow\)}
 $$
 
 $$
-a = e ^ {z + C} (1 - a)\tag{\(\Leftrightarrow\}
+a = e ^ {z + C} (1 - a)\tag{\(\Leftrightarrow\)}
 $$
 
 $$

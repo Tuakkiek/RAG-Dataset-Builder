@@ -5871,7 +5871,7 @@ input into the template
     st.write(response)                  #write the
 response
 
-####### Going to load the pdfs in a directory (use either
+###### Going to load the pdfs in a directory (use either
 unstructured pdf or pypdf)
 
 # pip install langchain unstructured openai tiktoken pypdf
@@ -5888,7 +5888,7 @@ docs = loader.load()
 #pip install faiss-cpu
 from langchain.vectorstores import FAISS
 
-####### Making the embeddings
+###### Making the embeddings
 
 from langchain.embeddings import OpenAIEmbeddings
 

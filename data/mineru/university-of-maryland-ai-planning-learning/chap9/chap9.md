@@ -2200,12 +2200,12 @@ c = 80
 c = 1
 c = 10
 c = (d2)(d3)(d4)(d5)
-Goal: \( S_g = \{d4\}$
+Goal: \( S_g = \{d4\}\)
 Iteration 2
 $V(d5) = 0$
 $V(d3) = 0 \\ c = 1 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3 \\ d4 \\ d5 \\ d2 \\ d3
 d4 = 0
-Goal: \( S_g = \{d4\}$
+Goal: \( S_g = \{d4\}\)
 Lecture slides for Acting, Planning, and Learning. Creative Commons CC BY-SA 4.0
 </div>
 

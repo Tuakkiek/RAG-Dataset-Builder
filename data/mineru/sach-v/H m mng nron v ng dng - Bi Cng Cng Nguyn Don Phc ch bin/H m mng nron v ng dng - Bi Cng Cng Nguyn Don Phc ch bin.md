@@ -5827,7 +5827,7 @@ $R_{14}:$ Nếu $\mathcal{U}_1=PS$ và $\mathcal{U}_2=PS$ thì $\mathcal{Y}=PS$ 
 $R_{15}:$ Nếu $\mathcal{U}_1=PB$ và $\mathcal{U}_2=PS$ thì $\mathcal{Y}=PS$ hoặc,
 $R_{16}:$ Nếu $\mathcal{U}_1=NS$ và $\mathcal{U}_2=PB$ thì $\mathcal{Y}=PB$ hoặc,
 $R_{17}:$ Nếu $\mathcal{U}_1=ZE$ và $\mathcal{U}_2=PB$ thì $\mathcal{Y}=PS$ hoặc,
-$R_{18}:$ Nếu $\mathcal{U}_1=PS$ và $\mathcal{U}_2=PB$ thì \( \mathcal{Y}=PB. sẽ được thể hiện dưới dạng bằng như sau:
+$R_{18}:$ Nếu $\mathcal{U}_1=PS$ và $\mathcal{U}_2=PB$ thì $\mathcal{Y}=PB$. sẽ được thể hiện dưới dạng bằng như sau:
 
 $$
 \mathcal {M} _ {2}

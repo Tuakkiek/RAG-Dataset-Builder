@@ -2583,7 +2583,7 @@ while $c' &lt; 5$ do
     Thêm vào cuối $s$ một nhập None;
     $c' \leftarrow c' + 1;$
 $Z \leftarrow id_5, id_6, ..., id_{c'};$
-$I \leftarrow tập chứa \( n_{id*}$ định kê của các đình ngẫu nhiên trong phiên, ưu tiên
+$I \leftarrow tập chứa n_{id*}$ định kê của các đình ngẫu nhiên trong phiên, ưu tiên
     định có trong các $\{id_5, id_6, ..., id_{c'}\}; //lưu ý bổ các định có giá trị là None.$
 for định $o \in I$ do
     $x^o \leftarrow \{v_1^o, v_2^o, v_3^o, v_4^o\}$ với $v_i^o$ là trọng số cạnh nối từ đính $id_i$ đến đính $o;$

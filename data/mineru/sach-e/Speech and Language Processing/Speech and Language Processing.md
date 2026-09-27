@@ -1717,9 +1717,9 @@ Figure 2.13 shows some useful aliases for common ranges:
 
 Figure 2.13 Aliases for common sets of characters.
 
-Finally, certain special characters are referred to by special notation based on the backslash (\) (see Fig. 2.14). The most common of these are the **newline** character \n and the **tab** character \t.
+Finally, certain special characters are referred to by special notation based on the backslash (&#92;) (see Fig. 2.14). The most common of these are the **newline** character \n and the **tab** character \t.
 
-How do we refer to characters that are special themselves (like ., \*, -, [, and \) when we mean them literally, not in their special usage? That is, if we are trying to match a period, or a star, or a bracket or paren? To get the literal meaning of a special character, we need to precede them with a backslash, $(i.e., $\mathrm{r} `` \backslash \mathrm{.} '' , \mathrm{r} `` \backslash \mathrm{s} '' $$ r"\[", and $\mathbf { r } ^ { n } \backslash \backslash \textquotesingle )$ .
+How do we refer to characters that are special themselves (like ., \*, -, [, and &#92;) when we mean them literally, not in their special usage? That is, if we are trying to match a period, or a star, or a bracket or paren? To get the literal meaning of a special character, we need to precede them with a backslash, $(i.e., $\mathrm{r} `` \backslash \mathrm{.} '' , \mathrm{r} `` \backslash \mathrm{s} '' $$ r"\[", and $\mathbf { r } ^ { n } \backslash \backslash \textquotesingle )$ .
 
 | Regex | Match | First Patterns Matched |
 | --- | --- | --- |
