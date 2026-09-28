@@ -911,7 +911,7 @@ Chương này giới thiệu các phương pháp giải quyết các bài toán 
 
 \- Tìm kiểm lắp sâu đàn còn gọi là tìm kiếm có độ sâu giới hạn, với giới hạn được tăng dần cho đến khi tìm thấy đích. Thuật toán đầy đủ, tối ưu cho các chi phí bước đơn vị và có độ phức tạp thời gian $O(b^{d})$ và độ phức tạp không gian $O(bd)$.
 
-## VII.THUẬT NGỮ TIÉNG ANH
+## VII.THUẬT NGỮ TIẾNG ANH
 
 Sau đây là những thuật ngữ tiếng Anh liên quan đến những khái niệm đã dùng ở chương này:
 
