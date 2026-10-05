@@ -26,13 +26,24 @@ def count_block_types(pages):
     
     return block_counts
 
+# Count the total number of blocks
+def count_total_blocks(pages): 
+    total_blocks = 0
+
+    for page in pages: 
+        blocks = page.get("blocks", []) 
+        total_blocks += len(blocks) 
+
+    return total_blocks
+
+
 def main():
     data = load_json(FILE_PATH)
 
     pages = data.get("pages", [])
 
-    block_counts = count_block_types(pages)
-    print(block_counts)
+    total_blocks = count_total_blocks(pages)
+    print(total_blocks)
 
 if __name__ == "__main__":
     main()
