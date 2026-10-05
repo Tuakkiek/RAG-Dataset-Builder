@@ -66,12 +66,35 @@ def find_page_with_most_blocks(pages):
 
     return max_blocks, max_page 
 
+# Get all block of a specific type 
+def get_block_by_type(pages, target_type): 
+    results = [] 
+
+    for page_index, page in enumerate(pages): 
+        blocks = page.get("blocks", [])
+
+        for block in blocks: 
+            block_type = block.get("type", "unknow")
+
+            if block_type == target_type: 
+                results.append(
+                    {
+                        "page_index": page_index, 
+                        "block": block
+                    }
+                )
+
+    return results
+
 def main():
     data = load_json(FILE_PATH)
 
     pages = data.get("pages", [])
 
-    print(find_page_with_most_blocks(pages))
+    results = get_block_by_type(pages, "paragraph_title")
+
+    for block in results: 
+        print(f"\n {block}")
 
 if __name__ == "__main__":
     main()
