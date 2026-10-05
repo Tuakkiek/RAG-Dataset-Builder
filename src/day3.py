@@ -50,12 +50,28 @@ def show_blocks_per_page(pages):
             f"{len(blocks)} blocks"
         )
 
+# Find the page with the most blocks 
+def find_page_with_most_blocks(pages): 
+    max_blocks = 0 
+    max_page = None 
+
+    for page_index,page in enumerate(pages):
+        blocks = page.get("blocks", [])
+
+        current_count = len(blocks)
+
+        if current_count > max_blocks: 
+            max_blocks = current_count
+            max_page = page_index
+
+    return max_blocks, max_page 
+
 def main():
     data = load_json(FILE_PATH)
 
     pages = data.get("pages", [])
 
-    show_blocks_per_page(pages)
+    print(find_page_with_most_blocks(pages))
 
 if __name__ == "__main__":
     main()
