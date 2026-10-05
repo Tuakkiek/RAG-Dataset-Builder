@@ -36,14 +36,26 @@ def count_total_blocks(pages):
 
     return total_blocks
 
+# Display the number of blocks for each page
+def show_blocks_per_page(pages): 
+    print("\n" + "=" * 80)
+    print("Blocks per page:")
+    print("=" * 80)
+
+    for page_index, page in enumerate(pages): 
+        blocks = page.get("blocks", [])
+
+        print(
+            f"Page {page_index}:", 
+            f"{len(blocks)} blocks"
+        )
 
 def main():
     data = load_json(FILE_PATH)
 
     pages = data.get("pages", [])
 
-    total_blocks = count_total_blocks(pages)
-    print(total_blocks)
+    show_blocks_per_page(pages)
 
 if __name__ == "__main__":
     main()
