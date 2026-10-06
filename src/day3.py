@@ -86,15 +86,76 @@ def get_block_by_type(pages, target_type):
 
     return results
 
+# Show block type statistics by page
+def show_block_type_per_page(pages):
+    print("\n" + "=" * 80)
+    print("BLOCK TYPE PER PAGE")
+    print("=" * 80)
+
+    for page_index, page in enumerate(pages): 
+        blocks = page.get("blocks", [])
+
+        counts = {} 
+
+        for block in blocks: 
+            block_type = block.get("type", "unknow")
+
+            if block_type not in counts: 
+                counts[block_type] = 0
+
+            counts[block_type] += 1
+
+        print(f"Page {page_index}")
+
+        for block_type, count in counts.items():
+            print(
+                f"- {block_type}: {count}"
+            )
+
 def main():
+
+    if not FILE_PATH.exists():
+        print("Không tìm thấy file:")
+        print(FILE_PATH)
+        return
+
     data = load_json(FILE_PATH)
+
+    print("Type of data:")
+    print(type(data))
+
+    print("\nNumber of data keys:")
+    print(len(data))
+
+    print("\nKeys:")
+    print(data.keys())
 
     pages = data.get("pages", [])
 
-    results = get_block_by_type(pages, "paragraph_title")
+    print("\nType of pages:")
+    print(type(pages))
 
-    for block in results: 
-        print(f"\n {block}")
+    print("\nTotal number of pages:")
+    print(len(pages))
+
+    total_blocks = count_total_blocks(pages)
+    print(f"\nTotal block: {total_blocks}")
+
+    block_count = count_block_types(pages)
+    print("\nBlock types:")
+    for block_type, count in block_count.items(): 
+        print(f"{block_type}:   {count}")
+
+    show_blocks_per_page(pages)
+
+    max_blocks, max_page = find_page_with_most_blocks(pages)
+
+    print("\nPage with most blocks:")
+    print(f"Page: {max_page}")
+    print(f"Blocks: {max_blocks}")
+
+    show_block_type_per_page(pages)
+
 
 if __name__ == "__main__":
     main()
