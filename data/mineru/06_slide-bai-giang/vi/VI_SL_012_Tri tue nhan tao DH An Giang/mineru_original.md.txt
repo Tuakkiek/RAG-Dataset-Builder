@@ -1,0 +1,4200 @@
+## Trí Tuệ Nhân Tạo Artificial Intelligence
+
+Giảng viên: Nguyễn Văn Hòa Khoa CNTT - ĐH An Giang
+
+## Thông tin cần thiết
+
+◼ Địa chỉ email: nvhoa@agu.edu.vn
+
+◼ Chỉ liên lạc qua điện thoại nếu thật cần thiết
+
+◼ Tài liệu của môn học:
+
+http://staff.agu.edu.vn/nvhoa/AI
+
+◼ Quy định trong lớp:
+
+![](images/page_1_image_6.jpg)
+
+## Mục tiêu của môn học
+
+◼ Các khái niệm cơ bản của trí tuệ nhân tạo
+
+◼ Giải quyết vấn đề bằng phương pháp tìm kiếm ❑ Tìm kiếm mù
+
+❑ Tìm kiếm heuristic
+
+◼ Biểu diễn tri thức và lập luận
+
+❑ Logic mệnh đề
+
+❑ Logics suy diễn (bậc nhất, không chắc chắn)
+
+## Yêu cầu môn học
+
+Sinh viên phải dự trên 80% số tiết mới được dự thi kết thúc học phần
+
+◼ Thảo luận, thực hành, seminar
+
+◼ Làm bài tập mỗi chương
+
+◼ Làm đồ án theo nhóm (4-5 SV)
+
+## Đánh giá môn học
+
+◼ Kiểm tra, thực hành, điểm danh: 25%
+
+◼ Đồ án môn học: 25% (nhóm 4-5 SV)
+
+◼ Thi hết môn : 50%
+
+❑ Thi viết
+
+❑ Đề mở
+
+◼ Question & discussion?
+
+## Phân bổ thời gian
+
+◼ Lên lớp: 20 tiết
+
+◼ Thực hành: 20 tiết
+
+❑ Các giải thuật tìm kiếm/Lập trình logic
+
+❑ C và C++/Prolog
+
+❑ Yêu cầu: viết báo cáo, chương trình
+
+## Nội dung môn học
+
+◼ Giới thiệu Trí tuệ nhân tạo
+
+◼ Các phướng pháp giải quyết vấn đề
+
+❑ Các phương pháp biểu diễn
+
+❑ Các phương pháp giải quyết vấn đề
+
+❑ Tìm kiếm mù trên không gian trạng thái
+
+❑ Tìm kiếm với thông tin heuristic
+
+## ◼ Biểu diễn tri thức
+
+❑ Lược đồ biểu diễn tri thức
+
+❑ Xử lý tri thức
+
+❑ Tri thức và suy luận không chắc chắn
+
+## Tài liệu tham khảo
+
+## ◼ Sách, giáo trình chính
+
+[❑ Artificial Intelligence: A Modern Approach](http://aima.cs.berkeley.edu/). Stuart Russell & Peter Norvig (3nd edition, 2009)
+
+❑ Phạm Nguyên Khang, Giáo trình Trí tuệ nhân tạo, ĐHCT
+
+❑ Từ Minh Phương, Giáo trình Trí tuệ nhân tạo, Học viện Bưu chính Viễn thông.
+
+## ◼ Sách/Slides tham khảo
+
+❑ Bài giảng Trí tuệ nhân tạo
+
+[http://www.doc.ic.ac.uk/\~sgc/teaching/pre2012/v231](http://www.doc.ic.ac.uk/~sgc/teaching/pre2012/v231)
+
+[http://www-scf.usc.edu/\~csci460/schedule.htm](http://www-scf.usc.edu/~csci460/schedule.htm)
+
+## Chương 1: Tổng quan về Trí tuệ nhân tạo
+
+## Nội dung
+
+◼ Trí tuệ nhân tạo (TTNT) là gì?
+
+◼ Turing Test
+
+◼ Các nền tảng của TTNT
+
+◼ Mục tiêu nghiên cứu của Trí tuệ nhân tạo
+
+◼ Lịch sử hình thành
+
+◼ Các thành tựu hiện tại
+
+## Trí tuệ nhân tạo là gì?
+
+![](images/page_10_image_1.jpg)
+
+![](images/page_10_image_2.jpg)
+
+Science
+
+![](images/page_10_image_4.jpg)
+
+Appliances
+
+## Google
+
+## YAHOO!
+
+Search engines Semantic web
+
+![](images/page_10_image_9.jpg)
+
+Medicine/ Diagnosis
+
+**What else?**
+
+## Trí tuệ nhân tạo là gì? (tt)
+
+**Trí tuệ nhân tạo** là lĩnh vực khoa học chuyên nghiên cứu các phương pháp chế tạo trí tuệ máy sao cho giống như trí tuệ con người
+
+◼ Hai định nghĩa về trí tuệ nhân tạo
+
+❑ Hệ thống mà biết suy nghĩ như con người
+
+❑ Hệ thống mà biết hành động như con người
+
+Để hệ thống mà biết suy nghĩ và hành động giống như con người thì hệ thống
+
+❑ Phải có tri thức, phải có khả năng lý giải, phải có khả năng học
+
+❑ Phải có thị giác và thính giác
+
+## Các yêu cầu của TTNT
+
+| Thinking humanly | Thinking rationally |
+| --- | --- |
+| (Suy nghĩ như con người) | (Suy nghĩ hợp lý) |
+| Acting humanly | Acting rationally |
+| (Hành động như con người) | (Hành động hợp lý) |
+
+## Hành động như con người
+
+◼ Alan Turing (1912-1954)
+
+◼ “Computing Machinery and Intelligence” (1950)
+
+Người kiểm tra
+
+![](images/page_13_image_4.jpg)
+
+Hệ thống TTNT
+
+## Hành động như con người
+
+◼ Các lĩnh vực cần nghiên cứu trong AI:
+
+❑ Xử lý ngôn ngữ tự nhiên: để giao tiếp người - máy
+
+❑ Biểu diễn tri thức: để lưu trữ và phục hồi các thông tin được cung cấp trước/trong quá trình thẩm vấn
+
+❑ Suy diễn tự động: để sử dụng các thông tin đã được lưu trữ trả lời các câu hỏi và đưa ra các kết luận mới
+
+❑ Học máy: thích nghi với các tình huống mới, phát hiện và suy ra dữ liệu mới
+
+## Suy nghĩ như con người
+
+◼ Con người suy nghĩ như thế nào?
+
+❑ Nhờ tâm lý học, khoa học nhận thức lý giải
+
+◼ Người thuộc trường phái này, yêu cầu:
+
+❑ Chương trình chẳng những giải đúng
+
+❑ Còn so sánh từng bước giải với sự giải của 1 người
+
+❑ VD: General Problem Solver (GPS), Newell & Simon
+
+## Suy nghĩ hợp lý
+
+◼ Aristole: \~420 BC
+
+❑ Tiến trình suy nghĩ đúng là gì?
+
+❑ Mở ra nhánh: quá trình suy luận
+
+❑ VD: “Socrates is a man, all men are mortal; therefore Socrates is mortal”
+
+◼ Theo sau Aristole -> 20th:
+
+❑ Logic hình thức (formal logic) ra đời
+
+❑ Hình thức hoá về mặt ký hiệu và quá trình suy diễn với các đối tượng trong thế giới tự nhiên
+
+## Hành động hợp lý
+
+◼ Hành động có lý \~ hành động để đạt được mục tiêu
+
+◼ Ưu thế:
+
+❑ Tổng quát hơn luật suy nghĩ: Xử lý thông tin không chắc chắn
+
+## Các nền tảng cơ bản của TTNT
+
+TTNT kế thừa nhiều ý tưởng, quan điểm và các kỹ thuật từ các ngành khoa học khác
+
+![](images/page_18_image_2.jpg)
+
+## Lịch sử hình thành TTNT
+
+◼ Giai đoạn cổ điển (1950 - 1965)
+
+❑ Có 2 lãnh vực chính:
+
+◼ Game playing: dựa trên kỹ thuật State Space Search
+
+Theorem proving: thực hiện chuỗi các suy diễn để đạt tới biểu thức cần chứng minh
+
+❑ Có 2 kỹ thuật tìm kiếm cơ bản
+
+Kỹ thuật **generate and test:** chỉ tìm được 1 đáp án chưa chắc tối ưu.
+
+Kỹ thuật **Exhaustive search** (vét cạn): tìm tất cả các nghiệm, chọn lựa phương án tốt nhất
+
+## Lịch sử hình thành TTNT (tt)
+
+◼ Giai đoạn viễn vông (1965-1975)
+
+❑ Đây là giai đoạn phát triển với tham vọng làm cho máy hiểu được con người qua ngôn ngữ tự nhiên
+
+❑ Các nghiên cứu tập trung vào việc biểu diễn tri thức và phương thức giao tiếp giữa người & máy bằng ngôn ngữ
+
+❑ Kết quả không mấy khả quan nhưng cũng tìm ra được các phương thức biểu diễn tri thức hiện vẫn sử dụng: Semantic Network (mạng ngữ nghĩa), Conceptial graph (đồ thị khái niệm), Frame (khung), Script (kịch bản)
+
+## Lịch sử hình thành TTNT (tt)
+
+◼ Giai đoạn hiện đại (từ 1975 đến nay)
+
+❑ Xác định lại mục tiêu mang tính thực tiễn hơn:
+
+◼ Tìm ra **lời giải tốt nhất** trong khoảng thời gian chấp nhận được
+
+Không yêu cầu toàn tìm ra **lời giải tối ưu**
+
+❑ Tinh thần HEURISTIC ra đời và được áp dụng mạnh mẽ để khắc phục bùng nổ tổ hợp
+
+❑ Các hệ chuyên gia (Expert System)
+
+❑ Mạng nơ-ron (Neural Network)
+
+❑ Các tác tử thông minh (Intelligent Agents)
+
+❑ Máy học (Machine Learning), Computer vision….
+
+## Các lĩnh vực ứng dụng
+
+◼ Game Playing: tìm kiếm Heuristic
+
+◼ Automatic reasoning & Theorem proving: tìm kiếm Heuristic
+
+◼ Expert System: là hướng phát triển mạnh mẽ nhất và có giá trị ứng dụng cao nhất.
+
+◼ Planning & Robotic: lập kế hoạch và lập lịch trình tự động, NASA
+
+◼ Machine learning: học máy để giải quyết vấn đề ❑ Học có giám sát: kiểm soát được tri thức học được
+
+❑ Học không có giám sát: tự học, không kiểm soát
+
+## Mô hình ứng dụng
+
+Heuristic
+
+![](images/page_23_image_2.jpg)
+
+Biu din tri thc
+
+Lp lun
+
+Công cų thc hin
+
+Máy: Newral
+
+Ngôn ng: Prolog
+
+## Mô hình phân tầng
+
+Úng dng
+
+Ky thut
+
+Khoa hoc
+
+Intelligence System
+
+Knowledge Engineering (Công ngh v tri thc)
+
+Artificial Intelligence (Trí tu nhân to)
+
+## Các thành tựu hiện tại
+
+◼ Computer beats human in a chess game
+
+Computer-human conversation using speech recognition
+
+◼ Expert system controls a spacecraft
+
+◼ Robot can walk on stairs and hold a cup of water
+
+◼ Language translation for webpages
+
+◼ Home appliances use fuzzy logic
+
+## Google:Finding Canonical Images
+
+Web Images Maps News Shopping Gmail more
+
+![](images/page_26_image_2.jpg)
+
+Sign in
+
+mona lisa Strict SafeSearch is on
+
+Images Showing: All image sizes
+
+Search Images
+
+Search the Web
+
+Advanced Image Search Preferences
+
+![](images/page_26_image_9.jpg)
+
+New! Google Image Labeler
+
+Results 1 - 21 of about 343,000 for mona lisa with Safesearch on. (0.04 seconds)
+
+![](images/page_26_image_12.jpg)
+
+Word has it that Mona Lisa wasn't a 320 x 366 - 21k - jpg
+
+![](images/page_26_image_14.jpg)
+
+da Vinci: Mona Lisa 340 × 472 - 10k - gif www.enchantedlearning.com
+
+![](images/page_26_image_16.jpg)
+
+Mona Lisa We have examined the topic ... 379 × 589-63k - jpg
+
+![](images/page_26_image_18.jpg)
+
+Mona Lisa right 282 x 795 - 59k - jpg www.museumldv.com
+
+![](images/page_26_image_20.jpg)
+
+Mona Lisa made from train tickets -- 468 × 296 - 67k - jpg www.pinktentacle.com
+
+![](images/page_26_image_22.jpg)
+
+Image:MonaLisa sfumato.jpeg 350 x 400 - 26k - jpeg
+
+![](images/page_26_image_24.jpg)
+
+MonaLisa.jpg 435 × 644 - 43k - jpg www.mentalfloss.com
+
+Image:Mona Lisa.jpg 743 × 1155 - 156k - jpg commons.wikimedia.org
+
+![](images/page_26_image_27.jpg)
+
+![](images/page_26_image_28.jpg)
+
+Study Page: Mona Lisa in Book Cover ... 360 × 595 - 85k - gif
+
+![](images/page_26_image_30.jpg)
+
+Mona Lisa 406 × 302 - 46k - jpg
+
+![](images/page_26_image_32.jpg)
+
+mona lisa 400 × 612 - 48k - jpg
+
+![](images/page_26_image_34.jpg)
+
+Mona Lisa cartoon 3 - catalog ... 400 × 395 - 51k - jpg
+
+Mona Lisa cartoon 4 - catalog ... 400 × 400 - 51k - jpg
+
+![](images/page_26_image_37.jpg)
+
+![](images/page_26_image_38.jpg)
+
+Mona Lisa 800 × 600 - 97k - jpg
+
+![](images/page_26_image_40.jpg)
+
+Mona Lisa - Joint Poster 299 × 450 -42k - jpg www.allposters.com
+
+![](images/page_26_image_42.jpg)
+
+"Mona Lisa" 507 × 694 -22k- jpg
+
+![](images/page_26_image_44.jpg)
+
+Mona Lisa is Lisa Gherardini 334 × 520 - 17k - jpg
+
+![](images/page_26_image_46.jpg)
+
+Click here if your browser does not ... 605 × 790 - 187k - jpg
+
+![](images/page_26_image_48.jpg)
+
+Sir Joshua's Mona Lisa 502 × 502 - 50k - jpg
+
+![](images/page_26_image_50.jpg)
+
+Complete history of Mona Lisa 450 × 328 - 22k - jpg
+
+![](images/page_26_image_52.jpg)
+
+Mona Lisa Magnet by Leonardo da 348 × 450 - 29k - jpg www.allposters.com
+
+![](images/page_26_image_54.jpg)
+
+New! Want to help improve Google Image Search? Try Google Image Labeler.
+
+Induced Graph
+
+![](images/page_27_image_1.jpg)
+
+## Route Finding
+
+Google maps
+
+anchorage, alaska
+
+Show search options
+
+- Get Directions My Maps
+- Chetumal/Carretera Federal 307/Mexico 307
+- 140. Turn right at Cancun - Chetumal/Carretera Federal 307/Mexico 307
+- 141. Continue onto Tulum
+- 142. At the traffic circle, take the 4th exit onto Nichupté Pte
+- 143. Slight left at Xpujil Sur
+- 144. Continue onto Nichupté Pte
+- 145. Turn right at Rojo Gómez
+- 146. Continue onto Kabah
+- 147. Turn right at Bocapaila
+- 148. Take the 2nd left onto Punta Herrero
+- 149. Take the 1st right onto Cayó Lobos
+- B Cancún, Quintana Roo Mexico
+
+![](images/page_28_image_5.jpg)
+
+## Save to My Maps
+
+\$499 Cancun All Inclusive 5 Days In A Luxury Cancun Resort Includes All Meals, Drinks & Tips! VilladelpalmarCancun.net
+
+![](images/page_28_image_8.jpg)
+
+6,000 out of 4,000,000 miles
+
+## Explore flu trends - United States
+
+We've found that certain search terms are good indicators of flu activity. Google Flu Trends uses aggregated Google search data to estimate flu activity. Learn more »
+
+2010-2011Past years
+
+![](images/page_29_chart_3.jpg)
+
+## Statistical Machine Translation
+
+SEHR GEEHRTER GAST! KUNST, KULTUR UND KOMFORT IM HERZEN BERLIN.
+
+DIE ÖRTLICHE NETZSPANNUNG BETRÄGT 220/240 VOLT BEI 50 HERTZ.
+
+DE
+
+DEAR GUESTS, ART, CULTURE AND LUXURY IN THE HEART OF BERLIN.
+
+THE LOCAL VOLTAGE <u>IS 220/240 VOLTS 50 HZ</u>
+
+EN
+
+Tìm kiếm theo nội dung
+
+https://images.google.com
+
+![](images/page_31_image_2.jpg)
+
+![](images/page_31_image_3.jpg)
+
+# Tìm kiếm theo nội dung tt. http://wolframalpha.com
+
+## WolframAlphar cmeasioal.
+
+Enter what you want tocalculate or know about:
+
+o 4
+
+≡ Examples Random
+
+![](images/page_32_image_5.jpg)
+
+## Nhận dạng tiếng nói
+
+nguyn s thư
+
+theo doi luong mua tai an giang
+
+![](images/page_33_image_3.jpg)
+
+## Nhận dạng đối tượng
+
+![](images/page_34_image_1.jpg)
+
+Nhận dạng đối tượng tt.
+
+![](images/page_35_image_1.jpg)
+
+![](images/page_35_image_2.jpg)
+
+## Hướng nghiên cứu của TTNT
+
+◼ Nhận dạng và tổng hợp
+
+❑ Tiếng nói, hình ảnh, chữ viết...
+
+◼ Xử lý ngôn ngữ tự nhiên
+
+◼ Lập kế hoạch
+
+◼ Trợ giúp ra quyết định, phân loại
+
+◼ Trò chơi
+
+◼ Y tế
+
+## Chương 2: Chiến lược tìm kiếm mù
+
+Giảng viên: Nguyễn Văn Hòa Khoa CNTT - ĐH An Giang
+
+## Nội dung
+
+◼ Bài toán tìm kiếm
+
+❑ Biểu diễn bài toán
+
+❑ Tìm kiếm
+
+◼ Các chiến lược điều khiển tìm kiếm
+
+◼ Các đặc trưng của bài toán
+
+Vấn đề trong thiết kế chương trình tìm kiếm
+
+## Mô hình ứng dụng của TTNT
+
+**TTNT = Presentation & Search**
+
+Tri Thức Knowledge Engineering
+
+![](images/page_39_image_3.jpg)
+
+Tìm kiếm Search Suy luận Heurictic
+
+![](images/page_39_image_5.jpg)
+
+## Bài toán tìm kiếm
+
+![](images/page_40_image_1.jpg)
+
+Làm sao có thể đi từ S đến G? Và số lần chuyển đổi có thể ít nhất?
+
+## Bài toán tìm kiếm (tt)
+
+◼ Giải bài toán bằng cách tìm kiếm, gồm:
+
+❑ Cấu trúc bài toán: VD. tìm đường đi trên đồ thị
+
+❑ Biểu diễn bài toán bằng không gian trạng thái
+
+❑ Giải bài toán = Tìm ra một trạng thái/con đường trong không gian trạng thái (trạng thái đầu  trạng thái đích)
+
+## Bài toán tìm kiếm (tt)
+
+Không gian trạng thái của bài toán tìm kiếm có 5 thành phần: Q, S, G, sucss, cost
+
+❑ Q: tập hữu hạn các trạng thái (nút của Graph)
+
+❑ $\mathrm { S } \underline { { \subseteq } } \mathrm { Q } \colon$ tập hữu hạn khác rỗng các trạng thái bắt đầu
+
+❑ G Q : tập hữu hạn khác rỗng các trạng thái đích
+
+❑ **succs**: Q→P(Q) hàm nhận một trạng thái làm đầu vào và trả về kết quả các trạng thái.
+
+❑ **cost**: Q, Q→ Số dương là hàm nhận 2 tham số đầu vào là TT s và s’
+
+◼ Trả về chi phí từ s đến s’.
+
+◼ Hàm chỉ được định nghĩa khi s’ là con của s.
+
+## Bài toán tìm kiếm (tt)
+
+![](images/page_43_image_1.jpg)
+
+◼ Q={START, a , b , c , d , e , f , h , p , q , r, GOAL}
+
+◼ $S= \{ START \}$
+
+◼ $G= \{ GOAL \}$
+
+◼ $\mathbf { s u c c s } ( \mathbf { b } ) { = } \{ a \}$ $\mathbf { s u c c s } ( \mathbf { e } ) { = } \{ \mathbf { h } , \mathbf { r } \} ,$,
+
+◼ $\cos ( s , s ^ { \prime } ) = 1$ cho tất cả chuyển trạng thái
+
+## Các loại bài toán tìm kiếm
+
+![](images/page_44_image_1.jpg)
+
+![](images/page_44_image_2.jpg)
+
+![](images/page_44_image_3.jpg)
+
+![](images/page_44_image_4.jpg)
+
+![](images/page_44_image_5.jpg)
+
+![](images/page_44_image_6.jpg)
+
+![](images/page_44_image_7.jpg)
+
+Slide 7
+
+## Các loại bài toán tìm kiếm (tt)
+
+◼ Fully observable, deterministic ❑ single-belief-state problem
+
+◼ Non-observable
+
+❑ sensorless (conformant) problem
+
+Partially observable/non-deterministic ❑ contingency problem
+
+❑ interleave search and execution
+
+◼ Unknown state space ❑ exploration problem
+
+❑ execution first
+
+![](images/page_45_image_8.jpg)
+
+![](images/page_45_image_9.jpg)
+
+![](images/page_45_image_10.jpg)
+
+![](images/page_45_image_11.jpg)
+
+## State space vs database search
+
+## State Space
+
+Không gian tìm kiếm thường là một đồ thị (graph)
+
+◼ Mục tiêu tìm kiếm là một path
+
+◼ Phải lưu trữ toàn bộ không gian trong quá trình tìm kiếm
+
+Không gian tìm kiếm biến động liên tục trong quá trình tìm kiếm
+
+Đặc tính của trạng thái / nút chứa nhiều thuộc tính bị thay đổi giá trị trong quá trình tìm kiếm
+
+## Database
+
+◼ Không gian tìm kiếm là một danh sách hay cây
+
+◼ Tìm kiếm một record/nút
+
+Phần tử đã duyệt qua là không còn dùng tới
+
+◼ Không gian tìm kiếm là cố định trong quá trình tìm kiếm
+
+◼ Thuộc tính của một record/nút là cố định
+
+## Bài toán Romania
+
+![](images/page_47_image_1.jpg)
+
+◼ State space: ❑ Cities
+
+◼ Successor function:口 Go to adj city with cost = dist
+
+◼ Start state: ❑ Arad
+
+◼ Goal test: ❑ Is state == Bucharest?
+
+◼ Solution?
+
+## Bài toán: Tic tac toe
+
+Đồ thị có hướng không lặp lại (directed acyclic graph)
+
+![](images/page_48_image_2.jpg)
+
+## Bài toán: 8 puzzle
+
+Có khả năng xảy ra vòng lặp không?
+
+![](images/page_49_image_2.jpg)
+
+## Chiến lược tìm kiếm?
+
+Khi tìm kiếm lời giải, từ một trạng thái nào đó chưa phải là trạng thái đích, ta dựa theo hàm **succs** sinh ra tập các trạng thái mới (mở rộng)
+
+Để được lời giải, ta phải liên tục chọn trạng thái mới, mở rộng, kiểm tra cho đến khi tìm được trạng thái đích hoặc không mở rộng được KGTT
+
+Tập các trạng thái được mở rộng sẽ có nhiều phần tử, việc chọn trạng thái nào để tiếp tục mở rộng được gọi là chiến lược tìm kiếm
+
+## Đánh giá một chiến lược?
+
+Tính đầy đủ: chiến lược phải đảm bảo tìm được lời giải (nếu có lời giải)?
+
+◼ Tính tối ưu: lời giải có tốt hơn so với một số chiến lược khác hay không?
+
+◼ Độ phức tạp không gian: cần bao nhiêu đơn vị bộ nhớ để tìm được lời giải?
+
+◼ Độ phức tạp thời gian: cần bao nhiêu thời gian để tìm được lời giải?
+
+## Thông tin mỗi nút ?
+
+Nội dung trạng thái mà nút hiện hành đang biểu diễn
+
+◼ Nút cha đã sinh ra nó
+
+◼ **succs** đã được sử dụng để sinh ra nút hiện hành
+
+◼ Độ sâu của nút (tính từ nút gốc)
+
+Giá trị đường đi từ nút gốc đến nút hiện hành
+
+## Tìm kiếm mù
+
+Trạng thái được chọn để phát triển dựa theo cấu trúc của KGTT mà dùng thông tin hỗ trợ
+
+Là chiến lược tìm kiếm mù không hiệu quả
+
+Đây là cơ sở để chúng ta cải tiến và thu được những chiến lược hiệu quả hơn
+
+◼ Hai giải thuật tìm kiếm mù
+
+❑ Tìm kiếm theo chiều rộng (Breadth-First-Search)
+
+❑ Tìm kiếm theo chiều sâu (Depth First Search)
+
+## Tìm kiếm theo chiều rộng
+
+Strategy: expand shallowest node first
+
+Implementation: Fringe is a FIFO queue
+
+![](images/page_54_image_3.jpg)
+
+![](images/page_54_image_4.jpg)
+
+## Ghi nhớ đường đi
+
+![](images/page_55_image_1.jpg)
+
+Khi một nút được gán nhãn (bước), ghi nhận trạng thái trước đó (con trỏ quay lui). Tất cả ghi nhận được dùng để phát sinh lời giải khi đã đến đích
+
+❑ Tôi đã đến đích, trước khi tới đích tôi đã ở f, rồi r..
+
+❑ Do đó lời giải sẽ là $\left[ \mathrm { S } \rightarrow \mathrm { c } \rightarrow \mathrm { r } \rightarrow \mathrm { f } \rightarrow \mathrm { G } \right]$
+
+## Con trỏ quay lui - backpointers
+
+Backpointers
+
+4 steps from start
+
+0 steps from start
+
+![](images/page_56_image_4.jpg)
+
+2 steps from start
+
+3 steps from start
+
+## Con trỏ quay lui
+
+0 steps from start
+
+Backpointers
+
+![](images/page_57_image_3.jpg)
+
+2 steps from start
+
+4 steps from start
+
+GOAL
+
+3 steps from start
+
+## Giải thuật -BFS
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Open := [START]
+Close:= Ø
+previous (START)=NULL
+WHILE (Open không chứa GOAL và khác rỗng) do
+Lấy TT s nằm bên trái nhất trong Open
+Đặt s vào Close;
+for mỗi TT s' trong succs(s)
+IF s' chua gán nhân (chưa xét) then
+Đặt previous(s') := s;
+Đưa s' vào bên PHẢI nhất của Open
+IF Open rỗng return FAILURE
+Else Xây dựng lời giải.
+Định nghĩa $S_k$ = GOAL; Đường đi được tính dựa trên hàm previous với $S_{k-1}$ = previous($S_k$). Cho đến khi $S_{k-1}$ là START
+</div>
+
+Tìm kiếm theo chiều rộng(tt)
+
+![](images/page_59_image_1.jpg)
+
+| Laàn laëp | X | Open | Close |
+| --- | --- | --- | --- |
+| 0 |  | [A ] | [ ] |
+| 1 | A | [B C D ] | [A] |
+| 2 | B | [C D E F ] | [A B] |
+| 3 | C | [D E F G ] | [A B C ] |
+| 4 | D | [E F G ] | [A B C D ] |
+| 5 | E | [F G H I ] | [A B C D E ] |
+| 6 | F | [G H I J ] | [A B C D E F ] |
+| 7 | G | [H I J ] | [A B C D E F ] |
+
+## Depth First Search
+
+Strategy: expand deepest node first
+
+Implementation: Frontier is a LIFO stack
+
+![](images/page_60_image_3.jpg)
+
+![](images/page_60_image_4.jpg)
+
+[demo: dfs]
+
+## Depth-First-Search (tt)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Open := [START]
+Close:= Ø
+previous (START)=NULL
+WHILE (Open không chứa GOAL và khác rỗng) do
+Lấy TT s nằm bên trái nhất trong Open
+Đặt s vào Close;
+for môi TT s' trong succs(s)
+IF s chua gán nhãn (chưa xét) then
+Đặt previous(s') := s;
+Đưa s' vào bên TRÁI nhất của Open
+IF Open rỗng return FAILURE
+Else Xây dựng lời giải.
+Định nghĩa $S_k$ = GOAL; Đường đi được tính dựa trên hàm previous với $S_{k-1}$ = previous($S_k$). Cho đến khi $S_{k-1}$ là START
+</div>
+
+## Depth-First-Search (tt)
+
+![](images/page_62_image_1.jpg)
+
+| Laàn laëp | X | Open | Close |
+| --- | --- | --- | --- |
+| 0 |  | [A] | [ ] |
+| 1 | A | [B C D ] | [A] |
+| 2 | B | [E F C D ] | [A B] |
+| 3 | E | [H I F C D ] | [A B E ] |
+| 4 | H | [I F C D ] | [A B E H ] |
+| 5 | I | [F C D ] | [A B E H I ] |
+| 6 | F | [J C D ] | [A B E H I F ] |
+| 7 | J | [C D ] | [A B E H I F J ] |
+| 8 | C | [ G D ] | [A B E H I F J C ] |
+| 9 | G |  |  |
+
+## Breath First vs Depth First
+
+◼ Breath First: “open” được tổ chức dạng FIFO (Queue)
+
+◼ Depth First: “open” được tổ chức dạng LIFO (Stack)
+
+◼ Đặc tính
+
+❑ Breath First search hiệu quả khi lời giải nằm gần gốc của cây tìm kiếm, tìm nhiều lời giải
+
+❑ Depth First search hiệu quả khi lời giải nằm sâu trong cây tìm kiếm và có một phương án chọn hướng đi chính xác
+
+◼ Kết quả
+
+❑ Breath First search chắc chắn tìm ra kết quả nếu có
+
+❑ Depth First có thể sa lầy
+
+◼ Bùng nổ tổ hợp là khó khăn lớn nhất cho các giải thuật này
+
+## Depth first search có giới hạn
+
+◼ Depth first search có khả năng lặp vô tận do các trạng thái con sinh ra liên tục → độ sâu tăng vô tận
+
+Khắc phục bằng cách giới hạn độ sâu của giải thuật
+
+Sâu bao nhiêu thì vừa? → chiến lược giới hạn:
+
+❑ Cố định một độ sâu MAX, như các danh thủ chơi cờ tính trước được số nước nhất định
+
+❑ Theo cấu hình tài nguyên của máy tính
+
+❑ Meta knowledge trong việc định giới hạn độ sâu
+
+Giới hạn độ sâu  co hẹp không gian trạng thái  có thể mất nghiệm hoặc không tìm thấy nghiệm
+
+## Các đặc trưng của bài toán
+
+Một số yếu tố cần phân tích khi chọn kỹ thuật giải bài toán:
+
+❑ Khả năng phân rã bài toán
+
+❑ Khả năng lờ đi và quay lui
+
+❑ Khả năng dự đoán toàn cục
+
+❑ Đích là một trạng thái hay con đường (tập các TT)
+
+❑ Lượng tri thức cần để giải bài toán
+
+❑ Có cần sự can thiệp của con người trong quá trình giải không?
+
+## Các đặc trưng của bài toán (tt)
+
+◼ Khả năng phân rã bài toán
+
+❑ Phân rã được: như BT tính tích phân ký hiệu
+
+◼ Giải bằng cách
+
+❑ Chia nhỏ BT lớn thành các BT con độc lập
+
+❑ Giải từng BT nhỏ
+
+❑ Kết hợp thành BT lớn
+
+❑ Không phân rã được: BT thế giới các khối (??)
+
+## Các đặc trưng của bài toán (tt)
+
+◼ Các bước giải có thể lờ đi hay quay lui
+
+❑ Có thể lờ đi : như BT chứng minh định lý
+
+◼ Vì: định lý vẫn đúng sau một vài bước áp dụng các luật
+
+❑ Có thể quay lui: như BT 8-puzzle
+
+◼ Vì: có thể di chuyển theo hướng ngược lại để về TT trước
+
+❑ Không thể quay lui: như BT chơi cờ
+
+◼ Vì: game over!
+
+## Các đặc trưng của bài toán (tt)
+
+## ◼ Các bước giải có thể lờ đi hay quay lui
+
+❑ Có thể lờ đi
+
+◼ Có thể áp dụng chiến lược điều khiển đơn giản không cần quay lui
+
+◼ Dể dàng hiện thực
+
+❑ Có thể quay lui
+
+Chiến lược phức tạp hơn để quay lui được tại những bước lỗi.
+
+◼ Có thể dùng Push-Down Stack
+
+❑ Không thể quay lui
+
+Dùng các chiến lược phức tạp hơn vì mỗi khi ra quyết định thì đó là quyết định cuối cùng
+
+◼ Có thể dùng giải pháp Planning
+
+## Các đặc trưng của bài toán (tt)
+
+◼ Khả năng dự đoán của bài toán:
+
+❑ Có thể dự đoán được: như BT 8 puzzle
+
+ có thể đề ra 1 chuỗi các nước đi và tự tin vào kết qua sẽ xãy ra
+
+ Có thể quay lui được
+
+❑ Không thể dự đoán được: như các game có đối kháng
+
+Cần theo đuổi nhiều kế hoạch
+
+◼ Có chiến lược/đánh giá để chọn kế hoạch tốt
+
+## Các đặc trưng của bài toán (tt)
+
+◼ Lời giải là tuyệt đối hay tương đối
+
+❑ Tuyệt đối (best-path): như bài toán TSP
+
+◼ Tính toán khó hơn (tổng quát)
+
+◼ Cần giải thuật tìm kiếm toàn diện hơn
+
+❑ Tương đối (any-path): như bài toán suy luận đời thường (xem sau)
+
+◼ Có thể dùng heuristic để giải trong thời gian hợp lý
+
+## Các đặc trưng của bài toán (tt)
+
+◼ Lời giải là trạng thái hay con đường (tập các TT) ❑ Trạng thái: như bài toán tìm ra cách hiểu phù hợp cho câu.
+
+❑ Ví dụ:
+
+“The bank president ate a dish of pasta salad with the fork.”
+
+Từng từ như: bank, president, … có thể được hiểu theo nhiều cách
+
+◼ Một kiểu tìm kiếm nào đó được thực hiện để tìm ra cách hiểu toàn bộ cho câu
+
+❑ Con đường
+
+❑ Song, điều này cũng tương đối. Vì có thể biểu diễn trạng thái để nó có thể bao gồm thông tin về một phần hay toàn bộ con đường
+
+## Các đặc trưng của bài toán (tt)
+
+## ◼ Vai trò của tri thức là gì?
+
+❑ Cần ít tri thức:
+
+◼ Như bài toán: “chơi cờ”
+
+Tri thức \~ luật để di chuyển hợp lệ, cơ chế điều khiển, chiến lược điều khiển để tăng tốc tìm kiếm
+
+❑ Cần nhiều tri thức
+
+Như bài toán: Hiểu câu chuyện trên tạp chí
+
+◼ Tri thức: nhiều, cả những cái đã ghi tường minh và cả những cái
+
+◼ không được ghi trong chính câu chuyện
+
+## Vấn đề trong thiết kế CT tìm kiếm
+
+## ◼ Sự tìm kiếm
+
+❑ Tìm kiếm \~ duyệt cây, từ TT bắt đầu -> TT đích
+
+❑ Cả cây tìm kiếm thường không được xây dựng sẵn ❑ Cấu trúc đồ thị thường thay thế cho cây trong biểu diễn KGTT
+
+## ◼ Các vấn đề
+
+❑ Xác định hướng tìm (forward hay backward reasoning)
+
+❑ Cách lựa chọn luật để áp dụng (matching)
+
+❑ Cách biểu diễn nút (NODE) của quá trình tìm kiếm
+
+❑ Các NODE trong đồ thị có thể được phát sinh và xem xét nhiều lần trong quá trình duyệt  cần loại bỏ những NODE lặp lại  Cần lưu lại các NODE đã xét.
+
+## Vấn đề trong thiết kế CT …
+
+◼ Giải thuật kiểm tra NODE lặp lại (DFS)
+
+❑ Xem xét tập NODE đã tạo ra, để xem NODE mới đã có chưa
+
+❑ Nếu chưa thì thêm NODE mới vào đồ thị
+
+❑ Nếu đã có:
+
+◼ Thiết lập điểm mở rộng kế tiếp là con của NODE đang tồn tại , NODE có thể bỏ đi
+
+Nếu GT có lưu giữ con đường tốt nhất hiện có thì cần xem xét xem nó đạt đến NODE mới trên con đường tốt hơn không, nếu vậy thì cập nhật lại con đường tốt nhất
+
+## Link minh họa tìm kiếm
+
+8-Puzzle với GT TK theo chiều rộng & sâu [❑ http://www.cs.rmit.edu.au/AI-Search/Product](http://www.cs.rmit.edu.au/AI-Search/Product) (RMIT)
+
+Map Search với GT TK theo chiều rộng & sâu [❑ http://www.ai.mit.edu/courses/6.034f/searchpair.html](http://www.ai.mit.edu/courses/6.034f/searchpair.html)
+
+## BÀI TẬP 1
+
+Xét đồ thị trạng thái sau đây, với mỗi chiến lược tìm kiếm bên dưới hãy liệt kê với danh sách thứ tự các nút được duyệt qua:
+
+![](images/page_76_image_2.jpg)
+
+1/ Tìm kiếm rộng (BFS) 2/ Tìm kiếm sâu (DFS) 3/ Tìm kiếm sâu với độ sâu là 3
+
+## BÀI TẬP 2
+
+Giả sử P là nút mục tiêu của đồ thị bên dưới. Hãy liệt kê danh sách thứ tự các nút duyệt qua ứng với từng chiến lược tìm kiếm.
+
+![](images/page_77_image_2.jpg)
+
+1/ Tìm kiếm rộng (BFS) 2/ Tìm kiếm sâu (DFS) 3/ Tìm kiếm sâu với độ sâu là 3
+
+## Chương 3: Chiến lược tìm kiếm có thông tin heuristic
+
+Giảng viên: Nguyễn Văn Hòa Khoa CNTT - ĐH An Giang
+
+## Nội dung
+
+◼ Khái niệm
+
+◼ Tìm kiếm tốt nhất trước
+
+◼ Phương pháp leo đồi
+
+◼ Tìm kiếm Astar (A\*)
+
+◼ Cài đặt hàm đánh giá
+
+## Không gian tìm kiếm
+
+## ◼ 8-puzzle
+
+❑ Lời giải: cần trung bình 22 cấp (depth)
+
+❑ Độ rộng của bước \~ 3
+
+❑ Tìm kiếm vét cạn cho 22 cấp cần
+
+◼ 3.1 x 10<sup>10</sup> states
+
+❑ Nếu chỉ giới hạn ở d=12, cần trung bình 3.6 triệu trạng thái [24 puzzle có 10<sup>24</sup> trạng thái]
+
+![](images/page_80_image_7.jpg)
+
+Start State
+
+![](images/page_80_image_9.jpg)
+
+Goal State
+
+## Không gian tìm kiếm (tt)
+
+◼ Bài toán 8 hậu
+
+❑ Hậu đầu tiên có thể đặt ở một trong 64 ô
+
+❑ Hậu thứ hai có thể đặt ở một trong 63 ô
+
+❑
+
+❑ Tổng số trạng thái la
+
+$$
+64 \times 63 \dots x 57 = 1.8 \times 10^{14}
+$$
+
+![](images/page_81_image_7.jpg)
+
+ Cần chiến lược tìm kiếm có thông tin heuristic
+
+## Tìm kiếm có thông tin heuristic (tt)
+
+Trong tìm kiếm mù, thông tin về TT đích không đóng vai trò trong tìm kiếm
+
+![](images/page_82_image_2.jpg)
+
+Nên đi đường nào
+
+Có thể sử dụng ước lượng khoảng cách đến đích giữa các TT để tìm đường đi
+
+## Tìm kiếm có thông tin heuristic (tt)
+
+◼ Tìm kiếm có thông tin hỗ trợ heuristic chính là hàm heuristic
+
+Hàm Heuristic: các hàm đánh giá thô, giá trị của hàm phụ thuộc vào trạng thái hiện tại của bài toán tại mỗi bước giải, giúp chọn được cách hành động tương đối hợp lý trong từng bước của thuật giải.
+
+◼ Giải thuật tìm kiếm heuristic:
+
+◼ Giải thuật leo núi (hill-climbing)
+
+TK tốt nhất (best-first search), A\* search, Greedy,...
+
+## Ví dụ phép đo Heuristics
+
+![](images/page_84_image_1.jpg)
+
+Ví dụ phép đo Heuristics (tt)
+
+![](images/page_85_image_1.jpg)
+
+![](images/page_85_image_2.jpg)
+
+![](images/page_85_image_3.jpg)
+
+**Heuristic** “Số đường thắng nhiều nhất” (theo các đường chéo trên bàn cờ) áp dụng cho các con cờ đầu tên đặt vào bàn cờ trong bàn cờ tic-tac-toe
+
+Ví dụ phép đo Heuristics (tt)
+
+![](images/page_86_image_1.jpg)
+
+## Tìm kiếm leo đồi – Hill Climbing Search
+
+Chọn một trạng thái tốt hơn trạng thái hiện hành để mở rộng. Nếu không, thuật toán phải dừng
+
+Nếu chỉ chọn một trạng thái tốt hơn: leo đồi đơn giản; trạng thái tốt nhất: leo đồi dốc đứng
+
+◼ Sử dụng hàm H để biết trạng thái nào tốt hơn
+
+Khác với tìm kiếm sâu, leo đồi không lưu tất cả các con mà chỉ lưu đúng một trạng thái được chọn nếu có
+
+## Tìm kiếm leo đồi (tt)
+
+## ◼ Giải thuật
+
+❑ Xét trạng thái bắt đầu
+
+◼ Nếu là đích  dừng
+
+◼ Ngược lại: thiết lập TT bắt đầu như TT hiện tại
+
+❑ Lặp đến khi: gặp đích hoặc không còn luật nào chưa được áp dụng vào TT hiện tại
+
+◼ Lựa một luật để áp dụng vào TT hiện tại để sinh ra TT mới
+
+◼ Xem xét TT mới này
+
+❑ Nếu là đích  dừng
+
+❑ Nếu không là đích, nhưng tốt hơn TT hiện tại  thiết lập TT mới là TT hiện tại
+
+❑ Nếu không tốt hơn thì lặp tiếp tục
+
+## Tìm kiếm leo đồi (tt)
+
+```txt
+function HILL-CLIMBING(problem) returns a state that is a local maximum
+  inputs: problem, a problem
+  local variables: current, a node
+    neighbor, a node
+
+  current ← MAKE-NODE(INITIAL-STATE[problem])
+  loop do
+    neighbor ← a highest-valued successor of current
+    if VALUE[neighbor] ≤ VALUE[current] then return STATE[current]
+    current ← neighbor
+```
+
+## Tìm kiếm leo đồi (tt)
+
+![](images/page_90_image_1.jpg)
+
+## Tìm kiếm leo đồi (tt)
+
+◼ Hiệu quả nếu có được hàm (H) đánh giá tốt
+
+◼ Giới hạn
+
+❑ Có khuynh hướng bị sa lầy ở những cực đại cục bộ ◼ Lời giải tìm được không tối ưu
+
+Không tìm được lời giải mặc dù có tồn tại lời giải ❑ Có thể gặp vòng lặp vô hạn do không lưu giữ thông tin về các trạng thái đã duyệt
+
+![](images/page_91_chart_6.jpg)
+
+## Tìm kiếm leo đồi (tt)
+
+## ◼ Bài toán 8 Hậu
+
+❑ Trạng thái bắt đầu: mỗi Hậu trên 1 cột
+
+❑ Trạng thái đích: các Hậu không thể tấn công nhau
+
+❑ Phép đo Heuristic h(n): số lượng các cập hậu đối kháng nhau
+
+$$
+\mathrm{H(n)} = 1 7
+$$
+
+| 18 | 12 | 14 | 13 | 13 | 12 | 14 | 14 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 14 | 16 | 13 | 15 | 12 | 14 | 12 | 16 |
+| 14 | 12 | 18 | 13 | 15 | 12 | 14 | 14 |
+| 15 | 14 | 14 |  | 13 | 16 | 13 | 16 |
+|  | 14 | 17 | 15 |  | 14 | 16 | 16 |
+| 17 |  | 16 | 18 | 15 |  | 15 |  |
+| 18 | 14 |  | 15 | 15 | 14 |  | 16 |
+| 14 | 14 | 13 | 17 | 12 | 14 | 12 | 18 |
+
+![](images/page_92_image_7.jpg)
+
+h(n) = 1
+
+## Tìm kiếm tốt nhất (BFS)
+
+◼ Là phương pháp dung hoà của BrFS và DFS
+
+Có sử dụng để đánh giá ưu thế của mỗi trạng thái, có thể là ước lượng từ nó đến TT đích
+
+Tại mỗi bước, giải thuật sẽ chọn trạng thái mà nó cho rằng là có ưu thế nhất trong số các trạng thái đã sinh ra được đến thời điểm đó
+
+◼ Khác với giải thuật leo đồi có cải tiến ở chổ: có lưu tất cả những TT đã phát sinh đến thời điểm chọn TT để xét tiếp
+
+◼ Dùng hai danh sách:
+
+❑ OPEN: chứa các TT sẽ được xét
+
+❑ CLOSED: chứa các TT đã xét qua
+
+## Tìm kiếm tốt nhất (BFS)
+
+◼ Giải thuật
+
+❑ OPEN = [TT đầu]
+
+❑ Lặp đến khi: gặp đích hoặc OPEN rỗng
+
+◼ Lấy TT tốt nhất từ OPEN
+
+Phát sinh các con của nó; với mỗi con:
+
+❑ Nếu nó chưa được phát sinh: gán nó trị đánh giá, đưa vào OPEN, ghi nhận TT cha của nó
+
+❑ Nếu đã được phát sinh trước: Nếu đạt đến bởi đường khác tốt hơn  ghi nhận lại TT cha của nó, cập nhật lại trị đánh giá của nó và của các con của nó
+
+```txt
+Main Program
+Function best_first_search
+    open := [Start]
+    closed := [ ]
+    while open ≠ [ ]
+        remove leftmost state from open, call it X
+        if X is a goal then return SUCCESS
+        else visit(X)
+        put X on closed
+        sort open by heuristic merit (best leftmost)
+    return FAIL
+End function
+```
+
+## Process children of X
+
+Subroutine visit(X)
+
+generate children of X
+
+for each child of X
+
+case % 2 cases
+
+the child is not on open or closed: child has never been seen before assign the child a heuristic value
+
+add the child to <u>open</u>
+
+then give the state on <u>open</u> the shorter path End Subroutine
+
+## Tìm kiếm tốt nhất (BFS)
+
+1. open = [A5]; closed = [ ]
+
+2. Đánh giá A5; open = [B4,C4,D6]; closed = [A5]
+
+3. Đánh giá B4; open = [C4,E5,F5,D6]; closed = [B4,A5]
+
+4. Đánh giá C4; open=[H3,G4,E5,F5,D6]; closed = [C4,B4,A5]
+
+5. Đánh giá H3; open=[O2,P3,G4,E5,F5,D6]; closed=[H3,C4,B4,A5]
+
+6. Đánh giá O2; open=[P3,G4,E5,F5,D6]; closed = [O2,H3,C4,B4,A5]
+
+7. Đánh giá P3; tìm được lời giải!
+
+Open là queue, xếp theo Heuristic tăng dần
+
+![](images/page_97_image_9.jpg)
+
+States on open
+
+States on closed
+
+## Cài đặt hàm đánh giá (EF)
+
+◼ Xét trò chơi $8 - \hat { 0 }$ , mỗi trạng thái n, một giá trị f(n): $\mathbf { f } ( \mathbf { n } ) = \mathbf { g } ( \mathbf { n } ) + \mathbf { h } ( \mathbf { n } )$
+
+❑ **g(n)** = khoảng cách thực sự từ n đến trạng thái bắt đầu
+
+❑ **h(n)** = hàm heuristic đánh giá khoảng cách từ trạng thái n đến mục tiêu. start
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 8 |  | 4 |
+| 7 | 6 | 5 |
+
+goal
+
+$$
+\mathbf {g} (\mathbf {n}) = 0
+$$
+
+g(n) = 1h(n): số lượng các vị trí còn sai;
+
+![](images/page_98_image_8.jpg)
+
+6
+
+f(n) =
+
+4
+
+6
+
+21
+
+## Ví dụ
+
+1
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+| 1 | 6 | 4 |
+| 7 |  | 5 |
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+| 1 |  | 4 |
+| 7 | 6 | 5 |
+
+![](images/page_99_image_4.jpg)
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+|  | 1 | 4 |
+| 7 | 6 | 5 |
+
+|  | 8 | 3 |
+| --- | --- | --- |
+| 2 | 1 | 4 |
+| 7 | 6 | 5 |
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+| 1 | 6 | 4 |
+| 7 |  | 5 |
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+| 7 | 1 | 4 |
+|  | 6 | 5 |
+
+| 2 | 8 | 3 |
+| --- | --- | --- |
+| 1 |  | 4 |
+| 7 | 6 | 5 |
+
+## Ví dụ …
+
+![](images/page_100_image_1.jpg)
+
+Ví dụ …
+
+![](images/page_101_image_1.jpg)
+
+## Giải thuật A\*
+
+◼ A\* là giải thuật tổng quát hơn BestFS, nó tìm kiếm trên KGTT là đồ thị
+
+Vì là đồ thị nên phát sinh nhiều vấn đề khi tìm đường đi tối ưu
+
+Để ý rằng nghiệm là đường đi nên ta phải lưu lại vết của đường đi này
+
+Trong các giải thuật trước, để tập trung cho tư tưởng chính của các giải thuật đó chúng ta bỏ qua chi tiết này, nhưng trong giải thuật này chi tiết này được đề cập vì nó liên quan đến nghiệm một cách trực tiếp
+
+## Thông tin mỗi nút
+
+Mỗi trạng thái n tùy ý sẽ gồm bốn yếu tố (g(n), h(n), f(n), cha(n))
+
+◼ Trong đó:
+
+❑ G(n), h(n), f(n) đã biết
+
+❑ Cha(n) là nút cha của nút đang xét n
+
+## $\mathsf { A } ^ { \star }$ Search Progress
+
+Mô tả hoạt động của $\mathsf { A } ^ { \star }$
+
+![](images/page_105_image_1.jpg)
+
+## Lưu các trạng thái
+
+| Buóc | Open | closed |
+| --- | --- | --- |
+| 1 | A(0,7,7,-) |  |
+| 2 | B(3,3,6,A), D(1,6,7,A), C(5,4,9,A) | A(0,7,7,-) |
+| 3 | D(1,6,7,A), C(4,4,8,B) | B(3,3,6,A) |
+| 4 | B(2,3,5,D), C(4,4,8,B) | D(1,6,7,A) |
+| 5 | C(3,4,7,B) | B(2,3,5,D) |
+| 6 | G(5,0,5,C) | C(3,4,7,B) |
+
+→Giải thuật dừng ở bước 6 và đường đi thu được độ dài 5 như sau A-D-B-C-G
+
+## Chi tiết các bước
+
+Ở bước 2, mọi việc xảy ra bình thường ◼ Ở bước 3, tìm được đường đi đến C qua B ngắn hơn nên các giá trị của C trong open phải được sửa đổi ◼ Ở bước 4, mặc dù B đã nằm trong closed nhưng đường đi mới qua D đến B ngắn hơn nên B phải được chuyển qua open chờ xét lại với giá trị mới
+
+◼ Ở bước 5, lại xảy ra việc chỉnh sửa các giá trị của C như ở bước 3
+
+Giải thuật dừng ở bước 6 và đường đi thu được độ dài 5 như sau A-D-B-C-G
+
+```matlab
+g(n_o)=0; f(n_o)=h(n_o);
+open:=[n_o]; closed:=[];
+while open<>[] do
+    loại n bên trái của open và dưa n vào closed;
+    if (n là một đích) then thành công, thoát
+    else
+        Sinh các con m của n;
+        For m thuộc con(n) do
+            g(m)=g(n)+c[n,m];
+            If m không thuộc open hay closed then
+                f(m)=g(m)+h(m); cha(m)=n; Bỏ m vào open;
+            If m thuộc open (tồn tại m' thuộc open, sao cho m=m') then
+                If g(m)<g(m') then g(m')=g(m); f(m')=g(m')+h(m'); Cha(m')=n;
+            If m thuộc closed (tồn tại m' thuộc closed, sao cho m=m') then
+                If g(m)<g(m') then f(m)=g(m)+h(m); cha(m)=n;
+                    Đưa m vào open; loại m' khởi closed;
+    Sắp xếp open để t.thái tốt nhất nằm bên trái;
+```
+
+## Ví dụ về A\*
+
+![](images/page_109_image_1.jpg)
+
+## Đánh giá giải thuật A\*
+
+◼ Một hàm đánh giá h(n) được gọi là chấp nhận được hay là hàm đánh giá thấp nếu như h(n)<=h\*(n) với mọi n, ở đây h\*(n) là đường đi ngắn nhất từ n đến đích
+
+Nếu hàm đánh giá h(n) là chấp nhận được thì thuật toán $\Lambda ^ { * }$ là tối ưu
+
+A\* là thuật tóan hiệu quả nhất trong các thuật toán đầy đủ và tối ưu
+
+## Các link minh họa tìm kiếm
+
+◼ 8-Puzzle với GT TK A\*
+
+[❑ http://www.cs.rmit.edu.au/AI-Search/Product](http://www.cs.rmit.edu.au/AI-Search/Product) (RMIT)
+
+◼ Map Search với GT TK leo đồi, tốt nhất, $\Lambda ^ { * }$
+
+[❑ http://www.ai.mit.edu/courses/6.034f/searchpair.html](http://www.ai.mit.edu/courses/6.034f/searchpair.html)
+
+## Bài tập: bài 1 (trò đố 8 ô như)
+
+Start
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 6 | 7 |  |
+| 8 | 5 | 4 |
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 8 |  | 4 |
+| 7 | 6 | 5 |
+
+Dùng các hàm lượng giá heuristic sau
+
+◼ h1 = số lượng các vị trí sai khác so với trạng thái goal.
+
+h2 = tổng số độ dời ngắn nhất của các ô về vị trí đúng (khoảng cách Manhattan)
+
+Hãy triển khai không gian trạng thái của bài toán đến mức 5 (nếu chưa tìm được goal):
+
+a) Theo giải thuật leo núi
+
+b) Theo giải thuật tìm kiếm rộng
+
+c) Theo giải thuật tìm kiếm sâu
+
+d) Theo giải thuật tìm kiếm tốt nhất đầu tiên
+
+## Bài tập: bài 2 (duyệt đồ thị)
+
+Trong cây tìm kiếm dưới đây, mỗi nút có 2 giá trị đi kèm: giá trị bên trái của nút (in nghiêng) thể hiện giá trị heuristic của nút, và giá trị bên phải nút thể hiện thứ tự nút được duyệt qua. Với mỗi chiến lược tìm kiếm dưới đây, hãy viết danh sách thứ tự các nút được duyệt, so sánh và cho biết ta đã dùng giải thuật tìm kiếm nào t A1
+
+a) Tìm kiếm rộng BrFS
+
+b) Tìm kiếm sâu DFS
+
+c) Tìm kiếm tốt nhất đầu tiên BFS
+
+d) Tìm kiếm leo núi
+
+f) $\mathbf { A } ^ { * }$
+
+![](images/page_113_image_7.jpg)
+
+## Chương 4: Tìm kiếm đối kháng - trò chơi
+
+Giảng viên: Nguyễn Văn Hòa Khoa CNTT - ĐH An Giang
+
+## Nội dung
+
+◼ Trò chơi
+
+◼ Trò chơi đối kháng và tìm kiếm
+
+◼ Thuật toán MINIMAX
+
+– Ct tia α-β
+
+## Trò chơi
+
+Trò chơi một trong những đặc tính được xem là “thông minh” của con người
+
+◼ Trò chơi là phiên bản “F1” của AI
+
+◼ Đã đạt được những thành tựu đáng kể
+
+Ở đây ta chỉ xem xét các dạng trò chơi trí tuệ, đối kháng (board game)
+
+## Trò chơi
+
+## ◼ Cờ vua
+
+❑ 1997, DeepBlue đánh bại Gary Kasparov trong trận đấu 6 ván
+
+❑ Bí quyết
+
+◼ Tìm kiếm vét cạn với độ sâu cao nhất có thể
+
+◼ Tính được $2 \mathrm { x } 1 0 ^ { 8 }$ nước đi trong 1 giây so với 2 nước của Kasparov
+
+◼ 99.99% nước đi được xem là “ngu ngốc”
+
+◼ Hàm ước lượng giá (heuristic) rất phức tạp
+
+## Trò chơi đối kháng và tìm kiếm
+
+◼ Các thành phần
+
+❑ Tập trạng thái: tập “cấu hình” hợp lệ của trò chơi
+
+❑ Trạng thái bắt đầu, trạng thái kết thúc
+
+❑ Hàm **succs:** các nước đi hợp lệ
+
+❑ Hàm lợi ích: đánh giá trạng thái kết thúc
+
+◼ Hai người chơi: MAX vs MIN
+
+◼ Không tìm đường đi mà tìm nước đi “tốt nhất”
+
+Nước đi của MAX phụ thuộc vào nước đi của MIN và ngược lại
+
+## Ví dụ cây tìm kiếm trò chơi: TicTacToe
+
+MAX(x)
+
+Các nưóc đi
+
+![](images/page_119_image_3.jpg)
+
+MIN(o)
+
+Các trng thái
+
+MAX(x)
+
+KÉT THÚC
+
+Li ích
+
+-1
+
+0
+
++1
+
+## Chiến lược tìm kiếm đối kháng
+
+## ◼ Đặc điểm
+
+❑ Hai người thay phiên đi (xen kẽ)
+
+❑ Hai người biết thông tin đầy đủ về nhau
+
+❑ Mỗi người tìm kiếm nước đi tốt nhất
+
+❑ Nước đi tốt nhất là nước đi dẫn đến phần thắng
+
+❑ Biểu diễn KGTT bằng: cây trò chơi
+
+◼ Thuật toán tiêu biểu: MINIMAX
+
+## Thuật toán MINIMAX
+
+◼ Những người chơi là tối ưu
+
+❑ MAX tối đa hóa hàm lợi ích
+
+❑ MIN tối thiểu hóa hàm lợi ích
+
+❑ Chiến lược của MAX phụ thuộc vào chiến lược của MIN ở bước sau
+
+Giá trị MINIMAX-VALUE: tiện ích ở trạng thái kết thúc tương ứng với đường đi, với giả sử hai người chơi luôn tối ưu
+
+## Giá trị MINIMAX
+
+◼ MINIMAX-VALUE(n)=
+
+❑ Utility(n) nếu n là trạng thái kết thuc
+
+❑ max{MINIMAX-VALUE(s)) $\{ \mathrm { s } ^ { \prime } \in \mathrm { s u c c s } \left( \mathrm { s } \right) \}$
+
+◼ Nếu n là nút max
+
+❑ min{MINIMAX-VALUE(s)) $| \mathrm {  ~ s ~ } ^ { \prime } \in \mathrm { s u c c s } \; ( \mathrm { s } ) \}$
+
+◼ Nếu n là nút min
+
+## Ví dụ trò chơi đối kháng: Nim
+
+◼ Trò chơi Nim
+
+❑ Có n (n>2) đồng xu
+
+❑ Mỗi nước đi, người chơi chia các đồng xu này thành hai đống nhỏ có số lượng mỗi đống khác nhau
+
+❑ Người thua sẽ là người cuối cùng không chia được theo yêu cầu của bài toán
+
+## ◼ Phân tích
+
+❑ Tính toán phản ứng của đối thủ là khó khăn chủ yếu ❑ Cách giải quyết là giả thiết đối thủ cũng sử dụng kiến thức về không gian trạng thái
+
+## Trò chơi Nim: giá trị tại các nút
+
+![](images/page_124_image_1.jpg)
+
+KẾT QUẢ CỦA MIN
+
+## Trò chơi Nim
+
+◼ Hai đấu thủ: MIN và MAX
+
+Trong đó MAX luôn tìm cách tối đa ưu thế của mình và MIN tìm mọi cách để đưa MAX vào thế khó khăn nhất
+
+◼ Mỗi mức trên KGTT ứng với một đấu thủ
+
+Để chỉ dẫn được cách đi, chúng ta sẽ gán cho các nút lá là 1 nếu MAX thắng, là 0 nếu MIN thắng
+
+Gán giá trị cho các nút: truyền ngược các trị từ các nút lá về gốc theo qui tắc
+
+❑ Nếu đỉnh ở mức MAX, gán trị cho đỉnh này bằng giá trị lớn nhất trong các giá trị của các con của nó
+
+❑ Nếu đỉnh ở mức MIN, gán trị cho đỉnh này bằng giá trị bé nhất trong các trị của các con của nó
+
+## Giải thuật MINIMAX
+
+```javascript
+function MINIMAX-DECISION (state) returns an action
+    v ← MAX-VALUE (state)
+    return the action in succs(state) with the value v
+
+function MAX-VALUE (state) returns an utility value
+    if TERMINAL-TEST (state) then return the UTILITY (state)
+        v ← -∞
+        for each s in succs(state) do
+            v ← MAX(v, MIN-VALUE(s))
+        return v
+
+function MIN-VALUE (state) returns an utility value
+    if TERMINAL-TEST (state) then return the UTILITY (state)
+        v ← +∞
+        for each s in succs(state) do
+            v ← MIN(v, MAX-VALUE(s))
+        return v
+```
+
+## Đánh giá giải thuật MINIMAX
+
+◼ Đầy đủ? Có (nếu cây tìm kiếm là hữu hạn)
+
+◼ Tối ưu? Có (với một đối thủ đối ưu)
+
+◼ Độ phức tạp thời gian: $\Phi ( \mathbf { b } ^ { \mathrm { d } } )$
+
+◼ Độ phức tạp không gian: $\Phi ( \mathbf { b } ^ { \mathrm { d } } )$ (tìm kiếm theo chiều sâu)
+
+Vi cò vua: b ≈ 35, d ≈ 100 vi mt ván thông thường → không tìm được lời giải tối ưu
+
+## Minimax với độ sâu lớp cố định
+
+◼ Minimax đối với một KGTT giả định
+
+![](images/page_128_image_2.jpg)
+
+2 là giá trị min của các nút con
+
+Các nút lá được gán các giá trị lợi ích (**heuristic)** nào đó ~~Còn giá trị tại các nút trong là các giá trị nhận được dựa trên~~ giải thuật Minimax (min hay max cua các nút con)
+
+## Ct tia α-β (alpha-beta)
+
+Ta có thể làm gì để hạn chế số lượng TT phải kiểm tra ngoài việc hạn chế số mức d đi vì số trạng thái vẫn còn quá lớn
+
+Cờ vua: nhân tố nhánh b=35; d=3 có 35\*35\*35=42.785 trạng thái
+
+Giảm bớt các trạng thái cần khảo sát mà vẫn không ảnh hưởng gì đến việc giải quyết bài toán
+
+◼ Cắt tỉa các nhánh không cần khảo sát
+
+## Chin lưc ct tia α-β
+
+◼ Tìm kiếm theo kiểu depth-first
+
+◼ Nút MAX có 1 giá trị  (luôn tăng)
+
+◼ Nút MIN có 1 giá trị  (luôn giảm)
+
+◼ Tìm kiếm có thể kết thúc dưới bất kỳ
+
+Nút MIN nào có β ≤ α cůa bt k nút cha MAX nào
+
+Nút MAX nào có α ≥ β cůa bt k nút cha MIN nào
+
+Ct tia α-β th hin mi quan h gia các nút mức n và **n+2**, mà tại đó toàn bộ cây có gốc tại mức **n+1** có thể cắt bỏ
+
+## Cắt tỉa  (vị trí MAX)
+
+MAX
+
+Có giá trị >= 
+
+MIN
+
+A Có giá trị = 
+
+MAX
+
+Điều kiện 1: Chỉ cần biết giá trị tại A và B
+
+Điều kiện 2: Giá trị $\mathsf { A } >$ giá trị B
+
+Điều kiện 3: $X , Y , \ldots , Z$ ở vị trí Max
+
+Bỏ những cây con có gốc là $X , Y , \ldots , Z$
+
+Cắt tỉa  (vị trí Min)
+
+MIN
+
+Có giá trị <= 
+
+MAX
+
+Có giá trị = 
+
+MIN
+
+giá Điều kiện 1: Chỉ cần biết giá trị tại A và B = k
+
+Điều kiện 2: Giá trị $\mathsf { A } <$ giá trị B
+
+Điều kiện 3: $X , Y , \ldots , Z$ ở vị trí Min
+
+Bỏ những cây con có gốc là $X , Y , \ldots , Z$
+
+## Ct tīa α-β: ví d
+
+MAX
+
+MIN
+
+![](images/page_133_image_3.jpg)
+
+α-β pruning
+
+## Gii thut ct tia α-β
+
+```txt
+function ALPHA-BETA-SEARCH (state) returns an action
+input: state, current state in game
+v ← MAX-VALUE (state, -∞,+∞)
+return the action in succs(state) with the value v
+
+function MAX-VALUE (state, α, β) returns an utility value
+input: state, current state in game
+α: the value of the best alternate for MAX along the patth to state
+β: the value of the best alternate for MIN along the patth to state
+if TERMINAL-TEST (state) then return the UTILITY (state)
+v ← -∞
+for each s in succs(state) do
+v ← MAX(v, MIN-VALUE(s, α, β))
+if v ≥ β then return v
+α ← MAX(α, v)
+```
+
+## Gii thut ct tia α-β
+
+```txt
+function MIN-VALUE (state, α, β) returns an utility value
+input: state, current state in game
+    α: the value of the best alternate for MAX along the path to state
+    β: the value of the best alternate for MIN along the path to state
+if TERMINAL-TEST (state) then return the UTILITY (state)
+v ← +∞
+for each s in succs(state) do
+    v ← MIN(v, MIN-VALUE(s, α, β))
+    if v ≤ α then return v
+    β ← MIN(β, v)
+```
+
+## Nghĩ trước giới hạn và hàm lượng giá
+
+◼ Các trò chơi thường có độ sâu lớn ( 35 đối với cờ vua)
+
+Trong thời gian thực không thể đi đến trạng thái kết thúc để đánh giá 1 nước đi → nghĩ trước giới hạn số nước
+
+Cần một hàm lượng giá các trạng thái không kết thúc thay hàm đánh giá lợi ích cho trạng thái kết thúc
+
+## Hàm lượng giá
+
+◼ Đánh giá mức độ thành công của 1 nước đi (thắng, thua, hòa)
+
+◼ Đánh giá tuyến tính tổng các đặc trưng có được của đối thủ
+
+❑ E $\mathrm{Eval}(\mathrm{s}) = \mathrm{w}_{1}\mathrm{f}_{1}(\mathrm{s}) + \mathrm{w}_{2}\mathrm{f}_{2}(\mathrm{s}) + \cdots + \mathrm{w}_{\mathrm{n}}\mathrm{f}_{\mathrm{n}}(\mathrm{s})$
+
+Trong đó $\mathbf { W _ { i } }$ : trọng số gán cho quân thứ i (hậu w=9; ngựa w=3) $\mathbf { f _ { i } }$ : số quân còn lại
+
+## Heuristic trong trò chơi tic-tac-toe
+
+![](images/page_138_image_1.jpg)
+
+X has 6 possible win paths:
+
+![](images/page_138_image_3.jpg)
+
+![](images/page_138_image_4.jpg)
+
+E(n)=6-5=1
+
+O has 5 possible wins:
+
+![](images/page_138_image_7.jpg)
+
+![](images/page_138_image_8.jpg)
+
+X has 4 possible win paths; O has 6 possible wins
+
+E(n)=4-6=-2
+
+**Hàm Heuristic**:
+
+**E(n) = M(n) – O(n)**
+
+Trong đó:
+
+M(n) là tổng số đường thẳng có thể của tôi O(n) là tổng số đường thẳng có thể của đối thủ E(n) là trị số đánh giá tổng cộng cho trạng thái $n ^ { 2 5 }$
+
+## Các link minh họa tìm kiếm
+
+◼ Giải thuật MiniMax (GS [Patrick Henry Winston](http://people.csail.mit.edu/phw/index.html), MIT)
+
+[❑ http://www.ai.mit.edu/courses/6.034f/gamepair.html](http://www.ai.mit.edu/courses/6.034f/gamepair.html)
+
+[Giải thuật MiniMax với cắt tỉa (GS Patrick Henry Winston, MIT)](http://people.csail.mit.edu/phw/index.html)
+
+[❑ http://www.ai.mit.edu/courses/6.034f/searchpair.html](http://www.ai.mit.edu/courses/6.034f/searchpair.html)
+
+## Bài tập: bài 1 (minimax)
+
+Liệt kê danh sách các nút được duyệt theo tìm kiếm DFS.
+
+◼ Thực hiện giải thuật Minimax trên cây.
+
+![](images/page_140_image_3.jpg)
+
+Sẽ có gì khác biệt nếu như ta dùng giải thuật cắt tỉa alpha – beta để định trị nút gốc cho cây?
+
+## Chương 5 Biểu diễn tri thức
+
+## Nội dung
+
+Giới thiệu về tri thức
+
+ Biểu diễn và ánh xạ
+
+ Các cách tiếp cận
+
+ Các vấn đề trong biểu diễn tri thức
+
+ Vấn đề khung
+
+
+
+## Tri thức là gì?
+
+Dữ liệu là các con số, ký hiệu mà máy tính có thể lưu trữ, biểu diễn, xử lý. Bản thân dữ liệu không có ý nghĩa
+
+Chỉ khi con người cảm nhận, tư duy thì dữ liệu mới có một ý nghĩa nhất định, đó chính là thông tin
+
+Tri thức là kết tinh, cô đọng, chắt lọc của thông tin. Tri thức hình thành từ quá trình xử lý thông tin mang lại
+
+## Phân loại tri thức
+
+Các định lý toán học, định luật vật lý là các tri thức mang tính khẳng định sự kiện
+
+Các phương pháp điều chế hóa học, thuật toán là tri thức mang tính thủ tục
+
+Các nhận định, kết luận về sự kiện, hiện tượng là tri thức mô tả
+
+Các ước lượng, suy đoán hình thành qua kinh nghiệm là tri thức heuristic
+
+## Nhu cầu xử lý tri thức?
+
+Trí tuệ, sự thông minh phải dựa trên nền tảng của tri thức. Tuy nhiên, nó còn phụ thuộc vào việc vận dụng, xử lý tri thức
+
+Biểu diễn tri thức là việc đưa tri thức vào máy tính. Và chỉ có ý nghĩa nếu công việc tiếp theo: “xử lý tri thức được thực hiện”
+
+## Ví dụ về một hệ tri thức
+
+Cho 2 bình rỗng X, Y có thể tích lần lượt là Vx, Vy. Dùng 2 bình này để đong ra z lít nước
+
+ Cụ thể với $\mathrm{Vx}=5,\mathrm{Vy}=7\mathrm{v}\dot{\mathrm{a}}\mathrm{z}=4$ , ta làm như sau:
+
+ Múc đầy bình 7
+
+ Đổ qua cho đầy bình 5
+
+ Đổ hết nước trong bình 5
+
+ Đổ phần còn lại trong bình 7 qua bình 5
+
+ Múc đầy bình 7
+
+ Đổ từ bình 7 qua cho đầy bình 5
+
+ Phần còn lại trong bình 7 là 4 lít
+
+## Biểu diễn tri thức
+
+ Là phương pháp mã hoá tri thức, nhằm thành lập cơ sỡ tri thức cho các hệ thống dựa trên tri thức
+
+Tri thức thực Của lĩnh vực
+
+![](images/page_147_image_3.jpg)
+
+**Gồm:** đối tượng và các quan hệ giữa chúng trong lĩnh vực
+
+<u>Bằng cách nào ?</u>
+
+**Bằng cách:** dùng các lược đồ biểu diễn (scheme).  Chọn dùng lược đồ cho loại tri thức là vấn đề quan trọng
+
+Tri thức tính toán
+
+**Gồm:** Bảng ánh xạ giữa: Đối tượng thực  đối tượng tính toán Quan hệ thực  quan hệ tính toán
+
+## Lược đồ biểu diễn tri thức
+
+##  Lược đồ logic
+
+ Dùng các biểu thức trong logic hình thức, như phép toán vị từ, để biểu diễn tri thức
+
+ Các luật suy diễn áp dụng cho loại lược đồ này
+
+ Ngôn ngữ lập trình hiện thực tốt nhất cho loại lược đồ này là: PROLOG
+
+##  Lược đồ thủ tục
+
+ Biểu diễn tri thức như tập các chỉ thị lệnh để giải quyết vấn đề
+
+ Các chỉ thị lệnh trong lược đồ thủ tục chỉ ra bằng cách nào giải quyết vấn đề
+
+## Lược đồ biểu diễn tri thức…
+
+##  Lược đồ mạng
+
+ Biểu diễn tri thức như là đồ thị; các đỉnh như là các đối tượng hoặc khái niệm, các cung như là quan hệ giữa chúng
+
+ Các ví dụ về loại lược đồ này gồm: **mạng ngữ nghĩa**
+
+##  Lược đồ cấu trúc
+
+ Là một mở rộng của lược đồ mạng; bằng cách cho phép các nút có thể là một CTDL phức tạp gồm các khe (slot) có tên và trị hay một thủ tục
+
+ Kịch bản (script), khung (frame), đối tượng (object) là ví dụ của lược đồ này
+
+## Biểu diễn và ánh xạ
+
+ Tri thức của lĩnh vực:
+
+ Là toàn bộ những hiểu biết về lĩnh vực đó
+
+ Gồm: khái niệm, đối tượng, quan hệ giữa chúng, luật tồn tại giữa chúng, …
+
+ Hiện tồn tại một số lược đồ ghi nhận tri thức
+
+ Để giải bài toán AI cần:
+
+ Tri thức về bài toán (có thể nhiều)
+
+ Phương tiện để xử lý tri thức như: retrieve, update, infer,
+
+## Biểu diễn và ánh xạ…
+
+##  Hình thức hóa tri thức
+
+| Dạng thực | Dạng hình thức |
+| --- | --- |
+| - Facts (sự kiện): sự thật trong lĩnh vực↑↓↓Cái cần biểu diễn | - Representations (sự biểu diễn): dạng biểu diễn của sự kiện theo lược đồ được chọn.↑↓↓Cái có thể xử lý được |
+
+## Biểu diễn và ánh xạ …
+
+ Hai mức cấu trúc cho facts/representations
+
+ Mức tri thức:
+
+Mức mà các sự kiện, gồm cách hành xử của agent (tác tử) và mục tiêu hiện tại, được mô tả.
+
+ Mức ký hiệu:
+
+Mức mà sự biểu diễn của các đối tượng đã được chọn trong mức tri thức được viết ra ở dạng ký hiệu để có thể xử lý được bằng chương trình
+
+## Biểu diễn và ánh xạ …
+
+ Ví dụ:
+
+ Câu tiếng Anh:
+
+ “Spot is a dog”
+
+ “Every dog has a tail”
+
+ Có thể được biểu diễn ở nhiều lược đồ
+
+##  Dạng logic (chương sau):
+
+ 1. dog(Spot).
+
+ 2. X(dog(X) → hastail(X)).
+
+ Từ đó câu: “Spot has a tail”, có thể thu được qua các bước:
+
+ 3. Từ 2, X=“Spot”: dog(Spot) → hastail(Spot).
+
+ 4. Từ 1, 3: hastail(Spot).
+
+ Ánh xạ ngược → “Spot has a tail”.
+
+## Biểu diễn và ánh xạ …
+
+ Dạng mạng ngữ nghĩa:
+
+![](images/page_154_image_2.jpg)
+
+## Biểu diễn và ánh xạ …
+
+ Mô hình giải quyết vấn đề của con người và máy
+
+![](images/page_155_image_2.jpg)
+
+## Các cách tiếp cận
+
+ Bốn thuộc tính của hệ thống biểu diễn tri thức:
+
+ Khả năng biểu diễn tất cả các tri thức cần thiết cho lĩnh vực đó.
+
+ Khả năng xử lý các cấu trúc sẵn có để sinh ra các cấu trúc mới tương ứng với tri thức mới được sinh ra từ tri thức cũ.
+
+ Khả năng thêm vào cấu trúc những tri thức thông tin bổ sung mà nó có thể được dùng để hướng dẫn cơ chế suy luận theo hướng có nhiều triển vọng nhất.
+
+ Khả năng thu được thông tin mới dễ dàng.
+
+Trường hợp đơn giản nhất là chèn trực tiếp tri thức mới (do con người) vào cơ sở tri thức. Lý tưởng nhất là chương trình có thể kiểm soát việc thu được tri thức.
+
+## Các cách tiếp cận …
+
+ Năng lực hiện nay:
+
+ Không một hệ thống nào có thể tối ưu tất cả các khả năng trên cho mọi kiểu tri thức.
+
+ Nhiều kỹ thuật dùng cho biểu diễn tri thức cùng tồn tại.
+
+ Chương trình thường dùng nhiều hơn 1 kỹ thuật biểu diễn.
+
+## Các cách tiếp cận …
+
+ Tri thức quan hệ đơn giản:
+
+ Biểu diễn các sự kiện (facts) dạng khai báo như tập quan hệ đã dùng trong CSDL quan hệ - xem ví dụ sau
+
+| Player | Height | Weight | Bats-Throws |
+| --- | --- | --- | --- |
+| Hank Aaron | 6-0 | 180 | Right-Right |
+| Willie Mays | 5-10 | 170 | Right-Right |
+| Babe Ruth | 6-2 | 215 | Left-Left |
+| Ted Williams | 6-3 | 205 | Left-Right |
+
+– Dng biu din này:
+
+Đon gin  kh năng suy lun trên chính nó rt yu.
+
+Thưòng đưc dùng làm đu vào cho các đng cơ suy din mnh hon.
+
+## Các cách tiếp cận …
+
+ Tri thức có khả năng thừa kế:
+
+ Một dạng bổ sung cơ chế suy diễn vào cơ sở tri thức quan hệ nói trên, đó là: thừa kế thuộc tính.
+
+ Thừa kế thuộc tính:
+
+ Tổ chức các đối tượng thành các lớp (class).
+
+Các lớp được sắp xếp vào hệ thống phân cấp (hierachy) – có lớp cha (tổng quát) và lớp con (cụ thể).
+
+ → Các lớp con thừa kế các thuộc tính từ lớp cha.
+
+## Các cách tiếp cận …
+
+ Tri thức có khả năng thừa $\mathbf { k } \dot { \hat { \mathbf { e } } } \left( \mathbf { t } \mathbf { . } \right)$
+
+##  Line:
+
+ Thuộc tính
+
+##  Box:
+
+ Đối tượng, Trị (Value) của thuộc tính của đối tượng.
+
+##  Arrow:
+
+ Từ đối tượng sang trị của thuộc tính.
+
+![](images/page_160_image_8.jpg)
+
+## Các cách tiếp cận …
+
+ Tri thức suy diễn:
+
+ Thừa kế thuộc tính ở trên là 1 dạng suy diễn
+
+ Logic truyền thống: cung cấp dạng suy diễn mạnh hơn
+
+ Tri thức suy diễn: cần thủ tục suy diễn
+
+ Thủ tục suy diễn: nhiều dạng
+
+ **Forward (tiến): Đi từ sự kiện đến kết luận**
+
+ **Backward (lùi): Đi từ kết luận đến sự kiện đã cho**
+
+ **Thủ tục thường dùng: resolution – xem chương 5.**
+
+## Các cách tiếp cận …
+
+##  Tri thức thủ tục:
+
+ Tri thức trong các ví dụ trước: Tĩnh, dạng khai báo
+
+ Một dạng tri thức khác: chỉ ra hành động được thi hành khi điều kiện nào đó thoả → tri thức thủ tục
+
+ Cách biểu diễn trong chương trình
+
+ **Viết bằng các NNLT (LISP chẳng hạn)**
+
+⇒ Máy s thc thi mã đ thc hin công vic
+
+ Trở ngại
+
+ **Khó viết CT suy diễn về hành vi của CT khác**
+
+ **Cập nhật/debug số lượng lớn mã** → **khó khăn**
+
+## Các cách tiếp cận …
+
+```lisp
+■Tri thức thủ tục (tt):
+  (defun fun1 (lis)
+    (cond
+      ((null lis) 0)
+      ((not (listp (car lis)))
+        (cond
+          ((eq (car lis) nil) (fun1 (car lis)))
+          (T (+ 1 (fun1 (cdr lis)))))
+        )
+      )
+      (T (+ (fun1 (car lis)) (fun1 (cdr lis))))
+    )
+  )
+```
+
+## Các cách tiếp cận …
+
+ Tri thức thủ tục (tt): dùng luật sinh (production rule)
+
+ Luật sinh và cách sử dụng chúng: là định hướng hoạt động hơn các dạng biểu diễn nói trước đây.
+
+ Tuy phân biệt đâu là tri thức khai báo hay thủ tục là một công việc khó khăn.
+
+| IF: |  |
+| --- | --- |
+|  | ninth inning, AND |
+|  | score is close, AND |
+|  | less than 2 outs, AND |
+|  | first base is vacant, AND |
+|  | batter id better hitter than next batter |
+| THEN |  |
+|  | walk the batter. |
+
+## Các vấn đề trong biểu diễn tri thức
+
+Có những thuộc tính cơ bản nào của đối tượng mà chúng xuất hiện trong mọi lĩnh vực không?
+
+ Nếu có: đó là những thuộc tính nào?
+
+Có chắc chắn là chúng sẽ được xử lý thích hợp trong từng cơ chế được đề nghị không?
+
+Có quan hệ quan trọng nào tồn tại cùng với thuộc tính không?
+
+## Các vấn đề trong biểu diễn tri thức
+
+ Tri thức được biểu diễn đến mức chi tiết nào?
+
+Có tồn tại những primitive cơ bản mà qua đó tất cả tri thức được biểu diễn?
+
+ Sử dụng primitives có ích không?
+
+Tập các đối tượng được biểu diễn như thế nào?
+
+Với số lượng lớn tri thức được chứa trong CSDL, Bằng cách nào truy xuất những thành phần cần thiết?
+
+## Các vấn đề trong biểu diễn tri thức
+
+##  Các thuộc tính quan trọng:
+
+ 1. Instance:
+
+Cho biết quan hệ thành viên giữa đối tượng và lớp nó thuộc vào
+
+ 2. Isa
+
+ Cho biết một lớp là con của lớp khác
+
+ Cặp thuộc tính trên cho phép khả năng thừa kế thuộc tính
+
+Chúng có thể được gọi và biểu diễn khác nhau trong nhiều hệ thống tri thức
+
+## Các vấn đề trong biểu diễn tri thức
+
+ Các quan hệ cùng với các thuộc tính:
+
+ Thuộc tính: entity | relationship
+
+ Có tính chất quan trọng:
+
+ Đảo
+
+ Tồn tại trong một hệ thống Isa
+
+ Các kỹ thuật để suy diễn giữa các giá trị
+
+ Các thuộc tính đơn trị
+
+## Các vấn đề trong biểu diễn tri thức
+
+ Các quan hệ cùng với các thuộc tính:
+
+![](images/page_169_image_2.jpg)
+
+Team: thuc ca đi tu'ng &lt;Pee-Wee-Reese&gt; Team: quan h giüa &lt;Pee-Wee-Reese&gt; và &lt;Brooklyn-Dodgers&gt;
+
+![](images/page_169_image_4.jpg)
+
+## Vấn đề khung
+
+ Khung
+
+ Mỗi frame mô tả một đối tượng (object).
+
+ Một frame bao gồm 2 thành phần cơ bản là **slot** và **facet.**
+
+ Một **slot** là một thuộc tính đặc tả đối tượng được biểu diễn bởi frame. Ví dụ : trong frame mô tả xe hơi, có hai slot là trọng lượng và loại máy.
+
+ Mỗi slot có thể chứa một hoặc nhiều **facet.**
+
+ Các facet (đôi lúc được gọi là slot "con") đặc tả một số thông tin hoặc thủ tục liên quan đến thuộc tính được mô tả bởi slot. Facet có nhiều loại khác nhau, sau đây là một số facet thường gặp: value, default value, range,…
+
+## Vấn đề khung…
+
+ Bằng cách nào biểu diễn hiệu quả chuỗi trạng thái cho bài toán tìm kiếm?
+
+ Bài toán robot:
+
+ on(Plant12, Table34).
+
+ under(Table34, Window13).
+
+ in(Table34, Room15).
+
+→ 1 trạng thái = danh sách các facts trên.
+
+→ bất tiện: danh sách dài.
+
+từ trạng thái A → B: nhiều facts không thay đổi.
+
+Vấn đề khung: bài toán về biểu diễn facts thay đổi cùng với những facts không được biết.
+
+## Vấn đề khung …
+
+ Sử dụng các tiền đề khung:
+
+ Mô tả tất cả những cái sẽ không thay đổi khi áp dụng 1 toán tử cụ thể nào đó để chuyển từ trạng thái n → n+1
+
+ Ví dụ:
+
+ “Vật X có màu Y tại trạng thái S1 thì cũng có màu Y tại trạng thái S2 khi di chuyển X từ S1 → S2
+
+ color(X,Y, S1) ^ move(X,S1,S2) → color(X,Y,S2).
+
+ Bất tiện:
+
+→ Số tiền đề nhiều.
+
+## Vấn đề khung …
+
+ Sử dụng giả định:
+
+ Những cái thay đổi: ghi tường minh hoặc được dẫn ra 1 cách logic từ những cái thay đổi.
+
+ Hai cách tiếp cận dùng cho backtrack trên chuổi trạng thái:
+
+ Không thay đổi mô tả đầu. Ghi nhận sự thay đổi cụ thể tại node cần thay đổi.
+
+ Thay đổi mô tả đầu. Ghi nhận những gì cần làm khi undo tại trạng thái đó.
+
+## Link demo & documents
+
+ Mạng ngữ nghĩa và Web ngữ nghĩa
+
+ Wolframalpha: [http://www.wolframalpha.com](http://www.wolframalpha.com/)
+
+ WordNet Search: [http://askbluey.com/wordnet](http://askbluey.com/wordnet)
+
+ WordVis: [http://wordvis.com](http://wordvis.com/)
+
+[Scripts & Frames](http://aitopics.org/search/site?f[0]=im_field_topics:1419&f[1]=im_field_link_category:1445&solrsort=ds_field_publication_date%20desc)
+
+ [Bayesian Inference](http://aitopics.org/topic/bayesian-inference)
+
+ [Expert Systems](http://aitopics.org/topic/expert-systems)
+
+## Chương 6: Chứng minh trong logic mệnh đề
+
+## Biểu diễn tri thức nhờ logic vị từ
+
+Tri thức được thể hiện dưới dạng lớp của các biểu thức logic và cơ sở tri thức giải bài toán được thiết lập trên cơ sở lớp của các biểu thức logic này
+
+Luật suy diễn và thủ tục chứng minh tri thức được lập luận trên cơ sở toán học logic với các yêu cầu đặt ra của bài toán
+
+Với phương pháp biểu diễn này cung cấp ý tưởng để tiếp cận với ngôn ngữ lập trình Prolog trong lĩnh vực trí tuệ nhân tạo
+
+Biểu diễn tri thức nhờ logic vị từ còn được gọi là một ngôn ngữ biểu diễn dùng để mã hóa tri thức dưới dạng sao cho dễ lập trình với ngôn ngữ lập trình Prolog
+
+## Nội dung
+
+ Phép toán mệnh đề
+
+ Biểu diễn sự kiện đơn giản
+
+ Dạng hội chuẩn CNF
+
+ Thuật toán hợp giải
+
+ Suy diễn tiến
+
+ Suy diễn lùi
+
+## Logic
+
+Cần công cụ để biểu diễn và sử dụng tri thức của con người
+
+Logic: “Khoa học về lập luận, chứng minh và suy nghĩ hay suy diễn”
+
+ Logic là một công cụ để biểu diễn và xử lý tri thức
+
+## Logic là gì?
+
+ Một ngôn ngữ hình thức
+
+ Cú pháp: biểu thức nào là hợp lệ
+
+ Ngữ nghĩa: biểu thức hợp lệ có nghĩa gi?
+
+ Hệ chứng minh: một cách xử lý các biểu thức có cú pháp để có được một biểu thức có cú pháp khác (cho ta biêt được thông tin mới)
+
+ Chứng minh để làm gì?
+
+ Từ các quan sát → kết luận về thế giới
+
+ Trạng thái & hành động → thuộc tính của tráng thái tiếp theo
+
+ Hai loại logic: Logic mệnh đề và logic vị từ
+
+## Phép toán mệnh đề
+
+ **Mệnh đề:** là các câu khẳng định về thế giới
+
+ Mệnh đề có thể đúng (true) hoặc sai (false)
+
+ <u>Mệnh đề đơn giản</u>:
+
+```txt
+Đồng là một kim loại => Đúng
+Gỗ là một kim loại => Sai
+Hôm nay là thứ Hai => Sai
+```
+
+ <u>Ký hiệu trong phép tính mệnh đề:</u>
+
+```txt
+□ Ký hiệu mệnh đề: P, Q, R, S,...
+```
+
+ Ký hiệu chân lý: true, false
+
+```txt
+□ Các phép toán logic: ∧ (hội), ∨ (tuyển), ¬ (phủ định),
+⇒ (kéo theo), ⇔ (tương đương)
+```
+
+## Phép toán mệnh đề …
+
+ Định nghĩa **câu** trong phép tính mệnh đề:
+
+ Mỗi ký hiệu mệnh đề, ký hiệu chân lý là một câu
+
+ Phủ định của một câu là một câu
+
+ Hội, tuyển, kéo theo, tương đương của hai câu là một câu.
+
+ Ký hiệu ( ), [ ] được dùng để nhóm các ký hiệu vào các biểu thức con.
+
+Một biểu thức mệnh đề được gọi là một câu (hay công thức dạng chuẩn- WFF:Well-Formed Formula)  nó có thể được tạo thành từ những ký hiệu hợp lệ thông qua một dãy các luật trên.
+
+Ví dụ: ( $( \mathrm { P } \land \mathrm { Q } ) \Rightarrow \mathrm { R } ) = \neg \mathrm { P } \lor \neg \mathrm { Q } \lor \mathrm { R }$
+
+## Phép toán mệnh đề …
+
+ Mệnh đề tương đương
+
+ **Dạng hấp thu**
+
+$$
+\mathbf {A} \wedge (\mathbf {A} \vee \mathbf {B}) = \mathbf {A}
+$$
+
+$$
+\mathrm {\bf A} \vee (\mathrm {\bf A} \wedge \mathrm {\bf B}) = \mathrm {\bf A}
+$$
+
+$$
+\mathrm{A} \land (\neg \mathrm{A} \lor \mathrm{B}) = \quad \mathrm{A} \land \mathrm{B}
+$$
+
+$$
+\mathrm{A} \lor (\neg \mathrm{A} \land \mathrm{B}) = \quad \mathrm{A} \lor \mathrm{B}
+$$
+
+ **Dạng De Morgan**
+
+$$
+\neg (\mathbf {A} \land \mathbf {B}) = \neg \mathbf {A} \lor \neg \mathbf {B}
+$$
+
+$$
+\neg (\mathbf {A} \lor \mathbf {B}) = \neg \mathbf {A} \land \neg \mathbf {B}
+$$
+
+**Dạng khác**
+
+$$
+\mathrm{A} \Rightarrow \mathrm{B} =
+$$
+
+$$
+\neg \mathbf{A} \lor \mathbf{B}
+$$
+
+$$
+\neg (\mathrm{A} \Rightarrow \mathrm{B}) =
+$$
+
+$$
+\mathbf {A} \land \neg \mathbf {B}
+$$
+
+$$
+\mathrm{A} \Rightarrow \mathrm{B} = \mathrm{A} \land \neg \mathrm{B} \Rightarrow \text {FALSE}
+$$
+
+## Phép toán mệnh đề …
+
+##  Các luật suy diễn
+
+ Luật Modus Ponens (MP) A, $\mathbf { A } { \Rightarrow } \mathbf { B }$  B
+
+Luật Modus Tollens (MT) $$\mathrm { A } { \Rightarrow } \mathrm { B } , \neg \mathrm { B }$  :、線頭 $\neg \mathrm { A }$$
+
+ Luật Hội A,B  A^B
+
+ Luật đơn giản A^B  A  Luật Cộng A  AvB
+
+ Luật tam đoạn luận tuyển Av B, ¬A ∴ B
+
+ Luật tam đoạn luận giả thiết $\mathrm { A } { \Rightarrow } \mathrm { B } \text {,} \mathrm { B } { \Rightarrow } \mathrm { C } \text { \cdot } \text { \cdot } \quad \mathrm { A } { \Rightarrow } \mathrm { C }$
+
+## Biểu diễn sự kiện đơn giản: VD1
+
+| Câu | Biểu diễn |
+| --- | --- |
+| It is raining | RAINING |
+| It is sunny | SUNNY |
+| It is Windy | WINDY |
+| If it is raining, then it is not sunny | RAINING → ¬SUNNY |
+
+Môt cách biu din facts trong logic mênh đ
+
+## Biểu diễn sự kiện đơn giản: VD2
+
+| Câu | Biểu diễn |
+| --- | --- |
+| Socrates is a man | SOCRATESMAN |
+| Plato is a man | PLATOMAN |
+| All men are mortal | MORTALMAN |
+
+Môt cách biu din facts trong logic mênh đ
+
+1. Không có s tưong t gia Socrates và Plato
+
+2. Không nói lên đưc tùng phn t ca man là mortal.
+
+→ Không suy din đưc gì.
+
+## Biểu diễn sự kiện đơn giản…
+
+ Sử dụng logic vị từ cấp 1 (PC)  Ví dụ
+
+| Câu | Biểu diễn |
+| --- | --- |
+| Socrates is a man | man(socrates) |
+| Plato is a man | man(plato) |
+| All men are mortal | ∀X (man(X) → mortal(X)) |
+
+Môt cách biu din facts trong loqic vi tù
+
+## Biểu diễn sự kiện đơn giản…
+
+ Suy diễn
+
+<table><tr><td>Câu</td><td>Suy ra được</td></tr><tr><td>Socrates is a man</td><td rowspan="2">Socrates is mortal</td></tr><tr><td>All men are mortal</td></tr></table>
+
+<table><tr><td>Biểu diễn</td><td>Suy ra được</td></tr><tr><td>man(socrates)</td><td rowspan="2">mortal(socrates)</td></tr><tr><td> $\forall X (man(X) \rightarrow mortal(X))$ </td></tr></table>
+
+## Dạng hội chuẩn CNF(Conjunctive normal form)
+
+ Công thức dạng hội chuẩn có dạng
+
+$$
+(\mathrm{A} \lor \mathrm{B} \lor \neg \mathrm{C}) \land (\mathrm{B} \lor \mathrm{D}) \land (\neg \mathrm{A}) \land (\mathrm{B} \lor \mathrm{C})
+$$
+
+$( \mathrm { A } \lor \mathrm { B } \lor \lnot \mathrm { C } )$ là một clause
+
+A, B, ¬ C là các literal mà mi cái là bin hay phů định của biến
+
+ Mỗi clause phải được thỏa và được thỏa theo nhiều cách
+
+ Mỗi câu trong logic mệnh đề đều có thể viết dưới dạng CNF
+
+## Chuyển đổi thành CNF
+
+ Loại bỏ dấu mũi tên $( \Leftrightarrow \Rightarrow \leftarrow )$ bằng định nghĩa tương đương
+
+ Đưa phủ định vào bằng luật De Morgan
+
+ $\neg ( \mathrm { A } \lor \mathrm { B } ) \equiv \neg \mathrm { A } \land \neg \mathrm { B }$
+
+ $\neg ( \mathrm { A } \land \mathrm { B } )   \equiv   \neg \mathrm { A } \lor \neg \mathrm { B }$
+
+ Phân phối **or** (∨) vào **and** (∧)
+
+ $\mathrm { A } \vee ( \mathrm { B } \wedge \mathrm { C } ) \mathop { \equiv } ( \mathrm { A } \vee \mathrm { B } ) \wedge ( \mathrm { A } \vee \mathrm { C } )$
+
+ Mọi câu đều có thể chuyển đổi về dạng CNF
+
+## Ví dụ chuyển đổi CNF
+
+$$
+(\mathrm{AVB}) \Rightarrow (\mathrm{C} \Rightarrow \mathrm{D})
+$$
+
+ 1. Loại bỏ mũi tên
+
+$$
+\neg (\mathrm{AvB}) \lor (\neg \mathrm{C} \lor \mathrm{D})
+$$
+
+ 2. Đưa phủ định vào
+
+$$
+(\neg \mathrm{A} \land \neg \mathrm{B}) \lor (\neg \mathrm{C} \lor \mathrm{D})
+$$
+
+ 3. Phân phối
+
+$$
+(\neg \mathrm{A} \lor \neg \mathrm{C} \lor \mathrm{D}) \land (\neg \mathrm{B} \lor \neg \mathrm{C} \lor \mathrm{D})
+$$
+
+## Hợp giải mệnh đề
+
+ Luật hợp giải
+
+$$
+\begin{array}{c} \alpha \lor \neg \beta \\ \gamma \lor \beta \\ \hline \alpha \lor \gamma \end{array}
+$$
+
+ Hợp giải Robison – chứng minh phản chứng
+
+ Muốn chứng minh cơ sơ tri thức $( \mathrm { K B } ) \Rightarrow \alpha$ , chúng ta chứng minh điều ngược lại $\mathrm { K B } \Rightarrow \neg \alpha$ là sai.
+
+## Thuật toán hợp giải (Robinson)
+
+Biến đổi tất cả các mệnh đề về dạng chuẩn CNF
+
+ Lấp phủ định kết luận đưa vào KB
+
+ Lặp
+
+Nu trong BK có 2 mnh đ phů đnh nhau (¬p và p) thì trả về **true**
+
+ Nếu có 2 mệnh đề chứa các literal (ký hiệu) phủ định nhau thì áp dụng hợp giải
+
+ Lặp cho đến khi không thể áp dụng tiếp hợp giải
+
+##  Trả về false
+
+## Thuật toán hợp giải: ví dụ
+
+Cho tâp:
+
+1. P
+
+$( \mathrm { P } \setminus \mathrm { Q } ) \xrightarrow { } \mathrm { R }$
+
+3. (S v T) → Q
+
+Chúng minh: R
+
+Ph đnh biu thc cn chng minh
+
+| Biểu thức | Chuẩn hoá |
+| --- | --- |
+| P | P |
+| (P ^ Q) → R | ¬P v ¬Q v R |
+| (S v T) → Q | ¬S v Q |
+|  | ¬T v Q |
+| T | T |
+| ¬R | ¬R |
+
+## Thuật toán hợp giải: ví dụ
+
+ Chứng minh
+
+| STT | Clauses | Ghi chú |
+| --- | --- | --- |
+| 1 | P | Tiền đề (p) |
+| 2 | $\neg P v \neg Q v R$ | p |
+| 3 | $\neg S v Q$ | p |
+| 4 | $\neg T v Q$ | p |
+| 5 | T | p |
+| 6 | $\neg R$ | P |
+| 7 | $\neg P v \neg Q$ | 2,6 |
+| 8 | $\neg Q$ | 1,7 |
+| 9 | $\neg T$ | 4,8 |
+| 10 | □ | 5,9 |
+
+## Thuật toán hợp giải: ví dụ
+
+Ví dụ: Chứng minh hình thức bằng luật phân giải cho đoạn văn sau đây:
+
+“ Nam hoặc là chuyên gia hoặc là người cá biệt. Nếu Nam là chuyên gia thì Nam có nhiều báo cáo có tiếng và được đồng nghiệp tin cậy. Nếu Nam có nhiều báo cáo có tiếng thì hộp thư của Nam có nhiều thư. Nếu Nam là người cá biệt thì Nam không được bạn bè tôn trọng. Quan sát thấy rằng, hộp thư của Nam không có nhiều thư “.
+
+chứng mính: “Nam không được bạn bè tôn trọng.
+
+## Luật phân giải: ví dụ …
+
+##  Các mệnh đề:
+
+ P1 = “Nam là chuyên gia”
+
+ P2 = “Nam là người cá biệt”
+
+ P3 = “Nam có nhiều báo cáo có tiếng”
+
+ P4 = “Nam được đồng nghiệp tin cậy”
+
+ P5 = “Hộp thư của Nam có nhiều thư”
+
+ P6 = “Nam được bạn bè tôn trọng”
+
+##  Các câu:
+
+1. (P1 ^ ¬P2) v (¬P1 ^ P2)
+
+2. P1 → (P3 ^ P4)
+
+3. P3 → P5
+
+4. P2 → ¬P6
+
+5. ¬P5
+
+## Luật phân giải: ví dụ …
+
+| Biểu thức | STT | Clauses | Ghi chú |
+| --- | --- | --- | --- |
+| (P1 ^ ¬P2) v (¬P1 ^ P2) | 1 | P1 v P2 | P |
+|  | 2 | ¬P1 v ¬P2 | P |
+| P1 → (P3 ^ P4) | 3 | ¬P1 v P3 | P |
+|  | 4 | ¬P1 v P4 | P |
+| P3 → P5 | 5 | ¬P3 v P5 | P |
+| P2 → ¬P6 | 6 | ¬P2 v ¬P6 | P |
+| ¬P5 | 7 | ¬P5 | P |
+| ¬(¬P6) | 8 | P6 | P |
+
+Ph đnh ca kt lun
+
+## Luật phân giải: ví dụ …
+
+##  Chứng minh
+
+| Biểu thức | STT | Clauses | Ghi chú |
+| --- | --- | --- | --- |
+|  | 9 | ¬P2 | 6,8 |
+|  | 10 | P1 | 1,9 |
+|  | 11 | P3 | 10,3 |
+|  | 12 | P5 | 11,5 |
+|  | 13 | □ | 12,7 |
+
+## Suy diễn tiến & suy diễn lùi
+
+ Logic dạng Horn
+
+ KB = nối liền của các mệnh Horn
+
+ Mệnh đề Horn =
+
+ Biến mệnh đề, hay
+
+ (nối rời các biến)  biến
+
+ Tam đoạn luận
+
+$$
+\frac {\alpha \Rightarrow \beta , \alpha}{\beta}
+$$
+
+ Có thể sử dụng với suy diễn tiến và suy diễn lùi
+
+## Suy diễn tiến
+
+ Ý tưởng: kích hoạt tất cả các luật mà tiền đề của nó thỏa trong KB
+
+ Bổ sung kết luận vào KB, lặp cho đến khi được kết luận
+
+$$
+P \Rightarrow Q
+$$
+
+$$
+L \land M \Rightarrow P
+$$
+
+$$
+B \land L \Rightarrow M
+$$
+
+$$
+A \land P \Rightarrow L
+$$
+
+$$
+A \land B \Rightarrow L
+$$
+
+$$
+A
+$$
+
+B
+
+![](images/page_200_image_10.jpg)
+
+## Suy diễn tiến & suy diễn lùi (tt)
+
+ Suy diễn tiến: ví dụ
+
+![](images/page_201_image_2.jpg)
+
+## Suy diễn lùi
+
+ Ý tưởng: quay lùi từ câu hỏi q
+
+ Chứng minh q bằng
+
+ Kiểm tra q đã biết chưa, hay
+
+ Chứng minh q bằng cách suy diễn lùi tất cả tiền đề của một luật rút ra từ q
+
+## Suy diễn tiến & suy diễn lùi (tt)
+
+ Suy diễn lùi : ví dụ
+
+$$
+P \Rightarrow Q
+$$
+
+$$
+L \land M \Rightarrow P
+$$
+
+$$
+B \land L \Rightarrow M
+$$
+
+$$
+A \land P \Rightarrow L
+$$
+
+$$
+A \land B \Rightarrow L
+$$
+
+$$
+A
+$$
+
+B
+
+![](images/page_203_image_9.jpg)
+
+## Suy diễn tiến & suy diễn lùi (tt)
+
+ Suy diễn lùi : ví dụ
+
+![](images/page_204_image_2.jpg)
+
+## Chương 7: Logic vị từ
+
+Giảng viên: Nguyễn Văn Hòa
+
+Khoa CNTT - ĐH An Giang
+
+## Nội dung
+
+ Logic bậc nhất (First Order Logic – FOL)
+
+ Cú pháp và ngữ nghĩa
+
+ Các lượng từ
+
+ Hợp giải với logic vị từ
+
+ Dạng mệnh đề
+
+ Lập trình logic Turbo Prolog
+
+## Tại sao sử dụng logic vị từ
+
+Logic mệnh đề chỉ xử lý trên các sự kiện, là các khẳng định có giá trị đúng hoặc sai
+
+Logic vị từ (logic bậc nhất) cho phép chúng ta nói về các đối tượng, tính chất của chúng, quan hệ giữa chúng, phát biểu về một hay tất cả các đối tượng nào đó mà không cần liệt kê trong chương trình
+
+Các câu không thể biểu diễn bằng logic mệnh đề nhưng có thể biểu diễn bằng logic vị từ
+
+ Socrates là người nên socrates phải chết
+
+## Cú pháp của logic vị từ
+
+ Term (Tham chiếu đối tượng)
+
+ Ký kiệu bằng: Lan, Tuan, DHAG
+
+ Biến: x, y, a
+
+ Ký hiệu hàm áp dụng cho một hay nhiều term: f(x), tuoi(Lan), sinh-vien(Tuan)
+
+##  Câu:
+
+ Một ký hiệu vi từ (predicate) áp dụng cho một hay nhiều term: thuoc(Lan, DHAG), la-anh-em(Lan,Tuan)…
+
+ t1=t2
+
+Nu x là bin và φ là câu thì∀x φ, ∃x φ cũng là câu
+
+Các câu to tù các câu khác vi phép ni câu  ∧  →
+
+## Ngữ nghĩa của logic vị từ
+
+Có một tập ngầm định U các đối tượng mà một câu FOL phát biểu trên đó, U được gọi là tập phát biểu
+
+ Term tham chiếu đến đối tượng trong U
+
+ Hằng tham chiếu đến một đối tượng cụ thể
+
+ Biến tham chiếu đến một đối tượng nào đó (cần lượng từ hóa)
+
+ Hàm tham chiếu đối một đối tượng thông qua đối tượng khác
+
+ Câu là phát biểu trên các đối tượng
+
+ Vị từ thể hiện tính chất, hoặc quan hệ giữa các đối tượng
+
+Lưng t giúp phát biu s lưng đi tưng: ∀, ∃
+
+## Lượng từ với mọi
+
+ Cú pháp: $\forall <   \mathrm { b i \hat { c } n > <   \hat { c } \hat { a } u > }$
+
+ Sinh viên CNTT thì thông minh
+
+x sinhvien(x, CNTT) → thongminh(x)
+
+∀x P đúng trong mt mim phát biu U, nu và chi nếu P đúng với **mọi** x thuộc U
+
+Nghĩa là tương đương với phép nối liền () của các đối tượng trong U
+
+sinhvien(Lan, CNTT) → thongminh(Lan)
+
+ sinhvien(Tuan, CNTT) → thongminh(Tuan)
+
+ sinhvien(Nam, CNTT) → thongminh(Nam)
+
+## Lượng từ tồn tại
+
+ Cú pháp: $\exists < \mathrm { b i } \hat { \mathrm { c } } \mathrm { n } > < \mathrm { c } \hat { \mathrm { a } } \mathrm { u } >$
+
+ Sinh viên CNTT thì thông minh
+
+ x sinhvien(x, CNTT) → thongminh(x)
+
+∃x. P đúng trong mt mim phát biu U, nu và chỉ nếu P đúng với **một** x thuộc U
+
+Nghĩa là tương đương vói phép ni ri (√) ca các đối tượng trong U
+
+sinhvien(Lan, CNTT) → thongminh(Lan)
+
+ sinhvien(Tuan, CNTT) → thongminh(Tuan)
+
+ sinhvien(Nam, CNTT) → thongminh(Nam)
+
+## Viết FOL
+
+ Mèo là động vật có vú
+
+$$
+\forall \mathrm{x.Mèo(x)} \rightarrow \text {Động - vật - có - vú(x)}
+$$
+
+ Lan là sinh viên học giỏi
+
+Sinh-viên(Lan) ∧ Học-giỏi(Lan)
+
+ Cháu là con của anh em
+
+∀x,y.Cháu(x,y) ↔ ∃z.(Anh-em(z,y) ∧ Con(x,z))
+
+ Bà ngoại là mẹ của mẹ
+
+$$
+\forall \mathrm{x}, \exists \mathrm{y}. \text {Bà - ngoai} (\mathrm{x}, \mathrm{y}) \leftrightarrow \exists \mathrm{z}. (\mathrm{Me} (\mathrm{x}, \mathrm{z}) \land \mathrm{Me} (\mathrm{z}, \mathrm{y}))
+$$
+
+ Mọi người đều yêu ai đó
+
+∀x, ∃y.Yêu(x, y)
+
+## Chứng minh và suy dẫn
+
+ Suy dẫn xuất pháp từ khái niệm tổng quát của phép “kéo theo”
+
+ Không thể tính toán trực tiếp từ cách liệt kê
+
+ Do đó ta sẽ phải làm theo cách chứng minh
+
+Trong FOL, nếu KB suy dẫn được S thì sẽ có một tập hữu hạn chứng minh của s từ KB
+
+## Hợp giải bậc nhất
+
+$$
+\begin{array}{c} \forall \mathrm{x}, \mathrm{P(x)} \to \mathrm{Q(x)} \\ \hline \mathrm{P(A)} \\ \mathrm{Q(A)} \end{array}
+$$
+
+$$
+\begin{array}{c} \forall \mathrm{x}, \neg \mathrm{P(x)} \lor \mathrm{Q(x)} \\ \hline \mathrm{P(A)} \\ \mathrm{Q(A)} \end{array}
+$$
+
+$$
+\begin{array}{c} \neg \mathrm{P(A)} \lor \mathrm{Q(A)} \\ \hline \mathrm{P(A)} \\ \mathrm{Q(A)} \end{array}
+$$
+
+Tam đoạn luận: Mọi người đều chết <u>Socrate là người</u> Socrate chết
+
+Tương đương theo định nghĩa của phép Suy ra
+
+Thay A vào x, dẫn đúng khi đó Hợp giải mệnh đề
+
+Hai vấn đề mới đặt ra: Biến đổi FOL thành dạng mệnh đề (clausal form) Hợp giải biến
+
+## Dạng mệnh đề (clausal form)
+
+ Cấu trúc ngoài giống CNF
+
+ Không có lượng từ
+
+$$
+\begin{array}{c} \forall x. \exists y. P (x) \Rightarrow R (x, y) \\ \Bigg \downarrow \\ \neg P (x) \lor R (x, F (y)) \end{array}
+$$
+
+## Biến đổi về dạng mệnh đề
+
+Câu sau được dùng làm ví dụ trong thủ tục đưa về clause form.
+
+ “All Romans who know Marcus either hate Caesar or think that anyone who hates anyone is crazy”
+
+□ ∀ X: [roman(X) ^ know(X, Marcus)] → [hate(X, Ceasar) v
+
+(∀ Y: ∃ Z: hate(Y,Z) → thinkcrazy(X,Y))]
+
+## Biến đổi về dạng mệnh đề…
+
+1. Loại bỏ →
+
+dùng tương đương: a→b = ¬a v b
+
+ Ví dụ
+
+□ ∀ X: [roman(X) ^ know(X, Marcus)] → [hate(X, Ceasar) v (∀ Y: ∃ Z: hate(Y,Z) → thinkcrazy(X,Y))]
+
+□∀ X: ¬[roman(X) ^ know(X, Marcus)] v [hate(X, Ceasar) v
+
+(∀ Y: ∃ Z: hate(Y,Z) → thinkcrazy(X,Y))]
+
+## Biến đổi về dạng mệnh đề…
+
+2. Thu giảm tầm vực của ¬ vào đến mức term.
+
+ Dùng tương đương: $\neg ( \neg p ) = p$
+
+ De Morgan:
+
+ Tương đương lượng từ: $\neg \forall \mathbf{X}: \mathrm{P}(\mathbf{X}) = \exists \mathbf{X}: \mathrm{P}(\mathbf{X})$ ¬ ∃: P(X) = ∀ X: P(X)
+
+Áp dung cho ví dụ trước   X: [¬roman(X) v ¬know(X, Marcus)] v [hate(X,Ceasar) v
+
+(∀ Y: ∃ Z: ¬hate(Y,Z) v thinkcrazy(X,Y))]
+
+## Biến đổi về dạng mệnh đề…
+
+3. Chuẩn hoá các biến để các lượng từ chỉ ràng buộc 1 biến duy nhất.
+
+ Biến đổi như VD sau:
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\forall \mathrm{X}\colon \mathrm{P}(\mathrm{X})\mathrm{v}\forall \mathrm{X}\colon \mathrm{Q}(\mathrm{X}) = \forall \mathrm{X}\colon \mathrm{P}(\mathrm{X})\mathrm{v}\forall \mathrm{Y}\colon \mathrm{Q}(\mathrm{Y})$
+</div>
+
+4. Chuyển lượng từ về bên trái. Chú ý, không chuyển thứ tự của chúng
+
+ Ví dụ: tiếp bước 2.
+
+∀ X: ∀ Y: ∃ Z: [¬roman(X) v ¬know(X, Marcus)] v [hate(X, Ceasar) v
+
+(¬hate(Y,Z) v thinkcrazy(X,Y))]
+
+## Biến đổi về dạng mệnh đề…
+
+5. Loại bỏ lượng từ tồn tại : Sử dụng hàm skolem
+
+ Hàm skolem:
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$\forall \mathrm{X}:\forall \mathrm{Y}:\exists \mathrm{Z}:\mathrm{P}(\mathrm{X},\mathrm{Y},\mathrm{Z}) = \forall \mathrm{X}:\forall \mathrm{Y}:\mathrm{P}(\mathrm{X},\mathrm{Y},\mathrm{f}(\mathrm{X},\mathrm{Y}))$
+</div>
+
+ Biến của lượng từ tồn tại được thay là hàm theo những biến của lượng từ với mọi trước nó
+
+ Bỏ qua các lượng từ (với mọi) còn lại ở bước 5. xem như mọi biến đều bị tác động bởi lượng từ với mọi ( )
+
+ Ví dụ: tiếp bước 4
+
+```txt
+[¬roman(X) v ¬know(X, Marcus)] v [hate(X, Ceasar) v (¬hate(Y,Z) v thinkcrazy(X,Y))]
+```
+
+## Biến đổi về dạng mệnh đề…
+
+7. Chuyển hội chuẩn (Conjunctive Normal Form - CNF)
+
+ Một chuỗi các mệnh đề kết nối nhau bằng quan hệ AND (^). Mỗi mệnh đề có dạng một tuyển OR (v) của các biến mệnh đề.
+
+ Dùng phép phân phố giữa v và ^
+
+ Dạng thường gặp:
+
+```lisp
+(a ^ b) v c = (a v c) ^ (b v c)
+(a ^ b) v (c ^ d) = (a v c) ^ (a v d) ^ (b v c) ^ (b v d)
+```
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+☐ Ví dụ: tiếp bước 6
+$\neg$roman(X) v $\neg$know(X, Marcus) v
+hate(X, Ceasar) v $\neg$hate(Y,Z) v thinkcrazy(X,Y)
+</div>
+
+## Biến đổi về dạng mệnh đề…
+
+8. Tách riêng các clause trong CNF ở trên  Nếu có clause form:
+
+$$
+(a \lor \neg b) ^ {\wedge} (\neg a \lor c \lor d) ^ {\wedge} (a \lor \neg c \lor e)
+$$
+
+ Thì được tách riêng thành các clause:
+
+1. $( \mathrm { a } \mathrm { ~ v ~ } \neg \mathsf { b } )$
+
+2. $( \neg \mathrm { a \; v \; c \; v \; d } )$
+
+3. (a $\textbf { v } \neg \textbf { c v e } )$
+
+ Đưa các lượng từ về từng clause
+
+$$
+(\forall \mathrm{X}: \mathrm{P} (\mathrm{X}) ^ {\wedge} \mathrm{Q} (\mathrm{X})) = \forall \mathrm{X}: \mathrm{P} (\mathrm{X}) ^ {\wedge} \forall \mathrm{X}: \mathrm{Q} (\mathrm{X})
+$$
+
+## Giới thiệu về ngôn ngữ Prolog
+
+##  Cấu trúc chương trình
+
+ Ngôn ngữ Prolog là ngôn ngữ lập trình suy luận trên cơ sở logic toán học để giải quyết các bài toán trong lĩnh vực trí tuệ nhân tạo.
+
+ Đặc điểm của ngôn ngữ là xử lý tri thức của các bài toán được mã hóa bằng ký hiệu.
+
+ Một điểm mạnh khác của ngôn ngữ là xử lý danh sách trên cơ sở xử lý song song và đệ qui với các thuật toán tìm kiếm.
+
+ Ngôn ngữ cho phép liên kết với các ngôn ngữ khác như C, Pascal và Assembler.
+
+## Giới thiệu về ngôn ngữ Prolog
+
+```prolog
+Chương trình Prolog mẫu
+domains
+  nguoi = string
+predicates
+  cha(nguoi,nguoi)
+  me(nguoi,nguoi)
+  ong_noi(nguoi,nguoi)
+  ong_ngoai(nguoi,nguoi)
+clauses
+  /*cac qui tac */
+  ong_noi(X,Y):- cha(X,Z),cha(Z,Y).
+  ong_ngoai(X,Y):- cha(X,Z),me(Z,Y).
+  /* cac su kien */
+  cha(nam,minh).
+  cha(minh,lam).
+  cha(long,giang).
+  cha(long,thu).
+  me(thu,phi).
+```
+
+## Phần domains : miền xác định
+
+Là phần định nghĩa kiểu mới dựa vào các kiểu đã biết
+
+ Cú pháp định nghĩa kiểu
+
+ &lt;DS kiểu mới&gt; = &lt;kiểu đã biết&gt; hoặc
+
+ &lt;DS kiểu mới&gt; = &lt;DS kiểu đã biết&gt;
+
+Trong đó các kiểu mới phân cách bởi dấu «,», các kiểu đã biết phân cách bởi dấu «;»
+
+```txt
+Phần domains (tt)
+■ VD
+Domains
+ten, tac_gia, nha_xb, dia_chi = string
+nam, thang, so_luong = integer
+dien_tich = real
+nam_xb = nxb(thang, nam)
+do_vat = sach(tac_gia, ten, nha_xb, nam_xb); xe(ten, so_luong); nha(dia_chi, dien_tich)
+```
+
+## Phần Predicates : vị từ
+
+ Là phần bắt buộc phải có
+
+Phần predicates cần phải khai báo đầy đủ các vị từ sử dụng trong phần Clauses
+
+ Cú pháp
+
+&lt;Tên vị từ&gt; (&lt;danh sách các kiểu&gt;)
+
+Các kiểu được phân cách nhau bởi «,»
+
+##  VD
+
+Predicates
+
+so\_huu (ten, do\_vat)
+
+so\_nguyen\_to(integer)
+
+## Phần Clauses : luật
+
+Là phần bắt buộc phải có, dùng để mô tả các sự kiện và các luật
+
+Sử dụng các vị từ đã khai báo trong phần predicates
+
+```txt
+■ Cú pháp
+<Tên vị từ>(<danh sách các tham số>) <kí hiệu>
+<Tên vị từ 1>(<danh sách các tham số 1>) <kí hiệu>
+......
+<Tên vị từ N>(<danh sách các tham số N>) <kí hiệu>
+Các ký hiệu bao gồm :- (điều kiện nếu);
+, (điều kiện và)
+; (điều kiện hoặc)
+. (kết thúc vị từ)
+```
+
+```prolog
+Phần Clauses (tt)
+■ VD
+Clauses
+so_nguyen_to(2):-!.
+so_nguyen_to(N):-N>0,
+so_nguyen_to(M), M<N,
+N MOD M <>0.
+so_huu("Nguyen Van A", sach("Do Xuan Loi", "Cau truc DL", "Khoa hoc Ky thuat", nxb(8,1985))).
+```
+
+## Phần goal
+
+ Bao gồm các mục tiêu mà ta yêu cầu Prolog xác định và tìm kết quả
+
+ Không bắt buộc phải có
+
+ Nếu được viết sẵn trong CT thì đó gọi là goal nội; Nếu không, khi chạy CT Prolog sẽ yêu cầu ta nhập goal vào, goal ngoại
+
+ VD
+
+ Constants
+
+ Pi = 3.141592653
+
+```prolog
+predicates
+ktnt(integer,integer)
+tieptuc(integer,real,real,integer)
+clauses
+ktnt(1,_):-write("Day la so nguyen to").
+ktnt(2,_):-write("Day la so nguyen to").
+ktnt(N,M):-N1=N-1,
+N2=M/N1,N3=round(M/N1),tieptuc(N1,N2,N3,M).
+tieptuc(_,N2,N3,_):-N2=N3, write("Day khong phai la so
+nguyen to").
+tieptuc(N1,N2,N3,M):-N2<>N3,ktnt(N1,M).
+goal
+clearwindow,write("Nhap N:"),readint(N),ktnt(N,N).
+```
+
+## Các nguyên tắc của NN Prolog
+
+ Có 2 nguyên tắc: đồng nhất và quay lui
+
+ Đồng nhất
+
+ Một quan hệ có thể đồng nhất với một quan hệ nào đó cùng tên, cùng số lượng tham số, các đại lượng con cũng đồng nhất theo từng cặp
+
+ Một hằng có thể đồng nhất với một hằng
+
+ Một biến có thể đồng nhất với một hằng nào đó và có thể nhận luôn giá trị hằng đó
+
+## Các nguyên tắc của NN Prolog (tt)
+
+ Nguyên tắc quay lui (backtract, backtracting)
+
+ Cần chứng minh Goal $\because \mathrm { g } _ { 1 } , \mathrm { g } _ { 2 } , \ldots , \mathrm { g } _ { \mathrm { j } - 1 } , \mathrm { g } _ { \mathrm { j } } , \ldots , \mathrm { g } _ { \mathrm { n } }$
+
+ Kiểm chứng từ trái sang phải, đến $g _ { i }$ là sai, hệ thống cần phải qui lui lại $\mathbf { g } _ { i - 1 }$ Man(x)
+
+ Ví dụ man(son) man(an) child(hung,an) goal: man(X), child(Y,X)?
+
+![](images/page_234_image_5.jpg)
+
+## Cây hợp giải
+
+ Xét các mệnh đề sau đây
+
+sister(X,Y) :- child(X,P),child(Y,P),
+
+woman(X), X<>Y.
+
+woman(hien).
+
+child(son,lan).
+
+child(hien,lan).
+
+child(son,hung).
+
+child(hien,hung).
+
+goal: sister(hien, F)?
+
+```julia
+sister(hien, F).
+hien = X
+Y = F
+
+child(hien, P),
+child(F, P),
+woman(hien),
+\= (hien, Y)
+
+P = lan
+
+child(F, lan),
+woman(hien),
+\= (hien, Y)
+
+P = hung
+
+child(F, hung),
+woman(hien),
+\= (hien, Y)
+
+F = son
+child(son, lan),
+woman(hien),
+\= (hien, son)
+woman(hien),
+\= (hien, son)
+\= (hien, son)
+\= (hien, son)
+Thành công
+
+F = hien
+child(hien, lan),
+woman(hien),
+\= (hien, hien)
+woman(hien),
+\= (hien, hien)
+\= (hien, hien)
+\= (hien, hien)
+Thất bại
+
+F = son
+child(son, hung),
+woman(hien),
+\= (hien, son)
+woman(hien),
+\= (hien, son)
+\= (hien, son)
+\= (hien, son)
+Thành công
+
+F = hien
+child(hien, hung),
+woman(hien),
+\= (hien, hien)
+woman(hien),
+\= (hien, hien)
+\= (hien, hien)
+Thất bại
+```
+
+## Cây hợp giải
+
+Trong ví dụ trên, chúng ta tìm thấy 2 câu trả lời giống hệt nhau được thưc hiện bởi 2 con đường khác nhau (cha và mẹ).
+
+ Để tránh điều đó, chúng ta viết lại
+
+sister(X,Y) :- mother(M,X), father(F,X), mother(M,Y), father(F,Y), woman(X), X<>Y.
+
+woman(hien).
+
+mother(lan,son).
+
+mother(lan,hien).
+
+father(hung,son).
+
+father(hung,hien).
+
+goal: sister(hien, P)
+
+```prolog
+sister(hien, P).
+hien = X
+Y = P
+
+mother(M, hien), father(F, hien),
+mother(M, P), father(F, P),
+woman(hien),
+\= (hien, Y)
+
+M = lan, F = hung
+mother(lan, P), father(hung, P),
+woman(hien),
+\= (hien, Y)
+
+P = son
+mother(lan, son), father(hung, son),
+woman(hien),
+\= (hien, son)
+woman(hien),
+\= (hien, son)
+\= (hien, son)
+Thành công
+P = hien
+mother(lan, hien), father(hung, hien),
+woman(hien),
+\= (hien, hien)
+woman(hien),
+\= (hien, hien)
+\= (hien, hien)
+Thất bại
+```
+
+## Bộ ký tự và từ khóa
+
+ Prolog dùng bộ ký tự sau:
+
+ Các chữ cái và chữ số $( \mathrm { A }   -   \mathrm { Z } ,   \mathrm { a }   -   \mathrm { z } ,   0   -   9 )$
+
+ Các toán tử $( + , - , * , / , < , - , > )$
+
+ Các ký hiệu đặc biệt
+
+##  Một vài từ khóa
+
+ Trace: Khi có từ khoá này ở đầu chương trình, thì chương trình được thực hiện từng bước để theo dõi
+
+ Fail: Khi ta dùng goal nội, để nhận về tất cả các kết quả khi chạy goal nội, ta dùng toán tử Fail
+
+ ! hay còn gọi là nhát cắt, nhận chỉ một kết quả từ goal ngoại, ta dùng ký hiệu !
+
+## Kiểu dữ liệu chuẩn
+
+Kiểu do prolog định nghĩa sẵn: char,integer, real string và symbol
+
+ char: ký tự, hằng phải nằm trong dấu nháy: „a‟, „#‟
+
+ integer: -32768 đến 32767
+
+ real: số thực
+
+ string: chuỗi ký tự, hằng chuỗi ký tự nằm trong dấu nháy kép; ”prolog”
+
+## Kiểu do người dùng định nghĩa
+
+ Kiểu mẩu tin
+
+```txt
+☐ Cú pháp <tên kiểu màu tin> = tên màu tin (danh sách
+các kiểu phần tử)
+Domains
+ten, tac_gia, nha_xb, dia_chi = string
+nam, thang, so_luong = integer
+dien_tich = real
+nam_xb = nxb(thang, nam)
+```
+
+## Kỹ thuật đệ quy
+
+ Sử dụng đệ quy khi một vị từ được định nghĩa nhờ vào chính vị từ đó
+
+ Trường hợp dừng được thể hiện bằng một sự kiện
+
+##  VD
+
+```prolog
+Predicates
+    Facto (integer, integer)
+Clauses
+    Facto(0,1):- !.
+    Facto(N, Y) :- N>0,M = N-1, facto(M, Z), Y=N*Z.
+```
+
+## Các hàm xuất nhập chuẩn
+
+##  Xuất ra màn hình
+
+ write( Arg1, Arg2, … ,Argn) in ra màn hình giá trị của các đối số.
+
+ writef(đinh\_dang, Arg1, Arg2, … ,Argn) in ra màn hình giá trị của các đối số theo định\_dạng
+
+ Các định\_dạng
+
+ “%d”: In số thập phân bình thường; đối số phải là char hoặc integer
+
+“%c”: Đối số là một số integer, in ký tự có mã Ascci là đối số đó, chẳng hạn writef(“%c”,65) được A
+
+ “%e”: In số thực dưới dạng lũy thừa của 10
+
+ “%x”: In số Hexa; đối số phải là char hoặc integer
+
+ “%s”: In một chuỗi hoặc một symbol
+
+## Các hàm xuất nhập chuẩn (tt)
+
+ Nhập vào từ bàn phím
+
+ Readln(X): Nhập một chuỗi ký tự vào biến X
+
+ ReadInt(X): Nhập một số nguyên vào biến X
+
+ ReadReal(X): Nhập một số thực vào biến X
+
+ ReadChar(X): Nhập vào một ký tự vào biến X
+
+## Link demo & software
+
+ Clause Deduction
+
+ [AISpace](http://www.aispace.org/deduction/index.shtml)
+
+ SWI-Prolog
+
+ [www.swi-prolog.org](http://www.swi-prolog.org/)
+
+##  GNU-Prolog
+
+ [gnu-prolog.inria.fr](http://gnu-prolog.inria.fr/)
+
+# Chương 8: Tri thức và suy luận không chắc chắn
+
+Giảng viên: Nguyễn Văn Hòa Khoa CNTT - ĐH An Giang
+
+## Nội dung
+
+ Giới thiệu xác suất
+
+ Luật Bayes, định lí Bayes
+
+ Certainty factors – Hệ số chắc chắn
+
+ Hệ chuyên gia MYCIN
+
+ Logic mờ và ứng dụng
+
+## Giới thiệu
+
+Các nguyên nhân của sự không chắc chắn
+
+ Dữ liệu/thông tin/tri thức có thể: không đủ, không đáng tin cậy, không đúng, không chính xác
+
+ Các phép suy luận có thể không hợp logic: suy luận ngược từ kết luận về điều kiện (abduction reasoning)
+
+ Việc mô tả đầy đủ và chính xác đòi hỏi độ phức tạp tính toán,...
+
+ Xử lý trường hợp không chắc chắn:
+
+ Tiếp cận thống kê: quan tâm đến mức độ tin tưởng (belief) của một khẳng định
+
+ Lý thuyết xác suất Bayesian
+
+ Đại số chắc chắn Stanford
+
+ Suy luận theo Loggic mờ: mức độ thật của một khẳng định
+
+## Xác suất
+
+ Hữu dụng để
+
+ Mô tả một thế giới hoàn toàn ngẫu nhiên (chơi bài,…)
+
+ Mô tả một thế giới bình thường (mối tương quan thống kê)
+
+ Mô tả các ngoại lệ (tỉ lệ xuất hiện lỗi)
+
+ Làm cơ sở cho việc học của máy (quy nạp, cây quyết định,…)
+
+ Thường xác suất được dùng cho
+
+ Sự kiện: xác suất của việc quan sát một chứng cớ nào đó.
+
+ Giả thuyết: xác suất để giả thuyết đúng.
+
+Theo xác suất truyền thống: tần số xuất hiện tương đối của một sự kiện trong một thời gian dài sẽ tiến đến xác suất của nó.
+
+## Lý thuyết xác suất
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Cho các sự kiện (mệnh đề) $e_1 \ldots e_n$:
+    P(e_i) ∈ [0,1] (i = 1,...,n)
+    P(e_1) + P(e_2) + ... + P(e_n) = 1
+Ví dụ: đồng xu tốt:    P(mặt_sấp) = P(mặt_ngửa) = 0.5
+    đồng xu không đều: P(mặt_sấp) = 0.7    P(mặt_ngửa) = 0.3
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- Nếu sự kiện $e_1$ và $e_2$ độc lập nhau:
+  $\mathrm{P(e_1 \wedge e_2) = P(e_1) * P(e_2)}$
+  $\mathrm{P(e_1 \vee e_2) = P(e_1) + P(e_2) - P(e_1) * P(e_2)}$
+  $\mathrm{P(\neg e) = 1 - P(e)}$
+- Ví dụ: tung 2 đồng xu: các khả năng có thể xảy ra là SS SN NS NN, suy ra:
+  $\mathrm{P(S \wedge N) = \frac{1}{4} = 0.25} \quad \mathrm{P(S \vee N) = \frac{3}{4} = 0.75}$
+</div>
+
+## Xác suất có điều kiện
+
+Xác suất tiên nghiệm (prior probability) hay xs vô điều kiện (unconditional probability): là xs của một sự kiện trong điều kiện không có tri thức bổ sung cho sự có mặt hay vắng mặt của nó.
+
+Xác suất hậu nghiệm (posterior probability) hay xs có điều kiện (conditional probability): là xs của một sự kiện khi biết trước một hay nhiều sự kiện khác
+
+$$
+\mathrm{P} (\mathrm{e} _ {1} | \mathrm{e} _ {2}) = \frac {\mathrm{P} (\mathrm{e} _ {1} \land \mathrm{e} _ {2})}{\mathrm{P} (\mathrm{e} _ {2})}
+$$
+
+ <u>Ví dụ</u>: $\mathrm{P}(\mathrm{c}\mathrm{i}\mathrm{m})=0.001,\mathrm{~P}(\mathrm{s}\acute{\mathrm{o}}\mathrm{t})=0.003;\mathrm{~P}(\mathrm{c}\mathrm{i}\mathrm{m}\wedge\mathrm{s}\acute{\mathrm{o}}\mathrm{t})=0.000003$ nhưng cúm và sốt là các sự kiện không độc lập các chuyên gia cho biết: $\mathrm{P}(\mathrm{s} \acute{\mathrm{o}} \mathrm{t} \mid \mathrm{c} \acute{\mathrm{u}} \mathrm{m})=0.9$
+
+## Suy luận Bayesian (1)
+
+P(h|e) là xác suất khẳng định giả thuyết h đúng cho trước bằng chứng e.
+
+$$
+\mathrm{P} (\mathrm{h} | \mathrm{e}) = \frac {\mathrm{P} (\mathrm{e} | \mathrm{h}) * \mathrm{P} (\mathrm{h})}{\mathrm{P} (\mathrm{e})} \quad <   = \text {luật Bayes}
+$$
+
+Công thức này nói rằng xác suất đúng của giả thuyết h khi quan sát được bằng chứng e, bằng với xác suất cho rằng chúng ta sẽ quan sát được bằng chứng e nếu giả thuyết h là đúng, nhân với xác suất tiên nghiệm của h, tất cả chia cho xác suất tiên nghiệm của việc quan sát được bằng chứng e.
+
+## Suy luận Bayesian (2)
+
+<u>Ví dụ</u>: Bằng chứng (triệu chứng): bệnh nhân bị sốt Giả thuyết (bệnh): bệnh nhân bị cảm cúm
+
+$$
+\mathrm{P} (\mathrm{c} \acute {\mathrm{u}} \mathrm{m} | \mathrm{s} \acute {\mathrm{o}} \mathrm{t}) = \frac {\mathrm{P} (\mathrm{c} \acute {\mathrm{u}} \mathrm{m}) * \mathrm{P} (\mathrm{s} \acute {\mathrm{o}} \mathrm{t} | \mathrm{c} \acute {\mathrm{u}} \mathrm{m})}{\mathrm{P} (\mathrm{s} \acute {\mathrm{o}} \mathrm{t})} = \frac {0 . 0 0 1 * 0 . 9}{0 . 0 0 3} = 0. 3
+$$
+
+<u>Các con số ở vế phải thì dễ đạt được hơn con số ở vế trái</u>
+
+ Khi nào bằng chứng e không làm tăng xác suất đúng của giả thuyết h?
+
+ Khi xác suất của giả thuyết h đã là 1.0
+
+ Khi bằng chứng e không liên quan gì đến giả thuyết h
+
+## Tại sao sử dụng luật Bayes?
+
+Tri thức về nguyên nhân (knowledge of causes): P (sốt | cúm)
+
+thì dễ dàng có được hơn là tri thức về chẩn đoán (diagnostic knowledge):
+
+P (cúm | sốt).
+
+Luật Bayes cho phép chúng ta sử dụng tri thức về nguyên nhân để suy ra tri thức về chẩn đoán.
+
+## Các vấn đề trong suy luận Bayes
+
+Việc tính toán các xác suất tiên nghiêm và hậu nghiệm <u>liên quan đòi hỏi một sự thu thập dữ liệu rất lớn</u>
+
+ Trong thực tế phải xử lý nhiều triệu chứng
+
+ Chỉ có vài triệu chứng là độc lập nhau:
+
+$$
+\mathrm{P} (\mathrm{s}_{\mathrm{i}}|\mathrm{s}_{\mathrm{j}}) = \mathrm{P} (\mathrm{s}_{\mathrm{i}})
+$$
+
+ Nếu chúng không độc lập nhau:
+
+P(d $\left| s_{1} \& s_{2} \& \ldots s_{n} \right| = \frac{\mathrm{P}(\mathrm{d}) * \mathrm{P}(s_{1} \& s_{2} \& \ldots s_{n} \mid \mathrm{d})}{\mathrm{P}(s_{1} \& s_{2} \& \ldots s_{n})}$
+
+ Đối với thông tin phủ định:
+
+$\mathrm{P}(\mathrm{not} \mathrm{s}) = 1 - \mathrm{P}(\mathrm{s})$ và P(not d | s) = 1 – P(d | s)
+
+## Sự độc lập của các điều kiện trong luật Bayes
+
+Trong thực tế có nhiều giả thuyết canh tranh nhau, vì vậy công thức Bayes tổng quát nhất là
+
+$$
+\mathrm{P} (\mathrm{h} _ {\mathrm{i}} \mid \mathrm{e}) = \frac {\mathrm{P} (\mathrm{e} \mid \mathrm{h} _ {\mathrm{i}}) * \mathrm{P} (\mathrm{h} _ {\mathrm{i}})}\Sigma_ {\mathrm{k}} \left(\mathrm{P} (\mathrm{e} \mid \mathrm{h} _ {\mathrm{k}}) * \mathrm{P} (\mathrm{h} _ {\mathrm{k}})\right)
+$$
+
+Đòi hỏi tất cả các $\mathbf { P } ( \mathbf { e } \mid \mathbf { h } _ { \mathrm { k } } )$ phải **độc lập nhau**.
+
+ Giả sử các chấm đỏ và sốt là độc lập về điều kiện khi cho trước bệnh sởi P(các chấm đỏ, $\mathrm{s\acute{o}t\mid s\acute{o}i)=P(c\acute{a}c\acute{c}\acute{h}\acute{a}m\acute{d}\acute{o}\mid s\acute{o}i)\mathrm{P\left(s\acute{o}t\mid s\acute{o}i\right)}}$
+
+ Khi đó ta có thể kết luận P(các chấm $\frac{\mathrm{d}\dot{\mathrm{o}}, \mathrm{s}\dot{\mathrm{o}}\mathrm{t}, \mathrm{s}\dot{\mathrm{o}}\mathrm{i})=\mathrm{P}(\mathrm{c}\dot{\mathrm{a}}\mathrm{c}\mathrm{ch}\dot{\mathrm{a}}\mathrm{m}\mathrm{d}\dot{\mathrm{o}}, \mathrm{s}\dot{\mathrm{o}}\mathrm{t}\mid\mathrm{s}\dot{\mathrm{o}}\mathrm{i})\mathrm{P}(\mathrm{s}\dot{\mathrm{o}}\mathrm{i})}{=\mathrm{P}(\mathrm{c}\dot{\mathrm{a}}\mathrm{c}\mathrm{ch}\dot{\mathrm{a}}\mathrm{m}\mathrm{d}\dot{\mathrm{o}}\mid\mathrm{s}\dot{\mathrm{o}}\mathrm{i})\mathrm{P}(\mathrm{s}\dot{\mathrm{o}}\mathrm{t}\mid\mathrm{s}\dot{\mathrm{o}}\mathrm{i})\mathrm{P}(\mathrm{s}\dot{\mathrm{o}}\mathrm{i})}$
+
+## Các yếu tố chắc chắn Stanford
+
+Không phải là xác suất, mà là độ đo sự tự tin Lý thuyết chắc chắn là một cố gắng hình thức hóa tiếp cận heuristic vào suy luận với sự không chắc chắn
+
+Các chuyên gia đo sự tự tin trong các kết luận, suy luận bằng từ „không có lẽ‟, „gần như chắc chắn‟, „có khả năng cao‟, „có thể‟
+
+Các chuyên gia có thể đặt sự tự tin vào các mối quan hệ mà không phải có cảm giác là nó không đúng MB(H | E) đo độ tin tưởng của giả thuyết H, cho trước E MD(H | E) đo độ không tin tưởng
+
+0 < MB(H | E) < 1 trong khi MD(H | E) = 0
+
+0 < MD(H | E) < 1 trong khi MB(H | E) = 0
+
+CF (H | E) = MB(H | E) – MD(H | E)
+
+## Đại số chắc chắn Stanford (1)
+
+**CF(fact)** **[-1,1] :** dữ liệu đã cho, dữ liệu suy luận được, giả thuyết
+
+ Một CF tiến về 1 cho thấy sự tin tưởng dữ kiện là đúng
+
+ Một CF tiến về -1 cho thấy sự tin tưởng dữ kiện là không đúng
+
+Một CF xung quanh 0 cho thấy tồn tại rất ít bằng cớ cho việc ủng hộ hay chống lại dữ kiện
+
+**CF(rule)** **[-1,1] :** thể hiện sự tin tưởng của các chuyên gia vào tin cậy của luật
+
+ Kết hợp các CF **CF ( A And B) = Min[CF(A), CF(B)] CF (A Or B) = Max[CF(A), CF(B)]**
+
+<u>Ví dụ:</u> CF(bệnh nhân bị sốt) = 0.9
+
+CF(bệnh nhân bị sốt And bệnh nhân bị hắt hơi) = 0.6
+
+CF(bệnh nhân bị sốt Or bệnh nhân bị hắt hơi) = 0.9
+
+## Đại số chắc chắn Stanford (2)
+
+ Truyền CF trên các luật:
+
+CF(Q) = CF(If P Then $\mathbf { Q } ) \operatorname { { } ^ { \ast } C F } ( \mathbf { P } )$
+
+<u>Ví dụ</u>: CF(bệnh nhân bị $\mathrm { s \acute { \hat { o } t } ) = 0 . 8 }$ CF(If bệnh nhân bị sốt Then bệnh nhân bị cúm) = 0.5 CF(bệnh nhân bị cúm) = 0.4
+
+ Kết hợp nhiều CF từ nhiều luật If P Then $\mathrm { Q \to C F _ { 1 } ( Q ) }$ If R Then $\mathrm { Q } \twoheadrightarrow \mathrm { C F } _ { 2 } ( \mathrm { Q } )$ $\frac{\begin{array}{c}\mathrm{CF}(\mathrm{Q})=\mathrm{CF}_{1}(\mathrm{Q})+\mathrm{CF}_{2}(\mathrm{Q})-\mathrm{CF}_{1}(\mathrm{Q}) * \mathrm{CF}_{2}(\mathrm{Q}) \\=\mathrm{CF}_{1}(\mathrm{Q})+\mathrm{CF}_{2}(\mathrm{Q})+\mathrm{CF}_{1}(\mathrm{Q}) * \mathrm{CF}_{2}(\mathrm{Q}) \\=\end{array}}{\begin{array}{c}\mathrm{CF}_{1}(\mathrm{Q})+\mathrm{CF}_{2}(\mathrm{Q}) \\1-\mathrm{Min}\left(|\mathrm{CF}_{1}(\mathrm{Q})|,|\mathrm{CF}_{2}(\mathrm{Q})|\right)\end{array}}$ Khi $\mathrm{CF}_{1} \& \mathrm{CF}_{2}>0$ Khi CF1 & CF2 < 0 Ngoài ra 14 14
+
+Đại số chắc chắn Stanford (3) <u>Ví dụ:</u> CF(bệnh nhân bị $\mathrm { s } \dot { \hat { \mathrm { o } } } \mathrm { t } ) = 1$ CF(bệnh nhân bị hắc hơi) = 0.8 CF(If bệnh nhân bị hắc hơi Then bệnh nhân bị cúm) = 0.5 <u>CF(If bệnh nhân bị sốt Then bệnh nhân bị cúm) = 0.6</u> CF (bệnh nhân bị cúm) = 0.4 CF (bệnh nhân bị cúm) = 0.6 CF(bệnh nhân bị cúm) = 0.4 + 0.6 – 0.24 = 0.76 0.0 0.2 0.4 0.6 0.8 1.0 CF<sub>1</sub> CF<sub>2</sub>
+
+<u>Tính chất:</u> kết quả CF phải nằm trong khoảng $\left[ -1,+1 \right]$ kết hợp các CF nghịch nhau sẽ xóa bớt lẫn nhau Phép đo CF kết hợp phải mang tính tuyến tính
+
+## Mycin
+
+ <u>Mục đích:</u> Giúp đỡ các bác sĩ trong việc chẩn đoán và điều trị các bệnh truyền nhiễm
+
+Nhận dạng các cơ quan bị nhiễm bệnh
+
+2. Chọn các loại thuốc khống chế các cơ quan này
+
+ <u>Giao diện người dùng:</u> Đối thoại với bác sĩ để thu thập dữ liệu
+
+Dữ liệu tổng quát về bệnh nhân
+
+2. Các kết quả xét nghiệm
+
+3. Các triệu chứng của bệnh nhân
+
+EMYCIN = MYCIN – Tri thức Y học <u>= Sườn hệ chuyên gia (ES shell)</u>
+
+## Biểu diễn tri thức của Mycin
+
+Dữ kiện: 
+
+| Thông số | Ngữ cảnh | Giá trị | CF |
+| --- | --- | --- | --- |
+| Nhận ra | Cơ_quan_1 | Klebsiella | .25 |
+| Nhạy cảm | Cơ_quan_1 | Penicillin | -1.0 |
+
+ Luật: Luật + diễn giải của luật
+
+IF (a) the infection is primary-bacteria, and
+
+(b) the site of the culture is one of the serile sites, and
+
+(c) the suspected portal of entry is gastrointestinal tract THEN there is suggestive evidence **(.7)** that infection is bacteroid IF: (AND (same\_context infection primary\_bacteria) (membf\_context site sterilesite) (same\_context portal GI) )
+
+THEN: (conclude context\_ident bacteroid tally **.7**)
+
+## Suy luận của Mycin
+
+ <u>Ngữ cảnh:</u> các đối tượng được thảo luận bởi Mycin  Các kiểu đối tượng khác nhau: bệnh nhân, thuốc,…
+
+ Được tổ chức trong một cây
+
+Động cơ suy diễn: tiếp cận hướng từ mục tiêu hay suy diễn lùi
+
+ Tìm kiếm sâu gần như là vét cạn
+
+ Có thể suy luận với thông tin không chắc chắn
+
+ Có thể suy luận với dữ liệu không đầy đủ
+
+Các tiện ích giải thích: Mô-đun „hỏi-trả lời‟ với các câu hỏi tại sao, như thế nào.
+
+## Ví dụ Mycin
+
+Chân của John đang bị đau (1.0). Khi tôi kiểm tra nó, thấy nó sưng tấy (0.6) and hơi đỏ (0.1). Tôi không có nhiệt kế nhưng tôi nghĩ anh ta có bị sốt (0.4). Tôi biết John là một vận động viên marathon, các khớp của anh ta thường xuyên làm việc quá tải (1.0). John có thể di chuyển chân của anh ấy
+
+Liệu chân của John bị gãy, quá mỏi, hay bị nhiễm trùng?
+
+1. IF đau và sốt THEN bị nhiễm trùng 0.6
+
+2. IF đau và sưng THEN bị chấn thương 0.8
+
+3. IF quá tải THEN bị nhiễm trùng 0.5
+
+4. IF bị chấn thương AND đỏ THEN bị gãy 0.8
+
+5. <u>IF bị chấn thương AND di chuyển được THEN quá mỏi 1.0</u>
+
+## Một luật heuristic của Mycin
+
+## IF tuổi bệnh nhân <7 THEN không nên cấp thuốc tetracyline
+
+##  Tri thức miền
+
+ Tetracyline làm đổi màu xương đang phát triển
+
+ trẻ em dưới 7 tuổi thì đang mọc răng
+
+##  Tri thức giải quyết vấn đề
+
+ Trước khi kê một loại thuốc phải kiểm tra các chống chỉ định
+
+ Có hai loại chống chỉ định: liên quan đến bệnh và bệnh nhân
+
+##  Tri thức về thế giới:
+
+ Hàm răng màu nâu thì không đẹp
+
+Luật heuristic biên dịch tất cả những thông tin này và vì vậy hỗ trợ một phương pháp giải quyết vấn đề hiệu quả
+
+## Điều khiển cài trong luật của Mycin
+
+## IF sự nhiễm trùng là bệnh viêm màng não
+
+And sự nhiễm trùng là do vi khuẩn
+
+And chỉ có chứng cớ gián tiếp
+
+And tuổi của bệnh nhân > 16
+
+And bệnh nhân là một người nghiện rượu
+
+THEN chứng cớ cho viêm phổi song cầu khuẩn 0.7
+
+##  Tri thức miền
+
+ Các bệnh nhân bị nghiện rượu thì đáng nghi ngờ với vi khuẩn viêm phổi song cầu khuẩn
+
+ Tri thức giải quyết vấn đề
+
+ Lọc sự chẩn đoán theo từng bước
+
+##  Tri thức về thế giới
+
+ Người nghiện rượu thì hiếm khi dưới 17 tuổi
+
+ Câu hỏi gây sốc cho cha mẹ của các trẻ nhỏ.
+
+## Logic Mờ (Fuzzy Logic)
+
+ Một số phần của thế giới là nhị phân  Con mimi của tôi là một con mèo
+
+ Một số phần thì không
+
+ An thì khá cao, Bảo thì thuộc loại cao, tôi thì hơi cao, Trân thì không cao lắm
+
+ Nhị phân có thể biểu diễn bằng một đồ thị
+
+ Logic mờ cũng có thể biểu diễn bằng đồ thị, nhưng là đồ thị liên tục
+
+## Tập Mờ
+
+ Cho S là một tập hợp và x là một phần tử của tập hợp đó. Một tập con mờ F của S được định nghĩa bởi một **hàm tư cách thành viên** **F(x)** đo “mức độ” mà theo đó x thuộc về tập F. Trong đó, $0 \leq \mu \mathrm { F ( x ) } \leq 1$
+
+ Khi $\mu \mathrm { F } ( \mathrm { x } ) = 0 \qquad \Rightarrow \quad \mathrm { x } \not \in$ F hoàn toàn
+
+ Khi $\begin{array} { r l r } { \mu \mathrm { F } ( \mathrm { x } ) = 1 } & { { } } & { \implies \mathrm { x } \in \mathrm { F } } \end{array}$ hoàn toàn
+
+ Nếu $\nabla \mathbf{x}, \mu \mathbf{F}(\mathbf{x}) = 0$ hoặc 1
+
+thì F được xem là “giòn”
+
+ Hàm thành viên F(x) thường được biểu diễn dưới dạng đồ thị
+
+## Ví dụ Tập Mờ
+
+<u>Ví dụ :</u> S là tập hợp tất cả các số nguyên dương và F là tập con mờ của S được gọi là “số nguyên nhỏ”
+
+![](images/page_269_image_2.jpg)
+
+Ví dụ: Một sự biểu diễn tập mờ cho các tập người đàn ông thấp, trung bình, và cao
+
+![](images/page_269_chart_4.jpg)
+
+## Tính Chất của Tập Mờ
+
+ Hai tập mờ bằng nhau:
+
+$$
+\mathrm{A} = \mathrm{Bneu} \forall \mathrm{x} \in \mathrm{X}, \mu \mathrm{A} (\mathrm{x}) = \mu \mathrm{B} (\mathrm{x})
+$$
+
+ $T \hat { q } p$ con: $\mathbf { A } \subseteq \mathbf { B }$ nếu $\forall \mathrm { x } \in \mathbf { X } ,   \mu \mathrm { A } \left( \mathrm { x } \right) \leq \mu \mathrm { B } \left( \mathrm { x } \right)$
+
+ Một phần tử có thể thuộc về nhiều hơn một tập mờ Ví dụ: một người đàn ông cao $5 ^ { \circ } 1 0 ^ { \circ }$ thuộc về cả hai tập “trung bình” và “cao”
+
+Tổng các giá trị mờ của một phần tử khác 1: $\mu \mathrm{Th} \acute{\mathrm{ap}}(\mathrm{x}) + \mu \mathrm{Trungbish}(\mathrm{x}) + \mu \mathrm{Cao}(\mathrm{x}) \neq 1$
+
+## Mờ hóa (fuzzification)
+
+Từ hàm thành viên cho trước, ta có thể suy ra được mức độ một thành viên thuộc về một tập hợp, hay giá trị mờ
+
+![](images/page_271_chart_2.jpg)
+
+## Hợp của hai tập mờ
+
+**Khái niệm**: Hợp của hai tập mờ (AB) thể hiện mức độ một phần tử thuộc về một trong hai tập là bao nhiêu
+
+ **Công thức**: $\mu \mathrm{A} \lor \mathrm{B}(\mathrm{x}) = \max (\mu \mathrm{A}(\mathrm{x}), \mu \mathrm{B}(\mathrm{x}))$
+
+ <u>Thí dụ:</u>
+
+$$
+\mu \text {Tre(Bao)} = 0. 8
+$$
+
+$$
+= \max (0. 8, 0. 3) = 0. 8
+$$
+
+![](images/page_272_chart_6.jpg)
+
+## Giao của hai tập mờ
+
+**Khái niệm**: Giao của hai tập mờ (AB) thể hiện mức độ một phần tử thuộc về cả hai tập là bao nhiêu
+
+ **Công thức**: $\mu  A  \wedge  B ( x ) = \min ( \mu  A ( x ) , \mu  B ( x ) )$
+
+ <u>Thí dụ:</u>
+
+$$
+\mu \text {Tre(Bao)} = 0. 8
+$$
+
+$$
+= \min (0. 8, 0. 3) = 0. 3
+$$
+
+![](images/page_273_chart_6.jpg)
+
+## Bù của một tập mờ
+
+Khái niệm: Bù của một tập mờ thể hiện mức độ một phần tử không thuộc về tập đó là bao nhiêu
+
+ Công thức: $\mu \neg \mathbf{A}(\mathbf{x}) = 1 - \mu \mathbf{A}(\mathbf{x})$
+
+ $T h i   d u { : }$
+
+$$
+\begin{array}{r l}&{\mu \mathrm{Tr} \mathring {\mathrm{e}} (\mathrm{Bao}) = 0. 8}\\&{\rightarrow \mu \neg \mathrm{Tr} \mathring {\mathrm{e}} (\mathrm{Bao})}\\&{\qquad = 1 - 0. 8 = 0. 2}\end{array}
+$$
+
+![](images/page_274_chart_5.jpg)
+
+## Luật mờ
+
+Một luật mờ là một biểu thức if - then được phát biểu ở dạng ngôn ngữ tự nhiên thể hiện sự phụ thuộc nhân quả giữa các biến
+
+ <u>Thí dụ:</u> **if nhiệt độ** là lạnh và **giá dầu** là rẻ **then sưởi ấm** nhiều Hoặc:
+
+**Biến**
+
+**Giá trị của biến (hay tập mờ)**
+
+**if** một người có **chiều cao** là cao và **cơ bắp** là lực lưỡng **then chơi bóng rổ** hay
+
+## Nhận xét
+
+Logic mờ không tuân theo các luật $\mathrm { v } \hat { \boldsymbol { e } }$ tính bù của logic truyền thống:
+
+$$
+\mu \neg \mathrm{A} \lor \mathrm{A} (\mathrm{x}) \equiv 1 \mathrm{và} \quad \mu \neg \mathrm{A} \land \mathrm{A} (\mathrm{x}) \equiv 0
+$$
+
+ $\underline { { T h i   d u } } .$
+
+$$
+\mu \neg \mathrm{A} \lor \mathrm{A} (\mathrm{x}) = \max (0. 8, 0. 2) = 0. 8
+$$
+
+$$
+\mu \neg \mathrm{A} \land \mathrm{A} (\mathrm{x}) = \min (0. 8, 0. 2) = 0. 2
+$$
+
+## Thủ tục ra quyết định mờ (fuzzy decision making procedure)
+
+**Mờ hóa (fuzzification)**
+
+![](images/page_277_image_2.jpg)
+
+**Suy luận mờ (fuzzy reasoning)**
+
+**Khử tính mờ (defuzzification)**
+
+Chuyển các giá trị của dữ liệu thực tế về dạng mờ
+
+Thực hiện tất cả các luật khả thi, các kết quả sẽ được kết hợp lại
+
+Chuyển kết quả ở dạng mở về dạng dữ liệu thực tế
+
+## Hệ thống mờ dùng trong điều trị bệnh
+
+ IF sốt nhẹ THEN liều lượng asperine thấp
+
+IF sốt THEN liều lượng asperine bình thường
+
+ IF sốt cao THEN liều lượng asperine cao
+
+ IF sốt rất cao THEN liều lượng asperine cao nhất
+
+![](images/page_278_image_5.jpg)
+
+## Ví dụ: Một bệnh nhân sốt ở 38.7 độ. Hãy xác định liều lượng asperince cần thiết để cấp cho bệnh nhân
+
+**Bước 1**: Mờ hóa giá trị $x = 3 8 . 8$ đã cho ta thấy 38.8 thuộc về các tập mờ như sau:
+
+![](images/page_279_chart_2.jpg)
+
+$\mu \mathrm { S \hat { o } t }$ nhẹ $\mathrm { ( x ) } = 0 . 3$ $\mu \mathrm { S } \acute { \mathrm { o } } \mathrm { t } \left( \mathrm { x } \right) = 0 . 7$
+
+$\mu \mathrm { S \hat { o } t }$ cao $( \mathrm { x } ) = 0$
+
+Sốt rất cao $( \mathrm { x } ) = 0$
+
+## Ví dụ (tt.)
+
+**Bước 2:** Ta thấy có 2 luật 1 và 2 có thể áp dụng cho ra hai liều lượng aspirine: μThp (x) = 0.3 μBinh thưòng $\mathrm { ( x ) } = 0 . 7$
+
+Kết hợp các giá trị mờ này lại ta được vùng được tô màu sau đây:
+
+![](images/page_280_image_3.jpg)
+
+## Ví dụ (tt.)
+
+**Bước 3:** Phi mờ hóa kết quả bằng cách tính trọng tâm của diện tích được tô trong hình trên: Chiu xung trc hoành ta đưc giá tr ±480mg
+
+**Kết luận**: liều lượng aspirine cần cấp cho bệnh nhân là 480mg.
