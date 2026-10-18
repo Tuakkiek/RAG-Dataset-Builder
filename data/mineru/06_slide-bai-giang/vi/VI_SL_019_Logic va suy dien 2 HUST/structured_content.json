@@ -1,0 +1,3127 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.17,
+            0.184,
+            0.821,
+            0.301
+          ],
+          "level": 2,
+          "content": "Trí Tuệ Nhân Tạo"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.26,
+            0.348,
+            0.731,
+            0.417
+          ],
+          "level": 2,
+          "content": "(Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.376,
+            0.627,
+            0.614,
+            0.675
+          ],
+          "content": "Lê Thanh Hường"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.286,
+            0.749,
+            0.731,
+            0.845
+          ],
+          "content": "Viện Công nghệ thông tin và Truyền thông\nTrường Đại Học Bách Khoa Hà Nội"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.05,
+            0.051,
+            0.529,
+            0.135
+          ],
+          "level": 2,
+          "content": "Nội dung môn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.251,
+            0.533,
+            0.318
+          ],
+          "content": "Chương 1. Tổng quan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.328,
+            0.662,
+            0.389
+          ],
+          "content": "Chương 2. Tác tử thông minh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.397,
+            0.65,
+            0.463
+          ],
+          "content": "Chương 3. Giải quyết vấn đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.473,
+            0.687,
+            0.535
+          ],
+          "content": "Chương 4. Tri thức và suy diễn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.174,
+            0.544,
+            0.489,
+            0.601
+          ],
+          "content": "Giới thiệu về logic"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.608,
+            0.421,
+            0.666
+          ],
+          "content": "□ Logic định đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.677,
+            0.378,
+            0.73
+          ],
+          "content": "□ Logic vị tù"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.139,
+            0.743,
+            0.5,
+            0.804
+          ],
+          "content": "Chương 5. Học máy"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.65,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giới hạn của Logic định đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.206,
+            0.424,
+            0.257
+          ],
+          "content": "■ Hãy xét ví dụ sau đây:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.273,
+            0.531,
+            0.317
+          ],
+          "content": "□ Tuấn là một sinh viên của HUST"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.334,
+            0.684,
+            0.381
+          ],
+          "content": "□ Mọi sinh viên của HUST đều học môn Đại số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.396,
+            0.897,
+            0.444
+          ],
+          "content": "☐ Vì Tuấn là một sinh viên của HUST, nên Tuấn học môn Đại số"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.481,
+            0.387,
+            0.535
+          ],
+          "level": 2,
+          "content": "■ Trong logic định đề:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.551,
+            0.707,
+            0.598
+          ],
+          "content": "□ Định đề p: “Tuấn là một sinh viên của HUST”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.613,
+            0.86,
+            0.661
+          ],
+          "content": "□ Định đề q: “Mọi sinh viên của HUST đều học môn Đại số”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.675,
+            0.566,
+            0.723
+          ],
+          "content": "□ Định đề r: “Tuấn học môn Đại số”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.749,
+            0.926,
+            0.798
+          ],
+          "content": "☐ Nhuếng: (trong logic định đề) r không thể suy ra được từ p và q!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.059,
+            0.057,
+            0.576,
+            0.137
+          ],
+          "level": 2,
+          "content": "Logic vị từ (FOL): Ví dụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.191,
+            0.918,
+            0.284
+          ],
+          "content": "■ Ví dụ nêu trên có thể được biểu diễn trong logic vị từ bồi các biểu thức (logic vị từ) sau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.29,
+            0.873,
+            0.334
+          ],
+          "content": "☐ HUST Student (Tuan): “Tuân là một sinh viên của HUST”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.344,
+            0.926,
+            0.426
+          ],
+          "content": "☐ ∀x:HUST Student(x) → Studies\\_Algebra(x): “Mọi sinh viên của HUST đều học môn Đại số”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.43,
+            0.786,
+            0.479
+          ],
+          "content": "□ Studies\\_Algebra (Tuan): “Tuân học môn Đại số”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.497,
+            0.799,
+            0.545
+          ],
+          "content": "■ Trong logic vị từ, chúng ta có thể chứng minh được:"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.062,
+            0.555,
+            0.84,
+            0.637
+          ],
+          "sub_type": "code",
+          "content": "```erlang\n{HUST_Student(Tuan), ∀x:HUST_Student(x) → Studies_Algebra(x)} ⊢ Studies_Algebra(Tuan)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.656,
+            0.511,
+            0.701
+          ],
+          "content": "■ Với ví dụ trên, trong logic vị tử:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.707,
+            0.898,
+            0.751
+          ],
+          "content": "□ Các ký hiệu Tuan, x được gọi là các phần tử (Tuan là hằng, x là biến)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.757,
+            0.839,
+            0.796
+          ],
+          "content": "□ Các ký hiệu HUST\\_Student và Studies\\_Algebra là các vị tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.805,
+            0.468,
+            0.845
+          ],
+          "content": "□ Ký hiệu ∀là lượng từ với mọi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.848,
+            0.927,
+            0.892
+          ],
+          "content": "□ Các phần tử, các vị từ và các lượng từ cho phép biểu diễn các biểu thức"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.935,
+            0.943,
+            0.955
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.479,
+            0.136
+          ],
+          "level": 2,
+          "content": "FOL: Ngôn ngữ (1)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.202,
+            0.473,
+            0.257
+          ],
+          "level": 2,
+          "content": "■ 4 kiểu ký hiệu (symbols)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.262,
+            0.943,
+            0.347
+          ],
+          "content": "Hằng (Constants): Các tên của các đối tượng trong một lĩnh vực bài toán cụ thể (ví dụ: Tuan)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.352,
+            0.921,
+            0.439
+          ],
+          "content": "☐ Biến (Variables): Các ký hiệu mà giá trị thay đổi đối với các đối tượng khác nhau (ví dụ: x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.445,
+            0.938,
+            0.571
+          ],
+          "content": "☐ Ký hiệu hàm (Function symbols): Các ký hiệu biểu diễn ánh xạ (quan hệ hàm) từ các đối tượng của miền (domain) này sang các đối tượng của miền khác (ví dụ: plus)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.577,
+            0.95,
+            0.663
+          ],
+          "content": "☐ Các vị tử (Predicates): Các quan hệ mà giá trị logic là đúng hoặc sai (ví dụ: HUST\\_Student and Studies\\_Algebra)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.699,
+            0.912,
+            0.753
+          ],
+          "level": 2,
+          "content": "■ Môi ký hiệu hàm hoặc vị từ đều có một tập các tham số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.759,
+            0.962,
+            0.805
+          ],
+          "content": "☐ Ví dụ: HUST\\_Student và Studies\\_Algebra là các vị từ có 1 tham số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.811,
+            0.679,
+            0.857
+          ],
+          "content": "☐ Ví dụ: plus là một ký hiệu hàm có 2 tham số"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.479,
+            0.135
+          ],
+          "level": 2,
+          "content": "FOL: Ngôn ngữ (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.201,
+            0.912,
+            0.257
+          ],
+          "level": 2,
+          "content": "■ Một phần tử (term) được định nghĩa (truy hồi) như sau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.26,
+            0.47,
+            0.307
+          ],
+          "content": "□ Một hằng số là một phần tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.312,
+            0.424,
+            0.358
+          ],
+          "content": "□ Một biến là một phần tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.363,
+            0.912,
+            0.451
+          ],
+          "content": "☐ Nếu $t_1, t_2, \\ldots, t_n$ là các thành phần và $f$ là một ký hiệu hàm có $n$ tham số, thì $f(t_1, t_2, \\ldots, t_n)$ là một phần tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.455,
+            0.548,
+            0.503
+          ],
+          "content": "☐ Không còn gì khác là một phần tử"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.54,
+            0.52,
+            0.593
+          ],
+          "level": 2,
+          "content": "■ Các ví dụ của phần tử (term)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.604,
+            0.199,
+            0.64
+          ],
+          "content": "□ Tuan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.653,
+            0.149,
+            0.691
+          ],
+          "content": "□ 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.705,
+            0.325,
+            0.743
+          ],
+          "content": "□ friend(Tuan)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.756,
+            0.276,
+            0.794
+          ],
+          "content": "□ friend(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.807,
+            0.276,
+            0.847
+          ],
+          "content": "□ plus (x, 2)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.961
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.935,
+            0.943,
+            0.955
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.059,
+            0.476,
+            0.135
+          ],
+          "level": 2,
+          "content": "FOL: Language (3)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.205,
+            0.462,
+            0.255
+          ],
+          "level": 2,
+          "content": "■ Các nguyên tử (Atoms)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.261,
+            0.912,
+            0.349
+          ],
+          "content": "☐ Nếu $t_1, t_2, \\ldots, t_n$ là các thành phần (terms) và $p$ là một vị từ có $n$ tham số, thì $p(t_1, t_2, \\ldots, t_n)$ là một nguyên tử (atom)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.355,
+            0.791,
+            0.438
+          ],
+          "content": "☐ Ví dụ: HUST\\_Studies (Tuan), HUST\\_Studies (x), Studies\\_Algebra (Tuan), Studies (x)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.477,
+            0.892,
+            0.531
+          ],
+          "level": 2,
+          "content": "■ Các biểu thức (Formulas) được định nghĩa như sau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.537,
+            0.606,
+            0.582
+          ],
+          "content": "□ Một nguyên tử (atom) là một biểu thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.587,
+            0.92,
+            0.633
+          ],
+          "content": "□ Nếu φ và ψ là các biểu thức, thì ¬φ và φ∧ψ là các biểu thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.637,
+            0.942,
+            0.721
+          ],
+          "content": "□ Nếu φ là một biểu thức và x là một biến, thì ∀x:φ(x) là một biểu thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.729,
+            0.569,
+            0.777
+          ],
+          "content": "☐ Không còn gì khác là một biểu thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.813,
+            0.881,
+            0.868
+          ],
+          "content": "■ Lưu ý: ∃x : φ(x) được định nghĩa bằng ¬∀x : ¬φ(x)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.944,
+            0.955
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.49,
+            0.135
+          ],
+          "level": 2,
+          "content": "FOL: Ngũ nghĩa (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.202,
+            0.932,
+            0.304
+          ],
+          "content": "■ Một phép diễn giải (interpretation) của một biểu thức φ được biểu diễn bằng cặp &lt;D,I&gt;"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.329,
+            0.777,
+            0.385
+          ],
+          "content": "■ Miền giá trị (Domain) D là một tập khác rộng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.412,
+            0.966,
+            0.559
+          ],
+          "content": "\\- Hàm diễn giải (Interpretation function) I là một phép gán giá trị đối với mỗi hằng, ký hiệu hàm, và ký hiệu vị từ — sao cho:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.575,
+            0.447,
+            0.624
+          ],
+          "content": "☐ Đối với hằng c:  $\\mathcal{I}(c) \\in \\mathcal{D}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.639,
+            0.788,
+            0.687
+          ],
+          "content": "☐ Đối với ký hiệu hàm (có n tham số) f: $I(f) \\colon \\mathcal{D}^{n} \\to \\mathcal{D}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.702,
+            0.943,
+            0.75
+          ],
+          "content": "☐ Đối với ký hiệu vị từ (có n tham số) P: $\\mathcal{I}(\\mathrm{P}) \\colon \\mathcal{D}^{\\mathrm{n}} \\to \\{\\text{true, false}\\}$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.49,
+            0.135
+          ],
+          "level": 2,
+          "content": "FOL: Ngũ nghĩa (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.962,
+            0.304
+          ],
+          "content": "■ Diễn giải đối với một biểu thức logic vị từ. Giả sử φ, ψ và λ là các biểu thức vị từ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.317,
+            0.87,
+            0.423
+          ],
+          "content": "□ Nếu φ là ¬ψ, thì  $I(\\phi)=sai$  nếu  $I(\\psi)=dúng$ , và  $I(\\phi)=dúng$  nếu  $I(\\psi)=sai$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.436,
+            0.934,
+            0.542
+          ],
+          "content": "☐ Nếu φ là (ψ∧λ), thì  $\\mathcal{I}(\\phi)=\\text{sai nêu } \\mathcal{I}(\\psi) \\text{ hoặc } \\mathcal{I}(\\lambda) \\text{là sai, và } \\mathcal{I}(\\phi)=\\text{true nếu cả } \\mathcal{I}(\\psi) \\text{ và } \\mathcal{I}(\\lambda) \\text{là đúng}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.555,
+            0.951,
+            0.701
+          ],
+          "content": "☐ Giả sử ∀x:φ(x) là một biểu thức, thì\n$I(\\forall x:\\phi(x)) = \\text{dúng nếu } I(\\phi)(d) = \\text{dúng với mọi giá trị}$\n$d \\in D$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.933,
+            0.944,
+            0.955
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.49,
+            0.135
+          ],
+          "level": 2,
+          "content": "FOL: Ngũ nghĩa (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.928,
+            0.354
+          ],
+          "content": "■ Một biểu thức $\\phi$ là thỏa mãn được (satisfiable) nếu và chỉ nếu tồn tại một phép diễn giải $<\\mathcal{D}, I>$ sao cho $\\mathcal{I}(\\phi) -$ Chúng ta ký hiệu là: $\\models_{\\mathcal{I}} \\phi$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.364,
+            0.946,
+            0.472
+          ],
+          "content": "■ Nếu  $\\models_{I}\\phi$ , thì chúng ta nói rằng I là một mô hình (model) của  $\\phi$ . Nói cách khác, I thỏa mãn (satisfies)  $\\phi$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.485,
+            0.931,
+            0.637
+          ],
+          "content": "■ Một biểu thức là không thể thỏa mãn được (unsatisfiable) nếu và chỉ nếu không tồn tại bất kỳ phép diễn giải nào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.649,
+            0.95,
+            0.757
+          ],
+          "content": "■ Một biểu thức $\\phi$ là đúng (valid) nếu và chỉ nếu mọi phép diễn giải $\\mathcal{I}$ đều thỏa mãn $\\phi$ – Chúng ta ký hiệu là: $\\models \\phi$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.963
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.943,
+            0.956
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.562,
+            0.137
+          ],
+          "level": 2,
+          "content": "Lượng tử logic Với mọi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.786,
+            0.296
+          ],
+          "content": "■ Cú pháp của lượng tử logic Với mọi (universal quantifier):  $\\forall <Biến_{1},...,Biến_{n}>: <Mệnh đề>$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.315,
+            0.927,
+            0.408
+          ],
+          "content": "■ Ví dụ: Tất cả (mọi) sinh viên đang ngồi học trong lớp K4 đều chăm chỉ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.414,
+            0.677,
+            0.468
+          ],
+          "content": "$\\forall x: \\text{Ngoi\\_trong\\_lop}(x, K4) \\Rightarrow \\text{Cham\\_chi}(x)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.488,
+            0.934,
+            0.587
+          ],
+          "content": "■ Mệnh đề (∀x: P) là đúng trong một mô hình m, khi và chỉ khi P đúng với x là mỗi (mọi) đối tượng trong mô hình đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.606,
+            0.892,
+            0.702
+          ],
+          "content": "■ Tức là, mệnh đề (∀x: P) tương đương với sự kết hợp (và) của tất cả các trường hợp của P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.256,
+            0.703,
+            0.801,
+            0.749
+          ],
+          "content": "Ngoi\\_trong\\_lop(Hue,K4) ⇒ Cham\\_chi(Hue)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.748,
+            0.87,
+            0.793
+          ],
+          "content": "^ Ngoi\\_trong\\_lop(Cuong,K4) ⇒ Cham\\_chi(Cuong)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.793,
+            0.826,
+            0.839
+          ],
+          "content": "^ Ngoi\\_trong\\_lop(Tuan,K4) ⇒ Cham\\_chi(Tuan)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.166,
+            0.848,
+            0.303,
+            0.879
+          ],
+          "content": "^ ..."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.942,
+            0.955
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.55,
+            0.136
+          ],
+          "level": 2,
+          "content": "Lượng tử logic Tôn tại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.203,
+            0.778,
+            0.307
+          ],
+          "content": "■ Cú pháp của lượng tử logic Tôn tại (existential quantifier):  $\\exists <Biến_{1}, \\ldots, Biến_{n}> : <Mệnh đề>$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.325,
+            0.925,
+            0.419
+          ],
+          "content": "■ Ví dụ: Tồn tại (có) sinh viên đang ngồi học trong lớp K4, và là sinh viên chăm chỉ:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.425,
+            0.658,
+            0.479
+          ],
+          "content": "∃x: Ngoi\\_trong\\_lop(x,K4) ∧ Cham\\_chi(x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.499,
+            0.924,
+            0.597
+          ],
+          "content": "■ Mệnh đề (∃x: P) là đúng trong một mô hình m, khi và chỉ khi P là đúng với x là một đối tượng trong mô hình đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.617,
+            0.887,
+            0.713
+          ],
+          "content": "■ Tức là, mệnh đề (∃x: P) tương đương với phép tuyển (hoặc) của các trường hợp của P"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.256,
+            0.714,
+            0.79,
+            0.759
+          ],
+          "content": "Ngoi\\_trong\\_lop(Hue,K4) ∧ Cham\\_chi(Hue)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.759,
+            0.852,
+            0.803
+          ],
+          "content": "∨ Ngoi\\_trong\\_lop(Cuong,K4) ∧ Cham\\_chi(Cuong)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.182,
+            0.804,
+            0.815,
+            0.849
+          ],
+          "content": "∨ Ngoi\\_trong\\_lop(Tuan,K4) ∧ Cham\\_chi(Tuan)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.183,
+            0.858,
+            0.296,
+            0.888
+          ],
+          "content": "∨ ..."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.053,
+            0.863,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các đặc điểm của các lượng từ logic"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.189,
+            0.285,
+            0.238
+          ],
+          "level": 2,
+          "content": "■ Tính hoán vị:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.254,
+            0.572,
+            0.299
+          ],
+          "content": "□ (∀x ∀y) là tương đương với (∀y ∀x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.312,
+            0.553,
+            0.358
+          ],
+          "content": "☐ (∃x ∃y) là tương đương với (∃y ∃x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.38,
+            0.853,
+            0.433
+          ],
+          "content": "■ Tuy nhiên, (∃x ∀y) không tương đương với (∀y ∃x)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.444,
+            0.908,
+            0.527
+          ],
+          "content": "☐ ∃x ∀y: Yeu(x,y) - “Trên thế giới này, tồn tại (có) một người mà người đó yêu quý tất cả mọi người khác”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.536,
+            0.935,
+            0.62
+          ],
+          "content": "☐ ∀y ∃x: Yeu(x,y) - “Trên thế giới này, mọi người đều được ít nhất một người khác yêu thích”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.638,
+            0.925,
+            0.737
+          ],
+          "content": "■ Mỗi lượng từ logic (∃ hoặc ∀) đều có thể được biểu diễn bằng lượng từ kia"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.751,
+            0.915,
+            0.797
+          ],
+          "content": "☐ (∀x: Thich(x,Kem)) là tương đương với (¬∃x: ¬Thich(x,Kem))"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.809,
+            0.758,
+            0.889
+          ],
+          "content": "☐ (∃x: Thich(x,BongDa)) là tương đương với (¬∀x: ¬Thich(x,BongDa))"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.057,
+            0.482,
+            0.135
+          ],
+          "level": 2,
+          "content": "Sử dụng logic vị từ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.205,
+            0.779,
+            0.263
+          ],
+          "content": "Biểu diễn các phát biểu trong ngôn ngữ tự nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.284,
+            0.924,
+            0.389
+          ],
+          "content": "\\- “x là anh/chị/em của y” tương đương với “x và y là anh em ruột”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.403,
+            0.755,
+            0.457
+          ],
+          "content": "∀x,y: Anh\\_chi\\_em(x,y) ⇔ Anh\\_em\\_ruot(x,y)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.488,
+            0.926,
+            0.594
+          ],
+          "content": "■ “Mẹ của c là m” tương đương với “m là phụ nữ và m là bậc cha mẹ của c”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.607,
+            0.828,
+            0.661
+          ],
+          "content": "$\\forall \\mathsf{m},\\mathsf{c}$ : $Me(c) = m\\Leftrightarrow (Phu\\_nu(m)\\land Cha\\_me(m,c))$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.691,
+            0.77,
+            0.813
+          ],
+          "content": "■ Quan hệ “anh em ruột” có tính chất đối xứng\n∀x,y: Anh\\_em\\_ruot(x,y) ⇔ Anh\\_em\\_ruot(y,x)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.244,
+            0.141
+          ],
+          "level": 2,
+          "content": "Bài tập"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.238,
+            0.914,
+            0.31
+          ],
+          "content": "Chuyển đổi các phát biểu sau sang logic vị từ:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.32,
+            0.765,
+            0.388
+          ],
+          "content": "1. Tất cả các sinh viên đều chăm học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.401,
+            0.489,
+            0.467
+          ],
+          "content": "2. Có một số sinh viên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.481,
+            0.617,
+            0.548
+          ],
+          "content": "3. Một số sinh viên chăm học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.559,
+            0.942,
+            0.629
+          ],
+          "content": "4. Mỗi sinh viên đều thích một sinh viên nào đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.639,
+            0.906,
+            0.709
+          ],
+          "content": "5. Mỗi sinh viên đều thích một sinh viên khác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.722,
+            0.932,
+            0.851
+          ],
+          "content": "6. Có một sinh viên được tất cả sinh viên khác thích"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.566,
+            0.963
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.944,
+            0.956
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.244,
+            0.141
+          ],
+          "level": 2,
+          "content": "Bài tập"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.238,
+            0.914,
+            0.31
+          ],
+          "content": "Chuyển đổi các phát biểu sau sang logic vị từ:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.32,
+            0.765,
+            0.388
+          ],
+          "content": "1. Tất cả các sinh viên đều chăm học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.401,
+            0.489,
+            0.467
+          ],
+          "content": "2. Có một số sinh viên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.481,
+            0.617,
+            0.548
+          ],
+          "content": "3. Một số sinh viên chăm học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.559,
+            0.942,
+            0.629
+          ],
+          "content": "4. Mỗi sinh viên đều thích một sinh viên nào đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.639,
+            0.906,
+            0.709
+          ],
+          "content": "5. Mỗi sinh viên đều thích một sinh viên khác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.722,
+            0.932,
+            0.851
+          ],
+          "content": "6. Có một sinh viên được tất cả sinh viên khác thích"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.566,
+            0.963
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.944,
+            0.956
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.049,
+            0.898,
+            0.143
+          ],
+          "level": 2,
+          "content": "Các phép biến đổi tương đương"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.223,
+            0.403,
+            0.281
+          ],
+          "content": "1. Loại bổ dấu suy ra"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.103,
+            0.29,
+            0.428,
+            0.4
+          ],
+          "content": "\\begin{array}{l}\\alpha \\leftrightarrow \\beta \\Rightarrow (\\alpha \\rightarrow \\beta) \\land (\\beta \\rightarrow \\alpha)\\\\\\alpha \\rightarrow \\beta \\Rightarrow \\neg \\alpha \\lor \\beta\\end{array}",
+          "image_source": "images/page_16_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.405,
+            0.648,
+            0.465
+          ],
+          "content": "2. Chuyển phủ định vào trong ngoặc"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.102,
+            0.469,
+            0.36,
+            0.757
+          ],
+          "content": "\\begin{array}{l} \\neg (\\alpha \\lor \\beta) \\Rightarrow \\neg \\alpha \\land \\neg \\beta \\\\ \\neg (\\alpha \\land \\beta) \\Rightarrow \\neg \\alpha \\lor \\neg \\beta \\\\ \\neg \\neg \\alpha \\Rightarrow \\alpha \\\\ \\neg \\forall \\mathbf {x}, \\alpha \\Rightarrow \\exists \\mathbf {x}, \\neg \\alpha \\\\ \\neg \\exists \\mathbf {x}, \\alpha \\Rightarrow \\forall \\mathbf {x}, \\neg \\alpha \\end{array}",
+          "image_source": "images/page_16_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.763,
+            0.929,
+            0.887
+          ],
+          "content": "3. Đặt tên các biến khác nhau\n $\\forall x, \\exists y, (\\neg P(x) \\lor \\exists x, Q(x,y)) \\Rightarrow \\forall x_{1}, \\exists x_{2}, (\\neg P(x_{1}) \\lor \\exists x_{3}, Q(x_{3},y_{2}))$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.944,
+            0.955
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.047,
+            0.179,
+            0.12
+          ],
+          "level": 2,
+          "content": "Ví dụ"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.074,
+            0.303,
+            0.363,
+            0.475
+          ],
+          "content": "\\begin{array}{l} \\text {a. John owns a dog} \\\\ \\hline \\exists x. D (x) \\wedge O (J, x) \\\\ \\hline D (F i d o) \\wedge O (J, F i d o) \\end{array}",
+          "image_source": "images/page_17_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.499,
+            0.169,
+            0.953,
+            0.533
+          ],
+          "content": "\\begin{array}{l}\\text {b. Anyone who owns a dog is a lover-of-animals}\\\\\\hline \\forall x. (\\exists y. D (y) \\land O (x, y)) \\rightarrow L (x)\\\\\\hline \\forall x. (\\neg \\exists y. (D (y) \\land O (x, y)) \\lor L (x)\\\\\\hline \\forall x. \\forall y. \\neg (D (y) \\land O (x, y)) \\lor L (x)\\\\\\hline \\forall x. \\forall y. \\neg D (y) \\lor \\neg O (x, y) \\lor L (x)\\\\\\hline \\neg D (y) \\lor \\neg O (x, y) \\lor L (x)\\end{array}",
+          "image_source": "images/page_17_equation_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.038,
+            0.551,
+            0.547,
+            0.951
+          ],
+          "content": "| c. Lovers-of-animals do not kill animals |\n| --- |\n| ∀ x. L(x) → (∀ y. A(y) → ¬ K(x,y)) |\n| ∀ x. ¬L(x) v (∀ y. A(y) → ¬ K(x,y)) |\n| ∀ x. ¬L(x) v (∀ y. ¬A(y) v ¬ K(x,y)) |\n| ¬ L(x) v ¬ A(y) v ¬ K(x,y) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_table_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.062,
+            0.402,
+            0.146
+          ],
+          "level": 2,
+          "content": "Phép gán trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.238,
+            0.572,
+            0.294
+          ],
+          "content": "VD: Định lý đường trung bình:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.301,
+            0.695,
+            0.359
+          ],
+          "content": "$r_{1}$ :  $\\text{trd}(U,XY) \\land \\text{trd}(V,XZ) \\Rightarrow ss(UV,YZ)$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.119,
+            0.37,
+            0.496,
+            0.709
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.528,
+            0.372,
+            0.871,
+            0.708
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.746,
+            0.69,
+            0.803
+          ],
+          "content": "Phép gán trị θ = {A/X, B/Z, D/Y, L/U, I/V}:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.81,
+            0.718,
+            0.868
+          ],
+          "content": "■  $r_{1}\\theta$ :  $\\text{trd}(L,AD) \\wedge \\text{trd}(I,AB) \\Rightarrow ss(LI,DB)$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.923,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.061,
+            0.013,
+            0.807,
+            0.088
+          ],
+          "level": 2,
+          "content": "Hợp giải Robinson cho logic vị từ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.134,
+            0.512,
+            0.186
+          ],
+          "content": "1. Viết mỗi GT$_{i}$, ¬KL trên 1 dòng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.192,
+            0.576,
+            0.244
+          ],
+          "content": "2. Đưa GT$_{i}$, ¬KL về dạng chuẩn CNF"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.048,
+            0.254,
+            0.842,
+            0.306
+          ],
+          "content": "\\forall \\mathbf {x} _ {1} \\forall \\mathbf {x} _ {2} \\dots \\forall \\mathbf {x} _ {n} [ p _ {1} (\\dots) \\lor \\dots \\lor p _ {n} (\\dots) ] \\land [ q _ {1} (\\dots) \\lor \\dots \\lor q _ {m} (\\dots) ]\\tag{*}",
+          "image_source": "images/page_19_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.312,
+            0.632,
+            0.362
+          ],
+          "content": "3. Tách mỗi dòng (\\*) thành các dòng con:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.048,
+            0.371,
+            0.491,
+            0.425
+          ],
+          "content": "\\forall \\mathbf {x} _ {1} \\forall \\mathbf {x} _ {2} \\dots \\forall \\mathbf {x} _ {n} [ p _ {1} (\\dots) \\lor \\dots \\lor p _ {n} (\\dots) ]",
+          "image_source": "images/page_19_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.048,
+            0.43,
+            0.495,
+            0.483
+          ],
+          "content": "\\forall \\mathbf {x} _ {1} \\forall \\mathbf {x} _ {2} \\dots \\forall \\mathbf {x} _ {n} [ \\mathbf {q} _ {1} (\\dots) \\lor \\dots \\lor \\mathbf {q} _ {m} (\\dots) ]",
+          "image_source": "images/page_19_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.486,
+            0.271,
+            0.535
+          ],
+          "content": "tất cả đều với ∀"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.548,
+            0.229,
+            0.597
+          ],
+          "content": "4. Hợp giải:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.605,
+            0.921,
+            0.674
+          ],
+          "content": "u)  $\\neg p(x_{1},x_{2},\\ldots,x_{n})\\lor q(\\ldots)\\Rightarrow w)q(\\ldots)\\lor r(\\ldots)$  với phép gán trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.665,
+            0.367,
+            0.719
+          ],
+          "content": "v) $p(y_1, y_2, \\ldots, y_n) \\lor r(\\ldots)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.724,
+            0.315,
+            0.773
+          ],
+          "content": "5. Vô lý xây ra khi"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.625,
+            0.67,
+            1.0,
+            0.775
+          ],
+          "content": "\\theta = \\left\\{\\frac {z _ {1}}{x _ {1}}, \\frac {z _ {1}}{y _ {1}}, \\dots , \\frac {z _ {n}}{x _ {n}}, \\frac {z _ {n}}{y _ {n}} \\right\\}",
+          "image_source": "images/page_19_equation_12.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.784,
+            0.299,
+            0.835
+          ],
+          "content": "i)  $\\neg p(x_{1},x_{2},\\ldots,x_{n})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.843,
+            0.686,
+            0.98
+          ],
+          "content": "ii)  $p(y_{1},y_{2},\\ldots,y_{n})$ \n\nvới phép gán trị  $\\theta=\\left\\{\\frac{z_{1}}{x_{1}},\\frac{z_{1}}{y_{1}},\\ldots,\\frac{z_{n}}{x_{n}},\\frac{z_{n}}{y_{n}}\\right\\}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.917,
+            0.951,
+            0.943,
+            0.969
+          ],
+          "content": "∠U"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.052,
+            0.504,
+            0.145
+          ],
+          "level": 2,
+          "content": "Ví dụ về bước 4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.295,
+            0.771,
+            0.511
+          ],
+          "content": "■ Sử dụng phép gán trị nào để hợp giải\nP(a,x,b), và\n$\\neg P(y,z,z)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.525,
+            0.571,
+            0.671
+          ],
+          "content": "Phép gán trị θ =  $\\left\\{\\frac{a}{y},\\frac{b}{z},\\frac{b}{x}\\right\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.703,
+            0.28,
+            0.763
+          ],
+          "content": "\\- $P(a,b,b)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.773,
+            0.306,
+            0.833
+          ],
+          "content": "\\- $\\neg P(a,b,b)$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.942,
+            0.955
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.05,
+            0.626,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ về bước 4 (tiếp)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.296,
+            0.771,
+            0.514
+          ],
+          "content": "■ Sử dụng phép gán trị nào để hợp giải\nP(a,x,x,b), và\n$\\neg P(y,y,z,b)$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.08,
+            0.052,
+            0.626,
+            0.142
+          ],
+          "level": 2,
+          "content": "Ví dụ về bước 4 (tiếp)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.289,
+            0.778,
+            0.341
+          ],
+          "content": "■ Cho các sự kiện p(a,b), p(c,d), q(d,c,c) đúng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.344,
+            0.252,
+            0.39
+          ],
+          "content": "\\- Cho luật"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.153,
+            0.397,
+            0.518,
+            0.447
+          ],
+          "content": "\\mathrm{p} (\\mathrm{x}, \\mathrm{y}) \\land \\mathrm{q} (\\mathrm{y}, \\mathrm{x}, \\mathrm{x}) \\Rightarrow \\mathrm{r} (\\mathrm{x}, \\mathrm{y})",
+          "image_source": "images/page_22_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.45,
+            0.926,
+            0.543
+          ],
+          "content": "■ Sử dụng các phép gán trị với luật trên, hãy đưa ra các sự kiện mới đúng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.599,
+            0.215,
+            0.647
+          ],
+          "content": "■ Gợi ý:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.651,
+            0.789,
+            0.704
+          ],
+          "content": "☐ Thử với p(x,y) ≡ p(a,b) hoặc p(x,y) ≡ p(c,d)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.426,
+            0.931,
+            0.565,
+            0.961
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.037,
+            0.529,
+            0.135
+          ],
+          "level": 2,
+          "content": "Ví dụ về hợp giải"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.185,
+            0.425,
+            0.497
+          ],
+          "content": "\\begin{array}{l l} \\forall x & P (x) \\to Q (x) \\\\ \\forall x & \\neg P (x) \\to R (x) \\\\ \\forall x & Q (x) \\to S (x) \\\\ \\forall x & R (x) \\to S (x) \\end{array}",
+          "image_source": "images/page_23_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.521,
+            0.424,
+            0.586
+          ],
+          "content": "Chuyển về dạng chuẩn"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.135,
+            0.594,
+            0.382,
+            0.656
+          ],
+          "content": "1. \\neg P (x) \\lor Q (x)",
+          "image_source": "images/page_23_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.667,
+            0.361,
+            0.729
+          ],
+          "content": "2. $P(x)\\lor R(x)$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.136,
+            0.741,
+            0.385,
+            0.805
+          ],
+          "content": "3. \\neg Q (x) \\lor S (x)",
+          "image_source": "images/page_23_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.816,
+            0.382,
+            0.878
+          ],
+          "content": "4. $\\neg R(x) \\lor S(x)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.511,
+            0.216,
+            0.751,
+            0.277
+          ],
+          "content": "Hợp giải 1 và 3"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.547,
+            0.291,
+            0.84,
+            0.363
+          ],
+          "content": "5. \\neg P (x) \\lor S (x)",
+          "image_source": "images/page_23_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.52,
+            0.405,
+            0.761,
+            0.467
+          ],
+          "content": "Hợp giải 2 và 5"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.541,
+            0.482,
+            0.814,
+            0.555
+          ],
+          "content": "6. R (x) \\lor S (x)",
+          "image_source": "images/page_23_equation_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.52,
+            0.65,
+            0.759,
+            0.713
+          ],
+          "content": "Hợp giải 4 và 6"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.549,
+            0.726,
+            0.689,
+            0.802
+          ],
+          "content": "7. $S(x)$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.566,
+            0.963
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.944,
+            0.955
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.031,
+            0.585,
+            0.118
+          ],
+          "level": 2,
+          "content": "Bài toán khì - chuối"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.075,
+            0.103,
+            0.979,
+            0.87
+          ],
+          "sub_type": "code",
+          "content": "```csv\n1. tại(C,1)\n2. tại(B,3)\n3. tại(A,4)\n4. tại(D,2)\n5. tại(A,x) ⇒ tại (A,y)\n6. tại(A,x) ∧ tại(O,x) ⇒ tại(A,y) ∧ tại(O,y)\n7. tại(A,x) ∧ tại(O,x) ⇒ trên(A,O)\n8. tại(A,x) ∧ tại(O1,x) ∧ tại(O2,x) ⇒ trên(O1,O2)\nKL: tại(B,2) ∧ trên(C,B) ∧ trên(A,C) ∧ trên(D,A)\n¬KL: ¬ tại(B,2) ∨ ¬ trên(C,B) ∨ ¬ trên(A,C) ∨ ¬ trên(D,A)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.063,
+            0.311,
+            0.145
+          ],
+          "level": 2,
+          "content": "Bài tập 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.207,
+            0.514,
+            0.27
+          ],
+          "content": "■ Cho tập các phát biểu:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.286,
+            0.415,
+            0.335
+          ],
+          "content": "John owns a dog"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.348,
+            0.829,
+            0.399
+          ],
+          "content": "Anyone who owns a dog is a lover of animals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.116,
+            0.412,
+            0.699,
+            0.462
+          ],
+          "content": "☐ Lovers of animals do not kill animals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.543,
+            0.35,
+            0.6
+          ],
+          "content": "■ Chúng minh:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.615,
+            0.55,
+            0.664
+          ],
+          "content": "☐ John does not kill animals."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.943,
+            0.956
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.063,
+            0.292,
+            0.145
+          ],
+          "level": 2,
+          "content": "Bài tập 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.29,
+            0.905,
+            0.388
+          ],
+          "content": "■ Nếu xem một ai đó lùa đối người khác là kề bịp bợm và"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.397,
+            0.848,
+            0.498
+          ],
+          "content": "■ Bất kỳ ai đồng tình với kể bịp bợm cũng là kể bịp bợm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.505,
+            0.883,
+            0.603
+          ],
+          "content": "■ Trong tập thể có một người nhất nhất đồng tình với kề lùa đối"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.611,
+            0.869,
+            0.667
+          ],
+          "content": "■ thì chắc chắn có 1 tên bịp bợm tính tình nhút nhất."
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.933,
+            0.944,
+            0.955
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.063,
+            0.292,
+            0.145
+          ],
+          "level": 2,
+          "content": "Bài tập 3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.207,
+            0.576,
+            0.261
+          ],
+          "content": "1. Fred là con chó giống Collie."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.265,
+            0.44,
+            0.311
+          ],
+          "content": "2. Sam là chủ của nó."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.318,
+            0.453,
+            0.367
+          ],
+          "content": "3. Hôm nay là thú bảy."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.371,
+            0.419,
+            0.42
+          ],
+          "content": "4. Thú bảy trời lạnh."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.421,
+            0.653,
+            0.473
+          ],
+          "content": "5. Fred là con chó được huấn luyện."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.476,
+            0.905,
+            0.565
+          ],
+          "content": "6. Chó spaniel và (chó collie được huấn luyện) là chó tốt."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.57,
+            0.842,
+            0.664
+          ],
+          "content": "7. Nếu một con chó tốt và có ông chủ thì nó sẽ đi cùng ông chủ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.667,
+            0.754,
+            0.719
+          ],
+          "content": "8. Nếu thứ bảy và ấm thì Sam ở công viên."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.721,
+            0.909,
+            0.773
+          ],
+          "content": "9. Nếu thứ bảy và không ấm thì Sam ở viện bảo tàng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.775,
+            0.609,
+            0.827
+          ],
+          "content": "■ Hôi fred ở đầu? ∃X loc(fred,X)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.425,
+            0.931,
+            0.565,
+            0.962
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.933,
+            0.943,
+            0.955
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.076,
+            0.033,
+            0.995,
+            0.939
+          ],
+          "sub_type": "code",
+          "content": "```txt\nFred là con chó giống Collie.\nSam là chủ của nó.\nHôm nay là thứ bày.\nThứ bày trời lạnh.\nFred là con chó được huấn luyện.\nChó spaniel và (chó collie được huấn luyện) là chó tốt.\nNếu một con chó tốt và có ông chủ thì nó sẽ đi cùng ông chủ.\nNếu thứ bày và ấm thì Sam ở công viên.\nNếu thứ bày và không ấm thì Sam ở viện bảo tàng.\n■ Hồi fred ở đâu? ∃X loc(fred,X)\n\ncollie(Fred).\nowner(Sam, Fred).\nday(sat).\ncold(sat).\ntrained(Fred).\nspaniel(X) ∨ (collie(X) ∧ trained(X)) → gooddog(X).\ngooddog(X) ∧ owner(Y,X) ∧ loc(Y,Z)→ loc(X,Z).\nday(sat) ∧ ¬cold(sat) → loc(Sam, park).\nday(sat) ∧ cold(sat) → loc(Sam,museum).\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.968
+          ],
+          "content": "29"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "Trí Tuệ Nhân Tạo",
+      "authors": [
+        "Khoat Than;Quang Nhat NGUYEN"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2021-03-23T16:41:26+07:00",
+      "modified_at": "2021-03-23T16:41:26+07:00",
+      "creator_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "producer_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "page_count": 29,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "ocr"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

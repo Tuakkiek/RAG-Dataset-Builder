@@ -1,0 +1,315 @@
+**BỘ GIÁO DỤC VÀ ĐÀO TẠO**
+
+**C NG HOÀ XÃ H I CH T NAM** Ộ Ộ **Ủ NGHĨA VIỆ**
+
+**TRƯỜNG ĐẠ ỌC SƯ PHẠ I H** M
+
+**Độ ậ** ạ **c l p - Tự do - H nh phúc**
+
+**THÀNH PH H CHÍ MINH Ố Ồ**
+
+**TÀI LI ỆU**
+
+**TRÍ TU NHÂN T O TRONG GIÁO D C** Ệ Ạ Ụ
+
+**TP. HCM, 2023**
+
+## TÁC GI TÀI LI U Ả Ệ
+
+**1. TS.** i **Trần Sơn Hả**
+
+**Khoa CNTT, ĐHSP TPHCM.**
+
+**2. ThS. nh Huy Hoàng Trị**
+
+**Khoa CNTT, ĐHSP TPHCM.**
+
+**3. ThS.Nguy n Th** ễ **ị Ngọc Hoa Khoa CNTT, ĐHSP TPHCM.**
+
+## M C L C Ụ Ụ
+
+- CHUONG 1. GIÓI THIỆU TỔNG QUAN....3
+- CHUONG 2. CÁC ỨNG DỤNG TRÍ TUỆ NHÂN TẠO....9
+- CHUONG 3. TRÍ TUỆ NHÂN TẠO TRONG GIÁO DỤC....17
+- TÀI LIỆU THAM KHẢO....31
+- PHỤ LỤC....31
+
+## DANH MỤC VIẾT TẮT
+
+**ML Machine Learning / H c máy** ọ
+
+**DL Deep Learning / H sâu ọc**
+
+**GDPT Giáo d c ph thông** ụ ổ
+
+**GV Giáo viên**
+
+**HĐDH Hoạt động Dạy h c ọ**
+
+**TTNT Trí Tu Nhân T o** ệ ạ
+
+## CHƯƠNG 1. GIỚI THI U T NG QUAN Ệ Ổ
+
+**Trí tu nhân t** c **n vi c mô ph ng trí thông minh c** ệ **ạo (AI) đề ập đế** ệ ỏ **ủa con người vào trong máy tính b ng cách l** ằ **ập trình để máy suy nghĩ giống con ngườ ắt chướ i và b** c **hành độ con ngườ ểu bình dân hơn là ‘thông minh nhân ng của i. còn có thTTNT ể hi** t **, t c là s thông minh c a máy móc (máy tính, robot , hay các máy móc có ạo’ ứ** ự ủ **ics các thành ph i t ần tính toán điện tử) do con ngườ ạo ra.**
+
+**Trí tu nhân t o là m c c a khoa h c và công ngh nh m làm cho** ệ **ạ [1] ột lĩnh vự** ủ ọ ệ ằ **máy có nh ng kh a trí tu và trí thông minh c** ữ **ả năng củ** ệ **ủa con người, tiêu biểu như biết suy nghĩ và lậ ận để p lu giải quy t v ế ấn đề, biết giao ti p do hi u ngôn ng và ti ng nói,** ế ể ữ ế **bi c và t** . **ết họ ự thích nghi**
+
+![](images/page_4_image_3.jpg)
+
+Alan Turing (1912-1954)
+
+![](images/page_4_image_5.jpg)
+
+Hình 1. Phép th Turing ử
+
+**Phép th [1] là m l i câu h có bi ử Turing ột cách để trả ờ ỏi ‘máy tính ết nghĩ không?’, đượ ểu dướ ột trò chơi. Hình dung có ba ngườ c phát bi i dạng m i tham gia trò chơi, một người đàn ông (A), một người đàn bà (B) và một người chơi (C). Người chơi ng** m **ng n ồi ở ột phòng tách bi t v ệ ới A và B, không bi t gì v** ế **ề A và B (như hai đối tượ** ẩ **X và Y) và ch ỉ đặt các câu hỏi cũng như nhận trả lời t A và B qua m t màn hình máy** ừ ộ **tính. Ngư là đàn ông ai là đàn bà. ời chơi cần kết luận trong X và Y ai**
+
+**Trong phép th này, A luôn tìm cách làm cho C b nh m l n và B l** ử ị ầ ẫ **uôn tìm cách giúp C tìm đượ ời đúng. c câu trả l Phép thử Turing thay A bằng một máy tính, và bài toán trở thành li u C có th phân bi c trong X và** ệ ể **ệt đượ Y đâu là máy tính đâu là người**
+
+**đàn bà. Phép th Turing cho r** ử **ằng máy tính là thông minh (qua được phép th ) n ử ếu như bi c ch n k n c ết cách làm sao cho C không thể chắ** ắ **ết luậ ủa mình là đúng.**
+
+**Tuy phép th n nay v c xem có t m quan tr ng l ch s và tri ử Turing đế ẫn đượ** ầ ọ ị ử **ết** h **i v máy hi u ngôn ng và bi ọc hơn là giá trị thực tế (vì con ngườ ẫn chưa làm được** ể ữ **ết l p lu n c a nó n** ậ **ận như vậy), ý nghĩa rất lớ** ủ **ằm ở chỗ đã nhấn mạnh rằng khả năng giao tiếp thành công c a máy v i trong m** ủ **ới con ngườ ột cuộc đối thoại tự do và không hạn chế là một biểu hiện chính yếu của trí thông minh nhâ n t o. ạ**
+
+**Trong thời đại cách mạng công nghiệp 4.0 ngày nay, các thuật ngữ như Trí tuệ nhân t o (AI), h c máy h c sâu d n tr** ạ ọ **(Machine Learning) và ọ (Deep Learning) đang ầ** ở **nên ph bi n và tr thành nh ng khái ni bi c TTNT. ổ ế** ở ữ **ệm phổ ến trong lĩnh vự**
+
+**"Trí tu nhân t o là công ngh có ti i th gi i theo nhi u cách,** ệ ạ ệ **ềm năng thay đổ** ế ớ ề **cả t t l ố ẫn xấu. Chúng ta c m b ần đả ảo r c phát tri ằng AI đượ ển và s ng m t cách có ử dụ** ộ **trách nhi m, vì l i ích c a t t c m i." - Stephen Hawking, nhà v t** ệ ợ ủ **ấ ả ọi ngườ** ậ ế **lý lý thuy t người Anh.**
+
+**"Học máy là m t công c m nh m có th** ộ **ụ ạ** ẽ **ể được s d ử ụng để gi i quy t nhi u v n** ả ế ề ấ **đề** ọ ị **khác nhau. Tuy nhiên, cũng cần lưu ý rằng h c máy có thể b sai lệch nếu dữ liệu được s d ử ụng để đào tạo nó không chính xác hoặc không đại di n." - Andrew Ng, Giáo** ệ **sư khoa học máy tính tạ ại Đ i học Stanford.**
+
+**"Họ** ộ **c sâu là m t công nghệ đột phá đã thay đổi cách chúng ta hiểu trí tuệ nhân** t **c hi n các nhi m v ạo. Nó đã cho phép máy tính thự** ệ ệ **ụ mà trước đây chỉ có con người m i có th c." - c máy tính t i h c New** ớ **ể làm đượ Yann LeCun, Giáo sư khoa họ ại Đạ** ọ **York.**
+
+**Có thể gi thích m i liên h gi a 3 khái ni m này ải** ố **ệ ữ** ệ **như Hình 2, trong đó TTNT** - **ng xu t hi n u tiên, ti n là h c máy và cu i cùng là h c sâu ý tưở** ấ **ệ đầ ếp đế** ọ ố ọ **(đang thúc đẩ** ủ **y sự phát triển c a TTNT hiện nay).**
+
+![](images/page_6_chart_0.jpg)
+
+Hình 2. M i quan h ố ệ AI-ML- DL
+
+**TTNT đang phát triể ần đây trong các lĩnh vự n nhảy vọt. Nghiên cứu g c Khoa h c d u, H c máy, X lý ngôn ng t c ph khác c TTNT** ọ **ữ liệ** ọ ử **ữ ự nhiên và các lĩnh vự** ụ **ủa đã bắt đầu tác động đế đã đượ n cuộc sống của con người. TTNT c sử dụng bởi những gã kh ng l công ngh , các công ty và các công ty kh i nghi gi i quy** ổ ồ ệ ở **ệp để ả** ế ấ **t các v n đề** ổ **TTNT hàng ngày. Đó là lý do tại sao thự ự c s b ích về lâu dài.**
+
+**Ngay c khi ngh nghi p c a b n không liên quan tr c ti n côn** ả ề ệ ủ ạ ự **ếp đế** ệ **g ngh , ngườ** ỡ **i ta vẫn nói rằng** s**TTNT ẽ phá v m c theo cách này hay cách khác. Vì ọi lĩnh vự v y, hi u bi n v cách th c ho ng c a AI là r t c n thi Các ch** v ậ ể **ết cơ bả** ề ứ **ạt độ** ủ ấ ầ **ết. ủ đề ề TTNT dưới đây sẽ giúp ích cho công việc, cuộc sống của hầu hết mọi người.**
+
+![](images/page_6_image_4.jpg)
+
+Hình 3. Các chủ nghiên c u trong TTNT đề ứ
+
+## Luyện t p 1. ậ Tìm hi u nhanh m t s khóa h TTNT hi u: ể ộ ố ọc về ể
+
+**EdX’s Artificial Intelligence - https://www.edx.org/course/artificial-intelligence-ai**
+
+**ii. Udacity’s Intro to Artificial Intelligence - https://www.udacity.com/course/intro- -artificial-intelligenceto -- cs271**
+
+**iii. Artificial Intelligence: Principles and Techniques By Stanford - http://web.stanford.edu/class/cs221/**
+
+**iv. Udacity’s Artificial Intelligence for Robotics by Georgia Tech - https://www.udacity.com/course/artificial-intelligence-for-robotics cs373--**
+
+**v. IBM's Data Science and Cognitive Computing courses - https://cognitiveclass.ai/**
+
+**vi. Elements of - AI https://www.elementsofai.com/**
+
+**vii. Building AI - https://buildingai.elementsofai.com/**
+
+**viii. Intellipaat's Artificial Intelligence - https://intellipaat.com/academy/course/artificial-intelligence-free-course/**
+
+**ix. EdX/Harvard University's CS50: Introduction to Artificial Intelligence with Python - https://www.edx.org/course/cs50s-introduction- -to artificial-intelligence-with-python**
+
+**x. Microsoft AI School - https://aischool.microsoft.com/en-us/home**
+
+**xi. Learn with Google AI - https://ai.google/education/**
+
+**xii. Crash Course - Artificial Intelligence https://www.youtube.com/watch?v=GvYYFloV0aA&list=PL8dPuuaLjXtO65LeD2p4\_Sb5XQ51 par\_b**
+
+Lập b ng tóm t t thông tin v các khóa h c TTNT ả ắ ề ọ
+
+| Khóa học | Nội dung chính | Nhận xét |
+| --- | --- | --- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+**Luyện t p 2 ậ . TRÍ TU NHÂN T O S i không d** Ệ Ạ **Ẽ ĐI VỀ ĐÂU? Đây là câu hỏ ễ trả** l **c r t nhi c r ời, vì 50 năm qua ngành TTNT đã làm đượ** ấ **ều và cũng không làm đượ ất nhi u nh** ề **ững gì đã dự đoán. Hãy th ử so sánh các ưu nhược điể ủa TTNT và điề m c n vào b ng 1.** ả
+
+B ảng 1. So sánh ưu nhược điểm của con người và TTNT
+
+|  | Con người | TTNT |
+| --- | --- | --- |
+| Khả năng ghi nhớ |  |  |
+| Khả năng diễn đạt |  |  |
+| Khả năng học |  |  |
+| ...... |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+## CHƯƠNG 2. CÁC NG D NG TRÍ TU NHÂN T Ứ Ụ Ệ ẠO
+
+**TTNT đang đi vào cuộc sống một cách mạnh mẽ, thay thế nhiều công việc thủ công, t n s ố ức lao động. AI được ứng d ng trong nhi** ụ **ều lĩnh vực như giao thông, trợ lý** ả ệ ế **ế ả o, thương mại đi n tử, ti p thị, y t , s n xu** h . **ất như ình 4**
+
+![](images/page_10_image_2.jpg)
+
+Hình 4. Infographic v ng d ng c a TTNT ề các ứ ụ ủ
+
+**Trên th gi ng d ng vào r t nhi c trong cu c s ng: ế ới TTNT đã được ứ** ụ ấ **ều lĩnh vự** ộ ố **y tế, ô tô, tài chính, giám sát, m ng xã h i, gi i trí, giáo d c,** ạ ộ ả **ụ khám phá không gian, trò chơi, Robotics, nông nghiệp và thương mại điệ như hình 4. n tử**
+
+![](images/page_11_image_0.jpg)
+
+Hình 5. Các ng d ng c ứ ụ ủa TTNT
+
+**Y tế. M t trong nh ng d y nh t o ra là trong** ộ **ững tác độ ễ thấ ấ mà TTNT đã tạ lĩnh** v **c kh e: m t thi t b , ph bi , thu th p nhi u ực chăm sóc sứ** ỏ ộ ế ị **ổ ến như Fitbit hoặc iWatch** ậ ề **d ữ liệu như kiểu ng c a cá nhân, ng calo ủ ủ lượ mà anh ta đốt cháy, nh p tim và nhi u d** ị ề ữ **liệu khác có th giúp phát hi n s m, cá nhân hóa, th m chí ch nh.** ể ệ ớ ậ **ẩn đoán bệ**
+
+**Ô tô. Vi i t m i khung bao quanh nó thành m ệc ô tô thay đổ ừ ột động cơ vớ ột cỗ máy thông minh được điều khiển bằng phần mềm cho thấy vai trò của TTNT trong lĩnh vự** ự **c này a Tesla là . Autopilot củ đang dẫn đầu trong lĩnh vực xe t lái.**
+
+**Tài chính ngân hàng. M t ngành công nghi p quan tr ng nh** ộ ệ ọ **ấ ớ** ụ **t s m áp d ng Trí tu nhân t bot AI, c v** ệ **ạo là Ngành Tài chính và Ngân hàng. Các tính năng như ố ấn thanh toán k t s phát hi n gian l n sinh tr c h c d n ch ng ỹ thuậ ố và cơ chế** ệ ậ ắ ọ **ẫn đế ất lượ d ịch vụ cao.**
+
+**Giám sát. TTNT đã giúp phát triển các ng cCô ụ Nhận dạng Khuôn mặt phục v cho các m** ụ **ục đích giám sát và bảo mật. Do đó, cho phép các hệ thống giám sát c nh ả quay trong th i gian th c phát tri n an toàn** ờ **ực. Đây là một bướ ển đột phá liên quan đế công cộng.**
+
+**Trong lĩnh vự cũng vậ ấn đề c giáo dục y, có rất nhiều v có thể được giải quyết b ng vi c tri n khai TTNT. M t s trong s n m** t **ng, k** ằ ệ ể ộ ố **ố đó là phầ ềm chấm điểm ự độ** ỹ **thu th ật lưu giữ nội dung, hệ ống khuyến nghị và đề xuất các cải tiến cần thiết trong d y h c.** ạ ọ
+
+**Điề** ể ệ ậ ả **u này có th giúp giáo viên theo dõi không ch vi ỉ c h c t ọ p mà còn c tâm lý, tinh th n và th t c a h u này r t quan tr ng cho s phát t** ầ **ể chấ** ủ **ọc sinh. Điề** ấ ọ ự **ể ri n toàn di n c h c sinh.** ệ **ủa ọ**
+
+![](images/page_12_image_1.jpg)
+
+Luy n t p 3. ệ ậ Cho biết lĩnh vực, giá trị thự ễ ệ c ti n, công ngh của TTNT đã áp dụng trong hình dưới đây.
+
+| Lĩnh vực | Giá trị | Công nghệ |
+| --- | --- | --- |
+| Xây dựng | ? | ? |
+| Bán hàng | ? | ? |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+**Luyện t p 4.** ậ V **gì khi tri n khai TTNT trong th c t t Nam trong hình ấn đề** ể **ự ế ở Việ sau đây?**
+
+![](images/page_13_image_1.jpg)
+
+Researcher
+
+Developer
+
+V : **ấn đề**
+
+**Nguyên nhân:**
+
+**Giải pháp:**
+
+**K ho ng:** ế **ạch hành độ**
+
+**Google, một trong nh ng công ty công ngh u th gi i, không ng ng** ữ **ệ hàng đầ ế ớ** ừ **phát tri n và cung c p các d ch v trí tu nhân t** ể ấ ị ụ ệ **ạo (AI) độc đáo và mạ ẽ. Điề nh m u này đã thúc đẩ ẹn trong lĩnh vự y sự phát triển của nhiều ứng dụng hứa h c trí tuệ nhân tạo. Chúng ta s tìm hi u v ba d ch v u c a Google: Google Visio** ẽ ể ề ị **ụ AI hàng đầ** ủ **n, Google Natural Language Processing (NLP), và Google Speech to Text.**
+
+**Google Vision là m t d ch v AI m nh m c th giác máy tính.** ộ ị ụ ạ **ẽ trong lĩnh vự** ị **D ch v này cho phép phân tích và hi u n i dung c a hình nh và** ị ụ ể ộ ủ ả ớ **video. V i Google Vision, bạn có th nh n d ng, ký t , khuôn m ng tác, th m chí c** ể ậ **ạng các đối tượ** ự **ặt, độ** ậ ả **nội dung văn bản trên hình nh.** ả **Ứng dụng c a Google Vision r** ủ **ất đa dạng, từ vi c phát** ệ **hi n s n ph n t n ki c y t .** ệ ả **ẩm trong thương mại điệ ử đế ểm tra an toàn trong lĩnh vự** ế **Google Vision có nh ng ti ng d ng trong vi c c i thi n tr i ng** ữ **ềm năng ứ** ụ ệ ả ệ ả **ệm ngườ hi** i **dùng và t o ra các d ch v d giác máy tính.** ạ ị **ụ ựa trên thị**
+
+**Google Natural Language Processing (NLP) - X Lý Ngôn Ng T** ử **ữ ự Nhiên:** D **d ng trí tu nhân t hi u và phân tích ngôn ng t nhiên. ịch vụ Google NLP sử ụ** ệ **ạo để ể ữ ự Nó có kh ả năng phát hiện và phân lo i ngôn ng , d** ạ **ữ ự đoán tình cảm t ừ văn bản, và trích xu t thông tin quan tr ng t ng d ng c a Google NLP n nhi** ấ ọ **ừ các đoạn văn. Ứ** ụ ủ **ằm ở ều lĩnh v i đ**ự **ừ c, t phân tích tương tác xã hộ ế** ả ệ **n tự động hóa lưu trữ và qu n lý dữ li u.**
+
+**Google Speech to Text - Chuy i Gi** n **ch v ển Đổ ọng Nói Thành Văn Bả : Dị** ụ **Google Speech to Text chuy i gi n b ng cách s d ng công ển đổ ọng nói thành văn bả** ằ **ử ụ ngh x lý ngôn ng t i dùng t o ra các ng d ng và ệ ử ữ ự nhiên. Điều này cho phép ngườ** ạ ứ ụ **d ch v d a trên gi ng nói, t ng d ng tr lý n ghi chú b ng gi n** ị **ụ ự** ọ **ừ ứ** ụ ợ **ảo đế** ằ ọ ị **g nói và d ch** t **ng. ự độ**
+
+**Những d ch v trí tu nhân t o c o ra m t cu c cách m ng trong** ị ụ ệ ạ **ủa Google đã tạ** ộ ộ ạ **cách chúng ta tương tác vớ ệu và thông tin. Chúng đã tạo ra cơ hộ i dữ li i mới cho việc** t **ng tr i nghi i dùng, và giúp gi ối ưu hóa quy trình công việc, tăng cườ** ả **ệm ngườ ải quyết các v c t ấn đề phứ ạp trong nhiều ngành khác nhau. S phát tri** ự **ển và sáng tạo trong lĩnh v c trí tu nhân t o c a Google v p di n, và ch c ch n s p t c làm t** ự ệ ạ ủ **ẫn đang tiế** ễ ắ ắ **ẽ tiế** ụ **hay đổ** ố **i cách chúng ta s ng và làm vi ệc trong tương lai.**
+
+Luyện t p 5 ậ . S d ng ng d ng nh n d ng hình nh? ử ụ ứ ụ ậ ạ ả https://cloud.google.com/vision/
+
+![](images/page_15_image_1.jpg)
+
+![](images/page_15_image_2.jpg)
+
+**Luyện t p 7 ậ . S d ng ng d ng phân tích ngôn ng t nhiên? ử ụ** ứ ụ **ữ ự https://cloud.google.com/natural-language**
+
+## CHƯƠNG 3. TRÍ TUỆ NHÂN T O TRONG GIÁO D C Ạ Ụ
+
+**Trí tu nhân t o trong giáo d c [2] s là cu c cách m** ệ ạ ụ ẽ ộ **ạng đào tạo. Trí tuệ nhân t o trong** ạ **giáo dục thay đổi vai trò người lái đò. Ở đa số các qu c gia, mô hình giáo d truy** ố **ục ền th ng s** ố ẽ **là giáo viên truyền đạt kiến thức, đóng vai trò người lèo lái, d n d ẫ ắt và định hướng chung cho các h c sinh c a mình. Không ph i vô lý khi nh i th y c** ọ ủ ả **ững ngườ** ầ **ủa chúng ta được văn thơ ví von như các vị thuy ng, m ền trưở ột người lái đò kỳ cựu, dùng những năm tháng tuổi nghề của mình d y d và giúp t ng th h m m non c** ạ ỗ ừ **ế ệ** ầ **ủa đất nước nên người.**
+
+**Trí tu nhân t** ệ **ạo (AI) đã đánh dấu m c ngo t quan tr ột bướ** ặ **ọng trong cách mà người học tham gia vào quá trình h c t ọ ập. Trước đây, việc học hành thường yêu cầu người h c ph i tham** ọ ả **gia vào các khóa h c truy n th ng ho c tìm ki m thông tin t i s** ọ ề ố ặ ế **ừ sách giáo trình. Nhưng vớ ự xu t hi n c a AI, vai trò c i h nên linh ho** h ấ ệ ủ **ủa ngườ ọc đã trở ạt và cá nhân hóa hơn bao giờ ết.**
+
+**Một trong những cách AI thay đổi vai trò của người học là trong vi c cá nhân hóa quá** ệ **trình h c. H ng AI có th theo dõi quá trình h c t p c i h c và** ọ **ệ thố** ể **ọ ậ ủa ngườ ọc, đánh giá năng lự mức độ hiểu biết của họ, từ đó đề ất. Điều này có nghĩa là xuất nội dung học tập phù hợp nh mỗi người học có thể trải nghi m m t hành trình h c t p riêng bi t, t ng t** ệ ộ **ọ ậ** ệ **ận dụ ối đa năng lực và m c tiêu cá nhân.** ụ
+
+**Hơn nữ năng họ ốt đờ ằng cách đưa ra các a, AI cung cấp khả c su i (lifelong learning) b khóa h c, tài li u và bài gi ng phù h p v i nhu c** ọ ệ ả ợ ớ ầ ọ ị **u c i h i h ủa ngườ ọc. Ngườ c không còn b gi i h n b i th m mà có th p t c h c t p và phát tri n k ớ ạ** ở **ời gian và địa điể ể tiế** ụ **ọ ậ** ể **ỹ năng trong suốt cuộc đời.**
+
+**Một khía c nh quan tr ng khác là kh p c n thông tin và ki n th c. AI giúp** ạ ọ **ả năng tiế** ậ ế ứ **ngườ ọ** ế ộ ệ ả **i h c tìm ki m, l n tin m ọc thông tin và đánh giá nguồ t cách nhanh chóng và hi u qu . Điều này giúp ngườ năng tự ọc và tư duy phả i học phát triển khả** h **n biện, giúp họ trở thành ngườ ọ ự i h c t qu y. ản lý và đánh giá thông tin một cách đáng tin cậ**
+
+**Tóm l i, trí tu nhân t i h c tham gia vào quá trình h** ạ ệ **ạo đã làm thay đổi cách ngườ** ọ **ọc tập. Người học không chỉ là ngườ ếp thu thông tin mà còn là ngườ i ti i tự quản lý học tập, tùy chỉnh n i dung, và duy trì kh c su** ộ **ả năng họ ốt đời. AI đã tạ ột môi trườ o ra m ng học tập linh hoạt, cá nhân hóa và thông minh, giúp người học n m b t ki n th c và k** ắ ắ ế ứ **ỹ năng một cách hiệu qu i s hóa. ả hơn trong thời đạ ố**
+
+**Trí tu nhân t i hoàn toàn vai trò c i giáo viên** ệ **ạo (AI) đang dự đoán và thay đổ ủa ngườ trong lĩnh vự ục. Trước đây, vai trò củ c giáo d a giáo viên tập trung chủ yếu vào việc truyền đạ** ế ứ ọ ự ể **t ki n th c và thông tin cho h c sinh. Tuy nhiên, với s phát tri n nhanh chóng của công ngh i giáo viên không còn ch c l p h c d y bài gi ng mà tr ệ AI, ngườ ỉ là người đứng trướ ớ** ọ ạ ả ở
+
+**thành người hướ ạo điề ng dẫn, trợ giúp và t u kiện thuận lợi cho sự phát triển cá nhân của học sinh.**
+
+**Một trong nh i vai trò c a giáo viên là trong vi c cá nhân hóa ững cách mà AI thay đổ** ủ ệ **h c t p. AI có kh ọ ậ ả năng theo dõi sự tiến b c a t ng h ộ ủ** ừ **ọc sinh và đề xuất các n i dung h c t** ộ **ọ ập phù h p v c và m c tiêu c a h u này giúp h c sinh h c t p** t **c a h và** ợ **ới năng lự** ụ ủ **ọ. Điề** ọ **ọ ậ ở ốc độ ủ** ọ **tận d ng t** ụ **ối đa khả năng cá nhân.**
+
+**Ngoài ra, AI cũng có khả năng tự ạy, đánh giá bài làm động tạo ra các tài liệu giảng d c a h c sinh và cung c p ph n h i ngay l p t u này giúp gi ng viên ti t ki m th i gian** ủ ọ ấ ả ồ ậ **ức. Điề** ả ế ệ ờ **trong vi c chu n b bài gi** ệ ẩ ị **ảng và tập trung hơn vào việc tương tác vớ ọc sinh, đặ i h c bi t trong** ệ **vi c gi i quy t các v ph c t p và khám phá nh ng khía c nh sâu s c c a ki n th** ệ ả ế **ấn đề ứ ạ** ữ ạ ắ ủ ế **ức.**
+
+**Trong tương lai, vai trò của giáo viên có th p t ể tiế ục thay đổi, t vi c ch d y ki n th ừ ệ ỉ ạ** ế **ức cơ bản sang việc hướng dẫn và khuyến khích tư duy sáng tạo, khám phá, và gi i quy t v** ả **ế ấn đề. AI không th thay th hoàn toàn vai trò c** ể ế **ủa con người trong giáo dục, nhưng nó có thể là một công c m nh m** h **và c i thi n quá trình h c t p và d** ụ ạ **ẽ để ỗ trợ** ả ệ **ọ ậ ạy h ọc.**
+
+## Hình 5. Trí tuệ nhân tạo trong giáo dục thay đổi vai trò người cầm lái
+
+**Nhưng hiệ ống, đặ n nay, khi trí tuệ nhân tạo dần thâm nhập vào cuộc s c biệt là trí tu ệ nhân t o trong giáo d c** ạ **ụ , mô hình gi ng d i m i. Lúc này, chính** ả **ạy cũng thay đổi và được đổ** ớ **ph huynh m i quy nh s chi tr bao nhiêu chi phí và h c sinh m i s** ụ **ới là ngườ ết đị** ẽ ả ọ **ới là ngườ ẽ định hướng con đườ ấn tương lai của mình. Tùy vào năng lực và điề ng học v u kiện của bản thân để ừng ngườ ứng dụng công nghệ trí tuệ nhân tạo vào giáo dục, cá nhân hoá t i học chứ không còn là m** g **n cho m t t p th . ột mô hình chung mà các giáo viên đang cố ắng hướng đế ộ ậ** ể
+
+**. Không th ph nh n r ng, k t khi TTNT giúp s d ng th i gian hi u qu ử ụ** ờ ệ **ả hơn** ể ủ **ậ ằ ể ừ đưa** ệ ạ ọ ệ **ự ỗ trí tuệ** ụ **nhân tạo vào trong giáo d c, vi c d y h c trở nên hi u quả hơn nhờ s h trợ từ các thi t b này. n lý ra quy t trong các công ngh trên, nh vào mô hình** ế ị **“Quả ết định” là mộ** ệ ờ **này, kh ng công vi c c c gi . Công ngh này v n hành d ối lượ** ệ **ủa giáo viên đượ ảm đi đáng kể** ệ ậ **ựa trên việc “nạp” các quy tắc và logic để s d ng cho vi c t p hu ử ụ ệ ậ ấn ban đầu, giúp các AI có kh ả năng tự điều ch nh và thích nghi v** ỉ **ới các thay đổ đó, tiế i. Từ t kiệm tối đa các khoảng th i gian** ờ **chết, giúp giáo viên hoàn thành đượ ệc, đồ c nhiều công vi ng thời phân bổ thời gian cho các h c sinh c a mình nhi u và h** ọ ủ ề **ợp lý hơn.**
+
+**Trí tu nhân t i trong nhi u nhi m v tính toán và phân** ệ **ạo (AI) đã đánh bại con ngườ** ề ệ ụ **tích ph c t p. Tuy nhiên, s c m nh th c s c a AI n kh i s d ứ ạ** ứ ạ ự **ự ủ ằm ở ả năng giúp con ngườ ử ụng th tr ời gian m t cách thông minh và hi u qu y và h c. V i s** ộ ệ **ả hơn trong dạ** ọ **ớ ự hỗ ợ c a AI, giáo** ủ **viên và h c sinh có th t p trung vào nh ng nhi m v o và gi i quy** ọ **ể ậ** ữ ệ **ụ đòi hỏi tư duy sáng tạ** ả **ết** v **, trong khi các nhi m v l p l i và công vi c qu n lý th i gian có th c t ấn đề** ệ **ụ ặp đi lặ** ạ ệ ả ờ **ể đượ** ự **động hoá.**
+
+**AI có kh ả năng tạo ra các k ho ch h c t p cá nhân hoá d a trên kh** ế ạ **ọ ậ** ự **ả năng và mục tiêu c a t ng h ủ ừ ọc sinh. Nó cũng có thể theo dõi ti h c t ến độ ọ ập và đề xuất điều chỉnh khi c n thi t.** ầ ế **Điều này giúp h c sinh t n d ng th i gian m t cách hi u qu** ọ ậ ụ ờ ộ ệ **ả hơn và đạt được kết quả t ốt hơn.**
+
+**Đố** ể **ự độ** ệ ả **i với giáo viên, AI có th giúp t ng xây dựng các tài li u gi ng d nh ạy, xác đị n i dung phù h p, và th xu ng d y t a trên s phân** ộ ợ **ậm chí đề ất các phương pháp giả** ạ **ối ưu dự** ự **tích d u và ph n h i t h u này giúp gi ng viên ti t ki m th i gian trong vi ữ liệ** ả **ồ ừ ọc sinh. Điề** ả ế ệ ờ **ệc chu n b bài gi ng và t c ti p v i h c sinh.** ẩ ị ả **ập trung vào tương tác trự** ế **ớ ọ**
+
+**Tóm l i, AI có kh n th i gian t m t tài nguyên khan hi m thành m t công** ạ **ả năng biế** ờ **ừ ộ** ế ộ **c m nh m ụ ạ ẽ để nâng cao hi u su t và hi u qu trong quá trình d y và h c. S k** ệ ấ ệ ả ạ ọ **ự ết h p gi a trí** ợ ữ **tuệ nhân tạo và con người có th mang l i s** ể **ạ ự thay đổi đáng kể trong giáo dục và đào tạo, giúp mọi ngườ ọi phút giây để năng mộ ối ưu. i tận dụng m phát triển kiến thức và kỹ t cách t**
+
+**TTNT giúp đổ ới phương thứ i m c giảng d y. N m b c nh m ti n l i t** ạ ắ **ắt đượ ững điể ệ ợ ừ các s n ph m nghiên c** ả ẩ **ứu c a ngành khoa h c Deep Learning, h ng giáo d** ủ ọ **ệ thố ục cũng đưa trí tuệ nhân t o vào trong gi** ạ **ảng d yạ d a trên n n t ng các tr lý** ự **ề ả** ợ **ảo. Siri, Cortana, hay Alexa của Google là m t trong các tr lý tuy o phi th c t n ph m c** ộ ợ **ả nhưng mà không hề ự ế. Đây là sả** ẩ **ủa mô hình Deep Learning v n hành b ng cách thu th p các nghiên c u phân tích tâm lý và hành** ậ ằ ậ ứ **vi c i s d ng b ng 3 hình ủa con người, thông qua đó, tương tác với ngườ ử ụ** ằ **thức: văn bản (đặc bi t là chat nhanh), gi ng nói và hình nh.** ệ ọ ả
+
+**Tuy nhiên, không d ng l các tr lý i m i giáo d c hi n nay t** ừ **ại ở** ợ **ảo, công tác đổ** ớ ụ ệ **ập trung vào vi c chu n hóa nh m gi m b t s khác bi t gi a các h c sinh v thành tích. Chính** ệ ẩ ằ ả **ớ ự** ệ ữ ọ ề **vì v y, h ng d y kèm c TTNT c thi t k nh m t ng cho** ậ **ệ thố** ạ **ủa ra đời, đượ ế ế** ằ **ối ưu hóa các bài giả từng c p b c và kh p thu c a m i h c sinh. M c dù không ng ng c i ti** ấ ậ **ả năng tiế** ủ **ỗ ọ** ặ ừ **ả ến, nhưng các TTNT này v n còn t n t** ẫ **ồ ại khá nhi u m t h n ch** ề **ặ ạ ế, đặc biệt là c m xúc. S kiên nh n và nh ng** ả ự ẫ ữ **ph n ng c c các tình hu ng c a m t hình m u giáo viên s c tái t o b ả ứ ảm xúc trướ** ố ủ ộ ẫ **ẽ khó đượ** ạ **ởi một h ệ thống AI ở thời điểm hiện tại.**
+
+**Có th khi nghe qua trí tu nhân t o trong giáo d c, nhi i s n nh ng** ể ệ ạ ụ **ều ngườ ẽ nghĩ đế** ữ **thành t u kh ng l , mang t p c n. Tuy nhiên, các s n ph m AI khi** ự ổ ồ **ầm vĩ mô, và rất khó để tiế** ậ ả ẩ **đưa vào giáo dục luôn được thiết kế để dễ dàng sử dụng và phổ biến rộng rãi, nhất là với các đối tượng như họ ất đa dạ c sinh, sinh viên. Các sản phẩm AI r ng, muốn nó phức tạp, nó sẽ ph c t n, nó có th n m c khó tin. ứ ạp, nhưng muốn nó đơn giả ể đơn giản đế** ứ
+
+## Hình 6. Trí tuệ nhân t o ạ dưới góc nhìn thực tế
+
+“ ầ ề ể ỗ ả ữ ế ộ **Grammarly” - ph n m m ki m tra l i chính t và ng pháp ti ng Anh, là m t trong nh ng s n ph m hình thành d a trên công ngh lý ngôn ng t n nay,** ữ ả ẩ ự **ệ AI và “Xử ữ ự nhiên”. Hiệ có hơn 20 triệu người dùng trên toàn th gi i tin dùng s n ph ế ớ** ả **ẩm AI này như một công c giúp** ụ **h c i thi n k p b n t t Grammarly th ọ ả** ệ **ỹ năng viết, cũng như giao tiế ằng văn bả ốt hơn. Cài đặ ực**
+
+**chất rất đơn giản, tùy vào nhu cầu mà người dùng có th nâng c** ể **ấp các gói s d ng. Các gi ng ử ụ** ả **viên cũng khuyến khích sinh viên của mình sử dụng phần mềm này, nhất là với các bộ môn vi ết.**
+
+**Một ph n m a trên n n t lý ngôn ng t** ầ **ềm khác cũng dự** ề **ảng “Xử ữ ự nhiên” chính là Elsa (mộ** ầ ề ọ ụ **ệ ừ t ph n m m h c nói Ti** d **ếng Anh). Elsa cũng sử ng các công ngh t Deep Learning, chẳ** ả **ng h ng nói. Sau khi t ạn như phân tích giọ i ứng d ng này v , Elsa s có m t bài ki m tra** ụ ề ẽ ộ ể **mức độ (level) phát âm TA của người dùng bằng cách cho người đó đọc các đoạn văn/câu nói để phân tích điểm m nh y u, t** ạ ế **ừ đó sẽ đưa ra một l trình h c ti** ộ ọ **ếng Anh tương đương. Chỉ cần một chi n tho i thông minh, k t n wifi i dùng có th s d ng m i lúc m ếc điệ** ạ ế **ối là ngườ ể ử ụ** ọ **ọi nơi. Tuy nhiên, v n còn khá ít i bi n ng d t m t h n ch c a AI** ẫ **ngườ ết đế ứ ụng này. Đây cũng là mộ** ặ ạ **ế ủ khi được đưa vào trong giáo dục.**
+
+**Luyện t p 8 ậ . Trò chơi TTNT “Tháp Hà Nội”.**
+
+**Bài toán:**
+
+**Giải pháp:**
+
+**Nhận xét:**
+
+**Bài toán:**
+
+**Giải pháp:**
+
+**Nhận xét:**
+
+**Luyện t p 10.** ậ **Trò chơi TTNT “Đong Nước”.**
+
+**Bài toán:**
+
+**Giải pháp:**
+
+**Nhận xét:**
+
+- Luyện tập 11. Xây dựng ho**ạt độ**ng day học thông qua trò chơi TTNT?
+- **Hoạt đ**ộng: tên hoạ**t đ**ộng ....**(45 phút)**
+- **Mục tiêu:**
+- \*Tổ chứ**c ho**ạt động :
+- \* Chuyển giao nhiệm vụ học tập
+- \*
+- \* Thực hiện nhiệm vụ học:
+- \*
+- \* Báo cáo kết quả thực hiện nhiệm vụ
+- \*
+- \* Đánh giá ho**ạt động** của học sinh
+- Sản phẩ**m ho**ạt động :
+- **Phương án đánh giá:**
+- \*

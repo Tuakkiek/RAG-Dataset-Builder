@@ -1,0 +1,519 @@
+## Trí Tuệ Nhân Tạo
+
+## (Artificial Intelligence)
+
+Lê Thanh Hường
+
+Viện Công nghệ thông tin và Truyền thông
+Trường Đại Học Bách Khoa Hà Nội
+
+## Nội dung môn học
+
+Chương 1. Tổng quan
+
+Chương 2. Tác tử thông minh
+
+Chương 3. Giải quyết vấn đề
+
+Chương 4. Tri thức và suy diễn
+
+Giới thiệu về logic
+
+□ Logic định đề
+
+□ Logic vị tù
+
+Chương 5. Học máy
+
+## Giới hạn của Logic định đề
+
+■ Hãy xét ví dụ sau đây:
+
+□ Tuấn là một sinh viên của HUST
+
+□ Mọi sinh viên của HUST đều học môn Đại số
+
+☐ Vì Tuấn là một sinh viên của HUST, nên Tuấn học môn Đại số
+
+## ■ Trong logic định đề:
+
+□ Định đề p: “Tuấn là một sinh viên của HUST”
+
+□ Định đề q: “Mọi sinh viên của HUST đều học môn Đại số”
+
+□ Định đề r: “Tuấn học môn Đại số”
+
+☐ Nhuếng: (trong logic định đề) r không thể suy ra được từ p và q!
+
+## Logic vị từ (FOL): Ví dụ
+
+■ Ví dụ nêu trên có thể được biểu diễn trong logic vị từ bồi các biểu thức (logic vị từ) sau
+
+☐ HUST Student (Tuan): “Tuân là một sinh viên của HUST”
+
+☐ ∀x:HUST Student(x) → Studies\_Algebra(x): “Mọi sinh viên của HUST đều học môn Đại số”
+
+□ Studies\_Algebra (Tuan): “Tuân học môn Đại số”
+
+■ Trong logic vị từ, chúng ta có thể chứng minh được:
+
+```erlang
+{HUST_Student(Tuan), ∀x:HUST_Student(x) → Studies_Algebra(x)} ⊢ Studies_Algebra(Tuan)
+```
+
+■ Với ví dụ trên, trong logic vị tử:
+
+□ Các ký hiệu Tuan, x được gọi là các phần tử (Tuan là hằng, x là biến)
+
+□ Các ký hiệu HUST\_Student và Studies\_Algebra là các vị tử
+
+□ Ký hiệu ∀là lượng từ với mọi
+
+□ Các phần tử, các vị từ và các lượng từ cho phép biểu diễn các biểu thức
+
+## FOL: Ngôn ngữ (1)
+
+## ■ 4 kiểu ký hiệu (symbols)
+
+Hằng (Constants): Các tên của các đối tượng trong một lĩnh vực bài toán cụ thể (ví dụ: Tuan)
+
+☐ Biến (Variables): Các ký hiệu mà giá trị thay đổi đối với các đối tượng khác nhau (ví dụ: x)
+
+☐ Ký hiệu hàm (Function symbols): Các ký hiệu biểu diễn ánh xạ (quan hệ hàm) từ các đối tượng của miền (domain) này sang các đối tượng của miền khác (ví dụ: plus)
+
+☐ Các vị tử (Predicates): Các quan hệ mà giá trị logic là đúng hoặc sai (ví dụ: HUST\_Student and Studies\_Algebra)
+
+## ■ Môi ký hiệu hàm hoặc vị từ đều có một tập các tham số
+
+☐ Ví dụ: HUST\_Student và Studies\_Algebra là các vị từ có 1 tham số
+
+☐ Ví dụ: plus là một ký hiệu hàm có 2 tham số
+
+## FOL: Ngôn ngữ (2)
+
+## ■ Một phần tử (term) được định nghĩa (truy hồi) như sau
+
+□ Một hằng số là một phần tử
+
+□ Một biến là một phần tử
+
+☐ Nếu $t_1, t_2, \ldots, t_n$ là các thành phần và $f$ là một ký hiệu hàm có $n$ tham số, thì $f(t_1, t_2, \ldots, t_n)$ là một phần tử
+
+☐ Không còn gì khác là một phần tử
+
+## ■ Các ví dụ của phần tử (term)
+
+□ Tuan
+
+□ 2
+
+□ friend(Tuan)
+
+□ friend(x)
+
+□ plus (x, 2)
+
+## FOL: Language (3)
+
+## ■ Các nguyên tử (Atoms)
+
+☐ Nếu $t_1, t_2, \ldots, t_n$ là các thành phần (terms) và $p$ là một vị từ có $n$ tham số, thì $p(t_1, t_2, \ldots, t_n)$ là một nguyên tử (atom)
+
+☐ Ví dụ: HUST\_Studies (Tuan), HUST\_Studies (x), Studies\_Algebra (Tuan), Studies (x)
+
+## ■ Các biểu thức (Formulas) được định nghĩa như sau
+
+□ Một nguyên tử (atom) là một biểu thức
+
+□ Nếu φ và ψ là các biểu thức, thì ¬φ và φ∧ψ là các biểu thức
+
+□ Nếu φ là một biểu thức và x là một biến, thì ∀x:φ(x) là một biểu thức
+
+☐ Không còn gì khác là một biểu thức
+
+■ Lưu ý: ∃x : φ(x) được định nghĩa bằng ¬∀x : ¬φ(x)
+
+## FOL: Ngũ nghĩa (1)
+
+■ Một phép diễn giải (interpretation) của một biểu thức φ được biểu diễn bằng cặp &lt;D,I&gt;
+
+■ Miền giá trị (Domain) D là một tập khác rộng
+
+\- Hàm diễn giải (Interpretation function) I là một phép gán giá trị đối với mỗi hằng, ký hiệu hàm, và ký hiệu vị từ — sao cho:
+
+☐ Đối với hằng c:  $\mathcal{I}(c) \in \mathcal{D}$
+
+☐ Đối với ký hiệu hàm (có n tham số) f: $I(f) \colon \mathcal{D}^{n} \to \mathcal{D}$
+
+☐ Đối với ký hiệu vị từ (có n tham số) P: $\mathcal{I}(\mathrm{P}) \colon \mathcal{D}^{\mathrm{n}} \to \{\text{true, false}\}$
+
+## FOL: Ngũ nghĩa (2)
+
+■ Diễn giải đối với một biểu thức logic vị từ. Giả sử φ, ψ và λ là các biểu thức vị từ
+
+□ Nếu φ là ¬ψ, thì  $I(\phi)=sai$  nếu  $I(\psi)=dúng$ , và  $I(\phi)=dúng$  nếu  $I(\psi)=sai$
+
+☐ Nếu φ là (ψ∧λ), thì  $\mathcal{I}(\phi)=\text{sai nêu } \mathcal{I}(\psi) \text{ hoặc } \mathcal{I}(\lambda) \text{là sai, và } \mathcal{I}(\phi)=\text{true nếu cả } \mathcal{I}(\psi) \text{ và } \mathcal{I}(\lambda) \text{là đúng}$
+
+☐ Giả sử ∀x:φ(x) là một biểu thức, thì
+$I(\forall x:\phi(x)) = \text{dúng nếu } I(\phi)(d) = \text{dúng với mọi giá trị}$
+$d \in D$
+
+## FOL: Ngũ nghĩa (3)
+
+■ Một biểu thức $\phi$ là thỏa mãn được (satisfiable) nếu và chỉ nếu tồn tại một phép diễn giải $<\mathcal{D}, I>$ sao cho $\mathcal{I}(\phi) -$ Chúng ta ký hiệu là: $\models_{\mathcal{I}} \phi$
+
+■ Nếu  $\models_{I}\phi$ , thì chúng ta nói rằng I là một mô hình (model) của  $\phi$ . Nói cách khác, I thỏa mãn (satisfies)  $\phi$
+
+■ Một biểu thức là không thể thỏa mãn được (unsatisfiable) nếu và chỉ nếu không tồn tại bất kỳ phép diễn giải nào
+
+■ Một biểu thức $\phi$ là đúng (valid) nếu và chỉ nếu mọi phép diễn giải $\mathcal{I}$ đều thỏa mãn $\phi$ – Chúng ta ký hiệu là: $\models \phi$
+
+## Lượng tử logic Với mọi
+
+■ Cú pháp của lượng tử logic Với mọi (universal quantifier):  $\forall <Biến_{1},...,Biến_{n}>: <Mệnh đề>$
+
+■ Ví dụ: Tất cả (mọi) sinh viên đang ngồi học trong lớp K4 đều chăm chỉ
+
+$\forall x: \text{Ngoi\_trong\_lop}(x, K4) \Rightarrow \text{Cham\_chi}(x)$
+
+■ Mệnh đề (∀x: P) là đúng trong một mô hình m, khi và chỉ khi P đúng với x là mỗi (mọi) đối tượng trong mô hình đó
+
+■ Tức là, mệnh đề (∀x: P) tương đương với sự kết hợp (và) của tất cả các trường hợp của P
+
+Ngoi\_trong\_lop(Hue,K4) ⇒ Cham\_chi(Hue)
+
+^ Ngoi\_trong\_lop(Cuong,K4) ⇒ Cham\_chi(Cuong)
+
+^ Ngoi\_trong\_lop(Tuan,K4) ⇒ Cham\_chi(Tuan)
+
+^ ...
+
+## Lượng tử logic Tôn tại
+
+■ Cú pháp của lượng tử logic Tôn tại (existential quantifier):  $\exists <Biến_{1}, \ldots, Biến_{n}> : <Mệnh đề>$
+
+■ Ví dụ: Tồn tại (có) sinh viên đang ngồi học trong lớp K4, và là sinh viên chăm chỉ:
+
+∃x: Ngoi\_trong\_lop(x,K4) ∧ Cham\_chi(x)
+
+■ Mệnh đề (∃x: P) là đúng trong một mô hình m, khi và chỉ khi P là đúng với x là một đối tượng trong mô hình đó
+
+■ Tức là, mệnh đề (∃x: P) tương đương với phép tuyển (hoặc) của các trường hợp của P
+
+Ngoi\_trong\_lop(Hue,K4) ∧ Cham\_chi(Hue)
+
+∨ Ngoi\_trong\_lop(Cuong,K4) ∧ Cham\_chi(Cuong)
+
+∨ Ngoi\_trong\_lop(Tuan,K4) ∧ Cham\_chi(Tuan)
+
+∨ ...
+
+## Các đặc điểm của các lượng từ logic
+
+## ■ Tính hoán vị:
+
+□ (∀x ∀y) là tương đương với (∀y ∀x)
+
+☐ (∃x ∃y) là tương đương với (∃y ∃x)
+
+■ Tuy nhiên, (∃x ∀y) không tương đương với (∀y ∃x)
+
+☐ ∃x ∀y: Yeu(x,y) - “Trên thế giới này, tồn tại (có) một người mà người đó yêu quý tất cả mọi người khác”
+
+☐ ∀y ∃x: Yeu(x,y) - “Trên thế giới này, mọi người đều được ít nhất một người khác yêu thích”
+
+■ Mỗi lượng từ logic (∃ hoặc ∀) đều có thể được biểu diễn bằng lượng từ kia
+
+☐ (∀x: Thich(x,Kem)) là tương đương với (¬∃x: ¬Thich(x,Kem))
+
+☐ (∃x: Thich(x,BongDa)) là tương đương với (¬∀x: ¬Thich(x,BongDa))
+
+## Sử dụng logic vị từ
+
+Biểu diễn các phát biểu trong ngôn ngữ tự nhiên
+
+\- “x là anh/chị/em của y” tương đương với “x và y là anh em ruột”
+
+∀x,y: Anh\_chi\_em(x,y) ⇔ Anh\_em\_ruot(x,y)
+
+■ “Mẹ của c là m” tương đương với “m là phụ nữ và m là bậc cha mẹ của c”
+
+$\forall \mathsf{m},\mathsf{c}$ : $Me(c) = m\Leftrightarrow (Phu\_nu(m)\land Cha\_me(m,c))$
+
+■ Quan hệ “anh em ruột” có tính chất đối xứng
+∀x,y: Anh\_em\_ruot(x,y) ⇔ Anh\_em\_ruot(y,x)
+
+## Bài tập
+
+Chuyển đổi các phát biểu sau sang logic vị từ:
+
+1. Tất cả các sinh viên đều chăm học
+
+2. Có một số sinh viên
+
+3. Một số sinh viên chăm học
+
+4. Mỗi sinh viên đều thích một sinh viên nào đó
+
+5. Mỗi sinh viên đều thích một sinh viên khác
+
+6. Có một sinh viên được tất cả sinh viên khác thích
+
+## Bài tập
+
+Chuyển đổi các phát biểu sau sang logic vị từ:
+
+1. Tất cả các sinh viên đều chăm học
+
+2. Có một số sinh viên
+
+3. Một số sinh viên chăm học
+
+4. Mỗi sinh viên đều thích một sinh viên nào đó
+
+5. Mỗi sinh viên đều thích một sinh viên khác
+
+6. Có một sinh viên được tất cả sinh viên khác thích
+
+## Các phép biến đổi tương đương
+
+1. Loại bổ dấu suy ra
+
+$$
+\begin{array}{l}\alpha \leftrightarrow \beta \Rightarrow (\alpha \rightarrow \beta) \land (\beta \rightarrow \alpha)\\\alpha \rightarrow \beta \Rightarrow \neg \alpha \lor \beta\end{array}
+$$
+
+2. Chuyển phủ định vào trong ngoặc
+
+$$
+\begin{array}{l} \neg (\alpha \lor \beta) \Rightarrow \neg \alpha \land \neg \beta \\ \neg (\alpha \land \beta) \Rightarrow \neg \alpha \lor \neg \beta \\ \neg \neg \alpha \Rightarrow \alpha \\ \neg \forall \mathbf {x}, \alpha \Rightarrow \exists \mathbf {x}, \neg \alpha \\ \neg \exists \mathbf {x}, \alpha \Rightarrow \forall \mathbf {x}, \neg \alpha \end{array}
+$$
+
+3. Đặt tên các biến khác nhau
+ $\forall x, \exists y, (\neg P(x) \lor \exists x, Q(x,y)) \Rightarrow \forall x_{1}, \exists x_{2}, (\neg P(x_{1}) \lor \exists x_{3}, Q(x_{3},y_{2}))$
+
+## Ví dụ
+
+$$
+\begin{array}{l} \text {a. John owns a dog} \\ \hline \exists x. D (x) \wedge O (J, x) \\ \hline D (F i d o) \wedge O (J, F i d o) \end{array}
+$$
+
+$$
+\begin{array}{l}\text {b. Anyone who owns a dog is a lover-of-animals}\\\hline \forall x. (\exists y. D (y) \land O (x, y)) \rightarrow L (x)\\\hline \forall x. (\neg \exists y. (D (y) \land O (x, y)) \lor L (x)\\\hline \forall x. \forall y. \neg (D (y) \land O (x, y)) \lor L (x)\\\hline \forall x. \forall y. \neg D (y) \lor \neg O (x, y) \lor L (x)\\\hline \neg D (y) \lor \neg O (x, y) \lor L (x)\end{array}
+$$
+
+| c. Lovers-of-animals do not kill animals |
+| --- |
+| ∀ x. L(x) → (∀ y. A(y) → ¬ K(x,y)) |
+| ∀ x. ¬L(x) v (∀ y. A(y) → ¬ K(x,y)) |
+| ∀ x. ¬L(x) v (∀ y. ¬A(y) v ¬ K(x,y)) |
+| ¬ L(x) v ¬ A(y) v ¬ K(x,y) |
+
+## Phép gán trị
+
+VD: Định lý đường trung bình:
+
+$r_{1}$ :  $\text{trd}(U,XY) \land \text{trd}(V,XZ) \Rightarrow ss(UV,YZ)$
+
+![](images/page_18_image_3.jpg)
+
+![](images/page_18_image_4.jpg)
+
+Phép gán trị θ = {A/X, B/Z, D/Y, L/U, I/V}:
+
+■  $r_{1}\theta$ :  $\text{trd}(L,AD) \wedge \text{trd}(I,AB) \Rightarrow ss(LI,DB)$
+
+## Hợp giải Robinson cho logic vị từ
+
+1. Viết mỗi GT$_{i}$, ¬KL trên 1 dòng
+
+2. Đưa GT$_{i}$, ¬KL về dạng chuẩn CNF
+
+$$
+\forall \mathbf {x} _ {1} \forall \mathbf {x} _ {2} \dots \forall \mathbf {x} _ {n} [ p _ {1} (\dots) \lor \dots \lor p _ {n} (\dots) ] \land [ q _ {1} (\dots) \lor \dots \lor q _ {m} (\dots) ]\tag{*}
+$$
+
+3. Tách mỗi dòng (\*) thành các dòng con:
+
+$$
+\forall \mathbf {x} _ {1} \forall \mathbf {x} _ {2} \dots \forall \mathbf {x} _ {n} [ p _ {1} (\dots) \lor \dots \lor p _ {n} (\dots) ]
+$$
+
+$$
+\forall \mathbf {x} _ {1} \forall \mathbf {x} _ {2} \dots \forall \mathbf {x} _ {n} [ \mathbf {q} _ {1} (\dots) \lor \dots \lor \mathbf {q} _ {m} (\dots) ]
+$$
+
+tất cả đều với ∀
+
+4. Hợp giải:
+
+u)  $\neg p(x_{1},x_{2},\ldots,x_{n})\lor q(\ldots)\Rightarrow w)q(\ldots)\lor r(\ldots)$  với phép gán trị
+
+v) $p(y_1, y_2, \ldots, y_n) \lor r(\ldots)$
+
+5. Vô lý xây ra khi
+
+$$
+\theta = \left\{\frac {z _ {1}}{x _ {1}}, \frac {z _ {1}}{y _ {1}}, \dots , \frac {z _ {n}}{x _ {n}}, \frac {z _ {n}}{y _ {n}} \right\}
+$$
+
+i)  $\neg p(x_{1},x_{2},\ldots,x_{n})$
+
+ii)  $p(y_{1},y_{2},\ldots,y_{n})$ 
+
+với phép gán trị  $\theta=\left\{\frac{z_{1}}{x_{1}},\frac{z_{1}}{y_{1}},\ldots,\frac{z_{n}}{x_{n}},\frac{z_{n}}{y_{n}}\right\}$
+
+## Ví dụ về bước 4
+
+■ Sử dụng phép gán trị nào để hợp giải
+P(a,x,b), và
+$\neg P(y,z,z)$
+
+Phép gán trị θ =  $\left\{\frac{a}{y},\frac{b}{z},\frac{b}{x}\right\}$
+
+\- $P(a,b,b)$
+
+\- $\neg P(a,b,b)$
+
+## Ví dụ về bước 4 (tiếp)
+
+■ Sử dụng phép gán trị nào để hợp giải
+P(a,x,x,b), và
+$\neg P(y,y,z,b)$
+
+## Ví dụ về bước 4 (tiếp)
+
+■ Cho các sự kiện p(a,b), p(c,d), q(d,c,c) đúng
+
+\- Cho luật
+
+$$
+\mathrm{p} (\mathrm{x}, \mathrm{y}) \land \mathrm{q} (\mathrm{y}, \mathrm{x}, \mathrm{x}) \Rightarrow \mathrm{r} (\mathrm{x}, \mathrm{y})
+$$
+
+■ Sử dụng các phép gán trị với luật trên, hãy đưa ra các sự kiện mới đúng.
+
+■ Gợi ý:
+
+☐ Thử với p(x,y) ≡ p(a,b) hoặc p(x,y) ≡ p(c,d)
+
+## Ví dụ về hợp giải
+
+$$
+\begin{array}{l l} \forall x & P (x) \to Q (x) \\ \forall x & \neg P (x) \to R (x) \\ \forall x & Q (x) \to S (x) \\ \forall x & R (x) \to S (x) \end{array}
+$$
+
+Chuyển về dạng chuẩn
+
+$$
+1. \neg P (x) \lor Q (x)
+$$
+
+2. $P(x)\lor R(x)$
+
+$$
+3. \neg Q (x) \lor S (x)
+$$
+
+4. $\neg R(x) \lor S(x)$
+
+Hợp giải 1 và 3
+
+$$
+5. \neg P (x) \lor S (x)
+$$
+
+Hợp giải 2 và 5
+
+$$
+6. R (x) \lor S (x)
+$$
+
+Hợp giải 4 và 6
+
+7. $S(x)$
+
+## Bài toán khì - chuối
+
+```csv
+1. tại(C,1)
+2. tại(B,3)
+3. tại(A,4)
+4. tại(D,2)
+5. tại(A,x) ⇒ tại (A,y)
+6. tại(A,x) ∧ tại(O,x) ⇒ tại(A,y) ∧ tại(O,y)
+7. tại(A,x) ∧ tại(O,x) ⇒ trên(A,O)
+8. tại(A,x) ∧ tại(O1,x) ∧ tại(O2,x) ⇒ trên(O1,O2)
+KL: tại(B,2) ∧ trên(C,B) ∧ trên(A,C) ∧ trên(D,A)
+¬KL: ¬ tại(B,2) ∨ ¬ trên(C,B) ∨ ¬ trên(A,C) ∨ ¬ trên(D,A)
+```
+
+## Bài tập 1
+
+■ Cho tập các phát biểu:
+
+John owns a dog
+
+Anyone who owns a dog is a lover of animals
+
+☐ Lovers of animals do not kill animals
+
+■ Chúng minh:
+
+☐ John does not kill animals.
+
+## Bài tập 2
+
+■ Nếu xem một ai đó lùa đối người khác là kề bịp bợm và
+
+■ Bất kỳ ai đồng tình với kể bịp bợm cũng là kể bịp bợm.
+
+■ Trong tập thể có một người nhất nhất đồng tình với kề lùa đối
+
+■ thì chắc chắn có 1 tên bịp bợm tính tình nhút nhất.
+
+## Bài tập 3
+
+1. Fred là con chó giống Collie.
+
+2. Sam là chủ của nó.
+
+3. Hôm nay là thú bảy.
+
+4. Thú bảy trời lạnh.
+
+5. Fred là con chó được huấn luyện.
+
+6. Chó spaniel và (chó collie được huấn luyện) là chó tốt.
+
+7. Nếu một con chó tốt và có ông chủ thì nó sẽ đi cùng ông chủ.
+
+8. Nếu thứ bảy và ấm thì Sam ở công viên.
+
+9. Nếu thứ bảy và không ấm thì Sam ở viện bảo tàng.
+
+■ Hôi fred ở đầu? ∃X loc(fred,X)
+
+```txt
+Fred là con chó giống Collie.
+Sam là chủ của nó.
+Hôm nay là thứ bày.
+Thứ bày trời lạnh.
+Fred là con chó được huấn luyện.
+Chó spaniel và (chó collie được huấn luyện) là chó tốt.
+Nếu một con chó tốt và có ông chủ thì nó sẽ đi cùng ông chủ.
+Nếu thứ bày và ấm thì Sam ở công viên.
+Nếu thứ bày và không ấm thì Sam ở viện bảo tàng.
+■ Hồi fred ở đâu? ∃X loc(fred,X)
+
+collie(Fred).
+owner(Sam, Fred).
+day(sat).
+cold(sat).
+trained(Fred).
+spaniel(X) ∨ (collie(X) ∧ trained(X)) → gooddog(X).
+gooddog(X) ∧ owner(Y,X) ∧ loc(Y,Z)→ loc(X,Z).
+day(sat) ∧ ¬cold(sat) → loc(Sam, park).
+day(sat) ∧ cold(sat) → loc(Sam,museum).
+```
